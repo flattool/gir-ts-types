@@ -37,6 +37,7 @@ jobs:
           --share=network \
           --filesystem=~/types:create \
           org.gnome.Sdk//${LATEST_SDK} -c "
+            mkdir -p "${HOME}/.nvm"
             # Install latest Node LTS
             curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash
             \. "$HOME/.nvm/nvm.sh"
