@@ -1,8 +1,8 @@
 name: "Update Types"
 
 on:
-  # schedule:
-  #   - cron: '0 * * * *' # every hour
+  schedule:
+    - cron: "0 6 * * *" # once per day at 06:00 UTC
   workflow_dispatch: # Allow manual runs
 
 permissions:
