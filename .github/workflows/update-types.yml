@@ -29,3 +29,17 @@ jobs:
 
           # Install it
           flatpak install --user -y org.gnome.Sdk//${LATEST_SDK}
+
+      - name: "Generate the types"
+        run: |
+          flatpak enter \
+          --command=bash \
+          --share=network \
+          --filesystem=types:create \
+          org.gnome.Sdk//${LATEST_SDK} -c "
+            # Install latest Node LTS
+            curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash
+            \. "$HOME/.nvm/nvm.sh"
+            nvm install 22
+            node -v
+          "
