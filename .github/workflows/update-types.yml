@@ -32,7 +32,7 @@ jobs:
 
       - name: "Generate the types"
         run: |
-          flatpak enter \
+          flatpak run \
           --command=bash \
           --share=network \
           --filesystem=types:create \
