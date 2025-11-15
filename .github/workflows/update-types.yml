@@ -53,6 +53,7 @@ jobs:
             npx @ts-for-gir/cli generate '*' --ignoreVersionConflicts
           "
           ls @types
+
       - name: "Sync generated types to repo root"
         run: |
           # Remove ALL existing .ts files anywhere in the repo
@@ -64,3 +65,17 @@ jobs:
           cp -r ~/types/@types/* .
 
           ls -al
+
+      - name: "Commit changes"
+        run: |
+          cd $GITHUB_WORKSPACE
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add -A
+
+          if ! git diff --cached --quiet; then
+            git commit -m "Update generated GIR TypeScript definitions"
+            git push
+          else
+            echo "No changes — nothing to commit."
+          fi
