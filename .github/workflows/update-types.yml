@@ -32,15 +32,23 @@ jobs:
 
       - name: "Generate the types"
         run: |
+          cd ~/types
           flatpak run \
           --command=bash \
           --share=network \
           --filesystem=~/types:create \
           org.gnome.Sdk//${LATEST_SDK} -c "
             mkdir -p "${HOME}/.nvm"
-            # Install latest Node LTS
+
+            vv #### Install latest Node LTS ### vv
+
             curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash
             \. "$HOME/.nvm/nvm.sh"
             nvm install 22
-            node -v
+
+            ^^ ################################ ^^
+
+            npm install @ts-for-gir/cli
+            npx @ts-for-gir/cli generate '*' --ignoreVersionConflicts
           "
+          ls @types
