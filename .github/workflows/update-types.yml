@@ -32,6 +32,7 @@ jobs:
 
       - name: "Generate the types"
         run: |
+          mkdir -p ~/types
           cd ~/types
           flatpak run \
           --command=bash \
