@@ -80,8 +80,6 @@ import './gstallocators-1.0.d.ts';
 import './gst-1.0.d.ts';
 import './gsk-4.0.d.ts';
 import './graphene-1.0.d.ts';
-import './glygtk4-2.d.ts';
-import './gly-2.d.ts';
 import './giounix-2.0.d.ts';
 import './geoclue-2.0.d.ts';
 import './gee-0.8.d.ts';

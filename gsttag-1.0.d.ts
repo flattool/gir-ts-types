@@ -244,34 +244,6 @@ declare module 'gi://GstTag?version=1.0' {
          */
         const TAG_CAPTURING_ISO_SPEED: string;
         /**
-         * Light source used when capturing an image. (string)
-         *
-         * The allowed values are:
-         *   "unknown"
-         *   "daylight"
-         *   "fluorescent"
-         *   "tungsten"
-         *   "flash"
-         *   "fine-weather"
-         *   "cloudy-weather"
-         *   "shade"
-         *   "daylight-fluorescent"
-         *   "day-white-fluorescent"
-         *   "cool-white-fluorescent"
-         *   "white-fluorescent"
-         *   "warm-white-fluorescent"
-         *   "standard-light-A"
-         *   "standard-light-B"
-         *   "standard-light-C"
-         *   "D55"
-         *   "D65"
-         *   "D75"
-         *   "D50"
-         *   "iso-studio-tungsten"
-         *   "other"
-         */
-        const TAG_CAPTURING_LIGHT_SOURCE: string;
-        /**
          * Defines the way a camera determines the exposure. (string)
          *
          * The allowed values are:

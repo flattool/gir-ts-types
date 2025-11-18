@@ -323,29 +323,6 @@ declare module 'gi://GstApp?version=1.0' {
              */
             vfunc_pull_sample(): Gst.Sample | null;
             /**
-             * This function blocks until a sample or an event or EOS becomes available or the appsink
-             * element is set to the READY/NULL state or the timeout expires.
-             *
-             * This function will only return samples when the appsink is in the PLAYING
-             * state. All rendered buffers and events will be put in a queue so that the application
-             * can pull them at its own rate. Note that when the application does not
-             * pull samples fast enough, the queued buffers could consume a lot of memory,
-             * especially when dealing with raw video frames.
-             * Events can be pulled when the appsink is in the READY, PAUSED or PLAYING state.
-             *
-             * This function will only pull serialized events, excluding
-             * the EOS event for which this functions returns
-             * %NULL. Use gst_app_sink_is_eos() to check for the EOS condition.
-             *
-             * This method is a variant of gst_app_sink_try_pull_sample() that can be used
-             * to handle incoming events events as well as samples.
-             *
-             * Note that future releases may extend this API to return other object types
-             * so make sure that your code is checking for the actual type it is handling.
-             * @param timeout the maximum amount of time to wait for a sample
-             */
-            vfunc_try_pull_object(timeout: Gst.ClockTime): Gst.MiniObject | null;
-            /**
              * Get the last preroll sample in `appsink`. This was the sample that caused the
              * appsink to preroll in the PAUSED state.
              *
@@ -438,29 +415,6 @@ declare module 'gi://GstApp?version=1.0' {
              * @returns %TRUE if no more samples can be pulled and the appsink is EOS.
              */
             is_eos(): boolean;
-            /**
-             * This function blocks until a sample or an event becomes available or the appsink
-             * element is set to the READY/NULL state.
-             *
-             * This function will only return samples when the appsink is in the PLAYING
-             * state. All rendered buffers and events will be put in a queue so that the application
-             * can pull them at its own rate. Note that when the application does not
-             * pull samples fast enough, the queued buffers could consume a lot of memory,
-             * especially when dealing with raw video frames.
-             * Events can be pulled when the appsink is in the READY, PAUSED or PLAYING state.
-             *
-             * This function will only pull serialized events, excluding
-             * the EOS event for which this functions returns
-             * %NULL. Use gst_app_sink_is_eos() to check for the EOS condition.
-             *
-             * This method is a variant of gst_app_sink_pull_sample() that can be used
-             * to handle incoming events events as well as samples.
-             *
-             * Note that future releases may extend this API to return other object types
-             * so make sure that your code is checking for the actual type it is handling.
-             * @returns a #GstSample, or a #GstEvent or NULL when the appsink is stopped or EOS.          Call gst_mini_object_unref() after usage.
-             */
-            pull_object(): Gst.MiniObject | null;
             /**
              * Get the last preroll sample in `appsink`. This was the sample that caused the
              * appsink to preroll in the PAUSED state.
@@ -556,30 +510,6 @@ declare module 'gi://GstApp?version=1.0' {
              * @param wait the new state
              */
             set_wait_on_eos(wait: boolean): void;
-            /**
-             * This function blocks until a sample or an event or EOS becomes available or the appsink
-             * element is set to the READY/NULL state or the timeout expires.
-             *
-             * This function will only return samples when the appsink is in the PLAYING
-             * state. All rendered buffers and events will be put in a queue so that the application
-             * can pull them at its own rate. Note that when the application does not
-             * pull samples fast enough, the queued buffers could consume a lot of memory,
-             * especially when dealing with raw video frames.
-             * Events can be pulled when the appsink is in the READY, PAUSED or PLAYING state.
-             *
-             * This function will only pull serialized events, excluding
-             * the EOS event for which this functions returns
-             * %NULL. Use gst_app_sink_is_eos() to check for the EOS condition.
-             *
-             * This method is a variant of gst_app_sink_try_pull_sample() that can be used
-             * to handle incoming events events as well as samples.
-             *
-             * Note that future releases may extend this API to return other object types
-             * so make sure that your code is checking for the actual type it is handling.
-             * @param timeout the maximum amount of time to wait for a sample
-             * @returns a #GstSample, or #GstEvent or NULL when the appsink is stopped or EOS or the timeout expires. Call gst_mini_object_unref() after usage.
-             */
-            try_pull_object(timeout: Gst.ClockTime): Gst.MiniObject | null;
             /**
              * Get the last preroll sample in `appsink`. This was the sample that caused the
              * appsink to preroll in the PAUSED state.

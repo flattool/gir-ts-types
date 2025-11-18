@@ -2995,11 +2995,6 @@ declare module 'gi://IBus?version=1.0' {
         const KEY_circle: number;
         const KEY_club: number;
         const KEY_colon: number;
-        const KEY_combining_acute: number;
-        const KEY_combining_belowdot: number;
-        const KEY_combining_grave: number;
-        const KEY_combining_hook: number;
-        const KEY_combining_tilde: number;
         const KEY_comma: number;
         const KEY_containsas: number;
         const KEY_copyright: number;
@@ -3016,7 +3011,6 @@ declare module 'gi://IBus?version=1.0' {
         const KEY_dead_E: number;
         const KEY_dead_I: number;
         const KEY_dead_O: number;
-        const KEY_dead_SCHWA: number;
         const KEY_dead_U: number;
         const KEY_dead_a: number;
         const KEY_dead_abovecomma: number;
@@ -3047,7 +3041,6 @@ declare module 'gi://IBus?version=1.0' {
         const KEY_dead_e: number;
         const KEY_dead_grave: number;
         const KEY_dead_greek: number;
-        const KEY_dead_hamza: number;
         const KEY_dead_hook: number;
         const KEY_dead_horn: number;
         const KEY_dead_i: number;
@@ -3060,7 +3053,6 @@ declare module 'gi://IBus?version=1.0' {
         const KEY_dead_ogonek: number;
         const KEY_dead_perispomeni: number;
         const KEY_dead_psili: number;
-        const KEY_dead_schwa: number;
         const KEY_dead_semivoiced_sound: number;
         const KEY_dead_small_schwa: number;
         const KEY_dead_stroke: number;
@@ -3155,8 +3147,6 @@ declare module 'gi://IBus?version=1.0' {
         const KEY_grave: number;
         const KEY_greater: number;
         const KEY_greaterthanequal: number;
-        const KEY_guillemetleft: number;
-        const KEY_guillemetright: number;
         const KEY_guillemotleft: number;
         const KEY_guillemotright: number;
         const KEY_h: number;
@@ -3400,7 +3390,6 @@ declare module 'gi://IBus?version=1.0' {
         const KEY_opentribulletdown: number;
         const KEY_opentribulletup: number;
         const KEY_ordfeminine: number;
-        const KEY_ordmasculine: number;
         const KEY_oslash: number;
         const KEY_otilde: number;
         const KEY_overbar: number;
@@ -3649,10 +3638,6 @@ declare module 'gi://IBus?version=1.0' {
          * IBus minor version.
          */
         const MINOR_VERSION: number;
-        /**
-         * This is a filter for shortcut keys.
-         */
-        const MODIFIER_FILTER: number;
         const Mabovedot: number;
         const Macedonia_DSE: number;
         const Macedonia_GJE: number;
@@ -5130,7 +5115,7 @@ declare module 'gi://IBus?version=1.0' {
         /**
          * Convert from a ISO10646 character to a key symbol.
          * @param wc a ISO10646 encoded character
-         * @returns the corresponding IBus key symbol, if one exists.          or, if there is no corresponding symbol,          `wc | 0x01000000`
+         * @returns the corresponding IBus key symbol, if one exists.          or, if there is no corresponding symbol,          wc | 0x01000000
          */
         function unicode_to_keyval(wc: string): number;
         /**
@@ -5620,13 +5605,7 @@ declare module 'gi://IBus?version=1.0' {
                 connected: () => void;
                 disconnected: () => void;
                 'global-engine-changed': (arg0: string) => void;
-                'global-shortcut-key-responded': (
-                    arg0: number,
-                    arg1: number,
-                    arg2: number,
-                    arg3: number,
-                    arg4: boolean,
-                ) => void;
+                'global-shortcut-key-responded': (arg0: number, arg1: boolean, arg2: boolean) => void;
                 'name-owner-changed': (arg0: string, arg1: string, arg2: string) => void;
                 'notify::client-only': (pspec: GObject.ParamSpec) => void;
                 'notify::connect-async': (pspec: GObject.ParamSpec) => void;
@@ -10933,14 +10912,6 @@ declare module 'gi://IBus?version=1.0' {
              * by sending a "CursorUp" to IBus service.
              */
             cursor_up(): void;
-            /**
-             * Forward key events when an IBus popup takes the focus and the events
-             * needs to be forwared to the target IBus engine.
-             * @param keyval Key symbol of a key event.
-             * @param keycode Keycode of a key event.
-             * @param state Key modifier flags.
-             */
-            forward_process_key_event(keyval: number, keycode: number, state: number): void;
             /**
              * Notify that the preedit is hidden by the panel extension
              */

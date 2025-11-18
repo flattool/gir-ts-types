@@ -1164,9 +1164,9 @@ declare module 'gi://GstRtsp?version=1.0' {
             get_ignore_x_server_reply(): boolean;
             /**
              * Retrieve the IP address of the other end of `conn`.
-             * @returns The IP address as a string. This value remains valid until the connection is closed.
+             * @returns The IP address as a string. this value remains valid until the connection is closed.
              */
-            get_ip(): string | null;
+            get_ip(): string;
             /**
              * Get the file descriptor for reading.
              * @returns the file descriptor used for reading or %NULL on error. The file descriptor remains valid until the connection is closed.

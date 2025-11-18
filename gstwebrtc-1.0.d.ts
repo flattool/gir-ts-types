@@ -353,7 +353,7 @@ declare module 'gi://GstWebRTC?version=1.0' {
              */
             AUDIO,
             /**
-             * Kind is video
+             * Kind is audio
              */
             VIDEO,
         }

@@ -654,38 +654,6 @@ declare module 'gi://GstGL?version=1.0' {
         function gl_config_caveat_to_string(caveat: GLConfigCaveat | null): string | null;
         function gl_config_surface_type_to_string(surface_type: GLConfigSurfaceType | null): string | null;
         function gl_context_error_quark(): GLib.Quark;
-        /**
-         * Given the DRM formats in `src` #GValue, collect corresponding GST formats to
-         * `dst` #GValue. This function returns %FALSE if  the context is not an EGL
-         * context.
-         * @param context a #GstContext
-         * @param src value of "drm-format" field in #GstCaps as #GValue
-         * @param flags transformation flags
-         * @param dst empty destination #GValue
-         * @returns whether any valid GST video formats were found and stored in @dst
-         */
-        function gl_dma_buf_transform_drm_formats_to_gst_formats(
-            context: GLContext,
-            src: GObject.Value | any,
-            flags: GLDrmFormatFlags | null,
-            dst: GObject.Value | any,
-        ): [boolean, unknown];
-        /**
-         * Given the video formats in `src` #GValue, collect corresponding drm formats
-         * supported by `context` into `dst` #GValue. This function returns %FALSE if
-         * the context is not an EGL context.
-         * @param context a #GstContext
-         * @param src value of "format" field in #GstCaps as #GValue
-         * @param flags transformation flags
-         * @param dst empty destination #GValue
-         * @returns whether any valid drm formats were found and stored in @dst
-         */
-        function gl_dma_buf_transform_gst_formats_to_drm_formats(
-            context: GLContext,
-            src: GObject.Value | any,
-            flags: GLDrmFormatFlags | null,
-            dst: GObject.Value | any,
-        ): [boolean, unknown];
         function gl_element_propagate_display_context(element: Gst.Element, display: GLDisplay): void;
         /**
          * Perform the steps necessary for retrieving a #GstGLDisplay and (optionally)
@@ -1073,25 +1041,6 @@ declare module 'gi://GstGL?version=1.0' {
              * any display type
              */
             ANY,
-        }
-
-        export namespace GLDrmFormatFlags {
-            export const $gtype: GObject.GType<GLDrmFormatFlags>;
-        }
-
-        enum GLDrmFormatFlags {
-            /**
-             * include external-only formats
-             */
-            INCLUDE_EXTERNAL,
-            /**
-             * only include formats with linear modifier
-             */
-            LINEAR_ONLY,
-            /**
-             * include emulated formats
-             */
-            INCLUDE_EMULATED,
         }
 
         export namespace GLPlatform {

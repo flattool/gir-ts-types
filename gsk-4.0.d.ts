@@ -451,38 +451,6 @@ declare module 'gi://Gsk?version=4.0' {
             FROM_END,
         }
         /**
-         * The values of this enumeration classify intersections
-         * between paths.
-         */
-
-        /**
-         * The values of this enumeration classify intersections
-         * between paths.
-         */
-        export namespace PathIntersection {
-            export const $gtype: GObject.GType<PathIntersection>;
-        }
-
-        enum PathIntersection {
-            /**
-             * No intersection
-             */
-            NONE,
-            /**
-             * A normal intersection, where the two paths
-             *   cross each other
-             */
-            NORMAL,
-            /**
-             * The start of a segment where the two paths coincide
-             */
-            START,
-            /**
-             * The end of a segment where the two paths coincide
-             */
-            END,
-        }
-        /**
          * Describes the segments of a `GskPath`.
          *
          * More values may be added in the future.
@@ -667,10 +635,6 @@ declare module 'gi://Gsk?version=4.0' {
              * A node that possibly redirects part of the scene graph to a subsurface.
              */
             SUBSURFACE_NODE,
-            /**
-             * A node that applies some function to each color component.
-             */
-            COMPONENT_TRANSFER_NODE,
         }
         /**
          * The filters used when scaling texture data.
@@ -808,13 +772,6 @@ declare module 'gi://Gsk?version=4.0' {
             IDENTITY,
         }
         /**
-         * Compares two component transfers for equality.
-         * @param self a component transfer
-         * @param other another component transfer
-         * @returns true if @self and @other are equal
-         */
-        function component_transfer_equal(self: any, other: any): boolean;
-        /**
          * Constructs a path from a serialized form.
          *
          * The string is expected to be in (a superset of)
@@ -902,10 +859,7 @@ declare module 'gi://Gsk?version=4.0' {
             (start: ParseLocation, end: ParseLocation, error: GLib.Error): void;
         }
         interface PathForeachFunc {
-            (op: PathOperation, pts: Graphene.Point[], weight: number): boolean;
-        }
-        interface PathIntersectionFunc {
-            (path1: Path, point1: PathPoint, path2: Path, point2: PathPoint, kind: PathIntersection): boolean;
+            (op: PathOperation, pts: Graphene.Point, n_pts: number, weight: number): boolean;
         }
         /**
          * Flags that can be passed to gsk_path_foreach() to influence what
@@ -1427,61 +1381,6 @@ declare module 'gi://Gsk?version=4.0' {
              * @returns the color of the node
              */
             get_color(): Gdk.RGBA;
-        }
-
-        namespace ComponentTransferNode {
-            // Signal signatures
-            interface SignalSignatures extends RenderNode.SignalSignatures {}
-        }
-
-        class ComponentTransferNode extends RenderNode {
-            static $gtype: GObject.GType<ComponentTransferNode>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
-
-            static ['new'](
-                child: RenderNode,
-                r: ComponentTransfer,
-                g: ComponentTransfer,
-                b: ComponentTransfer,
-                a: ComponentTransfer,
-            ): ComponentTransferNode;
-
-            // Signals
-
-            connect<K extends keyof ComponentTransferNode.SignalSignatures>(
-                signal: K,
-                callback: GObject.SignalCallback<this, ComponentTransferNode.SignalSignatures[K]>,
-            ): number;
-            connect(signal: string, callback: (...args: any[]) => any): number;
-            connect_after<K extends keyof ComponentTransferNode.SignalSignatures>(
-                signal: K,
-                callback: GObject.SignalCallback<this, ComponentTransferNode.SignalSignatures[K]>,
-            ): number;
-            connect_after(signal: string, callback: (...args: any[]) => any): number;
-            emit<K extends keyof ComponentTransferNode.SignalSignatures>(
-                signal: K,
-                ...args: GObject.GjsParameters<ComponentTransferNode.SignalSignatures[K]> extends [any, ...infer Q]
-                    ? Q
-                    : never
-            ): void;
-            emit(signal: string, ...args: any[]): void;
-
-            // Methods
-
-            /**
-             * Gets the child node that is getting drawn by the given `node`.
-             * @returns the child `GskRenderNode`
-             */
-            get_child(): RenderNode;
-            /**
-             * Gets the component transfer for one of the components.
-             * @param component a value between 0 and 3 to indicate the red, green, blue   or alpha component
-             * @returns the `GskComponentTransfer`
-             */
-            get_transfer(component: number): ComponentTransfer;
         }
 
         namespace ConicGradientNode {
@@ -3614,58 +3513,6 @@ declare module 'gi://Gsk?version=4.0' {
             _init(...args: any[]): void;
         }
 
-        /**
-         * Specifies a transfer function for a color component to be applied
-         * while rendering.
-         *
-         * The available functions include linear, piecewise-linear,
-         * gamma and step functions.
-         *
-         * Note that the transfer function is applied to un-premultiplied
-         * values, and all results are clamped to the [0, 1] range.
-         */
-        class ComponentTransfer {
-            static $gtype: GObject.GType<ComponentTransfer>;
-
-            // Constructors
-
-            constructor(properties?: Partial<{}>);
-            _init(...args: any[]): void;
-
-            static new_discrete(values: number[]): ComponentTransfer;
-
-            static new_gamma(amp: number, exp: number, ofs: number): ComponentTransfer;
-
-            static new_identity(): ComponentTransfer;
-
-            static new_levels(n: number): ComponentTransfer;
-
-            static new_linear(m: number, b: number): ComponentTransfer;
-
-            static new_table(values: number[]): ComponentTransfer;
-
-            // Static methods
-
-            /**
-             * Compares two component transfers for equality.
-             * @param self a component transfer
-             * @param other another component transfer
-             */
-            static equal(self: any, other: any): boolean;
-
-            // Methods
-
-            /**
-             * Creates a copy of `other`.
-             * @returns a newly allocated copy of @other
-             */
-            copy(): ComponentTransfer;
-            /**
-             * Frees a component transfer.
-             */
-            free(): void;
-        }
-
         type GLRendererClass = typeof GLRenderer;
         type GLShaderClass = typeof GLShader;
         /**
@@ -3775,27 +3622,6 @@ declare module 'gi://Gsk?version=4.0' {
              * @returns false if @func returned false, true otherwise.
              */
             foreach(flags: PathForeachFlags | null, func: PathForeachFunc): boolean;
-            /**
-             * Finds intersections between two paths.
-             *
-             * This function finds intersections between `path1` and `path2`,
-             * and calls `func` for each of them, in increasing order for `path1`.
-             *
-             * If `path2` is not provided or equal to `path1`, the function finds
-             * non-trivial self-intersections of `path1`.
-             *
-             * When segments of the paths coincide, the callback is called once
-             * for the start of the segment, with `GSK_PATH_INTERSECTION_START,` and
-             * once for the end of the segment, with `GSK_PATH_INTERSECTION_END`.
-             * Note that other intersections may occur between the start and end
-             * of such a segment.
-             *
-             * If `func` returns `FALSE`, the iteration is stopped.
-             * @param path2 the second path
-             * @param func the function to call for intersections
-             * @returns `FALSE` if @func returned FALSE`, `TRUE` otherwise.
-             */
-            foreach_intersection(path2: Path | null, func: PathIntersectionFunc): boolean;
             /**
              * Computes the bounds of the given path.
              *
@@ -4904,7 +4730,7 @@ declare module 'gi://Gsk?version=4.0' {
             /**
              * Sets the line width to be used when stroking.
              *
-             * The line width must be >= 0.
+             * The line width must be > 0.
              * @param line_width width of the line in pixels
              */
             set_line_width(line_width: number): void;
@@ -5000,24 +4826,6 @@ declare module 'gi://Gsk?version=4.0' {
              * @returns The new transform
              */
             matrix(matrix: Graphene.Matrix): Transform;
-            /**
-             * Multiplies `next` with the matrix [ xx yx x0; xy yy y0; 0 0 1 ].
-             *
-             * The result of calling [method`Gsk`.Transform.to_2d] on the returned
-             * [struct`Gsk`.Transform] should match the input passed to this
-             * function.
-             *
-             * This function consumes `next`. Use [method`Gsk`.Transform.ref] first
-             * if you want to keep it around.
-             * @param xx the xx member
-             * @param yx the yx member
-             * @param xy the xy member
-             * @param yy the yy member
-             * @param dx the x0 member
-             * @param dy the y0 member
-             * @returns The new transform
-             */
-            matrix_2d(xx: number, yx: number, xy: number, yy: number, dx: number, dy: number): Transform | null;
             /**
              * Applies a perspective projection transform.
              *

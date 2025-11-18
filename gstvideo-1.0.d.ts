@@ -276,12 +276,6 @@ declare module 'gi://GstVideo?version=1.0' {
              * An event cancelling all currently active touch points.
              */
             TOUCH_CANCEL,
-            /**
-             * A mouse button double click event.
-             * Use gst_navigation_event_parse_mouse_button_event() to extract the details
-             * from the event.
-             */
-            MOUSE_DOUBLE_CLICK,
         }
         /**
          * A set of notifications that may be received on the bus when navigation
@@ -1487,26 +1481,6 @@ declare module 'gi://GstVideo?version=1.0' {
              * packed RGB with alpha, 8 bits per channel
              */
             RBGA,
-            /**
-             * packed 4:2:2 YUV, 16 bits per channel (Y-U-Y-V)
-             */
-            Y216_LE,
-            /**
-             * packed 4:2:2 YUV, 16 bits per channel (Y-U-Y-V)
-             */
-            Y216_BE,
-            /**
-             * packed 4:4:4:4 YUV, 16 bits per channel(U-Y-V-A)
-             */
-            Y416_LE,
-            /**
-             * packed 4:4:4:4 YUV, 16 bits per channel(U-Y-V-A)
-             */
-            Y416_BE,
-            /**
-             * 10-bit grayscale, packed into 16bit words (6 bits left padding)
-             */
-            GRAY10_LE16,
         }
         /**
          * The orientation of the GL texture.
@@ -1876,11 +1850,11 @@ declare module 'gi://GstVideo?version=1.0' {
              */
             static VERT: number;
             /**
-             * Rotate counter-clockwise 90 degrees and flip vertically
+             * Flip across upper left/lower right diagonal
              */
             static UL_LR: number;
             /**
-             * Rotate clockwise 90 degrees and flip vertically
+             * Flip across upper right/lower left diagonal
              */
             static UR_LL: number;
             /**
@@ -2394,10 +2368,6 @@ declare module 'gi://GstVideo?version=1.0' {
          * passthrough template caps.
          */
         const VIDEO_FORMATS_ANY_STR: string;
-        /**
-         * Number of video formats in #GstVideoFormat.
-         */
-        const VIDEO_FORMAT_LAST: number;
         const VIDEO_FPS_RANGE: string;
         const VIDEO_MAX_COMPONENTS: number;
         const VIDEO_MAX_PLANES: number;
@@ -2801,20 +2771,6 @@ declare module 'gi://GstVideo?version=1.0' {
          * @returns a new #GstEvent
          */
         function navigation_event_new_mouse_button_release(
-            button: number,
-            x: number,
-            y: number,
-            state: NavigationModifierType | null,
-        ): Gst.Event;
-        /**
-         * Create a new navigation event for the given key mouse double click.
-         * @param button The number of the pressed mouse button.
-         * @param x The x coordinate of the mouse cursor.
-         * @param y The y coordinate of the mouse cursor.
-         * @param state a bit-mask representing the state of the modifier keys (e.g. Control, Shift and Alt).
-         * @returns a new #GstEvent
-         */
-        function navigation_event_new_mouse_double_click(
             button: number,
             x: number,
             y: number,
@@ -3346,23 +3302,6 @@ declare module 'gi://GstVideo?version=1.0' {
         function video_crop_meta_api_get_type(): GObject.GType;
         function video_crop_meta_get_info(): Gst.MetaInfo;
         /**
-         * Converting the video format into dma drm fourcc/modifier pair.
-         * If no matching fourcc found, then DRM_FORMAT_INVALID is returned
-         * and `modifier` will be set to DRM_FORMAT_MOD_INVALID.
-         * @param format a #GstVideoFormat
-         * @param modifier return location for the modifier
-         * @returns the DRM_FORMAT_* corresponding to @format.
-         */
-        function video_dma_drm_format_from_gst_format(format: VideoFormat | null, modifier?: number | null): number;
-        /**
-         * Converting a dma drm fourcc and modifier pair into a #GstVideoFormat. If
-         * no matching video format is found, then GST_VIDEO_FORMAT_UNKNOWN is returned.
-         * @param fourcc the dma drm fourcc value.
-         * @param modifier the dma drm modifier.
-         * @returns the GST_VIDEO_FORMAT_* corresponding to the @fourcc and @modifier          pair.
-         */
-        function video_dma_drm_format_to_gst_format(fourcc: number, modifier: number): VideoFormat;
-        /**
          * Converting the video format into dma drm fourcc. If no
          * matching fourcc found, then DRM_FORMAT_INVALID is returned.
          * @param format a #GstVideoFormat
@@ -3558,10 +3497,8 @@ declare module 'gi://GstVideo?version=1.0' {
          */
         function video_format_to_fourcc(format: VideoFormat | null): number;
         /**
-         * Returns a string containing a descriptive name for the #GstVideoFormat.
-         *
-         * Since 1.26 this can also be used with %GST_VIDEO_FORMAT_UNKNOWN, previous
-         * versions were printing a critical warning and returned %NULL.
+         * Returns a string containing a descriptive name for
+         * the #GstVideoFormat if there is one, or NULL otherwise.
          * @param format a #GstVideoFormat video format
          * @returns the name corresponding to @format
          */
@@ -4196,7 +4133,7 @@ declare module 'gi://GstVideo?version=1.0' {
              */
             V_COSITED,
             /**
-             * chroma samples are sited on alternate lines
+             * choma samples are sited on alternate lines
              */
             ALT_LINE,
             /**
@@ -6331,25 +6268,11 @@ declare module 'gi://GstVideo?version=1.0' {
              */
             allocate_output_frame(frame: VideoCodecFrame, size: number): Gst.FlowReturn;
             /**
-             * Removes `frame` from the list of pending frames, releases it
-             * and posts a QoS message with the frame's details on the bus.
-             * Similar to calling gst_video_encoder_finish_frame() without a buffer
-             * attached to `frame,` but this function additionally stores events
-             * from `frame` as pending, to be pushed out alongside the next frame
-             * submitted via gst_video_encoder_finish_frame().
-             * @param frame a #GstVideoCodecFrame
-             */
-            drop_frame(frame: VideoCodecFrame): void;
-            /**
              * `frame` must have a valid encoded data buffer, whose metadata fields
              * are then appropriately set according to frame data or no buffer at
              * all if the frame should be dropped.
              * It is subsequently pushed downstream or provided to `pre_push`.
              * In any case, the frame is considered finished and released.
-             *
-             * If `frame` does not have a buffer attached, it will be dropped, and
-             * a QoS message will be posted on the bus. Events from `frame` will be
-             * pushed out immediately.
              *
              * After calling this function the output buffer of the frame is to be
              * considered read-only. This function will also change the metadata
@@ -6458,14 +6381,6 @@ declare module 'gi://GstVideo?version=1.0' {
              * @returns a #GstCaps owned by caller
              */
             proxy_getcaps(caps?: Gst.Caps | null, filter?: Gst.Caps | null): Gst.Caps;
-            /**
-             * Removes `frame` from list of pending frames and releases it, similar
-             * to calling gst_video_encoder_finish_frame() without a buffer attached
-             * to the frame, but does not post a QoS message or do any additional
-             * processing. Events from `frame` are moved to the pending events list.
-             * @param frame a #GstVideoCodecFrame
-             */
-            release_frame(frame: VideoCodecFrame): void;
             /**
              * Set the codec headers to be sent downstream whenever requested.
              * @param headers a list of #GstBuffer containing the codec header
@@ -8495,12 +8410,8 @@ declare module 'gi://GstVideo?version=1.0' {
          * - padding-bottom (uint): extra pixels on the bottom
          * - padding-left (uint): extra pixels on the left side
          * - padding-right (uint): extra pixels on the right side
-         * - stride-align0 (uint): stride align requirements for plane 0
-         * - stride-align1 (uint): stride align requirements for plane 1
-         * - stride-align2 (uint): stride align requirements for plane 2
-         * - stride-align3 (uint): stride align requirements for plane 3
-         * The padding and stride-align fields have the same semantic as #GstVideoMeta.alignment
-         * and so represent the paddings and stride-align requested on produced video buffers.
+         * The padding fields have the same semantic as #GstVideoMeta.alignment
+         * and so represent the paddings requested on produced video buffers.
          *
          * Since 1.24 it can be serialized using gst_meta_serialize() and
          * gst_meta_deserialize().
@@ -9660,19 +9571,6 @@ declare module 'gi://GstVideo?version=1.0' {
                 state: NavigationModifierType,
             ): Gst.Event;
             /**
-             * Create a new navigation event for the given key mouse double click.
-             * @param button The number of the pressed mouse button.
-             * @param x The x coordinate of the mouse cursor.
-             * @param y The y coordinate of the mouse cursor.
-             * @param state a bit-mask representing the state of the modifier keys (e.g. Control, Shift and Alt).
-             */
-            event_new_mouse_double_click(
-                button: number,
-                x: number,
-                y: number,
-                state: NavigationModifierType,
-            ): Gst.Event;
-            /**
              * Create a new navigation event for the new mouse location.
              * @param x The x coordinate of the mouse cursor.
              * @param y The y coordinate of the mouse cursor.
@@ -9929,7 +9827,7 @@ declare module 'gi://GstVideo?version=1.0' {
              * are sent relative to the display space of the related output area. This is
              * usually the size in pixels of the window associated with the element
              * implementing the #GstNavigation interface.
-             * @param event The type of mouse event, as a text string. Recognised values are "mouse-button-press", "mouse-button-release", "mouse-move" and "mouse-double-click".
+             * @param event The type of mouse event, as a text string. Recognised values are "mouse-button-press", "mouse-button-release" and "mouse-move".
              * @param button The button number of the button being pressed or released. Pass 0 for mouse-move events.
              * @param x The x coordinate of the mouse event.
              * @param y The y coordinate of the mouse event.

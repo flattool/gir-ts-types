@@ -417,17 +417,13 @@ declare module 'gi://GIRepository?version=3.0' {
 
         enum FieldInfoFlags {
             /**
-             * no flags set (since: 2.86)
-             */
-            INFO_FLAGS_NONE,
-            /**
              * field is readable.
              */
-            IS_READABLE,
+            READABLE,
             /**
              * field is writable.
              */
-            IS_WRITABLE,
+            WRITABLE,
         }
         /**
          * Flags for a [class`GIRepository`.FunctionInfo] struct.
@@ -441,10 +437,6 @@ declare module 'gi://GIRepository?version=3.0' {
         }
 
         enum FunctionInfoFlags {
-            /**
-             * no flags set (since: 2.86)
-             */
-            INFO_FLAGS_NONE,
             /**
              * is a method.
              */
@@ -501,21 +493,17 @@ declare module 'gi://GIRepository?version=3.0' {
 
         enum VFuncInfoFlags {
             /**
-             * no flags set (since: 2.86)
-             */
-            INFO_FLAGS_NONE,
-            /**
              * chains up to the parent type
              */
-            MUST_CHAIN_UP,
+            CHAIN_UP,
             /**
              * overrides
              */
-            MUST_OVERRIDE,
+            OVERRIDE,
             /**
              * does not override
              */
-            MUST_NOT_OVERRIDE,
+            NOT_OVERRIDE,
         }
         namespace ArgInfo {
             // Signal signatures
@@ -2041,16 +2029,6 @@ declare module 'gi://GIRepository?version=3.0' {
              * @param output_filename Output filename (for example `output.xml`)
              */
             static dump(input_filename: string, output_filename: string): boolean;
-            /**
-             * Gets the singleton process-global default `GIRepository`.
-             *
-             * The singleton is needed for situations where you must coordinate between
-             * bindings and libraries which also need to interact with introspection which
-             * could affect the bindings. For example, a Python application using a
-             * GObject-based library through `GIRepository` to load plugins also written in
-             * Python.
-             */
-            static dup_default(): Repository;
             static error_quark(): GLib.Quark;
             /**
              * Obtain the option group for girepository.

@@ -338,14 +338,6 @@ declare module 'gi://GstAudio?version=1.0' {
              * Surround right (between rear right and side right)
              */
             SURROUND_RIGHT,
-            /**
-             * Top surround left (between rear left and side left).
-             */
-            TOP_SURROUND_LEFT,
-            /**
-             * Top surround right (between rear right and side right).
-             */
-            TOP_SURROUND_RIGHT,
         }
         /**
          * Set of available dithering methods.
@@ -1017,10 +1009,6 @@ declare module 'gi://GstAudio?version=1.0' {
          */
         const AUDIO_FORMATS_ALL: string;
         /**
-         * Number of audio formats in #GstAudioFormat.
-         */
-        const AUDIO_FORMAT_LAST: number;
-        /**
          * Maximum range of allowed sample rates, for use in template caps strings.
          */
         const AUDIO_RATE_RANGE: string;
@@ -1317,14 +1305,6 @@ declare module 'gi://GstAudio?version=1.0' {
          * @returns The #GstAudioFormatInfo for @format.
          */
         function audio_format_get_info(format: AudioFormat | null): AudioFormatInfo;
-        /**
-         * Returns a string containing a descriptive name for the #GstAudioFormat.
-         *
-         * Since 1.26 this can also be used with %GST_AUDIO_FORMAT_UNKNOWN, previous
-         * versions were printing a critical warning and returned %NULL.
-         * @param format a #GstAudioFormat audio format
-         * @returns the name corresponding to @format
-         */
         function audio_format_to_string(format: AudioFormat | null): string;
         /**
          * Return all the raw audio formats supported by GStreamer.
@@ -1409,12 +1389,6 @@ declare module 'gi://GstAudio?version=1.0' {
          * positions `to`. `from` and `to` must contain the same number of
          * positions and the same positions, only in a different order.
          *
-         * This function internally calls gst_audio_get_channel_reorder_map() and
-         * gst_audio_reorder_channels_with_reorder_map(). It is more efficient to call
-         * gst_audio_get_channel_reorder_map() once to retrieve the reorder map and
-         * then call gst_audio_reorder_channels_with_reorder_map() with the same
-         * reorder map until the channel positions change.
-         *
          * Note: this function assumes the audio data is in interleaved layout
          * @param data The pointer to   the memory.
          * @param format The %GstAudioFormat of the buffer.
@@ -1428,22 +1402,6 @@ declare module 'gi://GstAudio?version=1.0' {
             from: AudioChannelPosition[] | null,
             to: AudioChannelPosition[] | null,
         ): boolean;
-        /**
-         * Reorders `data` with the given `reorder_map`.
-         *
-         * The reorder map can be retrieved for example with
-         * gst_audio_get_channel_reorder_map().
-         *
-         * Note: this function assumes the audio data is in interleaved layout
-         * @param data The pointer to   the memory.
-         * @param bps The number of bytes per sample.
-         * @param reorder_map The channel reorder map.
-         */
-        function audio_reorder_channels_with_reorder_map(
-            data: Uint8Array | string,
-            bps: number,
-            reorder_map: number[],
-        ): void;
         /**
          * Make a new resampler.
          * @param method a #GstAudioResamplerMethod
@@ -5408,20 +5366,6 @@ declare module 'gi://GstAudio?version=1.0' {
              */
             device_is_open(): boolean;
             /**
-             * Gets the current segment base number of the ringbuffer.
-             *
-             * MT safe.
-             * @returns Current segment base number of the ringbuffer.
-             */
-            get_segbase(): number;
-            /**
-             * Gets the current segment number of the ringbuffer.
-             *
-             * MT safe.
-             * @returns Current segment number of the ringbuffer.
-             */
-            get_segdone(): number;
-            /**
              * Check if the ringbuffer is acquired and ready to use.
              * @returns TRUE if the ringbuffer is acquired, FALSE on error. MT safe.
              */
@@ -5532,13 +5476,6 @@ declare module 'gi://GstAudio?version=1.0' {
              * @param sample the sample number to set
              */
             set_sample(sample: number): void;
-            /**
-             * Sets the current segment number of the ringbuffer.
-             *
-             * MT safe.
-             * @param segdone the segment number to set
-             */
-            set_segdone(segdone: number): void;
             set_timestamp(readseg: number, timestamp: Gst.ClockTime): void;
             /**
              * Start processing samples from the ringbuffer.
@@ -6606,14 +6543,6 @@ declare module 'gi://GstAudio?version=1.0' {
         }
 
         type AudioRingBufferClass = typeof AudioRingBuffer;
-        abstract class AudioRingBufferPrivate {
-            static $gtype: GObject.GType<AudioRingBufferPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
-        }
-
         /**
          * The structure containing the format specification of the ringbuffer.
          *

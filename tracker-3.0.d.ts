@@ -2201,7 +2201,10 @@ declare module 'gi://Tracker?version=3.0' {
             // Methods
 
             /**
-             * Adds `prefix` as the recognised abbreviation of `namespace`.
+             * Adds `prefix` as the recognised abbreviaton of `namespace`.
+             *
+             * Only one prefix is allowed for a given namespace, and all prefixes must
+             * be unique.
              *
              * Since 3.3, The `TrackerNamespaceManager` instances obtained through
              * [method`SparqlConnection`.get_namespace_manager] are "sealed",
@@ -3020,7 +3023,7 @@ declare module 'gi://Tracker?version=3.0' {
              *
              * See [ctor`SparqlConnection`.new] for more information.
              * @param flags Connection flags to define the SPARQL connection behavior
-             * @param store The database location as a [iface@Gio.File], or %NULL
+             * @param store The directory that contains the database as a [iface@Gio.File], or %NULL
              * @param ontology The directory that contains the database schemas as a [iface@Gio.File], or %NULL
              * @param cancellable Optional [type@Gio.Cancellable]
              * @param callback User-defined [type@Gio.AsyncReadyCallback] to be called when            the asynchronous operation is finished.
@@ -3199,7 +3202,10 @@ declare module 'gi://Tracker?version=3.0' {
              * @param cancellable Optional [type@Gio.Cancellable]
              * @returns A prepared statement
              */
-            load_statement_from_gresource(resource_path: string, cancellable?: Gio.Cancellable | null): SparqlStatement;
+            load_statement_from_gresource(
+                resource_path: string,
+                cancellable?: Gio.Cancellable | null,
+            ): SparqlStatement | null;
             /**
              * Maps a `TrackerSparqlConnection` onto another through a `private:`handle_name`` URI.
              *
@@ -3313,7 +3319,7 @@ declare module 'gi://Tracker?version=3.0' {
              * @param cancellable Optional [type@Gio.Cancellable]
              * @returns A prepared statement
              */
-            query_statement(sparql: string, cancellable?: Gio.Cancellable | null): SparqlStatement;
+            query_statement(sparql: string, cancellable?: Gio.Cancellable | null): SparqlStatement | null;
             /**
              * Serializes a `DESCRIBE` or `CONSTRUCT` query into the specified RDF format.
              *
@@ -3700,7 +3706,7 @@ declare module 'gi://Tracker?version=3.0' {
              * @param cancellable Optional [type@Gio.Cancellable]
              * @returns A prepared statement
              */
-            update_statement(sparql: string, cancellable?: Gio.Cancellable | null): SparqlStatement;
+            update_statement(sparql: string, cancellable?: Gio.Cancellable | null): SparqlStatement | null;
         }
 
         namespace SparqlCursor {

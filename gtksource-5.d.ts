@@ -45,29 +45,6 @@ declare module 'gi://GtkSource?version=5' {
          * GtkSource-5
          */
 
-        export namespace AnnotationStyle {
-            export const $gtype: GObject.GType<AnnotationStyle>;
-        }
-
-        enum AnnotationStyle {
-            /**
-             * same color as drawn spaces
-             */
-            NONE,
-            /**
-             * same as the diff:changed-line foreground color
-             */
-            WARNING,
-            /**
-             * same as the diff:removed-line foreground color
-             */
-            ERROR,
-            /**
-             * same as the diff:added-line foreground color
-             */
-            ACCENT,
-        }
-
         export namespace BackgroundPatternType {
             export const $gtype: GObject.GType<BackgroundPatternType>;
         }
@@ -543,9 +520,9 @@ declare module 'gi://GtkSource?version=5' {
              */
             REMOVE_DUPLICATES,
             /**
-             * improved sorting for filenames.
-             *
-             * see [func`GLib`.utf8_collate_key_for_filename]
+             * improved sorting for filenames
+             *      (see [func`GLib`.utf8_collate_key_for_filename])
+             *      Since: 5.16
              */
             FILENAME,
         }
@@ -628,320 +605,6 @@ declare module 'gi://GtkSource?version=5' {
              */
             ALL,
         }
-        namespace Annotation {
-            // Signal signatures
-            interface SignalSignatures extends GObject.Object.SignalSignatures {
-                'notify::description': (pspec: GObject.ParamSpec) => void;
-                'notify::icon': (pspec: GObject.ParamSpec) => void;
-                'notify::line': (pspec: GObject.ParamSpec) => void;
-                'notify::style': (pspec: GObject.ParamSpec) => void;
-            }
-
-            // Constructor properties interface
-
-            interface ConstructorProps extends GObject.Object.ConstructorProps {
-                description: string;
-                icon: Gio.Icon;
-                line: number;
-                style: AnnotationStyle;
-            }
-        }
-
-        /**
-         * Represents an annotation added to [class`View]`, it has a [property`Annotation:`line] property,
-         * [property`Annotation:`description], icon and a style.
-         *
-         * It will be displayed always at the end of a line.
-         *
-         * If the style is GTK_SOURCE_ANNOTATION_STYLE_NONE it will use the same color as [class`SpaceDrawer]`.
-         */
-        class Annotation extends GObject.Object {
-            static $gtype: GObject.GType<Annotation>;
-
-            // Properties
-
-            /**
-             * The text description displayed at [property`Annotation:`line]
-             */
-            get description(): string;
-            /**
-             * The icon displayed at [property`Annotation:`line]
-             *
-             * It will be displayed before the text description
-             */
-            get icon(): Gio.Icon;
-            /**
-             * The line where to display the annotation
-             */
-            get line(): number;
-            /**
-             * The style of the annotation
-             */
-            get style(): AnnotationStyle;
-
-            /**
-             * Compile-time signal type information.
-             *
-             * This instance property is generated only for TypeScript type checking.
-             * It is not defined at runtime and should not be accessed in JS code.
-             * @internal
-             */
-            $signals: Annotation.SignalSignatures;
-
-            // Constructors
-
-            constructor(properties?: Partial<Annotation.ConstructorProps>, ...args: any[]);
-
-            _init(...args: any[]): void;
-
-            static ['new'](
-                description: string | null,
-                icon: Gio.Icon | null,
-                line: number,
-                style: AnnotationStyle,
-            ): Annotation;
-
-            // Signals
-
-            connect<K extends keyof Annotation.SignalSignatures>(
-                signal: K,
-                callback: GObject.SignalCallback<this, Annotation.SignalSignatures[K]>,
-            ): number;
-            connect(signal: string, callback: (...args: any[]) => any): number;
-            connect_after<K extends keyof Annotation.SignalSignatures>(
-                signal: K,
-                callback: GObject.SignalCallback<this, Annotation.SignalSignatures[K]>,
-            ): number;
-            connect_after(signal: string, callback: (...args: any[]) => any): number;
-            emit<K extends keyof Annotation.SignalSignatures>(
-                signal: K,
-                ...args: GObject.GjsParameters<Annotation.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never
-            ): void;
-            emit(signal: string, ...args: any[]): void;
-
-            // Methods
-
-            get_description(): string;
-            get_icon(): Gio.Icon | null;
-            get_line(): number;
-            get_style(): AnnotationStyle;
-        }
-
-        namespace AnnotationProvider {
-            // Signal signatures
-            interface SignalSignatures extends GObject.Object.SignalSignatures {
-                changed: () => void;
-            }
-
-            // Constructor properties interface
-
-            interface ConstructorProps extends GObject.Object.ConstructorProps {}
-        }
-
-        /**
-         * It is used to provide annotations and display them on [class`View]` and also populate
-         * [class`HoverDisplay]` when the user hovers over an annotation.
-         *
-         * You can subclass this object and implement [method`AnnotationProvider`.populate_hover_async] and
-         * [method`AnnotationProvider`.populate_hover_finish] or connect to [signal`AnnotationProvider:`:populate]
-         * and call [method`AnnotationProvider`.populate] or do it asynchronously.
-         */
-        class AnnotationProvider extends GObject.Object {
-            static $gtype: GObject.GType<AnnotationProvider>;
-
-            /**
-             * Compile-time signal type information.
-             *
-             * This instance property is generated only for TypeScript type checking.
-             * It is not defined at runtime and should not be accessed in JS code.
-             * @internal
-             */
-            $signals: AnnotationProvider.SignalSignatures;
-
-            // Constructors
-
-            constructor(properties?: Partial<AnnotationProvider.ConstructorProps>, ...args: any[]);
-
-            _init(...args: any[]): void;
-
-            static ['new'](): AnnotationProvider;
-
-            // Signals
-
-            connect<K extends keyof AnnotationProvider.SignalSignatures>(
-                signal: K,
-                callback: GObject.SignalCallback<this, AnnotationProvider.SignalSignatures[K]>,
-            ): number;
-            connect(signal: string, callback: (...args: any[]) => any): number;
-            connect_after<K extends keyof AnnotationProvider.SignalSignatures>(
-                signal: K,
-                callback: GObject.SignalCallback<this, AnnotationProvider.SignalSignatures[K]>,
-            ): number;
-            connect_after(signal: string, callback: (...args: any[]) => any): number;
-            emit<K extends keyof AnnotationProvider.SignalSignatures>(
-                signal: K,
-                ...args: GObject.GjsParameters<AnnotationProvider.SignalSignatures[K]> extends [any, ...infer Q]
-                    ? Q
-                    : never
-            ): void;
-            emit(signal: string, ...args: any[]): void;
-
-            // Virtual methods
-
-            /**
-             * Used to populate the [class`HoverDisplay]` asynchronously, use
-             * [method`AnnotationProvider`.populate_hover] to do it synchronously.
-             * @param annotation a #GtkSourceAnnotation
-             * @param display a #GtkSourceHoverDisplay to populate
-             * @param cancellable
-             * @param callback
-             */
-            vfunc_populate_hover_async(
-                annotation: Annotation,
-                display: HoverDisplay,
-                cancellable?: Gio.Cancellable | null,
-                callback?: Gio.AsyncReadyCallback<this> | null,
-            ): void;
-            /**
-             * Finishes populating the [class`HoverDisplay]` asynchronously.
-             * @param result
-             */
-            vfunc_populate_hover_finish(result: Gio.AsyncResult): boolean;
-
-            // Methods
-
-            /**
-             * Add an annotation to the provider.
-             * @param annotation
-             */
-            add_annotation(annotation: Annotation): void;
-            /**
-             * Used to populate the [class`HoverDisplay]` asynchronously, use
-             * [method`AnnotationProvider`.populate_hover] to do it synchronously.
-             * @param annotation a #GtkSourceAnnotation
-             * @param display a #GtkSourceHoverDisplay to populate
-             * @param cancellable
-             */
-            populate_hover_async(
-                annotation: Annotation,
-                display: HoverDisplay,
-                cancellable?: Gio.Cancellable | null,
-            ): globalThis.Promise<boolean>;
-            /**
-             * Used to populate the [class`HoverDisplay]` asynchronously, use
-             * [method`AnnotationProvider`.populate_hover] to do it synchronously.
-             * @param annotation a #GtkSourceAnnotation
-             * @param display a #GtkSourceHoverDisplay to populate
-             * @param cancellable
-             * @param callback
-             */
-            populate_hover_async(
-                annotation: Annotation,
-                display: HoverDisplay,
-                cancellable: Gio.Cancellable | null,
-                callback: Gio.AsyncReadyCallback<this> | null,
-            ): void;
-            /**
-             * Used to populate the [class`HoverDisplay]` asynchronously, use
-             * [method`AnnotationProvider`.populate_hover] to do it synchronously.
-             * @param annotation a #GtkSourceAnnotation
-             * @param display a #GtkSourceHoverDisplay to populate
-             * @param cancellable
-             * @param callback
-             */
-            populate_hover_async(
-                annotation: Annotation,
-                display: HoverDisplay,
-                cancellable?: Gio.Cancellable | null,
-                callback?: Gio.AsyncReadyCallback<this> | null,
-            ): globalThis.Promise<boolean> | void;
-            /**
-             * Finishes populating the [class`HoverDisplay]` asynchronously.
-             * @param result
-             * @returns %TRUE if successful; otherwise %FALSE and @error is set.
-             */
-            populate_hover_finish(result: Gio.AsyncResult): boolean;
-            /**
-             * Removes all annotations from the provider.
-             */
-            remove_all(): void;
-            /**
-             * Remove an annotation from the provider.
-             * @param annotation
-             * @returns %TRUE if the annotation was found and removed
-             */
-            remove_annotation(annotation: Annotation): boolean;
-        }
-
-        namespace Annotations {
-            // Signal signatures
-            interface SignalSignatures extends GObject.Object.SignalSignatures {
-                changed: () => void;
-            }
-
-            // Constructor properties interface
-
-            interface ConstructorProps extends GObject.Object.ConstructorProps {}
-        }
-
-        /**
-         * Use this object to manage [class`Annotation]`s. Each [class`View]` has a single annotation
-         * manager and it is guaranteed to be the same for the lifetime of [class`View]`.
-         *
-         * Add [class`AnnotationProvider]`s with [method`Annotations`.add_provider] to
-         * display all the annotations added to each [class`AnnotationProvider]`.
-         */
-        class Annotations extends GObject.Object {
-            static $gtype: GObject.GType<Annotations>;
-
-            /**
-             * Compile-time signal type information.
-             *
-             * This instance property is generated only for TypeScript type checking.
-             * It is not defined at runtime and should not be accessed in JS code.
-             * @internal
-             */
-            $signals: Annotations.SignalSignatures;
-
-            // Constructors
-
-            constructor(properties?: Partial<Annotations.ConstructorProps>, ...args: any[]);
-
-            _init(...args: any[]): void;
-
-            // Signals
-
-            connect<K extends keyof Annotations.SignalSignatures>(
-                signal: K,
-                callback: GObject.SignalCallback<this, Annotations.SignalSignatures[K]>,
-            ): number;
-            connect(signal: string, callback: (...args: any[]) => any): number;
-            connect_after<K extends keyof Annotations.SignalSignatures>(
-                signal: K,
-                callback: GObject.SignalCallback<this, Annotations.SignalSignatures[K]>,
-            ): number;
-            connect_after(signal: string, callback: (...args: any[]) => any): number;
-            emit<K extends keyof Annotations.SignalSignatures>(
-                signal: K,
-                ...args: GObject.GjsParameters<Annotations.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never
-            ): void;
-            emit(signal: string, ...args: any[]): void;
-
-            // Methods
-
-            /**
-             * Adds a new annotation provider.
-             * @param provider a #GtkSourceAnnotationProvider.
-             */
-            add_provider(provider: AnnotationProvider): void;
-            /**
-             * Removes a provider.
-             * @param provider a #GtkSourceAnnotationProvider.
-             * @returns %TRUE if the provider was found and removed
-             */
-            remove_provider(provider: AnnotationProvider): boolean;
-        }
-
         namespace Buffer {
             // Signal signatures
             interface SignalSignatures extends Gtk.TextBuffer.SignalSignatures {
@@ -1253,19 +916,6 @@ declare module 'gi://GtkSource?version=5' {
              */
             get_language(): Language | null;
             get_loading(): boolean;
-            /**
-             * Returns the text in the specified range converting any text formatting
-             * to equivalent Pango markup tags.
-             * This allows the styled text to be displayed in other widgets that support
-             * Pango markup, such as #GtkLabel.
-             *
-             * For very long ranges this function can take long enough that you could
-             * potentially miss frame renderings.
-             * @param start start of range as a #GtkTextIter
-             * @param end end of range as a #GtkTextIter
-             * @returns a newly-allocated string containing the text   with Pango markup, or %NULL if @start and @end are invalid.
-             */
-            get_markup(start: Gtk.TextIter, end: Gtk.TextIter): string;
             /**
              * Returns the list of marks of the given category at `iter`.
              *
@@ -10110,7 +9760,6 @@ declare module 'gi://GtkSource?version=5' {
             interface SignalSignatures extends View.SignalSignatures {
                 'notify::font-desc': (pspec: GObject.ParamSpec) => void;
                 'notify::view': (pspec: GObject.ParamSpec) => void;
-                'notify::annotations': (pspec: GObject.ParamSpec) => void;
                 'notify::auto-indent': (pspec: GObject.ParamSpec) => void;
                 'notify::background-pattern': (pspec: GObject.ParamSpec) => void;
                 'notify::completion': (pspec: GObject.ParamSpec) => void;
@@ -21619,7 +21268,6 @@ declare module 'gi://GtkSource?version=5' {
                 'push-snippet': (arg0: Snippet, arg1: Gtk.TextIter) => void;
                 'show-completion': () => void;
                 'smart-home-end': (arg0: Gtk.TextIter, arg1: number) => void;
-                'notify::annotations': (pspec: GObject.ParamSpec) => void;
                 'notify::auto-indent': (pspec: GObject.ParamSpec) => void;
                 'notify::background-pattern': (pspec: GObject.ParamSpec) => void;
                 'notify::completion': (pspec: GObject.ParamSpec) => void;
@@ -21708,7 +21356,6 @@ declare module 'gi://GtkSource?version=5' {
                     Gtk.Buildable.ConstructorProps,
                     Gtk.ConstraintTarget.ConstructorProps,
                     Gtk.Scrollable.ConstructorProps {
-                annotations: Annotations;
                 auto_indent: boolean;
                 autoIndent: boolean;
                 background_pattern: BackgroundPatternType;
@@ -21816,10 +21463,6 @@ declare module 'gi://GtkSource?version=5' {
 
             // Properties
 
-            /**
-             * The [class`Annotations]` object associated with the view.
-             */
-            get annotations(): Annotations;
             get auto_indent(): boolean;
             set auto_indent(val: boolean);
             get autoIndent(): boolean;
@@ -21949,11 +21592,11 @@ declare module 'gi://GtkSource?version=5' {
             get smartHomeEnd(): SmartHomeEndType;
             set smartHomeEnd(val: SmartHomeEndType);
             /**
-             * The [class`SpaceDrawer]` object associated with the view.
+             * The [class`SpaceDrawer]` object associated with the view.4
              */
             get space_drawer(): SpaceDrawer;
             /**
-             * The [class`SpaceDrawer]` object associated with the view.
+             * The [class`SpaceDrawer]` object associated with the view.4
              */
             get spaceDrawer(): SpaceDrawer;
             /**
@@ -22028,14 +21671,6 @@ declare module 'gi://GtkSource?version=5' {
 
             // Methods
 
-            /**
-             * Gets the [class`Annotations]` associated with `view`.
-             *
-             * The returned object is guaranteed to be the same for the lifetime of `view`.
-             * Each [class`View]` object has a different [class`Annotations]`.
-             * @returns the #GtkSourceAnnotations associated with @view.
-             */
-            get_annotations(): Annotations;
             /**
              * Returns whether auto-indentation of text is enabled.
              * @returns %TRUE if auto indentation is enabled.
@@ -23147,9 +22782,6 @@ declare module 'gi://GtkSource?version=5' {
             get_command_text(): string;
         }
 
-        type AnnotationClass = typeof Annotation;
-        type AnnotationProviderClass = typeof AnnotationProvider;
-        type AnnotationsClass = typeof Annotations;
         type BufferClass = typeof Buffer;
         type CompletionCellClass = typeof CompletionCell;
         type CompletionClass = typeof Completion;

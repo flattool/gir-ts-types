@@ -1054,7 +1054,7 @@ declare module 'gi://GstNet?version=1.0' {
 
             _init(...args: any[]): void;
 
-            static ['new'](name: string | null, domain: number): PtpClock;
+            static ['new'](name: string, domain: number): PtpClock;
 
             // Signals
 
