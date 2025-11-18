@@ -59,8 +59,15 @@ jobs:
 
       - name: "Sync generated types to repo root"
         run: |
-          cd "$GITHUB_WORKSPACE"
-          rsync -rc --include="*.ts" --exclude="*" --delete --delete-excluded ~/types/@types/ .
+          # Remove ALL existing .ts files anywhere in the repo
+          #   except node_modules or hidden directories
+          cd $GITHUB_WORKSPACE
+          find . -maxdepth 1 -type f -name "*.ts" -delete
+
+          # Copy new types from ~/types/@types into the repo root
+          cp -r ~/types/@types/* .
+
+          ls -al
 
       - name: "Commit changes"
         run: |
