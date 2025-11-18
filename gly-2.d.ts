@@ -240,7 +240,7 @@ declare module 'gi://Gly?version=2' {
 
         enum MemoryFormatSelection {
             /**
-             * 8-bit RGRA premultiplied
+             * 8-bit BGRA premultiplied
              */
             B8G8R8A8_PREMULTIPLIED,
             /**
@@ -252,11 +252,11 @@ declare module 'gi://Gly?version=2' {
              */
             R8G8B8A8_PREMULTIPLIED,
             /**
-             * 8-bit RGBA
+             * 8-bit BGRA
              */
             B8G8R8A8,
             /**
-             * 8-bit AGBR
+             * 8-bit ARGB
              */
             A8R8G8B8,
             /**
@@ -965,14 +965,15 @@ declare module 'gi://Gly?version=2' {
          * loader = gly_loader_new (file);
          * image = gly_loader_load (loader, NULL);
          * if (image)
-         * {
-         *   frame = gly_image_next_frame (image, NULL);
-         *   if (frame) {
-         *     texture = gly_gtk_frame_get_texture (frame);
-         *     printf ("Image height: %d\n", gdk_texture_get_height (texture));
-         *     image_widget = gtk_image_new_from_paintable (GDK_PAINTABLE (texture));
+         *   {
+         *     frame = gly_image_next_frame (image, NULL);
+         *     if (frame)
+         *       {
+         *         texture = gly_gtk_frame_get_texture (frame);
+         *         g_print ("Image height: %d\n", gdk_texture_get_height (texture));
+         *         image_widget = gtk_image_new_from_paintable (GDK_PAINTABLE (texture));
+         *       }
          *   }
-         * }
          * ```
          */
         class Loader extends GObject.Object {

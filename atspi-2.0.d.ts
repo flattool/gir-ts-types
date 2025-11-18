@@ -1967,9 +1967,33 @@ declare module 'gi://Atspi?version=2.0' {
             PARAGRAPH,
         }
         /**
+         * The version of the Application D-Bus interface.
+         */
+        const ACCESSIBLE_VERSION: number;
+        /**
+         * The version of the Action D-Bus interface.
+         */
+        const ACTION_VERSION: number;
+        /**
+         * The version of the Application D-Bus interface.
+         */
+        const APPLICATION_VERSION: number;
+        /**
+         * The version of the Cache D-Bus interface.
+         */
+        const CACHE_VERSION: number;
+        /**
+         * The version of the Collection D-Bus interface.
+         */
+        const COLLECTION_VERSION: number;
+        /**
          * One higher than the highest valid value of #AtspiComponentLayer.
          */
         const COMPONENTLAYER_COUNT: number;
+        /**
+         * The version of the Component D-Bus interface.
+         */
+        const COMPONENT_VERSION: number;
         /**
          * One higher than the highest valid value of #AtspiCoordType.
          */
@@ -2010,9 +2034,41 @@ declare module 'gi://Atspi?version=2.0' {
         const DEVICE_A11Y_MANAGER_VIRTUAL_MOD_END: number;
         const DEVICE_A11Y_MANAGER_VIRTUAL_MOD_START: number;
         /**
+         * The version of the DeviceEventController D-Bus interface.
+         */
+        const DEVICE_EVENT_CONTROLLER_VERSION: number;
+        /**
+         * The version of the DeviceEventListener D-Bus interface.
+         */
+        const DEVICE_EVENT_LISTENER_VERSION: number;
+        /**
+         * The version of the Document D-Bus interface.
+         */
+        const DOCUMENT_VERSION: number;
+        /**
+         * The version of the EditableText D-Bus interface.
+         */
+        const EDITABLE_TEXT_VERSION: number;
+        /**
          * One higher than the highest valid value of #AtspiEventType.
          */
         const EVENTTYPE_COUNT: number;
+        /**
+         * The version of the Event D-Bus interface.
+         */
+        const EVENT_VERSION: number;
+        /**
+         * The version of the Hyperlink D-Bus interface.
+         */
+        const HYPERLINK_VERSION: number;
+        /**
+         * The version of the Hypertext D-Bus interface.
+         */
+        const HYPERTEXT_VERSION: number;
+        /**
+         * The version of the Image D-Bus interface.
+         */
+        const IMAGE_VERSION: number;
         /**
          * One higher than the highest valid value of #AtspiKeyEventType.
          */
@@ -2032,6 +2088,10 @@ declare module 'gi://Atspi?version=2.0' {
          */
         const MODIFIERTYPE_COUNT: number;
         /**
+         * The version of the Registry D-Bus interface.
+         */
+        const REGISTRY_VERSION: number;
+        /**
          * One higher than the highest valid value of #AtspiRelationType.
          */
         const RELATIONTYPE_COUNT: number;
@@ -2044,6 +2104,14 @@ declare module 'gi://Atspi?version=2.0' {
          */
         const SCROLLTYPE_COUNT: number;
         /**
+         * The version of the Selection D-Bus interface.
+         */
+        const SELECTION_VERSION: number;
+        /**
+         * The version of the Socket D-Bus interface.
+         */
+        const SOCKET_VERSION: number;
+        /**
          * One higher than the highest valid value of #AtspiCollectionSortOrder.
          */
         const SORTORDER_COUNT: number;
@@ -2051,6 +2119,14 @@ declare module 'gi://Atspi?version=2.0' {
          * One higher than the highest valid value of #AtspiStateType.
          */
         const STATETYPE_COUNT: number;
+        /**
+         * The version of the TableCell D-Bus interface.
+         */
+        const TABLE_CELL_VERSION: number;
+        /**
+         * The version of the Table D-Bus interface.
+         */
+        const TABLE_VERSION: number;
         /**
          * One higher than the highest valid value of #AtspiTextBoundaryType.
          */
@@ -2060,10 +2136,18 @@ declare module 'gi://Atspi?version=2.0' {
          */
         const TEXT_CLIP_TYPE_COUNT: number;
         /**
+         * The version of the Text D-Bus interface.
+         */
+        const TEXT_VERSION: number;
+        /**
          * One higher than the highest valid value of
          * #AtspiCollection_TreeTraversalType.
          */
         const TREETRAVERSALTYPE_COUNT: number;
+        /**
+         * The version of the Value D-Bus interface.
+         */
+        const VALUE_VERSION: number;
         /**
          * Removes a device event listener from the registry's listener queue,
          *            ceasing notification of events of the specified type.

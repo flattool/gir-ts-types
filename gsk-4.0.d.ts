@@ -907,6 +907,18 @@ declare module 'gi://Gsk?version=4.0' {
         interface PathIntersectionFunc {
             (path1: Path, point1: PathPoint, path2: Path, point2: PathPoint, kind: PathIntersection): boolean;
         }
+        interface RenderReplayFontFilter {
+            (replay: RenderReplay, font: Pango.Font): Pango.Font;
+        }
+        interface RenderReplayNodeFilter {
+            (replay: RenderReplay, node: RenderNode): RenderNode | null;
+        }
+        interface RenderReplayNodeForeach {
+            (replay: RenderReplay, node: RenderNode): boolean;
+        }
+        interface RenderReplayTextureFilter {
+            (replay: RenderReplay, texture: Gdk.Texture): Gdk.Texture;
+        }
         /**
          * Flags that can be passed to gsk_path_foreach() to influence what
          * kinds of operations the path is decomposed into.
@@ -1434,6 +1446,10 @@ declare module 'gi://Gsk?version=4.0' {
             interface SignalSignatures extends RenderNode.SignalSignatures {}
         }
 
+        /**
+         * A render node for applying a `GskComponentTransfer` for each color
+         * component of the child node.
+         */
         class ComponentTransferNode extends RenderNode {
             static $gtype: GObject.GType<ComponentTransferNode>;
 
@@ -3757,6 +3773,15 @@ declare module 'gi://Gsk?version=4.0' {
             // Methods
 
             /**
+             * Returns whether two paths have identical structure.
+             *
+             * Note that it is possible to construct paths that render
+             * identical even though they don't have the same structure.
+             * @param path2 another path
+             * @returns true if @path1 and @path2 have identical structure
+             */
+            equal(path2: Path): boolean;
+            /**
              * Calls `func` for every operation of the path.
              *
              * Note that this may only approximate `self,` because paths can contain
@@ -4321,9 +4346,10 @@ declare module 'gi://Gsk?version=4.0' {
             /**
              * Creates a new path from the given builder.
              *
-             * The given `GskPathBuilder` is reset once this function returns;
-             * you cannot call this function multiple times on the same builder
-             * instance.
+             * The given `GskPathBuilder` is reset to the initial state once this
+             * function returns. Calling this function again on the same builder
+             * instance will therefore produce an empty path, not a copy of the same
+             * path.
              *
              * This function is intended primarily for language bindings.
              * C code should use [method`Gsk`.PathBuilder.free_to_path].
@@ -4520,6 +4546,195 @@ declare module 'gi://Gsk?version=4.0' {
              * @param direction the direction for which to return the tangent
              */
             get_tangent(path: Path, direction: PathDirection | null): Graphene.Vec2;
+        }
+
+        /**
+         * A facility to replay a [class`Gsk`.RenderNode] and its children, potentially
+         * modifying them.
+         *
+         * This is a utility tool to walk a rendernode tree. The most powerful way
+         * is to provide a function via [method`Gsk`.RenderReplay.set_node_filter]
+         * to filter each individual node and then run
+         * [method`Gsk`.RenderReplay.filter_node] on the nodes you want to filter.
+         *
+         * An easier method exists to just walk the node tree and extract information
+         * without any modifications. If you want to do that, the functions
+         * [method`Gsk`.RenderReplay.set_node_foreach] exists. You can also call
+         * [method`Gsk`.RenderReplay.foreach_node] to run that function. Note that
+         * the previously mentioned complex functionality will still be invoked if you
+         * have set up a function for it, but its result will not be returned.
+         *
+         * Here is an example that combines both approaches to print the whole tree:
+         *
+         * ```c
+         * #include <gtk/gtk.h>
+         *
+         * static GskRenderNode *
+         * print_nodes (GskRenderReplay *replay,
+         *              GskRenderNode   *node,
+         *              gpointer         user_data)
+         * {
+         *   int *depth = user_data;
+         *   GskRenderNode *result;
+         *
+         *   g_print ("%*s%s\n", 2 * *depth, "", g_type_name_from_instance ((GTypeInstance *) node));
+         *
+         *   *depth += 1;
+         *   result = gsk_render_replay_default (replay, node);
+         *   *depth -= 1;
+         *
+         *   return result;
+         * }
+         *
+         * int
+         * main (int argc, char *argv[])
+         * {
+         *   GFile *file;
+         *   GBytes *bytes;
+         *   GskRenderNode *node;
+         *   GskRenderReplay *replay;
+         *   int depth = 0;
+         *
+         *   gtk_init ();
+         *
+         *   if (argc < 2)
+         *     {
+         *       g_print ("usage: %s NODEFILE\n", argv[0]);
+         *       return 0;
+         *     }
+         *
+         *   file = g_file_new_for_commandline_arg (argv[1]);
+         *   bytes = g_file_load_bytes (file, NULL, NULL, NULL);
+         *   g_object_unref (file);
+         *   if (bytes == NULL)
+         *     return 1;
+         *
+         *   node = gsk_render_node_deserialize (bytes, NULL, NULL);
+         *   g_bytes_unref (bytes);
+         *   if (node == NULL)
+         *     return 1;
+         *
+         *   replay = gsk_render_replay_new ();
+         *   gsk_render_replay_set_node_filter (replay, print_nodes, &depth, NULL);
+         *   gsk_render_node_foreach_node (replay, node);
+         *   gsk_render_node_unref (node);
+         *
+         *   return 0;
+         * }
+         * ```
+         */
+        abstract class RenderReplay {
+            static $gtype: GObject.GType<RenderReplay>;
+
+            // Constructors
+
+            _init(...args: any[]): void;
+
+            // Methods
+
+            /**
+             * Replays the node using the default method.
+             *
+             * The default method calls [method`Gsk`.RenderReplay.filter_node]
+             * on all its child nodes and the filter functions for all its
+             * proeprties. If none of them are changed, it returns the passed
+             * in node. Otherwise it constructs a new node with the changed
+             * children and properties.
+             *
+             * It may not be possible to construct a new node when any of the
+             * callbacks return NULL. In that case, this function will return
+             * NULL, too.
+             * @param node the node to replay
+             * @returns The replayed node
+             */
+            ['default'](node: RenderNode): RenderNode | null;
+            /**
+             * Filters a font using the current filter function.
+             * @param font The font to filter
+             * @returns the filtered font
+             */
+            filter_font(font: Pango.Font): Pango.Font;
+            /**
+             * Replays a node using the replay's filter function.
+             *
+             * After the replay the node may be unchanged, or it may be
+             * removed, which will result in %NULL being returned.
+             *
+             * This function calls the registered callback in the following order:
+             *
+             * 1. If a foreach function is set, it is called first. If it returns
+             *    false, this function immediately exits and returns the passed
+             *    in node.
+             *
+             * 2. If a node filter is set, it is called and its result is returned.
+             *
+             * 3. [method`Gsk`.RenderReplay.default] is called and its result is
+             *    returned.
+             * @param node the node to replay
+             * @returns The replayed node
+             */
+            filter_node(node: RenderNode): RenderNode | null;
+            /**
+             * Filters a texture using the current filter function.
+             * @param texture The texture to filter
+             * @returns the filtered texture
+             */
+            filter_texture(texture: Gdk.Texture): Gdk.Texture;
+            /**
+             * Calls the filter and foreach functions for each node.
+             *
+             * This function calls [method`Gsk`.RenderReplay.filter_node] internally,
+             * but discards the result assuming no changes were made.
+             * @param node the node to replay
+             */
+            foreach_node(node: RenderNode): void;
+            /**
+             * Frees a `GskRenderReplay`.
+             */
+            free(): void;
+            /**
+             * Sets a filter function to be called by [method`Gsk`.RenderReplay.default]
+             * for nodes that contain fonts.
+             *
+             * You can call [method`GskRenderReplay`.filter_font] to filter
+             * a font yourself.
+             * @param filter the font filter function
+             */
+            set_font_filter(filter?: RenderReplayFontFilter | null): void;
+            /**
+             * Sets the function to use as a node filter.
+             *
+             * This is the most complex function to use for replaying nodes.
+             * It can either:
+             *
+             * * keep the node and just return it unchanged
+             *
+             * * create a replacement node and return that
+             *
+             * * discard the node by returning %NULL
+             *
+             * * call [method`Gsk`.RenderReplay.default] to have the default handler
+             *   run for this node, which calls your function on its children
+             * @param filter The function to call to replay nodes
+             */
+            set_node_filter(filter: RenderReplayNodeFilter): void;
+            /**
+             * Sets the function to call for every node.
+             *
+             * This function is called before the node filter, so if it returns
+             * FALSE, the node filter will never be called.
+             * @param foreach
+             */
+            set_node_foreach(foreach: RenderReplayNodeForeach): void;
+            /**
+             * Sets a filter function to be called by [method`Gsk`.RenderReplay.default]
+             * for nodes that contain textures.
+             *
+             * You can call [method`GskRenderReplay`.filter_texture] to filter
+             * a texture yourself.
+             * @param filter the texture filter function
+             */
+            set_texture_filter(filter?: RenderReplayTextureFilter | null): void;
         }
 
         type RendererClass = typeof Renderer;
@@ -5135,7 +5350,7 @@ declare module 'gi://Gsk?version=4.0' {
              *     gsk_transform_skew (
              *         gsk_transform_scale (
              *             gsk_transform_rotate (
-             *                 gsk_transform_translate (NULL, &GRAPHENE_POINT_T (dx, dy)),
+             *                 gsk_transform_translate (NULL, &GRAPHENE_POINT_INIT (dx, dy)),
              *                 angle),
              *             scale_x, scale_y),
              *         skew_x, skew_y)

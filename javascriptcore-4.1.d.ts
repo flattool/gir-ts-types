@@ -593,7 +593,7 @@ declare module 'gi://JavaScriptCore?version=4.1' {
                 parameter_types?: GObject.GType[] | null,
             ): void;
             /**
-             * Add a property with `name` to `jsc_class`. When the property value needs to be getted, `getter` is called
+             * Add a property with `name` to `jsc_class`. When the property value is read, `getter` is called
              * receiving the the class instance as first parameter and `user_data` as last parameter. When the property
              * value needs to be set, `setter` is called receiving the the class instance as first parameter, followed
              * by the value to be set and then `user_data` as the last parameter. When the property is cleared in the
@@ -809,7 +809,7 @@ declare module 'gi://JavaScriptCore?version=4.1' {
              * jsc_context_throw_exception() in `handler` like the default one does.
              * The last exception handler pushed is the only one used by the #JSCContext, use
              * jsc_context_pop_exception_handler() to remove it and set the previous one. When `handler`
-             * is removed from the context, `destroy_notify` i called with `user_data` as parameter.
+             * is removed from the context, `destroy_notify` is called with `user_data` as parameter.
              * @param handler a #JSCExceptionHandler
              * @param destroy_notify destroy notifier for @user_data
              */
@@ -1194,7 +1194,7 @@ declare module 'gi://JavaScriptCore?version=4.1' {
             new_typed_array_with_buffer(type: TypedArrayType | null, offset: number, length: number): Value;
             /**
              * Define or modify a property with `property_name` in object referenced by `value`. When the
-             * property value needs to be getted or set, `getter` and `setter` callbacks will be called.
+             * property value is read or set, `getter` and `setter` callbacks will be called.
              * When the property is cleared in the #JSCClass context, `destroy_notify` is called with
              * `user_data` as parameter. This is equivalent to JavaScript <function>Object.defineProperty()</function>
              * when used with an accessor descriptor.

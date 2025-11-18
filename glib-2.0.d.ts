@@ -3141,6 +3141,10 @@ declare module 'gi://GLib?version=2.0' {
              * Virama (VI). Since: 2.80
              */
             VIRAMA,
+            /**
+             * Unambiguous Hyphen (HH). Since: 2.88
+             */
+            UNAMBIGUOUS_HYPHEN,
         }
         /**
          * The #GUnicodeScript enumeration identifies different writing
@@ -3861,6 +3865,22 @@ declare module 'gi://GLib?version=2.0' {
              * Ol Onal. Since: 2.84
              */
             OL_ONAL,
+            /**
+             * Sidetic. Since: 2.88
+             */
+            SIDETIC,
+            /**
+             * Tolong Siki. Since: 2.88
+             */
+            TOLONG_SIKI,
+            /**
+             * Tai Yo. Since: 2.88
+             */
+            TAI_YO,
+            /**
+             * Beria Erfe. Since: 2.88
+             */
+            BERIA_ERFE,
         }
         /**
          * These are the possible character classifications from the
@@ -12964,6 +12984,12 @@ declare module 'gi://GLib?version=2.0' {
             _function: UnixFDSourceFunc,
         ): number;
         /**
+         * Queries the file path for the given FD opened by the current process.
+         * @param fd The file descriptor to query.
+         * @returns The file path, or `NULL` on error
+         */
+        function unix_fd_query_path(fd: number): string;
+        /**
          * Creates a #GSource to watch for a particular I/O condition on a file
          * descriptor.
          *
@@ -14437,11 +14463,7 @@ declare module 'gi://GLib?version=2.0' {
              * set if the hook is currently being run
              */
             IN_CALL,
-            /**
-             * A mask covering all bits reserved for
-             *   hook flags; see %G_HOOK_FLAG_USER_SHIFT
-             */
-            MASK,
+            RESERVED1,
         }
         /**
          * A bitwise combination representing a condition to watch for on an
@@ -14960,30 +14982,7 @@ declare module 'gi://GLib?version=2.0' {
              *     is '\n'.
              */
             NEWLINE_LF,
-            /**
-             * Usually any newline character or character sequence is
-             *     recognized. If this option is set, the only recognized newline character
-             *     sequence is '\r\n'.
-             */
-            NEWLINE_CRLF,
-            /**
-             * Usually any newline character or character sequence
-             *     is recognized. If this option is set, the only recognized newline character
-             *     sequences are '\r', '\n', and '\r\n'. Since: 2.34
-             */
-            NEWLINE_ANYCRLF,
-            /**
-             * Usually any newline character or character sequence
-             *     is recognised. If this option is set, then "\R" only recognizes the newline
-             *    characters '\r', '\n' and '\r\n'. Since: 2.34
-             */
-            BSR_ANYCRLF,
-            /**
-             * Changes behaviour so that it is compatible with
-             *     JavaScript rather than PCRE. Since GLib 2.74 this is no longer supported,
-             *     as libpcre2 does not support it. Since: 2.34 Deprecated: 2.74
-             */
-            JAVASCRIPT_COMPAT,
+            NEWLINE_RESERVED1,
         }
         /**
          * Flags specifying match-time options.
@@ -16598,6 +16597,8 @@ declare module 'gi://GLib?version=2.0' {
 
             static ['new'](data?: Uint8Array | null): Bytes;
 
+            static new_from_bytes(bytes: Bytes | Uint8Array, offset: number, length: number): Bytes;
+
             static new_take(data?: Uint8Array | null): Bytes;
 
             // Methods
@@ -16684,24 +16685,6 @@ declare module 'gi://GLib?version=2.0' {
              * @returns a hash value corresponding to the key.
              */
             hash(): number;
-            /**
-             * Creates a [struct`GLib`.Bytes] which is a subsection of another `GBytes`.
-             *
-             * The `offset` + `length` may not be longer than the size of `bytes`.
-             *
-             * A reference to `bytes` will be held by the newly created `GBytes` until
-             * the byte data is no longer needed.
-             *
-             * Since 2.56, if `offset` is 0 and `length` matches the size of `bytes,` then
-             * `bytes` will be returned with the reference count incremented by 1. If `bytes`
-             * is a slice of another `GBytes`, then the resulting `GBytes` will reference
-             * the same `GBytes` instead of `bytes`. This allows consumers to simplify the
-             * usage of `GBytes` when asynchronously writing to streams.
-             * @param offset offset which subsection starts at
-             * @param length length of subsection
-             * @returns a new [struct@GLib.Bytes]
-             */
-            new_from_bytes(offset: number, length: number): Bytes;
             /**
              * Increase the reference count on `bytes`.
              * @returns the [struct@GLib.Bytes]
@@ -20624,6 +20607,16 @@ declare module 'gi://GLib?version=2.0' {
              * @returns the element stack, which must not be modified
              */
             get_element_stack(): string[];
+            /**
+             * Retrieves the current offset from the beginning of the document,
+             * in bytes.
+             *
+             * The information is meant to accompany the values returned by
+             * [method`GLib`.MarkupParseContext.get_position], and comes with the
+             * same accuracy guarantees.
+             * @returns the offset
+             */
+            get_offset(): number;
             /**
              * Retrieves the current line number and the number of the character on
              * that line. Intended for use in error messages; there are no strict
@@ -25047,10 +25040,14 @@ declare module 'gi://GLib?version=2.0' {
              * replacement will be inserted no more than once per possible position
              * (beginning of string, end of string and between characters). This did
              * not work correctly in earlier versions.
+             *
+             * If `limit` is zero and more than `G_MAXUINT` instances of `find` are in
+             * the input string, they will all be replaced, but the return value will
+             * be capped at `G_MAXUINT`.
              * @param find the string to find in @string
              * @param replace the string to insert in place of @find
              * @param limit the maximum instances of @find to replace with @replace, or `0` for no limit
-             * @returns the number of find and replace operations performed.
+             * @returns the number of find and replace operations performed,   up to `G_MAXUINT`
              */
             replace(find: string, replace: string, limit: number): number;
             /**

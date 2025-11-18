@@ -1769,9 +1769,14 @@ declare module 'gi://Secret?version=1' {
             /**
              * Gets D-Bus introspection information for the D-Bus interface
              * implemented by `interface_`.
+             *
+             * This can return %NULL if no #GDBusInterfaceInfo was provided during
+             * construction of `interface_` and is also not made available otherwise.
+             * For example, #GDBusProxy implements #GDBusInterface but allows for a %NULL
+             * #GDBusInterfaceInfo.
              * @returns A #GDBusInterfaceInfo. Do not free.
              */
-            get_info(): Gio.DBusInterfaceInfo;
+            get_info(): Gio.DBusInterfaceInfo | null;
             /**
              * Sets the #GDBusObject for `interface_` to `object`.
              *
@@ -1786,8 +1791,13 @@ declare module 'gi://Secret?version=1' {
             /**
              * Gets D-Bus introspection information for the D-Bus interface
              * implemented by `interface_`.
+             *
+             * This can return %NULL if no #GDBusInterfaceInfo was provided during
+             * construction of `interface_` and is also not made available otherwise.
+             * For example, #GDBusProxy implements #GDBusInterface but allows for a %NULL
+             * #GDBusInterfaceInfo.
              */
-            vfunc_get_info(): Gio.DBusInterfaceInfo;
+            vfunc_get_info(): Gio.DBusInterfaceInfo | null;
             /**
              * Sets the #GDBusObject for `interface_` to `object`.
              *
@@ -3165,9 +3175,14 @@ declare module 'gi://Secret?version=1' {
             /**
              * Gets D-Bus introspection information for the D-Bus interface
              * implemented by `interface_`.
+             *
+             * This can return %NULL if no #GDBusInterfaceInfo was provided during
+             * construction of `interface_` and is also not made available otherwise.
+             * For example, #GDBusProxy implements #GDBusInterface but allows for a %NULL
+             * #GDBusInterfaceInfo.
              * @returns A #GDBusInterfaceInfo. Do not free.
              */
-            get_info(): Gio.DBusInterfaceInfo;
+            get_info(): Gio.DBusInterfaceInfo | null;
             /**
              * Sets the #GDBusObject for `interface_` to `object`.
              *
@@ -3182,8 +3197,13 @@ declare module 'gi://Secret?version=1' {
             /**
              * Gets D-Bus introspection information for the D-Bus interface
              * implemented by `interface_`.
+             *
+             * This can return %NULL if no #GDBusInterfaceInfo was provided during
+             * construction of `interface_` and is also not made available otherwise.
+             * For example, #GDBusProxy implements #GDBusInterface but allows for a %NULL
+             * #GDBusInterfaceInfo.
              */
-            vfunc_get_info(): Gio.DBusInterfaceInfo;
+            vfunc_get_info(): Gio.DBusInterfaceInfo | null;
             /**
              * Sets the #GDBusObject for `interface_` to `object`.
              *
@@ -4206,9 +4226,14 @@ declare module 'gi://Secret?version=1' {
             /**
              * Gets D-Bus introspection information for the D-Bus interface
              * implemented by `interface_`.
+             *
+             * This can return %NULL if no #GDBusInterfaceInfo was provided during
+             * construction of `interface_` and is also not made available otherwise.
+             * For example, #GDBusProxy implements #GDBusInterface but allows for a %NULL
+             * #GDBusInterfaceInfo.
              * @returns A #GDBusInterfaceInfo. Do not free.
              */
-            get_info(): Gio.DBusInterfaceInfo;
+            get_info(): Gio.DBusInterfaceInfo | null;
             /**
              * Sets the #GDBusObject for `interface_` to `object`.
              *
@@ -4223,8 +4248,13 @@ declare module 'gi://Secret?version=1' {
             /**
              * Gets D-Bus introspection information for the D-Bus interface
              * implemented by `interface_`.
+             *
+             * This can return %NULL if no #GDBusInterfaceInfo was provided during
+             * construction of `interface_` and is also not made available otherwise.
+             * For example, #GDBusProxy implements #GDBusInterface but allows for a %NULL
+             * #GDBusInterfaceInfo.
              */
-            vfunc_get_info(): Gio.DBusInterfaceInfo;
+            vfunc_get_info(): Gio.DBusInterfaceInfo | null;
             /**
              * Sets the #GDBusObject for `interface_` to `object`.
              *
@@ -6313,9 +6343,14 @@ declare module 'gi://Secret?version=1' {
             /**
              * Gets D-Bus introspection information for the D-Bus interface
              * implemented by `interface_`.
+             *
+             * This can return %NULL if no #GDBusInterfaceInfo was provided during
+             * construction of `interface_` and is also not made available otherwise.
+             * For example, #GDBusProxy implements #GDBusInterface but allows for a %NULL
+             * #GDBusInterfaceInfo.
              * @returns A #GDBusInterfaceInfo. Do not free.
              */
-            get_info(): Gio.DBusInterfaceInfo;
+            get_info(): Gio.DBusInterfaceInfo | null;
             /**
              * Sets the #GDBusObject for `interface_` to `object`.
              *
@@ -6330,8 +6365,13 @@ declare module 'gi://Secret?version=1' {
             /**
              * Gets D-Bus introspection information for the D-Bus interface
              * implemented by `interface_`.
+             *
+             * This can return %NULL if no #GDBusInterfaceInfo was provided during
+             * construction of `interface_` and is also not made available otherwise.
+             * For example, #GDBusProxy implements #GDBusInterface but allows for a %NULL
+             * #GDBusInterfaceInfo.
              */
-            vfunc_get_info(): Gio.DBusInterfaceInfo;
+            vfunc_get_info(): Gio.DBusInterfaceInfo | null;
             /**
              * Sets the #GDBusObject for `interface_` to `object`.
              *

@@ -1341,8 +1341,10 @@ declare module 'gi://Atk?version=1.0' {
             STYLE,
             /**
              * The vertical position with respect to the baseline. Values are "baseline", "super", or "sub". Note that a super or sub text attribute refers to position with respect to the baseline of the prior character.
+             * ATK_TEXT_ATTR_MARK: A run of content that is marked or highlighted, such as for reference purposes, or to call it out as having a special purpose that is clear from context. This is similar to ATK_ROLE_MARK, but this is used where it may apply to a partial span of text in an object, rather than to an entire object. Values are "true" or "false".
              */
             TEXT_POSITION,
+            MARK,
             /**
              * not a valid text attribute, used for finding end of enumeration
              */

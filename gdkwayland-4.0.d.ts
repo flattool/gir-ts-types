@@ -1259,6 +1259,7 @@ declare module 'gi://GdkWayland?version=4.0' {
             focus(timestamp: number): void;
             /**
              * The capabilities that are available for this toplevel.
+             * @returns the capabilities of the `GdkToplevel`.
              */
             get_capabilities(): Gdk.ToplevelCapabilities;
             /**

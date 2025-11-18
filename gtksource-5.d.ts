@@ -22480,6 +22480,17 @@ declare module 'gi://GtkSource?version=5' {
              */
             vfunc_get_selection(): [boolean, Gtk.AccessibleTextRange[] | null];
             /**
+             * Sets the caret position.
+             * @param offset the text offset in characters
+             */
+            vfunc_set_caret_position(offset: number): boolean;
+            /**
+             * Sets the caret position.
+             * @param i the selection to set
+             * @param range the range to set the selection to
+             */
+            vfunc_set_selection(i: number, range: Gtk.AccessibleTextRange): boolean;
+            /**
              * Returns the size of a non-scrolling border around the
              * outside of the scrollable.
              *

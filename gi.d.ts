@@ -33,6 +33,7 @@ import './pangocairo-1.0.d.ts';
 import './pango-1.0.d.ts';
 import './notify-0.7.d.ts';
 import './nice-0.1.d.ts';
+import './manette-1.d.ts';
 import './manette-0.2.d.ts';
 import './libproxy-1.0.d.ts';
 import './json-1.0.d.ts';

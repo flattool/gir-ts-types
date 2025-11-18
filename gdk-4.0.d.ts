@@ -5159,13 +5159,13 @@ declare module 'gi://Gdk?version=4.0' {
              *   The [signal`Gdk`.Paintable::invalidate-size] signal will never be
              *   emitted.
              */
-            SIZE,
+            STATIC_SIZE,
             /**
              * The content is immutable.
              *   The [signal`Gdk`.Paintable::invalidate-contents] signal will never be
              *   emitted.
              */
-            CONTENTS,
+            STATIC_CONTENTS,
         }
         /**
          * Flags describing the seat capabilities.
@@ -14764,7 +14764,11 @@ declare module 'gi://Gdk?version=4.0' {
 
             // Static methods
 
-            static get_relative_direction(event: Event): ScrollRelativeDirection;
+            /**
+             * Extracts the scroll direction relative to the physical motion.
+             * @param event a relative scroll direction.
+             */
+            static get_relative_direction(event: ScrollRelativeDirection): ScrollRelativeDirection;
 
             // Methods
 
@@ -17401,6 +17405,7 @@ declare module 'gi://Gdk?version=4.0' {
              * @returns %TRUE if the parsing succeeded
              */
             parse(spec: string): boolean;
+            print(string: GLib.String): GLib.String;
             /**
              * Returns a textual specification of `rgba` in the form
              * `rgb(r,g,b)` or `rgba(r,g,b,a)`, where “r”, “g”, “b” and
@@ -18361,6 +18366,7 @@ declare module 'gi://Gdk?version=4.0' {
             focus(timestamp: number): void;
             /**
              * The capabilities that are available for this toplevel.
+             * @returns the capabilities of the `GdkToplevel`.
              */
             get_capabilities(): ToplevelCapabilities;
             /**

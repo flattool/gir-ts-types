@@ -421,6 +421,17 @@ declare module 'gi://Tracker?version=3.0' {
              *   SPARQL 1.1 syntax. Namely, they cannot be used as URIs. This flag is available since Tracker 3.3.
              */
             ANONYMOUS_BNODES,
+            /**
+             * Disables no longer recommended [legacy syntax extensions to the SPARQL 1.1
+             * specifications](sparql-and-tracker.md#legacy-syntax-extensions).
+             */
+            DISABLE_SYNTAX_EXTENSIONS,
+            /**
+             * Enables all behavior that provides most adherence to SPARQL 1.1 standards.
+             * Currently this is equivalent to `ANONYMOUS_BNODES | DISABLE_SYNTAX_EXTENSIONS`.
+             * More flags may be added in the future.
+             */
+            SPARQL_STRICT,
         }
         namespace Batch {
             // Signal signatures
@@ -2975,6 +2986,17 @@ declare module 'gi://Tracker?version=3.0' {
 
             static new_finish(result: Gio.AsyncResult): SparqlConnection;
 
+            static new_from_rdf(
+                flags: SparqlConnectionFlags,
+                store: Gio.File | null,
+                deserialize_flags: DeserializeFlags,
+                rdf_format: RdfFormat,
+                rdf_stream: Gio.InputStream,
+                cancellable?: Gio.Cancellable | null,
+            ): SparqlConnection;
+
+            static new_from_rdf_finish(result: Gio.AsyncResult): SparqlConnection;
+
             static remote_new(uri_base: string): SparqlConnection;
 
             // Signals
@@ -3029,6 +3051,25 @@ declare module 'gi://Tracker?version=3.0' {
                 flags: SparqlConnectionFlags,
                 store?: Gio.File | null,
                 ontology?: Gio.File | null,
+                cancellable?: Gio.Cancellable | null,
+                callback?: Gio.AsyncReadyCallback<SparqlConnection> | null,
+            ): void;
+            /**
+             * Asynchronous version of [ctor`SparqlConnection`.new_from_rdf].
+             * @param flags Connection flags to define the SPARQL connection behavior
+             * @param store The database location as a [iface@Gio.File], or %NULL
+             * @param deserialize_flags Deserialization flags
+             * @param rdf_format RDF format of the @rdf_stream argument
+             * @param rdf_stream RDF Schema definition of the database format
+             * @param cancellable Optional [type@Gio.Cancellable]
+             * @param callback User-defined [type@Gio.AsyncReadyCallback] to be called when            the asynchronous operation is finished.
+             */
+            static new_from_rdf_async(
+                flags: SparqlConnectionFlags,
+                store: Gio.File | null,
+                deserialize_flags: DeserializeFlags,
+                rdf_format: RdfFormat,
+                rdf_stream: Gio.InputStream,
                 cancellable?: Gio.Cancellable | null,
                 callback?: Gio.AsyncReadyCallback<SparqlConnection> | null,
             ): void;

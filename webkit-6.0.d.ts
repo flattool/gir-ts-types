@@ -1334,6 +1334,64 @@ declare module 'gi://WebKit?version=6.0' {
             AUTHOR,
         }
         /**
+         * Enum values used to denote errors happening when parsing a #WebKitWebExtension
+         */
+        class WebExtensionError extends GLib.Error {
+            static $gtype: GObject.GType<WebExtensionError>;
+
+            // Static fields
+
+            /**
+             * An unknown error occured.
+             */
+            static UNKNOWN: number;
+            /**
+             * A specified resource was not found on disk.
+             */
+            static RESOURCE_NOT_FOUND: number;
+            /**
+             * A resource failed the bundle's code signature checks.
+             */
+            static INVALID_RESOURCE_CODE_SIGNATURE: number;
+            /**
+             * An invalid `manifest.json` was encountered.
+             */
+            static INVALID_MANIFEST: number;
+            /**
+             * The manifest version is not supported.
+             */
+            static UNSUPPORTED_MANIFEST_VERSION: number;
+            /**
+             * An invalid manifest entry was encountered.
+             */
+            static INVALID_MANIFEST_ENTRY: number;
+            /**
+             * An invalid declarative net request entry was encountered.
+             */
+            static INVALID_DECLARATIVE_NET_REQUEST_ENTRY: number;
+            /**
+             * The extension specified background persistence that was not compatible with the platform or features requested.
+             */
+            static INVALID_BACKGROUND_PERSISTENCE: number;
+            /**
+             * The archive file is invalid or corrupt.
+             */
+            static INVALID_ARCHIVE: number;
+
+            // Constructors
+
+            constructor(options: { message: string; code: number });
+            _init(...args: any[]): void;
+
+            // Static methods
+
+            /**
+             * Gets the quark for the domain of Web Extension errors.
+             */
+            static quark(): GLib.Quark;
+        }
+
+        /**
          * Enum values used to denote errors happening when creating a #WebKitWebExtensionMatchPattern
          */
         class WebExtensionMatchPatternError extends GLib.Error {
@@ -1422,6 +1480,35 @@ declare module 'gi://WebKit?version=6.0' {
              * the web process termination was requested by an API call. Since: 2.34
              */
             TERMINATED_BY_API,
+        }
+        /**
+         * Enum values representing the XR session mode.
+         *
+         * See <https://immersive-web.github.io/webxr/#xrsessionmode-enum>
+         */
+
+        /**
+         * Enum values representing the XR session mode.
+         *
+         * See <https://immersive-web.github.io/webxr/#xrsessionmode-enum>
+         */
+        export namespace XRSessionMode {
+            export const $gtype: GObject.GType<XRSessionMode>;
+        }
+
+        enum XRSessionMode {
+            /**
+             * inline session mode.
+             */
+            INLINE,
+            /**
+             * immersive-vr session mode.
+             */
+            IMMERSIVE_VR,
+            /**
+             * immersive-ar session mode.
+             */
+            IMMERSIVE_AR,
         }
         /**
          * The copy clipboard command. Copies the current selection inside
@@ -1638,6 +1725,11 @@ declare module 'gi://WebKit?version=6.0' {
          */
         function user_message_error_quark(): GLib.Quark;
         /**
+         * Gets the quark for the domain of Web Extension errors.
+         * @returns web extension error domain.
+         */
+        function web_extension_error_quark(): GLib.Quark;
+        /**
          * Gets the quark for the domain of Web Extension Match Pattern errors.
          * @returns web extension match pattern error domain.
          */
@@ -1650,6 +1742,14 @@ declare module 'gi://WebKit?version=6.0' {
          * @param urlScheme The custom URL scheme to register
          */
         function web_extension_match_pattern_register_custom_URL_scheme(urlScheme: string): void;
+        /**
+         * Registers a custom URL scheme that can be used in match patterns.
+         *
+         * This method should be used to register any custom URL schemes used by the app for the extension base URLs,
+         * other than `webkit-extension`, or if extensions should have access to other supported URL schemes when using `<all_urls>`.
+         * @param urlScheme The custom URL scheme to register
+         */
+        function web_extension_match_pattern_register_custom_url_scheme(urlScheme: string): void;
         interface URISchemeRequestCallback {
             (request: URISchemeRequest): void;
         }
@@ -1931,6 +2031,53 @@ declare module 'gi://WebKit?version=6.0' {
              * All types.
              */
             ALL,
+        }
+        /**
+         * Enum values representing the XR session features.
+         *
+         * See <https://immersive-web.github.io/webxr/#xrreferencespace-interface>.
+         * And, see <https://immersive-web.github.io/webxr-hand-input/> for hand tracking.
+         */
+
+        /**
+         * Enum values representing the XR session features.
+         *
+         * See <https://immersive-web.github.io/webxr/#xrreferencespace-interface>.
+         * And, see <https://immersive-web.github.io/webxr-hand-input/> for hand tracking.
+         */
+        export namespace XRSessionFeatures {
+            export const $gtype: GObject.GType<XRSessionFeatures>;
+        }
+
+        enum XRSessionFeatures {
+            /**
+             * viewer feature.
+             */
+            VIEWER,
+            /**
+             * local feature.
+             */
+            LOCAL,
+            /**
+             * local-floor feature.
+             */
+            LOCAL_FLOOR,
+            /**
+             * bounded-floor feature.
+             */
+            BOUNDED_FLOOR,
+            /**
+             * unbounded feature.
+             */
+            UNBOUNDED,
+            /**
+             * hand tracking feature.
+             */
+            HAND_TRACKING,
+            /**
+             * hit test feature.
+             */
+            HIT_TEST,
         }
         namespace AuthenticationRequest {
             // Signal signatures
@@ -8885,6 +9032,7 @@ declare module 'gi://WebKit?version=6.0' {
                 'notify::javascript-can-access-clipboard': (pspec: GObject.ParamSpec) => void;
                 'notify::javascript-can-open-windows-automatically': (pspec: GObject.ParamSpec) => void;
                 'notify::load-icons-ignoring-image-load-setting': (pspec: GObject.ParamSpec) => void;
+                'notify::math-font-family': (pspec: GObject.ParamSpec) => void;
                 'notify::media-content-types-requiring-hardware-support': (pspec: GObject.ParamSpec) => void;
                 'notify::media-playback-allows-inline': (pspec: GObject.ParamSpec) => void;
                 'notify::media-playback-requires-user-gesture': (pspec: GObject.ParamSpec) => void;
@@ -8992,6 +9140,8 @@ declare module 'gi://WebKit?version=6.0' {
                 javascriptCanOpenWindowsAutomatically: boolean;
                 load_icons_ignoring_image_load_setting: boolean;
                 loadIconsIgnoringImageLoadSetting: boolean;
+                math_font_family: string;
+                mathFontFamily: string;
                 media_content_types_requiring_hardware_support: string;
                 mediaContentTypesRequiringHardwareSupport: string;
                 media_playback_allows_inline: boolean;
@@ -9703,6 +9853,16 @@ declare module 'gi://WebKit?version=6.0' {
             get loadIconsIgnoringImageLoadSetting(): boolean;
             set loadIconsIgnoringImageLoadSetting(val: boolean);
             /**
+             * The font family used as the default for content using a math font.
+             */
+            get math_font_family(): string;
+            set math_font_family(val: string);
+            /**
+             * The font family used as the default for content using a math font.
+             */
+            get mathFontFamily(): string;
+            set mathFontFamily(val: string);
+            /**
              * List of media content types requiring hardware support, split by semicolons (:).
              * For example: 'video/webm; codecs="vp*":video/mp4; codecs="avc*":video/&ast; codecs="av1*"'.
              */
@@ -10208,6 +10368,11 @@ declare module 'gi://WebKit?version=6.0' {
              */
             get_load_icons_ignoring_image_load_setting(): boolean;
             /**
+             * Gets the #WebKitSettings:math-font-family property.
+             * @returns The default font family used to display content marked with math font. Since 2.52
+             */
+            get_math_font_family(): string | null;
+            /**
              * Gets the #WebKitSettings:media-content-types-requiring-hardware-support property.
              * @returns Media content types requiring hardware support, or %NULL.
              */
@@ -10505,6 +10670,13 @@ declare module 'gi://WebKit?version=6.0' {
              * @param enabled Value to be set
              */
             set_load_icons_ignoring_image_load_setting(enabled: boolean): void;
+            /**
+             * Set the #WebKitSettings:math-font-family property.
+             *
+             * Since 2.52
+             * @param math_font_family the new default math font family
+             */
+            set_math_font_family(math_font_family?: string | null): void;
             /**
              * Set the #WebKitSettings:media-content-types-requiring-hardware-support property.
              * @param content_types list of media content types requiring hardware support split by semicolons (:) or %NULL to use the default value.
@@ -12667,6 +12839,988 @@ declare module 'gi://WebKit?version=6.0' {
             set_web_process_extensions_initialization_user_data(user_data: GLib.Variant): void;
         }
 
+        namespace WebExtension {
+            // Signal signatures
+            interface SignalSignatures extends GObject.Object.SignalSignatures {
+                'notify::default-locale': (pspec: GObject.ParamSpec) => void;
+                'notify::display-action-label': (pspec: GObject.ParamSpec) => void;
+                'notify::display-description': (pspec: GObject.ParamSpec) => void;
+                'notify::display-name': (pspec: GObject.ParamSpec) => void;
+                'notify::display-short-name': (pspec: GObject.ParamSpec) => void;
+                'notify::display-version': (pspec: GObject.ParamSpec) => void;
+                'notify::has-background-content': (pspec: GObject.ParamSpec) => void;
+                'notify::has-commands': (pspec: GObject.ParamSpec) => void;
+                'notify::has-content-modification-rules': (pspec: GObject.ParamSpec) => void;
+                'notify::has-injected-content': (pspec: GObject.ParamSpec) => void;
+                'notify::has-options-page': (pspec: GObject.ParamSpec) => void;
+                'notify::has-override-new-tab-page': (pspec: GObject.ParamSpec) => void;
+                'notify::has-persistent-background-content': (pspec: GObject.ParamSpec) => void;
+                'notify::manifest-version': (pspec: GObject.ParamSpec) => void;
+                'notify::optional-permissions': (pspec: GObject.ParamSpec) => void;
+                'notify::path': (pspec: GObject.ParamSpec) => void;
+                'notify::requested-permissions': (pspec: GObject.ParamSpec) => void;
+                'notify::version': (pspec: GObject.ParamSpec) => void;
+            }
+
+            // Constructor properties interface
+
+            interface ConstructorProps extends GObject.Object.ConstructorProps, Gio.Initable.ConstructorProps {
+                default_locale: string;
+                defaultLocale: string;
+                display_action_label: string;
+                displayActionLabel: string;
+                display_description: string;
+                displayDescription: string;
+                display_name: string;
+                displayName: string;
+                display_short_name: string;
+                displayShortName: string;
+                display_version: string;
+                displayVersion: string;
+                has_background_content: boolean;
+                hasBackgroundContent: boolean;
+                has_commands: boolean;
+                hasCommands: boolean;
+                has_content_modification_rules: boolean;
+                hasContentModificationRules: boolean;
+                has_injected_content: boolean;
+                hasInjectedContent: boolean;
+                has_options_page: boolean;
+                hasOptionsPage: boolean;
+                has_override_new_tab_page: boolean;
+                hasOverrideNewTabPage: boolean;
+                has_persistent_background_content: boolean;
+                hasPersistentBackgroundContent: boolean;
+                manifest_version: string;
+                manifestVersion: string;
+                optional_permissions: string[];
+                optionalPermissions: string[];
+                path: string;
+                requested_permissions: string[];
+                requestedPermissions: string[];
+                version: string;
+            }
+        }
+
+        /**
+         * Represents a [WebExtension](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions).
+         *
+         * A #WebKitWebExtension object encapsulates a web extension’s
+         * resources that are defined by a [`manifest.json` file](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/manifest.json).
+         *
+         * This class handles the reading and parsing of the manifest file
+         * along with the supporting resources like icons and localizations.
+         */
+        class WebExtension extends GObject.Object implements Gio.Initable {
+            static $gtype: GObject.GType<WebExtension>;
+
+            // Properties
+
+            /**
+             * The default locale for the #WebKitWebExtension.
+             * See webkit_web_extension_get_default_locale() for more details.
+             */
+            get default_locale(): string;
+            /**
+             * The default locale for the #WebKitWebExtension.
+             * See webkit_web_extension_get_default_locale() for more details.
+             */
+            get defaultLocale(): string;
+            /**
+             * The localized extension action label of the #WebKitWebExtension.
+             * See webkit_web_extension_get_display_action_label() for more details.
+             */
+            get display_action_label(): string;
+            /**
+             * The localized extension action label of the #WebKitWebExtension.
+             * See webkit_web_extension_get_display_action_label() for more details.
+             */
+            get displayActionLabel(): string;
+            /**
+             * The localized description of the #WebKitWebExtension.
+             * See webkit_web_extension_get_display_description() for more details.
+             */
+            get display_description(): string;
+            /**
+             * The localized description of the #WebKitWebExtension.
+             * See webkit_web_extension_get_display_description() for more details.
+             */
+            get displayDescription(): string;
+            /**
+             * The localized name of the #WebKitWebExtension.
+             * See webkit_web_extension_get_display_name() for more details.
+             */
+            get display_name(): string;
+            /**
+             * The localized name of the #WebKitWebExtension.
+             * See webkit_web_extension_get_display_name() for more details.
+             */
+            get displayName(): string;
+            /**
+             * The localized short name of the #WebKitWebExtension.
+             * See webkit_web_extension_get_display_short_name() for more details.
+             */
+            get display_short_name(): string;
+            /**
+             * The localized short name of the #WebKitWebExtension.
+             * See webkit_web_extension_get_display_short_name() for more details.
+             */
+            get displayShortName(): string;
+            /**
+             * The localized display version of the #WebKitWebExtension.
+             * See webkit_web_extension_get_display_version() for more details.
+             */
+            get display_version(): string;
+            /**
+             * The localized display version of the #WebKitWebExtension.
+             * See webkit_web_extension_get_display_version() for more details.
+             */
+            get displayVersion(): string;
+            /**
+             * Whether the #WebKitWebExtension has background content that can run when needed.
+             * See webkit_web_extension_get_has_background_content() for more details.
+             */
+            get has_background_content(): boolean;
+            /**
+             * Whether the #WebKitWebExtension has background content that can run when needed.
+             * See webkit_web_extension_get_has_background_content() for more details.
+             */
+            get hasBackgroundContent(): boolean;
+            /**
+             * Whether the #WebKitWebExtension includes commands that users can invoke.
+             * See webkit_web_extension_get_has_commands() for more details.
+             */
+            get has_commands(): boolean;
+            /**
+             * Whether the #WebKitWebExtension includes commands that users can invoke.
+             * See webkit_web_extension_get_has_commands() for more details.
+             */
+            get hasCommands(): boolean;
+            /**
+             * Whether the #WebKitWebExtension includes rules used for content modification or blocking.
+             * See webkit_web_extension_get_content_modification_rules() for more details.
+             */
+            get has_content_modification_rules(): boolean;
+            /**
+             * Whether the #WebKitWebExtension includes rules used for content modification or blocking.
+             * See webkit_web_extension_get_content_modification_rules() for more details.
+             */
+            get hasContentModificationRules(): boolean;
+            /**
+             * Whether the #WebKitWebExtension has script or stylesheet content that can be injected into webpages.
+             * See webkit_web_extension_get_has_injected_content() for more details.
+             */
+            get has_injected_content(): boolean;
+            /**
+             * Whether the #WebKitWebExtension has script or stylesheet content that can be injected into webpages.
+             * See webkit_web_extension_get_has_injected_content() for more details.
+             */
+            get hasInjectedContent(): boolean;
+            /**
+             * Whether the #WebKitWebExtension has an options page.
+             * See webkit_web_extension_get_has_options_page() for more details.
+             */
+            get has_options_page(): boolean;
+            /**
+             * Whether the #WebKitWebExtension has an options page.
+             * See webkit_web_extension_get_has_options_page() for more details.
+             */
+            get hasOptionsPage(): boolean;
+            /**
+             * Whether the #WebKitWebExtension provides an alternative to the default new tab page.
+             * See webkit_web_extension_get_has_override_new_tab_page() for more details.
+             */
+            get has_override_new_tab_page(): boolean;
+            /**
+             * Whether the #WebKitWebExtension provides an alternative to the default new tab page.
+             * See webkit_web_extension_get_has_override_new_tab_page() for more details.
+             */
+            get hasOverrideNewTabPage(): boolean;
+            /**
+             * Whether the #WebKitWebExtension has background content that stays in memory as long as the extension is loaded.
+             * See webkit_web_extension_get_has_persistent_background_content() for more details.
+             */
+            get has_persistent_background_content(): boolean;
+            /**
+             * Whether the #WebKitWebExtension has background content that stays in memory as long as the extension is loaded.
+             * See webkit_web_extension_get_has_persistent_background_content() for more details.
+             */
+            get hasPersistentBackgroundContent(): boolean;
+            /**
+             * The parsed manifest version of the #WebKitWebExtension.
+             * See webkit_web_extension_get_manifest_version() for more details.
+             */
+            get manifest_version(): string;
+            /**
+             * The parsed manifest version of the #WebKitWebExtension.
+             * See webkit_web_extension_get_manifest_version() for more details.
+             */
+            get manifestVersion(): string;
+            /**
+             * The set of permissions that the #WebKitWebExtension may need for optional functionality.
+             * See webkit_web_extension_get_optional_permissions() for more details.
+             */
+            get optional_permissions(): string[];
+            /**
+             * The set of permissions that the #WebKitWebExtension may need for optional functionality.
+             * See webkit_web_extension_get_optional_permissions() for more details.
+             */
+            get optionalPermissions(): string[];
+            /**
+             * A string pointing to the folder containing the extension manifest and resources.
+             * See webkit_web_extension_get_path() for more details.
+             */
+            get path(): string;
+            /**
+             * The set of permissions that the #WebKitWebExtension requires for its base functionality.
+             * See webkit_web_extension_get_requested_permissions() for more details.
+             */
+            get requested_permissions(): string[];
+            /**
+             * The set of permissions that the #WebKitWebExtension requires for its base functionality.
+             * See webkit_web_extension_get_requested_permissions() for more details.
+             */
+            get requestedPermissions(): string[];
+            /**
+             * The version of the #WebKitWebExtension.
+             * See webkit_web_extension_get_version() for more details.
+             */
+            get version(): string;
+
+            /**
+             * Compile-time signal type information.
+             *
+             * This instance property is generated only for TypeScript type checking.
+             * It is not defined at runtime and should not be accessed in JS code.
+             * @internal
+             */
+            $signals: WebExtension.SignalSignatures;
+
+            // Constructors
+
+            constructor(properties?: Partial<WebExtension.ConstructorProps>, ...args: any[]);
+
+            _init(...args: any[]): void;
+
+            static ['new'](extension_path: string): WebExtension;
+
+            // Signals
+
+            connect<K extends keyof WebExtension.SignalSignatures>(
+                signal: K,
+                callback: GObject.SignalCallback<this, WebExtension.SignalSignatures[K]>,
+            ): number;
+            connect(signal: string, callback: (...args: any[]) => any): number;
+            connect_after<K extends keyof WebExtension.SignalSignatures>(
+                signal: K,
+                callback: GObject.SignalCallback<this, WebExtension.SignalSignatures[K]>,
+            ): number;
+            connect_after(signal: string, callback: (...args: any[]) => any): number;
+            emit<K extends keyof WebExtension.SignalSignatures>(
+                signal: K,
+                ...args: GObject.GjsParameters<WebExtension.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never
+            ): void;
+            emit(signal: string, ...args: any[]): void;
+
+            // Methods
+
+            /**
+             * Returns the extension's default action icon image for the specified size.
+             * This icon serves as a default and should be used to represent the extension in contexts like action sheets or toolbars prior to
+             * the extension being loaded into an extension context. Once the extension is loaded, use the
+             * ``actionForTab:`` API to get the tab-specific icon.
+             * The returned image will be the best match for the specified size that is available in the extension's action icon set. If no matching icon is available,
+             * the method will fall back to the extension's icon.
+             * @param width The width to use when looking up the icon.
+             * @param height The height to use when looking up the icon.
+             * @returns the icon image, or %NULL if no icon could be loaded.
+             */
+            get_action_icon(width: number, height: number): Gio.Icon | null;
+            /**
+             * Get the set of websites that the extension requires access to for injected content
+             * and for receiving messages from websites.
+             * @returns a    %NULL-terminated array of match patterns matching all requested websites.
+             */
+            get_all_requested_match_patterns(): WebExtensionMatchPattern[];
+            /**
+             * Get the default locale for the extension.
+             * @returns the default locale, or %NULL if there was no default locale specified.
+             */
+            get_default_locale(): string | null;
+            /**
+             * Get the localized display action label for the extension.
+             *
+             * This label serves as a default and should be used to represent the extension in contexts like action sheets or toolbars prior to
+             * the extension being loaded into an extension context.
+             * Once the extension is loaded, use the ``actionForTab:`` API to get the tab-specific label.
+             * @returns the localized display action label, or %NULL if there was no display action label specified.
+             */
+            get_display_action_label(): string | null;
+            /**
+             * Get the localized display description for the extension.
+             * @returns the localized display description, or %NULL if there was no display description specified.
+             */
+            get_display_description(): string | null;
+            /**
+             * Get the localized name for the extension.
+             * @returns the localized name, or %NULL if there was no name specified.
+             */
+            get_display_name(): string | null;
+            /**
+             * Get the localized short name for the extension.
+             * @returns the localized name, or %NULL if there was no short name specified.
+             */
+            get_display_short_name(): string | null;
+            /**
+             * Get the localized display version for the extension.
+             * @returns the localized display version, or %NULL if there was no display version specified.
+             */
+            get_display_version(): string | null;
+            /**
+             * Get whether the extension has background content that can run when needed.
+             * @returns `TRUE` if the extension can run in the background even when no webpages are open.
+             */
+            get_has_background_content(): boolean;
+            /**
+             * Get whether the extension includes commands that users can invoke.
+             *
+             * These commands should be accessible via keyboard shortcuts,
+             * menu items, or other user interface elements provided
+             * by the app. The list of commands can be accessed
+             * via ``commands`` on an extension context, and
+             * invoked via ``performCommand:``.
+             * @returns `TRUE` if the extension contains one or more commands that can be performed by the user.
+             */
+            get_has_commands(): boolean;
+            /**
+             * Get whether the extension includes rules used for
+             * content modification or blocking.
+             * @returns `TRUE` if the extension contains one or more rules for content modification.
+             */
+            get_has_content_modification_rules(): boolean;
+            /**
+             * Get whether the extension has script or stylesheet content
+             * that can be injected into webpages.
+             *
+             * Once the extension is loaded, use the ``hasInjectedContent``
+             * property on an extension context, as the injectable content
+             * can change after the extension is loaded.
+             * @returns `TRUE` if the extension has content that can be injected by matching against the extension's requested match patterns.
+             */
+            get_has_injected_content(): boolean;
+            /**
+             * Get whether the extension has an options page.
+             *
+             * The app should provide access to this page through a
+             * user interface element, which can be accessed via
+             * ``optionsPageURL`` on an extension context.
+             * @returns `TRUE` if the extension includes a dedicated options page where users can customize settings.
+             */
+            get_has_options_page(): boolean;
+            /**
+             * Get whether the extension provides an alternative to
+             * the default new tab page.
+             *
+             * The app should prompt the user for permission to use
+             * the extension's new tab page as the default, which can
+             * be accessed via ``overrideNewTabPageURL``
+             * on an extension context.
+             * @returns `TRUE` if the extension can specify a custom page that can be displayed when a new tab is opened in the app, instead of the default new tab page.
+             */
+            get_has_override_new_tab_page(): boolean;
+            /**
+             * Get whether the extension has background content that stays in memory as long
+             * as the extension is loaded.
+             * @returns `TRUE` if the extension can run in the background.
+             */
+            get_has_persistent_background_content(): boolean;
+            /**
+             * Returns the extension's icon image for the specified size.
+             * This icon should represent the extension in settings or other areas that show the extension.
+             * The returned image will be the best match for the specified size that is available in the extension's
+             * icon set. If no matching icon can be found, the method will return %NULL.
+             * @param width The width to use when looking up the icon.
+             * @param height The height to use when looking up the icon.
+             * @returns the icon image, or %NULL if no icon could be loaded.
+             */
+            get_icon(width: number, height: number): Gio.Icon | null;
+            /**
+             * Get the parsed manifest version, or `0` if there is no
+             * version specified in the manifest.
+             *
+             * A [error`WebKit`.WebExtensionError.UNSUPPORTED_MANIFEST_VERSION] error will be
+             * reported if the manifest version isn't specified.
+             * @returns the parsed manifest version.
+             */
+            get_manifest_version(): number;
+            /**
+             * Get the set of websites that the extension may need access to for optional functionality.
+             * These match patterns can be requested by the extension at a later time.
+             * @returns a    %NULL-terminated array of match patterns matching the optional websites.
+             */
+            get_optional_permission_match_patterns(): WebExtensionMatchPattern[];
+            /**
+             * Get the set of permissions that the extension may need for
+             * optional functionality. These permissions can be requested
+             * by the extension at a later time.
+             * @returns a %NULL-terminated array of strings containing permission names, or %NULL otherwise. This array and its contents are owned by WebKit and should not be modified or freed.
+             */
+            get_optional_permissions(): string[] | null;
+            /**
+             * Get the path pointing to the folder containing the extension manifest and resources
+             * @returns the path of the extension folder
+             */
+            get_path(): string;
+            /**
+             * Get the set of websites that the extension requires access to for its base functionality.
+             * @returns a    %NULL-terminated array of match patterns matching the required websites.
+             */
+            get_requested_permission_match_patterns(): WebExtensionMatchPattern[];
+            /**
+             * Get the set of permissions that the extension requires
+             * for its base functionality.
+             * @returns a %NULL-terminated array of strings containing permission names, or %NULL otherwise. This array and its contents are owned by WebKit and should not be modified or freed.
+             */
+            get_requested_permissions(): string[] | null;
+            /**
+             * Get the version for the extension.
+             * @returns the version, or %NULL if there was no version specified.
+             */
+            get_version(): string | null;
+            /**
+             * Checks if a manifest version is supported by the extension.
+             * @param manifest_version the version number to check
+             * @returns `TRUE` if the extension specified a manifest version that is greater than or equal to @manifest_version.
+             */
+            supports_manifest_version(manifest_version: number): boolean;
+
+            // Inherited methods
+            /**
+             * Initializes the object implementing the interface.
+             *
+             * This method is intended for language bindings. If writing in C,
+             * g_initable_new() should typically be used instead.
+             *
+             * The object must be initialized before any real use after initial
+             * construction, either with this function or g_async_initable_init_async().
+             *
+             * Implementations may also support cancellation. If `cancellable` is not %NULL,
+             * then initialization can be cancelled by triggering the cancellable object
+             * from another thread. If the operation was cancelled, the error
+             * %G_IO_ERROR_CANCELLED will be returned. If `cancellable` is not %NULL and
+             * the object doesn't support cancellable initialization the error
+             * %G_IO_ERROR_NOT_SUPPORTED will be returned.
+             *
+             * If the object is not initialized, or initialization returns with an
+             * error, then all operations on the object except g_object_ref() and
+             * g_object_unref() are considered to be invalid, and have undefined
+             * behaviour. See the [description][iface`Gio`.Initable#description] for more details.
+             *
+             * Callers should not assume that a class which implements #GInitable can be
+             * initialized multiple times, unless the class explicitly documents itself as
+             * supporting this. Generally, a class’ implementation of init() can assume
+             * (and assert) that it will only be called once. Previously, this documentation
+             * recommended all #GInitable implementations should be idempotent; that
+             * recommendation was relaxed in GLib 2.54.
+             *
+             * If a class explicitly supports being initialized multiple times, it is
+             * recommended that the method is idempotent: multiple calls with the same
+             * arguments should return the same results. Only the first call initializes
+             * the object; further calls return the result of the first call.
+             *
+             * One reason why a class might need to support idempotent initialization is if
+             * it is designed to be used via the singleton pattern, with a
+             * #GObjectClass.constructor that sometimes returns an existing instance.
+             * In this pattern, a caller would expect to be able to call g_initable_init()
+             * on the result of g_object_new(), regardless of whether it is in fact a new
+             * instance.
+             * @param cancellable optional #GCancellable object, %NULL to ignore.
+             * @returns %TRUE if successful. If an error has occurred, this function will     return %FALSE and set @error appropriately if present.
+             */
+            init(cancellable?: Gio.Cancellable | null): boolean;
+            /**
+             * Initializes the object implementing the interface.
+             *
+             * This method is intended for language bindings. If writing in C,
+             * g_initable_new() should typically be used instead.
+             *
+             * The object must be initialized before any real use after initial
+             * construction, either with this function or g_async_initable_init_async().
+             *
+             * Implementations may also support cancellation. If `cancellable` is not %NULL,
+             * then initialization can be cancelled by triggering the cancellable object
+             * from another thread. If the operation was cancelled, the error
+             * %G_IO_ERROR_CANCELLED will be returned. If `cancellable` is not %NULL and
+             * the object doesn't support cancellable initialization the error
+             * %G_IO_ERROR_NOT_SUPPORTED will be returned.
+             *
+             * If the object is not initialized, or initialization returns with an
+             * error, then all operations on the object except g_object_ref() and
+             * g_object_unref() are considered to be invalid, and have undefined
+             * behaviour. See the [description][iface`Gio`.Initable#description] for more details.
+             *
+             * Callers should not assume that a class which implements #GInitable can be
+             * initialized multiple times, unless the class explicitly documents itself as
+             * supporting this. Generally, a class’ implementation of init() can assume
+             * (and assert) that it will only be called once. Previously, this documentation
+             * recommended all #GInitable implementations should be idempotent; that
+             * recommendation was relaxed in GLib 2.54.
+             *
+             * If a class explicitly supports being initialized multiple times, it is
+             * recommended that the method is idempotent: multiple calls with the same
+             * arguments should return the same results. Only the first call initializes
+             * the object; further calls return the result of the first call.
+             *
+             * One reason why a class might need to support idempotent initialization is if
+             * it is designed to be used via the singleton pattern, with a
+             * #GObjectClass.constructor that sometimes returns an existing instance.
+             * In this pattern, a caller would expect to be able to call g_initable_init()
+             * on the result of g_object_new(), regardless of whether it is in fact a new
+             * instance.
+             * @param cancellable optional #GCancellable object, %NULL to ignore.
+             */
+            vfunc_init(cancellable?: Gio.Cancellable | null): boolean;
+            /**
+             * Creates a binding between `source_property` on `source` and `target_property`
+             * on `target`.
+             *
+             * Whenever the `source_property` is changed the `target_property` is
+             * updated using the same value. For instance:
+             *
+             *
+             * ```c
+             *   g_object_bind_property (action, "active", widget, "sensitive", 0);
+             * ```
+             *
+             *
+             * Will result in the "sensitive" property of the widget #GObject instance to be
+             * updated with the same value of the "active" property of the action #GObject
+             * instance.
+             *
+             * If `flags` contains %G_BINDING_BIDIRECTIONAL then the binding will be mutual:
+             * if `target_property` on `target` changes then the `source_property` on `source`
+             * will be updated as well.
+             *
+             * The binding will automatically be removed when either the `source` or the
+             * `target` instances are finalized. To remove the binding without affecting the
+             * `source` and the `target` you can just call g_object_unref() on the returned
+             * #GBinding instance.
+             *
+             * Removing the binding by calling g_object_unref() on it must only be done if
+             * the binding, `source` and `target` are only used from a single thread and it
+             * is clear that both `source` and `target` outlive the binding. Especially it
+             * is not safe to rely on this if the binding, `source` or `target` can be
+             * finalized from different threads. Keep another reference to the binding and
+             * use g_binding_unbind() instead to be on the safe side.
+             *
+             * A #GObject can have multiple bindings.
+             * @param source_property the property on @source to bind
+             * @param target the target #GObject
+             * @param target_property the property on @target to bind
+             * @param flags flags to pass to #GBinding
+             * @returns the #GBinding instance representing the     binding between the two #GObject instances. The binding is released     whenever the #GBinding reference count reaches zero.
+             */
+            bind_property(
+                source_property: string,
+                target: GObject.Object,
+                target_property: string,
+                flags: GObject.BindingFlags | null,
+            ): GObject.Binding;
+            /**
+             * Complete version of g_object_bind_property().
+             *
+             * Creates a binding between `source_property` on `source` and `target_property`
+             * on `target,` allowing you to set the transformation functions to be used by
+             * the binding.
+             *
+             * If `flags` contains %G_BINDING_BIDIRECTIONAL then the binding will be mutual:
+             * if `target_property` on `target` changes then the `source_property` on `source`
+             * will be updated as well. The `transform_from` function is only used in case
+             * of bidirectional bindings, otherwise it will be ignored
+             *
+             * The binding will automatically be removed when either the `source` or the
+             * `target` instances are finalized. This will release the reference that is
+             * being held on the #GBinding instance; if you want to hold on to the
+             * #GBinding instance, you will need to hold a reference to it.
+             *
+             * To remove the binding, call g_binding_unbind().
+             *
+             * A #GObject can have multiple bindings.
+             *
+             * The same `user_data` parameter will be used for both `transform_to`
+             * and `transform_from` transformation functions; the `notify` function will
+             * be called once, when the binding is removed. If you need different data
+             * for each transformation function, please use
+             * g_object_bind_property_with_closures() instead.
+             * @param source_property the property on @source to bind
+             * @param target the target #GObject
+             * @param target_property the property on @target to bind
+             * @param flags flags to pass to #GBinding
+             * @param transform_to the transformation function     from the @source to the @target, or %NULL to use the default
+             * @param transform_from the transformation function     from the @target to the @source, or %NULL to use the default
+             * @param notify a function to call when disposing the binding, to free     resources used by the transformation functions, or %NULL if not required
+             * @returns the #GBinding instance representing the     binding between the two #GObject instances. The binding is released     whenever the #GBinding reference count reaches zero.
+             */
+            bind_property_full(
+                source_property: string,
+                target: GObject.Object,
+                target_property: string,
+                flags: GObject.BindingFlags | null,
+                transform_to?: GObject.BindingTransformFunc | null,
+                transform_from?: GObject.BindingTransformFunc | null,
+                notify?: GLib.DestroyNotify | null,
+            ): GObject.Binding;
+            // Conflicted with GObject.Object.bind_property_full
+            bind_property_full(...args: never[]): any;
+            /**
+             * This function is intended for #GObject implementations to re-enforce
+             * a [floating][floating-ref] object reference. Doing this is seldom
+             * required: all #GInitiallyUnowneds are created with a floating reference
+             * which usually just needs to be sunken by calling g_object_ref_sink().
+             */
+            force_floating(): void;
+            /**
+             * Increases the freeze count on `object`. If the freeze count is
+             * non-zero, the emission of "notify" signals on `object` is
+             * stopped. The signals are queued until the freeze count is decreased
+             * to zero. Duplicate notifications are squashed so that at most one
+             * #GObject::notify signal is emitted for each property modified while the
+             * object is frozen.
+             *
+             * This is necessary for accessors that modify multiple properties to prevent
+             * premature notification while the object is still being modified.
+             */
+            freeze_notify(): void;
+            /**
+             * Gets a named field from the objects table of associations (see g_object_set_data()).
+             * @param key name of the key for that association
+             * @returns the data if found,          or %NULL if no such data exists.
+             */
+            get_data(key: string): any | null;
+            /**
+             * Gets a property of an object.
+             *
+             * The value can be:
+             * - an empty GObject.Value initialized by G_VALUE_INIT, which will be automatically initialized with the expected type of the property (since GLib 2.60)
+             * - a GObject.Value initialized with the expected type of the property
+             * - a GObject.Value initialized with a type to which the expected type of the property can be transformed
+             *
+             * In general, a copy is made of the property contents and the caller is responsible for freeing the memory by calling GObject.Value.unset.
+             *
+             * Note that GObject.Object.get_property is really intended for language bindings, GObject.Object.get is much more convenient for C programming.
+             * @param property_name The name of the property to get
+             * @param value Return location for the property value. Can be an empty GObject.Value initialized by G_VALUE_INIT (auto-initialized with expected type since GLib 2.60), a GObject.Value initialized with the expected property type, or a GObject.Value initialized with a transformable type
+             */
+            get_property(property_name: string, value: GObject.Value | any): any;
+            /**
+             * This function gets back user data pointers stored via
+             * g_object_set_qdata().
+             * @param quark A #GQuark, naming the user data pointer
+             * @returns The user data pointer set, or %NULL
+             */
+            get_qdata(quark: GLib.Quark): any | null;
+            /**
+             * Gets `n_properties` properties for an `object`.
+             * Obtained properties will be set to `values`. All properties must be valid.
+             * Warnings will be emitted and undefined behaviour may result if invalid
+             * properties are passed in.
+             * @param names the names of each property to get
+             * @param values the values of each property to get
+             */
+            getv(names: string[], values: (GObject.Value | any)[]): void;
+            /**
+             * Checks whether `object` has a [floating][floating-ref] reference.
+             * @returns %TRUE if @object has a floating reference
+             */
+            is_floating(): boolean;
+            /**
+             * Emits a "notify" signal for the property `property_name` on `object`.
+             *
+             * When possible, eg. when signaling a property change from within the class
+             * that registered the property, you should use g_object_notify_by_pspec()
+             * instead.
+             *
+             * Note that emission of the notify signal may be blocked with
+             * g_object_freeze_notify(). In this case, the signal emissions are queued
+             * and will be emitted (in reverse order) when g_object_thaw_notify() is
+             * called.
+             * @param property_name the name of a property installed on the class of @object.
+             */
+            notify(property_name: string): void;
+            /**
+             * Emits a "notify" signal for the property specified by `pspec` on `object`.
+             *
+             * This function omits the property name lookup, hence it is faster than
+             * g_object_notify().
+             *
+             * One way to avoid using g_object_notify() from within the
+             * class that registered the properties, and using g_object_notify_by_pspec()
+             * instead, is to store the GParamSpec used with
+             * g_object_class_install_property() inside a static array, e.g.:
+             *
+             *
+             * ```c
+             *   typedef enum
+             *   {
+             *     PROP_FOO = 1,
+             *     PROP_LAST
+             *   } MyObjectProperty;
+             *
+             *   static GParamSpec *properties[PROP_LAST];
+             *
+             *   static void
+             *   my_object_class_init (MyObjectClass *klass)
+             *   {
+             *     properties[PROP_FOO] = g_param_spec_int ("foo", NULL, NULL,
+             *                                              0, 100,
+             *                                              50,
+             *                                              G_PARAM_READWRITE | G_PARAM_STATIC_STRINGS);
+             *     g_object_class_install_property (gobject_class,
+             *                                      PROP_FOO,
+             *                                      properties[PROP_FOO]);
+             *   }
+             * ```
+             *
+             *
+             * and then notify a change on the "foo" property with:
+             *
+             *
+             * ```c
+             *   g_object_notify_by_pspec (self, properties[PROP_FOO]);
+             * ```
+             *
+             * @param pspec the #GParamSpec of a property installed on the class of @object.
+             */
+            notify_by_pspec(pspec: GObject.ParamSpec): void;
+            /**
+             * Increases the reference count of `object`.
+             *
+             * Since GLib 2.56, if `GLIB_VERSION_MAX_ALLOWED` is 2.56 or greater, the type
+             * of `object` will be propagated to the return type (using the GCC typeof()
+             * extension), so any casting the caller needs to do on the return type must be
+             * explicit.
+             * @returns the same @object
+             */
+            ref(): GObject.Object;
+            /**
+             * Increase the reference count of `object,` and possibly remove the
+             * [floating][floating-ref] reference, if `object` has a floating reference.
+             *
+             * In other words, if the object is floating, then this call "assumes
+             * ownership" of the floating reference, converting it to a normal
+             * reference by clearing the floating flag while leaving the reference
+             * count unchanged.  If the object is not floating, then this call
+             * adds a new normal reference increasing the reference count by one.
+             *
+             * Since GLib 2.56, the type of `object` will be propagated to the return type
+             * under the same conditions as for g_object_ref().
+             * @returns @object
+             */
+            ref_sink(): GObject.Object;
+            /**
+             * Releases all references to other objects. This can be used to break
+             * reference cycles.
+             *
+             * This function should only be called from object system implementations.
+             */
+            run_dispose(): void;
+            /**
+             * Each object carries around a table of associations from
+             * strings to pointers.  This function lets you set an association.
+             *
+             * If the object already had an association with that name,
+             * the old association will be destroyed.
+             *
+             * Internally, the `key` is converted to a #GQuark using g_quark_from_string().
+             * This means a copy of `key` is kept permanently (even after `object` has been
+             * finalized) — so it is recommended to only use a small, bounded set of values
+             * for `key` in your program, to avoid the #GQuark storage growing unbounded.
+             * @param key name of the key
+             * @param data data to associate with that key
+             */
+            set_data(key: string, data?: any | null): void;
+            /**
+             * Sets a property on an object.
+             * @param property_name The name of the property to set
+             * @param value The value to set the property to
+             */
+            set_property(property_name: string, value: GObject.Value | any): void;
+            /**
+             * Remove a specified datum from the object's data associations,
+             * without invoking the association's destroy handler.
+             * @param key name of the key
+             * @returns the data if found, or %NULL          if no such data exists.
+             */
+            steal_data(key: string): any | null;
+            /**
+             * This function gets back user data pointers stored via
+             * g_object_set_qdata() and removes the `data` from object
+             * without invoking its destroy() function (if any was
+             * set).
+             * Usually, calling this function is only required to update
+             * user data pointers with a destroy notifier, for example:
+             *
+             * ```c
+             * void
+             * object_add_to_user_list (GObject     *object,
+             *                          const gchar *new_string)
+             * {
+             *   // the quark, naming the object data
+             *   GQuark quark_string_list = g_quark_from_static_string ("my-string-list");
+             *   // retrieve the old string list
+             *   GList *list = g_object_steal_qdata (object, quark_string_list);
+             *
+             *   // prepend new string
+             *   list = g_list_prepend (list, g_strdup (new_string));
+             *   // this changed 'list', so we need to set it again
+             *   g_object_set_qdata_full (object, quark_string_list, list, free_string_list);
+             * }
+             * static void
+             * free_string_list (gpointer data)
+             * {
+             *   GList *node, *list = data;
+             *
+             *   for (node = list; node; node = node->next)
+             *     g_free (node->data);
+             *   g_list_free (list);
+             * }
+             * ```
+             *
+             * Using g_object_get_qdata() in the above example, instead of
+             * g_object_steal_qdata() would have left the destroy function set,
+             * and thus the partial string list would have been freed upon
+             * g_object_set_qdata_full().
+             * @param quark A #GQuark, naming the user data pointer
+             * @returns The user data pointer set, or %NULL
+             */
+            steal_qdata(quark: GLib.Quark): any | null;
+            /**
+             * Reverts the effect of a previous call to
+             * g_object_freeze_notify(). The freeze count is decreased on `object`
+             * and when it reaches zero, queued "notify" signals are emitted.
+             *
+             * Duplicate notifications for each property are squashed so that at most one
+             * #GObject::notify signal is emitted for each property, in the reverse order
+             * in which they have been queued.
+             *
+             * It is an error to call this function when the freeze count is zero.
+             */
+            thaw_notify(): void;
+            /**
+             * Decreases the reference count of `object`. When its reference count
+             * drops to 0, the object is finalized (i.e. its memory is freed).
+             *
+             * If the pointer to the #GObject may be reused in future (for example, if it is
+             * an instance variable of another object), it is recommended to clear the
+             * pointer to %NULL rather than retain a dangling pointer to a potentially
+             * invalid #GObject instance. Use g_clear_object() for this.
+             */
+            unref(): void;
+            /**
+             * This function essentially limits the life time of the `closure` to
+             * the life time of the object. That is, when the object is finalized,
+             * the `closure` is invalidated by calling g_closure_invalidate() on
+             * it, in order to prevent invocations of the closure with a finalized
+             * (nonexisting) object. Also, g_object_ref() and g_object_unref() are
+             * added as marshal guards to the `closure,` to ensure that an extra
+             * reference count is held on `object` during invocation of the
+             * `closure`.  Usually, this function will be called on closures that
+             * use this `object` as closure data.
+             * @param closure #GClosure to watch
+             */
+            watch_closure(closure: GObject.Closure): void;
+            /**
+             * the `constructed` function is called by g_object_new() as the
+             *  final step of the object creation process.  At the point of the call, all
+             *  construction properties have been set on the object.  The purpose of this
+             *  call is to allow for object initialisation steps that can only be performed
+             *  after construction properties have been set.  `constructed` implementors
+             *  should chain up to the `constructed` call of their parent class to allow it
+             *  to complete its initialisation.
+             */
+            vfunc_constructed(): void;
+            /**
+             * emits property change notification for a bunch
+             *  of properties. Overriding `dispatch_properties_changed` should be rarely
+             *  needed.
+             * @param n_pspecs
+             * @param pspecs
+             */
+            vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void;
+            /**
+             * the `dispose` function is supposed to drop all references to other
+             *  objects, but keep the instance otherwise intact, so that client method
+             *  invocations still work. It may be run multiple times (due to reference
+             *  loops). Before returning, `dispose` should chain up to the `dispose` method
+             *  of the parent class.
+             */
+            vfunc_dispose(): void;
+            /**
+             * instance finalization function, should finish the finalization of
+             *  the instance begun in `dispose` and chain up to the `finalize` method of the
+             *  parent class.
+             */
+            vfunc_finalize(): void;
+            /**
+             * the generic getter for all properties of this type. Should be
+             *  overridden for every type with properties.
+             * @param property_id
+             * @param value
+             * @param pspec
+             */
+            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            /**
+             * Emits a "notify" signal for the property `property_name` on `object`.
+             *
+             * When possible, eg. when signaling a property change from within the class
+             * that registered the property, you should use g_object_notify_by_pspec()
+             * instead.
+             *
+             * Note that emission of the notify signal may be blocked with
+             * g_object_freeze_notify(). In this case, the signal emissions are queued
+             * and will be emitted (in reverse order) when g_object_thaw_notify() is
+             * called.
+             * @param pspec
+             */
+            vfunc_notify(pspec: GObject.ParamSpec): void;
+            /**
+             * the generic setter for all properties of this type. Should be
+             *  overridden for every type with properties. If implementations of
+             *  `set_property` don't emit property change notification explicitly, this will
+             *  be done implicitly by the type system. However, if the notify signal is
+             *  emitted explicitly, the type system will not emit it a second time.
+             * @param property_id
+             * @param value
+             * @param pspec
+             */
+            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            /**
+             * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
+             * @param id Handler ID of the handler to be disconnected
+             */
+            disconnect(id: number): void;
+            /**
+             * Sets multiple properties of an object at once. The properties argument should be a dictionary mapping property names to values.
+             * @param properties Object containing the properties to set
+             */
+            set(properties: { [key: string]: any }): void;
+            /**
+             * Blocks a handler of an instance so it will not be called during any signal emissions
+             * @param id Handler ID of the handler to be blocked
+             */
+            block_signal_handler(id: number): void;
+            /**
+             * Unblocks a handler so it will be called again during any signal emissions
+             * @param id Handler ID of the handler to be unblocked
+             */
+            unblock_signal_handler(id: number): void;
+            /**
+             * Stops a signal's emission by the given signal name. This will prevent the default handler and any subsequent signal handlers from being invoked.
+             * @param detailedName Name of the signal to stop emission of
+             */
+            stop_emission_by_name(detailedName: string): void;
+        }
+
         namespace WebInspector {
             // Signal signatures
             interface SignalSignatures extends GObject.Object.SignalSignatures {
@@ -13050,6 +14204,7 @@ declare module 'gi://WebKit?version=6.0' {
                 'notify::estimated-load-progress': (pspec: GObject.ParamSpec) => void;
                 'notify::favicon': (pspec: GObject.ParamSpec) => void;
                 'notify::is-controlled-by-automation': (pspec: GObject.ParamSpec) => void;
+                'notify::is-immersive-mode-enabled': (pspec: GObject.ParamSpec) => void;
                 'notify::is-loading': (pspec: GObject.ParamSpec) => void;
                 'notify::is-muted': (pspec: GObject.ParamSpec) => void;
                 'notify::is-playing-audio': (pspec: GObject.ParamSpec) => void;
@@ -13125,6 +14280,8 @@ declare module 'gi://WebKit?version=6.0' {
                 favicon: Gdk.Texture;
                 is_controlled_by_automation: boolean;
                 isControlledByAutomation: boolean;
+                is_immersive_mode_enabled: boolean;
+                isImmersiveModeEnabled: boolean;
                 is_loading: boolean;
                 isLoading: boolean;
                 is_muted: boolean;
@@ -13333,6 +14490,14 @@ declare module 'gi://WebKit?version=6.0' {
              * signal. For example, as response to JavaScript `window.open()` calls during an automation session.
              */
             get isControlledByAutomation(): boolean;
+            /**
+             * Whether the #WebKitWebView is in immersive mode.
+             */
+            get is_immersive_mode_enabled(): boolean;
+            /**
+             * Whether the #WebKitWebView is in immersive mode.
+             */
+            get isImmersiveModeEnabled(): boolean;
             /**
              * Whether the #WebKitWebView is currently loading a page. This property becomes
              * %TRUE as soon as a new load operation is requested and before the
@@ -14488,6 +15653,17 @@ declare module 'gi://WebKit?version=6.0' {
              * @returns %TRUE if the user is allowed to edit the HTML document, or %FALSE otherwise.
              */
             is_editable(): boolean;
+            /**
+             * Requests to leave the immersive mode this #WebKitWebView is in.
+             *
+             * Users interact with web content to start XR sessions, and can typically
+             * end the sessions themselves, but applications might need to end a session on their
+             * own based on application or platform logic.
+             *
+             * Note that if WebXR is disabled, or if it is enabled but the `web_view` is not in
+             * immersive mode, this API does nothing. See also webkit_web_view_is_immersive_mode_enabled().
+             */
+            leave_immersive_mode(): void;
             /**
              * Load the given `content` string for the URI `content_uri`.
              *
@@ -17367,6 +18543,584 @@ declare module 'gi://WebKit?version=6.0' {
             get_toolbar_visible(): boolean;
         }
 
+        namespace XRPermissionRequest {
+            // Signal signatures
+            interface SignalSignatures extends GObject.Object.SignalSignatures {}
+
+            // Constructor properties interface
+
+            interface ConstructorProps extends GObject.Object.ConstructorProps, PermissionRequest.ConstructorProps {}
+        }
+
+        /**
+         * A permission request for accessing virtual reality (VR) and
+         * augmented reality (AR) devices, including sensors and head-mounted
+         * displays.
+         *
+         * WebKitXRPermissionRequest represents a request for permission to
+         * decide whether WebKit can initialize an XR session through the
+         * WebXR API.
+         *
+         * When a WebKitXRPermissionRequest is not handled by the user,
+         * it is denied by default.
+         */
+        class XRPermissionRequest extends GObject.Object implements PermissionRequest {
+            static $gtype: GObject.GType<XRPermissionRequest>;
+
+            /**
+             * Compile-time signal type information.
+             *
+             * This instance property is generated only for TypeScript type checking.
+             * It is not defined at runtime and should not be accessed in JS code.
+             * @internal
+             */
+            $signals: XRPermissionRequest.SignalSignatures;
+
+            // Constructors
+
+            constructor(properties?: Partial<XRPermissionRequest.ConstructorProps>, ...args: any[]);
+
+            _init(...args: any[]): void;
+
+            // Signals
+
+            connect<K extends keyof XRPermissionRequest.SignalSignatures>(
+                signal: K,
+                callback: GObject.SignalCallback<this, XRPermissionRequest.SignalSignatures[K]>,
+            ): number;
+            connect(signal: string, callback: (...args: any[]) => any): number;
+            connect_after<K extends keyof XRPermissionRequest.SignalSignatures>(
+                signal: K,
+                callback: GObject.SignalCallback<this, XRPermissionRequest.SignalSignatures[K]>,
+            ): number;
+            connect_after(signal: string, callback: (...args: any[]) => any): number;
+            emit<K extends keyof XRPermissionRequest.SignalSignatures>(
+                signal: K,
+                ...args: GObject.GjsParameters<XRPermissionRequest.SignalSignatures[K]> extends [any, ...infer Q]
+                    ? Q
+                    : never
+            ): void;
+            emit(signal: string, ...args: any[]): void;
+
+            // Methods
+
+            /**
+             * Gets the optional features that need user consent.
+             *
+             * These features can be granted by calling
+             * webkit_xr_permission_request_set_granted_optional_features()
+             * before allowing the request with webkit_permission_request_allow().
+             * @returns a #WebKitXRSessionFeatures flag combination
+             */
+            get_consent_optional_features(): XRSessionFeatures;
+            /**
+             * Gets the required features that need user consent.
+             *
+             * These features are automatically granted if the request is allowed with
+             * webkit_permission_request_allow().
+             * @returns a #WebKitXRSessionFeatures flag combination
+             */
+            get_consent_required_features(): XRSessionFeatures;
+            /**
+             * Gets the features requested by the origin for the XR device, which
+             * are either granted by default or have been explicitly granted by
+             * the user.
+             * @returns a #WebKitXRSessionFeatures flag combination
+             */
+            get_granted_features(): XRSessionFeatures;
+            /**
+             * Gets the full set of optional features requested by the web application.
+             *
+             * This includes both already granted features and those requiring consent.
+             * @returns a #WebKitXRSessionFeatures flag combination
+             */
+            get_optional_features_requested(): XRSessionFeatures;
+            /**
+             * Gets the full set of required features requested by the web application.
+             *
+             * This includes both already granted features and those requiring consent.
+             * @returns a #WebKitXRSessionFeatures flag combination
+             */
+            get_required_features_requested(): XRSessionFeatures;
+            /**
+             * Gets the security origin that initiated the permission request.
+             * @returns the #WebKitSecurityOrigin that initiated the request
+             */
+            get_security_origin(): SecurityOrigin;
+            /**
+             * Gets the session mode for which permission is being requested.
+             * @returns a #WebKitXRSessionMode
+             */
+            get_session_mode(): XRSessionMode;
+            /**
+             * Sets which optional features should be granted if the permission request is allowed.
+             *
+             * This function should be called with a subset of the features from
+             * webkit_xr_permission_request_get_consent_optional_features() before calling
+             * webkit_permission_request_allow(). If the request is denied, no features are
+             * granted, regardless of what is set here.
+             * @param granted granted features
+             */
+            set_granted_optional_features(granted: XRSessionFeatures | null): void;
+
+            // Inherited methods
+            /**
+             * Allow the action which triggered this request.
+             */
+            allow(): void;
+            /**
+             * Deny the action which triggered this request.
+             */
+            deny(): void;
+            /**
+             * Allow the action which triggered this request.
+             */
+            vfunc_allow(): void;
+            /**
+             * Deny the action which triggered this request.
+             */
+            vfunc_deny(): void;
+            /**
+             * Creates a binding between `source_property` on `source` and `target_property`
+             * on `target`.
+             *
+             * Whenever the `source_property` is changed the `target_property` is
+             * updated using the same value. For instance:
+             *
+             *
+             * ```c
+             *   g_object_bind_property (action, "active", widget, "sensitive", 0);
+             * ```
+             *
+             *
+             * Will result in the "sensitive" property of the widget #GObject instance to be
+             * updated with the same value of the "active" property of the action #GObject
+             * instance.
+             *
+             * If `flags` contains %G_BINDING_BIDIRECTIONAL then the binding will be mutual:
+             * if `target_property` on `target` changes then the `source_property` on `source`
+             * will be updated as well.
+             *
+             * The binding will automatically be removed when either the `source` or the
+             * `target` instances are finalized. To remove the binding without affecting the
+             * `source` and the `target` you can just call g_object_unref() on the returned
+             * #GBinding instance.
+             *
+             * Removing the binding by calling g_object_unref() on it must only be done if
+             * the binding, `source` and `target` are only used from a single thread and it
+             * is clear that both `source` and `target` outlive the binding. Especially it
+             * is not safe to rely on this if the binding, `source` or `target` can be
+             * finalized from different threads. Keep another reference to the binding and
+             * use g_binding_unbind() instead to be on the safe side.
+             *
+             * A #GObject can have multiple bindings.
+             * @param source_property the property on @source to bind
+             * @param target the target #GObject
+             * @param target_property the property on @target to bind
+             * @param flags flags to pass to #GBinding
+             * @returns the #GBinding instance representing the     binding between the two #GObject instances. The binding is released     whenever the #GBinding reference count reaches zero.
+             */
+            bind_property(
+                source_property: string,
+                target: GObject.Object,
+                target_property: string,
+                flags: GObject.BindingFlags | null,
+            ): GObject.Binding;
+            /**
+             * Complete version of g_object_bind_property().
+             *
+             * Creates a binding between `source_property` on `source` and `target_property`
+             * on `target,` allowing you to set the transformation functions to be used by
+             * the binding.
+             *
+             * If `flags` contains %G_BINDING_BIDIRECTIONAL then the binding will be mutual:
+             * if `target_property` on `target` changes then the `source_property` on `source`
+             * will be updated as well. The `transform_from` function is only used in case
+             * of bidirectional bindings, otherwise it will be ignored
+             *
+             * The binding will automatically be removed when either the `source` or the
+             * `target` instances are finalized. This will release the reference that is
+             * being held on the #GBinding instance; if you want to hold on to the
+             * #GBinding instance, you will need to hold a reference to it.
+             *
+             * To remove the binding, call g_binding_unbind().
+             *
+             * A #GObject can have multiple bindings.
+             *
+             * The same `user_data` parameter will be used for both `transform_to`
+             * and `transform_from` transformation functions; the `notify` function will
+             * be called once, when the binding is removed. If you need different data
+             * for each transformation function, please use
+             * g_object_bind_property_with_closures() instead.
+             * @param source_property the property on @source to bind
+             * @param target the target #GObject
+             * @param target_property the property on @target to bind
+             * @param flags flags to pass to #GBinding
+             * @param transform_to the transformation function     from the @source to the @target, or %NULL to use the default
+             * @param transform_from the transformation function     from the @target to the @source, or %NULL to use the default
+             * @param notify a function to call when disposing the binding, to free     resources used by the transformation functions, or %NULL if not required
+             * @returns the #GBinding instance representing the     binding between the two #GObject instances. The binding is released     whenever the #GBinding reference count reaches zero.
+             */
+            bind_property_full(
+                source_property: string,
+                target: GObject.Object,
+                target_property: string,
+                flags: GObject.BindingFlags | null,
+                transform_to?: GObject.BindingTransformFunc | null,
+                transform_from?: GObject.BindingTransformFunc | null,
+                notify?: GLib.DestroyNotify | null,
+            ): GObject.Binding;
+            // Conflicted with GObject.Object.bind_property_full
+            bind_property_full(...args: never[]): any;
+            /**
+             * This function is intended for #GObject implementations to re-enforce
+             * a [floating][floating-ref] object reference. Doing this is seldom
+             * required: all #GInitiallyUnowneds are created with a floating reference
+             * which usually just needs to be sunken by calling g_object_ref_sink().
+             */
+            force_floating(): void;
+            /**
+             * Increases the freeze count on `object`. If the freeze count is
+             * non-zero, the emission of "notify" signals on `object` is
+             * stopped. The signals are queued until the freeze count is decreased
+             * to zero. Duplicate notifications are squashed so that at most one
+             * #GObject::notify signal is emitted for each property modified while the
+             * object is frozen.
+             *
+             * This is necessary for accessors that modify multiple properties to prevent
+             * premature notification while the object is still being modified.
+             */
+            freeze_notify(): void;
+            /**
+             * Gets a named field from the objects table of associations (see g_object_set_data()).
+             * @param key name of the key for that association
+             * @returns the data if found,          or %NULL if no such data exists.
+             */
+            get_data(key: string): any | null;
+            /**
+             * Gets a property of an object.
+             *
+             * The value can be:
+             * - an empty GObject.Value initialized by G_VALUE_INIT, which will be automatically initialized with the expected type of the property (since GLib 2.60)
+             * - a GObject.Value initialized with the expected type of the property
+             * - a GObject.Value initialized with a type to which the expected type of the property can be transformed
+             *
+             * In general, a copy is made of the property contents and the caller is responsible for freeing the memory by calling GObject.Value.unset.
+             *
+             * Note that GObject.Object.get_property is really intended for language bindings, GObject.Object.get is much more convenient for C programming.
+             * @param property_name The name of the property to get
+             * @param value Return location for the property value. Can be an empty GObject.Value initialized by G_VALUE_INIT (auto-initialized with expected type since GLib 2.60), a GObject.Value initialized with the expected property type, or a GObject.Value initialized with a transformable type
+             */
+            get_property(property_name: string, value: GObject.Value | any): any;
+            /**
+             * This function gets back user data pointers stored via
+             * g_object_set_qdata().
+             * @param quark A #GQuark, naming the user data pointer
+             * @returns The user data pointer set, or %NULL
+             */
+            get_qdata(quark: GLib.Quark): any | null;
+            /**
+             * Gets `n_properties` properties for an `object`.
+             * Obtained properties will be set to `values`. All properties must be valid.
+             * Warnings will be emitted and undefined behaviour may result if invalid
+             * properties are passed in.
+             * @param names the names of each property to get
+             * @param values the values of each property to get
+             */
+            getv(names: string[], values: (GObject.Value | any)[]): void;
+            /**
+             * Checks whether `object` has a [floating][floating-ref] reference.
+             * @returns %TRUE if @object has a floating reference
+             */
+            is_floating(): boolean;
+            /**
+             * Emits a "notify" signal for the property `property_name` on `object`.
+             *
+             * When possible, eg. when signaling a property change from within the class
+             * that registered the property, you should use g_object_notify_by_pspec()
+             * instead.
+             *
+             * Note that emission of the notify signal may be blocked with
+             * g_object_freeze_notify(). In this case, the signal emissions are queued
+             * and will be emitted (in reverse order) when g_object_thaw_notify() is
+             * called.
+             * @param property_name the name of a property installed on the class of @object.
+             */
+            notify(property_name: string): void;
+            /**
+             * Emits a "notify" signal for the property specified by `pspec` on `object`.
+             *
+             * This function omits the property name lookup, hence it is faster than
+             * g_object_notify().
+             *
+             * One way to avoid using g_object_notify() from within the
+             * class that registered the properties, and using g_object_notify_by_pspec()
+             * instead, is to store the GParamSpec used with
+             * g_object_class_install_property() inside a static array, e.g.:
+             *
+             *
+             * ```c
+             *   typedef enum
+             *   {
+             *     PROP_FOO = 1,
+             *     PROP_LAST
+             *   } MyObjectProperty;
+             *
+             *   static GParamSpec *properties[PROP_LAST];
+             *
+             *   static void
+             *   my_object_class_init (MyObjectClass *klass)
+             *   {
+             *     properties[PROP_FOO] = g_param_spec_int ("foo", NULL, NULL,
+             *                                              0, 100,
+             *                                              50,
+             *                                              G_PARAM_READWRITE | G_PARAM_STATIC_STRINGS);
+             *     g_object_class_install_property (gobject_class,
+             *                                      PROP_FOO,
+             *                                      properties[PROP_FOO]);
+             *   }
+             * ```
+             *
+             *
+             * and then notify a change on the "foo" property with:
+             *
+             *
+             * ```c
+             *   g_object_notify_by_pspec (self, properties[PROP_FOO]);
+             * ```
+             *
+             * @param pspec the #GParamSpec of a property installed on the class of @object.
+             */
+            notify_by_pspec(pspec: GObject.ParamSpec): void;
+            /**
+             * Increases the reference count of `object`.
+             *
+             * Since GLib 2.56, if `GLIB_VERSION_MAX_ALLOWED` is 2.56 or greater, the type
+             * of `object` will be propagated to the return type (using the GCC typeof()
+             * extension), so any casting the caller needs to do on the return type must be
+             * explicit.
+             * @returns the same @object
+             */
+            ref(): GObject.Object;
+            /**
+             * Increase the reference count of `object,` and possibly remove the
+             * [floating][floating-ref] reference, if `object` has a floating reference.
+             *
+             * In other words, if the object is floating, then this call "assumes
+             * ownership" of the floating reference, converting it to a normal
+             * reference by clearing the floating flag while leaving the reference
+             * count unchanged.  If the object is not floating, then this call
+             * adds a new normal reference increasing the reference count by one.
+             *
+             * Since GLib 2.56, the type of `object` will be propagated to the return type
+             * under the same conditions as for g_object_ref().
+             * @returns @object
+             */
+            ref_sink(): GObject.Object;
+            /**
+             * Releases all references to other objects. This can be used to break
+             * reference cycles.
+             *
+             * This function should only be called from object system implementations.
+             */
+            run_dispose(): void;
+            /**
+             * Each object carries around a table of associations from
+             * strings to pointers.  This function lets you set an association.
+             *
+             * If the object already had an association with that name,
+             * the old association will be destroyed.
+             *
+             * Internally, the `key` is converted to a #GQuark using g_quark_from_string().
+             * This means a copy of `key` is kept permanently (even after `object` has been
+             * finalized) — so it is recommended to only use a small, bounded set of values
+             * for `key` in your program, to avoid the #GQuark storage growing unbounded.
+             * @param key name of the key
+             * @param data data to associate with that key
+             */
+            set_data(key: string, data?: any | null): void;
+            /**
+             * Sets a property on an object.
+             * @param property_name The name of the property to set
+             * @param value The value to set the property to
+             */
+            set_property(property_name: string, value: GObject.Value | any): void;
+            /**
+             * Remove a specified datum from the object's data associations,
+             * without invoking the association's destroy handler.
+             * @param key name of the key
+             * @returns the data if found, or %NULL          if no such data exists.
+             */
+            steal_data(key: string): any | null;
+            /**
+             * This function gets back user data pointers stored via
+             * g_object_set_qdata() and removes the `data` from object
+             * without invoking its destroy() function (if any was
+             * set).
+             * Usually, calling this function is only required to update
+             * user data pointers with a destroy notifier, for example:
+             *
+             * ```c
+             * void
+             * object_add_to_user_list (GObject     *object,
+             *                          const gchar *new_string)
+             * {
+             *   // the quark, naming the object data
+             *   GQuark quark_string_list = g_quark_from_static_string ("my-string-list");
+             *   // retrieve the old string list
+             *   GList *list = g_object_steal_qdata (object, quark_string_list);
+             *
+             *   // prepend new string
+             *   list = g_list_prepend (list, g_strdup (new_string));
+             *   // this changed 'list', so we need to set it again
+             *   g_object_set_qdata_full (object, quark_string_list, list, free_string_list);
+             * }
+             * static void
+             * free_string_list (gpointer data)
+             * {
+             *   GList *node, *list = data;
+             *
+             *   for (node = list; node; node = node->next)
+             *     g_free (node->data);
+             *   g_list_free (list);
+             * }
+             * ```
+             *
+             * Using g_object_get_qdata() in the above example, instead of
+             * g_object_steal_qdata() would have left the destroy function set,
+             * and thus the partial string list would have been freed upon
+             * g_object_set_qdata_full().
+             * @param quark A #GQuark, naming the user data pointer
+             * @returns The user data pointer set, or %NULL
+             */
+            steal_qdata(quark: GLib.Quark): any | null;
+            /**
+             * Reverts the effect of a previous call to
+             * g_object_freeze_notify(). The freeze count is decreased on `object`
+             * and when it reaches zero, queued "notify" signals are emitted.
+             *
+             * Duplicate notifications for each property are squashed so that at most one
+             * #GObject::notify signal is emitted for each property, in the reverse order
+             * in which they have been queued.
+             *
+             * It is an error to call this function when the freeze count is zero.
+             */
+            thaw_notify(): void;
+            /**
+             * Decreases the reference count of `object`. When its reference count
+             * drops to 0, the object is finalized (i.e. its memory is freed).
+             *
+             * If the pointer to the #GObject may be reused in future (for example, if it is
+             * an instance variable of another object), it is recommended to clear the
+             * pointer to %NULL rather than retain a dangling pointer to a potentially
+             * invalid #GObject instance. Use g_clear_object() for this.
+             */
+            unref(): void;
+            /**
+             * This function essentially limits the life time of the `closure` to
+             * the life time of the object. That is, when the object is finalized,
+             * the `closure` is invalidated by calling g_closure_invalidate() on
+             * it, in order to prevent invocations of the closure with a finalized
+             * (nonexisting) object. Also, g_object_ref() and g_object_unref() are
+             * added as marshal guards to the `closure,` to ensure that an extra
+             * reference count is held on `object` during invocation of the
+             * `closure`.  Usually, this function will be called on closures that
+             * use this `object` as closure data.
+             * @param closure #GClosure to watch
+             */
+            watch_closure(closure: GObject.Closure): void;
+            /**
+             * the `constructed` function is called by g_object_new() as the
+             *  final step of the object creation process.  At the point of the call, all
+             *  construction properties have been set on the object.  The purpose of this
+             *  call is to allow for object initialisation steps that can only be performed
+             *  after construction properties have been set.  `constructed` implementors
+             *  should chain up to the `constructed` call of their parent class to allow it
+             *  to complete its initialisation.
+             */
+            vfunc_constructed(): void;
+            /**
+             * emits property change notification for a bunch
+             *  of properties. Overriding `dispatch_properties_changed` should be rarely
+             *  needed.
+             * @param n_pspecs
+             * @param pspecs
+             */
+            vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void;
+            /**
+             * the `dispose` function is supposed to drop all references to other
+             *  objects, but keep the instance otherwise intact, so that client method
+             *  invocations still work. It may be run multiple times (due to reference
+             *  loops). Before returning, `dispose` should chain up to the `dispose` method
+             *  of the parent class.
+             */
+            vfunc_dispose(): void;
+            /**
+             * instance finalization function, should finish the finalization of
+             *  the instance begun in `dispose` and chain up to the `finalize` method of the
+             *  parent class.
+             */
+            vfunc_finalize(): void;
+            /**
+             * the generic getter for all properties of this type. Should be
+             *  overridden for every type with properties.
+             * @param property_id
+             * @param value
+             * @param pspec
+             */
+            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            /**
+             * Emits a "notify" signal for the property `property_name` on `object`.
+             *
+             * When possible, eg. when signaling a property change from within the class
+             * that registered the property, you should use g_object_notify_by_pspec()
+             * instead.
+             *
+             * Note that emission of the notify signal may be blocked with
+             * g_object_freeze_notify(). In this case, the signal emissions are queued
+             * and will be emitted (in reverse order) when g_object_thaw_notify() is
+             * called.
+             * @param pspec
+             */
+            vfunc_notify(pspec: GObject.ParamSpec): void;
+            /**
+             * the generic setter for all properties of this type. Should be
+             *  overridden for every type with properties. If implementations of
+             *  `set_property` don't emit property change notification explicitly, this will
+             *  be done implicitly by the type system. However, if the notify signal is
+             *  emitted explicitly, the type system will not emit it a second time.
+             * @param property_id
+             * @param value
+             * @param pspec
+             */
+            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            /**
+             * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
+             * @param id Handler ID of the handler to be disconnected
+             */
+            disconnect(id: number): void;
+            /**
+             * Sets multiple properties of an object at once. The properties argument should be a dictionary mapping property names to values.
+             * @param properties Object containing the properties to set
+             */
+            set(properties: { [key: string]: any }): void;
+            /**
+             * Blocks a handler of an instance so it will not be called during any signal emissions
+             * @param id Handler ID of the handler to be blocked
+             */
+            block_signal_handler(id: number): void;
+            /**
+             * Unblocks a handler so it will be called again during any signal emissions
+             * @param id Handler ID of the handler to be unblocked
+             */
+            unblock_signal_handler(id: number): void;
+            /**
+             * Stops a signal's emission by the given signal name. This will prevent the default handler and any subsequent signal handlers from being invoked.
+             * @param detailedName Name of the signal to stop emission of
+             */
+            stop_emission_by_name(detailedName: string): void;
+        }
+
         /**
          * Information about an application running in automation mode.
          */
@@ -18585,6 +20339,7 @@ declare module 'gi://WebKit?version=6.0' {
         }
 
         type WebContextClass = typeof WebContext;
+        type WebExtensionClass = typeof WebExtension;
         /**
          * Represents a way to specify a group of URLs for use in WebExtensions.
          *
@@ -18619,6 +20374,14 @@ declare module 'gi://WebKit?version=6.0' {
              * @param urlScheme The custom URL scheme to register
              */
             static register_custom_URL_scheme(urlScheme: string): void;
+            /**
+             * Registers a custom URL scheme that can be used in match patterns.
+             *
+             * This method should be used to register any custom URL schemes used by the app for the extension base URLs,
+             * other than `webkit-extension`, or if extensions should have access to other supported URL schemes when using `<all_urls>`.
+             * @param urlScheme The custom URL scheme to register
+             */
+            static register_custom_url_scheme(urlScheme: string): void;
 
             // Methods
 
@@ -18819,6 +20582,7 @@ declare module 'gi://WebKit?version=6.0' {
         type WebsiteDataManagerClass = typeof WebsiteDataManager;
         type WebsitePoliciesClass = typeof WebsitePolicies;
         type WindowPropertiesClass = typeof WindowProperties;
+        type XRPermissionRequestClass = typeof XRPermissionRequest;
         namespace PermissionRequest {
             /**
              * Interface for implementing PermissionRequest.

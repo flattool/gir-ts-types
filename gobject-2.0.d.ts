@@ -2164,6 +2164,15 @@ declare module 'gi://GObject?version=2.0' {
          */
         function type_class_peek_static(type: GType): TypeClass | null;
         /**
+         * Increments the reference count of the class structure belonging to
+         * `type`.
+         *
+         * This function will demand-create the class if it doesn't exist already.
+         * @param type type ID of a classed type
+         * @returns the #GTypeClass   structure for the given type ID
+         */
+        function type_class_ref(type: GType): TypeClass;
+        /**
          * Returns the default interface vtable for the given `g_type`.
          *
          * If the type is not currently in use, then the default vtable
@@ -2188,6 +2197,21 @@ declare module 'gi://GObject?version=2.0' {
          * @returns the default   vtable for the interface, or %NULL if the type is not currently   in use
          */
         function type_default_interface_peek(g_type: GType): TypeInterface;
+        /**
+         * Increments the reference count for the interface type `g_type,`
+         * and returns the default interface vtable for the type.
+         *
+         * If the type is not currently in use, then the default vtable
+         * for the type will be created and initialized by calling
+         * the base interface init and default vtable init functions for
+         * the type (the `base_init` and `class_init` members of #GTypeInfo).
+         * Calling g_type_default_interface_ref() is useful when you
+         * want to make sure that signals and properties for an interface
+         * have been installed.
+         * @param g_type an interface type
+         * @returns the default   vtable for the interface; call g_type_default_interface_unref()   when you are done using the interface.
+         */
+        function type_default_interface_ref(g_type: GType): TypeInterface;
         /**
          * Decrements the reference count for the type corresponding to the
          * interface default vtable `g_iface`.
@@ -5851,7 +5875,7 @@ declare module 'gi://GObject?version=2.0' {
             minimum: number;
             maximum: number;
             n_values: number;
-            values: EnumValue;
+            values: EnumValue[];
 
             // Constructors
 
@@ -5894,7 +5918,7 @@ declare module 'gi://GObject?version=2.0' {
 
             mask: number;
             n_values: number;
-            values: FlagsValue;
+            values: FlagsValue[];
 
             // Constructors
 
@@ -6140,6 +6164,14 @@ declare module 'gi://GObject?version=2.0' {
              * @param type type ID of a classed type
              */
             static peek_static(type: GType): TypeClass | null;
+            /**
+             * Increments the reference count of the class structure belonging to
+             * `type`.
+             *
+             * This function will demand-create the class if it doesn't exist already.
+             * @param type type ID of a classed type
+             */
+            static ref(type: GType): TypeClass;
 
             // Methods
 
