@@ -60,7 +60,7 @@ jobs:
       - name: "Sync generated types to repo root"
         run: |
           cd "$GITHUB_WORKSPACE"
-          rsync -rc --delete ~/types/@types/ ./@types/
+          rsync -rc --include="*.ts" --exclude="*" --delete --delete-excluded ~/types/@types/ .
 
       - name: "Commit changes"
         run: |
