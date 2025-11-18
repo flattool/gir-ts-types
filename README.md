@@ -1,6 +1,8 @@
-# gir-ts-types
+# gir-ts-types | SDK `master`
 
 Up-to-date TypeScript type declarations for use with GNOME JavaScript (GJS) projects.
+
+⚠️ You are on the `main` branch, which targets SDK version `master`. These types will constantly be in flux, and aren't guarenteed stable. Use at your own risk!
 
 Using [TS For GIR](https://github.com/gjsify/ts-for-gir), this repository automatically generates TypeScript type declaration files based on GObject Introspection Repository (GIR) files from GNOME's official SDK Flatpak runtime. This ensures that the generated types are as accurate as possible.
 
