@@ -16,22 +16,17 @@ jobs:
         with:
           persist-credentials: true
 
-      - name: "Install Flatpak"
+      - name: "Initialization steps"
         run: |
           sudo apt update -y
           sudo apt install flatpak -y
-
-      - name: "Install latest GNOME SDK"
-        run: |
-          # Add Flathub remote
           flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo --user
+          flatpak remote-add --if-not-exists gnome-nightly https://nightly.gnome.org/gnome-nightly.flatpakrepo --user
 
-          # Find latest SDK
-          LATEST_SDK=$(flatpak search org.gnome.Sdk --columns=branch | sort -V | tail -n1)
-          echo "Latest GNOME SDK branch: $LATEST_SDK"
-
-          # Install it
-          flatpak install --user -y org.gnome.Sdk//${LATEST_SDK}
+      - name: "Install nightly GNOME SDK"
+        run: |
+          SDK_VERSION=master
+          flatpak install --user -y org.gnome.Sdk//${SDK_VERSION}
 
       - name: "Generate the types"
         run: |
@@ -41,7 +36,7 @@ jobs:
           --command=bash \
           --share=network \
           --filesystem=~/types:create \
-          org.gnome.Sdk//${LATEST_SDK} -c "
+          org.gnome.Sdk -c "
             mkdir -p "${HOME}/.nvm"
 
             vv #### Install latest Node LTS ### vv
