@@ -21,10 +21,10 @@ jobs:
           sudo apt update -y
           sudo apt install flatpak -y
           flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo --user
-          SDK_VERSION=48
 
       - name: "Install v48 GNOME SDK"
         run: |
+          SDK_VERSION=48
           flatpak install --user -y org.gnome.Sdk//${SDK_VERSION}
 
       - name: "Generate the types"
@@ -35,7 +35,7 @@ jobs:
           --command=bash \
           --share=network \
           --filesystem=~/types:create \
-          org.gnome.Sdk//${SDK_VERSION} -c "
+          org.gnome.Sdk -c "
             mkdir -p "${HOME}/.nvm"
 
             vv #### Install latest Node LTS ### vv
