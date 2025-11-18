@@ -59,15 +59,38 @@ jobs:
 
       - name: "Sync generated types to repo root"
         run: |
-          # Remove ALL existing .ts files anywhere in the repo
-          #   except node_modules or hidden directories
-          cd $GITHUB_WORKSPACE
-          find . -maxdepth 1 -type f -name "*.ts" -delete
+          SRC=~/types/@types
+          DEST=$GITHUB_WORKSPACE
 
-          # Copy new types from ~/types/@types into the repo root
-          cp -r ~/types/@types/* .
+          # Make sure source exists
+          if [ ! -d "$SRC" ]; then
+            echo "Source folder $SRC does not exist"
+            exit 1
+          fi
 
-          ls -al
+          # 1. Delete .ts files in root that are not in generated output
+          find "$DEST" -maxdepth 1 -type f -name "*.ts" | while read FILE; do
+            BASENAME=$(basename "$FILE")
+            if [ ! -f "$SRC/$BASENAME" ]; then
+              echo "Deleting obsolete $BASENAME"
+              rm "${FILE}"
+            fi
+          done
+
+          # 2. Copy generated files into root, but only if content differs
+          for FILE in "$SRC"/*.ts; do
+            BASENAME=$(basename "$FILE")
+            DEST_FILE="$DEST/$BASENAME"
+
+            # Only overwrite if content differs (or file doesn't exist)
+            if [ ! -f "$DEST_FILE" ] || ! cmp -s "$FILE" "$DEST_FILE"; then
+              echo "Updating $BASENAME"
+              cp "${FILE}" "${DEST_FILE}"
+            fi
+          done
+
+          # 3. Show resulting .ts files
+          ls -al "$DEST"/*.ts || true
 
       - name: "Commit changes"
         run: |
