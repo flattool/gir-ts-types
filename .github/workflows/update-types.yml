@@ -11,10 +11,25 @@ permissions:
 jobs:
   update-types:
     runs-on: "ubuntu-latest"
+
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          # Add or remove SDKs here
+          - branch: "sdk-v48"
+            sdk: "48"
+          - branch: "sdk-v49"
+            sdk: "49"
+          - branch: "main"
+            sdk: "master"
+
     steps:
-      - uses: "actions/checkout@v4"
+      - name: "Chckout branch"
+        uses: "actions/checkout@v4"
         with:
           persist-credentials: true
+          ref: ${{ matrix.branch }}
 
       - name: "Initialization steps"
         run: |
@@ -25,8 +40,7 @@ jobs:
 
       - name: "Install nightly GNOME SDK"
         run: |
-          SDK_VERSION=master
-          flatpak install --user -y org.gnome.Sdk//${SDK_VERSION}
+          flatpak install --user -y org.gnome.Sdk//${{ matrix.sdk }}
 
       - name: "Generate the types"
         run: |
@@ -36,7 +50,7 @@ jobs:
           --command=bash \
           --share=network \
           --filesystem=~/types:create \
-          org.gnome.Sdk -c "
+          org.gnome.Sdk//${{ matrix.sdk }} -c "
             mkdir -p "${HOME}/.nvm"
 
             vv #### Install latest Node LTS ### vv
@@ -95,8 +109,8 @@ jobs:
           git add -A
 
           if ! git diff --cached --quiet; then
-            git commit -m "Update generated GIR TypeScript definitions"
-            git push
+            git commit -m "Update GIR TypeScript declarations for SDK ${{ matrix.sdk }}"
+            git push origin ${{ matrix.branch }}
           else
-            echo "No changes — nothing to commit."
+            echo "No changes in ${{ matrix.branch }} - nothing to commit."
           fi
