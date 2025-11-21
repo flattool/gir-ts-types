@@ -4723,7 +4723,7 @@ declare module 'gi://Gsk?version=4.0' {
              *
              * This function is called before the node filter, so if it returns
              * FALSE, the node filter will never be called.
-             * @param foreach
+             * @param foreach the function to call for all nodes
              */
             set_node_foreach(foreach: RenderReplayNodeForeach): void;
             /**
