@@ -532,6 +532,61 @@ declare module 'gi://Gsk?version=4.0' {
             CONIC,
         }
         /**
+         * GSK_PORTER_DUFF_SOURCE:
+         * GSK_PORTER_DUFF_DEST:
+         * GSK_PORTER_DUFF_SOURCE_OVER_DEST:
+         * GSK_PORTER_DUFF_DEST_OVER_SOURCE:
+         * GSK_PORTER_DUFF_SOURCE_IN_DEST:
+         * GSK_PORTER_DUFF_DEST_IN_SOURCE:
+         * GSK_PORTER_DUFF_SOURCE_OUT_DEST:
+         * GSK_PORTER_DUFF_DEST_OUT_SOURCE:
+         * GSK_PORTER_DUFF_SOURCE_ATOP_DEST:
+         * GSK_PORTER_DUFF_DEST_ATOP_SOURCE:
+         * GSK_PORTER_DUFF_XOR:
+         * GSK_PORTER_DUFF_CLEAR:
+         * The 12 compositing modes defined by the seminal paper
+         * by Thomas Porter and Tom Duff.
+         *
+         * They are used in SVG, PDF and in Cairo with `cairo_operator_t`.
+         */
+
+        /**
+         * GSK_PORTER_DUFF_SOURCE:
+         * GSK_PORTER_DUFF_DEST:
+         * GSK_PORTER_DUFF_SOURCE_OVER_DEST:
+         * GSK_PORTER_DUFF_DEST_OVER_SOURCE:
+         * GSK_PORTER_DUFF_SOURCE_IN_DEST:
+         * GSK_PORTER_DUFF_DEST_IN_SOURCE:
+         * GSK_PORTER_DUFF_SOURCE_OUT_DEST:
+         * GSK_PORTER_DUFF_DEST_OUT_SOURCE:
+         * GSK_PORTER_DUFF_SOURCE_ATOP_DEST:
+         * GSK_PORTER_DUFF_DEST_ATOP_SOURCE:
+         * GSK_PORTER_DUFF_XOR:
+         * GSK_PORTER_DUFF_CLEAR:
+         * The 12 compositing modes defined by the seminal paper
+         * by Thomas Porter and Tom Duff.
+         *
+         * They are used in SVG, PDF and in Cairo with `cairo_operator_t`.
+         */
+        export namespace PorterDuff {
+            export const $gtype: GObject.GType<PorterDuff>;
+        }
+
+        enum PorterDuff {
+            SOURCE,
+            DEST,
+            SOURCE_OVER_DEST,
+            DEST_OVER_SOURCE,
+            SOURCE_IN_DEST,
+            DEST_IN_SOURCE,
+            SOURCE_OUT_DEST,
+            DEST_OUT_SOURCE,
+            SOURCE_ATOP_DEST,
+            DEST_ATOP_SOURCE,
+            XOR,
+            CLEAR,
+        }
+        /**
          * The type of a node determines what the node is rendering.
          */
 
@@ -671,6 +726,19 @@ declare module 'gi://Gsk?version=4.0' {
              * A node that applies some function to each color component.
              */
             COMPONENT_TRANSFER_NODE,
+            /**
+             * A node that copies the rendering canvas to be pasted later.
+             */
+            COPY_NODE,
+            /**
+             * A node that pastes a previously copied canvas.
+             */
+            PASTE_NODE,
+            /**
+             * A node that combines a child with the background using Porter/Duff
+             * operations.
+             */
+            COMPOSITE_NODE,
         }
         /**
          * The filters used when scaling texture data.
@@ -1500,6 +1568,62 @@ declare module 'gi://Gsk?version=4.0' {
             get_transfer(component: number): ComponentTransfer;
         }
 
+        namespace CompositeNode {
+            // Signal signatures
+            interface SignalSignatures extends RenderNode.SignalSignatures {}
+        }
+
+        /**
+         * A render node that uses Porter/Duff compositing operators to combine
+         * its child with the background.
+         */
+        class CompositeNode extends RenderNode {
+            static $gtype: GObject.GType<CompositeNode>;
+
+            // Constructors
+
+            _init(...args: any[]): void;
+
+            static ['new'](child: RenderNode, mask: RenderNode, op: PorterDuff): CompositeNode;
+
+            // Signals
+
+            connect<K extends keyof CompositeNode.SignalSignatures>(
+                signal: K,
+                callback: GObject.SignalCallback<this, CompositeNode.SignalSignatures[K]>,
+            ): number;
+            connect(signal: string, callback: (...args: any[]) => any): number;
+            connect_after<K extends keyof CompositeNode.SignalSignatures>(
+                signal: K,
+                callback: GObject.SignalCallback<this, CompositeNode.SignalSignatures[K]>,
+            ): number;
+            connect_after(signal: string, callback: (...args: any[]) => any): number;
+            emit<K extends keyof CompositeNode.SignalSignatures>(
+                signal: K,
+                ...args: GObject.GjsParameters<CompositeNode.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never
+            ): void;
+            emit(signal: string, ...args: any[]): void;
+
+            // Methods
+
+            /**
+             * Gets the child node that is getting composited by the given `node`.
+             * @returns the child `GskRenderNode`
+             */
+            get_child(): RenderNode;
+            /**
+             * Gets the mask node that describes the region where the compositing
+             * applies.
+             * @returns the mask `GskRenderNode`
+             */
+            get_mask(): RenderNode;
+            /**
+             * Gets the compositing operator used by this node.
+             * @returns The compositing operator
+             */
+            get_operator(): PorterDuff;
+        }
+
         namespace ConicGradientNode {
             // Signal signatures
             interface SignalSignatures extends RenderNode.SignalSignatures {}
@@ -1624,6 +1748,51 @@ declare module 'gi://Gsk?version=4.0' {
              * @returns the number of children of the `GskRenderNode`
              */
             get_n_children(): number;
+        }
+
+        namespace CopyNode {
+            // Signal signatures
+            interface SignalSignatures extends RenderNode.SignalSignatures {}
+        }
+
+        /**
+         * A render node that copies the current state of the rendering canvas
+         * so a [class`Gsk`.PasteNode] can draw it.
+         */
+        class CopyNode extends RenderNode {
+            static $gtype: GObject.GType<CopyNode>;
+
+            // Constructors
+
+            _init(...args: any[]): void;
+
+            static ['new'](child: RenderNode): CopyNode;
+
+            // Signals
+
+            connect<K extends keyof CopyNode.SignalSignatures>(
+                signal: K,
+                callback: GObject.SignalCallback<this, CopyNode.SignalSignatures[K]>,
+            ): number;
+            connect(signal: string, callback: (...args: any[]) => any): number;
+            connect_after<K extends keyof CopyNode.SignalSignatures>(
+                signal: K,
+                callback: GObject.SignalCallback<this, CopyNode.SignalSignatures[K]>,
+            ): number;
+            connect_after(signal: string, callback: (...args: any[]) => any): number;
+            emit<K extends keyof CopyNode.SignalSignatures>(
+                signal: K,
+                ...args: GObject.GjsParameters<CopyNode.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never
+            ): void;
+            emit(signal: string, ...args: any[]): void;
+
+            // Methods
+
+            /**
+             * Gets the child node that is getting drawn by the given `node`.
+             * @returns the child `GskRenderNode`
+             */
+            get_child(): RenderNode;
         }
 
         namespace CrossFadeNode {
@@ -2614,6 +2783,50 @@ declare module 'gi://Gsk?version=4.0' {
              * @returns the size of the shadow, in pixels
              */
             get_spread(): number;
+        }
+
+        namespace PasteNode {
+            // Signal signatures
+            interface SignalSignatures extends RenderNode.SignalSignatures {}
+        }
+
+        /**
+         * A render node for a paste.
+         */
+        class PasteNode extends RenderNode {
+            static $gtype: GObject.GType<PasteNode>;
+
+            // Constructors
+
+            _init(...args: any[]): void;
+
+            static ['new'](bounds: Graphene.Rect, depth: number): PasteNode;
+
+            // Signals
+
+            connect<K extends keyof PasteNode.SignalSignatures>(
+                signal: K,
+                callback: GObject.SignalCallback<this, PasteNode.SignalSignatures[K]>,
+            ): number;
+            connect(signal: string, callback: (...args: any[]) => any): number;
+            connect_after<K extends keyof PasteNode.SignalSignatures>(
+                signal: K,
+                callback: GObject.SignalCallback<this, PasteNode.SignalSignatures[K]>,
+            ): number;
+            connect_after(signal: string, callback: (...args: any[]) => any): number;
+            emit<K extends keyof PasteNode.SignalSignatures>(
+                signal: K,
+                ...args: GObject.GjsParameters<PasteNode.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never
+            ): void;
+            emit(signal: string, ...args: any[]): void;
+
+            // Methods
+
+            /**
+             * Retrieves the index of the copy that should be pasted.
+             * @returns the index of the copy to paste.
+             */
+            get_depth(): number;
         }
 
         namespace RadialGradientNode {

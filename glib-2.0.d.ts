@@ -15227,6 +15227,11 @@ declare module 'gi://GLib?version=2.0' {
              *   later tests with [func`GLib`.test_trap_assert_stderr].
              */
             INHERIT_STDERR,
+            /**
+             * If this flag is given, the
+             *   child process will inherit the parent’s open file descriptors.
+             */
+            INHERIT_DESCRIPTORS,
         }
         /**
          * Flags to pass to [func`GLib`.test_trap_fork] to control input and output.
