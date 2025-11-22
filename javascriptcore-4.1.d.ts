@@ -1082,10 +1082,9 @@ declare module 'gi://JavaScriptCore?version=4.1' {
              * in JSC being called, the contents of the memory region might be modified in
              * the meantime. Consider taking a copy of the data and using the copy instead
              * in asynchronous code.
-             * @param size location where to store the size of the memory region.
              * @returns pointer to memory.
              */
-            array_buffer_get_data(size?: number | null): any | null;
+            array_buffer_get_data(): Uint8Array;
             /**
              * Gets the size in bytes of the array buffer.
              *
