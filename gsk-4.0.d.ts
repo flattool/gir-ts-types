@@ -5634,6 +5634,8 @@ declare module 'gi://Gsk?version=4.0' {
              * Transforms a rectangle using the given transform.
              *
              * The result is the bounding box containing the coplanar quad.
+             *
+             * The input and output rect may point to the same rectangle.
              * @param rect the rectangle to transform
              */
             transform_bounds(rect: Graphene.Rect): Graphene.Rect;
