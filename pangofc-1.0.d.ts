@@ -366,8 +366,7 @@ declare module 'gi://PangoFc?version=1.0' {
             // Constructor properties interface
 
             interface ConstructorProps<A extends GObject.Object = GObject.Object>
-                extends Pango.FontMap.ConstructorProps,
-                    Gio.ListModel.ConstructorProps {}
+                extends Pango.FontMap.ConstructorProps, Gio.ListModel.ConstructorProps {}
         }
 
         /**

@@ -633,8 +633,7 @@ declare module 'gi://GstPlayer?version=1.0' {
             // Constructor properties interface
 
             interface ConstructorProps
-                extends GObject.Object.ConstructorProps,
-                    PlayerSignalDispatcher.ConstructorProps {
+                extends GObject.Object.ConstructorProps, PlayerSignalDispatcher.ConstructorProps {
                 application_context: GLib.MainContext;
                 applicationContext: GLib.MainContext;
             }

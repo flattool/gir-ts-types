@@ -1365,7 +1365,8 @@ declare module 'gi://Gck?version=2' {
             // Constructor properties interface
 
             interface ConstructorProps
-                extends GObject.Object.ConstructorProps,
+                extends
+                    GObject.Object.ConstructorProps,
                     Gio.AsyncInitable.ConstructorProps,
                     Gio.Initable.ConstructorProps {
                 app_data: any;

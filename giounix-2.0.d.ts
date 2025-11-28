@@ -1711,7 +1711,8 @@ declare module 'gi://GioUnix?version=2.0' {
             // Constructor properties interface
 
             interface ConstructorProps
-                extends Gio.InputStream.ConstructorProps,
+                extends
+                    Gio.InputStream.ConstructorProps,
                     Gio.PollableInputStream.ConstructorProps,
                     FileDescriptorBased.ConstructorProps {
                 close_fd: boolean;
@@ -3234,7 +3235,8 @@ declare module 'gi://GioUnix?version=2.0' {
             // Constructor properties interface
 
             interface ConstructorProps
-                extends Gio.OutputStream.ConstructorProps,
+                extends
+                    Gio.OutputStream.ConstructorProps,
                     Gio.PollableOutputStream.ConstructorProps,
                     FileDescriptorBased.ConstructorProps {
                 close_fd: boolean;

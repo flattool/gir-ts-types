@@ -8983,8 +8983,7 @@ declare module 'gi://Soup?version=3.0' {
             // Constructor properties interface
 
             interface ConstructorProps
-                extends Gio.FilterInputStream.ConstructorProps,
-                    Gio.PollableInputStream.ConstructorProps {
+                extends Gio.FilterInputStream.ConstructorProps, Gio.PollableInputStream.ConstructorProps {
                 message: Message;
             }
         }

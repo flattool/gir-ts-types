@@ -13107,7 +13107,8 @@ declare module 'gi://WebKit?version=6.0' {
             // Constructor properties interface
 
             interface ConstructorProps
-                extends WebViewBase.ConstructorProps,
+                extends
+                    WebViewBase.ConstructorProps,
                     Gtk.Accessible.ConstructorProps,
                     Gtk.Buildable.ConstructorProps,
                     Gtk.ConstraintTarget.ConstructorProps {
@@ -15376,7 +15377,8 @@ declare module 'gi://WebKit?version=6.0' {
             // Constructor properties interface
 
             interface ConstructorProps
-                extends Gtk.Widget.ConstructorProps,
+                extends
+                    Gtk.Widget.ConstructorProps,
                     Gtk.Accessible.ConstructorProps,
                     Gtk.Buildable.ConstructorProps,
                     Gtk.ConstraintTarget.ConstructorProps {}
