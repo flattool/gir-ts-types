@@ -3869,8 +3869,7 @@ declare module 'gi://Pango?version=1.0' {
             // Constructor properties interface
 
             interface ConstructorProps<A extends GObject.Object = GObject.Object>
-                extends GObject.Object.ConstructorProps,
-                    Gio.ListModel.ConstructorProps {
+                extends GObject.Object.ConstructorProps, Gio.ListModel.ConstructorProps {
                 is_monospace: boolean;
                 isMonospace: boolean;
                 is_variable: boolean;
@@ -4599,8 +4598,7 @@ declare module 'gi://Pango?version=1.0' {
             // Constructor properties interface
 
             interface ConstructorProps<A extends GObject.Object = GObject.Object>
-                extends GObject.Object.ConstructorProps,
-                    Gio.ListModel.ConstructorProps {
+                extends GObject.Object.ConstructorProps, Gio.ListModel.ConstructorProps {
                 item_type: GObject.GType;
                 itemType: GObject.GType;
                 n_items: number;

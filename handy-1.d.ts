@@ -445,7 +445,8 @@ declare module 'gi://Handy?version=1' {
             // Constructor properties interface
 
             interface ConstructorProps
-                extends PreferencesRow.ConstructorProps,
+                extends
+                    PreferencesRow.ConstructorProps,
                     Atk.ImplementorIface.ConstructorProps,
                     Gtk.Actionable.ConstructorProps,
                     Gtk.Buildable.ConstructorProps {
@@ -5067,7 +5068,8 @@ declare module 'gi://Handy?version=1' {
             // Constructor properties interface
 
             interface ConstructorProps
-                extends Gtk.ApplicationWindow.ConstructorProps,
+                extends
+                    Gtk.ApplicationWindow.ConstructorProps,
                     Atk.ImplementorIface.ConstructorProps,
                     Gio.ActionGroup.ConstructorProps,
                     Gio.ActionMap.ConstructorProps,
@@ -6142,7 +6144,8 @@ declare module 'gi://Handy?version=1' {
             // Constructor properties interface
 
             interface ConstructorProps
-                extends Gtk.DrawingArea.ConstructorProps,
+                extends
+                    Gtk.DrawingArea.ConstructorProps,
                     Atk.ImplementorIface.ConstructorProps,
                     Gtk.Buildable.ConstructorProps {
                 icon_name: string;
@@ -6907,7 +6910,8 @@ declare module 'gi://Handy?version=1' {
             // Constructor properties interface
 
             interface ConstructorProps
-                extends Gtk.EventBox.ConstructorProps,
+                extends
+                    Gtk.EventBox.ConstructorProps,
                     Atk.ImplementorIface.ConstructorProps,
                     Gtk.Buildable.ConstructorProps,
                     Gtk.Orientable.ConstructorProps,
@@ -11655,7 +11659,8 @@ declare module 'gi://Handy?version=1' {
             // Constructor properties interface
 
             interface ConstructorProps
-                extends Gtk.DrawingArea.ConstructorProps,
+                extends
+                    Gtk.DrawingArea.ConstructorProps,
                     Atk.ImplementorIface.ConstructorProps,
                     Gtk.Buildable.ConstructorProps,
                     Gtk.Orientable.ConstructorProps {
@@ -12250,7 +12255,8 @@ declare module 'gi://Handy?version=1' {
             // Constructor properties interface
 
             interface ConstructorProps
-                extends Gtk.DrawingArea.ConstructorProps,
+                extends
+                    Gtk.DrawingArea.ConstructorProps,
                     Atk.ImplementorIface.ConstructorProps,
                     Gtk.Buildable.ConstructorProps,
                     Gtk.Orientable.ConstructorProps {
@@ -12848,7 +12854,8 @@ declare module 'gi://Handy?version=1' {
             // Constructor properties interface
 
             interface ConstructorProps
-                extends Gtk.Bin.ConstructorProps,
+                extends
+                    Gtk.Bin.ConstructorProps,
                     Atk.ImplementorIface.ConstructorProps,
                     Gtk.Buildable.ConstructorProps,
                     Gtk.Orientable.ConstructorProps {
@@ -13514,7 +13521,8 @@ declare module 'gi://Handy?version=1' {
             // Constructor properties interface
 
             interface ConstructorProps
-                extends ActionRow.ConstructorProps,
+                extends
+                    ActionRow.ConstructorProps,
                     Atk.ImplementorIface.ConstructorProps,
                     Gtk.Actionable.ConstructorProps,
                     Gtk.Buildable.ConstructorProps {
@@ -18048,7 +18056,8 @@ declare module 'gi://Handy?version=1' {
             // Constructor properties interface
 
             interface ConstructorProps
-                extends Gtk.Container.ConstructorProps,
+                extends
+                    Gtk.Container.ConstructorProps,
                     Atk.ImplementorIface.ConstructorProps,
                     Gtk.Buildable.ConstructorProps,
                     Gtk.Orientable.ConstructorProps,
@@ -22936,7 +22945,8 @@ declare module 'gi://Handy?version=1' {
             // Constructor properties interface
 
             interface ConstructorProps
-                extends PreferencesRow.ConstructorProps,
+                extends
+                    PreferencesRow.ConstructorProps,
                     Atk.ImplementorIface.ConstructorProps,
                     Gtk.Actionable.ConstructorProps,
                     Gtk.Buildable.ConstructorProps {
@@ -27484,7 +27494,8 @@ declare module 'gi://Handy?version=1' {
             // Constructor properties interface
 
             interface ConstructorProps
-                extends Gtk.Container.ConstructorProps,
+                extends
+                    Gtk.Container.ConstructorProps,
                     Atk.ImplementorIface.ConstructorProps,
                     Gtk.Buildable.ConstructorProps,
                     Gtk.Orientable.ConstructorProps,
@@ -32404,7 +32415,8 @@ declare module 'gi://Handy?version=1' {
             // Constructor properties interface
 
             interface ConstructorProps
-                extends Gtk.Container.ConstructorProps,
+                extends
+                    Gtk.Container.ConstructorProps,
                     Atk.ImplementorIface.ConstructorProps,
                     Gtk.Buildable.ConstructorProps {
                 centering_policy: CenteringPolicy;
@@ -34156,7 +34168,8 @@ declare module 'gi://Handy?version=1' {
             // Constructor properties interface
 
             interface ConstructorProps
-                extends Gtk.Bin.ConstructorProps,
+                extends
+                    Gtk.Bin.ConstructorProps,
                     Atk.ImplementorIface.ConstructorProps,
                     Gtk.Buildable.ConstructorProps {
                 column_spacing: number;
@@ -34881,7 +34894,8 @@ declare module 'gi://Handy?version=1' {
             // Constructor properties interface
 
             interface ConstructorProps
-                extends Gtk.Container.ConstructorProps,
+                extends
+                    Gtk.Container.ConstructorProps,
                     Atk.ImplementorIface.ConstructorProps,
                     Gtk.Buildable.ConstructorProps,
                     Gtk.Orientable.ConstructorProps,
@@ -39780,7 +39794,8 @@ declare module 'gi://Handy?version=1' {
             // Constructor properties interface
 
             interface ConstructorProps
-                extends Gtk.Bin.ConstructorProps,
+                extends
+                    Gtk.Bin.ConstructorProps,
                     Atk.ImplementorIface.ConstructorProps,
                     Gtk.Buildable.ConstructorProps {
                 description: string;
@@ -40390,7 +40405,8 @@ declare module 'gi://Handy?version=1' {
             // Constructor properties interface
 
             interface ConstructorProps
-                extends Gtk.Bin.ConstructorProps,
+                extends
+                    Gtk.Bin.ConstructorProps,
                     Atk.ImplementorIface.ConstructorProps,
                     Gtk.Buildable.ConstructorProps {
                 icon_name: string;
@@ -40988,7 +41004,8 @@ declare module 'gi://Handy?version=1' {
             // Constructor properties interface
 
             interface ConstructorProps
-                extends Gtk.ListBoxRow.ConstructorProps,
+                extends
+                    Gtk.ListBoxRow.ConstructorProps,
                     Atk.ImplementorIface.ConstructorProps,
                     Gtk.Actionable.ConstructorProps,
                     Gtk.Buildable.ConstructorProps {
@@ -45574,9 +45591,7 @@ declare module 'gi://Handy?version=1' {
             // Constructor properties interface
 
             interface ConstructorProps
-                extends Window.ConstructorProps,
-                    Atk.ImplementorIface.ConstructorProps,
-                    Gtk.Buildable.ConstructorProps {
+                extends Window.ConstructorProps, Atk.ImplementorIface.ConstructorProps, Gtk.Buildable.ConstructorProps {
                 can_swipe_back: boolean;
                 canSwipeBack: boolean;
                 search_enabled: boolean;
@@ -46191,7 +46206,8 @@ declare module 'gi://Handy?version=1' {
             // Constructor properties interface
 
             interface ConstructorProps
-                extends Gtk.Bin.ConstructorProps,
+                extends
+                    Gtk.Bin.ConstructorProps,
                     Atk.ImplementorIface.ConstructorProps,
                     Gtk.Buildable.ConstructorProps {
                 search_mode_enabled: boolean;
@@ -46868,7 +46884,8 @@ declare module 'gi://Handy?version=1' {
             // Constructor properties interface
 
             interface ConstructorProps
-                extends Gtk.Container.ConstructorProps,
+                extends
+                    Gtk.Container.ConstructorProps,
                     Atk.ImplementorIface.ConstructorProps,
                     Gtk.Buildable.ConstructorProps,
                     Gtk.Orientable.ConstructorProps {
@@ -47653,7 +47670,8 @@ declare module 'gi://Handy?version=1' {
             // Constructor properties interface
 
             interface ConstructorProps
-                extends Gtk.Bin.ConstructorProps,
+                extends
+                    Gtk.Bin.ConstructorProps,
                     Atk.ImplementorIface.ConstructorProps,
                     Gtk.Buildable.ConstructorProps {
                 description: string;
@@ -49917,7 +49935,8 @@ declare module 'gi://Handy?version=1' {
             // Constructor properties interface
 
             interface ConstructorProps
-                extends Gtk.Bin.ConstructorProps,
+                extends
+                    Gtk.Bin.ConstructorProps,
                     Atk.ImplementorIface.ConstructorProps,
                     Gtk.Buildable.ConstructorProps {
                 autohide: boolean;
@@ -51025,7 +51044,8 @@ declare module 'gi://Handy?version=1' {
             // Constructor properties interface
 
             interface ConstructorProps
-                extends Gtk.Bin.ConstructorProps,
+                extends
+                    Gtk.Bin.ConstructorProps,
                     Atk.ImplementorIface.ConstructorProps,
                     Gtk.Buildable.ConstructorProps {
                 default_icon: Gio.Icon;
@@ -52062,7 +52082,8 @@ declare module 'gi://Handy?version=1' {
             // Constructor properties interface
 
             interface ConstructorProps
-                extends Gtk.Bin.ConstructorProps,
+                extends
+                    Gtk.Bin.ConstructorProps,
                     Atk.ImplementorIface.ConstructorProps,
                     Gtk.Buildable.ConstructorProps {
                 selection_mode: boolean;
@@ -52735,7 +52756,8 @@ declare module 'gi://Handy?version=1' {
             // Constructor properties interface
 
             interface ConstructorProps
-                extends Gtk.Bin.ConstructorProps,
+                extends
+                    Gtk.Bin.ConstructorProps,
                     Atk.ImplementorIface.ConstructorProps,
                     Gtk.Buildable.ConstructorProps {
                 narrow_ellipsize: Pango.EllipsizeMode;
@@ -53368,7 +53390,8 @@ declare module 'gi://Handy?version=1' {
             // Constructor properties interface
 
             interface ConstructorProps
-                extends Gtk.Bin.ConstructorProps,
+                extends
+                    Gtk.Bin.ConstructorProps,
                     Atk.ImplementorIface.ConstructorProps,
                     Gtk.Buildable.ConstructorProps {
                 policy: ViewSwitcherPolicy;
@@ -54018,7 +54041,8 @@ declare module 'gi://Handy?version=1' {
             // Constructor properties interface
 
             interface ConstructorProps
-                extends Gtk.Bin.ConstructorProps,
+                extends
+                    Gtk.Bin.ConstructorProps,
                     Atk.ImplementorIface.ConstructorProps,
                     Gtk.Buildable.ConstructorProps {
                 policy: ViewSwitcherPolicy;
@@ -54769,7 +54793,8 @@ declare module 'gi://Handy?version=1' {
             // Constructor properties interface
 
             interface ConstructorProps
-                extends Gtk.Window.ConstructorProps,
+                extends
+                    Gtk.Window.ConstructorProps,
                     Atk.ImplementorIface.ConstructorProps,
                     Gtk.Buildable.ConstructorProps {}
         }
@@ -55363,7 +55388,8 @@ declare module 'gi://Handy?version=1' {
             // Constructor properties interface
 
             interface ConstructorProps
-                extends Gtk.EventBox.ConstructorProps,
+                extends
+                    Gtk.EventBox.ConstructorProps,
                     Atk.ImplementorIface.ConstructorProps,
                     Gtk.Buildable.ConstructorProps {}
         }

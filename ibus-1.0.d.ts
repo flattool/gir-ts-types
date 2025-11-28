@@ -6983,7 +6983,8 @@ declare module 'gi://IBus?version=1.0' {
             // Constructor properties interface
 
             interface ConstructorProps
-                extends Proxy.ConstructorProps,
+                extends
+                    Proxy.ConstructorProps,
                     Gio.AsyncInitable.ConstructorProps,
                     Gio.DBusInterface.ConstructorProps,
                     Gio.Initable.ConstructorProps {}
@@ -9266,7 +9267,8 @@ declare module 'gi://IBus?version=1.0' {
             // Constructor properties interface
 
             interface ConstructorProps
-                extends Proxy.ConstructorProps,
+                extends
+                    Proxy.ConstructorProps,
                     Gio.AsyncInitable.ConstructorProps,
                     Gio.DBusInterface.ConstructorProps,
                     Gio.Initable.ConstructorProps {}
@@ -11298,7 +11300,8 @@ declare module 'gi://IBus?version=1.0' {
             // Constructor properties interface
 
             interface ConstructorProps
-                extends Gio.DBusProxy.ConstructorProps,
+                extends
+                    Gio.DBusProxy.ConstructorProps,
                     Gio.AsyncInitable.ConstructorProps,
                     Gio.DBusInterface.ConstructorProps,
                     Gio.Initable.ConstructorProps {}

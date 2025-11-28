@@ -8583,7 +8583,8 @@ declare module 'gi://Gdk?version=4.0' {
             // Constructor properties interface
 
             interface ConstructorProps
-                extends Texture.ConstructorProps,
+                extends
+                    Texture.ConstructorProps,
                     Paintable.ConstructorProps,
                     Gio.Icon.ConstructorProps,
                     Gio.LoadableIcon.ConstructorProps {}
@@ -11267,7 +11268,8 @@ declare module 'gi://Gdk?version=4.0' {
             // Constructor properties interface
 
             interface ConstructorProps
-                extends Texture.ConstructorProps,
+                extends
+                    Texture.ConstructorProps,
                     Paintable.ConstructorProps,
                     Gio.Icon.ConstructorProps,
                     Gio.LoadableIcon.ConstructorProps {}
@@ -12595,7 +12597,8 @@ declare module 'gi://Gdk?version=4.0' {
             // Constructor properties interface
 
             interface ConstructorProps
-                extends Texture.ConstructorProps,
+                extends
+                    Texture.ConstructorProps,
                     Paintable.ConstructorProps,
                     Gio.Icon.ConstructorProps,
                     Gio.LoadableIcon.ConstructorProps {}
@@ -14722,7 +14725,8 @@ declare module 'gi://Gdk?version=4.0' {
             // Constructor properties interface
 
             interface ConstructorProps
-                extends GObject.Object.ConstructorProps,
+                extends
+                    GObject.Object.ConstructorProps,
                     Paintable.ConstructorProps,
                     Gio.Icon.ConstructorProps,
                     Gio.LoadableIcon.ConstructorProps {

@@ -996,7 +996,8 @@ declare module 'gi://Secret?version=1' {
             // Constructor properties interface
 
             interface ConstructorProps
-                extends Gio.DBusProxy.ConstructorProps,
+                extends
+                    Gio.DBusProxy.ConstructorProps,
                     Gio.AsyncInitable.ConstructorProps,
                     Gio.DBusInterface.ConstructorProps,
                     Gio.Initable.ConstructorProps {
@@ -2345,7 +2346,8 @@ declare module 'gi://Secret?version=1' {
             // Constructor properties interface
 
             interface ConstructorProps
-                extends Gio.DBusProxy.ConstructorProps,
+                extends
+                    Gio.DBusProxy.ConstructorProps,
                     Gio.AsyncInitable.ConstructorProps,
                     Gio.DBusInterface.ConstructorProps,
                     Gio.Initable.ConstructorProps,
@@ -3806,7 +3808,8 @@ declare module 'gi://Secret?version=1' {
             // Constructor properties interface
 
             interface ConstructorProps
-                extends Gio.DBusProxy.ConstructorProps,
+                extends
+                    Gio.DBusProxy.ConstructorProps,
                     Gio.AsyncInitable.ConstructorProps,
                     Gio.DBusInterface.ConstructorProps,
                     Gio.Initable.ConstructorProps {}
@@ -4776,7 +4779,8 @@ declare module 'gi://Secret?version=1' {
             // Constructor properties interface
 
             interface ConstructorProps
-                extends Gio.DBusProxy.ConstructorProps,
+                extends
+                    Gio.DBusProxy.ConstructorProps,
                     Gio.AsyncInitable.ConstructorProps,
                     Gio.DBusInterface.ConstructorProps,
                     Gio.Initable.ConstructorProps,

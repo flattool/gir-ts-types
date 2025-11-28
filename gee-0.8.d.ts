@@ -592,7 +592,8 @@ declare module 'gi://Gee?version=0.8' {
             // Constructor properties interface
 
             interface ConstructorProps
-                extends GObject.Object.ConstructorProps,
+                extends
+                    GObject.Object.ConstructorProps,
                     Traversable.ConstructorProps,
                     Iterable.ConstructorProps,
                     Collection.ConstructorProps {
@@ -1402,7 +1403,8 @@ declare module 'gi://Gee?version=0.8' {
             // Constructor properties interface
 
             interface ConstructorProps
-                extends GObject.Object.ConstructorProps,
+                extends
+                    GObject.Object.ConstructorProps,
                     Traversable.ConstructorProps,
                     Iterable.ConstructorProps,
                     Map.ConstructorProps {
@@ -4208,9 +4210,7 @@ declare module 'gi://Gee?version=0.8' {
             // Constructor properties interface
 
             interface ConstructorProps
-                extends AbstractBidirList.ConstructorProps,
-                    Queue.ConstructorProps,
-                    Deque.ConstructorProps {
+                extends AbstractBidirList.ConstructorProps, Queue.ConstructorProps, Deque.ConstructorProps {
                 g_type: GObject.GType;
                 gType: GObject.GType;
                 g_dup_func: GObject.BoxedCopyFunc;
@@ -4821,9 +4821,7 @@ declare module 'gi://Gee?version=0.8' {
             // Constructor properties interface
 
             interface ConstructorProps
-                extends AbstractBidirList.ConstructorProps,
-                    Queue.ConstructorProps,
-                    Deque.ConstructorProps {
+                extends AbstractBidirList.ConstructorProps, Queue.ConstructorProps, Deque.ConstructorProps {
                 g_type: GObject.GType;
                 gType: GObject.GType;
                 g_dup_func: GObject.BoxedCopyFunc;

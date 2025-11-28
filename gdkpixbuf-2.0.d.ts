@@ -350,9 +350,7 @@ declare module 'gi://GdkPixbuf?version=2.0' {
             // Constructor properties interface
 
             interface ConstructorProps
-                extends GObject.Object.ConstructorProps,
-                    Gio.Icon.ConstructorProps,
-                    Gio.LoadableIcon.ConstructorProps {
+                extends GObject.Object.ConstructorProps, Gio.Icon.ConstructorProps, Gio.LoadableIcon.ConstructorProps {
                 bits_per_sample: number;
                 bitsPerSample: number;
                 colorspace: Colorspace;

@@ -1630,8 +1630,7 @@ declare module 'gi://Gcr?version=4' {
             // Constructor properties interface
 
             interface ConstructorProps<A extends GObject.Object = GObject.Object>
-                extends CertificateExtension.ConstructorProps,
-                    Gio.ListModel.ConstructorProps {
+                extends CertificateExtension.ConstructorProps, Gio.ListModel.ConstructorProps {
                 n_items: number;
                 nItems: number;
             }
@@ -2426,8 +2425,7 @@ declare module 'gi://Gcr?version=4' {
             // Constructor properties interface
 
             interface ConstructorProps<A extends GObject.Object = GObject.Object>
-                extends CertificateExtension.ConstructorProps,
-                    Gio.ListModel.ConstructorProps {
+                extends CertificateExtension.ConstructorProps, Gio.ListModel.ConstructorProps {
                 n_items: number;
                 nItems: number;
             }
@@ -3051,8 +3049,7 @@ declare module 'gi://Gcr?version=4' {
             // Constructor properties interface
 
             interface ConstructorProps<A extends GObject.Object = GObject.Object>
-                extends CertificateExtension.ConstructorProps,
-                    Gio.ListModel.ConstructorProps {
+                extends CertificateExtension.ConstructorProps, Gio.ListModel.ConstructorProps {
                 n_items: number;
                 nItems: number;
             }
@@ -3827,8 +3824,7 @@ declare module 'gi://Gcr?version=4' {
             // Constructor properties interface
 
             interface ConstructorProps<A extends GObject.Object = GObject.Object>
-                extends GObject.Object.ConstructorProps,
-                    Gio.ListModel.ConstructorProps {
+                extends GObject.Object.ConstructorProps, Gio.ListModel.ConstructorProps {
                 n_items: number;
                 nItems: number;
             }
@@ -4447,8 +4443,7 @@ declare module 'gi://Gcr?version=4' {
             // Constructor properties interface
 
             interface ConstructorProps<A extends GObject.Object = GObject.Object>
-                extends CertificateExtension.ConstructorProps,
-                    Gio.ListModel.ConstructorProps {}
+                extends CertificateExtension.ConstructorProps, Gio.ListModel.ConstructorProps {}
         }
 
         /**
@@ -5212,8 +5207,7 @@ declare module 'gi://Gcr?version=4' {
             // Constructor properties interface
 
             interface ConstructorProps<A extends GObject.Object = GObject.Object>
-                extends GObject.Object.ConstructorProps,
-                    Gio.ListModel.ConstructorProps {}
+                extends GObject.Object.ConstructorProps, Gio.ListModel.ConstructorProps {}
         }
 
         /**
@@ -6290,8 +6284,7 @@ declare module 'gi://Gcr?version=4' {
             // Constructor properties interface
 
             interface ConstructorProps<A extends GObject.Object = GObject.Object>
-                extends GObject.Object.ConstructorProps,
-                    Gio.ListModel.ConstructorProps {}
+                extends GObject.Object.ConstructorProps, Gio.ListModel.ConstructorProps {}
         }
 
         /**
@@ -8967,7 +8960,8 @@ declare module 'gi://Gcr?version=4' {
             // Constructor properties interface
 
             interface ConstructorProps
-                extends GObject.Object.ConstructorProps,
+                extends
+                    GObject.Object.ConstructorProps,
                     Prompt.ConstructorProps,
                     Gio.AsyncInitable.ConstructorProps,
                     Gio.Initable.ConstructorProps {

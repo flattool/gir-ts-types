@@ -2362,7 +2362,8 @@ declare module 'gi://Atspi?version=2.0' {
             // Constructor properties interface
 
             interface ConstructorProps
-                extends Object.ConstructorProps,
+                extends
+                    Object.ConstructorProps,
                     Action.ConstructorProps,
                     Collection.ConstructorProps,
                     Component.ConstructorProps,

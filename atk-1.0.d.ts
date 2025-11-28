@@ -2812,7 +2812,8 @@ declare module 'gi://Atk?version=1.0' {
             // Constructor properties interface
 
             interface ConstructorProps
-                extends Object.ConstructorProps,
+                extends
+                    Object.ConstructorProps,
                     Action.ConstructorProps,
                     Component.ConstructorProps,
                     Document.ConstructorProps,

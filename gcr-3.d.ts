@@ -2430,9 +2430,7 @@ declare module 'gi://Gcr?version=3' {
             // Constructor properties interface
 
             interface ConstructorProps
-                extends Gck.Object.ConstructorProps,
-                    Certificate.ConstructorProps,
-                    Comparable.ConstructorProps {
+                extends Gck.Object.ConstructorProps, Certificate.ConstructorProps, Comparable.ConstructorProps {
                 attributes: Gck.Attributes;
             }
         }
@@ -3375,9 +3373,7 @@ declare module 'gi://Gcr?version=3' {
             // Constructor properties interface
 
             interface ConstructorProps
-                extends GObject.Object.ConstructorProps,
-                    Certificate.ConstructorProps,
-                    Comparable.ConstructorProps {}
+                extends GObject.Object.ConstructorProps, Certificate.ConstructorProps, Comparable.ConstructorProps {}
         }
 
         /**
@@ -4751,7 +4747,8 @@ declare module 'gi://Gcr?version=3' {
             // Constructor properties interface
 
             interface ConstructorProps
-                extends GObject.Object.ConstructorProps,
+                extends
+                    GObject.Object.ConstructorProps,
                     Prompt.ConstructorProps,
                     Gio.AsyncInitable.ConstructorProps,
                     Gio.Initable.ConstructorProps {
