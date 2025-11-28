@@ -1698,8 +1698,7 @@ declare module 'gi://Dex?version=1' {
             // Constructor properties interface
 
             interface ConstructorProps<A extends GObject.Object = GObject.Object>
-                extends GObject.Object.ConstructorProps,
-                    Gio.ListModel.ConstructorProps {}
+                extends GObject.Object.ConstructorProps, Gio.ListModel.ConstructorProps {}
         }
 
         /**

@@ -14333,7 +14333,8 @@ declare module 'gi://WebKit2?version=4.1' {
             // Constructor properties interface
 
             interface ConstructorProps
-                extends WebViewBase.ConstructorProps,
+                extends
+                    WebViewBase.ConstructorProps,
                     Atk.ImplementorIface.ConstructorProps,
                     Gtk.Buildable.ConstructorProps {
                 automation_presentation_type: AutomationBrowsingContextPresentation;
@@ -16966,7 +16967,8 @@ declare module 'gi://WebKit2?version=4.1' {
             // Constructor properties interface
 
             interface ConstructorProps
-                extends Gtk.Container.ConstructorProps,
+                extends
+                    Gtk.Container.ConstructorProps,
                     Atk.ImplementorIface.ConstructorProps,
                     Gtk.Buildable.ConstructorProps {}
         }

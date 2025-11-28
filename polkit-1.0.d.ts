@@ -293,7 +293,8 @@ declare module 'gi://Polkit?version=1.0' {
             // Constructor properties interface
 
             interface ConstructorProps
-                extends GObject.Object.ConstructorProps,
+                extends
+                    GObject.Object.ConstructorProps,
                     Gio.AsyncInitable.ConstructorProps,
                     Gio.Initable.ConstructorProps {
                 backend_features: AuthorityFeatures;
@@ -2187,7 +2188,8 @@ declare module 'gi://Polkit?version=1.0' {
             // Constructor properties interface
 
             interface ConstructorProps
-                extends Gio.Permission.ConstructorProps,
+                extends
+                    Gio.Permission.ConstructorProps,
                     Gio.AsyncInitable.ConstructorProps,
                     Gio.Initable.ConstructorProps {
                 action_id: string;
@@ -5690,7 +5692,8 @@ declare module 'gi://Polkit?version=1.0' {
             // Constructor properties interface
 
             interface ConstructorProps
-                extends GObject.Object.ConstructorProps,
+                extends
+                    GObject.Object.ConstructorProps,
                     Gio.AsyncInitable.ConstructorProps,
                     Gio.Initable.ConstructorProps,
                     Subject.ConstructorProps {

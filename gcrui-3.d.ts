@@ -123,7 +123,8 @@ declare module 'gi://GcrUi?version=3' {
             // Constructor properties interface
 
             interface ConstructorProps
-                extends GObject.Object.ConstructorProps,
+                extends
+                    GObject.Object.ConstructorProps,
                     Gcr.Certificate.ConstructorProps,
                     Gcr.Comparable.ConstructorProps,
                     Renderer.ConstructorProps {
@@ -971,7 +972,8 @@ declare module 'gi://GcrUi?version=3' {
             // Constructor properties interface
 
             interface ConstructorProps
-                extends Gtk.Bin.ConstructorProps,
+                extends
+                    Gtk.Bin.ConstructorProps,
                     Atk.ImplementorIface.ConstructorProps,
                     Gtk.Buildable.ConstructorProps {
                 attributes: Gck.Attributes;
@@ -1517,7 +1519,8 @@ declare module 'gi://GcrUi?version=3' {
             // Constructor properties interface
 
             interface ConstructorProps
-                extends GObject.Object.ConstructorProps,
+                extends
+                    GObject.Object.ConstructorProps,
                     Gtk.TreeModel.ConstructorProps,
                     Gtk.TreeSortable.ConstructorProps {
                 collection: Gcr.Collection;
@@ -2680,7 +2683,8 @@ declare module 'gi://GcrUi?version=3' {
             // Constructor properties interface
 
             interface ConstructorProps
-                extends Gtk.ComboBox.ConstructorProps,
+                extends
+                    Gtk.ComboBox.ConstructorProps,
                     Atk.ImplementorIface.ConstructorProps,
                     Gtk.Buildable.ConstructorProps,
                     Gtk.CellEditable.ConstructorProps,
@@ -7866,7 +7870,8 @@ declare module 'gi://GcrUi?version=3' {
             // Constructor properties interface
 
             interface ConstructorProps
-                extends Gtk.Button.ConstructorProps,
+                extends
+                    Gtk.Button.ConstructorProps,
                     Atk.ImplementorIface.ConstructorProps,
                     Gtk.Actionable.ConstructorProps,
                     Gtk.Activatable.ConstructorProps,
@@ -13080,7 +13085,8 @@ declare module 'gi://GcrUi?version=3' {
             // Constructor properties interface
 
             interface ConstructorProps
-                extends Gtk.Bin.ConstructorProps,
+                extends
+                    Gtk.Bin.ConstructorProps,
                     Atk.ImplementorIface.ConstructorProps,
                     Gtk.Buildable.ConstructorProps {
                 attributes: Gck.Attributes;
@@ -13671,7 +13677,8 @@ declare module 'gi://GcrUi?version=3' {
             // Constructor properties interface
 
             interface ConstructorProps
-                extends Gtk.TreeView.ConstructorProps,
+                extends
+                    Gtk.TreeView.ConstructorProps,
                     Atk.ImplementorIface.ConstructorProps,
                     Gtk.Buildable.ConstructorProps,
                     Gtk.Scrollable.ConstructorProps {
@@ -14389,7 +14396,8 @@ declare module 'gi://GcrUi?version=3' {
             // Constructor properties interface
 
             interface ConstructorProps
-                extends Gtk.Dialog.ConstructorProps,
+                extends
+                    Gtk.Dialog.ConstructorProps,
                     Atk.ImplementorIface.ConstructorProps,
                     Gcr.Prompt.ConstructorProps,
                     Gtk.Buildable.ConstructorProps {
@@ -15611,7 +15619,8 @@ declare module 'gi://GcrUi?version=3' {
             // Constructor properties interface
 
             interface ConstructorProps
-                extends Gtk.TreeView.ConstructorProps,
+                extends
+                    Gtk.TreeView.ConstructorProps,
                     Atk.ImplementorIface.ConstructorProps,
                     Gtk.Buildable.ConstructorProps,
                     Gtk.Scrollable.ConstructorProps {
@@ -16282,7 +16291,8 @@ declare module 'gi://GcrUi?version=3' {
             // Constructor properties interface
 
             interface ConstructorProps
-                extends Gtk.Bin.ConstructorProps,
+                extends
+                    Gtk.Bin.ConstructorProps,
                     Atk.ImplementorIface.ConstructorProps,
                     Gtk.Buildable.ConstructorProps {
                 choice: string;
@@ -16906,7 +16916,8 @@ declare module 'gi://GcrUi?version=3' {
             // Constructor properties interface
 
             interface ConstructorProps
-                extends Gtk.Box.ConstructorProps,
+                extends
+                    Gtk.Box.ConstructorProps,
                     Atk.ImplementorIface.ConstructorProps,
                     Gtk.Buildable.ConstructorProps,
                     Gtk.Orientable.ConstructorProps {

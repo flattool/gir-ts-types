@@ -107,7 +107,8 @@ declare module 'gi://Geoclue?version=2.0' {
             // Constructor properties interface
 
             interface ConstructorProps
-                extends Gio.DBusProxy.ConstructorProps,
+                extends
+                    Gio.DBusProxy.ConstructorProps,
                     Client.ConstructorProps,
                     Gio.AsyncInitable.ConstructorProps,
                     Gio.DBusInterface.ConstructorProps,
@@ -1312,7 +1313,8 @@ declare module 'gi://Geoclue?version=2.0' {
             // Constructor properties interface
 
             interface ConstructorProps
-                extends Gio.DBusInterfaceSkeleton.ConstructorProps,
+                extends
+                    Gio.DBusInterfaceSkeleton.ConstructorProps,
                     Client.ConstructorProps,
                     Gio.DBusInterface.ConstructorProps {}
         }
@@ -2073,7 +2075,8 @@ declare module 'gi://Geoclue?version=2.0' {
             // Constructor properties interface
 
             interface ConstructorProps
-                extends Gio.DBusProxy.ConstructorProps,
+                extends
+                    Gio.DBusProxy.ConstructorProps,
                     Location.ConstructorProps,
                     Gio.AsyncInitable.ConstructorProps,
                     Gio.DBusInterface.ConstructorProps,
@@ -3049,7 +3052,8 @@ declare module 'gi://Geoclue?version=2.0' {
             // Constructor properties interface
 
             interface ConstructorProps
-                extends Gio.DBusInterfaceSkeleton.ConstructorProps,
+                extends
+                    Gio.DBusInterfaceSkeleton.ConstructorProps,
                     Location.ConstructorProps,
                     Gio.DBusInterface.ConstructorProps {}
         }
@@ -3664,7 +3668,8 @@ declare module 'gi://Geoclue?version=2.0' {
             // Constructor properties interface
 
             interface ConstructorProps
-                extends Gio.DBusProxy.ConstructorProps,
+                extends
+                    Gio.DBusProxy.ConstructorProps,
                     Manager.ConstructorProps,
                     Gio.AsyncInitable.ConstructorProps,
                     Gio.DBusInterface.ConstructorProps,
@@ -4863,7 +4868,8 @@ declare module 'gi://Geoclue?version=2.0' {
             // Constructor properties interface
 
             interface ConstructorProps
-                extends Gio.DBusInterfaceSkeleton.ConstructorProps,
+                extends
+                    Gio.DBusInterfaceSkeleton.ConstructorProps,
                     Manager.ConstructorProps,
                     Gio.DBusInterface.ConstructorProps {}
         }

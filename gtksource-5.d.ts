@@ -1695,7 +1695,8 @@ declare module 'gi://GtkSource?version=5' {
             // Constructor properties interface
 
             interface ConstructorProps
-                extends Gtk.Widget.ConstructorProps,
+                extends
+                    Gtk.Widget.ConstructorProps,
                     Gtk.Accessible.ConstructorProps,
                     Gtk.Buildable.ConstructorProps,
                     Gtk.ConstraintTarget.ConstructorProps {
@@ -2529,8 +2530,7 @@ declare module 'gi://GtkSource?version=5' {
             // Constructor properties interface
 
             interface ConstructorProps<A extends GObject.Object = GObject.Object>
-                extends GObject.Object.ConstructorProps,
-                    Gio.ListModel.ConstructorProps {
+                extends GObject.Object.ConstructorProps, Gio.ListModel.ConstructorProps {
                 busy: boolean;
                 completion: Completion;
                 empty: boolean;
@@ -5486,7 +5486,8 @@ declare module 'gi://GtkSource?version=5' {
             // Constructor properties interface
 
             interface ConstructorProps
-                extends Gtk.Widget.ConstructorProps,
+                extends
+                    Gtk.Widget.ConstructorProps,
                     Gtk.Accessible.ConstructorProps,
                     Gtk.Buildable.ConstructorProps,
                     Gtk.ConstraintTarget.ConstructorProps {
@@ -6562,7 +6563,8 @@ declare module 'gi://GtkSource?version=5' {
             // Constructor properties interface
 
             interface ConstructorProps
-                extends Gtk.Widget.ConstructorProps,
+                extends
+                    Gtk.Widget.ConstructorProps,
                     Gtk.Accessible.ConstructorProps,
                     Gtk.Buildable.ConstructorProps,
                     Gtk.ConstraintTarget.ConstructorProps {
@@ -7647,7 +7649,8 @@ declare module 'gi://GtkSource?version=5' {
             // Constructor properties interface
 
             interface ConstructorProps
-                extends GutterRenderer.ConstructorProps,
+                extends
+                    GutterRenderer.ConstructorProps,
                     Gtk.Accessible.ConstructorProps,
                     Gtk.Buildable.ConstructorProps,
                     Gtk.ConstraintTarget.ConstructorProps {
@@ -8246,7 +8249,8 @@ declare module 'gi://GtkSource?version=5' {
             // Constructor properties interface
 
             interface ConstructorProps
-                extends GutterRenderer.ConstructorProps,
+                extends
+                    GutterRenderer.ConstructorProps,
                     Gtk.Accessible.ConstructorProps,
                     Gtk.Buildable.ConstructorProps,
                     Gtk.ConstraintTarget.ConstructorProps {
@@ -8981,7 +8985,8 @@ declare module 'gi://GtkSource?version=5' {
             // Constructor properties interface
 
             interface ConstructorProps
-                extends Gtk.Widget.ConstructorProps,
+                extends
+                    Gtk.Widget.ConstructorProps,
                     Gtk.Accessible.ConstructorProps,
                     Gtk.Buildable.ConstructorProps,
                     Gtk.ConstraintTarget.ConstructorProps {}
@@ -10189,7 +10194,8 @@ declare module 'gi://GtkSource?version=5' {
             // Constructor properties interface
 
             interface ConstructorProps
-                extends View.ConstructorProps,
+                extends
+                    View.ConstructorProps,
                     Gtk.Accessible.ConstructorProps,
                     Gtk.AccessibleText.ConstructorProps,
                     Gtk.Buildable.ConstructorProps,
@@ -13823,7 +13829,8 @@ declare module 'gi://GtkSource?version=5' {
             // Constructor properties interface
 
             interface ConstructorProps
-                extends Gtk.Button.ConstructorProps,
+                extends
+                    Gtk.Button.ConstructorProps,
                     Gtk.Accessible.ConstructorProps,
                     Gtk.Actionable.ConstructorProps,
                     Gtk.Buildable.ConstructorProps,
@@ -17009,7 +17016,8 @@ declare module 'gi://GtkSource?version=5' {
             // Constructor properties interface
 
             interface ConstructorProps
-                extends Gtk.Widget.ConstructorProps,
+                extends
+                    Gtk.Widget.ConstructorProps,
                     Gtk.Accessible.ConstructorProps,
                     Gtk.Buildable.ConstructorProps,
                     Gtk.ConstraintTarget.ConstructorProps,
@@ -18011,7 +18019,8 @@ declare module 'gi://GtkSource?version=5' {
             // Constructor properties interface
 
             interface ConstructorProps
-                extends Gtk.Widget.ConstructorProps,
+                extends
+                    Gtk.Widget.ConstructorProps,
                     Gtk.Accessible.ConstructorProps,
                     Gtk.Actionable.ConstructorProps,
                     Gtk.Buildable.ConstructorProps,
@@ -21702,7 +21711,8 @@ declare module 'gi://GtkSource?version=5' {
             // Constructor properties interface
 
             interface ConstructorProps
-                extends Gtk.TextView.ConstructorProps,
+                extends
+                    Gtk.TextView.ConstructorProps,
                     Gtk.Accessible.ConstructorProps,
                     Gtk.AccessibleText.ConstructorProps,
                     Gtk.Buildable.ConstructorProps,
