@@ -268,7 +268,7 @@ declare module 'gi://Adw?version=1' {
             /**
              * Inherit the parent color-scheme. When set on the
              *   `AdwStyleManager` returned by [func`StyleManager`.get_default], it's
-             *   equivalent to `ADW_COLOR_SCHEME_PREFER_LIGHT`.
+             *   equivalent to [enum`Adw`.ColorScheme.prefer-light].
              */
             DEFAULT,
             /**
@@ -311,8 +311,9 @@ declare module 'gi://Adw?version=1' {
 
         enum DialogPresentationMode {
             /**
-             * Switch between `ADW_DIALOG_FLOATING` and
-             *   `ADW_DIALOG_BOTTOM_SHEET` depending on available size.
+             * Switch between [enum`Adw`.DialogPresentationMode.floating]
+             *   and [enum`Adw`.DialogPresentationMode.bottom-sheet] depending on available
+             *   size.
              */
             AUTO,
             /**
@@ -351,12 +352,13 @@ declare module 'gi://Adw?version=1' {
              */
             EASE_IN_QUAD,
             /**
-             * Quadratic tweening, inverse of `ADW_EASE_IN_QUAD`.
+             * Quadratic tweening, inverse of
+             *   [enum`Adw`.Easing.ease-in-quad].
              */
             EASE_OUT_QUAD,
             /**
-             * Quadratic tweening, combining `ADW_EASE_IN_QUAD` and
-             *   `ADW_EASE_OUT_QUAD`.
+             * Quadratic tweening, combining
+             *   [enum`Adw`.Easing.ease-in-quad] and [enum`Adw`.Easing.ease-out-quad].
              */
             EASE_IN_OUT_QUAD,
             /**
@@ -364,12 +366,13 @@ declare module 'gi://Adw?version=1' {
              */
             EASE_IN_CUBIC,
             /**
-             * Cubic tweening, inverse of `ADW_EASE_IN_CUBIC`.
+             * Cubic tweening, inverse of
+             *   [enum`Adw`.Easing.ease-in-cubic].
              */
             EASE_OUT_CUBIC,
             /**
-             * Cubic tweening, combining `ADW_EASE_IN_CUBIC` and
-             *   `ADW_EASE_OUT_CUBIC`.
+             * Cubic tweening, combining
+             *   [enum`Adw`.Easing.ease-in-cubic] and [enum`Adw`.Easing.ease-out-cubic].
              */
             EASE_IN_OUT_CUBIC,
             /**
@@ -377,12 +380,13 @@ declare module 'gi://Adw?version=1' {
              */
             EASE_IN_QUART,
             /**
-             * Quartic tweening, inverse of `ADW_EASE_IN_QUART`.
+             * Quartic tweening, inverse of
+             *   [enum`Adw`.Easing.ease-in-quart].
              */
             EASE_OUT_QUART,
             /**
-             * Quartic tweening, combining `ADW_EASE_IN_QUART` and
-             *   `ADW_EASE_OUT_QUART`.
+             * Quartic tweening, combining
+             *   [enum`Adw`.Easing.ease-in-quart] and [enum`Adw`.Easing.ease-out-quart].
              */
             EASE_IN_OUT_QUART,
             /**
@@ -390,12 +394,13 @@ declare module 'gi://Adw?version=1' {
              */
             EASE_IN_QUINT,
             /**
-             * Quintic tweening, inverse of `ADW_EASE_IN_QUINT`.
+             * Quintic tweening, inverse of
+             *   [enum`Adw`.Easing.ease-in-quint].
              */
             EASE_OUT_QUINT,
             /**
-             * Quintic tweening, combining `ADW_EASE_IN_QUINT` and
-             *   `ADW_EASE_OUT_QUINT`.
+             * Quintic tweening, combining
+             *   [enum`Adw`.Easing.ease-in-quint] and [enum`Adw`.Easing.ease-out-quint].
              */
             EASE_IN_OUT_QUINT,
             /**
@@ -403,12 +408,13 @@ declare module 'gi://Adw?version=1' {
              */
             EASE_IN_SINE,
             /**
-             * Sine wave tweening, inverse of `ADW_EASE_IN_SINE`.
+             * Sine wave tweening, inverse of
+             *   [enum`Adw`.Easing.ease-in-sine].
              */
             EASE_OUT_SINE,
             /**
-             * Sine wave tweening, combining `ADW_EASE_IN_SINE` and
-             *   `ADW_EASE_OUT_SINE`.
+             * Sine wave tweening, combining
+             *   [enum`Adw`.Easing.ease-in-sine] and [enum`Adw`.Easing.ease-out-sine].
              */
             EASE_IN_OUT_SINE,
             /**
@@ -416,12 +422,13 @@ declare module 'gi://Adw?version=1' {
              */
             EASE_IN_EXPO,
             /**
-             * Exponential tweening, inverse of `ADW_EASE_IN_EXPO`.
+             * Exponential tweening, inverse of
+             *   [enum`Adw`.Easing.ease-in-expo].
              */
             EASE_OUT_EXPO,
             /**
-             * Exponential tweening, combining `ADW_EASE_IN_EXPO` and
-             *   `ADW_EASE_OUT_EXPO`.
+             * Exponential tweening, combining
+             *   [enum`Adw`.Easing.ease-in-expo] and [enum`Adw`.Easing.ease-out-expo].
              */
             EASE_IN_OUT_EXPO,
             /**
@@ -429,12 +436,13 @@ declare module 'gi://Adw?version=1' {
              */
             EASE_IN_CIRC,
             /**
-             * Circular tweening, inverse of `ADW_EASE_IN_CIRC`.
+             * Circular tweening, inverse of
+             *   [enum`Adw`.Easing.ease-in-circ].
              */
             EASE_OUT_CIRC,
             /**
-             * Circular tweening, combining `ADW_EASE_IN_CIRC` and
-             *   `ADW_EASE_OUT_CIRC`.
+             * Circular tweening, combining
+             *   [enum`Adw`.Easing.ease-in-circ] and [enum`Adw`.Easing.ease-out-circ].
              */
             EASE_IN_OUT_CIRC,
             /**
@@ -443,12 +451,13 @@ declare module 'gi://Adw?version=1' {
             EASE_IN_ELASTIC,
             /**
              * Elastic tweening, with offshoot on end, inverse of
-             *   `ADW_EASE_IN_ELASTIC`.
+             *   [enum`Adw`.Easing.ease-in-elastic].
              */
             EASE_OUT_ELASTIC,
             /**
              * Elastic tweening, with offshoot on both ends,
-             *   combining `ADW_EASE_IN_ELASTIC` and `ADW_EASE_OUT_ELASTIC`.
+             *   combining [enum`Adw`.Easing.ease-in-elastic] and
+             *   [enum`Adw`.Easing.ease-out-elastic].
              */
             EASE_IN_OUT_ELASTIC,
             /**
@@ -457,12 +466,13 @@ declare module 'gi://Adw?version=1' {
             EASE_IN_BACK,
             /**
              * Overshooting cubic tweening, with backtracking on end,
-             *   inverse of `ADW_EASE_IN_BACK`.
+             *   inverse of [enum`Adw`.Easing.ease-in-back].
              */
             EASE_OUT_BACK,
             /**
              * Overshooting cubic tweening, with backtracking on both
-             *   ends, combining `ADW_EASE_IN_BACK` and `ADW_EASE_OUT_BACK`.
+             *   ends, combining [enum`Adw`.Easing.ease-in-back] and
+             *   [enum`Adw`.Easing.ease-out-back].
              */
             EASE_IN_OUT_BACK,
             /**
@@ -472,13 +482,13 @@ declare module 'gi://Adw?version=1' {
             EASE_IN_BOUNCE,
             /**
              * Exponentially decaying parabolic (bounce) tweening,
-             *   with bounce on end, inverse of `ADW_EASE_IN_BOUNCE`.
+             *   with bounce on end, inverse of [enum`Adw`.Easing.ease-in-bounce].
              */
             EASE_OUT_BOUNCE,
             /**
              * Exponentially decaying parabolic (bounce) tweening,
-             *   with bounce on both ends, combining `ADW_EASE_IN_BOUNCE` and
-             *   `ADW_EASE_OUT_BOUNCE`.
+             *   with bounce on both ends, combining [enum`Adw`.Easing.ease-in-bounce] and
+             *   [enum`Adw`.Easing.ease-out-bounce].
              */
             EASE_IN_OUT_BOUNCE,
             /**
@@ -885,7 +895,7 @@ declare module 'gi://Adw?version=1' {
          * Describes the possible top or bottom bar styles in an [class`ToolbarView]`
          * widget.
          *
-         * `ADW_TOOLBAR_FLAT` is suitable for simple content, such as
+         * [enum`Adw`.ToolbarStyle.flat] is suitable for simple content, such as
          * [class`StatusPage]` or [class`PreferencesPage]`, where the background at the
          * top and bottom parts of the page is uniform. Additionally, windows with
          * sidebars should always use this style.
@@ -899,15 +909,15 @@ declare module 'gi://Adw?version=1' {
          *   <img src="toolbar-view-flat-2.png" alt="toolbar-view-flat-2">
          * </picture>
          *
-         * `ADW_TOOLBAR_RAISED` style is suitable for content such as
+         * [enum`Adw`.ToolbarStyle.raised] style is suitable for content such as
          * [utility panes](https://developer.gnome.org/hig/patterns/containers/utility-panes.html),
          * where some elements are directly adjacent to the top/bottom bars, or
          * [class`TabView]`, where each page can have a different background.
          *
-         * `ADW_TOOLBAR_RAISED_BORDER` style is similar to `ADW_TOOLBAR_RAISED`, but
-         * with the shadow replaced with a more subtle border. It's intended to be used
-         * in applications like image viewers, where a shadow over the content might be
-         * undesired.
+         * [enum`Adw`.ToolbarStyle.raised-border] style is similar to
+         * [enum`Adw`.ToolbarStyle.raised], but with the shadow replaced with a more
+         * subtle border. It's intended to be used in applications like image viewers,
+         * where a shadow over the content might be undesired.
          *
          * <picture style="min-width: 33%; display: inline-block;">
          *   <source srcset="toolbar-view-raised-dark.png" media="(prefers-color-scheme: dark)">
@@ -928,7 +938,7 @@ declare module 'gi://Adw?version=1' {
          * Describes the possible top or bottom bar styles in an [class`ToolbarView]`
          * widget.
          *
-         * `ADW_TOOLBAR_FLAT` is suitable for simple content, such as
+         * [enum`Adw`.ToolbarStyle.flat] is suitable for simple content, such as
          * [class`StatusPage]` or [class`PreferencesPage]`, where the background at the
          * top and bottom parts of the page is uniform. Additionally, windows with
          * sidebars should always use this style.
@@ -942,15 +952,15 @@ declare module 'gi://Adw?version=1' {
          *   <img src="toolbar-view-flat-2.png" alt="toolbar-view-flat-2">
          * </picture>
          *
-         * `ADW_TOOLBAR_RAISED` style is suitable for content such as
+         * [enum`Adw`.ToolbarStyle.raised] style is suitable for content such as
          * [utility panes](https://developer.gnome.org/hig/patterns/containers/utility-panes.html),
          * where some elements are directly adjacent to the top/bottom bars, or
          * [class`TabView]`, where each page can have a different background.
          *
-         * `ADW_TOOLBAR_RAISED_BORDER` style is similar to `ADW_TOOLBAR_RAISED`, but
-         * with the shadow replaced with a more subtle border. It's intended to be used
-         * in applications like image viewers, where a shadow over the content might be
-         * undesired.
+         * [enum`Adw`.ToolbarStyle.raised-border] style is similar to
+         * [enum`Adw`.ToolbarStyle.raised], but with the shadow replaced with a more
+         * subtle border. It's intended to be used in applications like image viewers,
+         * where a shadow over the content might be undesired.
          *
          * <picture style="min-width: 33%; display: inline-block;">
          *   <source srcset="toolbar-view-raised-dark.png" media="(prefers-color-scheme: dark)">
@@ -1851,7 +1861,7 @@ declare module 'gi://Adw?version=1' {
              * via [property`AboutDialog:`license-type].
              *
              * When set, [property`AboutDialog:`license-type] will be set to
-             * `GTK_LICENSE_CUSTOM`.
+             * [enum`Gtk`.License.custom].
              *
              * The license text will be displayed on the Legal page, below the copyright
              * information.
@@ -1870,11 +1880,11 @@ declare module 'gi://Adw?version=1' {
              *
              * If the application's license is not in the list,
              * [property`AboutDialog:`license] can be used instead. The license type will
-             * be automatically set to `GTK_LICENSE_CUSTOM` in that case.
+             * be automatically set to [enum`Gtk`.License.custom] in that case.
              *
-             * If set to `GTK_LICENSE_UNKNOWN`, no information will be displayed.
+             * If set to [enum`Gtk`.License.unknown], no information will be displayed.
              *
-             * If the license type is different from `GTK_LICENSE_CUSTOM`.
+             * If the license type is different from [enum`Gtk`.License.custom].
              * [property`AboutDialog:`license] will be cleared out.
              *
              * The license description will be displayed on the Legal page, below the
@@ -1892,11 +1902,11 @@ declare module 'gi://Adw?version=1' {
              *
              * If the application's license is not in the list,
              * [property`AboutDialog:`license] can be used instead. The license type will
-             * be automatically set to `GTK_LICENSE_CUSTOM` in that case.
+             * be automatically set to [enum`Gtk`.License.custom] in that case.
              *
-             * If set to `GTK_LICENSE_UNKNOWN`, no information will be displayed.
+             * If set to [enum`Gtk`.License.unknown], no information will be displayed.
              *
-             * If the license type is different from `GTK_LICENSE_CUSTOM`.
+             * If the license type is different from [enum`Gtk`.License.custom].
              * [property`AboutDialog:`license] will be cleared out.
              *
              * The license description will be displayed on the Legal page, below the
@@ -2507,7 +2517,7 @@ declare module 'gi://Adw?version=1' {
              * [property`AboutDialog:`license-type].
              *
              * When set, [property`AboutDialog:`license-type] will be set to
-             * `GTK_LICENSE_CUSTOM`.
+             * [enum`Gtk`.License.custom].
              *
              * The license text will be displayed on the Legal page, below the copyright
              * information.
@@ -2524,11 +2534,12 @@ declare module 'gi://Adw?version=1' {
              *
              * If the application's license is not in the list,
              * [property`AboutDialog:`license] can be used instead. The license type will be
-             * automatically set to `GTK_LICENSE_CUSTOM` in that case.
+             * automatically set to [enum`Gtk`.License.custom] in that case.
              *
-             * If `license_type` is `GTK_LICENSE_UNKNOWN`, no information will be displayed.
+             * If `license_type` is [enum`Gtk`.License.unknown], no information will be
+             * displayed.
              *
-             * If `license_type` is different from `GTK_LICENSE_CUSTOM`.
+             * If `license_type` is different from [enum`Gtk`.License.custom].
              * [property`AboutDialog:`license] will be cleared out.
              *
              * The license description will be displayed on the Legal page, below the
@@ -3626,7 +3637,7 @@ declare module 'gi://Adw?version=1' {
              * via [property`AboutWindow:`license-type].
              *
              * When set, [property`AboutWindow:`license-type] will be set to
-             * `GTK_LICENSE_CUSTOM`.
+             * [enum`Gtk`.License.custom].
              *
              * The license text will be displayed on the Legal page, below the copyright
              * information.
@@ -3645,11 +3656,11 @@ declare module 'gi://Adw?version=1' {
              *
              * If the application's license is not in the list,
              * [property`AboutWindow:`license] can be used instead. The license type will
-             * be automatically set to `GTK_LICENSE_CUSTOM` in that case.
+             * be automatically set to [enum`Gtk`.License.custom] in that case.
              *
-             * If set to `GTK_LICENSE_UNKNOWN`, no information will be displayed.
+             * If set to [enum`Gtk`.License.unknown], no information will be displayed.
              *
-             * If the license type is different from `GTK_LICENSE_CUSTOM`.
+             * If the license type is different from [enum`Gtk`.License.custom].
              * [property`AboutWindow:`license] will be cleared out.
              *
              * The license description will be displayed on the Legal page, below the
@@ -3667,11 +3678,11 @@ declare module 'gi://Adw?version=1' {
              *
              * If the application's license is not in the list,
              * [property`AboutWindow:`license] can be used instead. The license type will
-             * be automatically set to `GTK_LICENSE_CUSTOM` in that case.
+             * be automatically set to [enum`Gtk`.License.custom] in that case.
              *
-             * If set to `GTK_LICENSE_UNKNOWN`, no information will be displayed.
+             * If set to [enum`Gtk`.License.unknown], no information will be displayed.
              *
-             * If the license type is different from `GTK_LICENSE_CUSTOM`.
+             * If the license type is different from [enum`Gtk`.License.custom].
              * [property`AboutWindow:`license] will be cleared out.
              *
              * The license description will be displayed on the Legal page, below the
@@ -4259,7 +4270,7 @@ declare module 'gi://Adw?version=1' {
              * [property`AboutWindow:`license-type].
              *
              * When set, [property`AboutWindow:`license-type] will be set to
-             * `GTK_LICENSE_CUSTOM`.
+             * [enum`Gtk`.License.custom].
              *
              * The license text will be displayed on the Legal page, below the copyright
              * information.
@@ -4276,11 +4287,11 @@ declare module 'gi://Adw?version=1' {
              *
              * If the application's license is not in the list,
              * [property`AboutWindow:`license] can be used instead. The license type will be
-             * automatically set to `GTK_LICENSE_CUSTOM` in that case.
+             * automatically set to [enum`Gtk`.License.custom] in that case.
              *
-             * If `license_type` is `GTK_LICENSE_UNKNOWN`, no information will be displayed.
+             * If `license_type` is [enum`Gtk`.License.unknown], no information will be displayed.
              *
-             * If `license_type` is different from `GTK_LICENSE_CUSTOM`.
+             * If `license_type` is different from [enum`Gtk`.License.custom].
              * [property`AboutWindow:`license] will be cleared out.
              *
              * The license description will be displayed on the Legal page, below the
@@ -11232,14 +11243,15 @@ declare module 'gi://Adw?version=1' {
              *   <img src="alert-dialog-appearance.png" alt="alert-dialog-appearance">
              * </picture>
              *
-             * Use `ADW_RESPONSE_SUGGESTED` to mark important responses such as the
-             * affirmative action, like the Save button in the example.
+             * Use [enum`Adw`.ResponseAppearance.suggested] to mark important responses such
+             * as the affirmative action, like the Save button in the example.
              *
-             * Use `ADW_RESPONSE_DESTRUCTIVE` to draw attention to the potentially damaging
-             * consequences of using `response`. This appearance acts as a warning to the
-             * user. The Discard button in the example is using this appearance.
+             * Use [enum`Adw`.ResponseAppearance.destructive] to draw attention to the
+             * potentially damaging consequences of using `response`. This appearance acts as
+             * a warning to the user. The Discard button in the example is using this
+             * appearance.
              *
-             * The default appearance is `ADW_RESPONSE_DEFAULT`.
+             * The default appearance is [enum`Adw`.ResponseAppearance.default].
              *
              * Negative responses like Cancel or Close should use the default appearance.
              * @param response a response ID
@@ -11926,9 +11938,10 @@ declare module 'gi://Adw?version=1' {
             /**
              * Pauses a playing animation for `self`.
              *
-             * Does nothing if the current state of `self` isn't `ADW_ANIMATION_PLAYING`.
+             * Does nothing if the current state of `self` isn't
+             * [enum`Adw`.AnimationState.playing].
              *
-             * Sets [property`Animation:`state] to `ADW_ANIMATION_PAUSED`.
+             * Sets [property`Animation:`state] to [enum`Adw`.AnimationState.paused].
              */
             pause(): void;
             /**
@@ -11938,7 +11951,7 @@ declare module 'gi://Adw?version=1' {
              * the beginning. This allows to easily play an animation regardless of whether
              * it's already playing or not.
              *
-             * Sets [property`Animation:`state] to `ADW_ANIMATION_PLAYING`.
+             * Sets [property`Animation:`state] to [enum`Adw`.AnimationState.playing].
              *
              * The animation will be automatically skipped if [property`Animation:`widget] is
              * unmapped, or if [property`Gtk`.Settings:gtk-enable-animations] is `FALSE`.
@@ -11952,7 +11965,7 @@ declare module 'gi://Adw?version=1' {
             /**
              * Resets the animation for `self`.
              *
-             * Sets [property`Animation:`state] to `ADW_ANIMATION_IDLE`.
+             * Sets [property`Animation:`state] to [enum`Adw`.AnimationState.idle].
              */
             reset(): void;
             /**
@@ -11961,7 +11974,7 @@ declare module 'gi://Adw?version=1' {
              * This function must only be used if the animation has been paused with
              * [method`Animation`.pause].
              *
-             * Sets [property`Animation:`state] to `ADW_ANIMATION_PLAYING`.
+             * Sets [property`Animation:`state] to [enum`Adw`.AnimationState.playing].
              */
             resume(): void;
             /**
@@ -11989,7 +12002,7 @@ declare module 'gi://Adw?version=1' {
              * skips the animation to the end and causes [signal`Animation:`:done] to be
              * emitted.
              *
-             * Sets [property`Animation:`state] to `ADW_ANIMATION_FINISHED`.
+             * Sets [property`Animation:`state] to [enum`Adw`.AnimationState.finished].
              */
             skip(): void;
         }
@@ -16445,7 +16458,7 @@ declare module 'gi://Adw?version=1' {
          *
          * ## Accessibility
          *
-         * `AdwAvatar` uses the `GTK_ACCESSIBLE_ROLE_IMG` role.
+         * `AdwAvatar` uses the [enum`Gtk`.AccessibleRole.img] role.
          */
         class Avatar extends Gtk.Widget implements Gtk.Accessible, Gtk.Buildable, Gtk.ConstraintTarget {
             static $gtype: GObject.GType<Avatar>;
@@ -17465,8 +17478,9 @@ declare module 'gi://Adw?version=1' {
             /**
              * The style class to use for the banner button.
              *
-             * When set to `ADW_BANNER_BUTTON_DEFAULT`, the button stays grey.
-             * When set to `ADW_BANNER_BUTTON_SUGGESTED`, the button follows the [`.suggested-action`](style-classes.html#suggested-action) style
+             * When set to [enum`Adw`.BannerButtonStyle.default], the button is grey.
+             * When set to [enum`Adw`.BannerButtonStyle.suggested], the button uses the
+             * [`.suggested-action`](style-classes.html#suggested-action) appearance.
              *
              * <picture>
              *   <source srcset="banner-suggested-dark.png" media="(prefers-color-scheme: dark)">
@@ -17478,8 +17492,9 @@ declare module 'gi://Adw?version=1' {
             /**
              * The style class to use for the banner button.
              *
-             * When set to `ADW_BANNER_BUTTON_DEFAULT`, the button stays grey.
-             * When set to `ADW_BANNER_BUTTON_SUGGESTED`, the button follows the [`.suggested-action`](style-classes.html#suggested-action) style
+             * When set to [enum`Adw`.BannerButtonStyle.default], the button is grey.
+             * When set to [enum`Adw`.BannerButtonStyle.suggested], the button uses the
+             * [`.suggested-action`](style-classes.html#suggested-action) appearance.
              *
              * <picture>
              *   <source srcset="banner-suggested-dark.png" media="(prefers-color-scheme: dark)">
@@ -17590,8 +17605,9 @@ declare module 'gi://Adw?version=1' {
             /**
              * Sets the style class to use for the banner button.
              *
-             * When set to `ADW_BANNER_BUTTON_DEFAULT`, the button stays grey.
-             * When set to `ADW_BANNER_BUTTON_SUGGESTED`, the button follows the [`.suggested-action`](style-classes.html#suggested-action) style
+             * When set to [enum`Adw`.BannerButtonStyle.default], the button is grey.
+             * When set to [enum`Adw`.BannerButtonStyle.suggested], the button uses the
+             * [`.suggested-action`](style-classes.html#suggested-action) appearance.
              *
              * <picture>
              *   <source srcset="banner-suggested-dark.png" media="(prefers-color-scheme: dark)">
@@ -27442,7 +27458,7 @@ declare module 'gi://Adw?version=1' {
          *
          * ## Accessibility
          *
-         * `AdwButtonContent` uses the `GTK_ACCESSIBLE_ROLE_GROUP` role.
+         * `AdwButtonContent` uses the [enum`Gtk`.AccessibleRole.group] role.
          */
         class ButtonContent extends Gtk.Widget implements Gtk.Accessible, Gtk.Buildable, Gtk.ConstraintTarget {
             static $gtype: GObject.GType<ButtonContent>;
@@ -39814,7 +39830,7 @@ declare module 'gi://Adw?version=1' {
          *
          * ## Accessibility
          *
-         * `AdwComboRow` uses the `GTK_ACCESSIBLE_ROLE_COMBO_BOX` role.
+         * `AdwComboRow` uses the [enum`Gtk`.AccessibleRole.combo-box] role.
          */
         class ComboRow
             extends ActionRow
@@ -43298,13 +43314,14 @@ declare module 'gi://Adw?version=1' {
             /**
              * The dialog's presentation mode.
              *
-             * When set to `ADW_DIALOG_AUTO`, the dialog appears as a bottom sheet when
-             * the following condition is met: `max-width: 450px or max-height: 360px`,
-             * and as a floating window otherwise.
+             * When set to [enum`Adw`.DialogPresentationMode.auto], the dialog appears as a
+             * bottom sheet when the following condition is met:
+             * `max-width: 450px or max-height: 360px`, and as a floating window otherwise.
              *
-             * Set it to `ADW_DIALOG_FLOATING` or `ADW_DIALOG_BOTTOM_SHEET` to always
-             * present it a floating window or a bottom sheet respectively, regardless of
-             * available size.
+             * Set it to [enum`Adw`.DialogPresentationMode.floating] or
+             * [enum`Adw`.DialogPresentationMode.bottom-sheet] to always present it a
+             * floating window or a bottom sheet respectively, regardless of available
+             * size.
              *
              * Presentation mode does nothing for dialogs presented as a window.
              */
@@ -43313,13 +43330,14 @@ declare module 'gi://Adw?version=1' {
             /**
              * The dialog's presentation mode.
              *
-             * When set to `ADW_DIALOG_AUTO`, the dialog appears as a bottom sheet when
-             * the following condition is met: `max-width: 450px or max-height: 360px`,
-             * and as a floating window otherwise.
+             * When set to [enum`Adw`.DialogPresentationMode.auto], the dialog appears as a
+             * bottom sheet when the following condition is met:
+             * `max-width: 450px or max-height: 360px`, and as a floating window otherwise.
              *
-             * Set it to `ADW_DIALOG_FLOATING` or `ADW_DIALOG_BOTTOM_SHEET` to always
-             * present it a floating window or a bottom sheet respectively, regardless of
-             * available size.
+             * Set it to [enum`Adw`.DialogPresentationMode.floating] or
+             * [enum`Adw`.DialogPresentationMode.bottom-sheet] to always present it a
+             * floating window or a bottom sheet respectively, regardless of available
+             * size.
              *
              * Presentation mode does nothing for dialogs presented as a window.
              */
@@ -43521,13 +43539,13 @@ declare module 'gi://Adw?version=1' {
             /**
              * Sets presentation mode for `self`.
              *
-             * When set to `ADW_DIALOG_AUTO`, the dialog appears as a bottom sheet when the
-             * following condition is met: `max-width: 450px or max-height: 360px`, and as a
-             * floating window otherwise.
+             * When set to [enum`Adw`.DialogPresentationMode.auto], the dialog appears as a
+             * bottom sheet when the following condition is met:
+             * `max-width: 450px or max-height: 360px`, and as a floating window otherwise.
              *
-             * Set it to `ADW_DIALOG_FLOATING` or `ADW_DIALOG_BOTTOM_SHEET` to always
-             * present it a floating window or a bottom sheet respectively, regardless of
-             * available size.
+             * Set it to [enum`Adw`.DialogPresentationMode.floating] or
+             * [enum`Adw`.DialogPresentationMode.bottom-sheet] to always present it a
+             * floating window or a bottom sheet respectively, regardless of available size.
              *
              * Presentation mode does nothing for dialogs presented as a window.
              * @param presentation_mode the new presentation mode
@@ -48141,7 +48159,7 @@ declare module 'gi://Adw?version=1' {
             /**
              * Finds the position of a given enum value in `self`.
              *
-             * If the value is not found, `GTK_INVALID_LIST_POSITION` is returned.
+             * If the value is not found, [const`Gtk`.INVALID_LIST_POSITION] is returned.
              * @param value an enum value
              * @returns the position of the value
              */
@@ -52135,16 +52153,16 @@ declare module 'gi://Adw?version=1' {
             /**
              * The flap position.
              *
-             * If it's set to `GTK_PACK_START`, the flap is displayed before the content,
-             * if `GTK_PACK_END`, it's displayed after the content.
+             * If it's set to [enum`Gtk`.PackType.start], the flap is displayed before the
+             * content, if [enum`Gtk`.PackType.end], it's displayed after the content.
              */
             get flap_position(): Gtk.PackType;
             set flap_position(val: Gtk.PackType);
             /**
              * The flap position.
              *
-             * If it's set to `GTK_PACK_START`, the flap is displayed before the content,
-             * if `GTK_PACK_END`, it's displayed after the content.
+             * If it's set to [enum`Gtk`.PackType.start], the flap is displayed before the
+             * content, if [enum`Gtk`.PackType.end], it's displayed after the content.
              */
             get flapPosition(): Gtk.PackType;
             set flapPosition(val: Gtk.PackType);
@@ -52171,8 +52189,8 @@ declare module 'gi://Adw?version=1' {
             /**
              * Determines when the flap will fold.
              *
-             * If set to `ADW_FOLD_THRESHOLD_POLICY_MINIMUM`, flap will only fold when
-             * the children cannot fit anymore. With `ADW_FOLD_THRESHOLD_POLICY_NATURAL`,
+             * If set to [enum`Adw`.FoldThresholdPolicy.minimum], flap will only fold when
+             * the children cannot fit anymore. With [enum`Adw`.FoldThresholdPolicy.natural],
              * it will fold as soon as children don't get their natural size.
              *
              * This can be useful if you have a long ellipsizing label and want to let it
@@ -52183,8 +52201,8 @@ declare module 'gi://Adw?version=1' {
             /**
              * Determines when the flap will fold.
              *
-             * If set to `ADW_FOLD_THRESHOLD_POLICY_MINIMUM`, flap will only fold when
-             * the children cannot fit anymore. With `ADW_FOLD_THRESHOLD_POLICY_NATURAL`,
+             * If set to [enum`Adw`.FoldThresholdPolicy.minimum], flap will only fold when
+             * the children cannot fit anymore. With [enum`Adw`.FoldThresholdPolicy.natural],
              * it will fold as soon as children don't get their natural size.
              *
              * This can be useful if you have a long ellipsizing label and want to let it
@@ -52309,7 +52327,7 @@ declare module 'gi://Adw?version=1' {
              * the type of animation used for reveal and fold transitions.
              *
              * [property`Flap:`flap] is transparent by default, which means the content
-             * will be seen through it with `ADW_FLAP_TRANSITION_TYPE_OVER` transitions;
+             * will be seen through it with [enum`Adw`.FlapTransitionType.over] transitions;
              * add the [`.background`](style-classes.html#background) style class to it if
              * this is unwanted.
              */
@@ -52319,7 +52337,7 @@ declare module 'gi://Adw?version=1' {
              * the type of animation used for reveal and fold transitions.
              *
              * [property`Flap:`flap] is transparent by default, which means the content
-             * will be seen through it with `ADW_FLAP_TRANSITION_TYPE_OVER` transitions;
+             * will be seen through it with [enum`Adw`.FlapTransitionType.over] transitions;
              * add the [`.background`](style-classes.html#background) style class to it if
              * this is unwanted.
              */
@@ -52466,8 +52484,8 @@ declare module 'gi://Adw?version=1' {
             /**
              * Sets the flap position for `self`.
              *
-             * If it's set to `GTK_PACK_START`, the flap is displayed before the content,
-             * if `GTK_PACK_END`, it's displayed after the content.
+             * If it's set to [enum`Gtk`.PackType.start], the flap is displayed before the
+             * content, if [enum`Gtk`.PackType.end], it's displayed after the content.
              * @param position the new value
              */
             set_flap_position(position: Gtk.PackType | null): void;
@@ -52484,9 +52502,9 @@ declare module 'gi://Adw?version=1' {
             /**
              * Sets the fold threshold policy for `self`.
              *
-             * If set to `ADW_FOLD_THRESHOLD_POLICY_MINIMUM`, flap will only fold when the
-             * children cannot fit anymore. With `ADW_FOLD_THRESHOLD_POLICY_NATURAL`, it
-             * will fold as soon as children don't get their natural size.
+             * If set to [enum`Adw`.FoldThresholdPolicy.minimum], flap will only fold when
+             * the children cannot fit anymore. With [enum`Adw`.FoldThresholdPolicy.natural],
+             * it will fold as soon as children don't get their natural size.
              *
              * This can be useful if you have a long ellipsizing label and want to let it
              * ellipsize instead of immediately folding.
@@ -52556,9 +52574,9 @@ declare module 'gi://Adw?version=1' {
              * Sets the type of animation used for reveal and fold transitions in `self`.
              *
              * [property`Flap:`flap] is transparent by default, which means the content will
-             * be seen through it with `ADW_FLAP_TRANSITION_TYPE_OVER` transitions; add the
-             * [`.background`](style-classes.html#background) style class to it if this is
-             * unwanted.
+             * be seen through it with [enum`Adw`.FlapTransitionType.over] transitions; add
+             * the [`.background`](style-classes.html#background) style class to it if this
+             * is unwanted.
              * @param transition_type the new transition type
              */
             set_transition_type(transition_type: FlapTransitionType | null): void;
@@ -56021,7 +56039,7 @@ declare module 'gi://Adw?version=1' {
          *
          * ## Accessibility
          *
-         * `AdwHeaderBar` uses the `GTK_ACCESSIBLE_ROLE_GROUP` role.
+         * `AdwHeaderBar` uses the [enum`Gtk`.AccessibleRole.group] role.
          */
         class HeaderBar extends Gtk.Widget implements Gtk.Accessible, Gtk.Buildable, Gtk.ConstraintTarget {
             static $gtype: GObject.GType<HeaderBar>;
@@ -57177,8 +57195,8 @@ declare module 'gi://Adw?version=1' {
          *
          * ## Accessibility
          *
-         * The internal toggle group uses the `GTK_ACCESSIBLE_ROLE_TAB_LIST` role. Its
-         * toggles use the `GTK_ACCESSIBLE_ROLE_TAB` role.
+         * The internal toggle group uses the [enum`Gtk`.AccessibleRole.tab-list] role.
+         * Its toggles use the [enum`Gtk`.AccessibleRole.tab] role.
          *
          * See also: [class`ViewSwitcher]`, [class`ViewSwitcherBar]`,
          * [class`ViewSwitcherSidebar]`.
@@ -59799,9 +59817,9 @@ declare module 'gi://Adw?version=1' {
             /**
              * Determines when the leaflet will fold.
              *
-             * If set to `ADW_FOLD_THRESHOLD_POLICY_MINIMUM`, it will only fold when the
-             * children cannot fit anymore. With `ADW_FOLD_THRESHOLD_POLICY_NATURAL`, it
-             * will fold as soon as children don't get their natural size.
+             * If set to [enum`Adw`.FoldThresholdPolicy.minimum], it will only fold when
+             * the children cannot fit anymore. With [enum`Adw`.FoldThresholdPolicy.natural],
+             * it will fold as soon as children don't get their natural size.
              *
              * This can be useful if you have a long ellipsizing label and want to let it
              * ellipsize instead of immediately folding.
@@ -59811,9 +59829,9 @@ declare module 'gi://Adw?version=1' {
             /**
              * Determines when the leaflet will fold.
              *
-             * If set to `ADW_FOLD_THRESHOLD_POLICY_MINIMUM`, it will only fold when the
-             * children cannot fit anymore. With `ADW_FOLD_THRESHOLD_POLICY_NATURAL`, it
-             * will fold as soon as children don't get their natural size.
+             * If set to [enum`Adw`.FoldThresholdPolicy.minimum], it will only fold when
+             * the children cannot fit anymore. With [enum`Adw`.FoldThresholdPolicy.natural],
+             * it will fold as soon as children don't get their natural size.
              *
              * This can be useful if you have a long ellipsizing label and want to let it
              * ellipsize instead of immediately folding.
@@ -60153,8 +60171,8 @@ declare module 'gi://Adw?version=1' {
             /**
              * Sets the fold threshold policy for `self`.
              *
-             * If set to `ADW_FOLD_THRESHOLD_POLICY_MINIMUM`, it will only fold when the
-             * children cannot fit anymore. With `ADW_FOLD_THRESHOLD_POLICY_NATURAL`, it
+             * If set to [enum`Adw`.FoldThresholdPolicy.minimum], it will only fold when the
+             * children cannot fit anymore. With [enum`Adw`.FoldThresholdPolicy.natural], it
              * will fold as soon as children don't get their natural size.
              *
              * This can be useful if you have a long ellipsizing label and want to let it
@@ -63903,7 +63921,7 @@ declare module 'gi://Adw?version=1' {
          *
          * ## Accessibility
          *
-         * `AdwMessageDialog` uses the `GTK_ACCESSIBLE_ROLE_DIALOG` role.
+         * `AdwMessageDialog` uses the [enum`Gtk`.AccessibleRole.dialog] role.
          */
         class MessageDialog
             extends Gtk.Window
@@ -64254,14 +64272,15 @@ declare module 'gi://Adw?version=1' {
              *   <img src="message-dialog-appearance.png" alt="message-dialog-appearance">
              * </picture>
              *
-             * Use `ADW_RESPONSE_SUGGESTED` to mark important responses such as the
-             * affirmative action, like the Save button in the example.
+             * Use [enum`Adw`.ResponseAppearance.suggested] to mark important responses such
+             * as the affirmative action, like the Save button in the example.
              *
-             * Use `ADW_RESPONSE_DESTRUCTIVE` to draw attention to the potentially damaging
-             * consequences of using `response`. This appearance acts as a warning to the
-             * user. The Discard button in the example is using this appearance.
+             * Use [enum`Adw`.ResponseAppearance.destructive] to draw attention to the
+             * potentially damaging consequences of using `response`. This appearance acts as
+             * a warning to the user. The Discard button in the example is using this
+             * appearance.
              *
-             * The default appearance is `ADW_RESPONSE_DEFAULT`.
+             * The default appearance is [enum`Adw`.ResponseAppearance.default].
              *
              * Negative responses like Cancel or Close should use the default appearance.
              * @param response a response ID
@@ -68316,7 +68335,7 @@ declare module 'gi://Adw?version=1' {
          *
          * ## Accessibility
          *
-         * `AdwNavigationPage` uses the `GTK_ACCESSIBLE_ROLE_GROUP` role.
+         * `AdwNavigationPage` uses the [enum`Gtk`.AccessibleRole.group] role.
          */
         class NavigationPage extends Gtk.Widget implements Gtk.Accessible, Gtk.Buildable, Gtk.ConstraintTarget {
             static $gtype: GObject.GType<NavigationPage>;
@@ -69438,7 +69457,7 @@ declare module 'gi://Adw?version=1' {
          *
          * ## Accessibility
          *
-         * `AdwNavigationSplitView` uses the `GTK_ACCESSIBLE_ROLE_GROUP` role.
+         * `AdwNavigationSplitView` uses the [enum`Gtk`.AccessibleRole.group] role.
          */
         class NavigationSplitView extends Gtk.Widget implements Gtk.Accessible, Gtk.Buildable, Gtk.ConstraintTarget {
             static $gtype: GObject.GType<NavigationSplitView>;
@@ -69537,22 +69556,22 @@ declare module 'gi://Adw?version=1' {
             /**
              * The sidebar position.
              *
-             * If set to `GTK_PACK_START`, the sidebar is displayed before the content,
-             * and the sidebar will be the root page when collapsed.
+             * If set to [enum`Gtk`.PackType.start], the sidebar is displayed before the
+             * content, and the sidebar will be the root page when collapsed.
              *
-             * If set to `GTK_PACK_END`, the sidebar is displayed after the content,
-             * and the content will be the root page.
+             * If set to [enum`Gtk`.PackType.end], the sidebar is displayed after the
+             * content, and the content will be the root page.
              */
             get sidebar_position(): Gtk.PackType;
             set sidebar_position(val: Gtk.PackType);
             /**
              * The sidebar position.
              *
-             * If set to `GTK_PACK_START`, the sidebar is displayed before the content,
-             * and the sidebar will be the root page when collapsed.
+             * If set to [enum`Gtk`.PackType.start], the sidebar is displayed before the
+             * content, and the sidebar will be the root page when collapsed.
              *
-             * If set to `GTK_PACK_END`, the sidebar is displayed after the content,
-             * and the content will be the root page.
+             * If set to [enum`Gtk`.PackType.end], the sidebar is displayed after the
+             * content, and the content will be the root page.
              */
             get sidebarPosition(): Gtk.PackType;
             set sidebarPosition(val: Gtk.PackType);
@@ -69738,11 +69757,11 @@ declare module 'gi://Adw?version=1' {
             /**
              * Sets the sidebar position for `self`.
              *
-             * If set to `GTK_PACK_START`, the sidebar is displayed before the content,
-             * and the sidebar will be the root page when collapsed.
+             * If set to [enum`Gtk`.PackType.start], the sidebar is displayed before the
+             * content, and the sidebar will be the root page when collapsed.
              *
-             * If set to `GTK_PACK_END`, the sidebar is displayed after the content,
-             * and the content will be the root page.
+             * If set to [enum`Gtk`.PackType.end], the sidebar is displayed after the
+             * content, and the content will be the root page.
              * @param position the new position
              */
             set_sidebar_position(position: Gtk.PackType | null): void;
@@ -70725,7 +70744,7 @@ declare module 'gi://Adw?version=1' {
          *
          * ## Accessibility
          *
-         * `AdwNavigationView` uses the `GTK_ACCESSIBLE_ROLE_GROUP` role.
+         * `AdwNavigationView` uses the [enum`Gtk`.AccessibleRole.group] role.
          */
         class NavigationView
             extends Gtk.Widget
@@ -74629,7 +74648,7 @@ declare module 'gi://Adw?version=1' {
          *
          * ## Accessibility
          *
-         * `AdwOverlaySplitView` uses the `GTK_ACCESSIBLE_ROLE_GROUP` role.
+         * `AdwOverlaySplitView` uses the [enum`Gtk`.AccessibleRole.group] role.
          */
         class OverlaySplitView
             extends Gtk.Widget
@@ -74760,16 +74779,16 @@ declare module 'gi://Adw?version=1' {
             /**
              * The sidebar position.
              *
-             * If it's set to `GTK_PACK_START`, the sidebar is displayed before the content,
-             * if `GTK_PACK_END`, it's displayed after the content.
+             * If it's set to [enum`Gtk`.PackType.start], the sidebar is displayed before
+             * the content; if [enum`Gtk`.PackType.end], it's displayed after the content.
              */
             get sidebar_position(): Gtk.PackType;
             set sidebar_position(val: Gtk.PackType);
             /**
              * The sidebar position.
              *
-             * If it's set to `GTK_PACK_START`, the sidebar is displayed before the content,
-             * if `GTK_PACK_END`, it's displayed after the content.
+             * If it's set to [enum`Gtk`.PackType.start], the sidebar is displayed before
+             * the content; if [enum`Gtk`.PackType.end], it's displayed after the content.
              */
             get sidebarPosition(): Gtk.PackType;
             set sidebarPosition(val: Gtk.PackType);
@@ -74982,8 +75001,8 @@ declare module 'gi://Adw?version=1' {
             /**
              * Sets the sidebar position for `self`.
              *
-             * If it's set to `GTK_PACK_START`, the sidebar is displayed before the content,
-             * if `GTK_PACK_END`, it's displayed after the content.
+             * If it's set to [enum`Gtk`.PackType.start], the sidebar is displayed before the
+             * content; if [enum`Gtk`.PackType.end], it's displayed after the content.
              * @param position the new position
              */
             set_sidebar_position(position: Gtk.PackType | null): void;
@@ -82510,7 +82529,7 @@ declare module 'gi://Adw?version=1' {
          *
          * ## Accessibility
          *
-         * `AdwPreferencesGroup` uses the `GTK_ACCESSIBLE_ROLE_GROUP` role.
+         * `AdwPreferencesGroup` uses the [enum`Gtk`.AccessibleRole.group] role.
          */
         class PreferencesGroup extends Gtk.Widget implements Gtk.Accessible, Gtk.Buildable, Gtk.ConstraintTarget {
             static $gtype: GObject.GType<PreferencesGroup>;
@@ -83490,7 +83509,7 @@ declare module 'gi://Adw?version=1' {
          *
          * ## Accessibility
          *
-         * `AdwPreferencesPage` uses the `GTK_ACCESSIBLE_ROLE_GROUP` role.
+         * `AdwPreferencesPage` uses the [enum`Gtk`.AccessibleRole.group] role.
          */
         class PreferencesPage extends Gtk.Widget implements Gtk.Accessible, Gtk.Buildable, Gtk.ConstraintTarget {
             static $gtype: GObject.GType<PreferencesPage>;
@@ -91157,7 +91176,7 @@ declare module 'gi://Adw?version=1' {
          *
          * ## Accessibility
          *
-         * `AdwShortcutLabel` uses the `GTK_ACCESSIBLE_ROLE_LABEL` role.
+         * `AdwShortcutLabel` uses the [enum`Gtk`.AccessibleRole.label] role.
          *
          * See also: [class`ShortcutsDialog]`.
          */
@@ -92682,7 +92701,7 @@ declare module 'gi://Adw?version=1' {
             /**
              * The shortcut direction.
              *
-             * If set to [enum`Gtk`.TextDirection.LTR] or [enum`Gtk`.TextDirection.RTL], the
+             * If set to [enum`Gtk`.TextDirection.LTR] or [enum`Gtk`.TextDirection.rtl], the
              * shortcut will only be displayed for this direction.
              */
             get direction(): Gtk.TextDirection;
@@ -92777,7 +92796,7 @@ declare module 'gi://Adw?version=1' {
             /**
              * Sets the direction of `self`.
              *
-             * If set to [enum`Gtk`.TextDirection.LTR] or [enum`Gtk`.TextDirection.RTL], the
+             * If set to [enum`Gtk`.TextDirection.ltr] or [enum`Gtk`.TextDirection.rtl], the
              * shortcut will only be displayed for this direction.
              * @param direction the shortcut direction
              */
@@ -93878,10 +93897,10 @@ declare module 'gi://Adw?version=1' {
             /**
              * Determines the sidebar's look and behavior.
              *
-             * If set to [enum`Adw`.SidebarMode.SIDEBAR], behaves like a sidebar: with a
+             * If set to [enum`Adw`.SidebarMode.sidebar], behaves like a sidebar: with a
              * sidebar style and a persistent selection.
              *
-             * If set to [enum`Adw`.SidebarMode.PAGE], behaves like a page of boxed lists.
+             * If set to [enum`Adw`.SidebarMode.page], behaves like a page of boxed lists.
              * In this mode, the selection is invisible and only tracked to determine the
              * initially selected item once switched back to sidebar mode.
              *
@@ -93914,9 +93933,9 @@ declare module 'gi://Adw?version=1' {
              *
              * If set to [const`Gtk`.INVALID_LIST_POSITION], no item is selected.
              *
-             * If [property`Sidebar:`mode] is set to [enum`Adw`.SidebarMode.PAGE], the
+             * If [property`Sidebar:`mode] is set to [enum`Adw`.SidebarMode.page], the
              * selection is invisible, but still tracked, indicating which item will be
-             * selected once the mode is changed to [enum`Adw`.SidebarMode.SIDEBAR].
+             * selected once the mode is changed to [enum`Adw`.SidebarMode.sidebar].
              *
              * See also: [property`Sidebar:`selected-item].
              */
@@ -94121,10 +94140,10 @@ declare module 'gi://Adw?version=1' {
             /**
              * Sets `self'`s look and behavior.
              *
-             * If set to [enum`Adw`.SidebarMode.SIDEBAR], behaves like a sidebar: with a
+             * If set to [enum`Adw`.SidebarMode.sidebar], behaves like a sidebar: with a
              * sidebar style and a persistent selection.
              *
-             * If set to [enum`Adw`.SidebarMode.PAGE], behaves like a page of boxed lists.
+             * If set to [enum`Adw`.SidebarMode.page], behaves like a page of boxed lists.
              * In this mode, the selection is invisible and only tracked to determine the
              * initially selected item once switched back to sidebar mode.
              *
@@ -94149,9 +94168,9 @@ declare module 'gi://Adw?version=1' {
              *
              * If set to [const`Gtk`.INVALID_LIST_POSITION], no item is selected.
              *
-             * If [property`Sidebar:`mode] is set to [enum`Adw`.SidebarMode.PAGE], the
+             * If [property`Sidebar:`mode] is set to [enum`Adw`.SidebarMode.page], the
              * selection is invisible, but still tracked, indicating which item will be
-             * selected once the mode is changed to [enum`Adw`.SidebarMode.SIDEBAR].
+             * selected once the mode is changed to [enum`Adw`.SidebarMode.sidebar].
              *
              * See also: [property`Sidebar:`selected-item].
              * @param selected index of the newly selected item
@@ -94947,7 +94966,7 @@ declare module 'gi://Adw?version=1' {
          *
          * Items can have an arbitrary suffix widget, set with the
          * [property`SidebarItem:`suffix] properties. It will be displayed at the end of
-         * its row, or before the arrow in the [enum`Adw`.SidebarMode.PAGE] mode.
+         * its row, or before the arrow in the [enum`Adw`.SidebarMode.page] mode.
          *
          * To hide or disable the item, use the [property`SidebarItem:`visible] and
          * [property`SidebarItem:`enabled] properties respectively.
@@ -95035,7 +95054,7 @@ declare module 'gi://Adw?version=1' {
              * The suffix widget for this item.
              *
              * Suffix will be shown at the end of the item's row, or before the arrow in
-             * the [enum`Adw`.SidebarMode.PAGE] mode.
+             * the [enum`Adw`.SidebarMode.page] mode.
              */
             get suffix(): Gtk.Widget;
             set suffix(val: Gtk.Widget);
@@ -95225,7 +95244,7 @@ declare module 'gi://Adw?version=1' {
              * Sets the suffix widget for `self`.
              *
              * Suffix will be shown at the end of the item's row, or before the arrow in
-             * the [enum`Adw`.SidebarMode.PAGE] mode.
+             * the [enum`Adw`.SidebarMode.page] mode.
              * @param suffix the suffix widget
              */
             set_suffix(suffix?: Gtk.Widget | null): void;
@@ -95280,7 +95299,7 @@ declare module 'gi://Adw?version=1' {
          * Section can optionally have a title, set with the
          * [property`SidebarSection:`title] property. If a title is not set, the section
          * will have a separator in front of it, or just spacing in the
-         * [enum`Adw`.SidebarMode.PAGE] mode.
+         * [enum`Adw`.SidebarMode.page] mode.
          *
          * To add items, use [method`SidebarSection`.append],
          * [method`SidebarSection`.prepend] or [method`SidebarSection`.insert].
@@ -96161,7 +96180,7 @@ declare module 'gi://Adw?version=1' {
          * ## Accessibility
          *
          * `AdwSpinRow` uses an internal `GtkSpinButton` with the
-         * `GTK_ACCESSIBLE_ROLE_SPIN_BUTTON` role.
+         * [enum`Gtk`.AccessibleRole.spin-button] role.
          */
         class SpinRow
             extends ActionRow
@@ -101469,7 +101488,7 @@ declare module 'gi://Adw?version=1' {
          *
          * ## Accessibility
          *
-         * `AdwSplitButton` uses the `GTK_ACCESSIBLE_ROLE_GROUP` role.
+         * `AdwSplitButton` uses the [enum`Gtk`.AccessibleRole.group] role.
          */
         class SplitButton
             extends Gtk.Widget
@@ -101515,7 +101534,7 @@ declare module 'gi://Adw?version=1' {
              * If the does not fit in the available space in the given direction, GTK will
              * try its best to keep it inside the screen and fully visible.
              *
-             * If you pass `GTK_ARROW_NONE`, it's equivalent to `GTK_ARROW_DOWN`.
+             * [enum`Gtk`.ArrowType.none] behaves same as [enum`Gtk`.ArrowType.down].
              */
             get direction(): Gtk.ArrowType;
             set direction(val: Gtk.ArrowType);
@@ -101728,7 +101747,7 @@ declare module 'gi://Adw?version=1' {
              * If the does not fit in the available space in the given direction, GTK will
              * try its best to keep it inside the screen and fully visible.
              *
-             * If you pass `GTK_ARROW_NONE`, it's equivalent to `GTK_ARROW_DOWN`.
+             * [enum`Gtk`.ArrowType.none] behaves same as [enum`Gtk`.ArrowType.down].
              * @param direction the direction
              */
             set_direction(direction: Gtk.ArrowType | null): void;
@@ -105605,8 +105624,8 @@ declare module 'gi://Adw?version=1' {
              *
              * Determines when the squeezer will switch children.
              *
-             * If set to `ADW_FOLD_THRESHOLD_POLICY_MINIMUM`, it will only switch when the
-             * visible child cannot fit anymore. With `ADW_FOLD_THRESHOLD_POLICY_NATURAL`,
+             * If set to [enum`Adw`.FoldThresholdPolicy.minimum], it will only switch when
+             * the visible child cannot fit anymore. With [enum`Adw`.FoldThresholdPolicy.natural],
              * it will switch as soon as the visible child doesn't get their natural size.
              *
              * This can be useful if you have a long ellipsizing label and want to let it
@@ -105619,8 +105638,8 @@ declare module 'gi://Adw?version=1' {
              *
              * Determines when the squeezer will switch children.
              *
-             * If set to `ADW_FOLD_THRESHOLD_POLICY_MINIMUM`, it will only switch when the
-             * visible child cannot fit anymore. With `ADW_FOLD_THRESHOLD_POLICY_NATURAL`,
+             * If set to [enum`Adw`.FoldThresholdPolicy.minimum], it will only switch when
+             * the visible child cannot fit anymore. With [enum`Adw`.FoldThresholdPolicy.natural],
              * it will switch as soon as the visible child doesn't get their natural size.
              *
              * This can be useful if you have a long ellipsizing label and want to let it
@@ -105844,8 +105863,8 @@ declare module 'gi://Adw?version=1' {
              *
              * Determines when the squeezer will switch children.
              *
-             * If set to `ADW_FOLD_THRESHOLD_POLICY_MINIMUM`, it will only switch when the
-             * visible child cannot fit anymore. With `ADW_FOLD_THRESHOLD_POLICY_NATURAL`,
+             * If set to [enum`Adw`.FoldThresholdPolicy.minimum], it will only switch when
+             * the visible child cannot fit anymore. With [enum`Adw`.FoldThresholdPolicy.natural],
              * it will switch as soon as the visible child doesn't get their natural size.
              *
              * This can be useful if you have a long ellipsizing label and want to let it
@@ -107782,26 +107801,27 @@ declare module 'gi://Adw?version=1' {
              * [property`StyleManager:`dark] property can be used to query the current
              * effective appearance.
              *
-             * The `ADW_COLOR_SCHEME_PREFER_LIGHT` color scheme results in the application
-             * using light appearance unless the system prefers dark colors. This is the
-             * default value.
+             * The [enum`Adw`.ColorScheme.prefer-light] color scheme results in the
+             * application using light appearance unless the system prefers dark colors.
+             * This is the default value.
              *
-             * The `ADW_COLOR_SCHEME_PREFER_DARK` color scheme results in the application
-             * using dark appearance, but can still switch to the light appearance if the
-             * system can prefers it, for example, when the high contrast preference is
+             * The [enum`Adw`.ColorScheme.prefer-dark] color scheme results in the
+             * application using dark appearance, but can still switch to the light
+             * appearance if the system can prefers it, for example, when the high
+             * contrast preference is
              * enabled.
              *
-             * The `ADW_COLOR_SCHEME_FORCE_LIGHT` and `ADW_COLOR_SCHEME_FORCE_DARK` values
-             * ignore the system preference entirely. They are useful if the application
-             * wants to match its UI to its content or to provide a separate color scheme
-             * switcher.
+             * The [enum`Adw`.ColorScheme.force-light] and [enum`Adw`.ColorScheme.force-dark]
+             * values ignore the system preference entirely. They are useful if the
+             * application wants to match its UI to its content or to provide a separate
+             * color scheme switcher.
              *
              * If a per-[class`Gdk`.Display] style manager has its color scheme set to
-             * `ADW_COLOR_SCHEME_DEFAULT`, it will inherit the color scheme from the
+             * [enum`Adw`.ColorScheme.default], it will inherit the color scheme from the
              * default style manager.
              *
-             * For the default style manager, `ADW_COLOR_SCHEME_DEFAULT` is equivalent to
-             * `ADW_COLOR_SCHEME_PREFER_LIGHT`.
+             * For the default style manager, [enum`Adw`.ColorScheme.default] is equivalent
+             * to [enum`Adw`.ColorScheme.prefer-light].
              *
              * The [property`StyleManager:`system-supports-color-schemes] property can be
              * used to check if the current environment provides a color scheme
@@ -107817,26 +107837,27 @@ declare module 'gi://Adw?version=1' {
              * [property`StyleManager:`dark] property can be used to query the current
              * effective appearance.
              *
-             * The `ADW_COLOR_SCHEME_PREFER_LIGHT` color scheme results in the application
-             * using light appearance unless the system prefers dark colors. This is the
-             * default value.
+             * The [enum`Adw`.ColorScheme.prefer-light] color scheme results in the
+             * application using light appearance unless the system prefers dark colors.
+             * This is the default value.
              *
-             * The `ADW_COLOR_SCHEME_PREFER_DARK` color scheme results in the application
-             * using dark appearance, but can still switch to the light appearance if the
-             * system can prefers it, for example, when the high contrast preference is
+             * The [enum`Adw`.ColorScheme.prefer-dark] color scheme results in the
+             * application using dark appearance, but can still switch to the light
+             * appearance if the system can prefers it, for example, when the high
+             * contrast preference is
              * enabled.
              *
-             * The `ADW_COLOR_SCHEME_FORCE_LIGHT` and `ADW_COLOR_SCHEME_FORCE_DARK` values
-             * ignore the system preference entirely. They are useful if the application
-             * wants to match its UI to its content or to provide a separate color scheme
-             * switcher.
+             * The [enum`Adw`.ColorScheme.force-light] and [enum`Adw`.ColorScheme.force-dark]
+             * values ignore the system preference entirely. They are useful if the
+             * application wants to match its UI to its content or to provide a separate
+             * color scheme switcher.
              *
              * If a per-[class`Gdk`.Display] style manager has its color scheme set to
-             * `ADW_COLOR_SCHEME_DEFAULT`, it will inherit the color scheme from the
+             * [enum`Adw`.ColorScheme.default], it will inherit the color scheme from the
              * default style manager.
              *
-             * For the default style manager, `ADW_COLOR_SCHEME_DEFAULT` is equivalent to
-             * `ADW_COLOR_SCHEME_PREFER_LIGHT`.
+             * For the default style manager, [enum`Adw`.ColorScheme.default] is equivalent
+             * to [enum`Adw`.ColorScheme.prefer-light].
              *
              * The [property`StyleManager:`system-supports-color-schemes] property can be
              * used to check if the current environment provides a color scheme
@@ -108097,26 +108118,26 @@ declare module 'gi://Adw?version=1' {
              * [property`StyleManager:`dark] property can be used to query the current
              * effective appearance.
              *
-             * The `ADW_COLOR_SCHEME_PREFER_LIGHT` color scheme results in the application
-             * using light appearance unless the system prefers dark colors. This is the
-             * default value.
+             * The [enum`Adw`.ColorScheme.prefer-light] color scheme results in the
+             * application using light appearance unless the system prefers dark colors.
+             * This is the default value.
              *
-             * The `ADW_COLOR_SCHEME_PREFER_DARK` color scheme results in the application
-             * using dark appearance, but can still switch to the light appearance if the
-             * system can prefers it, for example, when the high contrast preference is
-             * enabled.
+             * The [enum`Adw`.ColorScheme.prefer-dark] color scheme results in the
+             * application using dark appearance, but can still switch to the light
+             * appearance if the system can prefers it, for example, when the high contrast
+             * preference is enabled.
              *
-             * The `ADW_COLOR_SCHEME_FORCE_LIGHT` and `ADW_COLOR_SCHEME_FORCE_DARK` values
-             * ignore the system preference entirely. They are useful if the application
-             * wants to match its UI to its content or to provide a separate color scheme
-             * switcher.
+             * The [enum`Adw`.ColorScheme.force-light] and [enum`Adw`.ColorScheme.force-dark]
+             * values ignore the system preference entirely. They are useful if the
+             * application wants to match its UI to its content or to provide a separate
+             * color scheme switcher.
              *
              * If a per-[class`Gdk`.Display] style manager has its color scheme set to
-             * `ADW_COLOR_SCHEME_DEFAULT`, it will inherit the color scheme from the
+             * [enum`Adw`.ColorScheme.default], it will inherit the color scheme from the
              * default style manager.
              *
-             * For the default style manager, `ADW_COLOR_SCHEME_DEFAULT` is equivalent to
-             * `ADW_COLOR_SCHEME_PREFER_LIGHT`.
+             * For the default style manager, [enum`Adw`.ColorScheme.default] is equivalent
+             * to [enum`Adw`.ColorScheme.prefer-light].
              *
              * The [property`StyleManager:`system-supports-color-schemes] property can be
              * used to check if the current environment provides a color scheme
@@ -108950,7 +108971,7 @@ declare module 'gi://Adw?version=1' {
          *
          * ## Accessibility
          *
-         * `AdwSwitchRow` uses the `GTK_ACCESSIBLE_ROLE_SWITCH` role.
+         * `AdwSwitchRow` uses the [enum`Gtk`.AccessibleRole.switch] role.
          */
         class SwitchRow
             extends ActionRow
@@ -113166,7 +113187,7 @@ declare module 'gi://Adw?version=1' {
          *
          * # Accessibility
          *
-         * `AdwTabButton` uses the `GTK_ACCESSIBLE_ROLE_BUTTON` role.
+         * `AdwTabButton` uses the [enum`Gtk`.AccessibleRole.button] role.
          */
         class TabButton
             extends Gtk.Widget
@@ -119163,8 +119184,8 @@ declare module 'gi://Adw?version=1' {
          *
          * ## Accessibility
          *
-         * `AdwTabView` uses the `GTK_ACCESSIBLE_ROLE_TAB_PANEL` for the tab pages which
-         * are the accessible parent objects of the child widgets.
+         * `AdwTabView` uses the [enum`Gtk`.AccessibleRole.tab-panel] role for the tab
+         * pages which are the accessible parent objects of the child widgets.
          */
         class TabView extends Gtk.Widget implements Gtk.Accessible, Gtk.Buildable, Gtk.ConstraintTarget {
             static $gtype: GObject.GType<TabView>;
@@ -120918,10 +120939,11 @@ declare module 'gi://Adw?version=1' {
              * Priority controls how the toast behaves when another toast is already
              * being displayed.
              *
-             * If the priority is `ADW_TOAST_PRIORITY_NORMAL`, the toast will be queued.
+             * If the priority is [enum`Adw`.ToastPriority.normal], the toast will be
+             * queued.
              *
-             * If the priority is `ADW_TOAST_PRIORITY_HIGH`, the toast will be displayed
-             * immediately, pushing the previous toast into the queue instead.
+             * If the priority is [enum`Adw`.ToastPriority.high], the toast will be
+             * displayed immediately, pushing the previous toast into the queue instead.
              */
             get priority(): ToastPriority;
             set priority(val: ToastPriority);
@@ -121101,9 +121123,9 @@ declare module 'gi://Adw?version=1' {
              * Priority controls how the toast behaves when another toast is already
              * being displayed.
              *
-             * If `priority` is `ADW_TOAST_PRIORITY_NORMAL`, the toast will be queued.
+             * If `priority` is [enum`Adw`.ToastPriority.normal], the toast will be queued.
              *
-             * If `priority` is `ADW_TOAST_PRIORITY_HIGH`, the toast will be displayed
+             * If `priority` is [enum`Adw`.ToastPriority.high], the toast will be displayed
              * immediately, pushing the previous toast into the queue instead.
              * @param priority the priority
              */
@@ -121235,7 +121257,7 @@ declare module 'gi://Adw?version=1' {
          *
          * ## Accessibility
          *
-         * `AdwToastOverlay` uses the [enum`Gtk`.AccessibleRole.GROUP] role.
+         * `AdwToastOverlay` uses the [enum`Gtk`.AccessibleRole.group] role.
          */
         class ToastOverlay extends Gtk.Widget implements Gtk.Accessible, Gtk.Buildable, Gtk.ConstraintTarget {
             static $gtype: GObject.GType<ToastOverlay>;
@@ -122205,7 +122227,7 @@ declare module 'gi://Adw?version=1' {
             get_icon_name(): string | null;
             /**
              * Gets the index of `self` within its toggle group.
-             * @returns the index, or `GTK_INVALID_LIST_POSITION` if it's not in a group
+             * @returns the index, or [const@Gtk.INVALID_LIST_POSITION] if it's not in a group
              */
             get_index(): number;
             /**
@@ -122449,8 +122471,8 @@ declare module 'gi://Adw?version=1' {
          *
          * ## Accessibility
          *
-         * `AdwToggleGroup` uses the `GTK_ACCESSIBLE_ROLE_RADIO_GROUP` role. Its toggles
-         * use the `GTK_ACCESSIBLE_ROLE_RADIO` role.
+         * `AdwToggleGroup` uses the [enum`Gtk`.AccessibleRole.radio-group] role. Its
+         * toggles use the [enum`Gtk`.AccessibleRole.radio] role.
          */
         class ToggleGroup
             extends Gtk.Widget
@@ -122576,7 +122598,7 @@ declare module 'gi://Adw?version=1' {
             /**
              * Gets the index of the active toggle in `self`.
              *
-             * Returns `GTK_INVALID_LIST_POSITION` if no toggle is active.
+             * Returns [const`Gtk`.INVALID_LIST_POSITION] if no toggle is active.
              * @returns the active toggle index
              */
             get_active(): number;
@@ -123584,7 +123606,7 @@ declare module 'gi://Adw?version=1' {
          *
          * ## Accessibility
          *
-         * `AdwToolbarView` uses the `GTK_ACCESSIBLE_ROLE_GROUP` role.
+         * `AdwToolbarView` uses the [enum`Gtk`.AccessibleRole.group] role.
          */
         class ToolbarView extends Gtk.Widget implements Gtk.Accessible, Gtk.Buildable, Gtk.ConstraintTarget {
             static $gtype: GObject.GType<ToolbarView>;
@@ -123612,8 +123634,8 @@ declare module 'gi://Adw?version=1' {
             /**
              * Appearance of the bottom bars.
              *
-             * If set to `ADW_TOOLBAR_FLAT`, bottom bars are flat and scrolling content
-             * has a subtle undershoot shadow when touching them, same as the
+             * If set to [enum`Adw`.ToolbarStyle.flat], bottom bars are flat and scrolling
+             * content has a subtle undershoot shadow when touching them, same as the
              * [`.undershoot-bottom`](style-classes.html#undershoot-indicators)
              * style class. This works well for simple content, e.g. [class`StatusPage]` or
              * [class`PreferencesPage]`, where the background at the bottom of the page is
@@ -123623,15 +123645,15 @@ declare module 'gi://Adw?version=1' {
              * visible. It is also never present if
              * [property`ToolbarView:`extend-content-to-bottom-edge] is set to `TRUE`.
              *
-             * If set to `ADW_TOOLBAR_RAISED`, bottom bars have an opaque background and a
-             * persistent shadow, this is suitable for content such as
+             * If set to [enum`Adw`.ToolbarStyle.raised], bottom bars have an opaque
+             * background and a persistent shadow, this is suitable for content such as
              * [utility panes](https://developer.gnome.org/hig/patterns/containers/utility-panes.html),
              * where some elements are directly adjacent to the bottom bars, or
              * [class`TabView]`, where each page can have a different background.
              *
-             * `ADW_TOOLBAR_RAISED_BORDER` is similar to `ADW_TOOLBAR_RAISED`, but the
-             * shadow is replaced with a more subtle border. This can be useful for
-             * applications like image viewers.
+             * [enum`Adw`.ToolbarStyle.raised-border] is similar to
+             * [enum`Adw`.ToolbarStyle.raised], but the shadow is replaced with a more
+             * subtle border. This can be useful for applications like image viewers.
              *
              * See also [property`ToolbarView:`top-bar-style].
              */
@@ -123640,8 +123662,8 @@ declare module 'gi://Adw?version=1' {
             /**
              * Appearance of the bottom bars.
              *
-             * If set to `ADW_TOOLBAR_FLAT`, bottom bars are flat and scrolling content
-             * has a subtle undershoot shadow when touching them, same as the
+             * If set to [enum`Adw`.ToolbarStyle.flat], bottom bars are flat and scrolling
+             * content has a subtle undershoot shadow when touching them, same as the
              * [`.undershoot-bottom`](style-classes.html#undershoot-indicators)
              * style class. This works well for simple content, e.g. [class`StatusPage]` or
              * [class`PreferencesPage]`, where the background at the bottom of the page is
@@ -123651,15 +123673,15 @@ declare module 'gi://Adw?version=1' {
              * visible. It is also never present if
              * [property`ToolbarView:`extend-content-to-bottom-edge] is set to `TRUE`.
              *
-             * If set to `ADW_TOOLBAR_RAISED`, bottom bars have an opaque background and a
-             * persistent shadow, this is suitable for content such as
+             * If set to [enum`Adw`.ToolbarStyle.raised], bottom bars have an opaque
+             * background and a persistent shadow, this is suitable for content such as
              * [utility panes](https://developer.gnome.org/hig/patterns/containers/utility-panes.html),
              * where some elements are directly adjacent to the bottom bars, or
              * [class`TabView]`, where each page can have a different background.
              *
-             * `ADW_TOOLBAR_RAISED_BORDER` is similar to `ADW_TOOLBAR_RAISED`, but the
-             * shadow is replaced with a more subtle border. This can be useful for
-             * applications like image viewers.
+             * [enum`Adw`.ToolbarStyle.raised-border] is similar to
+             * [enum`Adw`.ToolbarStyle.raised], but the shadow is replaced with a more
+             * subtle border. This can be useful for applications like image viewers.
              *
              * See also [property`ToolbarView:`top-bar-style].
              */
@@ -123785,8 +123807,8 @@ declare module 'gi://Adw?version=1' {
             /**
              * Appearance of the top bars.
              *
-             * If set to `ADW_TOOLBAR_FLAT`, top bars are flat and scrolling content has a
-             * subtle undershoot shadow when touching them, same as the
+             * If set to [enum`Adw`.ToolbarStyle.flat], top bars are flat and scrolling
+             * content has a subtle undershoot shadow when touching them, same as the
              * [`.undershoot-top`](style-classes.html#undershoot-indicators)
              * style class. This works well for simple content, e.g. [class`StatusPage]` or
              * [class`PreferencesPage]`, where the background at the top of the page is
@@ -123796,15 +123818,15 @@ declare module 'gi://Adw?version=1' {
              * visible. It is also never present if
              * [property`ToolbarView:`extend-content-to-top-edge] is set to `TRUE`.
              *
-             * If set to `ADW_TOOLBAR_RAISED`, top bars have an opaque background and a
-             * persistent shadow, this is suitable for content such as
+             * If set to [enum`Adw`.ToolbarStyle.raised], top bars have an opaque
+             * background and a persistent shadow, this is suitable for content such as
              * [utility panes](https://developer.gnome.org/hig/patterns/containers/utility-panes.html),
              * where some elements are directly adjacent to the top bars, or
              * [class`TabView]`, where each page can have a different background.
              *
-             * `ADW_TOOLBAR_RAISED_BORDER` is similar to `ADW_TOOLBAR_RAISED`, but the
-             * shadow is replaced with a more subtle border. This can be useful for
-             * applications like image viewers.
+             * [enum`Adw`.ToolbarStyle.raised-border] is similar to
+             * [enum`Adw`.ToolbarStyle.raised], but the shadow is replaced with a more
+             * subtle border. This can be useful for applications like image viewers.
              *
              * See also [property`ToolbarView:`bottom-bar-style].
              */
@@ -123813,8 +123835,8 @@ declare module 'gi://Adw?version=1' {
             /**
              * Appearance of the top bars.
              *
-             * If set to `ADW_TOOLBAR_FLAT`, top bars are flat and scrolling content has a
-             * subtle undershoot shadow when touching them, same as the
+             * If set to [enum`Adw`.ToolbarStyle.flat], top bars are flat and scrolling
+             * content has a subtle undershoot shadow when touching them, same as the
              * [`.undershoot-top`](style-classes.html#undershoot-indicators)
              * style class. This works well for simple content, e.g. [class`StatusPage]` or
              * [class`PreferencesPage]`, where the background at the top of the page is
@@ -123824,15 +123846,15 @@ declare module 'gi://Adw?version=1' {
              * visible. It is also never present if
              * [property`ToolbarView:`extend-content-to-top-edge] is set to `TRUE`.
              *
-             * If set to `ADW_TOOLBAR_RAISED`, top bars have an opaque background and a
-             * persistent shadow, this is suitable for content such as
+             * If set to [enum`Adw`.ToolbarStyle.raised], top bars have an opaque
+             * background and a persistent shadow, this is suitable for content such as
              * [utility panes](https://developer.gnome.org/hig/patterns/containers/utility-panes.html),
              * where some elements are directly adjacent to the top bars, or
              * [class`TabView]`, where each page can have a different background.
              *
-             * `ADW_TOOLBAR_RAISED_BORDER` is similar to `ADW_TOOLBAR_RAISED`, but the
-             * shadow is replaced with a more subtle border. This can be useful for
-             * applications like image viewers.
+             * [enum`Adw`.ToolbarStyle.raised-border] is similar to
+             * [enum`Adw`.ToolbarStyle.raised], but the shadow is replaced with a more
+             * subtle border. This can be useful for applications like image viewers.
              *
              * See also [property`ToolbarView:`bottom-bar-style].
              */
@@ -123949,8 +123971,8 @@ declare module 'gi://Adw?version=1' {
             /**
              * Sets appearance of the bottom bars for `self`.
              *
-             * If set to `ADW_TOOLBAR_FLAT`, bottom bars are flat and scrolling content has
-             * a subtle undershoot shadow when touching them, same as the
+             * If set to [enum`Adw`.ToolbarStyle.flat], bottom bars are flat and scrolling
+             * content has a subtle undershoot shadow when touching them, same as the
              * [`.undershoot-bottom`](style-classes.html#undershoot-indicators)
              * style class. This works well for simple content, e.g. [class`StatusPage]` or
              * [class`PreferencesPage]`, where the background at the bottom of the page is
@@ -123960,15 +123982,15 @@ declare module 'gi://Adw?version=1' {
              * visible. It is also never present if
              * [property`ToolbarView:`extend-content-to-bottom-edge] is set to `TRUE`.
              *
-             * If set to `ADW_TOOLBAR_RAISED`, bottom bars have an opaque background and a
-             * persistent shadow, this is suitable for content such as
+             * If set to [enum`Adw`.ToolbarStyle.raised], bottom bars have an opaque
+             * background and a persistent shadow, this is suitable for content such as
              * [utility panes](https://developer.gnome.org/hig/patterns/containers/utility-panes.html),
              * where some elements are directly adjacent to the bottom bars, or
              * [class`TabView]`, where each page can have a different background.
              *
-             * `ADW_TOOLBAR_RAISED_BORDER` is similar to `ADW_TOOLBAR_RAISED`, but the
-             * shadow is replaced with a more subtle border. This can be useful for
-             * applications like image viewers.
+             * [enum`Adw`.ToolbarStyle.raised-border] is similar to
+             * [enum`Adw`.ToolbarStyle.raised], but the shadow is replaced with a more subtle
+             * border. This can be useful for applications like image viewers.
              *
              * See also [method`ToolbarView`.set_top_bar_style].
              * @param style bottom bar style
@@ -124028,8 +124050,8 @@ declare module 'gi://Adw?version=1' {
             /**
              * Sets appearance of the top bars for `self`.
              *
-             * If set to `ADW_TOOLBAR_FLAT`, top bars are flat and scrolling content has a
-             * subtle undershoot shadow when touching them, same as the
+             * If set to [enum`Adw`.ToolbarStyle.flat], top bars are flat and scrolling
+             * content has a subtle undershoot shadow when touching them, same as the
              * [`.undershoot-top`](style-classes.html#undershoot-indicators)
              * style class. This works well for simple content, e.g. [class`StatusPage]` or
              * [class`PreferencesPage]`, where the background at the top of the page is
@@ -124039,15 +124061,15 @@ declare module 'gi://Adw?version=1' {
              * visible. It is also never present if
              * [property`ToolbarView:`extend-content-to-top-edge] is set to `TRUE`.
              *
-             * If set to `ADW_TOOLBAR_RAISED`, top bars have an opaque background and a
-             * persistent shadow, this is suitable for content such as
+             * If set to [enum`Adw`.ToolbarStyle.raised], top bars have an opaque background
+             * and a persistent shadow, this is suitable for content such as
              * [utility panes](https://developer.gnome.org/hig/patterns/containers/utility-panes.html),
              * where some elements are directly adjacent to the top bars, or
              * [class`TabView]`, where each page can have a different background.
              *
-             * `ADW_TOOLBAR_RAISED_BORDER` is similar to `ADW_TOOLBAR_RAISED`, but the
-             * shadow is replaced with a more subtle border. This can be useful for
-             * applications like image viewers.
+             * [enum`Adw`.ToolbarStyle.raised-border] is similar to
+             * [enum`Adw`.ToolbarStyle.raised], but the shadow is replaced with a more subtle
+             * border. This can be useful for applications like image viewers.
              *
              * See also [method`ToolbarView`.set_bottom_bar_style].
              * @param style top bar style
@@ -124913,8 +124935,8 @@ declare module 'gi://Adw?version=1' {
          *
          * ## Accessibility
          *
-         * `AdwViewStack` uses the `GTK_ACCESSIBLE_ROLE_TAB_PANEL` for the stack pages
-         * which are the accessible parent objects of the child widgets.
+         * `AdwViewStack` uses the [enum`Gtk`.AccessibleRole.tab-panel] for the stack
+         * pages which are the accessible parent objects of the child widgets.
          */
         class ViewStack extends Gtk.Widget implements Gtk.Accessible, Gtk.Buildable, Gtk.ConstraintTarget {
             static $gtype: GObject.GType<ViewStack>;
@@ -127888,7 +127910,7 @@ declare module 'gi://Adw?version=1' {
          * ```
          *
          * It's recommended to set [property`ViewSwitcher:`policy] to
-         * `ADW_VIEW_SWITCHER_POLICY_WIDE` in this case.
+         * [enum`Adw`.ViewSwitcherPolicy.wide] in this case.
          *
          * You may have to adjust the breakpoint condition for your specific pages.
          *
@@ -127899,8 +127921,8 @@ declare module 'gi://Adw?version=1' {
          *
          * ## Accessibility
          *
-         * `AdwViewSwitcher` uses the `GTK_ACCESSIBLE_ROLE_TAB_LIST` role and uses the
-         * `GTK_ACCESSIBLE_ROLE_TAB` for its buttons.
+         * `AdwViewSwitcher` uses the [enum`Gtk`.AccessibleRole.tab-list] role and the
+         * [enum`Gtk`.AccessibleRole.tab] role for its buttons.
          *
          * See also: [class`ViewSwitcherBar]`, [class`InlineViewSwitcher]`,
          * [class`ViewSwitcherSidebar]`.
@@ -128813,7 +128835,7 @@ declare module 'gi://Adw?version=1' {
          * ```
          *
          * It's recommended to set [property`ViewSwitcher:`policy] to
-         * `ADW_VIEW_SWITCHER_POLICY_WIDE` in this case.
+         * [enum`Adw`.ViewSwitcherPolicy.wide] in this case.
          *
          * You may have to adjust the breakpoint condition for your specific pages.
          *
@@ -129750,10 +129772,10 @@ declare module 'gi://Adw?version=1' {
             /**
              * Determines the sidebar's look and behavior.
              *
-             * If set to [enum`Adw`.SidebarMode.SIDEBAR], behaves like a sidebar: with a
+             * If set to [enum`Adw`.SidebarMode.sidebar], behaves like a sidebar: with a
              * sidebar style and a persistent selection.
              *
-             * If set to [enum`Adw`.SidebarMode.PAGE], behaves like a page of boxed lists.
+             * If set to [enum`Adw`.SidebarMode.page], behaves like a page of boxed lists.
              *
              * The page mode is intended to be used with [class`NavigationSplitView]` when
              * collapsed, as the sidebar pane becomes a page there.
@@ -129856,10 +129878,10 @@ declare module 'gi://Adw?version=1' {
             /**
              * Sets `self'`s look and behavior.
              *
-             * If set to [enum`Adw`.SidebarMode.SIDEBAR], behaves like a sidebar: with a
+             * If set to [enum`Adw`.SidebarMode.sidebar], behaves like a sidebar: with a
              * sidebar style and a persistent selection.
              *
-             * If set to [enum`Adw`.SidebarMode.PAGE], behaves like a page of boxed lists.
+             * If set to [enum`Adw`.SidebarMode.page], behaves like a page of boxed lists.
              * In this mode, the selection is invisible and only tracked to determine the
              * initially selected item once switched back to sidebar mode.
              *
@@ -130695,7 +130717,7 @@ declare module 'gi://Adw?version=1' {
          *
          * In order to center the title in narrow windows, the header bar should have
          * [property`HeaderBar:`centering-policy] set to
-         * `ADW_CENTERING_POLICY_STRICT`.
+         * [enum`Adw`.CenteringPolicy.strict].
          *
          * `AdwViewSwitcherTitle` is intended to be used together with
          * [class`ViewSwitcherBar]`.
@@ -135913,7 +135935,7 @@ declare module 'gi://Adw?version=1' {
          *
          * By default, `AdwWrapBox` wraps as soon as the previous line cannot fit any
          * more children without shrinking them past their natural size. Set
-         * [property`WrapBox:`wrap-policy] to [enum`Adw`.WrapPolicy.MINIMUM] to only wrap
+         * [property`WrapBox:`wrap-policy] to [enum`Adw`.WrapPolicy.minimum] to only wrap
          * once all the children in the previous line have been shrunk to their minimum
          * size.
          *
@@ -135933,7 +135955,7 @@ declare module 'gi://Adw?version=1' {
          *
          * ## Accessibility
          *
-         * `AdwWrapBox` uses the `GTK_ACCESSIBLE_ROLE_GROUP` role.
+         * `AdwWrapBox` uses the [enum`Gtk`.AccessibleRole.group] role.
          */
         class WrapBox
             extends Gtk.Widget
@@ -135951,7 +135973,7 @@ declare module 'gi://Adw?version=1' {
              * the line.
              *
              * Alignment is only used when [property`WrapBox:`justify] is set to
-             * `ADW_JUSTIFY_NONE`, or on the last line when the
+             * [enum`Adw`.JustifyMode.none], or on the last line when the
              * [property`WrapBox:`justify-last-line] is `FALSE`.
              */
             get align(): number;
@@ -135992,16 +136014,17 @@ declare module 'gi://Adw?version=1' {
              * Determines whether and how each complete line should be stretched to fill
              * the entire widget.
              *
-             * If set to `ADW_JUSTIFY_FILL`, each widget in the line will be stretched,
-             * keeping consistent spacing, so that the line fills the entire widget.
+             * If set to [enum`Adw`.JustifyMode.fill], each widget in the line will be
+             * stretched, keeping consistent spacing, so that the line fills the entire
+             * widget.
              *
-             * If set to `ADW_JUSTIFY_SPREAD`, the spacing between widgets will be
-             * increased, keeping widget sizes intact. The first and last widget will be
-             * aligned with the beginning and end of the line. If the line only contains
-             * a single widget, it will be stretched regardless.
+             * If set to [enum`Adw`.JustifyMode.spread], the spacing between widgets will
+             * be increased, keeping widget sizes intact. The first and last widget will
+             * be aligned with the beginning and end of the line. If the line only
+             * contains a single widget, it will be stretched regardless.
              *
-             * If set to `ADW_JUSTIFY_NONE`, the line will not be stretched and the
-             * children will be placed together within the line, according to
+             * If set to [enum`Adw`.JustifyMode.none], the line will not be stretched and
+             * the children will be placed together within the line, according to
              * [property`WrapBox:`align].
              *
              * By default this doesn't affect the last line, as it will be incomplete. Use
@@ -136116,26 +136139,26 @@ declare module 'gi://Adw?version=1' {
             /**
              * The policy for line wrapping.
              *
-             *    + If set to `ADW_WRAP_NATURAL`, the box will wrap to the next line as soon as
-             * the previous line cannot fit any more children without shrinking them past
-             * their natural size.
+             *    + If set to [enum`Adw`.WrapPolicy.natural], the box will wrap to the next line
+             * as soon as the previous line cannot fit any more children without shrinking
+             * them past their natural size.
              *
-             * If set to `ADW_WRAP_MINIMUM`, the box will try to fit as many children into
-             * each line as possible, shrinking them down to their minimum size before
-             * wrapping to the next line.
+             * If set to [enum`Adw`.WrapPolicy.minimum], the box will try to fit as many
+             * children into each line as possible, shrinking them down to their minimum
+             * size before wrapping to the next line.
              */
             get wrap_policy(): WrapPolicy;
             set wrap_policy(val: WrapPolicy);
             /**
              * The policy for line wrapping.
              *
-             *    + If set to `ADW_WRAP_NATURAL`, the box will wrap to the next line as soon as
-             * the previous line cannot fit any more children without shrinking them past
-             * their natural size.
+             *    + If set to [enum`Adw`.WrapPolicy.natural], the box will wrap to the next line
+             * as soon as the previous line cannot fit any more children without shrinking
+             * them past their natural size.
              *
-             * If set to `ADW_WRAP_MINIMUM`, the box will try to fit as many children into
-             * each line as possible, shrinking them down to their minimum size before
-             * wrapping to the next line.
+             * If set to [enum`Adw`.WrapPolicy.minimum], the box will try to fit as many
+             * children into each line as possible, shrinking them down to their minimum
+             * size before wrapping to the next line.
              */
             get wrapPolicy(): WrapPolicy;
             set wrapPolicy(val: WrapPolicy);
@@ -136308,7 +136331,7 @@ declare module 'gi://Adw?version=1' {
              * line.
              *
              * Alignment is only used when [property`WrapBox:`justify] is set to
-             * `ADW_JUSTIFY_NONE`, or on the last line when the
+             * [enum`Adw`.JustifyMode.none], or on the last line when the
              * [property`WrapBox:`justify-last-line] is `FALSE`.
              * @param align the child alignment
              */
@@ -136333,16 +136356,17 @@ declare module 'gi://Adw?version=1' {
              * Determines whether and how each complete line should be stretched to fill
              * the entire widget.
              *
-             * If set to `ADW_JUSTIFY_FILL`, each widget in the line will be stretched,
-             * keeping consistent spacing, so that the line fills the entire widget.
+             * If set to [enum`Adw`.JustifyMode.fill], each widget in the line will be
+             * stretched, keeping consistent spacing, so that the line fills the entire
+             * widget.
              *
-             * If set to `ADW_JUSTIFY_SPREAD`, the spacing between widgets will be
+             * If set to [enum`Adw`.JustifyMode.spread], the spacing between widgets will be
              * increased, keeping widget sizes intact. The first and last widget will be
              * aligned with the beginning and end of the line. If the line only contains a
              * single widget, it will be stretched regardless.
              *
-             * If set to `ADW_JUSTIFY_NONE`, the line will not be stretched and the children
-             * will be placed together within the line, according to
+             * If set to [enum`Adw`.JustifyMode.none], the line will not be stretched and the
+             * children will be placed together within the line, according to
              * [property`WrapBox:`align].
              *
              * By default this doesn't affect the last line, as it will be incomplete. Use
@@ -136403,13 +136427,13 @@ declare module 'gi://Adw?version=1' {
             /**
              * Sets the policy for line wrapping.
              *
-             * If set to `ADW_WRAP_NATURAL`, the box will wrap to the next line as soon as
-             * the previous line cannot fit any more children without shrinking them past
-             * their natural size.
+             * If set to [enum`Adw`.WrapPolicy.natural], the box will wrap to the next line
+             * as soon as the previous line cannot fit any more children without shrinking
+             * them past their natural size.
              *
-             * If set to `ADW_WRAP_MINIMUM`, the box will try to fit as many children into
-             * each line as possible, shrinking them down to their minimum size before
-             * wrapping to the next line.
+             * If set to [enum`Adw`.WrapPolicy.minimum], the box will try to fit as many
+             * children into each line as possible, shrinking them down to their minimum\
+             * size before wrapping to the next line.
              * @param wrap_policy the new wrap policy
              */
             set_wrap_policy(wrap_policy: WrapPolicy | null): void;
@@ -137249,7 +137273,7 @@ declare module 'gi://Adw?version=1' {
          *
          * By default, `AdwWrapLayout` wraps as soon as the previous line cannot fit
          * any more children without shrinking them past their natural size. Set
-         * [property`WrapLayout:`wrap-policy] to [enum`Adw`.WrapPolicy.MINIMUM] to only
+         * [property`WrapLayout:`wrap-policy] to [enum`Adw`.WrapPolicy.minimum] to only
          * wrap once all the children in the previous line have been shrunk to their
          * minimum size.
          *
@@ -137277,7 +137301,7 @@ declare module 'gi://Adw?version=1' {
              * the line.
              *
              * Alignment is only used when [property`WrapLayout:`justify] is set to
-             * `ADW_JUSTIFY_NONE`, or on the last line when the
+             * [enum`Adw`.JustifyMode.none], or on the last line when the
              * [property`WrapLayout:`justify-last-line] is `FALSE`.
              */
             get align(): number;
@@ -137318,16 +137342,17 @@ declare module 'gi://Adw?version=1' {
              * Determines whether and how each complete line should be stretched to fill
              * the entire widget.
              *
-             * If set to `ADW_JUSTIFY_FILL`, each widget in the line will be stretched,
-             * keeping consistent spacing, so that the line fills the entire widget.
+             * If set to [enum`Adw`.JustifyMode.fill], each widget in the line will be
+             * stretched, keeping consistent spacing, so that the line fills the entire
+             * widget.
              *
-             * If set to `ADW_JUSTIFY_SPREAD`, the spacing between widgets will be
-             * increased, keeping widget sizes intact. The first and last widget will be
-             * aligned with the beginning and end of the line. If the line only contains a
-             * single widget, it will be stretched regardless.
+             * If set to [enum`Adw`.JustifyMode.spread], the spacing between widgets will
+             * be increased, keeping widget sizes intact. The first and last widget will
+             * be aligned with the beginning and end of the line. If the line only
+             * contains a single widget, it will be stretched regardless.
              *
-             * If set to `ADW_JUSTIFY_NONE`, the line will not be stretched and the
-             * children will be placed together within the line, according to
+             * If set to [enum`Adw`.JustifyMode.none], the line will not be stretched and
+             * the children will be placed together within the line, according to
              * [property`WrapLayout:`align].
              *
              * By default this doesn't affect the last line, as it will be incomplete. Use
@@ -137442,26 +137467,26 @@ declare module 'gi://Adw?version=1' {
             /**
              * The policy for line wrapping.
              *
-             * If set to `ADW_WRAP_NATURAL`, the box will wrap to the next line as soon as
-             * the previous line cannot fit any more children without shrinking them past
-             * their natural size.
+             * If set to [enum`Adw`.WrapPolicy.natural], the box will wrap to the next line
+             * as soon as the previous line cannot fit any more children without shrinking
+             * them past their natural size.
              *
-             * If set to `ADW_WRAP_MINIMUM`, the box will try to fit as many children into
-             * each line as possible, shrinking them down to their minimum size before
-             * wrapping to the next line.
+             * If set to [enum`Adw`.WrapPolicy.minimum], the box will try to fit as many
+             * children into each line as possible, shrinking them down to their minimum
+             * size before wrapping to the next line.
              */
             get wrap_policy(): WrapPolicy;
             set wrap_policy(val: WrapPolicy);
             /**
              * The policy for line wrapping.
              *
-             * If set to `ADW_WRAP_NATURAL`, the box will wrap to the next line as soon as
-             * the previous line cannot fit any more children without shrinking them past
-             * their natural size.
+             * If set to [enum`Adw`.WrapPolicy.natural], the box will wrap to the next line
+             * as soon as the previous line cannot fit any more children without shrinking
+             * them past their natural size.
              *
-             * If set to `ADW_WRAP_MINIMUM`, the box will try to fit as many children into
-             * each line as possible, shrinking them down to their minimum size before
-             * wrapping to the next line.
+             * If set to [enum`Adw`.WrapPolicy.minimum], the box will try to fit as many
+             * children into each line as possible, shrinking them down to their minimum
+             * size before wrapping to the next line.
              */
             get wrapPolicy(): WrapPolicy;
             set wrapPolicy(val: WrapPolicy);
@@ -137594,7 +137619,7 @@ declare module 'gi://Adw?version=1' {
              * line.
              *
              * Alignment is only used when [property`WrapLayout:`justify] is set to
-             * `ADW_JUSTIFY_NONE`, or on the last line when the
+             * [enum`Adw`.JustifyMode.none], or on the last line when the
              * [property`WrapLayout:`justify-last-line] is `FALSE`.
              * @param align the child alignment
              */
@@ -137619,16 +137644,17 @@ declare module 'gi://Adw?version=1' {
              * Sets whether and how each complete line should be stretched to fill the
              * entire widget.
              *
-             * If set to `ADW_JUSTIFY_FILL`, each widget in the line will be stretched,
-             * keeping consistent spacing, so that the line fills the entire widget.
+             * If set to [enum`Adw`.JustifyMode.fill], each widget in the line will be
+             * stretched, keeping consistent spacing, so that the line fills the entire
+             * widget.
              *
-             * If set to `ADW_JUSTIFY_SPREAD`, the spacing between widgets will be
+             * If set to [enum`Adw`.JustifyMode.spread], the spacing between widgets will be
              * increased, keeping widget sizes intact. The first and last widget will be
              * aligned with the beginning and end of the line. If the line only contains a
              * single widget, it will be stretched regardless.
              *
-             * If set to `ADW_JUSTIFY_NONE`, the line will not be stretched and the children
-             * will be placed together within the line, according to
+             * If set to [enum`Adw`.JustifyMode.none], the line will not be stretched and the
+             * children will be placed together within the line, according to
              * [property`WrapLayout:`align].
              *
              * By default this doesn't affect the last line, as it will be incomplete. Use
@@ -137691,13 +137717,13 @@ declare module 'gi://Adw?version=1' {
             /**
              * Sets the policy for line wrapping.
              *
-             * If set to `ADW_WRAP_NATURAL`, the box will wrap to the next line as soon as
-             * the previous line cannot fit any more children without shrinking them past
-             * their natural size.
+             * If set to [enum`Adw`.WrapPolicy.natural], the box will wrap to the next line
+             * as soon as the previous line cannot fit any more children without shrinking
+             * them past their natural size.
              *
-             * If set to `ADW_WRAP_MINIMUM`, the box will try to fit as many children into
-             * each line as possible, shrinking them down to their minimum size before
-             * wrapping to the next line.
+             * If set to [enum`Adw`.WrapPolicy.minimum], the box will try to fit as many
+             * children into each line as possible, shrinking them down to their minimum
+             * size before wrapping to the next line.
              * @param wrap_policy the new wrap policy
              */
             set_wrap_policy(wrap_policy: WrapPolicy | null): void;

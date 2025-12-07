@@ -14765,14 +14765,6 @@ declare module 'gi://Gdk?version=4.0' {
             ): void;
             emit(signal: string, ...args: any[]): void;
 
-            // Static methods
-
-            /**
-             * Extracts the scroll direction relative to the physical motion.
-             * @param event a relative scroll direction.
-             */
-            static get_relative_direction(event: ScrollRelativeDirection): ScrollRelativeDirection;
-
             // Methods
 
             /**
@@ -14790,6 +14782,11 @@ declare module 'gi://Gdk?version=4.0' {
              * @returns the scroll direction of @event
              */
             get_direction(): ScrollDirection;
+            /**
+             * Extracts the scroll direction relative to the physical motion.
+             * @returns the relative scroll direction.
+             */
+            get_relative_direction(): ScrollRelativeDirection;
             /**
              * Extracts the scroll delta unit of a scroll event.
              *

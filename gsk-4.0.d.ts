@@ -4039,7 +4039,8 @@ declare module 'gi://Gsk?version=4.0' {
              *
              * The returned bounds may be larger than necessary, because this
              * function aims to be fast, not accurate. The bounds are guaranteed
-             * to contain the path.
+             * to contain the path. For accurate bounds, use
+             * [method`Gsk`.Path.get_tight_bounds].
              *
              * It is possible that the returned rectangle has 0 width and/or height.
              * This can happen when the path only describes a point or an
@@ -4090,6 +4091,14 @@ declare module 'gi://Gsk?version=4.0' {
              * @returns true if the path has bounds, false if the path is known   to be empty and have no bounds.
              */
             get_stroke_bounds(stroke: Stroke): [boolean, Graphene.Rect];
+            /**
+             * Computes the tight bounds of the given path.
+             *
+             * This function works harder than [method`Gsk`.Path.get_bounds] to
+             * produce the smallest possible bounds.
+             * @returns true if the path has bounds, false if the path is known   to be empty and have no bounds
+             */
+            get_tight_bounds(): [boolean, Graphene.Rect];
             /**
              * Returns whether a point is inside the fill area of a path.
              *
@@ -4850,7 +4859,7 @@ declare module 'gi://Gsk?version=4.0' {
              *
              * The default method calls [method`Gsk`.RenderReplay.filter_node]
              * on all its child nodes and the filter functions for all its
-             * proeprties. If none of them are changed, it returns the passed
+             * properties. If none of them are changed, it returns the passed
              * in node. Otherwise it constructs a new node with the changed
              * children and properties.
              *
@@ -4924,21 +4933,21 @@ declare module 'gi://Gsk?version=4.0' {
              *
              * * create a replacement node and return that
              *
-             * * discard the node by returning %NULL
+             * * discard the node by returning `NULL`
              *
              * * call [method`Gsk`.RenderReplay.default] to have the default handler
              *   run for this node, which calls your function on its children
-             * @param filter The function to call to replay nodes
+             * @param filter the function to call to replay nodes
              */
-            set_node_filter(filter: RenderReplayNodeFilter): void;
+            set_node_filter(filter?: RenderReplayNodeFilter | null): void;
             /**
              * Sets the function to call for every node.
              *
              * This function is called before the node filter, so if it returns
-             * FALSE, the node filter will never be called.
+             * false, the node filter will never be called.
              * @param foreach the function to call for all nodes
              */
-            set_node_foreach(foreach: RenderReplayNodeForeach): void;
+            set_node_foreach(foreach?: RenderReplayNodeForeach | null): void;
             /**
              * Sets a filter function to be called by [method`Gsk`.RenderReplay.default]
              * for nodes that contain textures.

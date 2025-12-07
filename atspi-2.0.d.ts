@@ -3301,11 +3301,11 @@ declare module 'gi://Atspi?version=2.0' {
             deselect_child(child_index: number): boolean;
             /**
              * Removes a child from the selected children list of an #AtspiSelection.
-             *          Note that `child_index` is the index in the selected-children list,
-             *          not the index in the parent container.  `selectedChildIndex` in this
-             *          method, and `child_index` in #atspi_selection_select_child
-             *          are asymmetric.
-             * @param selected_child_index a #gint indicating which of the selected children              of the #Accessible is to be selected.
+             *          Note that `selected_child_index` is the index in the
+             *          selected-children list, not the index in the parent container.
+             *          `selected_child_index` in this method and `child_index` in
+             *          #atspi_selection_select_child are asymmetric.
+             * @param selected_child_index a #gint indicating which of the selected children              of the #Accessible is to be deselected.
              * @returns #TRUE if the child was successfully deselected, #FALSE otherwise.
              */
             deselect_selected_child(selected_child_index: number): boolean;
@@ -6302,11 +6302,11 @@ declare module 'gi://Atspi?version=2.0' {
             deselect_child(child_index: number): boolean;
             /**
              * Removes a child from the selected children list of an #AtspiSelection.
-             *          Note that `child_index` is the index in the selected-children list,
-             *          not the index in the parent container.  `selectedChildIndex` in this
-             *          method, and `child_index` in #atspi_selection_select_child
-             *          are asymmetric.
-             * @param selected_child_index a #gint indicating which of the selected children              of the #Accessible is to be selected.
+             *          Note that `selected_child_index` is the index in the
+             *          selected-children list, not the index in the parent container.
+             *          `selected_child_index` in this method and `child_index` in
+             *          #atspi_selection_select_child are asymmetric.
+             * @param selected_child_index a #gint indicating which of the selected children              of the #Accessible is to be deselected.
              * @returns #TRUE if the child was successfully deselected, #FALSE otherwise.
              */
             deselect_selected_child(selected_child_index: number): boolean;

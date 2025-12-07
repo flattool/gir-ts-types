@@ -11327,7 +11327,7 @@ declare module 'gi://GLib?version=2.0' {
          * - `\r` → [U+000D Carriage Return](https://en.wikipedia.org/wiki/Carriage_return)
          * - `\t` → [U+0009 Horizontal Tabulation](https://en.wikipedia.org/wiki/Tab_character)
          * - `\v` → [U+000B Vertical Tabulation](https://en.wikipedia.org/wiki/Vertical_Tab)
-         * - `\` followed by one to three octal digits → the numeric value (mod 255)
+         * - `\` followed by one to three octal digits → the numeric value (mod 256)
          * - `\` followed by any other character → the character as is.
          *   For example, `\\` will turn into a backslash (`\`) and `\"` into a double quote (`"`).
          *
@@ -12877,7 +12877,7 @@ declare module 'gi://GLib?version=2.0' {
         /**
          * Converts a single character to UTF-8.
          * @param c a Unicode character code
-         * @returns number of bytes written
+         * @returns number of bytes written, guaranteed to be in the range [1, 6]
          */
         function unichar_to_utf8(c: string): [number, string];
         /**
