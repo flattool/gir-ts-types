@@ -739,6 +739,10 @@ declare module 'gi://Gsk?version=4.0' {
              * operations.
              */
             COMPOSITE_NODE,
+            /**
+             * A node that isolated content of its child from previous content.
+             */
+            ISOLATION_NODE,
         }
         /**
          * The filters used when scaling texture data.
@@ -986,6 +990,46 @@ declare module 'gi://Gsk?version=4.0' {
         }
         interface RenderReplayTextureFilter {
             (replay: RenderReplay, texture: Gdk.Texture): Gdk.Texture;
+        }
+        /**
+         * These flags describe the types of isolations possible with a
+         * [class`Gsk`.IsolationNode].
+         *
+         * More isolation options may be added in the future.
+         */
+
+        /**
+         * These flags describe the types of isolations possible with a
+         * [class`Gsk`.IsolationNode].
+         *
+         * More isolation options may be added in the future.
+         */
+        export namespace Isolation {
+            export const $gtype: GObject.GType<Isolation>;
+        }
+
+        enum Isolation {
+            /**
+             * No isolation is defined.
+             */
+            NONE,
+            /**
+             * If the background should be made available.
+             *   If the background is not available, future operations will be rendered
+             *   to a transparent background and added to the existing background later.
+             */
+            BACKGROUND,
+            /**
+             * If copies should be available to paste nodes.
+             *   If copies are not available, paste nodes can only paste from copies that
+             *   are made inside the isolated contents.
+             */
+            COPY_PASTE,
+            /**
+             * Isolate everything. This will include features that
+             *   are added in the future.
+             */
+            ALL,
         }
         /**
          * Flags that can be passed to gsk_path_foreach() to influence what
@@ -2477,6 +2521,55 @@ declare module 'gi://Gsk?version=4.0' {
              * @returns the size of the shadow, in pixels
              */
             get_spread(): number;
+        }
+
+        namespace IsolationNode {
+            // Signal signatures
+            interface SignalSignatures extends RenderNode.SignalSignatures {}
+        }
+
+        /**
+         * A render node that isolates its child from surrounding rendernodes.
+         */
+        class IsolationNode extends RenderNode {
+            static $gtype: GObject.GType<IsolationNode>;
+
+            // Constructors
+
+            _init(...args: any[]): void;
+
+            static ['new'](child: RenderNode, isolations: Isolation): IsolationNode;
+
+            // Signals
+
+            connect<K extends keyof IsolationNode.SignalSignatures>(
+                signal: K,
+                callback: GObject.SignalCallback<this, IsolationNode.SignalSignatures[K]>,
+            ): number;
+            connect(signal: string, callback: (...args: any[]) => any): number;
+            connect_after<K extends keyof IsolationNode.SignalSignatures>(
+                signal: K,
+                callback: GObject.SignalCallback<this, IsolationNode.SignalSignatures[K]>,
+            ): number;
+            connect_after(signal: string, callback: (...args: any[]) => any): number;
+            emit<K extends keyof IsolationNode.SignalSignatures>(
+                signal: K,
+                ...args: GObject.GjsParameters<IsolationNode.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never
+            ): void;
+            emit(signal: string, ...args: any[]): void;
+
+            // Methods
+
+            /**
+             * Gets the child node that is getting drawn by the given `node`.
+             * @returns the child `GskRenderNode`
+             */
+            get_child(): RenderNode;
+            /**
+             * Gets the isolation features that are enforced by this node.
+             * @returns the isolation features
+             */
+            get_isolations(): Isolation;
         }
 
         namespace LinearGradientNode {
@@ -4071,6 +4164,24 @@ declare module 'gi://Gsk?version=4.0' {
              * @returns true if @result was filled
              */
             get_end_point(): [boolean, PathPoint];
+            /**
+             * Moves `point` to the next vertex.
+             *
+             * An empty path has no points, so false
+             * is returned in this case.
+             * @param point the current point
+             * @returns true if @point was set
+             */
+            get_next(point: PathPoint): [boolean, PathPoint];
+            /**
+             * Moves `point` to the previous vertex.
+             *
+             * An empty path has no points, so false
+             * is returned in this case.
+             * @param point the current point
+             * @returns true if @point was set
+             */
+            get_previous(point: PathPoint): [boolean, PathPoint];
             /**
              * Gets the start point of the path.
              *

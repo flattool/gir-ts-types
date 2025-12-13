@@ -122067,6 +122067,7 @@ declare module 'gi://Adw?version=1' {
             // Signal signatures
             interface SignalSignatures extends GObject.Object.SignalSignatures {
                 'notify::child': (pspec: GObject.ParamSpec) => void;
+                'notify::description': (pspec: GObject.ParamSpec) => void;
                 'notify::enabled': (pspec: GObject.ParamSpec) => void;
                 'notify::icon-name': (pspec: GObject.ParamSpec) => void;
                 'notify::label': (pspec: GObject.ParamSpec) => void;
@@ -122079,6 +122080,7 @@ declare module 'gi://Adw?version=1' {
 
             interface ConstructorProps extends GObject.Object.ConstructorProps {
                 child: Gtk.Widget;
+                description: string;
                 enabled: boolean;
                 icon_name: string;
                 iconName: string;
@@ -122112,6 +122114,16 @@ declare module 'gi://Adw?version=1' {
              */
             get child(): Gtk.Widget;
             set child(val: Gtk.Widget);
+            /**
+             * The description of the toggle.
+             *
+             * The description will be read out when using screen reader. If not set,
+             * [property`Toggle:`tooltip] will be used instead.
+             *
+             * See [enum`Gtk`.AccessibleProperty.description].
+             */
+            get description(): string;
+            set description(val: string);
             /**
              * Whether this toggle is enabled.
              */
@@ -122155,6 +122167,9 @@ declare module 'gi://Adw?version=1' {
              * The tooltip of the toggle.
              *
              * The tooltip can be marked up with the Pango text markup language.
+             *
+             * Tooltip text will also be used as accessible description. Use
+             * [property`Toggle:`description] to set it separately.
              */
             get tooltip(): string;
             set tooltip(val: string);
@@ -122216,6 +122231,11 @@ declare module 'gi://Adw?version=1' {
              */
             get_child(): Gtk.Widget | null;
             /**
+             * Gets the description of `self`.
+             * @returns the toggle description
+             */
+            get_description(): string;
+            /**
              * Gets whether `self` is enabled.
              * @returns whether the toggle is enabled
              */
@@ -122261,6 +122281,16 @@ declare module 'gi://Adw?version=1' {
              */
             set_child(child?: Gtk.Widget | null): void;
             /**
+             * Sets the description of `self` to `description`.
+             *
+             * The description will be read out when using screen reader. If not set,
+             * [property`Toggle:`tooltip] will be used instead.
+             *
+             * See [enum`Gtk`.AccessibleProperty.description].
+             * @param description the description
+             */
+            set_description(description: string): void;
+            /**
              * Sets whether `self` is enabled.
              * @param enabled whether the toggle should be enbled
              */
@@ -122295,6 +122325,9 @@ declare module 'gi://Adw?version=1' {
              * Sets the tooltip of `self` to `tooltip`.
              *
              * `tooltip` can be marked up with the Pango text markup language.
+             *
+             * Tooltip text will also be used as accessible description. Use
+             * [property`Toggle:`description] to set it separately.
              * @param tooltip the tooltip
              */
             set_tooltip(tooltip: string): void;

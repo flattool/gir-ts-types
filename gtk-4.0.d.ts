@@ -175756,6 +175756,7 @@ declare module 'gi://Gtk?version=4.0' {
                 'notify::can-shrink': (pspec: GObject.ParamSpec) => void;
                 'notify::content-fit': (pspec: GObject.ParamSpec) => void;
                 'notify::file': (pspec: GObject.ParamSpec) => void;
+                'notify::isolate-contents': (pspec: GObject.ParamSpec) => void;
                 'notify::keep-aspect-ratio': (pspec: GObject.ParamSpec) => void;
                 'notify::paintable': (pspec: GObject.ParamSpec) => void;
                 'notify::can-focus': (pspec: GObject.ParamSpec) => void;
@@ -175811,6 +175812,8 @@ declare module 'gi://Gtk?version=4.0' {
                 content_fit: ContentFit;
                 contentFit: ContentFit;
                 file: Gio.File;
+                isolate_contents: boolean;
+                isolateContents: boolean;
                 keep_aspect_ratio: boolean;
                 keepAspectRatio: boolean;
                 paintable: Gdk.Paintable;
@@ -175909,6 +175912,16 @@ declare module 'gi://Gtk?version=4.0' {
             get file(): Gio.File;
             set file(val: Gio.File);
             /**
+             * If the rendering of the contents is isolated from the rest of the widget tree.
+             */
+            get isolate_contents(): boolean;
+            set isolate_contents(val: boolean);
+            /**
+             * If the rendering of the contents is isolated from the rest of the widget tree.
+             */
+            get isolateContents(): boolean;
+            set isolateContents(val: boolean);
+            /**
              * Whether the GtkPicture will render its contents trying to preserve the aspect
              * ratio.
              */
@@ -176001,6 +176014,11 @@ declare module 'gi://Gtk?version=4.0' {
              */
             get_file(): Gio.File | null;
             /**
+             * Returns whether the contents are isolated.
+             * @returns True if contents are isolated Since 4.22
+             */
+            get_isolate_contents(): boolean;
+            /**
              * Returns whether the `GtkPicture` preserves its contents aspect ratio.
              * @returns %TRUE if the self tries to keep the contents' aspect ratio
              */
@@ -176022,7 +176040,7 @@ declare module 'gi://Gtk?version=4.0' {
              */
             set_alternative_text(alternative_text?: string | null): void;
             /**
-             * If set to %TRUE, the `self` can be made smaller than its contents.
+             * If set to %TRUE, then `self` can be made smaller than its contents.
              *
              * The contents will then be scaled down when rendering.
              *
@@ -176068,6 +176086,20 @@ declare module 'gi://Gtk?version=4.0' {
              * @param filename the filename to play
              */
             set_filename(filename?: string | null): void;
+            /**
+             * If set to true, then the contents will be rendered individually.
+             *
+             * If set to false they will be able to erase or otherwise mix with
+             * the background.
+             *
+             * GTK supports finer grained isolation, in rare cases where you need
+             * this, you can use [method`Gtk`.Snapshot.push_isolation] yourself to
+             * achieve this.
+             *
+             * By default contents are isolated.
+             * @param isolate_contents if contents are rendered separately
+             */
+            set_isolate_contents(isolate_contents: boolean): void;
             /**
              * If set to %TRUE, the `self` will render its contents according to
              * their aspect ratio.
@@ -217288,6 +217320,20 @@ declare module 'gi://Gtk?version=4.0' {
              */
             push_gl_shader(shader: Gsk.GLShader, bounds: Graphene.Rect, take_args: GLib.Bytes | Uint8Array): void;
             /**
+             * Isolates the following drawing operations from previous ones.
+             *
+             * You can express "everything but these flags" in a forward compatible
+             * way by using bit math:
+             * `GSK_ISOLATION_ALL & ~(GSK_ISOLATION_BACKGROUND | GSK_ISOLATION_COPY_PASTE)`
+             * will isolate everything but background and copy/paste.
+             *
+             * For what isolation features exist, see [flags`Gsk`.Isolation].
+             *
+             * Content is isolated until the next call to [method`Gtk`.Snapshot.pop].
+             * @param allowed
+             */
+            push_isolation(allowed: Gsk.Isolation | null): void;
+            /**
              * Until the first call to [method`Gtk`.Snapshot.pop], the
              * mask image for the mask operation will be recorded.
              *
@@ -229644,14 +229690,12 @@ declare module 'gi://Gtk?version=4.0' {
          *
          * The paintable does not support text or images, only shapes and paths.
          *
-         * In `<defs>`, only `<clipPath>`, `<mask>`, gradients and shapes are
-         * supported, not `<filter>`, `<pattern>` or other things.
-         *
          * Gradient templating is not implemented.
          *
          * The support for filters is limited to filter functions minus
          * `drop-shadow()` plus a custom `alpha-level()` function, which
-         * implements one particular case of feComponentTransfer.
+         * implements one particular case of feComponentTransfer. `<filter>`
+         * is not supported.
          *
          * The `transform-origin` and `transform-box` attributes are not supported.
          *
@@ -229661,7 +229705,7 @@ declare module 'gi://Gtk?version=4.0' {
          * In animation elements, the parsing of `begin` and `end` attributes
          * is limited, and the `by`, `min` and `max` attributes are not supported.
          *
-         * Lastly, there is no CSS support, and no interactivity.
+         * Lastly, there is only minimal CSS support, and no interactivity.
          *
          *
          * ## SVG Extensions
