@@ -217330,9 +217330,9 @@ declare module 'gi://Gtk?version=4.0' {
              * For what isolation features exist, see [flags`Gsk`.Isolation].
              *
              * Content is isolated until the next call to [method`Gtk`.Snapshot.pop].
-             * @param allowed
+             * @param features features that are isolated
              */
-            push_isolation(allowed: Gsk.Isolation | null): void;
+            push_isolation(features: Gsk.Isolation | null): void;
             /**
              * Until the first call to [method`Gtk`.Snapshot.pop], the
              * mask image for the mask operation will be recorded.
@@ -229688,14 +229688,19 @@ declare module 'gi://Gtk?version=4.0' {
          *
          * ## The supported subset of SVG
          *
-         * The paintable does not support text or images, only shapes and paths.
+         * The paintable supports much of SVG 2, some notable exceptions.
+         *
+         * Among the graphical elements, `<symbol>` is not supported.
          *
          * Gradient templating is not implemented.
          *
-         * The support for filters is limited to filter functions minus
-         * `drop-shadow()` plus a custom `alpha-level()` function, which
-         * implements one particular case of feComponentTransfer. `<filter>`
-         * is not supported.
+         * All filter functions except `drop-shadow()` are supported, plus a
+         * custom `alpha-level()` function, which implements one particular
+         * case of feComponentTransfer.
+         *
+         * In the `<filter>` element, the following primitives are not
+         * supported: feConvolveMatrix, feDiffuseLighting,
+         * feMorphology, feSpecularLighting and feTurbulence.
          *
          * The `transform-origin` and `transform-box` attributes are not supported.
          *

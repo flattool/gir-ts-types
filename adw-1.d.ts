@@ -48086,6 +48086,8 @@ declare module 'gi://Adw?version=1' {
             // Signal signatures
             interface SignalSignatures extends GObject.Object.SignalSignatures {
                 'notify::enum-type': (pspec: GObject.ParamSpec) => void;
+                'notify::item-type': (pspec: GObject.ParamSpec) => void;
+                'notify::n-items': (pspec: GObject.ParamSpec) => void;
             }
 
             // Constructor properties interface
@@ -48094,6 +48096,10 @@ declare module 'gi://Adw?version=1' {
                 extends GObject.Object.ConstructorProps, Gio.ListModel.ConstructorProps {
                 enum_type: GObject.GType;
                 enumType: GObject.GType;
+                item_type: GObject.GType;
+                itemType: GObject.GType;
+                n_items: number;
+                nItems: number;
             }
         }
 
@@ -48118,6 +48124,22 @@ declare module 'gi://Adw?version=1' {
              * The type of the enum represented by the model.
              */
             get enumType(): GObject.GType;
+            /**
+             * The type of the items. See [method`Gio`.ListModel.get_item_type].
+             */
+            get item_type(): GObject.GType;
+            /**
+             * The type of the items. See [method`Gio`.ListModel.get_item_type].
+             */
+            get itemType(): GObject.GType;
+            /**
+             * The number of items. See [method`Gio`.ListModel.get_n_items].
+             */
+            get n_items(): number;
+            /**
+             * The number of items. See [method`Gio`.ListModel.get_n_items].
+             */
+            get nItems(): number;
 
             /**
              * Compile-time signal type information.
@@ -92816,6 +92838,8 @@ declare module 'gi://Adw?version=1' {
         namespace ShortcutsSection {
             // Signal signatures
             interface SignalSignatures extends GObject.Object.SignalSignatures {
+                'notify::item-type': (pspec: GObject.ParamSpec) => void;
+                'notify::n-items': (pspec: GObject.ParamSpec) => void;
                 'notify::title': (pspec: GObject.ParamSpec) => void;
             }
 
@@ -92826,6 +92850,10 @@ declare module 'gi://Adw?version=1' {
                     GObject.Object.ConstructorProps,
                     Gio.ListModel.ConstructorProps,
                     Gtk.Buildable.ConstructorProps {
+                item_type: GObject.GType;
+                itemType: GObject.GType;
+                n_items: number;
+                nItems: number;
                 title: string;
             }
         }
@@ -92851,6 +92879,22 @@ declare module 'gi://Adw?version=1' {
 
             // Properties
 
+            /**
+             * The type of the items. See [method`Gio`.ListModel.get_item_type].
+             */
+            get item_type(): GObject.GType;
+            /**
+             * The type of the items. See [method`Gio`.ListModel.get_item_type].
+             */
+            get itemType(): GObject.GType;
+            /**
+             * The number of items. See [method`Gio`.ListModel.get_n_items].
+             */
+            get n_items(): number;
+            /**
+             * The number of items. See [method`Gio`.ListModel.get_n_items].
+             */
+            get nItems(): number;
             /**
              * The title of the section, can be `NULL`.
              */
@@ -93737,6 +93781,9 @@ declare module 'gi://Adw?version=1' {
          * [property`Sidebar:`menu-model] property to provide a menu model, and the
          * [signal`Sidebar:`:setup-menu] signal to set up actions for the given item.
          *
+         * To set or override the menu for just one section, use
+         * [property`SidebarSection:`menu-model] instead.
+         *
          * ## Drag-and-Drop
          *
          * `AdwSidebar` items can have a drop target for arbitrary content.
@@ -93882,6 +93929,8 @@ declare module 'gi://Adw?version=1' {
              * When a context menu is shown for an item, it will be constructed from the
              * provided menu model. Use the [signal`Sidebar:`:setup-menu] signal to set up
              * the menu actions for the particular item.
+             *
+             * [property`Sidebar:`menu-model] will be preferred over this model if set.
              */
             get menu_model(): Gio.MenuModel;
             set menu_model(val: Gio.MenuModel);
@@ -93891,6 +93940,8 @@ declare module 'gi://Adw?version=1' {
              * When a context menu is shown for an item, it will be constructed from the
              * provided menu model. Use the [signal`Sidebar:`:setup-menu] signal to set up
              * the menu actions for the particular item.
+             *
+             * [property`Sidebar:`menu-model] will be preferred over this model if set.
              */
             get menuModel(): Gio.MenuModel;
             set menuModel(val: Gio.MenuModel);
@@ -94134,6 +94185,8 @@ declare module 'gi://Adw?version=1' {
              * When a context menu is shown for an item, it will be constructed from the
              * provided menu model. Use the [signal`Sidebar:`:setup-menu] signal to set up
              * the menu actions for the particular item.
+             *
+             * [property`Sidebar:`menu-model] will be preferred over this model if set.
              * @param menu_model a menu model
              */
             set_menu_model(menu_model?: Gio.MenuModel | null): void;
@@ -95278,6 +95331,7 @@ declare module 'gi://Adw?version=1' {
             // Signal signatures
             interface SignalSignatures extends GObject.Object.SignalSignatures {
                 'notify::items': (pspec: GObject.ParamSpec) => void;
+                'notify::menu-model': (pspec: GObject.ParamSpec) => void;
                 'notify::sidebar': (pspec: GObject.ParamSpec) => void;
                 'notify::title': (pspec: GObject.ParamSpec) => void;
             }
@@ -95286,6 +95340,8 @@ declare module 'gi://Adw?version=1' {
 
             interface ConstructorProps extends GObject.Object.ConstructorProps, Gtk.Buildable.ConstructorProps {
                 items: Gio.ListModel;
+                menu_model: Gio.MenuModel;
+                menuModel: Gio.MenuModel;
                 sidebar: Sidebar;
                 title: string;
             }
@@ -95370,6 +95426,28 @@ declare module 'gi://Adw?version=1' {
              * This can be used to keep an up-to-date view.
              */
             get items(): Gio.ListModel;
+            /**
+             * Context menu model for the section items.
+             *
+             * When a context menu is shown for an item, it will be constructed from the
+             * provided menu model. Use the [signal`Sidebar:`:setup-menu] signal to set up
+             * the menu actions for the particular item.
+             *
+             * If not set, [property`Sidebar:`menu-model] will be used instead.
+             */
+            get menu_model(): Gio.MenuModel;
+            set menu_model(val: Gio.MenuModel);
+            /**
+             * Context menu model for the section items.
+             *
+             * When a context menu is shown for an item, it will be constructed from the
+             * provided menu model. Use the [signal`Sidebar:`:setup-menu] signal to set up
+             * the menu actions for the particular item.
+             *
+             * If not set, [property`Sidebar:`menu-model] will be used instead.
+             */
+            get menuModel(): Gio.MenuModel;
+            set menuModel(val: Gio.MenuModel);
             /**
              * The sidebar the section is in.
              */
@@ -95466,6 +95544,11 @@ declare module 'gi://Adw?version=1' {
              */
             get_items(): Gio.ListModel;
             /**
+             * Gets the context menu model for `self'`s items.
+             * @returns the context menu model
+             */
+            get_menu_model(): Gio.MenuModel | null;
+            /**
              * Gets the sidebar `self` is in.
              * @returns the sidebar of @self
              */
@@ -95506,6 +95589,17 @@ declare module 'gi://Adw?version=1' {
              * Cannot be used while a model is bound via [method`SidebarSection`.bind_model].
              */
             remove_all(): void;
+            /**
+             * Sets the context menu model for `self'`s items.
+             *
+             * When a context menu is shown for an item, it will be constructed from the
+             * provided menu model. Use the [signal`Sidebar:`:setup-menu] signal to set up
+             * the menu actions for the particular item.
+             *
+             * If not set, [property`Sidebar:`menu-model] will be used instead.
+             * @param menu_model a menu model
+             */
+            set_menu_model(menu_model?: Gio.MenuModel | null): void;
             /**
              * Sets the title of `self`.
              *
@@ -126954,6 +127048,8 @@ declare module 'gi://Adw?version=1' {
         namespace ViewStackPages {
             // Signal signatures
             interface SignalSignatures extends GObject.Object.SignalSignatures {
+                'notify::item-type': (pspec: GObject.ParamSpec) => void;
+                'notify::n-items': (pspec: GObject.ParamSpec) => void;
                 'notify::selected-page': (pspec: GObject.ParamSpec) => void;
             }
 
@@ -126965,6 +127061,10 @@ declare module 'gi://Adw?version=1' {
                     Gio.ListModel.ConstructorProps,
                     Gtk.SectionModel.ConstructorProps,
                     Gtk.SelectionModel.ConstructorProps {
+                item_type: GObject.GType;
+                itemType: GObject.GType;
+                n_items: number;
+                nItems: number;
                 selected_page: ViewStackPage;
                 selectedPage: ViewStackPage;
             }
@@ -126983,6 +127083,22 @@ declare module 'gi://Adw?version=1' {
 
             // Properties
 
+            /**
+             * The type of the items. See [method`Gio`.ListModel.get_item_type].
+             */
+            get item_type(): GObject.GType;
+            /**
+             * The type of the items. See [method`Gio`.ListModel.get_item_type].
+             */
+            get itemType(): GObject.GType;
+            /**
+             * The number of items. See [method`Gio`.ListModel.get_n_items].
+             */
+            get n_items(): number;
+            /**
+             * The number of items. See [method`Gio`.ListModel.get_n_items].
+             */
+            get nItems(): number;
             /**
              * The selected [class`ViewStackPage]` within the [class`ViewStackPages]`.
              *

@@ -743,6 +743,10 @@ declare module 'gi://Gsk?version=4.0' {
              * A node that isolated content of its child from previous content.
              */
             ISOLATION_NODE,
+            /**
+             * A node that displaces content according to some mask.
+             */
+            DISPLACEMENT_NODE,
         }
         /**
          * The filters used when scaling texture data.
@@ -3822,7 +3826,7 @@ declare module 'gi://Gsk?version=4.0' {
 
             _init(...args: any[]): void;
 
-            static ['new'](child: RenderNode, transform: Transform): TransformNode;
+            static ['new'](child: RenderNode, transform?: Transform | null): TransformNode;
 
             // Signals
 

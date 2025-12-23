@@ -9737,11 +9737,11 @@ declare module 'gi://Gio?version=2.0' {
              */
             get_buffer_size(): number;
             /**
-             * Peeks in the buffer, copying data of size `count` into `buffer,`
-             * offset `offset` bytes.
-             * @param buffer a pointer to   an allocated chunk of memory
-             * @param offset a #gsize
-             * @returns a #gsize of the number of bytes peeked, or `-1` on error.
+             * Peeks in the buffered input, copying `count` bytes of data from `offset` bytes
+             * in the buffered input into `buffer`.
+             * @param buffer a pointer to   an allocated chunk of memory, which must be at least @count bytes long
+             * @param offset offset into the buffered input to peek from, or zero to peek from   the next byte in the buffered input onwards
+             * @returns the number of bytes copied, which may be zero
              */
             peek(buffer: Uint8Array | string, offset: number): number;
             /**

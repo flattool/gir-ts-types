@@ -213,6 +213,14 @@ declare module 'gi://Dex?version=1' {
             io_priority: number,
         ): Future;
         /**
+         * Wraps [method`Gio`.File.create] as a [class`Dex`.Future].
+         * @param file a [iface@Gio.File]
+         * @param flags flags for creating the file
+         * @param io_priority priority for the IO operation
+         * @returns a [class@Dex.Future] that resolves to   a [class@Gio.FileOutputStream] or rejects with error.
+         */
+        function file_create(file: Gio.File, flags: Gio.FileCreateFlags | null, io_priority: number): Future;
+        /**
          * Asynchronously deletes a file and returns a [class`Dex`.Future] which
          * can be observed for the result.
          * @param file a [iface@Gio.File]
