@@ -229677,7 +229677,7 @@ declare module 'gi://Gtk?version=4.0' {
          * paintable. GTK will drop things that it can't handle and try to make
          * sense of the rest.
          *
-         * To track errors during parsing or rednering, connect to the
+         * To track errors during parsing or rendering, connect to the
          * [signal`Gtk`.Svg::error] signal.
          *
          * For parsing errors in the `GTK_SVG_ERROR` domain, the functions
@@ -229690,9 +229690,8 @@ declare module 'gi://Gtk?version=4.0' {
          *
          * The paintable supports much of SVG 2, some notable exceptions.
          *
-         * Among the graphical elements, `<symbol>` is not supported.
-         *
-         * Gradient templating is not implemented.
+         * Among the graphical elements, `<symbol>` and `<textPath>`
+         * are not supported.
          *
          * All filter functions except `drop-shadow()` are supported, plus a
          * custom `alpha-level()` function, which implements one particular

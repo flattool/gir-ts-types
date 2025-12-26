@@ -127,6 +127,15 @@ declare module 'gi://Dex?version=1' {
             flags: Gio.BusNameOwnerFlags | null,
         ): [Future | null, Future | null];
         /**
+         * Reads a line from the data input stream.
+         *
+         * Wraps [method`Gio`.DataInputStream.read_line_async].
+         * @param stream a [class@Gio.DataInputStream]
+         * @param io_priority the [IO priority][iface@Gio.AsyncResult#io-priority] of the   request
+         * @returns a [class@Dex.Future] that resolves   to a string containing the line (without the line terminator), or %NULL   if the end of the stream is reached.
+         */
+        function data_input_stream_read_line(stream: Gio.DataInputStream, io_priority: number): Future;
+        /**
          * Wrapper for [method`Gio`.DBusConnection.call].
          * @param connection a [class@Gio.DBusConnection]
          * @param bus_name a unique or well-known bus name or %NULL if   @connection is not a message bus connection
