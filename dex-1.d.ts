@@ -207,6 +207,16 @@ declare module 'gi://Dex?version=1' {
         ): [Future, number];
         function error_quark(): GLib.Quark;
         /**
+         * Creates a new GSource that will fire when `events` is satisfied.
+         *
+         * This is primarily useful when integrating with legacy systems on a
+         * fiber.
+         * @param fd a file-descriptor
+         * @param events the POLLOUT|POLLIN style bitmask to watch for
+         * @returns a [class@Dex.Future] that resolves to the   revents value when @events is satisfied.
+         */
+        function fd_watch(fd: number, events: number): Future;
+        /**
          * Asynchronously copies a file and returns a [class`Dex`.Future] which
          * can be observed for the result.
          * @param source a [iface@Gio.File]

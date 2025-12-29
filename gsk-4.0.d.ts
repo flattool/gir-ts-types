@@ -747,6 +747,10 @@ declare module 'gi://Gsk?version=4.0' {
              * A node that displaces content according to some mask.
              */
             DISPLACEMENT_NODE,
+            /**
+             * A node that combines two child nodes in an arithmetic way.
+             */
+            ARITHMETIC_NODE,
         }
         /**
          * The filters used when scaling texture data.
@@ -4960,12 +4964,15 @@ declare module 'gi://Gsk?version=4.0' {
          * }
          * ```
          */
-        abstract class RenderReplay {
+        class RenderReplay {
             static $gtype: GObject.GType<RenderReplay>;
 
             // Constructors
 
+            constructor(properties?: Partial<{}>);
             _init(...args: any[]): void;
+
+            static ['new'](): RenderReplay;
 
             // Methods
 

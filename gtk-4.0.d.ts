@@ -229660,6 +229660,7 @@ declare module 'gi://Gtk?version=4.0' {
          * The `GtkSvg` fills or strokes paths with symbolic or fixed
          * colors. It can have multiple states, and paths can be included
          * in a subset of the states. The special 'empty' state is always
+         *
          * available. States can have animation, and the transition between
          * different states can also be animated.
          *
@@ -229707,7 +229708,7 @@ declare module 'gi://Gtk?version=4.0' {
          * referring to the `<mask>` element by ID.
          *
          * In animation elements, the parsing of `begin` and `end` attributes
-         * is limited, and the `by`, `min` and `max` attributes are not supported.
+         * is limited, and the `min` and `max` attributes are not supported.
          *
          * Lastly, there is only minimal CSS support, and no interactivity.
          *
