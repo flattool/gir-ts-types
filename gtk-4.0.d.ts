@@ -5595,6 +5595,7 @@ declare module 'gi://Gtk?version=4.0' {
          * give the user the last word.
          */
         const STYLE_PROVIDER_PRIORITY_USER: number;
+        const SVG_ALL_FEATURES: number;
         /**
          * The priority at which the text view validates onscreen lines
          * in an idle job in the background.
@@ -5875,6 +5876,13 @@ declare module 'gi://Gtk?version=4.0' {
          * @returns the error quark
          */
         function dialog_error_quark(): GLib.Quark;
+        /**
+         * Prevents GTK from using the specified portals.
+         *
+         * This should only be used in portal implementations, apps must not call it.
+         * @param portal_interfaces a %NULL-terminated array of portal interface names to disable
+         */
+        function disable_portal_interfaces(portal_interfaces: string[]): void;
         /**
          * Prevents GTK from using portals.
          *
@@ -7607,6 +7615,49 @@ declare module 'gi://Gtk?version=4.0' {
              *   what changes affect the styles
              */
             SHOW_CHANGE,
+        }
+        /**
+         * Features of the SVG renderer that can be disabled.
+         *
+         * By default, all features are enabled.
+         *
+         * New values may be added in the future.
+         */
+
+        /**
+         * Features of the SVG renderer that can be disabled.
+         *
+         * By default, all features are enabled.
+         *
+         * New values may be added in the future.
+         */
+        export namespace SvgFeatures {
+            export const $gtype: GObject.GType<SvgFeatures>;
+        }
+
+        enum SvgFeatures {
+            /**
+             * Whether to run animations.
+             *   If disabled, state changes are applied without
+             *   transitions
+             */
+            ANIMATIONS,
+            /**
+             * Whether to use system resources,
+             *   such as fonts. If disabled, only embedded fonts are used
+             */
+            SYSTEM_RESOURCES,
+            /**
+             * Whether to load external
+             *   resources, such as images. If disabled, only embedded
+             *   images are loaded
+             */
+            EXTERNAL_RESOURCES,
+            /**
+             * Whether to allow gpa extensions, such
+             *   as states and transitions
+             */
+            EXTENSIONS,
         }
         /**
          * Values for [callback`Gtk`.TextBufferCommitNotify] to denote the
@@ -229630,6 +229681,7 @@ declare module 'gi://Gtk?version=4.0' {
             // Signal signatures
             interface SignalSignatures extends GObject.Object.SignalSignatures {
                 error: (arg0: GLib.Error) => void;
+                'notify::features': (pspec: GObject.ParamSpec) => void;
                 'notify::playing': (pspec: GObject.ParamSpec) => void;
                 'notify::resource': (pspec: GObject.ParamSpec) => void;
                 'notify::state': (pspec: GObject.ParamSpec) => void;
@@ -229643,6 +229695,7 @@ declare module 'gi://Gtk?version=4.0' {
                     GObject.Object.ConstructorProps,
                     Gdk.Paintable.ConstructorProps,
                     SymbolicPaintable.ConstructorProps {
+                features: SvgFeatures;
                 playing: boolean;
                 resource: string;
                 state: number;
@@ -229784,6 +229837,14 @@ declare module 'gi://Gtk?version=4.0' {
             // Properties
 
             /**
+             * Enabled features for this paintable.
+             *
+             * Note that features have to be set before
+             * loading SVG data to take effect.
+             */
+            get features(): SvgFeatures;
+            set features(val: SvgFeatures);
+            /**
              * Whether the paintable is currently animating its content.
              *
              * To set this property, use the [method`Gtk`.Svg.play] and
@@ -229792,9 +229853,12 @@ declare module 'gi://Gtk?version=4.0' {
             get playing(): boolean;
             set playing(val: boolean);
             /**
-             * Construct-only property to create a paintable from
-             * a resource in ui files.
+             * Resource to load SVG data from.
+             *
+             * This property is meant to create a paintable
+             * from a resource in ui files.
              */
+            get resource(): string;
             set resource(val: string);
             /**
              * The current state of the renderer.
@@ -229854,6 +229918,11 @@ declare module 'gi://Gtk?version=4.0' {
             // Methods
 
             /**
+             * Returns the currently enabled features.
+             * @returns the enabled features
+             */
+            get_features(): SvgFeatures;
+            /**
              * Gets the number of states defined in the SVG.
              *
              * Note that there is always an empty state, which does
@@ -229884,6 +229953,16 @@ declare module 'gi://Gtk?version=4.0' {
              */
             load_from_bytes(bytes: GLib.Bytes | Uint8Array): void;
             /**
+             * Loads SVG content into an existing SVG paintable.
+             *
+             * To track errors while loading SVG content,
+             * connect to the [signal`Gtk`.Svg::error] signal.
+             *
+             * This clears any previously loaded content.
+             * @param path the resource path
+             */
+            load_from_resource(path: string): void;
+            /**
              * Stop any playing animations.
              *
              * Animations can be paused and started repeatedly.
@@ -229908,6 +229987,16 @@ declare module 'gi://Gtk?version=4.0' {
              * @returns the serialized contents
              */
             serialize(): GLib.Bytes;
+            /**
+             * Enables or disables features of the SVG paintable.
+             *
+             * By default, all features are enabled.
+             *
+             * Note that this call only has an effect before the
+             * SVG is loaded.
+             * @param features features to enable
+             */
+            set_features(features: SvgFeatures | null): void;
             /**
              * Sets a frame clock.
              *
