@@ -176066,7 +176066,7 @@ declare module 'gi://Gtk?version=4.0' {
             get_file(): Gio.File | null;
             /**
              * Returns whether the contents are isolated.
-             * @returns True if contents are isolated Since 4.22
+             * @returns True if contents are isolated
              */
             get_isolate_contents(): boolean;
             /**
@@ -229744,8 +229744,7 @@ declare module 'gi://Gtk?version=4.0' {
          *
          * The paintable supports much of SVG 2, some notable exceptions.
          *
-         * Among the graphical elements, `<symbol>` and `<textPath>`
-         * are not supported.
+         * Among the graphical elements, `<textPath>` is not supported.
          *
          * All filter functions except `drop-shadow()` are supported, plus a
          * custom `alpha-level()` function, which implements one particular
