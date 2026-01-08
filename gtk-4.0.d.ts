@@ -10281,7 +10281,7 @@ declare module 'gi://Gtk?version=4.0' {
              * This function is only meant to be called for code which is private
              * to the `widget_type` which declared the child and is meant for language
              * bindings which cannot easily make use of the GObject structure offsets.
-             * @param widget_type The `GType` to get a template child for
+             * @param widget_type The type of the widget class that defines the child in the template
              * @param name ID of the child defined in the template XML
              * @returns the object built in the template XML with   the id @name
              */
@@ -16818,7 +16818,7 @@ declare module 'gi://Gtk?version=4.0' {
              * This function is only meant to be called for code which is private
              * to the `widget_type` which declared the child and is meant for language
              * bindings which cannot easily make use of the GObject structure offsets.
-             * @param widget_type The `GType` to get a template child for
+             * @param widget_type The type of the widget class that defines the child in the template
              * @param name ID of the child defined in the template XML
              * @returns the object built in the template XML with   the id @name
              */
@@ -19964,7 +19964,7 @@ declare module 'gi://Gtk?version=4.0' {
              * This function is only meant to be called for code which is private
              * to the `widget_type` which declared the child and is meant for language
              * bindings which cannot easily make use of the GObject structure offsets.
-             * @param widget_type The `GType` to get a template child for
+             * @param widget_type The type of the widget class that defines the child in the template
              * @param name ID of the child defined in the template XML
              * @returns the object built in the template XML with   the id @name
              */
@@ -23502,7 +23502,7 @@ declare module 'gi://Gtk?version=4.0' {
              * This function is only meant to be called for code which is private
              * to the `widget_type` which declared the child and is meant for language
              * bindings which cannot easily make use of the GObject structure offsets.
-             * @param widget_type The `GType` to get a template child for
+             * @param widget_type The type of the widget class that defines the child in the template
              * @param name ID of the child defined in the template XML
              * @returns the object built in the template XML with   the id @name
              */
@@ -28744,7 +28744,7 @@ declare module 'gi://Gtk?version=4.0' {
              * This function is only meant to be called for code which is private
              * to the `widget_type` which declared the child and is meant for language
              * bindings which cannot easily make use of the GObject structure offsets.
-             * @param widget_type The `GType` to get a template child for
+             * @param widget_type The type of the widget class that defines the child in the template
              * @param name ID of the child defined in the template XML
              * @returns the object built in the template XML with   the id @name
              */
@@ -32999,7 +32999,7 @@ declare module 'gi://Gtk?version=4.0' {
              * This function is only meant to be called for code which is private
              * to the `widget_type` which declared the child and is meant for language
              * bindings which cannot easily make use of the GObject structure offsets.
-             * @param widget_type The `GType` to get a template child for
+             * @param widget_type The type of the widget class that defines the child in the template
              * @param name ID of the child defined in the template XML
              * @returns the object built in the template XML with   the id @name
              */
@@ -40642,7 +40642,7 @@ declare module 'gi://Gtk?version=4.0' {
              * This function is only meant to be called for code which is private
              * to the `widget_type` which declared the child and is meant for language
              * bindings which cannot easily make use of the GObject structure offsets.
-             * @param widget_type The `GType` to get a template child for
+             * @param widget_type The type of the widget class that defines the child in the template
              * @param name ID of the child defined in the template XML
              * @returns the object built in the template XML with   the id @name
              */
@@ -53210,7 +53210,7 @@ declare module 'gi://Gtk?version=4.0' {
              * This function is only meant to be called for code which is private
              * to the `widget_type` which declared the child and is meant for language
              * bindings which cannot easily make use of the GObject structure offsets.
-             * @param widget_type The `GType` to get a template child for
+             * @param widget_type The type of the widget class that defines the child in the template
              * @param name ID of the child defined in the template XML
              * @returns the object built in the template XML with   the id @name
              */
@@ -57468,7 +57468,7 @@ declare module 'gi://Gtk?version=4.0' {
              * This function is only meant to be called for code which is private
              * to the `widget_type` which declared the child and is meant for language
              * bindings which cannot easily make use of the GObject structure offsets.
-             * @param widget_type The `GType` to get a template child for
+             * @param widget_type The type of the widget class that defines the child in the template
              * @param name ID of the child defined in the template XML
              * @returns the object built in the template XML with   the id @name
              */
@@ -65623,7 +65623,7 @@ declare module 'gi://Gtk?version=4.0' {
              * This function is only meant to be called for code which is private
              * to the `widget_type` which declared the child and is meant for language
              * bindings which cannot easily make use of the GObject structure offsets.
-             * @param widget_type The `GType` to get a template child for
+             * @param widget_type The type of the widget class that defines the child in the template
              * @param name ID of the child defined in the template XML
              * @returns the object built in the template XML with   the id @name
              */
@@ -69000,7 +69000,7 @@ declare module 'gi://Gtk?version=4.0' {
              * This function is only meant to be called for code which is private
              * to the `widget_type` which declared the child and is meant for language
              * bindings which cannot easily make use of the GObject structure offsets.
-             * @param widget_type The `GType` to get a template child for
+             * @param widget_type The type of the widget class that defines the child in the template
              * @param name ID of the child defined in the template XML
              * @returns the object built in the template XML with   the id @name
              */
@@ -75195,7 +75195,7 @@ declare module 'gi://Gtk?version=4.0' {
              * This function is only meant to be called for code which is private
              * to the `widget_type` which declared the child and is meant for language
              * bindings which cannot easily make use of the GObject structure offsets.
-             * @param widget_type The `GType` to get a template child for
+             * @param widget_type The type of the widget class that defines the child in the template
              * @param name ID of the child defined in the template XML
              * @returns the object built in the template XML with   the id @name
              */
@@ -79344,7 +79344,7 @@ declare module 'gi://Gtk?version=4.0' {
              * This function is only meant to be called for code which is private
              * to the `widget_type` which declared the child and is meant for language
              * bindings which cannot easily make use of the GObject structure offsets.
-             * @param widget_type The `GType` to get a template child for
+             * @param widget_type The type of the widget class that defines the child in the template
              * @param name ID of the child defined in the template XML
              * @returns the object built in the template XML with   the id @name
              */
@@ -85972,7 +85972,7 @@ declare module 'gi://Gtk?version=4.0' {
              * This function is only meant to be called for code which is private
              * to the `widget_type` which declared the child and is meant for language
              * bindings which cannot easily make use of the GObject structure offsets.
-             * @param widget_type The `GType` to get a template child for
+             * @param widget_type The type of the widget class that defines the child in the template
              * @param name ID of the child defined in the template XML
              * @returns the object built in the template XML with   the id @name
              */
@@ -89077,7 +89077,7 @@ declare module 'gi://Gtk?version=4.0' {
              * This function is only meant to be called for code which is private
              * to the `widget_type` which declared the child and is meant for language
              * bindings which cannot easily make use of the GObject structure offsets.
-             * @param widget_type The `GType` to get a template child for
+             * @param widget_type The type of the widget class that defines the child in the template
              * @param name ID of the child defined in the template XML
              * @returns the object built in the template XML with   the id @name
              */
@@ -94045,7 +94045,7 @@ declare module 'gi://Gtk?version=4.0' {
              * This function is only meant to be called for code which is private
              * to the `widget_type` which declared the child and is meant for language
              * bindings which cannot easily make use of the GObject structure offsets.
-             * @param widget_type The `GType` to get a template child for
+             * @param widget_type The type of the widget class that defines the child in the template
              * @param name ID of the child defined in the template XML
              * @returns the object built in the template XML with   the id @name
              */
@@ -101648,7 +101648,7 @@ declare module 'gi://Gtk?version=4.0' {
              * This function is only meant to be called for code which is private
              * to the `widget_type` which declared the child and is meant for language
              * bindings which cannot easily make use of the GObject structure offsets.
-             * @param widget_type The `GType` to get a template child for
+             * @param widget_type The type of the widget class that defines the child in the template
              * @param name ID of the child defined in the template XML
              * @returns the object built in the template XML with   the id @name
              */
@@ -115025,7 +115025,7 @@ declare module 'gi://Gtk?version=4.0' {
              * This function is only meant to be called for code which is private
              * to the `widget_type` which declared the child and is meant for language
              * bindings which cannot easily make use of the GObject structure offsets.
-             * @param widget_type The `GType` to get a template child for
+             * @param widget_type The type of the widget class that defines the child in the template
              * @param name ID of the child defined in the template XML
              * @returns the object built in the template XML with   the id @name
              */
@@ -139342,7 +139342,7 @@ declare module 'gi://Gtk?version=4.0' {
              * This function is only meant to be called for code which is private
              * to the `widget_type` which declared the child and is meant for language
              * bindings which cannot easily make use of the GObject structure offsets.
-             * @param widget_type The `GType` to get a template child for
+             * @param widget_type The type of the widget class that defines the child in the template
              * @param name ID of the child defined in the template XML
              * @returns the object built in the template XML with   the id @name
              */
@@ -145127,7 +145127,7 @@ declare module 'gi://Gtk?version=4.0' {
              * This function is only meant to be called for code which is private
              * to the `widget_type` which declared the child and is meant for language
              * bindings which cannot easily make use of the GObject structure offsets.
-             * @param widget_type The `GType` to get a template child for
+             * @param widget_type The type of the widget class that defines the child in the template
              * @param name ID of the child defined in the template XML
              * @returns the object built in the template XML with   the id @name
              */
@@ -151372,7 +151372,7 @@ declare module 'gi://Gtk?version=4.0' {
              * This function is only meant to be called for code which is private
              * to the `widget_type` which declared the child and is meant for language
              * bindings which cannot easily make use of the GObject structure offsets.
-             * @param widget_type The `GType` to get a template child for
+             * @param widget_type The type of the widget class that defines the child in the template
              * @param name ID of the child defined in the template XML
              * @returns the object built in the template XML with   the id @name
              */
@@ -159343,7 +159343,7 @@ declare module 'gi://Gtk?version=4.0' {
              * This function is only meant to be called for code which is private
              * to the `widget_type` which declared the child and is meant for language
              * bindings which cannot easily make use of the GObject structure offsets.
-             * @param widget_type The `GType` to get a template child for
+             * @param widget_type The type of the widget class that defines the child in the template
              * @param name ID of the child defined in the template XML
              * @returns the object built in the template XML with   the id @name
              */
@@ -169543,7 +169543,7 @@ declare module 'gi://Gtk?version=4.0' {
              * This function is only meant to be called for code which is private
              * to the `widget_type` which declared the child and is meant for language
              * bindings which cannot easily make use of the GObject structure offsets.
-             * @param widget_type The `GType` to get a template child for
+             * @param widget_type The type of the widget class that defines the child in the template
              * @param name ID of the child defined in the template XML
              * @returns the object built in the template XML with   the id @name
              */
@@ -174530,7 +174530,7 @@ declare module 'gi://Gtk?version=4.0' {
              * This function is only meant to be called for code which is private
              * to the `widget_type` which declared the child and is meant for language
              * bindings which cannot easily make use of the GObject structure offsets.
-             * @param widget_type The `GType` to get a template child for
+             * @param widget_type The type of the widget class that defines the child in the template
              * @param name ID of the child defined in the template XML
              * @returns the object built in the template XML with   the id @name
              */
@@ -179384,7 +179384,7 @@ declare module 'gi://Gtk?version=4.0' {
              * This function is only meant to be called for code which is private
              * to the `widget_type` which declared the child and is meant for language
              * bindings which cannot easily make use of the GObject structure offsets.
-             * @param widget_type The `GType` to get a template child for
+             * @param widget_type The type of the widget class that defines the child in the template
              * @param name ID of the child defined in the template XML
              * @returns the object built in the template XML with   the id @name
              */
@@ -183586,7 +183586,7 @@ declare module 'gi://Gtk?version=4.0' {
              * This function is only meant to be called for code which is private
              * to the `widget_type` which declared the child and is meant for language
              * bindings which cannot easily make use of the GObject structure offsets.
-             * @param widget_type The `GType` to get a template child for
+             * @param widget_type The type of the widget class that defines the child in the template
              * @param name ID of the child defined in the template XML
              * @returns the object built in the template XML with   the id @name
              */
@@ -190535,7 +190535,7 @@ declare module 'gi://Gtk?version=4.0' {
              * This function is only meant to be called for code which is private
              * to the `widget_type` which declared the child and is meant for language
              * bindings which cannot easily make use of the GObject structure offsets.
-             * @param widget_type The `GType` to get a template child for
+             * @param widget_type The type of the widget class that defines the child in the template
              * @param name ID of the child defined in the template XML
              * @returns the object built in the template XML with   the id @name
              */
@@ -203279,7 +203279,7 @@ declare module 'gi://Gtk?version=4.0' {
              * This function is only meant to be called for code which is private
              * to the `widget_type` which declared the child and is meant for language
              * bindings which cannot easily make use of the GObject structure offsets.
-             * @param widget_type The `GType` to get a template child for
+             * @param widget_type The type of the widget class that defines the child in the template
              * @param name ID of the child defined in the template XML
              * @returns the object built in the template XML with   the id @name
              */
@@ -214078,7 +214078,7 @@ declare module 'gi://Gtk?version=4.0' {
              * This function is only meant to be called for code which is private
              * to the `widget_type` which declared the child and is meant for language
              * bindings which cannot easily make use of the GObject structure offsets.
-             * @param widget_type The `GType` to get a template child for
+             * @param widget_type The type of the widget class that defines the child in the template
              * @param name ID of the child defined in the template XML
              * @returns the object built in the template XML with   the id @name
              */
@@ -222463,7 +222463,7 @@ declare module 'gi://Gtk?version=4.0' {
              * This function is only meant to be called for code which is private
              * to the `widget_type` which declared the child and is meant for language
              * bindings which cannot easily make use of the GObject structure offsets.
-             * @param widget_type The `GType` to get a template child for
+             * @param widget_type The type of the widget class that defines the child in the template
              * @param name ID of the child defined in the template XML
              * @returns the object built in the template XML with   the id @name
              */
@@ -233999,7 +233999,7 @@ declare module 'gi://Gtk?version=4.0' {
              * This function is only meant to be called for code which is private
              * to the `widget_type` which declared the child and is meant for language
              * bindings which cannot easily make use of the GObject structure offsets.
-             * @param widget_type The `GType` to get a template child for
+             * @param widget_type The type of the widget class that defines the child in the template
              * @param name ID of the child defined in the template XML
              * @returns the object built in the template XML with   the id @name
              */
@@ -238436,7 +238436,7 @@ declare module 'gi://Gtk?version=4.0' {
              * This function is only meant to be called for code which is private
              * to the `widget_type` which declared the child and is meant for language
              * bindings which cannot easily make use of the GObject structure offsets.
-             * @param widget_type The `GType` to get a template child for
+             * @param widget_type The type of the widget class that defines the child in the template
              * @param name ID of the child defined in the template XML
              * @returns the object built in the template XML with   the id @name
              */
@@ -247092,7 +247092,7 @@ declare module 'gi://Gtk?version=4.0' {
              * This function is only meant to be called for code which is private
              * to the `widget_type` which declared the child and is meant for language
              * bindings which cannot easily make use of the GObject structure offsets.
-             * @param widget_type The `GType` to get a template child for
+             * @param widget_type The type of the widget class that defines the child in the template
              * @param name ID of the child defined in the template XML
              * @returns the object built in the template XML with   the id @name
              */
@@ -262558,7 +262558,7 @@ declare module 'gi://Gtk?version=4.0' {
              * This function is only meant to be called for code which is private
              * to the `widget_type` which declared the child and is meant for language
              * bindings which cannot easily make use of the GObject structure offsets.
-             * @param widget_type The `GType` to get a template child for
+             * @param widget_type The type of the widget class that defines the child in the template
              * @param name ID of the child defined in the template XML
              * @returns the object built in the template XML with   the id @name
              */
@@ -268176,7 +268176,7 @@ declare module 'gi://Gtk?version=4.0' {
              * This function is only meant to be called for code which is private
              * to the `widget_type` which declared the child and is meant for language
              * bindings which cannot easily make use of the GObject structure offsets.
-             * @param widget_type The `GType` to get a template child for
+             * @param widget_type The type of the widget class that defines the child in the template
              * @param name ID of the child defined in the template XML
              * @returns the object built in the template XML with   the id @name
              */
