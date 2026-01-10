@@ -17394,14 +17394,16 @@ declare module 'gi://Gdk?version=4.0' {
              * - A RGB color in the form “rgb(r,g,b)” (In this case the color
              *   will have full opacity)
              * - A RGBA color in the form “rgba(r,g,b,a)”
-             * - A HSL color in the form "hsl(hue, saturation, lightness)"
-             * - A HSLA color in the form "hsla(hue, saturation, lightness, alpha)"
+             * - A HSL color in the form “hsl(h,s,l)”
+             * - A HSLA color in the form “hsla(h,s,l,a)”
              *
              * Where “r”, “g”, “b” and “a” are respectively the red, green,
              * blue and alpha color values. In the last two cases, “r”, “g”,
              * and “b” are either integers in the range 0 to 255 or percentage
              * values in the range 0% to 100%, and a is a floating point value
-             * in the range 0 to 1.
+             * in the range 0 to 1. The range for “h” is 0 to 360, and
+             * “s”, “l” can be either numbers in the range 0 to 100 or
+             * percentages.
              * @param spec the string specifying the color
              * @returns %TRUE if the parsing succeeded
              */
