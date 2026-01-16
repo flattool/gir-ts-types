@@ -496,6 +496,10 @@ declare module 'gi://Atspi?version=2.0' {
              */
             META3,
             /**
+             * Alias for META3.
+             */
+            SUPER,
+            /**
              * A symbolic meta key name that is mapped by AT-SPI
              * to the appropriate META value, for the convenience of the client.
              */
