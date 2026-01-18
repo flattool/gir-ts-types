@@ -15248,7 +15248,11 @@ declare module 'gi://Gio?version=2.0' {
              * This operation can fail if #GCredentials is not supported on the
              * OS or if the native credentials type does not contain information
              * about the UNIX user.
-             * @returns The UNIX user identifier or `-1` if @error is set.
+             *
+             * As the signedness of `uid_t` is not specified by POSIX, it is recommended to
+             * check `error` for failure rather than trying to check the return value,
+             * particularly in language bindings.
+             * @returns The UNIX user identifier or `(uid_t) -1` if @error is set.
              */
             get_unix_user(): never;
             /**

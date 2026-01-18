@@ -16658,6 +16658,17 @@ declare module 'gi://Adw?version=1' {
              */
             announce(message: string, priority: Gtk.AccessibleAnnouncementPriority | null): void;
             /**
+             * Retrieves the accessible identifier for the accessible object.
+             *
+             * This functionality can be overridden by `GtkAccessible`
+             * implementations.
+             *
+             * It is left to the accessible implementation to define the scope
+             * and uniqueness of the identifier.
+             * @returns the accessible identifier
+             */
+            get_accessible_id(): string | null;
+            /**
              * Retrieves the accessible parent for an accessible object.
              *
              * This function returns `NULL` for top level widgets.
@@ -16782,6 +16793,16 @@ declare module 'gi://Adw?version=1' {
              * @param values an array of `GValues`, one for each state
              */
             update_state(states: Gtk.AccessibleState[] | null, values: (GObject.Value | any)[]): void;
+            /**
+             * Retrieves the accessible identifier for the accessible object.
+             *
+             * This functionality can be overridden by `GtkAccessible`
+             * implementations.
+             *
+             * It is left to the accessible implementation to define the scope
+             * and uniqueness of the identifier.
+             */
+            vfunc_get_accessible_id(): string | null;
             /**
              * Retrieves the accessible parent for an accessible object.
              *
@@ -18112,6 +18133,17 @@ declare module 'gi://Adw?version=1' {
              */
             announce(message: string, priority: Gtk.AccessibleAnnouncementPriority | null): void;
             /**
+             * Retrieves the accessible identifier for the accessible object.
+             *
+             * This functionality can be overridden by `GtkAccessible`
+             * implementations.
+             *
+             * It is left to the accessible implementation to define the scope
+             * and uniqueness of the identifier.
+             * @returns the accessible identifier
+             */
+            get_accessible_id(): string | null;
+            /**
              * Retrieves the accessible parent for an accessible object.
              *
              * This function returns `NULL` for top level widgets.
@@ -18236,6 +18268,16 @@ declare module 'gi://Adw?version=1' {
              * @param values an array of `GValues`, one for each state
              */
             update_state(states: Gtk.AccessibleState[] | null, values: (GObject.Value | any)[]): void;
+            /**
+             * Retrieves the accessible identifier for the accessible object.
+             *
+             * This functionality can be overridden by `GtkAccessible`
+             * implementations.
+             *
+             * It is left to the accessible implementation to define the scope
+             * and uniqueness of the identifier.
+             */
+            vfunc_get_accessible_id(): string | null;
             /**
              * Retrieves the accessible parent for an accessible object.
              *
@@ -21122,6 +21164,17 @@ declare module 'gi://Adw?version=1' {
              */
             announce(message: string, priority: Gtk.AccessibleAnnouncementPriority | null): void;
             /**
+             * Retrieves the accessible identifier for the accessible object.
+             *
+             * This functionality can be overridden by `GtkAccessible`
+             * implementations.
+             *
+             * It is left to the accessible implementation to define the scope
+             * and uniqueness of the identifier.
+             * @returns the accessible identifier
+             */
+            get_accessible_id(): string | null;
+            /**
              * Retrieves the accessible parent for an accessible object.
              *
              * This function returns `NULL` for top level widgets.
@@ -21246,6 +21299,16 @@ declare module 'gi://Adw?version=1' {
              * @param values an array of `GValues`, one for each state
              */
             update_state(states: Gtk.AccessibleState[] | null, values: (GObject.Value | any)[]): void;
+            /**
+             * Retrieves the accessible identifier for the accessible object.
+             *
+             * This functionality can be overridden by `GtkAccessible`
+             * implementations.
+             *
+             * It is left to the accessible implementation to define the scope
+             * and uniqueness of the identifier.
+             */
+            vfunc_get_accessible_id(): string | null;
             /**
              * Retrieves the accessible parent for an accessible object.
              *
@@ -22913,6 +22976,17 @@ declare module 'gi://Adw?version=1' {
              */
             announce(message: string, priority: Gtk.AccessibleAnnouncementPriority | null): void;
             /**
+             * Retrieves the accessible identifier for the accessible object.
+             *
+             * This functionality can be overridden by `GtkAccessible`
+             * implementations.
+             *
+             * It is left to the accessible implementation to define the scope
+             * and uniqueness of the identifier.
+             * @returns the accessible identifier
+             */
+            get_accessible_id(): string | null;
+            /**
              * Retrieves the accessible parent for an accessible object.
              *
              * This function returns `NULL` for top level widgets.
@@ -23037,6 +23111,16 @@ declare module 'gi://Adw?version=1' {
              * @param values an array of `GValues`, one for each state
              */
             update_state(states: Gtk.AccessibleState[] | null, values: (GObject.Value | any)[]): void;
+            /**
+             * Retrieves the accessible identifier for the accessible object.
+             *
+             * This functionality can be overridden by `GtkAccessible`
+             * implementations.
+             *
+             * It is left to the accessible implementation to define the scope
+             * and uniqueness of the identifier.
+             */
+            vfunc_get_accessible_id(): string | null;
             /**
              * Retrieves the accessible parent for an accessible object.
              *
@@ -26655,6 +26739,17 @@ declare module 'gi://Adw?version=1' {
              */
             announce(message: string, priority: Gtk.AccessibleAnnouncementPriority | null): void;
             /**
+             * Retrieves the accessible identifier for the accessible object.
+             *
+             * This functionality can be overridden by `GtkAccessible`
+             * implementations.
+             *
+             * It is left to the accessible implementation to define the scope
+             * and uniqueness of the identifier.
+             * @returns the accessible identifier
+             */
+            get_accessible_id(): string | null;
+            /**
              * Retrieves the accessible parent for an accessible object.
              *
              * This function returns `NULL` for top level widgets.
@@ -26779,6 +26874,16 @@ declare module 'gi://Adw?version=1' {
              * @param values an array of `GValues`, one for each state
              */
             update_state(states: Gtk.AccessibleState[] | null, values: (GObject.Value | any)[]): void;
+            /**
+             * Retrieves the accessible identifier for the accessible object.
+             *
+             * This functionality can be overridden by `GtkAccessible`
+             * implementations.
+             *
+             * It is left to the accessible implementation to define the scope
+             * and uniqueness of the identifier.
+             */
+            vfunc_get_accessible_id(): string | null;
             /**
              * Retrieves the accessible parent for an accessible object.
              *
@@ -27641,6 +27746,17 @@ declare module 'gi://Adw?version=1' {
              */
             announce(message: string, priority: Gtk.AccessibleAnnouncementPriority | null): void;
             /**
+             * Retrieves the accessible identifier for the accessible object.
+             *
+             * This functionality can be overridden by `GtkAccessible`
+             * implementations.
+             *
+             * It is left to the accessible implementation to define the scope
+             * and uniqueness of the identifier.
+             * @returns the accessible identifier
+             */
+            get_accessible_id(): string | null;
+            /**
              * Retrieves the accessible parent for an accessible object.
              *
              * This function returns `NULL` for top level widgets.
@@ -27765,6 +27881,16 @@ declare module 'gi://Adw?version=1' {
              * @param values an array of `GValues`, one for each state
              */
             update_state(states: Gtk.AccessibleState[] | null, values: (GObject.Value | any)[]): void;
+            /**
+             * Retrieves the accessible identifier for the accessible object.
+             *
+             * This functionality can be overridden by `GtkAccessible`
+             * implementations.
+             *
+             * It is left to the accessible implementation to define the scope
+             * and uniqueness of the identifier.
+             */
+            vfunc_get_accessible_id(): string | null;
             /**
              * Retrieves the accessible parent for an accessible object.
              *
@@ -32440,6 +32566,17 @@ declare module 'gi://Adw?version=1' {
              */
             announce(message: string, priority: Gtk.AccessibleAnnouncementPriority | null): void;
             /**
+             * Retrieves the accessible identifier for the accessible object.
+             *
+             * This functionality can be overridden by `GtkAccessible`
+             * implementations.
+             *
+             * It is left to the accessible implementation to define the scope
+             * and uniqueness of the identifier.
+             * @returns the accessible identifier
+             */
+            get_accessible_id(): string | null;
+            /**
              * Retrieves the accessible parent for an accessible object.
              *
              * This function returns `NULL` for top level widgets.
@@ -32564,6 +32701,16 @@ declare module 'gi://Adw?version=1' {
              * @param values an array of `GValues`, one for each state
              */
             update_state(states: Gtk.AccessibleState[] | null, values: (GObject.Value | any)[]): void;
+            /**
+             * Retrieves the accessible identifier for the accessible object.
+             *
+             * This functionality can be overridden by `GtkAccessible`
+             * implementations.
+             *
+             * It is left to the accessible implementation to define the scope
+             * and uniqueness of the identifier.
+             */
+            vfunc_get_accessible_id(): string | null;
             /**
              * Retrieves the accessible parent for an accessible object.
              *
@@ -35373,6 +35520,17 @@ declare module 'gi://Adw?version=1' {
              */
             announce(message: string, priority: Gtk.AccessibleAnnouncementPriority | null): void;
             /**
+             * Retrieves the accessible identifier for the accessible object.
+             *
+             * This functionality can be overridden by `GtkAccessible`
+             * implementations.
+             *
+             * It is left to the accessible implementation to define the scope
+             * and uniqueness of the identifier.
+             * @returns the accessible identifier
+             */
+            get_accessible_id(): string | null;
+            /**
              * Retrieves the accessible parent for an accessible object.
              *
              * This function returns `NULL` for top level widgets.
@@ -35497,6 +35655,16 @@ declare module 'gi://Adw?version=1' {
              * @param values an array of `GValues`, one for each state
              */
             update_state(states: Gtk.AccessibleState[] | null, values: (GObject.Value | any)[]): void;
+            /**
+             * Retrieves the accessible identifier for the accessible object.
+             *
+             * This functionality can be overridden by `GtkAccessible`
+             * implementations.
+             *
+             * It is left to the accessible implementation to define the scope
+             * and uniqueness of the identifier.
+             */
+            vfunc_get_accessible_id(): string | null;
             /**
              * Retrieves the accessible parent for an accessible object.
              *
@@ -36252,6 +36420,17 @@ declare module 'gi://Adw?version=1' {
              */
             announce(message: string, priority: Gtk.AccessibleAnnouncementPriority | null): void;
             /**
+             * Retrieves the accessible identifier for the accessible object.
+             *
+             * This functionality can be overridden by `GtkAccessible`
+             * implementations.
+             *
+             * It is left to the accessible implementation to define the scope
+             * and uniqueness of the identifier.
+             * @returns the accessible identifier
+             */
+            get_accessible_id(): string | null;
+            /**
              * Retrieves the accessible parent for an accessible object.
              *
              * This function returns `NULL` for top level widgets.
@@ -36376,6 +36555,16 @@ declare module 'gi://Adw?version=1' {
              * @param values an array of `GValues`, one for each state
              */
             update_state(states: Gtk.AccessibleState[] | null, values: (GObject.Value | any)[]): void;
+            /**
+             * Retrieves the accessible identifier for the accessible object.
+             *
+             * This functionality can be overridden by `GtkAccessible`
+             * implementations.
+             *
+             * It is left to the accessible implementation to define the scope
+             * and uniqueness of the identifier.
+             */
+            vfunc_get_accessible_id(): string | null;
             /**
              * Retrieves the accessible parent for an accessible object.
              *
@@ -37248,6 +37437,17 @@ declare module 'gi://Adw?version=1' {
              */
             announce(message: string, priority: Gtk.AccessibleAnnouncementPriority | null): void;
             /**
+             * Retrieves the accessible identifier for the accessible object.
+             *
+             * This functionality can be overridden by `GtkAccessible`
+             * implementations.
+             *
+             * It is left to the accessible implementation to define the scope
+             * and uniqueness of the identifier.
+             * @returns the accessible identifier
+             */
+            get_accessible_id(): string | null;
+            /**
              * Retrieves the accessible parent for an accessible object.
              *
              * This function returns `NULL` for top level widgets.
@@ -37372,6 +37572,16 @@ declare module 'gi://Adw?version=1' {
              * @param values an array of `GValues`, one for each state
              */
             update_state(states: Gtk.AccessibleState[] | null, values: (GObject.Value | any)[]): void;
+            /**
+             * Retrieves the accessible identifier for the accessible object.
+             *
+             * This functionality can be overridden by `GtkAccessible`
+             * implementations.
+             *
+             * It is left to the accessible implementation to define the scope
+             * and uniqueness of the identifier.
+             */
+            vfunc_get_accessible_id(): string | null;
             /**
              * Retrieves the accessible parent for an accessible object.
              *
@@ -38924,6 +39134,17 @@ declare module 'gi://Adw?version=1' {
              */
             announce(message: string, priority: Gtk.AccessibleAnnouncementPriority | null): void;
             /**
+             * Retrieves the accessible identifier for the accessible object.
+             *
+             * This functionality can be overridden by `GtkAccessible`
+             * implementations.
+             *
+             * It is left to the accessible implementation to define the scope
+             * and uniqueness of the identifier.
+             * @returns the accessible identifier
+             */
+            get_accessible_id(): string | null;
+            /**
              * Retrieves the accessible parent for an accessible object.
              *
              * This function returns `NULL` for top level widgets.
@@ -39048,6 +39269,16 @@ declare module 'gi://Adw?version=1' {
              * @param values an array of `GValues`, one for each state
              */
             update_state(states: Gtk.AccessibleState[] | null, values: (GObject.Value | any)[]): void;
+            /**
+             * Retrieves the accessible identifier for the accessible object.
+             *
+             * This functionality can be overridden by `GtkAccessible`
+             * implementations.
+             *
+             * It is left to the accessible implementation to define the scope
+             * and uniqueness of the identifier.
+             */
+            vfunc_get_accessible_id(): string | null;
             /**
              * Retrieves the accessible parent for an accessible object.
              *
@@ -43589,6 +43820,17 @@ declare module 'gi://Adw?version=1' {
              */
             announce(message: string, priority: Gtk.AccessibleAnnouncementPriority | null): void;
             /**
+             * Retrieves the accessible identifier for the accessible object.
+             *
+             * This functionality can be overridden by `GtkAccessible`
+             * implementations.
+             *
+             * It is left to the accessible implementation to define the scope
+             * and uniqueness of the identifier.
+             * @returns the accessible identifier
+             */
+            get_accessible_id(): string | null;
+            /**
              * Retrieves the accessible parent for an accessible object.
              *
              * This function returns `NULL` for top level widgets.
@@ -43713,6 +43955,16 @@ declare module 'gi://Adw?version=1' {
              * @param values an array of `GValues`, one for each state
              */
             update_state(states: Gtk.AccessibleState[] | null, values: (GObject.Value | any)[]): void;
+            /**
+             * Retrieves the accessible identifier for the accessible object.
+             *
+             * This functionality can be overridden by `GtkAccessible`
+             * implementations.
+             *
+             * It is left to the accessible implementation to define the scope
+             * and uniqueness of the identifier.
+             */
+            vfunc_get_accessible_id(): string | null;
             /**
              * Retrieves the accessible parent for an accessible object.
              *
@@ -53138,6 +53390,17 @@ declare module 'gi://Adw?version=1' {
              */
             announce(message: string, priority: Gtk.AccessibleAnnouncementPriority | null): void;
             /**
+             * Retrieves the accessible identifier for the accessible object.
+             *
+             * This functionality can be overridden by `GtkAccessible`
+             * implementations.
+             *
+             * It is left to the accessible implementation to define the scope
+             * and uniqueness of the identifier.
+             * @returns the accessible identifier
+             */
+            get_accessible_id(): string | null;
+            /**
              * Retrieves the accessible parent for an accessible object.
              *
              * This function returns `NULL` for top level widgets.
@@ -53262,6 +53525,16 @@ declare module 'gi://Adw?version=1' {
              * @param values an array of `GValues`, one for each state
              */
             update_state(states: Gtk.AccessibleState[] | null, values: (GObject.Value | any)[]): void;
+            /**
+             * Retrieves the accessible identifier for the accessible object.
+             *
+             * This functionality can be overridden by `GtkAccessible`
+             * implementations.
+             *
+             * It is left to the accessible implementation to define the scope
+             * and uniqueness of the identifier.
+             */
+            vfunc_get_accessible_id(): string | null;
             /**
              * Retrieves the accessible parent for an accessible object.
              *
@@ -56424,6 +56697,17 @@ declare module 'gi://Adw?version=1' {
              */
             announce(message: string, priority: Gtk.AccessibleAnnouncementPriority | null): void;
             /**
+             * Retrieves the accessible identifier for the accessible object.
+             *
+             * This functionality can be overridden by `GtkAccessible`
+             * implementations.
+             *
+             * It is left to the accessible implementation to define the scope
+             * and uniqueness of the identifier.
+             * @returns the accessible identifier
+             */
+            get_accessible_id(): string | null;
+            /**
              * Retrieves the accessible parent for an accessible object.
              *
              * This function returns `NULL` for top level widgets.
@@ -56548,6 +56832,16 @@ declare module 'gi://Adw?version=1' {
              * @param values an array of `GValues`, one for each state
              */
             update_state(states: Gtk.AccessibleState[] | null, values: (GObject.Value | any)[]): void;
+            /**
+             * Retrieves the accessible identifier for the accessible object.
+             *
+             * This functionality can be overridden by `GtkAccessible`
+             * implementations.
+             *
+             * It is left to the accessible implementation to define the scope
+             * and uniqueness of the identifier.
+             */
+            vfunc_get_accessible_id(): string | null;
             /**
              * Retrieves the accessible parent for an accessible object.
              *
@@ -57414,6 +57708,17 @@ declare module 'gi://Adw?version=1' {
              */
             announce(message: string, priority: Gtk.AccessibleAnnouncementPriority | null): void;
             /**
+             * Retrieves the accessible identifier for the accessible object.
+             *
+             * This functionality can be overridden by `GtkAccessible`
+             * implementations.
+             *
+             * It is left to the accessible implementation to define the scope
+             * and uniqueness of the identifier.
+             * @returns the accessible identifier
+             */
+            get_accessible_id(): string | null;
+            /**
              * Retrieves the accessible parent for an accessible object.
              *
              * This function returns `NULL` for top level widgets.
@@ -57538,6 +57843,16 @@ declare module 'gi://Adw?version=1' {
              * @param values an array of `GValues`, one for each state
              */
             update_state(states: Gtk.AccessibleState[] | null, values: (GObject.Value | any)[]): void;
+            /**
+             * Retrieves the accessible identifier for the accessible object.
+             *
+             * This functionality can be overridden by `GtkAccessible`
+             * implementations.
+             *
+             * It is left to the accessible implementation to define the scope
+             * and uniqueness of the identifier.
+             */
+            vfunc_get_accessible_id(): string | null;
             /**
              * Retrieves the accessible parent for an accessible object.
              *
@@ -58887,6 +59202,17 @@ declare module 'gi://Adw?version=1' {
              */
             announce(message: string, priority: Gtk.AccessibleAnnouncementPriority | null): void;
             /**
+             * Retrieves the accessible identifier for the accessible object.
+             *
+             * This functionality can be overridden by `GtkAccessible`
+             * implementations.
+             *
+             * It is left to the accessible implementation to define the scope
+             * and uniqueness of the identifier.
+             * @returns the accessible identifier
+             */
+            get_accessible_id(): string | null;
+            /**
              * Retrieves the accessible parent for an accessible object.
              *
              * This function returns `NULL` for top level widgets.
@@ -59011,6 +59337,16 @@ declare module 'gi://Adw?version=1' {
              * @param values an array of `GValues`, one for each state
              */
             update_state(states: Gtk.AccessibleState[] | null, values: (GObject.Value | any)[]): void;
+            /**
+             * Retrieves the accessible identifier for the accessible object.
+             *
+             * This functionality can be overridden by `GtkAccessible`
+             * implementations.
+             *
+             * It is left to the accessible implementation to define the scope
+             * and uniqueness of the identifier.
+             */
+            vfunc_get_accessible_id(): string | null;
             /**
              * Retrieves the accessible parent for an accessible object.
              *
@@ -60777,6 +61113,17 @@ declare module 'gi://Adw?version=1' {
              */
             announce(message: string, priority: Gtk.AccessibleAnnouncementPriority | null): void;
             /**
+             * Retrieves the accessible identifier for the accessible object.
+             *
+             * This functionality can be overridden by `GtkAccessible`
+             * implementations.
+             *
+             * It is left to the accessible implementation to define the scope
+             * and uniqueness of the identifier.
+             * @returns the accessible identifier
+             */
+            get_accessible_id(): string | null;
+            /**
              * Retrieves the accessible parent for an accessible object.
              *
              * This function returns `NULL` for top level widgets.
@@ -60901,6 +61248,16 @@ declare module 'gi://Adw?version=1' {
              * @param values an array of `GValues`, one for each state
              */
             update_state(states: Gtk.AccessibleState[] | null, values: (GObject.Value | any)[]): void;
+            /**
+             * Retrieves the accessible identifier for the accessible object.
+             *
+             * This functionality can be overridden by `GtkAccessible`
+             * implementations.
+             *
+             * It is left to the accessible implementation to define the scope
+             * and uniqueness of the identifier.
+             */
+            vfunc_get_accessible_id(): string | null;
             /**
              * Retrieves the accessible parent for an accessible object.
              *
@@ -67573,6 +67930,17 @@ declare module 'gi://Adw?version=1' {
              */
             announce(message: string, priority: Gtk.AccessibleAnnouncementPriority | null): void;
             /**
+             * Retrieves the accessible identifier for the accessible object.
+             *
+             * This functionality can be overridden by `GtkAccessible`
+             * implementations.
+             *
+             * It is left to the accessible implementation to define the scope
+             * and uniqueness of the identifier.
+             * @returns the accessible identifier
+             */
+            get_accessible_id(): string | null;
+            /**
              * Retrieves the accessible parent for an accessible object.
              *
              * This function returns `NULL` for top level widgets.
@@ -67697,6 +68065,16 @@ declare module 'gi://Adw?version=1' {
              * @param values an array of `GValues`, one for each state
              */
             update_state(states: Gtk.AccessibleState[] | null, values: (GObject.Value | any)[]): void;
+            /**
+             * Retrieves the accessible identifier for the accessible object.
+             *
+             * This functionality can be overridden by `GtkAccessible`
+             * implementations.
+             *
+             * It is left to the accessible implementation to define the scope
+             * and uniqueness of the identifier.
+             */
+            vfunc_get_accessible_id(): string | null;
             /**
              * Retrieves the accessible parent for an accessible object.
              *
@@ -68576,6 +68954,17 @@ declare module 'gi://Adw?version=1' {
              */
             announce(message: string, priority: Gtk.AccessibleAnnouncementPriority | null): void;
             /**
+             * Retrieves the accessible identifier for the accessible object.
+             *
+             * This functionality can be overridden by `GtkAccessible`
+             * implementations.
+             *
+             * It is left to the accessible implementation to define the scope
+             * and uniqueness of the identifier.
+             * @returns the accessible identifier
+             */
+            get_accessible_id(): string | null;
+            /**
              * Retrieves the accessible parent for an accessible object.
              *
              * This function returns `NULL` for top level widgets.
@@ -68700,6 +69089,16 @@ declare module 'gi://Adw?version=1' {
              * @param values an array of `GValues`, one for each state
              */
             update_state(states: Gtk.AccessibleState[] | null, values: (GObject.Value | any)[]): void;
+            /**
+             * Retrieves the accessible identifier for the accessible object.
+             *
+             * This functionality can be overridden by `GtkAccessible`
+             * implementations.
+             *
+             * It is left to the accessible implementation to define the scope
+             * and uniqueness of the identifier.
+             */
+            vfunc_get_accessible_id(): string | null;
             /**
              * Retrieves the accessible parent for an accessible object.
              *
@@ -69840,6 +70239,17 @@ declare module 'gi://Adw?version=1' {
              */
             announce(message: string, priority: Gtk.AccessibleAnnouncementPriority | null): void;
             /**
+             * Retrieves the accessible identifier for the accessible object.
+             *
+             * This functionality can be overridden by `GtkAccessible`
+             * implementations.
+             *
+             * It is left to the accessible implementation to define the scope
+             * and uniqueness of the identifier.
+             * @returns the accessible identifier
+             */
+            get_accessible_id(): string | null;
+            /**
              * Retrieves the accessible parent for an accessible object.
              *
              * This function returns `NULL` for top level widgets.
@@ -69964,6 +70374,16 @@ declare module 'gi://Adw?version=1' {
              * @param values an array of `GValues`, one for each state
              */
             update_state(states: Gtk.AccessibleState[] | null, values: (GObject.Value | any)[]): void;
+            /**
+             * Retrieves the accessible identifier for the accessible object.
+             *
+             * This functionality can be overridden by `GtkAccessible`
+             * implementations.
+             *
+             * It is left to the accessible implementation to define the scope
+             * and uniqueness of the identifier.
+             */
+            vfunc_get_accessible_id(): string | null;
             /**
              * Retrieves the accessible parent for an accessible object.
              *
@@ -71654,6 +72074,17 @@ declare module 'gi://Adw?version=1' {
              */
             announce(message: string, priority: Gtk.AccessibleAnnouncementPriority | null): void;
             /**
+             * Retrieves the accessible identifier for the accessible object.
+             *
+             * This functionality can be overridden by `GtkAccessible`
+             * implementations.
+             *
+             * It is left to the accessible implementation to define the scope
+             * and uniqueness of the identifier.
+             * @returns the accessible identifier
+             */
+            get_accessible_id(): string | null;
+            /**
              * Retrieves the accessible parent for an accessible object.
              *
              * This function returns `NULL` for top level widgets.
@@ -71778,6 +72209,16 @@ declare module 'gi://Adw?version=1' {
              * @param values an array of `GValues`, one for each state
              */
             update_state(states: Gtk.AccessibleState[] | null, values: (GObject.Value | any)[]): void;
+            /**
+             * Retrieves the accessible identifier for the accessible object.
+             *
+             * This functionality can be overridden by `GtkAccessible`
+             * implementations.
+             *
+             * It is left to the accessible implementation to define the scope
+             * and uniqueness of the identifier.
+             */
+            vfunc_get_accessible_id(): string | null;
             /**
              * Retrieves the accessible parent for an accessible object.
              *
@@ -75579,6 +76020,17 @@ declare module 'gi://Adw?version=1' {
              */
             announce(message: string, priority: Gtk.AccessibleAnnouncementPriority | null): void;
             /**
+             * Retrieves the accessible identifier for the accessible object.
+             *
+             * This functionality can be overridden by `GtkAccessible`
+             * implementations.
+             *
+             * It is left to the accessible implementation to define the scope
+             * and uniqueness of the identifier.
+             * @returns the accessible identifier
+             */
+            get_accessible_id(): string | null;
+            /**
              * Retrieves the accessible parent for an accessible object.
              *
              * This function returns `NULL` for top level widgets.
@@ -75703,6 +76155,16 @@ declare module 'gi://Adw?version=1' {
              * @param values an array of `GValues`, one for each state
              */
             update_state(states: Gtk.AccessibleState[] | null, values: (GObject.Value | any)[]): void;
+            /**
+             * Retrieves the accessible identifier for the accessible object.
+             *
+             * This functionality can be overridden by `GtkAccessible`
+             * implementations.
+             *
+             * It is left to the accessible implementation to define the scope
+             * and uniqueness of the identifier.
+             */
+            vfunc_get_accessible_id(): string | null;
             /**
              * Retrieves the accessible parent for an accessible object.
              *
@@ -82753,6 +83215,17 @@ declare module 'gi://Adw?version=1' {
              */
             announce(message: string, priority: Gtk.AccessibleAnnouncementPriority | null): void;
             /**
+             * Retrieves the accessible identifier for the accessible object.
+             *
+             * This functionality can be overridden by `GtkAccessible`
+             * implementations.
+             *
+             * It is left to the accessible implementation to define the scope
+             * and uniqueness of the identifier.
+             * @returns the accessible identifier
+             */
+            get_accessible_id(): string | null;
+            /**
              * Retrieves the accessible parent for an accessible object.
              *
              * This function returns `NULL` for top level widgets.
@@ -82877,6 +83350,16 @@ declare module 'gi://Adw?version=1' {
              * @param values an array of `GValues`, one for each state
              */
             update_state(states: Gtk.AccessibleState[] | null, values: (GObject.Value | any)[]): void;
+            /**
+             * Retrieves the accessible identifier for the accessible object.
+             *
+             * This functionality can be overridden by `GtkAccessible`
+             * implementations.
+             *
+             * It is left to the accessible implementation to define the scope
+             * and uniqueness of the identifier.
+             */
+            vfunc_get_accessible_id(): string | null;
             /**
              * Retrieves the accessible parent for an accessible object.
              *
@@ -83768,6 +84251,17 @@ declare module 'gi://Adw?version=1' {
              */
             announce(message: string, priority: Gtk.AccessibleAnnouncementPriority | null): void;
             /**
+             * Retrieves the accessible identifier for the accessible object.
+             *
+             * This functionality can be overridden by `GtkAccessible`
+             * implementations.
+             *
+             * It is left to the accessible implementation to define the scope
+             * and uniqueness of the identifier.
+             * @returns the accessible identifier
+             */
+            get_accessible_id(): string | null;
+            /**
              * Retrieves the accessible parent for an accessible object.
              *
              * This function returns `NULL` for top level widgets.
@@ -83892,6 +84386,16 @@ declare module 'gi://Adw?version=1' {
              * @param values an array of `GValues`, one for each state
              */
             update_state(states: Gtk.AccessibleState[] | null, values: (GObject.Value | any)[]): void;
+            /**
+             * Retrieves the accessible identifier for the accessible object.
+             *
+             * This functionality can be overridden by `GtkAccessible`
+             * implementations.
+             *
+             * It is left to the accessible implementation to define the scope
+             * and uniqueness of the identifier.
+             */
+            vfunc_get_accessible_id(): string | null;
             /**
              * Retrieves the accessible parent for an accessible object.
              *
@@ -91313,6 +91817,17 @@ declare module 'gi://Adw?version=1' {
              */
             announce(message: string, priority: Gtk.AccessibleAnnouncementPriority | null): void;
             /**
+             * Retrieves the accessible identifier for the accessible object.
+             *
+             * This functionality can be overridden by `GtkAccessible`
+             * implementations.
+             *
+             * It is left to the accessible implementation to define the scope
+             * and uniqueness of the identifier.
+             * @returns the accessible identifier
+             */
+            get_accessible_id(): string | null;
+            /**
              * Retrieves the accessible parent for an accessible object.
              *
              * This function returns `NULL` for top level widgets.
@@ -91437,6 +91952,16 @@ declare module 'gi://Adw?version=1' {
              * @param values an array of `GValues`, one for each state
              */
             update_state(states: Gtk.AccessibleState[] | null, values: (GObject.Value | any)[]): void;
+            /**
+             * Retrieves the accessible identifier for the accessible object.
+             *
+             * This functionality can be overridden by `GtkAccessible`
+             * implementations.
+             *
+             * It is left to the accessible implementation to define the scope
+             * and uniqueness of the identifier.
+             */
+            vfunc_get_accessible_id(): string | null;
             /**
              * Retrieves the accessible parent for an accessible object.
              *
@@ -94272,6 +94797,17 @@ declare module 'gi://Adw?version=1' {
              */
             announce(message: string, priority: Gtk.AccessibleAnnouncementPriority | null): void;
             /**
+             * Retrieves the accessible identifier for the accessible object.
+             *
+             * This functionality can be overridden by `GtkAccessible`
+             * implementations.
+             *
+             * It is left to the accessible implementation to define the scope
+             * and uniqueness of the identifier.
+             * @returns the accessible identifier
+             */
+            get_accessible_id(): string | null;
+            /**
              * Retrieves the accessible parent for an accessible object.
              *
              * This function returns `NULL` for top level widgets.
@@ -94396,6 +94932,16 @@ declare module 'gi://Adw?version=1' {
              * @param values an array of `GValues`, one for each state
              */
             update_state(states: Gtk.AccessibleState[] | null, values: (GObject.Value | any)[]): void;
+            /**
+             * Retrieves the accessible identifier for the accessible object.
+             *
+             * This functionality can be overridden by `GtkAccessible`
+             * implementations.
+             *
+             * It is left to the accessible implementation to define the scope
+             * and uniqueness of the identifier.
+             */
+            vfunc_get_accessible_id(): string | null;
             /**
              * Retrieves the accessible parent for an accessible object.
              *
@@ -99952,6 +100498,17 @@ declare module 'gi://Adw?version=1' {
              */
             announce(message: string, priority: Gtk.AccessibleAnnouncementPriority | null): void;
             /**
+             * Retrieves the accessible identifier for the accessible object.
+             *
+             * This functionality can be overridden by `GtkAccessible`
+             * implementations.
+             *
+             * It is left to the accessible implementation to define the scope
+             * and uniqueness of the identifier.
+             * @returns the accessible identifier
+             */
+            get_accessible_id(): string | null;
+            /**
              * Retrieves the accessible parent for an accessible object.
              *
              * This function returns `NULL` for top level widgets.
@@ -100076,6 +100633,16 @@ declare module 'gi://Adw?version=1' {
              * @param values an array of `GValues`, one for each state
              */
             update_state(states: Gtk.AccessibleState[] | null, values: (GObject.Value | any)[]): void;
+            /**
+             * Retrieves the accessible identifier for the accessible object.
+             *
+             * This functionality can be overridden by `GtkAccessible`
+             * implementations.
+             *
+             * It is left to the accessible implementation to define the scope
+             * and uniqueness of the identifier.
+             */
+            vfunc_get_accessible_id(): string | null;
             /**
              * Retrieves the accessible parent for an accessible object.
              *
@@ -102378,6 +102945,17 @@ declare module 'gi://Adw?version=1' {
              */
             announce(message: string, priority: Gtk.AccessibleAnnouncementPriority | null): void;
             /**
+             * Retrieves the accessible identifier for the accessible object.
+             *
+             * This functionality can be overridden by `GtkAccessible`
+             * implementations.
+             *
+             * It is left to the accessible implementation to define the scope
+             * and uniqueness of the identifier.
+             * @returns the accessible identifier
+             */
+            get_accessible_id(): string | null;
+            /**
              * Retrieves the accessible parent for an accessible object.
              *
              * This function returns `NULL` for top level widgets.
@@ -102502,6 +103080,16 @@ declare module 'gi://Adw?version=1' {
              * @param values an array of `GValues`, one for each state
              */
             update_state(states: Gtk.AccessibleState[] | null, values: (GObject.Value | any)[]): void;
+            /**
+             * Retrieves the accessible identifier for the accessible object.
+             *
+             * This functionality can be overridden by `GtkAccessible`
+             * implementations.
+             *
+             * It is left to the accessible implementation to define the scope
+             * and uniqueness of the identifier.
+             */
+            vfunc_get_accessible_id(): string | null;
             /**
              * Retrieves the accessible parent for an accessible object.
              *
@@ -106036,6 +106624,17 @@ declare module 'gi://Adw?version=1' {
              */
             announce(message: string, priority: Gtk.AccessibleAnnouncementPriority | null): void;
             /**
+             * Retrieves the accessible identifier for the accessible object.
+             *
+             * This functionality can be overridden by `GtkAccessible`
+             * implementations.
+             *
+             * It is left to the accessible implementation to define the scope
+             * and uniqueness of the identifier.
+             * @returns the accessible identifier
+             */
+            get_accessible_id(): string | null;
+            /**
              * Retrieves the accessible parent for an accessible object.
              *
              * This function returns `NULL` for top level widgets.
@@ -106160,6 +106759,16 @@ declare module 'gi://Adw?version=1' {
              * @param values an array of `GValues`, one for each state
              */
             update_state(states: Gtk.AccessibleState[] | null, values: (GObject.Value | any)[]): void;
+            /**
+             * Retrieves the accessible identifier for the accessible object.
+             *
+             * This functionality can be overridden by `GtkAccessible`
+             * implementations.
+             *
+             * It is left to the accessible implementation to define the scope
+             * and uniqueness of the identifier.
+             */
+            vfunc_get_accessible_id(): string | null;
             /**
              * Retrieves the accessible parent for an accessible object.
              *
@@ -107108,6 +107717,17 @@ declare module 'gi://Adw?version=1' {
              */
             announce(message: string, priority: Gtk.AccessibleAnnouncementPriority | null): void;
             /**
+             * Retrieves the accessible identifier for the accessible object.
+             *
+             * This functionality can be overridden by `GtkAccessible`
+             * implementations.
+             *
+             * It is left to the accessible implementation to define the scope
+             * and uniqueness of the identifier.
+             * @returns the accessible identifier
+             */
+            get_accessible_id(): string | null;
+            /**
              * Retrieves the accessible parent for an accessible object.
              *
              * This function returns `NULL` for top level widgets.
@@ -107232,6 +107852,16 @@ declare module 'gi://Adw?version=1' {
              * @param values an array of `GValues`, one for each state
              */
             update_state(states: Gtk.AccessibleState[] | null, values: (GObject.Value | any)[]): void;
+            /**
+             * Retrieves the accessible identifier for the accessible object.
+             *
+             * This functionality can be overridden by `GtkAccessible`
+             * implementations.
+             *
+             * It is left to the accessible implementation to define the scope
+             * and uniqueness of the identifier.
+             */
+            vfunc_get_accessible_id(): string | null;
             /**
              * Retrieves the accessible parent for an accessible object.
              *
@@ -112501,6 +113131,17 @@ declare module 'gi://Adw?version=1' {
              */
             announce(message: string, priority: Gtk.AccessibleAnnouncementPriority | null): void;
             /**
+             * Retrieves the accessible identifier for the accessible object.
+             *
+             * This functionality can be overridden by `GtkAccessible`
+             * implementations.
+             *
+             * It is left to the accessible implementation to define the scope
+             * and uniqueness of the identifier.
+             * @returns the accessible identifier
+             */
+            get_accessible_id(): string | null;
+            /**
              * Retrieves the accessible parent for an accessible object.
              *
              * This function returns `NULL` for top level widgets.
@@ -112625,6 +113266,16 @@ declare module 'gi://Adw?version=1' {
              * @param values an array of `GValues`, one for each state
              */
             update_state(states: Gtk.AccessibleState[] | null, values: (GObject.Value | any)[]): void;
+            /**
+             * Retrieves the accessible identifier for the accessible object.
+             *
+             * This functionality can be overridden by `GtkAccessible`
+             * implementations.
+             *
+             * It is left to the accessible implementation to define the scope
+             * and uniqueness of the identifier.
+             */
+            vfunc_get_accessible_id(): string | null;
             /**
              * Retrieves the accessible parent for an accessible object.
              *
@@ -113821,6 +114472,17 @@ declare module 'gi://Adw?version=1' {
              */
             announce(message: string, priority: Gtk.AccessibleAnnouncementPriority | null): void;
             /**
+             * Retrieves the accessible identifier for the accessible object.
+             *
+             * This functionality can be overridden by `GtkAccessible`
+             * implementations.
+             *
+             * It is left to the accessible implementation to define the scope
+             * and uniqueness of the identifier.
+             * @returns the accessible identifier
+             */
+            get_accessible_id(): string | null;
+            /**
              * Retrieves the accessible parent for an accessible object.
              *
              * This function returns `NULL` for top level widgets.
@@ -113945,6 +114607,16 @@ declare module 'gi://Adw?version=1' {
              * @param values an array of `GValues`, one for each state
              */
             update_state(states: Gtk.AccessibleState[] | null, values: (GObject.Value | any)[]): void;
+            /**
+             * Retrieves the accessible identifier for the accessible object.
+             *
+             * This functionality can be overridden by `GtkAccessible`
+             * implementations.
+             *
+             * It is left to the accessible implementation to define the scope
+             * and uniqueness of the identifier.
+             */
+            vfunc_get_accessible_id(): string | null;
             /**
              * Retrieves the accessible parent for an accessible object.
              *
@@ -117225,6 +117897,17 @@ declare module 'gi://Adw?version=1' {
              */
             announce(message: string, priority: Gtk.AccessibleAnnouncementPriority | null): void;
             /**
+             * Retrieves the accessible identifier for the accessible object.
+             *
+             * This functionality can be overridden by `GtkAccessible`
+             * implementations.
+             *
+             * It is left to the accessible implementation to define the scope
+             * and uniqueness of the identifier.
+             * @returns the accessible identifier
+             */
+            get_accessible_id(): string | null;
+            /**
              * Retrieves the accessible parent for an accessible object.
              *
              * This function returns `NULL` for top level widgets.
@@ -117349,6 +118032,16 @@ declare module 'gi://Adw?version=1' {
              * @param values an array of `GValues`, one for each state
              */
             update_state(states: Gtk.AccessibleState[] | null, values: (GObject.Value | any)[]): void;
+            /**
+             * Retrieves the accessible identifier for the accessible object.
+             *
+             * This functionality can be overridden by `GtkAccessible`
+             * implementations.
+             *
+             * It is left to the accessible implementation to define the scope
+             * and uniqueness of the identifier.
+             */
+            vfunc_get_accessible_id(): string | null;
             /**
              * Retrieves the accessible parent for an accessible object.
              *
@@ -118557,6 +119250,17 @@ declare module 'gi://Adw?version=1' {
              */
             announce(message: string, priority: Gtk.AccessibleAnnouncementPriority | null): void;
             /**
+             * Retrieves the accessible identifier for the accessible object.
+             *
+             * This functionality can be overridden by `GtkAccessible`
+             * implementations.
+             *
+             * It is left to the accessible implementation to define the scope
+             * and uniqueness of the identifier.
+             * @returns the accessible identifier
+             */
+            get_accessible_id(): string | null;
+            /**
              * Retrieves the accessible parent for an accessible object.
              *
              * This function returns `NULL` for top level widgets.
@@ -118681,6 +119385,16 @@ declare module 'gi://Adw?version=1' {
              * @param values an array of `GValues`, one for each state
              */
             update_state(states: Gtk.AccessibleState[] | null, values: (GObject.Value | any)[]): void;
+            /**
+             * Retrieves the accessible identifier for the accessible object.
+             *
+             * This functionality can be overridden by `GtkAccessible`
+             * implementations.
+             *
+             * It is left to the accessible implementation to define the scope
+             * and uniqueness of the identifier.
+             */
+            vfunc_get_accessible_id(): string | null;
             /**
              * Retrieves the accessible parent for an accessible object.
              *
@@ -119825,6 +120539,17 @@ declare module 'gi://Adw?version=1' {
              */
             announce(message: string, priority: Gtk.AccessibleAnnouncementPriority | null): void;
             /**
+             * Retrieves the accessible identifier for the accessible object.
+             *
+             * This functionality can be overridden by `GtkAccessible`
+             * implementations.
+             *
+             * It is left to the accessible implementation to define the scope
+             * and uniqueness of the identifier.
+             * @returns the accessible identifier
+             */
+            get_accessible_id(): string | null;
+            /**
              * Retrieves the accessible parent for an accessible object.
              *
              * This function returns `NULL` for top level widgets.
@@ -119949,6 +120674,16 @@ declare module 'gi://Adw?version=1' {
              * @param values an array of `GValues`, one for each state
              */
             update_state(states: Gtk.AccessibleState[] | null, values: (GObject.Value | any)[]): void;
+            /**
+             * Retrieves the accessible identifier for the accessible object.
+             *
+             * This functionality can be overridden by `GtkAccessible`
+             * implementations.
+             *
+             * It is left to the accessible implementation to define the scope
+             * and uniqueness of the identifier.
+             */
+            vfunc_get_accessible_id(): string | null;
             /**
              * Retrieves the accessible parent for an accessible object.
              *
@@ -121464,6 +122199,17 @@ declare module 'gi://Adw?version=1' {
              */
             announce(message: string, priority: Gtk.AccessibleAnnouncementPriority | null): void;
             /**
+             * Retrieves the accessible identifier for the accessible object.
+             *
+             * This functionality can be overridden by `GtkAccessible`
+             * implementations.
+             *
+             * It is left to the accessible implementation to define the scope
+             * and uniqueness of the identifier.
+             * @returns the accessible identifier
+             */
+            get_accessible_id(): string | null;
+            /**
              * Retrieves the accessible parent for an accessible object.
              *
              * This function returns `NULL` for top level widgets.
@@ -121588,6 +122334,16 @@ declare module 'gi://Adw?version=1' {
              * @param values an array of `GValues`, one for each state
              */
             update_state(states: Gtk.AccessibleState[] | null, values: (GObject.Value | any)[]): void;
+            /**
+             * Retrieves the accessible identifier for the accessible object.
+             *
+             * This functionality can be overridden by `GtkAccessible`
+             * implementations.
+             *
+             * It is left to the accessible implementation to define the scope
+             * and uniqueness of the identifier.
+             */
+            vfunc_get_accessible_id(): string | null;
             /**
              * Retrieves the accessible parent for an accessible object.
              *
@@ -122854,6 +123610,17 @@ declare module 'gi://Adw?version=1' {
              */
             announce(message: string, priority: Gtk.AccessibleAnnouncementPriority | null): void;
             /**
+             * Retrieves the accessible identifier for the accessible object.
+             *
+             * This functionality can be overridden by `GtkAccessible`
+             * implementations.
+             *
+             * It is left to the accessible implementation to define the scope
+             * and uniqueness of the identifier.
+             * @returns the accessible identifier
+             */
+            get_accessible_id(): string | null;
+            /**
              * Retrieves the accessible parent for an accessible object.
              *
              * This function returns `NULL` for top level widgets.
@@ -122978,6 +123745,16 @@ declare module 'gi://Adw?version=1' {
              * @param values an array of `GValues`, one for each state
              */
             update_state(states: Gtk.AccessibleState[] | null, values: (GObject.Value | any)[]): void;
+            /**
+             * Retrieves the accessible identifier for the accessible object.
+             *
+             * This functionality can be overridden by `GtkAccessible`
+             * implementations.
+             *
+             * It is left to the accessible implementation to define the scope
+             * and uniqueness of the identifier.
+             */
+            vfunc_get_accessible_id(): string | null;
             /**
              * Retrieves the accessible parent for an accessible object.
              *
@@ -124235,6 +125012,17 @@ declare module 'gi://Adw?version=1' {
              */
             announce(message: string, priority: Gtk.AccessibleAnnouncementPriority | null): void;
             /**
+             * Retrieves the accessible identifier for the accessible object.
+             *
+             * This functionality can be overridden by `GtkAccessible`
+             * implementations.
+             *
+             * It is left to the accessible implementation to define the scope
+             * and uniqueness of the identifier.
+             * @returns the accessible identifier
+             */
+            get_accessible_id(): string | null;
+            /**
              * Retrieves the accessible parent for an accessible object.
              *
              * This function returns `NULL` for top level widgets.
@@ -124359,6 +125147,16 @@ declare module 'gi://Adw?version=1' {
              * @param values an array of `GValues`, one for each state
              */
             update_state(states: Gtk.AccessibleState[] | null, values: (GObject.Value | any)[]): void;
+            /**
+             * Retrieves the accessible identifier for the accessible object.
+             *
+             * This functionality can be overridden by `GtkAccessible`
+             * implementations.
+             *
+             * It is left to the accessible implementation to define the scope
+             * and uniqueness of the identifier.
+             */
+            vfunc_get_accessible_id(): string | null;
             /**
              * Retrieves the accessible parent for an accessible object.
              *
@@ -125409,6 +126207,17 @@ declare module 'gi://Adw?version=1' {
              */
             announce(message: string, priority: Gtk.AccessibleAnnouncementPriority | null): void;
             /**
+             * Retrieves the accessible identifier for the accessible object.
+             *
+             * This functionality can be overridden by `GtkAccessible`
+             * implementations.
+             *
+             * It is left to the accessible implementation to define the scope
+             * and uniqueness of the identifier.
+             * @returns the accessible identifier
+             */
+            get_accessible_id(): string | null;
+            /**
              * Retrieves the accessible parent for an accessible object.
              *
              * This function returns `NULL` for top level widgets.
@@ -125533,6 +126342,16 @@ declare module 'gi://Adw?version=1' {
              * @param values an array of `GValues`, one for each state
              */
             update_state(states: Gtk.AccessibleState[] | null, values: (GObject.Value | any)[]): void;
+            /**
+             * Retrieves the accessible identifier for the accessible object.
+             *
+             * This functionality can be overridden by `GtkAccessible`
+             * implementations.
+             *
+             * It is left to the accessible implementation to define the scope
+             * and uniqueness of the identifier.
+             */
+            vfunc_get_accessible_id(): string | null;
             /**
              * Retrieves the accessible parent for an accessible object.
              *
@@ -126445,6 +127264,17 @@ declare module 'gi://Adw?version=1' {
              */
             announce(message: string, priority: Gtk.AccessibleAnnouncementPriority | null): void;
             /**
+             * Retrieves the accessible identifier for the accessible object.
+             *
+             * This functionality can be overridden by `GtkAccessible`
+             * implementations.
+             *
+             * It is left to the accessible implementation to define the scope
+             * and uniqueness of the identifier.
+             * @returns the accessible identifier
+             */
+            get_accessible_id(): string | null;
+            /**
              * Retrieves the accessible parent for an accessible object.
              *
              * This function returns `NULL` for top level widgets.
@@ -126569,6 +127399,16 @@ declare module 'gi://Adw?version=1' {
              * @param values an array of `GValues`, one for each state
              */
             update_state(states: Gtk.AccessibleState[] | null, values: (GObject.Value | any)[]): void;
+            /**
+             * Retrieves the accessible identifier for the accessible object.
+             *
+             * This functionality can be overridden by `GtkAccessible`
+             * implementations.
+             *
+             * It is left to the accessible implementation to define the scope
+             * and uniqueness of the identifier.
+             */
+            vfunc_get_accessible_id(): string | null;
             /**
              * Retrieves the accessible parent for an accessible object.
              *
@@ -128182,6 +129022,17 @@ declare module 'gi://Adw?version=1' {
              */
             announce(message: string, priority: Gtk.AccessibleAnnouncementPriority | null): void;
             /**
+             * Retrieves the accessible identifier for the accessible object.
+             *
+             * This functionality can be overridden by `GtkAccessible`
+             * implementations.
+             *
+             * It is left to the accessible implementation to define the scope
+             * and uniqueness of the identifier.
+             * @returns the accessible identifier
+             */
+            get_accessible_id(): string | null;
+            /**
              * Retrieves the accessible parent for an accessible object.
              *
              * This function returns `NULL` for top level widgets.
@@ -128306,6 +129157,16 @@ declare module 'gi://Adw?version=1' {
              * @param values an array of `GValues`, one for each state
              */
             update_state(states: Gtk.AccessibleState[] | null, values: (GObject.Value | any)[]): void;
+            /**
+             * Retrieves the accessible identifier for the accessible object.
+             *
+             * This functionality can be overridden by `GtkAccessible`
+             * implementations.
+             *
+             * It is left to the accessible implementation to define the scope
+             * and uniqueness of the identifier.
+             */
+            vfunc_get_accessible_id(): string | null;
             /**
              * Retrieves the accessible parent for an accessible object.
              *
@@ -129103,6 +129964,17 @@ declare module 'gi://Adw?version=1' {
              */
             announce(message: string, priority: Gtk.AccessibleAnnouncementPriority | null): void;
             /**
+             * Retrieves the accessible identifier for the accessible object.
+             *
+             * This functionality can be overridden by `GtkAccessible`
+             * implementations.
+             *
+             * It is left to the accessible implementation to define the scope
+             * and uniqueness of the identifier.
+             * @returns the accessible identifier
+             */
+            get_accessible_id(): string | null;
+            /**
              * Retrieves the accessible parent for an accessible object.
              *
              * This function returns `NULL` for top level widgets.
@@ -129227,6 +130099,16 @@ declare module 'gi://Adw?version=1' {
              * @param values an array of `GValues`, one for each state
              */
             update_state(states: Gtk.AccessibleState[] | null, values: (GObject.Value | any)[]): void;
+            /**
+             * Retrieves the accessible identifier for the accessible object.
+             *
+             * This functionality can be overridden by `GtkAccessible`
+             * implementations.
+             *
+             * It is left to the accessible implementation to define the scope
+             * and uniqueness of the identifier.
+             */
+            vfunc_get_accessible_id(): string | null;
             /**
              * Retrieves the accessible parent for an accessible object.
              *
@@ -130092,6 +130974,17 @@ declare module 'gi://Adw?version=1' {
              */
             announce(message: string, priority: Gtk.AccessibleAnnouncementPriority | null): void;
             /**
+             * Retrieves the accessible identifier for the accessible object.
+             *
+             * This functionality can be overridden by `GtkAccessible`
+             * implementations.
+             *
+             * It is left to the accessible implementation to define the scope
+             * and uniqueness of the identifier.
+             * @returns the accessible identifier
+             */
+            get_accessible_id(): string | null;
+            /**
              * Retrieves the accessible parent for an accessible object.
              *
              * This function returns `NULL` for top level widgets.
@@ -130216,6 +131109,16 @@ declare module 'gi://Adw?version=1' {
              * @param values an array of `GValues`, one for each state
              */
             update_state(states: Gtk.AccessibleState[] | null, values: (GObject.Value | any)[]): void;
+            /**
+             * Retrieves the accessible identifier for the accessible object.
+             *
+             * This functionality can be overridden by `GtkAccessible`
+             * implementations.
+             *
+             * It is left to the accessible implementation to define the scope
+             * and uniqueness of the identifier.
+             */
+            vfunc_get_accessible_id(): string | null;
             /**
              * Retrieves the accessible parent for an accessible object.
              *
@@ -131106,6 +132009,17 @@ declare module 'gi://Adw?version=1' {
              */
             announce(message: string, priority: Gtk.AccessibleAnnouncementPriority | null): void;
             /**
+             * Retrieves the accessible identifier for the accessible object.
+             *
+             * This functionality can be overridden by `GtkAccessible`
+             * implementations.
+             *
+             * It is left to the accessible implementation to define the scope
+             * and uniqueness of the identifier.
+             * @returns the accessible identifier
+             */
+            get_accessible_id(): string | null;
+            /**
              * Retrieves the accessible parent for an accessible object.
              *
              * This function returns `NULL` for top level widgets.
@@ -131230,6 +132144,16 @@ declare module 'gi://Adw?version=1' {
              * @param values an array of `GValues`, one for each state
              */
             update_state(states: Gtk.AccessibleState[] | null, values: (GObject.Value | any)[]): void;
+            /**
+             * Retrieves the accessible identifier for the accessible object.
+             *
+             * This functionality can be overridden by `GtkAccessible`
+             * implementations.
+             *
+             * It is left to the accessible implementation to define the scope
+             * and uniqueness of the identifier.
+             */
+            vfunc_get_accessible_id(): string | null;
             /**
              * Retrieves the accessible parent for an accessible object.
              *
@@ -135263,6 +136187,17 @@ declare module 'gi://Adw?version=1' {
              */
             announce(message: string, priority: Gtk.AccessibleAnnouncementPriority | null): void;
             /**
+             * Retrieves the accessible identifier for the accessible object.
+             *
+             * This functionality can be overridden by `GtkAccessible`
+             * implementations.
+             *
+             * It is left to the accessible implementation to define the scope
+             * and uniqueness of the identifier.
+             * @returns the accessible identifier
+             */
+            get_accessible_id(): string | null;
+            /**
              * Retrieves the accessible parent for an accessible object.
              *
              * This function returns `NULL` for top level widgets.
@@ -135387,6 +136322,16 @@ declare module 'gi://Adw?version=1' {
              * @param values an array of `GValues`, one for each state
              */
             update_state(states: Gtk.AccessibleState[] | null, values: (GObject.Value | any)[]): void;
+            /**
+             * Retrieves the accessible identifier for the accessible object.
+             *
+             * This functionality can be overridden by `GtkAccessible`
+             * implementations.
+             *
+             * It is left to the accessible implementation to define the scope
+             * and uniqueness of the identifier.
+             */
+            vfunc_get_accessible_id(): string | null;
             /**
              * Retrieves the accessible parent for an accessible object.
              *
@@ -136633,6 +137578,17 @@ declare module 'gi://Adw?version=1' {
              */
             announce(message: string, priority: Gtk.AccessibleAnnouncementPriority | null): void;
             /**
+             * Retrieves the accessible identifier for the accessible object.
+             *
+             * This functionality can be overridden by `GtkAccessible`
+             * implementations.
+             *
+             * It is left to the accessible implementation to define the scope
+             * and uniqueness of the identifier.
+             * @returns the accessible identifier
+             */
+            get_accessible_id(): string | null;
+            /**
              * Retrieves the accessible parent for an accessible object.
              *
              * This function returns `NULL` for top level widgets.
@@ -136757,6 +137713,16 @@ declare module 'gi://Adw?version=1' {
              * @param values an array of `GValues`, one for each state
              */
             update_state(states: Gtk.AccessibleState[] | null, values: (GObject.Value | any)[]): void;
+            /**
+             * Retrieves the accessible identifier for the accessible object.
+             *
+             * This functionality can be overridden by `GtkAccessible`
+             * implementations.
+             *
+             * It is left to the accessible implementation to define the scope
+             * and uniqueness of the identifier.
+             */
+            vfunc_get_accessible_id(): string | null;
             /**
              * Retrieves the accessible parent for an accessible object.
              *

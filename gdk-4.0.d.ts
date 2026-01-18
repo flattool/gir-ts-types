@@ -142,6 +142,43 @@ declare module 'gi://Gdk?version=4.0' {
             FULL,
         }
         /**
+         * Enumerates the color channels of RGBA values as used in
+         * `GdkColor` and OpenGL/Vulkan shaders.
+         *
+         * Note that this is not the order of pixel values in Cairo
+         * and `GdkMemoryFormat` can have many different orders.
+         */
+
+        /**
+         * Enumerates the color channels of RGBA values as used in
+         * `GdkColor` and OpenGL/Vulkan shaders.
+         *
+         * Note that this is not the order of pixel values in Cairo
+         * and `GdkMemoryFormat` can have many different orders.
+         */
+        export namespace ColorChannel {
+            export const $gtype: GObject.GType<ColorChannel>;
+        }
+
+        enum ColorChannel {
+            /**
+             * The red color channel, aka 0
+             */
+            RED,
+            /**
+             * The green color channel, aka 1
+             */
+            GREEN,
+            /**
+             * The blue color channel, aka 2
+             */
+            BLUE,
+            /**
+             * The alpha color channel, aka 3
+             */
+            ALPHA,
+        }
+        /**
          * Specifies the crossing mode for enter and leave events.
          */
 
