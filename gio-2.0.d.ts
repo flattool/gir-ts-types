@@ -44473,6 +44473,9 @@ declare module 'gi://Gio?version=2.0' {
          * clicked.
          *
          * A notification can be sent with [method`Gio`.Application.send_notification].
+         *
+         * In Windows, notification actions are unsupported, when sending the notification
+         * a warning will be printed if a default action or action buttons were added.
          */
         class Notification extends GObject.Object {
             static $gtype: GObject.GType<Notification>;

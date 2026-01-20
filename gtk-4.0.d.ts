@@ -4619,13 +4619,18 @@ declare module 'gi://Gtk?version=4.0' {
             // Static fields
 
             /**
+             * The XML syntax is broken
+             *   in some way
+             */
+            static INVALID_SYNTAX: number;
+            /**
              * An XML element is invalid
              *   (either because it is not part of SVG, or because it is
              *   in the wrong place, or because it not implemented in GTK)
              */
             static INVALID_ELEMENT: number;
             /**
-             * An XML attribute is invalid
+             * An attribute is invalid
              *   (either because it is not part of SVG, or because it is
              *   not implemented in GTK, or its value is problematic)
              */
