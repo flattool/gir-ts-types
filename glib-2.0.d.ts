@@ -20633,6 +20633,22 @@ declare module 'gi://GLib?version=2.0' {
              */
             get_position(): [number, number];
             /**
+             * Retrieves the start position of the current start or end tag.
+             *
+             * This function can be used in the `start_element` or `end_element`
+             * callbacks to obtain location information for error reporting.
+             *
+             * Note that `line_number` and `char_number` are intended for human
+             * readable error messages and are therefore 1-based and in Unicode
+             * characters. `offset` on the other hand is meant for programmatic
+             * use, and thus is 0-based and in bytes.
+             *
+             * The information is meant to accompany the values returned by
+             * [method`GLib`.MarkupParseContext.get_position], and comes with the
+             * same accuracy guarantees.
+             */
+            get_tag_start(): [number, number, number];
+            /**
              * Returns the user_data associated with `context`.
              *
              * This will either be the user_data that was provided to
