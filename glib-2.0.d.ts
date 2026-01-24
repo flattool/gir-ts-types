@@ -11621,11 +11621,11 @@ declare module 'gi://GLib?version=2.0' {
          * Note that this function works on bytes not characters, so it can't be used
          * to delimit UTF-8 strings for anything but ASCII characters.
          * @param string a string to split
-         * @param delimiters a nul-terminated byte array containing bytes that are used to   split the string; can be empty (just a nul byte), which will result in no   string splitting
+         * @param delimiters a   nul-terminated byte array containing bytes that are used to   split the string; can be empty (just a nul byte), which will result in no   string splitting
          * @param max_tokens the maximum number of tokens to split @string into.   If this is less than 1, the string is split completely
          * @returns a newly-allocated array of strings. Use   [func@GLib.strfreev] to free it.
          */
-        function strsplit_set(string: string, delimiters: string, max_tokens: number): string[];
+        function strsplit_set(string: string, delimiters: Uint8Array | string, max_tokens: number): string[];
         /**
          * Searches the string `haystack` for the first occurrence
          * of the string `needle,` limiting the length of the search
