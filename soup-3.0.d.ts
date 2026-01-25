@@ -1424,7 +1424,7 @@ declare module 'gi://Soup?version=3.0' {
          * iterated by `iter`.
          *
          * If `iter` has already yielded the last header, then
-         * [method`MessageHeadersIter`.next] will return %FALSE and `name` and `value`
+         * [func`MessageHeadersIter`.next] will return %FALSE and `name` and `value`
          * will be unchanged.
          * @param iter a #SoupMessageHeadersIter
          * @returns %TRUE if another name and value were returned, %FALSE   if the end of the headers has been reached.
@@ -12045,7 +12045,7 @@ declare module 'gi://Soup?version=3.0' {
              * The maximum payload size for incoming packets, or 0 to not limit it.
              *
              * Each message may consist of multiple packets, so also refer to
-             * [property`WebSocketConnection:`max-total-message-size].
+             * [property`WebsocketConnection:`max-total-message-size].
              */
             get max_incoming_payload_size(): number;
             set max_incoming_payload_size(val: number);
@@ -12053,7 +12053,7 @@ declare module 'gi://Soup?version=3.0' {
              * The maximum payload size for incoming packets, or 0 to not limit it.
              *
              * Each message may consist of multiple packets, so also refer to
-             * [property`WebSocketConnection:`max-total-message-size].
+             * [property`WebsocketConnection:`max-total-message-size].
              */
             get maxIncomingPayloadSize(): number;
             set maxIncomingPayloadSize(val: number);
@@ -12070,7 +12070,7 @@ declare module 'gi://Soup?version=3.0' {
              * server SoupWebsocketConnection without using SoupServer.
              *
              * Each message may consist of multiple packets, so also refer to
-             * [property`WebSocketConnection:`max-incoming-payload-size].
+             * [property`WebsocketConnection:`max-incoming-payload-size].
              */
             get max_total_message_size(): number;
             set max_total_message_size(val: number);
@@ -12087,7 +12087,7 @@ declare module 'gi://Soup?version=3.0' {
              * server SoupWebsocketConnection without using SoupServer.
              *
              * Each message may consist of multiple packets, so also refer to
-             * [property`WebSocketConnection:`max-incoming-payload-size].
+             * [property`WebsocketConnection:`max-incoming-payload-size].
              */
             get maxTotalMessageSize(): number;
             set maxTotalMessageSize(val: number);
@@ -13846,7 +13846,7 @@ declare module 'gi://Soup?version=3.0' {
          * An opaque type used to iterate over a [struct`MessageHeaders]` structure
          *
          * After intializing the iterator with [func`MessageHeadersIter`.init], call
-         * [method`MessageHeadersIter`.next] to fetch data from it.
+         * [func`MessageHeadersIter`.next] to fetch data from it.
          *
          * You may not modify the headers while iterating over them.
          */
@@ -13870,7 +13870,7 @@ declare module 'gi://Soup?version=3.0' {
              * iterated by `iter`.
              *
              * If `iter` has already yielded the last header, then
-             * [method`MessageHeadersIter`.next] will return %FALSE and `name` and `value`
+             * [func`MessageHeadersIter`.next] will return %FALSE and `name` and `value`
              * will be unchanged.
              * @param iter a #SoupMessageHeadersIter
              */
