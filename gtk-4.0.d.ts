@@ -3858,39 +3858,6 @@ declare module 'gi://Gtk?version=4.0' {
             HELP,
         }
         /**
-         * Enumerates possible reasons for an application to restore saved state.
-         *
-         * See [signal`Gtk`.Application::restore-state].
-         */
-
-        /**
-         * Enumerates possible reasons for an application to restore saved state.
-         *
-         * See [signal`Gtk`.Application::restore-state].
-         */
-        export namespace RestoreReason {
-            export const $gtype: GObject.GType<RestoreReason>;
-        }
-
-        enum RestoreReason {
-            /**
-             * Don't restore anything
-             */
-            PRISTINE,
-            /**
-             * This is normal launch. Restore as little as is reasonable
-             */
-            LAUNCH,
-            /**
-             * The application has crashed before. Try to restore the previous state
-             */
-            RECOVER,
-            /**
-             * This is a session restore. Restore the previous state as far as possible
-             */
-            RESTORE,
-        }
-        /**
          * These enumeration values describe the possible transitions
          * when the child of a `GtkRevealer` widget is shown or hidden.
          */
@@ -24805,17 +24772,12 @@ declare module 'gi://Gtk?version=4.0' {
             // Signal signatures
             interface SignalSignatures extends Gio.Application.SignalSignatures {
                 'query-end': () => void;
-                'restore-state': (arg0: RestoreReason, arg1: GLib.Variant) => boolean | void;
-                'restore-window': (arg0: RestoreReason, arg1: GLib.Variant) => void;
-                'save-state': (arg0: GLib.VariantDict) => boolean | void;
                 'window-added': (arg0: Window) => void;
                 'window-removed': (arg0: Window) => void;
                 'notify::active-window': (pspec: GObject.ParamSpec) => void;
-                'notify::autosave-interval': (pspec: GObject.ParamSpec) => void;
                 'notify::menubar': (pspec: GObject.ParamSpec) => void;
                 'notify::register-session': (pspec: GObject.ParamSpec) => void;
                 'notify::screensaver-active': (pspec: GObject.ParamSpec) => void;
-                'notify::support-save': (pspec: GObject.ParamSpec) => void;
                 'notify::action-group': (pspec: GObject.ParamSpec) => void;
                 'notify::application-id': (pspec: GObject.ParamSpec) => void;
                 'notify::flags': (pspec: GObject.ParamSpec) => void;
@@ -24836,15 +24798,11 @@ declare module 'gi://Gtk?version=4.0' {
                     Gio.ActionMap.ConstructorProps {
                 active_window: Window;
                 activeWindow: Window;
-                autosave_interval: number;
-                autosaveInterval: number;
                 menubar: Gio.MenuModel;
                 register_session: boolean;
                 registerSession: boolean;
                 screensaver_active: boolean;
                 screensaverActive: boolean;
-                support_save: boolean;
-                supportSave: boolean;
             }
         }
 
@@ -24922,27 +24880,6 @@ declare module 'gi://Gtk?version=4.0' {
          * default window icon. Use [func`Gtk`.Window.set_default_icon_name] or
          * [property`Gtk`.Window:icon-name] to override that behavior.
          *
-         * ## State saving
-         *
-         * `GtkApplication` registers with a session manager if possible and
-         * offers various functionality related to the session life-cycle,
-         * such as state saving.
-         *
-         * State-saving functionality can be enabled by setting the
-         * [property`Gtk`.Application:support-save] property to true.
-         *
-         * In order to save and restore per-window state, applications must
-         * connect to the [signal`Gtk`.Application::restore-window] signal and
-         * handle the [signal`Gtk`.ApplicationWindow::save-state] signal. There
-         * are also [signal`Gtk`.Application::restore-state] and
-         * [signal`GtkApplication:`:save-state] signals, which can be used
-         * for global state that is not connected to any window.
-         *
-         * `GtkApplication` automatically saves state before app shutdown, and by
-         * default periodically auto-saves app state (as configured by the
-         * [property`Gtk`.Application:autosave-interval] property). Applications can
-         * also call [method`Gtk`.Application.save] themselves at opportune times.
-         *
          * # Inhibiting
          *
          * An application can block various ways to end the session with
@@ -24976,18 +24913,6 @@ declare module 'gi://Gtk?version=4.0' {
              * The currently focused window of the application.
              */
             get activeWindow(): Window;
-            /**
-             * The number of seconds between automatic state saves. Defaults to 15.
-             * A value of 0 will opt out of automatic state saving.
-             */
-            get autosave_interval(): number;
-            set autosave_interval(val: number);
-            /**
-             * The number of seconds between automatic state saves. Defaults to 15.
-             * A value of 0 will opt out of automatic state saving.
-             */
-            get autosaveInterval(): number;
-            set autosaveInterval(val: number);
             /**
              * The menu model to be used for the application's menu bar.
              */
@@ -25025,18 +24950,6 @@ declare module 'gi://Gtk?version=4.0' {
              * Linux.
              */
             get screensaverActive(): boolean;
-            /**
-             * Set this property to true if the application supports
-             * state saving and restoring.
-             */
-            get support_save(): boolean;
-            set support_save(val: boolean);
-            /**
-             * Set this property to true if the application supports
-             * state saving and restoring.
-             */
-            get supportSave(): boolean;
-            set supportSave(val: boolean);
 
             /**
              * Compile-time signal type information.
@@ -25076,23 +24989,6 @@ declare module 'gi://Gtk?version=4.0' {
             // Virtual methods
 
             /**
-             * Class closure for the [signal`Application:`:restore-state] signal.
-             * @param reason the reason for restoring state
-             * @param state a dictionary containing the application state to restore
-             */
-            vfunc_restore_state(reason: RestoreReason, state: GLib.Variant): boolean;
-            /**
-             * Class closure for the [signal`Application:`:restore-window] signal.
-             * @param reason the reason this window is restored
-             * @param state the state to restore, as saved by a   [signal@Gtk.ApplicationWindow::save-state] handler
-             */
-            vfunc_restore_window(reason: RestoreReason, state?: GLib.Variant | null): void;
-            /**
-             * Class closure for the [signal`Application:`:save-state] signal.
-             * @param state a dictionary where to store the application's state
-             */
-            vfunc_save_state(state: GLib.VariantDict): boolean;
-            /**
              * Signal emitted when a `GtkWindow` is added to
              *    application through gtk_application_add_window().
              * @param window
@@ -25126,14 +25022,6 @@ declare module 'gi://Gtk?version=4.0' {
              * @param window a window
              */
             add_window(window: Window): void;
-            /**
-             * Forget state that has been previously saved and prevent
-             * further automatic state saving.
-             *
-             * In order to reenable state saving, call
-             * [method`Gtk`.Application.save].
-             */
-            forget(): void;
             /**
              * Gets the accelerators that are currently associated with
              * the given action.
@@ -25262,16 +25150,6 @@ declare module 'gi://Gtk?version=4.0' {
              * @param window a window
              */
             remove_window(window: Window): void;
-            /**
-             * Saves the state of application.
-             *
-             * See [method`Gtk`.Application.forget] for a way to forget the state.
-             *
-             * If [property`Gtk`.Application:register-session] is set, `GtkApplication`
-             * calls this function automatically when the application is closed or
-             * the session ends.
-             */
-            save(): void;
             /**
              * Sets zero or more keyboard accelerators that will trigger the
              * given action.
@@ -26284,7 +26162,6 @@ declare module 'gi://Gtk?version=4.0' {
         namespace ApplicationWindow {
             // Signal signatures
             interface SignalSignatures extends Window.SignalSignatures {
-                'save-state': (arg0: GLib.VariantDict) => boolean | void;
                 'notify::show-menubar': (pspec: GObject.ParamSpec) => void;
                 'notify::application': (pspec: GObject.ParamSpec) => void;
                 'notify::child': (pspec: GObject.ParamSpec) => void;
@@ -26516,14 +26393,6 @@ declare module 'gi://Gtk?version=4.0' {
                     : never
             ): void;
             emit(signal: string, ...args: any[]): void;
-
-            // Virtual methods
-
-            /**
-             * Class closure for the [signal`ApplicationWindow:`:save-state] signal.
-             * @param dict a dictionary where to store the window's state
-             */
-            vfunc_save_state(dict: GLib.VariantDict): boolean;
 
             // Methods
 
@@ -99726,8 +99595,6 @@ declare module 'gi://Gtk?version=4.0' {
              * the object's property stays synchronized with `self`.
              *
              * If `self`'s evaluation fails, `target`'s `property` is not updated.
-             * You can ensure that this doesn't happen by using a fallback
-             * expression.
              *
              * Note that this function takes ownership of `self`. If you want
              * to keep it around, you should [method`Gtk`.Expression.ref] it beforehand.
@@ -245065,7 +244932,7 @@ declare module 'gi://Gtk?version=4.0' {
              * or %NULL if none has been set.
              * @returns the menu model
              */
-            get_extra_menu(): Gio.MenuModel;
+            get_extra_menu(): Gio.MenuModel | null;
             /**
              * Gets a `GtkWidget` that has previously been set as gutter.
              *

@@ -718,6 +718,41 @@ declare module 'gi://Gio?version=2.0' {
             PASSWORD,
         }
         /**
+         * Possible values of Explicit Congestion Notification code points.
+         *
+         * These appear in `TOS` (IPv4) or `TCLASS` (IPv6) packet headers and
+         * are described in [RFC 3168](https://www.rfc-editor.org/rfc/rfc3168#section-5).
+         */
+
+        /**
+         * Possible values of Explicit Congestion Notification code points.
+         *
+         * These appear in `TOS` (IPv4) or `TCLASS` (IPv6) packet headers and
+         * are described in [RFC 3168](https://www.rfc-editor.org/rfc/rfc3168#section-5).
+         */
+        export namespace EcnCodePoint {
+            export const $gtype: GObject.GType<EcnCodePoint>;
+        }
+
+        enum EcnCodePoint {
+            /**
+             * Not ECN-capable transport
+             */
+            NO_ECN,
+            /**
+             * ECN Capable Transport(1)
+             */
+            ECT_1,
+            /**
+             * ECN Capable Transport(0)
+             */
+            ECT_0,
+            /**
+             * Congestion Experienced
+             */
+            ECT_CE,
+        }
+        /**
          * GEmblemOrigin is used to add information about the origin of the emblem
          * to #GEmblem.
          */
@@ -34584,6 +34619,162 @@ declare module 'gi://Gio?version=2.0' {
             ): void;
         }
 
+        namespace IPTosMessage {
+            // Signal signatures
+            interface SignalSignatures extends SocketControlMessage.SignalSignatures {}
+
+            // Constructor properties interface
+
+            interface ConstructorProps extends SocketControlMessage.ConstructorProps {}
+        }
+
+        /**
+         * Contains the type of service (ToS) byte of an IPv4 header.
+         *
+         * This consists of the DSCP field as per
+         * [RFC 2474](https://www.rfc-editor.org/rfc/rfc2474#section-3),
+         * and the ECN field as per
+         * [RFC 3168](https://www.rfc-editor.org/rfc/rfc3168#section-5).
+         *
+         * It may be received using [method`Gio`.Socket.receive_message] over UDP sockets
+         * (i.e. sockets in the `G_SOCKET_FAMILY_IPV4` family with
+         * `G_SOCKET_TYPE_DATAGRAM` type). The message is not meant for sending. To set
+         * ToS field to be used in datagrams sent on a [class`Gio`.Socket] use:
+         * ```c
+         * g_socket_set_option (socket, IPPROTO_IP, IP_TOS, <ToS value>, &error);
+         * ```
+         */
+        class IPTosMessage extends SocketControlMessage {
+            static $gtype: GObject.GType<IPTosMessage>;
+
+            /**
+             * Compile-time signal type information.
+             *
+             * This instance property is generated only for TypeScript type checking.
+             * It is not defined at runtime and should not be accessed in JS code.
+             * @internal
+             */
+            $signals: IPTosMessage.SignalSignatures;
+
+            // Constructors
+
+            constructor(properties?: Partial<IPTosMessage.ConstructorProps>, ...args: any[]);
+
+            _init(...args: any[]): void;
+
+            static ['new'](dscp: number, ecn: EcnCodePoint): IPTosMessage;
+
+            // Signals
+
+            connect<K extends keyof IPTosMessage.SignalSignatures>(
+                signal: K,
+                callback: GObject.SignalCallback<this, IPTosMessage.SignalSignatures[K]>,
+            ): number;
+            connect(signal: string, callback: (...args: any[]) => any): number;
+            connect_after<K extends keyof IPTosMessage.SignalSignatures>(
+                signal: K,
+                callback: GObject.SignalCallback<this, IPTosMessage.SignalSignatures[K]>,
+            ): number;
+            connect_after(signal: string, callback: (...args: any[]) => any): number;
+            emit<K extends keyof IPTosMessage.SignalSignatures>(
+                signal: K,
+                ...args: GObject.GjsParameters<IPTosMessage.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never
+            ): void;
+            emit(signal: string, ...args: any[]): void;
+
+            // Methods
+
+            /**
+             * Gets the differentiated services code point stored in `message`.
+             * @returns A DSCP value as described in [RFC 2474](https://www.rfc-editor.org/rfc/rfc2474.html#section-3).
+             */
+            get_dscp(): number;
+            /**
+             * Gets the Explicit Congestion Notification code point stored in `message`.
+             * @returns An ECN value as described in [RFC 3168](https://www.rfc-editor.org/rfc/rfc3168#section-5).
+             */
+            get_ecn(): EcnCodePoint;
+        }
+
+        namespace IPv6TclassMessage {
+            // Signal signatures
+            interface SignalSignatures extends SocketControlMessage.SignalSignatures {}
+
+            // Constructor properties interface
+
+            interface ConstructorProps extends SocketControlMessage.ConstructorProps {}
+        }
+
+        /**
+         * Contains the Traffic Class byte of an IPv6 header.
+         *
+         * This consists of the DSCP field as per
+         * [RFC 2474](https://www.rfc-editor.org/rfc/rfc2474#section-3),
+         * and the ECN field as per
+         * [RFC 3168](https://www.rfc-editor.org/rfc/rfc3168#section-5).
+         *
+         * It may be received using [method`Gio`.Socket.receive_message] over UDP sockets
+         * (i.e. sockets in the `G_SOCKET_FAMILY_IPV6` family with
+         * `G_SOCKET_TYPE_DATAGRAM` type). The message is not meant for sending. To set
+         * Traffic Class field to be used in datagrams sent on a [class`Gio`.Socket] use:
+         * ```c
+         * g_socket_set_option (socket, IPPROTO_IPV6, IPV6_TCLASS, <TC value>, &error);
+         * ```
+         */
+        class IPv6TclassMessage extends SocketControlMessage {
+            static $gtype: GObject.GType<IPv6TclassMessage>;
+
+            /**
+             * Compile-time signal type information.
+             *
+             * This instance property is generated only for TypeScript type checking.
+             * It is not defined at runtime and should not be accessed in JS code.
+             * @internal
+             */
+            $signals: IPv6TclassMessage.SignalSignatures;
+
+            // Constructors
+
+            constructor(properties?: Partial<IPv6TclassMessage.ConstructorProps>, ...args: any[]);
+
+            _init(...args: any[]): void;
+
+            static ['new'](dscp: number, ecn: EcnCodePoint): IPv6TclassMessage;
+
+            // Signals
+
+            connect<K extends keyof IPv6TclassMessage.SignalSignatures>(
+                signal: K,
+                callback: GObject.SignalCallback<this, IPv6TclassMessage.SignalSignatures[K]>,
+            ): number;
+            connect(signal: string, callback: (...args: any[]) => any): number;
+            connect_after<K extends keyof IPv6TclassMessage.SignalSignatures>(
+                signal: K,
+                callback: GObject.SignalCallback<this, IPv6TclassMessage.SignalSignatures[K]>,
+            ): number;
+            connect_after(signal: string, callback: (...args: any[]) => any): number;
+            emit<K extends keyof IPv6TclassMessage.SignalSignatures>(
+                signal: K,
+                ...args: GObject.GjsParameters<IPv6TclassMessage.SignalSignatures[K]> extends [any, ...infer Q]
+                    ? Q
+                    : never
+            ): void;
+            emit(signal: string, ...args: any[]): void;
+
+            // Methods
+
+            /**
+             * Gets the differentiated services code point stored in `message`.
+             * @returns A DSCP value as described in [RFC 2474](https://www.rfc-editor.org/rfc/rfc2474.html#section-3).
+             */
+            get_dscp(): number;
+            /**
+             * Gets the Explicit Congestion Notification code point stored in `message`.
+             * @returns An ECN value as described in [RFC 3168](https://www.rfc-editor.org/rfc/rfc3168#section-5).
+             */
+            get_ecn(): EcnCodePoint;
+        }
+
         namespace InetAddress {
             // Signal signatures
             interface SignalSignatures extends GObject.Object.SignalSignatures {
@@ -68297,6 +68488,8 @@ declare module 'gi://Gio?version=2.0' {
             _init(...args: any[]): void;
         }
 
+        type IPTosMessageClass = typeof IPTosMessage;
+        type IPv6TclassMessageClass = typeof IPv6TclassMessage;
         type IconIface = typeof Icon;
         type InetAddressClass = typeof InetAddress;
         type InetAddressMaskClass = typeof InetAddressMask;

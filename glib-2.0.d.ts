@@ -12085,6 +12085,11 @@ declare module 'gi://GLib?version=2.0' {
         function test_trap_has_passed(): boolean;
         /**
          * Checks the result of the last [func`GLib`.test_trap_subprocess] call.
+         * @returns true if the last test subprocess was skipped
+         */
+        function test_trap_has_skipped(): boolean;
+        /**
+         * Checks the result of the last [func`GLib`.test_trap_subprocess] call.
          * @returns true if the last test subprocess got killed due to a timeout
          */
         function test_trap_reached_timeout(): boolean;
