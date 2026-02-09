@@ -1344,6 +1344,7 @@ declare module 'gi://Adw?version=1' {
             // Signal signatures
             interface SignalSignatures extends Dialog.SignalSignatures {
                 'activate-link': (arg0: string) => boolean | void;
+                'notify::appdata-resource-path': (pspec: GObject.ParamSpec) => void;
                 'notify::application-icon': (pspec: GObject.ParamSpec) => void;
                 'notify::application-name': (pspec: GObject.ParamSpec) => void;
                 'notify::artists': (pspec: GObject.ParamSpec) => void;
@@ -1420,6 +1421,8 @@ declare module 'gi://Adw?version=1' {
                     Gtk.Buildable.ConstructorProps,
                     Gtk.ConstraintTarget.ConstructorProps,
                     Gtk.ShortcutManager.ConstructorProps {
+                appdata_resource_path: string;
+                appdataResourcePath: string;
                 application_icon: string;
                 applicationIcon: string;
                 application_name: string;
@@ -1634,6 +1637,28 @@ declare module 'gi://Adw?version=1' {
 
             // Properties
 
+            /**
+             * The path to the Appstream metadata resource.
+             *
+             * If provided, the dialog will be constructed from it.
+             *
+             * See [ctor`AboutDialog`.new_from_appdata].
+             *
+             * If [property`AboutDialog:`release-notes-version] is set, release notes will
+             * be set from the AppStream release description for that version.
+             */
+            get appdata_resource_path(): string;
+            /**
+             * The path to the Appstream metadata resource.
+             *
+             * If provided, the dialog will be constructed from it.
+             *
+             * See [ctor`AboutDialog`.new_from_appdata].
+             *
+             * If [property`AboutDialog:`release-notes-version] is set, release notes will
+             * be set from the AppStream release description for that version.
+             */
+            get appdataResourcePath(): string;
             /**
              * The name of the application icon.
              *
@@ -2252,6 +2277,11 @@ declare module 'gi://Adw?version=1' {
              * @param summary the application summary
              */
             add_other_app(appid: string, name: string, summary: string): void;
+            /**
+             * Gets the AppStream metadata resource path for `self`.
+             * @returns the resource path
+             */
+            get_appdata_resource_path(): string | null;
             /**
              * Gets the name of the application icon for `self`.
              * @returns the application icon name
@@ -16445,8 +16475,8 @@ declare module 'gi://Adw?version=1' {
          * The color is picked based on the hash of the [property`Avatar:`text].
          *
          * If [property`Avatar:`show-initials] is set to `FALSE`,
-         * [property`Avatar:`icon-name] or `avatar-default-symbolic` is shown instead of
-         * the initials.
+         * [property`Avatar:`icon-name] or `adw-avatar-default-symbolic` is shown instead
+         * of the initials.
          *
          * Use [property`Avatar:`custom-image] to set a custom image.
          *
@@ -16480,14 +16510,14 @@ declare module 'gi://Adw?version=1' {
             /**
              * The name of an icon to use as a fallback.
              *
-             * If no name is set, `avatar-default-symbolic` will be used.
+             * If no name is set, `adw-avatar-default-symbolic` will be used.
              */
             get icon_name(): string;
             set icon_name(val: string);
             /**
              * The name of an icon to use as a fallback.
              *
-             * If no name is set, `avatar-default-symbolic` will be used.
+             * If no name is set, `adw-avatar-default-symbolic` will be used.
              */
             get iconName(): string;
             set iconName(val: string);
@@ -16599,7 +16629,7 @@ declare module 'gi://Adw?version=1' {
             /**
              * Sets the name of an icon to use as a fallback.
              *
-             * If no name is set, `avatar-default-symbolic` will be used.
+             * If no name is set, `adw-avatar-default-symbolic` will be used.
              * @param icon_name the icon name
              */
             set_icon_name(icon_name?: string | null): void;
