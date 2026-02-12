@@ -99544,6 +99544,19 @@ declare module 'gi://Gtk?version=4.0' {
          *   </closure>
          * ```
          *
+         * If an expression can fail, a `<try>` element can be used to provide fallbacks.
+         * The expressions are tried from top to bottom until one of them succeeds.
+         * If none of the expressions succeed, the expression fails as normal:
+         *
+         * ```xml
+         *   <try>
+         *     <lookup type='GtkWindow' name='title'>
+         *       <lookup type='GtkLabel' name='root'></lookup>
+         *     </lookup>
+         *     <constant type='gchararray'>Hello World</constant>
+         *   </try>
+         * ```
+         *
          * To create a property binding, use the `<binding>` element in place of where a
          * `<property>` tag would ordinarily be used. The `name` and `object` attributes are
          * supported. The `name` attribute is required, and pertains to the applicable property
@@ -99595,6 +99608,7 @@ declare module 'gi://Gtk?version=4.0' {
              * the object's property stays synchronized with `self`.
              *
              * If `self`'s evaluation fails, `target`'s `property` is not updated.
+             * Use a [class`Gtk`.TryExpression] to provide a fallback for this case.
              *
              * Note that this function takes ownership of `self`. If you want
              * to keep it around, you should [method`Gtk`.Expression.ref] it beforehand.
@@ -201744,6 +201758,7 @@ declare module 'gi://Gtk?version=4.0' {
                 'notify::activates-default': (pspec: GObject.ParamSpec) => void;
                 'notify::input-hints': (pspec: GObject.ParamSpec) => void;
                 'notify::input-purpose': (pspec: GObject.ParamSpec) => void;
+                'notify::key-capture-widget': (pspec: GObject.ParamSpec) => void;
                 'notify::placeholder-text': (pspec: GObject.ParamSpec) => void;
                 'notify::search-delay': (pspec: GObject.ParamSpec) => void;
                 'notify::can-focus': (pspec: GObject.ParamSpec) => void;
@@ -201807,6 +201822,8 @@ declare module 'gi://Gtk?version=4.0' {
                 inputHints: InputHints;
                 input_purpose: InputPurpose;
                 inputPurpose: InputPurpose;
+                key_capture_widget: Widget;
+                keyCaptureWidget: Widget;
                 placeholder_text: string;
                 placeholderText: string;
                 search_delay: number;
@@ -201910,6 +201927,20 @@ declare module 'gi://Gtk?version=4.0' {
              */
             get inputPurpose(): InputPurpose;
             set inputPurpose(val: InputPurpose);
+            /**
+             * The widget that the entry will use to capture key events.
+             *
+             * Key events are consumed by the search entry to start or continue a search.
+             */
+            get key_capture_widget(): Widget;
+            set key_capture_widget(val: Widget);
+            /**
+             * The widget that the entry will use to capture key events.
+             *
+             * Key events are consumed by the search entry to start or continue a search.
+             */
+            get keyCaptureWidget(): Widget;
+            set keyCaptureWidget(val: Widget);
             /**
              * The text that will be displayed in the `GtkSearchEntry`
              * when it is empty and unfocused.
@@ -259218,6 +259249,44 @@ declare module 'gi://Gtk?version=4.0' {
              * @param detailedName Name of the signal to stop emission of
              */
             stop_emission_by_name(detailedName: string): void;
+        }
+
+        namespace TryExpression {
+            // Signal signatures
+            interface SignalSignatures extends Expression.SignalSignatures {}
+        }
+
+        /**
+         * A `GtkExpression` that tries to evaluate each of its expressions until it succeeds.
+         *
+         * If all expressions fail to evaluate, the `GtkTryExpression`'s evaluation fails as well.
+         */
+        class TryExpression extends Expression {
+            static $gtype: GObject.GType<TryExpression>;
+
+            // Constructors
+
+            _init(...args: any[]): void;
+
+            static ['new'](expressions: Expression[]): TryExpression;
+
+            // Signals
+
+            connect<K extends keyof TryExpression.SignalSignatures>(
+                signal: K,
+                callback: GObject.SignalCallback<this, TryExpression.SignalSignatures[K]>,
+            ): number;
+            connect(signal: string, callback: (...args: any[]) => any): number;
+            connect_after<K extends keyof TryExpression.SignalSignatures>(
+                signal: K,
+                callback: GObject.SignalCallback<this, TryExpression.SignalSignatures[K]>,
+            ): number;
+            connect_after(signal: string, callback: (...args: any[]) => any): number;
+            emit<K extends keyof TryExpression.SignalSignatures>(
+                signal: K,
+                ...args: GObject.GjsParameters<TryExpression.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never
+            ): void;
+            emit(signal: string, ...args: any[]): void;
         }
 
         namespace UriLauncher {
