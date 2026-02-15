@@ -4733,6 +4733,11 @@ declare module 'gi://GLib?version=2.0' {
         const MINOR_VERSION: number;
         const MODULE_SUFFIX: string;
         /**
+         * Number of nanoseconds in one second (1 billion).
+         * This macro is provided for code readability.
+         */
+        const NSEC_PER_SEC: number;
+        /**
          * If a long option in the main group has this name, it is not treated as a
          * regular option. Instead it collects all non-option arguments which would
          * otherwise be left in `argv`. The option must be of type
@@ -7716,7 +7721,7 @@ declare module 'gi://GLib?version=2.0' {
          */
         function get_locale_variants(locale: string): string[];
         /**
-         * Queries the system monotonic time.
+         * Queries the system monotonic time in microseconds.
          *
          * The monotonic clock will always increase and doesn’t suffer
          * discontinuities when the user (or NTP) changes the system time.  It
@@ -7727,9 +7732,31 @@ declare module 'gi://GLib?version=2.0' {
          * the passage of time as measured by system calls such as
          * [`poll()`](man:poll(2)) but it
          * may not always be possible to do this.
+         *
+         * A more accurate version of this function exists.
+         * [func`GLib`.get_monotonic_time_ns] returns the time in nanoseconds.
          * @returns the monotonic time, in microseconds
          */
         function get_monotonic_time(): number;
+        /**
+         * Queries the system monotonic time in nanoseconds.
+         *
+         * The monotonic clock will always increase and doesn’t suffer
+         * discontinuities when the user (or NTP) changes the system time.  It
+         * may or may not continue to tick during times where the machine is
+         * suspended.
+         *
+         * We try to use the clock that corresponds as closely as possible to
+         * the passage of time as measured by system calls such as
+         * [`poll()`](man:poll(2)) but it
+         * may not always be possible to do this.
+         *
+         * Another version of this function exists.
+         * [func`GLib`.get_monotonic_time] returns the time in microseconds.
+         * If you want to support older GLib versions, it is an alternative.
+         * @returns the monotonic time, in nanoseconds
+         */
+        function get_monotonic_time_ns(): number;
         /**
          * Determine the approximate number of threads that the system will
          * schedule simultaneously for this process.  This is intended to be
