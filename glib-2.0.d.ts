@@ -5543,7 +5543,7 @@ declare module 'gi://GLib?version=2.0' {
          * Gets the current value of `atomic`.
          *
          * This call acts as a full compiler and hardware
-         * memory barrier (before the get).
+         * memory barrier.
          *
          * While `atomic` has a `volatile` qualifier, this is a historical artifact and
          * the pointer passed to it should not be `volatile`.
@@ -5583,7 +5583,7 @@ declare module 'gi://GLib?version=2.0' {
          * Sets the value of `atomic` to `newval`.
          *
          * This call acts as a full compiler and hardware
-         * memory barrier (after the set).
+         * memory barrier.
          *
          * While `atomic` has a `volatile` qualifier, this is a historical artifact and
          * the pointer passed to it should not be `volatile`.
@@ -5706,7 +5706,7 @@ declare module 'gi://GLib?version=2.0' {
          * Gets the current value of `atomic`.
          *
          * This call acts as a full compiler and hardware
-         * memory barrier (before the get).
+         * memory barrier.
          *
          * While `atomic` has a `volatile` qualifier, this is a historical artifact and
          * the pointer passed to it should not be `volatile`.
@@ -5738,7 +5738,7 @@ declare module 'gi://GLib?version=2.0' {
          * Sets the value of `atomic` to `newval`.
          *
          * This call acts as a full compiler and hardware
-         * memory barrier (after the set).
+         * memory barrier.
          *
          * While `atomic` has a `volatile` qualifier, this is a historical artifact and
          * the pointer passed to it should not be `volatile`.
