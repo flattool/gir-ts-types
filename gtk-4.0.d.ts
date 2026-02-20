@@ -5567,7 +5567,10 @@ declare module 'gi://Gtk?version=4.0' {
          * give the user the last word.
          */
         const STYLE_PROVIDER_PRIORITY_USER: number;
-        const SVG_ALL_FEATURES: number;
+        /**
+         * The `GtkSvgFeatures` that are enabled by default.
+         */
+        const SVG_DEFAULT_FEATURES: number;
         /**
          * The priority at which the text view validates onscreen lines
          * in an idle job in the background.
@@ -7589,17 +7592,19 @@ declare module 'gi://Gtk?version=4.0' {
             SHOW_CHANGE,
         }
         /**
-         * Features of the SVG renderer that can be disabled.
+         * Features of the SVG renderer that can be enabled or disabled.
          *
-         * By default, all features are enabled.
+         * By default, all features except `GTK_SVG_TRADITIONAL_SYMBOLIC`
+         * are enabled.
          *
          * New values may be added in the future.
          */
 
         /**
-         * Features of the SVG renderer that can be disabled.
+         * Features of the SVG renderer that can be enabled or disabled.
          *
-         * By default, all features are enabled.
+         * By default, all features except `GTK_SVG_TRADITIONAL_SYMBOLIC`
+         * are enabled.
          *
          * New values may be added in the future.
          */
@@ -7609,9 +7614,8 @@ declare module 'gi://Gtk?version=4.0' {
 
         enum SvgFeatures {
             /**
-             * Whether to run animations.
-             *   If disabled, state changes are applied without
-             *   transitions
+             * Whether to run animations. If disabled,
+             *   state changes are applied without transitions
              */
             ANIMATIONS,
             /**
@@ -7630,6 +7634,14 @@ declare module 'gi://Gtk?version=4.0' {
              *   as states and transitions
              */
             EXTENSIONS,
+            /**
+             * This feature is meant for
+             *   compatibility with old symbolic icons. If this is enabled,
+             *   fill and stroke attributes are ignored. The used colors
+             *   are derived from symbolic style classes if present, and
+             *   the default fill color is the symbolic foreground color.
+             */
+            TRADITIONAL_SYMBOLIC,
         }
         /**
          * Values for [callback`Gtk`.TextBufferCommitNotify] to denote the
@@ -99506,12 +99518,14 @@ declare module 'gi://Gtk?version=4.0' {
          * [class`Gtk`.BuilderListItemFactory] for an example of this technique.
          *
          * To create a constant expression, use the `<constant>` element. If the type attribute
-         * is specified, the element content is interpreted as a value of that type. Otherwise,
+         * is specified, the element content is interpreted as a value of that type, and the
+         * initial attribute can be specified to get the initial value for that type. Otherwise,
          * it is assumed to be an object. For instance:
          *
          * ```xml
          *   <constant>string_filter</constant>
          *   <constant type='gchararray'>Hello, world</constant>
+         *   <constant type='gchararray' initial='true' /> <!-- NULL -->
          * ```
          *
          * String (`type='gchararray'`) constants can be marked for translation with the
@@ -219157,6 +219171,11 @@ declare module 'gi://Gtk?version=4.0' {
          * The typical way to obtain a `GtkSnapshot` object is as an argument to
          * the [vfunc`Gtk`.Widget.snapshot] vfunc. If you need to create your own
          * `GtkSnapshot`, use [ctor`Gtk`.Snapshot.new].
+         *
+         * Note that `GtkSnapshot` applies some optimizations, so the node
+         * it produces may not match the API calls 1:1. For example, it will
+         * omit clip nodes if the child node is entirely contained within the
+         * clip rectangle.
          */
         class Snapshot extends Gdk.Snapshot {
             static $gtype: GObject.GType<Snapshot>;
@@ -232101,8 +232120,7 @@ declare module 'gi://Gtk?version=4.0' {
          * Among the graphical elements, `<textPath>` and `<foreignObject>`
          * are not supported.
          *
-         * Among the structural elements, `<a>`, `<switch>` and `<view>`
-         * are not supported.
+         * Among the structural elements, `<a>` and `<view>` are not supported.
          *
          * All filter functions are supported, plus a custom `alpha-level()`
          * function, which implements one particular case of feComponentTransfer.
