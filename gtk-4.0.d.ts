@@ -106407,6 +106407,16 @@ declare module 'gi://Gtk?version=4.0' {
              */
             add_mime_type(mime_type: string): void;
             /**
+             * Adds a rule allowing a given array of mime types.
+             * It can for example be used with
+             * [Gly.Loader.get_mime_types](https://gnome.pages.gitlab.gnome.org/glycin/libglycin/type_func.Loader.get_mime_types.html).
+             *
+             * This is equivalent to calling [method`Gtk`.FileFilter.add_mime_type]
+             * for all the supported mime types.
+             * @param mime_types a %NULL-terminated array of mime types
+             */
+            add_mime_types(mime_types: string[]): void;
+            /**
              * Adds a rule allowing a shell style glob pattern.
              *
              * Note that it depends on the platform whether pattern
@@ -232077,8 +232087,7 @@ declare module 'gi://Gtk?version=4.0' {
         }
 
         /**
-         * A paintable implementation that renders (a subset of) SVG,
-         * with animations.
+         * A paintable implementation that renders SVG, with animations.
          *
          * `GtkSvg` objects are created by parsing a subset of SVG,
          * including SVG animations.
@@ -232086,16 +232095,15 @@ declare module 'gi://Gtk?version=4.0' {
          * The `GtkSvg` fills or strokes paths with symbolic or fixed
          * colors. It can have multiple states, and paths can be included
          * in a subset of the states. The special 'empty' state is always
-         *
-         * available. States can have animation, and the transition between
+         * available. States can have animations, and the transition between
          * different states can also be animated.
          *
          * To find out what states a `GtkSvg` has, use [method`Gtk`.Svg.get_n_states].
          * To set the current state, use [method`Gtk`.Svg.set_state].
          *
          * To play the animations in an SVG file, use
-         * [method`Gtk`.Svg.set_frame_clock] to connect the paintable to a frame clock,
-         * and then use [method`Gtk`.Svg.play] to start the animation.
+         * [method`Gtk`.Svg.set_frame_clock] to connect the paintable to a
+         * frame clock, and then call [method`Gtk`.Svg.play] to start animations.
          *
          *
          * ## Error handling
@@ -232115,7 +232123,7 @@ declare module 'gi://Gtk?version=4.0' {
          *
          * ## The supported subset of SVG
          *
-         * The paintable supports much of SVG 2, some notable exceptions.
+         * The paintable supports much of SVG 2, with some exceptions.
          *
          * Among the graphical elements, `<textPath>` and `<foreignObject>`
          * are not supported.
@@ -232129,7 +232137,7 @@ declare module 'gi://Gtk?version=4.0' {
          * supported: feConvolveMatrix, feDiffuseLighting,
          * feMorphology, feSpecularLighting and feTurbulence.
          *
-         * The support for the `mask` attribute is limited to just a url
+         * Support for the `mask` attribute is limited to just a url
          * referring to the `<mask>` element by ID.
          *
          * In animation elements, the parsing of `begin` and `end` attributes
@@ -232190,11 +232198,11 @@ declare module 'gi://Gtk?version=4.0' {
          *
          * will start a fade-out of path1 300ms before state 0 ends.
          *
-         * In addition to `gpa:fill` and `gpa:stroke`, symbolic colors can
-         * also be specified as a custom paint server reference, like this:
-         * `url(gpa:#warning)`. This works in `fill` and `stroke` attributes,
-         * but also when specifying colors in SVG animation attributes like
-         * `to` or `values`.
+         * In addition to the `gpa:fill` and `gpa:stroke` attributes, symbolic
+         * colors can also be specified as a custom paint server reference,
+         * like this: `url(gpa:#warning)`. This works in `fill` and `stroke`
+         * attributes, but also when specifying colors in SVG animation
+         * attributes like `to` or `values`.
          *
          * Note that the SVG syntax allows for a fallback RGB color to be
          * specified after the url, for compatibility with other SVG consumers:
@@ -232336,16 +232344,15 @@ declare module 'gi://Gtk?version=4.0' {
              */
             load_from_resource(path: string): void;
             /**
-             * Stop any playing animations.
+             * Stop any playing animations and state transitions.
              *
              * Animations can be paused and started repeatedly.
              */
             pause(): void;
             /**
-             * Start playing animations.
+             * Start playing animations and state transitions.
              *
-             * Note that this is necessary for state changes as
-             * well.
+             * Animations can be paused and started repeatedly.
              */
             play(): void;
             /**
@@ -232384,8 +232391,10 @@ declare module 'gi://Gtk?version=4.0' {
              * Use [method`Gtk`.Svg.get_n_states] to find out
              * what states `self` has.
              *
-             * Note that [method`Gtk`.Svg.play] must have been
-             * called for the SVG paintable to react to state changes.
+             * If the paintable is currently playing, the state change
+             * will apply transitions that are defined in the SVG. If
+             * the paintable is not playing, the state change will take
+             * effect instantaneously.
              * @param state the state to set, as a value between 0 and 63,   or `(unsigned int) -1`
              */
             set_state(state: number): void;
