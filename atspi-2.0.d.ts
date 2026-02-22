@@ -4370,6 +4370,7 @@ declare module 'gi://Atspi?version=2.0' {
             interface SignalSignatures extends GObject.Object.SignalSignatures {
                 'key-pressed': (arg0: number, arg1: number, arg2: ModifierType, arg3: string) => void;
                 'key-released': (arg0: number, arg1: number, arg2: ModifierType, arg3: string) => void;
+                'pointer-moved': (arg0: Accessible, arg1: number, arg2: number) => void;
                 'notify::app-id': (pspec: GObject.ParamSpec) => void;
             }
 
