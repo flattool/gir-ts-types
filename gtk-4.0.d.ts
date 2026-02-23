@@ -232092,18 +232092,22 @@ declare module 'gi://Gtk?version=4.0' {
          * `GtkSvg` objects are created by parsing a subset of SVG,
          * including SVG animations.
          *
-         * The `GtkSvg` fills or strokes paths with symbolic or fixed
-         * colors. It can have multiple states, and paths can be included
-         * in a subset of the states. The special 'empty' state is always
-         * available. States can have animations, and the transition between
-         * different states can also be animated.
+         * `GtkSvg` fills or strokes paths with symbolic or fixed colors.
+         * It can have multiple states, and paths can be included in a subset
+         * of the states. The special 'empty' state is always available.
+         * States can have animations, and the transition between different
+         * states can also be animated.
+         *
+         * To show a static SVG image, it is enough to load the
+         * the SVG and use it like any other paintable.
+         *
+         * To play an SVG animation, use [method`Gtk`.Svg.set_frame_clock]
+         * to connect the paintable to a frame clock, and call
+         * [method`Gtk`.Svg.play] after loading the SVG. The animation can
+         * be paused using [method`Gtk`.Svg.pause].
          *
          * To find out what states a `GtkSvg` has, use [method`Gtk`.Svg.get_n_states].
          * To set the current state, use [method`Gtk`.Svg.set_state].
-         *
-         * To play the animations in an SVG file, use
-         * [method`Gtk`.Svg.set_frame_clock] to connect the paintable to a
-         * frame clock, and then call [method`Gtk`.Svg.play] to start animations.
          *
          *
          * ## Error handling
@@ -232380,8 +232384,7 @@ declare module 'gi://Gtk?version=4.0' {
             /**
              * Sets a frame clock.
              *
-             * Without a frame clock, GTK has to rely
-             * on simple timeouts to run animations.
+             * Without a frame clock, GtkSvg will not advance animations.
              * @param clock the frame clock
              */
             set_frame_clock(clock: Gdk.FrameClock): void;
