@@ -11002,18 +11002,40 @@ declare module 'gi://Adw?version=1' {
             get headingUseMarkup(): boolean;
             set headingUseMarkup(val: boolean);
             /**
-             * Whether to prefer wide layout.
+             * Whether to prefer horizontal button layout.
              *
-             * Prefer horizontal button layout when possible, and wider dialog width
+             * `AdwAlertDialog` can present buttons horizontally or vertically depending
+             * on available space, how many buttons there are and how wide they are.
+             *
+             * By default it will prefer to stack buttons vertically at medium sizes.
+             *
+             * Set to `TRUE` to prefer horizontal layout in these cases instead. This will
+             * make the dialog slightly wider as well.
+             *
+             * Vertical layout may still be used if the dialog would get too wide
              * otherwise.
+             *
+             * Does nothing with just one button, or when the buttons are already
+             * horizontal.
              */
             get prefer_wide_layout(): boolean;
             set prefer_wide_layout(val: boolean);
             /**
-             * Whether to prefer wide layout.
+             * Whether to prefer horizontal button layout.
              *
-             * Prefer horizontal button layout when possible, and wider dialog width
+             * `AdwAlertDialog` can present buttons horizontally or vertically depending
+             * on available space, how many buttons there are and how wide they are.
+             *
+             * By default it will prefer to stack buttons vertically at medium sizes.
+             *
+             * Set to `TRUE` to prefer horizontal layout in these cases instead. This will
+             * make the dialog slightly wider as well.
+             *
+             * Vertical layout may still be used if the dialog would get too wide
              * otherwise.
+             *
+             * Does nothing with just one button, or when the buttons are already
+             * horizontal.
              */
             get preferWideLayout(): boolean;
             set preferWideLayout(val: boolean);
@@ -11162,7 +11184,7 @@ declare module 'gi://Adw?version=1' {
              */
             get_heading_use_markup(): boolean;
             /**
-             * Gets whether `self` prefers wide layout.
+             * Gets whether `self` prefers horizontal button layout.
              * @returns whether to prefer wide layout
              */
             get_prefer_wide_layout(): boolean;
@@ -11258,10 +11280,21 @@ declare module 'gi://Adw?version=1' {
              */
             set_heading_use_markup(use_markup: boolean): void;
             /**
-             * Sets whether `self` prefers wide layout.
+             * Whether to prefer horizontal button layout.
              *
-             * Prefer horizontal button layout when possible, and wider dialog width
+             * `AdwAlertDialog` can present buttons horizontally or vertically depending
+             * on available space, how many buttons there are and how wide they are.
+             *
+             * By default it will prefer to stack buttons vertically at medium sizes.
+             *
+             * Set to `TRUE` to prefer horizontal layout in these cases instead. This will
+             * make the dialog slightly wider as well.
+             *
+             * Vertical layout may still be used if the dialog would get too wide
              * otherwise.
+             *
+             * Does nothing with just one button, or when the buttons are already
+             * horizontal.
              * @param prefer_wide_layout whether to prefer wide layout
              */
             set_prefer_wide_layout(prefer_wide_layout: boolean): void;
@@ -69799,8 +69832,6 @@ declare module 'gi://Adw?version=1' {
          *
          * ```xml
          * <object class="AdwWindow">
-         *   <property name="width-request">280</property>
-         *   <property name="height-request">200</property>
          *   <property name="default-width">800</property>
          *   <property name="default-height">800</property>
          *   <child>

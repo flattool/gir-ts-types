@@ -6660,7 +6660,7 @@ declare module 'gi://GObject?version=2.0' {
             get_variant(): GLib.Variant | null;
             /**
              * Initializes `value` to store values of the given `type,` and sets its value
-             * to the default for `type`.
+             * to the initial value for `type`.
              *
              * This must be called before any other methods on a [struct`GObject`.Value], so
              * the value knows what type it’s meant to store.
@@ -6700,7 +6700,7 @@ declare module 'gi://GObject?version=2.0' {
              */
             peek_pointer(): any | null;
             /**
-             * Clears the current value in `value` and resets it to the default value
+             * Clears the current value in `value` and resets it to the initial value
              * (as if the value had just been initialized using
              * [method`GObject`.Value.init]).
              * @returns the [struct@GObject.Value] structure that has been passed in
