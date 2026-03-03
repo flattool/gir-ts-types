@@ -980,10 +980,6 @@ declare module 'gi://GstRtsp?version=1.0' {
             scheme: RTSPAuthMethod;
             params: RTSPAuthParam;
             authorization: string;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         /**
@@ -1005,7 +1001,6 @@ declare module 'gi://GstRtsp?version=1.0' {
                     value: string;
                 }>,
             );
-            _init(...args: any[]): void;
 
             // Methods
 
@@ -1019,10 +1014,6 @@ declare module 'gi://GstRtsp?version=1.0' {
          */
         abstract class RTSPConnection {
             static $gtype: GObject.GType<RTSPConnection>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
 
             // Static methods
 
@@ -1512,10 +1503,6 @@ declare module 'gi://GstRtsp?version=1.0' {
 
             type: RTSPMsgType;
 
-            // Constructors
-
-            _init(...args: any[]): void;
-
             // Methods
 
             /**
@@ -1774,7 +1761,6 @@ declare module 'gi://GstRtsp?version=1.0' {
                     max: number;
                 }>,
             );
-            _init(...args: any[]): void;
 
             // Static methods
 
@@ -1824,10 +1810,6 @@ declare module 'gi://GstRtsp?version=1.0' {
 
             type: RTSPTimeType;
             seconds: number;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         /**
@@ -1853,7 +1835,6 @@ declare module 'gi://GstRtsp?version=1.0' {
                     day: number;
                 }>,
             );
-            _init(...args: any[]): void;
         }
 
         /**
@@ -1867,10 +1848,6 @@ declare module 'gi://GstRtsp?version=1.0' {
             unit: RTSPRangeUnit;
             min2: RTSPTime2;
             max2: RTSPTime2;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         /**
@@ -1896,10 +1873,6 @@ declare module 'gi://GstRtsp?version=1.0' {
             client_port: RTSPRange;
             server_port: RTSPRange;
             ssrc: number;
-
-            // Constructors
-
-            _init(...args: any[]): void;
 
             // Static methods
 
@@ -1974,10 +1947,6 @@ declare module 'gi://GstRtsp?version=1.0' {
             abspath: string;
             query: string;
 
-            // Constructors
-
-            _init(...args: any[]): void;
-
             // Static methods
 
             /**
@@ -2044,10 +2013,6 @@ declare module 'gi://GstRtsp?version=1.0' {
          */
         abstract class RTSPWatch {
             static $gtype: GObject.GType<RTSPWatch>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
 
             // Methods
 
@@ -2170,7 +2135,6 @@ declare module 'gi://GstRtsp?version=1.0' {
             // Constructors
 
             constructor(properties?: Partial<{}>);
-            _init(...args: any[]): void;
         }
 
         namespace RTSPExtension {

@@ -705,7 +705,6 @@ declare module 'gi://GstCheck?version=1.0' {
                     abi_size: number;
                 }>,
             );
-            _init(...args: any[]): void;
         }
 
         /**
@@ -714,10 +713,6 @@ declare module 'gi://GstCheck?version=1.0' {
          */
         abstract class CheckLogFilter {
             static $gtype: GObject.GType<CheckLogFilter>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         /**
@@ -828,10 +823,6 @@ declare module 'gi://GstCheck?version=1.0' {
             element: Gst.Element;
             srcpad: Gst.Pad;
             sinkpad: Gst.Pad;
-
-            // Constructors
-
-            _init(...args: any[]): void;
 
             // Static methods
 
@@ -1398,10 +1389,6 @@ declare module 'gi://GstCheck?version=1.0' {
 
         abstract class HarnessPrivate {
             static $gtype: GObject.GType<HarnessPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         /**
@@ -1409,10 +1396,6 @@ declare module 'gi://GstCheck?version=1.0' {
          */
         abstract class HarnessThread {
             static $gtype: GObject.GType<HarnessThread>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         /**
@@ -1420,19 +1403,11 @@ declare module 'gi://GstCheck?version=1.0' {
          */
         abstract class StreamConsistency {
             static $gtype: GObject.GType<StreamConsistency>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type TestClockClass = typeof TestClock;
         abstract class TestClockPrivate {
             static $gtype: GObject.GType<TestClockPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         /**

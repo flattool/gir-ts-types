@@ -563,18 +563,10 @@ declare module 'gi://GstSdp?version=1.0' {
         function sdp_message_parse_uri(uri: string, msg: SDPMessage): SDPResult;
         abstract class MIKEYDecryptInfo {
             static $gtype: GObject.GType<MIKEYDecryptInfo>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         abstract class MIKEYEncryptInfo {
             static $gtype: GObject.GType<MIKEYEncryptInfo>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         /**
@@ -598,7 +590,6 @@ declare module 'gi://GstSdp?version=1.0' {
                     roc: number;
                 }>,
             );
-            _init(...args: any[]): void;
         }
 
         /**
@@ -632,7 +623,6 @@ declare module 'gi://GstSdp?version=1.0' {
                     payloads: any[];
                 }>,
             );
-            _init(...args: any[]): void;
 
             static ['new'](): MIKEYMessage;
 
@@ -804,7 +794,6 @@ declare module 'gi://GstSdp?version=1.0' {
             // Constructors
 
             constructor(type: MIKEYPayloadType);
-            _init(...args: any[]): void;
 
             static ['new'](type: MIKEYPayloadType): MIKEYPayload;
 
@@ -940,10 +929,6 @@ declare module 'gi://GstSdp?version=1.0' {
             enc_alg: MIKEYEncAlg;
             mac_alg: MIKEYMacAlg;
             subpayloads: any[];
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         /**
@@ -963,10 +948,6 @@ declare module 'gi://GstSdp?version=1.0' {
             kv_type: MIKEYKVType;
             kv_len: Uint8Array;
             kv_data: Uint8Array;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         /**
@@ -983,10 +964,6 @@ declare module 'gi://GstSdp?version=1.0' {
             C: MIKEYCacheType;
             data_len: number;
             data: number;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         /**
@@ -999,10 +976,6 @@ declare module 'gi://GstSdp?version=1.0' {
 
             len: number;
             rand: number;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         /**
@@ -1017,10 +990,6 @@ declare module 'gi://GstSdp?version=1.0' {
             policy: number;
             proto: MIKEYSecProto;
             params: any[];
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         /**
@@ -1044,7 +1013,6 @@ declare module 'gi://GstSdp?version=1.0' {
                     val: number;
                 }>,
             );
-            _init(...args: any[]): void;
         }
 
         /**
@@ -1057,10 +1025,6 @@ declare module 'gi://GstSdp?version=1.0' {
 
             type: MIKEYTSType;
             ts_value: number;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         /**
@@ -1082,7 +1046,6 @@ declare module 'gi://GstSdp?version=1.0' {
                     value: string;
                 }>,
             );
-            _init(...args: any[]): void;
 
             // Methods
 
@@ -1120,7 +1083,6 @@ declare module 'gi://GstSdp?version=1.0' {
                     bandwidth: number;
                 }>,
             );
-            _init(...args: any[]): void;
 
             // Methods
 
@@ -1163,7 +1125,6 @@ declare module 'gi://GstSdp?version=1.0' {
                     addr_number: number;
                 }>,
             );
-            _init(...args: any[]): void;
 
             // Methods
 
@@ -1204,7 +1165,6 @@ declare module 'gi://GstSdp?version=1.0' {
                     data: string;
                 }>,
             );
-            _init(...args: any[]): void;
         }
 
         /**
@@ -1242,7 +1202,6 @@ declare module 'gi://GstSdp?version=1.0' {
                     attributes: any[];
                 }>,
             );
-            _init(...args: any[]): void;
 
             // Static methods
 
@@ -1613,7 +1572,6 @@ declare module 'gi://GstSdp?version=1.0' {
                     medias: any[];
                 }>,
             );
-            _init(...args: any[]): void;
 
             // Static methods
 
@@ -2117,7 +2075,6 @@ declare module 'gi://GstSdp?version=1.0' {
                     addr: string;
                 }>,
             );
-            _init(...args: any[]): void;
         }
 
         /**
@@ -2142,7 +2099,6 @@ declare module 'gi://GstSdp?version=1.0' {
                     repeat: any[];
                 }>,
             );
-            _init(...args: any[]): void;
 
             // Methods
 
@@ -2182,7 +2138,6 @@ declare module 'gi://GstSdp?version=1.0' {
                     typed_time: string;
                 }>,
             );
-            _init(...args: any[]): void;
 
             // Methods
 

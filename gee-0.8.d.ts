@@ -35,7 +35,6 @@ declare module 'gi://Gee?version=0.8' {
             // Constructors
 
             constructor(options: { message: string; code: number });
-            _init(...args: any[]): void;
         }
 
         export namespace ConcurrentSetRangeType {
@@ -5022,181 +5021,101 @@ declare module 'gi://Gee?version=0.8' {
         type AbstractBidirListClass = typeof AbstractBidirList;
         abstract class AbstractBidirListPrivate {
             static $gtype: GObject.GType<AbstractBidirListPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type AbstractBidirSortedSetClass = typeof AbstractBidirSortedSet;
         abstract class AbstractBidirSortedSetPrivate {
             static $gtype: GObject.GType<AbstractBidirSortedSetPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type AbstractBidirSortedMapClass = typeof AbstractBidirSortedMap;
         abstract class AbstractBidirSortedMapPrivate {
             static $gtype: GObject.GType<AbstractBidirSortedMapPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type AbstractCollectionClass = typeof AbstractCollection;
         abstract class AbstractCollectionPrivate {
             static $gtype: GObject.GType<AbstractCollectionPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type AbstractListClass = typeof AbstractList;
         abstract class AbstractListPrivate {
             static $gtype: GObject.GType<AbstractListPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type AbstractMapClass = typeof AbstractMap;
         abstract class AbstractMapPrivate {
             static $gtype: GObject.GType<AbstractMapPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type AbstractMultiMapClass = typeof AbstractMultiMap;
         abstract class AbstractMultiMapPrivate {
             static $gtype: GObject.GType<AbstractMultiMapPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type AbstractMultiSetClass = typeof AbstractMultiSet;
         abstract class AbstractMultiSetPrivate {
             static $gtype: GObject.GType<AbstractMultiSetPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type AbstractQueueClass = typeof AbstractQueue;
         abstract class AbstractQueuePrivate {
             static $gtype: GObject.GType<AbstractQueuePrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type AbstractSetClass = typeof AbstractSet;
         abstract class AbstractSetPrivate {
             static $gtype: GObject.GType<AbstractSetPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type AbstractSortedMapClass = typeof AbstractSortedMap;
         abstract class AbstractSortedMapPrivate {
             static $gtype: GObject.GType<AbstractSortedMapPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type AbstractSortedSetClass = typeof AbstractSortedSet;
         abstract class AbstractSortedSetPrivate {
             static $gtype: GObject.GType<AbstractSortedSetPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type ArrayListClass = typeof ArrayList;
         abstract class ArrayListPrivate {
             static $gtype: GObject.GType<ArrayListPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type ArrayQueueClass = typeof ArrayQueue;
         abstract class ArrayQueuePrivate {
             static $gtype: GObject.GType<ArrayQueuePrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type ConcurrentListClass = typeof ConcurrentList;
         abstract class ConcurrentListPrivate {
             static $gtype: GObject.GType<ConcurrentListPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type ConcurrentSetClass = typeof ConcurrentSet;
         abstract class ConcurrentSetPrivate {
             static $gtype: GObject.GType<ConcurrentSetPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type HashMapClass = typeof HashMap;
         abstract class HashMapPrivate {
             static $gtype: GObject.GType<HashMapPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type HashMultiMapClass = typeof HashMultiMap;
         abstract class HashMultiMapPrivate {
             static $gtype: GObject.GType<HashMultiMapPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type HashMultiSetClass = typeof HashMultiSet;
         abstract class HashMultiSetPrivate {
             static $gtype: GObject.GType<HashMultiSetPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type HashSetClass = typeof HashSet;
         abstract class HashSetPrivate {
             static $gtype: GObject.GType<HashSetPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         class HazardPointer {
@@ -5205,7 +5124,6 @@ declare module 'gi://Gee?version=0.8' {
             // Constructors
 
             constructor(g_type: GObject.GType, g_dup_func: GObject.BoxedCopyFunc, ptr?: any | null);
-            _init(...args: any[]): void;
 
             static ['new'](g_type: GObject.GType, g_dup_func: GObject.BoxedCopyFunc, ptr?: any | null): HazardPointer;
 
@@ -5273,7 +5191,6 @@ declare module 'gi://Gee?version=0.8' {
             // Constructors
 
             constructor(policy?: HazardPointerPolicy | null);
-            _init(...args: any[]): void;
 
             static ['new'](policy?: HazardPointerPolicy | null): HazardPointerContext;
 
@@ -5288,82 +5205,46 @@ declare module 'gi://Gee?version=0.8' {
         type LazyClass = typeof Lazy;
         abstract class LazyPrivate {
             static $gtype: GObject.GType<LazyPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type LinkedListClass = typeof LinkedList;
         abstract class LinkedListPrivate {
             static $gtype: GObject.GType<LinkedListPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type PriorityQueueClass = typeof PriorityQueue;
         abstract class PriorityQueuePrivate {
             static $gtype: GObject.GType<PriorityQueuePrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type PromiseClass = typeof Promise;
         abstract class PromisePrivate {
             static $gtype: GObject.GType<PromisePrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type TreeMapClass = typeof TreeMap;
         abstract class TreeMapPrivate {
             static $gtype: GObject.GType<TreeMapPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type TreeMultiMapClass = typeof TreeMultiMap;
         abstract class TreeMultiMapPrivate {
             static $gtype: GObject.GType<TreeMultiMapPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type TreeMultiSetClass = typeof TreeMultiSet;
         abstract class TreeMultiSetPrivate {
             static $gtype: GObject.GType<TreeMultiSetPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type TreeSetClass = typeof TreeSet;
         abstract class TreeSetPrivate {
             static $gtype: GObject.GType<TreeSetPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type UnrolledLinkedListClass = typeof UnrolledLinkedList;
         abstract class UnrolledLinkedListPrivate {
             static $gtype: GObject.GType<UnrolledLinkedListPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type BidirIteratorIface = typeof BidirIterator;
@@ -5385,10 +5266,6 @@ declare module 'gi://Gee?version=0.8' {
         type MapEntryClass = typeof MapEntry;
         abstract class MapEntryPrivate {
             static $gtype: GObject.GType<MapEntryPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type MapIteratorIface = typeof MapIterator;

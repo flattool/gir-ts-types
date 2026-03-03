@@ -40,7 +40,6 @@ declare module 'gi://GModule?version=2.0' {
             // Constructors
 
             constructor(options: { message: string; code: number });
-            _init(...args: any[]): void;
         }
 
         const MODULE_IMPL_AR: number;
@@ -126,10 +125,6 @@ declare module 'gi://GModule?version=2.0' {
          */
         abstract class Module {
             static $gtype: GObject.GType<Module>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
 
             // Static methods
 

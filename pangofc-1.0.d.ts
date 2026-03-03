@@ -1029,10 +1029,6 @@ declare module 'gi://PangoFc?version=1.0' {
         type FontMapClass = typeof FontMap;
         abstract class FontMapPrivate {
             static $gtype: GObject.GType<FontMapPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         /**

@@ -139393,7 +139393,6 @@ declare module 'gi://Adw?version=1' {
             // Constructors
 
             constructor(condition_1: BreakpointCondition, condition_2: BreakpointCondition);
-            _init(...args: any[]): void;
 
             static new_and(condition_1: BreakpointCondition, condition_2: BreakpointCondition): BreakpointCondition;
 
@@ -139575,7 +139574,6 @@ declare module 'gi://Adw?version=1' {
             // Constructors
 
             constructor(damping_ratio: number, mass: number, stiffness: number);
-            _init(...args: any[]): void;
 
             static ['new'](damping_ratio: number, mass: number, stiffness: number): SpringParams;
 

@@ -5417,10 +5417,6 @@ declare module 'gi://GObject?version=2.0' {
 
             callback: any;
 
-            // Constructors
-
-            _init(...args: any[]): void;
-
             // Static methods
 
             /**
@@ -5857,10 +5853,6 @@ declare module 'gi://GObject?version=2.0' {
 
             data: any;
             notify: ClosureNotify;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         /**
@@ -5876,10 +5868,6 @@ declare module 'gi://GObject?version=2.0' {
             maximum: number;
             n_values: number;
             values: EnumValue[];
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         /**
@@ -5904,7 +5892,6 @@ declare module 'gi://GObject?version=2.0' {
                     value_nick: string;
                 }>,
             );
-            _init(...args: any[]): void;
         }
 
         /**
@@ -5919,10 +5906,6 @@ declare module 'gi://GObject?version=2.0' {
             mask: number;
             n_values: number;
             values: FlagsValue[];
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         /**
@@ -5947,7 +5930,6 @@ declare module 'gi://GObject?version=2.0' {
                     value_nick: string;
                 }>,
             );
-            _init(...args: any[]): void;
         }
 
         type InitiallyUnownedClass = typeof InitiallyUnowned;
@@ -5963,10 +5945,6 @@ declare module 'gi://GObject?version=2.0' {
             interface_init: InterfaceInitFunc;
             interface_finalize: InterfaceFinalizeFunc;
             interface_data: any;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type ObjectClass = typeof Object;
@@ -5980,10 +5958,6 @@ declare module 'gi://GObject?version=2.0' {
             // Fields
 
             pspec: ParamSpec;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type ParamSpecClass = typeof ParamSpec;
@@ -5996,10 +5970,6 @@ declare module 'gi://GObject?version=2.0' {
          */
         abstract class ParamSpecPool {
             static $gtype: GType<ParamSpecPool>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
 
             // Methods
 
@@ -6060,10 +6030,6 @@ declare module 'gi://GObject?version=2.0' {
             instance_size: number;
             n_preallocs: number;
             value_type: GType;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         /**
@@ -6076,10 +6042,6 @@ declare module 'gi://GObject?version=2.0' {
             // Fields
 
             name: string;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         /**
@@ -6094,10 +6056,6 @@ declare module 'gi://GObject?version=2.0' {
             signal_id: number;
             detail: GLib.Quark;
             run_type: SignalFlags;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         /**
@@ -6117,10 +6075,6 @@ declare module 'gi://GObject?version=2.0' {
             return_type: GType;
             n_params: number;
             param_types: GType[];
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         /**
@@ -6128,10 +6082,6 @@ declare module 'gi://GObject?version=2.0' {
          */
         class TypeClass {
             static $gtype: GType<TypeClass>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
 
             // Static methods
 
@@ -6278,10 +6228,6 @@ declare module 'gi://GObject?version=2.0' {
             // Fields
 
             type_flags: TypeFundamentalFlags;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         /**
@@ -6309,10 +6255,6 @@ declare module 'gi://GObject?version=2.0' {
             instance_size: number;
             n_preallocs: number;
             instance_init: InstanceInitFunc;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         /**
@@ -6320,10 +6262,6 @@ declare module 'gi://GObject?version=2.0' {
          */
         class TypeInstance {
             static $gtype: GType<TypeInstance>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
 
             // Methods
 
@@ -6335,10 +6273,6 @@ declare module 'gi://GObject?version=2.0' {
          */
         class TypeInterface {
             static $gtype: GType<TypeInterface>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
 
             // Static methods
 
@@ -6411,10 +6345,6 @@ declare module 'gi://GObject?version=2.0' {
             unuse_plugin: TypePluginUnuse;
             complete_type_info: TypePluginCompleteTypeInfo;
             complete_interface_info: TypePluginCompleteInterfaceInfo;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         /**
@@ -6431,10 +6361,6 @@ declare module 'gi://GObject?version=2.0' {
             type_name: string;
             class_size: number;
             instance_size: number;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         /**
@@ -6463,10 +6389,6 @@ declare module 'gi://GObject?version=2.0' {
             collect_value: TypeValueCollectFunc;
             lcopy_format: string;
             lcopy_value: TypeValueLCopyFunc;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         /**
@@ -6492,10 +6414,6 @@ declare module 'gi://GObject?version=2.0' {
          */
         class Value {
             static $gtype: GType<Value>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
 
             // Static methods
 
@@ -6968,7 +6886,6 @@ declare module 'gi://GObject?version=2.0' {
             // Constructors
 
             constructor(n_prealloced: number);
-            _init(...args: any[]): void;
 
             static ['new'](n_prealloced: number): ValueArray;
 
@@ -7064,10 +6981,6 @@ declare module 'gi://GObject?version=2.0' {
          */
         class WeakRef {
             static $gtype: GType<WeakRef>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         /**
@@ -7095,7 +7008,6 @@ declare module 'gi://GObject?version=2.0' {
                     v_pointer: any;
                 }>,
             );
-            _init(...args: any[]): void;
         }
 
         class _Value__data__union {
@@ -7128,7 +7040,6 @@ declare module 'gi://GObject?version=2.0' {
                     v_pointer: any;
                 }>,
             );
-            _init(...args: any[]): void;
         }
 
         namespace TypePlugin {

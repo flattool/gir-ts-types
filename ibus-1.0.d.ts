@@ -240,7 +240,6 @@ declare module 'gi://IBus?version=1.0' {
             // Constructors
 
             constructor(options: { message: string; code: number });
-            _init(...args: any[]): void;
 
             // Static methods
 
@@ -13175,83 +13174,47 @@ declare module 'gi://IBus?version=1.0' {
         type BusClass = typeof Bus;
         abstract class BusPrivate {
             static $gtype: GObject.GType<BusPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type ComponentClass = typeof Component;
         abstract class ComponentPrivate {
             static $gtype: GObject.GType<ComponentPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type ConfigClass = typeof Config;
         abstract class ConfigPrivate {
             static $gtype: GObject.GType<ConfigPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type ConfigServiceClass = typeof ConfigService;
         type EmojiDataClass = typeof EmojiData;
         abstract class EmojiDataPrivate {
             static $gtype: GObject.GType<EmojiDataPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type EngineClass = typeof Engine;
         type EngineDescClass = typeof EngineDesc;
         abstract class EngineDescPrivate {
             static $gtype: GObject.GType<EngineDescPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         abstract class EnginePrivate {
             static $gtype: GObject.GType<EnginePrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type EngineSimpleClass = typeof EngineSimple;
         abstract class EngineSimplePrivate {
             static $gtype: GObject.GType<EngineSimplePrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type ExtensionEventClass = typeof ExtensionEvent;
         abstract class ExtensionEventPrivate {
             static $gtype: GObject.GType<ExtensionEventPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type FactoryClass = typeof Factory;
         abstract class FactoryPrivate {
             static $gtype: GObject.GType<FactoryPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type HotkeyProfileClass = typeof HotkeyProfile;
@@ -13261,10 +13224,6 @@ declare module 'gi://IBus?version=1.0' {
         type ObjectClass = typeof Object;
         abstract class ObjectPrivate {
             static $gtype: GObject.GType<ObjectPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type ObservedPathClass = typeof ObservedPath;
@@ -13290,17 +13249,12 @@ declare module 'gi://IBus?version=1.0' {
                     state: number;
                 }>,
             );
-            _init(...args: any[]): void;
         }
 
         type PropListClass = typeof PropList;
         type PropertyClass = typeof Property;
         abstract class PropertyPrivate {
             static $gtype: GObject.GType<PropertyPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type ProxyClass = typeof Proxy;
@@ -13327,62 +13281,37 @@ declare module 'gi://IBus?version=1.0' {
                     height: number;
                 }>,
             );
-            _init(...args: any[]): void;
         }
 
         type RegistryClass = typeof Registry;
         abstract class RegistryPrivate {
             static $gtype: GObject.GType<RegistryPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type SerializableClass = typeof Serializable;
         abstract class SerializablePrivate {
             static $gtype: GObject.GType<SerializablePrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type ServiceClass = typeof Service;
         abstract class ServicePrivate {
             static $gtype: GObject.GType<ServicePrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type TextClass = typeof Text;
         type UnicodeBlockClass = typeof UnicodeBlock;
         abstract class UnicodeBlockPrivate {
             static $gtype: GObject.GType<UnicodeBlockPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type UnicodeDataClass = typeof UnicodeData;
         abstract class UnicodeDataPrivate {
             static $gtype: GObject.GType<UnicodeDataPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type XEventClass = typeof XEvent;
         abstract class XEventPrivate {
             static $gtype: GObject.GType<XEventPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         /**
@@ -13407,7 +13336,6 @@ declare module 'gi://IBus?version=1.0' {
                     attributes: string;
                 }>,
             );
-            _init(...args: any[]): void;
 
             // Static methods
 

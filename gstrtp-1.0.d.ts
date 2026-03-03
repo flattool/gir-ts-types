@@ -408,10 +408,6 @@ declare module 'gi://GstRtp?version=1.0' {
              * Video H263 (RFC 2190)
              */
             static H263: number;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         /**
@@ -2106,10 +2102,6 @@ declare module 'gi://GstRtp?version=1.0' {
         class RTCPBuffer {
             static $gtype: GObject.GType<RTCPBuffer>;
 
-            // Constructors
-
-            _init(...args: any[]): void;
-
             // Static methods
 
             /**
@@ -2214,10 +2206,6 @@ declare module 'gi://GstRtp?version=1.0' {
             // Fields
 
             offset: number;
-
-            // Constructors
-
-            _init(...args: any[]): void;
 
             // Methods
 
@@ -2689,28 +2677,16 @@ declare module 'gi://GstRtp?version=1.0' {
         type RTPBaseAudioPayloadClass = typeof RTPBaseAudioPayload;
         abstract class RTPBaseAudioPayloadPrivate {
             static $gtype: GObject.GType<RTPBaseAudioPayloadPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type RTPBaseDepayloadClass = typeof RTPBaseDepayload;
         abstract class RTPBaseDepayloadPrivate {
             static $gtype: GObject.GType<RTPBaseDepayloadPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type RTPBasePayloadClass = typeof RTPBasePayload;
         abstract class RTPBasePayloadPrivate {
             static $gtype: GObject.GType<RTPBasePayloadPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         /**
@@ -2726,10 +2702,6 @@ declare module 'gi://GstRtp?version=1.0' {
             state: number;
             data: any[];
             size: number[];
-
-            // Constructors
-
-            _init(...args: any[]): void;
 
             // Static methods
 
@@ -3109,7 +3081,6 @@ declare module 'gi://GstRtp?version=1.0' {
                     bitrate: number;
                 }>,
             );
-            _init(...args: any[]): void;
 
             // Static methods
 
@@ -3144,10 +3115,6 @@ declare module 'gi://GstRtp?version=1.0' {
             ssrc_valid: boolean;
             csrc: number[];
             csrc_count: number;
-
-            // Constructors
-
-            _init(...args: any[]): void;
 
             // Static methods
 

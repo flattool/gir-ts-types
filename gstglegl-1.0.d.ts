@@ -394,7 +394,6 @@ declare module 'gi://GstGLEGL?version=1.0' {
                 user_data: any | null,
                 user_data_destroy: EGLImageDestroyNotify,
             );
-            _init(...args: any[]): void;
 
             static new_wrapped(
                 context: GstGL.GLContext,
@@ -518,10 +517,6 @@ declare module 'gi://GstGLEGL?version=1.0' {
          */
         class GLMemoryEGL {
             static $gtype: GObject.GType<GLMemoryEGL>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
 
             // Static methods
 

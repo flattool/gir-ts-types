@@ -1891,10 +1891,6 @@ declare module 'gi://GstVideo?version=1.0' {
              * Current status depends on plugin internal setup
              */
             static CUSTOM: number;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         /**
@@ -7328,10 +7324,6 @@ declare module 'gi://GstVideo?version=1.0' {
             data: number;
             checksum: number;
 
-            // Constructors
-
-            _init(...args: any[]): void;
-
             // Static methods
 
             static get_info(): Gst.MetaInfo;
@@ -7365,10 +7357,6 @@ declare module 'gi://GstVideo?version=1.0' {
             spec: VideoAFDSpec;
             afd: VideoAFDValue;
 
-            // Constructors
-
-            _init(...args: any[]): void;
-
             // Static methods
 
             static get_info(): Gst.MetaInfo;
@@ -7393,10 +7381,6 @@ declare module 'gi://GstVideo?version=1.0' {
 
             matrix: number[];
 
-            // Constructors
-
-            _init(...args: any[]): void;
-
             // Static methods
 
             static get_info(): Gst.MetaInfo;
@@ -7415,28 +7399,16 @@ declare module 'gi://GstVideo?version=1.0' {
         type VideoAggregatorConvertPadClass = typeof VideoAggregatorConvertPad;
         abstract class VideoAggregatorConvertPadPrivate {
             static $gtype: GObject.GType<VideoAggregatorConvertPadPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type VideoAggregatorPadClass = typeof VideoAggregatorPad;
         abstract class VideoAggregatorPadPrivate {
             static $gtype: GObject.GType<VideoAggregatorPadPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type VideoAggregatorParallelConvertPadClass = typeof VideoAggregatorParallelConvertPad;
         abstract class VideoAggregatorPrivate {
             static $gtype: GObject.GType<VideoAggregatorPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         /**
@@ -7466,7 +7438,6 @@ declare module 'gi://GstVideo?version=1.0' {
                     stride_align: number[];
                 }>,
             );
-            _init(...args: any[]): void;
 
             // Methods
 
@@ -7502,7 +7473,6 @@ declare module 'gi://GstVideo?version=1.0' {
                     data: Uint8Array;
                 }>,
             );
-            _init(...args: any[]): void;
         }
 
         /**
@@ -7529,10 +7499,6 @@ declare module 'gi://GstVideo?version=1.0' {
             bar_data1: number;
             bar_data2: number;
 
-            // Constructors
-
-            _init(...args: any[]): void;
-
             // Static methods
 
             static get_info(): Gst.MetaInfo;
@@ -7541,10 +7507,6 @@ declare module 'gi://GstVideo?version=1.0' {
         type VideoBufferPoolClass = typeof VideoBufferPool;
         abstract class VideoBufferPoolPrivate {
             static $gtype: GObject.GType<VideoBufferPoolPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         /**
@@ -7559,10 +7521,6 @@ declare module 'gi://GstVideo?version=1.0' {
             data: Uint8Array;
             size: number;
 
-            // Constructors
-
-            _init(...args: any[]): void;
-
             // Static methods
 
             static get_info(): Gst.MetaInfo;
@@ -7570,10 +7528,6 @@ declare module 'gi://GstVideo?version=1.0' {
 
         abstract class VideoChromaResample {
             static $gtype: GObject.GType<VideoChromaResample>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
 
             // Methods
 
@@ -7599,10 +7553,6 @@ declare module 'gi://GstVideo?version=1.0' {
         class VideoCodecAlphaMeta {
             static $gtype: GObject.GType<VideoCodecAlphaMeta>;
 
-            // Constructors
-
-            _init(...args: any[]): void;
-
             // Static methods
 
             static get_info(): Gst.MetaInfo;
@@ -7623,10 +7573,6 @@ declare module 'gi://GstVideo?version=1.0' {
             duration: Gst.ClockTime;
             distance_from_sync: number;
             deadline: Gst.ClockTime;
-
-            // Constructors
-
-            _init(...args: any[]): void;
 
             // Methods
 
@@ -7676,10 +7622,6 @@ declare module 'gi://GstVideo?version=1.0' {
             mastering_display_info: VideoMasteringDisplayInfo;
             content_light_level: VideoContentLightLevel;
 
-            // Constructors
-
-            _init(...args: any[]): void;
-
             // Methods
 
             /**
@@ -7713,10 +7655,6 @@ declare module 'gi://GstVideo?version=1.0' {
             Gy: number;
             Bx: number;
             By: number;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         /**
@@ -7731,10 +7669,6 @@ declare module 'gi://GstVideo?version=1.0' {
             matrix: VideoColorMatrix;
             transfer: VideoTransferFunction;
             primaries: VideoColorPrimaries;
-
-            // Constructors
-
-            _init(...args: any[]): void;
 
             // Methods
 
@@ -7792,7 +7726,6 @@ declare module 'gi://GstVideo?version=1.0' {
                     max_frame_average_light_level: number;
                 }>,
             );
-            _init(...args: any[]): void;
 
             // Methods
 
@@ -7834,10 +7767,6 @@ declare module 'gi://GstVideo?version=1.0' {
 
         abstract class VideoConverter {
             static $gtype: GObject.GType<VideoConverter>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
 
             // Methods
 
@@ -7903,10 +7832,6 @@ declare module 'gi://GstVideo?version=1.0' {
             width: number;
             height: number;
 
-            // Constructors
-
-            _init(...args: any[]): void;
-
             // Static methods
 
             static get_info(): Gst.MetaInfo;
@@ -7915,10 +7840,6 @@ declare module 'gi://GstVideo?version=1.0' {
         type VideoDecoderClass = typeof VideoDecoder;
         abstract class VideoDecoderPrivate {
             static $gtype: GObject.GType<VideoDecoderPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type VideoDirectionInterface = typeof VideoDirection;
@@ -7928,10 +7849,6 @@ declare module 'gi://GstVideo?version=1.0' {
          */
         abstract class VideoDither {
             static $gtype: GObject.GType<VideoDither>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
 
             // Methods
 
@@ -7954,10 +7871,6 @@ declare module 'gi://GstVideo?version=1.0' {
         type VideoEncoderClass = typeof VideoEncoder;
         abstract class VideoEncoderPrivate {
             static $gtype: GObject.GType<VideoEncoderPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type VideoFilterClass = typeof VideoFilter;
@@ -7992,10 +7905,6 @@ declare module 'gi://GstVideo?version=1.0' {
             tile_hs: number;
             tile_info: VideoTileInfo[];
 
-            // Constructors
-
-            _init(...args: any[]): void;
-
             // Methods
 
             /**
@@ -8027,10 +7936,6 @@ declare module 'gi://GstVideo?version=1.0' {
             meta: any;
             id: number;
             data: any[];
-
-            // Constructors
-
-            _init(...args: any[]): void;
 
             // Static methods
 
@@ -8143,10 +8048,6 @@ declare module 'gi://GstVideo?version=1.0' {
             n_textures: number;
             texture_type: VideoGLTextureType[];
 
-            // Constructors
-
-            _init(...args: any[]): void;
-
             // Static methods
 
             static get_info(): Gst.MetaInfo;
@@ -8208,7 +8109,6 @@ declare module 'gi://GstVideo?version=1.0' {
                     stride: number[];
                 }>,
             );
-            _init(...args: any[]): void;
 
             static ['new'](): VideoInfo;
 
@@ -8339,7 +8239,6 @@ declare module 'gi://GstVideo?version=1.0' {
                     drm_modifier: number;
                 }>,
             );
-            _init(...args: any[]): void;
 
             static ['new'](): VideoInfoDmaDrm;
 
@@ -8416,7 +8315,6 @@ declare module 'gi://GstVideo?version=1.0' {
                     min_display_mastering_luminance: number;
                 }>,
             );
-            _init(...args: any[]): void;
 
             // Static methods
 
@@ -8477,7 +8375,6 @@ declare module 'gi://GstVideo?version=1.0' {
                     y: number;
                 }>,
             );
-            _init(...args: any[]): void;
         }
 
         /**
@@ -8519,10 +8416,6 @@ declare module 'gi://GstVideo?version=1.0' {
             offset: number[];
             stride: number[];
             alignment: VideoAlignment;
-
-            // Constructors
-
-            _init(...args: any[]): void;
 
             // Static methods
 
@@ -8578,10 +8471,6 @@ declare module 'gi://GstVideo?version=1.0' {
         class VideoMetaTransform {
             static $gtype: GObject.GType<VideoMetaTransform>;
 
-            // Constructors
-
-            _init(...args: any[]): void;
-
             // Static methods
 
             /**
@@ -8621,7 +8510,6 @@ declare module 'gi://GstVideo?version=1.0' {
             // Constructors
 
             constructor(rectangle?: VideoOverlayRectangle | null);
-            _init(...args: any[]): void;
 
             static ['new'](rectangle?: VideoOverlayRectangle | null): VideoOverlayComposition;
 
@@ -8688,10 +8576,6 @@ declare module 'gi://GstVideo?version=1.0' {
         class VideoOverlayCompositionMeta {
             static $gtype: GObject.GType<VideoOverlayCompositionMeta>;
 
-            // Constructors
-
-            _init(...args: any[]): void;
-
             // Static methods
 
             static get_info(): Gst.MetaInfo;
@@ -8715,7 +8599,6 @@ declare module 'gi://GstVideo?version=1.0' {
                 render_height: number,
                 flags: VideoOverlayFormatFlags,
             );
-            _init(...args: any[]): void;
 
             static new_raw(
                 pixels: Gst.Buffer,
@@ -8857,7 +8740,6 @@ declare module 'gi://GstVideo?version=1.0' {
                     h: number;
                 }>,
             );
-            _init(...args: any[]): void;
         }
 
         /**
@@ -8876,10 +8758,6 @@ declare module 'gi://GstVideo?version=1.0' {
             w: number;
             h: number;
             params: any[];
-
-            // Constructors
-
-            _init(...args: any[]): void;
 
             // Static methods
 
@@ -8941,7 +8819,6 @@ declare module 'gi://GstVideo?version=1.0' {
                     taps: number;
                 }>,
             );
-            _init(...args: any[]): void;
 
             // Methods
 
@@ -8973,10 +8850,6 @@ declare module 'gi://GstVideo?version=1.0' {
             data: number;
             size: number;
 
-            // Constructors
-
-            _init(...args: any[]): void;
-
             // Static methods
 
             static get_info(): Gst.MetaInfo;
@@ -8988,10 +8861,6 @@ declare module 'gi://GstVideo?version=1.0' {
          */
         abstract class VideoScaler {
             static $gtype: GObject.GType<VideoScaler>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
 
             // Methods
 
@@ -9084,10 +8953,6 @@ declare module 'gi://GstVideo?version=1.0' {
         type VideoSinkClass = typeof VideoSink;
         abstract class VideoSinkPrivate {
             static $gtype: GObject.GType<VideoSinkPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         /**
@@ -9114,7 +8979,6 @@ declare module 'gi://GstVideo?version=1.0' {
                     size: number;
                 }>,
             );
-            _init(...args: any[]): void;
         }
 
         /**
@@ -9150,7 +9014,6 @@ declare module 'gi://GstVideo?version=1.0' {
                     field_count: number;
                 }>,
             );
-            _init(...args: any[]): void;
 
             static ['new'](
                 fps_n: number,
@@ -9315,10 +9178,6 @@ declare module 'gi://GstVideo?version=1.0' {
             fps_n: number;
             fps_d: number;
             flags: VideoTimeCodeFlags;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         /**
@@ -9345,7 +9204,6 @@ declare module 'gi://GstVideo?version=1.0' {
                     frames: number;
                 }>,
             );
-            _init(...args: any[]): void;
 
             static ['new'](hours: number, minutes: number, seconds: number, frames: number): VideoTimeCodeInterval;
 
@@ -9385,10 +9243,6 @@ declare module 'gi://GstVideo?version=1.0' {
 
             tc: VideoTimeCode;
 
-            // Constructors
-
-            _init(...args: any[]): void;
-
             // Static methods
 
             static get_info(): Gst.MetaInfo;
@@ -9404,7 +9258,6 @@ declare module 'gi://GstVideo?version=1.0' {
             // Constructors
 
             constructor(format: VideoFormat, pixel_width: number);
-            _init(...args: any[]): void;
 
             static ['new'](format: VideoFormat, pixel_width: number): VideoVBIEncoder;
 
@@ -9445,7 +9298,6 @@ declare module 'gi://GstVideo?version=1.0' {
             // Constructors
 
             constructor(format: VideoFormat, pixel_width: number);
-            _init(...args: any[]): void;
 
             static ['new'](format: VideoFormat, pixel_width: number): VideoVBIParser;
 

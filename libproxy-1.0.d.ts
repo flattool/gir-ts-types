@@ -38,7 +38,6 @@ declare module 'gi://Libproxy?version=1.0' {
             // Constructors
 
             constructor(properties?: Partial<{}>);
-            _init(...args: any[]): void;
 
             static ['new'](): ProxyFactory;
 

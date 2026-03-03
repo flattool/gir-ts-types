@@ -229,7 +229,6 @@ declare module 'gi://GLibUnix?version=2.0' {
                     fds: number[];
                 }>,
             );
-            _init(...args: any[]): void;
         }
 
         /**

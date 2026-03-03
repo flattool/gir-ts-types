@@ -204,7 +204,6 @@ declare module 'gi://Tracker?version=3.0' {
             // Constructors
 
             constructor(options: { message: string; code: number });
-            _init(...args: any[]): void;
 
             // Static methods
 
@@ -4397,10 +4396,6 @@ declare module 'gi://Tracker?version=3.0' {
          */
         abstract class NotifierEvent {
             static $gtype: GObject.GType<NotifierEvent>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
 
             // Methods
 

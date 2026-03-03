@@ -52,7 +52,6 @@ declare module 'gi://Polkit?version=1.0' {
             // Constructors
 
             constructor(options: { message: string; code: number });
-            _init(...args: any[]): void;
 
             // Static methods
 

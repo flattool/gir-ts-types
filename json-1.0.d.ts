@@ -111,7 +111,6 @@ declare module 'gi://Json?version=1.0' {
             // Constructors
 
             constructor(options: { message: string; code: number });
-            _init(...args: any[]): void;
 
             // Static methods
 
@@ -136,7 +135,6 @@ declare module 'gi://Json?version=1.0' {
             // Constructors
 
             constructor(options: { message: string; code: number });
-            _init(...args: any[]): void;
 
             // Static methods
 
@@ -187,7 +185,6 @@ declare module 'gi://Json?version=1.0' {
             // Constructors
 
             constructor(options: { message: string; code: number });
-            _init(...args: any[]): void;
 
             // Static methods
 
@@ -1821,7 +1818,6 @@ declare module 'gi://Json?version=1.0' {
             // Constructors
 
             constructor(properties?: Partial<{}>);
-            _init(...args: any[]): void;
 
             static ['new'](): Array;
 
@@ -2038,19 +2034,11 @@ declare module 'gi://Json?version=1.0' {
         type BuilderClass = typeof Builder;
         abstract class BuilderPrivate {
             static $gtype: GObject.GType<BuilderPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type GeneratorClass = typeof Generator;
         abstract class GeneratorPrivate {
             static $gtype: GObject.GType<GeneratorPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         /**
@@ -2094,7 +2082,6 @@ declare module 'gi://Json?version=1.0' {
             // Constructors
 
             constructor(properties?: Partial<{}>);
-            _init(...args: any[]): void;
 
             static alloc(): Node;
 
@@ -2507,7 +2494,6 @@ declare module 'gi://Json?version=1.0' {
             // Constructors
 
             constructor(properties?: Partial<{}>);
-            _init(...args: any[]): void;
 
             static ['new'](): Object;
 
@@ -2840,7 +2826,6 @@ declare module 'gi://Json?version=1.0' {
             // Constructors
 
             constructor(properties?: Partial<{}>);
-            _init(...args: any[]): void;
 
             // Methods
 
@@ -2927,20 +2912,12 @@ declare module 'gi://Json?version=1.0' {
         type ParserClass = typeof Parser;
         abstract class ParserPrivate {
             static $gtype: GObject.GType<ParserPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type PathClass = typeof Path;
         type ReaderClass = typeof Reader;
         abstract class ReaderPrivate {
             static $gtype: GObject.GType<ReaderPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type SerializableIface = typeof Serializable;

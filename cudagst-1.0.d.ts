@@ -291,10 +291,6 @@ declare module 'gi://CudaGst?version=1.0' {
             Format: array_format;
             NumChannels: number;
             Flags: number;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         class DA_EXTERNAL_MEMORY_BUFFER_DESC {
@@ -315,7 +311,6 @@ declare module 'gi://CudaGst?version=1.0' {
                     reserved: number[];
                 }>,
             );
-            _init(...args: any[]): void;
         }
 
         class DA_EXTERNAL_MEMORY_MIPMAPPED_ARRAY_DESC {
@@ -325,10 +320,6 @@ declare module 'gi://CudaGst?version=1.0' {
 
             numLevels: number;
             reserved: number[];
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         class DA_MEMCPY2D {
@@ -352,10 +343,6 @@ declare module 'gi://CudaGst?version=1.0' {
             dstPitch: number;
             WidthInBytes: number;
             Height: number;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         class DA_RESOURCE_DESC {
@@ -365,10 +352,6 @@ declare module 'gi://CudaGst?version=1.0' {
 
             resType: resourcetype;
             flags: number;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         class DA_RESOURCE_VIEW_DESC {
@@ -385,10 +368,6 @@ declare module 'gi://CudaGst?version=1.0' {
             firstLayer: number;
             lastLayer: number;
             reserved: number[];
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         class DA_TEXTURE_DESC {
@@ -406,10 +385,6 @@ declare module 'gi://CudaGst?version=1.0' {
             maxMipmapLevelClamp: number;
             borderColor: number[];
             reserved: number[];
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         class ipcEventHandle {
@@ -426,7 +401,6 @@ declare module 'gi://CudaGst?version=1.0' {
                     reserved: number[];
                 }>,
             );
-            _init(...args: any[]): void;
         }
 
         class ipcMemHandle {
@@ -443,7 +417,6 @@ declare module 'gi://CudaGst?version=1.0' {
                     reserved: number[];
                 }>,
             );
-            _init(...args: any[]): void;
         }
 
         class memAccessDesc {
@@ -452,10 +425,6 @@ declare module 'gi://CudaGst?version=1.0' {
             // Fields
 
             flags: memAccess_flags;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         class memAllocationProp {
@@ -467,10 +436,6 @@ declare module 'gi://CudaGst?version=1.0' {
             requestedHandleTypes: memAllocationHandleType;
             win32HandleMetaData: any;
             allocFlags: memAllocationPropAllocFlags;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         class memAllocationPropAllocFlags {
@@ -493,7 +458,6 @@ declare module 'gi://CudaGst?version=1.0' {
                     reserved: Uint8Array;
                 }>,
             );
-            _init(...args: any[]): void;
         }
 
         class memLocation {
@@ -503,10 +467,6 @@ declare module 'gi://CudaGst?version=1.0' {
 
             type: memLocationType;
             id: number;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         class memPoolProps {
@@ -519,10 +479,6 @@ declare module 'gi://CudaGst?version=1.0' {
             win32SecurityAttributes: any;
             maxSize: number;
             reserved: Uint8Array;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type array = any;

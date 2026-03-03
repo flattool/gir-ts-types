@@ -2298,7 +2298,6 @@ declare module 'gi://Nice?version=0.1' {
             // Constructors
 
             constructor(properties?: Partial<{}>);
-            _init(...args: any[]): void;
 
             static ['new'](): Address;
 
@@ -2437,7 +2436,6 @@ declare module 'gi://Nice?version=0.1' {
             // Constructors
 
             constructor(type: CandidateType);
-            _init(...args: any[]): void;
 
             static ['new'](type: CandidateType): Candidate;
 
@@ -2512,10 +2510,6 @@ declare module 'gi://Nice?version=0.1' {
             buffers: Gio.InputVector[];
             n_buffers: number;
             length: number;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         /**
@@ -2549,7 +2543,6 @@ declare module 'gi://Nice?version=0.1' {
                     n_buffers: number;
                 }>,
             );
-            _init(...args: any[]): void;
         }
 
         /**
@@ -2571,7 +2564,6 @@ declare module 'gi://Nice?version=0.1' {
                     user_data: any;
                 }>,
             );
-            _init(...args: any[]): void;
         }
 
         type PseudoTcpSocketClass = typeof PseudoTcpSocket;

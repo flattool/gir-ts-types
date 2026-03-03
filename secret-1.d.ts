@@ -7004,28 +7004,16 @@ declare module 'gi://Secret?version=1' {
         type CollectionClass = typeof Collection;
         abstract class CollectionPrivate {
             static $gtype: GObject.GType<CollectionPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type ItemClass = typeof Item;
         abstract class ItemPrivate {
             static $gtype: GObject.GType<ItemPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type PromptClass = typeof Prompt;
         abstract class PromptPrivate {
             static $gtype: GObject.GType<PromptPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type RetrievableInterface = typeof Retrievable;
@@ -7095,7 +7083,6 @@ declare module 'gi://Secret?version=1' {
             // Constructors
 
             constructor(name: string, flags: SchemaFlags, ___: any[]);
-            _init(...args: any[]): void;
 
             static ['new'](
                 name: string,
@@ -7136,19 +7123,11 @@ declare module 'gi://Secret?version=1' {
 
             name: string;
             type: SchemaAttributeType;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type ServiceClass = typeof Service;
         abstract class ServicePrivate {
             static $gtype: GObject.GType<ServicePrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         /**
@@ -7172,7 +7151,6 @@ declare module 'gi://Secret?version=1' {
             // Constructors
 
             constructor(secret: string, length: number, content_type: string);
-            _init(...args: any[]): void;
 
             static ['new'](secret: string, length: number, content_type: string): Value;
 

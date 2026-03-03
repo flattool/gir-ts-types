@@ -1530,10 +1530,6 @@ declare module 'gi://JavaScriptCore?version=6.0' {
             has_property: ClassHasPropertyFunction;
             delete_property: ClassDeletePropertyFunction;
             enumerate_properties: ClassEnumeratePropertiesFunction;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type ContextClass = typeof Context;
