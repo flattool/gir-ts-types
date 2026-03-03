@@ -73,7 +73,6 @@ declare module 'gi://GstMse?version=1.0' {
             // Constructors
 
             constructor(options: { message: string; code: number });
-            _init(...args: any[]): void;
 
             // Static methods
 
@@ -1576,7 +1575,6 @@ declare module 'gi://GstMse?version=1.0' {
                     end: Gst.ClockTime;
                 }>,
             );
-            _init(...args: any[]): void;
         }
 
         type MseSrcClass = typeof MseSrc;
@@ -1598,7 +1596,6 @@ declare module 'gi://GstMse?version=1.0' {
                     end: Gst.ClockTime;
                 }>,
             );
-            _init(...args: any[]): void;
         }
 
         type SourceBufferListClass = typeof SourceBufferList;

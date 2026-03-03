@@ -48,7 +48,6 @@ declare module 'gi://Gly?version=2' {
             // Constructors
 
             constructor(options: { message: string; code: number });
-            _init(...args: any[]): void;
 
             // Static methods
 
@@ -1197,7 +1196,6 @@ declare module 'gi://Gly?version=2' {
                     video_full_range_flag: number;
                 }>,
             );
-            _init(...args: any[]): void;
 
             // Methods
 

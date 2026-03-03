@@ -429,7 +429,6 @@ declare module 'gi://Graphene?version=1.0' {
             // Constructors
 
             constructor(properties?: Partial<{}>);
-            _init(...args: any[]): void;
 
             static alloc(): Box;
 
@@ -632,7 +631,6 @@ declare module 'gi://Graphene?version=1.0' {
             // Constructors
 
             constructor(properties?: Partial<{}>);
-            _init(...args: any[]): void;
 
             static alloc(): Euler;
 
@@ -819,7 +817,6 @@ declare module 'gi://Graphene?version=1.0' {
             // Constructors
 
             constructor(properties?: Partial<{}>);
-            _init(...args: any[]): void;
 
             static alloc(): Frustum;
 
@@ -899,7 +896,6 @@ declare module 'gi://Graphene?version=1.0' {
             // Constructors
 
             constructor(properties?: Partial<{}>);
-            _init(...args: any[]): void;
 
             static alloc(): Matrix;
 
@@ -1467,7 +1463,6 @@ declare module 'gi://Graphene?version=1.0' {
             // Constructors
 
             constructor(properties?: Partial<{}>);
-            _init(...args: any[]): void;
 
             static alloc(): Plane;
 
@@ -1586,7 +1581,6 @@ declare module 'gi://Graphene?version=1.0' {
                     y: number;
                 }>,
             );
-            _init(...args: any[]): void;
 
             static alloc(): Point;
 
@@ -1684,7 +1678,6 @@ declare module 'gi://Graphene?version=1.0' {
                     z: number;
                 }>,
             );
-            _init(...args: any[]): void;
 
             static alloc(): Point3D;
 
@@ -1808,7 +1801,6 @@ declare module 'gi://Graphene?version=1.0' {
             // Constructors
 
             constructor(properties?: Partial<{}>);
-            _init(...args: any[]): void;
 
             static alloc(): Quad;
 
@@ -1870,7 +1862,6 @@ declare module 'gi://Graphene?version=1.0' {
             // Constructors
 
             constructor(properties?: Partial<{}>);
-            _init(...args: any[]): void;
 
             static alloc(): Quaternion;
 
@@ -2037,7 +2028,6 @@ declare module 'gi://Graphene?version=1.0' {
             // Constructors
 
             constructor(properties?: Partial<{}>);
-            _init(...args: any[]): void;
 
             static alloc(): Ray;
 
@@ -2195,7 +2185,6 @@ declare module 'gi://Graphene?version=1.0' {
                     size: Size;
                 }>,
             );
-            _init(...args: any[]): void;
 
             // Static methods
 
@@ -2473,15 +2462,10 @@ declare module 'gi://Graphene?version=1.0' {
             // Constructors
 
             constructor(properties?: Partial<{}>);
-            _init(...args: any[]): void;
         }
 
         class Simd4X4F {
             static $gtype: GObject.GType<Simd4X4F>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         /**
@@ -2503,7 +2487,6 @@ declare module 'gi://Graphene?version=1.0' {
                     height: number;
                 }>,
             );
-            _init(...args: any[]): void;
 
             static alloc(): Size;
 
@@ -2564,7 +2547,6 @@ declare module 'gi://Graphene?version=1.0' {
             // Constructors
 
             constructor(properties?: Partial<{}>);
-            _init(...args: any[]): void;
 
             static alloc(): Sphere;
 
@@ -2658,7 +2640,6 @@ declare module 'gi://Graphene?version=1.0' {
             // Constructors
 
             constructor(properties?: Partial<{}>);
-            _init(...args: any[]): void;
 
             static alloc(): Triangle;
 
@@ -2794,7 +2775,6 @@ declare module 'gi://Graphene?version=1.0' {
             // Constructors
 
             constructor(properties?: Partial<{}>);
-            _init(...args: any[]): void;
 
             static alloc(): Vec2;
 
@@ -2954,7 +2934,6 @@ declare module 'gi://Graphene?version=1.0' {
             // Constructors
 
             constructor(properties?: Partial<{}>);
-            _init(...args: any[]): void;
 
             static alloc(): Vec3;
 
@@ -3159,7 +3138,6 @@ declare module 'gi://Graphene?version=1.0' {
             // Constructors
 
             constructor(properties?: Partial<{}>);
-            _init(...args: any[]): void;
 
             static alloc(): Vec4;
 

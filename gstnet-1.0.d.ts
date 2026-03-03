@@ -1087,10 +1087,6 @@ declare module 'gi://GstNet?version=1.0' {
 
             addr: Gio.SocketAddress;
 
-            // Constructors
-
-            _init(...args: any[]): void;
-
             // Static methods
 
             static get_info(): Gst.MetaInfo;
@@ -1099,10 +1095,6 @@ declare module 'gi://GstNet?version=1.0' {
         type NetClientClockClass = typeof NetClientClock;
         abstract class NetClientClockPrivate {
             static $gtype: GObject.GType<NetClientClockPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         /**
@@ -1118,10 +1110,6 @@ declare module 'gi://GstNet?version=1.0' {
             // Fields
 
             message: Gio.SocketControlMessage;
-
-            // Constructors
-
-            _init(...args: any[]): void;
 
             // Static methods
 
@@ -1148,7 +1136,6 @@ declare module 'gi://GstNet?version=1.0' {
                     remote_time: Gst.ClockTime;
                 }>,
             );
-            _init(...args: any[]): void;
 
             static ['new'](buffer?: Uint8Array | null): NetTimePacket;
 
@@ -1196,20 +1183,12 @@ declare module 'gi://GstNet?version=1.0' {
         type NetTimeProviderClass = typeof NetTimeProvider;
         abstract class NetTimeProviderPrivate {
             static $gtype: GObject.GType<NetTimeProviderPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type NtpClockClass = typeof NtpClock;
         type PtpClockClass = typeof PtpClock;
         abstract class PtpClockPrivate {
             static $gtype: GObject.GType<PtpClockPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         /**

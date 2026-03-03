@@ -1208,7 +1208,6 @@ declare module 'gi://GLib?version=2.0' {
             // Constructors
 
             constructor(options: { message: string; code: number });
-            _init(...args: any[]): void;
         }
 
         /**
@@ -1301,7 +1300,6 @@ declare module 'gi://GLib?version=2.0' {
             // Constructors
 
             constructor(options: { message: string; code: number });
-            _init(...args: any[]): void;
         }
 
         /**
@@ -1657,7 +1655,6 @@ declare module 'gi://GLib?version=2.0' {
             // Constructors
 
             constructor(options: { message: string; code: number });
-            _init(...args: any[]): void;
         }
 
         /**
@@ -1708,7 +1705,6 @@ declare module 'gi://GLib?version=2.0' {
             // Constructors
 
             constructor(options: { message: string; code: number });
-            _init(...args: any[]): void;
         }
 
         /**
@@ -1808,7 +1804,6 @@ declare module 'gi://GLib?version=2.0' {
             // Constructors
 
             constructor(options: { message: string; code: number });
-            _init(...args: any[]): void;
         }
 
         /**
@@ -1886,7 +1881,6 @@ declare module 'gi://GLib?version=2.0' {
             // Constructors
 
             constructor(options: { message: string; code: number });
-            _init(...args: any[]): void;
         }
 
         /**
@@ -1969,7 +1963,6 @@ declare module 'gi://GLib?version=2.0' {
             // Constructors
 
             constructor(options: { message: string; code: number });
-            _init(...args: any[]): void;
         }
 
         /**
@@ -2089,7 +2082,6 @@ declare module 'gi://GLib?version=2.0' {
             // Constructors
 
             constructor(options: { message: string; code: number });
-            _init(...args: any[]): void;
         }
 
         /**
@@ -2375,7 +2367,6 @@ declare module 'gi://GLib?version=2.0' {
             // Constructors
 
             constructor(options: { message: string; code: number });
-            _init(...args: any[]): void;
         }
 
         /**
@@ -2429,7 +2420,6 @@ declare module 'gi://GLib?version=2.0' {
             // Constructors
 
             constructor(options: { message: string; code: number });
-            _init(...args: any[]): void;
         }
 
         export namespace SliceConfig {
@@ -2541,7 +2531,6 @@ declare module 'gi://GLib?version=2.0' {
             // Constructors
 
             constructor(options: { message: string; code: number });
-            _init(...args: any[]): void;
         }
 
         /**
@@ -2644,7 +2633,6 @@ declare module 'gi://GLib?version=2.0' {
             // Constructors
 
             constructor(options: { message: string; code: number });
-            _init(...args: any[]): void;
         }
 
         /**
@@ -4073,7 +4061,6 @@ declare module 'gi://GLib?version=2.0' {
             // Constructors
 
             constructor(options: { message: string; code: number });
-            _init(...args: any[]): void;
         }
 
         /**
@@ -4312,7 +4299,6 @@ declare module 'gi://GLib?version=2.0' {
             // Constructors
 
             constructor(options: { message: string; code: number });
-            _init(...args: any[]): void;
         }
 
         const ALLOCATOR_LIST: number;
@@ -15473,10 +15459,6 @@ declare module 'gi://GLib?version=2.0' {
         abstract class Allocator {
             static $gtype: GObject.GType<Allocator>;
 
-            // Constructors
-
-            _init(...args: any[]): void;
-
             // Methods
 
             free(): void;
@@ -15501,7 +15483,6 @@ declare module 'gi://GLib?version=2.0' {
                     len: number;
                 }>,
             );
-            _init(...args: any[]): void;
         }
 
         /**
@@ -15511,10 +15492,6 @@ declare module 'gi://GLib?version=2.0' {
          */
         abstract class AsyncQueue {
             static $gtype: GObject.GType<AsyncQueue>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
 
             // Static methods
 
@@ -15849,7 +15826,6 @@ declare module 'gi://GLib?version=2.0' {
             // Constructors
 
             constructor(properties?: Partial<{}>);
-            _init(...args: any[]): void;
 
             static ['new'](): BookmarkFile;
 
@@ -16420,7 +16396,6 @@ declare module 'gi://GLib?version=2.0' {
                     len: number;
                 }>,
             );
-            _init(...args: any[]): void;
 
             // Static methods
 
@@ -16594,7 +16569,6 @@ declare module 'gi://GLib?version=2.0' {
             // Constructors
 
             constructor(data?: Uint8Array | null);
-            _init(...args: any[]): void;
 
             static ['new'](data?: Uint8Array | null): Bytes;
 
@@ -16760,10 +16734,6 @@ declare module 'gi://GLib?version=2.0' {
         abstract class Cache {
             static $gtype: GObject.GType<Cache>;
 
-            // Constructors
-
-            _init(...args: any[]): void;
-
             // Methods
 
             /**
@@ -16834,7 +16804,6 @@ declare module 'gi://GLib?version=2.0' {
             // Constructors
 
             constructor(checksum_type: ChecksumType);
-            _init(...args: any[]): void;
 
             static ['new'](checksum_type: ChecksumType): Checksum;
 
@@ -16915,10 +16884,6 @@ declare module 'gi://GLib?version=2.0' {
             prefix: string;
             cache: any[];
             strncmp_func: CompletionStrncmpFunc;
-
-            // Constructors
-
-            _init(...args: any[]): void;
 
             // Methods
 
@@ -17024,7 +16989,6 @@ declare module 'gi://GLib?version=2.0' {
             // Constructors
 
             constructor(properties?: Partial<{}>);
-            _init(...args: any[]): void;
 
             // Methods
 
@@ -17149,10 +17113,6 @@ declare module 'gi://GLib?version=2.0' {
          */
         abstract class Data {
             static $gtype: GObject.GType<Data>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         /**
@@ -17220,7 +17180,6 @@ declare module 'gi://GLib?version=2.0' {
                     year: number;
                 }>,
             );
-            _init(...args: any[]): void;
 
             static ['new'](): Date;
 
@@ -17650,7 +17609,6 @@ declare module 'gi://GLib?version=2.0' {
             // Constructors
 
             constructor(properties?: Partial<{}>);
-            _init(...args: any[]): void;
 
             static ['new'](
                 tz: TimeZone,
@@ -18195,7 +18153,6 @@ declare module 'gi://GLib?version=2.0' {
                     value: number;
                 }>,
             );
-            _init(...args: any[]): void;
         }
 
         /**
@@ -18207,7 +18164,6 @@ declare module 'gi://GLib?version=2.0' {
             // Constructors
 
             constructor(path: string, flags: number);
-            _init(...args: any[]): void;
 
             static open(path: string, flags: number): Dir;
 
@@ -18308,7 +18264,6 @@ declare module 'gi://GLib?version=2.0' {
                     message: string;
                 }>,
             );
-            _init(...args: any[]): void;
 
             static new_literal(domain: { new (...args: any[]): Error } | Quark, code: number, message: string): Error;
 
@@ -18675,7 +18630,6 @@ declare module 'gi://GLib?version=2.0' {
             // Constructors
 
             constructor(properties?: Partial<{}>);
-            _init(...args: any[]): void;
 
             // Methods
 
@@ -18780,7 +18734,6 @@ declare module 'gi://GLib?version=2.0' {
             // Constructors
 
             constructor(digest_type: ChecksumType, key: Uint8Array | string);
-            _init(...args: any[]): void;
 
             static ['new'](digest_type: ChecksumType, key: Uint8Array | string): Hmac;
 
@@ -18853,10 +18806,6 @@ declare module 'gi://GLib?version=2.0' {
             func: any;
             destroy: DestroyNotify;
 
-            // Constructors
-
-            _init(...args: any[]): void;
-
             // Static methods
 
             /**
@@ -18927,10 +18876,6 @@ declare module 'gi://GLib?version=2.0' {
             dummy3: any;
             finalize_hook: HookFinalizeFunc;
             dummy: any[];
-
-            // Constructors
-
-            _init(...args: any[]): void;
 
             // Methods
 
@@ -19014,7 +18959,6 @@ declare module 'gi://GLib?version=2.0' {
             // Constructors
 
             constructor(filename: string, mode: string);
-            _init(...args: any[]): void;
 
             static new_file(filename: string, mode: string): IOChannel;
 
@@ -19307,10 +19251,6 @@ declare module 'gi://GLib?version=2.0' {
          */
         class IOFuncs {
             static $gtype: GObject.GType<IOFuncs>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         /**
@@ -19454,7 +19394,6 @@ declare module 'gi://GLib?version=2.0' {
             // Constructors
 
             constructor(properties?: Partial<{}>);
-            _init(...args: any[]): void;
 
             static ['new'](): KeyFile;
 
@@ -20010,7 +19949,6 @@ declare module 'gi://GLib?version=2.0' {
                     data: any;
                 }>,
             );
-            _init(...args: any[]): void;
 
             // Static methods
 
@@ -20045,7 +19983,6 @@ declare module 'gi://GLib?version=2.0' {
                     length: number;
                 }>,
             );
-            _init(...args: any[]): void;
         }
 
         /**
@@ -20058,7 +19995,6 @@ declare module 'gi://GLib?version=2.0' {
             // Constructors
 
             constructor(properties?: Partial<{}>);
-            _init(...args: any[]): void;
 
             static ['new'](): MainContext;
 
@@ -20451,7 +20387,6 @@ declare module 'gi://GLib?version=2.0' {
             // Constructors
 
             constructor(context: MainContext | null, is_running: boolean);
-            _init(...args: any[]): void;
 
             static ['new'](context: MainContext | null, is_running: boolean): MainLoop;
 
@@ -20513,7 +20448,6 @@ declare module 'gi://GLib?version=2.0' {
             // Constructors
 
             constructor(filename: string, writable: boolean);
-            _init(...args: any[]): void;
 
             static ['new'](filename: string, writable: boolean): MappedFile;
 
@@ -20578,7 +20512,6 @@ declare module 'gi://GLib?version=2.0' {
             // Constructors
 
             constructor(parser: MarkupParser, flags: MarkupParseFlags, user_data?: any | null);
-            _init(...args: any[]): void;
 
             static ['new'](parser: MarkupParser, flags: MarkupParseFlags, user_data?: any | null): MarkupParseContext;
 
@@ -20825,10 +20758,6 @@ declare module 'gi://GLib?version=2.0' {
          */
         class MarkupParser {
             static $gtype: GObject.GType<MarkupParser>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         /**
@@ -20837,10 +20766,6 @@ declare module 'gi://GLib?version=2.0' {
          */
         abstract class MatchInfo {
             static $gtype: GObject.GType<MatchInfo>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
 
             // Methods
 
@@ -21239,10 +21164,6 @@ declare module 'gi://GLib?version=2.0' {
         abstract class MemChunk {
             static $gtype: GObject.GType<MemChunk>;
 
-            // Constructors
-
-            _init(...args: any[]): void;
-
             // Static methods
 
             static info(): void;
@@ -21267,10 +21188,6 @@ declare module 'gi://GLib?version=2.0' {
          */
         class MemVTable {
             static $gtype: GObject.GType<MemVTable>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         /**
@@ -21282,10 +21199,6 @@ declare module 'gi://GLib?version=2.0' {
             // Fields
 
             data: any;
-
-            // Constructors
-
-            _init(...args: any[]): void;
 
             // Static methods
 
@@ -21398,10 +21311,6 @@ declare module 'gi://GLib?version=2.0' {
             status: OnceStatus;
             retval: any;
 
-            // Constructors
-
-            _init(...args: any[]): void;
-
             // Static methods
 
             /**
@@ -21492,10 +21401,6 @@ declare module 'gi://GLib?version=2.0' {
          */
         abstract class OptionContext {
             static $gtype: GObject.GType<OptionContext>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
 
             // Methods
 
@@ -21743,10 +21648,6 @@ declare module 'gi://GLib?version=2.0' {
             arg_data: any;
             description: string;
             arg_description: string;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         /**
@@ -21770,7 +21671,6 @@ declare module 'gi://GLib?version=2.0' {
                 user_data?: any | null,
                 destroy?: DestroyNotify | null,
             );
-            _init(...args: any[]): void;
 
             static ['new'](
                 name: string,
@@ -21860,7 +21760,6 @@ declare module 'gi://GLib?version=2.0' {
             // Constructors
 
             constructor(properties?: Partial<{}>);
-            _init(...args: any[]): void;
 
             // Static methods
 
@@ -22070,7 +21969,6 @@ declare module 'gi://GLib?version=2.0' {
             // Constructors
 
             constructor(pattern: string);
-            _init(...args: any[]): void;
 
             static ['new'](pattern: string): PatternSpec;
 
@@ -22152,7 +22050,6 @@ declare module 'gi://GLib?version=2.0' {
                     revents: number;
                 }>,
             );
-            _init(...args: any[]): void;
         }
 
         /**
@@ -22176,10 +22073,6 @@ declare module 'gi://GLib?version=2.0' {
          */
         class Private {
             static $gtype: GObject.GType<Private>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
 
             // Methods
 
@@ -22232,7 +22125,6 @@ declare module 'gi://GLib?version=2.0' {
                     len: number;
                 }>,
             );
-            _init(...args: any[]): void;
         }
 
         /**
@@ -22255,7 +22147,6 @@ declare module 'gi://GLib?version=2.0' {
                     length: number;
                 }>,
             );
-            _init(...args: any[]): void;
 
             // Methods
 
@@ -22469,7 +22360,6 @@ declare module 'gi://GLib?version=2.0' {
             // Constructors
 
             constructor(properties?: Partial<{}>);
-            _init(...args: any[]): void;
 
             // Methods
 
@@ -22580,7 +22470,6 @@ declare module 'gi://GLib?version=2.0' {
             // Constructors
 
             constructor(properties?: Partial<{}>);
-            _init(...args: any[]): void;
 
             static ['new'](): Rand;
 
@@ -22666,7 +22555,6 @@ declare module 'gi://GLib?version=2.0' {
             // Constructors
 
             constructor(properties?: Partial<{}>);
-            _init(...args: any[]): void;
 
             // Methods
 
@@ -22875,7 +22763,6 @@ declare module 'gi://GLib?version=2.0' {
             // Constructors
 
             constructor(pattern: string, compile_options: RegexCompileFlags, match_options: RegexMatchFlags);
-            _init(...args: any[]): void;
 
             static ['new'](pattern: string, compile_options: RegexCompileFlags, match_options: RegexMatchFlags): Regex;
 
@@ -23445,10 +23332,6 @@ declare module 'gi://GLib?version=2.0' {
         abstract class Relation {
             static $gtype: GObject.GType<Relation>;
 
-            // Constructors
-
-            _init(...args: any[]): void;
-
             // Methods
 
             /**
@@ -23499,7 +23382,6 @@ declare module 'gi://GLib?version=2.0' {
                     data: any;
                 }>,
             );
-            _init(...args: any[]): void;
 
             // Static methods
 
@@ -23542,10 +23424,6 @@ declare module 'gi://GLib?version=2.0' {
             next_line: number;
             next_position: number;
             msg_handler: ScannerMsgFunc;
-
-            // Constructors
-
-            _init(...args: any[]): void;
 
             // Methods
 
@@ -23758,7 +23636,6 @@ declare module 'gi://GLib?version=2.0' {
                     store_int64: number;
                 }>,
             );
-            _init(...args: any[]): void;
         }
 
         /**
@@ -23767,10 +23644,6 @@ declare module 'gi://GLib?version=2.0' {
          */
         abstract class Sequence {
             static $gtype: GObject.GType<Sequence>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
 
             // Static methods
 
@@ -24089,10 +23962,6 @@ declare module 'gi://GLib?version=2.0' {
         abstract class SequenceIter {
             static $gtype: GObject.GType<SequenceIter>;
 
-            // Constructors
-
-            _init(...args: any[]): void;
-
             // Methods
 
             /**
@@ -24157,7 +24026,6 @@ declare module 'gi://GLib?version=2.0' {
             // Constructors
 
             constructor(source_funcs: SourceFuncs, struct_size: number);
-            _init(...args: any[]): void;
 
             static ['new'](source_funcs: SourceFuncs, struct_size: number): Source;
 
@@ -24710,10 +24578,6 @@ declare module 'gi://GLib?version=2.0' {
          */
         class SourceCallbackFuncs {
             static $gtype: GObject.GType<SourceCallbackFuncs>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         /**
@@ -24746,18 +24610,10 @@ declare module 'gi://GLib?version=2.0' {
             prepare: SourceFuncsPrepareFunc;
             check: SourceFuncsCheckFunc;
             finalize: SourceFuncsFinalizeFunc;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         abstract class SourcePrivate {
             static $gtype: GObject.GType<SourcePrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         /**
@@ -24768,10 +24624,6 @@ declare module 'gi://GLib?version=2.0' {
          */
         abstract class StatBuf {
             static $gtype: GObject.GType<StatBuf>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         /**
@@ -24804,7 +24656,6 @@ declare module 'gi://GLib?version=2.0' {
                     allocated_len: number;
                 }>,
             );
-            _init(...args: any[]): void;
 
             static ['new'](init?: string | null): String;
 
@@ -25104,10 +24955,6 @@ declare module 'gi://GLib?version=2.0' {
         abstract class StringChunk {
             static $gtype: GObject.GType<StringChunk>;
 
-            // Constructors
-
-            _init(...args: any[]): void;
-
             // Methods
 
             /**
@@ -25194,7 +25041,6 @@ declare module 'gi://GLib?version=2.0' {
             // Constructors
 
             constructor(properties?: Partial<{}>);
-            _init(...args: any[]): void;
 
             static ['new'](): StrvBuilder;
 
@@ -25271,10 +25117,6 @@ declare module 'gi://GLib?version=2.0' {
         abstract class TestCase {
             static $gtype: GObject.GType<TestCase>;
 
-            // Constructors
-
-            _init(...args: any[]): void;
-
             // Methods
 
             /**
@@ -25307,7 +25149,6 @@ declare module 'gi://GLib?version=2.0' {
                     test_undefined: boolean;
                 }>,
             );
-            _init(...args: any[]): void;
         }
 
         class TestLogBuffer {
@@ -25316,7 +25157,6 @@ declare module 'gi://GLib?version=2.0' {
             // Constructors
 
             constructor(properties?: Partial<{}>);
-            _init(...args: any[]): void;
 
             // Methods
 
@@ -25342,10 +25182,6 @@ declare module 'gi://GLib?version=2.0' {
             strings: string;
             n_nums: number;
 
-            // Constructors
-
-            _init(...args: any[]): void;
-
             // Methods
 
             /**
@@ -25359,10 +25195,6 @@ declare module 'gi://GLib?version=2.0' {
          */
         abstract class TestSuite {
             static $gtype: GObject.GType<TestSuite>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
 
             // Methods
 
@@ -25403,7 +25235,6 @@ declare module 'gi://GLib?version=2.0' {
             // Constructors
 
             constructor(name: string | null, func: ThreadFunc);
-            _init(...args: any[]): void;
 
             static ['new'](name: string | null, func: ThreadFunc): Thread;
 
@@ -25530,10 +25361,6 @@ declare module 'gi://GLib?version=2.0' {
             func: Func;
             user_data: any;
             exclusive: boolean;
-
-            // Constructors
-
-            _init(...args: any[]): void;
 
             // Static methods
 
@@ -25700,7 +25527,6 @@ declare module 'gi://GLib?version=2.0' {
                     tv_usec: number;
                 }>,
             );
-            _init(...args: any[]): void;
 
             // Static methods
 
@@ -25812,7 +25638,6 @@ declare module 'gi://GLib?version=2.0' {
             // Constructors
 
             constructor(properties?: Partial<{}>);
-            _init(...args: any[]): void;
 
             static ['new'](identifier?: string | null): TimeZone;
 
@@ -25934,10 +25759,6 @@ declare module 'gi://GLib?version=2.0' {
         abstract class Timer {
             static $gtype: GObject.GType<Timer>;
 
-            // Constructors
-
-            _init(...args: any[]): void;
-
             // Methods
 
             /**
@@ -26004,10 +25825,6 @@ declare module 'gi://GLib?version=2.0' {
         class TrashStack {
             static $gtype: GObject.GType<TrashStack>;
 
-            // Constructors
-
-            _init(...args: any[]): void;
-
             // Static methods
 
             /**
@@ -26048,7 +25865,6 @@ declare module 'gi://GLib?version=2.0' {
             // Constructors
 
             constructor(key_compare_func: CompareFunc);
-            _init(...args: any[]): void;
 
             static new_full(key_compare_func: CompareDataFunc): Tree;
 
@@ -26297,10 +26113,6 @@ declare module 'gi://GLib?version=2.0' {
         abstract class TreeNode {
             static $gtype: GObject.GType<TreeNode>;
 
-            // Constructors
-
-            _init(...args: any[]): void;
-
             // Methods
 
             /**
@@ -26347,7 +26159,6 @@ declare module 'gi://GLib?version=2.0' {
                     len: number;
                 }>,
             );
-            _init(...args: any[]): void;
 
             // Methods
 
@@ -26388,7 +26199,6 @@ declare module 'gi://GLib?version=2.0' {
                     fds: number[];
                 }>,
             );
-            _init(...args: any[]): void;
         }
 
         /**
@@ -26556,10 +26366,6 @@ declare module 'gi://GLib?version=2.0' {
          */
         abstract class Uri {
             static $gtype: GObject.GType<Uri>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
 
             // Static methods
 
@@ -27062,7 +26868,6 @@ declare module 'gi://GLib?version=2.0' {
             // Constructors
 
             constructor(properties?: Partial<{}>);
-            _init(...args: any[]): void;
 
             // Methods
 
@@ -27143,7 +26948,6 @@ declare module 'gi://GLib?version=2.0' {
                     v_double: number;
                 }>,
             );
-            _init(...args: any[]): void;
         }
 
         /**
@@ -27166,7 +26970,6 @@ declare module 'gi://GLib?version=2.0' {
                     v_float: number;
                 }>,
             );
-            _init(...args: any[]): void;
         }
 
         /**
@@ -27225,7 +27028,6 @@ declare module 'gi://GLib?version=2.0' {
             // Constructors
 
             constructor(properties?: Partial<{}>);
-            _init(...args: any[]): void;
 
             // Methods
 
@@ -27340,7 +27142,6 @@ declare module 'gi://GLib?version=2.0' {
                     v_error: number;
                 }>,
             );
-            _init(...args: any[]): void;
         }
 
         type DateDay = number;

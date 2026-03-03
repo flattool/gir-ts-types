@@ -394,7 +394,6 @@ declare module 'gi://Gtk?version=3.0' {
             // Constructors
 
             constructor(options: { message: string; code: number });
-            _init(...args: any[]): void;
 
             // Static methods
 
@@ -647,7 +646,6 @@ declare module 'gi://Gtk?version=3.0' {
             // Constructors
 
             constructor(options: { message: string; code: number });
-            _init(...args: any[]): void;
 
             // Static methods
 
@@ -1031,7 +1029,6 @@ declare module 'gi://Gtk?version=3.0' {
             // Constructors
 
             constructor(options: { message: string; code: number });
-            _init(...args: any[]): void;
 
             // Static methods
 
@@ -1156,7 +1153,6 @@ declare module 'gi://Gtk?version=3.0' {
             // Constructors
 
             constructor(options: { message: string; code: number });
-            _init(...args: any[]): void;
 
             // Static methods
 
@@ -2064,7 +2060,6 @@ declare module 'gi://Gtk?version=3.0' {
             // Constructors
 
             constructor(options: { message: string; code: number });
-            _init(...args: any[]): void;
 
             // Static methods
 
@@ -2492,7 +2487,6 @@ declare module 'gi://Gtk?version=3.0' {
             // Constructors
 
             constructor(options: { message: string; code: number });
-            _init(...args: any[]): void;
 
             // Static methods
 
@@ -2544,7 +2538,6 @@ declare module 'gi://Gtk?version=3.0' {
             // Constructors
 
             constructor(options: { message: string; code: number });
-            _init(...args: any[]): void;
 
             // Static methods
 
@@ -344108,10 +344101,6 @@ declare module 'gi://Gtk?version=3.0' {
         type AboutDialogClass = typeof AboutDialog;
         abstract class AboutDialogPrivate {
             static $gtype: GObject.GType<AboutDialogPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type AccelGroupClass = typeof AccelGroup;
@@ -344121,18 +344110,10 @@ declare module 'gi://Gtk?version=3.0' {
             // Fields
 
             accel_path_quark: GLib.Quark;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         abstract class AccelGroupPrivate {
             static $gtype: GObject.GType<AccelGroupPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         class AccelKey {
@@ -344143,38 +344124,22 @@ declare module 'gi://Gtk?version=3.0' {
             accel_key: number;
             accel_mods: Gdk.ModifierType;
             accel_flags: number;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type AccelLabelClass = typeof AccelLabel;
         abstract class AccelLabelPrivate {
             static $gtype: GObject.GType<AccelLabelPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type AccelMapClass = typeof AccelMap;
         type AccessibleClass = typeof Accessible;
         abstract class AccessiblePrivate {
             static $gtype: GObject.GType<AccessiblePrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type ActionBarClass = typeof ActionBar;
         abstract class ActionBarPrivate {
             static $gtype: GObject.GType<ActionBarPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type ActionClass = typeof Action;
@@ -344193,27 +344158,15 @@ declare module 'gi://Gtk?version=3.0' {
             accelerator: string;
             tooltip: string;
             callback: GObject.Callback;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type ActionGroupClass = typeof ActionGroup;
         abstract class ActionGroupPrivate {
             static $gtype: GObject.GType<ActionGroupPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         abstract class ActionPrivate {
             static $gtype: GObject.GType<ActionPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type ActionableInterface = typeof Actionable;
@@ -344221,109 +344174,61 @@ declare module 'gi://Gtk?version=3.0' {
         type AdjustmentClass = typeof Adjustment;
         abstract class AdjustmentPrivate {
             static $gtype: GObject.GType<AdjustmentPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type AlignmentClass = typeof Alignment;
         abstract class AlignmentPrivate {
             static $gtype: GObject.GType<AlignmentPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type AppChooserButtonClass = typeof AppChooserButton;
         abstract class AppChooserButtonPrivate {
             static $gtype: GObject.GType<AppChooserButtonPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type AppChooserDialogClass = typeof AppChooserDialog;
         abstract class AppChooserDialogPrivate {
             static $gtype: GObject.GType<AppChooserDialogPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type AppChooserWidgetClass = typeof AppChooserWidget;
         abstract class AppChooserWidgetPrivate {
             static $gtype: GObject.GType<AppChooserWidgetPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type ApplicationClass = typeof Application;
         abstract class ApplicationPrivate {
             static $gtype: GObject.GType<ApplicationPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type ApplicationWindowClass = typeof ApplicationWindow;
         abstract class ApplicationWindowPrivate {
             static $gtype: GObject.GType<ApplicationWindowPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type ArrowAccessibleClass = typeof ArrowAccessible;
         abstract class ArrowAccessiblePrivate {
             static $gtype: GObject.GType<ArrowAccessiblePrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type ArrowClass = typeof Arrow;
         abstract class ArrowPrivate {
             static $gtype: GObject.GType<ArrowPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type AspectFrameClass = typeof AspectFrame;
         abstract class AspectFramePrivate {
             static $gtype: GObject.GType<AspectFramePrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type AssistantClass = typeof Assistant;
         abstract class AssistantPrivate {
             static $gtype: GObject.GType<AssistantPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type BinClass = typeof Bin;
         abstract class BinPrivate {
             static $gtype: GObject.GType<BinPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         /**
@@ -344337,10 +344242,6 @@ declare module 'gi://Gtk?version=3.0' {
             // Fields
 
             arg_type: GObject.GType;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         /**
@@ -344357,10 +344258,6 @@ declare module 'gi://Gtk?version=3.0' {
             destroyed: number;
             in_emission: number;
             marks_unbound: number;
-
-            // Constructors
-
-            _init(...args: any[]): void;
 
             // Static methods
 
@@ -344447,10 +344344,6 @@ declare module 'gi://Gtk?version=3.0' {
             class_branch_pspecs: any[];
             parsed: number;
 
-            // Constructors
-
-            _init(...args: any[]): void;
-
             // Static methods
 
             /**
@@ -344497,19 +344390,11 @@ declare module 'gi://Gtk?version=3.0' {
 
             signal_name: string;
             n_args: number;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type BooleanCellAccessibleClass = typeof BooleanCellAccessible;
         abstract class BooleanCellAccessiblePrivate {
             static $gtype: GObject.GType<BooleanCellAccessiblePrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         /**
@@ -344536,7 +344421,6 @@ declare module 'gi://Gtk?version=3.0' {
                     bottom: number;
                 }>,
             );
-            _init(...args: any[]): void;
 
             static ['new'](): Border;
 
@@ -344556,93 +344440,53 @@ declare module 'gi://Gtk?version=3.0' {
         type BoxClass = typeof Box;
         abstract class BoxPrivate {
             static $gtype: GObject.GType<BoxPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type BuildableIface = typeof Buildable;
         type BuilderClass = typeof Builder;
         abstract class BuilderPrivate {
             static $gtype: GObject.GType<BuilderPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type ButtonAccessibleClass = typeof ButtonAccessible;
         abstract class ButtonAccessiblePrivate {
             static $gtype: GObject.GType<ButtonAccessiblePrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type ButtonBoxClass = typeof ButtonBox;
         abstract class ButtonBoxPrivate {
             static $gtype: GObject.GType<ButtonBoxPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type ButtonClass = typeof Button;
         abstract class ButtonPrivate {
             static $gtype: GObject.GType<ButtonPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type CalendarClass = typeof Calendar;
         abstract class CalendarPrivate {
             static $gtype: GObject.GType<CalendarPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type CellAccessibleClass = typeof CellAccessible;
         type CellAccessibleParentIface = typeof CellAccessibleParent;
         abstract class CellAccessiblePrivate {
             static $gtype: GObject.GType<CellAccessiblePrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type CellAreaBoxClass = typeof CellAreaBox;
         abstract class CellAreaBoxPrivate {
             static $gtype: GObject.GType<CellAreaBoxPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type CellAreaClass = typeof CellArea;
         type CellAreaContextClass = typeof CellAreaContext;
         abstract class CellAreaContextPrivate {
             static $gtype: GObject.GType<CellAreaContextPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         abstract class CellAreaPrivate {
             static $gtype: GObject.GType<CellAreaPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type CellEditableIface = typeof CellEditable;
@@ -344650,227 +344494,127 @@ declare module 'gi://Gtk?version=3.0' {
         type CellRendererAccelClass = typeof CellRendererAccel;
         abstract class CellRendererAccelPrivate {
             static $gtype: GObject.GType<CellRendererAccelPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type CellRendererClass = typeof CellRenderer;
         abstract class CellRendererClassPrivate {
             static $gtype: GObject.GType<CellRendererClassPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type CellRendererComboClass = typeof CellRendererCombo;
         abstract class CellRendererComboPrivate {
             static $gtype: GObject.GType<CellRendererComboPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type CellRendererPixbufClass = typeof CellRendererPixbuf;
         abstract class CellRendererPixbufPrivate {
             static $gtype: GObject.GType<CellRendererPixbufPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         abstract class CellRendererPrivate {
             static $gtype: GObject.GType<CellRendererPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type CellRendererProgressClass = typeof CellRendererProgress;
         abstract class CellRendererProgressPrivate {
             static $gtype: GObject.GType<CellRendererProgressPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type CellRendererSpinClass = typeof CellRendererSpin;
         abstract class CellRendererSpinPrivate {
             static $gtype: GObject.GType<CellRendererSpinPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type CellRendererSpinnerClass = typeof CellRendererSpinner;
         abstract class CellRendererSpinnerPrivate {
             static $gtype: GObject.GType<CellRendererSpinnerPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type CellRendererTextClass = typeof CellRendererText;
         abstract class CellRendererTextPrivate {
             static $gtype: GObject.GType<CellRendererTextPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type CellRendererToggleClass = typeof CellRendererToggle;
         abstract class CellRendererTogglePrivate {
             static $gtype: GObject.GType<CellRendererTogglePrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type CellViewClass = typeof CellView;
         abstract class CellViewPrivate {
             static $gtype: GObject.GType<CellViewPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type CheckButtonClass = typeof CheckButton;
         type CheckMenuItemAccessibleClass = typeof CheckMenuItemAccessible;
         abstract class CheckMenuItemAccessiblePrivate {
             static $gtype: GObject.GType<CheckMenuItemAccessiblePrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type CheckMenuItemClass = typeof CheckMenuItem;
         abstract class CheckMenuItemPrivate {
             static $gtype: GObject.GType<CheckMenuItemPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type ColorButtonClass = typeof ColorButton;
         abstract class ColorButtonPrivate {
             static $gtype: GObject.GType<ColorButtonPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type ColorChooserDialogClass = typeof ColorChooserDialog;
         abstract class ColorChooserDialogPrivate {
             static $gtype: GObject.GType<ColorChooserDialogPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type ColorChooserInterface = typeof ColorChooser;
         type ColorChooserWidgetClass = typeof ColorChooserWidget;
         abstract class ColorChooserWidgetPrivate {
             static $gtype: GObject.GType<ColorChooserWidgetPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type ColorSelectionClass = typeof ColorSelection;
         type ColorSelectionDialogClass = typeof ColorSelectionDialog;
         abstract class ColorSelectionDialogPrivate {
             static $gtype: GObject.GType<ColorSelectionDialogPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         abstract class ColorSelectionPrivate {
             static $gtype: GObject.GType<ColorSelectionPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type ComboBoxAccessibleClass = typeof ComboBoxAccessible;
         abstract class ComboBoxAccessiblePrivate {
             static $gtype: GObject.GType<ComboBoxAccessiblePrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type ComboBoxClass = typeof ComboBox;
         abstract class ComboBoxPrivate {
             static $gtype: GObject.GType<ComboBoxPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type ComboBoxTextClass = typeof ComboBoxText;
         abstract class ComboBoxTextPrivate {
             static $gtype: GObject.GType<ComboBoxTextPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type ContainerAccessibleClass = typeof ContainerAccessible;
         abstract class ContainerAccessiblePrivate {
             static $gtype: GObject.GType<ContainerAccessiblePrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type ContainerCellAccessibleClass = typeof ContainerCellAccessible;
         abstract class ContainerCellAccessiblePrivate {
             static $gtype: GObject.GType<ContainerCellAccessiblePrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type ContainerClass = typeof Container;
         abstract class ContainerPrivate {
             static $gtype: GObject.GType<ContainerPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type CssProviderClass = typeof CssProvider;
         abstract class CssProviderPrivate {
             static $gtype: GObject.GType<CssProviderPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         /**
@@ -344880,10 +344624,6 @@ declare module 'gi://Gtk?version=3.0' {
          */
         abstract class CssSection {
             static $gtype: GObject.GType<CssSection>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
 
             // Methods
 
@@ -344963,10 +344703,6 @@ declare module 'gi://Gtk?version=3.0' {
         type DialogClass = typeof Dialog;
         abstract class DialogPrivate {
             static $gtype: GObject.GType<DialogPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type DrawingAreaClass = typeof DrawingArea;
@@ -344974,46 +344710,26 @@ declare module 'gi://Gtk?version=3.0' {
         type EntryAccessibleClass = typeof EntryAccessible;
         abstract class EntryAccessiblePrivate {
             static $gtype: GObject.GType<EntryAccessiblePrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type EntryBufferClass = typeof EntryBuffer;
         abstract class EntryBufferPrivate {
             static $gtype: GObject.GType<EntryBufferPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type EntryClass = typeof Entry;
         type EntryCompletionClass = typeof EntryCompletion;
         abstract class EntryCompletionPrivate {
             static $gtype: GObject.GType<EntryCompletionPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         abstract class EntryPrivate {
             static $gtype: GObject.GType<EntryPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type EventBoxClass = typeof EventBox;
         abstract class EventBoxPrivate {
             static $gtype: GObject.GType<EventBoxPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type EventControllerClass = typeof EventController;
@@ -345023,56 +344739,32 @@ declare module 'gi://Gtk?version=3.0' {
         type ExpanderAccessibleClass = typeof ExpanderAccessible;
         abstract class ExpanderAccessiblePrivate {
             static $gtype: GObject.GType<ExpanderAccessiblePrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type ExpanderClass = typeof Expander;
         abstract class ExpanderPrivate {
             static $gtype: GObject.GType<ExpanderPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type FileChooserButtonClass = typeof FileChooserButton;
         abstract class FileChooserButtonPrivate {
             static $gtype: GObject.GType<FileChooserButtonPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type FileChooserDialogClass = typeof FileChooserDialog;
         abstract class FileChooserDialogPrivate {
             static $gtype: GObject.GType<FileChooserDialogPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type FileChooserNativeClass = typeof FileChooserNative;
         type FileChooserWidgetAccessibleClass = typeof FileChooserWidgetAccessible;
         abstract class FileChooserWidgetAccessiblePrivate {
             static $gtype: GObject.GType<FileChooserWidgetAccessiblePrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type FileChooserWidgetClass = typeof FileChooserWidget;
         abstract class FileChooserWidgetPrivate {
             static $gtype: GObject.GType<FileChooserWidgetPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         /**
@@ -345089,10 +344781,6 @@ declare module 'gi://Gtk?version=3.0' {
             uri: string;
             display_name: string;
             mime_type: string;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         class FixedChild {
@@ -345103,28 +344791,16 @@ declare module 'gi://Gtk?version=3.0' {
             widget: Widget;
             x: number;
             y: number;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type FixedClass = typeof Fixed;
         abstract class FixedPrivate {
             static $gtype: GObject.GType<FixedPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type FlowBoxAccessibleClass = typeof FlowBoxAccessible;
         abstract class FlowBoxAccessiblePrivate {
             static $gtype: GObject.GType<FlowBoxAccessiblePrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type FlowBoxChildAccessibleClass = typeof FlowBoxChildAccessible;
@@ -345133,65 +344809,37 @@ declare module 'gi://Gtk?version=3.0' {
         type FontButtonClass = typeof FontButton;
         abstract class FontButtonPrivate {
             static $gtype: GObject.GType<FontButtonPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type FontChooserDialogClass = typeof FontChooserDialog;
         abstract class FontChooserDialogPrivate {
             static $gtype: GObject.GType<FontChooserDialogPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type FontChooserIface = typeof FontChooser;
         type FontChooserWidgetClass = typeof FontChooserWidget;
         abstract class FontChooserWidgetPrivate {
             static $gtype: GObject.GType<FontChooserWidgetPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type FontSelectionClass = typeof FontSelection;
         type FontSelectionDialogClass = typeof FontSelectionDialog;
         abstract class FontSelectionDialogPrivate {
             static $gtype: GObject.GType<FontSelectionDialogPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         abstract class FontSelectionPrivate {
             static $gtype: GObject.GType<FontSelectionPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type FrameAccessibleClass = typeof FrameAccessible;
         abstract class FrameAccessiblePrivate {
             static $gtype: GObject.GType<FrameAccessiblePrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type FrameClass = typeof Frame;
         abstract class FramePrivate {
             static $gtype: GObject.GType<FramePrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type GLAreaClass = typeof GLArea;
@@ -345229,7 +344877,6 @@ declare module 'gi://Gtk?version=3.0' {
             // Constructors
 
             constructor(x0: number, y0: number, x1: number, y1: number);
-            _init(...args: any[]): void;
 
             static new_linear(x0: number, y0: number, x1: number, y1: number): Gradient;
 
@@ -345282,10 +344929,6 @@ declare module 'gi://Gtk?version=3.0' {
         type GridClass = typeof Grid;
         abstract class GridPrivate {
             static $gtype: GObject.GType<GridPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type HBoxClass = typeof HBox;
@@ -345294,10 +344937,6 @@ declare module 'gi://Gtk?version=3.0' {
         type HSVClass = typeof HSV;
         abstract class HSVPrivate {
             static $gtype: GObject.GType<HSVPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type HScaleClass = typeof HScale;
@@ -345306,28 +344945,16 @@ declare module 'gi://Gtk?version=3.0' {
         type HandleBoxClass = typeof HandleBox;
         abstract class HandleBoxPrivate {
             static $gtype: GObject.GType<HandleBoxPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type HeaderBarAccessibleClass = typeof HeaderBarAccessible;
         abstract class HeaderBarAccessiblePrivate {
             static $gtype: GObject.GType<HeaderBarAccessiblePrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type HeaderBarClass = typeof HeaderBar;
         abstract class HeaderBarPrivate {
             static $gtype: GObject.GType<HeaderBarPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type IMContextClass = typeof IMContext;
@@ -345356,34 +344983,21 @@ declare module 'gi://Gtk?version=3.0' {
                     default_locales: string;
                 }>,
             );
-            _init(...args: any[]): void;
         }
 
         type IMContextSimpleClass = typeof IMContextSimple;
         abstract class IMContextSimplePrivate {
             static $gtype: GObject.GType<IMContextSimplePrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type IMMulticontextClass = typeof IMMulticontext;
         abstract class IMMulticontextPrivate {
             static $gtype: GObject.GType<IMMulticontextPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type IconFactoryClass = typeof IconFactory;
         abstract class IconFactoryPrivate {
             static $gtype: GObject.GType<IconFactoryPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type IconInfoClass = typeof IconInfo;
@@ -345393,7 +345007,6 @@ declare module 'gi://Gtk?version=3.0' {
             // Constructors
 
             constructor(properties?: Partial<{}>);
-            _init(...args: any[]): void;
 
             static ['new'](): IconSet;
 
@@ -345512,7 +345125,6 @@ declare module 'gi://Gtk?version=3.0' {
             // Constructors
 
             constructor(properties?: Partial<{}>);
-            _init(...args: any[]): void;
 
             static ['new'](): IconSource;
 
@@ -345690,162 +345302,90 @@ declare module 'gi://Gtk?version=3.0' {
         type IconThemeClass = typeof IconTheme;
         abstract class IconThemePrivate {
             static $gtype: GObject.GType<IconThemePrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type IconViewAccessibleClass = typeof IconViewAccessible;
         abstract class IconViewAccessiblePrivate {
             static $gtype: GObject.GType<IconViewAccessiblePrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type IconViewClass = typeof IconView;
         abstract class IconViewPrivate {
             static $gtype: GObject.GType<IconViewPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type ImageAccessibleClass = typeof ImageAccessible;
         abstract class ImageAccessiblePrivate {
             static $gtype: GObject.GType<ImageAccessiblePrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type ImageCellAccessibleClass = typeof ImageCellAccessible;
         abstract class ImageCellAccessiblePrivate {
             static $gtype: GObject.GType<ImageCellAccessiblePrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type ImageClass = typeof Image;
         type ImageMenuItemClass = typeof ImageMenuItem;
         abstract class ImageMenuItemPrivate {
             static $gtype: GObject.GType<ImageMenuItemPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         abstract class ImagePrivate {
             static $gtype: GObject.GType<ImagePrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type InfoBarClass = typeof InfoBar;
         abstract class InfoBarPrivate {
             static $gtype: GObject.GType<InfoBarPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type InvisibleClass = typeof Invisible;
         abstract class InvisiblePrivate {
             static $gtype: GObject.GType<InvisiblePrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type LabelAccessibleClass = typeof LabelAccessible;
         abstract class LabelAccessiblePrivate {
             static $gtype: GObject.GType<LabelAccessiblePrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type LabelClass = typeof Label;
         abstract class LabelPrivate {
             static $gtype: GObject.GType<LabelPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         abstract class LabelSelectionInfo {
             static $gtype: GObject.GType<LabelSelectionInfo>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type LayoutClass = typeof Layout;
         abstract class LayoutPrivate {
             static $gtype: GObject.GType<LayoutPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type LevelBarAccessibleClass = typeof LevelBarAccessible;
         abstract class LevelBarAccessiblePrivate {
             static $gtype: GObject.GType<LevelBarAccessiblePrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type LevelBarClass = typeof LevelBar;
         abstract class LevelBarPrivate {
             static $gtype: GObject.GType<LevelBarPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type LinkButtonAccessibleClass = typeof LinkButtonAccessible;
         abstract class LinkButtonAccessiblePrivate {
             static $gtype: GObject.GType<LinkButtonAccessiblePrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type LinkButtonClass = typeof LinkButton;
         abstract class LinkButtonPrivate {
             static $gtype: GObject.GType<LinkButtonPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type ListBoxAccessibleClass = typeof ListBoxAccessible;
         abstract class ListBoxAccessiblePrivate {
             static $gtype: GObject.GType<ListBoxAccessiblePrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type ListBoxClass = typeof ListBox;
@@ -345854,182 +345394,102 @@ declare module 'gi://Gtk?version=3.0' {
         type ListStoreClass = typeof ListStore;
         abstract class ListStorePrivate {
             static $gtype: GObject.GType<ListStorePrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type LockButtonAccessibleClass = typeof LockButtonAccessible;
         abstract class LockButtonAccessiblePrivate {
             static $gtype: GObject.GType<LockButtonAccessiblePrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type LockButtonClass = typeof LockButton;
         abstract class LockButtonPrivate {
             static $gtype: GObject.GType<LockButtonPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type MenuAccessibleClass = typeof MenuAccessible;
         abstract class MenuAccessiblePrivate {
             static $gtype: GObject.GType<MenuAccessiblePrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type MenuBarClass = typeof MenuBar;
         abstract class MenuBarPrivate {
             static $gtype: GObject.GType<MenuBarPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type MenuButtonAccessibleClass = typeof MenuButtonAccessible;
         abstract class MenuButtonAccessiblePrivate {
             static $gtype: GObject.GType<MenuButtonAccessiblePrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type MenuButtonClass = typeof MenuButton;
         abstract class MenuButtonPrivate {
             static $gtype: GObject.GType<MenuButtonPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type MenuClass = typeof Menu;
         type MenuItemAccessibleClass = typeof MenuItemAccessible;
         abstract class MenuItemAccessiblePrivate {
             static $gtype: GObject.GType<MenuItemAccessiblePrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type MenuItemClass = typeof MenuItem;
         abstract class MenuItemPrivate {
             static $gtype: GObject.GType<MenuItemPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         abstract class MenuPrivate {
             static $gtype: GObject.GType<MenuPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type MenuShellAccessibleClass = typeof MenuShellAccessible;
         abstract class MenuShellAccessiblePrivate {
             static $gtype: GObject.GType<MenuShellAccessiblePrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type MenuShellClass = typeof MenuShell;
         abstract class MenuShellPrivate {
             static $gtype: GObject.GType<MenuShellPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type MenuToolButtonClass = typeof MenuToolButton;
         abstract class MenuToolButtonPrivate {
             static $gtype: GObject.GType<MenuToolButtonPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type MessageDialogClass = typeof MessageDialog;
         abstract class MessageDialogPrivate {
             static $gtype: GObject.GType<MessageDialogPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type MiscClass = typeof Misc;
         abstract class MiscPrivate {
             static $gtype: GObject.GType<MiscPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type MountOperationClass = typeof MountOperation;
         abstract class MountOperationPrivate {
             static $gtype: GObject.GType<MountOperationPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type NativeDialogClass = typeof NativeDialog;
         type NotebookAccessibleClass = typeof NotebookAccessible;
         abstract class NotebookAccessiblePrivate {
             static $gtype: GObject.GType<NotebookAccessiblePrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type NotebookClass = typeof Notebook;
         type NotebookPageAccessibleClass = typeof NotebookPageAccessible;
         abstract class NotebookPageAccessiblePrivate {
             static $gtype: GObject.GType<NotebookPageAccessiblePrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         abstract class NotebookPrivate {
             static $gtype: GObject.GType<NotebookPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type NumerableIconClass = typeof NumerableIcon;
         abstract class NumerableIconPrivate {
             static $gtype: GObject.GType<NumerableIconPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type OffscreenWindowClass = typeof OffscreenWindow;
@@ -346037,10 +345497,6 @@ declare module 'gi://Gtk?version=3.0' {
         type OverlayClass = typeof Overlay;
         abstract class OverlayPrivate {
             static $gtype: GObject.GType<OverlayPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         /**
@@ -346056,10 +345512,6 @@ declare module 'gi://Gtk?version=3.0' {
             mode: number;
             label: string;
             action_name: string;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type PadControllerClass = typeof PadController;
@@ -346082,25 +345534,16 @@ declare module 'gi://Gtk?version=3.0' {
                     end: number;
                 }>,
             );
-            _init(...args: any[]): void;
         }
 
         type PanedAccessibleClass = typeof PanedAccessible;
         abstract class PanedAccessiblePrivate {
             static $gtype: GObject.GType<PanedAccessiblePrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type PanedClass = typeof Paned;
         abstract class PanedPrivate {
             static $gtype: GObject.GType<PanedPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         /**
@@ -346122,7 +345565,6 @@ declare module 'gi://Gtk?version=3.0' {
             // Constructors
 
             constructor(name?: string | null);
-            _init(...args: any[]): void;
 
             static ['new'](name?: string | null): PaperSize;
 
@@ -346254,19 +345696,11 @@ declare module 'gi://Gtk?version=3.0' {
         type PlugAccessibleClass = typeof PlugAccessible;
         abstract class PlugAccessiblePrivate {
             static $gtype: GObject.GType<PlugAccessiblePrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type PlugClass = typeof Plug;
         abstract class PlugPrivate {
             static $gtype: GObject.GType<PlugPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type PopoverAccessibleClass = typeof PopoverAccessible;
@@ -346274,38 +345708,22 @@ declare module 'gi://Gtk?version=3.0' {
         type PopoverMenuClass = typeof PopoverMenu;
         abstract class PopoverPrivate {
             static $gtype: GObject.GType<PopoverPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type PrintOperationClass = typeof PrintOperation;
         type PrintOperationPreviewIface = typeof PrintOperationPreview;
         abstract class PrintOperationPrivate {
             static $gtype: GObject.GType<PrintOperationPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type ProgressBarAccessibleClass = typeof ProgressBarAccessible;
         abstract class ProgressBarAccessiblePrivate {
             static $gtype: GObject.GType<ProgressBarAccessiblePrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type ProgressBarClass = typeof ProgressBar;
         abstract class ProgressBarPrivate {
             static $gtype: GObject.GType<ProgressBarPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type RadioActionClass = typeof RadioAction;
@@ -346337,78 +345755,45 @@ declare module 'gi://Gtk?version=3.0' {
                     value: number;
                 }>,
             );
-            _init(...args: any[]): void;
         }
 
         abstract class RadioActionPrivate {
             static $gtype: GObject.GType<RadioActionPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type RadioButtonAccessibleClass = typeof RadioButtonAccessible;
         abstract class RadioButtonAccessiblePrivate {
             static $gtype: GObject.GType<RadioButtonAccessiblePrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type RadioButtonClass = typeof RadioButton;
         abstract class RadioButtonPrivate {
             static $gtype: GObject.GType<RadioButtonPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type RadioMenuItemAccessibleClass = typeof RadioMenuItemAccessible;
         abstract class RadioMenuItemAccessiblePrivate {
             static $gtype: GObject.GType<RadioMenuItemAccessiblePrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type RadioMenuItemClass = typeof RadioMenuItem;
         abstract class RadioMenuItemPrivate {
             static $gtype: GObject.GType<RadioMenuItemPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type RadioToolButtonClass = typeof RadioToolButton;
         type RangeAccessibleClass = typeof RangeAccessible;
         abstract class RangeAccessiblePrivate {
             static $gtype: GObject.GType<RangeAccessiblePrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type RangeClass = typeof Range;
         abstract class RangePrivate {
             static $gtype: GObject.GType<RangePrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         abstract class RcContext {
             static $gtype: GObject.GType<RcContext>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         /**
@@ -346422,10 +345807,6 @@ declare module 'gi://Gtk?version=3.0' {
             type_name: GLib.Quark;
             property_name: GLib.Quark;
             origin: string;
-
-            // Constructors
-
-            _init(...args: any[]): void;
 
             // Static methods
 
@@ -346513,38 +345894,22 @@ declare module 'gi://Gtk?version=3.0' {
         type RecentActionClass = typeof RecentAction;
         abstract class RecentActionPrivate {
             static $gtype: GObject.GType<RecentActionPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type RecentChooserDialogClass = typeof RecentChooserDialog;
         abstract class RecentChooserDialogPrivate {
             static $gtype: GObject.GType<RecentChooserDialogPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type RecentChooserIface = typeof RecentChooser;
         type RecentChooserMenuClass = typeof RecentChooserMenu;
         abstract class RecentChooserMenuPrivate {
             static $gtype: GObject.GType<RecentChooserMenuPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type RecentChooserWidgetClass = typeof RecentChooserWidget;
         abstract class RecentChooserWidgetPrivate {
             static $gtype: GObject.GType<RecentChooserWidgetPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         /**
@@ -346577,7 +345942,6 @@ declare module 'gi://Gtk?version=3.0' {
                     is_private: boolean;
                 }>,
             );
-            _init(...args: any[]): void;
         }
 
         /**
@@ -346596,10 +345960,6 @@ declare module 'gi://Gtk?version=3.0' {
             applications: string[];
             groups: string[];
             age: number;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         /**
@@ -346611,10 +345971,6 @@ declare module 'gi://Gtk?version=3.0' {
          */
         abstract class RecentInfo {
             static $gtype: GObject.GType<RecentInfo>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
 
             // Methods
 
@@ -346778,19 +346134,11 @@ declare module 'gi://Gtk?version=3.0' {
         type RecentManagerClass = typeof RecentManager;
         abstract class RecentManagerPrivate {
             static $gtype: GObject.GType<RecentManagerPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type RendererCellAccessibleClass = typeof RendererCellAccessible;
         abstract class RendererCellAccessiblePrivate {
             static $gtype: GObject.GType<RendererCellAccessiblePrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         /**
@@ -346816,7 +346164,6 @@ declare module 'gi://Gtk?version=3.0' {
                     natural_size: number;
                 }>,
             );
-            _init(...args: any[]): void;
         }
 
         /**
@@ -346840,7 +346187,6 @@ declare module 'gi://Gtk?version=3.0' {
                     height: number;
                 }>,
             );
-            _init(...args: any[]): void;
 
             static ['new'](): Requisition;
 
@@ -346861,37 +346207,21 @@ declare module 'gi://Gtk?version=3.0' {
         type ScaleAccessibleClass = typeof ScaleAccessible;
         abstract class ScaleAccessiblePrivate {
             static $gtype: GObject.GType<ScaleAccessiblePrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type ScaleButtonAccessibleClass = typeof ScaleButtonAccessible;
         abstract class ScaleButtonAccessiblePrivate {
             static $gtype: GObject.GType<ScaleButtonAccessiblePrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type ScaleButtonClass = typeof ScaleButton;
         abstract class ScaleButtonPrivate {
             static $gtype: GObject.GType<ScaleButtonPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type ScaleClass = typeof Scale;
         abstract class ScalePrivate {
             static $gtype: GObject.GType<ScalePrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type ScrollableInterface = typeof Scrollable;
@@ -346899,29 +346229,17 @@ declare module 'gi://Gtk?version=3.0' {
         type ScrolledWindowAccessibleClass = typeof ScrolledWindowAccessible;
         abstract class ScrolledWindowAccessiblePrivate {
             static $gtype: GObject.GType<ScrolledWindowAccessiblePrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type ScrolledWindowClass = typeof ScrolledWindow;
         abstract class ScrolledWindowPrivate {
             static $gtype: GObject.GType<ScrolledWindowPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type SearchBarClass = typeof SearchBar;
         type SearchEntryClass = typeof SearchEntry;
         abstract class SelectionData {
             static $gtype: GObject.GType<SelectionData>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
 
             // Methods
 
@@ -347069,28 +346387,16 @@ declare module 'gi://Gtk?version=3.0' {
         type SeparatorMenuItemClass = typeof SeparatorMenuItem;
         abstract class SeparatorPrivate {
             static $gtype: GObject.GType<SeparatorPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type SeparatorToolItemClass = typeof SeparatorToolItem;
         abstract class SeparatorToolItemPrivate {
             static $gtype: GObject.GType<SeparatorToolItemPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type SettingsClass = typeof Settings;
         abstract class SettingsPrivate {
             static $gtype: GObject.GType<SettingsPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         class SettingsValue {
@@ -347099,10 +346405,6 @@ declare module 'gi://Gtk?version=3.0' {
             // Fields
 
             origin: string;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type ShortcutLabelClass = typeof ShortcutLabel;
@@ -347113,64 +346415,36 @@ declare module 'gi://Gtk?version=3.0' {
         type SizeGroupClass = typeof SizeGroup;
         abstract class SizeGroupPrivate {
             static $gtype: GObject.GType<SizeGroupPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type SocketAccessibleClass = typeof SocketAccessible;
         abstract class SocketAccessiblePrivate {
             static $gtype: GObject.GType<SocketAccessiblePrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type SocketClass = typeof Socket;
         abstract class SocketPrivate {
             static $gtype: GObject.GType<SocketPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type SpinButtonAccessibleClass = typeof SpinButtonAccessible;
         abstract class SpinButtonAccessiblePrivate {
             static $gtype: GObject.GType<SpinButtonAccessiblePrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type SpinButtonClass = typeof SpinButton;
         abstract class SpinButtonPrivate {
             static $gtype: GObject.GType<SpinButtonPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type SpinnerAccessibleClass = typeof SpinnerAccessible;
         abstract class SpinnerAccessiblePrivate {
             static $gtype: GObject.GType<SpinnerAccessiblePrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type SpinnerClass = typeof Spinner;
         abstract class SpinnerPrivate {
             static $gtype: GObject.GType<SpinnerPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type StackAccessibleClass = typeof StackAccessible;
@@ -347178,38 +346452,22 @@ declare module 'gi://Gtk?version=3.0' {
         type StackSidebarClass = typeof StackSidebar;
         abstract class StackSidebarPrivate {
             static $gtype: GObject.GType<StackSidebarPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type StackSwitcherClass = typeof StackSwitcher;
         type StatusIconClass = typeof StatusIcon;
         abstract class StatusIconPrivate {
             static $gtype: GObject.GType<StatusIconPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type StatusbarAccessibleClass = typeof StatusbarAccessible;
         abstract class StatusbarAccessiblePrivate {
             static $gtype: GObject.GType<StatusbarAccessiblePrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type StatusbarClass = typeof Statusbar;
         abstract class StatusbarPrivate {
             static $gtype: GObject.GType<StatusbarPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         class StockItem {
@@ -347222,10 +346480,6 @@ declare module 'gi://Gtk?version=3.0' {
             modifier: Gdk.ModifierType;
             keyval: number;
             translation_domain: string;
-
-            // Constructors
-
-            _init(...args: any[]): void;
 
             // Methods
 
@@ -347241,38 +346495,22 @@ declare module 'gi://Gtk?version=3.0' {
         type StyleContextClass = typeof StyleContext;
         abstract class StyleContextPrivate {
             static $gtype: GObject.GType<StyleContextPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type StylePropertiesClass = typeof StyleProperties;
         abstract class StylePropertiesPrivate {
             static $gtype: GObject.GType<StylePropertiesPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type StyleProviderIface = typeof StyleProvider;
         type SwitchAccessibleClass = typeof SwitchAccessible;
         abstract class SwitchAccessiblePrivate {
             static $gtype: GObject.GType<SwitchAccessiblePrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type SwitchClass = typeof Switch;
         abstract class SwitchPrivate {
             static $gtype: GObject.GType<SwitchPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         /**
@@ -347298,7 +346536,6 @@ declare module 'gi://Gtk?version=3.0' {
             // Constructors
 
             constructor(color: SymbolicColor, factor: number);
-            _init(...args: any[]): void;
 
             static new_alpha(color: SymbolicColor, factor: number): SymbolicColor;
 
@@ -347366,19 +346603,11 @@ declare module 'gi://Gtk?version=3.0' {
             yshrink: number;
             xfill: number;
             yfill: number;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type TableClass = typeof Table;
         abstract class TablePrivate {
             static $gtype: GObject.GType<TablePrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         class TableRowCol {
@@ -347409,7 +346638,6 @@ declare module 'gi://Gtk?version=3.0' {
                     empty: number;
                 }>,
             );
-            _init(...args: any[]): void;
         }
 
         /**
@@ -347435,7 +346663,6 @@ declare module 'gi://Gtk?version=3.0' {
                     info: number;
                 }>,
             );
-            _init(...args: any[]): void;
 
             static ['new'](target: string, flags: number, info: number): TargetEntry;
 
@@ -347464,7 +346691,6 @@ declare module 'gi://Gtk?version=3.0' {
             // Constructors
 
             constructor(targets?: TargetEntry[] | null);
-            _init(...args: any[]): void;
 
             static ['new'](targets?: TargetEntry[] | null): TargetList;
 
@@ -347550,19 +346776,11 @@ declare module 'gi://Gtk?version=3.0' {
 
             flags: number;
             info: number;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type TearoffMenuItemClass = typeof TearoffMenuItem;
         abstract class TearoffMenuItemPrivate {
             static $gtype: GObject.GType<TearoffMenuItemPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         class TextAppearance {
@@ -347593,7 +346811,6 @@ declare module 'gi://Gtk?version=3.0' {
                     is_text: number;
                 }>,
             );
-            _init(...args: any[]): void;
         }
 
         /**
@@ -347646,7 +346863,6 @@ declare module 'gi://Gtk?version=3.0' {
                     letter_spacing: number;
                 }>,
             );
-            _init(...args: any[]): void;
 
             static ['new'](): TextAttributes;
 
@@ -347677,28 +346893,16 @@ declare module 'gi://Gtk?version=3.0' {
 
         abstract class TextBTree {
             static $gtype: GObject.GType<TextBTree>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type TextBufferClass = typeof TextBuffer;
         abstract class TextBufferPrivate {
             static $gtype: GObject.GType<TextBufferPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type TextCellAccessibleClass = typeof TextCellAccessible;
         abstract class TextCellAccessiblePrivate {
             static $gtype: GObject.GType<TextCellAccessiblePrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type TextChildAnchorClass = typeof TextChildAnchor;
@@ -347714,7 +346918,6 @@ declare module 'gi://Gtk?version=3.0' {
             // Constructors
 
             constructor(properties?: Partial<{}>);
-            _init(...args: any[]): void;
 
             // Methods
 
@@ -348557,54 +347760,30 @@ declare module 'gi://Gtk?version=3.0' {
         type TextTagClass = typeof TextTag;
         abstract class TextTagPrivate {
             static $gtype: GObject.GType<TextTagPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type TextTagTableClass = typeof TextTagTable;
         abstract class TextTagTablePrivate {
             static $gtype: GObject.GType<TextTagTablePrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type TextViewAccessibleClass = typeof TextViewAccessible;
         abstract class TextViewAccessiblePrivate {
             static $gtype: GObject.GType<TextViewAccessiblePrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type TextViewClass = typeof TextView;
         abstract class TextViewPrivate {
             static $gtype: GObject.GType<TextViewPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         abstract class ThemeEngine {
             static $gtype: GObject.GType<ThemeEngine>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type ThemingEngineClass = typeof ThemingEngine;
         abstract class ThemingEnginePrivate {
             static $gtype: GObject.GType<ThemingEnginePrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type ToggleActionClass = typeof ToggleAction;
@@ -348624,100 +347803,56 @@ declare module 'gi://Gtk?version=3.0' {
             tooltip: string;
             callback: GObject.Callback;
             is_active: boolean;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         abstract class ToggleActionPrivate {
             static $gtype: GObject.GType<ToggleActionPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type ToggleButtonAccessibleClass = typeof ToggleButtonAccessible;
         abstract class ToggleButtonAccessiblePrivate {
             static $gtype: GObject.GType<ToggleButtonAccessiblePrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type ToggleButtonClass = typeof ToggleButton;
         abstract class ToggleButtonPrivate {
             static $gtype: GObject.GType<ToggleButtonPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type ToggleToolButtonClass = typeof ToggleToolButton;
         abstract class ToggleToolButtonPrivate {
             static $gtype: GObject.GType<ToggleToolButtonPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type ToolButtonClass = typeof ToolButton;
         abstract class ToolButtonPrivate {
             static $gtype: GObject.GType<ToolButtonPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type ToolItemClass = typeof ToolItem;
         type ToolItemGroupClass = typeof ToolItemGroup;
         abstract class ToolItemGroupPrivate {
             static $gtype: GObject.GType<ToolItemGroupPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         abstract class ToolItemPrivate {
             static $gtype: GObject.GType<ToolItemPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type ToolPaletteClass = typeof ToolPalette;
         abstract class ToolPalettePrivate {
             static $gtype: GObject.GType<ToolPalettePrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type ToolShellIface = typeof ToolShell;
         type ToolbarClass = typeof Toolbar;
         abstract class ToolbarPrivate {
             static $gtype: GObject.GType<ToolbarPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type ToplevelAccessibleClass = typeof ToplevelAccessible;
         abstract class ToplevelAccessiblePrivate {
             static $gtype: GObject.GType<ToplevelAccessiblePrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type TreeDragDestIface = typeof TreeDragDest;
@@ -348749,7 +347884,6 @@ declare module 'gi://Gtk?version=3.0' {
                     user_data3: any;
                 }>,
             );
-            _init(...args: any[]): void;
 
             // Methods
 
@@ -348774,20 +347908,12 @@ declare module 'gi://Gtk?version=3.0' {
         type TreeModelFilterClass = typeof TreeModelFilter;
         abstract class TreeModelFilterPrivate {
             static $gtype: GObject.GType<TreeModelFilterPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type TreeModelIface = typeof TreeModel;
         type TreeModelSortClass = typeof TreeModelSort;
         abstract class TreeModelSortPrivate {
             static $gtype: GObject.GType<TreeModelSortPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         class TreePath {
@@ -348796,7 +347922,6 @@ declare module 'gi://Gtk?version=3.0' {
             // Constructors
 
             constructor(properties?: Partial<{}>);
-            _init(...args: any[]): void;
 
             static ['new'](): TreePath;
 
@@ -348908,7 +348033,6 @@ declare module 'gi://Gtk?version=3.0' {
             // Constructors
 
             constructor(model: TreeModel, path: TreePath);
-            _init(...args: any[]): void;
 
             static ['new'](model: TreeModel, path: TreePath): TreeRowReference;
 
@@ -348966,56 +348090,32 @@ declare module 'gi://Gtk?version=3.0' {
         type TreeSelectionClass = typeof TreeSelection;
         abstract class TreeSelectionPrivate {
             static $gtype: GObject.GType<TreeSelectionPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type TreeSortableIface = typeof TreeSortable;
         type TreeStoreClass = typeof TreeStore;
         abstract class TreeStorePrivate {
             static $gtype: GObject.GType<TreeStorePrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type TreeViewAccessibleClass = typeof TreeViewAccessible;
         abstract class TreeViewAccessiblePrivate {
             static $gtype: GObject.GType<TreeViewAccessiblePrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type TreeViewClass = typeof TreeView;
         type TreeViewColumnClass = typeof TreeViewColumn;
         abstract class TreeViewColumnPrivate {
             static $gtype: GObject.GType<TreeViewColumnPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         abstract class TreeViewPrivate {
             static $gtype: GObject.GType<TreeViewPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type UIManagerClass = typeof UIManager;
         abstract class UIManagerPrivate {
             static $gtype: GObject.GType<UIManagerPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type VBoxClass = typeof VBox;
@@ -349027,29 +348127,17 @@ declare module 'gi://Gtk?version=3.0' {
         type ViewportClass = typeof Viewport;
         abstract class ViewportPrivate {
             static $gtype: GObject.GType<ViewportPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type VolumeButtonClass = typeof VolumeButton;
         type WidgetAccessibleClass = typeof WidgetAccessible;
         abstract class WidgetAccessiblePrivate {
             static $gtype: GObject.GType<WidgetAccessiblePrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type WidgetClass = typeof Widget;
         abstract class WidgetClassPrivate {
             static $gtype: GObject.GType<WidgetClassPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         /**
@@ -349111,7 +348199,6 @@ declare module 'gi://Gtk?version=3.0' {
             // Constructors
 
             constructor(properties?: Partial<{}>);
-            _init(...args: any[]): void;
 
             static ['new'](): WidgetPath;
 
@@ -349414,45 +348501,25 @@ declare module 'gi://Gtk?version=3.0' {
 
         abstract class WidgetPrivate {
             static $gtype: GObject.GType<WidgetPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type WindowAccessibleClass = typeof WindowAccessible;
         abstract class WindowAccessiblePrivate {
             static $gtype: GObject.GType<WindowAccessiblePrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type WindowClass = typeof Window;
         abstract class WindowGeometryInfo {
             static $gtype: GObject.GType<WindowGeometryInfo>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type WindowGroupClass = typeof WindowGroup;
         abstract class WindowGroupPrivate {
             static $gtype: GObject.GType<WindowGroupPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         abstract class WindowPrivate {
             static $gtype: GObject.GType<WindowPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         /**
@@ -349460,10 +348527,6 @@ declare module 'gi://Gtk?version=3.0' {
          */
         abstract class _MountOperationHandler {
             static $gtype: GObject.GType<_MountOperationHandler>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         /**
@@ -349471,10 +348534,6 @@ declare module 'gi://Gtk?version=3.0' {
          */
         abstract class _MountOperationHandlerIface {
             static $gtype: GObject.GType<_MountOperationHandlerIface>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         /**
@@ -349482,10 +348541,6 @@ declare module 'gi://Gtk?version=3.0' {
          */
         abstract class _MountOperationHandlerProxy {
             static $gtype: GObject.GType<_MountOperationHandlerProxy>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         /**
@@ -349493,18 +348548,10 @@ declare module 'gi://Gtk?version=3.0' {
          */
         abstract class _MountOperationHandlerProxyClass {
             static $gtype: GObject.GType<_MountOperationHandlerProxyClass>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         abstract class _MountOperationHandlerProxyPrivate {
             static $gtype: GObject.GType<_MountOperationHandlerProxyPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         /**
@@ -349512,10 +348559,6 @@ declare module 'gi://Gtk?version=3.0' {
          */
         abstract class _MountOperationHandlerSkeleton {
             static $gtype: GObject.GType<_MountOperationHandlerSkeleton>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         /**
@@ -349523,18 +348566,10 @@ declare module 'gi://Gtk?version=3.0' {
          */
         abstract class _MountOperationHandlerSkeletonClass {
             static $gtype: GObject.GType<_MountOperationHandlerSkeletonClass>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         abstract class _MountOperationHandlerSkeletonPrivate {
             static $gtype: GObject.GType<_MountOperationHandlerSkeletonPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         namespace Actionable {

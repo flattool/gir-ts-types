@@ -8353,7 +8353,6 @@ declare module 'gi://Atk?version=1.0' {
                     value: string;
                 }>,
             );
-            _init(...args: any[]): void;
 
             // Static methods
 
@@ -8375,10 +8374,6 @@ declare module 'gi://Atk?version=1.0' {
         type ImageIface = typeof Image;
         abstract class Implementor {
             static $gtype: GObject.GType<Implementor>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
 
             // Methods
 
@@ -8419,7 +8414,6 @@ declare module 'gi://Atk?version=1.0' {
                     timestamp: number;
                 }>,
             );
-            _init(...args: any[]): void;
         }
 
         type MiscClass = typeof Misc;
@@ -8439,10 +8433,6 @@ declare module 'gi://Atk?version=1.0' {
             // Fields
 
             property_name: string;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         /**
@@ -8460,7 +8450,6 @@ declare module 'gi://Atk?version=1.0' {
             // Constructors
 
             constructor(lower_limit: number, upper_limit: number, description: string);
-            _init(...args: any[]): void;
 
             static ['new'](lower_limit: number, upper_limit: number, description: string): Range;
 
@@ -8516,7 +8505,6 @@ declare module 'gi://Atk?version=1.0' {
                     height: number;
                 }>,
             );
-            _init(...args: any[]): void;
         }
 
         type RegistryClass = typeof Registry;
@@ -8552,7 +8540,6 @@ declare module 'gi://Atk?version=1.0' {
                     content: string;
                 }>,
             );
-            _init(...args: any[]): void;
         }
 
         /**
@@ -8578,7 +8565,6 @@ declare module 'gi://Atk?version=1.0' {
                     height: number;
                 }>,
             );
-            _init(...args: any[]): void;
         }
 
         /**
@@ -8612,10 +8598,6 @@ declare module 'gi://Atk?version=1.0' {
             end_object: Object;
             end_offset: number;
             start_is_active: boolean;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type UtilClass = typeof Util;

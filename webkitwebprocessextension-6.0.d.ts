@@ -2016,10 +2016,6 @@ declare module 'gi://WebKitWebProcessExtension?version=6.0' {
         abstract class ConsoleMessage {
             static $gtype: GObject.GType<ConsoleMessage>;
 
-            // Constructors
-
-            _init(...args: any[]): void;
-
             // Methods
 
             /**

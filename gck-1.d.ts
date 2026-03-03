@@ -3700,7 +3700,6 @@ declare module 'gi://Gck?version=1' {
                     length: number;
                 }>,
             );
-            _init(...args: any[]): void;
 
             static ['new'](attr_type: number, value: number, length: number): Attribute;
 
@@ -3832,7 +3831,6 @@ declare module 'gi://Gck?version=1' {
             // Constructors
 
             constructor(reserved: number);
-            _init(...args: any[]): void;
 
             static ['new'](reserved: number): Attributes;
 
@@ -3962,7 +3960,6 @@ declare module 'gi://Gck?version=1' {
             // Constructors
 
             constructor(properties?: Partial<{}>);
-            _init(...args: any[]): void;
 
             static ['new'](flags: BuilderFlags): Builder;
 
@@ -4290,10 +4287,6 @@ declare module 'gi://Gck?version=1' {
         type EnumeratorClass = typeof Enumerator;
         abstract class EnumeratorPrivate {
             static $gtype: GObject.GType<EnumeratorPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         /**
@@ -4317,7 +4310,6 @@ declare module 'gi://Gck?version=1' {
                     n_parameter: number;
                 }>,
             );
-            _init(...args: any[]): void;
         }
 
         /**
@@ -4346,7 +4338,6 @@ declare module 'gi://Gck?version=1' {
                     flags: number;
                 }>,
             );
-            _init(...args: any[]): void;
 
             // Methods
 
@@ -4396,7 +4387,6 @@ declare module 'gi://Gck?version=1' {
                     library_version_minor: number;
                 }>,
             );
-            _init(...args: any[]): void;
 
             // Methods
 
@@ -4413,29 +4403,17 @@ declare module 'gi://Gck?version=1' {
 
         abstract class ModulePrivate {
             static $gtype: GObject.GType<ModulePrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type ObjectCacheIface = typeof ObjectCache;
         type ObjectClass = typeof Object;
         abstract class ObjectPrivate {
             static $gtype: GObject.GType<ObjectPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type PasswordClass = typeof Password;
         abstract class PasswordPrivate {
             static $gtype: GObject.GType<PasswordPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type SessionClass = typeof Session;
@@ -4464,7 +4442,6 @@ declare module 'gi://Gck?version=1' {
                     device_error: number;
                 }>,
             );
-            _init(...args: any[]): void;
 
             // Methods
 
@@ -4481,10 +4458,6 @@ declare module 'gi://Gck?version=1' {
 
         abstract class SessionPrivate {
             static $gtype: GObject.GType<SessionPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type SlotClass = typeof Slot;
@@ -4523,7 +4496,6 @@ declare module 'gi://Gck?version=1' {
                     firmware_version_minor: number;
                 }>,
             );
-            _init(...args: any[]): void;
 
             // Methods
 
@@ -4540,10 +4512,6 @@ declare module 'gi://Gck?version=1' {
 
         abstract class SlotPrivate {
             static $gtype: GObject.GType<SlotPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         /**
@@ -4607,7 +4575,6 @@ declare module 'gi://Gck?version=1' {
                     utc_time: number;
                 }>,
             );
-            _init(...args: any[]): void;
 
             // Methods
 
@@ -4646,7 +4613,6 @@ declare module 'gi://Gck?version=1' {
                     any_unrecognized: boolean;
                 }>,
             );
-            _init(...args: any[]): void;
 
             static ['new'](): UriData;
 

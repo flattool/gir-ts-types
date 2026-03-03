@@ -17523,119 +17523,67 @@ declare module 'gi://GcrUi?version=3' {
         type CertificateRendererClass = typeof CertificateRenderer;
         abstract class CertificateRendererPrivate {
             static $gtype: GObject.GType<CertificateRendererPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type CertificateWidgetClass = typeof CertificateWidget;
         abstract class CertificateWidgetPrivate {
             static $gtype: GObject.GType<CertificateWidgetPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type CollectionModelClass = typeof CollectionModel;
         abstract class CollectionModelPrivate {
             static $gtype: GObject.GType<CollectionModelPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type ComboSelectorClass = typeof ComboSelector;
         abstract class ComboSelectorPrivate {
             static $gtype: GObject.GType<ComboSelectorPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type FailureRendererClass = typeof FailureRenderer;
         abstract class FailureRendererPrivate {
             static $gtype: GObject.GType<FailureRendererPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type ImportButtonClass = typeof ImportButton;
         abstract class ImportButtonPrivate {
             static $gtype: GObject.GType<ImportButtonPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type KeyRendererClass = typeof KeyRenderer;
         abstract class KeyRendererPrivate {
             static $gtype: GObject.GType<KeyRendererPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type KeyWidgetClass = typeof KeyWidget;
         abstract class KeyWidgetPrivate {
             static $gtype: GObject.GType<KeyWidgetPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type ListSelectorClass = typeof ListSelector;
         abstract class ListSelectorPrivate {
             static $gtype: GObject.GType<ListSelectorPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type PromptDialogClass = typeof PromptDialog;
         abstract class PromptDialogPrivate {
             static $gtype: GObject.GType<PromptDialogPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type RendererIface = typeof Renderer;
         type SecureEntryBufferClass = typeof SecureEntryBuffer;
         abstract class SecureEntryBufferPrivate {
             static $gtype: GObject.GType<SecureEntryBufferPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type TreeSelectorClass = typeof TreeSelector;
         abstract class TreeSelectorPrivate {
             static $gtype: GObject.GType<TreeSelectorPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type UnlockOptionsWidgetClass = typeof UnlockOptionsWidget;
         abstract class UnlockOptionsWidgetPrivate {
             static $gtype: GObject.GType<UnlockOptionsWidgetPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type ViewerIface = typeof Viewer;

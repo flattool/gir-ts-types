@@ -341,10 +341,6 @@ declare module 'gi://Manette?version=0.2' {
         abstract class MonitorIter {
             static $gtype: GObject.GType<MonitorIter>;
 
-            // Constructors
-
-            _init(...args: any[]): void;
-
             // Methods
 
             /**
@@ -359,10 +355,6 @@ declare module 'gi://Manette?version=0.2' {
          */
         class Event {
             static $gtype: GObject.GType<Event>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
 
             // Methods
 

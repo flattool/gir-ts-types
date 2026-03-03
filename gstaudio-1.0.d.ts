@@ -5824,45 +5824,25 @@ declare module 'gi://GstAudio?version=1.0' {
         type AudioAggregatorConvertPadClass = typeof AudioAggregatorConvertPad;
         abstract class AudioAggregatorConvertPadPrivate {
             static $gtype: GObject.GType<AudioAggregatorConvertPadPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type AudioAggregatorPadClass = typeof AudioAggregatorPad;
         abstract class AudioAggregatorPadPrivate {
             static $gtype: GObject.GType<AudioAggregatorPadPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         abstract class AudioAggregatorPrivate {
             static $gtype: GObject.GType<AudioAggregatorPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type AudioBaseSinkClass = typeof AudioBaseSink;
         abstract class AudioBaseSinkPrivate {
             static $gtype: GObject.GType<AudioBaseSinkPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type AudioBaseSrcClass = typeof AudioBaseSrc;
         abstract class AudioBaseSrcPrivate {
             static $gtype: GObject.GType<AudioBaseSrcPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         /**
@@ -5883,10 +5863,6 @@ declare module 'gi://GstAudio?version=1.0' {
             n_samples: number;
             n_planes: number;
             planes: any;
-
-            // Constructors
-
-            _init(...args: any[]): void;
 
             // Static methods
 
@@ -5979,10 +5955,6 @@ declare module 'gi://GstAudio?version=1.0' {
         type AudioCdSrcClass = typeof AudioCdSrc;
         abstract class AudioCdSrcPrivate {
             static $gtype: GObject.GType<AudioCdSrcPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         /**
@@ -6003,18 +5975,10 @@ declare module 'gi://GstAudio?version=1.0' {
             num: number;
             start: number;
             end: number;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         abstract class AudioChannelMixer {
             static $gtype: GObject.GType<AudioChannelMixer>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
 
             // Methods
 
@@ -6075,10 +6039,6 @@ declare module 'gi://GstAudio?version=1.0' {
             start: number;
             end: number;
 
-            // Constructors
-
-            _init(...args: any[]): void;
-
             // Static methods
 
             static get_info(): Gst.MetaInfo;
@@ -6106,7 +6066,6 @@ declare module 'gi://GstAudio?version=1.0' {
                 out_info: AudioInfo,
                 config?: Gst.Structure | null,
             );
-            _init(...args: any[]): void;
 
             static ['new'](
                 flags: AudioConverterFlags,
@@ -6229,10 +6188,6 @@ declare module 'gi://GstAudio?version=1.0' {
         type AudioDecoderClass = typeof AudioDecoder;
         abstract class AudioDecoderPrivate {
             static $gtype: GObject.GType<AudioDecoderPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         /**
@@ -6256,10 +6211,6 @@ declare module 'gi://GstAudio?version=1.0' {
             to_channels: number;
             matrix: number;
 
-            // Constructors
-
-            _init(...args: any[]): void;
-
             // Static methods
 
             static get_info(): Gst.MetaInfo;
@@ -6268,10 +6219,6 @@ declare module 'gi://GstAudio?version=1.0' {
         type AudioEncoderClass = typeof AudioEncoder;
         abstract class AudioEncoderPrivate {
             static $gtype: GObject.GType<AudioEncoderPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type AudioFilterClass = typeof AudioFilter;
@@ -6294,10 +6241,6 @@ declare module 'gi://GstAudio?version=1.0' {
             unpack_format: AudioFormat;
             unpack_func: AudioFormatUnpack;
             pack_func: AudioFormatPack;
-
-            // Constructors
-
-            _init(...args: any[]): void;
 
             // Methods
 
@@ -6338,7 +6281,6 @@ declare module 'gi://GstAudio?version=1.0' {
                     position: AudioChannelPosition[];
                 }>,
             );
-            _init(...args: any[]): void;
 
             static ['new'](): AudioInfo;
 
@@ -6418,10 +6360,6 @@ declare module 'gi://GstAudio?version=1.0' {
             level: number;
             voice_activity: boolean;
 
-            // Constructors
-
-            _init(...args: any[]): void;
-
             // Static methods
 
             /**
@@ -6443,10 +6381,6 @@ declare module 'gi://GstAudio?version=1.0' {
             samples: number;
             offsets: number;
 
-            // Constructors
-
-            _init(...args: any[]): void;
-
             // Static methods
 
             static get_info(): Gst.MetaInfo;
@@ -6454,10 +6388,6 @@ declare module 'gi://GstAudio?version=1.0' {
 
         abstract class AudioQuantize {
             static $gtype: GObject.GType<AudioQuantize>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
 
             // Methods
 
@@ -6494,10 +6424,6 @@ declare module 'gi://GstAudio?version=1.0' {
          */
         abstract class AudioResampler {
             static $gtype: GObject.GType<AudioResampler>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
 
             // Static methods
 
@@ -6608,10 +6534,6 @@ declare module 'gi://GstAudio?version=1.0' {
         type AudioRingBufferClass = typeof AudioRingBuffer;
         abstract class AudioRingBufferPrivate {
             static $gtype: GObject.GType<AudioRingBufferPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         /**
@@ -6632,19 +6554,11 @@ declare module 'gi://GstAudio?version=1.0' {
             segsize: number;
             segtotal: number;
             seglatency: number;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type AudioSinkClass = typeof AudioSink;
         class AudioSinkClassExtension {
             static $gtype: GObject.GType<AudioSinkClassExtension>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type AudioSrcClass = typeof AudioSrc;
@@ -6662,7 +6576,6 @@ declare module 'gi://GstAudio?version=1.0' {
             // Constructors
 
             constructor(rate: number, alignment_threshold: Gst.ClockTime, discont_wait: Gst.ClockTime);
-            _init(...args: any[]): void;
 
             static ['new'](
                 rate: number,
@@ -6837,7 +6750,6 @@ declare module 'gi://GstAudio?version=1.0' {
                     flags: AudioFlags;
                 }>,
             );
-            _init(...args: any[]): void;
 
             static ['new'](): DsdInfo;
 
@@ -6924,10 +6836,6 @@ declare module 'gi://GstAudio?version=1.0' {
             num_channels: number;
             num_bytes_per_channel: number;
             offsets: number;
-
-            // Constructors
-
-            _init(...args: any[]): void;
 
             // Static methods
 

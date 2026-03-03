@@ -6954,10 +6954,6 @@ declare module 'gi://Gcr?version=3' {
         type CertificateChainClass = typeof CertificateChain;
         abstract class CertificateChainPrivate {
             static $gtype: GObject.GType<CertificateChainPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type CertificateIface = typeof Certificate;
@@ -6975,20 +6971,12 @@ declare module 'gi://Gcr?version=3' {
             flags: ColumnFlags;
             transformer: GObject.ValueTransform;
             user_data: any;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type ComparableIface = typeof Comparable;
         type FilterCollectionClass = typeof FilterCollection;
         abstract class FilterCollectionPrivate {
             static $gtype: GObject.GType<FilterCollectionPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type ImportInteractionIface = typeof ImportInteraction;
@@ -6998,10 +6986,6 @@ declare module 'gi://Gcr?version=3' {
          */
         abstract class Parsed {
             static $gtype: GObject.GType<Parsed>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
 
             // Static methods
 
@@ -7059,75 +7043,43 @@ declare module 'gi://Gcr?version=3' {
         type ParserClass = typeof Parser;
         abstract class ParserPrivate {
             static $gtype: GObject.GType<ParserPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type Pkcs11CertificateClass = typeof Pkcs11Certificate;
         abstract class Pkcs11CertificatePrivate {
             static $gtype: GObject.GType<Pkcs11CertificatePrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type PromptIface = typeof Prompt;
         type SecretExchangeClass = typeof SecretExchange;
         abstract class SecretExchangePrivate {
             static $gtype: GObject.GType<SecretExchangePrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type SimpleCertificateClass = typeof SimpleCertificate;
         abstract class SimpleCertificatePrivate {
             static $gtype: GObject.GType<SimpleCertificatePrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type SimpleCollectionClass = typeof SimpleCollection;
         abstract class SimpleCollectionPrivate {
             static $gtype: GObject.GType<SimpleCollectionPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type SshAskpassClass = typeof SshAskpass;
         type SystemPromptClass = typeof SystemPrompt;
         abstract class SystemPromptPrivate {
             static $gtype: GObject.GType<SystemPromptPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type SystemPrompterClass = typeof SystemPrompter;
         abstract class SystemPrompterPrivate {
             static $gtype: GObject.GType<SystemPrompterPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type UnionCollectionClass = typeof UnionCollection;
         abstract class UnionCollectionPrivate {
             static $gtype: GObject.GType<UnionCollectionPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         namespace Certificate {

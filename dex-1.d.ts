@@ -53,7 +53,6 @@ declare module 'gi://Dex?version=1' {
             // Constructors
 
             constructor(options: { message: string; code: number });
-            _init(...args: any[]): void;
         }
 
         export namespace FutureStatus {
@@ -2166,10 +2165,6 @@ declare module 'gi://Dex?version=1' {
 
         abstract class AioContext {
             static $gtype: GObject.GType<AioContext>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         class AsyncPairInfo {
@@ -2180,10 +2175,6 @@ declare module 'gi://Dex?version=1' {
             async: any;
             finish: any;
             return_type: GObject.GType;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type AsyncResultClass = typeof AsyncResult;

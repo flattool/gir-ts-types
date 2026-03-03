@@ -480,7 +480,6 @@ declare module 'gi://WebKit?version=6.0' {
             // Constructors
 
             constructor(options: { message: string; code: number });
-            _init(...args: any[]): void;
 
             // Static methods
 
@@ -514,7 +513,6 @@ declare module 'gi://WebKit?version=6.0' {
             // Constructors
 
             constructor(options: { message: string; code: number });
-            _init(...args: any[]): void;
 
             // Static methods
 
@@ -705,7 +703,6 @@ declare module 'gi://WebKit?version=6.0' {
             // Constructors
 
             constructor(options: { message: string; code: number });
-            _init(...args: any[]): void;
 
             // Static methods
 
@@ -795,7 +792,6 @@ declare module 'gi://WebKit?version=6.0' {
             // Constructors
 
             constructor(options: { message: string; code: number });
-            _init(...args: any[]): void;
 
             // Static methods
 
@@ -874,7 +870,6 @@ declare module 'gi://WebKit?version=6.0' {
             // Constructors
 
             constructor(options: { message: string; code: number });
-            _init(...args: any[]): void;
 
             // Static methods
 
@@ -1012,7 +1007,6 @@ declare module 'gi://WebKit?version=6.0' {
             // Constructors
 
             constructor(options: { message: string; code: number });
-            _init(...args: any[]): void;
 
             // Static methods
 
@@ -1046,7 +1040,6 @@ declare module 'gi://WebKit?version=6.0' {
             // Constructors
 
             constructor(options: { message: string; code: number });
-            _init(...args: any[]): void;
 
             // Static methods
 
@@ -1147,7 +1140,6 @@ declare module 'gi://WebKit?version=6.0' {
             // Constructors
 
             constructor(options: { message: string; code: number });
-            _init(...args: any[]): void;
 
             // Static methods
 
@@ -1225,7 +1217,6 @@ declare module 'gi://WebKit?version=6.0' {
             // Constructors
 
             constructor(options: { message: string; code: number });
-            _init(...args: any[]): void;
 
             // Static methods
 
@@ -1276,7 +1267,6 @@ declare module 'gi://WebKit?version=6.0' {
             // Constructors
 
             constructor(options: { message: string; code: number });
-            _init(...args: any[]): void;
 
             // Static methods
 
@@ -1361,7 +1351,6 @@ declare module 'gi://WebKit?version=6.0' {
             // Constructors
 
             constructor(options: { message: string; code: number });
-            _init(...args: any[]): void;
 
             // Static methods
 
@@ -17378,7 +17367,6 @@ declare module 'gi://WebKit?version=6.0' {
             // Constructors
 
             constructor(properties?: Partial<{}>);
-            _init(...args: any[]): void;
 
             static ['new'](): ApplicationInfo;
 
@@ -17453,7 +17441,6 @@ declare module 'gi://WebKit?version=6.0' {
             // Constructors
 
             constructor(username: string, password: string, persistence: CredentialPersistence);
-            _init(...args: any[]): void;
 
             static ['new'](username: string, password: string, persistence: CredentialPersistence): Credential;
 
@@ -17543,10 +17530,6 @@ declare module 'gi://WebKit?version=6.0' {
          */
         abstract class Feature {
             static $gtype: GObject.GType<Feature>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
 
             // Methods
 
@@ -17642,10 +17625,6 @@ declare module 'gi://WebKit?version=6.0' {
         abstract class FeatureList {
             static $gtype: GObject.GType<FeatureList>;
 
-            // Constructors
-
-            _init(...args: any[]): void;
-
             // Methods
 
             /**
@@ -17693,7 +17672,6 @@ declare module 'gi://WebKit?version=6.0' {
             // Constructors
 
             constructor(latitude: number, longitude: number, accuracy: number);
-            _init(...args: any[]): void;
 
             static ['new'](latitude: number, longitude: number, accuracy: number): GeolocationPosition;
 
@@ -17747,10 +17725,6 @@ declare module 'gi://WebKit?version=6.0' {
         abstract class ITPFirstParty {
             static $gtype: GObject.GType<ITPFirstParty>;
 
-            // Constructors
-
-            _init(...args: any[]): void;
-
             // Methods
 
             /**
@@ -17797,10 +17771,6 @@ declare module 'gi://WebKit?version=6.0' {
         abstract class ITPThirdParty {
             static $gtype: GObject.GType<ITPThirdParty>;
 
-            // Constructors
-
-            _init(...args: any[]): void;
-
             // Methods
 
             /**
@@ -17833,10 +17803,6 @@ declare module 'gi://WebKit?version=6.0' {
         type InputMethodContextClass = typeof InputMethodContext;
         abstract class InputMethodContextPrivate {
             static $gtype: GObject.GType<InputMethodContextPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         /**
@@ -17848,7 +17814,6 @@ declare module 'gi://WebKit?version=6.0' {
             // Constructors
 
             constructor(start_offset: number, end_offset: number);
-            _init(...args: any[]): void;
 
             static ['new'](start_offset: number, end_offset: number): InputMethodUnderline;
 
@@ -17902,7 +17867,6 @@ declare module 'gi://WebKit?version=6.0' {
             // Constructors
 
             constructor(properties?: Partial<{}>);
-            _init(...args: any[]): void;
 
             static ['new'](): MemoryPressureSettings;
 
@@ -17999,10 +17963,6 @@ declare module 'gi://WebKit?version=6.0' {
         abstract class NavigationAction {
             static $gtype: GObject.GType<NavigationAction>;
 
-            // Constructors
-
-            _init(...args: any[]): void;
-
             // Methods
 
             /**
@@ -18079,7 +18039,6 @@ declare module 'gi://WebKit?version=6.0' {
             // Constructors
 
             constructor(default_proxy_uri?: string | null, ignore_hosts?: string[] | null);
-            _init(...args: any[]): void;
 
             static ['new'](default_proxy_uri?: string | null, ignore_hosts?: string[] | null): NetworkProxySettings;
 
@@ -18120,10 +18079,6 @@ declare module 'gi://WebKit?version=6.0' {
          */
         abstract class OptionMenuItem {
             static $gtype: GObject.GType<OptionMenuItem>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
 
             // Methods
 
@@ -18184,10 +18139,6 @@ declare module 'gi://WebKit?version=6.0' {
         abstract class PermissionStateQuery {
             static $gtype: GObject.GType<PermissionStateQuery>;
 
-            // Constructors
-
-            _init(...args: any[]): void;
-
             // Methods
 
             /**
@@ -18226,10 +18177,6 @@ declare module 'gi://WebKit?version=6.0' {
         type PolicyDecisionClass = typeof PolicyDecision;
         abstract class PolicyDecisionPrivate {
             static $gtype: GObject.GType<PolicyDecisionPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type PrintOperationClass = typeof PrintOperation;
@@ -18239,10 +18186,6 @@ declare module 'gi://WebKit?version=6.0' {
          */
         abstract class ScriptDialog {
             static $gtype: GObject.GType<ScriptDialog>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
 
             // Methods
 
@@ -18324,10 +18267,6 @@ declare module 'gi://WebKit?version=6.0' {
         abstract class ScriptMessageReply {
             static $gtype: GObject.GType<ScriptMessageReply>;
 
-            // Constructors
-
-            _init(...args: any[]): void;
-
             // Methods
 
             /**
@@ -18376,7 +18315,6 @@ declare module 'gi://WebKit?version=6.0' {
             // Constructors
 
             constructor(protocol: string, host: string, port: number);
-            _init(...args: any[]): void;
 
             static ['new'](protocol: string, host: string, port: number): SecurityOrigin;
 
@@ -18445,10 +18383,6 @@ declare module 'gi://WebKit?version=6.0' {
         abstract class UserContentFilter {
             static $gtype: GObject.GType<UserContentFilter>;
 
-            // Constructors
-
-            _init(...args: any[]): void;
-
             // Methods
 
             /**
@@ -18495,7 +18429,6 @@ declare module 'gi://WebKit?version=6.0' {
                 allow_list?: string[] | null,
                 block_list?: string[] | null,
             );
-            _init(...args: any[]): void;
 
             static ['new'](
                 source: string,
@@ -18548,7 +18481,6 @@ declare module 'gi://WebKit?version=6.0' {
                 allow_list?: string[] | null,
                 block_list?: string[] | null,
             );
-            _init(...args: any[]): void;
 
             static ['new'](
                 source: string,
@@ -18601,7 +18533,6 @@ declare module 'gi://WebKit?version=6.0' {
             // Constructors
 
             constructor(properties?: Partial<{}>);
-            _init(...args: any[]): void;
 
             static new_all_hosts_and_schemes(): WebExtensionMatchPattern;
 
@@ -18695,19 +18626,11 @@ declare module 'gi://WebKit?version=6.0' {
         type WebViewBaseClass = typeof WebViewBase;
         abstract class WebViewBasePrivate {
             static $gtype: GObject.GType<WebViewBasePrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type WebViewClass = typeof WebView;
         abstract class WebViewPrivate {
             static $gtype: GObject.GType<WebViewPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         /**
@@ -18719,7 +18642,6 @@ declare module 'gi://WebKit?version=6.0' {
             // Constructors
 
             constructor(data: GLib.Bytes | Uint8Array);
-            _init(...args: any[]): void;
 
             static ['new'](data: GLib.Bytes | Uint8Array): WebViewSessionState;
 
@@ -18767,10 +18689,6 @@ declare module 'gi://WebKit?version=6.0' {
          */
         abstract class WebsiteData {
             static $gtype: GObject.GType<WebsiteData>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
 
             // Methods
 

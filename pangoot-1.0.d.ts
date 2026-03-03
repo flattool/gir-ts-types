@@ -418,7 +418,6 @@ declare module 'gi://PangoOT?version=1.0' {
             // Constructors
 
             constructor(font: PangoFc.Font);
-            _init(...args: any[]): void;
 
             static ['new'](font: PangoFc.Font): Buffer;
 
@@ -498,7 +497,6 @@ declare module 'gi://PangoOT?version=1.0' {
                     property_bit: number;
                 }>,
             );
-            _init(...args: any[]): void;
         }
 
         /**
@@ -530,7 +528,6 @@ declare module 'gi://PangoOT?version=1.0' {
                     internal: number;
                 }>,
             );
-            _init(...args: any[]): void;
         }
 
         /**
@@ -553,10 +550,6 @@ declare module 'gi://PangoOT?version=1.0' {
             n_static_gpos_features: number;
             other_features: FeatureMap;
             n_other_features: number;
-
-            // Constructors
-
-            _init(...args: any[]): void;
 
             // Methods
 

@@ -1041,7 +1041,6 @@ declare module 'gi://Gdk?version=3.0' {
             // Constructors
 
             constructor(options: { message: string; code: number });
-            _init(...args: any[]): void;
 
             // Static methods
 
@@ -11742,10 +11741,6 @@ declare module 'gi://Gdk?version=3.0' {
         abstract class Atom {
             static $gtype: GObject.GType<Atom>;
 
-            // Constructors
-
-            _init(...args: any[]): void;
-
             // Static methods
 
             /**
@@ -11802,7 +11797,6 @@ declare module 'gi://Gdk?version=3.0' {
                     blue: number;
                 }>,
             );
-            _init(...args: any[]): void;
 
             // Static methods
 
@@ -11872,10 +11866,6 @@ declare module 'gi://Gdk?version=3.0' {
             type: EventType;
             window: Window;
             send_event: number;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         /**
@@ -11930,10 +11920,6 @@ declare module 'gi://Gdk?version=3.0' {
             device: Device;
             x_root: number;
             y_root: number;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         /**
@@ -11951,10 +11937,6 @@ declare module 'gi://Gdk?version=3.0' {
             y: number;
             width: number;
             height: number;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         /**
@@ -11978,10 +11960,6 @@ declare module 'gi://Gdk?version=3.0' {
             detail: NotifyType;
             focus: boolean;
             state: ModifierType;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         /**
@@ -11999,10 +11977,6 @@ declare module 'gi://Gdk?version=3.0' {
             time: number;
             x_root: number;
             y_root: number;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         /**
@@ -12019,10 +11993,6 @@ declare module 'gi://Gdk?version=3.0' {
             send_event: number;
             area: Rectangle;
             count: number;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         /**
@@ -12037,10 +12007,6 @@ declare module 'gi://Gdk?version=3.0' {
             window: Window;
             send_event: number;
             'in': number;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         /**
@@ -12061,10 +12027,6 @@ declare module 'gi://Gdk?version=3.0' {
             keyboard: boolean;
             implicit: boolean;
             grab_window: Window;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         /**
@@ -12086,10 +12048,6 @@ declare module 'gi://Gdk?version=3.0' {
             hardware_keycode: number;
             group: number;
             is_modifier: number;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         /**
@@ -12112,10 +12070,6 @@ declare module 'gi://Gdk?version=3.0' {
             device: Device;
             x_root: number;
             y_root: number;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         /**
@@ -12135,10 +12089,6 @@ declare module 'gi://Gdk?version=3.0' {
             reason: OwnerChange;
             time: number;
             selection_time: number;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         /**
@@ -12157,10 +12107,6 @@ declare module 'gi://Gdk?version=3.0' {
             index: number;
             mode: number;
             value: number;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         /**
@@ -12178,10 +12124,6 @@ declare module 'gi://Gdk?version=3.0' {
             group: number;
             button: number;
             mode: number;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         /**
@@ -12198,10 +12140,6 @@ declare module 'gi://Gdk?version=3.0' {
             time: number;
             group: number;
             mode: number;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         /**
@@ -12217,10 +12155,6 @@ declare module 'gi://Gdk?version=3.0' {
             send_event: number;
             time: number;
             state: PropertyState;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         /**
@@ -12244,10 +12178,6 @@ declare module 'gi://Gdk?version=3.0' {
             send_event: number;
             time: number;
             device: Device;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         /**
@@ -12279,10 +12209,6 @@ declare module 'gi://Gdk?version=3.0' {
             delta_x: number;
             delta_y: number;
             is_stop: number;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         /**
@@ -12299,18 +12225,10 @@ declare module 'gi://Gdk?version=3.0' {
             send_event: number;
             time: number;
             requestor: Window;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         abstract class EventSequence {
             static $gtype: GObject.GType<EventSequence>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         /**
@@ -12326,10 +12244,6 @@ declare module 'gi://Gdk?version=3.0' {
             send_event: number;
             action: SettingAction;
             name: string;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         /**
@@ -12361,10 +12275,6 @@ declare module 'gi://Gdk?version=3.0' {
             device: Device;
             x_root: number;
             y_root: number;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         /**
@@ -12390,10 +12300,6 @@ declare module 'gi://Gdk?version=3.0' {
             x_root: number;
             y_root: number;
             state: ModifierType;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         /**
@@ -12417,10 +12323,6 @@ declare module 'gi://Gdk?version=3.0' {
             x_root: number;
             y_root: number;
             state: ModifierType;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         /**
@@ -12435,10 +12337,6 @@ declare module 'gi://Gdk?version=3.0' {
             window: Window;
             send_event: number;
             state: VisibilityState;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         /**
@@ -12454,19 +12352,11 @@ declare module 'gi://Gdk?version=3.0' {
             send_event: number;
             changed_mask: WindowState;
             new_window_state: WindowState;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type FrameClockClass = typeof FrameClock;
         abstract class FrameClockPrivate {
             static $gtype: GObject.GType<FrameClockPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         /**
@@ -12479,10 +12369,6 @@ declare module 'gi://Gdk?version=3.0' {
          */
         abstract class FrameTimings {
             static $gtype: GObject.GType<FrameTimings>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
 
             // Methods
 
@@ -12625,10 +12511,6 @@ declare module 'gi://Gdk?version=3.0' {
             min_aspect: number;
             max_aspect: number;
             win_gravity: Gravity;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         /**
@@ -12652,7 +12534,6 @@ declare module 'gi://Gdk?version=3.0' {
                     level: number;
                 }>,
             );
-            _init(...args: any[]): void;
         }
 
         type MonitorClass = typeof Monitor;
@@ -12675,7 +12556,6 @@ declare module 'gi://Gdk?version=3.0' {
                     y: number;
                 }>,
             );
-            _init(...args: any[]): void;
         }
 
         /**
@@ -12702,7 +12582,6 @@ declare module 'gi://Gdk?version=3.0' {
                     alpha: number;
                 }>,
             );
-            _init(...args: any[]): void;
 
             // Methods
 
@@ -12794,7 +12673,6 @@ declare module 'gi://Gdk?version=3.0' {
                     height: number;
                 }>,
             );
-            _init(...args: any[]): void;
 
             // Methods
 
@@ -12847,7 +12725,6 @@ declare module 'gi://Gdk?version=3.0' {
                     axes: number[];
                 }>,
             );
-            _init(...args: any[]): void;
         }
 
         /**
@@ -12872,19 +12749,11 @@ declare module 'gi://Gdk?version=3.0' {
             wmclass_class: string;
             override_redirect: boolean;
             type_hint: WindowTypeHint;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type WindowClass = typeof Window;
         abstract class WindowRedirect {
             static $gtype: GObject.GType<WindowRedirect>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         /**
@@ -12935,7 +12804,6 @@ declare module 'gi://Gdk?version=3.0' {
             // Constructors
 
             constructor(type: EventType);
-            _init(...args: any[]): void;
 
             static ['new'](type: EventType): Event;
 
