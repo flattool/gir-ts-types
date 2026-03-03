@@ -10593,10 +10593,6 @@ declare module 'gi://Gcr?version=4' {
         type CertificateChainClass = typeof CertificateChain;
         abstract class CertificateChainPrivate {
             static $gtype: GObject.GType<CertificateChainPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type CertificateExtensionAuthorityInfoAccessClass = typeof CertificateExtensionAuthorityInfoAccess;
@@ -10626,10 +10622,6 @@ declare module 'gi://Gcr?version=4' {
          */
         abstract class Parsed {
             static $gtype: GObject.GType<Parsed>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
 
             // Static methods
 
@@ -10687,47 +10679,27 @@ declare module 'gi://Gcr?version=4' {
         type ParserClass = typeof Parser;
         abstract class ParserPrivate {
             static $gtype: GObject.GType<ParserPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type Pkcs11CertificateClass = typeof Pkcs11Certificate;
         abstract class Pkcs11CertificatePrivate {
             static $gtype: GObject.GType<Pkcs11CertificatePrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type PromptInterface = typeof Prompt;
         type SecretExchangeClass = typeof SecretExchange;
         abstract class SecretExchangePrivate {
             static $gtype: GObject.GType<SecretExchangePrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type SimpleCertificateClass = typeof SimpleCertificate;
         abstract class SimpleCertificatePrivate {
             static $gtype: GObject.GType<SimpleCertificatePrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type SshAskpassClass = typeof SshAskpass;
         abstract class SubjectPublicKeyInfo {
             static $gtype: GObject.GType<SubjectPublicKeyInfo>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
 
             // Methods
 
@@ -10762,19 +10734,11 @@ declare module 'gi://Gcr?version=4' {
         type SystemPromptClass = typeof SystemPrompt;
         abstract class SystemPromptPrivate {
             static $gtype: GObject.GType<SystemPromptPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type SystemPrompterClass = typeof SystemPrompter;
         abstract class SystemPrompterPrivate {
             static $gtype: GObject.GType<SystemPrompterPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         namespace Certificate {

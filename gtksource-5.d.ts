@@ -170,7 +170,6 @@ declare module 'gi://GtkSource?version=5' {
             // Constructors
 
             constructor(options: { message: string; code: number });
-            _init(...args: any[]): void;
 
             // Static methods
 
@@ -199,7 +198,6 @@ declare module 'gi://GtkSource?version=5' {
             // Constructors
 
             constructor(options: { message: string; code: number });
-            _init(...args: any[]): void;
 
             // Static methods
 
@@ -22810,10 +22808,6 @@ declare module 'gi://GtkSource?version=5' {
         abstract class Encoding {
             static $gtype: GObject.GType<Encoding>;
 
-            // Constructors
-
-            _init(...args: any[]): void;
-
             // Static methods
 
             /**
@@ -22900,7 +22894,6 @@ declare module 'gi://GtkSource?version=5' {
             // Constructors
 
             constructor(properties?: Partial<{}>);
-            _init(...args: any[]): void;
 
             // Methods
 

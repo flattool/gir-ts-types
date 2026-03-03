@@ -64,7 +64,6 @@ declare module 'gi://GstVulkan?version=1.0' {
             // Constructors
 
             constructor(options: { message: string; code: number });
-            _init(...args: any[]): void;
 
             // Static methods
 
@@ -206,7 +205,6 @@ declare module 'gi://GstVulkan?version=1.0' {
             // Constructors
 
             constructor(options: { message: string; code: number });
-            _init(...args: any[]): void;
 
             // Static methods
 
@@ -2724,18 +2722,10 @@ declare module 'gi://GstVulkan?version=1.0' {
 
         class VulkanBarrierBufferInfo {
             static $gtype: GObject.GType<VulkanBarrierBufferInfo>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         class VulkanBarrierImageInfo {
             static $gtype: GObject.GType<VulkanBarrierImageInfo>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         class VulkanBarrierMemoryInfo {
@@ -2749,10 +2739,6 @@ declare module 'gi://GstVulkan?version=1.0' {
             pipeline_stages: number;
             access_flags: number;
             semaphore_value: number;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         class VulkanBufferMemory {
@@ -2761,10 +2747,6 @@ declare module 'gi://GstVulkan?version=1.0' {
             // Fields
 
             device: VulkanDevice;
-
-            // Constructors
-
-            _init(...args: any[]): void;
 
             // Static methods
 
@@ -2818,10 +2800,6 @@ declare module 'gi://GstVulkan?version=1.0' {
         type VulkanBufferPoolClass = typeof VulkanBufferPool;
         abstract class VulkanBufferPoolPrivate {
             static $gtype: GObject.GType<VulkanBufferPoolPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         class VulkanCommandBuffer {
@@ -2834,7 +2812,6 @@ declare module 'gi://GstVulkan?version=1.0' {
             // Constructors
 
             constructor(cmd: Vulkan.CommandBuffer, level: Vulkan.CommandBufferLevel);
-            _init(...args: any[]): void;
 
             static new_wrapped(cmd: Vulkan.CommandBuffer, level: Vulkan.CommandBufferLevel): VulkanCommandBuffer;
         }
@@ -2842,10 +2819,6 @@ declare module 'gi://GstVulkan?version=1.0' {
         type VulkanCommandPoolClass = typeof VulkanCommandPool;
         abstract class VulkanCommandPoolPrivate {
             static $gtype: GObject.GType<VulkanCommandPoolPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type VulkanDecoderClass = typeof VulkanDecoder;
@@ -2859,10 +2832,6 @@ declare module 'gi://GstVulkan?version=1.0' {
 
             slice_offs: any[];
 
-            // Constructors
-
-            _init(...args: any[]): void;
-
             // Methods
 
             /**
@@ -2873,28 +2842,16 @@ declare module 'gi://GstVulkan?version=1.0' {
 
         abstract class VulkanDecoderPrivate {
             static $gtype: GObject.GType<VulkanDecoderPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type VulkanDescriptorCacheClass = typeof VulkanDescriptorCache;
         abstract class VulkanDescriptorCachePrivate {
             static $gtype: GObject.GType<VulkanDescriptorCachePrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type VulkanDescriptorPoolClass = typeof VulkanDescriptorPool;
         abstract class VulkanDescriptorPoolPrivate {
             static $gtype: GObject.GType<VulkanDescriptorPoolPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         class VulkanDescriptorSet {
@@ -2909,7 +2866,6 @@ declare module 'gi://GstVulkan?version=1.0' {
             // Constructors
 
             constructor(pool: VulkanDescriptorPool, set: Vulkan.DescriptorSet, layouts: VulkanHandle[]);
-            _init(...args: any[]): void;
 
             static new_wrapped(
                 pool: VulkanDescriptorPool,
@@ -2921,19 +2877,11 @@ declare module 'gi://GstVulkan?version=1.0' {
         type VulkanDeviceClass = typeof VulkanDevice;
         abstract class VulkanDevicePrivate {
             static $gtype: GObject.GType<VulkanDevicePrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type VulkanDisplayClass = typeof VulkanDisplay;
         abstract class VulkanDisplayPrivate {
             static $gtype: GObject.GType<VulkanDisplayPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         class VulkanFence {
@@ -2947,7 +2895,6 @@ declare module 'gi://GstVulkan?version=1.0' {
             // Constructors
 
             constructor(device: VulkanDevice);
-            _init(...args: any[]): void;
 
             static ['new'](device: VulkanDevice): VulkanFence;
 
@@ -2978,19 +2925,11 @@ declare module 'gi://GstVulkan?version=1.0' {
             poffset: Uint8Array;
             w_sub: Uint8Array;
             h_sub: Uint8Array;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type VulkanFullScreenQuadClass = typeof VulkanFullScreenQuad;
         abstract class VulkanFullScreenQuadPrivate {
             static $gtype: GObject.GType<VulkanFullScreenQuadPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         /**
@@ -3018,7 +2957,6 @@ declare module 'gi://GstVulkan?version=1.0' {
                 handle: VulkanHandleTypedef,
                 notify: VulkanHandleDestroyNotify,
             );
-            _init(...args: any[]): void;
 
             static new_wrapped(
                 device: VulkanDevice,
@@ -3097,10 +3035,6 @@ declare module 'gi://GstVulkan?version=1.0' {
         type VulkanImageBufferPoolClass = typeof VulkanImageBufferPool;
         abstract class VulkanImageBufferPoolPrivate {
             static $gtype: GObject.GType<VulkanImageBufferPoolPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         class VulkanImageMemory {
@@ -3109,10 +3043,6 @@ declare module 'gi://GstVulkan?version=1.0' {
             // Fields
 
             device: VulkanDevice;
-
-            // Constructors
-
-            _init(...args: any[]): void;
 
             // Static methods
 
@@ -3186,7 +3116,6 @@ declare module 'gi://GstVulkan?version=1.0' {
             // Constructors
 
             constructor(image: VulkanImageMemory, create_info: Vulkan.ImageViewCreateInfo);
-            _init(...args: any[]): void;
 
             static ['new'](image: VulkanImageMemory, create_info: Vulkan.ImageViewCreateInfo): VulkanImageView;
         }
@@ -3194,10 +3123,6 @@ declare module 'gi://GstVulkan?version=1.0' {
         type VulkanInstanceClass = typeof VulkanInstance;
         abstract class VulkanInstancePrivate {
             static $gtype: GObject.GType<VulkanInstancePrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         class VulkanMemory {
@@ -3208,10 +3133,6 @@ declare module 'gi://GstVulkan?version=1.0' {
             device: VulkanDevice;
             map_count: number;
             mapping: any;
-
-            // Constructors
-
-            _init(...args: any[]): void;
 
             // Static methods
 
@@ -3248,19 +3169,11 @@ declare module 'gi://GstVulkan?version=1.0' {
         type VulkanOperationClass = typeof VulkanOperation;
         abstract class VulkanOperationPrivate {
             static $gtype: GObject.GType<VulkanOperationPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type VulkanPhysicalDeviceClass = typeof VulkanPhysicalDevice;
         abstract class VulkanPhysicalDevicePrivate {
             static $gtype: GObject.GType<VulkanPhysicalDevicePrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type VulkanQueueClass = typeof VulkanQueue;
@@ -3280,24 +3193,15 @@ declare module 'gi://GstVulkan?version=1.0' {
                     query: boolean;
                 }>,
             );
-            _init(...args: any[]): void;
         }
 
         abstract class VulkanQueuePrivate {
             static $gtype: GObject.GType<VulkanQueuePrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type VulkanSwapperClass = typeof VulkanSwapper;
         abstract class VulkanSwapperPrivate {
             static $gtype: GObject.GType<VulkanSwapperPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         class VulkanTrash {
@@ -3312,7 +3216,6 @@ declare module 'gi://GstVulkan?version=1.0' {
             // Constructors
 
             constructor(fence: VulkanFence, notify: VulkanTrashNotify);
-            _init(...args: any[]): void;
 
             static ['new'](fence: VulkanFence, notify: VulkanTrashNotify): VulkanTrash;
 
@@ -3340,19 +3243,11 @@ declare module 'gi://GstVulkan?version=1.0' {
         type VulkanTrashListClass = typeof VulkanTrashList;
         class VulkanVideoCapabilities {
             static $gtype: GObject.GType<VulkanVideoCapabilities>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type VulkanVideoFilterClass = typeof VulkanVideoFilter;
         class VulkanVideoProfile {
             static $gtype: GObject.GType<VulkanVideoProfile>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
 
             // Methods
 
@@ -3362,10 +3257,6 @@ declare module 'gi://GstVulkan?version=1.0' {
         type VulkanWindowClass = typeof VulkanWindow;
         abstract class VulkanWindowPrivate {
             static $gtype: GObject.GType<VulkanWindowPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         /**
@@ -3373,10 +3264,6 @@ declare module 'gi://GstVulkan?version=1.0' {
          */
         class VulkanDecoderParameters {
             static $gtype: GObject.GType<VulkanDecoderParameters>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type VulkanHandleTypedef = number;

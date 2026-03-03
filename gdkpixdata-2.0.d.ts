@@ -201,7 +201,6 @@ declare module 'gi://GdkPixdata?version=2.0' {
                     pixel_data: Uint8Array;
                 }>,
             );
-            _init(...args: any[]): void;
 
             // Methods
 

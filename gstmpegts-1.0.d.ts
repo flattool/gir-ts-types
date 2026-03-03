@@ -773,10 +773,6 @@ declare module 'gi://GstMpegts?version=1.0' {
             static '25': number;
             static RESERVED: number;
             static AUTO: number;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         /**
@@ -1549,10 +1545,6 @@ declare module 'gi://GstMpegts?version=1.0' {
             static '2': number;
             static '4': number;
             static AUTO: number;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         export namespace TerrestrialTransmissionMode {
@@ -1894,10 +1886,6 @@ declare module 'gi://GstMpegts?version=1.0' {
              * HEVC / h265
              */
             static OTHER_HEVC: number;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         /**
@@ -1921,7 +1909,6 @@ declare module 'gi://GstMpegts?version=1.0' {
                     events: AtscEITEvent[];
                 }>,
             );
-            _init(...args: any[]): void;
         }
 
         /**
@@ -1951,7 +1938,6 @@ declare module 'gi://GstMpegts?version=1.0' {
                     descriptors: Descriptor[];
                 }>,
             );
-            _init(...args: any[]): void;
         }
 
         /**
@@ -1977,7 +1963,6 @@ declare module 'gi://GstMpegts?version=1.0' {
                     messages: AtscMultString[];
                 }>,
             );
-            _init(...args: any[]): void;
         }
 
         /**
@@ -2003,7 +1988,6 @@ declare module 'gi://GstMpegts?version=1.0' {
                     descriptors: Descriptor[];
                 }>,
             );
-            _init(...args: any[]): void;
 
             static ['new'](): AtscMGT;
         }
@@ -2033,7 +2017,6 @@ declare module 'gi://GstMpegts?version=1.0' {
                     descriptors: Descriptor[];
                 }>,
             );
-            _init(...args: any[]): void;
         }
 
         class AtscMultString {
@@ -2052,7 +2035,6 @@ declare module 'gi://GstMpegts?version=1.0' {
                     segments: AtscStringSegment[];
                 }>,
             );
-            _init(...args: any[]): void;
         }
 
         /**
@@ -2080,7 +2062,6 @@ declare module 'gi://GstMpegts?version=1.0' {
                     descriptors: any[];
                 }>,
             );
-            _init(...args: any[]): void;
 
             static ['new'](): AtscRRT;
         }
@@ -2105,7 +2086,6 @@ declare module 'gi://GstMpegts?version=1.0' {
                     values: AtscRRTDimensionValue[];
                 }>,
             );
-            _init(...args: any[]): void;
 
             static ['new'](): AtscRRTDimension;
         }
@@ -2126,7 +2106,6 @@ declare module 'gi://GstMpegts?version=1.0' {
                     ratings: AtscMultString[];
                 }>,
             );
-            _init(...args: any[]): void;
 
             static ['new'](): AtscRRTDimensionValue;
         }
@@ -2160,7 +2139,6 @@ declare module 'gi://GstMpegts?version=1.0' {
                     descriptors: Descriptor[];
                 }>,
             );
-            _init(...args: any[]): void;
 
             static ['new'](): AtscSTT;
 
@@ -2194,7 +2172,6 @@ declare module 'gi://GstMpegts?version=1.0' {
                     cached_string: string;
                 }>,
             );
-            _init(...args: any[]): void;
 
             // Methods
 
@@ -2227,7 +2204,6 @@ declare module 'gi://GstMpegts?version=1.0' {
                     descriptors: Descriptor[];
                 }>,
             );
-            _init(...args: any[]): void;
         }
 
         /**
@@ -2277,7 +2253,6 @@ declare module 'gi://GstMpegts?version=1.0' {
                     descriptors: Descriptor[];
                 }>,
             );
-            _init(...args: any[]): void;
         }
 
         /**
@@ -2319,7 +2294,6 @@ declare module 'gi://GstMpegts?version=1.0' {
                     message_id: number;
                 }>,
             );
-            _init(...args: any[]): void;
         }
 
         /**
@@ -2341,7 +2315,6 @@ declare module 'gi://GstMpegts?version=1.0' {
                     streams: BATStream[];
                 }>,
             );
-            _init(...args: any[]): void;
         }
 
         class BATStream {
@@ -2362,7 +2335,6 @@ declare module 'gi://GstMpegts?version=1.0' {
                     descriptors: any[];
                 }>,
             );
-            _init(...args: any[]): void;
         }
 
         /**
@@ -2378,10 +2350,6 @@ declare module 'gi://GstMpegts?version=1.0' {
             modulation: ModulationType;
             symbol_rate: number;
             fec_inner: DVBCodeRate;
-
-            // Constructors
-
-            _init(...args: any[]): void;
 
             // Methods
 
@@ -2410,7 +2378,6 @@ declare module 'gi://GstMpegts?version=1.0' {
                     text: string;
                 }>,
             );
-            _init(...args: any[]): void;
         }
 
         class Content {
@@ -2421,10 +2388,6 @@ declare module 'gi://GstMpegts?version=1.0' {
             content_nibble_1: ContentNibbleHi;
             content_nibble_2: number;
             user_byte: number;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         class DVBLinkageDescriptor {
@@ -2438,10 +2401,6 @@ declare module 'gi://GstMpegts?version=1.0' {
             linkage_type: DVBLinkageType;
             private_data_length: number;
             private_data_bytes: number;
-
-            // Constructors
-
-            _init(...args: any[]): void;
 
             // Methods
 
@@ -2469,7 +2428,6 @@ declare module 'gi://GstMpegts?version=1.0' {
                     event_simulcast: boolean;
                 }>,
             );
-            _init(...args: any[]): void;
         }
 
         class DVBLinkageExtendedEvent {
@@ -2506,7 +2464,6 @@ declare module 'gi://GstMpegts?version=1.0' {
                     target_service_id: number;
                 }>,
             );
-            _init(...args: any[]): void;
         }
 
         class DVBLinkageMobileHandOver {
@@ -2518,10 +2475,6 @@ declare module 'gi://GstMpegts?version=1.0' {
             origin_type: boolean;
             network_id: number;
             initial_service_id: number;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         class DVBParentalRatingItem {
@@ -2540,7 +2493,6 @@ declare module 'gi://GstMpegts?version=1.0' {
                     rating: number;
                 }>,
             );
-            _init(...args: any[]): void;
         }
 
         class DVBServiceListItem {
@@ -2550,10 +2502,6 @@ declare module 'gi://GstMpegts?version=1.0' {
 
             service_id: number;
             type: DVBServiceType;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         class DataBroadcastDescriptor {
@@ -2580,7 +2528,6 @@ declare module 'gi://GstMpegts?version=1.0' {
                     text: string;
                 }>,
             );
-            _init(...args: any[]): void;
 
             // Methods
 
@@ -2613,7 +2560,6 @@ declare module 'gi://GstMpegts?version=1.0' {
                     data: number;
                 }>,
             );
-            _init(...args: any[]): void;
 
             // Static methods
 
@@ -2909,7 +2855,6 @@ declare module 'gi://GstMpegts?version=1.0' {
                     bouquet_name: string;
                 }>,
             );
-            _init(...args: any[]): void;
         }
 
         class DvbMultilingualComponentItem {
@@ -2928,7 +2873,6 @@ declare module 'gi://GstMpegts?version=1.0' {
                     description: string;
                 }>,
             );
-            _init(...args: any[]): void;
         }
 
         /**
@@ -2950,7 +2894,6 @@ declare module 'gi://GstMpegts?version=1.0' {
                     network_name: string;
                 }>,
             );
-            _init(...args: any[]): void;
         }
 
         /**
@@ -2974,7 +2917,6 @@ declare module 'gi://GstMpegts?version=1.0' {
                     service_name: string;
                 }>,
             );
-            _init(...args: any[]): void;
         }
 
         /**
@@ -2991,10 +2933,6 @@ declare module 'gi://GstMpegts?version=1.0' {
             last_table_id: number;
             actual_stream: boolean;
             present_following: boolean;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         /**
@@ -3010,10 +2948,6 @@ declare module 'gi://GstMpegts?version=1.0' {
             running_status: RunningStatus;
             free_CA_mode: boolean;
             descriptors: Descriptor[];
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         /**
@@ -3041,7 +2975,6 @@ declare module 'gi://GstMpegts?version=1.0' {
                     text: string;
                 }>,
             );
-            _init(...args: any[]): void;
 
             // Methods
 
@@ -3064,7 +2997,6 @@ declare module 'gi://GstMpegts?version=1.0' {
                     item: string;
                 }>,
             );
-            _init(...args: any[]): void;
         }
 
         class ISO639LanguageDescriptor {
@@ -3075,10 +3007,6 @@ declare module 'gi://GstMpegts?version=1.0' {
             nb_language: number;
             language: string[];
             audio_type: Iso639AudioType[];
-
-            // Constructors
-
-            _init(...args: any[]): void;
 
             // Methods
 
@@ -3103,7 +3031,6 @@ declare module 'gi://GstMpegts?version=1.0' {
                     logical_channel_number: number;
                 }>,
             );
-            _init(...args: any[]): void;
         }
 
         class LogicalChannelDescriptor {
@@ -3122,7 +3049,6 @@ declare module 'gi://GstMpegts?version=1.0' {
                     channels: LogicalChannel[];
                 }>,
             );
-            _init(...args: any[]): void;
         }
 
         /**
@@ -3144,10 +3070,6 @@ declare module 'gi://GstMpegts?version=1.0' {
             metadata_service_id: number;
             decoder_config_flags: number;
             dsm_cc_flag: boolean;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         /**
@@ -3173,7 +3095,6 @@ declare module 'gi://GstMpegts?version=1.0' {
                     streams: NITStream[];
                 }>,
             );
-            _init(...args: any[]): void;
 
             static ['new'](): NIT;
         }
@@ -3196,7 +3117,6 @@ declare module 'gi://GstMpegts?version=1.0' {
                     descriptors: Descriptor[];
                 }>,
             );
-            _init(...args: any[]): void;
 
             static ['new'](): NITStream;
         }
@@ -3215,10 +3135,6 @@ declare module 'gi://GstMpegts?version=1.0' {
 
             metadata_service_id: number;
             flags: number;
-
-            // Constructors
-
-            _init(...args: any[]): void;
 
             // Static methods
 
@@ -3255,7 +3171,6 @@ declare module 'gi://GstMpegts?version=1.0' {
                     streams: PMTStream[];
                 }>,
             );
-            _init(...args: any[]): void;
 
             static ['new'](): PMT;
         }
@@ -3281,7 +3196,6 @@ declare module 'gi://GstMpegts?version=1.0' {
                     descriptors: Descriptor[];
                 }>,
             );
-            _init(...args: any[]): void;
 
             static ['new'](): PMTStream;
         }
@@ -3305,7 +3219,6 @@ declare module 'gi://GstMpegts?version=1.0' {
                     network_or_program_map_PID: number;
                 }>,
             );
-            _init(...args: any[]): void;
 
             static ['new'](): PatProgram;
         }
@@ -3348,7 +3261,6 @@ declare module 'gi://GstMpegts?version=1.0' {
                     is_running_time: boolean;
                 }>,
             );
-            _init(...args: any[]): void;
 
             static ['new'](): SCTESIT;
         }
@@ -3376,7 +3288,6 @@ declare module 'gi://GstMpegts?version=1.0' {
                     utc_splice_time: number;
                 }>,
             );
-            _init(...args: any[]): void;
 
             static ['new'](tag: number): SCTESpliceComponent;
         }
@@ -3425,7 +3336,6 @@ declare module 'gi://GstMpegts?version=1.0' {
                     avails_expected: number;
                 }>,
             );
-            _init(...args: any[]): void;
 
             static ['new'](): SCTESpliceEvent;
         }
@@ -3452,7 +3362,6 @@ declare module 'gi://GstMpegts?version=1.0' {
                     services: SDTService[];
                 }>,
             );
-            _init(...args: any[]): void;
 
             static ['new'](): SDT;
         }
@@ -3481,7 +3390,6 @@ declare module 'gi://GstMpegts?version=1.0' {
                     descriptors: Descriptor[];
                 }>,
             );
-            _init(...args: any[]): void;
 
             static ['new'](): SDTService;
         }
@@ -3495,10 +3403,6 @@ declare module 'gi://GstMpegts?version=1.0' {
             // Fields
 
             descriptors: Descriptor[];
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         /**
@@ -3512,10 +3416,6 @@ declare module 'gi://GstMpegts?version=1.0' {
             service_id: number;
             running_status: RunningStatus;
             descriptors: Descriptor[];
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         /**
@@ -3535,10 +3435,6 @@ declare module 'gi://GstMpegts?version=1.0' {
             modulation_type: ModulationType;
             symbol_rate: number;
             fec_inner: DVBCodeRate;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         /**
@@ -3605,7 +3501,6 @@ declare module 'gi://GstMpegts?version=1.0' {
             // Constructors
 
             constructor(pid: number, data: Uint8Array | string);
-            _init(...args: any[]): void;
 
             static ['new'](pid: number, data: Uint8Array | string): Section;
 
@@ -3789,7 +3684,6 @@ declare module 'gi://GstMpegts?version=1.0' {
                     sub_cells: T2DeliverySystemCellExtension[];
                 }>,
             );
-            _init(...args: any[]): void;
         }
 
         class T2DeliverySystemCellExtension {
@@ -3808,7 +3702,6 @@ declare module 'gi://GstMpegts?version=1.0' {
                     transposer_frequency: number;
                 }>,
             );
-            _init(...args: any[]): void;
         }
 
         /**
@@ -3829,10 +3722,6 @@ declare module 'gi://GstMpegts?version=1.0' {
             tfs: boolean;
             cells: T2DeliverySystemCell[];
 
-            // Constructors
-
-            _init(...args: any[]): void;
-
             // Methods
 
             free(): void;
@@ -3847,10 +3736,6 @@ declare module 'gi://GstMpegts?version=1.0' {
             // Fields
 
             descriptors: Descriptor[];
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         /**
@@ -3873,10 +3758,6 @@ declare module 'gi://GstMpegts?version=1.0' {
             guard_interval: TerrestrialGuardInterval;
             transmission_mode: TerrestrialTransmissionMode;
             other_frequency: boolean;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         /**

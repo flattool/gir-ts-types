@@ -727,7 +727,6 @@ declare module 'gi://GstController?version=1.0' {
                     value: number;
                 }>,
             );
-            _init(...args: any[]): void;
 
             // Methods
 
@@ -746,38 +745,22 @@ declare module 'gi://GstController?version=1.0' {
         type InterpolationControlSourceClass = typeof InterpolationControlSource;
         abstract class InterpolationControlSourcePrivate {
             static $gtype: GObject.GType<InterpolationControlSourcePrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type LFOControlSourceClass = typeof LFOControlSource;
         abstract class LFOControlSourcePrivate {
             static $gtype: GObject.GType<LFOControlSourcePrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type ProxyControlBindingClass = typeof ProxyControlBinding;
         type TimedValueControlSourceClass = typeof TimedValueControlSource;
         abstract class TimedValueControlSourcePrivate {
             static $gtype: GObject.GType<TimedValueControlSourcePrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type TriggerControlSourceClass = typeof TriggerControlSource;
         abstract class TriggerControlSourcePrivate {
             static $gtype: GObject.GType<TriggerControlSourcePrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         /**

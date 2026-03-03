@@ -4284,18 +4284,10 @@ declare module 'gi://GstBase?version=1.0' {
         type AggregatorPadClass = typeof AggregatorPad;
         abstract class AggregatorPadPrivate {
             static $gtype: GObject.GType<AggregatorPadPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         abstract class AggregatorPrivate {
             static $gtype: GObject.GType<AggregatorPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type BaseParseClass = typeof BaseParse;
@@ -4320,7 +4312,6 @@ declare module 'gi://GstBase?version=1.0' {
             // Constructors
 
             constructor(buffer: Gst.Buffer, flags: BaseParseFrameFlags, overhead: number);
-            _init(...args: any[]): void;
 
             static ['new'](buffer: Gst.Buffer, flags: BaseParseFrameFlags, overhead: number): BaseParseFrame;
 
@@ -4347,37 +4338,21 @@ declare module 'gi://GstBase?version=1.0' {
 
         abstract class BaseParsePrivate {
             static $gtype: GObject.GType<BaseParsePrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type BaseSinkClass = typeof BaseSink;
         abstract class BaseSinkPrivate {
             static $gtype: GObject.GType<BaseSinkPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type BaseSrcClass = typeof BaseSrc;
         abstract class BaseSrcPrivate {
             static $gtype: GObject.GType<BaseSrcPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type BaseTransformClass = typeof BaseTransform;
         abstract class BaseTransformPrivate {
             static $gtype: GObject.GType<BaseTransformPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         /**
@@ -4405,7 +4380,6 @@ declare module 'gi://GstBase?version=1.0' {
                     bit: number;
                 }>,
             );
-            _init(...args: any[]): void;
 
             // Methods
 
@@ -4523,7 +4497,6 @@ declare module 'gi://GstBase?version=1.0' {
                     bit_size: number;
                 }>,
             );
-            _init(...args: any[]): void;
 
             // Methods
 
@@ -4647,7 +4620,6 @@ declare module 'gi://GstBase?version=1.0' {
                     byte: number;
                 }>,
             );
-            _init(...args: any[]): void;
 
             // Methods
 
@@ -5141,7 +5113,6 @@ declare module 'gi://GstBase?version=1.0' {
                     owned: boolean;
                 }>,
             );
-            _init(...args: any[]): void;
 
             // Methods
 
@@ -5399,36 +5370,20 @@ declare module 'gi://GstBase?version=1.0' {
             collect: CollectPads;
             pad: Gst.Pad;
             pos: number;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         abstract class CollectDataPrivate {
             static $gtype: GObject.GType<CollectDataPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type CollectPadsClass = typeof CollectPads;
         abstract class CollectPadsPrivate {
             static $gtype: GObject.GType<CollectPadsPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type DataQueueClass = typeof DataQueue;
         abstract class DataQueuePrivate {
             static $gtype: GObject.GType<DataQueuePrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         /**
@@ -5470,7 +5425,6 @@ declare module 'gi://GstBase?version=1.0' {
             // Constructors
 
             constructor(properties?: Partial<{}>);
-            _init(...args: any[]): void;
 
             static ['new'](): FlowCombiner;
 
@@ -5539,10 +5493,6 @@ declare module 'gi://GstBase?version=1.0' {
          */
         abstract class TypeFindData {
             static $gtype: GObject.GType<TypeFindData>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         /**

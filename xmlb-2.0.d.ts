@@ -1957,7 +1957,6 @@ declare module 'gi://Xmlb?version=2.0' {
             // Constructors
 
             constructor(properties?: Partial<{}>);
-            _init(...args: any[]): void;
 
             // Methods
 
@@ -2001,7 +2000,6 @@ declare module 'gi://Xmlb?version=2.0' {
             // Constructors
 
             constructor(properties?: Partial<{}>);
-            _init(...args: any[]): void;
 
             // Methods
 
@@ -2037,10 +2035,6 @@ declare module 'gi://Xmlb?version=2.0' {
         type NodeClass = typeof Node;
         abstract class Opcode {
             static $gtype: GObject.GType<Opcode>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
 
             // Static methods
 
@@ -2132,7 +2126,6 @@ declare module 'gi://Xmlb?version=2.0' {
             // Constructors
 
             constructor(properties?: Partial<{}>);
-            _init(...args: any[]): void;
 
             // Methods
 
@@ -2196,10 +2189,6 @@ declare module 'gi://Xmlb?version=2.0' {
         abstract class Stack {
             static $gtype: GObject.GType<Stack>;
 
-            // Constructors
-
-            _init(...args: any[]): void;
-
             // Methods
 
             /**
@@ -2231,7 +2220,6 @@ declare module 'gi://Xmlb?version=2.0' {
             // Constructors
 
             constructor(properties?: Partial<{}>);
-            _init(...args: any[]): void;
 
             // Methods
 

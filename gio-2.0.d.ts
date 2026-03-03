@@ -364,7 +364,6 @@ declare module 'gi://Gio?version=2.0' {
             // Constructors
 
             constructor(options: { message: string; code: number });
-            _init(...args: any[]): void;
 
             // Static methods
 
@@ -1218,7 +1217,6 @@ declare module 'gi://Gio?version=2.0' {
             // Constructors
 
             constructor(options: { message: string; code: number });
-            _init(...args: any[]): void;
         }
 
         /**
@@ -1494,7 +1492,6 @@ declare module 'gi://Gio?version=2.0' {
             // Constructors
 
             constructor(options: { message: string; code: number });
-            _init(...args: any[]): void;
 
             // Static methods
 
@@ -1616,7 +1613,6 @@ declare module 'gi://Gio?version=2.0' {
             // Constructors
 
             constructor(options: { message: string; code: number });
-            _init(...args: any[]): void;
 
             // Static methods
 
@@ -1926,7 +1922,6 @@ declare module 'gi://Gio?version=2.0' {
             // Constructors
 
             constructor(options: { message: string; code: number });
-            _init(...args: any[]): void;
 
             // Static methods
 
@@ -2055,7 +2050,6 @@ declare module 'gi://Gio?version=2.0' {
             // Constructors
 
             constructor(options: { message: string; code: number });
-            _init(...args: any[]): void;
 
             // Static methods
 
@@ -72191,7 +72185,6 @@ declare module 'gi://Gio?version=2.0' {
                     state: string;
                 }>,
             );
-            _init(...args: any[]): void;
         }
 
         type ActionGroupInterface = typeof ActionGroup;
@@ -72201,28 +72194,16 @@ declare module 'gi://Gio?version=2.0' {
         type AppLaunchContextClass = typeof AppLaunchContext;
         abstract class AppLaunchContextPrivate {
             static $gtype: GObject.GType<AppLaunchContextPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type ApplicationClass = typeof Application;
         type ApplicationCommandLineClass = typeof ApplicationCommandLine;
         abstract class ApplicationCommandLinePrivate {
             static $gtype: GObject.GType<ApplicationCommandLinePrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         abstract class ApplicationPrivate {
             static $gtype: GObject.GType<ApplicationPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type AsyncInitableIface = typeof AsyncInitable;
@@ -72230,28 +72211,16 @@ declare module 'gi://Gio?version=2.0' {
         type BufferedInputStreamClass = typeof BufferedInputStream;
         abstract class BufferedInputStreamPrivate {
             static $gtype: GObject.GType<BufferedInputStreamPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type BufferedOutputStreamClass = typeof BufferedOutputStream;
         abstract class BufferedOutputStreamPrivate {
             static $gtype: GObject.GType<BufferedOutputStreamPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type CancellableClass = typeof Cancellable;
         abstract class CancellablePrivate {
             static $gtype: GObject.GType<CancellablePrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type CharsetConverterClass = typeof CharsetConverter;
@@ -72259,19 +72228,11 @@ declare module 'gi://Gio?version=2.0' {
         type ConverterInputStreamClass = typeof ConverterInputStream;
         abstract class ConverterInputStreamPrivate {
             static $gtype: GObject.GType<ConverterInputStreamPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type ConverterOutputStreamClass = typeof ConverterOutputStream;
         abstract class ConverterOutputStreamPrivate {
             static $gtype: GObject.GType<ConverterOutputStreamPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type CredentialsClass = typeof Credentials;
@@ -72298,7 +72259,6 @@ declare module 'gi://Gio?version=2.0' {
                     annotations: DBusAnnotationInfo[];
                 }>,
             );
-            _init(...args: any[]): void;
 
             // Static methods
 
@@ -72350,7 +72310,6 @@ declare module 'gi://Gio?version=2.0' {
                     annotations: DBusAnnotationInfo[];
                 }>,
             );
-            _init(...args: any[]): void;
 
             // Methods
 
@@ -72387,7 +72346,6 @@ declare module 'gi://Gio?version=2.0' {
                     dbus_error_name: string;
                 }>,
             );
-            _init(...args: any[]): void;
         }
 
         type DBusInterfaceIface = typeof DBusInterface;
@@ -72406,8 +72364,6 @@ declare module 'gi://Gio?version=2.0' {
             annotations: DBusAnnotationInfo[];
 
             // Constructors
-
-            _init(...args: any[]): void;
 
             static new_for_xml(info: string): DBusInterfaceInfo;
 
@@ -72487,10 +72443,6 @@ declare module 'gi://Gio?version=2.0' {
         type DBusInterfaceSkeletonClass = typeof DBusInterfaceSkeleton;
         abstract class DBusInterfaceSkeletonPrivate {
             static $gtype: GObject.GType<DBusInterfaceSkeletonPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         /**
@@ -72544,10 +72496,6 @@ declare module 'gi://Gio?version=2.0' {
             method_call: DBusInterfaceMethodCallFunc;
             get_property: DBusInterfaceGetPropertyFunc;
             set_property: DBusInterfaceSetPropertyFunc;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         /**
@@ -72575,7 +72523,6 @@ declare module 'gi://Gio?version=2.0' {
                     annotations: DBusAnnotationInfo[];
                 }>,
             );
-            _init(...args: any[]): void;
 
             // Methods
 
@@ -72608,7 +72555,6 @@ declare module 'gi://Gio?version=2.0' {
             // Constructors
 
             constructor(xml_data: string);
-            _init(...args: any[]): void;
 
             static new_for_xml(xml_data: string): DBusNodeInfo;
 
@@ -72651,38 +72597,22 @@ declare module 'gi://Gio?version=2.0' {
         type DBusObjectManagerClientClass = typeof DBusObjectManagerClient;
         abstract class DBusObjectManagerClientPrivate {
             static $gtype: GObject.GType<DBusObjectManagerClientPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type DBusObjectManagerIface = typeof DBusObjectManager;
         type DBusObjectManagerServerClass = typeof DBusObjectManagerServer;
         abstract class DBusObjectManagerServerPrivate {
             static $gtype: GObject.GType<DBusObjectManagerServerPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type DBusObjectProxyClass = typeof DBusObjectProxy;
         abstract class DBusObjectProxyPrivate {
             static $gtype: GObject.GType<DBusObjectProxyPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type DBusObjectSkeletonClass = typeof DBusObjectSkeleton;
         abstract class DBusObjectSkeletonPrivate {
             static $gtype: GObject.GType<DBusObjectSkeletonPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         /**
@@ -72698,10 +72628,6 @@ declare module 'gi://Gio?version=2.0' {
             signature: string;
             flags: DBusPropertyInfoFlags;
             annotations: DBusAnnotationInfo[];
-
-            // Constructors
-
-            _init(...args: any[]): void;
 
             // Methods
 
@@ -72722,10 +72648,6 @@ declare module 'gi://Gio?version=2.0' {
         type DBusProxyClass = typeof DBusProxy;
         abstract class DBusProxyPrivate {
             static $gtype: GObject.GType<DBusProxyPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         /**
@@ -72751,7 +72673,6 @@ declare module 'gi://Gio?version=2.0' {
                     annotations: DBusAnnotationInfo[];
                 }>,
             );
-            _init(...args: any[]): void;
 
             // Methods
 
@@ -72780,28 +72701,16 @@ declare module 'gi://Gio?version=2.0' {
             enumerate: DBusSubtreeEnumerateFunc;
             introspect: DBusSubtreeIntrospectFunc;
             dispatch: DBusSubtreeDispatchFunc;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type DataInputStreamClass = typeof DataInputStream;
         abstract class DataInputStreamPrivate {
             static $gtype: GObject.GType<DataInputStreamPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type DataOutputStreamClass = typeof DataOutputStream;
         abstract class DataOutputStreamPrivate {
             static $gtype: GObject.GType<DataOutputStreamPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type DatagramBasedInterface = typeof DatagramBased;
@@ -72817,10 +72726,6 @@ declare module 'gi://Gio?version=2.0' {
         type EmblemedIconClass = typeof EmblemedIcon;
         abstract class EmblemedIconPrivate {
             static $gtype: GObject.GType<EmblemedIconPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         /**
@@ -72834,10 +72739,6 @@ declare module 'gi://Gio?version=2.0' {
             name: string;
             type: FileAttributeType;
             flags: FileAttributeInfoFlags;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         /**
@@ -72858,7 +72759,6 @@ declare module 'gi://Gio?version=2.0' {
                     n_infos: number;
                 }>,
             );
-            _init(...args: any[]): void;
 
             static ['new'](): FileAttributeInfoList;
 
@@ -72904,7 +72804,6 @@ declare module 'gi://Gio?version=2.0' {
             // Constructors
 
             constructor(attributes: string);
-            _init(...args: any[]): void;
 
             static ['new'](attributes: string): FileAttributeMatcher;
 
@@ -72978,19 +72877,11 @@ declare module 'gi://Gio?version=2.0' {
         type FileEnumeratorClass = typeof FileEnumerator;
         abstract class FileEnumeratorPrivate {
             static $gtype: GObject.GType<FileEnumeratorPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type FileIOStreamClass = typeof FileIOStream;
         abstract class FileIOStreamPrivate {
             static $gtype: GObject.GType<FileIOStreamPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type FileIconClass = typeof FileIcon;
@@ -72999,28 +72890,16 @@ declare module 'gi://Gio?version=2.0' {
         type FileInputStreamClass = typeof FileInputStream;
         abstract class FileInputStreamPrivate {
             static $gtype: GObject.GType<FileInputStreamPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type FileMonitorClass = typeof FileMonitor;
         abstract class FileMonitorPrivate {
             static $gtype: GObject.GType<FileMonitorPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type FileOutputStreamClass = typeof FileOutputStream;
         abstract class FileOutputStreamPrivate {
             static $gtype: GObject.GType<FileOutputStreamPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type FilenameCompleterClass = typeof FilenameCompleter;
@@ -73032,10 +72911,6 @@ declare module 'gi://Gio?version=2.0' {
          */
         abstract class IOExtension {
             static $gtype: GObject.GType<IOExtension>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
 
             // Methods
 
@@ -73115,10 +72990,6 @@ declare module 'gi://Gio?version=2.0' {
         abstract class IOExtensionPoint {
             static $gtype: GObject.GType<IOExtensionPoint>;
 
-            // Constructors
-
-            _init(...args: any[]): void;
-
             // Static methods
 
             /**
@@ -73187,10 +73058,6 @@ declare module 'gi://Gio?version=2.0' {
         abstract class IOModuleScope {
             static $gtype: GObject.GType<IOModuleScope>;
 
-            // Constructors
-
-            _init(...args: any[]): void;
-
             // Methods
 
             /**
@@ -73211,10 +73078,6 @@ declare module 'gi://Gio?version=2.0' {
          */
         abstract class IOSchedulerJob {
             static $gtype: GObject.GType<IOSchedulerJob>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
 
             // Methods
 
@@ -73245,19 +73108,11 @@ declare module 'gi://Gio?version=2.0' {
 
         abstract class IOStreamAdapter {
             static $gtype: GObject.GType<IOStreamAdapter>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type IOStreamClass = typeof IOStream;
         abstract class IOStreamPrivate {
             static $gtype: GObject.GType<IOStreamPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type IconIface = typeof Icon;
@@ -73265,27 +73120,15 @@ declare module 'gi://Gio?version=2.0' {
         type InetAddressMaskClass = typeof InetAddressMask;
         abstract class InetAddressMaskPrivate {
             static $gtype: GObject.GType<InetAddressMaskPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         abstract class InetAddressPrivate {
             static $gtype: GObject.GType<InetAddressPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type InetSocketAddressClass = typeof InetSocketAddress;
         abstract class InetSocketAddressPrivate {
             static $gtype: GObject.GType<InetSocketAddressPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type InitableIface = typeof Initable;
@@ -73322,19 +73165,11 @@ declare module 'gi://Gio?version=2.0' {
             flags: number;
             control_messages: SocketControlMessage[];
             num_control_messages: number;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type InputStreamClass = typeof InputStream;
         abstract class InputStreamPrivate {
             static $gtype: GObject.GType<InputStreamPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         /**
@@ -73359,7 +73194,6 @@ declare module 'gi://Gio?version=2.0' {
                     size: number;
                 }>,
             );
-            _init(...args: any[]): void;
         }
 
         type ListModelInterface = typeof ListModel;
@@ -73368,86 +73202,50 @@ declare module 'gi://Gio?version=2.0' {
         type MemoryInputStreamClass = typeof MemoryInputStream;
         abstract class MemoryInputStreamPrivate {
             static $gtype: GObject.GType<MemoryInputStreamPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type MemoryMonitorInterface = typeof MemoryMonitor;
         type MemoryOutputStreamClass = typeof MemoryOutputStream;
         abstract class MemoryOutputStreamPrivate {
             static $gtype: GObject.GType<MemoryOutputStreamPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type MenuAttributeIterClass = typeof MenuAttributeIter;
         abstract class MenuAttributeIterPrivate {
             static $gtype: GObject.GType<MenuAttributeIterPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type MenuLinkIterClass = typeof MenuLinkIter;
         abstract class MenuLinkIterPrivate {
             static $gtype: GObject.GType<MenuLinkIterPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type MenuModelClass = typeof MenuModel;
         abstract class MenuModelPrivate {
             static $gtype: GObject.GType<MenuModelPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type MountIface = typeof Mount;
         type MountOperationClass = typeof MountOperation;
         abstract class MountOperationPrivate {
             static $gtype: GObject.GType<MountOperationPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type NativeSocketAddressClass = typeof NativeSocketAddress;
         abstract class NativeSocketAddressPrivate {
             static $gtype: GObject.GType<NativeSocketAddressPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type NativeVolumeMonitorClass = typeof NativeVolumeMonitor;
         type NetworkAddressClass = typeof NetworkAddress;
         abstract class NetworkAddressPrivate {
             static $gtype: GObject.GType<NetworkAddressPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type NetworkMonitorInterface = typeof NetworkMonitor;
         type NetworkServiceClass = typeof NetworkService;
         abstract class NetworkServicePrivate {
             static $gtype: GObject.GType<NetworkServicePrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         /**
@@ -73470,19 +73268,11 @@ declare module 'gi://Gio?version=2.0' {
             bytes_sent: number;
             control_messages: SocketControlMessage[];
             num_control_messages: number;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type OutputStreamClass = typeof OutputStream;
         abstract class OutputStreamPrivate {
             static $gtype: GObject.GType<OutputStreamPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         /**
@@ -73507,16 +73297,11 @@ declare module 'gi://Gio?version=2.0' {
                     size: number;
                 }>,
             );
-            _init(...args: any[]): void;
         }
 
         type PermissionClass = typeof Permission;
         abstract class PermissionPrivate {
             static $gtype: GObject.GType<PermissionPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type PollableInputStreamInterface = typeof PollableInputStream;
@@ -73526,18 +73311,10 @@ declare module 'gi://Gio?version=2.0' {
         type ProxyAddressEnumeratorClass = typeof ProxyAddressEnumerator;
         abstract class ProxyAddressEnumeratorPrivate {
             static $gtype: GObject.GType<ProxyAddressEnumeratorPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         abstract class ProxyAddressPrivate {
             static $gtype: GObject.GType<ProxyAddressPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type ProxyInterface = typeof Proxy;
@@ -73546,10 +73323,6 @@ declare module 'gi://Gio?version=2.0' {
         type ResolverClass = typeof Resolver;
         abstract class ResolverPrivate {
             static $gtype: GObject.GType<ResolverPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         /**
@@ -73721,7 +73494,6 @@ declare module 'gi://Gio?version=2.0' {
             // Constructors
 
             constructor(data: GLib.Bytes | Uint8Array);
-            _init(...args: any[]): void;
 
             static new_from_data(data: GLib.Bytes | Uint8Array): Resource;
 
@@ -73849,19 +73621,11 @@ declare module 'gi://Gio?version=2.0' {
         type SettingsBackendClass = typeof SettingsBackend;
         abstract class SettingsBackendPrivate {
             static $gtype: GObject.GType<SettingsBackendPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type SettingsClass = typeof Settings;
         abstract class SettingsPrivate {
             static $gtype: GObject.GType<SettingsPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         /**
@@ -73963,10 +73727,6 @@ declare module 'gi://Gio?version=2.0' {
 
             _realGetKey: typeof SettingsSchema.prototype.get_key;
 
-            // Constructors
-
-            _init(...args: any[]): void;
-
             // Methods
 
             /**
@@ -74036,10 +73796,6 @@ declare module 'gi://Gio?version=2.0' {
          */
         abstract class SettingsSchemaKey {
             static $gtype: GObject.GType<SettingsSchemaKey>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
 
             // Methods
 
@@ -74166,7 +73922,6 @@ declare module 'gi://Gio?version=2.0' {
             // Constructors
 
             constructor(directory: string, parent: SettingsSchemaSource | null, trusted: boolean);
-            _init(...args: any[]): void;
 
             static new_from_directory(
                 directory: string,
@@ -74241,20 +73996,12 @@ declare module 'gi://Gio?version=2.0' {
         type SimpleActionGroupClass = typeof SimpleActionGroup;
         abstract class SimpleActionGroupPrivate {
             static $gtype: GObject.GType<SimpleActionGroupPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type SimpleAsyncResultClass = typeof SimpleAsyncResult;
         type SimpleProxyResolverClass = typeof SimpleProxyResolver;
         abstract class SimpleProxyResolverPrivate {
             static $gtype: GObject.GType<SimpleProxyResolverPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type SocketAddressClass = typeof SocketAddress;
@@ -74263,55 +74010,31 @@ declare module 'gi://Gio?version=2.0' {
         type SocketClientClass = typeof SocketClient;
         abstract class SocketClientPrivate {
             static $gtype: GObject.GType<SocketClientPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type SocketConnectableIface = typeof SocketConnectable;
         type SocketConnectionClass = typeof SocketConnection;
         abstract class SocketConnectionPrivate {
             static $gtype: GObject.GType<SocketConnectionPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type SocketControlMessageClass = typeof SocketControlMessage;
         abstract class SocketControlMessagePrivate {
             static $gtype: GObject.GType<SocketControlMessagePrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type SocketListenerClass = typeof SocketListener;
         abstract class SocketListenerPrivate {
             static $gtype: GObject.GType<SocketListenerPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         abstract class SocketPrivate {
             static $gtype: GObject.GType<SocketPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type SocketServiceClass = typeof SocketService;
         abstract class SocketServicePrivate {
             static $gtype: GObject.GType<SocketServicePrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         /**
@@ -74338,7 +74061,6 @@ declare module 'gi://Gio?version=2.0' {
             // Constructors
 
             constructor(hostname: string, port: number, priority: number, weight: number);
-            _init(...args: any[]): void;
 
             static ['new'](hostname: string, port: number, priority: number, weight: number): SrvTarget;
 
@@ -74389,10 +74111,6 @@ declare module 'gi://Gio?version=2.0' {
         class StaticResource {
             static $gtype: GObject.GType<StaticResource>;
 
-            // Constructors
-
-            _init(...args: any[]): void;
-
             // Methods
 
             /**
@@ -74429,19 +74147,11 @@ declare module 'gi://Gio?version=2.0' {
         type TcpConnectionClass = typeof TcpConnection;
         abstract class TcpConnectionPrivate {
             static $gtype: GObject.GType<TcpConnectionPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type TcpWrapperConnectionClass = typeof TcpWrapperConnection;
         abstract class TcpWrapperConnectionPrivate {
             static $gtype: GObject.GType<TcpWrapperConnectionPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type ThemedIconClass = typeof ThemedIcon;
@@ -74449,104 +74159,60 @@ declare module 'gi://Gio?version=2.0' {
         type ThreadedSocketServiceClass = typeof ThreadedSocketService;
         abstract class ThreadedSocketServicePrivate {
             static $gtype: GObject.GType<ThreadedSocketServicePrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type TlsBackendInterface = typeof TlsBackend;
         type TlsCertificateClass = typeof TlsCertificate;
         abstract class TlsCertificatePrivate {
             static $gtype: GObject.GType<TlsCertificatePrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type TlsClientConnectionInterface = typeof TlsClientConnection;
         type TlsConnectionClass = typeof TlsConnection;
         abstract class TlsConnectionPrivate {
             static $gtype: GObject.GType<TlsConnectionPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type TlsDatabaseClass = typeof TlsDatabase;
         abstract class TlsDatabasePrivate {
             static $gtype: GObject.GType<TlsDatabasePrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type TlsFileDatabaseInterface = typeof TlsFileDatabase;
         type TlsInteractionClass = typeof TlsInteraction;
         abstract class TlsInteractionPrivate {
             static $gtype: GObject.GType<TlsInteractionPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type TlsPasswordClass = typeof TlsPassword;
         abstract class TlsPasswordPrivate {
             static $gtype: GObject.GType<TlsPasswordPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type TlsServerConnectionInterface = typeof TlsServerConnection;
         type UnixConnectionClass = typeof UnixConnection;
         abstract class UnixConnectionPrivate {
             static $gtype: GObject.GType<UnixConnectionPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type UnixCredentialsMessageClass = typeof UnixCredentialsMessage;
         abstract class UnixCredentialsMessagePrivate {
             static $gtype: GObject.GType<UnixCredentialsMessagePrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type UnixFDListClass = typeof UnixFDList;
         abstract class UnixFDListPrivate {
             static $gtype: GObject.GType<UnixFDListPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type UnixFDMessageClass = typeof UnixFDMessage;
         abstract class UnixFDMessagePrivate {
             static $gtype: GObject.GType<UnixFDMessagePrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type UnixInputStreamClass = typeof UnixInputStream;
         abstract class UnixInputStreamPrivate {
             static $gtype: GObject.GType<UnixInputStreamPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         /**
@@ -74555,10 +74221,6 @@ declare module 'gi://Gio?version=2.0' {
          */
         abstract class UnixMountEntry {
             static $gtype: GObject.GType<UnixMountEntry>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
 
             // Static methods
 
@@ -74698,10 +74360,6 @@ declare module 'gi://Gio?version=2.0' {
         abstract class UnixMountPoint {
             static $gtype: GObject.GType<UnixMountPoint>;
 
-            // Constructors
-
-            _init(...args: any[]): void;
-
             // Static methods
 
             /**
@@ -74796,19 +74454,11 @@ declare module 'gi://Gio?version=2.0' {
         type UnixOutputStreamClass = typeof UnixOutputStream;
         abstract class UnixOutputStreamPrivate {
             static $gtype: GObject.GType<UnixOutputStreamPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type UnixSocketAddressClass = typeof UnixSocketAddress;
         abstract class UnixSocketAddressPrivate {
             static $gtype: GObject.GType<UnixSocketAddressPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type VfsClass = typeof Vfs;

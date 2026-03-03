@@ -399,7 +399,6 @@ declare module 'gi://Soup?version=3.0' {
             // Constructors
 
             constructor(options: { message: string; code: number });
-            _init(...args: any[]): void;
 
             // Static methods
 
@@ -701,7 +700,6 @@ declare module 'gi://Soup?version=3.0' {
             // Constructors
 
             constructor(options: { message: string; code: number });
-            _init(...args: any[]): void;
 
             // Static methods
 
@@ -922,7 +920,6 @@ declare module 'gi://Soup?version=3.0' {
             // Constructors
 
             constructor(options: { message: string; code: number });
-            _init(...args: any[]): void;
 
             // Static methods
 
@@ -13006,7 +13003,6 @@ declare module 'gi://Soup?version=3.0' {
             // Constructors
 
             constructor(name: string, value: string, domain: string, path: string, max_age: number);
-            _init(...args: any[]): void;
 
             static ['new'](name: string, value: string, domain: string, path: string, max_age: number): Cookie;
 
@@ -13223,7 +13219,6 @@ declare module 'gi://Soup?version=3.0' {
             // Constructors
 
             constructor(domain: string, max_age: number, include_subdomains: boolean);
-            _init(...args: any[]): void;
 
             static ['new'](domain: string, max_age: number, include_subdomains: boolean): HSTSPolicy;
 
@@ -13323,7 +13318,6 @@ declare module 'gi://Soup?version=3.0' {
                     length: number;
                 }>,
             );
-            _init(...args: any[]): void;
 
             static ['new'](): MessageBody;
 
@@ -13463,7 +13457,6 @@ declare module 'gi://Soup?version=3.0' {
             // Constructors
 
             constructor(type: MessageHeadersType);
-            _init(...args: any[]): void;
 
             static ['new'](type: MessageHeadersType): MessageHeaders;
 
@@ -13798,7 +13791,6 @@ declare module 'gi://Soup?version=3.0' {
             // Constructors
 
             constructor(properties?: Partial<{}>);
-            _init(...args: any[]): void;
 
             // Static methods
 
@@ -13837,10 +13829,6 @@ declare module 'gi://Soup?version=3.0' {
          */
         abstract class MessageMetrics {
             static $gtype: GObject.GType<MessageMetrics>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
 
             // Methods
 
@@ -14010,7 +13998,6 @@ declare module 'gi://Soup?version=3.0' {
             // Constructors
 
             constructor(mime_type: string);
-            _init(...args: any[]): void;
 
             static ['new'](mime_type: string): Multipart;
 
@@ -14106,7 +14093,6 @@ declare module 'gi://Soup?version=3.0' {
                     end: number;
                 }>,
             );
-            _init(...args: any[]): void;
         }
 
         type ServerClass = typeof Server;

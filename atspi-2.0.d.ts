@@ -5379,10 +5379,6 @@ declare module 'gi://Atspi?version=2.0' {
         type AccessibleClass = typeof Accessible;
         abstract class AccessiblePrivate {
             static $gtype: GObject.GType<AccessiblePrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type ApplicationClass = typeof Application;
@@ -5400,10 +5396,6 @@ declare module 'gi://Atspi?version=2.0' {
             timestamp: number;
             event_string: string;
             is_text: boolean;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type DeviceLegacyClass = typeof DeviceLegacy;
@@ -5419,10 +5411,6 @@ declare module 'gi://Atspi?version=2.0' {
             detail1: number;
             detail2: number;
             sender: Accessible;
-
-            // Constructors
-
-            _init(...args: any[]): void;
 
             // Static methods
 
@@ -5459,7 +5447,6 @@ declare module 'gi://Atspi?version=2.0' {
                     global: boolean;
                 }>,
             );
-            _init(...args: any[]): void;
         }
 
         type HyperlinkClass = typeof Hyperlink;
@@ -5483,7 +5470,6 @@ declare module 'gi://Atspi?version=2.0' {
                     modifiers: number;
                 }>,
             );
-            _init(...args: any[]): void;
         }
 
         /**
@@ -5510,7 +5496,6 @@ declare module 'gi://Atspi?version=2.0' {
                     len: number;
                 }>,
             );
-            _init(...args: any[]): void;
         }
 
         type MatchRuleClass = typeof MatchRule;
@@ -5531,7 +5516,6 @@ declare module 'gi://Atspi?version=2.0' {
                     y: number;
                 }>,
             );
-            _init(...args: any[]): void;
 
             // Methods
 
@@ -5554,7 +5538,6 @@ declare module 'gi://Atspi?version=2.0' {
                     end_offset: number;
                 }>,
             );
-            _init(...args: any[]): void;
 
             // Methods
 
@@ -5585,7 +5568,6 @@ declare module 'gi://Atspi?version=2.0' {
                     height: number;
                 }>,
             );
-            _init(...args: any[]): void;
 
             // Methods
 
@@ -5612,7 +5594,6 @@ declare module 'gi://Atspi?version=2.0' {
                     content: string;
                 }>,
             );
-            _init(...args: any[]): void;
         }
 
         /**
@@ -5646,10 +5627,6 @@ declare module 'gi://Atspi?version=2.0' {
             end_object: Accessible;
             end_offset: number;
             start_is_active: boolean;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         namespace Action {

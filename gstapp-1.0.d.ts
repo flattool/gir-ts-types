@@ -2125,19 +2125,11 @@ declare module 'gi://GstApp?version=1.0' {
         type AppSinkClass = typeof AppSink;
         abstract class AppSinkPrivate {
             static $gtype: GObject.GType<AppSinkPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type AppSrcClass = typeof AppSrc;
         abstract class AppSrcPrivate {
             static $gtype: GObject.GType<AppSrcPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         /**

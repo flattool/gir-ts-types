@@ -1083,18 +1083,10 @@ declare module 'gi://GstCodecs?version=1.0' {
         type AV1DecoderClass = typeof AV1Decoder;
         abstract class AV1DecoderPrivate {
             static $gtype: GObject.GType<AV1DecoderPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         class AV1Dpb {
             static $gtype: GObject.GType<AV1Dpb>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
 
             // Methods
 
@@ -1119,7 +1111,6 @@ declare module 'gi://GstCodecs?version=1.0' {
             // Constructors
 
             constructor(properties?: Partial<{}>);
-            _init(...args: any[]): void;
 
             static ['new'](): AV1Picture;
         }
@@ -1135,7 +1126,6 @@ declare module 'gi://GstCodecs?version=1.0' {
                     obu: unknown;
                 }>,
             );
-            _init(...args: any[]): void;
         }
 
         /**
@@ -1143,10 +1133,6 @@ declare module 'gi://GstCodecs?version=1.0' {
          */
         class CodecPicture {
             static $gtype: GObject.GType<CodecPicture>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
 
             // Methods
 
@@ -1175,18 +1161,10 @@ declare module 'gi://GstCodecs?version=1.0' {
         type H264DecoderClass = typeof H264Decoder;
         abstract class H264DecoderPrivate {
             static $gtype: GObject.GType<H264DecoderPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         abstract class H264Dpb {
             static $gtype: GObject.GType<H264Dpb>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
 
             // Methods
 
@@ -1279,7 +1257,6 @@ declare module 'gi://GstCodecs?version=1.0' {
             // Constructors
 
             constructor(properties?: Partial<{}>);
-            _init(...args: any[]): void;
 
             static ['new'](): H264Picture;
         }
@@ -1295,24 +1272,15 @@ declare module 'gi://GstCodecs?version=1.0' {
                     nalu: unknown;
                 }>,
             );
-            _init(...args: any[]): void;
         }
 
         type H265DecoderClass = typeof H265Decoder;
         abstract class H265DecoderPrivate {
             static $gtype: GObject.GType<H265DecoderPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         abstract class H265Dpb {
             static $gtype: GObject.GType<H265Dpb>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
 
             // Methods
 
@@ -1393,7 +1361,6 @@ declare module 'gi://GstCodecs?version=1.0' {
             // Constructors
 
             constructor(properties?: Partial<{}>);
-            _init(...args: any[]): void;
 
             static ['new'](): H265Picture;
         }
@@ -1409,24 +1376,15 @@ declare module 'gi://GstCodecs?version=1.0' {
                     nalu: unknown;
                 }>,
             );
-            _init(...args: any[]): void;
         }
 
         type Mpeg2DecoderClass = typeof Mpeg2Decoder;
         abstract class Mpeg2DecoderPrivate {
             static $gtype: GObject.GType<Mpeg2DecoderPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         abstract class Mpeg2Dpb {
             static $gtype: GObject.GType<Mpeg2Dpb>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
 
             // Methods
 
@@ -1462,7 +1420,6 @@ declare module 'gi://GstCodecs?version=1.0' {
             // Constructors
 
             constructor(properties?: Partial<{}>);
-            _init(...args: any[]): void;
 
             static ['new'](): Mpeg2Picture;
         }
@@ -1473,16 +1430,11 @@ declare module 'gi://GstCodecs?version=1.0' {
             // Constructors
 
             constructor(properties?: Partial<{}>);
-            _init(...args: any[]): void;
         }
 
         type Vp8DecoderClass = typeof Vp8Decoder;
         abstract class Vp8DecoderPrivate {
             static $gtype: GObject.GType<Vp8DecoderPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         class Vp8Picture {
@@ -1491,7 +1443,6 @@ declare module 'gi://GstCodecs?version=1.0' {
             // Constructors
 
             constructor(properties?: Partial<{}>);
-            _init(...args: any[]): void;
 
             static ['new'](): Vp8Picture;
         }
@@ -1499,10 +1450,6 @@ declare module 'gi://GstCodecs?version=1.0' {
         type Vp9DecoderClass = typeof Vp9Decoder;
         abstract class Vp9DecoderPrivate {
             static $gtype: GObject.GType<Vp9DecoderPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         /**
@@ -1515,15 +1462,10 @@ declare module 'gi://GstCodecs?version=1.0' {
             // Constructors
 
             constructor(properties?: Partial<{}>);
-            _init(...args: any[]): void;
         }
 
         class Vp9Dpb {
             static $gtype: GObject.GType<Vp9Dpb>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
 
             // Methods
 
@@ -1583,10 +1525,6 @@ declare module 'gi://GstCodecs?version=1.0' {
             reference_mode: Vp9ReferenceMode;
             lossless_flag: number;
             frame_header_length_in_bytes: number;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         /**
@@ -1626,7 +1564,6 @@ declare module 'gi://GstCodecs?version=1.0' {
                     loop_filter_mode_deltas: Uint8Array;
                 }>,
             );
-            _init(...args: any[]): void;
         }
 
         /**
@@ -1639,7 +1576,6 @@ declare module 'gi://GstCodecs?version=1.0' {
             // Constructors
 
             constructor(properties?: Partial<{}>);
-            _init(...args: any[]): void;
         }
 
         class Vp9Picture {
@@ -1648,7 +1584,6 @@ declare module 'gi://GstCodecs?version=1.0' {
             // Constructors
 
             constructor(properties?: Partial<{}>);
-            _init(...args: any[]): void;
 
             static ['new'](): Vp9Picture;
         }
@@ -1673,7 +1608,6 @@ declare module 'gi://GstCodecs?version=1.0' {
                     delta_q_uv_ac: number;
                 }>,
             );
-            _init(...args: any[]): void;
         }
 
         /**
@@ -1712,7 +1646,6 @@ declare module 'gi://GstCodecs?version=1.0' {
                     feature_data: number[];
                 }>,
             );
-            _init(...args: any[]): void;
         }
 
         /**
@@ -1732,7 +1665,6 @@ declare module 'gi://GstCodecs?version=1.0' {
                     reference: any[];
                 }>,
             );
-            _init(...args: any[]): void;
 
             // Methods
 

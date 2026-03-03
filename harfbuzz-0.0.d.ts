@@ -8813,10 +8813,6 @@ declare module 'gi://HarfBuzz?version=0.0' {
             name_id: ot_name_id_t;
             enable: aat_layout_feature_selector_t;
             disable: aat_layout_feature_selector_t;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         /**
@@ -8826,10 +8822,6 @@ declare module 'gi://HarfBuzz?version=0.0' {
          */
         abstract class blob_t {
             static $gtype: GObject.GType<blob_t>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         /**
@@ -8838,10 +8830,6 @@ declare module 'gi://HarfBuzz?version=0.0' {
          */
         abstract class buffer_t {
             static $gtype: GObject.GType<buffer_t>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         /**
@@ -8865,10 +8853,6 @@ declare module 'gi://HarfBuzz?version=0.0' {
             reserved6: any;
             reserved7: any;
             reserved8: any;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         /**
@@ -8900,7 +8884,6 @@ declare module 'gi://HarfBuzz?version=0.0' {
                     color: color_t;
                 }>,
             );
-            _init(...args: any[]): void;
         }
 
         /**
@@ -8913,10 +8896,6 @@ declare module 'gi://HarfBuzz?version=0.0' {
          */
         abstract class draw_funcs_t {
             static $gtype: GObject.GType<draw_funcs_t>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         /**
@@ -8944,7 +8923,6 @@ declare module 'gi://HarfBuzz?version=0.0' {
                     current_y: number;
                 }>,
             );
-            _init(...args: any[]): void;
         }
 
         /**
@@ -8952,10 +8930,6 @@ declare module 'gi://HarfBuzz?version=0.0' {
          */
         abstract class face_t {
             static $gtype: GObject.GType<face_t>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         /**
@@ -8985,7 +8959,6 @@ declare module 'gi://HarfBuzz?version=0.0' {
                     end: number;
                 }>,
             );
-            _init(...args: any[]): void;
 
             // Methods
 
@@ -9021,7 +8994,6 @@ declare module 'gi://HarfBuzz?version=0.0' {
                     line_gap: position_t;
                 }>,
             );
-            _init(...args: any[]): void;
         }
 
         /**
@@ -9036,10 +9008,6 @@ declare module 'gi://HarfBuzz?version=0.0' {
          */
         abstract class font_funcs_t {
             static $gtype: GObject.GType<font_funcs_t>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         /**
@@ -9047,10 +9015,6 @@ declare module 'gi://HarfBuzz?version=0.0' {
          */
         abstract class font_t {
             static $gtype: GObject.GType<font_t>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         /**
@@ -9078,7 +9042,6 @@ declare module 'gi://HarfBuzz?version=0.0' {
                     height: position_t;
                 }>,
             );
-            _init(...args: any[]): void;
         }
 
         /**
@@ -9101,7 +9064,6 @@ declare module 'gi://HarfBuzz?version=0.0' {
                     cluster: number;
                 }>,
             );
-            _init(...args: any[]): void;
         }
 
         /**
@@ -9129,7 +9091,6 @@ declare module 'gi://HarfBuzz?version=0.0' {
                     y_offset: position_t;
                 }>,
             );
-            _init(...args: any[]): void;
         }
 
         /**
@@ -9138,10 +9099,6 @@ declare module 'gi://HarfBuzz?version=0.0' {
          */
         abstract class language_t {
             static $gtype: GObject.GType<language_t>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
 
             // Methods
 
@@ -9157,10 +9114,6 @@ declare module 'gi://HarfBuzz?version=0.0' {
          */
         abstract class map_t {
             static $gtype: GObject.GType<map_t>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         /**
@@ -9186,7 +9139,6 @@ declare module 'gi://HarfBuzz?version=0.0' {
                     color_index: number;
                 }>,
             );
-            _init(...args: any[]): void;
         }
 
         /**
@@ -9204,10 +9156,6 @@ declare module 'gi://HarfBuzz?version=0.0' {
             end_connector_length: position_t;
             full_advance: position_t;
             flags: ot_math_glyph_part_flags_t;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         /**
@@ -9229,7 +9177,6 @@ declare module 'gi://HarfBuzz?version=0.0' {
                     advance: position_t;
                 }>,
             );
-            _init(...args: any[]): void;
         }
 
         /**
@@ -9251,7 +9198,6 @@ declare module 'gi://HarfBuzz?version=0.0' {
                     kern_value: position_t;
                 }>,
             );
-            _init(...args: any[]): void;
         }
 
         /**
@@ -9263,10 +9209,6 @@ declare module 'gi://HarfBuzz?version=0.0' {
             // Fields
 
             name_id: ot_name_id_t;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         /**
@@ -9289,10 +9231,6 @@ declare module 'gi://HarfBuzz?version=0.0' {
             min_value: number;
             default_value: number;
             max_value: number;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         /**
@@ -9320,7 +9258,6 @@ declare module 'gi://HarfBuzz?version=0.0' {
                     max_value: number;
                 }>,
             );
-            _init(...args: any[]): void;
         }
 
         /**
@@ -9347,10 +9284,6 @@ declare module 'gi://HarfBuzz?version=0.0' {
          */
         abstract class paint_funcs_t {
             static $gtype: GObject.GType<paint_funcs_t>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         /**
@@ -9365,10 +9298,6 @@ declare module 'gi://HarfBuzz?version=0.0' {
 
             direction: direction_t;
             script: script_t;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         /**
@@ -9379,10 +9308,6 @@ declare module 'gi://HarfBuzz?version=0.0' {
          */
         abstract class set_t {
             static $gtype: GObject.GType<set_t>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         /**
@@ -9398,10 +9323,6 @@ declare module 'gi://HarfBuzz?version=0.0' {
          */
         abstract class shape_plan_t {
             static $gtype: GObject.GType<shape_plan_t>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         /**
@@ -9416,10 +9337,6 @@ declare module 'gi://HarfBuzz?version=0.0' {
          */
         abstract class unicode_funcs_t {
             static $gtype: GObject.GType<unicode_funcs_t>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         /**
@@ -9431,7 +9348,6 @@ declare module 'gi://HarfBuzz?version=0.0' {
             // Constructors
 
             constructor(properties?: Partial<{}>);
-            _init(...args: any[]): void;
         }
 
         /**
@@ -9455,7 +9371,6 @@ declare module 'gi://HarfBuzz?version=0.0' {
                     value: number;
                 }>,
             );
-            _init(...args: any[]): void;
 
             // Methods
 
@@ -9491,7 +9406,6 @@ declare module 'gi://HarfBuzz?version=0.0' {
                     i8: Uint8Array;
                 }>,
             );
-            _init(...args: any[]): void;
         }
 
         class var_num_t {
@@ -9520,7 +9434,6 @@ declare module 'gi://HarfBuzz?version=0.0' {
                     i8: Uint8Array;
                 }>,
             );
-            _init(...args: any[]): void;
         }
 
         type bool_t = number;

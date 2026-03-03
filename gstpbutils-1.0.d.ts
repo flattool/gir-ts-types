@@ -2203,19 +2203,11 @@ declare module 'gi://GstPbutils?version=1.0' {
         type AudioVisualizerClass = typeof AudioVisualizer;
         abstract class AudioVisualizerPrivate {
             static $gtype: GObject.GType<AudioVisualizerPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type DiscovererClass = typeof Discoverer;
         abstract class DiscovererPrivate {
             static $gtype: GObject.GType<DiscovererPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type EncodingAudioProfileClass = typeof EncodingAudioProfile;
@@ -2232,7 +2224,6 @@ declare module 'gi://GstPbutils?version=1.0' {
             // Constructors
 
             constructor(properties?: Partial<{}>);
-            _init(...args: any[]): void;
 
             static ['new'](): InstallPluginsContext;
 

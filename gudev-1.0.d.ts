@@ -712,28 +712,16 @@ declare module 'gi://GUdev?version=1.0' {
         type ClientClass = typeof Client;
         abstract class ClientPrivate {
             static $gtype: GObject.GType<ClientPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type DeviceClass = typeof Device;
         abstract class DevicePrivate {
             static $gtype: GObject.GType<DevicePrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type EnumeratorClass = typeof Enumerator;
         abstract class EnumeratorPrivate {
             static $gtype: GObject.GType<EnumeratorPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type DeviceNumber = number;

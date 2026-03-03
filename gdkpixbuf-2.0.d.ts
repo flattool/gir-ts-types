@@ -200,7 +200,6 @@ declare module 'gi://GdkPixbuf?version=2.0' {
             // Constructors
 
             constructor(options: { message: string; code: number });
-            _init(...args: any[]): void;
 
             // Static methods
 
@@ -2755,7 +2754,6 @@ declare module 'gi://GdkPixbuf?version=2.0' {
                     license: string;
                 }>,
             );
-            _init(...args: any[]): void;
 
             // Methods
 
@@ -2904,10 +2902,6 @@ declare module 'gi://GdkPixbuf?version=2.0' {
             load_animation: PixbufModuleLoadAnimationFunc;
             save: PixbufModuleSaveFunc;
             is_save_option_supported: PixbufModuleSaveOptionSupportedFunc;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         /**
@@ -2960,7 +2954,6 @@ declare module 'gi://GdkPixbuf?version=2.0' {
                     relevance: number;
                 }>,
             );
-            _init(...args: any[]): void;
         }
 
         type PixbufSimpleAnimClass = typeof PixbufSimpleAnim;

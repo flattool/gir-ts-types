@@ -105,7 +105,6 @@ declare module 'gi://GIRepository?version=3.0' {
             // Constructors
 
             constructor(options: { message: string; code: number });
-            _init(...args: any[]): void;
         }
 
         /**
@@ -2948,16 +2947,11 @@ declare module 'gi://GIRepository?version=3.0' {
             // Constructors
 
             constructor(properties?: Partial<{}>);
-            _init(...args: any[]): void;
         }
 
         type BaseInfoClass = typeof BaseInfo;
         class BaseInfoStack {
             static $gtype: GObject.GType<BaseInfoStack>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type RepositoryClass = typeof Repository;
@@ -2971,7 +2965,6 @@ declare module 'gi://GIRepository?version=3.0' {
             // Constructors
 
             constructor(bytes: GLib.Bytes | Uint8Array);
-            _init(...args: any[]): void;
 
             static new_from_bytes(bytes: GLib.Bytes | Uint8Array): Typelib;
 
@@ -3058,7 +3051,6 @@ declare module 'gi://GIRepository?version=3.0' {
                     v_pointer: any;
                 }>,
             );
-            _init(...args: any[]): void;
         }
 
         /**

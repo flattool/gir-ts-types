@@ -697,7 +697,6 @@ declare module 'gi://Pango?version=1.0' {
             // Constructors
 
             constructor(options: { message: string; code: number });
-            _init(...args: any[]): void;
 
             // Static methods
 
@@ -6770,10 +6769,6 @@ declare module 'gi://Pango?version=1.0' {
             flags: number;
             script: number;
             extra_attrs: any[];
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         /**
@@ -6789,10 +6784,6 @@ declare module 'gi://Pango?version=1.0' {
             // Fields
 
             type: AttrType;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         /**
@@ -6805,10 +6796,6 @@ declare module 'gi://Pango?version=1.0' {
             // Fields
 
             color: Color;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         /**
@@ -6821,10 +6808,6 @@ declare module 'gi://Pango?version=1.0' {
             // Fields
 
             value: number;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         /**
@@ -6833,10 +6816,6 @@ declare module 'gi://Pango?version=1.0' {
          */
         class AttrFontDesc {
             static $gtype: GObject.GType<AttrFontDesc>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
 
             // Static methods
 
@@ -6861,10 +6840,6 @@ declare module 'gi://Pango?version=1.0' {
 
             features: string;
 
-            // Constructors
-
-            _init(...args: any[]): void;
-
             // Static methods
 
             /**
@@ -6887,10 +6862,6 @@ declare module 'gi://Pango?version=1.0' {
             // Fields
 
             value: number;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         /**
@@ -6904,10 +6875,6 @@ declare module 'gi://Pango?version=1.0' {
          */
         abstract class AttrIterator {
             static $gtype: GObject.GType<AttrIterator>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
 
             // Methods
 
@@ -6966,10 +6933,6 @@ declare module 'gi://Pango?version=1.0' {
         class AttrLanguage {
             static $gtype: GObject.GType<AttrLanguage>;
 
-            // Constructors
-
-            _init(...args: any[]): void;
-
             // Static methods
 
             /**
@@ -6998,7 +6961,6 @@ declare module 'gi://Pango?version=1.0' {
             // Constructors
 
             constructor(properties?: Partial<{}>);
-            _init(...args: any[]): void;
 
             static ['new'](): AttrList;
 
@@ -7196,10 +7158,6 @@ declare module 'gi://Pango?version=1.0' {
             copy_func: AttrDataCopyFunc;
             destroy_func: GLib.DestroyNotify;
 
-            // Constructors
-
-            _init(...args: any[]): void;
-
             // Static methods
 
             /**
@@ -7246,10 +7204,6 @@ declare module 'gi://Pango?version=1.0' {
             size: number;
             absolute: number;
 
-            // Constructors
-
-            _init(...args: any[]): void;
-
             // Static methods
 
             /**
@@ -7274,10 +7228,6 @@ declare module 'gi://Pango?version=1.0' {
             // Fields
 
             value: string;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         /**
@@ -7297,10 +7247,6 @@ declare module 'gi://Pango?version=1.0' {
 
             start_index: number;
             end_index: number;
-
-            // Constructors
-
-            _init(...args: any[]): void;
 
             // Methods
 
@@ -7418,7 +7364,6 @@ declare module 'gi://Pango?version=1.0' {
                     blue: number;
                 }>,
             );
-            _init(...args: any[]): void;
 
             // Methods
 
@@ -7497,7 +7442,6 @@ declare module 'gi://Pango?version=1.0' {
             // Constructors
 
             constructor(properties?: Partial<{}>);
-            _init(...args: any[]): void;
 
             static ['new'](): FontDescription;
 
@@ -7934,7 +7878,6 @@ declare module 'gi://Pango?version=1.0' {
             // Constructors
 
             constructor(properties?: Partial<{}>);
-            _init(...args: any[]): void;
 
             // Methods
 
@@ -8065,7 +8008,6 @@ declare module 'gi://Pango?version=1.0' {
                     y_offset: GlyphUnit;
                 }>,
             );
-            _init(...args: any[]): void;
         }
 
         /**
@@ -8090,7 +8032,6 @@ declare module 'gi://Pango?version=1.0' {
                     attr: GlyphVisAttr;
                 }>,
             );
-            _init(...args: any[]): void;
         }
 
         /**
@@ -8110,10 +8051,6 @@ declare module 'gi://Pango?version=1.0' {
             y_offset: number;
             start_x_offset: number;
             end_x_offset: number;
-
-            // Constructors
-
-            _init(...args: any[]): void;
 
             // Methods
 
@@ -8242,10 +8179,6 @@ declare module 'gi://Pango?version=1.0' {
             end_index: number;
             end_char: number;
 
-            // Constructors
-
-            _init(...args: any[]): void;
-
             // Methods
 
             /**
@@ -8317,7 +8250,6 @@ declare module 'gi://Pango?version=1.0' {
                     log_clusters: number;
                 }>,
             );
-            _init(...args: any[]): void;
 
             static ['new'](): GlyphString;
 
@@ -8468,7 +8400,6 @@ declare module 'gi://Pango?version=1.0' {
                     is_color: number;
                 }>,
             );
-            _init(...args: any[]): void;
         }
 
         /**
@@ -8496,7 +8427,6 @@ declare module 'gi://Pango?version=1.0' {
                     analysis: Analysis;
                 }>,
             );
-            _init(...args: any[]): void;
 
             static ['new'](): Item;
 
@@ -8565,10 +8495,6 @@ declare module 'gi://Pango?version=1.0' {
          */
         abstract class Language {
             static $gtype: GObject.GType<Language>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
 
             // Static methods
 
@@ -8737,10 +8663,6 @@ declare module 'gi://Pango?version=1.0' {
          */
         abstract class LayoutIter {
             static $gtype: GObject.GType<LayoutIter>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
 
             // Methods
 
@@ -8933,10 +8855,6 @@ declare module 'gi://Pango?version=1.0' {
             runs: LayoutRun[];
             resolved_dir: number;
 
-            // Constructors
-
-            _init(...args: any[]): void;
-
             // Methods
 
             /**
@@ -9081,7 +8999,6 @@ declare module 'gi://Pango?version=1.0' {
                     reserved: number;
                 }>,
             );
-            _init(...args: any[]): void;
         }
 
         /**
@@ -9119,7 +9036,6 @@ declare module 'gi://Pango?version=1.0' {
                     y0: number;
                 }>,
             );
-            _init(...args: any[]): void;
 
             // Methods
 
@@ -9285,16 +9201,11 @@ declare module 'gi://Pango?version=1.0' {
                     height: number;
                 }>,
             );
-            _init(...args: any[]): void;
         }
 
         type RendererClass = typeof Renderer;
         abstract class RendererPrivate {
             static $gtype: GObject.GType<RendererPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         /**
@@ -9307,7 +9218,6 @@ declare module 'gi://Pango?version=1.0' {
             // Constructors
 
             constructor(text: string, length: number);
-            _init(...args: any[]): void;
 
             static ['new'](text: string, length: number): ScriptIter;
 
@@ -9352,7 +9262,6 @@ declare module 'gi://Pango?version=1.0' {
             // Constructors
 
             constructor(initial_size: number, positions_in_pixels: boolean);
-            _init(...args: any[]): void;
 
             static ['new'](initial_size: number, positions_in_pixels: boolean): TabArray;
 

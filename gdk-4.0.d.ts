@@ -293,7 +293,6 @@ declare module 'gi://Gdk?version=4.0' {
             // Constructors
 
             constructor(options: { message: string; code: number });
-            _init(...args: any[]): void;
 
             // Static methods
 
@@ -522,7 +521,6 @@ declare module 'gi://Gdk?version=4.0' {
             // Constructors
 
             constructor(options: { message: string; code: number });
-            _init(...args: any[]): void;
 
             // Static methods
 
@@ -1089,7 +1087,6 @@ declare module 'gi://Gdk?version=4.0' {
             // Constructors
 
             constructor(options: { message: string; code: number });
-            _init(...args: any[]): void;
 
             // Static methods
 
@@ -1212,7 +1209,6 @@ declare module 'gi://Gdk?version=4.0' {
             // Constructors
 
             constructor(options: { message: string; code: number });
-            _init(...args: any[]): void;
 
             // Static methods
 
@@ -16432,10 +16428,6 @@ declare module 'gi://Gdk?version=4.0' {
         abstract class ColorState {
             static $gtype: GObject.GType<ColorState>;
 
-            // Constructors
-
-            _init(...args: any[]): void;
-
             // Static methods
 
             /**
@@ -16573,7 +16565,6 @@ declare module 'gi://Gdk?version=4.0' {
             // Constructors
 
             constructor(mime_types?: string[] | null);
-            _init(...args: any[]): void;
 
             static ['new'](mime_types?: string[] | null): ContentFormats;
 
@@ -16724,7 +16715,6 @@ declare module 'gi://Gdk?version=4.0' {
             // Constructors
 
             constructor(properties?: Partial<{}>);
-            _init(...args: any[]): void;
 
             static ['new'](): ContentFormatsBuilder;
 
@@ -16797,10 +16787,6 @@ declare module 'gi://Gdk?version=4.0' {
         abstract class DmabufFormats {
             static $gtype: GObject.GType<DmabufFormats>;
 
-            // Constructors
-
-            _init(...args: any[]): void;
-
             // Methods
 
             /**
@@ -16856,10 +16842,6 @@ declare module 'gi://Gdk?version=4.0' {
         abstract class DragSurfaceSize {
             static $gtype: GObject.GType<DragSurfaceSize>;
 
-            // Constructors
-
-            _init(...args: any[]): void;
-
             // Methods
 
             /**
@@ -16875,10 +16857,6 @@ declare module 'gi://Gdk?version=4.0' {
          */
         abstract class EventSequence {
             static $gtype: GObject.GType<EventSequence>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         /**
@@ -16890,7 +16868,6 @@ declare module 'gi://Gdk?version=4.0' {
             // Constructors
 
             constructor(files: Gio.File[]);
-            _init(...args: any[]): void;
 
             static new_from_array(files: Gio.File[]): FileList;
 
@@ -16910,10 +16887,6 @@ declare module 'gi://Gdk?version=4.0' {
         type FrameClockClass = typeof FrameClock;
         abstract class FrameClockPrivate {
             static $gtype: GObject.GType<FrameClockPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         /**
@@ -16927,10 +16900,6 @@ declare module 'gi://Gdk?version=4.0' {
          */
         abstract class FrameTimings {
             static $gtype: GObject.GType<FrameTimings>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
 
             // Methods
 
@@ -17033,7 +17002,6 @@ declare module 'gi://Gdk?version=4.0' {
                     level: number;
                 }>,
             );
-            _init(...args: any[]): void;
         }
 
         type MemoryTextureBuilderClass = typeof MemoryTextureBuilder;
@@ -17082,7 +17050,6 @@ declare module 'gi://Gdk?version=4.0' {
             // Constructors
 
             constructor(anchor_rect: Rectangle, rect_anchor: Gravity, surface_anchor: Gravity);
-            _init(...args: any[]): void;
 
             static ['new'](anchor_rect: Rectangle, rect_anchor: Gravity, surface_anchor: Gravity): PopupLayout;
 
@@ -17212,7 +17179,6 @@ declare module 'gi://Gdk?version=4.0' {
                     alpha: number;
                 }>,
             );
-            _init(...args: any[]): void;
 
             // Methods
 
@@ -17335,7 +17301,6 @@ declare module 'gi://Gdk?version=4.0' {
                     height: number;
                 }>,
             );
-            _init(...args: any[]): void;
 
             // Methods
 
@@ -17398,7 +17363,6 @@ declare module 'gi://Gdk?version=4.0' {
             // Constructors
 
             constructor(texture: Texture);
-            _init(...args: any[]): void;
 
             static ['new'](texture: Texture): TextureDownloader;
 
@@ -17485,10 +17449,6 @@ declare module 'gi://Gdk?version=4.0' {
             time: number;
             flags: AxisFlags;
             axes: number[];
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type ToplevelInterface = typeof Toplevel;
@@ -17509,7 +17469,6 @@ declare module 'gi://Gdk?version=4.0' {
             // Constructors
 
             constructor(properties?: Partial<{}>);
-            _init(...args: any[]): void;
 
             static ['new'](): ToplevelLayout;
 
@@ -17587,10 +17546,6 @@ declare module 'gi://Gdk?version=4.0' {
          */
         abstract class ToplevelSize {
             static $gtype: GObject.GType<ToplevelSize>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
 
             // Methods
 

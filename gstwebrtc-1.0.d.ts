@@ -192,7 +192,6 @@ declare module 'gi://GstWebRTC?version=1.0' {
             // Constructors
 
             constructor(options: { message: string; code: number });
-            _init(...args: any[]): void;
 
             // Static methods
 
@@ -1511,7 +1510,6 @@ declare module 'gi://GstWebRTC?version=1.0' {
                     _gst_reserved: any[];
                 }>,
             );
-            _init(...args: any[]): void;
 
             // Methods
 
@@ -1543,7 +1541,6 @@ declare module 'gi://GstWebRTC?version=1.0' {
             // Constructors
 
             constructor(type: WebRTCSDPType, sdp: GstSdp.SDPMessage);
-            _init(...args: any[]): void;
 
             static ['new'](type: WebRTCSDPType, sdp: GstSdp.SDPMessage): WebRTCSessionDescription;
 

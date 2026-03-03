@@ -66,7 +66,6 @@ declare module 'gi://Gck?version=2' {
             // Constructors
 
             constructor(options: { message: string; code: number });
-            _init(...args: any[]): void;
 
             // Static methods
 
@@ -105,7 +104,6 @@ declare module 'gi://Gck?version=2' {
             // Constructors
 
             constructor(options: { message: string; code: number });
-            _init(...args: any[]): void;
 
             // Static methods
 
@@ -3660,7 +3658,6 @@ declare module 'gi://Gck?version=2' {
                     length: number;
                 }>,
             );
-            _init(...args: any[]): void;
 
             static ['new'](attr_type: number, value: number, length: number): Attribute;
 
@@ -3792,7 +3789,6 @@ declare module 'gi://Gck?version=2' {
             // Constructors
 
             constructor(properties?: Partial<{}>);
-            _init(...args: any[]): void;
 
             static ['new'](): Attributes;
 
@@ -3901,7 +3897,6 @@ declare module 'gi://Gck?version=2' {
             // Constructors
 
             constructor(properties?: Partial<{}>);
-            _init(...args: any[]): void;
 
             static ['new'](flags: BuilderFlags): Builder;
 
@@ -4228,7 +4223,6 @@ declare module 'gi://Gck?version=2' {
                     n_parameter: number;
                 }>,
             );
-            _init(...args: any[]): void;
         }
 
         /**
@@ -4257,7 +4251,6 @@ declare module 'gi://Gck?version=2' {
                     flags: number;
                 }>,
             );
-            _init(...args: any[]): void;
 
             // Methods
 
@@ -4307,7 +4300,6 @@ declare module 'gi://Gck?version=2' {
                     library_version_minor: number;
                 }>,
             );
-            _init(...args: any[]): void;
 
             // Methods
 
@@ -4351,7 +4343,6 @@ declare module 'gi://Gck?version=2' {
                     device_error: number;
                 }>,
             );
-            _init(...args: any[]): void;
 
             // Methods
 
@@ -4402,7 +4393,6 @@ declare module 'gi://Gck?version=2' {
                     firmware_version_minor: number;
                 }>,
             );
-            _init(...args: any[]): void;
 
             // Methods
 
@@ -4451,10 +4441,6 @@ declare module 'gi://Gck?version=2' {
             firmware_version_major: number;
             firmware_version_minor: number;
 
-            // Constructors
-
-            _init(...args: any[]): void;
-
             // Methods
 
             /**
@@ -4491,7 +4477,6 @@ declare module 'gi://Gck?version=2' {
                     any_unrecognized: boolean;
                 }>,
             );
-            _init(...args: any[]): void;
 
             static ['new'](): UriData;
 

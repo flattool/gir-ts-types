@@ -45,7 +45,6 @@ declare module 'gi://Rsvg?version=2.0' {
             // Constructors
 
             constructor(options: { message: string; code: number });
-            _init(...args: any[]): void;
 
             // Static methods
 
@@ -1263,7 +1262,6 @@ declare module 'gi://Rsvg?version=2.0' {
                     ex: number;
                 }>,
             );
-            _init(...args: any[]): void;
         }
 
         type HandleClass = typeof Handle;
@@ -1287,10 +1285,6 @@ declare module 'gi://Rsvg?version=2.0' {
 
             length: number;
             unit: Unit;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         /**
@@ -1313,7 +1307,6 @@ declare module 'gi://Rsvg?version=2.0' {
                     y: number;
                 }>,
             );
-            _init(...args: any[]): void;
         }
 
         /**
@@ -1339,7 +1332,6 @@ declare module 'gi://Rsvg?version=2.0' {
                     height: number;
                 }>,
             );
-            _init(...args: any[]): void;
         }
 
         /**

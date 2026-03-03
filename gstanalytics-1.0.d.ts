@@ -127,10 +127,6 @@ declare module 'gi://GstAnalytics?version=1.0' {
 
             id: number;
 
-            // Constructors
-
-            _init(...args: any[]): void;
-
             // Static methods
 
             /**
@@ -161,10 +157,6 @@ declare module 'gi://GstAnalytics?version=1.0' {
             // Fields
 
             id: number;
-
-            // Constructors
-
-            _init(...args: any[]): void;
 
             // Static methods
 
@@ -207,7 +199,6 @@ declare module 'gi://GstAnalytics?version=1.0' {
                     name: string;
                 }>,
             );
-            _init(...args: any[]): void;
         }
 
         /**
@@ -220,10 +211,6 @@ declare module 'gi://GstAnalytics?version=1.0' {
             // Fields
 
             id: number;
-
-            // Constructors
-
-            _init(...args: any[]): void;
 
             // Static methods
 
@@ -259,10 +246,6 @@ declare module 'gi://GstAnalytics?version=1.0' {
          */
         abstract class RelationMeta {
             static $gtype: GObject.GType<RelationMeta>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
 
             // Methods
 
@@ -384,7 +367,6 @@ declare module 'gi://GstAnalytics?version=1.0' {
                     initial_buf_size: number;
                 }>,
             );
-            _init(...args: any[]): void;
         }
 
         /**
@@ -396,10 +378,6 @@ declare module 'gi://GstAnalytics?version=1.0' {
             // Fields
 
             id: number;
-
-            // Constructors
-
-            _init(...args: any[]): void;
 
             // Static methods
 

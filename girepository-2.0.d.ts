@@ -2012,7 +2012,6 @@ declare module 'gi://GIRepository?version=2.0' {
             // Constructors
 
             constructor(properties?: Partial<{}>);
-            _init(...args: any[]): void;
         }
 
         /**
@@ -2068,7 +2067,6 @@ declare module 'gi://GIRepository?version=2.0' {
             // Constructors
 
             constructor(properties?: Partial<{}>);
-            _init(...args: any[]): void;
 
             // Methods
 
@@ -2158,10 +2156,6 @@ declare module 'gi://GIRepository?version=2.0' {
         type RepositoryClass = typeof Repository;
         abstract class RepositoryPrivate {
             static $gtype: GObject.GType<RepositoryPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         /**
@@ -2169,10 +2163,6 @@ declare module 'gi://GIRepository?version=2.0' {
          */
         abstract class Typelib {
             static $gtype: GObject.GType<Typelib>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
 
             // Methods
 
@@ -2186,10 +2176,6 @@ declare module 'gi://GIRepository?version=2.0' {
          */
         abstract class UnresolvedInfo {
             static $gtype: GObject.GType<UnresolvedInfo>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         /**
@@ -2249,7 +2235,6 @@ declare module 'gi://GIRepository?version=2.0' {
                     v_pointer: any;
                 }>,
             );
-            _init(...args: any[]): void;
         }
 
         type ArgInfo = BaseInfo;

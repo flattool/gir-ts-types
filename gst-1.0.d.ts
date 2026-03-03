@@ -310,7 +310,6 @@ declare module 'gi://Gst?version=1.0' {
             // Constructors
 
             constructor(options: { message: string; code: number });
-            _init(...args: any[]): void;
 
             // Static methods
 
@@ -818,7 +817,6 @@ declare module 'gi://Gst?version=1.0' {
             // Constructors
 
             constructor(options: { message: string; code: number });
-            _init(...args: any[]): void;
 
             // Static methods
 
@@ -1042,7 +1040,6 @@ declare module 'gi://Gst?version=1.0' {
             // Constructors
 
             constructor(options: { message: string; code: number });
-            _init(...args: any[]): void;
 
             // Static methods
 
@@ -1076,7 +1073,6 @@ declare module 'gi://Gst?version=1.0' {
             // Constructors
 
             constructor(options: { message: string; code: number });
-            _init(...args: any[]): void;
 
             // Static methods
 
@@ -1409,7 +1405,6 @@ declare module 'gi://Gst?version=1.0' {
             // Constructors
 
             constructor(options: { message: string; code: number });
-            _init(...args: any[]): void;
 
             // Static methods
 
@@ -1727,7 +1722,6 @@ declare module 'gi://Gst?version=1.0' {
             // Constructors
 
             constructor(options: { message: string; code: number });
-            _init(...args: any[]): void;
 
             // Static methods
 
@@ -2163,7 +2157,6 @@ declare module 'gi://Gst?version=1.0' {
             // Constructors
 
             constructor(options: { message: string; code: number });
-            _init(...args: any[]): void;
 
             // Static methods
 
@@ -16323,7 +16316,6 @@ declare module 'gi://Gst?version=1.0' {
                     padding: number;
                 }>,
             );
-            _init(...args: any[]): void;
 
             static ['new'](): AllocationParams;
 
@@ -16347,10 +16339,6 @@ declare module 'gi://Gst?version=1.0' {
         type AllocatorClass = typeof Allocator;
         abstract class AllocatorPrivate {
             static $gtype: GObject.GType<AllocatorPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         /**
@@ -16363,7 +16351,6 @@ declare module 'gi://Gst?version=1.0' {
             // Constructors
 
             constructor(initial_size: number);
-            _init(...args: any[]): void;
 
             static ['new'](initial_size: number): AtomicQueue;
 
@@ -16402,10 +16389,6 @@ declare module 'gi://Gst?version=1.0' {
         type BinClass = typeof Bin;
         abstract class BinPrivate {
             static $gtype: GObject.GType<BinPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         /**
@@ -16523,7 +16506,6 @@ declare module 'gi://Gst?version=1.0' {
                     offset_end: number;
                 }>,
             );
-            _init(...args: any[]): void;
 
             static ['new'](): Buffer;
 
@@ -17002,7 +16984,6 @@ declare module 'gi://Gst?version=1.0' {
             // Constructors
 
             constructor(properties?: Partial<{}>);
-            _init(...args: any[]): void;
 
             static ['new'](): BufferList;
 
@@ -17090,28 +17071,16 @@ declare module 'gi://Gst?version=1.0' {
             start: number;
             stop: number;
             flags: BufferPoolAcquireFlags;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type BufferPoolClass = typeof BufferPool;
         abstract class BufferPoolPrivate {
             static $gtype: GObject.GType<BufferPoolPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type BusClass = typeof Bus;
         abstract class BusPrivate {
             static $gtype: GObject.GType<BusPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         /**
@@ -17139,7 +17108,6 @@ declare module 'gi://Gst?version=1.0' {
                     len: number;
                 }>,
             );
-            _init(...args: any[]): void;
         }
 
         /**
@@ -17189,7 +17157,6 @@ declare module 'gi://Gst?version=1.0' {
                     mini_object: MiniObject;
                 }>,
             );
-            _init(...args: any[]): void;
 
             static new_any(): Caps;
 
@@ -17572,7 +17539,6 @@ declare module 'gi://Gst?version=1.0' {
             // Constructors
 
             constructor(properties?: Partial<{}>);
-            _init(...args: any[]): void;
 
             static new_any(): CapsFeatures;
 
@@ -17698,18 +17664,10 @@ declare module 'gi://Gst?version=1.0' {
             // Fields
 
             refcount: number;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         abstract class ClockPrivate {
             static $gtype: GObject.GType<ClockPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         /**
@@ -17749,7 +17707,6 @@ declare module 'gi://Gst?version=1.0' {
             // Constructors
 
             constructor(context_type: string, persistent: boolean);
-            _init(...args: any[]): void;
 
             static ['new'](context_type: string, persistent: boolean): Context;
 
@@ -17786,10 +17743,6 @@ declare module 'gi://Gst?version=1.0' {
         type ControlBindingClass = typeof ControlBinding;
         abstract class ControlBindingPrivate {
             static $gtype: GObject.GType<ControlBindingPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type ControlSourceClass = typeof ControlSource;
@@ -17803,10 +17756,6 @@ declare module 'gi://Gst?version=1.0' {
          */
         class CustomMeta {
             static $gtype: GObject.GType<CustomMeta>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
 
             // Methods
 
@@ -17840,7 +17789,6 @@ declare module 'gi://Gst?version=1.0' {
             // Constructors
 
             constructor(properties?: Partial<{}>);
-            _init(...args: any[]): void;
 
             static ['new'](
                 tzoffset: number,
@@ -17972,7 +17920,6 @@ declare module 'gi://Gst?version=1.0' {
             // Constructors
 
             constructor(properties?: Partial<{}>);
-            _init(...args: any[]): void;
 
             // Methods
 
@@ -18024,10 +17971,6 @@ declare module 'gi://Gst?version=1.0' {
         abstract class DebugMessage {
             static $gtype: GObject.GType<DebugMessage>;
 
-            // Constructors
-
-            _init(...args: any[]): void;
-
             // Methods
 
             /**
@@ -18048,28 +17991,16 @@ declare module 'gi://Gst?version=1.0' {
         type DeviceMonitorClass = typeof DeviceMonitor;
         abstract class DeviceMonitorPrivate {
             static $gtype: GObject.GType<DeviceMonitorPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         abstract class DevicePrivate {
             static $gtype: GObject.GType<DevicePrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type DeviceProviderClass = typeof DeviceProvider;
         type DeviceProviderFactoryClass = typeof DeviceProviderFactory;
         abstract class DeviceProviderPrivate {
             static $gtype: GObject.GType<DeviceProviderPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type DynamicTypeFactoryClass = typeof DynamicTypeFactory;
@@ -18139,7 +18070,6 @@ declare module 'gi://Gst?version=1.0' {
                     seqnum: number;
                 }>,
             );
-            _init(...args: any[]): void;
 
             static new_buffer_size(format: Format, minsize: number, maxsize: number, async: boolean): Event;
 
@@ -18444,19 +18374,11 @@ declare module 'gi://Gst?version=1.0' {
             nick: string;
             description: string;
             quark: GLib.Quark;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type GhostPadClass = typeof GhostPad;
         abstract class GhostPadPrivate {
             static $gtype: GObject.GType<GhostPadPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         /**
@@ -18525,7 +18447,6 @@ declare module 'gi://Gst?version=1.0' {
                 resync: IteratorResyncFunction,
                 free: IteratorFreeFunction,
             );
-            _init(...args: any[]): void;
 
             static new_single(type: GObject.GType, object: GObject.Value | any): Iterator;
 
@@ -18663,10 +18584,6 @@ declare module 'gi://Gst?version=1.0' {
             size: number;
             maxsize: number;
             user_data: any[];
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         /**
@@ -18727,7 +18644,6 @@ declare module 'gi://Gst?version=1.0' {
                 offset: number,
                 notify?: GLib.DestroyNotify | null,
             );
-            _init(...args: any[]): void;
 
             static new_wrapped(
                 flags: MemoryFlags,
@@ -18857,7 +18773,6 @@ declare module 'gi://Gst?version=1.0' {
             // Constructors
 
             constructor(src: Object | null, structure: Structure);
-            _init(...args: any[]): void;
 
             static new_application(src: Object | null, structure: Structure): Message;
 
@@ -19455,10 +19370,6 @@ declare module 'gi://Gst?version=1.0' {
 
             flags: MetaFlags;
 
-            // Constructors
-
-            _init(...args: any[]): void;
-
             // Static methods
 
             static api_type_get_tags(api: GObject.GType): string[];
@@ -19584,10 +19495,6 @@ declare module 'gi://Gst?version=1.0' {
             deserialize_func: MetaDeserializeFunction;
             clear_func: MetaClearFunction;
 
-            // Constructors
-
-            _init(...args: any[]): void;
-
             // Methods
 
             is_custom(): boolean;
@@ -19623,7 +19530,6 @@ declare module 'gi://Gst?version=1.0' {
                     size: number;
                 }>,
             );
-            _init(...args: any[]): void;
         }
 
         /**
@@ -19665,10 +19571,6 @@ declare module 'gi://Gst?version=1.0' {
             flags: number;
             dispose: MiniObjectDisposeFunction;
             free: MiniObjectFreeFunction;
-
-            // Constructors
-
-            _init(...args: any[]): void;
 
             // Static methods
 
@@ -19777,10 +19679,6 @@ declare module 'gi://Gst?version=1.0' {
         type PadClass = typeof Pad;
         abstract class PadPrivate {
             static $gtype: GObject.GType<PadPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         /**
@@ -19796,10 +19694,6 @@ declare module 'gi://Gst?version=1.0' {
             data: any;
             offset: number;
             size: number;
-
-            // Constructors
-
-            _init(...args: any[]): void;
 
             // Methods
 
@@ -19819,10 +19713,6 @@ declare module 'gi://Gst?version=1.0' {
             // Fields
 
             element_spec: GObject.ParamSpec;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         /**
@@ -19840,10 +19730,6 @@ declare module 'gi://Gst?version=1.0' {
             max_den: number;
             def_num: number;
             def_den: number;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         /**
@@ -19858,10 +19744,6 @@ declare module 'gi://Gst?version=1.0' {
          */
         class ParentBufferMeta {
             static $gtype: GObject.GType<ParentBufferMeta>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
 
             // Static methods
 
@@ -19880,7 +19762,6 @@ declare module 'gi://Gst?version=1.0' {
             // Constructors
 
             constructor(properties?: Partial<{}>);
-            _init(...args: any[]): void;
 
             static ['new'](): ParseContext;
 
@@ -19907,10 +19788,6 @@ declare module 'gi://Gst?version=1.0' {
         type PipelineClass = typeof Pipeline;
         abstract class PipelinePrivate {
             static $gtype: GObject.GType<PipelinePrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type PluginClass = typeof Plugin;
@@ -19937,10 +19814,6 @@ declare module 'gi://Gst?version=1.0' {
             'package': string;
             origin: string;
             release_datetime: string;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type PluginFeatureClass = typeof PluginFeature;
@@ -19971,10 +19844,6 @@ declare module 'gi://Gst?version=1.0' {
          */
         abstract class Poll {
             static $gtype: GObject.GType<Poll>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
 
             // Methods
 
@@ -20159,7 +20028,6 @@ declare module 'gi://Gst?version=1.0' {
                     fd: number;
                 }>,
             );
-            _init(...args: any[]): void;
 
             // Methods
 
@@ -20238,7 +20106,6 @@ declare module 'gi://Gst?version=1.0' {
                     parent: MiniObject;
                 }>,
             );
-            _init(...args: any[]): void;
 
             static ['new'](): Promise;
 
@@ -20290,10 +20157,6 @@ declare module 'gi://Gst?version=1.0' {
         class ProtectionMeta {
             static $gtype: GObject.GType<ProtectionMeta>;
 
-            // Constructors
-
-            _init(...args: any[]): void;
-
             // Static methods
 
             static get_info(): MetaInfo;
@@ -20302,10 +20165,6 @@ declare module 'gi://Gst?version=1.0' {
         type ProxyPadClass = typeof ProxyPad;
         abstract class ProxyPadPrivate {
             static $gtype: GObject.GType<ProxyPadPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         /**
@@ -20350,7 +20209,6 @@ declare module 'gi://Gst?version=1.0' {
                     type: QueryType;
                 }>,
             );
-            _init(...args: any[]): void;
 
             static new_accept_caps(caps: Caps): Query;
 
@@ -20877,10 +20735,6 @@ declare module 'gi://Gst?version=1.0' {
             timestamp: ClockTime;
             duration: ClockTime;
 
-            // Constructors
-
-            _init(...args: any[]): void;
-
             // Static methods
 
             /**
@@ -20892,10 +20746,6 @@ declare module 'gi://Gst?version=1.0' {
         type RegistryClass = typeof Registry;
         abstract class RegistryPrivate {
             static $gtype: GObject.GType<RegistryPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         /**
@@ -20908,7 +20758,6 @@ declare module 'gi://Gst?version=1.0' {
             // Constructors
 
             constructor(buffer?: Buffer | null, caps?: Caps | null, segment?: Segment | null, info?: Structure | null);
-            _init(...args: any[]): void;
 
             static ['new'](
                 buffer?: Buffer | null,
@@ -21054,7 +20903,6 @@ declare module 'gi://Gst?version=1.0' {
                     duration: number;
                 }>,
             );
-            _init(...args: any[]): void;
 
             static ['new'](): Segment;
 
@@ -21319,10 +21167,6 @@ declare module 'gi://Gst?version=1.0' {
         type SharedTaskPoolClass = typeof SharedTaskPool;
         abstract class SharedTaskPoolPrivate {
             static $gtype: GObject.GType<SharedTaskPoolPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         /**
@@ -21336,10 +21180,6 @@ declare module 'gi://Gst?version=1.0' {
             // Fields
 
             string: string;
-
-            // Constructors
-
-            _init(...args: any[]): void;
 
             // Methods
 
@@ -21366,10 +21206,6 @@ declare module 'gi://Gst?version=1.0' {
             direction: PadDirection;
             presence: PadPresence;
 
-            // Constructors
-
-            _init(...args: any[]): void;
-
             // Methods
 
             /**
@@ -21388,18 +21224,10 @@ declare module 'gi://Gst?version=1.0' {
         type StreamCollectionClass = typeof StreamCollection;
         abstract class StreamCollectionPrivate {
             static $gtype: GObject.GType<StreamCollectionPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         abstract class StreamPrivate {
             static $gtype: GObject.GType<StreamPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         /**
@@ -21518,7 +21346,6 @@ declare module 'gi://Gst?version=1.0' {
             // Constructors
 
             constructor(name: string, firstfield: string, ___: any[]);
-            _init(...args: any[]): void;
 
             static from_string(string: string): Structure;
 
@@ -22007,10 +21834,6 @@ declare module 'gi://Gst?version=1.0' {
         type SystemClockClass = typeof SystemClock;
         abstract class SystemClockPrivate {
             static $gtype: GObject.GType<SystemClockPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         /**
@@ -22029,7 +21852,6 @@ declare module 'gi://Gst?version=1.0' {
                     mini_object: MiniObject;
                 }>,
             );
-            _init(...args: any[]): void;
 
             static new_empty(): TagList;
 
@@ -22384,10 +22206,6 @@ declare module 'gi://Gst?version=1.0' {
         type TaskPoolClass = typeof TaskPool;
         abstract class TaskPrivate {
             static $gtype: GObject.GType<TaskPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         /**
@@ -22409,7 +22227,6 @@ declare module 'gi://Gst?version=1.0' {
                     value: number;
                 }>,
             );
-            _init(...args: any[]): void;
         }
 
         /**
@@ -22465,7 +22282,6 @@ declare module 'gi://Gst?version=1.0' {
             // Constructors
 
             constructor(scope: TocScope);
-            _init(...args: any[]): void;
 
             static ['new'](scope: TocScope): Toc;
 
@@ -22513,7 +22329,6 @@ declare module 'gi://Gst?version=1.0' {
             // Constructors
 
             constructor(type: TocEntryType, uid: string);
-            _init(...args: any[]): void;
 
             static ['new'](type: TocEntryType, uid: string): TocEntry;
 
@@ -22596,10 +22411,6 @@ declare module 'gi://Gst?version=1.0' {
         type TracerFactoryClass = typeof TracerFactory;
         abstract class TracerPrivate {
             static $gtype: GObject.GType<TracerPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         type TracerRecordClass = typeof TracerRecord;
@@ -22621,7 +22432,6 @@ declare module 'gi://Gst?version=1.0' {
                     data: any;
                 }>,
             );
-            _init(...args: any[]): void;
 
             // Static methods
 
@@ -22705,7 +22515,6 @@ declare module 'gi://Gst?version=1.0' {
                 query?: string | null,
                 fragment?: string | null,
             );
-            _init(...args: any[]): void;
 
             static ['new'](
                 scheme: string | null,
@@ -23113,10 +22922,6 @@ declare module 'gi://Gst?version=1.0' {
             serialize: ValueSerializeFunc;
             deserialize: ValueDeserializeFunc;
             deserialize_with_pspec: ValueDeserializeWithPSpecFunc;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         namespace ChildProxy {

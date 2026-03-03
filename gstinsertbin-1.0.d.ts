@@ -694,10 +694,6 @@ declare module 'gi://GstInsertBin?version=1.0' {
         type InsertBinClass = typeof InsertBin;
         abstract class InsertBinPrivate {
             static $gtype: GObject.GType<InsertBinPrivate>;
-
-            // Constructors
-
-            _init(...args: any[]): void;
         }
 
         /**
