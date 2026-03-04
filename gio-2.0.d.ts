@@ -7820,7 +7820,7 @@ declare module 'gi://Gio?version=2.0' {
              * and override local_command_line(). In this case, you most likely want
              * to return %TRUE from your local_command_line() implementation to
              * suppress the default handling. See
-             * [gapplication-example-cmdline2.c][https://gitlab.gnome.org/GNOME/glib/-/blob/HEAD/gio/tests/gapplication-example-cmdline2.c]
+             * [gapplication-example-cmdline2.c](https://gitlab.gnome.org/GNOME/glib/-/blob/HEAD/gio/tests/gapplication-example-cmdline2.c)
              * for an example.
              *
              * If, after the above is done, the use count of the application is zero
@@ -8669,7 +8669,7 @@ declare module 'gi://Gio?version=2.0' {
             bind_property_full(...args: never[]): any;
             /**
              * This function is intended for #GObject implementations to re-enforce
-             * a [floating][floating-ref] object reference. Doing this is seldom
+             * a [floating](floating-refs.html) object reference. Doing this is seldom
              * required: all #GInitiallyUnowneds are created with a floating reference
              * which usually just needs to be sunken by calling g_object_ref_sink().
              */
@@ -8724,7 +8724,7 @@ declare module 'gi://Gio?version=2.0' {
              */
             getv(names: string[], values: (GObject.Value | any)[]): void;
             /**
-             * Checks whether `object` has a [floating][floating-ref] reference.
+             * Checks whether `object` has a [floating](floating-refs.html) reference.
              * @returns %TRUE if @object has a floating reference
              */
             is_floating(): boolean;
@@ -8799,7 +8799,7 @@ declare module 'gi://Gio?version=2.0' {
             ref(): GObject.Object;
             /**
              * Increase the reference count of `object,` and possibly remove the
-             * [floating][floating-ref] reference, if `object` has a floating reference.
+             * [floating](floating-refs.html) reference, if `object` has a floating reference.
              *
              * In other words, if the object is floating, then this call "assumes
              * ownership" of the floating reference, converting it to a normal
@@ -10000,7 +10000,7 @@ declare module 'gi://Gio?version=2.0' {
             bind_property_full(...args: never[]): any;
             /**
              * This function is intended for #GObject implementations to re-enforce
-             * a [floating][floating-ref] object reference. Doing this is seldom
+             * a [floating](floating-refs.html) object reference. Doing this is seldom
              * required: all #GInitiallyUnowneds are created with a floating reference
              * which usually just needs to be sunken by calling g_object_ref_sink().
              */
@@ -10055,7 +10055,7 @@ declare module 'gi://Gio?version=2.0' {
              */
             getv(names: string[], values: (GObject.Value | any)[]): void;
             /**
-             * Checks whether `object` has a [floating][floating-ref] reference.
+             * Checks whether `object` has a [floating](floating-refs.html) reference.
              * @returns %TRUE if @object has a floating reference
              */
             is_floating(): boolean;
@@ -10130,7 +10130,7 @@ declare module 'gi://Gio?version=2.0' {
             ref(): GObject.Object;
             /**
              * Increase the reference count of `object,` and possibly remove the
-             * [floating][floating-ref] reference, if `object` has a floating reference.
+             * [floating](floating-refs.html) reference, if `object` has a floating reference.
              *
              * In other words, if the object is floating, then this call "assumes
              * ownership" of the floating reference, converting it to a normal
@@ -10666,7 +10666,7 @@ declare module 'gi://Gio?version=2.0' {
             bind_property_full(...args: never[]): any;
             /**
              * This function is intended for #GObject implementations to re-enforce
-             * a [floating][floating-ref] object reference. Doing this is seldom
+             * a [floating](floating-refs.html) object reference. Doing this is seldom
              * required: all #GInitiallyUnowneds are created with a floating reference
              * which usually just needs to be sunken by calling g_object_ref_sink().
              */
@@ -10721,7 +10721,7 @@ declare module 'gi://Gio?version=2.0' {
              */
             getv(names: string[], values: (GObject.Value | any)[]): void;
             /**
-             * Checks whether `object` has a [floating][floating-ref] reference.
+             * Checks whether `object` has a [floating](floating-refs.html) reference.
              * @returns %TRUE if @object has a floating reference
              */
             is_floating(): boolean;
@@ -10796,7 +10796,7 @@ declare module 'gi://Gio?version=2.0' {
             ref(): GObject.Object;
             /**
              * Increase the reference count of `object,` and possibly remove the
-             * [floating][floating-ref] reference, if `object` has a floating reference.
+             * [floating](floating-refs.html) reference, if `object` has a floating reference.
              *
              * In other words, if the object is floating, then this call "assumes
              * ownership" of the floating reference, converting it to a normal
@@ -11310,7 +11310,7 @@ declare module 'gi://Gio?version=2.0' {
             bind_property_full(...args: never[]): any;
             /**
              * This function is intended for #GObject implementations to re-enforce
-             * a [floating][floating-ref] object reference. Doing this is seldom
+             * a [floating](floating-refs.html) object reference. Doing this is seldom
              * required: all #GInitiallyUnowneds are created with a floating reference
              * which usually just needs to be sunken by calling g_object_ref_sink().
              */
@@ -11365,7 +11365,7 @@ declare module 'gi://Gio?version=2.0' {
              */
             getv(names: string[], values: (GObject.Value | any)[]): void;
             /**
-             * Checks whether `object` has a [floating][floating-ref] reference.
+             * Checks whether `object` has a [floating](floating-refs.html) reference.
              * @returns %TRUE if @object has a floating reference
              */
             is_floating(): boolean;
@@ -11440,7 +11440,7 @@ declare module 'gi://Gio?version=2.0' {
             ref(): GObject.Object;
             /**
              * Increase the reference count of `object,` and possibly remove the
-             * [floating][floating-ref] reference, if `object` has a floating reference.
+             * [floating](floating-refs.html) reference, if `object` has a floating reference.
              *
              * In other words, if the object is floating, then this call "assumes
              * ownership" of the floating reference, converting it to a normal
@@ -12426,7 +12426,7 @@ declare module 'gi://Gio?version=2.0' {
             bind_property_full(...args: never[]): any;
             /**
              * This function is intended for #GObject implementations to re-enforce
-             * a [floating][floating-ref] object reference. Doing this is seldom
+             * a [floating](floating-refs.html) object reference. Doing this is seldom
              * required: all #GInitiallyUnowneds are created with a floating reference
              * which usually just needs to be sunken by calling g_object_ref_sink().
              */
@@ -12481,7 +12481,7 @@ declare module 'gi://Gio?version=2.0' {
              */
             getv(names: string[], values: (GObject.Value | any)[]): void;
             /**
-             * Checks whether `object` has a [floating][floating-ref] reference.
+             * Checks whether `object` has a [floating](floating-refs.html) reference.
              * @returns %TRUE if @object has a floating reference
              */
             is_floating(): boolean;
@@ -12556,7 +12556,7 @@ declare module 'gi://Gio?version=2.0' {
             ref(): GObject.Object;
             /**
              * Increase the reference count of `object,` and possibly remove the
-             * [floating][floating-ref] reference, if `object` has a floating reference.
+             * [floating](floating-refs.html) reference, if `object` has a floating reference.
              *
              * In other words, if the object is floating, then this call "assumes
              * ownership" of the floating reference, converting it to a normal
@@ -16006,7 +16006,7 @@ declare module 'gi://Gio?version=2.0' {
             bind_property_full(...args: never[]): any;
             /**
              * This function is intended for #GObject implementations to re-enforce
-             * a [floating][floating-ref] object reference. Doing this is seldom
+             * a [floating](floating-refs.html) object reference. Doing this is seldom
              * required: all #GInitiallyUnowneds are created with a floating reference
              * which usually just needs to be sunken by calling g_object_ref_sink().
              */
@@ -16061,7 +16061,7 @@ declare module 'gi://Gio?version=2.0' {
              */
             getv(names: string[], values: (GObject.Value | any)[]): void;
             /**
-             * Checks whether `object` has a [floating][floating-ref] reference.
+             * Checks whether `object` has a [floating](floating-refs.html) reference.
              * @returns %TRUE if @object has a floating reference
              */
             is_floating(): boolean;
@@ -16136,7 +16136,7 @@ declare module 'gi://Gio?version=2.0' {
             ref(): GObject.Object;
             /**
              * Increase the reference count of `object,` and possibly remove the
-             * [floating][floating-ref] reference, if `object` has a floating reference.
+             * [floating](floating-refs.html) reference, if `object` has a floating reference.
              *
              * In other words, if the object is floating, then this call "assumes
              * ownership" of the floating reference, converting it to a normal
@@ -18509,7 +18509,7 @@ declare module 'gi://Gio?version=2.0' {
             bind_property_full(...args: never[]): any;
             /**
              * This function is intended for #GObject implementations to re-enforce
-             * a [floating][floating-ref] object reference. Doing this is seldom
+             * a [floating](floating-refs.html) object reference. Doing this is seldom
              * required: all #GInitiallyUnowneds are created with a floating reference
              * which usually just needs to be sunken by calling g_object_ref_sink().
              */
@@ -18564,7 +18564,7 @@ declare module 'gi://Gio?version=2.0' {
              */
             getv(names: string[], values: (GObject.Value | any)[]): void;
             /**
-             * Checks whether `object` has a [floating][floating-ref] reference.
+             * Checks whether `object` has a [floating](floating-refs.html) reference.
              * @returns %TRUE if @object has a floating reference
              */
             is_floating(): boolean;
@@ -18639,7 +18639,7 @@ declare module 'gi://Gio?version=2.0' {
             ref(): GObject.Object;
             /**
              * Increase the reference count of `object,` and possibly remove the
-             * [floating][floating-ref] reference, if `object` has a floating reference.
+             * [floating](floating-refs.html) reference, if `object` has a floating reference.
              *
              * In other words, if the object is floating, then this call "assumes
              * ownership" of the floating reference, converting it to a normal
@@ -19173,7 +19173,7 @@ declare module 'gi://Gio?version=2.0' {
             bind_property_full(...args: never[]): any;
             /**
              * This function is intended for #GObject implementations to re-enforce
-             * a [floating][floating-ref] object reference. Doing this is seldom
+             * a [floating](floating-refs.html) object reference. Doing this is seldom
              * required: all #GInitiallyUnowneds are created with a floating reference
              * which usually just needs to be sunken by calling g_object_ref_sink().
              */
@@ -19228,7 +19228,7 @@ declare module 'gi://Gio?version=2.0' {
              */
             getv(names: string[], values: (GObject.Value | any)[]): void;
             /**
-             * Checks whether `object` has a [floating][floating-ref] reference.
+             * Checks whether `object` has a [floating](floating-refs.html) reference.
              * @returns %TRUE if @object has a floating reference
              */
             is_floating(): boolean;
@@ -19303,7 +19303,7 @@ declare module 'gi://Gio?version=2.0' {
             ref(): GObject.Object;
             /**
              * Increase the reference count of `object,` and possibly remove the
-             * [floating][floating-ref] reference, if `object` has a floating reference.
+             * [floating](floating-refs.html) reference, if `object` has a floating reference.
              *
              * In other words, if the object is floating, then this call "assumes
              * ownership" of the floating reference, converting it to a normal
@@ -21036,7 +21036,7 @@ declare module 'gi://Gio?version=2.0' {
             bind_property_full(...args: never[]): any;
             /**
              * This function is intended for #GObject implementations to re-enforce
-             * a [floating][floating-ref] object reference. Doing this is seldom
+             * a [floating](floating-refs.html) object reference. Doing this is seldom
              * required: all #GInitiallyUnowneds are created with a floating reference
              * which usually just needs to be sunken by calling g_object_ref_sink().
              */
@@ -21091,7 +21091,7 @@ declare module 'gi://Gio?version=2.0' {
              */
             getv(names: string[], values: (GObject.Value | any)[]): void;
             /**
-             * Checks whether `object` has a [floating][floating-ref] reference.
+             * Checks whether `object` has a [floating](floating-refs.html) reference.
              * @returns %TRUE if @object has a floating reference
              */
             is_floating(): boolean;
@@ -21166,7 +21166,7 @@ declare module 'gi://Gio?version=2.0' {
             ref(): GObject.Object;
             /**
              * Increase the reference count of `object,` and possibly remove the
-             * [floating][floating-ref] reference, if `object` has a floating reference.
+             * [floating](floating-refs.html) reference, if `object` has a floating reference.
              *
              * In other words, if the object is floating, then this call "assumes
              * ownership" of the floating reference, converting it to a normal
@@ -21691,7 +21691,7 @@ declare module 'gi://Gio?version=2.0' {
             bind_property_full(...args: never[]): any;
             /**
              * This function is intended for #GObject implementations to re-enforce
-             * a [floating][floating-ref] object reference. Doing this is seldom
+             * a [floating](floating-refs.html) object reference. Doing this is seldom
              * required: all #GInitiallyUnowneds are created with a floating reference
              * which usually just needs to be sunken by calling g_object_ref_sink().
              */
@@ -21746,7 +21746,7 @@ declare module 'gi://Gio?version=2.0' {
              */
             getv(names: string[], values: (GObject.Value | any)[]): void;
             /**
-             * Checks whether `object` has a [floating][floating-ref] reference.
+             * Checks whether `object` has a [floating](floating-refs.html) reference.
              * @returns %TRUE if @object has a floating reference
              */
             is_floating(): boolean;
@@ -21821,7 +21821,7 @@ declare module 'gi://Gio?version=2.0' {
             ref(): GObject.Object;
             /**
              * Increase the reference count of `object,` and possibly remove the
-             * [floating][floating-ref] reference, if `object` has a floating reference.
+             * [floating](floating-refs.html) reference, if `object` has a floating reference.
              *
              * In other words, if the object is floating, then this call "assumes
              * ownership" of the floating reference, converting it to a normal
@@ -22264,7 +22264,7 @@ declare module 'gi://Gio?version=2.0' {
             bind_property_full(...args: never[]): any;
             /**
              * This function is intended for #GObject implementations to re-enforce
-             * a [floating][floating-ref] object reference. Doing this is seldom
+             * a [floating](floating-refs.html) object reference. Doing this is seldom
              * required: all #GInitiallyUnowneds are created with a floating reference
              * which usually just needs to be sunken by calling g_object_ref_sink().
              */
@@ -22319,7 +22319,7 @@ declare module 'gi://Gio?version=2.0' {
              */
             getv(names: string[], values: (GObject.Value | any)[]): void;
             /**
-             * Checks whether `object` has a [floating][floating-ref] reference.
+             * Checks whether `object` has a [floating](floating-refs.html) reference.
              * @returns %TRUE if @object has a floating reference
              */
             is_floating(): boolean;
@@ -22394,7 +22394,7 @@ declare module 'gi://Gio?version=2.0' {
             ref(): GObject.Object;
             /**
              * Increase the reference count of `object,` and possibly remove the
-             * [floating][floating-ref] reference, if `object` has a floating reference.
+             * [floating](floating-refs.html) reference, if `object` has a floating reference.
              *
              * In other words, if the object is floating, then this call "assumes
              * ownership" of the floating reference, converting it to a normal
@@ -22869,7 +22869,7 @@ declare module 'gi://Gio?version=2.0' {
             bind_property_full(...args: never[]): any;
             /**
              * This function is intended for #GObject implementations to re-enforce
-             * a [floating][floating-ref] object reference. Doing this is seldom
+             * a [floating](floating-refs.html) object reference. Doing this is seldom
              * required: all #GInitiallyUnowneds are created with a floating reference
              * which usually just needs to be sunken by calling g_object_ref_sink().
              */
@@ -22924,7 +22924,7 @@ declare module 'gi://Gio?version=2.0' {
              */
             getv(names: string[], values: (GObject.Value | any)[]): void;
             /**
-             * Checks whether `object` has a [floating][floating-ref] reference.
+             * Checks whether `object` has a [floating](floating-refs.html) reference.
              * @returns %TRUE if @object has a floating reference
              */
             is_floating(): boolean;
@@ -22999,7 +22999,7 @@ declare module 'gi://Gio?version=2.0' {
             ref(): GObject.Object;
             /**
              * Increase the reference count of `object,` and possibly remove the
-             * [floating][floating-ref] reference, if `object` has a floating reference.
+             * [floating](floating-refs.html) reference, if `object` has a floating reference.
              *
              * In other words, if the object is floating, then this call "assumes
              * ownership" of the floating reference, converting it to a normal
@@ -24508,7 +24508,7 @@ declare module 'gi://Gio?version=2.0' {
             bind_property_full(...args: never[]): any;
             /**
              * This function is intended for #GObject implementations to re-enforce
-             * a [floating][floating-ref] object reference. Doing this is seldom
+             * a [floating](floating-refs.html) object reference. Doing this is seldom
              * required: all #GInitiallyUnowneds are created with a floating reference
              * which usually just needs to be sunken by calling g_object_ref_sink().
              */
@@ -24563,7 +24563,7 @@ declare module 'gi://Gio?version=2.0' {
              */
             getv(names: string[], values: (GObject.Value | any)[]): void;
             /**
-             * Checks whether `object` has a [floating][floating-ref] reference.
+             * Checks whether `object` has a [floating](floating-refs.html) reference.
              * @returns %TRUE if @object has a floating reference
              */
             is_floating(): boolean;
@@ -24638,7 +24638,7 @@ declare module 'gi://Gio?version=2.0' {
             ref(): GObject.Object;
             /**
              * Increase the reference count of `object,` and possibly remove the
-             * [floating][floating-ref] reference, if `object` has a floating reference.
+             * [floating](floating-refs.html) reference, if `object` has a floating reference.
              *
              * In other words, if the object is floating, then this call "assumes
              * ownership" of the floating reference, converting it to a normal
@@ -25199,7 +25199,7 @@ declare module 'gi://Gio?version=2.0' {
             bind_property_full(...args: never[]): any;
             /**
              * This function is intended for #GObject implementations to re-enforce
-             * a [floating][floating-ref] object reference. Doing this is seldom
+             * a [floating](floating-refs.html) object reference. Doing this is seldom
              * required: all #GInitiallyUnowneds are created with a floating reference
              * which usually just needs to be sunken by calling g_object_ref_sink().
              */
@@ -25254,7 +25254,7 @@ declare module 'gi://Gio?version=2.0' {
              */
             getv(names: string[], values: (GObject.Value | any)[]): void;
             /**
-             * Checks whether `object` has a [floating][floating-ref] reference.
+             * Checks whether `object` has a [floating](floating-refs.html) reference.
              * @returns %TRUE if @object has a floating reference
              */
             is_floating(): boolean;
@@ -25329,7 +25329,7 @@ declare module 'gi://Gio?version=2.0' {
             ref(): GObject.Object;
             /**
              * Increase the reference count of `object,` and possibly remove the
-             * [floating][floating-ref] reference, if `object` has a floating reference.
+             * [floating](floating-refs.html) reference, if `object` has a floating reference.
              *
              * In other words, if the object is floating, then this call "assumes
              * ownership" of the floating reference, converting it to a normal
@@ -26238,7 +26238,7 @@ declare module 'gi://Gio?version=2.0' {
             bind_property_full(...args: never[]): any;
             /**
              * This function is intended for #GObject implementations to re-enforce
-             * a [floating][floating-ref] object reference. Doing this is seldom
+             * a [floating](floating-refs.html) object reference. Doing this is seldom
              * required: all #GInitiallyUnowneds are created with a floating reference
              * which usually just needs to be sunken by calling g_object_ref_sink().
              */
@@ -26293,7 +26293,7 @@ declare module 'gi://Gio?version=2.0' {
              */
             getv(names: string[], values: (GObject.Value | any)[]): void;
             /**
-             * Checks whether `object` has a [floating][floating-ref] reference.
+             * Checks whether `object` has a [floating](floating-refs.html) reference.
              * @returns %TRUE if @object has a floating reference
              */
             is_floating(): boolean;
@@ -26368,7 +26368,7 @@ declare module 'gi://Gio?version=2.0' {
             ref(): GObject.Object;
             /**
              * Increase the reference count of `object,` and possibly remove the
-             * [floating][floating-ref] reference, if `object` has a floating reference.
+             * [floating](floating-refs.html) reference, if `object` has a floating reference.
              *
              * In other words, if the object is floating, then this call "assumes
              * ownership" of the floating reference, converting it to a normal
@@ -26923,7 +26923,7 @@ declare module 'gi://Gio?version=2.0' {
             bind_property_full(...args: never[]): any;
             /**
              * This function is intended for #GObject implementations to re-enforce
-             * a [floating][floating-ref] object reference. Doing this is seldom
+             * a [floating](floating-refs.html) object reference. Doing this is seldom
              * required: all #GInitiallyUnowneds are created with a floating reference
              * which usually just needs to be sunken by calling g_object_ref_sink().
              */
@@ -26978,7 +26978,7 @@ declare module 'gi://Gio?version=2.0' {
              */
             getv(names: string[], values: (GObject.Value | any)[]): void;
             /**
-             * Checks whether `object` has a [floating][floating-ref] reference.
+             * Checks whether `object` has a [floating](floating-refs.html) reference.
              * @returns %TRUE if @object has a floating reference
              */
             is_floating(): boolean;
@@ -27053,7 +27053,7 @@ declare module 'gi://Gio?version=2.0' {
             ref(): GObject.Object;
             /**
              * Increase the reference count of `object,` and possibly remove the
-             * [floating][floating-ref] reference, if `object` has a floating reference.
+             * [floating](floating-refs.html) reference, if `object` has a floating reference.
              *
              * In other words, if the object is floating, then this call "assumes
              * ownership" of the floating reference, converting it to a normal
@@ -27683,7 +27683,7 @@ declare module 'gi://Gio?version=2.0' {
             bind_property_full(...args: never[]): any;
             /**
              * This function is intended for #GObject implementations to re-enforce
-             * a [floating][floating-ref] object reference. Doing this is seldom
+             * a [floating](floating-refs.html) object reference. Doing this is seldom
              * required: all #GInitiallyUnowneds are created with a floating reference
              * which usually just needs to be sunken by calling g_object_ref_sink().
              */
@@ -27738,7 +27738,7 @@ declare module 'gi://Gio?version=2.0' {
              */
             getv(names: string[], values: (GObject.Value | any)[]): void;
             /**
-             * Checks whether `object` has a [floating][floating-ref] reference.
+             * Checks whether `object` has a [floating](floating-refs.html) reference.
              * @returns %TRUE if @object has a floating reference
              */
             is_floating(): boolean;
@@ -27813,7 +27813,7 @@ declare module 'gi://Gio?version=2.0' {
             ref(): GObject.Object;
             /**
              * Increase the reference count of `object,` and possibly remove the
-             * [floating][floating-ref] reference, if `object` has a floating reference.
+             * [floating](floating-refs.html) reference, if `object` has a floating reference.
              *
              * In other words, if the object is floating, then this call "assumes
              * ownership" of the floating reference, converting it to a normal
@@ -28274,7 +28274,7 @@ declare module 'gi://Gio?version=2.0' {
             bind_property_full(...args: never[]): any;
             /**
              * This function is intended for #GObject implementations to re-enforce
-             * a [floating][floating-ref] object reference. Doing this is seldom
+             * a [floating](floating-refs.html) object reference. Doing this is seldom
              * required: all #GInitiallyUnowneds are created with a floating reference
              * which usually just needs to be sunken by calling g_object_ref_sink().
              */
@@ -28329,7 +28329,7 @@ declare module 'gi://Gio?version=2.0' {
              */
             getv(names: string[], values: (GObject.Value | any)[]): void;
             /**
-             * Checks whether `object` has a [floating][floating-ref] reference.
+             * Checks whether `object` has a [floating](floating-refs.html) reference.
              * @returns %TRUE if @object has a floating reference
              */
             is_floating(): boolean;
@@ -28404,7 +28404,7 @@ declare module 'gi://Gio?version=2.0' {
             ref(): GObject.Object;
             /**
              * Increase the reference count of `object,` and possibly remove the
-             * [floating][floating-ref] reference, if `object` has a floating reference.
+             * [floating](floating-refs.html) reference, if `object` has a floating reference.
              *
              * In other words, if the object is floating, then this call "assumes
              * ownership" of the floating reference, converting it to a normal
@@ -28866,7 +28866,7 @@ declare module 'gi://Gio?version=2.0' {
             bind_property_full(...args: never[]): any;
             /**
              * This function is intended for #GObject implementations to re-enforce
-             * a [floating][floating-ref] object reference. Doing this is seldom
+             * a [floating](floating-refs.html) object reference. Doing this is seldom
              * required: all #GInitiallyUnowneds are created with a floating reference
              * which usually just needs to be sunken by calling g_object_ref_sink().
              */
@@ -28921,7 +28921,7 @@ declare module 'gi://Gio?version=2.0' {
              */
             getv(names: string[], values: (GObject.Value | any)[]): void;
             /**
-             * Checks whether `object` has a [floating][floating-ref] reference.
+             * Checks whether `object` has a [floating](floating-refs.html) reference.
              * @returns %TRUE if @object has a floating reference
              */
             is_floating(): boolean;
@@ -28996,7 +28996,7 @@ declare module 'gi://Gio?version=2.0' {
             ref(): GObject.Object;
             /**
              * Increase the reference count of `object,` and possibly remove the
-             * [floating][floating-ref] reference, if `object` has a floating reference.
+             * [floating](floating-refs.html) reference, if `object` has a floating reference.
              *
              * In other words, if the object is floating, then this call "assumes
              * ownership" of the floating reference, converting it to a normal
@@ -30254,7 +30254,7 @@ declare module 'gi://Gio?version=2.0' {
             bind_property_full(...args: never[]): any;
             /**
              * This function is intended for #GObject implementations to re-enforce
-             * a [floating][floating-ref] object reference. Doing this is seldom
+             * a [floating](floating-refs.html) object reference. Doing this is seldom
              * required: all #GInitiallyUnowneds are created with a floating reference
              * which usually just needs to be sunken by calling g_object_ref_sink().
              */
@@ -30309,7 +30309,7 @@ declare module 'gi://Gio?version=2.0' {
              */
             getv(names: string[], values: (GObject.Value | any)[]): void;
             /**
-             * Checks whether `object` has a [floating][floating-ref] reference.
+             * Checks whether `object` has a [floating](floating-refs.html) reference.
              * @returns %TRUE if @object has a floating reference
              */
             is_floating(): boolean;
@@ -30384,7 +30384,7 @@ declare module 'gi://Gio?version=2.0' {
             ref(): GObject.Object;
             /**
              * Increase the reference count of `object,` and possibly remove the
-             * [floating][floating-ref] reference, if `object` has a floating reference.
+             * [floating](floating-refs.html) reference, if `object` has a floating reference.
              *
              * In other words, if the object is floating, then this call "assumes
              * ownership" of the floating reference, converting it to a normal
@@ -30900,7 +30900,7 @@ declare module 'gi://Gio?version=2.0' {
             bind_property_full(...args: never[]): any;
             /**
              * This function is intended for #GObject implementations to re-enforce
-             * a [floating][floating-ref] object reference. Doing this is seldom
+             * a [floating](floating-refs.html) object reference. Doing this is seldom
              * required: all #GInitiallyUnowneds are created with a floating reference
              * which usually just needs to be sunken by calling g_object_ref_sink().
              */
@@ -30955,7 +30955,7 @@ declare module 'gi://Gio?version=2.0' {
              */
             getv(names: string[], values: (GObject.Value | any)[]): void;
             /**
-             * Checks whether `object` has a [floating][floating-ref] reference.
+             * Checks whether `object` has a [floating](floating-refs.html) reference.
              * @returns %TRUE if @object has a floating reference
              */
             is_floating(): boolean;
@@ -31030,7 +31030,7 @@ declare module 'gi://Gio?version=2.0' {
             ref(): GObject.Object;
             /**
              * Increase the reference count of `object,` and possibly remove the
-             * [floating][floating-ref] reference, if `object` has a floating reference.
+             * [floating](floating-refs.html) reference, if `object` has a floating reference.
              *
              * In other words, if the object is floating, then this call "assumes
              * ownership" of the floating reference, converting it to a normal
@@ -32237,7 +32237,7 @@ declare module 'gi://Gio?version=2.0' {
             bind_property_full(...args: never[]): any;
             /**
              * This function is intended for #GObject implementations to re-enforce
-             * a [floating][floating-ref] object reference. Doing this is seldom
+             * a [floating](floating-refs.html) object reference. Doing this is seldom
              * required: all #GInitiallyUnowneds are created with a floating reference
              * which usually just needs to be sunken by calling g_object_ref_sink().
              */
@@ -32292,7 +32292,7 @@ declare module 'gi://Gio?version=2.0' {
              */
             getv(names: string[], values: (GObject.Value | any)[]): void;
             /**
-             * Checks whether `object` has a [floating][floating-ref] reference.
+             * Checks whether `object` has a [floating](floating-refs.html) reference.
              * @returns %TRUE if @object has a floating reference
              */
             is_floating(): boolean;
@@ -32367,7 +32367,7 @@ declare module 'gi://Gio?version=2.0' {
             ref(): GObject.Object;
             /**
              * Increase the reference count of `object,` and possibly remove the
-             * [floating][floating-ref] reference, if `object` has a floating reference.
+             * [floating](floating-refs.html) reference, if `object` has a floating reference.
              *
              * In other words, if the object is floating, then this call "assumes
              * ownership" of the floating reference, converting it to a normal
@@ -33072,7 +33072,7 @@ declare module 'gi://Gio?version=2.0' {
             bind_property_full(...args: never[]): any;
             /**
              * This function is intended for #GObject implementations to re-enforce
-             * a [floating][floating-ref] object reference. Doing this is seldom
+             * a [floating](floating-refs.html) object reference. Doing this is seldom
              * required: all #GInitiallyUnowneds are created with a floating reference
              * which usually just needs to be sunken by calling g_object_ref_sink().
              */
@@ -33127,7 +33127,7 @@ declare module 'gi://Gio?version=2.0' {
              */
             getv(names: string[], values: (GObject.Value | any)[]): void;
             /**
-             * Checks whether `object` has a [floating][floating-ref] reference.
+             * Checks whether `object` has a [floating](floating-refs.html) reference.
              * @returns %TRUE if @object has a floating reference
              */
             is_floating(): boolean;
@@ -33202,7 +33202,7 @@ declare module 'gi://Gio?version=2.0' {
             ref(): GObject.Object;
             /**
              * Increase the reference count of `object,` and possibly remove the
-             * [floating][floating-ref] reference, if `object` has a floating reference.
+             * [floating](floating-refs.html) reference, if `object` has a floating reference.
              *
              * In other words, if the object is floating, then this call "assumes
              * ownership" of the floating reference, converting it to a normal
@@ -33934,7 +33934,7 @@ declare module 'gi://Gio?version=2.0' {
             bind_property_full(...args: never[]): any;
             /**
              * This function is intended for #GObject implementations to re-enforce
-             * a [floating][floating-ref] object reference. Doing this is seldom
+             * a [floating](floating-refs.html) object reference. Doing this is seldom
              * required: all #GInitiallyUnowneds are created with a floating reference
              * which usually just needs to be sunken by calling g_object_ref_sink().
              */
@@ -33989,7 +33989,7 @@ declare module 'gi://Gio?version=2.0' {
              */
             getv(names: string[], values: (GObject.Value | any)[]): void;
             /**
-             * Checks whether `object` has a [floating][floating-ref] reference.
+             * Checks whether `object` has a [floating](floating-refs.html) reference.
              * @returns %TRUE if @object has a floating reference
              */
             is_floating(): boolean;
@@ -34064,7 +34064,7 @@ declare module 'gi://Gio?version=2.0' {
             ref(): GObject.Object;
             /**
              * Increase the reference count of `object,` and possibly remove the
-             * [floating][floating-ref] reference, if `object` has a floating reference.
+             * [floating](floating-refs.html) reference, if `object` has a floating reference.
              *
              * In other words, if the object is floating, then this call "assumes
              * ownership" of the floating reference, converting it to a normal
@@ -35403,7 +35403,7 @@ declare module 'gi://Gio?version=2.0' {
             bind_property_full(...args: never[]): any;
             /**
              * This function is intended for #GObject implementations to re-enforce
-             * a [floating][floating-ref] object reference. Doing this is seldom
+             * a [floating](floating-refs.html) object reference. Doing this is seldom
              * required: all #GInitiallyUnowneds are created with a floating reference
              * which usually just needs to be sunken by calling g_object_ref_sink().
              */
@@ -35458,7 +35458,7 @@ declare module 'gi://Gio?version=2.0' {
              */
             getv(names: string[], values: (GObject.Value | any)[]): void;
             /**
-             * Checks whether `object` has a [floating][floating-ref] reference.
+             * Checks whether `object` has a [floating](floating-refs.html) reference.
              * @returns %TRUE if @object has a floating reference
              */
             is_floating(): boolean;
@@ -35533,7 +35533,7 @@ declare module 'gi://Gio?version=2.0' {
             ref(): GObject.Object;
             /**
              * Increase the reference count of `object,` and possibly remove the
-             * [floating][floating-ref] reference, if `object` has a floating reference.
+             * [floating](floating-refs.html) reference, if `object` has a floating reference.
              *
              * In other words, if the object is floating, then this call "assumes
              * ownership" of the floating reference, converting it to a normal
@@ -36024,7 +36024,7 @@ declare module 'gi://Gio?version=2.0' {
             bind_property_full(...args: never[]): any;
             /**
              * This function is intended for #GObject implementations to re-enforce
-             * a [floating][floating-ref] object reference. Doing this is seldom
+             * a [floating](floating-refs.html) object reference. Doing this is seldom
              * required: all #GInitiallyUnowneds are created with a floating reference
              * which usually just needs to be sunken by calling g_object_ref_sink().
              */
@@ -36079,7 +36079,7 @@ declare module 'gi://Gio?version=2.0' {
              */
             getv(names: string[], values: (GObject.Value | any)[]): void;
             /**
-             * Checks whether `object` has a [floating][floating-ref] reference.
+             * Checks whether `object` has a [floating](floating-refs.html) reference.
              * @returns %TRUE if @object has a floating reference
              */
             is_floating(): boolean;
@@ -36154,7 +36154,7 @@ declare module 'gi://Gio?version=2.0' {
             ref(): GObject.Object;
             /**
              * Increase the reference count of `object,` and possibly remove the
-             * [floating][floating-ref] reference, if `object` has a floating reference.
+             * [floating](floating-refs.html) reference, if `object` has a floating reference.
              *
              * In other words, if the object is floating, then this call "assumes
              * ownership" of the floating reference, converting it to a normal
@@ -37591,7 +37591,7 @@ declare module 'gi://Gio?version=2.0' {
             bind_property_full(...args: never[]): any;
             /**
              * This function is intended for #GObject implementations to re-enforce
-             * a [floating][floating-ref] object reference. Doing this is seldom
+             * a [floating](floating-refs.html) object reference. Doing this is seldom
              * required: all #GInitiallyUnowneds are created with a floating reference
              * which usually just needs to be sunken by calling g_object_ref_sink().
              */
@@ -37646,7 +37646,7 @@ declare module 'gi://Gio?version=2.0' {
              */
             getv(names: string[], values: (GObject.Value | any)[]): void;
             /**
-             * Checks whether `object` has a [floating][floating-ref] reference.
+             * Checks whether `object` has a [floating](floating-refs.html) reference.
              * @returns %TRUE if @object has a floating reference
              */
             is_floating(): boolean;
@@ -37721,7 +37721,7 @@ declare module 'gi://Gio?version=2.0' {
             ref(): GObject.Object;
             /**
              * Increase the reference count of `object,` and possibly remove the
-             * [floating][floating-ref] reference, if `object` has a floating reference.
+             * [floating](floating-refs.html) reference, if `object` has a floating reference.
              *
              * In other words, if the object is floating, then this call "assumes
              * ownership" of the floating reference, converting it to a normal
@@ -39086,7 +39086,7 @@ declare module 'gi://Gio?version=2.0' {
             bind_property_full(...args: never[]): any;
             /**
              * This function is intended for #GObject implementations to re-enforce
-             * a [floating][floating-ref] object reference. Doing this is seldom
+             * a [floating](floating-refs.html) object reference. Doing this is seldom
              * required: all #GInitiallyUnowneds are created with a floating reference
              * which usually just needs to be sunken by calling g_object_ref_sink().
              */
@@ -39141,7 +39141,7 @@ declare module 'gi://Gio?version=2.0' {
              */
             getv(names: string[], values: (GObject.Value | any)[]): void;
             /**
-             * Checks whether `object` has a [floating][floating-ref] reference.
+             * Checks whether `object` has a [floating](floating-refs.html) reference.
              * @returns %TRUE if @object has a floating reference
              */
             is_floating(): boolean;
@@ -39216,7 +39216,7 @@ declare module 'gi://Gio?version=2.0' {
             ref(): GObject.Object;
             /**
              * Increase the reference count of `object,` and possibly remove the
-             * [floating][floating-ref] reference, if `object` has a floating reference.
+             * [floating](floating-refs.html) reference, if `object` has a floating reference.
              *
              * In other words, if the object is floating, then this call "assumes
              * ownership" of the floating reference, converting it to a normal
@@ -41127,7 +41127,7 @@ declare module 'gi://Gio?version=2.0' {
             bind_property_full(...args: never[]): any;
             /**
              * This function is intended for #GObject implementations to re-enforce
-             * a [floating][floating-ref] object reference. Doing this is seldom
+             * a [floating](floating-refs.html) object reference. Doing this is seldom
              * required: all #GInitiallyUnowneds are created with a floating reference
              * which usually just needs to be sunken by calling g_object_ref_sink().
              */
@@ -41176,7 +41176,7 @@ declare module 'gi://Gio?version=2.0' {
              */
             getv(names: string[], values: (GObject.Value | any)[]): void;
             /**
-             * Checks whether `object` has a [floating][floating-ref] reference.
+             * Checks whether `object` has a [floating](floating-refs.html) reference.
              * @returns %TRUE if @object has a floating reference
              */
             is_floating(): boolean;
@@ -41251,7 +41251,7 @@ declare module 'gi://Gio?version=2.0' {
             ref(): GObject.Object;
             /**
              * Increase the reference count of `object,` and possibly remove the
-             * [floating][floating-ref] reference, if `object` has a floating reference.
+             * [floating](floating-refs.html) reference, if `object` has a floating reference.
              *
              * In other words, if the object is floating, then this call "assumes
              * ownership" of the floating reference, converting it to a normal
@@ -42960,7 +42960,7 @@ declare module 'gi://Gio?version=2.0' {
             bind_property_full(...args: never[]): any;
             /**
              * This function is intended for #GObject implementations to re-enforce
-             * a [floating][floating-ref] object reference. Doing this is seldom
+             * a [floating](floating-refs.html) object reference. Doing this is seldom
              * required: all #GInitiallyUnowneds are created with a floating reference
              * which usually just needs to be sunken by calling g_object_ref_sink().
              */
@@ -43015,7 +43015,7 @@ declare module 'gi://Gio?version=2.0' {
              */
             getv(names: string[], values: (GObject.Value | any)[]): void;
             /**
-             * Checks whether `object` has a [floating][floating-ref] reference.
+             * Checks whether `object` has a [floating](floating-refs.html) reference.
              * @returns %TRUE if @object has a floating reference
              */
             is_floating(): boolean;
@@ -43090,7 +43090,7 @@ declare module 'gi://Gio?version=2.0' {
             ref(): GObject.Object;
             /**
              * Increase the reference count of `object,` and possibly remove the
-             * [floating][floating-ref] reference, if `object` has a floating reference.
+             * [floating](floating-refs.html) reference, if `object` has a floating reference.
              *
              * In other words, if the object is floating, then this call "assumes
              * ownership" of the floating reference, converting it to a normal
@@ -43644,7 +43644,7 @@ declare module 'gi://Gio?version=2.0' {
             bind_property_full(...args: never[]): any;
             /**
              * This function is intended for #GObject implementations to re-enforce
-             * a [floating][floating-ref] object reference. Doing this is seldom
+             * a [floating](floating-refs.html) object reference. Doing this is seldom
              * required: all #GInitiallyUnowneds are created with a floating reference
              * which usually just needs to be sunken by calling g_object_ref_sink().
              */
@@ -43699,7 +43699,7 @@ declare module 'gi://Gio?version=2.0' {
              */
             getv(names: string[], values: (GObject.Value | any)[]): void;
             /**
-             * Checks whether `object` has a [floating][floating-ref] reference.
+             * Checks whether `object` has a [floating](floating-refs.html) reference.
              * @returns %TRUE if @object has a floating reference
              */
             is_floating(): boolean;
@@ -43774,7 +43774,7 @@ declare module 'gi://Gio?version=2.0' {
             ref(): GObject.Object;
             /**
              * Increase the reference count of `object,` and possibly remove the
-             * [floating][floating-ref] reference, if `object` has a floating reference.
+             * [floating](floating-refs.html) reference, if `object` has a floating reference.
              *
              * In other words, if the object is floating, then this call "assumes
              * ownership" of the floating reference, converting it to a normal
@@ -44256,7 +44256,7 @@ declare module 'gi://Gio?version=2.0' {
             bind_property_full(...args: never[]): any;
             /**
              * This function is intended for #GObject implementations to re-enforce
-             * a [floating][floating-ref] object reference. Doing this is seldom
+             * a [floating](floating-refs.html) object reference. Doing this is seldom
              * required: all #GInitiallyUnowneds are created with a floating reference
              * which usually just needs to be sunken by calling g_object_ref_sink().
              */
@@ -44311,7 +44311,7 @@ declare module 'gi://Gio?version=2.0' {
              */
             getv(names: string[], values: (GObject.Value | any)[]): void;
             /**
-             * Checks whether `object` has a [floating][floating-ref] reference.
+             * Checks whether `object` has a [floating](floating-refs.html) reference.
              * @returns %TRUE if @object has a floating reference
              */
             is_floating(): boolean;
@@ -44386,7 +44386,7 @@ declare module 'gi://Gio?version=2.0' {
             ref(): GObject.Object;
             /**
              * Increase the reference count of `object,` and possibly remove the
-             * [floating][floating-ref] reference, if `object` has a floating reference.
+             * [floating](floating-refs.html) reference, if `object` has a floating reference.
              *
              * In other words, if the object is floating, then this call "assumes
              * ownership" of the floating reference, converting it to a normal
@@ -46863,7 +46863,7 @@ declare module 'gi://Gio?version=2.0' {
             bind_property_full(...args: never[]): any;
             /**
              * This function is intended for #GObject implementations to re-enforce
-             * a [floating][floating-ref] object reference. Doing this is seldom
+             * a [floating](floating-refs.html) object reference. Doing this is seldom
              * required: all #GInitiallyUnowneds are created with a floating reference
              * which usually just needs to be sunken by calling g_object_ref_sink().
              */
@@ -46918,7 +46918,7 @@ declare module 'gi://Gio?version=2.0' {
              */
             getv(names: string[], values: (GObject.Value | any)[]): void;
             /**
-             * Checks whether `object` has a [floating][floating-ref] reference.
+             * Checks whether `object` has a [floating](floating-refs.html) reference.
              * @returns %TRUE if @object has a floating reference
              */
             is_floating(): boolean;
@@ -46993,7 +46993,7 @@ declare module 'gi://Gio?version=2.0' {
             ref(): GObject.Object;
             /**
              * Increase the reference count of `object,` and possibly remove the
-             * [floating][floating-ref] reference, if `object` has a floating reference.
+             * [floating](floating-refs.html) reference, if `object` has a floating reference.
              *
              * In other words, if the object is floating, then this call "assumes
              * ownership" of the floating reference, converting it to a normal
@@ -47479,7 +47479,7 @@ declare module 'gi://Gio?version=2.0' {
             bind_property_full(...args: never[]): any;
             /**
              * This function is intended for #GObject implementations to re-enforce
-             * a [floating][floating-ref] object reference. Doing this is seldom
+             * a [floating](floating-refs.html) object reference. Doing this is seldom
              * required: all #GInitiallyUnowneds are created with a floating reference
              * which usually just needs to be sunken by calling g_object_ref_sink().
              */
@@ -47534,7 +47534,7 @@ declare module 'gi://Gio?version=2.0' {
              */
             getv(names: string[], values: (GObject.Value | any)[]): void;
             /**
-             * Checks whether `object` has a [floating][floating-ref] reference.
+             * Checks whether `object` has a [floating](floating-refs.html) reference.
              * @returns %TRUE if @object has a floating reference
              */
             is_floating(): boolean;
@@ -47609,7 +47609,7 @@ declare module 'gi://Gio?version=2.0' {
             ref(): GObject.Object;
             /**
              * Increase the reference count of `object,` and possibly remove the
-             * [floating][floating-ref] reference, if `object` has a floating reference.
+             * [floating](floating-refs.html) reference, if `object` has a floating reference.
              *
              * In other words, if the object is floating, then this call "assumes
              * ownership" of the floating reference, converting it to a normal
@@ -50491,7 +50491,7 @@ declare module 'gi://Gio?version=2.0' {
             bind_property_full(...args: never[]): any;
             /**
              * This function is intended for #GObject implementations to re-enforce
-             * a [floating][floating-ref] object reference. Doing this is seldom
+             * a [floating](floating-refs.html) object reference. Doing this is seldom
              * required: all #GInitiallyUnowneds are created with a floating reference
              * which usually just needs to be sunken by calling g_object_ref_sink().
              */
@@ -50546,7 +50546,7 @@ declare module 'gi://Gio?version=2.0' {
              */
             getv(names: string[], values: (GObject.Value | any)[]): void;
             /**
-             * Checks whether `object` has a [floating][floating-ref] reference.
+             * Checks whether `object` has a [floating](floating-refs.html) reference.
              * @returns %TRUE if @object has a floating reference
              */
             is_floating(): boolean;
@@ -50621,7 +50621,7 @@ declare module 'gi://Gio?version=2.0' {
             ref(): GObject.Object;
             /**
              * Increase the reference count of `object,` and possibly remove the
-             * [floating][floating-ref] reference, if `object` has a floating reference.
+             * [floating](floating-refs.html) reference, if `object` has a floating reference.
              *
              * In other words, if the object is floating, then this call "assumes
              * ownership" of the floating reference, converting it to a normal
@@ -51542,7 +51542,7 @@ declare module 'gi://Gio?version=2.0' {
             bind_property_full(...args: never[]): any;
             /**
              * This function is intended for #GObject implementations to re-enforce
-             * a [floating][floating-ref] object reference. Doing this is seldom
+             * a [floating](floating-refs.html) object reference. Doing this is seldom
              * required: all #GInitiallyUnowneds are created with a floating reference
              * which usually just needs to be sunken by calling g_object_ref_sink().
              */
@@ -51597,7 +51597,7 @@ declare module 'gi://Gio?version=2.0' {
              */
             getv(names: string[], values: (GObject.Value | any)[]): void;
             /**
-             * Checks whether `object` has a [floating][floating-ref] reference.
+             * Checks whether `object` has a [floating](floating-refs.html) reference.
              * @returns %TRUE if @object has a floating reference
              */
             is_floating(): boolean;
@@ -51672,7 +51672,7 @@ declare module 'gi://Gio?version=2.0' {
             ref(): GObject.Object;
             /**
              * Increase the reference count of `object,` and possibly remove the
-             * [floating][floating-ref] reference, if `object` has a floating reference.
+             * [floating](floating-refs.html) reference, if `object` has a floating reference.
              *
              * In other words, if the object is floating, then this call "assumes
              * ownership" of the floating reference, converting it to a normal
@@ -52364,7 +52364,7 @@ declare module 'gi://Gio?version=2.0' {
             bind_property_full(...args: never[]): any;
             /**
              * This function is intended for #GObject implementations to re-enforce
-             * a [floating][floating-ref] object reference. Doing this is seldom
+             * a [floating](floating-refs.html) object reference. Doing this is seldom
              * required: all #GInitiallyUnowneds are created with a floating reference
              * which usually just needs to be sunken by calling g_object_ref_sink().
              */
@@ -52419,7 +52419,7 @@ declare module 'gi://Gio?version=2.0' {
              */
             getv(names: string[], values: (GObject.Value | any)[]): void;
             /**
-             * Checks whether `object` has a [floating][floating-ref] reference.
+             * Checks whether `object` has a [floating](floating-refs.html) reference.
              * @returns %TRUE if @object has a floating reference
              */
             is_floating(): boolean;
@@ -52494,7 +52494,7 @@ declare module 'gi://Gio?version=2.0' {
             ref(): GObject.Object;
             /**
              * Increase the reference count of `object,` and possibly remove the
-             * [floating][floating-ref] reference, if `object` has a floating reference.
+             * [floating](floating-refs.html) reference, if `object` has a floating reference.
              *
              * In other words, if the object is floating, then this call "assumes
              * ownership" of the floating reference, converting it to a normal
@@ -53277,7 +53277,7 @@ declare module 'gi://Gio?version=2.0' {
             bind_property_full(...args: never[]): any;
             /**
              * This function is intended for #GObject implementations to re-enforce
-             * a [floating][floating-ref] object reference. Doing this is seldom
+             * a [floating](floating-refs.html) object reference. Doing this is seldom
              * required: all #GInitiallyUnowneds are created with a floating reference
              * which usually just needs to be sunken by calling g_object_ref_sink().
              */
@@ -53332,7 +53332,7 @@ declare module 'gi://Gio?version=2.0' {
              */
             getv(names: string[], values: (GObject.Value | any)[]): void;
             /**
-             * Checks whether `object` has a [floating][floating-ref] reference.
+             * Checks whether `object` has a [floating](floating-refs.html) reference.
              * @returns %TRUE if @object has a floating reference
              */
             is_floating(): boolean;
@@ -53407,7 +53407,7 @@ declare module 'gi://Gio?version=2.0' {
             ref(): GObject.Object;
             /**
              * Increase the reference count of `object,` and possibly remove the
-             * [floating][floating-ref] reference, if `object` has a floating reference.
+             * [floating](floating-refs.html) reference, if `object` has a floating reference.
              *
              * In other words, if the object is floating, then this call "assumes
              * ownership" of the floating reference, converting it to a normal
@@ -55232,7 +55232,7 @@ declare module 'gi://Gio?version=2.0' {
             bind_property_full(...args: never[]): any;
             /**
              * This function is intended for #GObject implementations to re-enforce
-             * a [floating][floating-ref] object reference. Doing this is seldom
+             * a [floating](floating-refs.html) object reference. Doing this is seldom
              * required: all #GInitiallyUnowneds are created with a floating reference
              * which usually just needs to be sunken by calling g_object_ref_sink().
              */
@@ -55287,7 +55287,7 @@ declare module 'gi://Gio?version=2.0' {
              */
             getv(names: string[], values: (GObject.Value | any)[]): void;
             /**
-             * Checks whether `object` has a [floating][floating-ref] reference.
+             * Checks whether `object` has a [floating](floating-refs.html) reference.
              * @returns %TRUE if @object has a floating reference
              */
             is_floating(): boolean;
@@ -55362,7 +55362,7 @@ declare module 'gi://Gio?version=2.0' {
             ref(): GObject.Object;
             /**
              * Increase the reference count of `object,` and possibly remove the
-             * [floating][floating-ref] reference, if `object` has a floating reference.
+             * [floating](floating-refs.html) reference, if `object` has a floating reference.
              *
              * In other words, if the object is floating, then this call "assumes
              * ownership" of the floating reference, converting it to a normal
@@ -55840,7 +55840,7 @@ declare module 'gi://Gio?version=2.0' {
             bind_property_full(...args: never[]): any;
             /**
              * This function is intended for #GObject implementations to re-enforce
-             * a [floating][floating-ref] object reference. Doing this is seldom
+             * a [floating](floating-refs.html) object reference. Doing this is seldom
              * required: all #GInitiallyUnowneds are created with a floating reference
              * which usually just needs to be sunken by calling g_object_ref_sink().
              */
@@ -55895,7 +55895,7 @@ declare module 'gi://Gio?version=2.0' {
              */
             getv(names: string[], values: (GObject.Value | any)[]): void;
             /**
-             * Checks whether `object` has a [floating][floating-ref] reference.
+             * Checks whether `object` has a [floating](floating-refs.html) reference.
              * @returns %TRUE if @object has a floating reference
              */
             is_floating(): boolean;
@@ -55970,7 +55970,7 @@ declare module 'gi://Gio?version=2.0' {
             ref(): GObject.Object;
             /**
              * Increase the reference count of `object,` and possibly remove the
-             * [floating][floating-ref] reference, if `object` has a floating reference.
+             * [floating](floating-refs.html) reference, if `object` has a floating reference.
              *
              * In other words, if the object is floating, then this call "assumes
              * ownership" of the floating reference, converting it to a normal
@@ -58567,7 +58567,7 @@ declare module 'gi://Gio?version=2.0' {
             bind_property_full(...args: never[]): any;
             /**
              * This function is intended for #GObject implementations to re-enforce
-             * a [floating][floating-ref] object reference. Doing this is seldom
+             * a [floating](floating-refs.html) object reference. Doing this is seldom
              * required: all #GInitiallyUnowneds are created with a floating reference
              * which usually just needs to be sunken by calling g_object_ref_sink().
              */
@@ -58622,7 +58622,7 @@ declare module 'gi://Gio?version=2.0' {
              */
             getv(names: string[], values: (GObject.Value | any)[]): void;
             /**
-             * Checks whether `object` has a [floating][floating-ref] reference.
+             * Checks whether `object` has a [floating](floating-refs.html) reference.
              * @returns %TRUE if @object has a floating reference
              */
             is_floating(): boolean;
@@ -58697,7 +58697,7 @@ declare module 'gi://Gio?version=2.0' {
             ref(): GObject.Object;
             /**
              * Increase the reference count of `object,` and possibly remove the
-             * [floating][floating-ref] reference, if `object` has a floating reference.
+             * [floating](floating-refs.html) reference, if `object` has a floating reference.
              *
              * In other words, if the object is floating, then this call "assumes
              * ownership" of the floating reference, converting it to a normal
@@ -60333,7 +60333,7 @@ declare module 'gi://Gio?version=2.0' {
             bind_property_full(...args: never[]): any;
             /**
              * This function is intended for #GObject implementations to re-enforce
-             * a [floating][floating-ref] object reference. Doing this is seldom
+             * a [floating](floating-refs.html) object reference. Doing this is seldom
              * required: all #GInitiallyUnowneds are created with a floating reference
              * which usually just needs to be sunken by calling g_object_ref_sink().
              */
@@ -60388,7 +60388,7 @@ declare module 'gi://Gio?version=2.0' {
              */
             getv(names: string[], values: (GObject.Value | any)[]): void;
             /**
-             * Checks whether `object` has a [floating][floating-ref] reference.
+             * Checks whether `object` has a [floating](floating-refs.html) reference.
              * @returns %TRUE if @object has a floating reference
              */
             is_floating(): boolean;
@@ -60463,7 +60463,7 @@ declare module 'gi://Gio?version=2.0' {
             ref(): GObject.Object;
             /**
              * Increase the reference count of `object,` and possibly remove the
-             * [floating][floating-ref] reference, if `object` has a floating reference.
+             * [floating](floating-refs.html) reference, if `object` has a floating reference.
              *
              * In other words, if the object is floating, then this call "assumes
              * ownership" of the floating reference, converting it to a normal
@@ -61355,7 +61355,7 @@ declare module 'gi://Gio?version=2.0' {
             bind_property_full(...args: never[]): any;
             /**
              * This function is intended for #GObject implementations to re-enforce
-             * a [floating][floating-ref] object reference. Doing this is seldom
+             * a [floating](floating-refs.html) object reference. Doing this is seldom
              * required: all #GInitiallyUnowneds are created with a floating reference
              * which usually just needs to be sunken by calling g_object_ref_sink().
              */
@@ -61410,7 +61410,7 @@ declare module 'gi://Gio?version=2.0' {
              */
             getv(names: string[], values: (GObject.Value | any)[]): void;
             /**
-             * Checks whether `object` has a [floating][floating-ref] reference.
+             * Checks whether `object` has a [floating](floating-refs.html) reference.
              * @returns %TRUE if @object has a floating reference
              */
             is_floating(): boolean;
@@ -61485,7 +61485,7 @@ declare module 'gi://Gio?version=2.0' {
             ref(): GObject.Object;
             /**
              * Increase the reference count of `object,` and possibly remove the
-             * [floating][floating-ref] reference, if `object` has a floating reference.
+             * [floating](floating-refs.html) reference, if `object` has a floating reference.
              *
              * In other words, if the object is floating, then this call "assumes
              * ownership" of the floating reference, converting it to a normal
@@ -65127,7 +65127,7 @@ declare module 'gi://Gio?version=2.0' {
             bind_property_full(...args: never[]): any;
             /**
              * This function is intended for #GObject implementations to re-enforce
-             * a [floating][floating-ref] object reference. Doing this is seldom
+             * a [floating](floating-refs.html) object reference. Doing this is seldom
              * required: all #GInitiallyUnowneds are created with a floating reference
              * which usually just needs to be sunken by calling g_object_ref_sink().
              */
@@ -65182,7 +65182,7 @@ declare module 'gi://Gio?version=2.0' {
              */
             getv(names: string[], values: (GObject.Value | any)[]): void;
             /**
-             * Checks whether `object` has a [floating][floating-ref] reference.
+             * Checks whether `object` has a [floating](floating-refs.html) reference.
              * @returns %TRUE if @object has a floating reference
              */
             is_floating(): boolean;
@@ -65257,7 +65257,7 @@ declare module 'gi://Gio?version=2.0' {
             ref(): GObject.Object;
             /**
              * Increase the reference count of `object,` and possibly remove the
-             * [floating][floating-ref] reference, if `object` has a floating reference.
+             * [floating](floating-refs.html) reference, if `object` has a floating reference.
              *
              * In other words, if the object is floating, then this call "assumes
              * ownership" of the floating reference, converting it to a normal
@@ -66301,7 +66301,7 @@ declare module 'gi://Gio?version=2.0' {
             bind_property_full(...args: never[]): any;
             /**
              * This function is intended for #GObject implementations to re-enforce
-             * a [floating][floating-ref] object reference. Doing this is seldom
+             * a [floating](floating-refs.html) object reference. Doing this is seldom
              * required: all #GInitiallyUnowneds are created with a floating reference
              * which usually just needs to be sunken by calling g_object_ref_sink().
              */
@@ -66356,7 +66356,7 @@ declare module 'gi://Gio?version=2.0' {
              */
             getv(names: string[], values: (GObject.Value | any)[]): void;
             /**
-             * Checks whether `object` has a [floating][floating-ref] reference.
+             * Checks whether `object` has a [floating](floating-refs.html) reference.
              * @returns %TRUE if @object has a floating reference
              */
             is_floating(): boolean;
@@ -66431,7 +66431,7 @@ declare module 'gi://Gio?version=2.0' {
             ref(): GObject.Object;
             /**
              * Increase the reference count of `object,` and possibly remove the
-             * [floating][floating-ref] reference, if `object` has a floating reference.
+             * [floating](floating-refs.html) reference, if `object` has a floating reference.
              *
              * In other words, if the object is floating, then this call "assumes
              * ownership" of the floating reference, converting it to a normal
@@ -67039,7 +67039,7 @@ declare module 'gi://Gio?version=2.0' {
             bind_property_full(...args: never[]): any;
             /**
              * This function is intended for #GObject implementations to re-enforce
-             * a [floating][floating-ref] object reference. Doing this is seldom
+             * a [floating](floating-refs.html) object reference. Doing this is seldom
              * required: all #GInitiallyUnowneds are created with a floating reference
              * which usually just needs to be sunken by calling g_object_ref_sink().
              */
@@ -67094,7 +67094,7 @@ declare module 'gi://Gio?version=2.0' {
              */
             getv(names: string[], values: (GObject.Value | any)[]): void;
             /**
-             * Checks whether `object` has a [floating][floating-ref] reference.
+             * Checks whether `object` has a [floating](floating-refs.html) reference.
              * @returns %TRUE if @object has a floating reference
              */
             is_floating(): boolean;
@@ -67169,7 +67169,7 @@ declare module 'gi://Gio?version=2.0' {
             ref(): GObject.Object;
             /**
              * Increase the reference count of `object,` and possibly remove the
-             * [floating][floating-ref] reference, if `object` has a floating reference.
+             * [floating](floating-refs.html) reference, if `object` has a floating reference.
              *
              * In other words, if the object is floating, then this call "assumes
              * ownership" of the floating reference, converting it to a normal
@@ -68041,7 +68041,7 @@ declare module 'gi://Gio?version=2.0' {
             /**
              * Checks if the matcher will match all of the keys in a given namespace.
              * This will always return %TRUE if a wildcard character is in use (e.g. if
-             * matcher was created with "standard::*" and `ns` is "standard", or if matcher was created
+             * matcher was created with "standard::\*" and `ns` is "standard", or if matcher was created
              * using "*" and namespace is anything.)
              *
              * TODO: this is awkwardly worded.
@@ -74148,29 +74148,29 @@ declare module 'gi://Gio?version=2.0' {
                 vfunc_eject_mountable_with_operation_finish(result: AsyncResult): boolean;
                 /**
                  * Gets the requested information about the files in a directory.
-                 * The result is a #GFileEnumerator object that will give out
-                 * #GFileInfo objects for all the files in the directory.
+                 * The result is a [class`FileEnumerator]` object that will give out
+                 * [class`FileInfo]` objects for all the files in the directory.
                  *
                  * The `attributes` value is a string that specifies the file
                  * attributes that should be gathered. It is not an error if
                  * it's not possible to read a particular requested attribute
                  * from a file - it just won't be set. `attributes` should
                  * be a comma-separated list of attributes or attribute wildcards.
-                 * The wildcard "*" means all attributes, and a wildcard like
-                 * "standard::*" means all attributes in the standard namespace.
-                 * An example attribute query be "standard::*,owner::user".
+                 * The wildcard `*` means all attributes, and a wildcard like
+                 * `"standard::*"` means all attributes in the standard namespace.
+                 * An example attribute query be `"standard::*,owner::user"`.
                  * The standard attributes are available as defines, like
-                 * %G_FILE_ATTRIBUTE_STANDARD_NAME. %G_FILE_ATTRIBUTE_STANDARD_NAME should
-                 * always be specified if you plan to call g_file_enumerator_get_child() or
-                 * g_file_enumerator_iterate() on the returned enumerator.
+                 * [const`FILE_ATTRIBUTE_STANDARD_NAME]`. [const`FILE_ATTRIBUTE_STANDARD_NAME]` should
+                 * always be specified if you plan to call [method`FileEnumerator`.get_child] or
+                 * [method`FileEnumerator`.iterate] on the returned enumerator.
                  *
-                 * If `cancellable` is not %NULL, then the operation can be cancelled
+                 * If `cancellable` is not `NULL`, then the operation can be cancelled
                  * by triggering the cancellable object from another thread. If the
-                 * operation was cancelled, the error %G_IO_ERROR_CANCELLED will be
+                 * operation was cancelled, the error [error`Gio`.IOErrorEnum.CANCELLED] will be
                  * returned.
                  *
-                 * If the file does not exist, the %G_IO_ERROR_NOT_FOUND error will
-                 * be returned. If the file is not a directory, the %G_IO_ERROR_NOT_DIRECTORY
+                 * If the file does not exist, the [error`Gio`.IOErrorEnum.NOT_FOUND] error will
+                 * be returned. If the file is not a directory, the [error`Gio`.IOErrorEnum.NOT_DIRECTORY]
                  * error will be returned. Other errors are possible too.
                  * @param attributes an attribute query string
                  * @param flags a set of #GFileQueryInfoFlags
@@ -74784,7 +74784,7 @@ declare module 'gi://Gio?version=2.0' {
                  * that should be gathered. It is not an error if it's not possible
                  * to read a particular requested attribute from a file - it just
                  * won't be set. `attributes` should be a comma-separated list of
-                 * attributes or attribute wildcards. The wildcard "*" means all
+                 * attributes or attribute wildcards. The wildcard "\*" means all
                  * attributes, and a wildcard like "filesystem::*" means all attributes
                  * in the filesystem namespace. The standard namespace for filesystem
                  * attributes is "filesystem". Common attributes of interest are
@@ -74856,7 +74856,7 @@ declare module 'gi://Gio?version=2.0' {
                  *  - [const`Gio`.FILE_ATTRIBUTE_STANDARD_DISPLAY_NAME]
                  *
                  * `attributes` should be a comma-separated list of attributes or attribute
-                 * wildcards. The wildcard `"*"` means all attributes, and a wildcard like
+                 * wildcards. The wildcard `"\*"` means all attributes, and a wildcard like
                  * `"standard::*"` means all attributes in the standard namespace.
                  * An example attribute query might be `"standard::*,owner::user"`.
                  * The standard attributes are available as defines, like
@@ -76206,34 +76206,34 @@ declare module 'gi://Gio?version=2.0' {
             eject_mountable_with_operation_finish(result: AsyncResult): boolean;
             /**
              * Gets the requested information about the files in a directory.
-             * The result is a #GFileEnumerator object that will give out
-             * #GFileInfo objects for all the files in the directory.
+             * The result is a [class`FileEnumerator]` object that will give out
+             * [class`FileInfo]` objects for all the files in the directory.
              *
              * The `attributes` value is a string that specifies the file
              * attributes that should be gathered. It is not an error if
              * it's not possible to read a particular requested attribute
              * from a file - it just won't be set. `attributes` should
              * be a comma-separated list of attributes or attribute wildcards.
-             * The wildcard "*" means all attributes, and a wildcard like
-             * "standard::*" means all attributes in the standard namespace.
-             * An example attribute query be "standard::*,owner::user".
+             * The wildcard `*` means all attributes, and a wildcard like
+             * `"standard::*"` means all attributes in the standard namespace.
+             * An example attribute query be `"standard::*,owner::user"`.
              * The standard attributes are available as defines, like
-             * %G_FILE_ATTRIBUTE_STANDARD_NAME. %G_FILE_ATTRIBUTE_STANDARD_NAME should
-             * always be specified if you plan to call g_file_enumerator_get_child() or
-             * g_file_enumerator_iterate() on the returned enumerator.
+             * [const`FILE_ATTRIBUTE_STANDARD_NAME]`. [const`FILE_ATTRIBUTE_STANDARD_NAME]` should
+             * always be specified if you plan to call [method`FileEnumerator`.get_child] or
+             * [method`FileEnumerator`.iterate] on the returned enumerator.
              *
-             * If `cancellable` is not %NULL, then the operation can be cancelled
+             * If `cancellable` is not `NULL`, then the operation can be cancelled
              * by triggering the cancellable object from another thread. If the
-             * operation was cancelled, the error %G_IO_ERROR_CANCELLED will be
+             * operation was cancelled, the error [error`Gio`.IOErrorEnum.CANCELLED] will be
              * returned.
              *
-             * If the file does not exist, the %G_IO_ERROR_NOT_FOUND error will
-             * be returned. If the file is not a directory, the %G_IO_ERROR_NOT_DIRECTORY
+             * If the file does not exist, the [error`Gio`.IOErrorEnum.NOT_FOUND] error will
+             * be returned. If the file is not a directory, the [error`Gio`.IOErrorEnum.NOT_DIRECTORY]
              * error will be returned. Other errors are possible too.
              * @param attributes an attribute query string
              * @param flags a set of #GFileQueryInfoFlags
              * @param cancellable optional #GCancellable object,   %NULL to ignore
-             * @returns A #GFileEnumerator if successful,   %NULL on error. Free the returned object with g_object_unref().
+             * @returns A #GFileEnumerator if successful,   %NULL on error. Free the returned object with [method@GObject.Object.unref].
              */
             enumerate_children(
                 attributes: string,
@@ -77499,7 +77499,7 @@ declare module 'gi://Gio?version=2.0' {
              * that should be gathered. It is not an error if it's not possible
              * to read a particular requested attribute from a file - it just
              * won't be set. `attributes` should be a comma-separated list of
-             * attributes or attribute wildcards. The wildcard "*" means all
+             * attributes or attribute wildcards. The wildcard "\*" means all
              * attributes, and a wildcard like "filesystem::*" means all attributes
              * in the filesystem namespace. The standard namespace for filesystem
              * attributes is "filesystem". Common attributes of interest are
@@ -77617,7 +77617,7 @@ declare module 'gi://Gio?version=2.0' {
              *  - [const`Gio`.FILE_ATTRIBUTE_STANDARD_DISPLAY_NAME]
              *
              * `attributes` should be a comma-separated list of attributes or attribute
-             * wildcards. The wildcard `"*"` means all attributes, and a wildcard like
+             * wildcards. The wildcard `"\*"` means all attributes, and a wildcard like
              * `"standard::*"` means all attributes in the standard namespace.
              * An example attribute query might be `"standard::*,owner::user"`.
              * The standard attributes are available as defines, like
