@@ -24,19 +24,14 @@ declare module 'gi://Soup?version=3.0' {
          * Soup-3.0
          */
 
-        /**
-         * The type of cache; this affects what kinds of responses will be
-         * saved.
-         */
-
-        /**
-         * The type of cache; this affects what kinds of responses will be
-         * saved.
-         */
         export namespace CacheType {
             export const $gtype: GObject.GType<CacheType>;
         }
 
+        /**
+         * The type of cache; this affects what kinds of responses will be
+         * saved.
+         */
         enum CacheType {
             /**
              * a single-user cache
@@ -47,19 +42,15 @@ declare module 'gi://Soup?version=3.0' {
              */
             SHARED,
         }
-        /**
-         * The policy for accepting or rejecting cookies returned in
-         * responses.
-         */
 
-        /**
-         * The policy for accepting or rejecting cookies returned in
-         * responses.
-         */
         export namespace CookieJarAcceptPolicy {
             export const $gtype: GObject.GType<CookieJarAcceptPolicy>;
         }
 
+        /**
+         * The policy for accepting or rejecting cookies returned in
+         * responses.
+         */
         enum CookieJarAcceptPolicy {
             /**
              * accept all cookies unconditionally.
@@ -100,27 +91,19 @@ declare module 'gi://Soup?version=3.0' {
              */
             GRANDFATHERED_THIRD_PARTY,
         }
-        /**
-         * Date formats that [func`date_time_to_string]` can use.
-         *
-         * `SOUP_DATE_HTTP` and `SOUP_DATE_COOKIE` always coerce the time to
-         * UTC.
-         *
-         * This enum may be extended with more values in future releases.
-         */
 
-        /**
-         * Date formats that [func`date_time_to_string]` can use.
-         *
-         * `SOUP_DATE_HTTP` and `SOUP_DATE_COOKIE` always coerce the time to
-         * UTC.
-         *
-         * This enum may be extended with more values in future releases.
-         */
         export namespace DateFormat {
             export const $gtype: GObject.GType<DateFormat>;
         }
 
+        /**
+         * Date formats that [func`date_time_to_string]` can use.
+         *
+         * `SOUP_DATE_HTTP` and `SOUP_DATE_COOKIE` always coerce the time to
+         * UTC.
+         *
+         * This enum may be extended with more values in future releases.
+         */
         enum DateFormat {
             /**
              * RFC 1123 format, used by the HTTP "Date" header. Eg
@@ -133,17 +116,14 @@ declare module 'gi://Soup?version=3.0' {
              */
             COOKIE,
         }
-        /**
-         * How a message body is encoded for transport
-         */
 
-        /**
-         * How a message body is encoded for transport
-         */
         export namespace Encoding {
             export const $gtype: GObject.GType<Encoding>;
         }
 
+        /**
+         * How a message body is encoded for transport
+         */
         enum Encoding {
             /**
              * unknown / error
@@ -173,17 +153,14 @@ declare module 'gi://Soup?version=3.0' {
              */
             BYTERANGES,
         }
-        /**
-         * Indicates the HTTP protocol version being used.
-         */
 
-        /**
-         * Indicates the HTTP protocol version being used.
-         */
         export namespace HTTPVersion {
             export const $gtype: GObject.GType<HTTPVersion>;
         }
 
+        /**
+         * Indicates the HTTP protocol version being used.
+         */
         enum HTTPVersion {
             /**
              * HTTP 1.0 (RFC 1945)
@@ -198,17 +175,14 @@ declare module 'gi://Soup?version=3.0' {
              */
             HTTP_2_0,
         }
-        /**
-         * Describes the level of logging output to provide.
-         */
 
-        /**
-         * Describes the level of logging output to provide.
-         */
         export namespace LoggerLogLevel {
             export const $gtype: GObject.GType<LoggerLogLevel>;
         }
 
+        /**
+         * Describes the level of logging output to provide.
+         */
         enum LoggerLogLevel {
             /**
              * No logging
@@ -228,17 +202,14 @@ declare module 'gi://Soup?version=3.0' {
              */
             BODY,
         }
-        /**
-         * The lifetime of the memory being passed.
-         */
 
-        /**
-         * The lifetime of the memory being passed.
-         */
         export namespace MemoryUse {
             export const $gtype: GObject.GType<MemoryUse>;
         }
 
+        /**
+         * The lifetime of the memory being passed.
+         */
         enum MemoryUse {
             /**
              * The memory is statically allocated and
@@ -258,19 +229,15 @@ declare module 'gi://Soup?version=3.0' {
              */
             COPY,
         }
-        /**
-         * Value passed to [ctor`MessageHeaders`.new] to set certain default
-         * behaviors.
-         */
 
-        /**
-         * Value passed to [ctor`MessageHeaders`.new] to set certain default
-         * behaviors.
-         */
         export namespace MessageHeadersType {
             export const $gtype: GObject.GType<MessageHeadersType>;
         }
 
+        /**
+         * Value passed to [ctor`MessageHeaders`.new] to set certain default
+         * behaviors.
+         */
         enum MessageHeadersType {
             /**
              * request headers
@@ -285,19 +252,15 @@ declare module 'gi://Soup?version=3.0' {
              */
             MULTIPART,
         }
-        /**
-         * Priorities that can be set on a [class`Message]` to instruct the message queue
-         * to process it before any other message with lower priority.
-         */
 
-        /**
-         * Priorities that can be set on a [class`Message]` to instruct the message queue
-         * to process it before any other message with lower priority.
-         */
         export namespace MessagePriority {
             export const $gtype: GObject.GType<MessagePriority>;
         }
 
+        /**
+         * Priorities that can be set on a [class`Message]` to instruct the message queue
+         * to process it before any other message with lower priority.
+         */
         enum MessagePriority {
             /**
              * The lowest priority, the messages
@@ -327,17 +290,14 @@ declare module 'gi://Soup?version=3.0' {
              */
             VERY_HIGH,
         }
-        /**
-         * Represents the same-site policies of a cookie.
-         */
 
-        /**
-         * Represents the same-site policies of a cookie.
-         */
         export namespace SameSitePolicy {
             export const $gtype: GObject.GType<SameSitePolicy>;
         }
 
+        /**
+         * Represents the same-site policies of a cookie.
+         */
         enum SameSitePolicy {
             /**
              * The cookie is exposed with both cross-site and same-site requests
@@ -352,11 +312,12 @@ declare module 'gi://Soup?version=3.0' {
              */
             STRICT,
         }
+
         /**
          * A #SoupSession error.
          */
         class SessionError extends GLib.Error {
-            static $gtype: GObject.GType<SessionError>;
+            static $gtype: GObject.GType<GLib.Error>;
 
             // Static fields
 
@@ -408,27 +369,18 @@ declare module 'gi://Soup?version=3.0' {
             static quark(): GLib.Quark;
         }
 
-        /**
-         * These represent the known HTTP status code values, plus various
-         * network and internal errors.
-         *
-         * Note that no libsoup functions take or return this type directly;
-         * any function that works with status codes will accept unrecognized
-         * status codes as well.
-         */
-
-        /**
-         * These represent the known HTTP status code values, plus various
-         * network and internal errors.
-         *
-         * Note that no libsoup functions take or return this type directly;
-         * any function that works with status codes will accept unrecognized
-         * status codes as well.
-         */
         export namespace Status {
             export const $gtype: GObject.GType<Status>;
         }
 
+        /**
+         * These represent the known HTTP status code values, plus various
+         * network and internal errors.
+         *
+         * Note that no libsoup functions take or return this type directly;
+         * any function that works with status codes will accept unrecognized
+         * status codes as well.
+         */
         enum Status {
             /**
              * No status available. (Eg, the message has not
@@ -661,11 +613,12 @@ declare module 'gi://Soup?version=3.0' {
              */
             NOT_EXTENDED,
         }
+
         /**
          * Error codes for %SOUP_TLD_ERROR.
          */
         class TLDError extends GLib.Error {
-            static $gtype: GObject.GType<TLDError>;
+            static $gtype: GObject.GType<GLib.Error>;
 
             // Static fields
 
@@ -709,19 +662,14 @@ declare module 'gi://Soup?version=3.0' {
             static quark(): GLib.Quark;
         }
 
-        /**
-         * Enum values passed to [func`uri_copy]` to indicate the components of
-         * the URI that should be updated with the given values.
-         */
-
-        /**
-         * Enum values passed to [func`uri_copy]` to indicate the components of
-         * the URI that should be updated with the given values.
-         */
         export namespace URIComponent {
             export const $gtype: GObject.GType<URIComponent>;
         }
 
+        /**
+         * Enum values passed to [func`uri_copy]` to indicate the components of
+         * the URI that should be updated with the given values.
+         */
         enum URIComponent {
             /**
              * no component
@@ -764,25 +712,18 @@ declare module 'gi://Soup?version=3.0' {
              */
             FRAGMENT,
         }
-        /**
-         * Pre-defined close codes that can be passed to
-         * [method`WebsocketConnection`.close] or received from
-         * [method`WebsocketConnection`.get_close_code].
-         *
-         * However, other codes are also allowed.
-         */
 
-        /**
-         * Pre-defined close codes that can be passed to
-         * [method`WebsocketConnection`.close] or received from
-         * [method`WebsocketConnection`.get_close_code].
-         *
-         * However, other codes are also allowed.
-         */
         export namespace WebsocketCloseCode {
             export const $gtype: GObject.GType<WebsocketCloseCode>;
         }
 
+        /**
+         * Pre-defined close codes that can be passed to
+         * [method`WebsocketConnection`.close] or received from
+         * [method`WebsocketConnection`.get_close_code].
+         *
+         * However, other codes are also allowed.
+         */
         enum WebsocketCloseCode {
             /**
              * a normal, non-error close
@@ -843,17 +784,14 @@ declare module 'gi://Soup?version=3.0' {
              */
             TLS_HANDSHAKE,
         }
-        /**
-         * The type of a [class`WebsocketConnection]`.
-         */
 
-        /**
-         * The type of a [class`WebsocketConnection]`.
-         */
         export namespace WebsocketConnectionType {
             export const $gtype: GObject.GType<WebsocketConnectionType>;
         }
 
+        /**
+         * The type of a [class`WebsocketConnection]`.
+         */
         enum WebsocketConnectionType {
             /**
              * unknown/invalid connection
@@ -868,17 +806,14 @@ declare module 'gi://Soup?version=3.0' {
              */
             SERVER,
         }
-        /**
-         * The type of data contained in a [signal`WebsocketConnection:`:message] signal.
-         */
 
-        /**
-         * The type of data contained in a [signal`WebsocketConnection:`:message] signal.
-         */
         export namespace WebsocketDataType {
             export const $gtype: GObject.GType<WebsocketDataType>;
         }
 
+        /**
+         * The type of data contained in a [signal`WebsocketConnection:`:message] signal.
+         */
         enum WebsocketDataType {
             /**
              * UTF-8 text
@@ -889,11 +824,12 @@ declare module 'gi://Soup?version=3.0' {
              */
             BINARY,
         }
+
         /**
          * WebSocket-related errors.
          */
         class WebsocketError extends GLib.Error {
-            static $gtype: GObject.GType<WebsocketError>;
+            static $gtype: GObject.GType<GLib.Error>;
 
             // Static fields
 
@@ -929,17 +865,13 @@ declare module 'gi://Soup?version=3.0' {
             static quark(): GLib.Quark;
         }
 
-        /**
-         * The state of the WebSocket connection.
-         */
-
-        /**
-         * The state of the WebSocket connection.
-         */
         export namespace WebsocketState {
             export const $gtype: GObject.GType<WebsocketState>;
         }
 
+        /**
+         * The state of the WebSocket connection.
+         */
         enum WebsocketState {
             /**
              * the connection is ready to send messages
@@ -955,6 +887,7 @@ declare module 'gi://Soup?version=3.0' {
              */
             CLOSED,
         }
+
         /**
          * A constant corresponding to 1 day.
          *
@@ -1617,17 +1550,13 @@ declare module 'gi://Soup?version=3.0' {
         interface ServerWebsocketCallback {
             (server: Server, msg: ServerMessage, path: string, connection: WebsocketConnection): void;
         }
-        /**
-         * Indicates if a message should or shouldn't be cached.
-         */
-
-        /**
-         * Indicates if a message should or shouldn't be cached.
-         */
         export namespace Cacheability {
             export const $gtype: GObject.GType<Cacheability>;
         }
 
+        /**
+         * Indicates if a message should or shouldn't be cached.
+         */
         enum Cacheability {
             /**
              * The message should be cached
@@ -1646,17 +1575,14 @@ declare module 'gi://Soup?version=3.0' {
              */
             VALIDATES,
         }
-        /**
-         * Represents the parsed value of the "Expect" header.
-         */
 
-        /**
-         * Represents the parsed value of the "Expect" header.
-         */
         export namespace Expectation {
             export const $gtype: GObject.GType<Expectation>;
         }
 
+        /**
+         * Represents the parsed value of the "Expect" header.
+         */
         enum Expectation {
             /**
              * any unrecognized expectation
@@ -1667,19 +1593,15 @@ declare module 'gi://Soup?version=3.0' {
              */
             CONTINUE,
         }
-        /**
-         * Various flags that can be set on a #SoupMessage to alter its
-         * behavior.
-         */
 
-        /**
-         * Various flags that can be set on a #SoupMessage to alter its
-         * behavior.
-         */
         export namespace MessageFlags {
             export const $gtype: GObject.GType<MessageFlags>;
         }
 
+        /**
+         * Various flags that can be set on a #SoupMessage to alter its
+         * behavior.
+         */
         enum MessageFlags {
             /**
              * The session should not follow redirect
@@ -1716,29 +1638,20 @@ declare module 'gi://Soup?version=3.0' {
              */
             COLLECT_METRICS,
         }
-        /**
-         * Options to pass to [method`Server`.listen], etc.
-         *
-         * %SOUP_SERVER_LISTEN_IPV4_ONLY and %SOUP_SERVER_LISTEN_IPV6_ONLY
-         * only make sense with [method`Server`.listen_all] and
-         * [method`Server`.listen_local], not plain [method`Server`.listen] (which
-         * simply listens on whatever kind of socket you give it). And you
-         * cannot specify both of them in a single call.
-         */
 
-        /**
-         * Options to pass to [method`Server`.listen], etc.
-         *
-         * %SOUP_SERVER_LISTEN_IPV4_ONLY and %SOUP_SERVER_LISTEN_IPV6_ONLY
-         * only make sense with [method`Server`.listen_all] and
-         * [method`Server`.listen_local], not plain [method`Server`.listen] (which
-         * simply listens on whatever kind of socket you give it). And you
-         * cannot specify both of them in a single call.
-         */
         export namespace ServerListenOptions {
             export const $gtype: GObject.GType<ServerListenOptions>;
         }
 
+        /**
+         * Options to pass to [method`Server`.listen], etc.
+         *
+         * %SOUP_SERVER_LISTEN_IPV4_ONLY and %SOUP_SERVER_LISTEN_IPV6_ONLY
+         * only make sense with [method`Server`.listen_all] and
+         * [method`Server`.listen_local], not plain [method`Server`.listen] (which
+         * simply listens on whatever kind of socket you give it). And you
+         * cannot specify both of them in a single call.
+         */
         enum ServerListenOptions {
             /**
              * Listen for https connections rather
@@ -1754,6 +1667,7 @@ declare module 'gi://Soup?version=3.0' {
              */
             IPV6_ONLY,
         }
+
         namespace Auth {
             // Signal signatures
             interface SignalSignatures extends GObject.Object.SignalSignatures {

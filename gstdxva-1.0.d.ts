@@ -30,10 +30,6 @@ declare module 'gi://GstDxva?version=1.0' {
          * GstDxva-1.0
          */
 
-        export namespace DxvaCodec {
-            export const $gtype: GObject.GType<DxvaCodec>;
-        }
-
         enum DxvaCodec {
             NONE,
             MPEG2,
@@ -44,6 +40,7 @@ declare module 'gi://GstDxva?version=1.0' {
             AV1,
             LAST,
         }
+
         function dxva_codec_to_string(codec: DxvaCodec | null): string;
         namespace DxvaAV1Decoder {
             // Signal signatures

@@ -44,6 +44,7 @@ declare module 'gi://GstBase?version=1.0' {
              */
             SET,
         }
+
         const BASE_PARSE_FLAG_DRAINING: number;
         const BASE_PARSE_FLAG_LOST_SYNC: number;
         /**
@@ -328,14 +329,6 @@ declare module 'gi://GstBase?version=1.0' {
         /**
          * Flags to be used in a #GstBaseParseFrame.
          */
-
-        /**
-         * Flags to be used in a #GstBaseParseFrame.
-         */
-        export namespace BaseParseFrameFlags {
-            export const $gtype: GObject.GType<BaseParseFrameFlags>;
-        }
-
         enum BaseParseFrameFlags {
             /**
              * no flag
@@ -372,17 +365,10 @@ declare module 'gi://GstBase?version=1.0' {
              */
             QUEUE,
         }
-        /**
-         * The #GstElement flags that a basesrc element may have.
-         */
 
         /**
          * The #GstElement flags that a basesrc element may have.
          */
-        export namespace BaseSrcFlags {
-            export const $gtype: GObject.GType<BaseSrcFlags>;
-        }
-
         enum BaseSrcFlags {
             /**
              * has source is starting
@@ -396,10 +382,6 @@ declare module 'gi://GstBase?version=1.0' {
              * offset to define more flags
              */
             LAST,
-        }
-
-        export namespace CollectPadsStateFlags {
-            export const $gtype: GObject.GType<CollectPadsStateFlags>;
         }
 
         enum CollectPadsStateFlags {
@@ -428,6 +410,7 @@ declare module 'gi://GstBase?version=1.0' {
              */
             LOCKED,
         }
+
         namespace Adapter {
             // Signal signatures
             interface SignalSignatures extends GObject.Object.SignalSignatures {}

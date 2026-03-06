@@ -43,17 +43,13 @@ declare module 'gi://Handy?version=1' {
          * Handy-1
          */
 
-        /**
-         * Describes title centering behavior of a [class`HeaderBar]` widget.
-         */
-
-        /**
-         * Describes title centering behavior of a [class`HeaderBar]` widget.
-         */
         export namespace CenteringPolicy {
             export const $gtype: GObject.GType<CenteringPolicy>;
         }
 
+        /**
+         * Describes title centering behavior of a [class`HeaderBar]` widget.
+         */
         enum CenteringPolicy {
             /**
              * Keep the title centered when possible
@@ -64,17 +60,14 @@ declare module 'gi://Handy?version=1' {
              */
             STRICT,
         }
-        /**
-         * Application color schemes for [property`StyleManager:`color-scheme].
-         */
 
-        /**
-         * Application color schemes for [property`StyleManager:`color-scheme].
-         */
         export namespace ColorScheme {
             export const $gtype: GObject.GType<ColorScheme>;
         }
 
+        /**
+         * Application color schemes for [property`StyleManager:`color-scheme].
+         */
         enum ColorScheme {
             /**
              * Inherit the parent color-scheme. When set on the
@@ -101,21 +94,16 @@ declare module 'gi://Handy?version=1' {
              */
             FORCE_DARK,
         }
-        /**
-         * Describes the possible transitions in a [class`Deck]` widget.
-         *
-         * New values may be added to this enumeration over time.
-         */
 
-        /**
-         * Describes the possible transitions in a [class`Deck]` widget.
-         *
-         * New values may be added to this enumeration over time.
-         */
         export namespace DeckTransitionType {
             export const $gtype: GObject.GType<DeckTransitionType>;
         }
 
+        /**
+         * Describes the possible transitions in a [class`Deck]` widget.
+         *
+         * New values may be added to this enumeration over time.
+         */
         enum DeckTransitionType {
             /**
              * Cover the old page or uncover the new page,
@@ -135,17 +123,14 @@ declare module 'gi://Handy?version=1' {
              */
             SLIDE,
         }
-        /**
-         * Describes the possible folding behavior of a [class`Flap]` widget.
-         */
 
-        /**
-         * Describes the possible folding behavior of a [class`Flap]` widget.
-         */
         export namespace FlapFoldPolicy {
             export const $gtype: GObject.GType<FlapFoldPolicy>;
         }
 
+        /**
+         * Describes the possible folding behavior of a [class`Flap]` widget.
+         */
         enum FlapFoldPolicy {
             /**
              * Disable folding, the flap cannot reach narrow
@@ -162,29 +147,20 @@ declare module 'gi://Handy?version=1' {
              */
             AUTO,
         }
-        /**
-         * Describes transitions types of a [class`Flap]` widget.
-         *
-         * These enumeration values describe the possible transitions between children
-         * in a [class`Flap]` widget, as well as which areas can be swiped via
-         * [property`Flap:`swipe-to-open] and [property`Flap:`swipe-to-close].
-         *
-         * New values may be added to this enum over time.
-         */
 
-        /**
-         * Describes transitions types of a [class`Flap]` widget.
-         *
-         * These enumeration values describe the possible transitions between children
-         * in a [class`Flap]` widget, as well as which areas can be swiped via
-         * [property`Flap:`swipe-to-open] and [property`Flap:`swipe-to-close].
-         *
-         * New values may be added to this enum over time.
-         */
         export namespace FlapTransitionType {
             export const $gtype: GObject.GType<FlapTransitionType>;
         }
 
+        /**
+         * Describes transitions types of a [class`Flap]` widget.
+         *
+         * These enumeration values describe the possible transitions between children
+         * in a [class`Flap]` widget, as well as which areas can be swiped via
+         * [property`Flap:`swipe-to-open] and [property`Flap:`swipe-to-close].
+         *
+         * New values may be added to this enum over time.
+         */
         enum FlapTransitionType {
             /**
              * The flap slides over the content, which is
@@ -203,21 +179,16 @@ declare module 'gi://Handy?version=1' {
              */
             SLIDE,
         }
-        /**
-         * Describes the child types handled by [class`HeaderGroup]`.
-         *
-         * New values may be added to this enumeration over time.
-         */
 
-        /**
-         * Describes the child types handled by [class`HeaderGroup]`.
-         *
-         * New values may be added to this enumeration over time.
-         */
         export namespace HeaderGroupChildType {
             export const $gtype: GObject.GType<HeaderGroupChildType>;
         }
 
+        /**
+         * Describes the child types handled by [class`HeaderGroup]`.
+         *
+         * New values may be added to this enumeration over time.
+         */
         enum HeaderGroupChildType {
             /**
              * The child is a [class`HeaderBar]`
@@ -234,21 +205,16 @@ declare module 'gi://Handy?version=1' {
              */
             HEADER_GROUP,
         }
-        /**
-         * Describes the possible transitions in a [class`Leaflet]` widget.
-         *
-         * New values may be added to this enumeration over time.
-         */
 
-        /**
-         * Describes the possible transitions in a [class`Leaflet]` widget.
-         *
-         * New values may be added to this enumeration over time.
-         */
         export namespace LeafletTransitionType {
             export const $gtype: GObject.GType<LeafletTransitionType>;
         }
 
+        /**
+         * Describes the possible transitions in a [class`Leaflet]` widget.
+         *
+         * New values may be added to this enumeration over time.
+         */
         enum LeafletTransitionType {
             /**
              * Cover the old page or uncover the new
@@ -268,17 +234,14 @@ declare module 'gi://Handy?version=1' {
              */
             SLIDE,
         }
-        /**
-         * Describes the direction of a swipe navigation gesture.
-         */
 
-        /**
-         * Describes the direction of a swipe navigation gesture.
-         */
         export namespace NavigationDirection {
             export const $gtype: GObject.GType<NavigationDirection>;
         }
 
+        /**
+         * Describes the direction of a swipe navigation gesture.
+         */
         enum NavigationDirection {
             /**
              * Corresponds to start or top, depending on
@@ -291,17 +254,14 @@ declare module 'gi://Handy?version=1' {
              */
             FORWARD,
         }
-        /**
-         * Describes the possible transitions in a [class`Squeezer]` widget.
-         */
 
-        /**
-         * Describes the possible transitions in a [class`Squeezer]` widget.
-         */
         export namespace SqueezerTransitionType {
             export const $gtype: GObject.GType<SqueezerTransitionType>;
         }
 
+        /**
+         * Describes the possible transitions in a [class`Squeezer]` widget.
+         */
         enum SqueezerTransitionType {
             /**
              * No transition
@@ -312,17 +272,14 @@ declare module 'gi://Handy?version=1' {
              */
             CROSSFADE,
         }
-        /**
-         * Describes the adaptive modes of [class`ViewSwitcher]`.
-         */
 
-        /**
-         * Describes the adaptive modes of [class`ViewSwitcher]`.
-         */
         export namespace ViewSwitcherPolicy {
             export const $gtype: GObject.GType<ViewSwitcherPolicy>;
         }
 
+        /**
+         * Describes the adaptive modes of [class`ViewSwitcher]`.
+         */
         enum ViewSwitcherPolicy {
             /**
              * Automatically adapt to the best fitting mode
@@ -337,6 +294,7 @@ declare module 'gi://Handy?version=1' {
              */
             WIDE,
         }
+
         /**
          * Computes the ease out for a value.
          * @param t the term

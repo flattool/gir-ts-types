@@ -144,11 +144,12 @@ declare module 'gi://GtkSource?version=5' {
              */
             GZIP,
         }
+
         /**
          * An error code used with the %GTK_SOURCE_FILE_LOADER_ERROR domain.
          */
         class FileLoaderError extends GLib.Error {
-            static $gtype: GObject.GType<FileLoaderError>;
+            static $gtype: GObject.GType<GLib.Error>;
 
             // Static fields
 
@@ -180,7 +181,7 @@ declare module 'gi://GtkSource?version=5' {
          * An error code used with the %GTK_SOURCE_FILE_SAVER_ERROR domain.
          */
         class FileSaverError extends GLib.Error {
-            static $gtype: GObject.GType<FileSaverError>;
+            static $gtype: GObject.GType<GLib.Error>;
 
             // Static fields
 
@@ -204,19 +205,14 @@ declare module 'gi://GtkSource?version=5' {
             static quark(): GLib.Quark;
         }
 
-        /**
-         * The alignment mode of the renderer, when a cell spans multiple lines (due to
-         * text wrapping).
-         */
-
-        /**
-         * The alignment mode of the renderer, when a cell spans multiple lines (due to
-         * text wrapping).
-         */
         export namespace GutterRendererAlignmentMode {
             export const $gtype: GObject.GType<GutterRendererAlignmentMode>;
         }
 
+        /**
+         * The alignment mode of the renderer, when a cell spans multiple lines (due to
+         * text wrapping).
+         */
         enum GutterRendererAlignmentMode {
             /**
              * The full cell.
@@ -296,6 +292,7 @@ declare module 'gi://GtkSource?version=5' {
              */
             MARKS,
         }
+
         /**
          * Like gtk_source_get_major_version(), but from the headers used at
          * application compile time, rather than from the library linked
@@ -466,17 +463,13 @@ declare module 'gi://GtkSource?version=5' {
         interface SchedulerCallback {
             (deadline: number): boolean;
         }
-        /**
-         * Flags to define the behavior of a [flags`FileSaverFlags]`.
-         */
-
-        /**
-         * Flags to define the behavior of a [flags`FileSaverFlags]`.
-         */
         export namespace FileSaverFlags {
             export const $gtype: GObject.GType<FileSaverFlags>;
         }
 
+        /**
+         * Flags to define the behavior of a [flags`FileSaverFlags]`.
+         */
         enum FileSaverFlags {
             /**
              * No flags.
@@ -524,23 +517,17 @@ declare module 'gi://GtkSource?version=5' {
              */
             FILENAME,
         }
-        /**
-         * #GtkSourceSpaceLocationFlags contains flags for white space locations.
-         *
-         * If a line contains only white spaces (no text), the white spaces match both
-         * %GTK_SOURCE_SPACE_LOCATION_LEADING and %GTK_SOURCE_SPACE_LOCATION_TRAILING.
-         */
 
-        /**
-         * #GtkSourceSpaceLocationFlags contains flags for white space locations.
-         *
-         * If a line contains only white spaces (no text), the white spaces match both
-         * %GTK_SOURCE_SPACE_LOCATION_LEADING and %GTK_SOURCE_SPACE_LOCATION_TRAILING.
-         */
         export namespace SpaceLocationFlags {
             export const $gtype: GObject.GType<SpaceLocationFlags>;
         }
 
+        /**
+         * #GtkSourceSpaceLocationFlags contains flags for white space locations.
+         *
+         * If a line contains only white spaces (no text), the white spaces match both
+         * %GTK_SOURCE_SPACE_LOCATION_LEADING and %GTK_SOURCE_SPACE_LOCATION_TRAILING.
+         */
         enum SpaceLocationFlags {
             /**
              * No flags.
@@ -564,17 +551,14 @@ declare module 'gi://GtkSource?version=5' {
              */
             ALL,
         }
-        /**
-         * #GtkSourceSpaceTypeFlags contains flags for white space types.
-         */
 
-        /**
-         * #GtkSourceSpaceTypeFlags contains flags for white space types.
-         */
         export namespace SpaceTypeFlags {
             export const $gtype: GObject.GType<SpaceTypeFlags>;
         }
 
+        /**
+         * #GtkSourceSpaceTypeFlags contains flags for white space types.
+         */
         enum SpaceTypeFlags {
             /**
              * No flags.
@@ -603,6 +587,7 @@ declare module 'gi://GtkSource?version=5' {
              */
             ALL,
         }
+
         namespace Buffer {
             // Signal signatures
             interface SignalSignatures extends Gtk.TextBuffer.SignalSignatures {

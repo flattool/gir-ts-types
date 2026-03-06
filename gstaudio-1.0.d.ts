@@ -26,19 +26,14 @@ declare module 'gi://GstAudio?version=1.0' {
          * GstAudio-1.0
          */
 
-        /**
-         * Different possible reasons for discontinuities. This enum is useful for the custom
-         * slave method.
-         */
-
-        /**
-         * Different possible reasons for discontinuities. This enum is useful for the custom
-         * slave method.
-         */
         export namespace AudioBaseSinkDiscontReason {
             export const $gtype: GObject.GType<AudioBaseSinkDiscontReason>;
         }
 
+        /**
+         * Different possible reasons for discontinuities. This enum is useful for the custom
+         * slave method.
+         */
         enum AudioBaseSinkDiscontReason {
             /**
              * No discontinuity occurred
@@ -65,19 +60,15 @@ declare module 'gi://GstAudio?version=1.0' {
              */
             DEVICE_FAILURE,
         }
-        /**
-         * Different possible clock slaving algorithms used when the internal audio
-         * clock is not selected as the pipeline master clock.
-         */
 
-        /**
-         * Different possible clock slaving algorithms used when the internal audio
-         * clock is not selected as the pipeline master clock.
-         */
         export namespace AudioBaseSinkSlaveMethod {
             export const $gtype: GObject.GType<AudioBaseSinkSlaveMethod>;
         }
 
+        /**
+         * Different possible clock slaving algorithms used when the internal audio
+         * clock is not selected as the pipeline master clock.
+         */
         enum AudioBaseSinkSlaveMethod {
             /**
              * Resample to match the master clock
@@ -97,19 +88,15 @@ declare module 'gi://GstAudio?version=1.0' {
              */
             CUSTOM,
         }
-        /**
-         * Different possible clock slaving algorithms when the internal audio clock was
-         * not selected as the pipeline clock.
-         */
 
-        /**
-         * Different possible clock slaving algorithms when the internal audio clock was
-         * not selected as the pipeline clock.
-         */
         export namespace AudioBaseSrcSlaveMethod {
             export const $gtype: GObject.GType<AudioBaseSrcSlaveMethod>;
         }
 
+        /**
+         * Different possible clock slaving algorithms when the internal audio clock was
+         * not selected as the pipeline clock.
+         */
         enum AudioBaseSrcSlaveMethod {
             /**
              * Resample to match the master clock.
@@ -130,19 +117,15 @@ declare module 'gi://GstAudio?version=1.0' {
              */
             NONE,
         }
-        /**
-         * Mode in which the CD audio source operates. Influences timestamping,
-         * EOS handling and seeking.
-         */
 
-        /**
-         * Mode in which the CD audio source operates. Influences timestamping,
-         * EOS handling and seeking.
-         */
         export namespace AudioCdSrcMode {
             export const $gtype: GObject.GType<AudioCdSrcMode>;
         }
 
+        /**
+         * Mode in which the CD audio source operates. Influences timestamping,
+         * EOS handling and seeking.
+         */
         enum AudioCdSrcMode {
             /**
              * each single track is a stream
@@ -153,63 +136,37 @@ declare module 'gi://GstAudio?version=1.0' {
              */
             CONTINUOUS,
         }
-        /**
-         * Audio channel positions.
-         *
-         * These are the channels defined in SMPTE 2036-2-2008
-         * Table 1 for 22.2 audio systems with the Surround and Wide channels from
-         * DTS Coherent Acoustics (v.1.3.1) and 10.2 and 7.1 layouts. In the caps the
-         * actual channel layout is expressed with a channel count and a channel mask,
-         * which describes the existing channels. The positions in the bit mask correspond
-         * to the enum values.
-         * For negotiation it is allowed to have more bits set in the channel mask than
-         * the number of channels to specify the allowed channel positions but this is
-         * not allowed in negotiated caps. It is not allowed in any situation other
-         * than the one mentioned below to have less bits set in the channel mask than
-         * the number of channels.
-         *
-         * `GST_AUDIO_CHANNEL_POSITION_MONO` can only be used with a single mono channel that
-         * has no direction information and would be mixed into all directional channels.
-         * This is expressed in caps by having a single channel and no channel mask.
-         *
-         * `GST_AUDIO_CHANNEL_POSITION_NONE` can only be used if all channels have this position.
-         * This is expressed in caps by having a channel mask with no bits set.
-         *
-         * As another special case it is allowed to have two channels without a channel mask.
-         * This implicitly means that this is a stereo stream with a front left and front right
-         * channel.
-         */
 
-        /**
-         * Audio channel positions.
-         *
-         * These are the channels defined in SMPTE 2036-2-2008
-         * Table 1 for 22.2 audio systems with the Surround and Wide channels from
-         * DTS Coherent Acoustics (v.1.3.1) and 10.2 and 7.1 layouts. In the caps the
-         * actual channel layout is expressed with a channel count and a channel mask,
-         * which describes the existing channels. The positions in the bit mask correspond
-         * to the enum values.
-         * For negotiation it is allowed to have more bits set in the channel mask than
-         * the number of channels to specify the allowed channel positions but this is
-         * not allowed in negotiated caps. It is not allowed in any situation other
-         * than the one mentioned below to have less bits set in the channel mask than
-         * the number of channels.
-         *
-         * `GST_AUDIO_CHANNEL_POSITION_MONO` can only be used with a single mono channel that
-         * has no direction information and would be mixed into all directional channels.
-         * This is expressed in caps by having a single channel and no channel mask.
-         *
-         * `GST_AUDIO_CHANNEL_POSITION_NONE` can only be used if all channels have this position.
-         * This is expressed in caps by having a channel mask with no bits set.
-         *
-         * As another special case it is allowed to have two channels without a channel mask.
-         * This implicitly means that this is a stereo stream with a front left and front right
-         * channel.
-         */
         export namespace AudioChannelPosition {
             export const $gtype: GObject.GType<AudioChannelPosition>;
         }
 
+        /**
+         * Audio channel positions.
+         *
+         * These are the channels defined in SMPTE 2036-2-2008
+         * Table 1 for 22.2 audio systems with the Surround and Wide channels from
+         * DTS Coherent Acoustics (v.1.3.1) and 10.2 and 7.1 layouts. In the caps the
+         * actual channel layout is expressed with a channel count and a channel mask,
+         * which describes the existing channels. The positions in the bit mask correspond
+         * to the enum values.
+         * For negotiation it is allowed to have more bits set in the channel mask than
+         * the number of channels to specify the allowed channel positions but this is
+         * not allowed in negotiated caps. It is not allowed in any situation other
+         * than the one mentioned below to have less bits set in the channel mask than
+         * the number of channels.
+         *
+         * `GST_AUDIO_CHANNEL_POSITION_MONO` can only be used with a single mono channel that
+         * has no direction information and would be mixed into all directional channels.
+         * This is expressed in caps by having a single channel and no channel mask.
+         *
+         * `GST_AUDIO_CHANNEL_POSITION_NONE` can only be used if all channels have this position.
+         * This is expressed in caps by having a channel mask with no bits set.
+         *
+         * As another special case it is allowed to have two channels without a channel mask.
+         * This implicitly means that this is a stereo stream with a front left and front right
+         * channel.
+         */
         enum AudioChannelPosition {
             /**
              * used for position-less channels, e.g.
@@ -339,17 +296,14 @@ declare module 'gi://GstAudio?version=1.0' {
              */
             SURROUND_RIGHT,
         }
-        /**
-         * Set of available dithering methods.
-         */
 
-        /**
-         * Set of available dithering methods.
-         */
         export namespace AudioDitherMethod {
             export const $gtype: GObject.GType<AudioDitherMethod>;
         }
 
+        /**
+         * Set of available dithering methods.
+         */
         enum AudioDitherMethod {
             /**
              * No dithering
@@ -368,17 +322,14 @@ declare module 'gi://GstAudio?version=1.0' {
              */
             TPDF_HF,
         }
-        /**
-         * Enum value describing the most common audio formats.
-         */
 
-        /**
-         * Enum value describing the most common audio formats.
-         */
         export namespace AudioFormat {
             export const $gtype: GObject.GType<AudioFormat>;
         }
 
+        /**
+         * Enum value describing the most common audio formats.
+         */
         enum AudioFormat {
             /**
              * unknown or unset audio format
@@ -565,17 +516,14 @@ declare module 'gi://GstAudio?version=1.0' {
              */
             F64,
         }
-        /**
-         * Layout of the audio samples for the different channels.
-         */
 
-        /**
-         * Layout of the audio samples for the different channels.
-         */
         export namespace AudioLayout {
             export const $gtype: GObject.GType<AudioLayout>;
         }
 
+        /**
+         * Layout of the audio samples for the different channels.
+         */
         enum AudioLayout {
             /**
              * interleaved audio
@@ -586,17 +534,14 @@ declare module 'gi://GstAudio?version=1.0' {
              */
             NON_INTERLEAVED,
         }
-        /**
-         * Set of available noise shaping methods
-         */
 
-        /**
-         * Set of available noise shaping methods
-         */
         export namespace AudioNoiseShapingMethod {
             export const $gtype: GObject.GType<AudioNoiseShapingMethod>;
         }
 
+        /**
+         * Set of available noise shaping methods
+         */
         enum AudioNoiseShapingMethod {
             /**
              * No noise shaping (default)
@@ -619,17 +564,14 @@ declare module 'gi://GstAudio?version=1.0' {
              */
             HIGH,
         }
-        /**
-         * The different filter interpolation methods.
-         */
 
-        /**
-         * The different filter interpolation methods.
-         */
         export namespace AudioResamplerFilterInterpolation {
             export const $gtype: GObject.GType<AudioResamplerFilterInterpolation>;
         }
 
+        /**
+         * The different filter interpolation methods.
+         */
         enum AudioResamplerFilterInterpolation {
             /**
              * no interpolation
@@ -646,17 +588,14 @@ declare module 'gi://GstAudio?version=1.0' {
              */
             CUBIC,
         }
-        /**
-         * Select for the filter tables should be set up.
-         */
 
-        /**
-         * Select for the filter tables should be set up.
-         */
         export namespace AudioResamplerFilterMode {
             export const $gtype: GObject.GType<AudioResamplerFilterMode>;
         }
 
+        /**
+         * Select for the filter tables should be set up.
+         */
         enum AudioResamplerFilterMode {
             /**
              * Use interpolated filter tables. This
@@ -675,17 +614,14 @@ declare module 'gi://GstAudio?version=1.0' {
              */
             AUTO,
         }
-        /**
-         * Different subsampling and upsampling methods
-         */
 
-        /**
-         * Different subsampling and upsampling methods
-         */
         export namespace AudioResamplerMethod {
             export const $gtype: GObject.GType<AudioResamplerMethod>;
         }
 
+        /**
+         * Different subsampling and upsampling methods
+         */
         enum AudioResamplerMethod {
             /**
              * Duplicates the samples when
@@ -710,17 +646,14 @@ declare module 'gi://GstAudio?version=1.0' {
              */
             KAISER,
         }
-        /**
-         * The format of the samples in the ringbuffer.
-         */
 
-        /**
-         * The format of the samples in the ringbuffer.
-         */
         export namespace AudioRingBufferFormatType {
             export const $gtype: GObject.GType<AudioRingBufferFormatType>;
         }
 
+        /**
+         * The format of the samples in the ringbuffer.
+         */
         enum AudioRingBufferFormatType {
             /**
              * samples in linear or float
@@ -787,17 +720,14 @@ declare module 'gi://GstAudio?version=1.0' {
              */
             DSD,
         }
-        /**
-         * The state of the ringbuffer.
-         */
 
-        /**
-         * The state of the ringbuffer.
-         */
         export namespace AudioRingBufferState {
             export const $gtype: GObject.GType<AudioRingBufferState>;
         }
 
+        /**
+         * The state of the ringbuffer.
+         */
         enum AudioRingBufferState {
             /**
              * The ringbuffer is stopped
@@ -818,17 +748,14 @@ declare module 'gi://GstAudio?version=1.0' {
              */
             ERROR,
         }
-        /**
-         * Enum value describing how DSD bits are grouped.
-         */
 
-        /**
-         * Enum value describing how DSD bits are grouped.
-         */
         export namespace DsdFormat {
             export const $gtype: GObject.GType<DsdFormat>;
         }
 
+        /**
+         * Enum value describing how DSD bits are grouped.
+         */
         enum DsdFormat {
             /**
              * unknown / invalid DSD format
@@ -867,13 +794,6 @@ declare module 'gi://GstAudio?version=1.0' {
              */
             DSD_FORMAT_U32,
         }
-        /**
-         * Different representations of a stream volume. gst_stream_volume_convert_volume()
-         * allows to convert between the different representations.
-         *
-         * Formulas to convert from a linear to a cubic or dB volume are
-         * cbrt(val) and 20 * log10 (val).
-         */
 
         /**
          * Different representations of a stream volume. gst_stream_volume_convert_volume()
@@ -882,10 +802,6 @@ declare module 'gi://GstAudio?version=1.0' {
          * Formulas to convert from a linear to a cubic or dB volume are
          * cbrt(val) and 20 * log10 (val).
          */
-        export namespace StreamVolumeFormat {
-            export const $gtype: GObject.GType<StreamVolumeFormat>;
-        }
-
         enum StreamVolumeFormat {
             /**
              * Linear scale factor, 1.0 = 100%
@@ -900,6 +816,7 @@ declare module 'gi://GstAudio?version=1.0' {
              */
             DB,
         }
+
         /**
          * Maximum range of allowed channels, for use in template caps strings.
          */
@@ -1672,17 +1589,13 @@ declare module 'gi://GstAudio?version=1.0' {
         interface AudioRingBufferCallback {
             (rbuf: AudioRingBuffer, data: Uint8Array | string): void;
         }
-        /**
-         * Flags passed to gst_audio_channel_mixer_new()
-         */
-
-        /**
-         * Flags passed to gst_audio_channel_mixer_new()
-         */
         export namespace AudioChannelMixerFlags {
             export const $gtype: GObject.GType<AudioChannelMixerFlags>;
         }
 
+        /**
+         * Flags passed to gst_audio_channel_mixer_new()
+         */
         enum AudioChannelMixerFlags {
             /**
              * no flag
@@ -1705,17 +1618,14 @@ declare module 'gi://GstAudio?version=1.0' {
              */
             UNPOSITIONED_OUT,
         }
-        /**
-         * Extra flags passed to gst_audio_converter_new() and gst_audio_converter_samples().
-         */
 
-        /**
-         * Extra flags passed to gst_audio_converter_new() and gst_audio_converter_samples().
-         */
         export namespace AudioConverterFlags {
             export const $gtype: GObject.GType<AudioConverterFlags>;
         }
 
+        /**
+         * Extra flags passed to gst_audio_converter_new() and gst_audio_converter_samples().
+         */
         enum AudioConverterFlags {
             /**
              * no flag
@@ -1732,17 +1642,14 @@ declare module 'gi://GstAudio?version=1.0' {
              */
             VARIABLE_RATE,
         }
-        /**
-         * Extra audio flags
-         */
 
-        /**
-         * Extra audio flags
-         */
         export namespace AudioFlags {
             export const $gtype: GObject.GType<AudioFlags>;
         }
 
+        /**
+         * Extra audio flags
+         */
         enum AudioFlags {
             /**
              * no valid flag
@@ -1754,17 +1661,14 @@ declare module 'gi://GstAudio?version=1.0' {
              */
             UNPOSITIONED,
         }
-        /**
-         * The different audio flags that a format info can have.
-         */
 
-        /**
-         * The different audio flags that a format info can have.
-         */
         export namespace AudioFormatFlags {
             export const $gtype: GObject.GType<AudioFormatFlags>;
         }
 
+        /**
+         * The different audio flags that a format info can have.
+         */
         enum AudioFormatFlags {
             /**
              * integer samples
@@ -1788,17 +1692,14 @@ declare module 'gi://GstAudio?version=1.0' {
              */
             UNPACK,
         }
-        /**
-         * The different flags that can be used when packing and unpacking.
-         */
 
-        /**
-         * The different flags that can be used when packing and unpacking.
-         */
         export namespace AudioPackFlags {
             export const $gtype: GObject.GType<AudioPackFlags>;
         }
 
+        /**
+         * The different flags that can be used when packing and unpacking.
+         */
         enum AudioPackFlags {
             /**
              * No flag
@@ -1813,17 +1714,14 @@ declare module 'gi://GstAudio?version=1.0' {
              */
             TRUNCATE_RANGE,
         }
-        /**
-         * Extra flags that can be passed to gst_audio_quantize_new()
-         */
 
-        /**
-         * Extra flags that can be passed to gst_audio_quantize_new()
-         */
         export namespace AudioQuantizeFlags {
             export const $gtype: GObject.GType<AudioQuantizeFlags>;
         }
 
+        /**
+         * Extra flags that can be passed to gst_audio_quantize_new()
+         */
         enum AudioQuantizeFlags {
             /**
              * no flags
@@ -1834,17 +1732,14 @@ declare module 'gi://GstAudio?version=1.0' {
              */
             NON_INTERLEAVED,
         }
-        /**
-         * Different resampler flags.
-         */
 
-        /**
-         * Different resampler flags.
-         */
         export namespace AudioResamplerFlags {
             export const $gtype: GObject.GType<AudioResamplerFlags>;
         }
 
+        /**
+         * Different resampler flags.
+         */
         enum AudioResamplerFlags {
             /**
              * no flags
@@ -1869,6 +1764,7 @@ declare module 'gi://GstAudio?version=1.0' {
              */
             VARIABLE_RATE,
         }
+
         namespace AudioAggregator {
             // Signal signatures
             interface SignalSignatures extends GstBase.Aggregator.SignalSignatures {

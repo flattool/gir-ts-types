@@ -20,17 +20,13 @@ declare module 'gi://GUdev?version=1.0' {
          * GUdev-1.0
          */
 
-        /**
-         * Enumeration used to specify a the type of a device.
-         */
-
-        /**
-         * Enumeration used to specify a the type of a device.
-         */
         export namespace DeviceType {
             export const $gtype: GObject.GType<DeviceType>;
         }
 
+        /**
+         * Enumeration used to specify a the type of a device.
+         */
         enum DeviceType {
             /**
              * Device does not have a device file.
@@ -45,6 +41,7 @@ declare module 'gi://GUdev?version=1.0' {
              */
             CHAR,
         }
+
         namespace Client {
             // Signal signatures
             interface SignalSignatures extends GObject.Object.SignalSignatures {

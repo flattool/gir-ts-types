@@ -32,26 +32,19 @@ declare module 'gi://GstCuda?version=1.0' {
          * GstCuda-1.0
          */
 
-        export namespace CudaGraphicsResourceType {
-            export const $gtype: GObject.GType<CudaGraphicsResourceType>;
-        }
-
         enum CudaGraphicsResourceType {
             NONE,
             GL_BUFFER,
             D3D11_RESOURCE,
         }
-        /**
-         * CUDA memory allocation method
-         */
 
-        /**
-         * CUDA memory allocation method
-         */
         export namespace CudaMemoryAllocMethod {
             export const $gtype: GObject.GType<CudaMemoryAllocMethod>;
         }
 
+        /**
+         * CUDA memory allocation method
+         */
         enum CudaMemoryAllocMethod {
             UNKNOWN,
             /**
@@ -64,14 +57,11 @@ declare module 'gi://GstCuda?version=1.0' {
             MMAP,
         }
 
-        export namespace CudaQuarkId {
-            export const $gtype: GObject.GType<CudaQuarkId>;
-        }
-
         enum CudaQuarkId {
             GRAPHICS_RESOURCE,
             MAX,
         }
+
         /**
          * Name of the caps feature for indicating the use of #GstCudaMemory
          */
@@ -181,14 +171,6 @@ declare module 'gi://GstCuda?version=1.0' {
         /**
          * CUDA memory transfer flags
          */
-
-        /**
-         * CUDA memory transfer flags
-         */
-        export namespace CudaMemoryTransfer {
-            export const $gtype: GObject.GType<CudaMemoryTransfer>;
-        }
-
         enum CudaMemoryTransfer {
             /**
              * the device memory needs downloading to the staging memory
@@ -203,6 +185,7 @@ declare module 'gi://GstCuda?version=1.0' {
              */
             SYNC,
         }
+
         namespace CudaAllocator {
             // Signal signatures
             interface SignalSignatures extends Gst.Allocator.SignalSignatures {

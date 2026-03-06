@@ -30,17 +30,13 @@ declare module 'gi://GstRtsp?version=1.0' {
          * GstRtsp-1.0
          */
 
-        /**
-         * Authentication methods, ordered by strength
-         */
-
-        /**
-         * Authentication methods, ordered by strength
-         */
         export namespace RTSPAuthMethod {
             export const $gtype: GObject.GType<RTSPAuthMethod>;
         }
 
+        /**
+         * Authentication methods, ordered by strength
+         */
         enum RTSPAuthMethod {
             /**
              * no authentication
@@ -55,17 +51,14 @@ declare module 'gi://GstRtsp?version=1.0' {
              */
             DIGEST,
         }
-        /**
-         * The possible network families.
-         */
 
-        /**
-         * The possible network families.
-         */
         export namespace RTSPFamily {
             export const $gtype: GObject.GType<RTSPFamily>;
         }
 
+        /**
+         * The possible network families.
+         */
         enum RTSPFamily {
             /**
              * unknown network family
@@ -80,17 +73,14 @@ declare module 'gi://GstRtsp?version=1.0' {
              */
             INET6,
         }
-        /**
-         * Enumeration of rtsp header fields
-         */
 
-        /**
-         * Enumeration of rtsp header fields
-         */
         export namespace RTSPHeaderField {
             export const $gtype: GObject.GType<RTSPHeaderField>;
         }
 
+        /**
+         * Enumeration of rtsp header fields
+         */
         enum RTSPHeaderField {
             INVALID,
             ACCEPT,
@@ -183,17 +173,14 @@ declare module 'gi://GstRtsp?version=1.0' {
             RATE_CONTROL,
             LAST,
         }
-        /**
-         * The type of a message.
-         */
 
-        /**
-         * The type of a message.
-         */
         export namespace RTSPMsgType {
             export const $gtype: GObject.GType<RTSPMsgType>;
         }
 
+        /**
+         * The type of a message.
+         */
         enum RTSPMsgType {
             /**
              * invalid message type
@@ -220,17 +207,14 @@ declare module 'gi://GstRtsp?version=1.0' {
              */
             DATA,
         }
-        /**
-         * Different possible time range units.
-         */
 
-        /**
-         * Different possible time range units.
-         */
         export namespace RTSPRangeUnit {
             export const $gtype: GObject.GType<RTSPRangeUnit>;
         }
 
+        /**
+         * Different possible time range units.
+         */
         enum RTSPRangeUnit {
             /**
              * SMPTE timecode
@@ -253,17 +237,14 @@ declare module 'gi://GstRtsp?version=1.0' {
              */
             CLOCK,
         }
-        /**
-         * Result codes from the RTSP functions.
-         */
 
-        /**
-         * Result codes from the RTSP functions.
-         */
         export namespace RTSPResult {
             export const $gtype: GObject.GType<RTSPResult>;
         }
 
+        /**
+         * Result codes from the RTSP functions.
+         */
         enum RTSPResult {
             /**
              * no error
@@ -342,17 +323,14 @@ declare module 'gi://GstRtsp?version=1.0' {
              */
             ELAST,
         }
-        /**
-         * The different RTSP states.
-         */
 
-        /**
-         * The different RTSP states.
-         */
         export namespace RTSPState {
             export const $gtype: GObject.GType<RTSPState>;
         }
 
+        /**
+         * The different RTSP states.
+         */
         enum RTSPState {
             /**
              * invalid state
@@ -379,17 +357,14 @@ declare module 'gi://GstRtsp?version=1.0' {
              */
             RECORDING,
         }
-        /**
-         * Enumeration of rtsp status codes
-         */
 
-        /**
-         * Enumeration of rtsp status codes
-         */
         export namespace RTSPStatusCode {
             export const $gtype: GObject.GType<RTSPStatusCode>;
         }
 
+        /**
+         * Enumeration of rtsp status codes
+         */
         enum RTSPStatusCode {
             INVALID,
             CONTINUE,
@@ -446,17 +421,14 @@ declare module 'gi://GstRtsp?version=1.0' {
             RTSP_VERSION_NOT_SUPPORTED,
             OPTION_NOT_SUPPORTED,
         }
-        /**
-         * Possible time types.
-         */
 
-        /**
-         * Possible time types.
-         */
         export namespace RTSPTimeType {
             export const $gtype: GObject.GType<RTSPTimeType>;
         }
 
+        /**
+         * Possible time types.
+         */
         enum RTSPTimeType {
             /**
              * seconds
@@ -479,17 +451,14 @@ declare module 'gi://GstRtsp?version=1.0' {
              */
             UTC,
         }
-        /**
-         * The supported RTSP versions.
-         */
 
-        /**
-         * The supported RTSP versions.
-         */
         export namespace RTSPVersion {
             export const $gtype: GObject.GType<RTSPVersion>;
         }
 
+        /**
+         * The supported RTSP versions.
+         */
         enum RTSPVersion {
             /**
              * unknown/invalid version
@@ -508,6 +477,7 @@ declare module 'gi://GstRtsp?version=1.0' {
              */
             '2_0',
         }
+
         /**
          * The default RTSP port to connect to.
          */
@@ -784,17 +754,13 @@ declare module 'gi://GstRtsp?version=1.0' {
         interface RTSPConnectionAcceptCertificateFunc {
             (conn: Gio.TlsConnection, peer_cert: Gio.TlsCertificate, errors: Gio.TlsCertificateFlags): boolean;
         }
-        /**
-         * The possible events for the connection.
-         */
-
-        /**
-         * The possible events for the connection.
-         */
         export namespace RTSPEvent {
             export const $gtype: GObject.GType<RTSPEvent>;
         }
 
+        /**
+         * The possible events for the connection.
+         */
         enum RTSPEvent {
             /**
              * connection is readable
@@ -805,17 +771,14 @@ declare module 'gi://GstRtsp?version=1.0' {
              */
             WRITE,
         }
-        /**
-         * The different transport methods.
-         */
 
-        /**
-         * The different transport methods.
-         */
         export namespace RTSPLowerTrans {
             export const $gtype: GObject.GType<RTSPLowerTrans>;
         }
 
+        /**
+         * The different transport methods.
+         */
         enum RTSPLowerTrans {
             /**
              * invalid transport flag
@@ -842,17 +805,14 @@ declare module 'gi://GstRtsp?version=1.0' {
              */
             TLS,
         }
-        /**
-         * The different supported RTSP methods.
-         */
 
-        /**
-         * The different supported RTSP methods.
-         */
         export namespace RTSPMethod {
             export const $gtype: GObject.GType<RTSPMethod>;
         }
 
+        /**
+         * The different supported RTSP methods.
+         */
         enum RTSPMethod {
             /**
              * invalid method
@@ -911,17 +871,14 @@ declare module 'gi://GstRtsp?version=1.0' {
              */
             POST,
         }
-        /**
-         * The transfer profile to use.
-         */
 
-        /**
-         * The transfer profile to use.
-         */
         export namespace RTSPProfile {
             export const $gtype: GObject.GType<RTSPProfile>;
         }
 
+        /**
+         * The transfer profile to use.
+         */
         enum RTSPProfile {
             /**
              * invalid profile
@@ -944,17 +901,14 @@ declare module 'gi://GstRtsp?version=1.0' {
              */
             SAVPF,
         }
-        /**
-         * The transfer mode to use.
-         */
 
-        /**
-         * The transfer mode to use.
-         */
         export namespace RTSPTransMode {
             export const $gtype: GObject.GType<RTSPTransMode>;
         }
 
+        /**
+         * The transfer mode to use.
+         */
         enum RTSPTransMode {
             /**
              * invalid tansport mode
@@ -969,6 +923,7 @@ declare module 'gi://GstRtsp?version=1.0' {
              */
             RDT,
         }
+
         /**
          * RTSP Authentication credentials
          */

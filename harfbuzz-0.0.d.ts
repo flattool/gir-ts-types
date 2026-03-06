@@ -22,17 +22,13 @@ declare module 'gi://HarfBuzz?version=0.0' {
          * HarfBuzz-0.0
          */
 
-        /**
-         * The selectors defined for specifying AAT feature settings.
-         */
-
-        /**
-         * The selectors defined for specifying AAT feature settings.
-         */
         export namespace aat_layout_feature_selector_t {
             export const $gtype: GObject.GType<aat_layout_feature_selector_t>;
         }
 
+        /**
+         * The selectors defined for specifying AAT feature settings.
+         */
         enum aat_layout_feature_selector_t {
             /**
              * Initial, unset feature selector
@@ -1039,17 +1035,14 @@ declare module 'gi://HarfBuzz?version=0.0' {
              */
             FULL_WIDTH_CJK_ROMAN,
         }
-        /**
-         * The possible feature types defined for AAT shaping, from Apple [Font Feature Registry](https://developer.apple.com/fonts/TrueType-Reference-Manual/RM09/AppendixF.html).
-         */
 
-        /**
-         * The possible feature types defined for AAT shaping, from Apple [Font Feature Registry](https://developer.apple.com/fonts/TrueType-Reference-Manual/RM09/AppendixF.html).
-         */
         export namespace aat_layout_feature_type_t {
             export const $gtype: GObject.GType<aat_layout_feature_type_t>;
         }
 
+        /**
+         * The possible feature types defined for AAT shaping, from Apple [Font Feature Registry](https://developer.apple.com/fonts/TrueType-Reference-Manual/RM09/AppendixF.html).
+         */
         enum aat_layout_feature_type_t {
             /**
              * Initial, unset feature type
@@ -1212,47 +1205,29 @@ declare module 'gi://HarfBuzz?version=0.0' {
              */
             CJK_ROMAN_SPACING_TYPE,
         }
-        /**
-         * Data type for holding HarfBuzz's clustering behavior options. The cluster level
-         * dictates one aspect of how HarfBuzz will treat non-base characters
-         * during shaping.
-         *
-         * In `HB_BUFFER_CLUSTER_LEVEL_MONOTONE_GRAPHEMES,` non-base
-         * characters are merged into the cluster of the base character that precedes them.
-         *
-         * In `HB_BUFFER_CLUSTER_LEVEL_MONOTONE_CHARACTERS,` non-base characters are initially
-         * assigned their own cluster values, which are not merged into preceding base
-         * clusters. This allows HarfBuzz to perform additional operations like reorder
-         * sequences of adjacent marks.
-         *
-         * `HB_BUFFER_CLUSTER_LEVEL_MONOTONE_GRAPHEMES` is the default, because it maintains
-         * backward compatibility with older versions of HarfBuzz. New client programs that
-         * do not need to maintain such backward compatibility are recommended to use
-         * `HB_BUFFER_CLUSTER_LEVEL_MONOTONE_CHARACTERS` instead of the default.
-         */
 
-        /**
-         * Data type for holding HarfBuzz's clustering behavior options. The cluster level
-         * dictates one aspect of how HarfBuzz will treat non-base characters
-         * during shaping.
-         *
-         * In `HB_BUFFER_CLUSTER_LEVEL_MONOTONE_GRAPHEMES,` non-base
-         * characters are merged into the cluster of the base character that precedes them.
-         *
-         * In `HB_BUFFER_CLUSTER_LEVEL_MONOTONE_CHARACTERS,` non-base characters are initially
-         * assigned their own cluster values, which are not merged into preceding base
-         * clusters. This allows HarfBuzz to perform additional operations like reorder
-         * sequences of adjacent marks.
-         *
-         * `HB_BUFFER_CLUSTER_LEVEL_MONOTONE_GRAPHEMES` is the default, because it maintains
-         * backward compatibility with older versions of HarfBuzz. New client programs that
-         * do not need to maintain such backward compatibility are recommended to use
-         * `HB_BUFFER_CLUSTER_LEVEL_MONOTONE_CHARACTERS` instead of the default.
-         */
         export namespace buffer_cluster_level_t {
             export const $gtype: GObject.GType<buffer_cluster_level_t>;
         }
 
+        /**
+         * Data type for holding HarfBuzz's clustering behavior options. The cluster level
+         * dictates one aspect of how HarfBuzz will treat non-base characters
+         * during shaping.
+         *
+         * In `HB_BUFFER_CLUSTER_LEVEL_MONOTONE_GRAPHEMES,` non-base
+         * characters are merged into the cluster of the base character that precedes them.
+         *
+         * In `HB_BUFFER_CLUSTER_LEVEL_MONOTONE_CHARACTERS,` non-base characters are initially
+         * assigned their own cluster values, which are not merged into preceding base
+         * clusters. This allows HarfBuzz to perform additional operations like reorder
+         * sequences of adjacent marks.
+         *
+         * `HB_BUFFER_CLUSTER_LEVEL_MONOTONE_GRAPHEMES` is the default, because it maintains
+         * backward compatibility with older versions of HarfBuzz. New client programs that
+         * do not need to maintain such backward compatibility are recommended to use
+         * `HB_BUFFER_CLUSTER_LEVEL_MONOTONE_CHARACTERS` instead of the default.
+         */
         enum buffer_cluster_level_t {
             /**
              * Return cluster values grouped by graphemes into
@@ -1273,17 +1248,14 @@ declare module 'gi://HarfBuzz?version=0.0' {
              */
             DEFAULT,
         }
-        /**
-         * The type of #hb_buffer_t contents.
-         */
 
-        /**
-         * The type of #hb_buffer_t contents.
-         */
         export namespace buffer_content_type_t {
             export const $gtype: GObject.GType<buffer_content_type_t>;
         }
 
+        /**
+         * The type of #hb_buffer_t contents.
+         */
         enum buffer_content_type_t {
             /**
              * Initial value for new buffer.
@@ -1298,19 +1270,15 @@ declare module 'gi://HarfBuzz?version=0.0' {
              */
             GLYPHS,
         }
-        /**
-         * The buffer serialization and de-serialization format used in
-         * hb_buffer_serialize_glyphs() and hb_buffer_deserialize_glyphs().
-         */
 
-        /**
-         * The buffer serialization and de-serialization format used in
-         * hb_buffer_serialize_glyphs() and hb_buffer_deserialize_glyphs().
-         */
         export namespace buffer_serialize_format_t {
             export const $gtype: GObject.GType<buffer_serialize_format_t>;
         }
 
+        /**
+         * The buffer serialization and de-serialization format used in
+         * hb_buffer_serialize_glyphs() and hb_buffer_deserialize_glyphs().
+         */
         enum buffer_serialize_format_t {
             /**
              * a human-readable, plain text format.
@@ -1325,25 +1293,18 @@ declare module 'gi://HarfBuzz?version=0.0' {
              */
             INVALID,
         }
-        /**
-         * The direction of a text segment or buffer.
-         *
-         * A segment can also be tested for horizontal or vertical
-         * orientation (irrespective of specific direction) with
-         * HB_DIRECTION_IS_HORIZONTAL() or HB_DIRECTION_IS_VERTICAL().
-         */
 
-        /**
-         * The direction of a text segment or buffer.
-         *
-         * A segment can also be tested for horizontal or vertical
-         * orientation (irrespective of specific direction) with
-         * HB_DIRECTION_IS_HORIZONTAL() or HB_DIRECTION_IS_VERTICAL().
-         */
         export namespace direction_t {
             export const $gtype: GObject.GType<direction_t>;
         }
 
+        /**
+         * The direction of a text segment or buffer.
+         *
+         * A segment can also be tested for horizontal or vertical
+         * orientation (irrespective of specific direction) with
+         * HB_DIRECTION_IS_HORIZONTAL() or HB_DIRECTION_IS_VERTICAL().
+         */
         enum direction_t {
             /**
              * Initial, unset direction.
@@ -1366,55 +1327,33 @@ declare module 'gi://HarfBuzz?version=0.0' {
              */
             BTT,
         }
-        /**
-         * Data type holding the memory modes available to
-         * client programs.
-         *
-         * Regarding these various memory-modes:
-         *
-         * - In no case shall the HarfBuzz client modify memory
-         *   that is passed to HarfBuzz in a blob.  If there is
-         *   any such possibility, `HB_MEMORY_MODE_DUPLICATE` should be used
-         *   such that HarfBuzz makes a copy immediately,
-         *
-         * - Use `HB_MEMORY_MODE_READONLY` otherwise, unless you really really
-         *   really know what you are doing,
-         *
-         * - `HB_MEMORY_MODE_WRITABLE` is appropriate if you really made a
-         *   copy of data solely for the purpose of passing to
-         *   HarfBuzz and doing that just once (no reuse!),
-         *
-         * - If the font is mmap()ed, it's okay to use
-         *   `HB_MEMORY_MODE_READONLY_MAY_MAKE_WRITABLE,` however, using that mode
-         *   correctly is very tricky.  Use `HB_MEMORY_MODE_READONLY` instead.
-         */
 
-        /**
-         * Data type holding the memory modes available to
-         * client programs.
-         *
-         * Regarding these various memory-modes:
-         *
-         * - In no case shall the HarfBuzz client modify memory
-         *   that is passed to HarfBuzz in a blob.  If there is
-         *   any such possibility, `HB_MEMORY_MODE_DUPLICATE` should be used
-         *   such that HarfBuzz makes a copy immediately,
-         *
-         * - Use `HB_MEMORY_MODE_READONLY` otherwise, unless you really really
-         *   really know what you are doing,
-         *
-         * - `HB_MEMORY_MODE_WRITABLE` is appropriate if you really made a
-         *   copy of data solely for the purpose of passing to
-         *   HarfBuzz and doing that just once (no reuse!),
-         *
-         * - If the font is mmap()ed, it's okay to use
-         *   `HB_MEMORY_MODE_READONLY_MAY_MAKE_WRITABLE,` however, using that mode
-         *   correctly is very tricky.  Use `HB_MEMORY_MODE_READONLY` instead.
-         */
         export namespace memory_mode_t {
             export const $gtype: GObject.GType<memory_mode_t>;
         }
 
+        /**
+         * Data type holding the memory modes available to
+         * client programs.
+         *
+         * Regarding these various memory-modes:
+         *
+         * - In no case shall the HarfBuzz client modify memory
+         *   that is passed to HarfBuzz in a blob.  If there is
+         *   any such possibility, `HB_MEMORY_MODE_DUPLICATE` should be used
+         *   such that HarfBuzz makes a copy immediately,
+         *
+         * - Use `HB_MEMORY_MODE_READONLY` otherwise, unless you really really
+         *   really know what you are doing,
+         *
+         * - `HB_MEMORY_MODE_WRITABLE` is appropriate if you really made a
+         *   copy of data solely for the purpose of passing to
+         *   HarfBuzz and doing that just once (no reuse!),
+         *
+         * - If the font is mmap()ed, it's okay to use
+         *   `HB_MEMORY_MODE_READONLY_MAY_MAKE_WRITABLE,` however, using that mode
+         *   correctly is very tricky.  Use `HB_MEMORY_MODE_READONLY` instead.
+         */
         enum memory_mode_t {
             /**
              * HarfBuzz immediately makes a copy of the data.
@@ -1435,17 +1374,14 @@ declare module 'gi://HarfBuzz?version=0.0' {
              */
             READONLY_MAY_MAKE_WRITABLE,
         }
-        /**
-         * Baseline tags from [Baseline Tags](https://docs.microsoft.com/en-us/typography/opentype/spec/baselinetags) registry.
-         */
 
-        /**
-         * Baseline tags from [Baseline Tags](https://docs.microsoft.com/en-us/typography/opentype/spec/baselinetags) registry.
-         */
         export namespace ot_layout_baseline_tag_t {
             export const $gtype: GObject.GType<ot_layout_baseline_tag_t>;
         }
 
+        /**
+         * Baseline tags from [Baseline Tags](https://docs.microsoft.com/en-us/typography/opentype/spec/baselinetags) registry.
+         */
         enum ot_layout_baseline_tag_t {
             /**
              * The baseline used by alphabetic scripts such as Latin, Cyrillic and Greek.
@@ -1494,17 +1430,14 @@ declare module 'gi://HarfBuzz?version=0.0' {
              */
             MATH,
         }
-        /**
-         * The GDEF classes defined for glyphs.
-         */
 
-        /**
-         * The GDEF classes defined for glyphs.
-         */
         export namespace ot_layout_glyph_class_t {
             export const $gtype: GObject.GType<ot_layout_glyph_class_t>;
         }
 
+        /**
+         * The GDEF classes defined for glyphs.
+         */
         enum ot_layout_glyph_class_t {
             /**
              * Glyphs not matching the other classifications
@@ -1527,21 +1460,16 @@ declare module 'gi://HarfBuzz?version=0.0' {
              */
             COMPONENT,
         }
-        /**
-         * The 'MATH' table constants, refer to
-         * [OpenType documentation](https://docs.microsoft.com/en-us/typography/opentype/spec/math#mathconstants-table)
-         * For more explanations.
-         */
 
-        /**
-         * The 'MATH' table constants, refer to
-         * [OpenType documentation](https://docs.microsoft.com/en-us/typography/opentype/spec/math#mathconstants-table)
-         * For more explanations.
-         */
         export namespace ot_math_constant_t {
             export const $gtype: GObject.GType<ot_math_constant_t>;
         }
 
+        /**
+         * The 'MATH' table constants, refer to
+         * [OpenType documentation](https://docs.microsoft.com/en-us/typography/opentype/spec/math#mathconstants-table)
+         * For more explanations.
+         */
         enum ot_math_constant_t {
             /**
              * scriptPercentScaleDown
@@ -1768,19 +1696,15 @@ declare module 'gi://HarfBuzz?version=0.0' {
              */
             RADICAL_DEGREE_BOTTOM_RAISE_PERCENT,
         }
-        /**
-         * The math kerning-table types defined for the four corners
-         * of a glyph.
-         */
 
-        /**
-         * The math kerning-table types defined for the four corners
-         * of a glyph.
-         */
         export namespace ot_math_kern_t {
             export const $gtype: GObject.GType<ot_math_kern_t>;
         }
 
+        /**
+         * The math kerning-table types defined for the four corners
+         * of a glyph.
+         */
         enum ot_math_kern_t {
             /**
              * The top right corner of the glyph.
@@ -1799,17 +1723,14 @@ declare module 'gi://HarfBuzz?version=0.0' {
              */
             BOTTOM_LEFT,
         }
-        /**
-         * Known metadata tags from https://docs.microsoft.com/en-us/typography/opentype/spec/meta
-         */
 
-        /**
-         * Known metadata tags from https://docs.microsoft.com/en-us/typography/opentype/spec/meta
-         */
         export namespace ot_meta_tag_t {
             export const $gtype: GObject.GType<ot_meta_tag_t>;
         }
 
+        /**
+         * Known metadata tags from https://docs.microsoft.com/en-us/typography/opentype/spec/meta
+         */
         enum ot_meta_tag_t {
             /**
              * Design languages. Text, using only
@@ -1824,19 +1745,15 @@ declare module 'gi://HarfBuzz?version=0.0' {
              */
             SUPPORTED_LANGUAGES,
         }
-        /**
-         * Metric tags corresponding to [MVAR Value
-         * Tags](https://docs.microsoft.com/en-us/typography/opentype/spec/mvar#value-tags)
-         */
 
-        /**
-         * Metric tags corresponding to [MVAR Value
-         * Tags](https://docs.microsoft.com/en-us/typography/opentype/spec/mvar#value-tags)
-         */
         export namespace ot_metrics_tag_t {
             export const $gtype: GObject.GType<ot_metrics_tag_t>;
         }
 
+        /**
+         * Metric tags corresponding to [MVAR Value
+         * Tags](https://docs.microsoft.com/en-us/typography/opentype/spec/mvar#value-tags)
+         */
         enum ot_metrics_tag_t {
             /**
              * horizontal ascender.
@@ -1951,23 +1868,17 @@ declare module 'gi://HarfBuzz?version=0.0' {
              */
             UNDERLINE_OFFSET,
         }
-        /**
-         * An enum type representing the pre-defined name IDs.
-         *
-         * For more information on these fields, see the
-         * [OpenType spec](https://docs.microsoft.com/en-us/typography/opentype/spec/name#name-ids).
-         */
 
-        /**
-         * An enum type representing the pre-defined name IDs.
-         *
-         * For more information on these fields, see the
-         * [OpenType spec](https://docs.microsoft.com/en-us/typography/opentype/spec/name#name-ids).
-         */
         export namespace ot_name_id_predefined_t {
             export const $gtype: GObject.GType<ot_name_id_predefined_t>;
         }
 
+        /**
+         * An enum type representing the pre-defined name IDs.
+         *
+         * For more information on these fields, see the
+         * [OpenType spec](https://docs.microsoft.com/en-us/typography/opentype/spec/name#name-ids).
+         */
         enum ot_name_id_predefined_t {
             /**
              * Copyright notice
@@ -2076,27 +1987,19 @@ declare module 'gi://HarfBuzz?version=0.0' {
              */
             INVALID,
         }
-        /**
-         * The values of this enumeration describe the compositing modes
-         * that can be used when combining temporary redirected drawing
-         * with the backdrop.
-         *
-         * See the OpenType spec [COLR](https://learn.microsoft.com/en-us/typography/opentype/spec/colr)
-         * section for details.
-         */
 
-        /**
-         * The values of this enumeration describe the compositing modes
-         * that can be used when combining temporary redirected drawing
-         * with the backdrop.
-         *
-         * See the OpenType spec [COLR](https://learn.microsoft.com/en-us/typography/opentype/spec/colr)
-         * section for details.
-         */
         export namespace paint_composite_mode_t {
             export const $gtype: GObject.GType<paint_composite_mode_t>;
         }
 
+        /**
+         * The values of this enumeration describe the compositing modes
+         * that can be used when combining temporary redirected drawing
+         * with the backdrop.
+         *
+         * See the OpenType spec [COLR](https://learn.microsoft.com/en-us/typography/opentype/spec/colr)
+         * section for details.
+         */
         enum paint_composite_mode_t {
             /**
              * clear destination layer (bounded)
@@ -2239,27 +2142,19 @@ declare module 'gi://HarfBuzz?version=0.0' {
              */
             HSL_LUMINOSITY,
         }
-        /**
-         * The values of this enumeration determine how color values
-         * outside the minimum and maximum defined offset on a #hb_color_line_t
-         * are determined.
-         *
-         * See the OpenType spec [COLR](https://learn.microsoft.com/en-us/typography/opentype/spec/colr)
-         * section for details.
-         */
 
-        /**
-         * The values of this enumeration determine how color values
-         * outside the minimum and maximum defined offset on a #hb_color_line_t
-         * are determined.
-         *
-         * See the OpenType spec [COLR](https://learn.microsoft.com/en-us/typography/opentype/spec/colr)
-         * section for details.
-         */
         export namespace paint_extend_t {
             export const $gtype: GObject.GType<paint_extend_t>;
         }
 
+        /**
+         * The values of this enumeration determine how color values
+         * outside the minimum and maximum defined offset on a #hb_color_line_t
+         * are determined.
+         *
+         * See the OpenType spec [COLR](https://learn.microsoft.com/en-us/typography/opentype/spec/colr)
+         * section for details.
+         */
         enum paint_extend_t {
             /**
              * Outside the defined interval,
@@ -2279,23 +2174,17 @@ declare module 'gi://HarfBuzz?version=0.0' {
              */
             REFLECT,
         }
-        /**
-         * Data type for scripts. Each #hb_script_t's value is an #hb_tag_t corresponding
-         * to the four-letter values defined by [ISO 15924](https://unicode.org/iso15924/).
-         *
-         * See also the Script (sc) property of the Unicode Character Database.
-         */
 
-        /**
-         * Data type for scripts. Each #hb_script_t's value is an #hb_tag_t corresponding
-         * to the four-letter values defined by [ISO 15924](https://unicode.org/iso15924/).
-         *
-         * See also the Script (sc) property of the Unicode Character Database.
-         */
         export namespace script_t {
             export const $gtype: GObject.GType<script_t>;
         }
 
+        /**
+         * Data type for scripts. Each #hb_script_t's value is an #hb_tag_t corresponding
+         * to the four-letter values defined by [ISO 15924](https://unicode.org/iso15924/).
+         *
+         * See also the Script (sc) property of the Unicode Character Database.
+         */
         enum script_t {
             /**
              * `Zyyy`
@@ -2962,17 +2851,14 @@ declare module 'gi://HarfBuzz?version=0.0' {
              */
             INVALID,
         }
-        /**
-         * Defined by [OpenType Design-Variation Axis Tag Registry](https://docs.microsoft.com/en-us/typography/opentype/spec/dvaraxisreg).
-         */
 
-        /**
-         * Defined by [OpenType Design-Variation Axis Tag Registry](https://docs.microsoft.com/en-us/typography/opentype/spec/dvaraxisreg).
-         */
         export namespace style_tag_t {
             export const $gtype: GObject.GType<style_tag_t>;
         }
 
+        /**
+         * Defined by [OpenType Design-Variation Axis Tag Registry](https://docs.microsoft.com/en-us/typography/opentype/spec/dvaraxisreg).
+         */
         enum style_tag_t {
             /**
              * Used to vary between non-italic and italic.
@@ -3012,27 +2898,19 @@ declare module 'gi://HarfBuzz?version=0.0' {
              */
             WEIGHT,
         }
-        /**
-         * Data type for the Canonical_Combining_Class (ccc) property
-         * from the Unicode Character Database.
-         *
-         * <note>Note: newer versions of Unicode may add new values.
-         * Client programs should be ready to handle any value in the 0..254 range
-         * being returned from hb_unicode_combining_class().</note>
-         */
 
-        /**
-         * Data type for the Canonical_Combining_Class (ccc) property
-         * from the Unicode Character Database.
-         *
-         * <note>Note: newer versions of Unicode may add new values.
-         * Client programs should be ready to handle any value in the 0..254 range
-         * being returned from hb_unicode_combining_class().</note>
-         */
         export namespace unicode_combining_class_t {
             export const $gtype: GObject.GType<unicode_combining_class_t>;
         }
 
+        /**
+         * Data type for the Canonical_Combining_Class (ccc) property
+         * from the Unicode Character Database.
+         *
+         * <note>Note: newer versions of Unicode may add new values.
+         * Client programs should be ready to handle any value in the 0..254 range
+         * being returned from hb_unicode_combining_class().</note>
+         */
         enum unicode_combining_class_t {
             /**
              * Spacing and enclosing marks; also many vowel and consonant signs, even if nonspacing
@@ -3263,19 +3141,15 @@ declare module 'gi://HarfBuzz?version=0.0' {
              */
             INVALID,
         }
-        /**
-         * Data type for the "General_Category" (gc) property from
-         * the Unicode Character Database.
-         */
 
-        /**
-         * Data type for the "General_Category" (gc) property from
-         * the Unicode Character Database.
-         */
         export namespace unicode_general_category_t {
             export const $gtype: GObject.GType<unicode_general_category_t>;
         }
 
+        /**
+         * Data type for the "General_Category" (gc) property from
+         * the Unicode Character Database.
+         */
         enum unicode_general_category_t {
             /**
              * [Cc]
@@ -3398,6 +3272,7 @@ declare module 'gi://HarfBuzz?version=0.0' {
              */
             SPACE_SEPARATOR,
         }
+
         /**
          * Used when getting or setting AAT feature selectors. Indicates that
          * there is no selector index corresponding to the selector of interest.
@@ -8437,37 +8312,23 @@ declare module 'gi://HarfBuzz?version=0.0' {
         interface unicode_script_func_t {
             (ufuncs: unicode_funcs_t, unicode: codepoint_t): script_t;
         }
-        /**
-         * Flags from comparing two #hb_buffer_t's.
-         *
-         * Buffer with different #hb_buffer_content_type_t cannot be meaningfully
-         * compared in any further detail.
-         *
-         * For buffers with differing length, the per-glyph comparison is not
-         * attempted, though we do still scan reference buffer for dotted circle and
-         * `.notdef` glyphs.
-         *
-         * If the buffers have the same length, we compare them glyph-by-glyph and
-         * report which aspect(s) of the glyph info/position are different.
-         */
-
-        /**
-         * Flags from comparing two #hb_buffer_t's.
-         *
-         * Buffer with different #hb_buffer_content_type_t cannot be meaningfully
-         * compared in any further detail.
-         *
-         * For buffers with differing length, the per-glyph comparison is not
-         * attempted, though we do still scan reference buffer for dotted circle and
-         * `.notdef` glyphs.
-         *
-         * If the buffers have the same length, we compare them glyph-by-glyph and
-         * report which aspect(s) of the glyph info/position are different.
-         */
         export namespace buffer_diff_flags_t {
             export const $gtype: GObject.GType<buffer_diff_flags_t>;
         }
 
+        /**
+         * Flags from comparing two #hb_buffer_t's.
+         *
+         * Buffer with different #hb_buffer_content_type_t cannot be meaningfully
+         * compared in any further detail.
+         *
+         * For buffers with differing length, the per-glyph comparison is not
+         * attempted, though we do still scan reference buffer for dotted circle and
+         * `.notdef` glyphs.
+         *
+         * If the buffers have the same length, we compare them glyph-by-glyph and
+         * report which aspect(s) of the glyph info/position are different.
+         */
         enum buffer_diff_flags_t {
             /**
              * equal buffers.
@@ -8509,17 +8370,14 @@ declare module 'gi://HarfBuzz?version=0.0' {
              */
             POSITION_MISMATCH,
         }
-        /**
-         * Flags for #hb_buffer_t.
-         */
 
-        /**
-         * Flags for #hb_buffer_t.
-         */
         export namespace buffer_flags_t {
             export const $gtype: GObject.GType<buffer_flags_t>;
         }
 
+        /**
+         * Flags for #hb_buffer_t.
+         */
         enum buffer_flags_t {
             /**
              * the default buffer flag.
@@ -8589,17 +8447,14 @@ declare module 'gi://HarfBuzz?version=0.0' {
              */
             DEFINED,
         }
-        /**
-         * Flags that control what glyph information are serialized in hb_buffer_serialize_glyphs().
-         */
 
-        /**
-         * Flags that control what glyph information are serialized in hb_buffer_serialize_glyphs().
-         */
         export namespace buffer_serialize_flags_t {
             export const $gtype: GObject.GType<buffer_serialize_flags_t>;
         }
 
+        /**
+         * Flags that control what glyph information are serialized in hb_buffer_serialize_glyphs().
+         */
         enum buffer_serialize_flags_t {
             /**
              * serialize glyph names, clusters and positions.
@@ -8635,17 +8490,14 @@ declare module 'gi://HarfBuzz?version=0.0' {
              */
             DEFINED,
         }
-        /**
-         * Flags for #hb_glyph_info_t.
-         */
 
-        /**
-         * Flags for #hb_glyph_info_t.
-         */
         export namespace glyph_flags_t {
             export const $gtype: GObject.GType<glyph_flags_t>;
         }
 
+        /**
+         * Flags for #hb_glyph_info_t.
+         */
         enum glyph_flags_t {
             /**
              * Indicates that if input text is broken at the
@@ -8739,17 +8591,14 @@ declare module 'gi://HarfBuzz?version=0.0' {
              */
             DEFINED,
         }
-        /**
-         * Flags that describe the properties of color palette.
-         */
 
-        /**
-         * Flags that describe the properties of color palette.
-         */
         export namespace ot_color_palette_flags_t {
             export const $gtype: GObject.GType<ot_color_palette_flags_t>;
         }
 
+        /**
+         * Flags that describe the properties of color palette.
+         */
         enum ot_color_palette_flags_t {
             /**
              * Default indicating that there is nothing special
@@ -8767,17 +8616,14 @@ declare module 'gi://HarfBuzz?version=0.0' {
              */
             USABLE_WITH_DARK_BACKGROUND,
         }
-        /**
-         * Flags for math glyph parts.
-         */
 
-        /**
-         * Flags for math glyph parts.
-         */
         export namespace ot_math_glyph_part_flags_t {
             export const $gtype: GObject.GType<ot_math_glyph_part_flags_t>;
         }
 
+        /**
+         * Flags for math glyph parts.
+         */
         enum ot_math_glyph_part_flags_t {
             /**
              * This is an extender glyph part that
@@ -8785,23 +8631,21 @@ declare module 'gi://HarfBuzz?version=0.0' {
              */
             EXTENDER,
         }
-        /**
-         * Flags for #hb_ot_var_axis_info_t.
-         */
 
-        /**
-         * Flags for #hb_ot_var_axis_info_t.
-         */
         export namespace ot_var_axis_flags_t {
             export const $gtype: GObject.GType<ot_var_axis_flags_t>;
         }
 
+        /**
+         * Flags for #hb_ot_var_axis_info_t.
+         */
         enum ot_var_axis_flags_t {
             /**
              * The axis should not be exposed directly in user interfaces.
              */
             HIDDEN,
         }
+
         /**
          * Structure representing a setting for an #hb_aat_layout_feature_type_t.
          */

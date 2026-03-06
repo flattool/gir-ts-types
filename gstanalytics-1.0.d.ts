@@ -88,11 +88,6 @@ declare module 'gi://GstAnalytics?version=1.0' {
         function relation_get_length(instance: RelationMeta): number;
         function relation_meta_api_get_type(): GObject.GType;
         function tracking_mtd_get_mtd_type(): MtdType;
-
-        export namespace RelTypes {
-            export const $gtype: GObject.GType<RelTypes>;
-        }
-
         enum RelTypes {
             /**
              * No relation
@@ -116,6 +111,7 @@ declare module 'gi://GstAnalytics?version=1.0' {
              */
             ANY,
         }
+
         /**
          * Handle containing data required to use gst_analytics_cls_mtd APIs. This type
          * is generally expected to be allocated on the stack.

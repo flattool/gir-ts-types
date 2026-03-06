@@ -24,17 +24,13 @@ declare module 'gi://AppStream?version=1.0' {
          * AppStream-1.0
          */
 
-        /**
-         * The kind of the agreement.
-         */
-
-        /**
-         * The kind of the agreement.
-         */
         export namespace AgreementKind {
             export const $gtype: GObject.GType<AgreementKind>;
         }
 
+        /**
+         * The kind of the agreement.
+         */
         enum AgreementKind {
             /**
              * Unknown value
@@ -53,17 +49,14 @@ declare module 'gi://AppStream?version=1.0' {
              */
             PRIVACY,
         }
-        /**
-         * The artifact type.
-         */
 
-        /**
-         * The artifact type.
-         */
         export namespace ArtifactKind {
             export const $gtype: GObject.GType<ArtifactKind>;
         }
 
+        /**
+         * The artifact type.
+         */
         enum ArtifactKind {
             /**
              * Type invalid or not known
@@ -78,17 +71,14 @@ declare module 'gi://AppStream?version=1.0' {
              */
             BINARY,
         }
-        /**
-         * The bundle type.
-         */
 
-        /**
-         * The bundle type.
-         */
         export namespace BundleKind {
             export const $gtype: GObject.GType<BundleKind>;
         }
 
+        /**
+         * The bundle type.
+         */
         enum BundleKind {
             /**
              * Type invalid or not known
@@ -131,17 +121,14 @@ declare module 'gi://AppStream?version=1.0' {
              */
             SYSUPDATE,
         }
-        /**
-         * The type of chassis a computing device is built into.
-         */
 
-        /**
-         * The type of chassis a computing device is built into.
-         */
         export namespace ChassisKind {
             export const $gtype: GObject.GType<ChassisKind>;
         }
 
+        /**
+         * The type of chassis a computing device is built into.
+         */
         enum ChassisKind {
             /**
              * Unknown chassis.
@@ -168,17 +155,14 @@ declare module 'gi://AppStream?version=1.0' {
              */
             HANDSET,
         }
-        /**
-         * Result of a check operation.
-         */
 
-        /**
-         * Result of a check operation.
-         */
         export namespace CheckResult {
             export const $gtype: GObject.GType<CheckResult>;
         }
 
+        /**
+         * Result of a check operation.
+         */
         enum CheckResult {
             /**
              * The check failed.
@@ -197,17 +181,14 @@ declare module 'gi://AppStream?version=1.0' {
              */
             TRUE,
         }
-        /**
-         * Checksums supported by #AsRelease
-         */
 
-        /**
-         * Checksums supported by #AsRelease
-         */
         export namespace ChecksumKind {
             export const $gtype: GObject.GType<ChecksumKind>;
         }
 
+        /**
+         * Checksums supported by #AsRelease
+         */
         enum ChecksumKind {
             /**
              * No checksum
@@ -234,17 +215,14 @@ declare module 'gi://AppStream?version=1.0' {
              */
             BLAKE3,
         }
-        /**
-         * A branding color type.
-         */
 
-        /**
-         * A branding color type.
-         */
         export namespace ColorKind {
             export const $gtype: GObject.GType<ColorKind>;
         }
 
+        /**
+         * A branding color type.
+         */
         enum ColorKind {
             /**
              * Color type invalid or not known
@@ -255,17 +233,14 @@ declare module 'gi://AppStream?version=1.0' {
              */
             PRIMARY,
         }
-        /**
-         * A color scheme type.
-         */
 
-        /**
-         * A color scheme type.
-         */
         export namespace ColorSchemeKind {
             export const $gtype: GObject.GType<ColorSchemeKind>;
         }
 
+        /**
+         * A color scheme type.
+         */
         enum ColorSchemeKind {
             /**
              * Color scheme invalid or not known
@@ -280,17 +255,14 @@ declare module 'gi://AppStream?version=1.0' {
              */
             DARK,
         }
-        /**
-         * The type of an #AsComponent.
-         */
 
-        /**
-         * The type of an #AsComponent.
-         */
         export namespace ComponentKind {
             export const $gtype: GObject.GType<ComponentKind>;
         }
 
+        /**
+         * The type of an #AsComponent.
+         */
         enum ComponentKind {
             /**
              * Type invalid or not known
@@ -361,17 +333,14 @@ declare module 'gi://AppStream?version=1.0' {
              */
             ICON_THEME,
         }
-        /**
-         * Scope of the #AsComponent (system-wide or user-scope)
-         */
 
-        /**
-         * Scope of the #AsComponent (system-wide or user-scope)
-         */
         export namespace ComponentScope {
             export const $gtype: GObject.GType<ComponentScope>;
         }
 
+        /**
+         * Scope of the #AsComponent (system-wide or user-scope)
+         */
         enum ComponentScope {
             /**
              * Unknown scope
@@ -386,17 +355,14 @@ declare module 'gi://AppStream?version=1.0' {
              */
             USER,
         }
-        /**
-         * A content rating system for a particular territory.
-         */
 
-        /**
-         * A content rating system for a particular territory.
-         */
         export namespace ContentRatingSystem {
             export const $gtype: GObject.GType<ContentRatingSystem>;
         }
 
+        /**
+         * A content rating system for a particular territory.
+         */
         enum ContentRatingSystem {
             /**
              * Unknown ratings system
@@ -463,17 +429,14 @@ declare module 'gi://AppStream?version=1.0' {
              */
             IARC,
         }
-        /**
-         * The specified level of an content_rating rating ID.
-         */
 
-        /**
-         * The specified level of an content_rating rating ID.
-         */
         export namespace ContentRatingValue {
             export const $gtype: GObject.GType<ContentRatingValue>;
         }
 
+        /**
+         * The specified level of an content_rating rating ID.
+         */
         enum ContentRatingValue {
             /**
              * Unknown value
@@ -496,17 +459,14 @@ declare module 'gi://AppStream?version=1.0' {
              */
             INTENSE,
         }
-        /**
-         * Kind of an input method for users to control software
-         */
 
-        /**
-         * Kind of an input method for users to control software
-         */
         export namespace ControlKind {
             export const $gtype: GObject.GType<ControlKind>;
         }
 
+        /**
+         * Kind of an input method for users to control software
+         */
         enum ControlKind {
             /**
              * Unknown kind
@@ -549,17 +509,14 @@ declare module 'gi://AppStream?version=1.0' {
              */
             TABLET,
         }
-        /**
-         * Side a display_length requirement is for.
-         */
 
-        /**
-         * Side a display_length requirement is for.
-         */
         export namespace DisplaySideKind {
             export const $gtype: GObject.GType<DisplaySideKind>;
         }
 
+        /**
+         * Side a display_length requirement is for.
+         */
         enum DisplaySideKind {
             /**
              * Unknown
@@ -574,17 +531,14 @@ declare module 'gi://AppStream?version=1.0' {
              */
             LONGEST,
         }
-        /**
-         * Format of the AppStream metadata.
-         */
 
-        /**
-         * Format of the AppStream metadata.
-         */
         export namespace FormatKind {
             export const $gtype: GObject.GType<FormatKind>;
         }
 
+        /**
+         * Format of the AppStream metadata.
+         */
         enum FormatKind {
             /**
              * Unknown metadata format.
@@ -603,23 +557,17 @@ declare module 'gi://AppStream?version=1.0' {
              */
             DESKTOP_ENTRY,
         }
-        /**
-         * There are a few differences between AppStream's metainfo files (shipped by upstream projects)
-         * and the catalog metadata (shipped by distributors).
-         * The data source kind indicates which style we should process.
-         * Usually you do not want to set this explicitly.
-         */
 
-        /**
-         * There are a few differences between AppStream's metainfo files (shipped by upstream projects)
-         * and the catalog metadata (shipped by distributors).
-         * The data source kind indicates which style we should process.
-         * Usually you do not want to set this explicitly.
-         */
         export namespace FormatStyle {
             export const $gtype: GObject.GType<FormatStyle>;
         }
 
+        /**
+         * There are a few differences between AppStream's metainfo files (shipped by upstream projects)
+         * and the catalog metadata (shipped by distributors).
+         * The data source kind indicates which style we should process.
+         * Usually you do not want to set this explicitly.
+         */
         enum FormatStyle {
             /**
              * The format style is unknown.
@@ -634,17 +582,14 @@ declare module 'gi://AppStream?version=1.0' {
              */
             CATALOG,
         }
-        /**
-         * Format version / API level of the AppStream metadata.
-         */
 
-        /**
-         * Format version / API level of the AppStream metadata.
-         */
         export namespace FormatVersion {
             export const $gtype: GObject.GType<FormatVersion>;
         }
 
+        /**
+         * Format version / API level of the AppStream metadata.
+         */
         enum FormatVersion {
             /**
              * Unknown format version
@@ -655,17 +600,14 @@ declare module 'gi://AppStream?version=1.0' {
              */
             V1_0,
         }
-        /**
-         * The icon type.
-         */
 
-        /**
-         * The icon type.
-         */
         export namespace IconKind {
             export const $gtype: GObject.GType<IconKind>;
         }
 
+        /**
+         * The icon type.
+         */
         enum IconKind {
             /**
              * Unknown icon kind
@@ -688,17 +630,14 @@ declare module 'gi://AppStream?version=1.0' {
              */
             REMOTE,
         }
-        /**
-         * The image type.
-         */
 
-        /**
-         * The image type.
-         */
         export namespace ImageKind {
             export const $gtype: GObject.GType<ImageKind>;
         }
 
+        /**
+         * The image type.
+         */
         enum ImageKind {
             /**
              * Type invalid or not known
@@ -713,19 +652,15 @@ declare module 'gi://AppStream?version=1.0' {
              */
             THUMBNAIL,
         }
-        /**
-         * Different internet connectivity requirements or recommendations for an
-         * application.
-         */
 
-        /**
-         * Different internet connectivity requirements or recommendations for an
-         * application.
-         */
         export namespace InternetKind {
             export const $gtype: GObject.GType<InternetKind>;
         }
 
+        /**
+         * Different internet connectivity requirements or recommendations for an
+         * application.
+         */
         enum InternetKind {
             /**
              * Unknown
@@ -744,17 +679,14 @@ declare module 'gi://AppStream?version=1.0' {
              */
             FIRST_RUN,
         }
-        /**
-         * Checksums supported by #AsRelease
-         */
 
-        /**
-         * Checksums supported by #AsRelease
-         */
         export namespace IssueKind {
             export const $gtype: GObject.GType<IssueKind>;
         }
 
+        /**
+         * Checksums supported by #AsRelease
+         */
         enum IssueKind {
             /**
              * Unknown issue type
@@ -769,17 +701,14 @@ declare module 'gi://AppStream?version=1.0' {
              */
             CVE,
         }
-        /**
-         * The severity of an issue found by #AsValidator
-         */
 
-        /**
-         * The severity of an issue found by #AsValidator
-         */
         export namespace IssueSeverity {
             export const $gtype: GObject.GType<IssueSeverity>;
         }
 
+        /**
+         * The severity of an issue found by #AsValidator
+         */
         enum IssueSeverity {
             /**
              * The severity is unknown.
@@ -802,17 +731,14 @@ declare module 'gi://AppStream?version=1.0' {
              */
             ERROR,
         }
-        /**
-         * Type of launch system the entries belong to.
-         */
 
-        /**
-         * Type of launch system the entries belong to.
-         */
         export namespace LaunchableKind {
             export const $gtype: GObject.GType<LaunchableKind>;
         }
 
+        /**
+         * Type of launch system the entries belong to.
+         */
         enum LaunchableKind {
             /**
              * Unknown kind
@@ -835,17 +761,14 @@ declare module 'gi://AppStream?version=1.0' {
              */
             URL,
         }
-        /**
-         * Text markup types.
-         */
 
-        /**
-         * Text markup types.
-         */
         export namespace MarkupKind {
             export const $gtype: GObject.GType<MarkupKind>;
         }
 
+        /**
+         * Text markup types.
+         */
         enum MarkupKind {
             /**
              * Unknown markup.
@@ -864,19 +787,15 @@ declare module 'gi://AppStream?version=1.0' {
              */
             MARKDOWN,
         }
-        /**
-         * Defines how #AsComponent data should be merged if the component is
-         * set for merge.
-         */
 
-        /**
-         * Defines how #AsComponent data should be merged if the component is
-         * set for merge.
-         */
         export namespace MergeKind {
             export const $gtype: GObject.GType<MergeKind>;
         }
 
+        /**
+         * Defines how #AsComponent data should be merged if the component is
+         * set for merge.
+         */
         enum MergeKind {
             /**
              * No merge is happening.
@@ -895,11 +814,12 @@ declare module 'gi://AppStream?version=1.0' {
              */
             REMOVE_COMPONENT,
         }
+
         /**
          * A metadata processing error.
          */
         class MetadataError extends GLib.Error {
-            static $gtype: GObject.GType<MetadataError>;
+            static $gtype: GObject.GType<GLib.Error>;
 
             // Static fields
 
@@ -933,17 +853,13 @@ declare module 'gi://AppStream?version=1.0' {
             static quark(): GLib.Quark;
         }
 
-        /**
-         * The flags used when installing and removing metadata files.
-         */
-
-        /**
-         * The flags used when installing and removing metadata files.
-         */
         export namespace MetadataLocation {
             export const $gtype: GObject.GType<MetadataLocation>;
         }
 
+        /**
+         * The flags used when installing and removing metadata files.
+         */
         enum MetadataLocation {
             /**
              * An unknown/invalid location.
@@ -966,11 +882,12 @@ declare module 'gi://AppStream?version=1.0' {
              */
             USER,
         }
+
         /**
          * A metadata pool error.
          */
         class PoolError extends GLib.Error {
-            static $gtype: GObject.GType<PoolError>;
+            static $gtype: GObject.GType<GLib.Error>;
 
             // Static fields
 
@@ -1004,17 +921,13 @@ declare module 'gi://AppStream?version=1.0' {
             static quark(): GLib.Quark;
         }
 
-        /**
-         * Type of the public interface components can provide.
-         */
-
-        /**
-         * Type of the public interface components can provide.
-         */
         export namespace ProvidedKind {
             export const $gtype: GObject.GType<ProvidedKind>;
         }
 
+        /**
+         * Type of the public interface components can provide.
+         */
         enum ProvidedKind {
             /**
              * Unknown kind
@@ -1065,17 +978,14 @@ declare module 'gi://AppStream?version=1.0' {
              */
             ID,
         }
-        /**
-         * A reference type.
-         */
 
-        /**
-         * A reference type.
-         */
         export namespace ReferenceKind {
             export const $gtype: GObject.GType<ReferenceKind>;
         }
 
+        /**
+         * A reference type.
+         */
         enum ReferenceKind {
             /**
              * Unknown reference kind.
@@ -1094,17 +1004,14 @@ declare module 'gi://AppStream?version=1.0' {
              */
             REGISTRY,
         }
-        /**
-         * The relational comparison type.
-         */
 
-        /**
-         * The relational comparison type.
-         */
         export namespace RelationCompare {
             export const $gtype: GObject.GType<RelationCompare>;
         }
 
+        /**
+         * The relational comparison type.
+         */
         enum RelationCompare {
             /**
              * Comparison predicate invalid or not known
@@ -1135,11 +1042,12 @@ declare module 'gi://AppStream?version=1.0' {
              */
             GE,
         }
+
         /**
          * The error type.
          */
         class RelationError extends GLib.Error {
-            static $gtype: GObject.GType<RelationError>;
+            static $gtype: GObject.GType<GLib.Error>;
 
             // Static fields
 
@@ -1165,17 +1073,13 @@ declare module 'gi://AppStream?version=1.0' {
             static quark(): GLib.Quark;
         }
 
-        /**
-         * Type of the item an #AsRelation is for.
-         */
-
-        /**
-         * Type of the item an #AsRelation is for.
-         */
         export namespace RelationItemKind {
             export const $gtype: GObject.GType<RelationItemKind>;
         }
 
+        /**
+         * Type of the item an #AsRelation is for.
+         */
         enum RelationItemKind {
             /**
              * Unknown kind
@@ -1218,17 +1122,14 @@ declare module 'gi://AppStream?version=1.0' {
              */
             INTERNET,
         }
-        /**
-         * Type of a component's relation to other items.
-         */
 
-        /**
-         * Type of a component's relation to other items.
-         */
         export namespace RelationKind {
             export const $gtype: GObject.GType<RelationKind>;
         }
 
+        /**
+         * Type of a component's relation to other items.
+         */
         enum RelationKind {
             /**
              * Unknown kind
@@ -1247,17 +1148,14 @@ declare module 'gi://AppStream?version=1.0' {
              */
             SUPPORTS,
         }
-        /**
-         * Status of a relation check result.
-         */
 
-        /**
-         * Status of a relation check result.
-         */
         export namespace RelationStatus {
             export const $gtype: GObject.GType<RelationStatus>;
         }
 
+        /**
+         * Status of a relation check result.
+         */
         enum RelationStatus {
             /**
              * Unknown status.
@@ -1276,17 +1174,14 @@ declare module 'gi://AppStream?version=1.0' {
              */
             SATISFIED,
         }
-        /**
-         * The release kind.
-         */
 
-        /**
-         * The release kind.
-         */
         export namespace ReleaseKind {
             export const $gtype: GObject.GType<ReleaseKind>;
         }
 
+        /**
+         * The release kind.
+         */
         enum ReleaseKind {
             /**
              * Unknown release type
@@ -1305,17 +1200,14 @@ declare module 'gi://AppStream?version=1.0' {
              */
             SNAPSHOT,
         }
-        /**
-         * The kind of a releases block.
-         */
 
-        /**
-         * The kind of a releases block.
-         */
         export namespace ReleaseListKind {
             export const $gtype: GObject.GType<ReleaseListKind>;
         }
 
+        /**
+         * The kind of a releases block.
+         */
         enum ReleaseListKind {
             /**
              * Unknown releases type
@@ -1330,19 +1222,15 @@ declare module 'gi://AppStream?version=1.0' {
              */
             EXTERNAL,
         }
-        /**
-         * `AS_RELEASE_URL_KIND_UNKNOWN`		Unknown release web URL type
-         * The release URL kinds.
-         */
 
-        /**
-         * `AS_RELEASE_URL_KIND_UNKNOWN`		Unknown release web URL type
-         * The release URL kinds.
-         */
         export namespace ReleaseUrlKind {
             export const $gtype: GObject.GType<ReleaseUrlKind>;
         }
 
+        /**
+         * `AS_RELEASE_URL_KIND_UNKNOWN`		Unknown release web URL type
+         * The release URL kinds.
+         */
         enum ReleaseUrlKind {
             UNKNOWN,
             /**
@@ -1350,17 +1238,14 @@ declare module 'gi://AppStream?version=1.0' {
              */
             DETAILS,
         }
-        /**
-         * The screenshot type.
-         */
 
-        /**
-         * The screenshot type.
-         */
         export namespace ScreenshotKind {
             export const $gtype: GObject.GType<ScreenshotKind>;
         }
 
+        /**
+         * The screenshot type.
+         */
         enum ScreenshotKind {
             /**
              * Type invalid or not known
@@ -1375,17 +1260,14 @@ declare module 'gi://AppStream?version=1.0' {
              */
             EXTRA,
         }
-        /**
-         * The media kind contained in this screenshot.
-         */
 
-        /**
-         * The media kind contained in this screenshot.
-         */
         export namespace ScreenshotMediaKind {
             export const $gtype: GObject.GType<ScreenshotMediaKind>;
         }
 
+        /**
+         * The media kind contained in this screenshot.
+         */
         enum ScreenshotMediaKind {
             /**
              * Media kind is unknown
@@ -1400,17 +1282,14 @@ declare module 'gi://AppStream?version=1.0' {
              */
             VIDEO,
         }
-        /**
-         * The artifact size kind.
-         */
 
-        /**
-         * The artifact size kind.
-         */
         export namespace SizeKind {
             export const $gtype: GObject.GType<SizeKind>;
         }
 
+        /**
+         * The artifact size kind.
+         */
         enum SizeKind {
             /**
              * Unknown size
@@ -1425,17 +1304,14 @@ declare module 'gi://AppStream?version=1.0' {
              */
             INSTALLED,
         }
-        /**
-         * The suggested type.
-         */
 
-        /**
-         * The suggested type.
-         */
         export namespace SuggestedKind {
             export const $gtype: GObject.GType<SuggestedKind>;
         }
 
+        /**
+         * The suggested type.
+         */
         enum SuggestedKind {
             /**
              * Unknown suggested kind
@@ -1450,11 +1326,12 @@ declare module 'gi://AppStream?version=1.0' {
              */
             HEURISTIC,
         }
+
         /**
          * The error type.
          */
         class SystemInfoError extends GLib.Error {
-            static $gtype: GObject.GType<SystemInfoError>;
+            static $gtype: GObject.GType<GLib.Error>;
 
             // Static fields
 
@@ -1476,17 +1353,13 @@ declare module 'gi://AppStream?version=1.0' {
             static quark(): GLib.Quark;
         }
 
-        /**
-         * The translation type.
-         */
-
-        /**
-         * The translation type.
-         */
         export namespace TranslationKind {
             export const $gtype: GObject.GType<TranslationKind>;
         }
 
+        /**
+         * The translation type.
+         */
         enum TranslationKind {
             /**
              * Type invalid or not known
@@ -1501,17 +1374,14 @@ declare module 'gi://AppStream?version=1.0' {
              */
             QT,
         }
-        /**
-         * The urgency of an #AsRelease
-         */
 
-        /**
-         * The urgency of an #AsRelease
-         */
         export namespace UrgencyKind {
             export const $gtype: GObject.GType<UrgencyKind>;
         }
 
+        /**
+         * The urgency of an #AsRelease
+         */
         enum UrgencyKind {
             /**
              * Urgency is unknown or not set
@@ -1534,17 +1404,14 @@ declare module 'gi://AppStream?version=1.0' {
              */
             CRITICAL,
         }
-        /**
-         * The URL type.
-         */
 
-        /**
-         * The URL type.
-         */
         export namespace UrlKind {
             export const $gtype: GObject.GType<UrlKind>;
         }
 
+        /**
+         * The URL type.
+         */
         enum UrlKind {
             /**
              * Type invalid or not known
@@ -1587,11 +1454,12 @@ declare module 'gi://AppStream?version=1.0' {
              */
             CONTRIBUTE,
         }
+
         /**
          * The error type.
          */
         class UtilsError extends GLib.Error {
-            static $gtype: GObject.GType<UtilsError>;
+            static $gtype: GObject.GType<GLib.Error>;
 
             // Static fields
 
@@ -1613,7 +1481,7 @@ declare module 'gi://AppStream?version=1.0' {
          * The error type.
          */
         class ValidatorError extends GLib.Error {
-            static $gtype: GObject.GType<ValidatorError>;
+            static $gtype: GObject.GType<GLib.Error>;
 
             // Static fields
 
@@ -1639,17 +1507,13 @@ declare module 'gi://AppStream?version=1.0' {
             static quark(): GLib.Quark;
         }
 
-        /**
-         * Supported video codecs.
-         */
-
-        /**
-         * Supported video codecs.
-         */
         export namespace VideoCodecKind {
             export const $gtype: GObject.GType<VideoCodecKind>;
         }
 
+        /**
+         * Supported video codecs.
+         */
         enum VideoCodecKind {
             /**
              * Unknown video codec
@@ -1664,17 +1528,14 @@ declare module 'gi://AppStream?version=1.0' {
              */
             AV1,
         }
-        /**
-         * Supported video codecs.
-         */
 
-        /**
-         * Supported video codecs.
-         */
         export namespace VideoContainerKind {
             export const $gtype: GObject.GType<VideoContainerKind>;
         }
 
+        /**
+         * Supported video codecs.
+         */
         enum VideoContainerKind {
             /**
              * Unknown video container
@@ -1689,6 +1550,7 @@ declare module 'gi://AppStream?version=1.0' {
              */
             WEBM,
         }
+
         const MAJOR_VERSION: number;
         const MICRO_VERSION: number;
         const MINOR_VERSION: number;
@@ -2537,17 +2399,13 @@ declare module 'gi://AppStream?version=1.0' {
          * @returns string version of @kind
          */
         function video_container_kind_to_string(kind: VideoContainerKind | null): string;
-        /**
-         * Flags on how caching should be used.
-         */
-
-        /**
-         * Flags on how caching should be used.
-         */
         export namespace CacheFlags {
             export const $gtype: GObject.GType<CacheFlags>;
         }
 
+        /**
+         * Flags on how caching should be used.
+         */
         enum CacheFlags {
             /**
              * No flags.
@@ -2570,17 +2428,14 @@ declare module 'gi://AppStream?version=1.0' {
              */
             REFRESH_SYSTEM,
         }
-        /**
-         * Flags controlling the component box behavior.
-         */
 
-        /**
-         * Flags controlling the component box behavior.
-         */
         export namespace ComponentBoxFlags {
             export const $gtype: GObject.GType<ComponentBoxFlags>;
         }
 
+        /**
+         * Flags controlling the component box behavior.
+         */
         enum ComponentBoxFlags {
             /**
              * No flags.
@@ -2591,17 +2446,14 @@ declare module 'gi://AppStream?version=1.0' {
              */
             NO_CHECKS,
         }
-        /**
-         * The flags used when matching unique IDs.
-         */
 
-        /**
-         * The flags used when matching unique IDs.
-         */
         export namespace DataIdMatchFlags {
             export const $gtype: GObject.GType<DataIdMatchFlags>;
         }
 
+        /**
+         * The flags used when matching unique IDs.
+         */
         enum DataIdMatchFlags {
             /**
              * No flags set
@@ -2628,17 +2480,14 @@ declare module 'gi://AppStream?version=1.0' {
              */
             BRANCH,
         }
-        /**
-         * Influence certain aspects of how AppStream metadata is parsed.
-         */
 
-        /**
-         * Influence certain aspects of how AppStream metadata is parsed.
-         */
         export namespace ParseFlags {
             export const $gtype: GObject.GType<ParseFlags>;
         }
 
+        /**
+         * Influence certain aspects of how AppStream metadata is parsed.
+         */
         enum ParseFlags {
             /**
              * No flags.
@@ -2649,17 +2498,14 @@ declare module 'gi://AppStream?version=1.0' {
              */
             IGNORE_MEDIABASEURL,
         }
-        /**
-         * Flags controlling the metadata pool behavior.
-         */
 
-        /**
-         * Flags controlling the metadata pool behavior.
-         */
         export namespace PoolFlags {
             export const $gtype: GObject.GType<PoolFlags>;
         }
 
+        /**
+         * Flags controlling the metadata pool behavior.
+         */
         enum PoolFlags {
             /**
              * No flags.
@@ -2698,17 +2544,14 @@ declare module 'gi://AppStream?version=1.0' {
              */
             MONITOR,
         }
-        /**
-         * The flags for the review.
-         */
 
-        /**
-         * The flags for the review.
-         */
         export namespace ReviewFlags {
             export const $gtype: GObject.GType<ReviewFlags>;
         }
 
+        /**
+         * The flags for the review.
+         */
         enum ReviewFlags {
             /**
              * No special flags set
@@ -2723,19 +2566,15 @@ declare module 'gi://AppStream?version=1.0' {
              */
             VOTED,
         }
-        /**
-         * Set how values assigned to an #AsComponent should be treated when
-         * they are set or retrieved.
-         */
 
-        /**
-         * Set how values assigned to an #AsComponent should be treated when
-         * they are set or retrieved.
-         */
         export namespace ValueFlags {
             export const $gtype: GObject.GType<ValueFlags>;
         }
 
+        /**
+         * Set how values assigned to an #AsComponent should be treated when
+         * they are set or retrieved.
+         */
         enum ValueFlags {
             /**
              * No flags.
@@ -2750,17 +2589,14 @@ declare module 'gi://AppStream?version=1.0' {
              */
             NO_TRANSLATION_FALLBACK,
         }
-        /**
-         * The flags used when matching unique IDs.
-         */
 
-        /**
-         * The flags used when matching unique IDs.
-         */
         export namespace VercmpFlags {
             export const $gtype: GObject.GType<VercmpFlags>;
         }
 
+        /**
+         * The flags used when matching unique IDs.
+         */
         enum VercmpFlags {
             /**
              * No flags set
@@ -2771,6 +2607,7 @@ declare module 'gi://AppStream?version=1.0' {
              */
             IGNORE_EPOCH,
         }
+
         namespace Agreement {
             // Signal signatures
             interface SignalSignatures extends GObject.Object.SignalSignatures {}

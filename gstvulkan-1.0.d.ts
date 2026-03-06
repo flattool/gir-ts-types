@@ -51,8 +51,9 @@ declare module 'gi://GstVulkan?version=1.0' {
             TYPE_BUFFER,
             TYPE_IMAGE,
         }
+
         class VulkanError extends GLib.Error {
-            static $gtype: GObject.GType<VulkanError>;
+            static $gtype: GObject.GType<GLib.Error>;
 
             // Static fields
 
@@ -159,17 +160,14 @@ declare module 'gi://GstVulkan?version=1.0' {
              */
             SAMPLER_YCBCR_CONVERSION,
         }
-        /**
-         * The type of video operation.
-         */
 
-        /**
-         * The type of video operation.
-         */
         export namespace VulkanVideoOperation {
             export const $gtype: GObject.GType<VulkanVideoOperation>;
         }
 
+        /**
+         * The type of video operation.
+         */
         enum VulkanVideoOperation {
             /**
              * decode operation
@@ -184,8 +182,9 @@ declare module 'gi://GstVulkan?version=1.0' {
              */
             UNKNOWN,
         }
+
         class VulkanWindowError extends GLib.Error {
-            static $gtype: GObject.GType<VulkanWindowError>;
+            static $gtype: GObject.GType<GLib.Error>;
 
             // Static fields
 
@@ -481,7 +480,6 @@ declare module 'gi://GstVulkan?version=1.0' {
         interface VulkanTrashNotify {
             (device: VulkanDevice): void;
         }
-
         export namespace VulkanDisplayType {
             export const $gtype: GObject.GType<VulkanDisplayType>;
         }
@@ -544,6 +542,7 @@ declare module 'gi://GstVulkan?version=1.0' {
              */
             COMPLEX,
         }
+
         namespace VulkanBufferMemoryAllocator {
             // Signal signatures
             interface SignalSignatures extends Gst.Allocator.SignalSignatures {

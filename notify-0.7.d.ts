@@ -57,17 +57,14 @@ declare module 'gi://Notify?version=0.7' {
              */
             UNDEFIEND,
         }
-        /**
-         * The urgency level of the notification.
-         */
 
-        /**
-         * The urgency level of the notification.
-         */
         export namespace Urgency {
             export const $gtype: GObject.GType<Urgency>;
         }
 
+        /**
+         * The urgency level of the notification.
+         */
         enum Urgency {
             /**
              * Low urgency. Used for unimportant notifications.
@@ -82,6 +79,7 @@ declare module 'gi://Notify?version=0.7' {
              */
             CRITICAL,
         }
+
         /**
          * The default expiration time on a notification.
          */

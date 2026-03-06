@@ -30,17 +30,13 @@ declare module 'gi://GstPbutils?version=1.0' {
          * GstPbutils-1.0
          */
 
-        /**
-         * Different types of supported background shading functions.
-         */
-
-        /**
-         * Different types of supported background shading functions.
-         */
         export namespace AudioVisualizerShader {
             export const $gtype: GObject.GType<AudioVisualizerShader>;
         }
 
+        /**
+         * Different types of supported background shading functions.
+         */
         enum AudioVisualizerShader {
             /**
              * no shading
@@ -83,17 +79,14 @@ declare module 'gi://GstPbutils?version=1.0' {
              */
             FADE_AND_MOVE_VERT_IN,
         }
-        /**
-         * Result values for the discovery process.
-         */
 
-        /**
-         * Result values for the discovery process.
-         */
         export namespace DiscovererResult {
             export const $gtype: GObject.GType<DiscovererResult>;
         }
 
+        /**
+         * Result values for the discovery process.
+         */
         enum DiscovererResult {
             /**
              * The discovery was successful
@@ -120,27 +113,19 @@ declare module 'gi://GstPbutils?version=1.0' {
              */
             MISSING_PLUGINS,
         }
-        /**
-         * Result codes returned by gst_install_plugins_async() and
-         * gst_install_plugins_sync(), and also the result code passed to the
-         * #GstInstallPluginsResultFunc specified with gst_install_plugins_async().
-         *
-         * These codes indicate success or failure of starting an external installer
-         * program and to what extent the requested plugins could be installed.
-         */
 
-        /**
-         * Result codes returned by gst_install_plugins_async() and
-         * gst_install_plugins_sync(), and also the result code passed to the
-         * #GstInstallPluginsResultFunc specified with gst_install_plugins_async().
-         *
-         * These codes indicate success or failure of starting an external installer
-         * program and to what extent the requested plugins could be installed.
-         */
         export namespace InstallPluginsReturn {
             export const $gtype: GObject.GType<InstallPluginsReturn>;
         }
 
+        /**
+         * Result codes returned by gst_install_plugins_async() and
+         * gst_install_plugins_sync(), and also the result code passed to the
+         * #GstInstallPluginsResultFunc specified with gst_install_plugins_async().
+         *
+         * These codes indicate success or failure of starting an external installer
+         * program and to what extent the requested plugins could be installed.
+         */
         enum InstallPluginsReturn {
             /**
              * all of the requested plugins could be
@@ -200,6 +185,7 @@ declare module 'gi://GstPbutils?version=1.0' {
              */
             INSTALL_IN_PROGRESS,
         }
+
         /**
          * #GstEncodingTarget category for recording and capture.
          * Targets within this category are optimized for low latency encoding.
@@ -877,19 +863,14 @@ declare module 'gi://GstPbutils?version=1.0' {
         interface InstallPluginsResultFunc {
             (result: InstallPluginsReturn): void;
         }
-        /**
-         * You can use these flags to control what is serialized by
-         * gst_discoverer_info_to_variant()
-         */
-
-        /**
-         * You can use these flags to control what is serialized by
-         * gst_discoverer_info_to_variant()
-         */
         export namespace DiscovererSerializeFlags {
             export const $gtype: GObject.GType<DiscovererSerializeFlags>;
         }
 
+        /**
+         * You can use these flags to control what is serialized by
+         * gst_discoverer_info_to_variant()
+         */
         enum DiscovererSerializeFlags {
             /**
              * Serialize only basic information, excluding
@@ -914,19 +895,15 @@ declare module 'gi://GstPbutils?version=1.0' {
              */
             ALL,
         }
-        /**
-         * Flags that are returned by gst_pb_utils_get_caps_description_flags() and
-         * describe the format of the caps.
-         */
 
-        /**
-         * Flags that are returned by gst_pb_utils_get_caps_description_flags() and
-         * describe the format of the caps.
-         */
         export namespace PbUtilsCapsDescriptionFlags {
             export const $gtype: GObject.GType<PbUtilsCapsDescriptionFlags>;
         }
 
+        /**
+         * Flags that are returned by gst_pb_utils_get_caps_description_flags() and
+         * describe the format of the caps.
+         */
         enum PbUtilsCapsDescriptionFlags {
             /**
              * Caps describe a container format.
@@ -967,6 +944,7 @@ declare module 'gi://GstPbutils?version=1.0' {
              */
             METADATA,
         }
+
         namespace AudioVisualizer {
             // Signal signatures
             interface SignalSignatures extends Gst.Element.SignalSignatures {
