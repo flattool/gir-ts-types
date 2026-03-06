@@ -26,17 +26,6 @@ declare module 'gi://Graphene?version=1.0' {
          * The %GRAPHENE_EULER_ORDER_DEFAULT value is special, and is used
          * as an alias for one of the other orders.
          */
-
-        /**
-         * Specify the order of the rotations on each axis.
-         *
-         * The %GRAPHENE_EULER_ORDER_DEFAULT value is special, and is used
-         * as an alias for one of the other orders.
-         */
-        export namespace EulerOrder {
-            export const $gtype: GObject.GType<EulerOrder>;
-        }
-
         enum EulerOrder {
             /**
              * Rotate in the default order; the
@@ -170,17 +159,10 @@ declare module 'gi://Graphene?version=1.0' {
              */
             RZYZ,
         }
-        /**
-         * The type of intersection.
-         */
 
         /**
          * The type of intersection.
          */
-        export namespace RayIntersectionKind {
-            export const $gtype: GObject.GType<RayIntersectionKind>;
-        }
-
         enum RayIntersectionKind {
             /**
              * No intersection
@@ -197,6 +179,7 @@ declare module 'gi://Graphene?version=1.0' {
              */
             LEAVE,
         }
+
         const PI: number;
         const PI_2: number;
         /**

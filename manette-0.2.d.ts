@@ -26,21 +26,15 @@ declare module 'gi://Manette?version=0.2' {
          * Manette-0.2
          */
 
-        /**
-         * Describes available types of a [class`Device]`.
-         *
-         * More values may be added to this enumeration over time.
-         */
-
-        /**
-         * Describes available types of a [class`Device]`.
-         *
-         * More values may be added to this enumeration over time.
-         */
         export namespace DeviceType {
             export const $gtype: GObject.GType<DeviceType>;
         }
 
+        /**
+         * Describes available types of a [class`Device]`.
+         *
+         * More values may be added to this enumeration over time.
+         */
         enum DeviceType {
             /**
              * Generic gamepads
@@ -51,17 +45,14 @@ declare module 'gi://Manette?version=0.2' {
              */
             STEAM_DECK,
         }
-        /**
-         * Specifies the type of the event.
-         */
 
-        /**
-         * Specifies the type of the event.
-         */
         export namespace EventType {
             export const $gtype: GObject.GType<EventType>;
         }
 
+        /**
+         * Specifies the type of the event.
+         */
         enum EventType {
             /**
              * a special code to indicate a null event
@@ -84,6 +75,7 @@ declare module 'gi://Manette?version=0.2' {
              */
             EVENT_HAT,
         }
+
         /**
          * libmanette major version component (e.g. 1 if the version is 1.2.3).
          */

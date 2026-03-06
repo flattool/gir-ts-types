@@ -33,7 +33,7 @@ declare module 'gi://Rsvg?version=2.0' {
          * An enumeration representing possible errors
          */
         class Error extends GLib.Error {
-            static $gtype: GObject.GType<Error>;
+            static $gtype: GObject.GType<GLib.Error>;
 
             // Static fields
 
@@ -62,19 +62,6 @@ declare module 'gi://Rsvg?version=2.0' {
          * as its support for CSS improves.  Please make your code handle unknown units gracefully (e.g. with
          * a `default` case in a `switch()` statement).
          */
-
-        /**
-         * Units for the `RsvgLength` struct.  These have the same meaning as [CSS length
-         * units](https://www.w3.org/TR/CSS21/syndata.html#length-units).
-         *
-         * If you test for the values of this enum, please note that librsvg may add other units in the future
-         * as its support for CSS improves.  Please make your code handle unknown units gracefully (e.g. with
-         * a `default` case in a `switch()` statement).
-         */
-        export namespace Unit {
-            export const $gtype: GObject.GType<Unit>;
-        }
-
         enum Unit {
             /**
              * percentage values; where <literal>1.0</literal> means 100%.
@@ -117,6 +104,7 @@ declare module 'gi://Rsvg?version=2.0' {
              */
             CH,
         }
+
         const HAVE_CSS: boolean;
         const HAVE_PIXBUF: number;
         const HAVE_SVGZ: boolean;
@@ -288,21 +276,15 @@ declare module 'gi://Rsvg?version=2.0' {
         interface SizeFunc {
             (): void;
         }
-        /**
-         * Configuration flags for an [class`Rsvg`.Handle].  Note that not all of [class`Rsvg`.Handle]'s
-         * constructors let you specify flags.  For this reason, [ctor`Rsvg`.Handle.new_from_gfile_sync]
-         * and [ctor`Rsvg`.Handle.new_from_stream_sync] are the preferred ways to create a handle.
-         */
-
-        /**
-         * Configuration flags for an [class`Rsvg`.Handle].  Note that not all of [class`Rsvg`.Handle]'s
-         * constructors let you specify flags.  For this reason, [ctor`Rsvg`.Handle.new_from_gfile_sync]
-         * and [ctor`Rsvg`.Handle.new_from_stream_sync] are the preferred ways to create a handle.
-         */
         export namespace HandleFlags {
             export const $gtype: GObject.GType<HandleFlags>;
         }
 
+        /**
+         * Configuration flags for an [class`Rsvg`.Handle].  Note that not all of [class`Rsvg`.Handle]'s
+         * constructors let you specify flags.  For this reason, [ctor`Rsvg`.Handle.new_from_gfile_sync]
+         * and [ctor`Rsvg`.Handle.new_from_stream_sync] are the preferred ways to create a handle.
+         */
         enum HandleFlags {
             /**
              * No flags are set.
@@ -326,6 +308,7 @@ declare module 'gi://Rsvg?version=2.0' {
              */
             FLAG_KEEP_IMAGE_DATA,
         }
+
         namespace Handle {
             // Signal signatures
             interface SignalSignatures extends GObject.Object.SignalSignatures {

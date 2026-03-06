@@ -47,17 +47,13 @@ declare module 'gi://WebKit2WebExtension?version=4.1' {
          * WebKit2WebExtension-4.1
          */
 
-        /**
-         * Enum values used to denote the various levels of console messages.
-         */
-
-        /**
-         * Enum values used to denote the various levels of console messages.
-         */
         export namespace ConsoleMessageLevel {
             export const $gtype: GObject.GType<ConsoleMessageLevel>;
         }
 
+        /**
+         * Enum values used to denote the various levels of console messages.
+         */
         enum ConsoleMessageLevel {
             /**
              * Information message.
@@ -80,17 +76,14 @@ declare module 'gi://WebKit2WebExtension?version=4.1' {
              */
             DEBUG,
         }
-        /**
-         * Enum values used to denote the various sources of console messages.
-         */
 
-        /**
-         * Enum values used to denote the various sources of console messages.
-         */
         export namespace ConsoleMessageSource {
             export const $gtype: GObject.GType<ConsoleMessageSource>;
         }
 
+        /**
+         * Enum values used to denote the various sources of console messages.
+         */
         enum ConsoleMessageSource {
             /**
              * Message produced by JavaScript.
@@ -113,19 +106,11 @@ declare module 'gi://WebKit2WebExtension?version=4.1' {
              */
             OTHER,
         }
-        /**
-         * Enum values used to denote the stock actions for
-         * #WebKitContextMenuItem<!-- -->s
-         */
 
         /**
          * Enum values used to denote the stock actions for
          * #WebKitContextMenuItem<!-- -->s
          */
-        export namespace ContextMenuAction {
-            export const $gtype: GObject.GType<ContextMenuAction>;
-        }
-
         enum ContextMenuAction {
             /**
              * No action, used by separator menu items.
@@ -316,19 +301,15 @@ declare module 'gi://WebKit2WebExtension?version=4.1' {
              */
             CUSTOM,
         }
-        /**
-         * Used to indicate a particular stage in form submission. See
-         * #WebKitWebPage::will-submit-form.
-         */
 
-        /**
-         * Used to indicate a particular stage in form submission. See
-         * #WebKitWebPage::will-submit-form.
-         */
         export namespace FormSubmissionStep {
             export const $gtype: GObject.GType<FormSubmissionStep>;
         }
 
+        /**
+         * Used to indicate a particular stage in form submission. See
+         * #WebKitWebPage::will-submit-form.
+         */
         enum FormSubmissionStep {
             /**
              * indicates the form's
@@ -341,23 +322,17 @@ declare module 'gi://WebKit2WebExtension?version=4.1' {
              */
             COMPLETE,
         }
-        /**
-         * Enum values used to denote errors happening when sending user messages.
-         */
 
         /**
          * Enum values used to denote errors happening when sending user messages.
          */
-        export namespace UserMessageError {
-            export const $gtype: GObject.GType<UserMessageError>;
-        }
-
         enum UserMessageError {
             /**
              * The message was not handled by the receiver.
              */
             USER_MESSAGE_UNHANDLED_MESSAGE,
         }
+
         const DOM_CSS_RULE_CHARSET_RULE: number;
         const DOM_CSS_RULE_FONT_FACE_RULE: number;
         const DOM_CSS_RULE_IMPORT_RULE: number;
@@ -507,14 +482,6 @@ declare module 'gi://WebKit2WebExtension?version=4.1' {
         /**
          * Enum values with flags representing the context of a #WebKitHitTestResult.
          */
-
-        /**
-         * Enum values with flags representing the context of a #WebKitHitTestResult.
-         */
-        export namespace HitTestResultContext {
-            export const $gtype: GObject.GType<HitTestResultContext>;
-        }
-
         enum HitTestResultContext {
             /**
              * anywhere in the document.
@@ -545,6 +512,7 @@ declare module 'gi://WebKit2WebExtension?version=4.1' {
              */
             SELECTION,
         }
+
         namespace ContextMenu {
             // Signal signatures
             interface SignalSignatures extends GObject.Object.SignalSignatures {}

@@ -24,17 +24,13 @@ declare module 'gi://GCab?version=1.0' {
          * GCab-1.0
          */
 
-        /**
-         * Compression used by the #GCabFolder.
-         */
-
-        /**
-         * Compression used by the #GCabFolder.
-         */
         export namespace Compression {
             export const $gtype: GObject.GType<Compression>;
         }
 
+        /**
+         * Compression used by the #GCabFolder.
+         */
         enum Compression {
             /**
              * No compression.
@@ -57,11 +53,12 @@ declare module 'gi://GCab?version=1.0' {
              */
             MASK,
         }
+
         /**
          * The various errors triggered by the GCab functions.
          */
         class Error extends GLib.Error {
-            static $gtype: GObject.GType<Error>;
+            static $gtype: GObject.GType<GLib.Error>;
 
             // Static fields
 
@@ -87,17 +84,13 @@ declare module 'gi://GCab?version=1.0' {
             constructor(options: { message: string; code: number });
         }
 
-        /**
-         * Attributes associated with the #GCabFile.
-         */
-
-        /**
-         * Attributes associated with the #GCabFile.
-         */
         export namespace FileAttribute {
             export const $gtype: GObject.GType<FileAttribute>;
         }
 
+        /**
+         * Attributes associated with the #GCabFile.
+         */
         enum FileAttribute {
             /**
              * file is read-only
@@ -124,6 +117,7 @@ declare module 'gi://GCab?version=1.0' {
              */
             NAME_IS_UTF,
         }
+
         function error_quark(): GLib.Quark;
         interface FileCallback {
             (file: File): boolean;

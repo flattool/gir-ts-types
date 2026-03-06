@@ -30,17 +30,6 @@ declare module 'gi://GstMpegts?version=1.0' {
          *
          * Consult the relevant specifications for more details.
          */
-
-        /**
-         * These values correspond to the registered descriptor type from
-         * the various ATSC specifications.
-         *
-         * Consult the relevant specifications for more details.
-         */
-        export namespace ATSCDescriptorType {
-            export const $gtype: GObject.GType<ATSCDescriptorType>;
-        }
-
         enum ATSCDescriptorType {
             STUFFING,
             AC3,
@@ -65,21 +54,12 @@ declare module 'gi://GstMpegts?version=1.0' {
             CRC32,
             GROUP_LINK,
         }
-        /**
-         * Type of mpeg-ts streams for ATSC, as defined by the ATSC Code Points
-         * Registry. For convenience, some stream types from %GstMpegtsScteStreamType
-         * are also included.
-         */
 
         /**
          * Type of mpeg-ts streams for ATSC, as defined by the ATSC Code Points
          * Registry. For convenience, some stream types from %GstMpegtsScteStreamType
          * are also included.
          */
-        export namespace ATSCStreamType {
-            export const $gtype: GObject.GType<ATSCStreamType>;
-        }
-
         enum ATSCStreamType {
             /**
              * DigiCipher II video | Identical to ITU-T Rec. H.262 | ISO/IEC 13818-2 Video
@@ -111,10 +91,6 @@ declare module 'gi://GstMpegts?version=1.0' {
             AUDIO_DTS_HD,
         }
 
-        export namespace AtscMGTTableType {
-            export const $gtype: GObject.GType<AtscMGTTableType>;
-        }
-
         enum AtscMGTTableType {
             EIT0,
             EIT127,
@@ -122,18 +98,10 @@ declare module 'gi://GstMpegts?version=1.0' {
             ETT127,
         }
 
-        export namespace CableOuterFECScheme {
-            export const $gtype: GObject.GType<CableOuterFECScheme>;
-        }
-
         enum CableOuterFECScheme {
             UNDEFINED,
             NONE,
             RS_204_188,
-        }
-
-        export namespace ComponentStreamContent {
-            export const $gtype: GObject.GType<ComponentStreamContent>;
         }
 
         enum ComponentStreamContent {
@@ -145,10 +113,6 @@ declare module 'gi://GstMpegts?version=1.0' {
             AAC,
             DTS,
             SRM_CPCM,
-        }
-
-        export namespace ContentNibbleHi {
-            export const $gtype: GObject.GType<ContentNibbleHi>;
         }
 
         enum ContentNibbleHi {
@@ -163,10 +127,6 @@ declare module 'gi://GstMpegts?version=1.0' {
             EDUCATION_SCIENCE_FACTUAL,
             LEISURE_HOBBIES,
             SPECIAL_CHARACTERISTICS,
-        }
-
-        export namespace DVBCodeRate {
-            export const $gtype: GObject.GType<DVBCodeRate>;
         }
 
         enum DVBCodeRate {
@@ -184,14 +144,6 @@ declare module 'gi://GstMpegts?version=1.0' {
             '9_10',
             '2_5',
         }
-        /**
-         * The type of #GstMpegtsDescriptor
-         *
-         * These values correspond to the registered descriptor type from
-         * the various DVB specifications.
-         *
-         * Consult the relevant specifications for more details.
-         */
 
         /**
          * The type of #GstMpegtsDescriptor
@@ -201,10 +153,6 @@ declare module 'gi://GstMpegts?version=1.0' {
          *
          * Consult the relevant specifications for more details.
          */
-        export namespace DVBDescriptorType {
-            export const $gtype: GObject.GType<DVBDescriptorType>;
-        }
-
         enum DVBDescriptorType {
             NETWORK_NAME,
             SERVICE_LIST,
@@ -276,14 +224,6 @@ declare module 'gi://GstMpegts?version=1.0' {
             FTA_CONTENT_MANAGEMENT,
             EXTENSION,
         }
-        /**
-         * The type of #GstMpegtsDescriptor
-         *
-         * These values correspond to the registered extended descriptor
-         * type from the various DVB specifications.
-         *
-         * Consult the relevant specifications for more details.
-         */
 
         /**
          * The type of #GstMpegtsDescriptor
@@ -293,10 +233,6 @@ declare module 'gi://GstMpegts?version=1.0' {
          *
          * Consult the relevant specifications for more details.
          */
-        export namespace DVBExtendedDescriptorType {
-            export const $gtype: GObject.GType<DVBExtendedDescriptorType>;
-        }
-
         enum DVBExtendedDescriptorType {
             IMAGE_ICON,
             CPCM_DELIVERY_SIGNALLING,
@@ -324,27 +260,16 @@ declare module 'gi://GstMpegts?version=1.0' {
             AUDIO_PRESELECTION,
         }
 
-        export namespace DVBLinkageHandOverType {
-            export const $gtype: GObject.GType<DVBLinkageHandOverType>;
-        }
-
         enum DVBLinkageHandOverType {
             RESERVED,
             IDENTICAL,
             LOCAL_VARIATION,
             ASSOCIATED,
         }
-        /**
-         * Linkage Type (EN 300 468 v.1.13.1)
-         */
 
         /**
          * Linkage Type (EN 300 468 v.1.13.1)
          */
-        export namespace DVBLinkageType {
-            export const $gtype: GObject.GType<DVBLinkageType>;
-        }
-
         enum DVBLinkageType {
             RESERVED_00,
             INFORMATION,
@@ -363,10 +288,6 @@ declare module 'gi://GstMpegts?version=1.0' {
             EXTENDED_EVENT,
         }
 
-        export namespace DVBScramblingModeType {
-            export const $gtype: GObject.GType<DVBScramblingModeType>;
-        }
-
         enum DVBScramblingModeType {
             RESERVED,
             CSA1,
@@ -378,21 +299,12 @@ declare module 'gi://GstMpegts?version=1.0' {
             ATIS_0,
             ATIS_F,
         }
-        /**
-         * The type of service of a channel.
-         *
-         * As specified in Table 87 of ETSI EN 300 468 v1.13.1
-         */
 
         /**
          * The type of service of a channel.
          *
          * As specified in Table 87 of ETSI EN 300 468 v1.13.1
          */
-        export namespace DVBServiceType {
-            export const $gtype: GObject.GType<DVBServiceType>;
-        }
-
         enum DVBServiceType {
             RESERVED_00,
             DIGITAL_TELEVISION,
@@ -423,21 +335,12 @@ declare module 'gi://GstMpegts?version=1.0' {
             ADVANCED_CODEC_STEREO_HD_NVOD_REFERENCE,
             RESERVED_FF,
         }
-        /**
-         * The type of teletext page.
-         *
-         * As specified in Table 100 of ETSI EN 300 468 v1.13.1
-         */
 
         /**
          * The type of teletext page.
          *
          * As specified in Table 100 of ETSI EN 300 468 v1.13.1
          */
-        export namespace DVBTeletextType {
-            export const $gtype: GObject.GType<DVBTeletextType>;
-        }
-
         enum DVBTeletextType {
             NITIAL_PAGE,
             UBTITLE_PAGE,
@@ -445,14 +348,6 @@ declare module 'gi://GstMpegts?version=1.0' {
             ROGRAMME_SCHEDULE_PAGE,
             EARING_IMPAIRED_PAGE,
         }
-        /**
-         * The type of #GstMpegtsDescriptor
-         *
-         * These values correspond to the registered descriptor type from
-         * the base MPEG-TS specifications (ITU H.222.0 | ISO/IEC 13818-1).
-         *
-         * Consult the relevant specifications for more details.
-         */
 
         /**
          * The type of #GstMpegtsDescriptor
@@ -462,10 +357,6 @@ declare module 'gi://GstMpegts?version=1.0' {
          *
          * Consult the relevant specifications for more details.
          */
-        export namespace DescriptorType {
-            export const $gtype: GObject.GType<DescriptorType>;
-        }
-
         enum DescriptorType {
             RESERVED_00,
             RESERVED_01,
@@ -526,14 +417,6 @@ declare module 'gi://GstMpegts?version=1.0' {
              */
             EXTENSION,
         }
-        /**
-         * The type of an extended descriptor
-         *
-         * The values correpond to the registered extended descriptor types from the
-         * base ISO 13818 / ITU H.222.0 specifications
-         *
-         * Consult the specification for more details
-         */
 
         /**
          * The type of an extended descriptor
@@ -543,26 +426,14 @@ declare module 'gi://GstMpegts?version=1.0' {
          *
          * Consult the specification for more details
          */
-        export namespace ExtendedDescriptorType {
-            export const $gtype: GObject.GType<ExtendedDescriptorType>;
-        }
-
         enum ExtendedDescriptorType {
             MTS_DESC_EXT_JXS_VIDEO,
         }
-        /**
-         * Type of mpeg-ts streams for Blu-ray formats. To be matched with the
-         * stream-type of a #GstMpegtsSection.
-         */
 
         /**
          * Type of mpeg-ts streams for Blu-ray formats. To be matched with the
          * stream-type of a #GstMpegtsSection.
          */
-        export namespace HdmvStreamType {
-            export const $gtype: GObject.GType<HdmvStreamType>;
-        }
-
         enum HdmvStreamType {
             AUDIO_LPCM,
             AUDIO_AC3,
@@ -578,12 +449,6 @@ declare module 'gi://GstMpegts?version=1.0' {
             AUDIO_AC3_PLUS_SECONDARY,
             AUDIO_DTS_HD_SECONDARY,
         }
-        /**
-         * These values correspond to the registered descriptor type from
-         * the various ISDB specifications.
-         *
-         * Consult the relevant specifications for more details.
-         */
 
         /**
          * These values correspond to the registered descriptor type from
@@ -591,10 +456,6 @@ declare module 'gi://GstMpegts?version=1.0' {
          *
          * Consult the relevant specifications for more details.
          */
-        export namespace ISDBDescriptorType {
-            export const $gtype: GObject.GType<ISDBDescriptorType>;
-        }
-
         enum ISDBDescriptorType {
             HIERARCHICAL_TRANSMISSION,
             DIGITAL_COPY_CONTROL,
@@ -630,23 +491,12 @@ declare module 'gi://GstMpegts?version=1.0' {
             SERVICE_GROUP,
         }
 
-        export namespace Iso639AudioType {
-            export const $gtype: GObject.GType<Iso639AudioType>;
-        }
-
         enum Iso639AudioType {
             UNDEFINED,
             CLEAN_EFFECTS,
             HEARING_IMPAIRED,
             VISUAL_IMPAIRED_COMMENTARY,
         }
-        /**
-         * `GST_MPEGTS_METADATA_APPLICATION_FORMAT_ISAN` ISO 15706-1 (ISAN) encoded in its binary form
-         * `GST_MPEGTS_METADATA_APPLICATION_FORMAT_VSAN` ISO 15706-2 (V-ISAN) encoded in its binary form
-         * `GST_MPEGTS_METADATA_APPLICATION_FORMAT_IDENTIFIER_FIELD` Defined by the metadata_application_format_identifier field
-         *
-         * metadata_application_format valid values. See ISO/IEC 13818-1:2023(E) Table 2-84.
-         */
 
         /**
          * `GST_MPEGTS_METADATA_APPLICATION_FORMAT_ISAN` ISO 15706-1 (ISAN) encoded in its binary form
@@ -655,26 +505,15 @@ declare module 'gi://GstMpegts?version=1.0' {
          *
          * metadata_application_format valid values. See ISO/IEC 13818-1:2023(E) Table 2-84.
          */
-        export namespace MetadataApplicationFormat {
-            export const $gtype: GObject.GType<MetadataApplicationFormat>;
-        }
-
         enum MetadataApplicationFormat {
             ISAN,
             VSAN,
             IDENTIFIER_FIELD,
         }
-        /**
-         * metadata_descriptor metadata_format valid values. See ISO/IEC 13818-1:2018(E) Table 2-85.
-         */
 
         /**
          * metadata_descriptor metadata_format valid values. See ISO/IEC 13818-1:2018(E) Table 2-85.
          */
-        export namespace MetadataFormat {
-            export const $gtype: GObject.GType<MetadataFormat>;
-        }
-
         enum MetadataFormat {
             /**
              * ISO/IEC 15938-1 TeM.
@@ -693,12 +532,6 @@ declare module 'gi://GstMpegts?version=1.0' {
              */
             IDENTIFIER_FIELD,
         }
-        /**
-         * The type of #GstMpegtsDescriptor
-         *
-         * These values correspond to miscellaneous descriptor types that are
-         * not yet identified from known specifications.
-         */
 
         /**
          * The type of #GstMpegtsDescriptor
@@ -706,16 +539,8 @@ declare module 'gi://GstMpegts?version=1.0' {
          * These values correspond to miscellaneous descriptor types that are
          * not yet identified from known specifications.
          */
-        export namespace MiscDescriptorType {
-            export const $gtype: GObject.GType<MiscDescriptorType>;
-        }
-
         enum MiscDescriptorType {
             MTS_DESC_DTG_LOGICAL_CHANNEL,
-        }
-
-        export namespace ModulationType {
-            export const $gtype: GObject.GType<ModulationType>;
         }
 
         enum ModulationType {
@@ -735,21 +560,12 @@ declare module 'gi://GstMpegts?version=1.0' {
             QAM_4_NR_,
             NONE,
         }
-        /**
-         * Running status of a service.
-         *
-         * Corresponds to table 6 of ETSI EN 300 468 (v1.13.0)
-         */
 
         /**
          * Running status of a service.
          *
          * Corresponds to table 6 of ETSI EN 300 468 (v1.13.0)
          */
-        export namespace RunningStatus {
-            export const $gtype: GObject.GType<RunningStatus>;
-        }
-
         enum RunningStatus {
             UNDEFINED,
             NOT_RUNNING,
@@ -758,17 +574,10 @@ declare module 'gi://GstMpegts?version=1.0' {
             RUNNING,
             OFF_AIR,
         }
-        /**
-         * These values correspond to the ones defined by SCTE (amongst other in ANSI/SCTE 57)
-         */
 
         /**
          * These values correspond to the ones defined by SCTE (amongst other in ANSI/SCTE 57)
          */
-        export namespace SCTEDescriptorType {
-            export const $gtype: GObject.GType<SCTEDescriptorType>;
-        }
-
         enum SCTEDescriptorType {
             STUFFING,
             AC3,
@@ -780,10 +589,6 @@ declare module 'gi://GstMpegts?version=1.0' {
             TRANSPORT_STREAM_ID,
         }
 
-        export namespace SCTESpliceCommandType {
-            export const $gtype: GObject.GType<SCTESpliceCommandType>;
-        }
-
         enum SCTESpliceCommandType {
             NULL,
             SCHEDULE,
@@ -791,10 +596,6 @@ declare module 'gi://GstMpegts?version=1.0' {
             TIME,
             BANDWIDTH,
             PRIVATE,
-        }
-
-        export namespace SCTESpliceDescriptor {
-            export const $gtype: GObject.GType<SCTESpliceDescriptor>;
         }
 
         enum SCTESpliceDescriptor {
@@ -805,16 +606,13 @@ declare module 'gi://GstMpegts?version=1.0' {
             AUDIO,
         }
 
-        export namespace SatellitePolarizationType {
-            export const $gtype: GObject.GType<SatellitePolarizationType>;
-        }
-
         enum SatellitePolarizationType {
             LINEAR_HORIZONTAL,
             LINEAR_VERTICAL,
             CIRCULAR_LEFT,
             CIRCULAR_RIGHT,
         }
+
         class SatelliteRolloff {
             static $gtype: GObject.GType<SatelliteRolloff>;
 
@@ -831,15 +629,6 @@ declare module 'gi://GstMpegts?version=1.0' {
          * Type of mpeg-ts streams for SCTE. Most users would want to use the
          * #GstMpegtsATSCStreamType instead since it also covers these stream types
          */
-
-        /**
-         * Type of mpeg-ts streams for SCTE. Most users would want to use the
-         * #GstMpegtsATSCStreamType instead since it also covers these stream types
-         */
-        export namespace ScteStreamType {
-            export const $gtype: GObject.GType<ScteStreamType>;
-        }
-
         enum ScteStreamType {
             /**
              * SCTE-27 Subtitling
@@ -877,14 +666,6 @@ declare module 'gi://GstMpegts?version=1.0' {
              */
             ASYNC_DATA,
         }
-        /**
-         * Values for a #GstMpegtsSection table_id.
-         *
-         * These are the registered ATSC section `table_id` variants. Unless specified
-         * otherwise, they are defined in the "ATSC A/65" specification.
-         *
-         * see also: #GstMpegtsSectionTableID and other variants.
-         */
 
         /**
          * Values for a #GstMpegtsSection table_id.
@@ -894,10 +675,6 @@ declare module 'gi://GstMpegts?version=1.0' {
          *
          * see also: #GstMpegtsSectionTableID and other variants.
          */
-        export namespace SectionATSCTableID {
-            export const $gtype: GObject.GType<SectionATSCTableID>;
-        }
-
         enum SectionATSCTableID {
             /**
              * Master Guide Table (MGT)
@@ -963,14 +740,6 @@ declare module 'gi://GstMpegts?version=1.0' {
              */
             SATELLITE_VIRTUAL_CHANNEL,
         }
-        /**
-         * Values for a #GstMpegtsSection table_id.
-         *
-         * These are the registered DVB table_id variants. Unless specified otherwise,
-         * they come from the DVB Specification for SI (ETSI EN 300 468).
-         *
-         * see also: #GstMpegtsSectionTableID
-         */
 
         /**
          * Values for a #GstMpegtsSection table_id.
@@ -980,10 +749,6 @@ declare module 'gi://GstMpegts?version=1.0' {
          *
          * see also: #GstMpegtsSectionTableID
          */
-        export namespace SectionDVBTableID {
-            export const $gtype: GObject.GType<SectionDVBTableID>;
-        }
-
         enum SectionDVBTableID {
             /**
              * Network Information Table (NIT), Actual Network
@@ -1120,13 +885,6 @@ declare module 'gi://GstMpegts?version=1.0' {
             TIM,
             LL_FEC_PARITY_DATA_TABLE,
         }
-        /**
-         * Values for a #GstMpegtsSection table_id.
-         *
-         * These are the registered SCTE table_id variants.
-         *
-         * see also: #GstMpegtsSectionTableID
-         */
 
         /**
          * Values for a #GstMpegtsSection table_id.
@@ -1135,10 +893,6 @@ declare module 'gi://GstMpegts?version=1.0' {
          *
          * see also: #GstMpegtsSectionTableID
          */
-        export namespace SectionSCTETableID {
-            export const $gtype: GObject.GType<SectionSCTETableID>;
-        }
-
         enum SectionSCTETableID {
             /**
              * SCTE-18 Emergency Alert System
@@ -1169,14 +923,6 @@ declare module 'gi://GstMpegts?version=1.0' {
              */
             SPLICE,
         }
-        /**
-         * Values for a #GstMpegtsSection table_id
-         *
-         * These are the registered ITU H.222.0 | ISO/IEC 13818-1 table_id variants.
-         *
-         * see also #GstMpegtsSectionATSCTableID, #GstMpegtsSectionDVBTableID, and
-         * #GstMpegtsSectionSCTETableID
-         */
 
         /**
          * Values for a #GstMpegtsSection table_id
@@ -1186,10 +932,6 @@ declare module 'gi://GstMpegts?version=1.0' {
          * see also #GstMpegtsSectionATSCTableID, #GstMpegtsSectionDVBTableID, and
          * #GstMpegtsSectionSCTETableID
          */
-        export namespace SectionTableID {
-            export const $gtype: GObject.GType<SectionTableID>;
-        }
-
         enum SectionTableID {
             /**
              * Program Association Table (PAT)
@@ -1264,21 +1006,12 @@ declare module 'gi://GstMpegts?version=1.0' {
              */
             UNSET,
         }
-        /**
-         * Types of #GstMpegtsSection that the library handles. This covers all the
-         * MPEG-TS and derivate specification that the library can properly identify and
-         * use.
-         */
 
         /**
          * Types of #GstMpegtsSection that the library handles. This covers all the
          * MPEG-TS and derivate specification that the library can properly identify and
          * use.
          */
-        export namespace SectionType {
-            export const $gtype: GObject.GType<SectionType>;
-        }
-
         enum SectionType {
             /**
              * Unknown section type
@@ -1361,15 +1094,6 @@ declare module 'gi://GstMpegts?version=1.0' {
              */
             SCTE_SIT,
         }
-        /**
-         * Type of MPEG-TS stream type.
-         *
-         * These values correspond to the base standard registered types. Depending
-         * on the variant of mpeg-ts being used (Bluray, ATSC, DVB, ...), other
-         * types might also be used, but will not conflict with these.
-         *
-         * Corresponds to table 2-34 of ITU H.222.0 | ISO/IEC 13818-1
-         */
 
         /**
          * Type of MPEG-TS stream type.
@@ -1380,10 +1104,6 @@ declare module 'gi://GstMpegts?version=1.0' {
          *
          * Corresponds to table 2-34 of ITU H.222.0 | ISO/IEC 13818-1
          */
-        export namespace StreamType {
-            export const $gtype: GObject.GType<StreamType>;
-        }
-
         enum StreamType {
             /**
              * ITU-T | ISO/IEC Reserved
@@ -1578,10 +1298,6 @@ declare module 'gi://GstMpegts?version=1.0' {
             USER_PRIVATE_EA,
         }
 
-        export namespace TerrestrialGuardInterval {
-            export const $gtype: GObject.GType<TerrestrialGuardInterval>;
-        }
-
         enum TerrestrialGuardInterval {
             '1_32',
             '1_16',
@@ -1595,6 +1311,7 @@ declare module 'gi://GstMpegts?version=1.0' {
             PN595,
             PN945,
         }
+
         class TerrestrialHierarchy {
             static $gtype: GObject.GType<TerrestrialHierarchy>;
 
@@ -1605,10 +1322,6 @@ declare module 'gi://GstMpegts?version=1.0' {
             static '2': number;
             static '4': number;
             static AUTO: number;
-        }
-
-        export namespace TerrestrialTransmissionMode {
-            export const $gtype: GObject.GType<TerrestrialTransmissionMode>;
         }
 
         enum TerrestrialTransmissionMode {
@@ -1622,6 +1335,7 @@ declare module 'gi://GstMpegts?version=1.0' {
             C1,
             C3780,
         }
+
         /**
          * Creates and adds a #GstMpegtsPESMetadataMeta to a `buffer`.
          * @param buffer a #GstBuffer
@@ -1861,13 +1575,6 @@ declare module 'gi://GstMpegts?version=1.0' {
         interface PacketizeFunc {
             (section: Section): boolean;
         }
-        /**
-         * Well-known registration ids, expressed as native-endian 32bit integers. These
-         * are used in descriptors of type %GST_MTS_DESC_REGISTRATION. Unless specified
-         * otherwise (by use of the "OTHER" prefix), they are all registered by the
-         * [SMPTE Registration Authority](https://smpte-ra.org/) or specified in
-         * "official" documentation for the given format.
-         */
         /**
          * Well-known registration ids, expressed as native-endian 32bit integers. These
          * are used in descriptors of type %GST_MTS_DESC_REGISTRATION. Unless specified

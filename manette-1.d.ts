@@ -26,21 +26,15 @@ declare module 'gi://Manette?version=1' {
          * Manette-1
          */
 
-        /**
-         * Describes available axes a [class`Device]` can have.
-         *
-         * More values may be added to this enumeration over time.
-         */
-
-        /**
-         * Describes available axes a [class`Device]` can have.
-         *
-         * More values may be added to this enumeration over time.
-         */
         export namespace Axis {
             export const $gtype: GObject.GType<Axis>;
         }
 
+        /**
+         * Describes available axes a [class`Device]` can have.
+         *
+         * More values may be added to this enumeration over time.
+         */
         enum Axis {
             /**
              * Left analog stick, horizontal axis
@@ -67,21 +61,16 @@ declare module 'gi://Manette?version=1' {
              */
             RIGHT_TRIGGER,
         }
-        /**
-         * Describes available buttons a [class`Device]` can have.
-         *
-         * More values may be added to this enumeration over time.
-         */
 
-        /**
-         * Describes available buttons a [class`Device]` can have.
-         *
-         * More values may be added to this enumeration over time.
-         */
         export namespace Button {
             export const $gtype: GObject.GType<Button>;
         }
 
+        /**
+         * Describes available buttons a [class`Device]` can have.
+         *
+         * More values may be added to this enumeration over time.
+         */
         enum Button {
             /**
              * D-pad (up)
@@ -197,21 +186,16 @@ declare module 'gi://Manette?version=1' {
              */
             TOUCHPAD,
         }
-        /**
-         * Describes available types of a [class`Device]`.
-         *
-         * More values may be added to this enumeration over time.
-         */
 
-        /**
-         * Describes available types of a [class`Device]`.
-         *
-         * More values may be added to this enumeration over time.
-         */
         export namespace DeviceType {
             export const $gtype: GObject.GType<DeviceType>;
         }
 
+        /**
+         * Describes available types of a [class`Device]`.
+         *
+         * More values may be added to this enumeration over time.
+         */
         enum DeviceType {
             /**
              * Generic gamepads
@@ -222,6 +206,7 @@ declare module 'gi://Manette?version=1' {
              */
             STEAM_DECK,
         }
+
         /**
          * libmanette major version component (e.g. 1 if the version is 1.2.3).
          */

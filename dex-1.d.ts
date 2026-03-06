@@ -33,8 +33,9 @@ declare module 'gi://Dex?version=1' {
             CATCH,
             FINALLY,
         }
+
         class Error extends GLib.Error {
-            static $gtype: GObject.GType<Error>;
+            static $gtype: GObject.GType<GLib.Error>;
 
             // Static fields
 
@@ -64,6 +65,7 @@ declare module 'gi://Dex?version=1' {
             RESOLVED,
             REJECTED,
         }
+
         /**
          * An asynchronous `pread()` wrapper.
          *
@@ -525,14 +527,6 @@ declare module 'gi://Dex?version=1' {
         /**
          * Flags describing the behavior of a #GDBusInterfaceSkeleton instance.
          */
-
-        /**
-         * Flags describing the behavior of a #GDBusInterfaceSkeleton instance.
-         */
-        export namespace DBusInterfaceSkeletonFlags {
-            export const $gtype: GObject.GType<DBusInterfaceSkeletonFlags>;
-        }
-
         enum DBusInterfaceSkeletonFlags {
             /**
              * No flags set.
@@ -547,6 +541,7 @@ declare module 'gi://Dex?version=1' {
              */
             HANDLE_METHOD_INVOCATIONS_IN_FIBER,
         }
+
         namespace AsyncPair {
             // Signal signatures
             interface SignalSignatures extends Future.SignalSignatures {}

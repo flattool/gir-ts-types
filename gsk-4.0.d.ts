@@ -41,29 +41,19 @@ declare module 'gi://Gsk?version=4.0' {
          * Gsk-4.0
          */
 
-        /**
-         * The blend modes available for render nodes.
-         *
-         * The implementation of each blend mode is deferred to the
-         * rendering pipeline.
-         *
-         * See <https://www.w3.org/TR/compositing-1/#blending> for more information
-         * on blending and blend modes.
-         */
-
-        /**
-         * The blend modes available for render nodes.
-         *
-         * The implementation of each blend mode is deferred to the
-         * rendering pipeline.
-         *
-         * See <https://www.w3.org/TR/compositing-1/#blending> for more information
-         * on blending and blend modes.
-         */
         export namespace BlendMode {
             export const $gtype: GObject.GType<BlendMode>;
         }
 
+        /**
+         * The blend modes available for render nodes.
+         *
+         * The implementation of each blend mode is deferred to the
+         * rendering pipeline.
+         *
+         * See <https://www.w3.org/TR/compositing-1/#blending> for more information
+         * on blending and blend modes.
+         */
         enum BlendMode {
             /**
              * The default blend mode, which specifies no blending
@@ -133,17 +123,14 @@ declare module 'gi://Gsk?version=4.0' {
              */
             LUMINOSITY,
         }
-        /**
-         * The corner indices used by `GskRoundedRect`.
-         */
 
-        /**
-         * The corner indices used by `GskRoundedRect`.
-         */
         export namespace Corner {
             export const $gtype: GObject.GType<Corner>;
         }
 
+        /**
+         * The corner indices used by `GskRoundedRect`.
+         */
         enum Corner {
             /**
              * The top left corner
@@ -162,39 +149,25 @@ declare module 'gi://Gsk?version=4.0' {
              */
             BOTTOM_LEFT,
         }
-        /**
-         * Specifies how paths are filled.
-         *
-         * Whether or not a point is included in the fill is determined by taking
-         * a ray from that point to infinity and looking at intersections with the
-         * path. The ray can be in any direction, as long as it doesn't pass through
-         * the end point of a segment or have a tricky intersection such as
-         * intersecting tangent to the path.
-         *
-         * (Note that filling is not actually implemented in this way. This
-         * is just a description of the rule that is applied.)
-         *
-         * New entries may be added in future versions.
-         */
 
-        /**
-         * Specifies how paths are filled.
-         *
-         * Whether or not a point is included in the fill is determined by taking
-         * a ray from that point to infinity and looking at intersections with the
-         * path. The ray can be in any direction, as long as it doesn't pass through
-         * the end point of a segment or have a tricky intersection such as
-         * intersecting tangent to the path.
-         *
-         * (Note that filling is not actually implemented in this way. This
-         * is just a description of the rule that is applied.)
-         *
-         * New entries may be added in future versions.
-         */
         export namespace FillRule {
             export const $gtype: GObject.GType<FillRule>;
         }
 
+        /**
+         * Specifies how paths are filled.
+         *
+         * Whether or not a point is included in the fill is determined by taking
+         * a ray from that point to infinity and looking at intersections with the
+         * path. The ray can be in any direction, as long as it doesn't pass through
+         * the end point of a segment or have a tricky intersection such as
+         * intersecting tangent to the path.
+         *
+         * (Note that filling is not actually implemented in this way. This
+         * is just a description of the rule that is applied.)
+         *
+         * New entries may be added in future versions.
+         */
         enum FillRule {
             /**
              * If the path crosses the ray from
@@ -212,23 +185,17 @@ declare module 'gi://Gsk?version=4.0' {
              */
             EVEN_ODD,
         }
-        /**
-         * Defines the types of the uniforms that `GskGLShaders` declare.
-         *
-         * It defines both what the type is called in the GLSL shader
-         * code, and what the corresponding C type is on the Gtk side.
-         */
 
-        /**
-         * Defines the types of the uniforms that `GskGLShaders` declare.
-         *
-         * It defines both what the type is called in the GLSL shader
-         * code, and what the corresponding C type is on the Gtk side.
-         */
         export namespace GLUniformType {
             export const $gtype: GObject.GType<GLUniformType>;
         }
 
+        /**
+         * Defines the types of the uniforms that `GskGLShaders` declare.
+         *
+         * It defines both what the type is called in the GLSL shader
+         * code, and what the corresponding C type is on the Gtk side.
+         */
         enum GLUniformType {
             /**
              * No type, used for uninitialized or unspecified values.
@@ -263,43 +230,27 @@ declare module 'gi://Gsk?version=4.0' {
              */
             VEC4,
         }
-        /**
-         * Specifies how to render the start and end points of contours or
-         * dashes when stroking.
-         *
-         * The default line cap style is `GSK_LINE_CAP_BUTT`.
-         *
-         * New entries may be added in future versions.
-         *
-         * <figure>
-         *   <picture>
-         *     <source srcset="caps-dark.png" media="(prefers-color-scheme: dark)">
-         *     <img alt="Line Cap Styles" src="caps-light.png">
-         *   </picture>
-         *   <figcaption>GSK_LINE_CAP_BUTT, GSK_LINE_CAP_ROUND, GSK_LINE_CAP_SQUARE</figcaption>
-         * </figure>
-         */
 
-        /**
-         * Specifies how to render the start and end points of contours or
-         * dashes when stroking.
-         *
-         * The default line cap style is `GSK_LINE_CAP_BUTT`.
-         *
-         * New entries may be added in future versions.
-         *
-         * <figure>
-         *   <picture>
-         *     <source srcset="caps-dark.png" media="(prefers-color-scheme: dark)">
-         *     <img alt="Line Cap Styles" src="caps-light.png">
-         *   </picture>
-         *   <figcaption>GSK_LINE_CAP_BUTT, GSK_LINE_CAP_ROUND, GSK_LINE_CAP_SQUARE</figcaption>
-         * </figure>
-         */
         export namespace LineCap {
             export const $gtype: GObject.GType<LineCap>;
         }
 
+        /**
+         * Specifies how to render the start and end points of contours or
+         * dashes when stroking.
+         *
+         * The default line cap style is `GSK_LINE_CAP_BUTT`.
+         *
+         * New entries may be added in future versions.
+         *
+         * <figure>
+         *   <picture>
+         *     <source srcset="caps-dark.png" media="(prefers-color-scheme: dark)">
+         *     <img alt="Line Cap Styles" src="caps-light.png">
+         *   </picture>
+         *   <figcaption>GSK_LINE_CAP_BUTT, GSK_LINE_CAP_ROUND, GSK_LINE_CAP_SQUARE</figcaption>
+         * </figure>
+         */
         enum LineCap {
             /**
              * Start and stop the line exactly at the start
@@ -317,41 +268,26 @@ declare module 'gi://Gsk?version=4.0' {
              */
             SQUARE,
         }
-        /**
-         * Specifies how to render the junction of two lines when stroking.
-         *
-         * The default line join style is `GSK_LINE_JOIN_MITER`.
-         *
-         * New entries may be added in future versions.
-         *
-         * <figure>
-         *   <picture>
-         *     <source srcset="join-dark.png" media="(prefers-color-scheme: dark)">
-         *     <img alt="Line Join Styles" src="join-light.png">
-         *   </picture>
-         *   <figcaption>GSK_LINE_JOINT_MITER, GSK_LINE_JOINT_ROUND, GSK_LINE_JOIN_BEVEL</figcaption>
-         * </figure>
-         */
 
-        /**
-         * Specifies how to render the junction of two lines when stroking.
-         *
-         * The default line join style is `GSK_LINE_JOIN_MITER`.
-         *
-         * New entries may be added in future versions.
-         *
-         * <figure>
-         *   <picture>
-         *     <source srcset="join-dark.png" media="(prefers-color-scheme: dark)">
-         *     <img alt="Line Join Styles" src="join-light.png">
-         *   </picture>
-         *   <figcaption>GSK_LINE_JOINT_MITER, GSK_LINE_JOINT_ROUND, GSK_LINE_JOIN_BEVEL</figcaption>
-         * </figure>
-         */
         export namespace LineJoin {
             export const $gtype: GObject.GType<LineJoin>;
         }
 
+        /**
+         * Specifies how to render the junction of two lines when stroking.
+         *
+         * The default line join style is `GSK_LINE_JOIN_MITER`.
+         *
+         * New entries may be added in future versions.
+         *
+         * <figure>
+         *   <picture>
+         *     <source srcset="join-dark.png" media="(prefers-color-scheme: dark)">
+         *     <img alt="Line Join Styles" src="join-light.png">
+         *   </picture>
+         *   <figcaption>GSK_LINE_JOINT_MITER, GSK_LINE_JOINT_ROUND, GSK_LINE_JOIN_BEVEL</figcaption>
+         * </figure>
+         */
         enum LineJoin {
             /**
              * Use a sharp angled corner
@@ -368,17 +304,14 @@ declare module 'gi://Gsk?version=4.0' {
              */
             BEVEL,
         }
-        /**
-         * The mask modes available for mask nodes.
-         */
 
-        /**
-         * The mask modes available for mask nodes.
-         */
         export namespace MaskMode {
             export const $gtype: GObject.GType<MaskMode>;
         }
 
+        /**
+         * The mask modes available for mask nodes.
+         */
         enum MaskMode {
             /**
              * Use the alpha channel of the mask
@@ -399,35 +332,23 @@ declare module 'gi://Gsk?version=4.0' {
              */
             INVERTED_LUMINANCE,
         }
-        /**
-         * Used to pick one of the four tangents at a given point on the path.
-         *
-         * Note that the directions for `GSK_PATH_FROM_START/``GSK_PATH_TO_END` and
-         * `GSK_PATH_TO_START/``GSK_PATH_FROM_END` will coincide for smooth points.
-         * Only sharp turns will exhibit four different directions.
-         *
-         * <picture>
-         *   <source srcset="directions-dark.png" media="(prefers-color-scheme: dark)">
-         *   <img alt="Path Tangents" src="directions-light.png">
-         * </picture>
-         */
 
-        /**
-         * Used to pick one of the four tangents at a given point on the path.
-         *
-         * Note that the directions for `GSK_PATH_FROM_START/``GSK_PATH_TO_END` and
-         * `GSK_PATH_TO_START/``GSK_PATH_FROM_END` will coincide for smooth points.
-         * Only sharp turns will exhibit four different directions.
-         *
-         * <picture>
-         *   <source srcset="directions-dark.png" media="(prefers-color-scheme: dark)">
-         *   <img alt="Path Tangents" src="directions-light.png">
-         * </picture>
-         */
         export namespace PathDirection {
             export const $gtype: GObject.GType<PathDirection>;
         }
 
+        /**
+         * Used to pick one of the four tangents at a given point on the path.
+         *
+         * Note that the directions for `GSK_PATH_FROM_START/``GSK_PATH_TO_END` and
+         * `GSK_PATH_TO_START/``GSK_PATH_FROM_END` will coincide for smooth points.
+         * Only sharp turns will exhibit four different directions.
+         *
+         * <picture>
+         *   <source srcset="directions-dark.png" media="(prefers-color-scheme: dark)">
+         *   <img alt="Path Tangents" src="directions-light.png">
+         * </picture>
+         */
         enum PathDirection {
             /**
              * The tangent in path direction of the incoming side
@@ -450,19 +371,15 @@ declare module 'gi://Gsk?version=4.0' {
              */
             FROM_END,
         }
-        /**
-         * The values of this enumeration classify intersections
-         * between paths.
-         */
 
-        /**
-         * The values of this enumeration classify intersections
-         * between paths.
-         */
         export namespace PathIntersection {
             export const $gtype: GObject.GType<PathIntersection>;
         }
 
+        /**
+         * The values of this enumeration classify intersections
+         * between paths.
+         */
         enum PathIntersection {
             /**
              * No intersection
@@ -482,21 +399,16 @@ declare module 'gi://Gsk?version=4.0' {
              */
             END,
         }
-        /**
-         * Describes the segments of a `GskPath`.
-         *
-         * More values may be added in the future.
-         */
 
-        /**
-         * Describes the segments of a `GskPath`.
-         *
-         * More values may be added in the future.
-         */
         export namespace PathOperation {
             export const $gtype: GObject.GType<PathOperation>;
         }
 
+        /**
+         * Describes the segments of a `GskPath`.
+         *
+         * More values may be added in the future.
+         */
         enum PathOperation {
             /**
              * A move-to operation, with 1 point describing the target point.
@@ -531,47 +443,29 @@ declare module 'gi://Gsk?version=4.0' {
              */
             CONIC,
         }
-        /**
-         * GSK_PORTER_DUFF_SOURCE:
-         * GSK_PORTER_DUFF_DEST:
-         * GSK_PORTER_DUFF_SOURCE_OVER_DEST:
-         * GSK_PORTER_DUFF_DEST_OVER_SOURCE:
-         * GSK_PORTER_DUFF_SOURCE_IN_DEST:
-         * GSK_PORTER_DUFF_DEST_IN_SOURCE:
-         * GSK_PORTER_DUFF_SOURCE_OUT_DEST:
-         * GSK_PORTER_DUFF_DEST_OUT_SOURCE:
-         * GSK_PORTER_DUFF_SOURCE_ATOP_DEST:
-         * GSK_PORTER_DUFF_DEST_ATOP_SOURCE:
-         * GSK_PORTER_DUFF_XOR:
-         * GSK_PORTER_DUFF_CLEAR:
-         * The 12 compositing modes defined by the seminal paper
-         * by Thomas Porter and Tom Duff.
-         *
-         * They are used in SVG, PDF and in Cairo with `cairo_operator_t`.
-         */
 
-        /**
-         * GSK_PORTER_DUFF_SOURCE:
-         * GSK_PORTER_DUFF_DEST:
-         * GSK_PORTER_DUFF_SOURCE_OVER_DEST:
-         * GSK_PORTER_DUFF_DEST_OVER_SOURCE:
-         * GSK_PORTER_DUFF_SOURCE_IN_DEST:
-         * GSK_PORTER_DUFF_DEST_IN_SOURCE:
-         * GSK_PORTER_DUFF_SOURCE_OUT_DEST:
-         * GSK_PORTER_DUFF_DEST_OUT_SOURCE:
-         * GSK_PORTER_DUFF_SOURCE_ATOP_DEST:
-         * GSK_PORTER_DUFF_DEST_ATOP_SOURCE:
-         * GSK_PORTER_DUFF_XOR:
-         * GSK_PORTER_DUFF_CLEAR:
-         * The 12 compositing modes defined by the seminal paper
-         * by Thomas Porter and Tom Duff.
-         *
-         * They are used in SVG, PDF and in Cairo with `cairo_operator_t`.
-         */
         export namespace PorterDuff {
             export const $gtype: GObject.GType<PorterDuff>;
         }
 
+        /**
+         * GSK_PORTER_DUFF_SOURCE:
+         * GSK_PORTER_DUFF_DEST:
+         * GSK_PORTER_DUFF_SOURCE_OVER_DEST:
+         * GSK_PORTER_DUFF_DEST_OVER_SOURCE:
+         * GSK_PORTER_DUFF_SOURCE_IN_DEST:
+         * GSK_PORTER_DUFF_DEST_IN_SOURCE:
+         * GSK_PORTER_DUFF_SOURCE_OUT_DEST:
+         * GSK_PORTER_DUFF_DEST_OUT_SOURCE:
+         * GSK_PORTER_DUFF_SOURCE_ATOP_DEST:
+         * GSK_PORTER_DUFF_DEST_ATOP_SOURCE:
+         * GSK_PORTER_DUFF_XOR:
+         * GSK_PORTER_DUFF_CLEAR:
+         * The 12 compositing modes defined by the seminal paper
+         * by Thomas Porter and Tom Duff.
+         *
+         * They are used in SVG, PDF and in Cairo with `cairo_operator_t`.
+         */
         enum PorterDuff {
             SOURCE,
             DEST,
@@ -586,17 +480,14 @@ declare module 'gi://Gsk?version=4.0' {
             XOR,
             CLEAR,
         }
-        /**
-         * The type of a node determines what the node is rendering.
-         */
 
-        /**
-         * The type of a node determines what the node is rendering.
-         */
         export namespace RenderNodeType {
             export const $gtype: GObject.GType<RenderNodeType>;
         }
 
+        /**
+         * The type of a node determines what the node is rendering.
+         */
         enum RenderNodeType {
             /**
              * Error type. No node will ever have this type.
@@ -752,23 +643,17 @@ declare module 'gi://Gsk?version=4.0' {
              */
             ARITHMETIC_NODE,
         }
-        /**
-         * The filters used when scaling texture data.
-         *
-         * The actual implementation of each filter is deferred to the
-         * rendering pipeline.
-         */
 
-        /**
-         * The filters used when scaling texture data.
-         *
-         * The actual implementation of each filter is deferred to the
-         * rendering pipeline.
-         */
         export namespace ScalingFilter {
             export const $gtype: GObject.GType<ScalingFilter>;
         }
 
+        /**
+         * The filters used when scaling texture data.
+         *
+         * The actual implementation of each filter is deferred to the
+         * rendering pipeline.
+         */
         enum ScalingFilter {
             /**
              * linear interpolation filter
@@ -785,11 +670,12 @@ declare module 'gi://Gsk?version=4.0' {
              */
             TRILINEAR,
         }
+
         /**
          * Errors that can happen during (de)serialization.
          */
         class SerializationError extends GLib.Error {
-            static $gtype: GObject.GType<SerializationError>;
+            static $gtype: GObject.GType<GLib.Error>;
 
             // Static fields
 
@@ -820,35 +706,22 @@ declare module 'gi://Gsk?version=4.0' {
             static quark(): GLib.Quark;
         }
 
-        /**
-         * The categories of matrices relevant for GSK and GTK.
-         *
-         * Note that any category includes matrices of all later categories.
-         * So if you want to for example check if a matrix is a 2D matrix,
-         * `category >= GSK_TRANSFORM_CATEGORY_2D` is the way to do this.
-         *
-         * Also keep in mind that rounding errors may cause matrices to not
-         * conform to their categories. Otherwise, matrix operations done via
-         * multiplication will not worsen categories. So for the matrix
-         * multiplication `C = A * B`, `category(C) = MIN (category(A), category(B))`.
-         */
-
-        /**
-         * The categories of matrices relevant for GSK and GTK.
-         *
-         * Note that any category includes matrices of all later categories.
-         * So if you want to for example check if a matrix is a 2D matrix,
-         * `category >= GSK_TRANSFORM_CATEGORY_2D` is the way to do this.
-         *
-         * Also keep in mind that rounding errors may cause matrices to not
-         * conform to their categories. Otherwise, matrix operations done via
-         * multiplication will not worsen categories. So for the matrix
-         * multiplication `C = A * B`, `category(C) = MIN (category(A), category(B))`.
-         */
         export namespace TransformCategory {
             export const $gtype: GObject.GType<TransformCategory>;
         }
 
+        /**
+         * The categories of matrices relevant for GSK and GTK.
+         *
+         * Note that any category includes matrices of all later categories.
+         * So if you want to for example check if a matrix is a 2D matrix,
+         * `category >= GSK_TRANSFORM_CATEGORY_2D` is the way to do this.
+         *
+         * Also keep in mind that rounding errors may cause matrices to not
+         * conform to their categories. Otherwise, matrix operations done via
+         * multiplication will not worsen categories. So for the matrix
+         * multiplication `C = A * B`, `category(C) = MIN (category(A), category(B))`.
+         */
         enum TransformCategory {
             /**
              * The category of the matrix has not been
@@ -886,6 +759,7 @@ declare module 'gi://Gsk?version=4.0' {
              */
             IDENTITY,
         }
+
         /**
          * Compares two component transfers for equality.
          * @param self a component transfer
@@ -995,23 +869,16 @@ declare module 'gi://Gsk?version=4.0' {
         interface RenderReplayTextureFilter {
             (replay: RenderReplay, texture: Gdk.Texture): Gdk.Texture;
         }
-        /**
-         * These flags describe the types of isolations possible with a
-         * [class`Gsk`.IsolationNode].
-         *
-         * More isolation options may be added in the future.
-         */
-
-        /**
-         * These flags describe the types of isolations possible with a
-         * [class`Gsk`.IsolationNode].
-         *
-         * More isolation options may be added in the future.
-         */
         export namespace Isolation {
             export const $gtype: GObject.GType<Isolation>;
         }
 
+        /**
+         * These flags describe the types of isolations possible with a
+         * [class`Gsk`.IsolationNode].
+         *
+         * More isolation options may be added in the future.
+         */
         enum Isolation {
             /**
              * No isolation is defined.
@@ -1035,29 +902,20 @@ declare module 'gi://Gsk?version=4.0' {
              */
             ALL,
         }
-        /**
-         * Flags that can be passed to gsk_path_foreach() to influence what
-         * kinds of operations the path is decomposed into.
-         *
-         * By default, [method`Gsk`.Path.foreach] will only emit a path with all
-         * operations flattened to straight lines to allow for maximum compatibility.
-         * The only operations emitted will be `GSK_PATH_MOVE`, `GSK_PATH_LINE` and
-         * `GSK_PATH_CLOSE`.
-         */
 
-        /**
-         * Flags that can be passed to gsk_path_foreach() to influence what
-         * kinds of operations the path is decomposed into.
-         *
-         * By default, [method`Gsk`.Path.foreach] will only emit a path with all
-         * operations flattened to straight lines to allow for maximum compatibility.
-         * The only operations emitted will be `GSK_PATH_MOVE`, `GSK_PATH_LINE` and
-         * `GSK_PATH_CLOSE`.
-         */
         export namespace PathForeachFlags {
             export const $gtype: GObject.GType<PathForeachFlags>;
         }
 
+        /**
+         * Flags that can be passed to gsk_path_foreach() to influence what
+         * kinds of operations the path is decomposed into.
+         *
+         * By default, [method`Gsk`.Path.foreach] will only emit a path with all
+         * operations flattened to straight lines to allow for maximum compatibility.
+         * The only operations emitted will be `GSK_PATH_MOVE`, `GSK_PATH_LINE` and
+         * `GSK_PATH_CLOSE`.
+         */
         enum PathForeachFlags {
             /**
              * The default behavior, only allow lines.
@@ -1076,6 +934,7 @@ declare module 'gi://Gsk?version=4.0' {
              */
             CONIC,
         }
+
         namespace BlendNode {
             // Signal signatures
             interface SignalSignatures extends RenderNode.SignalSignatures {}

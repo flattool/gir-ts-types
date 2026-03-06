@@ -2676,23 +2676,16 @@ declare module 'gi://GObject?version=2.0' {
         type VariantBuilder = object | null;
         type VariantDict = object | null;
         type VariantType = object | null;
-        /**
-         * Flags to be passed to g_object_bind_property() or
-         * g_object_bind_property_full().
-         *
-         * This enumeration can be extended at later date.
-         */
-
-        /**
-         * Flags to be passed to g_object_bind_property() or
-         * g_object_bind_property_full().
-         *
-         * This enumeration can be extended at later date.
-         */
         export namespace BindingFlags {
             export const $gtype: GType<BindingFlags>;
         }
 
+        /**
+         * Flags to be passed to g_object_bind_property() or
+         * g_object_bind_property_full().
+         *
+         * This enumeration can be extended at later date.
+         */
         enum BindingFlags {
             /**
              * The default binding; if the source property
@@ -2720,19 +2713,11 @@ declare module 'gi://GObject?version=2.0' {
              */
             INVERT_BOOLEAN,
         }
-        /**
-         * The connection flags are used to specify the behaviour of a signal's
-         * connection.
-         */
 
         /**
          * The connection flags are used to specify the behaviour of a signal's
          * connection.
          */
-        export namespace ConnectFlags {
-            export const $gtype: GType<ConnectFlags>;
-        }
-
         enum ConnectFlags {
             /**
              * Default behaviour (no special flags). Since: 2.74
@@ -2763,12 +2748,6 @@ declare module 'gi://GObject?version=2.0' {
             HUP,
             NVAL,
         }
-        /**
-         * Through the #GParamFlags flag values, certain aspects of parameters
-         * can be configured.
-         *
-         * See also: %G_PARAM_STATIC_STRINGS
-         */
 
         /**
          * Through the #GParamFlags flag values, certain aspects of parameters
@@ -2776,10 +2755,6 @@ declare module 'gi://GObject?version=2.0' {
          *
          * See also: %G_PARAM_STATIC_STRINGS
          */
-        export namespace ParamFlags {
-            export const $gtype: GType<ParamFlags>;
-        }
-
         enum ParamFlags {
             /**
              * the parameter is readable
@@ -2848,17 +2823,10 @@ declare module 'gi://GObject?version=2.0' {
              */
             DEPRECATED,
         }
-        /**
-         * The signal flags are used to specify a signal's behaviour.
-         */
 
         /**
          * The signal flags are used to specify a signal's behaviour.
          */
-        export namespace SignalFlags {
-            export const $gtype: GType<SignalFlags>;
-        }
-
         enum SignalFlags {
             /**
              * Invoke the object method handler in the first emission stage.
@@ -2917,21 +2885,12 @@ declare module 'gi://GObject?version=2.0' {
              */
             ACCUMULATOR_FIRST_RUN,
         }
-        /**
-         * The match types specify what g_signal_handlers_block_matched(),
-         * g_signal_handlers_unblock_matched() and g_signal_handlers_disconnect_matched()
-         * match signals by.
-         */
 
         /**
          * The match types specify what g_signal_handlers_block_matched(),
          * g_signal_handlers_unblock_matched() and g_signal_handlers_disconnect_matched()
          * match signals by.
          */
-        export namespace SignalMatchType {
-            export const $gtype: GType<SignalMatchType>;
-        }
-
         enum SignalMatchType {
             /**
              * The signal id must be equal.
@@ -2958,13 +2917,6 @@ declare module 'gi://GObject?version=2.0' {
              */
             UNBLOCKED,
         }
-        /**
-         * These flags used to be passed to g_type_init_with_debug_flags() which
-         * is now deprecated.
-         *
-         * If you need to enable debugging features, use the `GOBJECT_DEBUG`
-         * environment variable.
-         */
 
         /**
          * These flags used to be passed to g_type_init_with_debug_flags() which
@@ -2973,10 +2925,6 @@ declare module 'gi://GObject?version=2.0' {
          * If you need to enable debugging features, use the `GOBJECT_DEBUG`
          * environment variable.
          */
-        export namespace TypeDebugFlags {
-            export const $gtype: GType<TypeDebugFlags>;
-        }
-
         enum TypeDebugFlags {
             /**
              * Print no messages
@@ -2999,17 +2947,10 @@ declare module 'gi://GObject?version=2.0' {
              */
             MASK,
         }
-        /**
-         * Bit masks used to check or determine characteristics of a type.
-         */
 
         /**
          * Bit masks used to check or determine characteristics of a type.
          */
-        export namespace TypeFlags {
-            export const $gtype: GType<TypeFlags>;
-        }
-
         enum TypeFlags {
             /**
              * No special flags. Since: 2.74
@@ -3038,19 +2979,11 @@ declare module 'gi://GObject?version=2.0' {
              */
             DEPRECATED,
         }
-        /**
-         * Bit masks used to check or determine specific characteristics of a
-         * fundamental type.
-         */
 
         /**
          * Bit masks used to check or determine specific characteristics of a
          * fundamental type.
          */
-        export namespace TypeFundamentalFlags {
-            export const $gtype: GType<TypeFundamentalFlags>;
-        }
-
         enum TypeFundamentalFlags {
             /**
              * Indicates a classed type
@@ -3069,6 +3002,7 @@ declare module 'gi://GObject?version=2.0' {
              */
             DEEP_DERIVABLE,
         }
+
         namespace Binding {
             // Signal signatures
             interface SignalSignatures extends Object.SignalSignatures {

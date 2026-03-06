@@ -20,19 +20,14 @@ declare module 'gi://Atk?version=1.0' {
          * Atk-1.0
          */
 
-        /**
-         * Specifies how xy coordinates are to be interpreted. Used by functions such
-         * as atk_component_get_position() and atk_text_get_character_extents()
-         */
-
-        /**
-         * Specifies how xy coordinates are to be interpreted. Used by functions such
-         * as atk_component_get_position() and atk_text_get_character_extents()
-         */
         export namespace CoordType {
             export const $gtype: GObject.GType<CoordType>;
         }
 
+        /**
+         * Specifies how xy coordinates are to be interpreted. Used by functions such
+         * as atk_component_get_position() and atk_text_get_character_extents()
+         */
         enum CoordType {
             /**
              * specifies xy coordinates relative to the screen
@@ -49,17 +44,14 @@ declare module 'gi://Atk?version=1.0' {
              */
             PARENT,
         }
-        /**
-         * Specifies the type of a keyboard evemt.
-         */
 
-        /**
-         * Specifies the type of a keyboard evemt.
-         */
         export namespace KeyEventType {
             export const $gtype: GObject.GType<KeyEventType>;
         }
 
+        /**
+         * Specifies the type of a keyboard evemt.
+         */
         enum KeyEventType {
             /**
              * specifies a key press event
@@ -74,25 +66,18 @@ declare module 'gi://Atk?version=1.0' {
              */
             LAST_DEFINED,
         }
-        /**
-         * Describes the layer of a component
-         *
-         * These enumerated "layer values" are used when determining which UI
-         * rendering layer a component is drawn into, which can help in making
-         * determinations of when components occlude one another.
-         */
 
-        /**
-         * Describes the layer of a component
-         *
-         * These enumerated "layer values" are used when determining which UI
-         * rendering layer a component is drawn into, which can help in making
-         * determinations of when components occlude one another.
-         */
         export namespace Layer {
             export const $gtype: GObject.GType<Layer>;
         }
 
+        /**
+         * Describes the layer of a component
+         *
+         * These enumerated "layer values" are used when determining which UI
+         * rendering layer a component is drawn into, which can help in making
+         * determinations of when components occlude one another.
+         */
         enum Layer {
             /**
              * The object does not have a layer
@@ -127,23 +112,17 @@ declare module 'gi://Atk?version=1.0' {
              */
             WINDOW,
         }
-        /**
-         * Enumeration used to indicate a type of live region and how assertive it
-         * should be in terms of speaking notifications. Currently, this is only used
-         * for "notification" events, but it may be used for additional purposes
-         * in the future.
-         */
 
-        /**
-         * Enumeration used to indicate a type of live region and how assertive it
-         * should be in terms of speaking notifications. Currently, this is only used
-         * for "notification" events, but it may be used for additional purposes
-         * in the future.
-         */
         export namespace Live {
             export const $gtype: GObject.GType<Live>;
         }
 
+        /**
+         * Enumeration used to indicate a type of live region and how assertive it
+         * should be in terms of speaking notifications. Currently, this is only used
+         * for "notification" events, but it may be used for additional purposes
+         * in the future.
+         */
         enum Live {
             /**
              * No live region.
@@ -158,17 +137,14 @@ declare module 'gi://Atk?version=1.0' {
              */
             ASSERTIVE,
         }
-        /**
-         * Describes the type of the relation
-         */
 
-        /**
-         * Describes the type of the relation
-         */
         export namespace RelationType {
             export const $gtype: GObject.GType<RelationType>;
         }
 
+        /**
+         * Describes the type of the relation
+         */
         enum RelationType {
             /**
              * Not used, represens "no relationship" or an error condition.
@@ -289,25 +265,18 @@ declare module 'gi://Atk?version=1.0' {
              */
             LAST_DEFINED,
         }
-        /**
-         * Describes the role of an object
-         *
-         * These are the built-in enumerated roles that UI components can have
-         * in ATK.  Other roles may be added at runtime, so an AtkRole >=
-         * %ATK_ROLE_LAST_DEFINED is not necessarily an error.
-         */
 
-        /**
-         * Describes the role of an object
-         *
-         * These are the built-in enumerated roles that UI components can have
-         * in ATK.  Other roles may be added at runtime, so an AtkRole >=
-         * %ATK_ROLE_LAST_DEFINED is not necessarily an error.
-         */
         export namespace Role {
             export const $gtype: GObject.GType<Role>;
         }
 
+        /**
+         * Describes the role of an object
+         *
+         * These are the built-in enumerated roles that UI components can have
+         * in ATK.  Other roles may be added at runtime, so an AtkRole >=
+         * %ATK_ROLE_LAST_DEFINED is not necessarily an error.
+         */
         enum Role {
             /**
              * Invalid role
@@ -922,17 +891,14 @@ declare module 'gi://Atk?version=1.0' {
             LAST_DEFINED,
             PUSH_BUTTON,
         }
-        /**
-         * Specifies where an object should be placed on the screen when using scroll_to.
-         */
 
-        /**
-         * Specifies where an object should be placed on the screen when using scroll_to.
-         */
         export namespace ScrollType {
             export const $gtype: GObject.GType<ScrollType>;
         }
 
+        /**
+         * Specifies where an object should be placed on the screen when using scroll_to.
+         */
         enum ScrollType {
             /**
              * Scroll the object vertically and horizontally to bring
@@ -971,17 +937,14 @@ declare module 'gi://Atk?version=1.0' {
              */
             ANYWHERE,
         }
-        /**
-         * The possible types of states of an object
-         */
 
-        /**
-         * The possible types of states of an object
-         */
         export namespace StateType {
             export const $gtype: GObject.GType<StateType>;
         }
 
+        /**
+         * The possible types of states of an object
+         */
         enum StateType {
             /**
              * Indicates an invalid state - probably an error condition.
@@ -1229,17 +1192,14 @@ declare module 'gi://Atk?version=1.0' {
              */
             LAST_DEFINED,
         }
-        /**
-         * Describes the text attributes supported
-         */
 
-        /**
-         * Describes the text attributes supported
-         */
         export namespace TextAttribute {
             export const $gtype: GObject.GType<TextAttribute>;
         }
 
+        /**
+         * Describes the text attributes supported
+         */
         enum TextAttribute {
             /**
              * Invalid attribute, like bad spelling or grammar.
@@ -1370,21 +1330,16 @@ declare module 'gi://Atk?version=1.0' {
              */
             LAST_DEFINED,
         }
-        /**
-         * Text boundary types used for specifying boundaries for regions of text.
-         * This enumeration is deprecated since 2.9.4 and should not be used. Use
-         * AtkTextGranularity with #atk_text_get_string_at_offset instead.
-         */
 
-        /**
-         * Text boundary types used for specifying boundaries for regions of text.
-         * This enumeration is deprecated since 2.9.4 and should not be used. Use
-         * AtkTextGranularity with #atk_text_get_string_at_offset instead.
-         */
         export namespace TextBoundary {
             export const $gtype: GObject.GType<TextBoundary>;
         }
 
+        /**
+         * Text boundary types used for specifying boundaries for regions of text.
+         * This enumeration is deprecated since 2.9.4 and should not be used. Use
+         * AtkTextGranularity with #atk_text_get_string_at_offset instead.
+         */
         enum TextBoundary {
             /**
              * Boundary is the boundary between characters
@@ -1422,17 +1377,14 @@ declare module 'gi://Atk?version=1.0' {
              */
             LINE_END,
         }
-        /**
-         * Describes the type of clipping required.
-         */
 
-        /**
-         * Describes the type of clipping required.
-         */
         export namespace TextClipType {
             export const $gtype: GObject.GType<TextClipType>;
         }
 
+        /**
+         * Describes the type of clipping required.
+         */
         enum TextClipType {
             /**
              * No clipping to be done
@@ -1451,19 +1403,15 @@ declare module 'gi://Atk?version=1.0' {
              */
             BOTH,
         }
-        /**
-         * Text granularity types used for specifying the granularity of the region of
-         * text we are interested in.
-         */
 
-        /**
-         * Text granularity types used for specifying the granularity of the region of
-         * text we are interested in.
-         */
         export namespace TextGranularity {
             export const $gtype: GObject.GType<TextGranularity>;
         }
 
+        /**
+         * Text granularity types used for specifying the granularity of the region of
+         * text we are interested in.
+         */
         enum TextGranularity {
             /**
              * Granularity is defined by the boundaries between characters
@@ -1495,21 +1443,16 @@ declare module 'gi://Atk?version=1.0' {
              */
             PARAGRAPH,
         }
-        /**
-         * Default types for a given value. Those are defined in order to
-         * easily get localized strings to describe a given value or a given
-         * subrange, using atk_value_type_get_localized_name().
-         */
 
-        /**
-         * Default types for a given value. Those are defined in order to
-         * easily get localized strings to describe a given value or a given
-         * subrange, using atk_value_type_get_localized_name().
-         */
         export namespace ValueType {
             export const $gtype: GObject.GType<ValueType>;
         }
 
+        /**
+         * Default types for a given value. Those are defined in order to
+         * easily get localized strings to describe a given value or a given
+         * subrange, using atk_value_type_get_localized_name().
+         */
         enum ValueType {
             VERY_WEAK,
             WEAK,
@@ -1528,6 +1471,7 @@ declare module 'gi://Atk?version=1.0' {
             BEST,
             LAST_DEFINED,
         }
+
         /**
          * Like atk_get_binary_age(), but from the headers used at
          * application compile time, rather than from the library linked
@@ -1818,23 +1762,20 @@ declare module 'gi://Atk?version=1.0' {
         interface PropertyChangeHandler {
             (obj: Object, vals: PropertyValues): void;
         }
-        /**
-         * Describes the type of link
-         */
-
-        /**
-         * Describes the type of link
-         */
         export namespace HyperlinkStateFlags {
             export const $gtype: GObject.GType<HyperlinkStateFlags>;
         }
 
+        /**
+         * Describes the type of link
+         */
         enum HyperlinkStateFlags {
             /**
              * Link is inline
              */
             INLINE,
         }
+
         namespace GObjectAccessible {
             // Signal signatures
             interface SignalSignatures extends Object.SignalSignatures {

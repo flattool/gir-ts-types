@@ -24,34 +24,27 @@ declare module 'gi://Tracker?version=3.0' {
          * Tracker-3.0
          */
 
-        /**
-         * Flags affecting deserialization from a RDF data format.
-         */
-
-        /**
-         * Flags affecting deserialization from a RDF data format.
-         */
         export namespace DeserializeFlags {
             export const $gtype: GObject.GType<DeserializeFlags>;
         }
 
+        /**
+         * Flags affecting deserialization from a RDF data format.
+         */
         enum DeserializeFlags {
             /**
              * No flags.
              */
             NONE,
         }
-        /**
-         * Notifier event types.
-         */
 
-        /**
-         * Notifier event types.
-         */
         export namespace NotifierEventType {
             export const $gtype: GObject.GType<NotifierEventType>;
         }
 
+        /**
+         * Notifier event types.
+         */
         enum NotifierEventType {
             /**
              * An element was created.
@@ -66,17 +59,14 @@ declare module 'gi://Tracker?version=3.0' {
              */
             UPDATE,
         }
-        /**
-         * Describes a RDF format to be used in data exchange.
-         */
 
-        /**
-         * Describes a RDF format to be used in data exchange.
-         */
         export namespace RdfFormat {
             export const $gtype: GObject.GType<RdfFormat>;
         }
 
+        /**
+         * Describes a RDF format to be used in data exchange.
+         */
         enum RdfFormat {
             /**
              * Turtle format
@@ -99,30 +89,28 @@ declare module 'gi://Tracker?version=3.0' {
              */
             LAST,
         }
-        /**
-         * Flags affecting serialization into a RDF data format.
-         */
 
-        /**
-         * Flags affecting serialization into a RDF data format.
-         */
         export namespace SerializeFlags {
             export const $gtype: GObject.GType<SerializeFlags>;
         }
 
+        /**
+         * Flags affecting serialization into a RDF data format.
+         */
         enum SerializeFlags {
             /**
              * No flags.
              */
             NONE,
         }
+
         /**
          * Error domain for Tracker Sparql. Errors in this domain will be from the
          * [error`SparqlError]` enumeration. See [struct`GLib`.Error] for more information on error
          * domains.
          */
         class SparqlError extends GLib.Error {
-            static $gtype: GObject.GType<SparqlError>;
+            static $gtype: GObject.GType<GLib.Error>;
 
             // Static fields
 
@@ -213,14 +201,6 @@ declare module 'gi://Tracker?version=3.0' {
         /**
          * Enumeration with the possible types of the cursor's cells
          */
-
-        /**
-         * Enumeration with the possible types of the cursor's cells
-         */
-        export namespace SparqlValueType {
-            export const $gtype: GObject.GType<SparqlValueType>;
-        }
-
         enum SparqlValueType {
             /**
              * Unbound value type
@@ -255,6 +235,7 @@ declare module 'gi://Tracker?version=3.0' {
              */
             BOOLEAN,
         }
+
         /**
          * The major version of the Tracker library.
          *
@@ -379,17 +360,13 @@ declare module 'gi://Tracker?version=3.0' {
          * @returns A newly generated UUID URN.
          */
         function sparql_get_uuid_urn(): string;
-        /**
-         * Connection flags to modify #TrackerSparqlConnection behavior.
-         */
-
-        /**
-         * Connection flags to modify #TrackerSparqlConnection behavior.
-         */
         export namespace SparqlConnectionFlags {
             export const $gtype: GObject.GType<SparqlConnectionFlags>;
         }
 
+        /**
+         * Connection flags to modify #TrackerSparqlConnection behavior.
+         */
         enum SparqlConnectionFlags {
             /**
              * No flags.
@@ -432,6 +409,7 @@ declare module 'gi://Tracker?version=3.0' {
              */
             SPARQL_STRICT,
         }
+
         namespace Batch {
             // Signal signatures
             interface SignalSignatures extends GObject.Object.SignalSignatures {

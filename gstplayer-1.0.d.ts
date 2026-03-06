@@ -57,8 +57,9 @@ declare module 'gi://GstPlayer?version=1.0' {
              */
             CONTRAST,
         }
+
         class PlayerError extends GLib.Error {
-            static $gtype: GObject.GType<PlayerError>;
+            static $gtype: GObject.GType<GLib.Error>;
 
             // Static fields
 
@@ -79,10 +80,6 @@ declare module 'gi://GstPlayer?version=1.0' {
              */
             static get_name(error: PlayerError): string;
             static quark(): GLib.Quark;
-        }
-
-        export namespace PlayerSnapshotFormat {
-            export const $gtype: GObject.GType<PlayerSnapshotFormat>;
         }
 
         enum PlayerSnapshotFormat {
@@ -116,6 +113,7 @@ declare module 'gi://GstPlayer?version=1.0' {
              */
             PLAYING,
         }
+
         /**
          * Gets a string representing the given color balance type.
          * @param type a #GstPlayerColorBalanceType

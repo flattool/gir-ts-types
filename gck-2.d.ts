@@ -24,17 +24,13 @@ declare module 'gi://Gck?version=2' {
          * Gck-2
          */
 
-        /**
-         * Flags to be used with a [method`Builder`.init_full] and [ctor`Builder`.new].
-         */
-
-        /**
-         * Flags to be used with a [method`Builder`.init_full] and [ctor`Builder`.new].
-         */
         export namespace BuilderFlags {
             export const $gtype: GObject.GType<BuilderFlags>;
         }
 
+        /**
+         * Flags to be used with a [method`Builder`.init_full] and [ctor`Builder`.new].
+         */
         enum BuilderFlags {
             /**
              * no special flags
@@ -45,6 +41,7 @@ declare module 'gi://Gck?version=2' {
              */
             SECURE_MEMORY,
         }
+
         /**
          * Various error codes. All the `CKR_XXX` error codes from PKCS#11 are also
          * relevant error codes.
@@ -53,7 +50,7 @@ declare module 'gi://Gck?version=2' {
          * member of the error then contains the raw PKCS#11 `CK_RV` result value.
          */
         class Error extends GLib.Error {
-            static $gtype: GObject.GType<Error>;
+            static $gtype: GObject.GType<GLib.Error>;
 
             // Static fields
 
@@ -76,7 +73,7 @@ declare module 'gi://Gck?version=2' {
          * Various error codes used with PKCS#11 URIs
          */
         class UriError extends GLib.Error {
-            static $gtype: GObject.GType<UriError>;
+            static $gtype: GObject.GType<GLib.Error>;
 
             // Static fields
 
@@ -314,17 +311,13 @@ declare module 'gi://Gck?version=2' {
         interface Allocator {
             (data: any | null, length: number): any | null;
         }
-        /**
-         * Options for creating sessions.
-         */
-
-        /**
-         * Options for creating sessions.
-         */
         export namespace SessionOptions {
             export const $gtype: GObject.GType<SessionOptions>;
         }
 
+        /**
+         * Options for creating sessions.
+         */
         enum SessionOptions {
             /**
              * Open session as read only
@@ -343,19 +336,15 @@ declare module 'gi://Gck?version=2' {
              */
             AUTHENTICATE,
         }
-        /**
-         * Which parts of the PKCS#11 URI will be parsed or formatted. These can be
-         * combined.
-         */
 
-        /**
-         * Which parts of the PKCS#11 URI will be parsed or formatted. These can be
-         * combined.
-         */
         export namespace UriFlags {
             export const $gtype: GObject.GType<UriFlags>;
         }
 
+        /**
+         * Which parts of the PKCS#11 URI will be parsed or formatted. These can be
+         * combined.
+         */
         enum UriFlags {
             /**
              * the URI will be used to match objects.
@@ -378,6 +367,7 @@ declare module 'gi://Gck?version=2' {
              */
             FOR_ANY,
         }
+
         namespace Enumerator {
             // Signal signatures
             interface SignalSignatures extends GObject.Object.SignalSignatures {

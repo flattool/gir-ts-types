@@ -36,6 +36,7 @@ declare module 'gi://Geoclue?version=2.0' {
             STREET,
             EXACT,
         }
+
         /**
          * Gets a machine-readable description of the <link linkend="gdbus-interface-org-freedesktop-GeoClue2-Client.top_of_page">org.freedesktop.GeoClue2.Client</link> D-Bus interface.
          * @returns A #GDBusInterfaceInfo. Do not free.
@@ -75,7 +76,6 @@ declare module 'gi://Geoclue?version=2.0' {
          * @returns The last property id.
          */
         function manager_override_properties(klass: typeof GObject.Object, property_id_begin: number): number;
-
         export namespace ClientProxyCreateFlags {
             export const $gtype: GObject.GType<ClientProxyCreateFlags>;
         }
@@ -84,6 +84,7 @@ declare module 'gi://Geoclue?version=2.0' {
             NONE,
             AUTO_DELETE,
         }
+
         namespace ClientProxy {
             // Signal signatures
             interface SignalSignatures extends Gio.DBusProxy.SignalSignatures {

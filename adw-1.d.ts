@@ -45,17 +45,13 @@ declare module 'gi://Adw?version=1' {
          * Adw-1
          */
 
-        /**
-         * Describes the available system accent colors.
-         */
-
-        /**
-         * Describes the available system accent colors.
-         */
         export namespace AccentColor {
             export const $gtype: GObject.GType<AccentColor>;
         }
 
+        /**
+         * Describes the available system accent colors.
+         */
         enum AccentColor {
             /**
              * Use a blue color (`#3584e4`). This is the default value.
@@ -94,25 +90,18 @@ declare module 'gi://Adw?version=1' {
              */
             SLATE,
         }
-        /**
-         * Describes the possible states of an [class`Animation]`.
-         *
-         * The state can be controlled with [method`Animation`.play],
-         * [method`Animation`.pause], [method`Animation`.resume],
-         * [method`Animation`.reset] and [method`Animation`.skip].
-         */
 
-        /**
-         * Describes the possible states of an [class`Animation]`.
-         *
-         * The state can be controlled with [method`Animation`.play],
-         * [method`Animation`.pause], [method`Animation`.resume],
-         * [method`Animation`.reset] and [method`Animation`.skip].
-         */
         export namespace AnimationState {
             export const $gtype: GObject.GType<AnimationState>;
         }
 
+        /**
+         * Describes the possible states of an [class`Animation]`.
+         *
+         * The state can be controlled with [method`Animation`.play],
+         * [method`Animation`.pause], [method`Animation`.resume],
+         * [method`Animation`.reset] and [method`Animation`.skip].
+         */
         enum AnimationState {
             /**
              * The animation hasn't started yet.
@@ -131,25 +120,18 @@ declare module 'gi://Adw?version=1' {
              */
             FINISHED,
         }
-        /**
-         * Describes the available button styles for [class`Banner]`.
-         *
-         * New values may be added to this enumeration over time.
-         *
-         * See [property`Banner:`button-style].
-         */
 
-        /**
-         * Describes the available button styles for [class`Banner]`.
-         *
-         * New values may be added to this enumeration over time.
-         *
-         * See [property`Banner:`button-style].
-         */
         export namespace BannerButtonStyle {
             export const $gtype: GObject.GType<BannerButtonStyle>;
         }
 
+        /**
+         * Describes the available button styles for [class`Banner]`.
+         *
+         * New values may be added to this enumeration over time.
+         *
+         * See [property`Banner:`button-style].
+         */
         enum BannerButtonStyle {
             /**
              * The default button style.
@@ -160,25 +142,18 @@ declare module 'gi://Adw?version=1' {
              */
             SUGGESTED,
         }
-        /**
-         * Describes length types for [struct`BreakpointCondition]`.
-         *
-         * See [ctor`BreakpointCondition`.new_length].
-         *
-         * New values may be added to this enumeration over time.
-         */
 
-        /**
-         * Describes length types for [struct`BreakpointCondition]`.
-         *
-         * See [ctor`BreakpointCondition`.new_length].
-         *
-         * New values may be added to this enumeration over time.
-         */
         export namespace BreakpointConditionLengthType {
             export const $gtype: GObject.GType<BreakpointConditionLengthType>;
         }
 
+        /**
+         * Describes length types for [struct`BreakpointCondition]`.
+         *
+         * See [ctor`BreakpointCondition`.new_length].
+         *
+         * New values may be added to this enumeration over time.
+         */
         enum BreakpointConditionLengthType {
             /**
              * true if the width is greater than or
@@ -201,25 +176,18 @@ declare module 'gi://Adw?version=1' {
              */
             MAX_HEIGHT,
         }
-        /**
-         * Describes ratio types for [struct`BreakpointCondition]`.
-         *
-         * See [ctor`BreakpointCondition`.new_ratio].
-         *
-         * New values may be added to this enumeration over time.
-         */
 
-        /**
-         * Describes ratio types for [struct`BreakpointCondition]`.
-         *
-         * See [ctor`BreakpointCondition`.new_ratio].
-         *
-         * New values may be added to this enumeration over time.
-         */
         export namespace BreakpointConditionRatioType {
             export const $gtype: GObject.GType<BreakpointConditionRatioType>;
         }
 
+        /**
+         * Describes ratio types for [struct`BreakpointCondition]`.
+         *
+         * See [ctor`BreakpointCondition`.new_ratio].
+         *
+         * New values may be added to this enumeration over time.
+         */
         enum BreakpointConditionRatioType {
             /**
              * true if the aspect ratio is
@@ -232,17 +200,14 @@ declare module 'gi://Adw?version=1' {
              */
             MAX_ASPECT_RATIO,
         }
-        /**
-         * Describes title centering behavior of a [class`HeaderBar]` widget.
-         */
 
-        /**
-         * Describes title centering behavior of a [class`HeaderBar]` widget.
-         */
         export namespace CenteringPolicy {
             export const $gtype: GObject.GType<CenteringPolicy>;
         }
 
+        /**
+         * Describes title centering behavior of a [class`HeaderBar]` widget.
+         */
         enum CenteringPolicy {
             /**
              * Keep the title centered when possible
@@ -253,17 +218,14 @@ declare module 'gi://Adw?version=1' {
              */
             STRICT,
         }
-        /**
-         * Application color schemes for [property`StyleManager:`color-scheme].
-         */
 
-        /**
-         * Application color schemes for [property`StyleManager:`color-scheme].
-         */
         export namespace ColorScheme {
             export const $gtype: GObject.GType<ColorScheme>;
         }
 
+        /**
+         * Application color schemes for [property`StyleManager:`color-scheme].
+         */
         enum ColorScheme {
             /**
              * Inherit the parent color-scheme. When set on the
@@ -290,25 +252,18 @@ declare module 'gi://Adw?version=1' {
              */
             FORCE_DARK,
         }
-        /**
-         * Describes the available presentation modes for [class`Dialog]`.
-         *
-         * New values may be added to this enumeration over time.
-         *
-         * See [property`Dialog:`presentation-mode].
-         */
 
-        /**
-         * Describes the available presentation modes for [class`Dialog]`.
-         *
-         * New values may be added to this enumeration over time.
-         *
-         * See [property`Dialog:`presentation-mode].
-         */
         export namespace DialogPresentationMode {
             export const $gtype: GObject.GType<DialogPresentationMode>;
         }
 
+        /**
+         * Describes the available presentation modes for [class`Dialog]`.
+         *
+         * New values may be added to this enumeration over time.
+         *
+         * See [property`Dialog:`presentation-mode].
+         */
         enum DialogPresentationMode {
             /**
              * Switch between [enum`Adw`.DialogPresentationMode.floating]
@@ -325,23 +280,17 @@ declare module 'gi://Adw?version=1' {
              */
             BOTTOM_SHEET,
         }
-        /**
-         * Describes the available easing functions for use with
-         * [class`TimedAnimation]`.
-         *
-         * New values may be added to this enumeration over time.
-         */
 
-        /**
-         * Describes the available easing functions for use with
-         * [class`TimedAnimation]`.
-         *
-         * New values may be added to this enumeration over time.
-         */
         export namespace Easing {
             export const $gtype: GObject.GType<Easing>;
         }
 
+        /**
+         * Describes the available easing functions for use with
+         * [class`TimedAnimation]`.
+         *
+         * New values may be added to this enumeration over time.
+         */
         enum Easing {
             /**
              * Linear tweening.
@@ -517,17 +466,14 @@ declare module 'gi://Adw?version=1' {
              */
             EASE_IN_OUT,
         }
-        /**
-         * Describes the possible folding behavior of a [class`Flap]` widget.
-         */
 
-        /**
-         * Describes the possible folding behavior of a [class`Flap]` widget.
-         */
         export namespace FlapFoldPolicy {
             export const $gtype: GObject.GType<FlapFoldPolicy>;
         }
 
+        /**
+         * Describes the possible folding behavior of a [class`Flap]` widget.
+         */
         enum FlapFoldPolicy {
             /**
              * Disable folding, the flap cannot reach narrow
@@ -544,25 +490,18 @@ declare module 'gi://Adw?version=1' {
              */
             AUTO,
         }
-        /**
-         * Describes transitions types of a [class`Flap]` widget.
-         *
-         * It determines the type of animation when transitioning between children in a
-         * [class`Flap]` widget, as well as which areas can be swiped via
-         * [property`Flap:`swipe-to-open] and [property`Flap:`swipe-to-close].
-         */
 
-        /**
-         * Describes transitions types of a [class`Flap]` widget.
-         *
-         * It determines the type of animation when transitioning between children in a
-         * [class`Flap]` widget, as well as which areas can be swiped via
-         * [property`Flap:`swipe-to-open] and [property`Flap:`swipe-to-close].
-         */
         export namespace FlapTransitionType {
             export const $gtype: GObject.GType<FlapTransitionType>;
         }
 
+        /**
+         * Describes transitions types of a [class`Flap]` widget.
+         *
+         * It determines the type of animation when transitioning between children in a
+         * [class`Flap]` widget, as well as which areas can be swiped via
+         * [property`Flap:`swipe-to-open] and [property`Flap:`swipe-to-close].
+         */
         enum FlapTransitionType {
             /**
              * The flap slides over the content, which is
@@ -581,17 +520,14 @@ declare module 'gi://Adw?version=1' {
              */
             SLIDE,
         }
-        /**
-         * Determines when [class`Flap]` and [class`Leaflet]` will fold.
-         */
 
-        /**
-         * Determines when [class`Flap]` and [class`Leaflet]` will fold.
-         */
         export namespace FoldThresholdPolicy {
             export const $gtype: GObject.GType<FoldThresholdPolicy>;
         }
 
+        /**
+         * Determines when [class`Flap]` and [class`Leaflet]` will fold.
+         */
         enum FoldThresholdPolicy {
             /**
              * Folding is based on the minimum size
@@ -602,27 +538,19 @@ declare module 'gi://Adw?version=1' {
              */
             NATURAL,
         }
-        /**
-         * Describes what [class`InlineViewSwitcher]` toggles display.
-         *
-         * <picture>
-         *   <source srcset="inline-view-switcher-display-modes-dark.png" media="(prefers-color-scheme: dark)">
-         *   <img src="inline-view-switcher-display-modes.png" alt="inline-view-switcher-display-modes">
-         * </picture>
-         */
 
-        /**
-         * Describes what [class`InlineViewSwitcher]` toggles display.
-         *
-         * <picture>
-         *   <source srcset="inline-view-switcher-display-modes-dark.png" media="(prefers-color-scheme: dark)">
-         *   <img src="inline-view-switcher-display-modes.png" alt="inline-view-switcher-display-modes">
-         * </picture>
-         */
         export namespace InlineViewSwitcherDisplayMode {
             export const $gtype: GObject.GType<InlineViewSwitcherDisplayMode>;
         }
 
+        /**
+         * Describes what [class`InlineViewSwitcher]` toggles display.
+         *
+         * <picture>
+         *   <source srcset="inline-view-switcher-display-modes-dark.png" media="(prefers-color-scheme: dark)">
+         *   <img src="inline-view-switcher-display-modes.png" alt="inline-view-switcher-display-modes">
+         * </picture>
+         */
         enum InlineViewSwitcherDisplayMode {
             /**
              * Toggles only display labels.
@@ -637,21 +565,16 @@ declare module 'gi://Adw?version=1' {
              */
             BOTH,
         }
-        /**
-         * Describes line justify behaviors in a [class`WrapLayout]` or [class`WrapBox]`.
-         *
-         * See [property`WrapLayout:`justify] and [property`WrapBox:`justify].
-         */
 
-        /**
-         * Describes line justify behaviors in a [class`WrapLayout]` or [class`WrapBox]`.
-         *
-         * See [property`WrapLayout:`justify] and [property`WrapBox:`justify].
-         */
         export namespace JustifyMode {
             export const $gtype: GObject.GType<JustifyMode>;
         }
 
+        /**
+         * Describes line justify behaviors in a [class`WrapLayout]` or [class`WrapBox]`.
+         *
+         * See [property`WrapLayout:`justify] and [property`WrapBox:`justify].
+         */
         enum JustifyMode {
             /**
              * Don't justify children within a line.
@@ -670,21 +593,16 @@ declare module 'gi://Adw?version=1' {
              */
             SPREAD,
         }
-        /**
-         * Describes the possible transitions in a [class`Leaflet]` widget.
-         *
-         * New values may be added to this enumeration over time.
-         */
 
-        /**
-         * Describes the possible transitions in a [class`Leaflet]` widget.
-         *
-         * New values may be added to this enumeration over time.
-         */
         export namespace LeafletTransitionType {
             export const $gtype: GObject.GType<LeafletTransitionType>;
         }
 
+        /**
+         * Describes the possible transitions in a [class`Leaflet]` widget.
+         *
+         * New values may be added to this enumeration over time.
+         */
         enum LeafletTransitionType {
             /**
              * Cover the old page or uncover the new page, sliding from or towards the end according to orientation, text direction and children order
@@ -699,33 +617,22 @@ declare module 'gi://Adw?version=1' {
              */
             SLIDE,
         }
-        /**
-         * Describes length units.
-         *
-         * | Unit | Regular Text | Large Text |
-         * | ---- | ------------ | ---------- |
-         * | 1px  | 1px          | 1px        |
-         * | 1pt  | 1.333333px   | 1.666667px |
-         * | 1sp  | 1px          | 1.25px     |
-         *
-         * New values may be added to this enumeration over time.
-         */
 
-        /**
-         * Describes length units.
-         *
-         * | Unit | Regular Text | Large Text |
-         * | ---- | ------------ | ---------- |
-         * | 1px  | 1px          | 1px        |
-         * | 1pt  | 1.333333px   | 1.666667px |
-         * | 1sp  | 1px          | 1.25px     |
-         *
-         * New values may be added to this enumeration over time.
-         */
         export namespace LengthUnit {
             export const $gtype: GObject.GType<LengthUnit>;
         }
 
+        /**
+         * Describes length units.
+         *
+         * | Unit | Regular Text | Large Text |
+         * | ---- | ------------ | ---------- |
+         * | 1px  | 1px          | 1px        |
+         * | 1pt  | 1.333333px   | 1.666667px |
+         * | 1sp  | 1px          | 1.25px     |
+         *
+         * New values may be added to this enumeration over time.
+         */
         enum LengthUnit {
             /**
              * pixels
@@ -740,17 +647,14 @@ declare module 'gi://Adw?version=1' {
              */
             SP,
         }
-        /**
-         * Describes the direction of a swipe navigation gesture.
-         */
 
-        /**
-         * Describes the direction of a swipe navigation gesture.
-         */
         export namespace NavigationDirection {
             export const $gtype: GObject.GType<NavigationDirection>;
         }
 
+        /**
+         * Describes the direction of a swipe navigation gesture.
+         */
         enum NavigationDirection {
             /**
              * Corresponds to start or top, depending on orientation and text direction
@@ -761,23 +665,17 @@ declare module 'gi://Adw?version=1' {
              */
             FORWARD,
         }
-        /**
-         * Describes child packing behavior in a [class`WrapLayout]` or [class`WrapBox]`.
-         *
-         * See [property`WrapLayout:`pack-direction] and
-         * [property`WrapBox:`pack-direction].
-         */
 
-        /**
-         * Describes child packing behavior in a [class`WrapLayout]` or [class`WrapBox]`.
-         *
-         * See [property`WrapLayout:`pack-direction] and
-         * [property`WrapBox:`pack-direction].
-         */
         export namespace PackDirection {
             export const $gtype: GObject.GType<PackDirection>;
         }
 
+        /**
+         * Describes child packing behavior in a [class`WrapLayout]` or [class`WrapBox]`.
+         *
+         * See [property`WrapLayout:`pack-direction] and
+         * [property`WrapBox:`pack-direction].
+         */
         enum PackDirection {
             /**
              * Pack children from left to right for LTR languages,
@@ -790,21 +688,16 @@ declare module 'gi://Adw?version=1' {
              */
             END_TO_START,
         }
-        /**
-         * Describes the possible styles of [class`AlertDialog]` response buttons.
-         *
-         * See [method`AlertDialog`.set_response_appearance].
-         */
 
-        /**
-         * Describes the possible styles of [class`AlertDialog]` response buttons.
-         *
-         * See [method`AlertDialog`.set_response_appearance].
-         */
         export namespace ResponseAppearance {
             export const $gtype: GObject.GType<ResponseAppearance>;
         }
 
+        /**
+         * Describes the possible styles of [class`AlertDialog]` response buttons.
+         *
+         * See [method`AlertDialog`.set_response_appearance].
+         */
         enum ResponseAppearance {
             /**
              * the default appearance.
@@ -822,21 +715,16 @@ declare module 'gi://Adw?version=1' {
              */
             DESTRUCTIVE,
         }
-        /**
-         * Determines how an [class`Sidebar]` should look and behave.
-         *
-         * See [property`Sidebar:`mode] and [property`ViewSwitcherSidebar:`mode].
-         */
 
-        /**
-         * Determines how an [class`Sidebar]` should look and behave.
-         *
-         * See [property`Sidebar:`mode] and [property`ViewSwitcherSidebar:`mode].
-         */
         export namespace SidebarMode {
             export const $gtype: GObject.GType<SidebarMode>;
         }
 
+        /**
+         * Determines how an [class`Sidebar]` should look and behave.
+         *
+         * See [property`Sidebar:`mode] and [property`ViewSwitcherSidebar:`mode].
+         */
         enum SidebarMode {
             /**
              * The sidebar should be displayed as a sidebar
@@ -847,17 +735,14 @@ declare module 'gi://Adw?version=1' {
              */
             PAGE,
         }
-        /**
-         * Describes the possible transitions in a [class`Squeezer]` widget.
-         */
 
-        /**
-         * Describes the possible transitions in a [class`Squeezer]` widget.
-         */
         export namespace SqueezerTransitionType {
             export const $gtype: GObject.GType<SqueezerTransitionType>;
         }
 
+        /**
+         * Describes the possible transitions in a [class`Squeezer]` widget.
+         */
         enum SqueezerTransitionType {
             /**
              * No transition
@@ -868,17 +753,14 @@ declare module 'gi://Adw?version=1' {
              */
             CROSSFADE,
         }
-        /**
-         * [class`Toast]` behavior when another toast is already displayed.
-         */
 
-        /**
-         * [class`Toast]` behavior when another toast is already displayed.
-         */
         export namespace ToastPriority {
             export const $gtype: GObject.GType<ToastPriority>;
         }
 
+        /**
+         * [class`Toast]` behavior when another toast is already displayed.
+         */
         enum ToastPriority {
             /**
              * the toast will be queued if another toast is
@@ -891,95 +773,53 @@ declare module 'gi://Adw?version=1' {
              */
             HIGH,
         }
-        /**
-         * Describes the possible top or bottom bar styles in an [class`ToolbarView]`
-         * widget.
-         *
-         * [enum`Adw`.ToolbarStyle.flat] is suitable for simple content, such as
-         * [class`StatusPage]` or [class`PreferencesPage]`, where the background at the
-         * top and bottom parts of the page is uniform. Additionally, windows with
-         * sidebars should always use this style.
-         *
-         * <picture style="min-width: 33%; display: inline-block;">
-         *   <source srcset="toolbar-view-flat-1-dark.png" media="(prefers-color-scheme: dark)">
-         *   <img src="toolbar-view-flat-1.png" alt="toolbar-view-flat-1">
-         * </picture>
-         * <picture style="min-width: 33%; display: inline-block;">
-         *   <source srcset="toolbar-view-flat-2-dark.png" media="(prefers-color-scheme: dark)">
-         *   <img src="toolbar-view-flat-2.png" alt="toolbar-view-flat-2">
-         * </picture>
-         *
-         * [enum`Adw`.ToolbarStyle.raised] style is suitable for content such as
-         * [utility panes](https://developer.gnome.org/hig/patterns/containers/utility-panes.html),
-         * where some elements are directly adjacent to the top/bottom bars, or
-         * [class`TabView]`, where each page can have a different background.
-         *
-         * [enum`Adw`.ToolbarStyle.raised-border] style is similar to
-         * [enum`Adw`.ToolbarStyle.raised], but with the shadow replaced with a more
-         * subtle border. It's intended to be used in applications like image viewers,
-         * where a shadow over the content might be undesired.
-         *
-         * <picture style="min-width: 33%; display: inline-block;">
-         *   <source srcset="toolbar-view-raised-dark.png" media="(prefers-color-scheme: dark)">
-         *   <img src="toolbar-view-raised.png" alt="toolbar-view-raised">
-         * </picture>
-         * <picture style="min-width: 33%; display: inline-block;">
-         *   <source srcset="toolbar-view-raised-border-dark.png" media="(prefers-color-scheme: dark)">
-         *   <img src="toolbar-view-raised-border.png" alt="toolbar-view-raised-border">
-         * </picture>
-         *
-         * See [property`ToolbarView:`top-bar-style] and
-         * [property`ToolbarView:`bottom-bar-style].
-         *
-         * New values may be added to this enumeration over time.
-         */
 
-        /**
-         * Describes the possible top or bottom bar styles in an [class`ToolbarView]`
-         * widget.
-         *
-         * [enum`Adw`.ToolbarStyle.flat] is suitable for simple content, such as
-         * [class`StatusPage]` or [class`PreferencesPage]`, where the background at the
-         * top and bottom parts of the page is uniform. Additionally, windows with
-         * sidebars should always use this style.
-         *
-         * <picture style="min-width: 33%; display: inline-block;">
-         *   <source srcset="toolbar-view-flat-1-dark.png" media="(prefers-color-scheme: dark)">
-         *   <img src="toolbar-view-flat-1.png" alt="toolbar-view-flat-1">
-         * </picture>
-         * <picture style="min-width: 33%; display: inline-block;">
-         *   <source srcset="toolbar-view-flat-2-dark.png" media="(prefers-color-scheme: dark)">
-         *   <img src="toolbar-view-flat-2.png" alt="toolbar-view-flat-2">
-         * </picture>
-         *
-         * [enum`Adw`.ToolbarStyle.raised] style is suitable for content such as
-         * [utility panes](https://developer.gnome.org/hig/patterns/containers/utility-panes.html),
-         * where some elements are directly adjacent to the top/bottom bars, or
-         * [class`TabView]`, where each page can have a different background.
-         *
-         * [enum`Adw`.ToolbarStyle.raised-border] style is similar to
-         * [enum`Adw`.ToolbarStyle.raised], but with the shadow replaced with a more
-         * subtle border. It's intended to be used in applications like image viewers,
-         * where a shadow over the content might be undesired.
-         *
-         * <picture style="min-width: 33%; display: inline-block;">
-         *   <source srcset="toolbar-view-raised-dark.png" media="(prefers-color-scheme: dark)">
-         *   <img src="toolbar-view-raised.png" alt="toolbar-view-raised">
-         * </picture>
-         * <picture style="min-width: 33%; display: inline-block;">
-         *   <source srcset="toolbar-view-raised-border-dark.png" media="(prefers-color-scheme: dark)">
-         *   <img src="toolbar-view-raised-border.png" alt="toolbar-view-raised-border">
-         * </picture>
-         *
-         * See [property`ToolbarView:`top-bar-style] and
-         * [property`ToolbarView:`bottom-bar-style].
-         *
-         * New values may be added to this enumeration over time.
-         */
         export namespace ToolbarStyle {
             export const $gtype: GObject.GType<ToolbarStyle>;
         }
 
+        /**
+         * Describes the possible top or bottom bar styles in an [class`ToolbarView]`
+         * widget.
+         *
+         * [enum`Adw`.ToolbarStyle.flat] is suitable for simple content, such as
+         * [class`StatusPage]` or [class`PreferencesPage]`, where the background at the
+         * top and bottom parts of the page is uniform. Additionally, windows with
+         * sidebars should always use this style.
+         *
+         * <picture style="min-width: 33%; display: inline-block;">
+         *   <source srcset="toolbar-view-flat-1-dark.png" media="(prefers-color-scheme: dark)">
+         *   <img src="toolbar-view-flat-1.png" alt="toolbar-view-flat-1">
+         * </picture>
+         * <picture style="min-width: 33%; display: inline-block;">
+         *   <source srcset="toolbar-view-flat-2-dark.png" media="(prefers-color-scheme: dark)">
+         *   <img src="toolbar-view-flat-2.png" alt="toolbar-view-flat-2">
+         * </picture>
+         *
+         * [enum`Adw`.ToolbarStyle.raised] style is suitable for content such as
+         * [utility panes](https://developer.gnome.org/hig/patterns/containers/utility-panes.html),
+         * where some elements are directly adjacent to the top/bottom bars, or
+         * [class`TabView]`, where each page can have a different background.
+         *
+         * [enum`Adw`.ToolbarStyle.raised-border] style is similar to
+         * [enum`Adw`.ToolbarStyle.raised], but with the shadow replaced with a more
+         * subtle border. It's intended to be used in applications like image viewers,
+         * where a shadow over the content might be undesired.
+         *
+         * <picture style="min-width: 33%; display: inline-block;">
+         *   <source srcset="toolbar-view-raised-dark.png" media="(prefers-color-scheme: dark)">
+         *   <img src="toolbar-view-raised.png" alt="toolbar-view-raised">
+         * </picture>
+         * <picture style="min-width: 33%; display: inline-block;">
+         *   <source srcset="toolbar-view-raised-border-dark.png" media="(prefers-color-scheme: dark)">
+         *   <img src="toolbar-view-raised-border.png" alt="toolbar-view-raised-border">
+         * </picture>
+         *
+         * See [property`ToolbarView:`top-bar-style] and
+         * [property`ToolbarView:`bottom-bar-style].
+         *
+         * New values may be added to this enumeration over time.
+         */
         enum ToolbarStyle {
             /**
              * No background, shadow only for scrolled content
@@ -994,17 +834,14 @@ declare module 'gi://Adw?version=1' {
              */
             RAISED_BORDER,
         }
-        /**
-         * Describes the adaptive modes of [class`ViewSwitcher]`.
-         */
 
-        /**
-         * Describes the adaptive modes of [class`ViewSwitcher]`.
-         */
         export namespace ViewSwitcherPolicy {
             export const $gtype: GObject.GType<ViewSwitcherPolicy>;
         }
 
+        /**
+         * Describes the adaptive modes of [class`ViewSwitcher]`.
+         */
         enum ViewSwitcherPolicy {
             /**
              * Force the narrow mode
@@ -1015,21 +852,16 @@ declare module 'gi://Adw?version=1' {
              */
             WIDE,
         }
-        /**
-         * Describes line wrapping behavior in a [class`WrapLayout]` or [class`WrapBox]`.
-         *
-         * See [property`WrapLayout:`wrap-policy] and [property`WrapBox:`wrap-policy].
-         */
 
-        /**
-         * Describes line wrapping behavior in a [class`WrapLayout]` or [class`WrapBox]`.
-         *
-         * See [property`WrapLayout:`wrap-policy] and [property`WrapBox:`wrap-policy].
-         */
         export namespace WrapPolicy {
             export const $gtype: GObject.GType<WrapPolicy>;
         }
 
+        /**
+         * Describes line wrapping behavior in a [class`WrapLayout]` or [class`WrapBox]`.
+         *
+         * See [property`WrapLayout:`wrap-policy] and [property`WrapBox:`wrap-policy].
+         */
         enum WrapPolicy {
             /**
              * Fit as many children into each line as possible, shrinking
@@ -1042,6 +874,7 @@ declare module 'gi://Adw?version=1' {
              */
             NATURAL,
         }
+
         /**
          * Indicates an [class`Animation]` with an infinite duration.
          *
@@ -1254,29 +1087,19 @@ declare module 'gi://Adw?version=1' {
         interface SidebarSectionCreateItemFunc<A = GObject.Object> {
             (item: A): SidebarItem;
         }
-        /**
-         * Describes available shortcuts in an [class`TabView]`.
-         *
-         * Shortcuts can be set with [property`TabView:`shortcuts], or added/removed
-         * individually with [method`TabView`.add_shortcuts] and
-         * [method`TabView`.remove_shortcuts].
-         *
-         * New values may be added to this enumeration over time.
-         */
-
-        /**
-         * Describes available shortcuts in an [class`TabView]`.
-         *
-         * Shortcuts can be set with [property`TabView:`shortcuts], or added/removed
-         * individually with [method`TabView`.add_shortcuts] and
-         * [method`TabView`.remove_shortcuts].
-         *
-         * New values may be added to this enumeration over time.
-         */
         export namespace TabViewShortcuts {
             export const $gtype: GObject.GType<TabViewShortcuts>;
         }
 
+        /**
+         * Describes available shortcuts in an [class`TabView]`.
+         *
+         * Shortcuts can be set with [property`TabView:`shortcuts], or added/removed
+         * individually with [method`TabView`.add_shortcuts] and
+         * [method`TabView`.remove_shortcuts].
+         *
+         * New values may be added to this enumeration over time.
+         */
         enum TabViewShortcuts {
             /**
              * No shortcuts
@@ -1340,6 +1163,7 @@ declare module 'gi://Adw?version=1' {
              */
             ALL_SHORTCUTS,
         }
+
         namespace AboutDialog {
             // Signal signatures
             interface SignalSignatures extends Dialog.SignalSignatures {
