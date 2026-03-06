@@ -31,14 +31,6 @@ declare module 'gi://GstAnalytics?version=1.0' {
         /**
          * Enum value describing supported segmentation type
          */
-
-        /**
-         * Enum value describing supported segmentation type
-         */
-        export namespace SegmentationType {
-            export const $gtype: GObject.GType<SegmentationType>;
-        }
-
         enum SegmentationType {
             /**
              * Segmentation where the belonging of each
@@ -51,17 +43,10 @@ declare module 'gi://GstAnalytics?version=1.0' {
              */
             INSTANCE,
         }
-        /**
-         * Describe the type of data contain in the tensor.
-         */
 
         /**
          * Describe the type of data contain in the tensor.
          */
-        export namespace TensorDataType {
-            export const $gtype: GObject.GType<TensorDataType>;
-        }
-
         enum TensorDataType {
             /**
              * signed 4 bit integer tensor data
@@ -120,17 +105,10 @@ declare module 'gi://GstAnalytics?version=1.0' {
              */
             BFLOAT16,
         }
-        /**
-         * Indicate to read tensor from memory in row-major or column-major order.
-         */
 
         /**
          * Indicate to read tensor from memory in row-major or column-major order.
          */
-        export namespace TensorDimOrder {
-            export const $gtype: GObject.GType<TensorDimOrder>;
-        }
-
         enum TensorDimOrder {
             /**
              * elements along a row are consecutive in memory
@@ -141,23 +119,17 @@ declare module 'gi://GstAnalytics?version=1.0' {
              */
             COL_MAJOR,
         }
-        /**
-         * Indicate tensor storage in memory.
-         */
 
         /**
          * Indicate tensor storage in memory.
          */
-        export namespace TensorLayout {
-            export const $gtype: GObject.GType<TensorLayout>;
-        }
-
         enum TensorLayout {
             /**
              * indicate the tensor is stored in a dense format in memory
              */
             TENSOR_LAYOUT_CONTIGUOUS,
         }
+
         /**
          * Passes to functions asking for a relation span when the span is
          * infinite.
@@ -238,11 +210,6 @@ declare module 'gi://GstAnalytics?version=1.0' {
          */
         function segmentation_mtd_get_mtd_type(): MtdType;
         function tracking_mtd_get_mtd_type(): MtdType;
-
-        export namespace RelTypes {
-            export const $gtype: GObject.GType<RelTypes>;
-        }
-
         enum RelTypes {
             /**
              * No relation
@@ -270,6 +237,7 @@ declare module 'gi://GstAnalytics?version=1.0' {
              */
             ANY,
         }
+
         /**
          * Handle containing data required to use gst_analytics_cls_mtd APIs. This type
          * is generally expected to be allocated on the stack.

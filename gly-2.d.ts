@@ -28,7 +28,7 @@ declare module 'gi://Gly?version=2' {
          * Errors that can appear while loading images.
          */
         class LoaderError extends GLib.Error {
-            static $gtype: GObject.GType<LoaderError>;
+            static $gtype: GObject.GType<GLib.Error>;
 
             // Static fields
 
@@ -57,17 +57,13 @@ declare module 'gi://Gly?version=2' {
             static quark(): GLib.Quark;
         }
 
-        /**
-         * Memory format
-         */
-
-        /**
-         * Memory format
-         */
         export namespace MemoryFormat {
             export const $gtype: GObject.GType<MemoryFormat>;
         }
 
+        /**
+         * Memory format
+         */
         enum MemoryFormat {
             /**
              * 8-bit RGRA premultiplied
@@ -162,23 +158,17 @@ declare module 'gi://Gly?version=2' {
              */
             G16,
         }
-        /**
-         * Sandbox mechanisms
-         *
-         * ::: warning
-         *     Using `GLY_SANDBOX_SELECTOR_NOT_SANDBOXED` will disable an important security layer that sandboxes loaders. It is only intended for testing and development purposes.
-         */
 
-        /**
-         * Sandbox mechanisms
-         *
-         * ::: warning
-         *     Using `GLY_SANDBOX_SELECTOR_NOT_SANDBOXED` will disable an important security layer that sandboxes loaders. It is only intended for testing and development purposes.
-         */
         export namespace SandboxSelector {
             export const $gtype: GObject.GType<SandboxSelector>;
         }
 
+        /**
+         * Sandbox mechanisms
+         *
+         * ::: warning
+         *     Using `GLY_SANDBOX_SELECTOR_NOT_SANDBOXED` will disable an important security layer that sandboxes loaders. It is only intended for testing and development purposes.
+         */
         enum SandboxSelector {
             /**
              * This mode selects `bwrap` outside of Flatpaks and usually
@@ -205,6 +195,7 @@ declare module 'gi://Gly?version=2' {
              */
             NOT_SANDBOXED,
         }
+
         /**
          * Error quark for [error`GlyLoaderError]`
          * @returns The error domain
@@ -226,17 +217,13 @@ declare module 'gi://Gly?version=2' {
         interface LoaderGetMimeTypesDoneFunc {
             (mime_types: string[], data?: any | null): void;
         }
-        /**
-         * Memory format selection
-         */
-
-        /**
-         * Memory format selection
-         */
         export namespace MemoryFormatSelection {
             export const $gtype: GObject.GType<MemoryFormatSelection>;
         }
 
+        /**
+         * Memory format selection
+         */
         enum MemoryFormatSelection {
             /**
              * 8-bit RGRA premultiplied
@@ -331,6 +318,7 @@ declare module 'gi://Gly?version=2' {
              */
             G16,
         }
+
         namespace Creator {
             // Signal signatures
             interface SignalSignatures extends GObject.Object.SignalSignatures {

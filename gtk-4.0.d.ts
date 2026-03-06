@@ -43,17 +43,13 @@ declare module 'gi://Gtk?version=4.0' {
          * Gtk-4.0
          */
 
-        /**
-         * The priority of an accessibility announcement.
-         */
-
-        /**
-         * The priority of an accessibility announcement.
-         */
         export namespace AccessibleAnnouncementPriority {
             export const $gtype: GObject.GType<AccessibleAnnouncementPriority>;
         }
 
+        /**
+         * The priority of an accessibility announcement.
+         */
         enum AccessibleAnnouncementPriority {
             /**
              * The announcement is low priority,
@@ -76,19 +72,15 @@ declare module 'gi://Gtk?version=4.0' {
              */
             HIGH,
         }
-        /**
-         * The possible values for the %GTK_ACCESSIBLE_PROPERTY_AUTOCOMPLETE
-         * accessible property.
-         */
 
-        /**
-         * The possible values for the %GTK_ACCESSIBLE_PROPERTY_AUTOCOMPLETE
-         * accessible property.
-         */
         export namespace AccessibleAutocomplete {
             export const $gtype: GObject.GType<AccessibleAutocomplete>;
         }
 
+        /**
+         * The possible values for the %GTK_ACCESSIBLE_PROPERTY_AUTOCOMPLETE
+         * accessible property.
+         */
         enum AccessibleAutocomplete {
             /**
              * Automatic suggestions are not displayed.
@@ -115,27 +107,19 @@ declare module 'gi://Gtk?version=4.0' {
              */
             BOTH,
         }
-        /**
-         * The possible values for the %GTK_ACCESSIBLE_STATE_INVALID
-         * accessible state.
-         *
-         * Note that the %GTK_ACCESSIBLE_INVALID_FALSE and
-         * %GTK_ACCESSIBLE_INVALID_TRUE have the same values
-         * as %FALSE and %TRUE.
-         */
 
-        /**
-         * The possible values for the %GTK_ACCESSIBLE_STATE_INVALID
-         * accessible state.
-         *
-         * Note that the %GTK_ACCESSIBLE_INVALID_FALSE and
-         * %GTK_ACCESSIBLE_INVALID_TRUE have the same values
-         * as %FALSE and %TRUE.
-         */
         export namespace AccessibleInvalidState {
             export const $gtype: GObject.GType<AccessibleInvalidState>;
         }
 
+        /**
+         * The possible values for the %GTK_ACCESSIBLE_STATE_INVALID
+         * accessible state.
+         *
+         * Note that the %GTK_ACCESSIBLE_INVALID_FALSE and
+         * %GTK_ACCESSIBLE_INVALID_TRUE have the same values
+         * as %FALSE and %TRUE.
+         */
         enum AccessibleInvalidState {
             /**
              * There are no detected errors in the value
@@ -154,19 +138,15 @@ declare module 'gi://Gtk?version=4.0' {
              */
             SPELLING,
         }
-        /**
-         * The various platform states which can be queried
-         * using [method`Gtk`.Accessible.get_platform_state].
-         */
 
-        /**
-         * The various platform states which can be queried
-         * using [method`Gtk`.Accessible.get_platform_state].
-         */
         export namespace AccessiblePlatformState {
             export const $gtype: GObject.GType<AccessiblePlatformState>;
         }
 
+        /**
+         * The various platform states which can be queried
+         * using [method`Gtk`.Accessible.get_platform_state].
+         */
         enum AccessiblePlatformState {
             /**
              * whether the accessible can be focused
@@ -181,17 +161,14 @@ declare module 'gi://Gtk?version=4.0' {
              */
             ACTIVE,
         }
-        /**
-         * The possible accessible properties of a [iface`Accessible]`.
-         */
 
-        /**
-         * The possible accessible properties of a [iface`Accessible]`.
-         */
         export namespace AccessibleProperty {
             export const $gtype: GObject.GType<AccessibleProperty>;
         }
 
+        /**
+         * The possible accessible properties of a [iface`Accessible]`.
+         */
         enum AccessibleProperty {
             /**
              * Indicates whether inputting text
@@ -305,23 +282,17 @@ declare module 'gi://Gtk?version=4.0' {
              */
             HELP_TEXT,
         }
-        /**
-         * The possible accessible relations of a [iface`Accessible]`.
-         *
-         * Accessible relations can be references to other widgets,
-         * integers or strings.
-         */
 
-        /**
-         * The possible accessible relations of a [iface`Accessible]`.
-         *
-         * Accessible relations can be references to other widgets,
-         * integers or strings.
-         */
         export namespace AccessibleRelation {
             export const $gtype: GObject.GType<AccessibleRelation>;
         }
 
+        /**
+         * The possible accessible relations of a [iface`Accessible]`.
+         *
+         * Accessible relations can be references to other widgets,
+         * integers or strings.
+         */
         enum AccessibleRelation {
             /**
              * Identifies the currently active
@@ -465,23 +436,17 @@ declare module 'gi://Gtk?version=4.0' {
              */
             FLOW_FROM,
         }
-        /**
-         * The accessible role for a [iface`Accessible]` implementation.
-         *
-         * Abstract roles are only used as part of the ontology; application
-         * developers must not use abstract roles in their code.
-         */
 
-        /**
-         * The accessible role for a [iface`Accessible]` implementation.
-         *
-         * Abstract roles are only used as part of the ontology; application
-         * developers must not use abstract roles in their code.
-         */
         export namespace AccessibleRole {
             export const $gtype: GObject.GType<AccessibleRole>;
         }
 
+        /**
+         * The accessible role for a [iface`Accessible]` implementation.
+         *
+         * Abstract roles are only used as part of the ontology; application
+         * developers must not use abstract roles in their code.
+         */
         enum AccessibleRole {
             /**
              * An element with important, and usually
@@ -852,19 +817,15 @@ declare module 'gi://Gtk?version=4.0' {
              */
             TERMINAL,
         }
-        /**
-         * The possible values for the %GTK_ACCESSIBLE_PROPERTY_SORT
-         * accessible property.
-         */
 
-        /**
-         * The possible values for the %GTK_ACCESSIBLE_PROPERTY_SORT
-         * accessible property.
-         */
         export namespace AccessibleSort {
             export const $gtype: GObject.GType<AccessibleSort>;
         }
 
+        /**
+         * The possible values for the %GTK_ACCESSIBLE_PROPERTY_SORT
+         * accessible property.
+         */
         enum AccessibleSort {
             /**
              * There is no defined sort applied to the column.
@@ -884,17 +845,14 @@ declare module 'gi://Gtk?version=4.0' {
              */
             OTHER,
         }
-        /**
-         * The possible accessible states of a [iface`Accessible]`.
-         */
 
-        /**
-         * The possible accessible states of a [iface`Accessible]`.
-         */
         export namespace AccessibleState {
             export const $gtype: GObject.GType<AccessibleState>;
         }
 
+        /**
+         * The possible accessible states of a [iface`Accessible]`.
+         */
         enum AccessibleState {
             /**
              * A “busy” state. This state has boolean values
@@ -947,17 +905,14 @@ declare module 'gi://Gtk?version=4.0' {
              */
             VISITED,
         }
-        /**
-         * The type of contents change operation.
-         */
 
-        /**
-         * The type of contents change operation.
-         */
         export namespace AccessibleTextContentChange {
             export const $gtype: GObject.GType<AccessibleTextContentChange>;
         }
 
+        /**
+         * The type of contents change operation.
+         */
         enum AccessibleTextContentChange {
             /**
              * contents change as the result of
@@ -970,19 +925,15 @@ declare module 'gi://Gtk?version=4.0' {
              */
             REMOVE,
         }
-        /**
-         * The granularity for queries about the text contents of a [iface`Gtk`.AccessibleText]
-         * implementation.
-         */
 
-        /**
-         * The granularity for queries about the text contents of a [iface`Gtk`.AccessibleText]
-         * implementation.
-         */
         export namespace AccessibleTextGranularity {
             export const $gtype: GObject.GType<AccessibleTextGranularity>;
         }
 
+        /**
+         * The granularity for queries about the text contents of a [iface`Gtk`.AccessibleText]
+         * implementation.
+         */
         enum AccessibleTextGranularity {
             /**
              * Use the boundary between
@@ -1014,27 +965,19 @@ declare module 'gi://Gtk?version=4.0' {
              */
             PARAGRAPH,
         }
-        /**
-         * The possible values for the %GTK_ACCESSIBLE_STATE_PRESSED
-         * accessible state.
-         *
-         * Note that the %GTK_ACCESSIBLE_TRISTATE_FALSE and
-         * %GTK_ACCESSIBLE_TRISTATE_TRUE have the same values
-         * as %FALSE and %TRUE.
-         */
 
-        /**
-         * The possible values for the %GTK_ACCESSIBLE_STATE_PRESSED
-         * accessible state.
-         *
-         * Note that the %GTK_ACCESSIBLE_TRISTATE_FALSE and
-         * %GTK_ACCESSIBLE_TRISTATE_TRUE have the same values
-         * as %FALSE and %TRUE.
-         */
         export namespace AccessibleTristate {
             export const $gtype: GObject.GType<AccessibleTristate>;
         }
 
+        /**
+         * The possible values for the %GTK_ACCESSIBLE_STATE_PRESSED
+         * accessible state.
+         *
+         * Note that the %GTK_ACCESSIBLE_TRISTATE_FALSE and
+         * %GTK_ACCESSIBLE_TRISTATE_TRUE have the same values
+         * as %FALSE and %TRUE.
+         */
         enum AccessibleTristate {
             /**
              * The state is `false`
@@ -1049,47 +992,29 @@ declare module 'gi://Gtk?version=4.0' {
              */
             MIXED,
         }
-        /**
-         * Controls how a widget deals with extra space in a single dimension.
-         *
-         * Alignment only matters if the widget receives a “too large” allocation,
-         * for example if you packed the widget with the [property`Gtk`.Widget:hexpand]
-         * property inside a [class`Box]`, then the widget might get extra space.
-         * If you have for example a 16x16 icon inside a 32x32 space, the icon
-         * could be scaled and stretched, it could be centered, or it could be
-         * positioned to one side of the space.
-         *
-         * Note that in horizontal context `GTK_ALIGN_START` and `GTK_ALIGN_END`
-         * are interpreted relative to text direction.
-         *
-         * Baseline support is optional for containers and widgets, and is only available
-         * for vertical alignment. `GTK_ALIGN_BASELINE_CENTER` and `GTK_ALIGN_BASELINE_FILL`
-         * are treated similar to `GTK_ALIGN_CENTER` and `GTK_ALIGN_FILL`, except that it
-         * positions the widget to line up the baselines, where that is supported.
-         */
 
-        /**
-         * Controls how a widget deals with extra space in a single dimension.
-         *
-         * Alignment only matters if the widget receives a “too large” allocation,
-         * for example if you packed the widget with the [property`Gtk`.Widget:hexpand]
-         * property inside a [class`Box]`, then the widget might get extra space.
-         * If you have for example a 16x16 icon inside a 32x32 space, the icon
-         * could be scaled and stretched, it could be centered, or it could be
-         * positioned to one side of the space.
-         *
-         * Note that in horizontal context `GTK_ALIGN_START` and `GTK_ALIGN_END`
-         * are interpreted relative to text direction.
-         *
-         * Baseline support is optional for containers and widgets, and is only available
-         * for vertical alignment. `GTK_ALIGN_BASELINE_CENTER` and `GTK_ALIGN_BASELINE_FILL`
-         * are treated similar to `GTK_ALIGN_CENTER` and `GTK_ALIGN_FILL`, except that it
-         * positions the widget to line up the baselines, where that is supported.
-         */
         export namespace Align {
             export const $gtype: GObject.GType<Align>;
         }
 
+        /**
+         * Controls how a widget deals with extra space in a single dimension.
+         *
+         * Alignment only matters if the widget receives a “too large” allocation,
+         * for example if you packed the widget with the [property`Gtk`.Widget:hexpand]
+         * property inside a [class`Box]`, then the widget might get extra space.
+         * If you have for example a 16x16 icon inside a 32x32 space, the icon
+         * could be scaled and stretched, it could be centered, or it could be
+         * positioned to one side of the space.
+         *
+         * Note that in horizontal context `GTK_ALIGN_START` and `GTK_ALIGN_END`
+         * are interpreted relative to text direction.
+         *
+         * Baseline support is optional for containers and widgets, and is only available
+         * for vertical alignment. `GTK_ALIGN_BASELINE_CENTER` and `GTK_ALIGN_BASELINE_FILL`
+         * are treated similar to `GTK_ALIGN_CENTER` and `GTK_ALIGN_FILL`, except that it
+         * positions the widget to line up the baselines, where that is supported.
+         */
         enum Align {
             /**
              * stretch to fill all space if possible, center if
@@ -1121,17 +1046,14 @@ declare module 'gi://Gtk?version=4.0' {
              */
             BASELINE_CENTER,
         }
-        /**
-         * Indicates the direction in which an arrow should point.
-         */
 
-        /**
-         * Indicates the direction in which an arrow should point.
-         */
         export namespace ArrowType {
             export const $gtype: GObject.GType<ArrowType>;
         }
 
+        /**
+         * Indicates the direction in which an arrow should point.
+         */
         enum ArrowType {
             /**
              * Represents an upward pointing arrow.
@@ -1154,35 +1076,23 @@ declare module 'gi://Gtk?version=4.0' {
              */
             NONE,
         }
-        /**
-         * Determines the role of a page inside a `GtkAssistant`.
-         *
-         * The role is used to handle buttons sensitivity and visibility.
-         *
-         * Note that an assistant needs to end its page flow with a page of type
-         * %GTK_ASSISTANT_PAGE_CONFIRM, %GTK_ASSISTANT_PAGE_SUMMARY or
-         * %GTK_ASSISTANT_PAGE_PROGRESS to be correct.
-         *
-         * The Cancel button will only be shown if the page isn’t “committed”.
-         * See gtk_assistant_commit() for details.
-         */
 
-        /**
-         * Determines the role of a page inside a `GtkAssistant`.
-         *
-         * The role is used to handle buttons sensitivity and visibility.
-         *
-         * Note that an assistant needs to end its page flow with a page of type
-         * %GTK_ASSISTANT_PAGE_CONFIRM, %GTK_ASSISTANT_PAGE_SUMMARY or
-         * %GTK_ASSISTANT_PAGE_PROGRESS to be correct.
-         *
-         * The Cancel button will only be shown if the page isn’t “committed”.
-         * See gtk_assistant_commit() for details.
-         */
         export namespace AssistantPageType {
             export const $gtype: GObject.GType<AssistantPageType>;
         }
 
+        /**
+         * Determines the role of a page inside a `GtkAssistant`.
+         *
+         * The role is used to handle buttons sensitivity and visibility.
+         *
+         * Note that an assistant needs to end its page flow with a page of type
+         * %GTK_ASSISTANT_PAGE_CONFIRM, %GTK_ASSISTANT_PAGE_SUMMARY or
+         * %GTK_ASSISTANT_PAGE_PROGRESS to be correct.
+         *
+         * The Cancel button will only be shown if the page isn’t “committed”.
+         * See gtk_assistant_commit() for details.
+         */
         enum AssistantPageType {
             /**
              * The page has regular contents. Both the
@@ -1218,31 +1128,21 @@ declare module 'gi://Gtk?version=4.0' {
              */
             CUSTOM,
         }
-        /**
-         * Baseline position in a row of widgets.
-         *
-         * Whenever a container has some form of natural row it may align
-         * children in that row along a common typographical baseline. If
-         * the amount of vertical space in the row is taller than the total
-         * requested height of the baseline-aligned children then it can use a
-         * `GtkBaselinePosition` to select where to put the baseline inside the
-         * extra available space.
-         */
 
-        /**
-         * Baseline position in a row of widgets.
-         *
-         * Whenever a container has some form of natural row it may align
-         * children in that row along a common typographical baseline. If
-         * the amount of vertical space in the row is taller than the total
-         * requested height of the baseline-aligned children then it can use a
-         * `GtkBaselinePosition` to select where to put the baseline inside the
-         * extra available space.
-         */
         export namespace BaselinePosition {
             export const $gtype: GObject.GType<BaselinePosition>;
         }
 
+        /**
+         * Baseline position in a row of widgets.
+         *
+         * Whenever a container has some form of natural row it may align
+         * children in that row along a common typographical baseline. If
+         * the amount of vertical space in the row is taller than the total
+         * requested height of the baseline-aligned children then it can use a
+         * `GtkBaselinePosition` to select where to put the baseline inside the
+         * extra available space.
+         */
         enum BaselinePosition {
             /**
              * Align the baseline at the top
@@ -1257,17 +1157,14 @@ declare module 'gi://Gtk?version=4.0' {
              */
             BOTTOM,
         }
-        /**
-         * Describes how the border of a UI element should be rendered.
-         */
 
-        /**
-         * Describes how the border of a UI element should be rendered.
-         */
         export namespace BorderStyle {
             export const $gtype: GObject.GType<BorderStyle>;
         }
 
+        /**
+         * Describes how the border of a UI element should be rendered.
+         */
         enum BorderStyle {
             /**
              * No visible border
@@ -1310,12 +1207,13 @@ declare module 'gi://Gtk?version=4.0' {
              */
             RIDGE,
         }
+
         /**
          * Error codes that identify various errors that can occur while using
          * `GtkBuilder`.
          */
         class BuilderError extends GLib.Error {
-            static $gtype: GObject.GType<BuilderError>;
+            static $gtype: GObject.GType<GLib.Error>;
 
             // Static fields
 
@@ -1403,31 +1301,20 @@ declare module 'gi://Gtk?version=4.0' {
             static quark(): GLib.Quark;
         }
 
-        /**
-         * Prebuilt sets of buttons for `GtkDialog`.
-         *
-         * If none of these choices are appropriate, simply use
-         * %GTK_BUTTONS_NONE and call [method`Gtk`.Dialog.add_buttons].
-         *
-         * > Please note that %GTK_BUTTONS_OK, %GTK_BUTTONS_YES_NO
-         * > and %GTK_BUTTONS_OK_CANCEL are discouraged by the
-         * > [GNOME Human Interface Guidelines](https://developer.gnome.org/hig/).
-         */
-
-        /**
-         * Prebuilt sets of buttons for `GtkDialog`.
-         *
-         * If none of these choices are appropriate, simply use
-         * %GTK_BUTTONS_NONE and call [method`Gtk`.Dialog.add_buttons].
-         *
-         * > Please note that %GTK_BUTTONS_OK, %GTK_BUTTONS_YES_NO
-         * > and %GTK_BUTTONS_OK_CANCEL are discouraged by the
-         * > [GNOME Human Interface Guidelines](https://developer.gnome.org/hig/).
-         */
         export namespace ButtonsType {
             export const $gtype: GObject.GType<ButtonsType>;
         }
 
+        /**
+         * Prebuilt sets of buttons for `GtkDialog`.
+         *
+         * If none of these choices are appropriate, simply use
+         * %GTK_BUTTONS_NONE and call [method`Gtk`.Dialog.add_buttons].
+         *
+         * > Please note that %GTK_BUTTONS_OK, %GTK_BUTTONS_YES_NO
+         * > and %GTK_BUTTONS_OK_CANCEL are discouraged by the
+         * > [GNOME Human Interface Guidelines](https://developer.gnome.org/hig/).
+         */
         enum ButtonsType {
             /**
              * no buttons at all
@@ -1454,17 +1341,14 @@ declare module 'gi://Gtk?version=4.0' {
              */
             OK_CANCEL,
         }
-        /**
-         * The available modes for [property`Gtk`.CellRendererAccel:accel-mode].
-         */
 
-        /**
-         * The available modes for [property`Gtk`.CellRendererAccel:accel-mode].
-         */
         export namespace CellRendererAccelMode {
             export const $gtype: GObject.GType<CellRendererAccelMode>;
         }
 
+        /**
+         * The available modes for [property`Gtk`.CellRendererAccel:accel-mode].
+         */
         enum CellRendererAccelMode {
             /**
              * GTK accelerators mode
@@ -1475,17 +1359,14 @@ declare module 'gi://Gtk?version=4.0' {
              */
             OTHER,
         }
-        /**
-         * Identifies how the user can interact with a particular cell.
-         */
 
-        /**
-         * Identifies how the user can interact with a particular cell.
-         */
         export namespace CellRendererMode {
             export const $gtype: GObject.GType<CellRendererMode>;
         }
 
+        /**
+         * Identifies how the user can interact with a particular cell.
+         */
         enum CellRendererMode {
             /**
              * The cell is just for display
@@ -1503,25 +1384,18 @@ declare module 'gi://Gtk?version=4.0' {
              */
             EDITABLE,
         }
-        /**
-         * Describes how a [class`Gtk`.StringSorter] turns strings into sort keys to
-         * compare them.
-         *
-         * Note that the result of sorting will in general depend on the current locale
-         * unless the mode is `GTK_COLLATION_NONE`.
-         */
 
-        /**
-         * Describes how a [class`Gtk`.StringSorter] turns strings into sort keys to
-         * compare them.
-         *
-         * Note that the result of sorting will in general depend on the current locale
-         * unless the mode is `GTK_COLLATION_NONE`.
-         */
         export namespace Collation {
             export const $gtype: GObject.GType<Collation>;
         }
 
+        /**
+         * Describes how a [class`Gtk`.StringSorter] turns strings into sort keys to
+         * compare them.
+         *
+         * Note that the result of sorting will in general depend on the current locale
+         * unless the mode is `GTK_COLLATION_NONE`.
+         */
         enum Collation {
             /**
              * Don't do any collation
@@ -1536,17 +1410,14 @@ declare module 'gi://Gtk?version=4.0' {
              */
             FILENAME,
         }
-        /**
-         * The widget attributes that can be used when creating a [class`Constraint]`.
-         */
 
-        /**
-         * The widget attributes that can be used when creating a [class`Constraint]`.
-         */
         export namespace ConstraintAttribute {
             export const $gtype: GObject.GType<ConstraintAttribute>;
         }
 
+        /**
+         * The widget attributes that can be used when creating a [class`Constraint]`.
+         */
         enum ConstraintAttribute {
             /**
              * No attribute, used for constant
@@ -1606,17 +1477,14 @@ declare module 'gi://Gtk?version=4.0' {
              */
             BASELINE,
         }
-        /**
-         * The relation between two terms of a constraint.
-         */
 
-        /**
-         * The relation between two terms of a constraint.
-         */
         export namespace ConstraintRelation {
             export const $gtype: GObject.GType<ConstraintRelation>;
         }
 
+        /**
+         * The relation between two terms of a constraint.
+         */
         enum ConstraintRelation {
             /**
              * Less than, or equal
@@ -1631,23 +1499,17 @@ declare module 'gi://Gtk?version=4.0' {
              */
             GE,
         }
-        /**
-         * The strength of a constraint, expressed as a symbolic constant.
-         *
-         * The strength of a [class`Constraint]` can be expressed with any positive
-         * integer; the values of this enumeration can be used for readability.
-         */
 
-        /**
-         * The strength of a constraint, expressed as a symbolic constant.
-         *
-         * The strength of a [class`Constraint]` can be expressed with any positive
-         * integer; the values of this enumeration can be used for readability.
-         */
         export namespace ConstraintStrength {
             export const $gtype: GObject.GType<ConstraintStrength>;
         }
 
+        /**
+         * The strength of a constraint, expressed as a symbolic constant.
+         *
+         * The strength of a [class`Constraint]` can be expressed with any positive
+         * integer; the values of this enumeration can be used for readability.
+         */
         enum ConstraintStrength {
             /**
              * The constraint is required towards solving the layout
@@ -1666,11 +1528,12 @@ declare module 'gi://Gtk?version=4.0' {
              */
             WEAK,
         }
+
         /**
          * Domain for VFL parsing errors.
          */
         class ConstraintVflParserError extends GLib.Error {
-            static $gtype: GObject.GType<ConstraintVflParserError>;
+            static $gtype: GObject.GType<GLib.Error>;
 
             // Static fields
 
@@ -1711,17 +1574,13 @@ declare module 'gi://Gtk?version=4.0' {
             static quark(): GLib.Quark;
         }
 
-        /**
-         * Controls how a content should be made to fit inside an allocation.
-         */
-
-        /**
-         * Controls how a content should be made to fit inside an allocation.
-         */
         export namespace ContentFit {
             export const $gtype: GObject.GType<ContentFit>;
         }
 
+        /**
+         * Controls how a content should be made to fit inside an allocation.
+         */
         enum ContentFit {
             /**
              * Make the content fill the entire allocation,
@@ -1750,23 +1609,17 @@ declare module 'gi://Gtk?version=4.0' {
              */
             SCALE_DOWN,
         }
-        /**
-         * Specifies which corner a child widget should be placed in when packed into
-         * a `GtkScrolledWindow.`
-         *
-         * This is effectively the opposite of where the scroll bars are placed.
-         */
 
-        /**
-         * Specifies which corner a child widget should be placed in when packed into
-         * a `GtkScrolledWindow.`
-         *
-         * This is effectively the opposite of where the scroll bars are placed.
-         */
         export namespace CornerType {
             export const $gtype: GObject.GType<CornerType>;
         }
 
+        /**
+         * Specifies which corner a child widget should be placed in when packed into
+         * a `GtkScrolledWindow.`
+         *
+         * This is effectively the opposite of where the scroll bars are placed.
+         */
         enum CornerType {
             /**
              * Place the scrollbars on the right and bottom of the
@@ -1789,6 +1642,7 @@ declare module 'gi://Gtk?version=4.0' {
              */
             BOTTOM_RIGHT,
         }
+
         /**
          * Errors that can occur while parsing CSS.
          *
@@ -1796,7 +1650,7 @@ declare module 'gi://Gtk?version=4.0' {
          * to be ignored.
          */
         class CssParserError extends GLib.Error {
-            static $gtype: GObject.GType<CssParserError>;
+            static $gtype: GObject.GType<GLib.Error>;
 
             // Static fields
 
@@ -1832,17 +1686,6 @@ declare module 'gi://Gtk?version=4.0' {
          * Unlike `GtkCssParserError`s, warnings do not cause the parser to
          * skip any input, but they indicate issues that should be fixed.
          */
-
-        /**
-         * Warnings that can occur while parsing CSS.
-         *
-         * Unlike `GtkCssParserError`s, warnings do not cause the parser to
-         * skip any input, but they indicate issues that should be fixed.
-         */
-        export namespace CssParserWarning {
-            export const $gtype: GObject.GType<CssParserWarning>;
-        }
-
         enum CssParserWarning {
             /**
              * The given construct is
@@ -1859,17 +1702,14 @@ declare module 'gi://Gtk?version=4.0' {
              */
             UNIMPLEMENTED,
         }
-        /**
-         * Passed to various keybinding signals for deleting text.
-         */
 
-        /**
-         * Passed to various keybinding signals for deleting text.
-         */
         export namespace DeleteType {
             export const $gtype: GObject.GType<DeleteType>;
         }
 
+        /**
+         * Passed to various keybinding signals for deleting text.
+         */
         enum DeleteType {
             /**
              * Delete characters.
@@ -1910,12 +1750,13 @@ declare module 'gi://Gtk?version=4.0' {
              */
             WHITESPACE,
         }
+
         /**
          * Error codes in the `GTK_DIALOG_ERROR` domain that can be returned
          * by async dialog functions.
          */
         class DialogError extends GLib.Error {
-            static $gtype: GObject.GType<DialogError>;
+            static $gtype: GObject.GType<GLib.Error>;
 
             // Static fields
 
@@ -1948,17 +1789,13 @@ declare module 'gi://Gtk?version=4.0' {
             static quark(): GLib.Quark;
         }
 
-        /**
-         * Focus movement types.
-         */
-
-        /**
-         * Focus movement types.
-         */
         export namespace DirectionType {
             export const $gtype: GObject.GType<DirectionType>;
         }
 
+        /**
+         * Focus movement types.
+         */
         enum DirectionType {
             /**
              * Move forward.
@@ -1985,23 +1822,17 @@ declare module 'gi://Gtk?version=4.0' {
              */
             RIGHT,
         }
-        /**
-         * The identifiers for [iface`Gtk`.Editable] properties.
-         *
-         * See [func`Gtk`.Editable.install_properties] for details on how to
-         * implement the `GtkEditable` interface.
-         */
 
-        /**
-         * The identifiers for [iface`Gtk`.Editable] properties.
-         *
-         * See [func`Gtk`.Editable.install_properties] for details on how to
-         * implement the `GtkEditable` interface.
-         */
         export namespace EditableProperties {
             export const $gtype: GObject.GType<EditableProperties>;
         }
 
+        /**
+         * The identifiers for [iface`Gtk`.Editable] properties.
+         *
+         * See [func`Gtk`.Editable.install_properties] for details on how to
+         * implement the `GtkEditable` interface.
+         */
         enum EditableProperties {
             /**
              * the property id for [property`Gtk`.Editable:text]
@@ -2040,17 +1871,14 @@ declare module 'gi://Gtk?version=4.0' {
              */
             NUM_PROPERTIES,
         }
-        /**
-         * Specifies the side of the entry at which an icon is placed.
-         */
 
-        /**
-         * Specifies the side of the entry at which an icon is placed.
-         */
         export namespace EntryIconPosition {
             export const $gtype: GObject.GType<EntryIconPosition>;
         }
 
+        /**
+         * Specifies the side of the entry at which an icon is placed.
+         */
         enum EntryIconPosition {
             /**
              * At the beginning of the entry (depending on the text direction).
@@ -2061,17 +1889,14 @@ declare module 'gi://Gtk?version=4.0' {
              */
             SECONDARY,
         }
-        /**
-         * Describes the state of a [struct`Gdk`.EventSequence] in a [class`Gesture]`.
-         */
 
-        /**
-         * Describes the state of a [struct`Gdk`.EventSequence] in a [class`Gesture]`.
-         */
         export namespace EventSequenceState {
             export const $gtype: GObject.GType<EventSequenceState>;
         }
 
+        /**
+         * Describes the state of a [struct`Gdk`.EventSequence] in a [class`Gesture]`.
+         */
         enum EventSequenceState {
             /**
              * The sequence is handled, but not grabbed.
@@ -2086,19 +1911,15 @@ declare module 'gi://Gtk?version=4.0' {
              */
             DENIED,
         }
-        /**
-         * Describes whether a `GtkFileChooser` is being used to open existing files
-         * or to save to a possibly new file.
-         */
 
-        /**
-         * Describes whether a `GtkFileChooser` is being used to open existing files
-         * or to save to a possibly new file.
-         */
         export namespace FileChooserAction {
             export const $gtype: GObject.GType<FileChooserAction>;
         }
 
+        /**
+         * Describes whether a `GtkFileChooser` is being used to open existing files
+         * or to save to a possibly new file.
+         */
         enum FileChooserAction {
             /**
              * Indicates open mode.  The file chooser
@@ -2118,12 +1939,13 @@ declare module 'gi://Gtk?version=4.0' {
              */
             SELECT_FOLDER,
         }
+
         /**
          * These identify the various errors that can occur while calling
          * `GtkFileChooser` functions.
          */
         class FileChooserError extends GLib.Error {
-            static $gtype: GObject.GType<FileChooserError>;
+            static $gtype: GObject.GType<GLib.Error>;
 
             // Static fields
 
@@ -2158,31 +1980,20 @@ declare module 'gi://Gtk?version=4.0' {
             static quark(): GLib.Quark;
         }
 
-        /**
-         * Describes changes in a filter in more detail and allows objects
-         * using the filter to optimize refiltering items.
-         *
-         * If you are writing an implementation and are not sure which
-         * value to pass, `GTK_FILTER_CHANGE_DIFFERENT` is always a correct
-         * choice.
-         *
-         * New values may be added in the future.
-         */
-
-        /**
-         * Describes changes in a filter in more detail and allows objects
-         * using the filter to optimize refiltering items.
-         *
-         * If you are writing an implementation and are not sure which
-         * value to pass, `GTK_FILTER_CHANGE_DIFFERENT` is always a correct
-         * choice.
-         *
-         * New values may be added in the future.
-         */
         export namespace FilterChange {
             export const $gtype: GObject.GType<FilterChange>;
         }
 
+        /**
+         * Describes changes in a filter in more detail and allows objects
+         * using the filter to optimize refiltering items.
+         *
+         * If you are writing an implementation and are not sure which
+         * value to pass, `GTK_FILTER_CHANGE_DIFFERENT` is always a correct
+         * choice.
+         *
+         * New values may be added in the future.
+         */
         enum FilterChange {
             /**
              * The filter change cannot be
@@ -2223,25 +2034,18 @@ declare module 'gi://Gtk?version=4.0' {
              */
             MORE_STRICT_REWATCH,
         }
-        /**
-         * Describes the known strictness of a filter.
-         *
-         * Note that for filters where the strictness is not known,
-         * `GTK_FILTER_MATCH_SOME` is always an acceptable value,
-         * even if a filter does match all or no items.
-         */
 
-        /**
-         * Describes the known strictness of a filter.
-         *
-         * Note that for filters where the strictness is not known,
-         * `GTK_FILTER_MATCH_SOME` is always an acceptable value,
-         * even if a filter does match all or no items.
-         */
         export namespace FilterMatch {
             export const $gtype: GObject.GType<FilterMatch>;
         }
 
+        /**
+         * Describes the known strictness of a filter.
+         *
+         * Note that for filters where the strictness is not known,
+         * `GTK_FILTER_MATCH_SOME` is always an acceptable value,
+         * even if a filter does match all or no items.
+         */
         enum FilterMatch {
             /**
              * The filter matches some items,
@@ -2259,25 +2063,18 @@ declare module 'gi://Gtk?version=4.0' {
              */
             ALL,
         }
-        /**
-         * The level of granularity for the font selection.
-         *
-         * Depending on this value, the `PangoFontDescription` that
-         * is returned by [method`Gtk`.FontDialogButton.get_font_desc]
-         * will have more or less fields set.
-         */
 
-        /**
-         * The level of granularity for the font selection.
-         *
-         * Depending on this value, the `PangoFontDescription` that
-         * is returned by [method`Gtk`.FontDialogButton.get_font_desc]
-         * will have more or less fields set.
-         */
         export namespace FontLevel {
             export const $gtype: GObject.GType<FontLevel>;
         }
 
+        /**
+         * The level of granularity for the font selection.
+         *
+         * Depending on this value, the `PangoFontDescription` that
+         * is returned by [method`Gtk`.FontDialogButton.get_font_desc]
+         * will have more or less fields set.
+         */
         enum FontLevel {
             /**
              * Select a font family
@@ -2296,19 +2093,15 @@ declare module 'gi://Gtk?version=4.0' {
              */
             FEATURES,
         }
-        /**
-         * Values for the [property`Gtk`.Settings:gtk-font-rendering] setting
-         * that influence how GTK renders fonts.
-         */
 
-        /**
-         * Values for the [property`Gtk`.Settings:gtk-font-rendering] setting
-         * that influence how GTK renders fonts.
-         */
         export namespace FontRendering {
             export const $gtype: GObject.GType<FontRendering>;
         }
 
+        /**
+         * Values for the [property`Gtk`.Settings:gtk-font-rendering] setting
+         * that influence how GTK renders fonts.
+         */
         enum FontRendering {
             /**
              * Set up font rendering automatically,
@@ -2321,17 +2114,14 @@ declare module 'gi://Gtk?version=4.0' {
              */
             MANUAL,
         }
-        /**
-         * Represents the state of graphics offloading.
-         */
 
-        /**
-         * Represents the state of graphics offloading.
-         */
         export namespace GraphicsOffloadEnabled {
             export const $gtype: GObject.GType<GraphicsOffloadEnabled>;
         }
 
+        /**
+         * Represents the state of graphics offloading.
+         */
         enum GraphicsOffloadEnabled {
             /**
              * Graphics offloading is enabled.
@@ -2342,33 +2132,22 @@ declare module 'gi://Gtk?version=4.0' {
              */
             DISABLED,
         }
-        /**
-         * Built-in icon sizes.
-         *
-         * Icon sizes default to being inherited. Where they cannot be
-         * inherited, text size is the default.
-         *
-         * All widgets which use `GtkIconSize` set the normal-icons or
-         * large-icons style classes correspondingly, and let themes
-         * determine the actual size to be used with the
-         * `-gtk-icon-size` CSS property.
-         */
 
-        /**
-         * Built-in icon sizes.
-         *
-         * Icon sizes default to being inherited. Where they cannot be
-         * inherited, text size is the default.
-         *
-         * All widgets which use `GtkIconSize` set the normal-icons or
-         * large-icons style classes correspondingly, and let themes
-         * determine the actual size to be used with the
-         * `-gtk-icon-size` CSS property.
-         */
         export namespace IconSize {
             export const $gtype: GObject.GType<IconSize>;
         }
 
+        /**
+         * Built-in icon sizes.
+         *
+         * Icon sizes default to being inherited. Where they cannot be
+         * inherited, text size is the default.
+         *
+         * All widgets which use `GtkIconSize` set the normal-icons or
+         * large-icons style classes correspondingly, and let themes
+         * determine the actual size to be used with the
+         * `-gtk-icon-size` CSS property.
+         */
         enum IconSize {
             /**
              * Keep the size of the parent element
@@ -2383,11 +2162,12 @@ declare module 'gi://Gtk?version=4.0' {
              */
             LARGE,
         }
+
         /**
          * Error codes for `GtkIconTheme` operations.
          */
         class IconThemeError extends GLib.Error {
-            static $gtype: GObject.GType<IconThemeError>;
+            static $gtype: GObject.GType<GLib.Error>;
 
             // Static fields
 
@@ -2412,17 +2192,13 @@ declare module 'gi://Gtk?version=4.0' {
             static quark(): GLib.Quark;
         }
 
-        /**
-         * An enum for determining where a dropped item goes.
-         */
-
-        /**
-         * An enum for determining where a dropped item goes.
-         */
         export namespace IconViewDropPosition {
             export const $gtype: GObject.GType<IconViewDropPosition>;
         }
 
+        /**
+         * An enum for determining where a dropped item goes.
+         */
         enum IconViewDropPosition {
             /**
              * no drop possible
@@ -2449,31 +2225,21 @@ declare module 'gi://Gtk?version=4.0' {
              */
             DROP_BELOW,
         }
-        /**
-         * Describes the image data representation used by a [class`Gtk`.Image].
-         *
-         * If you want to get the image from the widget, you can only get the
-         * currently-stored representation; for instance, if the gtk_image_get_storage_type()
-         * returns %GTK_IMAGE_PAINTABLE, then you can call gtk_image_get_paintable().
-         *
-         * For empty images, you can request any storage type (call any of the "get"
-         * functions), but they will all return %NULL values.
-         */
 
-        /**
-         * Describes the image data representation used by a [class`Gtk`.Image].
-         *
-         * If you want to get the image from the widget, you can only get the
-         * currently-stored representation; for instance, if the gtk_image_get_storage_type()
-         * returns %GTK_IMAGE_PAINTABLE, then you can call gtk_image_get_paintable().
-         *
-         * For empty images, you can request any storage type (call any of the "get"
-         * functions), but they will all return %NULL values.
-         */
         export namespace ImageType {
             export const $gtype: GObject.GType<ImageType>;
         }
 
+        /**
+         * Describes the image data representation used by a [class`Gtk`.Image].
+         *
+         * If you want to get the image from the widget, you can only get the
+         * currently-stored representation; for instance, if the gtk_image_get_storage_type()
+         * returns %GTK_IMAGE_PAINTABLE, then you can call gtk_image_get_paintable().
+         *
+         * For empty images, you can request any storage type (call any of the "get"
+         * functions), but they will all return %NULL values.
+         */
         enum ImageType {
             /**
              * there is no image displayed by the widget
@@ -2492,53 +2258,32 @@ declare module 'gi://Gtk?version=4.0' {
              */
             PAINTABLE,
         }
-        /**
-         * Describes primary purpose of the input widget.
-         *
-         * This information is useful for on-screen keyboards and similar input
-         * methods to decide which keys should be presented to the user.
-         *
-         * Note that the purpose is not meant to impose a totally strict rule
-         * about allowed characters, and does not replace input validation.
-         * It is fine for an on-screen keyboard to let the user override the
-         * character set restriction that is expressed by the purpose. The
-         * application is expected to validate the entry contents, even if
-         * it specified a purpose.
-         *
-         * The difference between %GTK_INPUT_PURPOSE_DIGITS and
-         * %GTK_INPUT_PURPOSE_NUMBER is that the former accepts only digits
-         * while the latter also some punctuation (like commas or points, plus,
-         * minus) and “e” or “E” as in 3.14E+000.
-         *
-         * This enumeration may be extended in the future; input methods should
-         * interpret unknown values as “free form”.
-         */
 
-        /**
-         * Describes primary purpose of the input widget.
-         *
-         * This information is useful for on-screen keyboards and similar input
-         * methods to decide which keys should be presented to the user.
-         *
-         * Note that the purpose is not meant to impose a totally strict rule
-         * about allowed characters, and does not replace input validation.
-         * It is fine for an on-screen keyboard to let the user override the
-         * character set restriction that is expressed by the purpose. The
-         * application is expected to validate the entry contents, even if
-         * it specified a purpose.
-         *
-         * The difference between %GTK_INPUT_PURPOSE_DIGITS and
-         * %GTK_INPUT_PURPOSE_NUMBER is that the former accepts only digits
-         * while the latter also some punctuation (like commas or points, plus,
-         * minus) and “e” or “E” as in 3.14E+000.
-         *
-         * This enumeration may be extended in the future; input methods should
-         * interpret unknown values as “free form”.
-         */
         export namespace InputPurpose {
             export const $gtype: GObject.GType<InputPurpose>;
         }
 
+        /**
+         * Describes primary purpose of the input widget.
+         *
+         * This information is useful for on-screen keyboards and similar input
+         * methods to decide which keys should be presented to the user.
+         *
+         * Note that the purpose is not meant to impose a totally strict rule
+         * about allowed characters, and does not replace input validation.
+         * It is fine for an on-screen keyboard to let the user override the
+         * character set restriction that is expressed by the purpose. The
+         * application is expected to validate the entry contents, even if
+         * it specified a purpose.
+         *
+         * The difference between %GTK_INPUT_PURPOSE_DIGITS and
+         * %GTK_INPUT_PURPOSE_NUMBER is that the former accepts only digits
+         * while the latter also some punctuation (like commas or points, plus,
+         * minus) and “e” or “E” as in 3.14E+000.
+         *
+         * This enumeration may be extended in the future; input methods should
+         * interpret unknown values as “free form”.
+         */
         enum InputPurpose {
             /**
              * Allow any character
@@ -2585,19 +2330,15 @@ declare module 'gi://Gtk?version=4.0' {
              */
             TERMINAL,
         }
-        /**
-         * The different methods to handle text in #GtkInscription when it doesn't
-         * fit the available space.
-         */
 
-        /**
-         * The different methods to handle text in #GtkInscription when it doesn't
-         * fit the available space.
-         */
         export namespace InscriptionOverflow {
             export const $gtype: GObject.GType<InscriptionOverflow>;
         }
 
+        /**
+         * The different methods to handle text in #GtkInscription when it doesn't
+         * fit the available space.
+         */
         enum InscriptionOverflow {
             /**
              * Clip the remaining text
@@ -2616,31 +2357,21 @@ declare module 'gi://Gtk?version=4.0' {
              */
             ELLIPSIZE_END,
         }
-        /**
-         * Values for the [property`Gtk`.Settings:gtk-interface-color-scheme]
-         * and [property`Gtk`.CssProvider:prefers-color-scheme] properties
-         * that indicates what color scheme is used.
-         *
-         * This information can be used inside CSS via media queries.
-         *
-         * More values may be added to this enumeration. Unknown values
-         * should be treated the same as `GTK_INTERFACE_COLOR_SCHEME_DEFAULT`.
-         */
 
-        /**
-         * Values for the [property`Gtk`.Settings:gtk-interface-color-scheme]
-         * and [property`Gtk`.CssProvider:prefers-color-scheme] properties
-         * that indicates what color scheme is used.
-         *
-         * This information can be used inside CSS via media queries.
-         *
-         * More values may be added to this enumeration. Unknown values
-         * should be treated the same as `GTK_INTERFACE_COLOR_SCHEME_DEFAULT`.
-         */
         export namespace InterfaceColorScheme {
             export const $gtype: GObject.GType<InterfaceColorScheme>;
         }
 
+        /**
+         * Values for the [property`Gtk`.Settings:gtk-interface-color-scheme]
+         * and [property`Gtk`.CssProvider:prefers-color-scheme] properties
+         * that indicates what color scheme is used.
+         *
+         * This information can be used inside CSS via media queries.
+         *
+         * More values may be added to this enumeration. Unknown values
+         * should be treated the same as `GTK_INTERFACE_COLOR_SCHEME_DEFAULT`.
+         */
         enum InterfaceColorScheme {
             /**
              * The system doesn't support color schemes
@@ -2659,31 +2390,21 @@ declare module 'gi://Gtk?version=4.0' {
              */
             LIGHT,
         }
-        /**
-         * Values for the [property`Gtk`.Settings:gtk-interface-contrast]
-         * and [property`Gtk`.CssProvider:prefers-contrast] properties
-         * that indicates the preferred level of contrast.
-         *
-         * This information can be used inside CSS via media queries.
-         *
-         * More values may be added to this enumeration. Unknown values
-         * should be treated the same as `GTK_INTERFACE_CONTRAST_NO_PREFERENCE`.
-         */
 
-        /**
-         * Values for the [property`Gtk`.Settings:gtk-interface-contrast]
-         * and [property`Gtk`.CssProvider:prefers-contrast] properties
-         * that indicates the preferred level of contrast.
-         *
-         * This information can be used inside CSS via media queries.
-         *
-         * More values may be added to this enumeration. Unknown values
-         * should be treated the same as `GTK_INTERFACE_CONTRAST_NO_PREFERENCE`.
-         */
         export namespace InterfaceContrast {
             export const $gtype: GObject.GType<InterfaceContrast>;
         }
 
+        /**
+         * Values for the [property`Gtk`.Settings:gtk-interface-contrast]
+         * and [property`Gtk`.CssProvider:prefers-contrast] properties
+         * that indicates the preferred level of contrast.
+         *
+         * This information can be used inside CSS via media queries.
+         *
+         * More values may be added to this enumeration. Unknown values
+         * should be treated the same as `GTK_INTERFACE_CONTRAST_NO_PREFERENCE`.
+         */
         enum InterfaceContrast {
             /**
              * The system doesn't support contrast levels
@@ -2702,17 +2423,14 @@ declare module 'gi://Gtk?version=4.0' {
              */
             LESS,
         }
-        /**
-         * Used for justifying the text inside a [class`Label]` widget.
-         */
 
-        /**
-         * Used for justifying the text inside a [class`Label]` widget.
-         */
         export namespace Justification {
             export const $gtype: GObject.GType<Justification>;
         }
 
+        /**
+         * Used for justifying the text inside a [class`Label]` widget.
+         */
         enum Justification {
             /**
              * The text is placed at the left edge of the label.
@@ -2731,23 +2449,17 @@ declare module 'gi://Gtk?version=4.0' {
              */
             FILL,
         }
-        /**
-         * Describes how [class`LevelBar]` contents should be rendered.
-         *
-         * Note that this enumeration could be extended with additional modes
-         * in the future.
-         */
 
-        /**
-         * Describes how [class`LevelBar]` contents should be rendered.
-         *
-         * Note that this enumeration could be extended with additional modes
-         * in the future.
-         */
         export namespace LevelBarMode {
             export const $gtype: GObject.GType<LevelBarMode>;
         }
 
+        /**
+         * Describes how [class`LevelBar]` contents should be rendered.
+         *
+         * Note that this enumeration could be extended with additional modes
+         * in the future.
+         */
         enum LevelBarMode {
             /**
              * the bar has a continuous mode
@@ -2758,21 +2470,16 @@ declare module 'gi://Gtk?version=4.0' {
              */
             DISCRETE,
         }
-        /**
-         * The type of license for an application.
-         *
-         * This enumeration can be expanded at later date.
-         */
 
-        /**
-         * The type of license for an application.
-         *
-         * This enumeration can be expanded at later date.
-         */
         export namespace License {
             export const $gtype: GObject.GType<License>;
         }
 
+        /**
+         * The type of license for an application.
+         *
+         * This enumeration can be expanded at later date.
+         */
         enum License {
             /**
              * No license specified
@@ -2852,21 +2559,16 @@ declare module 'gi://Gtk?version=4.0' {
              */
             '0BSD',
         }
-        /**
-         * Used to configure the focus behavior in the `GTK_DIR_TAB_FORWARD`
-         * and `GTK_DIR_TAB_BACKWARD` direction, like the <kbd>Tab</kbd> key
-         * in a [class`Gtk`.ListView].
-         */
 
-        /**
-         * Used to configure the focus behavior in the `GTK_DIR_TAB_FORWARD`
-         * and `GTK_DIR_TAB_BACKWARD` direction, like the <kbd>Tab</kbd> key
-         * in a [class`Gtk`.ListView].
-         */
         export namespace ListTabBehavior {
             export const $gtype: GObject.GType<ListTabBehavior>;
         }
 
+        /**
+         * Used to configure the focus behavior in the `GTK_DIR_TAB_FORWARD`
+         * and `GTK_DIR_TAB_BACKWARD` direction, like the <kbd>Tab</kbd> key
+         * in a [class`Gtk`.ListView].
+         */
         enum ListTabBehavior {
             /**
              * Cycle through all focusable items of the list
@@ -2887,17 +2589,14 @@ declare module 'gi://Gtk?version=4.0' {
              */
             CELL,
         }
-        /**
-         * The type of message being displayed in a [class`MessageDialog]`.
-         */
 
-        /**
-         * The type of message being displayed in a [class`MessageDialog]`.
-         */
         export namespace MessageType {
             export const $gtype: GObject.GType<MessageType>;
         }
 
+        /**
+         * The type of message being displayed in a [class`MessageDialog]`.
+         */
         enum MessageType {
             /**
              * Informational message
@@ -2920,19 +2619,15 @@ declare module 'gi://Gtk?version=4.0' {
              */
             OTHER,
         }
-        /**
-         * Passed as argument to various keybinding signals for moving the
-         * cursor position.
-         */
 
-        /**
-         * Passed as argument to various keybinding signals for moving the
-         * cursor position.
-         */
         export namespace MovementStep {
             export const $gtype: GObject.GType<MovementStep>;
         }
 
+        /**
+         * Passed as argument to various keybinding signals for moving the
+         * cursor position.
+         */
         enum MovementStep {
             /**
              * Move forward or back by graphemes
@@ -2975,23 +2670,17 @@ declare module 'gi://Gtk?version=4.0' {
              */
             HORIZONTAL_PAGES,
         }
-        /**
-         * Options for selecting a different wrap mode for natural size
-         * requests.
-         *
-         * See for example the [property`Gtk`.Label:natural-wrap-mode] property.
-         */
 
-        /**
-         * Options for selecting a different wrap mode for natural size
-         * requests.
-         *
-         * See for example the [property`Gtk`.Label:natural-wrap-mode] property.
-         */
         export namespace NaturalWrapMode {
             export const $gtype: GObject.GType<NaturalWrapMode>;
         }
 
+        /**
+         * Options for selecting a different wrap mode for natural size
+         * requests.
+         *
+         * See for example the [property`Gtk`.Label:natural-wrap-mode] property.
+         */
         enum NaturalWrapMode {
             /**
              * Inherit the minimum size request.
@@ -3011,17 +2700,14 @@ declare module 'gi://Gtk?version=4.0' {
              */
             WORD,
         }
-        /**
-         * The parameter used in the action signals of `GtkNotebook`.
-         */
 
-        /**
-         * The parameter used in the action signals of `GtkNotebook`.
-         */
         export namespace NotebookTab {
             export const $gtype: GObject.GType<NotebookTab>;
         }
 
+        /**
+         * The parameter used in the action signals of `GtkNotebook`.
+         */
         enum NotebookTab {
             /**
              * the first tab in the notebook
@@ -3032,19 +2718,15 @@ declare module 'gi://Gtk?version=4.0' {
              */
             LAST,
         }
-        /**
-         * Used to determine the layout of pages on a sheet when printing
-         * multiple pages per sheet.
-         */
 
-        /**
-         * Used to determine the layout of pages on a sheet when printing
-         * multiple pages per sheet.
-         */
         export namespace NumberUpLayout {
             export const $gtype: GObject.GType<NumberUpLayout>;
         }
 
+        /**
+         * Used to determine the layout of pages on a sheet when printing
+         * multiple pages per sheet.
+         */
         enum NumberUpLayout {
             /**
              * ![](layout-lrtb.png)
@@ -3079,27 +2761,19 @@ declare module 'gi://Gtk?version=4.0' {
              */
             BTRL,
         }
-        /**
-         * Describes the way two values can be compared.
-         *
-         * These values can be used with a [callback`GLib`.CompareFunc]. However,
-         * a `GCompareFunc` is allowed to return any integer values.
-         * For converting such a value to a `GtkOrdering` value, use
-         * [func`Gtk`.Ordering.from_cmpfunc].
-         */
 
-        /**
-         * Describes the way two values can be compared.
-         *
-         * These values can be used with a [callback`GLib`.CompareFunc]. However,
-         * a `GCompareFunc` is allowed to return any integer values.
-         * For converting such a value to a `GtkOrdering` value, use
-         * [func`Gtk`.Ordering.from_cmpfunc].
-         */
         export namespace Ordering {
             export const $gtype: GObject.GType<Ordering>;
         }
 
+        /**
+         * Describes the way two values can be compared.
+         *
+         * These values can be used with a [callback`GLib`.CompareFunc]. However,
+         * a `GCompareFunc` is allowed to return any integer values.
+         * For converting such a value to a `GtkOrdering` value, use
+         * [func`Gtk`.Ordering.from_cmpfunc].
+         */
         enum Ordering {
             /**
              * the first value is smaller than the second
@@ -3114,21 +2788,16 @@ declare module 'gi://Gtk?version=4.0' {
              */
             LARGER,
         }
-        /**
-         * Represents the orientation of widgets and other objects.
-         *
-         * Typical examples are [class`Box]` or [class`GesturePan]`.
-         */
 
-        /**
-         * Represents the orientation of widgets and other objects.
-         *
-         * Typical examples are [class`Box]` or [class`GesturePan]`.
-         */
         export namespace Orientation {
             export const $gtype: GObject.GType<Orientation>;
         }
 
+        /**
+         * Represents the orientation of widgets and other objects.
+         *
+         * Typical examples are [class`Box]` or [class`GesturePan]`.
+         */
         enum Orientation {
             /**
              * The element is in horizontal orientation.
@@ -3139,25 +2808,18 @@ declare module 'gi://Gtk?version=4.0' {
              */
             VERTICAL,
         }
-        /**
-         * Defines how content overflowing a given area should be handled.
-         *
-         * This is used in [method`Gtk`.Widget.set_overflow]. The
-         * [property`Gtk`.Widget:overflow] property is modeled after the
-         * CSS overflow property, but implements it only partially.
-         */
 
-        /**
-         * Defines how content overflowing a given area should be handled.
-         *
-         * This is used in [method`Gtk`.Widget.set_overflow]. The
-         * [property`Gtk`.Widget:overflow] property is modeled after the
-         * CSS overflow property, but implements it only partially.
-         */
         export namespace Overflow {
             export const $gtype: GObject.GType<Overflow>;
         }
 
+        /**
+         * Defines how content overflowing a given area should be handled.
+         *
+         * This is used in [method`Gtk`.Widget.set_overflow]. The
+         * [property`Gtk`.Widget:overflow] property is modeled after the
+         * CSS overflow property, but implements it only partially.
+         */
         enum Overflow {
             /**
              * No change is applied. Content is drawn at the specified
@@ -3170,21 +2832,16 @@ declare module 'gi://Gtk?version=4.0' {
              */
             HIDDEN,
         }
-        /**
-         * Represents the packing location of a children in its parent.
-         *
-         * See [class`WindowControls]` for example.
-         */
 
-        /**
-         * Represents the packing location of a children in its parent.
-         *
-         * See [class`WindowControls]` for example.
-         */
         export namespace PackType {
             export const $gtype: GObject.GType<PackType>;
         }
 
+        /**
+         * Represents the packing location of a children in its parent.
+         *
+         * See [class`WindowControls]` for example.
+         */
         enum PackType {
             /**
              * The child is packed into the start of the widget
@@ -3195,17 +2852,14 @@ declare module 'gi://Gtk?version=4.0' {
              */
             END,
         }
-        /**
-         * The type of a pad action.
-         */
 
-        /**
-         * The type of a pad action.
-         */
         export namespace PadActionType {
             export const $gtype: GObject.GType<PadActionType>;
         }
 
+        /**
+         * The type of a pad action.
+         */
         enum PadActionType {
             /**
              * Action is triggered by a pad button
@@ -3224,17 +2878,14 @@ declare module 'gi://Gtk?version=4.0' {
              */
             DIAL,
         }
-        /**
-         * See also gtk_print_settings_set_orientation().
-         */
 
-        /**
-         * See also gtk_print_settings_set_orientation().
-         */
         export namespace PageOrientation {
             export const $gtype: GObject.GType<PageOrientation>;
         }
 
+        /**
+         * See also gtk_print_settings_set_orientation().
+         */
         enum PageOrientation {
             /**
              * Portrait mode.
@@ -3253,17 +2904,14 @@ declare module 'gi://Gtk?version=4.0' {
              */
             REVERSE_LANDSCAPE,
         }
-        /**
-         * See also gtk_print_job_set_page_set().
-         */
 
-        /**
-         * See also gtk_print_job_set_page_set().
-         */
         export namespace PageSet {
             export const $gtype: GObject.GType<PageSet>;
         }
 
+        /**
+         * See also gtk_print_job_set_page_set().
+         */
         enum PageSet {
             /**
              * All pages.
@@ -3278,17 +2926,14 @@ declare module 'gi://Gtk?version=4.0' {
              */
             ODD,
         }
-        /**
-         * Describes the panning direction of a [class`GesturePan]`.
-         */
 
-        /**
-         * Describes the panning direction of a [class`GesturePan]`.
-         */
         export namespace PanDirection {
             export const $gtype: GObject.GType<PanDirection>;
         }
 
+        /**
+         * Describes the panning direction of a [class`GesturePan]`.
+         */
         enum PanDirection {
             /**
              * panned towards the left
@@ -3307,19 +2952,15 @@ declare module 'gi://Gtk?version=4.0' {
              */
             DOWN,
         }
-        /**
-         * Determines how the size should be computed to achieve the one of the
-         * visibility mode for the scrollbars.
-         */
 
-        /**
-         * Determines how the size should be computed to achieve the one of the
-         * visibility mode for the scrollbars.
-         */
         export namespace PolicyType {
             export const $gtype: GObject.GType<PolicyType>;
         }
 
+        /**
+         * Determines how the size should be computed to achieve the one of the
+         * visibility mode for the scrollbars.
+         */
         enum PolicyType {
             /**
              * The scrollbar is always visible. The view size is
@@ -3343,23 +2984,17 @@ declare module 'gi://Gtk?version=4.0' {
              */
             EXTERNAL,
         }
-        /**
-         * Describes which edge of a widget a certain feature is positioned at.
-         *
-         * For examples, see the tabs of a [class`Notebook]`, or the label
-         * of a [class`Scale]`.
-         */
 
-        /**
-         * Describes which edge of a widget a certain feature is positioned at.
-         *
-         * For examples, see the tabs of a [class`Notebook]`, or the label
-         * of a [class`Scale]`.
-         */
         export namespace PositionType {
             export const $gtype: GObject.GType<PositionType>;
         }
 
+        /**
+         * Describes which edge of a widget a certain feature is positioned at.
+         *
+         * For examples, see the tabs of a [class`Notebook]`, or the label
+         * of a [class`Scale]`.
+         */
         enum PositionType {
             /**
              * The feature is at the left edge.
@@ -3378,17 +3013,14 @@ declare module 'gi://Gtk?version=4.0' {
              */
             BOTTOM,
         }
-        /**
-         * See also gtk_print_settings_set_duplex().
-         */
 
-        /**
-         * See also gtk_print_settings_set_duplex().
-         */
         export namespace PrintDuplex {
             export const $gtype: GObject.GType<PrintDuplex>;
         }
 
+        /**
+         * See also gtk_print_settings_set_duplex().
+         */
         enum PrintDuplex {
             /**
              * No duplex.
@@ -3403,12 +3035,13 @@ declare module 'gi://Gtk?version=4.0' {
              */
             VERTICAL,
         }
+
         /**
          * Error codes that identify various errors that can occur while
          * using the GTK printing support.
          */
         class PrintError extends GLib.Error {
-            static $gtype: GObject.GType<PrintError>;
+            static $gtype: GObject.GType<GLib.Error>;
 
             // Static fields
 
@@ -3442,21 +3075,15 @@ declare module 'gi://Gtk?version=4.0' {
             static quark(): GLib.Quark;
         }
 
-        /**
-         * Determines what action the print operation should perform.
-         *
-         * A parameter of this typs is passed to [method`Gtk`.PrintOperation.run].
-         */
-
-        /**
-         * Determines what action the print operation should perform.
-         *
-         * A parameter of this typs is passed to [method`Gtk`.PrintOperation.run].
-         */
         export namespace PrintOperationAction {
             export const $gtype: GObject.GType<PrintOperationAction>;
         }
 
+        /**
+         * Determines what action the print operation should perform.
+         *
+         * A parameter of this typs is passed to [method`Gtk`.PrintOperation.run].
+         */
         enum PrintOperationAction {
             /**
              * Show the print dialog.
@@ -3478,21 +3105,16 @@ declare module 'gi://Gtk?version=4.0' {
              */
             EXPORT,
         }
-        /**
-         * The result of a print operation.
-         *
-         * A value of this type is returned by [method`Gtk`.PrintOperation.run].
-         */
 
-        /**
-         * The result of a print operation.
-         *
-         * A value of this type is returned by [method`Gtk`.PrintOperation.run].
-         */
         export namespace PrintOperationResult {
             export const $gtype: GObject.GType<PrintOperationResult>;
         }
 
+        /**
+         * The result of a print operation.
+         *
+         * A value of this type is returned by [method`Gtk`.PrintOperation.run].
+         */
         enum PrintOperationResult {
             /**
              * An error has occurred.
@@ -3513,17 +3135,14 @@ declare module 'gi://Gtk?version=4.0' {
              */
             IN_PROGRESS,
         }
-        /**
-         * See also gtk_print_job_set_pages()
-         */
 
-        /**
-         * See also gtk_print_job_set_pages()
-         */
         export namespace PrintPages {
             export const $gtype: GObject.GType<PrintPages>;
         }
 
+        /**
+         * See also gtk_print_job_set_pages()
+         */
         enum PrintPages {
             /**
              * All pages.
@@ -3542,17 +3161,14 @@ declare module 'gi://Gtk?version=4.0' {
              */
             SELECTION,
         }
-        /**
-         * See also gtk_print_settings_set_quality().
-         */
 
-        /**
-         * See also gtk_print_settings_set_quality().
-         */
         export namespace PrintQuality {
             export const $gtype: GObject.GType<PrintQuality>;
         }
 
+        /**
+         * See also gtk_print_settings_set_quality().
+         */
         enum PrintQuality {
             /**
              * Low quality.
@@ -3571,19 +3187,15 @@ declare module 'gi://Gtk?version=4.0' {
              */
             DRAFT,
         }
-        /**
-         * The status gives a rough indication of the completion of a running
-         * print operation.
-         */
 
-        /**
-         * The status gives a rough indication of the completion of a running
-         * print operation.
-         */
         export namespace PrintStatus {
             export const $gtype: GObject.GType<PrintStatus>;
         }
 
+        /**
+         * The status gives a rough indication of the completion of a running
+         * print operation.
+         */
         enum PrintStatus {
             /**
              * The printing has not started yet; this
@@ -3628,19 +3240,15 @@ declare module 'gi://Gtk?version=4.0' {
              */
             FINISHED_ABORTED,
         }
-        /**
-         * Describes limits of a [class`EventController]` for handling events
-         * targeting other widgets.
-         */
 
-        /**
-         * Describes limits of a [class`EventController]` for handling events
-         * targeting other widgets.
-         */
         export namespace PropagationLimit {
             export const $gtype: GObject.GType<PropagationLimit>;
         }
 
+        /**
+         * Describes limits of a [class`EventController]` for handling events
+         * targeting other widgets.
+         */
         enum PropagationLimit {
             /**
              * Events are handled regardless of what their
@@ -3655,17 +3263,14 @@ declare module 'gi://Gtk?version=4.0' {
              */
             SAME_NATIVE,
         }
-        /**
-         * Describes the stage at which events are fed into a [class`EventController]`.
-         */
 
-        /**
-         * Describes the stage at which events are fed into a [class`EventController]`.
-         */
         export namespace PropagationPhase {
             export const $gtype: GObject.GType<PropagationPhase>;
         }
 
+        /**
+         * Describes the stage at which events are fed into a [class`EventController]`.
+         */
         enum PropagationPhase {
             /**
              * Events are not delivered.
@@ -3691,11 +3296,12 @@ declare module 'gi://Gtk?version=4.0' {
              */
             TARGET,
         }
+
         /**
          * Error codes for `GtkRecentManager` operations
          */
         class RecentManagerError extends GLib.Error {
-            static $gtype: GObject.GType<RecentManagerError>;
+            static $gtype: GObject.GType<GLib.Error>;
 
             // Static fields
 
@@ -3745,23 +3351,16 @@ declare module 'gi://Gtk?version=4.0' {
             static quark(): GLib.Quark;
         }
 
-        /**
-         * Predefined values for use as response ids in gtk_dialog_add_button().
-         *
-         * All predefined values are negative; GTK leaves values of 0 or greater for
-         * application-defined response ids.
-         */
-
-        /**
-         * Predefined values for use as response ids in gtk_dialog_add_button().
-         *
-         * All predefined values are negative; GTK leaves values of 0 or greater for
-         * application-defined response ids.
-         */
         export namespace ResponseType {
             export const $gtype: GObject.GType<ResponseType>;
         }
 
+        /**
+         * Predefined values for use as response ids in gtk_dialog_add_button().
+         *
+         * All predefined values are negative; GTK leaves values of 0 or greater for
+         * application-defined response ids.
+         */
         enum ResponseType {
             /**
              * Returned if an action widget has no response id,
@@ -3809,19 +3408,15 @@ declare module 'gi://Gtk?version=4.0' {
              */
             HELP,
         }
-        /**
-         * These enumeration values describe the possible transitions
-         * when the child of a `GtkRevealer` widget is shown or hidden.
-         */
 
-        /**
-         * These enumeration values describe the possible transitions
-         * when the child of a `GtkRevealer` widget is shown or hidden.
-         */
         export namespace RevealerTransitionType {
             export const $gtype: GObject.GType<RevealerTransitionType>;
         }
 
+        /**
+         * These enumeration values describe the possible transitions
+         * when the child of a `GtkRevealer` widget is shown or hidden.
+         */
         enum RevealerTransitionType {
             /**
              * No transition
@@ -3864,17 +3459,14 @@ declare module 'gi://Gtk?version=4.0' {
              */
             SWING_DOWN,
         }
-        /**
-         * Passed as argument to various keybinding signals.
-         */
 
-        /**
-         * Passed as argument to various keybinding signals.
-         */
         export namespace ScrollStep {
             export const $gtype: GObject.GType<ScrollStep>;
         }
 
+        /**
+         * Passed as argument to various keybinding signals.
+         */
         enum ScrollStep {
             /**
              * Scroll in steps.
@@ -3901,17 +3493,14 @@ declare module 'gi://Gtk?version=4.0' {
              */
             HORIZONTAL_ENDS,
         }
-        /**
-         * Scrolling types.
-         */
 
-        /**
-         * Scrolling types.
-         */
         export namespace ScrollType {
             export const $gtype: GObject.GType<ScrollType>;
         }
 
+        /**
+         * Scrolling types.
+         */
         enum ScrollType {
             /**
              * No scrolling.
@@ -3978,19 +3567,15 @@ declare module 'gi://Gtk?version=4.0' {
              */
             END,
         }
-        /**
-         * Defines the policy to be used in a scrollable widget when updating
-         * the scrolled window adjustments in a given orientation.
-         */
 
-        /**
-         * Defines the policy to be used in a scrollable widget when updating
-         * the scrolled window adjustments in a given orientation.
-         */
         export namespace ScrollablePolicy {
             export const $gtype: GObject.GType<ScrollablePolicy>;
         }
 
+        /**
+         * Defines the policy to be used in a scrollable widget when updating
+         * the scrolled window adjustments in a given orientation.
+         */
         enum ScrollablePolicy {
             /**
              * Scrollable adjustments are based on the minimum size
@@ -4001,17 +3586,14 @@ declare module 'gi://Gtk?version=4.0' {
              */
             NATURAL,
         }
-        /**
-         * Used to control what selections users are allowed to make.
-         */
 
-        /**
-         * Used to control what selections users are allowed to make.
-         */
         export namespace SelectionMode {
             export const $gtype: GObject.GType<SelectionMode>;
         }
 
+        /**
+         * Used to control what selections users are allowed to make.
+         */
         enum SelectionMode {
             /**
              * No selection is possible.
@@ -4038,19 +3620,15 @@ declare module 'gi://Gtk?version=4.0' {
              */
             MULTIPLE,
         }
-        /**
-         * Determines how GTK handles the sensitivity of various controls,
-         * such as combo box buttons.
-         */
 
-        /**
-         * Determines how GTK handles the sensitivity of various controls,
-         * such as combo box buttons.
-         */
         export namespace SensitivityType {
             export const $gtype: GObject.GType<SensitivityType>;
         }
 
+        /**
+         * Determines how GTK handles the sensitivity of various controls,
+         * such as combo box buttons.
+         */
         enum SensitivityType {
             /**
              * The control is made insensitive if no
@@ -4066,19 +3644,15 @@ declare module 'gi://Gtk?version=4.0' {
              */
             OFF,
         }
-        /**
-         * Describes where [class`Shortcut]`s added to a
-         * [class`ShortcutController]` get handled.
-         */
 
-        /**
-         * Describes where [class`Shortcut]`s added to a
-         * [class`ShortcutController]` get handled.
-         */
         export namespace ShortcutScope {
             export const $gtype: GObject.GType<ShortcutScope>;
         }
 
+        /**
+         * Describes where [class`Shortcut]`s added to a
+         * [class`ShortcutController]` get handled.
+         */
         enum ShortcutScope {
             /**
              * Shortcuts are handled inside
@@ -4096,21 +3670,16 @@ declare module 'gi://Gtk?version=4.0' {
              */
             GLOBAL,
         }
-        /**
-         * GtkShortcutType specifies the kind of shortcut that is being described.
-         *
-         * More values may be added to this enumeration over time.
-         */
 
-        /**
-         * GtkShortcutType specifies the kind of shortcut that is being described.
-         *
-         * More values may be added to this enumeration over time.
-         */
         export namespace ShortcutType {
             export const $gtype: GObject.GType<ShortcutType>;
         }
 
+        /**
+         * GtkShortcutType specifies the kind of shortcut that is being described.
+         *
+         * More values may be added to this enumeration over time.
+         */
         enum ShortcutType {
             /**
              * The shortcut is a keyboard accelerator. The GtkShortcutsShortcut:accelerator
@@ -4155,19 +3724,15 @@ declare module 'gi://Gtk?version=4.0' {
              */
             GESTURE_SWIPE_RIGHT,
         }
-        /**
-         * The mode of the size group determines the directions in which the size
-         * group affects the requested sizes of its component widgets.
-         */
 
-        /**
-         * The mode of the size group determines the directions in which the size
-         * group affects the requested sizes of its component widgets.
-         */
         export namespace SizeGroupMode {
             export const $gtype: GObject.GType<SizeGroupMode>;
         }
 
+        /**
+         * The mode of the size group determines the directions in which the size
+         * group affects the requested sizes of its component widgets.
+         */
         enum SizeGroupMode {
             /**
              * group has no effect
@@ -4186,19 +3751,15 @@ declare module 'gi://Gtk?version=4.0' {
              */
             BOTH,
         }
-        /**
-         * Specifies a preference for height-for-width or
-         * width-for-height geometry management.
-         */
 
-        /**
-         * Specifies a preference for height-for-width or
-         * width-for-height geometry management.
-         */
         export namespace SizeRequestMode {
             export const $gtype: GObject.GType<SizeRequestMode>;
         }
 
+        /**
+         * Specifies a preference for height-for-width or
+         * width-for-height geometry management.
+         */
         enum SizeRequestMode {
             /**
              * Prefer height-for-width geometry management
@@ -4213,17 +3774,14 @@ declare module 'gi://Gtk?version=4.0' {
              */
             CONSTANT_SIZE,
         }
-        /**
-         * Determines the direction of a sort.
-         */
 
-        /**
-         * Determines the direction of a sort.
-         */
         export namespace SortType {
             export const $gtype: GObject.GType<SortType>;
         }
 
+        /**
+         * Determines the direction of a sort.
+         */
         enum SortType {
             /**
              * Sorting is in ascending order.
@@ -4234,19 +3792,15 @@ declare module 'gi://Gtk?version=4.0' {
              */
             DESCENDING,
         }
-        /**
-         * Describes changes in a sorter in more detail and allows users
-         * to optimize resorting.
-         */
 
-        /**
-         * Describes changes in a sorter in more detail and allows users
-         * to optimize resorting.
-         */
         export namespace SorterChange {
             export const $gtype: GObject.GType<SorterChange>;
         }
 
+        /**
+         * Describes changes in a sorter in more detail and allows users
+         * to optimize resorting.
+         */
         enum SorterChange {
             /**
              * The sorter change cannot be described
@@ -4270,17 +3824,14 @@ declare module 'gi://Gtk?version=4.0' {
              */
             MORE_STRICT,
         }
-        /**
-         * Describes the type of order that a `GtkSorter` may produce.
-         */
 
-        /**
-         * Describes the type of order that a `GtkSorter` may produce.
-         */
         export namespace SorterOrder {
             export const $gtype: GObject.GType<SorterOrder>;
         }
 
+        /**
+         * Describes the type of order that a `GtkSorter` may produce.
+         */
         enum SorterOrder {
             /**
              * A partial order. Any `GtkOrdering` is possible.
@@ -4298,23 +3849,17 @@ declare module 'gi://Gtk?version=4.0' {
              */
             TOTAL,
         }
-        /**
-         * Determines whether the spin button displays values outside the adjustment
-         * bounds.
-         *
-         * See [method`Gtk`.SpinButton.set_update_policy].
-         */
 
-        /**
-         * Determines whether the spin button displays values outside the adjustment
-         * bounds.
-         *
-         * See [method`Gtk`.SpinButton.set_update_policy].
-         */
         export namespace SpinButtonUpdatePolicy {
             export const $gtype: GObject.GType<SpinButtonUpdatePolicy>;
         }
 
+        /**
+         * Determines whether the spin button displays values outside the adjustment
+         * bounds.
+         *
+         * See [method`Gtk`.SpinButton.set_update_policy].
+         */
         enum SpinButtonUpdatePolicy {
             /**
              * When refreshing your `GtkSpinButton`, the value is
@@ -4328,19 +3873,15 @@ declare module 'gi://Gtk?version=4.0' {
              */
             IF_VALID,
         }
-        /**
-         * The values of the GtkSpinType enumeration are used to specify the
-         * change to make in gtk_spin_button_spin().
-         */
 
-        /**
-         * The values of the GtkSpinType enumeration are used to specify the
-         * change to make in gtk_spin_button_spin().
-         */
         export namespace SpinType {
             export const $gtype: GObject.GType<SpinType>;
         }
 
+        /**
+         * The values of the GtkSpinType enumeration are used to specify the
+         * change to make in gtk_spin_button_spin().
+         */
         enum SpinType {
             /**
              * Increment by the adjustments step increment.
@@ -4371,21 +3912,16 @@ declare module 'gi://Gtk?version=4.0' {
              */
             USER_DEFINED,
         }
-        /**
-         * Possible transitions between pages in a `GtkStack` widget.
-         *
-         * New values may be added to this enumeration over time.
-         */
 
-        /**
-         * Possible transitions between pages in a `GtkStack` widget.
-         *
-         * New values may be added to this enumeration over time.
-         */
         export namespace StackTransitionType {
             export const $gtype: GObject.GType<StackTransitionType>;
         }
 
+        /**
+         * Possible transitions between pages in a `GtkStack` widget.
+         *
+         * New values may be added to this enumeration over time.
+         */
         enum StackTransitionType {
             /**
              * No transition
@@ -4480,17 +4016,14 @@ declare module 'gi://Gtk?version=4.0' {
              */
             ROTATE_LEFT_RIGHT,
         }
-        /**
-         * Specifies how search strings are matched inside text.
-         */
 
-        /**
-         * Specifies how search strings are matched inside text.
-         */
         export namespace StringFilterMatchMode {
             export const $gtype: GObject.GType<StringFilterMatchMode>;
         }
 
+        /**
+         * Specifies how search strings are matched inside text.
+         */
         enum StringFilterMatchMode {
             /**
              * The search string and
@@ -4508,23 +4041,17 @@ declare module 'gi://Gtk?version=4.0' {
              */
             PREFIX,
         }
-        /**
-         * The indexes of colors passed to symbolic color rendering, such as
-         * [vfunc`Gtk`.SymbolicPaintable.snapshot_symbolic].
-         *
-         * More values may be added over time.
-         */
 
-        /**
-         * The indexes of colors passed to symbolic color rendering, such as
-         * [vfunc`Gtk`.SymbolicPaintable.snapshot_symbolic].
-         *
-         * More values may be added over time.
-         */
         export namespace SymbolicColor {
             export const $gtype: GObject.GType<SymbolicColor>;
         }
 
+        /**
+         * The indexes of colors passed to symbolic color rendering, such as
+         * [vfunc`Gtk`.SymbolicPaintable.snapshot_symbolic].
+         *
+         * More values may be added over time.
+         */
         enum SymbolicColor {
             /**
              * The default foreground color
@@ -4543,33 +4070,22 @@ declare module 'gi://Gtk?version=4.0' {
              */
             SUCCESS,
         }
-        /**
-         * Values that can be passed to the [vfunc`Gtk`.Widget.system_setting_changed]
-         * vfunc.
-         *
-         * The values indicate which system setting has changed.
-         * Widgets may need to drop caches, or react otherwise.
-         *
-         * Most of the values correspond to [class`Settings]` properties.
-         *
-         * More values may be added over time.
-         */
 
-        /**
-         * Values that can be passed to the [vfunc`Gtk`.Widget.system_setting_changed]
-         * vfunc.
-         *
-         * The values indicate which system setting has changed.
-         * Widgets may need to drop caches, or react otherwise.
-         *
-         * Most of the values correspond to [class`Settings]` properties.
-         *
-         * More values may be added over time.
-         */
         export namespace SystemSetting {
             export const $gtype: GObject.GType<SystemSetting>;
         }
 
+        /**
+         * Values that can be passed to the [vfunc`Gtk`.Widget.system_setting_changed]
+         * vfunc.
+         *
+         * The values indicate which system setting has changed.
+         * Widgets may need to drop caches, or react otherwise.
+         *
+         * Most of the values correspond to [class`Settings]` properties.
+         *
+         * More values may be added over time.
+         */
         enum SystemSetting {
             /**
              * the [property`Gtk`.Settings:gtk-xft-dpi] setting has changed
@@ -4599,17 +4115,14 @@ declare module 'gi://Gtk?version=4.0' {
              */
             ICON_THEME,
         }
-        /**
-         * Reading directions for text.
-         */
 
-        /**
-         * Reading directions for text.
-         */
         export namespace TextDirection {
             export const $gtype: GObject.GType<TextDirection>;
         }
 
+        /**
+         * Reading directions for text.
+         */
         enum TextDirection {
             /**
              * No direction.
@@ -4624,19 +4137,15 @@ declare module 'gi://Gtk?version=4.0' {
              */
             RTL,
         }
-        /**
-         * Granularity types that extend the text selection. Use the
-         * `GtkTextView::extend-selection` signal to customize the selection.
-         */
 
-        /**
-         * Granularity types that extend the text selection. Use the
-         * `GtkTextView::extend-selection` signal to customize the selection.
-         */
         export namespace TextExtendSelection {
             export const $gtype: GObject.GType<TextExtendSelection>;
         }
 
+        /**
+         * Granularity types that extend the text selection. Use the
+         * `GtkTextView::extend-selection` signal to customize the selection.
+         */
         enum TextExtendSelection {
             /**
              * Selects the current word. It is triggered by
@@ -4649,19 +4158,15 @@ declare module 'gi://Gtk?version=4.0' {
              */
             LINE,
         }
-        /**
-         * Used to reference the layers of `GtkTextView` for the purpose of customized
-         * drawing with the ::snapshot_layer vfunc.
-         */
 
-        /**
-         * Used to reference the layers of `GtkTextView` for the purpose of customized
-         * drawing with the ::snapshot_layer vfunc.
-         */
         export namespace TextViewLayer {
             export const $gtype: GObject.GType<TextViewLayer>;
         }
 
+        /**
+         * Used to reference the layers of `GtkTextView` for the purpose of customized
+         * drawing with the ::snapshot_layer vfunc.
+         */
         enum TextViewLayer {
             /**
              * The layer rendered below the text (but above the background).
@@ -4672,17 +4177,14 @@ declare module 'gi://Gtk?version=4.0' {
              */
             ABOVE_TEXT,
         }
-        /**
-         * Used to reference the parts of `GtkTextView`.
-         */
 
-        /**
-         * Used to reference the parts of `GtkTextView`.
-         */
         export namespace TextWindowType {
             export const $gtype: GObject.GType<TextWindowType>;
         }
 
+        /**
+         * Used to reference the parts of `GtkTextView`.
+         */
         enum TextWindowType {
             /**
              * Window that floats over scrolling areas.
@@ -4709,21 +4211,16 @@ declare module 'gi://Gtk?version=4.0' {
              */
             BOTTOM,
         }
-        /**
-         * The sizing method the column uses to determine its width.  Please note
-         * that %GTK_TREE_VIEW_COLUMN_AUTOSIZE are inefficient for large views, and
-         * can make columns appear choppy.
-         */
 
-        /**
-         * The sizing method the column uses to determine its width.  Please note
-         * that %GTK_TREE_VIEW_COLUMN_AUTOSIZE are inefficient for large views, and
-         * can make columns appear choppy.
-         */
         export namespace TreeViewColumnSizing {
             export const $gtype: GObject.GType<TreeViewColumnSizing>;
         }
 
+        /**
+         * The sizing method the column uses to determine its width.  Please note
+         * that %GTK_TREE_VIEW_COLUMN_AUTOSIZE are inefficient for large views, and
+         * can make columns appear choppy.
+         */
         enum TreeViewColumnSizing {
             /**
              * Columns only get bigger in reaction to changes in the model
@@ -4738,17 +4235,14 @@ declare module 'gi://Gtk?version=4.0' {
              */
             FIXED,
         }
-        /**
-         * An enum for determining where a dropped row goes.
-         */
 
-        /**
-         * An enum for determining where a dropped row goes.
-         */
         export namespace TreeViewDropPosition {
             export const $gtype: GObject.GType<TreeViewDropPosition>;
         }
 
+        /**
+         * An enum for determining where a dropped row goes.
+         */
         enum TreeViewDropPosition {
             /**
              * dropped row is inserted before
@@ -4767,17 +4261,14 @@ declare module 'gi://Gtk?version=4.0' {
              */
             INTO_OR_AFTER,
         }
-        /**
-         * Used to indicate which grid lines to draw in a tree view.
-         */
 
-        /**
-         * Used to indicate which grid lines to draw in a tree view.
-         */
         export namespace TreeViewGridLines {
             export const $gtype: GObject.GType<TreeViewGridLines>;
         }
 
+        /**
+         * Used to indicate which grid lines to draw in a tree view.
+         */
         enum TreeViewGridLines {
             /**
              * No grid lines.
@@ -4796,17 +4287,14 @@ declare module 'gi://Gtk?version=4.0' {
              */
             BOTH,
         }
-        /**
-         * See also gtk_print_settings_set_paper_width().
-         */
 
-        /**
-         * See also gtk_print_settings_set_paper_width().
-         */
         export namespace Unit {
             export const $gtype: GObject.GType<Unit>;
         }
 
+        /**
+         * See also gtk_print_settings_set_paper_width().
+         */
         enum Unit {
             /**
              * No units.
@@ -4825,19 +4313,15 @@ declare module 'gi://Gtk?version=4.0' {
              */
             MM,
         }
-        /**
-         * Determines which point or edge of a window is meant to remain fixed
-         * when a window changes size.
-         */
 
-        /**
-         * Determines which point or edge of a window is meant to remain fixed
-         * when a window changes size.
-         */
         export namespace WindowGravity {
             export const $gtype: GObject.GType<WindowGravity>;
         }
 
+        /**
+         * Determines which point or edge of a window is meant to remain fixed
+         * when a window changes size.
+         */
         enum WindowGravity {
             /**
              * The top left corner
@@ -4906,17 +4390,14 @@ declare module 'gi://Gtk?version=4.0' {
              */
             BOTTOM_END,
         }
-        /**
-         * Describes a type of line wrapping.
-         */
 
-        /**
-         * Describes a type of line wrapping.
-         */
         export namespace WrapMode {
             export const $gtype: GObject.GType<WrapMode>;
         }
 
+        /**
+         * Describes a type of line wrapping.
+         */
         enum WrapMode {
             /**
              * do not wrap lines; just make the text area wider
@@ -4938,6 +4419,7 @@ declare module 'gi://Gtk?version=4.0' {
              */
             WORD_CHAR,
         }
+
         /**
          * An attribute for the background color, expressed as an RGB value
          * encoded in a string using the format: `{r8},{g8},{b8}`.
@@ -6648,21 +6130,15 @@ declare module 'gi://Gtk?version=4.0' {
             (widget: Widget, action_name: string, parameter?: GLib.Variant | null): void;
         }
         type TreeRowData = object | null;
-        /**
-         * Types of user actions that may be blocked by `GtkApplication`.
-         *
-         * See [method`Gtk`.Application.inhibit].
-         */
-
-        /**
-         * Types of user actions that may be blocked by `GtkApplication`.
-         *
-         * See [method`Gtk`.Application.inhibit].
-         */
         export namespace ApplicationInhibitFlags {
             export const $gtype: GObject.GType<ApplicationInhibitFlags>;
         }
 
+        /**
+         * Types of user actions that may be blocked by `GtkApplication`.
+         *
+         * See [method`Gtk`.Application.inhibit].
+         */
         enum ApplicationInhibitFlags {
             /**
              * Inhibit ending the user session
@@ -6684,27 +6160,19 @@ declare module 'gi://Gtk?version=4.0' {
              */
             IDLE,
         }
-        /**
-         * The list of flags that can be passed to gtk_builder_create_closure().
-         *
-         * New values may be added in the future for new features, so external
-         * implementations of [iface`Gtk`.BuilderScope] should test the flags
-         * for unknown values and raise a %GTK_BUILDER_ERROR_INVALID_ATTRIBUTE error
-         * when they encounter one.
-         */
 
-        /**
-         * The list of flags that can be passed to gtk_builder_create_closure().
-         *
-         * New values may be added in the future for new features, so external
-         * implementations of [iface`Gtk`.BuilderScope] should test the flags
-         * for unknown values and raise a %GTK_BUILDER_ERROR_INVALID_ATTRIBUTE error
-         * when they encounter one.
-         */
         export namespace BuilderClosureFlags {
             export const $gtype: GObject.GType<BuilderClosureFlags>;
         }
 
+        /**
+         * The list of flags that can be passed to gtk_builder_create_closure().
+         *
+         * New values may be added in the future for new features, so external
+         * implementations of [iface`Gtk`.BuilderScope] should test the flags
+         * for unknown values and raise a %GTK_BUILDER_ERROR_INVALID_ATTRIBUTE error
+         * when they encounter one.
+         */
         enum BuilderClosureFlags {
             /**
              * The closure should be created swapped. See
@@ -6712,17 +6180,14 @@ declare module 'gi://Gtk?version=4.0' {
              */
             SWAPPED,
         }
-        /**
-         * Tells how a cell is to be rendered.
-         */
 
-        /**
-         * Tells how a cell is to be rendered.
-         */
         export namespace CellRendererState {
             export const $gtype: GObject.GType<CellRendererState>;
         }
 
+        /**
+         * Tells how a cell is to be rendered.
+         */
         enum CellRendererState {
             /**
              * The cell is currently selected, and
@@ -6754,25 +6219,18 @@ declare module 'gi://Gtk?version=4.0' {
              */
             EXPANDED,
         }
-        /**
-         * Flags to use with gtk_set_debug_flags().
-         *
-         * Settings these flags causes GTK to print out different
-         * types of debugging information. Some of these flags are
-         * only available when GTK has been configured with `-Ddebug=true`.
-         */
 
-        /**
-         * Flags to use with gtk_set_debug_flags().
-         *
-         * Settings these flags causes GTK to print out different
-         * types of debugging information. Some of these flags are
-         * only available when GTK has been configured with `-Ddebug=true`.
-         */
         export namespace DebugFlags {
             export const $gtype: GObject.GType<DebugFlags>;
         }
 
+        /**
+         * Flags to use with gtk_set_debug_flags().
+         *
+         * Settings these flags causes GTK to print out different
+         * types of debugging information. Some of these flags are
+         * only available when GTK has been configured with `-Ddebug=true`.
+         */
         enum DebugFlags {
             /**
              * Information about GtkTextView
@@ -6863,17 +6321,14 @@ declare module 'gi://Gtk?version=4.0' {
              */
             BUILDER,
         }
-        /**
-         * Flags used to influence dialog construction.
-         */
 
-        /**
-         * Flags used to influence dialog construction.
-         */
         export namespace DialogFlags {
             export const $gtype: GObject.GType<DialogFlags>;
         }
 
+        /**
+         * Flags used to influence dialog construction.
+         */
         enum DialogFlags {
             /**
              * Make the constructed dialog modal
@@ -6889,17 +6344,14 @@ declare module 'gi://Gtk?version=4.0' {
              */
             USE_HEADER_BAR,
         }
-        /**
-         * Describes the behavior of a `GtkEventControllerScroll`.
-         */
 
-        /**
-         * Describes the behavior of a `GtkEventControllerScroll`.
-         */
         export namespace EventControllerScrollFlags {
             export const $gtype: GObject.GType<EventControllerScrollFlags>;
         }
 
+        /**
+         * Describes the behavior of a `GtkEventControllerScroll`.
+         */
         enum EventControllerScrollFlags {
             /**
              * Don't emit scroll.
@@ -6931,25 +6383,18 @@ declare module 'gi://Gtk?version=4.0' {
              */
             BOTH_AXES,
         }
-        /**
-         * Specifies the granularity of font selection
-         * that is desired in a `GtkFontChooser`.
-         *
-         * This enumeration may be extended in the future; applications should
-         * ignore unknown values.
-         */
 
-        /**
-         * Specifies the granularity of font selection
-         * that is desired in a `GtkFontChooser`.
-         *
-         * This enumeration may be extended in the future; applications should
-         * ignore unknown values.
-         */
         export namespace FontChooserLevel {
             export const $gtype: GObject.GType<FontChooserLevel>;
         }
 
+        /**
+         * Specifies the granularity of font selection
+         * that is desired in a `GtkFontChooser`.
+         *
+         * This enumeration may be extended in the future; applications should
+         * ignore unknown values.
+         */
         enum FontChooserLevel {
             /**
              * Allow selecting a font family
@@ -6972,17 +6417,14 @@ declare module 'gi://Gtk?version=4.0' {
              */
             FEATURES,
         }
-        /**
-         * Used to specify options for gtk_icon_theme_lookup_icon().
-         */
 
-        /**
-         * Used to specify options for gtk_icon_theme_lookup_icon().
-         */
         export namespace IconLookupFlags {
             export const $gtype: GObject.GType<IconLookupFlags>;
         }
 
+        /**
+         * Used to specify options for gtk_icon_theme_lookup_icon().
+         */
         enum IconLookupFlags {
             /**
              * Perform a regular lookup.
@@ -7004,37 +6446,24 @@ declare module 'gi://Gtk?version=4.0' {
              */
             PRELOAD,
         }
-        /**
-         * Describes hints that might be taken into account by input methods
-         * or applications.
-         *
-         * Note that input methods may already tailor their behaviour according
-         * to the [enum`InputPurpose]` of the entry.
-         *
-         * Some common sense is expected when using these flags - mixing
-         * %GTK_INPUT_HINT_LOWERCASE with any of the uppercase hints makes no sense.
-         *
-         * This enumeration may be extended in the future; input methods should
-         * ignore unknown values.
-         */
 
-        /**
-         * Describes hints that might be taken into account by input methods
-         * or applications.
-         *
-         * Note that input methods may already tailor their behaviour according
-         * to the [enum`InputPurpose]` of the entry.
-         *
-         * Some common sense is expected when using these flags - mixing
-         * %GTK_INPUT_HINT_LOWERCASE with any of the uppercase hints makes no sense.
-         *
-         * This enumeration may be extended in the future; input methods should
-         * ignore unknown values.
-         */
         export namespace InputHints {
             export const $gtype: GObject.GType<InputHints>;
         }
 
+        /**
+         * Describes hints that might be taken into account by input methods
+         * or applications.
+         *
+         * Note that input methods may already tailor their behaviour according
+         * to the [enum`InputPurpose]` of the entry.
+         *
+         * Some common sense is expected when using these flags - mixing
+         * %GTK_INPUT_HINT_LOWERCASE with any of the uppercase hints makes no sense.
+         *
+         * This enumeration may be extended in the future; input methods should
+         * ignore unknown values.
+         */
         enum InputHints {
             /**
              * No special behaviour suggested
@@ -7093,19 +6522,15 @@ declare module 'gi://Gtk?version=4.0' {
              */
             PRIVATE,
         }
-        /**
-         * List of actions to perform when scrolling to items in
-         * a list widget.
-         */
 
-        /**
-         * List of actions to perform when scrolling to items in
-         * a list widget.
-         */
         export namespace ListScrollFlags {
             export const $gtype: GObject.GType<ListScrollFlags>;
         }
 
+        /**
+         * List of actions to perform when scrolling to items in
+         * a list widget.
+         */
         enum ListScrollFlags {
             /**
              * Don't do anything extra
@@ -7121,17 +6546,14 @@ declare module 'gi://Gtk?version=4.0' {
              */
             SELECT,
         }
-        /**
-         * Flags that influence the behavior of [method`Widget`.pick].
-         */
 
-        /**
-         * Flags that influence the behavior of [method`Widget`.pick].
-         */
         export namespace PickFlags {
             export const $gtype: GObject.GType<PickFlags>;
         }
 
+        /**
+         * Flags that influence the behavior of [method`Widget`.pick].
+         */
         enum PickFlags {
             /**
              * The default behavior, include widgets that are receiving events
@@ -7146,19 +6568,15 @@ declare module 'gi://Gtk?version=4.0' {
              */
             NON_TARGETABLE,
         }
-        /**
-         * Flags that affect how [class`Gtk`.PopoverMenu] widgets built from
-         * a [class`Gio`.MenuModel] are created and displayed.
-         */
 
-        /**
-         * Flags that affect how [class`Gtk`.PopoverMenu] widgets built from
-         * a [class`Gio`.MenuModel] are created and displayed.
-         */
         export namespace PopoverMenuFlags {
             export const $gtype: GObject.GType<PopoverMenuFlags>;
         }
 
+        /**
+         * Flags that affect how [class`Gtk`.PopoverMenu] widgets built from
+         * a [class`Gio`.MenuModel] are created and displayed.
+         */
         enum PopoverMenuFlags {
             /**
              * Submenus are presented as sliding submenus that replace the main menu.
@@ -7170,25 +6588,18 @@ declare module 'gi://Gtk?version=4.0' {
              */
             NESTED,
         }
-        /**
-         * Specifies which features the print dialog should offer.
-         *
-         * If neither %GTK_PRINT_CAPABILITY_GENERATE_PDF nor
-         * %GTK_PRINT_CAPABILITY_GENERATE_PS is specified, GTK assumes that all
-         * formats are supported.
-         */
 
-        /**
-         * Specifies which features the print dialog should offer.
-         *
-         * If neither %GTK_PRINT_CAPABILITY_GENERATE_PDF nor
-         * %GTK_PRINT_CAPABILITY_GENERATE_PS is specified, GTK assumes that all
-         * formats are supported.
-         */
         export namespace PrintCapabilities {
             export const $gtype: GObject.GType<PrintCapabilities>;
         }
 
+        /**
+         * Specifies which features the print dialog should offer.
+         *
+         * If neither %GTK_PRINT_CAPABILITY_GENERATE_PDF nor
+         * %GTK_PRINT_CAPABILITY_GENERATE_PS is specified, GTK assumes that all
+         * formats are supported.
+         */
         enum PrintCapabilities {
             /**
              * Print dialog will offer printing even/odd pages.
@@ -7235,21 +6646,16 @@ declare module 'gi://Gtk?version=4.0' {
              */
             NUMBER_UP_LAYOUT,
         }
-        /**
-         * Flags that can be passed to action activation.
-         *
-         * More flags may be added in the future.
-         */
 
-        /**
-         * Flags that can be passed to action activation.
-         *
-         * More flags may be added in the future.
-         */
         export namespace ShortcutActionFlags {
             export const $gtype: GObject.GType<ShortcutActionFlags>;
         }
 
+        /**
+         * Flags that can be passed to action activation.
+         *
+         * More flags may be added in the future.
+         */
         enum ShortcutActionFlags {
             /**
              * The action is the only
@@ -7258,25 +6664,18 @@ declare module 'gi://Gtk?version=4.0' {
              */
             EXCLUSIVE,
         }
-        /**
-         * Describes a widget state.
-         *
-         * Widget states are used to match the widget against CSS pseudo-classes.
-         * Note that GTK extends the regular CSS classes and sometimes uses
-         * different names.
-         */
 
-        /**
-         * Describes a widget state.
-         *
-         * Widget states are used to match the widget against CSS pseudo-classes.
-         * Note that GTK extends the regular CSS classes and sometimes uses
-         * different names.
-         */
         export namespace StateFlags {
             export const $gtype: GObject.GType<StateFlags>;
         }
 
+        /**
+         * Describes a widget state.
+         *
+         * Widget states are used to match the widget against CSS pseudo-classes.
+         * Note that GTK extends the regular CSS classes and sometimes uses
+         * different names.
+         */
         enum StateFlags {
             /**
              * State during normal operation
@@ -7343,21 +6742,16 @@ declare module 'gi://Gtk?version=4.0' {
              */
             FOCUS_WITHIN,
         }
-        /**
-         * Flags that modify the behavior of gtk_style_context_to_string().
-         *
-         * New values may be added to this enumeration.
-         */
 
-        /**
-         * Flags that modify the behavior of gtk_style_context_to_string().
-         *
-         * New values may be added to this enumeration.
-         */
         export namespace StyleContextPrintFlags {
             export const $gtype: GObject.GType<StyleContextPrintFlags>;
         }
 
+        /**
+         * Flags that modify the behavior of gtk_style_context_to_string().
+         *
+         * New values may be added to this enumeration.
+         */
         enum StyleContextPrintFlags {
             /**
              * Default value.
@@ -7379,19 +6773,15 @@ declare module 'gi://Gtk?version=4.0' {
              */
             SHOW_CHANGE,
         }
-        /**
-         * Values for [callback`Gtk`.TextBufferCommitNotify] to denote the
-         * point of the notification.
-         */
 
-        /**
-         * Values for [callback`Gtk`.TextBufferCommitNotify] to denote the
-         * point of the notification.
-         */
         export namespace TextBufferNotifyFlags {
             export const $gtype: GObject.GType<TextBufferNotifyFlags>;
         }
 
+        /**
+         * Values for [callback`Gtk`.TextBufferCommitNotify] to denote the
+         * point of the notification.
+         */
         enum TextBufferNotifyFlags {
             /**
              * Be notified before text
@@ -7414,25 +6804,18 @@ declare module 'gi://Gtk?version=4.0' {
              */
             AFTER_DELETE,
         }
-        /**
-         * Flags affecting how a search is done.
-         *
-         * If neither `GTK_TEXT_SEARCH_VISIBLE_ONLY` nor `GTK_TEXT_SEARCH_TEXT_ONLY`
-         * are enabled, the match must be exact; the special 0xFFFC character will
-         * match embedded paintables or child widgets.
-         */
 
-        /**
-         * Flags affecting how a search is done.
-         *
-         * If neither `GTK_TEXT_SEARCH_VISIBLE_ONLY` nor `GTK_TEXT_SEARCH_TEXT_ONLY`
-         * are enabled, the match must be exact; the special 0xFFFC character will
-         * match embedded paintables or child widgets.
-         */
         export namespace TextSearchFlags {
             export const $gtype: GObject.GType<TextSearchFlags>;
         }
 
+        /**
+         * Flags affecting how a search is done.
+         *
+         * If neither `GTK_TEXT_SEARCH_VISIBLE_ONLY` nor `GTK_TEXT_SEARCH_TEXT_ONLY`
+         * are enabled, the match must be exact; the special 0xFFFC character will
+         * match embedded paintables or child widgets.
+         */
         enum TextSearchFlags {
             /**
              * Search only visible data. A search match may
@@ -7450,27 +6833,19 @@ declare module 'gi://Gtk?version=4.0' {
              */
             CASE_INSENSITIVE,
         }
-        /**
-         * These flags indicate various properties of a `GtkTreeModel`.
-         *
-         * They are returned by [method`Gtk`.TreeModel.get_flags], and must be
-         * static for the lifetime of the object. A more complete description
-         * of %GTK_TREE_MODEL_ITERS_PERSIST can be found in the overview of
-         * this section.
-         */
 
-        /**
-         * These flags indicate various properties of a `GtkTreeModel`.
-         *
-         * They are returned by [method`Gtk`.TreeModel.get_flags], and must be
-         * static for the lifetime of the object. A more complete description
-         * of %GTK_TREE_MODEL_ITERS_PERSIST can be found in the overview of
-         * this section.
-         */
         export namespace TreeModelFlags {
             export const $gtype: GObject.GType<TreeModelFlags>;
         }
 
+        /**
+         * These flags indicate various properties of a `GtkTreeModel`.
+         *
+         * They are returned by [method`Gtk`.TreeModel.get_flags], and must be
+         * static for the lifetime of the object. A more complete description
+         * of %GTK_TREE_MODEL_ITERS_PERSIST can be found in the overview of
+         * this section.
+         */
         enum TreeModelFlags {
             /**
              * iterators survive all signals
@@ -7483,6 +6858,7 @@ declare module 'gi://Gtk?version=4.0' {
              */
             LIST_ONLY,
         }
+
         namespace ATContext {
             // Signal signatures
             interface SignalSignatures extends GObject.Object.SignalSignatures {

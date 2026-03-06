@@ -26,19 +26,14 @@ declare module 'gi://GstApp?version=1.0' {
          * GstApp-1.0
          */
 
-        /**
-         * Buffer dropping scheme to avoid the element's internal queue to block when
-         * full.
-         */
-
-        /**
-         * Buffer dropping scheme to avoid the element's internal queue to block when
-         * full.
-         */
         export namespace AppLeakyType {
             export const $gtype: GObject.GType<AppLeakyType>;
         }
 
+        /**
+         * Buffer dropping scheme to avoid the element's internal queue to block when
+         * full.
+         */
         enum AppLeakyType {
             /**
              * Not Leaky
@@ -53,17 +48,14 @@ declare module 'gi://GstApp?version=1.0' {
              */
             DOWNSTREAM,
         }
-        /**
-         * The stream type.
-         */
 
-        /**
-         * The stream type.
-         */
         export namespace AppStreamType {
             export const $gtype: GObject.GType<AppStreamType>;
         }
 
+        /**
+         * The stream type.
+         */
         enum AppStreamType {
             /**
              * No seeking is supported in the stream, such as a
@@ -81,6 +73,7 @@ declare module 'gi://GstApp?version=1.0' {
              */
             RANDOM_ACCESS,
         }
+
         namespace AppSink {
             // Signal signatures
             interface SignalSignatures extends GstBase.BaseSink.SignalSignatures {

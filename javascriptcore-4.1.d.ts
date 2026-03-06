@@ -23,14 +23,6 @@ declare module 'gi://JavaScriptCore?version=4.1' {
         /**
          * Enum values to specify a mode to check for syntax errors in jsc_context_check_syntax().
          */
-
-        /**
-         * Enum values to specify a mode to check for syntax errors in jsc_context_check_syntax().
-         */
-        export namespace CheckSyntaxMode {
-            export const $gtype: GObject.GType<CheckSyntaxMode>;
-        }
-
         enum CheckSyntaxMode {
             /**
              * mode to check syntax of a script
@@ -41,17 +33,10 @@ declare module 'gi://JavaScriptCore?version=4.1' {
              */
             MODULE,
         }
-        /**
-         * Enum values to specify the result of jsc_context_check_syntax().
-         */
 
         /**
          * Enum values to specify the result of jsc_context_check_syntax().
          */
-        export namespace CheckSyntaxResult {
-            export const $gtype: GObject.GType<CheckSyntaxResult>;
-        }
-
         enum CheckSyntaxResult {
             /**
              * no errors
@@ -78,17 +63,10 @@ declare module 'gi://JavaScriptCore?version=4.1' {
              */
             STACK_OVERFLOW_ERROR,
         }
-        /**
-         * Enum values for options types.
-         */
 
         /**
          * Enum values for options types.
          */
-        export namespace OptionType {
-            export const $gtype: GObject.GType<OptionType>;
-        }
-
         enum OptionType {
             /**
              * A #gboolean option type.
@@ -119,17 +97,10 @@ declare module 'gi://JavaScriptCore?version=4.1' {
              */
             RANGE_STRING,
         }
-        /**
-         * Possible types of the elements contained in a typed array.
-         */
 
         /**
          * Possible types of the elements contained in a typed array.
          */
-        export namespace TypedArrayType {
-            export const $gtype: GObject.GType<TypedArrayType>;
-        }
-
         enum TypedArrayType {
             /**
              * Not a typed array, or type unsupported.
@@ -180,6 +151,7 @@ declare module 'gi://JavaScriptCore?version=4.1' {
              */
             FLOAT64,
         }
+
         /**
          * Like jsc_get_major_version(), but from the headers used at
          * application compile time, rather than from the library linked
@@ -397,15 +369,6 @@ declare module 'gi://JavaScriptCore?version=4.1' {
          * Flags used when defining properties with jsc_value_object_define_property_data() and
          * jsc_value_object_define_property_accessor().
          */
-
-        /**
-         * Flags used when defining properties with jsc_value_object_define_property_data() and
-         * jsc_value_object_define_property_accessor().
-         */
-        export namespace ValuePropertyFlags {
-            export const $gtype: GObject.GType<ValuePropertyFlags>;
-        }
-
         enum ValuePropertyFlags {
             /**
              * the type of the property descriptor may be changed and the
@@ -423,6 +386,7 @@ declare module 'gi://JavaScriptCore?version=4.1' {
              */
             WRITABLE,
         }
+
         namespace Class {
             // Signal signatures
             interface SignalSignatures extends GObject.Object.SignalSignatures {

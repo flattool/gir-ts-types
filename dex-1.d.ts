@@ -33,8 +33,9 @@ declare module 'gi://Dex?version=1' {
             CATCH,
             FINALLY,
         }
+
         class Error extends GLib.Error {
-            static $gtype: GObject.GType<Error>;
+            static $gtype: GObject.GType<GLib.Error>;
 
             // Static fields
 
@@ -64,6 +65,7 @@ declare module 'gi://Dex?version=1' {
             RESOLVED,
             REJECTED,
         }
+
         /**
          * An asynchronous `pread()` wrapper.
          * @param aio_context

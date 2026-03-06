@@ -347,6 +347,7 @@ declare module 'gi://cairo?version=1.0' {
             OUT,
             PART,
         }
+
         function image_surface_create(): void;
         class Context {
             static $gtype: GObject.GType<Context>;

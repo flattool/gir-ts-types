@@ -31,16 +31,6 @@ declare module 'gi://Gcr?version=3' {
          * %GCR_CERTIFICATE_CHAIN_UNKNOWN for certificate chains that have not been
          * built.
          */
-
-        /**
-         * The status of a built certificate chain. Will be set to
-         * %GCR_CERTIFICATE_CHAIN_UNKNOWN for certificate chains that have not been
-         * built.
-         */
-        export namespace CertificateChainStatus {
-            export const $gtype: GObject.GType<CertificateChainStatus>;
-        }
-
         enum CertificateChainStatus {
             /**
              * The certificate chain's status is unknown.
@@ -77,34 +67,20 @@ declare module 'gi://Gcr?version=3' {
              */
             ANCHORED,
         }
-        /**
-         * The format of a certificate request. Currently only PKCS#10 is supported.
-         */
 
         /**
          * The format of a certificate request. Currently only PKCS#10 is supported.
          */
-        export namespace CertificateRequestFormat {
-            export const $gtype: GObject.GType<CertificateRequestFormat>;
-        }
-
         enum CertificateRequestFormat {
             /**
              * certificate request is in PKCS#10 format
              */
             CERTIFICATE_REQUEST_PKCS10,
         }
-        /**
-         * Values responding to error codes for parsing and serializing data.
-         */
 
         /**
          * Values responding to error codes for parsing and serializing data.
          */
-        export namespace DataError {
-            export const $gtype: GObject.GType<DataError>;
-        }
-
         enum DataError {
             /**
              * Failed to parse or serialize the data
@@ -123,17 +99,10 @@ declare module 'gi://Gcr?version=3' {
              */
             LOCKED,
         }
-        /**
-         * The various format identifiers.
-         */
 
         /**
          * The various format identifiers.
          */
-        export namespace DataFormat {
-            export const $gtype: GObject.GType<DataFormat>;
-        }
-
         enum DataFormat {
             /**
              * Represents all the formats, when enabling or disabling
@@ -260,17 +229,10 @@ declare module 'gi://Gcr?version=3' {
              */
             PEM_PUBLIC_KEY,
         }
-        /**
-         * Various replies returned by [method`Prompt`.confirm] and friends.
-         */
 
         /**
          * Various replies returned by [method`Prompt`.confirm] and friends.
          */
-        export namespace PromptReply {
-            export const $gtype: GObject.GType<PromptReply>;
-        }
-
         enum PromptReply {
             /**
              * the prompt was cancelled
@@ -281,14 +243,6 @@ declare module 'gi://Gcr?version=3' {
              */
             CONTINUE,
         }
-        /**
-         * No error returned by the #GcrSystemPrompt is suitable for display or
-         * to the user.
-         *
-         * If the system prompter can only show one prompt at a time, and there is
-         * already a prompt being displayed, and the timeout waiting to open the
-         * prompt expires, then %GCR_SYSTEM_PROMPT_IN_PROGRESS is returned.
-         */
 
         /**
          * No error returned by the #GcrSystemPrompt is suitable for display or
@@ -298,29 +252,17 @@ declare module 'gi://Gcr?version=3' {
          * already a prompt being displayed, and the timeout waiting to open the
          * prompt expires, then %GCR_SYSTEM_PROMPT_IN_PROGRESS is returned.
          */
-        export namespace SystemPromptError {
-            export const $gtype: GObject.GType<SystemPromptError>;
-        }
-
         enum SystemPromptError {
             /**
              * another prompt is already in progress
              */
             SYSTEM_PROMPT_IN_PROGRESS,
         }
-        /**
-         * The mode for the system prompter. Most system prompters can only show
-         * one prompt at a time and would use the %GCR_SYSTEM_PROMPTER_SINGLE mode.
-         */
 
         /**
          * The mode for the system prompter. Most system prompters can only show
          * one prompt at a time and would use the %GCR_SYSTEM_PROMPTER_SINGLE mode.
          */
-        export namespace SystemPrompterMode {
-            export const $gtype: GObject.GType<SystemPrompterMode>;
-        }
-
         enum SystemPrompterMode {
             /**
              * only one prompt shown at a time
@@ -331,6 +273,7 @@ declare module 'gi://Gcr?version=3' {
              */
             MULTIPLE,
         }
+
         const ICON_CERTIFICATE: string;
         const ICON_GNUPG: string;
         const ICON_HOME_DIRECTORY: string;
@@ -1020,14 +963,6 @@ declare module 'gi://Gcr?version=3' {
         /**
          * Flags to be used with the gcr_certificate_chain_build() operation.
          */
-
-        /**
-         * Flags to be used with the gcr_certificate_chain_build() operation.
-         */
-        export namespace CertificateChainFlags {
-            export const $gtype: GObject.GType<CertificateChainFlags>;
-        }
-
         enum CertificateChainFlags {
             /**
              * no flags
@@ -1042,15 +977,12 @@ declare module 'gi://Gcr?version=3' {
             NO_LOOKUPS,
         }
 
-        export namespace ColumnFlags {
-            export const $gtype: GObject.GType<ColumnFlags>;
-        }
-
         enum ColumnFlags {
             NONE,
             HIDDEN,
             SORTABLE,
         }
+
         namespace CertificateChain {
             // Signal signatures
             interface SignalSignatures extends GObject.Object.SignalSignatures {

@@ -32,7 +32,7 @@ declare module 'gi://AppStreamCompose?version=1.0' {
          * A drawing error.
          */
         class CanvasError extends GLib.Error {
-            static $gtype: GObject.GType<CanvasError>;
+            static $gtype: GObject.GType<GLib.Error>;
 
             // Static fields
 
@@ -66,7 +66,7 @@ declare module 'gi://AppStreamCompose?version=1.0' {
          * A metadata composition error.
          */
         class ComposeError extends GLib.Error {
-            static $gtype: GObject.GType<ComposeError>;
+            static $gtype: GObject.GType<GLib.Error>;
 
             // Static fields
 
@@ -84,17 +84,13 @@ declare module 'gi://AppStreamCompose?version=1.0' {
             static quark(): GLib.Quark;
         }
 
-        /**
-         * Designated state for an icon of a given size.
-         */
-
-        /**
-         * Designated state for an icon of a given size.
-         */
         export namespace IconState {
             export const $gtype: GObject.GType<IconState>;
         }
 
+        /**
+         * Designated state for an icon of a given size.
+         */
         enum IconState {
             /**
              * Ignore icons of this size.
@@ -113,11 +109,12 @@ declare module 'gi://AppStreamCompose?version=1.0' {
              */
             REMOTE_ONLY,
         }
+
         /**
          * An image processing error.
          */
         class ImageError extends GLib.Error {
-            static $gtype: GObject.GType<ImageError>;
+            static $gtype: GObject.GType<GLib.Error>;
 
             // Static fields
 
@@ -139,17 +136,13 @@ declare module 'gi://AppStreamCompose?version=1.0' {
             static quark(): GLib.Quark;
         }
 
-        /**
-         * File format of an image.
-         */
-
-        /**
-         * File format of an image.
-         */
         export namespace ImageFormat {
             export const $gtype: GObject.GType<ImageFormat>;
         }
 
+        /**
+         * File format of an image.
+         */
         enum ImageFormat {
             /**
              * Unknown image format.
@@ -188,6 +181,7 @@ declare module 'gi://AppStreamCompose?version=1.0' {
              */
             XPM,
         }
+
         /**
          * Builds a global component ID from a component-id
          * and a (usually MD5) checksum generated from the component data.
@@ -330,7 +324,6 @@ declare module 'gi://AppStreamCompose?version=1.0' {
         interface CheckMetadataEarlyFn {
             (cres: Result, unit: Unit): void;
         }
-
         export namespace ComposeFlags {
             export const $gtype: GObject.GType<ComposeFlags>;
         }
@@ -351,17 +344,14 @@ declare module 'gi://AppStreamCompose?version=1.0' {
             NO_FINAL_CHECK,
             NO_PARTIAL_URLS,
         }
-        /**
-         * The flags used for loading images.
-         */
 
-        /**
-         * The flags used for loading images.
-         */
         export namespace ImageLoadFlags {
             export const $gtype: GObject.GType<ImageLoadFlags>;
         }
 
+        /**
+         * The flags used for loading images.
+         */
         enum ImageLoadFlags {
             /**
              * No special flags set
@@ -380,17 +370,14 @@ declare module 'gi://AppStreamCompose?version=1.0' {
              */
             ALWAYS_RESIZE,
         }
-        /**
-         * The flags used for saving images.
-         */
 
-        /**
-         * The flags used for saving images.
-         */
         export namespace ImageSaveFlags {
             export const $gtype: GObject.GType<ImageSaveFlags>;
         }
 
+        /**
+         * The flags used for saving images.
+         */
         enum ImageSaveFlags {
             /**
              * No special flags set
@@ -413,6 +400,7 @@ declare module 'gi://AppStreamCompose?version=1.0' {
              */
             BLUR,
         }
+
         namespace Canvas {
             // Signal signatures
             interface SignalSignatures extends GObject.Object.SignalSignatures {}

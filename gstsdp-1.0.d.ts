@@ -27,14 +27,6 @@ declare module 'gi://GstSdp?version=1.0' {
         /**
          * The different cache types
          */
-
-        /**
-         * The different cache types
-         */
-        export namespace MIKEYCacheType {
-            export const $gtype: GObject.GType<MIKEYCacheType>;
-        }
-
         enum MIKEYCacheType {
             /**
              * The envelope key MUST NOT be cached
@@ -50,17 +42,10 @@ declare module 'gi://GstSdp?version=1.0' {
              */
             FOR_CSB,
         }
-        /**
-         * The encryption algorithm used to encrypt the Encr data field
-         */
 
         /**
          * The encryption algorithm used to encrypt the Encr data field
          */
-        export namespace MIKEYEncAlg {
-            export const $gtype: GObject.GType<MIKEYEncAlg>;
-        }
-
         enum MIKEYEncAlg {
             /**
              * no encryption
@@ -79,17 +64,10 @@ declare module 'gi://GstSdp?version=1.0' {
              */
             AES_GCM_128,
         }
-        /**
-         * The key validity type
-         */
 
         /**
          * The key validity type
          */
-        export namespace MIKEYKVType {
-            export const $gtype: GObject.GType<MIKEYKVType>;
-        }
-
         enum MIKEYKVType {
             /**
              * No specific usage rule
@@ -104,17 +82,10 @@ declare module 'gi://GstSdp?version=1.0' {
              */
             INTERVAL,
         }
-        /**
-         * The type of key.
-         */
 
         /**
          * The type of key.
          */
-        export namespace MIKEYKeyDataType {
-            export const $gtype: GObject.GType<MIKEYKeyDataType>;
-        }
-
         enum MIKEYKeyDataType {
             /**
              * a TEK Generation Key
@@ -125,17 +96,10 @@ declare module 'gi://GstSdp?version=1.0' {
              */
             TEK,
         }
-        /**
-         * Specifies the authentication algorithm used
-         */
 
         /**
          * Specifies the authentication algorithm used
          */
-        export namespace MIKEYMacAlg {
-            export const $gtype: GObject.GType<MIKEYMacAlg>;
-        }
-
         enum MIKEYMacAlg {
             /**
              * no authentication
@@ -146,53 +110,31 @@ declare module 'gi://GstSdp?version=1.0' {
              */
             HMAC_SHA_1_160,
         }
-        /**
-         * Specifies the method of uniquely mapping Crypto Sessions to the security
-         * protocol sessions.
-         */
 
         /**
          * Specifies the method of uniquely mapping Crypto Sessions to the security
          * protocol sessions.
          */
-        export namespace MIKEYMapType {
-            export const $gtype: GObject.GType<MIKEYMapType>;
-        }
-
         enum MIKEYMapType {
             /**
              * SRTP
              */
             MIKEY_MAP_TYPE_SRTP,
         }
-        /**
-         * The PRF function that has been/will be used for key derivation
-         */
 
         /**
          * The PRF function that has been/will be used for key derivation
          */
-        export namespace MIKEYPRFFunc {
-            export const $gtype: GObject.GType<MIKEYPRFFunc>;
-        }
-
         enum MIKEYPRFFunc {
             /**
              * MIKEY-1 PRF function
              */
             MIKEY_PRF_MIKEY_1,
         }
-        /**
-         * Different MIKEY Payload types.
-         */
 
         /**
          * Different MIKEY Payload types.
          */
-        export namespace MIKEYPayloadType {
-            export const $gtype: GObject.GType<MIKEYPayloadType>;
-        }
-
         enum MIKEYPayloadType {
             /**
              * Last payload
@@ -255,34 +197,20 @@ declare module 'gi://GstSdp?version=1.0' {
              */
             GEN_EXT,
         }
-        /**
-         * Specifies the security protocol
-         */
 
         /**
          * Specifies the security protocol
          */
-        export namespace MIKEYSecProto {
-            export const $gtype: GObject.GType<MIKEYSecProto>;
-        }
-
         enum MIKEYSecProto {
             /**
              * SRTP
              */
             MIKEY_SEC_PROTO_SRTP,
         }
-        /**
-         * This policy specifies the parameters for SRTP and SRTCP
-         */
 
         /**
          * This policy specifies the parameters for SRTP and SRTCP
          */
-        export namespace MIKEYSecSRTP {
-            export const $gtype: GObject.GType<MIKEYSecSRTP>;
-        }
-
         enum MIKEYSecSRTP {
             /**
              * Encryption algorithm
@@ -341,17 +269,10 @@ declare module 'gi://GstSdp?version=1.0' {
              */
             AEAD_AUTH_TAG_LEN,
         }
-        /**
-         * Specifies the timestamp type.
-         */
 
         /**
          * Specifies the timestamp type.
          */
-        export namespace MIKEYTSType {
-            export const $gtype: GObject.GType<MIKEYTSType>;
-        }
-
         enum MIKEYTSType {
             /**
              * an NTP time in UTC timezone
@@ -366,17 +287,10 @@ declare module 'gi://GstSdp?version=1.0' {
              */
             COUNTER,
         }
-        /**
-         * Different MIKEY data types.
-         */
 
         /**
          * Different MIKEY data types.
          */
-        export namespace MIKEYType {
-            export const $gtype: GObject.GType<MIKEYType>;
-        }
-
         enum MIKEYType {
             /**
              * Invalid type
@@ -411,17 +325,10 @@ declare module 'gi://GstSdp?version=1.0' {
              */
             ERROR,
         }
-        /**
-         * Return values for the SDP functions.
-         */
 
         /**
          * Return values for the SDP functions.
          */
-        export namespace SDPResult {
-            export const $gtype: GObject.GType<SDPResult>;
-        }
-
         enum SDPResult {
             /**
              * A successful return value
@@ -432,6 +339,7 @@ declare module 'gi://GstSdp?version=1.0' {
              */
             EINVAL,
         }
+
         /**
          * The supported MIKEY version 1.
          */

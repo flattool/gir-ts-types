@@ -24,29 +24,19 @@ declare module 'gi://IBus?version=1.0' {
          * IBus-1.0
          */
 
-        /**
-         * Type of Pre-edit style as the semantic name.
-         * The Wayland specs prefers to express the semantic values rather than RGB
-         * values and text-input protocol version 1 defines some values:
-         * https://gitlab.freedesktop.org/wayland/wayland-protocols/-/blob/main/unstable/text-input/text-input-unstable-v1.xml?ref_type=heads#L251
-         *
-         * IBus compiled the values for major input method engines:
-         * https://github.com/ibus/ibus/wiki/Wayland-Colors
-         */
-
-        /**
-         * Type of Pre-edit style as the semantic name.
-         * The Wayland specs prefers to express the semantic values rather than RGB
-         * values and text-input protocol version 1 defines some values:
-         * https://gitlab.freedesktop.org/wayland/wayland-protocols/-/blob/main/unstable/text-input/text-input-unstable-v1.xml?ref_type=heads#L251
-         *
-         * IBus compiled the values for major input method engines:
-         * https://github.com/ibus/ibus/wiki/Wayland-Colors
-         */
         export namespace AttrPreedit {
             export const $gtype: GObject.GType<AttrPreedit>;
         }
 
+        /**
+         * Type of Pre-edit style as the semantic name.
+         * The Wayland specs prefers to express the semantic values rather than RGB
+         * values and text-input protocol version 1 defines some values:
+         * https://gitlab.freedesktop.org/wayland/wayland-protocols/-/blob/main/unstable/text-input/text-input-unstable-v1.xml?ref_type=heads#L251
+         *
+         * IBus compiled the values for major input method engines:
+         * https://github.com/ibus/ibus/wiki/Wayland-Colors
+         */
         enum AttrPreedit {
             /**
              * Default style for composing text.
@@ -98,17 +88,14 @@ declare module 'gi://IBus?version=1.0' {
              */
             ERROR_COMPOSE,
         }
-        /**
-         * Type enumeration of IBusText attribute.
-         */
 
-        /**
-         * Type enumeration of IBusText attribute.
-         */
         export namespace AttrType {
             export const $gtype: GObject.GType<AttrType>;
         }
 
+        /**
+         * Type enumeration of IBusText attribute.
+         */
         enum AttrType {
             /**
              * Decorate with underline.
@@ -123,17 +110,14 @@ declare module 'gi://IBus?version=1.0' {
              */
             BACKGROUND,
         }
-        /**
-         * Type of IBusText attribute.
-         */
 
-        /**
-         * Type of IBusText attribute.
-         */
         export namespace AttrUnderline {
             export const $gtype: GObject.GType<AttrUnderline>;
         }
 
+        /**
+         * Type of IBusText attribute.
+         */
         enum AttrUnderline {
             /**
              * No underline.
@@ -156,17 +140,14 @@ declare module 'gi://IBus?version=1.0' {
              */
             ERROR,
         }
-        /**
-         * Type enumeration of IBusBusGlobalBindingType.
-         */
 
-        /**
-         * Type enumeration of IBusBusGlobalBindingType.
-         */
         export namespace BusGlobalBindingType {
             export const $gtype: GObject.GType<BusGlobalBindingType>;
         }
 
+        /**
+         * Type enumeration of IBusBusGlobalBindingType.
+         */
         enum BusGlobalBindingType {
             /**
              * Any types
@@ -219,8 +200,9 @@ declare module 'gi://IBus?version=1.0' {
              */
             ALREADY_RUNNING,
         }
+
         class Error extends GLib.Error {
-            static $gtype: GObject.GType<Error>;
+            static $gtype: GObject.GType<GLib.Error>;
 
             // Static fields
 
@@ -246,51 +228,30 @@ declare module 'gi://IBus?version=1.0' {
             static quark(): GLib.Quark;
         }
 
-        /**
-         * Describes primary purpose of the input context.  This information
-         * is particularly useful to implement intelligent behavior in
-         * engines, such as automatic input-mode switch and text prediction.
-         *
-         * Note that the purpose is not meant to impose a totally strict rule
-         * about allowed characters, and does not replace input validation.
-         * It is fine for an on-screen keyboard to let the user override the
-         * character set restriction that is expressed by the purpose. The
-         * application is expected to validate the entry contents, even if
-         * it specified a purpose.
-         *
-         * The difference between `IBUS_INPUT_PURPOSE_DIGITS` and
-         * `IBUS_INPUT_PURPOSE_NUMBER` is that the former accepts only digits
-         * while the latter also some punctuation (like commas or points, plus,
-         * minus) and “e” or “E” as in 3.14E+000.
-         *
-         * This enumeration may be extended in the future; engines should
-         * interpret unknown values as 'free form'.
-         */
-
-        /**
-         * Describes primary purpose of the input context.  This information
-         * is particularly useful to implement intelligent behavior in
-         * engines, such as automatic input-mode switch and text prediction.
-         *
-         * Note that the purpose is not meant to impose a totally strict rule
-         * about allowed characters, and does not replace input validation.
-         * It is fine for an on-screen keyboard to let the user override the
-         * character set restriction that is expressed by the purpose. The
-         * application is expected to validate the entry contents, even if
-         * it specified a purpose.
-         *
-         * The difference between `IBUS_INPUT_PURPOSE_DIGITS` and
-         * `IBUS_INPUT_PURPOSE_NUMBER` is that the former accepts only digits
-         * while the latter also some punctuation (like commas or points, plus,
-         * minus) and “e” or “E” as in 3.14E+000.
-         *
-         * This enumeration may be extended in the future; engines should
-         * interpret unknown values as 'free form'.
-         */
         export namespace InputPurpose {
             export const $gtype: GObject.GType<InputPurpose>;
         }
 
+        /**
+         * Describes primary purpose of the input context.  This information
+         * is particularly useful to implement intelligent behavior in
+         * engines, such as automatic input-mode switch and text prediction.
+         *
+         * Note that the purpose is not meant to impose a totally strict rule
+         * about allowed characters, and does not replace input validation.
+         * It is fine for an on-screen keyboard to let the user override the
+         * character set restriction that is expressed by the purpose. The
+         * application is expected to validate the entry contents, even if
+         * it specified a purpose.
+         *
+         * The difference between `IBUS_INPUT_PURPOSE_DIGITS` and
+         * `IBUS_INPUT_PURPOSE_NUMBER` is that the former accepts only digits
+         * while the latter also some punctuation (like commas or points, plus,
+         * minus) and “e” or “E” as in 3.14E+000.
+         *
+         * This enumeration may be extended in the future; engines should
+         * interpret unknown values as 'free form'.
+         */
         enum InputPurpose {
             /**
              * Allow any character
@@ -340,17 +301,14 @@ declare module 'gi://IBus?version=1.0' {
              */
             TERMINAL,
         }
-        /**
-         * Orientation of UI.
-         */
 
-        /**
-         * Orientation of UI.
-         */
         export namespace Orientation {
             export const $gtype: GObject.GType<Orientation>;
         }
 
+        /**
+         * Orientation of UI.
+         */
         enum Orientation {
             /**
              * Horizontal orientation.
@@ -365,17 +323,14 @@ declare module 'gi://IBus?version=1.0' {
              */
             SYSTEM,
         }
-        /**
-         * Pre-edit commit mode when the focus is lost.
-         */
 
-        /**
-         * Pre-edit commit mode when the focus is lost.
-         */
         export namespace PreeditFocusMode {
             export const $gtype: GObject.GType<PreeditFocusMode>;
         }
 
+        /**
+         * Pre-edit commit mode when the focus is lost.
+         */
         enum PreeditFocusMode {
             /**
              * pre-edit text is cleared.
@@ -386,43 +341,27 @@ declare module 'gi://IBus?version=1.0' {
              */
             COMMIT,
         }
-        /**
-         * State of #IBusProperty. The actual effect depends on #IBusPropType of the
-         * IBusProperty.
-         *
-         * <variablelist>
-         *     <varlistentry>
-         *         <term>PROP_TYPE_TOGGLE</term>
-         *         <listitem><para>Emphasized if PROP_STATE_CHECKED, normal otherwise.</para></listitem>
-         *     </varlistentry>
-         *     <varlistentry>
-         *         <term>PROP_TYPE_RADIO</term>
-         *         <listitem><para>Option checked if PROP_STATE_CHECKED, unchecked otherwise.</para></listitem>
-         *     </varlistentry>
-         * </variablelist>
-         * No effect on other types.
-         */
 
-        /**
-         * State of #IBusProperty. The actual effect depends on #IBusPropType of the
-         * IBusProperty.
-         *
-         * <variablelist>
-         *     <varlistentry>
-         *         <term>PROP_TYPE_TOGGLE</term>
-         *         <listitem><para>Emphasized if PROP_STATE_CHECKED, normal otherwise.</para></listitem>
-         *     </varlistentry>
-         *     <varlistentry>
-         *         <term>PROP_TYPE_RADIO</term>
-         *         <listitem><para>Option checked if PROP_STATE_CHECKED, unchecked otherwise.</para></listitem>
-         *     </varlistentry>
-         * </variablelist>
-         * No effect on other types.
-         */
         export namespace PropState {
             export const $gtype: GObject.GType<PropState>;
         }
 
+        /**
+         * State of #IBusProperty. The actual effect depends on #IBusPropType of the
+         * IBusProperty.
+         *
+         * <variablelist>
+         *     <varlistentry>
+         *         <term>PROP_TYPE_TOGGLE</term>
+         *         <listitem><para>Emphasized if PROP_STATE_CHECKED, normal otherwise.</para></listitem>
+         *     </varlistentry>
+         *     <varlistentry>
+         *         <term>PROP_TYPE_RADIO</term>
+         *         <listitem><para>Option checked if PROP_STATE_CHECKED, unchecked otherwise.</para></listitem>
+         *     </varlistentry>
+         * </variablelist>
+         * No effect on other types.
+         */
         enum PropState {
             /**
              * Property option is unchecked.
@@ -438,17 +377,14 @@ declare module 'gi://IBus?version=1.0' {
              */
             INCONSISTENT,
         }
-        /**
-         * Type enumeration of IBusProperty.
-         */
 
-        /**
-         * Type enumeration of IBusProperty.
-         */
         export namespace PropType {
             export const $gtype: GObject.GType<PropType>;
         }
 
+        /**
+         * Type enumeration of IBusProperty.
+         */
         enum PropType {
             /**
              * Property is shown as normal text.
@@ -484,6 +420,7 @@ declare module 'gi://IBus?version=1.0' {
             OTHER,
             EVENT_LAST,
         }
+
         const __0: number;
         const __1: number;
         const __2: number;
@@ -5174,7 +5111,6 @@ declare module 'gi://IBus?version=1.0' {
         interface UnicodeDataLoadAsyncFinish {
             (data_list: UnicodeData[]): void;
         }
-
         export namespace BusNameFlag {
             export const $gtype: GObject.GType<BusNameFlag>;
         }
@@ -5193,17 +5129,14 @@ declare module 'gi://IBus?version=1.0' {
              */
             DO_NOT_QUEUE,
         }
-        /**
-         * Capability flags of UI.
-         */
 
-        /**
-         * Capability flags of UI.
-         */
         export namespace Capabilite {
             export const $gtype: GObject.GType<Capabilite>;
         }
 
+        /**
+         * Capability flags of UI.
+         */
         enum Capabilite {
             /**
              * UI is capable to show pre-edit text.
@@ -5242,33 +5175,22 @@ declare module 'gi://IBus?version=1.0' {
             SYNC_PROCESS_KEY,
             SYNC_PROCESS_KEY_V2,
         }
-        /**
-         * Describes hints that might be taken into account by engines.  Note
-         * that engines may already tailor their behaviour according to the
-         * #IBusInputPurpose of the entry.
-         *
-         * Some common sense is expected when using these flags - mixing
-         * `IBUS_INPUT_HINT_LOWERCASE` with any of the uppercase hints makes no sense.
-         *
-         * This enumeration may be extended in the future; engines should
-         * ignore unknown values.
-         */
 
-        /**
-         * Describes hints that might be taken into account by engines.  Note
-         * that engines may already tailor their behaviour according to the
-         * #IBusInputPurpose of the entry.
-         *
-         * Some common sense is expected when using these flags - mixing
-         * `IBUS_INPUT_HINT_LOWERCASE` with any of the uppercase hints makes no sense.
-         *
-         * This enumeration may be extended in the future; engines should
-         * ignore unknown values.
-         */
         export namespace InputHints {
             export const $gtype: GObject.GType<InputHints>;
         }
 
+        /**
+         * Describes hints that might be taken into account by engines.  Note
+         * that engines may already tailor their behaviour according to the
+         * #IBusInputPurpose of the entry.
+         *
+         * Some common sense is expected when using these flags - mixing
+         * `IBUS_INPUT_HINT_LOWERCASE` with any of the uppercase hints makes no sense.
+         *
+         * This enumeration may be extended in the future; engines should
+         * ignore unknown values.
+         */
         enum InputHints {
             /**
              * No special behaviour suggested
@@ -5327,19 +5249,15 @@ declare module 'gi://IBus?version=1.0' {
              */
             PRIVATE,
         }
-        /**
-         * Handles key modifier such as control, shift and alt and release event.
-         * Note that nits 15 - 25 are currently unused, while bit 29 is used internally.
-         */
 
-        /**
-         * Handles key modifier such as control, shift and alt and release event.
-         * Note that nits 15 - 25 are currently unused, while bit 29 is used internally.
-         */
         export namespace ModifierType {
             export const $gtype: GObject.GType<ModifierType>;
         }
 
+        /**
+         * Handles key modifier such as control, shift and alt and release event.
+         * Note that nits 15 - 25 are currently unused, while bit 29 is used internally.
+         */
         enum ModifierType {
             /**
              * Shift  is activated.
@@ -5426,17 +5344,14 @@ declare module 'gi://IBus?version=1.0' {
              */
             MODIFIER_MASK,
         }
-        /**
-         * The flags are used internally.
-         */
 
-        /**
-         * The flags are used internally.
-         */
         export namespace ObjectFlags {
             export const $gtype: GObject.GType<ObjectFlags>;
         }
 
+        /**
+         * The flags are used internally.
+         */
         enum ObjectFlags {
             /**
              * Used in GObjectClass::dispose
@@ -5455,6 +5370,7 @@ declare module 'gi://IBus?version=1.0' {
              */
             RESERVED_2,
         }
+
         namespace AttrList {
             // Signal signatures
             interface SignalSignatures extends Serializable.SignalSignatures {}

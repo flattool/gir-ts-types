@@ -28,7 +28,7 @@ declare module 'gi://Polkit?version=1.0' {
          * Possible error when using PolicyKit.
          */
         class Error extends GLib.Error {
-            static $gtype: GObject.GType<Error>;
+            static $gtype: GObject.GType<GLib.Error>;
 
             // Static fields
 
@@ -58,17 +58,13 @@ declare module 'gi://Polkit?version=1.0' {
             static quark(): GLib.Quark;
         }
 
-        /**
-         * Possible implicit authorizations.
-         */
-
-        /**
-         * Possible implicit authorizations.
-         */
         export namespace ImplicitAuthorization {
             export const $gtype: GObject.GType<ImplicitAuthorization>;
         }
 
+        /**
+         * Possible implicit authorizations.
+         */
         enum ImplicitAuthorization {
             /**
              * Unknown whether the subject is authorized, never returned in any public API.
@@ -99,6 +95,7 @@ declare module 'gi://Polkit?version=1.0' {
              */
             AUTHORIZED,
         }
+
         function error_quark(): GLib.Quark;
         /**
          * Creates an object from `str` that implements the #PolkitIdentity
@@ -116,17 +113,13 @@ declare module 'gi://Polkit?version=1.0' {
          * @returns A #PolkitSubject or %NULL if @error is set. Free with g_object_unref().
          */
         function subject_from_string(str: string): Subject;
-        /**
-         * Flags describing features supported by the Authority implementation.
-         */
-
-        /**
-         * Flags describing features supported by the Authority implementation.
-         */
         export namespace AuthorityFeatures {
             export const $gtype: GObject.GType<AuthorityFeatures>;
         }
 
+        /**
+         * Flags describing features supported by the Authority implementation.
+         */
         enum AuthorityFeatures {
             /**
              * No flags set.
@@ -138,17 +131,14 @@ declare module 'gi://Polkit?version=1.0' {
              */
             TEMPORARY_AUTHORIZATION,
         }
-        /**
-         * Possible flags when checking authorizations.
-         */
 
-        /**
-         * Possible flags when checking authorizations.
-         */
         export namespace CheckAuthorizationFlags {
             export const $gtype: GObject.GType<CheckAuthorizationFlags>;
         }
 
+        /**
+         * Possible flags when checking authorizations.
+         */
         enum CheckAuthorizationFlags {
             /**
              * No flags set.
@@ -165,6 +155,7 @@ declare module 'gi://Polkit?version=1.0' {
              */
             ALWAYS_CHECK,
         }
+
         namespace ActionDescription {
             // Signal signatures
             interface SignalSignatures extends GObject.Object.SignalSignatures {}

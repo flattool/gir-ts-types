@@ -26,17 +26,13 @@ declare module 'gi://GstVideo?version=1.0' {
          * GstVideo-1.0
          */
 
-        /**
-         * Location of a `GstAncillaryMeta`.
-         */
-
-        /**
-         * Location of a `GstAncillaryMeta`.
-         */
         export namespace AncillaryMetaField {
             export const $gtype: GObject.GType<AncillaryMetaField>;
         }
 
+        /**
+         * Location of a `GstAncillaryMeta`.
+         */
         enum AncillaryMetaField {
             /**
              * Progressive or no field specified (default)
@@ -51,23 +47,17 @@ declare module 'gi://GstVideo?version=1.0' {
              */
             INTERLACED_SECOND,
         }
-        /**
-         * An enumeration indicating whether an element implements color balancing
-         * operations in software or in dedicated hardware. In general, dedicated
-         * hardware implementations (such as those provided by xvimagesink) are
-         * preferred.
-         */
 
-        /**
-         * An enumeration indicating whether an element implements color balancing
-         * operations in software or in dedicated hardware. In general, dedicated
-         * hardware implementations (such as those provided by xvimagesink) are
-         * preferred.
-         */
         export namespace ColorBalanceType {
             export const $gtype: GObject.GType<ColorBalanceType>;
         }
 
+        /**
+         * An enumeration indicating whether an element implements color balancing
+         * operations in software or in dedicated hardware. In general, dedicated
+         * hardware implementations (such as those provided by xvimagesink) are
+         * preferred.
+         */
         enum ColorBalanceType {
             /**
              * Color balance is implemented with dedicated
@@ -80,39 +70,25 @@ declare module 'gi://GstVideo?version=1.0' {
              */
             SOFTWARE,
         }
-        /**
-         * A set of commands that may be issued to an element providing the
-         * #GstNavigation interface. The available commands can be queried via
-         * the gst_navigation_query_new_commands() query.
-         *
-         * For convenience in handling DVD navigation, the MENU commands are aliased as:
-         *    GST_NAVIGATION_COMMAND_DVD_MENU            = `GST_NAVIGATION_COMMAND_MENU1`
-         *    GST_NAVIGATION_COMMAND_DVD_TITLE_MENU      = `GST_NAVIGATION_COMMAND_MENU2`
-         *    GST_NAVIGATION_COMMAND_DVD_ROOT_MENU       = `GST_NAVIGATION_COMMAND_MENU3`
-         *    GST_NAVIGATION_COMMAND_DVD_SUBPICTURE_MENU = `GST_NAVIGATION_COMMAND_MENU4`
-         *    GST_NAVIGATION_COMMAND_DVD_AUDIO_MENU      = `GST_NAVIGATION_COMMAND_MENU5`
-         *    GST_NAVIGATION_COMMAND_DVD_ANGLE_MENU      = `GST_NAVIGATION_COMMAND_MENU6`
-         *    GST_NAVIGATION_COMMAND_DVD_CHAPTER_MENU    = `GST_NAVIGATION_COMMAND_MENU7`
-         */
 
-        /**
-         * A set of commands that may be issued to an element providing the
-         * #GstNavigation interface. The available commands can be queried via
-         * the gst_navigation_query_new_commands() query.
-         *
-         * For convenience in handling DVD navigation, the MENU commands are aliased as:
-         *    GST_NAVIGATION_COMMAND_DVD_MENU            = `GST_NAVIGATION_COMMAND_MENU1`
-         *    GST_NAVIGATION_COMMAND_DVD_TITLE_MENU      = `GST_NAVIGATION_COMMAND_MENU2`
-         *    GST_NAVIGATION_COMMAND_DVD_ROOT_MENU       = `GST_NAVIGATION_COMMAND_MENU3`
-         *    GST_NAVIGATION_COMMAND_DVD_SUBPICTURE_MENU = `GST_NAVIGATION_COMMAND_MENU4`
-         *    GST_NAVIGATION_COMMAND_DVD_AUDIO_MENU      = `GST_NAVIGATION_COMMAND_MENU5`
-         *    GST_NAVIGATION_COMMAND_DVD_ANGLE_MENU      = `GST_NAVIGATION_COMMAND_MENU6`
-         *    GST_NAVIGATION_COMMAND_DVD_CHAPTER_MENU    = `GST_NAVIGATION_COMMAND_MENU7`
-         */
         export namespace NavigationCommand {
             export const $gtype: GObject.GType<NavigationCommand>;
         }
 
+        /**
+         * A set of commands that may be issued to an element providing the
+         * #GstNavigation interface. The available commands can be queried via
+         * the gst_navigation_query_new_commands() query.
+         *
+         * For convenience in handling DVD navigation, the MENU commands are aliased as:
+         *    GST_NAVIGATION_COMMAND_DVD_MENU            = `GST_NAVIGATION_COMMAND_MENU1`
+         *    GST_NAVIGATION_COMMAND_DVD_TITLE_MENU      = `GST_NAVIGATION_COMMAND_MENU2`
+         *    GST_NAVIGATION_COMMAND_DVD_ROOT_MENU       = `GST_NAVIGATION_COMMAND_MENU3`
+         *    GST_NAVIGATION_COMMAND_DVD_SUBPICTURE_MENU = `GST_NAVIGATION_COMMAND_MENU4`
+         *    GST_NAVIGATION_COMMAND_DVD_AUDIO_MENU      = `GST_NAVIGATION_COMMAND_MENU5`
+         *    GST_NAVIGATION_COMMAND_DVD_ANGLE_MENU      = `GST_NAVIGATION_COMMAND_MENU6`
+         *    GST_NAVIGATION_COMMAND_DVD_CHAPTER_MENU    = `GST_NAVIGATION_COMMAND_MENU7`
+         */
         enum NavigationCommand {
             /**
              * An invalid command entry
@@ -189,21 +165,16 @@ declare module 'gi://GstVideo?version=1.0' {
              */
             NEXT_ANGLE,
         }
-        /**
-         * Enum values for the various events that an element implementing the
-         * GstNavigation interface might send up the pipeline. Touch events have been
-         * inspired by the libinput API, and have the same meaning here.
-         */
 
-        /**
-         * Enum values for the various events that an element implementing the
-         * GstNavigation interface might send up the pipeline. Touch events have been
-         * inspired by the libinput API, and have the same meaning here.
-         */
         export namespace NavigationEventType {
             export const $gtype: GObject.GType<NavigationEventType>;
         }
 
+        /**
+         * Enum values for the various events that an element implementing the
+         * GstNavigation interface might send up the pipeline. Touch events have been
+         * inspired by the libinput API, and have the same meaning here.
+         */
         enum NavigationEventType {
             /**
              * Returned from
@@ -283,19 +254,15 @@ declare module 'gi://GstVideo?version=1.0' {
              */
             MOUSE_DOUBLE_CLICK,
         }
-        /**
-         * A set of notifications that may be received on the bus when navigation
-         * related status changes.
-         */
 
-        /**
-         * A set of notifications that may be received on the bus when navigation
-         * related status changes.
-         */
         export namespace NavigationMessageType {
             export const $gtype: GObject.GType<NavigationMessageType>;
         }
 
+        /**
+         * A set of notifications that may be received on the bus when navigation
+         * related status changes.
+         */
         enum NavigationMessageType {
             /**
              * Returned from
@@ -325,17 +292,14 @@ declare module 'gi://GstVideo?version=1.0' {
              */
             EVENT,
         }
-        /**
-         * Types of navigation interface queries.
-         */
 
-        /**
-         * Types of navigation interface queries.
-         */
         export namespace NavigationQueryType {
             export const $gtype: GObject.GType<NavigationQueryType>;
         }
 
+        /**
+         * Types of navigation interface queries.
+         */
         enum NavigationQueryType {
             /**
              * invalid query
@@ -350,33 +314,22 @@ declare module 'gi://GstVideo?version=1.0' {
              */
             ANGLES,
         }
-        /**
-         * Enumeration of the different standards that may apply to AFD data:
-         *
-         * 0) ETSI/DVB:
-         * https://www.etsi.org/deliver/etsi_ts/101100_101199/101154/02.01.01_60/ts_101154v020101p.pdf
-         *
-         * 1) ATSC A/53:
-         * https://www.atsc.org/wp-content/uploads/2015/03/a_53-Part-4-2009.pdf
-         *
-         * 2) SMPTE ST2016-1:
-         */
 
-        /**
-         * Enumeration of the different standards that may apply to AFD data:
-         *
-         * 0) ETSI/DVB:
-         * https://www.etsi.org/deliver/etsi_ts/101100_101199/101154/02.01.01_60/ts_101154v020101p.pdf
-         *
-         * 1) ATSC A/53:
-         * https://www.atsc.org/wp-content/uploads/2015/03/a_53-Part-4-2009.pdf
-         *
-         * 2) SMPTE ST2016-1:
-         */
         export namespace VideoAFDSpec {
             export const $gtype: GObject.GType<VideoAFDSpec>;
         }
 
+        /**
+         * Enumeration of the different standards that may apply to AFD data:
+         *
+         * 0) ETSI/DVB:
+         * https://www.etsi.org/deliver/etsi_ts/101100_101199/101154/02.01.01_60/ts_101154v020101p.pdf
+         *
+         * 1) ATSC A/53:
+         * https://www.atsc.org/wp-content/uploads/2015/03/a_53-Part-4-2009.pdf
+         *
+         * 2) SMPTE ST2016-1:
+         */
         enum VideoAFDSpec {
             /**
              * AFD value is from DVB/ETSI standard
@@ -388,79 +341,45 @@ declare module 'gi://GstVideo?version=1.0' {
             ATSC_A53,
             SMPTE_ST2016_1,
         }
-        /**
-         * Enumeration of the various values for Active Format Description (AFD)
-         *
-         * AFD should be included in video user data whenever the rectangular
-         * picture area containing useful information does not extend to the full height or width of the coded
-         * frame. AFD data may also be included in user data when the rectangular picture area containing
-         * useful information extends to the full height and width of the coded frame.
-         *
-         * For details, see Table 6.14 Active Format in:
-         *
-         * ATSC Digital Television Standard:
-         * Part 4 – MPEG-2 Video System Characteristics
-         *
-         * https://www.atsc.org/wp-content/uploads/2015/03/a_53-Part-4-2009.pdf
-         *
-         * and Active Format Description in Complete list of AFD codes
-         *
-         * https://en.wikipedia.org/wiki/Active_Format_Description#Complete_list_of_AFD_codes
-         *
-         * and SMPTE ST2016-1
-         *
-         * Notes:
-         *
-         * 1) AFD 0 is undefined for ATSC and SMPTE ST2016-1, indicating that AFD data is not available:
-         * If Bar Data is not present, AFD '0000' indicates that exact information
-         * is not available and the active image should be assumed to be the same as the coded frame. AFD '0000'.
-         * AFD '0000' accompanied by Bar Data signals that the active image’s aspect ratio is narrower than 16:9,
-         * but is not 4:3 or 14:9. As the exact aspect ratio cannot be conveyed by AFD alone, wherever possible,
-         * AFD ‘0000’ should be accompanied by Bar Data to define the exact vertical or horizontal extent
-         * of the active image.
-         * 2) AFD 0 is reserved for DVB/ETSI
-         * 3) values 1, 5, 6, 7, and 12 are reserved for both ATSC and DVB/ETSI
-         * 4) values 2 and 3 are not recommended for ATSC, but are valid for DVB/ETSI
-         */
 
-        /**
-         * Enumeration of the various values for Active Format Description (AFD)
-         *
-         * AFD should be included in video user data whenever the rectangular
-         * picture area containing useful information does not extend to the full height or width of the coded
-         * frame. AFD data may also be included in user data when the rectangular picture area containing
-         * useful information extends to the full height and width of the coded frame.
-         *
-         * For details, see Table 6.14 Active Format in:
-         *
-         * ATSC Digital Television Standard:
-         * Part 4 – MPEG-2 Video System Characteristics
-         *
-         * https://www.atsc.org/wp-content/uploads/2015/03/a_53-Part-4-2009.pdf
-         *
-         * and Active Format Description in Complete list of AFD codes
-         *
-         * https://en.wikipedia.org/wiki/Active_Format_Description#Complete_list_of_AFD_codes
-         *
-         * and SMPTE ST2016-1
-         *
-         * Notes:
-         *
-         * 1) AFD 0 is undefined for ATSC and SMPTE ST2016-1, indicating that AFD data is not available:
-         * If Bar Data is not present, AFD '0000' indicates that exact information
-         * is not available and the active image should be assumed to be the same as the coded frame. AFD '0000'.
-         * AFD '0000' accompanied by Bar Data signals that the active image’s aspect ratio is narrower than 16:9,
-         * but is not 4:3 or 14:9. As the exact aspect ratio cannot be conveyed by AFD alone, wherever possible,
-         * AFD ‘0000’ should be accompanied by Bar Data to define the exact vertical or horizontal extent
-         * of the active image.
-         * 2) AFD 0 is reserved for DVB/ETSI
-         * 3) values 1, 5, 6, 7, and 12 are reserved for both ATSC and DVB/ETSI
-         * 4) values 2 and 3 are not recommended for ATSC, but are valid for DVB/ETSI
-         */
         export namespace VideoAFDValue {
             export const $gtype: GObject.GType<VideoAFDValue>;
         }
 
+        /**
+         * Enumeration of the various values for Active Format Description (AFD)
+         *
+         * AFD should be included in video user data whenever the rectangular
+         * picture area containing useful information does not extend to the full height or width of the coded
+         * frame. AFD data may also be included in user data when the rectangular picture area containing
+         * useful information extends to the full height and width of the coded frame.
+         *
+         * For details, see Table 6.14 Active Format in:
+         *
+         * ATSC Digital Television Standard:
+         * Part 4 – MPEG-2 Video System Characteristics
+         *
+         * https://www.atsc.org/wp-content/uploads/2015/03/a_53-Part-4-2009.pdf
+         *
+         * and Active Format Description in Complete list of AFD codes
+         *
+         * https://en.wikipedia.org/wiki/Active_Format_Description#Complete_list_of_AFD_codes
+         *
+         * and SMPTE ST2016-1
+         *
+         * Notes:
+         *
+         * 1) AFD 0 is undefined for ATSC and SMPTE ST2016-1, indicating that AFD data is not available:
+         * If Bar Data is not present, AFD '0000' indicates that exact information
+         * is not available and the active image should be assumed to be the same as the coded frame. AFD '0000'.
+         * AFD '0000' accompanied by Bar Data signals that the active image’s aspect ratio is narrower than 16:9,
+         * but is not 4:3 or 14:9. As the exact aspect ratio cannot be conveyed by AFD alone, wherever possible,
+         * AFD ‘0000’ should be accompanied by Bar Data to define the exact vertical or horizontal extent
+         * of the active image.
+         * 2) AFD 0 is reserved for DVB/ETSI
+         * 3) values 1, 5, 6, 7, and 12 are reserved for both ATSC and DVB/ETSI
+         * 4) values 2 and 3 are not recommended for ATSC, but are valid for DVB/ETSI
+         */
         enum VideoAFDValue {
             /**
              * Unavailable (see note 0 below).
@@ -524,17 +443,14 @@ declare module 'gi://GstVideo?version=1.0' {
              */
             '16_9_LETTER_4_3_CENTER',
         }
-        /**
-         * Different alpha modes.
-         */
 
-        /**
-         * Different alpha modes.
-         */
         export namespace VideoAlphaMode {
             export const $gtype: GObject.GType<VideoAlphaMode>;
         }
 
+        /**
+         * Different alpha modes.
+         */
         enum VideoAlphaMode {
             /**
              * When input and output have alpha, it will be copied.
@@ -574,17 +490,14 @@ declare module 'gi://GstVideo?version=1.0' {
             HANC_SDTV_AUDIO_DATA_2_FIRST,
             HANC_SDTV_AUDIO_DATA_2_LAST,
         }
-        /**
-         * Some know types of Ancillary Data identifiers.
-         */
 
-        /**
-         * Some know types of Ancillary Data identifiers.
-         */
         export namespace VideoAncillaryDID16 {
             export const $gtype: GObject.GType<VideoAncillaryDID16>;
         }
 
+        /**
+         * Some know types of Ancillary Data identifiers.
+         */
         enum VideoAncillaryDID16 {
             /**
              * CEA 708 Ancillary data according to SMPTE 334
@@ -599,17 +512,14 @@ declare module 'gi://GstVideo?version=1.0' {
              */
             S2016_3_AFD_BAR,
         }
-        /**
-         * The various known types of Closed Caption (CC).
-         */
 
-        /**
-         * The various known types of Closed Caption (CC).
-         */
         export namespace VideoCaptionType {
             export const $gtype: GObject.GType<VideoCaptionType>;
         }
 
+        /**
+         * The various known types of Closed Caption (CC).
+         */
         enum VideoCaptionType {
             /**
              * Unknown type of CC
@@ -649,17 +559,14 @@ declare module 'gi://GstVideo?version=1.0' {
              */
             CEA708_CDP,
         }
-        /**
-         * Different subsampling and upsampling methods
-         */
 
-        /**
-         * Different subsampling and upsampling methods
-         */
         export namespace VideoChromaMethod {
             export const $gtype: GObject.GType<VideoChromaMethod>;
         }
 
+        /**
+         * Different subsampling and upsampling methods
+         */
         enum VideoChromaMethod {
             /**
              * Duplicates the chroma samples when
@@ -672,17 +579,14 @@ declare module 'gi://GstVideo?version=1.0' {
              */
             LINEAR,
         }
-        /**
-         * Different chroma downsampling and upsampling modes
-         */
 
-        /**
-         * Different chroma downsampling and upsampling modes
-         */
         export namespace VideoChromaMode {
             export const $gtype: GObject.GType<VideoChromaMode>;
         }
 
+        /**
+         * Different chroma downsampling and upsampling modes
+         */
         enum VideoChromaMode {
             /**
              * do full chroma up and down sampling
@@ -701,19 +605,15 @@ declare module 'gi://GstVideo?version=1.0' {
              */
             NONE,
         }
-        /**
-         * The color matrix is used to convert between Y'PbPr and
-         * non-linear RGB (R'G'B')
-         */
 
-        /**
-         * The color matrix is used to convert between Y'PbPr and
-         * non-linear RGB (R'G'B')
-         */
         export namespace VideoColorMatrix {
             export const $gtype: GObject.GType<VideoColorMatrix>;
         }
 
+        /**
+         * The color matrix is used to convert between Y'PbPr and
+         * non-linear RGB (R'G'B')
+         */
         enum VideoColorMatrix {
             /**
              * unknown matrix
@@ -746,19 +646,15 @@ declare module 'gi://GstVideo?version=1.0' {
              */
             BT2020,
         }
-        /**
-         * The color primaries define the how to transform linear RGB values to and from
-         * the CIE XYZ colorspace.
-         */
 
-        /**
-         * The color primaries define the how to transform linear RGB values to and from
-         * the CIE XYZ colorspace.
-         */
         export namespace VideoColorPrimaries {
             export const $gtype: GObject.GType<VideoColorPrimaries>;
         }
 
+        /**
+         * The color primaries define the how to transform linear RGB values to and from
+         * the CIE XYZ colorspace.
+         */
         enum VideoColorPrimaries {
             /**
              * unknown color primaries
@@ -822,19 +718,15 @@ declare module 'gi://GstVideo?version=1.0' {
              */
             EBU3213,
         }
-        /**
-         * Possible color range values. These constants are defined for 8 bit color
-         * values and can be scaled for other bit depths.
-         */
 
-        /**
-         * Possible color range values. These constants are defined for 8 bit color
-         * values and can be scaled for other bit depths.
-         */
         export namespace VideoColorRange {
             export const $gtype: GObject.GType<VideoColorRange>;
         }
 
+        /**
+         * Possible color range values. These constants are defined for 8 bit color
+         * values and can be scaled for other bit depths.
+         */
         enum VideoColorRange {
             /**
              * unknown range
@@ -850,17 +742,14 @@ declare module 'gi://GstVideo?version=1.0' {
              */
             '16_235',
         }
-        /**
-         * Different dithering methods to use.
-         */
 
-        /**
-         * Different dithering methods to use.
-         */
         export namespace VideoDitherMethod {
             export const $gtype: GObject.GType<VideoDitherMethod>;
         }
 
+        /**
+         * Different dithering methods to use.
+         */
         enum VideoDitherMethod {
             /**
              * no dithering
@@ -883,23 +772,17 @@ declare module 'gi://GstVideo?version=1.0' {
              */
             BAYER,
         }
-        /**
-         * Field order of interlaced content. This is only valid for
-         * interlace-mode=interleaved and not interlace-mode=mixed. In the case of
-         * mixed or GST_VIDEO_FIELD_ORDER_UNKOWN, the field order is signalled via
-         * buffer flags.
-         */
 
-        /**
-         * Field order of interlaced content. This is only valid for
-         * interlace-mode=interleaved and not interlace-mode=mixed. In the case of
-         * mixed or GST_VIDEO_FIELD_ORDER_UNKOWN, the field order is signalled via
-         * buffer flags.
-         */
         export namespace VideoFieldOrder {
             export const $gtype: GObject.GType<VideoFieldOrder>;
         }
 
+        /**
+         * Field order of interlaced content. This is only valid for
+         * interlace-mode=interleaved and not interlace-mode=mixed. In the case of
+         * mixed or GST_VIDEO_FIELD_ORDER_UNKOWN, the field order is signalled via
+         * buffer flags.
+         */
         enum VideoFieldOrder {
             /**
              * unknown field order for interlaced content.
@@ -915,23 +798,17 @@ declare module 'gi://GstVideo?version=1.0' {
              */
             BOTTOM_FIELD_FIRST,
         }
-        /**
-         * Enum value describing the most common video formats.
-         *
-         * See the [GStreamer raw video format design document](https://gstreamer.freedesktop.org/documentation/additional/design/mediatype-video-raw.html#formats)
-         * for details about the layout and packing of these formats in memory.
-         */
 
-        /**
-         * Enum value describing the most common video formats.
-         *
-         * See the [GStreamer raw video format design document](https://gstreamer.freedesktop.org/documentation/additional/design/mediatype-video-raw.html#formats)
-         * for details about the layout and packing of these formats in memory.
-         */
         export namespace VideoFormat {
             export const $gtype: GObject.GType<VideoFormat>;
         }
 
+        /**
+         * Enum value describing the most common video formats.
+         *
+         * See the [GStreamer raw video format design document](https://gstreamer.freedesktop.org/documentation/additional/design/mediatype-video-raw.html#formats)
+         * for details about the layout and packing of these formats in memory.
+         */
         enum VideoFormat {
             /**
              * Unknown or unset video format id
@@ -1508,17 +1385,14 @@ declare module 'gi://GstVideo?version=1.0' {
              */
             GRAY10_LE16,
         }
-        /**
-         * The orientation of the GL texture.
-         */
 
-        /**
-         * The orientation of the GL texture.
-         */
         export namespace VideoGLTextureOrientation {
             export const $gtype: GObject.GType<VideoGLTextureOrientation>;
         }
 
+        /**
+         * The orientation of the GL texture.
+         */
         enum VideoGLTextureOrientation {
             /**
              * Top line first in memory, left row first
@@ -1537,17 +1411,14 @@ declare module 'gi://GstVideo?version=1.0' {
              */
             FLIP_Y_FLIP,
         }
-        /**
-         * The GL texture type.
-         */
 
-        /**
-         * The GL texture type.
-         */
         export namespace VideoGLTextureType {
             export const $gtype: GObject.GType<VideoGLTextureType>;
         }
 
+        /**
+         * The GL texture type.
+         */
         enum VideoGLTextureType {
             /**
              * Luminance texture, GL_LUMINANCE
@@ -1594,19 +1465,15 @@ declare module 'gi://GstVideo?version=1.0' {
              */
             REMAP,
         }
-        /**
-         * The possible values of the #GstVideoInterlaceMode describing the interlace
-         * mode of the stream.
-         */
 
-        /**
-         * The possible values of the #GstVideoInterlaceMode describing the interlace
-         * mode of the stream.
-         */
         export namespace VideoInterlaceMode {
             export const $gtype: GObject.GType<VideoInterlaceMode>;
         }
 
+        /**
+         * The possible values of the #GstVideoInterlaceMode describing the interlace
+         * mode of the stream.
+         */
         enum VideoInterlaceMode {
             /**
              * all frames are progressive
@@ -1641,17 +1508,14 @@ declare module 'gi://GstVideo?version=1.0' {
              */
             ALTERNATE,
         }
-        /**
-         * Different color matrix conversion modes
-         */
 
-        /**
-         * Different color matrix conversion modes
-         */
         export namespace VideoMatrixMode {
             export const $gtype: GObject.GType<VideoMatrixMode>;
         }
 
+        /**
+         * Different color matrix conversion modes
+         */
         enum VideoMatrixMode {
             /**
              * do conversion between color matrices
@@ -1672,33 +1536,22 @@ declare module 'gi://GstVideo?version=1.0' {
              */
             NONE,
         }
-        /**
-         * #GstVideoMultiviewFramePacking represents the subset of #GstVideoMultiviewMode
-         * values that can be applied to any video frame without needing extra metadata.
-         * It can be used by elements that provide a property to override the
-         * multiview interpretation of a video stream when the video doesn't contain
-         * any markers.
-         *
-         * This enum is used (for example) on playbin, to re-interpret a played
-         * video stream as a stereoscopic video. The individual enum values are
-         * equivalent to and have the same value as the matching #GstVideoMultiviewMode.
-         */
 
-        /**
-         * #GstVideoMultiviewFramePacking represents the subset of #GstVideoMultiviewMode
-         * values that can be applied to any video frame without needing extra metadata.
-         * It can be used by elements that provide a property to override the
-         * multiview interpretation of a video stream when the video doesn't contain
-         * any markers.
-         *
-         * This enum is used (for example) on playbin, to re-interpret a played
-         * video stream as a stereoscopic video. The individual enum values are
-         * equivalent to and have the same value as the matching #GstVideoMultiviewMode.
-         */
         export namespace VideoMultiviewFramePacking {
             export const $gtype: GObject.GType<VideoMultiviewFramePacking>;
         }
 
+        /**
+         * #GstVideoMultiviewFramePacking represents the subset of #GstVideoMultiviewMode
+         * values that can be applied to any video frame without needing extra metadata.
+         * It can be used by elements that provide a property to override the
+         * multiview interpretation of a video stream when the video doesn't contain
+         * any markers.
+         *
+         * This enum is used (for example) on playbin, to re-interpret a played
+         * video stream as a stereoscopic video. The individual enum values are
+         * equivalent to and have the same value as the matching #GstVideoMultiviewMode.
+         */
         enum VideoMultiviewFramePacking {
             /**
              * A special value indicating
@@ -1751,21 +1604,16 @@ declare module 'gi://GstVideo?version=1.0' {
              */
             CHECKERBOARD,
         }
-        /**
-         * All possible stereoscopic 3D and multiview representations.
-         * In conjunction with #GstVideoMultiviewFlags, describes how
-         * multiview content is being transported in the stream.
-         */
 
-        /**
-         * All possible stereoscopic 3D and multiview representations.
-         * In conjunction with #GstVideoMultiviewFlags, describes how
-         * multiview content is being transported in the stream.
-         */
         export namespace VideoMultiviewMode {
             export const $gtype: GObject.GType<VideoMultiviewMode>;
         }
 
+        /**
+         * All possible stereoscopic 3D and multiview representations.
+         * In conjunction with #GstVideoMultiviewFlags, describes how
+         * multiview content is being transported in the stream.
+         */
         enum VideoMultiviewMode {
             /**
              * A special value indicating
@@ -1840,9 +1688,7 @@ declare module 'gi://GstVideo?version=1.0' {
              */
             SEPARATED,
         }
-        /**
-         * The different video orientation methods.
-         */
+
         /**
          * The different video orientation methods.
          */
@@ -1893,17 +1739,13 @@ declare module 'gi://GstVideo?version=1.0' {
             static CUSTOM: number;
         }
 
-        /**
-         * Different primaries conversion modes
-         */
-
-        /**
-         * Different primaries conversion modes
-         */
         export namespace VideoPrimariesMode {
             export const $gtype: GObject.GType<VideoPrimariesMode>;
         }
 
+        /**
+         * Different primaries conversion modes
+         */
         enum VideoPrimariesMode {
             /**
              * disable conversion between primaries
@@ -1919,17 +1761,14 @@ declare module 'gi://GstVideo?version=1.0' {
              */
             FAST,
         }
-        /**
-         * Different subsampling and upsampling methods
-         */
 
-        /**
-         * Different subsampling and upsampling methods
-         */
         export namespace VideoResamplerMethod {
             export const $gtype: GObject.GType<VideoResamplerMethod>;
         }
 
+        /**
+         * Different subsampling and upsampling methods
+         */
         enum VideoResamplerMethod {
             /**
              * Duplicates the samples when
@@ -1954,17 +1793,14 @@ declare module 'gi://GstVideo?version=1.0' {
              */
             LANCZOS,
         }
-        /**
-         * Enum value describing the available tiling modes.
-         */
 
-        /**
-         * Enum value describing the available tiling modes.
-         */
         export namespace VideoTileMode {
             export const $gtype: GObject.GType<VideoTileMode>;
         }
 
+        /**
+         * Enum value describing the available tiling modes.
+         */
         enum VideoTileMode {
             /**
              * Unknown or unset tile mode
@@ -1982,17 +1818,14 @@ declare module 'gi://GstVideo?version=1.0' {
              */
             LINEAR,
         }
-        /**
-         * Enum value describing the most common tiling types.
-         */
 
-        /**
-         * Enum value describing the most common tiling types.
-         */
         export namespace VideoTileType {
             export const $gtype: GObject.GType<VideoTileType>;
         }
 
+        /**
+         * Enum value describing the most common tiling types.
+         */
         enum VideoTileType {
             /**
              * Tiles are indexed. Use
@@ -2001,19 +1834,15 @@ declare module 'gi://GstVideo?version=1.0' {
              */
             INDEXED,
         }
-        /**
-         * The video transfer function defines the formula for converting between
-         * non-linear RGB (R'G'B') and linear RGB
-         */
 
-        /**
-         * The video transfer function defines the formula for converting between
-         * non-linear RGB (R'G'B') and linear RGB
-         */
         export namespace VideoTransferFunction {
             export const $gtype: GObject.GType<VideoTransferFunction>;
         }
 
+        /**
+         * The video transfer function defines the formula for converting between
+         * non-linear RGB (R'G'B') and linear RGB
+         */
         enum VideoTransferFunction {
             /**
              * unknown transfer function
@@ -2099,17 +1928,14 @@ declare module 'gi://GstVideo?version=1.0' {
              */
             BT601,
         }
-        /**
-         * Return values for #GstVideoVBIParser
-         */
 
-        /**
-         * Return values for #GstVideoVBIParser
-         */
         export namespace VideoVBIParserResult {
             export const $gtype: GObject.GType<VideoVBIParserResult>;
         }
 
+        /**
+         * Return values for #GstVideoVBIParser
+         */
         enum VideoVBIParserResult {
             /**
              * No line were provided, or no more Ancillary data was found.
@@ -2124,6 +1950,7 @@ declare module 'gi://GstVideo?version=1.0' {
              */
             ERROR,
         }
+
         const BUFFER_POOL_OPTION_VIDEO_AFFINE_TRANSFORMATION_META: string;
         /**
          * A bufferpool option to enable extra padding. When a bufferpool supports this
@@ -3972,25 +3799,17 @@ declare module 'gi://GstVideo?version=1.0' {
         interface VideoGLTextureUpload {
             (meta: VideoGLTextureUploadMeta, texture_id: number): boolean;
         }
-        /**
-         * Flags to indicate the state of modifier keys and mouse buttons
-         * in events.
-         *
-         * Typical modifier keys are Shift, Control, Meta, Super, Hyper, Alt, Compose,
-         * Apple, CapsLock or ShiftLock.
-         */
-
-        /**
-         * Flags to indicate the state of modifier keys and mouse buttons
-         * in events.
-         *
-         * Typical modifier keys are Shift, Control, Meta, Super, Hyper, Alt, Compose,
-         * Apple, CapsLock or ShiftLock.
-         */
         export namespace NavigationModifierType {
             export const $gtype: GObject.GType<NavigationModifierType>;
         }
 
+        /**
+         * Flags to indicate the state of modifier keys and mouse buttons
+         * in events.
+         *
+         * Typical modifier keys are Shift, Control, Meta, Super, Hyper, Alt, Compose,
+         * Apple, CapsLock or ShiftLock.
+         */
         enum NavigationModifierType {
             NONE,
             /**
@@ -4059,25 +3878,18 @@ declare module 'gi://GstVideo?version=1.0' {
              */
             MASK,
         }
-        /**
-         * Additional video buffer flags. These flags can potentially be used on any
-         * buffers carrying closed caption data, or video data - even encoded data.
-         *
-         * Note that these are only valid for #GstCaps of type: video/... and caption/...
-         * They can conflict with other extended buffer flags.
-         */
 
-        /**
-         * Additional video buffer flags. These flags can potentially be used on any
-         * buffers carrying closed caption data, or video data - even encoded data.
-         *
-         * Note that these are only valid for #GstCaps of type: video/... and caption/...
-         * They can conflict with other extended buffer flags.
-         */
         export namespace VideoBufferFlags {
             export const $gtype: GObject.GType<VideoBufferFlags>;
         }
 
+        /**
+         * Additional video buffer flags. These flags can potentially be used on any
+         * buffers carrying closed caption data, or video data - even encoded data.
+         *
+         * Note that these are only valid for #GstCaps of type: video/... and caption/...
+         * They can conflict with other extended buffer flags.
+         */
         enum VideoBufferFlags {
             /**
              * If the #GstBuffer is interlaced. In mixed
@@ -4142,17 +3954,14 @@ declare module 'gi://GstVideo?version=1.0' {
              */
             LAST,
         }
-        /**
-         * Extra flags that influence the result from gst_video_chroma_resample_new().
-         */
 
-        /**
-         * Extra flags that influence the result from gst_video_chroma_resample_new().
-         */
         export namespace VideoChromaFlags {
             export const $gtype: GObject.GType<VideoChromaFlags>;
         }
 
+        /**
+         * Extra flags that influence the result from gst_video_chroma_resample_new().
+         */
         enum VideoChromaFlags {
             /**
              * no flags
@@ -4163,17 +3972,14 @@ declare module 'gi://GstVideo?version=1.0' {
              */
             INTERLACED,
         }
-        /**
-         * Various Chroma sitings.
-         */
 
-        /**
-         * Various Chroma sitings.
-         */
         export namespace VideoChromaSite {
             export const $gtype: GObject.GType<VideoChromaSite>;
         }
 
+        /**
+         * Various Chroma sitings.
+         */
         enum VideoChromaSite {
             /**
              * unknown cositing
@@ -4212,17 +4018,14 @@ declare module 'gi://GstVideo?version=1.0' {
              */
             DV,
         }
-        /**
-         * Flags for #GstVideoCodecFrame
-         */
 
-        /**
-         * Flags for #GstVideoCodecFrame
-         */
         export namespace VideoCodecFrameFlags {
             export const $gtype: GObject.GType<VideoCodecFrameFlags>;
         }
 
+        /**
+         * Flags for #GstVideoCodecFrame
+         */
         enum VideoCodecFrameFlags {
             /**
              * is the frame only meant to be decoded
@@ -4245,19 +4048,15 @@ declare module 'gi://GstVideo?version=1.0' {
              */
             CORRUPTED,
         }
-        /**
-         * Flags to be used in combination with gst_video_decoder_request_sync_point().
-         * See the function documentation for more details.
-         */
 
-        /**
-         * Flags to be used in combination with gst_video_decoder_request_sync_point().
-         * See the function documentation for more details.
-         */
         export namespace VideoDecoderRequestSyncPointFlags {
             export const $gtype: GObject.GType<VideoDecoderRequestSyncPointFlags>;
         }
 
+        /**
+         * Flags to be used in combination with gst_video_decoder_request_sync_point().
+         * See the function documentation for more details.
+         */
         enum VideoDecoderRequestSyncPointFlags {
             /**
              * discard all following
@@ -4270,17 +4069,14 @@ declare module 'gi://GstVideo?version=1.0' {
              */
             CORRUPT_OUTPUT,
         }
-        /**
-         * Extra flags that influence the result from gst_video_chroma_resample_new().
-         */
 
-        /**
-         * Extra flags that influence the result from gst_video_chroma_resample_new().
-         */
         export namespace VideoDitherFlags {
             export const $gtype: GObject.GType<VideoDitherFlags>;
         }
 
+        /**
+         * Extra flags that influence the result from gst_video_chroma_resample_new().
+         */
         enum VideoDitherFlags {
             /**
              * no flags
@@ -4295,17 +4091,14 @@ declare module 'gi://GstVideo?version=1.0' {
              */
             QUANTIZE,
         }
-        /**
-         * Extra video flags
-         */
 
-        /**
-         * Extra video flags
-         */
         export namespace VideoFlags {
             export const $gtype: GObject.GType<VideoFlags>;
         }
 
+        /**
+         * Extra video flags
+         */
         enum VideoFlags {
             /**
              * no flags
@@ -4322,17 +4115,14 @@ declare module 'gi://GstVideo?version=1.0' {
              */
             PREMULTIPLIED_ALPHA,
         }
-        /**
-         * The different video flags that a format info can have.
-         */
 
-        /**
-         * The different video flags that a format info can have.
-         */
         export namespace VideoFormatFlags {
             export const $gtype: GObject.GType<VideoFormatFlags>;
         }
 
+        /**
+         * The different video flags that a format info can have.
+         */
         enum VideoFormatFlags {
             /**
              * The video format is YUV, components are numbered
@@ -4384,17 +4174,14 @@ declare module 'gi://GstVideo?version=1.0' {
              */
             SUBTILES,
         }
-        /**
-         * Extra video frame flags
-         */
 
-        /**
-         * Extra video frame flags
-         */
         export namespace VideoFrameFlags {
             export const $gtype: GObject.GType<VideoFrameFlags>;
         }
 
+        /**
+         * Extra video frame flags
+         */
         enum VideoFrameFlags {
             /**
              * no flags
@@ -4441,17 +4228,14 @@ declare module 'gi://GstVideo?version=1.0' {
              */
             BOTTOM_FIELD,
         }
-        /**
-         * Additional mapping flags for gst_video_frame_map().
-         */
 
-        /**
-         * Additional mapping flags for gst_video_frame_map().
-         */
         export namespace VideoFrameMapFlags {
             export const $gtype: GObject.GType<VideoFrameMapFlags>;
         }
 
+        /**
+         * Additional mapping flags for gst_video_frame_map().
+         */
         enum VideoFrameMapFlags {
             /**
              * Don't take another reference of the buffer and store it in
@@ -4465,21 +4249,16 @@ declare module 'gi://GstVideo?version=1.0' {
              */
             LAST,
         }
-        /**
-         * GstVideoMultiviewFlags are used to indicate extra properties of a
-         * stereo/multiview stream beyond the frame layout and buffer mapping
-         * that is conveyed in the #GstVideoMultiviewMode.
-         */
 
-        /**
-         * GstVideoMultiviewFlags are used to indicate extra properties of a
-         * stereo/multiview stream beyond the frame layout and buffer mapping
-         * that is conveyed in the #GstVideoMultiviewMode.
-         */
         export namespace VideoMultiviewFlags {
             export const $gtype: GObject.GType<VideoMultiviewFlags>;
         }
 
+        /**
+         * GstVideoMultiviewFlags are used to indicate extra properties of a
+         * stereo/multiview stream beyond the frame layout and buffer mapping
+         * that is conveyed in the #GstVideoMultiviewMode.
+         */
         enum VideoMultiviewFlags {
             /**
              * No flags
@@ -4530,17 +4309,14 @@ declare module 'gi://GstVideo?version=1.0' {
              */
             MIXED_MONO,
         }
-        /**
-         * Overlay format flags.
-         */
 
-        /**
-         * Overlay format flags.
-         */
         export namespace VideoOverlayFormatFlags {
             export const $gtype: GObject.GType<VideoOverlayFormatFlags>;
         }
 
+        /**
+         * Overlay format flags.
+         */
         enum VideoOverlayFormatFlags {
             /**
              * no flags
@@ -4555,17 +4331,14 @@ declare module 'gi://GstVideo?version=1.0' {
              */
             GLOBAL_ALPHA,
         }
-        /**
-         * The different flags that can be used when packing and unpacking.
-         */
 
-        /**
-         * The different flags that can be used when packing and unpacking.
-         */
         export namespace VideoPackFlags {
             export const $gtype: GObject.GType<VideoPackFlags>;
         }
 
+        /**
+         * The different flags that can be used when packing and unpacking.
+         */
         enum VideoPackFlags {
             /**
              * No flag
@@ -4586,17 +4359,14 @@ declare module 'gi://GstVideo?version=1.0' {
              */
             INTERLACED,
         }
-        /**
-         * Different resampler flags.
-         */
 
-        /**
-         * Different resampler flags.
-         */
         export namespace VideoResamplerFlags {
             export const $gtype: GObject.GType<VideoResamplerFlags>;
         }
 
+        /**
+         * Different resampler flags.
+         */
         enum VideoResamplerFlags {
             /**
              * no flags
@@ -4609,17 +4379,14 @@ declare module 'gi://GstVideo?version=1.0' {
              */
             HALF_TAPS,
         }
-        /**
-         * Different scale flags.
-         */
 
-        /**
-         * Different scale flags.
-         */
         export namespace VideoScalerFlags {
             export const $gtype: GObject.GType<VideoScalerFlags>;
         }
 
+        /**
+         * Different scale flags.
+         */
         enum VideoScalerFlags {
             /**
              * no flags
@@ -4630,19 +4397,15 @@ declare module 'gi://GstVideo?version=1.0' {
              */
             INTERLACED,
         }
-        /**
-         * Flags related to the time code information.
-         * For drop frame, only 30000/1001 and 60000/1001 frame rates are supported.
-         */
 
-        /**
-         * Flags related to the time code information.
-         * For drop frame, only 30000/1001 and 60000/1001 frame rates are supported.
-         */
         export namespace VideoTimeCodeFlags {
             export const $gtype: GObject.GType<VideoTimeCodeFlags>;
         }
 
+        /**
+         * Flags related to the time code information.
+         * For drop frame, only 30000/1001 and 60000/1001 frame rates are supported.
+         */
         enum VideoTimeCodeFlags {
             /**
              * No flags
@@ -4657,6 +4420,7 @@ declare module 'gi://GstVideo?version=1.0' {
              */
             INTERLACED,
         }
+
         namespace ColorBalanceChannel {
             // Signal signatures
             interface SignalSignatures extends GObject.Object.SignalSignatures {

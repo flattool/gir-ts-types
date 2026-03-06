@@ -33,16 +33,6 @@ declare module 'gi://GstBadAudio?version=1.0' {
          * moved back to the beginning of the loop, acting like a backwards seek, or it increases steadily, as if
          * loop were "unrolled".
          */
-
-        /**
-         * The output mode defines how the output behaves with regards to looping. Either the playback position is
-         * moved back to the beginning of the loop, acting like a backwards seek, or it increases steadily, as if
-         * loop were "unrolled".
-         */
-        export namespace NonstreamAudioOutputMode {
-            export const $gtype: GObject.GType<NonstreamAudioOutputMode>;
-        }
-
         enum NonstreamAudioOutputMode {
             /**
              * Playback position is moved back to the beginning of the loop
@@ -53,17 +43,10 @@ declare module 'gi://GstBadAudio?version=1.0' {
              */
             STEADY,
         }
-        /**
-         * The subsong mode defines how the decoder shall handle subsongs.
-         */
 
         /**
          * The subsong mode defines how the decoder shall handle subsongs.
          */
-        export namespace NonstreamAudioSubsongMode {
-            export const $gtype: GObject.GType<NonstreamAudioSubsongMode>;
-        }
-
         enum NonstreamAudioSubsongMode {
             /**
              * Only the current subsong is played
@@ -78,6 +61,7 @@ declare module 'gi://GstBadAudio?version=1.0' {
              */
             DECODER_DEFAULT,
         }
+
         /**
          * The name of the template for the sink pad.
          */

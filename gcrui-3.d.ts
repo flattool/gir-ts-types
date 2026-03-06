@@ -53,17 +53,6 @@ declare module 'gi://GcrUi?version=3' {
          * [iface`Gcr`.Collection], will have all child
          * objects include as child rows in a tree form.
          */
-
-        /**
-         * If a [class`CollectionModel]` is created with a mode of
-         * %GCR_COLLECTION_MODEL_TREE, then any included objects that are themselves a
-         * [iface`Gcr`.Collection], will have all child
-         * objects include as child rows in a tree form.
-         */
-        export namespace CollectionModelMode {
-            export const $gtype: GObject.GType<CollectionModelMode>;
-        }
-
         enum CollectionModelMode {
             /**
              * only objects in the top collection, no child objects
@@ -74,6 +63,7 @@ declare module 'gi://GcrUi?version=3' {
              */
             TREE,
         }
+
         /**
          * Create and initialize a renderer for the given attributes and label. These
          * renderers should have been preregistered via gcr_renderer_register().
