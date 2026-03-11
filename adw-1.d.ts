@@ -94356,6 +94356,11 @@ declare module 'gi://Adw?version=1' {
             /**
              * Determines the sidebar's look and behavior.
              *
+             * <picture>
+             *   <source srcset="sidebar-modes-dark.png" media="(prefers-color-scheme: dark)">
+             *   <img src="sidebar-modes.png" alt="sidebar-modes">
+             * </picture>
+             *
              * If set to [enum`Adw`.SidebarMode.sidebar], behaves like a sidebar: with a
              * sidebar style and a persistent selection.
              *
@@ -94600,6 +94605,11 @@ declare module 'gi://Adw?version=1' {
             set_menu_model(menu_model?: Gio.MenuModel | null): void;
             /**
              * Sets `self'`s look and behavior.
+             *
+             * <picture>
+             *   <source srcset="sidebar-modes-dark.png" media="(prefers-color-scheme: dark)">
+             *   <img src="sidebar-modes.png" alt="sidebar-modes">
+             * </picture>
              *
              * If set to [enum`Adw`.SidebarMode.sidebar], behaves like a sidebar: with a
              * sidebar style and a persistent selection.
@@ -130686,6 +130696,11 @@ declare module 'gi://Adw?version=1' {
             /**
              * Determines the sidebar's look and behavior.
              *
+             * <picture>
+             *   <source srcset="view-switcher-sidebar-modes-dark.png" media="(prefers-color-scheme: dark)">
+             *   <img src="view-switcher-sidebar-modes.png" alt="view-switcher-sidebar-modes">
+             * </picture>
+             *
              * If set to [enum`Adw`.SidebarMode.sidebar], behaves like a sidebar: with a
              * sidebar style and a persistent selection.
              *
@@ -130791,6 +130806,11 @@ declare module 'gi://Adw?version=1' {
             set_filter(filter?: Gtk.Filter | null): void;
             /**
              * Sets `self'`s look and behavior.
+             *
+             * <picture>
+             *   <source srcset="view-switcher-sidebar-modes-dark.png" media="(prefers-color-scheme: dark)">
+             *   <img src="view-switcher-sidebar-modes.png" alt="view-switcher-sidebar-modes">
+             * </picture>
              *
              * If set to [enum`Adw`.SidebarMode.sidebar], behaves like a sidebar: with a
              * sidebar style and a persistent selection.

@@ -4139,6 +4139,23 @@ declare module 'gi://Gtk?version=4.0' {
              *   expecations
              */
             static FAILED_RENDERING: number;
+            /**
+             * An XML element is ignored,
+             *   but it should not affect rendering (this error code is used
+             *   for metadata and exension elements)
+             */
+            static IGNORED_ELEMENT: number;
+            /**
+             * An implementation limit has
+             *   been hit, such as the number of loaded shapes.
+             */
+            static LIMITS_EXCEEDED: number;
+            /**
+             * The SVG uses features that
+             *   are not supported by `GtkSvg`. It may be advisable to use
+             *   a different SVG renderer.
+             */
+            static NOT_IMPLEMENTED: number;
 
             // Constructors
 
@@ -231678,7 +231695,7 @@ declare module 'gi://Gtk?version=4.0' {
              *
              * Note that the returned array and the strings
              * contained in it will only be valid until the
-             * `GtkSvg` is cleared or reloaded, is if you
+             * `GtkSvg` is cleared or reloaded, so if you
              * want to keep it around, you should make a copy.
              * @returns the state names
              */
