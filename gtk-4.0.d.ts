@@ -4156,6 +4156,7 @@ declare module 'gi://Gtk?version=4.0' {
              *   a different SVG renderer.
              */
             static NOT_IMPLEMENTED: number;
+            static FEATURE_DISABLED: number;
 
             // Constructors
 
