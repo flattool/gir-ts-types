@@ -22,6 +22,8 @@ declare module 'gi://GLibUnix?version=2.0' {
 
         /**
          * Mnemonic constants for the ends of a Unix pipe.
+         * @gir-type Enum
+         * @since 2.80
          */
         enum PipeEnd {
             /**
@@ -46,12 +48,13 @@ declare module 'gi://GLibUnix?version=2.0' {
          * and async-signal-safe on all OSs.
          *
          * This function is async-signal safe, making it safe to call from a
-         * signal handler or a [callback`GLib`.SpawnChildSetupFunc], as long as `lowfd` is
+         * signal handler or a {@link GLib.SpawnChildSetupFunc}, as long as `lowfd` is
          * non-negative.
          * See [`signal(7)`](man:signal(7)) and
          * [`signal-safety(7)`](man:signal-safety(7)) for more details.
          * @param lowfd Minimum fd to close, which must be non-negative
          * @returns 0 on success, -1 with errno set on error
+         * @since 2.80
          */
         function closefrom(lowfd: number): number;
         function error_quark(): GLib.Quark;
@@ -59,14 +62,15 @@ declare module 'gi://GLibUnix?version=2.0' {
          * Sets a function to be called when the IO condition, as specified by
          * `condition` becomes true for `fd`.
          *
-         * This is the same as g_unix_fd_add(), except that it allows you to
-         * specify a non-default priority and a provide a #GDestroyNotify for
+         * This is the same as `g_unix_fd_add()`, except that it allows you to
+         * specify a non-default priority and a provide a {@link GLib.DestroyNotify} for
          * `user_data`.
          * @param priority the priority of the source
          * @param fd a file descriptor
-         * @param condition IO conditions to watch for on @fd
-         * @param _function a #GUnixFDSourceFunc
+         * @param condition IO conditions to watch for on `fd`
+         * @param _function a {@link GLibUnix.FDSourceFunc}
          * @returns the ID (greater than 0) of the event source
+         * @since 2.36
          */
         function fd_add_full(
             priority: number,
@@ -78,19 +82,21 @@ declare module 'gi://GLibUnix?version=2.0' {
          * Queries the file path for the given FD opened by the current process.
          * @param fd The file descriptor to query.
          * @returns The file path, or `NULL` on error
+         * @since 2.88
          */
         function fd_query_path(fd: number): string;
         /**
-         * Creates a #GSource to watch for a particular I/O condition on a file
+         * Creates a {@link GLib.Source} to watch for a particular I/O condition on a file
          * descriptor.
          *
          * The source will never close the `fd` — you must do it yourself.
          *
-         * Any callback attached to the returned #GSource must have type
-         * #GUnixFDSourceFunc.
+         * Any callback attached to the returned {@link GLib.Source} must have type
+         * {@link GLibUnix.FDSourceFunc}.
          * @param fd a file descriptor
-         * @param condition I/O conditions to watch for on @fd
-         * @returns the newly created #GSource
+         * @param condition I/O conditions to watch for on `fd`
+         * @returns the newly created {@link GLib.Source}
+         * @since 2.36
          */
         function fd_source_new(fd: number, condition: GLib.IOCondition | null): GLib.Source;
         /**
@@ -104,20 +110,21 @@ declare module 'gi://GLibUnix?version=2.0' {
          * but portable to other OSs and to older versions of Linux.
          *
          * This function is async-signal safe, making it safe to call from a
-         * signal handler or a [callback`GLib`.SpawnChildSetupFunc], as long as `lowfd` is
+         * signal handler or a {@link GLib.SpawnChildSetupFunc}, as long as `lowfd` is
          * non-negative.
          * See [`signal(7)`](man:signal(7)) and
          * [`signal-safety(7)`](man:signal-safety(7)) for more details.
          * @param lowfd Minimum fd to act on, which must be non-negative
          * @returns 0 on success, -1 with errno set on error
+         * @since 2.80
          */
         function fdwalk_set_cloexec(lowfd: number): number;
         /**
          * Get the `passwd` file entry for the given `user_name` using `getpwnam_r()`.
          * This can fail if the given `user_name` doesn’t exist.
          *
-         * The returned `struct passwd` has been allocated using g_malloc() and should
-         * be freed using g_free(). The strings referenced by the returned struct are
+         * The returned `struct passwd` has been allocated using `g_malloc()` and should
+         * be freed using `g_free()`. The strings referenced by the returned struct are
          * included in the same allocation, so are valid until the `struct passwd` is
          * freed.
          *
@@ -125,12 +132,13 @@ declare module 'gi://GLibUnix?version=2.0' {
          *
          * You will need to include `pwd.h` to get the definition of `struct passwd`.
          * @param user_name the username to get the passwd file entry for
-         * @returns passwd entry, or %NULL on error; free the returned    value with g_free()
+         * @returns passwd entry, or `null` on error; free the returned    value with `g_free()`
+         * @since 2.64
          */
         function get_passwd_entry(user_name: string): any | null;
         /**
-         * Similar to the UNIX pipe() call, but on modern systems like Linux
-         * uses the pipe2() system call, which atomically creates a pipe with
+         * Similar to the UNIX `pipe()` call, but on modern systems like Linux
+         * uses the `pipe2()` system call, which atomically creates a pipe with
          * the configured flags.
          *
          * As of GLib 2.78, the supported flags are `O_CLOEXEC`/`FD_CLOEXEC` (see below)
@@ -138,8 +146,8 @@ declare module 'gi://GLibUnix?version=2.0' {
          * you wanted to configure `O_NONBLOCK` then that had to be done separately with
          * `fcntl()`.
          *
-         * Since GLib 2.80, the constants %G_UNIX_PIPE_END_READ and
-         * %G_UNIX_PIPE_END_WRITE can be used as mnemonic indexes in `fds`.
+         * Since GLib 2.80, the constants {@link GLibUnix.PipeEnd.READ} and
+         * {@link GLibUnix.PipeEnd.WRITE} can be used as mnemonic indexes in `fds`.
          *
          * It is a programmer error to call this function with unsupported flags, and a
          * critical warning will be raised.
@@ -149,57 +157,64 @@ declare module 'gi://GLibUnix?version=2.0' {
          * to 2.78, only `FD_CLOEXEC` was supported. Support for `FD_CLOEXEC` may be
          * deprecated and removed in future.
          * @param fds Array of two integers
-         * @param flags Bitfield of file descriptor flags, as for fcntl()
-         * @returns %TRUE on success, %FALSE if not (and errno will be set).
+         * @param flags Bitfield of file descriptor flags, as for `fcntl()`
+         * @returns `true` on success, `false` if not (and errno will be set).
+         * @since 2.30
          */
         function open_pipe(fds: number[], flags: number): boolean;
         /**
          * Control the non-blocking state of the given file descriptor,
-         * according to `nonblock`. On most systems this uses %O_NONBLOCK, but
-         * on some older ones may use %O_NDELAY.
+         * according to `nonblock`. On most systems this uses `O_NONBLOCK`, but
+         * on some older ones may use `O_NDELAY`.
          * @param fd A file descriptor
-         * @param nonblock If %TRUE, set the descriptor to be non-blocking
-         * @returns %TRUE if successful
+         * @param nonblock If `true`, set the descriptor to be non-blocking
+         * @returns `true` if successful
+         * @since 2.30
          */
         function set_fd_nonblocking(fd: number, nonblock: boolean): boolean;
         /**
-         * A convenience function for g_unix_signal_source_new(), which
-         * attaches to the default #GMainContext.  You can remove the watch
-         * using g_source_remove().
-         * @param priority the priority of the signal source. Typically this will be in            the range between %G_PRIORITY_DEFAULT and %G_PRIORITY_HIGH.
+         * A convenience function for `g_unix_signal_source_new()`, which
+         * attaches to the default {@link GLib.MainContext}.  You can remove the watch
+         * using `g_source_remove()`.
+         * @param priority the priority of the signal source. Typically this will be in            the range between `G_PRIORITY_DEFAULT` and `G_PRIORITY_HIGH`.
          * @param signum Signal number
          * @param handler Callback
          * @returns An ID (greater than 0) for the event source
+         * @since 2.30
          */
         function signal_add(priority: number, signum: number, handler: GLib.SourceFunc): number;
         /**
-         * Create a #GSource that will be dispatched upon delivery of the UNIX
+         * Create a {@link GLib.Source} that will be dispatched upon delivery of the UNIX
          * signal `signum`.  In GLib versions before 2.36, only `SIGHUP`, `SIGINT`,
          * `SIGTERM` can be monitored.  In GLib 2.36, `SIGUSR1` and `SIGUSR2`
          * were added. In GLib 2.54, `SIGWINCH` was added.
          *
          * Note that unlike the UNIX default, all sources which have created a
          * watch will be dispatched, regardless of which underlying thread
-         * invoked g_unix_signal_source_new().
+         * invoked `g_unix_signal_source_new()`.
          *
          * For example, an effective use of this function is to handle `SIGTERM`
          * cleanly; flushing any outstanding files, and then calling
-         * g_main_loop_quit().  It is not safe to do any of this from a regular
-         * UNIX signal handler; such a handler may be invoked while malloc() or
+         * `g_main_loop_quit()`.  It is not safe to do any of this from a regular
+         * UNIX signal handler; such a handler may be invoked while `malloc()` or
          * another library function is running, causing reentrancy issues if the
          * handler attempts to use those functions.  None of the GLib/GObject
          * API is safe against this kind of reentrancy.
          *
          * The interaction of this source when combined with native UNIX
-         * functions like sigprocmask() is not defined.
+         * functions like `sigprocmask()` is not defined.
          *
-         * The source will not initially be associated with any #GMainContext
-         * and must be added to one with g_source_attach() before it will be
+         * The source will not initially be associated with any {@link GLib.MainContext}
+         * and must be added to one with `g_source_attach()` before it will be
          * executed.
          * @param signum A signal number
-         * @returns A newly created #GSource
+         * @returns A newly created {@link GLib.Source}
+         * @since 2.30
          */
         function signal_source_new(signum: number): GLib.Source;
+        /**
+         * @gir-type Callback
+         */
         interface FDSourceFunc {
             (fd: number, condition: GLib.IOCondition): boolean;
         }
@@ -207,6 +222,8 @@ declare module 'gi://GLibUnix?version=2.0' {
          * A Unix pipe. The advantage of this type over `int[2]` is that it can
          * be closed automatically when it goes out of scope, using `g_auto(GUnixPipe)`,
          * on compilers that support that feature.
+         * @gir-type Struct
+         * @since 2.80
          */
         class Pipe {
             static $gtype: GObject.GType<Pipe>;

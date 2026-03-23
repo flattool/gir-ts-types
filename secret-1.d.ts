@@ -24,30 +24,38 @@ declare module 'gi://Secret?version=1' {
          * Secret-1
          */
 
+        /**
+         * @gir-type Enum
+         */
         export namespace BackendFlags {
             export const $gtype: GObject.GType<BackendFlags>;
         }
 
         /**
-         * Flags which determine which parts of the #SecretBackend are initialized.
+         * Flags which determine which parts of the {@link Secret.Backend} are initialized.
+         * @gir-type Enum
+         * @since 0.19.0
          */
         enum BackendFlags {
             /**
-             * no flags for initializing the #SecretBackend
+             * no flags for initializing the {@link Secret.Backend}
              */
             NONE,
             /**
              * establish a session for transfer of secrets
-             *   while initializing the #SecretBackend
+             *   while initializing the {@link Secret.Backend}
              */
             OPEN_SESSION,
             /**
              * load collections while initializing the
-             *   #SecretBackend
+             *   {@link Secret.Backend}
              */
             LOAD_COLLECTIONS,
         }
 
+        /**
+         * @gir-type Enum
+         */
         export namespace Error {
             export const $gtype: GObject.GType<Error>;
         }
@@ -57,6 +65,7 @@ declare module 'gi://Secret?version=1' {
          *
          * None of the errors are appropriate for display to the user. It is up to the
          * application to handle them appropriately.
+         * @gir-type Enum
          */
         enum Error {
             /**
@@ -102,16 +111,20 @@ declare module 'gi://Secret?version=1' {
             EMPTY_TABLE,
         }
 
+        /**
+         * @gir-type Enum
+         */
         export namespace SchemaAttributeType {
             export const $gtype: GObject.GType<SchemaAttributeType>;
         }
 
         /**
-         * The type of an attribute in a [struct`SecretSchema]`.
+         * The type of an attribute in a {@link SecretSchema}.
          *
          * Attributes are stored as strings in the Secret Service, and the attribute
          * types simply define standard ways to store integer and boolean values as
          * strings.
+         * @gir-type Enum
          */
         enum SchemaAttributeType {
             /**
@@ -128,13 +141,16 @@ declare module 'gi://Secret?version=1' {
             BOOLEAN,
         }
 
+        /**
+         * @gir-type Enum
+         */
         export namespace SchemaType {
             export const $gtype: GObject.GType<SchemaType>;
         }
 
         /**
          * Different types of schemas for storing secrets, intended for use with
-         * [func`get_schema]`.
+         * {@link get_schema}.
          *
          * ## `SECRET_SCHEMA_NOTE`
          *
@@ -190,6 +206,8 @@ declare module 'gi://Secret?version=1' {
          *         <td>The authentication type (string).</td>
          *     </tr>
          * </table>
+         * @gir-type Enum
+         * @since 0.18.6
          */
         enum SchemaType {
             /**
@@ -210,14 +228,14 @@ declare module 'gi://Secret?version=1' {
         /**
          * An alias to the default collection.
          *
-         * This can be passed to [func`password_store]` [func`Collection`.for_alias].
+         * This can be passed to {@link password_store} {@link Collection.for_alias}.
          */
         const COLLECTION_DEFAULT: string;
         /**
          * An alias to the session collection, which will be cleared when the user ends
          * the session.
          *
-         * This can be passed to [func`password_store]`, [func`Collection`.for_alias] or
+         * This can be passed to {@link password_store}, {@link Collection.for_alias} or
          * similar functions.
          */
         const COLLECTION_SESSION: string;
@@ -241,13 +259,14 @@ declare module 'gi://Secret?version=1' {
          * @param schema the schema for the attributes
          * @param attributes the attributes to be validated
          * @returns whether or not the given attributes table is valid
+         * @since 0.21.2
          */
         function attributes_validate(
             schema: Schema,
             attributes: { [key: string]: any } | GLib.HashTable<any, any>,
         ): boolean;
         /**
-         * Get a #SecretBackend instance.
+         * Get a {@link Secret.Backend} instance.
          *
          * If such a backend already exists, then the same backend is returned.
          *
@@ -257,13 +276,14 @@ declare module 'gi://Secret?version=1' {
          * This method will return immediately and complete asynchronously.
          * @param flags flags for which service functionality to ensure is initialized
          * @param cancellable optional cancellation object
+         * @since 0.19.0
          */
         function backend_get(
             flags: BackendFlags | null,
             cancellable?: Gio.Cancellable | null,
         ): globalThis.Promise<Backend>;
         /**
-         * Get a #SecretBackend instance.
+         * Get a {@link Secret.Backend} instance.
          *
          * If such a backend already exists, then the same backend is returned.
          *
@@ -274,6 +294,7 @@ declare module 'gi://Secret?version=1' {
          * @param flags flags for which service functionality to ensure is initialized
          * @param cancellable optional cancellation object
          * @param callback called when the operation completes
+         * @since 0.19.0
          */
         function backend_get(
             flags: BackendFlags | null,
@@ -281,7 +302,7 @@ declare module 'gi://Secret?version=1' {
             callback: Gio.AsyncReadyCallback<BackendFlags | null> | null,
         ): void;
         /**
-         * Get a #SecretBackend instance.
+         * Get a {@link Secret.Backend} instance.
          *
          * If such a backend already exists, then the same backend is returned.
          *
@@ -292,6 +313,7 @@ declare module 'gi://Secret?version=1' {
          * @param flags flags for which service functionality to ensure is initialized
          * @param cancellable optional cancellation object
          * @param callback called when the operation completes
+         * @since 0.19.0
          */
         function backend_get(
             flags: BackendFlags | null,
@@ -299,9 +321,10 @@ declare module 'gi://Secret?version=1' {
             callback?: Gio.AsyncReadyCallback<BackendFlags | null> | null,
         ): globalThis.Promise<Backend> | void;
         /**
-         * Complete an asynchronous operation to get a #SecretBackend.
+         * Complete an asynchronous operation to get a {@link Secret.Backend}.
          * @param result the asynchronous result passed to the callback
-         * @returns a new reference to a #SecretBackend proxy, which   should be released with [method@GObject.Object.unref].
+         * @returns a new reference to a {@link Secret.Backend} proxy, which   should be released with {@link GObject.Object.unref}.
+         * @since 0.19.0
          */
         function backend_get_finish(result: Gio.AsyncResult): Backend;
         /**
@@ -312,10 +335,11 @@ declare module 'gi://Secret?version=1' {
         /**
          * Get a secret storage schema of the given `type`.
          *
-         * C code may access the schemas (such as %SECRET_SCHEMA_NOTE) directly, but
+         * C code may access the schemas (such as `SECRET_SCHEMA_NOTE`) directly, but
          * language bindings cannot, and must use this accessor.
          * @param type type of schema to get
          * @returns schema type
+         * @since 0.18.6
          */
         function get_schema(type: SchemaType | null): Schema;
         /**
@@ -402,7 +426,7 @@ declare module 'gi://Secret?version=1' {
         /**
          * Finish an asynchronous operation to lookup a password in the secret service.
          * @param result the asynchronous result passed to the callback
-         * @returns a new password string which should be freed with   [func@password_free] or may be freed with [func@GLib.free] when done
+         * @returns a new password string which should be freed with   {@link password_free} or may be freed with {@link GLib.free} when done
          */
         function password_lookup_finish(result: Gio.AsyncResult): string;
         /**
@@ -410,7 +434,7 @@ declare module 'gi://Secret?version=1' {
          *
          * The `attributes` should be a set of key and value string pairs.
          *
-         * If no secret is found then %NULL is returned.
+         * If no secret is found then `null` is returned.
          *
          * This method will return immediately and complete asynchronously.
          * @param schema the schema for attributes
@@ -427,7 +451,7 @@ declare module 'gi://Secret?version=1' {
          *
          * The `attributes` should be a set of key and value string pairs.
          *
-         * If no secret is found then %NULL is returned.
+         * If no secret is found then `null` is returned.
          *
          * This method will return immediately and complete asynchronously.
          * @param schema the schema for attributes
@@ -446,7 +470,7 @@ declare module 'gi://Secret?version=1' {
          *
          * The `attributes` should be a set of key and value string pairs.
          *
-         * If no secret is found then %NULL is returned.
+         * If no secret is found then `null` is returned.
          *
          * This method will return immediately and complete asynchronously.
          * @param schema the schema for attributes
@@ -465,14 +489,14 @@ declare module 'gi://Secret?version=1' {
          *
          * The `attributes` should be a set of key and value string pairs.
          *
-         * If no secret is found then %NULL is returned.
+         * If no secret is found then `null` is returned.
          *
          * This method may block indefinitely and should not be used in user interface
          * threads.
          * @param schema the schema for attributes
          * @param attributes the attribute keys and values
          * @param cancellable optional cancellation object
-         * @returns a new password string which should be freed with   [func@password_free] or may be freed with [func@GLib.free] when done
+         * @returns a new password string which should be freed with   {@link password_free} or may be freed with {@link GLib.free} when done
          */
         function password_lookup_sync(
             schema: Schema | null,
@@ -482,7 +506,8 @@ declare module 'gi://Secret?version=1' {
         /**
          * Finish an asynchronous operation to search for items in the secret service.
          * @param result the asynchronous result passed to the callback
-         * @returns a list of   [iface@Retrievable] containing attributes of the matched items
+         * @returns a list of   {@link Retrievable} containing attributes of the matched items
+         * @since 0.19.0
          */
         function password_search_finish(result: Gio.AsyncResult): Retrievable[];
         /**
@@ -495,6 +520,7 @@ declare module 'gi://Secret?version=1' {
          * @param attributes the attribute keys and values
          * @param flags search option flags
          * @param cancellable optional cancellation object
+         * @since 0.19.0
          */
         function password_search(
             schema: Schema | null,
@@ -513,6 +539,7 @@ declare module 'gi://Secret?version=1' {
          * @param flags search option flags
          * @param cancellable optional cancellation object
          * @param callback called when the operation completes
+         * @since 0.19.0
          */
         function password_search(
             schema: Schema | null,
@@ -532,6 +559,7 @@ declare module 'gi://Secret?version=1' {
          * @param flags search option flags
          * @param cancellable optional cancellation object
          * @param callback called when the operation completes
+         * @since 0.19.0
          */
         function password_search(
             schema: Schema | null,
@@ -545,7 +573,7 @@ declare module 'gi://Secret?version=1' {
          *
          * The `attributes` should be a set of key and value string pairs.
          *
-         * If no secret is found then %NULL is returned.
+         * If no secret is found then `null` is returned.
          *
          * This method may block indefinitely and should not be used in user interface
          * threads.
@@ -553,7 +581,8 @@ declare module 'gi://Secret?version=1' {
          * @param attributes the attribute keys and values
          * @param flags search option flags
          * @param cancellable optional cancellation object
-         * @returns a list of   [iface@Retrievable] containing attributes of the matched items
+         * @returns a list of   {@link Retrievable} containing attributes of the matched items
+         * @since 0.19.0
          */
         function password_search_sync(
             schema: Schema | null,
@@ -575,8 +604,8 @@ declare module 'gi://Secret?version=1' {
          * If the attributes match a secret item already stored in the collection, then
          * the item will be updated with these new values.
          *
-         * If `collection` is %NULL, then the default collection will be
-         * used. Use [const`COLLECTION_SESSION]` to store the password in the session
+         * If `collection` is `null`, then the default collection will be
+         * used. Use {@link COLLECTION_SESSION} to store the password in the session
          * collection, which doesn't get stored across login sessions.
          *
          * This method will return immediately and complete asynchronously.
@@ -603,8 +632,8 @@ declare module 'gi://Secret?version=1' {
          * If the attributes match a secret item already stored in the collection, then
          * the item will be updated with these new values.
          *
-         * If `collection` is %NULL, then the default collection will be
-         * used. Use [const`COLLECTION_SESSION]` to store the password in the session
+         * If `collection` is `null`, then the default collection will be
+         * used. Use {@link COLLECTION_SESSION} to store the password in the session
          * collection, which doesn't get stored across login sessions.
          *
          * This method will return immediately and complete asynchronously.
@@ -633,8 +662,8 @@ declare module 'gi://Secret?version=1' {
          * If the attributes match a secret item already stored in the collection, then
          * the item will be updated with these new values.
          *
-         * If `collection` is %NULL, then the default collection will be
-         * used. Use [const`COLLECTION_SESSION]` to store the password in the session
+         * If `collection` is `null`, then the default collection will be
+         * used. Use {@link COLLECTION_SESSION} to store the password in the session
          * collection, which doesn't get stored across login sessions.
          *
          * This method will return immediately and complete asynchronously.
@@ -658,17 +687,18 @@ declare module 'gi://Secret?version=1' {
         /**
          * Store a password in the secret service.
          *
-         * This is similar to [func`password_storev]`, but takes a
-         * [struct`Value]` as the argument instead of a null-terminated password.
+         * This is similar to {@link password_storev}, but takes a
+         * {@link Value} as the argument instead of a null-terminated password.
          *
          * This method will return immediately and complete asynchronously.
          * @param schema the schema for attributes
          * @param attributes the attribute keys and values
          * @param collection a collection alias, or D-Bus object path of the   collection where to store the secret
          * @param label label for the secret
-         * @param value a [struct@Value]
+         * @param value a {@link Value}
          * @param cancellable optional cancellation object
          * @param callback called when the operation completes
+         * @since 0.19.0
          */
         function password_store_binary(
             schema: Schema | null,
@@ -682,7 +712,7 @@ declare module 'gi://Secret?version=1' {
         /**
          * Store a password in the secret service.
          *
-         * This is similar to [func`password_storev_sync]`, but takes a [struct`Value]` as
+         * This is similar to {@link password_storev_sync}, but takes a {@link Value} as
          * the argument instead of a null-terminated passwords.
          *
          * This method may block indefinitely and should not be used in user interface
@@ -691,9 +721,10 @@ declare module 'gi://Secret?version=1' {
          * @param attributes the attribute keys and values
          * @param collection a collection alias, or D-Bus object path of the   collection where to store the secret
          * @param label label for the secret
-         * @param value a [struct@Value]
+         * @param value a {@link Value}
          * @param cancellable optional cancellation object
          * @returns whether the storage was successful or not
+         * @since 0.19.0
          */
         function password_store_binary_sync(
             schema: Schema | null,
@@ -711,8 +742,8 @@ declare module 'gi://Secret?version=1' {
          * If the attributes match a secret item already stored in the collection, then
          * the item will be updated with these new values.
          *
-         * If `collection` is %NULL, then the default collection will be
-         * used. Use [const`COLLECTION_SESSION]` to store the password in the session
+         * If `collection` is `null`, then the default collection will be
+         * used. Use {@link COLLECTION_SESSION} to store the password in the session
          * collection, which doesn't get stored across login sessions.
          *
          * This method may block indefinitely and should not be used in user interface
@@ -738,12 +769,16 @@ declare module 'gi://Secret?version=1' {
          * @param password password to clear
          */
         function password_wipe(password?: string | null): void;
+        /**
+         * @gir-type Flags
+         */
         export namespace CollectionCreateFlags {
             export const $gtype: GObject.GType<CollectionCreateFlags>;
         }
 
         /**
-         * Flags for [func`Collection`.create].
+         * Flags for {@link Collection.create}.
+         * @gir-type Flags
          */
         enum CollectionCreateFlags {
             /**
@@ -752,12 +787,16 @@ declare module 'gi://Secret?version=1' {
             NONE,
         }
 
+        /**
+         * @gir-type Flags
+         */
         export namespace CollectionFlags {
             export const $gtype: GObject.GType<CollectionFlags>;
         }
 
         /**
-         * Flags which determine which parts of the #SecretCollection proxy are initialized.
+         * Flags which determine which parts of the {@link Secret.Collection} proxy are initialized.
+         * @gir-type Flags
          */
         enum CollectionFlags {
             /**
@@ -770,12 +809,16 @@ declare module 'gi://Secret?version=1' {
             LOAD_ITEMS,
         }
 
+        /**
+         * @gir-type Flags
+         */
         export namespace ItemCreateFlags {
             export const $gtype: GObject.GType<ItemCreateFlags>;
         }
 
         /**
-         * Flags for [func`Item`.create].
+         * Flags for {@link Item.create}.
+         * @gir-type Flags
          */
         enum ItemCreateFlags {
             /**
@@ -788,12 +831,16 @@ declare module 'gi://Secret?version=1' {
             REPLACE,
         }
 
+        /**
+         * @gir-type Flags
+         */
         export namespace ItemFlags {
             export const $gtype: GObject.GType<ItemFlags>;
         }
 
         /**
-         * Flags which determine which parts of the #SecretItem proxy are initialized.
+         * Flags which determine which parts of the {@link Secret.Item} proxy are initialized.
+         * @gir-type Flags
          */
         enum ItemFlags {
             /**
@@ -801,17 +848,21 @@ declare module 'gi://Secret?version=1' {
              */
             NONE,
             /**
-             * a secret has been (or should be) loaded for #SecretItem
+             * a secret has been (or should be) loaded for {@link Secret.Item}
              */
             LOAD_SECRET,
         }
 
+        /**
+         * @gir-type Flags
+         */
         export namespace SchemaFlags {
             export const $gtype: GObject.GType<SchemaFlags>;
         }
 
         /**
-         * Flags for a #SecretSchema definition.
+         * Flags for a {@link Secret.Schema} definition.
+         * @gir-type Flags
          */
         enum SchemaFlags {
             /**
@@ -825,12 +876,16 @@ declare module 'gi://Secret?version=1' {
             DONT_MATCH_NAME,
         }
 
+        /**
+         * @gir-type Flags
+         */
         export namespace SearchFlags {
             export const $gtype: GObject.GType<SearchFlags>;
         }
 
         /**
-         * Various flags to be used with [method`Service`.search] and [method`Service`.search_sync].
+         * Various flags to be used with {@link Service.search} and {@link Service.search_sync}.
+         * @gir-type Flags
          */
         enum SearchFlags {
             /**
@@ -851,27 +906,31 @@ declare module 'gi://Secret?version=1' {
             LOAD_SECRETS,
         }
 
+        /**
+         * @gir-type Flags
+         */
         export namespace ServiceFlags {
             export const $gtype: GObject.GType<ServiceFlags>;
         }
 
         /**
-         * Flags which determine which parts of the #SecretService proxy are initialized
-         * during a [func`Service`.get] or [func`Service`.open] operation.
+         * Flags which determine which parts of the {@link Secret.Service} proxy are initialized
+         * during a {@link Service.get} or {@link Service.open} operation.
+         * @gir-type Flags
          */
         enum ServiceFlags {
             /**
-             * no flags for initializing the #SecretService
+             * no flags for initializing the {@link Secret.Service}
              */
             NONE,
             /**
              * establish a session for transfer of secrets
-             *   while initializing the #SecretService
+             *   while initializing the {@link Secret.Service}
              */
             OPEN_SESSION,
             /**
              * load collections while initializing the
-             *   #SecretService
+             *   {@link Secret.Service}
              */
             LOAD_COLLECTIONS,
         }
@@ -916,16 +975,17 @@ declare module 'gi://Secret?version=1' {
         /**
          * A proxy object representing a collection of secrets in the Secret Service.
          *
-         * #SecretCollection represents a collection of secret items stored in the
+         * {@link Secret.Collection} represents a collection of secret items stored in the
          * Secret Service.
          *
          * A collection can be in a locked or unlocked state. Use
-         * [method`SecretService`.lock] or [method`SecretService`.unlock] to lock or
+         * {@link SecretService.lock} or {@link SecretService.unlock} to lock or
          * unlock the collection.
          *
-         * Use the [property`SecretCollection:`items] property or
-         * [method`SecretCollection`.get_items] to lookup the items in the collection.
+         * Use the {@link SecretCollection.items} property or
+         * {@link SecretCollection.get_items} to lookup the items in the collection.
          * There may not be any items exposed when the collection is locked.
+         * @gir-type Class
          */
         class Collection
             extends Gio.DBusProxy
@@ -944,6 +1004,7 @@ declare module 'gi://Secret?version=1' {
             /**
              * A set of flags describing which parts of the secret collection have
              * been initialized.
+             * @construct-only
              */
             get flags(): CollectionFlags;
             /**
@@ -951,15 +1012,16 @@ declare module 'gi://Secret?version=1' {
              *
              * Setting this property will result in the label of the collection being
              * set asynchronously. To properly track the changing of the label use the
-             * [method`Collection`.set_label] function.
+             * {@link Collection.set_label} function.
              */
             get label(): string;
             set label(val: string);
             /**
              * Whether the collection is locked or not.
              *
-             * To lock or unlock a collection use the [method`Service`.lock] or
-             * [method`Service`.unlock] functions.
+             * To lock or unlock a collection use the {@link Service.lock} or
+             * {@link Service.unlock} functions.
+             * @read-only
              */
             get locked(): boolean;
             /**
@@ -969,8 +1031,9 @@ declare module 'gi://Secret?version=1' {
             get modified(): number;
             set modified(val: number);
             /**
-             * The [class`Service]` object that this collection is associated with and
+             * The {@link Service} object that this collection is associated with and
              * uses to interact with the actual D-Bus Secret Service.
+             * @construct-only
              */
             get service(): Service;
 
@@ -991,16 +1054,19 @@ declare module 'gi://Secret?version=1' {
 
             // Signals
 
+            /** @signal */
             connect<K extends keyof Collection.SignalSignatures>(
                 signal: K,
                 callback: GObject.SignalCallback<this, Collection.SignalSignatures[K]>,
             ): number;
             connect(signal: string, callback: (...args: any[]) => any): number;
+            /** @signal */
             connect_after<K extends keyof Collection.SignalSignatures>(
                 signal: K,
                 callback: GObject.SignalCallback<this, Collection.SignalSignatures[K]>,
             ): number;
             connect_after(signal: string, callback: (...args: any[]) => any): number;
+            /** @signal */
             emit<K extends keyof Collection.SignalSignatures>(
                 signal: K,
                 ...args: GObject.GjsParameters<Collection.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never
@@ -1013,17 +1079,17 @@ declare module 'gi://Secret?version=1' {
              * Create a new collection in the secret service.
              *
              * This method returns immediately and completes asynchronously. The secret
-             * service may prompt the user. [method`Service`.prompt] will be used to handle
+             * service may prompt the user. {@link Service.prompt} will be used to handle
              * any prompts that are required.
              *
              * An `alias` is a well-known tag for a collection, such as 'default' (ie: the
              * default collection to store items in). This allows other applications to
-             * easily identify and share a collection. If you specify an `alias,` and a
+             * easily identify and share a collection. If you specify an `alias`, and a
              * collection with that alias already exists, then a new collection will not
              * be created. The previous one will be returned instead.
              *
-             * If `service` is %NULL, then [func`Service`.get] will be called to get the
-             * default [class`Service]` proxy.
+             * If `service` is `null`, then {@link Service.get} will be called to get the
+             * default {@link Service} proxy.
              * @param service a secret service object
              * @param label label for the new collection
              * @param alias alias to assign to the collection
@@ -1048,17 +1114,17 @@ declare module 'gi://Secret?version=1' {
              * Create a new collection in the secret service.
              *
              * This method may block indefinitely and should not be used in user interface
-             * threads. The secret service may prompt the user. [method`Service`.prompt]
+             * threads. The secret service may prompt the user. {@link Service.prompt}
              * will be used to handle any prompts that are required.
              *
              * An `alias` is a well-known tag for a collection, such as `default` (ie: the
              * default collection to store items in). This allows other applications to
-             * easily identify and share a collection. If you specify an `alias,` and a
+             * easily identify and share a collection. If you specify an `alias`, and a
              * collection with that alias already exists, then a new collection will not
              * be created. The previous one will be returned instead.
              *
-             * If `service` is %NULL, then [func`Service`.get_sync] will be called to get the
-             * default [class`Service]` proxy.
+             * If `service` is `null`, then {@link Service.get_sync} will be called to get the
+             * default {@link Service} proxy.
              * @param service a secret service object
              * @param label label for the new collection
              * @param alias alias to assign to the collection
@@ -1076,8 +1142,8 @@ declare module 'gi://Secret?version=1' {
              * Lookup which collection is assigned to this alias. Aliases help determine
              * well known collections, such as 'default'.
              *
-             * If `service` is %NULL, then [func`Service`.get] will be called to get the
-             * default [class`Service]` proxy.
+             * If `service` is `null`, then {@link Service.get} will be called to get the
+             * default {@link Service} proxy.
              *
              * This method will return immediately and complete asynchronously.
              * @param service a secret service object
@@ -1103,8 +1169,8 @@ declare module 'gi://Secret?version=1' {
              * Lookup which collection is assigned to this alias. Aliases help determine
              * well known collections, such as `default`.
              *
-             * If `service` is %NULL, then [func`Service`.get_sync] will be called to get the
-             * default [class`Service]` proxy.
+             * If `service` is `null`, then {@link Service.get_sync} will be called to get the
+             * default {@link Service} proxy.
              *
              * This method may block and should not be used in user interface threads.
              * @param service a secret service object
@@ -1125,7 +1191,7 @@ declare module 'gi://Secret?version=1' {
              * Delete this collection.
              *
              * This method returns immediately and completes asynchronously. The secret
-             * service may prompt the user. [method`Service`.prompt] will be used to handle
+             * service may prompt the user. {@link Service.prompt} will be used to handle
              * any prompts that show up.
              * @param cancellable optional cancellation object
              */
@@ -1134,7 +1200,7 @@ declare module 'gi://Secret?version=1' {
              * Delete this collection.
              *
              * This method returns immediately and completes asynchronously. The secret
-             * service may prompt the user. [method`Service`.prompt] will be used to handle
+             * service may prompt the user. {@link Service.prompt} will be used to handle
              * any prompts that show up.
              * @param cancellable optional cancellation object
              * @param callback called when the operation completes
@@ -1144,7 +1210,7 @@ declare module 'gi://Secret?version=1' {
              * Delete this collection.
              *
              * This method returns immediately and completes asynchronously. The secret
-             * service may prompt the user. [method`Service`.prompt] will be used to handle
+             * service may prompt the user. {@link Service.prompt} will be used to handle
              * any prompts that show up.
              * @param cancellable optional cancellation object
              * @param callback called when the operation completes
@@ -1163,7 +1229,7 @@ declare module 'gi://Secret?version=1' {
              * Delete this collection.
              *
              * This method may block indefinitely and should not be used in user interface
-             * threads. The secret service may prompt the user. [method`Service`.prompt] will
+             * threads. The secret service may prompt the user. {@link Service.prompt} will
              * be used to handle any prompts that show up.
              * @param cancellable optional cancellation object
              * @returns whether the collection was successfully deleted or not
@@ -1178,30 +1244,33 @@ declare module 'gi://Secret?version=1' {
              */
             get_created(): number;
             /**
-             * Get the flags representing what features of the #SecretCollection proxy
+             * Get the flags representing what features of the {@link Secret.Collection} proxy
              * have been initialized.
              *
-             * Use [method`Collection`.load_items] to initialize further features and change
+             * Use {@link Collection.load_items} to initialize further features and change
              * the flags.
              * @returns the flags for features initialized
              */
             get_flags(): CollectionFlags;
+            /**
+             * @param args
+             */
             // Conflicted with Gio.DBusProxy.get_flags
             get_flags(...args: never[]): any;
             /**
              * Get the list of items in this collection.
-             * @returns a list of items, when   done, the list should be freed with [func@GLib.List.free], and each item   should be released with [method@GObject.Object.unref]
+             * @returns a list of items, when   done, the list should be freed with {@link GLib.List.free}, and each item   should be released with {@link GObject.Object.unref}
              */
             get_items(): Item[];
             /**
              * Get the label of this collection.
-             * @returns the label, which should be freed with   [func@GLib.free]
+             * @returns the label, which should be freed with   {@link GLib.free}
              */
             get_label(): string;
             /**
              * Get whether the collection is locked or not.
              *
-             * Use [method`Service`.lock] or [method`Service`.unlock] to lock or unlock the
+             * Use {@link Service.lock} or {@link Service.unlock} to lock or unlock the
              * collection.
              * @returns whether the collection is locked or not
              */
@@ -1220,12 +1289,12 @@ declare module 'gi://Secret?version=1' {
              */
             get_service(): Service;
             /**
-             * Ensure that the #SecretCollection proxy has loaded all the items present
+             * Ensure that the {@link Secret.Collection} proxy has loaded all the items present
              * in the Secret Service.
              *
-             * This affects the result of [method`Collection`.get_items].
+             * This affects the result of {@link Collection.get_items}.
              *
-             * For collections returned from [method`Service`.get_collections] the items will
+             * For collections returned from {@link Service.get_collections} the items will
              * have already been loaded.
              *
              * This method will return immediately and complete asynchronously.
@@ -1233,12 +1302,12 @@ declare module 'gi://Secret?version=1' {
              */
             load_items(cancellable?: Gio.Cancellable | null): globalThis.Promise<boolean>;
             /**
-             * Ensure that the #SecretCollection proxy has loaded all the items present
+             * Ensure that the {@link Secret.Collection} proxy has loaded all the items present
              * in the Secret Service.
              *
-             * This affects the result of [method`Collection`.get_items].
+             * This affects the result of {@link Collection.get_items}.
              *
-             * For collections returned from [method`Service`.get_collections] the items will
+             * For collections returned from {@link Service.get_collections} the items will
              * have already been loaded.
              *
              * This method will return immediately and complete asynchronously.
@@ -1247,12 +1316,12 @@ declare module 'gi://Secret?version=1' {
              */
             load_items(cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<this> | null): void;
             /**
-             * Ensure that the #SecretCollection proxy has loaded all the items present
+             * Ensure that the {@link Secret.Collection} proxy has loaded all the items present
              * in the Secret Service.
              *
-             * This affects the result of [method`Collection`.get_items].
+             * This affects the result of {@link Collection.get_items}.
              *
-             * For collections returned from [method`Service`.get_collections] the items will
+             * For collections returned from {@link Service.get_collections} the items will
              * have already been loaded.
              *
              * This method will return immediately and complete asynchronously.
@@ -1264,18 +1333,18 @@ declare module 'gi://Secret?version=1' {
                 callback?: Gio.AsyncReadyCallback<this> | null,
             ): globalThis.Promise<boolean> | void;
             /**
-             * Complete an asynchronous operation to ensure that the #SecretCollection proxy
+             * Complete an asynchronous operation to ensure that the {@link Secret.Collection} proxy
              * has loaded all the items present in the Secret Service.
              * @param result the asynchronous result passed to the callback
              * @returns whether the load was successful or not
              */
             load_items_finish(result: Gio.AsyncResult): boolean;
             /**
-             * Ensure that the #SecretCollection proxy has loaded all the items present
+             * Ensure that the {@link Secret.Collection} proxy has loaded all the items present
              * in the Secret Service. This affects the result of
-             * [method`Collection`.get_items].
+             * {@link Collection.get_items}.
              *
-             * For collections returned from [method`Service`.get_collections] the items
+             * For collections returned from {@link Service.get_collections} the items
              * will have already been loaded.
              *
              * This method may block indefinitely and should not be used in user interface
@@ -1296,16 +1365,16 @@ declare module 'gi://Secret?version=1' {
              * Search for items matching the `attributes` in the `collection`.
              * The `attributes` should be a table of string keys and string values.
              *
-             * If %SECRET_SEARCH_ALL is set in `flags,` then all the items matching the
+             * If {@link Secret.SearchFlags.ALL} is set in `flags`, then all the items matching the
              * search will be returned. Otherwise only the first item will be returned.
              * This is almost always the unlocked item that was most recently stored.
              *
-             * If %SECRET_SEARCH_UNLOCK is set in `flags,` then items will be unlocked
+             * If {@link Secret.SearchFlags.UNLOCK} is set in `flags`, then items will be unlocked
              * if necessary. In either case, locked and unlocked items will match the
              * search and be returned. If the unlock fails, the search does not fail.
              *
-             * If %SECRET_SEARCH_LOAD_SECRETS is set in `flags,` then the items will have
-             * their secret values loaded and available via [method`Item`.get_secret].
+             * If {@link Secret.SearchFlags.LOAD_SECRETS} is set in `flags`, then the items will have
+             * their secret values loaded and available via {@link Item.get_secret}.
              *
              * This function returns immediately and completes asynchronously.
              * @param schema the schema for the attributes
@@ -1323,16 +1392,16 @@ declare module 'gi://Secret?version=1' {
              * Search for items matching the `attributes` in the `collection`.
              * The `attributes` should be a table of string keys and string values.
              *
-             * If %SECRET_SEARCH_ALL is set in `flags,` then all the items matching the
+             * If {@link Secret.SearchFlags.ALL} is set in `flags`, then all the items matching the
              * search will be returned. Otherwise only the first item will be returned.
              * This is almost always the unlocked item that was most recently stored.
              *
-             * If %SECRET_SEARCH_UNLOCK is set in `flags,` then items will be unlocked
+             * If {@link Secret.SearchFlags.UNLOCK} is set in `flags`, then items will be unlocked
              * if necessary. In either case, locked and unlocked items will match the
              * search and be returned. If the unlock fails, the search does not fail.
              *
-             * If %SECRET_SEARCH_LOAD_SECRETS is set in `flags,` then the items will have
-             * their secret values loaded and available via [method`Item`.get_secret].
+             * If {@link Secret.SearchFlags.LOAD_SECRETS} is set in `flags`, then the items will have
+             * their secret values loaded and available via {@link Item.get_secret}.
              *
              * This function returns immediately and completes asynchronously.
              * @param schema the schema for the attributes
@@ -1352,16 +1421,16 @@ declare module 'gi://Secret?version=1' {
              * Search for items matching the `attributes` in the `collection`.
              * The `attributes` should be a table of string keys and string values.
              *
-             * If %SECRET_SEARCH_ALL is set in `flags,` then all the items matching the
+             * If {@link Secret.SearchFlags.ALL} is set in `flags`, then all the items matching the
              * search will be returned. Otherwise only the first item will be returned.
              * This is almost always the unlocked item that was most recently stored.
              *
-             * If %SECRET_SEARCH_UNLOCK is set in `flags,` then items will be unlocked
+             * If {@link Secret.SearchFlags.UNLOCK} is set in `flags`, then items will be unlocked
              * if necessary. In either case, locked and unlocked items will match the
              * search and be returned. If the unlock fails, the search does not fail.
              *
-             * If %SECRET_SEARCH_LOAD_SECRETS is set in `flags,` then the items will have
-             * their secret values loaded and available via [method`Item`.get_secret].
+             * If {@link Secret.SearchFlags.LOAD_SECRETS} is set in `flags`, then the items will have
+             * their secret values loaded and available via {@link Item.get_secret}.
              *
              * This function returns immediately and completes asynchronously.
              * @param schema the schema for the attributes
@@ -1387,16 +1456,16 @@ declare module 'gi://Secret?version=1' {
              * Search for items matching the `attributes` in the `collection`.
              * The `attributes` should be a table of string keys and string values.
              *
-             * If %SECRET_SEARCH_ALL is set in `flags,` then all the items matching the
+             * If {@link Secret.SearchFlags.ALL} is set in `flags`, then all the items matching the
              * search will be returned. Otherwise only the first item will be returned.
              * This is almost always the unlocked item that was most recently stored.
              *
-             * If %SECRET_SEARCH_UNLOCK is set in `flags,` then items will be unlocked
+             * If {@link Secret.SearchFlags.UNLOCK} is set in `flags`, then items will be unlocked
              * if necessary. In either case, locked and unlocked items will match the
              * search and be returned. If the unlock fails, the search does not fail.
              *
-             * If %SECRET_SEARCH_LOAD_SECRETS is set in `flags,` then the items will have
-             * their secret values loaded and available via [method`Item`.get_secret].
+             * If {@link Secret.SearchFlags.LOAD_SECRETS} is set in `flags`, then the items will have
+             * their secret values loaded and available via {@link Item.get_secret}.
              *
              * This function may block indefinitely. Use the asynchronous version
              * in user interface threads.
@@ -1462,89 +1531,87 @@ declare module 'gi://Secret?version=1' {
              * @returns whether the change was successful or not
              */
             set_label_sync(label: string, cancellable?: Gio.Cancellable | null): boolean;
-
-            // Inherited methods
             /**
              * Starts asynchronous initialization of the object implementing the
              * interface. This must be done before any real use of the object after
-             * initial construction. If the object also implements #GInitable you can
-             * optionally call g_initable_init() instead.
+             * initial construction. If the object also implements {@link Gio.Initable} you can
+             * optionally call `g_initable_init()` instead.
              *
              * This method is intended for language bindings. If writing in C,
-             * g_async_initable_new_async() should typically be used instead.
+             * `g_async_initable_new_async()` should typically be used instead.
              *
              * When the initialization is finished, `callback` will be called. You can
-             * then call g_async_initable_init_finish() to get the result of the
+             * then call `g_async_initable_init_finish()` to get the result of the
              * initialization.
              *
              * Implementations may also support cancellation. If `cancellable` is not
-             * %NULL, then initialization can be cancelled by triggering the cancellable
+             * `null`, then initialization can be cancelled by triggering the cancellable
              * object from another thread. If the operation was cancelled, the error
-             * %G_IO_ERROR_CANCELLED will be returned. If `cancellable` is not %NULL, and
+             * {@link Gio.IOErrorEnum.CANCELLED} will be returned. If `cancellable` is not `null`, and
              * the object doesn't support cancellable initialization, the error
-             * %G_IO_ERROR_NOT_SUPPORTED will be returned.
+             * {@link Gio.IOErrorEnum.NOT_SUPPORTED} will be returned.
              *
-             * As with #GInitable, if the object is not initialized, or initialization
+             * As with {@link Gio.Initable}, if the object is not initialized, or initialization
              * returns with an error, then all operations on the object except
-             * g_object_ref() and g_object_unref() are considered to be invalid, and
-             * have undefined behaviour. They will often fail with g_critical() or
-             * g_warning(), but this must not be relied on.
+             * `g_object_ref()` and `g_object_unref()` are considered to be invalid, and
+             * have undefined behaviour. They will often fail with `g_critical()` or
+             * `g_warning()`, but this must not be relied on.
              *
-             * Callers should not assume that a class which implements #GAsyncInitable can
-             * be initialized multiple times; for more information, see g_initable_init().
+             * Callers should not assume that a class which implements {@link Gio.AsyncInitable} can
+             * be initialized multiple times; for more information, see `g_initable_init()`.
              * If a class explicitly supports being initialized multiple times,
-             * implementation requires yielding all subsequent calls to init_async() on the
+             * implementation requires yielding all subsequent calls to `init_async()` on the
              * results of the first call.
              *
-             * For classes that also support the #GInitable interface, the default
-             * implementation of this method will run the g_initable_init() function
+             * For classes that also support the {@link Gio.Initable} interface, the default
+             * implementation of this method will run the `g_initable_init()` function
              * in a thread, so if you want to support asynchronous initialization via
-             * threads, just implement the #GAsyncInitable interface without overriding
+             * threads, just implement the {@link Gio.AsyncInitable} interface without overriding
              * any interface methods.
              * @param io_priority the [I/O priority](iface.AsyncResult.html#io-priority) of the operation
-             * @param cancellable optional #GCancellable object, %NULL to ignore.
+             * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
              */
             init_async(io_priority: number, cancellable?: Gio.Cancellable | null): globalThis.Promise<boolean>;
             /**
              * Starts asynchronous initialization of the object implementing the
              * interface. This must be done before any real use of the object after
-             * initial construction. If the object also implements #GInitable you can
-             * optionally call g_initable_init() instead.
+             * initial construction. If the object also implements {@link Gio.Initable} you can
+             * optionally call `g_initable_init()` instead.
              *
              * This method is intended for language bindings. If writing in C,
-             * g_async_initable_new_async() should typically be used instead.
+             * `g_async_initable_new_async()` should typically be used instead.
              *
              * When the initialization is finished, `callback` will be called. You can
-             * then call g_async_initable_init_finish() to get the result of the
+             * then call `g_async_initable_init_finish()` to get the result of the
              * initialization.
              *
              * Implementations may also support cancellation. If `cancellable` is not
-             * %NULL, then initialization can be cancelled by triggering the cancellable
+             * `null`, then initialization can be cancelled by triggering the cancellable
              * object from another thread. If the operation was cancelled, the error
-             * %G_IO_ERROR_CANCELLED will be returned. If `cancellable` is not %NULL, and
+             * {@link Gio.IOErrorEnum.CANCELLED} will be returned. If `cancellable` is not `null`, and
              * the object doesn't support cancellable initialization, the error
-             * %G_IO_ERROR_NOT_SUPPORTED will be returned.
+             * {@link Gio.IOErrorEnum.NOT_SUPPORTED} will be returned.
              *
-             * As with #GInitable, if the object is not initialized, or initialization
+             * As with {@link Gio.Initable}, if the object is not initialized, or initialization
              * returns with an error, then all operations on the object except
-             * g_object_ref() and g_object_unref() are considered to be invalid, and
-             * have undefined behaviour. They will often fail with g_critical() or
-             * g_warning(), but this must not be relied on.
+             * `g_object_ref()` and `g_object_unref()` are considered to be invalid, and
+             * have undefined behaviour. They will often fail with `g_critical()` or
+             * `g_warning()`, but this must not be relied on.
              *
-             * Callers should not assume that a class which implements #GAsyncInitable can
-             * be initialized multiple times; for more information, see g_initable_init().
+             * Callers should not assume that a class which implements {@link Gio.AsyncInitable} can
+             * be initialized multiple times; for more information, see `g_initable_init()`.
              * If a class explicitly supports being initialized multiple times,
-             * implementation requires yielding all subsequent calls to init_async() on the
+             * implementation requires yielding all subsequent calls to `init_async()` on the
              * results of the first call.
              *
-             * For classes that also support the #GInitable interface, the default
-             * implementation of this method will run the g_initable_init() function
+             * For classes that also support the {@link Gio.Initable} interface, the default
+             * implementation of this method will run the `g_initable_init()` function
              * in a thread, so if you want to support asynchronous initialization via
-             * threads, just implement the #GAsyncInitable interface without overriding
+             * threads, just implement the {@link Gio.AsyncInitable} interface without overriding
              * any interface methods.
              * @param io_priority the [I/O priority](iface.AsyncResult.html#io-priority) of the operation
-             * @param cancellable optional #GCancellable object, %NULL to ignore.
-             * @param callback a #GAsyncReadyCallback to call when the request is satisfied
+             * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
+             * @param callback a {@link Gio.AsyncReadyCallback} to call when the request is satisfied
              */
             init_async(
                 io_priority: number,
@@ -1554,43 +1621,43 @@ declare module 'gi://Secret?version=1' {
             /**
              * Starts asynchronous initialization of the object implementing the
              * interface. This must be done before any real use of the object after
-             * initial construction. If the object also implements #GInitable you can
-             * optionally call g_initable_init() instead.
+             * initial construction. If the object also implements {@link Gio.Initable} you can
+             * optionally call `g_initable_init()` instead.
              *
              * This method is intended for language bindings. If writing in C,
-             * g_async_initable_new_async() should typically be used instead.
+             * `g_async_initable_new_async()` should typically be used instead.
              *
              * When the initialization is finished, `callback` will be called. You can
-             * then call g_async_initable_init_finish() to get the result of the
+             * then call `g_async_initable_init_finish()` to get the result of the
              * initialization.
              *
              * Implementations may also support cancellation. If `cancellable` is not
-             * %NULL, then initialization can be cancelled by triggering the cancellable
+             * `null`, then initialization can be cancelled by triggering the cancellable
              * object from another thread. If the operation was cancelled, the error
-             * %G_IO_ERROR_CANCELLED will be returned. If `cancellable` is not %NULL, and
+             * {@link Gio.IOErrorEnum.CANCELLED} will be returned. If `cancellable` is not `null`, and
              * the object doesn't support cancellable initialization, the error
-             * %G_IO_ERROR_NOT_SUPPORTED will be returned.
+             * {@link Gio.IOErrorEnum.NOT_SUPPORTED} will be returned.
              *
-             * As with #GInitable, if the object is not initialized, or initialization
+             * As with {@link Gio.Initable}, if the object is not initialized, or initialization
              * returns with an error, then all operations on the object except
-             * g_object_ref() and g_object_unref() are considered to be invalid, and
-             * have undefined behaviour. They will often fail with g_critical() or
-             * g_warning(), but this must not be relied on.
+             * `g_object_ref()` and `g_object_unref()` are considered to be invalid, and
+             * have undefined behaviour. They will often fail with `g_critical()` or
+             * `g_warning()`, but this must not be relied on.
              *
-             * Callers should not assume that a class which implements #GAsyncInitable can
-             * be initialized multiple times; for more information, see g_initable_init().
+             * Callers should not assume that a class which implements {@link Gio.AsyncInitable} can
+             * be initialized multiple times; for more information, see `g_initable_init()`.
              * If a class explicitly supports being initialized multiple times,
-             * implementation requires yielding all subsequent calls to init_async() on the
+             * implementation requires yielding all subsequent calls to `init_async()` on the
              * results of the first call.
              *
-             * For classes that also support the #GInitable interface, the default
-             * implementation of this method will run the g_initable_init() function
+             * For classes that also support the {@link Gio.Initable} interface, the default
+             * implementation of this method will run the `g_initable_init()` function
              * in a thread, so if you want to support asynchronous initialization via
-             * threads, just implement the #GAsyncInitable interface without overriding
+             * threads, just implement the {@link Gio.AsyncInitable} interface without overriding
              * any interface methods.
              * @param io_priority the [I/O priority](iface.AsyncResult.html#io-priority) of the operation
-             * @param cancellable optional #GCancellable object, %NULL to ignore.
-             * @param callback a #GAsyncReadyCallback to call when the request is satisfied
+             * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
+             * @param callback a {@link Gio.AsyncReadyCallback} to call when the request is satisfied
              */
             init_async(
                 io_priority: number,
@@ -1599,60 +1666,64 @@ declare module 'gi://Secret?version=1' {
             ): globalThis.Promise<boolean> | void;
             /**
              * Finishes asynchronous initialization and returns the result.
-             * See g_async_initable_init_async().
-             * @param res a #GAsyncResult.
-             * @returns %TRUE if successful. If an error has occurred, this function will return %FALSE and set @error appropriately if present.
+             * See `g_async_initable_init_async()`.
+             * @param res a {@link Gio.AsyncResult}.
+             * @returns `true` if successful. If an error has occurred, this function will return `false` and set `error` appropriately if present.
              */
             init_finish(res: Gio.AsyncResult): boolean;
             /**
              * Finishes the async construction for the various g_async_initable_new
-             * calls, returning the created object or %NULL on error.
-             * @param res the #GAsyncResult from the callback
-             * @returns a newly created #GObject,      or %NULL on error. Free with g_object_unref().
+             * calls, returning the created object or `null` on error.
+             * @param res the {@link Gio.AsyncResult} from the callback
+             * @returns a newly created {@link GObject.Object},      or `null` on error. Free with `g_object_unref()`.
              */
             new_finish(res: Gio.AsyncResult): Collection;
+            /**
+             * @param args
+             */
             // Conflicted with Gio.DBusProxy.new_finish
             new_finish(...args: never[]): any;
             /**
              * Starts asynchronous initialization of the object implementing the
              * interface. This must be done before any real use of the object after
-             * initial construction. If the object also implements #GInitable you can
-             * optionally call g_initable_init() instead.
+             * initial construction. If the object also implements {@link Gio.Initable} you can
+             * optionally call `g_initable_init()` instead.
              *
              * This method is intended for language bindings. If writing in C,
-             * g_async_initable_new_async() should typically be used instead.
+             * `g_async_initable_new_async()` should typically be used instead.
              *
              * When the initialization is finished, `callback` will be called. You can
-             * then call g_async_initable_init_finish() to get the result of the
+             * then call `g_async_initable_init_finish()` to get the result of the
              * initialization.
              *
              * Implementations may also support cancellation. If `cancellable` is not
-             * %NULL, then initialization can be cancelled by triggering the cancellable
+             * `null`, then initialization can be cancelled by triggering the cancellable
              * object from another thread. If the operation was cancelled, the error
-             * %G_IO_ERROR_CANCELLED will be returned. If `cancellable` is not %NULL, and
+             * {@link Gio.IOErrorEnum.CANCELLED} will be returned. If `cancellable` is not `null`, and
              * the object doesn't support cancellable initialization, the error
-             * %G_IO_ERROR_NOT_SUPPORTED will be returned.
+             * {@link Gio.IOErrorEnum.NOT_SUPPORTED} will be returned.
              *
-             * As with #GInitable, if the object is not initialized, or initialization
+             * As with {@link Gio.Initable}, if the object is not initialized, or initialization
              * returns with an error, then all operations on the object except
-             * g_object_ref() and g_object_unref() are considered to be invalid, and
-             * have undefined behaviour. They will often fail with g_critical() or
-             * g_warning(), but this must not be relied on.
+             * `g_object_ref()` and `g_object_unref()` are considered to be invalid, and
+             * have undefined behaviour. They will often fail with `g_critical()` or
+             * `g_warning()`, but this must not be relied on.
              *
-             * Callers should not assume that a class which implements #GAsyncInitable can
-             * be initialized multiple times; for more information, see g_initable_init().
+             * Callers should not assume that a class which implements {@link Gio.AsyncInitable} can
+             * be initialized multiple times; for more information, see `g_initable_init()`.
              * If a class explicitly supports being initialized multiple times,
-             * implementation requires yielding all subsequent calls to init_async() on the
+             * implementation requires yielding all subsequent calls to `init_async()` on the
              * results of the first call.
              *
-             * For classes that also support the #GInitable interface, the default
-             * implementation of this method will run the g_initable_init() function
+             * For classes that also support the {@link Gio.Initable} interface, the default
+             * implementation of this method will run the `g_initable_init()` function
              * in a thread, so if you want to support asynchronous initialization via
-             * threads, just implement the #GAsyncInitable interface without overriding
+             * threads, just implement the {@link Gio.AsyncInitable} interface without overriding
              * any interface methods.
              * @param io_priority the [I/O priority](iface.AsyncResult.html#io-priority) of the operation
-             * @param cancellable optional #GCancellable object, %NULL to ignore.
-             * @param callback a #GAsyncReadyCallback to call when the request is satisfied
+             * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
+             * @param callback a {@link Gio.AsyncReadyCallback} to call when the request is satisfied
+             * @virtual
              */
             vfunc_init_async(
                 io_priority: number,
@@ -1661,80 +1732,84 @@ declare module 'gi://Secret?version=1' {
             ): void;
             /**
              * Finishes asynchronous initialization and returns the result.
-             * See g_async_initable_init_async().
-             * @param res a #GAsyncResult.
+             * See `g_async_initable_init_async()`.
+             * @param res a {@link Gio.AsyncResult}.
+             * @virtual
              */
             vfunc_init_finish(res: Gio.AsyncResult): boolean;
             /**
-             * Gets the #GDBusObject that `interface_` belongs to, if any.
-             * @returns A #GDBusObject or %NULL. The returned reference should be freed with g_object_unref().
+             * Gets the {@link Gio.DBusObject} that `interface_` belongs to, if any.
+             * @returns A {@link Gio.DBusObject} or `null`. The returned reference should be freed with `g_object_unref()`.
              */
             get_object(): Gio.DBusObject | null;
             /**
              * Gets D-Bus introspection information for the D-Bus interface
              * implemented by `interface_`.
              *
-             * This can return %NULL if no #GDBusInterfaceInfo was provided during
+             * This can return `null` if no {@link Gio.DBusInterfaceInfo} was provided during
              * construction of `interface_` and is also not made available otherwise.
-             * For example, #GDBusProxy implements #GDBusInterface but allows for a %NULL
-             * #GDBusInterfaceInfo.
-             * @returns A #GDBusInterfaceInfo. Do not free.
+             * For example, {@link Gio.DBusProxy} implements {@link Gio.DBusInterface} but allows for a `null`
+             * {@link Gio.DBusInterfaceInfo}.
+             * @returns A {@link Gio.DBusInterfaceInfo}. Do not free.
              */
             get_info(): Gio.DBusInterfaceInfo | null;
             /**
-             * Sets the #GDBusObject for `interface_` to `object`.
+             * Sets the {@link Gio.DBusObject} for `interface_` to `object`.
              *
              * Note that `interface_` will hold a weak reference to `object`.
-             * @param object A #GDBusObject or %NULL.
+             * @param object A {@link Gio.DBusObject} or `null`.
              */
             set_object(object?: Gio.DBusObject | null): void;
             /**
-             * Gets the #GDBusObject that `interface_` belongs to, if any.
+             * Gets the {@link Gio.DBusObject} that `interface_` belongs to, if any.
+             * @virtual
              */
             vfunc_dup_object(): Gio.DBusObject | null;
             /**
              * Gets D-Bus introspection information for the D-Bus interface
              * implemented by `interface_`.
              *
-             * This can return %NULL if no #GDBusInterfaceInfo was provided during
+             * This can return `null` if no {@link Gio.DBusInterfaceInfo} was provided during
              * construction of `interface_` and is also not made available otherwise.
-             * For example, #GDBusProxy implements #GDBusInterface but allows for a %NULL
-             * #GDBusInterfaceInfo.
+             * For example, {@link Gio.DBusProxy} implements {@link Gio.DBusInterface} but allows for a `null`
+             * {@link Gio.DBusInterfaceInfo}.
+             * @virtual
              */
             vfunc_get_info(): Gio.DBusInterfaceInfo | null;
             /**
-             * Sets the #GDBusObject for `interface_` to `object`.
+             * Sets the {@link Gio.DBusObject} for `interface_` to `object`.
              *
              * Note that `interface_` will hold a weak reference to `object`.
-             * @param object A #GDBusObject or %NULL.
+             * @param object A {@link Gio.DBusObject} or `null`.
+             * @virtual
              */
             vfunc_set_object(object?: Gio.DBusObject | null): void;
             /**
              * Initializes the object implementing the interface.
              *
              * This method is intended for language bindings. If writing in C,
-             * g_initable_new() should typically be used instead.
+             * `g_initable_new()` should typically be used instead.
              *
              * The object must be initialized before any real use after initial
-             * construction, either with this function or g_async_initable_init_async().
+             * construction, either with this function or `g_async_initable_init_async()`.
              *
-             * Implementations may also support cancellation. If `cancellable` is not %NULL,
+             * Implementations may also support cancellation. If `cancellable` is not `null`,
              * then initialization can be cancelled by triggering the cancellable object
              * from another thread. If the operation was cancelled, the error
-             * %G_IO_ERROR_CANCELLED will be returned. If `cancellable` is not %NULL and
+             * {@link Gio.IOErrorEnum.CANCELLED} will be returned. If `cancellable` is not `null` and
              * the object doesn't support cancellable initialization the error
-             * %G_IO_ERROR_NOT_SUPPORTED will be returned.
+             * {@link Gio.IOErrorEnum.NOT_SUPPORTED} will be returned.
              *
              * If the object is not initialized, or initialization returns with an
-             * error, then all operations on the object except g_object_ref() and
-             * g_object_unref() are considered to be invalid, and have undefined
-             * behaviour. See the [description][iface`Gio`.Initable#description] for more details.
+             * error, then all operations on the object except `g_object_ref()` and
+             * `g_object_unref()` are considered to be invalid, and have undefined
+             * behaviour. See the [description][iface@Gio.Initable#description] for more details.
              *
-             * Callers should not assume that a class which implements #GInitable can be
+             * Callers should not assume that a class which implements {@link Gio.Initable} can be
              * initialized multiple times, unless the class explicitly documents itself as
-             * supporting this. Generally, a class’ implementation of init() can assume
+             * supporting this. Generally, a class’ implementation of `init()` can assume
              * (and assert) that it will only be called once. Previously, this documentation
-             * recommended all #GInitable implementations should be idempotent; that
+             * recommended all {@link Gio.Initable} implementations should be idempotent; that
              * recommendation was relaxed in GLib 2.54.
              *
              * If a class explicitly supports being initialized multiple times, it is
@@ -1744,40 +1819,40 @@ declare module 'gi://Secret?version=1' {
              *
              * One reason why a class might need to support idempotent initialization is if
              * it is designed to be used via the singleton pattern, with a
-             * #GObjectClass.constructor that sometimes returns an existing instance.
-             * In this pattern, a caller would expect to be able to call g_initable_init()
-             * on the result of g_object_new(), regardless of whether it is in fact a new
+             * {@link GObject.ObjectClass}.constructor that sometimes returns an existing instance.
+             * In this pattern, a caller would expect to be able to call `g_initable_init()`
+             * on the result of `g_object_new()`, regardless of whether it is in fact a new
              * instance.
-             * @param cancellable optional #GCancellable object, %NULL to ignore.
-             * @returns %TRUE if successful. If an error has occurred, this function will     return %FALSE and set @error appropriately if present.
+             * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
+             * @returns `true` if successful. If an error has occurred, this function will     return `false` and set `error` appropriately if present.
              */
             init(cancellable?: Gio.Cancellable | null): boolean;
             /**
              * Initializes the object implementing the interface.
              *
              * This method is intended for language bindings. If writing in C,
-             * g_initable_new() should typically be used instead.
+             * `g_initable_new()` should typically be used instead.
              *
              * The object must be initialized before any real use after initial
-             * construction, either with this function or g_async_initable_init_async().
+             * construction, either with this function or `g_async_initable_init_async()`.
              *
-             * Implementations may also support cancellation. If `cancellable` is not %NULL,
+             * Implementations may also support cancellation. If `cancellable` is not `null`,
              * then initialization can be cancelled by triggering the cancellable object
              * from another thread. If the operation was cancelled, the error
-             * %G_IO_ERROR_CANCELLED will be returned. If `cancellable` is not %NULL and
+             * {@link Gio.IOErrorEnum.CANCELLED} will be returned. If `cancellable` is not `null` and
              * the object doesn't support cancellable initialization the error
-             * %G_IO_ERROR_NOT_SUPPORTED will be returned.
+             * {@link Gio.IOErrorEnum.NOT_SUPPORTED} will be returned.
              *
              * If the object is not initialized, or initialization returns with an
-             * error, then all operations on the object except g_object_ref() and
-             * g_object_unref() are considered to be invalid, and have undefined
-             * behaviour. See the [description][iface`Gio`.Initable#description] for more details.
+             * error, then all operations on the object except `g_object_ref()` and
+             * `g_object_unref()` are considered to be invalid, and have undefined
+             * behaviour. See the [description][iface@Gio.Initable#description] for more details.
              *
-             * Callers should not assume that a class which implements #GInitable can be
+             * Callers should not assume that a class which implements {@link Gio.Initable} can be
              * initialized multiple times, unless the class explicitly documents itself as
-             * supporting this. Generally, a class’ implementation of init() can assume
+             * supporting this. Generally, a class’ implementation of `init()` can assume
              * (and assert) that it will only be called once. Previously, this documentation
-             * recommended all #GInitable implementations should be idempotent; that
+             * recommended all {@link Gio.Initable} implementations should be idempotent; that
              * recommendation was relaxed in GLib 2.54.
              *
              * If a class explicitly supports being initialized multiple times, it is
@@ -1787,11 +1862,12 @@ declare module 'gi://Secret?version=1' {
              *
              * One reason why a class might need to support idempotent initialization is if
              * it is designed to be used via the singleton pattern, with a
-             * #GObjectClass.constructor that sometimes returns an existing instance.
-             * In this pattern, a caller would expect to be able to call g_initable_init()
-             * on the result of g_object_new(), regardless of whether it is in fact a new
+             * {@link GObject.ObjectClass}.constructor that sometimes returns an existing instance.
+             * In this pattern, a caller would expect to be able to call `g_initable_init()`
+             * on the result of `g_object_new()`, regardless of whether it is in fact a new
              * instance.
-             * @param cancellable optional #GCancellable object, %NULL to ignore.
+             * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
+             * @virtual
              */
             vfunc_init(cancellable?: Gio.Cancellable | null): boolean;
             /**
@@ -1807,32 +1883,32 @@ declare module 'gi://Secret?version=1' {
              * ```
              *
              *
-             * Will result in the "sensitive" property of the widget #GObject instance to be
-             * updated with the same value of the "active" property of the action #GObject
+             * Will result in the "sensitive" property of the widget {@link GObject.Object} instance to be
+             * updated with the same value of the "active" property of the action {@link GObject.Object}
              * instance.
              *
-             * If `flags` contains %G_BINDING_BIDIRECTIONAL then the binding will be mutual:
+             * If `flags` contains {@link GObject.BindingFlags.BIDIRECTIONAL} then the binding will be mutual:
              * if `target_property` on `target` changes then the `source_property` on `source`
              * will be updated as well.
              *
              * The binding will automatically be removed when either the `source` or the
              * `target` instances are finalized. To remove the binding without affecting the
-             * `source` and the `target` you can just call g_object_unref() on the returned
-             * #GBinding instance.
+             * `source` and the `target` you can just call `g_object_unref()` on the returned
+             * {@link GObject.Binding} instance.
              *
-             * Removing the binding by calling g_object_unref() on it must only be done if
+             * Removing the binding by calling `g_object_unref()` on it must only be done if
              * the binding, `source` and `target` are only used from a single thread and it
              * is clear that both `source` and `target` outlive the binding. Especially it
              * is not safe to rely on this if the binding, `source` or `target` can be
              * finalized from different threads. Keep another reference to the binding and
-             * use g_binding_unbind() instead to be on the safe side.
+             * use `g_binding_unbind()` instead to be on the safe side.
              *
-             * A #GObject can have multiple bindings.
-             * @param source_property the property on @source to bind
-             * @param target the target #GObject
-             * @param target_property the property on @target to bind
-             * @param flags flags to pass to #GBinding
-             * @returns the #GBinding instance representing the     binding between the two #GObject instances. The binding is released     whenever the #GBinding reference count reaches zero.
+             * A {@link GObject.Object} can have multiple bindings.
+             * @param source_property the property on `source` to bind
+             * @param target the target {@link GObject.Object}
+             * @param target_property the property on `target` to bind
+             * @param flags flags to pass to {@link GObject.Binding}
+             * @returns the {@link GObject.Binding} instance representing the     binding between the two {@link GObject.Object} instances. The binding is released     whenever the {@link GObject.Binding} reference count reaches zero.
              */
             bind_property(
                 source_property: string,
@@ -1841,39 +1917,39 @@ declare module 'gi://Secret?version=1' {
                 flags: GObject.BindingFlags | null,
             ): GObject.Binding;
             /**
-             * Complete version of g_object_bind_property().
+             * Complete version of `g_object_bind_property()`.
              *
              * Creates a binding between `source_property` on `source` and `target_property`
-             * on `target,` allowing you to set the transformation functions to be used by
+             * on `target`, allowing you to set the transformation functions to be used by
              * the binding.
              *
-             * If `flags` contains %G_BINDING_BIDIRECTIONAL then the binding will be mutual:
+             * If `flags` contains {@link GObject.BindingFlags.BIDIRECTIONAL} then the binding will be mutual:
              * if `target_property` on `target` changes then the `source_property` on `source`
              * will be updated as well. The `transform_from` function is only used in case
              * of bidirectional bindings, otherwise it will be ignored
              *
              * The binding will automatically be removed when either the `source` or the
              * `target` instances are finalized. This will release the reference that is
-             * being held on the #GBinding instance; if you want to hold on to the
-             * #GBinding instance, you will need to hold a reference to it.
+             * being held on the {@link GObject.Binding} instance; if you want to hold on to the
+             * {@link GObject.Binding} instance, you will need to hold a reference to it.
              *
-             * To remove the binding, call g_binding_unbind().
+             * To remove the binding, call `g_binding_unbind()`.
              *
-             * A #GObject can have multiple bindings.
+             * A {@link GObject.Object} can have multiple bindings.
              *
              * The same `user_data` parameter will be used for both `transform_to`
              * and `transform_from` transformation functions; the `notify` function will
              * be called once, when the binding is removed. If you need different data
              * for each transformation function, please use
-             * g_object_bind_property_with_closures() instead.
-             * @param source_property the property on @source to bind
-             * @param target the target #GObject
-             * @param target_property the property on @target to bind
-             * @param flags flags to pass to #GBinding
-             * @param transform_to the transformation function     from the @source to the @target, or %NULL to use the default
-             * @param transform_from the transformation function     from the @target to the @source, or %NULL to use the default
-             * @param notify a function to call when disposing the binding, to free     resources used by the transformation functions, or %NULL if not required
-             * @returns the #GBinding instance representing the     binding between the two #GObject instances. The binding is released     whenever the #GBinding reference count reaches zero.
+             * `g_object_bind_property_with_closures()` instead.
+             * @param source_property the property on `source` to bind
+             * @param target the target {@link GObject.Object}
+             * @param target_property the property on `target` to bind
+             * @param flags flags to pass to {@link GObject.Binding}
+             * @param transform_to the transformation function     from the `source` to the `target`, or `null` to use the default
+             * @param transform_from the transformation function     from the `target` to the `source`, or `null` to use the default
+             * @param notify a function to call when disposing the binding, to free     resources used by the transformation functions, or `null` if not required
+             * @returns the {@link GObject.Binding} instance representing the     binding between the two {@link GObject.Object} instances. The binding is released     whenever the {@link GObject.Binding} reference count reaches zero.
              */
             bind_property_full(
                 source_property: string,
@@ -1884,13 +1960,16 @@ declare module 'gi://Secret?version=1' {
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
             ): GObject.Binding;
+            /**
+             * @param args
+             */
             // Conflicted with GObject.Object.bind_property_full
             bind_property_full(...args: never[]): any;
             /**
-             * This function is intended for #GObject implementations to re-enforce
+             * This function is intended for {@link GObject.Object} implementations to re-enforce
              * a [floating](floating-refs.html) object reference. Doing this is seldom
-             * required: all #GInitiallyUnowneds are created with a floating reference
-             * which usually just needs to be sunken by calling g_object_ref_sink().
+             * required: all `GInitiallyUnowneds` are created with a floating reference
+             * which usually just needs to be sunken by calling `g_object_ref_sink()`.
              */
             force_floating(): void;
             /**
@@ -1898,7 +1977,7 @@ declare module 'gi://Secret?version=1' {
              * non-zero, the emission of "notify" signals on `object` is
              * stopped. The signals are queued until the freeze count is decreased
              * to zero. Duplicate notifications are squashed so that at most one
-             * #GObject::notify signal is emitted for each property modified while the
+             * {@link GObject.Object.SignalSignatures.notify | GObject.Object::notify} signal is emitted for each property modified while the
              * object is frozen.
              *
              * This is necessary for accessors that modify multiple properties to prevent
@@ -1906,9 +1985,9 @@ declare module 'gi://Secret?version=1' {
              */
             freeze_notify(): void;
             /**
-             * Gets a named field from the objects table of associations (see g_object_set_data()).
+             * Gets a named field from the objects table of associations (see `g_object_set_data()`).
              * @param key name of the key for that association
-             * @returns the data if found,          or %NULL if no such data exists.
+             * @returns the data if found,          or `null` if no such data exists.
              */
             get_data(key: string): any | null;
             /**
@@ -1928,9 +2007,9 @@ declare module 'gi://Secret?version=1' {
             get_property(property_name: string, value: GObject.Value | any): any;
             /**
              * This function gets back user data pointers stored via
-             * g_object_set_qdata().
-             * @param quark A #GQuark, naming the user data pointer
-             * @returns The user data pointer set, or %NULL
+             * `g_object_set_qdata()`.
+             * @param quark A {@link GLib.Quark}, naming the user data pointer
+             * @returns The user data pointer set, or `null`
              */
             get_qdata(quark: GLib.Quark): any | null;
             /**
@@ -1944,33 +2023,33 @@ declare module 'gi://Secret?version=1' {
             getv(names: string[], values: (GObject.Value | any)[]): void;
             /**
              * Checks whether `object` has a [floating](floating-refs.html) reference.
-             * @returns %TRUE if @object has a floating reference
+             * @returns `true` if `object` has a floating reference
              */
             is_floating(): boolean;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
              * When possible, eg. when signaling a property change from within the class
-             * that registered the property, you should use g_object_notify_by_pspec()
+             * that registered the property, you should use `g_object_notify_by_pspec()`
              * instead.
              *
              * Note that emission of the notify signal may be blocked with
-             * g_object_freeze_notify(). In this case, the signal emissions are queued
-             * and will be emitted (in reverse order) when g_object_thaw_notify() is
+             * `g_object_freeze_notify()`. In this case, the signal emissions are queued
+             * and will be emitted (in reverse order) when `g_object_thaw_notify()` is
              * called.
-             * @param property_name the name of a property installed on the class of @object.
+             * @param property_name the name of a property installed on the class of `object`.
              */
             notify(property_name: string): void;
             /**
              * Emits a "notify" signal for the property specified by `pspec` on `object`.
              *
              * This function omits the property name lookup, hence it is faster than
-             * g_object_notify().
+             * `g_object_notify()`.
              *
-             * One way to avoid using g_object_notify() from within the
-             * class that registered the properties, and using g_object_notify_by_pspec()
+             * One way to avoid using `g_object_notify()` from within the
+             * class that registered the properties, and using `g_object_notify_by_pspec()`
              * instead, is to store the GParamSpec used with
-             * g_object_class_install_property() inside a static array, e.g.:
+             * `g_object_class_install_property()` inside a static array, e.g.:
              *
              *
              * ```c
@@ -2003,21 +2082,21 @@ declare module 'gi://Secret?version=1' {
              *   g_object_notify_by_pspec (self, properties[PROP_FOO]);
              * ```
              *
-             * @param pspec the #GParamSpec of a property installed on the class of @object.
+             * @param pspec the {@link GObject.ParamSpec} of a property installed on the class of `object`.
              */
             notify_by_pspec(pspec: GObject.ParamSpec): void;
             /**
              * Increases the reference count of `object`.
              *
              * Since GLib 2.56, if `GLIB_VERSION_MAX_ALLOWED` is 2.56 or greater, the type
-             * of `object` will be propagated to the return type (using the GCC typeof()
+             * of `object` will be propagated to the return type (using the GCC `typeof()`
              * extension), so any casting the caller needs to do on the return type must be
              * explicit.
-             * @returns the same @object
+             * @returns the same `object`
              */
             ref(): GObject.Object;
             /**
-             * Increase the reference count of `object,` and possibly remove the
+             * Increase the reference count of `object`, and possibly remove the
              * [floating](floating-refs.html) reference, if `object` has a floating reference.
              *
              * In other words, if the object is floating, then this call "assumes
@@ -2027,8 +2106,8 @@ declare module 'gi://Secret?version=1' {
              * adds a new normal reference increasing the reference count by one.
              *
              * Since GLib 2.56, the type of `object` will be propagated to the return type
-             * under the same conditions as for g_object_ref().
-             * @returns @object
+             * under the same conditions as for `g_object_ref()`.
+             * @returns `object`
              */
             ref_sink(): GObject.Object;
             /**
@@ -2045,10 +2124,10 @@ declare module 'gi://Secret?version=1' {
              * If the object already had an association with that name,
              * the old association will be destroyed.
              *
-             * Internally, the `key` is converted to a #GQuark using g_quark_from_string().
+             * Internally, the `key` is converted to a {@link GLib.Quark} using `g_quark_from_string()`.
              * This means a copy of `key` is kept permanently (even after `object` has been
              * finalized) — so it is recommended to only use a small, bounded set of values
-             * for `key` in your program, to avoid the #GQuark storage growing unbounded.
+             * for `key` in your program, to avoid the {@link GLib.Quark} storage growing unbounded.
              * @param key name of the key
              * @param data data to associate with that key
              */
@@ -2063,13 +2142,13 @@ declare module 'gi://Secret?version=1' {
              * Remove a specified datum from the object's data associations,
              * without invoking the association's destroy handler.
              * @param key name of the key
-             * @returns the data if found, or %NULL          if no such data exists.
+             * @returns the data if found, or `null`          if no such data exists.
              */
             steal_data(key: string): any | null;
             /**
              * This function gets back user data pointers stored via
-             * g_object_set_qdata() and removes the `data` from object
-             * without invoking its destroy() function (if any was
+             * `g_object_set_qdata()` and removes the `data` from object
+             * without invoking its `destroy()` function (if any was
              * set).
              * Usually, calling this function is only required to update
              * user data pointers with a destroy notifier, for example:
@@ -2100,21 +2179,21 @@ declare module 'gi://Secret?version=1' {
              * }
              * ```
              *
-             * Using g_object_get_qdata() in the above example, instead of
-             * g_object_steal_qdata() would have left the destroy function set,
+             * Using `g_object_get_qdata()` in the above example, instead of
+             * `g_object_steal_qdata()` would have left the destroy function set,
              * and thus the partial string list would have been freed upon
-             * g_object_set_qdata_full().
-             * @param quark A #GQuark, naming the user data pointer
-             * @returns The user data pointer set, or %NULL
+             * `g_object_set_qdata_full()`.
+             * @param quark A {@link GLib.Quark}, naming the user data pointer
+             * @returns The user data pointer set, or `null`
              */
             steal_qdata(quark: GLib.Quark): any | null;
             /**
              * Reverts the effect of a previous call to
-             * g_object_freeze_notify(). The freeze count is decreased on `object`
+             * `g_object_freeze_notify()`. The freeze count is decreased on `object`
              * and when it reaches zero, queued "notify" signals are emitted.
              *
              * Duplicate notifications for each property are squashed so that at most one
-             * #GObject::notify signal is emitted for each property, in the reverse order
+             * {@link GObject.Object.SignalSignatures.notify | GObject.Object::notify} signal is emitted for each property, in the reverse order
              * in which they have been queued.
              *
              * It is an error to call this function when the freeze count is zero.
@@ -2124,33 +2203,34 @@ declare module 'gi://Secret?version=1' {
              * Decreases the reference count of `object`. When its reference count
              * drops to 0, the object is finalized (i.e. its memory is freed).
              *
-             * If the pointer to the #GObject may be reused in future (for example, if it is
+             * If the pointer to the {@link GObject.Object} may be reused in future (for example, if it is
              * an instance variable of another object), it is recommended to clear the
-             * pointer to %NULL rather than retain a dangling pointer to a potentially
-             * invalid #GObject instance. Use g_clear_object() for this.
+             * pointer to `null` rather than retain a dangling pointer to a potentially
+             * invalid {@link GObject.Object} instance. Use `g_clear_object()` for this.
              */
             unref(): void;
             /**
              * This function essentially limits the life time of the `closure` to
              * the life time of the object. That is, when the object is finalized,
-             * the `closure` is invalidated by calling g_closure_invalidate() on
+             * the `closure` is invalidated by calling `g_closure_invalidate()` on
              * it, in order to prevent invocations of the closure with a finalized
-             * (nonexisting) object. Also, g_object_ref() and g_object_unref() are
-             * added as marshal guards to the `closure,` to ensure that an extra
+             * (nonexisting) object. Also, `g_object_ref()` and `g_object_unref()` are
+             * added as marshal guards to the `closure`, to ensure that an extra
              * reference count is held on `object` during invocation of the
              * `closure`.  Usually, this function will be called on closures that
              * use this `object` as closure data.
-             * @param closure #GClosure to watch
+             * @param closure {@link GObject.Closure} to watch
              */
             watch_closure(closure: GObject.Closure): void;
             /**
-             * the `constructed` function is called by g_object_new() as the
+             * the `constructed` function is called by `g_object_new()` as the
              *  final step of the object creation process.  At the point of the call, all
              *  construction properties have been set on the object.  The purpose of this
              *  call is to allow for object initialisation steps that can only be performed
              *  after construction properties have been set.  `constructed` implementors
              *  should chain up to the `constructed` call of their parent class to allow it
              *  to complete its initialisation.
+             * @virtual
              */
             vfunc_constructed(): void;
             /**
@@ -2159,6 +2239,7 @@ declare module 'gi://Secret?version=1' {
              *  needed.
              * @param n_pspecs
              * @param pspecs
+             * @virtual
              */
             vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void;
             /**
@@ -2167,12 +2248,14 @@ declare module 'gi://Secret?version=1' {
              *  invocations still work. It may be run multiple times (due to reference
              *  loops). Before returning, `dispose` should chain up to the `dispose` method
              *  of the parent class.
+             * @virtual
              */
             vfunc_dispose(): void;
             /**
              * instance finalization function, should finish the finalization of
              *  the instance begun in `dispose` and chain up to the `finalize` method of the
              *  parent class.
+             * @virtual
              */
             vfunc_finalize(): void;
             /**
@@ -2181,20 +2264,22 @@ declare module 'gi://Secret?version=1' {
              * @param property_id
              * @param value
              * @param pspec
+             * @virtual
              */
             vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
              * When possible, eg. when signaling a property change from within the class
-             * that registered the property, you should use g_object_notify_by_pspec()
+             * that registered the property, you should use `g_object_notify_by_pspec()`
              * instead.
              *
              * Note that emission of the notify signal may be blocked with
-             * g_object_freeze_notify(). In this case, the signal emissions are queued
-             * and will be emitted (in reverse order) when g_object_thaw_notify() is
+             * `g_object_freeze_notify()`. In this case, the signal emissions are queued
+             * and will be emitted (in reverse order) when `g_object_thaw_notify()` is
              * called.
              * @param pspec
+             * @virtual
              */
             vfunc_notify(pspec: GObject.ParamSpec): void;
             /**
@@ -2206,6 +2291,7 @@ declare module 'gi://Secret?version=1' {
              * @param property_id
              * @param value
              * @param pspec
+             * @virtual
              */
             vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
             /**
@@ -2274,24 +2360,25 @@ declare module 'gi://Secret?version=1' {
         /**
          * A secret item
          *
-         * #SecretItem represents a secret item stored in the Secret Service.
+         * {@link Secret.Item} represents a secret item stored in the Secret Service.
          *
-         * Each item has a value, represented by a [struct`Value]`, which can be
-         * retrieved by [method`Item`.get_secret] or set by [method`Item`.set_secret].
+         * Each item has a value, represented by a {@link Value}, which can be
+         * retrieved by {@link Item.get_secret} or set by {@link Item.set_secret}.
          * The item is only available when the item is not locked.
          *
-         * Items can be locked or unlocked using the [method`Service`.lock] or
-         * [method`Service`.unlock] functions. The Secret Service may not be able to
+         * Items can be locked or unlocked using the {@link Service.lock} or
+         * {@link Service.unlock} functions. The Secret Service may not be able to
          * unlock individual items, and may unlock an entire collection when a single
          * item is unlocked.
          *
          * Each item has a set of attributes, which are used to locate the item later.
          * These are not stored or transferred in a secure manner. Each attribute has
-         * a string name and a string value. Use [method`Service`.search] to search for
-         * items based on their attributes, and [method`Item`.set_attributes] to change
+         * a string name and a string value. Use {@link Service.search} to search for
+         * items based on their attributes, and {@link Item.set_attributes} to change
          * the attributes associated with an item.
          *
-         * Items can be created with [func`Item`.create] or [method`Service`.store].
+         * Items can be created with {@link Item.create} or {@link Service.store}.
+         * @gir-type Class
          */
         class Item
             extends Gio.DBusProxy
@@ -2304,6 +2391,7 @@ declare module 'gi://Secret?version=1' {
             /**
              * A set of flags describing which parts of the secret item have
              * been initialized.
+             * @construct-only
              */
             get flags(): ItemFlags;
             /**
@@ -2312,13 +2400,15 @@ declare module 'gi://Secret?version=1' {
              * An item may not be independently lockable separate from other items in
              * its collection.
              *
-             * To lock or unlock a item use the [method`Service`.lock] or
-             * [method`Service`.unlock] functions.
+             * To lock or unlock a item use the {@link Service.lock} or
+             * {@link Service.unlock} functions.
+             * @read-only
              */
             get locked(): boolean;
             /**
-             * The [class`Service]` object that this item is associated with and
+             * The {@link Service} object that this item is associated with and
              * uses to interact with the actual D-Bus Secret Service.
+             * @construct-only
              */
             get service(): Service;
 
@@ -2339,16 +2429,19 @@ declare module 'gi://Secret?version=1' {
 
             // Signals
 
+            /** @signal */
             connect<K extends keyof Item.SignalSignatures>(
                 signal: K,
                 callback: GObject.SignalCallback<this, Item.SignalSignatures[K]>,
             ): number;
             connect(signal: string, callback: (...args: any[]) => any): number;
+            /** @signal */
             connect_after<K extends keyof Item.SignalSignatures>(
                 signal: K,
                 callback: GObject.SignalCallback<this, Item.SignalSignatures[K]>,
             ): number;
             connect_after(signal: string, callback: (...args: any[]) => any): number;
+            /** @signal */
             emit<K extends keyof Item.SignalSignatures>(
                 signal: K,
                 ...args: GObject.GjsParameters<Item.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never
@@ -2360,12 +2453,12 @@ declare module 'gi://Secret?version=1' {
             /**
              * Create a new item in the secret service.
              *
-             * If the `flags` contains %SECRET_ITEM_CREATE_REPLACE, then the secret
-             * service will search for an item matching the `attributes,` and update that item
+             * If the `flags` contains {@link Secret.ItemCreateFlags.REPLACE}, then the secret
+             * service will search for an item matching the `attributes`, and update that item
              * instead of creating a new one.
              *
              * This method may block indefinitely and should not be used in user interface
-             * threads. The secret service may prompt the user. [method`Service`.prompt]
+             * threads. The secret service may prompt the user. {@link Service.prompt}
              * will be used to handle any prompts that are required.
              * @param collection a secret collection to create this item in
              * @param schema the schema for the attributes
@@ -2394,12 +2487,12 @@ declare module 'gi://Secret?version=1' {
             /**
              * Create a new item in the secret service.
              *
-             * If the `flags` contains %SECRET_ITEM_CREATE_REPLACE, then the secret
-             * service will search for an item matching the `attributes,` and update that item
+             * If the `flags` contains {@link Secret.ItemCreateFlags.REPLACE}, then the secret
+             * service will search for an item matching the `attributes`, and update that item
              * instead of creating a new one.
              *
              * This method may block indefinitely and should not be used in user interface
-             * threads. The secret service may prompt the user. [method`Service`.prompt]
+             * threads. The secret service may prompt the user. {@link Service.prompt}
              * will be used to handle any prompts that are required.
              * @param collection a secret collection to create this item in
              * @param schema the schema for the attributes
@@ -2421,7 +2514,7 @@ declare module 'gi://Secret?version=1' {
             /**
              * Load the secret values for a secret item stored in the service.
              *
-             * The `items` must all have the same [property`Item:`service] property.
+             * The `items` must all have the same {@link Item.service} property.
              *
              * This function returns immediately and completes asynchronously.
              * @param items the items to retrieve secrets for
@@ -2444,7 +2537,7 @@ declare module 'gi://Secret?version=1' {
             /**
              * Load the secret values for a secret item stored in the service.
              *
-             * The `items` must all have the same [property`Item:`service] property.
+             * The `items` must all have the same {@link Item.service} property.
              *
              * This method may block indefinitely and should not be used in user interface
              * threads.
@@ -2461,7 +2554,7 @@ declare module 'gi://Secret?version=1' {
              * Delete this item.
              *
              * This method returns immediately and completes asynchronously. The secret
-             * service may prompt the user. [method`Service`.prompt] will be used to handle
+             * service may prompt the user. {@link Service.prompt} will be used to handle
              * any prompts that show up.
              * @param cancellable optional cancellation object
              */
@@ -2470,7 +2563,7 @@ declare module 'gi://Secret?version=1' {
              * Delete this item.
              *
              * This method returns immediately and completes asynchronously. The secret
-             * service may prompt the user. [method`Service`.prompt] will be used to handle
+             * service may prompt the user. {@link Service.prompt} will be used to handle
              * any prompts that show up.
              * @param cancellable optional cancellation object
              * @param callback called when the operation completes
@@ -2480,7 +2573,7 @@ declare module 'gi://Secret?version=1' {
              * Delete this item.
              *
              * This method returns immediately and completes asynchronously. The secret
-             * service may prompt the user. [method`Service`.prompt] will be used to handle
+             * service may prompt the user. {@link Service.prompt} will be used to handle
              * any prompts that show up.
              * @param cancellable optional cancellation object
              * @param callback called when the operation completes
@@ -2500,7 +2593,7 @@ declare module 'gi://Secret?version=1' {
              *
              * This method may block indefinitely and should not be used in user
              * interface threads. The secret service may prompt the user.
-             * [method`Service`.prompt] will be used to handle any prompts that show up.
+             * {@link Service.prompt} will be used to handle any prompts that show up.
              * @param cancellable optional cancellation object
              * @returns whether the item was successfully deleted or not
              */
@@ -2513,8 +2606,8 @@ declare module 'gi://Secret?version=1' {
              * or transferred securely by the secret service.
              *
              * Do not modify the attributes returned by this method. Use
-             * [method`Item`.set_attributes] instead.
-             * @returns a new reference   to the attributes, which should not be modified, and   released with [func@GLib.HashTable.unref]
+             * {@link Item.set_attributes} instead.
+             * @returns a new reference   to the attributes, which should not be modified, and   released with {@link GLib.HashTable.unref}
              */
             get_attributes(): GLib.HashTable<string, string>;
             /**
@@ -2526,19 +2619,22 @@ declare module 'gi://Secret?version=1' {
              */
             get_created(): number;
             /**
-             * Get the flags representing what features of the #SecretItem proxy
+             * Get the flags representing what features of the {@link Secret.Item} proxy
              * have been initialized.
              *
-             * Use [method`Item`.load_secret] to initialize further features
+             * Use {@link Item.load_secret} to initialize further features
              * and change the flags.
              * @returns the flags for features initialized
              */
             get_flags(): ItemFlags;
+            /**
+             * @param args
+             */
             // Conflicted with Gio.DBusProxy.get_flags
             get_flags(...args: never[]): any;
             /**
              * Get the label of this item.
-             * @returns the label, which should be freed with [func@GLib.free]
+             * @returns the label, which should be freed with {@link GLib.free}
              */
             get_label(): string;
             /**
@@ -2567,10 +2663,10 @@ declare module 'gi://Secret?version=1' {
              * Get the secret value of this item.
              *
              * If this item is locked or the secret has not yet been loaded then this will
-             * return %NULL.
+             * return `null`.
              *
-             * To load the secret call the [method`Item`.load_secret] method.
-             * @returns the secret value which should be   released with [method@Value.unref], or %NULL
+             * To load the secret call the {@link Item.load_secret} method.
+             * @returns the secret value which should be   released with {@link Value.unref}, or `null`
              */
             get_secret(): Value | null;
             /**
@@ -2623,7 +2719,7 @@ declare module 'gi://Secret?version=1' {
              * Complete asynchronous operation to load the secret value of this item.
              *
              * The newly loaded secret value can be accessed by calling
-             * [method`Item`.get_secret].
+             * {@link Item.get_secret}.
              * @param result asynchronous result passed to callback
              * @returns whether the secret item successfully loaded or not
              */
@@ -2842,116 +2938,120 @@ declare module 'gi://Secret?version=1' {
              * @returns whether the change was successful or not
              */
             set_secret_sync(value: Value, cancellable?: Gio.Cancellable | null): boolean;
-
-            // Inherited properties
             /**
              * The attributes set on this item.
              *
              * Attributes are used to locate an item. They are not guaranteed to be
              * stored or transferred securely.
+             * @since 0.19.0
+             * @category Inherited from Secret.Retrievable
              */
             get attributes(): GLib.HashTable<string, string>;
             set attributes(val: GLib.HashTable<string, string>);
             /**
              * The date and time (in seconds since the UNIX epoch) that this
              * item was created.
+             * @since 0.19.0
+             * @category Inherited from Secret.Retrievable
              */
             get created(): number;
             set created(val: number);
             /**
              * The human readable label for the item.
+             * @since 0.19.0
+             * @category Inherited from Secret.Retrievable
              */
             get label(): string;
             set label(val: string);
             /**
              * The date and time (in seconds since the UNIX epoch) that this
              * item was last modified.
+             * @since 0.19.0
+             * @category Inherited from Secret.Retrievable
              */
             get modified(): number;
             set modified(val: number);
-
-            // Inherited methods
             /**
              * Starts asynchronous initialization of the object implementing the
              * interface. This must be done before any real use of the object after
-             * initial construction. If the object also implements #GInitable you can
-             * optionally call g_initable_init() instead.
+             * initial construction. If the object also implements {@link Gio.Initable} you can
+             * optionally call `g_initable_init()` instead.
              *
              * This method is intended for language bindings. If writing in C,
-             * g_async_initable_new_async() should typically be used instead.
+             * `g_async_initable_new_async()` should typically be used instead.
              *
              * When the initialization is finished, `callback` will be called. You can
-             * then call g_async_initable_init_finish() to get the result of the
+             * then call `g_async_initable_init_finish()` to get the result of the
              * initialization.
              *
              * Implementations may also support cancellation. If `cancellable` is not
-             * %NULL, then initialization can be cancelled by triggering the cancellable
+             * `null`, then initialization can be cancelled by triggering the cancellable
              * object from another thread. If the operation was cancelled, the error
-             * %G_IO_ERROR_CANCELLED will be returned. If `cancellable` is not %NULL, and
+             * {@link Gio.IOErrorEnum.CANCELLED} will be returned. If `cancellable` is not `null`, and
              * the object doesn't support cancellable initialization, the error
-             * %G_IO_ERROR_NOT_SUPPORTED will be returned.
+             * {@link Gio.IOErrorEnum.NOT_SUPPORTED} will be returned.
              *
-             * As with #GInitable, if the object is not initialized, or initialization
+             * As with {@link Gio.Initable}, if the object is not initialized, or initialization
              * returns with an error, then all operations on the object except
-             * g_object_ref() and g_object_unref() are considered to be invalid, and
-             * have undefined behaviour. They will often fail with g_critical() or
-             * g_warning(), but this must not be relied on.
+             * `g_object_ref()` and `g_object_unref()` are considered to be invalid, and
+             * have undefined behaviour. They will often fail with `g_critical()` or
+             * `g_warning()`, but this must not be relied on.
              *
-             * Callers should not assume that a class which implements #GAsyncInitable can
-             * be initialized multiple times; for more information, see g_initable_init().
+             * Callers should not assume that a class which implements {@link Gio.AsyncInitable} can
+             * be initialized multiple times; for more information, see `g_initable_init()`.
              * If a class explicitly supports being initialized multiple times,
-             * implementation requires yielding all subsequent calls to init_async() on the
+             * implementation requires yielding all subsequent calls to `init_async()` on the
              * results of the first call.
              *
-             * For classes that also support the #GInitable interface, the default
-             * implementation of this method will run the g_initable_init() function
+             * For classes that also support the {@link Gio.Initable} interface, the default
+             * implementation of this method will run the `g_initable_init()` function
              * in a thread, so if you want to support asynchronous initialization via
-             * threads, just implement the #GAsyncInitable interface without overriding
+             * threads, just implement the {@link Gio.AsyncInitable} interface without overriding
              * any interface methods.
              * @param io_priority the [I/O priority](iface.AsyncResult.html#io-priority) of the operation
-             * @param cancellable optional #GCancellable object, %NULL to ignore.
+             * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
              */
             init_async(io_priority: number, cancellable?: Gio.Cancellable | null): globalThis.Promise<boolean>;
             /**
              * Starts asynchronous initialization of the object implementing the
              * interface. This must be done before any real use of the object after
-             * initial construction. If the object also implements #GInitable you can
-             * optionally call g_initable_init() instead.
+             * initial construction. If the object also implements {@link Gio.Initable} you can
+             * optionally call `g_initable_init()` instead.
              *
              * This method is intended for language bindings. If writing in C,
-             * g_async_initable_new_async() should typically be used instead.
+             * `g_async_initable_new_async()` should typically be used instead.
              *
              * When the initialization is finished, `callback` will be called. You can
-             * then call g_async_initable_init_finish() to get the result of the
+             * then call `g_async_initable_init_finish()` to get the result of the
              * initialization.
              *
              * Implementations may also support cancellation. If `cancellable` is not
-             * %NULL, then initialization can be cancelled by triggering the cancellable
+             * `null`, then initialization can be cancelled by triggering the cancellable
              * object from another thread. If the operation was cancelled, the error
-             * %G_IO_ERROR_CANCELLED will be returned. If `cancellable` is not %NULL, and
+             * {@link Gio.IOErrorEnum.CANCELLED} will be returned. If `cancellable` is not `null`, and
              * the object doesn't support cancellable initialization, the error
-             * %G_IO_ERROR_NOT_SUPPORTED will be returned.
+             * {@link Gio.IOErrorEnum.NOT_SUPPORTED} will be returned.
              *
-             * As with #GInitable, if the object is not initialized, or initialization
+             * As with {@link Gio.Initable}, if the object is not initialized, or initialization
              * returns with an error, then all operations on the object except
-             * g_object_ref() and g_object_unref() are considered to be invalid, and
-             * have undefined behaviour. They will often fail with g_critical() or
-             * g_warning(), but this must not be relied on.
+             * `g_object_ref()` and `g_object_unref()` are considered to be invalid, and
+             * have undefined behaviour. They will often fail with `g_critical()` or
+             * `g_warning()`, but this must not be relied on.
              *
-             * Callers should not assume that a class which implements #GAsyncInitable can
-             * be initialized multiple times; for more information, see g_initable_init().
+             * Callers should not assume that a class which implements {@link Gio.AsyncInitable} can
+             * be initialized multiple times; for more information, see `g_initable_init()`.
              * If a class explicitly supports being initialized multiple times,
-             * implementation requires yielding all subsequent calls to init_async() on the
+             * implementation requires yielding all subsequent calls to `init_async()` on the
              * results of the first call.
              *
-             * For classes that also support the #GInitable interface, the default
-             * implementation of this method will run the g_initable_init() function
+             * For classes that also support the {@link Gio.Initable} interface, the default
+             * implementation of this method will run the `g_initable_init()` function
              * in a thread, so if you want to support asynchronous initialization via
-             * threads, just implement the #GAsyncInitable interface without overriding
+             * threads, just implement the {@link Gio.AsyncInitable} interface without overriding
              * any interface methods.
              * @param io_priority the [I/O priority](iface.AsyncResult.html#io-priority) of the operation
-             * @param cancellable optional #GCancellable object, %NULL to ignore.
-             * @param callback a #GAsyncReadyCallback to call when the request is satisfied
+             * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
+             * @param callback a {@link Gio.AsyncReadyCallback} to call when the request is satisfied
              */
             init_async(
                 io_priority: number,
@@ -2961,43 +3061,43 @@ declare module 'gi://Secret?version=1' {
             /**
              * Starts asynchronous initialization of the object implementing the
              * interface. This must be done before any real use of the object after
-             * initial construction. If the object also implements #GInitable you can
-             * optionally call g_initable_init() instead.
+             * initial construction. If the object also implements {@link Gio.Initable} you can
+             * optionally call `g_initable_init()` instead.
              *
              * This method is intended for language bindings. If writing in C,
-             * g_async_initable_new_async() should typically be used instead.
+             * `g_async_initable_new_async()` should typically be used instead.
              *
              * When the initialization is finished, `callback` will be called. You can
-             * then call g_async_initable_init_finish() to get the result of the
+             * then call `g_async_initable_init_finish()` to get the result of the
              * initialization.
              *
              * Implementations may also support cancellation. If `cancellable` is not
-             * %NULL, then initialization can be cancelled by triggering the cancellable
+             * `null`, then initialization can be cancelled by triggering the cancellable
              * object from another thread. If the operation was cancelled, the error
-             * %G_IO_ERROR_CANCELLED will be returned. If `cancellable` is not %NULL, and
+             * {@link Gio.IOErrorEnum.CANCELLED} will be returned. If `cancellable` is not `null`, and
              * the object doesn't support cancellable initialization, the error
-             * %G_IO_ERROR_NOT_SUPPORTED will be returned.
+             * {@link Gio.IOErrorEnum.NOT_SUPPORTED} will be returned.
              *
-             * As with #GInitable, if the object is not initialized, or initialization
+             * As with {@link Gio.Initable}, if the object is not initialized, or initialization
              * returns with an error, then all operations on the object except
-             * g_object_ref() and g_object_unref() are considered to be invalid, and
-             * have undefined behaviour. They will often fail with g_critical() or
-             * g_warning(), but this must not be relied on.
+             * `g_object_ref()` and `g_object_unref()` are considered to be invalid, and
+             * have undefined behaviour. They will often fail with `g_critical()` or
+             * `g_warning()`, but this must not be relied on.
              *
-             * Callers should not assume that a class which implements #GAsyncInitable can
-             * be initialized multiple times; for more information, see g_initable_init().
+             * Callers should not assume that a class which implements {@link Gio.AsyncInitable} can
+             * be initialized multiple times; for more information, see `g_initable_init()`.
              * If a class explicitly supports being initialized multiple times,
-             * implementation requires yielding all subsequent calls to init_async() on the
+             * implementation requires yielding all subsequent calls to `init_async()` on the
              * results of the first call.
              *
-             * For classes that also support the #GInitable interface, the default
-             * implementation of this method will run the g_initable_init() function
+             * For classes that also support the {@link Gio.Initable} interface, the default
+             * implementation of this method will run the `g_initable_init()` function
              * in a thread, so if you want to support asynchronous initialization via
-             * threads, just implement the #GAsyncInitable interface without overriding
+             * threads, just implement the {@link Gio.AsyncInitable} interface without overriding
              * any interface methods.
              * @param io_priority the [I/O priority](iface.AsyncResult.html#io-priority) of the operation
-             * @param cancellable optional #GCancellable object, %NULL to ignore.
-             * @param callback a #GAsyncReadyCallback to call when the request is satisfied
+             * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
+             * @param callback a {@link Gio.AsyncReadyCallback} to call when the request is satisfied
              */
             init_async(
                 io_priority: number,
@@ -3006,60 +3106,64 @@ declare module 'gi://Secret?version=1' {
             ): globalThis.Promise<boolean> | void;
             /**
              * Finishes asynchronous initialization and returns the result.
-             * See g_async_initable_init_async().
-             * @param res a #GAsyncResult.
-             * @returns %TRUE if successful. If an error has occurred, this function will return %FALSE and set @error appropriately if present.
+             * See `g_async_initable_init_async()`.
+             * @param res a {@link Gio.AsyncResult}.
+             * @returns `true` if successful. If an error has occurred, this function will return `false` and set `error` appropriately if present.
              */
             init_finish(res: Gio.AsyncResult): boolean;
             /**
              * Finishes the async construction for the various g_async_initable_new
-             * calls, returning the created object or %NULL on error.
-             * @param res the #GAsyncResult from the callback
-             * @returns a newly created #GObject,      or %NULL on error. Free with g_object_unref().
+             * calls, returning the created object or `null` on error.
+             * @param res the {@link Gio.AsyncResult} from the callback
+             * @returns a newly created {@link GObject.Object},      or `null` on error. Free with `g_object_unref()`.
              */
             new_finish(res: Gio.AsyncResult): Item;
+            /**
+             * @param args
+             */
             // Conflicted with Gio.DBusProxy.new_finish
             new_finish(...args: never[]): any;
             /**
              * Starts asynchronous initialization of the object implementing the
              * interface. This must be done before any real use of the object after
-             * initial construction. If the object also implements #GInitable you can
-             * optionally call g_initable_init() instead.
+             * initial construction. If the object also implements {@link Gio.Initable} you can
+             * optionally call `g_initable_init()` instead.
              *
              * This method is intended for language bindings. If writing in C,
-             * g_async_initable_new_async() should typically be used instead.
+             * `g_async_initable_new_async()` should typically be used instead.
              *
              * When the initialization is finished, `callback` will be called. You can
-             * then call g_async_initable_init_finish() to get the result of the
+             * then call `g_async_initable_init_finish()` to get the result of the
              * initialization.
              *
              * Implementations may also support cancellation. If `cancellable` is not
-             * %NULL, then initialization can be cancelled by triggering the cancellable
+             * `null`, then initialization can be cancelled by triggering the cancellable
              * object from another thread. If the operation was cancelled, the error
-             * %G_IO_ERROR_CANCELLED will be returned. If `cancellable` is not %NULL, and
+             * {@link Gio.IOErrorEnum.CANCELLED} will be returned. If `cancellable` is not `null`, and
              * the object doesn't support cancellable initialization, the error
-             * %G_IO_ERROR_NOT_SUPPORTED will be returned.
+             * {@link Gio.IOErrorEnum.NOT_SUPPORTED} will be returned.
              *
-             * As with #GInitable, if the object is not initialized, or initialization
+             * As with {@link Gio.Initable}, if the object is not initialized, or initialization
              * returns with an error, then all operations on the object except
-             * g_object_ref() and g_object_unref() are considered to be invalid, and
-             * have undefined behaviour. They will often fail with g_critical() or
-             * g_warning(), but this must not be relied on.
+             * `g_object_ref()` and `g_object_unref()` are considered to be invalid, and
+             * have undefined behaviour. They will often fail with `g_critical()` or
+             * `g_warning()`, but this must not be relied on.
              *
-             * Callers should not assume that a class which implements #GAsyncInitable can
-             * be initialized multiple times; for more information, see g_initable_init().
+             * Callers should not assume that a class which implements {@link Gio.AsyncInitable} can
+             * be initialized multiple times; for more information, see `g_initable_init()`.
              * If a class explicitly supports being initialized multiple times,
-             * implementation requires yielding all subsequent calls to init_async() on the
+             * implementation requires yielding all subsequent calls to `init_async()` on the
              * results of the first call.
              *
-             * For classes that also support the #GInitable interface, the default
-             * implementation of this method will run the g_initable_init() function
+             * For classes that also support the {@link Gio.Initable} interface, the default
+             * implementation of this method will run the `g_initable_init()` function
              * in a thread, so if you want to support asynchronous initialization via
-             * threads, just implement the #GAsyncInitable interface without overriding
+             * threads, just implement the {@link Gio.AsyncInitable} interface without overriding
              * any interface methods.
              * @param io_priority the [I/O priority](iface.AsyncResult.html#io-priority) of the operation
-             * @param cancellable optional #GCancellable object, %NULL to ignore.
-             * @param callback a #GAsyncReadyCallback to call when the request is satisfied
+             * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
+             * @param callback a {@link Gio.AsyncReadyCallback} to call when the request is satisfied
+             * @virtual
              */
             vfunc_init_async(
                 io_priority: number,
@@ -3068,80 +3172,84 @@ declare module 'gi://Secret?version=1' {
             ): void;
             /**
              * Finishes asynchronous initialization and returns the result.
-             * See g_async_initable_init_async().
-             * @param res a #GAsyncResult.
+             * See `g_async_initable_init_async()`.
+             * @param res a {@link Gio.AsyncResult}.
+             * @virtual
              */
             vfunc_init_finish(res: Gio.AsyncResult): boolean;
             /**
-             * Gets the #GDBusObject that `interface_` belongs to, if any.
-             * @returns A #GDBusObject or %NULL. The returned reference should be freed with g_object_unref().
+             * Gets the {@link Gio.DBusObject} that `interface_` belongs to, if any.
+             * @returns A {@link Gio.DBusObject} or `null`. The returned reference should be freed with `g_object_unref()`.
              */
             get_object(): Gio.DBusObject | null;
             /**
              * Gets D-Bus introspection information for the D-Bus interface
              * implemented by `interface_`.
              *
-             * This can return %NULL if no #GDBusInterfaceInfo was provided during
+             * This can return `null` if no {@link Gio.DBusInterfaceInfo} was provided during
              * construction of `interface_` and is also not made available otherwise.
-             * For example, #GDBusProxy implements #GDBusInterface but allows for a %NULL
-             * #GDBusInterfaceInfo.
-             * @returns A #GDBusInterfaceInfo. Do not free.
+             * For example, {@link Gio.DBusProxy} implements {@link Gio.DBusInterface} but allows for a `null`
+             * {@link Gio.DBusInterfaceInfo}.
+             * @returns A {@link Gio.DBusInterfaceInfo}. Do not free.
              */
             get_info(): Gio.DBusInterfaceInfo | null;
             /**
-             * Sets the #GDBusObject for `interface_` to `object`.
+             * Sets the {@link Gio.DBusObject} for `interface_` to `object`.
              *
              * Note that `interface_` will hold a weak reference to `object`.
-             * @param object A #GDBusObject or %NULL.
+             * @param object A {@link Gio.DBusObject} or `null`.
              */
             set_object(object?: Gio.DBusObject | null): void;
             /**
-             * Gets the #GDBusObject that `interface_` belongs to, if any.
+             * Gets the {@link Gio.DBusObject} that `interface_` belongs to, if any.
+             * @virtual
              */
             vfunc_dup_object(): Gio.DBusObject | null;
             /**
              * Gets D-Bus introspection information for the D-Bus interface
              * implemented by `interface_`.
              *
-             * This can return %NULL if no #GDBusInterfaceInfo was provided during
+             * This can return `null` if no {@link Gio.DBusInterfaceInfo} was provided during
              * construction of `interface_` and is also not made available otherwise.
-             * For example, #GDBusProxy implements #GDBusInterface but allows for a %NULL
-             * #GDBusInterfaceInfo.
+             * For example, {@link Gio.DBusProxy} implements {@link Gio.DBusInterface} but allows for a `null`
+             * {@link Gio.DBusInterfaceInfo}.
+             * @virtual
              */
             vfunc_get_info(): Gio.DBusInterfaceInfo | null;
             /**
-             * Sets the #GDBusObject for `interface_` to `object`.
+             * Sets the {@link Gio.DBusObject} for `interface_` to `object`.
              *
              * Note that `interface_` will hold a weak reference to `object`.
-             * @param object A #GDBusObject or %NULL.
+             * @param object A {@link Gio.DBusObject} or `null`.
+             * @virtual
              */
             vfunc_set_object(object?: Gio.DBusObject | null): void;
             /**
              * Initializes the object implementing the interface.
              *
              * This method is intended for language bindings. If writing in C,
-             * g_initable_new() should typically be used instead.
+             * `g_initable_new()` should typically be used instead.
              *
              * The object must be initialized before any real use after initial
-             * construction, either with this function or g_async_initable_init_async().
+             * construction, either with this function or `g_async_initable_init_async()`.
              *
-             * Implementations may also support cancellation. If `cancellable` is not %NULL,
+             * Implementations may also support cancellation. If `cancellable` is not `null`,
              * then initialization can be cancelled by triggering the cancellable object
              * from another thread. If the operation was cancelled, the error
-             * %G_IO_ERROR_CANCELLED will be returned. If `cancellable` is not %NULL and
+             * {@link Gio.IOErrorEnum.CANCELLED} will be returned. If `cancellable` is not `null` and
              * the object doesn't support cancellable initialization the error
-             * %G_IO_ERROR_NOT_SUPPORTED will be returned.
+             * {@link Gio.IOErrorEnum.NOT_SUPPORTED} will be returned.
              *
              * If the object is not initialized, or initialization returns with an
-             * error, then all operations on the object except g_object_ref() and
-             * g_object_unref() are considered to be invalid, and have undefined
-             * behaviour. See the [description][iface`Gio`.Initable#description] for more details.
+             * error, then all operations on the object except `g_object_ref()` and
+             * `g_object_unref()` are considered to be invalid, and have undefined
+             * behaviour. See the [description][iface@Gio.Initable#description] for more details.
              *
-             * Callers should not assume that a class which implements #GInitable can be
+             * Callers should not assume that a class which implements {@link Gio.Initable} can be
              * initialized multiple times, unless the class explicitly documents itself as
-             * supporting this. Generally, a class’ implementation of init() can assume
+             * supporting this. Generally, a class’ implementation of `init()` can assume
              * (and assert) that it will only be called once. Previously, this documentation
-             * recommended all #GInitable implementations should be idempotent; that
+             * recommended all {@link Gio.Initable} implementations should be idempotent; that
              * recommendation was relaxed in GLib 2.54.
              *
              * If a class explicitly supports being initialized multiple times, it is
@@ -3151,40 +3259,40 @@ declare module 'gi://Secret?version=1' {
              *
              * One reason why a class might need to support idempotent initialization is if
              * it is designed to be used via the singleton pattern, with a
-             * #GObjectClass.constructor that sometimes returns an existing instance.
-             * In this pattern, a caller would expect to be able to call g_initable_init()
-             * on the result of g_object_new(), regardless of whether it is in fact a new
+             * {@link GObject.ObjectClass}.constructor that sometimes returns an existing instance.
+             * In this pattern, a caller would expect to be able to call `g_initable_init()`
+             * on the result of `g_object_new()`, regardless of whether it is in fact a new
              * instance.
-             * @param cancellable optional #GCancellable object, %NULL to ignore.
-             * @returns %TRUE if successful. If an error has occurred, this function will     return %FALSE and set @error appropriately if present.
+             * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
+             * @returns `true` if successful. If an error has occurred, this function will     return `false` and set `error` appropriately if present.
              */
             init(cancellable?: Gio.Cancellable | null): boolean;
             /**
              * Initializes the object implementing the interface.
              *
              * This method is intended for language bindings. If writing in C,
-             * g_initable_new() should typically be used instead.
+             * `g_initable_new()` should typically be used instead.
              *
              * The object must be initialized before any real use after initial
-             * construction, either with this function or g_async_initable_init_async().
+             * construction, either with this function or `g_async_initable_init_async()`.
              *
-             * Implementations may also support cancellation. If `cancellable` is not %NULL,
+             * Implementations may also support cancellation. If `cancellable` is not `null`,
              * then initialization can be cancelled by triggering the cancellable object
              * from another thread. If the operation was cancelled, the error
-             * %G_IO_ERROR_CANCELLED will be returned. If `cancellable` is not %NULL and
+             * {@link Gio.IOErrorEnum.CANCELLED} will be returned. If `cancellable` is not `null` and
              * the object doesn't support cancellable initialization the error
-             * %G_IO_ERROR_NOT_SUPPORTED will be returned.
+             * {@link Gio.IOErrorEnum.NOT_SUPPORTED} will be returned.
              *
              * If the object is not initialized, or initialization returns with an
-             * error, then all operations on the object except g_object_ref() and
-             * g_object_unref() are considered to be invalid, and have undefined
-             * behaviour. See the [description][iface`Gio`.Initable#description] for more details.
+             * error, then all operations on the object except `g_object_ref()` and
+             * `g_object_unref()` are considered to be invalid, and have undefined
+             * behaviour. See the [description][iface@Gio.Initable#description] for more details.
              *
-             * Callers should not assume that a class which implements #GInitable can be
+             * Callers should not assume that a class which implements {@link Gio.Initable} can be
              * initialized multiple times, unless the class explicitly documents itself as
-             * supporting this. Generally, a class’ implementation of init() can assume
+             * supporting this. Generally, a class’ implementation of `init()` can assume
              * (and assert) that it will only be called once. Previously, this documentation
-             * recommended all #GInitable implementations should be idempotent; that
+             * recommended all {@link Gio.Initable} implementations should be idempotent; that
              * recommendation was relaxed in GLib 2.54.
              *
              * If a class explicitly supports being initialized multiple times, it is
@@ -3194,11 +3302,12 @@ declare module 'gi://Secret?version=1' {
              *
              * One reason why a class might need to support idempotent initialization is if
              * it is designed to be used via the singleton pattern, with a
-             * #GObjectClass.constructor that sometimes returns an existing instance.
-             * In this pattern, a caller would expect to be able to call g_initable_init()
-             * on the result of g_object_new(), regardless of whether it is in fact a new
+             * {@link GObject.ObjectClass}.constructor that sometimes returns an existing instance.
+             * In this pattern, a caller would expect to be able to call `g_initable_init()`
+             * on the result of `g_object_new()`, regardless of whether it is in fact a new
              * instance.
-             * @param cancellable optional #GCancellable object, %NULL to ignore.
+             * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
+             * @virtual
              */
             vfunc_init(cancellable?: Gio.Cancellable | null): boolean;
             /**
@@ -3239,7 +3348,7 @@ declare module 'gi://Secret?version=1' {
             /**
              * Complete asynchronous operation to retrieve the secret value of this object.
              * @param result asynchronous result passed to callback
-             * @returns the secret value which should be   released with [method@Value.unref], or %NULL
+             * @returns the secret value which should be   released with {@link Value.unref}, or `null`
              */
             retrieve_secret_finish(result: Gio.AsyncResult): Value | null;
             /**
@@ -3251,7 +3360,7 @@ declare module 'gi://Secret?version=1' {
              * This method may block indefinitely and should not be used in user interface
              * threads.
              * @param cancellable optional cancellation object
-             * @returns the secret value which should be   released with [method@Value.unref], or %NULL
+             * @returns the secret value which should be   released with {@link Value.unref}, or `null`
              */
             retrieve_secret_sync(cancellable?: Gio.Cancellable | null): Value | null;
             /**
@@ -3263,6 +3372,7 @@ declare module 'gi://Secret?version=1' {
              * This function returns immediately and completes asynchronously.
              * @param cancellable optional cancellation object
              * @param callback called when the operation completes
+             * @virtual
              */
             vfunc_retrieve_secret(
                 cancellable?: Gio.Cancellable | null,
@@ -3271,6 +3381,7 @@ declare module 'gi://Secret?version=1' {
             /**
              * Complete asynchronous operation to retrieve the secret value of this object.
              * @param result asynchronous result passed to callback
+             * @virtual
              */
             vfunc_retrieve_secret_finish(result: Gio.AsyncResult): Value | null;
             /**
@@ -3286,32 +3397,32 @@ declare module 'gi://Secret?version=1' {
              * ```
              *
              *
-             * Will result in the "sensitive" property of the widget #GObject instance to be
-             * updated with the same value of the "active" property of the action #GObject
+             * Will result in the "sensitive" property of the widget {@link GObject.Object} instance to be
+             * updated with the same value of the "active" property of the action {@link GObject.Object}
              * instance.
              *
-             * If `flags` contains %G_BINDING_BIDIRECTIONAL then the binding will be mutual:
+             * If `flags` contains {@link GObject.BindingFlags.BIDIRECTIONAL} then the binding will be mutual:
              * if `target_property` on `target` changes then the `source_property` on `source`
              * will be updated as well.
              *
              * The binding will automatically be removed when either the `source` or the
              * `target` instances are finalized. To remove the binding without affecting the
-             * `source` and the `target` you can just call g_object_unref() on the returned
-             * #GBinding instance.
+             * `source` and the `target` you can just call `g_object_unref()` on the returned
+             * {@link GObject.Binding} instance.
              *
-             * Removing the binding by calling g_object_unref() on it must only be done if
+             * Removing the binding by calling `g_object_unref()` on it must only be done if
              * the binding, `source` and `target` are only used from a single thread and it
              * is clear that both `source` and `target` outlive the binding. Especially it
              * is not safe to rely on this if the binding, `source` or `target` can be
              * finalized from different threads. Keep another reference to the binding and
-             * use g_binding_unbind() instead to be on the safe side.
+             * use `g_binding_unbind()` instead to be on the safe side.
              *
-             * A #GObject can have multiple bindings.
-             * @param source_property the property on @source to bind
-             * @param target the target #GObject
-             * @param target_property the property on @target to bind
-             * @param flags flags to pass to #GBinding
-             * @returns the #GBinding instance representing the     binding between the two #GObject instances. The binding is released     whenever the #GBinding reference count reaches zero.
+             * A {@link GObject.Object} can have multiple bindings.
+             * @param source_property the property on `source` to bind
+             * @param target the target {@link GObject.Object}
+             * @param target_property the property on `target` to bind
+             * @param flags flags to pass to {@link GObject.Binding}
+             * @returns the {@link GObject.Binding} instance representing the     binding between the two {@link GObject.Object} instances. The binding is released     whenever the {@link GObject.Binding} reference count reaches zero.
              */
             bind_property(
                 source_property: string,
@@ -3320,39 +3431,39 @@ declare module 'gi://Secret?version=1' {
                 flags: GObject.BindingFlags | null,
             ): GObject.Binding;
             /**
-             * Complete version of g_object_bind_property().
+             * Complete version of `g_object_bind_property()`.
              *
              * Creates a binding between `source_property` on `source` and `target_property`
-             * on `target,` allowing you to set the transformation functions to be used by
+             * on `target`, allowing you to set the transformation functions to be used by
              * the binding.
              *
-             * If `flags` contains %G_BINDING_BIDIRECTIONAL then the binding will be mutual:
+             * If `flags` contains {@link GObject.BindingFlags.BIDIRECTIONAL} then the binding will be mutual:
              * if `target_property` on `target` changes then the `source_property` on `source`
              * will be updated as well. The `transform_from` function is only used in case
              * of bidirectional bindings, otherwise it will be ignored
              *
              * The binding will automatically be removed when either the `source` or the
              * `target` instances are finalized. This will release the reference that is
-             * being held on the #GBinding instance; if you want to hold on to the
-             * #GBinding instance, you will need to hold a reference to it.
+             * being held on the {@link GObject.Binding} instance; if you want to hold on to the
+             * {@link GObject.Binding} instance, you will need to hold a reference to it.
              *
-             * To remove the binding, call g_binding_unbind().
+             * To remove the binding, call `g_binding_unbind()`.
              *
-             * A #GObject can have multiple bindings.
+             * A {@link GObject.Object} can have multiple bindings.
              *
              * The same `user_data` parameter will be used for both `transform_to`
              * and `transform_from` transformation functions; the `notify` function will
              * be called once, when the binding is removed. If you need different data
              * for each transformation function, please use
-             * g_object_bind_property_with_closures() instead.
-             * @param source_property the property on @source to bind
-             * @param target the target #GObject
-             * @param target_property the property on @target to bind
-             * @param flags flags to pass to #GBinding
-             * @param transform_to the transformation function     from the @source to the @target, or %NULL to use the default
-             * @param transform_from the transformation function     from the @target to the @source, or %NULL to use the default
-             * @param notify a function to call when disposing the binding, to free     resources used by the transformation functions, or %NULL if not required
-             * @returns the #GBinding instance representing the     binding between the two #GObject instances. The binding is released     whenever the #GBinding reference count reaches zero.
+             * `g_object_bind_property_with_closures()` instead.
+             * @param source_property the property on `source` to bind
+             * @param target the target {@link GObject.Object}
+             * @param target_property the property on `target` to bind
+             * @param flags flags to pass to {@link GObject.Binding}
+             * @param transform_to the transformation function     from the `source` to the `target`, or `null` to use the default
+             * @param transform_from the transformation function     from the `target` to the `source`, or `null` to use the default
+             * @param notify a function to call when disposing the binding, to free     resources used by the transformation functions, or `null` if not required
+             * @returns the {@link GObject.Binding} instance representing the     binding between the two {@link GObject.Object} instances. The binding is released     whenever the {@link GObject.Binding} reference count reaches zero.
              */
             bind_property_full(
                 source_property: string,
@@ -3363,13 +3474,16 @@ declare module 'gi://Secret?version=1' {
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
             ): GObject.Binding;
+            /**
+             * @param args
+             */
             // Conflicted with GObject.Object.bind_property_full
             bind_property_full(...args: never[]): any;
             /**
-             * This function is intended for #GObject implementations to re-enforce
+             * This function is intended for {@link GObject.Object} implementations to re-enforce
              * a [floating](floating-refs.html) object reference. Doing this is seldom
-             * required: all #GInitiallyUnowneds are created with a floating reference
-             * which usually just needs to be sunken by calling g_object_ref_sink().
+             * required: all `GInitiallyUnowneds` are created with a floating reference
+             * which usually just needs to be sunken by calling `g_object_ref_sink()`.
              */
             force_floating(): void;
             /**
@@ -3377,7 +3491,7 @@ declare module 'gi://Secret?version=1' {
              * non-zero, the emission of "notify" signals on `object` is
              * stopped. The signals are queued until the freeze count is decreased
              * to zero. Duplicate notifications are squashed so that at most one
-             * #GObject::notify signal is emitted for each property modified while the
+             * {@link GObject.Object.SignalSignatures.notify | GObject.Object::notify} signal is emitted for each property modified while the
              * object is frozen.
              *
              * This is necessary for accessors that modify multiple properties to prevent
@@ -3385,9 +3499,9 @@ declare module 'gi://Secret?version=1' {
              */
             freeze_notify(): void;
             /**
-             * Gets a named field from the objects table of associations (see g_object_set_data()).
+             * Gets a named field from the objects table of associations (see `g_object_set_data()`).
              * @param key name of the key for that association
-             * @returns the data if found,          or %NULL if no such data exists.
+             * @returns the data if found,          or `null` if no such data exists.
              */
             get_data(key: string): any | null;
             /**
@@ -3407,9 +3521,9 @@ declare module 'gi://Secret?version=1' {
             get_property(property_name: string, value: GObject.Value | any): any;
             /**
              * This function gets back user data pointers stored via
-             * g_object_set_qdata().
-             * @param quark A #GQuark, naming the user data pointer
-             * @returns The user data pointer set, or %NULL
+             * `g_object_set_qdata()`.
+             * @param quark A {@link GLib.Quark}, naming the user data pointer
+             * @returns The user data pointer set, or `null`
              */
             get_qdata(quark: GLib.Quark): any | null;
             /**
@@ -3423,33 +3537,33 @@ declare module 'gi://Secret?version=1' {
             getv(names: string[], values: (GObject.Value | any)[]): void;
             /**
              * Checks whether `object` has a [floating](floating-refs.html) reference.
-             * @returns %TRUE if @object has a floating reference
+             * @returns `true` if `object` has a floating reference
              */
             is_floating(): boolean;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
              * When possible, eg. when signaling a property change from within the class
-             * that registered the property, you should use g_object_notify_by_pspec()
+             * that registered the property, you should use `g_object_notify_by_pspec()`
              * instead.
              *
              * Note that emission of the notify signal may be blocked with
-             * g_object_freeze_notify(). In this case, the signal emissions are queued
-             * and will be emitted (in reverse order) when g_object_thaw_notify() is
+             * `g_object_freeze_notify()`. In this case, the signal emissions are queued
+             * and will be emitted (in reverse order) when `g_object_thaw_notify()` is
              * called.
-             * @param property_name the name of a property installed on the class of @object.
+             * @param property_name the name of a property installed on the class of `object`.
              */
             notify(property_name: string): void;
             /**
              * Emits a "notify" signal for the property specified by `pspec` on `object`.
              *
              * This function omits the property name lookup, hence it is faster than
-             * g_object_notify().
+             * `g_object_notify()`.
              *
-             * One way to avoid using g_object_notify() from within the
-             * class that registered the properties, and using g_object_notify_by_pspec()
+             * One way to avoid using `g_object_notify()` from within the
+             * class that registered the properties, and using `g_object_notify_by_pspec()`
              * instead, is to store the GParamSpec used with
-             * g_object_class_install_property() inside a static array, e.g.:
+             * `g_object_class_install_property()` inside a static array, e.g.:
              *
              *
              * ```c
@@ -3482,21 +3596,21 @@ declare module 'gi://Secret?version=1' {
              *   g_object_notify_by_pspec (self, properties[PROP_FOO]);
              * ```
              *
-             * @param pspec the #GParamSpec of a property installed on the class of @object.
+             * @param pspec the {@link GObject.ParamSpec} of a property installed on the class of `object`.
              */
             notify_by_pspec(pspec: GObject.ParamSpec): void;
             /**
              * Increases the reference count of `object`.
              *
              * Since GLib 2.56, if `GLIB_VERSION_MAX_ALLOWED` is 2.56 or greater, the type
-             * of `object` will be propagated to the return type (using the GCC typeof()
+             * of `object` will be propagated to the return type (using the GCC `typeof()`
              * extension), so any casting the caller needs to do on the return type must be
              * explicit.
-             * @returns the same @object
+             * @returns the same `object`
              */
             ref(): GObject.Object;
             /**
-             * Increase the reference count of `object,` and possibly remove the
+             * Increase the reference count of `object`, and possibly remove the
              * [floating](floating-refs.html) reference, if `object` has a floating reference.
              *
              * In other words, if the object is floating, then this call "assumes
@@ -3506,8 +3620,8 @@ declare module 'gi://Secret?version=1' {
              * adds a new normal reference increasing the reference count by one.
              *
              * Since GLib 2.56, the type of `object` will be propagated to the return type
-             * under the same conditions as for g_object_ref().
-             * @returns @object
+             * under the same conditions as for `g_object_ref()`.
+             * @returns `object`
              */
             ref_sink(): GObject.Object;
             /**
@@ -3524,10 +3638,10 @@ declare module 'gi://Secret?version=1' {
              * If the object already had an association with that name,
              * the old association will be destroyed.
              *
-             * Internally, the `key` is converted to a #GQuark using g_quark_from_string().
+             * Internally, the `key` is converted to a {@link GLib.Quark} using `g_quark_from_string()`.
              * This means a copy of `key` is kept permanently (even after `object` has been
              * finalized) — so it is recommended to only use a small, bounded set of values
-             * for `key` in your program, to avoid the #GQuark storage growing unbounded.
+             * for `key` in your program, to avoid the {@link GLib.Quark} storage growing unbounded.
              * @param key name of the key
              * @param data data to associate with that key
              */
@@ -3542,13 +3656,13 @@ declare module 'gi://Secret?version=1' {
              * Remove a specified datum from the object's data associations,
              * without invoking the association's destroy handler.
              * @param key name of the key
-             * @returns the data if found, or %NULL          if no such data exists.
+             * @returns the data if found, or `null`          if no such data exists.
              */
             steal_data(key: string): any | null;
             /**
              * This function gets back user data pointers stored via
-             * g_object_set_qdata() and removes the `data` from object
-             * without invoking its destroy() function (if any was
+             * `g_object_set_qdata()` and removes the `data` from object
+             * without invoking its `destroy()` function (if any was
              * set).
              * Usually, calling this function is only required to update
              * user data pointers with a destroy notifier, for example:
@@ -3579,21 +3693,21 @@ declare module 'gi://Secret?version=1' {
              * }
              * ```
              *
-             * Using g_object_get_qdata() in the above example, instead of
-             * g_object_steal_qdata() would have left the destroy function set,
+             * Using `g_object_get_qdata()` in the above example, instead of
+             * `g_object_steal_qdata()` would have left the destroy function set,
              * and thus the partial string list would have been freed upon
-             * g_object_set_qdata_full().
-             * @param quark A #GQuark, naming the user data pointer
-             * @returns The user data pointer set, or %NULL
+             * `g_object_set_qdata_full()`.
+             * @param quark A {@link GLib.Quark}, naming the user data pointer
+             * @returns The user data pointer set, or `null`
              */
             steal_qdata(quark: GLib.Quark): any | null;
             /**
              * Reverts the effect of a previous call to
-             * g_object_freeze_notify(). The freeze count is decreased on `object`
+             * `g_object_freeze_notify()`. The freeze count is decreased on `object`
              * and when it reaches zero, queued "notify" signals are emitted.
              *
              * Duplicate notifications for each property are squashed so that at most one
-             * #GObject::notify signal is emitted for each property, in the reverse order
+             * {@link GObject.Object.SignalSignatures.notify | GObject.Object::notify} signal is emitted for each property, in the reverse order
              * in which they have been queued.
              *
              * It is an error to call this function when the freeze count is zero.
@@ -3603,33 +3717,34 @@ declare module 'gi://Secret?version=1' {
              * Decreases the reference count of `object`. When its reference count
              * drops to 0, the object is finalized (i.e. its memory is freed).
              *
-             * If the pointer to the #GObject may be reused in future (for example, if it is
+             * If the pointer to the {@link GObject.Object} may be reused in future (for example, if it is
              * an instance variable of another object), it is recommended to clear the
-             * pointer to %NULL rather than retain a dangling pointer to a potentially
-             * invalid #GObject instance. Use g_clear_object() for this.
+             * pointer to `null` rather than retain a dangling pointer to a potentially
+             * invalid {@link GObject.Object} instance. Use `g_clear_object()` for this.
              */
             unref(): void;
             /**
              * This function essentially limits the life time of the `closure` to
              * the life time of the object. That is, when the object is finalized,
-             * the `closure` is invalidated by calling g_closure_invalidate() on
+             * the `closure` is invalidated by calling `g_closure_invalidate()` on
              * it, in order to prevent invocations of the closure with a finalized
-             * (nonexisting) object. Also, g_object_ref() and g_object_unref() are
-             * added as marshal guards to the `closure,` to ensure that an extra
+             * (nonexisting) object. Also, `g_object_ref()` and `g_object_unref()` are
+             * added as marshal guards to the `closure`, to ensure that an extra
              * reference count is held on `object` during invocation of the
              * `closure`.  Usually, this function will be called on closures that
              * use this `object` as closure data.
-             * @param closure #GClosure to watch
+             * @param closure {@link GObject.Closure} to watch
              */
             watch_closure(closure: GObject.Closure): void;
             /**
-             * the `constructed` function is called by g_object_new() as the
+             * the `constructed` function is called by `g_object_new()` as the
              *  final step of the object creation process.  At the point of the call, all
              *  construction properties have been set on the object.  The purpose of this
              *  call is to allow for object initialisation steps that can only be performed
              *  after construction properties have been set.  `constructed` implementors
              *  should chain up to the `constructed` call of their parent class to allow it
              *  to complete its initialisation.
+             * @virtual
              */
             vfunc_constructed(): void;
             /**
@@ -3638,6 +3753,7 @@ declare module 'gi://Secret?version=1' {
              *  needed.
              * @param n_pspecs
              * @param pspecs
+             * @virtual
              */
             vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void;
             /**
@@ -3646,12 +3762,14 @@ declare module 'gi://Secret?version=1' {
              *  invocations still work. It may be run multiple times (due to reference
              *  loops). Before returning, `dispose` should chain up to the `dispose` method
              *  of the parent class.
+             * @virtual
              */
             vfunc_dispose(): void;
             /**
              * instance finalization function, should finish the finalization of
              *  the instance begun in `dispose` and chain up to the `finalize` method of the
              *  parent class.
+             * @virtual
              */
             vfunc_finalize(): void;
             /**
@@ -3660,20 +3778,22 @@ declare module 'gi://Secret?version=1' {
              * @param property_id
              * @param value
              * @param pspec
+             * @virtual
              */
             vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
              * When possible, eg. when signaling a property change from within the class
-             * that registered the property, you should use g_object_notify_by_pspec()
+             * that registered the property, you should use `g_object_notify_by_pspec()`
              * instead.
              *
              * Note that emission of the notify signal may be blocked with
-             * g_object_freeze_notify(). In this case, the signal emissions are queued
-             * and will be emitted (in reverse order) when g_object_thaw_notify() is
+             * `g_object_freeze_notify()`. In this case, the signal emissions are queued
+             * and will be emitted (in reverse order) when `g_object_thaw_notify()` is
              * called.
              * @param pspec
+             * @virtual
              */
             vfunc_notify(pspec: GObject.ParamSpec): void;
             /**
@@ -3685,6 +3805,7 @@ declare module 'gi://Secret?version=1' {
              * @param property_id
              * @param value
              * @param pspec
+             * @virtual
              */
             vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
             /**
@@ -3746,13 +3867,14 @@ declare module 'gi://Secret?version=1' {
          *
          * Certain actions on the Secret Service require user prompting to complete,
          * such as creating a collection, or unlocking a collection. When such a prompt
-         * is necessary, then a #SecretPrompt object is created by this library, and
-         * passed to the [method`Service`.prompt] method. In this way it is handled
+         * is necessary, then a {@link Secret.Prompt} object is created by this library, and
+         * passed to the {@link Service.prompt} method. In this way it is handled
          * automatically.
          *
          * In order to customize prompt handling, override the
-         * [vfunc`Service`.prompt_async] and [vfunc`Service`.prompt_finish] virtual
-         * methods of the [class`Service]` class.
+         * {@link Service.prompt_async} and {@link Service.prompt_finish} virtual
+         * methods of the {@link Service} class.
+         * @gir-type Class
          */
         class Prompt extends Gio.DBusProxy implements Gio.AsyncInitable<Prompt>, Gio.DBusInterface, Gio.Initable {
             static $gtype: GObject.GType<Prompt>;
@@ -3774,16 +3896,19 @@ declare module 'gi://Secret?version=1' {
 
             // Signals
 
+            /** @signal */
             connect<K extends keyof Prompt.SignalSignatures>(
                 signal: K,
                 callback: GObject.SignalCallback<this, Prompt.SignalSignatures[K]>,
             ): number;
             connect(signal: string, callback: (...args: any[]) => any): number;
+            /** @signal */
             connect_after<K extends keyof Prompt.SignalSignatures>(
                 signal: K,
                 callback: GObject.SignalCallback<this, Prompt.SignalSignatures[K]>,
             ): number;
             connect_after(signal: string, callback: (...args: any[]) => any): number;
+            /** @signal */
             emit<K extends keyof Prompt.SignalSignatures>(
                 signal: K,
                 ...args: GObject.GjsParameters<Prompt.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never
@@ -3795,7 +3920,7 @@ declare module 'gi://Secret?version=1' {
             /**
              * Runs a prompt and performs the prompting.
              *
-             * Returns %TRUE if the prompt was completed and not dismissed.
+             * Returns `true` if the prompt was completed and not dismissed.
              *
              * If `window_id` is non-null then it is used as an XWindow id on Linux. The API
              * expects this id to be converted to a string using the `%d` printf format. The
@@ -3816,7 +3941,7 @@ declare module 'gi://Secret?version=1' {
             /**
              * Runs a prompt and performs the prompting.
              *
-             * Returns %TRUE if the prompt was completed and not dismissed.
+             * Returns `true` if the prompt was completed and not dismissed.
              *
              * If `window_id` is non-null then it is used as an XWindow id on Linux. The API
              * expects this id to be converted to a string using the `%d` printf format. The
@@ -3839,7 +3964,7 @@ declare module 'gi://Secret?version=1' {
             /**
              * Runs a prompt and performs the prompting.
              *
-             * Returns %TRUE if the prompt was completed and not dismissed.
+             * Returns `true` if the prompt was completed and not dismissed.
              *
              * If `window_id` is non-null then it is used as an XWindow id on Linux. The API
              * expects this id to be converted to a string using the `%d` printf format. The
@@ -3866,7 +3991,7 @@ declare module 'gi://Secret?version=1' {
              * type of result depends on the action the prompt is completing, and is
              * defined in the Secret Service DBus API specification.
              * @param result the asynchronous result passed to the callback
-             * @returns %NULL if the prompt was dismissed or an error occurred,   a variant result if the prompt was successful
+             * @returns `null` if the prompt was dismissed or an error occurred,   a variant result if the prompt was successful
              */
             perform_finish(result: Gio.AsyncResult): GLib.Variant;
             /**
@@ -3887,7 +4012,7 @@ declare module 'gi://Secret?version=1' {
              * @param window_id string form of XWindow id for parent window to be transient for
              * @param cancellable optional cancellation object
              * @param return_type the variant type of the prompt result
-             * @returns %NULL if the prompt was dismissed or an error occurred
+             * @returns `null` if the prompt was dismissed or an error occurred
              */
             perform_sync(
                 window_id: string | null,
@@ -3914,96 +4039,94 @@ declare module 'gi://Secret?version=1' {
              * @param window_id string form of XWindow id for parent window to be transient for
              * @param cancellable optional cancellation object
              * @param return_type the variant type of the prompt result
-             * @returns %NULL if the prompt was dismissed or an error occurred
+             * @returns `null` if the prompt was dismissed or an error occurred
              */
             run(
                 window_id: string | null,
                 cancellable: Gio.Cancellable | null,
                 return_type: GLib.VariantType,
             ): GLib.Variant;
-
-            // Inherited methods
             /**
              * Starts asynchronous initialization of the object implementing the
              * interface. This must be done before any real use of the object after
-             * initial construction. If the object also implements #GInitable you can
-             * optionally call g_initable_init() instead.
+             * initial construction. If the object also implements {@link Gio.Initable} you can
+             * optionally call `g_initable_init()` instead.
              *
              * This method is intended for language bindings. If writing in C,
-             * g_async_initable_new_async() should typically be used instead.
+             * `g_async_initable_new_async()` should typically be used instead.
              *
              * When the initialization is finished, `callback` will be called. You can
-             * then call g_async_initable_init_finish() to get the result of the
+             * then call `g_async_initable_init_finish()` to get the result of the
              * initialization.
              *
              * Implementations may also support cancellation. If `cancellable` is not
-             * %NULL, then initialization can be cancelled by triggering the cancellable
+             * `null`, then initialization can be cancelled by triggering the cancellable
              * object from another thread. If the operation was cancelled, the error
-             * %G_IO_ERROR_CANCELLED will be returned. If `cancellable` is not %NULL, and
+             * {@link Gio.IOErrorEnum.CANCELLED} will be returned. If `cancellable` is not `null`, and
              * the object doesn't support cancellable initialization, the error
-             * %G_IO_ERROR_NOT_SUPPORTED will be returned.
+             * {@link Gio.IOErrorEnum.NOT_SUPPORTED} will be returned.
              *
-             * As with #GInitable, if the object is not initialized, or initialization
+             * As with {@link Gio.Initable}, if the object is not initialized, or initialization
              * returns with an error, then all operations on the object except
-             * g_object_ref() and g_object_unref() are considered to be invalid, and
-             * have undefined behaviour. They will often fail with g_critical() or
-             * g_warning(), but this must not be relied on.
+             * `g_object_ref()` and `g_object_unref()` are considered to be invalid, and
+             * have undefined behaviour. They will often fail with `g_critical()` or
+             * `g_warning()`, but this must not be relied on.
              *
-             * Callers should not assume that a class which implements #GAsyncInitable can
-             * be initialized multiple times; for more information, see g_initable_init().
+             * Callers should not assume that a class which implements {@link Gio.AsyncInitable} can
+             * be initialized multiple times; for more information, see `g_initable_init()`.
              * If a class explicitly supports being initialized multiple times,
-             * implementation requires yielding all subsequent calls to init_async() on the
+             * implementation requires yielding all subsequent calls to `init_async()` on the
              * results of the first call.
              *
-             * For classes that also support the #GInitable interface, the default
-             * implementation of this method will run the g_initable_init() function
+             * For classes that also support the {@link Gio.Initable} interface, the default
+             * implementation of this method will run the `g_initable_init()` function
              * in a thread, so if you want to support asynchronous initialization via
-             * threads, just implement the #GAsyncInitable interface without overriding
+             * threads, just implement the {@link Gio.AsyncInitable} interface without overriding
              * any interface methods.
              * @param io_priority the [I/O priority](iface.AsyncResult.html#io-priority) of the operation
-             * @param cancellable optional #GCancellable object, %NULL to ignore.
+             * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
              */
             init_async(io_priority: number, cancellable?: Gio.Cancellable | null): globalThis.Promise<boolean>;
             /**
              * Starts asynchronous initialization of the object implementing the
              * interface. This must be done before any real use of the object after
-             * initial construction. If the object also implements #GInitable you can
-             * optionally call g_initable_init() instead.
+             * initial construction. If the object also implements {@link Gio.Initable} you can
+             * optionally call `g_initable_init()` instead.
              *
              * This method is intended for language bindings. If writing in C,
-             * g_async_initable_new_async() should typically be used instead.
+             * `g_async_initable_new_async()` should typically be used instead.
              *
              * When the initialization is finished, `callback` will be called. You can
-             * then call g_async_initable_init_finish() to get the result of the
+             * then call `g_async_initable_init_finish()` to get the result of the
              * initialization.
              *
              * Implementations may also support cancellation. If `cancellable` is not
-             * %NULL, then initialization can be cancelled by triggering the cancellable
+             * `null`, then initialization can be cancelled by triggering the cancellable
              * object from another thread. If the operation was cancelled, the error
-             * %G_IO_ERROR_CANCELLED will be returned. If `cancellable` is not %NULL, and
+             * {@link Gio.IOErrorEnum.CANCELLED} will be returned. If `cancellable` is not `null`, and
              * the object doesn't support cancellable initialization, the error
-             * %G_IO_ERROR_NOT_SUPPORTED will be returned.
+             * {@link Gio.IOErrorEnum.NOT_SUPPORTED} will be returned.
              *
-             * As with #GInitable, if the object is not initialized, or initialization
+             * As with {@link Gio.Initable}, if the object is not initialized, or initialization
              * returns with an error, then all operations on the object except
-             * g_object_ref() and g_object_unref() are considered to be invalid, and
-             * have undefined behaviour. They will often fail with g_critical() or
-             * g_warning(), but this must not be relied on.
+             * `g_object_ref()` and `g_object_unref()` are considered to be invalid, and
+             * have undefined behaviour. They will often fail with `g_critical()` or
+             * `g_warning()`, but this must not be relied on.
              *
-             * Callers should not assume that a class which implements #GAsyncInitable can
-             * be initialized multiple times; for more information, see g_initable_init().
+             * Callers should not assume that a class which implements {@link Gio.AsyncInitable} can
+             * be initialized multiple times; for more information, see `g_initable_init()`.
              * If a class explicitly supports being initialized multiple times,
-             * implementation requires yielding all subsequent calls to init_async() on the
+             * implementation requires yielding all subsequent calls to `init_async()` on the
              * results of the first call.
              *
-             * For classes that also support the #GInitable interface, the default
-             * implementation of this method will run the g_initable_init() function
+             * For classes that also support the {@link Gio.Initable} interface, the default
+             * implementation of this method will run the `g_initable_init()` function
              * in a thread, so if you want to support asynchronous initialization via
-             * threads, just implement the #GAsyncInitable interface without overriding
+             * threads, just implement the {@link Gio.AsyncInitable} interface without overriding
              * any interface methods.
              * @param io_priority the [I/O priority](iface.AsyncResult.html#io-priority) of the operation
-             * @param cancellable optional #GCancellable object, %NULL to ignore.
-             * @param callback a #GAsyncReadyCallback to call when the request is satisfied
+             * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
+             * @param callback a {@link Gio.AsyncReadyCallback} to call when the request is satisfied
              */
             init_async(
                 io_priority: number,
@@ -4013,43 +4136,43 @@ declare module 'gi://Secret?version=1' {
             /**
              * Starts asynchronous initialization of the object implementing the
              * interface. This must be done before any real use of the object after
-             * initial construction. If the object also implements #GInitable you can
-             * optionally call g_initable_init() instead.
+             * initial construction. If the object also implements {@link Gio.Initable} you can
+             * optionally call `g_initable_init()` instead.
              *
              * This method is intended for language bindings. If writing in C,
-             * g_async_initable_new_async() should typically be used instead.
+             * `g_async_initable_new_async()` should typically be used instead.
              *
              * When the initialization is finished, `callback` will be called. You can
-             * then call g_async_initable_init_finish() to get the result of the
+             * then call `g_async_initable_init_finish()` to get the result of the
              * initialization.
              *
              * Implementations may also support cancellation. If `cancellable` is not
-             * %NULL, then initialization can be cancelled by triggering the cancellable
+             * `null`, then initialization can be cancelled by triggering the cancellable
              * object from another thread. If the operation was cancelled, the error
-             * %G_IO_ERROR_CANCELLED will be returned. If `cancellable` is not %NULL, and
+             * {@link Gio.IOErrorEnum.CANCELLED} will be returned. If `cancellable` is not `null`, and
              * the object doesn't support cancellable initialization, the error
-             * %G_IO_ERROR_NOT_SUPPORTED will be returned.
+             * {@link Gio.IOErrorEnum.NOT_SUPPORTED} will be returned.
              *
-             * As with #GInitable, if the object is not initialized, or initialization
+             * As with {@link Gio.Initable}, if the object is not initialized, or initialization
              * returns with an error, then all operations on the object except
-             * g_object_ref() and g_object_unref() are considered to be invalid, and
-             * have undefined behaviour. They will often fail with g_critical() or
-             * g_warning(), but this must not be relied on.
+             * `g_object_ref()` and `g_object_unref()` are considered to be invalid, and
+             * have undefined behaviour. They will often fail with `g_critical()` or
+             * `g_warning()`, but this must not be relied on.
              *
-             * Callers should not assume that a class which implements #GAsyncInitable can
-             * be initialized multiple times; for more information, see g_initable_init().
+             * Callers should not assume that a class which implements {@link Gio.AsyncInitable} can
+             * be initialized multiple times; for more information, see `g_initable_init()`.
              * If a class explicitly supports being initialized multiple times,
-             * implementation requires yielding all subsequent calls to init_async() on the
+             * implementation requires yielding all subsequent calls to `init_async()` on the
              * results of the first call.
              *
-             * For classes that also support the #GInitable interface, the default
-             * implementation of this method will run the g_initable_init() function
+             * For classes that also support the {@link Gio.Initable} interface, the default
+             * implementation of this method will run the `g_initable_init()` function
              * in a thread, so if you want to support asynchronous initialization via
-             * threads, just implement the #GAsyncInitable interface without overriding
+             * threads, just implement the {@link Gio.AsyncInitable} interface without overriding
              * any interface methods.
              * @param io_priority the [I/O priority](iface.AsyncResult.html#io-priority) of the operation
-             * @param cancellable optional #GCancellable object, %NULL to ignore.
-             * @param callback a #GAsyncReadyCallback to call when the request is satisfied
+             * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
+             * @param callback a {@link Gio.AsyncReadyCallback} to call when the request is satisfied
              */
             init_async(
                 io_priority: number,
@@ -4058,60 +4181,64 @@ declare module 'gi://Secret?version=1' {
             ): globalThis.Promise<boolean> | void;
             /**
              * Finishes asynchronous initialization and returns the result.
-             * See g_async_initable_init_async().
-             * @param res a #GAsyncResult.
-             * @returns %TRUE if successful. If an error has occurred, this function will return %FALSE and set @error appropriately if present.
+             * See `g_async_initable_init_async()`.
+             * @param res a {@link Gio.AsyncResult}.
+             * @returns `true` if successful. If an error has occurred, this function will return `false` and set `error` appropriately if present.
              */
             init_finish(res: Gio.AsyncResult): boolean;
             /**
              * Finishes the async construction for the various g_async_initable_new
-             * calls, returning the created object or %NULL on error.
-             * @param res the #GAsyncResult from the callback
-             * @returns a newly created #GObject,      or %NULL on error. Free with g_object_unref().
+             * calls, returning the created object or `null` on error.
+             * @param res the {@link Gio.AsyncResult} from the callback
+             * @returns a newly created {@link GObject.Object},      or `null` on error. Free with `g_object_unref()`.
              */
             new_finish(res: Gio.AsyncResult): Prompt;
+            /**
+             * @param args
+             */
             // Conflicted with Gio.DBusProxy.new_finish
             new_finish(...args: never[]): any;
             /**
              * Starts asynchronous initialization of the object implementing the
              * interface. This must be done before any real use of the object after
-             * initial construction. If the object also implements #GInitable you can
-             * optionally call g_initable_init() instead.
+             * initial construction. If the object also implements {@link Gio.Initable} you can
+             * optionally call `g_initable_init()` instead.
              *
              * This method is intended for language bindings. If writing in C,
-             * g_async_initable_new_async() should typically be used instead.
+             * `g_async_initable_new_async()` should typically be used instead.
              *
              * When the initialization is finished, `callback` will be called. You can
-             * then call g_async_initable_init_finish() to get the result of the
+             * then call `g_async_initable_init_finish()` to get the result of the
              * initialization.
              *
              * Implementations may also support cancellation. If `cancellable` is not
-             * %NULL, then initialization can be cancelled by triggering the cancellable
+             * `null`, then initialization can be cancelled by triggering the cancellable
              * object from another thread. If the operation was cancelled, the error
-             * %G_IO_ERROR_CANCELLED will be returned. If `cancellable` is not %NULL, and
+             * {@link Gio.IOErrorEnum.CANCELLED} will be returned. If `cancellable` is not `null`, and
              * the object doesn't support cancellable initialization, the error
-             * %G_IO_ERROR_NOT_SUPPORTED will be returned.
+             * {@link Gio.IOErrorEnum.NOT_SUPPORTED} will be returned.
              *
-             * As with #GInitable, if the object is not initialized, or initialization
+             * As with {@link Gio.Initable}, if the object is not initialized, or initialization
              * returns with an error, then all operations on the object except
-             * g_object_ref() and g_object_unref() are considered to be invalid, and
-             * have undefined behaviour. They will often fail with g_critical() or
-             * g_warning(), but this must not be relied on.
+             * `g_object_ref()` and `g_object_unref()` are considered to be invalid, and
+             * have undefined behaviour. They will often fail with `g_critical()` or
+             * `g_warning()`, but this must not be relied on.
              *
-             * Callers should not assume that a class which implements #GAsyncInitable can
-             * be initialized multiple times; for more information, see g_initable_init().
+             * Callers should not assume that a class which implements {@link Gio.AsyncInitable} can
+             * be initialized multiple times; for more information, see `g_initable_init()`.
              * If a class explicitly supports being initialized multiple times,
-             * implementation requires yielding all subsequent calls to init_async() on the
+             * implementation requires yielding all subsequent calls to `init_async()` on the
              * results of the first call.
              *
-             * For classes that also support the #GInitable interface, the default
-             * implementation of this method will run the g_initable_init() function
+             * For classes that also support the {@link Gio.Initable} interface, the default
+             * implementation of this method will run the `g_initable_init()` function
              * in a thread, so if you want to support asynchronous initialization via
-             * threads, just implement the #GAsyncInitable interface without overriding
+             * threads, just implement the {@link Gio.AsyncInitable} interface without overriding
              * any interface methods.
              * @param io_priority the [I/O priority](iface.AsyncResult.html#io-priority) of the operation
-             * @param cancellable optional #GCancellable object, %NULL to ignore.
-             * @param callback a #GAsyncReadyCallback to call when the request is satisfied
+             * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
+             * @param callback a {@link Gio.AsyncReadyCallback} to call when the request is satisfied
+             * @virtual
              */
             vfunc_init_async(
                 io_priority: number,
@@ -4120,80 +4247,84 @@ declare module 'gi://Secret?version=1' {
             ): void;
             /**
              * Finishes asynchronous initialization and returns the result.
-             * See g_async_initable_init_async().
-             * @param res a #GAsyncResult.
+             * See `g_async_initable_init_async()`.
+             * @param res a {@link Gio.AsyncResult}.
+             * @virtual
              */
             vfunc_init_finish(res: Gio.AsyncResult): boolean;
             /**
-             * Gets the #GDBusObject that `interface_` belongs to, if any.
-             * @returns A #GDBusObject or %NULL. The returned reference should be freed with g_object_unref().
+             * Gets the {@link Gio.DBusObject} that `interface_` belongs to, if any.
+             * @returns A {@link Gio.DBusObject} or `null`. The returned reference should be freed with `g_object_unref()`.
              */
             get_object(): Gio.DBusObject | null;
             /**
              * Gets D-Bus introspection information for the D-Bus interface
              * implemented by `interface_`.
              *
-             * This can return %NULL if no #GDBusInterfaceInfo was provided during
+             * This can return `null` if no {@link Gio.DBusInterfaceInfo} was provided during
              * construction of `interface_` and is also not made available otherwise.
-             * For example, #GDBusProxy implements #GDBusInterface but allows for a %NULL
-             * #GDBusInterfaceInfo.
-             * @returns A #GDBusInterfaceInfo. Do not free.
+             * For example, {@link Gio.DBusProxy} implements {@link Gio.DBusInterface} but allows for a `null`
+             * {@link Gio.DBusInterfaceInfo}.
+             * @returns A {@link Gio.DBusInterfaceInfo}. Do not free.
              */
             get_info(): Gio.DBusInterfaceInfo | null;
             /**
-             * Sets the #GDBusObject for `interface_` to `object`.
+             * Sets the {@link Gio.DBusObject} for `interface_` to `object`.
              *
              * Note that `interface_` will hold a weak reference to `object`.
-             * @param object A #GDBusObject or %NULL.
+             * @param object A {@link Gio.DBusObject} or `null`.
              */
             set_object(object?: Gio.DBusObject | null): void;
             /**
-             * Gets the #GDBusObject that `interface_` belongs to, if any.
+             * Gets the {@link Gio.DBusObject} that `interface_` belongs to, if any.
+             * @virtual
              */
             vfunc_dup_object(): Gio.DBusObject | null;
             /**
              * Gets D-Bus introspection information for the D-Bus interface
              * implemented by `interface_`.
              *
-             * This can return %NULL if no #GDBusInterfaceInfo was provided during
+             * This can return `null` if no {@link Gio.DBusInterfaceInfo} was provided during
              * construction of `interface_` and is also not made available otherwise.
-             * For example, #GDBusProxy implements #GDBusInterface but allows for a %NULL
-             * #GDBusInterfaceInfo.
+             * For example, {@link Gio.DBusProxy} implements {@link Gio.DBusInterface} but allows for a `null`
+             * {@link Gio.DBusInterfaceInfo}.
+             * @virtual
              */
             vfunc_get_info(): Gio.DBusInterfaceInfo | null;
             /**
-             * Sets the #GDBusObject for `interface_` to `object`.
+             * Sets the {@link Gio.DBusObject} for `interface_` to `object`.
              *
              * Note that `interface_` will hold a weak reference to `object`.
-             * @param object A #GDBusObject or %NULL.
+             * @param object A {@link Gio.DBusObject} or `null`.
+             * @virtual
              */
             vfunc_set_object(object?: Gio.DBusObject | null): void;
             /**
              * Initializes the object implementing the interface.
              *
              * This method is intended for language bindings. If writing in C,
-             * g_initable_new() should typically be used instead.
+             * `g_initable_new()` should typically be used instead.
              *
              * The object must be initialized before any real use after initial
-             * construction, either with this function or g_async_initable_init_async().
+             * construction, either with this function or `g_async_initable_init_async()`.
              *
-             * Implementations may also support cancellation. If `cancellable` is not %NULL,
+             * Implementations may also support cancellation. If `cancellable` is not `null`,
              * then initialization can be cancelled by triggering the cancellable object
              * from another thread. If the operation was cancelled, the error
-             * %G_IO_ERROR_CANCELLED will be returned. If `cancellable` is not %NULL and
+             * {@link Gio.IOErrorEnum.CANCELLED} will be returned. If `cancellable` is not `null` and
              * the object doesn't support cancellable initialization the error
-             * %G_IO_ERROR_NOT_SUPPORTED will be returned.
+             * {@link Gio.IOErrorEnum.NOT_SUPPORTED} will be returned.
              *
              * If the object is not initialized, or initialization returns with an
-             * error, then all operations on the object except g_object_ref() and
-             * g_object_unref() are considered to be invalid, and have undefined
-             * behaviour. See the [description][iface`Gio`.Initable#description] for more details.
+             * error, then all operations on the object except `g_object_ref()` and
+             * `g_object_unref()` are considered to be invalid, and have undefined
+             * behaviour. See the [description][iface@Gio.Initable#description] for more details.
              *
-             * Callers should not assume that a class which implements #GInitable can be
+             * Callers should not assume that a class which implements {@link Gio.Initable} can be
              * initialized multiple times, unless the class explicitly documents itself as
-             * supporting this. Generally, a class’ implementation of init() can assume
+             * supporting this. Generally, a class’ implementation of `init()` can assume
              * (and assert) that it will only be called once. Previously, this documentation
-             * recommended all #GInitable implementations should be idempotent; that
+             * recommended all {@link Gio.Initable} implementations should be idempotent; that
              * recommendation was relaxed in GLib 2.54.
              *
              * If a class explicitly supports being initialized multiple times, it is
@@ -4203,40 +4334,40 @@ declare module 'gi://Secret?version=1' {
              *
              * One reason why a class might need to support idempotent initialization is if
              * it is designed to be used via the singleton pattern, with a
-             * #GObjectClass.constructor that sometimes returns an existing instance.
-             * In this pattern, a caller would expect to be able to call g_initable_init()
-             * on the result of g_object_new(), regardless of whether it is in fact a new
+             * {@link GObject.ObjectClass}.constructor that sometimes returns an existing instance.
+             * In this pattern, a caller would expect to be able to call `g_initable_init()`
+             * on the result of `g_object_new()`, regardless of whether it is in fact a new
              * instance.
-             * @param cancellable optional #GCancellable object, %NULL to ignore.
-             * @returns %TRUE if successful. If an error has occurred, this function will     return %FALSE and set @error appropriately if present.
+             * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
+             * @returns `true` if successful. If an error has occurred, this function will     return `false` and set `error` appropriately if present.
              */
             init(cancellable?: Gio.Cancellable | null): boolean;
             /**
              * Initializes the object implementing the interface.
              *
              * This method is intended for language bindings. If writing in C,
-             * g_initable_new() should typically be used instead.
+             * `g_initable_new()` should typically be used instead.
              *
              * The object must be initialized before any real use after initial
-             * construction, either with this function or g_async_initable_init_async().
+             * construction, either with this function or `g_async_initable_init_async()`.
              *
-             * Implementations may also support cancellation. If `cancellable` is not %NULL,
+             * Implementations may also support cancellation. If `cancellable` is not `null`,
              * then initialization can be cancelled by triggering the cancellable object
              * from another thread. If the operation was cancelled, the error
-             * %G_IO_ERROR_CANCELLED will be returned. If `cancellable` is not %NULL and
+             * {@link Gio.IOErrorEnum.CANCELLED} will be returned. If `cancellable` is not `null` and
              * the object doesn't support cancellable initialization the error
-             * %G_IO_ERROR_NOT_SUPPORTED will be returned.
+             * {@link Gio.IOErrorEnum.NOT_SUPPORTED} will be returned.
              *
              * If the object is not initialized, or initialization returns with an
-             * error, then all operations on the object except g_object_ref() and
-             * g_object_unref() are considered to be invalid, and have undefined
-             * behaviour. See the [description][iface`Gio`.Initable#description] for more details.
+             * error, then all operations on the object except `g_object_ref()` and
+             * `g_object_unref()` are considered to be invalid, and have undefined
+             * behaviour. See the [description][iface@Gio.Initable#description] for more details.
              *
-             * Callers should not assume that a class which implements #GInitable can be
+             * Callers should not assume that a class which implements {@link Gio.Initable} can be
              * initialized multiple times, unless the class explicitly documents itself as
-             * supporting this. Generally, a class’ implementation of init() can assume
+             * supporting this. Generally, a class’ implementation of `init()` can assume
              * (and assert) that it will only be called once. Previously, this documentation
-             * recommended all #GInitable implementations should be idempotent; that
+             * recommended all {@link Gio.Initable} implementations should be idempotent; that
              * recommendation was relaxed in GLib 2.54.
              *
              * If a class explicitly supports being initialized multiple times, it is
@@ -4246,11 +4377,12 @@ declare module 'gi://Secret?version=1' {
              *
              * One reason why a class might need to support idempotent initialization is if
              * it is designed to be used via the singleton pattern, with a
-             * #GObjectClass.constructor that sometimes returns an existing instance.
-             * In this pattern, a caller would expect to be able to call g_initable_init()
-             * on the result of g_object_new(), regardless of whether it is in fact a new
+             * {@link GObject.ObjectClass}.constructor that sometimes returns an existing instance.
+             * In this pattern, a caller would expect to be able to call `g_initable_init()`
+             * on the result of `g_object_new()`, regardless of whether it is in fact a new
              * instance.
-             * @param cancellable optional #GCancellable object, %NULL to ignore.
+             * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
+             * @virtual
              */
             vfunc_init(cancellable?: Gio.Cancellable | null): boolean;
             /**
@@ -4266,32 +4398,32 @@ declare module 'gi://Secret?version=1' {
              * ```
              *
              *
-             * Will result in the "sensitive" property of the widget #GObject instance to be
-             * updated with the same value of the "active" property of the action #GObject
+             * Will result in the "sensitive" property of the widget {@link GObject.Object} instance to be
+             * updated with the same value of the "active" property of the action {@link GObject.Object}
              * instance.
              *
-             * If `flags` contains %G_BINDING_BIDIRECTIONAL then the binding will be mutual:
+             * If `flags` contains {@link GObject.BindingFlags.BIDIRECTIONAL} then the binding will be mutual:
              * if `target_property` on `target` changes then the `source_property` on `source`
              * will be updated as well.
              *
              * The binding will automatically be removed when either the `source` or the
              * `target` instances are finalized. To remove the binding without affecting the
-             * `source` and the `target` you can just call g_object_unref() on the returned
-             * #GBinding instance.
+             * `source` and the `target` you can just call `g_object_unref()` on the returned
+             * {@link GObject.Binding} instance.
              *
-             * Removing the binding by calling g_object_unref() on it must only be done if
+             * Removing the binding by calling `g_object_unref()` on it must only be done if
              * the binding, `source` and `target` are only used from a single thread and it
              * is clear that both `source` and `target` outlive the binding. Especially it
              * is not safe to rely on this if the binding, `source` or `target` can be
              * finalized from different threads. Keep another reference to the binding and
-             * use g_binding_unbind() instead to be on the safe side.
+             * use `g_binding_unbind()` instead to be on the safe side.
              *
-             * A #GObject can have multiple bindings.
-             * @param source_property the property on @source to bind
-             * @param target the target #GObject
-             * @param target_property the property on @target to bind
-             * @param flags flags to pass to #GBinding
-             * @returns the #GBinding instance representing the     binding between the two #GObject instances. The binding is released     whenever the #GBinding reference count reaches zero.
+             * A {@link GObject.Object} can have multiple bindings.
+             * @param source_property the property on `source` to bind
+             * @param target the target {@link GObject.Object}
+             * @param target_property the property on `target` to bind
+             * @param flags flags to pass to {@link GObject.Binding}
+             * @returns the {@link GObject.Binding} instance representing the     binding between the two {@link GObject.Object} instances. The binding is released     whenever the {@link GObject.Binding} reference count reaches zero.
              */
             bind_property(
                 source_property: string,
@@ -4300,39 +4432,39 @@ declare module 'gi://Secret?version=1' {
                 flags: GObject.BindingFlags | null,
             ): GObject.Binding;
             /**
-             * Complete version of g_object_bind_property().
+             * Complete version of `g_object_bind_property()`.
              *
              * Creates a binding between `source_property` on `source` and `target_property`
-             * on `target,` allowing you to set the transformation functions to be used by
+             * on `target`, allowing you to set the transformation functions to be used by
              * the binding.
              *
-             * If `flags` contains %G_BINDING_BIDIRECTIONAL then the binding will be mutual:
+             * If `flags` contains {@link GObject.BindingFlags.BIDIRECTIONAL} then the binding will be mutual:
              * if `target_property` on `target` changes then the `source_property` on `source`
              * will be updated as well. The `transform_from` function is only used in case
              * of bidirectional bindings, otherwise it will be ignored
              *
              * The binding will automatically be removed when either the `source` or the
              * `target` instances are finalized. This will release the reference that is
-             * being held on the #GBinding instance; if you want to hold on to the
-             * #GBinding instance, you will need to hold a reference to it.
+             * being held on the {@link GObject.Binding} instance; if you want to hold on to the
+             * {@link GObject.Binding} instance, you will need to hold a reference to it.
              *
-             * To remove the binding, call g_binding_unbind().
+             * To remove the binding, call `g_binding_unbind()`.
              *
-             * A #GObject can have multiple bindings.
+             * A {@link GObject.Object} can have multiple bindings.
              *
              * The same `user_data` parameter will be used for both `transform_to`
              * and `transform_from` transformation functions; the `notify` function will
              * be called once, when the binding is removed. If you need different data
              * for each transformation function, please use
-             * g_object_bind_property_with_closures() instead.
-             * @param source_property the property on @source to bind
-             * @param target the target #GObject
-             * @param target_property the property on @target to bind
-             * @param flags flags to pass to #GBinding
-             * @param transform_to the transformation function     from the @source to the @target, or %NULL to use the default
-             * @param transform_from the transformation function     from the @target to the @source, or %NULL to use the default
-             * @param notify a function to call when disposing the binding, to free     resources used by the transformation functions, or %NULL if not required
-             * @returns the #GBinding instance representing the     binding between the two #GObject instances. The binding is released     whenever the #GBinding reference count reaches zero.
+             * `g_object_bind_property_with_closures()` instead.
+             * @param source_property the property on `source` to bind
+             * @param target the target {@link GObject.Object}
+             * @param target_property the property on `target` to bind
+             * @param flags flags to pass to {@link GObject.Binding}
+             * @param transform_to the transformation function     from the `source` to the `target`, or `null` to use the default
+             * @param transform_from the transformation function     from the `target` to the `source`, or `null` to use the default
+             * @param notify a function to call when disposing the binding, to free     resources used by the transformation functions, or `null` if not required
+             * @returns the {@link GObject.Binding} instance representing the     binding between the two {@link GObject.Object} instances. The binding is released     whenever the {@link GObject.Binding} reference count reaches zero.
              */
             bind_property_full(
                 source_property: string,
@@ -4343,13 +4475,16 @@ declare module 'gi://Secret?version=1' {
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
             ): GObject.Binding;
+            /**
+             * @param args
+             */
             // Conflicted with GObject.Object.bind_property_full
             bind_property_full(...args: never[]): any;
             /**
-             * This function is intended for #GObject implementations to re-enforce
+             * This function is intended for {@link GObject.Object} implementations to re-enforce
              * a [floating](floating-refs.html) object reference. Doing this is seldom
-             * required: all #GInitiallyUnowneds are created with a floating reference
-             * which usually just needs to be sunken by calling g_object_ref_sink().
+             * required: all `GInitiallyUnowneds` are created with a floating reference
+             * which usually just needs to be sunken by calling `g_object_ref_sink()`.
              */
             force_floating(): void;
             /**
@@ -4357,7 +4492,7 @@ declare module 'gi://Secret?version=1' {
              * non-zero, the emission of "notify" signals on `object` is
              * stopped. The signals are queued until the freeze count is decreased
              * to zero. Duplicate notifications are squashed so that at most one
-             * #GObject::notify signal is emitted for each property modified while the
+             * {@link GObject.Object.SignalSignatures.notify | GObject.Object::notify} signal is emitted for each property modified while the
              * object is frozen.
              *
              * This is necessary for accessors that modify multiple properties to prevent
@@ -4365,9 +4500,9 @@ declare module 'gi://Secret?version=1' {
              */
             freeze_notify(): void;
             /**
-             * Gets a named field from the objects table of associations (see g_object_set_data()).
+             * Gets a named field from the objects table of associations (see `g_object_set_data()`).
              * @param key name of the key for that association
-             * @returns the data if found,          or %NULL if no such data exists.
+             * @returns the data if found,          or `null` if no such data exists.
              */
             get_data(key: string): any | null;
             /**
@@ -4387,9 +4522,9 @@ declare module 'gi://Secret?version=1' {
             get_property(property_name: string, value: GObject.Value | any): any;
             /**
              * This function gets back user data pointers stored via
-             * g_object_set_qdata().
-             * @param quark A #GQuark, naming the user data pointer
-             * @returns The user data pointer set, or %NULL
+             * `g_object_set_qdata()`.
+             * @param quark A {@link GLib.Quark}, naming the user data pointer
+             * @returns The user data pointer set, or `null`
              */
             get_qdata(quark: GLib.Quark): any | null;
             /**
@@ -4403,33 +4538,33 @@ declare module 'gi://Secret?version=1' {
             getv(names: string[], values: (GObject.Value | any)[]): void;
             /**
              * Checks whether `object` has a [floating](floating-refs.html) reference.
-             * @returns %TRUE if @object has a floating reference
+             * @returns `true` if `object` has a floating reference
              */
             is_floating(): boolean;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
              * When possible, eg. when signaling a property change from within the class
-             * that registered the property, you should use g_object_notify_by_pspec()
+             * that registered the property, you should use `g_object_notify_by_pspec()`
              * instead.
              *
              * Note that emission of the notify signal may be blocked with
-             * g_object_freeze_notify(). In this case, the signal emissions are queued
-             * and will be emitted (in reverse order) when g_object_thaw_notify() is
+             * `g_object_freeze_notify()`. In this case, the signal emissions are queued
+             * and will be emitted (in reverse order) when `g_object_thaw_notify()` is
              * called.
-             * @param property_name the name of a property installed on the class of @object.
+             * @param property_name the name of a property installed on the class of `object`.
              */
             notify(property_name: string): void;
             /**
              * Emits a "notify" signal for the property specified by `pspec` on `object`.
              *
              * This function omits the property name lookup, hence it is faster than
-             * g_object_notify().
+             * `g_object_notify()`.
              *
-             * One way to avoid using g_object_notify() from within the
-             * class that registered the properties, and using g_object_notify_by_pspec()
+             * One way to avoid using `g_object_notify()` from within the
+             * class that registered the properties, and using `g_object_notify_by_pspec()`
              * instead, is to store the GParamSpec used with
-             * g_object_class_install_property() inside a static array, e.g.:
+             * `g_object_class_install_property()` inside a static array, e.g.:
              *
              *
              * ```c
@@ -4462,21 +4597,21 @@ declare module 'gi://Secret?version=1' {
              *   g_object_notify_by_pspec (self, properties[PROP_FOO]);
              * ```
              *
-             * @param pspec the #GParamSpec of a property installed on the class of @object.
+             * @param pspec the {@link GObject.ParamSpec} of a property installed on the class of `object`.
              */
             notify_by_pspec(pspec: GObject.ParamSpec): void;
             /**
              * Increases the reference count of `object`.
              *
              * Since GLib 2.56, if `GLIB_VERSION_MAX_ALLOWED` is 2.56 or greater, the type
-             * of `object` will be propagated to the return type (using the GCC typeof()
+             * of `object` will be propagated to the return type (using the GCC `typeof()`
              * extension), so any casting the caller needs to do on the return type must be
              * explicit.
-             * @returns the same @object
+             * @returns the same `object`
              */
             ref(): GObject.Object;
             /**
-             * Increase the reference count of `object,` and possibly remove the
+             * Increase the reference count of `object`, and possibly remove the
              * [floating](floating-refs.html) reference, if `object` has a floating reference.
              *
              * In other words, if the object is floating, then this call "assumes
@@ -4486,8 +4621,8 @@ declare module 'gi://Secret?version=1' {
              * adds a new normal reference increasing the reference count by one.
              *
              * Since GLib 2.56, the type of `object` will be propagated to the return type
-             * under the same conditions as for g_object_ref().
-             * @returns @object
+             * under the same conditions as for `g_object_ref()`.
+             * @returns `object`
              */
             ref_sink(): GObject.Object;
             /**
@@ -4504,10 +4639,10 @@ declare module 'gi://Secret?version=1' {
              * If the object already had an association with that name,
              * the old association will be destroyed.
              *
-             * Internally, the `key` is converted to a #GQuark using g_quark_from_string().
+             * Internally, the `key` is converted to a {@link GLib.Quark} using `g_quark_from_string()`.
              * This means a copy of `key` is kept permanently (even after `object` has been
              * finalized) — so it is recommended to only use a small, bounded set of values
-             * for `key` in your program, to avoid the #GQuark storage growing unbounded.
+             * for `key` in your program, to avoid the {@link GLib.Quark} storage growing unbounded.
              * @param key name of the key
              * @param data data to associate with that key
              */
@@ -4522,13 +4657,13 @@ declare module 'gi://Secret?version=1' {
              * Remove a specified datum from the object's data associations,
              * without invoking the association's destroy handler.
              * @param key name of the key
-             * @returns the data if found, or %NULL          if no such data exists.
+             * @returns the data if found, or `null`          if no such data exists.
              */
             steal_data(key: string): any | null;
             /**
              * This function gets back user data pointers stored via
-             * g_object_set_qdata() and removes the `data` from object
-             * without invoking its destroy() function (if any was
+             * `g_object_set_qdata()` and removes the `data` from object
+             * without invoking its `destroy()` function (if any was
              * set).
              * Usually, calling this function is only required to update
              * user data pointers with a destroy notifier, for example:
@@ -4559,21 +4694,21 @@ declare module 'gi://Secret?version=1' {
              * }
              * ```
              *
-             * Using g_object_get_qdata() in the above example, instead of
-             * g_object_steal_qdata() would have left the destroy function set,
+             * Using `g_object_get_qdata()` in the above example, instead of
+             * `g_object_steal_qdata()` would have left the destroy function set,
              * and thus the partial string list would have been freed upon
-             * g_object_set_qdata_full().
-             * @param quark A #GQuark, naming the user data pointer
-             * @returns The user data pointer set, or %NULL
+             * `g_object_set_qdata_full()`.
+             * @param quark A {@link GLib.Quark}, naming the user data pointer
+             * @returns The user data pointer set, or `null`
              */
             steal_qdata(quark: GLib.Quark): any | null;
             /**
              * Reverts the effect of a previous call to
-             * g_object_freeze_notify(). The freeze count is decreased on `object`
+             * `g_object_freeze_notify()`. The freeze count is decreased on `object`
              * and when it reaches zero, queued "notify" signals are emitted.
              *
              * Duplicate notifications for each property are squashed so that at most one
-             * #GObject::notify signal is emitted for each property, in the reverse order
+             * {@link GObject.Object.SignalSignatures.notify | GObject.Object::notify} signal is emitted for each property, in the reverse order
              * in which they have been queued.
              *
              * It is an error to call this function when the freeze count is zero.
@@ -4583,33 +4718,34 @@ declare module 'gi://Secret?version=1' {
              * Decreases the reference count of `object`. When its reference count
              * drops to 0, the object is finalized (i.e. its memory is freed).
              *
-             * If the pointer to the #GObject may be reused in future (for example, if it is
+             * If the pointer to the {@link GObject.Object} may be reused in future (for example, if it is
              * an instance variable of another object), it is recommended to clear the
-             * pointer to %NULL rather than retain a dangling pointer to a potentially
-             * invalid #GObject instance. Use g_clear_object() for this.
+             * pointer to `null` rather than retain a dangling pointer to a potentially
+             * invalid {@link GObject.Object} instance. Use `g_clear_object()` for this.
              */
             unref(): void;
             /**
              * This function essentially limits the life time of the `closure` to
              * the life time of the object. That is, when the object is finalized,
-             * the `closure` is invalidated by calling g_closure_invalidate() on
+             * the `closure` is invalidated by calling `g_closure_invalidate()` on
              * it, in order to prevent invocations of the closure with a finalized
-             * (nonexisting) object. Also, g_object_ref() and g_object_unref() are
-             * added as marshal guards to the `closure,` to ensure that an extra
+             * (nonexisting) object. Also, `g_object_ref()` and `g_object_unref()` are
+             * added as marshal guards to the `closure`, to ensure that an extra
              * reference count is held on `object` during invocation of the
              * `closure`.  Usually, this function will be called on closures that
              * use this `object` as closure data.
-             * @param closure #GClosure to watch
+             * @param closure {@link GObject.Closure} to watch
              */
             watch_closure(closure: GObject.Closure): void;
             /**
-             * the `constructed` function is called by g_object_new() as the
+             * the `constructed` function is called by `g_object_new()` as the
              *  final step of the object creation process.  At the point of the call, all
              *  construction properties have been set on the object.  The purpose of this
              *  call is to allow for object initialisation steps that can only be performed
              *  after construction properties have been set.  `constructed` implementors
              *  should chain up to the `constructed` call of their parent class to allow it
              *  to complete its initialisation.
+             * @virtual
              */
             vfunc_constructed(): void;
             /**
@@ -4618,6 +4754,7 @@ declare module 'gi://Secret?version=1' {
              *  needed.
              * @param n_pspecs
              * @param pspecs
+             * @virtual
              */
             vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void;
             /**
@@ -4626,12 +4763,14 @@ declare module 'gi://Secret?version=1' {
              *  invocations still work. It may be run multiple times (due to reference
              *  loops). Before returning, `dispose` should chain up to the `dispose` method
              *  of the parent class.
+             * @virtual
              */
             vfunc_dispose(): void;
             /**
              * instance finalization function, should finish the finalization of
              *  the instance begun in `dispose` and chain up to the `finalize` method of the
              *  parent class.
+             * @virtual
              */
             vfunc_finalize(): void;
             /**
@@ -4640,20 +4779,22 @@ declare module 'gi://Secret?version=1' {
              * @param property_id
              * @param value
              * @param pspec
+             * @virtual
              */
             vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
              * When possible, eg. when signaling a property change from within the class
-             * that registered the property, you should use g_object_notify_by_pspec()
+             * that registered the property, you should use `g_object_notify_by_pspec()`
              * instead.
              *
              * Note that emission of the notify signal may be blocked with
-             * g_object_freeze_notify(). In this case, the signal emissions are queued
-             * and will be emitted (in reverse order) when g_object_thaw_notify() is
+             * `g_object_freeze_notify()`. In this case, the signal emissions are queued
+             * and will be emitted (in reverse order) when `g_object_thaw_notify()` is
              * called.
              * @param pspec
+             * @virtual
              */
             vfunc_notify(pspec: GObject.ParamSpec): void;
             /**
@@ -4665,6 +4806,7 @@ declare module 'gi://Secret?version=1' {
              * @param property_id
              * @param value
              * @param pspec
+             * @virtual
              */
             vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
             /**
@@ -4723,43 +4865,44 @@ declare module 'gi://Secret?version=1' {
         /**
          * A proxy object representing the Secret Service.
          *
-         * A #SecretService object either represents an implementation of the
+         * A {@link Secret.Service} object either represents an implementation of the
          * [`org.freedesktop.Secret`](https://specifications.freedesktop.org/secret-service/latest/)
          * D-Bus service or a file that is encrypted using a master secret that was
          * provided by the
          * [secret portal](https://flatpak.github.io/xdg-desktop-portal/docs/doc-org.freedesktop.portal.Secret.html).
          *
-         * Normally a single #SecretService object can be shared between multiple
-         * callers. The [func`Service`.get] method is used to access this #SecretService
-         * object. If a new independent #SecretService object is required, use
-         * [func`Service`.open].
+         * Normally a single {@link Secret.Service} object can be shared between multiple
+         * callers. The {@link Service.get} method is used to access this {@link Secret.Service}
+         * object. If a new independent {@link Secret.Service} object is required, use
+         * {@link Service.open}.
          *
          * In order to securely transfer secrets to the Sercret Service, a session
          * is established. This session can be established while initializing a
-         * #SecretService object by passing the %SECRET_SERVICE_OPEN_SESSION flag
-         * to the [func`Service`.get] or [func`Service`.open] functions. In order to
-         * establish a session on an already existing #SecretService, use the
-         * [method`Service`.ensure_session] function.
+         * {@link Secret.Service} object by passing the {@link Secret.ServiceFlags.OPEN_SESSION} flag
+         * to the {@link Service.get} or {@link Service.open} functions. In order to
+         * establish a session on an already existing {@link Secret.Service}, use the
+         * {@link Service.ensure_session} function.
          *
-         * To search for items, use the [method`Service`.search] method.
+         * To search for items, use the {@link Service.search} method.
          *
          * Multiple collections can exist in the Secret Service, each of which contains
-         * secret items. In order to instantiate [class`Collection]` objects which
-         * represent those collections while initializing a #SecretService then pass
-         * the %SECRET_SERVICE_LOAD_COLLECTIONS flag to the [func`Service`.get] or
-         * [func`Service`.open] functions. In order to establish a session on an already
-         * existing #SecretService, use the [method`Service`.load_collections] function.
-         * To access the list of collections use [method`Service`.get_collections].
+         * secret items. In order to instantiate {@link Collection} objects which
+         * represent those collections while initializing a {@link Secret.Service} then pass
+         * the {@link Secret.ServiceFlags.LOAD_COLLECTIONS} flag to the {@link Service.get} or
+         * {@link Service.open} functions. In order to establish a session on an already
+         * existing {@link Secret.Service}, use the {@link Service.load_collections} function.
+         * To access the list of collections use {@link Service.get_collections}.
          *
          * Certain actions on the Secret Service require user prompting to complete,
          * such as creating a collection, or unlocking a collection. When such a prompt
-         * is necessary, then a [class`Prompt]` object is created by this library, and
-         * passed to the [method`Service`.prompt] method. In this way it is handled
+         * is necessary, then a {@link Prompt} object is created by this library, and
+         * passed to the {@link Service.prompt} method. In this way it is handled
          * automatically.
          *
          * In order to customize prompt handling, override the
-         * [vfunc`Service`.prompt_async] and [vfunc`Service`.prompt_finish] virtual
-         * methods of the #SecretService class.
+         * {@link Service.prompt_async} and {@link Service.prompt_finish} virtual
+         * methods of the {@link Secret.Service} class.
+         * @gir-type Class
          */
         class Service
             extends Gio.DBusProxy
@@ -4784,16 +4927,19 @@ declare module 'gi://Secret?version=1' {
 
             // Signals
 
+            /** @signal */
             connect<K extends keyof Service.SignalSignatures>(
                 signal: K,
                 callback: GObject.SignalCallback<this, Service.SignalSignatures[K]>,
             ): number;
             connect(signal: string, callback: (...args: any[]) => any): number;
+            /** @signal */
             connect_after<K extends keyof Service.SignalSignatures>(
                 signal: K,
                 callback: GObject.SignalCallback<this, Service.SignalSignatures[K]>,
             ): number;
             connect_after(signal: string, callback: (...args: any[]) => any): number;
+            /** @signal */
             emit<K extends keyof Service.SignalSignatures>(
                 signal: K,
                 ...args: GObject.GjsParameters<Service.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never
@@ -4803,8 +4949,8 @@ declare module 'gi://Secret?version=1' {
             // Static methods
 
             /**
-             * Disconnect the default #SecretService proxy returned by [func`Service`.get]
-             * and [func`Service`.get_sync].
+             * Disconnect the default {@link Secret.Service} proxy returned by {@link Service.get}
+             * and {@link Service.get_sync}.
              *
              * It is not necessary to call this function, but you may choose to do so at
              * program exit. It is useful for testing that memory is not leaked.
@@ -4815,7 +4961,7 @@ declare module 'gi://Secret?version=1' {
              */
             static disconnect(): void;
             /**
-             * Get a #SecretService proxy for the Secret Service.
+             * Get a {@link Secret.Service} proxy for the Secret Service.
              *
              * If such a proxy object already exists, then the same proxy is returned.
              *
@@ -4832,16 +4978,19 @@ declare module 'gi://Secret?version=1' {
                 cancellable?: Gio.Cancellable | null,
                 callback?: Gio.AsyncReadyCallback<Service> | null,
             ): void;
+            /**
+             * @param args
+             */
             // Conflicted with Secret.Backend.get
             static get(...args: never[]): any;
             /**
-             * Complete an asynchronous operation to get a #SecretService proxy for the
+             * Complete an asynchronous operation to get a {@link Secret.Service} proxy for the
              * Secret Service.
              * @param result the asynchronous result passed to the callback
              */
             static get_finish(result: Gio.AsyncResult): Service;
             /**
-             * Get a #SecretService proxy for the Secret Service.
+             * Get a {@link Secret.Service} proxy for the Secret Service.
              *
              * If such a proxy object already exists, then the same proxy is returned.
              *
@@ -4855,17 +5004,17 @@ declare module 'gi://Secret?version=1' {
              */
             static get_sync(flags: ServiceFlags, cancellable?: Gio.Cancellable | null): Service;
             /**
-             * Create a new #SecretService proxy for the Secret Service.
+             * Create a new {@link Secret.Service} proxy for the Secret Service.
              *
-             * This function is rarely used, see [func`Service`.get] instead.
+             * This function is rarely used, see {@link Service.get} instead.
              *
-             * The `service_gtype` argument should be set to %SECRET_TYPE_SERVICE or a the type
+             * The `service_gtype` argument should be set to `SECRET_TYPE_SERVICE` or a the type
              * of a derived class.
              *
              * If `flags` contains any flags of which parts of the secret service to
              * ensure are initialized, then those will be initialized before returning.
              *
-             * If `service_bus_name` is %NULL then the default is used.
+             * If `service_bus_name` is `null` then the default is used.
              *
              * This method will return immediately and complete asynchronously.
              * @param service_gtype the GType of the new secret service
@@ -4882,23 +5031,23 @@ declare module 'gi://Secret?version=1' {
                 callback?: Gio.AsyncReadyCallback<Service> | null,
             ): void;
             /**
-             * Complete an asynchronous operation to create a new #SecretService proxy for
+             * Complete an asynchronous operation to create a new {@link Secret.Service} proxy for
              * the Secret Service.
              * @param result the asynchronous result passed to the callback
              */
             static open_finish(result: Gio.AsyncResult): Service;
             /**
-             * Create a new #SecretService proxy for the Secret Service.
+             * Create a new {@link Secret.Service} proxy for the Secret Service.
              *
-             * This function is rarely used, see [func`Service`.get_sync] instead.
+             * This function is rarely used, see {@link Service.get_sync} instead.
              *
-             * The `service_gtype` argument should be set to %SECRET_TYPE_SERVICE or a the
+             * The `service_gtype` argument should be set to `SECRET_TYPE_SERVICE` or a the
              * type of a derived class.
              *
              * If `flags` contains any flags of which parts of the secret service to
              * ensure are initialized, then those will be initialized before returning.
              *
-             * If `service_bus_name` is %NULL then the default is used.
+             * If `service_bus_name` is `null` then the default is used.
              *
              * This method may block indefinitely and should not be used in user interface
              * threads.
@@ -4919,13 +5068,15 @@ declare module 'gi://Secret?version=1' {
             /**
              * Get the GObject type for collections instantiated by this service.
              *
-             * This will always be either [class`Collection]` or derived from it.
+             * This will always be either {@link Collection} or derived from it.
+             * @virtual
              */
             vfunc_get_collection_gtype(): GObject.GType;
             /**
              * Get the GObject type for items instantiated by this service.
              *
-             * This will always be either [class`Item]` or derived from it.
+             * This will always be either {@link Item} or derived from it.
+             * @virtual
              */
             vfunc_get_item_gtype(): GObject.GType;
             /**
@@ -4934,6 +5085,7 @@ declare module 'gi://Secret?version=1' {
              * @param return_type
              * @param cancellable
              * @param callback
+             * @virtual
              */
             vfunc_prompt_async(
                 prompt: Prompt,
@@ -4942,16 +5094,17 @@ declare module 'gi://Secret?version=1' {
                 callback?: Gio.AsyncReadyCallback<this> | null,
             ): void;
             /**
-             * Complete asynchronous operation to perform prompting for a [class`Prompt]`.
+             * Complete asynchronous operation to perform prompting for a {@link Prompt}.
              *
              * Returns a variant result if the prompt was completed and not dismissed. The
              * type of result depends on the action the prompt is completing, and is defined
              * in the Secret Service DBus API specification.
              * @param result the asynchronous result passed to the callback
+             * @virtual
              */
             vfunc_prompt_finish(result: Gio.AsyncResult): GLib.Variant;
             /**
-             * Perform prompting for a [class`Prompt]`.
+             * Perform prompting for a {@link Prompt}.
              *
              * Runs a prompt and performs the prompting. Returns a variant result if the
              * prompt was completed and not dismissed. The type of result depends on the
@@ -4961,12 +5114,13 @@ declare module 'gi://Secret?version=1' {
              * This function is called by other parts of this library to handle prompts
              * for the various actions that can require prompting.
              *
-             * Override the #SecretServiceClass [vfunc`Service`.prompt_sync] virtual method
+             * Override the {@link Secret.ServiceClass} {@link Service.prompt_sync} virtual method
              * to change the behavior of the prompting. The default behavior is to simply
-             * run [method`Prompt`.perform_sync] on the prompt with a %NULL `window_id`.
+             * run {@link Prompt.perform_sync} on the prompt with a `null` `window_id`.
              * @param prompt the prompt
              * @param cancellable optional cancellation object
              * @param return_type the variant type of the prompt result
+             * @virtual
              */
             vfunc_prompt_sync(
                 prompt: Prompt,
@@ -4981,8 +5135,8 @@ declare module 'gi://Secret?version=1' {
              *
              * The `attributes` should be a set of key and value string pairs.
              *
-             * If `service` is %NULL, then [func`Service`.get] will be called to get
-             * the default [class`Service]` proxy.
+             * If `service` is `null`, then {@link Service.get} will be called to get
+             * the default {@link Service} proxy.
              *
              * This method will return immediately and complete asynchronously.
              * @param schema the schema for the attributes
@@ -4999,8 +5153,8 @@ declare module 'gi://Secret?version=1' {
              *
              * The `attributes` should be a set of key and value string pairs.
              *
-             * If `service` is %NULL, then [func`Service`.get] will be called to get
-             * the default [class`Service]` proxy.
+             * If `service` is `null`, then {@link Service.get} will be called to get
+             * the default {@link Service} proxy.
              *
              * This method will return immediately and complete asynchronously.
              * @param schema the schema for the attributes
@@ -5019,8 +5173,8 @@ declare module 'gi://Secret?version=1' {
              *
              * The `attributes` should be a set of key and value string pairs.
              *
-             * If `service` is %NULL, then [func`Service`.get] will be called to get
-             * the default [class`Service]` proxy.
+             * If `service` is `null`, then {@link Service.get} will be called to get
+             * the default {@link Service} proxy.
              *
              * This method will return immediately and complete asynchronously.
              * @param schema the schema for the attributes
@@ -5046,8 +5200,8 @@ declare module 'gi://Secret?version=1' {
              *
              * The `attributes` should be a set of key and value string pairs.
              *
-             * If `service` is %NULL, then [func`Service`.get_sync] will be called to get
-             * the default [class`Service]` proxy.
+             * If `service` is `null`, then {@link Service.get_sync} will be called to get
+             * the default {@link Service} proxy.
              *
              * This method may block indefinitely and should not be used in user interface
              * threads.
@@ -5065,21 +5219,21 @@ declare module 'gi://Secret?version=1' {
              * Create a new item in a secret service collection and return its D-Bus
              * object path.
              *
-             * It is often easier to use [func`password_store_sync]` or [func`Item`.create_sync]
+             * It is often easier to use {@link password_store_sync} or {@link Item.create_sync}
              * rather than using this function. Using this method requires that you setup
              * a correct hash table of D-Bus `properties` for the new collection.
              *
-             * If the `flags` contains %SECRET_ITEM_CREATE_REPLACE, then the secret
-             * service will search for an item matching the `attributes,` and update that item
+             * If the `flags` contains {@link Secret.ItemCreateFlags.REPLACE}, then the secret
+             * service will search for an item matching the `attributes`, and update that item
              * instead of creating a new one.
              *
              * `properties` is a set of properties for the new collection. The keys in the
              * hash table should be interface.property strings like
              * `org.freedesktop.Secret.Item.Label`. The values
-             * in the hash table should be [struct`GLib`.Variant] values of the properties.
+             * in the hash table should be {@link GLib.Variant} values of the properties.
              *
              * This method may block indefinitely and should not be used in user interface
-             * threads. The secret service may prompt the user. [method`Service`.prompt]
+             * threads. The secret service may prompt the user. {@link Service.prompt}
              * will be used to handle any prompts that are required.
              * @param collection_path the D-Bus path of the collection in which to create item
              * @param properties hash table of D-Bus properties   for the new collection
@@ -5096,53 +5250,53 @@ declare module 'gi://Secret?version=1' {
                 cancellable?: Gio.Cancellable | null,
             ): string;
             /**
-             * Decode a [struct`Value]` into [struct`GLib`.Variant] received with the Secret Service
+             * Decode a {@link Value} into {@link GLib.Variant} received with the Secret Service
              * DBus API.
              *
-             * The [struct`GLib`.Variant] should have a `(oayays)` signature.
+             * The {@link GLib.Variant} should have a `(oayays)` signature.
              *
-             * A session must have already been established by the [class`Service]`, and
+             * A session must have already been established by the {@link Service}, and
              * the encoded secret must be valid for that session.
              * @param value the encoded secret
              * @returns the decoded secret value
              */
             decode_dbus_secret(value: GLib.Variant): Value;
             /**
-             * Encodes a [struct`Value]` into [struct`GLib`.Variant] for use with the Secret
+             * Encodes a {@link Value} into {@link GLib.Variant} for use with the Secret
              * Service DBus API.
              *
-             * The resulting [struct`GLib`.Variant] will have a `(oayays)` signature.
+             * The resulting {@link GLib.Variant} will have a `(oayays)` signature.
              *
-             * A session must have already been established by the [class`Service]`.
+             * A session must have already been established by the {@link Service}.
              * @param value the secret value
              * @returns the encoded secret
              */
             encode_dbus_secret(value: Value): GLib.Variant;
             /**
-             * Ensure that the #SecretService proxy has established a session with the
+             * Ensure that the {@link Secret.Service} proxy has established a session with the
              * Secret Service.
              *
              * This session is used to transfer secrets.
              *
              * It is not normally necessary to call this method, as the session is
-             * established as necessary. You can also pass the %SECRET_SERVICE_OPEN_SESSION
-             * to [func`Service`.get] in order to ensure that a session has been established
-             * by the time you get the #SecretService proxy.
+             * established as necessary. You can also pass the {@link Secret.ServiceFlags.OPEN_SESSION}
+             * to {@link Service.get} in order to ensure that a session has been established
+             * by the time you get the {@link Secret.Service} proxy.
              *
              * This method will return immediately and complete asynchronously.
              * @param cancellable optional cancellation object
              */
             ensure_session(cancellable?: Gio.Cancellable | null): globalThis.Promise<boolean>;
             /**
-             * Ensure that the #SecretService proxy has established a session with the
+             * Ensure that the {@link Secret.Service} proxy has established a session with the
              * Secret Service.
              *
              * This session is used to transfer secrets.
              *
              * It is not normally necessary to call this method, as the session is
-             * established as necessary. You can also pass the %SECRET_SERVICE_OPEN_SESSION
-             * to [func`Service`.get] in order to ensure that a session has been established
-             * by the time you get the #SecretService proxy.
+             * established as necessary. You can also pass the {@link Secret.ServiceFlags.OPEN_SESSION}
+             * to {@link Service.get} in order to ensure that a session has been established
+             * by the time you get the {@link Secret.Service} proxy.
              *
              * This method will return immediately and complete asynchronously.
              * @param cancellable optional cancellation object
@@ -5150,15 +5304,15 @@ declare module 'gi://Secret?version=1' {
              */
             ensure_session(cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<this> | null): void;
             /**
-             * Ensure that the #SecretService proxy has established a session with the
+             * Ensure that the {@link Secret.Service} proxy has established a session with the
              * Secret Service.
              *
              * This session is used to transfer secrets.
              *
              * It is not normally necessary to call this method, as the session is
-             * established as necessary. You can also pass the %SECRET_SERVICE_OPEN_SESSION
-             * to [func`Service`.get] in order to ensure that a session has been established
-             * by the time you get the #SecretService proxy.
+             * established as necessary. You can also pass the {@link Secret.ServiceFlags.OPEN_SESSION}
+             * to {@link Service.get} in order to ensure that a session has been established
+             * by the time you get the {@link Secret.Service} proxy.
              *
              * This method will return immediately and complete asynchronously.
              * @param cancellable optional cancellation object
@@ -5169,22 +5323,22 @@ declare module 'gi://Secret?version=1' {
                 callback?: Gio.AsyncReadyCallback<this> | null,
             ): globalThis.Promise<boolean> | void;
             /**
-             * Finish an asynchronous operation to ensure that the #SecretService proxy
+             * Finish an asynchronous operation to ensure that the {@link Secret.Service} proxy
              * has established a session with the Secret Service.
              * @param result the asynchronous result passed to the callback
              * @returns whether a session is established or not
              */
             ensure_session_finish(result: Gio.AsyncResult): boolean;
             /**
-             * Ensure that the #SecretService proxy has established a session with the
+             * Ensure that the {@link Secret.Service} proxy has established a session with the
              * Secret Service.
              *
              * This session is used to transfer secrets.
              *
              * It is not normally necessary to call this method, as the session is
-             * established as necessary. You can also pass the %SECRET_SERVICE_OPEN_SESSION
-             * to [func`Service`.get_sync] in order to ensure that a session has been
-             * established by the time you get the #SecretService proxy.
+             * established as necessary. You can also pass the {@link Secret.ServiceFlags.OPEN_SESSION}
+             * to {@link Service.get_sync} in order to ensure that a session has been
+             * established by the time you get the {@link Secret.Service} proxy.
              *
              * This method may block indefinitely and should not be used in user interface
              * threads.
@@ -5195,35 +5349,38 @@ declare module 'gi://Secret?version=1' {
             /**
              * Get the GObject type for collections instantiated by this service.
              *
-             * This will always be either [class`Collection]` or derived from it.
+             * This will always be either {@link Collection} or derived from it.
              * @returns the gobject type for collections
              */
             get_collection_gtype(): GObject.GType;
             /**
-             * Get a list of [class`Collection]` objects representing all the collections
+             * Get a list of {@link Collection} objects representing all the collections
              * in the secret service.
              *
-             * If the %SECRET_SERVICE_LOAD_COLLECTIONS flag was not specified when
-             * initializing #SecretService proxy object, then this method will return
-             * %NULL. Use [method`Service`.load_collections] to load the collections.
+             * If the {@link Secret.ServiceFlags.LOAD_COLLECTIONS} flag was not specified when
+             * initializing {@link Secret.Service} proxy object, then this method will return
+             * `null`. Use {@link Service.load_collections} to load the collections.
              * @returns a   list of the collections in the secret service
              */
             get_collections(): Collection[] | null;
             /**
-             * Get the flags representing what features of the #SecretService proxy
+             * Get the flags representing what features of the {@link Secret.Service} proxy
              * have been initialized.
              *
-             * Use [method`Service`.ensure_session] or [method`Service`.load_collections]
+             * Use {@link Service.ensure_session} or {@link Service.load_collections}
              * to initialize further features and change the flags.
              * @returns the flags for features initialized
              */
             get_flags(): ServiceFlags;
+            /**
+             * @param args
+             */
             // Conflicted with Gio.DBusProxy.get_flags
             get_flags(...args: never[]): any;
             /**
              * Get the GObject type for items instantiated by this service.
              *
-             * This will always be either [class`Item]` or derived from it.
+             * This will always be either {@link Item} or derived from it.
              * @returns the gobject type for items
              */
             get_item_gtype(): GObject.GType;
@@ -5231,8 +5388,8 @@ declare module 'gi://Secret?version=1' {
              * Get the set of algorithms being used to transfer secrets between this
              * secret service proxy and the Secret Service itself.
              *
-             * This will be %NULL if no session has been established. Use
-             * [method`Service`.ensure_session] to establish a session.
+             * This will be `null` if no session has been established. Use
+             * {@link Service.ensure_session} to establish a session.
              * @returns a string representing the algorithms for transferring   secrets
              */
             get_session_algorithms(): string | null;
@@ -5240,34 +5397,34 @@ declare module 'gi://Secret?version=1' {
              * Get the D-Bus object path of the session object being used to transfer
              * secrets between this secret service proxy and the Secret Service itself.
              *
-             * This will be %NULL if no session has been established. Use
-             * [method`Service`.ensure_session] to establish a session.
+             * This will be `null` if no session has been established. Use
+             * {@link Service.ensure_session} to establish a session.
              * @returns a string representing the D-Bus object path of the   session
              */
             get_session_dbus_path(): string | null;
             /**
-             * Ensure that the #SecretService proxy has loaded all the collections present
+             * Ensure that the {@link Secret.Service} proxy has loaded all the collections present
              * in the Secret Service.
              *
-             * This affects the result of [method`Service`.get_collections].
+             * This affects the result of {@link Service.get_collections}.
              *
-             * You can also pass the %SECRET_SERVICE_LOAD_COLLECTIONS to
-             * [func`Service`.get_sync] in order to ensure that the collections have been
-             * loaded by the time you get the #SecretService proxy.
+             * You can also pass the {@link Secret.ServiceFlags.LOAD_COLLECTIONS} to
+             * {@link Service.get_sync} in order to ensure that the collections have been
+             * loaded by the time you get the {@link Secret.Service} proxy.
              *
              * This method will return immediately and complete asynchronously.
              * @param cancellable optional cancellation object
              */
             load_collections(cancellable?: Gio.Cancellable | null): globalThis.Promise<boolean>;
             /**
-             * Ensure that the #SecretService proxy has loaded all the collections present
+             * Ensure that the {@link Secret.Service} proxy has loaded all the collections present
              * in the Secret Service.
              *
-             * This affects the result of [method`Service`.get_collections].
+             * This affects the result of {@link Service.get_collections}.
              *
-             * You can also pass the %SECRET_SERVICE_LOAD_COLLECTIONS to
-             * [func`Service`.get_sync] in order to ensure that the collections have been
-             * loaded by the time you get the #SecretService proxy.
+             * You can also pass the {@link Secret.ServiceFlags.LOAD_COLLECTIONS} to
+             * {@link Service.get_sync} in order to ensure that the collections have been
+             * loaded by the time you get the {@link Secret.Service} proxy.
              *
              * This method will return immediately and complete asynchronously.
              * @param cancellable optional cancellation object
@@ -5275,14 +5432,14 @@ declare module 'gi://Secret?version=1' {
              */
             load_collections(cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<this> | null): void;
             /**
-             * Ensure that the #SecretService proxy has loaded all the collections present
+             * Ensure that the {@link Secret.Service} proxy has loaded all the collections present
              * in the Secret Service.
              *
-             * This affects the result of [method`Service`.get_collections].
+             * This affects the result of {@link Service.get_collections}.
              *
-             * You can also pass the %SECRET_SERVICE_LOAD_COLLECTIONS to
-             * [func`Service`.get_sync] in order to ensure that the collections have been
-             * loaded by the time you get the #SecretService proxy.
+             * You can also pass the {@link Secret.ServiceFlags.LOAD_COLLECTIONS} to
+             * {@link Service.get_sync} in order to ensure that the collections have been
+             * loaded by the time you get the {@link Secret.Service} proxy.
              *
              * This method will return immediately and complete asynchronously.
              * @param cancellable optional cancellation object
@@ -5293,21 +5450,21 @@ declare module 'gi://Secret?version=1' {
                 callback?: Gio.AsyncReadyCallback<this> | null,
             ): globalThis.Promise<boolean> | void;
             /**
-             * Complete an asynchronous operation to ensure that the #SecretService proxy
+             * Complete an asynchronous operation to ensure that the {@link Secret.Service} proxy
              * has loaded all the collections present in the Secret Service.
              * @param result the asynchronous result passed to the callback
              * @returns whether the load was successful or not
              */
             load_collections_finish(result: Gio.AsyncResult): boolean;
             /**
-             * Ensure that the #SecretService proxy has loaded all the collections present
+             * Ensure that the {@link Secret.Service} proxy has loaded all the collections present
              * in the Secret Service.
              *
-             * This affects the result of [method`Service`.get_collections].
+             * This affects the result of {@link Service.get_collections}.
              *
-             * You can also pass the %SECRET_SERVICE_LOAD_COLLECTIONS to
-             * [func`Service`.get_sync] in order to ensure that the collections have been
-             * loaded by the time you get the #SecretService proxy.
+             * You can also pass the {@link Secret.ServiceFlags.LOAD_COLLECTIONS} to
+             * {@link Service.get_sync} in order to ensure that the collections have been
+             * loaded by the time you get the {@link Secret.Service} proxy.
              *
              * This method may block indefinitely and should not be used in user interface
              * threads.
@@ -5321,11 +5478,11 @@ declare module 'gi://Secret?version=1' {
              * The secret service may not be able to lock items individually, and may
              * lock an entire collection instead.
              *
-             * If `service` is %NULL, then [func`Service`.get] will be called to get
-             * the default [class`Service]` proxy.
+             * If `service` is `null`, then {@link Service.get} will be called to get
+             * the default {@link Service} proxy.
              *
              * This method returns immediately and completes asynchronously. The secret
-             * service may prompt the user. [method`Service`.prompt] will be used to handle
+             * service may prompt the user. {@link Service.prompt} will be used to handle
              * any prompts that show up.
              * @param objects the items or collections to lock
              * @param cancellable optional cancellation object
@@ -5340,11 +5497,11 @@ declare module 'gi://Secret?version=1' {
              * The secret service may not be able to lock items individually, and may
              * lock an entire collection instead.
              *
-             * If `service` is %NULL, then [func`Service`.get] will be called to get
-             * the default [class`Service]` proxy.
+             * If `service` is `null`, then {@link Service.get} will be called to get
+             * the default {@link Service} proxy.
              *
              * This method returns immediately and completes asynchronously. The secret
-             * service may prompt the user. [method`Service`.prompt] will be used to handle
+             * service may prompt the user. {@link Service.prompt} will be used to handle
              * any prompts that show up.
              * @param objects the items or collections to lock
              * @param cancellable optional cancellation object
@@ -5361,11 +5518,11 @@ declare module 'gi://Secret?version=1' {
              * The secret service may not be able to lock items individually, and may
              * lock an entire collection instead.
              *
-             * If `service` is %NULL, then [func`Service`.get] will be called to get
-             * the default [class`Service]` proxy.
+             * If `service` is `null`, then {@link Service.get} will be called to get
+             * the default {@link Service} proxy.
              *
              * This method returns immediately and completes asynchronously. The secret
-             * service may prompt the user. [method`Service`.prompt] will be used to handle
+             * service may prompt the user. {@link Service.prompt} will be used to handle
              * any prompts that show up.
              * @param objects the items or collections to lock
              * @param cancellable optional cancellation object
@@ -5392,12 +5549,12 @@ declare module 'gi://Secret?version=1' {
              * The secret service may not be able to lock items individually, and may
              * lock an entire collection instead.
              *
-             * If `service` is %NULL, then [func`Service`.get_sync] will be called to get
-             * the default [class`Service]` proxy.
+             * If `service` is `null`, then {@link Service.get_sync} will be called to get
+             * the default {@link Service} proxy.
              *
              * This method may block indefinitely and should not be used in user
              * interface threads. The secret service may prompt the user.
-             * [method`Service`.prompt] will be used to handle any prompts that show up.
+             * {@link Service.prompt} will be used to handle any prompts that show up.
              * @param objects the items or collections to lock
              * @param cancellable optional cancellation object
              * @returns the number of items or collections that were locked
@@ -5408,8 +5565,8 @@ declare module 'gi://Secret?version=1' {
              *
              * The `attributes` should be a set of key and value string pairs.
              *
-             * If `service` is %NULL, then [func`Service`.get] will be called to get
-             * the default [class`Service]` proxy.
+             * If `service` is `null`, then {@link Service.get} will be called to get
+             * the default {@link Service} proxy.
              *
              * This method will return immediately and complete asynchronously.
              * @param schema the schema for the attributes
@@ -5426,8 +5583,8 @@ declare module 'gi://Secret?version=1' {
              *
              * The `attributes` should be a set of key and value string pairs.
              *
-             * If `service` is %NULL, then [func`Service`.get] will be called to get
-             * the default [class`Service]` proxy.
+             * If `service` is `null`, then {@link Service.get} will be called to get
+             * the default {@link Service} proxy.
              *
              * This method will return immediately and complete asynchronously.
              * @param schema the schema for the attributes
@@ -5446,8 +5603,8 @@ declare module 'gi://Secret?version=1' {
              *
              * The `attributes` should be a set of key and value string pairs.
              *
-             * If `service` is %NULL, then [func`Service`.get] will be called to get
-             * the default [class`Service]` proxy.
+             * If `service` is `null`, then {@link Service.get} will be called to get
+             * the default {@link Service} proxy.
              *
              * This method will return immediately and complete asynchronously.
              * @param schema the schema for the attributes
@@ -5464,9 +5621,9 @@ declare module 'gi://Secret?version=1' {
             /**
              * Finish asynchronous operation to lookup a secret value in the secret service.
              *
-             * If no secret is found then %NULL is returned.
+             * If no secret is found then `null` is returned.
              * @param result the asynchronous result passed to the callback
-             * @returns a newly allocated [struct@Value], which should be   released with [method@Value.unref], or %NULL if no secret found
+             * @returns a newly allocated {@link Value}, which should be   released with {@link Value.unref}, or `null` if no secret found
              */
             lookup_finish(result: Gio.AsyncResult): Value;
             /**
@@ -5474,15 +5631,15 @@ declare module 'gi://Secret?version=1' {
              *
              * The `attributes` should be a set of key and value string pairs.
              *
-             * If `service` is %NULL, then [func`Service`.get_sync] will be called to get
-             * the default [class`Service]` proxy.
+             * If `service` is `null`, then {@link Service.get_sync} will be called to get
+             * the default {@link Service} proxy.
              *
              * This method may block indefinitely and should not be used in user interface
              * threads.
              * @param schema the schema for the attributes
              * @param attributes the attribute keys and values
              * @param cancellable optional cancellation object
-             * @returns a newly allocated [struct@Value], which should be   released with [method@Value.unref], or %NULL if no secret found
+             * @returns a newly allocated {@link Value}, which should be   released with {@link Value.unref}, or `null` if no secret found
              */
             lookup_sync(
                 schema: Schema | null,
@@ -5490,14 +5647,14 @@ declare module 'gi://Secret?version=1' {
                 cancellable?: Gio.Cancellable | null,
             ): Value;
             /**
-             * Perform prompting for a [class`Prompt]`.
+             * Perform prompting for a {@link Prompt}.
              *
              * This function is called by other parts of this library to handle prompts
              * for the various actions that can require prompting.
              *
-             * Override the #SecretServiceClass [vfunc`Service`.prompt_async] virtual method
+             * Override the {@link Secret.ServiceClass} {@link Service.prompt_async} virtual method
              * to change the behavior of the prompting. The default behavior is to simply
-             * run [method`Prompt`.perform] on the prompt.
+             * run {@link Prompt.perform} on the prompt.
              * @param prompt the prompt
              * @param return_type the variant type of the prompt result
              * @param cancellable optional cancellation object
@@ -5508,14 +5665,14 @@ declare module 'gi://Secret?version=1' {
                 cancellable?: Gio.Cancellable | null,
             ): globalThis.Promise<GLib.Variant>;
             /**
-             * Perform prompting for a [class`Prompt]`.
+             * Perform prompting for a {@link Prompt}.
              *
              * This function is called by other parts of this library to handle prompts
              * for the various actions that can require prompting.
              *
-             * Override the #SecretServiceClass [vfunc`Service`.prompt_async] virtual method
+             * Override the {@link Secret.ServiceClass} {@link Service.prompt_async} virtual method
              * to change the behavior of the prompting. The default behavior is to simply
-             * run [method`Prompt`.perform] on the prompt.
+             * run {@link Prompt.perform} on the prompt.
              * @param prompt the prompt
              * @param return_type the variant type of the prompt result
              * @param cancellable optional cancellation object
@@ -5528,14 +5685,14 @@ declare module 'gi://Secret?version=1' {
                 callback: Gio.AsyncReadyCallback<this> | null,
             ): void;
             /**
-             * Perform prompting for a [class`Prompt]`.
+             * Perform prompting for a {@link Prompt}.
              *
              * This function is called by other parts of this library to handle prompts
              * for the various actions that can require prompting.
              *
-             * Override the #SecretServiceClass [vfunc`Service`.prompt_async] virtual method
+             * Override the {@link Secret.ServiceClass} {@link Service.prompt_async} virtual method
              * to change the behavior of the prompting. The default behavior is to simply
-             * run [method`Prompt`.perform] on the prompt.
+             * run {@link Prompt.perform} on the prompt.
              * @param prompt the prompt
              * @param return_type the variant type of the prompt result
              * @param cancellable optional cancellation object
@@ -5548,17 +5705,17 @@ declare module 'gi://Secret?version=1' {
                 callback?: Gio.AsyncReadyCallback<this> | null,
             ): globalThis.Promise<GLib.Variant> | void;
             /**
-             * Complete asynchronous operation to perform prompting for a [class`Prompt]`.
+             * Complete asynchronous operation to perform prompting for a {@link Prompt}.
              *
              * Returns a variant result if the prompt was completed and not dismissed. The
              * type of result depends on the action the prompt is completing, and is defined
              * in the Secret Service DBus API specification.
              * @param result the asynchronous result passed to the callback
-             * @returns %NULL if the prompt was dismissed or an error occurred,   a variant result if the prompt was successful
+             * @returns `null` if the prompt was dismissed or an error occurred,   a variant result if the prompt was successful
              */
             prompt_finish(result: Gio.AsyncResult): GLib.Variant;
             /**
-             * Perform prompting for a [class`Prompt]`.
+             * Perform prompting for a {@link Prompt}.
              *
              * Runs a prompt and performs the prompting. Returns a variant result if the
              * prompt was completed and not dismissed. The type of result depends on the
@@ -5568,13 +5725,13 @@ declare module 'gi://Secret?version=1' {
              * This function is called by other parts of this library to handle prompts
              * for the various actions that can require prompting.
              *
-             * Override the #SecretServiceClass [vfunc`Service`.prompt_sync] virtual method
+             * Override the {@link Secret.ServiceClass} {@link Service.prompt_sync} virtual method
              * to change the behavior of the prompting. The default behavior is to simply
-             * run [method`Prompt`.perform_sync] on the prompt with a %NULL `window_id`.
+             * run {@link Prompt.perform_sync} on the prompt with a `null` `window_id`.
              * @param prompt the prompt
              * @param cancellable optional cancellation object
              * @param return_type the variant type of the prompt result
-             * @returns %NULL if the prompt was dismissed or an error occurred,   a variant result if the prompt was successful
+             * @returns `null` if the prompt was dismissed or an error occurred,   a variant result if the prompt was successful
              */
             prompt_sync(
                 prompt: Prompt,
@@ -5587,19 +5744,19 @@ declare module 'gi://Secret?version=1' {
              * All collections are searched. The `attributes` should be a table of string
              * keys and string values.
              *
-             * If `service` is %NULL, then [func`Service`.get] will be called to get
-             * the default [class`Service]` proxy.
+             * If `service` is `null`, then {@link Service.get} will be called to get
+             * the default {@link Service} proxy.
              *
-             * If %SECRET_SEARCH_ALL is set in `flags,` then all the items matching the
+             * If {@link Secret.SearchFlags.ALL} is set in `flags`, then all the items matching the
              * search will be returned. Otherwise only the first item will be returned.
              * This is almost always the unlocked item that was most recently stored.
              *
-             * If %SECRET_SEARCH_UNLOCK is set in `flags,` then items will be unlocked
+             * If {@link Secret.SearchFlags.UNLOCK} is set in `flags`, then items will be unlocked
              * if necessary. In either case, locked and unlocked items will match the
              * search and be returned. If the unlock fails, the search does not fail.
              *
-             * If %SECRET_SEARCH_LOAD_SECRETS is set in `flags,` then the items will have
-             * their secret values loaded and available via [method`Item`.get_secret].
+             * If {@link Secret.SearchFlags.LOAD_SECRETS} is set in `flags`, then the items will have
+             * their secret values loaded and available via {@link Item.get_secret}.
              *
              * This function returns immediately and completes asynchronously.
              * @param schema the schema for the attributes
@@ -5619,19 +5776,19 @@ declare module 'gi://Secret?version=1' {
              * All collections are searched. The `attributes` should be a table of string
              * keys and string values.
              *
-             * If `service` is %NULL, then [func`Service`.get] will be called to get
-             * the default [class`Service]` proxy.
+             * If `service` is `null`, then {@link Service.get} will be called to get
+             * the default {@link Service} proxy.
              *
-             * If %SECRET_SEARCH_ALL is set in `flags,` then all the items matching the
+             * If {@link Secret.SearchFlags.ALL} is set in `flags`, then all the items matching the
              * search will be returned. Otherwise only the first item will be returned.
              * This is almost always the unlocked item that was most recently stored.
              *
-             * If %SECRET_SEARCH_UNLOCK is set in `flags,` then items will be unlocked
+             * If {@link Secret.SearchFlags.UNLOCK} is set in `flags`, then items will be unlocked
              * if necessary. In either case, locked and unlocked items will match the
              * search and be returned. If the unlock fails, the search does not fail.
              *
-             * If %SECRET_SEARCH_LOAD_SECRETS is set in `flags,` then the items will have
-             * their secret values loaded and available via [method`Item`.get_secret].
+             * If {@link Secret.SearchFlags.LOAD_SECRETS} is set in `flags`, then the items will have
+             * their secret values loaded and available via {@link Item.get_secret}.
              *
              * This function returns immediately and completes asynchronously.
              * @param schema the schema for the attributes
@@ -5653,19 +5810,19 @@ declare module 'gi://Secret?version=1' {
              * All collections are searched. The `attributes` should be a table of string
              * keys and string values.
              *
-             * If `service` is %NULL, then [func`Service`.get] will be called to get
-             * the default [class`Service]` proxy.
+             * If `service` is `null`, then {@link Service.get} will be called to get
+             * the default {@link Service} proxy.
              *
-             * If %SECRET_SEARCH_ALL is set in `flags,` then all the items matching the
+             * If {@link Secret.SearchFlags.ALL} is set in `flags`, then all the items matching the
              * search will be returned. Otherwise only the first item will be returned.
              * This is almost always the unlocked item that was most recently stored.
              *
-             * If %SECRET_SEARCH_UNLOCK is set in `flags,` then items will be unlocked
+             * If {@link Secret.SearchFlags.UNLOCK} is set in `flags`, then items will be unlocked
              * if necessary. In either case, locked and unlocked items will match the
              * search and be returned. If the unlock fails, the search does not fail.
              *
-             * If %SECRET_SEARCH_LOAD_SECRETS is set in `flags,` then the items will have
-             * their secret values loaded and available via [method`Item`.get_secret].
+             * If {@link Secret.SearchFlags.LOAD_SECRETS} is set in `flags`, then the items will have
+             * their secret values loaded and available via {@link Item.get_secret}.
              *
              * This function returns immediately and completes asynchronously.
              * @param schema the schema for the attributes
@@ -5693,20 +5850,20 @@ declare module 'gi://Secret?version=1' {
              * All collections are searched. The `attributes` should be a table of string
              * keys and string values.
              *
-             * If `service` is %NULL, then [func`Service`.get_sync] will be called to get
-             * the default [class`Service]` proxy.
+             * If `service` is `null`, then {@link Service.get_sync} will be called to get
+             * the default {@link Service} proxy.
              *
-             * If %SECRET_SEARCH_ALL is set in `flags,` then all the items matching the
+             * If {@link Secret.SearchFlags.ALL} is set in `flags`, then all the items matching the
              * search will be returned. Otherwise only the first item will be returned.
              * This is almost always the unlocked item that was most recently stored.
              *
-             * If %SECRET_SEARCH_UNLOCK is set in `flags,` then items will be unlocked
+             * If {@link Secret.SearchFlags.UNLOCK} is set in `flags`, then items will be unlocked
              * if necessary. In either case, locked and unlocked items will match the
              * search and be returned. If the unlock fails, the search does not fail.
              *
-             * If %SECRET_SEARCH_LOAD_SECRETS is set in `flags,` then the items' secret
+             * If {@link Secret.SearchFlags.LOAD_SECRETS} is set in `flags`, then the items' secret
              * values will be loaded for any unlocked items. Loaded item secret values
-             * are available via [method`Item`.get_secret]. If the load of a secret values
+             * are available via {@link Item.get_secret}. If the load of a secret values
              * fail, then the
              *
              * This function may block indefinitely. Use the asynchronous version
@@ -5728,8 +5885,8 @@ declare module 'gi://Secret?version=1' {
              *
              * Aliases help determine well known collections, such as 'default'.
              *
-             * If `service` is %NULL, then [func`Service`.get] will be called to get
-             * the default [class`Service]` proxy.
+             * If `service` is `null`, then {@link Service.get} will be called to get
+             * the default {@link Service} proxy.
              *
              * This method will return immediately and complete asynchronously.
              * @param alias the alias to assign the collection to
@@ -5746,8 +5903,8 @@ declare module 'gi://Secret?version=1' {
              *
              * Aliases help determine well known collections, such as 'default'.
              *
-             * If `service` is %NULL, then [func`Service`.get] will be called to get
-             * the default [class`Service]` proxy.
+             * If `service` is `null`, then {@link Service.get} will be called to get
+             * the default {@link Service} proxy.
              *
              * This method will return immediately and complete asynchronously.
              * @param alias the alias to assign the collection to
@@ -5766,8 +5923,8 @@ declare module 'gi://Secret?version=1' {
              *
              * Aliases help determine well known collections, such as 'default'.
              *
-             * If `service` is %NULL, then [func`Service`.get] will be called to get
-             * the default [class`Service]` proxy.
+             * If `service` is `null`, then {@link Service.get} will be called to get
+             * the default {@link Service} proxy.
              *
              * This method will return immediately and complete asynchronously.
              * @param alias the alias to assign the collection to
@@ -5784,21 +5941,21 @@ declare module 'gi://Secret?version=1' {
             /**
              * Finish an asynchronous operation to assign a collection to an alias.
              * @param result asynchronous result passed to callback
-             * @returns %TRUE if successful
+             * @returns `true` if successful
              */
             set_alias_finish(result: Gio.AsyncResult): boolean;
             /**
              * Assign a collection to this alias. Aliases help determine
              * well known collections, such as 'default'.
              *
-             * If `service` is %NULL, then [func`Service`.get_sync] will be called to get
-             * the default [class`Service]` proxy.
+             * If `service` is `null`, then {@link Service.get_sync} will be called to get
+             * the default {@link Service} proxy.
              *
              * This method may block and should not be used in user interface threads.
              * @param alias the alias to assign the collection to
              * @param collection the collection to assign to the alias
              * @param cancellable optional cancellation object
-             * @returns %TRUE if successful
+             * @returns `true` if successful
              */
             set_alias_sync(
                 alias: string,
@@ -5813,11 +5970,11 @@ declare module 'gi://Secret?version=1' {
              * If the attributes match a secret item already stored in the collection, then
              * the item will be updated with these new values.
              *
-             * If `service` is %NULL, then [func`Service`.get] will be called to get
-             * the default [class`Service]` proxy.
+             * If `service` is `null`, then {@link Service.get} will be called to get
+             * the default {@link Service} proxy.
              *
              * If `collection` is not specified, then the default collection will be
-             * used. Use [const`COLLECTION_SESSION]` to store the password in the session
+             * used. Use {@link COLLECTION_SESSION} to store the password in the session
              * collection, which doesn't get stored across login sessions.
              *
              * This method will return immediately and complete asynchronously.
@@ -5844,11 +6001,11 @@ declare module 'gi://Secret?version=1' {
              * If the attributes match a secret item already stored in the collection, then
              * the item will be updated with these new values.
              *
-             * If `service` is %NULL, then [func`Service`.get] will be called to get
-             * the default [class`Service]` proxy.
+             * If `service` is `null`, then {@link Service.get} will be called to get
+             * the default {@link Service} proxy.
              *
              * If `collection` is not specified, then the default collection will be
-             * used. Use [const`COLLECTION_SESSION]` to store the password in the session
+             * used. Use {@link COLLECTION_SESSION} to store the password in the session
              * collection, which doesn't get stored across login sessions.
              *
              * This method will return immediately and complete asynchronously.
@@ -5877,11 +6034,11 @@ declare module 'gi://Secret?version=1' {
              * If the attributes match a secret item already stored in the collection, then
              * the item will be updated with these new values.
              *
-             * If `service` is %NULL, then [func`Service`.get] will be called to get
-             * the default [class`Service]` proxy.
+             * If `service` is `null`, then {@link Service.get} will be called to get
+             * the default {@link Service} proxy.
              *
              * If `collection` is not specified, then the default collection will be
-             * used. Use [const`COLLECTION_SESSION]` to store the password in the session
+             * used. Use {@link COLLECTION_SESSION} to store the password in the session
              * collection, which doesn't get stored across login sessions.
              *
              * This method will return immediately and complete asynchronously.
@@ -5916,12 +6073,12 @@ declare module 'gi://Secret?version=1' {
              * If the attributes match a secret item already stored in the collection, then
              * the item will be updated with these new values.
              *
-             * If `collection` is %NULL, then the default collection will be
-             * used. Use [const`COLLECTION_SESSION]` to store the password in the session
+             * If `collection` is `null`, then the default collection will be
+             * used. Use {@link COLLECTION_SESSION} to store the password in the session
              * collection, which doesn't get stored across login sessions.
              *
-             * If `service` is %NULL, then [func`Service`.get_sync] will be called to get
-             * the default [class`Service]` proxy.
+             * If `service` is `null`, then {@link Service.get_sync} will be called to get
+             * the default {@link Service} proxy.
              *
              * This method may block indefinitely and should not be used in user interface
              * threads.
@@ -5947,12 +6104,12 @@ declare module 'gi://Secret?version=1' {
              * The secret service may not be able to unlock items individually, and may
              * unlock an entire collection instead.
              *
-             * If `service` is %NULL, then [func`Service`.get] will be called to get
-             * the default [class`Service]` proxy.
+             * If `service` is `null`, then {@link Service.get} will be called to get
+             * the default {@link Service} proxy.
              *
              * This method may block indefinitely and should not be used in user
              * interface threads. The secret service may prompt the user.
-             * [method`Service`.prompt] will be used to handle any prompts that show up.
+             * {@link Service.prompt} will be used to handle any prompts that show up.
              * @param objects the items or collections to unlock
              * @param cancellable optional cancellation object
              */
@@ -5966,12 +6123,12 @@ declare module 'gi://Secret?version=1' {
              * The secret service may not be able to unlock items individually, and may
              * unlock an entire collection instead.
              *
-             * If `service` is %NULL, then [func`Service`.get] will be called to get
-             * the default [class`Service]` proxy.
+             * If `service` is `null`, then {@link Service.get} will be called to get
+             * the default {@link Service} proxy.
              *
              * This method may block indefinitely and should not be used in user
              * interface threads. The secret service may prompt the user.
-             * [method`Service`.prompt] will be used to handle any prompts that show up.
+             * {@link Service.prompt} will be used to handle any prompts that show up.
              * @param objects the items or collections to unlock
              * @param cancellable optional cancellation object
              * @param callback called when the operation completes
@@ -5987,12 +6144,12 @@ declare module 'gi://Secret?version=1' {
              * The secret service may not be able to unlock items individually, and may
              * unlock an entire collection instead.
              *
-             * If `service` is %NULL, then [func`Service`.get] will be called to get
-             * the default [class`Service]` proxy.
+             * If `service` is `null`, then {@link Service.get} will be called to get
+             * the default {@link Service} proxy.
              *
              * This method may block indefinitely and should not be used in user
              * interface threads. The secret service may prompt the user.
-             * [method`Service`.prompt] will be used to handle any prompts that show up.
+             * {@link Service.prompt} will be used to handle any prompts that show up.
              * @param objects the items or collections to unlock
              * @param cancellable optional cancellation object
              * @param callback called when the operation completes
@@ -6018,12 +6175,12 @@ declare module 'gi://Secret?version=1' {
              * The secret service may not be able to unlock items individually, and may
              * unlock an entire collection instead.
              *
-             * If `service` is %NULL, then [func`Service`.get_sync] will be called to get
-             * the default [class`Service]` proxy.
+             * If `service` is `null`, then {@link Service.get_sync} will be called to get
+             * the default {@link Service} proxy.
              *
              * This method may block indefinitely and should not be used in user
              * interface threads. The secret service may prompt the user.
-             * [method`Service`.prompt] will be used to handle any prompts that show up.
+             * {@link Service.prompt} will be used to handle any prompts that show up.
              * @param objects the items or collections to unlock
              * @param cancellable optional cancellation object
              * @returns the number of items or collections that were unlocked
@@ -6032,96 +6189,95 @@ declare module 'gi://Secret?version=1' {
                 objects: Gio.DBusProxy[],
                 cancellable?: Gio.Cancellable | null,
             ): [number, Gio.DBusProxy[] | null];
-
-            // Inherited properties
             /**
              * A set of flags describing which parts of the secret backend have
              * been initialized.
+             * @since 0.19.0
+             * @construct-only
+             * @category Inherited from Secret.Backend
              */
             get flags(): ServiceFlags;
-
-            // Inherited methods
             /**
              * Starts asynchronous initialization of the object implementing the
              * interface. This must be done before any real use of the object after
-             * initial construction. If the object also implements #GInitable you can
-             * optionally call g_initable_init() instead.
+             * initial construction. If the object also implements {@link Gio.Initable} you can
+             * optionally call `g_initable_init()` instead.
              *
              * This method is intended for language bindings. If writing in C,
-             * g_async_initable_new_async() should typically be used instead.
+             * `g_async_initable_new_async()` should typically be used instead.
              *
              * When the initialization is finished, `callback` will be called. You can
-             * then call g_async_initable_init_finish() to get the result of the
+             * then call `g_async_initable_init_finish()` to get the result of the
              * initialization.
              *
              * Implementations may also support cancellation. If `cancellable` is not
-             * %NULL, then initialization can be cancelled by triggering the cancellable
+             * `null`, then initialization can be cancelled by triggering the cancellable
              * object from another thread. If the operation was cancelled, the error
-             * %G_IO_ERROR_CANCELLED will be returned. If `cancellable` is not %NULL, and
+             * {@link Gio.IOErrorEnum.CANCELLED} will be returned. If `cancellable` is not `null`, and
              * the object doesn't support cancellable initialization, the error
-             * %G_IO_ERROR_NOT_SUPPORTED will be returned.
+             * {@link Gio.IOErrorEnum.NOT_SUPPORTED} will be returned.
              *
-             * As with #GInitable, if the object is not initialized, or initialization
+             * As with {@link Gio.Initable}, if the object is not initialized, or initialization
              * returns with an error, then all operations on the object except
-             * g_object_ref() and g_object_unref() are considered to be invalid, and
-             * have undefined behaviour. They will often fail with g_critical() or
-             * g_warning(), but this must not be relied on.
+             * `g_object_ref()` and `g_object_unref()` are considered to be invalid, and
+             * have undefined behaviour. They will often fail with `g_critical()` or
+             * `g_warning()`, but this must not be relied on.
              *
-             * Callers should not assume that a class which implements #GAsyncInitable can
-             * be initialized multiple times; for more information, see g_initable_init().
+             * Callers should not assume that a class which implements {@link Gio.AsyncInitable} can
+             * be initialized multiple times; for more information, see `g_initable_init()`.
              * If a class explicitly supports being initialized multiple times,
-             * implementation requires yielding all subsequent calls to init_async() on the
+             * implementation requires yielding all subsequent calls to `init_async()` on the
              * results of the first call.
              *
-             * For classes that also support the #GInitable interface, the default
-             * implementation of this method will run the g_initable_init() function
+             * For classes that also support the {@link Gio.Initable} interface, the default
+             * implementation of this method will run the `g_initable_init()` function
              * in a thread, so if you want to support asynchronous initialization via
-             * threads, just implement the #GAsyncInitable interface without overriding
+             * threads, just implement the {@link Gio.AsyncInitable} interface without overriding
              * any interface methods.
              * @param io_priority the [I/O priority](iface.AsyncResult.html#io-priority) of the operation
-             * @param cancellable optional #GCancellable object, %NULL to ignore.
+             * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
              */
             init_async(io_priority: number, cancellable?: Gio.Cancellable | null): globalThis.Promise<boolean>;
             /**
              * Starts asynchronous initialization of the object implementing the
              * interface. This must be done before any real use of the object after
-             * initial construction. If the object also implements #GInitable you can
-             * optionally call g_initable_init() instead.
+             * initial construction. If the object also implements {@link Gio.Initable} you can
+             * optionally call `g_initable_init()` instead.
              *
              * This method is intended for language bindings. If writing in C,
-             * g_async_initable_new_async() should typically be used instead.
+             * `g_async_initable_new_async()` should typically be used instead.
              *
              * When the initialization is finished, `callback` will be called. You can
-             * then call g_async_initable_init_finish() to get the result of the
+             * then call `g_async_initable_init_finish()` to get the result of the
              * initialization.
              *
              * Implementations may also support cancellation. If `cancellable` is not
-             * %NULL, then initialization can be cancelled by triggering the cancellable
+             * `null`, then initialization can be cancelled by triggering the cancellable
              * object from another thread. If the operation was cancelled, the error
-             * %G_IO_ERROR_CANCELLED will be returned. If `cancellable` is not %NULL, and
+             * {@link Gio.IOErrorEnum.CANCELLED} will be returned. If `cancellable` is not `null`, and
              * the object doesn't support cancellable initialization, the error
-             * %G_IO_ERROR_NOT_SUPPORTED will be returned.
+             * {@link Gio.IOErrorEnum.NOT_SUPPORTED} will be returned.
              *
-             * As with #GInitable, if the object is not initialized, or initialization
+             * As with {@link Gio.Initable}, if the object is not initialized, or initialization
              * returns with an error, then all operations on the object except
-             * g_object_ref() and g_object_unref() are considered to be invalid, and
-             * have undefined behaviour. They will often fail with g_critical() or
-             * g_warning(), but this must not be relied on.
+             * `g_object_ref()` and `g_object_unref()` are considered to be invalid, and
+             * have undefined behaviour. They will often fail with `g_critical()` or
+             * `g_warning()`, but this must not be relied on.
              *
-             * Callers should not assume that a class which implements #GAsyncInitable can
-             * be initialized multiple times; for more information, see g_initable_init().
+             * Callers should not assume that a class which implements {@link Gio.AsyncInitable} can
+             * be initialized multiple times; for more information, see `g_initable_init()`.
              * If a class explicitly supports being initialized multiple times,
-             * implementation requires yielding all subsequent calls to init_async() on the
+             * implementation requires yielding all subsequent calls to `init_async()` on the
              * results of the first call.
              *
-             * For classes that also support the #GInitable interface, the default
-             * implementation of this method will run the g_initable_init() function
+             * For classes that also support the {@link Gio.Initable} interface, the default
+             * implementation of this method will run the `g_initable_init()` function
              * in a thread, so if you want to support asynchronous initialization via
-             * threads, just implement the #GAsyncInitable interface without overriding
+             * threads, just implement the {@link Gio.AsyncInitable} interface without overriding
              * any interface methods.
              * @param io_priority the [I/O priority](iface.AsyncResult.html#io-priority) of the operation
-             * @param cancellable optional #GCancellable object, %NULL to ignore.
-             * @param callback a #GAsyncReadyCallback to call when the request is satisfied
+             * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
+             * @param callback a {@link Gio.AsyncReadyCallback} to call when the request is satisfied
              */
             init_async(
                 io_priority: number,
@@ -6131,43 +6287,43 @@ declare module 'gi://Secret?version=1' {
             /**
              * Starts asynchronous initialization of the object implementing the
              * interface. This must be done before any real use of the object after
-             * initial construction. If the object also implements #GInitable you can
-             * optionally call g_initable_init() instead.
+             * initial construction. If the object also implements {@link Gio.Initable} you can
+             * optionally call `g_initable_init()` instead.
              *
              * This method is intended for language bindings. If writing in C,
-             * g_async_initable_new_async() should typically be used instead.
+             * `g_async_initable_new_async()` should typically be used instead.
              *
              * When the initialization is finished, `callback` will be called. You can
-             * then call g_async_initable_init_finish() to get the result of the
+             * then call `g_async_initable_init_finish()` to get the result of the
              * initialization.
              *
              * Implementations may also support cancellation. If `cancellable` is not
-             * %NULL, then initialization can be cancelled by triggering the cancellable
+             * `null`, then initialization can be cancelled by triggering the cancellable
              * object from another thread. If the operation was cancelled, the error
-             * %G_IO_ERROR_CANCELLED will be returned. If `cancellable` is not %NULL, and
+             * {@link Gio.IOErrorEnum.CANCELLED} will be returned. If `cancellable` is not `null`, and
              * the object doesn't support cancellable initialization, the error
-             * %G_IO_ERROR_NOT_SUPPORTED will be returned.
+             * {@link Gio.IOErrorEnum.NOT_SUPPORTED} will be returned.
              *
-             * As with #GInitable, if the object is not initialized, or initialization
+             * As with {@link Gio.Initable}, if the object is not initialized, or initialization
              * returns with an error, then all operations on the object except
-             * g_object_ref() and g_object_unref() are considered to be invalid, and
-             * have undefined behaviour. They will often fail with g_critical() or
-             * g_warning(), but this must not be relied on.
+             * `g_object_ref()` and `g_object_unref()` are considered to be invalid, and
+             * have undefined behaviour. They will often fail with `g_critical()` or
+             * `g_warning()`, but this must not be relied on.
              *
-             * Callers should not assume that a class which implements #GAsyncInitable can
-             * be initialized multiple times; for more information, see g_initable_init().
+             * Callers should not assume that a class which implements {@link Gio.AsyncInitable} can
+             * be initialized multiple times; for more information, see `g_initable_init()`.
              * If a class explicitly supports being initialized multiple times,
-             * implementation requires yielding all subsequent calls to init_async() on the
+             * implementation requires yielding all subsequent calls to `init_async()` on the
              * results of the first call.
              *
-             * For classes that also support the #GInitable interface, the default
-             * implementation of this method will run the g_initable_init() function
+             * For classes that also support the {@link Gio.Initable} interface, the default
+             * implementation of this method will run the `g_initable_init()` function
              * in a thread, so if you want to support asynchronous initialization via
-             * threads, just implement the #GAsyncInitable interface without overriding
+             * threads, just implement the {@link Gio.AsyncInitable} interface without overriding
              * any interface methods.
              * @param io_priority the [I/O priority](iface.AsyncResult.html#io-priority) of the operation
-             * @param cancellable optional #GCancellable object, %NULL to ignore.
-             * @param callback a #GAsyncReadyCallback to call when the request is satisfied
+             * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
+             * @param callback a {@link Gio.AsyncReadyCallback} to call when the request is satisfied
              */
             init_async(
                 io_priority: number,
@@ -6176,60 +6332,64 @@ declare module 'gi://Secret?version=1' {
             ): globalThis.Promise<boolean> | void;
             /**
              * Finishes asynchronous initialization and returns the result.
-             * See g_async_initable_init_async().
-             * @param res a #GAsyncResult.
-             * @returns %TRUE if successful. If an error has occurred, this function will return %FALSE and set @error appropriately if present.
+             * See `g_async_initable_init_async()`.
+             * @param res a {@link Gio.AsyncResult}.
+             * @returns `true` if successful. If an error has occurred, this function will return `false` and set `error` appropriately if present.
              */
             init_finish(res: Gio.AsyncResult): boolean;
             /**
              * Finishes the async construction for the various g_async_initable_new
-             * calls, returning the created object or %NULL on error.
-             * @param res the #GAsyncResult from the callback
-             * @returns a newly created #GObject,      or %NULL on error. Free with g_object_unref().
+             * calls, returning the created object or `null` on error.
+             * @param res the {@link Gio.AsyncResult} from the callback
+             * @returns a newly created {@link GObject.Object},      or `null` on error. Free with `g_object_unref()`.
              */
             new_finish(res: Gio.AsyncResult): Service;
+            /**
+             * @param args
+             */
             // Conflicted with Gio.DBusProxy.new_finish
             new_finish(...args: never[]): any;
             /**
              * Starts asynchronous initialization of the object implementing the
              * interface. This must be done before any real use of the object after
-             * initial construction. If the object also implements #GInitable you can
-             * optionally call g_initable_init() instead.
+             * initial construction. If the object also implements {@link Gio.Initable} you can
+             * optionally call `g_initable_init()` instead.
              *
              * This method is intended for language bindings. If writing in C,
-             * g_async_initable_new_async() should typically be used instead.
+             * `g_async_initable_new_async()` should typically be used instead.
              *
              * When the initialization is finished, `callback` will be called. You can
-             * then call g_async_initable_init_finish() to get the result of the
+             * then call `g_async_initable_init_finish()` to get the result of the
              * initialization.
              *
              * Implementations may also support cancellation. If `cancellable` is not
-             * %NULL, then initialization can be cancelled by triggering the cancellable
+             * `null`, then initialization can be cancelled by triggering the cancellable
              * object from another thread. If the operation was cancelled, the error
-             * %G_IO_ERROR_CANCELLED will be returned. If `cancellable` is not %NULL, and
+             * {@link Gio.IOErrorEnum.CANCELLED} will be returned. If `cancellable` is not `null`, and
              * the object doesn't support cancellable initialization, the error
-             * %G_IO_ERROR_NOT_SUPPORTED will be returned.
+             * {@link Gio.IOErrorEnum.NOT_SUPPORTED} will be returned.
              *
-             * As with #GInitable, if the object is not initialized, or initialization
+             * As with {@link Gio.Initable}, if the object is not initialized, or initialization
              * returns with an error, then all operations on the object except
-             * g_object_ref() and g_object_unref() are considered to be invalid, and
-             * have undefined behaviour. They will often fail with g_critical() or
-             * g_warning(), but this must not be relied on.
+             * `g_object_ref()` and `g_object_unref()` are considered to be invalid, and
+             * have undefined behaviour. They will often fail with `g_critical()` or
+             * `g_warning()`, but this must not be relied on.
              *
-             * Callers should not assume that a class which implements #GAsyncInitable can
-             * be initialized multiple times; for more information, see g_initable_init().
+             * Callers should not assume that a class which implements {@link Gio.AsyncInitable} can
+             * be initialized multiple times; for more information, see `g_initable_init()`.
              * If a class explicitly supports being initialized multiple times,
-             * implementation requires yielding all subsequent calls to init_async() on the
+             * implementation requires yielding all subsequent calls to `init_async()` on the
              * results of the first call.
              *
-             * For classes that also support the #GInitable interface, the default
-             * implementation of this method will run the g_initable_init() function
+             * For classes that also support the {@link Gio.Initable} interface, the default
+             * implementation of this method will run the `g_initable_init()` function
              * in a thread, so if you want to support asynchronous initialization via
-             * threads, just implement the #GAsyncInitable interface without overriding
+             * threads, just implement the {@link Gio.AsyncInitable} interface without overriding
              * any interface methods.
              * @param io_priority the [I/O priority](iface.AsyncResult.html#io-priority) of the operation
-             * @param cancellable optional #GCancellable object, %NULL to ignore.
-             * @param callback a #GAsyncReadyCallback to call when the request is satisfied
+             * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
+             * @param callback a {@link Gio.AsyncReadyCallback} to call when the request is satisfied
+             * @virtual
              */
             vfunc_init_async(
                 io_priority: number,
@@ -6238,80 +6398,84 @@ declare module 'gi://Secret?version=1' {
             ): void;
             /**
              * Finishes asynchronous initialization and returns the result.
-             * See g_async_initable_init_async().
-             * @param res a #GAsyncResult.
+             * See `g_async_initable_init_async()`.
+             * @param res a {@link Gio.AsyncResult}.
+             * @virtual
              */
             vfunc_init_finish(res: Gio.AsyncResult): boolean;
             /**
-             * Gets the #GDBusObject that `interface_` belongs to, if any.
-             * @returns A #GDBusObject or %NULL. The returned reference should be freed with g_object_unref().
+             * Gets the {@link Gio.DBusObject} that `interface_` belongs to, if any.
+             * @returns A {@link Gio.DBusObject} or `null`. The returned reference should be freed with `g_object_unref()`.
              */
             get_object(): Gio.DBusObject | null;
             /**
              * Gets D-Bus introspection information for the D-Bus interface
              * implemented by `interface_`.
              *
-             * This can return %NULL if no #GDBusInterfaceInfo was provided during
+             * This can return `null` if no {@link Gio.DBusInterfaceInfo} was provided during
              * construction of `interface_` and is also not made available otherwise.
-             * For example, #GDBusProxy implements #GDBusInterface but allows for a %NULL
-             * #GDBusInterfaceInfo.
-             * @returns A #GDBusInterfaceInfo. Do not free.
+             * For example, {@link Gio.DBusProxy} implements {@link Gio.DBusInterface} but allows for a `null`
+             * {@link Gio.DBusInterfaceInfo}.
+             * @returns A {@link Gio.DBusInterfaceInfo}. Do not free.
              */
             get_info(): Gio.DBusInterfaceInfo | null;
             /**
-             * Sets the #GDBusObject for `interface_` to `object`.
+             * Sets the {@link Gio.DBusObject} for `interface_` to `object`.
              *
              * Note that `interface_` will hold a weak reference to `object`.
-             * @param object A #GDBusObject or %NULL.
+             * @param object A {@link Gio.DBusObject} or `null`.
              */
             set_object(object?: Gio.DBusObject | null): void;
             /**
-             * Gets the #GDBusObject that `interface_` belongs to, if any.
+             * Gets the {@link Gio.DBusObject} that `interface_` belongs to, if any.
+             * @virtual
              */
             vfunc_dup_object(): Gio.DBusObject | null;
             /**
              * Gets D-Bus introspection information for the D-Bus interface
              * implemented by `interface_`.
              *
-             * This can return %NULL if no #GDBusInterfaceInfo was provided during
+             * This can return `null` if no {@link Gio.DBusInterfaceInfo} was provided during
              * construction of `interface_` and is also not made available otherwise.
-             * For example, #GDBusProxy implements #GDBusInterface but allows for a %NULL
-             * #GDBusInterfaceInfo.
+             * For example, {@link Gio.DBusProxy} implements {@link Gio.DBusInterface} but allows for a `null`
+             * {@link Gio.DBusInterfaceInfo}.
+             * @virtual
              */
             vfunc_get_info(): Gio.DBusInterfaceInfo | null;
             /**
-             * Sets the #GDBusObject for `interface_` to `object`.
+             * Sets the {@link Gio.DBusObject} for `interface_` to `object`.
              *
              * Note that `interface_` will hold a weak reference to `object`.
-             * @param object A #GDBusObject or %NULL.
+             * @param object A {@link Gio.DBusObject} or `null`.
+             * @virtual
              */
             vfunc_set_object(object?: Gio.DBusObject | null): void;
             /**
              * Initializes the object implementing the interface.
              *
              * This method is intended for language bindings. If writing in C,
-             * g_initable_new() should typically be used instead.
+             * `g_initable_new()` should typically be used instead.
              *
              * The object must be initialized before any real use after initial
-             * construction, either with this function or g_async_initable_init_async().
+             * construction, either with this function or `g_async_initable_init_async()`.
              *
-             * Implementations may also support cancellation. If `cancellable` is not %NULL,
+             * Implementations may also support cancellation. If `cancellable` is not `null`,
              * then initialization can be cancelled by triggering the cancellable object
              * from another thread. If the operation was cancelled, the error
-             * %G_IO_ERROR_CANCELLED will be returned. If `cancellable` is not %NULL and
+             * {@link Gio.IOErrorEnum.CANCELLED} will be returned. If `cancellable` is not `null` and
              * the object doesn't support cancellable initialization the error
-             * %G_IO_ERROR_NOT_SUPPORTED will be returned.
+             * {@link Gio.IOErrorEnum.NOT_SUPPORTED} will be returned.
              *
              * If the object is not initialized, or initialization returns with an
-             * error, then all operations on the object except g_object_ref() and
-             * g_object_unref() are considered to be invalid, and have undefined
-             * behaviour. See the [description][iface`Gio`.Initable#description] for more details.
+             * error, then all operations on the object except `g_object_ref()` and
+             * `g_object_unref()` are considered to be invalid, and have undefined
+             * behaviour. See the [description][iface@Gio.Initable#description] for more details.
              *
-             * Callers should not assume that a class which implements #GInitable can be
+             * Callers should not assume that a class which implements {@link Gio.Initable} can be
              * initialized multiple times, unless the class explicitly documents itself as
-             * supporting this. Generally, a class’ implementation of init() can assume
+             * supporting this. Generally, a class’ implementation of `init()` can assume
              * (and assert) that it will only be called once. Previously, this documentation
-             * recommended all #GInitable implementations should be idempotent; that
+             * recommended all {@link Gio.Initable} implementations should be idempotent; that
              * recommendation was relaxed in GLib 2.54.
              *
              * If a class explicitly supports being initialized multiple times, it is
@@ -6321,40 +6485,40 @@ declare module 'gi://Secret?version=1' {
              *
              * One reason why a class might need to support idempotent initialization is if
              * it is designed to be used via the singleton pattern, with a
-             * #GObjectClass.constructor that sometimes returns an existing instance.
-             * In this pattern, a caller would expect to be able to call g_initable_init()
-             * on the result of g_object_new(), regardless of whether it is in fact a new
+             * {@link GObject.ObjectClass}.constructor that sometimes returns an existing instance.
+             * In this pattern, a caller would expect to be able to call `g_initable_init()`
+             * on the result of `g_object_new()`, regardless of whether it is in fact a new
              * instance.
-             * @param cancellable optional #GCancellable object, %NULL to ignore.
-             * @returns %TRUE if successful. If an error has occurred, this function will     return %FALSE and set @error appropriately if present.
+             * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
+             * @returns `true` if successful. If an error has occurred, this function will     return `false` and set `error` appropriately if present.
              */
             init(cancellable?: Gio.Cancellable | null): boolean;
             /**
              * Initializes the object implementing the interface.
              *
              * This method is intended for language bindings. If writing in C,
-             * g_initable_new() should typically be used instead.
+             * `g_initable_new()` should typically be used instead.
              *
              * The object must be initialized before any real use after initial
-             * construction, either with this function or g_async_initable_init_async().
+             * construction, either with this function or `g_async_initable_init_async()`.
              *
-             * Implementations may also support cancellation. If `cancellable` is not %NULL,
+             * Implementations may also support cancellation. If `cancellable` is not `null`,
              * then initialization can be cancelled by triggering the cancellable object
              * from another thread. If the operation was cancelled, the error
-             * %G_IO_ERROR_CANCELLED will be returned. If `cancellable` is not %NULL and
+             * {@link Gio.IOErrorEnum.CANCELLED} will be returned. If `cancellable` is not `null` and
              * the object doesn't support cancellable initialization the error
-             * %G_IO_ERROR_NOT_SUPPORTED will be returned.
+             * {@link Gio.IOErrorEnum.NOT_SUPPORTED} will be returned.
              *
              * If the object is not initialized, or initialization returns with an
-             * error, then all operations on the object except g_object_ref() and
-             * g_object_unref() are considered to be invalid, and have undefined
-             * behaviour. See the [description][iface`Gio`.Initable#description] for more details.
+             * error, then all operations on the object except `g_object_ref()` and
+             * `g_object_unref()` are considered to be invalid, and have undefined
+             * behaviour. See the [description][iface@Gio.Initable#description] for more details.
              *
-             * Callers should not assume that a class which implements #GInitable can be
+             * Callers should not assume that a class which implements {@link Gio.Initable} can be
              * initialized multiple times, unless the class explicitly documents itself as
-             * supporting this. Generally, a class’ implementation of init() can assume
+             * supporting this. Generally, a class’ implementation of `init()` can assume
              * (and assert) that it will only be called once. Previously, this documentation
-             * recommended all #GInitable implementations should be idempotent; that
+             * recommended all {@link Gio.Initable} implementations should be idempotent; that
              * recommendation was relaxed in GLib 2.54.
              *
              * If a class explicitly supports being initialized multiple times, it is
@@ -6364,19 +6528,21 @@ declare module 'gi://Secret?version=1' {
              *
              * One reason why a class might need to support idempotent initialization is if
              * it is designed to be used via the singleton pattern, with a
-             * #GObjectClass.constructor that sometimes returns an existing instance.
-             * In this pattern, a caller would expect to be able to call g_initable_init()
-             * on the result of g_object_new(), regardless of whether it is in fact a new
+             * {@link GObject.ObjectClass}.constructor that sometimes returns an existing instance.
+             * In this pattern, a caller would expect to be able to call `g_initable_init()`
+             * on the result of `g_object_new()`, regardless of whether it is in fact a new
              * instance.
-             * @param cancellable optional #GCancellable object, %NULL to ignore.
+             * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
+             * @virtual
              */
             vfunc_init(cancellable?: Gio.Cancellable | null): boolean;
             /**
-             * implementation of [func`password_clear]`, required
+             * implementation of {@link password_clear}, required
              * @param schema
              * @param attributes
              * @param cancellable
              * @param callback
+             * @virtual
              */
             vfunc_clear(
                 schema: Schema,
@@ -6385,8 +6551,9 @@ declare module 'gi://Secret?version=1' {
                 callback?: Gio.AsyncReadyCallback<this> | null,
             ): void;
             /**
-             * implementation of [func`password_clear_finish]`, required
+             * implementation of {@link password_clear_finish}, required
              * @param result
+             * @virtual
              */
             vfunc_clear_finish(result: Gio.AsyncResult): boolean;
             /**
@@ -6394,6 +6561,7 @@ declare module 'gi://Secret?version=1' {
              * @param flags
              * @param cancellable
              * @param callback
+             * @virtual
              */
             vfunc_ensure_for_flags(
                 flags: BackendFlags,
@@ -6403,14 +6571,16 @@ declare module 'gi://Secret?version=1' {
             /**
              * implementation of reinitialization step in constructor, optional
              * @param result
+             * @virtual
              */
             vfunc_ensure_for_flags_finish(result: Gio.AsyncResult): boolean;
             /**
-             * implementation of [func`password_lookup]`, required
+             * implementation of {@link password_lookup}, required
              * @param schema
              * @param attributes
              * @param cancellable
              * @param callback
+             * @virtual
              */
             vfunc_lookup(
                 schema: Schema,
@@ -6419,17 +6589,19 @@ declare module 'gi://Secret?version=1' {
                 callback?: Gio.AsyncReadyCallback<this> | null,
             ): void;
             /**
-             * implementation of [func`password_lookup_finish]`, required
+             * implementation of {@link password_lookup_finish}, required
              * @param result
+             * @virtual
              */
             vfunc_lookup_finish(result: Gio.AsyncResult): Value;
             /**
-             * implementation of [func`password_search]`, required
+             * implementation of {@link password_search}, required
              * @param schema
              * @param attributes
              * @param flags
              * @param cancellable
              * @param callback
+             * @virtual
              */
             vfunc_search(
                 schema: Schema,
@@ -6439,7 +6611,7 @@ declare module 'gi://Secret?version=1' {
                 callback?: Gio.AsyncReadyCallback<this> | null,
             ): void;
             /**
-             * implementation of [func`password_store]`, required
+             * implementation of {@link password_store}, required
              * @param schema
              * @param attributes
              * @param collection
@@ -6447,6 +6619,7 @@ declare module 'gi://Secret?version=1' {
              * @param value
              * @param cancellable
              * @param callback
+             * @virtual
              */
             vfunc_store(
                 schema: Schema,
@@ -6458,8 +6631,9 @@ declare module 'gi://Secret?version=1' {
                 callback?: Gio.AsyncReadyCallback<this> | null,
             ): void;
             /**
-             * implementation of [func`password_store_finish]`, required
+             * implementation of {@link password_store_finish}, required
              * @param result
+             * @virtual
              */
             vfunc_store_finish(result: Gio.AsyncResult): boolean;
             /**
@@ -6475,32 +6649,32 @@ declare module 'gi://Secret?version=1' {
              * ```
              *
              *
-             * Will result in the "sensitive" property of the widget #GObject instance to be
-             * updated with the same value of the "active" property of the action #GObject
+             * Will result in the "sensitive" property of the widget {@link GObject.Object} instance to be
+             * updated with the same value of the "active" property of the action {@link GObject.Object}
              * instance.
              *
-             * If `flags` contains %G_BINDING_BIDIRECTIONAL then the binding will be mutual:
+             * If `flags` contains {@link GObject.BindingFlags.BIDIRECTIONAL} then the binding will be mutual:
              * if `target_property` on `target` changes then the `source_property` on `source`
              * will be updated as well.
              *
              * The binding will automatically be removed when either the `source` or the
              * `target` instances are finalized. To remove the binding without affecting the
-             * `source` and the `target` you can just call g_object_unref() on the returned
-             * #GBinding instance.
+             * `source` and the `target` you can just call `g_object_unref()` on the returned
+             * {@link GObject.Binding} instance.
              *
-             * Removing the binding by calling g_object_unref() on it must only be done if
+             * Removing the binding by calling `g_object_unref()` on it must only be done if
              * the binding, `source` and `target` are only used from a single thread and it
              * is clear that both `source` and `target` outlive the binding. Especially it
              * is not safe to rely on this if the binding, `source` or `target` can be
              * finalized from different threads. Keep another reference to the binding and
-             * use g_binding_unbind() instead to be on the safe side.
+             * use `g_binding_unbind()` instead to be on the safe side.
              *
-             * A #GObject can have multiple bindings.
-             * @param source_property the property on @source to bind
-             * @param target the target #GObject
-             * @param target_property the property on @target to bind
-             * @param flags flags to pass to #GBinding
-             * @returns the #GBinding instance representing the     binding between the two #GObject instances. The binding is released     whenever the #GBinding reference count reaches zero.
+             * A {@link GObject.Object} can have multiple bindings.
+             * @param source_property the property on `source` to bind
+             * @param target the target {@link GObject.Object}
+             * @param target_property the property on `target` to bind
+             * @param flags flags to pass to {@link GObject.Binding}
+             * @returns the {@link GObject.Binding} instance representing the     binding between the two {@link GObject.Object} instances. The binding is released     whenever the {@link GObject.Binding} reference count reaches zero.
              */
             bind_property(
                 source_property: string,
@@ -6509,39 +6683,39 @@ declare module 'gi://Secret?version=1' {
                 flags: GObject.BindingFlags | null,
             ): GObject.Binding;
             /**
-             * Complete version of g_object_bind_property().
+             * Complete version of `g_object_bind_property()`.
              *
              * Creates a binding between `source_property` on `source` and `target_property`
-             * on `target,` allowing you to set the transformation functions to be used by
+             * on `target`, allowing you to set the transformation functions to be used by
              * the binding.
              *
-             * If `flags` contains %G_BINDING_BIDIRECTIONAL then the binding will be mutual:
+             * If `flags` contains {@link GObject.BindingFlags.BIDIRECTIONAL} then the binding will be mutual:
              * if `target_property` on `target` changes then the `source_property` on `source`
              * will be updated as well. The `transform_from` function is only used in case
              * of bidirectional bindings, otherwise it will be ignored
              *
              * The binding will automatically be removed when either the `source` or the
              * `target` instances are finalized. This will release the reference that is
-             * being held on the #GBinding instance; if you want to hold on to the
-             * #GBinding instance, you will need to hold a reference to it.
+             * being held on the {@link GObject.Binding} instance; if you want to hold on to the
+             * {@link GObject.Binding} instance, you will need to hold a reference to it.
              *
-             * To remove the binding, call g_binding_unbind().
+             * To remove the binding, call `g_binding_unbind()`.
              *
-             * A #GObject can have multiple bindings.
+             * A {@link GObject.Object} can have multiple bindings.
              *
              * The same `user_data` parameter will be used for both `transform_to`
              * and `transform_from` transformation functions; the `notify` function will
              * be called once, when the binding is removed. If you need different data
              * for each transformation function, please use
-             * g_object_bind_property_with_closures() instead.
-             * @param source_property the property on @source to bind
-             * @param target the target #GObject
-             * @param target_property the property on @target to bind
-             * @param flags flags to pass to #GBinding
-             * @param transform_to the transformation function     from the @source to the @target, or %NULL to use the default
-             * @param transform_from the transformation function     from the @target to the @source, or %NULL to use the default
-             * @param notify a function to call when disposing the binding, to free     resources used by the transformation functions, or %NULL if not required
-             * @returns the #GBinding instance representing the     binding between the two #GObject instances. The binding is released     whenever the #GBinding reference count reaches zero.
+             * `g_object_bind_property_with_closures()` instead.
+             * @param source_property the property on `source` to bind
+             * @param target the target {@link GObject.Object}
+             * @param target_property the property on `target` to bind
+             * @param flags flags to pass to {@link GObject.Binding}
+             * @param transform_to the transformation function     from the `source` to the `target`, or `null` to use the default
+             * @param transform_from the transformation function     from the `target` to the `source`, or `null` to use the default
+             * @param notify a function to call when disposing the binding, to free     resources used by the transformation functions, or `null` if not required
+             * @returns the {@link GObject.Binding} instance representing the     binding between the two {@link GObject.Object} instances. The binding is released     whenever the {@link GObject.Binding} reference count reaches zero.
              */
             bind_property_full(
                 source_property: string,
@@ -6552,13 +6726,16 @@ declare module 'gi://Secret?version=1' {
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
             ): GObject.Binding;
+            /**
+             * @param args
+             */
             // Conflicted with GObject.Object.bind_property_full
             bind_property_full(...args: never[]): any;
             /**
-             * This function is intended for #GObject implementations to re-enforce
+             * This function is intended for {@link GObject.Object} implementations to re-enforce
              * a [floating](floating-refs.html) object reference. Doing this is seldom
-             * required: all #GInitiallyUnowneds are created with a floating reference
-             * which usually just needs to be sunken by calling g_object_ref_sink().
+             * required: all `GInitiallyUnowneds` are created with a floating reference
+             * which usually just needs to be sunken by calling `g_object_ref_sink()`.
              */
             force_floating(): void;
             /**
@@ -6566,7 +6743,7 @@ declare module 'gi://Secret?version=1' {
              * non-zero, the emission of "notify" signals on `object` is
              * stopped. The signals are queued until the freeze count is decreased
              * to zero. Duplicate notifications are squashed so that at most one
-             * #GObject::notify signal is emitted for each property modified while the
+             * {@link GObject.Object.SignalSignatures.notify | GObject.Object::notify} signal is emitted for each property modified while the
              * object is frozen.
              *
              * This is necessary for accessors that modify multiple properties to prevent
@@ -6574,9 +6751,9 @@ declare module 'gi://Secret?version=1' {
              */
             freeze_notify(): void;
             /**
-             * Gets a named field from the objects table of associations (see g_object_set_data()).
+             * Gets a named field from the objects table of associations (see `g_object_set_data()`).
              * @param key name of the key for that association
-             * @returns the data if found,          or %NULL if no such data exists.
+             * @returns the data if found,          or `null` if no such data exists.
              */
             get_data(key: string): any | null;
             /**
@@ -6596,9 +6773,9 @@ declare module 'gi://Secret?version=1' {
             get_property(property_name: string, value: GObject.Value | any): any;
             /**
              * This function gets back user data pointers stored via
-             * g_object_set_qdata().
-             * @param quark A #GQuark, naming the user data pointer
-             * @returns The user data pointer set, or %NULL
+             * `g_object_set_qdata()`.
+             * @param quark A {@link GLib.Quark}, naming the user data pointer
+             * @returns The user data pointer set, or `null`
              */
             get_qdata(quark: GLib.Quark): any | null;
             /**
@@ -6612,33 +6789,33 @@ declare module 'gi://Secret?version=1' {
             getv(names: string[], values: (GObject.Value | any)[]): void;
             /**
              * Checks whether `object` has a [floating](floating-refs.html) reference.
-             * @returns %TRUE if @object has a floating reference
+             * @returns `true` if `object` has a floating reference
              */
             is_floating(): boolean;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
              * When possible, eg. when signaling a property change from within the class
-             * that registered the property, you should use g_object_notify_by_pspec()
+             * that registered the property, you should use `g_object_notify_by_pspec()`
              * instead.
              *
              * Note that emission of the notify signal may be blocked with
-             * g_object_freeze_notify(). In this case, the signal emissions are queued
-             * and will be emitted (in reverse order) when g_object_thaw_notify() is
+             * `g_object_freeze_notify()`. In this case, the signal emissions are queued
+             * and will be emitted (in reverse order) when `g_object_thaw_notify()` is
              * called.
-             * @param property_name the name of a property installed on the class of @object.
+             * @param property_name the name of a property installed on the class of `object`.
              */
             notify(property_name: string): void;
             /**
              * Emits a "notify" signal for the property specified by `pspec` on `object`.
              *
              * This function omits the property name lookup, hence it is faster than
-             * g_object_notify().
+             * `g_object_notify()`.
              *
-             * One way to avoid using g_object_notify() from within the
-             * class that registered the properties, and using g_object_notify_by_pspec()
+             * One way to avoid using `g_object_notify()` from within the
+             * class that registered the properties, and using `g_object_notify_by_pspec()`
              * instead, is to store the GParamSpec used with
-             * g_object_class_install_property() inside a static array, e.g.:
+             * `g_object_class_install_property()` inside a static array, e.g.:
              *
              *
              * ```c
@@ -6671,21 +6848,21 @@ declare module 'gi://Secret?version=1' {
              *   g_object_notify_by_pspec (self, properties[PROP_FOO]);
              * ```
              *
-             * @param pspec the #GParamSpec of a property installed on the class of @object.
+             * @param pspec the {@link GObject.ParamSpec} of a property installed on the class of `object`.
              */
             notify_by_pspec(pspec: GObject.ParamSpec): void;
             /**
              * Increases the reference count of `object`.
              *
              * Since GLib 2.56, if `GLIB_VERSION_MAX_ALLOWED` is 2.56 or greater, the type
-             * of `object` will be propagated to the return type (using the GCC typeof()
+             * of `object` will be propagated to the return type (using the GCC `typeof()`
              * extension), so any casting the caller needs to do on the return type must be
              * explicit.
-             * @returns the same @object
+             * @returns the same `object`
              */
             ref(): GObject.Object;
             /**
-             * Increase the reference count of `object,` and possibly remove the
+             * Increase the reference count of `object`, and possibly remove the
              * [floating](floating-refs.html) reference, if `object` has a floating reference.
              *
              * In other words, if the object is floating, then this call "assumes
@@ -6695,8 +6872,8 @@ declare module 'gi://Secret?version=1' {
              * adds a new normal reference increasing the reference count by one.
              *
              * Since GLib 2.56, the type of `object` will be propagated to the return type
-             * under the same conditions as for g_object_ref().
-             * @returns @object
+             * under the same conditions as for `g_object_ref()`.
+             * @returns `object`
              */
             ref_sink(): GObject.Object;
             /**
@@ -6713,10 +6890,10 @@ declare module 'gi://Secret?version=1' {
              * If the object already had an association with that name,
              * the old association will be destroyed.
              *
-             * Internally, the `key` is converted to a #GQuark using g_quark_from_string().
+             * Internally, the `key` is converted to a {@link GLib.Quark} using `g_quark_from_string()`.
              * This means a copy of `key` is kept permanently (even after `object` has been
              * finalized) — so it is recommended to only use a small, bounded set of values
-             * for `key` in your program, to avoid the #GQuark storage growing unbounded.
+             * for `key` in your program, to avoid the {@link GLib.Quark} storage growing unbounded.
              * @param key name of the key
              * @param data data to associate with that key
              */
@@ -6731,13 +6908,13 @@ declare module 'gi://Secret?version=1' {
              * Remove a specified datum from the object's data associations,
              * without invoking the association's destroy handler.
              * @param key name of the key
-             * @returns the data if found, or %NULL          if no such data exists.
+             * @returns the data if found, or `null`          if no such data exists.
              */
             steal_data(key: string): any | null;
             /**
              * This function gets back user data pointers stored via
-             * g_object_set_qdata() and removes the `data` from object
-             * without invoking its destroy() function (if any was
+             * `g_object_set_qdata()` and removes the `data` from object
+             * without invoking its `destroy()` function (if any was
              * set).
              * Usually, calling this function is only required to update
              * user data pointers with a destroy notifier, for example:
@@ -6768,21 +6945,21 @@ declare module 'gi://Secret?version=1' {
              * }
              * ```
              *
-             * Using g_object_get_qdata() in the above example, instead of
-             * g_object_steal_qdata() would have left the destroy function set,
+             * Using `g_object_get_qdata()` in the above example, instead of
+             * `g_object_steal_qdata()` would have left the destroy function set,
              * and thus the partial string list would have been freed upon
-             * g_object_set_qdata_full().
-             * @param quark A #GQuark, naming the user data pointer
-             * @returns The user data pointer set, or %NULL
+             * `g_object_set_qdata_full()`.
+             * @param quark A {@link GLib.Quark}, naming the user data pointer
+             * @returns The user data pointer set, or `null`
              */
             steal_qdata(quark: GLib.Quark): any | null;
             /**
              * Reverts the effect of a previous call to
-             * g_object_freeze_notify(). The freeze count is decreased on `object`
+             * `g_object_freeze_notify()`. The freeze count is decreased on `object`
              * and when it reaches zero, queued "notify" signals are emitted.
              *
              * Duplicate notifications for each property are squashed so that at most one
-             * #GObject::notify signal is emitted for each property, in the reverse order
+             * {@link GObject.Object.SignalSignatures.notify | GObject.Object::notify} signal is emitted for each property, in the reverse order
              * in which they have been queued.
              *
              * It is an error to call this function when the freeze count is zero.
@@ -6792,33 +6969,34 @@ declare module 'gi://Secret?version=1' {
              * Decreases the reference count of `object`. When its reference count
              * drops to 0, the object is finalized (i.e. its memory is freed).
              *
-             * If the pointer to the #GObject may be reused in future (for example, if it is
+             * If the pointer to the {@link GObject.Object} may be reused in future (for example, if it is
              * an instance variable of another object), it is recommended to clear the
-             * pointer to %NULL rather than retain a dangling pointer to a potentially
-             * invalid #GObject instance. Use g_clear_object() for this.
+             * pointer to `null` rather than retain a dangling pointer to a potentially
+             * invalid {@link GObject.Object} instance. Use `g_clear_object()` for this.
              */
             unref(): void;
             /**
              * This function essentially limits the life time of the `closure` to
              * the life time of the object. That is, when the object is finalized,
-             * the `closure` is invalidated by calling g_closure_invalidate() on
+             * the `closure` is invalidated by calling `g_closure_invalidate()` on
              * it, in order to prevent invocations of the closure with a finalized
-             * (nonexisting) object. Also, g_object_ref() and g_object_unref() are
-             * added as marshal guards to the `closure,` to ensure that an extra
+             * (nonexisting) object. Also, `g_object_ref()` and `g_object_unref()` are
+             * added as marshal guards to the `closure`, to ensure that an extra
              * reference count is held on `object` during invocation of the
              * `closure`.  Usually, this function will be called on closures that
              * use this `object` as closure data.
-             * @param closure #GClosure to watch
+             * @param closure {@link GObject.Closure} to watch
              */
             watch_closure(closure: GObject.Closure): void;
             /**
-             * the `constructed` function is called by g_object_new() as the
+             * the `constructed` function is called by `g_object_new()` as the
              *  final step of the object creation process.  At the point of the call, all
              *  construction properties have been set on the object.  The purpose of this
              *  call is to allow for object initialisation steps that can only be performed
              *  after construction properties have been set.  `constructed` implementors
              *  should chain up to the `constructed` call of their parent class to allow it
              *  to complete its initialisation.
+             * @virtual
              */
             vfunc_constructed(): void;
             /**
@@ -6827,6 +7005,7 @@ declare module 'gi://Secret?version=1' {
              *  needed.
              * @param n_pspecs
              * @param pspecs
+             * @virtual
              */
             vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void;
             /**
@@ -6835,12 +7014,14 @@ declare module 'gi://Secret?version=1' {
              *  invocations still work. It may be run multiple times (due to reference
              *  loops). Before returning, `dispose` should chain up to the `dispose` method
              *  of the parent class.
+             * @virtual
              */
             vfunc_dispose(): void;
             /**
              * instance finalization function, should finish the finalization of
              *  the instance begun in `dispose` and chain up to the `finalize` method of the
              *  parent class.
+             * @virtual
              */
             vfunc_finalize(): void;
             /**
@@ -6849,20 +7030,22 @@ declare module 'gi://Secret?version=1' {
              * @param property_id
              * @param value
              * @param pspec
+             * @virtual
              */
             vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
              * When possible, eg. when signaling a property change from within the class
-             * that registered the property, you should use g_object_notify_by_pspec()
+             * that registered the property, you should use `g_object_notify_by_pspec()`
              * instead.
              *
              * Note that emission of the notify signal may be blocked with
-             * g_object_freeze_notify(). In this case, the signal emissions are queued
-             * and will be emitted (in reverse order) when g_object_thaw_notify() is
+             * `g_object_freeze_notify()`. In this case, the signal emissions are queued
+             * and will be emitted (in reverse order) when `g_object_thaw_notify()` is
              * called.
              * @param pspec
+             * @virtual
              */
             vfunc_notify(pspec: GObject.ParamSpec): void;
             /**
@@ -6874,6 +7057,7 @@ declare module 'gi://Secret?version=1' {
              * @param property_id
              * @param value
              * @param pspec
+             * @virtual
              */
             vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
             /**
@@ -6903,22 +7087,46 @@ declare module 'gi://Secret?version=1' {
             stop_emission_by_name(detailedName: string): void;
         }
 
+        /**
+         * @gir-type Alias
+         */
         type BackendInterface = typeof Backend;
+        /**
+         * @gir-type Alias
+         */
         type CollectionClass = typeof Collection;
+        /**
+         * @gir-type Struct
+         */
         abstract class CollectionPrivate {
             static $gtype: GObject.GType<CollectionPrivate>;
         }
 
+        /**
+         * @gir-type Alias
+         */
         type ItemClass = typeof Item;
+        /**
+         * @gir-type Struct
+         */
         abstract class ItemPrivate {
             static $gtype: GObject.GType<ItemPrivate>;
         }
 
+        /**
+         * @gir-type Alias
+         */
         type PromptClass = typeof Prompt;
+        /**
+         * @gir-type Struct
+         */
         abstract class PromptPrivate {
             static $gtype: GObject.GType<PromptPrivate>;
         }
 
+        /**
+         * @gir-type Alias
+         */
         type RetrievableInterface = typeof Retrievable;
         /**
          * Represents a set of attributes that are stored with an item.
@@ -6931,9 +7139,9 @@ declare module 'gi://Secret?version=1' {
          *
          * Attributes are stored as strings in the Secret Service, and the attribute types
          * simply define standard ways to store integer and boolean values as strings.
-         * Attributes are represented in libsecret via a [struct`GLib`.HashTable] with
+         * Attributes are represented in libsecret via a {@link GLib.HashTable} with
          * string keys and values. Even for values that defined as an integer or boolean in
-         * the schema, the attribute values in the [struct`GLib`.HashTable] are strings.
+         * the schema, the attribute values in the {@link GLib.HashTable} are strings.
          * Boolean values are stored as the strings 'true' and 'false'. Integer values are
          * stored in decimal, with a preceding negative sign for negative integers.
          *
@@ -6947,7 +7155,7 @@ declare module 'gi://Secret?version=1' {
          * items that are not stored by the libsecret library. Other libraries such as
          * libgnome-keyring don't store the schema name.
          *
-         * Additional schemas can be defined via the [struct`Schema]` structure like this:
+         * Additional schemas can be defined via the {@link Schema} structure like this:
          *
          * ```c
          * // in a header:
@@ -6974,6 +7182,7 @@ declare module 'gi://Secret?version=1' {
          *     return &the_schema;
          * }
          * ```
+         * @gir-type Struct
          */
         class Schema {
             static $gtype: GObject.GType<Schema>;
@@ -6996,16 +7205,16 @@ declare module 'gi://Secret?version=1' {
             // Methods
 
             /**
-             * Adds a reference to the #SecretSchema.
+             * Adds a reference to the {@link Secret.Schema}.
              *
              * It is not normally necessary to call this function from C code, and is
              * mainly present for the sake of bindings. If the `schema` was statically
              * allocated, then this function will copy the schema.
-             * @returns the referenced schema, which should be later   unreferenced with [method@Schema.unref]
+             * @returns the referenced schema, which should be later   unreferenced with {@link Schema.unref}
              */
             ref(): Schema;
             /**
-             * Releases a reference to the #SecretSchema.
+             * Releases a reference to the {@link Secret.Schema}.
              *
              * If the last reference is released then the schema will be freed.
              *
@@ -7017,7 +7226,8 @@ declare module 'gi://Secret?version=1' {
         }
 
         /**
-         * An attribute in a #SecretSchema.
+         * An attribute in a {@link Secret.Schema}.
+         * @gir-type Struct
          */
         class SchemaAttribute {
             static $gtype: GObject.GType<SchemaAttribute>;
@@ -7028,7 +7238,13 @@ declare module 'gi://Secret?version=1' {
             type: SchemaAttributeType;
         }
 
+        /**
+         * @gir-type Alias
+         */
         type ServiceClass = typeof Service;
+        /**
+         * @gir-type Struct
+         */
         abstract class ServicePrivate {
             static $gtype: GObject.GType<ServicePrivate>;
         }
@@ -7036,17 +7252,18 @@ declare module 'gi://Secret?version=1' {
         /**
          * A value containing a secret
          *
-         * A #SecretValue contains a password or other secret value.
+         * A {@link Secret.Value} contains a password or other secret value.
          *
-         * Use [method`Value`.get] to get the actual secret data, such as a password.
+         * Use {@link Value.get} to get the actual secret data, such as a password.
          * The secret data is not necessarily null-terminated, unless the content type
          * is "text/plain".
          *
-         * Each #SecretValue has a content type. For passwords, this is `text/plain`.
-         * Use [method`Value`.get_content_type] to look at the content type.
+         * Each {@link Secret.Value} has a content type. For passwords, this is `text/plain`.
+         * Use {@link Value.get_content_type} to look at the content type.
          *
-         * #SecretValue is reference counted and immutable. The secret data is only
-         * freed when all references have been released via [method`Value`.unref].
+         * {@link Secret.Value} is reference counted and immutable. The secret data is only
+         * freed when all references have been released via {@link Value.unref}.
+         * @gir-type Struct
          */
         class Value {
             static $gtype: GObject.GType<Value>;
@@ -7062,11 +7279,11 @@ declare module 'gi://Secret?version=1' {
             // Methods
 
             /**
-             * Get the secret data in the #SecretValue.
+             * Get the secret data in the {@link Secret.Value}.
              *
              * The value is not necessarily null-terminated unless it was created with
-             * [ctor`Value`.new] or a null-terminated string was passed to
-             * [ctor`Value`.new_full].
+             * {@link Value.new} or a null-terminated string was passed to
+             * {@link Value.new_full}.
              * @returns the secret data
              */
             get(): Uint8Array;
@@ -7077,7 +7294,7 @@ declare module 'gi://Secret?version=1' {
              */
             get_content_type(): string;
             /**
-             * Get the secret data in the #SecretValue if it contains a textual
+             * Get the secret data in the {@link Secret.Value} if it contains a textual
              * value.
              *
              * The content type must be `text/plain`.
@@ -7085,24 +7302,24 @@ declare module 'gi://Secret?version=1' {
              */
             get_text(): string | null;
             /**
-             * Add another reference to the #SecretValue.
+             * Add another reference to the {@link Secret.Value}.
              *
-             * For each reference [method`Value`.unref] should be called to unreference the
+             * For each reference {@link Value.unref} should be called to unreference the
              * value.
              * @returns the value
              */
             ref(): Value;
             /**
-             * Unreference a #SecretValue.
+             * Unreference a {@link Secret.Value}.
              *
              * When the last reference is gone, then the value will be freed.
              */
             unref(): void;
             /**
-             * Unreference a #SecretValue and steal the secret data in
-             * #SecretValue as nonpageable memory.
+             * Unreference a {@link Secret.Value} and steal the secret data in
+             * {@link Secret.Value} as nonpageable memory.
              * @param length the length of the secret
-             * @returns a new password string stored in nonpageable memory   which must be freed with [func@password_free] when done
+             * @returns a new password string stored in nonpageable memory   which must be freed with {@link password_free} when done
              */
             unref_to_password(length: number): [string, number];
         }
@@ -7116,11 +7333,12 @@ declare module 'gi://Secret?version=1' {
                 // Virtual methods
 
                 /**
-                 * implementation of [func`password_clear]`, required
+                 * implementation of {@link password_clear}, required
                  * @param schema
                  * @param attributes
                  * @param cancellable
                  * @param callback
+                 * @virtual
                  */
                 vfunc_clear(
                     schema: Schema,
@@ -7129,8 +7347,9 @@ declare module 'gi://Secret?version=1' {
                     callback?: Gio.AsyncReadyCallback<this> | null,
                 ): void;
                 /**
-                 * implementation of [func`password_clear_finish]`, required
+                 * implementation of {@link password_clear_finish}, required
                  * @param result
+                 * @virtual
                  */
                 vfunc_clear_finish(result: Gio.AsyncResult): boolean;
                 /**
@@ -7138,6 +7357,7 @@ declare module 'gi://Secret?version=1' {
                  * @param flags
                  * @param cancellable
                  * @param callback
+                 * @virtual
                  */
                 vfunc_ensure_for_flags(
                     flags: BackendFlags,
@@ -7147,14 +7367,16 @@ declare module 'gi://Secret?version=1' {
                 /**
                  * implementation of reinitialization step in constructor, optional
                  * @param result
+                 * @virtual
                  */
                 vfunc_ensure_for_flags_finish(result: Gio.AsyncResult): boolean;
                 /**
-                 * implementation of [func`password_lookup]`, required
+                 * implementation of {@link password_lookup}, required
                  * @param schema
                  * @param attributes
                  * @param cancellable
                  * @param callback
+                 * @virtual
                  */
                 vfunc_lookup(
                     schema: Schema,
@@ -7163,17 +7385,19 @@ declare module 'gi://Secret?version=1' {
                     callback?: Gio.AsyncReadyCallback<this> | null,
                 ): void;
                 /**
-                 * implementation of [func`password_lookup_finish]`, required
+                 * implementation of {@link password_lookup_finish}, required
                  * @param result
+                 * @virtual
                  */
                 vfunc_lookup_finish(result: Gio.AsyncResult): Value;
                 /**
-                 * implementation of [func`password_search]`, required
+                 * implementation of {@link password_search}, required
                  * @param schema
                  * @param attributes
                  * @param flags
                  * @param cancellable
                  * @param callback
+                 * @virtual
                  */
                 vfunc_search(
                     schema: Schema,
@@ -7183,7 +7407,7 @@ declare module 'gi://Secret?version=1' {
                     callback?: Gio.AsyncReadyCallback<this> | null,
                 ): void;
                 /**
-                 * implementation of [func`password_store]`, required
+                 * implementation of {@link password_store}, required
                  * @param schema
                  * @param attributes
                  * @param collection
@@ -7191,6 +7415,7 @@ declare module 'gi://Secret?version=1' {
                  * @param value
                  * @param cancellable
                  * @param callback
+                 * @virtual
                  */
                 vfunc_store(
                     schema: Schema,
@@ -7202,8 +7427,9 @@ declare module 'gi://Secret?version=1' {
                     callback?: Gio.AsyncReadyCallback<this> | null,
                 ): void;
                 /**
-                 * implementation of [func`password_store_finish]`, required
+                 * implementation of {@link password_store_finish}, required
                  * @param result
+                 * @virtual
                  */
                 vfunc_store_finish(result: Gio.AsyncResult): boolean;
             }
@@ -7220,7 +7446,7 @@ declare module 'gi://Secret?version=1' {
             prototype: Backend;
 
             /**
-             * Get a #SecretBackend instance.
+             * Get a {@link Secret.Backend} instance.
              *
              * If such a backend already exists, then the same backend is returned.
              *
@@ -7238,17 +7464,25 @@ declare module 'gi://Secret?version=1' {
                 callback?: Gio.AsyncReadyCallback<Backend> | null,
             ): void;
             /**
-             * Complete an asynchronous operation to get a #SecretBackend.
+             * Complete an asynchronous operation to get a {@link Secret.Backend}.
              * @param result the asynchronous result passed to the callback
              */
             get_finish(result: Gio.AsyncResult): Backend;
         }
+        /**
+         * {@link Secret.Backend} represents a backend implementation of password
+         * storage.
+         * @gir-type Interface
+         * @since 0.19.0
+         */
         interface Backend extends Gio.AsyncInitable, Backend.Interface {
             // Properties
 
             /**
              * A set of flags describing which parts of the secret backend have
              * been initialized.
+             * @since 0.19.0
+             * @construct-only
              */
             get flags(): ServiceFlags;
         }
@@ -7274,6 +7508,7 @@ declare module 'gi://Secret?version=1' {
                  * This function returns immediately and completes asynchronously.
                  * @param cancellable optional cancellation object
                  * @param callback called when the operation completes
+                 * @virtual
                  */
                 vfunc_retrieve_secret(
                     cancellable?: Gio.Cancellable | null,
@@ -7282,6 +7517,7 @@ declare module 'gi://Secret?version=1' {
                 /**
                  * Complete asynchronous operation to retrieve the secret value of this object.
                  * @param result asynchronous result passed to callback
+                 * @virtual
                  */
                 vfunc_retrieve_secret_finish(result: Gio.AsyncResult): Value | null;
             }
@@ -7300,6 +7536,18 @@ declare module 'gi://Secret?version=1' {
             $gtype: GObject.GType<Retrievable>;
             prototype: Retrievable;
         }
+        /**
+         * A read-only view of a secret item in the Secret Service.
+         *
+         * {@link Secret.Retrievable} provides a read-only view of a secret item
+         * stored in the Secret Service.
+         *
+         * Each item has a value, represented by a {@link Value}, which can be
+         * retrieved by {@link Retrievable.retrieve_secret} and
+         * {@link Retrievable.retrieve_secret_finish}.
+         * @gir-type Interface
+         * @since 0.19.0
+         */
         interface Retrievable extends GObject.Object, Retrievable.Interface {
             // Properties
 
@@ -7308,23 +7556,27 @@ declare module 'gi://Secret?version=1' {
              *
              * Attributes are used to locate an item. They are not guaranteed to be
              * stored or transferred securely.
+             * @since 0.19.0
              */
             get attributes(): GLib.HashTable<string, string>;
             set attributes(val: GLib.HashTable<string, string>);
             /**
              * The date and time (in seconds since the UNIX epoch) that this
              * item was created.
+             * @since 0.19.0
              */
             get created(): number;
             set created(val: number);
             /**
              * The human readable label for the item.
+             * @since 0.19.0
              */
             get label(): string;
             set label(val: string);
             /**
              * The date and time (in seconds since the UNIX epoch) that this
              * item was last modified.
+             * @since 0.19.0
              */
             get modified(): number;
             set modified(val: number);
@@ -7339,7 +7591,7 @@ declare module 'gi://Secret?version=1' {
              * or transferred securely by the secret service.
              *
              * Do not modify the attribute returned by this method.
-             * @returns a new reference   to the attributes, which should not be modified, and   released with [func@GLib.HashTable.unref]
+             * @returns a new reference   to the attributes, which should not be modified, and   released with {@link GLib.HashTable.unref}
              */
             get_attributes(): GLib.HashTable<string, string>;
             /**
@@ -7352,7 +7604,7 @@ declare module 'gi://Secret?version=1' {
             get_created(): number;
             /**
              * Get the label of this item.
-             * @returns the label, which should be freed with [func@GLib.free]
+             * @returns the label, which should be freed with {@link GLib.free}
              */
             get_label(): string;
             /**
@@ -7401,7 +7653,7 @@ declare module 'gi://Secret?version=1' {
             /**
              * Complete asynchronous operation to retrieve the secret value of this object.
              * @param result asynchronous result passed to callback
-             * @returns the secret value which should be   released with [method@Value.unref], or %NULL
+             * @returns the secret value which should be   released with {@link Value.unref}, or `null`
              */
             retrieve_secret_finish(result: Gio.AsyncResult): Value | null;
             /**
@@ -7413,7 +7665,7 @@ declare module 'gi://Secret?version=1' {
              * This method may block indefinitely and should not be used in user interface
              * threads.
              * @param cancellable optional cancellation object
-             * @returns the secret value which should be   released with [method@Value.unref], or %NULL
+             * @returns the secret value which should be   released with {@link Value.unref}, or `null`
              */
             retrieve_secret_sync(cancellable?: Gio.Cancellable | null): Value | null;
         }

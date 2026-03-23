@@ -42,10 +42,11 @@ declare module 'gi://GlyGtk4?version=2' {
          */
 
         /**
-         * Gets the actual image from a frame. See the [class`Gly`.Loader] docs
+         * Gets the actual image from a frame. See the {@link Gly.Loader} docs
          * for a complete example.
          * @param frame Frame
          * @returns A GDK Texture
+         * @since 2.0
          */
         function frame_get_texture(frame: Gly.Frame): Gdk.Texture;
         /**
