@@ -24,6 +24,9 @@ declare module 'gi://IBus?version=1.0' {
          * IBus-1.0
          */
 
+        /**
+         * @gir-type Enum
+         */
         export namespace AttrPreedit {
             export const $gtype: GObject.GType<AttrPreedit>;
         }
@@ -36,6 +39,8 @@ declare module 'gi://IBus?version=1.0' {
          *
          * IBus compiled the values for major input method engines:
          * https://github.com/ibus/ibus/wiki/Wayland-Colors
+         * @gir-type Enum
+         * @since 1.5.29
          */
         enum AttrPreedit {
             /**
@@ -89,12 +94,16 @@ declare module 'gi://IBus?version=1.0' {
             ERROR_COMPOSE,
         }
 
+        /**
+         * @gir-type Enum
+         */
         export namespace AttrType {
             export const $gtype: GObject.GType<AttrType>;
         }
 
         /**
          * Type enumeration of IBusText attribute.
+         * @gir-type Enum
          */
         enum AttrType {
             /**
@@ -111,12 +120,16 @@ declare module 'gi://IBus?version=1.0' {
             BACKGROUND,
         }
 
+        /**
+         * @gir-type Enum
+         */
         export namespace AttrUnderline {
             export const $gtype: GObject.GType<AttrUnderline>;
         }
 
         /**
          * Type of IBusText attribute.
+         * @gir-type Enum
          */
         enum AttrUnderline {
             /**
@@ -141,12 +154,17 @@ declare module 'gi://IBus?version=1.0' {
             ERROR,
         }
 
+        /**
+         * @gir-type Enum
+         */
         export namespace BusGlobalBindingType {
             export const $gtype: GObject.GType<BusGlobalBindingType>;
         }
 
         /**
          * Type enumeration of IBusBusGlobalBindingType.
+         * @gir-type Enum
+         * @since 1.5.29
          */
         enum BusGlobalBindingType {
             /**
@@ -163,10 +181,16 @@ declare module 'gi://IBus?version=1.0' {
             EMOJI_TYPING,
         }
 
+        /**
+         * @gir-type Enum
+         */
         export namespace BusRequestNameReply {
             export const $gtype: GObject.GType<BusRequestNameReply>;
         }
 
+        /**
+         * @gir-type Enum
+         */
         enum BusRequestNameReply {
             /**
              * same as DBUS_REQUEST_NAME_REPLY_PRIMARY_OWNER
@@ -186,10 +210,16 @@ declare module 'gi://IBus?version=1.0' {
             ALREADY_OWNER,
         }
 
+        /**
+         * @gir-type Enum
+         */
         export namespace BusStartServiceByNameReply {
             export const $gtype: GObject.GType<BusStartServiceByNameReply>;
         }
 
+        /**
+         * @gir-type Enum
+         */
         enum BusStartServiceByNameReply {
             /**
              * same as DBUS_START_REPLY_SUCCESS
@@ -201,6 +231,9 @@ declare module 'gi://IBus?version=1.0' {
             ALREADY_RUNNING,
         }
 
+        /**
+         * @gir-type Struct
+         */
         class Error extends GLib.Error {
             static $gtype: GObject.GType<GLib.Error>;
 
@@ -228,6 +261,9 @@ declare module 'gi://IBus?version=1.0' {
             static quark(): GLib.Quark;
         }
 
+        /**
+         * @gir-type Enum
+         */
         export namespace InputPurpose {
             export const $gtype: GObject.GType<InputPurpose>;
         }
@@ -251,6 +287,8 @@ declare module 'gi://IBus?version=1.0' {
          *
          * This enumeration may be extended in the future; engines should
          * interpret unknown values as 'free form'.
+         * @gir-type Enum
+         * @since 1.5.4
          */
         enum InputPurpose {
             /**
@@ -286,12 +324,12 @@ declare module 'gi://IBus?version=1.0' {
              */
             NAME,
             /**
-             * Like `IBUS_INPUT_PURPOSE_FREE_FORM,`
+             * Like `IBUS_INPUT_PURPOSE_FREE_FORM`,
              *     but characters are hidden
              */
             PASSWORD,
             /**
-             * Like `IBUS_INPUT_PURPOSE_DIGITS,` but
+             * Like `IBUS_INPUT_PURPOSE_DIGITS`, but
              *     characters are hidden
              */
             PIN,
@@ -302,12 +340,16 @@ declare module 'gi://IBus?version=1.0' {
             TERMINAL,
         }
 
+        /**
+         * @gir-type Enum
+         */
         export namespace Orientation {
             export const $gtype: GObject.GType<Orientation>;
         }
 
         /**
          * Orientation of UI.
+         * @gir-type Enum
          */
         enum Orientation {
             /**
@@ -324,12 +366,16 @@ declare module 'gi://IBus?version=1.0' {
             SYSTEM,
         }
 
+        /**
+         * @gir-type Enum
+         */
         export namespace PreeditFocusMode {
             export const $gtype: GObject.GType<PreeditFocusMode>;
         }
 
         /**
          * Pre-edit commit mode when the focus is lost.
+         * @gir-type Enum
          */
         enum PreeditFocusMode {
             /**
@@ -342,12 +388,15 @@ declare module 'gi://IBus?version=1.0' {
             COMMIT,
         }
 
+        /**
+         * @gir-type Enum
+         */
         export namespace PropState {
             export const $gtype: GObject.GType<PropState>;
         }
 
         /**
-         * State of #IBusProperty. The actual effect depends on #IBusPropType of the
+         * State of {@link IBus.Property}. The actual effect depends on {@link IBus.PropType} of the
          * IBusProperty.
          *
          * <variablelist>
@@ -361,6 +410,7 @@ declare module 'gi://IBus?version=1.0' {
          *     </varlistentry>
          * </variablelist>
          * No effect on other types.
+         * @gir-type Enum
          */
         enum PropState {
             /**
@@ -378,12 +428,16 @@ declare module 'gi://IBus?version=1.0' {
             INCONSISTENT,
         }
 
+        /**
+         * @gir-type Enum
+         */
         export namespace PropType {
             export const $gtype: GObject.GType<PropType>;
         }
 
         /**
          * Type enumeration of IBusProperty.
+         * @gir-type Enum
          */
         enum PropType {
             /**
@@ -409,10 +463,16 @@ declare module 'gi://IBus?version=1.0' {
             SEPARATOR,
         }
 
+        /**
+         * @gir-type Enum
+         */
         export namespace XEventType {
             export const $gtype: GObject.GType<XEventType>;
         }
 
+        /**
+         * @gir-type Enum
+         */
         enum XEventType {
             NOTHING,
             KEY_PRESS,
@@ -3587,6 +3647,7 @@ declare module 'gi://IBus?version=1.0' {
         const MINOR_VERSION: number;
         /**
          * This is a filter for shortcut keys.
+         * @since 1.5.32
          */
         const MODIFIER_FILTER: number;
         const Mabovedot: number;
@@ -4839,11 +4900,11 @@ declare module 'gi://IBus?version=1.0' {
         const zstroke: number;
         /**
          * Converts an accelerator keyval and modifier mask into a string
-         * parseable by gtk_accelerator_parse(). For example, if you pass in
+         * parseable by `gtk_accelerator_parse()`. For example, if you pass in
          * #IBUS_KEY_q and #IBUS_CONTROL_MASK, this function returns “&lt;Control&gt;q”.
          *
          * If you need to display accelerators in the user interface,
-         * see gtk_accelerator_get_label().
+         * see `gtk_accelerator_get_label()`.
          * @param accelerator_key accelerator keyval
          * @param accelerator_mods accelerator modifier mask
          * @returns a newly-allocated accelerator name
@@ -4856,13 +4917,14 @@ declare module 'gi://IBus?version=1.0' {
          *
          * The parser is fairly liberal and allows lower or upper case, and also
          * abbreviations such as “&lt;Ctl&gt;” and “&lt;Ctrl&gt;”. Key names are
-         * parsed using gdk_keyval_from_name(). For character keys the name is not the
+         * parsed using `gdk_keyval_from_name()`. For character keys the name is not the
          * symbol, but the lowercase name, e.g. one would use “&lt;Ctrl&gt;minus”
          * instead of “&lt;Ctrl&gt;-”.
          *
          * If the parse fails, `accelerator_key` and `accelerator_mods` will
          * be set to 0 (zero).
          * @param accelerator string representing an accelerator
+         * @since 1.5.18
          */
         function accelerator_parse(accelerator: string): [number, ModifierType | null];
         /**
@@ -4873,44 +4935,53 @@ declare module 'gi://IBus?version=1.0' {
          * as an accelerator.
          * @param keyval a GDK keyval
          * @param modifiers modifier mask
-         * @returns %TRUE if the accelerator is valid
+         * @returns `true` if the accelerator is valid
          */
         function accelerator_valid(keyval: number, modifiers: ModifierType | null): boolean;
         /**
-         * Creates a new background #IBusAttribute.
+         * Creates a new background {@link IBus.Attribute}.
          * @param color Color in RGB.
          * @param start_index Where attribute starts.
          * @param end_index Where attribute ends.
-         * @returns A newly allocated #IBusAttribute.
+         * @returns A newly allocated {@link IBus.Attribute}.
          */
         function attr_background_new(color: number, start_index: number, end_index: number): Attribute;
         /**
-         * Creates a new foreground #IBusAttribute.
+         * Creates a new foreground {@link IBus.Attribute}.
          * @param color Color in RGB.
          * @param start_index Where attribute starts.
          * @param end_index Where attribute ends.
-         * @returns A newly allocated #IBusAttribute.
+         * @returns A newly allocated {@link IBus.Attribute}.
          */
         function attr_foreground_new(color: number, start_index: number, end_index: number): Attribute;
         /**
-         * Creates a new underline #IBusAttribute.
+         * Creates a new underline {@link IBus.Attribute}.
          * @param underline_type Type of underline.
          * @param start_index Where attribute starts.
          * @param end_index Where attribute ends.
-         * @returns A newly allocated #IBusAttribute.
+         * @returns A newly allocated {@link IBus.Attribute}.
          */
         function attr_underline_new(underline_type: number, start_index: number, end_index: number): Attribute;
+        /**
+         * @param path A path of the saved dictionary file.
+         * @returns An Emoji dictionary file loaded from the saved cache file. A hash table of { emoji character, {@link IBus.EmojiData} object } is loaded from the saved cache file. Recommend to use `ibus_emoji_data_load()` instead becase GSList in GHashTable does not work with Gir and Vala. Calls `ibus_emoji_data_load()` internally.
+         */
         function emoji_dict_load(path: string): GLib.HashTable<string, any>;
+        /**
+         * @param dict An Emoji dictionary
+         * @param emoji an emoji character
+         * @returns An {@link IBus.EmojiData} of `emoji`. This API was prepared for the old dict foramat with Gir and Vala but no longer needed. Use `ibus_emoji_data_load()` instead.
+         */
         function emoji_dict_lookup(
             dict: { [key: string]: any } | GLib.HashTable<string, EmojiData>,
             emoji: string,
         ): EmojiData;
         /**
          * Saves the Emoji dictionary to the cache file.
-         * Recommend to use ibus_emoji_data_save() instead becase GSList in
+         * Recommend to use `ibus_emoji_data_save()` instead becase GSList in
          * GHashTable does not work with Gir and Vala.
-         * Calls ibus_emoji_data_save() internally. The format of the hash table
-         * changed and now is { emoji character, #IBusEmojiData object }.
+         * Calls `ibus_emoji_data_save()` internally. The format of the hash table
+         * changed and now is { emoji character, {@link IBus.EmojiData} object }.
          * @param path A path of the saved dictionary file.
          * @param dict An Emoji dictionary
          */
@@ -4919,6 +4990,7 @@ declare module 'gi://IBus?version=1.0' {
         /**
          * Free a list of strings.
          * @param strv List of strings.
+         * @deprecated This function has been deprecated and should not be used in newly written code.
          */
         function free_strv(strv: string): void;
         /**
@@ -4928,14 +5000,19 @@ declare module 'gi://IBus?version=1.0' {
          *    <listitem><para>Environment variable IBUS_ADDRESS</para></listitem>
          *    <listitem><para>Socket file under ~/.config/ibus/bus/</para></listitem>
          * </orderedlist>
-         * @returns D-Bus address of IBus. %NULL for not found. See also: ibus_write_address().
+         * @returns D-Bus address of IBus. `null` for not found. See also: `ibus_write_address()`.
          */
         function get_address(): string;
         /**
          * Get UID of ibus-daemon.
          * @returns UID of ibus-daemon; or 0 if UID is not available.
+         * @deprecated This function has been deprecated and should not be used in newly written code.
          */
         function get_daemon_uid(): number;
+        /**
+         * @param _locale A const locale name.
+         * @returns translated language name
+         */
         function get_language_name(_locale: string): string;
         /**
          * Obtains the machine UUID of the machine this process is running on.
@@ -4955,6 +5032,10 @@ declare module 'gi://IBus?version=1.0' {
          * @returns A GDBus timeout in milliseconds. -1 when default timeout for     GDBus should be used.
          */
         function get_timeout(): number;
+        /**
+         * @param _locale A const locale name.
+         * @returns untranslated language name
+         */
         function get_untranslated_language_name(_locale: string): string;
         /**
          * Get the current user name.
@@ -4978,7 +5059,7 @@ declare module 'gi://IBus?version=1.0' {
         /**
          * Parse key event string and return key symbol and modifiers.
          * @param string Key event string.
-         * @returns %TRUE for succeed; %FALSE if failed.
+         * @returns `true` for succeed; `false` if failed.
          */
         function key_event_from_string(string: string): [boolean, number, number];
         /**
@@ -4999,7 +5080,7 @@ declare module 'gi://IBus?version=1.0' {
         function keyval_convert_case(symbol: number): [number, number];
         /**
          * Return the key symbol that associate with the key name.
-         * @param keyval_name Key name in #gdk_keys_by_name.
+         * @param keyval_name Key name in `gdk_keys_by_name`.
          * @returns Corresponding key symbol.
          */
         function keyval_from_name(keyval_name: string): number;
@@ -5008,13 +5089,13 @@ declare module 'gi://IBus?version=1.0' {
          *
          * Note that the returned string is used internally, so don't free it.
          * @param keyval Key symbol.
-         * @returns Corresponding key name. %NULL if no such key symbol.
+         * @returns Corresponding key name. `null` if no such key symbol.
          */
         function keyval_name(keyval: number): string;
         /**
          * Converts a key value to lower case, if applicable.
          * @param keyval a key value.
-         * @returns the lower case form of @keyval, or @keyval itself if it is already  in lower case or it is not subject to case conversion.
+         * @returns the lower case form of `keyval`, or `keyval` itself if it is already  in lower case or it is not subject to case conversion.
          */
         function keyval_to_lower(keyval: number): number;
         /**
@@ -5027,20 +5108,20 @@ declare module 'gi://IBus?version=1.0' {
         /**
          * Converts a key value to upper case, if applicable.
          * @param keyval a key value.
-         * @returns the upper case form of @keyval, or @keyval itself if it is already   in upper case or it is not subject to case conversion.
+         * @returns the upper case form of `keyval`, or `keyval` itself if it is already   in upper case or it is not subject to case conversion.
          */
         function keyval_to_upper(keyval: number): number;
         /**
-         * Runs an IBus main loop until ibus_quit() is called in the loop.
+         * Runs an IBus main loop until `ibus_quit()` is called in the loop.
          *
-         * See also: ibus_quit().
+         * See also: `ibus_quit()`.
          */
         function main(): void;
         /**
          * Stops an IBus from running.
          *
-         * Any calls to ibus_quit() for the loop will return.
-         * See also: ibus_main().
+         * Any calls to `ibus_quit()` for the loop will return.
+         * See also: `ibus_main()`.
          */
         function quit(): void;
         /**
@@ -5054,7 +5135,7 @@ declare module 'gi://IBus?version=1.0' {
          *
          * (ibus-daemon:7088): IBUS-DEBUG: 18:06:45.822819: ibus-daemon started
          *
-         * If `verbose` is %TRUE, all levels of messages will be logged. Otherwise,
+         * If `verbose` is `true`, all levels of messages will be logged. Otherwise,
          * DEBUG and WARNING messages will be ignored.  The function is used in
          * ibus-daemon, but can be useful for IBus client programs as well for
          * debugging. It's totally fine for not calling this function. If you
@@ -5076,7 +5157,7 @@ declare module 'gi://IBus?version=1.0' {
         /**
          * Write D-Bus address to socket file.
          *
-         * See also: ibus_get_address().
+         * See also: `ibus_get_address()`.
          * @param address D-Bus address of IBus.
          */
         function write_address(address: string): void;
@@ -5093,28 +5174,52 @@ declare module 'gi://IBus?version=1.0' {
          * @returns Root node of parsed XML tree.
          */
         function xml_parse_file(name: string): XML;
+        /**
+         * @gir-type Callback
+         */
         interface FreeFunc {
             (object?: any | null): void;
         }
+        /**
+         * @gir-type Callback
+         */
         interface ObjectDestroyFunc {
             (object: Object): void;
         }
+        /**
+         * @gir-type Callback
+         */
         interface SerializableCopyFunc {
             (dest: Serializable, src: Serializable): boolean;
         }
+        /**
+         * @gir-type Callback
+         */
         interface SerializableDeserializeFunc {
             (serializable: Serializable, variant: GLib.Variant): number;
         }
+        /**
+         * @gir-type Callback
+         */
         interface SerializableSerializeFunc {
             (serializable: Serializable, builder: GLib.VariantBuilder): boolean;
         }
+        /**
+         * @gir-type Callback
+         */
         interface UnicodeDataLoadAsyncFinish {
             (data_list: UnicodeData[]): void;
         }
+        /**
+         * @gir-type Flags
+         */
         export namespace BusNameFlag {
             export const $gtype: GObject.GType<BusNameFlag>;
         }
 
+        /**
+         * @gir-type Flags
+         */
         enum BusNameFlag {
             /**
              * same as DBUS_NAME_FLAG_ALLOW_REPLACEMENT
@@ -5130,12 +5235,16 @@ declare module 'gi://IBus?version=1.0' {
             DO_NOT_QUEUE,
         }
 
+        /**
+         * @gir-type Flags
+         */
         export namespace Capabilite {
             export const $gtype: GObject.GType<Capabilite>;
         }
 
         /**
          * Capability flags of UI.
+         * @gir-type Flags
          */
         enum Capabilite {
             /**
@@ -5169,13 +5278,16 @@ declare module 'gi://IBus?version=1.0' {
             OSK,
             /**
              * Asynchronous process key events are not
-             *  supported and the ibus_engine_forward_key_event() should not be
-             *  used for the return value of #IBusEngine::process_key_event().
+             *  supported and the `ibus_engine_forward_key_event()` should not be
+             *  used for the return value of {@link IBus.Engine.SignalSignatures.process_key_event | IBus.Engine::process_key_event}().
              */
             SYNC_PROCESS_KEY,
             SYNC_PROCESS_KEY_V2,
         }
 
+        /**
+         * @gir-type Flags
+         */
         export namespace InputHints {
             export const $gtype: GObject.GType<InputHints>;
         }
@@ -5183,13 +5295,15 @@ declare module 'gi://IBus?version=1.0' {
         /**
          * Describes hints that might be taken into account by engines.  Note
          * that engines may already tailor their behaviour according to the
-         * #IBusInputPurpose of the entry.
+         * {@link IBus.InputPurpose} of the entry.
          *
          * Some common sense is expected when using these flags - mixing
          * `IBUS_INPUT_HINT_LOWERCASE` with any of the uppercase hints makes no sense.
          *
          * This enumeration may be extended in the future; engines should
          * ignore unknown values.
+         * @gir-type Flags
+         * @since 1.5.4
          */
         enum InputHints {
             /**
@@ -5250,6 +5364,9 @@ declare module 'gi://IBus?version=1.0' {
             PRIVATE,
         }
 
+        /**
+         * @gir-type Flags
+         */
         export namespace ModifierType {
             export const $gtype: GObject.GType<ModifierType>;
         }
@@ -5257,6 +5374,7 @@ declare module 'gi://IBus?version=1.0' {
         /**
          * Handles key modifier such as control, shift and alt and release event.
          * Note that nits 15 - 25 are currently unused, while bit 29 is used internally.
+         * @gir-type Flags
          */
         enum ModifierType {
             /**
@@ -5345,12 +5463,16 @@ declare module 'gi://IBus?version=1.0' {
             MODIFIER_MASK,
         }
 
+        /**
+         * @gir-type Flags
+         */
         export namespace ObjectFlags {
             export const $gtype: GObject.GType<ObjectFlags>;
         }
 
         /**
          * The flags are used internally.
+         * @gir-type Flags
          */
         enum ObjectFlags {
             /**
@@ -5382,6 +5504,7 @@ declare module 'gi://IBus?version=1.0' {
 
         /**
          * Array of IBusAttribute.
+         * @gir-type Class
          */
         class AttrList extends Serializable {
             static $gtype: GObject.GType<AttrList>;
@@ -5409,16 +5532,19 @@ declare module 'gi://IBus?version=1.0' {
 
             // Signals
 
+            /** @signal */
             connect<K extends keyof AttrList.SignalSignatures>(
                 signal: K,
                 callback: GObject.SignalCallback<this, AttrList.SignalSignatures[K]>,
             ): number;
             connect(signal: string, callback: (...args: any[]) => any): number;
+            /** @signal */
             connect_after<K extends keyof AttrList.SignalSignatures>(
                 signal: K,
                 callback: GObject.SignalCallback<this, AttrList.SignalSignatures[K]>,
             ): number;
             connect_after(signal: string, callback: (...args: any[]) => any): number;
+            /** @signal */
             emit<K extends keyof AttrList.SignalSignatures>(
                 signal: K,
                 ...args: GObject.GjsParameters<AttrList.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never
@@ -5433,9 +5559,9 @@ declare module 'gi://IBus?version=1.0' {
              */
             append(attr: Attribute): void;
             /**
-             * Returns #IBusAttribute at given index. Borrowed reference.
-             * @param index Index of the @attr_list.
-             * @returns #IBusAttribute at given index, %NULL if no such        #IBusAttribute.
+             * Returns {@link IBus.Attribute} at given index. Borrowed reference.
+             * @param index Index of the `attr_list`.
+             * @returns {@link IBus.Attribute} at given index, `null` if no such        {@link IBus.Attribute}.
              */
             get(index: number): Attribute;
         }
@@ -5453,6 +5579,7 @@ declare module 'gi://IBus?version=1.0' {
          * An IBusAttribute represents an attribute that associate to IBusText.
          * It decorates preedit buffer and auxiliary text with underline, foreground
          * and background colors.
+         * @gir-type Class
          */
         class Attribute extends Serializable {
             static $gtype: GObject.GType<Attribute>;
@@ -5486,16 +5613,19 @@ declare module 'gi://IBus?version=1.0' {
 
             // Signals
 
+            /** @signal */
             connect<K extends keyof Attribute.SignalSignatures>(
                 signal: K,
                 callback: GObject.SignalCallback<this, Attribute.SignalSignatures[K]>,
             ): number;
             connect(signal: string, callback: (...args: any[]) => any): number;
+            /** @signal */
             connect_after<K extends keyof Attribute.SignalSignatures>(
                 signal: K,
                 callback: GObject.SignalCallback<this, Attribute.SignalSignatures[K]>,
             ): number;
             connect_after(signal: string, callback: (...args: any[]) => any): number;
+            /** @signal */
             emit<K extends keyof Attribute.SignalSignatures>(
                 signal: K,
                 ...args: GObject.GjsParameters<Attribute.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never
@@ -5505,8 +5635,8 @@ declare module 'gi://IBus?version=1.0' {
             // Methods
 
             /**
-             * Gets an enum of #IBusAttrType.
-             * @returns An enum of #IBusAttrType.
+             * Gets an enum of {@link IBus.AttrType}.
+             * @returns An enum of {@link IBus.AttrType}.
              */
             get_attr_type(): number;
             /**
@@ -5520,11 +5650,11 @@ declare module 'gi://IBus?version=1.0' {
              */
             get_start_index(): number;
             /**
-             * Gets an unsigned int value relative with #IBusAttrType.
-             * If the type is %IBUS_ATTR_TYPE_UNDERLINE, the return value is
-             * #IBusAttrUnderline. If the type is %IBUS_ATTR_TYPE_FOREGROUND,
+             * Gets an unsigned int value relative with {@link IBus.AttrType}.
+             * If the type is {@link IBus.AttrType.UNDERLINE}, the return value is
+             * {@link IBus.AttrUnderline}. If the type is {@link IBus.AttrType.FOREGROUND},
              * the return value is the color RGB.
-             * @returns An unsigned int value relative with #IBusAttrType.
+             * @returns An unsigned int value relative with {@link IBus.AttrType}.
              */
             get_value(): number;
         }
@@ -5532,9 +5662,30 @@ declare module 'gi://IBus?version=1.0' {
         namespace Bus {
             // Signal signatures
             interface SignalSignatures extends Object.SignalSignatures {
+                /**
+                 * Emitted when {@link IBus.Bus} is connected to ibus-daemon.
+                 * @signal
+                 * @run-last
+                 */
                 connected: () => void;
+                /**
+                 * Emitted when {@link IBus.Bus} is disconnected from ibus-daemon.
+                 * @signal
+                 * @run-last
+                 */
                 disconnected: () => void;
+                /**
+                 * Emitted when global engine is changed.
+                 * @signal
+                 * @run-last
+                 */
                 'global-engine-changed': (arg0: string) => void;
+                /**
+                 * Emitted when global shortcut key is responded.
+                 * Since 1.5.32
+                 * @signal
+                 * @run-last
+                 */
                 'global-shortcut-key-responded': (
                     arg0: number,
                     arg1: number,
@@ -5542,6 +5693,11 @@ declare module 'gi://IBus?version=1.0' {
                     arg3: number,
                     arg4: boolean,
                 ) => void;
+                /**
+                 * Emitted when D-Bus name owner is changed.
+                 * @signal
+                 * @run-last
+                 */
                 'name-owner-changed': (arg0: string, arg1: string, arg2: string) => void;
                 'notify::client-only': (pspec: GObject.ParamSpec) => void;
                 'notify::connect-async': (pspec: GObject.ParamSpec) => void;
@@ -5559,6 +5715,7 @@ declare module 'gi://IBus?version=1.0' {
 
         /**
          * An IBusBus connects with IBus daemon.
+         * @gir-type Class
          */
         class Bus extends Object {
             static $gtype: GObject.GType<Bus>;
@@ -5566,19 +5723,23 @@ declare module 'gi://IBus?version=1.0' {
             // Properties
 
             /**
-             * Whether the #IBusBus object is for client use only.
+             * Whether the {@link IBus.Bus} object is for client use only.
+             * @construct-only
              */
             get client_only(): boolean;
             /**
-             * Whether the #IBusBus object is for client use only.
+             * Whether the {@link IBus.Bus} object is for client use only.
+             * @construct-only
              */
             get clientOnly(): boolean;
             /**
-             * Whether the #IBusBus object should connect asynchronously to the bus.
+             * Whether the {@link IBus.Bus} object should connect asynchronously to the bus.
+             * @construct-only
              */
             get connect_async(): boolean;
             /**
-             * Whether the #IBusBus object should connect asynchronously to the bus.
+             * Whether the {@link IBus.Bus} object should connect asynchronously to the bus.
+             * @construct-only
              */
             get connectAsync(): boolean;
 
@@ -5605,16 +5766,19 @@ declare module 'gi://IBus?version=1.0' {
 
             // Signals
 
+            /** @signal */
             connect<K extends keyof Bus.SignalSignatures>(
                 signal: K,
                 callback: GObject.SignalCallback<this, Bus.SignalSignatures[K]>,
             ): number;
             connect(signal: string, callback: (...args: any[]) => any): number;
+            /** @signal */
             connect_after<K extends keyof Bus.SignalSignatures>(
                 signal: K,
                 callback: GObject.SignalCallback<this, Bus.SignalSignatures[K]>,
             ): number;
             connect_after(signal: string, callback: (...args: any[]) => any): number;
+            /** @signal */
             emit<K extends keyof Bus.SignalSignatures>(
                 signal: K,
                 ...args: GObject.GjsParameters<Bus.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never
@@ -5624,16 +5788,16 @@ declare module 'gi://IBus?version=1.0' {
             // Methods
 
             /**
-             * Add a match rule to an #IBusBus synchronously.
+             * Add a match rule to an {@link IBus.Bus} synchronously.
              * @param rule Match rule.
-             * @returns %TRUE if the rule is added. %FALSE otherwise.
+             * @returns `true` if the rule is added. `false` otherwise.
              */
             add_match(rule: string): boolean;
             /**
-             * Add a match rule to an #IBusBus asynchronously.
+             * Add a match rule to an {@link IBus.Bus} asynchronously.
              * @param rule Match rule.
              * @param timeout_msec The timeout in milliseconds or -1 to use the default timeout.
-             * @param cancellable A #GCancellable or %NULL.
+             * @param cancellable A {@link Gio.Cancellable} or `null`.
              */
             add_match_async(
                 rule: string,
@@ -5641,11 +5805,11 @@ declare module 'gi://IBus?version=1.0' {
                 cancellable?: Gio.Cancellable | null,
             ): globalThis.Promise<boolean>;
             /**
-             * Add a match rule to an #IBusBus asynchronously.
+             * Add a match rule to an {@link IBus.Bus} asynchronously.
              * @param rule Match rule.
              * @param timeout_msec The timeout in milliseconds or -1 to use the default timeout.
-             * @param cancellable A #GCancellable or %NULL.
-             * @param callback A #GAsyncReadyCallback to call when the request is satisfied      or %NULL if you don't care about the result of the method invocation.
+             * @param cancellable A {@link Gio.Cancellable} or `null`.
+             * @param callback A {@link Gio.AsyncReadyCallback} to call when the request is satisfied      or `null` if you don't care about the result of the method invocation.
              */
             add_match_async(
                 rule: string,
@@ -5654,11 +5818,11 @@ declare module 'gi://IBus?version=1.0' {
                 callback: Gio.AsyncReadyCallback<this> | null,
             ): void;
             /**
-             * Add a match rule to an #IBusBus asynchronously.
+             * Add a match rule to an {@link IBus.Bus} asynchronously.
              * @param rule Match rule.
              * @param timeout_msec The timeout in milliseconds or -1 to use the default timeout.
-             * @param cancellable A #GCancellable or %NULL.
-             * @param callback A #GAsyncReadyCallback to call when the request is satisfied      or %NULL if you don't care about the result of the method invocation.
+             * @param cancellable A {@link Gio.Cancellable} or `null`.
+             * @param callback A {@link Gio.AsyncReadyCallback} to call when the request is satisfied      or `null` if you don't care about the result of the method invocation.
              */
             add_match_async(
                 rule: string,
@@ -5667,22 +5831,22 @@ declare module 'gi://IBus?version=1.0' {
                 callback?: Gio.AsyncReadyCallback<this> | null,
             ): globalThis.Promise<boolean> | void;
             /**
-             * Finishes an operation started with ibus_bus_add_match_async().
-             * @param res A #GAsyncResult obtained from the #GAsyncReadyCallback passed to   ibus_bus_add_match_async().
-             * @returns %TRUE if the rule is added. %FALSE otherwise.
+             * Finishes an operation started with `ibus_bus_add_match_async()`.
+             * @param res A {@link Gio.AsyncResult} obtained from the {@link Gio.AsyncReadyCallback} passed to   `ibus_bus_add_match_async()`.
+             * @returns `true` if the rule is added. `false` otherwise.
              */
             add_match_async_finish(res: Gio.AsyncResult): boolean;
             /**
              * Create an input context for client synchronously.
              * @param client_name Name of client.
-             * @returns A newly allocated #IBusInputContext if the      "CreateInputContext" call is succeeded, %NULL otherwise.
+             * @returns A newly allocated {@link IBus.InputContext} if the      "CreateInputContext" call is succeeded, `null` otherwise.
              */
             create_input_context(client_name: string): InputContext;
             /**
              * Create an input context for client asynchronously.
              * @param client_name Name of client.
              * @param timeout_msec The timeout in milliseconds or -1 to use the default timeout.
-             * @param cancellable A #GCancellable or %NULL.
+             * @param cancellable A {@link Gio.Cancellable} or `null`.
              */
             create_input_context_async(
                 client_name: string,
@@ -5693,8 +5857,8 @@ declare module 'gi://IBus?version=1.0' {
              * Create an input context for client asynchronously.
              * @param client_name Name of client.
              * @param timeout_msec The timeout in milliseconds or -1 to use the default timeout.
-             * @param cancellable A #GCancellable or %NULL.
-             * @param callback A #GAsyncReadyCallback to call when the request is satisfied.      It should not be %NULL.
+             * @param cancellable A {@link Gio.Cancellable} or `null`.
+             * @param callback A {@link Gio.AsyncReadyCallback} to call when the request is satisfied.      It should not be `null`.
              */
             create_input_context_async(
                 client_name: string,
@@ -5706,8 +5870,8 @@ declare module 'gi://IBus?version=1.0' {
              * Create an input context for client asynchronously.
              * @param client_name Name of client.
              * @param timeout_msec The timeout in milliseconds or -1 to use the default timeout.
-             * @param cancellable A #GCancellable or %NULL.
-             * @param callback A #GAsyncReadyCallback to call when the request is satisfied.      It should not be %NULL.
+             * @param cancellable A {@link Gio.Cancellable} or `null`.
+             * @param callback A {@link Gio.AsyncReadyCallback} to call when the request is satisfied.      It should not be `null`.
              */
             create_input_context_async(
                 client_name: string,
@@ -5716,20 +5880,20 @@ declare module 'gi://IBus?version=1.0' {
                 callback?: Gio.AsyncReadyCallback<this> | null,
             ): globalThis.Promise<InputContext> | void;
             /**
-             * Finishes an operation started with ibus_bus_create_input_context_async().
-             * @param res A #GAsyncResult obtained from the #GAsyncReadyCallback passed to   ibus_bus_create_input_context_async().
-             * @returns A newly allocated #IBusInputContext if the      "CreateInputContext" call is succeeded, %NULL otherwise.
+             * Finishes an operation started with `ibus_bus_create_input_context_async()`.
+             * @param res A {@link Gio.AsyncResult} obtained from the {@link Gio.AsyncReadyCallback} passed to   `ibus_bus_create_input_context_async()`.
+             * @returns A newly allocated {@link IBus.InputContext} if the      "CreateInputContext" call is succeeded, `null` otherwise.
              */
             create_input_context_async_finish(res: Gio.AsyncResult): InputContext;
             /**
              * Get the current focused input context synchronously.
-             * @returns Name of the currently focused #IBusInputContext if the          "CurrentInputContext" call succeeded, %NULL otherwise. The return          value must be freed with g_free().
+             * @returns Name of the currently focused {@link IBus.InputContext} if the          "CurrentInputContext" call succeeded, `null` otherwise. The return          value must be freed with `g_free()`.
              */
             current_input_context(): string;
             /**
              * Get the current focused input context asynchronously.
              * @param timeout_msec The timeout in milliseconds or -1 to use the default timeout.
-             * @param cancellable A #GCancellable or %NULL.
+             * @param cancellable A {@link Gio.Cancellable} or `null`.
              */
             current_input_context_async(
                 timeout_msec: number,
@@ -5738,8 +5902,8 @@ declare module 'gi://IBus?version=1.0' {
             /**
              * Get the current focused input context asynchronously.
              * @param timeout_msec The timeout in milliseconds or -1 to use the default timeout.
-             * @param cancellable A #GCancellable or %NULL.
-             * @param callback A #GAsyncReadyCallback to call when the request is satisfied      or %NULL if you don't care about the result of the method invocation.
+             * @param cancellable A {@link Gio.Cancellable} or `null`.
+             * @param callback A {@link Gio.AsyncReadyCallback} to call when the request is satisfied      or `null` if you don't care about the result of the method invocation.
              */
             current_input_context_async(
                 timeout_msec: number,
@@ -5749,8 +5913,8 @@ declare module 'gi://IBus?version=1.0' {
             /**
              * Get the current focused input context asynchronously.
              * @param timeout_msec The timeout in milliseconds or -1 to use the default timeout.
-             * @param cancellable A #GCancellable or %NULL.
-             * @param callback A #GAsyncReadyCallback to call when the request is satisfied      or %NULL if you don't care about the result of the method invocation.
+             * @param cancellable A {@link Gio.Cancellable} or `null`.
+             * @param callback A {@link Gio.AsyncReadyCallback} to call when the request is satisfied      or `null` if you don't care about the result of the method invocation.
              */
             current_input_context_async(
                 timeout_msec: number,
@@ -5758,22 +5922,22 @@ declare module 'gi://IBus?version=1.0' {
                 callback?: Gio.AsyncReadyCallback<this> | null,
             ): globalThis.Promise<string> | void;
             /**
-             * Finishes an operation started with ibus_bus_current_input_context_async().
-             * @param res A #GAsyncResult obtained from the #GAsyncReadyCallback passed to   ibus_bus_current_input_context_async().
-             * @returns Name of the currently focused IBusInputContext if the          "CurrentInputContext" call succeeded, %NULL otherwise. The return          value must be freed with g_free().
+             * Finishes an operation started with `ibus_bus_current_input_context_async()`.
+             * @param res A {@link Gio.AsyncResult} obtained from the {@link Gio.AsyncReadyCallback} passed to   `ibus_bus_current_input_context_async()`.
+             * @returns Name of the currently focused IBusInputContext if the          "CurrentInputContext" call succeeded, `null` otherwise. The return          value must be freed with `g_free()`.
              */
             current_input_context_async_finish(res: Gio.AsyncResult): string;
             /**
              * Exit or restart ibus-daemon synchronously.
              * @param restart Whether restarting the ibus.
-             * @returns %TRUE if the "Exit" call is successful, %FALSE otherwise.
+             * @returns `true` if the "Exit" call is successful, `false` otherwise.
              */
             exit(restart: boolean): boolean;
             /**
              * Exit or restart ibus-daemon asynchronously.
              * @param restart Whether restarting the ibus.
              * @param timeout_msec The timeout in milliseconds or -1 to use the default timeout.
-             * @param cancellable A #GCancellable or %NULL.
+             * @param cancellable A {@link Gio.Cancellable} or `null`.
              */
             exit_async(
                 restart: boolean,
@@ -5784,8 +5948,8 @@ declare module 'gi://IBus?version=1.0' {
              * Exit or restart ibus-daemon asynchronously.
              * @param restart Whether restarting the ibus.
              * @param timeout_msec The timeout in milliseconds or -1 to use the default timeout.
-             * @param cancellable A #GCancellable or %NULL.
-             * @param callback A #GAsyncReadyCallback to call when the request is satisfied      or %NULL if you don't care about the result of the method invocation.
+             * @param cancellable A {@link Gio.Cancellable} or `null`.
+             * @param callback A {@link Gio.AsyncReadyCallback} to call when the request is satisfied      or `null` if you don't care about the result of the method invocation.
              */
             exit_async(
                 restart: boolean,
@@ -5797,8 +5961,8 @@ declare module 'gi://IBus?version=1.0' {
              * Exit or restart ibus-daemon asynchronously.
              * @param restart Whether restarting the ibus.
              * @param timeout_msec The timeout in milliseconds or -1 to use the default timeout.
-             * @param cancellable A #GCancellable or %NULL.
-             * @param callback A #GAsyncReadyCallback to call when the request is satisfied      or %NULL if you don't care about the result of the method invocation.
+             * @param cancellable A {@link Gio.Cancellable} or `null`.
+             * @param callback A {@link Gio.AsyncReadyCallback} to call when the request is satisfied      or `null` if you don't care about the result of the method invocation.
              */
             exit_async(
                 restart: boolean,
@@ -5807,38 +5971,38 @@ declare module 'gi://IBus?version=1.0' {
                 callback?: Gio.AsyncReadyCallback<this> | null,
             ): globalThis.Promise<boolean> | void;
             /**
-             * Finishes an operation started with ibus_bus_exit_async().
-             * @param res A #GAsyncResult obtained from the #GAsyncReadyCallback passed to   ibus_bus_exit_async().
-             * @returns %TRUE if the "Exit" call is successful, %FALSE otherwise.
+             * Finishes an operation started with `ibus_bus_exit_async()`.
+             * @param res A {@link Gio.AsyncResult} obtained from the {@link Gio.AsyncReadyCallback} passed to   `ibus_bus_exit_async()`.
+             * @returns `true` if the "Exit" call is successful, `false` otherwise.
              */
             exit_async_finish(res: Gio.AsyncResult): boolean;
             /**
-             * Get the config instance from #IBusBus.
-             * @returns An #IBusConfig object which is configurable with @bus.
+             * Get the config instance from {@link IBus.Bus}.
+             * @returns An {@link IBus.Config} object which is configurable with `bus`.
              */
             get_config(): Config;
             /**
-             * Gets a #GDBusConnection of an #IBusBus instance.
-             * @returns A #GDBusConnection of an #IBusBus instance.
+             * Gets a {@link Gio.DBusConnection} of an {@link IBus.Bus} instance.
+             * @returns A {@link Gio.DBusConnection} of an {@link IBus.Bus} instance.
              */
             get_connection(): Gio.DBusConnection;
             /**
              * Get engines by given names synchronously. If some engine names do not exist,
              * this function will simply ignore them, and return rest of engines.
              * TODO(penghuang): add asynchronous version
-             * @param names A %NULL-terminated array of names.
-             * @returns A %NULL-terminated array of engines.
+             * @param names A `null`-terminated array of names.
+             * @returns A `null`-terminated array of engines.
              */
             get_engines_by_names(names: string[]): EngineDesc[];
             /**
              * Get the description of current global engine synchronously.
-             * @returns The description of current global engine, or %NULL if there is no global engine.
+             * @returns The description of current global engine, or `null` if there is no global engine.
              */
             get_global_engine(): EngineDesc;
             /**
              * Get the description of current global engine asynchronously.
              * @param timeout_msec The timeout in milliseconds or -1 to use the default timeout.
-             * @param cancellable A #GCancellable or %NULL.
+             * @param cancellable A {@link Gio.Cancellable} or `null`.
              */
             get_global_engine_async(
                 timeout_msec: number,
@@ -5847,8 +6011,8 @@ declare module 'gi://IBus?version=1.0' {
             /**
              * Get the description of current global engine asynchronously.
              * @param timeout_msec The timeout in milliseconds or -1 to use the default timeout.
-             * @param cancellable A #GCancellable or %NULL.
-             * @param callback A #GAsyncReadyCallback to call when the request is satisfied or %NULL      if you don't care about the result of the method invocation.
+             * @param cancellable A {@link Gio.Cancellable} or `null`.
+             * @param callback A {@link Gio.AsyncReadyCallback} to call when the request is satisfied or `null`      if you don't care about the result of the method invocation.
              */
             get_global_engine_async(
                 timeout_msec: number,
@@ -5858,8 +6022,8 @@ declare module 'gi://IBus?version=1.0' {
             /**
              * Get the description of current global engine asynchronously.
              * @param timeout_msec The timeout in milliseconds or -1 to use the default timeout.
-             * @param cancellable A #GCancellable or %NULL.
-             * @param callback A #GAsyncReadyCallback to call when the request is satisfied or %NULL      if you don't care about the result of the method invocation.
+             * @param cancellable A {@link Gio.Cancellable} or `null`.
+             * @param callback A {@link Gio.AsyncReadyCallback} to call when the request is satisfied or `null`      if you don't care about the result of the method invocation.
              */
             get_global_engine_async(
                 timeout_msec: number,
@@ -5867,22 +6031,22 @@ declare module 'gi://IBus?version=1.0' {
                 callback?: Gio.AsyncReadyCallback<this> | null,
             ): globalThis.Promise<EngineDesc> | void;
             /**
-             * Finishes an operation started with ibus_bus_get_global_engine_async_finish().
-             * @param res A #GAsyncResult obtained from the #GAsyncReadyCallback passed to   ibus_bus_get_global_engine_async_finish().
-             * @returns The description of current global engine, or %NULL if there is no global engine.
+             * Finishes an operation started with `ibus_bus_get_global_engine_async_finish()`.
+             * @param res A {@link Gio.AsyncResult} obtained from the {@link Gio.AsyncReadyCallback} passed to   `ibus_bus_get_global_engine_async_finish()`.
+             * @returns The description of current global engine, or `null` if there is no global engine.
              */
             get_global_engine_async_finish(res: Gio.AsyncResult): EngineDesc;
             /**
              * Get org.freedesktop.DBus.Properties.
              * @param property_name property name in org.freedesktop.DBus.Properties.Get
-             * @returns The value in org.freedesktop.DBus.Properties.Get           The returned value must be freed with g_variant_unref().
+             * @returns The value in org.freedesktop.DBus.Properties.Get           The returned value must be freed with `g_variant_unref()`.
              */
             get_ibus_property(property_name: string): GLib.Variant;
             /**
              * Get org.freedesktop.DBus.Properties asynchronously.
              * @param property_name property name in org.freedesktop.DBus.Properties.Get
              * @param timeout_msec The timeout in milliseconds or -1 to use the default timeout.
-             * @param cancellable A #GCancellable or %NULL.
+             * @param cancellable A {@link Gio.Cancellable} or `null`.
              */
             get_ibus_property_async(
                 property_name: string,
@@ -5893,8 +6057,8 @@ declare module 'gi://IBus?version=1.0' {
              * Get org.freedesktop.DBus.Properties asynchronously.
              * @param property_name property name in org.freedesktop.DBus.Properties.Get
              * @param timeout_msec The timeout in milliseconds or -1 to use the default timeout.
-             * @param cancellable A #GCancellable or %NULL.
-             * @param callback A #GAsyncReadyCallback to call when the request is satisfied      or %NULL if you don't care about the result of the method invocation.
+             * @param cancellable A {@link Gio.Cancellable} or `null`.
+             * @param callback A {@link Gio.AsyncReadyCallback} to call when the request is satisfied      or `null` if you don't care about the result of the method invocation.
              */
             get_ibus_property_async(
                 property_name: string,
@@ -5906,8 +6070,8 @@ declare module 'gi://IBus?version=1.0' {
              * Get org.freedesktop.DBus.Properties asynchronously.
              * @param property_name property name in org.freedesktop.DBus.Properties.Get
              * @param timeout_msec The timeout in milliseconds or -1 to use the default timeout.
-             * @param cancellable A #GCancellable or %NULL.
-             * @param callback A #GAsyncReadyCallback to call when the request is satisfied      or %NULL if you don't care about the result of the method invocation.
+             * @param cancellable A {@link Gio.Cancellable} or `null`.
+             * @param callback A {@link Gio.AsyncReadyCallback} to call when the request is satisfied      or `null` if you don't care about the result of the method invocation.
              */
             get_ibus_property_async(
                 property_name: string,
@@ -5916,22 +6080,22 @@ declare module 'gi://IBus?version=1.0' {
                 callback?: Gio.AsyncReadyCallback<this> | null,
             ): globalThis.Promise<GLib.Variant> | void;
             /**
-             * Finishes an operation started with ibus_bus_get_ibus_property_async().
-             * @param res A #GAsyncResult obtained from the #GAsyncReadyCallback passed to   ibus_bus_get_ibus_property_async().
-             * @returns The value in org.freedesktop.DBus.Properties.Get           The returned value must be freed with g_variant_unref().
+             * Finishes an operation started with `ibus_bus_get_ibus_property_async()`.
+             * @param res A {@link Gio.AsyncResult} obtained from the {@link Gio.AsyncReadyCallback} passed to   `ibus_bus_get_ibus_property_async()`.
+             * @returns The value in org.freedesktop.DBus.Properties.Get           The returned value must be freed with `g_variant_unref()`.
              */
             get_ibus_property_async_finish(res: Gio.AsyncResult): GLib.Variant;
             /**
              * Return the name owner synchronously.
              * @param name Name.
-             * @returns Owner of the name. The returned value must be freed with g_free().
+             * @returns Owner of the name. The returned value must be freed with `g_free()`.
              */
             get_name_owner(name: string): string;
             /**
              * Return the name owner asynchronously.
              * @param name Name.
              * @param timeout_msec The timeout in milliseconds or -1 to use the default timeout.
-             * @param cancellable A #GCancellable or %NULL.
+             * @param cancellable A {@link Gio.Cancellable} or `null`.
              */
             get_name_owner_async(
                 name: string,
@@ -5942,8 +6106,8 @@ declare module 'gi://IBus?version=1.0' {
              * Return the name owner asynchronously.
              * @param name Name.
              * @param timeout_msec The timeout in milliseconds or -1 to use the default timeout.
-             * @param cancellable A #GCancellable or %NULL.
-             * @param callback A #GAsyncReadyCallback to call when the request is satisfied      or %NULL if you don't care about the result of the method invocation.
+             * @param cancellable A {@link Gio.Cancellable} or `null`.
+             * @param callback A {@link Gio.AsyncReadyCallback} to call when the request is satisfied      or `null` if you don't care about the result of the method invocation.
              */
             get_name_owner_async(
                 name: string,
@@ -5955,8 +6119,8 @@ declare module 'gi://IBus?version=1.0' {
              * Return the name owner asynchronously.
              * @param name Name.
              * @param timeout_msec The timeout in milliseconds or -1 to use the default timeout.
-             * @param cancellable A #GCancellable or %NULL.
-             * @param callback A #GAsyncReadyCallback to call when the request is satisfied      or %NULL if you don't care about the result of the method invocation.
+             * @param cancellable A {@link Gio.Cancellable} or `null`.
+             * @param callback A {@link Gio.AsyncReadyCallback} to call when the request is satisfied      or `null` if you don't care about the result of the method invocation.
              */
             get_name_owner_async(
                 name: string,
@@ -5965,9 +6129,9 @@ declare module 'gi://IBus?version=1.0' {
                 callback?: Gio.AsyncReadyCallback<this> | null,
             ): globalThis.Promise<string> | void;
             /**
-             * Finishes an operation started with ibus_bus_get_name_owner_async().
-             * @param res A #GAsyncResult obtained from the #GAsyncReadyCallback passed to   ibus_bus_get_name_owner_async().
-             * @returns Owner of the name. The returned value must be freed with g_free().
+             * Finishes an operation started with `ibus_bus_get_name_owner_async()`.
+             * @param res A {@link Gio.AsyncResult} obtained from the {@link Gio.AsyncReadyCallback} passed to   `ibus_bus_get_name_owner_async()`.
+             * @returns Owner of the name. The returned value must be freed with `g_free()`.
              */
             get_name_owner_async_finish(res: Gio.AsyncResult): string;
             /**
@@ -5984,7 +6148,7 @@ declare module 'gi://IBus?version=1.0' {
             /**
              * Check if the bus's "use_global_engine" option is enabled or not asynchronously.
              * @param timeout_msec The timeout in milliseconds or -1 to use the default timeout.
-             * @param cancellable A #GCancellable or %NULL.
+             * @param cancellable A {@link Gio.Cancellable} or `null`.
              */
             get_use_global_engine_async(
                 timeout_msec: number,
@@ -5993,8 +6157,8 @@ declare module 'gi://IBus?version=1.0' {
             /**
              * Check if the bus's "use_global_engine" option is enabled or not asynchronously.
              * @param timeout_msec The timeout in milliseconds or -1 to use the default timeout.
-             * @param cancellable A #GCancellable or %NULL.
-             * @param callback A #GAsyncReadyCallback to call when the request is satisfied      or %NULL if you don't care about the result of the method invocation.
+             * @param cancellable A {@link Gio.Cancellable} or `null`.
+             * @param callback A {@link Gio.AsyncReadyCallback} to call when the request is satisfied      or `null` if you don't care about the result of the method invocation.
              */
             get_use_global_engine_async(
                 timeout_msec: number,
@@ -6004,8 +6168,8 @@ declare module 'gi://IBus?version=1.0' {
             /**
              * Check if the bus's "use_global_engine" option is enabled or not asynchronously.
              * @param timeout_msec The timeout in milliseconds or -1 to use the default timeout.
-             * @param cancellable A #GCancellable or %NULL.
-             * @param callback A #GAsyncReadyCallback to call when the request is satisfied      or %NULL if you don't care about the result of the method invocation.
+             * @param cancellable A {@link Gio.Cancellable} or `null`.
+             * @param callback A {@link Gio.AsyncReadyCallback} to call when the request is satisfied      or `null` if you don't care about the result of the method invocation.
              */
             get_use_global_engine_async(
                 timeout_msec: number,
@@ -6013,20 +6177,20 @@ declare module 'gi://IBus?version=1.0' {
                 callback?: Gio.AsyncReadyCallback<this> | null,
             ): globalThis.Promise<boolean> | void;
             /**
-             * Finishes an operation started with ibus_bus_get_use_global_engine_async().
-             * @param res A #GAsyncResult obtained from the #GAsyncReadyCallback passed to   ibus_bus_get_use_global_engine_async().
-             * @returns %TRUE if "use_global_engine" option is enabled.
+             * Finishes an operation started with `ibus_bus_get_use_global_engine_async()`.
+             * @param res A {@link Gio.AsyncResult} obtained from the {@link Gio.AsyncReadyCallback} passed to   `ibus_bus_get_use_global_engine_async()`.
+             * @returns `true` if "use_global_engine" option is enabled.
              */
             get_use_global_engine_async_finish(res: Gio.AsyncResult): boolean;
             /**
              * Check if the bus's "use_sys_layout" option is enabled or not synchronously.
-             * @returns %TRUE if "use_sys_layout" option is enabled.
+             * @returns `true` if "use_sys_layout" option is enabled.
              */
             get_use_sys_layout(): boolean;
             /**
              * Check if the bus's "use_sys_layout" option is enabled or not asynchronously.
              * @param timeout_msec The timeout in milliseconds or -1 to use the default timeout.
-             * @param cancellable A #GCancellable or %NULL.
+             * @param cancellable A {@link Gio.Cancellable} or `null`.
              */
             get_use_sys_layout_async(
                 timeout_msec: number,
@@ -6035,8 +6199,8 @@ declare module 'gi://IBus?version=1.0' {
             /**
              * Check if the bus's "use_sys_layout" option is enabled or not asynchronously.
              * @param timeout_msec The timeout in milliseconds or -1 to use the default timeout.
-             * @param cancellable A #GCancellable or %NULL.
-             * @param callback A #GAsyncReadyCallback to call when the request is satisfied      or %NULL if you don't care about the result of the method invocation.
+             * @param cancellable A {@link Gio.Cancellable} or `null`.
+             * @param callback A {@link Gio.AsyncReadyCallback} to call when the request is satisfied      or `null` if you don't care about the result of the method invocation.
              */
             get_use_sys_layout_async(
                 timeout_msec: number,
@@ -6046,8 +6210,8 @@ declare module 'gi://IBus?version=1.0' {
             /**
              * Check if the bus's "use_sys_layout" option is enabled or not asynchronously.
              * @param timeout_msec The timeout in milliseconds or -1 to use the default timeout.
-             * @param cancellable A #GCancellable or %NULL.
-             * @param callback A #GAsyncReadyCallback to call when the request is satisfied      or %NULL if you don't care about the result of the method invocation.
+             * @param cancellable A {@link Gio.Cancellable} or `null`.
+             * @param callback A {@link Gio.AsyncReadyCallback} to call when the request is satisfied      or `null` if you don't care about the result of the method invocation.
              */
             get_use_sys_layout_async(
                 timeout_msec: number,
@@ -6055,8 +6219,8 @@ declare module 'gi://IBus?version=1.0' {
                 callback?: Gio.AsyncReadyCallback<this> | null,
             ): globalThis.Promise<boolean> | void;
             /**
-             * Finishes an operation started with ibus_bus_get_use_sys_layout_async().
-             * @param res A #GAsyncResult obtained from the #GAsyncReadyCallback passed to   ibus_bus_get_use_sys_layout_async().
+             * Finishes an operation started with `ibus_bus_get_use_sys_layout_async()`.
+             * @param res A {@link Gio.AsyncResult} obtained from the {@link Gio.AsyncReadyCallback} passed to   `ibus_bus_get_use_sys_layout_async()`.
              * @returns TRUE if "use_sys_layout" option is enabled.
              */
             get_use_sys_layout_async_finish(res: Gio.AsyncResult): boolean;
@@ -6067,19 +6231,19 @@ declare module 'gi://IBus?version=1.0' {
              */
             hello(): string;
             /**
-             * Return %TRUE if `bus` is connected to IBus daemon.
-             * @returns %TRUE if @bus is connected, %FALSE otherwise.
+             * Return `true` if `bus` is connected to IBus daemon.
+             * @returns `true` if `bus` is connected, `false` otherwise.
              */
             is_connected(): boolean;
             /**
              * Check if the current global engine is enabled or not synchronously.
-             * @returns %TRUE if the current global engine is enabled.
+             * @returns `true` if the current global engine is enabled.
              */
             is_global_engine_enabled(): boolean;
             /**
              * Check if the current global engine is enabled or not asynchronously.
              * @param timeout_msec The timeout in milliseconds or -1 to use the default timeout.
-             * @param cancellable A #GCancellable or %NULL.
+             * @param cancellable A {@link Gio.Cancellable} or `null`.
              */
             is_global_engine_enabled_async(
                 timeout_msec: number,
@@ -6088,8 +6252,8 @@ declare module 'gi://IBus?version=1.0' {
             /**
              * Check if the current global engine is enabled or not asynchronously.
              * @param timeout_msec The timeout in milliseconds or -1 to use the default timeout.
-             * @param cancellable A #GCancellable or %NULL.
-             * @param callback A #GAsyncReadyCallback to call when the request is satisfied      or %NULL if you don't care about the result of the method invocation.
+             * @param cancellable A {@link Gio.Cancellable} or `null`.
+             * @param callback A {@link Gio.AsyncReadyCallback} to call when the request is satisfied      or `null` if you don't care about the result of the method invocation.
              */
             is_global_engine_enabled_async(
                 timeout_msec: number,
@@ -6099,8 +6263,8 @@ declare module 'gi://IBus?version=1.0' {
             /**
              * Check if the current global engine is enabled or not asynchronously.
              * @param timeout_msec The timeout in milliseconds or -1 to use the default timeout.
-             * @param cancellable A #GCancellable or %NULL.
-             * @param callback A #GAsyncReadyCallback to call when the request is satisfied      or %NULL if you don't care about the result of the method invocation.
+             * @param cancellable A {@link Gio.Cancellable} or `null`.
+             * @param callback A {@link Gio.AsyncReadyCallback} to call when the request is satisfied      or `null` if you don't care about the result of the method invocation.
              */
             is_global_engine_enabled_async(
                 timeout_msec: number,
@@ -6108,9 +6272,9 @@ declare module 'gi://IBus?version=1.0' {
                 callback?: Gio.AsyncReadyCallback<this> | null,
             ): globalThis.Promise<boolean> | void;
             /**
-             * Finishes an operation started with ibus_bus_is_global_engine_enabled_async().
-             * @param res A #GAsyncResult obtained from the #GAsyncReadyCallback passed to   ibus_bus_is_global_engine_enabled_async().
-             * @returns %TRUE if the current global engine is enabled.
+             * Finishes an operation started with `ibus_bus_is_global_engine_enabled_async()`.
+             * @param res A {@link Gio.AsyncResult} obtained from the {@link Gio.AsyncReadyCallback} passed to   `ibus_bus_is_global_engine_enabled_async()`.
+             * @returns `true` if the current global engine is enabled.
              */
             is_global_engine_enabled_async_finish(res: Gio.AsyncResult): boolean;
             /**
@@ -6121,7 +6285,7 @@ declare module 'gi://IBus?version=1.0' {
             /**
              * List active engines asynchronously.
              * @param timeout_msec The timeout in milliseconds or -1 to use the default timeout.
-             * @param cancellable A #GCancellable or %NULL.
+             * @param cancellable A {@link Gio.Cancellable} or `null`.
              */
             list_active_engines_async(
                 timeout_msec: number,
@@ -6130,8 +6294,8 @@ declare module 'gi://IBus?version=1.0' {
             /**
              * List active engines asynchronously.
              * @param timeout_msec The timeout in milliseconds or -1 to use the default timeout.
-             * @param cancellable A #GCancellable or %NULL.
-             * @param callback A #GAsyncReadyCallback to call when the request is satisfied or %NULL      if you don't care about the result of the method invocation.
+             * @param cancellable A {@link Gio.Cancellable} or `null`.
+             * @param callback A {@link Gio.AsyncReadyCallback} to call when the request is satisfied or `null`      if you don't care about the result of the method invocation.
              */
             list_active_engines_async(
                 timeout_msec: number,
@@ -6141,8 +6305,8 @@ declare module 'gi://IBus?version=1.0' {
             /**
              * List active engines asynchronously.
              * @param timeout_msec The timeout in milliseconds or -1 to use the default timeout.
-             * @param cancellable A #GCancellable or %NULL.
-             * @param callback A #GAsyncReadyCallback to call when the request is satisfied or %NULL      if you don't care about the result of the method invocation.
+             * @param cancellable A {@link Gio.Cancellable} or `null`.
+             * @param callback A {@link Gio.AsyncReadyCallback} to call when the request is satisfied or `null`      if you don't care about the result of the method invocation.
              */
             list_active_engines_async(
                 timeout_msec: number,
@@ -6150,8 +6314,8 @@ declare module 'gi://IBus?version=1.0' {
                 callback?: Gio.AsyncReadyCallback<this> | null,
             ): globalThis.Promise<EngineDesc[]> | void;
             /**
-             * Finishes an operation started with ibus_bus_list_active_engines_async().
-             * @param res A #GAsyncResult obtained from the #GAsyncReadyCallback passed to   ibus_bus_list_active_engines_async().
+             * Finishes an operation started with `ibus_bus_list_active_engines_async()`.
+             * @param res A {@link Gio.AsyncResult} obtained from the {@link Gio.AsyncReadyCallback} passed to   `ibus_bus_list_active_engines_async()`.
              * @returns A List of active engines.
              */
             list_active_engines_async_finish(res: Gio.AsyncResult): EngineDesc[];
@@ -6163,7 +6327,7 @@ declare module 'gi://IBus?version=1.0' {
             /**
              * List engines asynchronously.
              * @param timeout_msec The timeout in milliseconds or -1 to use the default timeout.
-             * @param cancellable A #GCancellable or %NULL.
+             * @param cancellable A {@link Gio.Cancellable} or `null`.
              */
             list_engines_async(
                 timeout_msec: number,
@@ -6172,8 +6336,8 @@ declare module 'gi://IBus?version=1.0' {
             /**
              * List engines asynchronously.
              * @param timeout_msec The timeout in milliseconds or -1 to use the default timeout.
-             * @param cancellable A #GCancellable or %NULL.
-             * @param callback A #GAsyncReadyCallback to call when the request is satisfied or %NULL      if you don't care about the result of the method invocation.
+             * @param cancellable A {@link Gio.Cancellable} or `null`.
+             * @param callback A {@link Gio.AsyncReadyCallback} to call when the request is satisfied or `null`      if you don't care about the result of the method invocation.
              */
             list_engines_async(
                 timeout_msec: number,
@@ -6183,8 +6347,8 @@ declare module 'gi://IBus?version=1.0' {
             /**
              * List engines asynchronously.
              * @param timeout_msec The timeout in milliseconds or -1 to use the default timeout.
-             * @param cancellable A #GCancellable or %NULL.
-             * @param callback A #GAsyncReadyCallback to call when the request is satisfied or %NULL      if you don't care about the result of the method invocation.
+             * @param cancellable A {@link Gio.Cancellable} or `null`.
+             * @param callback A {@link Gio.AsyncReadyCallback} to call when the request is satisfied or `null`      if you don't care about the result of the method invocation.
              */
             list_engines_async(
                 timeout_msec: number,
@@ -6192,36 +6356,36 @@ declare module 'gi://IBus?version=1.0' {
                 callback?: Gio.AsyncReadyCallback<this> | null,
             ): globalThis.Promise<EngineDesc[]> | void;
             /**
-             * Finishes an operation started with ibus_bus_list_engines_async().
-             * @param res A #GAsyncResult obtained from the #GAsyncReadyCallback passed to   ibus_bus_list_engines_async().
+             * Finishes an operation started with `ibus_bus_list_engines_async()`.
+             * @param res A {@link Gio.AsyncResult} obtained from the {@link Gio.AsyncReadyCallback} passed to   `ibus_bus_list_engines_async()`.
              * @returns A List of engines.
              */
             list_engines_async_finish(res: Gio.AsyncResult): EngineDesc[];
             /**
              * Return lists that attached to `bus`.
-             * <note><para>[FixMe] Not implemented yet, only return %NULL.</para></note>
+             * <note><para>[FixMe] Not implemented yet, only return `null`.</para></note>
              * <note><para>[FixMe] Add async version.</para></note>
-             * @returns Lists that attached to @bus.
+             * @returns Lists that attached to `bus`.
              */
             list_names(): string[];
             /**
              * Lists the unique bus names of connections currently queued for a bus name.
              * FIXME add an asynchronous version.
              * @param name Name to be queried.
-             * @returns The unique bus names of connections currently queued for @name.
+             * @returns The unique bus names of connections currently queued for `name`.
              */
             list_queued_owners(name: string): string[];
             /**
              * Checks whether the name has owner synchronously.
              * @param name Name to be checked.
-             * @returns %TRUE if the name has owner, %FALSE otherwise.
+             * @returns `true` if the name has owner, `false` otherwise.
              */
             name_has_owner(name: string): boolean;
             /**
              * Checks whether the name has owner asynchronously.
              * @param name Name to be checked.
              * @param timeout_msec The timeout in milliseconds or -1 to use the default timeout.
-             * @param cancellable A #GCancellable or %NULL.
+             * @param cancellable A {@link Gio.Cancellable} or `null`.
              */
             name_has_owner_async(
                 name: string,
@@ -6232,8 +6396,8 @@ declare module 'gi://IBus?version=1.0' {
              * Checks whether the name has owner asynchronously.
              * @param name Name to be checked.
              * @param timeout_msec The timeout in milliseconds or -1 to use the default timeout.
-             * @param cancellable A #GCancellable or %NULL.
-             * @param callback A #GAsyncReadyCallback to call when the request is satisfied      or %NULL if you don't care about the result of the method invocation.
+             * @param cancellable A {@link Gio.Cancellable} or `null`.
+             * @param callback A {@link Gio.AsyncReadyCallback} to call when the request is satisfied      or `null` if you don't care about the result of the method invocation.
              */
             name_has_owner_async(
                 name: string,
@@ -6245,8 +6409,8 @@ declare module 'gi://IBus?version=1.0' {
              * Checks whether the name has owner asynchronously.
              * @param name Name to be checked.
              * @param timeout_msec The timeout in milliseconds or -1 to use the default timeout.
-             * @param cancellable A #GCancellable or %NULL.
-             * @param callback A #GAsyncReadyCallback to call when the request is satisfied      or %NULL if you don't care about the result of the method invocation.
+             * @param cancellable A {@link Gio.Cancellable} or `null`.
+             * @param callback A {@link Gio.AsyncReadyCallback} to call when the request is satisfied      or `null` if you don't care about the result of the method invocation.
              */
             name_has_owner_async(
                 name: string,
@@ -6255,22 +6419,22 @@ declare module 'gi://IBus?version=1.0' {
                 callback?: Gio.AsyncReadyCallback<this> | null,
             ): globalThis.Promise<boolean> | void;
             /**
-             * Finishes an operation started with ibus_bus_name_has_owner_async().
-             * @param res A #GAsyncResult obtained from the #GAsyncReadyCallback passed to   ibus_bus_name_has_owner_async().
-             * @returns %TRUE if the name has owner, %FALSE otherwise.
+             * Finishes an operation started with `ibus_bus_name_has_owner_async()`.
+             * @param res A {@link Gio.AsyncResult} obtained from the {@link Gio.AsyncReadyCallback} passed to   `ibus_bus_name_has_owner_async()`.
+             * @returns `true` if the name has owner, `false` otherwise.
              */
             name_has_owner_async_finish(res: Gio.AsyncResult): boolean;
             /**
              * Start bus components by engine names synchronously.
-             * @param names A %NULL-terminated array of engine names.
-             * @returns %TRUE if components start. %FALSE otherwise.
+             * @param names A `null`-terminated array of engine names.
+             * @returns `true` if components start. `false` otherwise.
              */
             preload_engines(names: string[]): boolean;
             /**
              * Start bus components by engine names asynchronously.
-             * @param names A %NULL-terminated array of engine names.
+             * @param names A `null`-terminated array of engine names.
              * @param timeout_msec The timeout in milliseconds or -1 to use the default timeout.
-             * @param cancellable A #GCancellable or %NULL.
+             * @param cancellable A {@link Gio.Cancellable} or `null`.
              */
             preload_engines_async(
                 names: string[],
@@ -6279,10 +6443,10 @@ declare module 'gi://IBus?version=1.0' {
             ): globalThis.Promise<boolean>;
             /**
              * Start bus components by engine names asynchronously.
-             * @param names A %NULL-terminated array of engine names.
+             * @param names A `null`-terminated array of engine names.
              * @param timeout_msec The timeout in milliseconds or -1 to use the default timeout.
-             * @param cancellable A #GCancellable or %NULL.
-             * @param callback A #GAsyncReadyCallback to call when the request is satisfied      or %NULL if you don't care about the result of the method invocation.
+             * @param cancellable A {@link Gio.Cancellable} or `null`.
+             * @param callback A {@link Gio.AsyncReadyCallback} to call when the request is satisfied      or `null` if you don't care about the result of the method invocation.
              */
             preload_engines_async(
                 names: string[],
@@ -6292,10 +6456,10 @@ declare module 'gi://IBus?version=1.0' {
             ): void;
             /**
              * Start bus components by engine names asynchronously.
-             * @param names A %NULL-terminated array of engine names.
+             * @param names A `null`-terminated array of engine names.
              * @param timeout_msec The timeout in milliseconds or -1 to use the default timeout.
-             * @param cancellable A #GCancellable or %NULL.
-             * @param callback A #GAsyncReadyCallback to call when the request is satisfied      or %NULL if you don't care about the result of the method invocation.
+             * @param cancellable A {@link Gio.Cancellable} or `null`.
+             * @param callback A {@link Gio.AsyncReadyCallback} to call when the request is satisfied      or `null` if you don't care about the result of the method invocation.
              */
             preload_engines_async(
                 names: string[],
@@ -6304,22 +6468,22 @@ declare module 'gi://IBus?version=1.0' {
                 callback?: Gio.AsyncReadyCallback<this> | null,
             ): globalThis.Promise<boolean> | void;
             /**
-             * Finishes an operation started with ibus_bus_preload_engines_async().
-             * @param res A #GAsyncResult obtained from the #GAsyncReadyCallback passed to   ibus_bus_preload_engines_async().
-             * @returns %TRUE if component starts. %FALSE otherwise.
+             * Finishes an operation started with `ibus_bus_preload_engines_async()`.
+             * @param res A {@link Gio.AsyncResult} obtained from the {@link Gio.AsyncReadyCallback} passed to   `ibus_bus_preload_engines_async()`.
+             * @returns `true` if component starts. `false` otherwise.
              */
             preload_engines_async_finish(res: Gio.AsyncResult): boolean;
             /**
-             * Register a component to an #IBusBus synchronously.
+             * Register a component to an {@link IBus.Bus} synchronously.
              * @param component A input engine component.
-             * @returns %TRUE if the "RegisterComponent" call is successful, %FALSE otherwise.
+             * @returns `true` if the "RegisterComponent" call is successful, `false` otherwise.
              */
             register_component(component: Component): boolean;
             /**
-             * Register a component to an #IBusBus asynchronously.
+             * Register a component to an {@link IBus.Bus} asynchronously.
              * @param component A input engine component.
              * @param timeout_msec The timeout in milliseconds or -1 to use the default timeout.
-             * @param cancellable A #GCancellable or %NULL.
+             * @param cancellable A {@link Gio.Cancellable} or `null`.
              */
             register_component_async(
                 component: Component,
@@ -6327,11 +6491,11 @@ declare module 'gi://IBus?version=1.0' {
                 cancellable?: Gio.Cancellable | null,
             ): globalThis.Promise<boolean>;
             /**
-             * Register a component to an #IBusBus asynchronously.
+             * Register a component to an {@link IBus.Bus} asynchronously.
              * @param component A input engine component.
              * @param timeout_msec The timeout in milliseconds or -1 to use the default timeout.
-             * @param cancellable A #GCancellable or %NULL.
-             * @param callback A #GAsyncReadyCallback to call when the request is satisfied      or %NULL if you don't care about the result of the method invocation.
+             * @param cancellable A {@link Gio.Cancellable} or `null`.
+             * @param callback A {@link Gio.AsyncReadyCallback} to call when the request is satisfied      or `null` if you don't care about the result of the method invocation.
              */
             register_component_async(
                 component: Component,
@@ -6340,11 +6504,11 @@ declare module 'gi://IBus?version=1.0' {
                 callback: Gio.AsyncReadyCallback<this> | null,
             ): void;
             /**
-             * Register a component to an #IBusBus asynchronously.
+             * Register a component to an {@link IBus.Bus} asynchronously.
              * @param component A input engine component.
              * @param timeout_msec The timeout in milliseconds or -1 to use the default timeout.
-             * @param cancellable A #GCancellable or %NULL.
-             * @param callback A #GAsyncReadyCallback to call when the request is satisfied      or %NULL if you don't care about the result of the method invocation.
+             * @param cancellable A {@link Gio.Cancellable} or `null`.
+             * @param callback A {@link Gio.AsyncReadyCallback} to call when the request is satisfied      or `null` if you don't care about the result of the method invocation.
              */
             register_component_async(
                 component: Component,
@@ -6353,9 +6517,9 @@ declare module 'gi://IBus?version=1.0' {
                 callback?: Gio.AsyncReadyCallback<this> | null,
             ): globalThis.Promise<boolean> | void;
             /**
-             * Finishes an operation started with ibus_bus_register_component_async().
-             * @param res A #GAsyncResult obtained from the #GAsyncReadyCallback passed to   ibus_bus_register_component_async().
-             * @returns %TRUE if the "RegisterComponent" call is successful, %FALSE otherwise.
+             * Finishes an operation started with `ibus_bus_register_component_async()`.
+             * @param res A {@link Gio.AsyncResult} obtained from the {@link Gio.AsyncReadyCallback} passed to   `ibus_bus_register_component_async()`.
+             * @returns `true` if the "RegisterComponent" call is successful, `false` otherwise.
              */
             register_component_async_finish(res: Gio.AsyncResult): boolean;
             /**
@@ -6368,7 +6532,7 @@ declare module 'gi://IBus?version=1.0' {
              * Release a name to IBus daemon asynchronously.
              * @param name Name to be released.
              * @param timeout_msec The timeout in milliseconds or -1 to use the default timeout.
-             * @param cancellable A #GCancellable or %NULL.
+             * @param cancellable A {@link Gio.Cancellable} or `null`.
              */
             release_name_async(
                 name: string,
@@ -6379,8 +6543,8 @@ declare module 'gi://IBus?version=1.0' {
              * Release a name to IBus daemon asynchronously.
              * @param name Name to be released.
              * @param timeout_msec The timeout in milliseconds or -1 to use the default timeout.
-             * @param cancellable A #GCancellable or %NULL.
-             * @param callback A #GAsyncReadyCallback to call when the request is satisfied      or %NULL if you don't care about the result of the method invocation.
+             * @param cancellable A {@link Gio.Cancellable} or `null`.
+             * @param callback A {@link Gio.AsyncReadyCallback} to call when the request is satisfied      or `null` if you don't care about the result of the method invocation.
              */
             release_name_async(
                 name: string,
@@ -6392,8 +6556,8 @@ declare module 'gi://IBus?version=1.0' {
              * Release a name to IBus daemon asynchronously.
              * @param name Name to be released.
              * @param timeout_msec The timeout in milliseconds or -1 to use the default timeout.
-             * @param cancellable A #GCancellable or %NULL.
-             * @param callback A #GAsyncReadyCallback to call when the request is satisfied      or %NULL if you don't care about the result of the method invocation.
+             * @param cancellable A {@link Gio.Cancellable} or `null`.
+             * @param callback A {@link Gio.AsyncReadyCallback} to call when the request is satisfied      or `null` if you don't care about the result of the method invocation.
              */
             release_name_async(
                 name: string,
@@ -6402,22 +6566,22 @@ declare module 'gi://IBus?version=1.0' {
                 callback?: Gio.AsyncReadyCallback<this> | null,
             ): globalThis.Promise<number> | void;
             /**
-             * Finishes an operation started with ibus_bus_release_name_async().
-             * @param res A #GAsyncResult obtained from the #GAsyncReadyCallback passed to   ibus_bus_release_name_async().
+             * Finishes an operation started with `ibus_bus_release_name_async()`.
+             * @param res A {@link Gio.AsyncResult} obtained from the {@link Gio.AsyncReadyCallback} passed to   `ibus_bus_release_name_async()`.
              * @returns 0 if failed; positive number otherwise.
              */
             release_name_async_finish(res: Gio.AsyncResult): number;
             /**
-             * Remove a match rule to an #IBusBus synchronously.
+             * Remove a match rule to an {@link IBus.Bus} synchronously.
              * @param rule Match rule.
-             * @returns %TRUE if the rule is removed. %FALSE otherwise.
+             * @returns `true` if the rule is removed. `false` otherwise.
              */
             remove_match(rule: string): boolean;
             /**
              * Remove a match rule to an IBusBus asynchronously.
              * @param rule Match rule.
              * @param timeout_msec The timeout in milliseconds or -1 to use the default timeout.
-             * @param cancellable A #GCancellable or %NULL.
+             * @param cancellable A {@link Gio.Cancellable} or `null`.
              */
             remove_match_async(
                 rule: string,
@@ -6428,8 +6592,8 @@ declare module 'gi://IBus?version=1.0' {
              * Remove a match rule to an IBusBus asynchronously.
              * @param rule Match rule.
              * @param timeout_msec The timeout in milliseconds or -1 to use the default timeout.
-             * @param cancellable A #GCancellable or %NULL.
-             * @param callback A #GAsyncReadyCallback to call when the request is satisfied      or %NULL if you don't care about the result of the method invocation.
+             * @param cancellable A {@link Gio.Cancellable} or `null`.
+             * @param callback A {@link Gio.AsyncReadyCallback} to call when the request is satisfied      or `null` if you don't care about the result of the method invocation.
              */
             remove_match_async(
                 rule: string,
@@ -6441,8 +6605,8 @@ declare module 'gi://IBus?version=1.0' {
              * Remove a match rule to an IBusBus asynchronously.
              * @param rule Match rule.
              * @param timeout_msec The timeout in milliseconds or -1 to use the default timeout.
-             * @param cancellable A #GCancellable or %NULL.
-             * @param callback A #GAsyncReadyCallback to call when the request is satisfied      or %NULL if you don't care about the result of the method invocation.
+             * @param cancellable A {@link Gio.Cancellable} or `null`.
+             * @param callback A {@link Gio.AsyncReadyCallback} to call when the request is satisfied      or `null` if you don't care about the result of the method invocation.
              */
             remove_match_async(
                 rule: string,
@@ -6451,9 +6615,9 @@ declare module 'gi://IBus?version=1.0' {
                 callback?: Gio.AsyncReadyCallback<this> | null,
             ): globalThis.Promise<boolean> | void;
             /**
-             * Finishes an operation started with ibus_bus_remove_match_async().
-             * @param res A #GAsyncResult obtained from the #GAsyncReadyCallback passed to   ibus_bus_remove_match_async().
-             * @returns %TRUE if the rule is removed. %FALSE otherwise.
+             * Finishes an operation started with `ibus_bus_remove_match_async()`.
+             * @param res A {@link Gio.AsyncResult} obtained from the {@link Gio.AsyncReadyCallback} passed to   `ibus_bus_remove_match_async()`.
+             * @returns `true` if the rule is removed. `false` otherwise.
              */
             remove_match_async_finish(res: Gio.AsyncResult): boolean;
             /**
@@ -6468,7 +6632,7 @@ declare module 'gi://IBus?version=1.0' {
              * @param name Name to be requested.
              * @param flags Flags (FixMe).
              * @param timeout_msec The timeout in milliseconds or -1 to use the default timeout.
-             * @param cancellable A #GCancellable or %NULL.
+             * @param cancellable A {@link Gio.Cancellable} or `null`.
              */
             request_name_async(
                 name: string,
@@ -6481,8 +6645,8 @@ declare module 'gi://IBus?version=1.0' {
              * @param name Name to be requested.
              * @param flags Flags (FixMe).
              * @param timeout_msec The timeout in milliseconds or -1 to use the default timeout.
-             * @param cancellable A #GCancellable or %NULL.
-             * @param callback A #GAsyncReadyCallback to call when the request is satisfied or %NULL      if you don't care about the result of the method invocation.
+             * @param cancellable A {@link Gio.Cancellable} or `null`.
+             * @param callback A {@link Gio.AsyncReadyCallback} to call when the request is satisfied or `null`      if you don't care about the result of the method invocation.
              */
             request_name_async(
                 name: string,
@@ -6496,8 +6660,8 @@ declare module 'gi://IBus?version=1.0' {
              * @param name Name to be requested.
              * @param flags Flags (FixMe).
              * @param timeout_msec The timeout in milliseconds or -1 to use the default timeout.
-             * @param cancellable A #GCancellable or %NULL.
-             * @param callback A #GAsyncReadyCallback to call when the request is satisfied or %NULL      if you don't care about the result of the method invocation.
+             * @param cancellable A {@link Gio.Cancellable} or `null`.
+             * @param callback A {@link Gio.AsyncReadyCallback} to call when the request is satisfied or `null`      if you don't care about the result of the method invocation.
              */
             request_name_async(
                 name: string,
@@ -6507,22 +6671,22 @@ declare module 'gi://IBus?version=1.0' {
                 callback?: Gio.AsyncReadyCallback<this> | null,
             ): globalThis.Promise<number> | void;
             /**
-             * Finishes an operation started with ibus_bus_request_name_async().
-             * @param res A #GAsyncResult obtained from the #GAsyncReadyCallback passed to   ibus_bus_request_name_async().
+             * Finishes an operation started with `ibus_bus_request_name_async()`.
+             * @param res A {@link Gio.AsyncResult} obtained from the {@link Gio.AsyncReadyCallback} passed to   `ibus_bus_request_name_async()`.
              * @returns 0 if failed; positive number otherwise.
              */
             request_name_async_finish(res: Gio.AsyncResult): number;
             /**
              * Set current global engine synchronously.
              * @param global_engine A new engine name.
-             * @returns %TRUE if the global engine was set successfully.
+             * @returns `true` if the global engine was set successfully.
              */
             set_global_engine(global_engine: string): boolean;
             /**
              * Set current global engine asynchronously.
              * @param global_engine A new engine name.
              * @param timeout_msec The timeout in milliseconds or -1 to use the default timeout.
-             * @param cancellable A #GCancellable or %NULL.
+             * @param cancellable A {@link Gio.Cancellable} or `null`.
              */
             set_global_engine_async(
                 global_engine: string,
@@ -6533,8 +6697,8 @@ declare module 'gi://IBus?version=1.0' {
              * Set current global engine asynchronously.
              * @param global_engine A new engine name.
              * @param timeout_msec The timeout in milliseconds or -1 to use the default timeout.
-             * @param cancellable A #GCancellable or %NULL.
-             * @param callback A #GAsyncReadyCallback to call when the request is satisfied      or %NULL if you don't care about the result of the method invocation.
+             * @param cancellable A {@link Gio.Cancellable} or `null`.
+             * @param callback A {@link Gio.AsyncReadyCallback} to call when the request is satisfied      or `null` if you don't care about the result of the method invocation.
              */
             set_global_engine_async(
                 global_engine: string,
@@ -6546,8 +6710,8 @@ declare module 'gi://IBus?version=1.0' {
              * Set current global engine asynchronously.
              * @param global_engine A new engine name.
              * @param timeout_msec The timeout in milliseconds or -1 to use the default timeout.
-             * @param cancellable A #GCancellable or %NULL.
-             * @param callback A #GAsyncReadyCallback to call when the request is satisfied      or %NULL if you don't care about the result of the method invocation.
+             * @param cancellable A {@link Gio.Cancellable} or `null`.
+             * @param callback A {@link Gio.AsyncReadyCallback} to call when the request is satisfied      or `null` if you don't care about the result of the method invocation.
              */
             set_global_engine_async(
                 global_engine: string,
@@ -6556,24 +6720,24 @@ declare module 'gi://IBus?version=1.0' {
                 callback?: Gio.AsyncReadyCallback<this> | null,
             ): globalThis.Promise<boolean> | void;
             /**
-             * Finishes an operation started with ibus_bus_set_global_engine_async().
-             * @param res A #GAsyncResult obtained from the #GAsyncReadyCallback passed to   ibus_bus_set_global_engine_async().
-             * @returns %TRUE if no IPC errros. %FALSE otherwise.
+             * Finishes an operation started with `ibus_bus_set_global_engine_async()`.
+             * @param res A {@link Gio.AsyncResult} obtained from the {@link Gio.AsyncReadyCallback} passed to   `ibus_bus_set_global_engine_async()`.
+             * @returns `true` if no IPC errros. `false` otherwise.
              */
             set_global_engine_async_finish(res: Gio.AsyncResult): boolean;
             /**
              * Set global shorcut keys for the Wayland session.
-             * @param gtype A #IBusBusGlobalBindingType.
-             * @param keys A %NULL-terminated array of #IBusProcessKeyEventData.        keycode is used for the selecting direction and the forward direction        in case of 0, otherwise the backward direction.
-             * @returns %TRUE if the global shortcut keys are set. %FALSE otherwise.
+             * @param gtype A {@link IBus.BusGlobalBindingType}.
+             * @param keys A `null`-terminated array of {@link IBus.ProcessKeyEventData}.        keycode is used for the selecting direction and the forward direction        in case of 0, otherwise the backward direction.
+             * @returns `true` if the global shortcut keys are set. `false` otherwise.
              */
             set_global_shortcut_keys(gtype: BusGlobalBindingType | null, keys: ProcessKeyEventData[]): boolean;
             /**
              * Sete global shorcut keys for the Wayland session asynchronously.
-             * @param gtype A #IBusBusGlobalBindingType.
-             * @param keys A %NULL-terminated array of #IBusProcessKeyEventData.
+             * @param gtype A {@link IBus.BusGlobalBindingType}.
+             * @param keys A `null`-terminated array of {@link IBus.ProcessKeyEventData}.
              * @param timeout_msec The timeout in milliseconds or -1 to use the default timeout.
-             * @param cancellable A #GCancellable or %NULL.
+             * @param cancellable A {@link Gio.Cancellable} or `null`.
              */
             set_global_shortcut_keys_async(
                 gtype: BusGlobalBindingType | null,
@@ -6583,11 +6747,11 @@ declare module 'gi://IBus?version=1.0' {
             ): globalThis.Promise<boolean>;
             /**
              * Sete global shorcut keys for the Wayland session asynchronously.
-             * @param gtype A #IBusBusGlobalBindingType.
-             * @param keys A %NULL-terminated array of #IBusProcessKeyEventData.
+             * @param gtype A {@link IBus.BusGlobalBindingType}.
+             * @param keys A `null`-terminated array of {@link IBus.ProcessKeyEventData}.
              * @param timeout_msec The timeout in milliseconds or -1 to use the default timeout.
-             * @param cancellable A #GCancellable or %NULL.
-             * @param callback A #GAsyncReadyCallback to call when the request is satisfied      or %NULL if you don't care about the result of the method invocation.
+             * @param cancellable A {@link Gio.Cancellable} or `null`.
+             * @param callback A {@link Gio.AsyncReadyCallback} to call when the request is satisfied      or `null` if you don't care about the result of the method invocation.
              */
             set_global_shortcut_keys_async(
                 gtype: BusGlobalBindingType | null,
@@ -6598,11 +6762,11 @@ declare module 'gi://IBus?version=1.0' {
             ): void;
             /**
              * Sete global shorcut keys for the Wayland session asynchronously.
-             * @param gtype A #IBusBusGlobalBindingType.
-             * @param keys A %NULL-terminated array of #IBusProcessKeyEventData.
+             * @param gtype A {@link IBus.BusGlobalBindingType}.
+             * @param keys A `null`-terminated array of {@link IBus.ProcessKeyEventData}.
              * @param timeout_msec The timeout in milliseconds or -1 to use the default timeout.
-             * @param cancellable A #GCancellable or %NULL.
-             * @param callback A #GAsyncReadyCallback to call when the request is satisfied      or %NULL if you don't care about the result of the method invocation.
+             * @param cancellable A {@link Gio.Cancellable} or `null`.
+             * @param callback A {@link Gio.AsyncReadyCallback} to call when the request is satisfied      or `null` if you don't care about the result of the method invocation.
              */
             set_global_shortcut_keys_async(
                 gtype: BusGlobalBindingType | null,
@@ -6612,9 +6776,9 @@ declare module 'gi://IBus?version=1.0' {
                 callback?: Gio.AsyncReadyCallback<this> | null,
             ): globalThis.Promise<boolean> | void;
             /**
-             * Finishes an operation started with ibus_bus_set_global_shortcut_keys_async().
-             * @param res A #GAsyncResult obtained from the #GAsyncReadyCallback passed to   ibus_bus_set_global_shortcut_keys_async().
-             * @returns %TRUE if the global shortcut keys are set. %FALSE otherwise.
+             * Finishes an operation started with `ibus_bus_set_global_shortcut_keys_async()`.
+             * @param res A {@link Gio.AsyncResult} obtained from the {@link Gio.AsyncReadyCallback} passed to   `ibus_bus_set_global_shortcut_keys_async()`.
+             * @returns `true` if the global shortcut keys are set. `false` otherwise.
              */
             set_global_shortcut_keys_async_finish(res: Gio.AsyncResult): boolean;
             /**
@@ -6628,7 +6792,7 @@ declare module 'gi://IBus?version=1.0' {
              * @param property_name property name in org.freedesktop.DBus.Properties.Set
              * @param value value in org.freedesktop.DBus.Properties.Set
              * @param timeout_msec The timeout in milliseconds or -1 to use the default timeout.
-             * @param cancellable A #GCancellable or %NULL.
+             * @param cancellable A {@link Gio.Cancellable} or `null`.
              */
             set_ibus_property_async(
                 property_name: string,
@@ -6641,8 +6805,8 @@ declare module 'gi://IBus?version=1.0' {
              * @param property_name property name in org.freedesktop.DBus.Properties.Set
              * @param value value in org.freedesktop.DBus.Properties.Set
              * @param timeout_msec The timeout in milliseconds or -1 to use the default timeout.
-             * @param cancellable A #GCancellable or %NULL.
-             * @param callback A #GAsyncReadyCallback to call when the request is satisfied      or %NULL if you don't care about the result of the method invocation.
+             * @param cancellable A {@link Gio.Cancellable} or `null`.
+             * @param callback A {@link Gio.AsyncReadyCallback} to call when the request is satisfied      or `null` if you don't care about the result of the method invocation.
              */
             set_ibus_property_async(
                 property_name: string,
@@ -6656,8 +6820,8 @@ declare module 'gi://IBus?version=1.0' {
              * @param property_name property name in org.freedesktop.DBus.Properties.Set
              * @param value value in org.freedesktop.DBus.Properties.Set
              * @param timeout_msec The timeout in milliseconds or -1 to use the default timeout.
-             * @param cancellable A #GCancellable or %NULL.
-             * @param callback A #GAsyncReadyCallback to call when the request is satisfied      or %NULL if you don't care about the result of the method invocation.
+             * @param cancellable A {@link Gio.Cancellable} or `null`.
+             * @param callback A {@link Gio.AsyncReadyCallback} to call when the request is satisfied      or `null` if you don't care about the result of the method invocation.
              */
             set_ibus_property_async(
                 property_name: string,
@@ -6667,19 +6831,19 @@ declare module 'gi://IBus?version=1.0' {
                 callback?: Gio.AsyncReadyCallback<this> | null,
             ): globalThis.Promise<boolean> | void;
             /**
-             * Finishes an operation started with ibus_bus_set_ibus_property_async().
-             * @param res A #GAsyncResult obtained from the #GAsyncReadyCallback passed to   ibus_bus_set_ibus_property_async().
-             * @returns %TRUE if property is set with async. %FALSE failed.
+             * Finishes an operation started with `ibus_bus_set_ibus_property_async()`.
+             * @param res A {@link Gio.AsyncResult} obtained from the {@link Gio.AsyncReadyCallback} passed to   `ibus_bus_set_ibus_property_async()`.
+             * @returns `true` if property is set with async. `false` failed.
              */
             set_ibus_property_async_finish(res: Gio.AsyncResult): boolean;
             /**
              * Start or stop watching the NameOwnerChanged DBus signal.
-             * @param watch %TRUE if you want ibusbus to emit "name-owner-changed" signal when ibus-daemon emits the NameOwnerChanged DBus signal.
+             * @param watch `true` if you want ibusbus to emit "name-owner-changed" signal when ibus-daemon emits the NameOwnerChanged DBus signal.
              */
             set_watch_dbus_signal(watch: boolean): void;
             /**
              * Start or stop watching the GlobalEngineChanged IBus signal.
-             * @param watch %TRUE if you want ibusbus to emit "global-engine-changed" signal when ibus-daemon emits the GlobalEngineChanged IBus signal.
+             * @param watch `true` if you want ibusbus to emit "global-engine-changed" signal when ibus-daemon emits the GlobalEngineChanged IBus signal.
              */
             set_watch_ibus_signal(watch: boolean): void;
         }
@@ -6719,10 +6883,11 @@ declare module 'gi://IBus?version=1.0' {
          *
          * It is recommended that IME developers provide
          * a component XML file and
-         * load the XML file by ibus_component_new_from_file().
+         * load the XML file by `ibus_component_new_from_file()`.
          *
          * The format of a component XML file is described  at
          * <ulink url="https://github.com/ibus/ibus/wiki/DevXML">https://github.com/ibus/ibus/wiki/DevXML</ulink>
+         * @gir-type Class
          */
         class Component extends Serializable {
             static $gtype: GObject.GType<Component>;
@@ -6731,38 +6896,47 @@ declare module 'gi://IBus?version=1.0' {
 
             /**
              * The author of component
+             * @construct-only
              */
             get author(): string;
             /**
              * The exec path of component
+             * @construct-only
              */
             get command_line(): string;
             /**
              * The exec path of component
+             * @construct-only
              */
             get commandLine(): string;
             /**
              * The description of component
+             * @construct-only
              */
             get description(): string;
             /**
              * The homepage of component
+             * @construct-only
              */
             get homepage(): string;
             /**
              * The license of component
+             * @construct-only
              */
             get license(): string;
             /**
              * The name of component
+             * @construct-only
              */
             get name(): string;
             /**
              * The textdomain of component
+             * @construct-only
              */
             get textdomain(): string;
             /**
              * The version of component
+             * @construct-only
              */
             get version(): string;
 
@@ -6801,16 +6975,19 @@ declare module 'gi://IBus?version=1.0' {
 
             // Signals
 
+            /** @signal */
             connect<K extends keyof Component.SignalSignatures>(
                 signal: K,
                 callback: GObject.SignalCallback<this, Component.SignalSignatures[K]>,
             ): number;
             connect(signal: string, callback: (...args: any[]) => any): number;
+            /** @signal */
             connect_after<K extends keyof Component.SignalSignatures>(
                 signal: K,
                 callback: GObject.SignalCallback<this, Component.SignalSignatures[K]>,
             ): number;
             connect_after(signal: string, callback: (...args: any[]) => any): number;
+            /** @signal */
             emit<K extends keyof Component.SignalSignatures>(
                 signal: K,
                 ...args: GObject.GjsParameters<Component.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never
@@ -6820,29 +6997,29 @@ declare module 'gi://IBus?version=1.0' {
             // Methods
 
             /**
-             * Add an engine to #IBusComponent according to the description in `engine`.
+             * Add an engine to {@link IBus.Component} according to the description in `engine`.
              * @param engine A description of an engine.
              */
             add_engine(engine: EngineDesc): void;
             /**
-             * Add an observed path to #IBusComponent.
+             * Add an observed path to {@link IBus.Component}.
              * @param path Observed path to be added.
-             * @param access_fs %TRUE for filling the file status; %FALSE otherwise.
+             * @param access_fs `true` for filling the file status; `false` otherwise.
              */
             add_observed_path(path: string, access_fs: boolean): void;
             /**
              * Check whether the observed paths of component is modified.
-             * @returns %TRUE if at least one of the observed paths is modified; %FALSE otherwise.
+             * @returns `true` if at least one of the observed paths is modified; `false` otherwise.
              */
             check_modification(): boolean;
             /**
-             * Gets the author property in #IBusComponent. It should not be freed.
-             * @returns author property in #IBusComponent
+             * Gets the author property in {@link IBus.Component}. It should not be freed.
+             * @returns author property in {@link IBus.Component}
              */
             get_author(): string;
             /**
-             * Gets the description property in #IBusComponent. It should not be freed.
-             * @returns description property in #IBusComponent
+             * Gets the description property in {@link IBus.Component}. It should not be freed.
+             * @returns description property in {@link IBus.Component}
              */
             get_description(): string;
             /**
@@ -6851,23 +7028,23 @@ declare module 'gi://IBus?version=1.0' {
              */
             get_engines(): EngineDesc[];
             /**
-             * Gets the exec property in #IBusComponent. It should not be freed.
-             * @returns exec property in #IBusComponent
+             * Gets the exec property in {@link IBus.Component}. It should not be freed.
+             * @returns exec property in {@link IBus.Component}
              */
             get_exec(): string;
             /**
-             * Gets the homepage property in #IBusComponent. It should not be freed.
-             * @returns homepage property in #IBusComponent
+             * Gets the homepage property in {@link IBus.Component}. It should not be freed.
+             * @returns homepage property in {@link IBus.Component}
              */
             get_homepage(): string;
             /**
-             * Gets the license property in #IBusComponent. It should not be freed.
-             * @returns license property in #IBusComponent
+             * Gets the license property in {@link IBus.Component}. It should not be freed.
+             * @returns license property in {@link IBus.Component}
              */
             get_license(): string;
             /**
-             * Gets the name property in #IBusComponent. It should not be freed.
-             * @returns name property in #IBusComponent
+             * Gets the name property in {@link IBus.Component}. It should not be freed.
+             * @returns name property in {@link IBus.Component}
              */
             get_name(): string;
             /**
@@ -6876,17 +7053,17 @@ declare module 'gi://IBus?version=1.0' {
              */
             get_observed_paths(): ObservedPath[];
             /**
-             * Gets the textdomain property in #IBusComponent. It should not be freed.
-             * @returns textdomain property in #IBusComponent
+             * Gets the textdomain property in {@link IBus.Component}. It should not be freed.
+             * @returns textdomain property in {@link IBus.Component}
              */
             get_textdomain(): string;
             /**
-             * Gets the version property in #IBusComponent. It should not be freed.
-             * @returns version property in #IBusComponent
+             * Gets the version property in {@link IBus.Component}. It should not be freed.
+             * @returns version property in {@link IBus.Component}
              */
             get_version(): string;
             /**
-             * Output #IBusComponent as an XML-formatted string.
+             * Output {@link IBus.Component} as an XML-formatted string.
              * The output string can be then shown on the screen or written to file.
              * @param output GString that holds the result.
              * @param indent level of indent.
@@ -6904,6 +7081,12 @@ declare module 'gi://IBus?version=1.0' {
         namespace Config {
             // Signal signatures
             interface SignalSignatures extends Proxy.SignalSignatures {
+                /**
+                 * Emitted when configuration value is changed.
+                 * <note><para>Argument `user_data` is ignored in this function.</para></note>
+                 * @signal
+                 * @run-last
+                 */
                 'value-changed': (arg0: string, arg1: string, arg2: GLib.Variant) => void;
                 'notify::g-bus-type': (pspec: GObject.ParamSpec) => void;
                 'notify::g-connection': (pspec: GObject.ParamSpec) => void;
@@ -6931,6 +7114,7 @@ declare module 'gi://IBus?version=1.0' {
          * such as get and set the configure settings to configuration file.
          *
          * Currently, IBusConfig supports gconf.
+         * @gir-type Class
          */
         class Config extends Proxy implements Gio.AsyncInitable<Config>, Gio.DBusInterface, Gio.Initable {
             static $gtype: GObject.GType<Config>;
@@ -6959,16 +7143,19 @@ declare module 'gi://IBus?version=1.0' {
 
             // Signals
 
+            /** @signal */
             connect<K extends keyof Config.SignalSignatures>(
                 signal: K,
                 callback: GObject.SignalCallback<this, Config.SignalSignatures[K]>,
             ): number;
             connect(signal: string, callback: (...args: any[]) => any): number;
+            /** @signal */
             connect_after<K extends keyof Config.SignalSignatures>(
                 signal: K,
                 callback: GObject.SignalCallback<this, Config.SignalSignatures[K]>,
             ): number;
             connect_after(signal: string, callback: (...args: any[]) => any): number;
+            /** @signal */
             emit<K extends keyof Config.SignalSignatures>(
                 signal: K,
                 ...args: GObject.GjsParameters<Config.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never
@@ -6978,10 +7165,10 @@ declare module 'gi://IBus?version=1.0' {
             // Static methods
 
             /**
-             * New an #IBusConfig asynchronously.
-             * @param connection An #GDBusConnection.
-             * @param cancellable A #GCancellable or %NULL.
-             * @param callback A #GAsyncReadyCallback to call when the request is satisfied.      The callback should not be %NULL.
+             * New an {@link IBus.Config} asynchronously.
+             * @param connection An {@link Gio.DBusConnection}.
+             * @param cancellable A {@link Gio.Cancellable} or `null`.
+             * @param callback A {@link Gio.AsyncReadyCallback} to call when the request is satisfied.      The callback should not be `null`.
              */
             static new_async(
                 connection: Gio.DBusConnection,
@@ -7001,20 +7188,20 @@ declare module 'gi://IBus?version=1.0' {
              *
              * ibus-chewing, for example, stores its setting in /desktop/ibus/engine/Chewing,
              * so the section name for it is "engine/Chewing".
-             * See also: ibus_config_set_value().
+             * See also: `ibus_config_set_value()`.
              * @param section Section name of the configuration option.
              * @param name Name of the configure option.
-             * @returns A #GVariant or %NULL. Free with g_variant_unref().
+             * @returns A {@link GLib.Variant} or `null`. Free with `g_variant_unref()`.
              */
             get_value(section: string, name: string): GLib.Variant;
             /**
              * Get the value of a configuration option asynchronously.
              *
-             * See also: ibus_config_get_value().
+             * See also: `ibus_config_get_value()`.
              * @param section Section name of the configuration option.
              * @param name Name of the configure option.
              * @param timeout_ms The timeout in milliseconds or -1 to use the default timeout.
-             * @param cancellable A #GCancellable or %NULL.
+             * @param cancellable A {@link Gio.Cancellable} or `null`.
              */
             get_value_async(
                 section: string,
@@ -7025,11 +7212,11 @@ declare module 'gi://IBus?version=1.0' {
             /**
              * Get the value of a configuration option asynchronously.
              *
-             * See also: ibus_config_get_value().
+             * See also: `ibus_config_get_value()`.
              * @param section Section name of the configuration option.
              * @param name Name of the configure option.
              * @param timeout_ms The timeout in milliseconds or -1 to use the default timeout.
-             * @param cancellable A #GCancellable or %NULL.
+             * @param cancellable A {@link Gio.Cancellable} or `null`.
              * @param callback Callback function to invoke when the return value is ready.
              */
             get_value_async(
@@ -7042,11 +7229,11 @@ declare module 'gi://IBus?version=1.0' {
             /**
              * Get the value of a configuration option asynchronously.
              *
-             * See also: ibus_config_get_value().
+             * See also: `ibus_config_get_value()`.
              * @param section Section name of the configuration option.
              * @param name Name of the configure option.
              * @param timeout_ms The timeout in milliseconds or -1 to use the default timeout.
-             * @param cancellable A #GCancellable or %NULL.
+             * @param cancellable A {@link Gio.Cancellable} or `null`.
              * @param callback Callback function to invoke when the return value is ready.
              */
             get_value_async(
@@ -7058,23 +7245,23 @@ declare module 'gi://IBus?version=1.0' {
             ): globalThis.Promise<GLib.Variant> | void;
             /**
              * Finish get value of a configuration option.
-             * @param result A #GAsyncResult.
-             * @returns A #GVariant or %NULL if error is set. Free with g_variant_unref(). See also: ibus_config_get_value_async().
+             * @param result A {@link Gio.AsyncResult}.
+             * @returns A {@link GLib.Variant} or `null` if error is set. Free with `g_variant_unref()`. See also: `ibus_config_get_value_async()`.
              */
             get_value_async_finish(result: Gio.AsyncResult): GLib.Variant;
             /**
              * Get all values in a section synchronously.
              * @param section Section name of the configuration option.
-             * @returns A #GVariant or %NULL. Free with g_variant_unref(). See also: ibus_config_set_value().
+             * @returns A {@link GLib.Variant} or `null`. Free with `g_variant_unref()`. See also: `ibus_config_set_value()`.
              */
             get_values(section: string): GLib.Variant;
             /**
              * Get all values in a section asynchronously.
              *
-             * See also: ibus_config_get_values().
+             * See also: `ibus_config_get_values()`.
              * @param section Section name of the configuration option.
              * @param timeout_ms The timeout in milliseconds or -1 to use the default timeout.
-             * @param cancellable A #GCancellable or %NULL.
+             * @param cancellable A {@link Gio.Cancellable} or `null`.
              */
             get_values_async(
                 section: string,
@@ -7084,10 +7271,10 @@ declare module 'gi://IBus?version=1.0' {
             /**
              * Get all values in a section asynchronously.
              *
-             * See also: ibus_config_get_values().
+             * See also: `ibus_config_get_values()`.
              * @param section Section name of the configuration option.
              * @param timeout_ms The timeout in milliseconds or -1 to use the default timeout.
-             * @param cancellable A #GCancellable or %NULL.
+             * @param cancellable A {@link Gio.Cancellable} or `null`.
              * @param callback Callback function to invoke when the return value is ready.
              */
             get_values_async(
@@ -7099,10 +7286,10 @@ declare module 'gi://IBus?version=1.0' {
             /**
              * Get all values in a section asynchronously.
              *
-             * See also: ibus_config_get_values().
+             * See also: `ibus_config_get_values()`.
              * @param section Section name of the configuration option.
              * @param timeout_ms The timeout in milliseconds or -1 to use the default timeout.
-             * @param cancellable A #GCancellable or %NULL.
+             * @param cancellable A {@link Gio.Cancellable} or `null`.
              * @param callback Callback function to invoke when the return value is ready.
              */
             get_values_async(
@@ -7113,27 +7300,27 @@ declare module 'gi://IBus?version=1.0' {
             ): globalThis.Promise<GLib.Variant> | void;
             /**
              * Finish get values in a section.
-             * @param result A #GAsyncResult.
-             * @returns A #GVariant or %NULL if error is set. Free with g_variant_unref(). See also: ibus_config_get_values_async().
+             * @param result A {@link Gio.AsyncResult}.
+             * @returns A {@link GLib.Variant} or `null` if error is set. Free with `g_variant_unref()`. See also: `ibus_config_get_values_async()`.
              */
             get_values_async_finish(result: Gio.AsyncResult): GLib.Variant;
             /**
              * Set the value of a configuration option synchronously.
              * @param section Section name of the configuration option.
              * @param name Name of the configure option its self.
-             * @param value A #GVariant that holds the value. If the value is floating, the function takes ownership of it.
-             * @returns %TRUE if succeed; %FALSE otherwise. See also: ibus_config_get_value().
+             * @param value A {@link GLib.Variant} that holds the value. If the value is floating, the function takes ownership of it.
+             * @returns `true` if succeed; `false` otherwise. See also: `ibus_config_get_value()`.
              */
             set_value(section: string, name: string, value: GLib.Variant): boolean;
             /**
              * Set the value of a configuration option asynchronously.
              *
-             * See also: ibus_config_set_value().
+             * See also: `ibus_config_set_value()`.
              * @param section Section name of the configuration option.
              * @param name Name of the configure option.
-             * @param value A #GVariant that holds the value. If the value is floating, the function takes ownership of it.
+             * @param value A {@link GLib.Variant} that holds the value. If the value is floating, the function takes ownership of it.
              * @param timeout_ms The timeout in milliseconds or -1 to use the default timeout.
-             * @param cancellable A #GCancellable or %NULL.
+             * @param cancellable A {@link Gio.Cancellable} or `null`.
              */
             set_value_async(
                 section: string,
@@ -7145,12 +7332,12 @@ declare module 'gi://IBus?version=1.0' {
             /**
              * Set the value of a configuration option asynchronously.
              *
-             * See also: ibus_config_set_value().
+             * See also: `ibus_config_set_value()`.
              * @param section Section name of the configuration option.
              * @param name Name of the configure option.
-             * @param value A #GVariant that holds the value. If the value is floating, the function takes ownership of it.
+             * @param value A {@link GLib.Variant} that holds the value. If the value is floating, the function takes ownership of it.
              * @param timeout_ms The timeout in milliseconds or -1 to use the default timeout.
-             * @param cancellable A #GCancellable or %NULL.
+             * @param cancellable A {@link Gio.Cancellable} or `null`.
              * @param callback Callback function to invoke when the return value is ready.
              */
             set_value_async(
@@ -7164,12 +7351,12 @@ declare module 'gi://IBus?version=1.0' {
             /**
              * Set the value of a configuration option asynchronously.
              *
-             * See also: ibus_config_set_value().
+             * See also: `ibus_config_set_value()`.
              * @param section Section name of the configuration option.
              * @param name Name of the configure option.
-             * @param value A #GVariant that holds the value. If the value is floating, the function takes ownership of it.
+             * @param value A {@link GLib.Variant} that holds the value. If the value is floating, the function takes ownership of it.
              * @param timeout_ms The timeout in milliseconds or -1 to use the default timeout.
-             * @param cancellable A #GCancellable or %NULL.
+             * @param cancellable A {@link Gio.Cancellable} or `null`.
              * @param callback Callback function to invoke when the return value is ready.
              */
             set_value_async(
@@ -7182,119 +7369,117 @@ declare module 'gi://IBus?version=1.0' {
             ): globalThis.Promise<boolean> | void;
             /**
              * Finish set value of a configuration option.
-             * @param result A #GAsyncResult.
-             * @returns %TRUE or %FALSE if error is set. See also: ibus_config_set_value_async().
+             * @param result A {@link Gio.AsyncResult}.
+             * @returns `true` or `false` if error is set. See also: `ibus_config_set_value_async()`.
              */
             set_value_async_finish(result: Gio.AsyncResult): boolean;
             /**
              * Remove an entry of a configuration option.
              * @param section Section name of the configuration option.
              * @param name Name of the configure option its self.
-             * @returns %TRUE if succeed; %FALSE otherwise. See also: ibus_config_get_value().
+             * @returns `true` if succeed; `false` otherwise. See also: `ibus_config_get_value()`.
              */
             unset(section: string, name: string): boolean;
             /**
              * Unsubscribe from the configuration option change notification.
              * @param section Section name of the configuration option.
              * @param name Name of the configure option its self.
-             * @returns %TRUE if succeed; %FALSE otherwise. See also: ibus_config_watch.
+             * @returns `true` if succeed; `false` otherwise. See also: ibus_config_watch.
              */
             unwatch(section?: string | null, name?: string | null): boolean;
             /**
              * Subscribe to the configuration option change notification.
              *
              * Until this function is called, every change will be notified to the
-             * client through #IBusConfig::value-changed signal.  Clients should
-             * call ibus_config_watch() with the sections they are interested in,
+             * client through {@link IBus.Config.SignalSignatures.value_changed | IBus.Config::value-changed} signal.  Clients should
+             * call `ibus_config_watch()` with the sections they are interested in,
              * to reduce the number of D-Bus messages.
              * @param section Section name of the configuration option.
              * @param name Name of the configure option its self.
-             * @returns %TRUE if succeed; %FALSE otherwise. See also: ibus_config_unwatch().
+             * @returns `true` if succeed; `false` otherwise. See also: `ibus_config_unwatch()`.
              */
             watch(section?: string | null, name?: string | null): boolean;
-
-            // Inherited methods
             /**
              * Starts asynchronous initialization of the object implementing the
              * interface. This must be done before any real use of the object after
-             * initial construction. If the object also implements #GInitable you can
-             * optionally call g_initable_init() instead.
+             * initial construction. If the object also implements {@link Gio.Initable} you can
+             * optionally call `g_initable_init()` instead.
              *
              * This method is intended for language bindings. If writing in C,
-             * g_async_initable_new_async() should typically be used instead.
+             * `g_async_initable_new_async()` should typically be used instead.
              *
              * When the initialization is finished, `callback` will be called. You can
-             * then call g_async_initable_init_finish() to get the result of the
+             * then call `g_async_initable_init_finish()` to get the result of the
              * initialization.
              *
              * Implementations may also support cancellation. If `cancellable` is not
-             * %NULL, then initialization can be cancelled by triggering the cancellable
+             * `null`, then initialization can be cancelled by triggering the cancellable
              * object from another thread. If the operation was cancelled, the error
-             * %G_IO_ERROR_CANCELLED will be returned. If `cancellable` is not %NULL, and
+             * {@link Gio.IOErrorEnum.CANCELLED} will be returned. If `cancellable` is not `null`, and
              * the object doesn't support cancellable initialization, the error
-             * %G_IO_ERROR_NOT_SUPPORTED will be returned.
+             * {@link Gio.IOErrorEnum.NOT_SUPPORTED} will be returned.
              *
-             * As with #GInitable, if the object is not initialized, or initialization
+             * As with {@link Gio.Initable}, if the object is not initialized, or initialization
              * returns with an error, then all operations on the object except
-             * g_object_ref() and g_object_unref() are considered to be invalid, and
-             * have undefined behaviour. They will often fail with g_critical() or
-             * g_warning(), but this must not be relied on.
+             * `g_object_ref()` and `g_object_unref()` are considered to be invalid, and
+             * have undefined behaviour. They will often fail with `g_critical()` or
+             * `g_warning()`, but this must not be relied on.
              *
-             * Callers should not assume that a class which implements #GAsyncInitable can
-             * be initialized multiple times; for more information, see g_initable_init().
+             * Callers should not assume that a class which implements {@link Gio.AsyncInitable} can
+             * be initialized multiple times; for more information, see `g_initable_init()`.
              * If a class explicitly supports being initialized multiple times,
-             * implementation requires yielding all subsequent calls to init_async() on the
+             * implementation requires yielding all subsequent calls to `init_async()` on the
              * results of the first call.
              *
-             * For classes that also support the #GInitable interface, the default
-             * implementation of this method will run the g_initable_init() function
+             * For classes that also support the {@link Gio.Initable} interface, the default
+             * implementation of this method will run the `g_initable_init()` function
              * in a thread, so if you want to support asynchronous initialization via
-             * threads, just implement the #GAsyncInitable interface without overriding
+             * threads, just implement the {@link Gio.AsyncInitable} interface without overriding
              * any interface methods.
              * @param io_priority the [I/O priority](iface.AsyncResult.html#io-priority) of the operation
-             * @param cancellable optional #GCancellable object, %NULL to ignore.
+             * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
              */
             init_async(io_priority: number, cancellable?: Gio.Cancellable | null): globalThis.Promise<boolean>;
             /**
              * Starts asynchronous initialization of the object implementing the
              * interface. This must be done before any real use of the object after
-             * initial construction. If the object also implements #GInitable you can
-             * optionally call g_initable_init() instead.
+             * initial construction. If the object also implements {@link Gio.Initable} you can
+             * optionally call `g_initable_init()` instead.
              *
              * This method is intended for language bindings. If writing in C,
-             * g_async_initable_new_async() should typically be used instead.
+             * `g_async_initable_new_async()` should typically be used instead.
              *
              * When the initialization is finished, `callback` will be called. You can
-             * then call g_async_initable_init_finish() to get the result of the
+             * then call `g_async_initable_init_finish()` to get the result of the
              * initialization.
              *
              * Implementations may also support cancellation. If `cancellable` is not
-             * %NULL, then initialization can be cancelled by triggering the cancellable
+             * `null`, then initialization can be cancelled by triggering the cancellable
              * object from another thread. If the operation was cancelled, the error
-             * %G_IO_ERROR_CANCELLED will be returned. If `cancellable` is not %NULL, and
+             * {@link Gio.IOErrorEnum.CANCELLED} will be returned. If `cancellable` is not `null`, and
              * the object doesn't support cancellable initialization, the error
-             * %G_IO_ERROR_NOT_SUPPORTED will be returned.
+             * {@link Gio.IOErrorEnum.NOT_SUPPORTED} will be returned.
              *
-             * As with #GInitable, if the object is not initialized, or initialization
+             * As with {@link Gio.Initable}, if the object is not initialized, or initialization
              * returns with an error, then all operations on the object except
-             * g_object_ref() and g_object_unref() are considered to be invalid, and
-             * have undefined behaviour. They will often fail with g_critical() or
-             * g_warning(), but this must not be relied on.
+             * `g_object_ref()` and `g_object_unref()` are considered to be invalid, and
+             * have undefined behaviour. They will often fail with `g_critical()` or
+             * `g_warning()`, but this must not be relied on.
              *
-             * Callers should not assume that a class which implements #GAsyncInitable can
-             * be initialized multiple times; for more information, see g_initable_init().
+             * Callers should not assume that a class which implements {@link Gio.AsyncInitable} can
+             * be initialized multiple times; for more information, see `g_initable_init()`.
              * If a class explicitly supports being initialized multiple times,
-             * implementation requires yielding all subsequent calls to init_async() on the
+             * implementation requires yielding all subsequent calls to `init_async()` on the
              * results of the first call.
              *
-             * For classes that also support the #GInitable interface, the default
-             * implementation of this method will run the g_initable_init() function
+             * For classes that also support the {@link Gio.Initable} interface, the default
+             * implementation of this method will run the `g_initable_init()` function
              * in a thread, so if you want to support asynchronous initialization via
-             * threads, just implement the #GAsyncInitable interface without overriding
+             * threads, just implement the {@link Gio.AsyncInitable} interface without overriding
              * any interface methods.
              * @param io_priority the [I/O priority](iface.AsyncResult.html#io-priority) of the operation
-             * @param cancellable optional #GCancellable object, %NULL to ignore.
-             * @param callback a #GAsyncReadyCallback to call when the request is satisfied
+             * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
+             * @param callback a {@link Gio.AsyncReadyCallback} to call when the request is satisfied
              */
             init_async(
                 io_priority: number,
@@ -7304,43 +7489,43 @@ declare module 'gi://IBus?version=1.0' {
             /**
              * Starts asynchronous initialization of the object implementing the
              * interface. This must be done before any real use of the object after
-             * initial construction. If the object also implements #GInitable you can
-             * optionally call g_initable_init() instead.
+             * initial construction. If the object also implements {@link Gio.Initable} you can
+             * optionally call `g_initable_init()` instead.
              *
              * This method is intended for language bindings. If writing in C,
-             * g_async_initable_new_async() should typically be used instead.
+             * `g_async_initable_new_async()` should typically be used instead.
              *
              * When the initialization is finished, `callback` will be called. You can
-             * then call g_async_initable_init_finish() to get the result of the
+             * then call `g_async_initable_init_finish()` to get the result of the
              * initialization.
              *
              * Implementations may also support cancellation. If `cancellable` is not
-             * %NULL, then initialization can be cancelled by triggering the cancellable
+             * `null`, then initialization can be cancelled by triggering the cancellable
              * object from another thread. If the operation was cancelled, the error
-             * %G_IO_ERROR_CANCELLED will be returned. If `cancellable` is not %NULL, and
+             * {@link Gio.IOErrorEnum.CANCELLED} will be returned. If `cancellable` is not `null`, and
              * the object doesn't support cancellable initialization, the error
-             * %G_IO_ERROR_NOT_SUPPORTED will be returned.
+             * {@link Gio.IOErrorEnum.NOT_SUPPORTED} will be returned.
              *
-             * As with #GInitable, if the object is not initialized, or initialization
+             * As with {@link Gio.Initable}, if the object is not initialized, or initialization
              * returns with an error, then all operations on the object except
-             * g_object_ref() and g_object_unref() are considered to be invalid, and
-             * have undefined behaviour. They will often fail with g_critical() or
-             * g_warning(), but this must not be relied on.
+             * `g_object_ref()` and `g_object_unref()` are considered to be invalid, and
+             * have undefined behaviour. They will often fail with `g_critical()` or
+             * `g_warning()`, but this must not be relied on.
              *
-             * Callers should not assume that a class which implements #GAsyncInitable can
-             * be initialized multiple times; for more information, see g_initable_init().
+             * Callers should not assume that a class which implements {@link Gio.AsyncInitable} can
+             * be initialized multiple times; for more information, see `g_initable_init()`.
              * If a class explicitly supports being initialized multiple times,
-             * implementation requires yielding all subsequent calls to init_async() on the
+             * implementation requires yielding all subsequent calls to `init_async()` on the
              * results of the first call.
              *
-             * For classes that also support the #GInitable interface, the default
-             * implementation of this method will run the g_initable_init() function
+             * For classes that also support the {@link Gio.Initable} interface, the default
+             * implementation of this method will run the `g_initable_init()` function
              * in a thread, so if you want to support asynchronous initialization via
-             * threads, just implement the #GAsyncInitable interface without overriding
+             * threads, just implement the {@link Gio.AsyncInitable} interface without overriding
              * any interface methods.
              * @param io_priority the [I/O priority](iface.AsyncResult.html#io-priority) of the operation
-             * @param cancellable optional #GCancellable object, %NULL to ignore.
-             * @param callback a #GAsyncReadyCallback to call when the request is satisfied
+             * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
+             * @param callback a {@link Gio.AsyncReadyCallback} to call when the request is satisfied
              */
             init_async(
                 io_priority: number,
@@ -7349,60 +7534,64 @@ declare module 'gi://IBus?version=1.0' {
             ): globalThis.Promise<boolean> | void;
             /**
              * Finishes asynchronous initialization and returns the result.
-             * See g_async_initable_init_async().
-             * @param res a #GAsyncResult.
-             * @returns %TRUE if successful. If an error has occurred, this function will return %FALSE and set @error appropriately if present.
+             * See `g_async_initable_init_async()`.
+             * @param res a {@link Gio.AsyncResult}.
+             * @returns `true` if successful. If an error has occurred, this function will return `false` and set `error` appropriately if present.
              */
             init_finish(res: Gio.AsyncResult): boolean;
             /**
              * Finishes the async construction for the various g_async_initable_new
-             * calls, returning the created object or %NULL on error.
-             * @param res the #GAsyncResult from the callback
-             * @returns a newly created #GObject,      or %NULL on error. Free with g_object_unref().
+             * calls, returning the created object or `null` on error.
+             * @param res the {@link Gio.AsyncResult} from the callback
+             * @returns a newly created {@link GObject.Object},      or `null` on error. Free with `g_object_unref()`.
              */
             new_finish(res: Gio.AsyncResult): Config;
+            /**
+             * @param args
+             */
             // Conflicted with Gio.DBusProxy.new_finish
             new_finish(...args: never[]): any;
             /**
              * Starts asynchronous initialization of the object implementing the
              * interface. This must be done before any real use of the object after
-             * initial construction. If the object also implements #GInitable you can
-             * optionally call g_initable_init() instead.
+             * initial construction. If the object also implements {@link Gio.Initable} you can
+             * optionally call `g_initable_init()` instead.
              *
              * This method is intended for language bindings. If writing in C,
-             * g_async_initable_new_async() should typically be used instead.
+             * `g_async_initable_new_async()` should typically be used instead.
              *
              * When the initialization is finished, `callback` will be called. You can
-             * then call g_async_initable_init_finish() to get the result of the
+             * then call `g_async_initable_init_finish()` to get the result of the
              * initialization.
              *
              * Implementations may also support cancellation. If `cancellable` is not
-             * %NULL, then initialization can be cancelled by triggering the cancellable
+             * `null`, then initialization can be cancelled by triggering the cancellable
              * object from another thread. If the operation was cancelled, the error
-             * %G_IO_ERROR_CANCELLED will be returned. If `cancellable` is not %NULL, and
+             * {@link Gio.IOErrorEnum.CANCELLED} will be returned. If `cancellable` is not `null`, and
              * the object doesn't support cancellable initialization, the error
-             * %G_IO_ERROR_NOT_SUPPORTED will be returned.
+             * {@link Gio.IOErrorEnum.NOT_SUPPORTED} will be returned.
              *
-             * As with #GInitable, if the object is not initialized, or initialization
+             * As with {@link Gio.Initable}, if the object is not initialized, or initialization
              * returns with an error, then all operations on the object except
-             * g_object_ref() and g_object_unref() are considered to be invalid, and
-             * have undefined behaviour. They will often fail with g_critical() or
-             * g_warning(), but this must not be relied on.
+             * `g_object_ref()` and `g_object_unref()` are considered to be invalid, and
+             * have undefined behaviour. They will often fail with `g_critical()` or
+             * `g_warning()`, but this must not be relied on.
              *
-             * Callers should not assume that a class which implements #GAsyncInitable can
-             * be initialized multiple times; for more information, see g_initable_init().
+             * Callers should not assume that a class which implements {@link Gio.AsyncInitable} can
+             * be initialized multiple times; for more information, see `g_initable_init()`.
              * If a class explicitly supports being initialized multiple times,
-             * implementation requires yielding all subsequent calls to init_async() on the
+             * implementation requires yielding all subsequent calls to `init_async()` on the
              * results of the first call.
              *
-             * For classes that also support the #GInitable interface, the default
-             * implementation of this method will run the g_initable_init() function
+             * For classes that also support the {@link Gio.Initable} interface, the default
+             * implementation of this method will run the `g_initable_init()` function
              * in a thread, so if you want to support asynchronous initialization via
-             * threads, just implement the #GAsyncInitable interface without overriding
+             * threads, just implement the {@link Gio.AsyncInitable} interface without overriding
              * any interface methods.
              * @param io_priority the [I/O priority](iface.AsyncResult.html#io-priority) of the operation
-             * @param cancellable optional #GCancellable object, %NULL to ignore.
-             * @param callback a #GAsyncReadyCallback to call when the request is satisfied
+             * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
+             * @param callback a {@link Gio.AsyncReadyCallback} to call when the request is satisfied
+             * @virtual
              */
             vfunc_init_async(
                 io_priority: number,
@@ -7411,8 +7600,9 @@ declare module 'gi://IBus?version=1.0' {
             ): void;
             /**
              * Finishes asynchronous initialization and returns the result.
-             * See g_async_initable_init_async().
-             * @param res a #GAsyncResult.
+             * See `g_async_initable_init_async()`.
+             * @param res a {@link Gio.AsyncResult}.
+             * @virtual
              */
             vfunc_init_finish(res: Gio.AsyncResult): boolean;
             /**
@@ -7428,32 +7618,32 @@ declare module 'gi://IBus?version=1.0' {
              * ```
              *
              *
-             * Will result in the "sensitive" property of the widget #GObject instance to be
-             * updated with the same value of the "active" property of the action #GObject
+             * Will result in the "sensitive" property of the widget {@link GObject.Object} instance to be
+             * updated with the same value of the "active" property of the action {@link GObject.Object}
              * instance.
              *
-             * If `flags` contains %G_BINDING_BIDIRECTIONAL then the binding will be mutual:
+             * If `flags` contains {@link GObject.BindingFlags.BIDIRECTIONAL} then the binding will be mutual:
              * if `target_property` on `target` changes then the `source_property` on `source`
              * will be updated as well.
              *
              * The binding will automatically be removed when either the `source` or the
              * `target` instances are finalized. To remove the binding without affecting the
-             * `source` and the `target` you can just call g_object_unref() on the returned
-             * #GBinding instance.
+             * `source` and the `target` you can just call `g_object_unref()` on the returned
+             * {@link GObject.Binding} instance.
              *
-             * Removing the binding by calling g_object_unref() on it must only be done if
+             * Removing the binding by calling `g_object_unref()` on it must only be done if
              * the binding, `source` and `target` are only used from a single thread and it
              * is clear that both `source` and `target` outlive the binding. Especially it
              * is not safe to rely on this if the binding, `source` or `target` can be
              * finalized from different threads. Keep another reference to the binding and
-             * use g_binding_unbind() instead to be on the safe side.
+             * use `g_binding_unbind()` instead to be on the safe side.
              *
-             * A #GObject can have multiple bindings.
-             * @param source_property the property on @source to bind
-             * @param target the target #GObject
-             * @param target_property the property on @target to bind
-             * @param flags flags to pass to #GBinding
-             * @returns the #GBinding instance representing the     binding between the two #GObject instances. The binding is released     whenever the #GBinding reference count reaches zero.
+             * A {@link GObject.Object} can have multiple bindings.
+             * @param source_property the property on `source` to bind
+             * @param target the target {@link GObject.Object}
+             * @param target_property the property on `target` to bind
+             * @param flags flags to pass to {@link GObject.Binding}
+             * @returns the {@link GObject.Binding} instance representing the     binding between the two {@link GObject.Object} instances. The binding is released     whenever the {@link GObject.Binding} reference count reaches zero.
              */
             bind_property(
                 source_property: string,
@@ -7462,39 +7652,39 @@ declare module 'gi://IBus?version=1.0' {
                 flags: GObject.BindingFlags | null,
             ): GObject.Binding;
             /**
-             * Complete version of g_object_bind_property().
+             * Complete version of `g_object_bind_property()`.
              *
              * Creates a binding between `source_property` on `source` and `target_property`
-             * on `target,` allowing you to set the transformation functions to be used by
+             * on `target`, allowing you to set the transformation functions to be used by
              * the binding.
              *
-             * If `flags` contains %G_BINDING_BIDIRECTIONAL then the binding will be mutual:
+             * If `flags` contains {@link GObject.BindingFlags.BIDIRECTIONAL} then the binding will be mutual:
              * if `target_property` on `target` changes then the `source_property` on `source`
              * will be updated as well. The `transform_from` function is only used in case
              * of bidirectional bindings, otherwise it will be ignored
              *
              * The binding will automatically be removed when either the `source` or the
              * `target` instances are finalized. This will release the reference that is
-             * being held on the #GBinding instance; if you want to hold on to the
-             * #GBinding instance, you will need to hold a reference to it.
+             * being held on the {@link GObject.Binding} instance; if you want to hold on to the
+             * {@link GObject.Binding} instance, you will need to hold a reference to it.
              *
-             * To remove the binding, call g_binding_unbind().
+             * To remove the binding, call `g_binding_unbind()`.
              *
-             * A #GObject can have multiple bindings.
+             * A {@link GObject.Object} can have multiple bindings.
              *
              * The same `user_data` parameter will be used for both `transform_to`
              * and `transform_from` transformation functions; the `notify` function will
              * be called once, when the binding is removed. If you need different data
              * for each transformation function, please use
-             * g_object_bind_property_with_closures() instead.
-             * @param source_property the property on @source to bind
-             * @param target the target #GObject
-             * @param target_property the property on @target to bind
-             * @param flags flags to pass to #GBinding
-             * @param transform_to the transformation function     from the @source to the @target, or %NULL to use the default
-             * @param transform_from the transformation function     from the @target to the @source, or %NULL to use the default
-             * @param notify a function to call when disposing the binding, to free     resources used by the transformation functions, or %NULL if not required
-             * @returns the #GBinding instance representing the     binding between the two #GObject instances. The binding is released     whenever the #GBinding reference count reaches zero.
+             * `g_object_bind_property_with_closures()` instead.
+             * @param source_property the property on `source` to bind
+             * @param target the target {@link GObject.Object}
+             * @param target_property the property on `target` to bind
+             * @param flags flags to pass to {@link GObject.Binding}
+             * @param transform_to the transformation function     from the `source` to the `target`, or `null` to use the default
+             * @param transform_from the transformation function     from the `target` to the `source`, or `null` to use the default
+             * @param notify a function to call when disposing the binding, to free     resources used by the transformation functions, or `null` if not required
+             * @returns the {@link GObject.Binding} instance representing the     binding between the two {@link GObject.Object} instances. The binding is released     whenever the {@link GObject.Binding} reference count reaches zero.
              */
             bind_property_full(
                 source_property: string,
@@ -7505,13 +7695,16 @@ declare module 'gi://IBus?version=1.0' {
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
             ): GObject.Binding;
+            /**
+             * @param args
+             */
             // Conflicted with GObject.Object.bind_property_full
             bind_property_full(...args: never[]): any;
             /**
-             * This function is intended for #GObject implementations to re-enforce
+             * This function is intended for {@link GObject.Object} implementations to re-enforce
              * a [floating][floating-ref] object reference. Doing this is seldom
-             * required: all #GInitiallyUnowneds are created with a floating reference
-             * which usually just needs to be sunken by calling g_object_ref_sink().
+             * required: all `GInitiallyUnowneds` are created with a floating reference
+             * which usually just needs to be sunken by calling `g_object_ref_sink()`.
              */
             force_floating(): void;
             /**
@@ -7519,7 +7712,7 @@ declare module 'gi://IBus?version=1.0' {
              * non-zero, the emission of "notify" signals on `object` is
              * stopped. The signals are queued until the freeze count is decreased
              * to zero. Duplicate notifications are squashed so that at most one
-             * #GObject::notify signal is emitted for each property modified while the
+             * {@link GObject.Object.SignalSignatures.notify | GObject.Object::notify} signal is emitted for each property modified while the
              * object is frozen.
              *
              * This is necessary for accessors that modify multiple properties to prevent
@@ -7527,9 +7720,9 @@ declare module 'gi://IBus?version=1.0' {
              */
             freeze_notify(): void;
             /**
-             * Gets a named field from the objects table of associations (see g_object_set_data()).
+             * Gets a named field from the objects table of associations (see `g_object_set_data()`).
              * @param key name of the key for that association
-             * @returns the data if found,          or %NULL if no such data exists.
+             * @returns the data if found,          or `null` if no such data exists.
              */
             get_data(key: string): any | null;
             /**
@@ -7549,9 +7742,9 @@ declare module 'gi://IBus?version=1.0' {
             get_property(property_name: string, value: GObject.Value | any): any;
             /**
              * This function gets back user data pointers stored via
-             * g_object_set_qdata().
-             * @param quark A #GQuark, naming the user data pointer
-             * @returns The user data pointer set, or %NULL
+             * `g_object_set_qdata()`.
+             * @param quark A {@link GLib.Quark}, naming the user data pointer
+             * @returns The user data pointer set, or `null`
              */
             get_qdata(quark: GLib.Quark): any | null;
             /**
@@ -7565,33 +7758,33 @@ declare module 'gi://IBus?version=1.0' {
             getv(names: string[], values: (GObject.Value | any)[]): void;
             /**
              * Checks whether `object` has a [floating][floating-ref] reference.
-             * @returns %TRUE if @object has a floating reference
+             * @returns `true` if `object` has a floating reference
              */
             is_floating(): boolean;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
              * When possible, eg. when signaling a property change from within the class
-             * that registered the property, you should use g_object_notify_by_pspec()
+             * that registered the property, you should use `g_object_notify_by_pspec()`
              * instead.
              *
              * Note that emission of the notify signal may be blocked with
-             * g_object_freeze_notify(). In this case, the signal emissions are queued
-             * and will be emitted (in reverse order) when g_object_thaw_notify() is
+             * `g_object_freeze_notify()`. In this case, the signal emissions are queued
+             * and will be emitted (in reverse order) when `g_object_thaw_notify()` is
              * called.
-             * @param property_name the name of a property installed on the class of @object.
+             * @param property_name the name of a property installed on the class of `object`.
              */
             notify(property_name: string): void;
             /**
              * Emits a "notify" signal for the property specified by `pspec` on `object`.
              *
              * This function omits the property name lookup, hence it is faster than
-             * g_object_notify().
+             * `g_object_notify()`.
              *
-             * One way to avoid using g_object_notify() from within the
-             * class that registered the properties, and using g_object_notify_by_pspec()
+             * One way to avoid using `g_object_notify()` from within the
+             * class that registered the properties, and using `g_object_notify_by_pspec()`
              * instead, is to store the GParamSpec used with
-             * g_object_class_install_property() inside a static array, e.g.:
+             * `g_object_class_install_property()` inside a static array, e.g.:
              *
              *
              * ```c
@@ -7624,21 +7817,21 @@ declare module 'gi://IBus?version=1.0' {
              *   g_object_notify_by_pspec (self, properties[PROP_FOO]);
              * ```
              *
-             * @param pspec the #GParamSpec of a property installed on the class of @object.
+             * @param pspec the {@link GObject.ParamSpec} of a property installed on the class of `object`.
              */
             notify_by_pspec(pspec: GObject.ParamSpec): void;
             /**
              * Increases the reference count of `object`.
              *
              * Since GLib 2.56, if `GLIB_VERSION_MAX_ALLOWED` is 2.56 or greater, the type
-             * of `object` will be propagated to the return type (using the GCC typeof()
+             * of `object` will be propagated to the return type (using the GCC `typeof()`
              * extension), so any casting the caller needs to do on the return type must be
              * explicit.
-             * @returns the same @object
+             * @returns the same `object`
              */
             ref(): GObject.Object;
             /**
-             * Increase the reference count of `object,` and possibly remove the
+             * Increase the reference count of `object`, and possibly remove the
              * [floating][floating-ref] reference, if `object` has a floating reference.
              *
              * In other words, if the object is floating, then this call "assumes
@@ -7648,8 +7841,8 @@ declare module 'gi://IBus?version=1.0' {
              * adds a new normal reference increasing the reference count by one.
              *
              * Since GLib 2.56, the type of `object` will be propagated to the return type
-             * under the same conditions as for g_object_ref().
-             * @returns @object
+             * under the same conditions as for `g_object_ref()`.
+             * @returns `object`
              */
             ref_sink(): GObject.Object;
             /**
@@ -7666,10 +7859,10 @@ declare module 'gi://IBus?version=1.0' {
              * If the object already had an association with that name,
              * the old association will be destroyed.
              *
-             * Internally, the `key` is converted to a #GQuark using g_quark_from_string().
+             * Internally, the `key` is converted to a {@link GLib.Quark} using `g_quark_from_string()`.
              * This means a copy of `key` is kept permanently (even after `object` has been
              * finalized) — so it is recommended to only use a small, bounded set of values
-             * for `key` in your program, to avoid the #GQuark storage growing unbounded.
+             * for `key` in your program, to avoid the {@link GLib.Quark} storage growing unbounded.
              * @param key name of the key
              * @param data data to associate with that key
              */
@@ -7684,13 +7877,13 @@ declare module 'gi://IBus?version=1.0' {
              * Remove a specified datum from the object's data associations,
              * without invoking the association's destroy handler.
              * @param key name of the key
-             * @returns the data if found, or %NULL          if no such data exists.
+             * @returns the data if found, or `null`          if no such data exists.
              */
             steal_data(key: string): any | null;
             /**
              * This function gets back user data pointers stored via
-             * g_object_set_qdata() and removes the `data` from object
-             * without invoking its destroy() function (if any was
+             * `g_object_set_qdata()` and removes the `data` from object
+             * without invoking its `destroy()` function (if any was
              * set).
              * Usually, calling this function is only required to update
              * user data pointers with a destroy notifier, for example:
@@ -7721,21 +7914,21 @@ declare module 'gi://IBus?version=1.0' {
              * }
              * ```
              *
-             * Using g_object_get_qdata() in the above example, instead of
-             * g_object_steal_qdata() would have left the destroy function set,
+             * Using `g_object_get_qdata()` in the above example, instead of
+             * `g_object_steal_qdata()` would have left the destroy function set,
              * and thus the partial string list would have been freed upon
-             * g_object_set_qdata_full().
-             * @param quark A #GQuark, naming the user data pointer
-             * @returns The user data pointer set, or %NULL
+             * `g_object_set_qdata_full()`.
+             * @param quark A {@link GLib.Quark}, naming the user data pointer
+             * @returns The user data pointer set, or `null`
              */
             steal_qdata(quark: GLib.Quark): any | null;
             /**
              * Reverts the effect of a previous call to
-             * g_object_freeze_notify(). The freeze count is decreased on `object`
+             * `g_object_freeze_notify()`. The freeze count is decreased on `object`
              * and when it reaches zero, queued "notify" signals are emitted.
              *
              * Duplicate notifications for each property are squashed so that at most one
-             * #GObject::notify signal is emitted for each property, in the reverse order
+             * {@link GObject.Object.SignalSignatures.notify | GObject.Object::notify} signal is emitted for each property, in the reverse order
              * in which they have been queued.
              *
              * It is an error to call this function when the freeze count is zero.
@@ -7745,33 +7938,34 @@ declare module 'gi://IBus?version=1.0' {
              * Decreases the reference count of `object`. When its reference count
              * drops to 0, the object is finalized (i.e. its memory is freed).
              *
-             * If the pointer to the #GObject may be reused in future (for example, if it is
+             * If the pointer to the {@link GObject.Object} may be reused in future (for example, if it is
              * an instance variable of another object), it is recommended to clear the
-             * pointer to %NULL rather than retain a dangling pointer to a potentially
-             * invalid #GObject instance. Use g_clear_object() for this.
+             * pointer to `null` rather than retain a dangling pointer to a potentially
+             * invalid {@link GObject.Object} instance. Use `g_clear_object()` for this.
              */
             unref(): void;
             /**
              * This function essentially limits the life time of the `closure` to
              * the life time of the object. That is, when the object is finalized,
-             * the `closure` is invalidated by calling g_closure_invalidate() on
+             * the `closure` is invalidated by calling `g_closure_invalidate()` on
              * it, in order to prevent invocations of the closure with a finalized
-             * (nonexisting) object. Also, g_object_ref() and g_object_unref() are
-             * added as marshal guards to the `closure,` to ensure that an extra
+             * (nonexisting) object. Also, `g_object_ref()` and `g_object_unref()` are
+             * added as marshal guards to the `closure`, to ensure that an extra
              * reference count is held on `object` during invocation of the
              * `closure`.  Usually, this function will be called on closures that
              * use this `object` as closure data.
-             * @param closure #GClosure to watch
+             * @param closure {@link GObject.Closure} to watch
              */
             watch_closure(closure: GObject.Closure): void;
             /**
-             * the `constructed` function is called by g_object_new() as the
+             * the `constructed` function is called by `g_object_new()` as the
              *  final step of the object creation process.  At the point of the call, all
              *  construction properties have been set on the object.  The purpose of this
              *  call is to allow for object initialisation steps that can only be performed
              *  after construction properties have been set.  `constructed` implementors
              *  should chain up to the `constructed` call of their parent class to allow it
              *  to complete its initialisation.
+             * @virtual
              */
             vfunc_constructed(): void;
             /**
@@ -7780,6 +7974,7 @@ declare module 'gi://IBus?version=1.0' {
              *  needed.
              * @param n_pspecs
              * @param pspecs
+             * @virtual
              */
             vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void;
             /**
@@ -7788,12 +7983,14 @@ declare module 'gi://IBus?version=1.0' {
              *  invocations still work. It may be run multiple times (due to reference
              *  loops). Before returning, `dispose` should chain up to the `dispose` method
              *  of the parent class.
+             * @virtual
              */
             vfunc_dispose(): void;
             /**
              * instance finalization function, should finish the finalization of
              *  the instance begun in `dispose` and chain up to the `finalize` method of the
              *  parent class.
+             * @virtual
              */
             vfunc_finalize(): void;
             /**
@@ -7802,20 +7999,22 @@ declare module 'gi://IBus?version=1.0' {
              * @param property_id
              * @param value
              * @param pspec
+             * @virtual
              */
             vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
              * When possible, eg. when signaling a property change from within the class
-             * that registered the property, you should use g_object_notify_by_pspec()
+             * that registered the property, you should use `g_object_notify_by_pspec()`
              * instead.
              *
              * Note that emission of the notify signal may be blocked with
-             * g_object_freeze_notify(). In this case, the signal emissions are queued
-             * and will be emitted (in reverse order) when g_object_thaw_notify() is
+             * `g_object_freeze_notify()`. In this case, the signal emissions are queued
+             * and will be emitted (in reverse order) when `g_object_thaw_notify()` is
              * called.
              * @param pspec
+             * @virtual
              */
             vfunc_notify(pspec: GObject.ParamSpec): void;
             /**
@@ -7827,6 +8026,7 @@ declare module 'gi://IBus?version=1.0' {
              * @param property_id
              * @param value
              * @param pspec
+             * @virtual
              */
             vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
             /**
@@ -7970,6 +8170,7 @@ declare module 'gi://IBus?version=1.0' {
          *         </para>
          *     </listitem>
          * </itemizedlist>
+         * @gir-type Class
          */
         class ConfigService extends Service {
             static $gtype: GObject.GType<ConfigService>;
@@ -7996,16 +8197,19 @@ declare module 'gi://IBus?version=1.0' {
 
             // Signals
 
+            /** @signal */
             connect<K extends keyof ConfigService.SignalSignatures>(
                 signal: K,
                 callback: GObject.SignalCallback<this, ConfigService.SignalSignatures[K]>,
             ): number;
             connect(signal: string, callback: (...args: any[]) => any): number;
+            /** @signal */
             connect_after<K extends keyof ConfigService.SignalSignatures>(
                 signal: K,
                 callback: GObject.SignalCallback<this, ConfigService.SignalSignatures[K]>,
             ): number;
             connect_after(signal: string, callback: (...args: any[]) => any): number;
+            /** @signal */
             emit<K extends keyof ConfigService.SignalSignatures>(
                 signal: K,
                 ...args: GObject.GjsParameters<ConfigService.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never
@@ -8014,9 +8218,29 @@ declare module 'gi://IBus?version=1.0' {
 
             // Virtual methods
 
+            /**
+             * @param section
+             * @param name
+             * @virtual
+             */
             vfunc_get_value(section: string, name: string): GLib.Variant;
+            /**
+             * @param section
+             * @virtual
+             */
             vfunc_get_values(section: string): GLib.Variant;
+            /**
+             * @param section
+             * @param name
+             * @param value
+             * @virtual
+             */
             vfunc_set_value(section: string, name: string, value: GLib.Variant): boolean;
+            /**
+             * @param section
+             * @param name
+             * @virtual
+             */
             vfunc_unset_value(section: string, name: string): boolean;
 
             // Methods
@@ -8053,6 +8277,7 @@ declare module 'gi://IBus?version=1.0' {
         /**
          * Emoji data likes emoji unicode, annotations, description, category.
          * You can get extended values with g_object_get_properties.
+         * @gir-type Class
          */
         class EmojiData extends Serializable {
             static $gtype: GObject.GType<EmojiData>;
@@ -8066,6 +8291,7 @@ declare module 'gi://IBus?version=1.0' {
             set annotations(val: any);
             /**
              * The emoji category
+             * @construct-only
              */
             get category(): string;
             /**
@@ -8075,6 +8301,7 @@ declare module 'gi://IBus?version=1.0' {
             set description(val: string);
             /**
              * The emoji character
+             * @construct-only
              */
             get emoji(): string;
 
@@ -8095,16 +8322,19 @@ declare module 'gi://IBus?version=1.0' {
 
             // Signals
 
+            /** @signal */
             connect<K extends keyof EmojiData.SignalSignatures>(
                 signal: K,
                 callback: GObject.SignalCallback<this, EmojiData.SignalSignatures[K]>,
             ): number;
             connect(signal: string, callback: (...args: any[]) => any): number;
+            /** @signal */
             connect_after<K extends keyof EmojiData.SignalSignatures>(
                 signal: K,
                 callback: GObject.SignalCallback<this, EmojiData.SignalSignatures[K]>,
             ): number;
             connect_after(signal: string, callback: (...args: any[]) => any): number;
+            /** @signal */
             emit<K extends keyof EmojiData.SignalSignatures>(
                 signal: K,
                 ...args: GObject.GjsParameters<EmojiData.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never
@@ -8113,9 +8343,12 @@ declare module 'gi://IBus?version=1.0' {
 
             // Static methods
 
+            /**
+             * @param path A path of the saved dictionary file.
+             */
             static load(path: string): EmojiData[];
             /**
-             * Save the list of #IBusEmojiData to the cache file.
+             * Save the list of {@link IBus.EmojiData} to the cache file.
              * @param path A path of the saved emoji data.
              * @param list A list of emoji data.
              */
@@ -8124,32 +8357,32 @@ declare module 'gi://IBus?version=1.0' {
             // Methods
 
             /**
-             * Gets the annotation list in #IBusEmojiData. It should not be freed.
-             * @returns annotation list property in #IBusEmojiData
+             * Gets the annotation list in {@link IBus.EmojiData}. It should not be freed.
+             * @returns annotation list property in {@link IBus.EmojiData}
              */
             get_annotations(): string[];
             /**
-             * Gets the emoji category in #IBusEmojiData. It should not be freed.
-             * @returns category property in #IBusEmojiData
+             * Gets the emoji category in {@link IBus.EmojiData}. It should not be freed.
+             * @returns category property in {@link IBus.EmojiData}
              */
             get_category(): string;
             /**
-             * Gets the emoji description in #IBusEmojiData. It should not be freed.
-             * @returns description property in #IBusEmojiData
+             * Gets the emoji description in {@link IBus.EmojiData}. It should not be freed.
+             * @returns description property in {@link IBus.EmojiData}
              */
             get_description(): string;
             /**
-             * Gets the emoji character in #IBusEmojiData. It should not be freed.
-             * @returns emoji property in #IBusEmojiData
+             * Gets the emoji character in {@link IBus.EmojiData}. It should not be freed.
+             * @returns emoji property in {@link IBus.EmojiData}
              */
             get_emoji(): string;
             /**
-             * Sets the annotation list in #IBusEmojiData.
+             * Sets the annotation list in {@link IBus.EmojiData}.
              * @param annotations List of emoji annotations
              */
             set_annotations(annotations: string[]): void;
             /**
-             * Sets the description in #IBusEmojiData.
+             * Sets the description in {@link IBus.EmojiData}.
              * @param description An emoji description
              */
             set_description(description: string): void;
@@ -8158,27 +8391,294 @@ declare module 'gi://IBus?version=1.0' {
         namespace Engine {
             // Signal signatures
             interface SignalSignatures extends Service.SignalSignatures {
+                /**
+                 * Emitted when a hand writing operation is cancelled.
+                 * Implement the member function IBusEngineClass::cancel_hand_writing
+                 * in extended class to receive this signal.
+                 *
+                 * <note><para>Argument `user_data` is ignored in this function.</para>
+                 * </note>
+                 * @signal
+                 * @run-last
+                 */
                 'cancel-hand-writing': (arg0: number) => void;
+                /**
+                 * Emitted when candidate on lookup table is clicked.
+                 * Implement the member function IBusEngineClass::candidate_clicked
+                 * in extended class to receive this signal.
+                 *
+                 * <note><para>Argument `user_data` is ignored in this function.</para>
+                 * </note>
+                 * @signal
+                 * @run-last
+                 */
                 'candidate-clicked': (arg0: number, arg1: number, arg2: number) => void;
+                /**
+                 * Emitted when the down cursor button is pressed.
+                 * Implement the member function IBusEngineClass::cursor_down
+                 * in extended class to receive this signal.
+                 *
+                 * <note><para>Argument `user_data` is ignored in this function.</para>
+                 * </note>
+                 * @signal
+                 * @run-last
+                 */
                 'cursor-down': () => void;
+                /**
+                 * Emitted when the up cursor button is pressed.
+                 * Implement the member function IBusEngineClass::cursor_up
+                 * in extended class to receive this signal.
+                 *
+                 * <note><para>Argument `user_data` is ignored in this function.</para>
+                 * </note>
+                 * @signal
+                 * @run-last
+                 */
                 'cursor-up': () => void;
+                /**
+                 * Emitted when the IME is disabled.
+                 * Implement the member function IBusEngineClass::disable
+                 * in extended class to receive this signal.
+                 *
+                 * See also:  `ibus_bus_set_global_engine()`.
+                 * <note><para>Argument `user_data` is ignored in this function.</para>
+                 * </note>
+                 * @signal
+                 * @run-last
+                 */
                 disable: () => void;
+                /**
+                 * Emitted when the IME is enabled.
+                 * Implement the member function IBusEngineClass::enable
+                 * in extended class to receive this signal.
+                 *
+                 * See also:  `ibus_bus_set_global_engine()`.
+                 * <note><para>Argument `user_data` is ignored in this function.</para>
+                 * </note>
+                 * @signal
+                 * @run-last
+                 */
                 enable: () => void;
+                /**
+                 * Emitted when the client application get the focus.
+                 * Implement the member function IBusEngineClass::focus_in
+                 * in extended class to receive this signal.
+                 *
+                 * See also: `ibus_input_context_focus_in()`
+                 * <note><para>Argument `user_data` is ignored in this function.</para>
+                 * </note>
+                 * @signal
+                 * @run-last
+                 */
                 'focus-in': () => void;
+                /**
+                 * Emitted when the client application get the focus.
+                 * Implement the member function IBusEngineClass::focus_in
+                 * in extended class to receive this signal.
+                 * `object_path` is a unique id by input context.
+                 * `client` indicates a client type:
+                 * 'fake':    focus is on desktop background or other programs where no
+                 *            input is possible
+                 * 'xim':     old X11 programs like xterm, emacs, ...
+                 *            GTK3 programs in a Gnome Xorg session when GTK_IM_MODULE
+                 *            is unset also use xim
+                 * 'gtk-im:&lt;client-name&gt;':  Gtk2 input module is used
+                 * 'gtk3-im:&lt;client-name&gt;': Gtk3 input module is used
+                 * 'gtk4-im:&lt;client-name&gt;': Gtk4 input module is used
+                 *            In case of the Gtk input modules, the name of the
+                 *            client is also shown after the “:”, for example
+                 *            like 'gtk3-im:firefox', 'gtk4-im:gnome-text-editor', …
+                 * 'gnome-shell': Entries handled by gnome-shell
+                 *                (like the command line dialog opened with Alt+F2
+                 *                or the search field when pressing the Super key.)
+                 *                When GTK_IM_MODULE is unset in a Gnome Wayland session
+                 *                all programs which would show 'gtk3-im' or 'gtk4-im'
+                 *                with GTK_IM_MODULE=ibus then show 'gnome-shell'
+                 *                instead.
+                 * 'Qt':      Qt4 programs like keepassx-2.0.3 …
+                 * 'QIBusInputContext': Qt5 programs like keepassxc-2.7.1, anki-2.1.15
+                 *                      telegram-desktop-3.7.3,
+                 *
+                 * You need to set {@link IBus.Engine.SignalSignatures.has_focus_id | IBus.Engine::has-focus-id} property to `true` when you
+                 * construct an {@link IBus.Engine} to use this class method.
+                 *
+                 * See also: `ibus_input_context_focus_in()`
+                 * <note><para>Argument `user_data` is ignored in this function.</para>
+                 * </note>
+                 * @signal
+                 * @run-last
+                 */
                 'focus-in-id': (arg0: string, arg1: string) => void;
+                /**
+                 * Emitted when the client application  lost the focus.
+                 * Implement the member function IBusEngineClass::focus_out
+                 * in extended class to receive this signal.
+                 *
+                 * See also: `ibus_input_context_focus_out()`
+                 * <note><para>Argument `user_data` is ignored in this function.</para>
+                 * </note>
+                 * @signal
+                 * @run-last
+                 */
                 'focus-out': () => void;
+                /**
+                 * Emitted when the client application  lost the focus.
+                 * Implement the member function IBusEngineClass::focus_out
+                 * in extended class to receive this signal.
+                 * `object_path` is a unique id by input context.
+                 * You need to set {@link IBus.Engine.SignalSignatures.has_focus_id | IBus.Engine::has-focus-id} property to `true` when you
+                 * construct an {@link IBus.Engine} to use this class method.
+                 *
+                 * See also: `ibus_input_context_focus_out()`
+                 * <note><para>Argument `user_data` is ignored in this function.</para>
+                 * </note>
+                 * @signal
+                 * @run-last
+                 */
                 'focus-out-id': (arg0: string) => void;
+                /**
+                 * Emitted when the page-down button is pressed.
+                 * Implement the member function IBusEngineClass::page_down
+                 * in extended class to receive this signal.
+                 *
+                 * <note><para>Argument `user_data` is ignored in this function.</para>
+                 * </note>
+                 * @signal
+                 * @run-last
+                 */
                 'page-down': () => void;
+                /**
+                 * Emitted when the page-up button is pressed.
+                 * Implement the member function IBusEngineClass::page_up
+                 * in extended class to receive this signal.
+                 *
+                 * <note><para>Argument `user_data` is ignored in this function.</para>
+                 * </note>
+                 * @signal
+                 * @run-last
+                 */
                 'page-up': () => void;
+                /**
+                 * Emitted when a hand writing operation is cancelled.
+                 * Implement the member function IBusEngineClass::cancel_hand_writing
+                 * in extended class to receive this signal.
+                 *
+                 * <note><para>Argument `user_data` is ignored in this function.</para>
+                 * </note>
+                 * @signal
+                 * @run-last
+                 */
                 'process-hand-writing-event': (arg0: any | null, arg1: number) => void;
+                /**
+                 * Emitted when a key event is received.
+                 * Implement the member function IBusEngineClass::process_key_event
+                 * in extended class to receive this signal.
+                 * Both the key symbol and keycode are passed to the member function.
+                 * See `ibus_input_context_process_key_event()` for further explanation of
+                 * key symbol, keycode and which to use.
+                 * @signal
+                 * @run-last
+                 */
                 'process-key-event': (arg0: number, arg1: number, arg2: number) => boolean | void;
+                /**
+                 * Emitted when a property is activated or change changed.
+                 * Implement the member function IBusEngineClass::property_activate
+                 * in extended class to receive this signal.
+                 *
+                 * <note><para>Argument `user_data` is ignored in this function.</para>
+                 * </note>
+                 * @signal
+                 * @run-last
+                 */
                 'property-activate': (arg0: string, arg1: number) => void;
+                /**
+                 * Emitted when a property is hidden.
+                 * Implement the member function IBusEngineClass::property_hide
+                 * in extended class to receive this signal.
+                 *
+                 * <note><para>Argument `user_data` is ignored in this function.</para>
+                 * </note>
+                 * @signal
+                 * @run-last
+                 */
                 'property-hide': (arg0: string) => void;
+                /**
+                 * Emitted when a property is shown.
+                 * Implement the member function IBusEngineClass::property_side
+                 * in extended class to receive this signal.
+                 *
+                 * <note><para>Argument `user_data` is ignored in this function.</para>
+                 * </note>
+                 * @signal
+                 * @run-last
+                 */
                 'property-show': (arg0: string) => void;
+                /**
+                 * Emitted when the IME is reset.
+                 * Implement the member function IBusEngineClass::reset
+                 * in extended class to receive this signal.
+                 *
+                 * See also:  `ibus_input_context_reset()`.
+                 * <note><para>Argument `user_data` is ignored in this function.</para>
+                 * </note>
+                 * @signal
+                 * @run-last
+                 */
                 reset: () => void;
+                /**
+                 * Emitted when the client application capabilities is set.
+                 * Implement the member function IBusEngineClass::set_capabilities
+                 * in extended class to receive this signal.
+                 *
+                 * See also:  `ibus_input_context_set_capabilities()`.
+                 * <note><para>Argument `user_data` is ignored in this function.</para>
+                 * </note>
+                 * @signal
+                 * @run-last
+                 */
                 'set-capabilities': (arg0: number) => void;
+                /**
+                 * Emitted when the client application content-type (primary
+                 * purpose and hints) is set.  The engine could change the
+                 * behavior according to the content-type.  Implement the member
+                 * function IBusEngineClass::set_content_type
+                 * in extended class to receive this signal.
+                 *
+                 * For example, if the client application wants to restrict input
+                 * to numbers, this signal will be emitted with `purpose` set to
+                 * #IBUS_INPUT_PURPOSE_NUMBER, so the engine can switch the input
+                 * mode to latin.
+                 *
+                 * <note><para>Argument `user_data` is ignored in this
+                 * function.</para></note>
+                 * @signal
+                 * @run-last
+                 */
                 'set-content-type': (arg0: number, arg1: number) => void;
+                /**
+                 * Emitted when the location of IME is set.
+                 * Implement the member function IBusEngineClass::set_cursor_location
+                 * in extended class to receive this signal.
+                 *
+                 * See also:  `ibus_input_context_set_cursor_location()`.
+                 * <note><para>Argument `user_data` is ignored in this function.</para>
+                 * </note>
+                 * @signal
+                 * @run-last
+                 */
                 'set-cursor-location': (arg0: number, arg1: number, arg2: number, arg3: number) => void;
+                /**
+                 * Emitted when a surrounding text is set.
+                 * Implement the member function IBusEngineClass::set_surrounding_text
+                 * in extended class to receive this signal.
+                 * If anchor_pos equals to cursor_pos, it means "there are no selection"
+                 * or "does not support selection retrival".
+                 *
+                 * <note><para>Argument `user_data` is ignored in this function.</para>
+                 * </note>
+                 * @signal
+                 * @run-last
+                 */
                 'set-surrounding-text': (arg0: GObject.Object, arg1: number, arg2: number) => void;
                 'notify::active-surrounding-text': (pspec: GObject.ParamSpec) => void;
                 'notify::engine-name': (pspec: GObject.ParamSpec) => void;
@@ -8203,7 +8703,8 @@ declare module 'gi://IBus?version=1.0' {
          * An IBusEngine provides infrastructure for input method engine.
          * Developers can "extend" this class for input method engine development.
          *
-         * see_also: #IBusComponent, #IBusEngineDesc
+         * see_also: {@link IBus.Component}, {@link IBus.EngineDesc}
+         * @gir-type Class
          */
         class Engine extends Service {
             static $gtype: GObject.GType<Engine>;
@@ -8211,43 +8712,49 @@ declare module 'gi://IBus?version=1.0' {
             // Properties
 
             /**
-             * When this property is set to %TRUE, "RequireSurroundingText" D-Bus
+             * When this property is set to `true`, "RequireSurroundingText" D-Bus
              * signal will be called by ibus-daemon on every focus-in/out event, with
-             * no need for the engine to call ibus_engine_get_surrounding_text().
+             * no need for the engine to call `ibus_engine_get_surrounding_text()`.
              * This property can only be set at construct time.
+             * @construct-only
              */
             get active_surrounding_text(): boolean;
             /**
-             * When this property is set to %TRUE, "RequireSurroundingText" D-Bus
+             * When this property is set to `true`, "RequireSurroundingText" D-Bus
              * signal will be called by ibus-daemon on every focus-in/out event, with
-             * no need for the engine to call ibus_engine_get_surrounding_text().
+             * no need for the engine to call `ibus_engine_get_surrounding_text()`.
              * This property can only be set at construct time.
+             * @construct-only
              */
             get activeSurroundingText(): boolean;
             /**
              * Name of this IBusEngine.
+             * @construct-only
              */
             get engine_name(): string;
             /**
              * Name of this IBusEngine.
+             * @construct-only
              */
             get engineName(): string;
             /**
-             * Use #IBusEngine::focus_in_id()/focus_out_id() class method insteads of
-             * focus_in()/focus_out() class methods when this property is set to %TRUE.
-             * Otherwise, use #IBusEngine::focus_in()/focus_out class methods.
+             * Use {@link IBus.Engine.SignalSignatures.focus_in_id | IBus.Engine::focus_in_id}()/focus_out_id() class method insteads of
+             * `focus_in()`/focus_out() class methods when this property is set to `true`.
+             * Otherwise, use {@link IBus.Engine.SignalSignatures.focus_in | IBus.Engine::focus_in}()/focus_out class methods.
              * This property can only be set at construct time.
              *
              * See also: IBusEngine::focus-in-id
+             * @construct-only
              */
             get has_focus_id(): boolean;
             /**
-             * Use #IBusEngine::focus_in_id()/focus_out_id() class method insteads of
-             * focus_in()/focus_out() class methods when this property is set to %TRUE.
-             * Otherwise, use #IBusEngine::focus_in()/focus_out class methods.
+             * Use {@link IBus.Engine.SignalSignatures.focus_in_id | IBus.Engine::focus_in_id}()/focus_out_id() class method insteads of
+             * `focus_in()`/focus_out() class methods when this property is set to `true`.
+             * Otherwise, use {@link IBus.Engine.SignalSignatures.focus_in | IBus.Engine::focus_in}()/focus_out class methods.
              * This property can only be set at construct time.
              *
              * See also: IBusEngine::focus-in-id
+             * @construct-only
              */
             get hasFocusId(): boolean;
 
@@ -8287,16 +8794,19 @@ declare module 'gi://IBus?version=1.0' {
 
             // Signals
 
+            /** @signal */
             connect<K extends keyof Engine.SignalSignatures>(
                 signal: K,
                 callback: GObject.SignalCallback<this, Engine.SignalSignatures[K]>,
             ): number;
             connect(signal: string, callback: (...args: any[]) => any): number;
+            /** @signal */
             connect_after<K extends keyof Engine.SignalSignatures>(
                 signal: K,
                 callback: GObject.SignalCallback<this, Engine.SignalSignatures[K]>,
             ): number;
             connect_after(signal: string, callback: (...args: any[]) => any): number;
+            /** @signal */
             emit<K extends keyof Engine.SignalSignatures>(
                 signal: K,
                 ...args: GObject.GjsParameters<Engine.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never
@@ -8305,27 +8815,119 @@ declare module 'gi://IBus?version=1.0' {
 
             // Virtual methods
 
+            /**
+             * @param n_strokes
+             * @virtual
+             */
             vfunc_cancel_hand_writing(n_strokes: number): void;
+            /**
+             * @param index
+             * @param button
+             * @param state
+             * @virtual
+             */
             vfunc_candidate_clicked(index: number, button: number, state: number): void;
+            /**
+             * @virtual
+             */
             vfunc_cursor_down(): void;
+            /**
+             * @virtual
+             */
             vfunc_cursor_up(): void;
+            /**
+             * @virtual
+             */
             vfunc_disable(): void;
+            /**
+             * @virtual
+             */
             vfunc_enable(): void;
+            /**
+             * @virtual
+             */
             vfunc_focus_in(): void;
+            /**
+             * @param object_path
+             * @param client
+             * @virtual
+             */
             vfunc_focus_in_id(object_path: string, client: string): void;
+            /**
+             * @virtual
+             */
             vfunc_focus_out(): void;
+            /**
+             * @param object_path
+             * @virtual
+             */
             vfunc_focus_out_id(object_path: string): void;
+            /**
+             * @virtual
+             */
             vfunc_page_down(): void;
+            /**
+             * @virtual
+             */
             vfunc_page_up(): void;
+            /**
+             * @param coordinates
+             * @param coordinates_len
+             * @virtual
+             */
             vfunc_process_hand_writing_event(coordinates: number, coordinates_len: number): void;
+            /**
+             * @param keyval
+             * @param keycode
+             * @param state
+             * @virtual
+             */
             vfunc_process_key_event(keyval: number, keycode: number, state: number): boolean;
+            /**
+             * @param prop_name
+             * @param prop_state
+             * @virtual
+             */
             vfunc_property_activate(prop_name: string, prop_state: number): void;
+            /**
+             * @param prop_name
+             * @virtual
+             */
             vfunc_property_hide(prop_name: string): void;
+            /**
+             * @param prop_name
+             * @virtual
+             */
             vfunc_property_show(prop_name: string): void;
+            /**
+             * @virtual
+             */
             vfunc_reset(): void;
+            /**
+             * @param caps
+             * @virtual
+             */
             vfunc_set_capabilities(caps: number): void;
+            /**
+             * @param purpose
+             * @param hints
+             * @virtual
+             */
             vfunc_set_content_type(purpose: number, hints: number): void;
+            /**
+             * @param x
+             * @param y
+             * @param w
+             * @param h
+             * @virtual
+             */
             vfunc_set_cursor_location(x: number, y: number, w: number, h: number): void;
+            /**
+             * @param text
+             * @param cursor_index
+             * @param anchor_pos
+             * @virtual
+             */
             vfunc_set_surrounding_text(text: Text, cursor_index: number, anchor_pos: number): void;
 
             // Methods
@@ -8356,12 +8958,12 @@ declare module 'gi://IBus?version=1.0' {
              * Get content-type (primary purpose and hints) of the current input
              * context.
              *
-             * See also: #IBusEngine::set-content-type
+             * See also: {@link IBus.Engine.SignalSignatures.set_content_type | IBus.Engine::set-content-type}
              */
             get_content_type(): [number, number];
             /**
-             * Return the name of #IBusEngine.
-             * @returns Name of #IBusEngine.
+             * Return the name of {@link IBus.Engine}.
+             * @returns Name of {@link IBus.Engine}.
              */
             get_name(): string;
             /**
@@ -8369,10 +8971,10 @@ declare module 'gi://IBus?version=1.0' {
              *
              * It is also used to tell the input-context that the engine will
              * utilize surrounding-text.  In that case, it must be called in
-             * #IBusEngine::enable handler, with both `text` and `cursor` set to
-             * %NULL.
+             * {@link IBus.Engine.SignalSignatures.enable | IBus.Engine::enable} handler, with both `text` and `cursor` set to
+             * `null`.
              *
-             * See also: #IBusEngine::set-surrounding-text
+             * See also: {@link IBus.Engine.SignalSignatures.set_surrounding_text | IBus.Engine::set-surrounding-text}
              */
             get_surrounding_text(): [Text | null, number, number];
             /**
@@ -8432,7 +9034,7 @@ declare module 'gi://IBus?version=1.0' {
              * Fast update for big lookup table.
              *
              * If size of lookup table is not over table page size *4,
-             * then it calls ibus_engine_update_lookup_table().
+             * then it calls `ibus_engine_update_lookup_table()`.
              *
              * (Note: The table object will be released, if it is floating.
              *  If caller want to keep the object, caller should make the object
@@ -8454,7 +9056,7 @@ declare module 'gi://IBus?version=1.0' {
             update_preedit_text(text: Text, cursor_pos: number, visible: boolean): void;
             /**
              * Update the pre-edit buffer with commit mode. Similar to
-             * ibus_engine_update_preedit_text(), this function allows users to specify
+             * `ibus_engine_update_preedit_text()`, this function allows users to specify
              * the behavior on focus out when the pre-edit buffer is visible.
              *
              * If `mode` is IBUS_ENGINE_PREEDIT_COMMIT, contents of the pre-edit buffer
@@ -8537,15 +9139,16 @@ declare module 'gi://IBus?version=1.0' {
 
         /**
          * An IBusEngineDesc stores description data of IBusEngine.
-         * The description data can either be passed to ibus_engine_desc_new(),
-         * or loaded from an XML node through ibus_engine_desc_new_from_xml_node()
+         * The description data can either be passed to `ibus_engine_desc_new()`,
+         * or loaded from an XML node through `ibus_engine_desc_new_from_xml_node()`
          * to construct IBusEngineDesc.
          *
          * However, the recommended way to load engine description data is
-         * using ibus_component_new_from_file() to load a component file,
+         * using `ibus_component_new_from_file()` to load a component file,
          * which also includes engine description data.
          *
-         * see_also: #IBusComponent, #IBusEngine
+         * see_also: {@link IBus.Component}, {@link IBus.Engine}
+         * @gir-type Class
          */
         class EngineDesc extends Serializable {
             static $gtype: GObject.GType<EngineDesc>;
@@ -8554,82 +9157,102 @@ declare module 'gi://IBus?version=1.0' {
 
             /**
              * The author of engine description
+             * @construct-only
              */
             get author(): string;
             /**
              * The description of engine description
+             * @construct-only
              */
             get description(): string;
             /**
              * The hotkeys of engine description
+             * @construct-only
              */
             get hotkeys(): string;
             /**
              * The icon of engine description
+             * @construct-only
              */
             get icon(): string;
             /**
              * The key of IBusProperty to change panel icon dynamically.
+             * @construct-only
              */
             get icon_prop_key(): string;
             /**
              * The key of IBusProperty to change panel icon dynamically.
+             * @construct-only
              */
             get iconPropKey(): string;
             /**
              * The language of engine description
+             * @construct-only
              */
             get language(): string;
             /**
              * The layout of engine description
+             * @construct-only
              */
             get layout(): string;
             /**
              * The keyboard option of engine description
+             * @construct-only
              */
             get layout_option(): string;
             /**
              * The keyboard option of engine description
+             * @construct-only
              */
             get layoutOption(): string;
             /**
              * The keyboard variant of engine description
+             * @construct-only
              */
             get layout_variant(): string;
             /**
              * The keyboard variant of engine description
+             * @construct-only
              */
             get layoutVariant(): string;
             /**
              * The license of engine description
+             * @construct-only
              */
             get license(): string;
             /**
              * The longname of engine description
+             * @construct-only
              */
             get longname(): string;
             /**
              * The name of engine description
+             * @construct-only
              */
             get name(): string;
             /**
              * The rank of engine description
+             * @construct-only
              */
             get rank(): number;
             /**
              * The exec lists of the engine setup command
+             * @construct-only
              */
             get setup(): string;
             /**
              * The symbol chars of engine description instead of icon image
+             * @construct-only
              */
             get symbol(): string;
             /**
              * The textdomain of engine description
+             * @construct-only
              */
             get textdomain(): string;
             /**
              * The version number of engine description
+             * @construct-only
              */
             get version(): string;
 
@@ -8666,16 +9289,19 @@ declare module 'gi://IBus?version=1.0' {
 
             // Signals
 
+            /** @signal */
             connect<K extends keyof EngineDesc.SignalSignatures>(
                 signal: K,
                 callback: GObject.SignalCallback<this, EngineDesc.SignalSignatures[K]>,
             ): number;
             connect(signal: string, callback: (...args: any[]) => any): number;
+            /** @signal */
             connect_after<K extends keyof EngineDesc.SignalSignatures>(
                 signal: K,
                 callback: GObject.SignalCallback<this, EngineDesc.SignalSignatures[K]>,
             ): number;
             connect_after(signal: string, callback: (...args: any[]) => any): number;
+            /** @signal */
             emit<K extends keyof EngineDesc.SignalSignatures>(
                 signal: K,
                 ...args: GObject.GjsParameters<EngineDesc.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never
@@ -8797,7 +9423,8 @@ declare module 'gi://IBus?version=1.0' {
         /**
          * An IBusEngineSimple provides table-based input method logic.
          *
-         * see_also: #IBusEngine
+         * see_also: {@link IBus.Engine}
+         * @gir-type Class
          */
         class EngineSimple extends Engine {
             static $gtype: GObject.GType<EngineSimple>;
@@ -8819,16 +9446,19 @@ declare module 'gi://IBus?version=1.0' {
 
             // Signals
 
+            /** @signal */
             connect<K extends keyof EngineSimple.SignalSignatures>(
                 signal: K,
                 callback: GObject.SignalCallback<this, EngineSimple.SignalSignatures[K]>,
             ): number;
             connect(signal: string, callback: (...args: any[]) => any): number;
+            /** @signal */
             connect_after<K extends keyof EngineSimple.SignalSignatures>(
                 signal: K,
                 callback: GObject.SignalCallback<this, EngineSimple.SignalSignatures[K]>,
             ): number;
             connect_after(signal: string, callback: (...args: any[]) => any): number;
+            /** @signal */
             emit<K extends keyof EngineSimple.SignalSignatures>(
                 signal: K,
                 ...args: GObject.GjsParameters<EngineSimple.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never
@@ -8838,9 +9468,9 @@ declare module 'gi://IBus?version=1.0' {
             // Methods
 
             /**
-             * Call ibus_engine_simple_add_table() internally by locale.
+             * Call `ibus_engine_simple_add_table()` internally by locale.
              * @param file The compose file.
-             * @returns %TRUE if the @file is loaded.
+             * @returns `true` if the `file` is loaded.
              */
             add_compose_file(file: string): boolean;
             /**
@@ -8852,14 +9482,14 @@ declare module 'gi://IBus?version=1.0' {
              * The table must be sorted in dictionary order on the numeric value of the key
              * symbol fields. (Values beyond the length of the sequence should be zero.)
              * @param data The table which must be available      during the whole life of the simple engine.
-             * @param max_seq_len Maximum length of a sequence in the table (cannot be greater      than %IBUS_MAX_COMPOSE_LEN)
+             * @param max_seq_len Maximum length of a sequence in the table (cannot be greater      than `IBUS_MAX_COMPOSE_LEN`)
              * @param n_seqs number of sequences in the table
              */
             add_table(data: number[], max_seq_len: number, n_seqs: number): void;
             /**
-             * Call ibus_engine_simple_add_table() internally by locale.
-             * @param locale The locale name. If the locale is %NULL,                        the current locale is used.
-             * @returns %TRUE if the @locale is matched to the table.
+             * Call `ibus_engine_simple_add_table()` internally by locale.
+             * @param locale The locale name. If the locale is `null`,                        the current locale is used.
+             * @returns `true` if the `locale` is matched to the table.
              */
             add_table_by_locale(locale?: string | null): boolean;
         }
@@ -8889,6 +9519,7 @@ declare module 'gi://IBus?version=1.0' {
 
         /**
          * IBusExtensionEvent properties.
+         * @gir-type Class
          */
         class ExtensionEvent extends Serializable {
             static $gtype: GObject.GType<ExtensionEvent>;
@@ -8896,39 +9527,46 @@ declare module 'gi://IBus?version=1.0' {
             // Properties
 
             /**
-             * %TRUE if the extension is enabled in the #IBusExtensionEvent.
+             * `true` if the extension is enabled in the {@link IBus.ExtensionEvent}.
+             * @construct-only
              */
             get is_enabled(): boolean;
             /**
-             * %TRUE if the extension is enabled in the #IBusExtensionEvent.
+             * `true` if the extension is enabled in the {@link IBus.ExtensionEvent}.
+             * @construct-only
              */
             get isEnabled(): boolean;
             /**
-             * %TRUE if the #IBusExtensionEvent is called by an extension.
-             * %FALSE if the #IBusExtensionEvent is called by an active engine or
+             * `true` if the {@link IBus.ExtensionEvent} is called by an extension.
+             * `false` if the {@link IBus.ExtensionEvent} is called by an active engine or
              * panel.
-             * If this value is %TRUE, the event is send to ibus-daemon, an active
-             * engine. If it's %FALSE, the event is sned to ibus-daemon, panels.
+             * If this value is `true`, the event is send to ibus-daemon, an active
+             * engine. If it's `false`, the event is sned to ibus-daemon, panels.
+             * @construct-only
              */
             get is_extension(): boolean;
             /**
-             * %TRUE if the #IBusExtensionEvent is called by an extension.
-             * %FALSE if the #IBusExtensionEvent is called by an active engine or
+             * `true` if the {@link IBus.ExtensionEvent} is called by an extension.
+             * `false` if the {@link IBus.ExtensionEvent} is called by an active engine or
              * panel.
-             * If this value is %TRUE, the event is send to ibus-daemon, an active
-             * engine. If it's %FALSE, the event is sned to ibus-daemon, panels.
+             * If this value is `true`, the event is send to ibus-daemon, an active
+             * engine. If it's `false`, the event is sned to ibus-daemon, panels.
+             * @construct-only
              */
             get isExtension(): boolean;
             /**
-             * Name of the extension in the #IBusExtensionEvent.
+             * Name of the extension in the {@link IBus.ExtensionEvent}.
+             * @construct-only
              */
             get name(): string;
             /**
-             * Parameters to enable the extension in the #IBusExtensionEvent.
+             * Parameters to enable the extension in the {@link IBus.ExtensionEvent}.
+             * @construct-only
              */
             get params(): string;
             /**
-             * Version of the #IBusExtensionEvent.
+             * Version of the {@link IBus.ExtensionEvent}.
+             * @read-only
              */
             get version(): number;
 
@@ -8949,16 +9587,19 @@ declare module 'gi://IBus?version=1.0' {
 
             // Signals
 
+            /** @signal */
             connect<K extends keyof ExtensionEvent.SignalSignatures>(
                 signal: K,
                 callback: GObject.SignalCallback<this, ExtensionEvent.SignalSignatures[K]>,
             ): number;
             connect(signal: string, callback: (...args: any[]) => any): number;
+            /** @signal */
             connect_after<K extends keyof ExtensionEvent.SignalSignatures>(
                 signal: K,
                 callback: GObject.SignalCallback<this, ExtensionEvent.SignalSignatures[K]>,
             ): number;
             connect_after(signal: string, callback: (...args: any[]) => any): number;
+            /** @signal */
             emit<K extends keyof ExtensionEvent.SignalSignatures>(
                 signal: K,
                 ...args: GObject.GjsParameters<ExtensionEvent.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never
@@ -8968,13 +9609,28 @@ declare module 'gi://IBus?version=1.0' {
             // Methods
 
             get_name(): string;
+            /**
+             * @returns Parameters to enable the extension for {@link IBus.XEvent}
+             */
             get_params(): string;
+            /**
+             * @returns Version of {@link IBus.ExtensionEvent}
+             */
             get_version(): number;
         }
 
         namespace Factory {
             // Signal signatures
             interface SignalSignatures extends Service.SignalSignatures {
+                /**
+                 * The ::create-engine signal is a signal to create IBusEngine
+                 * with `engine_name`, which gets emitted when IBusFactory
+                 * received CreateEngine dbus method. The callback functions
+                 * will be called until a callback returns a non-null object
+                 * of IBusEngine.
+                 * @signal
+                 * @run-last
+                 */
                 'create-engine': (arg0: string) => Engine | null;
                 'notify::connection': (pspec: GObject.ParamSpec) => void;
                 'notify::object-path': (pspec: GObject.ParamSpec) => void;
@@ -8986,11 +9642,12 @@ declare module 'gi://IBus?version=1.0' {
         }
 
         /**
-         * An IBusFactory is an #IBusService that creates input method engine (IME) instance.
+         * An IBusFactory is an {@link IBus.Service} that creates input method engine (IME) instance.
          * It provides CreateEngine remote method, which creates an IME instance by name,
          * and returns the D-Bus object path to IBus daemon.
          *
-         * see_also: #IBusEngine
+         * see_also: {@link IBus.Engine}
+         * @gir-type Class
          */
         class Factory extends Service {
             static $gtype: GObject.GType<Factory>;
@@ -9017,16 +9674,19 @@ declare module 'gi://IBus?version=1.0' {
 
             // Signals
 
+            /** @signal */
             connect<K extends keyof Factory.SignalSignatures>(
                 signal: K,
                 callback: GObject.SignalCallback<this, Factory.SignalSignatures[K]>,
             ): number;
             connect(signal: string, callback: (...args: any[]) => any): number;
+            /** @signal */
             connect_after<K extends keyof Factory.SignalSignatures>(
                 signal: K,
                 callback: GObject.SignalCallback<this, Factory.SignalSignatures[K]>,
             ): number;
             connect_after(signal: string, callback: (...args: any[]) => any): number;
+            /** @signal */
             emit<K extends keyof Factory.SignalSignatures>(
                 signal: K,
                 ...args: GObject.GjsParameters<Factory.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never
@@ -9036,8 +9696,9 @@ declare module 'gi://IBus?version=1.0' {
             // Virtual methods
 
             /**
-             * Creates an #IBusEngine with `engine_name`.
+             * Creates an {@link IBus.Engine} with `engine_name`.
              * @param engine_name Name of an engine.
+             * @virtual
              */
             vfunc_create_engine(engine_name: string): Engine;
 
@@ -9050,9 +9711,9 @@ declare module 'gi://IBus?version=1.0' {
              */
             add_engine(engine_name: string, engine_type: GObject.GType): void;
             /**
-             * Creates an #IBusEngine with `engine_name`.
+             * Creates an {@link IBus.Engine} with `engine_name`.
              * @param engine_name Name of an engine.
-             * @returns #IBusEngine with @engine_name.
+             * @returns {@link IBus.Engine} with `engine_name`.
              */
             create_engine(engine_name: string): Engine;
         }
@@ -9060,6 +9721,15 @@ declare module 'gi://IBus?version=1.0' {
         namespace HotkeyProfile {
             // Signal signatures
             interface SignalSignatures extends Serializable.SignalSignatures {
+                /**
+                 * Emitted when a hotkey is pressed and the hotkey is in profile.
+                 * Implement the member function `trigger()` in extended class to receive this signal.
+                 *
+                 * <note><para>The last parameter, user_data is not actually a valid parameter. It is displayed because of GtkDoc bug.</para></note>
+                 * @signal
+                 * @detailed
+                 * @run-last
+                 */
                 trigger: (arg0: number, arg1: any | null) => void;
             }
 
@@ -9070,6 +9740,7 @@ declare module 'gi://IBus?version=1.0' {
 
         /**
          * An opaque data type representing an IBusHotkeyProfile.
+         * @gir-type Class
          */
         class HotkeyProfile extends Serializable {
             static $gtype: GObject.GType<HotkeyProfile>;
@@ -9093,16 +9764,19 @@ declare module 'gi://IBus?version=1.0' {
 
             // Signals
 
+            /** @signal */
             connect<K extends keyof HotkeyProfile.SignalSignatures>(
                 signal: K,
                 callback: GObject.SignalCallback<this, HotkeyProfile.SignalSignatures[K]>,
             ): number;
             connect(signal: string, callback: (...args: any[]) => any): number;
+            /** @signal */
             connect_after<K extends keyof HotkeyProfile.SignalSignatures>(
                 signal: K,
                 callback: GObject.SignalCallback<this, HotkeyProfile.SignalSignatures[K]>,
             ): number;
             connect_after(signal: string, callback: (...args: any[]) => any): number;
+            /** @signal */
             emit<K extends keyof HotkeyProfile.SignalSignatures>(
                 signal: K,
                 ...args: GObject.GjsParameters<HotkeyProfile.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never
@@ -9111,25 +9785,29 @@ declare module 'gi://IBus?version=1.0' {
 
             // Virtual methods
 
+            /**
+             * @param event
+             * @virtual
+             */
             vfunc_trigger(event: GLib.Quark): void;
 
             // Methods
 
             /**
-             * Adds a hotkey and its associated event to an #IBusHotkeyProfile.
+             * Adds a hotkey and its associated event to an {@link IBus.HotkeyProfile}.
              * @param keyval Keycode of the hotkey.
              * @param modifiers Modifiers of the hotkey.
              * @param event The event to be associated.
-             * @returns Always %TRUE.
+             * @returns Always `true`.
              */
             add_hotkey(keyval: number, modifiers: number, event: GLib.Quark): boolean;
             /**
-             * Adds a hotkey and its associated event to an #IBusHotkeyProfile.
+             * Adds a hotkey and its associated event to an {@link IBus.HotkeyProfile}.
              * The hotkey is in string format, such like
              * <constant>Control+Shift+A</constant>.
              * @param str Key in string representation.  '+' is the separator.
              * @param event The event to be associated.
-             * @returns FALSE if @str contains invalid symbol; TRUE otherwise.
+             * @returns FALSE if `str` contains invalid symbol; TRUE otherwise.
              */
             add_hotkey_from_string(str: string, event: GLib.Quark): boolean;
             /**
@@ -9148,18 +9826,23 @@ declare module 'gi://IBus?version=1.0' {
                 prev_modifiers: number,
                 user_data?: any | null,
             ): GLib.Quark;
-            lookup_hotkey(keyval: number, modifiers: number): GLib.Quark;
             /**
-             * Removes the hotkey for an #IBusHotkeyProfile.
              * @param keyval Keycode of the hotkey.
              * @param modifiers Modifiers of the hotkey.
-             * @returns %FALSE if the key is not in @profile, %TRUE otherwise.
+             * @returns The event associated to the hotkey or 0 if the hotkey is not in the profile.
+             */
+            lookup_hotkey(keyval: number, modifiers: number): GLib.Quark;
+            /**
+             * Removes the hotkey for an {@link IBus.HotkeyProfile}.
+             * @param keyval Keycode of the hotkey.
+             * @param modifiers Modifiers of the hotkey.
+             * @returns `false` if the key is not in `profile`, `true` otherwise.
              */
             remove_hotkey(keyval: number, modifiers: number): boolean;
             /**
-             * Removes the hotkey for an #IBusHotkeyProfile by event.
+             * Removes the hotkey for an {@link IBus.HotkeyProfile} by event.
              * @param event The associated event.
-             * @returns %FALSE if no such event in @profile, %TRUE otherwise.
+             * @returns `false` if no such event in `profile`, `true` otherwise.
              */
             remove_hotkey_by_event(event: GLib.Quark): boolean;
         }
@@ -9167,27 +9850,165 @@ declare module 'gi://IBus?version=1.0' {
         namespace InputContext {
             // Signal signatures
             interface SignalSignatures extends Proxy.SignalSignatures {
+                /**
+                 * Emitted when the text is going to be committed.
+                 *
+                 * (Note: The text object is floating, and it will be released after the
+                 *  signal. If signal handler wants to keep the object, the handler should
+                 *  use `g_object_ref_sink()` to get the ownership of the object.)
+                 * @signal
+                 * @run-last
+                 */
                 'commit-text': (arg0: Text) => void;
+                /**
+                 * Emitted to select next candidate of lookup table.
+                 * @signal
+                 * @run-last
+                 */
                 'cursor-down-lookup-table': () => void;
+                /**
+                 * Emitted to select previous candidate of lookup table.
+                 * @signal
+                 * @run-last
+                 */
                 'cursor-up-lookup-table': () => void;
+                /**
+                 * Emitted to delete surrounding text event from IME to client of IME.
+                 * @signal
+                 * @run-last
+                 */
                 'delete-surrounding-text': (arg0: number, arg1: number) => void;
+                /**
+                 * Emitted when an IME is disabled.
+                 * @signal
+                 * @run-last
+                 */
                 disabled: () => void;
+                /**
+                 * Emitted when an IME is enabled.
+                 * @signal
+                 * @run-last
+                 */
                 enabled: () => void;
+                /**
+                 * Emitted to forward key event from IME to client of IME.
+                 * @signal
+                 * @run-last
+                 */
                 'forward-key-event': (arg0: number, arg1: number, arg2: number) => void;
+                /**
+                 * Emitted to hide auxiliary text.
+                 * @signal
+                 * @run-last
+                 */
                 'hide-auxiliary-text': () => void;
+                /**
+                 * Emitted to hide lookup table.
+                 * @signal
+                 * @run-last
+                 */
                 'hide-lookup-table': () => void;
+                /**
+                 * Emitted to hide preedit text.
+                 * @signal
+                 * @run-last
+                 */
                 'hide-preedit-text': () => void;
+                /**
+                 * Emitted to view the next page of lookup table.
+                 * @signal
+                 * @run-last
+                 */
                 'page-down-lookup-table': () => void;
+                /**
+                 * Emitted to view the previous page of lookup table.
+                 * @signal
+                 * @run-last
+                 */
                 'page-up-lookup-table': () => void;
+                /**
+                 * Emitted to register the properties in `props`.
+                 *
+                 * (Note: The props object is floating, and it will be released after the
+                 *  signal. If signal handler wants to keep the object, the handler should
+                 *  use `g_object_ref_sink()` to get the ownership of the object.)
+                 * @signal
+                 * @run-last
+                 */
                 'register-properties': (arg0: PropList) => void;
+                /**
+                 * Emitted to receive the RequireSurroundingText signal from the daemon.
+                 * @signal
+                 * @run-last
+                 */
                 'require-surrounding-text': () => void;
+                /**
+                 * Emitted to show auxiliary text.
+                 * @signal
+                 * @run-last
+                 */
                 'show-auxiliary-text': () => void;
+                /**
+                 * Emitted to show lookup table.
+                 * @signal
+                 * @run-last
+                 */
                 'show-lookup-table': () => void;
+                /**
+                 * Emitted to show preedit text.
+                 * @signal
+                 * @run-last
+                 */
                 'show-preedit-text': () => void;
+                /**
+                 * Emitted to hide auxilary text.
+                 *
+                 * (Note: The text object is floating, and it will be released after the
+                 *  signal. If signal handler wants to keep the object, the handler should
+                 *  use `g_object_ref_sink()` to get the ownership of the object.)
+                 * @signal
+                 * @run-last
+                 */
                 'update-auxiliary-text': (arg0: Text, arg1: boolean) => void;
+                /**
+                 * Emitted to update lookup table.
+                 *
+                 * (Note: The table object is floating, and it will be released after the
+                 *  signal. If signal handler wants to keep the object, the handler should
+                 *  use `g_object_ref_sink()` to get the ownership of the object.)
+                 * @signal
+                 * @run-last
+                 */
                 'update-lookup-table': (arg0: LookupTable, arg1: boolean) => void;
+                /**
+                 * Emitted to update preedit text.
+                 *
+                 * (Note: The text object is floating, and it will be released after the
+                 *  signal. If signal handler wants to keep the object, the handler should
+                 *  use `g_object_ref_sink()` to get the ownership of the object.)
+                 * @signal
+                 * @run-last
+                 */
                 'update-preedit-text': (arg0: Text, arg1: number, arg2: boolean) => void;
+                /**
+                 * Emitted to update preedit text with the mode.
+                 *
+                 * (Note: The text object is floating, and it will be released after the
+                 *  signal. If signal handler wants to keep the object, the handler should
+                 *  use `g_object_ref_sink()` to get the ownership of the object.)
+                 * @signal
+                 * @run-last
+                 */
                 'update-preedit-text-with-mode': (arg0: Text, arg1: number, arg2: boolean, arg3: number) => void;
+                /**
+                 * Emitted to update the property `prop`.
+                 *
+                 * (Note: The prop object is floating, and it will be released after the
+                 *  signal. If signal handler wants to keep the object, the handler should
+                 *  use `g_object_ref_sink()` to get the ownership of the object.)
+                 * @signal
+                 * @run-last
+                 */
                 'update-property': (arg0: Property) => void;
                 'notify::g-bus-type': (pspec: GObject.ParamSpec) => void;
                 'notify::g-connection': (pspec: GObject.ParamSpec) => void;
@@ -9217,6 +10038,7 @@ declare module 'gi://IBus?version=1.0' {
          *
          * Clients call the IBusInputContext to invoke BusInputContext,
          * through which invokes IBusEngine.
+         * @gir-type Class
          */
         class InputContext extends Proxy implements Gio.AsyncInitable<InputContext>, Gio.DBusInterface, Gio.Initable {
             static $gtype: GObject.GType<InputContext>;
@@ -9249,16 +10071,19 @@ declare module 'gi://IBus?version=1.0' {
 
             // Signals
 
+            /** @signal */
             connect<K extends keyof InputContext.SignalSignatures>(
                 signal: K,
                 callback: GObject.SignalCallback<this, InputContext.SignalSignatures[K]>,
             ): number;
             connect(signal: string, callback: (...args: any[]) => any): number;
+            /** @signal */
             connect_after<K extends keyof InputContext.SignalSignatures>(
                 signal: K,
                 callback: GObject.SignalCallback<this, InputContext.SignalSignatures[K]>,
             ): number;
             connect_after(signal: string, callback: (...args: any[]) => any): number;
+            /** @signal */
             emit<K extends keyof InputContext.SignalSignatures>(
                 signal: K,
                 ...args: GObject.GjsParameters<InputContext.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never
@@ -9274,11 +10099,11 @@ declare module 'gi://IBus?version=1.0' {
              */
             static get_input_context(path: string, connection: Gio.DBusConnection): InputContext;
             /**
-             * Gets an existing #IBusInputContext asynchronously.
+             * Gets an existing {@link IBus.InputContext} asynchronously.
              * @param path The path to the object that emitting the signal.
-             * @param connection A #GDBusConnection.
-             * @param cancellable A #GCancellable or %NULL.
-             * @param callback A #GAsyncReadyCallback to call when the request is satisfied.      The callback should not be %NULL.
+             * @param connection A {@link Gio.DBusConnection}.
+             * @param cancellable A {@link Gio.Cancellable} or `null`.
+             * @param callback A {@link Gio.AsyncReadyCallback} to call when the request is satisfied.      The callback should not be `null`.
              */
             static get_input_context_async(
                 path: string,
@@ -9288,16 +10113,16 @@ declare module 'gi://IBus?version=1.0' {
             ): void;
             /**
              * Finishes an operation started with
-             * ibus_input_context_get_input_context_async().
-             * @param res A #GAsyncResult obtained from the #GAsyncReadyCallback pass to      ibus_input_context_get_input_context_async().
+             * `ibus_input_context_get_input_context_async()`.
+             * @param res A {@link Gio.AsyncResult} obtained from the {@link Gio.AsyncReadyCallback} pass to      `ibus_input_context_get_input_context_async()`.
              */
             static get_input_context_async_finish(res: Gio.AsyncResult): InputContext;
             /**
-             * Creates a new #IBusInputContext asynchronously.
+             * Creates a new {@link IBus.InputContext} asynchronously.
              * @param path The path to the object that emitting the signal.
-             * @param connection A #GDBusConnection.
-             * @param cancellable A #GCancellable or %NULL.
-             * @param callback A #GAsyncReadyCallback to call when the request is satisfied.      The callback should not be %NULL.
+             * @param connection A {@link Gio.DBusConnection}.
+             * @param cancellable A {@link Gio.Cancellable} or `null`.
+             * @param callback A {@link Gio.AsyncReadyCallback} to call when the request is satisfied.      The callback should not be `null`.
              */
             static new_async(
                 path: string,
@@ -9311,7 +10136,7 @@ declare module 'gi://IBus?version=1.0' {
             /**
              * Clear handwriting stroke(s) in the current input method engine.
              *
-             * see_also: #IBusEngine::cancel-hand-writing
+             * see_also: {@link IBus.Engine.SignalSignatures.cancel_hand_writing | IBus.Engine::cancel-hand-writing}
              * @param n_strokes The number of strokes to be removed. Pass 0 to remove all.
              */
             cancel_hand_writing(n_strokes: number): void;
@@ -9319,13 +10144,13 @@ declare module 'gi://IBus?version=1.0' {
              * Invoked when the client application get focus. An asynchronous IPC will
              * be performed.
              *
-             * see_also: #IBusEngine::focus_in.
+             * see_also: {@link IBus.Engine.SignalSignatures.focus_in | IBus.Engine::focus_in}.
              */
             focus_in(): void;
             /**
              * Invoked when the client application get focus. An asynchronous IPC will be performed.
              *
-             * see_also: #IBusEngine::focus_out.
+             * see_also: {@link IBus.Engine.SignalSignatures.focus_out | IBus.Engine::focus_out}.
              */
             focus_out(): void;
             /**
@@ -9337,7 +10162,7 @@ declare module 'gi://IBus?version=1.0' {
             /**
              * An asynchronous IPC will be performed.
              * @param timeout_msec The timeout in milliseconds or -1 to use the default timeout.
-             * @param cancellable A #GCancellable or %NULL.
+             * @param cancellable A {@link Gio.Cancellable} or `null`.
              */
             get_engine_async(
                 timeout_msec: number,
@@ -9346,8 +10171,8 @@ declare module 'gi://IBus?version=1.0' {
             /**
              * An asynchronous IPC will be performed.
              * @param timeout_msec The timeout in milliseconds or -1 to use the default timeout.
-             * @param cancellable A #GCancellable or %NULL.
-             * @param callback A #GAsyncReadyCallback to call when the request is satisfied or     %NULL if you don't care about the result of the method invocation.
+             * @param cancellable A {@link Gio.Cancellable} or `null`.
+             * @param callback A {@link Gio.AsyncReadyCallback} to call when the request is satisfied or     `null` if you don't care about the result of the method invocation.
              */
             get_engine_async(
                 timeout_msec: number,
@@ -9357,8 +10182,8 @@ declare module 'gi://IBus?version=1.0' {
             /**
              * An asynchronous IPC will be performed.
              * @param timeout_msec The timeout in milliseconds or -1 to use the default timeout.
-             * @param cancellable A #GCancellable or %NULL.
-             * @param callback A #GAsyncReadyCallback to call when the request is satisfied or     %NULL if you don't care about the result of the method invocation.
+             * @param cancellable A {@link Gio.Cancellable} or `null`.
+             * @param callback A {@link Gio.AsyncReadyCallback} to call when the request is satisfied or     `null` if you don't care about the result of the method invocation.
              */
             get_engine_async(
                 timeout_msec: number,
@@ -9366,22 +10191,22 @@ declare module 'gi://IBus?version=1.0' {
                 callback?: Gio.AsyncReadyCallback<this> | null,
             ): globalThis.Promise<EngineDesc> | void;
             /**
-             * Finishes an operation started with ibus_input_context_get_engine_async().
-             * @param res A #GAsyncResult obtained from the #GAsyncReadyCallback passed to   ibus_input_context_get_engine_async().
-             * @returns An IME engine description for the context, or     %NULL.
+             * Finishes an operation started with `ibus_input_context_get_engine_async()`.
+             * @param res A {@link Gio.AsyncResult} obtained from the {@link Gio.AsyncReadyCallback} passed to   `ibus_input_context_get_engine_async()`.
+             * @returns An IME engine description for the context, or     `null`.
              */
             get_engine_async_finish(res: Gio.AsyncResult): EngineDesc;
             /**
              * Check whether the current engine requires surrounding-text.
-             * @returns %TRUE if surrounding-text is needed by the current engine; %FALSE otherwise.
+             * @returns `true` if surrounding-text is needed by the current engine; `false` otherwise.
              */
             needs_surrounding_text(): boolean;
             /**
-             * Call this API after ibus_input_context_process_key_event() returns
+             * Call this API after `ibus_input_context_process_key_event()` returns
              * to retrieve commit-text and forwar-key-event signals during
-             * calling ibus_input_context_process_key_event().
+             * calling `ibus_input_context_process_key_event()`.
              *
-             * See also ibus_input_context_set_post_process_key_event().
+             * See also `ibus_input_context_set_post_process_key_event()`.
              */
             post_process_key_event(): void;
             /**
@@ -9395,7 +10220,7 @@ declare module 'gi://IBus?version=1.0' {
              * The function is usually called when a user releases the mouse button in a hand
              * writing area.
              *
-             * see_also: #IBusEngine::process-hand-writing-event
+             * see_also: {@link IBus.Engine.SignalSignatures.process_hand_writing_event | IBus.Engine::process-hand-writing-event}
              * @param coordinates An array of gdouble (0.0 to 1.0) which represents a stroke (i.e. [x1, y1, x2, y2, x3, y3, ...]).
              * @param coordinates_len The number of elements in the array. The number should be even and >= 4.
              */
@@ -9406,7 +10231,7 @@ declare module 'gi://IBus?version=1.0' {
              * @param keyval Key symbol of a key event.
              * @param keycode Keycode of a key event.
              * @param state Key modifier flags.
-             * @returns %TRUE for successfully process the key; %FALSE otherwise. See also: ibus_input_context_process_key_event_async()
+             * @returns `true` for successfully process the key; `false` otherwise. See also: `ibus_input_context_process_key_event_async()`
              */
             process_key_event(keyval: number, keycode: number, state: number): boolean;
             /**
@@ -9426,9 +10251,9 @@ declare module 'gi://IBus?version=1.0' {
              * use keycode; while pinyin can rely on keyval only, as it is less sensitive to
              * the keyboard layout change, DVORAK users can still use DVORAK layout to input pinyin.
              *
-             * Use ibus_keymap_lookup_keysym() to convert keycode to keysym in given keyboard layout.
+             * Use `ibus_keymap_lookup_keysym()` to convert keycode to keysym in given keyboard layout.
              *
-             * see_also: #IBusEngine::process-key-event
+             * see_also: {@link IBus.Engine.SignalSignatures.process_key_event | IBus.Engine::process-key-event}
              * @param keyval Key symbol of a key event.
              * @param keycode Keycode of a key event.
              * @param state Key modifier flags.
@@ -9459,9 +10284,9 @@ declare module 'gi://IBus?version=1.0' {
              * use keycode; while pinyin can rely on keyval only, as it is less sensitive to
              * the keyboard layout change, DVORAK users can still use DVORAK layout to input pinyin.
              *
-             * Use ibus_keymap_lookup_keysym() to convert keycode to keysym in given keyboard layout.
+             * Use `ibus_keymap_lookup_keysym()` to convert keycode to keysym in given keyboard layout.
              *
-             * see_also: #IBusEngine::process-key-event
+             * see_also: {@link IBus.Engine.SignalSignatures.process_key_event | IBus.Engine::process-key-event}
              * @param keyval Key symbol of a key event.
              * @param keycode Keycode of a key event.
              * @param state Key modifier flags.
@@ -9494,9 +10319,9 @@ declare module 'gi://IBus?version=1.0' {
              * use keycode; while pinyin can rely on keyval only, as it is less sensitive to
              * the keyboard layout change, DVORAK users can still use DVORAK layout to input pinyin.
              *
-             * Use ibus_keymap_lookup_keysym() to convert keycode to keysym in given keyboard layout.
+             * Use `ibus_keymap_lookup_keysym()` to convert keycode to keysym in given keyboard layout.
              *
-             * see_also: #IBusEngine::process-key-event
+             * see_also: {@link IBus.Engine.SignalSignatures.process_key_event | IBus.Engine::process-key-event}
              * @param keyval Key symbol of a key event.
              * @param keycode Keycode of a key event.
              * @param state Key modifier flags.
@@ -9514,15 +10339,15 @@ declare module 'gi://IBus?version=1.0' {
             ): globalThis.Promise<boolean> | void;
             /**
              * Finishes an operation started with
-             *      ibus_input_context_process_key_event_async().
-             * @param res A #GAsyncResult obtained from the #GAsyncReadyCallback passed to      ibus_input_context_process_key_event_async().
-             * @returns %TRUE if the key event is processed;      %FALSE otherwise or some errors happen and the @error will be set.
+             *      `ibus_input_context_process_key_event_async()`.
+             * @param res A {@link Gio.AsyncResult} obtained from the {@link Gio.AsyncReadyCallback} passed to      `ibus_input_context_process_key_event_async()`.
+             * @returns `true` if the key event is processed;      `false` otherwise or some errors happen and the `error` will be set.
              */
             process_key_event_async_finish(res: Gio.AsyncResult): boolean;
             /**
              * Activate the property asynchronously.
              *
-             * See also: #IBusEngine::property_activate
+             * See also: {@link IBus.Engine.SignalSignatures.property_activate | IBus.Engine::property_activate}
              * @param prop_name A property name (e.g. "InputMode.WideLatin")
              * @param state A status of the property (e.g. PROP_STATE_CHECKED)
              */
@@ -9530,7 +10355,7 @@ declare module 'gi://IBus?version=1.0' {
             /**
              * Invoked when the IME is reset. An asynchronous IPC will be performed.
              *
-             * see_also: #IBusEngine::reset
+             * see_also: {@link IBus.Engine.SignalSignatures.reset | IBus.Engine::reset}
              */
             reset(): void;
             /**
@@ -9538,21 +10363,21 @@ declare module 'gi://IBus?version=1.0' {
              * When IBUS_CAP_FOCUS is not set, IBUS_CAP_PREEDIT_TEXT, IBUS_CAP_AUXILIARY_TEXT, IBUS_CAP_LOOKUP_TABLE, and IBUS_CAP_PROPERTY have to be all set.
              * The panel component does nothing for an application that doesn't support focus.
              *
-             * see_also: #IBusEngine::set-capabilities
-             * @param capabilities Capabilities flags of IBusEngine, see #IBusCapabilite
+             * see_also: {@link IBus.Engine.SignalSignatures.set_capabilities | IBus.Engine::set-capabilities}
+             * @param capabilities Capabilities flags of IBusEngine, see {@link IBus.Capabilite}
              */
             set_capabilities(capabilities: number): void;
             /**
-             * Set whether #IBusInputContext commits pre-edit texts or not.
-             * If %TRUE, 'update-preedit-text-with-mode' signal is emitted
+             * Set whether {@link IBus.InputContext} commits pre-edit texts or not.
+             * If `true`, 'update-preedit-text-with-mode' signal is emitted
              * instead of 'update-preedit-text' signal.
              * If your client receives the 'update-preedit-text-with-mode' signal,
-             * the client needs to implement commit_text() of pre-edit text when
+             * the client needs to implement `commit_text()` of pre-edit text when
              * GtkIMContextClass.focus_out() is called in case an IME desires that
              * behavior but it depends on each IME.
              *
-             * See also ibus_engine_update_preedit_text_with_mode().
-             * @param client_commit %TRUE if your input context commits pre-edit texts     with Space or Enter key events or mouse click events. %FALSE if     ibus-daemon commits pre-edit texts with those events.     The default is %FALSE. The behavior is decided with     ibus_engine_update_preedit_text_with_mode() to commit, clear or     keep the pre-edit text and this API is important in ibus-hangul.
+             * See also `ibus_engine_update_preedit_text_with_mode()`.
+             * @param client_commit `true` if your input context commits pre-edit texts     with Space or Enter key events or mouse click events. `false` if     ibus-daemon commits pre-edit texts with those events.     The default is `false`. The behavior is decided with     `ibus_engine_update_preedit_text_with_mode()` to commit, clear or     keep the pre-edit text and this API is important in ibus-hangul.
              */
             set_client_commit_preedit(client_commit: boolean): void;
             /**
@@ -9563,15 +10388,15 @@ declare module 'gi://IBus?version=1.0' {
              * can call this function with `purpose` set to
              * #IBUS_INPUT_PURPOSE_NUMBER.
              *
-             * See also: #IBusEngine::set-content-type
-             * @param purpose Primary purpose of the input context, as an #IBusInputPurpose.
-             * @param hints Hints that augment @purpose, as an #IBusInputHints.
+             * See also: {@link IBus.Engine.SignalSignatures.set_content_type | IBus.Engine::set-content-type}
+             * @param purpose Primary purpose of the input context, as an {@link IBus.InputPurpose}.
+             * @param hints Hints that augment `purpose`, as an {@link IBus.InputHints}.
              */
             set_content_type(purpose: number, hints: number): void;
             /**
              * Set the cursor location of IBus input context asynchronously.
              *
-             * see_also: #IBusEngine::set-cursor-location
+             * see_also: {@link IBus.Engine.SignalSignatures.set_cursor_location | IBus.Engine::set-cursor-location}
              * @param x X coordinate of the cursor.
              * @param y Y coordinate of the cursor.
              * @param w Width of the cursor.
@@ -9592,91 +10417,97 @@ declare module 'gi://IBus?version=1.0' {
              * @param name A name of the engine.
              */
             set_engine(name: string): void;
+            /**
+             * @param enable Can use `ibus_input_context_post_process_key_event()` to retrieve commit-text and forwar-key-event signals during calling `ibus_input_context_process_key_event()` if it's `true`.
+             */
             set_post_process_key_event(enable: boolean): void;
+            /**
+             * @param text An {@link IBus.Text} surrounding the current cursor on the application.
+             * @param cursor_pos Current cursor position in characters in `text`.
+             * @param anchor_pos Anchor position of selection in `text`.
+             */
             set_surrounding_text(text: Text, cursor_pos: number, anchor_pos: number): void;
-
-            // Inherited methods
             /**
              * Starts asynchronous initialization of the object implementing the
              * interface. This must be done before any real use of the object after
-             * initial construction. If the object also implements #GInitable you can
-             * optionally call g_initable_init() instead.
+             * initial construction. If the object also implements {@link Gio.Initable} you can
+             * optionally call `g_initable_init()` instead.
              *
              * This method is intended for language bindings. If writing in C,
-             * g_async_initable_new_async() should typically be used instead.
+             * `g_async_initable_new_async()` should typically be used instead.
              *
              * When the initialization is finished, `callback` will be called. You can
-             * then call g_async_initable_init_finish() to get the result of the
+             * then call `g_async_initable_init_finish()` to get the result of the
              * initialization.
              *
              * Implementations may also support cancellation. If `cancellable` is not
-             * %NULL, then initialization can be cancelled by triggering the cancellable
+             * `null`, then initialization can be cancelled by triggering the cancellable
              * object from another thread. If the operation was cancelled, the error
-             * %G_IO_ERROR_CANCELLED will be returned. If `cancellable` is not %NULL, and
+             * {@link Gio.IOErrorEnum.CANCELLED} will be returned. If `cancellable` is not `null`, and
              * the object doesn't support cancellable initialization, the error
-             * %G_IO_ERROR_NOT_SUPPORTED will be returned.
+             * {@link Gio.IOErrorEnum.NOT_SUPPORTED} will be returned.
              *
-             * As with #GInitable, if the object is not initialized, or initialization
+             * As with {@link Gio.Initable}, if the object is not initialized, or initialization
              * returns with an error, then all operations on the object except
-             * g_object_ref() and g_object_unref() are considered to be invalid, and
-             * have undefined behaviour. They will often fail with g_critical() or
-             * g_warning(), but this must not be relied on.
+             * `g_object_ref()` and `g_object_unref()` are considered to be invalid, and
+             * have undefined behaviour. They will often fail with `g_critical()` or
+             * `g_warning()`, but this must not be relied on.
              *
-             * Callers should not assume that a class which implements #GAsyncInitable can
-             * be initialized multiple times; for more information, see g_initable_init().
+             * Callers should not assume that a class which implements {@link Gio.AsyncInitable} can
+             * be initialized multiple times; for more information, see `g_initable_init()`.
              * If a class explicitly supports being initialized multiple times,
-             * implementation requires yielding all subsequent calls to init_async() on the
+             * implementation requires yielding all subsequent calls to `init_async()` on the
              * results of the first call.
              *
-             * For classes that also support the #GInitable interface, the default
-             * implementation of this method will run the g_initable_init() function
+             * For classes that also support the {@link Gio.Initable} interface, the default
+             * implementation of this method will run the `g_initable_init()` function
              * in a thread, so if you want to support asynchronous initialization via
-             * threads, just implement the #GAsyncInitable interface without overriding
+             * threads, just implement the {@link Gio.AsyncInitable} interface without overriding
              * any interface methods.
              * @param io_priority the [I/O priority](iface.AsyncResult.html#io-priority) of the operation
-             * @param cancellable optional #GCancellable object, %NULL to ignore.
+             * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
              */
             init_async(io_priority: number, cancellable?: Gio.Cancellable | null): globalThis.Promise<boolean>;
             /**
              * Starts asynchronous initialization of the object implementing the
              * interface. This must be done before any real use of the object after
-             * initial construction. If the object also implements #GInitable you can
-             * optionally call g_initable_init() instead.
+             * initial construction. If the object also implements {@link Gio.Initable} you can
+             * optionally call `g_initable_init()` instead.
              *
              * This method is intended for language bindings. If writing in C,
-             * g_async_initable_new_async() should typically be used instead.
+             * `g_async_initable_new_async()` should typically be used instead.
              *
              * When the initialization is finished, `callback` will be called. You can
-             * then call g_async_initable_init_finish() to get the result of the
+             * then call `g_async_initable_init_finish()` to get the result of the
              * initialization.
              *
              * Implementations may also support cancellation. If `cancellable` is not
-             * %NULL, then initialization can be cancelled by triggering the cancellable
+             * `null`, then initialization can be cancelled by triggering the cancellable
              * object from another thread. If the operation was cancelled, the error
-             * %G_IO_ERROR_CANCELLED will be returned. If `cancellable` is not %NULL, and
+             * {@link Gio.IOErrorEnum.CANCELLED} will be returned. If `cancellable` is not `null`, and
              * the object doesn't support cancellable initialization, the error
-             * %G_IO_ERROR_NOT_SUPPORTED will be returned.
+             * {@link Gio.IOErrorEnum.NOT_SUPPORTED} will be returned.
              *
-             * As with #GInitable, if the object is not initialized, or initialization
+             * As with {@link Gio.Initable}, if the object is not initialized, or initialization
              * returns with an error, then all operations on the object except
-             * g_object_ref() and g_object_unref() are considered to be invalid, and
-             * have undefined behaviour. They will often fail with g_critical() or
-             * g_warning(), but this must not be relied on.
+             * `g_object_ref()` and `g_object_unref()` are considered to be invalid, and
+             * have undefined behaviour. They will often fail with `g_critical()` or
+             * `g_warning()`, but this must not be relied on.
              *
-             * Callers should not assume that a class which implements #GAsyncInitable can
-             * be initialized multiple times; for more information, see g_initable_init().
+             * Callers should not assume that a class which implements {@link Gio.AsyncInitable} can
+             * be initialized multiple times; for more information, see `g_initable_init()`.
              * If a class explicitly supports being initialized multiple times,
-             * implementation requires yielding all subsequent calls to init_async() on the
+             * implementation requires yielding all subsequent calls to `init_async()` on the
              * results of the first call.
              *
-             * For classes that also support the #GInitable interface, the default
-             * implementation of this method will run the g_initable_init() function
+             * For classes that also support the {@link Gio.Initable} interface, the default
+             * implementation of this method will run the `g_initable_init()` function
              * in a thread, so if you want to support asynchronous initialization via
-             * threads, just implement the #GAsyncInitable interface without overriding
+             * threads, just implement the {@link Gio.AsyncInitable} interface without overriding
              * any interface methods.
              * @param io_priority the [I/O priority](iface.AsyncResult.html#io-priority) of the operation
-             * @param cancellable optional #GCancellable object, %NULL to ignore.
-             * @param callback a #GAsyncReadyCallback to call when the request is satisfied
+             * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
+             * @param callback a {@link Gio.AsyncReadyCallback} to call when the request is satisfied
              */
             init_async(
                 io_priority: number,
@@ -9686,43 +10517,43 @@ declare module 'gi://IBus?version=1.0' {
             /**
              * Starts asynchronous initialization of the object implementing the
              * interface. This must be done before any real use of the object after
-             * initial construction. If the object also implements #GInitable you can
-             * optionally call g_initable_init() instead.
+             * initial construction. If the object also implements {@link Gio.Initable} you can
+             * optionally call `g_initable_init()` instead.
              *
              * This method is intended for language bindings. If writing in C,
-             * g_async_initable_new_async() should typically be used instead.
+             * `g_async_initable_new_async()` should typically be used instead.
              *
              * When the initialization is finished, `callback` will be called. You can
-             * then call g_async_initable_init_finish() to get the result of the
+             * then call `g_async_initable_init_finish()` to get the result of the
              * initialization.
              *
              * Implementations may also support cancellation. If `cancellable` is not
-             * %NULL, then initialization can be cancelled by triggering the cancellable
+             * `null`, then initialization can be cancelled by triggering the cancellable
              * object from another thread. If the operation was cancelled, the error
-             * %G_IO_ERROR_CANCELLED will be returned. If `cancellable` is not %NULL, and
+             * {@link Gio.IOErrorEnum.CANCELLED} will be returned. If `cancellable` is not `null`, and
              * the object doesn't support cancellable initialization, the error
-             * %G_IO_ERROR_NOT_SUPPORTED will be returned.
+             * {@link Gio.IOErrorEnum.NOT_SUPPORTED} will be returned.
              *
-             * As with #GInitable, if the object is not initialized, or initialization
+             * As with {@link Gio.Initable}, if the object is not initialized, or initialization
              * returns with an error, then all operations on the object except
-             * g_object_ref() and g_object_unref() are considered to be invalid, and
-             * have undefined behaviour. They will often fail with g_critical() or
-             * g_warning(), but this must not be relied on.
+             * `g_object_ref()` and `g_object_unref()` are considered to be invalid, and
+             * have undefined behaviour. They will often fail with `g_critical()` or
+             * `g_warning()`, but this must not be relied on.
              *
-             * Callers should not assume that a class which implements #GAsyncInitable can
-             * be initialized multiple times; for more information, see g_initable_init().
+             * Callers should not assume that a class which implements {@link Gio.AsyncInitable} can
+             * be initialized multiple times; for more information, see `g_initable_init()`.
              * If a class explicitly supports being initialized multiple times,
-             * implementation requires yielding all subsequent calls to init_async() on the
+             * implementation requires yielding all subsequent calls to `init_async()` on the
              * results of the first call.
              *
-             * For classes that also support the #GInitable interface, the default
-             * implementation of this method will run the g_initable_init() function
+             * For classes that also support the {@link Gio.Initable} interface, the default
+             * implementation of this method will run the `g_initable_init()` function
              * in a thread, so if you want to support asynchronous initialization via
-             * threads, just implement the #GAsyncInitable interface without overriding
+             * threads, just implement the {@link Gio.AsyncInitable} interface without overriding
              * any interface methods.
              * @param io_priority the [I/O priority](iface.AsyncResult.html#io-priority) of the operation
-             * @param cancellable optional #GCancellable object, %NULL to ignore.
-             * @param callback a #GAsyncReadyCallback to call when the request is satisfied
+             * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
+             * @param callback a {@link Gio.AsyncReadyCallback} to call when the request is satisfied
              */
             init_async(
                 io_priority: number,
@@ -9731,60 +10562,64 @@ declare module 'gi://IBus?version=1.0' {
             ): globalThis.Promise<boolean> | void;
             /**
              * Finishes asynchronous initialization and returns the result.
-             * See g_async_initable_init_async().
-             * @param res a #GAsyncResult.
-             * @returns %TRUE if successful. If an error has occurred, this function will return %FALSE and set @error appropriately if present.
+             * See `g_async_initable_init_async()`.
+             * @param res a {@link Gio.AsyncResult}.
+             * @returns `true` if successful. If an error has occurred, this function will return `false` and set `error` appropriately if present.
              */
             init_finish(res: Gio.AsyncResult): boolean;
             /**
              * Finishes the async construction for the various g_async_initable_new
-             * calls, returning the created object or %NULL on error.
-             * @param res the #GAsyncResult from the callback
-             * @returns a newly created #GObject,      or %NULL on error. Free with g_object_unref().
+             * calls, returning the created object or `null` on error.
+             * @param res the {@link Gio.AsyncResult} from the callback
+             * @returns a newly created {@link GObject.Object},      or `null` on error. Free with `g_object_unref()`.
              */
             new_finish(res: Gio.AsyncResult): InputContext;
+            /**
+             * @param args
+             */
             // Conflicted with Gio.DBusProxy.new_finish
             new_finish(...args: never[]): any;
             /**
              * Starts asynchronous initialization of the object implementing the
              * interface. This must be done before any real use of the object after
-             * initial construction. If the object also implements #GInitable you can
-             * optionally call g_initable_init() instead.
+             * initial construction. If the object also implements {@link Gio.Initable} you can
+             * optionally call `g_initable_init()` instead.
              *
              * This method is intended for language bindings. If writing in C,
-             * g_async_initable_new_async() should typically be used instead.
+             * `g_async_initable_new_async()` should typically be used instead.
              *
              * When the initialization is finished, `callback` will be called. You can
-             * then call g_async_initable_init_finish() to get the result of the
+             * then call `g_async_initable_init_finish()` to get the result of the
              * initialization.
              *
              * Implementations may also support cancellation. If `cancellable` is not
-             * %NULL, then initialization can be cancelled by triggering the cancellable
+             * `null`, then initialization can be cancelled by triggering the cancellable
              * object from another thread. If the operation was cancelled, the error
-             * %G_IO_ERROR_CANCELLED will be returned. If `cancellable` is not %NULL, and
+             * {@link Gio.IOErrorEnum.CANCELLED} will be returned. If `cancellable` is not `null`, and
              * the object doesn't support cancellable initialization, the error
-             * %G_IO_ERROR_NOT_SUPPORTED will be returned.
+             * {@link Gio.IOErrorEnum.NOT_SUPPORTED} will be returned.
              *
-             * As with #GInitable, if the object is not initialized, or initialization
+             * As with {@link Gio.Initable}, if the object is not initialized, or initialization
              * returns with an error, then all operations on the object except
-             * g_object_ref() and g_object_unref() are considered to be invalid, and
-             * have undefined behaviour. They will often fail with g_critical() or
-             * g_warning(), but this must not be relied on.
+             * `g_object_ref()` and `g_object_unref()` are considered to be invalid, and
+             * have undefined behaviour. They will often fail with `g_critical()` or
+             * `g_warning()`, but this must not be relied on.
              *
-             * Callers should not assume that a class which implements #GAsyncInitable can
-             * be initialized multiple times; for more information, see g_initable_init().
+             * Callers should not assume that a class which implements {@link Gio.AsyncInitable} can
+             * be initialized multiple times; for more information, see `g_initable_init()`.
              * If a class explicitly supports being initialized multiple times,
-             * implementation requires yielding all subsequent calls to init_async() on the
+             * implementation requires yielding all subsequent calls to `init_async()` on the
              * results of the first call.
              *
-             * For classes that also support the #GInitable interface, the default
-             * implementation of this method will run the g_initable_init() function
+             * For classes that also support the {@link Gio.Initable} interface, the default
+             * implementation of this method will run the `g_initable_init()` function
              * in a thread, so if you want to support asynchronous initialization via
-             * threads, just implement the #GAsyncInitable interface without overriding
+             * threads, just implement the {@link Gio.AsyncInitable} interface without overriding
              * any interface methods.
              * @param io_priority the [I/O priority](iface.AsyncResult.html#io-priority) of the operation
-             * @param cancellable optional #GCancellable object, %NULL to ignore.
-             * @param callback a #GAsyncReadyCallback to call when the request is satisfied
+             * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
+             * @param callback a {@link Gio.AsyncReadyCallback} to call when the request is satisfied
+             * @virtual
              */
             vfunc_init_async(
                 io_priority: number,
@@ -9793,8 +10628,9 @@ declare module 'gi://IBus?version=1.0' {
             ): void;
             /**
              * Finishes asynchronous initialization and returns the result.
-             * See g_async_initable_init_async().
-             * @param res a #GAsyncResult.
+             * See `g_async_initable_init_async()`.
+             * @param res a {@link Gio.AsyncResult}.
+             * @virtual
              */
             vfunc_init_finish(res: Gio.AsyncResult): boolean;
             /**
@@ -9810,32 +10646,32 @@ declare module 'gi://IBus?version=1.0' {
              * ```
              *
              *
-             * Will result in the "sensitive" property of the widget #GObject instance to be
-             * updated with the same value of the "active" property of the action #GObject
+             * Will result in the "sensitive" property of the widget {@link GObject.Object} instance to be
+             * updated with the same value of the "active" property of the action {@link GObject.Object}
              * instance.
              *
-             * If `flags` contains %G_BINDING_BIDIRECTIONAL then the binding will be mutual:
+             * If `flags` contains {@link GObject.BindingFlags.BIDIRECTIONAL} then the binding will be mutual:
              * if `target_property` on `target` changes then the `source_property` on `source`
              * will be updated as well.
              *
              * The binding will automatically be removed when either the `source` or the
              * `target` instances are finalized. To remove the binding without affecting the
-             * `source` and the `target` you can just call g_object_unref() on the returned
-             * #GBinding instance.
+             * `source` and the `target` you can just call `g_object_unref()` on the returned
+             * {@link GObject.Binding} instance.
              *
-             * Removing the binding by calling g_object_unref() on it must only be done if
+             * Removing the binding by calling `g_object_unref()` on it must only be done if
              * the binding, `source` and `target` are only used from a single thread and it
              * is clear that both `source` and `target` outlive the binding. Especially it
              * is not safe to rely on this if the binding, `source` or `target` can be
              * finalized from different threads. Keep another reference to the binding and
-             * use g_binding_unbind() instead to be on the safe side.
+             * use `g_binding_unbind()` instead to be on the safe side.
              *
-             * A #GObject can have multiple bindings.
-             * @param source_property the property on @source to bind
-             * @param target the target #GObject
-             * @param target_property the property on @target to bind
-             * @param flags flags to pass to #GBinding
-             * @returns the #GBinding instance representing the     binding between the two #GObject instances. The binding is released     whenever the #GBinding reference count reaches zero.
+             * A {@link GObject.Object} can have multiple bindings.
+             * @param source_property the property on `source` to bind
+             * @param target the target {@link GObject.Object}
+             * @param target_property the property on `target` to bind
+             * @param flags flags to pass to {@link GObject.Binding}
+             * @returns the {@link GObject.Binding} instance representing the     binding between the two {@link GObject.Object} instances. The binding is released     whenever the {@link GObject.Binding} reference count reaches zero.
              */
             bind_property(
                 source_property: string,
@@ -9844,39 +10680,39 @@ declare module 'gi://IBus?version=1.0' {
                 flags: GObject.BindingFlags | null,
             ): GObject.Binding;
             /**
-             * Complete version of g_object_bind_property().
+             * Complete version of `g_object_bind_property()`.
              *
              * Creates a binding between `source_property` on `source` and `target_property`
-             * on `target,` allowing you to set the transformation functions to be used by
+             * on `target`, allowing you to set the transformation functions to be used by
              * the binding.
              *
-             * If `flags` contains %G_BINDING_BIDIRECTIONAL then the binding will be mutual:
+             * If `flags` contains {@link GObject.BindingFlags.BIDIRECTIONAL} then the binding will be mutual:
              * if `target_property` on `target` changes then the `source_property` on `source`
              * will be updated as well. The `transform_from` function is only used in case
              * of bidirectional bindings, otherwise it will be ignored
              *
              * The binding will automatically be removed when either the `source` or the
              * `target` instances are finalized. This will release the reference that is
-             * being held on the #GBinding instance; if you want to hold on to the
-             * #GBinding instance, you will need to hold a reference to it.
+             * being held on the {@link GObject.Binding} instance; if you want to hold on to the
+             * {@link GObject.Binding} instance, you will need to hold a reference to it.
              *
-             * To remove the binding, call g_binding_unbind().
+             * To remove the binding, call `g_binding_unbind()`.
              *
-             * A #GObject can have multiple bindings.
+             * A {@link GObject.Object} can have multiple bindings.
              *
              * The same `user_data` parameter will be used for both `transform_to`
              * and `transform_from` transformation functions; the `notify` function will
              * be called once, when the binding is removed. If you need different data
              * for each transformation function, please use
-             * g_object_bind_property_with_closures() instead.
-             * @param source_property the property on @source to bind
-             * @param target the target #GObject
-             * @param target_property the property on @target to bind
-             * @param flags flags to pass to #GBinding
-             * @param transform_to the transformation function     from the @source to the @target, or %NULL to use the default
-             * @param transform_from the transformation function     from the @target to the @source, or %NULL to use the default
-             * @param notify a function to call when disposing the binding, to free     resources used by the transformation functions, or %NULL if not required
-             * @returns the #GBinding instance representing the     binding between the two #GObject instances. The binding is released     whenever the #GBinding reference count reaches zero.
+             * `g_object_bind_property_with_closures()` instead.
+             * @param source_property the property on `source` to bind
+             * @param target the target {@link GObject.Object}
+             * @param target_property the property on `target` to bind
+             * @param flags flags to pass to {@link GObject.Binding}
+             * @param transform_to the transformation function     from the `source` to the `target`, or `null` to use the default
+             * @param transform_from the transformation function     from the `target` to the `source`, or `null` to use the default
+             * @param notify a function to call when disposing the binding, to free     resources used by the transformation functions, or `null` if not required
+             * @returns the {@link GObject.Binding} instance representing the     binding between the two {@link GObject.Object} instances. The binding is released     whenever the {@link GObject.Binding} reference count reaches zero.
              */
             bind_property_full(
                 source_property: string,
@@ -9887,13 +10723,16 @@ declare module 'gi://IBus?version=1.0' {
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
             ): GObject.Binding;
+            /**
+             * @param args
+             */
             // Conflicted with GObject.Object.bind_property_full
             bind_property_full(...args: never[]): any;
             /**
-             * This function is intended for #GObject implementations to re-enforce
+             * This function is intended for {@link GObject.Object} implementations to re-enforce
              * a [floating][floating-ref] object reference. Doing this is seldom
-             * required: all #GInitiallyUnowneds are created with a floating reference
-             * which usually just needs to be sunken by calling g_object_ref_sink().
+             * required: all `GInitiallyUnowneds` are created with a floating reference
+             * which usually just needs to be sunken by calling `g_object_ref_sink()`.
              */
             force_floating(): void;
             /**
@@ -9901,7 +10740,7 @@ declare module 'gi://IBus?version=1.0' {
              * non-zero, the emission of "notify" signals on `object` is
              * stopped. The signals are queued until the freeze count is decreased
              * to zero. Duplicate notifications are squashed so that at most one
-             * #GObject::notify signal is emitted for each property modified while the
+             * {@link GObject.Object.SignalSignatures.notify | GObject.Object::notify} signal is emitted for each property modified while the
              * object is frozen.
              *
              * This is necessary for accessors that modify multiple properties to prevent
@@ -9909,9 +10748,9 @@ declare module 'gi://IBus?version=1.0' {
              */
             freeze_notify(): void;
             /**
-             * Gets a named field from the objects table of associations (see g_object_set_data()).
+             * Gets a named field from the objects table of associations (see `g_object_set_data()`).
              * @param key name of the key for that association
-             * @returns the data if found,          or %NULL if no such data exists.
+             * @returns the data if found,          or `null` if no such data exists.
              */
             get_data(key: string): any | null;
             /**
@@ -9931,9 +10770,9 @@ declare module 'gi://IBus?version=1.0' {
             get_property(property_name: string, value: GObject.Value | any): any;
             /**
              * This function gets back user data pointers stored via
-             * g_object_set_qdata().
-             * @param quark A #GQuark, naming the user data pointer
-             * @returns The user data pointer set, or %NULL
+             * `g_object_set_qdata()`.
+             * @param quark A {@link GLib.Quark}, naming the user data pointer
+             * @returns The user data pointer set, or `null`
              */
             get_qdata(quark: GLib.Quark): any | null;
             /**
@@ -9947,33 +10786,33 @@ declare module 'gi://IBus?version=1.0' {
             getv(names: string[], values: (GObject.Value | any)[]): void;
             /**
              * Checks whether `object` has a [floating][floating-ref] reference.
-             * @returns %TRUE if @object has a floating reference
+             * @returns `true` if `object` has a floating reference
              */
             is_floating(): boolean;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
              * When possible, eg. when signaling a property change from within the class
-             * that registered the property, you should use g_object_notify_by_pspec()
+             * that registered the property, you should use `g_object_notify_by_pspec()`
              * instead.
              *
              * Note that emission of the notify signal may be blocked with
-             * g_object_freeze_notify(). In this case, the signal emissions are queued
-             * and will be emitted (in reverse order) when g_object_thaw_notify() is
+             * `g_object_freeze_notify()`. In this case, the signal emissions are queued
+             * and will be emitted (in reverse order) when `g_object_thaw_notify()` is
              * called.
-             * @param property_name the name of a property installed on the class of @object.
+             * @param property_name the name of a property installed on the class of `object`.
              */
             notify(property_name: string): void;
             /**
              * Emits a "notify" signal for the property specified by `pspec` on `object`.
              *
              * This function omits the property name lookup, hence it is faster than
-             * g_object_notify().
+             * `g_object_notify()`.
              *
-             * One way to avoid using g_object_notify() from within the
-             * class that registered the properties, and using g_object_notify_by_pspec()
+             * One way to avoid using `g_object_notify()` from within the
+             * class that registered the properties, and using `g_object_notify_by_pspec()`
              * instead, is to store the GParamSpec used with
-             * g_object_class_install_property() inside a static array, e.g.:
+             * `g_object_class_install_property()` inside a static array, e.g.:
              *
              *
              * ```c
@@ -10006,21 +10845,21 @@ declare module 'gi://IBus?version=1.0' {
              *   g_object_notify_by_pspec (self, properties[PROP_FOO]);
              * ```
              *
-             * @param pspec the #GParamSpec of a property installed on the class of @object.
+             * @param pspec the {@link GObject.ParamSpec} of a property installed on the class of `object`.
              */
             notify_by_pspec(pspec: GObject.ParamSpec): void;
             /**
              * Increases the reference count of `object`.
              *
              * Since GLib 2.56, if `GLIB_VERSION_MAX_ALLOWED` is 2.56 or greater, the type
-             * of `object` will be propagated to the return type (using the GCC typeof()
+             * of `object` will be propagated to the return type (using the GCC `typeof()`
              * extension), so any casting the caller needs to do on the return type must be
              * explicit.
-             * @returns the same @object
+             * @returns the same `object`
              */
             ref(): GObject.Object;
             /**
-             * Increase the reference count of `object,` and possibly remove the
+             * Increase the reference count of `object`, and possibly remove the
              * [floating][floating-ref] reference, if `object` has a floating reference.
              *
              * In other words, if the object is floating, then this call "assumes
@@ -10030,8 +10869,8 @@ declare module 'gi://IBus?version=1.0' {
              * adds a new normal reference increasing the reference count by one.
              *
              * Since GLib 2.56, the type of `object` will be propagated to the return type
-             * under the same conditions as for g_object_ref().
-             * @returns @object
+             * under the same conditions as for `g_object_ref()`.
+             * @returns `object`
              */
             ref_sink(): GObject.Object;
             /**
@@ -10048,10 +10887,10 @@ declare module 'gi://IBus?version=1.0' {
              * If the object already had an association with that name,
              * the old association will be destroyed.
              *
-             * Internally, the `key` is converted to a #GQuark using g_quark_from_string().
+             * Internally, the `key` is converted to a {@link GLib.Quark} using `g_quark_from_string()`.
              * This means a copy of `key` is kept permanently (even after `object` has been
              * finalized) — so it is recommended to only use a small, bounded set of values
-             * for `key` in your program, to avoid the #GQuark storage growing unbounded.
+             * for `key` in your program, to avoid the {@link GLib.Quark} storage growing unbounded.
              * @param key name of the key
              * @param data data to associate with that key
              */
@@ -10066,13 +10905,13 @@ declare module 'gi://IBus?version=1.0' {
              * Remove a specified datum from the object's data associations,
              * without invoking the association's destroy handler.
              * @param key name of the key
-             * @returns the data if found, or %NULL          if no such data exists.
+             * @returns the data if found, or `null`          if no such data exists.
              */
             steal_data(key: string): any | null;
             /**
              * This function gets back user data pointers stored via
-             * g_object_set_qdata() and removes the `data` from object
-             * without invoking its destroy() function (if any was
+             * `g_object_set_qdata()` and removes the `data` from object
+             * without invoking its `destroy()` function (if any was
              * set).
              * Usually, calling this function is only required to update
              * user data pointers with a destroy notifier, for example:
@@ -10103,21 +10942,21 @@ declare module 'gi://IBus?version=1.0' {
              * }
              * ```
              *
-             * Using g_object_get_qdata() in the above example, instead of
-             * g_object_steal_qdata() would have left the destroy function set,
+             * Using `g_object_get_qdata()` in the above example, instead of
+             * `g_object_steal_qdata()` would have left the destroy function set,
              * and thus the partial string list would have been freed upon
-             * g_object_set_qdata_full().
-             * @param quark A #GQuark, naming the user data pointer
-             * @returns The user data pointer set, or %NULL
+             * `g_object_set_qdata_full()`.
+             * @param quark A {@link GLib.Quark}, naming the user data pointer
+             * @returns The user data pointer set, or `null`
              */
             steal_qdata(quark: GLib.Quark): any | null;
             /**
              * Reverts the effect of a previous call to
-             * g_object_freeze_notify(). The freeze count is decreased on `object`
+             * `g_object_freeze_notify()`. The freeze count is decreased on `object`
              * and when it reaches zero, queued "notify" signals are emitted.
              *
              * Duplicate notifications for each property are squashed so that at most one
-             * #GObject::notify signal is emitted for each property, in the reverse order
+             * {@link GObject.Object.SignalSignatures.notify | GObject.Object::notify} signal is emitted for each property, in the reverse order
              * in which they have been queued.
              *
              * It is an error to call this function when the freeze count is zero.
@@ -10127,33 +10966,34 @@ declare module 'gi://IBus?version=1.0' {
              * Decreases the reference count of `object`. When its reference count
              * drops to 0, the object is finalized (i.e. its memory is freed).
              *
-             * If the pointer to the #GObject may be reused in future (for example, if it is
+             * If the pointer to the {@link GObject.Object} may be reused in future (for example, if it is
              * an instance variable of another object), it is recommended to clear the
-             * pointer to %NULL rather than retain a dangling pointer to a potentially
-             * invalid #GObject instance. Use g_clear_object() for this.
+             * pointer to `null` rather than retain a dangling pointer to a potentially
+             * invalid {@link GObject.Object} instance. Use `g_clear_object()` for this.
              */
             unref(): void;
             /**
              * This function essentially limits the life time of the `closure` to
              * the life time of the object. That is, when the object is finalized,
-             * the `closure` is invalidated by calling g_closure_invalidate() on
+             * the `closure` is invalidated by calling `g_closure_invalidate()` on
              * it, in order to prevent invocations of the closure with a finalized
-             * (nonexisting) object. Also, g_object_ref() and g_object_unref() are
-             * added as marshal guards to the `closure,` to ensure that an extra
+             * (nonexisting) object. Also, `g_object_ref()` and `g_object_unref()` are
+             * added as marshal guards to the `closure`, to ensure that an extra
              * reference count is held on `object` during invocation of the
              * `closure`.  Usually, this function will be called on closures that
              * use this `object` as closure data.
-             * @param closure #GClosure to watch
+             * @param closure {@link GObject.Closure} to watch
              */
             watch_closure(closure: GObject.Closure): void;
             /**
-             * the `constructed` function is called by g_object_new() as the
+             * the `constructed` function is called by `g_object_new()` as the
              *  final step of the object creation process.  At the point of the call, all
              *  construction properties have been set on the object.  The purpose of this
              *  call is to allow for object initialisation steps that can only be performed
              *  after construction properties have been set.  `constructed` implementors
              *  should chain up to the `constructed` call of their parent class to allow it
              *  to complete its initialisation.
+             * @virtual
              */
             vfunc_constructed(): void;
             /**
@@ -10162,6 +11002,7 @@ declare module 'gi://IBus?version=1.0' {
              *  needed.
              * @param n_pspecs
              * @param pspecs
+             * @virtual
              */
             vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void;
             /**
@@ -10170,12 +11011,14 @@ declare module 'gi://IBus?version=1.0' {
              *  invocations still work. It may be run multiple times (due to reference
              *  loops). Before returning, `dispose` should chain up to the `dispose` method
              *  of the parent class.
+             * @virtual
              */
             vfunc_dispose(): void;
             /**
              * instance finalization function, should finish the finalization of
              *  the instance begun in `dispose` and chain up to the `finalize` method of the
              *  parent class.
+             * @virtual
              */
             vfunc_finalize(): void;
             /**
@@ -10184,20 +11027,22 @@ declare module 'gi://IBus?version=1.0' {
              * @param property_id
              * @param value
              * @param pspec
+             * @virtual
              */
             vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
              * When possible, eg. when signaling a property change from within the class
-             * that registered the property, you should use g_object_notify_by_pspec()
+             * that registered the property, you should use `g_object_notify_by_pspec()`
              * instead.
              *
              * Note that emission of the notify signal may be blocked with
-             * g_object_freeze_notify(). In this case, the signal emissions are queued
-             * and will be emitted (in reverse order) when g_object_thaw_notify() is
+             * `g_object_freeze_notify()`. In this case, the signal emissions are queued
+             * and will be emitted (in reverse order) when `g_object_thaw_notify()` is
              * called.
              * @param pspec
+             * @virtual
              */
             vfunc_notify(pspec: GObject.ParamSpec): void;
             /**
@@ -10209,6 +11054,7 @@ declare module 'gi://IBus?version=1.0' {
              * @param property_id
              * @param value
              * @param pspec
+             * @virtual
              */
             vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
             /**
@@ -10256,10 +11102,11 @@ declare module 'gi://IBus?version=1.0' {
          * and expect key symbols to be arranged in that order.
          * These input methods should new an IBusKeymap
          * instance and define the keyboard layout.
-         * Then ibus_keymap_lookup_keysym() can
+         * Then `ibus_keymap_lookup_keysym()` can
          * convert scancodes back to the key symbols.
          *
-         * see_also: #IBusComponent, #IBusEngineDesc
+         * see_also: {@link IBus.Component}, {@link IBus.EngineDesc}
+         * @gir-type Class
          */
         class Keymap extends Object {
             static $gtype: GObject.GType<Keymap>;
@@ -10291,16 +11138,19 @@ declare module 'gi://IBus?version=1.0' {
 
             // Signals
 
+            /** @signal */
             connect<K extends keyof Keymap.SignalSignatures>(
                 signal: K,
                 callback: GObject.SignalCallback<this, Keymap.SignalSignatures[K]>,
             ): number;
             connect(signal: string, callback: (...args: any[]) => any): number;
+            /** @signal */
             connect_after<K extends keyof Keymap.SignalSignatures>(
                 signal: K,
                 callback: GObject.SignalCallback<this, Keymap.SignalSignatures[K]>,
             ): number;
             connect_after(signal: string, callback: (...args: any[]) => any): number;
+            /** @signal */
             emit<K extends keyof Keymap.SignalSignatures>(
                 signal: K,
                 ...args: GObject.GjsParameters<Keymap.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never
@@ -10342,11 +11192,12 @@ declare module 'gi://IBus?version=1.0' {
          * An IBusLookuptable stores the candidate words or phrases for users to
          * choose from.
          *
-         * Use ibus_engine_update_lookup_table(), ibus_engine_show_lookup_table(),
-         * and ibus_engine_hide_lookup_table() to update, show and hide the lookup
+         * Use `ibus_engine_update_lookup_table()`, `ibus_engine_show_lookup_table()`,
+         * and `ibus_engine_hide_lookup_table()` to update, show and hide the lookup
          * table.
          *
-         * see_also: #IBusEngine
+         * see_also: {@link IBus.Engine}
+         * @gir-type Class
          */
         class LookupTable extends Serializable {
             static $gtype: GObject.GType<LookupTable>;
@@ -10383,16 +11234,19 @@ declare module 'gi://IBus?version=1.0' {
 
             // Signals
 
+            /** @signal */
             connect<K extends keyof LookupTable.SignalSignatures>(
                 signal: K,
                 callback: GObject.SignalCallback<this, LookupTable.SignalSignatures[K]>,
             ): number;
             connect(signal: string, callback: (...args: any[]) => any): number;
+            /** @signal */
             connect_after<K extends keyof LookupTable.SignalSignatures>(
                 signal: K,
                 callback: GObject.SignalCallback<this, LookupTable.SignalSignatures[K]>,
             ): number;
             connect_after(signal: string, callback: (...args: any[]) => any): number;
+            /** @signal */
             emit<K extends keyof LookupTable.SignalSignatures>(
                 signal: K,
                 ...args: GObject.GjsParameters<LookupTable.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never
@@ -10418,43 +11272,43 @@ declare module 'gi://IBus?version=1.0' {
              */
             clear(): void;
             /**
-             * Go to next candidate of an #IBusLookupTable.
+             * Go to next candidate of an {@link IBus.LookupTable}.
              *
              * It returns FALSE if it is already at the last candidate,
              * unless  <code>table&gt;-round==TRUE</code>, where it will go
              * to the first candidate.
-             * @returns %TRUE if succeed.
+             * @returns `true` if succeed.
              */
             cursor_down(): boolean;
             /**
-             * Go to previous candidate of an #IBusLookupTable.
+             * Go to previous candidate of an {@link IBus.LookupTable}.
              *
              * It returns FALSE if it is already at the first candidate,
              * unless  <code>table&gt;-round==TRUE</code>, where it will go
              * to the last candidate.
-             * @returns %TRUE if succeed.
+             * @returns `true` if succeed.
              */
             cursor_up(): boolean;
             /**
-             * Return #IBusText at the given index. Borrowed reference.
+             * Return {@link IBus.Text} at the given index. Borrowed reference.
              * @param index Index in the Lookup table.
-             * @returns IBusText at the given index; NULL if no such         #IBusText.
+             * @returns IBusText at the given index; NULL if no such         {@link IBus.Text}.
              */
             get_candidate(index: number): Text;
             /**
-             * Gets the cursor position in current page of #IBusLookupTable.
+             * Gets the cursor position in current page of {@link IBus.LookupTable}.
              * @returns The position of cursor in current page.
              */
             get_cursor_in_page(): number;
             /**
-             * Gets the cursor position of #IBusLookupTable.
+             * Gets the cursor position of {@link IBus.LookupTable}.
              * @returns The position of cursor.
              */
             get_cursor_pos(): number;
             /**
-             * Return #IBusText at the given index. Borrowed reference.
+             * Return {@link IBus.Text} at the given index. Borrowed reference.
              * @param index Index in the Lookup table.
-             * @returns #IBusText at the given index; %NULL if no such         #IBusText.
+             * @returns {@link IBus.Text} at the given index; `null` if no such         {@link IBus.Text}.
              */
             get_label(index: number): Text;
             /**
@@ -10463,8 +11317,8 @@ declare module 'gi://IBus?version=1.0' {
              */
             get_number_of_candidates(): number;
             /**
-             * Returns the orientation of the #IBusLookupTable.
-             * @returns The orientation of the @table.
+             * Returns the orientation of the {@link IBus.LookupTable}.
+             * @returns The orientation of the `table`.
              */
             get_orientation(): number;
             /**
@@ -10473,31 +11327,31 @@ declare module 'gi://IBus?version=1.0' {
              */
             get_page_size(): number;
             /**
-             * Returns whether the cursor of an #IBusLookupTable is visible.
-             * @returns Whether the cursor of @table is visible.
+             * Returns whether the cursor of an {@link IBus.LookupTable} is visible.
+             * @returns Whether the cursor of `table` is visible.
              */
             is_cursor_visible(): boolean;
             /**
-             * Returns whether the #IBusLookupTable is round.
-             * @returns Whether the @table is round.
+             * Returns whether the {@link IBus.LookupTable} is round.
+             * @returns Whether the `table` is round.
              */
             is_round(): boolean;
             /**
-             * Go to next page of an #IBusLookupTable.
+             * Go to next page of an {@link IBus.LookupTable}.
              *
              * It returns FALSE if it is already at the last page,
              * unless  <code>table&gt;-round==TRUE</code>, where it will go
              * to the first page.
-             * @returns %TRUE if succeed.
+             * @returns `true` if succeed.
              */
             page_down(): boolean;
             /**
-             * Go to previous page of an #IBusLookupTable.
+             * Go to previous page of an {@link IBus.LookupTable}.
              *
              * It returns FALSE if it is already at the first page,
              * unless  <code>table&gt;-round==TRUE</code>, where it will go
              * to the last page.
-             * @returns %TRUE if succeed.
+             * @returns `true` if succeed.
              */
             page_up(): boolean;
             /**
@@ -10507,7 +11361,7 @@ declare module 'gi://IBus?version=1.0' {
             set_cursor_pos(cursor_pos: number): void;
             /**
              * Set whether to make the cursor of an IBusLookupTable visible or not.
-             * @param visible Whether to make the cursor of @table visible.
+             * @param visible Whether to make the cursor of `table` visible.
              */
             set_cursor_visible(visible: boolean): void;
             /**
@@ -10530,7 +11384,7 @@ declare module 'gi://IBus?version=1.0' {
             set_page_size(page_size: number): void;
             /**
              * Set whether to make the IBusLookupTable round or not.
-             * @param round Whether to make @table round.
+             * @param round Whether to make `table` round.
              */
             set_round(round: boolean): void;
         }
@@ -10538,6 +11392,15 @@ declare module 'gi://IBus?version=1.0' {
         namespace Object {
             // Signal signatures
             interface SignalSignatures extends GObject.InitiallyUnowned.SignalSignatures {
+                /**
+                 * Destroy and free an IBusObject
+                 *
+                 * See also:  `ibus_object_destroy()`.
+                 *
+                 * <note><para>Argument `user_data` is ignored in this function.</para></note>
+                 * @signal
+                 * @run-last
+                 */
                 destroy: () => void;
             }
 
@@ -10548,6 +11411,7 @@ declare module 'gi://IBus?version=1.0' {
 
         /**
          * IBusObject is the base object for all objects in IBus.
+         * @gir-type Class
          */
         class Object extends GObject.InitiallyUnowned {
             static $gtype: GObject.GType<Object>;
@@ -10575,16 +11439,19 @@ declare module 'gi://IBus?version=1.0' {
 
             // Signals
 
+            /** @signal */
             connect<K extends keyof Object.SignalSignatures>(
                 signal: K,
                 callback: GObject.SignalCallback<this, Object.SignalSignatures[K]>,
             ): number;
             connect(signal: string, callback: (...args: any[]) => any): number;
+            /** @signal */
             connect_after<K extends keyof Object.SignalSignatures>(
                 signal: K,
                 callback: GObject.SignalCallback<this, Object.SignalSignatures[K]>,
             ): number;
             connect_after(signal: string, callback: (...args: any[]) => any): number;
+            /** @signal */
             emit<K extends keyof Object.SignalSignatures>(
                 signal: K,
                 ...args: GObject.GjsParameters<Object.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never
@@ -10595,11 +11462,12 @@ declare module 'gi://IBus?version=1.0' {
 
             /**
              * Emit the "destroy" signal notifying all reference holders that they should
-             * release the #IBusObject.
+             * release the {@link IBus.Object}.
              *
              * The memory for the object itself won't be deleted until its reference count
              * actually drops to 0; ibus_object_destroy merely asks reference holders to
              * release their references. It does not free the object.
+             * @virtual
              */
             vfunc_destroy(): void;
 
@@ -10607,7 +11475,7 @@ declare module 'gi://IBus?version=1.0' {
 
             /**
              * Emit the "destroy" signal notifying all reference holders that they should
-             * release the #IBusObject.
+             * release the {@link IBus.Object}.
              *
              * The memory for the object itself won't be deleted until its reference count
              * actually drops to 0; ibus_object_destroy merely asks reference holders to
@@ -10628,6 +11496,7 @@ declare module 'gi://IBus?version=1.0' {
         /**
          * IBusObservedPath provides methods for file path manipulation,
          * such as monitor modification, directory tree traversal.
+         * @gir-type Class
          */
         class ObservedPath extends Serializable {
             static $gtype: GObject.GType<ObservedPath>;
@@ -10663,16 +11532,19 @@ declare module 'gi://IBus?version=1.0' {
 
             // Signals
 
+            /** @signal */
             connect<K extends keyof ObservedPath.SignalSignatures>(
                 signal: K,
                 callback: GObject.SignalCallback<this, ObservedPath.SignalSignatures[K]>,
             ): number;
             connect(signal: string, callback: (...args: any[]) => any): number;
+            /** @signal */
             connect_after<K extends keyof ObservedPath.SignalSignatures>(
                 signal: K,
                 callback: GObject.SignalCallback<this, ObservedPath.SignalSignatures[K]>,
             ): number;
             connect_after(signal: string, callback: (...args: any[]) => any): number;
+            /** @signal */
             emit<K extends keyof ObservedPath.SignalSignatures>(
                 signal: K,
                 ...args: GObject.GjsParameters<ObservedPath.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never
@@ -10684,7 +11556,7 @@ declare module 'gi://IBus?version=1.0' {
             /**
              * Checks whether the path is modified by comparing the mtime in object and
              * mtime in file system.
-             * @returns %TRUE if imtime is changed, otherwise %FALSE.
+             * @returns `true` if imtime is changed, otherwise `false`.
              */
             check_modification(): boolean;
             /**
@@ -10699,7 +11571,7 @@ declare module 'gi://IBus?version=1.0' {
              * a newly allocated
              * GLists, if the `path` is a directory. Otherwise returns NULL.
              * @param dir_only Only looks for subdirs, not files
-             * @returns A newly allocate GList which holds content in path; NULL if @path is not directory.
+             * @returns A newly allocate GList which holds content in path; NULL if `path` is not directory.
              */
             traverse(dir_only: boolean): ObservedPath[];
         }
@@ -10707,35 +11579,356 @@ declare module 'gi://IBus?version=1.0' {
         namespace PanelService {
             // Signal signatures
             interface SignalSignatures extends Service.SignalSignatures {
+                /**
+                 * @signal
+                 * @run-last
+                 */
                 'candidate-clicked-lookup-table': (arg0: number, arg1: number, arg2: number) => void;
+                /**
+                 * Emitted when the client application get the ::commit-text-received.
+                 * Implement the member function
+                 * IBusPanelServiceClass::commit_text_received in extended class to
+                 * receive this signal.
+                 *
+                 * <note><para>Argument `user_data` is ignored in this function.</para>
+                 * </note>
+                 * @signal
+                 * @run-last
+                 */
                 'commit-text-received': (arg0: Text) => void;
+                /**
+                 * Emitted when the client application get the ::cursor-down-lookup-table.
+                 * Implement the member function
+                 * IBusPanelServiceClass::cursor_down_lookup_table in extended
+                 * class to receive this signal.
+                 *
+                 * <note><para>Argument `user_data` is ignored in this function.</para>
+                 * </note>
+                 * @signal
+                 * @run-last
+                 */
                 'cursor-down-lookup-table': () => void;
+                /**
+                 * Emitted when the client application get the ::cursor-up-lookup-table.
+                 * Implement the member function
+                 * IBusPanelServiceClass::cursor_up_lookup_table in extended
+                 * class to receive this signal.
+                 *
+                 * <note><para>Argument `user_data` is ignored in this function.</para>
+                 * </note>
+                 * @signal
+                 * @run-last
+                 */
                 'cursor-up-lookup-table': () => void;
+                /**
+                 * Emitted when the client application destroys.
+                 * Implement the member function
+                 * IBusPanelServiceClass::destroy_context in extended class to
+                 * receive this signal.
+                 *
+                 * <note><para>Argument `user_data` is ignored in this function.</para>
+                 * </note>
+                 * @signal
+                 * @run-last
+                 */
                 'destroy-context': (arg0: string) => void;
+                /**
+                 * Emitted when the client application get the ::focus-in.
+                 * Implement the member function
+                 * IBusPanelServiceClass::focus_in in extended class to receive
+                 * this signal.
+                 *
+                 * <note><para>Argument `user_data` is ignored in this function.</para>
+                 * </note>
+                 * @signal
+                 * @run-last
+                 */
                 'focus-in': (arg0: string) => void;
+                /**
+                 * Emitted when the client application get the ::focus-out.
+                 * Implement the member function
+                 * IBusPanelServiceClass::focus_out in extended class to receive
+                 * this signal.
+                 *
+                 * <note><para>Argument `user_data` is ignored in this function.</para>
+                 * </note>
+                 * @signal
+                 * @run-last
+                 */
                 'focus-out': (arg0: string) => void;
+                /**
+                 * Emitted when the client application get the ::hide-auxiliary-text.
+                 * Implement the member function
+                 * IBusPanelServiceClass::hide_auxiliary_text in extended class
+                 * to receive this signal.
+                 *
+                 * <note><para>Argument `user_data` is ignored in this function.</para>
+                 * </note>
+                 * @signal
+                 * @run-last
+                 */
                 'hide-auxiliary-text': () => void;
+                /**
+                 * Emitted when the client application get the ::hide-language-bar.
+                 * Implement the member function
+                 * IBusPanelServiceClass::hide_language_bar in extended class to
+                 * receive this signal.
+                 *
+                 * <note><para>Argument `user_data` is ignored in this function.</para>
+                 * </note>
+                 * @signal
+                 * @run-last
+                 */
                 'hide-language-bar': () => void;
+                /**
+                 * Emitted when the client application get the ::hide-lookup-table.
+                 * Implement the member function
+                 * IBusPanelServiceClass::hide_lookup_table in extended class to
+                 * receive this signal.
+                 *
+                 * <note><para>Argument `user_data` is ignored in this function.</para>
+                 * </note>
+                 * @signal
+                 * @run-last
+                 */
                 'hide-lookup-table': () => void;
+                /**
+                 * Emitted when the client application get the ::hide-preedit-text.
+                 * Implement the member function
+                 * IBusPanelServiceClass::hide_preedit_text in extended class to
+                 * receive this signal.
+                 *
+                 * <note><para>Argument `user_data` is ignored in this function.</para>
+                 * </note>
+                 * @signal
+                 * @run-last
+                 */
                 'hide-preedit-text': () => void;
+                /**
+                 * Emitted when the client application get the ::page-down-lookup-table.
+                 * Implement the member function
+                 * IBusPanelServiceClass::page_down_lookup_table in extended
+                 * class to receive this signal.
+                 *
+                 * <note><para>Argument `user_data` is ignored in this function.</para>
+                 * </note>
+                 * @signal
+                 * @run-last
+                 */
                 'page-down-lookup-table': () => void;
+                /**
+                 * Emitted when the client application get the ::page-up-lookup-table.
+                 * Implement the member function
+                 * IBusPanelServiceClass::page_up_lookup_table in extended class
+                 * to receive this signal.
+                 *
+                 * <note><para>Argument `user_data` is ignored in this function.</para>
+                 * </note>
+                 * @signal
+                 * @run-last
+                 */
                 'page-up-lookup-table': () => void;
+                /**
+                 * Emitted when the client application get the ::panel-extension-received.
+                 * Implement the member function
+                 * IBusPanelServiceClass::panel_extension_received in extended class to
+                 * receive this signal.
+                 *
+                 * <note><para>Argument `user_data` is ignored in this function.</para>
+                 * </note>
+                 * @signal
+                 * @run-last
+                 */
                 'panel-extension-received': (arg0: ExtensionEvent) => void;
+                /**
+                 * Emitted when a key event is received.
+                 * Implement the member function IBusPanelServiceClass::process_key_event
+                 * in extended class to receive this signal.
+                 * Both the key symbol and keycode are passed to the member function.
+                 * See `ibus_input_context_process_key_event()` for further explanation of
+                 * key symbol, keycode and which to use.
+                 * @signal
+                 * @run-last
+                 */
                 'process-key-event': (arg0: number, arg1: number, arg2: number) => boolean | void;
+                /**
+                 * Emitted when the client application get the ::register-properties.
+                 * Implement the member function
+                 * IBusPanelServiceClass::register_properties in extended class
+                 * to receive this signal.
+                 *
+                 * <note><para>Argument `user_data` is ignored in this function.</para>
+                 * </note>
+                 * @signal
+                 * @run-last
+                 */
                 'register-properties': (arg0: PropList) => void;
+                /**
+                 * Emitted when the client application get the ::reset.
+                 * Implement the member function
+                 * IBusPanelServiceClass::reset in extended class to receive this
+                 * signal.
+                 *
+                 * <note><para>Argument `user_data` is ignored in this function.</para>
+                 * </note>
+                 * @signal
+                 * @run-last
+                 */
                 reset: () => void;
+                /**
+                 * Emitted when the client application get the ::set-content-type.
+                 * Implement the member function
+                 * IBusPanelServiceClass::set_content_type in extended class to
+                 * receive this signal.
+                 *
+                 * <note><para>Argument `user_data` is ignored in this function.</para>
+                 * </note>
+                 * @signal
+                 * @run-last
+                 */
                 'set-content-type': (arg0: number, arg1: number) => void;
+                /**
+                 * Emitted when the client application get the ::set-cursor-location.
+                 * Implement the member function
+                 * IBusPanelServiceClass::set_cursor_location in extended class
+                 * to receive this signal.
+                 *
+                 * <note><para>Argument `user_data` is ignored in this function.</para>
+                 * </note>
+                 * @signal
+                 * @run-last
+                 */
                 'set-cursor-location': (arg0: number, arg1: number, arg2: number, arg3: number) => void;
+                /**
+                 * Emitted when the client application get the set-cursor-location-relative.
+                 * Implement the member function `set_cursor_location_relative()` in
+                 * extended class to receive this signal.
+                 *
+                 * <note><para>Argument `user_data` is ignored in this function.</para>
+                 * </note>
+                 * @signal
+                 * @run-last
+                 */
                 'set-cursor-location-relative': (arg0: number, arg1: number, arg2: number, arg3: number) => void;
+                /**
+                 * Emitted when the client application get the ::show-auxiliary-text.
+                 * Implement the member function
+                 * IBusPanelServiceClass::show_auxiliary_text in extended class
+                 * to receive this signal.
+                 *
+                 * <note><para>Argument `user_data` is ignored in this function.</para>
+                 * </note>
+                 * @signal
+                 * @run-last
+                 */
                 'show-auxiliary-text': () => void;
+                /**
+                 * Emitted when the client application get the ::show-language-bar.
+                 * Implement the member function
+                 * IBusPanelServiceClass::show_language_bar in extended class to
+                 * receive this signal.
+                 *
+                 * <note><para>Argument `user_data` is ignored in this function.</para>
+                 * </note>
+                 * @signal
+                 * @run-last
+                 */
                 'show-language-bar': () => void;
+                /**
+                 * Emitted when the client application get the ::show-lookup-table.
+                 * Implement the member function
+                 * IBusPanelServiceClass::show_lookup_table in extended class to
+                 * receive this signal.
+                 *
+                 * <note><para>Argument `user_data` is ignored in this function.</para>
+                 * </note>
+                 * @signal
+                 * @run-last
+                 */
                 'show-lookup-table': () => void;
+                /**
+                 * Emitted when the client application get the ::show-preedit-text.
+                 * Implement the member function
+                 * IBusPanelServiceClass::show_preedit_text in extended class to
+                 * receive this signal.
+                 *
+                 * <note><para>Argument `user_data` is ignored in this function.</para>
+                 * </note>
+                 * @signal
+                 * @run-last
+                 */
                 'show-preedit-text': () => void;
+                /**
+                 * Emitted when the client application get the ::start-setup.
+                 * Implement the member function
+                 * IBusPanelServiceClass::start_setup in extended class to
+                 * receive this signal.
+                 *
+                 * <note><para>Argument `user_data` is ignored in this function.</para>
+                 * </note>
+                 * @signal
+                 * @run-last
+                 */
                 'start-setup': () => void;
+                /**
+                 * Emitted when the client application get the ::state-changed.
+                 * Implement the member function
+                 * IBusPanelServiceClass::state_changed in extended class to
+                 * receive this signal.
+                 *
+                 * <note><para>Argument `user_data` is ignored in this function.</para>
+                 * </note>
+                 * @signal
+                 * @run-last
+                 */
                 'state-changed': () => void;
+                /**
+                 * Emitted when the client application get the ::update-auxiliary-text.
+                 * Implement the member function
+                 * IBusPanelServiceClass::update_auxiliary_text in extended class
+                 * to receive this signal.
+                 *
+                 * <note><para>Argument `user_data` is ignored in this function.</para>
+                 * </note>
+                 * @signal
+                 * @run-last
+                 */
                 'update-auxiliary-text': (arg0: Text, arg1: boolean) => void;
+                /**
+                 * Emitted when the client application get the ::update-lookup-table.
+                 * Implement the member function
+                 * IBusPanelServiceClass::update_lookup_table in extended class
+                 * to receive this signal.
+                 *
+                 * <note><para>Argument `user_data` is ignored in this function.</para>
+                 * </note>
+                 * @signal
+                 * @run-last
+                 */
                 'update-lookup-table': (arg0: LookupTable, arg1: boolean) => void;
+                /**
+                 * Emitted when the client application get the ::update-preedit-text.
+                 * Implement the member function
+                 * IBusPanelServiceClass::update_preedit_text in extended class
+                 * to receive this signal.
+                 *
+                 * <note><para>Argument `user_data` is ignored in this function.</para>
+                 * </note>
+                 * @signal
+                 * @run-last
+                 */
                 'update-preedit-text': (arg0: Text, arg1: number, arg2: boolean) => void;
+                /**
+                 * Emitted when the client application get the ::update-property.
+                 * Implement the member function
+                 * IBusPanelServiceClass::update_property in extended class to
+                 * receive this signal.
+                 *
+                 * <note><para>Argument `user_data` is ignored in this function.</para>
+                 * </note>
+                 * @signal
+                 * @run-last
+                 */
                 'update-property': (arg0: Property) => void;
                 'notify::connection': (pspec: GObject.ParamSpec) => void;
                 'notify::object-path': (pspec: GObject.ParamSpec) => void;
@@ -10749,6 +11942,7 @@ declare module 'gi://IBus?version=1.0' {
         /**
          * An IBusPanelService is a base class for UI services.
          * Developers can "extend" this class for panel UI development.
+         * @gir-type Class
          */
         class PanelService extends Service {
             static $gtype: GObject.GType<PanelService>;
@@ -10775,16 +11969,19 @@ declare module 'gi://IBus?version=1.0' {
 
             // Signals
 
+            /** @signal */
             connect<K extends keyof PanelService.SignalSignatures>(
                 signal: K,
                 callback: GObject.SignalCallback<this, PanelService.SignalSignatures[K]>,
             ): number;
             connect(signal: string, callback: (...args: any[]) => any): number;
+            /** @signal */
             connect_after<K extends keyof PanelService.SignalSignatures>(
                 signal: K,
                 callback: GObject.SignalCallback<this, PanelService.SignalSignatures[K]>,
             ): number;
             connect_after(signal: string, callback: (...args: any[]) => any): number;
+            /** @signal */
             emit<K extends keyof PanelService.SignalSignatures>(
                 signal: K,
                 ...args: GObject.GjsParameters<PanelService.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never
@@ -10793,35 +11990,155 @@ declare module 'gi://IBus?version=1.0' {
 
             // Virtual methods
 
+            /**
+             * @param index
+             * @param button
+             * @param state
+             * @virtual
+             */
             vfunc_candidate_clicked_lookup_table(index: number, button: number, state: number): void;
+            /**
+             * @param text
+             * @virtual
+             */
             vfunc_commit_text_received(text: Text): void;
+            /**
+             * @virtual
+             */
             vfunc_cursor_down_lookup_table(): void;
+            /**
+             * @virtual
+             */
             vfunc_cursor_up_lookup_table(): void;
+            /**
+             * @param input_context_path
+             * @virtual
+             */
             vfunc_destroy_context(input_context_path: string): void;
+            /**
+             * @param input_context_path
+             * @virtual
+             */
             vfunc_focus_in(input_context_path: string): void;
+            /**
+             * @param input_context_path
+             * @virtual
+             */
             vfunc_focus_out(input_context_path: string): void;
+            /**
+             * @virtual
+             */
             vfunc_hide_auxiliary_text(): void;
+            /**
+             * @virtual
+             */
             vfunc_hide_language_bar(): void;
+            /**
+             * @virtual
+             */
             vfunc_hide_lookup_table(): void;
+            /**
+             * @virtual
+             */
             vfunc_hide_preedit_text(): void;
+            /**
+             * @virtual
+             */
             vfunc_page_down_lookup_table(): void;
+            /**
+             * @virtual
+             */
             vfunc_page_up_lookup_table(): void;
+            /**
+             * @param event
+             * @virtual
+             */
             vfunc_panel_extension_received(event: ExtensionEvent): void;
+            /**
+             * @param keyval
+             * @param keycode
+             * @param state
+             * @virtual
+             */
             vfunc_process_key_event(keyval: number, keycode: number, state: number): boolean;
+            /**
+             * @param prop_list
+             * @virtual
+             */
             vfunc_register_properties(prop_list: PropList): void;
+            /**
+             * @virtual
+             */
             vfunc_reset(): void;
+            /**
+             * @param purpose
+             * @param hints
+             * @virtual
+             */
             vfunc_set_content_type(purpose: number, hints: number): void;
+            /**
+             * @param x
+             * @param y
+             * @param w
+             * @param h
+             * @virtual
+             */
             vfunc_set_cursor_location(x: number, y: number, w: number, h: number): void;
+            /**
+             * @param x
+             * @param y
+             * @param w
+             * @param h
+             * @virtual
+             */
             vfunc_set_cursor_location_relative(x: number, y: number, w: number, h: number): void;
+            /**
+             * @virtual
+             */
             vfunc_show_auxiliary_text(): void;
+            /**
+             * @virtual
+             */
             vfunc_show_language_bar(): void;
+            /**
+             * @virtual
+             */
             vfunc_show_lookup_table(): void;
+            /**
+             * @virtual
+             */
             vfunc_show_preedit_text(): void;
+            /**
+             * @virtual
+             */
             vfunc_start_setup(): void;
+            /**
+             * @virtual
+             */
             vfunc_state_changed(): void;
+            /**
+             * @param text
+             * @param visible
+             * @virtual
+             */
             vfunc_update_auxiliary_text(text: Text, visible: boolean): void;
+            /**
+             * @param lookup_table
+             * @param visible
+             * @virtual
+             */
             vfunc_update_lookup_table(lookup_table: LookupTable, visible: boolean): void;
+            /**
+             * @param text
+             * @param cursor_pos
+             * @param visible
+             * @virtual
+             */
             vfunc_update_preedit_text(text: Text, cursor_pos: number, visible: boolean): void;
+            /**
+             * @param prop
+             * @virtual
+             */
             vfunc_update_property(prop: Property): void;
 
             // Methods
@@ -10837,7 +12154,7 @@ declare module 'gi://IBus?version=1.0' {
             /**
              * Notify that a text is sent
              * by sending a "CommitText" message to IBus service.
-             * @param text An #IBusText
+             * @param text An {@link IBus.Text}
              */
             commit_text(text: Text): void;
             /**
@@ -10873,10 +12190,10 @@ declare module 'gi://IBus?version=1.0' {
              */
             page_up(): void;
             /**
-             * Enable or disable a panel extension with #IBusExtensionEvent.
+             * Enable or disable a panel extension with {@link IBus.ExtensionEvent}.
              * Notify that a data is sent
              * by sending a "PanelExtension" message to IBus panel extension service.
-             * @param event A #PanelExtensionEvent which is sent to a                          panel extension.
+             * @param event A `PanelExtensionEvent` which is sent to a                          panel extension.
              */
             panel_extension(event: ExtensionEvent): void;
             /**
@@ -10908,7 +12225,7 @@ declare module 'gi://IBus?version=1.0' {
              * (Note: The table object will be released, if it is floating.
              *  If caller want to keep the object, caller should make the object
              *  sink by g_object_ref_sink.)
-             * @param text An #IBusText
+             * @param text An {@link IBus.Text}
              * @param visible Whether the auxilirary text is visible.
              */
             update_auxiliary_text_received(text: Text, visible: boolean): void;
@@ -10918,7 +12235,7 @@ declare module 'gi://IBus?version=1.0' {
              * (Note: The table object will be released, if it is floating.
              *  If caller want to keep the object, caller should make the object
              *  sink by g_object_ref_sink.)
-             * @param table An #IBusLookupTable
+             * @param table An {@link IBus.LookupTable}
              * @param visible Whether the lookup table is visible.
              */
             update_lookup_table_received(table: LookupTable, visible: boolean): void;
@@ -10945,7 +12262,8 @@ declare module 'gi://IBus?version=1.0' {
         }
 
         /**
-         * See_also: #IBusProperty, #IBusEngine
+         * See_also: {@link IBus.Property}, {@link IBus.Engine}
+         * @gir-type Class
          */
         class PropList extends Serializable {
             static $gtype: GObject.GType<PropList>;
@@ -10973,16 +12291,19 @@ declare module 'gi://IBus?version=1.0' {
 
             // Signals
 
+            /** @signal */
             connect<K extends keyof PropList.SignalSignatures>(
                 signal: K,
                 callback: GObject.SignalCallback<this, PropList.SignalSignatures[K]>,
             ): number;
             connect(signal: string, callback: (...args: any[]) => any): number;
+            /** @signal */
             connect_after<K extends keyof PropList.SignalSignatures>(
                 signal: K,
                 callback: GObject.SignalCallback<this, PropList.SignalSignatures[K]>,
             ): number;
             connect_after(signal: string, callback: (...args: any[]) => any): number;
+            /** @signal */
             emit<K extends keyof PropList.SignalSignatures>(
                 signal: K,
                 ...args: GObject.GjsParameters<PropList.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never
@@ -10993,19 +12314,19 @@ declare module 'gi://IBus?version=1.0' {
 
             /**
              * Append an IBusProperty to an IBusPropList, and increase reference.
-             * @param prop IBusProperty to be append to @prop_list.
+             * @param prop IBusProperty to be append to `prop_list`.
              */
             append(prop: Property): void;
             /**
-             * Gets #IBusProperty at given index. Borrowed reference.
+             * Gets {@link IBus.Property} at given index. Borrowed reference.
              * @param index Index of an IBusPropList.
-             * @returns #IBusProperty at given index, %NULL if no such     #IBusProperty.
+             * @returns {@link IBus.Property} at given index, `null` if no such     {@link IBus.Property}.
              */
             get(index: number): Property;
             /**
              * Update an IBusProperty in IBusPropList.
              * @param prop IBusProperty to be update.
-             * @returns %TRUE if succeeded, %FALSE otherwise.
+             * @returns `true` if succeeded, `false` otherwise.
              */
             update_property(prop: Property): boolean;
         }
@@ -11051,7 +12372,8 @@ declare module 'gi://IBus?version=1.0' {
          * pressing ctrl-space or click on the Eng/Chi switch button.
          * And the IBusProperty shows the change correspondingly.
          *
-         * see_also: #IBusPropList, #IBusEngine
+         * see_also: {@link IBus.PropList}, {@link IBus.Engine}
+         * @gir-type Class
          */
         class Property extends Serializable {
             static $gtype: GObject.GType<Property>;
@@ -11060,10 +12382,19 @@ declare module 'gi://IBus?version=1.0' {
 
             get icon(): string;
             set icon(val: string);
+            /**
+             * @construct-only
+             */
             get key(): string;
             get label(): Text;
             set label(val: Text);
+            /**
+             * @construct-only
+             */
             get prop_type(): PropType;
+            /**
+             * @construct-only
+             */
             get propType(): PropType;
             get sensitive(): boolean;
             set sensitive(val: boolean);
@@ -11112,16 +12443,19 @@ declare module 'gi://IBus?version=1.0' {
 
             // Signals
 
+            /** @signal */
             connect<K extends keyof Property.SignalSignatures>(
                 signal: K,
                 callback: GObject.SignalCallback<this, Property.SignalSignatures[K]>,
             ): number;
             connect(signal: string, callback: (...args: any[]) => any): number;
+            /** @signal */
             connect_after<K extends keyof Property.SignalSignatures>(
                 signal: K,
                 callback: GObject.SignalCallback<this, Property.SignalSignatures[K]>,
             ): number;
             connect_after(signal: string, callback: (...args: any[]) => any): number;
+            /** @signal */
             emit<K extends keyof Property.SignalSignatures>(
                 signal: K,
                 ...args: GObject.GjsParameters<Property.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never
@@ -11131,96 +12465,96 @@ declare module 'gi://IBus?version=1.0' {
             // Methods
 
             /**
-             * Get the icon of #IBusProperty.
-             * @returns the icon of #IBusProperty. Should not be freed.
+             * Get the icon of {@link IBus.Property}.
+             * @returns the icon of {@link IBus.Property}. Should not be freed.
              */
             get_icon(): string;
             /**
-             * Get the key of #IBusProperty.
-             * @returns the key of #IBusProperty. Should not be freed.
+             * Get the key of {@link IBus.Property}.
+             * @returns the key of {@link IBus.Property}. Should not be freed.
              */
             get_key(): string;
             /**
-             * Get the label of #IBusProperty.
-             * @returns the label of #IBusProperty. Should not be freed.
+             * Get the label of {@link IBus.Property}.
+             * @returns the label of {@link IBus.Property}. Should not be freed.
              */
             get_label(): Text;
             get_prop_type(): PropType;
             /**
-             * Get the sensitive of #IBusProperty.
-             * @returns the sensitive of #IBusProperty.
+             * Get the sensitive of {@link IBus.Property}.
+             * @returns the sensitive of {@link IBus.Property}.
              */
             get_sensitive(): boolean;
             /**
-             * Get the state of #IBusProperty.
-             * @returns the state of #IBusProperty.
+             * Get the state of {@link IBus.Property}.
+             * @returns the state of {@link IBus.Property}.
              */
             get_state(): PropState;
             /**
-             * Get the IBusPropList of #IBusProperty.
-             * @returns the IBusPropList of #IBusProperty.     Should not be freed.
+             * Get the IBusPropList of {@link IBus.Property}.
+             * @returns the IBusPropList of {@link IBus.Property}.     Should not be freed.
              */
             get_sub_props(): PropList;
             /**
-             * Get the symbol of #IBusProperty.
-             * @returns the symbol of #IBusProperty. Should not be freed.
+             * Get the symbol of {@link IBus.Property}.
+             * @returns the symbol of {@link IBus.Property}. Should not be freed.
              */
             get_symbol(): Text;
             /**
-             * Get the tooltip of #IBusProperty.
-             * @returns the tooltip of #IBusProperty. Should not be freed.
+             * Get the tooltip of {@link IBus.Property}.
+             * @returns the tooltip of {@link IBus.Property}. Should not be freed.
              */
             get_tooltip(): Text;
             /**
-             * Get the visible of #IBusProperty.
-             * @returns the visible of #IBusProperty.
+             * Get the visible of {@link IBus.Property}.
+             * @returns the visible of {@link IBus.Property}.
              */
             get_visible(): boolean;
             /**
-             * Set the icon of #IBusProperty.
+             * Set the icon of {@link IBus.Property}.
              * @param icon Icon shown in UI. It could be a full path of an icon file or an icon name.
              */
             set_icon(icon: string): void;
             /**
-             * Set the label of #IBusProperty.
+             * Set the label of {@link IBus.Property}.
              * @param label Text shown in UI.
              */
             set_label(label: Text): void;
             /**
-             * Set whether the #IBusProperty is sensitive.
-             * @param sensitive Whether the #IBusProperty is sensitive.
+             * Set whether the {@link IBus.Property} is sensitive.
+             * @param sensitive Whether the {@link IBus.Property} is sensitive.
              */
             set_sensitive(sensitive: boolean): void;
             /**
-             * Set the state of the #IBusProperty.
-             * @param state The state of the #IBusProperty.
+             * Set the state of the {@link IBus.Property}.
+             * @param state The state of the {@link IBus.Property}.
              */
             set_state(state: PropState | null): void;
             /**
              * Set the sub IBusProperties.
-             * @param prop_list #IBusPropList that contains sub IBusProperties.
+             * @param prop_list {@link IBus.PropList} that contains sub IBusProperties.
              */
             set_sub_props(prop_list: PropList): void;
             /**
-             * Set the symbol of #IBusProperty.
+             * Set the symbol of {@link IBus.Property}.
              * @param symbol Text shown in UI.
              */
             set_symbol(symbol: Text): void;
             /**
-             * Set the tooltip of #IBusProperty.
+             * Set the tooltip of {@link IBus.Property}.
              * @param tooltip Text of the tooltip.
              */
             set_tooltip(tooltip: Text): void;
             /**
-             * Set whether the #IBusProperty is visible.
-             * @param visible Whether the #IBusProperty is visible.
+             * Set whether the {@link IBus.Property} is visible.
+             * @param visible Whether the {@link IBus.Property} is visible.
              */
             set_visible(visible: boolean): void;
             /**
-             * Update the content of an #IBusProperty.
-             * #IBusProperty `prop_update` can either be sub-property of `prop,`
+             * Update the content of an {@link IBus.Property}.
+             * {@link IBus.Property} `prop_update` can either be sub-property of `prop`,
              * or holds new values for `prop`.
-             * @param prop_update #IBusPropList that contains sub IBusProperties.
+             * @param prop_update {@link IBus.PropList} that contains sub IBusProperties.
              * @returns TRUE if update succeeded; FALSE otherwise.
              */
             update(prop_update: Property): boolean;
@@ -11229,6 +12563,15 @@ declare module 'gi://IBus?version=1.0' {
         namespace Proxy {
             // Signal signatures
             interface SignalSignatures extends Gio.DBusProxy.SignalSignatures {
+                /**
+                 * Destroy and free an IBusProxy
+                 *
+                 * See also:  `ibus_proxy_destroy()`.
+                 *
+                 * <note><para>Argument `user_data` is ignored in this function.</para></note>
+                 * @signal
+                 * @run-last
+                 */
                 destroy: () => void;
                 'notify::g-bus-type': (pspec: GObject.ParamSpec) => void;
                 'notify::g-connection': (pspec: GObject.ParamSpec) => void;
@@ -11253,7 +12596,7 @@ declare module 'gi://IBus?version=1.0' {
 
         /**
          * An IBusProxy is the base of all proxy objects,
-         * which communicate the corresponding #IBusServices on the other end of
+         * which communicate the corresponding `IBusServices` on the other end of
          * IBusConnection.
          * For example, IBus clients (such as editors, web browsers) invoke the proxy
          * object,
@@ -11261,6 +12604,7 @@ declare module 'gi://IBus?version=1.0' {
          * ibus-daemon.
          *
          * Almost all services have corresponding proxies, except very simple services.
+         * @gir-type Class
          */
         class Proxy extends Gio.DBusProxy implements Gio.AsyncInitable<Proxy>, Gio.DBusInterface, Gio.Initable {
             static $gtype: GObject.GType<Proxy>;
@@ -11287,16 +12631,19 @@ declare module 'gi://IBus?version=1.0' {
 
             // Signals
 
+            /** @signal */
             connect<K extends keyof Proxy.SignalSignatures>(
                 signal: K,
                 callback: GObject.SignalCallback<this, Proxy.SignalSignatures[K]>,
             ): number;
             connect(signal: string, callback: (...args: any[]) => any): number;
+            /** @signal */
             connect_after<K extends keyof Proxy.SignalSignatures>(
                 signal: K,
                 callback: GObject.SignalCallback<this, Proxy.SignalSignatures[K]>,
             ): number;
             connect_after(signal: string, callback: (...args: any[]) => any): number;
+            /** @signal */
             emit<K extends keyof Proxy.SignalSignatures>(
                 signal: K,
                 ...args: GObject.GjsParameters<Proxy.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never
@@ -11313,6 +12660,7 @@ declare module 'gi://IBus?version=1.0' {
              * called or the underlying dbus connection for the proxy is terminated.
              * In the callback of the destroy signal, you might have to call something
              * like 'g_object_unref(the_proxy);'.
+             * @virtual
              */
             vfunc_destroy(): void;
 
@@ -11328,89 +12676,87 @@ declare module 'gi://IBus?version=1.0' {
              * like 'g_object_unref(the_proxy);'.
              */
             destroy(): void;
-
-            // Inherited methods
             /**
              * Starts asynchronous initialization of the object implementing the
              * interface. This must be done before any real use of the object after
-             * initial construction. If the object also implements #GInitable you can
-             * optionally call g_initable_init() instead.
+             * initial construction. If the object also implements {@link Gio.Initable} you can
+             * optionally call `g_initable_init()` instead.
              *
              * This method is intended for language bindings. If writing in C,
-             * g_async_initable_new_async() should typically be used instead.
+             * `g_async_initable_new_async()` should typically be used instead.
              *
              * When the initialization is finished, `callback` will be called. You can
-             * then call g_async_initable_init_finish() to get the result of the
+             * then call `g_async_initable_init_finish()` to get the result of the
              * initialization.
              *
              * Implementations may also support cancellation. If `cancellable` is not
-             * %NULL, then initialization can be cancelled by triggering the cancellable
+             * `null`, then initialization can be cancelled by triggering the cancellable
              * object from another thread. If the operation was cancelled, the error
-             * %G_IO_ERROR_CANCELLED will be returned. If `cancellable` is not %NULL, and
+             * {@link Gio.IOErrorEnum.CANCELLED} will be returned. If `cancellable` is not `null`, and
              * the object doesn't support cancellable initialization, the error
-             * %G_IO_ERROR_NOT_SUPPORTED will be returned.
+             * {@link Gio.IOErrorEnum.NOT_SUPPORTED} will be returned.
              *
-             * As with #GInitable, if the object is not initialized, or initialization
+             * As with {@link Gio.Initable}, if the object is not initialized, or initialization
              * returns with an error, then all operations on the object except
-             * g_object_ref() and g_object_unref() are considered to be invalid, and
-             * have undefined behaviour. They will often fail with g_critical() or
-             * g_warning(), but this must not be relied on.
+             * `g_object_ref()` and `g_object_unref()` are considered to be invalid, and
+             * have undefined behaviour. They will often fail with `g_critical()` or
+             * `g_warning()`, but this must not be relied on.
              *
-             * Callers should not assume that a class which implements #GAsyncInitable can
-             * be initialized multiple times; for more information, see g_initable_init().
+             * Callers should not assume that a class which implements {@link Gio.AsyncInitable} can
+             * be initialized multiple times; for more information, see `g_initable_init()`.
              * If a class explicitly supports being initialized multiple times,
-             * implementation requires yielding all subsequent calls to init_async() on the
+             * implementation requires yielding all subsequent calls to `init_async()` on the
              * results of the first call.
              *
-             * For classes that also support the #GInitable interface, the default
-             * implementation of this method will run the g_initable_init() function
+             * For classes that also support the {@link Gio.Initable} interface, the default
+             * implementation of this method will run the `g_initable_init()` function
              * in a thread, so if you want to support asynchronous initialization via
-             * threads, just implement the #GAsyncInitable interface without overriding
+             * threads, just implement the {@link Gio.AsyncInitable} interface without overriding
              * any interface methods.
              * @param io_priority the [I/O priority](iface.AsyncResult.html#io-priority) of the operation
-             * @param cancellable optional #GCancellable object, %NULL to ignore.
+             * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
              */
             init_async(io_priority: number, cancellable?: Gio.Cancellable | null): globalThis.Promise<boolean>;
             /**
              * Starts asynchronous initialization of the object implementing the
              * interface. This must be done before any real use of the object after
-             * initial construction. If the object also implements #GInitable you can
-             * optionally call g_initable_init() instead.
+             * initial construction. If the object also implements {@link Gio.Initable} you can
+             * optionally call `g_initable_init()` instead.
              *
              * This method is intended for language bindings. If writing in C,
-             * g_async_initable_new_async() should typically be used instead.
+             * `g_async_initable_new_async()` should typically be used instead.
              *
              * When the initialization is finished, `callback` will be called. You can
-             * then call g_async_initable_init_finish() to get the result of the
+             * then call `g_async_initable_init_finish()` to get the result of the
              * initialization.
              *
              * Implementations may also support cancellation. If `cancellable` is not
-             * %NULL, then initialization can be cancelled by triggering the cancellable
+             * `null`, then initialization can be cancelled by triggering the cancellable
              * object from another thread. If the operation was cancelled, the error
-             * %G_IO_ERROR_CANCELLED will be returned. If `cancellable` is not %NULL, and
+             * {@link Gio.IOErrorEnum.CANCELLED} will be returned. If `cancellable` is not `null`, and
              * the object doesn't support cancellable initialization, the error
-             * %G_IO_ERROR_NOT_SUPPORTED will be returned.
+             * {@link Gio.IOErrorEnum.NOT_SUPPORTED} will be returned.
              *
-             * As with #GInitable, if the object is not initialized, or initialization
+             * As with {@link Gio.Initable}, if the object is not initialized, or initialization
              * returns with an error, then all operations on the object except
-             * g_object_ref() and g_object_unref() are considered to be invalid, and
-             * have undefined behaviour. They will often fail with g_critical() or
-             * g_warning(), but this must not be relied on.
+             * `g_object_ref()` and `g_object_unref()` are considered to be invalid, and
+             * have undefined behaviour. They will often fail with `g_critical()` or
+             * `g_warning()`, but this must not be relied on.
              *
-             * Callers should not assume that a class which implements #GAsyncInitable can
-             * be initialized multiple times; for more information, see g_initable_init().
+             * Callers should not assume that a class which implements {@link Gio.AsyncInitable} can
+             * be initialized multiple times; for more information, see `g_initable_init()`.
              * If a class explicitly supports being initialized multiple times,
-             * implementation requires yielding all subsequent calls to init_async() on the
+             * implementation requires yielding all subsequent calls to `init_async()` on the
              * results of the first call.
              *
-             * For classes that also support the #GInitable interface, the default
-             * implementation of this method will run the g_initable_init() function
+             * For classes that also support the {@link Gio.Initable} interface, the default
+             * implementation of this method will run the `g_initable_init()` function
              * in a thread, so if you want to support asynchronous initialization via
-             * threads, just implement the #GAsyncInitable interface without overriding
+             * threads, just implement the {@link Gio.AsyncInitable} interface without overriding
              * any interface methods.
              * @param io_priority the [I/O priority](iface.AsyncResult.html#io-priority) of the operation
-             * @param cancellable optional #GCancellable object, %NULL to ignore.
-             * @param callback a #GAsyncReadyCallback to call when the request is satisfied
+             * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
+             * @param callback a {@link Gio.AsyncReadyCallback} to call when the request is satisfied
              */
             init_async(
                 io_priority: number,
@@ -11420,43 +12766,43 @@ declare module 'gi://IBus?version=1.0' {
             /**
              * Starts asynchronous initialization of the object implementing the
              * interface. This must be done before any real use of the object after
-             * initial construction. If the object also implements #GInitable you can
-             * optionally call g_initable_init() instead.
+             * initial construction. If the object also implements {@link Gio.Initable} you can
+             * optionally call `g_initable_init()` instead.
              *
              * This method is intended for language bindings. If writing in C,
-             * g_async_initable_new_async() should typically be used instead.
+             * `g_async_initable_new_async()` should typically be used instead.
              *
              * When the initialization is finished, `callback` will be called. You can
-             * then call g_async_initable_init_finish() to get the result of the
+             * then call `g_async_initable_init_finish()` to get the result of the
              * initialization.
              *
              * Implementations may also support cancellation. If `cancellable` is not
-             * %NULL, then initialization can be cancelled by triggering the cancellable
+             * `null`, then initialization can be cancelled by triggering the cancellable
              * object from another thread. If the operation was cancelled, the error
-             * %G_IO_ERROR_CANCELLED will be returned. If `cancellable` is not %NULL, and
+             * {@link Gio.IOErrorEnum.CANCELLED} will be returned. If `cancellable` is not `null`, and
              * the object doesn't support cancellable initialization, the error
-             * %G_IO_ERROR_NOT_SUPPORTED will be returned.
+             * {@link Gio.IOErrorEnum.NOT_SUPPORTED} will be returned.
              *
-             * As with #GInitable, if the object is not initialized, or initialization
+             * As with {@link Gio.Initable}, if the object is not initialized, or initialization
              * returns with an error, then all operations on the object except
-             * g_object_ref() and g_object_unref() are considered to be invalid, and
-             * have undefined behaviour. They will often fail with g_critical() or
-             * g_warning(), but this must not be relied on.
+             * `g_object_ref()` and `g_object_unref()` are considered to be invalid, and
+             * have undefined behaviour. They will often fail with `g_critical()` or
+             * `g_warning()`, but this must not be relied on.
              *
-             * Callers should not assume that a class which implements #GAsyncInitable can
-             * be initialized multiple times; for more information, see g_initable_init().
+             * Callers should not assume that a class which implements {@link Gio.AsyncInitable} can
+             * be initialized multiple times; for more information, see `g_initable_init()`.
              * If a class explicitly supports being initialized multiple times,
-             * implementation requires yielding all subsequent calls to init_async() on the
+             * implementation requires yielding all subsequent calls to `init_async()` on the
              * results of the first call.
              *
-             * For classes that also support the #GInitable interface, the default
-             * implementation of this method will run the g_initable_init() function
+             * For classes that also support the {@link Gio.Initable} interface, the default
+             * implementation of this method will run the `g_initable_init()` function
              * in a thread, so if you want to support asynchronous initialization via
-             * threads, just implement the #GAsyncInitable interface without overriding
+             * threads, just implement the {@link Gio.AsyncInitable} interface without overriding
              * any interface methods.
              * @param io_priority the [I/O priority](iface.AsyncResult.html#io-priority) of the operation
-             * @param cancellable optional #GCancellable object, %NULL to ignore.
-             * @param callback a #GAsyncReadyCallback to call when the request is satisfied
+             * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
+             * @param callback a {@link Gio.AsyncReadyCallback} to call when the request is satisfied
              */
             init_async(
                 io_priority: number,
@@ -11465,60 +12811,64 @@ declare module 'gi://IBus?version=1.0' {
             ): globalThis.Promise<boolean> | void;
             /**
              * Finishes asynchronous initialization and returns the result.
-             * See g_async_initable_init_async().
-             * @param res a #GAsyncResult.
-             * @returns %TRUE if successful. If an error has occurred, this function will return %FALSE and set @error appropriately if present.
+             * See `g_async_initable_init_async()`.
+             * @param res a {@link Gio.AsyncResult}.
+             * @returns `true` if successful. If an error has occurred, this function will return `false` and set `error` appropriately if present.
              */
             init_finish(res: Gio.AsyncResult): boolean;
             /**
              * Finishes the async construction for the various g_async_initable_new
-             * calls, returning the created object or %NULL on error.
-             * @param res the #GAsyncResult from the callback
-             * @returns a newly created #GObject,      or %NULL on error. Free with g_object_unref().
+             * calls, returning the created object or `null` on error.
+             * @param res the {@link Gio.AsyncResult} from the callback
+             * @returns a newly created {@link GObject.Object},      or `null` on error. Free with `g_object_unref()`.
              */
             new_finish(res: Gio.AsyncResult): Proxy;
+            /**
+             * @param args
+             */
             // Conflicted with Gio.DBusProxy.new_finish
             new_finish(...args: never[]): any;
             /**
              * Starts asynchronous initialization of the object implementing the
              * interface. This must be done before any real use of the object after
-             * initial construction. If the object also implements #GInitable you can
-             * optionally call g_initable_init() instead.
+             * initial construction. If the object also implements {@link Gio.Initable} you can
+             * optionally call `g_initable_init()` instead.
              *
              * This method is intended for language bindings. If writing in C,
-             * g_async_initable_new_async() should typically be used instead.
+             * `g_async_initable_new_async()` should typically be used instead.
              *
              * When the initialization is finished, `callback` will be called. You can
-             * then call g_async_initable_init_finish() to get the result of the
+             * then call `g_async_initable_init_finish()` to get the result of the
              * initialization.
              *
              * Implementations may also support cancellation. If `cancellable` is not
-             * %NULL, then initialization can be cancelled by triggering the cancellable
+             * `null`, then initialization can be cancelled by triggering the cancellable
              * object from another thread. If the operation was cancelled, the error
-             * %G_IO_ERROR_CANCELLED will be returned. If `cancellable` is not %NULL, and
+             * {@link Gio.IOErrorEnum.CANCELLED} will be returned. If `cancellable` is not `null`, and
              * the object doesn't support cancellable initialization, the error
-             * %G_IO_ERROR_NOT_SUPPORTED will be returned.
+             * {@link Gio.IOErrorEnum.NOT_SUPPORTED} will be returned.
              *
-             * As with #GInitable, if the object is not initialized, or initialization
+             * As with {@link Gio.Initable}, if the object is not initialized, or initialization
              * returns with an error, then all operations on the object except
-             * g_object_ref() and g_object_unref() are considered to be invalid, and
-             * have undefined behaviour. They will often fail with g_critical() or
-             * g_warning(), but this must not be relied on.
+             * `g_object_ref()` and `g_object_unref()` are considered to be invalid, and
+             * have undefined behaviour. They will often fail with `g_critical()` or
+             * `g_warning()`, but this must not be relied on.
              *
-             * Callers should not assume that a class which implements #GAsyncInitable can
-             * be initialized multiple times; for more information, see g_initable_init().
+             * Callers should not assume that a class which implements {@link Gio.AsyncInitable} can
+             * be initialized multiple times; for more information, see `g_initable_init()`.
              * If a class explicitly supports being initialized multiple times,
-             * implementation requires yielding all subsequent calls to init_async() on the
+             * implementation requires yielding all subsequent calls to `init_async()` on the
              * results of the first call.
              *
-             * For classes that also support the #GInitable interface, the default
-             * implementation of this method will run the g_initable_init() function
+             * For classes that also support the {@link Gio.Initable} interface, the default
+             * implementation of this method will run the `g_initable_init()` function
              * in a thread, so if you want to support asynchronous initialization via
-             * threads, just implement the #GAsyncInitable interface without overriding
+             * threads, just implement the {@link Gio.AsyncInitable} interface without overriding
              * any interface methods.
              * @param io_priority the [I/O priority](iface.AsyncResult.html#io-priority) of the operation
-             * @param cancellable optional #GCancellable object, %NULL to ignore.
-             * @param callback a #GAsyncReadyCallback to call when the request is satisfied
+             * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
+             * @param callback a {@link Gio.AsyncReadyCallback} to call when the request is satisfied
+             * @virtual
              */
             vfunc_init_async(
                 io_priority: number,
@@ -11527,70 +12877,74 @@ declare module 'gi://IBus?version=1.0' {
             ): void;
             /**
              * Finishes asynchronous initialization and returns the result.
-             * See g_async_initable_init_async().
-             * @param res a #GAsyncResult.
+             * See `g_async_initable_init_async()`.
+             * @param res a {@link Gio.AsyncResult}.
+             * @virtual
              */
             vfunc_init_finish(res: Gio.AsyncResult): boolean;
             /**
-             * Gets the #GDBusObject that `interface_` belongs to, if any.
-             * @returns A #GDBusObject or %NULL. The returned reference should be freed with g_object_unref().
+             * Gets the {@link Gio.DBusObject} that `interface_` belongs to, if any.
+             * @returns A {@link Gio.DBusObject} or `null`. The returned reference should be freed with `g_object_unref()`.
              */
             get_object(): Gio.DBusObject | null;
             /**
              * Gets D-Bus introspection information for the D-Bus interface
              * implemented by `interface_`.
-             * @returns A #GDBusInterfaceInfo. Do not free.
+             * @returns A {@link Gio.DBusInterfaceInfo}. Do not free.
              */
             get_info(): Gio.DBusInterfaceInfo;
             /**
-             * Sets the #GDBusObject for `interface_` to `object`.
+             * Sets the {@link Gio.DBusObject} for `interface_` to `object`.
              *
              * Note that `interface_` will hold a weak reference to `object`.
-             * @param object A #GDBusObject or %NULL.
+             * @param object A {@link Gio.DBusObject} or `null`.
              */
             set_object(object?: Gio.DBusObject | null): void;
             /**
-             * Gets the #GDBusObject that `interface_` belongs to, if any.
+             * Gets the {@link Gio.DBusObject} that `interface_` belongs to, if any.
+             * @virtual
              */
             vfunc_dup_object(): Gio.DBusObject | null;
             /**
              * Gets D-Bus introspection information for the D-Bus interface
              * implemented by `interface_`.
+             * @virtual
              */
             vfunc_get_info(): Gio.DBusInterfaceInfo;
             /**
-             * Sets the #GDBusObject for `interface_` to `object`.
+             * Sets the {@link Gio.DBusObject} for `interface_` to `object`.
              *
              * Note that `interface_` will hold a weak reference to `object`.
-             * @param object A #GDBusObject or %NULL.
+             * @param object A {@link Gio.DBusObject} or `null`.
+             * @virtual
              */
             vfunc_set_object(object?: Gio.DBusObject | null): void;
             /**
              * Initializes the object implementing the interface.
              *
              * This method is intended for language bindings. If writing in C,
-             * g_initable_new() should typically be used instead.
+             * `g_initable_new()` should typically be used instead.
              *
              * The object must be initialized before any real use after initial
-             * construction, either with this function or g_async_initable_init_async().
+             * construction, either with this function or `g_async_initable_init_async()`.
              *
-             * Implementations may also support cancellation. If `cancellable` is not %NULL,
+             * Implementations may also support cancellation. If `cancellable` is not `null`,
              * then initialization can be cancelled by triggering the cancellable object
              * from another thread. If the operation was cancelled, the error
-             * %G_IO_ERROR_CANCELLED will be returned. If `cancellable` is not %NULL and
+             * {@link Gio.IOErrorEnum.CANCELLED} will be returned. If `cancellable` is not `null` and
              * the object doesn't support cancellable initialization the error
-             * %G_IO_ERROR_NOT_SUPPORTED will be returned.
+             * {@link Gio.IOErrorEnum.NOT_SUPPORTED} will be returned.
              *
              * If the object is not initialized, or initialization returns with an
-             * error, then all operations on the object except g_object_ref() and
-             * g_object_unref() are considered to be invalid, and have undefined
-             * behaviour. See the [description][iface`Gio`.Initable#description] for more details.
+             * error, then all operations on the object except `g_object_ref()` and
+             * `g_object_unref()` are considered to be invalid, and have undefined
+             * behaviour. See the [description][iface@Gio.Initable#description] for more details.
              *
-             * Callers should not assume that a class which implements #GInitable can be
+             * Callers should not assume that a class which implements {@link Gio.Initable} can be
              * initialized multiple times, unless the class explicitly documents itself as
-             * supporting this. Generally, a class’ implementation of init() can assume
+             * supporting this. Generally, a class’ implementation of `init()` can assume
              * (and assert) that it will only be called once. Previously, this documentation
-             * recommended all #GInitable implementations should be idempotent; that
+             * recommended all {@link Gio.Initable} implementations should be idempotent; that
              * recommendation was relaxed in GLib 2.54.
              *
              * If a class explicitly supports being initialized multiple times, it is
@@ -11600,40 +12954,40 @@ declare module 'gi://IBus?version=1.0' {
              *
              * One reason why a class might need to support idempotent initialization is if
              * it is designed to be used via the singleton pattern, with a
-             * #GObjectClass.constructor that sometimes returns an existing instance.
-             * In this pattern, a caller would expect to be able to call g_initable_init()
-             * on the result of g_object_new(), regardless of whether it is in fact a new
+             * {@link GObject.ObjectClass}.constructor that sometimes returns an existing instance.
+             * In this pattern, a caller would expect to be able to call `g_initable_init()`
+             * on the result of `g_object_new()`, regardless of whether it is in fact a new
              * instance.
-             * @param cancellable optional #GCancellable object, %NULL to ignore.
-             * @returns %TRUE if successful. If an error has occurred, this function will     return %FALSE and set @error appropriately if present.
+             * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
+             * @returns `true` if successful. If an error has occurred, this function will     return `false` and set `error` appropriately if present.
              */
             init(cancellable?: Gio.Cancellable | null): boolean;
             /**
              * Initializes the object implementing the interface.
              *
              * This method is intended for language bindings. If writing in C,
-             * g_initable_new() should typically be used instead.
+             * `g_initable_new()` should typically be used instead.
              *
              * The object must be initialized before any real use after initial
-             * construction, either with this function or g_async_initable_init_async().
+             * construction, either with this function or `g_async_initable_init_async()`.
              *
-             * Implementations may also support cancellation. If `cancellable` is not %NULL,
+             * Implementations may also support cancellation. If `cancellable` is not `null`,
              * then initialization can be cancelled by triggering the cancellable object
              * from another thread. If the operation was cancelled, the error
-             * %G_IO_ERROR_CANCELLED will be returned. If `cancellable` is not %NULL and
+             * {@link Gio.IOErrorEnum.CANCELLED} will be returned. If `cancellable` is not `null` and
              * the object doesn't support cancellable initialization the error
-             * %G_IO_ERROR_NOT_SUPPORTED will be returned.
+             * {@link Gio.IOErrorEnum.NOT_SUPPORTED} will be returned.
              *
              * If the object is not initialized, or initialization returns with an
-             * error, then all operations on the object except g_object_ref() and
-             * g_object_unref() are considered to be invalid, and have undefined
-             * behaviour. See the [description][iface`Gio`.Initable#description] for more details.
+             * error, then all operations on the object except `g_object_ref()` and
+             * `g_object_unref()` are considered to be invalid, and have undefined
+             * behaviour. See the [description][iface@Gio.Initable#description] for more details.
              *
-             * Callers should not assume that a class which implements #GInitable can be
+             * Callers should not assume that a class which implements {@link Gio.Initable} can be
              * initialized multiple times, unless the class explicitly documents itself as
-             * supporting this. Generally, a class’ implementation of init() can assume
+             * supporting this. Generally, a class’ implementation of `init()` can assume
              * (and assert) that it will only be called once. Previously, this documentation
-             * recommended all #GInitable implementations should be idempotent; that
+             * recommended all {@link Gio.Initable} implementations should be idempotent; that
              * recommendation was relaxed in GLib 2.54.
              *
              * If a class explicitly supports being initialized multiple times, it is
@@ -11643,11 +12997,12 @@ declare module 'gi://IBus?version=1.0' {
              *
              * One reason why a class might need to support idempotent initialization is if
              * it is designed to be used via the singleton pattern, with a
-             * #GObjectClass.constructor that sometimes returns an existing instance.
-             * In this pattern, a caller would expect to be able to call g_initable_init()
-             * on the result of g_object_new(), regardless of whether it is in fact a new
+             * {@link GObject.ObjectClass}.constructor that sometimes returns an existing instance.
+             * In this pattern, a caller would expect to be able to call `g_initable_init()`
+             * on the result of `g_object_new()`, regardless of whether it is in fact a new
              * instance.
-             * @param cancellable optional #GCancellable object, %NULL to ignore.
+             * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
+             * @virtual
              */
             vfunc_init(cancellable?: Gio.Cancellable | null): boolean;
             /**
@@ -11663,32 +13018,32 @@ declare module 'gi://IBus?version=1.0' {
              * ```
              *
              *
-             * Will result in the "sensitive" property of the widget #GObject instance to be
-             * updated with the same value of the "active" property of the action #GObject
+             * Will result in the "sensitive" property of the widget {@link GObject.Object} instance to be
+             * updated with the same value of the "active" property of the action {@link GObject.Object}
              * instance.
              *
-             * If `flags` contains %G_BINDING_BIDIRECTIONAL then the binding will be mutual:
+             * If `flags` contains {@link GObject.BindingFlags.BIDIRECTIONAL} then the binding will be mutual:
              * if `target_property` on `target` changes then the `source_property` on `source`
              * will be updated as well.
              *
              * The binding will automatically be removed when either the `source` or the
              * `target` instances are finalized. To remove the binding without affecting the
-             * `source` and the `target` you can just call g_object_unref() on the returned
-             * #GBinding instance.
+             * `source` and the `target` you can just call `g_object_unref()` on the returned
+             * {@link GObject.Binding} instance.
              *
-             * Removing the binding by calling g_object_unref() on it must only be done if
+             * Removing the binding by calling `g_object_unref()` on it must only be done if
              * the binding, `source` and `target` are only used from a single thread and it
              * is clear that both `source` and `target` outlive the binding. Especially it
              * is not safe to rely on this if the binding, `source` or `target` can be
              * finalized from different threads. Keep another reference to the binding and
-             * use g_binding_unbind() instead to be on the safe side.
+             * use `g_binding_unbind()` instead to be on the safe side.
              *
-             * A #GObject can have multiple bindings.
-             * @param source_property the property on @source to bind
-             * @param target the target #GObject
-             * @param target_property the property on @target to bind
-             * @param flags flags to pass to #GBinding
-             * @returns the #GBinding instance representing the     binding between the two #GObject instances. The binding is released     whenever the #GBinding reference count reaches zero.
+             * A {@link GObject.Object} can have multiple bindings.
+             * @param source_property the property on `source` to bind
+             * @param target the target {@link GObject.Object}
+             * @param target_property the property on `target` to bind
+             * @param flags flags to pass to {@link GObject.Binding}
+             * @returns the {@link GObject.Binding} instance representing the     binding between the two {@link GObject.Object} instances. The binding is released     whenever the {@link GObject.Binding} reference count reaches zero.
              */
             bind_property(
                 source_property: string,
@@ -11697,39 +13052,39 @@ declare module 'gi://IBus?version=1.0' {
                 flags: GObject.BindingFlags | null,
             ): GObject.Binding;
             /**
-             * Complete version of g_object_bind_property().
+             * Complete version of `g_object_bind_property()`.
              *
              * Creates a binding between `source_property` on `source` and `target_property`
-             * on `target,` allowing you to set the transformation functions to be used by
+             * on `target`, allowing you to set the transformation functions to be used by
              * the binding.
              *
-             * If `flags` contains %G_BINDING_BIDIRECTIONAL then the binding will be mutual:
+             * If `flags` contains {@link GObject.BindingFlags.BIDIRECTIONAL} then the binding will be mutual:
              * if `target_property` on `target` changes then the `source_property` on `source`
              * will be updated as well. The `transform_from` function is only used in case
              * of bidirectional bindings, otherwise it will be ignored
              *
              * The binding will automatically be removed when either the `source` or the
              * `target` instances are finalized. This will release the reference that is
-             * being held on the #GBinding instance; if you want to hold on to the
-             * #GBinding instance, you will need to hold a reference to it.
+             * being held on the {@link GObject.Binding} instance; if you want to hold on to the
+             * {@link GObject.Binding} instance, you will need to hold a reference to it.
              *
-             * To remove the binding, call g_binding_unbind().
+             * To remove the binding, call `g_binding_unbind()`.
              *
-             * A #GObject can have multiple bindings.
+             * A {@link GObject.Object} can have multiple bindings.
              *
              * The same `user_data` parameter will be used for both `transform_to`
              * and `transform_from` transformation functions; the `notify` function will
              * be called once, when the binding is removed. If you need different data
              * for each transformation function, please use
-             * g_object_bind_property_with_closures() instead.
-             * @param source_property the property on @source to bind
-             * @param target the target #GObject
-             * @param target_property the property on @target to bind
-             * @param flags flags to pass to #GBinding
-             * @param transform_to the transformation function     from the @source to the @target, or %NULL to use the default
-             * @param transform_from the transformation function     from the @target to the @source, or %NULL to use the default
-             * @param notify a function to call when disposing the binding, to free     resources used by the transformation functions, or %NULL if not required
-             * @returns the #GBinding instance representing the     binding between the two #GObject instances. The binding is released     whenever the #GBinding reference count reaches zero.
+             * `g_object_bind_property_with_closures()` instead.
+             * @param source_property the property on `source` to bind
+             * @param target the target {@link GObject.Object}
+             * @param target_property the property on `target` to bind
+             * @param flags flags to pass to {@link GObject.Binding}
+             * @param transform_to the transformation function     from the `source` to the `target`, or `null` to use the default
+             * @param transform_from the transformation function     from the `target` to the `source`, or `null` to use the default
+             * @param notify a function to call when disposing the binding, to free     resources used by the transformation functions, or `null` if not required
+             * @returns the {@link GObject.Binding} instance representing the     binding between the two {@link GObject.Object} instances. The binding is released     whenever the {@link GObject.Binding} reference count reaches zero.
              */
             bind_property_full(
                 source_property: string,
@@ -11740,13 +13095,16 @@ declare module 'gi://IBus?version=1.0' {
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
             ): GObject.Binding;
+            /**
+             * @param args
+             */
             // Conflicted with GObject.Object.bind_property_full
             bind_property_full(...args: never[]): any;
             /**
-             * This function is intended for #GObject implementations to re-enforce
+             * This function is intended for {@link GObject.Object} implementations to re-enforce
              * a [floating][floating-ref] object reference. Doing this is seldom
-             * required: all #GInitiallyUnowneds are created with a floating reference
-             * which usually just needs to be sunken by calling g_object_ref_sink().
+             * required: all `GInitiallyUnowneds` are created with a floating reference
+             * which usually just needs to be sunken by calling `g_object_ref_sink()`.
              */
             force_floating(): void;
             /**
@@ -11754,7 +13112,7 @@ declare module 'gi://IBus?version=1.0' {
              * non-zero, the emission of "notify" signals on `object` is
              * stopped. The signals are queued until the freeze count is decreased
              * to zero. Duplicate notifications are squashed so that at most one
-             * #GObject::notify signal is emitted for each property modified while the
+             * {@link GObject.Object.SignalSignatures.notify | GObject.Object::notify} signal is emitted for each property modified while the
              * object is frozen.
              *
              * This is necessary for accessors that modify multiple properties to prevent
@@ -11762,9 +13120,9 @@ declare module 'gi://IBus?version=1.0' {
              */
             freeze_notify(): void;
             /**
-             * Gets a named field from the objects table of associations (see g_object_set_data()).
+             * Gets a named field from the objects table of associations (see `g_object_set_data()`).
              * @param key name of the key for that association
-             * @returns the data if found,          or %NULL if no such data exists.
+             * @returns the data if found,          or `null` if no such data exists.
              */
             get_data(key: string): any | null;
             /**
@@ -11784,9 +13142,9 @@ declare module 'gi://IBus?version=1.0' {
             get_property(property_name: string, value: GObject.Value | any): any;
             /**
              * This function gets back user data pointers stored via
-             * g_object_set_qdata().
-             * @param quark A #GQuark, naming the user data pointer
-             * @returns The user data pointer set, or %NULL
+             * `g_object_set_qdata()`.
+             * @param quark A {@link GLib.Quark}, naming the user data pointer
+             * @returns The user data pointer set, or `null`
              */
             get_qdata(quark: GLib.Quark): any | null;
             /**
@@ -11800,33 +13158,33 @@ declare module 'gi://IBus?version=1.0' {
             getv(names: string[], values: (GObject.Value | any)[]): void;
             /**
              * Checks whether `object` has a [floating][floating-ref] reference.
-             * @returns %TRUE if @object has a floating reference
+             * @returns `true` if `object` has a floating reference
              */
             is_floating(): boolean;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
              * When possible, eg. when signaling a property change from within the class
-             * that registered the property, you should use g_object_notify_by_pspec()
+             * that registered the property, you should use `g_object_notify_by_pspec()`
              * instead.
              *
              * Note that emission of the notify signal may be blocked with
-             * g_object_freeze_notify(). In this case, the signal emissions are queued
-             * and will be emitted (in reverse order) when g_object_thaw_notify() is
+             * `g_object_freeze_notify()`. In this case, the signal emissions are queued
+             * and will be emitted (in reverse order) when `g_object_thaw_notify()` is
              * called.
-             * @param property_name the name of a property installed on the class of @object.
+             * @param property_name the name of a property installed on the class of `object`.
              */
             notify(property_name: string): void;
             /**
              * Emits a "notify" signal for the property specified by `pspec` on `object`.
              *
              * This function omits the property name lookup, hence it is faster than
-             * g_object_notify().
+             * `g_object_notify()`.
              *
-             * One way to avoid using g_object_notify() from within the
-             * class that registered the properties, and using g_object_notify_by_pspec()
+             * One way to avoid using `g_object_notify()` from within the
+             * class that registered the properties, and using `g_object_notify_by_pspec()`
              * instead, is to store the GParamSpec used with
-             * g_object_class_install_property() inside a static array, e.g.:
+             * `g_object_class_install_property()` inside a static array, e.g.:
              *
              *
              * ```c
@@ -11859,21 +13217,21 @@ declare module 'gi://IBus?version=1.0' {
              *   g_object_notify_by_pspec (self, properties[PROP_FOO]);
              * ```
              *
-             * @param pspec the #GParamSpec of a property installed on the class of @object.
+             * @param pspec the {@link GObject.ParamSpec} of a property installed on the class of `object`.
              */
             notify_by_pspec(pspec: GObject.ParamSpec): void;
             /**
              * Increases the reference count of `object`.
              *
              * Since GLib 2.56, if `GLIB_VERSION_MAX_ALLOWED` is 2.56 or greater, the type
-             * of `object` will be propagated to the return type (using the GCC typeof()
+             * of `object` will be propagated to the return type (using the GCC `typeof()`
              * extension), so any casting the caller needs to do on the return type must be
              * explicit.
-             * @returns the same @object
+             * @returns the same `object`
              */
             ref(): GObject.Object;
             /**
-             * Increase the reference count of `object,` and possibly remove the
+             * Increase the reference count of `object`, and possibly remove the
              * [floating][floating-ref] reference, if `object` has a floating reference.
              *
              * In other words, if the object is floating, then this call "assumes
@@ -11883,8 +13241,8 @@ declare module 'gi://IBus?version=1.0' {
              * adds a new normal reference increasing the reference count by one.
              *
              * Since GLib 2.56, the type of `object` will be propagated to the return type
-             * under the same conditions as for g_object_ref().
-             * @returns @object
+             * under the same conditions as for `g_object_ref()`.
+             * @returns `object`
              */
             ref_sink(): GObject.Object;
             /**
@@ -11901,10 +13259,10 @@ declare module 'gi://IBus?version=1.0' {
              * If the object already had an association with that name,
              * the old association will be destroyed.
              *
-             * Internally, the `key` is converted to a #GQuark using g_quark_from_string().
+             * Internally, the `key` is converted to a {@link GLib.Quark} using `g_quark_from_string()`.
              * This means a copy of `key` is kept permanently (even after `object` has been
              * finalized) — so it is recommended to only use a small, bounded set of values
-             * for `key` in your program, to avoid the #GQuark storage growing unbounded.
+             * for `key` in your program, to avoid the {@link GLib.Quark} storage growing unbounded.
              * @param key name of the key
              * @param data data to associate with that key
              */
@@ -11919,13 +13277,13 @@ declare module 'gi://IBus?version=1.0' {
              * Remove a specified datum from the object's data associations,
              * without invoking the association's destroy handler.
              * @param key name of the key
-             * @returns the data if found, or %NULL          if no such data exists.
+             * @returns the data if found, or `null`          if no such data exists.
              */
             steal_data(key: string): any | null;
             /**
              * This function gets back user data pointers stored via
-             * g_object_set_qdata() and removes the `data` from object
-             * without invoking its destroy() function (if any was
+             * `g_object_set_qdata()` and removes the `data` from object
+             * without invoking its `destroy()` function (if any was
              * set).
              * Usually, calling this function is only required to update
              * user data pointers with a destroy notifier, for example:
@@ -11956,21 +13314,21 @@ declare module 'gi://IBus?version=1.0' {
              * }
              * ```
              *
-             * Using g_object_get_qdata() in the above example, instead of
-             * g_object_steal_qdata() would have left the destroy function set,
+             * Using `g_object_get_qdata()` in the above example, instead of
+             * `g_object_steal_qdata()` would have left the destroy function set,
              * and thus the partial string list would have been freed upon
-             * g_object_set_qdata_full().
-             * @param quark A #GQuark, naming the user data pointer
-             * @returns The user data pointer set, or %NULL
+             * `g_object_set_qdata_full()`.
+             * @param quark A {@link GLib.Quark}, naming the user data pointer
+             * @returns The user data pointer set, or `null`
              */
             steal_qdata(quark: GLib.Quark): any | null;
             /**
              * Reverts the effect of a previous call to
-             * g_object_freeze_notify(). The freeze count is decreased on `object`
+             * `g_object_freeze_notify()`. The freeze count is decreased on `object`
              * and when it reaches zero, queued "notify" signals are emitted.
              *
              * Duplicate notifications for each property are squashed so that at most one
-             * #GObject::notify signal is emitted for each property, in the reverse order
+             * {@link GObject.Object.SignalSignatures.notify | GObject.Object::notify} signal is emitted for each property, in the reverse order
              * in which they have been queued.
              *
              * It is an error to call this function when the freeze count is zero.
@@ -11980,33 +13338,34 @@ declare module 'gi://IBus?version=1.0' {
              * Decreases the reference count of `object`. When its reference count
              * drops to 0, the object is finalized (i.e. its memory is freed).
              *
-             * If the pointer to the #GObject may be reused in future (for example, if it is
+             * If the pointer to the {@link GObject.Object} may be reused in future (for example, if it is
              * an instance variable of another object), it is recommended to clear the
-             * pointer to %NULL rather than retain a dangling pointer to a potentially
-             * invalid #GObject instance. Use g_clear_object() for this.
+             * pointer to `null` rather than retain a dangling pointer to a potentially
+             * invalid {@link GObject.Object} instance. Use `g_clear_object()` for this.
              */
             unref(): void;
             /**
              * This function essentially limits the life time of the `closure` to
              * the life time of the object. That is, when the object is finalized,
-             * the `closure` is invalidated by calling g_closure_invalidate() on
+             * the `closure` is invalidated by calling `g_closure_invalidate()` on
              * it, in order to prevent invocations of the closure with a finalized
-             * (nonexisting) object. Also, g_object_ref() and g_object_unref() are
-             * added as marshal guards to the `closure,` to ensure that an extra
+             * (nonexisting) object. Also, `g_object_ref()` and `g_object_unref()` are
+             * added as marshal guards to the `closure`, to ensure that an extra
              * reference count is held on `object` during invocation of the
              * `closure`.  Usually, this function will be called on closures that
              * use this `object` as closure data.
-             * @param closure #GClosure to watch
+             * @param closure {@link GObject.Closure} to watch
              */
             watch_closure(closure: GObject.Closure): void;
             /**
-             * the `constructed` function is called by g_object_new() as the
+             * the `constructed` function is called by `g_object_new()` as the
              *  final step of the object creation process.  At the point of the call, all
              *  construction properties have been set on the object.  The purpose of this
              *  call is to allow for object initialisation steps that can only be performed
              *  after construction properties have been set.  `constructed` implementors
              *  should chain up to the `constructed` call of their parent class to allow it
              *  to complete its initialisation.
+             * @virtual
              */
             vfunc_constructed(): void;
             /**
@@ -12015,6 +13374,7 @@ declare module 'gi://IBus?version=1.0' {
              *  needed.
              * @param n_pspecs
              * @param pspecs
+             * @virtual
              */
             vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void;
             /**
@@ -12023,12 +13383,14 @@ declare module 'gi://IBus?version=1.0' {
              *  invocations still work. It may be run multiple times (due to reference
              *  loops). Before returning, `dispose` should chain up to the `dispose` method
              *  of the parent class.
+             * @virtual
              */
             vfunc_dispose(): void;
             /**
              * instance finalization function, should finish the finalization of
              *  the instance begun in `dispose` and chain up to the `finalize` method of the
              *  parent class.
+             * @virtual
              */
             vfunc_finalize(): void;
             /**
@@ -12037,20 +13399,22 @@ declare module 'gi://IBus?version=1.0' {
              * @param property_id
              * @param value
              * @param pspec
+             * @virtual
              */
             vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
              * When possible, eg. when signaling a property change from within the class
-             * that registered the property, you should use g_object_notify_by_pspec()
+             * that registered the property, you should use `g_object_notify_by_pspec()`
              * instead.
              *
              * Note that emission of the notify signal may be blocked with
-             * g_object_freeze_notify(). In this case, the signal emissions are queued
-             * and will be emitted (in reverse order) when g_object_thaw_notify() is
+             * `g_object_freeze_notify()`. In this case, the signal emissions are queued
+             * and will be emitted (in reverse order) when `g_object_thaw_notify()` is
              * called.
              * @param pspec
+             * @virtual
              */
             vfunc_notify(pspec: GObject.ParamSpec): void;
             /**
@@ -12062,6 +13426,7 @@ declare module 'gi://IBus?version=1.0' {
              * @param property_id
              * @param value
              * @param pspec
+             * @virtual
              */
             vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
             /**
@@ -12094,6 +13459,15 @@ declare module 'gi://IBus?version=1.0' {
         namespace Registry {
             // Signal signatures
             interface SignalSignatures extends Serializable.SignalSignatures {
+                /**
+                 * Emitted when any observed paths are changed.
+                 * A method is not associated in this class. the "changed"
+                 * signal would be handled in other classes.
+                 *
+                 * See also: `ibus_registry_start_monitor_changes()`.
+                 * @signal
+                 * @run-last
+                 */
                 changed: () => void;
             }
 
@@ -12103,9 +13477,10 @@ declare module 'gi://IBus?version=1.0' {
         }
 
         /**
-         * An #IBusRegistry loads IBus component files and generates the cache files.
+         * An {@link IBus.Registry} loads IBus component files and generates the cache files.
          *
-         * see_also: #IBusComponent
+         * see_also: {@link IBus.Component}
+         * @gir-type Class
          */
         class Registry extends Serializable {
             static $gtype: GObject.GType<Registry>;
@@ -12129,16 +13504,19 @@ declare module 'gi://IBus?version=1.0' {
 
             // Signals
 
+            /** @signal */
             connect<K extends keyof Registry.SignalSignatures>(
                 signal: K,
                 callback: GObject.SignalCallback<this, Registry.SignalSignatures[K]>,
             ): number;
             connect(signal: string, callback: (...args: any[]) => any): number;
+            /** @signal */
             connect_after<K extends keyof Registry.SignalSignatures>(
                 signal: K,
                 callback: GObject.SignalCallback<this, Registry.SignalSignatures[K]>,
             ): number;
             connect_after(signal: string, callback: (...args: any[]) => any): number;
+            /** @signal */
             emit<K extends keyof Registry.SignalSignatures>(
                 signal: K,
                 ...args: GObject.GjsParameters<Registry.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never
@@ -12149,17 +13527,17 @@ declare module 'gi://IBus?version=1.0' {
 
             /**
              * Check if the registry is updated.
-             * @returns %TRUE if mtime is changed; %FALSE otherwise.
+             * @returns `true` if mtime is changed; `false` otherwise.
              */
             check_modification(): boolean;
             /**
              * List components.
-             * @returns a list of #IBusComponent objects. The caller has to call g_list_free() for the returned list.
+             * @returns a list of {@link IBus.Component} objects. The caller has to call `g_list_free()` for the returned list.
              */
             get_components(): Component[];
             /**
              * List observed paths.
-             * @returns a list of #IBusObservedPath objects. The caller has to call g_list_free() for the returned list.
+             * @returns a list of {@link IBus.ObservedPath} objects. The caller has to call `g_list_free()` for the returned list.
              */
             get_observed_paths(): ObservedPath[];
             /**
@@ -12171,26 +13549,26 @@ declare module 'gi://IBus?version=1.0' {
             load(): void;
             /**
              * Load the user or system registry cache.
-             * @param is_user %TRUE if the registry cache is loaded in the user directory.
-             * @returns %TRUE if the cache exists and is loaded successfully,           %FALSE otherwise.
+             * @param is_user `true` if the registry cache is loaded in the user directory.
+             * @returns `true` if the cache exists and is loaded successfully,           `false` otherwise.
              */
             load_cache(is_user: boolean): boolean;
             /**
              * Load the registry cache `filename`.
              * @param filename The file path of the registry cache
-             * @returns %TRUE if the cache exists and is loaded successfully,           %FALSE otherwise.
+             * @returns `true` if the cache exists and is loaded successfully,           `false` otherwise.
              */
             load_cache_file(filename: string): boolean;
             /**
-             * Read all XML files in `dirname,` create a #IBusComponent object for each file,
+             * Read all XML files in `dirname`, create a {@link IBus.Component} object for each file,
              * and add the component objects to the registry.
              * If `dirname` is "/usr/share/ibus/component", this API and
-             * ibus_registry_load() are same.
+             * `ibus_registry_load()` are same.
              * @param dirname IBus component directory which includes XML files.
              */
             load_in_dir(dirname: string): void;
             /**
-             * Output #IBusRegistry as an XML-formatted string.
+             * Output {@link IBus.Registry} as an XML-formatted string.
              * The output string can be then shown on the screen or written to file.
              * @param output GString that holds the result.
              * @param indent level of indent.
@@ -12198,14 +13576,14 @@ declare module 'gi://IBus?version=1.0' {
             output(output: GLib.String, indent: number): void;
             /**
              * Save the registry in a user directory or system directory.
-             * @param is_user %TRUE if the registry cache is saved in the user directory.
-             * @returns %TRUE if the cache is saved successfully, %FALSE otherwise.
+             * @param is_user `true` if the registry cache is saved in the user directory.
+             * @returns `true` if the cache is saved successfully, `false` otherwise.
              */
             save_cache(is_user: boolean): boolean;
             /**
              * Save the registry cache `filename`.
              * @param filename The file path of the registry cache
-             * @returns %TRUE if the cache is saved successfully, %FALSE otherwise.
+             * @returns `true` if the cache is saved successfully, `false` otherwise.
              */
             save_cache_file(filename: string): boolean;
             /**
@@ -12224,8 +13602,8 @@ declare module 'gi://IBus?version=1.0' {
         }
 
         /**
-         * An #IBusSerializable is an IBus object which can be serialized, that is,
-         * to be to and from a #GVariant.
+         * An {@link IBus.Serializable} is an IBus object which can be serialized, that is,
+         * to be to and from a {@link GLib.Variant}.
          *
          * This class is to be extended by other class that requires serialization.
          * An extended class should overrides following methods:
@@ -12242,6 +13620,7 @@ declare module 'gi://IBus?version=1.0' {
          * </itemizedlist>
          * See IBusSerializableSerializeFunc(), IBusSerializableDeserializeFunc(), IBusSerializableCopyFunc()
          * for function prototype.
+         * @gir-type Class
          */
         class Serializable extends Object {
             static $gtype: GObject.GType<Serializable>;
@@ -12265,16 +13644,19 @@ declare module 'gi://IBus?version=1.0' {
 
             // Signals
 
+            /** @signal */
             connect<K extends keyof Serializable.SignalSignatures>(
                 signal: K,
                 callback: GObject.SignalCallback<this, Serializable.SignalSignatures[K]>,
             ): number;
             connect(signal: string, callback: (...args: any[]) => any): number;
+            /** @signal */
             connect_after<K extends keyof Serializable.SignalSignatures>(
                 signal: K,
                 callback: GObject.SignalCallback<this, Serializable.SignalSignatures[K]>,
             ): number;
             connect_after(signal: string, callback: (...args: any[]) => any): number;
+            /** @signal */
             emit<K extends keyof Serializable.SignalSignatures>(
                 signal: K,
                 ...args: GObject.GjsParameters<Serializable.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never
@@ -12284,51 +13666,63 @@ declare module 'gi://IBus?version=1.0' {
             // Static methods
 
             /**
-             * Deserialize a #GVariant to an #IBusSerializable/
+             * Deserialize a {@link GLib.Variant} to an {@link IBus.Serializable}/
              * The deserialize method should be implemented in extended class.
-             * @param variant A #GVariant.
+             * @param variant A {@link GLib.Variant}.
              */
             static deserialize_object(variant: GLib.Variant): Serializable;
 
             // Virtual methods
 
+            /**
+             * @param src
+             * @virtual
+             */
             vfunc_copy(src: Serializable): boolean;
+            /**
+             * @param variant
+             * @virtual
+             */
             vfunc_deserialize(variant: GLib.Variant): number;
+            /**
+             * @param builder
+             * @virtual
+             */
             vfunc_serialize(builder: GLib.VariantBuilder): boolean;
 
             // Methods
 
             /**
-             * Clone an #IBusSerializable.
+             * Clone an {@link IBus.Serializable}.
              * The copy method should be implemented in extended class.
-             * @returns A newly allocated clone object; or %NULL     if @object is not serializable. See also: IBusSerializableCopyFunc().
+             * @returns A newly allocated clone object; or `null`     if `object` is not serializable. See also: IBusSerializableCopyFunc().
              */
             copy(): Serializable;
             /**
-             * Gets a value from attachment of an #IBusSerializable.
+             * Gets a value from attachment of an {@link IBus.Serializable}.
              * @param key String formatted key for indexing value.
-             * @returns The attached value; or %NULL if fail to retrieve the value. See also: ibus_serializable_set_attachment().
+             * @returns The attached value; or `null` if fail to retrieve the value. See also: `ibus_serializable_set_attachment()`.
              */
             get_qattachment(key: GLib.Quark): GLib.Variant;
             /**
-             * Remove a value from attachment of an #IBusSerializable.
-             * See also: ibus_serializable_remove_attachment().
+             * Remove a value from attachment of an {@link IBus.Serializable}.
+             * See also: `ibus_serializable_remove_attachment()`.
              * @param key String formatted key for indexing value.
              */
             remove_qattachment(key: GLib.Quark): void;
             /**
-             * Serialize an #IBusSerializable to a #GVariant.
+             * Serialize an {@link IBus.Serializable} to a {@link GLib.Variant}.
              * The serialize method should be implemented in extended class.
-             * @returns A #GVariant. See also: IBusSerializableCopyFunc().
+             * @returns A {@link GLib.Variant}. See also: IBusSerializableCopyFunc().
              */
             serialize_object(): GLib.Variant;
             /**
-             * Attach a value to an #IBusSerializable. If the value is floating,
+             * Attach a value to an {@link IBus.Serializable}. If the value is floating,
              * the serializable will take the ownership.
              *
-             * See also: ibus_serializable_set_attachment().
+             * See also: `ibus_serializable_set_attachment()`.
              * @param key String formatted key for indexing value.
-             * @param value Value to be attached or %NULL to remove any prevoius value.
+             * @param value Value to be attached or `null` to remove any prevoius value.
              */
             set_qattachment(key: GLib.Quark, value: GLib.Variant): void;
         }
@@ -12351,6 +13745,7 @@ declare module 'gi://IBus?version=1.0' {
 
         /**
          * An IBusService is a base class for services.
+         * @gir-type Class
          */
         class Service extends Object {
             static $gtype: GObject.GType<Service>;
@@ -12364,10 +13759,12 @@ declare module 'gi://IBus?version=1.0' {
             set connection(val: Gio.DBusConnection);
             /**
              * The path of service object.
+             * @construct-only
              */
             get object_path(): string;
             /**
              * The path of service object.
+             * @construct-only
              */
             get objectPath(): string;
 
@@ -12393,16 +13790,19 @@ declare module 'gi://IBus?version=1.0' {
 
             // Signals
 
+            /** @signal */
             connect<K extends keyof Service.SignalSignatures>(
                 signal: K,
                 callback: GObject.SignalCallback<this, Service.SignalSignatures[K]>,
             ): number;
             connect(signal: string, callback: (...args: any[]) => any): number;
+            /** @signal */
             connect_after<K extends keyof Service.SignalSignatures>(
                 signal: K,
                 callback: GObject.SignalCallback<this, Service.SignalSignatures[K]>,
             ): number;
             connect_after(signal: string, callback: (...args: any[]) => any): number;
+            /** @signal */
             emit<K extends keyof Service.SignalSignatures>(
                 signal: K,
                 ...args: GObject.GjsParameters<Service.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never
@@ -12411,7 +13811,13 @@ declare module 'gi://IBus?version=1.0' {
 
             // Static methods
 
+            /**
+             * @param xml_data The introspection xml data.
+             */
             static add_interfaces(xml_data: string): boolean;
+            /**
+             * @param depth The number of D-Bus introspection interfaces.
+             */
             static free_interfaces(depth: number): number;
 
             // Virtual methods
@@ -12424,6 +13830,7 @@ declare module 'gi://IBus?version=1.0' {
              * @param object_path An object path.
              * @param interface_name An interface name.
              * @param property_name A property name.
+             * @virtual
              */
             vfunc_service_get_property(
                 connection: Gio.DBusConnection,
@@ -12442,6 +13849,7 @@ declare module 'gi://IBus?version=1.0' {
              * @param method_name A method name.
              * @param parameters A parameters.
              * @param invocation A dbus method invocation.
+             * @virtual
              */
             vfunc_service_method_call(
                 connection: Gio.DBusConnection,
@@ -12461,6 +13869,7 @@ declare module 'gi://IBus?version=1.0' {
              * @param interface_name An interface name.
              * @param property_name An property name.
              * @param value An property value.
+             * @virtual
              */
             vfunc_service_set_property(
                 connection: Gio.DBusConnection,
@@ -12473,6 +13882,12 @@ declare module 'gi://IBus?version=1.0' {
 
             // Methods
 
+            /**
+             * @param dest_bus_name
+             * @param interface_name
+             * @param signal_name
+             * @param parameters
+             */
             emit_signal(
                 dest_bus_name: string,
                 interface_name: string,
@@ -12481,18 +13896,18 @@ declare module 'gi://IBus?version=1.0' {
             ): boolean;
             /**
              * Gets a connections.
-             * @returns A #GDBusConnection of an #IBusService instance.
+             * @returns A {@link Gio.DBusConnection} of an {@link IBus.Service} instance.
              */
             get_connection(): Gio.DBusConnection;
             /**
              * Gets the object path of an IBusService.
-             * @returns The object path of @service
+             * @returns The object path of `service`
              */
             get_object_path(): string;
             /**
              * Registers service to a connection.
              * @param connection A GDBusConnection the service will be registered to.
-             * @returns %TRUE if the service was registered, %FALSE otherwise.
+             * @returns `true` if the service was registered, `false` otherwise.
              */
             register(connection: Gio.DBusConnection): boolean;
             /**
@@ -12517,7 +13932,8 @@ declare module 'gi://IBus?version=1.0' {
          * e.g. the foreground/background color, underline, and
          * applied scope.
          *
-         * see_also: #IBusAttribute
+         * see_also: {@link IBus.Attribute}
+         * @gir-type Class
          */
         class Text extends Serializable {
             static $gtype: GObject.GType<Text>;
@@ -12551,16 +13967,19 @@ declare module 'gi://IBus?version=1.0' {
 
             // Signals
 
+            /** @signal */
             connect<K extends keyof Text.SignalSignatures>(
                 signal: K,
                 callback: GObject.SignalCallback<this, Text.SignalSignatures[K]>,
             ): number;
             connect(signal: string, callback: (...args: any[]) => any): number;
+            /** @signal */
             connect_after<K extends keyof Text.SignalSignatures>(
                 signal: K,
                 callback: GObject.SignalCallback<this, Text.SignalSignatures[K]>,
             ): number;
             connect_after(signal: string, callback: (...args: any[]) => any): number;
+            /** @signal */
             emit<K extends keyof Text.SignalSignatures>(
                 signal: K,
                 ...args: GObject.GjsParameters<Text.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never
@@ -12571,29 +13990,32 @@ declare module 'gi://IBus?version=1.0' {
 
             /**
              * Append an IBusAttribute for IBusText.
-             * @param type IBusAttributeType for @text.
+             * @param type IBusAttributeType for `text`.
              * @param value Value for the type.
              * @param start_index The starting index, inclusive.
              * @param end_index The ending index, exclusive.
              */
             append_attribute(type: number, value: number, start_index: number, end_index: number): void;
             /**
-             * Return the attributes in an #IBusText. Should not be freed.
-             * @returns the attrs in @text.
+             * Return the attributes in an {@link IBus.Text}. Should not be freed.
+             * @returns the attrs in `text`.
              */
             get_attributes(): AttrList;
             /**
-             * Return number of characters in an #IBusText.
-             * This function is based on g_utf8_strlen(), so unlike strlen(),
+             * Return number of characters in an {@link IBus.Text}.
+             * This function is based on `g_utf8_strlen()`, so unlike `strlen()`,
              * it does not count by bytes but characters instead.
-             * @returns Number of character in @text, not counted by bytes.
+             * @returns Number of character in `text`, not counted by bytes.
              */
             get_length(): number;
             /**
-             * Return the text in an #IBusText. Should not be freed.
-             * @returns the text in @text.
+             * Return the text in an {@link IBus.Text}. Should not be freed.
+             * @returns the text in `text`.
              */
             get_text(): string;
+            /**
+             * @param attrs An IBusAttrList
+             */
             set_attributes(attrs: AttrList): void;
         }
 
@@ -12614,6 +14036,9 @@ declare module 'gi://IBus?version=1.0' {
             }
         }
 
+        /**
+         * @gir-type Class
+         */
         class UnicodeBlock extends Serializable {
             static $gtype: GObject.GType<UnicodeBlock>;
 
@@ -12621,6 +14046,7 @@ declare module 'gi://IBus?version=1.0' {
 
             /**
              * The Uniode end code point
+             * @construct-only
              */
             get end(): number;
             /**
@@ -12630,6 +14056,7 @@ declare module 'gi://IBus?version=1.0' {
             set name(val: string);
             /**
              * The Uniode start code point
+             * @construct-only
              */
             get start(): number;
 
@@ -12650,16 +14077,19 @@ declare module 'gi://IBus?version=1.0' {
 
             // Signals
 
+            /** @signal */
             connect<K extends keyof UnicodeBlock.SignalSignatures>(
                 signal: K,
                 callback: GObject.SignalCallback<this, UnicodeBlock.SignalSignatures[K]>,
             ): number;
             connect(signal: string, callback: (...args: any[]) => any): number;
+            /** @signal */
             connect_after<K extends keyof UnicodeBlock.SignalSignatures>(
                 signal: K,
                 callback: GObject.SignalCallback<this, UnicodeBlock.SignalSignatures[K]>,
             ): number;
             connect_after(signal: string, callback: (...args: any[]) => any): number;
+            /** @signal */
             emit<K extends keyof UnicodeBlock.SignalSignatures>(
                 signal: K,
                 ...args: GObject.GjsParameters<UnicodeBlock.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never
@@ -12668,9 +14098,12 @@ declare module 'gi://IBus?version=1.0' {
 
             // Static methods
 
+            /**
+             * @param path A path of the saved dictionary file.
+             */
             static load(path: string): UnicodeBlock[];
             /**
-             * Save the list of #IBusUnicodeBlock to the cache file.
+             * Save the list of {@link IBus.UnicodeBlock} to the cache file.
              * @param path A path of the saved Unicode block.
              * @param list A list of unicode  block.
              */
@@ -12679,18 +14112,18 @@ declare module 'gi://IBus?version=1.0' {
             // Methods
 
             /**
-             * Gets the end code point in #IBusUnicodeBlock.
-             * @returns end property in #IBusUnicodeBlock
+             * Gets the end code point in {@link IBus.UnicodeBlock}.
+             * @returns end property in {@link IBus.UnicodeBlock}
              */
             get_end(): string;
             /**
-             * Gets the name in #IBusUnicodeBlock. It should not be freed.
-             * @returns name property in #IBusUnicodeBlock
+             * Gets the name in {@link IBus.UnicodeBlock}. It should not be freed.
+             * @returns name property in {@link IBus.UnicodeBlock}
              */
             get_name(): string;
             /**
-             * Gets the start code point in #IBusUnicodeBlock.
-             * @returns start property in #IBusUnicodeBlock
+             * Gets the start code point in {@link IBus.UnicodeBlock}.
+             * @returns start property in {@link IBus.UnicodeBlock}
              */
             get_start(): string;
         }
@@ -12718,6 +14151,7 @@ declare module 'gi://IBus?version=1.0' {
         /**
          * Unicode data likes code, name, alias, block-name.
          * You can get extended values with g_object_get_properties.
+         * @gir-type Class
          */
         class UnicodeData extends Serializable {
             static $gtype: GObject.GType<UnicodeData>;
@@ -12741,6 +14175,7 @@ declare module 'gi://IBus?version=1.0' {
             set blockName(val: string);
             /**
              * The Uniode code point
+             * @construct-only
              */
             get code(): number;
             /**
@@ -12766,16 +14201,19 @@ declare module 'gi://IBus?version=1.0' {
 
             // Signals
 
+            /** @signal */
             connect<K extends keyof UnicodeData.SignalSignatures>(
                 signal: K,
                 callback: GObject.SignalCallback<this, UnicodeData.SignalSignatures[K]>,
             ): number;
             connect(signal: string, callback: (...args: any[]) => any): number;
+            /** @signal */
             connect_after<K extends keyof UnicodeData.SignalSignatures>(
                 signal: K,
                 callback: GObject.SignalCallback<this, UnicodeData.SignalSignatures[K]>,
             ): number;
             connect_after(signal: string, callback: (...args: any[]) => any): number;
+            /** @signal */
             emit<K extends keyof UnicodeData.SignalSignatures>(
                 signal: K,
                 ...args: GObject.GjsParameters<UnicodeData.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never
@@ -12784,11 +14222,15 @@ declare module 'gi://IBus?version=1.0' {
 
             // Static methods
 
+            /**
+             * @param path A path of the saved dictionary file.
+             * @param object If the {@link GObject.Object} has "unicode-deserialize-progress"    signal, this function will emit (the number of desrialized    {@link IBus.UnicodeData}, * the total number of {@link IBus.UnicodeData}) of uint values    with that signal by 100 times. Otherwise `null`.
+             */
             static load(path: string, object?: GObject.Object | null): UnicodeData[];
             /**
-             * IBusUnicodeDataLoadAsyncFinish can receive the list of #IBusUnicodeData.
+             * IBusUnicodeDataLoadAsyncFinish can receive the list of {@link IBus.UnicodeData}.
              * @param path A path of the saved dictionary file.
-             * @param object If the #GObject has "unicode-deserialize-progress"    signal, this function will emit (the number of desrialized    #IBusUnicodeData, * the total number of #IBusUnicodeData) of uint values    with that signal by 100 times. Otherwise %NULL.
+             * @param object If the {@link GObject.Object} has "unicode-deserialize-progress"    signal, this function will emit (the number of desrialized    {@link IBus.UnicodeData}, * the total number of {@link IBus.UnicodeData}) of uint values    with that signal by 100 times. Otherwise `null`.
              * @param cancellable cancellable.
              * @param callback IBusUnicodeDataLoadAsyncFinish.
              */
@@ -12799,7 +14241,7 @@ declare module 'gi://IBus?version=1.0' {
                 callback: UnicodeDataLoadAsyncFinish,
             ): void;
             /**
-             * Save the list of #IBusUnicodeData to the cache file.
+             * Save the list of {@link IBus.UnicodeData} to the cache file.
              * @param path A path of the saved Unicode data.
              * @param list A list of unicode  data.
              */
@@ -12808,27 +14250,27 @@ declare module 'gi://IBus?version=1.0' {
             // Methods
 
             /**
-             * Gets the alias in #IBusUnicodeData. It should not be freed.
-             * @returns alias property in #IBusUnicodeData
+             * Gets the alias in {@link IBus.UnicodeData}. It should not be freed.
+             * @returns alias property in {@link IBus.UnicodeData}
              */
             get_alias(): string;
             /**
-             * Gets the block name in #IBusUnicodeData. It should not be freed.
-             * @returns block-name property in #IBusUnicodeData
+             * Gets the block name in {@link IBus.UnicodeData}. It should not be freed.
+             * @returns block-name property in {@link IBus.UnicodeData}
              */
             get_block_name(): string;
             /**
-             * Gets the code point in #IBusUnicodeData.
-             * @returns code property in #IBusUnicodeData
+             * Gets the code point in {@link IBus.UnicodeData}.
+             * @returns code property in {@link IBus.UnicodeData}
              */
             get_code(): string;
             /**
-             * Gets the name in #IBusUnicodeData. It should not be freed.
-             * @returns name property in #IBusUnicodeData
+             * Gets the name in {@link IBus.UnicodeData}. It should not be freed.
+             * @returns name property in {@link IBus.UnicodeData}
              */
             get_name(): string;
             /**
-             * Sets the block name in #IBusUnicodeData.
+             * Sets the block name in {@link IBus.UnicodeData}.
              * @param block_name A block name
              */
             set_block_name(block_name: string): void;
@@ -12897,7 +14339,8 @@ declare module 'gi://IBus?version=1.0' {
         /**
          * An IBusXEvent provides a wrapper of XEvent.
          *
-         * see_also: #IBusComponent, #IBusEngineDesc
+         * see_also: {@link IBus.Component}, {@link IBus.EngineDesc}
+         * @gir-type Class
          */
         class XEvent extends Serializable {
             static $gtype: GObject.GType<XEvent>;
@@ -12906,114 +14349,142 @@ declare module 'gi://IBus?version=1.0' {
 
             /**
              * IBusXEventType of this IBusXEvent.
+             * @construct-only
              */
             get event_type(): number;
             /**
              * IBusXEventType of this IBusXEvent.
+             * @construct-only
              */
             get eventType(): number;
             /**
              * group of this IBusXEvent.
+             * @construct-only
              */
             get group(): number;
             /**
              * hardware keycode of this IBusXEvent.
+             * @construct-only
              */
             get hardware_keycode(): number;
             /**
              * hardware keycode of this IBusXEvent.
+             * @construct-only
              */
             get hardwareKeycode(): number;
             /**
              * is_modifier of this IBusXEvent.
+             * @construct-only
              */
             get is_modifier(): boolean;
             /**
              * is_modifier of this IBusXEvent.
+             * @construct-only
              */
             get isModifier(): boolean;
             /**
              * keyval of this IBusXEvent.
+             * @construct-only
              */
             get keyval(): number;
             /**
              * keyval of this IBusXEvent.
+             * @construct-only
              */
             get length(): number;
             /**
              * purpose of this IBusXEvent.
+             * @construct-only
              */
             get purpose(): string;
             /**
              * root window of this IBusXEvent.
+             * @construct-only
              */
             get root(): number;
             /**
              * same_screen of this IBusXEvent.
+             * @construct-only
              */
             get same_screen(): boolean;
             /**
              * same_screen of this IBusXEvent.
+             * @construct-only
              */
             get sameScreen(): boolean;
             /**
              * send_event of this IBusXEvent.
+             * @construct-only
              */
             get send_event(): number;
             /**
              * send_event of this IBusXEvent.
+             * @construct-only
              */
             get sendEvent(): number;
             /**
              * serial of this IBusXEvent.
+             * @construct-only
              */
             get serial(): number;
             /**
              * state of this IBusXEvent.
+             * @construct-only
              */
             get state(): number;
             /**
              * string of this IBusXEvent.
+             * @construct-only
              */
             get string(): string;
             /**
              * subwindow of this IBusXEvent.
+             * @construct-only
              */
             get subwindow(): number;
             /**
              * time of this IBusXEvent.
+             * @construct-only
              */
             get time(): number;
             /**
              * Version of this IBusXEvent.
+             * @read-only
              */
             get version(): number;
             /**
              * window of this IBusXEvent.
+             * @construct-only
              */
             get window(): number;
             /**
              * x of this IBusXEvent.
+             * @construct-only
              */
             get x(): number;
             /**
              * root-x of this IBusXEvent.
+             * @construct-only
              */
             get x_root(): number;
             /**
              * root-x of this IBusXEvent.
+             * @construct-only
              */
             get xRoot(): number;
             /**
              * x of this IBusXEvent.
+             * @construct-only
              */
             get y(): number;
             /**
              * root-y of this IBusXEvent.
+             * @construct-only
              */
             get y_root(): number;
             /**
              * root-y of this IBusXEvent.
+             * @construct-only
              */
             get yRoot(): number;
 
@@ -13034,16 +14505,19 @@ declare module 'gi://IBus?version=1.0' {
 
             // Signals
 
+            /** @signal */
             connect<K extends keyof XEvent.SignalSignatures>(
                 signal: K,
                 callback: GObject.SignalCallback<this, XEvent.SignalSignatures[K]>,
             ): number;
             connect(signal: string, callback: (...args: any[]) => any): number;
+            /** @signal */
             connect_after<K extends keyof XEvent.SignalSignatures>(
                 signal: K,
                 callback: GObject.SignalCallback<this, XEvent.SignalSignatures[K]>,
             ): number;
             connect_after(signal: string, callback: (...args: any[]) => any): number;
+            /** @signal */
             emit<K extends keyof XEvent.SignalSignatures>(
                 signal: K,
                 ...args: GObject.GjsParameters<XEvent.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never
@@ -13052,90 +14526,241 @@ declare module 'gi://IBus?version=1.0' {
 
             // Methods
 
+            /**
+             * @returns IBusXEventType of {@link IBus.XEvent}
+             */
             get_event_type(): XEventType;
+            /**
+             * @returns group of {@link IBus.XEvent}
+             */
             get_group(): number;
+            /**
+             * @returns hardware keycode of {@link IBus.XEvent}
+             */
             get_hardware_keycode(): number;
+            /**
+             * @returns is_modifier of {@link IBus.XEvent}
+             */
             get_is_modifier(): boolean;
+            /**
+             * @returns keyval of {@link IBus.XEvent}
+             */
             get_keyval(): number;
+            /**
+             * @returns length of {@link IBus.XEvent}
+             */
             get_length(): number;
+            /**
+             * @returns purpose of {@link IBus.XEvent}
+             */
             get_purpose(): string;
+            /**
+             * @returns root window of {@link IBus.XEvent}
+             */
             get_root(): number;
+            /**
+             * @returns same_screen of {@link IBus.XEvent}
+             */
             get_same_screen(): boolean;
+            /**
+             * @returns send_event of {@link IBus.XEvent}
+             */
             get_send_event(): number;
+            /**
+             * @returns serial of {@link IBus.XEvent}
+             */
             get_serial(): number;
+            /**
+             * @returns state of {@link IBus.XEvent}
+             */
             get_state(): number;
+            /**
+             * @returns string of {@link IBus.XEvent}
+             */
             get_string(): string;
+            /**
+             * @returns subwindow of {@link IBus.XEvent}
+             */
             get_subwindow(): number;
+            /**
+             * @returns time of {@link IBus.XEvent}
+             */
             get_time(): number;
+            /**
+             * @returns Version of {@link IBus.XEvent}
+             */
             get_version(): number;
+            /**
+             * @returns XID of {@link IBus.XEvent}
+             */
             get_window(): number;
+            /**
+             * @returns x of {@link IBus.XEvent}
+             */
             get_x(): number;
+            /**
+             * @returns x-root of {@link IBus.XEvent}
+             */
             get_x_root(): number;
+            /**
+             * @returns y of {@link IBus.XEvent}
+             */
             get_y(): number;
+            /**
+             * @returns y-root of {@link IBus.XEvent}
+             */
             get_y_root(): number;
         }
 
+        /**
+         * @gir-type Alias
+         */
         type AttrListClass = typeof AttrList;
+        /**
+         * @gir-type Alias
+         */
         type AttributeClass = typeof Attribute;
+        /**
+         * @gir-type Alias
+         */
         type BusClass = typeof Bus;
+        /**
+         * @gir-type Struct
+         */
         abstract class BusPrivate {
             static $gtype: GObject.GType<BusPrivate>;
         }
 
+        /**
+         * @gir-type Alias
+         */
         type ComponentClass = typeof Component;
+        /**
+         * @gir-type Struct
+         */
         abstract class ComponentPrivate {
             static $gtype: GObject.GType<ComponentPrivate>;
         }
 
+        /**
+         * @gir-type Alias
+         */
         type ConfigClass = typeof Config;
+        /**
+         * @gir-type Struct
+         */
         abstract class ConfigPrivate {
             static $gtype: GObject.GType<ConfigPrivate>;
         }
 
+        /**
+         * @gir-type Alias
+         */
         type ConfigServiceClass = typeof ConfigService;
+        /**
+         * @gir-type Alias
+         */
         type EmojiDataClass = typeof EmojiData;
+        /**
+         * @gir-type Struct
+         */
         abstract class EmojiDataPrivate {
             static $gtype: GObject.GType<EmojiDataPrivate>;
         }
 
+        /**
+         * @gir-type Alias
+         */
         type EngineClass = typeof Engine;
+        /**
+         * @gir-type Alias
+         */
         type EngineDescClass = typeof EngineDesc;
+        /**
+         * @gir-type Struct
+         */
         abstract class EngineDescPrivate {
             static $gtype: GObject.GType<EngineDescPrivate>;
         }
 
+        /**
+         * @gir-type Struct
+         */
         abstract class EnginePrivate {
             static $gtype: GObject.GType<EnginePrivate>;
         }
 
+        /**
+         * @gir-type Alias
+         */
         type EngineSimpleClass = typeof EngineSimple;
+        /**
+         * @gir-type Struct
+         */
         abstract class EngineSimplePrivate {
             static $gtype: GObject.GType<EngineSimplePrivate>;
         }
 
+        /**
+         * @gir-type Alias
+         */
         type ExtensionEventClass = typeof ExtensionEvent;
+        /**
+         * @gir-type Struct
+         */
         abstract class ExtensionEventPrivate {
             static $gtype: GObject.GType<ExtensionEventPrivate>;
         }
 
+        /**
+         * @gir-type Alias
+         */
         type FactoryClass = typeof Factory;
+        /**
+         * @gir-type Struct
+         */
         abstract class FactoryPrivate {
             static $gtype: GObject.GType<FactoryPrivate>;
         }
 
+        /**
+         * @gir-type Alias
+         */
         type HotkeyProfileClass = typeof HotkeyProfile;
+        /**
+         * @gir-type Alias
+         */
         type InputContextClass = typeof InputContext;
+        /**
+         * @gir-type Alias
+         */
         type KeymapClass = typeof Keymap;
+        /**
+         * @gir-type Alias
+         */
         type LookupTableClass = typeof LookupTable;
+        /**
+         * @gir-type Alias
+         */
         type ObjectClass = typeof Object;
+        /**
+         * @gir-type Struct
+         */
         abstract class ObjectPrivate {
             static $gtype: GObject.GType<ObjectPrivate>;
         }
 
+        /**
+         * @gir-type Alias
+         */
         type ObservedPathClass = typeof ObservedPath;
+        /**
+         * @gir-type Alias
+         */
         type PanelServiceClass = typeof PanelService;
         /**
          * IBuProcessKeyEventData properties.
+         * @gir-type Struct
          */
         class ProcessKeyEventData {
             static $gtype: GObject.GType<ProcessKeyEventData>;
@@ -13157,15 +14782,28 @@ declare module 'gi://IBus?version=1.0' {
             );
         }
 
+        /**
+         * @gir-type Alias
+         */
         type PropListClass = typeof PropList;
+        /**
+         * @gir-type Alias
+         */
         type PropertyClass = typeof Property;
+        /**
+         * @gir-type Struct
+         */
         abstract class PropertyPrivate {
             static $gtype: GObject.GType<PropertyPrivate>;
         }
 
+        /**
+         * @gir-type Alias
+         */
         type ProxyClass = typeof Proxy;
         /**
          * Rectangle definition.
+         * @gir-type Struct
          */
         class Rectangle {
             static $gtype: GObject.GType<Rectangle>;
@@ -13189,39 +14827,79 @@ declare module 'gi://IBus?version=1.0' {
             );
         }
 
+        /**
+         * @gir-type Alias
+         */
         type RegistryClass = typeof Registry;
+        /**
+         * @gir-type Struct
+         */
         abstract class RegistryPrivate {
             static $gtype: GObject.GType<RegistryPrivate>;
         }
 
+        /**
+         * @gir-type Alias
+         */
         type SerializableClass = typeof Serializable;
+        /**
+         * @gir-type Struct
+         */
         abstract class SerializablePrivate {
             static $gtype: GObject.GType<SerializablePrivate>;
         }
 
+        /**
+         * @gir-type Alias
+         */
         type ServiceClass = typeof Service;
+        /**
+         * @gir-type Struct
+         */
         abstract class ServicePrivate {
             static $gtype: GObject.GType<ServicePrivate>;
         }
 
+        /**
+         * @gir-type Alias
+         */
         type TextClass = typeof Text;
+        /**
+         * @gir-type Alias
+         */
         type UnicodeBlockClass = typeof UnicodeBlock;
+        /**
+         * @gir-type Struct
+         */
         abstract class UnicodeBlockPrivate {
             static $gtype: GObject.GType<UnicodeBlockPrivate>;
         }
 
+        /**
+         * @gir-type Alias
+         */
         type UnicodeDataClass = typeof UnicodeData;
+        /**
+         * @gir-type Struct
+         */
         abstract class UnicodeDataPrivate {
             static $gtype: GObject.GType<UnicodeDataPrivate>;
         }
 
+        /**
+         * @gir-type Alias
+         */
         type XEventClass = typeof XEvent;
+        /**
+         * @gir-type Struct
+         */
         abstract class XEventPrivate {
             static $gtype: GObject.GType<XEventPrivate>;
         }
 
         /**
          * IBusXML lists data structure and handling function for XML in IBus.
+         * @gir-type Struct
          */
         class XML {
             static $gtype: GObject.GType<XML>;
@@ -13260,11 +14938,11 @@ declare module 'gi://IBus?version=1.0' {
             // Methods
 
             /**
-             * Creates a copy of `node,` which should be freed with
-             * ibus_xml_free(). Primarily used by language bindings,
+             * Creates a copy of `node`, which should be freed with
+             * `ibus_xml_free()`. Primarily used by language bindings,
              * not that useful otherwise (since `node` can just be copied
              * by assignment in C).
-             * @returns the newly allocated #IBusXML, which should          be freed with ibus_xml_free(), or %NULL          if @node was %NULL.
+             * @returns the newly allocated {@link IBus.XML}, which should          be freed with `ibus_xml_free()`, or `null`          if `node` was `null`.
              */
             copy(): XML;
             /**

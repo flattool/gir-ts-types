@@ -28,8 +28,9 @@ declare module 'gi://Gcr?version=3' {
 
         /**
          * The status of a built certificate chain. Will be set to
-         * %GCR_CERTIFICATE_CHAIN_UNKNOWN for certificate chains that have not been
+         * {@link Gcr.CertificateChainStatus.UNKNOWN} for certificate chains that have not been
          * built.
+         * @gir-type Enum
          */
         enum CertificateChainStatus {
             /**
@@ -70,6 +71,7 @@ declare module 'gi://Gcr?version=3' {
 
         /**
          * The format of a certificate request. Currently only PKCS#10 is supported.
+         * @gir-type Enum
          */
         enum CertificateRequestFormat {
             /**
@@ -80,6 +82,7 @@ declare module 'gi://Gcr?version=3' {
 
         /**
          * Values responding to error codes for parsing and serializing data.
+         * @gir-type Enum
          */
         enum DataError {
             /**
@@ -102,6 +105,7 @@ declare module 'gi://Gcr?version=3' {
 
         /**
          * The various format identifiers.
+         * @gir-type Enum
          */
         enum DataFormat {
             /**
@@ -231,7 +235,8 @@ declare module 'gi://Gcr?version=3' {
         }
 
         /**
-         * Various replies returned by [method`Prompt`.confirm] and friends.
+         * Various replies returned by {@link Prompt.confirm} and friends.
+         * @gir-type Enum
          */
         enum PromptReply {
             /**
@@ -245,12 +250,13 @@ declare module 'gi://Gcr?version=3' {
         }
 
         /**
-         * No error returned by the #GcrSystemPrompt is suitable for display or
+         * No error returned by the {@link Gcr.SystemPrompt} is suitable for display or
          * to the user.
          *
          * If the system prompter can only show one prompt at a time, and there is
          * already a prompt being displayed, and the timeout waiting to open the
-         * prompt expires, then %GCR_SYSTEM_PROMPT_IN_PROGRESS is returned.
+         * prompt expires, then {@link Gcr.SystemPromptError.SYSTEM_PROMPT_IN_PROGRESS} is returned.
+         * @gir-type Enum
          */
         enum SystemPromptError {
             /**
@@ -261,7 +267,8 @@ declare module 'gi://Gcr?version=3' {
 
         /**
          * The mode for the system prompter. Most system prompters can only show
-         * one prompt at a time and would use the %GCR_SYSTEM_PROMPTER_SINGLE mode.
+         * one prompt at a time and would use the {@link Gcr.SystemPrompterMode.SINGLE} mode.
+         * @gir-type Enum
          */
         enum SystemPrompterMode {
             /**
@@ -323,7 +330,7 @@ declare module 'gi://Gcr?version=3' {
         const UNLOCK_OPTION_TIMEOUT: string;
         /**
          * Compare one certificate against another. If the certificates are equal
-         * then zero is returned. If one certificate is %NULL or not a certificate,
+         * then zero is returned. If one certificate is `null` or not a certificate,
          * then a non-zero value is returned.
          *
          * The return value is useful in a stable sort, but has no user logical
@@ -337,10 +344,10 @@ declare module 'gi://Gcr?version=3' {
         /**
          * Create a key fingerprint for a certificate, public key or private key.
          * Note that this is not a fingerprint of certificate data, which you would
-         * use gcr_certificate_get_fingerprint() for.
+         * use `gcr_certificate_get_fingerprint()` for.
          * @param attrs attributes for key or certificate
          * @param checksum_type the type of fingerprint to create
-         * @returns the          fingerprint or %NULL if the input was invalid.
+         * @returns the          fingerprint or `null` if the input was invalid.
          */
         function fingerprint_from_attributes(
             attrs: Gck.Attributes,
@@ -356,7 +363,7 @@ declare module 'gi://Gcr?version=3' {
          * certificate.
          * @param key_info DER encoded subjectPublicKeyInfo structure
          * @param checksum_type the type of fingerprint to create
-         * @returns the          fingerprint or %NULL if the input was invalid.
+         * @returns the          fingerprint or `null` if the input was invalid.
          */
         function fingerprint_from_subject_public_key_info(
             key_info: Uint8Array | string,
@@ -373,19 +380,19 @@ declare module 'gi://Gcr?version=3' {
          * The parsed item is represented by the state of the GcrParser at the
          * time of calling this method.
          * @param parsed a parser with a parsed item to import
-         * @returns a list of importers          which can import the parsed item, which should be freed with          g_object_unref(), or %NULL if no types of importers can be created
+         * @returns a list of importers          which can import the parsed item, which should be freed with          `g_object_unref()`, or `null` if no types of importers can be created
          */
         function importer_create_for_parsed(parsed: Parsed): Importer[];
         /**
          * Queues an additional item to be imported in all compattible importers
-         * in the set. The parsed item is represented by the state of the #GcrParser
+         * in the set. The parsed item is represented by the state of the {@link Gcr.Parser}
          * at the time of calling this method.
          *
          * If the parsed item is incompatible with an importer, then that the item
          * will not be queued on that importer.
          * @param importers a set of importers
          * @param parsed a parsed item
-         * @returns a new set of importers          that queued the item, which should be freed with gck_list_unref_free()
+         * @returns a new set of importers          that queued the item, which should be freed with `gck_list_unref_free()`
          */
         function importer_queue_and_filter_for_parsed(importers: Importer[], parsed: Parsed): Importer[];
         /**
@@ -429,7 +436,7 @@ declare module 'gi://Gcr?version=3' {
          */
         function mock_prompter_get_delay_msec(): number;
         /**
-         * Check if the mock prompter is expecting a response. This will be %TRUE
+         * Check if the mock prompter is expecting a response. This will be `true`
          * when one of the <literal>gcr_mock_prompter_expect_xxx<!-- -->()</literal>
          * functions have been used to queue an expected prompt, but that prompt
          * response has not be 'used' yet.
@@ -452,7 +459,7 @@ declare module 'gi://Gcr?version=3' {
          * <literal>setup<!-- -->()</literal> function of tests.
          *
          * Starts the mock prompter in an additional thread. Use the returned DBus bus
-         * name with gcr_system_prompt_open_for_prompter() to connect to this prompter.
+         * name with `gcr_system_prompt_open_for_prompter()` to connect to this prompter.
          * @returns the bus name that the mock prompter is listening on
          */
         function mock_prompter_start(): string;
@@ -462,18 +469,18 @@ declare module 'gi://Gcr?version=3' {
          */
         function mock_prompter_stop(): void;
         /**
-         * Unreferences a parsed item which was referenced with gcr_parsed_ref()
+         * Unreferences a parsed item which was referenced with `gcr_parsed_ref()`
          * @param parsed a parsed item
          */
         function parsed_unref(parsed?: any | null): void;
         /**
-         * Add a #GckModule to the list of PKCS#11 modules that are used by the
+         * Add a {@link Gck.Module} to the list of PKCS#11 modules that are used by the
          * GCR library.
          *
          * It is not normally necessary to call this function. The available
          * PKCS#11 modules installed on the system are automatically loaded
          * by the GCR library.
-         * @param module a #GckModule
+         * @param module a {@link Gck.Module}
          */
         function pkcs11_add_module(module: Gck.Module): void;
         /**
@@ -491,22 +498,22 @@ declare module 'gi://Gcr?version=3' {
         function pkcs11_add_module_from_file(module_path: string, unused?: any | null): boolean;
         /**
          * List all the PKCS#11 modules that are used by the GCR library.
-         * Each module is a [class`Gck`.Module] object.
+         * Each module is a {@link Gck.Module} object.
          *
-         * An empty list of modules will be returned if [func`pkcs1`1_set_modules],
-         * or [func`pkcs1`1_initialize] has not yet run.
+         * An empty list of modules will be returned if {@link pkcs11_set_modules},
+         * or {@link pkcs11_initialize} has not yet run.
          *
-         * When done with the list, free it with gck_list_unref_free().
-         * @returns a newly allocated list          of #GckModule objects
+         * When done with the list, free it with `gck_list_unref_free()`.
+         * @returns a newly allocated list          of {@link Gck.Module} objects
          */
         function pkcs11_get_modules(): Gck.Module[];
         /**
          * List all the PKCS#11 slots that are used by the GCR library for lookup
-         * of trust assertions. Each slot is a [class`Gck`.Slot] object.
+         * of trust assertions. Each slot is a {@link Gck.Slot} object.
          *
-         * This will return an empty list if the [func`pkcs1`1_initialize] function has
+         * This will return an empty list if the {@link pkcs11_initialize} function has
          * not yet been called.
-         * @returns a list of #GckSlot          objects to use for lookup of trust, or the empty list if not          initialized or no appropriate trust stores could be found.
+         * @returns a list of {@link Gck.Slot}          objects to use for lookup of trust, or the empty list if not          initialized or no appropriate trust stores could be found.
          */
         function pkcs11_get_trust_lookup_slots(): Gck.Slot[];
         /**
@@ -519,11 +526,11 @@ declare module 'gi://Gcr?version=3' {
          * Selects an appropriate PKCS#11 slot to store trust assertions. The slot
          * to use is normally configured automatically by the system.
          *
-         * This will only return a valid result after the [func`pkcs1`1_initialize]
+         * This will only return a valid result after the {@link pkcs11_initialize}
          * method has been called.
          *
-         * When done with the #GckSlot, use g_object_unref() to release it.
-         * @returns the #GckSlot to use for trust          assertions, or null if not initialized or no appropriate          trust store could be found.
+         * When done with the {@link Gck.Slot}, use `g_object_unref()` to release it.
+         * @returns the {@link Gck.Slot} to use for trust          assertions, or null if not initialized or no appropriate          trust store could be found.
          */
         function pkcs11_get_trust_store_slot(): Gck.Slot | null;
         /**
@@ -570,7 +577,7 @@ declare module 'gi://Gcr?version=3' {
         function pkcs11_initialize_finish(result: Gio.AsyncResult): boolean;
         /**
          * Set the list of PKCS#11 modules that are used by the GCR library.
-         * Each module in the list is a [class`Gck`.Module] object.
+         * Each module in the list is a {@link Gck.Module} object.
          *
          * It is not normally necessary to call this function. The available
          * PKCS#11 modules installed on the system are automatically loaded
@@ -604,13 +611,13 @@ declare module 'gi://Gcr?version=3' {
          * If the same pinned certificate already exists, then this operation
          * does not add another, and succeeds without error.
          *
-         * This call may block, see gcr_trust_add_pinned_certificate_async() for the
+         * This call may block, see `gcr_trust_add_pinned_certificate_async()` for the
          * non-blocking version.
-         * @param certificate a #GcrCertificate
+         * @param certificate a {@link Gcr.Certificate}
          * @param purpose the purpose string
          * @param peer the peer for this pinned certificate
-         * @param cancellable a #GCancellable
-         * @returns %TRUE if the pinned certificate is recorded successfully
+         * @param cancellable a {@link Gio.Cancellable}
+         * @returns `true` if the pinned certificate is recorded successfully
          */
         function trust_add_pinned_certificate(
             certificate: Certificate,
@@ -627,12 +634,12 @@ declare module 'gi://Gcr?version=3' {
          * does not add another, and succeeds without error.
          *
          * When the operation is finished, callback will be called. You can then call
-         * [func`Gcr`.trust_add_pinned_certificate_finish] to get the result of the
+         * {@link Gcr.trust_add_pinned_certificate_finish} to get the result of the
          * operation.
-         * @param certificate a #GcrCertificate
+         * @param certificate a {@link Gcr.Certificate}
          * @param purpose the purpose string
          * @param peer the peer for this pinned certificate
-         * @param cancellable a #GCancellable
+         * @param cancellable a {@link Gio.Cancellable}
          */
         function trust_add_pinned_certificate_async(
             certificate: Certificate,
@@ -649,13 +656,13 @@ declare module 'gi://Gcr?version=3' {
          * does not add another, and succeeds without error.
          *
          * When the operation is finished, callback will be called. You can then call
-         * [func`Gcr`.trust_add_pinned_certificate_finish] to get the result of the
+         * {@link Gcr.trust_add_pinned_certificate_finish} to get the result of the
          * operation.
-         * @param certificate a #GcrCertificate
+         * @param certificate a {@link Gcr.Certificate}
          * @param purpose the purpose string
          * @param peer the peer for this pinned certificate
-         * @param cancellable a #GCancellable
-         * @param callback a #GAsyncReadyCallback to call when the operation completes
+         * @param cancellable a {@link Gio.Cancellable}
+         * @param callback a {@link Gio.AsyncReadyCallback} to call when the operation completes
          */
         function trust_add_pinned_certificate_async(
             certificate: Certificate,
@@ -673,13 +680,13 @@ declare module 'gi://Gcr?version=3' {
          * does not add another, and succeeds without error.
          *
          * When the operation is finished, callback will be called. You can then call
-         * [func`Gcr`.trust_add_pinned_certificate_finish] to get the result of the
+         * {@link Gcr.trust_add_pinned_certificate_finish} to get the result of the
          * operation.
-         * @param certificate a #GcrCertificate
+         * @param certificate a {@link Gcr.Certificate}
          * @param purpose the purpose string
          * @param peer the peer for this pinned certificate
-         * @param cancellable a #GCancellable
-         * @param callback a #GAsyncReadyCallback to call when the operation completes
+         * @param cancellable a {@link Gio.Cancellable}
+         * @param callback a {@link Gio.AsyncReadyCallback} to call when the operation completes
          */
         function trust_add_pinned_certificate_async(
             certificate: Certificate,
@@ -690,9 +697,9 @@ declare module 'gi://Gcr?version=3' {
         ): globalThis.Promise<boolean> | void;
         /**
          * Finishes an asynchronous operation started by
-         * gcr_trust_add_pinned_certificate_async().
-         * @param result the #GAsyncResult passed to the callback
-         * @returns %TRUE if the pinned certificate is recorded successfully
+         * `gcr_trust_add_pinned_certificate_async()`.
+         * @param result the {@link Gio.AsyncResult} passed to the callback
+         * @returns `true` if the pinned certificate is recorded successfully
          */
         function trust_add_pinned_certificate_finish(result: Gio.AsyncResult): boolean;
         /**
@@ -700,15 +707,15 @@ declare module 'gi://Gcr?version=3' {
          * anchor is used to verify the signatures on other certificates when verifying
          * a certificate chain. Also known as a trusted certificate authority.
          *
-         * This call may block, see [func`Gcr`.trust_is_certificate_anchored_async] for
+         * This call may block, see {@link Gcr.trust_is_certificate_anchored_async} for
          * the non-blocking version.
          *
-         * In the case of an error, %FALSE is also returned. Check `error` to detect
+         * In the case of an error, `false` is also returned. Check `error` to detect
          * if an error occurred.
-         * @param certificate a #GcrCertificate to check
+         * @param certificate a {@link Gcr.Certificate} to check
          * @param purpose the purpose string
-         * @param cancellable a #GCancellable
-         * @returns %TRUE if the certificate is a trust anchor
+         * @param cancellable a {@link Gio.Cancellable}
+         * @returns `true` if the certificate is a trust anchor
          */
         function trust_is_certificate_anchored(
             certificate: Certificate,
@@ -721,10 +728,10 @@ declare module 'gi://Gcr?version=3' {
          * a certificate chain. Also known as a trusted certificate authority.
          *
          * When the operation is finished, callback will be called. You can then call
-         * gcr_trust_is_certificate_anchored_finish() to get the result of the operation.
-         * @param certificate a #GcrCertificate to check
+         * `gcr_trust_is_certificate_anchored_finish()` to get the result of the operation.
+         * @param certificate a {@link Gcr.Certificate} to check
          * @param purpose the purpose string
-         * @param cancellable a #GCancellable
+         * @param cancellable a {@link Gio.Cancellable}
          */
         function trust_is_certificate_anchored_async(
             certificate: Certificate,
@@ -737,11 +744,11 @@ declare module 'gi://Gcr?version=3' {
          * a certificate chain. Also known as a trusted certificate authority.
          *
          * When the operation is finished, callback will be called. You can then call
-         * gcr_trust_is_certificate_anchored_finish() to get the result of the operation.
-         * @param certificate a #GcrCertificate to check
+         * `gcr_trust_is_certificate_anchored_finish()` to get the result of the operation.
+         * @param certificate a {@link Gcr.Certificate} to check
          * @param purpose the purpose string
-         * @param cancellable a #GCancellable
-         * @param callback a #GAsyncReadyCallback to call when the operation completes
+         * @param cancellable a {@link Gio.Cancellable}
+         * @param callback a {@link Gio.AsyncReadyCallback} to call when the operation completes
          */
         function trust_is_certificate_anchored_async(
             certificate: Certificate,
@@ -755,11 +762,11 @@ declare module 'gi://Gcr?version=3' {
          * a certificate chain. Also known as a trusted certificate authority.
          *
          * When the operation is finished, callback will be called. You can then call
-         * gcr_trust_is_certificate_anchored_finish() to get the result of the operation.
-         * @param certificate a #GcrCertificate to check
+         * `gcr_trust_is_certificate_anchored_finish()` to get the result of the operation.
+         * @param certificate a {@link Gcr.Certificate} to check
          * @param purpose the purpose string
-         * @param cancellable a #GCancellable
-         * @param callback a #GAsyncReadyCallback to call when the operation completes
+         * @param cancellable a {@link Gio.Cancellable}
+         * @param callback a {@link Gio.AsyncReadyCallback} to call when the operation completes
          */
         function trust_is_certificate_anchored_async(
             certificate: Certificate,
@@ -769,28 +776,28 @@ declare module 'gi://Gcr?version=3' {
         ): globalThis.Promise<boolean> | void;
         /**
          * Finishes an asynchronous operation started by
-         * gcr_trust_is_certificate_anchored_async().
+         * `gcr_trust_is_certificate_anchored_async()`.
          *
-         * In the case of an error, %FALSE is also returned. Check `error` to detect
+         * In the case of an error, `false` is also returned. Check `error` to detect
          * if an error occurred.
-         * @param result the #GAsyncResult passed to the callback
-         * @returns %TRUE if the certificate is a trust anchor
+         * @param result the {@link Gio.AsyncResult} passed to the callback
+         * @returns `true` if the certificate is a trust anchor
          */
         function trust_is_certificate_anchored_finish(result: Gio.AsyncResult): boolean;
         /**
          * Check if `certificate` is pinned for `purpose` to communicate with `peer`.
          * A pinned certificate overrides all other certificate verification.
          *
-         * This call may block, see gcr_trust_is_certificate_pinned_async() for the
+         * This call may block, see `gcr_trust_is_certificate_pinned_async()` for the
          * non-blocking version.
          *
-         * In the case of an error, %FALSE is also returned. Check `error` to detect
+         * In the case of an error, `false` is also returned. Check `error` to detect
          * if an error occurred.
-         * @param certificate a #GcrCertificate to check
+         * @param certificate a {@link Gcr.Certificate} to check
          * @param purpose the purpose string
          * @param peer the peer for this pinned
-         * @param cancellable a #GCancellable
-         * @returns %TRUE if the certificate is pinned for the host and purpose
+         * @param cancellable a {@link Gio.Cancellable}
+         * @returns `true` if the certificate is pinned for the host and purpose
          */
         function trust_is_certificate_pinned(
             certificate: Certificate,
@@ -803,12 +810,12 @@ declare module 'gi://Gcr?version=3' {
          * pinned certificate overrides all other certificate verification.
          *
          * When the operation is finished, callback will be called. You can then call
-         * [func`Gcr`.trust_is_certificate_pinned_finish] to get the result of the
+         * {@link Gcr.trust_is_certificate_pinned_finish} to get the result of the
          * operation.
-         * @param certificate a #GcrCertificate to check
+         * @param certificate a {@link Gcr.Certificate} to check
          * @param purpose the purpose string
          * @param peer the peer for this pinned
-         * @param cancellable a #GCancellable
+         * @param cancellable a {@link Gio.Cancellable}
          */
         function trust_is_certificate_pinned_async(
             certificate: Certificate,
@@ -821,13 +828,13 @@ declare module 'gi://Gcr?version=3' {
          * pinned certificate overrides all other certificate verification.
          *
          * When the operation is finished, callback will be called. You can then call
-         * [func`Gcr`.trust_is_certificate_pinned_finish] to get the result of the
+         * {@link Gcr.trust_is_certificate_pinned_finish} to get the result of the
          * operation.
-         * @param certificate a #GcrCertificate to check
+         * @param certificate a {@link Gcr.Certificate} to check
          * @param purpose the purpose string
          * @param peer the peer for this pinned
-         * @param cancellable a #GCancellable
-         * @param callback a #GAsyncReadyCallback to call when the operation completes
+         * @param cancellable a {@link Gio.Cancellable}
+         * @param callback a {@link Gio.AsyncReadyCallback} to call when the operation completes
          */
         function trust_is_certificate_pinned_async(
             certificate: Certificate,
@@ -841,13 +848,13 @@ declare module 'gi://Gcr?version=3' {
          * pinned certificate overrides all other certificate verification.
          *
          * When the operation is finished, callback will be called. You can then call
-         * [func`Gcr`.trust_is_certificate_pinned_finish] to get the result of the
+         * {@link Gcr.trust_is_certificate_pinned_finish} to get the result of the
          * operation.
-         * @param certificate a #GcrCertificate to check
+         * @param certificate a {@link Gcr.Certificate} to check
          * @param purpose the purpose string
          * @param peer the peer for this pinned
-         * @param cancellable a #GCancellable
-         * @param callback a #GAsyncReadyCallback to call when the operation completes
+         * @param cancellable a {@link Gio.Cancellable}
+         * @param callback a {@link Gio.AsyncReadyCallback} to call when the operation completes
          */
         function trust_is_certificate_pinned_async(
             certificate: Certificate,
@@ -858,12 +865,12 @@ declare module 'gi://Gcr?version=3' {
         ): globalThis.Promise<boolean> | void;
         /**
          * Finishes an asynchronous operation started by
-         * gcr_trust_is_certificate_pinned_async().
+         * `gcr_trust_is_certificate_pinned_async()`.
          *
-         * In the case of an error, %FALSE is also returned. Check `error` to detect
+         * In the case of an error, `false` is also returned. Check `error` to detect
          * if an error occurred.
-         * @param result the #GAsyncResult passed to the callback
-         * @returns %TRUE if the certificate is pinned.
+         * @param result the {@link Gio.AsyncResult} passed to the callback
+         * @returns `true` if the certificate is pinned.
          */
         function trust_is_certificate_pinned_finish(result: Gio.AsyncResult): boolean;
         /**
@@ -872,13 +879,13 @@ declare module 'gi://Gcr?version=3' {
          * If the same pinned certificate does not exist, or was already removed,
          * then this operation succeeds without error.
          *
-         * This call may block, see gcr_trust_remove_pinned_certificate_async() for the
+         * This call may block, see `gcr_trust_remove_pinned_certificate_async()` for the
          * non-blocking version.
-         * @param certificate a #GcrCertificate
+         * @param certificate a {@link Gcr.Certificate}
          * @param purpose the purpose string
          * @param peer the peer for this pinned certificate
-         * @param cancellable a #GCancellable
-         * @returns %TRUE if the pinned certificate no longer exists
+         * @param cancellable a {@link Gio.Cancellable}
+         * @returns `true` if the pinned certificate no longer exists
          */
         function trust_remove_pinned_certificate(
             certificate: Certificate,
@@ -893,12 +900,12 @@ declare module 'gi://Gcr?version=3' {
          * then this operation succeeds without error.
          *
          * When the operation is finished, callback will be called. You can then call
-         * gcr_trust_remove_pinned_certificate_finish() to get the result of the
+         * `gcr_trust_remove_pinned_certificate_finish()` to get the result of the
          * operation.
-         * @param certificate a #GcrCertificate
+         * @param certificate a {@link Gcr.Certificate}
          * @param purpose the purpose string
          * @param peer the peer for this pinned certificate
-         * @param cancellable a #GCancellable
+         * @param cancellable a {@link Gio.Cancellable}
          */
         function trust_remove_pinned_certificate_async(
             certificate: Certificate,
@@ -913,13 +920,13 @@ declare module 'gi://Gcr?version=3' {
          * then this operation succeeds without error.
          *
          * When the operation is finished, callback will be called. You can then call
-         * gcr_trust_remove_pinned_certificate_finish() to get the result of the
+         * `gcr_trust_remove_pinned_certificate_finish()` to get the result of the
          * operation.
-         * @param certificate a #GcrCertificate
+         * @param certificate a {@link Gcr.Certificate}
          * @param purpose the purpose string
          * @param peer the peer for this pinned certificate
-         * @param cancellable a #GCancellable
-         * @param callback a #GAsyncReadyCallback to call when the operation completes
+         * @param cancellable a {@link Gio.Cancellable}
+         * @param callback a {@link Gio.AsyncReadyCallback} to call when the operation completes
          */
         function trust_remove_pinned_certificate_async(
             certificate: Certificate,
@@ -935,13 +942,13 @@ declare module 'gi://Gcr?version=3' {
          * then this operation succeeds without error.
          *
          * When the operation is finished, callback will be called. You can then call
-         * gcr_trust_remove_pinned_certificate_finish() to get the result of the
+         * `gcr_trust_remove_pinned_certificate_finish()` to get the result of the
          * operation.
-         * @param certificate a #GcrCertificate
+         * @param certificate a {@link Gcr.Certificate}
          * @param purpose the purpose string
          * @param peer the peer for this pinned certificate
-         * @param cancellable a #GCancellable
-         * @param callback a #GAsyncReadyCallback to call when the operation completes
+         * @param cancellable a {@link Gio.Cancellable}
+         * @param callback a {@link Gio.AsyncReadyCallback} to call when the operation completes
          */
         function trust_remove_pinned_certificate_async(
             certificate: Certificate,
@@ -952,16 +959,20 @@ declare module 'gi://Gcr?version=3' {
         ): globalThis.Promise<boolean> | void;
         /**
          * Finishes an asynchronous operation started by
-         * gcr_trust_remove_pinned_certificate_async().
-         * @param result the #GAsyncResult passed to the callback
-         * @returns %TRUE if the pinned certificate no longer exists
+         * `gcr_trust_remove_pinned_certificate_async()`.
+         * @param result the {@link Gio.AsyncResult} passed to the callback
+         * @returns `true` if the pinned certificate no longer exists
          */
         function trust_remove_pinned_certificate_finish(result: Gio.AsyncResult): boolean;
+        /**
+         * @gir-type Callback
+         */
         interface FilterCollectionFunc<A = GObject.Object> {
             (object: A): boolean;
         }
         /**
-         * Flags to be used with the gcr_certificate_chain_build() operation.
+         * Flags to be used with the `gcr_certificate_chain_build()` operation.
+         * @gir-type Flags
          */
         enum CertificateChainFlags {
             /**
@@ -977,6 +988,9 @@ declare module 'gi://Gcr?version=3' {
             NO_LOOKUPS,
         }
 
+        /**
+         * @gir-type Flags
+         */
         enum ColumnFlags {
             NONE,
             HIDDEN,
@@ -1009,10 +1023,10 @@ declare module 'gi://Gcr?version=3' {
          * The order of certificates in the chain should be first the endpoint
          * certificates and then the signing certificates.
          *
-         * Create a new certificate chain with [ctor`CertificateChain`.new] and then
-         * add the certificates with [method`CertificateChain`.add].
+         * Create a new certificate chain with {@link CertificateChain.new} and then
+         * add the certificates with {@link CertificateChain.add}.
          *
-         * You can then use [method`CertificateChain`.build] to build the remainder of
+         * You can then use {@link CertificateChain.build} to build the remainder of
          * the chain. This will lookup missing certificates in PKCS#11 modules and
          * also check that each certificate in the chain is the signer of the previous
          * one. If a trust anchor, pinned certificate, or self-signed certificate is
@@ -1020,12 +1034,13 @@ declare module 'gi://Gcr?version=3' {
          * removed from the chain.
          *
          * Once the certificate chain has been built, you can access its status
-         * through [method`CertificateChain`.get_status]. The status signifies whether
+         * through {@link CertificateChain.get_status}. The status signifies whether
          * the chain is anchored on a trust root, self-signed, incomplete etc. See
-         * [enum`CertificateChainStatus]` for information on the various statuses.
+         * {@link CertificateChainStatus} for information on the various statuses.
          *
          * It's important to understand that the building of a certificate chain is
          * merely the first step towards verifying trust in a certificate.
+         * @gir-type Class
          */
         class CertificateChain extends GObject.Object {
             static $gtype: GObject.GType<CertificateChain>;
@@ -1034,6 +1049,7 @@ declare module 'gi://Gcr?version=3' {
 
             /**
              * The length of the certificate chain.
+             * @read-only
              */
             get length(): number;
 
@@ -1056,16 +1072,19 @@ declare module 'gi://Gcr?version=3' {
 
             // Signals
 
+            /** @signal */
             connect<K extends keyof CertificateChain.SignalSignatures>(
                 signal: K,
                 callback: GObject.SignalCallback<this, CertificateChain.SignalSignatures[K]>,
             ): number;
             connect(signal: string, callback: (...args: any[]) => any): number;
+            /** @signal */
             connect_after<K extends keyof CertificateChain.SignalSignatures>(
                 signal: K,
                 callback: GObject.SignalCallback<this, CertificateChain.SignalSignatures[K]>,
             ): number;
             connect_after(signal: string, callback: (...args: any[]) => any): number;
+            /** @signal */
             emit<K extends keyof CertificateChain.SignalSignatures>(
                 signal: K,
                 ...args: GObject.GjsParameters<CertificateChain.SignalSignatures[K]> extends [any, ...infer Q]
@@ -1083,9 +1102,9 @@ declare module 'gi://Gcr?version=3' {
              * certificate authority is present, it should come last.
              *
              * Adding a certificate an already built chain (see
-             * gcr_certificate_chain_build()) resets the type of the certificate chain
-             * to %GCR_CERTIFICATE_CHAIN_UNKNOWN
-             * @param certificate a #GcrCertificate to add to the chain
+             * `gcr_certificate_chain_build()`) resets the type of the certificate chain
+             * to {@link Gcr.CertificateChainStatus.UNKNOWN}
+             * @param certificate a {@link Gcr.Certificate} to add to the chain
              */
             add(certificate: Certificate): void;
             /**
@@ -1102,26 +1121,26 @@ declare module 'gi://Gcr?version=3' {
              * constitute verifying that chain. This is merely the first step towards
              * trust verification.
              *
-             * The `purpose` is a string like %GCR_PURPOSE_CLIENT_AUTH and is the purpose
+             * The `purpose` is a string like `GCR_PURPOSE_CLIENT_AUTH` and is the purpose
              * for which the certificate chain will be used. Trust anchors are looked up
              * for this purpose. This argument is required.
              *
              * The `peer` is usually the host name of the peer whith which this certificate
              * chain is being used. It is used to look up pinned certificates that have
-             * been stored for this peer. If %NULL then no pinned certificates will
+             * been stored for this peer. If `null` then no pinned certificates will
              * be considered.
              *
-             * If the %GCR_CERTIFICATE_CHAIN_NO_LOOKUPS flag is specified then no
+             * If the {@link Gcr.CertificateChainFlags.NO_LOOKUPS} flag is specified then no
              * lookups for anchors or pinned certificates are done, and the resulting chain
              * will be neither anchored or pinned. Additionally no missing certificate
              * authorities are looked up in PKCS#11
              *
-             * This call will block, see gcr_certificate_chain_build_async() for the
+             * This call will block, see `gcr_certificate_chain_build_async()` for the
              * asynchronous version.
              * @param purpose the purpose the certificate chain will be used for
-             * @param peer the peer the certificate chain will be used with, or %NULL
+             * @param peer the peer the certificate chain will be used with, or `null`
              * @param flags chain completion flags
-             * @param cancellable a #GCancellable or %NULL
+             * @param cancellable a {@link Gio.Cancellable} or `null`
              * @returns whether the operation completed successfully
              */
             build(
@@ -1144,26 +1163,26 @@ declare module 'gi://Gcr?version=3' {
              * constitute verifying that chain. This is merely the first step towards
              * trust verification.
              *
-             * The `purpose` is a string like %GCR_PURPOSE_CLIENT_AUTH and is the purpose
+             * The `purpose` is a string like `GCR_PURPOSE_CLIENT_AUTH` and is the purpose
              * for which the certificate chain will be used. Trust anchors are looked up
              * for this purpose. This argument is required.
              *
              * The `peer` is usually the host name of the peer whith which this certificate
              * chain is being used. It is used to look up pinned certificates that have
-             * been stored for this peer. If %NULL then no pinned certificates will
+             * been stored for this peer. If `null` then no pinned certificates will
              * be considered.
              *
-             * If the %GCR_CERTIFICATE_CHAIN_NO_LOOKUPS flag is specified then no
+             * If the {@link Gcr.CertificateChainFlags.NO_LOOKUPS} flag is specified then no
              * lookups for anchors or pinned certificates are done, and the resulting chain
              * will be neither anchored or pinned. Additionally no missing certificate
              * authorities are looked up in PKCS#11
              *
              * When the operation is finished, `callback` will be called. You can then call
-             * gcr_certificate_chain_build_finish() to get the result of the operation.
+             * `gcr_certificate_chain_build_finish()` to get the result of the operation.
              * @param purpose the purpose the certificate chain will be used for
-             * @param peer the peer the certificate chain will be used with, or %NULL
+             * @param peer the peer the certificate chain will be used with, or `null`
              * @param flags chain completion flags
-             * @param cancellable a #GCancellable or %NULL
+             * @param cancellable a {@link Gio.Cancellable} or `null`
              */
             build_async(
                 purpose: string,
@@ -1185,26 +1204,26 @@ declare module 'gi://Gcr?version=3' {
              * constitute verifying that chain. This is merely the first step towards
              * trust verification.
              *
-             * The `purpose` is a string like %GCR_PURPOSE_CLIENT_AUTH and is the purpose
+             * The `purpose` is a string like `GCR_PURPOSE_CLIENT_AUTH` and is the purpose
              * for which the certificate chain will be used. Trust anchors are looked up
              * for this purpose. This argument is required.
              *
              * The `peer` is usually the host name of the peer whith which this certificate
              * chain is being used. It is used to look up pinned certificates that have
-             * been stored for this peer. If %NULL then no pinned certificates will
+             * been stored for this peer. If `null` then no pinned certificates will
              * be considered.
              *
-             * If the %GCR_CERTIFICATE_CHAIN_NO_LOOKUPS flag is specified then no
+             * If the {@link Gcr.CertificateChainFlags.NO_LOOKUPS} flag is specified then no
              * lookups for anchors or pinned certificates are done, and the resulting chain
              * will be neither anchored or pinned. Additionally no missing certificate
              * authorities are looked up in PKCS#11
              *
              * When the operation is finished, `callback` will be called. You can then call
-             * gcr_certificate_chain_build_finish() to get the result of the operation.
+             * `gcr_certificate_chain_build_finish()` to get the result of the operation.
              * @param purpose the purpose the certificate chain will be used for
-             * @param peer the peer the certificate chain will be used with, or %NULL
+             * @param peer the peer the certificate chain will be used with, or `null`
              * @param flags chain completion flags
-             * @param cancellable a #GCancellable or %NULL
+             * @param cancellable a {@link Gio.Cancellable} or `null`
              * @param callback this will be called when the operation completes.
              */
             build_async(
@@ -1228,26 +1247,26 @@ declare module 'gi://Gcr?version=3' {
              * constitute verifying that chain. This is merely the first step towards
              * trust verification.
              *
-             * The `purpose` is a string like %GCR_PURPOSE_CLIENT_AUTH and is the purpose
+             * The `purpose` is a string like `GCR_PURPOSE_CLIENT_AUTH` and is the purpose
              * for which the certificate chain will be used. Trust anchors are looked up
              * for this purpose. This argument is required.
              *
              * The `peer` is usually the host name of the peer whith which this certificate
              * chain is being used. It is used to look up pinned certificates that have
-             * been stored for this peer. If %NULL then no pinned certificates will
+             * been stored for this peer. If `null` then no pinned certificates will
              * be considered.
              *
-             * If the %GCR_CERTIFICATE_CHAIN_NO_LOOKUPS flag is specified then no
+             * If the {@link Gcr.CertificateChainFlags.NO_LOOKUPS} flag is specified then no
              * lookups for anchors or pinned certificates are done, and the resulting chain
              * will be neither anchored or pinned. Additionally no missing certificate
              * authorities are looked up in PKCS#11
              *
              * When the operation is finished, `callback` will be called. You can then call
-             * gcr_certificate_chain_build_finish() to get the result of the operation.
+             * `gcr_certificate_chain_build_finish()` to get the result of the operation.
              * @param purpose the purpose the certificate chain will be used for
-             * @param peer the peer the certificate chain will be used with, or %NULL
+             * @param peer the peer the certificate chain will be used with, or `null`
              * @param flags chain completion flags
-             * @param cancellable a #GCancellable or %NULL
+             * @param cancellable a {@link Gio.Cancellable} or `null`
              * @param callback this will be called when the operation completes.
              */
             build_async(
@@ -1259,21 +1278,21 @@ declare module 'gi://Gcr?version=3' {
             ): globalThis.Promise<boolean> | void;
             /**
              * Finishes an asynchronous operation started by
-             * gcr_certificate_chain_build_async().
-             * @param result the #GAsyncResult passed to the callback
+             * `gcr_certificate_chain_build_async()`.
+             * @param result the {@link Gio.AsyncResult} passed to the callback
              * @returns whether the operation succeeded
              */
             build_finish(result: Gio.AsyncResult): boolean;
             /**
              * If the certificate chain has been built and is of status
-             * %GCR_CERTIFICATE_CHAIN_ANCHORED, then this will return the anchor
+             * {@link Gcr.CertificateChainStatus.ANCHORED}, then this will return the anchor
              * certificate that was found. This is not necessarily a root certificate
              * authority. If an intermediate certificate authority in the chain was
              * found to be anchored, then that certificate will be returned.
              *
              * If an anchor is returned it does not mean that the certificate chain has
              * been verified, but merely that an anchor has been found.
-             * @returns the anchor certificate, or %NULL if not anchored.
+             * @returns the anchor certificate, or `null` if not anchored.
              */
             get_anchor(): Certificate;
             /**
@@ -1286,7 +1305,7 @@ declare module 'gi://Gcr?version=3' {
             /**
              * Get the endpoint certificate in the chain. This is always the first
              * certificate in the chain. The endpoint certificate cannot be anchored.
-             * @returns the endpoint certificate, or %NULL if the chain          is empty
+             * @returns the endpoint certificate, or `null` if the chain          is empty
              */
             get_endpoint(): Certificate;
             /**
@@ -1296,9 +1315,9 @@ declare module 'gi://Gcr?version=3' {
             get_length(): number;
             /**
              * Get the status of a certificate chain. If the certificate chain has not
-             * been built, then the status will be %GCR_CERTIFICATE_CHAIN_UNKNOWN.
+             * been built, then the status will be {@link Gcr.CertificateChainStatus.UNKNOWN}.
              *
-             * A status of %GCR_CERTIFICATE_CHAIN_ANCHORED does not mean that the
+             * A status of {@link Gcr.CertificateChainStatus.ANCHORED} does not mean that the
              * certificate chain has been verified, but merely that an anchor has been
              * found.
              * @returns the status of the certificate chain.
@@ -1324,10 +1343,11 @@ declare module 'gi://Gcr?version=3' {
          * An object that allows creation of certificate requests. A certificate
          * request is sent to a certificate authority to request an X.509 certificate.
          *
-         * Use [func`CertificateRequest`.prepare] to create a blank certificate
+         * Use {@link CertificateRequest.prepare} to create a blank certificate
          * request for a given private key. Set the common name on the certificate
-         * request with [method`CertificateRequest`.set_cn], and then sign the request
-         * with [method`CertificateRequest`.complete_async].
+         * request with {@link CertificateRequest.set_cn}, and then sign the request
+         * with {@link CertificateRequest.complete_async}.
+         * @gir-type Class
          */
         class CertificateRequest extends GObject.Object {
             static $gtype: GObject.GType<CertificateRequest>;
@@ -1336,10 +1356,12 @@ declare module 'gi://Gcr?version=3' {
 
             /**
              * The private key that this certificate request is for.
+             * @construct-only
              */
             get private_key(): Gck.Object;
             /**
              * The private key that this certificate request is for.
+             * @construct-only
              */
             get privateKey(): Gck.Object;
 
@@ -1360,16 +1382,19 @@ declare module 'gi://Gcr?version=3' {
 
             // Signals
 
+            /** @signal */
             connect<K extends keyof CertificateRequest.SignalSignatures>(
                 signal: K,
                 callback: GObject.SignalCallback<this, CertificateRequest.SignalSignatures[K]>,
             ): number;
             connect(signal: string, callback: (...args: any[]) => any): number;
+            /** @signal */
             connect_after<K extends keyof CertificateRequest.SignalSignatures>(
                 signal: K,
                 callback: GObject.SignalCallback<this, CertificateRequest.SignalSignatures[K]>,
             ): number;
             connect_after(signal: string, callback: (...args: any[]) => any): number;
+            /** @signal */
             emit<K extends keyof CertificateRequest.SignalSignatures>(
                 signal: K,
                 ...args: GObject.GjsParameters<CertificateRequest.SignalSignatures[K]> extends [any, ...infer Q]
@@ -1381,14 +1406,14 @@ declare module 'gi://Gcr?version=3' {
             // Static methods
 
             /**
-             * Check whether [class`CertificateRequest]` is capable of creating a request
+             * Check whether {@link CertificateRequest} is capable of creating a request
              * for the given `private_key`.
              * @param private_key a private key
              * @param cancellable cancellation object
              */
             static capable(private_key: Gck.Object, cancellable?: Gio.Cancellable | null): boolean;
             /**
-             * Asynchronously check whether [class`CertificateRequest]` is capable of
+             * Asynchronously check whether {@link CertificateRequest} is capable of
              * creating a request for the given `private_key`.
              * @param private_key a private key
              * @param cancellable cancellation object
@@ -1400,7 +1425,7 @@ declare module 'gi://Gcr?version=3' {
                 callback?: Gio.AsyncReadyCallback<CertificateRequest> | null,
             ): void;
             /**
-             * Get the result for asynchronously check whether [class`CertificateRequest]` is
+             * Get the result for asynchronously check whether {@link CertificateRequest} is
              * capable of creating a request for the given `private_key`.
              * @param result asynchronous result
              */
@@ -1461,12 +1486,12 @@ declare module 'gi://Gcr?version=3' {
             complete_finish(result: Gio.AsyncResult): boolean;
             /**
              * Encode the certificate request. It must have been completed with
-             * [method`CertificateRequest`.complete] or
-             * [method`CertificateRequest`.complete_async].
+             * {@link CertificateRequest.complete} or
+             * {@link CertificateRequest.complete_async}.
              *
-             * If `textual` is %FALSE, the output is a DER encoded certificate request.
+             * If `textual` is `false`, the output is a DER encoded certificate request.
              *
-             * If `textual` is %TRUE, the output is encoded as text. For PKCS#10 requests
+             * If `textual` is `true`, the output is encoded as text. For PKCS#10 requests
              * this is done using the OpenSSL style PEM encoding.
              * @param textual whether to encode output as text
              * @returns the encoded certificate request
@@ -1503,20 +1528,24 @@ declare module 'gi://Gcr?version=3' {
         }
 
         /**
-         * A collection which filters a [iface`Collection]`.
+         * A collection which filters a {@link Collection}.
          *
-         * An implementation of [iface`Collection]` which filters objects from another
-         * underlying collection. Use [ctor`FilterCollection`.new_with_callback]
+         * An implementation of {@link Collection} which filters objects from another
+         * underlying collection. Use {@link FilterCollection.new_with_callback}
          * to create a new filter collection.
          *
          * The callback will determine the criteria for whether an object shows through
          * the filter or not.
+         * @gir-type Class
          */
         class FilterCollection extends GObject.Object implements Collection {
             static $gtype: GObject.GType<FilterCollection>;
 
             // Properties
 
+            /**
+             * @construct-only
+             */
             get underlying(): Collection;
 
             /**
@@ -1538,16 +1567,19 @@ declare module 'gi://Gcr?version=3' {
 
             // Signals
 
+            /** @signal */
             connect<K extends keyof FilterCollection.SignalSignatures>(
                 signal: K,
                 callback: GObject.SignalCallback<this, FilterCollection.SignalSignatures[K]>,
             ): number;
             connect(signal: string, callback: (...args: any[]) => any): number;
+            /** @signal */
             connect_after<K extends keyof FilterCollection.SignalSignatures>(
                 signal: K,
                 callback: GObject.SignalCallback<this, FilterCollection.SignalSignatures[K]>,
             ): number;
             connect_after(signal: string, callback: (...args: any[]) => any): number;
+            /** @signal */
             emit<K extends keyof FilterCollection.SignalSignatures>(
                 signal: K,
                 ...args: GObject.GjsParameters<FilterCollection.SignalSignatures[K]> extends [any, ...infer Q]
@@ -1570,18 +1602,16 @@ declare module 'gi://Gcr?version=3' {
             refilter(): void;
             /**
              * Set the callback used to filter the objects in the underlying collection.
-             * The callback should return %TRUE if an object should appear in the
+             * The callback should return `true` if an object should appear in the
              * filtered collection.
              *
-             * If a %NULL callback is set, then all underlynig objects will appear in the
+             * If a `null` callback is set, then all underlynig objects will appear in the
              * filtered collection.
              *
              * This will refilter the collection.
              * @param callback function to call for each object
              */
             set_callback(callback?: FilterCollectionFunc | null): void;
-
-            // Inherited methods
             /**
              * Check whether the collection contains an object or not.
              * @param object object to check
@@ -1589,13 +1619,13 @@ declare module 'gi://Gcr?version=3' {
              */
             contains(object: GObject.Object): boolean;
             /**
-             * Emit the #GcrCollection::added signal for the given object. This function
+             * Emit the {@link Gcr.Collection.SignalSignatures.added | Gcr.Collection::added} signal for the given object. This function
              * is used by implementors of this interface.
              * @param object The object that was added
              */
             emit_added(object: GObject.Object): void;
             /**
-             * Emit the #GcrCollection::removed signal for the given object. This function
+             * Emit the {@link Gcr.Collection.SignalSignatures.removed | Gcr.Collection::removed} signal for the given object. This function
              * is used by implementors of this interface.
              * @param object The object that was removed
              */
@@ -1607,23 +1637,34 @@ declare module 'gi://Gcr?version=3' {
             get_length(): number;
             /**
              * Get a list of the objects in this collection.
-             * @returns a list of the objects          in this collection, which should be freed with g_list_free()
+             * @returns a list of the objects          in this collection, which should be freed with `g_list_free()`
              */
             get_objects(): GObject.Object[];
+            /**
+             * @param object
+             * @virtual
+             */
             vfunc_added(object: GObject.Object): void;
             /**
              * Check whether the collection contains an object or not.
              * @param object object to check
+             * @virtual
              */
             vfunc_contains(object: GObject.Object): boolean;
             /**
              * Get the number of objects in this collection.
+             * @virtual
              */
             vfunc_get_length(): number;
             /**
              * Get a list of the objects in this collection.
+             * @virtual
              */
             vfunc_get_objects(): GObject.Object[];
+            /**
+             * @param object
+             * @virtual
+             */
             vfunc_removed(object: GObject.Object): void;
             /**
              * Creates a binding between `source_property` on `source` and `target_property`
@@ -1638,32 +1679,32 @@ declare module 'gi://Gcr?version=3' {
              * ```
              *
              *
-             * Will result in the "sensitive" property of the widget #GObject instance to be
-             * updated with the same value of the "active" property of the action #GObject
+             * Will result in the "sensitive" property of the widget {@link GObject.Object} instance to be
+             * updated with the same value of the "active" property of the action {@link GObject.Object}
              * instance.
              *
-             * If `flags` contains %G_BINDING_BIDIRECTIONAL then the binding will be mutual:
+             * If `flags` contains {@link GObject.BindingFlags.BIDIRECTIONAL} then the binding will be mutual:
              * if `target_property` on `target` changes then the `source_property` on `source`
              * will be updated as well.
              *
              * The binding will automatically be removed when either the `source` or the
              * `target` instances are finalized. To remove the binding without affecting the
-             * `source` and the `target` you can just call g_object_unref() on the returned
-             * #GBinding instance.
+             * `source` and the `target` you can just call `g_object_unref()` on the returned
+             * {@link GObject.Binding} instance.
              *
-             * Removing the binding by calling g_object_unref() on it must only be done if
+             * Removing the binding by calling `g_object_unref()` on it must only be done if
              * the binding, `source` and `target` are only used from a single thread and it
              * is clear that both `source` and `target` outlive the binding. Especially it
              * is not safe to rely on this if the binding, `source` or `target` can be
              * finalized from different threads. Keep another reference to the binding and
-             * use g_binding_unbind() instead to be on the safe side.
+             * use `g_binding_unbind()` instead to be on the safe side.
              *
-             * A #GObject can have multiple bindings.
-             * @param source_property the property on @source to bind
-             * @param target the target #GObject
-             * @param target_property the property on @target to bind
-             * @param flags flags to pass to #GBinding
-             * @returns the #GBinding instance representing the     binding between the two #GObject instances. The binding is released     whenever the #GBinding reference count reaches zero.
+             * A {@link GObject.Object} can have multiple bindings.
+             * @param source_property the property on `source` to bind
+             * @param target the target {@link GObject.Object}
+             * @param target_property the property on `target` to bind
+             * @param flags flags to pass to {@link GObject.Binding}
+             * @returns the {@link GObject.Binding} instance representing the     binding between the two {@link GObject.Object} instances. The binding is released     whenever the {@link GObject.Binding} reference count reaches zero.
              */
             bind_property(
                 source_property: string,
@@ -1672,39 +1713,39 @@ declare module 'gi://Gcr?version=3' {
                 flags: GObject.BindingFlags | null,
             ): GObject.Binding;
             /**
-             * Complete version of g_object_bind_property().
+             * Complete version of `g_object_bind_property()`.
              *
              * Creates a binding between `source_property` on `source` and `target_property`
-             * on `target,` allowing you to set the transformation functions to be used by
+             * on `target`, allowing you to set the transformation functions to be used by
              * the binding.
              *
-             * If `flags` contains %G_BINDING_BIDIRECTIONAL then the binding will be mutual:
+             * If `flags` contains {@link GObject.BindingFlags.BIDIRECTIONAL} then the binding will be mutual:
              * if `target_property` on `target` changes then the `source_property` on `source`
              * will be updated as well. The `transform_from` function is only used in case
              * of bidirectional bindings, otherwise it will be ignored
              *
              * The binding will automatically be removed when either the `source` or the
              * `target` instances are finalized. This will release the reference that is
-             * being held on the #GBinding instance; if you want to hold on to the
-             * #GBinding instance, you will need to hold a reference to it.
+             * being held on the {@link GObject.Binding} instance; if you want to hold on to the
+             * {@link GObject.Binding} instance, you will need to hold a reference to it.
              *
-             * To remove the binding, call g_binding_unbind().
+             * To remove the binding, call `g_binding_unbind()`.
              *
-             * A #GObject can have multiple bindings.
+             * A {@link GObject.Object} can have multiple bindings.
              *
              * The same `user_data` parameter will be used for both `transform_to`
              * and `transform_from` transformation functions; the `notify` function will
              * be called once, when the binding is removed. If you need different data
              * for each transformation function, please use
-             * g_object_bind_property_with_closures() instead.
-             * @param source_property the property on @source to bind
-             * @param target the target #GObject
-             * @param target_property the property on @target to bind
-             * @param flags flags to pass to #GBinding
-             * @param transform_to the transformation function     from the @source to the @target, or %NULL to use the default
-             * @param transform_from the transformation function     from the @target to the @source, or %NULL to use the default
-             * @param notify a function to call when disposing the binding, to free     resources used by the transformation functions, or %NULL if not required
-             * @returns the #GBinding instance representing the     binding between the two #GObject instances. The binding is released     whenever the #GBinding reference count reaches zero.
+             * `g_object_bind_property_with_closures()` instead.
+             * @param source_property the property on `source` to bind
+             * @param target the target {@link GObject.Object}
+             * @param target_property the property on `target` to bind
+             * @param flags flags to pass to {@link GObject.Binding}
+             * @param transform_to the transformation function     from the `source` to the `target`, or `null` to use the default
+             * @param transform_from the transformation function     from the `target` to the `source`, or `null` to use the default
+             * @param notify a function to call when disposing the binding, to free     resources used by the transformation functions, or `null` if not required
+             * @returns the {@link GObject.Binding} instance representing the     binding between the two {@link GObject.Object} instances. The binding is released     whenever the {@link GObject.Binding} reference count reaches zero.
              */
             bind_property_full(
                 source_property: string,
@@ -1715,13 +1756,16 @@ declare module 'gi://Gcr?version=3' {
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
             ): GObject.Binding;
+            /**
+             * @param args
+             */
             // Conflicted with GObject.Object.bind_property_full
             bind_property_full(...args: never[]): any;
             /**
-             * This function is intended for #GObject implementations to re-enforce
+             * This function is intended for {@link GObject.Object} implementations to re-enforce
              * a [floating][floating-ref] object reference. Doing this is seldom
-             * required: all #GInitiallyUnowneds are created with a floating reference
-             * which usually just needs to be sunken by calling g_object_ref_sink().
+             * required: all `GInitiallyUnowneds` are created with a floating reference
+             * which usually just needs to be sunken by calling `g_object_ref_sink()`.
              */
             force_floating(): void;
             /**
@@ -1729,7 +1773,7 @@ declare module 'gi://Gcr?version=3' {
              * non-zero, the emission of "notify" signals on `object` is
              * stopped. The signals are queued until the freeze count is decreased
              * to zero. Duplicate notifications are squashed so that at most one
-             * #GObject::notify signal is emitted for each property modified while the
+             * {@link GObject.Object.SignalSignatures.notify | GObject.Object::notify} signal is emitted for each property modified while the
              * object is frozen.
              *
              * This is necessary for accessors that modify multiple properties to prevent
@@ -1737,9 +1781,9 @@ declare module 'gi://Gcr?version=3' {
              */
             freeze_notify(): void;
             /**
-             * Gets a named field from the objects table of associations (see g_object_set_data()).
+             * Gets a named field from the objects table of associations (see `g_object_set_data()`).
              * @param key name of the key for that association
-             * @returns the data if found,          or %NULL if no such data exists.
+             * @returns the data if found,          or `null` if no such data exists.
              */
             get_data(key: string): any | null;
             /**
@@ -1759,9 +1803,9 @@ declare module 'gi://Gcr?version=3' {
             get_property(property_name: string, value: GObject.Value | any): any;
             /**
              * This function gets back user data pointers stored via
-             * g_object_set_qdata().
-             * @param quark A #GQuark, naming the user data pointer
-             * @returns The user data pointer set, or %NULL
+             * `g_object_set_qdata()`.
+             * @param quark A {@link GLib.Quark}, naming the user data pointer
+             * @returns The user data pointer set, or `null`
              */
             get_qdata(quark: GLib.Quark): any | null;
             /**
@@ -1775,33 +1819,33 @@ declare module 'gi://Gcr?version=3' {
             getv(names: string[], values: (GObject.Value | any)[]): void;
             /**
              * Checks whether `object` has a [floating][floating-ref] reference.
-             * @returns %TRUE if @object has a floating reference
+             * @returns `true` if `object` has a floating reference
              */
             is_floating(): boolean;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
              * When possible, eg. when signaling a property change from within the class
-             * that registered the property, you should use g_object_notify_by_pspec()
+             * that registered the property, you should use `g_object_notify_by_pspec()`
              * instead.
              *
              * Note that emission of the notify signal may be blocked with
-             * g_object_freeze_notify(). In this case, the signal emissions are queued
-             * and will be emitted (in reverse order) when g_object_thaw_notify() is
+             * `g_object_freeze_notify()`. In this case, the signal emissions are queued
+             * and will be emitted (in reverse order) when `g_object_thaw_notify()` is
              * called.
-             * @param property_name the name of a property installed on the class of @object.
+             * @param property_name the name of a property installed on the class of `object`.
              */
             notify(property_name: string): void;
             /**
              * Emits a "notify" signal for the property specified by `pspec` on `object`.
              *
              * This function omits the property name lookup, hence it is faster than
-             * g_object_notify().
+             * `g_object_notify()`.
              *
-             * One way to avoid using g_object_notify() from within the
-             * class that registered the properties, and using g_object_notify_by_pspec()
+             * One way to avoid using `g_object_notify()` from within the
+             * class that registered the properties, and using `g_object_notify_by_pspec()`
              * instead, is to store the GParamSpec used with
-             * g_object_class_install_property() inside a static array, e.g.:
+             * `g_object_class_install_property()` inside a static array, e.g.:
              *
              *
              * ```c
@@ -1834,21 +1878,21 @@ declare module 'gi://Gcr?version=3' {
              *   g_object_notify_by_pspec (self, properties[PROP_FOO]);
              * ```
              *
-             * @param pspec the #GParamSpec of a property installed on the class of @object.
+             * @param pspec the {@link GObject.ParamSpec} of a property installed on the class of `object`.
              */
             notify_by_pspec(pspec: GObject.ParamSpec): void;
             /**
              * Increases the reference count of `object`.
              *
              * Since GLib 2.56, if `GLIB_VERSION_MAX_ALLOWED` is 2.56 or greater, the type
-             * of `object` will be propagated to the return type (using the GCC typeof()
+             * of `object` will be propagated to the return type (using the GCC `typeof()`
              * extension), so any casting the caller needs to do on the return type must be
              * explicit.
-             * @returns the same @object
+             * @returns the same `object`
              */
             ref(): GObject.Object;
             /**
-             * Increase the reference count of `object,` and possibly remove the
+             * Increase the reference count of `object`, and possibly remove the
              * [floating][floating-ref] reference, if `object` has a floating reference.
              *
              * In other words, if the object is floating, then this call "assumes
@@ -1858,8 +1902,8 @@ declare module 'gi://Gcr?version=3' {
              * adds a new normal reference increasing the reference count by one.
              *
              * Since GLib 2.56, the type of `object` will be propagated to the return type
-             * under the same conditions as for g_object_ref().
-             * @returns @object
+             * under the same conditions as for `g_object_ref()`.
+             * @returns `object`
              */
             ref_sink(): GObject.Object;
             /**
@@ -1876,10 +1920,10 @@ declare module 'gi://Gcr?version=3' {
              * If the object already had an association with that name,
              * the old association will be destroyed.
              *
-             * Internally, the `key` is converted to a #GQuark using g_quark_from_string().
+             * Internally, the `key` is converted to a {@link GLib.Quark} using `g_quark_from_string()`.
              * This means a copy of `key` is kept permanently (even after `object` has been
              * finalized) — so it is recommended to only use a small, bounded set of values
-             * for `key` in your program, to avoid the #GQuark storage growing unbounded.
+             * for `key` in your program, to avoid the {@link GLib.Quark} storage growing unbounded.
              * @param key name of the key
              * @param data data to associate with that key
              */
@@ -1894,13 +1938,13 @@ declare module 'gi://Gcr?version=3' {
              * Remove a specified datum from the object's data associations,
              * without invoking the association's destroy handler.
              * @param key name of the key
-             * @returns the data if found, or %NULL          if no such data exists.
+             * @returns the data if found, or `null`          if no such data exists.
              */
             steal_data(key: string): any | null;
             /**
              * This function gets back user data pointers stored via
-             * g_object_set_qdata() and removes the `data` from object
-             * without invoking its destroy() function (if any was
+             * `g_object_set_qdata()` and removes the `data` from object
+             * without invoking its `destroy()` function (if any was
              * set).
              * Usually, calling this function is only required to update
              * user data pointers with a destroy notifier, for example:
@@ -1931,21 +1975,21 @@ declare module 'gi://Gcr?version=3' {
              * }
              * ```
              *
-             * Using g_object_get_qdata() in the above example, instead of
-             * g_object_steal_qdata() would have left the destroy function set,
+             * Using `g_object_get_qdata()` in the above example, instead of
+             * `g_object_steal_qdata()` would have left the destroy function set,
              * and thus the partial string list would have been freed upon
-             * g_object_set_qdata_full().
-             * @param quark A #GQuark, naming the user data pointer
-             * @returns The user data pointer set, or %NULL
+             * `g_object_set_qdata_full()`.
+             * @param quark A {@link GLib.Quark}, naming the user data pointer
+             * @returns The user data pointer set, or `null`
              */
             steal_qdata(quark: GLib.Quark): any | null;
             /**
              * Reverts the effect of a previous call to
-             * g_object_freeze_notify(). The freeze count is decreased on `object`
+             * `g_object_freeze_notify()`. The freeze count is decreased on `object`
              * and when it reaches zero, queued "notify" signals are emitted.
              *
              * Duplicate notifications for each property are squashed so that at most one
-             * #GObject::notify signal is emitted for each property, in the reverse order
+             * {@link GObject.Object.SignalSignatures.notify | GObject.Object::notify} signal is emitted for each property, in the reverse order
              * in which they have been queued.
              *
              * It is an error to call this function when the freeze count is zero.
@@ -1955,33 +1999,34 @@ declare module 'gi://Gcr?version=3' {
              * Decreases the reference count of `object`. When its reference count
              * drops to 0, the object is finalized (i.e. its memory is freed).
              *
-             * If the pointer to the #GObject may be reused in future (for example, if it is
+             * If the pointer to the {@link GObject.Object} may be reused in future (for example, if it is
              * an instance variable of another object), it is recommended to clear the
-             * pointer to %NULL rather than retain a dangling pointer to a potentially
-             * invalid #GObject instance. Use g_clear_object() for this.
+             * pointer to `null` rather than retain a dangling pointer to a potentially
+             * invalid {@link GObject.Object} instance. Use `g_clear_object()` for this.
              */
             unref(): void;
             /**
              * This function essentially limits the life time of the `closure` to
              * the life time of the object. That is, when the object is finalized,
-             * the `closure` is invalidated by calling g_closure_invalidate() on
+             * the `closure` is invalidated by calling `g_closure_invalidate()` on
              * it, in order to prevent invocations of the closure with a finalized
-             * (nonexisting) object. Also, g_object_ref() and g_object_unref() are
-             * added as marshal guards to the `closure,` to ensure that an extra
+             * (nonexisting) object. Also, `g_object_ref()` and `g_object_unref()` are
+             * added as marshal guards to the `closure`, to ensure that an extra
              * reference count is held on `object` during invocation of the
              * `closure`.  Usually, this function will be called on closures that
              * use this `object` as closure data.
-             * @param closure #GClosure to watch
+             * @param closure {@link GObject.Closure} to watch
              */
             watch_closure(closure: GObject.Closure): void;
             /**
-             * the `constructed` function is called by g_object_new() as the
+             * the `constructed` function is called by `g_object_new()` as the
              *  final step of the object creation process.  At the point of the call, all
              *  construction properties have been set on the object.  The purpose of this
              *  call is to allow for object initialisation steps that can only be performed
              *  after construction properties have been set.  `constructed` implementors
              *  should chain up to the `constructed` call of their parent class to allow it
              *  to complete its initialisation.
+             * @virtual
              */
             vfunc_constructed(): void;
             /**
@@ -1990,6 +2035,7 @@ declare module 'gi://Gcr?version=3' {
              *  needed.
              * @param n_pspecs
              * @param pspecs
+             * @virtual
              */
             vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void;
             /**
@@ -1998,12 +2044,14 @@ declare module 'gi://Gcr?version=3' {
              *  invocations still work. It may be run multiple times (due to reference
              *  loops). Before returning, `dispose` should chain up to the `dispose` method
              *  of the parent class.
+             * @virtual
              */
             vfunc_dispose(): void;
             /**
              * instance finalization function, should finish the finalization of
              *  the instance begun in `dispose` and chain up to the `finalize` method of the
              *  parent class.
+             * @virtual
              */
             vfunc_finalize(): void;
             /**
@@ -2012,20 +2060,22 @@ declare module 'gi://Gcr?version=3' {
              * @param property_id
              * @param value
              * @param pspec
+             * @virtual
              */
             vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
              * When possible, eg. when signaling a property change from within the class
-             * that registered the property, you should use g_object_notify_by_pspec()
+             * that registered the property, you should use `g_object_notify_by_pspec()`
              * instead.
              *
              * Note that emission of the notify signal may be blocked with
-             * g_object_freeze_notify(). In this case, the signal emissions are queued
-             * and will be emitted (in reverse order) when g_object_thaw_notify() is
+             * `g_object_freeze_notify()`. In this case, the signal emissions are queued
+             * and will be emitted (in reverse order) when `g_object_thaw_notify()` is
              * called.
              * @param pspec
+             * @virtual
              */
             vfunc_notify(pspec: GObject.ParamSpec): void;
             /**
@@ -2037,6 +2087,7 @@ declare module 'gi://Gcr?version=3' {
              * @param property_id
              * @param value
              * @param pspec
+             * @virtual
              */
             vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
             /**
@@ -2069,7 +2120,30 @@ declare module 'gi://Gcr?version=3' {
         namespace Parser {
             // Signal signatures
             interface SignalSignatures extends GObject.Object.SignalSignatures {
+                /**
+                 * This signal is emitted when an item needs to be unlocked or decrypted before
+                 * it can be parsed. The `count` argument specifies the number of times
+                 * the signal has been emitted for a given item. This can be used to
+                 * display a message saying the previous password was incorrect.
+                 *
+                 * Typically the `gcr_parser_add_password()` function is called in
+                 * response to this signal.
+                 *
+                 * If `false` is returned, then the authentication was not handled. If
+                 * no handlers return `true` then the item is not parsed and an error
+                 * with the code {@link Gcr.DataError.CANCELLED} will be raised.
+                 * @signal
+                 * @run-last
+                 */
                 authenticate: (arg0: number) => boolean | void;
+                /**
+                 * This signal is emitted when an item is sucessfully parsed. To access
+                 * the information about the item use the `gcr_parser_get_parsed_label()`,
+                 * `gcr_parser_get_parsed_attributes()` and `gcr_parser_get_parsed_description()`
+                 * functions.
+                 * @signal
+                 * @run-first
+                 */
                 parsed: () => void;
                 'notify::parsed-attributes': (pspec: GObject.ParamSpec) => void;
                 'notify::parsed-description': (pspec: GObject.ParamSpec) => void;
@@ -2091,18 +2165,19 @@ declare module 'gi://Gcr?version=3' {
         /**
          * A parser for parsing various types of files or data.
          *
-         * A `GcrParser` can parse various certificate and key files such as OpenSSL
+         * A {@link Gcr.Parser} can parse various certificate and key files such as OpenSSL
          * PEM files, DER encoded certifictes, PKCS#8 keys and so on. Each various
-         * format is identified by a value in the [enum`DataFormat]` enumeration.
+         * format is identified by a value in the {@link DataFormat} enumeration.
          *
-         * In order to parse data, a new parser is created with gcr_parser_new() and
-         * then the [signal`Parser:`:authenticate] and [signal`Parser:`:parsed] signals
+         * In order to parse data, a new parser is created with `gcr_parser_new()` and
+         * then the `Gcr.Parser::authenticate` and `Gcr.Parser::parsed` signals
          * should be connected to. Data is then fed to the parser via
-         * [method`Parser`.parse_data] or [method`Parser`.parse_stream].
+         * {@link Parser.parse_data} or {@link Parser.parse_stream}.
          *
-         * During the [signal`Parser:`:parsed] signal the attributes that make up the
+         * During the `Gcr.Parser::parsed` signal the attributes that make up the
          * currently parsed item can be retrieved using the
-         * [method`Parser`.get_parsed_attributes] function.
+         * {@link Parser.get_parsed_attributes} function.
+         * @gir-type Class
          */
         class Parser extends GObject.Object {
             static $gtype: GObject.GType<Parser>;
@@ -2111,32 +2186,38 @@ declare module 'gi://Gcr?version=3' {
 
             /**
              * Get the attributes that make up the currently parsed item. This is
-             * generally only valid during a #GcrParser::parsed signal.
+             * generally only valid during a {@link Gcr.Parser.SignalSignatures.parsed | Gcr.Parser::parsed} signal.
+             * @read-only
              */
             get parsed_attributes(): Gck.Attributes;
             /**
              * Get the attributes that make up the currently parsed item. This is
-             * generally only valid during a #GcrParser::parsed signal.
+             * generally only valid during a {@link Gcr.Parser.SignalSignatures.parsed | Gcr.Parser::parsed} signal.
+             * @read-only
              */
             get parsedAttributes(): Gck.Attributes;
             /**
              * The description of the type of the currently parsed item. This is generally
-             * only valid during a #GcrParser::parsed signal.
+             * only valid during a {@link Gcr.Parser.SignalSignatures.parsed | Gcr.Parser::parsed} signal.
+             * @read-only
              */
             get parsed_description(): string;
             /**
              * The description of the type of the currently parsed item. This is generally
-             * only valid during a #GcrParser::parsed signal.
+             * only valid during a {@link Gcr.Parser.SignalSignatures.parsed | Gcr.Parser::parsed} signal.
+             * @read-only
              */
             get parsedDescription(): string;
             /**
              * The label of the currently parsed item. This is generally
-             * only valid during a #GcrParser::parsed signal.
+             * only valid during a {@link Gcr.Parser.SignalSignatures.parsed | Gcr.Parser::parsed} signal.
+             * @read-only
              */
             get parsed_label(): string;
             /**
              * The label of the currently parsed item. This is generally
-             * only valid during a #GcrParser::parsed signal.
+             * only valid during a {@link Gcr.Parser.SignalSignatures.parsed | Gcr.Parser::parsed} signal.
+             * @read-only
              */
             get parsedLabel(): string;
 
@@ -2159,16 +2240,19 @@ declare module 'gi://Gcr?version=3' {
 
             // Signals
 
+            /** @signal */
             connect<K extends keyof Parser.SignalSignatures>(
                 signal: K,
                 callback: GObject.SignalCallback<this, Parser.SignalSignatures[K]>,
             ): number;
             connect(signal: string, callback: (...args: any[]) => any): number;
+            /** @signal */
             connect_after<K extends keyof Parser.SignalSignatures>(
                 signal: K,
                 callback: GObject.SignalCallback<this, Parser.SignalSignatures[K]>,
             ): number;
             connect_after(signal: string, callback: (...args: any[]) => any): number;
+            /** @signal */
             emit<K extends keyof Parser.SignalSignatures>(
                 signal: K,
                 ...args: GObject.GjsParameters<Parser.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never
@@ -2180,10 +2264,12 @@ declare module 'gi://Gcr?version=3' {
             /**
              * The default handler for the authenticate signal.
              * @param count
+             * @virtual
              */
             vfunc_authenticate(count: number): boolean;
             /**
              * The default handler for the parsed signal.
+             * @virtual
              */
             vfunc_parsed(): void;
 
@@ -2191,17 +2277,17 @@ declare module 'gi://Gcr?version=3' {
 
             /**
              * Add a password to the set of passwords to try when parsing locked or encrypted
-             * items. This is usually called from the #GcrParser::authenticate signal.
+             * items. This is usually called from the {@link Gcr.Parser.SignalSignatures.authenticate | Gcr.Parser::authenticate} signal.
              * @param password a password to try
              */
             add_password(password?: string | null): void;
             /**
-             * Disable parsing of the given format. Use %GCR_FORMAT_ALL to disable all the formats.
+             * Disable parsing of the given format. Use {@link Gcr.DataFormat.ALL} to disable all the formats.
              * @param format The format identifier
              */
             format_disable(format: DataFormat | null): void;
             /**
-             * Enable parsing of the given format. Use %GCR_FORMAT_ALL to enable all the formats.
+             * Enable parsing of the given format. Use {@link Gcr.DataFormat.ALL} to enable all the formats.
              * @param format The format identifier
              */
             format_enable(format: DataFormat | null): void;
@@ -2213,7 +2299,7 @@ declare module 'gi://Gcr?version=3' {
             format_supported(format: DataFormat | null): boolean;
             /**
              * Get the filename of the parser item.
-             * @returns the filename set on the parser, or %NULL
+             * @returns the filename set on the parser, or `null`
              */
             get_filename(): string;
             /**
@@ -2223,64 +2309,64 @@ declare module 'gi://Gcr?version=3' {
             get_parsed(): Parsed;
             /**
              * Get the attributes which make up the currently parsed item. This is generally
-             * only valid during the #GcrParser::parsed signal.
+             * only valid during the {@link Gcr.Parser.SignalSignatures.parsed | Gcr.Parser::parsed} signal.
              * @returns the attributes for the current item,          which are owned by the parser and should not be freed
              */
             get_parsed_attributes(): Gck.Attributes | null;
             /**
              * Get the raw data block that represents this parsed object. This is only
-             * valid during the #GcrParser::parsed signal.
+             * valid during the {@link Gcr.Parser.SignalSignatures.parsed | Gcr.Parser::parsed} signal.
              * @returns the raw data          block of the currently parsed item; the value is owned by the parser          and should not be freed
              */
             get_parsed_block(): Uint8Array | null;
             /**
              * Get the raw data block that represents this parsed object. This is only
-             * valid during the #GcrParser::parsed signal.
+             * valid during the {@link Gcr.Parser.SignalSignatures.parsed | Gcr.Parser::parsed} signal.
              * @returns the raw data block of the currently parsed item
              */
             get_parsed_bytes(): GLib.Bytes;
             /**
              * Get a description for the type of the currently parsed item. This is generally
-             * only valid during the #GcrParser::parsed signal.
+             * only valid during the {@link Gcr.Parser.SignalSignatures.parsed | Gcr.Parser::parsed} signal.
              * @returns the description for the current item; this is owned by          the parser and should not be freed
              */
             get_parsed_description(): string | null;
             /**
              * Get the format of the raw data block that represents this parsed object.
-             * This corresponds with the data returned from gcr_parser_get_parsed_block().
+             * This corresponds with the data returned from `gcr_parser_get_parsed_block()`.
              *
-             * This is only valid during the #GcrParser::parsed signal.
+             * This is only valid during the {@link Gcr.Parser.SignalSignatures.parsed | Gcr.Parser::parsed} signal.
              * @returns the data format of the currently parsed item
              */
             get_parsed_format(): DataFormat;
             /**
              * Get the label of the currently parsed item. This is generally only valid
-             * during the #GcrParser::parsed signal.
+             * during the {@link Gcr.Parser.SignalSignatures.parsed | Gcr.Parser::parsed} signal.
              * @returns the label of the currently parsed item. The value is          owned by the parser and should not be freed.
              */
             get_parsed_label(): string | null;
             /**
-             * Parse the data. The #GcrParser::parsed and #GcrParser::authenticate signals
+             * Parse the data. The {@link Gcr.Parser.SignalSignatures.parsed | Gcr.Parser::parsed} and {@link Gcr.Parser.SignalSignatures.authenticate | Gcr.Parser::authenticate} signals
              * may fire during the parsing.
              * @param data the data to parse
              * @returns Whether the data was parsed successfully or not.
              */
             parse_bytes(data: GLib.Bytes | Uint8Array): boolean;
             /**
-             * Parse the data. The #GcrParser::parsed and #GcrParser::authenticate signals
+             * Parse the data. The {@link Gcr.Parser.SignalSignatures.parsed | Gcr.Parser::parsed} and {@link Gcr.Parser.SignalSignatures.authenticate | Gcr.Parser::authenticate} signals
              * may fire during the parsing.
              *
-             * A copy of the data will be made. Use gcr_parser_parse_bytes() to avoid this.
+             * A copy of the data will be made. Use `gcr_parser_parse_bytes()` to avoid this.
              * @param data the data to parse
              * @returns Whether the data was parsed successfully or not.
              */
             parse_data(data: Uint8Array | string): boolean;
             /**
-             * Parse items from the data in a #GInputStream. This function may block while
-             * reading from the input stream. Use gcr_parser_parse_stream_async() for
+             * Parse items from the data in a {@link Gio.InputStream}. This function may block while
+             * reading from the input stream. Use `gcr_parser_parse_stream_async()` for
              * a non-blocking variant.
              *
-             * The #GcrParser::parsed and #GcrParser::authenticate signals
+             * The {@link Gcr.Parser.SignalSignatures.parsed | Gcr.Parser::parsed} and {@link Gcr.Parser.SignalSignatures.authenticate | Gcr.Parser::authenticate} signals
              * may fire during the parsing.
              * @param input The input stream
              * @param cancellable An optional cancellation object
@@ -2288,10 +2374,10 @@ declare module 'gi://Gcr?version=3' {
              */
             parse_stream(input: Gio.InputStream, cancellable?: Gio.Cancellable | null): boolean;
             /**
-             * Parse items from the data in a #GInputStream. This function completes
+             * Parse items from the data in a {@link Gio.InputStream}. This function completes
              * asyncronously and doesn't block.
              *
-             * The #GcrParser::parsed and #GcrParser::authenticate signals
+             * The {@link Gcr.Parser.SignalSignatures.parsed | Gcr.Parser::parsed} and {@link Gcr.Parser.SignalSignatures.authenticate | Gcr.Parser::authenticate} signals
              * may fire during the parsing.
              * @param input The input stream
              * @param cancellable An optional cancellation object
@@ -2301,10 +2387,10 @@ declare module 'gi://Gcr?version=3' {
                 cancellable?: Gio.Cancellable | null,
             ): globalThis.Promise<boolean>;
             /**
-             * Parse items from the data in a #GInputStream. This function completes
+             * Parse items from the data in a {@link Gio.InputStream}. This function completes
              * asyncronously and doesn't block.
              *
-             * The #GcrParser::parsed and #GcrParser::authenticate signals
+             * The {@link Gcr.Parser.SignalSignatures.parsed | Gcr.Parser::parsed} and {@link Gcr.Parser.SignalSignatures.authenticate | Gcr.Parser::authenticate} signals
              * may fire during the parsing.
              * @param input The input stream
              * @param cancellable An optional cancellation object
@@ -2316,10 +2402,10 @@ declare module 'gi://Gcr?version=3' {
                 callback: Gio.AsyncReadyCallback<this> | null,
             ): void;
             /**
-             * Parse items from the data in a #GInputStream. This function completes
+             * Parse items from the data in a {@link Gio.InputStream}. This function completes
              * asyncronously and doesn't block.
              *
-             * The #GcrParser::parsed and #GcrParser::authenticate signals
+             * The {@link Gcr.Parser.SignalSignatures.parsed | Gcr.Parser::parsed} and {@link Gcr.Parser.SignalSignatures.authenticate | Gcr.Parser::authenticate} signals
              * may fire during the parsing.
              * @param input The input stream
              * @param cancellable An optional cancellation object
@@ -2369,13 +2455,14 @@ declare module 'gi://Gcr?version=3' {
 
         /**
          * A certificate loaded from a PKCS#11 storage.
-         * It is also a valid [class`Gck`.Object] and can be used as such.
+         * It is also a valid {@link Gck.Object} and can be used as such.
          *
-         * Use gcr_pkcs11_certificate_lookup_issuer() to lookup the issuer of a given
+         * Use `gcr_pkcs11_certificate_lookup_issuer()` to lookup the issuer of a given
          * certificate in the PKCS#11 store.
          *
          * Various common PKCS#11 certificate attributes are automatically loaded and
-         * are available via gcr_pkcs11_certificate_get_attributes().
+         * are available via `gcr_pkcs11_certificate_get_attributes()`.
+         * @gir-type Class
          */
         class Pkcs11Certificate extends Gck.Object implements Certificate, Comparable {
             static $gtype: GObject.GType<Pkcs11Certificate>;
@@ -2384,6 +2471,7 @@ declare module 'gi://Gcr?version=3' {
 
             /**
              * Automatically loaded attributes for this certificate.
+             * @construct-only
              */
             get attributes(): Gck.Attributes;
 
@@ -2404,16 +2492,19 @@ declare module 'gi://Gcr?version=3' {
 
             // Signals
 
+            /** @signal */
             connect<K extends keyof Pkcs11Certificate.SignalSignatures>(
                 signal: K,
                 callback: GObject.SignalCallback<this, Pkcs11Certificate.SignalSignatures[K]>,
             ): number;
             connect(signal: string, callback: (...args: any[]) => any): number;
+            /** @signal */
             connect_after<K extends keyof Pkcs11Certificate.SignalSignatures>(
                 signal: K,
                 callback: GObject.SignalCallback<this, Pkcs11Certificate.SignalSignatures[K]>,
             ): number;
             connect_after(signal: string, callback: (...args: any[]) => any): number;
+            /** @signal */
             emit<K extends keyof Pkcs11Certificate.SignalSignatures>(
                 signal: K,
                 ...args: GObject.GjsParameters<Pkcs11Certificate.SignalSignatures[K]> extends [any, ...infer Q]
@@ -2429,13 +2520,13 @@ declare module 'gi://Gcr?version=3' {
              * lookup is done using the issuer DN of the certificate. No certificate chain
              * verification is done. Use a crypto library to make trust decisions.
              *
-             * This call may block, see gcr_pkcs11_certificate_lookup_issuer() for the
+             * This call may block, see `gcr_pkcs11_certificate_lookup_issuer()` for the
              * non-blocking version.
              *
-             * Will return %NULL if no issuer certificate is found. Use `error` to determine
+             * Will return `null` if no issuer certificate is found. Use `error` to determine
              * if an error occurred.
-             * @param certificate a #GcrCertificate
-             * @param cancellable a #GCancellable
+             * @param certificate a {@link Gcr.Certificate}
+             * @param cancellable a {@link Gio.Cancellable}
              */
             static lookup_issuer(certificate: Certificate, cancellable?: Gio.Cancellable | null): Certificate;
             /**
@@ -2444,11 +2535,11 @@ declare module 'gi://Gcr?version=3' {
              * verification is done. Use a crypto library to make trust decisions.
              *
              * When the operation is finished, callback will be called. You can then call
-             * gcr_pkcs11_certificate_lookup_issuer_finish() to get the result of the
+             * `gcr_pkcs11_certificate_lookup_issuer_finish()` to get the result of the
              * operation.
-             * @param certificate a #GcrCertificate
-             * @param cancellable a #GCancellable
-             * @param callback a #GAsyncReadyCallback to call when the operation completes
+             * @param certificate a {@link Gcr.Certificate}
+             * @param cancellable a {@link Gio.Cancellable}
+             * @param callback a {@link Gio.AsyncReadyCallback} to call when the operation completes
              */
             static lookup_issuer_async(
                 certificate: Certificate,
@@ -2457,11 +2548,11 @@ declare module 'gi://Gcr?version=3' {
             ): void;
             /**
              * Finishes an asynchronous operation started by
-             * gcr_pkcs11_certificate_lookup_issuer_async().
+             * `gcr_pkcs11_certificate_lookup_issuer_async()`.
              *
-             * Will return %NULL if no issuer certificate is found. Use `error` to determine
+             * Will return `null` if no issuer certificate is found. Use `error` to determine
              * if an error occurred.
-             * @param result the #GAsyncResult passed to the callback
+             * @param result the {@link Gio.AsyncResult} passed to the callback
              */
             static lookup_issuer_finish(result: Gio.AsyncResult): Certificate;
 
@@ -2472,40 +2563,50 @@ declare module 'gi://Gcr?version=3' {
              * @returns the certificate attributes
              */
             get_attributes(): Gck.Attributes;
-
-            // Inherited properties
             /**
              * A readable description for this certificate
+             * @read-only
+             * @category Inherited from Gcr.Certificate
              */
             get description(): string;
             /**
              * The expiry date of the certificate
+             * @read-only
+             * @category Inherited from Gcr.Certificate
              */
             get expiry(): GLib.Date;
             /**
              * An icon representing the certificate
+             * @read-only
+             * @category Inherited from Gcr.Certificate
              */
             get icon(): Gio.Icon;
             /**
              * Common name part of the certificate issuer
+             * @read-only
+             * @category Inherited from Gcr.Certificate
              */
             get issuer(): string;
             /**
              * A readable label for this certificate.
+             * @read-only
+             * @category Inherited from Gcr.Certificate
              */
             get label(): string;
             /**
              * GLib markup to describe the certificate
+             * @read-only
+             * @category Inherited from Gcr.Certificate
              */
             get markup(): string;
             /**
              * Common name part of the certificate subject
+             * @read-only
+             * @category Inherited from Gcr.Certificate
              */
             get subject(): string;
-
-            // Inherited methods
             /**
-             * Get the basic constraints for the certificate if present. If %FALSE is
+             * Get the basic constraints for the certificate if present. If `false` is
              * returned then no basic constraints are present and the `is_ca` and
              * `path_len` arguments are not changed.
              * @returns whether basic constraints are present or not
@@ -2519,15 +2620,15 @@ declare module 'gi://Gcr?version=3' {
             /**
              * Get the expiry date of this certificate.
              *
-             * The #GDate returned should be freed by the caller using
-             * g_date_free() when no longer required.
+             * The {@link GLib.Date} returned should be freed by the caller using
+             * `g_date_free()` when no longer required.
              * @returns An allocated expiry date of this certificate.
              */
             get_expiry_date(): GLib.Date;
             /**
              * Calculate the fingerprint for this certificate.
              *
-             * The caller should free the returned data using g_free() when
+             * The caller should free the returned data using `g_free()` when
              * it is no longer required.
              * @param type the type of algorithm for the fingerprint.
              * @returns the raw binary fingerprint
@@ -2537,7 +2638,7 @@ declare module 'gi://Gcr?version=3' {
              * Calculate the fingerprint for this certificate, and return it
              * as a hex string.
              *
-             * The caller should free the returned data using g_free() when
+             * The caller should free the returned data using `g_free()` when
              * it is no longer required.
              * @param type the type of algorithm for the fingerprint.
              * @returns an allocated hex string which contains the fingerprint.
@@ -2546,8 +2647,8 @@ declare module 'gi://Gcr?version=3' {
             /**
              * Get the issued date of this certificate.
              *
-             * The #GDate returned should be freed by the caller using
-             * g_date_free() when no longer required.
+             * The {@link GLib.Date} returned should be freed by the caller using
+             * `g_date_free()` when no longer required.
              * @returns An allocated issued date of this certificate.
              */
             get_issued_date(): GLib.Date;
@@ -2556,7 +2657,7 @@ declare module 'gi://Gcr?version=3' {
              *
              * The string returned should be freed by the caller when no longer
              * required.
-             * @returns The allocated issuer CN, or %NULL if no issuer CN present.
+             * @returns The allocated issuer CN, or `null` if no issuer CN present.
              */
             get_issuer_cn(): string;
             /**
@@ -2573,7 +2674,7 @@ declare module 'gi://Gcr?version=3' {
              *
              * This will try to lookup the common name, orianizational unit,
              * organization in that order.
-             * @returns the allocated issuer name, or %NULL if no issuer name
+             * @returns the allocated issuer name, or `null` if no issuer name
              */
             get_issuer_name(): string;
             /**
@@ -2586,13 +2687,13 @@ declare module 'gi://Gcr?version=3' {
              * The string returned should be freed by the caller when no longer
              * required.
              * @param part a DN type string or OID.
-             * @returns the allocated part of the issuer DN, or %NULL if no          such part is present
+             * @returns the allocated part of the issuer DN, or `null` if no          such part is present
              */
             get_issuer_part(part: string): string | null;
             /**
              * Get the raw DER data for the issuer DN of the certificate.
              *
-             * The data should be freed by using g_free() when no longer required.
+             * The data should be freed by using `g_free()` when no longer required.
              * @returns allocated memory containing          the raw issuer
              */
             get_issuer_raw(): Uint8Array;
@@ -2610,7 +2711,7 @@ declare module 'gi://Gcr?version=3' {
             /**
              * Get the raw binary serial number of the certificate.
              *
-             * The caller should free the returned data using g_free() when
+             * The caller should free the returned data using `g_free()` when
              * it is no longer required.
              * @returns the raw binary serial number.
              */
@@ -2618,7 +2719,7 @@ declare module 'gi://Gcr?version=3' {
             /**
              * Get the serial number of the certificate as a hex string.
              *
-             * The caller should free the returned data using g_free() when
+             * The caller should free the returned data using `g_free()` when
              * it is no longer required.
              * @returns an allocated string containing the serial number as hex.
              */
@@ -2628,7 +2729,7 @@ declare module 'gi://Gcr?version=3' {
              *
              * The string returned should be freed by the caller when no longer
              * required.
-             * @returns The allocated subject CN, or %NULL if no subject CN present.
+             * @returns The allocated subject CN, or `null` if no subject CN present.
              */
             get_subject_cn(): string;
             /**
@@ -2645,7 +2746,7 @@ declare module 'gi://Gcr?version=3' {
              *
              * This will try to lookup the common name, orianizational unit,
              * organization in that order.
-             * @returns the allocated subject name, or %NULL if no subject name
+             * @returns the allocated subject name, or `null` if no subject name
              */
             get_subject_name(): string;
             /**
@@ -2658,13 +2759,13 @@ declare module 'gi://Gcr?version=3' {
              * The string returned should be freed by the caller when no longer
              * required.
              * @param part a DN type string or OID.
-             * @returns the allocated part of the subject DN, or %NULL if no          such part is present.
+             * @returns the allocated part of the subject DN, or `null` if no          such part is present.
              */
             get_subject_part(part: string): string | null;
             /**
              * Get the raw DER data for the subject DN of the certificate.
              *
-             * The data should be freed by using g_free() when no longer required.
+             * The data should be freed by using `g_free()` when no longer required.
              * @returns allocated memory containing          the raw subject
              */
             get_subject_raw(): Uint8Array;
@@ -2673,18 +2774,19 @@ declare module 'gi://Gcr?version=3' {
              * comparing the relevant subject and issuer fields. No signature check is
              * done. Proper verification of certificates must be done via a crypto
              * library.
-             * @param issuer a possible issuer #GcrCertificate
-             * @returns whether @issuer could be the issuer of the certificate.
+             * @param issuer a possible issuer {@link Gcr.Certificate}
+             * @returns whether `issuer` could be the issuer of the certificate.
              */
             is_issuer(issuer: Certificate): boolean;
             /**
-             * Implementers of the #GcrCertificate mixin should call this function to notify
+             * Implementers of the {@link Gcr.Certificate} mixin should call this function to notify
              * when the certificate has changed to emit notifications on the various
              * properties.
              */
             mixin_emit_notify(): void;
             /**
              * Gets the raw DER data for an X.509 certificate.
+             * @virtual
              */
             vfunc_get_der_data(): Uint8Array;
             /**
@@ -2698,6 +2800,7 @@ declare module 'gi://Gcr?version=3' {
              * Compare whether two objects represent the same thing. The return value can
              * also be used to sort the objects.
              * @param other Another comparable object
+             * @virtual
              */
             vfunc_compare(other?: Comparable | null): number;
             /**
@@ -2713,32 +2816,32 @@ declare module 'gi://Gcr?version=3' {
              * ```
              *
              *
-             * Will result in the "sensitive" property of the widget #GObject instance to be
-             * updated with the same value of the "active" property of the action #GObject
+             * Will result in the "sensitive" property of the widget {@link GObject.Object} instance to be
+             * updated with the same value of the "active" property of the action {@link GObject.Object}
              * instance.
              *
-             * If `flags` contains %G_BINDING_BIDIRECTIONAL then the binding will be mutual:
+             * If `flags` contains {@link GObject.BindingFlags.BIDIRECTIONAL} then the binding will be mutual:
              * if `target_property` on `target` changes then the `source_property` on `source`
              * will be updated as well.
              *
              * The binding will automatically be removed when either the `source` or the
              * `target` instances are finalized. To remove the binding without affecting the
-             * `source` and the `target` you can just call g_object_unref() on the returned
-             * #GBinding instance.
+             * `source` and the `target` you can just call `g_object_unref()` on the returned
+             * {@link GObject.Binding} instance.
              *
-             * Removing the binding by calling g_object_unref() on it must only be done if
+             * Removing the binding by calling `g_object_unref()` on it must only be done if
              * the binding, `source` and `target` are only used from a single thread and it
              * is clear that both `source` and `target` outlive the binding. Especially it
              * is not safe to rely on this if the binding, `source` or `target` can be
              * finalized from different threads. Keep another reference to the binding and
-             * use g_binding_unbind() instead to be on the safe side.
+             * use `g_binding_unbind()` instead to be on the safe side.
              *
-             * A #GObject can have multiple bindings.
-             * @param source_property the property on @source to bind
-             * @param target the target #GObject
-             * @param target_property the property on @target to bind
-             * @param flags flags to pass to #GBinding
-             * @returns the #GBinding instance representing the     binding between the two #GObject instances. The binding is released     whenever the #GBinding reference count reaches zero.
+             * A {@link GObject.Object} can have multiple bindings.
+             * @param source_property the property on `source` to bind
+             * @param target the target {@link GObject.Object}
+             * @param target_property the property on `target` to bind
+             * @param flags flags to pass to {@link GObject.Binding}
+             * @returns the {@link GObject.Binding} instance representing the     binding between the two {@link GObject.Object} instances. The binding is released     whenever the {@link GObject.Binding} reference count reaches zero.
              */
             bind_property(
                 source_property: string,
@@ -2747,39 +2850,39 @@ declare module 'gi://Gcr?version=3' {
                 flags: GObject.BindingFlags | null,
             ): GObject.Binding;
             /**
-             * Complete version of g_object_bind_property().
+             * Complete version of `g_object_bind_property()`.
              *
              * Creates a binding between `source_property` on `source` and `target_property`
-             * on `target,` allowing you to set the transformation functions to be used by
+             * on `target`, allowing you to set the transformation functions to be used by
              * the binding.
              *
-             * If `flags` contains %G_BINDING_BIDIRECTIONAL then the binding will be mutual:
+             * If `flags` contains {@link GObject.BindingFlags.BIDIRECTIONAL} then the binding will be mutual:
              * if `target_property` on `target` changes then the `source_property` on `source`
              * will be updated as well. The `transform_from` function is only used in case
              * of bidirectional bindings, otherwise it will be ignored
              *
              * The binding will automatically be removed when either the `source` or the
              * `target` instances are finalized. This will release the reference that is
-             * being held on the #GBinding instance; if you want to hold on to the
-             * #GBinding instance, you will need to hold a reference to it.
+             * being held on the {@link GObject.Binding} instance; if you want to hold on to the
+             * {@link GObject.Binding} instance, you will need to hold a reference to it.
              *
-             * To remove the binding, call g_binding_unbind().
+             * To remove the binding, call `g_binding_unbind()`.
              *
-             * A #GObject can have multiple bindings.
+             * A {@link GObject.Object} can have multiple bindings.
              *
              * The same `user_data` parameter will be used for both `transform_to`
              * and `transform_from` transformation functions; the `notify` function will
              * be called once, when the binding is removed. If you need different data
              * for each transformation function, please use
-             * g_object_bind_property_with_closures() instead.
-             * @param source_property the property on @source to bind
-             * @param target the target #GObject
-             * @param target_property the property on @target to bind
-             * @param flags flags to pass to #GBinding
-             * @param transform_to the transformation function     from the @source to the @target, or %NULL to use the default
-             * @param transform_from the transformation function     from the @target to the @source, or %NULL to use the default
-             * @param notify a function to call when disposing the binding, to free     resources used by the transformation functions, or %NULL if not required
-             * @returns the #GBinding instance representing the     binding between the two #GObject instances. The binding is released     whenever the #GBinding reference count reaches zero.
+             * `g_object_bind_property_with_closures()` instead.
+             * @param source_property the property on `source` to bind
+             * @param target the target {@link GObject.Object}
+             * @param target_property the property on `target` to bind
+             * @param flags flags to pass to {@link GObject.Binding}
+             * @param transform_to the transformation function     from the `source` to the `target`, or `null` to use the default
+             * @param transform_from the transformation function     from the `target` to the `source`, or `null` to use the default
+             * @param notify a function to call when disposing the binding, to free     resources used by the transformation functions, or `null` if not required
+             * @returns the {@link GObject.Binding} instance representing the     binding between the two {@link GObject.Object} instances. The binding is released     whenever the {@link GObject.Binding} reference count reaches zero.
              */
             bind_property_full(
                 source_property: string,
@@ -2790,13 +2893,16 @@ declare module 'gi://Gcr?version=3' {
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
             ): GObject.Binding;
+            /**
+             * @param args
+             */
             // Conflicted with GObject.Object.bind_property_full
             bind_property_full(...args: never[]): any;
             /**
-             * This function is intended for #GObject implementations to re-enforce
+             * This function is intended for {@link GObject.Object} implementations to re-enforce
              * a [floating][floating-ref] object reference. Doing this is seldom
-             * required: all #GInitiallyUnowneds are created with a floating reference
-             * which usually just needs to be sunken by calling g_object_ref_sink().
+             * required: all `GInitiallyUnowneds` are created with a floating reference
+             * which usually just needs to be sunken by calling `g_object_ref_sink()`.
              */
             force_floating(): void;
             /**
@@ -2804,7 +2910,7 @@ declare module 'gi://Gcr?version=3' {
              * non-zero, the emission of "notify" signals on `object` is
              * stopped. The signals are queued until the freeze count is decreased
              * to zero. Duplicate notifications are squashed so that at most one
-             * #GObject::notify signal is emitted for each property modified while the
+             * {@link GObject.Object.SignalSignatures.notify | GObject.Object::notify} signal is emitted for each property modified while the
              * object is frozen.
              *
              * This is necessary for accessors that modify multiple properties to prevent
@@ -2812,11 +2918,14 @@ declare module 'gi://Gcr?version=3' {
              */
             freeze_notify(): void;
             /**
-             * Gets a named field from the objects table of associations (see g_object_set_data()).
+             * Gets a named field from the objects table of associations (see `g_object_set_data()`).
              * @param key name of the key for that association
-             * @returns the data if found,          or %NULL if no such data exists.
+             * @returns the data if found,          or `null` if no such data exists.
              */
             get_data(key: string): any | null;
+            /**
+             * @param args
+             */
             // Conflicted with Gck.Object.get_data
             get_data(...args: never[]): any;
             /**
@@ -2836,9 +2945,9 @@ declare module 'gi://Gcr?version=3' {
             get_property(property_name: string, value: GObject.Value | any): any;
             /**
              * This function gets back user data pointers stored via
-             * g_object_set_qdata().
-             * @param quark A #GQuark, naming the user data pointer
-             * @returns The user data pointer set, or %NULL
+             * `g_object_set_qdata()`.
+             * @param quark A {@link GLib.Quark}, naming the user data pointer
+             * @returns The user data pointer set, or `null`
              */
             get_qdata(quark: GLib.Quark): any | null;
             /**
@@ -2852,33 +2961,33 @@ declare module 'gi://Gcr?version=3' {
             getv(names: string[], values: (GObject.Value | any)[]): void;
             /**
              * Checks whether `object` has a [floating][floating-ref] reference.
-             * @returns %TRUE if @object has a floating reference
+             * @returns `true` if `object` has a floating reference
              */
             is_floating(): boolean;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
              * When possible, eg. when signaling a property change from within the class
-             * that registered the property, you should use g_object_notify_by_pspec()
+             * that registered the property, you should use `g_object_notify_by_pspec()`
              * instead.
              *
              * Note that emission of the notify signal may be blocked with
-             * g_object_freeze_notify(). In this case, the signal emissions are queued
-             * and will be emitted (in reverse order) when g_object_thaw_notify() is
+             * `g_object_freeze_notify()`. In this case, the signal emissions are queued
+             * and will be emitted (in reverse order) when `g_object_thaw_notify()` is
              * called.
-             * @param property_name the name of a property installed on the class of @object.
+             * @param property_name the name of a property installed on the class of `object`.
              */
             notify(property_name: string): void;
             /**
              * Emits a "notify" signal for the property specified by `pspec` on `object`.
              *
              * This function omits the property name lookup, hence it is faster than
-             * g_object_notify().
+             * `g_object_notify()`.
              *
-             * One way to avoid using g_object_notify() from within the
-             * class that registered the properties, and using g_object_notify_by_pspec()
+             * One way to avoid using `g_object_notify()` from within the
+             * class that registered the properties, and using `g_object_notify_by_pspec()`
              * instead, is to store the GParamSpec used with
-             * g_object_class_install_property() inside a static array, e.g.:
+             * `g_object_class_install_property()` inside a static array, e.g.:
              *
              *
              * ```c
@@ -2911,21 +3020,21 @@ declare module 'gi://Gcr?version=3' {
              *   g_object_notify_by_pspec (self, properties[PROP_FOO]);
              * ```
              *
-             * @param pspec the #GParamSpec of a property installed on the class of @object.
+             * @param pspec the {@link GObject.ParamSpec} of a property installed on the class of `object`.
              */
             notify_by_pspec(pspec: GObject.ParamSpec): void;
             /**
              * Increases the reference count of `object`.
              *
              * Since GLib 2.56, if `GLIB_VERSION_MAX_ALLOWED` is 2.56 or greater, the type
-             * of `object` will be propagated to the return type (using the GCC typeof()
+             * of `object` will be propagated to the return type (using the GCC `typeof()`
              * extension), so any casting the caller needs to do on the return type must be
              * explicit.
-             * @returns the same @object
+             * @returns the same `object`
              */
             ref(): GObject.Object;
             /**
-             * Increase the reference count of `object,` and possibly remove the
+             * Increase the reference count of `object`, and possibly remove the
              * [floating][floating-ref] reference, if `object` has a floating reference.
              *
              * In other words, if the object is floating, then this call "assumes
@@ -2935,8 +3044,8 @@ declare module 'gi://Gcr?version=3' {
              * adds a new normal reference increasing the reference count by one.
              *
              * Since GLib 2.56, the type of `object` will be propagated to the return type
-             * under the same conditions as for g_object_ref().
-             * @returns @object
+             * under the same conditions as for `g_object_ref()`.
+             * @returns `object`
              */
             ref_sink(): GObject.Object;
             /**
@@ -2953,10 +3062,10 @@ declare module 'gi://Gcr?version=3' {
              * If the object already had an association with that name,
              * the old association will be destroyed.
              *
-             * Internally, the `key` is converted to a #GQuark using g_quark_from_string().
+             * Internally, the `key` is converted to a {@link GLib.Quark} using `g_quark_from_string()`.
              * This means a copy of `key` is kept permanently (even after `object` has been
              * finalized) — so it is recommended to only use a small, bounded set of values
-             * for `key` in your program, to avoid the #GQuark storage growing unbounded.
+             * for `key` in your program, to avoid the {@link GLib.Quark} storage growing unbounded.
              * @param key name of the key
              * @param data data to associate with that key
              */
@@ -2971,13 +3080,13 @@ declare module 'gi://Gcr?version=3' {
              * Remove a specified datum from the object's data associations,
              * without invoking the association's destroy handler.
              * @param key name of the key
-             * @returns the data if found, or %NULL          if no such data exists.
+             * @returns the data if found, or `null`          if no such data exists.
              */
             steal_data(key: string): any | null;
             /**
              * This function gets back user data pointers stored via
-             * g_object_set_qdata() and removes the `data` from object
-             * without invoking its destroy() function (if any was
+             * `g_object_set_qdata()` and removes the `data` from object
+             * without invoking its `destroy()` function (if any was
              * set).
              * Usually, calling this function is only required to update
              * user data pointers with a destroy notifier, for example:
@@ -3008,21 +3117,21 @@ declare module 'gi://Gcr?version=3' {
              * }
              * ```
              *
-             * Using g_object_get_qdata() in the above example, instead of
-             * g_object_steal_qdata() would have left the destroy function set,
+             * Using `g_object_get_qdata()` in the above example, instead of
+             * `g_object_steal_qdata()` would have left the destroy function set,
              * and thus the partial string list would have been freed upon
-             * g_object_set_qdata_full().
-             * @param quark A #GQuark, naming the user data pointer
-             * @returns The user data pointer set, or %NULL
+             * `g_object_set_qdata_full()`.
+             * @param quark A {@link GLib.Quark}, naming the user data pointer
+             * @returns The user data pointer set, or `null`
              */
             steal_qdata(quark: GLib.Quark): any | null;
             /**
              * Reverts the effect of a previous call to
-             * g_object_freeze_notify(). The freeze count is decreased on `object`
+             * `g_object_freeze_notify()`. The freeze count is decreased on `object`
              * and when it reaches zero, queued "notify" signals are emitted.
              *
              * Duplicate notifications for each property are squashed so that at most one
-             * #GObject::notify signal is emitted for each property, in the reverse order
+             * {@link GObject.Object.SignalSignatures.notify | GObject.Object::notify} signal is emitted for each property, in the reverse order
              * in which they have been queued.
              *
              * It is an error to call this function when the freeze count is zero.
@@ -3032,33 +3141,34 @@ declare module 'gi://Gcr?version=3' {
              * Decreases the reference count of `object`. When its reference count
              * drops to 0, the object is finalized (i.e. its memory is freed).
              *
-             * If the pointer to the #GObject may be reused in future (for example, if it is
+             * If the pointer to the {@link GObject.Object} may be reused in future (for example, if it is
              * an instance variable of another object), it is recommended to clear the
-             * pointer to %NULL rather than retain a dangling pointer to a potentially
-             * invalid #GObject instance. Use g_clear_object() for this.
+             * pointer to `null` rather than retain a dangling pointer to a potentially
+             * invalid {@link GObject.Object} instance. Use `g_clear_object()` for this.
              */
             unref(): void;
             /**
              * This function essentially limits the life time of the `closure` to
              * the life time of the object. That is, when the object is finalized,
-             * the `closure` is invalidated by calling g_closure_invalidate() on
+             * the `closure` is invalidated by calling `g_closure_invalidate()` on
              * it, in order to prevent invocations of the closure with a finalized
-             * (nonexisting) object. Also, g_object_ref() and g_object_unref() are
-             * added as marshal guards to the `closure,` to ensure that an extra
+             * (nonexisting) object. Also, `g_object_ref()` and `g_object_unref()` are
+             * added as marshal guards to the `closure`, to ensure that an extra
              * reference count is held on `object` during invocation of the
              * `closure`.  Usually, this function will be called on closures that
              * use this `object` as closure data.
-             * @param closure #GClosure to watch
+             * @param closure {@link GObject.Closure} to watch
              */
             watch_closure(closure: GObject.Closure): void;
             /**
-             * the `constructed` function is called by g_object_new() as the
+             * the `constructed` function is called by `g_object_new()` as the
              *  final step of the object creation process.  At the point of the call, all
              *  construction properties have been set on the object.  The purpose of this
              *  call is to allow for object initialisation steps that can only be performed
              *  after construction properties have been set.  `constructed` implementors
              *  should chain up to the `constructed` call of their parent class to allow it
              *  to complete its initialisation.
+             * @virtual
              */
             vfunc_constructed(): void;
             /**
@@ -3067,6 +3177,7 @@ declare module 'gi://Gcr?version=3' {
              *  needed.
              * @param n_pspecs
              * @param pspecs
+             * @virtual
              */
             vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void;
             /**
@@ -3075,12 +3186,14 @@ declare module 'gi://Gcr?version=3' {
              *  invocations still work. It may be run multiple times (due to reference
              *  loops). Before returning, `dispose` should chain up to the `dispose` method
              *  of the parent class.
+             * @virtual
              */
             vfunc_dispose(): void;
             /**
              * instance finalization function, should finish the finalization of
              *  the instance begun in `dispose` and chain up to the `finalize` method of the
              *  parent class.
+             * @virtual
              */
             vfunc_finalize(): void;
             /**
@@ -3089,20 +3202,22 @@ declare module 'gi://Gcr?version=3' {
              * @param property_id
              * @param value
              * @param pspec
+             * @virtual
              */
             vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
              * When possible, eg. when signaling a property change from within the class
-             * that registered the property, you should use g_object_notify_by_pspec()
+             * that registered the property, you should use `g_object_notify_by_pspec()`
              * instead.
              *
              * Note that emission of the notify signal may be blocked with
-             * g_object_freeze_notify(). In this case, the signal emissions are queued
-             * and will be emitted (in reverse order) when g_object_thaw_notify() is
+             * `g_object_freeze_notify()`. In this case, the signal emissions are queued
+             * and will be emitted (in reverse order) when `g_object_thaw_notify()` is
              * called.
              * @param pspec
+             * @virtual
              */
             vfunc_notify(pspec: GObject.ParamSpec): void;
             /**
@@ -3114,6 +3229,7 @@ declare module 'gi://Gcr?version=3' {
              * @param property_id
              * @param value
              * @param pspec
+             * @virtual
              */
             vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
             /**
@@ -3126,6 +3242,9 @@ declare module 'gi://Gcr?version=3' {
              * @param properties Object containing the properties to set
              */
             set(properties: { [key: string]: any }): void;
+            /**
+             * @param args
+             */
             // Conflicted with Gck.Object.set
             set(...args: never[]): any;
             /**
@@ -3165,14 +3284,14 @@ declare module 'gi://Gcr?version=3' {
          * This does not protect against active attacks like MITM attacks.
          *
          * Each side creates a secret exchange object, and one of the sides calls
-         * [method`SecretExchange`.begin]. This creates a string, which should be passed
+         * {@link SecretExchange.begin}. This creates a string, which should be passed
          * to the other side. Each side passes the strings it receives into
-         * [method`SecretExchange`.receive].
+         * {@link SecretExchange.receive}.
          *
          * In order to send a reply (either with or without a secret) use
-         * [method`SecretExchange`.send]. A side must have successfully called
-         * [method`SecretExchange`.receive] before it can use
-         * [method`SecretExchange`.send].
+         * {@link SecretExchange.send}. A side must have successfully called
+         * {@link SecretExchange.receive} before it can use
+         * {@link SecretExchange.send}.
          *
          * The secret exchange objects can be used for multiple iterations of the
          * conversation, or for just one request/reply. The only limitation being that
@@ -3180,7 +3299,8 @@ declare module 'gi://Gcr?version=3' {
          *
          * Caveat: Information about the approximate length (rounded up to the nearest
          * 16 bytes) may be leaked. If this is considered inacceptable, do not use
-         * [class`SecretExchange]`.
+         * {@link SecretExchange}.
+         * @gir-type Class
          */
         class SecretExchange extends GObject.Object {
             static $gtype: GObject.GType<SecretExchange>;
@@ -3190,9 +3310,10 @@ declare module 'gi://Gcr?version=3' {
             /**
              * The protocol being used for the exchange.
              *
-             * Will be %NULL if no protocol was specified when creating this object,
-             * and either [method`SecretExchange`.begin] or [method`SecretExchange`.receive]
+             * Will be `null` if no protocol was specified when creating this object,
+             * and either {@link SecretExchange.begin} or {@link SecretExchange.receive}
              * have not been called successfully.
+             * @construct-only
              */
             get protocol(): string;
 
@@ -3215,16 +3336,19 @@ declare module 'gi://Gcr?version=3' {
 
             // Signals
 
+            /** @signal */
             connect<K extends keyof SecretExchange.SignalSignatures>(
                 signal: K,
                 callback: GObject.SignalCallback<this, SecretExchange.SignalSignatures[K]>,
             ): number;
             connect(signal: string, callback: (...args: any[]) => any): number;
+            /** @signal */
             connect_after<K extends keyof SecretExchange.SignalSignatures>(
                 signal: K,
                 callback: GObject.SignalCallback<this, SecretExchange.SignalSignatures[K]>,
             ): number;
             connect_after(signal: string, callback: (...args: any[]) => any): number;
+            /** @signal */
             emit<K extends keyof SecretExchange.SignalSignatures>(
                 signal: K,
                 ...args: GObject.GjsParameters<SecretExchange.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never
@@ -3233,29 +3357,40 @@ declare module 'gi://Gcr?version=3' {
 
             // Virtual methods
 
+            /**
+             * @param peer
+             * @param n_peer
+             * @virtual
+             */
             vfunc_derive_transport_key(peer: number, n_peer: number): boolean;
+            /**
+             * @param scheme
+             * @param public_key
+             * @param n_public_key
+             * @virtual
+             */
             vfunc_generate_exchange_key(scheme: string, public_key: number, n_public_key: number): boolean;
 
             // Methods
 
             /**
              * Begin the secret exchange. The resulting string should be sent to the other
-             * side of the exchange. The other side should use [method`SecretExchange`.receive]
+             * side of the exchange. The other side should use {@link SecretExchange.receive}
              * to process the string.
              * @returns A newly allocated string to be sent to the other     side of the secret exchange
              */
             begin(): string;
             /**
-             * Will return %NULL if no protocol was specified, and either
-             * [method`SecretExchange`.begin] or [method`SecretExchange`.receive] have not
+             * Will return `null` if no protocol was specified, and either
+             * {@link SecretExchange.begin} or {@link SecretExchange.receive} have not
              * been called successfully.
-             * @returns the protocol or %NULL
+             * @returns the protocol or `null`
              */
             get_protocol(): string;
             /**
              * Returns the last secret received. If no secret has yet been received this
-             * will return %NULL. The string is owned by the #GcrSecretExchange object
-             * and will be valid until the next time that gcr_secret_exchange_receive()
+             * will return `null`. The string is owned by the {@link Gcr.SecretExchange} object
+             * and will be valid until the next time that `gcr_secret_exchange_receive()`
              * is called on this object, or the object is destroyed.
              *
              * Depending on the secret passed into the other side of the secret exchange,
@@ -3267,11 +3402,11 @@ declare module 'gi://Gcr?version=3' {
             get_secret(): string[];
             /**
              * Receive a string from the other side of secret exchange. This string will
-             * have been created by [method`SecretExchange`.begin] or
-             * [method`SecretExchange`.send].
+             * have been created by {@link SecretExchange.begin} or
+             * {@link SecretExchange.send}.
              *
              * After this call completes successfully the value returned from
-             * gcr_secret_exchange_get_secret() will have changed.
+             * `gcr_secret_exchange_get_secret()` will have changed.
              * @param exchange the string received
              * @returns whether the string was successfully parsed and received
              */
@@ -3280,11 +3415,11 @@ declare module 'gi://Gcr?version=3' {
              * Send a reply to the other side of the secret exchange, optionally sending a
              * secret.
              *
-             * [method`SecretExchange`.receive] must have been successfully called at least
+             * {@link SecretExchange.receive} must have been successfully called at least
              * once on this object. In other words this object must have received data
              * from the other side of the secret exchange, before we can send a secret.
              * @param secret optionally, a secret to send to the other side
-             * @param secret_len length of @secret, or -1 if null terminated
+             * @param secret_len length of `secret`, or -1 if null terminated
              * @returns a newly allocated string to be sent to the other     side of the secret exchange
              */
             send(secret: string | null, secret_len: number): string;
@@ -3309,11 +3444,12 @@ declare module 'gi://Gcr?version=3' {
         }
 
         /**
-         * An implementation of [iface`Certificate]` which loads a certificate from DER
+         * An implementation of {@link Certificate} which loads a certificate from DER
          * data already located in memory.
          *
-         * To create an object, use the [ctor`SimpleCertificate`.new] or
-         * [ctor`SimpleCertificate`.new_static] functions.
+         * To create an object, use the {@link SimpleCertificate.new} or
+         * {@link SimpleCertificate.new_static} functions.
+         * @gir-type Class
          */
         class SimpleCertificate extends GObject.Object implements Certificate, Comparable {
             static $gtype: GObject.GType<SimpleCertificate>;
@@ -3337,16 +3473,19 @@ declare module 'gi://Gcr?version=3' {
 
             // Signals
 
+            /** @signal */
             connect<K extends keyof SimpleCertificate.SignalSignatures>(
                 signal: K,
                 callback: GObject.SignalCallback<this, SimpleCertificate.SignalSignatures[K]>,
             ): number;
             connect(signal: string, callback: (...args: any[]) => any): number;
+            /** @signal */
             connect_after<K extends keyof SimpleCertificate.SignalSignatures>(
                 signal: K,
                 callback: GObject.SignalCallback<this, SimpleCertificate.SignalSignatures[K]>,
             ): number;
             connect_after(signal: string, callback: (...args: any[]) => any): number;
+            /** @signal */
             emit<K extends keyof SimpleCertificate.SignalSignatures>(
                 signal: K,
                 ...args: GObject.GjsParameters<SimpleCertificate.SignalSignatures[K]> extends [any, ...infer Q]
@@ -3354,40 +3493,50 @@ declare module 'gi://Gcr?version=3' {
                     : never
             ): void;
             emit(signal: string, ...args: any[]): void;
-
-            // Inherited properties
             /**
              * A readable description for this certificate
+             * @read-only
+             * @category Inherited from Gcr.Certificate
              */
             get description(): string;
             /**
              * The expiry date of the certificate
+             * @read-only
+             * @category Inherited from Gcr.Certificate
              */
             get expiry(): GLib.Date;
             /**
              * An icon representing the certificate
+             * @read-only
+             * @category Inherited from Gcr.Certificate
              */
             get icon(): Gio.Icon;
             /**
              * Common name part of the certificate issuer
+             * @read-only
+             * @category Inherited from Gcr.Certificate
              */
             get issuer(): string;
             /**
              * A readable label for this certificate.
+             * @read-only
+             * @category Inherited from Gcr.Certificate
              */
             get label(): string;
             /**
              * GLib markup to describe the certificate
+             * @read-only
+             * @category Inherited from Gcr.Certificate
              */
             get markup(): string;
             /**
              * Common name part of the certificate subject
+             * @read-only
+             * @category Inherited from Gcr.Certificate
              */
             get subject(): string;
-
-            // Inherited methods
             /**
-             * Get the basic constraints for the certificate if present. If %FALSE is
+             * Get the basic constraints for the certificate if present. If `false` is
              * returned then no basic constraints are present and the `is_ca` and
              * `path_len` arguments are not changed.
              * @returns whether basic constraints are present or not
@@ -3401,15 +3550,15 @@ declare module 'gi://Gcr?version=3' {
             /**
              * Get the expiry date of this certificate.
              *
-             * The #GDate returned should be freed by the caller using
-             * g_date_free() when no longer required.
+             * The {@link GLib.Date} returned should be freed by the caller using
+             * `g_date_free()` when no longer required.
              * @returns An allocated expiry date of this certificate.
              */
             get_expiry_date(): GLib.Date;
             /**
              * Calculate the fingerprint for this certificate.
              *
-             * The caller should free the returned data using g_free() when
+             * The caller should free the returned data using `g_free()` when
              * it is no longer required.
              * @param type the type of algorithm for the fingerprint.
              * @returns the raw binary fingerprint
@@ -3419,7 +3568,7 @@ declare module 'gi://Gcr?version=3' {
              * Calculate the fingerprint for this certificate, and return it
              * as a hex string.
              *
-             * The caller should free the returned data using g_free() when
+             * The caller should free the returned data using `g_free()` when
              * it is no longer required.
              * @param type the type of algorithm for the fingerprint.
              * @returns an allocated hex string which contains the fingerprint.
@@ -3428,8 +3577,8 @@ declare module 'gi://Gcr?version=3' {
             /**
              * Get the issued date of this certificate.
              *
-             * The #GDate returned should be freed by the caller using
-             * g_date_free() when no longer required.
+             * The {@link GLib.Date} returned should be freed by the caller using
+             * `g_date_free()` when no longer required.
              * @returns An allocated issued date of this certificate.
              */
             get_issued_date(): GLib.Date;
@@ -3438,7 +3587,7 @@ declare module 'gi://Gcr?version=3' {
              *
              * The string returned should be freed by the caller when no longer
              * required.
-             * @returns The allocated issuer CN, or %NULL if no issuer CN present.
+             * @returns The allocated issuer CN, or `null` if no issuer CN present.
              */
             get_issuer_cn(): string;
             /**
@@ -3455,7 +3604,7 @@ declare module 'gi://Gcr?version=3' {
              *
              * This will try to lookup the common name, orianizational unit,
              * organization in that order.
-             * @returns the allocated issuer name, or %NULL if no issuer name
+             * @returns the allocated issuer name, or `null` if no issuer name
              */
             get_issuer_name(): string;
             /**
@@ -3468,13 +3617,13 @@ declare module 'gi://Gcr?version=3' {
              * The string returned should be freed by the caller when no longer
              * required.
              * @param part a DN type string or OID.
-             * @returns the allocated part of the issuer DN, or %NULL if no          such part is present
+             * @returns the allocated part of the issuer DN, or `null` if no          such part is present
              */
             get_issuer_part(part: string): string | null;
             /**
              * Get the raw DER data for the issuer DN of the certificate.
              *
-             * The data should be freed by using g_free() when no longer required.
+             * The data should be freed by using `g_free()` when no longer required.
              * @returns allocated memory containing          the raw issuer
              */
             get_issuer_raw(): Uint8Array;
@@ -3492,7 +3641,7 @@ declare module 'gi://Gcr?version=3' {
             /**
              * Get the raw binary serial number of the certificate.
              *
-             * The caller should free the returned data using g_free() when
+             * The caller should free the returned data using `g_free()` when
              * it is no longer required.
              * @returns the raw binary serial number.
              */
@@ -3500,7 +3649,7 @@ declare module 'gi://Gcr?version=3' {
             /**
              * Get the serial number of the certificate as a hex string.
              *
-             * The caller should free the returned data using g_free() when
+             * The caller should free the returned data using `g_free()` when
              * it is no longer required.
              * @returns an allocated string containing the serial number as hex.
              */
@@ -3510,7 +3659,7 @@ declare module 'gi://Gcr?version=3' {
              *
              * The string returned should be freed by the caller when no longer
              * required.
-             * @returns The allocated subject CN, or %NULL if no subject CN present.
+             * @returns The allocated subject CN, or `null` if no subject CN present.
              */
             get_subject_cn(): string;
             /**
@@ -3527,7 +3676,7 @@ declare module 'gi://Gcr?version=3' {
              *
              * This will try to lookup the common name, orianizational unit,
              * organization in that order.
-             * @returns the allocated subject name, or %NULL if no subject name
+             * @returns the allocated subject name, or `null` if no subject name
              */
             get_subject_name(): string;
             /**
@@ -3540,13 +3689,13 @@ declare module 'gi://Gcr?version=3' {
              * The string returned should be freed by the caller when no longer
              * required.
              * @param part a DN type string or OID.
-             * @returns the allocated part of the subject DN, or %NULL if no          such part is present.
+             * @returns the allocated part of the subject DN, or `null` if no          such part is present.
              */
             get_subject_part(part: string): string | null;
             /**
              * Get the raw DER data for the subject DN of the certificate.
              *
-             * The data should be freed by using g_free() when no longer required.
+             * The data should be freed by using `g_free()` when no longer required.
              * @returns allocated memory containing          the raw subject
              */
             get_subject_raw(): Uint8Array;
@@ -3555,18 +3704,19 @@ declare module 'gi://Gcr?version=3' {
              * comparing the relevant subject and issuer fields. No signature check is
              * done. Proper verification of certificates must be done via a crypto
              * library.
-             * @param issuer a possible issuer #GcrCertificate
-             * @returns whether @issuer could be the issuer of the certificate.
+             * @param issuer a possible issuer {@link Gcr.Certificate}
+             * @returns whether `issuer` could be the issuer of the certificate.
              */
             is_issuer(issuer: Certificate): boolean;
             /**
-             * Implementers of the #GcrCertificate mixin should call this function to notify
+             * Implementers of the {@link Gcr.Certificate} mixin should call this function to notify
              * when the certificate has changed to emit notifications on the various
              * properties.
              */
             mixin_emit_notify(): void;
             /**
              * Gets the raw DER data for an X.509 certificate.
+             * @virtual
              */
             vfunc_get_der_data(): Uint8Array;
             /**
@@ -3580,6 +3730,7 @@ declare module 'gi://Gcr?version=3' {
              * Compare whether two objects represent the same thing. The return value can
              * also be used to sort the objects.
              * @param other Another comparable object
+             * @virtual
              */
             vfunc_compare(other?: Comparable | null): number;
             /**
@@ -3595,32 +3746,32 @@ declare module 'gi://Gcr?version=3' {
              * ```
              *
              *
-             * Will result in the "sensitive" property of the widget #GObject instance to be
-             * updated with the same value of the "active" property of the action #GObject
+             * Will result in the "sensitive" property of the widget {@link GObject.Object} instance to be
+             * updated with the same value of the "active" property of the action {@link GObject.Object}
              * instance.
              *
-             * If `flags` contains %G_BINDING_BIDIRECTIONAL then the binding will be mutual:
+             * If `flags` contains {@link GObject.BindingFlags.BIDIRECTIONAL} then the binding will be mutual:
              * if `target_property` on `target` changes then the `source_property` on `source`
              * will be updated as well.
              *
              * The binding will automatically be removed when either the `source` or the
              * `target` instances are finalized. To remove the binding without affecting the
-             * `source` and the `target` you can just call g_object_unref() on the returned
-             * #GBinding instance.
+             * `source` and the `target` you can just call `g_object_unref()` on the returned
+             * {@link GObject.Binding} instance.
              *
-             * Removing the binding by calling g_object_unref() on it must only be done if
+             * Removing the binding by calling `g_object_unref()` on it must only be done if
              * the binding, `source` and `target` are only used from a single thread and it
              * is clear that both `source` and `target` outlive the binding. Especially it
              * is not safe to rely on this if the binding, `source` or `target` can be
              * finalized from different threads. Keep another reference to the binding and
-             * use g_binding_unbind() instead to be on the safe side.
+             * use `g_binding_unbind()` instead to be on the safe side.
              *
-             * A #GObject can have multiple bindings.
-             * @param source_property the property on @source to bind
-             * @param target the target #GObject
-             * @param target_property the property on @target to bind
-             * @param flags flags to pass to #GBinding
-             * @returns the #GBinding instance representing the     binding between the two #GObject instances. The binding is released     whenever the #GBinding reference count reaches zero.
+             * A {@link GObject.Object} can have multiple bindings.
+             * @param source_property the property on `source` to bind
+             * @param target the target {@link GObject.Object}
+             * @param target_property the property on `target` to bind
+             * @param flags flags to pass to {@link GObject.Binding}
+             * @returns the {@link GObject.Binding} instance representing the     binding between the two {@link GObject.Object} instances. The binding is released     whenever the {@link GObject.Binding} reference count reaches zero.
              */
             bind_property(
                 source_property: string,
@@ -3629,39 +3780,39 @@ declare module 'gi://Gcr?version=3' {
                 flags: GObject.BindingFlags | null,
             ): GObject.Binding;
             /**
-             * Complete version of g_object_bind_property().
+             * Complete version of `g_object_bind_property()`.
              *
              * Creates a binding between `source_property` on `source` and `target_property`
-             * on `target,` allowing you to set the transformation functions to be used by
+             * on `target`, allowing you to set the transformation functions to be used by
              * the binding.
              *
-             * If `flags` contains %G_BINDING_BIDIRECTIONAL then the binding will be mutual:
+             * If `flags` contains {@link GObject.BindingFlags.BIDIRECTIONAL} then the binding will be mutual:
              * if `target_property` on `target` changes then the `source_property` on `source`
              * will be updated as well. The `transform_from` function is only used in case
              * of bidirectional bindings, otherwise it will be ignored
              *
              * The binding will automatically be removed when either the `source` or the
              * `target` instances are finalized. This will release the reference that is
-             * being held on the #GBinding instance; if you want to hold on to the
-             * #GBinding instance, you will need to hold a reference to it.
+             * being held on the {@link GObject.Binding} instance; if you want to hold on to the
+             * {@link GObject.Binding} instance, you will need to hold a reference to it.
              *
-             * To remove the binding, call g_binding_unbind().
+             * To remove the binding, call `g_binding_unbind()`.
              *
-             * A #GObject can have multiple bindings.
+             * A {@link GObject.Object} can have multiple bindings.
              *
              * The same `user_data` parameter will be used for both `transform_to`
              * and `transform_from` transformation functions; the `notify` function will
              * be called once, when the binding is removed. If you need different data
              * for each transformation function, please use
-             * g_object_bind_property_with_closures() instead.
-             * @param source_property the property on @source to bind
-             * @param target the target #GObject
-             * @param target_property the property on @target to bind
-             * @param flags flags to pass to #GBinding
-             * @param transform_to the transformation function     from the @source to the @target, or %NULL to use the default
-             * @param transform_from the transformation function     from the @target to the @source, or %NULL to use the default
-             * @param notify a function to call when disposing the binding, to free     resources used by the transformation functions, or %NULL if not required
-             * @returns the #GBinding instance representing the     binding between the two #GObject instances. The binding is released     whenever the #GBinding reference count reaches zero.
+             * `g_object_bind_property_with_closures()` instead.
+             * @param source_property the property on `source` to bind
+             * @param target the target {@link GObject.Object}
+             * @param target_property the property on `target` to bind
+             * @param flags flags to pass to {@link GObject.Binding}
+             * @param transform_to the transformation function     from the `source` to the `target`, or `null` to use the default
+             * @param transform_from the transformation function     from the `target` to the `source`, or `null` to use the default
+             * @param notify a function to call when disposing the binding, to free     resources used by the transformation functions, or `null` if not required
+             * @returns the {@link GObject.Binding} instance representing the     binding between the two {@link GObject.Object} instances. The binding is released     whenever the {@link GObject.Binding} reference count reaches zero.
              */
             bind_property_full(
                 source_property: string,
@@ -3672,13 +3823,16 @@ declare module 'gi://Gcr?version=3' {
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
             ): GObject.Binding;
+            /**
+             * @param args
+             */
             // Conflicted with GObject.Object.bind_property_full
             bind_property_full(...args: never[]): any;
             /**
-             * This function is intended for #GObject implementations to re-enforce
+             * This function is intended for {@link GObject.Object} implementations to re-enforce
              * a [floating][floating-ref] object reference. Doing this is seldom
-             * required: all #GInitiallyUnowneds are created with a floating reference
-             * which usually just needs to be sunken by calling g_object_ref_sink().
+             * required: all `GInitiallyUnowneds` are created with a floating reference
+             * which usually just needs to be sunken by calling `g_object_ref_sink()`.
              */
             force_floating(): void;
             /**
@@ -3686,7 +3840,7 @@ declare module 'gi://Gcr?version=3' {
              * non-zero, the emission of "notify" signals on `object` is
              * stopped. The signals are queued until the freeze count is decreased
              * to zero. Duplicate notifications are squashed so that at most one
-             * #GObject::notify signal is emitted for each property modified while the
+             * {@link GObject.Object.SignalSignatures.notify | GObject.Object::notify} signal is emitted for each property modified while the
              * object is frozen.
              *
              * This is necessary for accessors that modify multiple properties to prevent
@@ -3694,9 +3848,9 @@ declare module 'gi://Gcr?version=3' {
              */
             freeze_notify(): void;
             /**
-             * Gets a named field from the objects table of associations (see g_object_set_data()).
+             * Gets a named field from the objects table of associations (see `g_object_set_data()`).
              * @param key name of the key for that association
-             * @returns the data if found,          or %NULL if no such data exists.
+             * @returns the data if found,          or `null` if no such data exists.
              */
             get_data(key: string): any | null;
             /**
@@ -3716,9 +3870,9 @@ declare module 'gi://Gcr?version=3' {
             get_property(property_name: string, value: GObject.Value | any): any;
             /**
              * This function gets back user data pointers stored via
-             * g_object_set_qdata().
-             * @param quark A #GQuark, naming the user data pointer
-             * @returns The user data pointer set, or %NULL
+             * `g_object_set_qdata()`.
+             * @param quark A {@link GLib.Quark}, naming the user data pointer
+             * @returns The user data pointer set, or `null`
              */
             get_qdata(quark: GLib.Quark): any | null;
             /**
@@ -3732,33 +3886,33 @@ declare module 'gi://Gcr?version=3' {
             getv(names: string[], values: (GObject.Value | any)[]): void;
             /**
              * Checks whether `object` has a [floating][floating-ref] reference.
-             * @returns %TRUE if @object has a floating reference
+             * @returns `true` if `object` has a floating reference
              */
             is_floating(): boolean;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
              * When possible, eg. when signaling a property change from within the class
-             * that registered the property, you should use g_object_notify_by_pspec()
+             * that registered the property, you should use `g_object_notify_by_pspec()`
              * instead.
              *
              * Note that emission of the notify signal may be blocked with
-             * g_object_freeze_notify(). In this case, the signal emissions are queued
-             * and will be emitted (in reverse order) when g_object_thaw_notify() is
+             * `g_object_freeze_notify()`. In this case, the signal emissions are queued
+             * and will be emitted (in reverse order) when `g_object_thaw_notify()` is
              * called.
-             * @param property_name the name of a property installed on the class of @object.
+             * @param property_name the name of a property installed on the class of `object`.
              */
             notify(property_name: string): void;
             /**
              * Emits a "notify" signal for the property specified by `pspec` on `object`.
              *
              * This function omits the property name lookup, hence it is faster than
-             * g_object_notify().
+             * `g_object_notify()`.
              *
-             * One way to avoid using g_object_notify() from within the
-             * class that registered the properties, and using g_object_notify_by_pspec()
+             * One way to avoid using `g_object_notify()` from within the
+             * class that registered the properties, and using `g_object_notify_by_pspec()`
              * instead, is to store the GParamSpec used with
-             * g_object_class_install_property() inside a static array, e.g.:
+             * `g_object_class_install_property()` inside a static array, e.g.:
              *
              *
              * ```c
@@ -3791,21 +3945,21 @@ declare module 'gi://Gcr?version=3' {
              *   g_object_notify_by_pspec (self, properties[PROP_FOO]);
              * ```
              *
-             * @param pspec the #GParamSpec of a property installed on the class of @object.
+             * @param pspec the {@link GObject.ParamSpec} of a property installed on the class of `object`.
              */
             notify_by_pspec(pspec: GObject.ParamSpec): void;
             /**
              * Increases the reference count of `object`.
              *
              * Since GLib 2.56, if `GLIB_VERSION_MAX_ALLOWED` is 2.56 or greater, the type
-             * of `object` will be propagated to the return type (using the GCC typeof()
+             * of `object` will be propagated to the return type (using the GCC `typeof()`
              * extension), so any casting the caller needs to do on the return type must be
              * explicit.
-             * @returns the same @object
+             * @returns the same `object`
              */
             ref(): GObject.Object;
             /**
-             * Increase the reference count of `object,` and possibly remove the
+             * Increase the reference count of `object`, and possibly remove the
              * [floating][floating-ref] reference, if `object` has a floating reference.
              *
              * In other words, if the object is floating, then this call "assumes
@@ -3815,8 +3969,8 @@ declare module 'gi://Gcr?version=3' {
              * adds a new normal reference increasing the reference count by one.
              *
              * Since GLib 2.56, the type of `object` will be propagated to the return type
-             * under the same conditions as for g_object_ref().
-             * @returns @object
+             * under the same conditions as for `g_object_ref()`.
+             * @returns `object`
              */
             ref_sink(): GObject.Object;
             /**
@@ -3833,10 +3987,10 @@ declare module 'gi://Gcr?version=3' {
              * If the object already had an association with that name,
              * the old association will be destroyed.
              *
-             * Internally, the `key` is converted to a #GQuark using g_quark_from_string().
+             * Internally, the `key` is converted to a {@link GLib.Quark} using `g_quark_from_string()`.
              * This means a copy of `key` is kept permanently (even after `object` has been
              * finalized) — so it is recommended to only use a small, bounded set of values
-             * for `key` in your program, to avoid the #GQuark storage growing unbounded.
+             * for `key` in your program, to avoid the {@link GLib.Quark} storage growing unbounded.
              * @param key name of the key
              * @param data data to associate with that key
              */
@@ -3851,13 +4005,13 @@ declare module 'gi://Gcr?version=3' {
              * Remove a specified datum from the object's data associations,
              * without invoking the association's destroy handler.
              * @param key name of the key
-             * @returns the data if found, or %NULL          if no such data exists.
+             * @returns the data if found, or `null`          if no such data exists.
              */
             steal_data(key: string): any | null;
             /**
              * This function gets back user data pointers stored via
-             * g_object_set_qdata() and removes the `data` from object
-             * without invoking its destroy() function (if any was
+             * `g_object_set_qdata()` and removes the `data` from object
+             * without invoking its `destroy()` function (if any was
              * set).
              * Usually, calling this function is only required to update
              * user data pointers with a destroy notifier, for example:
@@ -3888,21 +4042,21 @@ declare module 'gi://Gcr?version=3' {
              * }
              * ```
              *
-             * Using g_object_get_qdata() in the above example, instead of
-             * g_object_steal_qdata() would have left the destroy function set,
+             * Using `g_object_get_qdata()` in the above example, instead of
+             * `g_object_steal_qdata()` would have left the destroy function set,
              * and thus the partial string list would have been freed upon
-             * g_object_set_qdata_full().
-             * @param quark A #GQuark, naming the user data pointer
-             * @returns The user data pointer set, or %NULL
+             * `g_object_set_qdata_full()`.
+             * @param quark A {@link GLib.Quark}, naming the user data pointer
+             * @returns The user data pointer set, or `null`
              */
             steal_qdata(quark: GLib.Quark): any | null;
             /**
              * Reverts the effect of a previous call to
-             * g_object_freeze_notify(). The freeze count is decreased on `object`
+             * `g_object_freeze_notify()`. The freeze count is decreased on `object`
              * and when it reaches zero, queued "notify" signals are emitted.
              *
              * Duplicate notifications for each property are squashed so that at most one
-             * #GObject::notify signal is emitted for each property, in the reverse order
+             * {@link GObject.Object.SignalSignatures.notify | GObject.Object::notify} signal is emitted for each property, in the reverse order
              * in which they have been queued.
              *
              * It is an error to call this function when the freeze count is zero.
@@ -3912,33 +4066,34 @@ declare module 'gi://Gcr?version=3' {
              * Decreases the reference count of `object`. When its reference count
              * drops to 0, the object is finalized (i.e. its memory is freed).
              *
-             * If the pointer to the #GObject may be reused in future (for example, if it is
+             * If the pointer to the {@link GObject.Object} may be reused in future (for example, if it is
              * an instance variable of another object), it is recommended to clear the
-             * pointer to %NULL rather than retain a dangling pointer to a potentially
-             * invalid #GObject instance. Use g_clear_object() for this.
+             * pointer to `null` rather than retain a dangling pointer to a potentially
+             * invalid {@link GObject.Object} instance. Use `g_clear_object()` for this.
              */
             unref(): void;
             /**
              * This function essentially limits the life time of the `closure` to
              * the life time of the object. That is, when the object is finalized,
-             * the `closure` is invalidated by calling g_closure_invalidate() on
+             * the `closure` is invalidated by calling `g_closure_invalidate()` on
              * it, in order to prevent invocations of the closure with a finalized
-             * (nonexisting) object. Also, g_object_ref() and g_object_unref() are
-             * added as marshal guards to the `closure,` to ensure that an extra
+             * (nonexisting) object. Also, `g_object_ref()` and `g_object_unref()` are
+             * added as marshal guards to the `closure`, to ensure that an extra
              * reference count is held on `object` during invocation of the
              * `closure`.  Usually, this function will be called on closures that
              * use this `object` as closure data.
-             * @param closure #GClosure to watch
+             * @param closure {@link GObject.Closure} to watch
              */
             watch_closure(closure: GObject.Closure): void;
             /**
-             * the `constructed` function is called by g_object_new() as the
+             * the `constructed` function is called by `g_object_new()` as the
              *  final step of the object creation process.  At the point of the call, all
              *  construction properties have been set on the object.  The purpose of this
              *  call is to allow for object initialisation steps that can only be performed
              *  after construction properties have been set.  `constructed` implementors
              *  should chain up to the `constructed` call of their parent class to allow it
              *  to complete its initialisation.
+             * @virtual
              */
             vfunc_constructed(): void;
             /**
@@ -3947,6 +4102,7 @@ declare module 'gi://Gcr?version=3' {
              *  needed.
              * @param n_pspecs
              * @param pspecs
+             * @virtual
              */
             vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void;
             /**
@@ -3955,12 +4111,14 @@ declare module 'gi://Gcr?version=3' {
              *  invocations still work. It may be run multiple times (due to reference
              *  loops). Before returning, `dispose` should chain up to the `dispose` method
              *  of the parent class.
+             * @virtual
              */
             vfunc_dispose(): void;
             /**
              * instance finalization function, should finish the finalization of
              *  the instance begun in `dispose` and chain up to the `finalize` method of the
              *  parent class.
+             * @virtual
              */
             vfunc_finalize(): void;
             /**
@@ -3969,20 +4127,22 @@ declare module 'gi://Gcr?version=3' {
              * @param property_id
              * @param value
              * @param pspec
+             * @virtual
              */
             vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
              * When possible, eg. when signaling a property change from within the class
-             * that registered the property, you should use g_object_notify_by_pspec()
+             * that registered the property, you should use `g_object_notify_by_pspec()`
              * instead.
              *
              * Note that emission of the notify signal may be blocked with
-             * g_object_freeze_notify(). In this case, the signal emissions are queued
-             * and will be emitted (in reverse order) when g_object_thaw_notify() is
+             * `g_object_freeze_notify()`. In this case, the signal emissions are queued
+             * and will be emitted (in reverse order) when `g_object_thaw_notify()` is
              * called.
              * @param pspec
+             * @virtual
              */
             vfunc_notify(pspec: GObject.ParamSpec): void;
             /**
@@ -3994,6 +4154,7 @@ declare module 'gi://Gcr?version=3' {
              * @param property_id
              * @param value
              * @param pspec
+             * @virtual
              */
             vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
             /**
@@ -4033,11 +4194,12 @@ declare module 'gi://Gcr?version=3' {
         }
 
         /**
-         * A simple implementation of [iface`Collection]`, which you can add and remove
+         * A simple implementation of {@link Collection}, which you can add and remove
          * objects from.
          *
-         * You can use [method`SimpleCollection`.add] to add objects, and
-         * [method`SimpleCollection`.remove] to remove them again.
+         * You can use {@link SimpleCollection.add} to add objects, and
+         * {@link SimpleCollection.remove} to remove them again.
+         * @gir-type Class
          */
         class SimpleCollection extends GObject.Object implements Collection {
             static $gtype: GObject.GType<SimpleCollection>;
@@ -4061,16 +4223,19 @@ declare module 'gi://Gcr?version=3' {
 
             // Signals
 
+            /** @signal */
             connect<K extends keyof SimpleCollection.SignalSignatures>(
                 signal: K,
                 callback: GObject.SignalCallback<this, SimpleCollection.SignalSignatures[K]>,
             ): number;
             connect(signal: string, callback: (...args: any[]) => any): number;
+            /** @signal */
             connect_after<K extends keyof SimpleCollection.SignalSignatures>(
                 signal: K,
                 callback: GObject.SignalCallback<this, SimpleCollection.SignalSignatures[K]>,
             ): number;
             connect_after(signal: string, callback: (...args: any[]) => any): number;
+            /** @signal */
             emit<K extends keyof SimpleCollection.SignalSignatures>(
                 signal: K,
                 ...args: GObject.GjsParameters<SimpleCollection.SignalSignatures[K]> extends [any, ...infer Q]
@@ -4091,8 +4256,6 @@ declare module 'gi://Gcr?version=3' {
              * @param object The object to remove from the collection
              */
             remove(object: GObject.Object): void;
-
-            // Inherited methods
             /**
              * Check whether the collection contains an object or not.
              * @param object object to check
@@ -4100,13 +4263,13 @@ declare module 'gi://Gcr?version=3' {
              */
             contains(object: GObject.Object): boolean;
             /**
-             * Emit the #GcrCollection::added signal for the given object. This function
+             * Emit the {@link Gcr.Collection.SignalSignatures.added | Gcr.Collection::added} signal for the given object. This function
              * is used by implementors of this interface.
              * @param object The object that was added
              */
             emit_added(object: GObject.Object): void;
             /**
-             * Emit the #GcrCollection::removed signal for the given object. This function
+             * Emit the {@link Gcr.Collection.SignalSignatures.removed | Gcr.Collection::removed} signal for the given object. This function
              * is used by implementors of this interface.
              * @param object The object that was removed
              */
@@ -4118,23 +4281,34 @@ declare module 'gi://Gcr?version=3' {
             get_length(): number;
             /**
              * Get a list of the objects in this collection.
-             * @returns a list of the objects          in this collection, which should be freed with g_list_free()
+             * @returns a list of the objects          in this collection, which should be freed with `g_list_free()`
              */
             get_objects(): GObject.Object[];
+            /**
+             * @param object
+             * @virtual
+             */
             vfunc_added(object: GObject.Object): void;
             /**
              * Check whether the collection contains an object or not.
              * @param object object to check
+             * @virtual
              */
             vfunc_contains(object: GObject.Object): boolean;
             /**
              * Get the number of objects in this collection.
+             * @virtual
              */
             vfunc_get_length(): number;
             /**
              * Get a list of the objects in this collection.
+             * @virtual
              */
             vfunc_get_objects(): GObject.Object[];
+            /**
+             * @param object
+             * @virtual
+             */
             vfunc_removed(object: GObject.Object): void;
             /**
              * Creates a binding between `source_property` on `source` and `target_property`
@@ -4149,32 +4323,32 @@ declare module 'gi://Gcr?version=3' {
              * ```
              *
              *
-             * Will result in the "sensitive" property of the widget #GObject instance to be
-             * updated with the same value of the "active" property of the action #GObject
+             * Will result in the "sensitive" property of the widget {@link GObject.Object} instance to be
+             * updated with the same value of the "active" property of the action {@link GObject.Object}
              * instance.
              *
-             * If `flags` contains %G_BINDING_BIDIRECTIONAL then the binding will be mutual:
+             * If `flags` contains {@link GObject.BindingFlags.BIDIRECTIONAL} then the binding will be mutual:
              * if `target_property` on `target` changes then the `source_property` on `source`
              * will be updated as well.
              *
              * The binding will automatically be removed when either the `source` or the
              * `target` instances are finalized. To remove the binding without affecting the
-             * `source` and the `target` you can just call g_object_unref() on the returned
-             * #GBinding instance.
+             * `source` and the `target` you can just call `g_object_unref()` on the returned
+             * {@link GObject.Binding} instance.
              *
-             * Removing the binding by calling g_object_unref() on it must only be done if
+             * Removing the binding by calling `g_object_unref()` on it must only be done if
              * the binding, `source` and `target` are only used from a single thread and it
              * is clear that both `source` and `target` outlive the binding. Especially it
              * is not safe to rely on this if the binding, `source` or `target` can be
              * finalized from different threads. Keep another reference to the binding and
-             * use g_binding_unbind() instead to be on the safe side.
+             * use `g_binding_unbind()` instead to be on the safe side.
              *
-             * A #GObject can have multiple bindings.
-             * @param source_property the property on @source to bind
-             * @param target the target #GObject
-             * @param target_property the property on @target to bind
-             * @param flags flags to pass to #GBinding
-             * @returns the #GBinding instance representing the     binding between the two #GObject instances. The binding is released     whenever the #GBinding reference count reaches zero.
+             * A {@link GObject.Object} can have multiple bindings.
+             * @param source_property the property on `source` to bind
+             * @param target the target {@link GObject.Object}
+             * @param target_property the property on `target` to bind
+             * @param flags flags to pass to {@link GObject.Binding}
+             * @returns the {@link GObject.Binding} instance representing the     binding between the two {@link GObject.Object} instances. The binding is released     whenever the {@link GObject.Binding} reference count reaches zero.
              */
             bind_property(
                 source_property: string,
@@ -4183,39 +4357,39 @@ declare module 'gi://Gcr?version=3' {
                 flags: GObject.BindingFlags | null,
             ): GObject.Binding;
             /**
-             * Complete version of g_object_bind_property().
+             * Complete version of `g_object_bind_property()`.
              *
              * Creates a binding between `source_property` on `source` and `target_property`
-             * on `target,` allowing you to set the transformation functions to be used by
+             * on `target`, allowing you to set the transformation functions to be used by
              * the binding.
              *
-             * If `flags` contains %G_BINDING_BIDIRECTIONAL then the binding will be mutual:
+             * If `flags` contains {@link GObject.BindingFlags.BIDIRECTIONAL} then the binding will be mutual:
              * if `target_property` on `target` changes then the `source_property` on `source`
              * will be updated as well. The `transform_from` function is only used in case
              * of bidirectional bindings, otherwise it will be ignored
              *
              * The binding will automatically be removed when either the `source` or the
              * `target` instances are finalized. This will release the reference that is
-             * being held on the #GBinding instance; if you want to hold on to the
-             * #GBinding instance, you will need to hold a reference to it.
+             * being held on the {@link GObject.Binding} instance; if you want to hold on to the
+             * {@link GObject.Binding} instance, you will need to hold a reference to it.
              *
-             * To remove the binding, call g_binding_unbind().
+             * To remove the binding, call `g_binding_unbind()`.
              *
-             * A #GObject can have multiple bindings.
+             * A {@link GObject.Object} can have multiple bindings.
              *
              * The same `user_data` parameter will be used for both `transform_to`
              * and `transform_from` transformation functions; the `notify` function will
              * be called once, when the binding is removed. If you need different data
              * for each transformation function, please use
-             * g_object_bind_property_with_closures() instead.
-             * @param source_property the property on @source to bind
-             * @param target the target #GObject
-             * @param target_property the property on @target to bind
-             * @param flags flags to pass to #GBinding
-             * @param transform_to the transformation function     from the @source to the @target, or %NULL to use the default
-             * @param transform_from the transformation function     from the @target to the @source, or %NULL to use the default
-             * @param notify a function to call when disposing the binding, to free     resources used by the transformation functions, or %NULL if not required
-             * @returns the #GBinding instance representing the     binding between the two #GObject instances. The binding is released     whenever the #GBinding reference count reaches zero.
+             * `g_object_bind_property_with_closures()` instead.
+             * @param source_property the property on `source` to bind
+             * @param target the target {@link GObject.Object}
+             * @param target_property the property on `target` to bind
+             * @param flags flags to pass to {@link GObject.Binding}
+             * @param transform_to the transformation function     from the `source` to the `target`, or `null` to use the default
+             * @param transform_from the transformation function     from the `target` to the `source`, or `null` to use the default
+             * @param notify a function to call when disposing the binding, to free     resources used by the transformation functions, or `null` if not required
+             * @returns the {@link GObject.Binding} instance representing the     binding between the two {@link GObject.Object} instances. The binding is released     whenever the {@link GObject.Binding} reference count reaches zero.
              */
             bind_property_full(
                 source_property: string,
@@ -4226,13 +4400,16 @@ declare module 'gi://Gcr?version=3' {
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
             ): GObject.Binding;
+            /**
+             * @param args
+             */
             // Conflicted with GObject.Object.bind_property_full
             bind_property_full(...args: never[]): any;
             /**
-             * This function is intended for #GObject implementations to re-enforce
+             * This function is intended for {@link GObject.Object} implementations to re-enforce
              * a [floating][floating-ref] object reference. Doing this is seldom
-             * required: all #GInitiallyUnowneds are created with a floating reference
-             * which usually just needs to be sunken by calling g_object_ref_sink().
+             * required: all `GInitiallyUnowneds` are created with a floating reference
+             * which usually just needs to be sunken by calling `g_object_ref_sink()`.
              */
             force_floating(): void;
             /**
@@ -4240,7 +4417,7 @@ declare module 'gi://Gcr?version=3' {
              * non-zero, the emission of "notify" signals on `object` is
              * stopped. The signals are queued until the freeze count is decreased
              * to zero. Duplicate notifications are squashed so that at most one
-             * #GObject::notify signal is emitted for each property modified while the
+             * {@link GObject.Object.SignalSignatures.notify | GObject.Object::notify} signal is emitted for each property modified while the
              * object is frozen.
              *
              * This is necessary for accessors that modify multiple properties to prevent
@@ -4248,9 +4425,9 @@ declare module 'gi://Gcr?version=3' {
              */
             freeze_notify(): void;
             /**
-             * Gets a named field from the objects table of associations (see g_object_set_data()).
+             * Gets a named field from the objects table of associations (see `g_object_set_data()`).
              * @param key name of the key for that association
-             * @returns the data if found,          or %NULL if no such data exists.
+             * @returns the data if found,          or `null` if no such data exists.
              */
             get_data(key: string): any | null;
             /**
@@ -4270,9 +4447,9 @@ declare module 'gi://Gcr?version=3' {
             get_property(property_name: string, value: GObject.Value | any): any;
             /**
              * This function gets back user data pointers stored via
-             * g_object_set_qdata().
-             * @param quark A #GQuark, naming the user data pointer
-             * @returns The user data pointer set, or %NULL
+             * `g_object_set_qdata()`.
+             * @param quark A {@link GLib.Quark}, naming the user data pointer
+             * @returns The user data pointer set, or `null`
              */
             get_qdata(quark: GLib.Quark): any | null;
             /**
@@ -4286,33 +4463,33 @@ declare module 'gi://Gcr?version=3' {
             getv(names: string[], values: (GObject.Value | any)[]): void;
             /**
              * Checks whether `object` has a [floating][floating-ref] reference.
-             * @returns %TRUE if @object has a floating reference
+             * @returns `true` if `object` has a floating reference
              */
             is_floating(): boolean;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
              * When possible, eg. when signaling a property change from within the class
-             * that registered the property, you should use g_object_notify_by_pspec()
+             * that registered the property, you should use `g_object_notify_by_pspec()`
              * instead.
              *
              * Note that emission of the notify signal may be blocked with
-             * g_object_freeze_notify(). In this case, the signal emissions are queued
-             * and will be emitted (in reverse order) when g_object_thaw_notify() is
+             * `g_object_freeze_notify()`. In this case, the signal emissions are queued
+             * and will be emitted (in reverse order) when `g_object_thaw_notify()` is
              * called.
-             * @param property_name the name of a property installed on the class of @object.
+             * @param property_name the name of a property installed on the class of `object`.
              */
             notify(property_name: string): void;
             /**
              * Emits a "notify" signal for the property specified by `pspec` on `object`.
              *
              * This function omits the property name lookup, hence it is faster than
-             * g_object_notify().
+             * `g_object_notify()`.
              *
-             * One way to avoid using g_object_notify() from within the
-             * class that registered the properties, and using g_object_notify_by_pspec()
+             * One way to avoid using `g_object_notify()` from within the
+             * class that registered the properties, and using `g_object_notify_by_pspec()`
              * instead, is to store the GParamSpec used with
-             * g_object_class_install_property() inside a static array, e.g.:
+             * `g_object_class_install_property()` inside a static array, e.g.:
              *
              *
              * ```c
@@ -4345,21 +4522,21 @@ declare module 'gi://Gcr?version=3' {
              *   g_object_notify_by_pspec (self, properties[PROP_FOO]);
              * ```
              *
-             * @param pspec the #GParamSpec of a property installed on the class of @object.
+             * @param pspec the {@link GObject.ParamSpec} of a property installed on the class of `object`.
              */
             notify_by_pspec(pspec: GObject.ParamSpec): void;
             /**
              * Increases the reference count of `object`.
              *
              * Since GLib 2.56, if `GLIB_VERSION_MAX_ALLOWED` is 2.56 or greater, the type
-             * of `object` will be propagated to the return type (using the GCC typeof()
+             * of `object` will be propagated to the return type (using the GCC `typeof()`
              * extension), so any casting the caller needs to do on the return type must be
              * explicit.
-             * @returns the same @object
+             * @returns the same `object`
              */
             ref(): GObject.Object;
             /**
-             * Increase the reference count of `object,` and possibly remove the
+             * Increase the reference count of `object`, and possibly remove the
              * [floating][floating-ref] reference, if `object` has a floating reference.
              *
              * In other words, if the object is floating, then this call "assumes
@@ -4369,8 +4546,8 @@ declare module 'gi://Gcr?version=3' {
              * adds a new normal reference increasing the reference count by one.
              *
              * Since GLib 2.56, the type of `object` will be propagated to the return type
-             * under the same conditions as for g_object_ref().
-             * @returns @object
+             * under the same conditions as for `g_object_ref()`.
+             * @returns `object`
              */
             ref_sink(): GObject.Object;
             /**
@@ -4387,10 +4564,10 @@ declare module 'gi://Gcr?version=3' {
              * If the object already had an association with that name,
              * the old association will be destroyed.
              *
-             * Internally, the `key` is converted to a #GQuark using g_quark_from_string().
+             * Internally, the `key` is converted to a {@link GLib.Quark} using `g_quark_from_string()`.
              * This means a copy of `key` is kept permanently (even after `object` has been
              * finalized) — so it is recommended to only use a small, bounded set of values
-             * for `key` in your program, to avoid the #GQuark storage growing unbounded.
+             * for `key` in your program, to avoid the {@link GLib.Quark} storage growing unbounded.
              * @param key name of the key
              * @param data data to associate with that key
              */
@@ -4405,13 +4582,13 @@ declare module 'gi://Gcr?version=3' {
              * Remove a specified datum from the object's data associations,
              * without invoking the association's destroy handler.
              * @param key name of the key
-             * @returns the data if found, or %NULL          if no such data exists.
+             * @returns the data if found, or `null`          if no such data exists.
              */
             steal_data(key: string): any | null;
             /**
              * This function gets back user data pointers stored via
-             * g_object_set_qdata() and removes the `data` from object
-             * without invoking its destroy() function (if any was
+             * `g_object_set_qdata()` and removes the `data` from object
+             * without invoking its `destroy()` function (if any was
              * set).
              * Usually, calling this function is only required to update
              * user data pointers with a destroy notifier, for example:
@@ -4442,21 +4619,21 @@ declare module 'gi://Gcr?version=3' {
              * }
              * ```
              *
-             * Using g_object_get_qdata() in the above example, instead of
-             * g_object_steal_qdata() would have left the destroy function set,
+             * Using `g_object_get_qdata()` in the above example, instead of
+             * `g_object_steal_qdata()` would have left the destroy function set,
              * and thus the partial string list would have been freed upon
-             * g_object_set_qdata_full().
-             * @param quark A #GQuark, naming the user data pointer
-             * @returns The user data pointer set, or %NULL
+             * `g_object_set_qdata_full()`.
+             * @param quark A {@link GLib.Quark}, naming the user data pointer
+             * @returns The user data pointer set, or `null`
              */
             steal_qdata(quark: GLib.Quark): any | null;
             /**
              * Reverts the effect of a previous call to
-             * g_object_freeze_notify(). The freeze count is decreased on `object`
+             * `g_object_freeze_notify()`. The freeze count is decreased on `object`
              * and when it reaches zero, queued "notify" signals are emitted.
              *
              * Duplicate notifications for each property are squashed so that at most one
-             * #GObject::notify signal is emitted for each property, in the reverse order
+             * {@link GObject.Object.SignalSignatures.notify | GObject.Object::notify} signal is emitted for each property, in the reverse order
              * in which they have been queued.
              *
              * It is an error to call this function when the freeze count is zero.
@@ -4466,33 +4643,34 @@ declare module 'gi://Gcr?version=3' {
              * Decreases the reference count of `object`. When its reference count
              * drops to 0, the object is finalized (i.e. its memory is freed).
              *
-             * If the pointer to the #GObject may be reused in future (for example, if it is
+             * If the pointer to the {@link GObject.Object} may be reused in future (for example, if it is
              * an instance variable of another object), it is recommended to clear the
-             * pointer to %NULL rather than retain a dangling pointer to a potentially
-             * invalid #GObject instance. Use g_clear_object() for this.
+             * pointer to `null` rather than retain a dangling pointer to a potentially
+             * invalid {@link GObject.Object} instance. Use `g_clear_object()` for this.
              */
             unref(): void;
             /**
              * This function essentially limits the life time of the `closure` to
              * the life time of the object. That is, when the object is finalized,
-             * the `closure` is invalidated by calling g_closure_invalidate() on
+             * the `closure` is invalidated by calling `g_closure_invalidate()` on
              * it, in order to prevent invocations of the closure with a finalized
-             * (nonexisting) object. Also, g_object_ref() and g_object_unref() are
-             * added as marshal guards to the `closure,` to ensure that an extra
+             * (nonexisting) object. Also, `g_object_ref()` and `g_object_unref()` are
+             * added as marshal guards to the `closure`, to ensure that an extra
              * reference count is held on `object` during invocation of the
              * `closure`.  Usually, this function will be called on closures that
              * use this `object` as closure data.
-             * @param closure #GClosure to watch
+             * @param closure {@link GObject.Closure} to watch
              */
             watch_closure(closure: GObject.Closure): void;
             /**
-             * the `constructed` function is called by g_object_new() as the
+             * the `constructed` function is called by `g_object_new()` as the
              *  final step of the object creation process.  At the point of the call, all
              *  construction properties have been set on the object.  The purpose of this
              *  call is to allow for object initialisation steps that can only be performed
              *  after construction properties have been set.  `constructed` implementors
              *  should chain up to the `constructed` call of their parent class to allow it
              *  to complete its initialisation.
+             * @virtual
              */
             vfunc_constructed(): void;
             /**
@@ -4501,6 +4679,7 @@ declare module 'gi://Gcr?version=3' {
              *  needed.
              * @param n_pspecs
              * @param pspecs
+             * @virtual
              */
             vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void;
             /**
@@ -4509,12 +4688,14 @@ declare module 'gi://Gcr?version=3' {
              *  invocations still work. It may be run multiple times (due to reference
              *  loops). Before returning, `dispose` should chain up to the `dispose` method
              *  of the parent class.
+             * @virtual
              */
             vfunc_dispose(): void;
             /**
              * instance finalization function, should finish the finalization of
              *  the instance begun in `dispose` and chain up to the `finalize` method of the
              *  parent class.
+             * @virtual
              */
             vfunc_finalize(): void;
             /**
@@ -4523,20 +4704,22 @@ declare module 'gi://Gcr?version=3' {
              * @param property_id
              * @param value
              * @param pspec
+             * @virtual
              */
             vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
              * When possible, eg. when signaling a property change from within the class
-             * that registered the property, you should use g_object_notify_by_pspec()
+             * that registered the property, you should use `g_object_notify_by_pspec()`
              * instead.
              *
              * Note that emission of the notify signal may be blocked with
-             * g_object_freeze_notify(). In this case, the signal emissions are queued
-             * and will be emitted (in reverse order) when g_object_thaw_notify() is
+             * `g_object_freeze_notify()`. In this case, the signal emissions are queued
+             * and will be emitted (in reverse order) when `g_object_thaw_notify()` is
              * called.
              * @param pspec
+             * @virtual
              */
             vfunc_notify(pspec: GObject.ParamSpec): void;
             /**
@@ -4548,6 +4731,7 @@ declare module 'gi://Gcr?version=3' {
              * @param property_id
              * @param value
              * @param pspec
+             * @virtual
              */
             vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
             /**
@@ -4593,6 +4777,7 @@ declare module 'gi://Gcr?version=3' {
         /**
          * When used as the setup function while spawning an ssh command like ssh-add
          * or ssh, this allows callbacks for passwords on the provided interaction.
+         * @gir-type Class
          */
         class SshAskpass extends GObject.Object {
             static $gtype: GObject.GType<SshAskpass>;
@@ -4601,6 +4786,7 @@ declare module 'gi://Gcr?version=3' {
 
             /**
              * The interaction used to prompt for passwords.
+             * @construct-only
              */
             get interaction(): Gio.TlsInteraction;
 
@@ -4623,16 +4809,19 @@ declare module 'gi://Gcr?version=3' {
 
             // Signals
 
+            /** @signal */
             connect<K extends keyof SshAskpass.SignalSignatures>(
                 signal: K,
                 callback: GObject.SignalCallback<this, SshAskpass.SignalSignatures[K]>,
             ): number;
             connect(signal: string, callback: (...args: any[]) => any): number;
+            /** @signal */
             connect_after<K extends keyof SshAskpass.SignalSignatures>(
                 signal: K,
                 callback: GObject.SignalCallback<this, SshAskpass.SignalSignatures[K]>,
             ): number;
             connect_after(signal: string, callback: (...args: any[]) => any): number;
+            /** @signal */
             emit<K extends keyof SshAskpass.SignalSignatures>(
                 signal: K,
                 ...args: GObject.GjsParameters<SshAskpass.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never
@@ -4642,9 +4831,9 @@ declare module 'gi://Gcr?version=3' {
             // Static methods
 
             /**
-             * Use this function as a callback setup function passed to g_spawn_sync(),
-             * g_spawn_async(), g_spawn_async_with_pipes().
-             * @param askpass a #GcrSshAskpass object
+             * Use this function as a callback setup function passed to `g_spawn_sync()`,
+             * `g_spawn_async()`, `g_spawn_async_with_pipes()`.
+             * @param askpass a {@link Gcr.SshAskpass} object
              */
             static child_setup(askpass?: any | null): void;
 
@@ -4694,17 +4883,18 @@ declare module 'gi://Gcr?version=3' {
         }
 
         /**
-         * A [iface`Prompt]` implementation which calls to the system prompter to
+         * A {@link Prompt} implementation which calls to the system prompter to
          * display prompts in a system modal fashion.
          *
          * Since the system prompter usually only displays one prompt at a time, you
-         * may have to wait for the prompt to be displayed. Use [func`SystemPrompt`.open]
+         * may have to wait for the prompt to be displayed. Use {@link SystemPrompt.open}
          * or a related function to open a prompt. Since this can take a long time, you
          * should always check that the prompt is still needed after it is opened. A
          * previous prompt may have already provided the information needed and you
          * may no longer need to prompt.
          *
-         * Use [method`SystemPrompt`.close] to close the prompt when you're done with it.
+         * Use {@link SystemPrompt.close} to close the prompt when you're done with it.
+         * @gir-type Class
          */
         class SystemPrompt extends GObject.Object implements Prompt, Gio.AsyncInitable<SystemPrompt>, Gio.Initable {
             static $gtype: GObject.GType<SystemPrompt>;
@@ -4712,33 +4902,37 @@ declare module 'gi://Gcr?version=3' {
             // Properties
 
             /**
-             * The DBus bus name of the prompter to use for prompting, or %NULL
+             * The DBus bus name of the prompter to use for prompting, or `null`
              * for the default prompter.
+             * @construct-only
              */
             get bus_name(): string;
             /**
-             * The DBus bus name of the prompter to use for prompting, or %NULL
+             * The DBus bus name of the prompter to use for prompting, or `null`
              * for the default prompter.
+             * @construct-only
              */
             get busName(): string;
             /**
-             * The #GcrSecretExchange to use when transferring passwords. A default
+             * The {@link Gcr.SecretExchange} to use when transferring passwords. A default
              * secret exchange will be used if this is not set.
              */
             get secret_exchange(): SecretExchange;
             set secret_exchange(val: SecretExchange);
             /**
-             * The #GcrSecretExchange to use when transferring passwords. A default
+             * The {@link Gcr.SecretExchange} to use when transferring passwords. A default
              * secret exchange will be used if this is not set.
              */
             get secretExchange(): SecretExchange;
             set secretExchange(val: SecretExchange);
             /**
              * The timeout in seconds to wait when opening the prompt.
+             * @construct-only
              */
             set timeout_seconds(val: number);
             /**
              * The timeout in seconds to wait when opening the prompt.
+             * @construct-only
              */
             set timeoutSeconds(val: number);
 
@@ -4759,16 +4953,19 @@ declare module 'gi://Gcr?version=3' {
 
             // Signals
 
+            /** @signal */
             connect<K extends keyof SystemPrompt.SignalSignatures>(
                 signal: K,
                 callback: GObject.SignalCallback<this, SystemPrompt.SignalSignatures[K]>,
             ): number;
             connect(signal: string, callback: (...args: any[]) => any): number;
+            /** @signal */
             connect_after<K extends keyof SystemPrompt.SignalSignatures>(
                 signal: K,
                 callback: GObject.SignalCallback<this, SystemPrompt.SignalSignatures[K]>,
             ): number;
             connect_after(signal: string, callback: (...args: any[]) => any): number;
+            /** @signal */
             emit<K extends keyof SystemPrompt.SignalSignatures>(
                 signal: K,
                 ...args: GObject.GjsParameters<SystemPrompt.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never
@@ -4785,7 +4982,7 @@ declare module 'gi://Gcr?version=3' {
              * another prompt is shown then this method will block for up to
              * `timeout_seconds` seconds. If `timeout_seconds` is equal to -1, then this
              * will block indefinitely until the prompt can be opened. If `timeout_seconds`
-             * expires, then this function will fail with a %GCR_SYSTEM_PROMPT_IN_PROGRESS
+             * expires, then this function will fail with a {@link Gcr.SystemPromptError.SYSTEM_PROMPT_IN_PROGRESS}
              * error.
              * @param timeout_seconds the number of seconds to wait to access the prompt, or -1
              * @param cancellable optional cancellation object
@@ -4798,7 +4995,7 @@ declare module 'gi://Gcr?version=3' {
              * another prompt is shown then this method will block for up to
              * `timeout_seconds` seconds. If `timeout_seconds` is equal to -1, then this
              * will block indefinitely until the prompt can be opened. If `timeout_seconds`
-             * expires, then this operation will fail with a %GCR_SYSTEM_PROMPT_IN_PROGRESS
+             * expires, then this operation will fail with a {@link Gcr.SystemPromptError.SYSTEM_PROMPT_IN_PROGRESS}
              * error.
              * @param timeout_seconds the number of seconds to wait to access the prompt, or -1
              * @param cancellable optional cancellation object
@@ -4815,14 +5012,14 @@ declare module 'gi://Gcr?version=3' {
              */
             static open_finish(result: Gio.AsyncResult): SystemPrompt;
             /**
-             * Opens a system prompt. If prompter_name is %NULL, then the default
+             * Opens a system prompt. If prompter_name is `null`, then the default
              * system prompter is used.
              *
              * Most system prompters only allow showing one prompt at a time, and if
              * another prompt is shown then this method will block for up to
              * `timeout_seconds` seconds. If `timeout_seconds` is equal to -1, then this
              * will block indefinitely until the prompt can be opened. If `timeout_seconds`
-             * expires, then this function will fail with a %GCR_SYSTEM_PROMPT_IN_PROGRESS
+             * expires, then this function will fail with a {@link Gcr.SystemPromptError.SYSTEM_PROMPT_IN_PROGRESS}
              * error.
              * @param prompter_name the prompter dbus name
              * @param timeout_seconds the number of seconds to wait to access the prompt, or -1
@@ -4834,14 +5031,14 @@ declare module 'gi://Gcr?version=3' {
                 cancellable?: Gio.Cancellable | null,
             ): SystemPrompt;
             /**
-             * Opens a system prompt asynchronously. If prompter_name is %NULL, then the
+             * Opens a system prompt asynchronously. If prompter_name is `null`, then the
              * default system prompter is used.
              *
              * Most system prompters only allow showing one prompt at a time, and if
              * another prompt is shown then this method will block for up to
              * `timeout_seconds` seconds. If `timeout_seconds` is equal to -1, then this
              * will block indefinitely until the prompt can be opened. If `timeout_seconds`
-             * expires, then this operation will fail with a %GCR_SYSTEM_PROMPT_IN_PROGRESS
+             * expires, then this operation will fail with a {@link Gcr.SystemPromptError.SYSTEM_PROMPT_IN_PROGRESS}
              * error.
              * @param prompter_name the prompter D-Bus name
              * @param timeout_seconds the number of seconds to wait to access the prompt, or -1
@@ -4862,15 +5059,18 @@ declare module 'gi://Gcr?version=3' {
              * succeed on this object. The prompt object is not unreferenced by this
              * function, and you must unreference it once done.
              *
-             * This call may block, use the gcr_system_prompt_close_async() to perform
+             * This call may block, use the `gcr_system_prompt_close_async()` to perform
              * this action indefinitely.
              *
-             * Whether or not this function returns %TRUE, the system prompt object is
+             * Whether or not this function returns `true`, the system prompt object is
              * still closed and may not be further used.
              * @param cancellable an optional cancellation object
              * @returns whether close was cleanly completed
              */
             close(cancellable?: Gio.Cancellable | null): boolean;
+            /**
+             * @param args
+             */
             // Conflicted with Gcr.Prompt.close
             close(...args: never[]): any;
             /**
@@ -4908,19 +5108,17 @@ declare module 'gi://Gcr?version=3' {
             /**
              * Complete operation to close this prompt.
              *
-             * Whether or not this function returns %TRUE, the system prompt object is
+             * Whether or not this function returns `true`, the system prompt object is
              * still closed and may not be further used.
              * @param result asynchronous operation result
              * @returns whether close was cleanly completed
              */
             close_finish(result: Gio.AsyncResult): boolean;
             /**
-             * Get the current [class`SecretExchange]` used to transfer secrets in this prompt.
+             * Get the current {@link SecretExchange} used to transfer secrets in this prompt.
              * @returns the secret exchange
              */
             get_secret_exchange(): SecretExchange;
-
-            // Inherited properties
             /**
              * The string handle of the caller's window.
              *
@@ -4931,6 +5129,7 @@ declare module 'gi://Gcr?version=3' {
              * In X11, this will be a stringified version of the XWindow handle; in
              * Wayland this is the result of an export using the XDG foreign
              * protocol.
+             * @category Inherited from Gcr.Prompt
              */
             get caller_window(): string;
             set caller_window(val: string);
@@ -4944,64 +5143,73 @@ declare module 'gi://Gcr?version=3' {
              * In X11, this will be a stringified version of the XWindow handle; in
              * Wayland this is the result of an export using the XDG foreign
              * protocol.
+             * @category Inherited from Gcr.Prompt
              */
             get callerWindow(): string;
             set callerWindow(val: string);
             /**
              * The label for the cancel button in the prompt.
+             * @category Inherited from Gcr.Prompt
              */
             get cancel_label(): string;
             set cancel_label(val: string);
             /**
              * The label for the cancel button in the prompt.
+             * @category Inherited from Gcr.Prompt
              */
             get cancelLabel(): string;
             set cancelLabel(val: string);
             /**
              * Whether the additional choice is chosen or not.
              *
-             * The additional choice would have been setup using #GcrPrompt:choice-label.
+             * The additional choice would have been setup using {@link Gcr.Prompt.choice_label}.
+             * @category Inherited from Gcr.Prompt
              */
             get choice_chosen(): boolean;
             set choice_chosen(val: boolean);
             /**
              * Whether the additional choice is chosen or not.
              *
-             * The additional choice would have been setup using #GcrPrompt:choice-label.
+             * The additional choice would have been setup using {@link Gcr.Prompt.choice_label}.
+             * @category Inherited from Gcr.Prompt
              */
             get choiceChosen(): boolean;
             set choiceChosen(val: boolean);
             /**
              * The label for the additional choice.
              *
-             * If this is a non-%NULL value then an additional boolean choice will be
+             * If this is a non-`null` value then an additional boolean choice will be
              * displayed by the prompt allowing the user to select or deselect it.
              *
-             * If %NULL, then no additional choice is displayed.
+             * If `null`, then no additional choice is displayed.
              *
-             * The initial value of the choice can be set with #GcrPrompt:choice-chosen.
+             * The initial value of the choice can be set with {@link Gcr.Prompt.choice_chosen}.
+             * @category Inherited from Gcr.Prompt
              */
             get choice_label(): string;
             set choice_label(val: string);
             /**
              * The label for the additional choice.
              *
-             * If this is a non-%NULL value then an additional boolean choice will be
+             * If this is a non-`null` value then an additional boolean choice will be
              * displayed by the prompt allowing the user to select or deselect it.
              *
-             * If %NULL, then no additional choice is displayed.
+             * If `null`, then no additional choice is displayed.
              *
-             * The initial value of the choice can be set with #GcrPrompt:choice-chosen.
+             * The initial value of the choice can be set with {@link Gcr.Prompt.choice_chosen}.
+             * @category Inherited from Gcr.Prompt
              */
             get choiceLabel(): string;
             set choiceLabel(val: string);
             /**
              * The label for the continue button in the prompt.
+             * @category Inherited from Gcr.Prompt
              */
             get continue_label(): string;
             set continue_label(val: string);
             /**
              * The label for the continue button in the prompt.
+             * @category Inherited from Gcr.Prompt
              */
             get continueLabel(): string;
             set continueLabel(val: string);
@@ -5010,6 +5218,7 @@ declare module 'gi://Gcr?version=3' {
              *
              * A prompt implementation may choose not to display this detailed description.
              * The prompt message should contain relevant information.
+             * @category Inherited from Gcr.Prompt
              */
             get description(): string;
             set description(val: string);
@@ -5017,6 +5226,7 @@ declare module 'gi://Gcr?version=3' {
              * The prompt message for the user.
              *
              * A prompt implementation should always display this message.
+             * @category Inherited from Gcr.Prompt
              */
             get message(): string;
             set message(val: string);
@@ -5026,6 +5236,7 @@ declare module 'gi://Gcr?version=3' {
              * This will cause the prompt implementation to ask the user to confirm the
              * password and/or display other relevant user interface for creating a new
              * password.
+             * @category Inherited from Gcr.Prompt
              */
             get password_new(): boolean;
             set password_new(val: boolean);
@@ -5035,6 +5246,7 @@ declare module 'gi://Gcr?version=3' {
              * This will cause the prompt implementation to ask the user to confirm the
              * password and/or display other relevant user interface for creating a new
              * password.
+             * @category Inherited from Gcr.Prompt
              */
             get passwordNew(): boolean;
             set passwordNew(val: boolean);
@@ -5045,6 +5257,8 @@ declare module 'gi://Gcr?version=3' {
              * greater than zero if the password has any characters.
              *
              * This is only valid after a successful prompt for a password.
+             * @read-only
+             * @category Inherited from Gcr.Prompt
              */
             get password_strength(): number;
             /**
@@ -5054,26 +5268,28 @@ declare module 'gi://Gcr?version=3' {
              * greater than zero if the password has any characters.
              *
              * This is only valid after a successful prompt for a password.
+             * @read-only
+             * @category Inherited from Gcr.Prompt
              */
             get passwordStrength(): number;
             /**
              * The title of the prompt.
              *
              * A prompt implementation may choose not to display the prompt title. The
-             * #GcrPrompt:message should contain relevant information.
+             * {@link Gcr.Prompt.message} should contain relevant information.
+             * @category Inherited from Gcr.Prompt
              */
             get title(): string;
             set title(val: string);
             /**
-             * A prompt warning displayed on the prompt, or %NULL for no warning.
+             * A prompt warning displayed on the prompt, or `null` for no warning.
              *
              * This is a warning like "The password is incorrect." usually displayed to the
              * user about a previous 'unsuccessful' prompt.
+             * @category Inherited from Gcr.Prompt
              */
             get warning(): string;
             set warning(val: string);
-
-            // Inherited methods
             /**
              * Prompts for confirmation asking a cancel/continue style question.
              * Set the various properties on the prompt before calling this function to
@@ -5081,8 +5297,8 @@ declare module 'gi://Gcr?version=3' {
              *
              * This method will block until the a response is returned from the prompter.
              *
-             * %GCR_PROMPT_REPLY_CONTINUE will be returned if the user confirms the prompt. The
-             * return value will also be %GCR_PROMPT_REPLY_CANCEL if the user cancels or if
+             * {@link Gcr.PromptReply.CONTINUE} will be returned if the user confirms the prompt. The
+             * return value will also be {@link Gcr.PromptReply.CANCEL} if the user cancels or if
              * an error occurs. Check the `error` argument to tell the difference.
              * @param cancellable optional cancellation object
              * @returns the reply from the prompt
@@ -5123,8 +5339,8 @@ declare module 'gi://Gcr?version=3' {
             /**
              * Complete an operation to prompt for confirmation.
              *
-             * %GCR_PROMPT_REPLY_CONTINUE will be returned if the user confirms the prompt. The
-             * return value will also be %GCR_PROMPT_REPLY_CANCEL if the user cancels or if
+             * {@link Gcr.PromptReply.CONTINUE} will be returned if the user confirms the prompt. The
+             * return value will also be {@link Gcr.PromptReply.CANCEL} if the user cancels or if
              * an error occurs. Check the `error` argument to tell the difference.
              * @param result asynchronous result passed to callback
              * @returns the reply from the prompt
@@ -5139,8 +5355,8 @@ declare module 'gi://Gcr?version=3' {
              * and will run a main loop similar to a `gtk_dialog_run()`. The application
              * will remain responsive but care must be taken to handle reentrancy issues.
              *
-             * %GCR_PROMPT_REPLY_CONTINUE will be returned if the user confirms the prompt. The
-             * return value will also be %GCR_PROMPT_REPLY_CANCEL if the user cancels or if
+             * {@link Gcr.PromptReply.CONTINUE} will be returned if the user confirms the prompt. The
+             * return value will also be {@link Gcr.PromptReply.CANCEL} if the user cancels or if
              * an error occurs. Check the `error` argument to tell the difference.
              * @param cancellable optional cancellation object
              * @returns the reply from the prompt
@@ -5158,7 +5374,7 @@ declare module 'gi://Gcr?version=3' {
             /**
              * Get the label for the cancel button.
              *
-             * This is the button that results in a %GCR_PROMPT_REPLY_CANCEL reply
+             * This is the button that results in a {@link Gcr.PromptReply.CANCEL} reply
              * from the prompt.
              * @returns a newly allocated string containing the label
              */
@@ -5167,21 +5383,21 @@ declare module 'gi://Gcr?version=3' {
              * Get whether the additional choice was chosen or not.
              *
              * The additional choice would have been setup using
-             * gcr_prompt_set_choice_label().
+             * `gcr_prompt_set_choice_label()`.
              * @returns whether chosen
              */
             get_choice_chosen(): boolean;
             /**
              * Get the label for the additional choice.
              *
-             * This will be %NULL if no additional choice is being displayed.
-             * @returns a newly allocated string containing the additional          choice or %NULL
+             * This will be `null` if no additional choice is being displayed.
+             * @returns a newly allocated string containing the additional          choice or `null`
              */
             get_choice_label(): string;
             /**
              * Get the label for the continue button.
              *
-             * This is the button that results in a %GCR_PROMPT_REPLY_CONTINUE reply
+             * This is the button that results in a {@link Gcr.PromptReply.CONTINUE} reply
              * from the prompt.
              * @returns a newly allocated string containing the label
              */
@@ -5234,8 +5450,8 @@ declare module 'gi://Gcr?version=3' {
              * This is a warning like "The password is incorrect." usually displayed to the
              * user about a previous 'unsuccessful' prompt.
              *
-             * If this string is %NULL then no warning is displayed.
-             * @returns a newly allocated string containing the prompt          warning, or %NULL if no warning
+             * If this string is `null` then no warning is displayed.
+             * @returns a newly allocated string containing the prompt          warning, or `null` if no warning
              */
             get_warning(): string;
             /**
@@ -5248,10 +5464,10 @@ declare module 'gi://Gcr?version=3' {
              * The returned password is valid until the next time a method is called
              * to display another prompt.
              *
-             * %NULL will be returned if the user cancels or if an error occurs. Check the
+             * `null` will be returned if the user cancels or if an error occurs. Check the
              * `error` argument to tell the difference.
              * @param cancellable optional cancellation object
-             * @returns the password owned by the prompt, or %NULL
+             * @returns the password owned by the prompt, or `null`
              */
             password(cancellable?: Gio.Cancellable | null): string;
             /**
@@ -5290,10 +5506,10 @@ declare module 'gi://Gcr?version=3' {
              * The returned password is valid until the next time a method is called
              * to display another prompt.
              *
-             * %NULL will be returned if the user cancels or if an error occurs. Check the
+             * `null` will be returned if the user cancels or if an error occurs. Check the
              * `error` argument to tell the difference.
              * @param result asynchronous result passed to callback
-             * @returns the password owned by the prompt, or %NULL
+             * @returns the password owned by the prompt, or `null`
              */
             password_finish(result: Gio.AsyncResult): string;
             /**
@@ -5301,17 +5517,17 @@ declare module 'gi://Gcr?version=3' {
              * this method to explain which password should be entered.
              *
              * This method will block until the a response is returned from the prompter
-             * and will run a main loop similar to a gtk_dialog_run(). The application
+             * and will run a main loop similar to a `gtk_dialog_run()`. The application
              * will remain responsive but care must be taken to handle reentrancy issues.
              *
              * A password will be returned if the user enters a password successfully.
              * The returned password is valid until the next time a method is called
              * to display another prompt.
              *
-             * %NULL will be returned if the user cancels or if an error occurs. Check the
+             * `null` will be returned if the user cancels or if an error occurs. Check the
              * `error` argument to tell the difference.
              * @param cancellable optional cancellation object
-             * @returns the password owned by the prompt, or %NULL
+             * @returns the password owned by the prompt, or `null`
              */
             password_run(cancellable?: Gio.Cancellable | null): string;
             /**
@@ -5330,7 +5546,7 @@ declare module 'gi://Gcr?version=3' {
             /**
              * Set the label for the continue button.
              *
-             * This is the button that results in a %GCR_PROMPT_REPLY_CANCEL reply
+             * This is the button that results in a {@link Gcr.PromptReply.CANCEL} reply
              * from the prompt.
              * @param cancel_label the label
              */
@@ -5338,27 +5554,27 @@ declare module 'gi://Gcr?version=3' {
             /**
              * Set whether the additional choice is chosen or not.
              *
-             * The additional choice should be set up using gcr_prompt_set_choice_label().
+             * The additional choice should be set up using `gcr_prompt_set_choice_label()`.
              * @param chosen whether chosen
              */
             set_choice_chosen(chosen: boolean): void;
             /**
              * Set the label for the additional choice.
              *
-             * If this is a non-%NULL value then an additional boolean choice will be
+             * If this is a non-`null` value then an additional boolean choice will be
              * displayed by the prompt allowing the user to select or deselect it.
              *
              * The initial value of the choice can be set with the
-             * gcr_prompt_set_choice_label() method.
+             * `gcr_prompt_set_choice_label()` method.
              *
-             * If this is %NULL, then no additional choice is being displayed.
-             * @param choice_label the additional choice or %NULL
+             * If this is `null`, then no additional choice is being displayed.
+             * @param choice_label the additional choice or `null`
              */
             set_choice_label(choice_label?: string | null): void;
             /**
              * Set the label for the continue button.
              *
-             * This is the button that results in a %GCR_PROMPT_REPLY_CONTINUE reply
+             * This is the button that results in a {@link Gcr.PromptReply.CONTINUE} reply
              * from the prompt.
              * @param continue_label the label
              */
@@ -5367,7 +5583,7 @@ declare module 'gi://Gcr?version=3' {
              * Set the detailed description of the prompt.
              *
              * A prompt implementation may choose not to display this detailed description.
-             * Use gcr_prompt_set_message() to set a general message containing relevant
+             * Use `gcr_prompt_set_message()` to set a general message containing relevant
              * information.
              * @param description the detailed description
              */
@@ -5402,12 +5618,13 @@ declare module 'gi://Gcr?version=3' {
              * This is a warning like "The password is incorrect." usually displayed to the
              * user about a previous 'unsuccessful' prompt.
              *
-             * If this string is %NULL then no warning is displayed.
-             * @param warning the warning or %NULL
+             * If this string is `null` then no warning is displayed.
+             * @param warning the warning or `null`
              */
             set_warning(warning?: string | null): void;
             /**
              * close a prompt
+             * @virtual
              */
             vfunc_prompt_close(): void;
             /**
@@ -5418,6 +5635,7 @@ declare module 'gi://Gcr?version=3' {
              * This method will return immediately and complete asynchronously.
              * @param cancellable optional cancellation object
              * @param callback called when the operation completes
+             * @virtual
              */
             vfunc_prompt_confirm_async(
                 cancellable?: Gio.Cancellable | null,
@@ -5426,10 +5644,11 @@ declare module 'gi://Gcr?version=3' {
             /**
              * Complete an operation to prompt for confirmation.
              *
-             * %GCR_PROMPT_REPLY_CONTINUE will be returned if the user confirms the prompt. The
-             * return value will also be %GCR_PROMPT_REPLY_CANCEL if the user cancels or if
+             * {@link Gcr.PromptReply.CONTINUE} will be returned if the user confirms the prompt. The
+             * return value will also be {@link Gcr.PromptReply.CANCEL} if the user cancels or if
              * an error occurs. Check the `error` argument to tell the difference.
              * @param result asynchronous result passed to callback
+             * @virtual
              */
             vfunc_prompt_confirm_finish(result: Gio.AsyncResult): PromptReply;
             /**
@@ -5439,6 +5658,7 @@ declare module 'gi://Gcr?version=3' {
              * This method will return immediately and complete asynchronously.
              * @param cancellable optional cancellation object
              * @param callback called when the operation completes
+             * @virtual
              */
             vfunc_prompt_password_async(
                 cancellable?: Gio.Cancellable | null,
@@ -5451,92 +5671,93 @@ declare module 'gi://Gcr?version=3' {
              * The returned password is valid until the next time a method is called
              * to display another prompt.
              *
-             * %NULL will be returned if the user cancels or if an error occurs. Check the
+             * `null` will be returned if the user cancels or if an error occurs. Check the
              * `error` argument to tell the difference.
              * @param result asynchronous result passed to callback
+             * @virtual
              */
             vfunc_prompt_password_finish(result: Gio.AsyncResult): string;
             /**
              * Starts asynchronous initialization of the object implementing the
              * interface. This must be done before any real use of the object after
-             * initial construction. If the object also implements #GInitable you can
-             * optionally call g_initable_init() instead.
+             * initial construction. If the object also implements {@link Gio.Initable} you can
+             * optionally call `g_initable_init()` instead.
              *
              * This method is intended for language bindings. If writing in C,
-             * g_async_initable_new_async() should typically be used instead.
+             * `g_async_initable_new_async()` should typically be used instead.
              *
              * When the initialization is finished, `callback` will be called. You can
-             * then call g_async_initable_init_finish() to get the result of the
+             * then call `g_async_initable_init_finish()` to get the result of the
              * initialization.
              *
              * Implementations may also support cancellation. If `cancellable` is not
-             * %NULL, then initialization can be cancelled by triggering the cancellable
+             * `null`, then initialization can be cancelled by triggering the cancellable
              * object from another thread. If the operation was cancelled, the error
-             * %G_IO_ERROR_CANCELLED will be returned. If `cancellable` is not %NULL, and
+             * {@link Gio.IOErrorEnum.CANCELLED} will be returned. If `cancellable` is not `null`, and
              * the object doesn't support cancellable initialization, the error
-             * %G_IO_ERROR_NOT_SUPPORTED will be returned.
+             * {@link Gio.IOErrorEnum.NOT_SUPPORTED} will be returned.
              *
-             * As with #GInitable, if the object is not initialized, or initialization
+             * As with {@link Gio.Initable}, if the object is not initialized, or initialization
              * returns with an error, then all operations on the object except
-             * g_object_ref() and g_object_unref() are considered to be invalid, and
-             * have undefined behaviour. They will often fail with g_critical() or
-             * g_warning(), but this must not be relied on.
+             * `g_object_ref()` and `g_object_unref()` are considered to be invalid, and
+             * have undefined behaviour. They will often fail with `g_critical()` or
+             * `g_warning()`, but this must not be relied on.
              *
-             * Callers should not assume that a class which implements #GAsyncInitable can
-             * be initialized multiple times; for more information, see g_initable_init().
+             * Callers should not assume that a class which implements {@link Gio.AsyncInitable} can
+             * be initialized multiple times; for more information, see `g_initable_init()`.
              * If a class explicitly supports being initialized multiple times,
-             * implementation requires yielding all subsequent calls to init_async() on the
+             * implementation requires yielding all subsequent calls to `init_async()` on the
              * results of the first call.
              *
-             * For classes that also support the #GInitable interface, the default
-             * implementation of this method will run the g_initable_init() function
+             * For classes that also support the {@link Gio.Initable} interface, the default
+             * implementation of this method will run the `g_initable_init()` function
              * in a thread, so if you want to support asynchronous initialization via
-             * threads, just implement the #GAsyncInitable interface without overriding
+             * threads, just implement the {@link Gio.AsyncInitable} interface without overriding
              * any interface methods.
              * @param io_priority the [I/O priority](iface.AsyncResult.html#io-priority) of the operation
-             * @param cancellable optional #GCancellable object, %NULL to ignore.
+             * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
              */
             init_async(io_priority: number, cancellable?: Gio.Cancellable | null): globalThis.Promise<boolean>;
             /**
              * Starts asynchronous initialization of the object implementing the
              * interface. This must be done before any real use of the object after
-             * initial construction. If the object also implements #GInitable you can
-             * optionally call g_initable_init() instead.
+             * initial construction. If the object also implements {@link Gio.Initable} you can
+             * optionally call `g_initable_init()` instead.
              *
              * This method is intended for language bindings. If writing in C,
-             * g_async_initable_new_async() should typically be used instead.
+             * `g_async_initable_new_async()` should typically be used instead.
              *
              * When the initialization is finished, `callback` will be called. You can
-             * then call g_async_initable_init_finish() to get the result of the
+             * then call `g_async_initable_init_finish()` to get the result of the
              * initialization.
              *
              * Implementations may also support cancellation. If `cancellable` is not
-             * %NULL, then initialization can be cancelled by triggering the cancellable
+             * `null`, then initialization can be cancelled by triggering the cancellable
              * object from another thread. If the operation was cancelled, the error
-             * %G_IO_ERROR_CANCELLED will be returned. If `cancellable` is not %NULL, and
+             * {@link Gio.IOErrorEnum.CANCELLED} will be returned. If `cancellable` is not `null`, and
              * the object doesn't support cancellable initialization, the error
-             * %G_IO_ERROR_NOT_SUPPORTED will be returned.
+             * {@link Gio.IOErrorEnum.NOT_SUPPORTED} will be returned.
              *
-             * As with #GInitable, if the object is not initialized, or initialization
+             * As with {@link Gio.Initable}, if the object is not initialized, or initialization
              * returns with an error, then all operations on the object except
-             * g_object_ref() and g_object_unref() are considered to be invalid, and
-             * have undefined behaviour. They will often fail with g_critical() or
-             * g_warning(), but this must not be relied on.
+             * `g_object_ref()` and `g_object_unref()` are considered to be invalid, and
+             * have undefined behaviour. They will often fail with `g_critical()` or
+             * `g_warning()`, but this must not be relied on.
              *
-             * Callers should not assume that a class which implements #GAsyncInitable can
-             * be initialized multiple times; for more information, see g_initable_init().
+             * Callers should not assume that a class which implements {@link Gio.AsyncInitable} can
+             * be initialized multiple times; for more information, see `g_initable_init()`.
              * If a class explicitly supports being initialized multiple times,
-             * implementation requires yielding all subsequent calls to init_async() on the
+             * implementation requires yielding all subsequent calls to `init_async()` on the
              * results of the first call.
              *
-             * For classes that also support the #GInitable interface, the default
-             * implementation of this method will run the g_initable_init() function
+             * For classes that also support the {@link Gio.Initable} interface, the default
+             * implementation of this method will run the `g_initable_init()` function
              * in a thread, so if you want to support asynchronous initialization via
-             * threads, just implement the #GAsyncInitable interface without overriding
+             * threads, just implement the {@link Gio.AsyncInitable} interface without overriding
              * any interface methods.
              * @param io_priority the [I/O priority](iface.AsyncResult.html#io-priority) of the operation
-             * @param cancellable optional #GCancellable object, %NULL to ignore.
-             * @param callback a #GAsyncReadyCallback to call when the request is satisfied
+             * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
+             * @param callback a {@link Gio.AsyncReadyCallback} to call when the request is satisfied
              */
             init_async(
                 io_priority: number,
@@ -5546,43 +5767,43 @@ declare module 'gi://Gcr?version=3' {
             /**
              * Starts asynchronous initialization of the object implementing the
              * interface. This must be done before any real use of the object after
-             * initial construction. If the object also implements #GInitable you can
-             * optionally call g_initable_init() instead.
+             * initial construction. If the object also implements {@link Gio.Initable} you can
+             * optionally call `g_initable_init()` instead.
              *
              * This method is intended for language bindings. If writing in C,
-             * g_async_initable_new_async() should typically be used instead.
+             * `g_async_initable_new_async()` should typically be used instead.
              *
              * When the initialization is finished, `callback` will be called. You can
-             * then call g_async_initable_init_finish() to get the result of the
+             * then call `g_async_initable_init_finish()` to get the result of the
              * initialization.
              *
              * Implementations may also support cancellation. If `cancellable` is not
-             * %NULL, then initialization can be cancelled by triggering the cancellable
+             * `null`, then initialization can be cancelled by triggering the cancellable
              * object from another thread. If the operation was cancelled, the error
-             * %G_IO_ERROR_CANCELLED will be returned. If `cancellable` is not %NULL, and
+             * {@link Gio.IOErrorEnum.CANCELLED} will be returned. If `cancellable` is not `null`, and
              * the object doesn't support cancellable initialization, the error
-             * %G_IO_ERROR_NOT_SUPPORTED will be returned.
+             * {@link Gio.IOErrorEnum.NOT_SUPPORTED} will be returned.
              *
-             * As with #GInitable, if the object is not initialized, or initialization
+             * As with {@link Gio.Initable}, if the object is not initialized, or initialization
              * returns with an error, then all operations on the object except
-             * g_object_ref() and g_object_unref() are considered to be invalid, and
-             * have undefined behaviour. They will often fail with g_critical() or
-             * g_warning(), but this must not be relied on.
+             * `g_object_ref()` and `g_object_unref()` are considered to be invalid, and
+             * have undefined behaviour. They will often fail with `g_critical()` or
+             * `g_warning()`, but this must not be relied on.
              *
-             * Callers should not assume that a class which implements #GAsyncInitable can
-             * be initialized multiple times; for more information, see g_initable_init().
+             * Callers should not assume that a class which implements {@link Gio.AsyncInitable} can
+             * be initialized multiple times; for more information, see `g_initable_init()`.
              * If a class explicitly supports being initialized multiple times,
-             * implementation requires yielding all subsequent calls to init_async() on the
+             * implementation requires yielding all subsequent calls to `init_async()` on the
              * results of the first call.
              *
-             * For classes that also support the #GInitable interface, the default
-             * implementation of this method will run the g_initable_init() function
+             * For classes that also support the {@link Gio.Initable} interface, the default
+             * implementation of this method will run the `g_initable_init()` function
              * in a thread, so if you want to support asynchronous initialization via
-             * threads, just implement the #GAsyncInitable interface without overriding
+             * threads, just implement the {@link Gio.AsyncInitable} interface without overriding
              * any interface methods.
              * @param io_priority the [I/O priority](iface.AsyncResult.html#io-priority) of the operation
-             * @param cancellable optional #GCancellable object, %NULL to ignore.
-             * @param callback a #GAsyncReadyCallback to call when the request is satisfied
+             * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
+             * @param callback a {@link Gio.AsyncReadyCallback} to call when the request is satisfied
              */
             init_async(
                 io_priority: number,
@@ -5591,58 +5812,59 @@ declare module 'gi://Gcr?version=3' {
             ): globalThis.Promise<boolean> | void;
             /**
              * Finishes asynchronous initialization and returns the result.
-             * See g_async_initable_init_async().
-             * @param res a #GAsyncResult.
-             * @returns %TRUE if successful. If an error has occurred, this function will return %FALSE and set @error appropriately if present.
+             * See `g_async_initable_init_async()`.
+             * @param res a {@link Gio.AsyncResult}.
+             * @returns `true` if successful. If an error has occurred, this function will return `false` and set `error` appropriately if present.
              */
             init_finish(res: Gio.AsyncResult): boolean;
             /**
              * Finishes the async construction for the various g_async_initable_new
-             * calls, returning the created object or %NULL on error.
-             * @param res the #GAsyncResult from the callback
-             * @returns a newly created #GObject,      or %NULL on error. Free with g_object_unref().
+             * calls, returning the created object or `null` on error.
+             * @param res the {@link Gio.AsyncResult} from the callback
+             * @returns a newly created {@link GObject.Object},      or `null` on error. Free with `g_object_unref()`.
              */
             new_finish(res: Gio.AsyncResult): SystemPrompt;
             /**
              * Starts asynchronous initialization of the object implementing the
              * interface. This must be done before any real use of the object after
-             * initial construction. If the object also implements #GInitable you can
-             * optionally call g_initable_init() instead.
+             * initial construction. If the object also implements {@link Gio.Initable} you can
+             * optionally call `g_initable_init()` instead.
              *
              * This method is intended for language bindings. If writing in C,
-             * g_async_initable_new_async() should typically be used instead.
+             * `g_async_initable_new_async()` should typically be used instead.
              *
              * When the initialization is finished, `callback` will be called. You can
-             * then call g_async_initable_init_finish() to get the result of the
+             * then call `g_async_initable_init_finish()` to get the result of the
              * initialization.
              *
              * Implementations may also support cancellation. If `cancellable` is not
-             * %NULL, then initialization can be cancelled by triggering the cancellable
+             * `null`, then initialization can be cancelled by triggering the cancellable
              * object from another thread. If the operation was cancelled, the error
-             * %G_IO_ERROR_CANCELLED will be returned. If `cancellable` is not %NULL, and
+             * {@link Gio.IOErrorEnum.CANCELLED} will be returned. If `cancellable` is not `null`, and
              * the object doesn't support cancellable initialization, the error
-             * %G_IO_ERROR_NOT_SUPPORTED will be returned.
+             * {@link Gio.IOErrorEnum.NOT_SUPPORTED} will be returned.
              *
-             * As with #GInitable, if the object is not initialized, or initialization
+             * As with {@link Gio.Initable}, if the object is not initialized, or initialization
              * returns with an error, then all operations on the object except
-             * g_object_ref() and g_object_unref() are considered to be invalid, and
-             * have undefined behaviour. They will often fail with g_critical() or
-             * g_warning(), but this must not be relied on.
+             * `g_object_ref()` and `g_object_unref()` are considered to be invalid, and
+             * have undefined behaviour. They will often fail with `g_critical()` or
+             * `g_warning()`, but this must not be relied on.
              *
-             * Callers should not assume that a class which implements #GAsyncInitable can
-             * be initialized multiple times; for more information, see g_initable_init().
+             * Callers should not assume that a class which implements {@link Gio.AsyncInitable} can
+             * be initialized multiple times; for more information, see `g_initable_init()`.
              * If a class explicitly supports being initialized multiple times,
-             * implementation requires yielding all subsequent calls to init_async() on the
+             * implementation requires yielding all subsequent calls to `init_async()` on the
              * results of the first call.
              *
-             * For classes that also support the #GInitable interface, the default
-             * implementation of this method will run the g_initable_init() function
+             * For classes that also support the {@link Gio.Initable} interface, the default
+             * implementation of this method will run the `g_initable_init()` function
              * in a thread, so if you want to support asynchronous initialization via
-             * threads, just implement the #GAsyncInitable interface without overriding
+             * threads, just implement the {@link Gio.AsyncInitable} interface without overriding
              * any interface methods.
              * @param io_priority the [I/O priority](iface.AsyncResult.html#io-priority) of the operation
-             * @param cancellable optional #GCancellable object, %NULL to ignore.
-             * @param callback a #GAsyncReadyCallback to call when the request is satisfied
+             * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
+             * @param callback a {@link Gio.AsyncReadyCallback} to call when the request is satisfied
+             * @virtual
              */
             vfunc_init_async(
                 io_priority: number,
@@ -5651,36 +5873,37 @@ declare module 'gi://Gcr?version=3' {
             ): void;
             /**
              * Finishes asynchronous initialization and returns the result.
-             * See g_async_initable_init_async().
-             * @param res a #GAsyncResult.
+             * See `g_async_initable_init_async()`.
+             * @param res a {@link Gio.AsyncResult}.
+             * @virtual
              */
             vfunc_init_finish(res: Gio.AsyncResult): boolean;
             /**
              * Initializes the object implementing the interface.
              *
              * This method is intended for language bindings. If writing in C,
-             * g_initable_new() should typically be used instead.
+             * `g_initable_new()` should typically be used instead.
              *
              * The object must be initialized before any real use after initial
-             * construction, either with this function or g_async_initable_init_async().
+             * construction, either with this function or `g_async_initable_init_async()`.
              *
-             * Implementations may also support cancellation. If `cancellable` is not %NULL,
+             * Implementations may also support cancellation. If `cancellable` is not `null`,
              * then initialization can be cancelled by triggering the cancellable object
              * from another thread. If the operation was cancelled, the error
-             * %G_IO_ERROR_CANCELLED will be returned. If `cancellable` is not %NULL and
+             * {@link Gio.IOErrorEnum.CANCELLED} will be returned. If `cancellable` is not `null` and
              * the object doesn't support cancellable initialization the error
-             * %G_IO_ERROR_NOT_SUPPORTED will be returned.
+             * {@link Gio.IOErrorEnum.NOT_SUPPORTED} will be returned.
              *
              * If the object is not initialized, or initialization returns with an
-             * error, then all operations on the object except g_object_ref() and
-             * g_object_unref() are considered to be invalid, and have undefined
-             * behaviour. See the [description][iface`Gio`.Initable#description] for more details.
+             * error, then all operations on the object except `g_object_ref()` and
+             * `g_object_unref()` are considered to be invalid, and have undefined
+             * behaviour. See the [description][iface@Gio.Initable#description] for more details.
              *
-             * Callers should not assume that a class which implements #GInitable can be
+             * Callers should not assume that a class which implements {@link Gio.Initable} can be
              * initialized multiple times, unless the class explicitly documents itself as
-             * supporting this. Generally, a class’ implementation of init() can assume
+             * supporting this. Generally, a class’ implementation of `init()` can assume
              * (and assert) that it will only be called once. Previously, this documentation
-             * recommended all #GInitable implementations should be idempotent; that
+             * recommended all {@link Gio.Initable} implementations should be idempotent; that
              * recommendation was relaxed in GLib 2.54.
              *
              * If a class explicitly supports being initialized multiple times, it is
@@ -5690,40 +5913,40 @@ declare module 'gi://Gcr?version=3' {
              *
              * One reason why a class might need to support idempotent initialization is if
              * it is designed to be used via the singleton pattern, with a
-             * #GObjectClass.constructor that sometimes returns an existing instance.
-             * In this pattern, a caller would expect to be able to call g_initable_init()
-             * on the result of g_object_new(), regardless of whether it is in fact a new
+             * {@link GObject.ObjectClass}.constructor that sometimes returns an existing instance.
+             * In this pattern, a caller would expect to be able to call `g_initable_init()`
+             * on the result of `g_object_new()`, regardless of whether it is in fact a new
              * instance.
-             * @param cancellable optional #GCancellable object, %NULL to ignore.
-             * @returns %TRUE if successful. If an error has occurred, this function will     return %FALSE and set @error appropriately if present.
+             * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
+             * @returns `true` if successful. If an error has occurred, this function will     return `false` and set `error` appropriately if present.
              */
             init(cancellable?: Gio.Cancellable | null): boolean;
             /**
              * Initializes the object implementing the interface.
              *
              * This method is intended for language bindings. If writing in C,
-             * g_initable_new() should typically be used instead.
+             * `g_initable_new()` should typically be used instead.
              *
              * The object must be initialized before any real use after initial
-             * construction, either with this function or g_async_initable_init_async().
+             * construction, either with this function or `g_async_initable_init_async()`.
              *
-             * Implementations may also support cancellation. If `cancellable` is not %NULL,
+             * Implementations may also support cancellation. If `cancellable` is not `null`,
              * then initialization can be cancelled by triggering the cancellable object
              * from another thread. If the operation was cancelled, the error
-             * %G_IO_ERROR_CANCELLED will be returned. If `cancellable` is not %NULL and
+             * {@link Gio.IOErrorEnum.CANCELLED} will be returned. If `cancellable` is not `null` and
              * the object doesn't support cancellable initialization the error
-             * %G_IO_ERROR_NOT_SUPPORTED will be returned.
+             * {@link Gio.IOErrorEnum.NOT_SUPPORTED} will be returned.
              *
              * If the object is not initialized, or initialization returns with an
-             * error, then all operations on the object except g_object_ref() and
-             * g_object_unref() are considered to be invalid, and have undefined
-             * behaviour. See the [description][iface`Gio`.Initable#description] for more details.
+             * error, then all operations on the object except `g_object_ref()` and
+             * `g_object_unref()` are considered to be invalid, and have undefined
+             * behaviour. See the [description][iface@Gio.Initable#description] for more details.
              *
-             * Callers should not assume that a class which implements #GInitable can be
+             * Callers should not assume that a class which implements {@link Gio.Initable} can be
              * initialized multiple times, unless the class explicitly documents itself as
-             * supporting this. Generally, a class’ implementation of init() can assume
+             * supporting this. Generally, a class’ implementation of `init()` can assume
              * (and assert) that it will only be called once. Previously, this documentation
-             * recommended all #GInitable implementations should be idempotent; that
+             * recommended all {@link Gio.Initable} implementations should be idempotent; that
              * recommendation was relaxed in GLib 2.54.
              *
              * If a class explicitly supports being initialized multiple times, it is
@@ -5733,11 +5956,12 @@ declare module 'gi://Gcr?version=3' {
              *
              * One reason why a class might need to support idempotent initialization is if
              * it is designed to be used via the singleton pattern, with a
-             * #GObjectClass.constructor that sometimes returns an existing instance.
-             * In this pattern, a caller would expect to be able to call g_initable_init()
-             * on the result of g_object_new(), regardless of whether it is in fact a new
+             * {@link GObject.ObjectClass}.constructor that sometimes returns an existing instance.
+             * In this pattern, a caller would expect to be able to call `g_initable_init()`
+             * on the result of `g_object_new()`, regardless of whether it is in fact a new
              * instance.
-             * @param cancellable optional #GCancellable object, %NULL to ignore.
+             * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
+             * @virtual
              */
             vfunc_init(cancellable?: Gio.Cancellable | null): boolean;
             /**
@@ -5753,32 +5977,32 @@ declare module 'gi://Gcr?version=3' {
              * ```
              *
              *
-             * Will result in the "sensitive" property of the widget #GObject instance to be
-             * updated with the same value of the "active" property of the action #GObject
+             * Will result in the "sensitive" property of the widget {@link GObject.Object} instance to be
+             * updated with the same value of the "active" property of the action {@link GObject.Object}
              * instance.
              *
-             * If `flags` contains %G_BINDING_BIDIRECTIONAL then the binding will be mutual:
+             * If `flags` contains {@link GObject.BindingFlags.BIDIRECTIONAL} then the binding will be mutual:
              * if `target_property` on `target` changes then the `source_property` on `source`
              * will be updated as well.
              *
              * The binding will automatically be removed when either the `source` or the
              * `target` instances are finalized. To remove the binding without affecting the
-             * `source` and the `target` you can just call g_object_unref() on the returned
-             * #GBinding instance.
+             * `source` and the `target` you can just call `g_object_unref()` on the returned
+             * {@link GObject.Binding} instance.
              *
-             * Removing the binding by calling g_object_unref() on it must only be done if
+             * Removing the binding by calling `g_object_unref()` on it must only be done if
              * the binding, `source` and `target` are only used from a single thread and it
              * is clear that both `source` and `target` outlive the binding. Especially it
              * is not safe to rely on this if the binding, `source` or `target` can be
              * finalized from different threads. Keep another reference to the binding and
-             * use g_binding_unbind() instead to be on the safe side.
+             * use `g_binding_unbind()` instead to be on the safe side.
              *
-             * A #GObject can have multiple bindings.
-             * @param source_property the property on @source to bind
-             * @param target the target #GObject
-             * @param target_property the property on @target to bind
-             * @param flags flags to pass to #GBinding
-             * @returns the #GBinding instance representing the     binding between the two #GObject instances. The binding is released     whenever the #GBinding reference count reaches zero.
+             * A {@link GObject.Object} can have multiple bindings.
+             * @param source_property the property on `source` to bind
+             * @param target the target {@link GObject.Object}
+             * @param target_property the property on `target` to bind
+             * @param flags flags to pass to {@link GObject.Binding}
+             * @returns the {@link GObject.Binding} instance representing the     binding between the two {@link GObject.Object} instances. The binding is released     whenever the {@link GObject.Binding} reference count reaches zero.
              */
             bind_property(
                 source_property: string,
@@ -5787,39 +6011,39 @@ declare module 'gi://Gcr?version=3' {
                 flags: GObject.BindingFlags | null,
             ): GObject.Binding;
             /**
-             * Complete version of g_object_bind_property().
+             * Complete version of `g_object_bind_property()`.
              *
              * Creates a binding between `source_property` on `source` and `target_property`
-             * on `target,` allowing you to set the transformation functions to be used by
+             * on `target`, allowing you to set the transformation functions to be used by
              * the binding.
              *
-             * If `flags` contains %G_BINDING_BIDIRECTIONAL then the binding will be mutual:
+             * If `flags` contains {@link GObject.BindingFlags.BIDIRECTIONAL} then the binding will be mutual:
              * if `target_property` on `target` changes then the `source_property` on `source`
              * will be updated as well. The `transform_from` function is only used in case
              * of bidirectional bindings, otherwise it will be ignored
              *
              * The binding will automatically be removed when either the `source` or the
              * `target` instances are finalized. This will release the reference that is
-             * being held on the #GBinding instance; if you want to hold on to the
-             * #GBinding instance, you will need to hold a reference to it.
+             * being held on the {@link GObject.Binding} instance; if you want to hold on to the
+             * {@link GObject.Binding} instance, you will need to hold a reference to it.
              *
-             * To remove the binding, call g_binding_unbind().
+             * To remove the binding, call `g_binding_unbind()`.
              *
-             * A #GObject can have multiple bindings.
+             * A {@link GObject.Object} can have multiple bindings.
              *
              * The same `user_data` parameter will be used for both `transform_to`
              * and `transform_from` transformation functions; the `notify` function will
              * be called once, when the binding is removed. If you need different data
              * for each transformation function, please use
-             * g_object_bind_property_with_closures() instead.
-             * @param source_property the property on @source to bind
-             * @param target the target #GObject
-             * @param target_property the property on @target to bind
-             * @param flags flags to pass to #GBinding
-             * @param transform_to the transformation function     from the @source to the @target, or %NULL to use the default
-             * @param transform_from the transformation function     from the @target to the @source, or %NULL to use the default
-             * @param notify a function to call when disposing the binding, to free     resources used by the transformation functions, or %NULL if not required
-             * @returns the #GBinding instance representing the     binding between the two #GObject instances. The binding is released     whenever the #GBinding reference count reaches zero.
+             * `g_object_bind_property_with_closures()` instead.
+             * @param source_property the property on `source` to bind
+             * @param target the target {@link GObject.Object}
+             * @param target_property the property on `target` to bind
+             * @param flags flags to pass to {@link GObject.Binding}
+             * @param transform_to the transformation function     from the `source` to the `target`, or `null` to use the default
+             * @param transform_from the transformation function     from the `target` to the `source`, or `null` to use the default
+             * @param notify a function to call when disposing the binding, to free     resources used by the transformation functions, or `null` if not required
+             * @returns the {@link GObject.Binding} instance representing the     binding between the two {@link GObject.Object} instances. The binding is released     whenever the {@link GObject.Binding} reference count reaches zero.
              */
             bind_property_full(
                 source_property: string,
@@ -5830,13 +6054,16 @@ declare module 'gi://Gcr?version=3' {
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
             ): GObject.Binding;
+            /**
+             * @param args
+             */
             // Conflicted with GObject.Object.bind_property_full
             bind_property_full(...args: never[]): any;
             /**
-             * This function is intended for #GObject implementations to re-enforce
+             * This function is intended for {@link GObject.Object} implementations to re-enforce
              * a [floating][floating-ref] object reference. Doing this is seldom
-             * required: all #GInitiallyUnowneds are created with a floating reference
-             * which usually just needs to be sunken by calling g_object_ref_sink().
+             * required: all `GInitiallyUnowneds` are created with a floating reference
+             * which usually just needs to be sunken by calling `g_object_ref_sink()`.
              */
             force_floating(): void;
             /**
@@ -5844,7 +6071,7 @@ declare module 'gi://Gcr?version=3' {
              * non-zero, the emission of "notify" signals on `object` is
              * stopped. The signals are queued until the freeze count is decreased
              * to zero. Duplicate notifications are squashed so that at most one
-             * #GObject::notify signal is emitted for each property modified while the
+             * {@link GObject.Object.SignalSignatures.notify | GObject.Object::notify} signal is emitted for each property modified while the
              * object is frozen.
              *
              * This is necessary for accessors that modify multiple properties to prevent
@@ -5852,9 +6079,9 @@ declare module 'gi://Gcr?version=3' {
              */
             freeze_notify(): void;
             /**
-             * Gets a named field from the objects table of associations (see g_object_set_data()).
+             * Gets a named field from the objects table of associations (see `g_object_set_data()`).
              * @param key name of the key for that association
-             * @returns the data if found,          or %NULL if no such data exists.
+             * @returns the data if found,          or `null` if no such data exists.
              */
             get_data(key: string): any | null;
             /**
@@ -5874,9 +6101,9 @@ declare module 'gi://Gcr?version=3' {
             get_property(property_name: string, value: GObject.Value | any): any;
             /**
              * This function gets back user data pointers stored via
-             * g_object_set_qdata().
-             * @param quark A #GQuark, naming the user data pointer
-             * @returns The user data pointer set, or %NULL
+             * `g_object_set_qdata()`.
+             * @param quark A {@link GLib.Quark}, naming the user data pointer
+             * @returns The user data pointer set, or `null`
              */
             get_qdata(quark: GLib.Quark): any | null;
             /**
@@ -5890,33 +6117,33 @@ declare module 'gi://Gcr?version=3' {
             getv(names: string[], values: (GObject.Value | any)[]): void;
             /**
              * Checks whether `object` has a [floating][floating-ref] reference.
-             * @returns %TRUE if @object has a floating reference
+             * @returns `true` if `object` has a floating reference
              */
             is_floating(): boolean;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
              * When possible, eg. when signaling a property change from within the class
-             * that registered the property, you should use g_object_notify_by_pspec()
+             * that registered the property, you should use `g_object_notify_by_pspec()`
              * instead.
              *
              * Note that emission of the notify signal may be blocked with
-             * g_object_freeze_notify(). In this case, the signal emissions are queued
-             * and will be emitted (in reverse order) when g_object_thaw_notify() is
+             * `g_object_freeze_notify()`. In this case, the signal emissions are queued
+             * and will be emitted (in reverse order) when `g_object_thaw_notify()` is
              * called.
-             * @param property_name the name of a property installed on the class of @object.
+             * @param property_name the name of a property installed on the class of `object`.
              */
             notify(property_name: string): void;
             /**
              * Emits a "notify" signal for the property specified by `pspec` on `object`.
              *
              * This function omits the property name lookup, hence it is faster than
-             * g_object_notify().
+             * `g_object_notify()`.
              *
-             * One way to avoid using g_object_notify() from within the
-             * class that registered the properties, and using g_object_notify_by_pspec()
+             * One way to avoid using `g_object_notify()` from within the
+             * class that registered the properties, and using `g_object_notify_by_pspec()`
              * instead, is to store the GParamSpec used with
-             * g_object_class_install_property() inside a static array, e.g.:
+             * `g_object_class_install_property()` inside a static array, e.g.:
              *
              *
              * ```c
@@ -5949,21 +6176,21 @@ declare module 'gi://Gcr?version=3' {
              *   g_object_notify_by_pspec (self, properties[PROP_FOO]);
              * ```
              *
-             * @param pspec the #GParamSpec of a property installed on the class of @object.
+             * @param pspec the {@link GObject.ParamSpec} of a property installed on the class of `object`.
              */
             notify_by_pspec(pspec: GObject.ParamSpec): void;
             /**
              * Increases the reference count of `object`.
              *
              * Since GLib 2.56, if `GLIB_VERSION_MAX_ALLOWED` is 2.56 or greater, the type
-             * of `object` will be propagated to the return type (using the GCC typeof()
+             * of `object` will be propagated to the return type (using the GCC `typeof()`
              * extension), so any casting the caller needs to do on the return type must be
              * explicit.
-             * @returns the same @object
+             * @returns the same `object`
              */
             ref(): GObject.Object;
             /**
-             * Increase the reference count of `object,` and possibly remove the
+             * Increase the reference count of `object`, and possibly remove the
              * [floating][floating-ref] reference, if `object` has a floating reference.
              *
              * In other words, if the object is floating, then this call "assumes
@@ -5973,8 +6200,8 @@ declare module 'gi://Gcr?version=3' {
              * adds a new normal reference increasing the reference count by one.
              *
              * Since GLib 2.56, the type of `object` will be propagated to the return type
-             * under the same conditions as for g_object_ref().
-             * @returns @object
+             * under the same conditions as for `g_object_ref()`.
+             * @returns `object`
              */
             ref_sink(): GObject.Object;
             /**
@@ -5991,10 +6218,10 @@ declare module 'gi://Gcr?version=3' {
              * If the object already had an association with that name,
              * the old association will be destroyed.
              *
-             * Internally, the `key` is converted to a #GQuark using g_quark_from_string().
+             * Internally, the `key` is converted to a {@link GLib.Quark} using `g_quark_from_string()`.
              * This means a copy of `key` is kept permanently (even after `object` has been
              * finalized) — so it is recommended to only use a small, bounded set of values
-             * for `key` in your program, to avoid the #GQuark storage growing unbounded.
+             * for `key` in your program, to avoid the {@link GLib.Quark} storage growing unbounded.
              * @param key name of the key
              * @param data data to associate with that key
              */
@@ -6009,13 +6236,13 @@ declare module 'gi://Gcr?version=3' {
              * Remove a specified datum from the object's data associations,
              * without invoking the association's destroy handler.
              * @param key name of the key
-             * @returns the data if found, or %NULL          if no such data exists.
+             * @returns the data if found, or `null`          if no such data exists.
              */
             steal_data(key: string): any | null;
             /**
              * This function gets back user data pointers stored via
-             * g_object_set_qdata() and removes the `data` from object
-             * without invoking its destroy() function (if any was
+             * `g_object_set_qdata()` and removes the `data` from object
+             * without invoking its `destroy()` function (if any was
              * set).
              * Usually, calling this function is only required to update
              * user data pointers with a destroy notifier, for example:
@@ -6046,21 +6273,21 @@ declare module 'gi://Gcr?version=3' {
              * }
              * ```
              *
-             * Using g_object_get_qdata() in the above example, instead of
-             * g_object_steal_qdata() would have left the destroy function set,
+             * Using `g_object_get_qdata()` in the above example, instead of
+             * `g_object_steal_qdata()` would have left the destroy function set,
              * and thus the partial string list would have been freed upon
-             * g_object_set_qdata_full().
-             * @param quark A #GQuark, naming the user data pointer
-             * @returns The user data pointer set, or %NULL
+             * `g_object_set_qdata_full()`.
+             * @param quark A {@link GLib.Quark}, naming the user data pointer
+             * @returns The user data pointer set, or `null`
              */
             steal_qdata(quark: GLib.Quark): any | null;
             /**
              * Reverts the effect of a previous call to
-             * g_object_freeze_notify(). The freeze count is decreased on `object`
+             * `g_object_freeze_notify()`. The freeze count is decreased on `object`
              * and when it reaches zero, queued "notify" signals are emitted.
              *
              * Duplicate notifications for each property are squashed so that at most one
-             * #GObject::notify signal is emitted for each property, in the reverse order
+             * {@link GObject.Object.SignalSignatures.notify | GObject.Object::notify} signal is emitted for each property, in the reverse order
              * in which they have been queued.
              *
              * It is an error to call this function when the freeze count is zero.
@@ -6070,33 +6297,34 @@ declare module 'gi://Gcr?version=3' {
              * Decreases the reference count of `object`. When its reference count
              * drops to 0, the object is finalized (i.e. its memory is freed).
              *
-             * If the pointer to the #GObject may be reused in future (for example, if it is
+             * If the pointer to the {@link GObject.Object} may be reused in future (for example, if it is
              * an instance variable of another object), it is recommended to clear the
-             * pointer to %NULL rather than retain a dangling pointer to a potentially
-             * invalid #GObject instance. Use g_clear_object() for this.
+             * pointer to `null` rather than retain a dangling pointer to a potentially
+             * invalid {@link GObject.Object} instance. Use `g_clear_object()` for this.
              */
             unref(): void;
             /**
              * This function essentially limits the life time of the `closure` to
              * the life time of the object. That is, when the object is finalized,
-             * the `closure` is invalidated by calling g_closure_invalidate() on
+             * the `closure` is invalidated by calling `g_closure_invalidate()` on
              * it, in order to prevent invocations of the closure with a finalized
-             * (nonexisting) object. Also, g_object_ref() and g_object_unref() are
-             * added as marshal guards to the `closure,` to ensure that an extra
+             * (nonexisting) object. Also, `g_object_ref()` and `g_object_unref()` are
+             * added as marshal guards to the `closure`, to ensure that an extra
              * reference count is held on `object` during invocation of the
              * `closure`.  Usually, this function will be called on closures that
              * use this `object` as closure data.
-             * @param closure #GClosure to watch
+             * @param closure {@link GObject.Closure} to watch
              */
             watch_closure(closure: GObject.Closure): void;
             /**
-             * the `constructed` function is called by g_object_new() as the
+             * the `constructed` function is called by `g_object_new()` as the
              *  final step of the object creation process.  At the point of the call, all
              *  construction properties have been set on the object.  The purpose of this
              *  call is to allow for object initialisation steps that can only be performed
              *  after construction properties have been set.  `constructed` implementors
              *  should chain up to the `constructed` call of their parent class to allow it
              *  to complete its initialisation.
+             * @virtual
              */
             vfunc_constructed(): void;
             /**
@@ -6105,6 +6333,7 @@ declare module 'gi://Gcr?version=3' {
              *  needed.
              * @param n_pspecs
              * @param pspecs
+             * @virtual
              */
             vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void;
             /**
@@ -6113,12 +6342,14 @@ declare module 'gi://Gcr?version=3' {
              *  invocations still work. It may be run multiple times (due to reference
              *  loops). Before returning, `dispose` should chain up to the `dispose` method
              *  of the parent class.
+             * @virtual
              */
             vfunc_dispose(): void;
             /**
              * instance finalization function, should finish the finalization of
              *  the instance begun in `dispose` and chain up to the `finalize` method of the
              *  parent class.
+             * @virtual
              */
             vfunc_finalize(): void;
             /**
@@ -6127,20 +6358,22 @@ declare module 'gi://Gcr?version=3' {
              * @param property_id
              * @param value
              * @param pspec
+             * @virtual
              */
             vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
              * When possible, eg. when signaling a property change from within the class
-             * that registered the property, you should use g_object_notify_by_pspec()
+             * that registered the property, you should use `g_object_notify_by_pspec()`
              * instead.
              *
              * Note that emission of the notify signal may be blocked with
-             * g_object_freeze_notify(). In this case, the signal emissions are queued
-             * and will be emitted (in reverse order) when g_object_thaw_notify() is
+             * `g_object_freeze_notify()`. In this case, the signal emissions are queued
+             * and will be emitted (in reverse order) when `g_object_thaw_notify()` is
              * called.
              * @param pspec
+             * @virtual
              */
             vfunc_notify(pspec: GObject.ParamSpec): void;
             /**
@@ -6152,6 +6385,7 @@ declare module 'gi://Gcr?version=3' {
              * @param property_id
              * @param value
              * @param pspec
+             * @virtual
              */
             vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
             /**
@@ -6184,6 +6418,14 @@ declare module 'gi://Gcr?version=3' {
         namespace SystemPrompter {
             // Signal signatures
             interface SignalSignatures extends GObject.Object.SignalSignatures {
+                /**
+                 * Signal emitted to create a new prompt when needed.
+                 *
+                 * The default implementation of this signal creates a prompt of the type
+                 * `gcr_system_prompter_get_prompt_type()`.
+                 * @signal
+                 * @run-last
+                 */
                 'new-prompt': () => Prompt;
                 'notify::prompt-type': (pspec: GObject.ParamSpec) => void;
                 'notify::prompting': (pspec: GObject.ParamSpec) => void;
@@ -6201,14 +6443,15 @@ declare module 'gi://Gcr?version=3' {
         /**
          * A prompter used by implementations of system prompts.
          *
-         * This is a D-Bus service which is rarely implemented. Use [class`SystemPrompt]`
+         * This is a D-Bus service which is rarely implemented. Use {@link SystemPrompt}
          * to display system prompts.
          *
          * The system prompter service responds to D-Bus requests to create system
-         * prompts and creates #GcrPrompt type objects to display those prompts.
+         * prompts and creates {@link Gcr.Prompt} type objects to display those prompts.
          *
-         * Pass the GType of the implementation of [iface`Prompt]` to
-         * [ctor`SystemPrompter`.new].
+         * Pass the GType of the implementation of {@link Prompt} to
+         * {@link SystemPrompter.new}.
+         * @gir-type Class
          */
         class SystemPrompter extends GObject.Object {
             static $gtype: GObject.GType<SystemPrompter>;
@@ -6216,17 +6459,20 @@ declare module 'gi://Gcr?version=3' {
             // Properties
 
             /**
-             * The #GType for prompts created by this prompter. This must be a
-             * #GcrPrompt implementation.
+             * The {@link GObject.GType} for prompts created by this prompter. This must be a
+             * {@link Gcr.Prompt} implementation.
+             * @construct-only
              */
             get prompt_type(): GObject.GType;
             /**
-             * The #GType for prompts created by this prompter. This must be a
-             * #GcrPrompt implementation.
+             * The {@link GObject.GType} for prompts created by this prompter. This must be a
+             * {@link Gcr.Prompt} implementation.
+             * @construct-only
              */
             get promptType(): GObject.GType;
             /**
              * Whether the prompter is prompting or not.
+             * @read-only
              */
             get prompting(): boolean;
 
@@ -6249,16 +6495,19 @@ declare module 'gi://Gcr?version=3' {
 
             // Signals
 
+            /** @signal */
             connect<K extends keyof SystemPrompter.SignalSignatures>(
                 signal: K,
                 callback: GObject.SignalCallback<this, SystemPrompter.SignalSignatures[K]>,
             ): number;
             connect(signal: string, callback: (...args: any[]) => any): number;
+            /** @signal */
             connect_after<K extends keyof SystemPrompter.SignalSignatures>(
                 signal: K,
                 callback: GObject.SignalCallback<this, SystemPrompter.SignalSignatures[K]>,
             ): number;
             connect_after(signal: string, callback: (...args: any[]) => any): number;
+            /** @signal */
             emit<K extends keyof SystemPrompter.SignalSignatures>(
                 signal: K,
                 ...args: GObject.GjsParameters<SystemPrompter.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never
@@ -6271,15 +6520,15 @@ declare module 'gi://Gcr?version=3' {
              * Get the mode for this prompter.
              *
              * Most system prompters only display one prompt at a time and therefore
-             * return %GCR_SYSTEM_PROMPTER_SINGLE.
+             * return {@link Gcr.SystemPrompterMode.SINGLE}.
              * @returns the prompter mode
              */
             get_mode(): SystemPrompterMode;
             /**
-             * Get the #GType for prompts created by this prompter.
+             * Get the {@link GObject.GType} for prompts created by this prompter.
              *
-             * The returned #GType will be a #GcrPrompt implementation.
-             * @returns the prompt #GType
+             * The returned {@link GObject.GType} will be a {@link Gcr.Prompt} implementation.
+             * @returns the prompt {@link GObject.GType}
              */
             get_prompt_type(): GObject.GType;
             /**
@@ -6291,7 +6540,7 @@ declare module 'gi://Gcr?version=3' {
              * Register this system prompter on the DBus `connection`.
              *
              * This makes the prompter available for clients to call. The prompter will
-             * remain registered until gcr_system_prompter_unregister() is called, or the
+             * remain registered until `gcr_system_prompter_unregister()` is called, or the
              * prompter is unreferenced.
              * @param connection a DBus connection
              */
@@ -6299,7 +6548,7 @@ declare module 'gi://Gcr?version=3' {
             /**
              * Unregister this system prompter on the DBus `connection`.
              *
-             * The prompter must have previously been registered with gcr_system_prompter_register().
+             * The prompter must have previously been registered with `gcr_system_prompter_register()`.
              *
              * If `wait` is set then this function will wait until all prompts have been closed
              * or cancelled. This is usually only used by tests.
@@ -6318,9 +6567,10 @@ declare module 'gi://Gcr?version=3' {
         }
 
         /**
-         * An implementation of #GcrCollection, which combines the objects in
-         * other [iface`Collection]`s. Use [method`UnionCollection`.add] to add and
-         * [method`UnionCollection`.remove] to remove them.
+         * An implementation of {@link Gcr.Collection}, which combines the objects in
+         * other {@link Collection}s. Use {@link UnionCollection.add} to add and
+         * {@link UnionCollection.remove} to remove them.
+         * @gir-type Class
          */
         class UnionCollection extends GObject.Object implements Collection {
             static $gtype: GObject.GType<UnionCollection>;
@@ -6344,16 +6594,19 @@ declare module 'gi://Gcr?version=3' {
 
             // Signals
 
+            /** @signal */
             connect<K extends keyof UnionCollection.SignalSignatures>(
                 signal: K,
                 callback: GObject.SignalCallback<this, UnionCollection.SignalSignatures[K]>,
             ): number;
             connect(signal: string, callback: (...args: any[]) => any): number;
+            /** @signal */
             connect_after<K extends keyof UnionCollection.SignalSignatures>(
                 signal: K,
                 callback: GObject.SignalCallback<this, UnionCollection.SignalSignatures[K]>,
             ): number;
             connect_after(signal: string, callback: (...args: any[]) => any): number;
+            /** @signal */
             emit<K extends keyof UnionCollection.SignalSignatures>(
                 signal: K,
                 ...args: GObject.GjsParameters<UnionCollection.SignalSignatures[K]> extends [any, ...infer Q]
@@ -6397,8 +6650,6 @@ declare module 'gi://Gcr?version=3' {
              * @param collection The collection whose objects to add
              */
             take(collection: Collection): void;
-
-            // Inherited methods
             /**
              * Check whether the collection contains an object or not.
              * @param object object to check
@@ -6406,13 +6657,13 @@ declare module 'gi://Gcr?version=3' {
              */
             contains(object: GObject.Object): boolean;
             /**
-             * Emit the #GcrCollection::added signal for the given object. This function
+             * Emit the {@link Gcr.Collection.SignalSignatures.added | Gcr.Collection::added} signal for the given object. This function
              * is used by implementors of this interface.
              * @param object The object that was added
              */
             emit_added(object: GObject.Object): void;
             /**
-             * Emit the #GcrCollection::removed signal for the given object. This function
+             * Emit the {@link Gcr.Collection.SignalSignatures.removed | Gcr.Collection::removed} signal for the given object. This function
              * is used by implementors of this interface.
              * @param object The object that was removed
              */
@@ -6424,23 +6675,34 @@ declare module 'gi://Gcr?version=3' {
             get_length(): number;
             /**
              * Get a list of the objects in this collection.
-             * @returns a list of the objects          in this collection, which should be freed with g_list_free()
+             * @returns a list of the objects          in this collection, which should be freed with `g_list_free()`
              */
             get_objects(): GObject.Object[];
+            /**
+             * @param object
+             * @virtual
+             */
             vfunc_added(object: GObject.Object): void;
             /**
              * Check whether the collection contains an object or not.
              * @param object object to check
+             * @virtual
              */
             vfunc_contains(object: GObject.Object): boolean;
             /**
              * Get the number of objects in this collection.
+             * @virtual
              */
             vfunc_get_length(): number;
             /**
              * Get a list of the objects in this collection.
+             * @virtual
              */
             vfunc_get_objects(): GObject.Object[];
+            /**
+             * @param object
+             * @virtual
+             */
             vfunc_removed(object: GObject.Object): void;
             /**
              * Creates a binding between `source_property` on `source` and `target_property`
@@ -6455,32 +6717,32 @@ declare module 'gi://Gcr?version=3' {
              * ```
              *
              *
-             * Will result in the "sensitive" property of the widget #GObject instance to be
-             * updated with the same value of the "active" property of the action #GObject
+             * Will result in the "sensitive" property of the widget {@link GObject.Object} instance to be
+             * updated with the same value of the "active" property of the action {@link GObject.Object}
              * instance.
              *
-             * If `flags` contains %G_BINDING_BIDIRECTIONAL then the binding will be mutual:
+             * If `flags` contains {@link GObject.BindingFlags.BIDIRECTIONAL} then the binding will be mutual:
              * if `target_property` on `target` changes then the `source_property` on `source`
              * will be updated as well.
              *
              * The binding will automatically be removed when either the `source` or the
              * `target` instances are finalized. To remove the binding without affecting the
-             * `source` and the `target` you can just call g_object_unref() on the returned
-             * #GBinding instance.
+             * `source` and the `target` you can just call `g_object_unref()` on the returned
+             * {@link GObject.Binding} instance.
              *
-             * Removing the binding by calling g_object_unref() on it must only be done if
+             * Removing the binding by calling `g_object_unref()` on it must only be done if
              * the binding, `source` and `target` are only used from a single thread and it
              * is clear that both `source` and `target` outlive the binding. Especially it
              * is not safe to rely on this if the binding, `source` or `target` can be
              * finalized from different threads. Keep another reference to the binding and
-             * use g_binding_unbind() instead to be on the safe side.
+             * use `g_binding_unbind()` instead to be on the safe side.
              *
-             * A #GObject can have multiple bindings.
-             * @param source_property the property on @source to bind
-             * @param target the target #GObject
-             * @param target_property the property on @target to bind
-             * @param flags flags to pass to #GBinding
-             * @returns the #GBinding instance representing the     binding between the two #GObject instances. The binding is released     whenever the #GBinding reference count reaches zero.
+             * A {@link GObject.Object} can have multiple bindings.
+             * @param source_property the property on `source` to bind
+             * @param target the target {@link GObject.Object}
+             * @param target_property the property on `target` to bind
+             * @param flags flags to pass to {@link GObject.Binding}
+             * @returns the {@link GObject.Binding} instance representing the     binding between the two {@link GObject.Object} instances. The binding is released     whenever the {@link GObject.Binding} reference count reaches zero.
              */
             bind_property(
                 source_property: string,
@@ -6489,39 +6751,39 @@ declare module 'gi://Gcr?version=3' {
                 flags: GObject.BindingFlags | null,
             ): GObject.Binding;
             /**
-             * Complete version of g_object_bind_property().
+             * Complete version of `g_object_bind_property()`.
              *
              * Creates a binding between `source_property` on `source` and `target_property`
-             * on `target,` allowing you to set the transformation functions to be used by
+             * on `target`, allowing you to set the transformation functions to be used by
              * the binding.
              *
-             * If `flags` contains %G_BINDING_BIDIRECTIONAL then the binding will be mutual:
+             * If `flags` contains {@link GObject.BindingFlags.BIDIRECTIONAL} then the binding will be mutual:
              * if `target_property` on `target` changes then the `source_property` on `source`
              * will be updated as well. The `transform_from` function is only used in case
              * of bidirectional bindings, otherwise it will be ignored
              *
              * The binding will automatically be removed when either the `source` or the
              * `target` instances are finalized. This will release the reference that is
-             * being held on the #GBinding instance; if you want to hold on to the
-             * #GBinding instance, you will need to hold a reference to it.
+             * being held on the {@link GObject.Binding} instance; if you want to hold on to the
+             * {@link GObject.Binding} instance, you will need to hold a reference to it.
              *
-             * To remove the binding, call g_binding_unbind().
+             * To remove the binding, call `g_binding_unbind()`.
              *
-             * A #GObject can have multiple bindings.
+             * A {@link GObject.Object} can have multiple bindings.
              *
              * The same `user_data` parameter will be used for both `transform_to`
              * and `transform_from` transformation functions; the `notify` function will
              * be called once, when the binding is removed. If you need different data
              * for each transformation function, please use
-             * g_object_bind_property_with_closures() instead.
-             * @param source_property the property on @source to bind
-             * @param target the target #GObject
-             * @param target_property the property on @target to bind
-             * @param flags flags to pass to #GBinding
-             * @param transform_to the transformation function     from the @source to the @target, or %NULL to use the default
-             * @param transform_from the transformation function     from the @target to the @source, or %NULL to use the default
-             * @param notify a function to call when disposing the binding, to free     resources used by the transformation functions, or %NULL if not required
-             * @returns the #GBinding instance representing the     binding between the two #GObject instances. The binding is released     whenever the #GBinding reference count reaches zero.
+             * `g_object_bind_property_with_closures()` instead.
+             * @param source_property the property on `source` to bind
+             * @param target the target {@link GObject.Object}
+             * @param target_property the property on `target` to bind
+             * @param flags flags to pass to {@link GObject.Binding}
+             * @param transform_to the transformation function     from the `source` to the `target`, or `null` to use the default
+             * @param transform_from the transformation function     from the `target` to the `source`, or `null` to use the default
+             * @param notify a function to call when disposing the binding, to free     resources used by the transformation functions, or `null` if not required
+             * @returns the {@link GObject.Binding} instance representing the     binding between the two {@link GObject.Object} instances. The binding is released     whenever the {@link GObject.Binding} reference count reaches zero.
              */
             bind_property_full(
                 source_property: string,
@@ -6532,13 +6794,16 @@ declare module 'gi://Gcr?version=3' {
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
             ): GObject.Binding;
+            /**
+             * @param args
+             */
             // Conflicted with GObject.Object.bind_property_full
             bind_property_full(...args: never[]): any;
             /**
-             * This function is intended for #GObject implementations to re-enforce
+             * This function is intended for {@link GObject.Object} implementations to re-enforce
              * a [floating][floating-ref] object reference. Doing this is seldom
-             * required: all #GInitiallyUnowneds are created with a floating reference
-             * which usually just needs to be sunken by calling g_object_ref_sink().
+             * required: all `GInitiallyUnowneds` are created with a floating reference
+             * which usually just needs to be sunken by calling `g_object_ref_sink()`.
              */
             force_floating(): void;
             /**
@@ -6546,7 +6811,7 @@ declare module 'gi://Gcr?version=3' {
              * non-zero, the emission of "notify" signals on `object` is
              * stopped. The signals are queued until the freeze count is decreased
              * to zero. Duplicate notifications are squashed so that at most one
-             * #GObject::notify signal is emitted for each property modified while the
+             * {@link GObject.Object.SignalSignatures.notify | GObject.Object::notify} signal is emitted for each property modified while the
              * object is frozen.
              *
              * This is necessary for accessors that modify multiple properties to prevent
@@ -6554,9 +6819,9 @@ declare module 'gi://Gcr?version=3' {
              */
             freeze_notify(): void;
             /**
-             * Gets a named field from the objects table of associations (see g_object_set_data()).
+             * Gets a named field from the objects table of associations (see `g_object_set_data()`).
              * @param key name of the key for that association
-             * @returns the data if found,          or %NULL if no such data exists.
+             * @returns the data if found,          or `null` if no such data exists.
              */
             get_data(key: string): any | null;
             /**
@@ -6576,9 +6841,9 @@ declare module 'gi://Gcr?version=3' {
             get_property(property_name: string, value: GObject.Value | any): any;
             /**
              * This function gets back user data pointers stored via
-             * g_object_set_qdata().
-             * @param quark A #GQuark, naming the user data pointer
-             * @returns The user data pointer set, or %NULL
+             * `g_object_set_qdata()`.
+             * @param quark A {@link GLib.Quark}, naming the user data pointer
+             * @returns The user data pointer set, or `null`
              */
             get_qdata(quark: GLib.Quark): any | null;
             /**
@@ -6592,33 +6857,33 @@ declare module 'gi://Gcr?version=3' {
             getv(names: string[], values: (GObject.Value | any)[]): void;
             /**
              * Checks whether `object` has a [floating][floating-ref] reference.
-             * @returns %TRUE if @object has a floating reference
+             * @returns `true` if `object` has a floating reference
              */
             is_floating(): boolean;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
              * When possible, eg. when signaling a property change from within the class
-             * that registered the property, you should use g_object_notify_by_pspec()
+             * that registered the property, you should use `g_object_notify_by_pspec()`
              * instead.
              *
              * Note that emission of the notify signal may be blocked with
-             * g_object_freeze_notify(). In this case, the signal emissions are queued
-             * and will be emitted (in reverse order) when g_object_thaw_notify() is
+             * `g_object_freeze_notify()`. In this case, the signal emissions are queued
+             * and will be emitted (in reverse order) when `g_object_thaw_notify()` is
              * called.
-             * @param property_name the name of a property installed on the class of @object.
+             * @param property_name the name of a property installed on the class of `object`.
              */
             notify(property_name: string): void;
             /**
              * Emits a "notify" signal for the property specified by `pspec` on `object`.
              *
              * This function omits the property name lookup, hence it is faster than
-             * g_object_notify().
+             * `g_object_notify()`.
              *
-             * One way to avoid using g_object_notify() from within the
-             * class that registered the properties, and using g_object_notify_by_pspec()
+             * One way to avoid using `g_object_notify()` from within the
+             * class that registered the properties, and using `g_object_notify_by_pspec()`
              * instead, is to store the GParamSpec used with
-             * g_object_class_install_property() inside a static array, e.g.:
+             * `g_object_class_install_property()` inside a static array, e.g.:
              *
              *
              * ```c
@@ -6651,21 +6916,21 @@ declare module 'gi://Gcr?version=3' {
              *   g_object_notify_by_pspec (self, properties[PROP_FOO]);
              * ```
              *
-             * @param pspec the #GParamSpec of a property installed on the class of @object.
+             * @param pspec the {@link GObject.ParamSpec} of a property installed on the class of `object`.
              */
             notify_by_pspec(pspec: GObject.ParamSpec): void;
             /**
              * Increases the reference count of `object`.
              *
              * Since GLib 2.56, if `GLIB_VERSION_MAX_ALLOWED` is 2.56 or greater, the type
-             * of `object` will be propagated to the return type (using the GCC typeof()
+             * of `object` will be propagated to the return type (using the GCC `typeof()`
              * extension), so any casting the caller needs to do on the return type must be
              * explicit.
-             * @returns the same @object
+             * @returns the same `object`
              */
             ref(): GObject.Object;
             /**
-             * Increase the reference count of `object,` and possibly remove the
+             * Increase the reference count of `object`, and possibly remove the
              * [floating][floating-ref] reference, if `object` has a floating reference.
              *
              * In other words, if the object is floating, then this call "assumes
@@ -6675,8 +6940,8 @@ declare module 'gi://Gcr?version=3' {
              * adds a new normal reference increasing the reference count by one.
              *
              * Since GLib 2.56, the type of `object` will be propagated to the return type
-             * under the same conditions as for g_object_ref().
-             * @returns @object
+             * under the same conditions as for `g_object_ref()`.
+             * @returns `object`
              */
             ref_sink(): GObject.Object;
             /**
@@ -6693,10 +6958,10 @@ declare module 'gi://Gcr?version=3' {
              * If the object already had an association with that name,
              * the old association will be destroyed.
              *
-             * Internally, the `key` is converted to a #GQuark using g_quark_from_string().
+             * Internally, the `key` is converted to a {@link GLib.Quark} using `g_quark_from_string()`.
              * This means a copy of `key` is kept permanently (even after `object` has been
              * finalized) — so it is recommended to only use a small, bounded set of values
-             * for `key` in your program, to avoid the #GQuark storage growing unbounded.
+             * for `key` in your program, to avoid the {@link GLib.Quark} storage growing unbounded.
              * @param key name of the key
              * @param data data to associate with that key
              */
@@ -6711,13 +6976,13 @@ declare module 'gi://Gcr?version=3' {
              * Remove a specified datum from the object's data associations,
              * without invoking the association's destroy handler.
              * @param key name of the key
-             * @returns the data if found, or %NULL          if no such data exists.
+             * @returns the data if found, or `null`          if no such data exists.
              */
             steal_data(key: string): any | null;
             /**
              * This function gets back user data pointers stored via
-             * g_object_set_qdata() and removes the `data` from object
-             * without invoking its destroy() function (if any was
+             * `g_object_set_qdata()` and removes the `data` from object
+             * without invoking its `destroy()` function (if any was
              * set).
              * Usually, calling this function is only required to update
              * user data pointers with a destroy notifier, for example:
@@ -6748,21 +7013,21 @@ declare module 'gi://Gcr?version=3' {
              * }
              * ```
              *
-             * Using g_object_get_qdata() in the above example, instead of
-             * g_object_steal_qdata() would have left the destroy function set,
+             * Using `g_object_get_qdata()` in the above example, instead of
+             * `g_object_steal_qdata()` would have left the destroy function set,
              * and thus the partial string list would have been freed upon
-             * g_object_set_qdata_full().
-             * @param quark A #GQuark, naming the user data pointer
-             * @returns The user data pointer set, or %NULL
+             * `g_object_set_qdata_full()`.
+             * @param quark A {@link GLib.Quark}, naming the user data pointer
+             * @returns The user data pointer set, or `null`
              */
             steal_qdata(quark: GLib.Quark): any | null;
             /**
              * Reverts the effect of a previous call to
-             * g_object_freeze_notify(). The freeze count is decreased on `object`
+             * `g_object_freeze_notify()`. The freeze count is decreased on `object`
              * and when it reaches zero, queued "notify" signals are emitted.
              *
              * Duplicate notifications for each property are squashed so that at most one
-             * #GObject::notify signal is emitted for each property, in the reverse order
+             * {@link GObject.Object.SignalSignatures.notify | GObject.Object::notify} signal is emitted for each property, in the reverse order
              * in which they have been queued.
              *
              * It is an error to call this function when the freeze count is zero.
@@ -6772,33 +7037,34 @@ declare module 'gi://Gcr?version=3' {
              * Decreases the reference count of `object`. When its reference count
              * drops to 0, the object is finalized (i.e. its memory is freed).
              *
-             * If the pointer to the #GObject may be reused in future (for example, if it is
+             * If the pointer to the {@link GObject.Object} may be reused in future (for example, if it is
              * an instance variable of another object), it is recommended to clear the
-             * pointer to %NULL rather than retain a dangling pointer to a potentially
-             * invalid #GObject instance. Use g_clear_object() for this.
+             * pointer to `null` rather than retain a dangling pointer to a potentially
+             * invalid {@link GObject.Object} instance. Use `g_clear_object()` for this.
              */
             unref(): void;
             /**
              * This function essentially limits the life time of the `closure` to
              * the life time of the object. That is, when the object is finalized,
-             * the `closure` is invalidated by calling g_closure_invalidate() on
+             * the `closure` is invalidated by calling `g_closure_invalidate()` on
              * it, in order to prevent invocations of the closure with a finalized
-             * (nonexisting) object. Also, g_object_ref() and g_object_unref() are
-             * added as marshal guards to the `closure,` to ensure that an extra
+             * (nonexisting) object. Also, `g_object_ref()` and `g_object_unref()` are
+             * added as marshal guards to the `closure`, to ensure that an extra
              * reference count is held on `object` during invocation of the
              * `closure`.  Usually, this function will be called on closures that
              * use this `object` as closure data.
-             * @param closure #GClosure to watch
+             * @param closure {@link GObject.Closure} to watch
              */
             watch_closure(closure: GObject.Closure): void;
             /**
-             * the `constructed` function is called by g_object_new() as the
+             * the `constructed` function is called by `g_object_new()` as the
              *  final step of the object creation process.  At the point of the call, all
              *  construction properties have been set on the object.  The purpose of this
              *  call is to allow for object initialisation steps that can only be performed
              *  after construction properties have been set.  `constructed` implementors
              *  should chain up to the `constructed` call of their parent class to allow it
              *  to complete its initialisation.
+             * @virtual
              */
             vfunc_constructed(): void;
             /**
@@ -6807,6 +7073,7 @@ declare module 'gi://Gcr?version=3' {
              *  needed.
              * @param n_pspecs
              * @param pspecs
+             * @virtual
              */
             vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void;
             /**
@@ -6815,12 +7082,14 @@ declare module 'gi://Gcr?version=3' {
              *  invocations still work. It may be run multiple times (due to reference
              *  loops). Before returning, `dispose` should chain up to the `dispose` method
              *  of the parent class.
+             * @virtual
              */
             vfunc_dispose(): void;
             /**
              * instance finalization function, should finish the finalization of
              *  the instance begun in `dispose` and chain up to the `finalize` method of the
              *  parent class.
+             * @virtual
              */
             vfunc_finalize(): void;
             /**
@@ -6829,20 +7098,22 @@ declare module 'gi://Gcr?version=3' {
              * @param property_id
              * @param value
              * @param pspec
+             * @virtual
              */
             vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
              * When possible, eg. when signaling a property change from within the class
-             * that registered the property, you should use g_object_notify_by_pspec()
+             * that registered the property, you should use `g_object_notify_by_pspec()`
              * instead.
              *
              * Note that emission of the notify signal may be blocked with
-             * g_object_freeze_notify(). In this case, the signal emissions are queued
-             * and will be emitted (in reverse order) when g_object_thaw_notify() is
+             * `g_object_freeze_notify()`. In this case, the signal emissions are queued
+             * and will be emitted (in reverse order) when `g_object_thaw_notify()` is
              * called.
              * @param pspec
+             * @virtual
              */
             vfunc_notify(pspec: GObject.ParamSpec): void;
             /**
@@ -6854,6 +7125,7 @@ declare module 'gi://Gcr?version=3' {
              * @param property_id
              * @param value
              * @param pspec
+             * @virtual
              */
             vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
             /**
@@ -6883,14 +7155,32 @@ declare module 'gi://Gcr?version=3' {
             stop_emission_by_name(detailedName: string): void;
         }
 
+        /**
+         * @gir-type Alias
+         */
         type CertificateChainClass = typeof CertificateChain;
+        /**
+         * @gir-type Struct
+         */
         abstract class CertificateChainPrivate {
             static $gtype: GObject.GType<CertificateChainPrivate>;
         }
 
+        /**
+         * @gir-type Alias
+         */
         type CertificateIface = typeof Certificate;
+        /**
+         * @gir-type Alias
+         */
         type CertificateRequestClass = typeof CertificateRequest;
+        /**
+         * @gir-type Alias
+         */
         type CollectionIface = typeof Collection;
+        /**
+         * @gir-type Struct
+         */
         class Column {
             static $gtype: GObject.GType<Column>;
 
@@ -6905,16 +7195,32 @@ declare module 'gi://Gcr?version=3' {
             user_data: any;
         }
 
+        /**
+         * @gir-type Alias
+         */
         type ComparableIface = typeof Comparable;
+        /**
+         * @gir-type Alias
+         */
         type FilterCollectionClass = typeof FilterCollection;
+        /**
+         * @gir-type Struct
+         */
         abstract class FilterCollectionPrivate {
             static $gtype: GObject.GType<FilterCollectionPrivate>;
         }
 
+        /**
+         * @gir-type Alias
+         */
         type ImportInteractionIface = typeof ImportInteraction;
+        /**
+         * @gir-type Alias
+         */
         type ImporterIface = typeof Importer;
         /**
-         * A parsed item parsed by a #GcrParser.
+         * A parsed item parsed by a {@link Gcr.Parser}.
+         * @gir-type Struct
          */
         abstract class Parsed {
             static $gtype: GObject.GType<Parsed>;
@@ -6922,7 +7228,7 @@ declare module 'gi://Gcr?version=3' {
             // Static methods
 
             /**
-             * Unreferences a parsed item which was referenced with gcr_parsed_ref()
+             * Unreferences a parsed item which was referenced with `gcr_parsed_ref()`
              * @param parsed a parsed item
              */
             static unref(parsed?: any | null): void;
@@ -6936,12 +7242,12 @@ declare module 'gi://Gcr?version=3' {
             get_attributes(): Gck.Attributes | null;
             /**
              * Get the raw data block for the parsed item.
-             * @returns the raw data of the parsed item, or %NULL
+             * @returns the raw data of the parsed item, or `null`
              */
             get_bytes(): GLib.Bytes;
             /**
              * Get the raw data block for the parsed item.
-             * @returns the raw data of          the parsed item, or %NULL
+             * @returns the raw data of          the parsed item, or `null`
              */
             get_data(): Uint8Array | null;
             /**
@@ -6951,7 +7257,7 @@ declare module 'gi://Gcr?version=3' {
             get_description(): string | null;
             /**
              * Get the filename of the parsed item.
-             * @returns the filename of          the parsed item, or %NULL
+             * @returns the filename of          the parsed item, or `null`
              */
             get_filename(): string;
             /**
@@ -6972,44 +7278,98 @@ declare module 'gi://Gcr?version=3' {
             ref(): Parsed;
         }
 
+        /**
+         * @gir-type Alias
+         */
         type ParserClass = typeof Parser;
+        /**
+         * @gir-type Struct
+         */
         abstract class ParserPrivate {
             static $gtype: GObject.GType<ParserPrivate>;
         }
 
+        /**
+         * @gir-type Alias
+         */
         type Pkcs11CertificateClass = typeof Pkcs11Certificate;
+        /**
+         * @gir-type Struct
+         */
         abstract class Pkcs11CertificatePrivate {
             static $gtype: GObject.GType<Pkcs11CertificatePrivate>;
         }
 
+        /**
+         * @gir-type Alias
+         */
         type PromptIface = typeof Prompt;
+        /**
+         * @gir-type Alias
+         */
         type SecretExchangeClass = typeof SecretExchange;
+        /**
+         * @gir-type Struct
+         */
         abstract class SecretExchangePrivate {
             static $gtype: GObject.GType<SecretExchangePrivate>;
         }
 
+        /**
+         * @gir-type Alias
+         */
         type SimpleCertificateClass = typeof SimpleCertificate;
+        /**
+         * @gir-type Struct
+         */
         abstract class SimpleCertificatePrivate {
             static $gtype: GObject.GType<SimpleCertificatePrivate>;
         }
 
+        /**
+         * @gir-type Alias
+         */
         type SimpleCollectionClass = typeof SimpleCollection;
+        /**
+         * @gir-type Struct
+         */
         abstract class SimpleCollectionPrivate {
             static $gtype: GObject.GType<SimpleCollectionPrivate>;
         }
 
+        /**
+         * @gir-type Alias
+         */
         type SshAskpassClass = typeof SshAskpass;
+        /**
+         * @gir-type Alias
+         */
         type SystemPromptClass = typeof SystemPrompt;
+        /**
+         * @gir-type Struct
+         */
         abstract class SystemPromptPrivate {
             static $gtype: GObject.GType<SystemPromptPrivate>;
         }
 
+        /**
+         * @gir-type Alias
+         */
         type SystemPrompterClass = typeof SystemPrompter;
+        /**
+         * @gir-type Struct
+         */
         abstract class SystemPrompterPrivate {
             static $gtype: GObject.GType<SystemPrompterPrivate>;
         }
 
+        /**
+         * @gir-type Alias
+         */
         type UnionCollectionClass = typeof UnionCollection;
+        /**
+         * @gir-type Struct
+         */
         abstract class UnionCollectionPrivate {
             static $gtype: GObject.GType<UnionCollectionPrivate>;
         }
@@ -7024,6 +7384,7 @@ declare module 'gi://Gcr?version=3' {
 
                 /**
                  * Gets the raw DER data for an X.509 certificate.
+                 * @virtual
                  */
                 vfunc_get_der_data(): Uint8Array;
             }
@@ -7047,7 +7408,7 @@ declare module 'gi://Gcr?version=3' {
 
             /**
              * Compare one certificate against another. If the certificates are equal
-             * then zero is returned. If one certificate is %NULL or not a certificate,
+             * then zero is returned. If one certificate is `null` or not a certificate,
              * then a non-zero value is returned.
              *
              * The return value is useful in a stable sort, but has no user logical
@@ -7057,42 +7418,72 @@ declare module 'gi://Gcr?version=3' {
              */
             compare(first?: Comparable | null, other?: Comparable | null): number;
         }
+        /**
+         * An interface that represents an X.509 certificate.
+         *
+         * Objects can implement this interface to make a certificate usable with the
+         * GCR library.
+         *
+         * Various methods are available to parse out relevant bits of the certificate.
+         * However no verification of the validity of a certificate is done here. Use
+         * your favorite crypto library to do this.
+         *
+         * You can use {@link SimpleCertificate} to simply load a certificate for which
+         * you already have the raw certificate data.
+         *
+         * The {@link Gcr.Certificate} interface has several properties that must be implemented.
+         * You can use a mixin to implement these properties if desired. See the
+         * `gcr_certificate_mixin_class_init()` and `gcr_certificate_mixin_get_property()`
+         * functions.
+         *
+         * All certificates are comparable. If implementing a {@link Gcr.Certificate}, you can
+         * use GCR_CERTIFICATE_MIXIN_IMPLEMENT_COMPARABLE() to implement the {@link Gcr.Comparable}
+         * interface.
+         * @gir-type Interface
+         */
         interface Certificate extends Comparable, Certificate.Interface {
             // Properties
 
             /**
              * A readable description for this certificate
+             * @read-only
              */
             get description(): string;
             /**
              * The expiry date of the certificate
+             * @read-only
              */
             get expiry(): GLib.Date;
             /**
              * An icon representing the certificate
+             * @read-only
              */
             get icon(): Gio.Icon;
             /**
              * Common name part of the certificate issuer
+             * @read-only
              */
             get issuer(): string;
             /**
              * A readable label for this certificate.
+             * @read-only
              */
             get label(): string;
             /**
              * GLib markup to describe the certificate
+             * @read-only
              */
             get markup(): string;
             /**
              * Common name part of the certificate subject
+             * @read-only
              */
             get subject(): string;
 
             // Methods
 
             /**
-             * Get the basic constraints for the certificate if present. If %FALSE is
+             * Get the basic constraints for the certificate if present. If `false` is
              * returned then no basic constraints are present and the `is_ca` and
              * `path_len` arguments are not changed.
              * @returns whether basic constraints are present or not
@@ -7106,15 +7497,15 @@ declare module 'gi://Gcr?version=3' {
             /**
              * Get the expiry date of this certificate.
              *
-             * The #GDate returned should be freed by the caller using
-             * g_date_free() when no longer required.
+             * The {@link GLib.Date} returned should be freed by the caller using
+             * `g_date_free()` when no longer required.
              * @returns An allocated expiry date of this certificate.
              */
             get_expiry_date(): GLib.Date;
             /**
              * Calculate the fingerprint for this certificate.
              *
-             * The caller should free the returned data using g_free() when
+             * The caller should free the returned data using `g_free()` when
              * it is no longer required.
              * @param type the type of algorithm for the fingerprint.
              * @returns the raw binary fingerprint
@@ -7124,7 +7515,7 @@ declare module 'gi://Gcr?version=3' {
              * Calculate the fingerprint for this certificate, and return it
              * as a hex string.
              *
-             * The caller should free the returned data using g_free() when
+             * The caller should free the returned data using `g_free()` when
              * it is no longer required.
              * @param type the type of algorithm for the fingerprint.
              * @returns an allocated hex string which contains the fingerprint.
@@ -7133,8 +7524,8 @@ declare module 'gi://Gcr?version=3' {
             /**
              * Get the issued date of this certificate.
              *
-             * The #GDate returned should be freed by the caller using
-             * g_date_free() when no longer required.
+             * The {@link GLib.Date} returned should be freed by the caller using
+             * `g_date_free()` when no longer required.
              * @returns An allocated issued date of this certificate.
              */
             get_issued_date(): GLib.Date;
@@ -7143,7 +7534,7 @@ declare module 'gi://Gcr?version=3' {
              *
              * The string returned should be freed by the caller when no longer
              * required.
-             * @returns The allocated issuer CN, or %NULL if no issuer CN present.
+             * @returns The allocated issuer CN, or `null` if no issuer CN present.
              */
             get_issuer_cn(): string;
             /**
@@ -7160,7 +7551,7 @@ declare module 'gi://Gcr?version=3' {
              *
              * This will try to lookup the common name, orianizational unit,
              * organization in that order.
-             * @returns the allocated issuer name, or %NULL if no issuer name
+             * @returns the allocated issuer name, or `null` if no issuer name
              */
             get_issuer_name(): string;
             /**
@@ -7173,13 +7564,13 @@ declare module 'gi://Gcr?version=3' {
              * The string returned should be freed by the caller when no longer
              * required.
              * @param part a DN type string or OID.
-             * @returns the allocated part of the issuer DN, or %NULL if no          such part is present
+             * @returns the allocated part of the issuer DN, or `null` if no          such part is present
              */
             get_issuer_part(part: string): string | null;
             /**
              * Get the raw DER data for the issuer DN of the certificate.
              *
-             * The data should be freed by using g_free() when no longer required.
+             * The data should be freed by using `g_free()` when no longer required.
              * @returns allocated memory containing          the raw issuer
              */
             get_issuer_raw(): Uint8Array;
@@ -7197,7 +7588,7 @@ declare module 'gi://Gcr?version=3' {
             /**
              * Get the raw binary serial number of the certificate.
              *
-             * The caller should free the returned data using g_free() when
+             * The caller should free the returned data using `g_free()` when
              * it is no longer required.
              * @returns the raw binary serial number.
              */
@@ -7205,7 +7596,7 @@ declare module 'gi://Gcr?version=3' {
             /**
              * Get the serial number of the certificate as a hex string.
              *
-             * The caller should free the returned data using g_free() when
+             * The caller should free the returned data using `g_free()` when
              * it is no longer required.
              * @returns an allocated string containing the serial number as hex.
              */
@@ -7215,7 +7606,7 @@ declare module 'gi://Gcr?version=3' {
              *
              * The string returned should be freed by the caller when no longer
              * required.
-             * @returns The allocated subject CN, or %NULL if no subject CN present.
+             * @returns The allocated subject CN, or `null` if no subject CN present.
              */
             get_subject_cn(): string;
             /**
@@ -7232,7 +7623,7 @@ declare module 'gi://Gcr?version=3' {
              *
              * This will try to lookup the common name, orianizational unit,
              * organization in that order.
-             * @returns the allocated subject name, or %NULL if no subject name
+             * @returns the allocated subject name, or `null` if no subject name
              */
             get_subject_name(): string;
             /**
@@ -7245,13 +7636,13 @@ declare module 'gi://Gcr?version=3' {
              * The string returned should be freed by the caller when no longer
              * required.
              * @param part a DN type string or OID.
-             * @returns the allocated part of the subject DN, or %NULL if no          such part is present.
+             * @returns the allocated part of the subject DN, or `null` if no          such part is present.
              */
             get_subject_part(part: string): string | null;
             /**
              * Get the raw DER data for the subject DN of the certificate.
              *
-             * The data should be freed by using g_free() when no longer required.
+             * The data should be freed by using `g_free()` when no longer required.
              * @returns allocated memory containing          the raw subject
              */
             get_subject_raw(): Uint8Array;
@@ -7260,12 +7651,12 @@ declare module 'gi://Gcr?version=3' {
              * comparing the relevant subject and issuer fields. No signature check is
              * done. Proper verification of certificates must be done via a crypto
              * library.
-             * @param issuer a possible issuer #GcrCertificate
-             * @returns whether @issuer could be the issuer of the certificate.
+             * @param issuer a possible issuer {@link Gcr.Certificate}
+             * @returns whether `issuer` could be the issuer of the certificate.
              */
             is_issuer(issuer: Certificate): boolean;
             /**
-             * Implementers of the #GcrCertificate mixin should call this function to notify
+             * Implementers of the {@link Gcr.Certificate} mixin should call this function to notify
              * when the certificate has changed to emit notifications on the various
              * properties.
              */
@@ -7284,20 +7675,31 @@ declare module 'gi://Gcr?version=3' {
             interface Interface {
                 // Virtual methods
 
+                /**
+                 * @param object
+                 * @virtual
+                 */
                 vfunc_added(object: GObject.Object): void;
                 /**
                  * Check whether the collection contains an object or not.
                  * @param object object to check
+                 * @virtual
                  */
                 vfunc_contains(object: GObject.Object): boolean;
                 /**
                  * Get the number of objects in this collection.
+                 * @virtual
                  */
                 vfunc_get_length(): number;
                 /**
                  * Get a list of the objects in this collection.
+                 * @virtual
                  */
                 vfunc_get_objects(): GObject.Object[];
+                /**
+                 * @param object
+                 * @virtual
+                 */
                 vfunc_removed(object: GObject.Object): void;
             }
 
@@ -7310,6 +7712,16 @@ declare module 'gi://Gcr?version=3' {
             $gtype: GObject.GType<Collection>;
             prototype: Collection;
         }
+        /**
+         * A {@link Gcr.Collection} is used to group a set of objects.
+         *
+         * This is an abstract interface which can be used to determine which objects
+         * show up in a selector or other user interface element.
+         *
+         * Use {@link SimpleCollection.new} to create a concrete implementation of this
+         * interface which you can add objects to.
+         * @gir-type Interface
+         */
         interface Collection extends GObject.Object, Collection.Interface {
             // Methods
 
@@ -7320,13 +7732,13 @@ declare module 'gi://Gcr?version=3' {
              */
             contains(object: GObject.Object): boolean;
             /**
-             * Emit the #GcrCollection::added signal for the given object. This function
+             * Emit the {@link Gcr.Collection.SignalSignatures.added | Gcr.Collection::added} signal for the given object. This function
              * is used by implementors of this interface.
              * @param object The object that was added
              */
             emit_added(object: GObject.Object): void;
             /**
-             * Emit the #GcrCollection::removed signal for the given object. This function
+             * Emit the {@link Gcr.Collection.SignalSignatures.removed | Gcr.Collection::removed} signal for the given object. This function
              * is used by implementors of this interface.
              * @param object The object that was removed
              */
@@ -7338,7 +7750,7 @@ declare module 'gi://Gcr?version=3' {
             get_length(): number;
             /**
              * Get a list of the objects in this collection.
-             * @returns a list of the objects          in this collection, which should be freed with g_list_free()
+             * @returns a list of the objects          in this collection, which should be freed with `g_list_free()`
              */
             get_objects(): GObject.Object[];
         }
@@ -7359,6 +7771,7 @@ declare module 'gi://Gcr?version=3' {
                  * Compare whether two objects represent the same thing. The return value can
                  * also be used to sort the objects.
                  * @param other Another comparable object
+                 * @virtual
                  */
                 vfunc_compare(other?: Comparable | null): number;
             }
@@ -7372,6 +7785,10 @@ declare module 'gi://Gcr?version=3' {
             $gtype: GObject.GType<Comparable>;
             prototype: Comparable;
         }
+        /**
+         * An interface for comparing objects
+         * @gir-type Interface
+         */
         interface Comparable extends GObject.Object, Comparable.Interface {
             // Methods
 
@@ -7399,23 +7816,25 @@ declare module 'gi://Gcr?version=3' {
                 /**
                  * Supplement attributes before import. This means prompting the user for
                  * things like labels and the like. The needed attributes will have been passed
-                 * to gcr_import_interaction_supplement_prep().
+                 * to `gcr_import_interaction_supplement_prep()`.
                  *
                  * This method prompts the user and fills in the attributes. If the user or
-                 * cancellable cancels the operation the error should be set with %G_IO_ERROR_CANCELLED.
+                 * cancellable cancels the operation the error should be set with {@link Gio.IOErrorEnum.CANCELLED}.
                  * @param builder supplemented attributes
                  * @param cancellable optional cancellable object
+                 * @virtual
                  */
                 vfunc_supplement(builder: Gck.Builder, cancellable?: Gio.Cancellable | null): Gio.TlsInteractionResult;
                 /**
                  * Asynchronously supplement attributes before import. This means prompting the
                  * user for things like labels and the like. The needed attributes will have
-                 * been passed to gcr_import_interaction_supplement_prep().
+                 * been passed to `gcr_import_interaction_supplement_prep()`.
                  *
                  * This method prompts the user and fills in the attributes.
                  * @param builder supplemented attributes
                  * @param cancellable optional cancellable object
                  * @param callback called when the operation completes
+                 * @virtual
                  */
                 vfunc_supplement_async(
                     builder: Gck.Builder,
@@ -7426,8 +7845,9 @@ declare module 'gi://Gcr?version=3' {
                  * Complete operation to asynchronously supplement attributes before import.
                  *
                  * If the user or cancellable cancels the operation the error should be set
-                 * with %G_IO_ERROR_CANCELLED.
+                 * with {@link Gio.IOErrorEnum.CANCELLED}.
                  * @param result the asynchronous result
+                 * @virtual
                  */
                 vfunc_supplement_finish(result: Gio.AsyncResult): Gio.TlsInteractionResult;
                 /**
@@ -7439,6 +7859,7 @@ declare module 'gi://Gcr?version=3' {
                  * This method does not prompt the user, but rather just prepares the
                  * interaction that these are the attributes that are needed.
                  * @param builder attributes to supplement
+                 * @virtual
                  */
                 vfunc_supplement_prep(builder: Gck.Builder): void;
             }
@@ -7452,25 +7873,32 @@ declare module 'gi://Gcr?version=3' {
             $gtype: GObject.GType<ImportInteraction>;
             prototype: ImportInteraction;
         }
+        /**
+         * This is an interface implemented by a caller performing an import. It allows
+         * the importer to ask the caller for further information about the import.
+         *
+         * It must be implemented on a derived class of {@link Gio.TlsInteraction}
+         * @gir-type Interface
+         */
         interface ImportInteraction extends Gio.TlsInteraction, ImportInteraction.Interface {
             // Methods
 
             /**
              * Supplement attributes before import. This means prompting the user for
              * things like labels and the like. The needed attributes will have been passed
-             * to gcr_import_interaction_supplement_prep().
+             * to `gcr_import_interaction_supplement_prep()`.
              *
              * This method prompts the user and fills in the attributes. If the user or
-             * cancellable cancels the operation the error should be set with %G_IO_ERROR_CANCELLED.
+             * cancellable cancels the operation the error should be set with {@link Gio.IOErrorEnum.CANCELLED}.
              * @param builder supplemented attributes
              * @param cancellable optional cancellable object
-             * @returns %G_TLS_INTERACTION_HANDLED if successful or %G_TLS_INTERACTION_FAILED
+             * @returns {@link Gio.TlsInteractionResult.HANDLED} if successful or {@link Gio.TlsInteractionResult.FAILED}
              */
             supplement(builder: Gck.Builder, cancellable?: Gio.Cancellable | null): Gio.TlsInteractionResult;
             /**
              * Asynchronously supplement attributes before import. This means prompting the
              * user for things like labels and the like. The needed attributes will have
-             * been passed to gcr_import_interaction_supplement_prep().
+             * been passed to `gcr_import_interaction_supplement_prep()`.
              *
              * This method prompts the user and fills in the attributes.
              * @param builder supplemented attributes
@@ -7483,7 +7911,7 @@ declare module 'gi://Gcr?version=3' {
             /**
              * Asynchronously supplement attributes before import. This means prompting the
              * user for things like labels and the like. The needed attributes will have
-             * been passed to gcr_import_interaction_supplement_prep().
+             * been passed to `gcr_import_interaction_supplement_prep()`.
              *
              * This method prompts the user and fills in the attributes.
              * @param builder supplemented attributes
@@ -7498,7 +7926,7 @@ declare module 'gi://Gcr?version=3' {
             /**
              * Asynchronously supplement attributes before import. This means prompting the
              * user for things like labels and the like. The needed attributes will have
-             * been passed to gcr_import_interaction_supplement_prep().
+             * been passed to `gcr_import_interaction_supplement_prep()`.
              *
              * This method prompts the user and fills in the attributes.
              * @param builder supplemented attributes
@@ -7514,9 +7942,9 @@ declare module 'gi://Gcr?version=3' {
              * Complete operation to asynchronously supplement attributes before import.
              *
              * If the user or cancellable cancels the operation the error should be set
-             * with %G_IO_ERROR_CANCELLED.
+             * with {@link Gio.IOErrorEnum.CANCELLED}.
              * @param result the asynchronous result
-             * @returns %G_TLS_INTERACTION_HANDLED if successful or %G_TLS_INTERACTION_FAILED
+             * @returns {@link Gio.TlsInteractionResult.HANDLED} if successful or {@link Gio.TlsInteractionResult.FAILED}
              */
             supplement_finish(result: Gio.AsyncResult): Gio.TlsInteractionResult;
             /**
@@ -7547,8 +7975,9 @@ declare module 'gi://Gcr?version=3' {
                 /**
                  * Import the queued items in the importer. This function returns immediately
                  * and completes asynchronously.
-                 * @param cancellable a #GCancellable, or %NULL
+                 * @param cancellable a {@link Gio.Cancellable}, or `null`
                  * @param callback called when the operation completes
+                 * @virtual
                  */
                 vfunc_import_async(
                     cancellable?: Gio.Cancellable | null,
@@ -7557,20 +7986,23 @@ declare module 'gi://Gcr?version=3' {
                 /**
                  * Complete an asynchronous operation to import queued items.
                  * @param result an asynchronous result
+                 * @virtual
                  */
                 vfunc_import_finish(result: Gio.AsyncResult): boolean;
                 /**
-                 * optional implementation of [method`Importer`.import]
+                 * optional implementation of {@link Importer.import}
                  * @param cancellable
+                 * @virtual
                  */
                 vfunc_import_sync(cancellable?: Gio.Cancellable | null): boolean;
                 /**
                  * Queues an additional item to be imported. The parsed item is represented
-                 * by the state of the [class`Parser]` at the time of calling this method.
+                 * by the state of the {@link Parser} at the time of calling this method.
                  *
                  * If the parsed item is incompatible with the importer, then this will
                  * fail and the item will not be queued.
                  * @param parsed a parsed item to import
+                 * @virtual
                  */
                 vfunc_queue_for_parsed(parsed: Parsed): boolean;
             }
@@ -7598,7 +8030,7 @@ declare module 'gi://Gcr?version=3' {
             create_for_parsed(parsed: Parsed): Importer[];
             /**
              * Queues an additional item to be imported in all compattible importers
-             * in the set. The parsed item is represented by the state of the #GcrParser
+             * in the set. The parsed item is represented by the state of the {@link Gcr.Parser}
              * at the time of calling this method.
              *
              * If the parsed item is incompatible with an importer, then that the item
@@ -7620,11 +8052,30 @@ declare module 'gi://Gcr?version=3' {
              */
             register_well_known(): void;
         }
+        /**
+         * An interface which allows importing of certificates and keys. Each importer
+         * is registered with a set of PKCS#11 attributes to match stuff that it can
+         * import.
+         *
+         * An importer gets passed a {@link Parser} and accesses the currently parsed
+         * item. To create a set of importers that can import the currently parsed
+         * item in a parser, use {@link Importer.create_for_parsed}. The list of
+         * importers returned has the parsed item queued for import.
+         *
+         * To queue additional items with a importer use
+         * {@link Importer.queue_for_parsed}.  In addition you can try and queue an
+         * additional item with a set of importers using the
+         * {@link Importer.queue_and_filter_for_parsed}.
+         *
+         * To start the import, use {@link Importer.import} or its async variants.
+         * @gir-type Interface
+         */
         interface Importer extends GObject.Object, Importer.Interface {
             // Properties
 
             /**
              * The icon for the importer.
+             * @read-only
              */
             get icon(): Gio.Icon;
             /**
@@ -7634,10 +8085,12 @@ declare module 'gi://Gcr?version=3' {
             set interaction(val: Gio.TlsInteraction);
             /**
              * The label for the importer.
+             * @read-only
              */
             get label(): string;
             /**
              * The URI of the location imported to.
+             * @read-only
              */
             get uri(): string;
 
@@ -7646,33 +8099,33 @@ declare module 'gi://Gcr?version=3' {
             /**
              * Get the interaction used to prompt the user when needed by this
              * importer.
-             * @returns the interaction or %NULL
+             * @returns the interaction or `null`
              */
             get_interaction(): Gio.TlsInteraction | null;
             /**
              * Import the queued items in the importer. This call will block
              * until the operation completes.
-             * @param cancellable a #GCancellable, or %NULL
+             * @param cancellable a {@link Gio.Cancellable}, or `null`
              * @returns whether the items were imported successfully or not
              */
             ['import'](cancellable?: Gio.Cancellable | null): boolean;
             /**
              * Import the queued items in the importer. This function returns immediately
              * and completes asynchronously.
-             * @param cancellable a #GCancellable, or %NULL
+             * @param cancellable a {@link Gio.Cancellable}, or `null`
              */
             import_async(cancellable?: Gio.Cancellable | null): globalThis.Promise<boolean>;
             /**
              * Import the queued items in the importer. This function returns immediately
              * and completes asynchronously.
-             * @param cancellable a #GCancellable, or %NULL
+             * @param cancellable a {@link Gio.Cancellable}, or `null`
              * @param callback called when the operation completes
              */
             import_async(cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<this> | null): void;
             /**
              * Import the queued items in the importer. This function returns immediately
              * and completes asynchronously.
-             * @param cancellable a #GCancellable, or %NULL
+             * @param cancellable a {@link Gio.Cancellable}, or `null`
              * @param callback called when the operation completes
              */
             import_async(
@@ -7687,7 +8140,7 @@ declare module 'gi://Gcr?version=3' {
             import_finish(result: Gio.AsyncResult): boolean;
             /**
              * Queues an additional item to be imported. The parsed item is represented
-             * by the state of the [class`Parser]` at the time of calling this method.
+             * by the state of the {@link Parser} at the time of calling this method.
              *
              * If the parsed item is incompatible with the importer, then this will
              * fail and the item will not be queued.
@@ -7717,6 +8170,7 @@ declare module 'gi://Gcr?version=3' {
 
                 /**
                  * close a prompt
+                 * @virtual
                  */
                 vfunc_prompt_close(): void;
                 /**
@@ -7727,6 +8181,7 @@ declare module 'gi://Gcr?version=3' {
                  * This method will return immediately and complete asynchronously.
                  * @param cancellable optional cancellation object
                  * @param callback called when the operation completes
+                 * @virtual
                  */
                 vfunc_prompt_confirm_async(
                     cancellable?: Gio.Cancellable | null,
@@ -7735,10 +8190,11 @@ declare module 'gi://Gcr?version=3' {
                 /**
                  * Complete an operation to prompt for confirmation.
                  *
-                 * %GCR_PROMPT_REPLY_CONTINUE will be returned if the user confirms the prompt. The
-                 * return value will also be %GCR_PROMPT_REPLY_CANCEL if the user cancels or if
+                 * {@link Gcr.PromptReply.CONTINUE} will be returned if the user confirms the prompt. The
+                 * return value will also be {@link Gcr.PromptReply.CANCEL} if the user cancels or if
                  * an error occurs. Check the `error` argument to tell the difference.
                  * @param result asynchronous result passed to callback
+                 * @virtual
                  */
                 vfunc_prompt_confirm_finish(result: Gio.AsyncResult): PromptReply;
                 /**
@@ -7748,6 +8204,7 @@ declare module 'gi://Gcr?version=3' {
                  * This method will return immediately and complete asynchronously.
                  * @param cancellable optional cancellation object
                  * @param callback called when the operation completes
+                 * @virtual
                  */
                 vfunc_prompt_password_async(
                     cancellable?: Gio.Cancellable | null,
@@ -7760,9 +8217,10 @@ declare module 'gi://Gcr?version=3' {
                  * The returned password is valid until the next time a method is called
                  * to display another prompt.
                  *
-                 * %NULL will be returned if the user cancels or if an error occurs. Check the
+                 * `null` will be returned if the user cancels or if an error occurs. Check the
                  * `error` argument to tell the difference.
                  * @param result asynchronous result passed to callback
+                 * @virtual
                  */
                 vfunc_prompt_password_finish(result: Gio.AsyncResult): string;
             }
@@ -7795,6 +8253,27 @@ declare module 'gi://Gcr?version=3' {
             $gtype: GObject.GType<Prompt>;
             prototype: Prompt;
         }
+        /**
+         * A prompt displayed to the user. It is an interface with various
+         * implementations.
+         *
+         * Various properties are set on the prompt, and then the prompt is displayed
+         * the various prompt methods like {@link Prompt.password_run}.
+         *
+         * A {@link Gcr.Prompt} may be used to display multiple related prompts. Most
+         * implementions do not hide the window between display of multiple related
+         * prompts, and the {@link Gcr.Prompt} must be closed or destroyed in order to make
+         * it go away. This allows the user to see that the prompts are related.
+         *
+         * Use `GcrPromptDialog` (part of gcr-ui) to create an in-process GTK+ dialog
+         * prompt. Use {@link SystemPrompt} to create a system prompt in a prompter
+         * process.
+         *
+         * The prompt implementation will always display the {@link Prompt.message}
+         * property, but may choose not to display the {@link Prompt.description} or
+         * {@link Prompt.title} properties.
+         * @gir-type Interface
+         */
         interface Prompt extends GObject.Object, Prompt.Interface {
             // Properties
 
@@ -7837,38 +8316,38 @@ declare module 'gi://Gcr?version=3' {
             /**
              * Whether the additional choice is chosen or not.
              *
-             * The additional choice would have been setup using #GcrPrompt:choice-label.
+             * The additional choice would have been setup using {@link Gcr.Prompt.choice_label}.
              */
             get choice_chosen(): boolean;
             set choice_chosen(val: boolean);
             /**
              * Whether the additional choice is chosen or not.
              *
-             * The additional choice would have been setup using #GcrPrompt:choice-label.
+             * The additional choice would have been setup using {@link Gcr.Prompt.choice_label}.
              */
             get choiceChosen(): boolean;
             set choiceChosen(val: boolean);
             /**
              * The label for the additional choice.
              *
-             * If this is a non-%NULL value then an additional boolean choice will be
+             * If this is a non-`null` value then an additional boolean choice will be
              * displayed by the prompt allowing the user to select or deselect it.
              *
-             * If %NULL, then no additional choice is displayed.
+             * If `null`, then no additional choice is displayed.
              *
-             * The initial value of the choice can be set with #GcrPrompt:choice-chosen.
+             * The initial value of the choice can be set with {@link Gcr.Prompt.choice_chosen}.
              */
             get choice_label(): string;
             set choice_label(val: string);
             /**
              * The label for the additional choice.
              *
-             * If this is a non-%NULL value then an additional boolean choice will be
+             * If this is a non-`null` value then an additional boolean choice will be
              * displayed by the prompt allowing the user to select or deselect it.
              *
-             * If %NULL, then no additional choice is displayed.
+             * If `null`, then no additional choice is displayed.
              *
-             * The initial value of the choice can be set with #GcrPrompt:choice-chosen.
+             * The initial value of the choice can be set with {@link Gcr.Prompt.choice_chosen}.
              */
             get choiceLabel(): string;
             set choiceLabel(val: string);
@@ -7922,6 +8401,7 @@ declare module 'gi://Gcr?version=3' {
              * greater than zero if the password has any characters.
              *
              * This is only valid after a successful prompt for a password.
+             * @read-only
              */
             get password_strength(): number;
             /**
@@ -7931,18 +8411,19 @@ declare module 'gi://Gcr?version=3' {
              * greater than zero if the password has any characters.
              *
              * This is only valid after a successful prompt for a password.
+             * @read-only
              */
             get passwordStrength(): number;
             /**
              * The title of the prompt.
              *
              * A prompt implementation may choose not to display the prompt title. The
-             * #GcrPrompt:message should contain relevant information.
+             * {@link Gcr.Prompt.message} should contain relevant information.
              */
             get title(): string;
             set title(val: string);
             /**
-             * A prompt warning displayed on the prompt, or %NULL for no warning.
+             * A prompt warning displayed on the prompt, or `null` for no warning.
              *
              * This is a warning like "The password is incorrect." usually displayed to the
              * user about a previous 'unsuccessful' prompt.
@@ -7958,7 +8439,7 @@ declare module 'gi://Gcr?version=3' {
              *
              * The prompt may also be closed by the implementor of the prompt object.
              *
-             * This emits the [signal`Prompt:`:prompt-close] signal on the prompt object.
+             * This emits the `Gcr.Prompt::prompt-close` signal on the prompt object.
              */
             close(): void;
             /**
@@ -7968,8 +8449,8 @@ declare module 'gi://Gcr?version=3' {
              *
              * This method will block until the a response is returned from the prompter.
              *
-             * %GCR_PROMPT_REPLY_CONTINUE will be returned if the user confirms the prompt. The
-             * return value will also be %GCR_PROMPT_REPLY_CANCEL if the user cancels or if
+             * {@link Gcr.PromptReply.CONTINUE} will be returned if the user confirms the prompt. The
+             * return value will also be {@link Gcr.PromptReply.CANCEL} if the user cancels or if
              * an error occurs. Check the `error` argument to tell the difference.
              * @param cancellable optional cancellation object
              * @returns the reply from the prompt
@@ -8010,8 +8491,8 @@ declare module 'gi://Gcr?version=3' {
             /**
              * Complete an operation to prompt for confirmation.
              *
-             * %GCR_PROMPT_REPLY_CONTINUE will be returned if the user confirms the prompt. The
-             * return value will also be %GCR_PROMPT_REPLY_CANCEL if the user cancels or if
+             * {@link Gcr.PromptReply.CONTINUE} will be returned if the user confirms the prompt. The
+             * return value will also be {@link Gcr.PromptReply.CANCEL} if the user cancels or if
              * an error occurs. Check the `error` argument to tell the difference.
              * @param result asynchronous result passed to callback
              * @returns the reply from the prompt
@@ -8026,8 +8507,8 @@ declare module 'gi://Gcr?version=3' {
              * and will run a main loop similar to a `gtk_dialog_run()`. The application
              * will remain responsive but care must be taken to handle reentrancy issues.
              *
-             * %GCR_PROMPT_REPLY_CONTINUE will be returned if the user confirms the prompt. The
-             * return value will also be %GCR_PROMPT_REPLY_CANCEL if the user cancels or if
+             * {@link Gcr.PromptReply.CONTINUE} will be returned if the user confirms the prompt. The
+             * return value will also be {@link Gcr.PromptReply.CANCEL} if the user cancels or if
              * an error occurs. Check the `error` argument to tell the difference.
              * @param cancellable optional cancellation object
              * @returns the reply from the prompt
@@ -8045,7 +8526,7 @@ declare module 'gi://Gcr?version=3' {
             /**
              * Get the label for the cancel button.
              *
-             * This is the button that results in a %GCR_PROMPT_REPLY_CANCEL reply
+             * This is the button that results in a {@link Gcr.PromptReply.CANCEL} reply
              * from the prompt.
              * @returns a newly allocated string containing the label
              */
@@ -8054,21 +8535,21 @@ declare module 'gi://Gcr?version=3' {
              * Get whether the additional choice was chosen or not.
              *
              * The additional choice would have been setup using
-             * gcr_prompt_set_choice_label().
+             * `gcr_prompt_set_choice_label()`.
              * @returns whether chosen
              */
             get_choice_chosen(): boolean;
             /**
              * Get the label for the additional choice.
              *
-             * This will be %NULL if no additional choice is being displayed.
-             * @returns a newly allocated string containing the additional          choice or %NULL
+             * This will be `null` if no additional choice is being displayed.
+             * @returns a newly allocated string containing the additional          choice or `null`
              */
             get_choice_label(): string;
             /**
              * Get the label for the continue button.
              *
-             * This is the button that results in a %GCR_PROMPT_REPLY_CONTINUE reply
+             * This is the button that results in a {@link Gcr.PromptReply.CONTINUE} reply
              * from the prompt.
              * @returns a newly allocated string containing the label
              */
@@ -8121,8 +8602,8 @@ declare module 'gi://Gcr?version=3' {
              * This is a warning like "The password is incorrect." usually displayed to the
              * user about a previous 'unsuccessful' prompt.
              *
-             * If this string is %NULL then no warning is displayed.
-             * @returns a newly allocated string containing the prompt          warning, or %NULL if no warning
+             * If this string is `null` then no warning is displayed.
+             * @returns a newly allocated string containing the prompt          warning, or `null` if no warning
              */
             get_warning(): string;
             /**
@@ -8135,10 +8616,10 @@ declare module 'gi://Gcr?version=3' {
              * The returned password is valid until the next time a method is called
              * to display another prompt.
              *
-             * %NULL will be returned if the user cancels or if an error occurs. Check the
+             * `null` will be returned if the user cancels or if an error occurs. Check the
              * `error` argument to tell the difference.
              * @param cancellable optional cancellation object
-             * @returns the password owned by the prompt, or %NULL
+             * @returns the password owned by the prompt, or `null`
              */
             password(cancellable?: Gio.Cancellable | null): string;
             /**
@@ -8177,10 +8658,10 @@ declare module 'gi://Gcr?version=3' {
              * The returned password is valid until the next time a method is called
              * to display another prompt.
              *
-             * %NULL will be returned if the user cancels or if an error occurs. Check the
+             * `null` will be returned if the user cancels or if an error occurs. Check the
              * `error` argument to tell the difference.
              * @param result asynchronous result passed to callback
-             * @returns the password owned by the prompt, or %NULL
+             * @returns the password owned by the prompt, or `null`
              */
             password_finish(result: Gio.AsyncResult): string;
             /**
@@ -8188,17 +8669,17 @@ declare module 'gi://Gcr?version=3' {
              * this method to explain which password should be entered.
              *
              * This method will block until the a response is returned from the prompter
-             * and will run a main loop similar to a gtk_dialog_run(). The application
+             * and will run a main loop similar to a `gtk_dialog_run()`. The application
              * will remain responsive but care must be taken to handle reentrancy issues.
              *
              * A password will be returned if the user enters a password successfully.
              * The returned password is valid until the next time a method is called
              * to display another prompt.
              *
-             * %NULL will be returned if the user cancels or if an error occurs. Check the
+             * `null` will be returned if the user cancels or if an error occurs. Check the
              * `error` argument to tell the difference.
              * @param cancellable optional cancellation object
-             * @returns the password owned by the prompt, or %NULL
+             * @returns the password owned by the prompt, or `null`
              */
             password_run(cancellable?: Gio.Cancellable | null): string;
             /**
@@ -8217,7 +8698,7 @@ declare module 'gi://Gcr?version=3' {
             /**
              * Set the label for the continue button.
              *
-             * This is the button that results in a %GCR_PROMPT_REPLY_CANCEL reply
+             * This is the button that results in a {@link Gcr.PromptReply.CANCEL} reply
              * from the prompt.
              * @param cancel_label the label
              */
@@ -8225,27 +8706,27 @@ declare module 'gi://Gcr?version=3' {
             /**
              * Set whether the additional choice is chosen or not.
              *
-             * The additional choice should be set up using gcr_prompt_set_choice_label().
+             * The additional choice should be set up using `gcr_prompt_set_choice_label()`.
              * @param chosen whether chosen
              */
             set_choice_chosen(chosen: boolean): void;
             /**
              * Set the label for the additional choice.
              *
-             * If this is a non-%NULL value then an additional boolean choice will be
+             * If this is a non-`null` value then an additional boolean choice will be
              * displayed by the prompt allowing the user to select or deselect it.
              *
              * The initial value of the choice can be set with the
-             * gcr_prompt_set_choice_label() method.
+             * `gcr_prompt_set_choice_label()` method.
              *
-             * If this is %NULL, then no additional choice is being displayed.
-             * @param choice_label the additional choice or %NULL
+             * If this is `null`, then no additional choice is being displayed.
+             * @param choice_label the additional choice or `null`
              */
             set_choice_label(choice_label?: string | null): void;
             /**
              * Set the label for the continue button.
              *
-             * This is the button that results in a %GCR_PROMPT_REPLY_CONTINUE reply
+             * This is the button that results in a {@link Gcr.PromptReply.CONTINUE} reply
              * from the prompt.
              * @param continue_label the label
              */
@@ -8254,7 +8735,7 @@ declare module 'gi://Gcr?version=3' {
              * Set the detailed description of the prompt.
              *
              * A prompt implementation may choose not to display this detailed description.
-             * Use gcr_prompt_set_message() to set a general message containing relevant
+             * Use `gcr_prompt_set_message()` to set a general message containing relevant
              * information.
              * @param description the detailed description
              */
@@ -8289,8 +8770,8 @@ declare module 'gi://Gcr?version=3' {
              * This is a warning like "The password is incorrect." usually displayed to the
              * user about a previous 'unsuccessful' prompt.
              *
-             * If this string is %NULL then no warning is displayed.
-             * @param warning the warning or %NULL
+             * If this string is `null` then no warning is displayed.
+             * @param warning the warning or `null`
              */
             set_warning(warning?: string | null): void;
         }

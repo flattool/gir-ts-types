@@ -3,6 +3,7 @@
 /// <reference path="./gettext.d.ts" />
 /// <reference path="./system.d.ts" />
 /// <reference path="./cairo.d.ts" />
+/// <reference path="./gi.d.ts" />
 
 /**
  * Type Definitions for Gjs (https://gjs.guide/)
@@ -730,6 +731,22 @@ declare global {
          * @returns The formatted string
          */
         format(...args: (string | number | boolean | null | undefined)[]): string;
+    }
+
+    interface Error {
+        /**
+         * Checks if this error matches a GLib error domain and code.
+         *
+         * Added to the global `Error` prototype by the GLib override so that
+         * `e.matches(Ns.FooError, Ns.FooError.SOME_CODE)` works without an
+         * `instanceof` check. Always returns `false` for standard JavaScript
+         * errors; only `GLib.Error` instances provide a meaningful implementation.
+         *
+         * @param domain A GLib error domain (error class constructor or quark)
+         * @param code The error code to match against
+         * @returns `false` for native JS errors, `true` if a GLib.Error matches
+         */
+        matches(domain: unknown, code: number): boolean;
     }
 }
 

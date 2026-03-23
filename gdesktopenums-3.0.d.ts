@@ -18,6 +18,9 @@ declare module 'gi://GDesktopEnums?version=3.0' {
          * GDesktopEnums-3.0
          */
 
+        /**
+         * @gir-type Enum
+         */
         enum AccentColor {
             BLUE,
             TEAL,
@@ -30,12 +33,18 @@ declare module 'gi://GDesktopEnums?version=3.0' {
             SLATE,
         }
 
+        /**
+         * @gir-type Enum
+         */
         enum BackgroundShading {
             SOLID,
             VERTICAL,
             HORIZONTAL,
         }
 
+        /**
+         * @gir-type Enum
+         */
         enum BackgroundStyle {
             NONE,
             WALLPAPER,
@@ -46,40 +55,61 @@ declare module 'gi://GDesktopEnums?version=3.0' {
             SPANNED,
         }
 
+        /**
+         * @gir-type Enum
+         */
         enum ClockFormat {
             '24H',
             '12H',
         }
 
+        /**
+         * @gir-type Enum
+         */
         enum ColorScheme {
             DEFAULT,
             PREFER_DARK,
             PREFER_LIGHT,
         }
 
+        /**
+         * @gir-type Enum
+         */
         enum DeviceSendEvents {
             ENABLED,
             DISABLED,
             DISABLED_ON_EXTERNAL_MOUSE,
         }
 
+        /**
+         * @gir-type Enum
+         */
         enum FocusMode {
             CLICK,
             SLOPPY,
             MOUSE,
         }
 
+        /**
+         * @gir-type Enum
+         */
         enum FocusNewWindows {
             SMART,
             STRICT,
         }
 
+        /**
+         * @gir-type Enum
+         */
         enum FontAntialiasingMode {
             NONE,
             GRAYSCALE,
             RGBA,
         }
 
+        /**
+         * @gir-type Enum
+         */
         enum FontHinting {
             NONE,
             SLIGHT,
@@ -87,11 +117,17 @@ declare module 'gi://GDesktopEnums?version=3.0' {
             FULL,
         }
 
+        /**
+         * @gir-type Enum
+         */
         enum FontRendering {
             AUTOMATIC,
             MANUAL,
         }
 
+        /**
+         * @gir-type Enum
+         */
         enum FontRgbaOrder {
             RGBA,
             RGB,
@@ -100,6 +136,9 @@ declare module 'gi://GDesktopEnums?version=3.0' {
             VBGR,
         }
 
+        /**
+         * @gir-type Enum
+         */
         enum LocationAccuracyLevel {
             COUNTRY,
             CITY,
@@ -108,6 +147,9 @@ declare module 'gi://GDesktopEnums?version=3.0' {
             EXACT,
         }
 
+        /**
+         * @gir-type Enum
+         */
         enum MagnifierCaretTrackingMode {
             NONE,
             CENTERED,
@@ -115,6 +157,9 @@ declare module 'gi://GDesktopEnums?version=3.0' {
             PUSH,
         }
 
+        /**
+         * @gir-type Enum
+         */
         enum MagnifierFocusTrackingMode {
             NONE,
             CENTERED,
@@ -122,6 +167,9 @@ declare module 'gi://GDesktopEnums?version=3.0' {
             PUSH,
         }
 
+        /**
+         * @gir-type Enum
+         */
         enum MagnifierMouseTrackingMode {
             NONE,
             CENTERED,
@@ -129,6 +177,9 @@ declare module 'gi://GDesktopEnums?version=3.0' {
             PUSH,
         }
 
+        /**
+         * @gir-type Enum
+         */
         enum MagnifierScreenPosition {
             NONE,
             FULL_SCREEN,
@@ -138,6 +189,9 @@ declare module 'gi://GDesktopEnums?version=3.0' {
             RIGHT_HALF,
         }
 
+        /**
+         * @gir-type Enum
+         */
         enum MouseDwellDirection {
             LEFT,
             RIGHT,
@@ -145,11 +199,17 @@ declare module 'gi://GDesktopEnums?version=3.0' {
             DOWN,
         }
 
+        /**
+         * @gir-type Enum
+         */
         enum MouseDwellMode {
             WINDOW,
             GESTURE,
         }
 
+        /**
+         * @gir-type Enum
+         */
         enum PadButtonAction {
             NONE,
             HELP,
@@ -157,30 +217,45 @@ declare module 'gi://GDesktopEnums?version=3.0' {
             KEYBINDING,
         }
 
+        /**
+         * @gir-type Enum
+         */
         enum PointerAccelProfile {
             DEFAULT,
             FLAT,
             ADAPTIVE,
         }
 
+        /**
+         * @gir-type Enum
+         */
         enum PointingStickScrollMethod {
             DEFAULT,
             NONE,
             ON_BUTTON_DOWN,
         }
 
+        /**
+         * @gir-type Enum
+         */
         enum ProxyMode {
             NONE,
             MANUAL,
             AUTO,
         }
 
+        /**
+         * @gir-type Enum
+         */
         enum ScreensaverMode {
             BLANK_ONLY,
             RANDOM,
             SINGLE,
         }
 
+        /**
+         * @gir-type Enum
+         */
         enum StylusButtonAction {
             DEFAULT,
             MIDDLE,
@@ -191,11 +266,17 @@ declare module 'gi://GDesktopEnums?version=3.0' {
             KEYBINDING,
         }
 
+        /**
+         * @gir-type Enum
+         */
         enum TabletMapping {
             ABSOLUTE,
             RELATIVE,
         }
 
+        /**
+         * @gir-type Enum
+         */
         enum TitlebarAction {
             TOGGLE_SHADE,
             TOGGLE_MAXIMIZE,
@@ -207,11 +288,17 @@ declare module 'gi://GDesktopEnums?version=3.0' {
             MENU,
         }
 
+        /**
+         * @gir-type Enum
+         */
         enum ToolbarIconSize {
             SMALL,
             LARGE,
         }
 
+        /**
+         * @gir-type Enum
+         */
         enum ToolbarStyle {
             BOTH,
             BOTH_HORIZ,
@@ -219,6 +306,9 @@ declare module 'gi://GDesktopEnums?version=3.0' {
             TEXT,
         }
 
+        /**
+         * @gir-type Enum
+         */
         enum TouchpadClickMethod {
             DEFAULT,
             NONE,
@@ -226,23 +316,35 @@ declare module 'gi://GDesktopEnums?version=3.0' {
             FINGERS,
         }
 
+        /**
+         * @gir-type Enum
+         */
         enum TouchpadHandedness {
             RIGHT,
             LEFT,
             MOUSE,
         }
 
+        /**
+         * @gir-type Enum
+         */
         enum TouchpadTapButtonMap {
             DEFAULT,
             LRM,
             LMR,
         }
 
+        /**
+         * @gir-type Enum
+         */
         enum UsbProtection {
             LOCKSCREEN,
             ALWAYS,
         }
 
+        /**
+         * @gir-type Enum
+         */
         enum VisualBellType {
             FULLSCREEN_FLASH,
             FRAME_FLASH,

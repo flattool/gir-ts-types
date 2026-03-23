@@ -43,8 +43,9 @@ declare module 'gi://GstGLX11?version=1.0' {
         }
 
         /**
-         * the contents of a #GstGLDisplayX11 are private and should only be accessed
+         * the contents of a {@link GstGLX11.GLDisplayX11} are private and should only be accessed
          * through the provided API
+         * @gir-type Class
          */
         class GLDisplayX11 extends GstGL.GLDisplay {
             static $gtype: GObject.GType<GLDisplayX11>;
@@ -71,16 +72,19 @@ declare module 'gi://GstGLX11?version=1.0' {
 
             // Signals
 
+            /** @signal */
             connect<K extends keyof GLDisplayX11.SignalSignatures>(
                 signal: K,
                 callback: GObject.SignalCallback<this, GLDisplayX11.SignalSignatures[K]>,
             ): number;
             connect(signal: string, callback: (...args: any[]) => any): number;
+            /** @signal */
             connect_after<K extends keyof GLDisplayX11.SignalSignatures>(
                 signal: K,
                 callback: GObject.SignalCallback<this, GLDisplayX11.SignalSignatures[K]>,
             ): number;
             connect_after(signal: string, callback: (...args: any[]) => any): number;
+            /** @signal */
             emit<K extends keyof GLDisplayX11.SignalSignatures>(
                 signal: K,
                 ...args: GObject.GjsParameters<GLDisplayX11.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never
@@ -88,6 +92,9 @@ declare module 'gi://GstGLX11?version=1.0' {
             emit(signal: string, ...args: any[]): void;
         }
 
+        /**
+         * @gir-type Alias
+         */
         type GLDisplayX11Class = typeof GLDisplayX11;
         /**
          * Name of the imported GIR library

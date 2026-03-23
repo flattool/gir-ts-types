@@ -26,6 +26,9 @@ declare module 'gi://GstWebRTC?version=1.0' {
          * GstWebRTC-1.0
          */
 
+        /**
+         * @gir-type Enum
+         */
         export namespace WebRTCBundlePolicy {
             export const $gtype: GObject.GType<WebRTCBundlePolicy>;
         }
@@ -33,6 +36,8 @@ declare module 'gi://GstWebRTC?version=1.0' {
         /**
          * See https://tools.ietf.org/html/draft-ietf-rtcweb-jsep-24#section-4.1.1
          * for more information.
+         * @gir-type Enum
+         * @since 1.16
          */
         enum WebRTCBundlePolicy {
             /**
@@ -53,10 +58,16 @@ declare module 'gi://GstWebRTC?version=1.0' {
             MAX_BUNDLE,
         }
 
+        /**
+         * @gir-type Enum
+         */
         export namespace WebRTCDTLSSetup {
             export const $gtype: GObject.GType<WebRTCDTLSSetup>;
         }
 
+        /**
+         * @gir-type Enum
+         */
         enum WebRTCDTLSSetup {
             /**
              * none
@@ -76,10 +87,16 @@ declare module 'gi://GstWebRTC?version=1.0' {
             PASSIVE,
         }
 
+        /**
+         * @gir-type Enum
+         */
         export namespace WebRTCDTLSTransportState {
             export const $gtype: GObject.GType<WebRTCDTLSTransportState>;
         }
 
+        /**
+         * @gir-type Enum
+         */
         enum WebRTCDTLSTransportState {
             /**
              * new
@@ -103,12 +120,17 @@ declare module 'gi://GstWebRTC?version=1.0' {
             CONNECTED,
         }
 
+        /**
+         * @gir-type Enum
+         */
         export namespace WebRTCDataChannelState {
             export const $gtype: GObject.GType<WebRTCDataChannelState>;
         }
 
         /**
          * See <http://w3c.github.io/webrtc-pc/#dom-rtcdatachannelstate>
+         * @gir-type Enum
+         * @since 1.16
          */
         enum WebRTCDataChannelState {
             /**
@@ -131,6 +153,7 @@ declare module 'gi://GstWebRTC?version=1.0' {
 
         /**
          * See <https://www.w3.org/TR/webrtc/#dom-rtcerrordetailtype> for more information.
+         * @gir-type Struct
          */
         class WebRTCError extends GLib.Error {
             static $gtype: GObject.GType<GLib.Error>;
@@ -175,10 +198,12 @@ declare module 'gi://GstWebRTC?version=1.0' {
             static INTERNAL_FAILURE: number;
             /**
              * invalid-modification (part of WebIDL specification)
+             * @since 1.22
              */
             static INVALID_MODIFICATION: number;
             /**
              * type-error (maps to JavaScript TypeError)
+             * @since 1.22
              */
             static TYPE_ERROR: number;
 
@@ -191,10 +216,17 @@ declare module 'gi://GstWebRTC?version=1.0' {
             static quark(): GLib.Quark;
         }
 
+        /**
+         * @gir-type Enum
+         */
         export namespace WebRTCFECType {
             export const $gtype: GObject.GType<WebRTCFECType>;
         }
 
+        /**
+         * @gir-type Enum
+         * @since 1.14.1
+         */
         enum WebRTCFECType {
             /**
              * none
@@ -206,10 +238,16 @@ declare module 'gi://GstWebRTC?version=1.0' {
             ULP_RED,
         }
 
+        /**
+         * @gir-type Enum
+         */
         export namespace WebRTCICEComponent {
             export const $gtype: GObject.GType<WebRTCICEComponent>;
         }
 
+        /**
+         * @gir-type Enum
+         */
         enum WebRTCICEComponent {
             /**
              * RTP component
@@ -221,12 +259,16 @@ declare module 'gi://GstWebRTC?version=1.0' {
             RTCP,
         }
 
+        /**
+         * @gir-type Enum
+         */
         export namespace WebRTCICEConnectionState {
             export const $gtype: GObject.GType<WebRTCICEConnectionState>;
         }
 
         /**
          * See <http://w3c.github.io/webrtc-pc/#dom-rtciceconnectionstate>
+         * @gir-type Enum
          */
         enum WebRTCICEConnectionState {
             /**
@@ -259,12 +301,16 @@ declare module 'gi://GstWebRTC?version=1.0' {
             CLOSED,
         }
 
+        /**
+         * @gir-type Enum
+         */
         export namespace WebRTCICEGatheringState {
             export const $gtype: GObject.GType<WebRTCICEGatheringState>;
         }
 
         /**
          * See <http://w3c.github.io/webrtc-pc/#dom-rtcicegatheringstate>
+         * @gir-type Enum
          */
         enum WebRTCICEGatheringState {
             /**
@@ -281,10 +327,16 @@ declare module 'gi://GstWebRTC?version=1.0' {
             COMPLETE,
         }
 
+        /**
+         * @gir-type Enum
+         */
         export namespace WebRTCICERole {
             export const $gtype: GObject.GType<WebRTCICERole>;
         }
 
+        /**
+         * @gir-type Enum
+         */
         enum WebRTCICERole {
             /**
              * controlled
@@ -296,6 +348,9 @@ declare module 'gi://GstWebRTC?version=1.0' {
             CONTROLLING,
         }
 
+        /**
+         * @gir-type Enum
+         */
         export namespace WebRTCICETransportPolicy {
             export const $gtype: GObject.GType<WebRTCICETransportPolicy>;
         }
@@ -303,6 +358,8 @@ declare module 'gi://GstWebRTC?version=1.0' {
         /**
          * See https://tools.ietf.org/html/draft-ietf-rtcweb-jsep-24#section-4.1.1
          * for more information.
+         * @gir-type Enum
+         * @since 1.16
          */
         enum WebRTCICETransportPolicy {
             /**
@@ -315,12 +372,17 @@ declare module 'gi://GstWebRTC?version=1.0' {
             RELAY,
         }
 
+        /**
+         * @gir-type Enum
+         */
         export namespace WebRTCKind {
             export const $gtype: GObject.GType<WebRTCKind>;
         }
 
         /**
          * https://w3c.github.io/mediacapture-main/#dom-mediastreamtrack-kind
+         * @gir-type Enum
+         * @since 1.20
          */
         enum WebRTCKind {
             /**
@@ -337,12 +399,16 @@ declare module 'gi://GstWebRTC?version=1.0' {
             VIDEO,
         }
 
+        /**
+         * @gir-type Enum
+         */
         export namespace WebRTCPeerConnectionState {
             export const $gtype: GObject.GType<WebRTCPeerConnectionState>;
         }
 
         /**
          * See <http://w3c.github.io/webrtc-pc/#dom-rtcpeerconnectionstate>
+         * @gir-type Enum
          */
         enum WebRTCPeerConnectionState {
             /**
@@ -371,12 +437,17 @@ declare module 'gi://GstWebRTC?version=1.0' {
             CLOSED,
         }
 
+        /**
+         * @gir-type Enum
+         */
         export namespace WebRTCPriorityType {
             export const $gtype: GObject.GType<WebRTCPriorityType>;
         }
 
         /**
          * See <http://w3c.github.io/webrtc-pc/#dom-rtcprioritytype>
+         * @gir-type Enum
+         * @since 1.16
          */
         enum WebRTCPriorityType {
             /**
@@ -397,10 +468,16 @@ declare module 'gi://GstWebRTC?version=1.0' {
             HIGH,
         }
 
+        /**
+         * @gir-type Enum
+         */
         export namespace WebRTCRTPTransceiverDirection {
             export const $gtype: GObject.GType<WebRTCRTPTransceiverDirection>;
         }
 
+        /**
+         * @gir-type Enum
+         */
         enum WebRTCRTPTransceiverDirection {
             /**
              * none
@@ -424,12 +501,17 @@ declare module 'gi://GstWebRTC?version=1.0' {
             SENDRECV,
         }
 
+        /**
+         * @gir-type Enum
+         */
         export namespace WebRTCSCTPTransportState {
             export const $gtype: GObject.GType<WebRTCSCTPTransportState>;
         }
 
         /**
          * See <http://w3c.github.io/webrtc-pc/#dom-rtcsctptransportstate>
+         * @gir-type Enum
+         * @since 1.16
          */
         enum WebRTCSCTPTransportState {
             /**
@@ -450,12 +532,16 @@ declare module 'gi://GstWebRTC?version=1.0' {
             CLOSED,
         }
 
+        /**
+         * @gir-type Enum
+         */
         export namespace WebRTCSDPType {
             export const $gtype: GObject.GType<WebRTCSDPType>;
         }
 
         /**
          * See <http://w3c.github.io/webrtc-pc/#rtcsdptype>
+         * @gir-type Enum
          */
         enum WebRTCSDPType {
             /**
@@ -476,12 +562,16 @@ declare module 'gi://GstWebRTC?version=1.0' {
             ROLLBACK,
         }
 
+        /**
+         * @gir-type Enum
+         */
         export namespace WebRTCSignalingState {
             export const $gtype: GObject.GType<WebRTCSignalingState>;
         }
 
         /**
          * See <http://w3c.github.io/webrtc-pc/#dom-rtcsignalingstate>
+         * @gir-type Enum
          */
         enum WebRTCSignalingState {
             /**
@@ -510,12 +600,16 @@ declare module 'gi://GstWebRTC?version=1.0' {
             HAVE_REMOTE_PRANSWER,
         }
 
+        /**
+         * @gir-type Enum
+         */
         export namespace WebRTCStatsType {
             export const $gtype: GObject.GType<WebRTCStatsType>;
         }
 
         /**
          * See <https://w3c.github.io/webrtc-stats/#dom-rtcstatstype>
+         * @gir-type Enum
          */
         enum WebRTCStatsType {
             /**
@@ -576,8 +670,18 @@ declare module 'gi://GstWebRTC?version=1.0' {
             CERTIFICATE,
         }
 
+        /**
+         * @since 1.20
+         */
         function webrtc_error_quark(): GLib.Quark;
+        /**
+         * @param type a {@link GstWebRTC.WebRTCSDPType}
+         * @returns the string representation of `type` or "unknown" when `type` is not      recognized.
+         */
         function webrtc_sdp_type_to_string(type: WebRTCSDPType | null): string;
+        /**
+         * @gir-type Callback
+         */
         interface WebRTCICEOnCandidateFunc {
             (ice: WebRTCICE, stream_id: number, candidate: string): void;
         }
@@ -608,6 +712,9 @@ declare module 'gi://GstWebRTC?version=1.0' {
             }
         }
 
+        /**
+         * @gir-type Class
+         */
         class WebRTCDTLSTransport extends Gst.Object {
             static $gtype: GObject.GType<WebRTCDTLSTransport>;
 
@@ -617,11 +724,29 @@ declare module 'gi://GstWebRTC?version=1.0' {
             set certificate(val: string);
             get client(): boolean;
             set client(val: boolean);
+            /**
+             * @read-only
+             */
             get remote_certificate(): string;
+            /**
+             * @read-only
+             */
             get remoteCertificate(): string;
+            /**
+             * @construct-only
+             */
             get session_id(): number;
+            /**
+             * @construct-only
+             */
             get sessionId(): number;
+            /**
+             * @read-only
+             */
             get state(): WebRTCDTLSTransportState;
+            /**
+             * @read-only
+             */
             get transport(): WebRTCICETransport;
 
             /**
@@ -641,16 +766,19 @@ declare module 'gi://GstWebRTC?version=1.0' {
 
             // Signals
 
+            /** @signal */
             connect<K extends keyof WebRTCDTLSTransport.SignalSignatures>(
                 signal: K,
                 callback: GObject.SignalCallback<this, WebRTCDTLSTransport.SignalSignatures[K]>,
             ): number;
             connect(signal: string, callback: (...args: any[]) => any): number;
+            /** @signal */
             connect_after<K extends keyof WebRTCDTLSTransport.SignalSignatures>(
                 signal: K,
                 callback: GObject.SignalCallback<this, WebRTCDTLSTransport.SignalSignatures[K]>,
             ): number;
             connect_after(signal: string, callback: (...args: any[]) => any): number;
+            /** @signal */
             emit<K extends keyof WebRTCDTLSTransport.SignalSignatures>(
                 signal: K,
                 ...args: GObject.GjsParameters<WebRTCDTLSTransport.SignalSignatures[K]> extends [any, ...infer Q]
@@ -663,14 +791,54 @@ declare module 'gi://GstWebRTC?version=1.0' {
         namespace WebRTCDataChannel {
             // Signal signatures
             interface SignalSignatures extends GObject.Object.SignalSignatures {
+                /**
+                 * Close the data channel
+                 * @signal
+                 * @action
+                 * @run-last
+                 */
                 close: () => void;
+                /**
+                 * @signal
+                 * @run-last
+                 */
                 'on-buffered-amount-low': () => void;
+                /**
+                 * @signal
+                 * @run-last
+                 */
                 'on-close': () => void;
+                /**
+                 * @signal
+                 * @run-last
+                 */
                 'on-error': (arg0: GLib.Error) => void;
+                /**
+                 * @signal
+                 * @run-last
+                 */
                 'on-message-data': (arg0: GLib.Bytes | null) => void;
+                /**
+                 * @signal
+                 * @run-last
+                 */
                 'on-message-string': (arg0: string | null) => void;
+                /**
+                 * @signal
+                 * @run-last
+                 */
                 'on-open': () => void;
+                /**
+                 * @signal
+                 * @action
+                 * @run-last
+                 */
                 'send-data': (arg0: GLib.Bytes | null) => void;
+                /**
+                 * @signal
+                 * @action
+                 * @run-last
+                 */
                 'send-string': (arg0: string | null) => void;
                 'notify::buffered-amount': (pspec: GObject.ParamSpec) => void;
                 'notify::buffered-amount-low-threshold': (pspec: GObject.ParamSpec) => void;
@@ -707,28 +875,74 @@ declare module 'gi://GstWebRTC?version=1.0' {
             }
         }
 
+        /**
+         * @gir-type Class
+         * @since 1.18
+         */
         abstract class WebRTCDataChannel extends GObject.Object {
             static $gtype: GObject.GType<WebRTCDataChannel>;
 
             // Properties
 
+            /**
+             * @read-only
+             */
             get buffered_amount(): number;
+            /**
+             * @read-only
+             */
             get bufferedAmount(): number;
             get buffered_amount_low_threshold(): number;
             set buffered_amount_low_threshold(val: number);
             get bufferedAmountLowThreshold(): number;
             set bufferedAmountLowThreshold(val: number);
+            /**
+             * @construct-only
+             */
             get id(): number;
+            /**
+             * @construct-only
+             */
             get label(): string;
+            /**
+             * @construct-only
+             */
             get max_packet_lifetime(): number;
+            /**
+             * @construct-only
+             */
             get maxPacketLifetime(): number;
+            /**
+             * @construct-only
+             */
             get max_retransmits(): number;
+            /**
+             * @construct-only
+             */
             get maxRetransmits(): number;
+            /**
+             * @construct-only
+             */
             get negotiated(): boolean;
+            /**
+             * @construct-only
+             */
             get ordered(): boolean;
+            /**
+             * @construct-only
+             */
             get priority(): WebRTCPriorityType;
+            /**
+             * @construct-only
+             */
             get protocol(): string;
+            /**
+             * @read-only
+             */
             get ready_state(): WebRTCDataChannelState;
+            /**
+             * @read-only
+             */
             get readyState(): WebRTCDataChannelState;
 
             /**
@@ -748,16 +962,19 @@ declare module 'gi://GstWebRTC?version=1.0' {
 
             // Signals
 
+            /** @signal */
             connect<K extends keyof WebRTCDataChannel.SignalSignatures>(
                 signal: K,
                 callback: GObject.SignalCallback<this, WebRTCDataChannel.SignalSignatures[K]>,
             ): number;
             connect(signal: string, callback: (...args: any[]) => any): number;
+            /** @signal */
             connect_after<K extends keyof WebRTCDataChannel.SignalSignatures>(
                 signal: K,
                 callback: GObject.SignalCallback<this, WebRTCDataChannel.SignalSignatures[K]>,
             ): number;
             connect_after(signal: string, callback: (...args: any[]) => any): number;
+            /** @signal */
             emit<K extends keyof WebRTCDataChannel.SignalSignatures>(
                 signal: K,
                 ...args: GObject.GjsParameters<WebRTCDataChannel.SignalSignatures[K]> extends [any, ...infer Q]
@@ -774,24 +991,24 @@ declare module 'gi://GstWebRTC?version=1.0' {
             close(): void;
             /**
              * Send `data` as a data message over `channel`.
-             * @param data a #GBytes or %NULL
+             * @param data a {@link GLib.Bytes} or `null`
              */
             send_data(data?: GLib.Bytes | null): void;
             /**
              * Send `data` as a data message over `channel`.
-             * @param data a #GBytes or %NULL
-             * @returns TRUE if @channel is open and data could be queued
+             * @param data a {@link GLib.Bytes} or `null`
+             * @returns TRUE if `channel` is open and data could be queued
              */
             send_data_full(data?: GLib.Bytes | null): boolean;
             /**
              * Send `str` as a string message over `channel`.
-             * @param str a string or %NULL
+             * @param str a string or `null`
              */
             send_string(str?: string | null): void;
             /**
              * Send `str` as a string message over `channel`.
-             * @param str a string or %NULL
-             * @returns TRUE if @channel is open and data could be queued
+             * @param str a string or `null`
+             * @returns TRUE if `channel` is open and data could be queued
              */
             send_string_full(str?: string | null): boolean;
         }
@@ -799,6 +1016,14 @@ declare module 'gi://GstWebRTC?version=1.0' {
         namespace WebRTCICE {
             // Signal signatures
             interface SignalSignatures extends Gst.Object.SignalSignatures {
+                /**
+                 * Add a local IP address to use for ICE candidate gathering.  If none
+                 * are supplied, they will be discovered automatically. Calling this signal
+                 * stops automatic ICE gathering.
+                 * @signal
+                 * @action
+                 * @run-last
+                 */
                 'add-local-ip-address': (arg0: string) => boolean | void;
                 'notify::max-rtp-port': (pspec: GObject.ParamSpec) => void;
                 'notify::min-rtp-port': (pspec: GObject.ParamSpec) => void;
@@ -816,6 +1041,10 @@ declare module 'gi://GstWebRTC?version=1.0' {
             }
         }
 
+        /**
+         * @gir-type Class
+         * @since 1.22
+         */
         abstract class WebRTCICE extends Gst.Object {
             static $gtype: GObject.GType<WebRTCICE>;
 
@@ -824,24 +1053,28 @@ declare module 'gi://GstWebRTC?version=1.0' {
             /**
              * Maximum port for local rtp port range.
              * min-rtp-port must be <= max-rtp-port
+             * @since 1.20
              */
             get max_rtp_port(): number;
             set max_rtp_port(val: number);
             /**
              * Maximum port for local rtp port range.
              * min-rtp-port must be <= max-rtp-port
+             * @since 1.20
              */
             get maxRtpPort(): number;
             set maxRtpPort(val: number);
             /**
              * Minimum port for local rtp port range.
              * min-rtp-port must be <= max-rtp-port
+             * @since 1.20
              */
             get min_rtp_port(): number;
             set min_rtp_port(val: number);
             /**
              * Minimum port for local rtp port range.
              * min-rtp-port must be <= max-rtp-port
+             * @since 1.20
              */
             get minRtpPort(): number;
             set minRtpPort(val: number);
@@ -868,16 +1101,19 @@ declare module 'gi://GstWebRTC?version=1.0' {
 
             // Signals
 
+            /** @signal */
             connect<K extends keyof WebRTCICE.SignalSignatures>(
                 signal: K,
                 callback: GObject.SignalCallback<this, WebRTCICE.SignalSignatures[K]>,
             ): number;
             connect(signal: string, callback: (...args: any[]) => any): number;
+            /** @signal */
             connect_after<K extends keyof WebRTCICE.SignalSignatures>(
                 signal: K,
                 callback: GObject.SignalCallback<this, WebRTCICE.SignalSignatures[K]>,
             ): number;
             connect_after(signal: string, callback: (...args: any[]) => any): number;
+            /** @signal */
             emit<K extends keyof WebRTCICE.SignalSignatures>(
                 signal: K,
                 ...args: GObject.GjsParameters<WebRTCICE.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never
@@ -886,63 +1122,223 @@ declare module 'gi://GstWebRTC?version=1.0' {
 
             // Virtual methods
 
+            /**
+             * @param stream The {@link GstWebRTC.WebRTCICEStream}
+             * @param candidate The ICE candidate
+             * @param promise A {@link Gst.Promise} for task notifications (Since: 1.24)
+             * @virtual
+             */
             vfunc_add_candidate(stream: WebRTCICEStream, candidate: string, promise?: Gst.Promise | null): void;
+            /**
+             * @param session_id The session id
+             * @virtual
+             */
             vfunc_add_stream(session_id: number): WebRTCICEStream | null;
+            /**
+             * @param uri URI of the TURN server
+             * @virtual
+             */
             vfunc_add_turn_server(uri: string): boolean;
+            /**
+             * @param stream The {@link GstWebRTC.WebRTCICEStream}
+             * @param component The {@link GstWebRTC.WebRTCICEComponent}
+             * @virtual
+             */
             vfunc_find_transport(stream: WebRTCICEStream, component: WebRTCICEComponent): WebRTCICETransport | null;
+            /**
+             * @param stream The {@link GstWebRTC.WebRTCICEStream}
+             * @virtual
+             */
             vfunc_gather_candidates(stream: WebRTCICEStream): boolean;
             /**
              * Get HTTP Proxy to be used when connecting to TURN server.
+             * @virtual
              */
             vfunc_get_http_proxy(): string;
+            /**
+             * @virtual
+             */
             vfunc_get_is_controller(): boolean;
+            /**
+             * @param stream
+             * @virtual
+             */
             vfunc_get_local_candidates(stream: WebRTCICEStream): WebRTCICECandidateStats;
+            /**
+             * @param stream
+             * @virtual
+             */
             vfunc_get_remote_candidates(stream: WebRTCICEStream): WebRTCICECandidateStats;
+            /**
+             * @param stream The {@link GstWebRTC.WebRTCICEStream}
+             * @virtual
+             */
             vfunc_get_selected_pair(
                 stream: WebRTCICEStream,
             ): [boolean, WebRTCICECandidateStats, WebRTCICECandidateStats];
+            /**
+             * @virtual
+             */
             vfunc_get_stun_server(): string | null;
+            /**
+             * @virtual
+             */
             vfunc_get_turn_server(): string | null;
+            /**
+             * @param force_relay TRUE to enable force relay
+             * @virtual
+             */
             vfunc_set_force_relay(force_relay: boolean): void;
             /**
              * Set HTTP Proxy to be used when connecting to TURN server.
              * @param uri URI of the HTTP proxy of the form   http://[username:password@]hostname[:port][?alpn=<alpn>]
+             * @virtual
              */
             vfunc_set_http_proxy(uri: string): void;
+            /**
+             * @param controller TRUE to set as controller
+             * @virtual
+             */
             vfunc_set_is_controller(controller: boolean): void;
+            /**
+             * @param stream The {@link GstWebRTC.WebRTCICEStream}
+             * @param ufrag ICE username
+             * @param pwd ICE password
+             * @virtual
+             */
             vfunc_set_local_credentials(stream: WebRTCICEStream, ufrag: string, pwd: string): boolean;
+            /**
+             * @param func The {@link GstWebRTC.WebRTCICEOnCandidateFunc} callback function
+             * @virtual
+             */
             vfunc_set_on_ice_candidate(func: WebRTCICEOnCandidateFunc): void;
+            /**
+             * @param stream The {@link GstWebRTC.WebRTCICEStream}
+             * @param ufrag ICE username
+             * @param pwd ICE password
+             * @virtual
+             */
             vfunc_set_remote_credentials(stream: WebRTCICEStream, ufrag: string, pwd: string): boolean;
+            /**
+             * @param uri URI of the STUN server
+             * @virtual
+             */
             vfunc_set_stun_server(uri?: string | null): void;
+            /**
+             * @param stream The {@link GstWebRTC.WebRTCICEStream}
+             * @param tos ToS to be set
+             * @virtual
+             */
             vfunc_set_tos(stream: WebRTCICEStream, tos: number): void;
+            /**
+             * @param uri URI of the TURN sever
+             * @virtual
+             */
             vfunc_set_turn_server(uri?: string | null): void;
 
             // Methods
 
+            /**
+             * @param stream The {@link GstWebRTC.WebRTCICEStream}
+             * @param candidate The ICE candidate
+             * @param promise A {@link Gst.Promise} for task notifications (Since: 1.24)
+             */
             add_candidate(stream: WebRTCICEStream, candidate: string, promise?: Gst.Promise | null): void;
+            /**
+             * @param session_id The session id
+             * @returns The {@link GstWebRTC.WebRTCICEStream}, or `null`
+             */
             add_stream(session_id: number): WebRTCICEStream | null;
+            /**
+             * @param uri URI of the TURN server
+             * @returns FALSE on error, TRUE otherwise
+             */
             add_turn_server(uri: string): boolean;
+            /**
+             * @param stream The {@link GstWebRTC.WebRTCICEStream}
+             * @param component The {@link GstWebRTC.WebRTCICEComponent}
+             * @returns The {@link GstWebRTC.WebRTCICETransport}, or `null`
+             */
             find_transport(stream: WebRTCICEStream, component: WebRTCICEComponent | null): WebRTCICETransport | null;
+            /**
+             * @param stream The {@link GstWebRTC.WebRTCICEStream}
+             * @returns FALSE on error, TRUE otherwise
+             */
             gather_candidates(stream: WebRTCICEStream): boolean;
+            /**
+             * @returns URI of the HTTP proxy of the form   http://[username:password@]hostname[:port][?alpn=<alpn>] Get HTTP Proxy to be used when connecting to TURN server.
+             */
             get_http_proxy(): string;
+            /**
+             * @returns TRUE if set as controller, FALSE otherwise
+             */
             get_is_controller(): boolean;
+            /**
+             * @param stream The {@link GstWebRTC.WebRTCICEStream}
+             * @returns List of local candidates
+             */
             get_local_candidates(stream: WebRTCICEStream): WebRTCICECandidateStats[];
+            /**
+             * @param stream The {@link GstWebRTC.WebRTCICEStream}
+             * @returns List of remote candidates
+             */
             get_remote_candidates(stream: WebRTCICEStream): WebRTCICECandidateStats[];
+            /**
+             * @param stream The {@link GstWebRTC.WebRTCICEStream}
+             * @returns FALSE on failure, otherwise `local_stats` `remote_stats` will be set
+             */
             get_selected_pair(stream: WebRTCICEStream): [boolean, WebRTCICECandidateStats, WebRTCICECandidateStats];
+            /**
+             * @returns URI of the STUN sever
+             */
             get_stun_server(): string | null;
+            /**
+             * @returns URI of the TURN sever
+             */
             get_turn_server(): string | null;
+            /**
+             * @param force_relay TRUE to enable force relay
+             */
             set_force_relay(force_relay: boolean): void;
             /**
              * Set HTTP Proxy to be used when connecting to TURN server.
              * @param uri URI of the HTTP proxy of the form   http://[username:password@]hostname[:port][?alpn=<alpn>]
              */
             set_http_proxy(uri: string): void;
+            /**
+             * @param controller TRUE to set as controller
+             */
             set_is_controller(controller: boolean): void;
+            /**
+             * @param stream The {@link GstWebRTC.WebRTCICEStream}
+             * @param ufrag ICE username
+             * @param pwd ICE password
+             * @returns FALSE on error, TRUE otherwise
+             */
             set_local_credentials(stream: WebRTCICEStream, ufrag: string, pwd: string): boolean;
+            /**
+             * @param func The {@link GstWebRTC.WebRTCICEOnCandidateFunc} callback function
+             */
             set_on_ice_candidate(func: WebRTCICEOnCandidateFunc): void;
+            /**
+             * @param stream The {@link GstWebRTC.WebRTCICEStream}
+             * @param ufrag ICE username
+             * @param pwd ICE password
+             * @returns FALSE on error, TRUE otherwise
+             */
             set_remote_credentials(stream: WebRTCICEStream, ufrag: string, pwd: string): boolean;
+            /**
+             * @param uri URI of the STUN server
+             */
             set_stun_server(uri?: string | null): void;
+            /**
+             * @param stream The {@link GstWebRTC.WebRTCICEStream}
+             * @param tos ToS to be set
+             */
             set_tos(stream: WebRTCICEStream, tos: number): void;
+            /**
+             * @param uri URI of the TURN sever
+             */
             set_turn_server(uri?: string | null): void;
         }
 
@@ -962,12 +1358,22 @@ declare module 'gi://GstWebRTC?version=1.0' {
             }
         }
 
+        /**
+         * @gir-type Class
+         * @since 1.22
+         */
         abstract class WebRTCICEStream extends Gst.Object {
             static $gtype: GObject.GType<WebRTCICEStream>;
 
             // Properties
 
+            /**
+             * @construct-only
+             */
             get stream_id(): number;
+            /**
+             * @construct-only
+             */
             get streamId(): number;
 
             /**
@@ -987,16 +1393,19 @@ declare module 'gi://GstWebRTC?version=1.0' {
 
             // Signals
 
+            /** @signal */
             connect<K extends keyof WebRTCICEStream.SignalSignatures>(
                 signal: K,
                 callback: GObject.SignalCallback<this, WebRTCICEStream.SignalSignatures[K]>,
             ): number;
             connect(signal: string, callback: (...args: any[]) => any): number;
+            /** @signal */
             connect_after<K extends keyof WebRTCICEStream.SignalSignatures>(
                 signal: K,
                 callback: GObject.SignalCallback<this, WebRTCICEStream.SignalSignatures[K]>,
             ): number;
             connect_after(signal: string, callback: (...args: any[]) => any): number;
+            /** @signal */
             emit<K extends keyof WebRTCICEStream.SignalSignatures>(
                 signal: K,
                 ...args: GObject.GjsParameters<WebRTCICEStream.SignalSignatures[K]> extends [any, ...infer Q]
@@ -1007,19 +1416,41 @@ declare module 'gi://GstWebRTC?version=1.0' {
 
             // Virtual methods
 
+            /**
+             * @param component The {@link GstWebRTC.WebRTCICEComponent}
+             * @virtual
+             */
             vfunc_find_transport(component: WebRTCICEComponent): WebRTCICETransport | null;
+            /**
+             * @virtual
+             */
             vfunc_gather_candidates(): boolean;
 
             // Methods
 
+            /**
+             * @param component The {@link GstWebRTC.WebRTCICEComponent}
+             * @returns the {@link GstWebRTC.WebRTCICETransport}, or `null`
+             */
             find_transport(component: WebRTCICEComponent | null): WebRTCICETransport | null;
+            /**
+             * @returns FALSE on error, TRUE otherwise
+             */
             gather_candidates(): boolean;
         }
 
         namespace WebRTCICETransport {
             // Signal signatures
             interface SignalSignatures extends Gst.Object.SignalSignatures {
+                /**
+                 * @signal
+                 * @run-last
+                 */
                 'on-new-candidate': (arg0: string) => void;
+                /**
+                 * @signal
+                 * @run-last
+                 */
                 'on-selected-candidate-pair-change': () => void;
                 'notify::component': (pspec: GObject.ParamSpec) => void;
                 'notify::gathering-state': (pspec: GObject.ParamSpec) => void;
@@ -1038,14 +1469,29 @@ declare module 'gi://GstWebRTC?version=1.0' {
             }
         }
 
+        /**
+         * @gir-type Class
+         */
         abstract class WebRTCICETransport extends Gst.Object {
             static $gtype: GObject.GType<WebRTCICETransport>;
 
             // Properties
 
+            /**
+             * @construct-only
+             */
             get component(): WebRTCICEComponent;
+            /**
+             * @read-only
+             */
             get gathering_state(): WebRTCICEGatheringState;
+            /**
+             * @read-only
+             */
             get gatheringState(): WebRTCICEGatheringState;
+            /**
+             * @read-only
+             */
             get state(): WebRTCICEConnectionState;
 
             /**
@@ -1071,16 +1517,19 @@ declare module 'gi://GstWebRTC?version=1.0' {
 
             // Signals
 
+            /** @signal */
             connect<K extends keyof WebRTCICETransport.SignalSignatures>(
                 signal: K,
                 callback: GObject.SignalCallback<this, WebRTCICETransport.SignalSignatures[K]>,
             ): number;
             connect(signal: string, callback: (...args: any[]) => any): number;
+            /** @signal */
             connect_after<K extends keyof WebRTCICETransport.SignalSignatures>(
                 signal: K,
                 callback: GObject.SignalCallback<this, WebRTCICETransport.SignalSignatures[K]>,
             ): number;
             connect_after(signal: string, callback: (...args: any[]) => any): number;
+            /** @signal */
             emit<K extends keyof WebRTCICETransport.SignalSignatures>(
                 signal: K,
                 ...args: GObject.GjsParameters<WebRTCICETransport.SignalSignatures[K]> extends [any, ...infer Q]
@@ -1091,12 +1540,26 @@ declare module 'gi://GstWebRTC?version=1.0' {
 
             // Virtual methods
 
+            /**
+             * @virtual
+             */
             vfunc_gather_candidates(): boolean;
 
             // Methods
 
+            /**
+             * @param new_state
+             */
             connection_state_change(new_state: WebRTCICEConnectionState | null): void;
+            /**
+             * @param new_state
+             */
             gathering_state_change(new_state: WebRTCICEGatheringState | null): void;
+            /**
+             * @param stream_id
+             * @param component
+             * @param attr
+             */
             new_candidate(stream_id: number, component: WebRTCICEComponent | null, attr: string): void;
             selected_pair_change(): void;
         }
@@ -1120,6 +1583,7 @@ declare module 'gi://GstWebRTC?version=1.0' {
          * An object to track the receiving aspect of the stream
          *
          * Mostly matches the WebRTC RTCRtpReceiver interface.
+         * @gir-type Class
          */
         class WebRTCRTPReceiver extends Gst.Object {
             static $gtype: GObject.GType<WebRTCRTPReceiver>;
@@ -1128,6 +1592,8 @@ declare module 'gi://GstWebRTC?version=1.0' {
 
             /**
              * The DTLS transport for this receiver
+             * @since 1.20
+             * @read-only
              */
             get transport(): WebRTCDTLSTransport;
 
@@ -1148,16 +1614,19 @@ declare module 'gi://GstWebRTC?version=1.0' {
 
             // Signals
 
+            /** @signal */
             connect<K extends keyof WebRTCRTPReceiver.SignalSignatures>(
                 signal: K,
                 callback: GObject.SignalCallback<this, WebRTCRTPReceiver.SignalSignatures[K]>,
             ): number;
             connect(signal: string, callback: (...args: any[]) => any): number;
+            /** @signal */
             connect_after<K extends keyof WebRTCRTPReceiver.SignalSignatures>(
                 signal: K,
                 callback: GObject.SignalCallback<this, WebRTCRTPReceiver.SignalSignatures[K]>,
             ): number;
             connect_after(signal: string, callback: (...args: any[]) => any): number;
+            /** @signal */
             emit<K extends keyof WebRTCRTPReceiver.SignalSignatures>(
                 signal: K,
                 ...args: GObject.GjsParameters<WebRTCRTPReceiver.SignalSignatures[K]> extends [any, ...infer Q]
@@ -1188,6 +1657,7 @@ declare module 'gi://GstWebRTC?version=1.0' {
          * An object to track the sending aspect of the stream
          *
          * Mostly matches the WebRTC RTCRtpSender interface.
+         * @gir-type Class
          */
         class WebRTCRTPSender extends Gst.Object {
             static $gtype: GObject.GType<WebRTCRTPSender>;
@@ -1196,11 +1666,14 @@ declare module 'gi://GstWebRTC?version=1.0' {
 
             /**
              * The priority from which to set the DSCP field on packets
+             * @since 1.20
              */
             get priority(): WebRTCPriorityType;
             set priority(val: WebRTCPriorityType);
             /**
              * The DTLS transport for this sender
+             * @since 1.20
+             * @read-only
              */
             get transport(): WebRTCDTLSTransport;
 
@@ -1221,16 +1694,19 @@ declare module 'gi://GstWebRTC?version=1.0' {
 
             // Signals
 
+            /** @signal */
             connect<K extends keyof WebRTCRTPSender.SignalSignatures>(
                 signal: K,
                 callback: GObject.SignalCallback<this, WebRTCRTPSender.SignalSignatures[K]>,
             ): number;
             connect(signal: string, callback: (...args: any[]) => any): number;
+            /** @signal */
             connect_after<K extends keyof WebRTCRTPSender.SignalSignatures>(
                 signal: K,
                 callback: GObject.SignalCallback<this, WebRTCRTPSender.SignalSignatures[K]>,
             ): number;
             connect_after(signal: string, callback: (...args: any[]) => any): number;
+            /** @signal */
             emit<K extends keyof WebRTCRTPSender.SignalSignatures>(
                 signal: K,
                 ...args: GObject.GjsParameters<WebRTCRTPSender.SignalSignatures[K]> extends [any, ...infer Q]
@@ -1283,6 +1759,7 @@ declare module 'gi://GstWebRTC?version=1.0' {
 
         /**
          * Mostly matches the WebRTC RTCRtpTransceiver interface.
+         * @gir-type Class
          */
         abstract class WebRTCRTPTransceiver extends Gst.Object {
             static $gtype: GObject.GType<WebRTCRTPTransceiver>;
@@ -1291,11 +1768,13 @@ declare module 'gi://GstWebRTC?version=1.0' {
 
             /**
              * Caps representing the codec preferences.
+             * @since 1.20
              */
             get codec_preferences(): Gst.Caps;
             set codec_preferences(val: Gst.Caps);
             /**
              * Caps representing the codec preferences.
+             * @since 1.20
              */
             get codecPreferences(): Gst.Caps;
             set codecPreferences(val: Gst.Caps);
@@ -1304,6 +1783,8 @@ declare module 'gi://GstWebRTC?version=1.0' {
              * transceiver is stopped or has never participated in an exchange
              * of offers and answers. To change the transceiver's
              * directionality, set the value of the direction property.
+             * @since 1.20
+             * @read-only
              */
             get current_direction(): WebRTCRTPTransceiverDirection;
             /**
@@ -1311,15 +1792,20 @@ declare module 'gi://GstWebRTC?version=1.0' {
              * transceiver is stopped or has never participated in an exchange
              * of offers and answers. To change the transceiver's
              * directionality, set the value of the direction property.
+             * @since 1.20
+             * @read-only
              */
             get currentDirection(): WebRTCRTPTransceiverDirection;
             /**
              * Direction of the transceiver.
+             * @since 1.18
              */
             get direction(): WebRTCRTPTransceiverDirection;
             set direction(val: WebRTCRTPTransceiverDirection);
             /**
              * The kind of media this transceiver transports
+             * @since 1.20
+             * @read-only
              */
             get kind(): WebRTCKind;
             /**
@@ -1329,10 +1815,21 @@ declare module 'gi://GstWebRTC?version=1.0' {
              * neither a local or remote description has been applied, or if its
              * associated m-line is rejected by either a remote offer or any
              * answer.
+             * @since 1.20
+             * @read-only
              */
             get mid(): string;
+            /**
+             * @construct-only
+             */
             get mlineindex(): number;
+            /**
+             * @construct-only
+             */
             get receiver(): WebRTCRTPReceiver;
+            /**
+             * @construct-only
+             */
             get sender(): WebRTCRTPSender;
 
             /**
@@ -1352,16 +1849,19 @@ declare module 'gi://GstWebRTC?version=1.0' {
 
             // Signals
 
+            /** @signal */
             connect<K extends keyof WebRTCRTPTransceiver.SignalSignatures>(
                 signal: K,
                 callback: GObject.SignalCallback<this, WebRTCRTPTransceiver.SignalSignatures[K]>,
             ): number;
             connect(signal: string, callback: (...args: any[]) => any): number;
+            /** @signal */
             connect_after<K extends keyof WebRTCRTPTransceiver.SignalSignatures>(
                 signal: K,
                 callback: GObject.SignalCallback<this, WebRTCRTPTransceiver.SignalSignatures[K]>,
             ): number;
             connect_after(signal: string, callback: (...args: any[]) => any): number;
+            /** @signal */
             emit<K extends keyof WebRTCRTPTransceiver.SignalSignatures>(
                 signal: K,
                 ...args: GObject.GjsParameters<WebRTCRTPTransceiver.SignalSignatures[K]> extends [any, ...infer Q]
@@ -1394,16 +1894,37 @@ declare module 'gi://GstWebRTC?version=1.0' {
             }
         }
 
+        /**
+         * @gir-type Class
+         */
         abstract class WebRTCSCTPTransport extends Gst.Object {
             static $gtype: GObject.GType<WebRTCSCTPTransport>;
 
             // Properties
 
+            /**
+             * @read-only
+             */
             get max_channels(): number;
+            /**
+             * @read-only
+             */
             get maxChannels(): number;
+            /**
+             * @read-only
+             */
             get max_message_size(): number;
+            /**
+             * @read-only
+             */
             get maxMessageSize(): number;
+            /**
+             * @read-only
+             */
             get state(): WebRTCSCTPTransportState;
+            /**
+             * @read-only
+             */
             get transport(): WebRTCDTLSTransport;
 
             /**
@@ -1423,16 +1944,19 @@ declare module 'gi://GstWebRTC?version=1.0' {
 
             // Signals
 
+            /** @signal */
             connect<K extends keyof WebRTCSCTPTransport.SignalSignatures>(
                 signal: K,
                 callback: GObject.SignalCallback<this, WebRTCSCTPTransport.SignalSignatures[K]>,
             ): number;
             connect(signal: string, callback: (...args: any[]) => any): number;
+            /** @signal */
             connect_after<K extends keyof WebRTCSCTPTransport.SignalSignatures>(
                 signal: K,
                 callback: GObject.SignalCallback<this, WebRTCSCTPTransport.SignalSignatures[K]>,
             ): number;
             connect_after(signal: string, callback: (...args: any[]) => any): number;
+            /** @signal */
             emit<K extends keyof WebRTCSCTPTransport.SignalSignatures>(
                 signal: K,
                 ...args: GObject.GjsParameters<WebRTCSCTPTransport.SignalSignatures[K]> extends [any, ...infer Q]
@@ -1442,8 +1966,18 @@ declare module 'gi://GstWebRTC?version=1.0' {
             emit(signal: string, ...args: any[]): void;
         }
 
+        /**
+         * @gir-type Alias
+         */
         type WebRTCDTLSTransportClass = typeof WebRTCDTLSTransport;
+        /**
+         * @gir-type Alias
+         */
         type WebRTCDataChannelClass = typeof WebRTCDataChannel;
+        /**
+         * @gir-type Struct
+         * @since 1.22
+         */
         class WebRTCICECandidateStats {
             static $gtype: GObject.GType<WebRTCICECandidateStats>;
 
@@ -1476,22 +2010,47 @@ declare module 'gi://GstWebRTC?version=1.0' {
 
             // Methods
 
+            /**
+             * @returns A copy of `stats`
+             */
             copy(): WebRTCICECandidateStats;
             /**
-             * Helper function to free #GstWebRTCICECandidateStats
+             * Helper function to free {@link GstWebRTC.WebRTCICECandidateStats}
              */
             free(): void;
         }
 
+        /**
+         * @gir-type Alias
+         */
         type WebRTCICEClass = typeof WebRTCICE;
+        /**
+         * @gir-type Alias
+         */
         type WebRTCICEStreamClass = typeof WebRTCICEStream;
+        /**
+         * @gir-type Alias
+         */
         type WebRTCICETransportClass = typeof WebRTCICETransport;
+        /**
+         * @gir-type Alias
+         */
         type WebRTCRTPReceiverClass = typeof WebRTCRTPReceiver;
+        /**
+         * @gir-type Alias
+         */
         type WebRTCRTPSenderClass = typeof WebRTCRTPSender;
+        /**
+         * @gir-type Alias
+         */
         type WebRTCRTPTransceiverClass = typeof WebRTCRTPTransceiver;
+        /**
+         * @gir-type Alias
+         */
         type WebRTCSCTPTransportClass = typeof WebRTCSCTPTransport;
         /**
          * See <https://www.w3.org/TR/webrtc/#rtcsessiondescription-class>
+         * @gir-type Struct
          */
         class WebRTCSessionDescription {
             static $gtype: GObject.GType<WebRTCSessionDescription>;
@@ -1509,6 +2068,9 @@ declare module 'gi://GstWebRTC?version=1.0' {
 
             // Methods
 
+            /**
+             * @returns a new copy of `src`
+             */
             copy(): WebRTCSessionDescription;
             /**
              * Free `desc` and all associated resources

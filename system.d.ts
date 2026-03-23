@@ -8,7 +8,7 @@ declare module 'system' {
      * line. In C and other languages, this information is contained in the first element of
      * the platform's equivalent of argv, but GJS's ARGV only contains the
      * subsequent command-line arguments. In other words, `ARGV[0]` in GJS is the same as `argv[1]` in C.
-     * @version Gjs 1.68
+     * @since 1.68
      */
     export const programInvocationName: string;
 
@@ -19,7 +19,7 @@ declare module 'system' {
 
     /**
      * The full path of the executed program.
-     * @version Gjs 1.68
+     * @since 1.68
      */
     export const programPath: string | null;
 
@@ -27,7 +27,7 @@ declare module 'system' {
      * A list of arguments passed to the current process.
      * This is effectively an alias for the global `ARGV`, which is misleading in that
      * it is not equivalent to the platform'`s` argv.
-     * @version Gjs 1.68
+     * @since 1.68
      */
     export const programArgs: string[];
 
@@ -49,7 +49,7 @@ declare module 'system' {
      * See also {@link addressOf}
      * @param o Any {@link GObject.Object}-derived instance
      * @returns A hexadecimal string (e.g. `0xb4f170f0`)
-     * @version Gjs 1.58
+     * @since 1.58
      */
     export function addressOfGObject(o: GObject.Object): string;
 
@@ -113,7 +113,7 @@ declare module 'system' {
      * Dump internal garbage collector statistics. If `path` is not given, GJS will
      * write the contents to `stdout`.
      * @param path Optional file path
-     * @version Gjs 1.70
+     * @since 1.70
      * @example Output:
      * ```json
      * {
