@@ -21,18 +21,30 @@ declare module 'gi://xft?version=2.0' {
          */
 
         function init(): void;
+        /**
+         * @gir-type Struct
+         */
         class Color {
             static $gtype: GObject.GType<Color>;
         }
 
+        /**
+         * @gir-type Struct
+         */
         class Draw {
             static $gtype: GObject.GType<Draw>;
         }
 
+        /**
+         * @gir-type Struct
+         */
         class Font {
             static $gtype: GObject.GType<Font>;
         }
 
+        /**
+         * @gir-type Struct
+         */
         class GlyphSpec {
             static $gtype: GObject.GType<GlyphSpec>;
         }

@@ -38,38 +38,38 @@ declare module 'gi://PangoFT2?version=1.0' {
          */
 
         /**
-         * Gets the `PangoCoverage` for a `PangoFT2Font`.
+         * Gets the {@link Pango.Coverage} for a `PangoFT2Font`.
          *
-         * Use [method`Pango`.Font.get_coverage] instead.
+         * Use {@link Pango.Font.get_coverage} instead.
          * @param font a Pango FT2 font
          * @param language a language tag.
-         * @returns a `PangoCoverage`
+         * @returns a {@link Pango.Coverage}
          */
         function font_get_coverage(font: Pango.Font, language: Pango.Language): Pango.Coverage;
         /**
          * Retrieves kerning information for a combination of two glyphs.
          *
-         * Use pango_fc_font_kern_glyphs() instead.
-         * @param font a `PangoFont`
-         * @param left the left `PangoGlyph`
-         * @param right the right `PangoGlyph`
+         * Use `pango_fc_font_kern_glyphs()` instead.
+         * @param font a {@link Pango.Font}
+         * @param left the left {@link Pango.Glyph}
+         * @param right the right {@link Pango.Glyph}
          * @returns The amount of kerning (in Pango units) to   apply for the given combination of glyphs.
          */
         function font_get_kerning(font: Pango.Font, left: Pango.Glyph, right: Pango.Glyph): number;
         /**
          * Return the index of a glyph suitable for drawing unknown
-         * characters with `font,` or %PANGO_GLYPH_EMPTY if no suitable
+         * characters with `font`, or `PANGO_GLYPH_EMPTY` if no suitable
          * glyph found.
          *
          * If you want to draw an unknown-box for a character that
          * is not covered by the font, use PANGO_GET_UNKNOWN_GLYPH()
          * instead.
-         * @param font a `PangoFont`
-         * @returns a glyph index into @font, or %PANGO_GLYPH_EMPTY
+         * @param font a {@link Pango.Font}
+         * @returns a glyph index into `font`, or `PANGO_GLYPH_EMPTY`
          */
         function get_unknown_glyph(font: Pango.Font): Pango.Glyph;
         /**
-         * Renders a `PangoGlyphString` onto a FreeType2 bitmap.
+         * Renders a {@link Pango.GlyphString} onto a FreeType2 bitmap.
          * @param bitmap the FreeType2 bitmap onto which to draw the string
          * @param font the font in which to draw the string
          * @param glyphs the glyph string to draw
@@ -84,23 +84,23 @@ declare module 'gi://PangoFT2?version=1.0' {
             y: number,
         ): void;
         /**
-         * Render a `PangoLayout` onto a FreeType2 bitmap
+         * Render a {@link Pango.Layout} onto a FreeType2 bitmap
          * @param bitmap a FT_Bitmap to render the layout onto
-         * @param layout a `PangoLayout`
+         * @param layout a {@link Pango.Layout}
          * @param x the X position of the left of the layout (in pixels)
          * @param y the Y position of the top of the layout (in pixels)
          */
         function render_layout(bitmap: freetype2.Bitmap, layout: Pango.Layout, x: number, y: number): void;
         /**
-         * Render a `PangoLayoutLine` onto a FreeType2 bitmap
+         * Render a {@link Pango.LayoutLine} onto a FreeType2 bitmap
          * @param bitmap a FT_Bitmap to render the line onto
-         * @param line a `PangoLayoutLine`
+         * @param line a {@link Pango.LayoutLine}
          * @param x the x position of start of string (in pixels)
          * @param y the y position of baseline (in pixels)
          */
         function render_layout_line(bitmap: freetype2.Bitmap, line: Pango.LayoutLine, x: number, y: number): void;
         /**
-         * Render a `PangoLayoutLine` onto a FreeType2 bitmap, with he
+         * Render a {@link Pango.LayoutLine} onto a FreeType2 bitmap, with he
          * location specified in fixed-point Pango units rather than
          * pixels.
          *
@@ -108,9 +108,10 @@ declare module 'gi://PangoFT2?version=1.0' {
          * to integer pixels multiple times, even if the final glyph
          * positions are integers.)
          * @param bitmap a FT_Bitmap to render the line onto
-         * @param line a `PangoLayoutLine`
+         * @param line a {@link Pango.LayoutLine}
          * @param x the x position of start of string (in Pango units)
          * @param y the y position of baseline (in Pango units)
+         * @since 1.6
          */
         function render_layout_line_subpixel(
             bitmap: freetype2.Bitmap,
@@ -119,7 +120,7 @@ declare module 'gi://PangoFT2?version=1.0' {
             y: number,
         ): void;
         /**
-         * Render a `PangoLayout` onto a FreeType2 bitmap, with he
+         * Render a {@link Pango.Layout} onto a FreeType2 bitmap, with he
          * location specified in fixed-point Pango units rather than
          * pixels.
          *
@@ -127,26 +128,28 @@ declare module 'gi://PangoFT2?version=1.0' {
          * to integer pixels multiple times, even if the final glyph
          * positions are integers.)
          * @param bitmap a FT_Bitmap to render the layout onto
-         * @param layout a `PangoLayout`
+         * @param layout a {@link Pango.Layout}
          * @param x the X position of the left of the layout (in Pango units)
          * @param y the Y position of the top of the layout (in Pango units)
+         * @since 1.6
          */
         function render_layout_subpixel(bitmap: freetype2.Bitmap, layout: Pango.Layout, x: number, y: number): void;
         /**
-         * Renders a `PangoGlyphString` onto a FreeType2 bitmap, possibly
+         * Renders a {@link Pango.GlyphString} onto a FreeType2 bitmap, possibly
          * transforming the layed-out coordinates through a transformation
          * matrix.
          *
          * Note that the transformation matrix for `font` is not
          * changed, so to produce correct rendering results, the `font`
-         * must have been loaded using a `PangoContext` with an identical
+         * must have been loaded using a {@link Pango.Context} with an identical
          * transformation matrix to that passed in to this function.
          * @param bitmap the FreeType2 bitmap onto which to draw the string
-         * @param matrix a `PangoMatrix`
+         * @param matrix a {@link Pango.Matrix}
          * @param font the font in which to draw the string
          * @param glyphs the glyph string to draw
          * @param x the x position of the start of the string (in Pango   units in user space coordinates)
          * @param y the y position of the baseline (in Pango units   in user space coordinates)
+         * @since 1.6
          */
         function render_transformed(
             bitmap: freetype2.Bitmap,
@@ -157,10 +160,13 @@ declare module 'gi://PangoFT2?version=1.0' {
             y: number,
         ): void;
         /**
-         * Free the global fontmap. (See pango_ft2_font_map_for_display())
+         * Free the global fontmap. (See `pango_ft2_font_map_for_display()`)
          * Use of the global PangoFT2 fontmap is deprecated.
          */
         function shutdown_display(): void;
+        /**
+         * @gir-type Callback
+         */
         interface SubstituteFunc {
             (pattern: fontconfig.Pattern, data?: any | null): void;
         }
@@ -178,7 +184,8 @@ declare module 'gi://PangoFT2?version=1.0' {
         }
 
         /**
-         * The `PangoFT2FontMap` is the `PangoFontMap` implementation for FreeType fonts.
+         * The {@link PangoFT2.FontMap} is the {@link Pango.FontMap} implementation for FreeType fonts.
+         * @gir-type Class
          */
         class FontMap<A extends GObject.Object = GObject.Object>
             extends PangoFc.FontMap<A>
@@ -205,16 +212,19 @@ declare module 'gi://PangoFT2?version=1.0' {
 
             // Signals
 
+            /** @signal */
             connect<K extends keyof FontMap.SignalSignatures>(
                 signal: K,
                 callback: GObject.SignalCallback<this, FontMap.SignalSignatures[K]>,
             ): number;
             connect(signal: string, callback: (...args: any[]) => any): number;
+            /** @signal */
             connect_after<K extends keyof FontMap.SignalSignatures>(
                 signal: K,
                 callback: GObject.SignalCallback<this, FontMap.SignalSignatures[K]>,
             ): number;
             connect_after(signal: string, callback: (...args: any[]) => any): number;
+            /** @signal */
             emit<K extends keyof FontMap.SignalSignatures>(
                 signal: K,
                 ...args: GObject.GjsParameters<FontMap.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never
@@ -225,14 +235,17 @@ declare module 'gi://PangoFT2?version=1.0' {
 
             /**
              * Sets a function that will be called to do final configuration
-             * substitution on a `FcPattern` before it is used to load
+             * substitution on a {@link fontconfig.Pattern} before it is used to load
              * the font.
              *
              * This function can be used to do things like set
              * hinting and antialiasing options.
-             * @param func function to call to to do final config tweaking        on #FcPattern objects.
+             * @param func function to call to to do final config tweaking        on {@link fontconfig.Pattern} objects.
              */
             set_default_substitute(func: SubstituteFunc): void;
+            /**
+             * @param args
+             */
             // Conflicted with PangoFc.FontMap.set_default_substitute
             set_default_substitute(...args: never[]): any;
             /**
@@ -244,24 +257,22 @@ declare module 'gi://PangoFT2?version=1.0' {
             /**
              * Call this function any time the results of the
              * default substitution function set with
-             * pango_ft2_font_map_set_default_substitute() change.
+             * `pango_ft2_font_map_set_default_substitute()` change.
              *
              * That is, if your substitution function will return different
              * results for the same input pattern, you must call this function.
              */
             substitute_changed(): void;
-
-            // Inherited methods
             /**
              * Gets the type of the items in `list`.
              *
-             * All items returned from g_list_model_get_item() are of the type
+             * All items returned from `g_list_model_get_item()` are of the type
              * returned by this function, or a subtype, or if the type is an
              * interface, they are an implementation of that interface.
              *
-             * The item type of a #GListModel can not change during the life of the
+             * The item type of a {@link Gio.ListModel} can not change during the life of the
              * model.
-             * @returns the #GType of the items contained in @list.
+             * @returns the {@link GObject.GType} of the items contained in `list`.
              */
             get_item_type(): GObject.GType;
             /**
@@ -269,73 +280,75 @@ declare module 'gi://PangoFT2?version=1.0' {
              *
              * Depending on the model implementation, calling this function may be
              * less efficient than iterating the list with increasing values for
-             * `position` until g_list_model_get_item() returns %NULL.
-             * @returns the number of items in @list.
+             * `position` until `g_list_model_get_item()` returns `null`.
+             * @returns the number of items in `list`.
              */
             get_n_items(): number;
             /**
              * Get the item at `position`.
              *
-             * If `position` is greater than the number of items in `list,` %NULL is
+             * If `position` is greater than the number of items in `list`, `null` is
              * returned.
              *
-             * %NULL is never returned for an index that is smaller than the length
+             * `null` is never returned for an index that is smaller than the length
              * of the list.
              *
              * This function is meant to be used by language bindings in place
-             * of g_list_model_get_item().
+             * of `g_list_model_get_item()`.
              *
-             * See also: g_list_model_get_n_items()
+             * See also: `g_list_model_get_n_items()`
              * @param position the position of the item to fetch
-             * @returns the object at @position.
+             * @returns the object at `position`.
              */
             get_item(position: number): A | null;
             /**
-             * Emits the #GListModel::items-changed signal on `list`.
+             * Emits the {@link Gio.ListModel.SignalSignatures.items_changed | Gio.ListModel::items-changed} signal on `list`.
              *
              * This function should only be called by classes implementing
-             * #GListModel. It has to be called after the internal representation
+             * {@link Gio.ListModel}. It has to be called after the internal representation
              * of `list` has been updated, because handlers connected to this signal
              * might query the new state of the list.
              *
              * Implementations must only make changes to the model (as visible to
              * its consumer) in places that will not cause problems for that
              * consumer.  For models that are driven directly by a write API (such
-             * as #GListStore), changes can be reported in response to uses of that
+             * as {@link Gio.ListStore}), changes can be reported in response to uses of that
              * API.  For models that represent remote data, changes should only be
              * made from a fresh mainloop dispatch.  It is particularly not
-             * permitted to make changes in response to a call to the #GListModel
+             * permitted to make changes in response to a call to the {@link Gio.ListModel}
              * consumer API.
              *
              * Stated another way: in general, it is assumed that code making a
              * series of accesses to the model via the API, without returning to the
              * mainloop, and without calling other code, will continue to view the
              * same contents of the model.
-             * @param position the position at which @list changed
+             * @param position the position at which `list` changed
              * @param removed the number of items removed
              * @param added the number of items added
              */
             items_changed(position: number, removed: number, added: number): void;
             /**
              * Get the item at `position`. If `position` is greater than the number of
-             * items in `list,` %NULL is returned.
+             * items in `list`, `null` is returned.
              *
-             * %NULL is never returned for an index that is smaller than the length
-             * of the list.  See g_list_model_get_n_items().
+             * `null` is never returned for an index that is smaller than the length
+             * of the list.  See `g_list_model_get_n_items()`.
              *
-             * The same #GObject instance may not appear more than once in a #GListModel.
+             * The same {@link GObject.Object} instance may not appear more than once in a {@link Gio.ListModel}.
              * @param position the position of the item to fetch
+             * @virtual
              */
             vfunc_get_item(position: number): A | null;
             /**
              * Gets the type of the items in `list`.
              *
-             * All items returned from g_list_model_get_item() are of the type
+             * All items returned from `g_list_model_get_item()` are of the type
              * returned by this function, or a subtype, or if the type is an
              * interface, they are an implementation of that interface.
              *
-             * The item type of a #GListModel can not change during the life of the
+             * The item type of a {@link Gio.ListModel} can not change during the life of the
              * model.
+             * @virtual
              */
             vfunc_get_item_type(): GObject.GType;
             /**
@@ -343,7 +356,8 @@ declare module 'gi://PangoFT2?version=1.0' {
              *
              * Depending on the model implementation, calling this function may be
              * less efficient than iterating the list with increasing values for
-             * `position` until g_list_model_get_item() returns %NULL.
+             * `position` until `g_list_model_get_item()` returns `null`.
+             * @virtual
              */
             vfunc_get_n_items(): number;
             /**
@@ -359,32 +373,32 @@ declare module 'gi://PangoFT2?version=1.0' {
              * ```
              *
              *
-             * Will result in the "sensitive" property of the widget #GObject instance to be
-             * updated with the same value of the "active" property of the action #GObject
+             * Will result in the "sensitive" property of the widget {@link GObject.Object} instance to be
+             * updated with the same value of the "active" property of the action {@link GObject.Object}
              * instance.
              *
-             * If `flags` contains %G_BINDING_BIDIRECTIONAL then the binding will be mutual:
+             * If `flags` contains {@link GObject.BindingFlags.BIDIRECTIONAL} then the binding will be mutual:
              * if `target_property` on `target` changes then the `source_property` on `source`
              * will be updated as well.
              *
              * The binding will automatically be removed when either the `source` or the
              * `target` instances are finalized. To remove the binding without affecting the
-             * `source` and the `target` you can just call g_object_unref() on the returned
-             * #GBinding instance.
+             * `source` and the `target` you can just call `g_object_unref()` on the returned
+             * {@link GObject.Binding} instance.
              *
-             * Removing the binding by calling g_object_unref() on it must only be done if
+             * Removing the binding by calling `g_object_unref()` on it must only be done if
              * the binding, `source` and `target` are only used from a single thread and it
              * is clear that both `source` and `target` outlive the binding. Especially it
              * is not safe to rely on this if the binding, `source` or `target` can be
              * finalized from different threads. Keep another reference to the binding and
-             * use g_binding_unbind() instead to be on the safe side.
+             * use `g_binding_unbind()` instead to be on the safe side.
              *
-             * A #GObject can have multiple bindings.
-             * @param source_property the property on @source to bind
-             * @param target the target #GObject
-             * @param target_property the property on @target to bind
-             * @param flags flags to pass to #GBinding
-             * @returns the #GBinding instance representing the     binding between the two #GObject instances. The binding is released     whenever the #GBinding reference count reaches zero.
+             * A {@link GObject.Object} can have multiple bindings.
+             * @param source_property the property on `source` to bind
+             * @param target the target {@link GObject.Object}
+             * @param target_property the property on `target` to bind
+             * @param flags flags to pass to {@link GObject.Binding}
+             * @returns the {@link GObject.Binding} instance representing the     binding between the two {@link GObject.Object} instances. The binding is released     whenever the {@link GObject.Binding} reference count reaches zero.
              */
             bind_property(
                 source_property: string,
@@ -393,39 +407,39 @@ declare module 'gi://PangoFT2?version=1.0' {
                 flags: GObject.BindingFlags | null,
             ): GObject.Binding;
             /**
-             * Complete version of g_object_bind_property().
+             * Complete version of `g_object_bind_property()`.
              *
              * Creates a binding between `source_property` on `source` and `target_property`
-             * on `target,` allowing you to set the transformation functions to be used by
+             * on `target`, allowing you to set the transformation functions to be used by
              * the binding.
              *
-             * If `flags` contains %G_BINDING_BIDIRECTIONAL then the binding will be mutual:
+             * If `flags` contains {@link GObject.BindingFlags.BIDIRECTIONAL} then the binding will be mutual:
              * if `target_property` on `target` changes then the `source_property` on `source`
              * will be updated as well. The `transform_from` function is only used in case
              * of bidirectional bindings, otherwise it will be ignored
              *
              * The binding will automatically be removed when either the `source` or the
              * `target` instances are finalized. This will release the reference that is
-             * being held on the #GBinding instance; if you want to hold on to the
-             * #GBinding instance, you will need to hold a reference to it.
+             * being held on the {@link GObject.Binding} instance; if you want to hold on to the
+             * {@link GObject.Binding} instance, you will need to hold a reference to it.
              *
-             * To remove the binding, call g_binding_unbind().
+             * To remove the binding, call `g_binding_unbind()`.
              *
-             * A #GObject can have multiple bindings.
+             * A {@link GObject.Object} can have multiple bindings.
              *
              * The same `user_data` parameter will be used for both `transform_to`
              * and `transform_from` transformation functions; the `notify` function will
              * be called once, when the binding is removed. If you need different data
              * for each transformation function, please use
-             * g_object_bind_property_with_closures() instead.
-             * @param source_property the property on @source to bind
-             * @param target the target #GObject
-             * @param target_property the property on @target to bind
-             * @param flags flags to pass to #GBinding
-             * @param transform_to the transformation function     from the @source to the @target, or %NULL to use the default
-             * @param transform_from the transformation function     from the @target to the @source, or %NULL to use the default
-             * @param notify a function to call when disposing the binding, to free     resources used by the transformation functions, or %NULL if not required
-             * @returns the #GBinding instance representing the     binding between the two #GObject instances. The binding is released     whenever the #GBinding reference count reaches zero.
+             * `g_object_bind_property_with_closures()` instead.
+             * @param source_property the property on `source` to bind
+             * @param target the target {@link GObject.Object}
+             * @param target_property the property on `target` to bind
+             * @param flags flags to pass to {@link GObject.Binding}
+             * @param transform_to the transformation function     from the `source` to the `target`, or `null` to use the default
+             * @param transform_from the transformation function     from the `target` to the `source`, or `null` to use the default
+             * @param notify a function to call when disposing the binding, to free     resources used by the transformation functions, or `null` if not required
+             * @returns the {@link GObject.Binding} instance representing the     binding between the two {@link GObject.Object} instances. The binding is released     whenever the {@link GObject.Binding} reference count reaches zero.
              */
             bind_property_full(
                 source_property: string,
@@ -436,13 +450,16 @@ declare module 'gi://PangoFT2?version=1.0' {
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
             ): GObject.Binding;
+            /**
+             * @param args
+             */
             // Conflicted with GObject.Object.bind_property_full
             bind_property_full(...args: never[]): any;
             /**
-             * This function is intended for #GObject implementations to re-enforce
+             * This function is intended for {@link GObject.Object} implementations to re-enforce
              * a [floating][floating-ref] object reference. Doing this is seldom
-             * required: all #GInitiallyUnowneds are created with a floating reference
-             * which usually just needs to be sunken by calling g_object_ref_sink().
+             * required: all `GInitiallyUnowneds` are created with a floating reference
+             * which usually just needs to be sunken by calling `g_object_ref_sink()`.
              */
             force_floating(): void;
             /**
@@ -450,7 +467,7 @@ declare module 'gi://PangoFT2?version=1.0' {
              * non-zero, the emission of "notify" signals on `object` is
              * stopped. The signals are queued until the freeze count is decreased
              * to zero. Duplicate notifications are squashed so that at most one
-             * #GObject::notify signal is emitted for each property modified while the
+             * {@link GObject.Object.SignalSignatures.notify | GObject.Object::notify} signal is emitted for each property modified while the
              * object is frozen.
              *
              * This is necessary for accessors that modify multiple properties to prevent
@@ -458,9 +475,9 @@ declare module 'gi://PangoFT2?version=1.0' {
              */
             freeze_notify(): void;
             /**
-             * Gets a named field from the objects table of associations (see g_object_set_data()).
+             * Gets a named field from the objects table of associations (see `g_object_set_data()`).
              * @param key name of the key for that association
-             * @returns the data if found,          or %NULL if no such data exists.
+             * @returns the data if found,          or `null` if no such data exists.
              */
             get_data(key: string): any | null;
             /**
@@ -480,9 +497,9 @@ declare module 'gi://PangoFT2?version=1.0' {
             get_property(property_name: string, value: GObject.Value | any): any;
             /**
              * This function gets back user data pointers stored via
-             * g_object_set_qdata().
-             * @param quark A #GQuark, naming the user data pointer
-             * @returns The user data pointer set, or %NULL
+             * `g_object_set_qdata()`.
+             * @param quark A {@link GLib.Quark}, naming the user data pointer
+             * @returns The user data pointer set, or `null`
              */
             get_qdata(quark: GLib.Quark): any | null;
             /**
@@ -496,33 +513,33 @@ declare module 'gi://PangoFT2?version=1.0' {
             getv(names: string[], values: (GObject.Value | any)[]): void;
             /**
              * Checks whether `object` has a [floating][floating-ref] reference.
-             * @returns %TRUE if @object has a floating reference
+             * @returns `true` if `object` has a floating reference
              */
             is_floating(): boolean;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
              * When possible, eg. when signaling a property change from within the class
-             * that registered the property, you should use g_object_notify_by_pspec()
+             * that registered the property, you should use `g_object_notify_by_pspec()`
              * instead.
              *
              * Note that emission of the notify signal may be blocked with
-             * g_object_freeze_notify(). In this case, the signal emissions are queued
-             * and will be emitted (in reverse order) when g_object_thaw_notify() is
+             * `g_object_freeze_notify()`. In this case, the signal emissions are queued
+             * and will be emitted (in reverse order) when `g_object_thaw_notify()` is
              * called.
-             * @param property_name the name of a property installed on the class of @object.
+             * @param property_name the name of a property installed on the class of `object`.
              */
             notify(property_name: string): void;
             /**
              * Emits a "notify" signal for the property specified by `pspec` on `object`.
              *
              * This function omits the property name lookup, hence it is faster than
-             * g_object_notify().
+             * `g_object_notify()`.
              *
-             * One way to avoid using g_object_notify() from within the
-             * class that registered the properties, and using g_object_notify_by_pspec()
+             * One way to avoid using `g_object_notify()` from within the
+             * class that registered the properties, and using `g_object_notify_by_pspec()`
              * instead, is to store the GParamSpec used with
-             * g_object_class_install_property() inside a static array, e.g.:
+             * `g_object_class_install_property()` inside a static array, e.g.:
              *
              *
              * ```c
@@ -555,21 +572,21 @@ declare module 'gi://PangoFT2?version=1.0' {
              *   g_object_notify_by_pspec (self, properties[PROP_FOO]);
              * ```
              *
-             * @param pspec the #GParamSpec of a property installed on the class of @object.
+             * @param pspec the {@link GObject.ParamSpec} of a property installed on the class of `object`.
              */
             notify_by_pspec(pspec: GObject.ParamSpec): void;
             /**
              * Increases the reference count of `object`.
              *
              * Since GLib 2.56, if `GLIB_VERSION_MAX_ALLOWED` is 2.56 or greater, the type
-             * of `object` will be propagated to the return type (using the GCC typeof()
+             * of `object` will be propagated to the return type (using the GCC `typeof()`
              * extension), so any casting the caller needs to do on the return type must be
              * explicit.
-             * @returns the same @object
+             * @returns the same `object`
              */
             ref(): GObject.Object;
             /**
-             * Increase the reference count of `object,` and possibly remove the
+             * Increase the reference count of `object`, and possibly remove the
              * [floating][floating-ref] reference, if `object` has a floating reference.
              *
              * In other words, if the object is floating, then this call "assumes
@@ -579,8 +596,8 @@ declare module 'gi://PangoFT2?version=1.0' {
              * adds a new normal reference increasing the reference count by one.
              *
              * Since GLib 2.56, the type of `object` will be propagated to the return type
-             * under the same conditions as for g_object_ref().
-             * @returns @object
+             * under the same conditions as for `g_object_ref()`.
+             * @returns `object`
              */
             ref_sink(): GObject.Object;
             /**
@@ -597,10 +614,10 @@ declare module 'gi://PangoFT2?version=1.0' {
              * If the object already had an association with that name,
              * the old association will be destroyed.
              *
-             * Internally, the `key` is converted to a #GQuark using g_quark_from_string().
+             * Internally, the `key` is converted to a {@link GLib.Quark} using `g_quark_from_string()`.
              * This means a copy of `key` is kept permanently (even after `object` has been
              * finalized) — so it is recommended to only use a small, bounded set of values
-             * for `key` in your program, to avoid the #GQuark storage growing unbounded.
+             * for `key` in your program, to avoid the {@link GLib.Quark} storage growing unbounded.
              * @param key name of the key
              * @param data data to associate with that key
              */
@@ -615,13 +632,13 @@ declare module 'gi://PangoFT2?version=1.0' {
              * Remove a specified datum from the object's data associations,
              * without invoking the association's destroy handler.
              * @param key name of the key
-             * @returns the data if found, or %NULL          if no such data exists.
+             * @returns the data if found, or `null`          if no such data exists.
              */
             steal_data(key: string): any | null;
             /**
              * This function gets back user data pointers stored via
-             * g_object_set_qdata() and removes the `data` from object
-             * without invoking its destroy() function (if any was
+             * `g_object_set_qdata()` and removes the `data` from object
+             * without invoking its `destroy()` function (if any was
              * set).
              * Usually, calling this function is only required to update
              * user data pointers with a destroy notifier, for example:
@@ -652,21 +669,21 @@ declare module 'gi://PangoFT2?version=1.0' {
              * }
              * ```
              *
-             * Using g_object_get_qdata() in the above example, instead of
-             * g_object_steal_qdata() would have left the destroy function set,
+             * Using `g_object_get_qdata()` in the above example, instead of
+             * `g_object_steal_qdata()` would have left the destroy function set,
              * and thus the partial string list would have been freed upon
-             * g_object_set_qdata_full().
-             * @param quark A #GQuark, naming the user data pointer
-             * @returns The user data pointer set, or %NULL
+             * `g_object_set_qdata_full()`.
+             * @param quark A {@link GLib.Quark}, naming the user data pointer
+             * @returns The user data pointer set, or `null`
              */
             steal_qdata(quark: GLib.Quark): any | null;
             /**
              * Reverts the effect of a previous call to
-             * g_object_freeze_notify(). The freeze count is decreased on `object`
+             * `g_object_freeze_notify()`. The freeze count is decreased on `object`
              * and when it reaches zero, queued "notify" signals are emitted.
              *
              * Duplicate notifications for each property are squashed so that at most one
-             * #GObject::notify signal is emitted for each property, in the reverse order
+             * {@link GObject.Object.SignalSignatures.notify | GObject.Object::notify} signal is emitted for each property, in the reverse order
              * in which they have been queued.
              *
              * It is an error to call this function when the freeze count is zero.
@@ -676,33 +693,34 @@ declare module 'gi://PangoFT2?version=1.0' {
              * Decreases the reference count of `object`. When its reference count
              * drops to 0, the object is finalized (i.e. its memory is freed).
              *
-             * If the pointer to the #GObject may be reused in future (for example, if it is
+             * If the pointer to the {@link GObject.Object} may be reused in future (for example, if it is
              * an instance variable of another object), it is recommended to clear the
-             * pointer to %NULL rather than retain a dangling pointer to a potentially
-             * invalid #GObject instance. Use g_clear_object() for this.
+             * pointer to `null` rather than retain a dangling pointer to a potentially
+             * invalid {@link GObject.Object} instance. Use `g_clear_object()` for this.
              */
             unref(): void;
             /**
              * This function essentially limits the life time of the `closure` to
              * the life time of the object. That is, when the object is finalized,
-             * the `closure` is invalidated by calling g_closure_invalidate() on
+             * the `closure` is invalidated by calling `g_closure_invalidate()` on
              * it, in order to prevent invocations of the closure with a finalized
-             * (nonexisting) object. Also, g_object_ref() and g_object_unref() are
-             * added as marshal guards to the `closure,` to ensure that an extra
+             * (nonexisting) object. Also, `g_object_ref()` and `g_object_unref()` are
+             * added as marshal guards to the `closure`, to ensure that an extra
              * reference count is held on `object` during invocation of the
              * `closure`.  Usually, this function will be called on closures that
              * use this `object` as closure data.
-             * @param closure #GClosure to watch
+             * @param closure {@link GObject.Closure} to watch
              */
             watch_closure(closure: GObject.Closure): void;
             /**
-             * the `constructed` function is called by g_object_new() as the
+             * the `constructed` function is called by `g_object_new()` as the
              *  final step of the object creation process.  At the point of the call, all
              *  construction properties have been set on the object.  The purpose of this
              *  call is to allow for object initialisation steps that can only be performed
              *  after construction properties have been set.  `constructed` implementors
              *  should chain up to the `constructed` call of their parent class to allow it
              *  to complete its initialisation.
+             * @virtual
              */
             vfunc_constructed(): void;
             /**
@@ -711,6 +729,7 @@ declare module 'gi://PangoFT2?version=1.0' {
              *  needed.
              * @param n_pspecs
              * @param pspecs
+             * @virtual
              */
             vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void;
             /**
@@ -719,12 +738,14 @@ declare module 'gi://PangoFT2?version=1.0' {
              *  invocations still work. It may be run multiple times (due to reference
              *  loops). Before returning, `dispose` should chain up to the `dispose` method
              *  of the parent class.
+             * @virtual
              */
             vfunc_dispose(): void;
             /**
              * instance finalization function, should finish the finalization of
              *  the instance begun in `dispose` and chain up to the `finalize` method of the
              *  parent class.
+             * @virtual
              */
             vfunc_finalize(): void;
             /**
@@ -733,20 +754,22 @@ declare module 'gi://PangoFT2?version=1.0' {
              * @param property_id
              * @param value
              * @param pspec
+             * @virtual
              */
             vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
              * When possible, eg. when signaling a property change from within the class
-             * that registered the property, you should use g_object_notify_by_pspec()
+             * that registered the property, you should use `g_object_notify_by_pspec()`
              * instead.
              *
              * Note that emission of the notify signal may be blocked with
-             * g_object_freeze_notify(). In this case, the signal emissions are queued
-             * and will be emitted (in reverse order) when g_object_thaw_notify() is
+             * `g_object_freeze_notify()`. In this case, the signal emissions are queued
+             * and will be emitted (in reverse order) when `g_object_thaw_notify()` is
              * called.
              * @param pspec
+             * @virtual
              */
             vfunc_notify(pspec: GObject.ParamSpec): void;
             /**
@@ -758,6 +781,7 @@ declare module 'gi://PangoFT2?version=1.0' {
              * @param property_id
              * @param value
              * @param pspec
+             * @virtual
              */
             vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
             /**

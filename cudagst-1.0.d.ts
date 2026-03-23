@@ -18,10 +18,16 @@ declare module 'gi://CudaGst?version=1.0' {
          * CudaGst-1.0
          */
 
+        /**
+         * @gir-type Enum
+         */
         enum GLDeviceList {
             GL_DEVICE_LIST_ALL,
         }
 
+        /**
+         * @gir-type Enum
+         */
         enum address_mode {
             WRAP,
             CLAMP,
@@ -29,11 +35,17 @@ declare module 'gi://CudaGst?version=1.0' {
             BORDER,
         }
 
+        /**
+         * @gir-type Enum
+         */
         enum array_format {
             INT8,
             INT16,
         }
 
+        /**
+         * @gir-type Enum
+         */
         enum device_attribute {
             TEXTURE_ALIGNMENT,
             UNIFIED_ADDRESSING,
@@ -45,6 +57,9 @@ declare module 'gi://CudaGst?version=1.0' {
             HANDLE_TYPE_WIN32_KMT_HANDLE_SUPPORTED,
         }
 
+        /**
+         * @gir-type Enum
+         */
         enum event_flags {
             DEFAULT,
             BLOCKING_SYNC,
@@ -52,17 +67,26 @@ declare module 'gi://CudaGst?version=1.0' {
             INTERPROCESS,
         }
 
+        /**
+         * @gir-type Enum
+         */
         enum filter_mode {
             POINT,
             LINEAR,
         }
 
+        /**
+         * @gir-type Enum
+         */
         enum graphicsMapResourceFlags {
             NONE,
             READ_ONLY,
             WRITE_DISCARD,
         }
 
+        /**
+         * @gir-type Enum
+         */
         enum graphicsRegisterFlags {
             NONE,
             READ_ONLY,
@@ -71,10 +95,16 @@ declare module 'gi://CudaGst?version=1.0' {
             TEXTURE_GATHER,
         }
 
+        /**
+         * @gir-type Enum
+         */
         enum ipcMem_flags {
             IPC_MEM_LAZY_ENABLE_PEER_ACCESS,
         }
 
+        /**
+         * @gir-type Enum
+         */
         enum memAccess_flags {
             NONE,
             READ,
@@ -82,11 +112,17 @@ declare module 'gi://CudaGst?version=1.0' {
             MAX,
         }
 
+        /**
+         * @gir-type Enum
+         */
         enum memAllocationGranularity_flags {
             MINIMUM,
             RECOMMENDED,
         }
 
+        /**
+         * @gir-type Enum
+         */
         enum memAllocationHandleType {
             NONE,
             POSIX_FILE_DESCRIPTOR,
@@ -95,18 +131,27 @@ declare module 'gi://CudaGst?version=1.0' {
             MAX,
         }
 
+        /**
+         * @gir-type Enum
+         */
         enum memAllocationType {
             INVALID,
             PINNED,
             MAX,
         }
 
+        /**
+         * @gir-type Enum
+         */
         enum memLocationType {
             INVALID,
             DEVICE,
             MAX,
         }
 
+        /**
+         * @gir-type Enum
+         */
         enum memorytype {
             HOST,
             DEVICE,
@@ -114,10 +159,16 @@ declare module 'gi://CudaGst?version=1.0' {
             UNIFIED,
         }
 
+        /**
+         * @gir-type Enum
+         */
         enum resourceViewFormat {
             RES_VIEW_FORMAT_NONE,
         }
 
+        /**
+         * @gir-type Enum
+         */
         enum resourcetype {
             ARRAY,
             MIPMAPPED_ARRAY,
@@ -125,6 +176,9 @@ declare module 'gi://CudaGst?version=1.0' {
             PITCH2D,
         }
 
+        /**
+         * @gir-type Enum
+         */
         enum result {
             SUCCESS,
             ERROR_NO_DEVICE,
@@ -132,6 +186,9 @@ declare module 'gi://CudaGst?version=1.0' {
             ERROR_NOT_SUPPORTED,
         }
 
+        /**
+         * @gir-type Enum
+         */
         enum stream_flags {
             DEFAULT,
             NON_BLOCKING,
@@ -140,6 +197,9 @@ declare module 'gi://CudaGst?version=1.0' {
         const IPC_HANDLE_SIZE: number;
         const TRSF_READ_AS_INTEGER: number;
         const VERSION: number;
+        /**
+         * @gir-type Struct
+         */
         class DA_MEMCPY2D {
             static $gtype: GObject.GType<DA_MEMCPY2D>;
 
@@ -163,6 +223,9 @@ declare module 'gi://CudaGst?version=1.0' {
             Height: number;
         }
 
+        /**
+         * @gir-type Struct
+         */
         class DA_RESOURCE_DESC {
             static $gtype: GObject.GType<DA_RESOURCE_DESC>;
 
@@ -172,6 +235,9 @@ declare module 'gi://CudaGst?version=1.0' {
             flags: number;
         }
 
+        /**
+         * @gir-type Struct
+         */
         class DA_RESOURCE_VIEW_DESC {
             static $gtype: GObject.GType<DA_RESOURCE_VIEW_DESC>;
 
@@ -188,6 +254,9 @@ declare module 'gi://CudaGst?version=1.0' {
             reserved: number[];
         }
 
+        /**
+         * @gir-type Struct
+         */
         class DA_TEXTURE_DESC {
             static $gtype: GObject.GType<DA_TEXTURE_DESC>;
 
@@ -205,6 +274,9 @@ declare module 'gi://CudaGst?version=1.0' {
             reserved: number[];
         }
 
+        /**
+         * @gir-type Struct
+         */
         class ipcEventHandle {
             static $gtype: GObject.GType<ipcEventHandle>;
 
@@ -221,6 +293,9 @@ declare module 'gi://CudaGst?version=1.0' {
             );
         }
 
+        /**
+         * @gir-type Struct
+         */
         class ipcMemHandle {
             static $gtype: GObject.GType<ipcMemHandle>;
 
@@ -237,6 +312,9 @@ declare module 'gi://CudaGst?version=1.0' {
             );
         }
 
+        /**
+         * @gir-type Struct
+         */
         class memAccessDesc {
             static $gtype: GObject.GType<memAccessDesc>;
 
@@ -245,6 +323,9 @@ declare module 'gi://CudaGst?version=1.0' {
             flags: memAccess_flags;
         }
 
+        /**
+         * @gir-type Struct
+         */
         class memAllocationProp {
             static $gtype: GObject.GType<memAllocationProp>;
 
@@ -256,6 +337,9 @@ declare module 'gi://CudaGst?version=1.0' {
             allocFlags: memAllocationPropAllocFlags;
         }
 
+        /**
+         * @gir-type Struct
+         */
         class memAllocationPropAllocFlags {
             static $gtype: GObject.GType<memAllocationPropAllocFlags>;
 
@@ -278,6 +362,9 @@ declare module 'gi://CudaGst?version=1.0' {
             );
         }
 
+        /**
+         * @gir-type Struct
+         */
         class memLocation {
             static $gtype: GObject.GType<memLocation>;
 
@@ -287,16 +374,49 @@ declare module 'gi://CudaGst?version=1.0' {
             id: number;
         }
 
+        /**
+         * @gir-type Alias
+         */
         type array = any;
+        /**
+         * @gir-type Alias
+         */
         type context = any;
+        /**
+         * @gir-type Alias
+         */
         type device = number;
+        /**
+         * @gir-type Alias
+         */
         type deviceptr = never;
+        /**
+         * @gir-type Alias
+         */
         type event = any;
+        /**
+         * @gir-type Alias
+         */
         type __function = any;
+        /**
+         * @gir-type Alias
+         */
         type graphicsResource = any;
+        /**
+         * @gir-type Alias
+         */
         type mipmappedArray = any;
+        /**
+         * @gir-type Alias
+         */
         type module = any;
+        /**
+         * @gir-type Alias
+         */
         type stream = any;
+        /**
+         * @gir-type Alias
+         */
         type texObject = number;
         /**
          * Name of the imported GIR library

@@ -18,6 +18,9 @@ declare module 'gi://xfixes?version=4.0' {
          * xfixes-4.0
          */
 
+        /**
+         * @gir-type Struct
+         */
         class XserverRegion {
             static $gtype: GObject.GType<XserverRegion>;
         }

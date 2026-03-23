@@ -20,10 +20,16 @@ declare module 'gi://cairo?version=1.0' {
          * cairo-1.0
          */
 
+        /**
+         * @gir-type Enum
+         */
         export namespace Status {
             export const $gtype: GObject.GType<Status>;
         }
 
+        /**
+         * @gir-type Enum
+         */
         enum Status {
             SUCCESS,
             NO_MEMORY,
@@ -66,20 +72,32 @@ declare module 'gi://cairo?version=1.0' {
             JBIG2_GLOBAL_MISSING,
         }
 
+        /**
+         * @gir-type Enum
+         */
         export namespace Content {
             export const $gtype: GObject.GType<Content>;
         }
 
+        /**
+         * @gir-type Enum
+         */
         enum Content {
             COLOR,
             ALPHA,
             COLOR_ALPHA,
         }
 
+        /**
+         * @gir-type Enum
+         */
         export namespace Operator {
             export const $gtype: GObject.GType<Operator>;
         }
 
+        /**
+         * @gir-type Enum
+         */
         enum Operator {
             CLEAR,
             SOURCE,
@@ -112,10 +130,16 @@ declare module 'gi://cairo?version=1.0' {
             HSL_LUMINOSITY,
         }
 
+        /**
+         * @gir-type Enum
+         */
         export namespace Antialias {
             export const $gtype: GObject.GType<Antialias>;
         }
 
+        /**
+         * @gir-type Enum
+         */
         enum Antialias {
             DEFAULT,
             NONE,
@@ -126,66 +150,108 @@ declare module 'gi://cairo?version=1.0' {
             BEST,
         }
 
+        /**
+         * @gir-type Enum
+         */
         export namespace FillRule {
             export const $gtype: GObject.GType<FillRule>;
         }
 
+        /**
+         * @gir-type Enum
+         */
         enum FillRule {
             WINDING,
             EVEN_ODD,
         }
 
+        /**
+         * @gir-type Enum
+         */
         export namespace LineCap {
             export const $gtype: GObject.GType<LineCap>;
         }
 
+        /**
+         * @gir-type Enum
+         */
         enum LineCap {
             BUTT,
             ROUND,
             SQUARE,
         }
 
+        /**
+         * @gir-type Enum
+         */
         export namespace LineJoin {
             export const $gtype: GObject.GType<LineJoin>;
         }
 
+        /**
+         * @gir-type Enum
+         */
         enum LineJoin {
             MITER,
             ROUND,
             BEVEL,
         }
 
+        /**
+         * @gir-type Enum
+         */
         export namespace TextClusterFlags {
             export const $gtype: GObject.GType<TextClusterFlags>;
         }
 
+        /**
+         * @gir-type Enum
+         */
         enum TextClusterFlags {
             BACKWARD,
         }
 
+        /**
+         * @gir-type Enum
+         */
         export namespace FontSlant {
             export const $gtype: GObject.GType<FontSlant>;
         }
 
+        /**
+         * @gir-type Enum
+         */
         enum FontSlant {
             NORMAL,
             ITALIC,
             OBLIQUE,
         }
 
+        /**
+         * @gir-type Enum
+         */
         export namespace FontWeight {
             export const $gtype: GObject.GType<FontWeight>;
         }
 
+        /**
+         * @gir-type Enum
+         */
         enum FontWeight {
             NORMAL,
             BOLD,
         }
 
+        /**
+         * @gir-type Enum
+         */
         export namespace SubpixelOrder {
             export const $gtype: GObject.GType<SubpixelOrder>;
         }
 
+        /**
+         * @gir-type Enum
+         */
         enum SubpixelOrder {
             DEFAULT,
             RGB,
@@ -194,10 +260,16 @@ declare module 'gi://cairo?version=1.0' {
             VBGR,
         }
 
+        /**
+         * @gir-type Enum
+         */
         export namespace HintStyle {
             export const $gtype: GObject.GType<HintStyle>;
         }
 
+        /**
+         * @gir-type Enum
+         */
         enum HintStyle {
             DEFAULT,
             NONE,
@@ -206,20 +278,32 @@ declare module 'gi://cairo?version=1.0' {
             FULL,
         }
 
+        /**
+         * @gir-type Enum
+         */
         export namespace HintMetrics {
             export const $gtype: GObject.GType<HintMetrics>;
         }
 
+        /**
+         * @gir-type Enum
+         */
         enum HintMetrics {
             DEFAULT,
             OFF,
             ON,
         }
 
+        /**
+         * @gir-type Enum
+         */
         export namespace FontType {
             export const $gtype: GObject.GType<FontType>;
         }
 
+        /**
+         * @gir-type Enum
+         */
         enum FontType {
             TOY,
             FT,
@@ -228,10 +312,16 @@ declare module 'gi://cairo?version=1.0' {
             USER,
         }
 
+        /**
+         * @gir-type Enum
+         */
         export namespace PathDataType {
             export const $gtype: GObject.GType<PathDataType>;
         }
 
+        /**
+         * @gir-type Enum
+         */
         enum PathDataType {
             MOVE_TO,
             LINE_TO,
@@ -239,10 +329,16 @@ declare module 'gi://cairo?version=1.0' {
             CLOSE_PATH,
         }
 
+        /**
+         * @gir-type Enum
+         */
         export namespace DeviceType {
             export const $gtype: GObject.GType<DeviceType>;
         }
 
+        /**
+         * @gir-type Enum
+         */
         enum DeviceType {
             DRM,
             GL,
@@ -255,10 +351,16 @@ declare module 'gi://cairo?version=1.0' {
             INVALID,
         }
 
+        /**
+         * @gir-type Enum
+         */
         export namespace SurfaceType {
             export const $gtype: GObject.GType<SurfaceType>;
         }
 
+        /**
+         * @gir-type Enum
+         */
         enum SurfaceType {
             IMAGE,
             PDF,
@@ -287,10 +389,16 @@ declare module 'gi://cairo?version=1.0' {
             COGL,
         }
 
+        /**
+         * @gir-type Enum
+         */
         export namespace Format {
             export const $gtype: GObject.GType<Format>;
         }
 
+        /**
+         * @gir-type Enum
+         */
         enum Format {
             INVALID,
             ARGB32,
@@ -301,10 +409,16 @@ declare module 'gi://cairo?version=1.0' {
             RGB30,
         }
 
+        /**
+         * @gir-type Enum
+         */
         export namespace PatternType {
             export const $gtype: GObject.GType<PatternType>;
         }
 
+        /**
+         * @gir-type Enum
+         */
         enum PatternType {
             SOLID,
             SURFACE,
@@ -314,10 +428,16 @@ declare module 'gi://cairo?version=1.0' {
             RASTER_SOURCE,
         }
 
+        /**
+         * @gir-type Enum
+         */
         export namespace Extend {
             export const $gtype: GObject.GType<Extend>;
         }
 
+        /**
+         * @gir-type Enum
+         */
         enum Extend {
             NONE,
             REPEAT,
@@ -325,10 +445,16 @@ declare module 'gi://cairo?version=1.0' {
             PAD,
         }
 
+        /**
+         * @gir-type Enum
+         */
         export namespace Filter {
             export const $gtype: GObject.GType<Filter>;
         }
 
+        /**
+         * @gir-type Enum
+         */
         enum Filter {
             FAST,
             GOOD,
@@ -338,10 +464,16 @@ declare module 'gi://cairo?version=1.0' {
             GAUSSIAN,
         }
 
+        /**
+         * @gir-type Enum
+         */
         export namespace RegionOverlap {
             export const $gtype: GObject.GType<RegionOverlap>;
         }
 
+        /**
+         * @gir-type Enum
+         */
         enum RegionOverlap {
             IN,
             OUT,
@@ -349,46 +481,79 @@ declare module 'gi://cairo?version=1.0' {
         }
 
         function image_surface_create(): void;
+        /**
+         * @gir-type Foreign Struct
+         */
         class Context {
             static $gtype: GObject.GType<Context>;
         }
 
+        /**
+         * @gir-type Foreign Struct
+         */
         class Device {
             static $gtype: GObject.GType<Device>;
         }
 
+        /**
+         * @gir-type Foreign Struct
+         */
         class Surface {
             static $gtype: GObject.GType<Surface>;
         }
 
+        /**
+         * @gir-type Foreign Struct
+         */
         class Matrix {
             static $gtype: GObject.GType<Matrix>;
         }
 
+        /**
+         * @gir-type Foreign Struct
+         */
         class Pattern {
             static $gtype: GObject.GType<Pattern>;
         }
 
+        /**
+         * @gir-type Foreign Struct
+         */
         class Region {
             static $gtype: GObject.GType<Region>;
         }
 
+        /**
+         * @gir-type Foreign Struct
+         */
         class FontOptions {
             static $gtype: GObject.GType<FontOptions>;
         }
 
+        /**
+         * @gir-type Foreign Struct
+         */
         class FontFace {
             static $gtype: GObject.GType<FontFace>;
         }
 
+        /**
+         * @gir-type Foreign Struct
+         */
         class ScaledFont {
             static $gtype: GObject.GType<ScaledFont>;
         }
 
+        /**
+         * @gir-type Foreign Struct
+         */
         class Path {
             static $gtype: GObject.GType<Path>;
         }
 
+        /**
+         * @gir-type Struct
+         */
         class Rectangle {
             static $gtype: GObject.GType<Rectangle>;
 
@@ -411,6 +576,9 @@ declare module 'gi://cairo?version=1.0' {
             );
         }
 
+        /**
+         * @gir-type Struct
+         */
         class RectangleInt {
             static $gtype: GObject.GType<RectangleInt>;
 
@@ -433,6 +601,9 @@ declare module 'gi://cairo?version=1.0' {
             );
         }
 
+        /**
+         * @gir-type Struct
+         */
         class Glyph {
             static $gtype: GObject.GType<Glyph>;
 
@@ -453,6 +624,9 @@ declare module 'gi://cairo?version=1.0' {
             );
         }
 
+        /**
+         * @gir-type Struct
+         */
         class TextCluster {
             static $gtype: GObject.GType<TextCluster>;
 

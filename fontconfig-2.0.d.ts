@@ -19,14 +19,23 @@ declare module 'gi://fontconfig?version=2.0' {
          */
 
         function init(): void;
+        /**
+         * @gir-type Struct
+         */
         class Pattern {
             static $gtype: GObject.GType<Pattern>;
         }
 
+        /**
+         * @gir-type Struct
+         */
         class CharSet {
             static $gtype: GObject.GType<CharSet>;
         }
 
+        /**
+         * @gir-type Struct
+         */
         class Config {
             static $gtype: GObject.GType<Config>;
         }

@@ -24,12 +24,16 @@ declare module 'gi://AppStream?version=1.0' {
          * AppStream-1.0
          */
 
+        /**
+         * @gir-type Enum
+         */
         export namespace AgreementKind {
             export const $gtype: GObject.GType<AgreementKind>;
         }
 
         /**
          * The kind of the agreement.
+         * @gir-type Enum
          */
         enum AgreementKind {
             /**
@@ -50,12 +54,16 @@ declare module 'gi://AppStream?version=1.0' {
             PRIVACY,
         }
 
+        /**
+         * @gir-type Enum
+         */
         export namespace ArtifactKind {
             export const $gtype: GObject.GType<ArtifactKind>;
         }
 
         /**
          * The artifact type.
+         * @gir-type Enum
          */
         enum ArtifactKind {
             /**
@@ -72,12 +80,16 @@ declare module 'gi://AppStream?version=1.0' {
             BINARY,
         }
 
+        /**
+         * @gir-type Enum
+         */
         export namespace BundleKind {
             export const $gtype: GObject.GType<BundleKind>;
         }
 
         /**
          * The bundle type.
+         * @gir-type Enum
          */
         enum BundleKind {
             /**
@@ -122,12 +134,16 @@ declare module 'gi://AppStream?version=1.0' {
             SYSUPDATE,
         }
 
+        /**
+         * @gir-type Enum
+         */
         export namespace ChassisKind {
             export const $gtype: GObject.GType<ChassisKind>;
         }
 
         /**
          * The type of chassis a computing device is built into.
+         * @gir-type Enum
          */
         enum ChassisKind {
             /**
@@ -156,12 +172,16 @@ declare module 'gi://AppStream?version=1.0' {
             HANDSET,
         }
 
+        /**
+         * @gir-type Enum
+         */
         export namespace CheckResult {
             export const $gtype: GObject.GType<CheckResult>;
         }
 
         /**
          * Result of a check operation.
+         * @gir-type Enum
          */
         enum CheckResult {
             /**
@@ -182,12 +202,16 @@ declare module 'gi://AppStream?version=1.0' {
             TRUE,
         }
 
+        /**
+         * @gir-type Enum
+         */
         export namespace ChecksumKind {
             export const $gtype: GObject.GType<ChecksumKind>;
         }
 
         /**
-         * Checksums supported by #AsRelease
+         * Checksums supported by {@link AppStream.Release}
+         * @gir-type Enum
          */
         enum ChecksumKind {
             /**
@@ -216,12 +240,16 @@ declare module 'gi://AppStream?version=1.0' {
             BLAKE3,
         }
 
+        /**
+         * @gir-type Enum
+         */
         export namespace ColorKind {
             export const $gtype: GObject.GType<ColorKind>;
         }
 
         /**
          * A branding color type.
+         * @gir-type Enum
          */
         enum ColorKind {
             /**
@@ -234,12 +262,16 @@ declare module 'gi://AppStream?version=1.0' {
             PRIMARY,
         }
 
+        /**
+         * @gir-type Enum
+         */
         export namespace ColorSchemeKind {
             export const $gtype: GObject.GType<ColorSchemeKind>;
         }
 
         /**
          * A color scheme type.
+         * @gir-type Enum
          */
         enum ColorSchemeKind {
             /**
@@ -256,12 +288,16 @@ declare module 'gi://AppStream?version=1.0' {
             DARK,
         }
 
+        /**
+         * @gir-type Enum
+         */
         export namespace ComponentKind {
             export const $gtype: GObject.GType<ComponentKind>;
         }
 
         /**
-         * The type of an #AsComponent.
+         * The type of an {@link AppStream.Component}.
+         * @gir-type Enum
          */
         enum ComponentKind {
             /**
@@ -334,12 +370,16 @@ declare module 'gi://AppStream?version=1.0' {
             ICON_THEME,
         }
 
+        /**
+         * @gir-type Enum
+         */
         export namespace ComponentScope {
             export const $gtype: GObject.GType<ComponentScope>;
         }
 
         /**
-         * Scope of the #AsComponent (system-wide or user-scope)
+         * Scope of the {@link AppStream.Component} (system-wide or user-scope)
+         * @gir-type Enum
          */
         enum ComponentScope {
             /**
@@ -356,12 +396,17 @@ declare module 'gi://AppStream?version=1.0' {
             USER,
         }
 
+        /**
+         * @gir-type Enum
+         */
         export namespace ContentRatingSystem {
             export const $gtype: GObject.GType<ContentRatingSystem>;
         }
 
         /**
          * A content rating system for a particular territory.
+         * @gir-type Enum
+         * @since 0.12.12
          */
         enum ContentRatingSystem {
             /**
@@ -430,12 +475,16 @@ declare module 'gi://AppStream?version=1.0' {
             IARC,
         }
 
+        /**
+         * @gir-type Enum
+         */
         export namespace ContentRatingValue {
             export const $gtype: GObject.GType<ContentRatingValue>;
         }
 
         /**
          * The specified level of an content_rating rating ID.
+         * @gir-type Enum
          */
         enum ContentRatingValue {
             /**
@@ -460,12 +509,16 @@ declare module 'gi://AppStream?version=1.0' {
             INTENSE,
         }
 
+        /**
+         * @gir-type Enum
+         */
         export namespace ControlKind {
             export const $gtype: GObject.GType<ControlKind>;
         }
 
         /**
          * Kind of an input method for users to control software
+         * @gir-type Enum
          */
         enum ControlKind {
             /**
@@ -510,12 +563,16 @@ declare module 'gi://AppStream?version=1.0' {
             TABLET,
         }
 
+        /**
+         * @gir-type Enum
+         */
         export namespace DisplaySideKind {
             export const $gtype: GObject.GType<DisplaySideKind>;
         }
 
         /**
          * Side a display_length requirement is for.
+         * @gir-type Enum
          */
         enum DisplaySideKind {
             /**
@@ -532,12 +589,16 @@ declare module 'gi://AppStream?version=1.0' {
             LONGEST,
         }
 
+        /**
+         * @gir-type Enum
+         */
         export namespace FormatKind {
             export const $gtype: GObject.GType<FormatKind>;
         }
 
         /**
          * Format of the AppStream metadata.
+         * @gir-type Enum
          */
         enum FormatKind {
             /**
@@ -558,6 +619,9 @@ declare module 'gi://AppStream?version=1.0' {
             DESKTOP_ENTRY,
         }
 
+        /**
+         * @gir-type Enum
+         */
         export namespace FormatStyle {
             export const $gtype: GObject.GType<FormatStyle>;
         }
@@ -567,6 +631,7 @@ declare module 'gi://AppStream?version=1.0' {
          * and the catalog metadata (shipped by distributors).
          * The data source kind indicates which style we should process.
          * Usually you do not want to set this explicitly.
+         * @gir-type Enum
          */
         enum FormatStyle {
             /**
@@ -583,12 +648,16 @@ declare module 'gi://AppStream?version=1.0' {
             CATALOG,
         }
 
+        /**
+         * @gir-type Enum
+         */
         export namespace FormatVersion {
             export const $gtype: GObject.GType<FormatVersion>;
         }
 
         /**
          * Format version / API level of the AppStream metadata.
+         * @gir-type Enum
          */
         enum FormatVersion {
             /**
@@ -601,12 +670,16 @@ declare module 'gi://AppStream?version=1.0' {
             V1_0,
         }
 
+        /**
+         * @gir-type Enum
+         */
         export namespace IconKind {
             export const $gtype: GObject.GType<IconKind>;
         }
 
         /**
          * The icon type.
+         * @gir-type Enum
          */
         enum IconKind {
             /**
@@ -631,12 +704,16 @@ declare module 'gi://AppStream?version=1.0' {
             REMOTE,
         }
 
+        /**
+         * @gir-type Enum
+         */
         export namespace ImageKind {
             export const $gtype: GObject.GType<ImageKind>;
         }
 
         /**
          * The image type.
+         * @gir-type Enum
          */
         enum ImageKind {
             /**
@@ -653,6 +730,9 @@ declare module 'gi://AppStream?version=1.0' {
             THUMBNAIL,
         }
 
+        /**
+         * @gir-type Enum
+         */
         export namespace InternetKind {
             export const $gtype: GObject.GType<InternetKind>;
         }
@@ -660,6 +740,8 @@ declare module 'gi://AppStream?version=1.0' {
         /**
          * Different internet connectivity requirements or recommendations for an
          * application.
+         * @gir-type Enum
+         * @since 0.15.5
          */
         enum InternetKind {
             /**
@@ -680,12 +762,16 @@ declare module 'gi://AppStream?version=1.0' {
             FIRST_RUN,
         }
 
+        /**
+         * @gir-type Enum
+         */
         export namespace IssueKind {
             export const $gtype: GObject.GType<IssueKind>;
         }
 
         /**
-         * Checksums supported by #AsRelease
+         * Checksums supported by {@link AppStream.Release}
+         * @gir-type Enum
          */
         enum IssueKind {
             /**
@@ -702,12 +788,16 @@ declare module 'gi://AppStream?version=1.0' {
             CVE,
         }
 
+        /**
+         * @gir-type Enum
+         */
         export namespace IssueSeverity {
             export const $gtype: GObject.GType<IssueSeverity>;
         }
 
         /**
-         * The severity of an issue found by #AsValidator
+         * The severity of an issue found by {@link AppStream.Validator}
+         * @gir-type Enum
          */
         enum IssueSeverity {
             /**
@@ -732,12 +822,16 @@ declare module 'gi://AppStream?version=1.0' {
             ERROR,
         }
 
+        /**
+         * @gir-type Enum
+         */
         export namespace LaunchableKind {
             export const $gtype: GObject.GType<LaunchableKind>;
         }
 
         /**
          * Type of launch system the entries belong to.
+         * @gir-type Enum
          */
         enum LaunchableKind {
             /**
@@ -762,12 +856,16 @@ declare module 'gi://AppStream?version=1.0' {
             URL,
         }
 
+        /**
+         * @gir-type Enum
+         */
         export namespace MarkupKind {
             export const $gtype: GObject.GType<MarkupKind>;
         }
 
         /**
          * Text markup types.
+         * @gir-type Enum
          */
         enum MarkupKind {
             /**
@@ -788,13 +886,17 @@ declare module 'gi://AppStream?version=1.0' {
             MARKDOWN,
         }
 
+        /**
+         * @gir-type Enum
+         */
         export namespace MergeKind {
             export const $gtype: GObject.GType<MergeKind>;
         }
 
         /**
-         * Defines how #AsComponent data should be merged if the component is
+         * Defines how {@link AppStream.Component} data should be merged if the component is
          * set for merge.
+         * @gir-type Enum
          */
         enum MergeKind {
             /**
@@ -817,6 +919,7 @@ declare module 'gi://AppStream?version=1.0' {
 
         /**
          * A metadata processing error.
+         * @gir-type Struct
          */
         class MetadataError extends GLib.Error {
             static $gtype: GObject.GType<GLib.Error>;
@@ -853,12 +956,16 @@ declare module 'gi://AppStream?version=1.0' {
             static quark(): GLib.Quark;
         }
 
+        /**
+         * @gir-type Enum
+         */
         export namespace MetadataLocation {
             export const $gtype: GObject.GType<MetadataLocation>;
         }
 
         /**
          * The flags used when installing and removing metadata files.
+         * @gir-type Enum
          */
         enum MetadataLocation {
             /**
@@ -885,6 +992,7 @@ declare module 'gi://AppStream?version=1.0' {
 
         /**
          * A metadata pool error.
+         * @gir-type Struct
          */
         class PoolError extends GLib.Error {
             static $gtype: GObject.GType<GLib.Error>;
@@ -921,12 +1029,16 @@ declare module 'gi://AppStream?version=1.0' {
             static quark(): GLib.Quark;
         }
 
+        /**
+         * @gir-type Enum
+         */
         export namespace ProvidedKind {
             export const $gtype: GObject.GType<ProvidedKind>;
         }
 
         /**
          * Type of the public interface components can provide.
+         * @gir-type Enum
          */
         enum ProvidedKind {
             /**
@@ -979,12 +1091,16 @@ declare module 'gi://AppStream?version=1.0' {
             ID,
         }
 
+        /**
+         * @gir-type Enum
+         */
         export namespace ReferenceKind {
             export const $gtype: GObject.GType<ReferenceKind>;
         }
 
         /**
          * A reference type.
+         * @gir-type Enum
          */
         enum ReferenceKind {
             /**
@@ -1005,12 +1121,16 @@ declare module 'gi://AppStream?version=1.0' {
             REGISTRY,
         }
 
+        /**
+         * @gir-type Enum
+         */
         export namespace RelationCompare {
             export const $gtype: GObject.GType<RelationCompare>;
         }
 
         /**
          * The relational comparison type.
+         * @gir-type Enum
          */
         enum RelationCompare {
             /**
@@ -1045,6 +1165,7 @@ declare module 'gi://AppStream?version=1.0' {
 
         /**
          * The error type.
+         * @gir-type Struct
          */
         class RelationError extends GLib.Error {
             static $gtype: GObject.GType<GLib.Error>;
@@ -1073,12 +1194,16 @@ declare module 'gi://AppStream?version=1.0' {
             static quark(): GLib.Quark;
         }
 
+        /**
+         * @gir-type Enum
+         */
         export namespace RelationItemKind {
             export const $gtype: GObject.GType<RelationItemKind>;
         }
 
         /**
-         * Type of the item an #AsRelation is for.
+         * Type of the item an {@link AppStream.Relation} is for.
+         * @gir-type Enum
          */
         enum RelationItemKind {
             /**
@@ -1123,12 +1248,16 @@ declare module 'gi://AppStream?version=1.0' {
             INTERNET,
         }
 
+        /**
+         * @gir-type Enum
+         */
         export namespace RelationKind {
             export const $gtype: GObject.GType<RelationKind>;
         }
 
         /**
          * Type of a component's relation to other items.
+         * @gir-type Enum
          */
         enum RelationKind {
             /**
@@ -1149,12 +1278,16 @@ declare module 'gi://AppStream?version=1.0' {
             SUPPORTS,
         }
 
+        /**
+         * @gir-type Enum
+         */
         export namespace RelationStatus {
             export const $gtype: GObject.GType<RelationStatus>;
         }
 
         /**
          * Status of a relation check result.
+         * @gir-type Enum
          */
         enum RelationStatus {
             /**
@@ -1175,12 +1308,17 @@ declare module 'gi://AppStream?version=1.0' {
             SATISFIED,
         }
 
+        /**
+         * @gir-type Enum
+         */
         export namespace ReleaseKind {
             export const $gtype: GObject.GType<ReleaseKind>;
         }
 
         /**
          * The release kind.
+         * @gir-type Enum
+         * @since 0.12.0
          */
         enum ReleaseKind {
             /**
@@ -1201,12 +1339,17 @@ declare module 'gi://AppStream?version=1.0' {
             SNAPSHOT,
         }
 
+        /**
+         * @gir-type Enum
+         */
         export namespace ReleaseListKind {
             export const $gtype: GObject.GType<ReleaseListKind>;
         }
 
         /**
          * The kind of a releases block.
+         * @gir-type Enum
+         * @since 0.16.0
          */
         enum ReleaseListKind {
             /**
@@ -1223,6 +1366,9 @@ declare module 'gi://AppStream?version=1.0' {
             EXTERNAL,
         }
 
+        /**
+         * @gir-type Enum
+         */
         export namespace ReleaseUrlKind {
             export const $gtype: GObject.GType<ReleaseUrlKind>;
         }
@@ -1230,6 +1376,8 @@ declare module 'gi://AppStream?version=1.0' {
         /**
          * `AS_RELEASE_URL_KIND_UNKNOWN`		Unknown release web URL type
          * The release URL kinds.
+         * @gir-type Enum
+         * @since 0.12.5
          */
         enum ReleaseUrlKind {
             UNKNOWN,
@@ -1239,12 +1387,16 @@ declare module 'gi://AppStream?version=1.0' {
             DETAILS,
         }
 
+        /**
+         * @gir-type Enum
+         */
         export namespace ScreenshotKind {
             export const $gtype: GObject.GType<ScreenshotKind>;
         }
 
         /**
          * The screenshot type.
+         * @gir-type Enum
          */
         enum ScreenshotKind {
             /**
@@ -1261,12 +1413,16 @@ declare module 'gi://AppStream?version=1.0' {
             EXTRA,
         }
 
+        /**
+         * @gir-type Enum
+         */
         export namespace ScreenshotMediaKind {
             export const $gtype: GObject.GType<ScreenshotMediaKind>;
         }
 
         /**
          * The media kind contained in this screenshot.
+         * @gir-type Enum
          */
         enum ScreenshotMediaKind {
             /**
@@ -1283,12 +1439,17 @@ declare module 'gi://AppStream?version=1.0' {
             VIDEO,
         }
 
+        /**
+         * @gir-type Enum
+         */
         export namespace SizeKind {
             export const $gtype: GObject.GType<SizeKind>;
         }
 
         /**
          * The artifact size kind.
+         * @gir-type Enum
+         * @since 0.8.6
          */
         enum SizeKind {
             /**
@@ -1305,12 +1466,16 @@ declare module 'gi://AppStream?version=1.0' {
             INSTALLED,
         }
 
+        /**
+         * @gir-type Enum
+         */
         export namespace SuggestedKind {
             export const $gtype: GObject.GType<SuggestedKind>;
         }
 
         /**
          * The suggested type.
+         * @gir-type Enum
          */
         enum SuggestedKind {
             /**
@@ -1329,6 +1494,7 @@ declare module 'gi://AppStream?version=1.0' {
 
         /**
          * The error type.
+         * @gir-type Struct
          */
         class SystemInfoError extends GLib.Error {
             static $gtype: GObject.GType<GLib.Error>;
@@ -1353,12 +1519,16 @@ declare module 'gi://AppStream?version=1.0' {
             static quark(): GLib.Quark;
         }
 
+        /**
+         * @gir-type Enum
+         */
         export namespace TranslationKind {
             export const $gtype: GObject.GType<TranslationKind>;
         }
 
         /**
          * The translation type.
+         * @gir-type Enum
          */
         enum TranslationKind {
             /**
@@ -1375,12 +1545,16 @@ declare module 'gi://AppStream?version=1.0' {
             QT,
         }
 
+        /**
+         * @gir-type Enum
+         */
         export namespace UrgencyKind {
             export const $gtype: GObject.GType<UrgencyKind>;
         }
 
         /**
-         * The urgency of an #AsRelease
+         * The urgency of an {@link AppStream.Release}
+         * @gir-type Enum
          */
         enum UrgencyKind {
             /**
@@ -1405,12 +1579,16 @@ declare module 'gi://AppStream?version=1.0' {
             CRITICAL,
         }
 
+        /**
+         * @gir-type Enum
+         */
         export namespace UrlKind {
             export const $gtype: GObject.GType<UrlKind>;
         }
 
         /**
          * The URL type.
+         * @gir-type Enum
          */
         enum UrlKind {
             /**
@@ -1457,6 +1635,7 @@ declare module 'gi://AppStream?version=1.0' {
 
         /**
          * The error type.
+         * @gir-type Struct
          */
         class UtilsError extends GLib.Error {
             static $gtype: GObject.GType<GLib.Error>;
@@ -1479,6 +1658,7 @@ declare module 'gi://AppStream?version=1.0' {
 
         /**
          * The error type.
+         * @gir-type Struct
          */
         class ValidatorError extends GLib.Error {
             static $gtype: GObject.GType<GLib.Error>;
@@ -1507,12 +1687,16 @@ declare module 'gi://AppStream?version=1.0' {
             static quark(): GLib.Quark;
         }
 
+        /**
+         * @gir-type Enum
+         */
         export namespace VideoCodecKind {
             export const $gtype: GObject.GType<VideoCodecKind>;
         }
 
         /**
          * Supported video codecs.
+         * @gir-type Enum
          */
         enum VideoCodecKind {
             /**
@@ -1529,12 +1713,16 @@ declare module 'gi://AppStream?version=1.0' {
             AV1,
         }
 
+        /**
+         * @gir-type Enum
+         */
         export namespace VideoContainerKind {
             export const $gtype: GObject.GType<VideoContainerKind>;
         }
 
         /**
          * Supported video codecs.
+         * @gir-type Enum
          */
         enum VideoContainerKind {
             /**
@@ -1557,207 +1745,231 @@ declare module 'gi://AppStream?version=1.0' {
         /**
          * Converts the text representation to an enumerated value.
          * @param value the string.
-         * @returns a #AsAgreementKind or %AS_AGREEMENT_KIND_UNKNOWN for unknown
+         * @returns a {@link AppStream.AgreementKind} or {@link AppStream.AgreementKind.UNKNOWN} for unknown
+         * @since 0.12.1
          */
         function agreement_kind_from_string(value: string): AgreementKind;
         /**
          * Converts the enumerated value to an text representation.
-         * @param value the #AsAgreementKind.
-         * @returns string version of @value
+         * @param value the {@link AppStream.AgreementKind}.
+         * @returns string version of `value`
+         * @since 0.12.1
          */
         function agreement_kind_to_string(value: AgreementKind | null): string;
         /**
          * Converts the text representation to an enumerated value.
          * @param kind the string.
-         * @returns a #AsArtifactKind, or %AS_ARTIFACT_KIND_UNKNOWN for unknown.
+         * @returns a {@link AppStream.ArtifactKind}, or {@link AppStream.ArtifactKind.UNKNOWN} for unknown.
          */
         function artifact_kind_from_string(kind: string): ArtifactKind;
         /**
          * Converts the enumerated value to an text representation.
-         * @param kind the #AsArtifactKind.
-         * @returns string version of @kind
+         * @param kind the {@link AppStream.ArtifactKind}.
+         * @returns string version of `kind`
          */
         function artifact_kind_to_string(kind: ArtifactKind | null): string;
         /**
          * Converts the text representation to an enumerated value.
          * @param bundle_str the string.
-         * @returns a #AsBundleKind or %AS_BUNDLE_KIND_UNKNOWN for unknown
+         * @returns a {@link AppStream.BundleKind} or {@link AppStream.BundleKind.UNKNOWN} for unknown
          */
         function bundle_kind_from_string(bundle_str: string): BundleKind;
         /**
          * Converts the enumerated value to an text representation.
          * @param kind the %AsBundleKind.
-         * @returns string version of @kind
+         * @returns string version of `kind`
+         * @since 0.8.0
          */
         function bundle_kind_to_string(kind: BundleKind | null): string;
         /**
          * Converts the text representation to an enumerated value.
          * @param kind_str the string.
-         * @returns a #AsChassisKind or %AS_CHASSIS_KIND_UNKNOWN for unknown
+         * @returns a {@link AppStream.ChassisKind} or {@link AppStream.ChassisKind.UNKNOWN} for unknown
+         * @since 1.0.0
          */
         function chassis_kind_from_string(kind_str: string): ChassisKind;
         /**
          * Converts the enumerated value to a text representation.
-         * @param kind the #AsChassisKind.
-         * @returns string version of @kind
+         * @param kind the {@link AppStream.ChassisKind}.
+         * @returns string version of `kind`
+         * @since 1.0.0
          */
         function chassis_kind_to_string(kind: ChassisKind | null): string;
         /**
          * Converts the text representation to an enumerated value.
          * @param kind_str the string.
-         * @returns a #AsChecksumKind or %AS_CHECKSUM_KIND_NONE for unknown
+         * @returns a {@link AppStream.ChecksumKind} or {@link AppStream.ChecksumKind.NONE} for unknown
          */
         function checksum_kind_from_string(kind_str: string): ChecksumKind;
         /**
          * Converts the enumerated value to an text representation.
          * @param kind the %AsChecksumKind.
-         * @returns string version of @kind
+         * @returns string version of `kind`
          */
         function checksum_kind_to_string(kind: ChecksumKind | null): string;
         /**
          * Converts the text representation to an enumerated value.
          * @param str the string.
-         * @returns a #AsColorKind or %AS_COLOR_KIND_UNKNOWN for unknown.
+         * @returns a {@link AppStream.ColorKind} or {@link AppStream.ColorKind.UNKNOWN} for unknown.
+         * @since 0.15.2
          */
         function color_kind_from_string(str: string): ColorKind;
         /**
          * Converts the enumerated value to an text representation.
          * @param kind the %AsColorKind.
-         * @returns string version of @kind
+         * @returns string version of `kind`
+         * @since 0.15.2
          */
         function color_kind_to_string(kind: ColorKind | null): string;
         /**
          * Converts the text representation to an enumerated value.
          * @param str the string.
-         * @returns a #AsColorKind or %AS_COLOR_SCHEME_KIND_UNKNOWN for unknown.
+         * @returns a {@link AppStream.ColorKind} or {@link AppStream.ColorSchemeKind.UNKNOWN} for unknown.
+         * @since 0.15.2
          */
         function color_scheme_kind_from_string(str: string): ColorSchemeKind;
         /**
          * Converts the enumerated value to an text representation.
          * @param kind the %AsColorSchemeKind.
-         * @returns string version of @kind
+         * @returns string version of `kind`
+         * @since 0.15.2
          */
         function color_scheme_kind_to_string(kind: ColorSchemeKind | null): string;
         /**
          * Converts the text representation to an enumerated value.
          * @param kind_str the string.
-         * @returns a #AsComponentKind or %AS_COMPONENT_KIND_UNKNOWN for unknown
+         * @returns a {@link AppStream.ComponentKind} or {@link AppStream.ComponentKind.UNKNOWN} for unknown
          */
         function component_kind_from_string(kind_str: string): ComponentKind;
         /**
          * Converts the enumerated value to an text representation.
-         * @param kind the #AsComponentKind.
-         * @returns string version of @kind
+         * @param kind the {@link AppStream.ComponentKind}.
+         * @returns string version of `kind`
          */
         function component_kind_to_string(kind: ComponentKind | null): string;
         /**
          * Converts the text representation to an enumerated value.
          * @param scope_str the string.
-         * @returns a #AsComponentScope or %AS_COMPONENT_SCOPE_UNKNOWN for unknown
+         * @returns a {@link AppStream.ComponentScope} or {@link AppStream.ComponentScope.UNKNOWN} for unknown
          */
         function component_scope_from_string(scope_str: string): ComponentScope;
         /**
          * Converts the enumerated value to an text representation.
-         * @param scope the #AsComponentScope.
-         * @returns string version of @scope
+         * @param scope the {@link AppStream.ComponentScope}.
+         * @returns string version of `scope`
          */
         function component_scope_to_string(scope: ComponentScope | null): string;
         /**
          * Format `age` as a human-readable string in the given rating `system`. This is
          * the way to present system-specific strings in a UI.
-         * @param system an #AsContentRatingSystem
+         * @param system an {@link AppStream.ContentRatingSystem}
          * @param age a CSM age to format
-         * @returns a newly allocated formatted version of    @age, or %NULL if the given @system has no representation for @age
+         * @returns a newly allocated formatted version of    `age`, or `null` if the given `system` has no representation for `age`
+         * @since 0.12.12
          */
         function content_rating_system_format_age(system: ContentRatingSystem | null, age: number): string | null;
         /**
-         * Determine the most appropriate #AsContentRatingSystem for the given `locale`.
+         * Determine the most appropriate {@link AppStream.ContentRatingSystem} for the given `locale`.
          * Content rating systems are selected by territory. If no content rating system
-         * seems suitable, %AS_CONTENT_RATING_SYSTEM_IARC is returned.
+         * seems suitable, {@link AppStream.ContentRatingSystem.IARC} is returned.
          * @param locale a locale, in the format described in `man 3 setlocale`
-         * @returns the most relevant #AsContentRatingSystem
+         * @returns the most relevant {@link AppStream.ContentRatingSystem}
+         * @since 0.12.12
          */
         function content_rating_system_from_locale(locale: string): ContentRatingSystem;
         /**
          * Get the CSM ages corresponding to the entries returned by
-         * as_content_rating_system_get_formatted_ages() for this `system`.
-         * @param system an #AsContentRatingSystem
+         * `as_content_rating_system_get_formatted_ages()` for this `system`.
+         * @param system an {@link AppStream.ContentRatingSystem}
          * @returns an array of CSM ages
+         * @since 0.12.12
          */
         function content_rating_system_get_csm_ages(system: ContentRatingSystem | null): number[];
         /**
          * Get an array of all the possible return values of
-         * as_content_rating_system_format_age() for the given `system`. The array is
+         * `as_content_rating_system_format_age()` for the given `system`. The array is
          * sorted with youngest CSM age first.
-         * @param system an #AsContentRatingSystem
-         * @returns %NULL-terminated array of human-readable age strings
+         * @param system an {@link AppStream.ContentRatingSystem}
+         * @returns `null`-terminated array of human-readable age strings
+         * @since 0.12.12
          */
         function content_rating_system_get_formatted_ages(system: ContentRatingSystem | null): string[];
         /**
-         * Get a human-readable string to identify `system`. %NULL will be returned for
-         * %AS_CONTENT_RATING_SYSTEM_UNKNOWN.
-         * @param system an #AsContentRatingSystem
-         * @returns a human-readable string for @system, or %NULL if unknown
+         * Get a human-readable string to identify `system`. `null` will be returned for
+         * {@link AppStream.ContentRatingSystem.UNKNOWN}.
+         * @param system an {@link AppStream.ContentRatingSystem}
+         * @returns a human-readable string for `system`, or `null` if unknown
+         * @since 0.12.12
          */
         function content_rating_system_to_string(system: ContentRatingSystem | null): string | null;
         /**
          * Converts the text representation to an enumerated value.
          * @param value the string.
-         * @returns a #AsContentRatingValue or %AS_CONTENT_RATING_VALUE_UNKNOWN for unknown
+         * @returns a {@link AppStream.ContentRatingValue} or {@link AppStream.ContentRatingValue.UNKNOWN} for unknown
+         * @since 0.11.0
          */
         function content_rating_value_from_string(value: string): ContentRatingValue;
         /**
          * Converts the enumerated value to an text representation.
-         * @param value the #AsContentRatingValue.
-         * @returns string version of @value
+         * @param value the {@link AppStream.ContentRatingValue}.
+         * @returns string version of `value`
+         * @since 0.11.0
          */
         function content_rating_value_to_string(value: ContentRatingValue | null): string;
         /**
          * Converts the text representation to an enumerated value.
          * @param kind_str the string.
-         * @returns a #AsControlKind or %AS_CONTROL_KIND_UNKNOWN for unknown
+         * @returns a {@link AppStream.ControlKind} or {@link AppStream.ControlKind.UNKNOWN} for unknown
+         * @since 0.12.11
          */
         function control_kind_from_string(kind_str: string): ControlKind;
         /**
          * Converts the enumerated value to a text representation.
-         * @param kind the #AsControlKind.
-         * @returns string version of @kind
+         * @param kind the {@link AppStream.ControlKind}.
+         * @returns string version of `kind`
+         * @since 0.12.11
          */
         function control_kind_to_string(kind: ControlKind | null): string;
         /**
          * Converts the text representation to an enumerated value.
          * @param kind_str the string.
-         * @returns a #AsDisplaySideKind or %AS_DISPLAY_SIDE_KIND_UNKNOWN for unknown
+         * @returns a {@link AppStream.DisplaySideKind} or {@link AppStream.DisplaySideKind.UNKNOWN} for unknown
+         * @since 0.12.12
          */
         function display_side_kind_from_string(kind_str: string): DisplaySideKind;
         /**
          * Converts the enumerated value to a text representation.
-         * @param kind the #AsDisplaySideKind.
-         * @returns string version of @kind
+         * @param kind the {@link AppStream.DisplaySideKind}.
+         * @returns string version of `kind`
+         * @since 0.12.12
          */
         function display_side_kind_to_string(kind: DisplaySideKind | null): string;
         /**
          * Converts the text representation to an enumerated value.
          * @param kind_str the string.
-         * @returns a #AsFormatKind or %AS_FORMAT_KIND_UNKNOWN for unknown
+         * @returns a {@link AppStream.FormatKind} or {@link AppStream.FormatKind.UNKNOWN} for unknown
+         * @since 0.10.0
          */
         function format_kind_from_string(kind_str: string): FormatKind;
         /**
          * Converts the enumerated value to an text representation.
-         * @param kind the #AsFormatKind.
-         * @returns string version of @kind
+         * @param kind the {@link AppStream.FormatKind}.
+         * @returns string version of `kind`
+         * @since 0.10.0
          */
         function format_kind_to_string(kind: FormatKind | null): string;
         /**
          * Converts the text representation to an enumerated value.
          * @param version_str the string.
-         * @returns a #AsFormatVersion. For unknown, the highest version number is assumed.
+         * @returns a {@link AppStream.FormatVersion}. For unknown, the highest version number is assumed.
+         * @since 0.10.0
          */
         function format_version_from_string(version_str: string): FormatVersion;
         /**
          * Converts the enumerated value to an text representation.
-         * @param version the #AsFormatKind.
-         * @returns string version of @version
+         * @param version the {@link AppStream.FormatKind}.
+         * @returns string version of `version`
+         * @since 0.10.0
          */
         function format_version_to_string(version: FormatVersion | null): string;
         /**
@@ -1774,123 +1986,132 @@ declare module 'gi://AppStream?version=1.0' {
          * This function fully transfers ownership of the returned container,
          * to be used in GIR bindings.
          * @param with_special Include special categories (e.g. "addons", and "all"/"featured" in submenus)
-         * @returns a list of #AsCategory
+         * @returns a list of {@link AppStream.Category}
          */
         function get_default_categories(with_special: boolean): Category[];
         /**
          * Get a translated license name for the given SPDX ID.
          * @param license The SPDX license ID.
-         * @returns The license name, or %NULL if none found.
+         * @returns The license name, or `null` if none found.
+         * @since 1.0.0
          */
         function get_license_name(license: string): string | null;
         /**
          * Get a web URL to the license text and more license information for an SPDX
          * license identifier.
          * @param license The SPDX license ID.
-         * @returns The license URL, or %NULL if none available.
+         * @returns The license URL, or `null` if none available.
+         * @since 0.12.7
          */
         function get_license_url(license: string): string | null;
         /**
-         * Replaces the string `find` with the string `replace` in a #GString up to
-         * `limit` times. If the number of instances of `find` in the #GString is
-         * less than `limit,` all instances are replaced. If `limit` is `0`,
+         * Replaces the string `find` with the string `replace` in a {@link GLib.String} up to
+         * `limit` times. If the number of instances of `find` in the {@link GLib.String} is
+         * less than `limit`, all instances are replaced. If `limit` is `0`,
          * all instances of `find` are replaced.
-         * @param string a #GString
-         * @param find the string to find in @string
-         * @param replace the string to insert in place of @find
-         * @param limit the maximum instances of @find to replace with @replace, or `0` for no limit
+         * @param string a {@link GLib.String}
+         * @param find the string to find in `string`
+         * @param replace the string to insert in place of `find`
+         * @param limit the maximum instances of `find` to replace with `replace`, or `0` for no limit
          * @returns the number of find and replace operations performed.
          */
         function gstring_replace(string: GLib.String, find: string, replace: string, limit: number): number;
         /**
          * Converts the text representation to an enumerated value.
          * @param kind_str the string.
-         * @returns a #AsIconKind or %AS_ICON_KIND_UNKNOWN for unknown
+         * @returns a {@link AppStream.IconKind} or {@link AppStream.IconKind.UNKNOWN} for unknown
          */
         function icon_kind_from_string(kind_str: string): IconKind;
         /**
          * Converts the enumerated value to an text representation.
          * @param kind the %AsIconKind.
-         * @returns string version of @kind
+         * @returns string version of `kind`
          */
         function icon_kind_to_string(kind: IconKind | null): string;
         /**
          * Converts the text representation to an enumerated value.
          * @param kind the string.
-         * @returns a #AsImageKind, or %AS_IMAGE_KIND_UNKNOWN for unknown.
+         * @returns a {@link AppStream.ImageKind}, or {@link AppStream.ImageKind.UNKNOWN} for unknown.
          */
         function image_kind_from_string(kind: string): ImageKind;
         /**
          * Converts the enumerated value to an text representation.
-         * @param kind the #AsImageKind.
-         * @returns string version of @kind
+         * @param kind the {@link AppStream.ImageKind}.
+         * @returns string version of `kind`
          */
         function image_kind_to_string(kind: ImageKind | null): string;
         /**
          * Converts the text representation to an enumerated value.
          * @param kind_str the string.
-         * @returns a #AsInternetKind or %AS_INTERNET_KIND_UNKNOWN for unknown
+         * @returns a {@link AppStream.InternetKind} or {@link AppStream.InternetKind.UNKNOWN} for unknown
+         * @since 0.15.5
          */
         function internet_kind_from_string(kind_str: string): InternetKind;
         /**
          * Converts the enumerated value to a text representation.
-         * @param kind the #AsInternetKind.
-         * @returns string version of @kind
+         * @param kind the {@link AppStream.InternetKind}.
+         * @returns string version of `kind`
+         * @since 0.15.5
          */
         function internet_kind_to_string(kind: InternetKind | null): string;
         /**
          * Searches the known list of SPDX license exception IDs.
          * @param exception_id a single SPDX license exception ID, e.g. "GCC-exception-3.1"
-         * @returns %TRUE if the string is a valid SPDX license exception ID
+         * @returns `true` if the string is a valid SPDX license exception ID
+         * @since 0.12.10
          */
         function is_spdx_license_exception_id(exception_id: string): boolean;
         /**
          * Checks the licence string to check it being a valid licence.
          * NOTE: SPDX licenses can't typically contain brackets.
          * @param license a SPDX license string, e.g. "CC-BY-3.0 and GFDL-1.3"
-         * @returns %TRUE if the icon is a valid "SPDX license"
+         * @returns `true` if the icon is a valid "SPDX license"
+         * @since 0.9.8
          */
         function is_spdx_license_expression(license: string): boolean;
         /**
          * Searches the known list of SPDX license IDs.
          * @param license_id a single SPDX license ID, e.g. "GPL-3.0"
-         * @returns %TRUE if the string is a valid SPDX license ID
+         * @returns `true` if the string is a valid SPDX license ID
+         * @since 0.9.8
          */
         function is_spdx_license_id(license_id: string): boolean;
         /**
          * Converts the text representation to an enumerated value.
          * @param kind_str the string.
-         * @returns a #AsIssueKind or %AS_ISSUE_KIND_UNKNOWN for unknown
+         * @returns a {@link AppStream.IssueKind} or {@link AppStream.IssueKind.UNKNOWN} for unknown
          */
         function issue_kind_from_string(kind_str: string): IssueKind;
         /**
          * Converts the enumerated value to an text representation.
          * @param kind the %AsIssueKind.
-         * @returns string version of @kind
+         * @returns string version of `kind`
          */
         function issue_kind_to_string(kind: IssueKind | null): string;
         /**
          * Converts the text representation to an enumerated value.
          * @param str the string.
-         * @returns a #AsIssueSeverity, or %AS_ISSUE_SEVERITY_UNKNOWN for unknown.
+         * @returns a {@link AppStream.IssueSeverity}, or {@link AppStream.IssueSeverity.UNKNOWN} for unknown.
          */
         function issue_severity_from_string(str: string): IssueSeverity;
         /**
          * Converts the enumerated value to an text representation.
-         * @param severity the #AsIssueSeverity.
-         * @returns string version of @severity
+         * @param severity the {@link AppStream.IssueSeverity}.
+         * @returns string version of `severity`
          */
         function issue_severity_to_string(severity: IssueSeverity | null): string;
         /**
          * Converts the text representation to an enumerated value.
          * @param kind_str the string.
-         * @returns a #AsLaunchableKind or %AS_LAUNCHABLE_KIND_UNKNOWN for unknown
+         * @returns a {@link AppStream.LaunchableKind} or {@link AppStream.LaunchableKind.UNKNOWN} for unknown
+         * @since 0.11.0
          */
         function launchable_kind_from_string(kind_str: string): LaunchableKind;
         /**
          * Converts the enumerated value to a text representation.
-         * @param kind the #AsLaunchableKind.
-         * @returns string version of @kind
+         * @param kind the {@link AppStream.LaunchableKind}.
+         * @returns string version of `kind`
+         * @since 0.11.0
          */
         function launchable_kind_to_string(kind: LaunchableKind | null): string;
         /**
@@ -1907,7 +2128,8 @@ declare module 'gi://AppStream?version=1.0' {
          * Please note that this function does not give any legal advice. Please read the license texts
          * to learn more about the individual licenses and their conditions.
          * @param license The SPDX license string to test.
-         * @returns %TRUE if the license string contains only free-as-in-freedom licenses.
+         * @returns `true` if the license string contains only free-as-in-freedom licenses.
+         * @since 0.12.10
          */
         function license_is_free_license(license: string): boolean;
         /**
@@ -1919,7 +2141,7 @@ declare module 'gi://AppStream?version=1.0' {
          * This method checks against a hardcoded list of permissive licenses
          * commonly used to license metadata under.
          * @param license The SPDX license string to test.
-         * @returns %TRUE if the license contains only permissive licenses suitable as metadata license.
+         * @returns `true` if the license contains only permissive licenses suitable as metadata license.
          */
         function license_is_metadata_license(license: string): boolean;
         /**
@@ -1929,20 +2151,21 @@ declare module 'gi://AppStream?version=1.0' {
          * to test an SPDX license expression for compliance, please
          * use %as_license_is_metadata_license insread.
          * @param license_id a single SPDX license ID, e.g. "FSFAP"
-         * @returns %TRUE if the string is a valid metadata license ID.
+         * @returns `true` if the string is a valid metadata license ID.
          */
         function license_is_metadata_license_id(license_id: string): boolean;
         /**
          * Converts a non-SPDX license into an SPDX format string where possible.
          * @param license a not-quite SPDX license string, e.g. "GPLv3+"
          * @returns the best-effort SPDX license string
+         * @since 0.9.8
          */
         function license_to_spdx_id(license: string): string;
         /**
          * Converts XML description markup into other forms of text.
          * @param markup the XML markup to transform.
          * @param to_kind The markup style to convert into.
-         * @returns a newly allocated string, or %NULL on error.
+         * @returns a newly allocated string, or `null` on error.
          */
         function markup_convert(markup: string, to_kind: MarkupKind | null): string;
         /**
@@ -1950,27 +2173,34 @@ declare module 'gi://AppStream?version=1.0' {
          * than `line_len`. Words are not split.
          * @param text the text to split.
          * @param line_len the maximum length of the output line
-         * @returns lines, or %NULL in event of an error
+         * @returns lines, or `null` in event of an error
+         * @since 0.14.0
          */
         function markup_strsplit_words(text: string, line_len: number): string[];
         /**
          * Converts the text representation to an enumerated value.
          * @param kind_str the string.
-         * @returns a #AsMergeKind or %AS_MERGE_KIND_NONE for unknown
+         * @returns a {@link AppStream.MergeKind} or {@link AppStream.MergeKind.NONE} for unknown
          */
         function merge_kind_from_string(kind_str: string): MergeKind;
         /**
          * Converts the enumerated value to an text representation.
-         * @param kind the #AsMergeKind.
-         * @returns string version of @kind
+         * @param kind the {@link AppStream.MergeKind}.
+         * @returns string version of `kind`
          */
         function merge_kind_to_string(kind: MergeKind | null): string;
+        /**
+         * @returns An error quark.
+         */
         function metadata_error_quark(): GLib.Quark;
+        /**
+         * @returns An error quark.
+         */
         function pool_error_quark(): GLib.Quark;
         /**
          * Converts the text representation to an enumerated value.
          * @param kind_str the string.
-         * @returns a #AsProvidedKind or %AS_PROVIDED_KIND_UNKNOWN for unknown
+         * @returns a {@link AppStream.ProvidedKind} or {@link AppStream.ProvidedKind.UNKNOWN} for unknown
          */
         function provided_kind_from_string(kind_str: string): ProvidedKind;
         /**
@@ -1978,40 +2208,43 @@ declare module 'gi://AppStream?version=1.0' {
          * using the plural forms (e.g. "Libraries" instead of "Library").
          *
          * This can be useful when displaying provided items in GUI dialogs.
-         * @param kind the #AsProvidedKind.
-         * @returns Pluralized, l10n string version of @kind
+         * @param kind the {@link AppStream.ProvidedKind}.
+         * @returns Pluralized, l10n string version of `kind`
          */
         function provided_kind_to_l10n_string(kind: ProvidedKind | null): string;
         /**
          * Converts the enumerated value to a text representation.
-         * @param kind the #AsProvidedKind.
-         * @returns string version of @kind
+         * @param kind the {@link AppStream.ProvidedKind}.
+         * @returns string version of `kind`
          */
         function provided_kind_to_string(kind: ProvidedKind | null): string;
         /**
          * Converts the text representation to an enumerated value.
          * @param str the string.
-         * @returns a AsReferenceKind or %AS_REFERENCE_KIND_UNKNOWN for unknown
+         * @returns a AsReferenceKind or {@link AppStream.ReferenceKind.UNKNOWN} for unknown
          */
         function reference_kind_from_string(str: string): ReferenceKind;
         /**
          * Converts the enumerated value to an text representation.
          * @param kind the %AsReferenceKind.
-         * @returns string version of @kind
+         * @returns string version of `kind`
+         * @since 1.0.0
          */
         function reference_kind_to_string(kind: ReferenceKind | null): string;
         /**
          * Converts the text representation to an enumerated value.
          * @param compare_str the string.
-         * @returns a #AsRelationCompare, or %AS_RELATION_COMPARE_UNKNOWN for unknown.
+         * @returns a {@link AppStream.RelationCompare}, or {@link AppStream.RelationCompare.UNKNOWN} for unknown.
+         * @since 0.12.0
          */
         function relation_compare_from_string(compare_str: string): RelationCompare;
         /**
          * Converts the enumerated value to an text representation.
          * The enum is converted into a two-letter identifier ("eq", "ge", etc.)
          * for use in the XML representation.
-         * @param compare the #AsRelationCompare.
-         * @returns string version of @compare
+         * @param compare the {@link AppStream.RelationCompare}.
+         * @returns string version of `compare`
+         * @since 0.12.0
          */
         function relation_compare_to_string(compare: RelationCompare | null): string;
         /**
@@ -2019,168 +2252,192 @@ declare module 'gi://AppStream?version=1.0' {
          * The enum is converted into an identifier consisting of two
          * mathematical comparison operators ("==", ">=", etc.)
          * for use in the YAML representation and user interfaces.
-         * @param compare the #AsRelationCompare.
-         * @returns string version of @compare
+         * @param compare the {@link AppStream.RelationCompare}.
+         * @returns string version of `compare`
+         * @since 0.12.0
          */
         function relation_compare_to_symbols_string(compare: RelationCompare | null): string;
+        /**
+         * @returns An error quark.
+         * @since 0.16.0
+         */
         function relation_error_quark(): GLib.Quark;
         /**
          * Converts the text representation to an enumerated value.
          * @param kind_str the string.
-         * @returns a #AsRelationItemKind or %AS_RELATION_ITEM_KIND_UNKNOWN for unknown
+         * @returns a {@link AppStream.RelationItemKind} or {@link AppStream.RelationItemKind.UNKNOWN} for unknown
+         * @since 0.12.0
          */
         function relation_item_kind_from_string(kind_str: string): RelationItemKind;
         /**
          * Converts the enumerated value to a text representation.
-         * @param kind the #AsRelationKind.
-         * @returns string version of @kind
+         * @param kind the {@link AppStream.RelationKind}.
+         * @returns string version of `kind`
+         * @since 0.12.0
          */
         function relation_item_kind_to_string(kind: RelationItemKind | null): string;
         /**
          * Converts the text representation to an enumerated value.
          * @param kind_str the string.
-         * @returns a #AsRelationKind or %AS_RELATION_KIND_UNKNOWN for unknown
+         * @returns a {@link AppStream.RelationKind} or {@link AppStream.RelationKind.UNKNOWN} for unknown
+         * @since 0.12.0
          */
         function relation_kind_from_string(kind_str: string): RelationKind;
         /**
          * Converts the enumerated value to a text representation.
-         * @param kind the #AsRelationKind.
-         * @returns string version of @kind
+         * @param kind the {@link AppStream.RelationKind}.
+         * @returns string version of `kind`
+         * @since 0.12.0
          */
         function relation_kind_to_string(kind: RelationKind | null): string;
         /**
          * Converts the text representation to an enumerated value.
          * @param kind_str the string.
-         * @returns an #AsReleaseKind or %AS_RELEASE_KIND_UNKNOWN for unknown
+         * @returns an {@link AppStream.ReleaseKind} or {@link AppStream.ReleaseKind.UNKNOWN} for unknown
+         * @since 0.12.0
          */
         function release_kind_from_string(kind_str: string): ReleaseKind;
         /**
          * Converts the enumerated value to an text representation.
-         * @param kind the #AsReleaseKind.
-         * @returns string version of @kind
+         * @param kind the {@link AppStream.ReleaseKind}.
+         * @returns string version of `kind`
+         * @since 0.12.0
          */
         function release_kind_to_string(kind: ReleaseKind | null): string;
         /**
          * Converts the text representation to an enumerated value.
          * @param kind_str the string.
-         * @returns an #AsReleaseKind or %AS_RELEASE_KIND_UNKNOWN for unknown
+         * @returns an {@link AppStream.ReleaseKind} or {@link AppStream.ReleaseKind.UNKNOWN} for unknown
+         * @since 0.16.0
          */
         function release_list_kind_from_string(kind_str: string): ReleaseListKind;
         /**
          * Converts the enumerated value to an text representation.
-         * @param kind the #AsReleaseKind.
-         * @returns string version of @kind
+         * @param kind the {@link AppStream.ReleaseKind}.
+         * @returns string version of `kind`
+         * @since 0.16.0
          */
         function release_list_kind_to_string(kind: ReleaseListKind | null): string;
         /**
          * Converts the text representation to an enumerated value.
          * @param kind_str the string.
-         * @returns an #AsReleaseUrlKind or %AS_RELEASE_URL_KIND_UNKNOWN for unknown
+         * @returns an {@link AppStream.ReleaseUrlKind} or {@link AppStream.ReleaseUrlKind.UNKNOWN} for unknown
+         * @since 0.12.5
          */
         function release_url_kind_from_string(kind_str: string): ReleaseUrlKind;
         /**
          * Converts the enumerated value to an text representation.
-         * @param kind the #AsReleaseUrlKind.
-         * @returns string version of @kind
+         * @param kind the {@link AppStream.ReleaseUrlKind}.
+         * @returns string version of `kind`
+         * @since 0.12.5
          */
         function release_url_kind_to_string(kind: ReleaseUrlKind | null): string;
         /**
          * Converts the text representation to an enumerated value.
          * @param kind the string.
-         * @returns a %AsScreenshotKind, or %AS_SCREENSHOT_KIND_UNKNOWN if not known.
+         * @returns a %AsScreenshotKind, or {@link AppStream.ScreenshotKind.UNKNOWN} if not known.
          */
         function screenshot_kind_from_string(kind: string): ScreenshotKind;
         /**
          * Converts the enumerated value to an text representation.
-         * @param kind the #AsScreenshotKind.
-         * @returns string version of @kind
+         * @param kind the {@link AppStream.ScreenshotKind}.
+         * @returns string version of `kind`
          */
         function screenshot_kind_to_string(kind: ScreenshotKind | null): string;
         /**
          * Converts the text representation to an enumerated value.
          * @param size_kind the string.
-         * @returns an #AsSizeKind or %AS_SIZE_KIND_UNKNOWN for unknown
+         * @returns an {@link AppStream.SizeKind} or {@link AppStream.SizeKind.UNKNOWN} for unknown
          */
         function size_kind_from_string(size_kind: string): SizeKind;
         /**
          * Converts the enumerated value to an text representation.
-         * @param size_kind the #AsSizeKind.
-         * @returns string version of @size_kind
+         * @param size_kind the {@link AppStream.SizeKind}.
+         * @returns string version of `size_kind`
          */
         function size_kind_to_string(size_kind: SizeKind | null): string;
         /**
          * De-tokenizes the SPDX licenses into a string.
-         * @param license_tokens license tokens, typically from as_spdx_license_tokenize()
-         * @returns string, or %NULL for invalid
+         * @param license_tokens license tokens, typically from `as_spdx_license_tokenize()`
+         * @returns string, or `null` for invalid
+         * @since 0.9.8
          */
         function spdx_license_detokenize(license_tokens: string): string | null;
         /**
          * Tokenizes the SPDX license string (or any simarly formatted string)
          * into parts. Any license parts of the string e.g. "LGPL-2.0+" are prefexed
-         * with "`"`, the conjunctive replaced with "&", the disjunctive replaced
+         * with "@", the conjunctive replaced with "&", the disjunctive replaced
          * with "|" and the WITH operator for license exceptions replaced with "^".
          * Brackets are added as indervidual tokens and other strings are
          * appended into single tokens where possible.
          * @param license a license string, e.g. "LGPLv2+ and (QPL or GPLv2) and MIT"
-         * @returns array of strings, or %NULL for invalid
+         * @returns array of strings, or `null` for invalid
+         * @since 0.9.8
          */
         function spdx_license_tokenize(license: string): string[] | null;
         /**
          * Converts the text representation to an enumerated value.
          * @param kind_str the string.
-         * @returns a #AsSuggestedKind or %AS_SUGGESTED_KIND_UNKNOWN for unknown
+         * @returns a {@link AppStream.SuggestedKind} or {@link AppStream.SuggestedKind.UNKNOWN} for unknown
          */
         function suggested_kind_from_string(kind_str: string): SuggestedKind;
         /**
          * Converts the enumerated value to an text representation.
          * @param kind the %AsSuggestedKind.
-         * @returns string version of @kind
+         * @returns string version of `kind`
          */
         function suggested_kind_to_string(kind: SuggestedKind | null): string;
+        /**
+         * @returns An error quark.
+         * @since 0.16.0
+         */
         function system_info_error_quark(): GLib.Quark;
         /**
          * Converts the text representation to an enumerated value.
          * @param kind_str the string.
-         * @returns a #AsTranslationKind or %AS_TRANSLATION_KIND_UNKNOWN for unknown
+         * @returns a {@link AppStream.TranslationKind} or {@link AppStream.TranslationKind.UNKNOWN} for unknown
          */
         function translation_kind_from_string(kind_str: string): TranslationKind;
         /**
          * Converts the enumerated value to a text representation.
-         * @param kind the #AsTranslationKind.
-         * @returns string version of @kind
+         * @param kind the {@link AppStream.TranslationKind}.
+         * @returns string version of `kind`
          */
         function translation_kind_to_string(kind: TranslationKind | null): string;
         /**
          * Converts the text representation to an enumerated value.
          * @param urgency_kind the string.
-         * @returns a %AsUrgencyKind or %AS_URGENCY_KIND_UNKNOWN for unknown
+         * @returns a %AsUrgencyKind or {@link AppStream.UrgencyKind.UNKNOWN} for unknown
+         * @since 0.6.5
          */
         function urgency_kind_from_string(urgency_kind: string): UrgencyKind;
         /**
          * Converts the enumerated value to an text representation.
          * @param urgency_kind the %AsUrgencyKind.
-         * @returns string version of @urgency_kind
+         * @returns string version of `urgency_kind`
+         * @since 0.6.5
          */
         function urgency_kind_to_string(urgency_kind: UrgencyKind | null): string;
         /**
          * Converts the text representation to an enumerated value.
          * @param url_kind the string.
-         * @returns a #AsUrlKind or %AS_URL_KIND_UNKNOWN for unknown
+         * @returns a {@link AppStream.UrlKind} or {@link AppStream.UrlKind.UNKNOWN} for unknown
          */
         function url_kind_from_string(url_kind: string): UrlKind;
         /**
          * Converts the enumerated value to an text representation.
          * @param url_kind the %AsUrlKind.
-         * @returns string version of @url_kind
+         * @returns string version of `url_kind`
          */
         function url_kind_to_string(url_kind: UrlKind | null): string;
         /**
          * Builds an identifier string unique to the individual dataset using the supplied information.
-         * @param scope Scope of the metadata as #AsComponentScope e.g. %AS_COMPONENT_SCOPE_SYSTEM
+         * @param scope Scope of the metadata as {@link AppStream.ComponentScope} e.g. {@link AppStream.ComponentScope.SYSTEM}
          * @param bundle_kind Bundling system providing this data, e.g. 'package' or 'flatpak'
          * @param origin Origin string, e.g. 'os' or 'gnome-apps-nightly'
          * @param cid AppStream component ID, e.g. 'org.freedesktop.appstream.cli'
          * @param branch Branch, e.g. '3-20' or 'master'
+         * @since 0.14.0
          */
         function utils_build_data_id(
             scope: ComponentScope | null,
@@ -2193,7 +2450,8 @@ declare module 'gi://AppStream?version=1.0' {
          * Checks two component data IDs for equality allowing globs to match.
          * @param data_id1 a data ID
          * @param data_id2 another data ID
-         * @returns %TRUE if the ID's should be considered equal.
+         * @returns `true` if the ID's should be considered equal.
+         * @since 0.14.0
          */
         function utils_data_id_equal(data_id1: string, data_id2: string): boolean;
         /**
@@ -2207,10 +2465,11 @@ declare module 'gi://AppStream?version=1.0' {
          * This function implements the widely used DJB hash on the ID subset of the
          * data-id string.
          *
-         * It can be passed to g_hash_table_new() as the hash_func parameter,
+         * It can be passed to `g_hash_table_new()` as the hash_func parameter,
          * when using non-NULL strings or unique_ids as keys in a GHashTable.
          * @param data_id a data ID
          * @returns a hash value corresponding to the key
+         * @since 0.14.0
          */
         function utils_data_id_hash(data_id: string): number;
         /**
@@ -2218,30 +2477,38 @@ declare module 'gi://AppStream?version=1.0' {
          * allowing clients to whitelist sections that have to match.
          * @param data_id1 a data ID
          * @param data_id2 another data ID
-         * @param match_flags a #AsDataIdMatchFlags bitfield, e.g. %AS_DATA_ID_MATCH_FLAG_ID
-         * @returns %TRUE if the IDs should be considered equal.
+         * @param match_flags a {@link AppStream.DataIdMatchFlags} bitfield, e.g. {@link AppStream.DataIdMatchFlags.ID}
+         * @returns `true` if the IDs should be considered equal.
+         * @since 0.14.0
          */
         function utils_data_id_match(data_id1: string, data_id2: string, match_flags: DataIdMatchFlags | null): boolean;
         /**
          * Checks if a data ID is valid i.e. has the correct number of
          * sections.
          * @param data_id a component data ID
-         * @returns %TRUE if the ID is valid
+         * @returns `true` if the ID is valid
+         * @since 0.14.0
          */
         function utils_data_id_valid(data_id: string): boolean;
+        /**
+         * @returns An error quark.
+         * @since 0.14.0
+         */
         function utils_error_quark(): GLib.Quark;
         /**
          * Get a human-readable, translated name of the desktop environment
          * represented by the given ID.
          * @param de_id a desktop environment id.
-         * @returns A localized name of the DE, or %NULL if none available.
+         * @returns A localized name of the DE, or `null` if none available.
+         * @since 1.0.0
          */
         function utils_get_desktop_environment_name(de_id: string): string;
         /**
          * Get a human-readable, translated name of the combination
          * of GUI environment and style. E.g. "plasma:dark" becomes "Plasma (Dark)".
          * @param env_style a GUI environment style ID, e.g. "pantheon:dark"
-         * @returns A localized name of the environment style, or %NULL if none available.
+         * @returns A localized name of the environment style, or `null` if none available.
+         * @since 1.0.0
          */
         function utils_get_gui_environment_style_name(env_style: string): string;
         /**
@@ -2253,9 +2520,10 @@ declare module 'gi://AppStream?version=1.0' {
          */
         function utils_get_tag_search_weight(tag_name: string): number;
         /**
-         * Guess the #AsComponentScope that applies to a given path.
+         * Guess the {@link AppStream.ComponentScope} that applies to a given path.
          * @param path The filename to test.
-         * @returns the #AsComponentScope
+         * @returns the {@link AppStream.ComponentScope}
+         * @since 0.15.0
          */
         function utils_guess_scope_from_path(path: string): ComponentScope;
         /**
@@ -2264,11 +2532,12 @@ declare module 'gi://AppStream?version=1.0' {
          * Please note that this function does almost no validation and may guess missing values such
          * as icon sizes and origin names.
          * Ensure your metadata is good before installing it.
-         * @param location the #AsMetadataLocation, e.g. %AS_METADATA_LOCATION_CACHE
+         * @param location the {@link AppStream.MetadataLocation}, e.g. {@link AppStream.MetadataLocation.CACHE}
          * @param filename the full path of the file to install
-         * @param origin the origin to use for the installation, or %NULL
-         * @param destdir the destdir to use, or %NULL
-         * @returns %TRUE for success, %FALSE if error is set
+         * @param origin the origin to use for the installation, or `null`
+         * @param destdir the destdir to use, or `null`
+         * @returns `true` for success, `false` if error is set
+         * @since 0.14.0
          */
         function utils_install_metadata_file(
             location: MetadataLocation | null,
@@ -2281,54 +2550,60 @@ declare module 'gi://AppStream?version=1.0' {
          * See https://specifications.freedesktop.org/menu-spec/latest/category-registry.html
          * for a reference.
          * @param category_name a XDG category name, e.g. "ProjectManagement"
-         * @returns %TRUE if the category name is valid
+         * @returns `true` if the category name is valid
+         * @since 0.9.7
          */
         function utils_is_category_name(category_name: string): boolean;
         /**
          * Checks if the submitted desktop environment ID is
          * known and valid.
          * @param de_id a desktop environment id.
-         * @returns %TRUE if the desktop-id is valid
+         * @returns `true` if the desktop-id is valid
+         * @since 0.10.0
          */
         function utils_is_desktop_environment(de_id: string): boolean;
         /**
          * Checks if the given identifier is a valid, known GUI environment style.
          * @param env_style a GUI environment style ID, e.g. "pantheon:dark"
-         * @returns %TRUE if the environment-style ID is is valid
+         * @returns `true` if the environment-style ID is is valid
+         * @since 1.0.0
          */
         function utils_is_gui_environment_style(env_style: string): boolean;
         /**
          * Test if the given string is a valid platform triplet recognized by
          * AppStream.
          * @param triplet a platform triplet.
-         * @returns %TRUE if triplet is valid.
+         * @returns `true` if triplet is valid.
+         * @since 0.14.0
          */
         function utils_is_platform_triplet(triplet: string): boolean;
         /**
          * Searches the known list of TLDs we allow for AppStream IDs.
          * This excludes internationalized names.
          * @param tld a top-level domain without dot, e.g. "de", "org", "name"
-         * @returns %TRUE if the TLD is valid
+         * @returns `true` if the TLD is valid
+         * @since 0.9.8
          */
         function utils_is_tld(tld: string): boolean;
         /**
          * Calculates if one locale is compatible with another.
          * When doing the calculation the locale and language code is taken into
          * account if possible.
-         * @param locale1 a BCP47 or POSIX locale string, or %NULL
-         * @param locale2 a BCP47 or POSIX locale string, or %NULL
-         * @returns %TRUE if the locale is compatible.
+         * @param locale1 a BCP47 or POSIX locale string, or `null`
+         * @param locale2 a BCP47 or POSIX locale string, or `null`
+         * @returns `true` if the locale is compatible.
+         * @since 0.9.5
          */
         function utils_locale_is_compatible(locale1?: string | null, locale2?: string | null): boolean;
         /**
          * Converts a POSIX locale string to the corresponding IETF BCP47 format.
          * If the given locale is already in BCP47 format, no change will be done.
          * @param locale
-         * @returns A locale string, free with g_free()
+         * @returns A locale string, free with `g_free()`
          */
         function utils_posix_locale_to_bcp47(locale: string): string;
         /**
-         * Sorts all components in `cpts` into the #AsCategory categories listed in `categories`.
+         * Sorts all components in `cpts` into the {@link AppStream.Category} categories listed in `categories`.
          * @param cpts List of components.
          * @param categories List of categories to sort components into.
          * @param check_duplicates Whether to check for duplicates.
@@ -2338,13 +2613,17 @@ declare module 'gi://AppStream?version=1.0' {
             categories: Category[],
             check_duplicates: boolean,
         ): void;
+        /**
+         * @returns An error quark.
+         * @since 0.15.4
+         */
         function validator_error_quark(): GLib.Quark;
         /**
          * Compare alpha and numeric segments of two software versions,
          * considering `flags`.
          * @param a First version number
          * @param b Second version number
-         * @param flags Flags, e.g. %AS_VERCMP_FLAG_NONE
+         * @param flags Flags, e.g. {@link AppStream.VercmpFlags.NONE}
          * @returns an integer > 0 if a is newer than b;     0 if a and b are the same version;     < 0 if b is newer than a
          */
         function vercmp(a: string, b: string, flags: VercmpFlags | null): number;
@@ -2360,8 +2639,9 @@ declare module 'gi://AppStream?version=1.0' {
          * @param ver1 first version number
          * @param compare the comparison operator
          * @param ver2 second version number
-         * @param flags the #AsVercmpFlags to use
-         * @returns %TRUE if the version comparison matches, %FALSE otherwise.
+         * @param flags the {@link AppStream.VercmpFlags} to use
+         * @returns `true` if the version comparison matches, `false` otherwise.
+         * @since 0.16.0
          */
         function vercmp_test_match(
             ver1: string,
@@ -2373,38 +2653,43 @@ declare module 'gi://AppStream?version=1.0' {
          * Get the version of the AppStream library that is currently used
          * at runtime as a string.
          * @returns a version number, e.g. "0.14.2"
+         * @since 0.14.0
          */
         function version_string(): string;
         /**
          * Converts the text representation to an enumerated value.
          * @param str the string.
-         * @returns a #AsVideoCodecKind, or %AS_VIDEO_CODEC_KIND_UNKNOWN for unknown.
+         * @returns a {@link AppStream.VideoCodecKind}, or {@link AppStream.VideoCodecKind.UNKNOWN} for unknown.
          */
         function video_codec_kind_from_string(str: string): VideoCodecKind;
         /**
          * Converts the enumerated value to an text representation.
-         * @param kind the #AsVideoCodecKind.
-         * @returns string version of @codec
+         * @param kind the {@link AppStream.VideoCodecKind}.
+         * @returns string version of `codec`
          */
         function video_codec_kind_to_string(kind: VideoCodecKind | null): string;
         /**
          * Converts the text representation to an enumerated value.
          * @param str the string.
-         * @returns a #AsVideoContainerKind, or %AS_VIDEO_CONTAINER_KIND_UNKNOWN for unknown.
+         * @returns a {@link AppStream.VideoContainerKind}, or {@link AppStream.VideoContainerKind.UNKNOWN} for unknown.
          */
         function video_container_kind_from_string(str: string): VideoContainerKind;
         /**
          * Converts the enumerated value to an text representation.
-         * @param kind the #AsVideoContainerKind.
-         * @returns string version of @kind
+         * @param kind the {@link AppStream.VideoContainerKind}.
+         * @returns string version of `kind`
          */
         function video_container_kind_to_string(kind: VideoContainerKind | null): string;
+        /**
+         * @gir-type Flags
+         */
         export namespace CacheFlags {
             export const $gtype: GObject.GType<CacheFlags>;
         }
 
         /**
          * Flags on how caching should be used.
+         * @gir-type Flags
          */
         enum CacheFlags {
             /**
@@ -2429,12 +2714,16 @@ declare module 'gi://AppStream?version=1.0' {
             REFRESH_SYSTEM,
         }
 
+        /**
+         * @gir-type Flags
+         */
         export namespace ComponentBoxFlags {
             export const $gtype: GObject.GType<ComponentBoxFlags>;
         }
 
         /**
          * Flags controlling the component box behavior.
+         * @gir-type Flags
          */
         enum ComponentBoxFlags {
             /**
@@ -2447,12 +2736,16 @@ declare module 'gi://AppStream?version=1.0' {
             NO_CHECKS,
         }
 
+        /**
+         * @gir-type Flags
+         */
         export namespace DataIdMatchFlags {
             export const $gtype: GObject.GType<DataIdMatchFlags>;
         }
 
         /**
          * The flags used when matching unique IDs.
+         * @gir-type Flags
          */
         enum DataIdMatchFlags {
             /**
@@ -2460,11 +2753,11 @@ declare module 'gi://AppStream?version=1.0' {
              */
             NONE,
             /**
-             * Scope, e.g. a #AsComponentScope
+             * Scope, e.g. a {@link AppStream.ComponentScope}
              */
             SCOPE,
             /**
-             * Bundle kind, e.g. a #AsBundleKind
+             * Bundle kind, e.g. a {@link AppStream.BundleKind}
              */
             BUNDLE_KIND,
             /**
@@ -2481,12 +2774,16 @@ declare module 'gi://AppStream?version=1.0' {
             BRANCH,
         }
 
+        /**
+         * @gir-type Flags
+         */
         export namespace ParseFlags {
             export const $gtype: GObject.GType<ParseFlags>;
         }
 
         /**
          * Influence certain aspects of how AppStream metadata is parsed.
+         * @gir-type Flags
          */
         enum ParseFlags {
             /**
@@ -2499,12 +2796,16 @@ declare module 'gi://AppStream?version=1.0' {
             IGNORE_MEDIABASEURL,
         }
 
+        /**
+         * @gir-type Flags
+         */
         export namespace PoolFlags {
             export const $gtype: GObject.GType<PoolFlags>;
         }
 
         /**
          * Flags controlling the metadata pool behavior.
+         * @gir-type Flags
          */
         enum PoolFlags {
             /**
@@ -2545,12 +2846,17 @@ declare module 'gi://AppStream?version=1.0' {
             MONITOR,
         }
 
+        /**
+         * @gir-type Flags
+         */
         export namespace ReviewFlags {
             export const $gtype: GObject.GType<ReviewFlags>;
         }
 
         /**
          * The flags for the review.
+         * @gir-type Flags
+         * @since 0.14.0
          */
         enum ReviewFlags {
             /**
@@ -2567,13 +2873,17 @@ declare module 'gi://AppStream?version=1.0' {
             VOTED,
         }
 
+        /**
+         * @gir-type Flags
+         */
         export namespace ValueFlags {
             export const $gtype: GObject.GType<ValueFlags>;
         }
 
         /**
-         * Set how values assigned to an #AsComponent should be treated when
+         * Set how values assigned to an {@link AppStream.Component} should be treated when
          * they are set or retrieved.
+         * @gir-type Flags
          */
         enum ValueFlags {
             /**
@@ -2590,12 +2900,16 @@ declare module 'gi://AppStream?version=1.0' {
             NO_TRANSLATION_FALLBACK,
         }
 
+        /**
+         * @gir-type Flags
+         */
         export namespace VercmpFlags {
             export const $gtype: GObject.GType<VercmpFlags>;
         }
 
         /**
          * The flags used when matching unique IDs.
+         * @gir-type Flags
          */
         enum VercmpFlags {
             /**
@@ -2617,6 +2931,9 @@ declare module 'gi://AppStream?version=1.0' {
             interface ConstructorProps extends GObject.Object.ConstructorProps {}
         }
 
+        /**
+         * @gir-type Class
+         */
         class Agreement extends GObject.Object {
             static $gtype: GObject.GType<Agreement>;
 
@@ -2639,16 +2956,19 @@ declare module 'gi://AppStream?version=1.0' {
 
             // Signals
 
+            /** @signal */
             connect<K extends keyof Agreement.SignalSignatures>(
                 signal: K,
                 callback: GObject.SignalCallback<this, Agreement.SignalSignatures[K]>,
             ): number;
             connect(signal: string, callback: (...args: any[]) => any): number;
+            /** @signal */
             connect_after<K extends keyof Agreement.SignalSignatures>(
                 signal: K,
                 callback: GObject.SignalCallback<this, Agreement.SignalSignatures[K]>,
             ): number;
             connect_after(signal: string, callback: (...args: any[]) => any): number;
+            /** @signal */
             emit<K extends keyof Agreement.SignalSignatures>(
                 signal: K,
                 ...args: GObject.GjsParameters<Agreement.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never
@@ -2657,15 +2977,18 @@ declare module 'gi://AppStream?version=1.0' {
 
             // Methods
 
+            /**
+             * @param agreement_section
+             */
             add_section(agreement_section: AgreementSection): void;
             /**
              * Gets the agreement kind.
-             * @returns a string, e.g. %AS_AGREEMENT_KIND_EULA
+             * @returns a string, e.g. {@link AppStream.AgreementKind.EULA}
              */
             get_kind(): AgreementKind;
             /**
              * Gets the first section in the agreement.
-             * @returns agreement section, or %NULL
+             * @returns agreement section, or `null`
              */
             get_section_default(): AgreementSection | null;
             /**
@@ -2680,7 +3003,7 @@ declare module 'gi://AppStream?version=1.0' {
             get_version_id(): string;
             /**
              * Sets the agreement kind.
-             * @param kind the agreement kind, e.g. %AS_AGREEMENT_KIND_EULA
+             * @param kind the agreement kind, e.g. {@link AppStream.AgreementKind.EULA}
              */
             set_kind(kind: AgreementKind | null): void;
             /**
@@ -2699,6 +3022,9 @@ declare module 'gi://AppStream?version=1.0' {
             interface ConstructorProps extends GObject.Object.ConstructorProps {}
         }
 
+        /**
+         * @gir-type Class
+         */
         class AgreementSection extends GObject.Object {
             static $gtype: GObject.GType<AgreementSection>;
 
@@ -2721,16 +3047,19 @@ declare module 'gi://AppStream?version=1.0' {
 
             // Signals
 
+            /** @signal */
             connect<K extends keyof AgreementSection.SignalSignatures>(
                 signal: K,
                 callback: GObject.SignalCallback<this, AgreementSection.SignalSignatures[K]>,
             ): number;
             connect(signal: string, callback: (...args: any[]) => any): number;
+            /** @signal */
             connect_after<K extends keyof AgreementSection.SignalSignatures>(
                 signal: K,
                 callback: GObject.SignalCallback<this, AgreementSection.SignalSignatures[K]>,
             ): number;
             connect_after(signal: string, callback: (...args: any[]) => any): number;
+            /** @signal */
             emit<K extends keyof AgreementSection.SignalSignatures>(
                 signal: K,
                 ...args: GObject.GjsParameters<AgreementSection.SignalSignatures[K]> extends [any, ...infer Q]
@@ -2742,9 +3071,9 @@ declare module 'gi://AppStream?version=1.0' {
             // Methods
 
             /**
-             * Returns the #AsContext associated with this section.
-             * This function may return %NULL if no context is set.
-             * @returns the #AsContext used by this agreement section.
+             * Returns the {@link AppStream.Context} associated with this section.
+             * This function may return `null` if no context is set.
+             * @returns the {@link AppStream.Context} used by this agreement section.
              */
             get_context(): Context | null;
             /**
@@ -2765,7 +3094,7 @@ declare module 'gi://AppStream?version=1.0' {
             /**
              * Sets the document context this release is associated
              * with.
-             * @param context the #AsContext.
+             * @param context the {@link AppStream.Context}.
              */
             set_context(context: Context): void;
             /**
@@ -2796,6 +3125,9 @@ declare module 'gi://AppStream?version=1.0' {
             interface ConstructorProps extends GObject.Object.ConstructorProps {}
         }
 
+        /**
+         * @gir-type Class
+         */
         class Artifact extends GObject.Object {
             static $gtype: GObject.GType<Artifact>;
 
@@ -2818,16 +3150,19 @@ declare module 'gi://AppStream?version=1.0' {
 
             // Signals
 
+            /** @signal */
             connect<K extends keyof Artifact.SignalSignatures>(
                 signal: K,
                 callback: GObject.SignalCallback<this, Artifact.SignalSignatures[K]>,
             ): number;
             connect(signal: string, callback: (...args: any[]) => any): number;
+            /** @signal */
             connect_after<K extends keyof Artifact.SignalSignatures>(
                 signal: K,
                 callback: GObject.SignalCallback<this, Artifact.SignalSignatures[K]>,
             ): number;
             connect_after(signal: string, callback: (...args: any[]) => any): number;
+            /** @signal */
             emit<K extends keyof Artifact.SignalSignatures>(
                 signal: K,
                 ...args: GObject.GjsParameters<Artifact.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never
@@ -2838,7 +3173,7 @@ declare module 'gi://AppStream?version=1.0' {
 
             /**
              * Add a checksum for the file associated with this artifact.
-             * @param cs The #AsChecksum.
+             * @param cs The {@link AppStream.Checksum}.
              */
             add_checksum(cs: Checksum): void;
             /**
@@ -2848,29 +3183,29 @@ declare module 'gi://AppStream?version=1.0' {
             add_location(location: string): void;
             /**
              * Gets the bundle kind of this artifact.
-             * @returns the #AsBundleKind
+             * @returns the {@link AppStream.BundleKind}
              */
             get_bundle_kind(): BundleKind;
             /**
              * Gets the artifact checksum
              * @param kind
-             * @returns an #AsChecksum, or %NULL for not set or invalid
+             * @returns an {@link AppStream.Checksum}, or `null` for not set or invalid
              */
             get_checksum(kind: ChecksumKind | null): Checksum | null;
             /**
              * Get a list of all checksums we have for this artifact.
-             * @returns an array of #AsChecksum objects.
+             * @returns an array of {@link AppStream.Checksum} objects.
              */
             get_checksums(): Checksum[];
             /**
              * Gets a suggested filename for the downloaded artifact,
-             * or %NULL if none is suggested.
+             * or `null` if none is suggested.
              * @returns The platform triplet or identifier string.
              */
             get_filename(): string;
             /**
              * Gets the artifact kind.
-             * @returns the #AsArtifactKind
+             * @returns the {@link AppStream.ArtifactKind}
              */
             get_kind(): ArtifactKind;
             /**
@@ -2885,13 +3220,13 @@ declare module 'gi://AppStream?version=1.0' {
             get_platform(): string;
             /**
              * Gets the artifact size.
-             * @param kind a #AsSizeKind
+             * @param kind a {@link AppStream.SizeKind}
              * @returns The size of the given kind of this artifact.
              */
             get_size(kind: SizeKind | null): number;
             /**
              * Sets the bundle kind for this release artifact.
-             * @param kind the #AsBundleKind, e.g. %AS_BUNDLE_KIND_TARBALL.
+             * @param kind the {@link AppStream.BundleKind}, e.g. {@link AppStream.BundleKind.TARBALL}.
              */
             set_bundle_kind(kind: BundleKind | null): void;
             /**
@@ -2901,7 +3236,7 @@ declare module 'gi://AppStream?version=1.0' {
             set_filename(filename: string): void;
             /**
              * Sets the artifact kind.
-             * @param kind the #AsArtifactKind, e.g. %AS_ARTIFACT_KIND_SOURCE.
+             * @param kind the {@link AppStream.ArtifactKind}, e.g. {@link AppStream.ArtifactKind.SOURCE}.
              */
             set_kind(kind: ArtifactKind | null): void;
             /**
@@ -2912,7 +3247,7 @@ declare module 'gi://AppStream?version=1.0' {
             /**
              * Sets the artifact size for the given kind.
              * @param size a size in bytes, or 0 for unknown
-             * @param kind a #AsSizeKind
+             * @param kind a {@link AppStream.SizeKind}
              */
             set_size(size: number, kind: SizeKind | null): void;
         }
@@ -2926,6 +3261,9 @@ declare module 'gi://AppStream?version=1.0' {
             interface ConstructorProps extends GObject.Object.ConstructorProps {}
         }
 
+        /**
+         * @gir-type Class
+         */
         class Branding extends GObject.Object {
             static $gtype: GObject.GType<Branding>;
 
@@ -2948,16 +3286,19 @@ declare module 'gi://AppStream?version=1.0' {
 
             // Signals
 
+            /** @signal */
             connect<K extends keyof Branding.SignalSignatures>(
                 signal: K,
                 callback: GObject.SignalCallback<this, Branding.SignalSignatures[K]>,
             ): number;
             connect(signal: string, callback: (...args: any[]) => any): number;
+            /** @signal */
             connect_after<K extends keyof Branding.SignalSignatures>(
                 signal: K,
                 callback: GObject.SignalCallback<this, Branding.SignalSignatures[K]>,
             ): number;
             connect_after(signal: string, callback: (...args: any[]) => any): number;
+            /** @signal */
             emit<K extends keyof Branding.SignalSignatures>(
                 signal: K,
                 ...args: GObject.GjsParameters<Branding.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never
@@ -2970,22 +3311,22 @@ declare module 'gi://AppStream?version=1.0' {
              * Retrieve a color of the given `kind` that matches `scheme_kind`.
              * If a color has no scheme preference defined, it will be returned for either scheme type,
              * unless a more suitable color was found.
-             * @param kind the #AsColorKind, e.g. %AS_COLOR_KIND_PRIMARY.
-             * @param scheme_kind Color scheme preference for the color, e.g. %AS_COLOR_SCHEME_KIND_LIGHT
-             * @returns The HTML color code of the found color, or %NULL if no color was found.
+             * @param kind the {@link AppStream.ColorKind}, e.g. {@link AppStream.ColorKind.PRIMARY}.
+             * @param scheme_kind Color scheme preference for the color, e.g. {@link AppStream.ColorSchemeKind.LIGHT}
+             * @returns The HTML color code of the found color, or `null` if no color was found.
              */
             get_color(kind: ColorKind | null, scheme_kind: ColorSchemeKind | null): string | null;
             /**
              * Deletes a color that matches the given type and scheme preference.
-             * @param kind the #AsColorKind, e.g. %AS_COLOR_KIND_PRIMARY.
-             * @param scheme_preference Type of color scheme preferred for this color, e.g. %AS_COLOR_SCHEME_KIND_LIGHT
+             * @param kind the {@link AppStream.ColorKind}, e.g. {@link AppStream.ColorKind.PRIMARY}.
+             * @param scheme_preference Type of color scheme preferred for this color, e.g. {@link AppStream.ColorSchemeKind.LIGHT}
              */
             remove_color(kind: ColorKind | null, scheme_preference: ColorSchemeKind | null): void;
             /**
              * Sets a new accent color. If a color of the given kind with the given scheme preference already exists,
              * it will be overriden with the new color code.
-             * @param kind the #AsColorKind, e.g. %AS_COLOR_KIND_PRIMARY.
-             * @param scheme_preference Type of color scheme preferred for this color, e.g. %AS_COLOR_SCHEME_KIND_LIGHT
+             * @param kind the {@link AppStream.ColorKind}, e.g. {@link AppStream.ColorKind.PRIMARY}.
+             * @param scheme_preference Type of color scheme preferred for this color, e.g. {@link AppStream.ColorSchemeKind.LIGHT}
              * @param colorcode a HTML color code.
              */
             set_color(kind: ColorKind | null, scheme_preference: ColorSchemeKind | null, colorcode: string): void;
@@ -3000,6 +3341,9 @@ declare module 'gi://AppStream?version=1.0' {
             interface ConstructorProps extends GObject.Object.ConstructorProps {}
         }
 
+        /**
+         * @gir-type Class
+         */
         class Bundle extends GObject.Object {
             static $gtype: GObject.GType<Bundle>;
 
@@ -3022,16 +3366,19 @@ declare module 'gi://AppStream?version=1.0' {
 
             // Signals
 
+            /** @signal */
             connect<K extends keyof Bundle.SignalSignatures>(
                 signal: K,
                 callback: GObject.SignalCallback<this, Bundle.SignalSignatures[K]>,
             ): number;
             connect(signal: string, callback: (...args: any[]) => any): number;
+            /** @signal */
             connect_after<K extends keyof Bundle.SignalSignatures>(
                 signal: K,
                 callback: GObject.SignalCallback<this, Bundle.SignalSignatures[K]>,
             ): number;
             connect_after(signal: string, callback: (...args: any[]) => any): number;
+            /** @signal */
             emit<K extends keyof Bundle.SignalSignatures>(
                 signal: K,
                 ...args: GObject.GjsParameters<Bundle.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never
@@ -3047,7 +3394,7 @@ declare module 'gi://AppStream?version=1.0' {
             get_id(): string;
             /**
              * Gets the bundle kind.
-             * @returns the #AsBundleKind
+             * @returns the {@link AppStream.BundleKind}
              */
             get_kind(): BundleKind;
             /**
@@ -3057,7 +3404,7 @@ declare module 'gi://AppStream?version=1.0' {
             set_id(id: string): void;
             /**
              * Sets the bundle kind.
-             * @param kind the #AsBundleKind, e.g. %AS_BUNDLE_KIND_LIMBA.
+             * @param kind the {@link AppStream.BundleKind}, e.g. {@link AppStream.BundleKind.LIMBA}.
              */
             set_kind(kind: BundleKind | null): void;
         }
@@ -3083,11 +3430,17 @@ declare module 'gi://AppStream?version=1.0' {
             }
         }
 
+        /**
+         * @gir-type Class
+         */
         class Category extends GObject.Object {
             static $gtype: GObject.GType<Category>;
 
             // Properties
 
+            /**
+             * @read-only
+             */
             get children(): any;
             get icon(): string;
             set icon(val: string);
@@ -3095,6 +3448,9 @@ declare module 'gi://AppStream?version=1.0' {
             set id(val: string);
             get name(): string;
             set name(val: string);
+            /**
+             * @read-only
+             */
             get summary(): string;
 
             /**
@@ -3116,16 +3472,19 @@ declare module 'gi://AppStream?version=1.0' {
 
             // Signals
 
+            /** @signal */
             connect<K extends keyof Category.SignalSignatures>(
                 signal: K,
                 callback: GObject.SignalCallback<this, Category.SignalSignatures[K]>,
             ): number;
             connect(signal: string, callback: (...args: any[]) => any): number;
+            /** @signal */
             connect_after<K extends keyof Category.SignalSignatures>(
                 signal: K,
                 callback: GObject.SignalCallback<this, Category.SignalSignatures[K]>,
             ): number;
             connect_after(signal: string, callback: (...args: any[]) => any): number;
+            /** @signal */
             emit<K extends keyof Category.SignalSignatures>(
                 signal: K,
                 ...args: GObject.GjsParameters<Category.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never
@@ -3141,20 +3500,26 @@ declare module 'gi://AppStream?version=1.0' {
             add_child(subcat: Category): void;
             /**
              * Add a component to this category.
-             * @param cpt The #AsComponent to add.
+             * @param cpt The {@link AppStream.Component} to add.
              */
             add_component(cpt: Component): void;
             /**
-             * Add a desktop-file category to this #AsCategory.
+             * Add a desktop-file category to this {@link AppStream.Category}.
              * @param group_name A subcategory to add.
              */
             add_desktop_group(group_name: string): void;
+            /**
+             * @returns A list of subcategories.
+             */
             get_children(): Category[];
             /**
              * Get list of components which have been sorted into this category.
-             * @returns List of #AsCategory
+             * @returns List of {@link AppStream.Category}
              */
             get_components(): Component[];
+            /**
+             * @returns A list of desktop-file categories.
+             */
             get_desktop_groups(): string[];
             /**
              * Get the stock icon name for this category.
@@ -3174,18 +3539,18 @@ declare module 'gi://AppStream?version=1.0' {
             get_summary(): string;
             /**
              * Test for sub-categories.
-             * @returns %TRUE if this category has any subcategory
+             * @returns `true` if this category has any subcategory
              */
             has_children(): boolean;
             /**
-             * Check if the exact #AsComponent `cpt` is a member of this
+             * Check if the exact {@link AppStream.Component} `cpt` is a member of this
              * category already.
-             * @param cpt The #AsComponent to look for.
-             * @returns %TRUE if the component is present.
+             * @param cpt The {@link AppStream.Component} to look for.
+             * @returns `true` if the component is present.
              */
             has_component(cpt: Component): boolean;
             /**
-             * Drop a subcategory from this #AsCategory.
+             * Drop a subcategory from this {@link AppStream.Category}.
              * @param subcat A subcategory to remove.
              */
             remove_child(subcat: Category): void;
@@ -3220,6 +3585,9 @@ declare module 'gi://AppStream?version=1.0' {
             interface ConstructorProps extends GObject.Object.ConstructorProps {}
         }
 
+        /**
+         * @gir-type Class
+         */
         class Checksum extends GObject.Object {
             static $gtype: GObject.GType<Checksum>;
 
@@ -3244,16 +3612,19 @@ declare module 'gi://AppStream?version=1.0' {
 
             // Signals
 
+            /** @signal */
             connect<K extends keyof Checksum.SignalSignatures>(
                 signal: K,
                 callback: GObject.SignalCallback<this, Checksum.SignalSignatures[K]>,
             ): number;
             connect(signal: string, callback: (...args: any[]) => any): number;
+            /** @signal */
             connect_after<K extends keyof Checksum.SignalSignatures>(
                 signal: K,
                 callback: GObject.SignalCallback<this, Checksum.SignalSignatures[K]>,
             ): number;
             connect_after(signal: string, callback: (...args: any[]) => any): number;
+            /** @signal */
             emit<K extends keyof Checksum.SignalSignatures>(
                 signal: K,
                 ...args: GObject.GjsParameters<Checksum.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never
@@ -3264,7 +3635,7 @@ declare module 'gi://AppStream?version=1.0' {
 
             /**
              * Gets the checksum type.
-             * @returns the #AsChecksumKind
+             * @returns the {@link AppStream.ChecksumKind}
              */
             get_kind(): ChecksumKind;
             /**
@@ -3274,7 +3645,7 @@ declare module 'gi://AppStream?version=1.0' {
             get_value(): string;
             /**
              * Sets the checksum type.
-             * @param kind the #AsChecksumKind, e.g. %AS_CHECKSUM_KIND_SHA256.
+             * @param kind the {@link AppStream.ChecksumKind}, e.g. {@link AppStream.ChecksumKind.SHA256}.
              */
             set_kind(kind: ChecksumKind | null): void;
             /**
@@ -3323,6 +3694,9 @@ declare module 'gi://AppStream?version=1.0' {
             }
         }
 
+        /**
+         * @gir-type Class
+         */
         class Component extends GObject.Object {
             static $gtype: GObject.GType<Component>;
 
@@ -3330,6 +3704,7 @@ declare module 'gi://AppStream?version=1.0' {
 
             /**
              * string array of categories
+             * @read-only
              */
             get categories(): any[];
             /**
@@ -3339,6 +3714,7 @@ declare module 'gi://AppStream?version=1.0' {
             set description(val: string);
             /**
              * hash map of icon urls and sizes
+             * @read-only
              */
             get icons(): Icon[];
             /**
@@ -3352,7 +3728,7 @@ declare module 'gi://AppStream?version=1.0' {
             get keywords(): string[];
             set keywords(val: string[]);
             /**
-             * the #AsComponentKind of this component
+             * the {@link AppStream.ComponentKind} of this component
              */
             get kind(): ComponentKind;
             set kind(val: ComponentKind);
@@ -3387,7 +3763,8 @@ declare module 'gi://AppStream?version=1.0' {
             get projectLicense(): string;
             set projectLicense(val: string);
             /**
-             * An array of #AsScreenshot instances
+             * An array of {@link AppStream.Screenshot} instances
+             * @read-only
              */
             get screenshots(): Screenshot[];
             /**
@@ -3397,6 +3774,7 @@ declare module 'gi://AppStream?version=1.0' {
             set summary(val: string);
             /**
              * the urls associated with this component
+             * @read-only
              */
             get urls(): GLib.HashTable<UrlKind, string>;
 
@@ -3419,16 +3797,19 @@ declare module 'gi://AppStream?version=1.0' {
 
             // Signals
 
+            /** @signal */
             connect<K extends keyof Component.SignalSignatures>(
                 signal: K,
                 callback: GObject.SignalCallback<this, Component.SignalSignatures[K]>,
             ): number;
             connect(signal: string, callback: (...args: any[]) => any): number;
+            /** @signal */
             connect_after<K extends keyof Component.SignalSignatures>(
                 signal: K,
                 callback: GObject.SignalCallback<this, Component.SignalSignatures[K]>,
             ): number;
             connect_after(signal: string, callback: (...args: any[]) => any): number;
+            /** @signal */
             emit<K extends keyof Component.SignalSignatures>(
                 signal: K,
                 ...args: GObject.GjsParameters<Component.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never
@@ -3439,17 +3820,17 @@ declare module 'gi://AppStream?version=1.0' {
 
             /**
              * Add a reference to the addon that is enhancing this component.
-             * @param addon The #AsComponent that extends @cpt
+             * @param addon The {@link AppStream.Component} that extends `cpt`
              */
             add_addon(addon: Component): void;
             /**
              * Adds an agreement to the software component.
-             * @param agreement an #AsAgreement instance.
+             * @param agreement an {@link AppStream.Agreement} instance.
              */
             add_agreement(agreement: Agreement): void;
             /**
              * Adds a bundle to the component.
-             * @param bundle The #AsBundle to add.
+             * @param bundle The {@link AppStream.Bundle} to add.
              */
             add_bundle(bundle: Bundle): void;
             /**
@@ -3459,7 +3840,7 @@ declare module 'gi://AppStream?version=1.0' {
             add_category(category: string): void;
             /**
              * Adds a content rating to this component.
-             * @param content_rating a #AsContentRating instance.
+             * @param content_rating a {@link AppStream.ContentRating} instance.
              */
             add_content_rating(content_rating: ContentRating): void;
             /**
@@ -3469,53 +3850,53 @@ declare module 'gi://AppStream?version=1.0' {
             add_extends(cpt_id: string): void;
             /**
              * Add an icon to this component.
-             * @param icon the valid #AsIcon instance to add.
+             * @param icon the valid {@link AppStream.Icon} instance to add.
              */
             add_icon(icon: Icon): void;
             /**
              * Add a new keyword to the keywords list for the given locale. This function does not
              * check for duplicate keywords.
              * @param keyword The new keyword to add.
-             * @param locale BCP47 locale of the values, or %NULL to use current locale.
+             * @param locale BCP47 locale of the values, or `null` to use current locale.
              */
             add_keyword(keyword: string, locale?: string | null): void;
             /**
              * Adds a language to the component.
-             * @param locale the BCP47 locale, or %NULL. e.g. "en-GB"
+             * @param locale the BCP47 locale, or `null`. e.g. "en-GB"
              * @param percentage the percentage completion of the translation, 0 for locales with unknown amount of translation
              */
             add_language(locale: string | null, percentage: number): void;
             /**
-             * Adds a #AsLaunchable containing launchables entries for this component.
-             * @param launchable a #AsLaunchable instance.
+             * Adds a {@link AppStream.Launchable} containing launchables entries for this component.
+             * @param launchable a {@link AppStream.Launchable} instance.
              */
             add_launchable(launchable: Launchable): void;
             /**
              * Add a set of provided items to this component.
-             * @param prov a #AsProvided instance.
+             * @param prov a {@link AppStream.Provided} instance.
              */
             add_provided(prov: Provided): void;
             /**
-             * Adds a provided item to the component with the given `kind,` creating a new
+             * Adds a provided item to the component with the given `kind`, creating a new
              * `AsProvided` for this kind internally if necessary.
-             * @param kind the kind of the provided item (e.g. %AS_PROVIDED_KIND_MEDIATYPE)
+             * @param kind the kind of the provided item (e.g. {@link AppStream.ProvidedKind.MEDIATYPE})
              * @param item the item to add.
              */
             add_provided_item(kind: ProvidedKind | null, item: string): void;
             /**
              * Adds an external reference to the software component.
-             * @param reference an #AsReference instance.
+             * @param reference an {@link AppStream.Reference} instance.
              */
             add_reference(reference: Reference): void;
             /**
-             * Adds a #AsRelation to set a recommends or requires relation of
-             * component `cpt` on the item mentioned in the #AsRelation.
-             * @param relation a #AsRelation instance.
+             * Adds a {@link AppStream.Relation} to set a recommends or requires relation of
+             * component `cpt` on the item mentioned in the {@link AppStream.Relation}.
+             * @param relation a {@link AppStream.Relation} instance.
              */
             add_relation(relation: Relation): void;
             /**
-             * Add an #AsRelease to this component.
-             * @param release The #AsRelease to add
+             * Add an {@link AppStream.Release} to this component.
+             * @param release The {@link AppStream.Release} to add
              */
             add_release(release: Release): void;
             /**
@@ -3525,45 +3906,45 @@ declare module 'gi://AppStream?version=1.0' {
             add_replaces(cid: string): void;
             /**
              * Adds a user review to a software component.
-             * @param review a #AsReview instance.
+             * @param review a {@link AppStream.Review} instance.
              */
             add_review(review: Review): void;
             /**
-             * Add an #AsScreenshot to this component.
-             * @param sshot The #AsScreenshot to add
+             * Add an {@link AppStream.Screenshot} to this component.
+             * @param sshot The {@link AppStream.Screenshot} to add
              */
             add_screenshot(sshot: Screenshot): void;
             /**
-             * Add an #AsSuggested to this component.
-             * @param suggested The #AsSuggested
+             * Add an {@link AppStream.Suggested} to this component.
+             * @param suggested The {@link AppStream.Suggested}
              */
             add_suggested(suggested: Suggested): void;
             /**
              * Add a tag to this component.
              * @param ns The namespace the tag belongs to
              * @param tag The tag name
-             * @returns %TRUE if the tag was added.
+             * @returns `true` if the tag was added.
              */
             add_tag(ns: string, tag: string): boolean;
             /**
-             * Assign an #AsTranslation object describing the translation system used
+             * Assign an {@link AppStream.Translation} object describing the translation system used
              * by this component.
-             * @param tr an #AsTranslation instance.
+             * @param tr an {@link AppStream.Translation} instance.
              */
             add_translation(tr: Translation): void;
             /**
              * Adds some URL data to the component.
-             * @param url_kind the URL kind, e.g. %AS_URL_KIND_HOMEPAGE
+             * @param url_kind the URL kind, e.g. {@link AppStream.UrlKind.HOMEPAGE}
              * @param url the full URL.
              */
             add_url(url_kind: UrlKind | null, url: string): void;
             /**
              * Verifies the respective relations and presents whether the system specified
-             * in #AsSystemInfo `sysinfo` and data from `pool` supply the requested facilities.
-             * @param sysinfo an #AsSystemInfo to use for system information.
-             * @param pool an #AsPool to find component dependencies in.
+             * in {@link AppStream.SystemInfo} `sysinfo` and data from `pool` supply the requested facilities.
+             * @param sysinfo an {@link AppStream.SystemInfo} to use for system information.
+             * @param pool an {@link AppStream.Pool} to find component dependencies in.
              * @param rel_kind the kind of relations to check
-             * @returns An array of #AsRelationCheckResult
+             * @returns An array of {@link AppStream.RelationCheckResult}
              */
             check_relations(
                 sysinfo: SystemInfo | null,
@@ -3572,7 +3953,7 @@ declare module 'gi://AppStream?version=1.0' {
             ): RelationCheckResult[];
             /**
              * Remove all keywords for the given locale.
-             * @param locale BCP47 locale of the values, or %NULL to use current locale.
+             * @param locale BCP47 locale of the values, or `null` to use current locale.
              */
             clear_keywords(locale?: string | null): void;
             /**
@@ -3584,52 +3965,58 @@ declare module 'gi://AppStream?version=1.0' {
              */
             clear_tags(): void;
             /**
-             * Returns a list of #AsComponent objects which
+             * Returns a list of {@link AppStream.Component} objects which
              * are addons extending this component in functionality.
              *
              * This is the reverse of %as_component_get_extends()
-             * @returns An array of #AsComponent.
+             * @returns An array of {@link AppStream.Component}.
              */
             get_addons(): Component[];
             /**
              * Gets an agreement the component has specified for the particular kind.
-             * @param kind an agreement kind, e.g. %AS_AGREEMENT_KIND_EULA
-             * @returns a #AsAgreement or %NULL for not found
+             * @param kind an agreement kind, e.g. {@link AppStream.AgreementKind.EULA}
+             * @returns a {@link AppStream.Agreement} or `null` for not found
              */
             get_agreement_by_kind(kind: AgreementKind | null): Agreement | null;
             /**
              * Get a list of all agreements registered with this software component.
-             * @returns An array of #AsAgreement.
+             * @returns An array of {@link AppStream.Agreement}.
              */
             get_agreements(): Agreement[];
             /**
              * Gets the branch for the application.
-             * @returns string, or %NULL if unset
+             * @returns string, or `null` if unset
              */
             get_branch(): string;
             /**
-             * Get the branding associated with this component, or %NULL
+             * Get the branding associated with this component, or `null`
              * in case this component has no special branding.
-             * @returns An #AsBranding.
+             * @returns An {@link AppStream.Branding}.
              */
             get_branding(): Branding | null;
             /**
              * Gets a bundle identifier string.
-             * @param bundle_kind the bundle kind, e.g. %AS_BUNDLE_KIND_LIMBA.
-             * @returns An #AsBundle, or %NULL if not set.
+             * @param bundle_kind the bundle kind, e.g. {@link AppStream.BundleKind.LIMBA}.
+             * @returns An {@link AppStream.Bundle}, or `null` if not set.
              */
             get_bundle(bundle_kind: BundleKind | null): Bundle | null;
             /**
              * Get a list of all software bundles associated with this component.
-             * @returns A list of #AsBundle.
+             * @returns A list of {@link AppStream.Bundle}.
              */
             get_bundles(): Bundle[];
+            /**
+             * @returns String array of categories
+             */
             get_categories(): string[];
+            /**
+             * @returns A list of desktops where this component is compulsory
+             */
             get_compulsory_for_desktops(): string[];
             /**
              * Gets a content ratings of a specific type that are defined for this component.
              * @param kind a ratings kind, e.g. "oars-1.0"
-             * @returns a #AsContentRating or %NULL if not found
+             * @returns a {@link AppStream.ContentRating} or `null` if not found
              */
             get_content_rating(kind: string): ContentRating | null;
             /**
@@ -3638,13 +4025,16 @@ declare module 'gi://AppStream?version=1.0' {
              */
             get_content_ratings(): ContentRating[];
             /**
-             * Get the #AsContext associated with this component.
-             * This function may return %NULL if no context is set
+             * Get the {@link AppStream.Context} associated with this component.
+             * This function may return `null` if no context is set
              * (which will be the case if the component was not loaded from
              * a file or cache but constructed in memory).
-             * @returns the associated #AsContext or %NULL
+             * @returns the associated {@link AppStream.Context} or `null`
              */
             get_context(): Context | null;
+            /**
+             * @returns Hash table of custom user defined data fields.
+             */
             get_custom(): GLib.HashTable<any, any>;
             /**
              * Retrieve value for a custom data entry with the given key.
@@ -3679,7 +4069,7 @@ declare module 'gi://AppStream?version=1.0' {
              * Get information about the component's developer or development team.
              * The returned object may be empty if no developer information was
              * available.
-             * @returns the developer as #AsDeveloper.
+             * @returns the developer as {@link AppStream.Developer}.
              */
             get_developer(): Developer;
             /**
@@ -3687,7 +4077,7 @@ declare module 'gi://AppStream?version=1.0' {
              * are extended by this addon.
              *
              * See %as_component_get_extends() for the reverse.
-             * @returns A #GPtrArray or %NULL if not set.
+             * @returns A {@link GLib.PtrArray} or `null` if not set.
              */
             get_extends(): string[] | null;
             /**
@@ -3701,15 +4091,18 @@ declare module 'gi://AppStream?version=1.0' {
              * a scaling factor > 1.
              * @param width The icon width in pixels.
              * @param height the icon height in pixels.
-             * @returns An icon matching the given width/height, or %NULL if not found.
+             * @returns An icon matching the given width/height, or `null` if not found.
              */
             get_icon_by_size(width: number, height: number): Icon | null;
             /**
              * Gets a stock icon for this component if one is associated with it.
-             * Will return %NULL otherwise.
-             * @returns An stock icon, or %NULL if none found.
+             * Will return `null` otherwise.
+             * @returns An stock icon, or `null` if none found.
              */
             get_icon_stock(): Icon | null;
+            /**
+             * @returns A {@link GLib.PtrArray} of all icons for this component.
+             */
             get_icons(): Icon[];
             /**
              * Get the unique AppStream identifier for this component.
@@ -3721,6 +4114,9 @@ declare module 'gi://AppStream?version=1.0' {
              * @returns the unique AppStream identifier.
              */
             get_id(): string;
+            /**
+             * @returns String array of keywords
+             */
             get_keywords(): string[];
             /**
              * Retrieve the internal hash table mapping languages to
@@ -3729,13 +4125,13 @@ declare module 'gi://AppStream?version=1.0' {
              */
             get_keywords_table(): GLib.HashTable<any, any>;
             /**
-             * Returns the #AsComponentKind of this component.
+             * Returns the {@link AppStream.ComponentKind} of this component.
              * @returns the kind of #this.
              */
             get_kind(): ComponentKind;
             /**
              * Gets the translation coverage in percent for a specific locale
-             * @param locale the BCP47 locale, or %NULL. e.g. "en-GB"
+             * @param locale the BCP47 locale, or `null`. e.g. "en-GB"
              * @returns a percentage value, -1 if locale was not found
              */
             get_language(locale?: string | null): number;
@@ -3745,17 +4141,20 @@ declare module 'gi://AppStream?version=1.0' {
              */
             get_languages(): string[];
             /**
-             * Gets a #AsLaunchable of a specific type that contains launchable entries for
+             * Gets a {@link AppStream.Launchable} of a specific type that contains launchable entries for
              * this component.
-             * @param kind a launch kind, e.g. %AS_LAUNCHABLE_KIND_DESKTOP_ID
-             * @returns a #AsLaunchable or %NULL if not found
+             * @param kind a launch kind, e.g. {@link AppStream.LaunchableKind.DESKTOP_ID}
+             * @returns a {@link AppStream.Launchable} or `null` if not found
              */
             get_launchable(kind: LaunchableKind | null): Launchable | null;
+            /**
+             * @returns an array
+             */
             get_launchables(): Launchable[];
             /**
              * Get the merge method which should apply to duplicate components
              * with this ID.
-             * @returns the #AsMergeKind of this component.
+             * @returns the {@link AppStream.MergeKind} of this component.
              */
             get_merge_kind(): MergeKind;
             /**
@@ -3815,16 +4214,16 @@ declare module 'gi://AppStream?version=1.0' {
              */
             get_project_license(): string;
             /**
-             * Get a list of #AsProvided objects associated with this component.
-             * @returns A list of #AsProvided objects.
+             * Get a list of {@link AppStream.Provided} objects associated with this component.
+             * @returns A list of {@link AppStream.Provided} objects.
              */
             get_provided(): Provided[];
             /**
-             * Get an #AsProvided object for the given interface type,
+             * Get an {@link AppStream.Provided} object for the given interface type,
              * containing information about the public interfaces (mimetypes, firmware, DBus services, ...)
              * this component provides.
-             * @param kind kind of the provided item, e.g. %AS_PROVIDED_KIND_MEDIATYPE
-             * @returns #AsProvided containing the items this component provides, or %NULL.
+             * @param kind kind of the provided item, e.g. {@link AppStream.ProvidedKind.MEDIATYPE}
+             * @returns {@link AppStream.Provided} containing the items this component provides, or `null`.
              */
             get_provided_for_kind(kind: ProvidedKind | null): Provided | null;
             /**
@@ -3834,13 +4233,13 @@ declare module 'gi://AppStream?version=1.0' {
             get_recommends(): Relation[];
             /**
              * Get a list of external references and citation information for this component.
-             * @returns An array of #AsReference.
+             * @returns An array of {@link AppStream.Reference}.
              */
             get_references(): Reference[];
             /**
              * Get release information for this component,
              * without downloading or loading any data from external sources.
-             * @returns Release information as #AsReleaseList
+             * @returns Release information as {@link AppStream.ReleaseList}
              */
             get_releases_plain(): ReleaseList;
             /**
@@ -3858,10 +4257,13 @@ declare module 'gi://AppStream?version=1.0' {
              * @returns an array
              */
             get_reviews(): Review[];
+            /**
+             * @returns the {@link AppStream.ComponentScope} of this component.
+             */
             get_scope(): ComponentScope;
             /**
              * Get a list of all associated screenshots, for all environments.
-             * @returns an array of #AsScreenshot instances
+             * @returns an array of {@link AppStream.Screenshot} instances
              */
             get_screenshots_all(): Screenshot[];
             /**
@@ -3884,10 +4286,13 @@ declare module 'gi://AppStream?version=1.0' {
              * this component as a result.
              */
             get_sort_score(): number;
+            /**
+             * @returns the source package name.
+             */
             get_source_pkgname(): string;
             /**
              * Get a list of associated suggestions.
-             * @returns an array of #AsSuggested instances
+             * @returns an array of {@link AppStream.Suggested} instances
              */
             get_suggested(): Suggested[];
             /**
@@ -3912,8 +4317,8 @@ declare module 'gi://AppStream?version=1.0' {
              * is with the system configuration provided as parameter.
              *
              * 0 means the componsnt will not work at all, while 100 is best compatibility.
-             * @param sysinfo an #AsSystemInfo to use for system information.
-             * @param is_template if %TRUE, treat system info as neutral template, ignoring any peripheral devices or kernel relations.
+             * @param sysinfo an {@link AppStream.SystemInfo} to use for system information.
+             * @param is_template if `true`, treat system info as neutral template, ignoring any peripheral devices or kernel relations.
              * @returns a compatibility score between 0 and 100
              */
             get_system_compatibility_score(
@@ -3928,25 +4333,28 @@ declare module 'gi://AppStream?version=1.0' {
              */
             get_timestamp_eol(): number;
             /**
-             * Get a #GPtrArray of #AsTranslation objects describing the
+             * Get a {@link GLib.PtrArray} of {@link AppStream.Translation} objects describing the
              * translation systems and translation-ids (e.g. Gettext domains) used
              * by this software component.
              *
              * Only set for metainfo files.
-             * @returns An array of #AsTranslation objects.
+             * @returns An array of {@link AppStream.Translation} objects.
              */
             get_translations(): Translation[];
             /**
              * Gets a URL.
-             * @param url_kind the URL kind, e.g. %AS_URL_KIND_HOMEPAGE.
-             * @returns string, or %NULL if unset
+             * @param url_kind the URL kind, e.g. {@link AppStream.UrlKind.HOMEPAGE}.
+             * @returns string, or `null` if unset
              */
             get_url(url_kind: UrlKind | null): string | null;
+            /**
+             * @returns `true` if this component has a bundle associated.
+             */
             has_bundle(): boolean;
             /**
              * Check if component is in the specified category.
              * @param category the specified category to check
-             * @returns %TRUE if the component is in the specified category.
+             * @returns `true` if the component is in the specified category.
              */
             has_category(category: string): boolean;
             /**
@@ -3954,30 +4362,33 @@ declare module 'gi://AppStream?version=1.0' {
              * tag.
              * @param ns The namespace the tag belongs to
              * @param tag The tag name
-             * @returns %TRUE if tag exists.
+             * @returns `true` if tag exists.
              */
             has_tag(ns: string, tag: string): boolean;
             /**
              * Add a key and value pair to the custom data table.
              * @param key Key name.
              * @param value A string value.
-             * @returns %TRUE if the key did not exist yet.
+             * @returns `true` if the key did not exist yet.
              */
             insert_custom_value(key: string, value: string): boolean;
             /**
              * Check if this component is compulsory for the given desktop.
              * @param desktop the desktop-id to test for
-             * @returns %TRUE if compulsory, %FALSE otherwise.
+             * @returns `true` if compulsory, `false` otherwise.
              */
             is_compulsory_for_desktop(desktop: string): boolean;
             /**
-             * Returns %TRUE if this component is free and open source software.
+             * Returns `true` if this component is free and open source software.
              * To determine this status, this function will check if it comes
              * from a vetted free-software-only source or whether its licenses
              * are only free software licenses.
-             * @returns %TRUE if this component is free software.
+             * @returns `true` if this component is free software.
              */
             is_floss(): boolean;
+            /**
+             * @returns Whether this component's metadata should be ignored.
+             */
             is_ignored(): boolean;
             /**
              * Test if the component `cpt` is a member of category `category`.
@@ -3993,29 +4404,29 @@ declare module 'gi://AppStream?version=1.0' {
             /**
              * Load metadata for this component from an XML string.
              * You normally do not want to use this method directly and instead use the more
-             * convenient API of #AsMetadata to create and update components.
+             * convenient API of {@link AppStream.Metadata} to create and update components.
              *
-             * If this function returns %TRUE, a valid component is returned unless the selected
-             * format was %AS_FORMAT_KIND_DESKTOP_ENTRY, in which case a component ID will have to
+             * If this function returns `true`, a valid component is returned unless the selected
+             * format was {@link AppStream.FormatKind.DESKTOP_ENTRY}, in which case a component ID will have to
              * be set explicitly by the caller in order to make the component valid.
-             * @param context an #AsContext instance.
-             * @param format the format of the data to load, e.g. %AS_FORMAT_KIND_XML
+             * @param context an {@link AppStream.Context} instance.
+             * @param format the format of the data to load, e.g. {@link AppStream.FormatKind.XML}
              * @param bytes the data to load.
-             * @returns %TRUE on success.
+             * @returns `true` on success.
              */
             load_from_bytes(context: Context, format: FormatKind | null, bytes: GLib.Bytes | Uint8Array): boolean;
             /**
              * Get release information for this component, download it
              * if necessary.
              * @param allow_net
-             * @returns Release information as #AsReleaseList, or %NULL if loading failed.
+             * @returns Release information as {@link AppStream.ReleaseList}, or `null` if loading failed.
              */
             load_releases(allow_net: boolean): ReleaseList | null;
             /**
              * Remove a tag from this component
              * @param ns The namespace the tag belongs to
              * @param tag The tag name
-             * @returns %TRUE if the tag was removed.
+             * @returns `true` if the tag was removed.
              */
             remove_tag(ns: string, tag: string): boolean;
             /**
@@ -4037,7 +4448,7 @@ declare module 'gi://AppStream?version=1.0' {
             set_branch(branch: string): void;
             /**
              * Set branding for this component.
-             * @param branding an #AsBranding instance.
+             * @param branding an {@link AppStream.Branding} instance.
              */
             set_branding(branding: Branding): void;
             /**
@@ -4048,7 +4459,7 @@ declare module 'gi://AppStream?version=1.0' {
             /**
              * Sets the document context this component is associated
              * with.
-             * @param context the #AsContext.
+             * @param context the {@link AppStream.Context}.
              */
             set_context(context: Context): void;
             /**
@@ -4058,7 +4469,7 @@ declare module 'gi://AppStream?version=1.0' {
              * Please not that this will flip the locale of all other components and
              * entities that use the same context as well!
              * This function is just a convenience method, and does not replace
-             * proper #AsContext management.
+             * proper {@link AppStream.Context} management.
              * @param locale the new locale.
              */
             set_context_locale(locale: string): void;
@@ -4079,12 +4490,12 @@ declare module 'gi://AppStream?version=1.0' {
             /**
              * Set long description for this component.
              * @param value The long description
-             * @param locale The BCP47 locale for this value, or %NULL to use the current active one.
+             * @param locale The BCP47 locale for this value, or `null` to use the current active one.
              */
             set_description(value: string, locale?: string | null): void;
             /**
              * Set the the component's developer.
-             * @param developer the new #AsDeveloper
+             * @param developer the new {@link AppStream.Developer}
              */
             set_developer(developer: Developer): void;
             /**
@@ -4095,18 +4506,18 @@ declare module 'gi://AppStream?version=1.0' {
             /**
              * Set keywords for this component, replacing all existing ones for the selected locale.
              * @param new_keywords Array of keywords
-             * @param locale BCP47 locale of the values, or %NULL to use current locale.
-             * @param deep_copy Set to %TRUE if the keywords array should be copied, %FALSE to set by reference.
+             * @param locale BCP47 locale of the values, or `null` to use current locale.
+             * @param deep_copy Set to `true` if the keywords array should be copied, `false` to set by reference.
              */
             set_keywords(new_keywords: string[], locale: string | null, deep_copy: boolean): void;
             /**
-             * Sets the #AsComponentKind of this component.
-             * @param value the #AsComponentKind.
+             * Sets the {@link AppStream.ComponentKind} of this component.
+             * @param value the {@link AppStream.ComponentKind}.
              */
             set_kind(value: ComponentKind | null): void;
             /**
-             * Sets the #AsMergeKind for this component.
-             * @param kind the #AsMergeKind.
+             * Sets the {@link AppStream.MergeKind} for this component.
+             * @param kind the {@link AppStream.MergeKind}.
              */
             set_merge_kind(kind: MergeKind | null): void;
             /**
@@ -4117,16 +4528,19 @@ declare module 'gi://AppStream?version=1.0' {
             /**
              * Set a human-readable name for this component.
              * @param value The name
-             * @param locale The BCP47 locale for this value, or %NULL to use the current active one.
+             * @param locale The BCP47 locale for this value, or `null` to use the current active one.
              */
             set_name(value: string, locale?: string | null): void;
             /**
              * Set a variant suffix for the component name
              * (only to be displayed if components have the same name).
              * @param value the developer or developer team name
-             * @param locale the BCP47 locale, or %NULL. e.g. "en-GB"
+             * @param locale the BCP47 locale, or `null`. e.g. "en-GB"
              */
             set_name_variant_suffix(value: string, locale?: string | null): void;
+            /**
+             * @param origin the origin.
+             */
             set_origin(origin: string): void;
             /**
              * Set the package name that provides this component.
@@ -4157,12 +4571,12 @@ declare module 'gi://AppStream?version=1.0' {
             set_project_license(value: string): void;
             /**
              * Set a new set of releases for this component.
-             * @param releases the #AsReleaseList to use.
+             * @param releases the {@link AppStream.ReleaseList} to use.
              */
             set_releases(releases: ReleaseList): void;
             /**
-             * Sets the #AsComponentScope of this component.
-             * @param scope the #AsComponentKind.
+             * Sets the {@link AppStream.ComponentScope} of this component.
+             * @param scope the {@link AppStream.ComponentKind}.
              */
             set_scope(scope: ComponentScope | null): void;
             /**
@@ -4170,21 +4584,24 @@ declare module 'gi://AppStream?version=1.0' {
              * @param score the given sorting score
              */
             set_sort_score(score: number): void;
+            /**
+             * @param spkgname the source package name.
+             */
             set_source_pkgname(spkgname: string): void;
             /**
              * Set a short description for this component.
              * @param value The summary
-             * @param locale The BCP47 locale for this value, or %NULL to use the current active one.
+             * @param locale The BCP47 locale for this value, or `null` to use the current active one.
              */
             set_summary(value: string, locale?: string | null): void;
             /**
              * Reorder the screenshots to prioritize a certain environment or style, instead of using the default
              * screenshot order.
              *
-             * If both "environment" and "style" are %NULL, the previous default order is restored.
+             * If both "environment" and "style" are `null`, the previous default order is restored.
              * @param environment a GUI environment string, e.g. "plasma" or "gnome"
              * @param style and environment style string, e.g. "light" or "dark"
-             * @param prioritize_style if %TRUE, order screenshots of the given style earlier than ones of the given environment.
+             * @param prioritize_style if `true`, order screenshots of the given style earlier than ones of the given environment.
              */
             sort_screenshots(environment: string | null, style: string | null, prioritize_style: boolean): void;
             /**
@@ -4196,9 +4613,9 @@ declare module 'gi://AppStream?version=1.0' {
             /**
              * Serialize this component into an XML string.
              * You normally do not want to use this method directly and instead use the more
-             * convenient API of #AsMetadata to serialize components.
-             * @param context an #AsContext instance.
-             * @returns %TRUE on success.
+             * convenient API of {@link AppStream.Metadata} to serialize components.
+             * @param context an {@link AppStream.Context} instance.
+             * @returns `true` on success.
              */
             to_xml_data(context: Context): string;
         }
@@ -4216,11 +4633,17 @@ declare module 'gi://AppStream?version=1.0' {
             }
         }
 
+        /**
+         * @gir-type Class
+         */
         class ComponentBox extends GObject.Object {
             static $gtype: GObject.GType<ComponentBox>;
 
             // Properties
 
+            /**
+             * @construct-only
+             */
             get flags(): number;
 
             /**
@@ -4244,16 +4667,19 @@ declare module 'gi://AppStream?version=1.0' {
 
             // Signals
 
+            /** @signal */
             connect<K extends keyof ComponentBox.SignalSignatures>(
                 signal: K,
                 callback: GObject.SignalCallback<this, ComponentBox.SignalSignatures[K]>,
             ): number;
             connect(signal: string, callback: (...args: any[]) => any): number;
+            /** @signal */
             connect_after<K extends keyof ComponentBox.SignalSignatures>(
                 signal: K,
                 callback: GObject.SignalCallback<this, ComponentBox.SignalSignatures[K]>,
             ): number;
             connect_after(signal: string, callback: (...args: any[]) => any): number;
+            /** @signal */
             emit<K extends keyof ComponentBox.SignalSignatures>(
                 signal: K,
                 ...args: GObject.GjsParameters<ComponentBox.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never
@@ -4266,12 +4692,12 @@ declare module 'gi://AppStream?version=1.0' {
              * Add a component to the box. Returns an error if we could not add it
              * (most likely due to component box constraints).
              * @param cpt
-             * @returns %TRUE on success.
+             * @returns `true` on success.
              */
             add(cpt: Component): boolean;
             /**
-             * Get the contents of this component box as #GPtrArray.
-             * @returns an array of #AsComponent instances.
+             * Get the contents of this component box as {@link GLib.PtrArray}.
+             * @returns an array of {@link AppStream.Component} instances.
              */
             as_array(): Component[];
             /**
@@ -4280,7 +4706,7 @@ declare module 'gi://AppStream?version=1.0' {
             clear(): void;
             /**
              * Get the flags this component box was constructed with.
-             * @returns The #AsComponentBoxFlags that are in effect.
+             * @returns The {@link AppStream.ComponentBoxFlags} that are in effect.
              */
             get_flags(): ComponentBoxFlags;
             /**
@@ -4292,12 +4718,12 @@ declare module 'gi://AppStream?version=1.0' {
              * Retrieve a component at the respective index from the internal
              * component array.
              * @param index The component index.
-             * @returns An #AsComponent or %NULL
+             * @returns An {@link AppStream.Component} or `null`
              */
             index_safe(index: number): Component;
             /**
              * Check if there are any components present.
-             * @returns %TRUE if this component box is empty.
+             * @returns `true` if this component box is empty.
              */
             is_empty(): boolean;
             /**
@@ -4326,6 +4752,9 @@ declare module 'gi://AppStream?version=1.0' {
             interface ConstructorProps extends GObject.Object.ConstructorProps {}
         }
 
+        /**
+         * @gir-type Class
+         */
         class ContentRating extends GObject.Object {
             static $gtype: GObject.GType<ContentRating>;
 
@@ -4348,16 +4777,19 @@ declare module 'gi://AppStream?version=1.0' {
 
             // Signals
 
+            /** @signal */
             connect<K extends keyof ContentRating.SignalSignatures>(
                 signal: K,
                 callback: GObject.SignalCallback<this, ContentRating.SignalSignatures[K]>,
             ): number;
             connect(signal: string, callback: (...args: any[]) => any): number;
+            /** @signal */
             connect_after<K extends keyof ContentRating.SignalSignatures>(
                 signal: K,
                 callback: GObject.SignalCallback<this, ContentRating.SignalSignatures[K]>,
             ): number;
             connect_after(signal: string, callback: (...args: any[]) => any): number;
+            /** @signal */
             emit<K extends keyof ContentRating.SignalSignatures>(
                 signal: K,
                 ...args: GObject.GjsParameters<ContentRating.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never
@@ -4367,17 +4799,17 @@ declare module 'gi://AppStream?version=1.0' {
             // Static methods
 
             /**
-             * Gets the highest #AsContentRatingValue which is allowed to be seen by the
+             * Gets the highest {@link AppStream.ContentRatingValue} which is allowed to be seen by the
              * given Common Sense Media `age` for the given subsection `id`.
              *
              * For example, if the CSM age mappings for `violence-bloodshed` are:
-             *  * age ≥ 0 for %AS_CONTENT_RATING_VALUE_NONE
-             *  * age ≥ 9 for %AS_CONTENT_RATING_VALUE_MILD
-             *  * age ≥ 11 for %AS_CONTENT_RATING_VALUE_MODERATE
-             *  * age ≥ 18 for %AS_CONTENT_RATING_VALUE_INTENSE
+             *  * age ≥ 0 for {@link AppStream.ContentRatingValue.NONE}
+             *  * age ≥ 9 for {@link AppStream.ContentRatingValue.MILD}
+             *  * age ≥ 11 for {@link AppStream.ContentRatingValue.MODERATE}
+             *  * age ≥ 18 for {@link AppStream.ContentRatingValue.INTENSE}
              * then calling this function with `violence-bloodshed` and `age` set to 17 would
-             * return %AS_CONTENT_RATING_VALUE_MODERATE. Calling it with age 18 would
-             * return %AS_CONTENT_RATING_VALUE_INTENSE.
+             * return {@link AppStream.ContentRatingValue.MODERATE}. Calling it with age 18 would
+             * return {@link AppStream.ContentRatingValue.INTENSE}.
              * @param id the subsection ID e.g. `violence-cartoon`
              * @param age the CSM age
              */
@@ -4386,19 +4818,19 @@ declare module 'gi://AppStream?version=1.0' {
              * Get a human-readable description of what content would be expected to
              * require the content rating attribute given by `id` and `value`.
              * @param id the subsection ID e.g. `violence-cartoon`
-             * @param value the #AsContentRatingValue, e.g. %AS_CONTENT_RATING_VALUE_INTENSE
+             * @param value the {@link AppStream.ContentRatingValue}, e.g. {@link AppStream.ContentRatingValue.INTENSE}
              */
             static attribute_get_description(id: string, value: ContentRatingValue): string;
             /**
              * Gets the Common Sense Media approved age for a specific rating level.
              * @param id the subsection ID e.g. `violence-cartoon`
-             * @param value the #AsContentRatingValue, e.g. %AS_CONTENT_RATING_VALUE_INTENSE
+             * @param value the {@link AppStream.ContentRatingValue}, e.g. {@link AppStream.ContentRatingValue.INTENSE}
              */
             static attribute_to_csm_age(id: string, value: ContentRatingValue): number;
             /**
              * Returns a list of all the valid OARS content rating attribute IDs as could
-             * be passed to as_content_rating_add_attribute() or
-             * as_content_rating_attribute_to_csm_age().
+             * be passed to `as_content_rating_add_attribute()` or
+             * `as_content_rating_attribute_to_csm_age()`.
              */
             static get_all_rating_ids(): string[];
 
@@ -4407,7 +4839,7 @@ declare module 'gi://AppStream?version=1.0' {
             /**
              * Adds an attribute value to the content rating.
              * @param id a content rating ID, e.g. `money-gambling`.
-             * @param value a #AsContentRatingValue, e.g. %AS_CONTENT_RATING_VALUE_MODERATE.
+             * @param value a {@link AppStream.ContentRatingValue}, e.g. {@link AppStream.ContentRatingValue.MODERATE}.
              */
             add_attribute(id: string, value: ContentRatingValue | null): void;
             /**
@@ -4433,13 +4865,13 @@ declare module 'gi://AppStream?version=1.0' {
              * example of a ratings ID is `violence-bloodshed`.
              *
              * The IDs are returned in lexicographical order.
-             * @returns %NULL-terminated    array of ratings IDs; each ratings ID is owned by the #AsContentRating and    must not be freed, but the container must be freed with g_free()
+             * @returns `null`-terminated    array of ratings IDs; each ratings ID is owned by the {@link AppStream.ContentRating} and    must not be freed, but the container must be freed with `g_free()`
              */
             get_rating_ids(): string[];
             /**
              * Gets the value of a content rating key.
              * @param id A ratings ID, e.g. `violence-bloodshed`.
-             * @returns the #AsContentRatingValue, or %AS_CONTENT_RATING_VALUE_UNKNOWN
+             * @returns the {@link AppStream.ContentRatingValue}, or {@link AppStream.ContentRatingValue.UNKNOWN}
              */
             get_value(id: string): ContentRatingValue;
             /**
@@ -4450,7 +4882,7 @@ declare module 'gi://AppStream?version=1.0' {
             /**
              * Sets the value of a content rating key.
              * @param id A ratings ID, e.g. `violence-bloodshed`.
-             * @param value A #AsContentRatingValue, e.g. %AS_CONTENT_RATING_VALUE_INTENSE
+             * @param value A {@link AppStream.ContentRatingValue}, e.g. {@link AppStream.ContentRatingValue.INTENSE}
              */
             set_value(id: string, value: ContentRatingValue | null): void;
         }
@@ -4464,6 +4896,9 @@ declare module 'gi://AppStream?version=1.0' {
             interface ConstructorProps extends GObject.Object.ConstructorProps {}
         }
 
+        /**
+         * @gir-type Class
+         */
         class Context extends GObject.Object {
             static $gtype: GObject.GType<Context>;
 
@@ -4486,16 +4921,19 @@ declare module 'gi://AppStream?version=1.0' {
 
             // Signals
 
+            /** @signal */
             connect<K extends keyof Context.SignalSignatures>(
                 signal: K,
                 callback: GObject.SignalCallback<this, Context.SignalSignatures[K]>,
             ): number;
             connect(signal: string, callback: (...args: any[]) => any): number;
+            /** @signal */
             connect_after<K extends keyof Context.SignalSignatures>(
                 signal: K,
                 callback: GObject.SignalCallback<this, Context.SignalSignatures[K]>,
             ): number;
             connect_after(signal: string, callback: (...args: any[]) => any): number;
+            /** @signal */
             emit<K extends keyof Context.SignalSignatures>(
                 signal: K,
                 ...args: GObject.GjsParameters<Context.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never
@@ -4504,15 +4942,45 @@ declare module 'gi://AppStream?version=1.0' {
 
             // Methods
 
+            /**
+             * @returns The name of the file the data originates from.
+             */
             get_filename(): string;
+            /**
+             * @returns The AppStream format version.
+             */
             get_format_version(): FormatVersion;
+            /**
+             * @returns The active locale in BCP47 format.
+             */
             get_locale(): string;
+            /**
+             * @returns `true` if all locale should be parsed.
+             */
             get_locale_use_all(): boolean;
+            /**
+             * @returns The media base URL.
+             */
             get_media_baseurl(): string;
+            /**
+             * @returns The data origin.
+             */
             get_origin(): string;
+            /**
+             * @returns The data priority.
+             */
             get_priority(): number;
+            /**
+             * @returns The document style.
+             */
             get_style(): FormatStyle;
+            /**
+             * @returns The {@link AppStream.ValueFlags} that are set on `cpt`.
+             */
             get_value_flags(): ValueFlags;
+            /**
+             * @returns `true` if a media base URL is set.
+             */
             has_media_baseurl(): boolean;
             /**
              * Sets the file name we are loading data from.
@@ -4528,7 +4996,7 @@ declare module 'gi://AppStream?version=1.0' {
              * Sets the active locale.
              * If the magic value "ALL" is used, the current system locale will be used
              * for data reading, but when writing data all locale will be written.
-             * @param locale a POSIX or BCP47 locale, or %NULL. e.g. "en_GB"
+             * @param locale a POSIX or BCP47 locale, or `null`. e.g. "en_GB"
              */
             set_locale(locale?: string | null): void;
             /**
@@ -4551,6 +5019,9 @@ declare module 'gi://AppStream?version=1.0' {
              * @param style the new document style.
              */
             set_style(style: FormatStyle | null): void;
+            /**
+             * @param flags {@link AppStream.ValueFlags} to set on `cpt`.
+             */
             set_value_flags(flags: ValueFlags | null): void;
         }
 
@@ -4563,6 +5034,9 @@ declare module 'gi://AppStream?version=1.0' {
             interface ConstructorProps extends GObject.Object.ConstructorProps {}
         }
 
+        /**
+         * @gir-type Class
+         */
         class Developer extends GObject.Object {
             static $gtype: GObject.GType<Developer>;
 
@@ -4585,16 +5059,19 @@ declare module 'gi://AppStream?version=1.0' {
 
             // Signals
 
+            /** @signal */
             connect<K extends keyof Developer.SignalSignatures>(
                 signal: K,
                 callback: GObject.SignalCallback<this, Developer.SignalSignatures[K]>,
             ): number;
             connect(signal: string, callback: (...args: any[]) => any): number;
+            /** @signal */
             connect_after<K extends keyof Developer.SignalSignatures>(
                 signal: K,
                 callback: GObject.SignalCallback<this, Developer.SignalSignatures[K]>,
             ): number;
             connect_after(signal: string, callback: (...args: any[]) => any): number;
+            /** @signal */
             emit<K extends keyof Developer.SignalSignatures>(
                 signal: K,
                 ...args: GObject.GjsParameters<Developer.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never
@@ -4605,7 +5082,7 @@ declare module 'gi://AppStream?version=1.0' {
 
             /**
              * Gets a unique ID for this particular developer, e.g. "gnome" or "mozilla.org"
-             * @returns the unique developer ID, or %NULL if none was set.
+             * @returns the unique developer ID, or `null` if none was set.
              */
             get_id(): string;
             /**
@@ -4621,7 +5098,7 @@ declare module 'gi://AppStream?version=1.0' {
             /**
              * Set the the developer or development team name.
              * @param value the developer or developer team name
-             * @param locale the BCP47 locale, or %NULL. e.g. "en-GB"
+             * @param locale the BCP47 locale, or `null`. e.g. "en-GB"
              */
             set_name(value: string, locale?: string | null): void;
         }
@@ -4635,6 +5112,9 @@ declare module 'gi://AppStream?version=1.0' {
             interface ConstructorProps extends GObject.Object.ConstructorProps {}
         }
 
+        /**
+         * @gir-type Class
+         */
         class Icon extends GObject.Object {
             static $gtype: GObject.GType<Icon>;
 
@@ -4657,16 +5137,19 @@ declare module 'gi://AppStream?version=1.0' {
 
             // Signals
 
+            /** @signal */
             connect<K extends keyof Icon.SignalSignatures>(
                 signal: K,
                 callback: GObject.SignalCallback<this, Icon.SignalSignatures[K]>,
             ): number;
             connect(signal: string, callback: (...args: any[]) => any): number;
+            /** @signal */
             connect_after<K extends keyof Icon.SignalSignatures>(
                 signal: K,
                 callback: GObject.SignalCallback<this, Icon.SignalSignatures[K]>,
             ): number;
             connect_after(signal: string, callback: (...args: any[]) => any): number;
+            /** @signal */
             emit<K extends keyof Icon.SignalSignatures>(
                 signal: K,
                 ...args: GObject.GjsParameters<Icon.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never
@@ -4675,21 +5158,36 @@ declare module 'gi://AppStream?version=1.0' {
 
             // Methods
 
+            /**
+             * @returns The absolute path for the icon on disk. This is only set for icons of kind {@link AppStream.IconKind.LOCAL} or {@link AppStream.IconKind.CACHED}.
+             */
             get_filename(): string;
+            /**
+             * @returns The icon height in pixels, or 0 if unknown.
+             */
             get_height(): number;
             /**
              * Gets the icon kind.
-             * @returns the #AsIconKind
+             * @returns the {@link AppStream.IconKind}
              */
             get_kind(): IconKind;
+            /**
+             * @returns the stock name of the icon. In case the icon is not of kind "stock", the basename of the icon filename or URL is returned.
+             */
             get_name(): string;
+            /**
+             * @returns The icon scaling factor.
+             */
             get_scale(): number;
             /**
              * Gets the icon URL, pointing at a remote location. HTTPS and FTP urls are allowed.
-             * This property is only set for icons of type %AS_ICON_KIND_REMOTE
+             * This property is only set for icons of type {@link AppStream.IconKind.REMOTE}
              * @returns the URL
              */
             get_url(): string;
+            /**
+             * @returns The icon width in pixels, or 0 if unknown.
+             */
             get_width(): number;
             /**
              * Sets the icon absolute filename.
@@ -4703,7 +5201,7 @@ declare module 'gi://AppStream?version=1.0' {
             set_height(height: number): void;
             /**
              * Sets the icon kind.
-             * @param kind the #AsIconKind, e.g. %AS_ICON_KIND_CACHED.
+             * @param kind the {@link AppStream.IconKind}, e.g. {@link AppStream.IconKind.CACHED}.
              */
             set_kind(kind: IconKind | null): void;
             /**
@@ -4737,6 +5235,9 @@ declare module 'gi://AppStream?version=1.0' {
             interface ConstructorProps extends GObject.Object.ConstructorProps {}
         }
 
+        /**
+         * @gir-type Class
+         */
         class Image extends GObject.Object {
             static $gtype: GObject.GType<Image>;
 
@@ -4759,16 +5260,19 @@ declare module 'gi://AppStream?version=1.0' {
 
             // Signals
 
+            /** @signal */
             connect<K extends keyof Image.SignalSignatures>(
                 signal: K,
                 callback: GObject.SignalCallback<this, Image.SignalSignatures[K]>,
             ): number;
             connect(signal: string, callback: (...args: any[]) => any): number;
+            /** @signal */
             connect_after<K extends keyof Image.SignalSignatures>(
                 signal: K,
                 callback: GObject.SignalCallback<this, Image.SignalSignatures[K]>,
             ): number;
             connect_after(signal: string, callback: (...args: any[]) => any): number;
+            /** @signal */
             emit<K extends keyof Image.SignalSignatures>(
                 signal: K,
                 ...args: GObject.GjsParameters<Image.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never
@@ -4784,7 +5288,7 @@ declare module 'gi://AppStream?version=1.0' {
             get_height(): number;
             /**
              * Gets the image kind.
-             * @returns the #AsImageKind
+             * @returns the {@link AppStream.ImageKind}
              */
             get_kind(): ImageKind;
             /**
@@ -4814,7 +5318,7 @@ declare module 'gi://AppStream?version=1.0' {
             set_height(height: number): void;
             /**
              * Sets the image kind.
-             * @param kind the #AsImageKind, e.g. %AS_IMAGE_KIND_THUMBNAIL.
+             * @param kind the {@link AppStream.ImageKind}, e.g. {@link AppStream.ImageKind.THUMBNAIL}.
              */
             set_kind(kind: ImageKind | null): void;
             /**
@@ -4848,6 +5352,9 @@ declare module 'gi://AppStream?version=1.0' {
             interface ConstructorProps extends GObject.Object.ConstructorProps {}
         }
 
+        /**
+         * @gir-type Class
+         */
         class Issue extends GObject.Object {
             static $gtype: GObject.GType<Issue>;
 
@@ -4870,16 +5377,19 @@ declare module 'gi://AppStream?version=1.0' {
 
             // Signals
 
+            /** @signal */
             connect<K extends keyof Issue.SignalSignatures>(
                 signal: K,
                 callback: GObject.SignalCallback<this, Issue.SignalSignatures[K]>,
             ): number;
             connect(signal: string, callback: (...args: any[]) => any): number;
+            /** @signal */
             connect_after<K extends keyof Issue.SignalSignatures>(
                 signal: K,
                 callback: GObject.SignalCallback<this, Issue.SignalSignatures[K]>,
             ): number;
             connect_after(signal: string, callback: (...args: any[]) => any): number;
+            /** @signal */
             emit<K extends keyof Issue.SignalSignatures>(
                 signal: K,
                 ...args: GObject.GjsParameters<Issue.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never
@@ -4895,7 +5405,7 @@ declare module 'gi://AppStream?version=1.0' {
             get_id(): string;
             /**
              * Gets the issue type.
-             * @returns the #AsIssueKind
+             * @returns the {@link AppStream.IssueKind}
              */
             get_kind(): IssueKind;
             /**
@@ -4911,7 +5421,7 @@ declare module 'gi://AppStream?version=1.0' {
             set_id(id: string): void;
             /**
              * Sets the issue type.
-             * @param kind the #AsIssueKind, e.g. %AS_ISSUE_KIND_SHA256.
+             * @param kind the {@link AppStream.IssueKind}, e.g. `AS_ISSUE_KIND_SHA256`.
              */
             set_kind(kind: IssueKind | null): void;
             /**
@@ -4930,6 +5440,9 @@ declare module 'gi://AppStream?version=1.0' {
             interface ConstructorProps extends GObject.Object.ConstructorProps {}
         }
 
+        /**
+         * @gir-type Class
+         */
         class Launchable extends GObject.Object {
             static $gtype: GObject.GType<Launchable>;
 
@@ -4952,16 +5465,19 @@ declare module 'gi://AppStream?version=1.0' {
 
             // Signals
 
+            /** @signal */
             connect<K extends keyof Launchable.SignalSignatures>(
                 signal: K,
                 callback: GObject.SignalCallback<this, Launchable.SignalSignatures[K]>,
             ): number;
             connect(signal: string, callback: (...args: any[]) => any): number;
+            /** @signal */
             connect_after<K extends keyof Launchable.SignalSignatures>(
                 signal: K,
                 callback: GObject.SignalCallback<this, Launchable.SignalSignatures[K]>,
             ): number;
             connect_after(signal: string, callback: (...args: any[]) => any): number;
+            /** @signal */
             emit<K extends keyof Launchable.SignalSignatures>(
                 signal: K,
                 ...args: GObject.GjsParameters<Launchable.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never
@@ -4981,15 +5497,15 @@ declare module 'gi://AppStream?version=1.0' {
              */
             get_entries(): string[];
             /**
-             * The launch system for the entries this #AsLaunchable
+             * The launch system for the entries this {@link AppStream.Launchable}
              * object stores.
-             * @returns an enum of type #AsLaunchableKind
+             * @returns an enum of type {@link AppStream.LaunchableKind}
              */
             get_kind(): LaunchableKind;
             /**
-             * Set the launch system for the entries this #AsLaunchable
+             * Set the launch system for the entries this {@link AppStream.Launchable}
              * object stores.
-             * @param kind the new #AsLaunchableKind
+             * @param kind the new {@link AppStream.LaunchableKind}
              */
             set_kind(kind: LaunchableKind | null): void;
         }
@@ -5003,6 +5519,9 @@ declare module 'gi://AppStream?version=1.0' {
             interface ConstructorProps extends GObject.Object.ConstructorProps {}
         }
 
+        /**
+         * @gir-type Class
+         */
         class Metadata extends GObject.Object {
             static $gtype: GObject.GType<Metadata>;
 
@@ -5025,16 +5544,19 @@ declare module 'gi://AppStream?version=1.0' {
 
             // Signals
 
+            /** @signal */
             connect<K extends keyof Metadata.SignalSignatures>(
                 signal: K,
                 callback: GObject.SignalCallback<this, Metadata.SignalSignatures[K]>,
             ): number;
             connect(signal: string, callback: (...args: any[]) => any): number;
+            /** @signal */
             connect_after<K extends keyof Metadata.SignalSignatures>(
                 signal: K,
                 callback: GObject.SignalCallback<this, Metadata.SignalSignatures[K]>,
             ): number;
             connect_after(signal: string, callback: (...args: any[]) => any): number;
+            /** @signal */
             emit<K extends keyof Metadata.SignalSignatures>(
                 signal: K,
                 ...args: GObject.GjsParameters<Metadata.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never
@@ -5053,7 +5575,7 @@ declare module 'gi://AppStream?version=1.0' {
             // Methods
 
             /**
-             * Add an #AsComponent to the list of components.
+             * Add an {@link AppStream.Component} to the list of components.
              * This can be used to add multiple components in order to
              * produce a distro-XML AppStream metadata file.
              * @param cpt
@@ -5068,39 +5590,48 @@ declare module 'gi://AppStream?version=1.0' {
              */
             clear_releases(): void;
             /**
-             * Convert an #AsComponent to metainfo data.
+             * Convert an {@link AppStream.Component} to metainfo data.
              * This will always be XML, YAML is no valid format for metainfo files.
              *
-             * The amount of localization included in the metadata depends on how the #AsComponent
+             * The amount of localization included in the metadata depends on how the {@link AppStream.Component}
              * was initially loaded and whether it contains data for all locale.
              *
-             * The first #AsComponent added to the internal list will be transformed.
-             * In case no component is present, %NULL is returned.
+             * The first {@link AppStream.Component} added to the internal list will be transformed.
+             * In case no component is present, `null` is returned.
              * @param format The format to use (XML or YAML)
-             * @returns A string containing the XML metadata. Free with g_free()
+             * @returns A string containing the XML metadata. Free with `g_free()`
              */
             component_to_metainfo(format: FormatKind | null): string;
             /**
-             * Serialize all #AsComponent instances into AppStream
+             * Serialize all {@link AppStream.Component} instances into AppStream
              * catalog metadata.
-             * %NULL is returned if there is nothing to serialize.
+             * `null` is returned if there is nothing to serialize.
              * @param format The format to serialize the data to (XML or YAML).
-             * @returns A string containing the YAML or XML data. Free with g_free()
+             * @returns A string containing the YAML or XML data. Free with `g_free()`
              */
             components_to_catalog(format: FormatKind | null): string;
+            /**
+             * @returns The architecture of AppStream distro metadata
+             */
             get_architecture(): string;
             /**
-             * Gets the #AsComponent which has been parsed from the XML.
+             * Gets the {@link AppStream.Component} which has been parsed from the XML.
              * If the AppStream XML contained multiple components, return the last
              * component that has been parsed.
-             * @returns An #AsComponent or %NULL
+             * @returns An {@link AppStream.Component} or `null`
              */
             get_component(): Component | null;
+            /**
+             * @returns an {@link AppStream.ComponentBox} of all parsed components
+             */
             get_components(): ComponentBox;
             /**
              * Get the metadata parsing mode.
              */
             get_format_style(): FormatStyle;
+            /**
+             * @returns The AppStream metadata format version.
+             */
             get_format_version(): FormatVersion;
             /**
              * Gets the current active locale for parsing metadata,
@@ -5108,33 +5639,48 @@ declare module 'gi://AppStream?version=1.0' {
              * @returns Locale used for metadata parsing.
              */
             get_locale(): string;
+            /**
+             * @returns The media URL prefix.
+             */
             get_media_baseurl(): string;
+            /**
+             * @returns The origin of AppStream distro metadata
+             */
             get_origin(): string;
             /**
              * Get the metadata parse flags.
              */
             get_parse_flags(): ParseFlags;
             /**
-             * Gets the recently parsed #AsReleaseList entry.
-             * @returns An #AsReleaseList or %NULL
+             * Gets the recently parsed {@link AppStream.ReleaseList} entry.
+             * @returns An {@link AppStream.ReleaseList} or `null`
              */
             get_release_list(): ReleaseList | null;
+            /**
+             * @returns A {@link GLib.PtrArray} of all parsed release metadata.
+             */
             get_release_lists(): ReleaseList[];
+            /**
+             * @returns Whether existing components should be updates with the parsed data,          instead of creating new ones.
+             */
             get_update_existing(): boolean;
+            /**
+             * @returns Whether we will write a header/root node in catalog metadata.
+             */
             get_write_header(): boolean;
             /**
-             * Parses any AppStream metadata into one or more #AsComponent instances.
+             * Parses any AppStream metadata into one or more {@link AppStream.Component} instances.
              * @param bytes Metadata describing one or more software components.
              * @param format The format of the data (XML or YAML).
-             * @returns %TRUE on success.
+             * @returns `true` on success.
              */
             parse_bytes(bytes: GLib.Bytes | Uint8Array, format: FormatKind | null): boolean;
             /**
-             * Parses any AppStream metadata into one or more #AsComponent instances.
+             * Parses any AppStream metadata into one or more {@link AppStream.Component} instances.
              * @param data Metadata describing one or more software components as string.
-             * @param data_len Length of @data, or -1 if length is unknown and @data is NULL-terminated.
+             * @param data_len Length of `data`, or -1 if length is unknown and `data` is NULL-terminated.
              * @param format The format of the data (XML or YAML).
-             * @returns %TRUE on success.
+             * @returns `true` on success.
              */
             parse_data(data: string, data_len: number, format: FormatKind | null): boolean;
             /**
@@ -5143,58 +5689,58 @@ declare module 'gi://AppStream?version=1.0' {
              * Please note that not every desktop-entry file will result in a valid component
              * being generated, even if parsing succeeds without error (The desktiop-entry file
              * may be valid but not generate a component on purpose).
-             * @param cid The component-id the new #AsComponent should have.
+             * @param cid The component-id the new {@link AppStream.Component} should have.
              * @param data Metadata describing one or more software components.
              * @param data_len The data length, or -1 if unknown and null-terminated.
-             * @returns %TRUE if the file was parsed without error.
+             * @returns `true` if the file was parsed without error.
              */
             parse_desktop_data(cid: string, data: string, data_len: number): boolean;
             /**
              * Parses an AppStream upstream metadata file.
              *
-             * If `file` does not exist, %G_IO_ERROR_NOT_FOUND will be returned. Other
-             * #GIOErrors and #AsMetadataErrors may be returned as appropriate.
-             * @param file #GFile for the upstream metadata
-             * @param format The format the data is in, or %AS_FORMAT_KIND_UNKNOWN if not known.
-             * @returns %TRUE if the file was parsed without error.
+             * If `file` does not exist, {@link Gio.IOErrorEnum.NOT_FOUND} will be returned. Other
+             * `GIOErrors` and `AsMetadataErrors` may be returned as appropriate.
+             * @param file {@link Gio.File} for the upstream metadata
+             * @param format The format the data is in, or {@link AppStream.FormatKind.UNKNOWN} if not known.
+             * @returns `true` if the file was parsed without error.
              */
             parse_file(file: Gio.File, format: FormatKind | null): boolean;
             /**
-             * Parses any AppStream release metadata into #AsRelease objects.
-             * You can retrieve the last parsed #AsReleaseList using %as_metadata_get_release_list.
+             * Parses any AppStream release metadata into {@link AppStream.Release} objects.
+             * You can retrieve the last parsed {@link AppStream.ReleaseList} using %as_metadata_get_release_list.
              * @param bytes Metadata describing release notes.
-             * @returns %TRUE on success.
+             * @returns `true` on success.
              */
             parse_releases_bytes(bytes: GLib.Bytes | Uint8Array): boolean;
             /**
-             * Parses any AppStream release metadata into #AsRelease objects
+             * Parses any AppStream release metadata into {@link AppStream.Release} objects
              * using the provided file.
-             * You can retrieve the last parsed #AsReleaseList using %as_metadata_get_release_list.
-             * @param file #GFile for the release metadata
-             * @returns %TRUE on success.
+             * You can retrieve the last parsed {@link AppStream.ReleaseList} using %as_metadata_get_release_list.
+             * @param file {@link Gio.File} for the release metadata
+             * @returns `true` on success.
              */
             parse_releases_file(file: Gio.File): boolean;
             /**
-             * Convert a releases of an #AsReleaseList entity into a release metadata XML representation.
-             * @param releases the #AsReleaseList to convert.
-             * @returns The XML representation or %NULL on error.
+             * Convert a releases of an {@link AppStream.ReleaseList} entity into a release metadata XML representation.
+             * @param releases the {@link AppStream.ReleaseList} to convert.
+             * @returns The XML representation or `null` on error.
              */
             releases_to_data(releases: ReleaseList): string;
             /**
-             * Serialize all #AsComponent instances to XML or YAML metadata and save
+             * Serialize all {@link AppStream.Component} instances to XML or YAML metadata and save
              * the data to a file.
              * An existing file at the same location will be overridden.
              * @param fname The filename for the new metadata file.
              * @param format
-             * @returns %TRUE if the file was written without error.
+             * @returns `true` if the file was written without error.
              */
             save_catalog(fname: string, format: FormatKind | null): boolean;
             /**
-             * Serialize #AsComponent instance to XML and save it to file.
+             * Serialize {@link AppStream.Component} instance to XML and save it to file.
              * An existing file at the same location will be overridden.
              * @param fname The filename for the new metadata file.
              * @param format The format to save this file in. Only XML is supported at time.
-             * @returns %TRUE if the file was written without error.
+             * @returns `true` if the file was written without error.
              */
             save_metainfo(fname: string, format: FormatKind | null): boolean;
             /**
@@ -5204,13 +5750,13 @@ declare module 'gi://AppStream?version=1.0' {
             set_architecture(arch: string): void;
             /**
              * Sets the current metadata parsing mode.
-             * @param mode the #AsFormatStyle.
+             * @param mode the {@link AppStream.FormatStyle}.
              */
             set_format_style(mode: FormatStyle | null): void;
             /**
              * Set the current AppStream format version that we should generate data for
              * or be able to read.
-             * @param version the AppStream metadata format version as #AsFormatVersion.
+             * @param version the AppStream metadata format version as {@link AppStream.FormatVersion}.
              */
             set_format_version(version: FormatVersion | null): void;
             /**
@@ -5223,7 +5769,7 @@ declare module 'gi://AppStream?version=1.0' {
             set_locale(locale: string): void;
             /**
              * Set the base URL for all media links referenced in the metadata,
-             * or %NULL if every component has absolute URLs.
+             * or `null` if every component has absolute URLs.
              * @param url the base URL.
              */
             set_media_baseurl(url: string): void;
@@ -5234,11 +5780,11 @@ declare module 'gi://AppStream?version=1.0' {
             set_origin(origin: string): void;
             /**
              * Sets the current metadata parse flags.
-             * @param flags the #AsParseFlags.
+             * @param flags the {@link AppStream.ParseFlags}.
              */
             set_parse_flags(flags: ParseFlags | null): void;
             /**
-             * If set to %TRUE, the parser will not create new components but
+             * If set to `true`, the parser will not create new components but
              * instead update existing components in the pool with new metadata.
              *
              * NOTE: Right now, this feature is only implemented for metainfo XML parsing!
@@ -5246,7 +5792,7 @@ declare module 'gi://AppStream?version=1.0' {
              */
             set_update_existing(update: boolean): void;
             /**
-             * If set to %TRUE, tehe metadata writer will omit writing a DEP-11
+             * If set to `true`, tehe metadata writer will omit writing a DEP-11
              * header document when in YAML mode, and will not write a root components node
              * when writing XML data.
              * Please keep in mind that this will create an invalid DEP-11 YAML AppStream
@@ -5262,6 +5808,13 @@ declare module 'gi://AppStream?version=1.0' {
         namespace Pool {
             // Signal signatures
             interface SignalSignatures extends GObject.Object.SignalSignatures {
+                /**
+                 * The ::changed signal is emitted when components have been added
+                 * or removed from the metadata pool.
+                 * @signal
+                 * @since 0.15.0
+                 * @run-last
+                 */
                 changed: () => void;
             }
 
@@ -5270,6 +5823,9 @@ declare module 'gi://AppStream?version=1.0' {
             interface ConstructorProps extends GObject.Object.ConstructorProps {}
         }
 
+        /**
+         * @gir-type Class
+         */
         class Pool extends GObject.Object {
             static $gtype: GObject.GType<Pool>;
 
@@ -5292,16 +5848,19 @@ declare module 'gi://AppStream?version=1.0' {
 
             // Signals
 
+            /** @signal */
             connect<K extends keyof Pool.SignalSignatures>(
                 signal: K,
                 callback: GObject.SignalCallback<this, Pool.SignalSignatures[K]>,
             ): number;
             connect(signal: string, callback: (...args: any[]) => any): number;
+            /** @signal */
             connect_after<K extends keyof Pool.SignalSignatures>(
                 signal: K,
                 callback: GObject.SignalCallback<this, Pool.SignalSignatures[K]>,
             ): number;
             connect_after(signal: string, callback: (...args: any[]) => any): number;
+            /** @signal */
             emit<K extends keyof Pool.SignalSignatures>(
                 signal: K,
                 ...args: GObject.GjsParameters<Pool.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never
@@ -5310,6 +5869,9 @@ declare module 'gi://AppStream?version=1.0' {
 
             // Virtual methods
 
+            /**
+             * @virtual
+             */
             vfunc_changed(): void;
 
             // Methods
@@ -5318,7 +5880,7 @@ declare module 'gi://AppStream?version=1.0' {
              * Register a set of components with the pool temporarily.
              * Data from components added like this will not be cached.
              * @param cbox Components to add to the pool.
-             * @returns %TRUE if the new components were successfully added to the pool.
+             * @returns `true` if the new components were successfully added to the pool.
              */
             add_components(cbox: ComponentBox): boolean;
             /**
@@ -5326,13 +5888,13 @@ declare module 'gi://AppStream?version=1.0' {
              * If `directory` contains a "xml", "xmls", "yaml" or "icons" subdirectory (or all of them),
              * those paths will be added to the search paths instead.
              * @param directory An existing filesystem location.
-             * @param format_style The expected format style of the metadata, e.g. %AS_FORMAT_STYLE_CATALOG
+             * @param format_style The expected format style of the metadata, e.g. {@link AppStream.FormatStyle.CATALOG}
              */
             add_extra_data_location(directory: string, format_style: FormatStyle | null): void;
             /**
-             * Convenience function to add one or multiple #AsPoolFlags to
+             * Convenience function to add one or multiple {@link AppStream.PoolFlags} to
              * the flag set of this data pool.
-             * @param flags The #AsPoolFlags to add.
+             * @param flags The {@link AppStream.PoolFlags} to add.
              */
             add_flags(flags: PoolFlags | null): void;
             /**
@@ -5343,7 +5905,7 @@ declare module 'gi://AppStream?version=1.0' {
              * run it explicitly when you need to check which search tokens the pool will actually
              * use internally for a given phrase.
              * @param search the (user-provided) search phrase.
-             * @returns (array zero-terminated=1): Valid tokens to search for, or %NULL for error
+             * @returns (array zero-terminated=1): Valid tokens to search for, or `null` for error
              */
             build_search_tokens(search: string): string[];
             /**
@@ -5353,7 +5915,7 @@ declare module 'gi://AppStream?version=1.0' {
             clear(): void;
             /**
              * Get a list of found components.
-             * @returns an #AsComponentBox.
+             * @returns an {@link AppStream.ComponentBox}.
              */
             get_components(): ComponentBox;
             /**
@@ -5362,9 +5924,9 @@ declare module 'gi://AppStream?version=1.0' {
              * it will list all the components that bundle dolphin. If the bundle_id is
              * "org.kde.dolphin/x86_64" it will give those with also the architecture.
              * @param kind The kind of the bundle we are looking for
-             * @param bundle_id The bundle ID to match, as specified in #AsBundle
-             * @param match_prefix %TRUE to match the ID by prefix, %FALSE to perform an absolute match.
-             * @returns an #AsComponentBox.
+             * @param bundle_id The bundle ID to match, as specified in {@link AppStream.Bundle}
+             * @param match_prefix `true` to match the ID by prefix, `false` to perform an absolute match.
+             * @returns an {@link AppStream.ComponentBox}.
              */
             get_components_by_bundle_id(
                 kind: BundleKind | null,
@@ -5374,17 +5936,17 @@ declare module 'gi://AppStream?version=1.0' {
             /**
              * Return a list of components which are in all of the categories.
              * @param categories An array of XDG categories to include.
-             * @returns an #AsComponentBox of found components.
+             * @returns an {@link AppStream.ComponentBox} of found components.
              */
             get_components_by_categories(categories: string[]): ComponentBox;
             /**
              * Find components extending the component with the given ID. They can then be registered to the
-             * #AsComponent they extend via %as_component_add_addon.
-             * If the %AS_POOL_FLAG_RESOLVE_ADDONS pool flag is set, addons are automatically resolved and
+             * {@link AppStream.Component} they extend via %as_component_add_addon.
+             * If the {@link AppStream.PoolFlags.RESOLVE_ADDONS} pool flag is set, addons are automatically resolved and
              * this explicit function is not needed, but overall query time will be increased (so only use
              * this flag if you will be resolving addon information later anyway).
              * @param extended_id The ID of the component to search extensions for.
-             * @returns an #AsComponentBox.
+             * @returns an {@link AppStream.ComponentBox}.
              */
             get_components_by_extends(extended_id: string): ComponentBox;
             /**
@@ -5392,32 +5954,32 @@ declare module 'gi://AppStream?version=1.0' {
              * This function may contain multiple results if we have
              * data describing this component from multiple scopes/origin types.
              * @param cid The AppStream-ID to look for.
-             * @returns an #AsComponentBox.
+             * @returns an {@link AppStream.ComponentBox}.
              */
             get_components_by_id(cid: string): ComponentBox;
             /**
              * Return a list of all components in the pool which are of a certain kind.
-             * @param kind An #AsComponentKind.
-             * @returns an #AsComponentBox of found components.
+             * @param kind An {@link AppStream.ComponentKind}.
+             * @returns an {@link AppStream.ComponentBox} of found components.
              */
             get_components_by_kind(kind: ComponentKind | null): ComponentBox;
             /**
              * Find components in the AppStream data pool which provide a specific launchable.
-             * See #AsLaunchable for details on launchables, or refer to the AppStream specification.
-             * @param kind An #AsLaunchableKind
+             * See {@link AppStream.Launchable} for details on launchables, or refer to the AppStream specification.
+             * @param kind An {@link AppStream.LaunchableKind}
              * @param id The ID of the launchable.
-             * @returns an #AsComponentBox of found components.
+             * @returns an {@link AppStream.ComponentBox} of found components.
              */
             get_components_by_launchable(kind: LaunchableKind | null, id: string): ComponentBox;
             /**
              * Find components in the AppStream data pool which provide a certain item.
-             * @param kind An #AsProvidesKind
+             * @param kind An `AsProvidesKind`
              * @param item The value of the provided item.
-             * @returns an #AsComponentBox of found components.
+             * @returns an {@link AppStream.ComponentBox} of found components.
              */
             get_components_by_provided_item(kind: ProvidedKind | null, item: string): ComponentBox;
             /**
-             * Get the #AsPoolFlags for this data pool.
+             * Get the {@link AppStream.PoolFlags} for this data pool.
              */
             get_flags(): PoolFlags;
             /**
@@ -5427,53 +5989,53 @@ declare module 'gi://AppStream?version=1.0' {
             get_locale(): string;
             /**
              * Check if this pool contains any data.
-             * @returns %TRUE if the pool is empty.
+             * @returns `true` if the pool is empty.
              */
             is_empty(): boolean;
             /**
              * Builds an index of all found components in the watched locations.
              * The function will try to get as much data into the pool as possible, so even if
-             * the update completes with %FALSE, it might still have added components to the pool.
+             * the update completes with `false`, it might still have added components to the pool.
              *
              * The function will load from all possible data sources, preferring caches if they
              * are up to date.
-             * @param cancellable a #GCancellable.
-             * @returns %TRUE if update completed without error.
+             * @param cancellable a {@link Gio.Cancellable}.
+             * @returns `true` if update completed without error.
              */
             load(cancellable?: Gio.Cancellable | null): boolean;
             /**
              * Asynchronously loads data from all registered locations.
-             * Equivalent to as_pool_load() (but asynchronous)
-             * @param cancellable a #GCancellable.
+             * Equivalent to `as_pool_load()` (but asynchronous)
+             * @param cancellable a {@link Gio.Cancellable}.
              */
             load_async(cancellable?: Gio.Cancellable | null): globalThis.Promise<boolean>;
             /**
              * Asynchronously loads data from all registered locations.
-             * Equivalent to as_pool_load() (but asynchronous)
-             * @param cancellable a #GCancellable.
-             * @param callback A #GAsyncReadyCallback
+             * Equivalent to `as_pool_load()` (but asynchronous)
+             * @param cancellable a {@link Gio.Cancellable}.
+             * @param callback A {@link Gio.AsyncReadyCallback}
              */
             load_async(cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<this> | null): void;
             /**
              * Asynchronously loads data from all registered locations.
-             * Equivalent to as_pool_load() (but asynchronous)
-             * @param cancellable a #GCancellable.
-             * @param callback A #GAsyncReadyCallback
+             * Equivalent to `as_pool_load()` (but asynchronous)
+             * @param cancellable a {@link Gio.Cancellable}.
+             * @param callback A {@link Gio.AsyncReadyCallback}
              */
             load_async(
                 cancellable?: Gio.Cancellable | null,
                 callback?: Gio.AsyncReadyCallback<this> | null,
             ): globalThis.Promise<boolean> | void;
             /**
-             * Retrieve the result of as_pool_load_async().
-             * @param result A #GAsyncResult
-             * @returns %TRUE for success
+             * Retrieve the result of `as_pool_load_async()`.
+             * @param result A {@link Gio.AsyncResult}
+             * @returns `true` for success
              */
             load_finish(result: Gio.AsyncResult): boolean;
             /**
-             * Convenience function to remove one or multiple #AsPoolFlags from
+             * Convenience function to remove one or multiple {@link AppStream.PoolFlags} from
              * the flag set of this data pool.
-             * @param flags The #AsPoolFlags to remove.
+             * @param flags The {@link AppStream.PoolFlags} to remove.
              */
             remove_flags(flags: PoolFlags | null): void;
             /**
@@ -5484,21 +6046,21 @@ declare module 'gi://AppStream?version=1.0' {
              * Search for a list of components matching the search term.
              * The list will be ordered by match score.
              * @param search A search string
-             * @returns an #AsComponentBox of the found components.
+             * @returns an {@link AppStream.ComponentBox} of the found components.
              */
             search(search: string): ComponentBox;
             /**
-             * Set the #AsPoolFlags for this data pool.
-             * @param flags The new #AsPoolFlags.
+             * Set the {@link AppStream.PoolFlags} for this data pool.
+             * @param flags The new {@link AppStream.PoolFlags}.
              */
             set_flags(flags: PoolFlags | null): void;
             /**
              * This is a convenience function that enables or disables loading of metadata
-             * from well-known standard locations by configuring the #AsPoolFlags of this
-             * #AsPool accordingly.
+             * from well-known standard locations by configuring the {@link AppStream.PoolFlags} of this
+             * {@link AppStream.Pool} accordingly.
              * Data affected by this includes the OS data catalog, metainfo, desktop-entry
              * files and Flatpak data.
-             * If you need more fine-grained control, set the #AsPoolFlags explicitly.
+             * If you need more fine-grained control, set the {@link AppStream.PoolFlags} explicitly.
              * @param enabled Whether loading of data from standard locations should be enabled.
              */
             set_load_std_data_locations(enabled: boolean): void;
@@ -5518,6 +6080,9 @@ declare module 'gi://AppStream?version=1.0' {
             interface ConstructorProps extends GObject.Object.ConstructorProps {}
         }
 
+        /**
+         * @gir-type Class
+         */
         class Provided extends GObject.Object {
             static $gtype: GObject.GType<Provided>;
 
@@ -5540,16 +6105,19 @@ declare module 'gi://AppStream?version=1.0' {
 
             // Signals
 
+            /** @signal */
             connect<K extends keyof Provided.SignalSignatures>(
                 signal: K,
                 callback: GObject.SignalCallback<this, Provided.SignalSignatures[K]>,
             ): number;
             connect(signal: string, callback: (...args: any[]) => any): number;
+            /** @signal */
             connect_after<K extends keyof Provided.SignalSignatures>(
                 signal: K,
                 callback: GObject.SignalCallback<this, Provided.SignalSignatures[K]>,
             ): number;
             connect_after(signal: string, callback: (...args: any[]) => any): number;
+            /** @signal */
             emit<K extends keyof Provided.SignalSignatures>(
                 signal: K,
                 ...args: GObject.GjsParameters<Provided.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never
@@ -5569,20 +6137,20 @@ declare module 'gi://AppStream?version=1.0' {
              */
             get_items(): string[];
             /**
-             * The kind of items this #AsProvided object stores.
-             * @returns an enum of type #AsProvidedKind
+             * The kind of items this {@link AppStream.Provided} object stores.
+             * @returns an enum of type {@link AppStream.ProvidedKind}
              */
             get_kind(): ProvidedKind;
             /**
-             * Check if the current #AsProvided contains an item
+             * Check if the current {@link AppStream.Provided} contains an item
              * of the given name.
              * @param item the name of a provided item, e.g. "audio/x-vorbis" (in case the provided kind is a mimetype)
-             * @returns %TRUE if found.
+             * @returns `true` if found.
              */
             has_item(item: string): boolean;
             /**
-             * Set the kind of items this #AsProvided object stores.
-             * @param kind the new #AsProvidedKind
+             * Set the kind of items this {@link AppStream.Provided} object stores.
+             * @param kind the new {@link AppStream.ProvidedKind}
              */
             set_kind(kind: ProvidedKind | null): void;
         }
@@ -5596,6 +6164,9 @@ declare module 'gi://AppStream?version=1.0' {
             interface ConstructorProps extends GObject.Object.ConstructorProps {}
         }
 
+        /**
+         * @gir-type Class
+         */
         class Reference extends GObject.Object {
             static $gtype: GObject.GType<Reference>;
 
@@ -5618,16 +6189,19 @@ declare module 'gi://AppStream?version=1.0' {
 
             // Signals
 
+            /** @signal */
             connect<K extends keyof Reference.SignalSignatures>(
                 signal: K,
                 callback: GObject.SignalCallback<this, Reference.SignalSignatures[K]>,
             ): number;
             connect(signal: string, callback: (...args: any[]) => any): number;
+            /** @signal */
             connect_after<K extends keyof Reference.SignalSignatures>(
                 signal: K,
                 callback: GObject.SignalCallback<this, Reference.SignalSignatures[K]>,
             ): number;
             connect_after(signal: string, callback: (...args: any[]) => any): number;
+            /** @signal */
             emit<K extends keyof Reference.SignalSignatures>(
                 signal: K,
                 ...args: GObject.GjsParameters<Reference.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never
@@ -5638,31 +6212,31 @@ declare module 'gi://AppStream?version=1.0' {
 
             /**
              * Gets the reference kind.
-             * @returns the #AsReferenceKind
+             * @returns the {@link AppStream.ReferenceKind}
              */
             get_kind(): ReferenceKind;
             /**
              * Gets the name of the registry this reference is for,
-             * if the reference is of type %AS_REFERENCE_KIND_REGISTRY.
-             * Otherwise return %NULL.
+             * if the reference is of type {@link AppStream.ReferenceKind.REGISTRY}.
+             * Otherwise return `null`.
              * @returns the registry name.
              */
             get_registry_name(): string | null;
             /**
              * Gets the value of this reference, e.g. a DOI if the
-             * reference kind is %AS_REFERENCE_KIND_DOI or an URL
-             * for %AS_REFERENCE_KIND_CITATION_CFF.
+             * reference kind is {@link AppStream.ReferenceKind.DOI} or an URL
+             * for {@link AppStream.ReferenceKind.CITATION_CFF}.
              * @returns the value of this reference.
              */
             get_value(): string;
             /**
              * Sets the reference kind.
-             * @param kind the #AsReferenceKind, e.g. %AS_REFERENCE_KIND_DOI.
+             * @param kind the {@link AppStream.ReferenceKind}, e.g. {@link AppStream.ReferenceKind.DOI}.
              */
             set_kind(kind: ReferenceKind | null): void;
             /**
              * Sets a name of a registry if this reference is of
-             * type %AS_REFERENCE_KIND_REGISTRY.
+             * type {@link AppStream.ReferenceKind.REGISTRY}.
              * @param name name of an external registry.
              */
             set_registry_name(name: string): void;
@@ -5682,6 +6256,9 @@ declare module 'gi://AppStream?version=1.0' {
             interface ConstructorProps extends GObject.Object.ConstructorProps {}
         }
 
+        /**
+         * @gir-type Class
+         */
         class Relation extends GObject.Object {
             static $gtype: GObject.GType<Relation>;
 
@@ -5704,16 +6281,19 @@ declare module 'gi://AppStream?version=1.0' {
 
             // Signals
 
+            /** @signal */
             connect<K extends keyof Relation.SignalSignatures>(
                 signal: K,
                 callback: GObject.SignalCallback<this, Relation.SignalSignatures[K]>,
             ): number;
             connect(signal: string, callback: (...args: any[]) => any): number;
+            /** @signal */
             connect_after<K extends keyof Relation.SignalSignatures>(
                 signal: K,
                 callback: GObject.SignalCallback<this, Relation.SignalSignatures[K]>,
             ): number;
             connect_after(signal: string, callback: (...args: any[]) => any): number;
+            /** @signal */
             emit<K extends keyof Relation.SignalSignatures>(
                 signal: K,
                 ...args: GObject.GjsParameters<Relation.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never
@@ -5728,7 +6308,7 @@ declare module 'gi://AppStream?version=1.0' {
              *
              * A compatibility of 100 means all requirements are satisfied and the component will
              * run perfectly on the confoguration it was tested agains, while 0 means it will not run at all.
-             * @param rc_results an array of #AsRelationCheckResult
+             * @param rc_results an array of {@link AppStream.RelationCheckResult}
              */
             static check_results_get_compatibility_score(rc_results: RelationCheckResult[]): number;
 
@@ -5736,35 +6316,38 @@ declare module 'gi://AppStream?version=1.0' {
 
             /**
              * The version comparison type.
-             * @returns an enum of type #AsRelationCompare
+             * @returns an enum of type {@link AppStream.RelationCompare}
              */
             get_compare(): RelationCompare;
             /**
              * Gets the display side kind, in case this item is of
-             * kind %AS_RELATION_ITEM_KIND_DISPLAY_LENGTH
-             * @returns a #AsDisplaySideKind or %AS_DISPLAY_SIDE_KIND_UNKNOWN
+             * kind {@link AppStream.RelationItemKind.DISPLAY_LENGTH}
+             * @returns a {@link AppStream.DisplaySideKind} or {@link AppStream.DisplaySideKind.UNKNOWN}
              */
             get_display_side_kind(): DisplaySideKind;
             /**
-             * The kind of the item of this #AsRelation.
-             * @returns an enum of type #AsRelationItemKind
+             * The kind of the item of this {@link AppStream.Relation}.
+             * @returns an enum of type {@link AppStream.RelationItemKind}
              */
             get_item_kind(): RelationItemKind;
             /**
-             * The type (and thereby strength) of this #AsRelation.
-             * @returns an enum of type #AsRelationKind
+             * The type (and thereby strength) of this {@link AppStream.Relation}.
+             * @returns an enum of type {@link AppStream.RelationKind}
              */
             get_kind(): RelationKind;
             /**
-             * Get the value of this #AsRelation item as #AsControlKind if the
-             * type of this relation is %AS_RELATION_ITEM_KIND_CONTROL.
-             * Otherwise return %AS_CONTROL_KIND_UNKNOWN
-             * @returns a #AsControlKind or %AS_CONTROL_KIND_UNKNOWN in case the item is not of the right kind.
+             * Get the value of this {@link AppStream.Relation} item as {@link AppStream.ControlKind} if the
+             * type of this relation is {@link AppStream.RelationItemKind.CONTROL}.
+             * Otherwise return {@link AppStream.ControlKind.UNKNOWN}
+             * @returns a {@link AppStream.ControlKind} or {@link AppStream.ControlKind.UNKNOWN} in case the item is not of the right kind.
              */
             get_value_control_kind(): ControlKind;
+            /**
+             * @returns The value of this {@link AppStream.Relation} item as an integer. Returns 0 if the value was no integer.
+             */
             get_value_int(): number;
             /**
-             * If this #AsRelation is of kind %AS_RELATION_ITEM_KIND_INTERNET, return the
+             * If this {@link AppStream.Relation} is of kind {@link AppStream.RelationItemKind.INTERNET}, return the
              * minimum bandwidth requirement of the component, if set.
              *
              * If the relation is of a different kind, or the requirement isn’t set, this
@@ -5773,77 +6356,86 @@ declare module 'gi://AppStream?version=1.0' {
              */
             get_value_internet_bandwidth(): number;
             /**
-             * Get the value of this #AsRelation item as #AsInternetKind if the
-             * type of this relation is %AS_RELATION_ITEM_KIND_INTERNET.
-             * Otherwise return %AS_INTERNET_KIND_UNKNOWN
-             * @returns a #AsInternetKind or %AS_INTERNET_KIND_UNKNOWN in case the item is not of the right kind.
+             * Get the value of this {@link AppStream.Relation} item as {@link AppStream.InternetKind} if the
+             * type of this relation is {@link AppStream.RelationItemKind.INTERNET}.
+             * Otherwise return {@link AppStream.InternetKind.UNKNOWN}
+             * @returns a {@link AppStream.InternetKind} or {@link AppStream.InternetKind.UNKNOWN} in case the item is not of the right kind.
              */
             get_value_internet_kind(): InternetKind;
             /**
-             * In case this #AsRelation is of kind %AS_RELATION_ITEM_KIND_DISPLAY_LENGTH,
+             * In case this {@link AppStream.Relation} is of kind {@link AppStream.RelationItemKind.DISPLAY_LENGTH},
              * return the set logical pixel amount.
              * @returns The logical pixel amount for this display length, value <= 0 on error.
              */
             get_value_px(): number;
+            /**
+             * @returns The value of the item this {@link AppStream.Relation} is about, as a string.
+             */
             get_value_str(): string;
+            /**
+             * @returns The version of the item this {@link AppStream.Relation} is about.
+             */
             get_version(): string;
             /**
              * Test if this relation is satisfied on the current system or with the
-             * provided #AsPool. If no #AsSystemInfo is found, a temporary one will be
-             * created. If no #AsPool is provided, any component relationships can not
+             * provided {@link AppStream.Pool}. If no {@link AppStream.SystemInfo} is found, a temporary one will be
+             * created. If no {@link AppStream.Pool} is provided, any component relationships can not
              * be validated and an error will be thrown.
-             * @param system_info an #AsSystemInfo to use for system information.
-             * @param pool an #AsPool to find component dependencies in.
-             * @returns an #AsRelationCheckResult with details about the result, or %NULL on error.
+             * @param system_info an {@link AppStream.SystemInfo} to use for system information.
+             * @param pool an {@link AppStream.Pool} to find component dependencies in.
+             * @returns an {@link AppStream.RelationCheckResult} with details about the result, or `null` on error.
              */
             is_satisfied(system_info?: SystemInfo | null, pool?: Pool | null): RelationCheckResult | null;
             /**
-             * Set the version comparison type of this #AsRelation.
-             * @param compare the new #AsRelationCompare
+             * Set the version comparison type of this {@link AppStream.Relation}.
+             * @param compare the new {@link AppStream.RelationCompare}
              */
             set_compare(compare: RelationCompare | null): void;
             /**
              * Sets the display side kind, in case this item is of
-             * kind %AS_RELATION_ITEM_KIND_DISPLAY_LENGTH
-             * @param kind the new #AsDisplaySideKind.
+             * kind {@link AppStream.RelationItemKind.DISPLAY_LENGTH}
+             * @param kind the new {@link AppStream.DisplaySideKind}.
              */
             set_display_side_kind(kind: DisplaySideKind | null): void;
             /**
-             * Set the kind of the item this #AsRelation is about.
-             * @param kind the new #AsRelationItemKind
+             * Set the kind of the item this {@link AppStream.Relation} is about.
+             * @param kind the new {@link AppStream.RelationItemKind}
              */
             set_item_kind(kind: RelationItemKind | null): void;
             /**
-             * Set the kind of this #AsRelation.
-             * @param kind the new #AsRelationKind
+             * Set the kind of this {@link AppStream.Relation}.
+             * @param kind the new {@link AppStream.RelationKind}
              */
             set_kind(kind: RelationKind | null): void;
             /**
-             * Set relation item value from an #AsControlKind.
-             * @param kind an #AsControlKind
+             * Set relation item value from an {@link AppStream.ControlKind}.
+             * @param kind an {@link AppStream.ControlKind}
              */
             set_value_control_kind(kind: ControlKind | null): void;
             /**
              * Sets the item value as an integer, if the given item type
-             * of this #AsRelation permits integer values.
+             * of this {@link AppStream.Relation} permits integer values.
              * @param value the new value.
              */
             set_value_int(value: number): void;
+            /**
+             * @param bandwidth_mbitps
+             */
             set_value_internet_bandwidth(bandwidth_mbitps: number): void;
             /**
-             * Set relation item value from an #AsInternetKind.
-             * @param kind an #AsInternetKind
+             * Set relation item value from an {@link AppStream.InternetKind}.
+             * @param kind an {@link AppStream.InternetKind}
              */
             set_value_internet_kind(kind: InternetKind | null): void;
             /**
              * Sets the item value as logical pixel count. This requires the relation
-             * to be of item kind %AS_RELATION_ITEM_KIND_DISPLAY_LENGTH.
+             * to be of item kind {@link AppStream.RelationItemKind.DISPLAY_LENGTH}.
              * @param logical_px logical pixel count.
              */
             set_value_px(logical_px: number): void;
             /**
              * Sets the item value as a string, if the given item type
-             * of this #AsRelation permits string values.
+             * of this {@link AppStream.Relation} permits string values.
              * @param value the new value.
              */
             set_value_str(value: string): void;
@@ -5853,11 +6445,11 @@ declare module 'gi://AppStream?version=1.0' {
              */
             set_version(version: string): void;
             /**
-             * Tests whether the version number of this #AsRelation is fulfilled by
+             * Tests whether the version number of this {@link AppStream.Relation} is fulfilled by
              * `version`. Whether the given version is sufficient to fulfill the version
-             * requirement of this #AsRelation is determined by its comparison resraint.
+             * requirement of this {@link AppStream.Relation} is determined by its comparison resraint.
              * @param version a version number, e.g. `1.2.0`
-             * @returns %TRUE if the version from the parameter is sufficient.
+             * @returns `true` if the version from the parameter is sufficient.
              */
             version_compare(version: string): boolean;
         }
@@ -5871,6 +6463,9 @@ declare module 'gi://AppStream?version=1.0' {
             interface ConstructorProps extends GObject.Object.ConstructorProps {}
         }
 
+        /**
+         * @gir-type Class
+         */
         class RelationCheckResult extends GObject.Object {
             static $gtype: GObject.GType<RelationCheckResult>;
 
@@ -5893,16 +6488,19 @@ declare module 'gi://AppStream?version=1.0' {
 
             // Signals
 
+            /** @signal */
             connect<K extends keyof RelationCheckResult.SignalSignatures>(
                 signal: K,
                 callback: GObject.SignalCallback<this, RelationCheckResult.SignalSignatures[K]>,
             ): number;
             connect(signal: string, callback: (...args: any[]) => any): number;
+            /** @signal */
             connect_after<K extends keyof RelationCheckResult.SignalSignatures>(
                 signal: K,
                 callback: GObject.SignalCallback<this, RelationCheckResult.SignalSignatures[K]>,
             ): number;
             connect_after(signal: string, callback: (...args: any[]) => any): number;
+            /** @signal */
             emit<K extends keyof RelationCheckResult.SignalSignatures>(
                 signal: K,
                 ...args: GObject.GjsParameters<RelationCheckResult.SignalSignatures[K]> extends [any, ...infer Q]
@@ -5915,40 +6513,40 @@ declare module 'gi://AppStream?version=1.0' {
 
             /**
              * Retrieve the error code, in case this result represents an error.
-             * @returns an #AsRelationError
+             * @returns an {@link AppStream.RelationError}
              */
             get_error_code(): RelationError;
             /**
              * Get a human-readable message about the state of this relation.
-             * May be %NULL in case the relation is satisfied and there is no further information about it.
+             * May be `null` in case the relation is satisfied and there is no further information about it.
              * @returns a human-readable message about this relation's state.
              */
             get_message(): string | null;
             /**
              * Get the relation that this check result was generated for.
-             * @returns an #AsRelation or %NULL
+             * @returns an {@link AppStream.Relation} or `null`
              */
             get_relation(): Relation | null;
             /**
              * Returns the status of this relation check result.
-             * If the status is %AS_RELATION_STATUS_ERROR, an error message will
+             * If the status is {@link AppStream.RelationStatus.ERROR}, an error message will
              * have been set as message.
-             * @returns an #AsRelationStatus
+             * @returns an {@link AppStream.RelationStatus}
              */
             get_status(): RelationStatus;
             /**
              * Set the error code in case this result represents an error.
-             * @param ecode the #AsRelationError
+             * @param ecode the {@link AppStream.RelationError}
              */
             set_error_code(ecode: RelationError | null): void;
             /**
-             * Set an #AsRelation to associate with this check result.
-             * @param relation the #AsRelation
+             * Set an {@link AppStream.Relation} to associate with this check result.
+             * @param relation the {@link AppStream.Relation}
              */
             set_relation(relation: Relation): void;
             /**
              * Set the outcome of this relation check result.
-             * @param status the new #AsRelationStatus
+             * @param status the new {@link AppStream.RelationStatus}
              */
             set_status(status: RelationStatus | null): void;
         }
@@ -5962,6 +6560,9 @@ declare module 'gi://AppStream?version=1.0' {
             interface ConstructorProps extends GObject.Object.ConstructorProps {}
         }
 
+        /**
+         * @gir-type Class
+         */
         class Release extends GObject.Object {
             static $gtype: GObject.GType<Release>;
 
@@ -5984,16 +6585,19 @@ declare module 'gi://AppStream?version=1.0' {
 
             // Signals
 
+            /** @signal */
             connect<K extends keyof Release.SignalSignatures>(
                 signal: K,
                 callback: GObject.SignalCallback<this, Release.SignalSignatures[K]>,
             ): number;
             connect(signal: string, callback: (...args: any[]) => any): number;
+            /** @signal */
             connect_after<K extends keyof Release.SignalSignatures>(
                 signal: K,
                 callback: GObject.SignalCallback<this, Release.SignalSignatures[K]>,
             ): number;
             connect_after(signal: string, callback: (...args: any[]) => any): number;
+            /** @signal */
             emit<K extends keyof Release.SignalSignatures>(
                 signal: K,
                 ...args: GObject.GjsParameters<Release.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never
@@ -6004,19 +6608,19 @@ declare module 'gi://AppStream?version=1.0' {
 
             /**
              * Add an artifact (binary / source download) for this release.
-             * @param artifact The #AsArtifact.
+             * @param artifact The {@link AppStream.Artifact}.
              */
             add_artifact(artifact: Artifact): void;
             /**
              * Add information about a (resolved) issue to this release.
-             * @param issue The #AsIssue.
+             * @param issue The {@link AppStream.Issue}.
              */
             add_issue(issue: Issue): void;
             /**
              * Add a tag to this release.
              * @param ns The namespace the tag belongs to
              * @param tag The tag name
-             * @returns %TRUE if the tag was added.
+             * @returns `true` if the tag was added.
              */
             add_tag(ns: string, tag: string): boolean;
             /**
@@ -6026,9 +6630,12 @@ declare module 'gi://AppStream?version=1.0' {
             /**
              * Get a list of all downloadable artifacts that are associated with
              * this release.
-             * @returns an array of #AsArtifact objects.
+             * @returns an array of {@link AppStream.Artifact} objects.
              */
             get_artifacts(): Artifact[];
+            /**
+             * @returns the {@link AppStream.Context} associated with this release. This function may return `null` if no context is set.
+             */
             get_context(): Context | null;
             /**
              * Gets the release date.
@@ -6042,12 +6649,12 @@ declare module 'gi://AppStream?version=1.0' {
             get_date_eol(): string | null;
             /**
              * Gets the release description markup for a given locale.
-             * @returns markup, or %NULL for not set or invalid
+             * @returns markup, or `null` for not set or invalid
              */
             get_description(): string | null;
             /**
              * Get a list of all issues resolved by this release.
-             * @returns an array of #AsIssue objects.
+             * @returns an array of {@link AppStream.Issue} objects.
              */
             get_issues(): Issue[];
             /**
@@ -6069,38 +6676,38 @@ declare module 'gi://AppStream?version=1.0' {
             /**
              * Gets the urgency of the release
              * (showing how important it is to update to a more recent release)
-             * @returns #AsUrgencyKind, or %AS_URGENCY_KIND_UNKNOWN for not set
+             * @returns {@link AppStream.UrgencyKind}, or {@link AppStream.UrgencyKind.UNKNOWN} for not set
              */
             get_urgency(): UrgencyKind;
             /**
              * Gets an URL.
-             * @param url_kind the URL kind, e.g. %AS_RELEASE_URL_KIND_DETAILS.
-             * @returns string, or %NULL if unset
+             * @param url_kind the URL kind, e.g. {@link AppStream.ReleaseUrlKind.DETAILS}.
+             * @returns string, or `null` if unset
              */
             get_url(url_kind: ReleaseUrlKind | null): string | null;
             /**
              * Gets the release version.
-             * @returns string, or %NULL for not set or invalid
+             * @returns string, or `null` for not set or invalid
              */
             get_version(): string | null;
             /**
              * Test if the release is tagged with the selected tag.
              * @param ns The namespace the tag belongs to
              * @param tag The tag name
-             * @returns %TRUE if tag exists.
+             * @returns `true` if tag exists.
              */
             has_tag(ns: string, tag: string): boolean;
             /**
              * Remove a tag from this release
              * @param ns The namespace the tag belongs to
              * @param tag The tag name
-             * @returns %TRUE if the tag was removed.
+             * @returns `true` if the tag was removed.
              */
             remove_tag(ns: string, tag: string): boolean;
             /**
              * Sets the document context this release is associated
              * with.
-             * @param context the #AsContext.
+             * @param context the {@link AppStream.Context}.
              */
             set_context(context: Context): void;
             /**
@@ -6116,13 +6723,13 @@ declare module 'gi://AppStream?version=1.0' {
             /**
              * Sets the description release markup.
              * @param description the description markup.
-             * @param locale the BCP47 locale, or %NULL. e.g. "en-GB".
+             * @param locale the BCP47 locale, or `null`. e.g. "en-GB".
              */
             set_description(description: string, locale?: string | null): void;
             /**
              * Sets the release kind to distinguish between end-user ready
              * stable releases and development prereleases..
-             * @param kind the #AsReleaseKind
+             * @param kind the {@link AppStream.ReleaseKind}
              */
             set_kind(kind: ReleaseKind | null): void;
             /**
@@ -6138,12 +6745,12 @@ declare module 'gi://AppStream?version=1.0' {
             set_timestamp_eol(timestamp: number): void;
             /**
              * Sets the release urgency.
-             * @param urgency the urgency of this release/update (as #AsUrgencyKind)
+             * @param urgency the urgency of this release/update (as {@link AppStream.UrgencyKind})
              */
             set_urgency(urgency: UrgencyKind | null): void;
             /**
              * Sets an URL for this release.
-             * @param url_kind the URL kind, e.g. %AS_RELEASE_URL_KIND_DETAILS
+             * @param url_kind the URL kind, e.g. {@link AppStream.ReleaseUrlKind.DETAILS}
              * @param url the full URL.
              */
             set_url(url_kind: ReleaseUrlKind | null, url: string): void;
@@ -6154,8 +6761,8 @@ declare module 'gi://AppStream?version=1.0' {
             set_version(version: string): void;
             /**
              * Compare the version numbers of two releases.
-             * @param rel2 an #AsRelease
-             * @returns 1 if @rel1 version is higher than @rel2, 0 if versions are equal, -1 if @rel2 version is higher than @rel1.
+             * @param rel2 an {@link AppStream.Release}
+             * @returns 1 if `rel1` version is higher than `rel2`, 0 if versions are equal, -1 if `rel2` version is higher than `rel1`.
              */
             vercmp(rel2: Release): number;
         }
@@ -6169,6 +6776,9 @@ declare module 'gi://AppStream?version=1.0' {
             interface ConstructorProps extends GObject.Object.ConstructorProps {}
         }
 
+        /**
+         * @gir-type Class
+         */
         class ReleaseList extends GObject.Object {
             static $gtype: GObject.GType<ReleaseList>;
 
@@ -6191,16 +6801,19 @@ declare module 'gi://AppStream?version=1.0' {
 
             // Signals
 
+            /** @signal */
             connect<K extends keyof ReleaseList.SignalSignatures>(
                 signal: K,
                 callback: GObject.SignalCallback<this, ReleaseList.SignalSignatures[K]>,
             ): number;
             connect(signal: string, callback: (...args: any[]) => any): number;
+            /** @signal */
             connect_after<K extends keyof ReleaseList.SignalSignatures>(
                 signal: K,
                 callback: GObject.SignalCallback<this, ReleaseList.SignalSignatures[K]>,
             ): number;
             connect_after(signal: string, callback: (...args: any[]) => any): number;
+            /** @signal */
             emit<K extends keyof ReleaseList.SignalSignatures>(
                 signal: K,
                 ...args: GObject.GjsParameters<ReleaseList.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never
@@ -6210,7 +6823,7 @@ declare module 'gi://AppStream?version=1.0' {
             // Methods
 
             /**
-             * Append a release entry to this #AsReleaseList container.
+             * Append a release entry to this {@link AppStream.ReleaseList} container.
              * @param release
              */
             add(release: Release): void;
@@ -6219,18 +6832,18 @@ declare module 'gi://AppStream?version=1.0' {
              */
             clear(): void;
             /**
-             * Get the #AsContext associated with these releases.
-             * This function may return %NULL if no context is set
-             * @returns the associated #AsContext or %NULL
+             * Get the {@link AppStream.Context} associated with these releases.
+             * This function may return `null` if no context is set
+             * @returns the associated {@link AppStream.Context} or `null`
              */
             get_context(): Context | null;
             /**
-             * Get the release entries as #GPtrArray.
-             * @returns an array of #AsRelease instances.
+             * Get the release entries as {@link GLib.PtrArray}.
+             * @returns an array of {@link AppStream.Release} instances.
              */
             get_entries(): Release[];
             /**
-             * Returns the #AsReleaseListKind of the release metadata
+             * Returns the {@link AppStream.ReleaseListKind} of the release metadata
              * associated with this component.
              * @returns The kind.
              */
@@ -6242,37 +6855,37 @@ declare module 'gi://AppStream?version=1.0' {
             get_size(): number;
             /**
              * Get the remote URL to obtain release information from.
-             * @returns The URL of external release data, or %NULL
+             * @returns The URL of external release data, or `null`
              */
             get_url(): string | null;
             /**
              * Retrieve a release entry at the respective index from the
              * release entry list.
              * @param index The release entry index.
-             * @returns An #AsRelease or %NULL
+             * @returns An {@link AppStream.Release} or `null`
              */
             index_safe(index: number): Release;
             /**
              * Check if there are any components present.
-             * @returns %TRUE if this component box is empty.
+             * @returns `true` if this component box is empty.
              */
             is_empty(): boolean;
             /**
              * Load release information from XML bytes.
-             * @param context the attached #AsContext or %NULL to use the current context
-             * @param bytes the release XML data as #GBytes
-             * @returns %TRUE on success.
+             * @param context the attached {@link AppStream.Context} or `null` to use the current context
+             * @param bytes the release XML data as {@link GLib.Bytes}
+             * @returns `true` on success.
              */
             load_from_bytes(context: Context | null, bytes: GLib.Bytes | Uint8Array): boolean;
             /**
              * Sets the document context these releases are associated with.
-             * @param context the #AsContext.
+             * @param context the {@link AppStream.Context}.
              */
             set_context(context: Context): void;
             /**
-             * Sets the #AsReleaseListKind of the release metadata
+             * Sets the {@link AppStream.ReleaseListKind} of the release metadata
              * associated with this component.
-             * @param kind the #AsComponentKind.
+             * @param kind the {@link AppStream.ComponentKind}.
              */
             set_kind(kind: ReleaseListKind | null): void;
             /**
@@ -6327,39 +6940,79 @@ declare module 'gi://AppStream?version=1.0' {
             }
         }
 
+        /**
+         * @gir-type Class
+         */
         class Review extends GObject.Object {
             static $gtype: GObject.GType<Review>;
 
             // Properties
 
+            /**
+             * @since 0.14.0
+             */
             get date(): Review;
             set date(val: Review);
+            /**
+             * @since 0.14.0
+             */
             get description(): string;
             set description(val: string);
+            /**
+             * @since 0.14.0
+             */
             get flags(): number;
             set flags(val: number);
+            /**
+             * @since 0.14.0
+             */
             get id(): string;
             set id(val: string);
+            /**
+             * @since 0.14.0
+             */
             get locale(): string;
             set locale(val: string);
             /**
              * The priority for the review, where positive numbers indicate
              * a better review for the specific user.
+             * @since 0.15.6
              */
             get priority(): number;
             set priority(val: number);
+            /**
+             * @since 0.14.0
+             */
             get rating(): number;
             set rating(val: number);
+            /**
+             * @since 0.14.0
+             */
             get reviewer_id(): string;
             set reviewer_id(val: string);
+            /**
+             * @since 0.14.0
+             */
             get reviewerId(): string;
             set reviewerId(val: string);
+            /**
+             * @since 0.14.0
+             */
             get reviewer_name(): string;
             set reviewer_name(val: string);
+            /**
+             * @since 0.14.0
+             */
             get reviewerName(): string;
             set reviewerName(val: string);
+            /**
+             * @since 0.14.0
+             */
             get summary(): string;
             set summary(val: string);
+            /**
+             * @since 0.14.0
+             */
             get version(): string;
             set version(val: string);
 
@@ -6382,16 +7035,19 @@ declare module 'gi://AppStream?version=1.0' {
 
             // Signals
 
+            /** @signal */
             connect<K extends keyof Review.SignalSignatures>(
                 signal: K,
                 callback: GObject.SignalCallback<this, Review.SignalSignatures[K]>,
             ): number;
             connect(signal: string, callback: (...args: any[]) => any): number;
+            /** @signal */
             connect_after<K extends keyof Review.SignalSignatures>(
                 signal: K,
                 callback: GObject.SignalCallback<this, Review.SignalSignatures[K]>,
             ): number;
             connect_after(signal: string, callback: (...args: any[]) => any): number;
+            /** @signal */
             emit<K extends keyof Review.SignalSignatures>(
                 signal: K,
                 ...args: GObject.GjsParameters<Review.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never
@@ -6402,7 +7058,7 @@ declare module 'gi://AppStream?version=1.0' {
 
             /**
              * Adds flags to an existing review without replacing the other flags.
-             * @param flags a #AsReviewFlags, e.g. %AS_REVIEW_FLAG_SELF
+             * @param flags a {@link AppStream.ReviewFlags}, e.g. {@link AppStream.ReviewFlags.SELF}
              */
             add_flags(flags: ReviewFlags | null): void;
             /**
@@ -6415,24 +7071,24 @@ declare module 'gi://AppStream?version=1.0' {
             add_metadata(key: string, value: string): void;
             /**
              * Checks if two reviews are the same.
-             * @param review2 a #AsReview instance.
-             * @returns %TRUE for success
+             * @param review2 a {@link AppStream.Review} instance.
+             * @returns `true` for success
              */
             equal(review2: Review): boolean;
             /**
              * Gets the date the review was originally submitted.
-             * @returns the #GDateTime, or %NULL for unset
+             * @returns the {@link GLib.DateTime}, or `null` for unset
              */
             get_date(): GLib.DateTime;
             /**
              * Gets the multi-line review text that forms the body of the review.
-             * @returns the string, or %NULL
+             * @returns the string, or `null`
              */
             get_description(): string;
             /**
              * Gets any flags set on the review, for example if the user has already
              * voted on the review or if the user wrote the review themselves.
-             * @returns a #AsReviewFlags, e.g. %AS_REVIEW_FLAG_SELF
+             * @returns a {@link AppStream.ReviewFlags}, e.g. {@link AppStream.ReviewFlags.SELF}
              */
             get_flags(): ReviewFlags;
             /**
@@ -6442,7 +7098,7 @@ declare module 'gi://AppStream?version=1.0' {
             get_id(): string;
             /**
              * Gets the locale for the review.
-             * @returns the string, or %NULL
+             * @returns the string, or `null`
              */
             get_locale(): string;
             /**
@@ -6450,7 +7106,7 @@ declare module 'gi://AppStream?version=1.0' {
              * It is left for the the plugin to use this method as required, but a
              * typical use would be to retrieve some secure authentication token.
              * @param key a string
-             * @returns A string value, or %NULL for not found
+             * @returns A string value, or `null` for not found
              */
             get_metadata_item(key: string): string;
             /**
@@ -6466,12 +7122,12 @@ declare module 'gi://AppStream?version=1.0' {
             get_rating(): number;
             /**
              * Gets the name of the reviewer.
-             * @returns the reviewer ID, e.g. "deadbeef", or %NULL
+             * @returns the reviewer ID, e.g. "deadbeef", or `null`
              */
             get_reviewer_id(): string;
             /**
              * Gets the name of the reviewer.
-             * @returns the reviewer name, e.g. "David Smith", or %NULL
+             * @returns the reviewer name, e.g. "David Smith", or `null`
              */
             get_reviewer_name(): string;
             /**
@@ -6481,12 +7137,12 @@ declare module 'gi://AppStream?version=1.0' {
             get_summary(): string;
             /**
              * Gets the version string for the application being reviewed..
-             * @returns the version string, e.g. "0.1.2", or %NULL for unset
+             * @returns the version string, e.g. "0.1.2", or `null` for unset
              */
             get_version(): string;
             /**
              * Sets the date the review was originally submitted.
-             * @param date a #GDateTime, or %NULL
+             * @param date a {@link GLib.DateTime}, or `null`
              */
             set_date(date: GLib.DateTime): void;
             /**
@@ -6497,7 +7153,7 @@ declare module 'gi://AppStream?version=1.0' {
             /**
              * Gets any flags set on the review, for example if the user has already
              * voted on the review or if the user wrote the review themselves.
-             * @param flags a #AsReviewFlags, e.g. %AS_REVIEW_FLAG_SELF
+             * @param flags a {@link AppStream.ReviewFlags}, e.g. {@link AppStream.ReviewFlags.SELF}
              */
             set_flags(flags: ReviewFlags | null): void;
             /**
@@ -6552,6 +7208,9 @@ declare module 'gi://AppStream?version=1.0' {
             interface ConstructorProps extends GObject.Object.ConstructorProps {}
         }
 
+        /**
+         * @gir-type Class
+         */
         class Screenshot extends GObject.Object {
             static $gtype: GObject.GType<Screenshot>;
 
@@ -6574,16 +7233,19 @@ declare module 'gi://AppStream?version=1.0' {
 
             // Signals
 
+            /** @signal */
             connect<K extends keyof Screenshot.SignalSignatures>(
                 signal: K,
                 callback: GObject.SignalCallback<this, Screenshot.SignalSignatures[K]>,
             ): number;
             connect(signal: string, callback: (...args: any[]) => any): number;
+            /** @signal */
             connect_after<K extends keyof Screenshot.SignalSignatures>(
                 signal: K,
                 callback: GObject.SignalCallback<this, Screenshot.SignalSignatures[K]>,
             ): number;
             connect_after(signal: string, callback: (...args: any[]) => any): number;
+            /** @signal */
             emit<K extends keyof Screenshot.SignalSignatures>(
                 signal: K,
                 ...args: GObject.GjsParameters<Screenshot.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never
@@ -6594,12 +7256,12 @@ declare module 'gi://AppStream?version=1.0' {
 
             /**
              * Adds an image to the screenshot.
-             * @param image a #AsImage instance.
+             * @param image a {@link AppStream.Image} instance.
              */
             add_image(image: Image): void;
             /**
              * Adds a video to the screenshot.
-             * @param video a #AsVideo instance.
+             * @param video a {@link AppStream.Video} instance.
              */
             add_video(video: Video): void;
             /**
@@ -6612,19 +7274,19 @@ declare module 'gi://AppStream?version=1.0' {
              */
             get_caption(): string;
             /**
-             * Returns the #AsContext associated with this screenshot.
-             * This function may return %NULL if no context is set.
-             * @returns the #AsContext used by this screenshot.
+             * Returns the {@link AppStream.Context} associated with this screenshot.
+             * This function may return `null` if no context is set.
+             * @returns the {@link AppStream.Context} used by this screenshot.
              */
             get_context(): Context | null;
             /**
              * Get the GUI environment ID of this screenshot, if any
              * is associated with it. E.g. "plasma-mobile" or "gnome:dark".
-             * @returns The GUI environment ID the screenshot was recorded in, or %NULL if none set.
+             * @returns The GUI environment ID the screenshot was recorded in, or `null` if none set.
              */
             get_environment(): string | null;
             /**
-             * Gets the AsImage closest to the target size. The #AsImage may not actually
+             * Gets the AsImage closest to the target size. The {@link AppStream.Image} may not actually
              * be the requested size, and the application may have to pad / rescale the
              * image to make it fit.
              * Only images for the current active locale (or fallback, if images are not localized)
@@ -6632,7 +7294,7 @@ declare module 'gi://AppStream?version=1.0' {
              * @param width target width
              * @param height target height
              * @param scale the target scaling factor.
-             * @returns an #AsImage, or %NULL
+             * @returns an {@link AppStream.Image}, or `null`
              */
             get_image(width: number, height: number, scale: number): Image | null;
             /**
@@ -6649,12 +7311,12 @@ declare module 'gi://AppStream?version=1.0' {
             get_images_all(): Image[];
             /**
              * Gets the screenshot kind.
-             * @returns a #AsScreenshotKind
+             * @returns a {@link AppStream.ScreenshotKind}
              */
             get_kind(): ScreenshotKind;
             /**
              * Gets the screenshot media kind.
-             * @returns a #AsScreenshotMediaKind
+             * @returns a {@link AppStream.ScreenshotMediaKind}
              */
             get_media_kind(): ScreenshotMediaKind;
             /**
@@ -6671,7 +7333,7 @@ declare module 'gi://AppStream?version=1.0' {
             get_videos_all(): Video[];
             /**
              * Performs a quick validation on this screenshot
-             * @returns TRUE if the screenshot is a complete #AsScreenshot
+             * @returns TRUE if the screenshot is a complete {@link AppStream.Screenshot}
              */
             is_valid(): boolean;
             /**
@@ -6683,7 +7345,7 @@ declare module 'gi://AppStream?version=1.0' {
             /**
              * Sets the document context this screenshot is associated
              * with.
-             * @param context the #AsContext.
+             * @param context the {@link AppStream.Context}.
              */
             set_context(context: Context): void;
             /**
@@ -6693,7 +7355,7 @@ declare module 'gi://AppStream?version=1.0' {
             set_environment(env_id?: string | null): void;
             /**
              * Sets the screenshot kind.
-             * @param kind the #AsScreenshotKind.
+             * @param kind the {@link AppStream.ScreenshotKind}.
              */
             set_kind(kind: ScreenshotKind | null): void;
         }
@@ -6707,6 +7369,9 @@ declare module 'gi://AppStream?version=1.0' {
             interface ConstructorProps extends GObject.Object.ConstructorProps {}
         }
 
+        /**
+         * @gir-type Class
+         */
         class Suggested extends GObject.Object {
             static $gtype: GObject.GType<Suggested>;
 
@@ -6729,16 +7394,19 @@ declare module 'gi://AppStream?version=1.0' {
 
             // Signals
 
+            /** @signal */
             connect<K extends keyof Suggested.SignalSignatures>(
                 signal: K,
                 callback: GObject.SignalCallback<this, Suggested.SignalSignatures[K]>,
             ): number;
             connect(signal: string, callback: (...args: any[]) => any): number;
+            /** @signal */
             connect_after<K extends keyof Suggested.SignalSignatures>(
                 signal: K,
                 callback: GObject.SignalCallback<this, Suggested.SignalSignatures[K]>,
             ): number;
             connect_after(signal: string, callback: (...args: any[]) => any): number;
+            /** @signal */
             emit<K extends keyof Suggested.SignalSignatures>(
                 signal: K,
                 ...args: GObject.GjsParameters<Suggested.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never
@@ -6759,18 +7427,18 @@ declare module 'gi://AppStream?version=1.0' {
             get_ids(): string[];
             /**
              * Gets the suggested kind.
-             * @returns the #AsSuggestedKind
+             * @returns the {@link AppStream.SuggestedKind}
              */
             get_kind(): SuggestedKind;
             /**
              * Check if the essential properties of this suggestion are
              * populated with useful data.
-             * @returns %TRUE if we have useful data.
+             * @returns `true` if we have useful data.
              */
             is_valid(): boolean;
             /**
              * Sets the suggested kind.
-             * @param kind the #AsSuggestedKind, e.g. %AS_SUGGESTED_KIND_HEURISTIC.
+             * @param kind the {@link AppStream.SuggestedKind}, e.g. {@link AppStream.SuggestedKind.HEURISTIC}.
              */
             set_kind(kind: SuggestedKind | null): void;
         }
@@ -6784,6 +7452,9 @@ declare module 'gi://AppStream?version=1.0' {
             interface ConstructorProps extends GObject.Object.ConstructorProps {}
         }
 
+        /**
+         * @gir-type Class
+         */
         class SystemInfo extends GObject.Object {
             static $gtype: GObject.GType<SystemInfo>;
 
@@ -6808,16 +7479,19 @@ declare module 'gi://AppStream?version=1.0' {
 
             // Signals
 
+            /** @signal */
             connect<K extends keyof SystemInfo.SignalSignatures>(
                 signal: K,
                 callback: GObject.SignalCallback<this, SystemInfo.SignalSignatures[K]>,
             ): number;
             connect(signal: string, callback: (...args: any[]) => any): number;
+            /** @signal */
             connect_after<K extends keyof SystemInfo.SignalSignatures>(
                 signal: K,
                 callback: GObject.SignalCallback<this, SystemInfo.SignalSignatures[K]>,
             ): number;
             connect_after(signal: string, callback: (...args: any[]) => any): number;
+            /** @signal */
             emit<K extends keyof SystemInfo.SignalSignatures>(
                 signal: K,
                 ...args: GObject.GjsParameters<SystemInfo.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never
@@ -6829,24 +7503,24 @@ declare module 'gi://AppStream?version=1.0' {
             /**
              * Return a human readable device name for the given modalias.
              * Will return the modalias again if no device name could be found,
-             * and returns %NULL on error.
-             * If `allow_fallback` is set to %FALSE, this function will return %NULL and error
-             * %AS_SYSTEM_INFO_ERROR_NOT_FOUND in case no suitable description could be found.
+             * and returns `null` on error.
+             * If `allow_fallback` is set to `false`, this function will return `null` and error
+             * {@link AppStream.SystemInfoError.NOT_FOUND} in case no suitable description could be found.
              * @param modalias the modalias value to resolve (may contain wildcards).
              * @param allow_fallback fall back to low-quality data if no better information is available
-             * @returns a human-readable device name, or %NULL on error.
+             * @returns a human-readable device name, or `null` on error.
              */
             get_device_name_for_modalias(modalias: string, allow_fallback: boolean): string;
             /**
              * Get the current display length for the given side kind.
              * If the display size is unknown, this function will return 0.
-             * @param side the #AsDisplaySideKind to select.
+             * @param side the {@link AppStream.DisplaySideKind} to select.
              * @returns the display size in logical pixels.
              */
             get_display_length(side: DisplaySideKind | null): number;
             /**
              * Check whether graphical applications can be displayed via X11 or Wayland.
-             * @returns %TRUE if graphical applications can be displayed.
+             * @returns `true` if graphical applications can be displayed.
              */
             get_gui_available(): boolean;
             /**
@@ -6897,21 +7571,21 @@ declare module 'gi://AppStream?version=1.0' {
             /**
              * Check if there is a device on this system that matches the given modalias glob.
              * @param modalias_glob the modalias value to to look for, may contain wildcards.
-             * @returns %TRUE if a matching device was found.
+             * @returns `true` if a matching device was found.
              */
             has_device_matching_modalias(modalias_glob: string): boolean;
             /**
              * Test if the current system has a specific user input control method.
-             * Returns %AS_CHECK_RESULT_UNKNOWN if we could not test for an input control method,
-             * %AS_CHECK_RESULT_ERROR on error and %AS_CHECK_RESULT_FALSE if the control was not found.
-             * @param kind the #AsControlKind to test for.
-             * @returns %AS_CHECK_RESULT_TRUE if control was found
+             * Returns {@link AppStream.CheckResult.UNKNOWN} if we could not test for an input control method,
+             * {@link AppStream.CheckResult.ERROR} on error and {@link AppStream.CheckResult.FALSE} if the control was not found.
+             * @param kind the {@link AppStream.ControlKind} to test for.
+             * @returns {@link AppStream.CheckResult.TRUE} if control was found
              */
             has_input_control(kind: ControlKind | null): CheckResult;
             /**
              * Receive a path in /sys for the devices with the given modalias.
              * @param modalias the modalias value to resolve.
-             * @returns the syspath, or %NULL if none was found.
+             * @returns the syspath, or `null` if none was found.
              */
             modalias_to_syspath(modalias: string): string;
             /**
@@ -6919,19 +7593,19 @@ declare module 'gi://AppStream?version=1.0' {
              * The size needs to be in device-independent pixels, see the
              * AppStream documentation for more information:
              * https://www.freedesktop.org/software/appstream/docs/chap-Metadata.html#tag-relations-display_length
-             * @param side the #AsDisplaySideKind to select.
+             * @param side the {@link AppStream.DisplaySideKind} to select.
              * @param value_dip the length value in device-independt pixels.
              */
             set_display_length(side: DisplaySideKind | null, value_dip: number): void;
             /**
              * Set whether this system has a GUI / desktop environment available.
-             * @param available %TRUE if GUI is available.
+             * @param available `true` if GUI is available.
              */
             set_gui_available(available: boolean): void;
             /**
              * Explicitly mark a user input control as present or not present on this system.
-             * @param kind the #AsControlKind to set.
-             * @param found %TRUE if the control should be marked as found.
+             * @param kind the {@link AppStream.ControlKind} to set.
+             * @param found `true` if the control should be marked as found.
              */
             set_input_control(kind: ControlKind | null, found: boolean): void;
         }
@@ -6945,6 +7619,9 @@ declare module 'gi://AppStream?version=1.0' {
             interface ConstructorProps extends GObject.Object.ConstructorProps {}
         }
 
+        /**
+         * @gir-type Class
+         */
         class Translation extends GObject.Object {
             static $gtype: GObject.GType<Translation>;
 
@@ -6967,16 +7644,19 @@ declare module 'gi://AppStream?version=1.0' {
 
             // Signals
 
+            /** @signal */
             connect<K extends keyof Translation.SignalSignatures>(
                 signal: K,
                 callback: GObject.SignalCallback<this, Translation.SignalSignatures[K]>,
             ): number;
             connect(signal: string, callback: (...args: any[]) => any): number;
+            /** @signal */
             connect_after<K extends keyof Translation.SignalSignatures>(
                 signal: K,
                 callback: GObject.SignalCallback<this, Translation.SignalSignatures[K]>,
             ): number;
             connect_after(signal: string, callback: (...args: any[]) => any): number;
+            /** @signal */
             emit<K extends keyof Translation.SignalSignatures>(
                 signal: K,
                 ...args: GObject.GjsParameters<Translation.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never
@@ -6991,7 +7671,7 @@ declare module 'gi://AppStream?version=1.0' {
             get_id(): string;
             /**
              * The translation system type.
-             * @returns an enum of type #AsTranslationKind
+             * @returns an enum of type {@link AppStream.TranslationKind}
              */
             get_kind(): TranslationKind;
             /**
@@ -7007,14 +7687,14 @@ declare module 'gi://AppStream?version=1.0' {
             set_id(id: string): void;
             /**
              * Set the translation system type.
-             * @param kind the new #AsTranslationKind
+             * @param kind the new {@link AppStream.TranslationKind}
              */
             set_kind(kind: TranslationKind | null): void;
             /**
              * Set the locale of the source strings for this component. In gettext, this is
              * referred to as the `C` locale. It’s almost always `en_US`, but for some
              * components it may not be.
-             * @param locale The POSIX locale that the source strings are in, or %NULL if unknown or default.
+             * @param locale The POSIX locale that the source strings are in, or `null` if unknown or default.
              */
             set_source_locale(locale?: string | null): void;
         }
@@ -7028,6 +7708,9 @@ declare module 'gi://AppStream?version=1.0' {
             interface ConstructorProps extends GObject.Object.ConstructorProps {}
         }
 
+        /**
+         * @gir-type Class
+         */
         class Validator extends GObject.Object {
             static $gtype: GObject.GType<Validator>;
 
@@ -7050,16 +7733,19 @@ declare module 'gi://AppStream?version=1.0' {
 
             // Signals
 
+            /** @signal */
             connect<K extends keyof Validator.SignalSignatures>(
                 signal: K,
                 callback: GObject.SignalCallback<this, Validator.SignalSignatures[K]>,
             ): number;
             connect(signal: string, callback: (...args: any[]) => any): number;
+            /** @signal */
             connect_after<K extends keyof Validator.SignalSignatures>(
                 signal: K,
                 callback: GObject.SignalCallback<this, Validator.SignalSignatures[K]>,
             ): number;
             connect_after(signal: string, callback: (...args: any[]) => any): number;
+            /** @signal */
             emit<K extends keyof Validator.SignalSignatures>(
                 signal: K,
                 ...args: GObject.GjsParameters<Validator.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never
@@ -7091,14 +7777,14 @@ declare module 'gi://AppStream?version=1.0' {
              */
             add_release_file(release_file: Gio.File): boolean;
             /**
-             * Check the current registered values again and return %TRUE
+             * Check the current registered values again and return `true`
              * if no issues were found that would make the previously validated
              * files fail validation.
              *
              * Usually you do not need to call this function explicitly, as
              * the as_validator_validate_* functions will already return whether
              * data was valid as return value.
-             * @returns %TRUE if previously validated files were valid.
+             * @returns `true` if previously validated files were valid.
              */
             check_success(): boolean;
             /**
@@ -7106,6 +7792,9 @@ declare module 'gi://AppStream?version=1.0' {
              * validation process.
              */
             clear_release_data(): void;
+            /**
+             * @returns `true` in case we allow network access.
+             */
             get_allow_net(): boolean;
             /**
              * Get the number of files for which issues have been found.
@@ -7114,7 +7803,7 @@ declare module 'gi://AppStream?version=1.0' {
             get_issue_files_count(): number;
             /**
              * Get a list of found metadata format issues.
-             * @returns a list of #AsValidatorIssue instances, free with g_list_free()
+             * @returns a list of {@link AppStream.ValidatorIssue} instances, free with `g_list_free()`
              */
             get_issues(): ValidatorIssue[];
             /**
@@ -7125,6 +7814,9 @@ declare module 'gi://AppStream?version=1.0' {
              */
             get_issues_per_file(): GLib.HashTable;
             get_report_yaml(): string;
+            /**
+             * @returns `true` in case we are in strict mode and consider any issues as fatal.
+             */
             get_strict(): boolean;
             /**
              * Get the explanatory text for a given issue tag.
@@ -7135,7 +7827,7 @@ declare module 'gi://AppStream?version=1.0' {
             /**
              * Get the severity for a given issue tag.
              * @param tag
-             * @returns The #AsIssueSeverity
+             * @returns The {@link AppStream.IssueSeverity}
              */
             get_tag_severity(tag: string): IssueSeverity;
             /**
@@ -7144,42 +7836,42 @@ declare module 'gi://AppStream?version=1.0' {
              */
             get_tags(): string[];
             /**
-             * If set to %TRUE, the validator will be allowed to connect
+             * If set to `true`, the validator will be allowed to connect
              * to the internet to e.g. check URLs for validity.
-             * @param value %TRUE if remote URLs should be checked for availability.
+             * @param value `true` if remote URLs should be checked for availability.
              */
             set_allow_net(value: boolean): void;
             /**
              * Enable or disable strict mode. In strict mode, any found issue will result
              * in a failed validation (except for issues of "pedantic" severity).
              * Otherwise, only a "warning" or "error" will cause the validation to fail.
-             * @param is_strict %TRUE to enable strict mode.
+             * @param is_strict `true` to enable strict mode.
              */
             set_strict(is_strict: boolean): void;
             /**
              * Validate AppStream XML data from a byte array.
              * Remember to run %as_validator_clear_issues if you do not want previous
              * validation runs to affect the outcome of this validation.
-             * @param metadata XML metadata as #GBytes.
-             * @returns %TRUE if bytes validated successfully.
+             * @param metadata XML metadata as {@link GLib.Bytes}.
+             * @returns `true` if bytes validated successfully.
              */
             validate_bytes(metadata: GLib.Bytes | Uint8Array): boolean;
             /**
              * Validate AppStream XML data.
              * @param metadata XML metadata.
-             * @returns %TRUE if data validated successfully.
+             * @returns `true` if data validated successfully.
              */
             validate_data(metadata: string): boolean;
             /**
              * Validate an AppStream XML file.
              * @param metadata_file An AppStream XML file.
-             * @returns %TRUE if file validated successfully.
+             * @returns `true` if file validated successfully.
              */
             validate_file(metadata_file: Gio.File): boolean;
             /**
              * Validate a full directory tree for issues in AppStream metadata.
              * @param root_dir The root directory of the filesystem tree that should be validated.
-             * @returns %TRUE if file validated successfully.
+             * @returns `true` if file validated successfully.
              */
             validate_tree(root_dir: string): boolean;
         }
@@ -7193,6 +7885,9 @@ declare module 'gi://AppStream?version=1.0' {
             interface ConstructorProps extends GObject.Object.ConstructorProps {}
         }
 
+        /**
+         * @gir-type Class
+         */
         class ValidatorIssue extends GObject.Object {
             static $gtype: GObject.GType<ValidatorIssue>;
 
@@ -7215,16 +7910,19 @@ declare module 'gi://AppStream?version=1.0' {
 
             // Signals
 
+            /** @signal */
             connect<K extends keyof ValidatorIssue.SignalSignatures>(
                 signal: K,
                 callback: GObject.SignalCallback<this, ValidatorIssue.SignalSignatures[K]>,
             ): number;
             connect(signal: string, callback: (...args: any[]) => any): number;
+            /** @signal */
             connect_after<K extends keyof ValidatorIssue.SignalSignatures>(
                 signal: K,
                 callback: GObject.SignalCallback<this, ValidatorIssue.SignalSignatures[K]>,
             ): number;
             connect_after(signal: string, callback: (...args: any[]) => any): number;
+            /** @signal */
             emit<K extends keyof ValidatorIssue.SignalSignatures>(
                 signal: K,
                 ...args: GObject.GjsParameters<ValidatorIssue.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never
@@ -7239,7 +7937,7 @@ declare module 'gi://AppStream?version=1.0' {
              */
             get_cid(): string;
             /**
-             * Get an extended explanation on this issue, or return %NULL
+             * Get an extended explanation on this issue, or return `null`
              * if none is available.
              * @returns the explanation
              */
@@ -7267,7 +7965,7 @@ declare module 'gi://AppStream?version=1.0' {
             get_location(): string;
             /**
              * Gets the severity of this issue.
-             * @returns a #AsIssueSeverity
+             * @returns a {@link AppStream.IssueSeverity}
              */
             get_severity(): IssueSeverity;
             /**
@@ -7302,7 +8000,7 @@ declare module 'gi://AppStream?version=1.0' {
             set_line(line: number): void;
             /**
              * Sets the severity for this issue.
-             * @param severity the #AsIssueSeverity.
+             * @param severity the {@link AppStream.IssueSeverity}.
              */
             set_severity(severity: IssueSeverity | null): void;
             /**
@@ -7321,6 +8019,9 @@ declare module 'gi://AppStream?version=1.0' {
             interface ConstructorProps extends GObject.Object.ConstructorProps {}
         }
 
+        /**
+         * @gir-type Class
+         */
         class Video extends GObject.Object {
             static $gtype: GObject.GType<Video>;
 
@@ -7343,16 +8044,19 @@ declare module 'gi://AppStream?version=1.0' {
 
             // Signals
 
+            /** @signal */
             connect<K extends keyof Video.SignalSignatures>(
                 signal: K,
                 callback: GObject.SignalCallback<this, Video.SignalSignatures[K]>,
             ): number;
             connect(signal: string, callback: (...args: any[]) => any): number;
+            /** @signal */
             connect_after<K extends keyof Video.SignalSignatures>(
                 signal: K,
                 callback: GObject.SignalCallback<this, Video.SignalSignatures[K]>,
             ): number;
             connect_after(signal: string, callback: (...args: any[]) => any): number;
+            /** @signal */
             emit<K extends keyof Video.SignalSignatures>(
                 signal: K,
                 ...args: GObject.GjsParameters<Video.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never
@@ -7363,12 +8067,12 @@ declare module 'gi://AppStream?version=1.0' {
 
             /**
              * Gets the video codec, if known.
-             * @returns the #AsVideoCodecKind
+             * @returns the {@link AppStream.VideoCodecKind}
              */
             get_codec_kind(): VideoCodecKind;
             /**
              * Gets the video container format, if known.
-             * @returns the #AsVideoContainerKind
+             * @returns the {@link AppStream.VideoContainerKind}
              */
             get_container_kind(): VideoContainerKind;
             /**
@@ -7393,12 +8097,12 @@ declare module 'gi://AppStream?version=1.0' {
             get_width(): number;
             /**
              * Sets the video codec.
-             * @param kind the #AsVideoCodecKind, e.g. %AS_VIDEO_CODEC_KIND_AV1.
+             * @param kind the {@link AppStream.VideoCodecKind}, e.g. {@link AppStream.VideoCodecKind.AV1}.
              */
             set_codec_kind(kind: VideoCodecKind | null): void;
             /**
              * Sets the video container.
-             * @param kind the #AsVideoContainerKind, e.g. %AS_VIDEO_CONTAINER_KIND_MKV.
+             * @param kind the {@link AppStream.VideoContainerKind}, e.g. {@link AppStream.VideoContainerKind.MKV}.
              */
             set_container_kind(kind: VideoContainerKind | null): void;
             /**
@@ -7423,15 +8127,28 @@ declare module 'gi://AppStream?version=1.0' {
             set_width(width: number): void;
         }
 
+        /**
+         * @gir-type Alias
+         */
         type AgreementClass = typeof Agreement;
+        /**
+         * @gir-type Alias
+         */
         type AgreementSectionClass = typeof AgreementSection;
+        /**
+         * @gir-type Alias
+         */
         type ArtifactClass = typeof Artifact;
+        /**
+         * @gir-type Alias
+         */
         type BrandingClass = typeof Branding;
         /**
-         * A #AsBrandingColorIter structure represents an iterator that can be used
-         * to iterate over the accent colors of an #AsBranding object.
-         * #AsBrandingColorIter structures are typically allocated on the stack and
-         * then initialized with as_branding_color_iter_init().
+         * A {@link AppStream.BrandingColorIter} structure represents an iterator that can be used
+         * to iterate over the accent colors of an {@link AppStream.Branding} object.
+         * {@link AppStream.BrandingColorIter} structures are typically allocated on the stack and
+         * then initialized with `as_branding_color_iter_init()`.
+         * @gir-type Struct
          */
         class BrandingColorIter {
             static $gtype: GObject.GType<BrandingColorIter>;
@@ -7445,9 +8162,9 @@ declare module 'gi://AppStream?version=1.0' {
             /**
              * Initializes a color iterator for the accent color list and associates it
              * it with `branding`.
-             * The #AsBrandingColorIter structure is typically allocated on the stack
+             * The {@link AppStream.BrandingColorIter} structure is typically allocated on the stack
              * and does not need to be freed explicitly.
-             * @param branding an #AsBranding
+             * @param branding an {@link AppStream.Branding}
              */
             init(branding: Branding): void;
             /**
@@ -7466,38 +8183,122 @@ declare module 'gi://AppStream?version=1.0' {
              * }
              * ```
              *
-             * @returns %FALSE if the last entry has been reached.
+             * @returns `false` if the last entry has been reached.
              */
             next(): [boolean, ColorKind | null, ColorSchemeKind | null, string];
         }
 
+        /**
+         * @gir-type Alias
+         */
         type BundleClass = typeof Bundle;
+        /**
+         * @gir-type Alias
+         */
         type CategoryClass = typeof Category;
+        /**
+         * @gir-type Alias
+         */
         type ChecksumClass = typeof Checksum;
+        /**
+         * @gir-type Alias
+         */
         type ComponentBoxClass = typeof ComponentBox;
+        /**
+         * @gir-type Alias
+         */
         type ComponentClass = typeof Component;
+        /**
+         * @gir-type Alias
+         */
         type ContentRatingClass = typeof ContentRating;
+        /**
+         * @gir-type Alias
+         */
         type ContextClass = typeof Context;
+        /**
+         * @gir-type Alias
+         */
         type DeveloperClass = typeof Developer;
+        /**
+         * @gir-type Alias
+         */
         type IconClass = typeof Icon;
+        /**
+         * @gir-type Alias
+         */
         type ImageClass = typeof Image;
+        /**
+         * @gir-type Alias
+         */
         type IssueClass = typeof Issue;
+        /**
+         * @gir-type Alias
+         */
         type LaunchableClass = typeof Launchable;
+        /**
+         * @gir-type Alias
+         */
         type MetadataClass = typeof Metadata;
+        /**
+         * @gir-type Alias
+         */
         type PoolClass = typeof Pool;
+        /**
+         * @gir-type Alias
+         */
         type ProvidedClass = typeof Provided;
+        /**
+         * @gir-type Alias
+         */
         type ReferenceClass = typeof Reference;
+        /**
+         * @gir-type Alias
+         */
         type RelationCheckResultClass = typeof RelationCheckResult;
+        /**
+         * @gir-type Alias
+         */
         type RelationClass = typeof Relation;
+        /**
+         * @gir-type Alias
+         */
         type ReleaseClass = typeof Release;
+        /**
+         * @gir-type Alias
+         */
         type ReleaseListClass = typeof ReleaseList;
+        /**
+         * @gir-type Alias
+         */
         type ReviewClass = typeof Review;
+        /**
+         * @gir-type Alias
+         */
         type ScreenshotClass = typeof Screenshot;
+        /**
+         * @gir-type Alias
+         */
         type SuggestedClass = typeof Suggested;
+        /**
+         * @gir-type Alias
+         */
         type SystemInfoClass = typeof SystemInfo;
+        /**
+         * @gir-type Alias
+         */
         type TranslationClass = typeof Translation;
+        /**
+         * @gir-type Alias
+         */
         type ValidatorClass = typeof Validator;
+        /**
+         * @gir-type Alias
+         */
         type ValidatorIssueClass = typeof ValidatorIssue;
+        /**
+         * @gir-type Alias
+         */
         type VideoClass = typeof Video;
         /**
          * Name of the imported GIR library
