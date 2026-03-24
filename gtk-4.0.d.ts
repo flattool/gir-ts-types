@@ -91726,8 +91726,9 @@ declare module 'gi://Gtk?version=4.0' {
          *
          * {@link Gtk.EmojiChooser} supports the following keyboard shortcuts:
          *
-         * - <kbd>Ctrl</kbd>+<kbd>N</kbd> scrolls th the next section.
-         * - <kbd>Ctrl</kbd>+<kbd>P</kbd> scrolls th the previous section.
+         * - <kbd>Ctrl</kbd>+<kbd>N</kbd> scrolls to the next section.
+         * - <kbd>Ctrl</kbd>+<kbd>P</kbd> scrolls to the previous section.
+         * - <kbd>Enter</kbd> to select the first emoji result.
          *
          * # Actions
          *
@@ -243705,6 +243706,10 @@ declare module 'gi://Gtk?version=4.0' {
          * specified after the url, for compatibility with other SVG consumers:
          *
          *     fill='url(#gpa:warning) orange'
+         *
+         * GtkSvg also allows to refer to symbolic colors like system colors
+         * in CSS, with names like SymbolicForeground, SymbolicSuccess, etc.
+         * These can be used whenever a color is required.
          *
          * In contrast to SVG 1.1 and 2.0, we allow the `transform` attribute
          * to be animated with `<animate>`.

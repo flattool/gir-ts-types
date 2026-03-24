@@ -4837,7 +4837,7 @@ declare module 'gi://Pango?version=1.0' {
              * @param name a family name
              * @virtual
              */
-            vfunc_get_family(name: string): FontFamily;
+            vfunc_get_family(name: string): FontFamily | null;
             /**
              * Returns the current serial number of `fontmap`.
              *
@@ -4920,7 +4920,7 @@ declare module 'gi://Pango?version=1.0' {
              * @param name a family name
              * @returns the {@link Pango.FontFamily}
              */
-            get_family(name: string): FontFamily;
+            get_family(name: string): FontFamily | null;
             /**
              * Returns the current serial number of `fontmap`.
              *
