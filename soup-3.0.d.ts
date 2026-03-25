@@ -92,7 +92,7 @@ declare module 'gi://Soup?version=3.0' {
              *   from that page, reject any cookie that it could try to set unless it
              *   already has a cookie in the cookie jar. For libsoup to be able to tell
              *   apart first party cookies from the rest, the application must call
-             *   {@link Message.set_first_party} on each outgoing {@link Soup.Message}, setting the
+             *   {@link Message.set_first_party} on each outgoing {@link Message}, setting the
              *   {@link GLib.Uri} of the main document. If no first party is set in a
              *   message when this policy is in effect, cookies will be assumed to be third
              *   party by default.
@@ -305,23 +305,23 @@ declare module 'gi://Soup?version=3.0' {
             VERY_LOW,
             /**
              * Use this for low priority messages, a
-             *   {@link Soup.Message} with the default priority will be processed first.
+             *   {@link Message} with the default priority will be processed first.
              */
             LOW,
             /**
              * The default priotity, this is the
-             *   priority assigned to the {@link Soup.Message} by default.
+             *   priority assigned to the {@link Message} by default.
              */
             NORMAL,
             /**
-             * High priority, a {@link Soup.Message} with
+             * High priority, a {@link Message} with
              *   this priority will be processed before the ones with the default
              *   priority.
              */
             HIGH,
             /**
              * The highest priority, use this
-             *   for very urgent {@link Soup.Message} as they will be the first ones to be
+             *   for very urgent {@link Message} as they will be the first ones to be
              *   attended.
              */
             VERY_HIGH,
@@ -354,7 +354,7 @@ declare module 'gi://Soup?version=3.0' {
         }
 
         /**
-         * A {@link Soup.Session} error.
+         * A {@link Session} error.
          * @gir-type Struct
          */
         class SessionError extends GLib.Error {
@@ -1046,14 +1046,14 @@ declare module 'gi://Soup?version=3.0' {
          */
         function check_version(major: number, minor: number, micro: number): boolean;
         /**
-         * Parses `header` and returns a {@link Soup.Cookie}.
+         * Parses `header` and returns a {@link Cookie}.
          *
          * If `header` contains multiple cookies, only the first one will be parsed.
          *
          * If `header` does not have "path" or "domain" attributes, they will
          * be defaulted from `origin`. If `origin` is `null`, path will default
          * to "/", but domain will be left as `null`. Note that this is not a
-         * valid state for a {@link Soup.Cookie}, and you will need to fill in some
+         * valid state for a {@link Cookie}, and you will need to fill in some
          * appropriate string for the domain if you want to actually make use
          * of the cookie.
          *
@@ -1069,7 +1069,7 @@ declare module 'gi://Soup?version=3.0' {
          * {@link Soup.Cookie}s.
          *
          * As the "Cookie" header, unlike "Set-Cookie", only contains cookie names and
-         * values, none of the other {@link Soup.Cookie} fields will be filled in. (Thus, you
+         * values, none of the other {@link Cookie} fields will be filled in. (Thus, you
          * can't generally pass a cookie returned from this method directly to
          * {@link cookies_to_response}.)
          * @param msg a {@link Soup.Message} containing a "Cookie" request header
@@ -1087,9 +1087,9 @@ declare module 'gi://Soup?version=3.0' {
          */
         function cookies_from_response(msg: Message): Cookie[];
         /**
-         * Serializes a {@link GLib.SList} of {@link Soup.Cookie} into a string suitable for
+         * Serializes a {@link GLib.SList} of {@link Cookie} into a string suitable for
          * setting as the value of the "Cookie" header.
-         * @param cookies a {@link GLib.SList} of {@link Soup.Cookie}
+         * @param cookies a {@link GLib.SList} of {@link Cookie}
          * @returns the serialization of `cookies`
          */
         function cookies_to_cookie_header(cookies: Cookie[]): string;
@@ -1100,7 +1100,7 @@ declare module 'gi://Soup?version=3.0' {
          * If `msg` already has a "Cookie" request header, these cookies will be appended
          * to the cookies already present. Be careful that you do not append the same
          * cookies twice, eg, when requeuing a message.
-         * @param cookies a {@link GLib.SList} of {@link Soup.Cookie}
+         * @param cookies a {@link GLib.SList} of {@link Cookie}
          * @param msg a {@link Soup.Message}
          */
         function cookies_to_request(cookies: Cookie[], msg: Message): void;
@@ -1110,7 +1110,7 @@ declare module 'gi://Soup?version=3.0' {
          *
          * This is in addition to any other "Set-Cookie" headers
          * `msg` may already have.
-         * @param cookies a {@link GLib.SList} of {@link Soup.Cookie}
+         * @param cookies a {@link GLib.SList} of {@link Cookie}
          * @param msg a {@link Soup.Message}
          */
         function cookies_to_response(cookies: Cookie[], msg: Message): void;
@@ -1403,7 +1403,7 @@ declare module 'gi://Soup?version=3.0' {
         function headers_parse_status_line(status_line: string): [boolean, HTTPVersion | null, number, string];
         /**
          * Initializes `iter` for iterating `hdrs`.
-         * @param hdrs a %SoupMessageHeaders
+         * @param hdrs a {@link Soup.MessageHeaders}
          */
         function message_headers_iter_init(hdrs: MessageHeaders): MessageHeadersIter;
         /**
@@ -1413,7 +1413,7 @@ declare module 'gi://Soup?version=3.0' {
          * If `iter` has already yielded the last header, then
          * {@link MessageHeadersIter.next} will return `false` and `name` and `value`
          * will be unchanged.
-         * @param iter a %SoupMessageHeadersIter
+         * @param iter a {@link Soup.MessageHeadersIter}
          * @returns `true` if another name and value were returned, `false`   if the end of the headers has been reached.
          */
         function message_headers_iter_next(iter: MessageHeadersIter): [boolean, MessageHeadersIter, string, string];
@@ -1704,8 +1704,7 @@ declare module 'gi://Soup?version=3.0' {
         }
 
         /**
-         * Various flags that can be set on a {@link Soup.Message} to alter its
-         * behavior.
+         * Various flags that can be set on a {@link Message} to alter its behavior.
          * @gir-type Flags
          */
         enum MessageFlags {
@@ -1812,7 +1811,7 @@ declare module 'gi://Soup?version=3.0' {
          * but applications never need to be aware of the specific subclasses being
          * used.
          *
-         * {@link Soup.Auth} objects store the authentication data associated with a given bit
+         * {@link Auth} objects store the authentication data associated with a given bit
          * of web space. They are created automatically by {@link Session}.
          * @gir-type Class
          */
@@ -1995,7 +1994,7 @@ declare module 'gi://Soup?version=3.0' {
              *
              * You need to cancel an auth to complete an asynchronous authenticate operation
              * when no credentials are provided ({@link Auth.authenticate} is not called).
-             * The {@link Soup.Auth} will be cancelled on dispose if it hans't been authenticated.
+             * The {@link Auth} will be cancelled on dispose if it hasn't been authenticated.
              */
             cancel(): void;
             /**
@@ -2015,7 +2014,7 @@ declare module 'gi://Soup?version=3.0' {
             /**
              * Gets an opaque identifier for `auth`.
              *
-             * The identifier can be used as a hash key or the like. {@link Soup.Auth} objects from
+             * The identifier can be used as a hash key or the like. {@link Auth} objects from
              * the same server with the same identifier refer to the same authentication
              * domain (eg, the URLs associated with them take the same usernames and
              * passwords).
@@ -2064,7 +2063,7 @@ declare module 'gi://Soup?version=3.0' {
              * As with {@link Auth.new}, this is normally only used by {@link Session}.
              * @param msg the {@link Soup.Message} `auth` is being updated for
              * @param auth_header the WWW-Authenticate/Proxy-Authenticate header
-             * @returns `true` if `auth` is still a valid (but potentially   unauthenticated) {@link Soup.Auth}. `false` if something about `auth_params`   could not be parsed or incorporated into `auth` at all.
+             * @returns `true` if `auth` is still a valid (but potentially   unauthenticated) {@link Auth}. `false` if something about `auth_params`   could not be parsed or incorporated into `auth` at all.
              */
             update(msg: Message, auth_header: string): boolean;
         }
@@ -2226,9 +2225,9 @@ declare module 'gi://Soup?version=3.0' {
         /**
          * Server-side authentication.
          *
-         * A {@link Soup.AuthDomain} manages authentication for all or part of a
+         * A {@link AuthDomain} manages authentication for all or part of a
          * {@link Server}. To make a server require authentication, first create
-         * an appropriate subclass of {@link Soup.AuthDomain}, and then add it to the
+         * an appropriate subclass of {@link AuthDomain}, and then add it to the
          * server with {@link Server.add_auth_domain}.
          *
          * In order for an auth domain to have any effect, you must add one or more
@@ -2510,7 +2509,7 @@ declare module 'gi://Soup?version=3.0' {
         /**
          * Server-side "Basic" authentication.
          *
-         * {@link Soup.AuthDomainBasic} handles the server side of HTTP "Basic" (ie,
+         * {@link AuthDomainBasic} handles the server side of HTTP "Basic" (ie,
          * cleartext password) authentication.
          * @gir-type Class
          */
@@ -2623,7 +2622,7 @@ declare module 'gi://Soup?version=3.0' {
         /**
          * Server-side "Digest" authentication.
          *
-         * {@link Soup.AuthDomainDigest} handles the server side of HTTP "Digest"
+         * {@link AuthDomainDigest} handles the server side of HTTP "Digest"
          * authentication.
          * @gir-type Class
          */
@@ -2700,7 +2699,7 @@ declare module 'gi://Soup?version=3.0' {
              * That is, it returns a stringified MD5 hash of
              * `username`, `realm`, and `password` concatenated together. This is
              * the form that is needed as the return value of
-             * {@link Soup.AuthDomainDigest}'s auth handler.
+             * {@link AuthDomainDigest}'s auth handler.
              *
              * For security reasons, you should store the encoded hash, rather
              * than storing the cleartext password itself and calling this method
@@ -2746,10 +2745,10 @@ declare module 'gi://Soup?version=3.0' {
         /**
          * HTTP client-side authentication handler.
          *
-         * {@link Soup.AuthManager} is the {@link SessionFeature} that handles HTTP
+         * {@link AuthManager} is the {@link SessionFeature} that handles HTTP
          * authentication for a {@link Session}.
          *
-         * A {@link Soup.AuthManager} is added to the session by default, and normally
+         * A {@link AuthManager} is added to the session by default, and normally
          * you don't need to worry about it at all. However, if you want to
          * disable HTTP authentication, you can remove the feature from the
          * session with {@link Session.remove_feature_by_type} or disable it on
@@ -3516,7 +3515,7 @@ declare module 'gi://Soup?version=3.0' {
             /**
              * Will remove all entries in the `cache` plus all the cache files.
              *
-             * This is not thread safe and must be called only from the thread that created the {@link Soup.Cache}
+             * This is not thread safe and must be called only from the thread that created the {@link Cache}
              */
             clear(): void;
             /**
@@ -3528,7 +3527,7 @@ declare module 'gi://Soup?version=3.0' {
              * You must call this before exiting if you want your cache data to
              * persist between sessions.
              *
-             * This is not thread safe and must be called only from the thread that created the {@link Soup.Cache}
+             * This is not thread safe and must be called only from the thread that created the {@link Cache}
              */
             dump(): void;
             /**
@@ -3549,7 +3548,7 @@ declare module 'gi://Soup?version=3.0' {
             /**
              * Loads the contents of `cache`'s index into memory.
              *
-             * This is not thread safe and must be called only from the thread that created the {@link Soup.Cache}
+             * This is not thread safe and must be called only from the thread that created the {@link Cache}
              */
             load(): void;
             /**
@@ -4020,23 +4019,23 @@ declare module 'gi://Soup?version=3.0' {
         /**
          * Handles decoding of HTTP messages.
          *
-         * {@link Soup.ContentDecoder} handles adding the "Accept-Encoding" header on
+         * {@link ContentDecoder} handles adding the "Accept-Encoding" header on
          * outgoing messages, and processing the "Content-Encoding" header on
          * incoming ones. Currently it supports the "gzip", "deflate", and "br"
          * content codings.
          *
-         * A {@link Soup.ContentDecoder} will automatically be
+         * A {@link ContentDecoder} will automatically be
          * added to the session by default. (You can use
          * {@link Session.remove_feature_by_type} if you don't
          * want this.)
          *
-         * If {@link Soup.ContentDecoder} successfully decodes the Content-Encoding,
+         * If {@link ContentDecoder} successfully decodes the Content-Encoding,
          * the message body will contain the decoded data; however, the message headers
          * will be unchanged (and so "Content-Encoding" will still be present,
          * "Content-Length" will describe the original encoded length, etc).
          *
          * If "Content-Encoding" contains any encoding types that
-         * {@link Soup.ContentDecoder} doesn't recognize, then none of the encodings
+         * {@link ContentDecoder} doesn't recognize, then none of the encodings
          * will be decoded.
          *
          * (Note that currently there is no way to (automatically) use
@@ -4545,10 +4544,10 @@ declare module 'gi://Soup?version=3.0' {
         /**
          * Sniffs the mime type of messages.
          *
-         * A {@link Soup.ContentSniffer} tries to detect the actual content type of
+         * A {@link ContentSniffer} tries to detect the actual content type of
          * the files that are being downloaded by looking at some of the data
          * before the {@link Message} emits its `Soup.Message::got-headers` signal.
-         * {@link Soup.ContentSniffer} implements {@link SessionFeature}, so you can add
+         * {@link ContentSniffer} implements {@link SessionFeature}, so you can add
          * content sniffing to a session with {@link Session.add_feature} or
          * {@link Session.add_feature_by_type}.
          * @gir-type Class
@@ -5091,12 +5090,12 @@ declare module 'gi://Soup?version=3.0' {
         /**
          * Automatic cookie handling for SoupSession.
          *
-         * A {@link Soup.CookieJar} stores {@link Cookie}s and arrange for them to be sent with
-         * the appropriate {@link Message}s. {@link Soup.CookieJar} implements
+         * A {@link CookieJar} stores {@link Cookie}s and arrange for them to be sent with
+         * the appropriate {@link Message}s. {@link CookieJar} implements
          * {@link SessionFeature}, so you can add a cookie jar to a session with
          * {@link Session.add_feature} or {@link Session.add_feature_by_type}.
          *
-         * Note that the base {@link Soup.CookieJar} class does not support any form
+         * Note that the base {@link CookieJar} class does not support any form
          * of long-term cookie persistence.
          * @gir-type Class
          */
@@ -5256,12 +5255,12 @@ declare module 'gi://Soup?version=3.0' {
             get_accept_policy(): CookieJarAcceptPolicy;
             /**
              * Retrieves the list of cookies that would be sent with a request to `uri`
-             * as a {@link GLib.List} of {@link Soup.Cookie} objects.
+             * as a {@link GLib.List} of {@link Cookie} objects.
              *
              * If `for_http` is `true`, the return value will include cookies marked
              * "HttpOnly" (that is, cookies that the server wishes to keep hidden
              * from client-side scripting operations such as the JavaScript
-             * document.cookies property). Since {@link Soup.CookieJar} sets the Cookie
+             * document.cookies property). Since {@link CookieJar} sets the Cookie
              * header itself when making the actual HTTP request, you should
              * almost certainly be setting `for_http` to `false` if you are calling
              * this.
@@ -5300,7 +5299,7 @@ declare module 'gi://Soup?version=3.0' {
              * If `for_http` is `true`, the return value will include cookies marked
              * "HttpOnly" (that is, cookies that the server wishes to keep hidden
              * from client-side scripting operations such as the JavaScript
-             * document.cookies property). Since {@link Soup.CookieJar} sets the Cookie
+             * document.cookies property). Since {@link CookieJar} sets the Cookie
              * header itself when making the actual HTTP request, you should
              * almost certainly be setting `for_http` to `false` if you are calling
              * this.
@@ -5813,7 +5812,7 @@ declare module 'gi://Soup?version=3.0' {
         /**
          * Database-based Cookie Jar.
          *
-         * {@link Soup.CookieJarDB} is a {@link CookieJar} that reads cookies from and writes
+         * {@link CookieJarDB} is a {@link CookieJar} that reads cookies from and writes
          * them to a sqlite database in the new Mozilla format.
          *
          * (This is identical to `SoupCookieJarSqlite` in
@@ -6341,7 +6340,7 @@ declare module 'gi://Soup?version=3.0' {
         /**
          * Text-file-based ("cookies.txt") Cookie Jar
          *
-         * {@link Soup.CookieJarText} is a {@link CookieJar} that reads cookies from and writes
+         * {@link CookieJarText} is a {@link CookieJar} that reads cookies from and writes
          * them to a text file in format similar to Mozilla's "cookies.txt".
          * @gir-type Class
          */
@@ -6877,24 +6876,24 @@ declare module 'gi://Soup?version=3.0' {
         /**
          * Automatic HTTP Strict Transport Security enforcing for {@link Session}.
          *
-         * A {@link Soup.HSTSEnforcer} stores HSTS policies and enforces them when
-         * required. {@link Soup.HSTSEnforcer} implements {@link SessionFeature}, so you
+         * A {@link HSTSEnforcer} stores HSTS policies and enforces them when
+         * required. {@link HSTSEnforcer} implements {@link SessionFeature}, so you
          * can add an HSTS enforcer to a session with
          * {@link Session.add_feature} or {@link Session.add_feature_by_type}.
          *
-         * {@link Soup.HSTSEnforcer} keeps track of all the HTTPS destinations that,
+         * {@link HSTSEnforcer} keeps track of all the HTTPS destinations that,
          * when connected to, return the Strict-Transport-Security header with
-         * valid values. {@link Soup.HSTSEnforcer} will forget those destinations
+         * valid values. {@link HSTSEnforcer} will forget those destinations
          * upon expiry or when the server requests it.
          *
-         * When the {@link Session} the {@link Soup.HSTSEnforcer} is attached to queues or
-         * restarts a message, the {@link Soup.HSTSEnforcer} will rewrite the URI to HTTPS if
+         * When the {@link Session} the {@link HSTSEnforcer} is attached to queues or
+         * restarts a message, the {@link HSTSEnforcer} will rewrite the URI to HTTPS if
          * the destination is a known HSTS host and is contacted over an insecure
-         * transport protocol (HTTP). Users of {@link Soup.HSTSEnforcer} are advised to listen
+         * transport protocol (HTTP). Users of {@link HSTSEnforcer} are advised to listen
          * to changes in the {@link Message.uri} property in order to be aware of
          * changes in the message URI.
          *
-         * Note that {@link Soup.HSTSEnforcer} does not support any form of long-term
+         * Note that {@link HSTSEnforcer} does not support any form of long-term
          * HSTS policy persistence. See {@link HSTSEnforcerDB} for a persistent
          * enforcer.
          * @gir-type Class
@@ -6943,7 +6942,7 @@ declare module 'gi://Soup?version=3.0' {
             // Virtual methods
 
             /**
-             * The class closure for the {@link Soup.HSTSEnforcer.SignalSignatures.changed | Soup.HSTSEnforcer::changed} signal.
+             * The class closure for the `Soup.HSTSEnforcer::changed` signal.
              * @param old_policy
              * @param new_policy
              * @virtual
@@ -7474,7 +7473,7 @@ declare module 'gi://Soup?version=3.0' {
         /**
          * Persistent HTTP Strict Transport Security enforcer.
          *
-         * {@link Soup.HSTSEnforcerDB} is a {@link HSTSEnforcer} that uses a SQLite
+         * {@link HSTSEnforcerDB} is a {@link HSTSEnforcer} that uses a SQLite
          * database as a backend for persistency.
          * @gir-type Class
          */
@@ -7999,12 +7998,12 @@ declare module 'gi://Soup?version=3.0' {
         /**
          * Debug logging support
          *
-         * {@link Soup.Logger} watches a {@link Session} and logs the HTTP traffic that
+         * {@link Logger} watches a {@link Session} and logs the HTTP traffic that
          * it generates, for debugging purposes. Many applications use an
          * environment variable to determine whether or not to use
-         * {@link Soup.Logger}, and to determine the amount of debugging output.
+         * {@link Logger}, and to determine the amount of debugging output.
          *
-         * To use {@link Soup.Logger}, first create a logger with {@link Logger.new}, optionally
+         * To use {@link Logger}, first create a logger with {@link Logger.new}, optionally
          * configure it with {@link Logger.set_request_filter},
          * {@link Logger.set_response_filter}, and {@link Logger.set_printer}, and
          * then attach it to a session (or multiple sessions) with
@@ -8021,11 +8020,11 @@ declare module 'gi://Soup?version=3.0' {
          * > Content-Type: text/plain
          * > Connection: close
          *
-         * &lt; HTTP/1.1 201 Created
-         * &lt; Soup-Debug-Timestamp: 1200171744
-         * &lt; Soup-Debug: SoupMessage 1 (0x617000)
-         * &lt; Date: Sun, 12 Jan 2008 21:02:24 GMT
-         * &lt; Content-Length: 0
+         * < HTTP/1.1 201 Created
+         * < Soup-Debug-Timestamp: 1200171744
+         * < Soup-Debug: SoupMessage 1 (0x617000)
+         * < Date: Sun, 12 Jan 2008 21:02:24 GMT
+         * < Content-Length: 0
          * ```
          *
          * The `Soup-Debug-Timestamp` line gives the time (as a `time_t`) when the
@@ -8035,7 +8034,7 @@ declare module 'gi://Soup?version=3.0' {
          * {@link Session}, {@link Message}, and {@link Gio.Socket} involved; the hex
          * numbers are the addresses of the objects in question (which may be useful if
          * you are running in a debugger). The decimal IDs are simply counters that
-         * uniquely identify objects across the lifetime of the {@link Soup.Logger}. In
+         * uniquely identify objects across the lifetime of the {@link Logger}. In
          * particular, this can be used to identify when multiple messages are sent
          * across the same connection.
          *
@@ -8047,7 +8046,7 @@ declare module 'gi://Soup?version=3.0' {
          * from the network (from the `Soup.Message::got-body` or
          * `Soup.Message::got-informational` signal), which means that the
          * `Soup.Message::got-headers` signal, and anything triggered off it (such as
-         * {@link Soup.Message.SignalSignatures.authenticate | Soup.Message::authenticate}) will be emitted *before* the response headers are
+         * `Soup.Message::authenticate`) will be emitted *before* the response headers are
          * actually logged.
          *
          * If the response doesn't happen to trigger the `Soup.Message::got-body` nor
@@ -8866,10 +8865,10 @@ declare module 'gi://Soup?version=3.0' {
         /**
          * Represents an HTTP message being sent or received.
          *
-         * A {@link Soup.Message} represents an HTTP message that is being sent or
+         * A {@link Message} represents an HTTP message that is being sent or
          * received.
          *
-         * You would create a {@link Soup.Message} with {@link Message.new} or
+         * You would create a {@link Message} with {@link Message.new} or
          * {@link Message.new_from_uri}, set up its fields appropriately, and send it.
          *
          * {@link Message.status_code} will normally be a {@link Status} value, eg,
@@ -8884,7 +8883,7 @@ declare module 'gi://Soup?version=3.0' {
          *
          * Note that libsoup's terminology here does not quite match the HTTP
          * specification: in RFC 2616, an "HTTP-message" is *either* a Request, *or* a
-         * Response. In libsoup, a {@link Soup.Message} combines both the request and the
+         * Response. In libsoup, a {@link Message} combines both the request and the
          * response.
          * @gir-type Class
          */
@@ -8923,7 +8922,7 @@ declare module 'gi://Soup?version=3.0' {
             /**
              * Whether the message is an OPTIONS ping.
              *
-             * The {@link Soup.Message} is intended to be used to send
+             * The {@link Message} is intended to be used to send
              * `OPTIONS *` to a server. When set to `true`, the
              * path of {@link Message.uri} will be ignored and
              * {@link Message.method} set to `SOUP_METHOD_OPTIONS`.
@@ -8933,7 +8932,7 @@ declare module 'gi://Soup?version=3.0' {
             /**
              * Whether the message is an OPTIONS ping.
              *
-             * The {@link Soup.Message} is intended to be used to send
+             * The {@link Message} is intended to be used to send
              * `OPTIONS *` to a server. When set to `true`, the
              * path of {@link Message.uri} will be ignored and
              * {@link Message.method} set to `SOUP_METHOD_OPTIONS`.
@@ -8956,7 +8955,7 @@ declare module 'gi://Soup?version=3.0' {
             get method(): string;
             set method(val: string);
             /**
-             * Sets the priority of the {@link Soup.Message}. See
+             * Sets the priority of the {@link Message}. See
              * {@link Message.set_priority} for further details.
              */
             get priority(): MessagePriority;
@@ -9134,7 +9133,7 @@ declare module 'gi://Soup?version=3.0' {
              * a message that has already been queued is undefined. In particular,
              * you cannot call this on a message that is being requeued after a
              * redirect or authentication.
-             * @param feature_type the {@link GObject.GType} of a {@link Soup.SessionFeature}
+             * @param feature_type the {@link GObject.GType} of a {@link SessionFeature}
              */
             disable_feature(feature_type: GObject.GType): void;
             /**
@@ -9219,12 +9218,12 @@ declare module 'gi://Soup?version=3.0' {
             get_remote_address(): Gio.SocketAddress | null;
             /**
              * Returns the headers sent with the request.
-             * @returns The {@link Soup.MessageHeaders}
+             * @returns The {@link MessageHeaders}
              */
             get_request_headers(): MessageHeaders;
             /**
              * Returns the headers recieved with the response.
-             * @returns The {@link Soup.MessageHeaders}
+             * @returns The {@link MessageHeaders}
              */
             get_response_headers(): MessageHeaders;
             /**
@@ -9274,7 +9273,7 @@ declare module 'gi://Soup?version=3.0' {
              * (or a subclass of that type) are disabled on `msg`.
              *
              * See {@link Message.disable_feature}.
-             * @param feature_type the {@link GObject.GType} of a {@link Soup.SessionFeature}
+             * @param feature_type the {@link GObject.GType} of a {@link SessionFeature}
              * @returns `true` if feature is disabled, or `false` otherwise.
              */
             is_feature_disabled(feature_type: GObject.GType): boolean;
@@ -9356,7 +9355,7 @@ declare module 'gi://Soup?version=3.0' {
              */
             set_priority(priority: MessagePriority | null): void;
             /**
-             * Set the request body of a {@link Soup.Message}.
+             * Set the request body of a {@link Message}.
              *
              * If `content_type` is `null` and `stream` is not `null` the Content-Type header will
              * not be changed if present.
@@ -9368,7 +9367,7 @@ declare module 'gi://Soup?version=3.0' {
              */
             set_request_body(content_type: string | null, stream: Gio.InputStream | null, content_length: number): void;
             /**
-             * Set the request body of a {@link Soup.Message} from {@link GLib.Bytes}.
+             * Set the request body of a {@link Message} from {@link GLib.Bytes}.
              *
              * If `content_type` is `null` and `bytes` is not `null` the Content-Type header will
              * not be changed if present.
@@ -9446,7 +9445,7 @@ declare module 'gi://Soup?version=3.0' {
          * {@link MultipartInputStream.next_part} before reading. Responses
          * which are not wrapped will be treated like non-multipart responses.
          *
-         * Note that although {@link Soup.MultipartInputStream} is a {@link Gio.InputStream},
+         * Note that although {@link MultipartInputStream} is a {@link Gio.InputStream},
          * you should not read directly from it, and the results are undefined
          * if you do.
          * @gir-type Class
@@ -9508,7 +9507,7 @@ declare module 'gi://Soup?version=3.0' {
              * Obtains the headers for the part currently being processed.
              *
              * Note that the {@link MessageHeaders} that are returned are owned by the
-             * {@link Soup.MultipartInputStream} and will be replaced when a call is made to
+             * {@link MultipartInputStream} and will be replaced when a call is made to
              * {@link MultipartInputStream.next_part} or its async counterpart, so if
              * keeping the headers is required, a copy must be made.
              *
@@ -9521,7 +9520,7 @@ declare module 'gi://Soup?version=3.0' {
              * Obtains an input stream for the next part.
              *
              * When dealing with a multipart response the input stream needs to be wrapped
-             * in a {@link Soup.MultipartInputStream} and this function or its async counterpart
+             * in a {@link MultipartInputStream} and this function or its async counterpart
              * need to be called to obtain the first part for reading.
              *
              * After calling this function,
@@ -10564,7 +10563,7 @@ declare module 'gi://Soup?version=3.0' {
         }
 
         /**
-         * {@link Soup.Server} provides a basic implementation of an HTTP server. The
+         * {@link Server} provides a basic implementation of an HTTP server. The
          * recommended usage of this server is for internal use, tasks like
          * a mock server for tests, a private service for IPC, etc. It is not
          * recommended to be exposed to untrusted clients as it may be vulnerable
@@ -10578,20 +10577,20 @@ declare module 'gi://Soup?version=3.0' {
          * the path.)
          *
          * When a new connection is accepted (or a new request is started on
-         * an existing persistent connection), the {@link Soup.Server} will emit
+         * an existing persistent connection), the {@link Server} will emit
          * `Soup.Server::request-started` and then begin processing the request
          * as described below, but note that once the message is assigned a
          * status-code, then callbacks after that point will be
          * skipped. Note also that it is not defined when the callbacks happen
          * relative to various {@link ServerMessage} signals.
          *
-         * Once the headers have been read, {@link Soup.Server} will check if there is
+         * Once the headers have been read, {@link Server} will check if there is
          * a {@link AuthDomain} `(qv)` covering the Request-URI; if so, and if the
          * message does not contain suitable authorization, then the
          * {@link AuthDomain} will set a status of {@link Soup.Status.UNAUTHORIZED} on
          * the message.
          *
-         * After checking for authorization, {@link Soup.Server} will look for "early"
+         * After checking for authorization, {@link Server} will look for "early"
          * handlers (added with {@link Server.add_early_handler}) matching the
          * Request-URI. If one is found, it will be run; in particular, this
          * can be used to connect to signals to do a streaming read of the
@@ -10599,10 +10598,10 @@ declare module 'gi://Soup?version=3.0' {
          *
          * (At this point, if the request headers contain `Expect:
          * 100-continue`, and a status code has been set, then
-         * {@link Soup.Server} will skip the remaining steps and return the response.
+         * {@link Server} will skip the remaining steps and return the response.
          * If the request headers contain `Expect:
          * 100-continue` and no status code has been set,
-         * {@link Soup.Server} will return a {@link Soup.Status.CONTINUE} status before
+         * {@link Server} will return a {@link Soup.Status.CONTINUE} status before
          * continuing.)
          *
          * The server will then read in the response body (if present). At
@@ -10616,7 +10615,7 @@ declare module 'gi://Soup?version=3.0' {
          * run.
          *
          * Then, if the path has a WebSocket handler registered (and has
-         * not yet been assigned a status), {@link Soup.Server} will attempt to
+         * not yet been assigned a status), {@link Server} will attempt to
          * validate the WebSocket handshake, filling in the response and
          * setting a status of {@link Soup.Status.SWITCHING_PROTOCOLS} or
          * {@link Soup.Status.BAD_REQUEST} accordingly.
@@ -10641,13 +10640,13 @@ declare module 'gi://Soup?version=3.0' {
          * Once the server is set up, make one or more calls to
          * {@link Server.listen}, {@link Server.listen_local}, or
          * {@link Server.listen_all} to tell it where to listen for
-         * connections. (All ports on a {@link Soup.Server} use the same handlers; if
+         * connections. (All ports on a {@link Server} use the same handlers; if
          * you need to handle some ports differently, such as returning
          * different data for http and https, you'll need to create multiple
-         * {@link Soup.Server}s, or else check the passed-in URI in the handler
+         * {@link Server}s, or else check the passed-in URI in the handler
          * function.).
          *
-         * {@link Soup.Server} will begin processing connections as soon as you return
+         * {@link Server} will begin processing connections as soon as you return
          * to (or start) the main loop for the current thread-default
          * {@link GLib.MainContext}.
          * @gir-type Class
@@ -10693,7 +10692,7 @@ declare module 'gi://Soup?version=3.0' {
              *
              * As with {@link Session.user_agent}, if you set a
              * {@link Server.server_header} property that has trailing
-             * whitespace, {@link Soup.Server} will append its own product token (eg,
+             * whitespace, {@link Server} will append its own product token (eg,
              * `libsoup/2.3.2`) to the end of the header for you.
              */
             get server_header(): string;
@@ -10722,7 +10721,7 @@ declare module 'gi://Soup?version=3.0' {
              *
              * As with {@link Session.user_agent}, if you set a
              * {@link Server.server_header} property that has trailing
-             * whitespace, {@link Soup.Server} will append its own product token (eg,
+             * whitespace, {@link Server} will append its own product token (eg,
              * `libsoup/2.3.2`) to the end of the header for you.
              */
             get serverHeader(): string;
@@ -11011,7 +11010,7 @@ declare module 'gi://Soup?version=3.0' {
              * Note that if you used {@link Server.listen_all} the returned URIs will use
              * the addresses `0.0.0.0` and `::`, rather than actually returning separate
              * URIs for each interface on the system.
-             * @returns a list of `GUris`, which you   must free when you are done with it.
+             * @returns a list of {@link GLib.Uri}, which you   must free with each element with {@link GLib.Uri.unref} when you are done with it.
              */
             get_uris(): GLib.Uri[];
             /**
@@ -11023,7 +11022,7 @@ declare module 'gi://Soup?version=3.0' {
              * certificate to use.
              *
              * If you are using the deprecated single-listener APIs, then a return value of
-             * `true` indicates that the {@link Soup.Server} serves https exclusively. If you are
+             * `true` indicates that the {@link Server} serves https exclusively. If you are
              * using {@link Server.listen}, etc, then a `true` return value merely indicates
              * that the server is *able* to do https, regardless of whether it actually
              * currently is or not. Use {@link Server.get_uris} to see if it currently has
@@ -11102,7 +11101,7 @@ declare module 'gi://Soup?version=3.0' {
              * resume I/O.
              *
              * This must only be called on a {@link ServerMessage} which was created by the
-             * {@link Soup.Server} and are currently doing I/O, such as those passed into a
+             * {@link Server} and are currently doing I/O, such as those passed into a
              * {@link ServerCallback} or emitted in a `Soup.Server::request-read`
              * signal.
              * @param msg a {@link Soup.ServerMessage} associated with `server`.
@@ -11148,7 +11147,7 @@ declare module 'gi://Soup?version=3.0' {
              * I/O won't actually resume until you return to the main loop.
              *
              * This must only be called on a {@link ServerMessage} which was created by the
-             * {@link Soup.Server} and are currently doing I/O, such as those passed into a
+             * {@link Server} and are currently doing I/O, such as those passed into a
              * {@link ServerCallback} or emitted in a `Soup.Server::request-read`
              * signal.
              * @param msg a {@link Soup.ServerMessage} associated with `server`.
@@ -11265,15 +11264,15 @@ declare module 'gi://Soup?version=3.0' {
         /**
          * An HTTP server request and response pair.
          *
-         * A SoupServerMessage represents an HTTP message that is being sent or
+         * A {@link ServerMessage} represents an HTTP message that is being sent or
          * received on a {@link Server}.
          *
-         * {@link Server} will create {@link Soup.ServerMessage}s automatically for
+         * {@link Server} will create {@link ServerMessage}s automatically for
          * incoming requests, which your application will receive via handlers.
          *
          * Note that libsoup's terminology here does not quite match the HTTP
          * specification: in RFC 2616, an "HTTP-message" is *either* a Request, *or* a
-         * Response. In libsoup, a {@link Soup.ServerMessage} combines both the request and the
+         * Response. In libsoup, a {@link ServerMessage} combines both the request and the
          * response.
          * @gir-type Class
          */
@@ -11295,13 +11294,13 @@ declare module 'gi://Soup?version=3.0' {
              */
             get tlsPeerCertificate(): Gio.TlsCertificate;
             /**
-             * The verification errors on {@link Soup.ServerMessage.tls_peer_certificate}
+             * The verification errors on {@link ServerMessage.tls_peer_certificate}
              * @since 3.2
              * @read-only
              */
             get tls_peer_certificate_errors(): Gio.TlsCertificateFlags;
             /**
-             * The verification errors on {@link Soup.ServerMessage.tls_peer_certificate}
+             * The verification errors on {@link ServerMessage.tls_peer_certificate}
              * @since 3.2
              * @read-only
              */
@@ -11466,7 +11465,7 @@ declare module 'gi://Soup?version=3.0' {
              */
             set_redirect(status_code: number, redirect_uri: string): void;
             /**
-             * Convenience function to set the response body of a {@link Soup.ServerMessage}. If
+             * Convenience function to set the response body of a {@link ServerMessage}. If
              * `content_type` is `null`, the response body must be empty as well.
              * @param content_type MIME Content-Type of the body
              * @param resp_use a {@link Soup.MemoryUse} describing how to handle `resp_body`
@@ -11483,7 +11482,7 @@ declare module 'gi://Soup?version=3.0' {
              */
             set_status(status_code: number, reason_phrase?: string | null): void;
             /**
-             * "Steals" the HTTP connection associated with `msg` from its {@link Soup.Server}. This
+             * "Steals" the HTTP connection associated with `msg` from its {@link Server}. This
              * happens immediately, regardless of the current state of the connection; if
              * the response to `msg` has not yet finished being sent, then it will be
              * discarded; you can steal the connection from a
@@ -11598,13 +11597,13 @@ declare module 'gi://Soup?version=3.0' {
         /**
          * Soup session state object.
          *
-         * {@link Soup.Session} is the object that controls client-side HTTP. A
-         * {@link Soup.Session} encapsulates all of the state that libsoup is keeping
+         * {@link Session} is the object that controls client-side HTTP. A
+         * {@link Session} encapsulates all of the state that libsoup is keeping
          * on behalf of your program; cached HTTP connections, authentication
          * information, etc. It also keeps track of various global options
          * and features that you are using.
          *
-         * Most applications will only need a single {@link Soup.Session}; the primary
+         * Most applications will only need a single {@link Session}; the primary
          * reason you might need multiple sessions is if you need to have
          * multiple independent authentication contexts. (Eg, you are
          * connecting to a server and authenticating as two different users at
@@ -11613,7 +11612,7 @@ declare module 'gi://Soup?version=3.0' {
          * one session for the first user, and a second session for the other
          * user.)
          *
-         * Additional {@link Soup.Session} functionality is provided by
+         * Additional {@link Session} functionality is provided by
          * {@link SessionFeature} objects, which can be added to a session with
          * {@link Session.add_feature} or {@link Session.add_feature_by_type}
          * For example, {@link Logger} provides support for
@@ -11625,7 +11624,7 @@ declare module 'gi://Soup?version=3.0' {
          *
          * All {@link Soup.Session}s are created with a {@link AuthManager}, and support
          * for `SOUP_TYPE_AUTH_BASIC` and `SOUP_TYPE_AUTH_DIGEST`. Additionally,
-         * sessions using the plain {@link Soup.Session} class (rather than one of its deprecated
+         * sessions using the plain {@link Session} class (rather than one of its deprecated
          * subtypes) have a {@link ContentDecoder} by default.
          *
          * Note that all async methods will invoke their callbacks on the thread-default
@@ -11654,7 +11653,7 @@ declare module 'gi://Soup?version=3.0' {
             get acceptLanguage(): string;
             set acceptLanguage(val: string);
             /**
-             * If `true`, {@link Soup.Session} will automatically set the string
+             * If `true`, {@link Session} will automatically set the string
              * for the "Accept-Language" header on every {@link Message}
              * sent, based on the return value of {@link GLib.get_language_names}.
              *
@@ -11664,7 +11663,7 @@ declare module 'gi://Soup?version=3.0' {
             get accept_language_auto(): boolean;
             set accept_language_auto(val: boolean);
             /**
-             * If `true`, {@link Soup.Session} will automatically set the string
+             * If `true`, {@link Session} will automatically set the string
              * for the "Accept-Language" header on every {@link Message}
              * sent, based on the return value of {@link GLib.get_language_names}.
              *
@@ -11855,7 +11854,7 @@ declare module 'gi://Soup?version=3.0' {
              * enclosed in parentheses, between or after the tokens.
              *
              * If you set a {@link Session.user_agent} property that has trailing
-             * whitespace, {@link Soup.Session} will append its own product token
+             * whitespace, {@link Session} will append its own product token
              * (eg, `libsoup/2.3.2`) to the end of the
              * header for you.
              */
@@ -11884,7 +11883,7 @@ declare module 'gi://Soup?version=3.0' {
              * enclosed in parentheses, between or after the tokens.
              *
              * If you set a {@link Session.user_agent} property that has trailing
-             * whitespace, {@link Soup.Session} will append its own product token
+             * whitespace, {@link Session} will append its own product token
              * (eg, `libsoup/2.3.2`) to the end of the
              * header for you.
              */
@@ -11953,7 +11952,7 @@ declare module 'gi://Soup?version=3.0' {
              * Adds `feature`'s functionality to `session`. You cannot add multiple
              * features of the same {@link GObject.Type} to a session.
              *
-             * See the main {@link Soup.Session} documentation for information on what
+             * See the main {@link Session} documentation for information on what
              * features are present in sessions by default.
              * @param feature an object that implements {@link Soup.SessionFeature}
              */
@@ -11969,7 +11968,7 @@ declare module 'gi://Soup?version=3.0' {
              * existing feature on `session` the chance to accept `feature_type` as
              * a "subfeature". This can be used to add new {@link Auth} types, for instance.
              *
-             * See the main {@link Soup.Session} documentation for information on what
+             * See the main {@link Session} documentation for information on what
              * features are present in sessions by default.
              * @param feature_type a {@link GObject.GType}
              */
@@ -12694,11 +12693,11 @@ declare module 'gi://Soup?version=3.0' {
          * WebSocket handshake, and {@link websocket_server_process_handshake} for
          * handling the server side.)
          *
-         * {@link Soup.WebsocketConnection} handles the details of WebSocket communication. You
+         * {@link WebsocketConnection} handles the details of WebSocket communication. You
          * can use {@link WebsocketConnection.send_text} and
          * {@link WebsocketConnection.send_binary} to send data, and the
          * `Soup.WebsocketConnection::message` signal to receive data.
-         * ({@link Soup.WebsocketConnection} currently only supports asynchronous I/O.)
+         * ({@link WebsocketConnection} currently only supports asynchronous I/O.)
          * @gir-type Class
          */
         class WebsocketConnection extends GObject.Object {
@@ -13018,7 +13017,7 @@ declare module 'gi://Soup?version=3.0' {
         /**
          * A WebSocket extension
          *
-         * {@link Soup.WebsocketExtension} is the base class for WebSocket extension objects.
+         * {@link WebsocketExtension} is the base class for WebSocket extension objects.
          * @gir-type Class
          */
         abstract class WebsocketExtension extends GObject.Object {
@@ -13245,7 +13244,7 @@ declare module 'gi://Soup?version=3.0' {
          * SoupWebsocketExtensionManager is the {@link SessionFeature} that handles WebSockets
          * extensions for a {@link Session}.
          *
-         * A {@link Soup.WebsocketExtensionManager} is added to the session by default, and normally
+         * A {@link WebsocketExtensionManager} is added to the session by default, and normally
          * you don't need to worry about it at all. However, if you want to
          * disable WebSocket extensions, you can remove the feature from the
          * session with {@link Session.remove_feature_by_type} or disable it on
@@ -13814,14 +13813,14 @@ declare module 'gi://Soup?version=3.0' {
             // Static methods
 
             /**
-             * Parses `header` and returns a {@link Soup.Cookie}.
+             * Parses `header` and returns a {@link Cookie}.
              *
              * If `header` contains multiple cookies, only the first one will be parsed.
              *
              * If `header` does not have "path" or "domain" attributes, they will
              * be defaulted from `origin`. If `origin` is `null`, path will default
              * to "/", but domain will be left as `null`. Note that this is not a
-             * valid state for a {@link Soup.Cookie}, and you will need to fill in some
+             * valid state for a {@link Cookie}, and you will need to fill in some
              * appropriate string for the domain if you want to actually make use
              * of the cookie.
              *
@@ -14015,7 +14014,7 @@ declare module 'gi://Soup?version=3.0' {
          */
         type HSTSEnforcerDBClass = typeof HSTSEnforcerDB;
         /**
-         * {@link Soup.HSTSPolicy} implements HTTP policies, as described by
+         * {@link HSTSPolicy} implements HTTP policies, as described by
          * [RFC 6797](http://tools.ietf.org/html/rfc6797).
          *
          * `domain` represents the host that this policy applies to. The domain
@@ -14112,7 +14111,7 @@ declare module 'gi://Soup?version=3.0' {
          */
         type LoggerClass = typeof Logger;
         /**
-         * {@link Soup.MessageBody} represents the request or response body of a
+         * {@link MessageBody} represents the request or response body of a
          * {@link Message}.
          *
          * Note that while `length` always reflects the full length of the
@@ -14212,7 +14211,7 @@ declare module 'gi://Soup?version=3.0' {
              */
             get_chunk(offset: number): GLib.Bytes | null;
             /**
-             * Handles the {@link Soup.MessageBody} part of receiving a chunk of data from
+             * Handles the {@link MessageBody} part of receiving a chunk of data from
              * the network.
              *
              * Normally this means appending `chunk` to `body`, exactly as with
@@ -14258,7 +14257,7 @@ declare module 'gi://Soup?version=3.0' {
              */
             unref(): void;
             /**
-             * Handles the {@link Soup.MessageBody} part of writing a chunk of data to the
+             * Handles the {@link MessageBody} part of writing a chunk of data to the
              * network.
              *
              * Normally this is a no-op, but if you have set `body`'s accumulate flag to
@@ -14448,7 +14447,7 @@ declare module 'gi://Soup?version=3.0' {
              * Beware that even if given a `total_length`, this function does not
              * check that the ranges are satisfiable.
              *
-             * {@link Soup.Server} has built-in handling for range requests. If your
+             * {@link Server} has built-in handling for range requests. If your
              * server handler returns a {@link Soup.Status.OK} response containing the
              * complete response body (rather than pausing the message and
              * returning some of the response body later), and there is a Range
@@ -14606,8 +14605,7 @@ declare module 'gi://Soup?version=3.0' {
         }
 
         /**
-         * An opaque type used to iterate over a %SoupMessageHeaders
-         * structure.
+         * An opaque type used to iterate over a {@link MessageHeaders} structure
          *
          * After intializing the iterator with {@link MessageHeadersIter.init}, call
          * {@link MessageHeadersIter.next} to fetch data from it.
@@ -14626,7 +14624,7 @@ declare module 'gi://Soup?version=3.0' {
 
             /**
              * Initializes `iter` for iterating `hdrs`.
-             * @param hdrs a %SoupMessageHeaders
+             * @param hdrs a {@link Soup.MessageHeaders}
              */
             static init(hdrs: MessageHeaders): MessageHeadersIter;
             /**
@@ -14636,7 +14634,7 @@ declare module 'gi://Soup?version=3.0' {
              * If `iter` has already yielded the last header, then
              * {@link MessageHeadersIter.next} will return `false` and `name` and `value`
              * will be unchanged.
-             * @param iter a %SoupMessageHeadersIter
+             * @param iter a {@link Soup.MessageHeadersIter}
              */
             static next(iter: MessageHeadersIter): [boolean, MessageHeadersIter, string, string];
         }
@@ -14816,12 +14814,12 @@ declare module 'gi://Soup?version=3.0' {
          * Of particular interest to HTTP are `multipart/byte-ranges` and
          * `multipart/form-data`,
          *
-         * Although the headers of a {@link Soup.Multipart} body part will contain the
+         * Although the headers of a {@link Multipart} body part will contain the
          * full headers from that body part, libsoup does not interpret them
          * according to MIME rules. For example, each body part is assumed to
          * have "binary" Content-Transfer-Encoding, even if its headers
          * explicitly state otherwise. In other words, don't try to use
-         * {@link Soup.Multipart} for handling real MIME multiparts.
+         * {@link Multipart} for handling real MIME multiparts.
          * @gir-type Struct
          */
         class Multipart {
@@ -14976,10 +14974,10 @@ declare module 'gi://Soup?version=3.0' {
         /**
          * Interface for miscellaneous {@link Session} features.
          *
-         * {@link Soup.SessionFeature} is the interface used by classes that extend
+         * {@link SessionFeature} is the interface used by classes that extend
          * the functionality of a {@link Session}. Some features like HTTP
          * authentication handling are implemented internally via
-         * {@link Soup.SessionFeature}s. Other features can be added to the session
+         * {@link SessionFeature}s. Other features can be added to the session
          * by the application. (Eg, {@link Logger}, {@link CookieJar}.)
          *
          * See {@link Session.add_feature}, etc, to add a feature to a session.

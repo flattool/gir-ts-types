@@ -12281,7 +12281,7 @@ declare module 'gi://WebKit?version=6.0' {
              * WebKitUserContentManager *manager = webkit_web_view_get_user_content_manager ();
              * g_signal_connect (manager, "script-message-received::foobar",
              *                   G_CALLBACK (handle_script_message), NULL);
-             * webkit_user_content_manager_register_script_message_handler (manager, "foobar");
+             * webkit_user_content_manager_register_script_message_handler (manager, "foobar", "world");
              * ```
              *
              * Registering a script message handler will fail if the requested
