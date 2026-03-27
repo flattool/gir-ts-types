@@ -3364,7 +3364,7 @@ declare module 'gi://Pango?version=1.0' {
              * Set the default font description for the context
              * @param desc the new pango font description
              */
-            set_font_description(desc?: FontDescription | null): void;
+            set_font_description(desc: FontDescription): void;
             /**
              * Sets the font map to be searched when fonts are looked-up
              * in this context.
