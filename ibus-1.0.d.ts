@@ -9708,6 +9708,7 @@ declare module 'gi://IBus?version=1.0' {
                  * @run-last
                  */
                 trigger: (arg0: number, arg1: any | null) => void;
+                [key: `trigger::${string}`]: (arg0: number, arg1: any | null) => void;
             }
 
             // Constructor properties interface

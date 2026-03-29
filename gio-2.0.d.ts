@@ -24796,6 +24796,7 @@ declare module 'gi://Gio?version=2.0' {
                  * @run-last
                  */
                 'g-signal::g-object-path': (arg0: string | null, arg1: string, arg2: GLib.Variant) => void;
+                [key: `g-signal::${string}`]: (arg0: string | null, arg1: string, arg2: GLib.Variant) => void;
             }
 
             // Constructor properties interface
@@ -52509,6 +52510,7 @@ declare module 'gi://Gio?version=2.0' {
                  * @run-last
                  */
                 'changed::settings-schema': (arg0: string) => void;
+                [key: `changed::${string}`]: (arg0: string) => void;
                 /**
                  * Emitted when the writability of a key has potentially changed.
                  *
@@ -52607,6 +52609,7 @@ declare module 'gi://Gio?version=2.0' {
                  * @run-last
                  */
                 'writable-changed::settings-schema': (arg0: string) => void;
+                [key: `writable-changed::${string}`]: (arg0: string) => void;
             }
 
             // Constructor properties interface

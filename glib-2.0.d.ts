@@ -60,13 +60,13 @@ declare module 'gi://GLib?version=2.0' {
          */
         type $ParseDeepVariantDict<State extends string> = string extends State
             ? VariantTypeError<"$ParseDeepVariantDict: 'string' is not a supported type.">
-            : State extends `${infer Key}${infer ValueType}}${infer Remaining}`
+            : State extends `${infer Key}${infer AfterKey}`
               ? Key extends 's' | 'o' | 'g' | 'n' | 'q' | 't' | 'd' | 'u' | 'i' | 'x' | 'y'
-                  ? ValueType extends 'v'
+                  ? AfterKey extends `v}${infer Remaining}`
                       ? [CreateIndexType<Key, Variant>, Remaining] // a{sv} preserves Variant
-                      : $ParseDeepVariantValue<ValueType> extends [infer V, '']
+                      : $ParseDeepVariantValue<AfterKey> extends [infer V, `}${infer Remaining}`]
                         ? [CreateIndexType<Key, V>, Remaining]
-                        : VariantTypeError<`Invalid dictionary value type: ${ValueType}`>
+                        : VariantTypeError<`Invalid dictionary value type in: ${AfterKey}`>
                   : VariantTypeError<`Invalid dictionary key type: ${Key}`>
               : VariantTypeError<`Invalid dictionary format: ${State}`>;
 
@@ -88,13 +88,13 @@ declare module 'gi://GLib?version=2.0' {
          */
         type $ParseDeepVariantKeyValue<State extends string> = string extends State
             ? VariantTypeError<"$ParseDeepVariantKeyValue: 'string' is not a supported type.">
-            : State extends `${infer Key}${infer ValueType}}${infer Remaining}`
+            : State extends `${infer Key}${infer AfterKey}`
               ? Key extends 's' | 'o' | 'g' | 'n' | 'q' | 't' | 'd' | 'u' | 'i' | 'x' | 'y'
-                  ? ValueType extends 'v'
+                  ? AfterKey extends `v}${infer Remaining}`
                       ? [[BasicTypeMap<Key>, Variant], Remaining] // Value remains Variant for 'v'
-                      : $ParseDeepVariantValue<ValueType> extends [infer V, '']
+                      : $ParseDeepVariantValue<AfterKey> extends [infer V, `}${infer Remaining}`]
                         ? [[BasicTypeMap<Key>, V], Remaining]
-                        : VariantTypeError<`Invalid key-value value type: ${ValueType}`>
+                        : VariantTypeError<`Invalid key-value value type in: ${AfterKey}`>
                   : VariantTypeError<`Invalid key-value key type: ${Key}`>
               : VariantTypeError<`Invalid key-value format: ${State}`>;
 
@@ -249,8 +249,10 @@ declare module 'gi://GLib?version=2.0' {
          */
         type $ParseShallowVariantDict<State extends string> = string extends State
             ? VariantTypeError<"$ParseShallowVariantDict: 'string' is not a supported type.">
-            : State extends `${string}}${infer Remaining}`
-              ? [{ [key: string]: Variant }, Remaining]
+            : $SkipUntil<State, '}'> extends [infer Remaining]
+              ? Remaining extends string
+                  ? [{ [key: string]: Variant }, Remaining]
+                  : VariantTypeError<`Invalid dictionary format`>
               : VariantTypeError<`Invalid dictionary format`>;
 
         /**
@@ -258,8 +260,10 @@ declare module 'gi://GLib?version=2.0' {
          */
         type $ParseShallowVariantKeyValue<State extends string> = string extends State
             ? VariantTypeError<"$ParseShallowVariantKeyValue: 'string' is not a supported type.">
-            : State extends `${string}}${infer Remaining}`
-              ? [[any, Variant], Remaining]
+            : $SkipUntil<State, '}'> extends [infer Remaining]
+              ? Remaining extends string
+                  ? [[any, Variant], Remaining]
+                  : VariantTypeError<`Invalid key-value format`>
               : VariantTypeError<`Invalid key-value format`>;
 
         /**
@@ -286,7 +290,7 @@ declare module 'gi://GLib?version=2.0' {
               ? Type extends 's' | 'o' | 'g' | 'b' | 'n' | 'q' | 't' | 'd' | 'u' | 'i' | 'x' | 'y' | 'h' | '?'
                   ? [BasicTypeMap<Type>, Remaining]
                   : Type extends 'v'
-                    ? [any, Remaining] // Variants are fully unpacked to any
+                    ? [unknown, Remaining] // Variants are fully unpacked to unknown
                     : // Container types
                       Type extends '('
                       ? $ParseRecursiveVariantTuple<Remaining>
@@ -329,13 +333,13 @@ declare module 'gi://GLib?version=2.0' {
          */
         type $ParseRecursiveVariantDict<State extends string> = string extends State
             ? VariantTypeError<"$ParseRecursiveVariantDict: 'string' is not a supported type.">
-            : State extends `${infer Key}${infer ValueType}}${infer Remaining}`
+            : State extends `${infer Key}${infer AfterKey}`
               ? Key extends 's' | 'o' | 'g' | 'n' | 'q' | 't' | 'd' | 'u' | 'i' | 'x' | 'y'
-                  ? ValueType extends 'v'
-                      ? [CreateIndexType<Key, any>, Remaining] // a{sv} becomes any when recursively unpacked
-                      : $ParseRecursiveVariantValue<ValueType> extends [infer V, '']
+                  ? AfterKey extends `v}${infer Remaining}`
+                      ? [CreateIndexType<Key, unknown>, Remaining] // a{sv} becomes unknown when recursively unpacked
+                      : $ParseRecursiveVariantValue<AfterKey> extends [infer V, `}${infer Remaining}`]
                         ? [CreateIndexType<Key, V>, Remaining]
-                        : VariantTypeError<`Invalid dictionary value type: ${ValueType}`>
+                        : VariantTypeError<`Invalid dictionary value type in: ${AfterKey}`>
                   : VariantTypeError<`Invalid dictionary key type: ${Key}`>
               : VariantTypeError<`Invalid dictionary format: ${State}`>;
 
@@ -344,13 +348,13 @@ declare module 'gi://GLib?version=2.0' {
          */
         type $ParseRecursiveVariantKeyValue<State extends string> = string extends State
             ? VariantTypeError<"$ParseRecursiveVariantKeyValue: 'string' is not a supported type.">
-            : State extends `${infer Key}${infer ValueType}}${infer Remaining}`
+            : State extends `${infer Key}${infer AfterKey}`
               ? Key extends 's' | 'o' | 'g' | 'n' | 'q' | 't' | 'd' | 'u' | 'i' | 'x' | 'y'
-                  ? ValueType extends 'v'
-                      ? [[BasicTypeMap<Key>, any], Remaining] // Value is fully unpacked to any
-                      : $ParseRecursiveVariantValue<ValueType> extends [infer V, '']
+                  ? AfterKey extends `v}${infer Remaining}`
+                      ? [[BasicTypeMap<Key>, unknown], Remaining] // Value is fully unpacked to unknown
+                      : $ParseRecursiveVariantValue<AfterKey> extends [infer V, `}${infer Remaining}`]
                         ? [[BasicTypeMap<Key>, V], Remaining]
-                        : VariantTypeError<`Invalid key-value value type: ${ValueType}`>
+                        : VariantTypeError<`Invalid key-value value type in: ${AfterKey}`>
                   : VariantTypeError<`Invalid key-value key type: ${Key}`>
               : VariantTypeError<`Invalid key-value format: ${State}`>;
 
@@ -421,9 +425,9 @@ declare module 'gi://GLib?version=2.0' {
          */
         type $ParseConstructorInputDict<State extends string> = string extends State
             ? VariantTypeError<'Invalid dictionary state'>
-            : State extends `${infer Key}${infer ValueType}}${infer Remaining}`
+            : State extends `${infer Key}${infer AfterKey}`
               ? Key extends 's' | 'o' | 'g' | 'n' | 'q' | 't' | 'd' | 'u' | 'i' | 'x' | 'y'
-                  ? $ParseConstructorInputValue<ValueType> extends [infer V, '']
+                  ? $ParseConstructorInputValue<AfterKey> extends [infer V, `}${infer Remaining}`]
                       ? [CreateIndexType<Key, V>, Remaining]
                       : VariantTypeError<`Invalid dictionary value type`>
                   : VariantTypeError<`Invalid dictionary key type`>
@@ -434,9 +438,9 @@ declare module 'gi://GLib?version=2.0' {
          */
         type $ParseConstructorInputKeyValue<State extends string> = string extends State
             ? VariantTypeError<'Invalid key-value state'>
-            : State extends `${infer Key}${infer ValueType}}${infer Remaining}`
+            : State extends `${infer Key}${infer AfterKey}`
               ? Key extends 's' | 'o' | 'g' | 'n' | 'q' | 't' | 'd' | 'u' | 'i' | 'x' | 'y'
-                  ? $ParseConstructorInputValue<ValueType> extends [infer V, '']
+                  ? $ParseConstructorInputValue<AfterKey> extends [infer V, `}${infer Remaining}`]
                       ? [[BasicTypeMap<Key>, V], Remaining]
                       : VariantTypeError<`Invalid key-value value type`>
                   : VariantTypeError<`Invalid key-value key type`>
@@ -462,13 +466,23 @@ declare module 'gi://GLib?version=2.0' {
 
         type $VariantTypeToString<T extends VariantType> = T extends VariantType<infer S> ? S : never;
 
-        type $ToTuple<T extends readonly VariantType[]> = T extends []
+        type $ToTuple<T extends readonly Variant[]> = T extends []
+            ? ''
+            : T extends [Variant<infer S>]
+              ? `${S}`
+              : T extends [Variant<infer S>, ...infer U]
+                ? U extends [...Variant[]]
+                    ? `${S}${$ToTuple<U>}`
+                    : never
+                : '?';
+
+        type $ToTupleVT<T extends readonly VariantType[]> = T extends []
             ? ''
             : T extends [VariantType<infer S>]
               ? `${S}`
               : T extends [VariantType<infer S>, ...infer U]
                 ? U extends [...VariantType[]]
-                    ? `${S}${$ToTuple<U>}`
+                    ? `${S}${$ToTupleVT<U>}`
                     : never
                 : '?';
 
@@ -683,7 +697,7 @@ declare module 'gi://GLib?version=2.0' {
              */
             static new_strv(strv: string[]): Variant<'as'>;
 
-            static new_tuple<Items extends ReadonlyArray<VariantType> | readonly [VariantType]>(
+            static new_tuple<Items extends ReadonlyArray<Variant> | readonly [Variant]>(
                 children: Items,
             ): Variant<`(${$ToTuple<Items>})`>;
             static new_uint16(value: number): Variant<'q'>;
@@ -1129,7 +1143,7 @@ declare module 'gi://GLib?version=2.0' {
             static new_maybe<S extends string>(element: VariantType<S>): VariantType<`m${S}`>;
             static new_tuple<Items extends ReadonlyArray<VariantType> | readonly [VariantType]>(
                 items: Items,
-            ): VariantType<`(${$ToTuple<Items>})`>;
+            ): VariantType<`(${$ToTupleVT<Items>})`>;
             // Members
             copy(): VariantType<S>;
             dup_string(): string;
