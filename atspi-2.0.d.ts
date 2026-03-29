@@ -2366,6 +2366,7 @@ declare module 'gi://Atspi?version=2.0' {
                  * @run-last
                  */
                 'region-changed': (arg0: number, arg1: number) => void;
+                [key: `mode-changed::${string}`]: (arg0: number, arg1: string) => void;
             }
 
             // Constructor properties interface

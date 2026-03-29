@@ -2385,6 +2385,7 @@ declare module 'gi://WebKit?version=6.0' {
                  * @run-last
                  */
                 'create-web-view::id': () => WebView;
+                [key: `create-web-view::${string}`]: () => WebView;
             }
 
             // Constructor properties interface
@@ -12365,6 +12366,11 @@ declare module 'gi://WebKit?version=6.0' {
                  * @run-last
                  */
                 'script-message-with-reply-received': (
+                    arg0: JavaScriptCore.Value,
+                    arg1: ScriptMessageReply,
+                ) => boolean | void;
+                [key: `script-message-received::${string}`]: (arg0: JavaScriptCore.Value) => void;
+                [key: `script-message-with-reply-received::${string}`]: (
                     arg0: JavaScriptCore.Value,
                     arg1: ScriptMessageReply,
                 ) => boolean | void;

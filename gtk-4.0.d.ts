@@ -14318,6 +14318,7 @@ declare module 'gi://Gtk?version=4.0' {
                  * @run-first
                  */
                 'custom-item-activated::content-type': (arg0: string) => void;
+                [key: `custom-item-activated::${string}`]: (arg0: string) => void;
             }
 
             // Constructor properties interface
@@ -142079,6 +142080,7 @@ declare module 'gi://Gtk?version=4.0' {
                  * @run-first
                  */
                 'offset-changed::orientation': (arg0: string) => void;
+                [key: `offset-changed::${string}`]: (arg0: string) => void;
             }
 
             // Constructor properties interface

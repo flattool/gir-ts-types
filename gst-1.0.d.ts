@@ -8835,6 +8835,7 @@ declare module 'gi://Gst?version=1.0' {
                  * @run-last
                  */
                 'message::parent': (arg0: Message) => void;
+                [key: `message::${string}`]: (arg0: Message) => void;
                 /**
                  * A message has been posted on the bus. This signal is emitted from the
                  * thread that posted the message so one has to be careful with locking.
@@ -8868,6 +8869,7 @@ declare module 'gi://Gst?version=1.0' {
                  * @run-last
                  */
                 'sync-message::parent': (arg0: Message) => void;
+                [key: `sync-message::${string}`]: (arg0: Message) => void;
             }
 
             // Constructor properties interface
@@ -12768,6 +12770,7 @@ declare module 'gi://Gst?version=1.0' {
                  * @run-first
                  */
                 'deep-notify::parent': (arg0: Object, arg1: GObject.ParamSpec) => void;
+                [key: `deep-notify::${string}`]: (arg0: Object, arg1: GObject.ParamSpec) => void;
             }
 
             // Constructor properties interface
@@ -16300,6 +16303,7 @@ declare module 'gi://Gst?version=1.0' {
                  * @run-first
                  */
                 'stream-notify::parent': (arg0: Stream, arg1: GObject.ParamSpec) => void;
+                [key: `stream-notify::${string}`]: (arg0: Stream, arg1: GObject.ParamSpec) => void;
             }
 
             // Constructor properties interface
