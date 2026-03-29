@@ -11800,6 +11800,7 @@ declare module 'gi://Adw?version=1' {
                  * @run-last
                  */
                 'response::width-request': (arg0: string) => void;
+                [key: `response::${string}`]: (arg0: string) => void;
             }
 
             // Constructor properties interface
@@ -68315,6 +68316,7 @@ declare module 'gi://Adw?version=1' {
                  * @run-last
                  */
                 'response::width-request': (arg0: string) => void;
+                [key: `response::${string}`]: (arg0: string) => void;
             }
 
             // Constructor properties interface

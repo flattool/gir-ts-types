@@ -10432,6 +10432,11 @@ declare module 'gi://Gtk?version=3.0' {
                     arg1: number,
                     arg2: Gdk.ModifierType,
                 ) => boolean | void;
+                [key: `accel-activate::${string}`]: (
+                    arg0: GObject.Object,
+                    arg1: number,
+                    arg2: Gdk.ModifierType,
+                ) => boolean | void;
                 /**
                  * The accel-changed signal is emitted when an entry
                  * is added to or removed from the accel group.
@@ -10456,6 +10461,11 @@ declare module 'gi://Gtk?version=3.0' {
                  * @run-first
                  */
                 'accel-changed::modifier-mask': (arg0: number, arg1: Gdk.ModifierType, arg2: GObject.Closure) => void;
+                [key: `accel-changed::${string}`]: (
+                    arg0: number,
+                    arg1: Gdk.ModifierType,
+                    arg2: GObject.Closure,
+                ) => void;
             }
 
             // Constructor properties interface
@@ -11419,6 +11429,7 @@ declare module 'gi://Gtk?version=3.0' {
                  * @run-last
                  */
                 changed: (arg0: string, arg1: number, arg2: Gdk.ModifierType) => void;
+                [key: `changed::${string}`]: (arg0: string, arg1: number, arg2: Gdk.ModifierType) => void;
             }
 
             // Constructor properties interface
@@ -16301,6 +16312,7 @@ declare module 'gi://Gtk?version=3.0' {
                  * @run-first
                  */
                 'custom-item-activated::editing-canceled': (arg0: string) => void;
+                [key: `custom-item-activated::${string}`]: (arg0: string) => void;
             }
 
             // Constructor properties interface
@@ -154538,6 +154550,7 @@ declare module 'gi://Gtk?version=3.0' {
                  * @run-first
                  */
                 'offset-changed::orientation': (arg0: string) => void;
+                [key: `offset-changed::${string}`]: (arg0: string) => void;
             }
 
             // Constructor properties interface
@@ -358044,6 +358057,7 @@ declare module 'gi://Gtk?version=3.0' {
                  * @run-first
                  */
                 'child-notify::window': (arg0: GObject.ParamSpec) => void;
+                [key: `child-notify::${string}`]: (arg0: GObject.ParamSpec) => void;
             }
 
             // Constructor properties interface

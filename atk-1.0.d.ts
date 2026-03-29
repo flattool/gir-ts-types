@@ -6254,6 +6254,7 @@ declare module 'gi://Atk?version=1.0' {
                  * @run-last
                  */
                 'active-descendant-changed::accessible-value': (arg0: Object) => void;
+                [key: `active-descendant-changed::${string}`]: (arg0: Object) => void;
                 /**
                  * The signal "children-changed" is emitted when a child is added or
                  * removed from an object. It supports two details: "add" and
@@ -6407,6 +6408,7 @@ declare module 'gi://Atk?version=1.0' {
                  * @run-last
                  */
                 'children-changed::accessible-value': (arg0: number, arg1: Object) => void;
+                [key: `children-changed::${string}`]: (arg0: number, arg1: Object) => void;
                 /**
                  * The signal "property-change" is emitted when an object's property
                  * value changes. `arg1` contains an {@link Atk.PropertyValues} with the name
@@ -6730,6 +6732,7 @@ declare module 'gi://Atk?version=1.0' {
                  * @run-last
                  */
                 'property-change::accessible-value': (arg0: PropertyValues) => void;
+                [key: `property-change::${string}`]: (arg0: PropertyValues) => void;
                 /**
                  * The "state-change" signal is emitted when an object's state
                  * changes.  The detail value identifies the state type which has
@@ -6883,6 +6886,7 @@ declare module 'gi://Atk?version=1.0' {
                  * @run-last
                  */
                 'state-change::accessible-value': (arg0: string, arg1: boolean) => void;
+                [key: `state-change::${string}`]: (arg0: string, arg1: boolean) => void;
             }
 
             // Constructor properties interface
