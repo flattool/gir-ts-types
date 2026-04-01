@@ -3529,6 +3529,14 @@ declare module 'gi://GstVulkan?version=1.0' {
             constructor(cmd: Vulkan.CommandBuffer, level: Vulkan.CommandBufferLevel);
 
             static new_wrapped(cmd: Vulkan.CommandBuffer, level: Vulkan.CommandBufferLevel): VulkanCommandBuffer;
+
+            // Methods
+
+            /**
+             * Increases the refcount of the given buffer by one.
+             * @returns `cmd`
+             */
+            ref(): VulkanCommandBuffer;
         }
 
         /**
@@ -3617,6 +3625,14 @@ declare module 'gi://GstVulkan?version=1.0' {
                 set: Vulkan.DescriptorSet,
                 layouts: VulkanHandle[],
             ): VulkanDescriptorSet;
+
+            // Methods
+
+            /**
+             * Increases the refcount of the given buffer by one.
+             * @returns `set`
+             */
+            ref(): VulkanDescriptorSet;
         }
 
         /**
@@ -3815,6 +3831,11 @@ declare module 'gi://GstVulkan?version=1.0' {
              * @param user_data callback user data
              */
             free_shader(user_data?: any | null): void;
+            /**
+             * Increases the refcount of the given handle by one.
+             * @returns `buf`
+             */
+            ref(): VulkanHandle;
         }
 
         /**
@@ -3963,6 +3984,14 @@ declare module 'gi://GstVulkan?version=1.0' {
             constructor(image: VulkanImageMemory, create_info: Vulkan.ImageViewCreateInfo);
 
             static ['new'](image: VulkanImageMemory, create_info: Vulkan.ImageViewCreateInfo): VulkanImageView;
+
+            // Methods
+
+            /**
+             * Increases the refcount of the given trash object by one.
+             * @returns `trash`
+             */
+            ref(): VulkanImageView;
         }
 
         /**
@@ -4138,6 +4167,14 @@ declare module 'gi://GstVulkan?version=1.0' {
              * @param user_data the {@link Gst.MiniObject}
              */
             static object_unref(device: VulkanDevice, user_data?: any | null): void;
+
+            // Methods
+
+            /**
+             * Increases the refcount of the given trash object by one.
+             * @returns `trash`
+             */
+            ref(): VulkanTrash;
         }
 
         /**

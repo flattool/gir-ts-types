@@ -10812,8 +10812,8 @@ declare module 'gi://Gcr?version=4' {
             // Constructor properties interface
 
             interface ConstructorProps extends GObject.Object.ConstructorProps {
-                prompt_type: GObject.GType;
-                promptType: GObject.GType;
+                prompt_type: GObject.GTypeInput;
+                promptType: GObject.GTypeInput;
                 prompting: boolean;
             }
         }

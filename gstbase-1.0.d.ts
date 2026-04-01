@@ -5864,6 +5864,10 @@ declare module 'gi://GstBase?version=1.0' {
          */
         abstract class TypeFindData {
             static $gtype: GObject.GType<TypeFindData>;
+
+            // Methods
+
+            free(): void;
         }
 
         /**

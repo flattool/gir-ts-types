@@ -724,6 +724,13 @@ declare module 'gi://GstCuda?version=1.0' {
             flags: CudaGst.graphicsRegisterFlags;
             registered: boolean;
             mapped: boolean;
+
+            // Methods
+
+            /**
+             * Free `resource`
+             */
+            free(): void;
         }
 
         /**

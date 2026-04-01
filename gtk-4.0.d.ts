@@ -34534,8 +34534,8 @@ declare module 'gi://Gtk?version=4.0' {
                 filename: string;
                 io_priority: number;
                 ioPriority: number;
-                item_type: GObject.GType;
-                itemType: GObject.GType;
+                item_type: GObject.GTypeInput;
+                itemType: GObject.GTypeInput;
                 loading: boolean;
                 n_items: number;
                 nItems: number;
@@ -78265,8 +78265,8 @@ declare module 'gi://Gtk?version=4.0' {
                 file: Gio.File;
                 io_priority: number;
                 ioPriority: number;
-                item_type: GObject.GType;
-                itemType: GObject.GType;
+                item_type: GObject.GTypeInput;
+                itemType: GObject.GTypeInput;
                 loading: boolean;
                 monitored: boolean;
                 n_items: number;
@@ -110353,8 +110353,8 @@ declare module 'gi://Gtk?version=4.0' {
                 extends GObject.Object.ConstructorProps, Gio.ListModel.ConstructorProps, SectionModel.ConstructorProps {
                 filter: Filter;
                 incremental: boolean;
-                item_type: GObject.GType;
-                itemType: GObject.GType;
+                item_type: GObject.GTypeInput;
+                itemType: GObject.GTypeInput;
                 model: Gio.ListModel;
                 n_items: number;
                 nItems: number;
@@ -112235,8 +112235,8 @@ declare module 'gi://Gtk?version=4.0' {
 
             interface ConstructorProps<A extends GObject.Object = GObject.Object>
                 extends GObject.Object.ConstructorProps, Gio.ListModel.ConstructorProps, SectionModel.ConstructorProps {
-                item_type: GObject.GType;
-                itemType: GObject.GType;
+                item_type: GObject.GTypeInput;
+                itemType: GObject.GTypeInput;
                 model: Gio.ListModel;
                 n_items: number;
                 nItems: number;
@@ -158601,8 +158601,8 @@ declare module 'gi://Gtk?version=4.0' {
                 extends GObject.Object.ConstructorProps, Gio.ListModel.ConstructorProps, SectionModel.ConstructorProps {
                 has_map: boolean;
                 hasMap: boolean;
-                item_type: GObject.GType;
-                itemType: GObject.GType;
+                item_type: GObject.GTypeInput;
+                itemType: GObject.GTypeInput;
                 model: Gio.ListModel;
                 n_items: number;
                 nItems: number;
@@ -167124,8 +167124,8 @@ declare module 'gi://Gtk?version=4.0' {
 
             interface ConstructorProps<A extends GObject.Object = GObject.Object>
                 extends Filter.ConstructorProps, Gio.ListModel.ConstructorProps, Buildable.ConstructorProps {
-                item_type: GObject.GType;
-                itemType: GObject.GType;
+                item_type: GObject.GTypeInput;
+                itemType: GObject.GTypeInput;
                 n_items: number;
                 nItems: number;
             }
@@ -167893,8 +167893,8 @@ declare module 'gi://Gtk?version=4.0' {
                     Gio.ListModel.ConstructorProps,
                     SectionModel.ConstructorProps,
                     SelectionModel.ConstructorProps {
-                item_type: GObject.GType;
-                itemType: GObject.GType;
+                item_type: GObject.GTypeInput;
+                itemType: GObject.GTypeInput;
                 model: Gio.ListModel;
                 n_items: number;
                 nItems: number;
@@ -168803,8 +168803,8 @@ declare module 'gi://Gtk?version=4.0' {
 
             interface ConstructorProps<A extends GObject.Object = GObject.Object>
                 extends Sorter.ConstructorProps, Gio.ListModel.ConstructorProps, Buildable.ConstructorProps {
-                item_type: GObject.GType;
-                itemType: GObject.GType;
+                item_type: GObject.GTypeInput;
+                itemType: GObject.GTypeInput;
                 n_items: number;
                 nItems: number;
             }
@@ -169955,8 +169955,8 @@ declare module 'gi://Gtk?version=4.0' {
                     Gio.ListModel.ConstructorProps,
                     SectionModel.ConstructorProps,
                     SelectionModel.ConstructorProps {
-                item_type: GObject.GType;
-                itemType: GObject.GType;
+                item_type: GObject.GTypeInput;
+                itemType: GObject.GTypeInput;
                 model: Gio.ListModel;
                 n_items: number;
                 nItems: number;
@@ -211789,8 +211789,8 @@ declare module 'gi://Gtk?version=4.0' {
 
             interface ConstructorProps<A extends GObject.Object = GObject.Object>
                 extends GObject.Object.ConstructorProps, Gio.ListModel.ConstructorProps {
-                item_type: GObject.GType;
-                itemType: GObject.GType;
+                item_type: GObject.GTypeInput;
+                itemType: GObject.GTypeInput;
                 model: SelectionModel;
                 n_items: number;
                 nItems: number;
@@ -215187,8 +215187,8 @@ declare module 'gi://Gtk?version=4.0' {
 
             interface ConstructorProps<A extends GObject.Object = GObject.Object>
                 extends EventController.ConstructorProps, Gio.ListModel.ConstructorProps, Buildable.ConstructorProps {
-                item_type: GObject.GType;
-                itemType: GObject.GType;
+                item_type: GObject.GTypeInput;
+                itemType: GObject.GTypeInput;
                 mnemonic_modifiers: Gdk.ModifierType;
                 mnemonicModifiers: Gdk.ModifierType;
                 model: Gio.ListModel;
@@ -223115,8 +223115,8 @@ declare module 'gi://Gtk?version=4.0' {
                 autoselect: boolean;
                 can_unselect: boolean;
                 canUnselect: boolean;
-                item_type: GObject.GType;
-                itemType: GObject.GType;
+                item_type: GObject.GTypeInput;
+                itemType: GObject.GTypeInput;
                 model: Gio.ListModel;
                 n_items: number;
                 nItems: number;
@@ -224891,8 +224891,8 @@ declare module 'gi://Gtk?version=4.0' {
 
             interface ConstructorProps<A extends GObject.Object = GObject.Object>
                 extends GObject.Object.ConstructorProps, Gio.ListModel.ConstructorProps, SectionModel.ConstructorProps {
-                item_type: GObject.GType;
-                itemType: GObject.GType;
+                item_type: GObject.GTypeInput;
+                itemType: GObject.GTypeInput;
                 model: Gio.ListModel;
                 n_items: number;
                 nItems: number;
@@ -226261,8 +226261,8 @@ declare module 'gi://Gtk?version=4.0' {
             interface ConstructorProps<A extends GObject.Object = GObject.Object>
                 extends GObject.Object.ConstructorProps, Gio.ListModel.ConstructorProps, SectionModel.ConstructorProps {
                 incremental: boolean;
-                item_type: GObject.GType;
-                itemType: GObject.GType;
+                item_type: GObject.GTypeInput;
+                itemType: GObject.GTypeInput;
                 model: Gio.ListModel;
                 n_items: number;
                 nItems: number;
@@ -237484,8 +237484,8 @@ declare module 'gi://Gtk?version=4.0' {
 
             interface ConstructorProps<A extends GObject.Object = StringObject>
                 extends GObject.Object.ConstructorProps, Gio.ListModel.ConstructorProps, Buildable.ConstructorProps {
-                item_type: GObject.GType;
-                itemType: GObject.GType;
+                item_type: GObject.GTypeInput;
+                itemType: GObject.GTypeInput;
                 n_items: number;
                 nItems: number;
                 strings: string[];
@@ -257711,8 +257711,8 @@ declare module 'gi://Gtk?version=4.0' {
             interface ConstructorProps<A extends GObject.Object = GObject.Object>
                 extends GObject.Object.ConstructorProps, Gio.ListModel.ConstructorProps {
                 autoexpand: boolean;
-                item_type: GObject.GType;
-                itemType: GObject.GType;
+                item_type: GObject.GTypeInput;
+                itemType: GObject.GTypeInput;
                 model: Gio.ListModel;
                 n_items: number;
                 nItems: number;

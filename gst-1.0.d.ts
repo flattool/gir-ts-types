@@ -13965,7 +13965,7 @@ declare module 'gi://Gst?version=1.0' {
             interface ConstructorProps extends Object.ConstructorProps {
                 caps: Caps;
                 direction: PadDirection;
-                gtype: GObject.GType;
+                gtype: GObject.GTypeInput;
                 name_template: string;
                 nameTemplate: string;
                 presence: PadPresence;
@@ -20009,6 +20009,11 @@ declare module 'gi://Gst?version=1.0' {
              */
             add_redirect_entry(location: string, tag_list?: TagList | null, entry_struct?: Structure | null): void;
             /**
+             * Creates a copy of the message. Returns a copy of the message.
+             * @returns a new copy of `msg`. MT safe
+             */
+            copy(): Message;
+            /**
              * @returns the number of entries stored in the message
              */
             get_num_redirect_entries(): number;
@@ -20711,6 +20716,13 @@ declare module 'gi://Gst?version=1.0' {
              */
             add_parent(parent: MiniObject): void;
             /**
+             * Creates a copy of the mini-object.
+             *
+             * MT safe
+             * @returns the new mini-object if copying is possible, `null` otherwise.
+             */
+            copy(): MiniObject | null;
+            /**
              * This function gets back user data pointers stored via
              * `gst_mini_object_set_qdata()`.
              * @param quark A {@link GLib.Quark}, naming the user data pointer
@@ -20737,6 +20749,18 @@ declare module 'gi://Gst?version=1.0' {
              * @returns `true` if `object` could be locked.
              */
             lock(flags: LockFlags | null): boolean;
+            /**
+             * Increase the reference count of the mini-object.
+             *
+             * Note that the refcount affects the writability
+             * of `mini`-object, see `gst_mini_object_is_writable()`. It is
+             * important to note that keeping additional references to
+             * GstMiniObject instances can potentially increase the number
+             * of memcpy operations in a pipeline, especially if the miniobject
+             * is a {@link Gst.Buffer}.
+             * @returns the mini-object.
+             */
+            ref(): MiniObject;
             /**
              * This removes `parent` as a parent for `object`. See
              * `gst_mini_object_add_parent()`.
@@ -20773,6 +20797,11 @@ declare module 'gi://Gst?version=1.0' {
              * @param flags {@link Gst.LockFlags}
              */
             unlock(flags: LockFlags | null): void;
+            /**
+             * Decreases the reference count of the mini-object, possibly freeing
+             * the mini-object.
+             */
+            unref(): void;
         }
 
         /**
