@@ -3766,39 +3766,6 @@ declare module 'gi://Gtk?version=4.0' {
         /**
          * @gir-type Enum
          */
-        export namespace RestoreReason {
-            export const $gtype: GObject.GType<RestoreReason>;
-        }
-
-        /**
-         * Enumerates possible reasons for an application to restore saved state.
-         *
-         * See `Gtk.Application::restore-state`.
-         * @gir-type Enum
-         * @since 4.24
-         */
-        enum RestoreReason {
-            /**
-             * Don't restore anything
-             */
-            PRISTINE,
-            /**
-             * This is normal launch. Restore as little as is reasonable
-             */
-            LAUNCH,
-            /**
-             * The application has crashed before. Try to restore the previous state
-             */
-            RECOVER,
-            /**
-             * This is a session restore. Restore the previous state as far as possible
-             */
-            RESTORE,
-        }
-
-        /**
-         * @gir-type Enum
-         */
         export namespace RevealerTransitionType {
             export const $gtype: GObject.GType<RevealerTransitionType>;
         }
@@ -4579,7 +4546,6 @@ declare module 'gi://Gtk?version=4.0' {
              *   a different SVG renderer.
              */
             static NOT_IMPLEMENTED: number;
-            static FEATURE_DISABLED: number;
 
             // Constructors
 
@@ -25953,59 +25919,6 @@ declare module 'gi://Gtk?version=4.0' {
                  */
                 'query-end': () => void;
                 /**
-                 * Emitted when application global state is restored.
-                 *
-                 * The handler for this signal should do the opposite of what the
-                 * corresponding handler for `Gtk.Application::save-state`
-                 * does.
-                 * @signal
-                 * @since 4.24
-                 * @run-last
-                 */
-                'restore-state': (arg0: RestoreReason, arg1: GLib.Variant) => boolean | void;
-                /**
-                 * Emitted when an application's per-window state is restored.
-                 *
-                 * In response to this signal, you should create a new application
-                 * window, add it to `application`, apply the provided `state`, and present it.
-                 * The application can use the `reason` to determine how much of the state
-                 * should be restored.
-                 *
-                 * You must be careful to be robust in the face of app upgrades and downgrades:
-                 * the `state` might have been created by a previous or occasionally even a future
-                 * version of your app. Do not assume that a given key exists in the state.
-                 * Apps must try to restore state saved by a previous version, but are free to
-                 * discard state if it was written by a future version.
-                 *
-                 * GTK will remember which window the user was using most recently, and will
-                 * emit this signal for that window first. Thus, if you decide that the provided
-                 * `reason` means that only one window should be restored, you can reliably
-                 * ignore emissions if a window already exists
-                 *
-                 * Note that this signal is not emitted only during the app's initial launch.
-                 * If all windows are closed but the app keeps running, the signal will be
-                 * emitted the next time a new window is opened.
-                 * @signal
-                 * @since 4.24
-                 * @run-first
-                 */
-                'restore-window': (arg0: RestoreReason, arg1: GLib.Variant) => void;
-                /**
-                 * Emitted when the application is saving global state.
-                 *
-                 * The handler for this signal should persist any
-                 * global state of `application` into `dict`.
-                 *
-                 * See `Gtk.Application::restore-state` for how to
-                 * restore global state, and `Gtk.ApplicationWindow::save-state`
-                 * and `Gtk.Application::restore-window` for handling
-                 * per-window state.
-                 * @signal
-                 * @since 4.24
-                 * @run-last
-                 */
-                'save-state': (arg0: GLib.VariantDict) => boolean | void;
-                /**
                  * Emitted when a window is added to an application.
                  *
                  * See {@link Gtk.Application.add_window}.
@@ -26023,11 +25936,9 @@ declare module 'gi://Gtk?version=4.0' {
                  */
                 'window-removed': (arg0: Window) => void;
                 'notify::active-window': (pspec: GObject.ParamSpec) => void;
-                'notify::autosave-interval': (pspec: GObject.ParamSpec) => void;
                 'notify::menubar': (pspec: GObject.ParamSpec) => void;
                 'notify::register-session': (pspec: GObject.ParamSpec) => void;
                 'notify::screensaver-active': (pspec: GObject.ParamSpec) => void;
-                'notify::support-save': (pspec: GObject.ParamSpec) => void;
                 'notify::action-group': (pspec: GObject.ParamSpec) => void;
                 'notify::application-id': (pspec: GObject.ParamSpec) => void;
                 'notify::flags': (pspec: GObject.ParamSpec) => void;
@@ -26048,15 +25959,11 @@ declare module 'gi://Gtk?version=4.0' {
                     Gio.ActionMap.ConstructorProps {
                 active_window: Window;
                 activeWindow: Window;
-                autosave_interval: number;
-                autosaveInterval: number;
                 menubar: Gio.MenuModel;
                 register_session: boolean;
                 registerSession: boolean;
                 screensaver_active: boolean;
                 screensaverActive: boolean;
-                support_save: boolean;
-                supportSave: boolean;
             }
         }
 
@@ -26134,27 +26041,6 @@ declare module 'gi://Gtk?version=4.0' {
          * default window icon. Use {@link Gtk.Window.set_default_icon_name} or
          * {@link Gtk.Window.icon_name} to override that behavior.
          *
-         * ## State saving
-         *
-         * {@link Gtk.Application} registers with a session manager if possible and
-         * offers various functionality related to the session life-cycle,
-         * such as state saving.
-         *
-         * State-saving functionality can be enabled by setting the
-         * {@link Gtk.Application.support_save} property to true.
-         *
-         * In order to save and restore per-window state, applications must
-         * connect to the `Gtk.Application::restore-window` signal and
-         * handle the `Gtk.ApplicationWindow::save-state` signal. There
-         * are also `Gtk.Application::restore-state` and
-         * `Gtk.Application::save-state` signals, which can be used
-         * for global state that is not connected to any window.
-         *
-         * {@link Gtk.Application} automatically saves state before app shutdown, and by
-         * default periodically auto-saves app state (as configured by the
-         * {@link Gtk.Application.autosave_interval} property). Applications can
-         * also call {@link Gtk.Application.save} themselves at opportune times.
-         *
          * # Inhibiting
          *
          * An application can block various ways to end the session with
@@ -26191,20 +26077,6 @@ declare module 'gi://Gtk?version=4.0' {
              * @read-only
              */
             get activeWindow(): Window;
-            /**
-             * The number of seconds between automatic state saves. Defaults to 15.
-             * A value of 0 will opt out of automatic state saving.
-             * @since 4.24
-             */
-            get autosave_interval(): number;
-            set autosave_interval(val: number);
-            /**
-             * The number of seconds between automatic state saves. Defaults to 15.
-             * A value of 0 will opt out of automatic state saving.
-             * @since 4.24
-             */
-            get autosaveInterval(): number;
-            set autosaveInterval(val: number);
             /**
              * The menu model to be used for the application's menu bar.
              */
@@ -26246,20 +26118,6 @@ declare module 'gi://Gtk?version=4.0' {
              * @read-only
              */
             get screensaverActive(): boolean;
-            /**
-             * Set this property to true if the application supports
-             * state saving and restoring.
-             * @since 4.24
-             */
-            get support_save(): boolean;
-            set support_save(val: boolean);
-            /**
-             * Set this property to true if the application supports
-             * state saving and restoring.
-             * @since 4.24
-             */
-            get supportSave(): boolean;
-            set supportSave(val: boolean);
 
             /**
              * Compile-time signal type information.
@@ -26302,26 +26160,6 @@ declare module 'gi://Gtk?version=4.0' {
             // Virtual methods
 
             /**
-             * Class closure for the `Gtk.Application::restore-state` signal.
-             * @param reason the reason for restoring state
-             * @param state a dictionary containing the application state to restore
-             * @virtual
-             */
-            vfunc_restore_state(reason: RestoreReason, state: GLib.Variant): boolean;
-            /**
-             * Class closure for the `Gtk.Application::restore-window` signal.
-             * @param reason the reason this window is restored
-             * @param state the state to restore, as saved by a   `Gtk.ApplicationWindow::save-state` handler
-             * @virtual
-             */
-            vfunc_restore_window(reason: RestoreReason, state?: GLib.Variant | null): void;
-            /**
-             * Class closure for the `Gtk.Application::save-state` signal.
-             * @param state a dictionary where to store the application's state
-             * @virtual
-             */
-            vfunc_save_state(state: GLib.VariantDict): boolean;
-            /**
              * Signal emitted when a {@link Gtk.Window} is added to
              *    application through `gtk_application_add_window()`.
              * @param window
@@ -26357,14 +26195,6 @@ declare module 'gi://Gtk?version=4.0' {
              * @param window a window
              */
             add_window(window: Window): void;
-            /**
-             * Forget state that has been previously saved and prevent
-             * further automatic state saving.
-             *
-             * In order to reenable state saving, call
-             * {@link Gtk.Application.save}.
-             */
-            forget(): void;
             /**
              * Gets the accelerators that are currently associated with
              * the given action.
@@ -26493,16 +26323,6 @@ declare module 'gi://Gtk?version=4.0' {
              * @param window a window
              */
             remove_window(window: Window): void;
-            /**
-             * Saves the state of application.
-             *
-             * See {@link Gtk.Application.forget} for a way to forget the state.
-             *
-             * If {@link Gtk.Application.register_session} is set, {@link Gtk.Application}
-             * calls this function automatically when the application is closed or
-             * the session ends.
-             */
-            save(): void;
             /**
              * Sets zero or more keyboard accelerators that will trigger the
              * given action.
@@ -27540,26 +27360,6 @@ declare module 'gi://Gtk?version=4.0' {
         namespace ApplicationWindow {
             // Signal signatures
             interface SignalSignatures extends Window.SignalSignatures {
-                /**
-                 * The handler for this signal should persist any
-                 * application-specific state of `window` into `dict`.
-                 *
-                 * Note that window management state such as maximized,
-                 * fullscreen, or window size should not be saved as
-                 * part of this, they are handled by GTK.
-                 *
-                 * You must be careful to be robust in the face of app upgrades and downgrades:
-                 * the `state` might have been created by a previous or occasionally even a future
-                 * version of your app. Do not assume that a given key exists in the state.
-                 * Apps must try to restore state saved by a previous version, but are free to
-                 * discard state if it was written by a future version.
-                 *
-                 * See `Gtk.Application::restore-window`.
-                 * @signal
-                 * @since 4.24
-                 * @run-last
-                 */
-                'save-state': (arg0: GLib.VariantDict) => boolean | void;
                 'notify::show-menubar': (pspec: GObject.ParamSpec) => void;
                 'notify::application': (pspec: GObject.ParamSpec) => void;
                 'notify::child': (pspec: GObject.ParamSpec) => void;
@@ -27795,15 +27595,6 @@ declare module 'gi://Gtk?version=4.0' {
                     : never
             ): void;
             emit(signal: string, ...args: any[]): void;
-
-            // Virtual methods
-
-            /**
-             * Class closure for the `Gtk.ApplicationWindow::save-state` signal.
-             * @param dict a dictionary where to store the window's state
-             * @virtual
-             */
-            vfunc_save_state(dict: GLib.VariantDict): boolean;
 
             // Methods
 
@@ -36069,8 +35860,8 @@ declare module 'gi://Gtk?version=4.0' {
                 filename: string;
                 io_priority: number;
                 ioPriority: number;
-                item_type: GObject.GType;
-                itemType: GObject.GType;
+                item_type: GObject.GTypeInput;
+                itemType: GObject.GTypeInput;
                 loading: boolean;
                 n_items: number;
                 nItems: number;
@@ -80205,8 +79996,8 @@ declare module 'gi://Gtk?version=4.0' {
                 file: Gio.File;
                 io_priority: number;
                 ioPriority: number;
-                item_type: GObject.GType;
-                itemType: GObject.GType;
+                item_type: GObject.GTypeInput;
+                itemType: GObject.GTypeInput;
                 loading: boolean;
                 monitored: boolean;
                 n_items: number;
@@ -91727,9 +91518,8 @@ declare module 'gi://Gtk?version=4.0' {
          *
          * {@link Gtk.EmojiChooser} supports the following keyboard shortcuts:
          *
-         * - <kbd>Ctrl</kbd>+<kbd>N</kbd> scrolls to the next section.
-         * - <kbd>Ctrl</kbd>+<kbd>P</kbd> scrolls to the previous section.
-         * - <kbd>Enter</kbd> to select the first emoji result.
+         * - <kbd>Ctrl</kbd>+<kbd>N</kbd> scrolls th the next section.
+         * - <kbd>Ctrl</kbd>+<kbd>P</kbd> scrolls th the previous section.
          *
          * # Actions
          *
@@ -112604,8 +112394,8 @@ declare module 'gi://Gtk?version=4.0' {
                 extends GObject.Object.ConstructorProps, Gio.ListModel.ConstructorProps, SectionModel.ConstructorProps {
                 filter: Filter;
                 incremental: boolean;
-                item_type: GObject.GType;
-                itemType: GObject.GType;
+                item_type: GObject.GTypeInput;
+                itemType: GObject.GTypeInput;
                 model: Gio.ListModel;
                 n_items: number;
                 nItems: number;
@@ -114540,8 +114330,8 @@ declare module 'gi://Gtk?version=4.0' {
 
             interface ConstructorProps<A extends GObject.Object = GObject.Object>
                 extends GObject.Object.ConstructorProps, Gio.ListModel.ConstructorProps, SectionModel.ConstructorProps {
-                item_type: GObject.GType;
-                itemType: GObject.GType;
+                item_type: GObject.GTypeInput;
+                itemType: GObject.GTypeInput;
                 model: Gio.ListModel;
                 n_items: number;
                 nItems: number;
@@ -161447,8 +161237,8 @@ declare module 'gi://Gtk?version=4.0' {
                 extends GObject.Object.ConstructorProps, Gio.ListModel.ConstructorProps, SectionModel.ConstructorProps {
                 has_map: boolean;
                 hasMap: boolean;
-                item_type: GObject.GType;
-                itemType: GObject.GType;
+                item_type: GObject.GTypeInput;
+                itemType: GObject.GTypeInput;
                 model: Gio.ListModel;
                 n_items: number;
                 nItems: number;
@@ -170015,8 +169805,8 @@ declare module 'gi://Gtk?version=4.0' {
 
             interface ConstructorProps<A extends GObject.Object = GObject.Object>
                 extends Filter.ConstructorProps, Gio.ListModel.ConstructorProps, Buildable.ConstructorProps {
-                item_type: GObject.GType;
-                itemType: GObject.GType;
+                item_type: GObject.GTypeInput;
+                itemType: GObject.GTypeInput;
                 n_items: number;
                 nItems: number;
             }
@@ -170784,8 +170574,8 @@ declare module 'gi://Gtk?version=4.0' {
                     Gio.ListModel.ConstructorProps,
                     SectionModel.ConstructorProps,
                     SelectionModel.ConstructorProps {
-                item_type: GObject.GType;
-                itemType: GObject.GType;
+                item_type: GObject.GTypeInput;
+                itemType: GObject.GTypeInput;
                 model: Gio.ListModel;
                 n_items: number;
                 nItems: number;
@@ -171694,8 +171484,8 @@ declare module 'gi://Gtk?version=4.0' {
 
             interface ConstructorProps<A extends GObject.Object = GObject.Object>
                 extends Sorter.ConstructorProps, Gio.ListModel.ConstructorProps, Buildable.ConstructorProps {
-                item_type: GObject.GType;
-                itemType: GObject.GType;
+                item_type: GObject.GTypeInput;
+                itemType: GObject.GTypeInput;
                 n_items: number;
                 nItems: number;
             }
@@ -172846,8 +172636,8 @@ declare module 'gi://Gtk?version=4.0' {
                     Gio.ListModel.ConstructorProps,
                     SectionModel.ConstructorProps,
                     SelectionModel.ConstructorProps {
-                item_type: GObject.GType;
-                itemType: GObject.GType;
+                item_type: GObject.GTypeInput;
+                itemType: GObject.GTypeInput;
                 model: Gio.ListModel;
                 n_items: number;
                 nItems: number;
@@ -216113,8 +215903,8 @@ declare module 'gi://Gtk?version=4.0' {
 
             interface ConstructorProps<A extends GObject.Object = GObject.Object>
                 extends GObject.Object.ConstructorProps, Gio.ListModel.ConstructorProps {
-                item_type: GObject.GType;
-                itemType: GObject.GType;
+                item_type: GObject.GTypeInput;
+                itemType: GObject.GTypeInput;
                 model: SelectionModel;
                 n_items: number;
                 nItems: number;
@@ -219618,8 +219408,8 @@ declare module 'gi://Gtk?version=4.0' {
 
             interface ConstructorProps<A extends GObject.Object = GObject.Object>
                 extends EventController.ConstructorProps, Gio.ListModel.ConstructorProps, Buildable.ConstructorProps {
-                item_type: GObject.GType;
-                itemType: GObject.GType;
+                item_type: GObject.GTypeInput;
+                itemType: GObject.GTypeInput;
                 mnemonic_modifiers: Gdk.ModifierType;
                 mnemonicModifiers: Gdk.ModifierType;
                 model: Gio.ListModel;
@@ -227591,8 +227381,8 @@ declare module 'gi://Gtk?version=4.0' {
                 autoselect: boolean;
                 can_unselect: boolean;
                 canUnselect: boolean;
-                item_type: GObject.GType;
-                itemType: GObject.GType;
+                item_type: GObject.GTypeInput;
+                itemType: GObject.GTypeInput;
                 model: Gio.ListModel;
                 n_items: number;
                 nItems: number;
@@ -229367,8 +229157,8 @@ declare module 'gi://Gtk?version=4.0' {
 
             interface ConstructorProps<A extends GObject.Object = GObject.Object>
                 extends GObject.Object.ConstructorProps, Gio.ListModel.ConstructorProps, SectionModel.ConstructorProps {
-                item_type: GObject.GType;
-                itemType: GObject.GType;
+                item_type: GObject.GTypeInput;
+                itemType: GObject.GTypeInput;
                 model: Gio.ListModel;
                 n_items: number;
                 nItems: number;
@@ -230800,8 +230590,8 @@ declare module 'gi://Gtk?version=4.0' {
             interface ConstructorProps<A extends GObject.Object = GObject.Object>
                 extends GObject.Object.ConstructorProps, Gio.ListModel.ConstructorProps, SectionModel.ConstructorProps {
                 incremental: boolean;
-                item_type: GObject.GType;
-                itemType: GObject.GType;
+                item_type: GObject.GTypeInput;
+                itemType: GObject.GTypeInput;
                 model: Gio.ListModel;
                 n_items: number;
                 nItems: number;
@@ -242181,8 +241971,8 @@ declare module 'gi://Gtk?version=4.0' {
 
             interface ConstructorProps<A extends GObject.Object = StringObject>
                 extends GObject.Object.ConstructorProps, Gio.ListModel.ConstructorProps, Buildable.ConstructorProps {
-                item_type: GObject.GType;
-                itemType: GObject.GType;
+                item_type: GObject.GTypeInput;
+                itemType: GObject.GTypeInput;
                 n_items: number;
                 nItems: number;
                 strings: string[];
@@ -243549,7 +243339,6 @@ declare module 'gi://Gtk?version=4.0' {
                  */
                 error: (arg0: GLib.Error) => void;
                 'notify::features': (pspec: GObject.ParamSpec) => void;
-                'notify::overflow': (pspec: GObject.ParamSpec) => void;
                 'notify::playing': (pspec: GObject.ParamSpec) => void;
                 'notify::resource': (pspec: GObject.ParamSpec) => void;
                 'notify::state': (pspec: GObject.ParamSpec) => void;
@@ -243564,7 +243353,6 @@ declare module 'gi://Gtk?version=4.0' {
                     Gdk.Paintable.ConstructorProps,
                     SymbolicPaintable.ConstructorProps {
                 features: SvgFeatures;
-                overflow: Overflow;
                 playing: boolean;
                 resource: string;
                 state: number;
@@ -243616,7 +243404,7 @@ declare module 'gi://Gtk?version=4.0' {
          * Among the graphical elements, `<textPath>` and `<foreignObject>`
          * are not supported.
          *
-         * Among the structural elements, `<view>` is not supported.
+         * Among the structural elements, `<a>` and `<view>` are not supported.
          *
          * In the `<filter>` element, the following primitives are not
          * supported: feConvolveMatrix, feDiffuseLighting,
@@ -243628,8 +243416,8 @@ declare module 'gi://Gtk?version=4.0' {
          * In animation elements, the parsing of `begin` and `end` attributes
          * is limited, and the `min` and `max` attributes are not supported.
          *
-         * Lastly, there is no interactivity, so links can't be activated
-         * and pseudo-classes like :hover have no effect in CSS.
+         * Lastly, there is only minimal CSS support (the style attribute,
+         * but not `<style>`), and no interactivity.
          *
          *
          * ## SVG Extensions
@@ -243709,10 +243497,6 @@ declare module 'gi://Gtk?version=4.0' {
          *
          *     fill='url(#gpa:warning) orange'
          *
-         * GtkSvg also allows to refer to symbolic colors like system colors
-         * in CSS, with names like SymbolicForeground, SymbolicSuccess, etc.
-         * These can be used whenever a color is required.
-         *
          * In contrast to SVG 1.1 and 2.0, we allow the `transform` attribute
          * to be animated with `<animate>`.
          * @gir-type Class
@@ -243732,12 +243516,6 @@ declare module 'gi://Gtk?version=4.0' {
              */
             get features(): SvgFeatures;
             set features(val: SvgFeatures);
-            /**
-             * Whether the rendering will be clipped to the bounds.
-             * @since 4.24
-             */
-            get overflow(): Overflow;
-            set overflow(val: Overflow);
             /**
              * Whether the paintable is currently animating its content.
              *
@@ -243822,11 +243600,6 @@ declare module 'gi://Gtk?version=4.0' {
              */
             get_features(): SvgFeatures;
             /**
-             * Gets the current overflow value.
-             * @returns the current overflow value
-             */
-            get_overflow(): Overflow;
-            /**
              * Gets the current state of the paintable.
              * @returns the state
              */
@@ -243908,16 +243681,6 @@ declare module 'gi://Gtk?version=4.0' {
              * @param clock the frame clock
              */
             set_frame_clock(clock: Gdk.FrameClock): void;
-            /**
-             * Sets whether the rendering will be clipped
-             * to the bounds.
-             *
-             * Clipping is expected for {@link Gdk.Paintable}
-             * semantics, so this property should not be
-             * changed when using a {@link Gtk.Svg} as a paintable.
-             * @param overflow the new overflow value
-             */
-            set_overflow(overflow: Overflow | null): void;
             /**
              * Sets the state of the paintable.
              *
@@ -263670,8 +263433,8 @@ declare module 'gi://Gtk?version=4.0' {
             interface ConstructorProps<A extends GObject.Object = GObject.Object>
                 extends GObject.Object.ConstructorProps, Gio.ListModel.ConstructorProps {
                 autoexpand: boolean;
-                item_type: GObject.GType;
-                itemType: GObject.GType;
+                item_type: GObject.GTypeInput;
+                itemType: GObject.GTypeInput;
                 model: Gio.ListModel;
                 n_items: number;
                 nItems: number;

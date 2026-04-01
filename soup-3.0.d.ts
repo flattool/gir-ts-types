@@ -1243,17 +1243,6 @@ declare module 'gi://Soup?version=3.0' {
          */
         function header_contains(header: string, token: string): boolean;
         /**
-         * Parses `header` to see if it contains the token `token` (matched
-         * case-sensitively).
-         *
-         * Note that this can't be used with lists that have qvalues.
-         * @param header An HTTP header suitable for parsing with   {@link header_parse_list}
-         * @param token a token
-         * @returns whether or not `header` contains `token`
-         * @since 3.8
-         */
-        function header_contains_case_sensitive(header: string, token: string): boolean;
-        /**
          * Frees `param_list`.
          * @param param_list a {@link GLib.HashTable} returned from   {@link header_parse_param_list} or {@link header_parse_semi_param_list}
          */
@@ -12660,7 +12649,6 @@ declare module 'gi://Soup?version=3.0' {
                 'notify::keepalive-interval': (pspec: GObject.ParamSpec) => void;
                 'notify::keepalive-pong-timeout': (pspec: GObject.ParamSpec) => void;
                 'notify::max-incoming-payload-size': (pspec: GObject.ParamSpec) => void;
-                'notify::max-total-message-size': (pspec: GObject.ParamSpec) => void;
                 'notify::origin': (pspec: GObject.ParamSpec) => void;
                 'notify::protocol': (pspec: GObject.ParamSpec) => void;
                 'notify::state': (pspec: GObject.ParamSpec) => void;
@@ -12681,8 +12669,6 @@ declare module 'gi://Soup?version=3.0' {
                 keepalivePongTimeout: number;
                 max_incoming_payload_size: number;
                 maxIncomingPayloadSize: number;
-                max_total_message_size: number;
-                maxTotalMessageSize: number;
                 origin: string;
                 protocol: string;
                 state: WebsocketState;
@@ -12789,57 +12775,19 @@ declare module 'gi://Soup?version=3.0' {
             get keepalivePongTimeout(): number;
             set keepalivePongTimeout(val: number);
             /**
-             * The maximum payload size for incoming packets, or 0 to not limit it.
+             * The maximum payload size for incoming packets.
              *
-             * Each message may consist of multiple packets, so also refer to
-             * {@link WebsocketConnection.max_total_message_size}.
+             * The protocol expects or 0 to not limit it.
              */
             get max_incoming_payload_size(): number;
             set max_incoming_payload_size(val: number);
             /**
-             * The maximum payload size for incoming packets, or 0 to not limit it.
+             * The maximum payload size for incoming packets.
              *
-             * Each message may consist of multiple packets, so also refer to
-             * {@link WebsocketConnection.max_total_message_size}.
+             * The protocol expects or 0 to not limit it.
              */
             get maxIncomingPayloadSize(): number;
             set maxIncomingPayloadSize(val: number);
-            /**
-             * The maximum size for incoming messages.
-             *
-             * Set to a value to limit the total message size, or 0 to not
-             * limit it.
-             *
-             * {@link Server.add_websocket_handler} will set this to a nonzero
-             * default value to mitigate denial of service attacks. Clients must
-             * choose their own default if they need to mitigate denial of service
-             * attacks. You also need to set your own default if creating your own
-             * server SoupWebsocketConnection without using SoupServer.
-             *
-             * Each message may consist of multiple packets, so also refer to
-             * {@link WebsocketConnection.max_incoming_payload_size}.
-             * @since 3.8
-             */
-            get max_total_message_size(): number;
-            set max_total_message_size(val: number);
-            /**
-             * The maximum size for incoming messages.
-             *
-             * Set to a value to limit the total message size, or 0 to not
-             * limit it.
-             *
-             * {@link Server.add_websocket_handler} will set this to a nonzero
-             * default value to mitigate denial of service attacks. Clients must
-             * choose their own default if they need to mitigate denial of service
-             * attacks. You also need to set your own default if creating your own
-             * server SoupWebsocketConnection without using SoupServer.
-             *
-             * Each message may consist of multiple packets, so also refer to
-             * {@link WebsocketConnection.max_incoming_payload_size}.
-             * @since 3.8
-             */
-            get maxTotalMessageSize(): number;
-            set maxTotalMessageSize(val: number);
             /**
              * The client's Origin.
              * @construct-only
@@ -12979,11 +12927,6 @@ declare module 'gi://Soup?version=3.0' {
              */
             get_max_incoming_payload_size(): number;
             /**
-             * Gets the maximum total message size allowed for packets.
-             * @returns the maximum total message size.
-             */
-            get_max_total_message_size(): number;
-            /**
              * Get the origin of the WebSocket.
              * @returns the origin
              */
@@ -13060,13 +13003,6 @@ declare module 'gi://Soup?version=3.0' {
              * @param max_incoming_payload_size the maximum payload size
              */
             set_max_incoming_payload_size(max_incoming_payload_size: number): void;
-            /**
-             * Sets the maximum total message size allowed for packets.
-             *
-             * It does not limit the outgoing packet size.
-             * @param max_total_message_size the maximum total message size
-             */
-            set_max_total_message_size(max_total_message_size: number): void;
         }
 
         namespace WebsocketExtension {

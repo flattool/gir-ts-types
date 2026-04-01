@@ -2111,6 +2111,16 @@ declare module 'gi://GIRepository?version=2.0' {
              * @returns `true` if there are more attributes
              */
             iterate_attributes(iterator: AttributeIter): [boolean, AttributeIter, string, string];
+            /**
+             * Increases the reference count of `info`.
+             * @returns the same `info`.
+             */
+            ref(): BaseInfo;
+            /**
+             * Decreases the reference count of `info`. When its reference count
+             * drops to 0, the info is freed.
+             */
+            unref(): void;
         }
 
         /**

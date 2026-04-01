@@ -1036,11 +1036,11 @@ declare module 'gi://Json?version=1.0' {
          *       return FALSE;
          *     }
          *
-         *   JsonNode *root = json_parser_get_root (parser);
+         *   g_autoptr(JsonNode) root = json_parser_get_root (parser);
          *
          *   // manipulate the object tree from the root node
          *
-         *   return TRUE;
+         *   return TRUE
          * }
          * ```
          *

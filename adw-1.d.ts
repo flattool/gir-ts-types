@@ -13248,11 +13248,9 @@ declare module 'gi://Adw?version=1' {
             interface SignalSignatures extends Gtk.Application.SignalSignatures {
                 'notify::style-manager': (pspec: GObject.ParamSpec) => void;
                 'notify::active-window': (pspec: GObject.ParamSpec) => void;
-                'notify::autosave-interval': (pspec: GObject.ParamSpec) => void;
                 'notify::menubar': (pspec: GObject.ParamSpec) => void;
                 'notify::register-session': (pspec: GObject.ParamSpec) => void;
                 'notify::screensaver-active': (pspec: GObject.ParamSpec) => void;
-                'notify::support-save': (pspec: GObject.ParamSpec) => void;
                 'notify::action-group': (pspec: GObject.ParamSpec) => void;
                 'notify::application-id': (pspec: GObject.ParamSpec) => void;
                 'notify::flags': (pspec: GObject.ParamSpec) => void;
@@ -50902,10 +50900,10 @@ declare module 'gi://Adw?version=1' {
 
             interface ConstructorProps<A extends GObject.Object = GObject.Object>
                 extends GObject.Object.ConstructorProps, Gio.ListModel.ConstructorProps {
-                enum_type: GObject.GType;
-                enumType: GObject.GType;
-                item_type: GObject.GType;
-                itemType: GObject.GType;
+                enum_type: GObject.GTypeInput;
+                enumType: GObject.GTypeInput;
+                item_type: GObject.GTypeInput;
+                itemType: GObject.GTypeInput;
                 n_items: number;
                 nItems: number;
             }
@@ -98698,8 +98696,8 @@ declare module 'gi://Adw?version=1' {
                     GObject.Object.ConstructorProps,
                     Gio.ListModel.ConstructorProps,
                     Gtk.Buildable.ConstructorProps {
-                item_type: GObject.GType;
-                itemType: GObject.GType;
+                item_type: GObject.GTypeInput;
+                itemType: GObject.GTypeInput;
                 n_items: number;
                 nItems: number;
                 title: string;
@@ -134755,8 +134753,8 @@ declare module 'gi://Adw?version=1' {
                     Gio.ListModel.ConstructorProps,
                     Gtk.SectionModel.ConstructorProps,
                     Gtk.SelectionModel.ConstructorProps {
-                item_type: GObject.GType;
-                itemType: GObject.GType;
+                item_type: GObject.GTypeInput;
+                itemType: GObject.GTypeInput;
                 n_items: number;
                 nItems: number;
                 selected_page: ViewStackPage;

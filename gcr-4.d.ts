@@ -9943,7 +9943,7 @@ declare module 'gi://Gcr?version=4' {
              * displayed by the prompt allowing the user to select or deselect it.
              *
              * The initial value of the choice can be set with the
-             * `gcr_prompt_set_choice_chosen()` method.
+             * `gcr_prompt_set_choice_label()` method.
              *
              * If this is `null`, then no additional choice is being displayed.
              * @param choice_label the additional choice or `null`
@@ -10812,8 +10812,8 @@ declare module 'gi://Gcr?version=4' {
             // Constructor properties interface
 
             interface ConstructorProps extends GObject.Object.ConstructorProps {
-                prompt_type: GObject.GType;
-                promptType: GObject.GType;
+                prompt_type: GObject.GTypeInput;
+                promptType: GObject.GTypeInput;
                 prompting: boolean;
             }
         }
@@ -12392,7 +12392,7 @@ declare module 'gi://Gcr?version=4' {
              * displayed by the prompt allowing the user to select or deselect it.
              *
              * The initial value of the choice can be set with the
-             * `gcr_prompt_set_choice_chosen()` method.
+             * `gcr_prompt_set_choice_label()` method.
              *
              * If this is `null`, then no additional choice is being displayed.
              * @param choice_label the additional choice or `null`
