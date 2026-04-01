@@ -21,6 +21,8 @@ jobs:
             sdk: "48"
           - branch: "sdk-v49"
             sdk: "49"
+          - branch: "sdk-v50"
+            sdk: "50"
           - branch: "main"
             sdk: "master"
 
