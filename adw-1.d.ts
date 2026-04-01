@@ -50516,8 +50516,8 @@ declare module 'gi://Adw?version=1' {
 
             interface ConstructorProps<A extends GObject.Object = GObject.Object>
                 extends GObject.Object.ConstructorProps, Gio.ListModel.ConstructorProps {
-                enum_type: GObject.GType;
-                enumType: GObject.GType;
+                enum_type: GObject.GTypeInput;
+                enumType: GObject.GTypeInput;
             }
         }
 

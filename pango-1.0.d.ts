@@ -3364,7 +3364,7 @@ declare module 'gi://Pango?version=1.0' {
              * Set the default font description for the context
              * @param desc the new pango font description
              */
-            set_font_description(desc?: FontDescription | null): void;
+            set_font_description(desc: FontDescription): void;
             /**
              * Sets the font map to be searched when fonts are looked-up
              * in this context.
@@ -3972,8 +3972,8 @@ declare module 'gi://Pango?version=1.0' {
                 isMonospace: boolean;
                 is_variable: boolean;
                 isVariable: boolean;
-                item_type: GObject.GType;
-                itemType: GObject.GType;
+                item_type: GObject.GTypeInput;
+                itemType: GObject.GTypeInput;
                 n_items: number;
                 nItems: number;
                 name: string;
@@ -4735,8 +4735,8 @@ declare module 'gi://Pango?version=1.0' {
 
             interface ConstructorProps<A extends GObject.Object = GObject.Object>
                 extends GObject.Object.ConstructorProps, Gio.ListModel.ConstructorProps {
-                item_type: GObject.GType;
-                itemType: GObject.GType;
+                item_type: GObject.GTypeInput;
+                itemType: GObject.GTypeInput;
                 n_items: number;
                 nItems: number;
             }
@@ -4837,7 +4837,7 @@ declare module 'gi://Pango?version=1.0' {
              * @param name a family name
              * @virtual
              */
-            vfunc_get_family(name: string): FontFamily;
+            vfunc_get_family(name: string): FontFamily | null;
             /**
              * Returns the current serial number of `fontmap`.
              *
@@ -4920,7 +4920,7 @@ declare module 'gi://Pango?version=1.0' {
              * @param name a family name
              * @returns the {@link Pango.FontFamily}
              */
-            get_family(name: string): FontFamily;
+            get_family(name: string): FontFamily | null;
             /**
              * Returns the current serial number of `fontmap`.
              *

@@ -365265,7 +365265,7 @@ declare module 'gi://Gtk?version=3.0' {
              * gdk_screen_height () - window_height)` (note that this
              * example does not take multi-head scenarios into account).
              *
-             * The [Extended Window Manager Hints Specification](http://www.freedesktop.org/Standards/wm-spec)
+             * The [Extended Window Manager Hints Specification](https://specifications.freedesktop.org/wm/latest/)
              * has a nice table of gravities in the “implementation notes” section.
              *
              * The `gtk_window_get_position()` documentation may also be relevant.
@@ -365756,7 +365756,7 @@ declare module 'gi://Gtk?version=3.0' {
              * on {@link Gtk.Widget}.
              *
              * Note that, according to the
-             * [Extended Window Manager Hints Specification](http://www.freedesktop.org/Standards/wm-spec),
+             * [Extended Window Manager Hints Specification](https://specifications.freedesktop.org/wm/latest/),
              * the above state is mainly meant for user preferences and should not
              * be used by applications e.g. for drawing attention to their
              * dialogs.
@@ -365780,7 +365780,7 @@ declare module 'gi://Gtk?version=3.0' {
              * on {@link Gtk.Widget}.
              *
              * Note that, according to the
-             * [Extended Window Manager Hints Specification](http://www.freedesktop.org/Standards/wm-spec),
+             * [Extended Window Manager Hints Specification](https://specifications.freedesktop.org/wm/latest/),
              * the above state is mainly meant for user preferences and should not
              * be used by applications e.g. for drawing attention to their
              * dialogs.
@@ -371209,6 +371209,11 @@ declare module 'gi://Gtk?version=3.0' {
 
             // Methods
 
+            /**
+             * Copies a stock item, mostly useful for language bindings and not in applications.
+             * @returns a new {@link Gtk.StockItem}
+             */
+            copy(): StockItem;
             /**
              * Frees a stock item allocated on the heap, such as one returned by
              * `gtk_stock_item_copy()`. Also frees the fields inside the stock item,
