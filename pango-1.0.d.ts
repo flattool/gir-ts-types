@@ -3972,8 +3972,8 @@ declare module 'gi://Pango?version=1.0' {
                 isMonospace: boolean;
                 is_variable: boolean;
                 isVariable: boolean;
-                item_type: GObject.GType;
-                itemType: GObject.GType;
+                item_type: GObject.GTypeInput;
+                itemType: GObject.GTypeInput;
                 n_items: number;
                 nItems: number;
                 name: string;
@@ -4735,8 +4735,8 @@ declare module 'gi://Pango?version=1.0' {
 
             interface ConstructorProps<A extends GObject.Object = GObject.Object>
                 extends GObject.Object.ConstructorProps, Gio.ListModel.ConstructorProps {
-                item_type: GObject.GType;
-                itemType: GObject.GType;
+                item_type: GObject.GTypeInput;
+                itemType: GObject.GTypeInput;
                 n_items: number;
                 nItems: number;
             }

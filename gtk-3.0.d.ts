@@ -371210,6 +371210,11 @@ declare module 'gi://Gtk?version=3.0' {
             // Methods
 
             /**
+             * Copies a stock item, mostly useful for language bindings and not in applications.
+             * @returns a new {@link Gtk.StockItem}
+             */
+            copy(): StockItem;
+            /**
              * Frees a stock item allocated on the heap, such as one returned by
              * `gtk_stock_item_copy()`. Also frees the fields inside the stock item,
              * if they are not `null`.
