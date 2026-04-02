@@ -36083,9 +36083,9 @@ declare module 'gi://Gtk?version=4.0' {
          * It presents a {@link Gio.ListModel} and fills it asynchronously with the
          * {@link Gio.FileInfo}s returned from that function.
          *
-         * The {@link Gio.FileInfo}s in the list have some attributes in the recent
-         * namespace added: `recent::private` (boolean) and `recent:applications`
-         * (stringv).
+         * The {@link Gio.FileInfo}s in the list have some attributes in the recent namespace
+         * added: `recent::private` (boolean) and `recent:applications` (stringv). They
+         * also have the {@link Gio.File} referred by the URI in `standard::file` attribute.
          * @gir-type Class
          */
         class BookmarkList<A extends GObject.Object = GObject.Object>
@@ -243647,6 +243647,7 @@ declare module 'gi://Gtk?version=4.0' {
          * defines the circle to be shown in states 0 and 1, and animates a segment
          * of the circle.
          *
+         *
          * <image src="https://docs.gtk.org/gtk4/svg-renderer1.svg">
          *
          * Note that the generated animations are implemented using standard
@@ -243655,48 +243656,35 @@ declare module 'gi://Gtk?version=4.0' {
          * is therefore going to interfere with generated animations.
          *
          * To connect general SVG animations to the states of the paintable,
-         * use the custom `gpa:states(...)` condition in the `begin` and `end`
+         * use the custom `StateChange(...)` condition in the `begin` and `end`
          * attributes of SVG animation elements. For example,
          *
          *     <animate href='path1'
          *              attributeName='fill'
-         *              begin='gpa:states(0).begin'
+         *              begin='StateChange(1 2 3, 0)'
          *              dur='300ms'
          *              fill='freeze'
          *              from='black'
          *              to='magenta'/>
          *
          * will make the fill color of path1 transition from black to
-         * magenta when the renderer enters state 0.
+         * magenta when the renderer enters state 0 from states 1, 2, or 3.
          *
          * <image src="https://docs.gtk.org/gtk4/svg-renderer2.svg">
          *
-         * The `gpa:states(...)` condition triggers for upcoming state changes
+         * The `StateChange(...)` condition triggers for upcoming state changes
          * as well, to support fade-out transitions. For example,
          *
          *     <animate href='path1'
          *              attributeName='opacity'
-         *              begin='gpa:states(0).end -300ms'
+         *              begin='StateChange(0, 1 2 3) -300ms'
          *              dur='300ms'
          *              fill='freeze'
          *              from='1'
          *              to='0'/>
          *
-         * will start a fade-out of path1 300ms before state 0 ends.
-         *
-         * A variant of the `gpa:states(...)` condition allows specifying
-         * both before and after states:
-         *
-         *     <animate href='path1'
-         *              attributeName='opacity'
-         *              begin='gpa:states(0, 1 2)'
-         *              dur='300ms'
-         *              fill='freeze'
-         *              from='1'
-         *              to='0'/>
-         *
-         * will start the animation when the state changes from 0 to 1 or
-         * from 0 to 2, but not when it changes from 0 to 3.
+         * will start a fade-out of path1 300ms before a transition from state
+         * 0 to 1, 2 or 3.
          *
          * In addition to the `gpa:fill` and `gpa:stroke` attributes, symbolic
          * colors can also be specified as a custom paint server reference,
@@ -275525,6 +275513,29 @@ declare module 'gi://Gtk?version=4.0' {
          * The base class for all widgets.
          *
          * It manages the widget lifecycle, layout, states and style.
+         *
+         * ### Minimum and natural size
+         *
+         * In order to understand geometry management of widgets in GTK, it is
+         * helpful to understand the different terminology surrounding sizing of
+         * widgets.
+         *
+         * The two primary terms are: *minimum size* and *natural size*.
+         *
+         * As a general rule: the *minimum size* is the size required to display
+         * the minimum amount of content in a widget. A widget cannot be
+         * allocated less than the minimum size it requires.
+         *
+         * The *natural size* is the amount of content that a widget prefers to
+         * display in normal conditions.
+         *
+         * A widget may be allocated more than the natural size it prefers, or
+         * less, depending on the layout management of its parent container.
+         * What to do when the widget is allocated a different size than
+         * the one it prefers is entirely left to the widget implementation:
+         * some widgets decide to add extra room, other widgets may disclose
+         * additional content, other widgets may decide to hide content, or show
+         * a different layout entirely.
          *
          * ### Height-for-width Geometry Management
          *
