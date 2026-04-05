@@ -20898,6 +20898,27 @@ declare module 'gi://GLib?version=2.0' {
              */
             free(): void;
             /**
+             * Retrieves the start and end positions of an attribute assignment
+             * in a start tag.
+             *
+             * This function can be used in the `start_element` callback to
+             * obtain location information for error reporting.
+             *
+             * Calling it outside of the `start_element` callback
+             * has undefined results.
+             *
+             * Note that `line_number` and `char_number` are intended for human
+             * readable error messages and are therefore 1-based and in Unicode
+             * characters. `offset` on the other hand is meant for programmatic
+             * use, and thus is 0-based and in bytes.
+             *
+             * The information is meant to accompany the values returned by
+             * {@link GLib.MarkupParseContext.get_position}, and comes with the
+             * same accuracy guarantees.
+             * @param attr the index of the attribute to query
+             */
+            get_attribute_position(attr: number): [number, number, number, number, number, number];
+            /**
              * Retrieves the name of the currently open element.
              *
              * If called from the start_element or end_element handlers this will
@@ -20943,6 +20964,8 @@ declare module 'gi://GLib?version=2.0' {
              *
              * This function can be used in the `start_element` or `end_element`
              * callbacks to obtain location information for error reporting.
+             *
+             * Calling it outside of these callbacks has undefined results.
              *
              * Note that `line_number` and `char_number` are intended for human
              * readable error messages and are therefore 1-based and in Unicode

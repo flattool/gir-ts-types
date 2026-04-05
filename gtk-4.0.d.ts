@@ -7903,6 +7903,7 @@ declare module 'gi://Gtk?version=4.0' {
                 'notify::accessible': (pspec: GObject.ParamSpec) => void;
                 'notify::accessible-role': (pspec: GObject.ParamSpec) => void;
                 'notify::display': (pspec: GObject.ParamSpec) => void;
+                'notify::realized': (pspec: GObject.ParamSpec) => void;
             }
 
             // Constructor properties interface
@@ -7912,6 +7913,7 @@ declare module 'gi://Gtk?version=4.0' {
                 accessible_role: AccessibleRole;
                 accessibleRole: AccessibleRole;
                 display: Gdk.Display;
+                realized: boolean;
             }
         }
 
@@ -7954,6 +7956,12 @@ declare module 'gi://Gtk?version=4.0' {
              */
             get display(): Gdk.Display;
             set display(val: Gdk.Display);
+            /**
+             * Whether the {@link Gtk.ATContext} has been realized or not.
+             * @since 4.24
+             * @read-only
+             */
+            get realized(): boolean;
 
             /**
              * Compile-time signal type information.
