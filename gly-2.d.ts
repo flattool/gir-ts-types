@@ -1230,11 +1230,27 @@ declare module 'gi://Gly?version=2' {
 
         namespace NewFrame {
             // Signal signatures
-            interface SignalSignatures extends GObject.Object.SignalSignatures {}
+            interface SignalSignatures extends GObject.Object.SignalSignatures {
+                'notify::color-icc-profile': (pspec: GObject.ParamSpec) => void;
+                'notify::height': (pspec: GObject.ParamSpec) => void;
+                'notify::memory-format': (pspec: GObject.ParamSpec) => void;
+                'notify::stride': (pspec: GObject.ParamSpec) => void;
+                'notify::texture': (pspec: GObject.ParamSpec) => void;
+                'notify::width': (pspec: GObject.ParamSpec) => void;
+            }
 
             // Constructor properties interface
 
-            interface ConstructorProps extends GObject.Object.ConstructorProps {}
+            interface ConstructorProps extends GObject.Object.ConstructorProps {
+                color_icc_profile: GLib.Bytes;
+                colorIccProfile: GLib.Bytes;
+                height: number;
+                memory_format: MemoryFormat;
+                memoryFormat: MemoryFormat;
+                stride: number;
+                texture: GLib.Bytes;
+                width: number;
+            }
         }
 
         /**
@@ -1244,6 +1260,37 @@ declare module 'gi://Gly?version=2' {
          */
         class NewFrame extends GObject.Object {
             static $gtype: GObject.GType<NewFrame>;
+
+            // Properties
+
+            get color_icc_profile(): GLib.Bytes;
+            set color_icc_profile(val: GLib.Bytes);
+            get colorIccProfile(): GLib.Bytes;
+            set colorIccProfile(val: GLib.Bytes);
+            /**
+             * @construct-only
+             */
+            get height(): number;
+            /**
+             * @construct-only
+             */
+            get memory_format(): MemoryFormat;
+            /**
+             * @construct-only
+             */
+            get memoryFormat(): MemoryFormat;
+            /**
+             * @construct-only
+             */
+            get stride(): number;
+            /**
+             * @construct-only
+             */
+            get texture(): GLib.Bytes;
+            /**
+             * @construct-only
+             */
+            get width(): number;
 
             /**
              * Compile-time signal type information.
