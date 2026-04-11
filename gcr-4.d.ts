@@ -1479,7 +1479,7 @@ declare module 'gi://Gcr?version=4' {
             interface ConstructorProps extends GObject.Object.ConstructorProps {
                 critical: boolean;
                 oid: string;
-                value: GLib.Bytes;
+                value: GLib.Bytes | Uint8Array;
             }
         }
 
@@ -2175,7 +2175,7 @@ declare module 'gi://Gcr?version=4' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -2202,7 +2202,7 @@ declare module 'gi://Gcr?version=4' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected
@@ -2992,7 +2992,7 @@ declare module 'gi://Gcr?version=4' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -3019,7 +3019,7 @@ declare module 'gi://Gcr?version=4' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected
@@ -3639,7 +3639,7 @@ declare module 'gi://Gcr?version=4' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -3666,7 +3666,7 @@ declare module 'gi://Gcr?version=4' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected
@@ -4437,7 +4437,7 @@ declare module 'gi://Gcr?version=4' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -4464,7 +4464,7 @@ declare module 'gi://Gcr?version=4' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected
@@ -5064,7 +5064,7 @@ declare module 'gi://Gcr?version=4' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -5091,7 +5091,7 @@ declare module 'gi://Gcr?version=4' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected
@@ -5206,7 +5206,7 @@ declare module 'gi://Gcr?version=4' {
             interface ConstructorProps extends GObject.Object.ConstructorProps {
                 label: string;
                 section: CertificateSection;
-                value: GObject.Value;
+                value: GObject.Value | any;
             }
         }
 
@@ -5229,7 +5229,7 @@ declare module 'gi://Gcr?version=4' {
             /**
              * @read-only
              */
-            get value(): GObject.Value;
+            get value(): unknown;
 
             /**
              * Compile-time signal type information.
@@ -5866,7 +5866,7 @@ declare module 'gi://Gcr?version=4' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -5893,7 +5893,7 @@ declare module 'gi://Gcr?version=4' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected
@@ -6983,7 +6983,7 @@ declare module 'gi://Gcr?version=4' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -7010,7 +7010,7 @@ declare module 'gi://Gcr?version=4' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected
@@ -7759,7 +7759,7 @@ declare module 'gi://Gcr?version=4' {
              * Gets the raw DER data for an X.509 certificate.
              * @virtual
              */
-            vfunc_get_der_data(): Uint8Array;
+            vfunc_get_der_data(): Uint8Array | string;
             /**
              * Creates a binding between `source_property` on `source` and `target_property`
              * on `target`.
@@ -8161,7 +8161,7 @@ declare module 'gi://Gcr?version=4' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -8188,7 +8188,7 @@ declare module 'gi://Gcr?version=4' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected
@@ -8379,7 +8379,7 @@ declare module 'gi://Gcr?version=4' {
              * @param secret_len length of `secret`, or -1 if null terminated
              * @returns a newly allocated string to be sent to the other     side of the secret exchange
              */
-            send(secret: string | null, secret_len: number): string;
+            send(secret: string | null, secret_len: bigint | number): string;
         }
 
         namespace SimpleCertificate {
@@ -8687,7 +8687,7 @@ declare module 'gi://Gcr?version=4' {
              * Gets the raw DER data for an X.509 certificate.
              * @virtual
              */
-            vfunc_get_der_data(): Uint8Array;
+            vfunc_get_der_data(): Uint8Array | string;
             /**
              * Creates a binding between `source_property` on `source` and `target_property`
              * on `target`.
@@ -9084,7 +9084,7 @@ declare module 'gi://Gcr?version=4' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -9111,7 +9111,7 @@ declare module 'gi://Gcr?version=4' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected
@@ -10738,7 +10738,7 @@ declare module 'gi://Gcr?version=4' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -10765,7 +10765,7 @@ declare module 'gi://Gcr?version=4' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected
@@ -11220,7 +11220,7 @@ declare module 'gi://Gcr?version=4' {
                  * Gets the raw DER data for an X.509 certificate.
                  * @virtual
                  */
-                vfunc_get_der_data(): Uint8Array;
+                vfunc_get_der_data(): Uint8Array | string;
             }
 
             // Constructor properties interface

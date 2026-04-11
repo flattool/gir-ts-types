@@ -526,7 +526,7 @@ declare module 'gi://GstBadAudio?version=1.0' {
              * @param size Size of the output buffer, in bytes
              * @returns Newly allocated output buffer, or NULL if allocation failed
              */
-            allocate_output_buffer(size: number): Gst.Buffer | null;
+            allocate_output_buffer(size: bigint | number): Gst.Buffer | null;
             /**
              * Gets sample format, sample rate, channel count from the allowed srcpad caps.
              *
@@ -703,7 +703,7 @@ declare module 'gi://GstBadAudio?version=1.0' {
              * that at least this many samples are available.
              * @param to_flush the number of samples to flush
              */
-            flush(to_flush: number): void;
+            flush(to_flush: bigint | number): void;
             /**
              * Returns a {@link Gst.Buffer} containing the first `nsamples` of the `adapter`, but
              * does not flush them from the adapter.
@@ -721,7 +721,7 @@ declare module 'gi://GstBadAudio?version=1.0' {
              * @param flags hint the intended use of the returned buffer
              * @returns a {@link Gst.Buffer} containing the first     `nsamples` of the adapter, or `null` if `nsamples` samples are not     available. `gst_buffer_unref()` when no longer needed.
              */
-            get_buffer(nsamples: number, flags: Gst.MapFlags | null): Gst.Buffer | null;
+            get_buffer(nsamples: bigint | number, flags: Gst.MapFlags | null): Gst.Buffer | null;
             /**
              * Get the offset that was on the last buffer with the GST_BUFFER_FLAG_DISCONT
              * flag, or GST_BUFFER_OFFSET_NONE.
@@ -790,7 +790,7 @@ declare module 'gi://GstBadAudio?version=1.0' {
              * @param flags hint the intended use of the returned buffer
              * @returns a {@link Gst.Buffer} containing the first     `nsamples` of the adapter, or `null` if `nsamples` samples are not     available. `gst_buffer_unref()` when no longer needed.
              */
-            take_buffer(nsamples: number, flags: Gst.MapFlags | null): Gst.Buffer | null;
+            take_buffer(nsamples: bigint | number, flags: Gst.MapFlags | null): Gst.Buffer | null;
         }
 
         /**

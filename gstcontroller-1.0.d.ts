@@ -100,7 +100,7 @@ declare module 'gi://GstController?version=1.0' {
          * @gir-type Callback
          */
         interface DirectControlBindingConvertGValue {
-            (self: DirectControlBinding, src_value: number, dest_value: GObject.Value | any): void;
+            (self: DirectControlBinding, src_value: number, dest_value: unknown): void;
         }
         /**
          * @gir-type Callback
@@ -388,7 +388,7 @@ declare module 'gi://GstController?version=1.0' {
                 amplitude: number;
                 frequency: number;
                 offset: number;
-                timeshift: number;
+                timeshift: bigint | number;
                 waveform: LFOWaveform;
             }
         }
@@ -434,7 +434,7 @@ declare module 'gi://GstController?version=1.0' {
              * "(GST_SECOND / frequency) - n".
              */
             get timeshift(): number;
-            set timeshift(val: number);
+            set timeshift(val: bigint | number);
             /**
              * Specifies the waveform that should be used for this {@link GstController.LFOControlSource}.
              */
@@ -701,7 +701,7 @@ declare module 'gi://GstController?version=1.0' {
             // Constructor properties interface
 
             interface ConstructorProps extends TimedValueControlSource.ConstructorProps {
-                tolerance: number;
+                tolerance: bigint | number;
             }
         }
 
@@ -722,7 +722,7 @@ declare module 'gi://GstController?version=1.0' {
             // Properties
 
             get tolerance(): number;
-            set tolerance(val: number);
+            set tolerance(val: bigint | number);
 
             /**
              * Compile-time signal type information.
@@ -782,15 +782,6 @@ declare module 'gi://GstController?version=1.0' {
 
             timestamp: Gst.ClockTime;
             value: number;
-
-            // Constructors
-
-            constructor(
-                properties?: Partial<{
-                    timestamp: Gst.ClockTime;
-                    value: number;
-                }>,
-            );
 
             // Methods
 

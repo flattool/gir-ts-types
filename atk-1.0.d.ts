@@ -2748,7 +2748,7 @@ declare module 'gi://Atk?version=1.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -2775,7 +2775,7 @@ declare module 'gi://Atk?version=1.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected
@@ -5126,7 +5126,7 @@ declare module 'gi://Atk?version=1.0' {
              * Gets the value of this object.
              * @virtual
              */
-            vfunc_get_current_value(): unknown;
+            vfunc_get_current_value(): GObject.Value | any;
             /**
              * Gets the minimum increment by which the value of this object may be
              * changed.  If zero, the minimum increment is undefined, which may
@@ -5139,19 +5139,19 @@ declare module 'gi://Atk?version=1.0' {
              * Gets the maximum value of this object.
              * @virtual
              */
-            vfunc_get_maximum_value(): unknown;
+            vfunc_get_maximum_value(): GObject.Value | any;
             /**
              * Gets the minimum increment by which the value of this object may be changed.  If zero,
              * the minimum increment is undefined, which may mean that it is limited only by the
              * floating point precision of the platform.
              * @virtual
              */
-            vfunc_get_minimum_increment(): unknown;
+            vfunc_get_minimum_increment(): GObject.Value | any;
             /**
              * Gets the minimum value of this object.
              * @virtual
              */
-            vfunc_get_minimum_value(): unknown;
+            vfunc_get_minimum_value(): GObject.Value | any;
             /**
              * Gets the range of this object.
              * @virtual
@@ -5175,7 +5175,7 @@ declare module 'gi://Atk?version=1.0' {
              * @param value a {@link GObject.Value} which is the desired new accessible value.
              * @virtual
              */
-            vfunc_set_current_value(value: GObject.Value | any): boolean;
+            vfunc_set_current_value(value: unknown): boolean;
             /**
              * Sets the value of this object.
              *
@@ -5591,7 +5591,7 @@ declare module 'gi://Atk?version=1.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -5618,7 +5618,7 @@ declare module 'gi://Atk?version=1.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected
@@ -8327,7 +8327,7 @@ declare module 'gi://Atk?version=1.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -8354,7 +8354,7 @@ declare module 'gi://Atk?version=1.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected
@@ -9491,7 +9491,7 @@ declare module 'gi://Atk?version=1.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -9518,7 +9518,7 @@ declare module 'gi://Atk?version=1.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected
@@ -12649,7 +12649,7 @@ declare module 'gi://Atk?version=1.0' {
                  * Gets the value of this object.
                  * @virtual
                  */
-                vfunc_get_current_value(): unknown;
+                vfunc_get_current_value(): GObject.Value | any;
                 /**
                  * Gets the minimum increment by which the value of this object may be
                  * changed.  If zero, the minimum increment is undefined, which may
@@ -12662,19 +12662,19 @@ declare module 'gi://Atk?version=1.0' {
                  * Gets the maximum value of this object.
                  * @virtual
                  */
-                vfunc_get_maximum_value(): unknown;
+                vfunc_get_maximum_value(): GObject.Value | any;
                 /**
                  * Gets the minimum increment by which the value of this object may be changed.  If zero,
                  * the minimum increment is undefined, which may mean that it is limited only by the
                  * floating point precision of the platform.
                  * @virtual
                  */
-                vfunc_get_minimum_increment(): unknown;
+                vfunc_get_minimum_increment(): GObject.Value | any;
                 /**
                  * Gets the minimum value of this object.
                  * @virtual
                  */
-                vfunc_get_minimum_value(): unknown;
+                vfunc_get_minimum_value(): GObject.Value | any;
                 /**
                  * Gets the range of this object.
                  * @virtual
@@ -12698,7 +12698,7 @@ declare module 'gi://Atk?version=1.0' {
                  * @param value a {@link GObject.Value} which is the desired new accessible value.
                  * @virtual
                  */
-                vfunc_set_current_value(value: GObject.Value | any): boolean;
+                vfunc_set_current_value(value: unknown): boolean;
                 /**
                  * Sets the value of this object.
                  *
@@ -12994,7 +12994,7 @@ declare module 'gi://Atk?version=1.0' {
          * See `atk_object_ref_state_set` and `atk_object_notify_state_change`
          * @gir-type Alias
          */
-        type State = number;
+        type State = bigint | number;
         /**
          * Name of the imported GIR library
          * `see` https://gitlab.gnome.org/GNOME/gjs/-/blob/master/gi/ns.cpp#L188

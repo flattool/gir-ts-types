@@ -1965,7 +1965,7 @@ declare module 'gi://Gee?version=0.8' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -1992,7 +1992,7 @@ declare module 'gi://Gee?version=0.8' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected
@@ -3385,7 +3385,7 @@ declare module 'gi://Gee?version=0.8' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -3412,7 +3412,7 @@ declare module 'gi://Gee?version=0.8' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected
@@ -4133,7 +4133,7 @@ declare module 'gi://Gee?version=0.8' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -4160,7 +4160,7 @@ declare module 'gi://Gee?version=0.8' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected
@@ -8627,7 +8627,7 @@ declare module 'gi://Gee?version=0.8' {
                 g_type: GObject.GType,
                 g_dup_func: GObject.BoxedCopyFunc,
                 aptr: any | null,
-                mask: number,
+                mask: bigint | number,
             ): [HazardPointer | null, number];
             /**
              * @param g_type
@@ -8639,7 +8639,7 @@ declare module 'gi://Gee?version=0.8' {
                 g_type: GObject.GType,
                 g_dup_func: GObject.BoxedCopyFunc,
                 aptr: any | null,
-                mask: number,
+                mask: bigint | number,
             ): [any | null, number];
             /**
              * @param g_type
@@ -8654,8 +8654,8 @@ declare module 'gi://Gee?version=0.8' {
                 g_dup_func: GObject.BoxedCopyFunc,
                 aptr: any | null,
                 new_ptr: any | null,
-                mask: number,
-                new_mask: number,
+                mask: bigint | number,
+                new_mask: bigint | number,
             ): [HazardPointer | null, number];
             /**
              * @param g_type
@@ -8670,8 +8670,8 @@ declare module 'gi://Gee?version=0.8' {
                 g_dup_func: GObject.BoxedCopyFunc,
                 aptr: any | null,
                 new_ptr: any | null,
-                mask: number,
-                new_mask: number,
+                mask: bigint | number,
+                new_mask: bigint | number,
             ): void;
             /**
              * @param g_type
@@ -8686,8 +8686,8 @@ declare module 'gi://Gee?version=0.8' {
                 g_dup_func: GObject.BoxedCopyFunc,
                 aptr: any | null,
                 new_ptr: any | null,
-                mask: number,
-                new_mask: number,
+                mask: bigint | number,
+                new_mask: bigint | number,
             ): [any | null, number];
             /**
              * @param g_type
@@ -8705,9 +8705,9 @@ declare module 'gi://Gee?version=0.8' {
                 aptr: any | null,
                 old_ptr: any | null,
                 _new_ptr: any | null,
-                mask: number,
-                old_mask: number,
-                new_mask: number,
+                mask: bigint | number,
+                old_mask: bigint | number,
+                new_mask: bigint | number,
             ): boolean;
             /**
              * @param policy
@@ -9872,7 +9872,7 @@ declare module 'gi://Gee?version=0.8' {
             /**
              * @param end_time
              */
-            wait_until(end_time: number): [boolean, any];
+            wait_until(end_time: bigint | number): [boolean, any];
             wait_async(): globalThis.Promise<any>;
             /**
              * @param _callback_

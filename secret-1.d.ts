@@ -963,11 +963,11 @@ declare module 'gi://Secret?version=1' {
                     Gio.AsyncInitable.ConstructorProps,
                     Gio.DBusInterface.ConstructorProps,
                     Gio.Initable.ConstructorProps {
-                created: number;
+                created: bigint | number;
                 flags: CollectionFlags;
                 label: string;
                 locked: boolean;
-                modified: number;
+                modified: bigint | number;
                 service: Service;
             }
         }
@@ -1000,7 +1000,7 @@ declare module 'gi://Secret?version=1' {
              * collection was created.
              */
             get created(): number;
-            set created(val: number);
+            set created(val: bigint | number);
             /**
              * A set of flags describing which parts of the secret collection have
              * been initialized.
@@ -1029,7 +1029,7 @@ declare module 'gi://Secret?version=1' {
              * collection was last modified.
              */
             get modified(): number;
-            set modified(val: number);
+            set modified(val: bigint | number);
             /**
              * The {@link Service} object that this collection is associated with and
              * uses to interact with the actual D-Bus Secret Service.
@@ -2266,7 +2266,7 @@ declare module 'gi://Secret?version=1' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -2293,7 +2293,7 @@ declare module 'gi://Secret?version=1' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected
@@ -2947,7 +2947,7 @@ declare module 'gi://Secret?version=1' {
              * @category Inherited from Secret.Retrievable
              */
             get attributes(): GLib.HashTable<string, string>;
-            set attributes(val: GLib.HashTable<string, string>);
+            set attributes(val: { [key: string]: any } | GLib.HashTable<string, string>);
             /**
              * The date and time (in seconds since the UNIX epoch) that this
              * item was created.
@@ -2955,7 +2955,7 @@ declare module 'gi://Secret?version=1' {
              * @category Inherited from Secret.Retrievable
              */
             get created(): number;
-            set created(val: number);
+            set created(val: bigint | number);
             /**
              * The human readable label for the item.
              * @since 0.19.0
@@ -2970,7 +2970,7 @@ declare module 'gi://Secret?version=1' {
              * @category Inherited from Secret.Retrievable
              */
             get modified(): number;
-            set modified(val: number);
+            set modified(val: bigint | number);
             /**
              * Starts asynchronous initialization of the object implementing the
              * interface. This must be done before any real use of the object after
@@ -3780,7 +3780,7 @@ declare module 'gi://Secret?version=1' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -3807,7 +3807,7 @@ declare module 'gi://Secret?version=1' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected
@@ -4781,7 +4781,7 @@ declare module 'gi://Secret?version=1' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -4808,7 +4808,7 @@ declare module 'gi://Secret?version=1' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected
@@ -6546,7 +6546,7 @@ declare module 'gi://Secret?version=1' {
              */
             vfunc_clear(
                 schema: Schema,
-                attributes: { [key: string]: any } | GLib.HashTable<any, any>,
+                attributes: GLib.HashTable<any, any>,
                 cancellable?: Gio.Cancellable | null,
                 callback?: Gio.AsyncReadyCallback<this> | null,
             ): void;
@@ -6584,7 +6584,7 @@ declare module 'gi://Secret?version=1' {
              */
             vfunc_lookup(
                 schema: Schema,
-                attributes: { [key: string]: any } | GLib.HashTable<any, any>,
+                attributes: GLib.HashTable<any, any>,
                 cancellable?: Gio.Cancellable | null,
                 callback?: Gio.AsyncReadyCallback<this> | null,
             ): void;
@@ -6605,7 +6605,7 @@ declare module 'gi://Secret?version=1' {
              */
             vfunc_search(
                 schema: Schema,
-                attributes: { [key: string]: any } | GLib.HashTable<any, any>,
+                attributes: GLib.HashTable<any, any>,
                 flags: SearchFlags,
                 cancellable?: Gio.Cancellable | null,
                 callback?: Gio.AsyncReadyCallback<this> | null,
@@ -6623,7 +6623,7 @@ declare module 'gi://Secret?version=1' {
              */
             vfunc_store(
                 schema: Schema,
-                attributes: { [key: string]: any } | GLib.HashTable<any, any>,
+                attributes: GLib.HashTable<any, any>,
                 collection: string,
                 label: string,
                 value: Value,
@@ -7032,7 +7032,7 @@ declare module 'gi://Secret?version=1' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -7059,7 +7059,7 @@ declare module 'gi://Secret?version=1' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected
@@ -7270,11 +7270,11 @@ declare module 'gi://Secret?version=1' {
 
             // Constructors
 
-            constructor(secret: string, length: number, content_type: string);
+            constructor(secret: string, length: bigint | number, content_type: string);
 
-            static ['new'](secret: string, length: number, content_type: string): Value;
+            static ['new'](secret: string, length: bigint | number, content_type: string): Value;
 
-            static new_full(secret: string, length: number, content_type: string): Value;
+            static new_full(secret: string, length: bigint | number, content_type: string): Value;
 
             // Methods
 
@@ -7321,7 +7321,7 @@ declare module 'gi://Secret?version=1' {
              * @param length the length of the secret
              * @returns a new password string stored in nonpageable memory   which must be freed with {@link password_free} when done
              */
-            unref_to_password(length: number): [string, number];
+            unref_to_password(length: bigint | number): [string, number];
         }
 
         namespace Backend {
@@ -7342,7 +7342,7 @@ declare module 'gi://Secret?version=1' {
                  */
                 vfunc_clear(
                     schema: Schema,
-                    attributes: { [key: string]: any } | GLib.HashTable<any, any>,
+                    attributes: GLib.HashTable<any, any>,
                     cancellable?: Gio.Cancellable | null,
                     callback?: Gio.AsyncReadyCallback<this> | null,
                 ): void;
@@ -7380,7 +7380,7 @@ declare module 'gi://Secret?version=1' {
                  */
                 vfunc_lookup(
                     schema: Schema,
-                    attributes: { [key: string]: any } | GLib.HashTable<any, any>,
+                    attributes: GLib.HashTable<any, any>,
                     cancellable?: Gio.Cancellable | null,
                     callback?: Gio.AsyncReadyCallback<this> | null,
                 ): void;
@@ -7401,7 +7401,7 @@ declare module 'gi://Secret?version=1' {
                  */
                 vfunc_search(
                     schema: Schema,
-                    attributes: { [key: string]: any } | GLib.HashTable<any, any>,
+                    attributes: GLib.HashTable<any, any>,
                     flags: SearchFlags,
                     cancellable?: Gio.Cancellable | null,
                     callback?: Gio.AsyncReadyCallback<this> | null,
@@ -7419,7 +7419,7 @@ declare module 'gi://Secret?version=1' {
                  */
                 vfunc_store(
                     schema: Schema,
-                    attributes: { [key: string]: any } | GLib.HashTable<any, any>,
+                    attributes: GLib.HashTable<any, any>,
                     collection: string,
                     label: string,
                     value: Value,
@@ -7525,10 +7525,10 @@ declare module 'gi://Secret?version=1' {
             // Constructor properties interface
 
             interface ConstructorProps extends GObject.Object.ConstructorProps {
-                attributes: GLib.HashTable<string, string>;
-                created: number;
+                attributes: { [key: string]: any } | GLib.HashTable<string, string>;
+                created: bigint | number;
                 label: string;
-                modified: number;
+                modified: bigint | number;
             }
         }
 
@@ -7559,14 +7559,14 @@ declare module 'gi://Secret?version=1' {
              * @since 0.19.0
              */
             get attributes(): GLib.HashTable<string, string>;
-            set attributes(val: GLib.HashTable<string, string>);
+            set attributes(val: { [key: string]: any } | GLib.HashTable<string, string>);
             /**
              * The date and time (in seconds since the UNIX epoch) that this
              * item was created.
              * @since 0.19.0
              */
             get created(): number;
-            set created(val: number);
+            set created(val: bigint | number);
             /**
              * The human readable label for the item.
              * @since 0.19.0
@@ -7579,7 +7579,7 @@ declare module 'gi://Secret?version=1' {
              * @since 0.19.0
              */
             get modified(): number;
-            set modified(val: number);
+            set modified(val: bigint | number);
 
             // Methods
 

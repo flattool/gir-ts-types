@@ -556,7 +556,7 @@ declare module 'gi://CudaGst?version=1.0' {
         /**
          * @gir-type Alias
          */
-        type texObject = number;
+        type texObject = bigint | number;
         /**
          * Name of the imported GIR library
          * `see` https://gitlab.gnome.org/GNOME/gjs/-/blob/master/gi/ns.cpp#L188

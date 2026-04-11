@@ -924,21 +924,6 @@ declare module 'gi://GstDxva?version=1.0' {
             bitstream_size: number;
             inverse_quantization_matrix: any;
             inverse_quantization_matrix_size: number;
-
-            // Constructors
-
-            constructor(
-                properties?: Partial<{
-                    picture_params: any;
-                    picture_params_size: number;
-                    slice_control: any;
-                    slice_control_size: number;
-                    bitstream: any;
-                    bitstream_size: number;
-                    inverse_quantization_matrix: any;
-                    inverse_quantization_matrix_size: number;
-                }>,
-            );
         }
 
         /**

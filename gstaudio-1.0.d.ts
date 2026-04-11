@@ -1211,7 +1211,12 @@ declare module 'gi://GstAudio?version=1.0' {
          * @returns the truncated buffer
          * @since 1.16
          */
-        function audio_buffer_truncate(buffer: Gst.Buffer, bpf: number, trim: number, samples: number): Gst.Buffer;
+        function audio_buffer_truncate(
+            buffer: Gst.Buffer,
+            bpf: number,
+            trim: bigint | number,
+            samples: bigint | number,
+        ): Gst.Buffer;
         /**
          * Get the fallback channel-mask for the given number of channels.
          *
@@ -1234,7 +1239,7 @@ declare module 'gi://GstAudio?version=1.0' {
          * @returns `true` if channel and channel mask are valid and could be converted
          */
         function audio_channel_positions_from_mask(
-            channel_mask: number,
+            channel_mask: bigint | number,
             position: AudioChannelPosition[] | null,
         ): boolean;
         /**
@@ -1494,8 +1499,8 @@ declare module 'gi://GstAudio?version=1.0' {
         function buffer_add_audio_clipping_meta(
             buffer: Gst.Buffer,
             format: Gst.Format | null,
-            start: number,
-            end: number,
+            start: bigint | number,
+            end: bigint | number,
         ): AudioClippingMeta;
         /**
          * Attaches {@link GstAudio.AudioDownmixMeta} metadata to `buffer` with the given parameters.
@@ -1558,8 +1563,8 @@ declare module 'gi://GstAudio?version=1.0' {
         function buffer_add_audio_meta(
             buffer: Gst.Buffer,
             info: AudioInfo,
-            samples: number,
-            offsets?: number | null,
+            samples: bigint | number,
+            offsets?: (bigint | number) | null,
         ): AudioMeta;
         /**
          * Allocates and attaches a {@link GstAudio.DsdPlaneOffsetMeta} on `buffer`, which must be
@@ -1593,8 +1598,8 @@ declare module 'gi://GstAudio?version=1.0' {
         function buffer_add_dsd_plane_offset_meta(
             buffer: Gst.Buffer,
             num_channels: number,
-            num_bytes_per_channel: number,
-            offsets?: number | null,
+            num_bytes_per_channel: bigint | number,
+            offsets?: (bigint | number) | null,
         ): DsdPlaneOffsetMeta;
         /**
          * Find the {@link GstAudio.AudioDownmixMeta} on `buffer` for the given destination
@@ -1652,9 +1657,9 @@ declare module 'gi://GstAudio?version=1.0' {
             output_format: DsdFormat | null,
             input_layout: AudioLayout | null,
             output_layout: AudioLayout | null,
-            input_plane_offsets: number,
-            output_plane_offsets: number,
-            num_dsd_bytes: number,
+            input_plane_offsets: bigint | number,
+            output_plane_offsets: bigint | number,
+            num_dsd_bytes: bigint | number,
             num_channels: number,
             reverse_byte_bits: boolean,
         ): void;
@@ -1726,31 +1731,19 @@ declare module 'gi://GstAudio?version=1.0' {
          * @gir-type Callback
          */
         interface AudioFormatPack {
-            (
-                info: AudioFormatInfo,
-                flags: AudioPackFlags,
-                src: Uint8Array | string,
-                data: Uint8Array | string,
-                length: number,
-            ): void;
+            (info: AudioFormatInfo, flags: AudioPackFlags, src: Uint8Array, data: Uint8Array, length: number): void;
         }
         /**
          * @gir-type Callback
          */
         interface AudioFormatUnpack {
-            (
-                info: AudioFormatInfo,
-                flags: AudioPackFlags,
-                dest: Uint8Array | string,
-                data: Uint8Array | string,
-                length: number,
-            ): void;
+            (info: AudioFormatInfo, flags: AudioPackFlags, dest: Uint8Array, data: Uint8Array, length: number): void;
         }
         /**
          * @gir-type Callback
          */
         interface AudioRingBufferCallback {
-            (rbuf: AudioRingBuffer, data: Uint8Array | string): void;
+            (rbuf: AudioRingBuffer, data: Uint8Array): void;
         }
         /**
          * @gir-type Flags
@@ -1978,16 +1971,16 @@ declare module 'gi://GstAudio?version=1.0' {
             // Constructor properties interface
 
             interface ConstructorProps extends GstBase.Aggregator.ConstructorProps {
-                alignment_threshold: number;
-                alignmentThreshold: number;
-                discont_wait: number;
-                discontWait: number;
+                alignment_threshold: bigint | number;
+                alignmentThreshold: bigint | number;
+                discont_wait: bigint | number;
+                discontWait: bigint | number;
                 force_live: boolean;
                 forceLive: boolean;
                 ignore_inactive_pads: boolean;
                 ignoreInactivePads: boolean;
-                output_buffer_duration: number;
-                outputBufferDuration: number;
+                output_buffer_duration: bigint | number;
+                outputBufferDuration: bigint | number;
                 output_buffer_duration_fraction: Gst.Fraction;
                 outputBufferDurationFraction: Gst.Fraction;
             }
@@ -2047,13 +2040,13 @@ declare module 'gi://GstAudio?version=1.0' {
             // Properties
 
             get alignment_threshold(): number;
-            set alignment_threshold(val: number);
+            set alignment_threshold(val: bigint | number);
             get alignmentThreshold(): number;
-            set alignmentThreshold(val: number);
+            set alignmentThreshold(val: bigint | number);
             get discont_wait(): number;
-            set discont_wait(val: number);
+            set discont_wait(val: bigint | number);
             get discontWait(): number;
-            set discontWait(val: number);
+            set discontWait(val: bigint | number);
             /**
              * Causes the element to aggregate on a timeout even when no live source is
              * connected to its sinks. See {@link GstBase.Aggregator.min_upstream_latency} for a
@@ -2099,9 +2092,9 @@ declare module 'gi://GstAudio?version=1.0' {
             get ignoreInactivePads(): boolean;
             set ignoreInactivePads(val: boolean);
             get output_buffer_duration(): number;
-            set output_buffer_duration(val: number);
+            set output_buffer_duration(val: bigint | number);
             get outputBufferDuration(): number;
-            set outputBufferDuration(val: number);
+            set outputBufferDuration(val: bigint | number);
             /**
              * Output block size in nanoseconds, expressed as a fraction.
              * @since 1.18
@@ -2401,18 +2394,18 @@ declare module 'gi://GstAudio?version=1.0' {
             // Constructor properties interface
 
             interface ConstructorProps extends GstBase.BaseSink.ConstructorProps {
-                alignment_threshold: number;
-                alignmentThreshold: number;
-                buffer_time: number;
-                bufferTime: number;
+                alignment_threshold: bigint | number;
+                alignmentThreshold: bigint | number;
+                buffer_time: bigint | number;
+                bufferTime: bigint | number;
                 can_activate_pull: boolean | any;
                 canActivatePull: boolean;
-                discont_wait: number;
-                discontWait: number;
-                drift_tolerance: number;
-                driftTolerance: number;
-                latency_time: number;
-                latencyTime: number;
+                discont_wait: bigint | number;
+                discontWait: bigint | number;
+                drift_tolerance: bigint | number;
+                driftTolerance: bigint | number;
+                latency_time: bigint | number;
+                latencyTime: bigint | number;
                 provide_clock: boolean | any;
                 provideClock: boolean;
                 slave_method: AudioBaseSinkSlaveMethod;
@@ -2432,13 +2425,13 @@ declare module 'gi://GstAudio?version=1.0' {
             // Properties
 
             get alignment_threshold(): number;
-            set alignment_threshold(val: number);
+            set alignment_threshold(val: bigint | number);
             get alignmentThreshold(): number;
-            set alignmentThreshold(val: number);
+            set alignmentThreshold(val: bigint | number);
             get buffer_time(): number;
-            set buffer_time(val: number);
+            set buffer_time(val: bigint | number);
             get bufferTime(): number;
-            set bufferTime(val: number);
+            set bufferTime(val: bigint | number);
             // This accessor conflicts with a property or field in a parent class or interface.
             can_activate_pull: boolean | any;
             get canActivatePull(): boolean;
@@ -2448,29 +2441,29 @@ declare module 'gi://GstAudio?version=1.0' {
              * a result of breaching the drift-tolerance.
              */
             get discont_wait(): number;
-            set discont_wait(val: number);
+            set discont_wait(val: bigint | number);
             /**
              * A window of time in nanoseconds to wait before creating a discontinuity as
              * a result of breaching the drift-tolerance.
              */
             get discontWait(): number;
-            set discontWait(val: number);
+            set discontWait(val: bigint | number);
             /**
              * Controls the amount of time in microseconds that clocks are allowed
              * to drift before resynchronisation happens.
              */
             get drift_tolerance(): number;
-            set drift_tolerance(val: number);
+            set drift_tolerance(val: bigint | number);
             /**
              * Controls the amount of time in microseconds that clocks are allowed
              * to drift before resynchronisation happens.
              */
             get driftTolerance(): number;
-            set driftTolerance(val: number);
+            set driftTolerance(val: bigint | number);
             get latency_time(): number;
-            set latency_time(val: number);
+            set latency_time(val: bigint | number);
             get latencyTime(): number;
-            set latencyTime(val: number);
+            set latencyTime(val: bigint | number);
             // This accessor conflicts with a field or function name in a parent class or interface.
             provide_clock: boolean | any;
             get provideClock(): boolean;
@@ -2612,7 +2605,7 @@ declare module 'gi://GstAudio?version=1.0' {
              * Controls the sink's drift tolerance.
              * @param drift_tolerance the new drift tolerance in microseconds
              */
-            set_drift_tolerance(drift_tolerance: number): void;
+            set_drift_tolerance(drift_tolerance: bigint | number): void;
             /**
              * Controls whether `sink` will provide a clock or not. If `provide` is `true`,
              * `gst_element_provide_clock()` will return a clock that reflects the datarate
@@ -2649,14 +2642,14 @@ declare module 'gi://GstAudio?version=1.0' {
             // Constructor properties interface
 
             interface ConstructorProps extends GstBase.PushSrc.ConstructorProps {
-                actual_buffer_time: number;
-                actualBufferTime: number;
-                actual_latency_time: number;
-                actualLatencyTime: number;
-                buffer_time: number;
-                bufferTime: number;
-                latency_time: number;
-                latencyTime: number;
+                actual_buffer_time: bigint | number;
+                actualBufferTime: bigint | number;
+                actual_latency_time: bigint | number;
+                actualLatencyTime: bigint | number;
+                buffer_time: bigint | number;
+                bufferTime: bigint | number;
+                latency_time: bigint | number;
+                latencyTime: bigint | number;
                 provide_clock: boolean | any;
                 provideClock: boolean;
                 slave_method: AudioBaseSrcSlaveMethod;
@@ -2696,13 +2689,13 @@ declare module 'gi://GstAudio?version=1.0' {
              */
             get actualLatencyTime(): number;
             get buffer_time(): number;
-            set buffer_time(val: number);
+            set buffer_time(val: bigint | number);
             get bufferTime(): number;
-            set bufferTime(val: number);
+            set bufferTime(val: bigint | number);
             get latency_time(): number;
-            set latency_time(val: number);
+            set latency_time(val: bigint | number);
             get latencyTime(): number;
-            set latencyTime(val: number);
+            set latencyTime(val: bigint | number);
             // This accessor conflicts with a field or function name in a parent class or interface.
             provide_clock: boolean | any;
             get provideClock(): boolean;
@@ -3386,7 +3379,7 @@ declare module 'gi://GstAudio?version=1.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -3413,7 +3406,7 @@ declare module 'gi://GstAudio?version=1.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected
@@ -3561,10 +3554,10 @@ declare module 'gi://GstAudio?version=1.0' {
             interface ConstructorProps extends Gst.Element.ConstructorProps {
                 max_errors: number;
                 maxErrors: number;
-                min_latency: number;
-                minLatency: number;
+                min_latency: bigint | number;
+                minLatency: bigint | number;
                 plc: boolean;
-                tolerance: number;
+                tolerance: bigint | number;
             }
         }
 
@@ -3680,13 +3673,13 @@ declare module 'gi://GstAudio?version=1.0' {
             get maxErrors(): number;
             set maxErrors(val: number);
             get min_latency(): number;
-            set min_latency(val: number);
+            set min_latency(val: bigint | number);
             get minLatency(): number;
-            set minLatency(val: number);
+            set minLatency(val: bigint | number);
             get plc(): boolean;
             set plc(val: boolean);
             get tolerance(): number;
-            set tolerance(val: number);
+            set tolerance(val: bigint | number);
 
             /**
              * Compile-time signal type information.
@@ -3894,7 +3887,7 @@ declare module 'gi://GstAudio?version=1.0' {
              * @param size size of the buffer
              * @returns allocated buffer
              */
-            allocate_output_buffer(size: number): Gst.Buffer;
+            allocate_output_buffer(size: bigint | number): Gst.Buffer;
             /**
              * Collects decoded data and pushes it downstream.
              *
@@ -4142,7 +4135,7 @@ declare module 'gi://GstAudio?version=1.0' {
                 markGranule: boolean;
                 perfect_timestamp: boolean;
                 perfectTimestamp: boolean;
-                tolerance: number;
+                tolerance: bigint | number;
             }
         }
 
@@ -4263,7 +4256,7 @@ declare module 'gi://GstAudio?version=1.0' {
             get perfectTimestamp(): boolean;
             set perfectTimestamp(val: boolean);
             get tolerance(): number;
-            set tolerance(val: number);
+            set tolerance(val: bigint | number);
 
             /**
              * Compile-time signal type information.
@@ -4465,7 +4458,7 @@ declare module 'gi://GstAudio?version=1.0' {
              * @param size size of the buffer
              * @returns allocated buffer
              */
-            allocate_output_buffer(size: number): Gst.Buffer;
+            allocate_output_buffer(size: bigint | number): Gst.Buffer;
             /**
              * Collects encoded data and pushes encoded data downstream.
              * Source pad caps must be set when this is called.
@@ -5198,7 +5191,7 @@ declare module 'gi://GstAudio?version=1.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -5225,7 +5218,7 @@ declare module 'gi://GstAudio?version=1.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected
@@ -5498,10 +5491,10 @@ declare module 'gi://GstAudio?version=1.0' {
              */
             vfunc_commit(
                 sample: number,
-                data: Uint8Array | string,
+                data: Uint8Array,
                 out_samples: number,
                 accum: number,
-            ): [number, number, number];
+            ): [number, bigint | number, number];
             /**
              * Get the number of samples queued in the audio device. This is
              * usually less than the segment size but can be bigger when the
@@ -5622,7 +5615,7 @@ declare module 'gi://GstAudio?version=1.0' {
              * @returns The number of samples written to the ringbuffer or -1 on error. The number of samples written can be less than `out_samples` when `buf` was interrupted with a flush or stop.
              */
             commit(
-                sample: number,
+                sample: bigint | number,
                 data: Uint8Array | string,
                 out_samples: number,
                 accum: number,
@@ -5635,7 +5628,11 @@ declare module 'gi://GstAudio?version=1.0' {
              * @param dest_fmt the destination format
              * @returns TRUE if the conversion succeeded.
              */
-            convert(src_fmt: Gst.Format | null, src_val: number, dest_fmt: Gst.Format | null): [boolean, number];
+            convert(
+                src_fmt: Gst.Format | null,
+                src_val: bigint | number,
+                dest_fmt: Gst.Format | null,
+            ): [boolean, number];
             /**
              * Get the number of samples queued in the audio device. This is
              * usually less than the segment size but can be bigger when the
@@ -5728,7 +5725,7 @@ declare module 'gi://GstAudio?version=1.0' {
              * @param data where the data should be read
              * @returns The number of samples read from the ringbuffer or -1 on error. MT safe.
              */
-            read(sample: number, data: Uint8Array | string): [number, Gst.ClockTime];
+            read(sample: bigint | number, data: Uint8Array | string): [number, Gst.ClockTime];
             /**
              * Free the resources of the ringbuffer.
              * @returns TRUE if the device could be released, FALSE on error. MT safe.
@@ -5779,14 +5776,14 @@ declare module 'gi://GstAudio?version=1.0' {
              * MT safe.
              * @param sample the sample number to set
              */
-            set_sample(sample: number): void;
+            set_sample(sample: bigint | number): void;
             /**
              * Sets the current segment number of the ringbuffer.
              *
              * MT safe.
              * @param segdone the segment number to set
              */
-            set_segdone(segdone: number): void;
+            set_segdone(segdone: bigint | number): void;
             /**
              * @param readseg
              * @param timestamp
@@ -5978,7 +5975,7 @@ declare module 'gi://GstAudio?version=1.0' {
              * @param data the sample data
              * @virtual
              */
-            vfunc_write(data: Uint8Array | string): number;
+            vfunc_write(data: Uint8Array): number;
         }
 
         namespace AudioSrc {
@@ -6092,7 +6089,7 @@ declare module 'gi://GstAudio?version=1.0' {
              * @param data the sample data
              * @virtual
              */
-            vfunc_read(data: Uint8Array | string): [number, Gst.ClockTime];
+            vfunc_read(data: Uint8Array): [number, Gst.ClockTime];
             /**
              * unblock a read to the device and reset.
              * @virtual
@@ -6258,7 +6255,12 @@ declare module 'gi://GstAudio?version=1.0' {
              * @param trim the number of samples to remove from the beginning of the buffer
              * @param samples the final number of samples that should exist in this buffer or -1 to use all the remaining samples if you are only removing samples from the beginning.
              */
-            static truncate(buffer: Gst.Buffer, bpf: number, trim: number, samples: number): Gst.Buffer;
+            static truncate(
+                buffer: Gst.Buffer,
+                bpf: number,
+                trim: bigint | number,
+                samples: bigint | number,
+            ): Gst.Buffer;
 
             // Methods
 
@@ -6434,7 +6436,7 @@ declare module 'gi://GstAudio?version=1.0' {
              * @param out_frames number of output frames
              * @returns the number of input frames
              */
-            get_in_frames(out_frames: number): number;
+            get_in_frames(out_frames: bigint | number): number;
             /**
              * Get the maximum number of input frames that the converter would
              * need before producing output.
@@ -6447,7 +6449,7 @@ declare module 'gi://GstAudio?version=1.0' {
              * @param in_frames number of input frames
              * @returns the number of output frames
              */
-            get_out_frames(in_frames: number): number;
+            get_out_frames(in_frames: bigint | number): number;
             /**
              * Returns whether the audio converter will operate in passthrough mode.
              * The return value would be typically input to `gst_base_transform_set_passthrough()`
@@ -6486,9 +6488,9 @@ declare module 'gi://GstAudio?version=1.0' {
             samples(
                 flags: AudioConverterFlags | null,
                 _in: any | null,
-                in_frames: number,
+                in_frames: bigint | number,
                 out: any | null,
-                out_frames: number,
+                out_frames: bigint | number,
             ): boolean;
             /**
              * Returns whether the audio converter can perform the conversion in-place.
@@ -6662,7 +6664,11 @@ declare module 'gi://GstAudio?version=1.0' {
              * @param dest_fmt {@link Gst.Format} of the `dest_val`
              * @returns TRUE if the conversion was successful.
              */
-            convert(src_fmt: Gst.Format | null, src_val: number, dest_fmt: Gst.Format | null): [boolean, number];
+            convert(
+                src_fmt: Gst.Format | null,
+                src_val: bigint | number,
+                dest_fmt: Gst.Format | null,
+            ): [boolean, number];
             /**
              * Copy a GstAudioInfo structure.
              * @returns a new {@link GstAudio.AudioInfo}. free with gst_audio_info_free.
@@ -6836,7 +6842,7 @@ declare module 'gi://GstAudio?version=1.0' {
              * @param out_frames number of input frames
              * @returns The number of input frames needed for producing `out_frames` of data from `resampler`.
              */
-            get_in_frames(out_frames: number): number;
+            get_in_frames(out_frames: bigint | number): number;
             /**
              * Get the maximum number of input samples that the resampler would
              * need before producing output.
@@ -6849,7 +6855,7 @@ declare module 'gi://GstAudio?version=1.0' {
              * @param in_frames number of input frames
              * @returns The number of frames that would be available after giving `in_frames` as input to `resampler`.
              */
-            get_out_frames(in_frames: number): number;
+            get_out_frames(in_frames: bigint | number): number;
             /**
              * Perform resampling on `in_frames` frames in `in` and write `out_frames` to `out`.
              *
@@ -6871,7 +6877,7 @@ declare module 'gi://GstAudio?version=1.0' {
              * @param out output samples
              * @param out_frames number of output frames
              */
-            resample(_in: any | null, in_frames: number, out: any | null, out_frames: number): void;
+            resample(_in: any | null, in_frames: bigint | number, out: any | null, out_frames: bigint | number): void;
             /**
              * Reset `resampler` to the state it was when it was first created, discarding
              * all sample history.

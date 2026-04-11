@@ -153,7 +153,7 @@ declare module 'gi://Gck?version=1' {
          * @param rv The PKCS#11 return value to get a message for.
          * @returns The user readable message.
          */
-        function message_from_rv(rv: number): string;
+        function message_from_rv(rv: bigint | number): string;
         /**
          * Setup an enumerator for listing matching objects on the modules.
          *
@@ -281,7 +281,7 @@ declare module 'gi://Gck?version=1' {
          * @param object_handles The raw object handles.
          * @returns The list of {@link Gck.Object}          objects. You should use `gck_list_unref_free()` when done with this          list.
          */
-        function objects_from_handle_array(session: Session, object_handles: number[]): Object[];
+        function objects_from_handle_array(session: Session, object_handles: (bigint | number)[]): Object[];
         /**
          * Setup an enumerator for listing matching objects on the slots.
          *
@@ -583,7 +583,7 @@ declare module 'gi://Gck?version=1' {
              * @param object_type the type of objects to create
              * @param attr_types types of attributes to retrieve for objects
              */
-            set_object_type(object_type: GObject.GType, attr_types: number[]): void;
+            set_object_type(object_type: GObject.GType, attr_types: (bigint | number)[]): void;
         }
 
         namespace Module {
@@ -777,7 +777,7 @@ declare module 'gi://Gck?version=1' {
             // Constructor properties interface
 
             interface ConstructorProps extends GObject.Object.ConstructorProps {
-                handle: number;
+                handle: bigint | number;
                 module: Module;
                 session: Session;
             }
@@ -829,7 +829,7 @@ declare module 'gi://Gck?version=1' {
 
             _init(...args: any[]): void;
 
-            static from_handle(session: Session, object_handle: number): Object;
+            static from_handle(session: Session, object_handle: bigint | number): Object;
 
             // Signals
 
@@ -869,7 +869,7 @@ declare module 'gi://Gck?version=1' {
              * @param cancellable optional cancellation object
              * @returns the attributes retrieved or `null` on failure
              */
-            cache_lookup(attr_types: number[], cancellable?: Gio.Cancellable | null): Attributes;
+            cache_lookup(attr_types: (bigint | number)[], cancellable?: Gio.Cancellable | null): Attributes;
             /**
              * Lookup attributes in the cache, or retrieve them from the object if necessary.
              *
@@ -885,7 +885,7 @@ declare module 'gi://Gck?version=1' {
              * @param cancellable optional cancellation object
              */
             cache_lookup_async(
-                attr_types: number[],
+                attr_types: (bigint | number)[],
                 cancellable?: Gio.Cancellable | null,
             ): globalThis.Promise<Attributes>;
             /**
@@ -904,7 +904,7 @@ declare module 'gi://Gck?version=1' {
              * @param callback called when the operation completes
              */
             cache_lookup_async(
-                attr_types: number[],
+                attr_types: (bigint | number)[],
                 cancellable: Gio.Cancellable | null,
                 callback: Gio.AsyncReadyCallback<this> | null,
             ): void;
@@ -924,7 +924,7 @@ declare module 'gi://Gck?version=1' {
              * @param callback called when the operation completes
              */
             cache_lookup_async(
-                attr_types: number[],
+                attr_types: (bigint | number)[],
                 cancellable?: Gio.Cancellable | null,
                 callback?: Gio.AsyncReadyCallback<this> | null,
             ): globalThis.Promise<Attributes> | void;
@@ -989,7 +989,10 @@ declare module 'gi://Gck?version=1' {
              * @param attr_types the types of the attributes to get
              * @param cancellable optional cancellation object, or `null`
              */
-            get_async(attr_types: number[], cancellable?: Gio.Cancellable | null): globalThis.Promise<Attributes>;
+            get_async(
+                attr_types: (bigint | number)[],
+                cancellable?: Gio.Cancellable | null,
+            ): globalThis.Promise<Attributes>;
             /**
              * Get the specified attributes from the object. The attributes will be cleared
              * of their current values, and new attributes will be stored. The attributes
@@ -1002,7 +1005,7 @@ declare module 'gi://Gck?version=1' {
              * @param callback A callback which is called when the operation completes.
              */
             get_async(
-                attr_types: number[],
+                attr_types: (bigint | number)[],
                 cancellable: Gio.Cancellable | null,
                 callback: Gio.AsyncReadyCallback<this> | null,
             ): void;
@@ -1018,7 +1021,7 @@ declare module 'gi://Gck?version=1' {
              * @param callback A callback which is called when the operation completes.
              */
             get_async(
-                attr_types: number[],
+                attr_types: (bigint | number)[],
                 cancellable?: Gio.Cancellable | null,
                 callback?: Gio.AsyncReadyCallback<this> | null,
             ): globalThis.Promise<Attributes> | void;
@@ -1031,7 +1034,7 @@ declare module 'gi://Gck?version=1' {
              * @param cancellable A {@link Gio.Cancellable} or `null`
              * @returns the resulting PKCS#11          attribute data, or `null` if an error occurred
              */
-            get_data(attr_type: number, cancellable?: Gio.Cancellable | null): Uint8Array;
+            get_data(attr_type: bigint | number, cancellable?: Gio.Cancellable | null): Uint8Array;
             /**
              * @param args
              */
@@ -1046,7 +1049,7 @@ declare module 'gi://Gck?version=1' {
              * @param cancellable Optional cancellation object, or `null`.
              */
             get_data_async(
-                attr_type: number,
+                attr_type: bigint | number,
                 allocator: Allocator,
                 cancellable?: Gio.Cancellable | null,
             ): globalThis.Promise<Uint8Array>;
@@ -1060,7 +1063,7 @@ declare module 'gi://Gck?version=1' {
              * @param callback Called when the operation completes.
              */
             get_data_async(
-                attr_type: number,
+                attr_type: bigint | number,
                 allocator: Allocator,
                 cancellable: Gio.Cancellable | null,
                 callback: Gio.AsyncReadyCallback<this> | null,
@@ -1075,7 +1078,7 @@ declare module 'gi://Gck?version=1' {
              * @param callback Called when the operation completes.
              */
             get_data_async(
-                attr_type: number,
+                attr_type: bigint | number,
                 allocator: Allocator,
                 cancellable?: Gio.Cancellable | null,
                 callback?: Gio.AsyncReadyCallback<this> | null,
@@ -1107,7 +1110,7 @@ declare module 'gi://Gck?version=1' {
              * @param cancellable optional cancellation object, or `null`
              * @returns a pointer to the filled in attributes if successful,          or `null` if not
              */
-            get_full(attr_types: number[], cancellable?: Gio.Cancellable | null): Attributes;
+            get_full(attr_types: (bigint | number)[], cancellable?: Gio.Cancellable | null): Attributes;
             /**
              * Get the raw PKCS#11 handle of a GckObject.
              * @returns the raw CK_OBJECT_HANDLE object handle
@@ -1137,7 +1140,7 @@ declare module 'gi://Gck?version=1' {
              * @param cancellable Optional cancellation object, or `null`.
              * @returns the resulting PKCS#11 attribute template, or `null`          if an error occurred
              */
-            get_template(attr_type: number, cancellable?: Gio.Cancellable | null): Attributes;
+            get_template(attr_type: bigint | number, cancellable?: Gio.Cancellable | null): Attributes;
             /**
              * Get an attribute template from the object. The `attr_type` must be for
              * an attribute which returns a template.
@@ -1146,7 +1149,10 @@ declare module 'gi://Gck?version=1' {
              * @param attr_type The template attribute type.
              * @param cancellable Optional cancellation object, or `null`.
              */
-            get_template_async(attr_type: number, cancellable?: Gio.Cancellable | null): globalThis.Promise<Attributes>;
+            get_template_async(
+                attr_type: bigint | number,
+                cancellable?: Gio.Cancellable | null,
+            ): globalThis.Promise<Attributes>;
             /**
              * Get an attribute template from the object. The `attr_type` must be for
              * an attribute which returns a template.
@@ -1157,7 +1163,7 @@ declare module 'gi://Gck?version=1' {
              * @param callback Called when the operation completes.
              */
             get_template_async(
-                attr_type: number,
+                attr_type: bigint | number,
                 cancellable: Gio.Cancellable | null,
                 callback: Gio.AsyncReadyCallback<this> | null,
             ): void;
@@ -1171,7 +1177,7 @@ declare module 'gi://Gck?version=1' {
              * @param callback Called when the operation completes.
              */
             get_template_async(
-                attr_type: number,
+                attr_type: bigint | number,
                 cancellable?: Gio.Cancellable | null,
                 callback?: Gio.AsyncReadyCallback<this> | null,
             ): globalThis.Promise<Attributes> | void;
@@ -1260,7 +1266,7 @@ declare module 'gi://Gck?version=1' {
              * @param cancellable Optional cancellation object, or `null`.
              * @returns `true` if the operation succeeded.
              */
-            set_template(attr_type: number, attrs: Attributes, cancellable?: Gio.Cancellable | null): boolean;
+            set_template(attr_type: bigint | number, attrs: Attributes, cancellable?: Gio.Cancellable | null): boolean;
             /**
              * Set an attribute template on the object. The attr_type must be for
              * an attribute which contains a template.
@@ -1273,7 +1279,7 @@ declare module 'gi://Gck?version=1' {
              * @param cancellable Optional cancellation object, or `null`.
              */
             set_template_async(
-                attr_type: number,
+                attr_type: bigint | number,
                 attrs: Attributes,
                 cancellable?: Gio.Cancellable | null,
             ): globalThis.Promise<boolean>;
@@ -1290,7 +1296,7 @@ declare module 'gi://Gck?version=1' {
              * @param callback Called when the operation completes.
              */
             set_template_async(
-                attr_type: number,
+                attr_type: bigint | number,
                 attrs: Attributes,
                 cancellable: Gio.Cancellable | null,
                 callback: Gio.AsyncReadyCallback<this> | null,
@@ -1308,7 +1314,7 @@ declare module 'gi://Gck?version=1' {
              * @param callback Called when the operation completes.
              */
             set_template_async(
-                attr_type: number,
+                attr_type: bigint | number,
                 attrs: Attributes,
                 cancellable?: Gio.Cancellable | null,
                 callback?: Gio.AsyncReadyCallback<this> | null,
@@ -1460,11 +1466,11 @@ declare module 'gi://Gck?version=1' {
                     Gio.Initable.ConstructorProps {
                 app_data: any;
                 appData: any;
-                handle: number;
+                handle: bigint | number;
                 interaction: Gio.TlsInteraction;
                 module: Module;
-                opening_flags: number;
-                openingFlags: number;
+                opening_flags: bigint | number;
+                openingFlags: bigint | number;
                 options: SessionOptions;
                 slot: Slot;
             }
@@ -1513,12 +1519,12 @@ declare module 'gi://Gck?version=1' {
              * Raw PKCS#11 flags used to open the PKCS#11 session.
              * @construct-only
              */
-            set opening_flags(val: number);
+            set opening_flags(val: bigint | number);
             /**
              * Raw PKCS#11 flags used to open the PKCS#11 session.
              * @construct-only
              */
-            set openingFlags(val: number);
+            set openingFlags(val: bigint | number);
             /**
              * The options this session was opened with.
              * @construct-only
@@ -1576,7 +1582,7 @@ declare module 'gi://Gck?version=1' {
              * @param session_handle the raw PKCS#11 handle of the session
              * @param options Session options. Those which are used during opening a session have no effect.
              */
-            static from_handle(slot: Slot, session_handle: number, options: SessionOptions): Session;
+            static from_handle(slot: Slot, session_handle: bigint | number, options: SessionOptions): Session;
             /**
              * Open a session on the slot. This call may block for an indefinite period.
              * @param slot the slot to open session on
@@ -1678,7 +1684,7 @@ declare module 'gi://Gck?version=1' {
              */
             decrypt(
                 key: Object,
-                mech_type: number,
+                mech_type: bigint | number,
                 input: Uint8Array | string,
                 cancellable?: Gio.Cancellable | null,
             ): Uint8Array;
@@ -1762,7 +1768,7 @@ declare module 'gi://Gck?version=1' {
              */
             derive_key(
                 base: Object,
-                mech_type: number,
+                mech_type: bigint | number,
                 attrs: Attributes,
                 cancellable?: Gio.Cancellable | null,
             ): Object;
@@ -1852,7 +1858,7 @@ declare module 'gi://Gck?version=1' {
              */
             encrypt(
                 key: Object,
-                mech_type: number,
+                mech_type: bigint | number,
                 input: Uint8Array | string,
                 cancellable?: Gio.Cancellable | null,
             ): Uint8Array;
@@ -1942,7 +1948,7 @@ declare module 'gi://Gck?version=1' {
              * @param cancellable optional cancellation object or `null`
              * @returns a list of          the matching objects, which may be empty
              */
-            find_handles(match: Attributes, cancellable?: Gio.Cancellable | null): number[] | null;
+            find_handles(match: Attributes, cancellable?: Gio.Cancellable | null): (bigint | number)[] | null;
             /**
              * Find the objects matching the passed attributes. This call will
              * return immediately and complete asynchronously.
@@ -1954,7 +1960,7 @@ declare module 'gi://Gck?version=1' {
             find_handles_async(
                 match: Attributes,
                 cancellable?: Gio.Cancellable | null,
-            ): globalThis.Promise<number[] | null>;
+            ): globalThis.Promise<(bigint | number)[] | null>;
             /**
              * Find the objects matching the passed attributes. This call will
              * return immediately and complete asynchronously.
@@ -1982,13 +1988,13 @@ declare module 'gi://Gck?version=1' {
                 match: Attributes,
                 cancellable?: Gio.Cancellable | null,
                 callback?: Gio.AsyncReadyCallback<this> | null,
-            ): globalThis.Promise<number[] | null> | void;
+            ): globalThis.Promise<(bigint | number)[] | null> | void;
             /**
              * Get the result of a find handles operation.
              * @param result the asynchronous result
              * @returns an array of          handles that matched, which may be empty, or `null` on failure
              */
-            find_handles_finish(result: Gio.AsyncResult): number[] | null;
+            find_handles_finish(result: Gio.AsyncResult): (bigint | number)[] | null;
             /**
              * Find the objects matching the passed attributes. This call may
              * block for an indefinite period.
@@ -2055,7 +2061,7 @@ declare module 'gi://Gck?version=1' {
              * @returns `true` if the operation succeeded.
              */
             generate_key_pair(
-                mech_type: number,
+                mech_type: bigint | number,
                 public_attrs: Attributes,
                 private_attrs: Attributes,
                 cancellable?: Gio.Cancellable | null,
@@ -2240,7 +2246,7 @@ declare module 'gi://Gck?version=1' {
              * @param cancellable Optional cancellation object, or `null`.
              * @returns Whether successful or not.
              */
-            login(user_type: number, pin?: Uint8Array | null, cancellable?: Gio.Cancellable | null): boolean;
+            login(user_type: bigint | number, pin?: Uint8Array | null, cancellable?: Gio.Cancellable | null): boolean;
             /**
              * Login the user on the session. This call will return
              * immediately and completes asynchronously.
@@ -2249,7 +2255,7 @@ declare module 'gi://Gck?version=1' {
              * @param cancellable Optional cancellation object, or `null`.
              */
             login_async(
-                user_type: number,
+                user_type: bigint | number,
                 pin?: Uint8Array | null,
                 cancellable?: Gio.Cancellable | null,
             ): globalThis.Promise<boolean>;
@@ -2262,7 +2268,7 @@ declare module 'gi://Gck?version=1' {
              * @param callback Called when the operation completes.
              */
             login_async(
-                user_type: number,
+                user_type: bigint | number,
                 pin: Uint8Array | null,
                 cancellable: Gio.Cancellable | null,
                 callback: Gio.AsyncReadyCallback<this> | null,
@@ -2276,7 +2282,7 @@ declare module 'gi://Gck?version=1' {
              * @param callback Called when the operation completes.
              */
             login_async(
-                user_type: number,
+                user_type: bigint | number,
                 pin?: Uint8Array | null,
                 cancellable?: Gio.Cancellable | null,
                 callback?: Gio.AsyncReadyCallback<this> | null,
@@ -2296,7 +2302,7 @@ declare module 'gi://Gck?version=1' {
              * @returns Whether successful or not.
              */
             login_interactive(
-                user_type: number,
+                user_type: bigint | number,
                 interaction?: Gio.TlsInteraction | null,
                 cancellable?: Gio.Cancellable | null,
             ): boolean;
@@ -2308,7 +2314,7 @@ declare module 'gi://Gck?version=1' {
              * @param cancellable optional cancellation object, or `null`
              */
             login_interactive_async(
-                user_type: number,
+                user_type: bigint | number,
                 interaction?: Gio.TlsInteraction | null,
                 cancellable?: Gio.Cancellable | null,
             ): globalThis.Promise<boolean>;
@@ -2321,7 +2327,7 @@ declare module 'gi://Gck?version=1' {
              * @param callback called when the operation completes
              */
             login_interactive_async(
-                user_type: number,
+                user_type: bigint | number,
                 interaction: Gio.TlsInteraction | null,
                 cancellable: Gio.Cancellable | null,
                 callback: Gio.AsyncReadyCallback<this> | null,
@@ -2335,7 +2341,7 @@ declare module 'gi://Gck?version=1' {
              * @param callback called when the operation completes
              */
             login_interactive_async(
-                user_type: number,
+                user_type: bigint | number,
                 interaction?: Gio.TlsInteraction | null,
                 cancellable?: Gio.Cancellable | null,
                 callback?: Gio.AsyncReadyCallback<this> | null,
@@ -2412,7 +2418,7 @@ declare module 'gi://Gck?version=1' {
              */
             set_pin_async(
                 old_pin: Uint8Array | null,
-                n_old_pin: number,
+                n_old_pin: bigint | number,
                 new_pin?: Uint8Array | null,
                 cancellable?: Gio.Cancellable | null,
             ): globalThis.Promise<boolean>;
@@ -2428,7 +2434,7 @@ declare module 'gi://Gck?version=1' {
              */
             set_pin_async(
                 old_pin: Uint8Array | null,
-                n_old_pin: number,
+                n_old_pin: bigint | number,
                 new_pin: Uint8Array | null,
                 cancellable: Gio.Cancellable | null,
                 callback: Gio.AsyncReadyCallback<this> | null,
@@ -2445,7 +2451,7 @@ declare module 'gi://Gck?version=1' {
              */
             set_pin_async(
                 old_pin: Uint8Array | null,
-                n_old_pin: number,
+                n_old_pin: bigint | number,
                 new_pin?: Uint8Array | null,
                 cancellable?: Gio.Cancellable | null,
                 callback?: Gio.AsyncReadyCallback<this> | null,
@@ -2467,7 +2473,7 @@ declare module 'gi://Gck?version=1' {
              */
             sign(
                 key: Object,
-                mech_type: number,
+                mech_type: bigint | number,
                 input: Uint8Array | string,
                 cancellable?: Gio.Cancellable | null,
             ): Uint8Array;
@@ -2537,7 +2543,7 @@ declare module 'gi://Gck?version=1' {
                 key: Object,
                 mechanism: Mechanism,
                 input: Uint8Array | string,
-                n_result: number,
+                n_result: bigint | number,
                 cancellable?: Gio.Cancellable | null,
             ): number;
             /**
@@ -2554,7 +2560,7 @@ declare module 'gi://Gck?version=1' {
              */
             unwrap_key(
                 wrapper: Object,
-                mech_type: number,
+                mech_type: bigint | number,
                 input: Uint8Array | string,
                 attrs: Attributes,
                 cancellable?: Gio.Cancellable | null,
@@ -2654,7 +2660,7 @@ declare module 'gi://Gck?version=1' {
              */
             verify(
                 key: Object,
-                mech_type: number,
+                mech_type: bigint | number,
                 input: Uint8Array | string,
                 signature: Uint8Array | string,
                 cancellable?: Gio.Cancellable | null,
@@ -2745,7 +2751,7 @@ declare module 'gi://Gck?version=1' {
              */
             wrap_key(
                 wrapper: Object,
-                mech_type: number,
+                mech_type: bigint | number,
                 wrapped: Object,
                 cancellable?: Gio.Cancellable | null,
             ): Uint8Array;
@@ -3499,7 +3505,7 @@ declare module 'gi://Gck?version=1' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -3526,7 +3532,7 @@ declare module 'gi://Gck?version=1' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected
@@ -3564,7 +3570,7 @@ declare module 'gi://Gck?version=1' {
             // Constructor properties interface
 
             interface ConstructorProps extends GObject.Object.ConstructorProps {
-                handle: number;
+                handle: bigint | number;
                 module: Module;
             }
         }
@@ -3636,7 +3642,7 @@ declare module 'gi://Gck?version=1' {
              * @param module The module that this slot is on.
              * @param slot_id The raw PKCS#11 handle or slot id of this slot.
              */
-            static from_handle(module: Module, slot_id: number): Slot;
+            static from_handle(module: Module, slot_id: bigint | number): Slot;
 
             // Methods
 
@@ -3673,7 +3679,7 @@ declare module 'gi://Gck?version=1' {
              * @param mech_type The mechanisms type to get info for.
              * @returns the mechanism information, or `null` if failed; use          `gck_mechanism_info_free()` when done with it
              */
-            get_mechanism_info(mech_type: number): MechanismInfo;
+            get_mechanism_info(mech_type: bigint | number): MechanismInfo;
             /**
              * Get the available mechanisms for this slot.
              * @returns a list of the mechanisms          for this slot, which should be freed with g_array_free ()
@@ -3694,7 +3700,7 @@ declare module 'gi://Gck?version=1' {
              * @param flags The flags to check.
              * @returns Whether one or more flags exist.
              */
-            has_flags(flags: number): boolean;
+            has_flags(flags: bigint | number): boolean;
             /**
              * Create a hash value for the GckSlot.
              *
@@ -3788,27 +3794,21 @@ declare module 'gi://Gck?version=1' {
 
             // Constructors
 
-            constructor(
-                properties?: Partial<{
-                    type: number;
-                    value: Uint8Array;
-                    length: number;
-                }>,
-            );
+            constructor(attr_type: bigint | number, value: number, length: bigint | number);
 
-            static ['new'](attr_type: number, value: number, length: number): Attribute;
+            static ['new'](attr_type: bigint | number, value: number, length: bigint | number): Attribute;
 
-            static new_boolean(attr_type: number, value: boolean): Attribute;
+            static new_boolean(attr_type: bigint | number, value: boolean): Attribute;
 
-            static new_date(attr_type: number, value: GLib.Date): Attribute;
+            static new_date(attr_type: bigint | number, value: GLib.Date): Attribute;
 
-            static new_empty(attr_type: number): Attribute;
+            static new_empty(attr_type: bigint | number): Attribute;
 
-            static new_invalid(attr_type: number): Attribute;
+            static new_invalid(attr_type: bigint | number): Attribute;
 
-            static new_string(attr_type: number, value: string): Attribute;
+            static new_string(attr_type: bigint | number, value: string): Attribute;
 
-            static new_ulong(attr_type: number, value: number): Attribute;
+            static new_ulong(attr_type: bigint | number, value: bigint | number): Attribute;
 
             // Methods
 
@@ -3926,9 +3926,9 @@ declare module 'gi://Gck?version=1' {
 
             // Constructors
 
-            constructor(reserved: number);
+            constructor(reserved: bigint | number);
 
-            static ['new'](reserved: number): Attributes;
+            static ['new'](reserved: bigint | number): Attributes;
 
             // Methods
 
@@ -3961,7 +3961,7 @@ declare module 'gi://Gck?version=1' {
              * @param attr_type The type of attribute to find.
              * @returns the first attribute found with the specified type,          or `null`
              */
-            find(attr_type: number): Attribute;
+            find(attr_type: bigint | number): Attribute;
             /**
              * Find an attribute with the specified type in the array.
              *
@@ -3971,7 +3971,7 @@ declare module 'gi://Gck?version=1' {
              * @param attr_type The type of attribute to find.
              * @returns Whether a value was found or not.
              */
-            find_boolean(attr_type: number): [boolean, boolean];
+            find_boolean(attr_type: bigint | number): [boolean, boolean];
             /**
              * Find an attribute with the specified type in the array.
              *
@@ -3981,7 +3981,7 @@ declare module 'gi://Gck?version=1' {
              * @param attr_type The type of attribute to find.
              * @returns Whether a value was found or not.
              */
-            find_date(attr_type: number): [boolean, GLib.Date];
+            find_date(attr_type: bigint | number): [boolean, GLib.Date];
             /**
              * Find an attribute with the specified type in the array.
              *
@@ -3991,7 +3991,7 @@ declare module 'gi://Gck?version=1' {
              * @param attr_type The type of attribute to find.
              * @returns Whether a value was found or not.
              */
-            find_string(attr_type: number): [boolean, string];
+            find_string(attr_type: bigint | number): [boolean, string];
             /**
              * Find an attribute with the specified type in the array.
              *
@@ -4001,7 +4001,7 @@ declare module 'gi://Gck?version=1' {
              * @param attr_type The type of attribute to find.
              * @returns Whether a value was found or not.
              */
-            find_ulong(attr_type: number): [boolean, number];
+            find_ulong(attr_type: bigint | number): [boolean, number];
             /**
              * Reference this attributes array.
              * @returns the attributes
@@ -4056,7 +4056,7 @@ declare module 'gi://Gck?version=1' {
 
             // Constructors
 
-            constructor(properties?: Partial<{}>);
+            constructor(flags: BuilderFlags);
 
             static ['new'](flags: BuilderFlags): Builder;
 
@@ -4104,7 +4104,7 @@ declare module 'gi://Gck?version=1' {
              * @param attr_type the new attribute type
              * @param value the attribute value
              */
-            add_boolean(attr_type: number, value: boolean): void;
+            add_boolean(attr_type: bigint | number, value: boolean): void;
             /**
              * Add a new attribute to the builder with an arbitrary value. Unconditionally
              * adds a new attribute, even if one with the same `attr_type` already exists.
@@ -4117,7 +4117,7 @@ declare module 'gi://Gck?version=1' {
              * @param attr_type the new attribute type
              * @param value the new attribute memory
              */
-            add_data(attr_type: number, value?: Uint8Array | null): void;
+            add_data(attr_type: bigint | number, value?: Uint8Array | null): void;
             /**
              * Add a new attribute to the builder for the date `value`.
              * Unconditionally adds a new attribute, even if one with the same `attr_type`
@@ -4125,20 +4125,20 @@ declare module 'gi://Gck?version=1' {
              * @param attr_type the new attribute type
              * @param value the attribute value
              */
-            add_date(attr_type: number, value: GLib.Date): void;
+            add_date(attr_type: bigint | number, value: GLib.Date): void;
             /**
              * Add a new attribute to the builder that is empty. Unconditionally
              * adds a new attribute, even if one with the same `attr_type` already exists.
              * @param attr_type the new attribute type
              */
-            add_empty(attr_type: number): void;
+            add_empty(attr_type: bigint | number): void;
             /**
              * Add a new attribute to the builder that is invalid in the PKCS#11 sense.
              * Unconditionally adds a new attribute, even if one with the same `attr_type`
              * already exists.
              * @param attr_type the new attribute type
              */
-            add_invalid(attr_type: number): void;
+            add_invalid(attr_type: bigint | number): void;
             /**
              * Add the attributes with the types in `only_types` from `attrs` to the
              * builder. The attributes are added uncondititionally whether or not
@@ -4155,7 +4155,7 @@ declare module 'gi://Gck?version=1' {
              * @param attrs the attributes to add
              * @param only_types the types of attributes to add
              */
-            add_only(attrs: Attributes, only_types: number[]): void;
+            add_only(attrs: Attributes, only_types: (bigint | number)[]): void;
             /**
              * Add a new attribute to the builder for the string `value` or `null`.
              * Unconditionally adds a new attribute, even if one with the same `attr_type`
@@ -4163,7 +4163,7 @@ declare module 'gi://Gck?version=1' {
              * @param attr_type the new attribute type
              * @param value the attribute value
              */
-            add_string(attr_type: number, value?: string | null): void;
+            add_string(attr_type: bigint | number, value?: string | null): void;
             /**
              * Add a new attribute to the builder for the unsigned long `value`.
              * Unconditionally adds a new attribute, even if one with the same `attr_type`
@@ -4171,7 +4171,7 @@ declare module 'gi://Gck?version=1' {
              * @param attr_type the new attribute type
              * @param value the attribute value
              */
-            add_ulong(attr_type: number, value: number): void;
+            add_ulong(attr_type: bigint | number, value: bigint | number): void;
             /**
              * Clear the builder and release all allocated memory. The builder may be used
              * again to build another set of attributes after this function call.
@@ -4214,7 +4214,7 @@ declare module 'gi://Gck?version=1' {
              * @param attr_type the type of attribute to find
              * @returns the attribute or `null` if not found
              */
-            find(attr_type: number): Attribute;
+            find(attr_type: bigint | number): Attribute;
             /**
              * Find a boolean attribute in the builder that has the type `attr_type`, is
              * of the correct boolean size, and is not invalid in the PKCS#11 sense.
@@ -4223,7 +4223,7 @@ declare module 'gi://Gck?version=1' {
              * @param attr_type the type of attribute to find
              * @returns whether a valid boolean attribute was found
              */
-            find_boolean(attr_type: number): [boolean, boolean];
+            find_boolean(attr_type: bigint | number): [boolean, boolean];
             /**
              * Find a date attribute in the builder that has the type `attr_type`, is of
              * the correct date size, and is not invalid in the PKCS#11 sense.
@@ -4232,7 +4232,7 @@ declare module 'gi://Gck?version=1' {
              * @param attr_type the type of attribute to find
              * @returns whether a valid date attribute was found
              */
-            find_date(attr_type: number): [boolean, GLib.Date];
+            find_date(attr_type: bigint | number): [boolean, GLib.Date];
             /**
              * Find a string attribute in the builder that has the type `attr_type`, has a
              * non `null` value pointer, and is not invalid in the PKCS#11 sense.
@@ -4241,7 +4241,7 @@ declare module 'gi://Gck?version=1' {
              * @param attr_type the type of attribute to find
              * @returns whether a valid string attribute was found
              */
-            find_string(attr_type: number): [boolean, string];
+            find_string(attr_type: bigint | number): [boolean, string];
             /**
              * Find a unsigned long attribute in the builder that has the type `attr_type`,
              * is of the correct unsigned long size, and is not invalid in the PKCS#11 sense.
@@ -4250,7 +4250,7 @@ declare module 'gi://Gck?version=1' {
              * @param attr_type the type of attribute to find
              * @returns whether a valid unsigned long attribute was found
              */
-            find_ulong(attr_type: number): [boolean, number];
+            find_ulong(attr_type: bigint | number): [boolean, number];
             /**
              * Initialize a stack allocated builder, with the default flags.
              *
@@ -4303,7 +4303,7 @@ declare module 'gi://Gck?version=1' {
              * @param attr_type the new attribute type
              * @param value the attribute value
              */
-            set_boolean(attr_type: number, value: boolean): void;
+            set_boolean(attr_type: bigint | number, value: boolean): void;
             /**
              * Set a new attribute to the builder with an arbitrary value. If an attribute
              * with `attr_type` already exists in the builder then it is changed to the new
@@ -4317,7 +4317,7 @@ declare module 'gi://Gck?version=1' {
              * @param attr_type the attribute type
              * @param value the new attribute memory
              */
-            set_data(attr_type: number, value?: Uint8Array | null): void;
+            set_data(attr_type: bigint | number, value?: Uint8Array | null): void;
             /**
              * Set an attribute on the builder for the date `value`.
              * If an attribute with `attr_type` already exists in the builder then it is
@@ -4325,21 +4325,21 @@ declare module 'gi://Gck?version=1' {
              * @param attr_type the new attribute type
              * @param value the attribute value
              */
-            set_date(attr_type: number, value: GLib.Date): void;
+            set_date(attr_type: bigint | number, value: GLib.Date): void;
             /**
              * Set an attribute on the builder that is empty. If an attribute
              * with `attr_type` already exists in the builder then it is changed to the new
              * value, otherwise an attribute is added.
              * @param attr_type the attribute type
              */
-            set_empty(attr_type: number): void;
+            set_empty(attr_type: bigint | number): void;
             /**
              * Set an attribute on the builder that is invalid in the PKCS#11 sense.
              * If an attribute with `attr_type` already exists in the builder then it is
              * changed to the new value, otherwise an attribute is added.
              * @param attr_type the attribute type
              */
-            set_invalid(attr_type: number): void;
+            set_invalid(attr_type: bigint | number): void;
             /**
              * Set an attribute on the builder for the string `value` or `null`.
              * If an attribute with `attr_type` already exists in the builder then it is
@@ -4347,7 +4347,7 @@ declare module 'gi://Gck?version=1' {
              * @param attr_type the new attribute type
              * @param value the attribute value
              */
-            set_string(attr_type: number, value: string): void;
+            set_string(attr_type: bigint | number, value: string): void;
             /**
              * Set an attribute on the builder for the unsigned long `value`.
              * If an attribute with `attr_type` already exists in the builder then it is
@@ -4355,7 +4355,7 @@ declare module 'gi://Gck?version=1' {
              * @param attr_type the new attribute type
              * @param value the attribute value
              */
-            set_ulong(attr_type: number, value: number): void;
+            set_ulong(attr_type: bigint | number, value: bigint | number): void;
             /**
              * Take the attributes that have been built in the {@link Gck.Builder}. The builder
              * will no longer contain any attributes after this function call.
@@ -4378,7 +4378,7 @@ declare module 'gi://Gck?version=1' {
              * @param attr_type the new attribute type
              * @param value the new         attribute memory
              */
-            take_data(attr_type: number, value?: Uint8Array | null): void;
+            take_data(attr_type: bigint | number, value?: Uint8Array | null): void;
         }
 
         /**
@@ -4404,16 +4404,6 @@ declare module 'gi://Gck?version=1' {
             type: number;
             parameter: any;
             n_parameter: number;
-
-            // Constructors
-
-            constructor(
-                properties?: Partial<{
-                    type: number;
-                    parameter: any;
-                    n_parameter: number;
-                }>,
-            );
         }
 
         /**
@@ -4433,16 +4423,6 @@ declare module 'gi://Gck?version=1' {
             min_key_size: number;
             max_key_size: number;
             flags: number;
-
-            // Constructors
-
-            constructor(
-                properties?: Partial<{
-                    min_key_size: number;
-                    max_key_size: number;
-                    flags: number;
-                }>,
-            );
 
             // Methods
 
@@ -4482,20 +4462,6 @@ declare module 'gi://Gck?version=1' {
             library_description: string;
             library_version_major: number;
             library_version_minor: number;
-
-            // Constructors
-
-            constructor(
-                properties?: Partial<{
-                    pkcs11_version_major: number;
-                    pkcs11_version_minor: number;
-                    manufacturer_id: string;
-                    flags: number;
-                    library_description: string;
-                    library_version_major: number;
-                    library_version_minor: number;
-                }>,
-            );
 
             // Methods
 
@@ -4563,17 +4529,6 @@ declare module 'gi://Gck?version=1' {
             flags: number;
             device_error: number;
 
-            // Constructors
-
-            constructor(
-                properties?: Partial<{
-                    slot_id: number;
-                    state: number;
-                    flags: number;
-                    device_error: number;
-                }>,
-            );
-
             // Methods
 
             /**
@@ -4620,20 +4575,6 @@ declare module 'gi://Gck?version=1' {
             hardware_version_minor: number;
             firmware_version_major: number;
             firmware_version_minor: number;
-
-            // Constructors
-
-            constructor(
-                properties?: Partial<{
-                    slot_description: string;
-                    manufacturer_id: string;
-                    flags: number;
-                    hardware_version_major: number;
-                    hardware_version_minor: number;
-                    firmware_version_major: number;
-                    firmware_version_minor: number;
-                }>,
-            );
 
             // Methods
 
@@ -4691,33 +4632,6 @@ declare module 'gi://Gck?version=1' {
             firmware_version_minor: number;
             utc_time: number;
 
-            // Constructors
-
-            constructor(
-                properties?: Partial<{
-                    label: string;
-                    manufacturer_id: string;
-                    model: string;
-                    serial_number: string;
-                    flags: number;
-                    max_session_count: number;
-                    session_count: number;
-                    max_rw_session_count: number;
-                    rw_session_count: number;
-                    max_pin_len: number;
-                    min_pin_len: number;
-                    total_public_memory: number;
-                    free_public_memory: number;
-                    total_private_memory: number;
-                    free_private_memory: number;
-                    hardware_version_major: number;
-                    hardware_version_minor: number;
-                    firmware_version_major: number;
-                    firmware_version_minor: number;
-                    utc_time: number;
-                }>,
-            );
-
             // Methods
 
             /**
@@ -4746,8 +4660,6 @@ declare module 'gi://Gck?version=1' {
             // Fields
 
             any_unrecognized: boolean;
-            module_info: ModuleInfo;
-            token_info: TokenInfo;
 
             // Constructors
 
@@ -4849,7 +4761,7 @@ declare module 'gi://Gck?version=1' {
              * @param cancellable optional cancellation object
              * @returns whether the cache update was successful
              */
-            update(attr_types: number[], cancellable?: Gio.Cancellable | null): boolean;
+            update(attr_types: (bigint | number)[], cancellable?: Gio.Cancellable | null): boolean;
             /**
              * Update the object cache with given attributes. If an attribute already
              * exists in the cache, it will be updated, and if it doesn't it will be added.
@@ -4858,7 +4770,10 @@ declare module 'gi://Gck?version=1' {
              * @param attr_types the types of attributes to update
              * @param cancellable optional cancellation object
              */
-            update_async(attr_types: number[], cancellable?: Gio.Cancellable | null): globalThis.Promise<boolean>;
+            update_async(
+                attr_types: (bigint | number)[],
+                cancellable?: Gio.Cancellable | null,
+            ): globalThis.Promise<boolean>;
             /**
              * Update the object cache with given attributes. If an attribute already
              * exists in the cache, it will be updated, and if it doesn't it will be added.
@@ -4869,7 +4784,7 @@ declare module 'gi://Gck?version=1' {
              * @param callback called when the operation completes
              */
             update_async(
-                attr_types: number[],
+                attr_types: (bigint | number)[],
                 cancellable: Gio.Cancellable | null,
                 callback: Gio.AsyncReadyCallback<this> | null,
             ): void;
@@ -4883,7 +4798,7 @@ declare module 'gi://Gck?version=1' {
              * @param callback called when the operation completes
              */
             update_async(
-                attr_types: number[],
+                attr_types: (bigint | number)[],
                 cancellable?: Gio.Cancellable | null,
                 callback?: Gio.AsyncReadyCallback<this> | null,
             ): globalThis.Promise<boolean> | void;

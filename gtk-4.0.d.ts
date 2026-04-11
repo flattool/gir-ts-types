@@ -9630,7 +9630,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -9657,7 +9657,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected
@@ -12414,7 +12414,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -12441,7 +12441,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected
@@ -12969,7 +12969,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param value
              * @virtual
              */
-            vfunc_set_buildable_property(builder: Builder, name: string, value: GObject.Value | any): void;
+            vfunc_set_buildable_property(builder: Builder, name: string, value: unknown): void;
             /**
              * Stores the id attribute given in the {@link Gtk.Builder} UI definition.
              *   {@link Gtk.Widget} stores the name as object data. Implement this method if your
@@ -13375,7 +13375,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -13402,7 +13402,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected
@@ -14460,7 +14460,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param value
              * @virtual
              */
-            vfunc_set_buildable_property(builder: Builder, name: string, value: GObject.Value | any): void;
+            vfunc_set_buildable_property(builder: Builder, name: string, value: unknown): void;
             /**
              * Stores the id attribute given in the {@link Gtk.Builder} UI definition.
              *   {@link Gtk.Widget} stores the name as object data. Implement this method if your
@@ -14866,7 +14866,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -14893,7 +14893,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected
@@ -16452,7 +16452,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param value
              * @virtual
              */
-            vfunc_set_buildable_property(builder: Builder, name: string, value: GObject.Value | any): void;
+            vfunc_set_buildable_property(builder: Builder, name: string, value: unknown): void;
             /**
              * Stores the id attribute given in the {@link Gtk.Builder} UI definition.
              *   {@link Gtk.Widget} stores the name as object data. Implement this method if your
@@ -16858,7 +16858,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -16885,7 +16885,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected
@@ -20114,7 +20114,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -20141,7 +20141,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected
@@ -23408,7 +23408,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param value
              * @virtual
              */
-            vfunc_set_buildable_property(builder: Builder, name: string, value: GObject.Value | any): void;
+            vfunc_set_buildable_property(builder: Builder, name: string, value: unknown): void;
             /**
              * Stores the id attribute given in the {@link Gtk.Builder} UI definition.
              *   {@link Gtk.Widget} stores the name as object data. Implement this method if your
@@ -23814,7 +23814,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -23841,7 +23841,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected
@@ -27490,7 +27490,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -27517,7 +27517,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected
@@ -29350,7 +29350,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -29377,7 +29377,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected
@@ -31952,7 +31952,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param value
              * @virtual
              */
-            vfunc_set_buildable_property(builder: Builder, name: string, value: GObject.Value | any): void;
+            vfunc_set_buildable_property(builder: Builder, name: string, value: unknown): void;
             /**
              * Stores the id attribute given in the {@link Gtk.Builder} UI definition.
              *   {@link Gtk.Widget} stores the name as object data. Implement this method if your
@@ -32358,7 +32358,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -32385,7 +32385,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected
@@ -33795,7 +33795,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -33822,7 +33822,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected
@@ -36727,7 +36727,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -36754,7 +36754,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected
@@ -37476,7 +37476,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param value
              * @virtual
              */
-            vfunc_set_buildable_property(builder: Builder, name: string, value: GObject.Value | any): void;
+            vfunc_set_buildable_property(builder: Builder, name: string, value: unknown): void;
             /**
              * Stores the id attribute given in the {@link Gtk.Builder} UI definition.
              *   {@link Gtk.Widget} stores the name as object data. Implement this method if your
@@ -37892,7 +37892,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -37919,7 +37919,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected
@@ -38542,7 +38542,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -38569,7 +38569,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected
@@ -39036,7 +39036,7 @@ declare module 'gi://Gtk?version=4.0' {
 
             static new_from_resource(resource_path: string): Builder;
 
-            static new_from_string(string: string, length: number): Builder;
+            static new_from_string(string: string, length: bigint | number): Builder;
 
             // Signals
 
@@ -39124,7 +39124,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param length the length of `buffer` (may be -1 if `buffer` is nul-terminated)
              * @returns `true` on success, `false` if an error occurred
              */
-            add_from_string(buffer: string, length: number): boolean;
+            add_from_string(buffer: string, length: bigint | number): boolean;
             /**
              * Parses a file containing a UI definition building only the
              * requested objects and merges them with the current contents
@@ -39175,7 +39175,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param object_ids nul-terminated array of objects to build
              * @returns `true` on success, `false` if an error occurred
              */
-            add_objects_from_string(buffer: string, length: number, object_ids: string[]): boolean;
+            add_objects_from_string(buffer: string, length: bigint | number, object_ids: string[]): boolean;
             /**
              * Creates a closure to invoke the function called `function_name`.
              *
@@ -39222,7 +39222,7 @@ declare module 'gi://Gtk?version=4.0' {
                 object: GObject.Object,
                 template_type: GObject.GType,
                 buffer: string,
-                length: number,
+                length: bigint | number,
             ): boolean;
             /**
              * Gets the current object set via `gtk_builder_set_current_object()`.
@@ -39846,7 +39846,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -39873,7 +39873,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected
@@ -39912,7 +39912,7 @@ declare module 'gi://Gtk?version=4.0' {
             // Constructor properties interface
 
             interface ConstructorProps extends ListItemFactory.ConstructorProps {
-                bytes: GLib.Bytes;
+                bytes: GLib.Bytes | Uint8Array;
                 resource: string;
                 scope: BuilderScope;
             }
@@ -41328,7 +41328,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param value
              * @virtual
              */
-            vfunc_set_buildable_property(builder: Builder, name: string, value: GObject.Value | any): void;
+            vfunc_set_buildable_property(builder: Builder, name: string, value: unknown): void;
             /**
              * Stores the id attribute given in the {@link Gtk.Builder} UI definition.
              *   {@link Gtk.Widget} stores the name as object data. Implement this method if your
@@ -41734,7 +41734,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -41761,7 +41761,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected
@@ -44609,7 +44609,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param value
              * @virtual
              */
-            vfunc_set_buildable_property(builder: Builder, name: string, value: GObject.Value | any): void;
+            vfunc_set_buildable_property(builder: Builder, name: string, value: unknown): void;
             /**
              * Stores the id attribute given in the {@link Gtk.Builder} UI definition.
              *   {@link Gtk.Widget} stores the name as object data. Implement this method if your
@@ -45015,7 +45015,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -45042,7 +45042,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected
@@ -45726,7 +45726,7 @@ declare module 'gi://Gtk?version=4.0' {
             vfunc_get_cell_property(
                 renderer: CellRenderer,
                 property_id: number,
-                value: GObject.Value | any,
+                value: unknown,
                 pspec: GObject.ParamSpec,
             ): void;
             /**
@@ -45836,7 +45836,7 @@ declare module 'gi://Gtk?version=4.0' {
             vfunc_set_cell_property(
                 renderer: CellRenderer,
                 property_id: number,
-                value: GObject.Value | any,
+                value: unknown,
                 pspec: GObject.ParamSpec,
             ): void;
             /**
@@ -46374,7 +46374,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param value
              * @virtual
              */
-            vfunc_set_buildable_property(builder: Builder, name: string, value: GObject.Value | any): void;
+            vfunc_set_buildable_property(builder: Builder, name: string, value: unknown): void;
             /**
              * Stores the id attribute given in the {@link Gtk.Builder} UI definition.
              *   {@link Gtk.Widget} stores the name as object data. Implement this method if your
@@ -46941,7 +46941,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -46968,7 +46968,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected
@@ -47232,7 +47232,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param value
              * @virtual
              */
-            vfunc_set_buildable_property(builder: Builder, name: string, value: GObject.Value | any): void;
+            vfunc_set_buildable_property(builder: Builder, name: string, value: unknown): void;
             /**
              * Stores the id attribute given in the {@link Gtk.Builder} UI definition.
              *   {@link Gtk.Widget} stores the name as object data. Implement this method if your
@@ -47789,7 +47789,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -47816,7 +47816,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected
@@ -49852,7 +49852,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -49879,7 +49879,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected
@@ -51421,7 +51421,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param value
              * @virtual
              */
-            vfunc_set_buildable_property(builder: Builder, name: string, value: GObject.Value | any): void;
+            vfunc_set_buildable_property(builder: Builder, name: string, value: unknown): void;
             /**
              * Stores the id attribute given in the {@link Gtk.Builder} UI definition.
              *   {@link Gtk.Widget} stores the name as object data. Implement this method if your
@@ -51998,7 +51998,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -52025,7 +52025,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected
@@ -52684,7 +52684,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param value
              * @virtual
              */
-            vfunc_set_buildable_property(builder: Builder, name: string, value: GObject.Value | any): void;
+            vfunc_set_buildable_property(builder: Builder, name: string, value: unknown): void;
             /**
              * Stores the id attribute given in the {@link Gtk.Builder} UI definition.
              *   {@link Gtk.Widget} stores the name as object data. Implement this method if your
@@ -53100,7 +53100,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -53127,7 +53127,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected
@@ -54617,7 +54617,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param value
              * @virtual
              */
-            vfunc_set_buildable_property(builder: Builder, name: string, value: GObject.Value | any): void;
+            vfunc_set_buildable_property(builder: Builder, name: string, value: unknown): void;
             /**
              * Stores the id attribute given in the {@link Gtk.Builder} UI definition.
              *   {@link Gtk.Widget} stores the name as object data. Implement this method if your
@@ -55023,7 +55023,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -55050,7 +55050,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected
@@ -57758,7 +57758,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param value
              * @virtual
              */
-            vfunc_set_buildable_property(builder: Builder, name: string, value: GObject.Value | any): void;
+            vfunc_set_buildable_property(builder: Builder, name: string, value: unknown): void;
             /**
              * Stores the id attribute given in the {@link Gtk.Builder} UI definition.
              *   {@link Gtk.Widget} stores the name as object data. Implement this method if your
@@ -58246,7 +58246,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -58273,7 +58273,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected
@@ -59488,7 +59488,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -59515,7 +59515,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected
@@ -62122,7 +62122,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param value
              * @virtual
              */
-            vfunc_set_buildable_property(builder: Builder, name: string, value: GObject.Value | any): void;
+            vfunc_set_buildable_property(builder: Builder, name: string, value: unknown): void;
             /**
              * Stores the id attribute given in the {@link Gtk.Builder} UI definition.
              *   {@link Gtk.Widget} stores the name as object data. Implement this method if your
@@ -62610,7 +62610,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -62637,7 +62637,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected
@@ -63353,7 +63353,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param value
              * @virtual
              */
-            vfunc_set_buildable_property(builder: Builder, name: string, value: GObject.Value | any): void;
+            vfunc_set_buildable_property(builder: Builder, name: string, value: unknown): void;
             /**
              * Stores the id attribute given in the {@link Gtk.Builder} UI definition.
              *   {@link Gtk.Widget} stores the name as object data. Implement this method if your
@@ -63759,7 +63759,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -63786,7 +63786,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected
@@ -64673,7 +64673,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param value
              * @virtual
              */
-            vfunc_set_buildable_property(builder: Builder, name: string, value: GObject.Value | any): void;
+            vfunc_set_buildable_property(builder: Builder, name: string, value: unknown): void;
             /**
              * Stores the id attribute given in the {@link Gtk.Builder} UI definition.
              *   {@link Gtk.Widget} stores the name as object data. Implement this method if your
@@ -65145,7 +65145,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -65172,7 +65172,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected
@@ -67537,7 +67537,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param value
              * @virtual
              */
-            vfunc_set_buildable_property(builder: Builder, name: string, value: GObject.Value | any): void;
+            vfunc_set_buildable_property(builder: Builder, name: string, value: unknown): void;
             /**
              * Stores the id attribute given in the {@link Gtk.Builder} UI definition.
              *   {@link Gtk.Widget} stores the name as object data. Implement this method if your
@@ -68151,7 +68151,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -68178,7 +68178,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected
@@ -71647,7 +71647,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -71674,7 +71674,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected
@@ -74698,7 +74698,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -74725,7 +74725,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected
@@ -75225,7 +75225,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param value
              * @virtual
              */
-            vfunc_set_buildable_property(builder: Builder, name: string, value: GObject.Value | any): void;
+            vfunc_set_buildable_property(builder: Builder, name: string, value: unknown): void;
             /**
              * Stores the id attribute given in the {@link Gtk.Builder} UI definition.
              *   {@link Gtk.Widget} stores the name as object data. Implement this method if your
@@ -75631,7 +75631,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -75658,7 +75658,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected
@@ -76009,7 +76009,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param data CSS data to be parsed
              * @param length the length of `data` in bytes, or -1 for NUL terminated strings
              */
-            load_from_data(data: string, length: number): void;
+            load_from_data(data: string, length: bigint | number): void;
             /**
              * Loads the data contained in `file` into `css_provider`.
              *
@@ -76456,7 +76456,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -76483,7 +76483,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected
@@ -78097,7 +78097,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -78124,7 +78124,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected
@@ -80934,7 +80934,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -80961,7 +80961,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected
@@ -81952,7 +81952,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param value
              * @virtual
              */
-            vfunc_set_buildable_property(builder: Builder, name: string, value: GObject.Value | any): void;
+            vfunc_set_buildable_property(builder: Builder, name: string, value: unknown): void;
             /**
              * Stores the id attribute given in the {@link Gtk.Builder} UI definition.
              *   {@link Gtk.Widget} stores the name as object data. Implement this method if your
@@ -82414,7 +82414,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -82441,7 +82441,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected
@@ -85366,7 +85366,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param value
              * @virtual
              */
-            vfunc_set_buildable_property(builder: Builder, name: string, value: GObject.Value | any): void;
+            vfunc_set_buildable_property(builder: Builder, name: string, value: unknown): void;
             /**
              * Stores the id attribute given in the {@link Gtk.Builder} UI definition.
              *   {@link Gtk.Widget} stores the name as object data. Implement this method if your
@@ -85772,7 +85772,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -85799,7 +85799,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected
@@ -86717,7 +86717,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param value
              * @virtual
              */
-            vfunc_set_buildable_property(builder: Builder, name: string, value: GObject.Value | any): void;
+            vfunc_set_buildable_property(builder: Builder, name: string, value: unknown): void;
             /**
              * Stores the id attribute given in the {@link Gtk.Builder} UI definition.
              *   {@link Gtk.Widget} stores the name as object data. Implement this method if your
@@ -87123,7 +87123,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -87150,7 +87150,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected
@@ -87215,7 +87215,7 @@ declare module 'gi://Gtk?version=4.0' {
                  * @signal
                  * @run-last
                  */
-                drop: (arg0: GObject.Value, arg1: number, arg2: number) => boolean | void;
+                drop: (arg0: unknown, arg1: number, arg2: number) => boolean | void;
                 /**
                  * Emitted on the drop site when the pointer enters the widget.
                  *
@@ -87260,7 +87260,7 @@ declare module 'gi://Gtk?version=4.0' {
                 drop: Gdk.Drop;
                 formats: Gdk.ContentFormats;
                 preload: boolean;
-                value: GObject.Value;
+                value: GObject.Value | any;
             }
         }
 
@@ -87405,7 +87405,7 @@ declare module 'gi://Gtk?version=4.0' {
              * of available data.
              * @read-only
              */
-            get value(): GObject.Value;
+            get value(): unknown;
 
             /**
              * Compile-time signal type information.
@@ -88789,7 +88789,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param value
              * @virtual
              */
-            vfunc_set_buildable_property(builder: Builder, name: string, value: GObject.Value | any): void;
+            vfunc_set_buildable_property(builder: Builder, name: string, value: unknown): void;
             /**
              * Stores the id attribute given in the {@link Gtk.Builder} UI definition.
              *   {@link Gtk.Widget} stores the name as object data. Implement this method if your
@@ -89521,7 +89521,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -89548,7 +89548,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected
@@ -92738,7 +92738,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -92765,7 +92765,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected
@@ -97149,7 +97149,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param value
              * @virtual
              */
-            vfunc_set_buildable_property(builder: Builder, name: string, value: GObject.Value | any): void;
+            vfunc_set_buildable_property(builder: Builder, name: string, value: unknown): void;
             /**
              * Stores the id attribute given in the {@link Gtk.Builder} UI definition.
              *   {@link Gtk.Widget} stores the name as object data. Implement this method if your
@@ -97915,7 +97915,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -97942,7 +97942,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected
@@ -100854,7 +100854,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param value
              * @virtual
              */
-            vfunc_set_buildable_property(builder: Builder, name: string, value: GObject.Value | any): void;
+            vfunc_set_buildable_property(builder: Builder, name: string, value: unknown): void;
             /**
              * Stores the id attribute given in the {@link Gtk.Builder} UI definition.
              *   {@link Gtk.Widget} stores the name as object data. Implement this method if your
@@ -101421,7 +101421,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -101448,7 +101448,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected
@@ -102578,7 +102578,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param value
              * @virtual
              */
-            vfunc_set_buildable_property(builder: Builder, name: string, value: GObject.Value | any): void;
+            vfunc_set_buildable_property(builder: Builder, name: string, value: unknown): void;
             /**
              * Stores the id attribute given in the {@link Gtk.Builder} UI definition.
              *   {@link Gtk.Widget} stores the name as object data. Implement this method if your
@@ -102984,7 +102984,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -103011,7 +103011,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected
@@ -103711,7 +103711,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param value
              * @virtual
              */
-            vfunc_set_buildable_property(builder: Builder, name: string, value: GObject.Value | any): void;
+            vfunc_set_buildable_property(builder: Builder, name: string, value: unknown): void;
             /**
              * Stores the id attribute given in the {@link Gtk.Builder} UI definition.
              *   {@link Gtk.Widget} stores the name as object data. Implement this method if your
@@ -104117,7 +104117,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -104144,7 +104144,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected
@@ -105992,7 +105992,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -106019,7 +106019,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected
@@ -109133,7 +109133,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -109160,7 +109160,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected
@@ -109928,7 +109928,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param value
              * @virtual
              */
-            vfunc_set_buildable_property(builder: Builder, name: string, value: GObject.Value | any): void;
+            vfunc_set_buildable_property(builder: Builder, name: string, value: unknown): void;
             /**
              * Stores the id attribute given in the {@link Gtk.Builder} UI definition.
              *   {@link Gtk.Widget} stores the name as object data. Implement this method if your
@@ -110580,7 +110580,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -110607,7 +110607,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected
@@ -111760,7 +111760,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param value
              * @virtual
              */
-            vfunc_set_buildable_property(builder: Builder, name: string, value: GObject.Value | any): void;
+            vfunc_set_buildable_property(builder: Builder, name: string, value: unknown): void;
             /**
              * Stores the id attribute given in the {@link Gtk.Builder} UI definition.
              *   {@link Gtk.Widget} stores the name as object data. Implement this method if your
@@ -112166,7 +112166,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -112193,7 +112193,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected
@@ -113365,7 +113365,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -113392,7 +113392,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected
@@ -113909,7 +113909,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param value
              * @virtual
              */
-            vfunc_set_buildable_property(builder: Builder, name: string, value: GObject.Value | any): void;
+            vfunc_set_buildable_property(builder: Builder, name: string, value: unknown): void;
             /**
              * Stores the id attribute given in the {@link Gtk.Builder} UI definition.
              *   {@link Gtk.Widget} stores the name as object data. Implement this method if your
@@ -114315,7 +114315,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -114342,7 +114342,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected
@@ -115191,7 +115191,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -115218,7 +115218,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected
@@ -116193,7 +116193,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param value
              * @virtual
              */
-            vfunc_set_buildable_property(builder: Builder, name: string, value: GObject.Value | any): void;
+            vfunc_set_buildable_property(builder: Builder, name: string, value: unknown): void;
             /**
              * Stores the id attribute given in the {@link Gtk.Builder} UI definition.
              *   {@link Gtk.Widget} stores the name as object data. Implement this method if your
@@ -116609,7 +116609,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -116636,7 +116636,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected
@@ -117151,7 +117151,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param value
              * @virtual
              */
-            vfunc_set_buildable_property(builder: Builder, name: string, value: GObject.Value | any): void;
+            vfunc_set_buildable_property(builder: Builder, name: string, value: unknown): void;
             /**
              * Stores the id attribute given in the {@link Gtk.Builder} UI definition.
              *   {@link Gtk.Widget} stores the name as object data. Implement this method if your
@@ -117557,7 +117557,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -117584,7 +117584,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected
@@ -118243,7 +118243,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param value
              * @virtual
              */
-            vfunc_set_buildable_property(builder: Builder, name: string, value: GObject.Value | any): void;
+            vfunc_set_buildable_property(builder: Builder, name: string, value: unknown): void;
             /**
              * Stores the id attribute given in the {@link Gtk.Builder} UI definition.
              *   {@link Gtk.Widget} stores the name as object data. Implement this method if your
@@ -118871,7 +118871,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -118898,7 +118898,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected
@@ -120282,7 +120282,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -120309,7 +120309,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected
@@ -122938,7 +122938,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param value
              * @virtual
              */
-            vfunc_set_buildable_property(builder: Builder, name: string, value: GObject.Value | any): void;
+            vfunc_set_buildable_property(builder: Builder, name: string, value: unknown): void;
             /**
              * Stores the id attribute given in the {@link Gtk.Builder} UI definition.
              *   {@link Gtk.Widget} stores the name as object data. Implement this method if your
@@ -123566,7 +123566,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -123593,7 +123593,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected
@@ -124693,7 +124693,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param value
              * @virtual
              */
-            vfunc_set_buildable_property(builder: Builder, name: string, value: GObject.Value | any): void;
+            vfunc_set_buildable_property(builder: Builder, name: string, value: unknown): void;
             /**
              * Stores the id attribute given in the {@link Gtk.Builder} UI definition.
              *   {@link Gtk.Widget} stores the name as object data. Implement this method if your
@@ -125099,7 +125099,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -125126,7 +125126,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected
@@ -125706,7 +125706,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param value
              * @virtual
              */
-            vfunc_set_buildable_property(builder: Builder, name: string, value: GObject.Value | any): void;
+            vfunc_set_buildable_property(builder: Builder, name: string, value: unknown): void;
             /**
              * Stores the id attribute given in the {@link Gtk.Builder} UI definition.
              *   {@link Gtk.Widget} stores the name as object data. Implement this method if your
@@ -126112,7 +126112,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -126139,7 +126139,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected
@@ -127023,7 +127023,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param value
              * @virtual
              */
-            vfunc_set_buildable_property(builder: Builder, name: string, value: GObject.Value | any): void;
+            vfunc_set_buildable_property(builder: Builder, name: string, value: unknown): void;
             /**
              * Stores the id attribute given in the {@link Gtk.Builder} UI definition.
              *   {@link Gtk.Widget} stores the name as object data. Implement this method if your
@@ -127429,7 +127429,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -127456,7 +127456,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected
@@ -129520,7 +129520,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param value
              * @virtual
              */
-            vfunc_set_buildable_property(builder: Builder, name: string, value: GObject.Value | any): void;
+            vfunc_set_buildable_property(builder: Builder, name: string, value: unknown): void;
             /**
              * Stores the id attribute given in the {@link Gtk.Builder} UI definition.
              *   {@link Gtk.Widget} stores the name as object data. Implement this method if your
@@ -129926,7 +129926,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -129953,7 +129953,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected
@@ -130728,7 +130728,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param value
              * @virtual
              */
-            vfunc_set_buildable_property(builder: Builder, name: string, value: GObject.Value | any): void;
+            vfunc_set_buildable_property(builder: Builder, name: string, value: unknown): void;
             /**
              * Stores the id attribute given in the {@link Gtk.Builder} UI definition.
              *   {@link Gtk.Widget} stores the name as object data. Implement this method if your
@@ -131144,7 +131144,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -131171,7 +131171,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected
@@ -132420,7 +132420,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -132447,7 +132447,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected
@@ -133140,7 +133140,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param value
              * @virtual
              */
-            vfunc_set_buildable_property(builder: Builder, name: string, value: GObject.Value | any): void;
+            vfunc_set_buildable_property(builder: Builder, name: string, value: unknown): void;
             /**
              * Stores the id attribute given in the {@link Gtk.Builder} UI definition.
              *   {@link Gtk.Widget} stores the name as object data. Implement this method if your
@@ -133546,7 +133546,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -133573,7 +133573,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected
@@ -135171,7 +135171,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -135198,7 +135198,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected
@@ -136910,7 +136910,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param value
              * @virtual
              */
-            vfunc_set_buildable_property(builder: Builder, name: string, value: GObject.Value | any): void;
+            vfunc_set_buildable_property(builder: Builder, name: string, value: unknown): void;
             /**
              * Stores the id attribute given in the {@link Gtk.Builder} UI definition.
              *   {@link Gtk.Widget} stores the name as object data. Implement this method if your
@@ -137543,7 +137543,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -137570,7 +137570,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected
@@ -138297,7 +138297,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param value
              * @virtual
              */
-            vfunc_set_buildable_property(builder: Builder, name: string, value: GObject.Value | any): void;
+            vfunc_set_buildable_property(builder: Builder, name: string, value: unknown): void;
             /**
              * Stores the id attribute given in the {@link Gtk.Builder} UI definition.
              *   {@link Gtk.Widget} stores the name as object data. Implement this method if your
@@ -138703,7 +138703,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -138730,7 +138730,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected
@@ -139412,7 +139412,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param value
              * @virtual
              */
-            vfunc_set_buildable_property(builder: Builder, name: string, value: GObject.Value | any): void;
+            vfunc_set_buildable_property(builder: Builder, name: string, value: unknown): void;
             /**
              * Stores the id attribute given in the {@link Gtk.Builder} UI definition.
              *   {@link Gtk.Widget} stores the name as object data. Implement this method if your
@@ -139818,7 +139818,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -139845,7 +139845,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected
@@ -140627,7 +140627,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param end the end of the range, in characters
              * @virtual
              */
-            vfunc_get_contents(start: number, end: number): GLib.Bytes;
+            vfunc_get_contents(start: number, end: number): GLib.Bytes | Uint8Array;
             /**
              * Retrieve the current contents of the accessible object starting
              * from the given offset, and using the given granularity.
@@ -140637,7 +140637,10 @@ declare module 'gi://Gtk?version=4.0' {
              * @param granularity the granularity of the query
              * @virtual
              */
-            vfunc_get_contents_at(offset: number, granularity: AccessibleTextGranularity): [GLib.Bytes, number, number];
+            vfunc_get_contents_at(
+                offset: number,
+                granularity: AccessibleTextGranularity,
+            ): [GLib.Bytes | Uint8Array, number, number];
             /**
              * Retrieves the default text attributes inside the accessible object.
              *
@@ -140782,7 +140785,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param value
              * @virtual
              */
-            vfunc_set_buildable_property(builder: Builder, name: string, value: GObject.Value | any): void;
+            vfunc_set_buildable_property(builder: Builder, name: string, value: unknown): void;
             /**
              * Stores the id attribute given in the {@link Gtk.Builder} UI definition.
              *   {@link Gtk.Widget} stores the name as object data. Implement this method if your
@@ -141188,7 +141191,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -141215,7 +141218,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected
@@ -142770,7 +142773,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param end the end of the range, in characters
              * @virtual
              */
-            vfunc_get_contents(start: number, end: number): GLib.Bytes;
+            vfunc_get_contents(start: number, end: number): GLib.Bytes | Uint8Array;
             /**
              * Retrieve the current contents of the accessible object starting
              * from the given offset, and using the given granularity.
@@ -142780,7 +142783,10 @@ declare module 'gi://Gtk?version=4.0' {
              * @param granularity the granularity of the query
              * @virtual
              */
-            vfunc_get_contents_at(offset: number, granularity: AccessibleTextGranularity): [GLib.Bytes, number, number];
+            vfunc_get_contents_at(
+                offset: number,
+                granularity: AccessibleTextGranularity,
+            ): [GLib.Bytes | Uint8Array, number, number];
             /**
              * Retrieves the default text attributes inside the accessible object.
              *
@@ -142925,7 +142931,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param value
              * @virtual
              */
-            vfunc_set_buildable_property(builder: Builder, name: string, value: GObject.Value | any): void;
+            vfunc_set_buildable_property(builder: Builder, name: string, value: unknown): void;
             /**
              * Stores the id attribute given in the {@link Gtk.Builder} UI definition.
              *   {@link Gtk.Widget} stores the name as object data. Implement this method if your
@@ -143331,7 +143337,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -143358,7 +143364,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected
@@ -144978,7 +144984,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param value
              * @virtual
              */
-            vfunc_set_buildable_property(builder: Builder, name: string, value: GObject.Value | any): void;
+            vfunc_set_buildable_property(builder: Builder, name: string, value: unknown): void;
             /**
              * Stores the id attribute given in the {@link Gtk.Builder} UI definition.
              *   {@link Gtk.Widget} stores the name as object data. Implement this method if your
@@ -145394,7 +145400,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -145421,7 +145427,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected
@@ -146688,7 +146694,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -146715,7 +146721,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected
@@ -149328,7 +149334,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param value
              * @virtual
              */
-            vfunc_set_buildable_property(builder: Builder, name: string, value: GObject.Value | any): void;
+            vfunc_set_buildable_property(builder: Builder, name: string, value: unknown): void;
             /**
              * Stores the id attribute given in the {@link Gtk.Builder} UI definition.
              *   {@link Gtk.Widget} stores the name as object data. Implement this method if your
@@ -149810,7 +149816,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -149837,7 +149843,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected
@@ -150784,7 +150790,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param value
              * @virtual
              */
-            vfunc_set_buildable_property(builder: Builder, name: string, value: GObject.Value | any): void;
+            vfunc_set_buildable_property(builder: Builder, name: string, value: unknown): void;
             /**
              * Stores the id attribute given in the {@link Gtk.Builder} UI definition.
              *   {@link Gtk.Widget} stores the name as object data. Implement this method if your
@@ -151190,7 +151196,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -151217,7 +151223,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected
@@ -152411,7 +152417,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param value
              * @virtual
              */
-            vfunc_set_buildable_property(builder: Builder, name: string, value: GObject.Value | any): void;
+            vfunc_set_buildable_property(builder: Builder, name: string, value: unknown): void;
             /**
              * Stores the id attribute given in the {@link Gtk.Builder} UI definition.
              *   {@link Gtk.Widget} stores the name as object data. Implement this method if your
@@ -152817,7 +152823,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -152844,7 +152850,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected
@@ -155924,7 +155930,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param value
              * @virtual
              */
-            vfunc_set_buildable_property(builder: Builder, name: string, value: GObject.Value | any): void;
+            vfunc_set_buildable_property(builder: Builder, name: string, value: unknown): void;
             /**
              * Stores the id attribute given in the {@link Gtk.Builder} UI definition.
              *   {@link Gtk.Widget} stores the name as object data. Implement this method if your
@@ -155968,7 +155974,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param value data to drop
              * @virtual
              */
-            vfunc_drag_data_received(dest: TreePath, value: GObject.Value | any): boolean;
+            vfunc_drag_data_received(dest: TreePath, value: unknown): boolean;
             /**
              * Determines whether a drop is possible before the given `dest_path`,
              * at the same depth as `dest_path`. i.e., can we drop the data in
@@ -155979,7 +155985,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param value the data being dropped
              * @virtual
              */
-            vfunc_row_drop_possible(dest_path: TreePath, value: GObject.Value | any): boolean;
+            vfunc_row_drop_possible(dest_path: TreePath, value: unknown): boolean;
             /**
              * Asks the {@link Gtk.TreeDragSource} to delete the row at `path`, because
              * it was moved somewhere else via drag-and-drop. Returns `false`
@@ -156325,7 +156331,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param column the column to lookup the value at
              * @virtual
              */
-            vfunc_get_value(iter: TreeIter, column: number): unknown;
+            vfunc_get_value(iter: TreeIter, column: number): GObject.Value | any;
             /**
              * Sets `iter` to point to the first child of `parent`.
              *
@@ -156999,7 +157005,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -157026,7 +157032,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected
@@ -157975,7 +157981,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -158002,7 +158008,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected
@@ -159307,7 +159313,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -159334,7 +159340,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected
@@ -162144,7 +162150,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -162171,7 +162177,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected
@@ -162641,7 +162647,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param value
              * @virtual
              */
-            vfunc_set_buildable_property(builder: Builder, name: string, value: GObject.Value | any): void;
+            vfunc_set_buildable_property(builder: Builder, name: string, value: unknown): void;
             /**
              * Stores the id attribute given in the {@link Gtk.Builder} UI definition.
              *   {@link Gtk.Widget} stores the name as object data. Implement this method if your
@@ -163047,7 +163053,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -163074,7 +163080,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected
@@ -163882,7 +163888,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -163909,7 +163915,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected
@@ -163958,7 +163964,7 @@ declare module 'gi://Gtk?version=4.0' {
             // Constructor properties interface
 
             interface ConstructorProps extends GObject.Object.ConstructorProps, Gdk.Paintable.ConstructorProps {
-                duration: number;
+                duration: bigint | number;
                 ended: boolean;
                 error: GLib.Error;
                 has_audio: boolean;
@@ -163971,7 +163977,7 @@ declare module 'gi://Gtk?version=4.0' {
                 prepared: boolean;
                 seekable: boolean;
                 seeking: boolean;
-                timestamp: number;
+                timestamp: bigint | number;
                 volume: number;
             }
         }
@@ -164331,7 +164337,7 @@ declare module 'gi://Gtk?version=4.0' {
              * any pending seek.
              * @param timestamp timestamp to seek to.
              */
-            seek(timestamp: number): void;
+            seek(timestamp: bigint | number): void;
             /**
              * Ends a seek operation started via GtkMediaStream.seek() as a failure.
              *
@@ -164421,7 +164427,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param seekable `true` if the stream should advertise seekability
              * @param duration The duration of the stream or 0 if unknown
              */
-            stream_prepared(has_audio: boolean, has_video: boolean, seekable: boolean, duration: number): void;
+            stream_prepared(has_audio: boolean, has_video: boolean, seekable: boolean, duration: bigint | number): void;
             /**
              * Resets a given media stream implementation.
              *
@@ -164448,7 +164454,7 @@ declare module 'gi://Gtk?version=4.0' {
              * The media stream must be prepared when this function is called.
              * @param timestamp the new timestamp
              */
-            update(timestamp: number): void;
+            update(timestamp: bigint | number): void;
             /**
              * Compute a concrete size for the {@link Gdk.Paintable}.
              *
@@ -165052,7 +165058,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -165079,7 +165085,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected
@@ -165947,7 +165953,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param value
              * @virtual
              */
-            vfunc_set_buildable_property(builder: Builder, name: string, value: GObject.Value | any): void;
+            vfunc_set_buildable_property(builder: Builder, name: string, value: unknown): void;
             /**
              * Stores the id attribute given in the {@link Gtk.Builder} UI definition.
              *   {@link Gtk.Widget} stores the name as object data. Implement this method if your
@@ -166353,7 +166359,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -166380,7 +166386,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected
@@ -167598,7 +167604,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -167625,7 +167631,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected
@@ -170315,7 +170321,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param value
              * @virtual
              */
-            vfunc_set_buildable_property(builder: Builder, name: string, value: GObject.Value | any): void;
+            vfunc_set_buildable_property(builder: Builder, name: string, value: unknown): void;
             /**
              * Stores the id attribute given in the {@link Gtk.Builder} UI definition.
              *   {@link Gtk.Widget} stores the name as object data. Implement this method if your
@@ -170721,7 +170727,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -170748,7 +170754,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected
@@ -171636,7 +171642,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -171663,7 +171669,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected
@@ -171994,7 +172000,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param value
              * @virtual
              */
-            vfunc_set_buildable_property(builder: Builder, name: string, value: GObject.Value | any): void;
+            vfunc_set_buildable_property(builder: Builder, name: string, value: unknown): void;
             /**
              * Stores the id attribute given in the {@link Gtk.Builder} UI definition.
              *   {@link Gtk.Widget} stores the name as object data. Implement this method if your
@@ -172400,7 +172406,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -172427,7 +172433,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected
@@ -173703,7 +173709,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -173730,7 +173736,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected
@@ -174821,7 +174827,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param value
              * @virtual
              */
-            vfunc_set_buildable_property(builder: Builder, name: string, value: GObject.Value | any): void;
+            vfunc_set_buildable_property(builder: Builder, name: string, value: unknown): void;
             /**
              * Stores the id attribute given in the {@link Gtk.Builder} UI definition.
              *   {@link Gtk.Widget} stores the name as object data. Implement this method if your
@@ -175227,7 +175233,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -175254,7 +175260,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected
@@ -176194,7 +176200,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param value
              * @virtual
              */
-            vfunc_set_buildable_property(builder: Builder, name: string, value: GObject.Value | any): void;
+            vfunc_set_buildable_property(builder: Builder, name: string, value: unknown): void;
             /**
              * Stores the id attribute given in the {@link Gtk.Builder} UI definition.
              *   {@link Gtk.Widget} stores the name as object data. Implement this method if your
@@ -176600,7 +176606,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -176627,7 +176633,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected
@@ -178313,7 +178319,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -178340,7 +178346,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected
@@ -181286,7 +181292,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param value
              * @virtual
              */
-            vfunc_set_buildable_property(builder: Builder, name: string, value: GObject.Value | any): void;
+            vfunc_set_buildable_property(builder: Builder, name: string, value: unknown): void;
             /**
              * Stores the id attribute given in the {@link Gtk.Builder} UI definition.
              *   {@link Gtk.Widget} stores the name as object data. Implement this method if your
@@ -181702,7 +181708,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -181729,7 +181735,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected
@@ -182875,7 +182881,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param value
              * @virtual
              */
-            vfunc_set_buildable_property(builder: Builder, name: string, value: GObject.Value | any): void;
+            vfunc_set_buildable_property(builder: Builder, name: string, value: unknown): void;
             /**
              * Stores the id attribute given in the {@link Gtk.Builder} UI definition.
              *   {@link Gtk.Widget} stores the name as object data. Implement this method if your
@@ -183607,7 +183613,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -183634,7 +183640,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected
@@ -186514,7 +186520,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param value
              * @virtual
              */
-            vfunc_set_buildable_property(builder: Builder, name: string, value: GObject.Value | any): void;
+            vfunc_set_buildable_property(builder: Builder, name: string, value: unknown): void;
             /**
              * Stores the id attribute given in the {@link Gtk.Builder} UI definition.
              *   {@link Gtk.Widget} stores the name as object data. Implement this method if your
@@ -186920,7 +186926,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -186947,7 +186953,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected
@@ -188239,7 +188245,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param value
              * @virtual
              */
-            vfunc_set_buildable_property(builder: Builder, name: string, value: GObject.Value | any): void;
+            vfunc_set_buildable_property(builder: Builder, name: string, value: unknown): void;
             /**
              * Stores the id attribute given in the {@link Gtk.Builder} UI definition.
              *   {@link Gtk.Widget} stores the name as object data. Implement this method if your
@@ -188687,7 +188693,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -188714,7 +188720,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected
@@ -191348,7 +191354,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param value
              * @virtual
              */
-            vfunc_set_buildable_property(builder: Builder, name: string, value: GObject.Value | any): void;
+            vfunc_set_buildable_property(builder: Builder, name: string, value: unknown): void;
             /**
              * Stores the id attribute given in the {@link Gtk.Builder} UI definition.
              *   {@link Gtk.Widget} stores the name as object data. Implement this method if your
@@ -191754,7 +191760,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -191781,7 +191787,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected
@@ -193052,7 +193058,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -193079,7 +193085,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected
@@ -195645,7 +195651,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param value
              * @virtual
              */
-            vfunc_set_buildable_property(builder: Builder, name: string, value: GObject.Value | any): void;
+            vfunc_set_buildable_property(builder: Builder, name: string, value: unknown): void;
             /**
              * Stores the id attribute given in the {@link Gtk.Builder} UI definition.
              *   {@link Gtk.Widget} stores the name as object data. Implement this method if your
@@ -196051,7 +196057,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -196078,7 +196084,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected
@@ -198567,7 +198573,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -198594,7 +198600,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected
@@ -200427,7 +200433,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -200454,7 +200460,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected
@@ -203548,7 +203554,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param value
              * @virtual
              */
-            vfunc_set_buildable_property(builder: Builder, name: string, value: GObject.Value | any): void;
+            vfunc_set_buildable_property(builder: Builder, name: string, value: unknown): void;
             /**
              * Stores the id attribute given in the {@link Gtk.Builder} UI definition.
              *   {@link Gtk.Widget} stores the name as object data. Implement this method if your
@@ -203964,7 +203970,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -203991,7 +203997,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected
@@ -204849,7 +204855,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param value
              * @virtual
              */
-            vfunc_set_buildable_property(builder: Builder, name: string, value: GObject.Value | any): void;
+            vfunc_set_buildable_property(builder: Builder, name: string, value: unknown): void;
             /**
              * Stores the id attribute given in the {@link Gtk.Builder} UI definition.
              *   {@link Gtk.Widget} stores the name as object data. Implement this method if your
@@ -205265,7 +205271,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -205292,7 +205298,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected
@@ -206111,7 +206117,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param value
              * @virtual
              */
-            vfunc_set_buildable_property(builder: Builder, name: string, value: GObject.Value | any): void;
+            vfunc_set_buildable_property(builder: Builder, name: string, value: unknown): void;
             /**
              * Stores the id attribute given in the {@link Gtk.Builder} UI definition.
              *   {@link Gtk.Widget} stores the name as object data. Implement this method if your
@@ -206517,7 +206523,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -206544,7 +206550,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected
@@ -207365,7 +207371,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -207392,7 +207398,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected
@@ -208039,7 +208045,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param value
              * @virtual
              */
-            vfunc_set_buildable_property(builder: Builder, name: string, value: GObject.Value | any): void;
+            vfunc_set_buildable_property(builder: Builder, name: string, value: unknown): void;
             /**
              * Stores the id attribute given in the {@link Gtk.Builder} UI definition.
              *   {@link Gtk.Widget} stores the name as object data. Implement this method if your
@@ -208455,7 +208461,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -208482,7 +208488,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected
@@ -209001,7 +209007,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param value
              * @virtual
              */
-            vfunc_set_buildable_property(builder: Builder, name: string, value: GObject.Value | any): void;
+            vfunc_set_buildable_property(builder: Builder, name: string, value: unknown): void;
             /**
              * Stores the id attribute given in the {@link Gtk.Builder} UI definition.
              *   {@link Gtk.Widget} stores the name as object data. Implement this method if your
@@ -209417,7 +209423,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -209444,7 +209450,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected
@@ -210465,7 +210471,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param value
              * @virtual
              */
-            vfunc_set_buildable_property(builder: Builder, name: string, value: GObject.Value | any): void;
+            vfunc_set_buildable_property(builder: Builder, name: string, value: unknown): void;
             /**
              * Stores the id attribute given in the {@link Gtk.Builder} UI definition.
              *   {@link Gtk.Widget} stores the name as object data. Implement this method if your
@@ -210871,7 +210877,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -210898,7 +210904,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected
@@ -211501,7 +211507,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param value
              * @virtual
              */
-            vfunc_set_buildable_property(builder: Builder, name: string, value: GObject.Value | any): void;
+            vfunc_set_buildable_property(builder: Builder, name: string, value: unknown): void;
             /**
              * Stores the id attribute given in the {@link Gtk.Builder} UI definition.
              *   {@link Gtk.Widget} stores the name as object data. Implement this method if your
@@ -211907,7 +211913,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -211934,7 +211940,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected
@@ -213244,7 +213250,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param value
              * @virtual
              */
-            vfunc_set_buildable_property(builder: Builder, name: string, value: GObject.Value | any): void;
+            vfunc_set_buildable_property(builder: Builder, name: string, value: unknown): void;
             /**
              * Stores the id attribute given in the {@link Gtk.Builder} UI definition.
              *   {@link Gtk.Widget} stores the name as object data. Implement this method if your
@@ -213976,7 +213982,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -214003,7 +214009,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected
@@ -216721,7 +216727,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -216748,7 +216754,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected
@@ -217207,7 +217213,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param value
              * @virtual
              */
-            vfunc_set_buildable_property(builder: Builder, name: string, value: GObject.Value | any): void;
+            vfunc_set_buildable_property(builder: Builder, name: string, value: unknown): void;
             /**
              * Stores the id attribute given in the {@link Gtk.Builder} UI definition.
              *   {@link Gtk.Widget} stores the name as object data. Implement this method if your
@@ -217623,7 +217629,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -217650,7 +217656,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected
@@ -219310,7 +219316,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -219337,7 +219343,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected
@@ -220024,7 +220030,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param value
              * @virtual
              */
-            vfunc_set_buildable_property(builder: Builder, name: string, value: GObject.Value | any): void;
+            vfunc_set_buildable_property(builder: Builder, name: string, value: unknown): void;
             /**
              * Stores the id attribute given in the {@link Gtk.Builder} UI definition.
              *   {@link Gtk.Widget} stores the name as object data. Implement this method if your
@@ -220430,7 +220436,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -220457,7 +220463,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected
@@ -220946,7 +220952,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param value
              * @virtual
              */
-            vfunc_set_buildable_property(builder: Builder, name: string, value: GObject.Value | any): void;
+            vfunc_set_buildable_property(builder: Builder, name: string, value: unknown): void;
             /**
              * Stores the id attribute given in the {@link Gtk.Builder} UI definition.
              *   {@link Gtk.Widget} stores the name as object data. Implement this method if your
@@ -221352,7 +221358,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -221379,7 +221385,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected
@@ -222177,7 +222183,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -222204,7 +222210,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected
@@ -222889,7 +222895,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -222916,7 +222922,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected
@@ -223546,7 +223552,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param value
              * @virtual
              */
-            vfunc_set_buildable_property(builder: Builder, name: string, value: GObject.Value | any): void;
+            vfunc_set_buildable_property(builder: Builder, name: string, value: unknown): void;
             /**
              * Stores the id attribute given in the {@link Gtk.Builder} UI definition.
              *   {@link Gtk.Widget} stores the name as object data. Implement this method if your
@@ -223952,7 +223958,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -223979,7 +223985,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected
@@ -225248,7 +225254,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -225275,7 +225281,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected
@@ -228541,7 +228547,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -228568,7 +228574,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected
@@ -228900,7 +228906,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param value
              * @virtual
              */
-            vfunc_set_buildable_property(builder: Builder, name: string, value: GObject.Value | any): void;
+            vfunc_set_buildable_property(builder: Builder, name: string, value: unknown): void;
             /**
              * Stores the id attribute given in the {@link Gtk.Builder} UI definition.
              *   {@link Gtk.Widget} stores the name as object data. Implement this method if your
@@ -229306,7 +229312,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -229333,7 +229339,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected
@@ -230054,7 +230060,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -230081,7 +230087,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected
@@ -230306,7 +230312,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param bounds the bounds for the new node
              * @param nth the index of the copy, with 0 being the latest  copy, 1 being the copy before that, and so on.
              */
-            append_paste(bounds: Graphene.Rect, nth: number): void;
+            append_paste(bounds: Graphene.Rect, nth: bigint | number): void;
             /**
              * Appends a radial gradient node with the given stops to `snapshot`.
              * @param bounds the rectangle to render the readial gradient into
@@ -231569,7 +231575,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -231596,7 +231602,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected
@@ -233282,7 +233288,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param value
              * @virtual
              */
-            vfunc_set_buildable_property(builder: Builder, name: string, value: GObject.Value | any): void;
+            vfunc_set_buildable_property(builder: Builder, name: string, value: unknown): void;
             /**
              * Stores the id attribute given in the {@link Gtk.Builder} UI definition.
              *   {@link Gtk.Widget} stores the name as object data. Implement this method if your
@@ -234071,7 +234077,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -234098,7 +234104,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected
@@ -236662,7 +236668,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param value
              * @virtual
              */
-            vfunc_set_buildable_property(builder: Builder, name: string, value: GObject.Value | any): void;
+            vfunc_set_buildable_property(builder: Builder, name: string, value: unknown): void;
             /**
              * Stores the id attribute given in the {@link Gtk.Builder} UI definition.
              *   {@link Gtk.Widget} stores the name as object data. Implement this method if your
@@ -237068,7 +237074,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -237095,7 +237101,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected
@@ -237870,7 +237876,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param value
              * @virtual
              */
-            vfunc_set_buildable_property(builder: Builder, name: string, value: GObject.Value | any): void;
+            vfunc_set_buildable_property(builder: Builder, name: string, value: unknown): void;
             /**
              * Stores the id attribute given in the {@link Gtk.Builder} UI definition.
              *   {@link Gtk.Widget} stores the name as object data. Implement this method if your
@@ -238276,7 +238282,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -238303,7 +238309,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected
@@ -239148,7 +239154,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -239175,7 +239181,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected
@@ -239654,7 +239660,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param value
              * @virtual
              */
-            vfunc_set_buildable_property(builder: Builder, name: string, value: GObject.Value | any): void;
+            vfunc_set_buildable_property(builder: Builder, name: string, value: unknown): void;
             /**
              * Stores the id attribute given in the {@link Gtk.Builder} UI definition.
              *   {@link Gtk.Widget} stores the name as object data. Implement this method if your
@@ -240060,7 +240066,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -240087,7 +240093,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected
@@ -240586,7 +240592,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param value
              * @virtual
              */
-            vfunc_set_buildable_property(builder: Builder, name: string, value: GObject.Value | any): void;
+            vfunc_set_buildable_property(builder: Builder, name: string, value: unknown): void;
             /**
              * Stores the id attribute given in the {@link Gtk.Builder} UI definition.
              *   {@link Gtk.Widget} stores the name as object data. Implement this method if your
@@ -241002,7 +241008,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -241029,7 +241035,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected
@@ -241557,7 +241563,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param value
              * @virtual
              */
-            vfunc_set_buildable_property(builder: Builder, name: string, value: GObject.Value | any): void;
+            vfunc_set_buildable_property(builder: Builder, name: string, value: unknown): void;
             /**
              * Stores the id attribute given in the {@link Gtk.Builder} UI definition.
              *   {@link Gtk.Widget} stores the name as object data. Implement this method if your
@@ -241963,7 +241969,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -241990,7 +241996,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected
@@ -242561,7 +242567,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param value
              * @virtual
              */
-            vfunc_set_buildable_property(builder: Builder, name: string, value: GObject.Value | any): void;
+            vfunc_set_buildable_property(builder: Builder, name: string, value: unknown): void;
             /**
              * Stores the id attribute given in the {@link Gtk.Builder} UI definition.
              *   {@link Gtk.Widget} stores the name as object data. Implement this method if your
@@ -242967,7 +242973,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -242994,7 +243000,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected
@@ -244604,7 +244610,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -244631,7 +244637,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected
@@ -245813,7 +245819,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param value
              * @virtual
              */
-            vfunc_set_buildable_property(builder: Builder, name: string, value: GObject.Value | any): void;
+            vfunc_set_buildable_property(builder: Builder, name: string, value: unknown): void;
             /**
              * Stores the id attribute given in the {@link Gtk.Builder} UI definition.
              *   {@link Gtk.Widget} stores the name as object data. Implement this method if your
@@ -246219,7 +246225,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -246246,7 +246252,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected
@@ -248987,7 +248993,7 @@ declare module 'gi://Gtk?version=4.0' {
              * The rectangle positions are in widget coordinates.
              * @param position the character position
              */
-            compute_cursor_extents(position: number): [Graphene.Rect | null, Graphene.Rect | null];
+            compute_cursor_extents(position: bigint | number): [Graphene.Rect | null, Graphene.Rect | null];
             /**
              * Returns whether pressing <kbd>Enter</kbd> will activate
              * the default widget for the window containing the widget.
@@ -250091,7 +250097,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param end the end of the range, in characters
              * @virtual
              */
-            vfunc_get_contents(start: number, end: number): GLib.Bytes;
+            vfunc_get_contents(start: number, end: number): GLib.Bytes | Uint8Array;
             /**
              * Retrieve the current contents of the accessible object starting
              * from the given offset, and using the given granularity.
@@ -250101,7 +250107,10 @@ declare module 'gi://Gtk?version=4.0' {
              * @param granularity the granularity of the query
              * @virtual
              */
-            vfunc_get_contents_at(offset: number, granularity: AccessibleTextGranularity): [GLib.Bytes, number, number];
+            vfunc_get_contents_at(
+                offset: number,
+                granularity: AccessibleTextGranularity,
+            ): [GLib.Bytes | Uint8Array, number, number];
             /**
              * Retrieves the default text attributes inside the accessible object.
              *
@@ -250246,7 +250255,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param value
              * @virtual
              */
-            vfunc_set_buildable_property(builder: Builder, name: string, value: GObject.Value | any): void;
+            vfunc_set_buildable_property(builder: Builder, name: string, value: unknown): void;
             /**
              * Stores the id attribute given in the {@link Gtk.Builder} UI definition.
              *   {@link Gtk.Widget} stores the name as object data. Implement this method if your
@@ -250978,7 +250987,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -251005,7 +251014,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected
@@ -256058,7 +256067,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param value
              * @virtual
              */
-            vfunc_set_buildable_property(builder: Builder, name: string, value: GObject.Value | any): void;
+            vfunc_set_buildable_property(builder: Builder, name: string, value: unknown): void;
             /**
              * Stores the id attribute given in the {@link Gtk.Builder} UI definition.
              *   {@link Gtk.Widget} stores the name as object data. Implement this method if your
@@ -256464,7 +256473,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -256491,7 +256500,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected
@@ -258328,7 +258337,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param end the end of the range, in characters
              * @virtual
              */
-            vfunc_get_contents(start: number, end: number): GLib.Bytes;
+            vfunc_get_contents(start: number, end: number): GLib.Bytes | Uint8Array;
             /**
              * Retrieve the current contents of the accessible object starting
              * from the given offset, and using the given granularity.
@@ -258338,7 +258347,10 @@ declare module 'gi://Gtk?version=4.0' {
              * @param granularity the granularity of the query
              * @virtual
              */
-            vfunc_get_contents_at(offset: number, granularity: AccessibleTextGranularity): [GLib.Bytes, number, number];
+            vfunc_get_contents_at(
+                offset: number,
+                granularity: AccessibleTextGranularity,
+            ): [GLib.Bytes | Uint8Array, number, number];
             /**
              * Retrieves the default text attributes inside the accessible object.
              *
@@ -258483,7 +258495,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param value
              * @virtual
              */
-            vfunc_set_buildable_property(builder: Builder, name: string, value: GObject.Value | any): void;
+            vfunc_set_buildable_property(builder: Builder, name: string, value: unknown): void;
             /**
              * Stores the id attribute given in the {@link Gtk.Builder} UI definition.
              *   {@link Gtk.Widget} stores the name as object data. Implement this method if your
@@ -258955,7 +258967,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -258982,7 +258994,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected
@@ -260287,7 +260299,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -260314,7 +260326,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected
@@ -263190,7 +263202,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param value
              * @virtual
              */
-            vfunc_set_buildable_property(builder: Builder, name: string, value: GObject.Value | any): void;
+            vfunc_set_buildable_property(builder: Builder, name: string, value: unknown): void;
             /**
              * Stores the id attribute given in the {@link Gtk.Builder} UI definition.
              *   {@link Gtk.Widget} stores the name as object data. Implement this method if your
@@ -263596,7 +263608,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -263623,7 +263635,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected
@@ -264340,7 +264352,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -264367,7 +264379,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected
@@ -264842,7 +264854,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param column
              * @virtual
              */
-            vfunc_modify(child_model: TreeModel, iter: TreeIter, value: GObject.Value | any, column: number): void;
+            vfunc_modify(child_model: TreeModel, iter: TreeIter, value: unknown, column: number): void;
             /**
              * @param child_model
              * @param iter
@@ -265320,7 +265332,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param column the column to lookup the value at
              * @virtual
              */
-            vfunc_get_value(iter: TreeIter, column: number): unknown;
+            vfunc_get_value(iter: TreeIter, column: number): GObject.Value | any;
             /**
              * Sets `iter` to point to the first child of `parent`.
              *
@@ -265870,7 +265882,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -265897,7 +265909,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected
@@ -266501,7 +266513,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param column the column to lookup the value at
              * @virtual
              */
-            vfunc_get_value(iter: TreeIter, column: number): unknown;
+            vfunc_get_value(iter: TreeIter, column: number): GObject.Value | any;
             /**
              * Sets `iter` to point to the first child of `parent`.
              *
@@ -267175,7 +267187,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -267202,7 +267214,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected
@@ -267842,7 +267854,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param value
              * @virtual
              */
-            vfunc_set_buildable_property(builder: Builder, name: string, value: GObject.Value | any): void;
+            vfunc_set_buildable_property(builder: Builder, name: string, value: unknown): void;
             /**
              * Stores the id attribute given in the {@link Gtk.Builder} UI definition.
              *   {@link Gtk.Widget} stores the name as object data. Implement this method if your
@@ -267886,7 +267898,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param value data to drop
              * @virtual
              */
-            vfunc_drag_data_received(dest: TreePath, value: GObject.Value | any): boolean;
+            vfunc_drag_data_received(dest: TreePath, value: unknown): boolean;
             /**
              * Determines whether a drop is possible before the given `dest_path`,
              * at the same depth as `dest_path`. i.e., can we drop the data in
@@ -267897,7 +267909,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param value the data being dropped
              * @virtual
              */
-            vfunc_row_drop_possible(dest_path: TreePath, value: GObject.Value | any): boolean;
+            vfunc_row_drop_possible(dest_path: TreePath, value: unknown): boolean;
             /**
              * Asks the {@link Gtk.TreeDragSource} to delete the row at `path`, because
              * it was moved somewhere else via drag-and-drop. Returns `false`
@@ -268243,7 +268255,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param column the column to lookup the value at
              * @virtual
              */
-            vfunc_get_value(iter: TreeIter, column: number): unknown;
+            vfunc_get_value(iter: TreeIter, column: number): GObject.Value | any;
             /**
              * Sets `iter` to point to the first child of `parent`.
              *
@@ -268917,7 +268929,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -268944,7 +268956,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected
@@ -270662,7 +270674,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param value
              * @virtual
              */
-            vfunc_set_buildable_property(builder: Builder, name: string, value: GObject.Value | any): void;
+            vfunc_set_buildable_property(builder: Builder, name: string, value: unknown): void;
             /**
              * Stores the id attribute given in the {@link Gtk.Builder} UI definition.
              *   {@link Gtk.Widget} stores the name as object data. Implement this method if your
@@ -271134,7 +271146,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -271161,7 +271173,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected
@@ -271832,7 +271844,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param value
              * @virtual
              */
-            vfunc_set_buildable_property(builder: Builder, name: string, value: GObject.Value | any): void;
+            vfunc_set_buildable_property(builder: Builder, name: string, value: unknown): void;
             /**
              * Stores the id attribute given in the {@link Gtk.Builder} UI definition.
              *   {@link Gtk.Widget} stores the name as object data. Implement this method if your
@@ -272343,7 +272355,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -272370,7 +272382,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected
@@ -273146,7 +273158,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param value
              * @virtual
              */
-            vfunc_set_buildable_property(builder: Builder, name: string, value: GObject.Value | any): void;
+            vfunc_set_buildable_property(builder: Builder, name: string, value: unknown): void;
             /**
              * Stores the id attribute given in the {@link Gtk.Builder} UI definition.
              *   {@link Gtk.Widget} stores the name as object data. Implement this method if your
@@ -273552,7 +273564,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -273579,7 +273591,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected
@@ -274140,7 +274152,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param value
              * @virtual
              */
-            vfunc_set_buildable_property(builder: Builder, name: string, value: GObject.Value | any): void;
+            vfunc_set_buildable_property(builder: Builder, name: string, value: unknown): void;
             /**
              * Stores the id attribute given in the {@link Gtk.Builder} UI definition.
              *   {@link Gtk.Widget} stores the name as object data. Implement this method if your
@@ -274612,7 +274624,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -274639,7 +274651,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected
@@ -275225,7 +275237,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -275252,7 +275264,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected
@@ -276449,7 +276461,11 @@ declare module 'gi://Gtk?version=4.0' {
              * @param internal_child whether the child should be accessible as an “internal-child”   when this class is used in GtkBuilder XML
              * @param struct_offset The offset into the composite widget’s instance   public or private structure where the automated child pointer should be set,   or 0 to not assign the pointer
              */
-            static bind_template_child_full(name: string, internal_child: boolean, struct_offset: number): void;
+            static bind_template_child_full(
+                name: string,
+                internal_child: boolean,
+                struct_offset: bigint | number,
+            ): void;
             static get_accessible_role(): AccessibleRole;
             static get_activate_signal(): number;
             static get_css_name(): string;
@@ -278899,7 +278915,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param value
              * @virtual
              */
-            vfunc_set_buildable_property(builder: Builder, name: string, value: GObject.Value | any): void;
+            vfunc_set_buildable_property(builder: Builder, name: string, value: unknown): void;
             /**
              * Stores the id attribute given in the {@link Gtk.Builder} UI definition.
              *   {@link Gtk.Widget} stores the name as object data. Implement this method if your
@@ -279305,7 +279321,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -279332,7 +279348,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected
@@ -280061,7 +280077,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -280088,7 +280104,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected
@@ -282130,7 +282146,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param value
              * @virtual
              */
-            vfunc_set_buildable_property(builder: Builder, name: string, value: GObject.Value | any): void;
+            vfunc_set_buildable_property(builder: Builder, name: string, value: unknown): void;
             /**
              * Stores the id attribute given in the {@link Gtk.Builder} UI definition.
              *   {@link Gtk.Widget} stores the name as object data. Implement this method if your
@@ -282583,7 +282599,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -282610,7 +282626,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected
@@ -285262,7 +285278,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param value
              * @virtual
              */
-            vfunc_set_buildable_property(builder: Builder, name: string, value: GObject.Value | any): void;
+            vfunc_set_buildable_property(builder: Builder, name: string, value: unknown): void;
             /**
              * Stores the id attribute given in the {@link Gtk.Builder} UI definition.
              *   {@link Gtk.Widget} stores the name as object data. Implement this method if your
@@ -285668,7 +285684,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -285695,7 +285711,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected
@@ -286255,7 +286271,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param value
              * @virtual
              */
-            vfunc_set_buildable_property(builder: Builder, name: string, value: GObject.Value | any): void;
+            vfunc_set_buildable_property(builder: Builder, name: string, value: unknown): void;
             /**
              * Stores the id attribute given in the {@link Gtk.Builder} UI definition.
              *   {@link Gtk.Widget} stores the name as object data. Implement this method if your
@@ -286661,7 +286677,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -286688,7 +286704,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected
@@ -286777,15 +286793,6 @@ declare module 'gi://Gtk?version=4.0' {
 
             start: number;
             length: number;
-
-            // Constructors
-
-            constructor(
-                properties?: Partial<{
-                    start: number;
-                    length: number;
-                }>,
-            );
         }
 
         /**
@@ -287476,18 +287483,6 @@ declare module 'gi://Gtk?version=4.0' {
             lines: number;
             line_bytes: number;
             line_chars: number;
-
-            // Constructors
-
-            constructor(
-                properties?: Partial<{
-                    bytes: number;
-                    chars: number;
-                    lines: number;
-                    line_bytes: number;
-                    line_chars: number;
-                }>,
-            );
         }
 
         /**
@@ -288783,16 +288778,6 @@ declare module 'gi://Gtk?version=4.0' {
             bytes: number;
             lines: number;
             line_chars: number;
-
-            // Constructors
-
-            constructor(
-                properties?: Partial<{
-                    bytes: number;
-                    lines: number;
-                    line_chars: number;
-                }>,
-            );
         }
 
         /**
@@ -290591,7 +290576,7 @@ declare module 'gi://Gtk?version=4.0' {
                  * @param end the end of the range, in characters
                  * @virtual
                  */
-                vfunc_get_contents(start: number, end: number): GLib.Bytes;
+                vfunc_get_contents(start: number, end: number): GLib.Bytes | Uint8Array;
                 /**
                  * Retrieve the current contents of the accessible object starting
                  * from the given offset, and using the given granularity.
@@ -290604,7 +290589,7 @@ declare module 'gi://Gtk?version=4.0' {
                 vfunc_get_contents_at(
                     offset: number,
                     granularity: AccessibleTextGranularity,
-                ): [GLib.Bytes, number, number];
+                ): [GLib.Bytes | Uint8Array, number, number];
                 /**
                  * Retrieves the default text attributes inside the accessible object.
                  *
@@ -291069,7 +291054,7 @@ declare module 'gi://Gtk?version=4.0' {
                  * @param value
                  * @virtual
                  */
-                vfunc_set_buildable_property(builder: Builder, name: string, value: GObject.Value | any): void;
+                vfunc_set_buildable_property(builder: Builder, name: string, value: unknown): void;
                 /**
                  * Stores the id attribute given in the {@link Gtk.Builder} UI definition.
                  *   {@link Gtk.Widget} stores the name as object data. Implement this method if your
@@ -294194,7 +294179,7 @@ declare module 'gi://Gtk?version=4.0' {
                  * @param value data to drop
                  * @virtual
                  */
-                vfunc_drag_data_received(dest: TreePath, value: GObject.Value | any): boolean;
+                vfunc_drag_data_received(dest: TreePath, value: unknown): boolean;
                 /**
                  * Determines whether a drop is possible before the given `dest_path`,
                  * at the same depth as `dest_path`. i.e., can we drop the data in
@@ -294205,7 +294190,7 @@ declare module 'gi://Gtk?version=4.0' {
                  * @param value the data being dropped
                  * @virtual
                  */
-                vfunc_row_drop_possible(dest_path: TreePath, value: GObject.Value | any): boolean;
+                vfunc_row_drop_possible(dest_path: TreePath, value: unknown): boolean;
             }
 
             // Constructor properties interface
@@ -294393,7 +294378,7 @@ declare module 'gi://Gtk?version=4.0' {
                  * @param column the column to lookup the value at
                  * @virtual
                  */
-                vfunc_get_value(iter: TreeIter, column: number): unknown;
+                vfunc_get_value(iter: TreeIter, column: number): GObject.Value | any;
                 /**
                  * Sets `iter` to point to the first child of `parent`.
                  *
