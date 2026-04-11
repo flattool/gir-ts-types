@@ -334,7 +334,7 @@ declare module 'gi://GstAllocators?version=1.0' {
              * @param fd dmabuf file descriptor
              * @param size memory size
              */
-            static alloc(allocator: Gst.Allocator, fd: number, size: number): Gst.Memory | null;
+            static alloc(allocator: Gst.Allocator, fd: number, size: bigint | number): Gst.Memory | null;
             /**
              * Return a %GstMemory that wraps a dmabuf file descriptor.
              * @param allocator allocator to be used for this memory
@@ -345,7 +345,7 @@ declare module 'gi://GstAllocators?version=1.0' {
             static alloc_with_flags(
                 allocator: Gst.Allocator,
                 fd: number,
-                size: number,
+                size: bigint | number,
                 flags: FdMemoryFlags,
             ): Gst.Memory | null;
         }
@@ -417,7 +417,12 @@ declare module 'gi://GstAllocators?version=1.0' {
              * @param size memory size
              * @param flags extra {@link GstAllocators.FdMemoryFlags}
              */
-            static alloc(allocator: Gst.Allocator, fd: number, size: number, flags: FdMemoryFlags): Gst.Memory | null;
+            static alloc(
+                allocator: Gst.Allocator,
+                fd: number,
+                size: bigint | number,
+                flags: FdMemoryFlags,
+            ): Gst.Memory | null;
         }
 
         namespace ShmAllocator {

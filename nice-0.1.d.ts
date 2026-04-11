@@ -713,8 +713,8 @@ declare module 'gi://Nice?version=0.1' {
                 mainContext: any;
                 max_connectivity_checks: number;
                 maxConnectivityChecks: number;
-                proxy_extra_headers: GLib.HashTable<string, string>;
-                proxyExtraHeaders: GLib.HashTable<string, string>;
+                proxy_extra_headers: { [key: string]: any } | GLib.HashTable<string, string>;
+                proxyExtraHeaders: { [key: string]: any } | GLib.HashTable<string, string>;
                 proxy_ip: string;
                 proxyIp: string;
                 proxy_password: string;
@@ -1104,7 +1104,7 @@ declare module 'gi://Nice?version=0.1' {
              * @since 0.1.20
              */
             get proxy_extra_headers(): GLib.HashTable<string, string>;
-            set proxy_extra_headers(val: GLib.HashTable<string, string>);
+            set proxy_extra_headers(val: { [key: string]: any } | GLib.HashTable<string, string>);
             /**
              * Optional extra headers to append to the HTTP proxy CONNECT request.
              * Provided as key/value-pairs in hash table corresponding to
@@ -1112,7 +1112,7 @@ declare module 'gi://Nice?version=0.1' {
              * @since 0.1.20
              */
             get proxyExtraHeaders(): GLib.HashTable<string, string>;
-            set proxyExtraHeaders(val: GLib.HashTable<string, string>);
+            set proxyExtraHeaders(val: { [key: string]: any } | GLib.HashTable<string, string>);
             /**
              * The proxy server IP used to bypass a proxy firewall
              * @since 0.0.4
@@ -2264,7 +2264,7 @@ declare module 'gi://Nice?version=0.1' {
              * @param timeout A pointer to be filled with the new timeout.
              * @returns `true` if `timeout` was filled, `false` if the socket is closed and ready to be destroyed. <para> See also: `pseudo_tcp_socket_notify_clock()` </para>
              */
-            get_next_clock(timeout: number): boolean;
+            get_next_clock(timeout: bigint | number): boolean;
             /**
              * Gets whether the socket is closed, with the shutdown handshake completed,
              * and both peers no longer able to read or write data to the connection.
@@ -2325,7 +2325,7 @@ declare module 'gi://Nice?version=0.1' {
              * @param len The length of `buffer`
              * @returns The number of bytes received or -1 in case of error <para> See also: `pseudo_tcp_socket_get_error()` </para>
              */
-            recv(buffer: string, len: number): number;
+            recv(buffer: string, len: bigint | number): number;
             /**
              * Send data on the socket.
              *
@@ -2593,7 +2593,6 @@ declare module 'gi://Nice?version=0.1' {
 
             // Fields
 
-            buffers: Gio.InputVector[];
             n_buffers: number;
             length: number;
         }
@@ -2620,17 +2619,7 @@ declare module 'gi://Nice?version=0.1' {
 
             // Fields
 
-            buffers: Gio.OutputVector[];
             n_buffers: number;
-
-            // Constructors
-
-            constructor(
-                properties?: Partial<{
-                    buffers: Gio.OutputVector[];
-                    n_buffers: number;
-                }>,
-            );
         }
 
         /**

@@ -169,12 +169,12 @@ declare module 'gi://GstAnalytics?version=1.0' {
              * @param index Object class index
              * @returns confidence level for `index`, <0.0 if the call failed.
              */
-            get_level(index: number): number;
+            get_level(index: bigint | number): number;
             /**
              * @param index index of the class Get quark of the class at `index`
              * @returns Quark of this class (label) associated with `index`
              */
-            get_quark(index: number): GLib.Quark;
+            get_quark(index: bigint | number): GLib.Quark;
         }
 
         /**
@@ -326,7 +326,7 @@ declare module 'gi://GstAnalytics?version=1.0' {
              * @param tracking_first_seen Timestamp of first time the object was observed.
              * @returns Added successfully
              */
-            add_tracking_mtd(tracking_id: number, tracking_first_seen: Gst.ClockTime): [boolean, TrackingMtd];
+            add_tracking_mtd(tracking_id: bigint | number, tracking_first_seen: Gst.ClockTime): [boolean, TrackingMtd];
             /**
              * Verify existence of relation(s) between `an_meta_first_d` and
              * `an_meta_second_id` according to relation condition `cond_types`. It optionally
@@ -429,15 +429,6 @@ declare module 'gi://GstAnalytics?version=1.0' {
 
             initial_relation_order: number;
             initial_buf_size: number;
-
-            // Constructors
-
-            constructor(
-                properties?: Partial<{
-                    initial_relation_order: number;
-                    initial_buf_size: number;
-                }>,
-            );
         }
 
         /**

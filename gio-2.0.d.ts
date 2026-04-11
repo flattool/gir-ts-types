@@ -459,7 +459,7 @@ declare module 'gi://Gio?version=2.0' {
              */
             static register_error_domain(
                 error_domain_quark_name: string,
-                quark_volatile: number,
+                quark_volatile: bigint | number,
                 entries: DBusErrorEntry[],
             ): void;
             /**
@@ -4278,7 +4278,7 @@ declare module 'gi://Gio?version=2.0' {
          */
         function dbus_error_register_error_domain(
             error_domain_quark_name: string,
-            quark_volatile: number,
+            quark_volatile: bigint | number,
             entries: DBusErrorEntry[],
         ): void;
         /**
@@ -5428,7 +5428,7 @@ declare module 'gi://Gio?version=2.0' {
          * @param time a timestamp
          * @returns true if the mounts have changed since `time`; false otherwise Since 2.84
          */
-        function unix_mount_entries_changed_since(time: number): boolean;
+        function unix_mount_entries_changed_since(time: bigint | number): boolean;
         /**
          * Gets a list of {@link GioUnix.MountEntry} instances representing the Unix
          * mounts.
@@ -5648,7 +5648,7 @@ declare module 'gi://Gio?version=2.0' {
          * @param time a timestamp
          * @returns true if the mount points have changed since `time`; false otherwise
          */
-        function unix_mount_points_changed_since(time: number): boolean;
+        function unix_mount_points_changed_since(time: bigint | number): boolean;
         /**
          * Gets a list of {@link GioUnix.MountPoint} instances representing the Unix
          * mount points.
@@ -5681,7 +5681,7 @@ declare module 'gi://Gio?version=2.0' {
          * @returns true if the mounts have changed since `time`; false otherwise
          * @deprecated since 2.84: Use {@link GioUnix.mount_entries_changed_since} instead.
          */
-        function unix_mounts_changed_since(time: number): boolean;
+        function unix_mounts_changed_since(time: bigint | number): boolean;
         /**
          * Gets a list of {@link GioUnix.MountEntry} instances representing the Unix
          * mounts.
@@ -5900,13 +5900,13 @@ declare module 'gi://Gio?version=2.0' {
          * @gir-type Callback
          */
         interface SettingsBindGetMapping {
-            (value: GObject.Value | any, variant: GLib.Variant): boolean;
+            (value: unknown, variant: GLib.Variant): boolean;
         }
         /**
          * @gir-type Callback
          */
         interface SettingsBindSetMapping {
-            (value: GObject.Value | any, expected_type: GLib.VariantType): GLib.Variant | null;
+            (value: unknown, expected_type: GLib.VariantType): GLib.Variant | null;
         }
         /**
          * @gir-type Callback
@@ -9803,7 +9803,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -9830,7 +9830,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected
@@ -10449,7 +10449,7 @@ declare module 'gi://Gio?version=2.0' {
 
             static ['new'](base_stream: InputStream): BufferedInputStream;
 
-            static new_sized(base_stream: InputStream, size: number): BufferedInputStream;
+            static new_sized(base_stream: InputStream, size: bigint | number): BufferedInputStream;
 
             // Signals
 
@@ -10506,7 +10506,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param cancellable optional {@link Gio.Cancellable} object, `NULL` to ignore
              * @virtual
              */
-            vfunc_fill(count: number, cancellable?: Cancellable | null): number;
+            vfunc_fill(count: number, cancellable?: Cancellable | null): bigint | number;
             /**
              * Reads data into `stream`'s buffer asynchronously, up to `count` size.
              * `io_priority` can be used to prioritize reads. For the synchronous
@@ -10531,7 +10531,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param result a {@link Gio.AsyncResult}
              * @virtual
              */
-            vfunc_fill_finish(result: AsyncResult): number;
+            vfunc_fill_finish(result: AsyncResult): bigint | number;
 
             // Methods
 
@@ -10565,7 +10565,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param cancellable optional {@link Gio.Cancellable} object, `NULL` to ignore
              * @returns the number of bytes read into `stream`'s buffer, up to `count`,     or `-1` on error.
              */
-            fill(count: number, cancellable?: Cancellable | null): number;
+            fill(count: bigint | number, cancellable?: Cancellable | null): number;
             /**
              * Reads data into `stream`'s buffer asynchronously, up to `count` size.
              * `io_priority` can be used to prioritize reads. For the synchronous
@@ -10578,7 +10578,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param cancellable optional {@link Gio.Cancellable} object
              */
             fill_async(
-                count: number,
+                count: bigint | number,
                 io_priority: number,
                 cancellable?: Cancellable | null,
             ): globalThis.Promise<number>;
@@ -10595,7 +10595,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param callback a {@link Gio.AsyncReadyCallback}
              */
             fill_async(
-                count: number,
+                count: bigint | number,
                 io_priority: number,
                 cancellable: Cancellable | null,
                 callback: AsyncReadyCallback<this> | null,
@@ -10613,7 +10613,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param callback a {@link Gio.AsyncReadyCallback}
              */
             fill_async(
-                count: number,
+                count: bigint | number,
                 io_priority: number,
                 cancellable?: Cancellable | null,
                 callback?: AsyncReadyCallback<this> | null,
@@ -10641,7 +10641,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param offset a `gsize`
              * @returns a `gsize` of the number of bytes peeked, or `-1` on error.
              */
-            peek(buffer: Uint8Array | string, offset: number): number;
+            peek(buffer: Uint8Array | string, offset: bigint | number): number;
             /**
              * Returns the buffer with the currently available bytes. The returned
              * buffer must not be modified and will become invalid when reading from
@@ -10673,7 +10673,7 @@ declare module 'gi://Gio?version=2.0' {
              * smaller than its current contents.
              * @param size a `gsize`
              */
-            set_buffer_size(size: number): void;
+            set_buffer_size(size: bigint | number): void;
             /**
              * Tests if the stream supports the {@link Gio.SeekableIface}.
              * @returns `true` if `seekable` can be seeked. `false` otherwise.
@@ -10705,7 +10705,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
              * @returns `true` if successful. If an error     has occurred, this function will return `false` and set `error`     appropriately if present.
              */
-            seek(offset: number, type: GLib.SeekType | null, cancellable?: Cancellable | null): boolean;
+            seek(offset: bigint | number, type: GLib.SeekType | null, cancellable?: Cancellable | null): boolean;
             /**
              * Tells the current position within the stream.
              * @returns the (positive or zero) offset from the beginning of the buffer, zero if the target is not seekable.
@@ -10725,7 +10725,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
              * @returns `true` if successful. If an error     has occurred, this function will return `false` and set `error`     appropriately if present.
              */
-            truncate(offset: number, cancellable?: Cancellable | null): boolean;
+            truncate(offset: bigint | number, cancellable?: Cancellable | null): boolean;
             /**
              * Tests if the stream supports the {@link Gio.SeekableIface}.
              * @virtual
@@ -10762,7 +10762,7 @@ declare module 'gi://Gio?version=2.0' {
              * Tells the current position within the stream.
              * @virtual
              */
-            vfunc_tell(): number;
+            vfunc_tell(): bigint | number;
             /**
              * Sets the length of the stream to `offset`. If the stream was previously
              * larger than `offset`, the extra data is discarded. If the stream was
@@ -11174,7 +11174,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -11201,7 +11201,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected
@@ -11307,7 +11307,7 @@ declare module 'gi://Gio?version=2.0' {
 
             static ['new'](base_stream: OutputStream): BufferedOutputStream;
 
-            static new_sized(base_stream: OutputStream, size: number): BufferedOutputStream;
+            static new_sized(base_stream: OutputStream, size: bigint | number): BufferedOutputStream;
 
             // Signals
 
@@ -11356,7 +11356,7 @@ declare module 'gi://Gio?version=2.0' {
              * Sets the size of the internal buffer to `size`.
              * @param size a `gsize`.
              */
-            set_buffer_size(size: number): void;
+            set_buffer_size(size: bigint | number): void;
             /**
              * Tests if the stream supports the {@link Gio.SeekableIface}.
              * @returns `true` if `seekable` can be seeked. `false` otherwise.
@@ -11388,7 +11388,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
              * @returns `true` if successful. If an error     has occurred, this function will return `false` and set `error`     appropriately if present.
              */
-            seek(offset: number, type: GLib.SeekType | null, cancellable?: Cancellable | null): boolean;
+            seek(offset: bigint | number, type: GLib.SeekType | null, cancellable?: Cancellable | null): boolean;
             /**
              * Tells the current position within the stream.
              * @returns the (positive or zero) offset from the beginning of the buffer, zero if the target is not seekable.
@@ -11408,7 +11408,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
              * @returns `true` if successful. If an error     has occurred, this function will return `false` and set `error`     appropriately if present.
              */
-            truncate(offset: number, cancellable?: Cancellable | null): boolean;
+            truncate(offset: bigint | number, cancellable?: Cancellable | null): boolean;
             /**
              * Tests if the stream supports the {@link Gio.SeekableIface}.
              * @virtual
@@ -11445,7 +11445,7 @@ declare module 'gi://Gio?version=2.0' {
              * Tells the current position within the stream.
              * @virtual
              */
-            vfunc_tell(): number;
+            vfunc_tell(): bigint | number;
             /**
              * Sets the length of the stream to `offset`. If the stream was previously
              * larger than `offset`, the extra data is discarded. If the stream was
@@ -11857,7 +11857,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -11884,7 +11884,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected
@@ -11922,7 +11922,7 @@ declare module 'gi://Gio?version=2.0' {
 
             interface ConstructorProps
                 extends GObject.Object.ConstructorProps, Icon.ConstructorProps, LoadableIcon.ConstructorProps {
-                bytes: GLib.Bytes;
+                bytes: GLib.Bytes | Uint8Array;
             }
         }
 
@@ -12522,7 +12522,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -12549,7 +12549,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected
@@ -12794,7 +12794,12 @@ declare module 'gi://Gio?version=2.0' {
              * nothing.
              * @param handler_id Handler id of the handler to be disconnected, or `0`.
              */
-            disconnect(handler_id: number): void;
+            disconnect(handler_id: bigint | number): void;
+            /**
+             * @param args
+             */
+            // Conflicted with GObject.Object.disconnect
+            disconnect(...args: never[]): any;
             /**
              * Gets the file descriptor for a cancellable job. This can be used to
              * implement cancellable operations on Unix systems. The returned fd will
@@ -13238,9 +13243,9 @@ declare module 'gi://Gio?version=2.0' {
              */
             vfunc_convert(
                 inbuf: Uint8Array | null,
-                outbuf: Uint8Array | string,
+                outbuf: Uint8Array,
                 flags: ConverterFlags,
-            ): [ConverterResult, number, number];
+            ): [ConverterResult, bigint | number, bigint | number];
             /**
              * Resets all internal state in the converter, making it behave
              * as if it was just created. If the converter has any internal
@@ -13730,7 +13735,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -13757,7 +13762,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected
@@ -13987,7 +13992,7 @@ declare module 'gi://Gio?version=2.0' {
              * `g_pollable_input_stream_can_poll()` returns `false` for `stream`.
              * @virtual
              */
-            vfunc_read_nonblocking(): [number, Uint8Array | null];
+            vfunc_read_nonblocking(): [bigint | number, Uint8Array | null];
             /**
              * Clears the pending flag on `stream`.
              */
@@ -14335,7 +14340,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
              * @returns a new {@link GLib.Bytes}, or `null` on error
              */
-            read_bytes(count: number, cancellable?: Cancellable | null): GLib.Bytes;
+            read_bytes(count: bigint | number, cancellable?: Cancellable | null): GLib.Bytes;
             /**
              * Request an asynchronous read of `count` bytes from the stream into a
              * new {@link GLib.Bytes}. When the operation is finished `callback` will be
@@ -14362,7 +14367,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
              */
             read_bytes_async(
-                count: number,
+                count: bigint | number,
                 io_priority: number,
                 cancellable?: Cancellable | null,
             ): globalThis.Promise<GLib.Bytes>;
@@ -14393,7 +14398,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param callback a {@link Gio.AsyncReadyCallback}   to call when the request is satisfied
              */
             read_bytes_async(
-                count: number,
+                count: bigint | number,
                 io_priority: number,
                 cancellable: Cancellable | null,
                 callback: AsyncReadyCallback<this> | null,
@@ -14425,7 +14430,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param callback a {@link Gio.AsyncReadyCallback}   to call when the request is satisfied
              */
             read_bytes_async(
-                count: number,
+                count: bigint | number,
                 io_priority: number,
                 cancellable?: Cancellable | null,
                 callback?: AsyncReadyCallback<this> | null,
@@ -14468,7 +14473,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
              * @returns Number of bytes skipped, or -1 on error
              */
-            skip(count: number, cancellable?: Cancellable | null): number;
+            skip(count: bigint | number, cancellable?: Cancellable | null): number;
             /**
              * Request an asynchronous skip of `count` bytes from the stream.
              * When the operation is finished `callback` will be called.
@@ -14498,7 +14503,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
              */
             skip_async(
-                count: number,
+                count: bigint | number,
                 io_priority: number,
                 cancellable?: Cancellable | null,
             ): globalThis.Promise<number>;
@@ -14532,7 +14537,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param callback a {@link Gio.AsyncReadyCallback}   to call when the request is satisfied
              */
             skip_async(
-                count: number,
+                count: bigint | number,
                 io_priority: number,
                 cancellable: Cancellable | null,
                 callback: AsyncReadyCallback<this> | null,
@@ -14567,7 +14572,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param callback a {@link Gio.AsyncReadyCallback}   to call when the request is satisfied
              */
             skip_async(
-                count: number,
+                count: bigint | number,
                 io_priority: number,
                 cancellable?: Cancellable | null,
                 callback?: AsyncReadyCallback<this> | null,
@@ -14649,14 +14654,14 @@ declare module 'gi://Gio?version=2.0' {
              * @param result a {@link Gio.AsyncResult}.
              * @virtual
              */
-            vfunc_read_finish(result: AsyncResult): number;
+            vfunc_read_finish(result: AsyncResult): bigint | number;
             /**
              * @param buffer
              * @param count
              * @param cancellable
              * @virtual
              */
-            vfunc_read_fn(buffer: any | null, count: number, cancellable?: Cancellable | null): number;
+            vfunc_read_fn(buffer: any | null, count: number, cancellable?: Cancellable | null): bigint | number;
             /**
              * Tries to skip `count` bytes from the stream. Will block during the operation.
              *
@@ -14676,7 +14681,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
              * @virtual
              */
-            vfunc_skip(count: number, cancellable?: Cancellable | null): number;
+            vfunc_skip(count: number, cancellable?: Cancellable | null): bigint | number;
             /**
              * Request an asynchronous skip of `count` bytes from the stream.
              * When the operation is finished `callback` will be called.
@@ -14718,7 +14723,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param result a {@link Gio.AsyncResult}.
              * @virtual
              */
-            vfunc_skip_finish(result: AsyncResult): number;
+            vfunc_skip_finish(result: AsyncResult): bigint | number;
             /**
              * Creates an asynchronous iterator for a Gio.InputStream that reads the stream in chunks.
              *
@@ -15006,7 +15011,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param buffer a buffer to write     data from
              * @virtual
              */
-            vfunc_write_nonblocking(buffer?: Uint8Array | null): number;
+            vfunc_write_nonblocking(buffer?: Uint8Array | null): bigint | number;
             /**
              * Attempts to write the bytes contained in the `n_vectors` `vectors` to `stream`,
              * as with `g_output_stream_writev()`. If `stream` is not currently writable,
@@ -15030,7 +15035,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param vectors the buffer containing the `GOutputVectors` to write.
              * @virtual
              */
-            vfunc_writev_nonblocking(vectors: OutputVector[]): [PollableReturn, number];
+            vfunc_writev_nonblocking(vectors: OutputVector[]): [PollableReturn, bigint | number];
             /**
              * Clears the pending flag on `stream`.
              */
@@ -16047,7 +16052,11 @@ declare module 'gi://Gio?version=2.0' {
              * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
              * @virtual
              */
-            vfunc_splice(source: InputStream, flags: OutputStreamSpliceFlags, cancellable?: Cancellable | null): number;
+            vfunc_splice(
+                source: InputStream,
+                flags: OutputStreamSpliceFlags,
+                cancellable?: Cancellable | null,
+            ): bigint | number;
             /**
              * Splices a stream asynchronously.
              * When the operation is finished `callback` will be called.
@@ -16075,7 +16084,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param result a {@link Gio.AsyncResult}.
              * @virtual
              */
-            vfunc_splice_finish(result: AsyncResult): number;
+            vfunc_splice_finish(result: AsyncResult): bigint | number;
             /**
              * Request an asynchronous write of `count` bytes from `buffer` into
              * the stream. When the operation is finished `callback` will be called.
@@ -16129,7 +16138,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param result a {@link Gio.AsyncResult}.
              * @virtual
              */
-            vfunc_write_finish(result: AsyncResult): number;
+            vfunc_write_finish(result: AsyncResult): bigint | number;
             /**
              * Tries to write `count` bytes from `buffer` into the stream. Will block
              * during the operation.
@@ -16155,7 +16164,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param cancellable optional cancellable object
              * @virtual
              */
-            vfunc_write_fn(buffer?: Uint8Array | null, cancellable?: Cancellable | null): number;
+            vfunc_write_fn(buffer?: Uint8Array | null, cancellable?: Cancellable | null): bigint | number;
             /**
              * Request an asynchronous write of the bytes contained in `n_vectors` `vectors` into
              * the stream. When the operation is finished `callback` will be called.
@@ -16204,7 +16213,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param result a {@link Gio.AsyncResult}.
              * @virtual
              */
-            vfunc_writev_finish(result: AsyncResult): [boolean, number];
+            vfunc_writev_finish(result: AsyncResult): [boolean, bigint | number];
             /**
              * Tries to write the bytes contained in the `n_vectors` `vectors` into the
              * stream. Will block during the operation.
@@ -16233,7 +16242,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param cancellable optional cancellable object
              * @virtual
              */
-            vfunc_writev_fn(vectors: OutputVector[], cancellable?: Cancellable | null): [boolean, number];
+            vfunc_writev_fn(vectors: OutputVector[], cancellable?: Cancellable | null): [boolean, bigint | number];
         }
 
         namespace Credentials {
@@ -17389,7 +17398,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -17416,7 +17425,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected
@@ -19987,7 +19996,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -20014,7 +20023,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected
@@ -20707,7 +20716,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -20734,7 +20743,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected
@@ -22672,7 +22681,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -22699,7 +22708,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected
@@ -23353,7 +23362,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -23380,7 +23389,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected
@@ -23952,7 +23961,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -23979,7 +23988,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected
@@ -24591,7 +24600,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -24618,7 +24627,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected
@@ -26412,7 +26421,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -26439,7 +26448,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected
@@ -27159,7 +27168,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -27186,7 +27195,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected
@@ -27389,7 +27398,7 @@ declare module 'gi://Gio?version=2.0' {
             read_line_async(
                 io_priority: number,
                 cancellable?: Cancellable | null,
-            ): globalThis.Promise<[Uint8Array | null, number]>;
+            ): globalThis.Promise<[Uint8Array | null, bigint | number]>;
             /**
              * The asynchronous version of `g_data_input_stream_read_line()`.  It is
              * an error to have two outstanding calls to this function.
@@ -27421,7 +27430,7 @@ declare module 'gi://Gio?version=2.0' {
                 io_priority: number,
                 cancellable?: Cancellable | null,
                 callback?: AsyncReadyCallback<this> | null,
-            ): globalThis.Promise<[Uint8Array | null, number]> | void;
+            ): globalThis.Promise<[Uint8Array | null, bigint | number]> | void;
             /**
              * Finish an asynchronous call started by
              * `g_data_input_stream_read_line_async()`.  Note the warning about
@@ -27524,7 +27533,7 @@ declare module 'gi://Gio?version=2.0' {
                 stop_chars: string,
                 io_priority: number,
                 cancellable?: Cancellable | null,
-            ): globalThis.Promise<[string, number]>;
+            ): globalThis.Promise<[string, bigint | number]>;
             /**
              * The asynchronous version of `g_data_input_stream_read_until()`.
              * It is an error to have two outstanding calls to this function.
@@ -27578,7 +27587,7 @@ declare module 'gi://Gio?version=2.0' {
                 io_priority: number,
                 cancellable?: Cancellable | null,
                 callback?: AsyncReadyCallback<this> | null,
-            ): globalThis.Promise<[string, number]> | void;
+            ): globalThis.Promise<[string, bigint | number]> | void;
             /**
              * Finish an asynchronous call started by
              * `g_data_input_stream_read_until_async()`.
@@ -27604,7 +27613,11 @@ declare module 'gi://Gio?version=2.0' {
              * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore
              * @returns a string with the data that was read     before encountering any of the stop characters. Set `length` to     a `gsize` to get the length of the string. This function will     return `null` on an error
              */
-            read_upto(stop_chars: string, stop_chars_len: number, cancellable?: Cancellable | null): [string, number];
+            read_upto(
+                stop_chars: string,
+                stop_chars_len: bigint | number,
+                cancellable?: Cancellable | null,
+            ): [string, number];
             /**
              * The asynchronous version of `g_data_input_stream_read_upto()`.
              * It is an error to have two outstanding calls to this function.
@@ -27627,10 +27640,10 @@ declare module 'gi://Gio?version=2.0' {
              */
             read_upto_async(
                 stop_chars: string,
-                stop_chars_len: number,
+                stop_chars_len: bigint | number,
                 io_priority: number,
                 cancellable?: Cancellable | null,
-            ): globalThis.Promise<[string, number]>;
+            ): globalThis.Promise<[string, bigint | number]>;
             /**
              * The asynchronous version of `g_data_input_stream_read_upto()`.
              * It is an error to have two outstanding calls to this function.
@@ -27654,7 +27667,7 @@ declare module 'gi://Gio?version=2.0' {
              */
             read_upto_async(
                 stop_chars: string,
-                stop_chars_len: number,
+                stop_chars_len: bigint | number,
                 io_priority: number,
                 cancellable: Cancellable | null,
                 callback: AsyncReadyCallback<this> | null,
@@ -27682,11 +27695,11 @@ declare module 'gi://Gio?version=2.0' {
              */
             read_upto_async(
                 stop_chars: string,
-                stop_chars_len: number,
+                stop_chars_len: bigint | number,
                 io_priority: number,
                 cancellable?: Cancellable | null,
                 callback?: AsyncReadyCallback<this> | null,
-            ): globalThis.Promise<[string, number]> | void;
+            ): globalThis.Promise<[string, bigint | number]> | void;
             /**
              * Finish an asynchronous call started by
              * `g_data_input_stream_read_upto_async()`.
@@ -27746,7 +27759,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
              * @returns `true` if successful. If an error     has occurred, this function will return `false` and set `error`     appropriately if present.
              */
-            seek(offset: number, type: GLib.SeekType | null, cancellable?: Cancellable | null): boolean;
+            seek(offset: bigint | number, type: GLib.SeekType | null, cancellable?: Cancellable | null): boolean;
             /**
              * Tells the current position within the stream.
              * @returns the (positive or zero) offset from the beginning of the buffer, zero if the target is not seekable.
@@ -27766,7 +27779,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
              * @returns `true` if successful. If an error     has occurred, this function will return `false` and set `error`     appropriately if present.
              */
-            truncate(offset: number, cancellable?: Cancellable | null): boolean;
+            truncate(offset: bigint | number, cancellable?: Cancellable | null): boolean;
             /**
              * Tests if the stream supports the {@link Gio.SeekableIface}.
              * @virtual
@@ -27803,7 +27816,7 @@ declare module 'gi://Gio?version=2.0' {
              * Tells the current position within the stream.
              * @virtual
              */
-            vfunc_tell(): number;
+            vfunc_tell(): bigint | number;
             /**
              * Sets the length of the stream to `offset`. If the stream was previously
              * larger than `offset`, the extra data is discarded. If the stream was
@@ -28215,7 +28228,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -28242,7 +28255,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected
@@ -28383,7 +28396,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
              * @returns `true` if `data` was successfully added to the `stream`.
              */
-            put_int64(data: number, cancellable?: Cancellable | null): boolean;
+            put_int64(data: bigint | number, cancellable?: Cancellable | null): boolean;
             /**
              * Puts a string into the output stream.
              * @param str a string.
@@ -28411,7 +28424,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
              * @returns `true` if `data` was successfully added to the `stream`.
              */
-            put_uint64(data: number, cancellable?: Cancellable | null): boolean;
+            put_uint64(data: bigint | number, cancellable?: Cancellable | null): boolean;
             /**
              * Sets the byte order of the data output stream to `order`.
              * @param order a %GDataStreamByteOrder.
@@ -28448,7 +28461,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
              * @returns `true` if successful. If an error     has occurred, this function will return `false` and set `error`     appropriately if present.
              */
-            seek(offset: number, type: GLib.SeekType | null, cancellable?: Cancellable | null): boolean;
+            seek(offset: bigint | number, type: GLib.SeekType | null, cancellable?: Cancellable | null): boolean;
             /**
              * Tells the current position within the stream.
              * @returns the (positive or zero) offset from the beginning of the buffer, zero if the target is not seekable.
@@ -28468,7 +28481,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
              * @returns `true` if successful. If an error     has occurred, this function will return `false` and set `error`     appropriately if present.
              */
-            truncate(offset: number, cancellable?: Cancellable | null): boolean;
+            truncate(offset: bigint | number, cancellable?: Cancellable | null): boolean;
             /**
              * Tests if the stream supports the {@link Gio.SeekableIface}.
              * @virtual
@@ -28505,7 +28518,7 @@ declare module 'gi://Gio?version=2.0' {
              * Tells the current position within the stream.
              * @virtual
              */
-            vfunc_tell(): number;
+            vfunc_tell(): bigint | number;
             /**
              * Sets the length of the stream to `offset`. If the stream was previously
              * larger than `offset`, the extra data is discarded. If the stream was
@@ -28917,7 +28930,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -28944,7 +28957,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected
@@ -29718,7 +29731,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -29745,7 +29758,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected
@@ -30960,7 +30973,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -30987,7 +31000,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected
@@ -31571,7 +31584,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -31598,7 +31611,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected
@@ -32181,7 +32194,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -32208,7 +32221,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected
@@ -33073,7 +33086,7 @@ declare module 'gi://Gio?version=2.0' {
             /**
              * @virtual
              */
-            vfunc_tell(): number;
+            vfunc_tell(): bigint | number;
             /**
              * @param size
              * @param cancellable
@@ -33203,7 +33216,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
              * @returns `true` if successful. If an error     has occurred, this function will return `false` and set `error`     appropriately if present.
              */
-            seek(offset: number, type: GLib.SeekType | null, cancellable?: Cancellable | null): boolean;
+            seek(offset: bigint | number, type: GLib.SeekType | null, cancellable?: Cancellable | null): boolean;
             /**
              * Tells the current position within the stream.
              * @returns the (positive or zero) offset from the beginning of the buffer, zero if the target is not seekable.
@@ -33223,7 +33236,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
              * @returns `true` if successful. If an error     has occurred, this function will return `false` and set `error`     appropriately if present.
              */
-            truncate(offset: number, cancellable?: Cancellable | null): boolean;
+            truncate(offset: bigint | number, cancellable?: Cancellable | null): boolean;
             /**
              * Creates a binding between `source_property` on `source` and `target_property`
              * on `target`.
@@ -33620,7 +33633,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -33647,7 +33660,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected
@@ -34286,7 +34299,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -34313,7 +34326,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected
@@ -34819,7 +34832,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param attribute attribute name to set.
              * @param attr_value int64 value to set attribute to.
              */
-            set_attribute_int64(attribute: string, attr_value: number): void;
+            set_attribute_int64(attribute: string, attr_value: bigint | number): void;
             /**
              * Sets `mask` on `info` to match specific attribute types.
              * @param mask a {@link Gio.FileAttributeMatcher}.
@@ -34873,7 +34886,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param attribute a file attribute key.
              * @param attr_value an unsigned 64-bit integer.
              */
-            set_attribute_uint64(attribute: string, attr_value: number): void;
+            set_attribute_uint64(attribute: string, attr_value: bigint | number): void;
             /**
              * Sets the content type attribute for a given {@link Gio.FileInfo}.
              * See `G_FILE_ATTRIBUTE_STANDARD_CONTENT_TYPE`.
@@ -34954,7 +34967,7 @@ declare module 'gi://Gio?version=2.0' {
              * to the given size.
              * @param size a `goffset` containing the file's size.
              */
-            set_size(size: number): void;
+            set_size(size: bigint | number): void;
             /**
              * Sets the sort order attribute in the file info structure. See
              * `G_FILE_ATTRIBUTE_STANDARD_SORT_ORDER`.
@@ -35099,7 +35112,7 @@ declare module 'gi://Gio?version=2.0' {
             /**
              * @virtual
              */
-            vfunc_tell(): number;
+            vfunc_tell(): bigint | number;
 
             // Methods
 
@@ -35218,7 +35231,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
              * @returns `true` if successful. If an error     has occurred, this function will return `false` and set `error`     appropriately if present.
              */
-            seek(offset: number, type: GLib.SeekType | null, cancellable?: Cancellable | null): boolean;
+            seek(offset: bigint | number, type: GLib.SeekType | null, cancellable?: Cancellable | null): boolean;
             /**
              * Tells the current position within the stream.
              * @returns the (positive or zero) offset from the beginning of the buffer, zero if the target is not seekable.
@@ -35238,7 +35251,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
              * @returns `true` if successful. If an error     has occurred, this function will return `false` and set `error`     appropriately if present.
              */
-            truncate(offset: number, cancellable?: Cancellable | null): boolean;
+            truncate(offset: bigint | number, cancellable?: Cancellable | null): boolean;
             /**
              * Tests if the length of the stream can be adjusted with
              * `g_seekable_truncate()`.
@@ -35656,7 +35669,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -35683,7 +35696,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected
@@ -36024,7 +36037,7 @@ declare module 'gi://Gio?version=2.0' {
             /**
              * @virtual
              */
-            vfunc_tell(): number;
+            vfunc_tell(): bigint | number;
             /**
              * @param size
              * @param cancellable
@@ -36154,7 +36167,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
              * @returns `true` if successful. If an error     has occurred, this function will return `false` and set `error`     appropriately if present.
              */
-            seek(offset: number, type: GLib.SeekType | null, cancellable?: Cancellable | null): boolean;
+            seek(offset: bigint | number, type: GLib.SeekType | null, cancellable?: Cancellable | null): boolean;
             /**
              * Tells the current position within the stream.
              * @returns the (positive or zero) offset from the beginning of the buffer, zero if the target is not seekable.
@@ -36174,7 +36187,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
              * @returns `true` if successful. If an error     has occurred, this function will return `false` and set `error`     appropriately if present.
              */
-            truncate(offset: number, cancellable?: Cancellable | null): boolean;
+            truncate(offset: bigint | number, cancellable?: Cancellable | null): boolean;
             /**
              * Creates a binding between `source_property` on `source` and `target_property`
              * on `target`.
@@ -36571,7 +36584,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -36598,7 +36611,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected
@@ -37468,7 +37481,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -37495,7 +37508,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected
@@ -38834,7 +38847,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -38861,7 +38874,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected
@@ -39470,7 +39483,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -39497,7 +39510,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected
@@ -39662,14 +39675,14 @@ declare module 'gi://Gio?version=2.0' {
              * @param result a {@link Gio.AsyncResult}.
              * @virtual
              */
-            vfunc_read_finish(result: AsyncResult): number;
+            vfunc_read_finish(result: AsyncResult): bigint | number;
             /**
              * @param buffer
              * @param count
              * @param cancellable
              * @virtual
              */
-            vfunc_read_fn(buffer: any | null, count: number, cancellable?: Cancellable | null): number;
+            vfunc_read_fn(buffer: any | null, count: number, cancellable?: Cancellable | null): bigint | number;
             /**
              * Tries to skip `count` bytes from the stream. Will block during the operation.
              *
@@ -39689,7 +39702,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
              * @virtual
              */
-            vfunc_skip(count: number, cancellable?: Cancellable | null): number;
+            vfunc_skip(count: number, cancellable?: Cancellable | null): bigint | number;
             /**
              * Request an asynchronous skip of `count` bytes from the stream.
              * When the operation is finished `callback` will be called.
@@ -39731,7 +39744,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param result a {@link Gio.AsyncResult}.
              * @virtual
              */
-            vfunc_skip_finish(result: AsyncResult): number;
+            vfunc_skip_finish(result: AsyncResult): bigint | number;
 
             // Methods
 
@@ -40082,7 +40095,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
              * @returns a new {@link GLib.Bytes}, or `null` on error
              */
-            read_bytes(count: number, cancellable?: Cancellable | null): GLib.Bytes;
+            read_bytes(count: bigint | number, cancellable?: Cancellable | null): GLib.Bytes;
             /**
              * Request an asynchronous read of `count` bytes from the stream into a
              * new {@link GLib.Bytes}. When the operation is finished `callback` will be
@@ -40109,7 +40122,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
              */
             read_bytes_async(
-                count: number,
+                count: bigint | number,
                 io_priority: number,
                 cancellable?: Cancellable | null,
             ): globalThis.Promise<GLib.Bytes>;
@@ -40140,7 +40153,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param callback a {@link Gio.AsyncReadyCallback}   to call when the request is satisfied
              */
             read_bytes_async(
-                count: number,
+                count: bigint | number,
                 io_priority: number,
                 cancellable: Cancellable | null,
                 callback: AsyncReadyCallback<this> | null,
@@ -40172,7 +40185,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param callback a {@link Gio.AsyncReadyCallback}   to call when the request is satisfied
              */
             read_bytes_async(
-                count: number,
+                count: bigint | number,
                 io_priority: number,
                 cancellable?: Cancellable | null,
                 callback?: AsyncReadyCallback<this> | null,
@@ -40215,7 +40228,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
              * @returns Number of bytes skipped, or -1 on error
              */
-            skip(count: number, cancellable?: Cancellable | null): number;
+            skip(count: bigint | number, cancellable?: Cancellable | null): number;
             /**
              * Request an asynchronous skip of `count` bytes from the stream.
              * When the operation is finished `callback` will be called.
@@ -40245,7 +40258,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
              */
             skip_async(
-                count: number,
+                count: bigint | number,
                 io_priority: number,
                 cancellable?: Cancellable | null,
             ): globalThis.Promise<number>;
@@ -40279,7 +40292,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param callback a {@link Gio.AsyncReadyCallback}   to call when the request is satisfied
              */
             skip_async(
-                count: number,
+                count: bigint | number,
                 io_priority: number,
                 cancellable: Cancellable | null,
                 callback: AsyncReadyCallback<this> | null,
@@ -40314,7 +40327,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param callback a {@link Gio.AsyncReadyCallback}   to call when the request is satisfied
              */
             skip_async(
-                count: number,
+                count: bigint | number,
                 io_priority: number,
                 cancellable?: Cancellable | null,
                 callback?: AsyncReadyCallback<this> | null,
@@ -41081,7 +41094,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -41108,7 +41121,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected
@@ -41334,7 +41347,7 @@ declare module 'gi://Gio?version=2.0' {
              * `g_pollable_input_stream_can_poll()` returns `false` for `stream`.
              * @virtual
              */
-            vfunc_read_nonblocking(): [number, Uint8Array | null];
+            vfunc_read_nonblocking(): [bigint | number, Uint8Array | null];
             /**
              * Tests if the stream supports the {@link Gio.SeekableIface}.
              * @returns `true` if `seekable` can be seeked. `false` otherwise.
@@ -41366,7 +41379,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
              * @returns `true` if successful. If an error     has occurred, this function will return `false` and set `error`     appropriately if present.
              */
-            seek(offset: number, type: GLib.SeekType | null, cancellable?: Cancellable | null): boolean;
+            seek(offset: bigint | number, type: GLib.SeekType | null, cancellable?: Cancellable | null): boolean;
             /**
              * Tells the current position within the stream.
              * @returns the (positive or zero) offset from the beginning of the buffer, zero if the target is not seekable.
@@ -41386,7 +41399,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
              * @returns `true` if successful. If an error     has occurred, this function will return `false` and set `error`     appropriately if present.
              */
-            truncate(offset: number, cancellable?: Cancellable | null): boolean;
+            truncate(offset: bigint | number, cancellable?: Cancellable | null): boolean;
             /**
              * Tests if the stream supports the {@link Gio.SeekableIface}.
              * @virtual
@@ -41423,7 +41436,7 @@ declare module 'gi://Gio?version=2.0' {
              * Tells the current position within the stream.
              * @virtual
              */
-            vfunc_tell(): number;
+            vfunc_tell(): bigint | number;
             /**
              * Sets the length of the stream to `offset`. If the stream was previously
              * larger than `offset`, the extra data is discarded. If the stream was
@@ -41786,7 +41799,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
              * @returns a new {@link GLib.Bytes}, or `null` on error
              */
-            read_bytes(count: number, cancellable?: Cancellable | null): GLib.Bytes;
+            read_bytes(count: bigint | number, cancellable?: Cancellable | null): GLib.Bytes;
             /**
              * Request an asynchronous read of `count` bytes from the stream into a
              * new {@link GLib.Bytes}. When the operation is finished `callback` will be
@@ -41813,7 +41826,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
              */
             read_bytes_async(
-                count: number,
+                count: bigint | number,
                 io_priority: number,
                 cancellable?: Cancellable | null,
             ): globalThis.Promise<GLib.Bytes>;
@@ -41844,7 +41857,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param callback a {@link Gio.AsyncReadyCallback}   to call when the request is satisfied
              */
             read_bytes_async(
-                count: number,
+                count: bigint | number,
                 io_priority: number,
                 cancellable: Cancellable | null,
                 callback: AsyncReadyCallback<this> | null,
@@ -41876,7 +41889,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param callback a {@link Gio.AsyncReadyCallback}   to call when the request is satisfied
              */
             read_bytes_async(
-                count: number,
+                count: bigint | number,
                 io_priority: number,
                 cancellable?: Cancellable | null,
                 callback?: AsyncReadyCallback<this> | null,
@@ -41919,7 +41932,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
              * @returns Number of bytes skipped, or -1 on error
              */
-            skip(count: number, cancellable?: Cancellable | null): number;
+            skip(count: bigint | number, cancellable?: Cancellable | null): number;
             /**
              * Request an asynchronous skip of `count` bytes from the stream.
              * When the operation is finished `callback` will be called.
@@ -41949,7 +41962,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
              */
             skip_async(
-                count: number,
+                count: bigint | number,
                 io_priority: number,
                 cancellable?: Cancellable | null,
             ): globalThis.Promise<number>;
@@ -41983,7 +41996,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param callback a {@link Gio.AsyncReadyCallback}   to call when the request is satisfied
              */
             skip_async(
-                count: number,
+                count: bigint | number,
                 io_priority: number,
                 cancellable: Cancellable | null,
                 callback: AsyncReadyCallback<this> | null,
@@ -42018,7 +42031,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param callback a {@link Gio.AsyncReadyCallback}   to call when the request is satisfied
              */
             skip_async(
-                count: number,
+                count: bigint | number,
                 io_priority: number,
                 cancellable?: Cancellable | null,
                 callback?: AsyncReadyCallback<this> | null,
@@ -42100,14 +42113,14 @@ declare module 'gi://Gio?version=2.0' {
              * @param result a {@link Gio.AsyncResult}.
              * @virtual
              */
-            vfunc_read_finish(result: AsyncResult): number;
+            vfunc_read_finish(result: AsyncResult): bigint | number;
             /**
              * @param buffer
              * @param count
              * @param cancellable
              * @virtual
              */
-            vfunc_read_fn(buffer: any | null, count: number, cancellable?: Cancellable | null): number;
+            vfunc_read_fn(buffer: any | null, count: number, cancellable?: Cancellable | null): bigint | number;
             /**
              * Tries to skip `count` bytes from the stream. Will block during the operation.
              *
@@ -42127,7 +42140,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
              * @virtual
              */
-            vfunc_skip(count: number, cancellable?: Cancellable | null): number;
+            vfunc_skip(count: number, cancellable?: Cancellable | null): bigint | number;
             /**
              * Request an asynchronous skip of `count` bytes from the stream.
              * When the operation is finished `callback` will be called.
@@ -42169,7 +42182,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param result a {@link Gio.AsyncResult}.
              * @virtual
              */
-            vfunc_skip_finish(result: AsyncResult): number;
+            vfunc_skip_finish(result: AsyncResult): bigint | number;
             /**
              * Creates an asynchronous iterator for a Gio.InputStream that reads the stream in chunks.
              *
@@ -42614,7 +42627,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -42641,7 +42654,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected
@@ -42685,9 +42698,9 @@ declare module 'gi://Gio?version=2.0' {
                     PollableOutputStream.ConstructorProps,
                     Seekable.ConstructorProps {
                 data: any;
-                data_size: number;
-                dataSize: number;
-                size: number;
+                data_size: bigint | number;
+                dataSize: bigint | number;
+                size: bigint | number;
             }
         }
 
@@ -42975,7 +42988,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param buffer a buffer to write     data from
              * @virtual
              */
-            vfunc_write_nonblocking(buffer?: Uint8Array | null): number;
+            vfunc_write_nonblocking(buffer?: Uint8Array | null): bigint | number;
             /**
              * Attempts to write the bytes contained in the `n_vectors` `vectors` to `stream`,
              * as with `g_output_stream_writev()`. If `stream` is not currently writable,
@@ -42999,7 +43012,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param vectors the buffer containing the `GOutputVectors` to write.
              * @virtual
              */
-            vfunc_writev_nonblocking(vectors: OutputVector[]): [PollableReturn, number];
+            vfunc_writev_nonblocking(vectors: OutputVector[]): [PollableReturn, bigint | number];
             /**
              * Tests if the stream supports the {@link Gio.SeekableIface}.
              * @returns `true` if `seekable` can be seeked. `false` otherwise.
@@ -43031,7 +43044,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
              * @returns `true` if successful. If an error     has occurred, this function will return `false` and set `error`     appropriately if present.
              */
-            seek(offset: number, type: GLib.SeekType | null, cancellable?: Cancellable | null): boolean;
+            seek(offset: bigint | number, type: GLib.SeekType | null, cancellable?: Cancellable | null): boolean;
             /**
              * Tells the current position within the stream.
              * @returns the (positive or zero) offset from the beginning of the buffer, zero if the target is not seekable.
@@ -43051,7 +43064,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
              * @returns `true` if successful. If an error     has occurred, this function will return `false` and set `error`     appropriately if present.
              */
-            truncate(offset: number, cancellable?: Cancellable | null): boolean;
+            truncate(offset: bigint | number, cancellable?: Cancellable | null): boolean;
             /**
              * Tests if the stream supports the {@link Gio.SeekableIface}.
              * @virtual
@@ -43088,7 +43101,7 @@ declare module 'gi://Gio?version=2.0' {
              * Tells the current position within the stream.
              * @virtual
              */
-            vfunc_tell(): number;
+            vfunc_tell(): bigint | number;
             /**
              * Sets the length of the stream to `offset`. If the stream was previously
              * larger than `offset`, the extra data is discarded. If the stream was
@@ -44120,7 +44133,11 @@ declare module 'gi://Gio?version=2.0' {
              * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
              * @virtual
              */
-            vfunc_splice(source: InputStream, flags: OutputStreamSpliceFlags, cancellable?: Cancellable | null): number;
+            vfunc_splice(
+                source: InputStream,
+                flags: OutputStreamSpliceFlags,
+                cancellable?: Cancellable | null,
+            ): bigint | number;
             /**
              * Splices a stream asynchronously.
              * When the operation is finished `callback` will be called.
@@ -44148,7 +44165,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param result a {@link Gio.AsyncResult}.
              * @virtual
              */
-            vfunc_splice_finish(result: AsyncResult): number;
+            vfunc_splice_finish(result: AsyncResult): bigint | number;
             /**
              * Request an asynchronous write of `count` bytes from `buffer` into
              * the stream. When the operation is finished `callback` will be called.
@@ -44202,7 +44219,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param result a {@link Gio.AsyncResult}.
              * @virtual
              */
-            vfunc_write_finish(result: AsyncResult): number;
+            vfunc_write_finish(result: AsyncResult): bigint | number;
             /**
              * Tries to write `count` bytes from `buffer` into the stream. Will block
              * during the operation.
@@ -44228,7 +44245,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param cancellable optional cancellable object
              * @virtual
              */
-            vfunc_write_fn(buffer?: Uint8Array | null, cancellable?: Cancellable | null): number;
+            vfunc_write_fn(buffer?: Uint8Array | null, cancellable?: Cancellable | null): bigint | number;
             /**
              * Request an asynchronous write of the bytes contained in `n_vectors` `vectors` into
              * the stream. When the operation is finished `callback` will be called.
@@ -44277,7 +44294,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param result a {@link Gio.AsyncResult}.
              * @virtual
              */
-            vfunc_writev_finish(result: AsyncResult): [boolean, number];
+            vfunc_writev_finish(result: AsyncResult): [boolean, bigint | number];
             /**
              * Tries to write the bytes contained in the `n_vectors` `vectors` into the
              * stream. Will block during the operation.
@@ -44306,7 +44323,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param cancellable optional cancellable object
              * @virtual
              */
-            vfunc_writev_fn(vectors: OutputVector[], cancellable?: Cancellable | null): [boolean, number];
+            vfunc_writev_fn(vectors: OutputVector[], cancellable?: Cancellable | null): [boolean, bigint | number];
             /**
              * Creates a binding between `source_property` on `source` and `target_property`
              * on `target`.
@@ -44690,7 +44707,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -44717,7 +44734,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected
@@ -45653,7 +45670,9 @@ declare module 'gi://Gio?version=2.0' {
              * @param item_index The {@link Gio.MenuItem} to query
              * @virtual
              */
-            vfunc_get_item_attributes(item_index: number): GLib.HashTable<string, GLib.Variant>;
+            vfunc_get_item_attributes(
+                item_index: number,
+            ): { [key: string]: any } | GLib.HashTable<string, GLib.Variant>;
             /**
              * Queries the item at position `item_index` in `model` for the link
              * specified by `link`.
@@ -45670,7 +45689,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param item_index The {@link Gio.MenuItem} to query
              * @virtual
              */
-            vfunc_get_item_links(item_index: number): GLib.HashTable<string, MenuModel>;
+            vfunc_get_item_links(item_index: number): { [key: string]: any } | GLib.HashTable<string, MenuModel>;
             /**
              * Query the number of items in `model`.
              * @virtual
@@ -46237,7 +46256,7 @@ declare module 'gi://Gio?version=2.0' {
 
             _init(...args: any[]): void;
 
-            static ['new'](_native: any | null, len: number): NativeSocketAddress;
+            static ['new'](_native: any | null, len: bigint | number): NativeSocketAddress;
 
             // Signals
 
@@ -46711,7 +46730,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -46738,7 +46757,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected
@@ -47422,7 +47441,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -47449,7 +47468,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected
@@ -48056,7 +48075,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -48083,7 +48102,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected
@@ -48450,7 +48469,11 @@ declare module 'gi://Gio?version=2.0' {
              * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
              * @virtual
              */
-            vfunc_splice(source: InputStream, flags: OutputStreamSpliceFlags, cancellable?: Cancellable | null): number;
+            vfunc_splice(
+                source: InputStream,
+                flags: OutputStreamSpliceFlags,
+                cancellable?: Cancellable | null,
+            ): bigint | number;
             /**
              * Splices a stream asynchronously.
              * When the operation is finished `callback` will be called.
@@ -48478,7 +48501,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param result a {@link Gio.AsyncResult}.
              * @virtual
              */
-            vfunc_splice_finish(result: AsyncResult): number;
+            vfunc_splice_finish(result: AsyncResult): bigint | number;
             /**
              * Request an asynchronous write of `count` bytes from `buffer` into
              * the stream. When the operation is finished `callback` will be called.
@@ -48532,7 +48555,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param result a {@link Gio.AsyncResult}.
              * @virtual
              */
-            vfunc_write_finish(result: AsyncResult): number;
+            vfunc_write_finish(result: AsyncResult): bigint | number;
             /**
              * Tries to write `count` bytes from `buffer` into the stream. Will block
              * during the operation.
@@ -48558,7 +48581,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param cancellable optional cancellable object
              * @virtual
              */
-            vfunc_write_fn(buffer?: Uint8Array | null, cancellable?: Cancellable | null): number;
+            vfunc_write_fn(buffer?: Uint8Array | null, cancellable?: Cancellable | null): bigint | number;
             /**
              * Request an asynchronous write of the bytes contained in `n_vectors` `vectors` into
              * the stream. When the operation is finished `callback` will be called.
@@ -48607,7 +48630,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param result a {@link Gio.AsyncResult}.
              * @virtual
              */
-            vfunc_writev_finish(result: AsyncResult): [boolean, number];
+            vfunc_writev_finish(result: AsyncResult): [boolean, bigint | number];
             /**
              * Tries to write the bytes contained in the `n_vectors` `vectors` into the
              * stream. Will block during the operation.
@@ -48636,7 +48659,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param cancellable optional cancellable object
              * @virtual
              */
-            vfunc_writev_fn(vectors: OutputVector[], cancellable?: Cancellable | null): [boolean, number];
+            vfunc_writev_fn(vectors: OutputVector[], cancellable?: Cancellable | null): [boolean, bigint | number];
 
             // Methods
 
@@ -50747,7 +50770,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -50774,7 +50797,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected
@@ -51396,7 +51419,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -51423,7 +51446,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected
@@ -53707,7 +53730,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param value the value to set it to
              * @returns true if setting the key succeeded,   false if the key was not writable
              */
-            set_int64(key: string, value: number): boolean;
+            set_int64(key: string, value: bigint | number): boolean;
             /**
              * Sets `key` in `settings` to `value`.
              *
@@ -53758,7 +53781,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param value the value to set it to
              * @returns true if setting the key succeeded,   false if the key was not writable
              */
-            set_uint64(key: string, value: number): boolean;
+            set_uint64(key: string, value: bigint | number): boolean;
             /**
              * Sets `key` in `settings` to `value`.
              *
@@ -54868,7 +54891,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -54895,7 +54918,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected
@@ -55949,7 +55972,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -55976,7 +55999,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected
@@ -56341,7 +56364,7 @@ declare module 'gi://Gio?version=2.0' {
              * the given `op_res`.
              * @param op_res a `gssize`.
              */
-            set_op_res_gssize(op_res: number): void;
+            set_op_res_gssize(op_res: bigint | number): void;
             /**
              * Gets the source object from a {@link Gio.AsyncResult}.
              * @returns a new reference to the source    object for the `res`, or `NULL` if there is none.
@@ -56786,7 +56809,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -56813,7 +56836,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected
@@ -57733,7 +57756,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -57760,7 +57783,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected
@@ -58199,7 +58222,7 @@ declare module 'gi://Gio?version=2.0' {
              */
             condition_timed_wait(
                 condition: GLib.IOCondition | null,
-                timeout_us: number,
+                timeout_us: bigint | number,
                 cancellable?: Cancellable | null,
             ): boolean;
             /**
@@ -58553,7 +58576,11 @@ declare module 'gi://Gio?version=2.0' {
              * @param cancellable a %GCancellable, or `NULL`
              * @returns a bytes buffer containing the   received bytes, or `NULL` on error
              */
-            receive_bytes(size: number, timeout_us: number, cancellable?: Cancellable | null): GLib.Bytes;
+            receive_bytes(
+                size: bigint | number,
+                timeout_us: bigint | number,
+                cancellable?: Cancellable | null,
+            ): GLib.Bytes;
             /**
              * Receive data (up to `size` bytes) from a socket.
              *
@@ -58575,8 +58602,8 @@ declare module 'gi://Gio?version=2.0' {
              * @returns a bytes buffer containing the   received bytes, or `NULL` on error
              */
             receive_bytes_from(
-                size: number,
-                timeout_us: number,
+                size: bigint | number,
+                timeout_us: bigint | number,
                 cancellable?: Cancellable | null,
             ): [GLib.Bytes, SocketAddress | null];
             /**
@@ -58828,7 +58855,7 @@ declare module 'gi://Gio?version=2.0' {
                 vectors: OutputVector[],
                 messages: SocketControlMessage[] | null,
                 flags: number,
-                timeout_us: number,
+                timeout_us: bigint | number,
                 cancellable?: Cancellable | null,
             ): [PollableReturn, number];
             /**
@@ -59746,7 +59773,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -59773,7 +59800,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected
@@ -59848,7 +59875,7 @@ declare module 'gi://Gio?version=2.0' {
 
             _init(...args: any[]): void;
 
-            static new_from_native(_native: any, len: number): SocketAddress;
+            static new_from_native(_native: any, len: bigint | number): SocketAddress;
 
             // Signals
 
@@ -59884,7 +59911,7 @@ declare module 'gi://Gio?version=2.0' {
              * `g_socket_address_to_native()`.
              * @virtual
              */
-            vfunc_get_native_size(): number;
+            vfunc_get_native_size(): bigint | number;
             /**
              * Converts a {@link Gio.SocketAddress} to a native struct sockaddr, which can
              * be passed to low-level functions like `connect()` or `bind()`.
@@ -59923,7 +59950,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param destlen the size of `dest`. Must be at least as large as     `g_socket_address_get_native_size()`
              * @returns `true` if `dest` was filled in, `false` on error
              */
-            to_native(dest: any | null, destlen: number): boolean;
+            to_native(dest: any | null, destlen: bigint | number): boolean;
             /**
              * Creates a {@link Gio.SocketAddressEnumerator} for `connectable`.
              * @returns a new {@link Gio.SocketAddressEnumerator}.
@@ -60374,7 +60401,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -60401,7 +60428,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected
@@ -61738,7 +61765,7 @@ declare module 'gi://Gio?version=2.0' {
              * headers or alignment.
              * @virtual
              */
-            vfunc_get_size(): number;
+            vfunc_get_size(): bigint | number;
             /**
              * gets the protocol specific type of the message.
              * @virtual
@@ -63248,7 +63275,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -63275,7 +63302,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected
@@ -64400,7 +64427,7 @@ declare module 'gi://Gio?version=2.0' {
              * means).
              * @param result the integer (`gssize`) result of a task function.
              */
-            return_int(result: number): void;
+            return_int(result: bigint | number): void;
             /**
              * Sets `task`’s result to a new {@link GLib.Error} created from `domain`, `code`,
              * `message` and completes the task.
@@ -65038,7 +65065,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -65065,7 +65092,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected
@@ -66101,7 +66128,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -66128,7 +66155,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected
@@ -66354,7 +66381,7 @@ declare module 'gi://Gio?version=2.0' {
             // Constructor properties interface
 
             interface ConstructorProps extends GObject.Object.ConstructorProps {
-                certificate: Uint8Array;
+                certificate: Uint8Array | string;
                 certificate_pem: string;
                 certificatePem: string;
                 dns_names: any[];
@@ -66371,10 +66398,10 @@ declare module 'gi://Gio?version=2.0' {
                 password: string;
                 pkcs11_uri: string;
                 pkcs11Uri: string;
-                pkcs12_data: Uint8Array;
-                pkcs12Data: Uint8Array;
-                private_key: Uint8Array;
-                privateKey: Uint8Array;
+                pkcs12_data: Uint8Array | string;
+                pkcs12Data: Uint8Array | string;
+                private_key: Uint8Array | string;
+                privateKey: Uint8Array | string;
                 private_key_pem: string;
                 privateKeyPem: string;
                 private_key_pkcs11_uri: string;
@@ -66546,7 +66573,7 @@ declare module 'gi://Gio?version=2.0' {
              * @since 2.72
              * @construct-only
              */
-            set pkcs12_data(val: Uint8Array);
+            set pkcs12_data(val: Uint8Array | string);
             /**
              * The PKCS #12 formatted data used to construct the object.
              *
@@ -66554,7 +66581,7 @@ declare module 'gi://Gio?version=2.0' {
              * @since 2.72
              * @construct-only
              */
-            set pkcs12Data(val: Uint8Array);
+            set pkcs12Data(val: Uint8Array | string);
             /**
              * The DER (binary) encoded representation of the certificate's
              * private key, in either [PKCS \#1 format](https://datatracker.ietf.org/doc/html/rfc8017)
@@ -66695,7 +66722,7 @@ declare module 'gi://Gio?version=2.0' {
 
             static new_from_files(cert_file: string, key_file: string): TlsCertificate;
 
-            static new_from_pem(data: string, length: number): TlsCertificate;
+            static new_from_pem(data: string, length: bigint | number): TlsCertificate;
 
             static new_from_pkcs11_uris(pkcs11_uri: string, private_key_pkcs11_uri?: string | null): TlsCertificate;
 
@@ -67246,7 +67273,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param data
              * @virtual
              */
-            vfunc_get_binding_data(type: TlsChannelBindingType, data: Uint8Array | string): boolean;
+            vfunc_get_binding_data(type: TlsChannelBindingType, data: Uint8Array): boolean;
             /**
              * Gets the name of the application-layer protocol negotiated during
              * the handshake.
@@ -67812,7 +67839,7 @@ declare module 'gi://Gio?version=2.0' {
              * @virtual
              */
             vfunc_lookup_certificates_issued_by(
-                issuer_raw_dn: Uint8Array | string,
+                issuer_raw_dn: Uint8Array,
                 interaction: TlsInteraction | null,
                 flags: TlsDatabaseLookupFlags,
                 cancellable?: Cancellable | null,
@@ -67832,7 +67859,7 @@ declare module 'gi://Gio?version=2.0' {
              * @virtual
              */
             vfunc_lookup_certificates_issued_by_async(
-                issuer_raw_dn: Uint8Array | string,
+                issuer_raw_dn: Uint8Array,
                 interaction: TlsInteraction | null,
                 flags: TlsDatabaseLookupFlags,
                 cancellable?: Cancellable | null,
@@ -68945,7 +68972,7 @@ declare module 'gi://Gio?version=2.0' {
              * certain fixed length.)
              * @virtual
              */
-            vfunc_get_value(): Uint8Array;
+            vfunc_get_value(): Uint8Array | string;
             /**
              * Provide the value for this password.
              *
@@ -68960,7 +68987,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param destroy a function to use to free the password.
              * @virtual
              */
-            vfunc_set_value(value: Uint8Array | string, destroy?: GLib.DestroyNotify | null): void;
+            vfunc_set_value(value: Uint8Array, destroy?: GLib.DestroyNotify | null): void;
 
             // Methods
 
@@ -69894,7 +69921,7 @@ declare module 'gi://Gio?version=2.0' {
              * `g_pollable_input_stream_can_poll()` returns `false` for `stream`.
              * @virtual
              */
-            vfunc_read_nonblocking(): [number, Uint8Array | null];
+            vfunc_read_nonblocking(): [bigint | number, Uint8Array | null];
             /**
              * Creates a binding between `source_property` on `source` and `target_property`
              * on `target`.
@@ -70291,7 +70318,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -70318,7 +70345,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected
@@ -70691,7 +70718,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
              * @returns a new {@link GLib.Bytes}, or `null` on error
              */
-            read_bytes(count: number, cancellable?: Cancellable | null): GLib.Bytes;
+            read_bytes(count: bigint | number, cancellable?: Cancellable | null): GLib.Bytes;
             /**
              * Request an asynchronous read of `count` bytes from the stream into a
              * new {@link GLib.Bytes}. When the operation is finished `callback` will be
@@ -70718,7 +70745,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
              */
             read_bytes_async(
-                count: number,
+                count: bigint | number,
                 io_priority: number,
                 cancellable?: Cancellable | null,
             ): globalThis.Promise<GLib.Bytes>;
@@ -70749,7 +70776,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param callback a {@link Gio.AsyncReadyCallback}   to call when the request is satisfied
              */
             read_bytes_async(
-                count: number,
+                count: bigint | number,
                 io_priority: number,
                 cancellable: Cancellable | null,
                 callback: AsyncReadyCallback<this> | null,
@@ -70781,7 +70808,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param callback a {@link Gio.AsyncReadyCallback}   to call when the request is satisfied
              */
             read_bytes_async(
-                count: number,
+                count: bigint | number,
                 io_priority: number,
                 cancellable?: Cancellable | null,
                 callback?: AsyncReadyCallback<this> | null,
@@ -70824,7 +70851,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
              * @returns Number of bytes skipped, or -1 on error
              */
-            skip(count: number, cancellable?: Cancellable | null): number;
+            skip(count: bigint | number, cancellable?: Cancellable | null): number;
             /**
              * Request an asynchronous skip of `count` bytes from the stream.
              * When the operation is finished `callback` will be called.
@@ -70854,7 +70881,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
              */
             skip_async(
-                count: number,
+                count: bigint | number,
                 io_priority: number,
                 cancellable?: Cancellable | null,
             ): globalThis.Promise<number>;
@@ -70888,7 +70915,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param callback a {@link Gio.AsyncReadyCallback}   to call when the request is satisfied
              */
             skip_async(
-                count: number,
+                count: bigint | number,
                 io_priority: number,
                 cancellable: Cancellable | null,
                 callback: AsyncReadyCallback<this> | null,
@@ -70923,7 +70950,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param callback a {@link Gio.AsyncReadyCallback}   to call when the request is satisfied
              */
             skip_async(
-                count: number,
+                count: bigint | number,
                 io_priority: number,
                 cancellable?: Cancellable | null,
                 callback?: AsyncReadyCallback<this> | null,
@@ -71005,14 +71032,14 @@ declare module 'gi://Gio?version=2.0' {
              * @param result a {@link Gio.AsyncResult}.
              * @virtual
              */
-            vfunc_read_finish(result: AsyncResult): number;
+            vfunc_read_finish(result: AsyncResult): bigint | number;
             /**
              * @param buffer
              * @param count
              * @param cancellable
              * @virtual
              */
-            vfunc_read_fn(buffer: any | null, count: number, cancellable?: Cancellable | null): number;
+            vfunc_read_fn(buffer: any | null, count: number, cancellable?: Cancellable | null): bigint | number;
             /**
              * Tries to skip `count` bytes from the stream. Will block during the operation.
              *
@@ -71032,7 +71059,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
              * @virtual
              */
-            vfunc_skip(count: number, cancellable?: Cancellable | null): number;
+            vfunc_skip(count: number, cancellable?: Cancellable | null): bigint | number;
             /**
              * Request an asynchronous skip of `count` bytes from the stream.
              * When the operation is finished `callback` will be called.
@@ -71074,7 +71101,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param result a {@link Gio.AsyncResult}.
              * @virtual
              */
-            vfunc_skip_finish(result: AsyncResult): number;
+            vfunc_skip_finish(result: AsyncResult): bigint | number;
             /**
              * Creates an asynchronous iterator for a Gio.InputStream that reads the stream in chunks.
              *
@@ -71506,7 +71533,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param buffer a buffer to write     data from
              * @virtual
              */
-            vfunc_write_nonblocking(buffer?: Uint8Array | null): number;
+            vfunc_write_nonblocking(buffer?: Uint8Array | null): bigint | number;
             /**
              * Attempts to write the bytes contained in the `n_vectors` `vectors` to `stream`,
              * as with `g_output_stream_writev()`. If `stream` is not currently writable,
@@ -71530,7 +71557,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param vectors the buffer containing the `GOutputVectors` to write.
              * @virtual
              */
-            vfunc_writev_nonblocking(vectors: OutputVector[]): [PollableReturn, number];
+            vfunc_writev_nonblocking(vectors: OutputVector[]): [PollableReturn, bigint | number];
             /**
              * Creates a binding between `source_property` on `source` and `target_property`
              * on `target`.
@@ -71927,7 +71954,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -71954,7 +71981,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected
@@ -72996,7 +73023,11 @@ declare module 'gi://Gio?version=2.0' {
              * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
              * @virtual
              */
-            vfunc_splice(source: InputStream, flags: OutputStreamSpliceFlags, cancellable?: Cancellable | null): number;
+            vfunc_splice(
+                source: InputStream,
+                flags: OutputStreamSpliceFlags,
+                cancellable?: Cancellable | null,
+            ): bigint | number;
             /**
              * Splices a stream asynchronously.
              * When the operation is finished `callback` will be called.
@@ -73024,7 +73055,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param result a {@link Gio.AsyncResult}.
              * @virtual
              */
-            vfunc_splice_finish(result: AsyncResult): number;
+            vfunc_splice_finish(result: AsyncResult): bigint | number;
             /**
              * Request an asynchronous write of `count` bytes from `buffer` into
              * the stream. When the operation is finished `callback` will be called.
@@ -73078,7 +73109,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param result a {@link Gio.AsyncResult}.
              * @virtual
              */
-            vfunc_write_finish(result: AsyncResult): number;
+            vfunc_write_finish(result: AsyncResult): bigint | number;
             /**
              * Tries to write `count` bytes from `buffer` into the stream. Will block
              * during the operation.
@@ -73104,7 +73135,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param cancellable optional cancellable object
              * @virtual
              */
-            vfunc_write_fn(buffer?: Uint8Array | null, cancellable?: Cancellable | null): number;
+            vfunc_write_fn(buffer?: Uint8Array | null, cancellable?: Cancellable | null): bigint | number;
             /**
              * Request an asynchronous write of the bytes contained in `n_vectors` `vectors` into
              * the stream. When the operation is finished `callback` will be called.
@@ -73153,7 +73184,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param result a {@link Gio.AsyncResult}.
              * @virtual
              */
-            vfunc_writev_finish(result: AsyncResult): [boolean, number];
+            vfunc_writev_finish(result: AsyncResult): [boolean, bigint | number];
             /**
              * Tries to write the bytes contained in the `n_vectors` `vectors` into the
              * stream. Will block during the operation.
@@ -73182,7 +73213,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param cancellable optional cancellable object
              * @virtual
              */
-            vfunc_writev_fn(vectors: OutputVector[], cancellable?: Cancellable | null): [boolean, number];
+            vfunc_writev_fn(vectors: OutputVector[], cancellable?: Cancellable | null): [boolean, bigint | number];
         }
 
         namespace UnixSocketAddress {
@@ -73202,8 +73233,8 @@ declare module 'gi://Gio?version=2.0' {
                 address_type: UnixSocketAddressType;
                 addressType: UnixSocketAddressType;
                 path: string;
-                path_as_array: Uint8Array;
-                pathAsArray: Uint8Array;
+                path_as_array: Uint8Array | string;
+                pathAsArray: Uint8Array | string;
             }
         }
 
@@ -73801,7 +73832,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -73828,7 +73859,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected
@@ -74710,9 +74741,9 @@ declare module 'gi://Gio?version=2.0' {
              */
             vfunc_convert(
                 inbuf: Uint8Array | null,
-                outbuf: Uint8Array | string,
+                outbuf: Uint8Array,
                 flags: ConverterFlags,
-            ): [ConverterResult, number, number];
+            ): [ConverterResult, bigint | number, bigint | number];
             /**
              * Resets all internal state in the converter, making it behave
              * as if it was just created. If the converter has any internal
@@ -75116,7 +75147,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -75143,7 +75174,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected
@@ -75468,9 +75499,9 @@ declare module 'gi://Gio?version=2.0' {
              */
             vfunc_convert(
                 inbuf: Uint8Array | null,
-                outbuf: Uint8Array | string,
+                outbuf: Uint8Array,
                 flags: ConverterFlags,
-            ): [ConverterResult, number, number];
+            ): [ConverterResult, bigint | number, bigint | number];
             /**
              * Resets all internal state in the converter, making it behave
              * as if it was just created. If the converter has any internal
@@ -75874,7 +75905,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -75901,7 +75932,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected
@@ -75950,16 +75981,6 @@ declare module 'gi://Gio?version=2.0' {
             name: string;
             parameter_type: string;
             state: string;
-
-            // Constructors
-
-            constructor(
-                properties?: Partial<{
-                    name: string;
-                    parameter_type: string;
-                    state: string;
-                }>,
-            );
         }
 
         /**
@@ -77220,7 +77241,6 @@ declare module 'gi://Gio?version=2.0' {
             // Fields
 
             address: SocketAddress;
-            vectors: InputVector[];
             num_vectors: number;
             bytes_received: number;
             flags: number;
@@ -77254,15 +77274,6 @@ declare module 'gi://Gio?version=2.0' {
 
             buffer: any;
             size: number;
-
-            // Constructors
-
-            constructor(
-                properties?: Partial<{
-                    buffer: any;
-                    size: number;
-                }>,
-            );
         }
 
         /**
@@ -77409,7 +77420,6 @@ declare module 'gi://Gio?version=2.0' {
             // Fields
 
             address: SocketAddress;
-            vectors: OutputVector;
             num_vectors: number;
             bytes_sent: number;
             control_messages: SocketControlMessage[];
@@ -77442,15 +77452,6 @@ declare module 'gi://Gio?version=2.0' {
 
             buffer: any;
             size: number;
-
-            // Constructors
-
-            constructor(
-                properties?: Partial<{
-                    buffer: any;
-                    size: number;
-                }>,
-            );
         }
 
         /**
@@ -81264,9 +81265,9 @@ declare module 'gi://Gio?version=2.0' {
                  */
                 vfunc_convert(
                     inbuf: Uint8Array | null,
-                    outbuf: Uint8Array | string,
+                    outbuf: Uint8Array,
                     flags: ConverterFlags,
-                ): [ConverterResult, number, number];
+                ): [ConverterResult, bigint | number, bigint | number];
                 /**
                  * Resets all internal state in the converter, making it behave
                  * as if it was just created. If the converter has any internal
@@ -82004,7 +82005,7 @@ declare module 'gi://Gio?version=2.0' {
              */
             condition_wait(
                 condition: GLib.IOCondition | null,
-                timeout: number,
+                timeout: bigint | number,
                 cancellable?: Cancellable | null,
             ): boolean;
             /**
@@ -82087,7 +82088,7 @@ declare module 'gi://Gio?version=2.0' {
             receive_messages(
                 messages: InputMessage[],
                 flags: number,
-                timeout: number,
+                timeout: bigint | number,
                 cancellable?: Cancellable | null,
             ): number;
             /**
@@ -82141,7 +82142,7 @@ declare module 'gi://Gio?version=2.0' {
             send_messages(
                 messages: OutputMessage[],
                 flags: number,
-                timeout: number,
+                timeout: bigint | number,
                 cancellable?: Cancellable | null,
             ): number;
         }
@@ -83131,7 +83132,7 @@ declare module 'gi://Gio?version=2.0' {
                  * @param data
                  * @virtual
                  */
-                vfunc_get_binding_data(type: TlsChannelBindingType, data: Uint8Array | string): boolean;
+                vfunc_get_binding_data(type: TlsChannelBindingType, data: Uint8Array): boolean;
                 /**
                  * Gets the name of the application-layer protocol negotiated during
                  * the handshake.
@@ -84707,7 +84708,7 @@ declare module 'gi://Gio?version=2.0' {
                     flags: FileMeasureFlags,
                     cancellable: Cancellable | null,
                     progress_callback: FileMeasureProgressCallback | null,
-                ): [boolean, number, number, number];
+                ): [boolean, bigint | number, bigint | number, bigint | number];
                 /**
                  * Collects the results from an earlier call to
                  * `g_file_measure_disk_usage_async()`.  See `g_file_measure_disk_usage()` for
@@ -84715,7 +84716,9 @@ declare module 'gi://Gio?version=2.0' {
                  * @param result the {@link Gio.AsyncResult} passed to your {@link Gio.AsyncReadyCallback}
                  * @virtual
                  */
-                vfunc_measure_disk_usage_finish(result: AsyncResult): [boolean, number, number, number];
+                vfunc_measure_disk_usage_finish(
+                    result: AsyncResult,
+                ): [boolean, bigint | number, bigint | number, bigint | number];
                 /**
                  * Obtains a directory monitor for the given file.
                  * This may fail if directory monitoring is not supported.
@@ -88655,7 +88658,7 @@ declare module 'gi://Gio?version=2.0' {
              */
             set_attribute_int64(
                 attribute: string,
-                value: number,
+                value: bigint | number,
                 flags: FileQueryInfoFlags | null,
                 cancellable?: Cancellable | null,
             ): boolean;
@@ -88712,7 +88715,7 @@ declare module 'gi://Gio?version=2.0' {
              */
             set_attribute_uint64(
                 attribute: string,
-                value: number,
+                value: bigint | number,
                 flags: FileQueryInfoFlags | null,
                 cancellable?: Cancellable | null,
             ): boolean;
@@ -91136,7 +91139,7 @@ declare module 'gi://Gio?version=2.0' {
                  * `g_pollable_input_stream_can_poll()` returns `false` for `stream`.
                  * @virtual
                  */
-                vfunc_read_nonblocking(): [number, Uint8Array | null];
+                vfunc_read_nonblocking(): [bigint | number, Uint8Array | null];
             }
 
             // Constructor properties interface
@@ -91303,7 +91306,7 @@ declare module 'gi://Gio?version=2.0' {
                  * @param buffer a buffer to write     data from
                  * @virtual
                  */
-                vfunc_write_nonblocking(buffer?: Uint8Array | null): number;
+                vfunc_write_nonblocking(buffer?: Uint8Array | null): bigint | number;
                 /**
                  * Attempts to write the bytes contained in the `n_vectors` `vectors` to `stream`,
                  * as with `g_output_stream_writev()`. If `stream` is not currently writable,
@@ -91327,7 +91330,7 @@ declare module 'gi://Gio?version=2.0' {
                  * @param vectors the buffer containing the `GOutputVectors` to write.
                  * @virtual
                  */
-                vfunc_writev_nonblocking(vectors: OutputVector[]): [PollableReturn, number];
+                vfunc_writev_nonblocking(vectors: OutputVector[]): [PollableReturn, bigint | number];
             }
 
             // Constructor properties interface
@@ -92019,7 +92022,7 @@ declare module 'gi://Gio?version=2.0' {
                  * Tells the current position within the stream.
                  * @virtual
                  */
-                vfunc_tell(): number;
+                vfunc_tell(): bigint | number;
                 /**
                  * Sets the length of the stream to `offset`. If the stream was previously
                  * larger than `offset`, the extra data is discarded. If the stream was
@@ -92097,7 +92100,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
              * @returns `true` if successful. If an error     has occurred, this function will return `false` and set `error`     appropriately if present.
              */
-            seek(offset: number, type: GLib.SeekType | null, cancellable?: Cancellable | null): boolean;
+            seek(offset: bigint | number, type: GLib.SeekType | null, cancellable?: Cancellable | null): boolean;
             /**
              * Tells the current position within the stream.
              * @returns the (positive or zero) offset from the beginning of the buffer, zero if the target is not seekable.
@@ -92117,7 +92120,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
              * @returns `true` if successful. If an error     has occurred, this function will return `false` and set `error`     appropriately if present.
              */
-            truncate(offset: number, cancellable?: Cancellable | null): boolean;
+            truncate(offset: bigint | number, cancellable?: Cancellable | null): boolean;
         }
 
         export const Seekable: SeekableNamespace & {

@@ -2550,7 +2550,7 @@ declare module 'gi://GstVideo?version=1.0' {
             width: number,
             height: number,
             n_planes: number,
-            offset: number[],
+            offset: (bigint | number)[],
             stride: number[],
         ): VideoMeta;
         /**
@@ -2617,7 +2617,7 @@ declare module 'gi://GstVideo?version=1.0' {
             buffer: Gst.Buffer,
             uuid: number,
             data: number | null,
-            size: number,
+            size: bigint | number,
         ): VideoSEIUserDataUnregisteredMeta;
         /**
          * Attaches {@link GstVideo.VideoTimeCodeMeta} metadata to `buffer` with the given
@@ -3387,7 +3387,7 @@ declare module 'gi://GstVideo?version=1.0' {
          * @returns the drm kind string composed   of to `fourcc` and `modifier`.
          * @since 1.24
          */
-        function video_dma_drm_fourcc_to_string(fourcc: number, modifier: number): string | null;
+        function video_dma_drm_fourcc_to_string(fourcc: number, modifier: bigint | number): string | null;
         /**
          * Checks if an event is a force key unit event. Returns true for both upstream
          * and downstream force key unit events.
@@ -3688,7 +3688,10 @@ declare module 'gi://GstVideo?version=1.0' {
          * @returns `true` if `drm_info` is filled correctly.
          * @since 1.24
          */
-        function video_info_dma_drm_from_video_info(info: VideoInfo, modifier: number): [boolean, VideoInfoDmaDrm];
+        function video_info_dma_drm_from_video_info(
+            info: VideoInfo,
+            modifier: bigint | number,
+        ): [boolean, VideoInfoDmaDrm];
         /**
          * Initialize `drm_info` with default values.
          * @since 1.24
@@ -5093,8 +5096,8 @@ declare module 'gi://GstVideo?version=1.0' {
             // Constructor properties interface
 
             interface ConstructorProps extends GstBase.AggregatorPad.ConstructorProps {
-                max_last_buffer_repeat: number;
-                maxLastBufferRepeat: number;
+                max_last_buffer_repeat: bigint | number;
+                maxLastBufferRepeat: bigint | number;
                 repeat_after_eos: boolean;
                 repeatAfterEos: boolean;
                 zorder: number;
@@ -5111,9 +5114,9 @@ declare module 'gi://GstVideo?version=1.0' {
             // Properties
 
             get max_last_buffer_repeat(): number;
-            set max_last_buffer_repeat(val: number);
+            set max_last_buffer_repeat(val: bigint | number);
             get maxLastBufferRepeat(): number;
-            set maxLastBufferRepeat(val: number);
+            set maxLastBufferRepeat(val: bigint | number);
             get repeat_after_eos(): boolean;
             set repeat_after_eos(val: boolean);
             get repeatAfterEos(): boolean;
@@ -5414,8 +5417,8 @@ declare module 'gi://GstVideo?version=1.0' {
                 discardCorruptedFrames: boolean;
                 max_errors: number;
                 maxErrors: number;
-                min_force_key_unit_interval: number;
-                minForceKeyUnitInterval: number;
+                min_force_key_unit_interval: bigint | number;
+                minForceKeyUnitInterval: bigint | number;
                 qos: boolean;
             }
         }
@@ -5614,7 +5617,7 @@ declare module 'gi://GstVideo?version=1.0' {
              * @since 1.20
              */
             get min_force_key_unit_interval(): number;
-            set min_force_key_unit_interval(val: number);
+            set min_force_key_unit_interval(val: bigint | number);
             /**
              * Minimum interval between force-key-unit events sent upstream by the
              * decoder. Setting this to 0 will cause every event to be handled, setting
@@ -5625,7 +5628,7 @@ declare module 'gi://GstVideo?version=1.0' {
              * @since 1.20
              */
             get minForceKeyUnitInterval(): number;
-            set minForceKeyUnitInterval(val: number);
+            set minForceKeyUnitInterval(val: bigint | number);
             /**
              * If set to `true` the decoder will handle QoS events received
              * from downstream elements.
@@ -6246,8 +6249,8 @@ declare module 'gi://GstVideo?version=1.0' {
             // Constructor properties interface
 
             interface ConstructorProps extends Gst.Element.ConstructorProps, Gst.Preset.ConstructorProps {
-                min_force_key_unit_interval: number;
-                minForceKeyUnitInterval: number;
+                min_force_key_unit_interval: bigint | number;
+                minForceKeyUnitInterval: bigint | number;
                 qos: boolean;
             }
         }
@@ -6324,14 +6327,14 @@ declare module 'gi://GstVideo?version=1.0' {
              * @since 1.18
              */
             get min_force_key_unit_interval(): number;
-            set min_force_key_unit_interval(val: number);
+            set min_force_key_unit_interval(val: bigint | number);
             /**
              * Minimum interval between force-keyunit requests in nanoseconds. See
              * `gst_video_encoder_set_min_force_key_unit_interval()` for more details.
              * @since 1.18
              */
             get minForceKeyUnitInterval(): number;
-            set minForceKeyUnitInterval(val: number);
+            set minForceKeyUnitInterval(val: bigint | number);
             get qos(): boolean;
             set qos(val: boolean);
 
@@ -6546,7 +6549,7 @@ declare module 'gi://GstVideo?version=1.0' {
              * @param size size of the buffer
              * @returns allocated buffer
              */
-            allocate_output_buffer(size: number): Gst.Buffer;
+            allocate_output_buffer(size: bigint | number): Gst.Buffer;
             /**
              * Helper function that allocates a buffer to hold an encoded video frame for `encoder`'s
              * current {@link GstVideo.VideoCodecState}.  Subclass should already have configured video
@@ -6558,7 +6561,7 @@ declare module 'gi://GstVideo?version=1.0' {
              * @param size size of the buffer
              * @returns {@link Gst.FlowReturn.OK} if an output buffer could be allocated
              */
-            allocate_output_frame(frame: VideoCodecFrame, size: number): Gst.FlowReturn;
+            allocate_output_frame(frame: VideoCodecFrame, size: bigint | number): Gst.FlowReturn;
             /**
              * `frame` must have a valid encoded data buffer, whose metadata fields
              * are then appropriately set according to frame data or no buffer at
@@ -7246,7 +7249,7 @@ declare module 'gi://GstVideo?version=1.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -7273,7 +7276,7 @@ declare module 'gi://GstVideo?version=1.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected
@@ -8504,7 +8507,7 @@ declare module 'gi://GstVideo?version=1.0' {
              */
             convert(
                 src_format: Gst.Format | null,
-                src_value: number,
+                src_value: bigint | number,
                 dest_format: Gst.Format | null,
             ): [boolean, number];
             /**
@@ -8601,7 +8604,7 @@ declare module 'gi://GstVideo?version=1.0' {
              * @param info a {@link GstVideo.VideoInfo}
              * @param modifier the associated modifier value.
              */
-            static from_video_info(info: VideoInfo, modifier: number): [boolean, VideoInfoDmaDrm];
+            static from_video_info(info: VideoInfo, modifier: bigint | number): [boolean, VideoInfoDmaDrm];
             /**
              * Initialize `drm_info` with default values.
              */
@@ -9446,7 +9449,7 @@ declare module 'gi://GstVideo?version=1.0' {
              * contain valid data, as verified by `gst_video_time_code_is_valid()`.
              * @param frames How many frames to add or subtract
              */
-            add_frames(frames: number): void;
+            add_frames(frames: bigint | number): void;
             /**
              * This makes a component-wise addition of `tc_inter` to `tc`. For example,
              * adding ("01:02:03:04", "00:01:00:00") will return "01:03:03:04".

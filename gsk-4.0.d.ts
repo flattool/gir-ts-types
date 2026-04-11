@@ -1757,7 +1757,7 @@ declare module 'gi://Gsk?version=4.0' {
 
             interface ConstructorProps extends GObject.Object.ConstructorProps {
                 resource: string;
-                source: GLib.Bytes;
+                source: GLib.Bytes | Uint8Array;
             }
         }
 
@@ -3202,7 +3202,7 @@ declare module 'gi://Gsk?version=4.0' {
              * @param i the given index
              * @returns the shadow data
              */
-            get_shadow(i: number): Shadow;
+            get_shadow(i: bigint | number): Shadow;
         }
 
         namespace StrokeNode {
@@ -3663,18 +3663,6 @@ declare module 'gi://Gsk?version=4.0' {
             lines: number;
             line_bytes: number;
             line_chars: number;
-
-            // Constructors
-
-            constructor(
-                properties?: Partial<{
-                    bytes: number;
-                    chars: number;
-                    lines: number;
-                    line_bytes: number;
-                    line_chars: number;
-                }>,
-            );
         }
 
         /**

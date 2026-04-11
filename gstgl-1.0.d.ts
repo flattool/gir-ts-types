@@ -1781,8 +1781,8 @@ declare module 'gi://GstGL?version=1.0' {
             // Constructor properties interface
 
             interface ConstructorProps extends GstBase.PushSrc.ConstructorProps {
-                timestamp_offset: number;
-                timestampOffset: number;
+                timestamp_offset: bigint | number;
+                timestampOffset: bigint | number;
             }
         }
 
@@ -1800,9 +1800,9 @@ declare module 'gi://GstGL?version=1.0' {
             // Properties
 
             get timestamp_offset(): number;
-            set timestamp_offset(val: number);
+            set timestamp_offset(val: bigint | number);
             get timestampOffset(): number;
-            set timestampOffset(val: number);
+            set timestampOffset(val: bigint | number);
 
             /**
              * Compile-time signal type information.
@@ -4703,7 +4703,7 @@ declare module 'gi://GstGL?version=1.0' {
                 parent: Gst.Memory | null,
                 context: GLContext,
                 params: Gst.AllocationParams | null,
-                size: number,
+                size: bigint | number,
                 user_data?: any | null,
                 notify?: GLib.DestroyNotify | null,
             ): void;
@@ -4713,7 +4713,7 @@ declare module 'gi://GstGL?version=1.0' {
              * @param size the number of bytes to copy
              * @returns whether the copy succeeded.
              */
-            memcpy(dest: GLBaseMemory, offset: number, size: number): boolean;
+            memcpy(dest: GLBaseMemory, offset: bigint | number, size: bigint | number): boolean;
         }
 
         /**
@@ -4786,7 +4786,7 @@ declare module 'gi://GstGL?version=1.0' {
 
             constructor(
                 context: GLContext,
-                alloc_size: number,
+                alloc_size: bigint | number,
                 alloc_params: Gst.AllocationParams | null,
                 gl_target: number,
                 gl_usage: number,
@@ -4794,7 +4794,7 @@ declare module 'gi://GstGL?version=1.0' {
 
             static ['new'](
                 context: GLContext,
-                alloc_size: number,
+                alloc_size: bigint | number,
                 alloc_params: Gst.AllocationParams | null,
                 gl_target: number,
                 gl_usage: number,
