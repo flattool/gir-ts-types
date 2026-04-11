@@ -2025,7 +2025,7 @@ declare module 'gi://Polkit?version=1.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -2052,7 +2052,7 @@ declare module 'gi://Polkit?version=1.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected
@@ -3096,7 +3096,7 @@ declare module 'gi://Polkit?version=1.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -3123,7 +3123,7 @@ declare module 'gi://Polkit?version=1.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected
@@ -3770,7 +3770,7 @@ declare module 'gi://Polkit?version=1.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -3797,7 +3797,7 @@ declare module 'gi://Polkit?version=1.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected
@@ -4438,7 +4438,7 @@ declare module 'gi://Polkit?version=1.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -4465,7 +4465,7 @@ declare module 'gi://Polkit?version=1.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected
@@ -5011,7 +5011,7 @@ declare module 'gi://Polkit?version=1.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -5038,7 +5038,7 @@ declare module 'gi://Polkit?version=1.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected
@@ -5083,7 +5083,7 @@ declare module 'gi://Polkit?version=1.0' {
             // Constructor properties interface
 
             interface ConstructorProps extends GObject.Object.ConstructorProps, Subject.ConstructorProps {
-                cgroupid: number;
+                cgroupid: bigint | number;
                 ctty: number;
                 gids: any[];
                 pid: number;
@@ -5091,8 +5091,8 @@ declare module 'gi://Polkit?version=1.0' {
                 pidfd_is_safe: boolean;
                 pidfdIsSafe: boolean;
                 ppidfd: number;
-                start_time: number;
-                startTime: number;
+                start_time: bigint | number;
+                startTime: bigint | number;
                 uid: number;
             }
         }
@@ -5169,12 +5169,12 @@ declare module 'gi://Polkit?version=1.0' {
              * The start time of the process.
              */
             get start_time(): number;
-            set start_time(val: number);
+            set start_time(val: bigint | number);
             /**
              * The start time of the process.
              */
             get startTime(): number;
-            set startTime(val: number);
+            set startTime(val: bigint | number);
             /**
              * The UNIX user id of the process or -1 if unknown.
              *
@@ -5236,7 +5236,7 @@ declare module 'gi://Polkit?version=1.0' {
              * @param start_time The start time for `pid` or 0 to look it up in e.g. <filename>/proc</filename>.
              * @param uid The (real, not effective) uid of the owner of `pid` or -1 to look it up in e.g. <filename>/proc</filename>.
              */
-            static new_for_owner(pid: number, start_time: number, uid: number): Subject;
+            static new_for_owner(pid: number, start_time: bigint | number, uid: number): Subject;
             /**
              * Creates a new {@link Polkit.UnixProcess} object for `pid` and `start_time`.
              *
@@ -5246,7 +5246,7 @@ declare module 'gi://Polkit?version=1.0' {
              * @param pid The process id.
              * @param start_time The start time for `pid`.
              */
-            static new_full(pid: number, start_time: number): Subject;
+            static new_full(pid: number, start_time: bigint | number): Subject;
             /**
              * Creates a new {@link Polkit.UnixProcess} object for `pidfd` and `uid`.
              * @param pidfd The process id file descriptor.
@@ -5339,7 +5339,7 @@ declare module 'gi://Polkit?version=1.0' {
              * Set the start time of `process`.
              * @param start_time The start time for `pid`.
              */
-            set_start_time(start_time: number): void;
+            set_start_time(start_time: bigint | number): void;
             /**
              * Sets the (real, not effective) user id for `process`.
              * @param uid The user id to set for `process` or -1 to unset it.
@@ -5866,7 +5866,7 @@ declare module 'gi://Polkit?version=1.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -5893,7 +5893,7 @@ declare module 'gi://Polkit?version=1.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected
@@ -6870,7 +6870,7 @@ declare module 'gi://Polkit?version=1.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -6897,7 +6897,7 @@ declare module 'gi://Polkit?version=1.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected
@@ -7454,7 +7454,7 @@ declare module 'gi://Polkit?version=1.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -7481,7 +7481,7 @@ declare module 'gi://Polkit?version=1.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected

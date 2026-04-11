@@ -1464,7 +1464,7 @@ declare module 'gi://Tsparql?version=3.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -1491,7 +1491,7 @@ declare module 'gi://Tsparql?version=3.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected
@@ -2143,7 +2143,7 @@ declare module 'gi://Tsparql?version=3.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -2170,7 +2170,7 @@ declare module 'gi://Tsparql?version=3.0' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected
@@ -2642,7 +2642,7 @@ declare module 'gi://Tsparql?version=3.0' {
              * @param property_uri a string identifying the property to modify
              * @param value the property object
              */
-            add_int64(property_uri: string, value: number): void;
+            add_int64(property_uri: string, value: bigint | number): void;
             /**
              * Adds a resource property as a {@link Tsparql.Resource}. Previous values for the same property are kept.
              *
@@ -2908,7 +2908,7 @@ declare module 'gi://Tsparql?version=3.0' {
              * @param property_uri a string identifying the property to modify
              * @param value the property object
              */
-            set_int64(property_uri: string, value: number): void;
+            set_int64(property_uri: string, value: bigint | number): void;
             /**
              * Sets a resource property as a {@link Tsparql.Resource}. Replaces any previous value.
              *
@@ -4233,7 +4233,7 @@ declare module 'gi://Tsparql?version=3.0' {
              * @param name variable name
              * @param value value
              */
-            bind_int(name: string, value: number): void;
+            bind_int(name: string, value: bigint | number): void;
             /**
              * Binds the `value` to the parameterized variable given by `name`, tagged
              * with the language defined by `langtag`. The language tag should follow

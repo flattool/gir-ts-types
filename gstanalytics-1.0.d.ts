@@ -306,12 +306,12 @@ declare module 'gi://GstAnalytics?version=1.0' {
              * @param index Object class index
              * @returns confidence level for `index`, <0.0 if the call failed.
              */
-            get_level(index: number): number;
+            get_level(index: bigint | number): number;
             /**
              * @param index index of the class Get quark of the class at `index`
              * @returns Quark of this class (label) associated with `index`
              */
-            get_quark(index: number): GLib.Quark;
+            get_quark(index: bigint | number): GLib.Quark;
         }
 
         /**
@@ -512,7 +512,7 @@ declare module 'gi://GstAnalytics?version=1.0' {
              * @param tracking_first_seen Timestamp of first time the object was observed.
              * @returns Added successfully
              */
-            add_tracking_mtd(tracking_id: number, tracking_first_seen: Gst.ClockTime): [boolean, TrackingMtd];
+            add_tracking_mtd(tracking_id: bigint | number, tracking_first_seen: Gst.ClockTime): [boolean, TrackingMtd];
             /**
              * Verify existence of relation(s) between `an_meta_first_d` and
              * `an_meta_second_id` according to relation condition `cond_types`. It optionally
@@ -619,15 +619,6 @@ declare module 'gi://GstAnalytics?version=1.0' {
 
             initial_relation_order: number;
             initial_buf_size: number;
-
-            // Constructors
-
-            constructor(
-                properties?: Partial<{
-                    initial_relation_order: number;
-                    initial_buf_size: number;
-                }>,
-            );
         }
 
         /**
@@ -796,7 +787,7 @@ declare module 'gi://GstAnalytics?version=1.0' {
              * @param index Region index
              * @returns The region ID
              */
-            get_region_id(index: number): number;
+            get_region_id(index: bigint | number): number;
             /**
              * Get region index of the region identified by `id`.
              * @param id Region id
@@ -824,16 +815,16 @@ declare module 'gi://GstAnalytics?version=1.0' {
 
             // Constructors
 
-            constructor(num_dims: number);
+            constructor(num_dims: bigint | number);
 
-            static alloc(num_dims: number): Tensor;
+            static alloc(num_dims: bigint | number): Tensor;
 
             static new_simple(
                 id: GLib.Quark,
                 data_type: TensorDataType,
                 data: Gst.Buffer,
                 dims_order: TensorDimOrder,
-                dims: number[],
+                dims: (bigint | number)[],
             ): Tensor;
 
             // Methods
@@ -873,7 +864,7 @@ declare module 'gi://GstAnalytics?version=1.0' {
              * @param index The number of the tensor to get
              * @returns a GstTensor
              */
-            get(index: number): Tensor;
+            get(index: bigint | number): Tensor;
             /**
              * Finds the first tensor with the requsted ID in the meta
              * @param id The tensor id to look for
