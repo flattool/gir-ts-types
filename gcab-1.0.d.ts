@@ -144,8 +144,8 @@ declare module 'gi://GCab?version=1.0' {
             // Constructor properties interface
 
             interface ConstructorProps extends GObject.Object.ConstructorProps {
-                reserved: Uint8Array;
-                signature: Uint8Array;
+                reserved: Uint8Array | string;
+                signature: Uint8Array | string;
             }
         }
 
@@ -159,9 +159,9 @@ declare module 'gi://GCab?version=1.0' {
             // Properties
 
             get reserved(): Uint8Array;
-            set reserved(val: Uint8Array);
+            set reserved(val: Uint8Array | string);
             get signature(): Uint8Array;
-            set signature(val: Uint8Array);
+            set signature(val: Uint8Array | string);
 
             /**
              * Compile-time signal type information.
@@ -309,7 +309,7 @@ declare module 'gi://GCab?version=1.0' {
             // Constructor properties interface
 
             interface ConstructorProps extends GObject.Object.ConstructorProps {
-                bytes: GLib.Bytes;
+                bytes: GLib.Bytes | Uint8Array;
                 file: Gio.File;
                 name: string;
             }
@@ -325,7 +325,7 @@ declare module 'gi://GCab?version=1.0' {
             // Properties
 
             get bytes(): GLib.Bytes;
-            set bytes(val: GLib.Bytes);
+            set bytes(val: GLib.Bytes | Uint8Array);
             get file(): Gio.File;
             set file(val: Gio.File);
             get name(): string;
@@ -463,7 +463,7 @@ declare module 'gi://GCab?version=1.0' {
             interface ConstructorProps extends GObject.Object.ConstructorProps {
                 compression: Compression;
                 comptype: number;
-                reserved: Uint8Array;
+                reserved: Uint8Array | string;
             }
         }
 
@@ -485,7 +485,7 @@ declare module 'gi://GCab?version=1.0' {
              */
             get comptype(): number;
             get reserved(): Uint8Array;
-            set reserved(val: Uint8Array);
+            set reserved(val: Uint8Array | string);
 
             /**
              * Compile-time signal type information.

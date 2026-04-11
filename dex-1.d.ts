@@ -88,7 +88,7 @@ declare module 'gi://Dex?version=1' {
          * @param offset
          * @returns a future that will resolve when the   read completes or rejects with error.
          */
-        function aio_read(aio_context: AioContext, fd: number, offset: number): [Future, Uint8Array];
+        function aio_read(aio_context: AioContext, fd: number, offset: bigint | number): [Future, Uint8Array];
         /**
          * An asynchronous `pwrite()` wrapper.
          * @param aio_context
@@ -97,7 +97,12 @@ declare module 'gi://Dex?version=1' {
          * @param offset
          * @returns a future that will resolve when the   write completes or rejects with error.
          */
-        function aio_write(aio_context: AioContext, fd: number, buffer: Uint8Array | string, offset: number): Future;
+        function aio_write(
+            aio_context: AioContext,
+            fd: number,
+            buffer: Uint8Array | string,
+            offset: bigint | number,
+        ): Future;
         /**
          * A helper for `g_async_initable_init_async()`
          * @param initable a {@link Gio.AsyncInitable}
@@ -380,14 +385,14 @@ declare module 'gi://Dex?version=1' {
          * @param io_priority
          * @returns a {@link Dex.Future}
          */
-        function input_stream_read_bytes(self: Gio.InputStream, count: number, io_priority: number): Future;
+        function input_stream_read_bytes(self: Gio.InputStream, count: bigint | number, io_priority: number): Future;
         /**
          * @param self
          * @param count the number of bytes to skip
          * @param io_priority `G_PRIORITY_DEFAULT` or similar priority value
          * @returns a {@link Dex.Future}
          */
-        function input_stream_skip(self: Gio.InputStream, count: number, io_priority: number): Future;
+        function input_stream_skip(self: Gio.InputStream, count: bigint | number, io_priority: number): Future;
         /**
          * @param io_stream
          * @param io_priority
@@ -615,7 +620,7 @@ declare module 'gi://Dex?version=1' {
             /**
              * @param value
              */
-            return_int64(value: number): void;
+            return_int64(value: bigint | number): void;
             /**
              * Resolves `async_pair` with a value of `instance`.
              *
@@ -634,7 +639,7 @@ declare module 'gi://Dex?version=1' {
             /**
              * @param value
              */
-            return_uint64(value: number): void;
+            return_uint64(value: bigint | number): void;
             /**
              * Resolves `async_pair` with `variant`.
              * @param variant the variant to resolve with
@@ -1185,7 +1190,7 @@ declare module 'gi://Dex?version=1' {
              * @param pspec
              * @virtual
              */
-            vfunc_get_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_get_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Emits a "notify" signal for the property `property_name` on `object`.
              *
@@ -1212,7 +1217,7 @@ declare module 'gi://Dex?version=1' {
              * @param pspec
              * @virtual
              */
-            vfunc_set_property(property_id: number, value: GObject.Value | any, pspec: GObject.ParamSpec): void;
+            vfunc_set_property(property_id: number, value: unknown, pspec: GObject.ParamSpec): void;
             /**
              * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
              * @param id Handler ID of the handler to be disconnected
@@ -1612,7 +1617,7 @@ declare module 'gi://Dex?version=1' {
 
             static new_for_int(v_int: number): Future;
 
-            static new_for_int64(v_int64: number): Future;
+            static new_for_int64(v_int64: bigint | number): Future;
 
             static new_for_object(value: GObject.Object): Future;
 
@@ -1622,7 +1627,7 @@ declare module 'gi://Dex?version=1' {
 
             static new_for_uint(v_uint: number): Future;
 
-            static new_for_uint64(v_uint64: number): Future;
+            static new_for_uint64(v_uint64: bigint | number): Future;
 
             static new_for_value(value: GObject.Value | any): Future;
 
@@ -2080,12 +2085,12 @@ declare module 'gi://Dex?version=1' {
              * Resolve promise to `value`.
              * @param value
              */
-            resolve_int64(value: number): void;
+            resolve_int64(value: bigint | number): void;
             /**
              * Resolve promise to `value`.
              * @param value
              */
-            resolve_long(value: number): void;
+            resolve_long(value: bigint | number): void;
             /**
              * @param object a {@link GObject.Object}
              */
@@ -2103,12 +2108,12 @@ declare module 'gi://Dex?version=1' {
              * Resolve promise to `value`.
              * @param value
              */
-            resolve_uint64(value: number): void;
+            resolve_uint64(value: bigint | number): void;
             /**
              * Resolve promise to `value`.
              * @param value
              */
-            resolve_ulong(value: number): void;
+            resolve_ulong(value: bigint | number): void;
             /**
              * If `variant` is floating, its reference is consumed.
              * @param variant a {@link GLib.Variant}
@@ -2212,7 +2217,7 @@ declare module 'gi://Dex?version=1' {
              * @param func a {@link Dex.FiberFunc}
              * @returns a {@link Dex.Future} that will resolve or reject when   `func` completes (or its resulting {@link Dex.Future} completes).
              */
-            spawn(stack_size: number, func: FiberFunc): Future;
+            spawn(stack_size: bigint | number, func: FiberFunc): Future;
         }
 
         namespace StaticFuture {
@@ -2344,13 +2349,13 @@ declare module 'gi://Dex?version=1' {
 
             _init(...args: any[]): void;
 
-            static new_deadline(deadline: number): Timeout;
+            static new_deadline(deadline: bigint | number): Timeout;
 
             static new_msec(msec: number): Timeout;
 
             static new_seconds(seconds: number): Timeout;
 
-            static new_usec(usec: number): Timeout;
+            static new_usec(usec: bigint | number): Timeout;
 
             // Signals
 
@@ -2381,7 +2386,7 @@ declare module 'gi://Dex?version=1' {
              * monotonic clock in microseconds.
              * @param deadline a deadline in monotonic clock
              */
-            postpone_until(deadline: number): void;
+            postpone_until(deadline: bigint | number): void;
         }
 
         namespace UnixSignal {

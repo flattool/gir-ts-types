@@ -1231,7 +1231,7 @@ declare module 'gi://GstPbutils?version=1.0' {
             // Constructor properties interface
 
             interface ConstructorProps extends GObject.Object.ConstructorProps {
-                timeout: number;
+                timeout: bigint | number;
                 use_cache: boolean;
                 useCache: boolean;
             }
@@ -1269,7 +1269,7 @@ declare module 'gi://GstPbutils?version=1.0' {
              * set on the result flags.
              */
             get timeout(): number;
-            set timeout(val: number);
+            set timeout(val: bigint | number);
             get use_cache(): boolean;
             set use_cache(val: boolean);
             get useCache(): boolean;

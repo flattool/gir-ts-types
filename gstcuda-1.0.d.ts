@@ -870,7 +870,7 @@ declare module 'gi://GstCuda?version=1.0' {
              * @param token an user token
              * @returns user data pointer or `null`
              */
-            get_token_data(token: number): any | null;
+            get_token_data(token: bigint | number): any | null;
             /**
              * Gets user data pointer stored via `gst_cuda_allocator_alloc_wrapped()`
              * @returns the user data pointer
@@ -881,7 +881,7 @@ declare module 'gi://GstCuda?version=1.0' {
              * @param token an user token
              * @param data an user data
              */
-            set_token_data(token: number, data?: any | null): void;
+            set_token_data(token: bigint | number, data?: any | null): void;
             /**
              * Performs synchronization if needed
              */

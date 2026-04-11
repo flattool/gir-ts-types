@@ -784,7 +784,7 @@ declare module 'gi://GUdev?version=1.0' {
          * bug 584517 is resolved this work-around is needed).
          * @gir-type Alias
          */
-        type DeviceNumber = number;
+        type DeviceNumber = bigint | number;
         /**
          * Name of the imported GIR library
          * `see` https://gitlab.gnome.org/GNOME/gjs/-/blob/master/gi/ns.cpp#L188

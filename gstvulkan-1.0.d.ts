@@ -374,7 +374,7 @@ declare module 'gi://GstVulkan?version=1.0' {
          */
         function vulkan_buffer_memory_alloc(
             device: VulkanDevice,
-            size: number,
+            size: bigint | number,
             usage: Vulkan.BufferUsageFlags,
             mem_prop_flags: Vulkan.MemoryPropertyFlags,
         ): Gst.Memory;
@@ -421,7 +421,7 @@ declare module 'gi://GstVulkan?version=1.0' {
          * @returns a {@link GstVulkan.VulkanHandle} for `image` matching the                           original layout and format of `image` or `null`
          * @since 1.18
          */
-        function vulkan_create_shader(device: VulkanDevice, code: string, size: number): VulkanHandle;
+        function vulkan_create_shader(device: VulkanDevice, code: string, size: bigint | number): VulkanHandle;
         /**
          * @param type a {@link GstVulkan.VulkanDisplayType}
          * @returns the Vulkan extension string required for creating a                      VkSurfaceKHR using a window system handle or `null`
@@ -564,8 +564,8 @@ declare module 'gi://GstVulkan?version=1.0' {
         function vulkan_image_memory_alloc(
             device: VulkanDevice,
             format: Vulkan.Format,
-            width: number,
-            height: number,
+            width: bigint | number,
+            height: bigint | number,
             tiling: Vulkan.ImageTiling,
             usage: Vulkan.ImageUsageFlags,
             mem_prop_flags: Vulkan.MemoryPropertyFlags,
@@ -604,8 +604,8 @@ declare module 'gi://GstVulkan?version=1.0' {
             device: VulkanDevice,
             image: Vulkan.Image,
             format: Vulkan.Format,
-            width: number,
-            height: number,
+            width: bigint | number,
+            height: bigint | number,
             tiling: Vulkan.ImageTiling,
             usage: Vulkan.ImageUsageFlags,
             user_data?: any | null,
@@ -632,7 +632,7 @@ declare module 'gi://GstVulkan?version=1.0' {
             device: VulkanDevice,
             memory_type_index: number,
             params: Gst.AllocationParams,
-            size: number,
+            size: bigint | number,
             mem_prop_flags: Vulkan.MemoryPropertyFlags,
         ): Gst.Memory;
         /**
@@ -1170,7 +1170,7 @@ declare module 'gi://GstVulkan?version=1.0' {
             static new_wrapped(
                 device: VulkanDevice,
                 pool: Vulkan.DescriptorPool,
-                max_sets: number,
+                max_sets: bigint | number,
             ): VulkanDescriptorPool;
 
             // Signals
@@ -1720,7 +1720,7 @@ declare module 'gi://GstVulkan?version=1.0' {
              * @param n_indices number of indices in `indices`
              * @returns whether the index data could be set
              */
-            set_index_buffer(indices: Gst.Memory, n_indices: number): boolean;
+            set_index_buffer(indices: Gst.Memory, n_indices: bigint | number): boolean;
             /**
              * @param in_info the input {@link GstVideo.VideoInfo} to set
              * @param out_info the output {@link GstVideo.VideoInfo} to set
@@ -1953,7 +1953,7 @@ declare module 'gi://GstVulkan?version=1.0' {
                 usage: Vulkan.ImageUsageFlags,
                 mem_properties: Vulkan.MemoryPropertyFlags,
                 initial_layout: Vulkan.ImageLayout,
-                initial_access: number,
+                initial_access: bigint | number,
             ): void;
             /**
              * Decode `caps` are used when the buffers are going to be used either as decoded
@@ -2418,7 +2418,11 @@ declare module 'gi://GstVulkan?version=1.0' {
              * @param signal_stage pipeline stage to signal (VkPipelineStageFlags or   VkPipelineStageFlags2)
              * @returns whether the `frame` was added as dependency.
              */
-            add_dependency_frame(frame: Gst.Buffer, wait_stage: number, signal_stage: number): boolean;
+            add_dependency_frame(
+                frame: Gst.Buffer,
+                wait_stage: bigint | number,
+                signal_stage: bigint | number,
+            ): boolean;
             /**
              * See also: `gst_vulkan_operation_update_frame()`
              *
@@ -2435,9 +2439,9 @@ declare module 'gi://GstVulkan?version=1.0' {
              */
             add_frame_barrier(
                 frame: Gst.Buffer,
-                src_stage: number,
-                dst_stage: number,
-                new_access: number,
+                src_stage: bigint | number,
+                dst_stage: bigint | number,
+                new_access: bigint | number,
                 new_layout: Vulkan.ImageLayout,
                 new_queue?: VulkanQueue | null,
             ): boolean;
@@ -2527,8 +2531,8 @@ declare module 'gi://GstVulkan?version=1.0' {
              */
             update_frame(
                 frame: Gst.Buffer,
-                dst_stage: number,
-                new_access: number,
+                dst_stage: bigint | number,
+                new_access: bigint | number,
                 new_layout: Vulkan.ImageLayout,
                 new_queue?: VulkanQueue | null,
             ): void;
@@ -3058,7 +3062,7 @@ declare module 'gi://GstVulkan?version=1.0' {
              * @param timeout timeout in ns to wait, -1 for indefinite
              * @returns whether the wait succeeded in waiting for all objects to be freed.
              */
-            wait(timeout: number): boolean;
+            wait(timeout: bigint | number): boolean;
         }
 
         namespace VulkanVideoFilter {
@@ -3395,7 +3399,7 @@ declare module 'gi://GstVulkan?version=1.0' {
              */
             static alloc(
                 device: VulkanDevice,
-                size: number,
+                size: bigint | number,
                 usage: Vulkan.BufferUsageFlags,
                 mem_prop_flags: Vulkan.MemoryPropertyFlags,
             ): Gst.Memory;
@@ -3819,8 +3823,8 @@ declare module 'gi://GstVulkan?version=1.0' {
             static alloc(
                 device: VulkanDevice,
                 format: Vulkan.Format,
-                width: number,
-                height: number,
+                width: bigint | number,
+                height: bigint | number,
                 tiling: Vulkan.ImageTiling,
                 usage: Vulkan.ImageUsageFlags,
                 mem_prop_flags: Vulkan.MemoryPropertyFlags,
@@ -3854,8 +3858,8 @@ declare module 'gi://GstVulkan?version=1.0' {
                 device: VulkanDevice,
                 image: Vulkan.Image,
                 format: Vulkan.Format,
-                width: number,
-                height: number,
+                width: bigint | number,
+                height: bigint | number,
                 tiling: Vulkan.ImageTiling,
                 usage: Vulkan.ImageUsageFlags,
                 user_data?: any | null,
@@ -3899,7 +3903,7 @@ declare module 'gi://GstVulkan?version=1.0' {
                 usage: Vulkan.ImageUsageFlags,
                 initial_layout: Vulkan.ImageLayout,
                 params: Gst.AllocationParams,
-                size: number,
+                size: bigint | number,
                 user_data?: any | null,
             ): boolean;
         }
@@ -3972,7 +3976,7 @@ declare module 'gi://GstVulkan?version=1.0' {
                 device: VulkanDevice,
                 memory_type_index: number,
                 params: Gst.AllocationParams,
-                size: number,
+                size: bigint | number,
                 mem_prop_flags: Vulkan.MemoryPropertyFlags,
             ): Gst.Memory;
             /**
@@ -4167,7 +4171,7 @@ declare module 'gi://GstVulkan?version=1.0' {
         /**
          * @gir-type Alias
          */
-        type VulkanHandleTypedef = number;
+        type VulkanHandleTypedef = bigint | number;
         /**
          * Name of the imported GIR library
          * `see` https://gitlab.gnome.org/GNOME/gjs/-/blob/master/gi/ns.cpp#L188

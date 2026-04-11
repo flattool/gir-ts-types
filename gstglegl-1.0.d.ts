@@ -71,7 +71,7 @@ declare module 'gi://GstGLEGL?version=1.0' {
             dmabuf: number,
             in_info: GstVideo.VideoInfo,
             plane: number,
-            offset: number,
+            offset: bigint | number,
         ): EGLImage | null;
         /**
          * Creates an EGL image that imports the dmabuf FD. The dmabuf data
@@ -92,7 +92,7 @@ declare module 'gi://GstGLEGL?version=1.0' {
         function egl_image_from_dmabuf_direct(
             context: GstGL.GLContext,
             fd: number,
-            offset: number,
+            offset: bigint | number,
             in_info: GstVideo.VideoInfo,
         ): EGLImage | null;
         /**
@@ -116,7 +116,7 @@ declare module 'gi://GstGLEGL?version=1.0' {
         function egl_image_from_dmabuf_direct_target(
             context: GstGL.GLContext,
             fd: number,
-            offset: number,
+            offset: bigint | number,
             in_info: GstVideo.VideoInfo,
             target: GstGL.GLTextureTarget | null,
         ): EGLImage | null;
@@ -140,7 +140,7 @@ declare module 'gi://GstGLEGL?version=1.0' {
             context: GstGL.GLContext,
             n_planes: number,
             fd: number,
-            offset: number,
+            offset: bigint | number,
             in_info_dma: GstVideo.VideoInfoDmaDrm,
             target: GstGL.GLTextureTarget | null,
         ): EGLImage | null;
@@ -469,7 +469,7 @@ declare module 'gi://GstGLEGL?version=1.0' {
                 dmabuf: number,
                 in_info: GstVideo.VideoInfo,
                 plane: number,
-                offset: number,
+                offset: bigint | number,
             ): EGLImage | null;
             /**
              * Creates an EGL image that imports the dmabuf FD. The dmabuf data
@@ -489,7 +489,7 @@ declare module 'gi://GstGLEGL?version=1.0' {
             static from_dmabuf_direct(
                 context: GstGL.GLContext,
                 fd: number,
-                offset: number,
+                offset: bigint | number,
                 in_info: GstVideo.VideoInfo,
             ): EGLImage | null;
             /**
@@ -511,7 +511,7 @@ declare module 'gi://GstGLEGL?version=1.0' {
             static from_dmabuf_direct_target(
                 context: GstGL.GLContext,
                 fd: number,
-                offset: number,
+                offset: bigint | number,
                 in_info: GstVideo.VideoInfo,
                 target: GstGL.GLTextureTarget,
             ): EGLImage | null;
@@ -533,7 +533,7 @@ declare module 'gi://GstGLEGL?version=1.0' {
                 context: GstGL.GLContext,
                 n_planes: number,
                 fd: number,
-                offset: number,
+                offset: bigint | number,
                 in_info_dma: GstVideo.VideoInfoDmaDrm,
                 target: GstGL.GLTextureTarget,
             ): EGLImage | null;
@@ -551,7 +551,7 @@ declare module 'gi://GstGLEGL?version=1.0' {
              * @param stride
              * @param offset
              */
-            export_dmabuf(fd: number, stride: number, offset: number): boolean;
+            export_dmabuf(fd: number, stride: number, offset: bigint | number): boolean;
             /**
              * @returns the {@link GstGLEGL.EGLImage} of `image`
              */

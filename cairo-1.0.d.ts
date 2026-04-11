@@ -612,16 +612,6 @@ declare module 'gi://cairo?version=1.0' {
             index: number;
             x: number;
             y: number;
-
-            // Constructors
-
-            constructor(
-                properties?: Partial<{
-                    index: number;
-                    x: number;
-                    y: number;
-                }>,
-            );
         }
 
         /**
