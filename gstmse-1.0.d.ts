@@ -408,7 +408,7 @@ declare module 'gi://GstMse?version=1.0' {
              * @param eos_error The error type, if any
              * @returns `TRUE` on success, `FALSE` otherwise
              */
-            end_of_stream(eos_error: MediaSourceEOSError | null): boolean;
+            end_of_stream(eos_error: MediaSourceEOSError): boolean;
             /**
              * Gets a {@link GstMse.SourceBufferList} containing all the Source Buffers currently
              * associated with this Media Source that are considered "active."
@@ -762,7 +762,7 @@ declare module 'gi://GstMse?version=1.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -803,7 +803,7 @@ declare module 'gi://GstMse?version=1.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -1589,7 +1589,7 @@ declare module 'gi://GstMse?version=1.0' {
              * @param mode {@link GstMse.SourceBufferAppendMode} the desired Append Mode
              * @returns `TRUE` on success, `FALSE` otherwise
              */
-            set_append_mode(mode: SourceBufferAppendMode | null): boolean;
+            set_append_mode(mode: SourceBufferAppendMode): boolean;
             /**
              * Modifies the current append window end of `self`. If successful, samples
              * processed after setting this value that start after this point will be

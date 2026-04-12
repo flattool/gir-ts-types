@@ -123,7 +123,7 @@ declare module 'gi://GstVa?version=1.0' {
         function buffer_pool_config_set_va_allocation_params(
             config: Gst.Structure,
             usage_hint: number,
-            use_derived: VaFeature | null,
+            use_derived: VaFeature,
         ): void;
         /**
          * @param context a {@link Gst.Context} may contain the display
@@ -177,7 +177,7 @@ declare module 'gi://GstVa?version=1.0' {
          */
         function va_dmabuf_get_modifier_for_format(
             display: VaDisplay,
-            format: GstVideo.VideoFormat | null,
+            format: GstVideo.VideoFormat,
             usage_hint: number,
         ): number;
         /**
@@ -196,7 +196,7 @@ declare module 'gi://GstVa?version=1.0' {
             display: VaDisplay,
             drm_info: GstVideo.VideoInfoDmaDrm,
             mem: Gst.Memory[],
-            fds: never[],
+            fds: (bigint | number)[],
             offset: (bigint | number)[],
             usage_hint: number,
         ): boolean;

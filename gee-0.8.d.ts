@@ -123,19 +123,19 @@ declare module 'gi://Gee?version=0.8' {
         /**
          * @param self
          */
-        function hazard_pointer_policy_is_concrete(self: HazardPointerPolicy | null): boolean;
+        function hazard_pointer_policy_is_concrete(self: HazardPointerPolicy): boolean;
         /**
          * @param self
          */
-        function hazard_pointer_policy_is_blocking(self: HazardPointerPolicy | null): boolean;
+        function hazard_pointer_policy_is_blocking(self: HazardPointerPolicy): boolean;
         /**
          * @param self
          */
-        function hazard_pointer_policy_is_safe(self: HazardPointerPolicy | null): boolean;
+        function hazard_pointer_policy_is_safe(self: HazardPointerPolicy): boolean;
         /**
          * @param self
          */
-        function hazard_pointer_policy_to_concrete(self: HazardPointerPolicy | null): HazardPointerPolicy;
+        function hazard_pointer_policy_to_concrete(self: HazardPointerPolicy): HazardPointerPolicy;
         /**
          * @param g_type
          * @param g_dup_func
@@ -1613,7 +1613,7 @@ declare module 'gi://Gee?version=0.8' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -1654,7 +1654,7 @@ declare module 'gi://Gee?version=0.8' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -3033,7 +3033,7 @@ declare module 'gi://Gee?version=0.8' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -3074,7 +3074,7 @@ declare module 'gi://Gee?version=0.8' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -3781,7 +3781,7 @@ declare module 'gi://Gee?version=0.8' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -3822,7 +3822,7 @@ declare module 'gi://Gee?version=0.8' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,

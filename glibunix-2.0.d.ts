@@ -75,7 +75,7 @@ declare module 'gi://GLibUnix?version=2.0' {
         function fd_add_full(
             priority: number,
             fd: number,
-            condition: GLib.IOCondition | null,
+            condition: GLib.IOCondition,
             _function: FDSourceFunc,
         ): number;
         /**
@@ -98,7 +98,7 @@ declare module 'gi://GLibUnix?version=2.0' {
          * @returns the newly created {@link GLib.Source}
          * @since 2.36
          */
-        function fd_source_new(fd: number, condition: GLib.IOCondition | null): GLib.Source;
+        function fd_source_new(fd: number, condition: GLib.IOCondition): GLib.Source;
         /**
          * Mark every file descriptor equal to or greater than `lowfd` to be closed
          * at the next `execve()` or similar, as if via the `FD_CLOEXEC` flag.

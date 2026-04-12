@@ -10,14 +10,14 @@
  * The based EJS template file is used for the generated .d.ts file of each GIR module like Gtk-4.0, GObject-2.0, ...
  */
 
-declare module 'gi://Ministream?version=0' {
+declare module 'gi://Ministream?version=1' {
     // Module dependencies
     import type GObject from 'gi://GObject?version=2.0';
     import type GLib from 'gi://GLib?version=2.0';
 
     export namespace Ministream {
         /**
-         * Ministream-0
+         * Ministream-1
          */
 
         /**
@@ -40,6 +40,14 @@ declare module 'gi://Ministream?version=0' {
             static quark(): GLib.Quark;
         }
 
+        /**
+         * Ministream major version component.
+         */
+        const MAJOR_VERSION: number;
+        /**
+         * Ministream minor version component.
+         */
+        const MINOR_VERSION: number;
         function error_quark(): GLib.Quark;
         /**
          * @gir-type Struct
@@ -159,7 +167,7 @@ declare module 'gi://Ministream?version=0' {
 }
 
 declare module 'gi://Ministream' {
-    import Ministream0 from 'gi://Ministream?version=0';
-    export default Ministream0;
+    import Ministream1 from 'gi://Ministream?version=1';
+    export default Ministream1;
 }
 // END

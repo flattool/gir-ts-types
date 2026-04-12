@@ -624,7 +624,7 @@ declare module 'gi://GdkWayland?version=4.0' {
              * @param height height of the new surface
              * @returns a pointer to the newly allocated surface. The caller   owns the surface and should call `cairo_surface_destroy()` when done   with it.
              */
-            create_similar_surface(content: cairo.Content | null, width: number, height: number): cairo.Surface;
+            create_similar_surface(content: cairo.Content, width: number, height: number): cairo.Surface;
             /**
              * Sets an error and returns `null`.
              * @returns `null`
@@ -1335,7 +1335,7 @@ declare module 'gi://GdkWayland?version=4.0' {
              * @param timestamp timestamp of mouse click that began the drag (use   {@link Gdk.Event.get_time})
              */
             begin_resize(
-                edge: Gdk.SurfaceEdge | null,
+                edge: Gdk.SurfaceEdge,
                 device: Gdk.Device | null,
                 button: number,
                 x: number,
@@ -1451,7 +1451,7 @@ declare module 'gi://GdkWayland?version=4.0' {
              * size programmatically.
              * @param gravity the new gravity
              */
-            set_gravity(gravity: Gdk.Gravity | null): void;
+            set_gravity(gravity: Gdk.Gravity): void;
             /**
              * Sets a list of icons for the surface.
              *
@@ -1530,7 +1530,7 @@ declare module 'gi://GdkWayland?version=4.0' {
              * @param gesture a {@link Gdk.TitlebarGesture}
              * @returns whether the gesture was performed
              */
-            titlebar_gesture(gesture: Gdk.TitlebarGesture | null): boolean;
+            titlebar_gesture(gesture: Gdk.TitlebarGesture): boolean;
             /**
              * Emits a short beep associated to `surface`.
              *
@@ -1574,7 +1574,7 @@ declare module 'gi://GdkWayland?version=4.0' {
              * @param height height of the new surface
              * @returns a pointer to the newly allocated surface. The caller   owns the surface and should call `cairo_surface_destroy()` when done   with it.
              */
-            create_similar_surface(content: cairo.Content | null, width: number, height: number): cairo.Surface;
+            create_similar_surface(content: cairo.Content, width: number, height: number): cairo.Surface;
             /**
              * Sets an error and returns `null`.
              * @returns `null`
