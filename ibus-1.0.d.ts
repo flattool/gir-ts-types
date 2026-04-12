@@ -4893,7 +4893,7 @@ declare module 'gi://IBus?version=1.0' {
          * @param accelerator_mods accelerator modifier mask
          * @returns a newly-allocated accelerator name
          */
-        function accelerator_name(accelerator_key: number, accelerator_mods: ModifierType | null): string;
+        function accelerator_name(accelerator_key: number, accelerator_mods: ModifierType): string;
         /**
          * Parses a string representing an accelerator. The format looks like
          * “&lt;Control&gt;a” or “&lt;Shift&gt;&lt;Alt&gt;F1” or “&lt;Release%gt;z”
@@ -4921,7 +4921,7 @@ declare module 'gi://IBus?version=1.0' {
          * @param modifiers modifier mask
          * @returns `true` if the accelerator is valid
          */
-        function accelerator_valid(keyval: number, modifiers: ModifierType | null): boolean;
+        function accelerator_valid(keyval: number, modifiers: ModifierType): boolean;
         /**
          * Creates a new background {@link IBus.Attribute}.
          * @param color Color in RGB.
@@ -6708,7 +6708,7 @@ declare module 'gi://IBus?version=1.0' {
              * @param keys A `null`-terminated array of {@link IBus.ProcessKeyEventData}.        keycode is used for the selecting direction and the forward direction        in case of 0, otherwise the backward direction.
              * @returns `true` if the global shortcut keys are set. `false` otherwise.
              */
-            set_global_shortcut_keys(gtype: BusGlobalBindingType | null, keys: ProcessKeyEventData[]): boolean;
+            set_global_shortcut_keys(gtype: BusGlobalBindingType, keys: ProcessKeyEventData[]): boolean;
             /**
              * Sete global shorcut keys for the Wayland session asynchronously.
              * @param gtype A {@link IBus.BusGlobalBindingType}.
@@ -6717,7 +6717,7 @@ declare module 'gi://IBus?version=1.0' {
              * @param cancellable A {@link Gio.Cancellable} or `null`.
              */
             set_global_shortcut_keys_async(
-                gtype: BusGlobalBindingType | null,
+                gtype: BusGlobalBindingType,
                 keys: ProcessKeyEventData[],
                 timeout_msec: number,
                 cancellable?: Gio.Cancellable | null,
@@ -6731,7 +6731,7 @@ declare module 'gi://IBus?version=1.0' {
              * @param callback A {@link Gio.AsyncReadyCallback} to call when the request is satisfied      or `null` if you don't care about the result of the method invocation.
              */
             set_global_shortcut_keys_async(
-                gtype: BusGlobalBindingType | null,
+                gtype: BusGlobalBindingType,
                 keys: ProcessKeyEventData[],
                 timeout_msec: number,
                 cancellable: Gio.Cancellable | null,
@@ -6746,7 +6746,7 @@ declare module 'gi://IBus?version=1.0' {
              * @param callback A {@link Gio.AsyncReadyCallback} to call when the request is satisfied      or `null` if you don't care about the result of the method invocation.
              */
             set_global_shortcut_keys_async(
-                gtype: BusGlobalBindingType | null,
+                gtype: BusGlobalBindingType,
                 keys: ProcessKeyEventData[],
                 timeout_msec: number,
                 cancellable?: Gio.Cancellable | null,
@@ -7626,7 +7626,7 @@ declare module 'gi://IBus?version=1.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -7667,7 +7667,7 @@ declare module 'gi://IBus?version=1.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -9053,7 +9053,7 @@ declare module 'gi://IBus?version=1.0' {
                 text: Text,
                 cursor_pos: number,
                 visible: boolean,
-                mode: PreeditFocusMode | null,
+                mode: PreeditFocusMode,
             ): void;
             /**
              * Update the state displayed in language bar.
@@ -10655,7 +10655,7 @@ declare module 'gi://IBus?version=1.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -10696,7 +10696,7 @@ declare module 'gi://IBus?version=1.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -12499,7 +12499,7 @@ declare module 'gi://IBus?version=1.0' {
              * Set the state of the {@link IBus.Property}.
              * @param state The state of the {@link IBus.Property}.
              */
-            set_state(state: PropState | null): void;
+            set_state(state: PropState): void;
             /**
              * Set the sub IBusProperties.
              * @param prop_list {@link IBus.PropList} that contains sub IBusProperties.
@@ -13019,7 +13019,7 @@ declare module 'gi://IBus?version=1.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -13060,7 +13060,7 @@ declare module 'gi://IBus?version=1.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,

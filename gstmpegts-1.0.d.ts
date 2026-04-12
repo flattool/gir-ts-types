@@ -1417,7 +1417,7 @@ declare module 'gi://GstMpegts?version=1.0' {
          * @returns the {@link GstMpegts.Descriptor} or `null` on fail
          */
         function descriptor_from_dvb_service(
-            service_type: DVBServiceType | null,
+            service_type: DVBServiceType,
             service_name?: string | null,
             service_provider?: string | null,
         ): Descriptor;

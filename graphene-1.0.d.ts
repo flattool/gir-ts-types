@@ -745,7 +745,7 @@ declare module 'gi://Graphene?version=1.0' {
              * @param order the order used to apply the rotations
              * @returns the initialized {@link Graphene.Euler}
              */
-            init_from_matrix(m: Matrix | null, order: EulerOrder | null): Euler;
+            init_from_matrix(m: Matrix | null, order: EulerOrder): Euler;
             /**
              * Initializes a {@link Graphene.Euler} using the given normalized quaternion.
              *
@@ -755,7 +755,7 @@ declare module 'gi://Graphene?version=1.0' {
              * @param order the order used to apply the rotations
              * @returns the initialized {@link Graphene.Euler}
              */
-            init_from_quaternion(q: Quaternion | null, order: EulerOrder | null): Euler;
+            init_from_quaternion(q: Quaternion | null, order: EulerOrder): Euler;
             /**
              * Initializes a {@link Graphene.Euler} using the given angles
              * and order of rotation.
@@ -765,7 +765,7 @@ declare module 'gi://Graphene?version=1.0' {
              * @param order order of rotations
              * @returns the initialized {@link Graphene.Euler}
              */
-            init_from_radians(x: number, y: number, z: number, order: EulerOrder | null): Euler;
+            init_from_radians(x: number, y: number, z: number, order: EulerOrder): Euler;
             /**
              * Initializes a {@link Graphene.Euler} using the angles contained in a
              * {@link Graphene.Vec3}.
@@ -776,7 +776,7 @@ declare module 'gi://Graphene?version=1.0' {
              * @param order the order used to apply the rotations
              * @returns the initialized {@link Graphene.Euler}
              */
-            init_from_vec3(v: Vec3 | null, order: EulerOrder | null): Euler;
+            init_from_vec3(v: Vec3 | null, order: EulerOrder): Euler;
             /**
              * Initializes a {@link Graphene.Euler} with the given angles and `order`.
              * @param x rotation angle on the X axis, in degrees
@@ -785,7 +785,7 @@ declare module 'gi://Graphene?version=1.0' {
              * @param order the order used to apply the rotations
              * @returns the initialized {@link Graphene.Euler}
              */
-            init_with_order(x: number, y: number, z: number, order: EulerOrder | null): Euler;
+            init_with_order(x: number, y: number, z: number, order: EulerOrder): Euler;
             /**
              * Reorders a {@link Graphene.Euler} using `order`.
              *
@@ -794,7 +794,7 @@ declare module 'gi://Graphene?version=1.0' {
              * {@link Graphene.Euler}.
              * @param order the new order
              */
-            reorder(order: EulerOrder | null): Euler;
+            reorder(order: EulerOrder): Euler;
             /**
              * Converts a {@link Graphene.Euler} into a transformation matrix expressing
              * the extrinsic composition of rotations described by the Euler angles.

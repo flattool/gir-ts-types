@@ -278,10 +278,7 @@ declare module 'gi://Secret?version=1' {
          * @param cancellable optional cancellation object
          * @since 0.19.0
          */
-        function backend_get(
-            flags: BackendFlags | null,
-            cancellable?: Gio.Cancellable | null,
-        ): globalThis.Promise<Backend>;
+        function backend_get(flags: BackendFlags, cancellable?: Gio.Cancellable | null): globalThis.Promise<Backend>;
         /**
          * Get a {@link Secret.Backend} instance.
          *
@@ -297,9 +294,9 @@ declare module 'gi://Secret?version=1' {
          * @since 0.19.0
          */
         function backend_get(
-            flags: BackendFlags | null,
+            flags: BackendFlags,
             cancellable: Gio.Cancellable | null,
-            callback: Gio.AsyncReadyCallback<BackendFlags | null> | null,
+            callback: Gio.AsyncReadyCallback<BackendFlags> | null,
         ): void;
         /**
          * Get a {@link Secret.Backend} instance.
@@ -316,9 +313,9 @@ declare module 'gi://Secret?version=1' {
          * @since 0.19.0
          */
         function backend_get(
-            flags: BackendFlags | null,
+            flags: BackendFlags,
             cancellable?: Gio.Cancellable | null,
-            callback?: Gio.AsyncReadyCallback<BackendFlags | null> | null,
+            callback?: Gio.AsyncReadyCallback<BackendFlags> | null,
         ): globalThis.Promise<Backend> | void;
         /**
          * Complete an asynchronous operation to get a {@link Secret.Backend}.
@@ -341,7 +338,7 @@ declare module 'gi://Secret?version=1' {
          * @returns schema type
          * @since 0.18.6
          */
-        function get_schema(type: SchemaType | null): Schema;
+        function get_schema(type: SchemaType): Schema;
         /**
          * Finish an asynchronous operation to remove passwords from the secret
          * service.
@@ -525,7 +522,7 @@ declare module 'gi://Secret?version=1' {
         function password_search(
             schema: Schema | null,
             attributes: { [key: string]: any } | GLib.HashTable<string, string>,
-            flags: SearchFlags | null,
+            flags: SearchFlags,
             cancellable?: Gio.Cancellable | null,
         ): globalThis.Promise<Retrievable[]>;
         /**
@@ -544,7 +541,7 @@ declare module 'gi://Secret?version=1' {
         function password_search(
             schema: Schema | null,
             attributes: { [key: string]: any } | GLib.HashTable<string, string>,
-            flags: SearchFlags | null,
+            flags: SearchFlags,
             cancellable: Gio.Cancellable | null,
             callback: Gio.AsyncReadyCallback<Schema | null> | null,
         ): void;
@@ -564,7 +561,7 @@ declare module 'gi://Secret?version=1' {
         function password_search(
             schema: Schema | null,
             attributes: { [key: string]: any } | GLib.HashTable<string, string>,
-            flags: SearchFlags | null,
+            flags: SearchFlags,
             cancellable?: Gio.Cancellable | null,
             callback?: Gio.AsyncReadyCallback<Schema | null> | null,
         ): globalThis.Promise<Retrievable[]> | void;
@@ -587,7 +584,7 @@ declare module 'gi://Secret?version=1' {
         function password_search_sync(
             schema: Schema | null,
             attributes: { [key: string]: any } | GLib.HashTable<string, string>,
-            flags: SearchFlags | null,
+            flags: SearchFlags,
             cancellable?: Gio.Cancellable | null,
         ): Retrievable[];
         /**
@@ -1385,7 +1382,7 @@ declare module 'gi://Secret?version=1' {
             search(
                 schema: Schema | null,
                 attributes: { [key: string]: any } | GLib.HashTable<string, string>,
-                flags: SearchFlags | null,
+                flags: SearchFlags,
                 cancellable?: Gio.Cancellable | null,
             ): globalThis.Promise<Item[]>;
             /**
@@ -1413,7 +1410,7 @@ declare module 'gi://Secret?version=1' {
             search(
                 schema: Schema | null,
                 attributes: { [key: string]: any } | GLib.HashTable<string, string>,
-                flags: SearchFlags | null,
+                flags: SearchFlags,
                 cancellable: Gio.Cancellable | null,
                 callback: Gio.AsyncReadyCallback<this> | null,
             ): void;
@@ -1442,7 +1439,7 @@ declare module 'gi://Secret?version=1' {
             search(
                 schema: Schema | null,
                 attributes: { [key: string]: any } | GLib.HashTable<string, string>,
-                flags: SearchFlags | null,
+                flags: SearchFlags,
                 cancellable?: Gio.Cancellable | null,
                 callback?: Gio.AsyncReadyCallback<this> | null,
             ): globalThis.Promise<Item[]> | void;
@@ -1478,7 +1475,7 @@ declare module 'gi://Secret?version=1' {
             search_sync(
                 schema: Schema | null,
                 attributes: { [key: string]: any } | GLib.HashTable<string, string>,
-                flags: SearchFlags | null,
+                flags: SearchFlags,
                 cancellable?: Gio.Cancellable | null,
             ): Item[];
             /**
@@ -1904,7 +1901,7 @@ declare module 'gi://Secret?version=1' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -1945,7 +1942,7 @@ declare module 'gi://Secret?version=1' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -3408,7 +3405,7 @@ declare module 'gi://Secret?version=1' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -3449,7 +3446,7 @@ declare module 'gi://Secret?version=1' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -4399,7 +4396,7 @@ declare module 'gi://Secret?version=1' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -4440,7 +4437,7 @@ declare module 'gi://Secret?version=1' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -5216,7 +5213,7 @@ declare module 'gi://Secret?version=1' {
                 collection_path: string,
                 properties: { [key: string]: any } | GLib.HashTable<string, GLib.Variant>,
                 value: Value,
-                flags: ItemCreateFlags | null,
+                flags: ItemCreateFlags,
                 cancellable?: Gio.Cancellable | null,
             ): string;
             /**
@@ -5737,7 +5734,7 @@ declare module 'gi://Secret?version=1' {
             search(
                 schema: Schema | null,
                 attributes: { [key: string]: any } | GLib.HashTable<string, string>,
-                flags: SearchFlags | null,
+                flags: SearchFlags,
                 cancellable?: Gio.Cancellable | null,
             ): globalThis.Promise<Item[]>;
             /**
@@ -5770,7 +5767,7 @@ declare module 'gi://Secret?version=1' {
             search(
                 schema: Schema | null,
                 attributes: { [key: string]: any } | GLib.HashTable<string, string>,
-                flags: SearchFlags | null,
+                flags: SearchFlags,
                 cancellable: Gio.Cancellable | null,
                 callback: Gio.AsyncReadyCallback<this> | null,
             ): void;
@@ -5804,7 +5801,7 @@ declare module 'gi://Secret?version=1' {
             search(
                 schema: Schema | null,
                 attributes: { [key: string]: any } | GLib.HashTable<string, string>,
-                flags: SearchFlags | null,
+                flags: SearchFlags,
                 cancellable?: Gio.Cancellable | null,
                 callback?: Gio.AsyncReadyCallback<this> | null,
             ): globalThis.Promise<Item[]> | void;
@@ -5847,7 +5844,7 @@ declare module 'gi://Secret?version=1' {
             search_sync(
                 schema: Schema | null,
                 attributes: { [key: string]: any } | GLib.HashTable<string, string>,
-                flags: SearchFlags | null,
+                flags: SearchFlags,
                 cancellable?: Gio.Cancellable | null,
             ): Item[];
             /**
@@ -6640,7 +6637,7 @@ declare module 'gi://Secret?version=1' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -6681,7 +6678,7 @@ declare module 'gi://Secret?version=1' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,

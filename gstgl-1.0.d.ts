@@ -693,7 +693,7 @@ declare module 'gi://GstGL?version=1.0' {
          * @param api a {@link GstGL.GLAPI} to stringify
          * @returns A space separated string of the OpenGL api's enabled in `api`
          */
-        function gl_api_to_string(api: GLAPI | null): string;
+        function gl_api_to_string(api: GLAPI): string;
         /**
          * @param allocator a {@link GstGL.GLBaseMemoryAllocator}
          * @param params the {@link GstGL.GLAllocationParams} to allocate the memory with
@@ -731,13 +731,13 @@ declare module 'gi://GstGL?version=1.0' {
          * @returns a string version of `caveat` or `null` if `caveat` does not                      exist.
          * @since 1.20
          */
-        function gl_config_caveat_to_string(caveat: GLConfigCaveat | null): string | null;
+        function gl_config_caveat_to_string(caveat: GLConfigCaveat): string | null;
         /**
          * @param surface_type the {@link GstGL.GLConfigSurfaceType}
          * @returns a string version of `caveat` or `null` if `surface_type` does not                      exist.
          * @since 1.20
          */
-        function gl_config_surface_type_to_string(surface_type: GLConfigSurfaceType | null): string | null;
+        function gl_config_surface_type_to_string(surface_type: GLConfigSurfaceType): string | null;
         /**
          * @returns the quark used for {@link GstGL.GLContext} in {@link GLib.Error}'s
          */
@@ -787,20 +787,20 @@ declare module 'gi://GstGL?version=1.0' {
          * @returns Whether `format` is supported by `context` based on the OpenGL API,          version, or available OpenGL extension/s.
          * @since 1.16
          */
-        function gl_format_is_supported(context: GLContext, format: GLFormat | null): boolean;
+        function gl_format_is_supported(context: GLContext, format: GLFormat): boolean;
         /**
          * @param gl_format the {@link GstGL.GLFormat}
          * @returns the number of components in a {@link GstGL.GLFormat}
          * @since 1.24
          */
-        function gl_format_n_components(gl_format: GLFormat | null): number;
+        function gl_format_n_components(gl_format: GLFormat): number;
         /**
          * Get the unsized format and type from `format` for usage in glReadPixels,
          * glTex{Sub}Image*, glTexImage* and similar functions.
          * @param format the sized internal {@link GstGL.GLFormat}
          * @since 1.16
          */
-        function gl_format_type_from_sized_gl_format(format: GLFormat | null): [GLFormat, number];
+        function gl_format_type_from_sized_gl_format(format: GLFormat): [GLFormat, number];
         /**
          * @param format the OpenGL format, `GL_RGBA`, `GL_LUMINANCE`, etc
          * @param type the OpenGL type, `GL_UNSIGNED_BYTE`, `GL_FLOAT`, etc
@@ -889,7 +889,7 @@ declare module 'gi://GstGL?version=1.0' {
          * @param platform a {@link GstGL.GLPlatform} to stringify
          * @returns A space separated string of the OpenGL platforms enabled in `platform`
          */
-        function gl_platform_to_string(platform: GLPlatform | null): string;
+        function gl_platform_to_string(platform: GLPlatform): string;
         /**
          * Performs a GST_QUERY_CONTEXT query of type "gst.gl.local_context" on all
          * `GstPads` in `element` of `direction` for the local OpenGL context used by
@@ -901,7 +901,7 @@ declare module 'gi://GstGL?version=1.0' {
          */
         function gl_query_local_gl_context(
             element: Gst.Element,
-            direction: Gst.PadDirection | null,
+            direction: Gst.PadDirection,
             context_ptr: GLContext,
         ): [boolean, GLContext];
         /**
@@ -955,17 +955,17 @@ declare module 'gi://GstGL?version=1.0' {
          * @param target a {@link GstGL.GLTextureTarget}
          * @returns a string representing the `GstBufferPoolOption` specified by `target`
          */
-        function gl_texture_target_to_buffer_pool_option(target: GLTextureTarget | null): string | null;
+        function gl_texture_target_to_buffer_pool_option(target: GLTextureTarget): string | null;
         /**
          * @param target a {@link GstGL.GLTextureTarget}
          * @returns the OpenGL value for binding the `target` with glBindTexture() and          similar functions or 0
          */
-        function gl_texture_target_to_gl(target: GLTextureTarget | null): number;
+        function gl_texture_target_to_gl(target: GLTextureTarget): number;
         /**
          * @param target a {@link GstGL.GLTextureTarget}
          * @returns the stringified version of `target` or `null`
          */
-        function gl_texture_target_to_string(target: GLTextureTarget | null): string | null;
+        function gl_texture_target_to_string(target: GLTextureTarget): string | null;
         /**
          * See `gst_gl_value_set_texture_target_from_mask()` for what entails a mask
          * @param value an initialized {@link GObject.Value} of type G_TYPE_STRING
@@ -977,7 +977,7 @@ declare module 'gi://GstGL?version=1.0' {
          * @param target a {@link GstGL.GLTextureTarget}'s
          * @returns whether the `target` could be set on `value`
          */
-        function gl_value_set_texture_target(value: GObject.Value | any, target: GLTextureTarget | null): boolean;
+        function gl_value_set_texture_target(value: GObject.Value | any, target: GLTextureTarget): boolean;
         /**
          * A mask is a bitwise OR of (1 << target) where target is a valid
          * {@link GstGL.GLTextureTarget}
@@ -987,7 +987,7 @@ declare module 'gi://GstGL?version=1.0' {
          */
         function gl_value_set_texture_target_from_mask(
             value: GObject.Value | any,
-            target_mask: GLTextureTarget | null,
+            target_mask: GLTextureTarget,
         ): boolean;
         /**
          * @param gl_api the {@link GstGL.GLAPI}
@@ -995,7 +995,7 @@ declare module 'gi://GstGL?version=1.0' {
          * @param min the minor GL version
          * @returns The minimum supported {@link GstGL.GLSLVersion} available for `gl_api`, `maj` and `min`
          */
-        function gl_version_to_glsl_version(gl_api: GLAPI | null, maj: number, min: number): GLSLVersion;
+        function gl_version_to_glsl_version(gl_api: GLAPI, maj: number, min: number): GLSLVersion;
         /**
          * Calculates the swizzle indices for `video_format` and `gl_format` in order to
          * access a texture such that accessing a texel from a texture through the swizzle
@@ -1011,7 +1011,7 @@ declare module 'gi://GstGL?version=1.0' {
          * @returns whether valid swizzle indices could be found
          * @since 1.24
          */
-        function gl_video_format_swizzle(video_format: GstVideo.VideoFormat | null): [boolean, number[]];
+        function gl_video_format_swizzle(video_format: GstVideo.VideoFormat): [boolean, number[]];
         /**
          * @returns the quark used for {@link GstGL.GLWindow} in {@link GLib.Error}'s
          */
@@ -1029,7 +1029,7 @@ declare module 'gi://GstGL?version=1.0' {
          * @param profile a {@link GstGL.GLSLProfile}
          * @returns the name for `profile` or `null` on error
          */
-        function glsl_profile_to_string(profile: GLSLProfile | null): string | null;
+        function glsl_profile_to_string(profile: GLSLProfile): string | null;
         /**
          * Note: this function first searches the first 1 kilobytes for a `{@link Gst.version}`
          * preprocessor directive and then executes `gst_glsl_version_profile_from_string()`.
@@ -1054,15 +1054,12 @@ declare module 'gi://GstGL?version=1.0' {
          * @param profile a {@link GstGL.GLSLVersion}
          * @returns the combined GLSL `{@link Gst.version}` string for `version` and `profile`
          */
-        function glsl_version_profile_to_string(
-            version: GLSLVersion | null,
-            profile: GLSLProfile | null,
-        ): string | null;
+        function glsl_version_profile_to_string(version: GLSLVersion, profile: GLSLProfile): string | null;
         /**
          * @param version a {@link GstGL.GLSLVersion}
          * @returns the name of `version` or `null` on error
          */
-        function glsl_version_to_string(version: GLSLVersion | null): string | null;
+        function glsl_version_to_string(version: GLSLVersion): string | null;
         /**
          * @param mem a {@link Gst.Memory}
          * @returns whether the memory at `mem` is a {@link GstGL.GLBaseMemory}
@@ -2196,7 +2193,7 @@ declare module 'gi://GstGL?version=1.0' {
 
             static new_wrapped(
                 display: GLDisplay,
-                handle: never,
+                handle: bigint | number,
                 context_type: GLPlatform,
                 available_apis: GLAPI,
             ): GLContext;
@@ -2246,7 +2243,7 @@ declare module 'gi://GstGL?version=1.0' {
             /**
              * @param context_type a {@link GstGL.GLPlatform} specifying the type of context to retrieve
              */
-            static get_current_gl_context(context_type: GLPlatform): never | null;
+            static get_current_gl_context(context_type: GLPlatform): (bigint | number) | null;
             /**
              * Attempts to use the `context_type` specific GetProcAddress implementations
              * to retrieve `name`.
@@ -2317,7 +2314,7 @@ declare module 'gi://GstGL?version=1.0' {
              * Gets the backing OpenGL context used by `context`.
              * @virtual
              */
-            vfunc_get_gl_context(): never;
+            vfunc_get_gl_context(): bigint | number;
             /**
              * Gets the OpenGL platform that used by `context`.
              * @virtual
@@ -2392,7 +2389,7 @@ declare module 'gi://GstGL?version=1.0' {
              * @param min minor version required
              * @returns whether OpenGL context implements the required api and specified version.
              */
-            check_gl_version(api: GLAPI | null, maj: number, min: number): boolean;
+            check_gl_version(api: GLAPI, maj: number, min: number): boolean;
             /**
              * Unbind the current framebuffer
              */
@@ -2465,7 +2462,7 @@ declare module 'gi://GstGL?version=1.0' {
              * Gets the backing OpenGL context used by `context`.
              * @returns The platform specific backing OpenGL context
              */
-            get_gl_context(): never;
+            get_gl_context(): number;
             /**
              * Gets the OpenGL platform that used by `context`.
              * @returns The platform specific backing OpenGL context
@@ -2555,19 +2552,19 @@ declare module 'gi://GstGL?version=1.0' {
              * @param profile a {@link GstGL.GLSLProfile}
              * @returns Whether `context` supports the combination of `version` with `profile`
              */
-            supports_glsl_profile_version(version: GLSLVersion | null, profile: GLSLProfile | null): boolean;
+            supports_glsl_profile_version(version: GLSLVersion, profile: GLSLProfile): boolean;
             /**
              * @param version a {@link GstGL.GLSLVersion}
              * @param profile a {@link GstGL.GLSLProfile}
              * @returns whether `context` supports the 'precision' specifier in GLSL shaders
              */
-            supports_precision(version: GLSLVersion | null, profile: GLSLProfile | null): boolean;
+            supports_precision(version: GLSLVersion, profile: GLSLProfile): boolean;
             /**
              * @param version a {@link GstGL.GLSLVersion}
              * @param profile a {@link GstGL.GLSLProfile}
              * @returns whether `context` supports the 'precision highp' specifier in GLSL shaders
              */
-            supports_precision_highp(version: GLSLVersion | null, profile: GLSLProfile | null): boolean;
+            supports_precision_highp(version: GLSLVersion, profile: GLSLProfile): boolean;
             /**
              * Swap the front and back buffers on the window attached to `context`.
              * This will display the frame on the next refresh cycle.
@@ -2677,7 +2674,7 @@ declare module 'gi://GstGL?version=1.0' {
             /**
              * @virtual
              */
-            vfunc_get_handle(): never;
+            vfunc_get_handle(): bigint | number;
 
             // Methods
 
@@ -2711,7 +2708,7 @@ declare module 'gi://GstGL?version=1.0' {
              * API supported by a {@link GstGL.GLContext}.
              * @param gl_api a {@link GstGL.GLAPI} to filter with
              */
-            filter_gl_api(gl_api: GLAPI | null): void;
+            filter_gl_api(gl_api: GLAPI): void;
             /**
              * Execute `compare_func` over the list of windows stored by `display`.  The
              * first argument to `compare_func` is the {@link GstGL.GLWindow} being checked and the
@@ -2735,7 +2732,7 @@ declare module 'gi://GstGL?version=1.0' {
             /**
              * @returns the native handle for the display
              */
-            get_handle(): never;
+            get_handle(): number;
             /**
              * @returns the {@link GstGL.GLDisplayType} of `display`
              */
@@ -3560,7 +3557,7 @@ declare module 'gi://GstGL?version=1.0' {
              * @param profile a {@link GstGL.GLSLProfile}
              * @param str a GLSL shader string
              */
-            set_strings(version: GLSLVersion | null, profile: GLSLProfile | null, str: string[]): boolean;
+            set_strings(version: GLSLVersion, profile: GLSLProfile, str: string[]): boolean;
         }
 
         namespace GLShader {
@@ -4022,7 +4019,7 @@ declare module 'gi://GstGL?version=1.0' {
              * @param othercaps a {@link Gst.Caps} to fixate
              * @returns the fixated caps
              */
-            fixate_caps(direction: Gst.PadDirection | null, caps: Gst.Caps, othercaps: Gst.Caps): Gst.Caps;
+            fixate_caps(direction: Gst.PadDirection, caps: Gst.Caps, othercaps: Gst.Caps): Gst.Caps;
             get_caps(): [Gst.Caps | null, Gst.Caps | null];
             /**
              * Uploads `buffer` using the transformation specified by
@@ -4054,12 +4051,7 @@ declare module 'gi://GstGL?version=1.0' {
              * @param caps
              * @param filter
              */
-            transform_caps(
-                context: GLContext,
-                direction: Gst.PadDirection | null,
-                caps: Gst.Caps,
-                filter: Gst.Caps,
-            ): Gst.Caps;
+            transform_caps(context: GLContext, direction: Gst.PadDirection, caps: Gst.Caps, filter: Gst.Caps): Gst.Caps;
         }
 
         namespace GLViewConvert {
@@ -4179,7 +4171,7 @@ declare module 'gi://GstGL?version=1.0' {
              * @param othercaps the {@link Gst.Caps} to fixate
              * @returns the fixated {@link Gst.Caps}
              */
-            fixate_caps(direction: Gst.PadDirection | null, caps: Gst.Caps, othercaps: Gst.Caps): Gst.Caps;
+            fixate_caps(direction: Gst.PadDirection, caps: Gst.Caps, othercaps: Gst.Caps): Gst.Caps;
             /**
              * Retrieve the processed output buffer placing the output in `outbuf_ptr`.
              * @returns a {@link Gst.FlowReturn}
@@ -4222,7 +4214,7 @@ declare module 'gi://GstGL?version=1.0' {
              * @param filter a set of filter {@link Gst.Caps}
              * @returns the converted {@link Gst.Caps}
              */
-            transform_caps(direction: Gst.PadDirection | null, caps: Gst.Caps, filter: Gst.Caps): Gst.Caps;
+            transform_caps(direction: Gst.PadDirection, caps: Gst.Caps, filter: Gst.Caps): Gst.Caps;
         }
 
         namespace GLWindow {
@@ -4335,14 +4327,14 @@ declare module 'gi://GstGL?version=1.0' {
              * Gets the current windowing system display connection
              * @virtual
              */
-            vfunc_get_display(): never;
+            vfunc_get_display(): bigint | number;
             /**
              * Gets the current window handle that this {@link GstGL.GLWindow} is
              *                     rendering into.  This may return a different value to
              *                     what is passed into `set_window_handle`
              * @virtual
              */
-            vfunc_get_window_handle(): never;
+            vfunc_get_window_handle(): bigint | number;
             /**
              * Tell a `window` that it should handle events from the window system. These
              * events are forwarded upstream as navigation events. In some window systems
@@ -4416,7 +4408,7 @@ declare module 'gi://GstGL?version=1.0' {
              * @param handle handle to the window
              * @virtual
              */
-            vfunc_set_window_handle(handle: never): void;
+            vfunc_set_window_handle(handle: number): void;
             /**
              * Present the window to the screen.
              * @virtual
@@ -4441,12 +4433,12 @@ declare module 'gi://GstGL?version=1.0' {
             /**
              * @returns the windowing system display handle for this `window`
              */
-            get_display(): never;
+            get_display(): number;
             get_surface_dimensions(): [number, number];
             /**
              * @returns the window handle we are currently rendering into
              */
-            get_window_handle(): never;
+            get_window_handle(): number;
             /**
              * Tell a `window` that it should handle events from the window system. These
              * events are forwarded upstream as navigation events. In some window systems
@@ -4549,7 +4541,7 @@ declare module 'gi://GstGL?version=1.0' {
              * require this to be called with a valid handle before drawing can commence.
              * @param handle handle to the window
              */
-            set_window_handle(handle: never): void;
+            set_window_handle(handle: bigint | number): void;
             /**
              * Present the window to the screen.
              */
@@ -4928,8 +4920,8 @@ declare module 'gi://GstGL?version=1.0' {
              */
             copy_into(
                 tex_id: number,
-                target: GLTextureTarget | null,
-                tex_format: GLFormat | null,
+                target: GLTextureTarget,
+                tex_format: GLFormat,
                 width: number,
                 height: number,
             ): boolean;
@@ -4945,8 +4937,8 @@ declare module 'gi://GstGL?version=1.0' {
              */
             copy_teximage(
                 tex_id: number,
-                out_target: GLTextureTarget | null,
-                out_tex_format: GLFormat | null,
+                out_target: GLTextureTarget,
+                out_tex_format: GLFormat,
                 out_width: number,
                 out_height: number,
             ): boolean;
@@ -4989,8 +4981,8 @@ declare module 'gi://GstGL?version=1.0' {
                 allocator: Gst.Allocator,
                 parent: Gst.Memory | null,
                 context: GLContext,
-                target: GLTextureTarget | null,
-                tex_format: GLFormat | null,
+                target: GLTextureTarget,
+                tex_format: GLFormat,
                 params: Gst.AllocationParams | null,
                 info: GstVideo.VideoInfo,
                 plane: number,
@@ -5062,8 +5054,8 @@ declare module 'gi://GstGL?version=1.0' {
              */
             copy_into_texture(
                 tex_id: number,
-                target: GLTextureTarget | null,
-                tex_format: GLFormat | null,
+                target: GLTextureTarget,
+                tex_format: GLFormat,
                 width: number,
                 height: number,
                 stride: number,
@@ -5145,7 +5137,7 @@ declare module 'gi://GstGL?version=1.0' {
              * @param context a {@link GstGL.GLContext}
              * @param query_type the {@link GstGL.GLQueryType}
              */
-            init(context: GLContext, query_type: GLQueryType | null): void;
+            init(context: GLContext, query_type: GLQueryType): void;
             /**
              * @returns the result of the query
              */

@@ -107,7 +107,7 @@ declare module 'gi://GstGLEGL?version=1.0' {
             fd: number,
             offset: bigint | number,
             in_info: GstVideo.VideoInfo,
-            target: GstGL.GLTextureTarget | null,
+            target: GstGL.GLTextureTarget,
         ): EGLImage | null;
         /**
          * Creates an EGL image that imports the dmabuf FD. The dmabuf data is passed
@@ -131,7 +131,7 @@ declare module 'gi://GstGLEGL?version=1.0' {
             fd: number,
             offset: bigint | number,
             in_info_dma: GstVideo.VideoInfoDmaDrm,
-            target: GstGL.GLTextureTarget | null,
+            target: GstGL.GLTextureTarget,
         ): EGLImage | null;
         /**
          * @param context a {@link GstGL.GLContext} (must be an EGL context)
@@ -142,7 +142,7 @@ declare module 'gi://GstGLEGL?version=1.0' {
         function egl_image_from_texture(
             context: GstGL.GLContext,
             gl_mem: GstGL.GLMemory,
-            attribs: never,
+            attribs: bigint | number,
         ): EGLImage | null;
         /**
          * Initializes the GL Memory allocator. It is safe to call this function
@@ -241,7 +241,7 @@ declare module 'gi://GstGLEGL?version=1.0' {
              * @param type a {@link GstGL.GLDisplayType}
              * @param display pointer to a display (or 0)
              */
-            static get_from_native(type: GstGL.GLDisplayType, display: never): any | null;
+            static get_from_native(type: GstGL.GLDisplayType, display: bigint | number): any | null;
         }
 
         namespace GLDisplayEGLDevice {
@@ -496,7 +496,11 @@ declare module 'gi://GstGLEGL?version=1.0' {
              * @param gl_mem a {@link GstGL.GLMemory}
              * @param attribs additional attributes to add to the `eglCreateImage`() call.
              */
-            static from_texture(context: GstGL.GLContext, gl_mem: GstGL.GLMemory, attribs: never): EGLImage | null;
+            static from_texture(
+                context: GstGL.GLContext,
+                gl_mem: GstGL.GLMemory,
+                attribs: bigint | number,
+            ): EGLImage | null;
 
             // Methods
 

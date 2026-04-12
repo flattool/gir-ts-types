@@ -3003,7 +3003,7 @@ declare module 'gi://Gst?version=1.0' {
          * @param details type of {@link Gst.DebugGraphDetails} to use
          * @returns a string containing the pipeline in graphviz dot format.
          */
-        function debug_bin_to_dot_data(bin: Bin, details: DebugGraphDetails | null): string;
+        function debug_bin_to_dot_data(bin: Bin, details: DebugGraphDetails): string;
         /**
          * To aid debugging applications one can use this method to write out the whole
          * network of gstreamer elements that form the pipeline into a dot file.
@@ -3016,7 +3016,7 @@ declare module 'gi://Gst?version=1.0' {
          * @param details type of {@link Gst.DebugGraphDetails} to use
          * @param file_name output base filename (e.g. "myplayer")
          */
-        function debug_bin_to_dot_file(bin: Bin, details: DebugGraphDetails | null, file_name: string): void;
+        function debug_bin_to_dot_file(bin: Bin, details: DebugGraphDetails, file_name: string): void;
         /**
          * This works like `gst_debug_bin_to_dot_file()`, but adds the current timestamp
          * to the filename, so that it can be used to take multiple snapshots.
@@ -3024,7 +3024,7 @@ declare module 'gi://Gst?version=1.0' {
          * @param details type of {@link Gst.DebugGraphDetails} to use
          * @param file_name output base filename (e.g. "myplayer")
          */
-        function debug_bin_to_dot_file_with_ts(bin: Bin, details: DebugGraphDetails | null, file_name: string): void;
+        function debug_bin_to_dot_file_with_ts(bin: Bin, details: DebugGraphDetails, file_name: string): void;
         /**
          * Constructs a string that can be used for getting the desired color in color
          * terminals.
@@ -3066,7 +3066,7 @@ declare module 'gi://Gst?version=1.0' {
          * @returns a stack trace, if libunwind or glibc backtrace are present, else `null`.
          * @since 1.12
          */
-        function debug_get_stack_trace(flags: StackTraceFlags | null): string | null;
+        function debug_get_stack_trace(flags: StackTraceFlags): string | null;
         /**
          * Checks if debugging output is activated.
          * @returns `true`, if debugging is activated
@@ -3082,7 +3082,7 @@ declare module 'gi://Gst?version=1.0' {
          * @param level the level to get the name for
          * @returns the name
          */
-        function debug_level_get_name(level: DebugLevel | null): string;
+        function debug_level_get_name(level: DebugLevel): string;
         /**
          * The default logging handler used by GStreamer. Logging functions get called
          * whenever a macro like GST_DEBUG or similar is used. By default this function
@@ -3104,7 +3104,7 @@ declare module 'gi://Gst?version=1.0' {
          */
         function debug_log_default(
             category: DebugCategory,
-            level: DebugLevel | null,
+            level: DebugLevel,
             file: string,
             _function: string,
             line: number,
@@ -3129,7 +3129,7 @@ declare module 'gi://Gst?version=1.0' {
          */
         function debug_log_get_line(
             category: DebugCategory,
-            level: DebugLevel | null,
+            level: DebugLevel,
             file: string,
             _function: string,
             line: number,
@@ -3149,7 +3149,7 @@ declare module 'gi://Gst?version=1.0' {
          */
         function debug_log_id_literal(
             category: DebugCategory,
-            level: DebugLevel | null,
+            level: DebugLevel,
             file: string,
             _function: string,
             line: number,
@@ -3169,7 +3169,7 @@ declare module 'gi://Gst?version=1.0' {
          */
         function debug_log_literal(
             category: DebugCategory,
-            level: DebugLevel | null,
+            level: DebugLevel,
             file: string,
             _function: string,
             line: number,
@@ -3222,7 +3222,7 @@ declare module 'gi://Gst?version=1.0' {
          * @param mode The coloring mode for debug output. See `GstDebugColorMode`.
          * @since 1.2
          */
-        function debug_set_color_mode(mode: DebugColorMode | null): void;
+        function debug_set_color_mode(mode: DebugColorMode): void;
         /**
          * Changes the coloring mode for debug output.
          *
@@ -3247,14 +3247,14 @@ declare module 'gi://Gst?version=1.0' {
          * This function may be called before `gst_init()`.
          * @param level level to set
          */
-        function debug_set_default_threshold(level: DebugLevel | null): void;
+        function debug_set_default_threshold(level: DebugLevel): void;
         /**
          * Sets all categories which match the given glob style pattern to the given
          * level.
          * @param name name of the categories to set
          * @param level level to set them to
          */
-        function debug_set_threshold_for_name(name: string, level: DebugLevel | null): void;
+        function debug_set_threshold_for_name(name: string, level: DebugLevel): void;
         /**
          * Sets the debug logging wanted in the same form as with the GST_DEBUG
          * environment variable. You can use wildcards such as `*`, but note that
@@ -3300,19 +3300,19 @@ declare module 'gi://Gst?version=1.0' {
          * @param type a {@link Gst.EventType}
          * @returns a {@link Gst.EventTypeFlags}.
          */
-        function event_type_get_flags(type: EventType | null): EventTypeFlags;
+        function event_type_get_flags(type: EventType): EventTypeFlags;
         /**
          * Get a printable name for the given event type. Do not modify or free.
          * @param type the event type
          * @returns a reference to the static name of the event.
          */
-        function event_type_get_name(type: EventType | null): string;
+        function event_type_get_name(type: EventType): string;
         /**
          * Get the unique quark for the given event type.
          * @param type the event type
          * @returns the quark associated with the event type
          */
-        function event_type_to_quark(type: EventType | null): GLib.Quark;
+        function event_type_to_quark(type: EventType): GLib.Quark;
         /**
          * Converts the {@link Gst.EventType} to an unsigned integer that
          * represents the ordering of sticky events when re-sending them.
@@ -3321,7 +3321,7 @@ declare module 'gi://Gst?version=1.0' {
          * @returns an unsigned integer
          * @since 1.22
          */
-        function event_type_to_sticky_ordering(type: EventType | null): number;
+        function event_type_to_sticky_ordering(type: EventType): number;
         /**
          * Similar to `g_filename_to_uri()`, but attempts to handle relative file paths
          * as well. Before converting `filename` into an URI, it will be prefixed by
@@ -3338,13 +3338,13 @@ declare module 'gi://Gst?version=1.0' {
          * @param ret a {@link Gst.FlowReturn} to get the name of.
          * @returns a static string with the name of the flow return.
          */
-        function flow_get_name(ret: FlowReturn | null): string;
+        function flow_get_name(ret: FlowReturn): string;
         /**
          * Get the unique quark for the given GstFlowReturn.
          * @param ret a {@link Gst.FlowReturn} to get the quark of.
          * @returns the quark associated with the flow return or 0 if an invalid return was specified.
          */
-        function flow_to_quark(ret: FlowReturn | null): GLib.Quark;
+        function flow_to_quark(ret: FlowReturn): GLib.Quark;
         /**
          * Return the format registered with the given nick.
          * @param nick The nick of the format
@@ -3356,13 +3356,13 @@ declare module 'gi://Gst?version=1.0' {
          * @param format The format to get details of
          * @returns The {@link Gst.FormatDefinition} for `format` or `null` on failure. MT safe.
          */
-        function format_get_details(format: Format | null): FormatDefinition | null;
+        function format_get_details(format: Format): FormatDefinition | null;
         /**
          * Get a printable name for the given format. Do not modify or free.
          * @param format a {@link Gst.Format}
          * @returns a reference to the static name of the format or `null` if the format is unknown.
          */
-        function format_get_name(format: Format | null): string | null;
+        function format_get_name(format: Format): string | null;
         /**
          * Iterate all the registered formats. The format definition is read
          * only.
@@ -3382,14 +3382,14 @@ declare module 'gi://Gst?version=1.0' {
          * @param format a {@link Gst.Format}
          * @returns the quark associated with the format or 0 if the format is unknown.
          */
-        function format_to_quark(format: Format | null): GLib.Quark;
+        function format_to_quark(format: Format): GLib.Quark;
         /**
          * See if the given format is inside the format array.
          * @param formats The format array to search
          * @param format the format to find
          * @returns `true` if the format is found inside the array
          */
-        function formats_contains(formats: Format[] | null, format: Format | null): boolean;
+        function formats_contains(formats: Format[], format: Format): boolean;
         /**
          * This helper is mostly helpful for plugins that need to
          * inspect the folder of the main executable to determine
@@ -3448,13 +3448,13 @@ declare module 'gi://Gst?version=1.0' {
          * @param type the message type
          * @returns a reference to the static name of the message.
          */
-        function message_type_get_name(type: MessageType | null): string;
+        function message_type_get_name(type: MessageType): string;
         /**
          * Get the unique quark for the given message type.
          * @param type the message type
          * @returns the quark associated with the message type
          */
-        function message_type_to_quark(type: MessageType | null): GLib.Quark;
+        function message_type_to_quark(type: MessageType): GLib.Quark;
         /**
          * @param api an API
          * @returns an array of tags as strings.
@@ -3564,7 +3564,7 @@ declare module 'gi://Gst?version=1.0' {
          * @param mode the pad mode
          * @returns short mnemonic for pad mode `mode`
          */
-        function pad_mode_get_name(mode: PadMode | null): string;
+        function pad_mode_get_name(mode: PadMode): string;
         /**
          * This function creates a GstArray GParamSpec for use by objects/elements
          * that want to expose properties of GstArray type. This function is
@@ -3583,7 +3583,7 @@ declare module 'gi://Gst?version=1.0' {
             nick: string,
             blurb: string,
             element_spec: GObject.ParamSpec,
-            flags: GObject.ParamFlags | null,
+            flags: GObject.ParamFlags,
         ): GObject.ParamSpec;
         /**
          * This function creates a fraction GParamSpec for use by objects/elements
@@ -3612,7 +3612,7 @@ declare module 'gi://Gst?version=1.0' {
             max_denom: number,
             default_num: number,
             default_denom: number,
-            flags: GObject.ParamFlags | null,
+            flags: GObject.ParamFlags,
         ): GObject.ParamSpec | null;
         function parent_buffer_meta_api_get_type(): GObject.GType;
         /**
@@ -3656,7 +3656,7 @@ declare module 'gi://Gst?version=1.0' {
             bin_description: string,
             ghost_unlinked_pads: boolean,
             context: ParseContext | null,
-            flags: ParseFlags | null,
+            flags: ParseFlags,
         ): Element;
         /**
          * Get the error quark used by the parsing subsystem.
@@ -3691,7 +3691,7 @@ declare module 'gi://Gst?version=1.0' {
         function parse_launch_full(
             pipeline_description: string,
             context: ParseContext | null,
-            flags: ParseFlags | null,
+            flags: ParseFlags,
         ): Element;
         /**
          * Create a new element based on command line syntax.
@@ -3710,7 +3710,7 @@ declare module 'gi://Gst?version=1.0' {
          * @param flags parsing options, or #GST_PARSE_FLAG_NONE
          * @returns a new element on success; on   failure, either `null` or a partially-constructed bin or element will be   returned and `error` will be set (unless you passed   #GST_PARSE_FLAG_FATAL_ERRORS in `flags`, then `null` will always be returned   on failure)
          */
-        function parse_launchv_full(argv: string[], context: ParseContext | null, flags: ParseFlags | null): Element;
+        function parse_launchv_full(argv: string[], context: ParseContext | null, flags: ParseFlags): Element;
         /**
          * Get the error quark.
          * @returns The error quark used in GError messages
@@ -3754,19 +3754,19 @@ declare module 'gi://Gst?version=1.0' {
          * @param type a {@link Gst.QueryType}
          * @returns a {@link Gst.QueryTypeFlags}.
          */
-        function query_type_get_flags(type: QueryType | null): QueryTypeFlags;
+        function query_type_get_flags(type: QueryType): QueryTypeFlags;
         /**
          * Get a printable name for the given query type. Do not modify or free.
          * @param type the query type
          * @returns a reference to the static name of the query.
          */
-        function query_type_get_name(type: QueryType | null): string;
+        function query_type_get_name(type: QueryType): string;
         /**
          * Get the unique quark for the given query type.
          * @param type the query type
          * @returns the quark associated with the query type
          */
-        function query_type_to_quark(type: QueryType | null): GLib.Quark;
+        function query_type_to_quark(type: QueryType): GLib.Quark;
         function reference_timestamp_meta_api_get_type(): GObject.GType;
         /**
          * Gets the global {@link Gst.MetaInfo} describing the {@link Gst.ReferenceTimestampMeta} meta.
@@ -3798,7 +3798,7 @@ declare module 'gi://Gst?version=1.0' {
          * @returns a string with the name of the state    result.
          * @since 1.14
          */
-        function state_change_get_name(transition: StateChange | null): string;
+        function state_change_get_name(transition: StateChange): string;
         function stream_error_quark(): GLib.Quark;
         /**
          * Get a descriptive string for a given {@link Gst.StreamType}
@@ -3806,7 +3806,7 @@ declare module 'gi://Gst?version=1.0' {
          * @returns A string describing the stream type
          * @since 1.10
          */
-        function stream_type_get_name(stype: StreamType | null): string;
+        function stream_type_get_name(stype: StreamType): string;
         /**
          * Atomically modifies a pointer to point to a new structure.
          * The {@link Gst.Structure} `oldstr_ptr` is pointing to is freed and
@@ -3889,7 +3889,7 @@ declare module 'gi://Gst?version=1.0' {
          * @param type a {@link Gst.TocEntryType}.
          * @returns Returns a human-readable string for `type`. This string is    only for debugging purpose and should not be displayed in a user    interface.
          */
-        function toc_entry_type_get_nick(type: TocEntryType | null): string;
+        function toc_entry_type_get_nick(type: TocEntryType): string;
         /**
          * Get a list of all active tracer objects owned by the tracing framework for
          * the entirety of the run-time of the process or till `gst_deinit()` is called.
@@ -3949,7 +3949,7 @@ declare module 'gi://Gst?version=1.0' {
          * @param flags a set of {@link Gst.PluginAPIFlags} to further inform cache generation.
          * @since 1.18
          */
-        function type_mark_as_plugin_api(type: GObject.GType, flags: PluginAPIFlags | null): void;
+        function type_mark_as_plugin_api(type: GObject.GType, flags: PluginAPIFlags): void;
         /**
          * Forces GStreamer to re-scan its plugin paths and update the default
          * plugin registry.
@@ -4057,7 +4057,7 @@ declare module 'gi://Gst?version=1.0' {
          * @param protocol Protocol that should be checked for (e.g. "http" or "smb")
          * @returns `true`
          */
-        function uri_protocol_is_supported(type: URIType | null, protocol: string): boolean;
+        function uri_protocol_is_supported(type: URIType, protocol: string): boolean;
         /**
          * Tests if the given string is a valid protocol identifier. Protocols
          * must consist of alphanumeric characters, '+', '-' and '.' and must
@@ -4087,7 +4087,7 @@ declare module 'gi://Gst?version=1.0' {
             num_elements: number,
             element_size: bigint | number,
             search_func: GLib.CompareDataFunc,
-            mode: SearchMode | null,
+            mode: SearchMode,
             search_data?: any | null,
         ): any | null;
         /**
@@ -7511,7 +7511,7 @@ declare module 'gi://Gst?version=1.0' {
              * @param direction whether to look for an unlinked source or sink pad
              * @returns unlinked pad of the given direction.
              */
-            find_unlinked_pad(direction: PadDirection | null): Pad | null;
+            find_unlinked_pad(direction: PadDirection): Pad | null;
             /**
              * Looks for an element inside the bin that implements the given
              * interface. If such an element is found, it returns the element.
@@ -7623,7 +7623,7 @@ declare module 'gi://Gst?version=1.0' {
              * not be propagated to the bin.
              * @param flags the {@link Gst.ElementFlags} to suppress
              */
-            set_suppressed_flags(flags: ElementFlags | null): void;
+            set_suppressed_flags(flags: ElementFlags): void;
             /**
              * Synchronizes the state of every child of `bin` with the state
              * of `bin`. See also `gst_element_sync_state_with_parent()`.
@@ -7778,7 +7778,7 @@ declare module 'gi://Gst?version=1.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -7819,7 +7819,7 @@ declare module 'gi://Gst?version=1.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -8990,7 +8990,7 @@ declare module 'gi://Gst?version=1.0' {
              * @param timeout the poll timeout, as a {@link Gst.ClockTime}, or #GST_CLOCK_TIME_NONE to poll indefinitely.
              * @returns the message that was received,     or `null` if the poll timed out.
              */
-            poll(events: MessageType | null, timeout: ClockTime): Message | null;
+            poll(events: MessageType, timeout: ClockTime): Message | null;
             /**
              * Gets a message from the bus.
              * @returns the {@link Gst.Message} that is on the     bus, or `null` if the bus is empty.
@@ -9005,7 +9005,7 @@ declare module 'gi://Gst?version=1.0' {
              * @param types message types to take into account
              * @returns the next {@link Gst.Message} matching     `type` that is on the bus, or `null` if the bus is empty or there     is no message matching `type`.
              */
-            pop_filtered(types: MessageType | null): Message | null;
+            pop_filtered(types: MessageType): Message | null;
             /**
              * Posts a message on the given bus. Ownership of the message
              * is taken by the bus.
@@ -9072,7 +9072,7 @@ declare module 'gi://Gst?version=1.0' {
              * @param types message types to take into account, {@link Gst.MessageType.ANY} for any type
              * @returns a {@link Gst.Message} matching the     filter in `types`, or `null` if no matching message was found on     the bus until the timeout expired.
              */
-            timed_pop_filtered(timeout: ClockTime, types: MessageType | null): Message | null;
+            timed_pop_filtered(timeout: ClockTime, types: MessageType): Message | null;
         }
 
         namespace Clock {
@@ -11250,7 +11250,7 @@ declare module 'gi://Gst?version=1.0' {
              * @param transition the requested transition
              * @returns the {@link Gst.StateChangeReturn} of the state transition.
              */
-            change_state(transition: StateChange | null): StateChangeReturn;
+            change_state(transition: StateChange): StateChangeReturn;
             /**
              * Commit the state change of the element and proceed to the next
              * pending state if any. This function is used
@@ -11268,7 +11268,7 @@ declare module 'gi://Gst?version=1.0' {
              * @param ret The previous state return value
              * @returns The result of the commit state change. MT safe.
              */
-            continue_state(ret: StateChangeReturn | null): StateChangeReturn;
+            continue_state(ret: StateChangeReturn): StateChangeReturn;
             /**
              * Creates a pad for each pad template that is always available.
              * This function is only useful during object initialization of
@@ -11590,7 +11590,7 @@ declare module 'gi://Gst?version=1.0' {
                 srcpadname: string | null,
                 dest: Element,
                 destpadname: string | null,
-                flags: PadLinkCheck | null,
+                flags: PadLinkCheck,
             ): boolean;
             /**
              * Brings the element to the lost state. The current state of the
@@ -11628,7 +11628,7 @@ declare module 'gi://Gst?version=1.0' {
              * @param line the source code line where the error was generated
              */
             message_full(
-                type: MessageType | null,
+                type: MessageType,
                 domain: GLib.Quark,
                 code: number,
                 text: string | null,
@@ -11653,7 +11653,7 @@ declare module 'gi://Gst?version=1.0' {
              * @param structure optional details structure
              */
             message_full_with_details(
-                type: MessageType | null,
+                type: MessageType,
                 domain: GLib.Quark,
                 code: number,
                 text: string | null,
@@ -11709,11 +11709,7 @@ declare module 'gi://Gst?version=1.0' {
              * @param dest_format the {@link Gst.Format} to convert to.
              * @returns `true` if the query could be performed.
              */
-            query_convert(
-                src_format: Format | null,
-                src_val: bigint | number,
-                dest_format: Format | null,
-            ): [boolean, number];
+            query_convert(src_format: Format, src_val: bigint | number, dest_format: Format): [boolean, number];
             /**
              * Queries an element (usually top-level pipeline or playbin element) for the
              * total stream duration in nanoseconds. This query will only work once the
@@ -11726,7 +11722,7 @@ declare module 'gi://Gst?version=1.0' {
              * @param format the {@link Gst.Format} requested
              * @returns `true` if the query could be performed.
              */
-            query_duration(format: Format | null): [boolean, number];
+            query_duration(format: Format): [boolean, number];
             /**
              * Queries an element (usually top-level pipeline or playbin element) for the
              * stream position in nanoseconds. This will be a value between 0 and the
@@ -11740,7 +11736,7 @@ declare module 'gi://Gst?version=1.0' {
              * @param format the {@link Gst.Format} requested
              * @returns `true` if the query could be performed.
              */
-            query_position(format: Format | null): [boolean, number];
+            query_position(format: Format): [boolean, number];
             /**
              * Makes the element free the previously requested pad as obtained
              * with `gst_element_request_pad()`.
@@ -11824,11 +11820,11 @@ declare module 'gi://Gst?version=1.0' {
              */
             seek(
                 rate: number,
-                format: Format | null,
-                flags: SeekFlags | null,
-                start_type: SeekType | null,
+                format: Format,
+                flags: SeekFlags,
+                start_type: SeekType,
                 start: bigint | number,
-                stop_type: SeekType | null,
+                stop_type: SeekType,
                 stop: bigint | number,
             ): boolean;
             /**
@@ -11851,7 +11847,7 @@ declare module 'gi://Gst?version=1.0' {
              * @param seek_pos position to seek to (relative to the start); if you are doing            a seek in #GST_FORMAT_TIME this value is in nanoseconds -            multiply with #GST_SECOND to convert seconds to nanoseconds or            with #GST_MSECOND to convert milliseconds to nanoseconds.
              * @returns `true` if the seek operation succeeded. Flushing seeks will trigger a preroll, which will emit {@link Gst.MessageType.ASYNC_DONE}.
              */
-            seek_simple(format: Format | null, seek_flags: SeekFlags | null, seek_pos: bigint | number): boolean;
+            seek_simple(format: Format, seek_flags: SeekFlags, seek_pos: bigint | number): boolean;
             /**
              * Sends an event to an element. If the element doesn't implement an
              * event handler, the event will be pushed on a random linked sink pad for
@@ -11941,7 +11937,7 @@ declare module 'gi://Gst?version=1.0' {
              * @param state the element's new {@link Gst.State}.
              * @returns Result of the state change using {@link Gst.StateChangeReturn}. MT safe.
              */
-            set_state(state: State | null): StateChangeReturn;
+            set_state(state: State): StateChangeReturn;
             /**
              * Tries to change the state of the element to the same as its parent.
              * If this function returns `false`, the state of element is undefined.
@@ -13164,7 +13160,7 @@ declare module 'gi://Gst?version=1.0' {
              * @param active whether or not the pad should be active.
              * @returns `true` if the operation was successful. MT safe.
              */
-            activate_mode(mode: PadMode | null, active: boolean): boolean;
+            activate_mode(mode: PadMode, active: boolean): boolean;
             /**
              * Be notified of different states of pads. The provided callback is called for
              * every state that matches `mask`.
@@ -13179,7 +13175,7 @@ declare module 'gi://Gst?version=1.0' {
              * @param callback {@link Gst.PadProbeCallback} that will be called with notifications of           the pad state
              * @returns an id or 0 if no probe is pending. The id can be used to remove the probe with `gst_pad_remove_probe()`. When using GST_PAD_PROBE_TYPE_IDLE it can happen that the probe can be run immediately and if the probe returns GST_PAD_PROBE_REMOVE this functions returns 0. MT safe.
              */
-            add_probe(mask: PadProbeType | null, callback: PadProbeCallback): number;
+            add_probe(mask: PadProbeType, callback: PadProbeCallback): number;
             /**
              * Checks if the source pad and the sink pad are compatible so they can be
              * linked.
@@ -13386,7 +13382,7 @@ declare module 'gi://Gst?version=1.0' {
              * @param idx the index of the event
              * @returns a {@link Gst.Event} of type `event_type` or `null` when no event of `event_type` was on `pad`. Unref after usage.
              */
-            get_sticky_event(event_type: EventType | null, idx: number): Event | null;
+            get_sticky_event(event_type: EventType, idx: number): Event | null;
             /**
              * Returns the current {@link Gst.Stream} for the `pad`, or `null` if none has been
              * set yet, i.e. the pad has not received a stream-start event yet.
@@ -13484,7 +13480,7 @@ declare module 'gi://Gst?version=1.0' {
              * @param flags the checks to validate when linking
              * @returns A result code indicating if the connection worked or          what went wrong.
              */
-            link_full(sinkpad: Pad, flags: PadLinkCheck | null): PadLinkReturn;
+            link_full(sinkpad: Pad, flags: PadLinkCheck): PadLinkReturn;
             /**
              * Links `src` to `sink`, creating any {@link Gst.GhostPad}'s in between as necessary.
              *
@@ -13513,7 +13509,7 @@ declare module 'gi://Gst?version=1.0' {
              * @param flags some {@link Gst.PadLinkCheck} flags
              * @returns whether the link succeeded.
              */
-            link_maybe_ghosting_full(sink: Pad, flags: PadLinkCheck | null): boolean;
+            link_maybe_ghosting_full(sink: Pad, flags: PadLinkCheck): boolean;
             /**
              * Mark a pad for needing reconfiguration. The next call to
              * `gst_pad_check_reconfigure()` will return `true` after this call.
@@ -13569,23 +13565,19 @@ declare module 'gi://Gst?version=1.0' {
              * @param dest_format the {@link Gst.Format} to convert to.
              * @returns `true` if the query could be performed.
              */
-            peer_query_convert(
-                src_format: Format | null,
-                src_val: bigint | number,
-                dest_format: Format | null,
-            ): [boolean, number];
+            peer_query_convert(src_format: Format, src_val: bigint | number, dest_format: Format): [boolean, number];
             /**
              * Queries the peer pad of a given sink pad for the total stream duration.
              * @param format the {@link Gst.Format} requested
              * @returns `true` if the query could be performed.
              */
-            peer_query_duration(format: Format | null): [boolean, number];
+            peer_query_duration(format: Format): [boolean, number];
             /**
              * Queries the peer of a given sink pad for the stream position.
              * @param format the {@link Gst.Format} requested
              * @returns `true` if the query could be performed.
              */
-            peer_query_position(format: Format | null): [boolean, number];
+            peer_query_position(format: Format): [boolean, number];
             /**
              * Checks if all internally linked pads of `pad` accepts the caps in `query` and
              * returns the intersection of the results.
@@ -13732,11 +13724,7 @@ declare module 'gi://Gst?version=1.0' {
              * @param dest_format the {@link Gst.Format} to convert to.
              * @returns `true` if the query could be performed.
              */
-            query_convert(
-                src_format: Format | null,
-                src_val: bigint | number,
-                dest_format: Format | null,
-            ): [boolean, number];
+            query_convert(src_format: Format, src_val: bigint | number, dest_format: Format): [boolean, number];
             /**
              * Invokes the default query handler for the given pad.
              * The query is sent to all pads internally linked to `pad`. Note that
@@ -13753,13 +13741,13 @@ declare module 'gi://Gst?version=1.0' {
              * @param format the {@link Gst.Format} requested
              * @returns `true` if the query could be performed.
              */
-            query_duration(format: Format | null): [boolean, number];
+            query_duration(format: Format): [boolean, number];
             /**
              * Queries a pad for the stream position.
              * @param format the {@link Gst.Format} requested
              * @returns `true` if the query could be performed.
              */
-            query_position(format: Format | null): [boolean, number];
+            query_position(format: Format): [boolean, number];
             /**
              * Remove the probe with `id` from `pad`.
              *
@@ -14594,7 +14582,7 @@ declare module 'gi://Gst?version=1.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -14635,7 +14623,7 @@ declare module 'gi://Gst?version=1.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -15159,7 +15147,7 @@ declare module 'gi://Gst?version=1.0' {
                 env_vars: string[] | null,
                 paths: string[] | null,
                 names: string[] | null,
-                flags: PluginDependencyFlags | null,
+                flags: PluginDependencyFlags,
             ): void;
             /**
              * Make GStreamer aware of external dependencies which affect the feature
@@ -15184,7 +15172,7 @@ declare module 'gi://Gst?version=1.0' {
                 env_vars: string | null,
                 paths: string | null,
                 names: string | null,
-                flags: PluginDependencyFlags | null,
+                flags: PluginDependencyFlags,
             ): void;
             /**
              * @param message the status error message
@@ -16071,12 +16059,12 @@ declare module 'gi://Gst?version=1.0' {
              * Set the `flags` for the `stream`.
              * @param flags the flags to set on `stream`
              */
-            set_stream_flags(flags: StreamFlags | null): void;
+            set_stream_flags(flags: StreamFlags): void;
             /**
              * Set the stream type of `stream`
              * @param stream_type the type to set on `stream`
              */
-            set_stream_type(stream_type: StreamType | null): void;
+            set_stream_type(stream_type: StreamType): void;
             /**
              * Set the tags for the {@link Gst.Stream}
              * @param tags a {@link Gst.TagList}
@@ -16551,7 +16539,7 @@ declare module 'gi://Gst?version=1.0' {
              * @param state the new task state
              * @returns `true` if the state could be changed.
              */
-            set_state(state: TaskState | null): boolean;
+            set_state(state: TaskState): boolean;
             /**
              * Starts `task`. The `task` must have a lock associated with it using
              * `gst_task_set_lock()` or this function will return `false`.
@@ -17615,12 +17603,7 @@ declare module 'gi://Gst?version=1.0' {
              * @param size total size to copy. If -1, all data is copied.
              * @returns `true` if the copying succeeded, `false` otherwise.
              */
-            copy_into(
-                src: Buffer,
-                flags: BufferCopyFlags | null,
-                offset: bigint | number,
-                size: bigint | number,
-            ): boolean;
+            copy_into(src: Buffer, flags: BufferCopyFlags, offset: bigint | number, size: bigint | number): boolean;
             /**
              * Creates a sub-buffer from `parent` at `offset` and `size`.
              * This sub-buffer uses the actual memory space of the parent buffer.
@@ -17635,7 +17618,7 @@ declare module 'gi://Gst?version=1.0' {
              * @param size the size of the new {@link Gst.Buffer} sub-buffer, in bytes. If -1, all        data is copied.
              * @returns the new {@link Gst.Buffer} or `null` if copying     failed.
              */
-            copy_region(flags: BufferCopyFlags | null, offset: bigint | number, size: bigint | number): Buffer | null;
+            copy_region(flags: BufferCopyFlags, offset: bigint | number, size: bigint | number): Buffer | null;
             /**
              * Copies `size` bytes starting from `offset` in `buffer` to `dest`.
              * @param offset the offset to extract
@@ -17775,7 +17758,7 @@ declare module 'gi://Gst?version=1.0' {
              * @param flags the {@link Gst.BufferFlags} flag to check.
              * @returns `true` if all flags in `flags` are found on `buffer`.
              */
-            has_flags(flags: BufferFlags | null): boolean;
+            has_flags(flags: BufferFlags): boolean;
             /**
              * Inserts the memory block `mem` into `buffer` at `idx`. This function takes ownership
              * of `mem` and thus doesn't increase its refcount.
@@ -17823,7 +17806,7 @@ declare module 'gi://Gst?version=1.0' {
              * @param flags flags for the mapping
              * @returns `true` if the map succeeded and `info` contains valid data.
              */
-            map(flags: MapFlags | null): [boolean, MapInfo];
+            map(flags: MapFlags): [boolean, MapInfo];
             /**
              * Fills `info` with the {@link Gst.MapInfo} of `length` merged memory blocks
              * starting at `idx` in `buffer`. When `length` is -1, all memory blocks starting
@@ -17843,7 +17826,7 @@ declare module 'gi://Gst?version=1.0' {
              * @param flags flags for the mapping
              * @returns `true` if the map succeeded and `info` contains valid data.
              */
-            map_range(idx: number, length: number, flags: MapFlags | null): [boolean, MapInfo];
+            map_range(idx: number, length: number, flags: MapFlags): [boolean, MapInfo];
             /**
              * Compares `size` bytes starting from `offset` in `buffer` with the memory in `mem`.
              * @param offset the offset in `buffer`
@@ -17949,7 +17932,7 @@ declare module 'gi://Gst?version=1.0' {
              * @param flags the {@link Gst.BufferFlags} to set.
              * @returns `true` if `flags` were successfully set on buffer.
              */
-            set_flags(flags: BufferFlags | null): boolean;
+            set_flags(flags: BufferFlags): boolean;
             /**
              * Sets the total size of the memory blocks in `buffer`.
              * @param size the new size
@@ -17965,7 +17948,7 @@ declare module 'gi://Gst?version=1.0' {
              * @param flags the {@link Gst.BufferFlags} to clear
              * @returns true if `flags` is successfully cleared from buffer.
              */
-            unset_flags(flags: BufferFlags | null): boolean;
+            unset_flags(flags: BufferFlags): boolean;
         }
 
         /**
@@ -18313,7 +18296,7 @@ declare module 'gi://Gst?version=1.0' {
              * @param mode The intersection algorithm/mode to use
              * @returns the new {@link Gst.Caps}
              */
-            intersect_full(caps2: Caps, mode: CapsIntersectMode | null): Caps;
+            intersect_full(caps2: Caps, mode: CapsIntersectMode): Caps;
             /**
              * A given {@link Gst.Caps} structure is always compatible with another if
              * every media format that is in the first is also contained in the
@@ -18439,7 +18422,7 @@ declare module 'gi://Gst?version=1.0' {
              * @param flags a {@link Gst.SerializeFlags}
              * @returns a newly allocated string representing `caps`.
              */
-            serialize(flags: SerializeFlags | null): string;
+            serialize(flags: SerializeFlags): string;
             /**
              * Sets the `features` for the structure at `index`.
              * @param index the index of the structure
@@ -19015,7 +18998,7 @@ declare module 'gi://Gst?version=1.0' {
              * > function to use when debugging (even from gdb).
              * @param level the {@link Gst.DebugLevel} threshold to set.
              */
-            set_threshold(level: DebugLevel | null): void;
+            set_threshold(level: DebugLevel): void;
         }
 
         /**
@@ -19409,7 +19392,7 @@ declare module 'gi://Gst?version=1.0' {
              * the #GST_EVENT_GAP.
              * @param flags a {@link Gst.GapFlags}
              */
-            set_gap_flags(flags: GapFlags | null): void;
+            set_gap_flags(flags: GapFlags): void;
             /**
              * All streams that have the same group id are supposed to be played
              * together, i.e. all streams inside a container file should have the
@@ -19455,7 +19438,7 @@ declare module 'gi://Gst?version=1.0' {
             /**
              * @param flags the stream flags to set
              */
-            set_stream_flags(flags: StreamFlags | null): void;
+            set_stream_flags(flags: StreamFlags): void;
             /**
              * Get a writable version of the structure.
              * @returns The structure of the event. The structure is still owned by the event, which means that you should not free it and that the pointer becomes invalid when you free the event. This function ensures that `event` is writable, and if so, will never return `null`. MT safe.
@@ -19807,7 +19790,7 @@ declare module 'gi://Gst?version=1.0' {
              * @param flags mapping flags
              * @returns a {@link Gst.Memory} object mapped with `flags` or `null` when a mapping is not possible.
              */
-            make_mapped(flags: MapFlags | null): [Memory | null, MapInfo];
+            make_mapped(flags: MapFlags): [Memory | null, MapInfo];
             /**
              * Fill `info` with the pointer and sizes of the memory in `mem` that can be
              * accessed according to `flags`.
@@ -19824,7 +19807,7 @@ declare module 'gi://Gst?version=1.0' {
              * @param flags mapping flags
              * @returns `true` if the map operation was successful.
              */
-            map(flags: MapFlags | null): [boolean, MapInfo];
+            map(flags: MapFlags): [boolean, MapInfo];
             /**
              * Resize the memory region. `mem` should be writable and offset + size should be
              * less than the maxsize of `mem`.
@@ -20382,7 +20365,7 @@ declare module 'gi://Gst?version=1.0' {
              * @param buffering_left amount of buffering time left in milliseconds
              */
             set_buffering_stats(
-                mode: BufferingMode | null,
+                mode: BufferingMode,
                 avg_in: number,
                 avg_out: number,
                 buffering_left: bigint | number,
@@ -20412,7 +20395,7 @@ declare module 'gi://Gst?version=1.0' {
              * @param processed Total number of units correctly processed since the last state change to READY or a flushing operation.
              * @param dropped Total number of units dropped since the last state change to READY or a flushing operation.
              */
-            set_qos_stats(format: Format | null, processed: bigint | number, dropped: bigint | number): void;
+            set_qos_stats(format: Format, processed: bigint | number, dropped: bigint | number): void;
             /**
              * Set the QoS values that have been calculated/analysed from the QoS data
              *
@@ -20763,7 +20746,7 @@ declare module 'gi://Gst?version=1.0' {
              * @param flags {@link Gst.LockFlags}
              * @returns `true` if `object` could be locked.
              */
-            lock(flags: LockFlags | null): boolean;
+            lock(flags: LockFlags): boolean;
             /**
              * Increase the reference count of the mini-object.
              *
@@ -20811,7 +20794,7 @@ declare module 'gi://Gst?version=1.0' {
              * Unlock the mini-object with the specified access mode in `flags`.
              * @param flags {@link Gst.LockFlags}
              */
-            unlock(flags: LockFlags | null): void;
+            unlock(flags: LockFlags): void;
             /**
              * Decreases the reference count of the mini-object, possibly freeing
              * the mini-object.
@@ -21483,7 +21466,7 @@ declare module 'gi://Gst?version=1.0' {
              * Add `mode` as one of the supported scheduling modes to `query`.
              * @param mode a {@link Gst.PadMode}
              */
-            add_scheduling_mode(mode: PadMode | null): void;
+            add_scheduling_mode(mode: PadMode): void;
             /**
              * Check if `query` has metadata `api` set. When this function returns `true`,
              * `index` will contain the index where the requested API and the parameters
@@ -21543,7 +21526,7 @@ declare module 'gi://Gst?version=1.0' {
              * @param mode the scheduling mode
              * @returns `true` when `mode` is in the list of scheduling modes.
              */
-            has_scheduling_mode(mode: PadMode | null): boolean;
+            has_scheduling_mode(mode: PadMode): boolean;
             /**
              * Check if `query` has scheduling mode set and `flags` is set in
              * query scheduling flags.
@@ -21551,7 +21534,7 @@ declare module 'gi://Gst?version=1.0' {
              * @param flags {@link Gst.SchedulingFlags}
              * @returns `true` when `mode` is in the list of scheduling modes    and `flags` are compatible with query flags.
              */
-            has_scheduling_mode_with_flags(mode: PadMode | null, flags: SchedulingFlags | null): boolean;
+            has_scheduling_mode_with_flags(mode: PadMode, flags: SchedulingFlags): boolean;
             /**
              * Get the caps from `query`. The caps remains valid as long as `query` remains
              * valid.
@@ -21755,7 +21738,7 @@ declare module 'gi://Gst?version=1.0' {
              * @param estimated_total estimated total amount of download time remaining in     milliseconds
              */
             set_buffering_range(
-                format: Format | null,
+                format: Format,
                 start: bigint | number,
                 stop: bigint | number,
                 estimated_total: bigint | number,
@@ -21768,7 +21751,7 @@ declare module 'gi://Gst?version=1.0' {
              * @param buffering_left amount of buffering time left in milliseconds
              */
             set_buffering_stats(
-                mode: BufferingMode | null,
+                mode: BufferingMode,
                 avg_in: number,
                 avg_out: number,
                 buffering_left: bigint | number,
@@ -21791,9 +21774,9 @@ declare module 'gi://Gst?version=1.0' {
              * @param dest_value the destination value
              */
             set_convert(
-                src_format: Format | null,
+                src_format: Format,
                 src_value: bigint | number,
-                dest_format: Format | null,
+                dest_format: Format,
                 dest_value: bigint | number,
             ): void;
             /**
@@ -21801,13 +21784,13 @@ declare module 'gi://Gst?version=1.0' {
              * @param format the {@link Gst.Format} for the duration
              * @param duration the duration of the stream
              */
-            set_duration(format: Format | null, duration: bigint | number): void;
+            set_duration(format: Format, duration: bigint | number): void;
             /**
              * Set the formats query result fields in `query`. The number of formats passed
              * in the `formats` array must be equal to `n_formats`.
              * @param formats an array containing `n_formats`     `GstFormat` values.
              */
-            set_formatsv(formats: Format[] | null): void;
+            set_formatsv(formats: Format[]): void;
             /**
              * Answer a latency query by setting the requested values in the given format.
              * @param live if there is a live element upstream
@@ -21847,7 +21830,7 @@ declare module 'gi://Gst?version=1.0' {
              * @param format the requested {@link Gst.Format}
              * @param cur the position to set
              */
-            set_position(format: Format | null, cur: bigint | number): void;
+            set_position(format: Format, cur: bigint | number): void;
             /**
              * Set the scheduling properties.
              * @param flags {@link Gst.SchedulingFlags}
@@ -21855,7 +21838,7 @@ declare module 'gi://Gst?version=1.0' {
              * @param maxsize the suggested maximum size of pull requests
              * @param align the suggested alignment of pull requests
              */
-            set_scheduling(flags: SchedulingFlags | null, minsize: number, maxsize: number, align: number): void;
+            set_scheduling(flags: SchedulingFlags, minsize: number, maxsize: number, align: number): void;
             /**
              * Set the seeking query result fields in `query`.
              * @param format the format to set for the `segment_start` and `segment_end` values
@@ -21864,7 +21847,7 @@ declare module 'gi://Gst?version=1.0' {
              * @param segment_end the segment_end to set
              */
             set_seeking(
-                format: Format | null,
+                format: Format,
                 seekable: boolean,
                 segment_start: bigint | number,
                 segment_end: bigint | number,
@@ -21886,12 +21869,7 @@ declare module 'gi://Gst?version=1.0' {
              * @param start_value the start value
              * @param stop_value the stop value
              */
-            set_segment(
-                rate: number,
-                format: Format | null,
-                start_value: bigint | number,
-                stop_value: bigint | number,
-            ): void;
+            set_segment(rate: number, format: Format, start_value: bigint | number, stop_value: bigint | number): void;
             /**
              * Set the results of a selectable query. If the element answering the query can
              * handle stream selection, `selectable` should be set to `true`.
@@ -22155,7 +22133,7 @@ declare module 'gi://Gst?version=1.0' {
              * @param stop the stop position in the segment
              * @returns `true` if the given `start` and `stop` times fall partially or     completely in `segment`, `false` if the values are completely outside     of the segment.
              */
-            clip(format: Format | null, start: bigint | number, stop: bigint | number): [boolean, number, number];
+            clip(format: Format, start: bigint | number, stop: bigint | number): [boolean, number, number];
             /**
              * Create a copy of given `segment`.
              *
@@ -22207,11 +22185,11 @@ declare module 'gi://Gst?version=1.0' {
              */
             do_seek(
                 rate: number,
-                format: Format | null,
-                flags: SeekFlags | null,
-                start_type: SeekType | null,
+                format: Format,
+                flags: SeekFlags,
+                start_type: SeekType,
                 start: bigint | number,
-                stop_type: SeekType | null,
+                stop_type: SeekType,
                 stop: bigint | number,
             ): [boolean, boolean];
             /**
@@ -22226,7 +22204,7 @@ declare module 'gi://Gst?version=1.0' {
              * Initialize `segment` to its default values.
              * @param format the format of the segment.
              */
-            init(format: Format | null): void;
+            init(format: Format): void;
             /**
              * Checks for two segments being equal. Equality here is defined
              * as perfect equality, including floating point values.
@@ -22241,7 +22219,7 @@ declare module 'gi://Gst?version=1.0' {
              * @param offset the offset to apply in the segment
              * @returns `true` if the segment could be updated successfully. If `false` is returned, `offset` is not in `segment`.
              */
-            offset_running_time(format: Format | null, offset: bigint | number): boolean;
+            offset_running_time(format: Format, offset: bigint | number): boolean;
             /**
              * Convert `running_time` into a position in the segment so that
              * `gst_segment_to_running_time()` with that position returns `running_time`.
@@ -22249,7 +22227,7 @@ declare module 'gi://Gst?version=1.0' {
              * @param running_time the running_time in the segment
              * @returns the position in the segment for `running_time`. This function returns -1 when `running_time` is -1 or when it is not inside `segment`.
              */
-            position_from_running_time(format: Format | null, running_time: bigint | number): number;
+            position_from_running_time(format: Format, running_time: bigint | number): number;
             /**
              * Translate `running_time` to the segment position using the currently configured
              * segment. Compared to `gst_segment_position_from_running_time()` this function can
@@ -22271,7 +22249,7 @@ declare module 'gi://Gst?version=1.0' {
              * @param running_time the running-time
              * @returns a 1 or -1 on success, 0 on failure.
              */
-            position_from_running_time_full(format: Format | null, running_time: bigint | number): [number, number];
+            position_from_running_time_full(format: Format, running_time: bigint | number): [number, number];
             /**
              * Convert `stream_time` into a position in the segment so that
              * `gst_segment_to_stream_time()` with that position returns `stream_time`.
@@ -22279,7 +22257,7 @@ declare module 'gi://Gst?version=1.0' {
              * @param stream_time the stream_time in the segment
              * @returns the position in the segment for `stream_time`. This function returns -1 when `stream_time` is -1 or when it is not inside `segment`.
              */
-            position_from_stream_time(format: Format | null, stream_time: bigint | number): number;
+            position_from_stream_time(format: Format, stream_time: bigint | number): number;
             /**
              * Translate `stream_time` to the segment position using the currently configured
              * segment. Compared to `gst_segment_position_from_stream_time()` this function can
@@ -22300,7 +22278,7 @@ declare module 'gi://Gst?version=1.0' {
              * @param stream_time the stream-time
              * @returns a 1 or -1 on success, 0 on failure.
              */
-            position_from_stream_time_full(format: Format | null, stream_time: bigint | number): [number, number];
+            position_from_stream_time_full(format: Format, stream_time: bigint | number): [number, number];
             /**
              * Adjust the start/stop and base values of `segment` such that the next valid
              * buffer will be one with `running_time`.
@@ -22308,7 +22286,7 @@ declare module 'gi://Gst?version=1.0' {
              * @param running_time the running_time in the segment
              * @returns `true` if the segment could be updated successfully. If `false` is returned, `running_time` is -1 or not in `segment`.
              */
-            set_running_time(format: Format | null, running_time: bigint | number): boolean;
+            set_running_time(format: Format, running_time: bigint | number): boolean;
             /**
              * Convert `running_time` into a position in the segment so that
              * `gst_segment_to_running_time()` with that position returns `running_time`.
@@ -22316,7 +22294,7 @@ declare module 'gi://Gst?version=1.0' {
              * @param running_time the running_time in the segment
              * @returns the position in the segment for `running_time`. This function returns -1 when `running_time` is -1 or when it is not inside `segment`.
              */
-            to_position(format: Format | null, running_time: bigint | number): number;
+            to_position(format: Format, running_time: bigint | number): number;
             /**
              * Translate `position` to the total running time using the currently configured
              * segment. Position is a value between `segment` start and stop time.
@@ -22331,7 +22309,7 @@ declare module 'gi://Gst?version=1.0' {
              * @param position the position in the segment
              * @returns the position as the total running time or -1 when an invalid position was given.
              */
-            to_running_time(format: Format | null, position: bigint | number): number;
+            to_running_time(format: Format, position: bigint | number): number;
             /**
              * Translate `position` to the total running time using the currently configured
              * segment. Compared to `gst_segment_to_running_time()` this function can return
@@ -22352,7 +22330,7 @@ declare module 'gi://Gst?version=1.0' {
              * @param position the position in the segment
              * @returns a 1 or -1 on success, 0 on failure.
              */
-            to_running_time_full(format: Format | null, position: bigint | number): [number, number];
+            to_running_time_full(format: Format, position: bigint | number): [number, number];
             /**
              * Translate `position` to stream time using the currently configured
              * segment. The `position` value must be between `segment` start and
@@ -22368,7 +22346,7 @@ declare module 'gi://Gst?version=1.0' {
              * @param position the position in the segment
              * @returns the position in stream_time or -1 when an invalid position was given.
              */
-            to_stream_time(format: Format | null, position: bigint | number): number;
+            to_stream_time(format: Format, position: bigint | number): number;
             /**
              * Translate `position` to the total stream time using the currently configured
              * segment. Compared to `gst_segment_to_stream_time()` this function can return
@@ -22389,7 +22367,7 @@ declare module 'gi://Gst?version=1.0' {
              * @param position the position in the segment
              * @returns a 1 or -1 on success, 0 on failure.
              */
-            to_stream_time_full(format: Format | null, position: bigint | number): [number, number];
+            to_stream_time_full(format: Format, position: bigint | number): [number, number];
         }
 
         /**
@@ -23002,14 +22980,14 @@ declare module 'gi://Gst?version=1.0' {
              * @param flags The flags to use to serialize structure
              * @returns a pointer to string allocated by `g_malloc()`.     `g_free()` after usage.
              */
-            serialize(flags: SerializeFlags | null): string;
+            serialize(flags: SerializeFlags): string;
             /**
              * Alias for `gst_structure_serialize()` but with nullable annotation because it
              * can return `null` when {@link Gst.SerializeFlags.STRICT} flag is set.
              * @param flags The flags to use to serialize structure
              * @returns a pointer to string allocated by `g_malloc()`.     `g_free()` after usage.
              */
-            serialize_full(flags: SerializeFlags | null): string | null;
+            serialize_full(flags: SerializeFlags): string | null;
             /**
              * This is useful in language bindings where unknown GValue types are not
              * supported. This function will convert a `array` to `GST_TYPE_ARRAY` and set
@@ -23133,7 +23111,7 @@ declare module 'gi://Gst?version=1.0' {
              * @param tag tag
              * @param value GValue for this tag
              */
-            add_value(mode: TagMergeMode | null, tag: string, value: GObject.Value | any): void;
+            add_value(mode: TagMergeMode, tag: string, value: GObject.Value | any): void;
             /**
              * Creates a new {@link Gst.TagList} as a copy of the old `taglist`. The new taglist
              * will have a refcount of 1, owned by the caller, and will be writable as
@@ -23394,7 +23372,7 @@ declare module 'gi://Gst?version=1.0' {
              * @param from list to merge from
              * @param mode the mode to use
              */
-            insert(from: TagList, mode: TagMergeMode | null): void;
+            insert(from: TagList, mode: TagMergeMode): void;
             /**
              * Checks if the given taglist is empty.
              * @returns `true` if the taglist is empty, otherwise `false`.
@@ -23415,7 +23393,7 @@ declare module 'gi://Gst?version=1.0' {
              * @param mode the mode to use
              * @returns the new list
              */
-            merge(list2: TagList | null, mode: TagMergeMode | null): TagList | null;
+            merge(list2: TagList | null, mode: TagMergeMode): TagList | null;
             /**
              * Get the number of tags in `list`.
              * @returns The number of tags in `list`.
@@ -23449,7 +23427,7 @@ declare module 'gi://Gst?version=1.0' {
              * of a taglist is stream scope.
              * @param scope new scope for `list`
              */
-            set_scope(scope: TagScope | null): void;
+            set_scope(scope: TagScope): void;
             /**
              * Serializes a tag list to a string.
              * @returns a newly-allocated string.     The string must be freed with `g_free()` when no longer     needed.
@@ -23579,7 +23557,7 @@ declare module 'gi://Gst?version=1.0' {
              * @param tags A {@link Gst.TagList} or `null`
              * @param mode A {@link Gst.TagMergeMode}
              */
-            merge_tags(tags: TagList | null, mode: TagMergeMode | null): void;
+            merge_tags(tags: TagList | null, mode: TagMergeMode): void;
             /**
              * Set a {@link Gst.TagList} with tags for the complete `toc`.
              * @param tags A {@link Gst.TagList} or `null`
@@ -23662,13 +23640,13 @@ declare module 'gi://Gst?version=1.0' {
              * @param tags A {@link Gst.TagList} or `null`
              * @param mode A {@link Gst.TagMergeMode}
              */
-            merge_tags(tags: TagList | null, mode: TagMergeMode | null): void;
+            merge_tags(tags: TagList | null, mode: TagMergeMode): void;
             /**
              * Set `loop_type` and `repeat_count` values for the `entry`.
              * @param loop_type loop_type value to set.
              * @param repeat_count repeat_count value to set.
              */
-            set_loop(loop_type: TocLoopType | null, repeat_count: number): void;
+            set_loop(loop_type: TocLoopType, repeat_count: number): void;
             /**
              * Set `start` and `stop` values for the `entry`.
              * @param start start value to set.
@@ -24618,7 +24596,7 @@ declare module 'gi://Gst?version=1.0' {
              * @param tag tag to set
              * @param value GValue to set for the tag
              */
-            add_tag_value(mode: TagMergeMode | null, tag: string, value: GObject.Value | any): void;
+            add_tag_value(mode: TagMergeMode, tag: string, value: GObject.Value | any): void;
             /**
              * Returns the current list of tags the setter uses.  The list should not be
              * modified or freed.
@@ -24638,7 +24616,7 @@ declare module 'gi://Gst?version=1.0' {
              * @param list a tag list to merge from
              * @param mode the mode to merge with
              */
-            merge_tags(list: TagList, mode: TagMergeMode | null): void;
+            merge_tags(list: TagList, mode: TagMergeMode): void;
             /**
              * Reset the internal taglist. Elements should call this from within the
              * state-change handler.
@@ -24650,7 +24628,7 @@ declare module 'gi://Gst?version=1.0' {
              * the tags set with this interface and discards tags from events.
              * @param mode The mode with which tags are added
              */
-            set_tag_merge_mode(mode: TagMergeMode | null): void;
+            set_tag_merge_mode(mode: TagMergeMode): void;
         }
 
         export const TagSetter: TagSetterNamespace & {

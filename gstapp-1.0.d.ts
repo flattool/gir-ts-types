@@ -839,7 +839,7 @@ declare module 'gi://GstApp?version=1.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -880,7 +880,7 @@ declare module 'gi://GstApp?version=1.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -1957,7 +1957,7 @@ declare module 'gi://GstApp?version=1.0' {
              * buffers.
              * @param leaky the {@link GstApp.AppLeakyType}
              */
-            set_leaky_type(leaky: AppLeakyType | null): void;
+            set_leaky_type(leaky: AppLeakyType): void;
             /**
              * Set the maximum amount of buffers that can be queued in `appsrc`.
              * After the maximum amount of buffers are queued, `appsrc` will emit the
@@ -1992,7 +1992,7 @@ declare module 'gi://GstApp?version=1.0' {
              * A stream_type stream
              * @param type the new state
              */
-            set_stream_type(type: AppStreamType | null): void;
+            set_stream_type(type: AppStreamType): void;
             /**
              * Gets the list of protocols supported by `handler`. This list may not be
              * modified.
@@ -2070,7 +2070,7 @@ declare module 'gi://GstApp?version=1.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -2111,7 +2111,7 @@ declare module 'gi://GstApp?version=1.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,

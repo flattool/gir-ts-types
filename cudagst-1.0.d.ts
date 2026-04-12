@@ -389,7 +389,7 @@ declare module 'gi://CudaGst?version=1.0' {
         /**
          * @gir-type Alias
          */
-        type deviceptr = never;
+        type deviceptr = bigint | number;
         /**
          * @gir-type Alias
          */
