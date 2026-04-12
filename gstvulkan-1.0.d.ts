@@ -427,7 +427,7 @@ declare module 'gi://GstVulkan?version=1.0' {
          * @returns the Vulkan extension string required for creating a                      VkSurfaceKHR using a window system handle or `null`
          * @since 1.18
          */
-        function vulkan_display_type_to_extension_string(type: VulkanDisplayType | null): string | null;
+        function vulkan_display_type_to_extension_string(type: VulkanDisplayType): string | null;
         /**
          * Perform the steps necessary for retrieving a {@link GstVulkan.VulkanInstance} and
          * (optionally) an {@link GstVulkan.VulkanDisplay} from the surrounding elements or from
@@ -676,7 +676,7 @@ declare module 'gi://GstVulkan?version=1.0' {
          * @returns whether `query` was answered successfully
          * @since 1.18
          */
-        function vulkan_run_query(element: Gst.Element, query: Gst.Query, direction: Gst.PadDirection | null): boolean;
+        function vulkan_run_query(element: Gst.Element, query: Gst.Query, direction: Gst.PadDirection): boolean;
         /**
          * @param sample_count_bits
          * @since 1.18
@@ -3282,7 +3282,7 @@ declare module 'gi://GstVulkan?version=1.0' {
              * @param handle
              * @virtual
              */
-            vfunc_set_window_handle(handle: never): void;
+            vfunc_set_window_handle(handle: number): void;
 
             // Methods
 
@@ -3341,7 +3341,7 @@ declare module 'gi://GstVulkan?version=1.0' {
             /**
              * @param handle
              */
-            set_window_handle(handle: never): void;
+            set_window_handle(handle: bigint | number): void;
         }
 
         /**

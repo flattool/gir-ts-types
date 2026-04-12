@@ -1092,7 +1092,7 @@ declare module 'gi://GObject?version=2.0' {
             nick: string | null,
             blurb: string | null,
             default_value: boolean,
-            flags: ParamFlags | null,
+            flags: ParamFlags,
         ): ParamSpec;
         /**
          * Creates a new {@link GObject.ParamSpecBoxed} instance specifying a `G_TYPE_BOXED`
@@ -1111,7 +1111,7 @@ declare module 'gi://GObject?version=2.0' {
             nick: string | null,
             blurb: string | null,
             boxed_type: GType,
-            flags: ParamFlags | null,
+            flags: ParamFlags,
         ): ParamSpec;
         /**
          * Creates a new {@link GObject.ParamSpecChar} instance specifying a `G_TYPE_CHAR` property.
@@ -1131,7 +1131,7 @@ declare module 'gi://GObject?version=2.0' {
             minimum: number,
             maximum: number,
             default_value: number,
-            flags: ParamFlags | null,
+            flags: ParamFlags,
         ): ParamSpec;
         /**
          * Creates a new {@link GObject.ParamSpecDouble} instance specifying a `G_TYPE_DOUBLE`
@@ -1154,7 +1154,7 @@ declare module 'gi://GObject?version=2.0' {
             minimum: number,
             maximum: number,
             default_value: number,
-            flags: ParamFlags | null,
+            flags: ParamFlags,
         ): ParamSpec;
         /**
          * Creates a new {@link GObject.ParamSpecEnum} instance specifying a `G_TYPE_ENUM`
@@ -1175,7 +1175,7 @@ declare module 'gi://GObject?version=2.0' {
             blurb: string | null,
             enum_type: GType,
             default_value: number,
-            flags: ParamFlags | null,
+            flags: ParamFlags,
         ): ParamSpec;
         /**
          * Creates a new {@link GObject.ParamSpecFlags} instance specifying a `G_TYPE_FLAGS`
@@ -1196,7 +1196,7 @@ declare module 'gi://GObject?version=2.0' {
             blurb: string | null,
             flags_type: GType,
             default_value: number,
-            flags: ParamFlags | null,
+            flags: ParamFlags,
         ): ParamSpec;
         /**
          * Creates a new {@link GObject.ParamSpecFloat} instance specifying a `G_TYPE_FLOAT` property.
@@ -1218,7 +1218,7 @@ declare module 'gi://GObject?version=2.0' {
             minimum: number,
             maximum: number,
             default_value: number,
-            flags: ParamFlags | null,
+            flags: ParamFlags,
         ): ParamSpec;
         /**
          * Creates a new {@link GObject.ParamSpecGType} instance specifying a
@@ -1238,7 +1238,7 @@ declare module 'gi://GObject?version=2.0' {
             nick: string | null,
             blurb: string | null,
             is_a_type: GType,
-            flags: ParamFlags | null,
+            flags: ParamFlags,
         ): ParamSpec;
         /**
          * Creates a new {@link GObject.ParamSpecInt} instance specifying a `G_TYPE_INT` property.
@@ -1260,7 +1260,7 @@ declare module 'gi://GObject?version=2.0' {
             minimum: number,
             maximum: number,
             default_value: number,
-            flags: ParamFlags | null,
+            flags: ParamFlags,
         ): ParamSpec;
         /**
          * Creates a new {@link GObject.ParamSpecInt64} instance specifying a `G_TYPE_INT64` property.
@@ -1282,7 +1282,7 @@ declare module 'gi://GObject?version=2.0' {
             minimum: bigint | number,
             maximum: bigint | number,
             default_value: bigint | number,
-            flags: ParamFlags | null,
+            flags: ParamFlags,
         ): ParamSpec;
         /**
          * Creates a new {@link GObject.ParamSpecLong} instance specifying a `G_TYPE_LONG` property.
@@ -1304,7 +1304,7 @@ declare module 'gi://GObject?version=2.0' {
             minimum: bigint | number,
             maximum: bigint | number,
             default_value: bigint | number,
-            flags: ParamFlags | null,
+            flags: ParamFlags,
         ): ParamSpec;
         /**
          * Creates a new {@link GObject.ParamSpecBoxed} instance specifying a `G_TYPE_OBJECT`
@@ -1323,7 +1323,7 @@ declare module 'gi://GObject?version=2.0' {
             nick: string | null,
             blurb: string | null,
             object_type: GType,
-            flags: ParamFlags | null,
+            flags: ParamFlags,
         ): ParamSpec;
         /**
          * Creates a new {@link GObject.ParamSpecParam} instance specifying a `G_TYPE_PARAM`
@@ -1342,7 +1342,7 @@ declare module 'gi://GObject?version=2.0' {
             nick: string | null,
             blurb: string | null,
             param_type: GType,
-            flags: ParamFlags | null,
+            flags: ParamFlags,
         ): ParamSpec;
         /**
          * Creates a new {@link GObject.ParamSpecPointer} instance specifying a pointer property.
@@ -1360,7 +1360,7 @@ declare module 'gi://GObject?version=2.0' {
             name: string,
             nick: string | null,
             blurb: string | null,
-            flags: ParamFlags | null,
+            flags: ParamFlags,
         ): ParamSpec;
         /**
          * Creates a new {@link GObject.ParamSpecString} instance.
@@ -1378,7 +1378,7 @@ declare module 'gi://GObject?version=2.0' {
             nick: string | null,
             blurb: string | null,
             default_value: string | null,
-            flags: ParamFlags | null,
+            flags: ParamFlags,
         ): ParamSpec;
         /**
          * Creates a new {@link GObject.ParamSpecUChar} instance specifying a `G_TYPE_UCHAR` property.
@@ -1398,7 +1398,7 @@ declare module 'gi://GObject?version=2.0' {
             minimum: number,
             maximum: number,
             default_value: number,
-            flags: ParamFlags | null,
+            flags: ParamFlags,
         ): ParamSpec;
         /**
          * Creates a new {@link GObject.ParamSpecUInt} instance specifying a `G_TYPE_UINT` property.
@@ -1420,7 +1420,7 @@ declare module 'gi://GObject?version=2.0' {
             minimum: number,
             maximum: number,
             default_value: number,
-            flags: ParamFlags | null,
+            flags: ParamFlags,
         ): ParamSpec;
         /**
          * Creates a new {@link GObject.ParamSpecUInt64} instance specifying a `G_TYPE_UINT64`
@@ -1443,7 +1443,7 @@ declare module 'gi://GObject?version=2.0' {
             minimum: bigint | number,
             maximum: bigint | number,
             default_value: bigint | number,
-            flags: ParamFlags | null,
+            flags: ParamFlags,
         ): ParamSpec;
         /**
          * Creates a new {@link GObject.ParamSpecULong} instance specifying a `G_TYPE_ULONG`
@@ -1466,7 +1466,7 @@ declare module 'gi://GObject?version=2.0' {
             minimum: bigint | number,
             maximum: bigint | number,
             default_value: bigint | number,
-            flags: ParamFlags | null,
+            flags: ParamFlags,
         ): ParamSpec;
         /**
          * Creates a new {@link GObject.ParamSpecUnichar} instance specifying a `G_TYPE_UINT`
@@ -1486,7 +1486,7 @@ declare module 'gi://GObject?version=2.0' {
             nick: string | null,
             blurb: string | null,
             default_value: string,
-            flags: ParamFlags | null,
+            flags: ParamFlags,
         ): ParamSpec;
         /**
          * Creates a new {@link GObject.ParamSpecVariant} instance specifying a {@link GLib.Variant}
@@ -1510,7 +1510,7 @@ declare module 'gi://GObject?version=2.0' {
             blurb: string | null,
             type: GLib.VariantType,
             default_value: GLib.Variant | null,
-            flags: ParamFlags | null,
+            flags: ParamFlags,
         ): ParamSpec;
         /**
          * Registers `name` as the name of a new static type derived
@@ -1814,7 +1814,7 @@ declare module 'gi://GObject?version=2.0' {
          */
         function signal_handlers_block_matched(
             instance: Object,
-            mask: SignalMatchType | null,
+            mask: SignalMatchType,
             signal_id: number,
             detail: GLib.Quark,
             closure?: Closure | null,
@@ -1854,7 +1854,7 @@ declare module 'gi://GObject?version=2.0' {
          */
         function signal_handlers_disconnect_matched(
             instance: Object,
-            mask: SignalMatchType | null,
+            mask: SignalMatchType,
             signal_id: number,
             detail: GLib.Quark,
             closure?: Closure | null,
@@ -1888,7 +1888,7 @@ declare module 'gi://GObject?version=2.0' {
          */
         function signal_handlers_unblock_matched(
             instance: Object,
-            mask: SignalMatchType | null,
+            mask: SignalMatchType,
             signal_id: number,
             detail: GLib.Quark,
             closure?: Closure | null,
@@ -2390,7 +2390,7 @@ declare module 'gi://GObject?version=2.0' {
          * @param debug_flags bitwise combination of {@link GObject.TypeDebugFlags} values for     debugging purposes
          * @deprecated since 2.36: the type system is now initialised automatically
          */
-        function type_init_with_debug_flags(debug_flags: TypeDebugFlags | null): void;
+        function type_init_with_debug_flags(debug_flags: TypeDebugFlags): void;
         /**
          * Adds `prerequisite_type` to the list of prerequisites of `interface_type`.
          * This means that any type implementing `interface_type` must also implement
@@ -2529,7 +2529,7 @@ declare module 'gi://GObject?version=2.0' {
             parent_type: GType,
             type_name: string,
             plugin: TypePlugin,
-            flags: TypeFlags | null,
+            flags: TypeFlags,
         ): GType;
         /**
          * Registers `type_id` as the predefined identifier and `type_name` as the
@@ -2551,7 +2551,7 @@ declare module 'gi://GObject?version=2.0' {
             type_name: string,
             info: TypeInfo,
             finfo: TypeFundamentalInfo,
-            flags: TypeFlags | null,
+            flags: TypeFlags,
         ): GType;
         /**
          * Registers `type_name` as the name of a new static type derived from
@@ -2565,12 +2565,7 @@ declare module 'gi://GObject?version=2.0' {
          * @param flags bitwise combination of {@link GObject.TypeFlags} values
          * @returns the new type identifier
          */
-        function type_register_static(
-            parent_type: GType,
-            type_name: string,
-            info: TypeInfo,
-            flags: TypeFlags | null,
-        ): GType;
+        function type_register_static(parent_type: GType, type_name: string, info: TypeInfo, flags: TypeFlags): GType;
         /**
          * Attaches arbitrary data to a type.
          * @param type a {@link GObject.GType}
@@ -3663,7 +3658,7 @@ declare module 'gi://GObject?version=2.0' {
              * @param target_property the property on `target` to bind
              * @param flags the flags used to create the {@link GObject.Binding}
              */
-            bind(source_property: string, target: Object, target_property: string, flags: BindingFlags | null): void;
+            bind(source_property: string, target: Object, target_property: string, flags: BindingFlags): void;
             /**
              * Creates a binding between `source_property` on the source object and
              * `target_property` on `target`, allowing you to set the transformation
@@ -3682,7 +3677,7 @@ declare module 'gi://GObject?version=2.0' {
                 source_property: string,
                 target: Object,
                 target_property: string,
-                flags: BindingFlags | null,
+                flags: BindingFlags,
                 transform_to?: BindingTransformFunc | null,
                 transform_from?: BindingTransformFunc | null,
             ): void;
@@ -3708,7 +3703,7 @@ declare module 'gi://GObject?version=2.0' {
                 source_property: string,
                 target: Object,
                 target_property: string,
-                flags: BindingFlags | null,
+                flags: BindingFlags,
                 transform_to?: Closure | null,
                 transform_from?: Closure | null,
             ): void;
@@ -4086,7 +4081,7 @@ declare module 'gi://GObject?version=2.0' {
                 source_property: string,
                 target: Object,
                 target_property: string,
-                flags: BindingFlags | null,
+                flags: BindingFlags,
             ): Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -4127,7 +4122,7 @@ declare module 'gi://GObject?version=2.0' {
                 source_property: string,
                 target: Object,
                 target_property: string,
-                flags: BindingFlags | null,
+                flags: BindingFlags,
                 transform_to?: BindingTransformFunc | null,
                 transform_from?: BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -4152,7 +4147,7 @@ declare module 'gi://GObject?version=2.0' {
                 source_property: string,
                 target: Object,
                 target_property: string,
-                flags: BindingFlags | null,
+                flags: BindingFlags,
                 transform_to: Closure | null,
                 transform_from: Closure | null,
             ): Binding;
@@ -5080,7 +5075,7 @@ declare module 'gi://GObject?version=2.0' {
                 detailed_signal: string,
                 c_handler: Callback,
                 notify: ClosureNotify,
-                flags: ConnectFlags | null,
+                flags: ConnectFlags,
             ): void;
             /**
              * Connects `c_handler` to the signal `detailed_signal`
@@ -5291,7 +5286,7 @@ declare module 'gi://GObject?version=2.0' {
              * @param flags flags field providing details about the type
              * @returns the new or existing type ID
              */
-            register_type(parent_type: GType, type_name: string, type_info: TypeInfo, flags: TypeFlags | null): GType;
+            register_type(parent_type: GType, type_name: string, type_info: TypeInfo, flags: TypeFlags): GType;
             /**
              * Sets the name for a {@link GObject.TypeModule}
              * @param name a human-readable name to use in error messages.
@@ -5380,7 +5375,7 @@ declare module 'gi://GObject?version=2.0' {
                 source_property: string,
                 target: Object,
                 target_property: string,
-                flags: BindingFlags | null,
+                flags: BindingFlags,
             ): Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -5421,7 +5416,7 @@ declare module 'gi://GObject?version=2.0' {
                 source_property: string,
                 target: Object,
                 target_property: string,
-                flags: BindingFlags | null,
+                flags: BindingFlags,
                 transform_to?: BindingTransformFunc | null,
                 transform_from?: BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,

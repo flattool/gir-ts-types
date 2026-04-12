@@ -121,7 +121,7 @@ declare module 'gi://GstAllocators?version=1.0' {
          * @returns Physical memory address that is backing `mem`, or 0 if none
          * @since 1.14
          */
-        function phys_memory_get_phys_addr(mem: Gst.Memory): never;
+        function phys_memory_get_phys_addr(mem: Gst.Memory): number;
         /**
          * Various flags to control the operation of the fd backed memory.
          * @gir-type Flags
@@ -537,7 +537,7 @@ declare module 'gi://GstAllocators?version=1.0' {
                  * @param mem
                  * @virtual
                  */
-                vfunc_get_phys_addr(mem: Gst.Memory): never;
+                vfunc_get_phys_addr(mem: Gst.Memory): bigint | number;
             }
 
             // Constructor properties interface

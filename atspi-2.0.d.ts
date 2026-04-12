@@ -2170,7 +2170,7 @@ declare module 'gi://Atspi?version=2.0' {
         function generate_keyboard_event(
             keyval: bigint | number,
             keystring: string | null,
-            synth_type: KeySynthType | null,
+            synth_type: KeySynthType,
         ): boolean;
         /**
          * Synthesizes a mouse event at a specific screen coordinate.
@@ -2273,20 +2273,20 @@ declare module 'gi://Atspi?version=2.0' {
             key_set: KeyDefinition[] | null,
             modmask: KeyMaskType,
             event_types: KeyEventMask,
-            sync_type: KeyListenerSyncType | null,
+            sync_type: KeyListenerSyncType,
         ): boolean;
         /**
          * Gets the localized description string describing the {@link Atspi.Role} `role`.
          * @param role an {@link Atspi.Role} object to query.
          * @returns the localized string describing the AtspiRole
          */
-        function role_get_localized_name(role: Role | null): string;
+        function role_get_localized_name(role: Role): string;
         /**
          * Gets a localizable string that indicates the name of an {@link Atspi.Role}.
          * @param role an {@link Atspi.Role} object to query.
          * @returns a localizable string name for an {@link Atspi.Role} enumerated type.
          */
-        function role_get_name(role: Role | null): string;
+        function role_get_name(role: Role): string;
         /**
          * Sets the main loop context that AT-SPI should assume is in use when
          * setting an idle callback.
@@ -2985,7 +2985,7 @@ declare module 'gi://Atspi?version=2.0' {
              * events are not raised / to aid in testing for such bugs.
              * @param mask An {@link Atspi.Cache} specifying a bit mask of the types of data to cache.
              */
-            set_cache_mask(mask: Cache | null): void;
+            set_cache_mask(mask: Cache): void;
             /**
              * Invoke the action indicated by #index.
              * @param i an integer specifying which action to invoke.
@@ -3057,12 +3057,7 @@ declare module 'gi://Atspi?version=2.0' {
              * @param traverse Whether to traverse the accessible subtree (in case         of `TRUE`) or only the direct children (on case of `FALSE`).
              * @returns All          {@link Atspi.Accessible} objects matching the given match rule.
              */
-            get_matches(
-                rule: MatchRule,
-                sortby: CollectionSortOrder | null,
-                count: number,
-                traverse: boolean,
-            ): Accessible[];
+            get_matches(rule: MatchRule, sortby: CollectionSortOrder, count: number, traverse: boolean): Accessible[];
             /**
              * Gets all {@link Atspi.Accessible} objects from the `collection`, before
              * `current_object`, matching a given `rule`.
@@ -3077,8 +3072,8 @@ declare module 'gi://Atspi?version=2.0' {
             get_matches_from(
                 current_object: Accessible,
                 rule: MatchRule,
-                sortby: CollectionSortOrder | null,
-                tree: CollectionTreeTraversalType | null,
+                sortby: CollectionSortOrder,
+                tree: CollectionTreeTraversalType,
                 count: number,
                 traverse: boolean,
             ): Accessible[];
@@ -3097,8 +3092,8 @@ declare module 'gi://Atspi?version=2.0' {
             get_matches_to(
                 current_object: Accessible,
                 rule: MatchRule,
-                sortby: CollectionSortOrder | null,
-                tree: CollectionTreeTraversalType | null,
+                sortby: CollectionSortOrder,
+                tree: CollectionTreeTraversalType,
                 limit_scope: boolean,
                 count: number,
                 traverse: boolean,
@@ -3115,7 +3110,7 @@ declare module 'gi://Atspi?version=2.0' {
              * @param ctype the desired coordinate system of the point (`x`, `y`)         (e.g. CSPI_COORD_TYPE_WINDOW, CSPI_COORD_TYPE_SCREEN).
              * @returns `TRUE` if the specified component contains the point (`x`, `y`),          `FALSE` otherwise.
              */
-            contains(x: number, y: number, ctype: CoordType | null): boolean;
+            contains(x: number, y: number, ctype: CoordType): boolean;
             /**
              * Gets the accessible child at a given coordinate within an {@link Atspi.Component}.
              * @param x a `gint` specifying the x coordinate of the point in question.
@@ -3123,7 +3118,7 @@ declare module 'gi://Atspi?version=2.0' {
              * @param ctype the coordinate system of the point (`x`, `y`)         (e.g. ATSPI_COORD_TYPE_WINDOW, ATSPI_COORD_TYPE_SCREEN).
              * @returns a pointer to an          {@link Atspi.Accessible} child of the specified component which          contains the point (`x`, `y`), or NULL if no child contains          the point.
              */
-            get_accessible_at_point(x: number, y: number, ctype: CoordType | null): Accessible | null;
+            get_accessible_at_point(x: number, y: number, ctype: CoordType): Accessible | null;
             /**
              * Gets the opacity/alpha value of a component, if alpha blending is in use.
              * @returns the opacity value of a component, as a `gdouble` between 0.0 and 1.0.
@@ -3136,7 +3131,7 @@ declare module 'gi://Atspi?version=2.0' {
              * @param ctype the desired coordinate system into which to return the results,         (e.g. ATSPI_COORD_TYPE_WINDOW, ATSPI_COORD_TYPE_SCREEN).
              * @returns An {@link Atspi.Rect} giving the accessible's extents.
              */
-            get_extents(ctype: CoordType | null): Rect;
+            get_extents(ctype: CoordType): Rect;
             /**
              * Queries which layer the component is painted into, to help determine its
              *      visibility in terms of stacking order.
@@ -3156,7 +3151,7 @@ declare module 'gi://Atspi?version=2.0' {
              * @param ctype the desired coordinate system into which to return the results,         (e.g. ATSPI_COORD_TYPE_WINDOW, ATSPI_COORD_TYPE_SCREEN).
              * @returns An {@link Atspi.Point} giving the `obj`'s position.
              */
-            get_position(ctype: CoordType | null): Point;
+            get_position(ctype: CoordType): Point;
             /**
              * @param args
              */
@@ -3181,7 +3176,7 @@ declare module 'gi://Atspi?version=2.0' {
              * @param type a {@link Atspi.ScrollType} indicating where the object should be placed on the        screen.
              * @returns `TRUE` if successful, `FALSE` otherwise.
              */
-            scroll_to(type: ScrollType | null): boolean;
+            scroll_to(type: ScrollType): boolean;
             /**
              * Scrolls whatever container of the {@link Atspi.Component} object so it becomes
              * visible on the screen at a given position.
@@ -3190,7 +3185,7 @@ declare module 'gi://Atspi?version=2.0' {
              * @param y the y coordinate of the point to reach
              * @returns `TRUE` if successful, `FALSE` otherwise.
              */
-            scroll_to_point(coords: CoordType | null, x: number, y: number): boolean;
+            scroll_to_point(coords: CoordType, x: number, y: number): boolean;
             /**
              * Moves and resizes the specified component.
              * @param x the new horizontal position to which the component should be moved.
@@ -3200,7 +3195,7 @@ declare module 'gi://Atspi?version=2.0' {
              * @param ctype the coordinate system in which the position is specified.         (e.g. ATSPI_COORD_TYPE_WINDOW, ATSPI_COORD_TYPE_SCREEN).
              * @returns `TRUE` if successful; `FALSE` otherwise.
              */
-            set_extents(x: number, y: number, width: number, height: number, ctype: CoordType | null): boolean;
+            set_extents(x: number, y: number, width: number, height: number, ctype: CoordType): boolean;
             /**
              * Moves the component to the specified position.
              * @param x the new horizontal position to which the component should be moved.
@@ -3208,7 +3203,7 @@ declare module 'gi://Atspi?version=2.0' {
              * @param ctype the coordinate system in which the position is specified.         (e.g. ATSPI_COORD_TYPE_WINDOW, ATSPI_COORD_TYPE_SCREEN).
              * @returns `TRUE` if successful; `FALSE` otherwise.
              */
-            set_position(x: number, y: number, ctype: CoordType | null): boolean;
+            set_position(x: number, y: number, ctype: CoordType): boolean;
             /**
              * Resizes the specified component to the given pixel dimensions.
              * @param width the width to which the component should be resized.
@@ -3346,7 +3341,7 @@ declare module 'gi://Atspi?version=2.0' {
              * @param ctype the desired coordinate system into which to return the results,         (e.g. ATSPI_COORD_TYPE_WINDOW, ATSPI_COORD_TYPE_SCREEN).
              * @returns a pointer to an {@link Atspi.Rect} corresponding to the image's bounding box. The minimum x and y coordinates, width, and height are specified.
              */
-            get_image_extents(ctype: CoordType | null): Rect;
+            get_image_extents(ctype: CoordType): Rect;
             /**
              * Gets the locale associated with an image and its textual representation.
              * @returns A POSIX LC_MESSAGES-style locale value for image description and text.
@@ -3360,7 +3355,7 @@ declare module 'gi://Atspi?version=2.0' {
              * @param ctype the desired coordinate system into which to return the results,         (e.g. ATSPI_COORD_TYPE_WINDOW, ATSPI_COORD_TYPE_SCREEN).
              * @returns a pointer to an {@link Atspi.Point} where x and y correspond to the minimum coordinates of the displayed image.
              */
-            get_image_position(ctype: CoordType | null): Point;
+            get_image_position(ctype: CoordType): Point;
             /**
              * Gets the size of the image displayed in a specified {@link Atspi.Image} object.
              * The returned values are meaningful only if the Image has both
@@ -3729,9 +3724,9 @@ declare module 'gi://Atspi?version=2.0' {
                 y: number,
                 width: number,
                 height: number,
-                type: CoordType | null,
-                clipTypeX: TextClipType | null,
-                clipTypeY: TextClipType | null,
+                type: CoordType,
+                clipTypeX: TextClipType,
+                clipTypeY: TextClipType,
             ): TextRange[];
             /**
              * Gets the current offset of the text caret in an {@link Atspi.Text} object.
@@ -3758,7 +3753,7 @@ declare module 'gi://Atspi?version=2.0' {
              * @param type an `AccessibleCoordType` indicating the coordinate system to use        for the returned values.
              * @returns An {@link Atspi.Rect} specifying the position and size of the character.
              */
-            get_character_extents(offset: number, type: CoordType | null): Rect;
+            get_character_extents(offset: number, type: CoordType): Rect;
             /**
              * Gets the default attributes applied to an {@link Atspi.Text}
              * object. The text attributes correspond to CSS attributes
@@ -3781,7 +3776,7 @@ declare module 'gi://Atspi?version=2.0' {
              * @param type an {@link Atspi.CoordType} indicating the coordinate system in which       the values should be returned.
              * @returns the offset (as a `gint`) at the point (`x`, `y`)       in the specified coordinate system.
              */
-            get_offset_at_point(x: number, y: number, type: CoordType | null): number;
+            get_offset_at_point(x: number, y: number, type: CoordType): number;
             /**
              * Gets the bounding box for text within a range in an  {@link Atspi.Text} object.
              * The returned values are meaningful only if the Text has both
@@ -3791,7 +3786,7 @@ declare module 'gi://Atspi?version=2.0' {
              * @param type an {@link Atspi.CoordType} indicating the coordinate system to use        for the returned values.
              * @returns An {@link Atspi.Rect} giving the position and size of the specified range          of text.
              */
-            get_range_extents(start_offset: number, end_offset: number, type: CoordType | null): Rect;
+            get_range_extents(start_offset: number, end_offset: number, type: CoordType): Rect;
             /**
              * Gets a portion of the text exposed through an {@link Atspi.Text} according to a given `offset`
              * and a specific `granularity`, along with the start and end offsets defining the
@@ -3827,7 +3822,7 @@ declare module 'gi://Atspi?version=2.0' {
              * @param granularity An {@link Atspi.TextGranularity}
              * @returns a newly allocated string containing the text at the `offset` bounded   by the specified `granularity`. Use `g_free()` to free the returned string.   Returns `null` if the offset is invalid or no implementation is available.
              */
-            get_string_at_offset(offset: number, granularity: TextGranularity | null): TextRange;
+            get_string_at_offset(offset: number, granularity: TextGranularity): TextRange;
             /**
              * Gets delimited text from an {@link Atspi.Text} object which follows a given
              *          text offset.
@@ -3835,7 +3830,7 @@ declare module 'gi://Atspi?version=2.0' {
              * @param type an {@link Atspi.TextBoundaryType} indicating whether the desired       text string is a word, sentence, line, or attribute run.
              * @returns an {@link Atspi.TextRange} containing a UTF-8 string representing the          delimited text, both of whose delimiting boundaries are after or          inclusive of the current offset, or an empty string if no such          text exists.
              */
-            get_text_after_offset(offset: number, type: TextBoundaryType | null): TextRange;
+            get_text_after_offset(offset: number, type: TextBoundaryType): TextRange;
             /**
              * Gets delimited text from an {@link Atspi.Text} object which includes a given
              *          text offset.
@@ -3843,7 +3838,7 @@ declare module 'gi://Atspi?version=2.0' {
              * @param type an {@link Atspi.TextBoundaryType} indicating whether the desired       text string is a word, sentence, line, or attribute run.
              * @returns an {@link Atspi.TextRange} containing a UTF-8 string representing the          delimited text, whose delimiting boundaries bracket the          current offset, or an empty string if no such text exists.
              */
-            get_text_at_offset(offset: number, type: TextBoundaryType | null): TextRange;
+            get_text_at_offset(offset: number, type: TextBoundaryType): TextRange;
             /**
              * Gets delimited text from an {@link Atspi.Text} object which precedes a given
              *          text offset.
@@ -3851,7 +3846,7 @@ declare module 'gi://Atspi?version=2.0' {
              * @param type an {@link Atspi.TextBoundaryType} indicating whether the desired       text string is a word, sentence, line, or attribute run.
              * @returns an {@link Atspi.TextRange} containing a UTF-8 string representing the          delimited text, both of whose delimiting boundaries are before the          current offset, or an empty string if no such text exists.
              */
-            get_text_before_offset(offset: number, type: TextBoundaryType | null): TextRange;
+            get_text_before_offset(offset: number, type: TextBoundaryType): TextRange;
             /**
              * De-selects a text selection.
              * @param selection_num a `gint` indicating which text selection to remove.
@@ -3866,7 +3861,7 @@ declare module 'gi://Atspi?version=2.0' {
              * @param type a {@link Atspi.ScrollType} indicating where the object should be placed on the        screen.
              * @returns `TRUE` if successful, `FALSE` otherwise.
              */
-            scroll_substring_to(start_offset: number, end_offset: number, type: ScrollType | null): boolean;
+            scroll_substring_to(start_offset: number, end_offset: number, type: ScrollType): boolean;
             /**
              * Scrolls whatever container of the {@link Atspi.Text} text range so it becomes
              * visible on the screen at a given position.
@@ -3880,7 +3875,7 @@ declare module 'gi://Atspi?version=2.0' {
             scroll_substring_to_point(
                 start_offset: number,
                 end_offset: number,
-                coords: CoordType | null,
+                coords: CoordType,
                 x: number,
                 y: number,
             ): boolean;
@@ -3968,7 +3963,7 @@ declare module 'gi://Atspi?version=2.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -4009,7 +4004,7 @@ declare module 'gi://Atspi?version=2.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -4761,7 +4756,7 @@ declare module 'gi://Atspi?version=2.0' {
              * @param capabilities A bitmask specifying the capabilities that should be enabled. This replaces the existing set of enabled capabilities, so, if it excludes some capabilities that are currently enabled, then those capabilities may be disabled.
              * @returns The new set of capabilities that are enabled. This may differ from the value passed in if the device does not support all of the requested capabilities.
              */
-            set_capabilities(capabilities: DeviceCapability | null): DeviceCapability;
+            set_capabilities(capabilities: DeviceCapability): DeviceCapability;
             /**
              * Removes a keyboard grab added via a call to atspi_device_add_keyboard.
              */
@@ -5648,7 +5643,7 @@ declare module 'gi://Atspi?version=2.0' {
              *       given state to `TRUE` in the stateset).
              * @param state an {@link Atspi.StateType} to be added to the specified {@link Atspi.StateSet}.
              */
-            add(state: StateType | null): void;
+            add(state: StateType): void;
             /**
              * Determines the differences between two instances of {@link Atspi.StateSet}.
              *
@@ -5663,7 +5658,7 @@ declare module 'gi://Atspi?version=2.0' {
              * @param state an {@link Atspi.StateType} for which the specified {@link Atspi.StateSet}          will be queried.
              * @returns `TRUE` if `state` is true/included in the given {@link Atspi.StateSet},          otherwise `FALSE`.
              */
-            contains(state: StateType | null): boolean;
+            contains(state: StateType): boolean;
             /**
              * Determines whether two instances of {@link Atspi.StateSet} are equivalent (i.e.
              *          consist of the same `AtspiStates`).  Useful for checking multiple
@@ -5688,7 +5683,7 @@ declare module 'gi://Atspi?version=2.0' {
              *       given state to `FALSE` in the stateset.)
              * @param state an {@link Atspi.StateType} to remove from the specified `set`.
              */
-            remove(state: StateType | null): void;
+            remove(state: StateType): void;
             /**
              * Enables/disables a state in an {@link Atspi.StateSet} according to its `name`.
              * @param name a string corresponding to a state name.
@@ -6148,12 +6143,7 @@ declare module 'gi://Atspi?version=2.0' {
              * @param traverse Whether to traverse the accessible subtree (in case         of `TRUE`) or only the direct children (on case of `FALSE`).
              * @returns All          {@link Atspi.Accessible} objects matching the given match rule.
              */
-            get_matches(
-                rule: MatchRule,
-                sortby: CollectionSortOrder | null,
-                count: number,
-                traverse: boolean,
-            ): Accessible[];
+            get_matches(rule: MatchRule, sortby: CollectionSortOrder, count: number, traverse: boolean): Accessible[];
             /**
              * Gets all {@link Atspi.Accessible} objects from the `collection`, before
              * `current_object`, matching a given `rule`.
@@ -6168,8 +6158,8 @@ declare module 'gi://Atspi?version=2.0' {
             get_matches_from(
                 current_object: Accessible,
                 rule: MatchRule,
-                sortby: CollectionSortOrder | null,
-                tree: CollectionTreeTraversalType | null,
+                sortby: CollectionSortOrder,
+                tree: CollectionTreeTraversalType,
                 count: number,
                 traverse: boolean,
             ): Accessible[];
@@ -6188,8 +6178,8 @@ declare module 'gi://Atspi?version=2.0' {
             get_matches_to(
                 current_object: Accessible,
                 rule: MatchRule,
-                sortby: CollectionSortOrder | null,
-                tree: CollectionTreeTraversalType | null,
+                sortby: CollectionSortOrder,
+                tree: CollectionTreeTraversalType,
                 limit_scope: boolean,
                 count: number,
                 traverse: boolean,
@@ -6239,7 +6229,7 @@ declare module 'gi://Atspi?version=2.0' {
              * @param ctype the desired coordinate system of the point (`x`, `y`)         (e.g. CSPI_COORD_TYPE_WINDOW, CSPI_COORD_TYPE_SCREEN).
              * @returns `TRUE` if the specified component contains the point (`x`, `y`),          `FALSE` otherwise.
              */
-            contains(x: number, y: number, ctype: CoordType | null): boolean;
+            contains(x: number, y: number, ctype: CoordType): boolean;
             /**
              * Gets the accessible child at a given coordinate within an {@link Atspi.Component}.
              * @param x a `gint` specifying the x coordinate of the point in question.
@@ -6247,7 +6237,7 @@ declare module 'gi://Atspi?version=2.0' {
              * @param ctype the coordinate system of the point (`x`, `y`)         (e.g. ATSPI_COORD_TYPE_WINDOW, ATSPI_COORD_TYPE_SCREEN).
              * @returns a pointer to an          {@link Atspi.Accessible} child of the specified component which          contains the point (`x`, `y`), or NULL if no child contains          the point.
              */
-            get_accessible_at_point(x: number, y: number, ctype: CoordType | null): Accessible | null;
+            get_accessible_at_point(x: number, y: number, ctype: CoordType): Accessible | null;
             /**
              * Gets the opacity/alpha value of a component, if alpha blending is in use.
              * @returns the opacity value of a component, as a `gdouble` between 0.0 and 1.0.
@@ -6260,7 +6250,7 @@ declare module 'gi://Atspi?version=2.0' {
              * @param ctype the desired coordinate system into which to return the results,         (e.g. ATSPI_COORD_TYPE_WINDOW, ATSPI_COORD_TYPE_SCREEN).
              * @returns An {@link Atspi.Rect} giving the accessible's extents.
              */
-            get_extents(ctype: CoordType | null): Rect;
+            get_extents(ctype: CoordType): Rect;
             /**
              * Queries which layer the component is painted into, to help determine its
              *      visibility in terms of stacking order.
@@ -6280,7 +6270,7 @@ declare module 'gi://Atspi?version=2.0' {
              * @param ctype the desired coordinate system into which to return the results,         (e.g. ATSPI_COORD_TYPE_WINDOW, ATSPI_COORD_TYPE_SCREEN).
              * @returns An {@link Atspi.Point} giving the `obj`'s position.
              */
-            get_position(ctype: CoordType | null): Point;
+            get_position(ctype: CoordType): Point;
             /**
              * Gets the size of the specified {@link Atspi.Component}.
              * The returned values are meaningful only if the Component has both
@@ -6300,7 +6290,7 @@ declare module 'gi://Atspi?version=2.0' {
              * @param type a {@link Atspi.ScrollType} indicating where the object should be placed on the        screen.
              * @returns `TRUE` if successful, `FALSE` otherwise.
              */
-            scroll_to(type: ScrollType | null): boolean;
+            scroll_to(type: ScrollType): boolean;
             /**
              * Scrolls whatever container of the {@link Atspi.Component} object so it becomes
              * visible on the screen at a given position.
@@ -6309,7 +6299,7 @@ declare module 'gi://Atspi?version=2.0' {
              * @param y the y coordinate of the point to reach
              * @returns `TRUE` if successful, `FALSE` otherwise.
              */
-            scroll_to_point(coords: CoordType | null, x: number, y: number): boolean;
+            scroll_to_point(coords: CoordType, x: number, y: number): boolean;
             /**
              * Moves and resizes the specified component.
              * @param x the new horizontal position to which the component should be moved.
@@ -6319,7 +6309,7 @@ declare module 'gi://Atspi?version=2.0' {
              * @param ctype the coordinate system in which the position is specified.         (e.g. ATSPI_COORD_TYPE_WINDOW, ATSPI_COORD_TYPE_SCREEN).
              * @returns `TRUE` if successful; `FALSE` otherwise.
              */
-            set_extents(x: number, y: number, width: number, height: number, ctype: CoordType | null): boolean;
+            set_extents(x: number, y: number, width: number, height: number, ctype: CoordType): boolean;
             /**
              * Moves the component to the specified position.
              * @param x the new horizontal position to which the component should be moved.
@@ -6327,7 +6317,7 @@ declare module 'gi://Atspi?version=2.0' {
              * @param ctype the coordinate system in which the position is specified.         (e.g. ATSPI_COORD_TYPE_WINDOW, ATSPI_COORD_TYPE_SCREEN).
              * @returns `TRUE` if successful; `FALSE` otherwise.
              */
-            set_position(x: number, y: number, ctype: CoordType | null): boolean;
+            set_position(x: number, y: number, ctype: CoordType): boolean;
             /**
              * Resizes the specified component to the given pixel dimensions.
              * @param width the width to which the component should be resized.
@@ -6573,7 +6563,7 @@ declare module 'gi://Atspi?version=2.0' {
              * @param ctype the desired coordinate system into which to return the results,         (e.g. ATSPI_COORD_TYPE_WINDOW, ATSPI_COORD_TYPE_SCREEN).
              * @returns a pointer to an {@link Atspi.Rect} corresponding to the image's bounding box. The minimum x and y coordinates, width, and height are specified.
              */
-            get_image_extents(ctype: CoordType | null): Rect;
+            get_image_extents(ctype: CoordType): Rect;
             /**
              * Gets the locale associated with an image and its textual representation.
              * @returns A POSIX LC_MESSAGES-style locale value for image description and text.
@@ -6587,7 +6577,7 @@ declare module 'gi://Atspi?version=2.0' {
              * @param ctype the desired coordinate system into which to return the results,         (e.g. ATSPI_COORD_TYPE_WINDOW, ATSPI_COORD_TYPE_SCREEN).
              * @returns a pointer to an {@link Atspi.Point} where x and y correspond to the minimum coordinates of the displayed image.
              */
-            get_image_position(ctype: CoordType | null): Point;
+            get_image_position(ctype: CoordType): Point;
             /**
              * Gets the size of the image displayed in a specified {@link Atspi.Image} object.
              * The returned values are meaningful only if the Image has both
@@ -7082,9 +7072,9 @@ declare module 'gi://Atspi?version=2.0' {
                 y: number,
                 width: number,
                 height: number,
-                type: CoordType | null,
-                clipTypeX: TextClipType | null,
-                clipTypeY: TextClipType | null,
+                type: CoordType,
+                clipTypeX: TextClipType,
+                clipTypeY: TextClipType,
             ): TextRange[];
             /**
              * Gets the current offset of the text caret in an {@link Atspi.Text} object.
@@ -7111,7 +7101,7 @@ declare module 'gi://Atspi?version=2.0' {
              * @param type an `AccessibleCoordType` indicating the coordinate system to use        for the returned values.
              * @returns An {@link Atspi.Rect} specifying the position and size of the character.
              */
-            get_character_extents(offset: number, type: CoordType | null): Rect;
+            get_character_extents(offset: number, type: CoordType): Rect;
             /**
              * Gets the default attributes applied to an {@link Atspi.Text}
              * object. The text attributes correspond to CSS attributes
@@ -7134,7 +7124,7 @@ declare module 'gi://Atspi?version=2.0' {
              * @param type an {@link Atspi.CoordType} indicating the coordinate system in which       the values should be returned.
              * @returns the offset (as a `gint`) at the point (`x`, `y`)       in the specified coordinate system.
              */
-            get_offset_at_point(x: number, y: number, type: CoordType | null): number;
+            get_offset_at_point(x: number, y: number, type: CoordType): number;
             /**
              * Gets the bounding box for text within a range in an  {@link Atspi.Text} object.
              * The returned values are meaningful only if the Text has both
@@ -7144,7 +7134,7 @@ declare module 'gi://Atspi?version=2.0' {
              * @param type an {@link Atspi.CoordType} indicating the coordinate system to use        for the returned values.
              * @returns An {@link Atspi.Rect} giving the position and size of the specified range          of text.
              */
-            get_range_extents(start_offset: number, end_offset: number, type: CoordType | null): Rect;
+            get_range_extents(start_offset: number, end_offset: number, type: CoordType): Rect;
             /**
              * Gets the bounds of the `selection_num`-th active text selection for an
              *         {@link Atspi.Text} object.
@@ -7186,7 +7176,7 @@ declare module 'gi://Atspi?version=2.0' {
              * @param granularity An {@link Atspi.TextGranularity}
              * @returns a newly allocated string containing the text at the `offset` bounded   by the specified `granularity`. Use `g_free()` to free the returned string.   Returns `null` if the offset is invalid or no implementation is available.
              */
-            get_string_at_offset(offset: number, granularity: TextGranularity | null): TextRange;
+            get_string_at_offset(offset: number, granularity: TextGranularity): TextRange;
             /**
              * Gets a range of text from an {@link Atspi.Text} object.  The number of bytes
              *          in the returned string may exceed either end_offset or start_offset, since
@@ -7203,7 +7193,7 @@ declare module 'gi://Atspi?version=2.0' {
              * @param type an {@link Atspi.TextBoundaryType} indicating whether the desired       text string is a word, sentence, line, or attribute run.
              * @returns an {@link Atspi.TextRange} containing a UTF-8 string representing the          delimited text, both of whose delimiting boundaries are after or          inclusive of the current offset, or an empty string if no such          text exists.
              */
-            get_text_after_offset(offset: number, type: TextBoundaryType | null): TextRange;
+            get_text_after_offset(offset: number, type: TextBoundaryType): TextRange;
             /**
              * Gets delimited text from an {@link Atspi.Text} object which includes a given
              *          text offset.
@@ -7211,7 +7201,7 @@ declare module 'gi://Atspi?version=2.0' {
              * @param type an {@link Atspi.TextBoundaryType} indicating whether the desired       text string is a word, sentence, line, or attribute run.
              * @returns an {@link Atspi.TextRange} containing a UTF-8 string representing the          delimited text, whose delimiting boundaries bracket the          current offset, or an empty string if no such text exists.
              */
-            get_text_at_offset(offset: number, type: TextBoundaryType | null): TextRange;
+            get_text_at_offset(offset: number, type: TextBoundaryType): TextRange;
             /**
              * Gets the value of a named attribute at a given offset.
              * @param offset The character offset at which to query the attribute.
@@ -7234,7 +7224,7 @@ declare module 'gi://Atspi?version=2.0' {
              * @param type an {@link Atspi.TextBoundaryType} indicating whether the desired       text string is a word, sentence, line, or attribute run.
              * @returns an {@link Atspi.TextRange} containing a UTF-8 string representing the          delimited text, both of whose delimiting boundaries are before the          current offset, or an empty string if no such text exists.
              */
-            get_text_before_offset(offset: number, type: TextBoundaryType | null): TextRange;
+            get_text_before_offset(offset: number, type: TextBoundaryType): TextRange;
             /**
              * De-selects a text selection.
              * @param selection_num a `gint` indicating which text selection to remove.
@@ -7249,7 +7239,7 @@ declare module 'gi://Atspi?version=2.0' {
              * @param type a {@link Atspi.ScrollType} indicating where the object should be placed on the        screen.
              * @returns `TRUE` if successful, `FALSE` otherwise.
              */
-            scroll_substring_to(start_offset: number, end_offset: number, type: ScrollType | null): boolean;
+            scroll_substring_to(start_offset: number, end_offset: number, type: ScrollType): boolean;
             /**
              * Scrolls whatever container of the {@link Atspi.Text} text range so it becomes
              * visible on the screen at a given position.
@@ -7263,7 +7253,7 @@ declare module 'gi://Atspi?version=2.0' {
             scroll_substring_to_point(
                 start_offset: number,
                 end_offset: number,
-                coords: CoordType | null,
+                coords: CoordType,
                 x: number,
                 y: number,
             ): boolean;

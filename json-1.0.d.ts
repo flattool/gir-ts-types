@@ -230,7 +230,7 @@ declare module 'gi://Json?version=1.0' {
          * @returns `TRUE` if the type can be deserialized, and `FALSE` otherwise
          * @since 0.10
          */
-        function boxed_can_deserialize(gboxed_type: GObject.GType, node_type: NodeType | null): boolean;
+        function boxed_can_deserialize(gboxed_type: GObject.GType, node_type: NodeType): boolean;
         /**
          * Checks whether it is possible to serialize a `GBoxed` of
          * type `gboxed_type` into a {@link Json.Node}.
@@ -2404,7 +2404,7 @@ declare module 'gi://Json?version=1.0' {
              * @param type the type of JSON node to initialize `node` to
              * @returns the initialized node
              */
-            init(type: NodeType | null): Node;
+            init(type: NodeType): Node;
             /**
              * Initializes `node` to `JSON_NODE_ARRAY` and sets `array` into it.
              *

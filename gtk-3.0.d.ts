@@ -5174,7 +5174,7 @@ declare module 'gi://Gtk?version=3.0' {
         function accel_groups_activate(
             object: GObject.Object,
             accel_key: number,
-            accel_mods: Gdk.ModifierType | null,
+            accel_mods: Gdk.ModifierType,
         ): boolean;
         /**
          * Gets a list of all accel groups which are attached to `object`.
@@ -5198,7 +5198,7 @@ declare module 'gi://Gtk?version=3.0' {
          * @returns a newly-allocated string representing the accelerator.
          * @since 2.6
          */
-        function accelerator_get_label(accelerator_key: number, accelerator_mods: Gdk.ModifierType | null): string;
+        function accelerator_get_label(accelerator_key: number, accelerator_mods: Gdk.ModifierType): string;
         /**
          * Converts an accelerator keyval and modifier mask
          * into a (possibly translated) string that can be displayed to
@@ -5218,7 +5218,7 @@ declare module 'gi://Gtk?version=3.0' {
             display: Gdk.Display | null,
             accelerator_key: number,
             keycode: number,
-            accelerator_mods: Gdk.ModifierType | null,
+            accelerator_mods: Gdk.ModifierType,
         ): string;
         /**
          * Converts an accelerator keyval and modifier mask into a string
@@ -5231,7 +5231,7 @@ declare module 'gi://Gtk?version=3.0' {
          * @param accelerator_mods accelerator modifier mask
          * @returns a newly-allocated accelerator name
          */
-        function accelerator_name(accelerator_key: number, accelerator_mods: Gdk.ModifierType | null): string;
+        function accelerator_name(accelerator_key: number, accelerator_mods: Gdk.ModifierType): string;
         /**
          * Converts an accelerator keyval and modifier mask
          * into a string parseable by `gtk_accelerator_parse_with_keycode()`,
@@ -5249,7 +5249,7 @@ declare module 'gi://Gtk?version=3.0' {
             display: Gdk.Display | null,
             accelerator_key: number,
             keycode: number,
-            accelerator_mods: Gdk.ModifierType | null,
+            accelerator_mods: Gdk.ModifierType,
         ): string;
         /**
          * Parses a string representing an accelerator. The format looks like
@@ -5302,7 +5302,7 @@ declare module 'gi://Gtk?version=3.0' {
          * before using any accelerator groups.
          * @param default_mod_mask accelerator modifier mask
          */
-        function accelerator_set_default_mod_mask(default_mod_mask: Gdk.ModifierType | null): void;
+        function accelerator_set_default_mod_mask(default_mod_mask: Gdk.ModifierType): void;
         /**
          * Determines whether a given keyval and modifier mask constitute
          * a valid keyboard accelerator. For example, the #GDK_KEY_a keyval
@@ -5313,7 +5313,7 @@ declare module 'gi://Gtk?version=3.0' {
          * @param modifiers modifier mask
          * @returns `true` if the accelerator is valid
          */
-        function accelerator_valid(keyval: number, modifiers: Gdk.ModifierType | null): boolean;
+        function accelerator_valid(keyval: number, modifiers: Gdk.ModifierType): boolean;
         /**
          * Returns `true` if dialogs are expected to use an alternative
          * button order on the screen `screen`. See
@@ -5372,7 +5372,7 @@ declare module 'gi://Gtk?version=3.0' {
         function binding_entry_add_signall(
             binding_set: BindingSet,
             keyval: number,
-            modifiers: Gdk.ModifierType | null,
+            modifiers: Gdk.ModifierType,
             signal_name: string,
             binding_args: BindingArg[],
         ): void;
@@ -5383,11 +5383,7 @@ declare module 'gi://Gtk?version=3.0' {
          * @param keyval key value of binding to remove
          * @param modifiers key modifier of binding to remove
          */
-        function binding_entry_remove(
-            binding_set: BindingSet,
-            keyval: number,
-            modifiers: Gdk.ModifierType | null,
-        ): void;
+        function binding_entry_remove(binding_set: BindingSet, keyval: number, modifiers: Gdk.ModifierType): void;
         /**
          * Install a binding on `binding_set` which causes key lookups
          * to be aborted, to prevent bindings from lower priority sets
@@ -5397,7 +5393,7 @@ declare module 'gi://Gtk?version=3.0' {
          * @param modifiers key modifier of binding to skip
          * @since 2.12
          */
-        function binding_entry_skip(binding_set: BindingSet, keyval: number, modifiers: Gdk.ModifierType | null): void;
+        function binding_entry_skip(binding_set: BindingSet, keyval: number, modifiers: Gdk.ModifierType): void;
         /**
          * Find a binding set by its globally unique name.
          *
@@ -5415,7 +5411,7 @@ declare module 'gi://Gtk?version=3.0' {
          * @param modifiers key modifier of the binding
          * @returns `true` if a binding was found and activated
          */
-        function bindings_activate(object: GObject.Object, keyval: number, modifiers: Gdk.ModifierType | null): boolean;
+        function bindings_activate(object: GObject.Object, keyval: number, modifiers: Gdk.ModifierType): boolean;
         /**
          * Looks up key bindings for `object` to find one matching
          * `event`, and if one was found, activate it.
@@ -5662,7 +5658,7 @@ declare module 'gi://Gtk?version=3.0' {
             cr: cairo.Context,
             location: Gdk.Rectangle,
             is_primary: boolean,
-            direction: TextDirection | null,
+            direction: TextDirection,
             draw_arrow: boolean,
         ): void;
         /**
@@ -6091,11 +6087,11 @@ declare module 'gi://Gtk?version=3.0' {
         function paint_arrow(
             style: Style,
             cr: cairo.Context,
-            state_type: StateType | null,
-            shadow_type: ShadowType | null,
+            state_type: StateType,
+            shadow_type: ShadowType,
             widget: Widget | null,
             detail: string | null,
-            arrow_type: ArrowType | null,
+            arrow_type: ArrowType,
             fill: boolean,
             x: number,
             y: number,
@@ -6119,8 +6115,8 @@ declare module 'gi://Gtk?version=3.0' {
         function paint_box(
             style: Style,
             cr: cairo.Context,
-            state_type: StateType | null,
-            shadow_type: ShadowType | null,
+            state_type: StateType,
+            shadow_type: ShadowType,
             widget: Widget | null,
             detail: string | null,
             x: number,
@@ -6149,15 +6145,15 @@ declare module 'gi://Gtk?version=3.0' {
         function paint_box_gap(
             style: Style,
             cr: cairo.Context,
-            state_type: StateType | null,
-            shadow_type: ShadowType | null,
+            state_type: StateType,
+            shadow_type: ShadowType,
             widget: Widget | null,
             detail: string | null,
             x: number,
             y: number,
             width: number,
             height: number,
-            gap_side: PositionType | null,
+            gap_side: PositionType,
             gap_x: number,
             gap_width: number,
         ): void;
@@ -6179,8 +6175,8 @@ declare module 'gi://Gtk?version=3.0' {
         function paint_check(
             style: Style,
             cr: cairo.Context,
-            state_type: StateType | null,
-            shadow_type: ShadowType | null,
+            state_type: StateType,
+            shadow_type: ShadowType,
             widget: Widget | null,
             detail: string | null,
             x: number,
@@ -6206,8 +6202,8 @@ declare module 'gi://Gtk?version=3.0' {
         function paint_diamond(
             style: Style,
             cr: cairo.Context,
-            state_type: StateType | null,
-            shadow_type: ShadowType | null,
+            state_type: StateType,
+            shadow_type: ShadowType,
             widget: Widget | null,
             detail: string | null,
             x: number,
@@ -6238,12 +6234,12 @@ declare module 'gi://Gtk?version=3.0' {
         function paint_expander(
             style: Style,
             cr: cairo.Context,
-            state_type: StateType | null,
+            state_type: StateType,
             widget: Widget | null,
             detail: string | null,
             x: number,
             y: number,
-            expander_style: ExpanderStyle | null,
+            expander_style: ExpanderStyle,
         ): void;
         /**
          * Draws an extension, i.e. a notebook tab.
@@ -6263,15 +6259,15 @@ declare module 'gi://Gtk?version=3.0' {
         function paint_extension(
             style: Style,
             cr: cairo.Context,
-            state_type: StateType | null,
-            shadow_type: ShadowType | null,
+            state_type: StateType,
+            shadow_type: ShadowType,
             widget: Widget | null,
             detail: string | null,
             x: number,
             y: number,
             width: number,
             height: number,
-            gap_side: PositionType | null,
+            gap_side: PositionType,
         ): void;
         /**
          * Draws a flat box on `cr` with the given parameters.
@@ -6290,8 +6286,8 @@ declare module 'gi://Gtk?version=3.0' {
         function paint_flat_box(
             style: Style,
             cr: cairo.Context,
-            state_type: StateType | null,
-            shadow_type: ShadowType | null,
+            state_type: StateType,
+            shadow_type: ShadowType,
             widget: Widget | null,
             detail: string | null,
             x: number,
@@ -6316,7 +6312,7 @@ declare module 'gi://Gtk?version=3.0' {
         function paint_focus(
             style: Style,
             cr: cairo.Context,
-            state_type: StateType | null,
+            state_type: StateType,
             widget: Widget | null,
             detail: string | null,
             x: number,
@@ -6342,15 +6338,15 @@ declare module 'gi://Gtk?version=3.0' {
         function paint_handle(
             style: Style,
             cr: cairo.Context,
-            state_type: StateType | null,
-            shadow_type: ShadowType | null,
+            state_type: StateType,
+            shadow_type: ShadowType,
             widget: Widget | null,
             detail: string | null,
             x: number,
             y: number,
             width: number,
             height: number,
-            orientation: Orientation | null,
+            orientation: Orientation,
         ): void;
         /**
          * Draws a horizontal line from (`x1`, `y`) to (`x2`, `y`) in `cr`
@@ -6368,7 +6364,7 @@ declare module 'gi://Gtk?version=3.0' {
         function paint_hline(
             style: Style,
             cr: cairo.Context,
-            state_type: StateType | null,
+            state_type: StateType,
             widget: Widget | null,
             detail: string | null,
             x1: number,
@@ -6391,7 +6387,7 @@ declare module 'gi://Gtk?version=3.0' {
         function paint_layout(
             style: Style,
             cr: cairo.Context,
-            state_type: StateType | null,
+            state_type: StateType,
             use_text: boolean,
             widget: Widget | null,
             detail: string | null,
@@ -6417,8 +6413,8 @@ declare module 'gi://Gtk?version=3.0' {
         function paint_option(
             style: Style,
             cr: cairo.Context,
-            state_type: StateType | null,
-            shadow_type: ShadowType | null,
+            state_type: StateType,
+            shadow_type: ShadowType,
             widget: Widget | null,
             detail: string | null,
             x: number,
@@ -6444,10 +6440,10 @@ declare module 'gi://Gtk?version=3.0' {
         function paint_resize_grip(
             style: Style,
             cr: cairo.Context,
-            state_type: StateType | null,
+            state_type: StateType,
             widget: Widget | null,
             detail: string | null,
-            edge: Gdk.WindowEdge | null,
+            edge: Gdk.WindowEdge,
             x: number,
             y: number,
             width: number,
@@ -6471,8 +6467,8 @@ declare module 'gi://Gtk?version=3.0' {
         function paint_shadow(
             style: Style,
             cr: cairo.Context,
-            state_type: StateType | null,
-            shadow_type: ShadowType | null,
+            state_type: StateType,
+            shadow_type: ShadowType,
             widget: Widget | null,
             detail: string | null,
             x: number,
@@ -6502,15 +6498,15 @@ declare module 'gi://Gtk?version=3.0' {
         function paint_shadow_gap(
             style: Style,
             cr: cairo.Context,
-            state_type: StateType | null,
-            shadow_type: ShadowType | null,
+            state_type: StateType,
+            shadow_type: ShadowType,
             widget: Widget | null,
             detail: string | null,
             x: number,
             y: number,
             width: number,
             height: number,
-            gap_side: PositionType | null,
+            gap_side: PositionType,
             gap_x: number,
             gap_width: number,
         ): void;
@@ -6533,15 +6529,15 @@ declare module 'gi://Gtk?version=3.0' {
         function paint_slider(
             style: Style,
             cr: cairo.Context,
-            state_type: StateType | null,
-            shadow_type: ShadowType | null,
+            state_type: StateType,
+            shadow_type: ShadowType,
             widget: Widget | null,
             detail: string | null,
             x: number,
             y: number,
             width: number,
             height: number,
-            orientation: Orientation | null,
+            orientation: Orientation,
         ): void;
         /**
          * Draws a spinner on `window` using the given parameters.
@@ -6560,7 +6556,7 @@ declare module 'gi://Gtk?version=3.0' {
         function paint_spinner(
             style: Style,
             cr: cairo.Context,
-            state_type: StateType | null,
+            state_type: StateType,
             widget: Widget | null,
             detail: string | null,
             step: number,
@@ -6587,8 +6583,8 @@ declare module 'gi://Gtk?version=3.0' {
         function paint_tab(
             style: Style,
             cr: cairo.Context,
-            state_type: StateType | null,
-            shadow_type: ShadowType | null,
+            state_type: StateType,
+            shadow_type: ShadowType,
             widget: Widget | null,
             detail: string | null,
             x: number,
@@ -6612,7 +6608,7 @@ declare module 'gi://Gtk?version=3.0' {
         function paint_vline(
             style: Style,
             cr: cairo.Context,
-            state_type: StateType | null,
+            state_type: StateType,
             widget: Widget | null,
             detail: string | null,
             y1_: number,
@@ -6863,7 +6859,7 @@ declare module 'gi://Gtk?version=3.0' {
          * @returns {@link GLib.TokenType.NONE} if parsing succeeded, otherwise the token   that was expected but not found.
          * @deprecated since 3.0: Use {@link Gtk.CssProvider} instead
          */
-        function rc_parse_priority(scanner: GLib.Scanner, priority: PathPriorityType | null): number;
+        function rc_parse_priority(scanner: GLib.Scanner, priority: PathPriorityType): number;
         /**
          * Parses a {@link Gtk.StateType} variable from the format expected
          * in a RC file.
@@ -7161,7 +7157,7 @@ declare module 'gi://Gtk?version=3.0' {
             y: number,
             width: number,
             height: number,
-            gap_side: PositionType | null,
+            gap_side: PositionType,
         ): void;
         /**
          * Renders a focus indicator on the rectangle determined by `x`, `y`, `width`, `height`.
@@ -7236,7 +7232,7 @@ declare module 'gi://Gtk?version=3.0' {
             y: number,
             width: number,
             height: number,
-            gap_side: PositionType | null,
+            gap_side: PositionType,
             xy0_gap: number,
             xy1_gap: number,
         ): void;
@@ -7332,7 +7328,7 @@ declare module 'gi://Gtk?version=3.0' {
             y: number,
             layout: Pango.Layout,
             index: number,
-            direction: Pango.Direction | null,
+            direction: Pango.Direction,
         ): void;
         /**
          * Renders `layout` on the coordinates `x`, `y`
@@ -7416,7 +7412,7 @@ declare module 'gi://Gtk?version=3.0' {
             y: number,
             width: number,
             height: number,
-            orientation: Orientation | null,
+            orientation: Orientation,
         ): void;
         /**
          * Converts a color from RGB space to HSV.
@@ -7808,7 +7804,7 @@ declare module 'gi://Gtk?version=3.0' {
          * @since 2.14
          * @deprecated since 3.20: This testing infrastructure is phased out in favor of reftests.
          */
-        function test_widget_click(widget: Widget, button: number, modifiers: Gdk.ModifierType | null): boolean;
+        function test_widget_click(widget: Widget, button: number, modifiers: Gdk.ModifierType): boolean;
         /**
          * This function will generate keyboard press and release events in
          * the middle of the first GdkWindow found that belongs to `widget`.
@@ -7824,7 +7820,7 @@ declare module 'gi://Gtk?version=3.0' {
          * @returns whether all actions neccessary for the key event simulation were carried out successfully.
          * @since 2.14
          */
-        function test_widget_send_key(widget: Widget, keyval: number, modifiers: Gdk.ModifierType | null): boolean;
+        function test_widget_send_key(widget: Widget, keyval: number, modifiers: Gdk.ModifierType): boolean;
         /**
          * Enters the main loop and waits for `widget` to be “drawn”. In this
          * context that means it waits for the frame clock of `widget` to have
@@ -9871,7 +9867,7 @@ declare module 'gi://Gtk?version=3.0' {
              * `gtk_about_dialog_set_license()`.
              * @param license_type the type of license
              */
-            set_license_type(license_type: License | null): void;
+            set_license_type(license_type: License): void;
             /**
              * Sets the pixbuf to be displayed as logo in the about dialog.
              * If it is `null`, the default window icon set with
@@ -9979,7 +9975,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -10020,7 +10016,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -10592,7 +10588,7 @@ declare module 'gi://Gtk?version=3.0' {
                 accel_quark: GLib.Quark,
                 acceleratable: GObject.Object,
                 accel_key: number,
-                accel_mods: Gdk.ModifierType | null,
+                accel_mods: Gdk.ModifierType,
             ): boolean;
             /**
              * Installs an accelerator in this group. When `accel_group` is being
@@ -10611,8 +10607,8 @@ declare module 'gi://Gtk?version=3.0' {
              */
             connect(
                 accel_key: number,
-                accel_mods: Gdk.ModifierType | null,
-                accel_flags: AccelFlags | null,
+                accel_mods: Gdk.ModifierType,
+                accel_flags: AccelFlags,
                 closure: GObject.Closure,
             ): void;
             /**
@@ -10657,7 +10653,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param accel_mods modifier combination of the accelerator
              * @returns `true` if there was an accelerator which could be     removed, `false` otherwise
              */
-            disconnect_key(accel_key: number, accel_mods: Gdk.ModifierType | null): boolean;
+            disconnect_key(accel_key: number, accel_mods: Gdk.ModifierType): boolean;
             /**
              * Finds the first entry in an accelerator group for which
              * `find_func` returns `true` and returns its {@link Gtk.AccelKey}.
@@ -10696,7 +10692,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param accel_mods modifier combination of the accelerator
              * @returns an array of     `n_entries` {@link Gtk.AccelGroupEntry} elements, or `null`. The array     is owned by GTK+ and must not be freed.
              */
-            query(accel_key: number, accel_mods: Gdk.ModifierType | null): AccelGroupEntry[] | null;
+            query(accel_key: number, accel_mods: Gdk.ModifierType): AccelGroupEntry[] | null;
             /**
              * Undoes the last call to `gtk_accel_group_lock()` on this `accel_group`.
              */
@@ -10949,7 +10945,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param accelerator_key a keyval, or 0
              * @param accelerator_mods the modifier mask for the accel
              */
-            set_accel(accelerator_key: number, accelerator_mods: Gdk.ModifierType | null): void;
+            set_accel(accelerator_key: number, accelerator_mods: Gdk.ModifierType): void;
             /**
              * Sets the closure to be monitored by this accelerator label. The closure
              * must be connected to an accelerator group; see `gtk_accel_group_connect()`.
@@ -11008,7 +11004,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -11049,7 +11045,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -12696,7 +12692,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -12737,7 +12733,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -13280,7 +13276,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -13321,7 +13317,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -14224,7 +14220,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -14265,7 +14261,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -15268,7 +15264,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -15309,7 +15305,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -17290,7 +17286,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -17331,7 +17327,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -17722,8 +17718,8 @@ declare module 'gi://Gtk?version=3.0' {
                 accel_signal: string,
                 accel_group: AccelGroup,
                 accel_key: number,
-                accel_mods: Gdk.ModifierType | null,
-                accel_flags: AccelFlags | null,
+                accel_mods: Gdk.ModifierType,
+                accel_flags: AccelFlags,
             ): void;
             /**
              * Adds the device events in the bitfield `events` to the event mask for
@@ -17731,7 +17727,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param device a {@link Gdk.Device}
              * @param events an event mask, see {@link Gdk.EventMask}
              */
-            add_device_events(device: Gdk.Device, events: Gdk.EventMask | null): void;
+            add_device_events(device: Gdk.Device, events: Gdk.EventMask): void;
             /**
              * Adds the events in the bitfield `events` to the event mask for
              * `widget`. See `gtk_widget_set_events()` and the
@@ -17809,7 +17805,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param direction direction of focus movement
              * @returns `true` if focus ended up inside `widget`
              */
-            child_focus(direction: DirectionType | null): boolean;
+            child_focus(direction: DirectionType): boolean;
             /**
              * Emits a {@link Gtk.Widget.SignalSignatures.child_notify | Gtk.Widget::child-notify} signal for the
              * [child property][child-properties] `child_property`
@@ -17846,7 +17842,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param orientation expand direction
              * @returns whether widget tree rooted here should be expanded
              */
-            compute_expand(orientation: Orientation | null): boolean;
+            compute_expand(orientation: Orientation): boolean;
             /**
              * Creates a new {@link Pango.Context} with the appropriate font map,
              * font options, font description, and base direction for drawing
@@ -17933,7 +17929,7 @@ declare module 'gi://Gtk?version=3.0' {
              */
             drag_begin(
                 targets: TargetList,
-                actions: Gdk.DragAction | null,
+                actions: Gdk.DragAction,
                 button: number,
                 event?: Gdk.Event | null,
             ): Gdk.DragContext;
@@ -17973,7 +17969,7 @@ declare module 'gi://Gtk?version=3.0' {
              */
             drag_begin_with_coordinates(
                 targets: TargetList,
-                actions: Gdk.DragAction | null,
+                actions: Gdk.DragAction,
                 button: number,
                 event: Gdk.Event | null,
                 x: number,
@@ -18085,22 +18081,14 @@ declare module 'gi://Gtk?version=3.0' {
              * @param targets a pointer to an array of     `GtkTargetEntrys` indicating the drop types that this `widget` will     accept, or `null`. Later you can access the list with     `gtk_drag_dest_get_target_list()` and `gtk_drag_dest_find_target()`.
              * @param actions a bitmask of possible actions for a drop onto this `widget`.
              */
-            drag_dest_set(
-                flags: DestDefaults | null,
-                targets: TargetEntry[] | null,
-                actions: Gdk.DragAction | null,
-            ): void;
+            drag_dest_set(flags: DestDefaults, targets: TargetEntry[] | null, actions: Gdk.DragAction): void;
             /**
              * Sets this widget as a proxy for drops to another window.
              * @param proxy_window the window to which to forward drag events
              * @param protocol the drag protocol which the `proxy_window` accepts   (You can use `gdk_drag_get_protocol()` to determine this)
              * @param use_coordinates If `true`, send the same coordinates to the   destination, because it is an embedded   subwindow.
              */
-            drag_dest_set_proxy(
-                proxy_window: Gdk.Window,
-                protocol: Gdk.DragProtocol | null,
-                use_coordinates: boolean,
-            ): void;
+            drag_dest_set_proxy(proxy_window: Gdk.Window, protocol: Gdk.DragProtocol, use_coordinates: boolean): void;
             /**
              * Sets the target types that this widget can accept from drag-and-drop.
              * The widget must first be made into a drag destination with
@@ -18182,9 +18170,9 @@ declare module 'gi://Gtk?version=3.0' {
              * @param actions the bitmask of possible actions for a drag from this widget
              */
             drag_source_set(
-                start_button_mask: Gdk.ModifierType | null,
+                start_button_mask: Gdk.ModifierType,
                 targets: TargetEntry[] | null,
-                actions: Gdk.DragAction | null,
+                actions: Gdk.DragAction,
             ): void;
             /**
              * Sets the icon that will be used for drags from a particular source
@@ -18643,7 +18631,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param intent the use case for the modifier mask
              * @returns the modifier mask used for `intent`.
              */
-            get_modifier_mask(intent: Gdk.ModifierIntent | null): Gdk.ModifierType;
+            get_modifier_mask(intent: Gdk.ModifierIntent): Gdk.ModifierType;
             /**
              * Returns the current modifier style for the widget. (As set by
              * `gtk_widget_modify_style()`.) If no style has previously set, a new
@@ -19277,7 +19265,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param direction direction of focus movement
              * @returns `true` if stopping keyboard navigation is fine, `false`               if the emitting widget should try to handle the keyboard               navigation attempt in its parent container(s).
              */
-            keynav_failed(direction: DirectionType | null): boolean;
+            keynav_failed(direction: DirectionType): boolean;
             /**
              * Lists the closures used by `widget` for accelerator group connections
              * with `gtk_accel_group_connect_by_path()` or `gtk_accel_group_connect()`.
@@ -19338,7 +19326,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param state the state for which to set the base color
              * @param color the color to assign (does not need to     be allocated), or `null` to undo the effect of previous     calls to of `gtk_widget_modify_base()`.
              */
-            modify_base(state: StateType | null, color?: Gdk.Color | null): void;
+            modify_base(state: StateType, color?: Gdk.Color | null): void;
             /**
              * Sets the background color for a widget in a particular state.
              *
@@ -19357,7 +19345,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param state the state for which to set the background color
              * @param color the color to assign (does not need     to be allocated), or `null` to undo the effect of previous     calls to of `gtk_widget_modify_bg()`.
              */
-            modify_bg(state: StateType | null, color?: Gdk.Color | null): void;
+            modify_bg(state: StateType, color?: Gdk.Color | null): void;
             /**
              * Sets the cursor color to use in a widget, overriding the {@link Gtk.Widget}
              * cursor-color and secondary-cursor-color
@@ -19377,7 +19365,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param state the state for which to set the foreground color
              * @param color the color to assign (does not need to be allocated),     or `null` to undo the effect of previous calls to     of `gtk_widget_modify_fg()`.
              */
-            modify_fg(state: StateType | null, color?: Gdk.Color | null): void;
+            modify_fg(state: StateType, color?: Gdk.Color | null): void;
             /**
              * Sets the font to use for a widget.
              *
@@ -19419,7 +19407,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param state the state for which to set the text color
              * @param color the color to assign (does not need to     be allocated), or `null` to undo the effect of previous     calls to of `gtk_widget_modify_text()`.
              */
-            modify_text(state: StateType | null, color?: Gdk.Color | null): void;
+            modify_text(state: StateType, color?: Gdk.Color | null): void;
             /**
              * Sets the background color to use for a widget.
              *
@@ -19428,7 +19416,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param state the state for which to set the background color
              * @param color the color to assign, or `null` to undo the effect     of previous calls to `gtk_widget_override_background_color()`
              */
-            override_background_color(state: StateFlags | null, color?: Gdk.RGBA | null): void;
+            override_background_color(state: StateFlags, color?: Gdk.RGBA | null): void;
             /**
              * Sets the color to use for a widget.
              *
@@ -19458,7 +19446,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param state the state for which to set the color
              * @param color the color to assign, or `null` to undo the effect     of previous calls to `gtk_widget_override_color()`
              */
-            override_color(state: StateFlags | null, color?: Gdk.RGBA | null): void;
+            override_color(state: StateFlags, color?: Gdk.RGBA | null): void;
             /**
              * Sets the cursor color to use in a widget, overriding the
              * cursor-color and secondary-cursor-color
@@ -19625,11 +19613,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param accel_mods modifier key combination of the accelerator
              * @returns whether an accelerator was installed and could be removed
              */
-            remove_accelerator(
-                accel_group: AccelGroup,
-                accel_key: number,
-                accel_mods: Gdk.ModifierType | null,
-            ): boolean;
+            remove_accelerator(accel_group: AccelGroup, accel_key: number, accel_mods: Gdk.ModifierType): boolean;
             /**
              * Removes a widget from the list of mnemonic labels for
              * this widget. (See `gtk_widget_list_mnemonic_labels()`). The widget
@@ -19878,7 +19862,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param device a {@link Gdk.Device}
              * @param events event mask
              */
-            set_device_events(device: Gdk.Device, events: Gdk.EventMask | null): void;
+            set_device_events(device: Gdk.Device, events: Gdk.EventMask): void;
             /**
              * Sets the reading direction on a particular widget. This direction
              * controls the primary direction for widgets containing text,
@@ -19894,7 +19878,7 @@ declare module 'gi://Gtk?version=3.0' {
              * set by `gtk_widget_set_default_direction()` will be used.
              * @param dir the new direction
              */
-            set_direction(dir: TextDirection | null): void;
+            set_direction(dir: TextDirection): void;
             /**
              * Widgets are double buffered by default; you can use this function
              * to turn off the buffering. “Double buffered” simply means that
@@ -19964,7 +19948,7 @@ declare module 'gi://Gtk?version=3.0' {
              * See the {@link Gtk.Widget.halign} property.
              * @param align the horizontal alignment
              */
-            set_halign(align: Align | null): void;
+            set_halign(align: Align): void;
             /**
              * Sets the has-tooltip property on `widget` to `has_tooltip`.  See
              * {@link Gtk.Widget.has_tooltip} for more information.
@@ -20227,7 +20211,7 @@ declare module 'gi://Gtk?version=3.0' {
              * the state using wrapper functions such as `gtk_widget_set_sensitive()`.
              * @param state new state for `widget`
              */
-            set_state(state: StateType | null): void;
+            set_state(state: StateType): void;
             /**
              * This function is for use in widget implementations. Turns on flag
              * values in the current widget state (insensitive, prelighted, etc.).
@@ -20245,7 +20229,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param flags State flags to turn on
              * @param clear Whether to clear state before turning on `flags`
              */
-            set_state_flags(flags: StateFlags | null, clear: boolean): void;
+            set_state_flags(flags: StateFlags, clear: boolean): void;
             /**
              * Used to set the {@link Gtk.Style} for a widget (`widget`->style). Since
              * GTK 3, this function does nothing, the passed in style is ignored.
@@ -20295,7 +20279,7 @@ declare module 'gi://Gtk?version=3.0' {
              * See the {@link Gtk.Widget.valign} property.
              * @param align the vertical alignment
              */
-            set_valign(align: Align | null): void;
+            set_valign(align: Align): void;
             /**
              * Sets whether the widget would like any available extra vertical
              * space.
@@ -20506,7 +20490,7 @@ declare module 'gi://Gtk?version=3.0' {
              * See `gtk_widget_set_state_flags()`.
              * @param flags State flags to turn off
              */
-            unset_state_flags(flags: StateFlags | null): void;
+            unset_state_flags(flags: StateFlags): void;
             /**
              * @param baseline
              * @virtual
@@ -22033,7 +22017,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -22074,7 +22058,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -22465,8 +22449,8 @@ declare module 'gi://Gtk?version=3.0' {
                 accel_signal: string,
                 accel_group: AccelGroup,
                 accel_key: number,
-                accel_mods: Gdk.ModifierType | null,
-                accel_flags: AccelFlags | null,
+                accel_mods: Gdk.ModifierType,
+                accel_flags: AccelFlags,
             ): void;
             /**
              * Adds the device events in the bitfield `events` to the event mask for
@@ -22474,7 +22458,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param device a {@link Gdk.Device}
              * @param events an event mask, see {@link Gdk.EventMask}
              */
-            add_device_events(device: Gdk.Device, events: Gdk.EventMask | null): void;
+            add_device_events(device: Gdk.Device, events: Gdk.EventMask): void;
             /**
              * Adds the events in the bitfield `events` to the event mask for
              * `widget`. See `gtk_widget_set_events()` and the
@@ -22552,7 +22536,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param direction direction of focus movement
              * @returns `true` if focus ended up inside `widget`
              */
-            child_focus(direction: DirectionType | null): boolean;
+            child_focus(direction: DirectionType): boolean;
             /**
              * Emits a {@link Gtk.Widget.SignalSignatures.child_notify | Gtk.Widget::child-notify} signal for the
              * [child property][child-properties] `child_property`
@@ -22589,7 +22573,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param orientation expand direction
              * @returns whether widget tree rooted here should be expanded
              */
-            compute_expand(orientation: Orientation | null): boolean;
+            compute_expand(orientation: Orientation): boolean;
             /**
              * Creates a new {@link Pango.Context} with the appropriate font map,
              * font options, font description, and base direction for drawing
@@ -22676,7 +22660,7 @@ declare module 'gi://Gtk?version=3.0' {
              */
             drag_begin(
                 targets: TargetList,
-                actions: Gdk.DragAction | null,
+                actions: Gdk.DragAction,
                 button: number,
                 event?: Gdk.Event | null,
             ): Gdk.DragContext;
@@ -22716,7 +22700,7 @@ declare module 'gi://Gtk?version=3.0' {
              */
             drag_begin_with_coordinates(
                 targets: TargetList,
-                actions: Gdk.DragAction | null,
+                actions: Gdk.DragAction,
                 button: number,
                 event: Gdk.Event | null,
                 x: number,
@@ -22828,22 +22812,14 @@ declare module 'gi://Gtk?version=3.0' {
              * @param targets a pointer to an array of     `GtkTargetEntrys` indicating the drop types that this `widget` will     accept, or `null`. Later you can access the list with     `gtk_drag_dest_get_target_list()` and `gtk_drag_dest_find_target()`.
              * @param actions a bitmask of possible actions for a drop onto this `widget`.
              */
-            drag_dest_set(
-                flags: DestDefaults | null,
-                targets: TargetEntry[] | null,
-                actions: Gdk.DragAction | null,
-            ): void;
+            drag_dest_set(flags: DestDefaults, targets: TargetEntry[] | null, actions: Gdk.DragAction): void;
             /**
              * Sets this widget as a proxy for drops to another window.
              * @param proxy_window the window to which to forward drag events
              * @param protocol the drag protocol which the `proxy_window` accepts   (You can use `gdk_drag_get_protocol()` to determine this)
              * @param use_coordinates If `true`, send the same coordinates to the   destination, because it is an embedded   subwindow.
              */
-            drag_dest_set_proxy(
-                proxy_window: Gdk.Window,
-                protocol: Gdk.DragProtocol | null,
-                use_coordinates: boolean,
-            ): void;
+            drag_dest_set_proxy(proxy_window: Gdk.Window, protocol: Gdk.DragProtocol, use_coordinates: boolean): void;
             /**
              * Sets the target types that this widget can accept from drag-and-drop.
              * The widget must first be made into a drag destination with
@@ -22925,9 +22901,9 @@ declare module 'gi://Gtk?version=3.0' {
              * @param actions the bitmask of possible actions for a drag from this widget
              */
             drag_source_set(
-                start_button_mask: Gdk.ModifierType | null,
+                start_button_mask: Gdk.ModifierType,
                 targets: TargetEntry[] | null,
-                actions: Gdk.DragAction | null,
+                actions: Gdk.DragAction,
             ): void;
             /**
              * Sets the icon that will be used for drags from a particular source
@@ -23386,7 +23362,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param intent the use case for the modifier mask
              * @returns the modifier mask used for `intent`.
              */
-            get_modifier_mask(intent: Gdk.ModifierIntent | null): Gdk.ModifierType;
+            get_modifier_mask(intent: Gdk.ModifierIntent): Gdk.ModifierType;
             /**
              * Returns the current modifier style for the widget. (As set by
              * `gtk_widget_modify_style()`.) If no style has previously set, a new
@@ -24020,7 +23996,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param direction direction of focus movement
              * @returns `true` if stopping keyboard navigation is fine, `false`               if the emitting widget should try to handle the keyboard               navigation attempt in its parent container(s).
              */
-            keynav_failed(direction: DirectionType | null): boolean;
+            keynav_failed(direction: DirectionType): boolean;
             /**
              * Lists the closures used by `widget` for accelerator group connections
              * with `gtk_accel_group_connect_by_path()` or `gtk_accel_group_connect()`.
@@ -24086,7 +24062,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param state the state for which to set the base color
              * @param color the color to assign (does not need to     be allocated), or `null` to undo the effect of previous     calls to of `gtk_widget_modify_base()`.
              */
-            modify_base(state: StateType | null, color?: Gdk.Color | null): void;
+            modify_base(state: StateType, color?: Gdk.Color | null): void;
             /**
              * Sets the background color for a widget in a particular state.
              *
@@ -24105,7 +24081,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param state the state for which to set the background color
              * @param color the color to assign (does not need     to be allocated), or `null` to undo the effect of previous     calls to of `gtk_widget_modify_bg()`.
              */
-            modify_bg(state: StateType | null, color?: Gdk.Color | null): void;
+            modify_bg(state: StateType, color?: Gdk.Color | null): void;
             /**
              * Sets the cursor color to use in a widget, overriding the {@link Gtk.Widget}
              * cursor-color and secondary-cursor-color
@@ -24125,7 +24101,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param state the state for which to set the foreground color
              * @param color the color to assign (does not need to be allocated),     or `null` to undo the effect of previous calls to     of `gtk_widget_modify_fg()`.
              */
-            modify_fg(state: StateType | null, color?: Gdk.Color | null): void;
+            modify_fg(state: StateType, color?: Gdk.Color | null): void;
             /**
              * Sets the font to use for a widget.
              *
@@ -24167,7 +24143,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param state the state for which to set the text color
              * @param color the color to assign (does not need to     be allocated), or `null` to undo the effect of previous     calls to of `gtk_widget_modify_text()`.
              */
-            modify_text(state: StateType | null, color?: Gdk.Color | null): void;
+            modify_text(state: StateType, color?: Gdk.Color | null): void;
             /**
              * Sets the background color to use for a widget.
              *
@@ -24176,7 +24152,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param state the state for which to set the background color
              * @param color the color to assign, or `null` to undo the effect     of previous calls to `gtk_widget_override_background_color()`
              */
-            override_background_color(state: StateFlags | null, color?: Gdk.RGBA | null): void;
+            override_background_color(state: StateFlags, color?: Gdk.RGBA | null): void;
             /**
              * Sets the color to use for a widget.
              *
@@ -24206,7 +24182,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param state the state for which to set the color
              * @param color the color to assign, or `null` to undo the effect     of previous calls to `gtk_widget_override_color()`
              */
-            override_color(state: StateFlags | null, color?: Gdk.RGBA | null): void;
+            override_color(state: StateFlags, color?: Gdk.RGBA | null): void;
             /**
              * Sets the cursor color to use in a widget, overriding the
              * cursor-color and secondary-cursor-color
@@ -24373,11 +24349,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param accel_mods modifier key combination of the accelerator
              * @returns whether an accelerator was installed and could be removed
              */
-            remove_accelerator(
-                accel_group: AccelGroup,
-                accel_key: number,
-                accel_mods: Gdk.ModifierType | null,
-            ): boolean;
+            remove_accelerator(accel_group: AccelGroup, accel_key: number, accel_mods: Gdk.ModifierType): boolean;
             /**
              * Removes a widget from the list of mnemonic labels for
              * this widget. (See `gtk_widget_list_mnemonic_labels()`). The widget
@@ -24626,7 +24598,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param device a {@link Gdk.Device}
              * @param events event mask
              */
-            set_device_events(device: Gdk.Device, events: Gdk.EventMask | null): void;
+            set_device_events(device: Gdk.Device, events: Gdk.EventMask): void;
             /**
              * Sets the reading direction on a particular widget. This direction
              * controls the primary direction for widgets containing text,
@@ -24642,7 +24614,7 @@ declare module 'gi://Gtk?version=3.0' {
              * set by `gtk_widget_set_default_direction()` will be used.
              * @param dir the new direction
              */
-            set_direction(dir: TextDirection | null): void;
+            set_direction(dir: TextDirection): void;
             /**
              * Widgets are double buffered by default; you can use this function
              * to turn off the buffering. “Double buffered” simply means that
@@ -24712,7 +24684,7 @@ declare module 'gi://Gtk?version=3.0' {
              * See the {@link Gtk.Widget.halign} property.
              * @param align the horizontal alignment
              */
-            set_halign(align: Align | null): void;
+            set_halign(align: Align): void;
             /**
              * Sets the has-tooltip property on `widget` to `has_tooltip`.  See
              * {@link Gtk.Widget.has_tooltip} for more information.
@@ -24975,7 +24947,7 @@ declare module 'gi://Gtk?version=3.0' {
              * the state using wrapper functions such as `gtk_widget_set_sensitive()`.
              * @param state new state for `widget`
              */
-            set_state(state: StateType | null): void;
+            set_state(state: StateType): void;
             /**
              * This function is for use in widget implementations. Turns on flag
              * values in the current widget state (insensitive, prelighted, etc.).
@@ -24993,7 +24965,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param flags State flags to turn on
              * @param clear Whether to clear state before turning on `flags`
              */
-            set_state_flags(flags: StateFlags | null, clear: boolean): void;
+            set_state_flags(flags: StateFlags, clear: boolean): void;
             /**
              * Used to set the {@link Gtk.Style} for a widget (`widget`->style). Since
              * GTK 3, this function does nothing, the passed in style is ignored.
@@ -25043,7 +25015,7 @@ declare module 'gi://Gtk?version=3.0' {
              * See the {@link Gtk.Widget.valign} property.
              * @param align the vertical alignment
              */
-            set_valign(align: Align | null): void;
+            set_valign(align: Align): void;
             /**
              * Sets whether the widget would like any available extra vertical
              * space.
@@ -25254,7 +25226,7 @@ declare module 'gi://Gtk?version=3.0' {
              * See `gtk_widget_set_state_flags()`.
              * @param flags State flags to turn off
              */
-            unset_state_flags(flags: StateFlags | null): void;
+            unset_state_flags(flags: StateFlags): void;
             /**
              * @param baseline
              * @virtual
@@ -26926,7 +26898,7 @@ declare module 'gi://Gtk?version=3.0' {
              * Sets the orientation of the `orientable`.
              * @param orientation the orientable’s new orientation.
              */
-            set_orientation(orientation: Orientation | null): void;
+            set_orientation(orientation: Orientation): void;
             /**
              * Creates a binding between `source_property` on `source` and `target_property`
              * on `target`.
@@ -26971,7 +26943,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -27012,7 +26984,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -27403,8 +27375,8 @@ declare module 'gi://Gtk?version=3.0' {
                 accel_signal: string,
                 accel_group: AccelGroup,
                 accel_key: number,
-                accel_mods: Gdk.ModifierType | null,
-                accel_flags: AccelFlags | null,
+                accel_mods: Gdk.ModifierType,
+                accel_flags: AccelFlags,
             ): void;
             /**
              * Adds the device events in the bitfield `events` to the event mask for
@@ -27412,7 +27384,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param device a {@link Gdk.Device}
              * @param events an event mask, see {@link Gdk.EventMask}
              */
-            add_device_events(device: Gdk.Device, events: Gdk.EventMask | null): void;
+            add_device_events(device: Gdk.Device, events: Gdk.EventMask): void;
             /**
              * Adds the events in the bitfield `events` to the event mask for
              * `widget`. See `gtk_widget_set_events()` and the
@@ -27490,7 +27462,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param direction direction of focus movement
              * @returns `true` if focus ended up inside `widget`
              */
-            child_focus(direction: DirectionType | null): boolean;
+            child_focus(direction: DirectionType): boolean;
             /**
              * Emits a {@link Gtk.Widget.SignalSignatures.child_notify | Gtk.Widget::child-notify} signal for the
              * [child property][child-properties] `child_property`
@@ -27527,7 +27499,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param orientation expand direction
              * @returns whether widget tree rooted here should be expanded
              */
-            compute_expand(orientation: Orientation | null): boolean;
+            compute_expand(orientation: Orientation): boolean;
             /**
              * Creates a new {@link Pango.Context} with the appropriate font map,
              * font options, font description, and base direction for drawing
@@ -27614,7 +27586,7 @@ declare module 'gi://Gtk?version=3.0' {
              */
             drag_begin(
                 targets: TargetList,
-                actions: Gdk.DragAction | null,
+                actions: Gdk.DragAction,
                 button: number,
                 event?: Gdk.Event | null,
             ): Gdk.DragContext;
@@ -27654,7 +27626,7 @@ declare module 'gi://Gtk?version=3.0' {
              */
             drag_begin_with_coordinates(
                 targets: TargetList,
-                actions: Gdk.DragAction | null,
+                actions: Gdk.DragAction,
                 button: number,
                 event: Gdk.Event | null,
                 x: number,
@@ -27766,22 +27738,14 @@ declare module 'gi://Gtk?version=3.0' {
              * @param targets a pointer to an array of     `GtkTargetEntrys` indicating the drop types that this `widget` will     accept, or `null`. Later you can access the list with     `gtk_drag_dest_get_target_list()` and `gtk_drag_dest_find_target()`.
              * @param actions a bitmask of possible actions for a drop onto this `widget`.
              */
-            drag_dest_set(
-                flags: DestDefaults | null,
-                targets: TargetEntry[] | null,
-                actions: Gdk.DragAction | null,
-            ): void;
+            drag_dest_set(flags: DestDefaults, targets: TargetEntry[] | null, actions: Gdk.DragAction): void;
             /**
              * Sets this widget as a proxy for drops to another window.
              * @param proxy_window the window to which to forward drag events
              * @param protocol the drag protocol which the `proxy_window` accepts   (You can use `gdk_drag_get_protocol()` to determine this)
              * @param use_coordinates If `true`, send the same coordinates to the   destination, because it is an embedded   subwindow.
              */
-            drag_dest_set_proxy(
-                proxy_window: Gdk.Window,
-                protocol: Gdk.DragProtocol | null,
-                use_coordinates: boolean,
-            ): void;
+            drag_dest_set_proxy(proxy_window: Gdk.Window, protocol: Gdk.DragProtocol, use_coordinates: boolean): void;
             /**
              * Sets the target types that this widget can accept from drag-and-drop.
              * The widget must first be made into a drag destination with
@@ -27863,9 +27827,9 @@ declare module 'gi://Gtk?version=3.0' {
              * @param actions the bitmask of possible actions for a drag from this widget
              */
             drag_source_set(
-                start_button_mask: Gdk.ModifierType | null,
+                start_button_mask: Gdk.ModifierType,
                 targets: TargetEntry[] | null,
-                actions: Gdk.DragAction | null,
+                actions: Gdk.DragAction,
             ): void;
             /**
              * Sets the icon that will be used for drags from a particular source
@@ -28324,7 +28288,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param intent the use case for the modifier mask
              * @returns the modifier mask used for `intent`.
              */
-            get_modifier_mask(intent: Gdk.ModifierIntent | null): Gdk.ModifierType;
+            get_modifier_mask(intent: Gdk.ModifierIntent): Gdk.ModifierType;
             /**
              * Returns the current modifier style for the widget. (As set by
              * `gtk_widget_modify_style()`.) If no style has previously set, a new
@@ -28958,7 +28922,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param direction direction of focus movement
              * @returns `true` if stopping keyboard navigation is fine, `false`               if the emitting widget should try to handle the keyboard               navigation attempt in its parent container(s).
              */
-            keynav_failed(direction: DirectionType | null): boolean;
+            keynav_failed(direction: DirectionType): boolean;
             /**
              * Lists the closures used by `widget` for accelerator group connections
              * with `gtk_accel_group_connect_by_path()` or `gtk_accel_group_connect()`.
@@ -29019,7 +28983,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param state the state for which to set the base color
              * @param color the color to assign (does not need to     be allocated), or `null` to undo the effect of previous     calls to of `gtk_widget_modify_base()`.
              */
-            modify_base(state: StateType | null, color?: Gdk.Color | null): void;
+            modify_base(state: StateType, color?: Gdk.Color | null): void;
             /**
              * Sets the background color for a widget in a particular state.
              *
@@ -29038,7 +29002,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param state the state for which to set the background color
              * @param color the color to assign (does not need     to be allocated), or `null` to undo the effect of previous     calls to of `gtk_widget_modify_bg()`.
              */
-            modify_bg(state: StateType | null, color?: Gdk.Color | null): void;
+            modify_bg(state: StateType, color?: Gdk.Color | null): void;
             /**
              * Sets the cursor color to use in a widget, overriding the {@link Gtk.Widget}
              * cursor-color and secondary-cursor-color
@@ -29058,7 +29022,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param state the state for which to set the foreground color
              * @param color the color to assign (does not need to be allocated),     or `null` to undo the effect of previous calls to     of `gtk_widget_modify_fg()`.
              */
-            modify_fg(state: StateType | null, color?: Gdk.Color | null): void;
+            modify_fg(state: StateType, color?: Gdk.Color | null): void;
             /**
              * Sets the font to use for a widget.
              *
@@ -29100,7 +29064,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param state the state for which to set the text color
              * @param color the color to assign (does not need to     be allocated), or `null` to undo the effect of previous     calls to of `gtk_widget_modify_text()`.
              */
-            modify_text(state: StateType | null, color?: Gdk.Color | null): void;
+            modify_text(state: StateType, color?: Gdk.Color | null): void;
             /**
              * Sets the background color to use for a widget.
              *
@@ -29109,7 +29073,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param state the state for which to set the background color
              * @param color the color to assign, or `null` to undo the effect     of previous calls to `gtk_widget_override_background_color()`
              */
-            override_background_color(state: StateFlags | null, color?: Gdk.RGBA | null): void;
+            override_background_color(state: StateFlags, color?: Gdk.RGBA | null): void;
             /**
              * Sets the color to use for a widget.
              *
@@ -29139,7 +29103,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param state the state for which to set the color
              * @param color the color to assign, or `null` to undo the effect     of previous calls to `gtk_widget_override_color()`
              */
-            override_color(state: StateFlags | null, color?: Gdk.RGBA | null): void;
+            override_color(state: StateFlags, color?: Gdk.RGBA | null): void;
             /**
              * Sets the cursor color to use in a widget, overriding the
              * cursor-color and secondary-cursor-color
@@ -29306,11 +29270,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param accel_mods modifier key combination of the accelerator
              * @returns whether an accelerator was installed and could be removed
              */
-            remove_accelerator(
-                accel_group: AccelGroup,
-                accel_key: number,
-                accel_mods: Gdk.ModifierType | null,
-            ): boolean;
+            remove_accelerator(accel_group: AccelGroup, accel_key: number, accel_mods: Gdk.ModifierType): boolean;
             /**
              * Removes a widget from the list of mnemonic labels for
              * this widget. (See `gtk_widget_list_mnemonic_labels()`). The widget
@@ -29559,7 +29519,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param device a {@link Gdk.Device}
              * @param events event mask
              */
-            set_device_events(device: Gdk.Device, events: Gdk.EventMask | null): void;
+            set_device_events(device: Gdk.Device, events: Gdk.EventMask): void;
             /**
              * Sets the reading direction on a particular widget. This direction
              * controls the primary direction for widgets containing text,
@@ -29575,7 +29535,7 @@ declare module 'gi://Gtk?version=3.0' {
              * set by `gtk_widget_set_default_direction()` will be used.
              * @param dir the new direction
              */
-            set_direction(dir: TextDirection | null): void;
+            set_direction(dir: TextDirection): void;
             /**
              * Widgets are double buffered by default; you can use this function
              * to turn off the buffering. “Double buffered” simply means that
@@ -29645,7 +29605,7 @@ declare module 'gi://Gtk?version=3.0' {
              * See the {@link Gtk.Widget.halign} property.
              * @param align the horizontal alignment
              */
-            set_halign(align: Align | null): void;
+            set_halign(align: Align): void;
             /**
              * Sets the has-tooltip property on `widget` to `has_tooltip`.  See
              * {@link Gtk.Widget.has_tooltip} for more information.
@@ -29908,7 +29868,7 @@ declare module 'gi://Gtk?version=3.0' {
              * the state using wrapper functions such as `gtk_widget_set_sensitive()`.
              * @param state new state for `widget`
              */
-            set_state(state: StateType | null): void;
+            set_state(state: StateType): void;
             /**
              * This function is for use in widget implementations. Turns on flag
              * values in the current widget state (insensitive, prelighted, etc.).
@@ -29926,7 +29886,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param flags State flags to turn on
              * @param clear Whether to clear state before turning on `flags`
              */
-            set_state_flags(flags: StateFlags | null, clear: boolean): void;
+            set_state_flags(flags: StateFlags, clear: boolean): void;
             /**
              * Used to set the {@link Gtk.Style} for a widget (`widget`->style). Since
              * GTK 3, this function does nothing, the passed in style is ignored.
@@ -29976,7 +29936,7 @@ declare module 'gi://Gtk?version=3.0' {
              * See the {@link Gtk.Widget.valign} property.
              * @param align the vertical alignment
              */
-            set_valign(align: Align | null): void;
+            set_valign(align: Align): void;
             /**
              * Sets whether the widget would like any available extra vertical
              * space.
@@ -30182,7 +30142,7 @@ declare module 'gi://Gtk?version=3.0' {
              * See `gtk_widget_set_state_flags()`.
              * @param flags State flags to turn off
              */
-            unset_state_flags(flags: StateFlags | null): void;
+            unset_state_flags(flags: StateFlags): void;
             /**
              * @param baseline
              * @virtual
@@ -31365,7 +31325,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param reason a short, human-readable string that explains     why these operations are inhibited
              * @returns A non-zero cookie that is used to uniquely identify this     request. It should be used as an argument to `gtk_application_uninhibit()`     in order to remove the request. If the platform does not support     inhibiting or the request failed for some reason, 0 is returned.
              */
-            inhibit(window: Window | null, flags: ApplicationInhibitFlags | null, reason?: string | null): number;
+            inhibit(window: Window | null, flags: ApplicationInhibitFlags, reason?: string | null): number;
             /**
              * Determines if any of the actions specified in `flags` are
              * currently inhibited (possibly by another application).
@@ -31375,7 +31335,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param flags what types of actions should be queried
              * @returns `true` if any of the actions specified in `flags` are inhibited
              */
-            is_inhibited(flags: ApplicationInhibitFlags | null): boolean;
+            is_inhibited(flags: ApplicationInhibitFlags): boolean;
             /**
              * Lists the detailed action names which have associated accelerators.
              * See `gtk_application_set_accels_for_action()`.
@@ -32082,7 +32042,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -32123,7 +32083,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -33381,7 +33341,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -33422,7 +33382,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -33935,7 +33895,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param arrow_type a valid {@link Gtk.ArrowType}.
              * @param shadow_type a valid {@link Gtk.ShadowType}.
              */
-            set(arrow_type: ArrowType | null, shadow_type: ShadowType | null): void;
+            set(arrow_type: ArrowType, shadow_type: ShadowType): void;
             /**
              * @param args
              */
@@ -33985,7 +33945,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -34026,7 +33986,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -34470,7 +34430,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param coord_type specifies whether the coordinates are relative to the screen or to the components top level window
              * @returns `true` or `false` indicating whether the specified point is within the extent of the `component` or not
              */
-            contains(x: number, y: number, coord_type: Atk.CoordType | null): boolean;
+            contains(x: number, y: number, coord_type: Atk.CoordType): boolean;
             /**
              * Returns the alpha value (i.e. the opacity) for this
              * `component`, on a scale from 0 (fully transparent) to 1.0
@@ -34485,7 +34445,7 @@ declare module 'gi://Gtk?version=3.0' {
              * support), all of x, y, width, height are set to -1.
              * @param coord_type specifies whether the coordinates are relative to the screen or to the components top level window
              */
-            get_extents(coord_type: Atk.CoordType | null): [number, number, number, number];
+            get_extents(coord_type: Atk.CoordType): [number, number, number, number];
             /**
              * Gets the layer of the component.
              * @returns an {@link Atk.Layer} which is the layer of the component
@@ -34505,7 +34465,7 @@ declare module 'gi://Gtk?version=3.0' {
              * support), x and y are set to -1.
              * @param coord_type specifies whether the coordinates are relative to the screen or to the components top level window
              */
-            get_position(coord_type: Atk.CoordType | null): [number, number];
+            get_position(coord_type: Atk.CoordType): [number, number];
             /**
              * Gets the size of the `component` in terms of width and height.
              *
@@ -34526,7 +34486,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param coord_type specifies whether the coordinates are relative to the screen or to the components top level window
              * @returns a reference to the accessible child, if one exists
              */
-            ref_accessible_at_point(x: number, y: number, coord_type: Atk.CoordType | null): Atk.Object | null;
+            ref_accessible_at_point(x: number, y: number, coord_type: Atk.CoordType): Atk.Object | null;
             /**
              * Remove the handler specified by `handler_id` from the list of
              * functions to be executed when this object receives focus events
@@ -34543,7 +34503,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param type specify where the object should be made visible.
              * @returns whether scrolling was successful.
              */
-            scroll_to(type: Atk.ScrollType | null): boolean;
+            scroll_to(type: Atk.ScrollType): boolean;
             /**
              * Move the top-left of `component` to a given position of the screen by
              * scrolling all necessary parents.
@@ -34552,7 +34512,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param y y-position where to scroll to
              * @returns whether scrolling was successful.
              */
-            scroll_to_point(coords: Atk.CoordType | null, x: number, y: number): boolean;
+            scroll_to_point(coords: Atk.CoordType, x: number, y: number): boolean;
             /**
              * Sets the extents of `component`.
              * @param x x coordinate
@@ -34562,7 +34522,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param coord_type specifies whether the coordinates are relative to the screen or to the components top level window
              * @returns `true` or `false` whether the extents were set or not
              */
-            set_extents(x: number, y: number, width: number, height: number, coord_type: Atk.CoordType | null): boolean;
+            set_extents(x: number, y: number, width: number, height: number, coord_type: Atk.CoordType): boolean;
             /**
              * Sets the position of `component`.
              *
@@ -34573,7 +34533,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param coord_type specifies whether the coordinates are relative to the screen or to the component's top level window
              * @returns `true` or `false` whether or not the position was set or not
              */
-            set_position(x: number, y: number, coord_type: Atk.CoordType | null): boolean;
+            set_position(x: number, y: number, coord_type: Atk.CoordType): boolean;
             /**
              * Set the size of the `component` in terms of width and height.
              * @param width width to set for `component`
@@ -34730,7 +34690,7 @@ declare module 'gi://Gtk?version=3.0' {
              * to -1.
              * @param coord_type specifies whether the coordinates are relative to the screen or to the components top level window
              */
-            get_image_position(coord_type: Atk.CoordType | null): [number, number];
+            get_image_position(coord_type: Atk.CoordType): [number, number];
             /**
              * Get the width and height in pixels for the specified image.
              * The values of `width` and `height` are returned as -1 if the
@@ -34826,7 +34786,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -34867,7 +34827,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -35441,7 +35401,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -35482,7 +35442,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -36289,7 +36249,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param page a page of `assistant`
              * @param type the new type for `page`
              */
-            set_page_type(page: Widget, type: AssistantPageType | null): void;
+            set_page_type(page: Widget, type: AssistantPageType): void;
             /**
              * Forces `assistant` to recompute the buttons state.
              *
@@ -36346,7 +36306,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -36387,7 +36347,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -36911,7 +36871,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -36952,7 +36912,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -37601,7 +37561,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -37642,7 +37602,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -38012,7 +37972,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param target The {@link Atk.Object} which is to be the target of the relation.
              * @returns TRUE if the relationship is added.
              */
-            add_relationship(relationship: Atk.RelationType | null, target: Atk.Object): boolean;
+            add_relationship(relationship: Atk.RelationType, target: Atk.Object): boolean;
             /**
              * Gets the accessible id of the accessible.
              * @returns a character string representing the accessible id of the object, or NULL if no such string was set.
@@ -38154,7 +38114,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param target The {@link Atk.Object} which is the target of the relation to be removed.
              * @returns TRUE if the relationship is removed.
              */
-            remove_relationship(relationship: Atk.RelationType | null, target: Atk.Object): boolean;
+            remove_relationship(relationship: Atk.RelationType, target: Atk.Object): boolean;
             /**
              * Sets the accessible ID of the accessible.  This is not meant to be presented
              * to the user, but to be an ID which is stable over application development.
@@ -38203,7 +38163,7 @@ declare module 'gi://Gtk?version=3.0' {
              * Sets the role of the accessible.
              * @param role an {@link Atk.Role} to be set as the role
              */
-            set_role(role: Atk.Role | null): void;
+            set_role(role: Atk.Role): void;
             /**
              * @param child
              * @virtual
@@ -38620,7 +38580,7 @@ declare module 'gi://Gtk?version=3.0' {
              * extra space available.
              * @param position a {@link Gtk.BaselinePosition}
              */
-            set_baseline_position(position: BaselinePosition | null): void;
+            set_baseline_position(position: BaselinePosition): void;
             /**
              * Sets a center widget; that is a child widget that will be
              * centered with respect to the full width of the box, even
@@ -38642,7 +38602,7 @@ declare module 'gi://Gtk?version=3.0' {
                 expand: boolean,
                 fill: boolean,
                 padding: number,
-                pack_type: PackType | null,
+                pack_type: PackType,
             ): void;
             /**
              * Sets the {@link Gtk.Box.homogeneous} property of `box`, controlling
@@ -38673,7 +38633,7 @@ declare module 'gi://Gtk?version=3.0' {
              * Sets the orientation of the `orientable`.
              * @param orientation the orientable’s new orientation.
              */
-            set_orientation(orientation: Orientation | null): void;
+            set_orientation(orientation: Orientation): void;
             /**
              * Creates a binding between `source_property` on `source` and `target_property`
              * on `target`.
@@ -38718,7 +38678,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -38759,7 +38719,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -40101,7 +40061,7 @@ declare module 'gi://Gtk?version=3.0' {
              * inside the button.
              * @param position the position
              */
-            set_image_position(position: PositionType | null): void;
+            set_image_position(position: PositionType): void;
             /**
              * Sets the text of the label of the button to `str`. This text is
              * also used to select the stock item if `gtk_button_set_use_stock()`
@@ -40119,7 +40079,7 @@ declare module 'gi://Gtk?version=3.0' {
              * {@link Gtk.ReliefStyle.NORMAL}.
              * @param relief The GtkReliefStyle as described above
              */
-            set_relief(relief: ReliefStyle | null): void;
+            set_relief(relief: ReliefStyle): void;
             /**
              * If `true`, the label set on the button is used as a
              * stock id to select the stock item for the button.
@@ -40917,7 +40877,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -40958,7 +40918,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -41349,8 +41309,8 @@ declare module 'gi://Gtk?version=3.0' {
                 accel_signal: string,
                 accel_group: AccelGroup,
                 accel_key: number,
-                accel_mods: Gdk.ModifierType | null,
-                accel_flags: AccelFlags | null,
+                accel_mods: Gdk.ModifierType,
+                accel_flags: AccelFlags,
             ): void;
             /**
              * Adds the device events in the bitfield `events` to the event mask for
@@ -41358,7 +41318,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param device a {@link Gdk.Device}
              * @param events an event mask, see {@link Gdk.EventMask}
              */
-            add_device_events(device: Gdk.Device, events: Gdk.EventMask | null): void;
+            add_device_events(device: Gdk.Device, events: Gdk.EventMask): void;
             /**
              * Adds the events in the bitfield `events` to the event mask for
              * `widget`. See `gtk_widget_set_events()` and the
@@ -41436,7 +41396,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param direction direction of focus movement
              * @returns `true` if focus ended up inside `widget`
              */
-            child_focus(direction: DirectionType | null): boolean;
+            child_focus(direction: DirectionType): boolean;
             /**
              * Emits a {@link Gtk.Widget.SignalSignatures.child_notify | Gtk.Widget::child-notify} signal for the
              * [child property][child-properties] `child_property`
@@ -41473,7 +41433,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param orientation expand direction
              * @returns whether widget tree rooted here should be expanded
              */
-            compute_expand(orientation: Orientation | null): boolean;
+            compute_expand(orientation: Orientation): boolean;
             /**
              * Creates a new {@link Pango.Context} with the appropriate font map,
              * font options, font description, and base direction for drawing
@@ -41560,7 +41520,7 @@ declare module 'gi://Gtk?version=3.0' {
              */
             drag_begin(
                 targets: TargetList,
-                actions: Gdk.DragAction | null,
+                actions: Gdk.DragAction,
                 button: number,
                 event?: Gdk.Event | null,
             ): Gdk.DragContext;
@@ -41600,7 +41560,7 @@ declare module 'gi://Gtk?version=3.0' {
              */
             drag_begin_with_coordinates(
                 targets: TargetList,
-                actions: Gdk.DragAction | null,
+                actions: Gdk.DragAction,
                 button: number,
                 event: Gdk.Event | null,
                 x: number,
@@ -41712,22 +41672,14 @@ declare module 'gi://Gtk?version=3.0' {
              * @param targets a pointer to an array of     `GtkTargetEntrys` indicating the drop types that this `widget` will     accept, or `null`. Later you can access the list with     `gtk_drag_dest_get_target_list()` and `gtk_drag_dest_find_target()`.
              * @param actions a bitmask of possible actions for a drop onto this `widget`.
              */
-            drag_dest_set(
-                flags: DestDefaults | null,
-                targets: TargetEntry[] | null,
-                actions: Gdk.DragAction | null,
-            ): void;
+            drag_dest_set(flags: DestDefaults, targets: TargetEntry[] | null, actions: Gdk.DragAction): void;
             /**
              * Sets this widget as a proxy for drops to another window.
              * @param proxy_window the window to which to forward drag events
              * @param protocol the drag protocol which the `proxy_window` accepts   (You can use `gdk_drag_get_protocol()` to determine this)
              * @param use_coordinates If `true`, send the same coordinates to the   destination, because it is an embedded   subwindow.
              */
-            drag_dest_set_proxy(
-                proxy_window: Gdk.Window,
-                protocol: Gdk.DragProtocol | null,
-                use_coordinates: boolean,
-            ): void;
+            drag_dest_set_proxy(proxy_window: Gdk.Window, protocol: Gdk.DragProtocol, use_coordinates: boolean): void;
             /**
              * Sets the target types that this widget can accept from drag-and-drop.
              * The widget must first be made into a drag destination with
@@ -41809,9 +41761,9 @@ declare module 'gi://Gtk?version=3.0' {
              * @param actions the bitmask of possible actions for a drag from this widget
              */
             drag_source_set(
-                start_button_mask: Gdk.ModifierType | null,
+                start_button_mask: Gdk.ModifierType,
                 targets: TargetEntry[] | null,
-                actions: Gdk.DragAction | null,
+                actions: Gdk.DragAction,
             ): void;
             /**
              * Sets the icon that will be used for drags from a particular source
@@ -42264,7 +42216,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param intent the use case for the modifier mask
              * @returns the modifier mask used for `intent`.
              */
-            get_modifier_mask(intent: Gdk.ModifierIntent | null): Gdk.ModifierType;
+            get_modifier_mask(intent: Gdk.ModifierIntent): Gdk.ModifierType;
             /**
              * Returns the current modifier style for the widget. (As set by
              * `gtk_widget_modify_style()`.) If no style has previously set, a new
@@ -42898,7 +42850,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param direction direction of focus movement
              * @returns `true` if stopping keyboard navigation is fine, `false`               if the emitting widget should try to handle the keyboard               navigation attempt in its parent container(s).
              */
-            keynav_failed(direction: DirectionType | null): boolean;
+            keynav_failed(direction: DirectionType): boolean;
             /**
              * Lists the closures used by `widget` for accelerator group connections
              * with `gtk_accel_group_connect_by_path()` or `gtk_accel_group_connect()`.
@@ -42959,7 +42911,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param state the state for which to set the base color
              * @param color the color to assign (does not need to     be allocated), or `null` to undo the effect of previous     calls to of `gtk_widget_modify_base()`.
              */
-            modify_base(state: StateType | null, color?: Gdk.Color | null): void;
+            modify_base(state: StateType, color?: Gdk.Color | null): void;
             /**
              * Sets the background color for a widget in a particular state.
              *
@@ -42978,7 +42930,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param state the state for which to set the background color
              * @param color the color to assign (does not need     to be allocated), or `null` to undo the effect of previous     calls to of `gtk_widget_modify_bg()`.
              */
-            modify_bg(state: StateType | null, color?: Gdk.Color | null): void;
+            modify_bg(state: StateType, color?: Gdk.Color | null): void;
             /**
              * Sets the cursor color to use in a widget, overriding the {@link Gtk.Widget}
              * cursor-color and secondary-cursor-color
@@ -42998,7 +42950,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param state the state for which to set the foreground color
              * @param color the color to assign (does not need to be allocated),     or `null` to undo the effect of previous calls to     of `gtk_widget_modify_fg()`.
              */
-            modify_fg(state: StateType | null, color?: Gdk.Color | null): void;
+            modify_fg(state: StateType, color?: Gdk.Color | null): void;
             /**
              * Sets the font to use for a widget.
              *
@@ -43040,7 +42992,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param state the state for which to set the text color
              * @param color the color to assign (does not need to     be allocated), or `null` to undo the effect of previous     calls to of `gtk_widget_modify_text()`.
              */
-            modify_text(state: StateType | null, color?: Gdk.Color | null): void;
+            modify_text(state: StateType, color?: Gdk.Color | null): void;
             /**
              * Sets the background color to use for a widget.
              *
@@ -43049,7 +43001,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param state the state for which to set the background color
              * @param color the color to assign, or `null` to undo the effect     of previous calls to `gtk_widget_override_background_color()`
              */
-            override_background_color(state: StateFlags | null, color?: Gdk.RGBA | null): void;
+            override_background_color(state: StateFlags, color?: Gdk.RGBA | null): void;
             /**
              * Sets the color to use for a widget.
              *
@@ -43079,7 +43031,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param state the state for which to set the color
              * @param color the color to assign, or `null` to undo the effect     of previous calls to `gtk_widget_override_color()`
              */
-            override_color(state: StateFlags | null, color?: Gdk.RGBA | null): void;
+            override_color(state: StateFlags, color?: Gdk.RGBA | null): void;
             /**
              * Sets the cursor color to use in a widget, overriding the
              * cursor-color and secondary-cursor-color
@@ -43246,11 +43198,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param accel_mods modifier key combination of the accelerator
              * @returns whether an accelerator was installed and could be removed
              */
-            remove_accelerator(
-                accel_group: AccelGroup,
-                accel_key: number,
-                accel_mods: Gdk.ModifierType | null,
-            ): boolean;
+            remove_accelerator(accel_group: AccelGroup, accel_key: number, accel_mods: Gdk.ModifierType): boolean;
             /**
              * Removes a widget from the list of mnemonic labels for
              * this widget. (See `gtk_widget_list_mnemonic_labels()`). The widget
@@ -43499,7 +43447,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param device a {@link Gdk.Device}
              * @param events event mask
              */
-            set_device_events(device: Gdk.Device, events: Gdk.EventMask | null): void;
+            set_device_events(device: Gdk.Device, events: Gdk.EventMask): void;
             /**
              * Sets the reading direction on a particular widget. This direction
              * controls the primary direction for widgets containing text,
@@ -43515,7 +43463,7 @@ declare module 'gi://Gtk?version=3.0' {
              * set by `gtk_widget_set_default_direction()` will be used.
              * @param dir the new direction
              */
-            set_direction(dir: TextDirection | null): void;
+            set_direction(dir: TextDirection): void;
             /**
              * Widgets are double buffered by default; you can use this function
              * to turn off the buffering. “Double buffered” simply means that
@@ -43577,7 +43525,7 @@ declare module 'gi://Gtk?version=3.0' {
              * See the {@link Gtk.Widget.halign} property.
              * @param align the horizontal alignment
              */
-            set_halign(align: Align | null): void;
+            set_halign(align: Align): void;
             /**
              * Sets the has-tooltip property on `widget` to `has_tooltip`.  See
              * {@link Gtk.Widget.has_tooltip} for more information.
@@ -43840,7 +43788,7 @@ declare module 'gi://Gtk?version=3.0' {
              * the state using wrapper functions such as `gtk_widget_set_sensitive()`.
              * @param state new state for `widget`
              */
-            set_state(state: StateType | null): void;
+            set_state(state: StateType): void;
             /**
              * This function is for use in widget implementations. Turns on flag
              * values in the current widget state (insensitive, prelighted, etc.).
@@ -43858,7 +43806,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param flags State flags to turn on
              * @param clear Whether to clear state before turning on `flags`
              */
-            set_state_flags(flags: StateFlags | null, clear: boolean): void;
+            set_state_flags(flags: StateFlags, clear: boolean): void;
             /**
              * Used to set the {@link Gtk.Style} for a widget (`widget`->style). Since
              * GTK 3, this function does nothing, the passed in style is ignored.
@@ -43908,7 +43856,7 @@ declare module 'gi://Gtk?version=3.0' {
              * See the {@link Gtk.Widget.valign} property.
              * @param align the vertical alignment
              */
-            set_valign(align: Align | null): void;
+            set_valign(align: Align): void;
             /**
              * Sets whether the widget would like any available extra vertical
              * space.
@@ -44119,7 +44067,7 @@ declare module 'gi://Gtk?version=3.0' {
              * See `gtk_widget_set_state_flags()`.
              * @param flags State flags to turn off
              */
-            unset_state_flags(flags: StateFlags | null): void;
+            unset_state_flags(flags: StateFlags): void;
             /**
              * @param baseline
              * @virtual
@@ -45183,7 +45131,7 @@ declare module 'gi://Gtk?version=3.0' {
              * to -1.
              * @param coord_type specifies whether the coordinates are relative to the screen or to the components top level window
              */
-            get_image_position(coord_type: Atk.CoordType | null): [number, number];
+            get_image_position(coord_type: Atk.CoordType): [number, number];
             /**
              * Get the width and height in pixels for the specified image.
              * The values of `width` and `height` are returned as -1 if the
@@ -45279,7 +45227,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -45320,7 +45268,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -45853,7 +45801,7 @@ declare module 'gi://Gtk?version=3.0' {
              * Changes the way buttons are arranged in their container.
              * @param layout_style the new layout style
              */
-            set_layout(layout_style: ButtonBoxStyle | null): void;
+            set_layout(layout_style: ButtonBoxStyle): void;
             /**
              * The orientation of the orientable.
              * @since 2.16
@@ -45870,7 +45818,7 @@ declare module 'gi://Gtk?version=3.0' {
              * Sets the orientation of the `orientable`.
              * @param orientation the orientable’s new orientation.
              */
-            set_orientation(orientation: Orientation | null): void;
+            set_orientation(orientation: Orientation): void;
             /**
              * Creates a binding between `source_property` on `source` and `target_property`
              * on `target`.
@@ -45915,7 +45863,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -45956,7 +45904,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -46737,7 +46685,7 @@ declare module 'gi://Gtk?version=3.0' {
              * headings).
              * @param flags the display options to set
              */
-            set_display_options(flags: CalendarDisplayOptions | null): void;
+            set_display_options(flags: CalendarDisplayOptions): void;
             /**
              * Removes the visual marker from a particular day.
              * @param day the day number to unmark between 1 and 31.
@@ -46973,7 +46921,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -47014,7 +46962,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -47824,7 +47772,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param coord_type specifies whether the coordinates are relative to the screen or to the components top level window
              * @returns `true` or `false` indicating whether the specified point is within the extent of the `component` or not
              */
-            contains(x: number, y: number, coord_type: Atk.CoordType | null): boolean;
+            contains(x: number, y: number, coord_type: Atk.CoordType): boolean;
             /**
              * Returns the alpha value (i.e. the opacity) for this
              * `component`, on a scale from 0 (fully transparent) to 1.0
@@ -47839,7 +47787,7 @@ declare module 'gi://Gtk?version=3.0' {
              * support), all of x, y, width, height are set to -1.
              * @param coord_type specifies whether the coordinates are relative to the screen or to the components top level window
              */
-            get_extents(coord_type: Atk.CoordType | null): [number, number, number, number];
+            get_extents(coord_type: Atk.CoordType): [number, number, number, number];
             /**
              * Gets the layer of the component.
              * @returns an {@link Atk.Layer} which is the layer of the component
@@ -47859,7 +47807,7 @@ declare module 'gi://Gtk?version=3.0' {
              * support), x and y are set to -1.
              * @param coord_type specifies whether the coordinates are relative to the screen or to the components top level window
              */
-            get_position(coord_type: Atk.CoordType | null): [number, number];
+            get_position(coord_type: Atk.CoordType): [number, number];
             /**
              * @param args
              */
@@ -47885,7 +47833,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param coord_type specifies whether the coordinates are relative to the screen or to the components top level window
              * @returns a reference to the accessible child, if one exists
              */
-            ref_accessible_at_point(x: number, y: number, coord_type: Atk.CoordType | null): Atk.Object | null;
+            ref_accessible_at_point(x: number, y: number, coord_type: Atk.CoordType): Atk.Object | null;
             /**
              * Remove the handler specified by `handler_id` from the list of
              * functions to be executed when this object receives focus events
@@ -47902,7 +47850,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param type specify where the object should be made visible.
              * @returns whether scrolling was successful.
              */
-            scroll_to(type: Atk.ScrollType | null): boolean;
+            scroll_to(type: Atk.ScrollType): boolean;
             /**
              * Move the top-left of `component` to a given position of the screen by
              * scrolling all necessary parents.
@@ -47911,7 +47859,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param y y-position where to scroll to
              * @returns whether scrolling was successful.
              */
-            scroll_to_point(coords: Atk.CoordType | null, x: number, y: number): boolean;
+            scroll_to_point(coords: Atk.CoordType, x: number, y: number): boolean;
             /**
              * Sets the extents of `component`.
              * @param x x coordinate
@@ -47921,7 +47869,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param coord_type specifies whether the coordinates are relative to the screen or to the components top level window
              * @returns `true` or `false` whether the extents were set or not
              */
-            set_extents(x: number, y: number, width: number, height: number, coord_type: Atk.CoordType | null): boolean;
+            set_extents(x: number, y: number, width: number, height: number, coord_type: Atk.CoordType): boolean;
             /**
              * Sets the position of `component`.
              *
@@ -47932,7 +47880,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param coord_type specifies whether the coordinates are relative to the screen or to the component's top level window
              * @returns `true` or `false` whether or not the position was set or not
              */
-            set_position(x: number, y: number, coord_type: Atk.CoordType | null): boolean;
+            set_position(x: number, y: number, coord_type: Atk.CoordType): boolean;
             /**
              * Set the size of the `component` in terms of width and height.
              * @param width width to set for `component`
@@ -48189,7 +48137,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -48230,7 +48178,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -48600,7 +48548,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param target The {@link Atk.Object} which is to be the target of the relation.
              * @returns TRUE if the relationship is added.
              */
-            add_relationship(relationship: Atk.RelationType | null, target: Atk.Object): boolean;
+            add_relationship(relationship: Atk.RelationType, target: Atk.Object): boolean;
             /**
              * Gets the accessible id of the accessible.
              * @returns a character string representing the accessible id of the object, or NULL if no such string was set.
@@ -48711,7 +48659,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param target The {@link Atk.Object} which is the target of the relation to be removed.
              * @returns TRUE if the relationship is removed.
              */
-            remove_relationship(relationship: Atk.RelationType | null, target: Atk.Object): boolean;
+            remove_relationship(relationship: Atk.RelationType, target: Atk.Object): boolean;
             /**
              * Sets the accessible ID of the accessible.  This is not meant to be presented
              * to the user, but to be an ID which is stable over application development.
@@ -48747,7 +48695,7 @@ declare module 'gi://Gtk?version=3.0' {
              * Sets the role of the accessible.
              * @param role an {@link Atk.Role} to be set as the role
              */
-            set_role(role: Atk.Role | null): void;
+            set_role(role: Atk.Role): void;
             /**
              * @param child
              * @virtual
@@ -49645,7 +49593,7 @@ declare module 'gi://Gtk?version=3.0' {
                 context: CellAreaContext,
                 widget: Widget,
                 cell_area: Gdk.Rectangle,
-                flags: CellRendererState | null,
+                flags: CellRendererState,
                 edit_only: boolean,
             ): boolean;
             /**
@@ -49665,7 +49613,7 @@ declare module 'gi://Gtk?version=3.0' {
                 renderer: CellRenderer,
                 event: Gdk.Event,
                 cell_area: Gdk.Rectangle,
-                flags: CellRendererState | null,
+                flags: CellRendererState,
             ): boolean;
             /**
              * Adds `renderer` to `area` with the default child cell properties.
@@ -49770,7 +49718,7 @@ declare module 'gi://Gtk?version=3.0' {
                 widget: Widget,
                 event: Gdk.Event,
                 cell_area: Gdk.Rectangle,
-                flags: CellRendererState | null,
+                flags: CellRendererState,
             ): number;
             /**
              * This should be called by the `area`’s owning layout widget
@@ -49783,7 +49731,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param direction the {@link Gtk.DirectionType}
              * @returns `true` if focus remains inside `area` as a result of this call.
              */
-            focus(direction: DirectionType | null): boolean;
+            focus(direction: DirectionType): boolean;
             /**
              * Calls `callback` for every {@link Gtk.CellRenderer} in `area`.
              * @param callback the {@link Gtk.CellCallback} to call
@@ -50007,7 +49955,7 @@ declare module 'gi://Gtk?version=3.0' {
                 cr: cairo.Context,
                 background_area: Gdk.Rectangle,
                 cell_area: Gdk.Rectangle,
-                flags: CellRendererState | null,
+                flags: CellRendererState,
                 paint_focus: boolean,
             ): void;
             /**
@@ -50023,7 +49971,7 @@ declare module 'gi://Gtk?version=3.0' {
              */
             request_renderer(
                 renderer: CellRenderer,
-                orientation: Orientation | null,
+                orientation: Orientation,
                 widget: Widget,
                 for_size: number,
             ): [number, number];
@@ -50438,7 +50386,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -50479,7 +50427,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -51322,7 +51270,7 @@ declare module 'gi://Gtk?version=3.0' {
              * Sets the orientation of the `orientable`.
              * @param orientation the orientable’s new orientation.
              */
-            set_orientation(orientation: Orientation | null): void;
+            set_orientation(orientation: Orientation): void;
             /**
              * Creates a binding between `source_property` on `source` and `target_property`
              * on `target`.
@@ -51367,7 +51315,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -51408,7 +51356,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -52525,7 +52473,7 @@ declare module 'gi://Gtk?version=3.0' {
                 path: string,
                 background_area: Gdk.Rectangle,
                 cell_area: Gdk.Rectangle,
-                flags: CellRendererState | null,
+                flags: CellRendererState,
             ): boolean;
             /**
              * Gets the aligned area used by `cell` inside `cell_area`. Used for finding
@@ -52534,7 +52482,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param flags render flags
              * @param cell_area cell area which would be passed to `gtk_cell_renderer_render()`
              */
-            get_aligned_area(widget: Widget, flags: CellRendererState | null, cell_area: Gdk.Rectangle): Gdk.Rectangle;
+            get_aligned_area(widget: Widget, flags: CellRendererState, cell_area: Gdk.Rectangle): Gdk.Rectangle;
             /**
              * Fills in `xalign` and `yalign` with the appropriate values of `cell`.
              */
@@ -52608,7 +52556,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param cell_state cell renderer state
              * @returns the widget state flags applying to `cell`
              */
-            get_state(widget: Widget | null, cell_state: CellRendererState | null): StateFlags;
+            get_state(widget: Widget | null, cell_state: CellRendererState): StateFlags;
             /**
              * Returns the cell renderer’s visibility.
              * @returns `true` if the cell renderer is visible
@@ -52638,7 +52586,7 @@ declare module 'gi://Gtk?version=3.0' {
                 widget: Widget,
                 background_area: Gdk.Rectangle,
                 cell_area: Gdk.Rectangle,
-                flags: CellRendererState | null,
+                flags: CellRendererState,
             ): void;
             /**
              * Sets the renderer’s alignment within its available space.
@@ -52685,7 +52633,7 @@ declare module 'gi://Gtk?version=3.0' {
                 path: string,
                 background_area: Gdk.Rectangle,
                 cell_area: Gdk.Rectangle,
-                flags: CellRendererState | null,
+                flags: CellRendererState,
             ): CellEditable | null;
             /**
              * Informs the cell renderer that the editing is stopped.
@@ -53511,7 +53459,7 @@ declare module 'gi://Gtk?version=3.0' {
              * Sets the orientation of the `orientable`.
              * @param orientation the orientable’s new orientation.
              */
-            set_orientation(orientation: Orientation | null): void;
+            set_orientation(orientation: Orientation): void;
             /**
              * Creates a binding between `source_property` on `source` and `target_property`
              * on `target`.
@@ -53556,7 +53504,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -53597,7 +53545,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -55643,7 +55591,7 @@ declare module 'gi://Gtk?version=3.0' {
              * Sets the orientation of the `orientable`.
              * @param orientation the orientable’s new orientation.
              */
-            set_orientation(orientation: Orientation | null): void;
+            set_orientation(orientation: Orientation): void;
             /**
              * Creates a binding between `source_property` on `source` and `target_property`
              * on `target`.
@@ -55688,7 +55636,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -55729,7 +55677,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -56773,7 +56721,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -56814,7 +56762,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -57205,8 +57153,8 @@ declare module 'gi://Gtk?version=3.0' {
                 accel_signal: string,
                 accel_group: AccelGroup,
                 accel_key: number,
-                accel_mods: Gdk.ModifierType | null,
-                accel_flags: AccelFlags | null,
+                accel_mods: Gdk.ModifierType,
+                accel_flags: AccelFlags,
             ): void;
             /**
              * Adds the device events in the bitfield `events` to the event mask for
@@ -57214,7 +57162,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param device a {@link Gdk.Device}
              * @param events an event mask, see {@link Gdk.EventMask}
              */
-            add_device_events(device: Gdk.Device, events: Gdk.EventMask | null): void;
+            add_device_events(device: Gdk.Device, events: Gdk.EventMask): void;
             /**
              * Adds the events in the bitfield `events` to the event mask for
              * `widget`. See `gtk_widget_set_events()` and the
@@ -57292,7 +57240,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param direction direction of focus movement
              * @returns `true` if focus ended up inside `widget`
              */
-            child_focus(direction: DirectionType | null): boolean;
+            child_focus(direction: DirectionType): boolean;
             /**
              * Emits a {@link Gtk.Widget.SignalSignatures.child_notify | Gtk.Widget::child-notify} signal for the
              * [child property][child-properties] `child_property`
@@ -57329,7 +57277,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param orientation expand direction
              * @returns whether widget tree rooted here should be expanded
              */
-            compute_expand(orientation: Orientation | null): boolean;
+            compute_expand(orientation: Orientation): boolean;
             /**
              * Creates a new {@link Pango.Context} with the appropriate font map,
              * font options, font description, and base direction for drawing
@@ -57416,7 +57364,7 @@ declare module 'gi://Gtk?version=3.0' {
              */
             drag_begin(
                 targets: TargetList,
-                actions: Gdk.DragAction | null,
+                actions: Gdk.DragAction,
                 button: number,
                 event?: Gdk.Event | null,
             ): Gdk.DragContext;
@@ -57456,7 +57404,7 @@ declare module 'gi://Gtk?version=3.0' {
              */
             drag_begin_with_coordinates(
                 targets: TargetList,
-                actions: Gdk.DragAction | null,
+                actions: Gdk.DragAction,
                 button: number,
                 event: Gdk.Event | null,
                 x: number,
@@ -57568,22 +57516,14 @@ declare module 'gi://Gtk?version=3.0' {
              * @param targets a pointer to an array of     `GtkTargetEntrys` indicating the drop types that this `widget` will     accept, or `null`. Later you can access the list with     `gtk_drag_dest_get_target_list()` and `gtk_drag_dest_find_target()`.
              * @param actions a bitmask of possible actions for a drop onto this `widget`.
              */
-            drag_dest_set(
-                flags: DestDefaults | null,
-                targets: TargetEntry[] | null,
-                actions: Gdk.DragAction | null,
-            ): void;
+            drag_dest_set(flags: DestDefaults, targets: TargetEntry[] | null, actions: Gdk.DragAction): void;
             /**
              * Sets this widget as a proxy for drops to another window.
              * @param proxy_window the window to which to forward drag events
              * @param protocol the drag protocol which the `proxy_window` accepts   (You can use `gdk_drag_get_protocol()` to determine this)
              * @param use_coordinates If `true`, send the same coordinates to the   destination, because it is an embedded   subwindow.
              */
-            drag_dest_set_proxy(
-                proxy_window: Gdk.Window,
-                protocol: Gdk.DragProtocol | null,
-                use_coordinates: boolean,
-            ): void;
+            drag_dest_set_proxy(proxy_window: Gdk.Window, protocol: Gdk.DragProtocol, use_coordinates: boolean): void;
             /**
              * Sets the target types that this widget can accept from drag-and-drop.
              * The widget must first be made into a drag destination with
@@ -57665,9 +57605,9 @@ declare module 'gi://Gtk?version=3.0' {
              * @param actions the bitmask of possible actions for a drag from this widget
              */
             drag_source_set(
-                start_button_mask: Gdk.ModifierType | null,
+                start_button_mask: Gdk.ModifierType,
                 targets: TargetEntry[] | null,
-                actions: Gdk.DragAction | null,
+                actions: Gdk.DragAction,
             ): void;
             /**
              * Sets the icon that will be used for drags from a particular source
@@ -58126,7 +58066,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param intent the use case for the modifier mask
              * @returns the modifier mask used for `intent`.
              */
-            get_modifier_mask(intent: Gdk.ModifierIntent | null): Gdk.ModifierType;
+            get_modifier_mask(intent: Gdk.ModifierIntent): Gdk.ModifierType;
             /**
              * Returns the current modifier style for the widget. (As set by
              * `gtk_widget_modify_style()`.) If no style has previously set, a new
@@ -58760,7 +58700,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param direction direction of focus movement
              * @returns `true` if stopping keyboard navigation is fine, `false`               if the emitting widget should try to handle the keyboard               navigation attempt in its parent container(s).
              */
-            keynav_failed(direction: DirectionType | null): boolean;
+            keynav_failed(direction: DirectionType): boolean;
             /**
              * Lists the closures used by `widget` for accelerator group connections
              * with `gtk_accel_group_connect_by_path()` or `gtk_accel_group_connect()`.
@@ -58821,7 +58761,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param state the state for which to set the base color
              * @param color the color to assign (does not need to     be allocated), or `null` to undo the effect of previous     calls to of `gtk_widget_modify_base()`.
              */
-            modify_base(state: StateType | null, color?: Gdk.Color | null): void;
+            modify_base(state: StateType, color?: Gdk.Color | null): void;
             /**
              * Sets the background color for a widget in a particular state.
              *
@@ -58840,7 +58780,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param state the state for which to set the background color
              * @param color the color to assign (does not need     to be allocated), or `null` to undo the effect of previous     calls to of `gtk_widget_modify_bg()`.
              */
-            modify_bg(state: StateType | null, color?: Gdk.Color | null): void;
+            modify_bg(state: StateType, color?: Gdk.Color | null): void;
             /**
              * Sets the cursor color to use in a widget, overriding the {@link Gtk.Widget}
              * cursor-color and secondary-cursor-color
@@ -58860,7 +58800,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param state the state for which to set the foreground color
              * @param color the color to assign (does not need to be allocated),     or `null` to undo the effect of previous calls to     of `gtk_widget_modify_fg()`.
              */
-            modify_fg(state: StateType | null, color?: Gdk.Color | null): void;
+            modify_fg(state: StateType, color?: Gdk.Color | null): void;
             /**
              * Sets the font to use for a widget.
              *
@@ -58902,7 +58842,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param state the state for which to set the text color
              * @param color the color to assign (does not need to     be allocated), or `null` to undo the effect of previous     calls to of `gtk_widget_modify_text()`.
              */
-            modify_text(state: StateType | null, color?: Gdk.Color | null): void;
+            modify_text(state: StateType, color?: Gdk.Color | null): void;
             /**
              * Sets the background color to use for a widget.
              *
@@ -58911,7 +58851,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param state the state for which to set the background color
              * @param color the color to assign, or `null` to undo the effect     of previous calls to `gtk_widget_override_background_color()`
              */
-            override_background_color(state: StateFlags | null, color?: Gdk.RGBA | null): void;
+            override_background_color(state: StateFlags, color?: Gdk.RGBA | null): void;
             /**
              * Sets the color to use for a widget.
              *
@@ -58941,7 +58881,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param state the state for which to set the color
              * @param color the color to assign, or `null` to undo the effect     of previous calls to `gtk_widget_override_color()`
              */
-            override_color(state: StateFlags | null, color?: Gdk.RGBA | null): void;
+            override_color(state: StateFlags, color?: Gdk.RGBA | null): void;
             /**
              * Sets the cursor color to use in a widget, overriding the
              * cursor-color and secondary-cursor-color
@@ -59108,11 +59048,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param accel_mods modifier key combination of the accelerator
              * @returns whether an accelerator was installed and could be removed
              */
-            remove_accelerator(
-                accel_group: AccelGroup,
-                accel_key: number,
-                accel_mods: Gdk.ModifierType | null,
-            ): boolean;
+            remove_accelerator(accel_group: AccelGroup, accel_key: number, accel_mods: Gdk.ModifierType): boolean;
             /**
              * Removes a widget from the list of mnemonic labels for
              * this widget. (See `gtk_widget_list_mnemonic_labels()`). The widget
@@ -59361,7 +59297,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param device a {@link Gdk.Device}
              * @param events event mask
              */
-            set_device_events(device: Gdk.Device, events: Gdk.EventMask | null): void;
+            set_device_events(device: Gdk.Device, events: Gdk.EventMask): void;
             /**
              * Sets the reading direction on a particular widget. This direction
              * controls the primary direction for widgets containing text,
@@ -59377,7 +59313,7 @@ declare module 'gi://Gtk?version=3.0' {
              * set by `gtk_widget_set_default_direction()` will be used.
              * @param dir the new direction
              */
-            set_direction(dir: TextDirection | null): void;
+            set_direction(dir: TextDirection): void;
             /**
              * Widgets are double buffered by default; you can use this function
              * to turn off the buffering. “Double buffered” simply means that
@@ -59447,7 +59383,7 @@ declare module 'gi://Gtk?version=3.0' {
              * See the {@link Gtk.Widget.halign} property.
              * @param align the horizontal alignment
              */
-            set_halign(align: Align | null): void;
+            set_halign(align: Align): void;
             /**
              * Sets the has-tooltip property on `widget` to `has_tooltip`.  See
              * {@link Gtk.Widget.has_tooltip} for more information.
@@ -59710,7 +59646,7 @@ declare module 'gi://Gtk?version=3.0' {
              * the state using wrapper functions such as `gtk_widget_set_sensitive()`.
              * @param state new state for `widget`
              */
-            set_state(state: StateType | null): void;
+            set_state(state: StateType): void;
             /**
              * This function is for use in widget implementations. Turns on flag
              * values in the current widget state (insensitive, prelighted, etc.).
@@ -59728,7 +59664,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param flags State flags to turn on
              * @param clear Whether to clear state before turning on `flags`
              */
-            set_state_flags(flags: StateFlags | null, clear: boolean): void;
+            set_state_flags(flags: StateFlags, clear: boolean): void;
             /**
              * Used to set the {@link Gtk.Style} for a widget (`widget`->style). Since
              * GTK 3, this function does nothing, the passed in style is ignored.
@@ -59778,7 +59714,7 @@ declare module 'gi://Gtk?version=3.0' {
              * See the {@link Gtk.Widget.valign} property.
              * @param align the vertical alignment
              */
-            set_valign(align: Align | null): void;
+            set_valign(align: Align): void;
             /**
              * Sets whether the widget would like any available extra vertical
              * space.
@@ -59989,7 +59925,7 @@ declare module 'gi://Gtk?version=3.0' {
              * See `gtk_widget_set_state_flags()`.
              * @param flags State flags to turn off
              */
-            unset_state_flags(flags: StateFlags | null): void;
+            unset_state_flags(flags: StateFlags): void;
             /**
              * @param baseline
              * @virtual
@@ -61780,7 +61716,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -61821,7 +61757,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -62217,8 +62153,8 @@ declare module 'gi://Gtk?version=3.0' {
                 accel_signal: string,
                 accel_group: AccelGroup,
                 accel_key: number,
-                accel_mods: Gdk.ModifierType | null,
-                accel_flags: AccelFlags | null,
+                accel_mods: Gdk.ModifierType,
+                accel_flags: AccelFlags,
             ): void;
             /**
              * Adds the device events in the bitfield `events` to the event mask for
@@ -62226,7 +62162,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param device a {@link Gdk.Device}
              * @param events an event mask, see {@link Gdk.EventMask}
              */
-            add_device_events(device: Gdk.Device, events: Gdk.EventMask | null): void;
+            add_device_events(device: Gdk.Device, events: Gdk.EventMask): void;
             /**
              * Adds the events in the bitfield `events` to the event mask for
              * `widget`. See `gtk_widget_set_events()` and the
@@ -62304,7 +62240,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param direction direction of focus movement
              * @returns `true` if focus ended up inside `widget`
              */
-            child_focus(direction: DirectionType | null): boolean;
+            child_focus(direction: DirectionType): boolean;
             /**
              * Emits a {@link Gtk.Widget.SignalSignatures.child_notify | Gtk.Widget::child-notify} signal for the
              * [child property][child-properties] `child_property`
@@ -62341,7 +62277,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param orientation expand direction
              * @returns whether widget tree rooted here should be expanded
              */
-            compute_expand(orientation: Orientation | null): boolean;
+            compute_expand(orientation: Orientation): boolean;
             /**
              * Creates a new {@link Pango.Context} with the appropriate font map,
              * font options, font description, and base direction for drawing
@@ -62428,7 +62364,7 @@ declare module 'gi://Gtk?version=3.0' {
              */
             drag_begin(
                 targets: TargetList,
-                actions: Gdk.DragAction | null,
+                actions: Gdk.DragAction,
                 button: number,
                 event?: Gdk.Event | null,
             ): Gdk.DragContext;
@@ -62468,7 +62404,7 @@ declare module 'gi://Gtk?version=3.0' {
              */
             drag_begin_with_coordinates(
                 targets: TargetList,
-                actions: Gdk.DragAction | null,
+                actions: Gdk.DragAction,
                 button: number,
                 event: Gdk.Event | null,
                 x: number,
@@ -62580,22 +62516,14 @@ declare module 'gi://Gtk?version=3.0' {
              * @param targets a pointer to an array of     `GtkTargetEntrys` indicating the drop types that this `widget` will     accept, or `null`. Later you can access the list with     `gtk_drag_dest_get_target_list()` and `gtk_drag_dest_find_target()`.
              * @param actions a bitmask of possible actions for a drop onto this `widget`.
              */
-            drag_dest_set(
-                flags: DestDefaults | null,
-                targets: TargetEntry[] | null,
-                actions: Gdk.DragAction | null,
-            ): void;
+            drag_dest_set(flags: DestDefaults, targets: TargetEntry[] | null, actions: Gdk.DragAction): void;
             /**
              * Sets this widget as a proxy for drops to another window.
              * @param proxy_window the window to which to forward drag events
              * @param protocol the drag protocol which the `proxy_window` accepts   (You can use `gdk_drag_get_protocol()` to determine this)
              * @param use_coordinates If `true`, send the same coordinates to the   destination, because it is an embedded   subwindow.
              */
-            drag_dest_set_proxy(
-                proxy_window: Gdk.Window,
-                protocol: Gdk.DragProtocol | null,
-                use_coordinates: boolean,
-            ): void;
+            drag_dest_set_proxy(proxy_window: Gdk.Window, protocol: Gdk.DragProtocol, use_coordinates: boolean): void;
             /**
              * Sets the target types that this widget can accept from drag-and-drop.
              * The widget must first be made into a drag destination with
@@ -62677,9 +62605,9 @@ declare module 'gi://Gtk?version=3.0' {
              * @param actions the bitmask of possible actions for a drag from this widget
              */
             drag_source_set(
-                start_button_mask: Gdk.ModifierType | null,
+                start_button_mask: Gdk.ModifierType,
                 targets: TargetEntry[] | null,
-                actions: Gdk.DragAction | null,
+                actions: Gdk.DragAction,
             ): void;
             /**
              * Sets the icon that will be used for drags from a particular source
@@ -63138,7 +63066,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param intent the use case for the modifier mask
              * @returns the modifier mask used for `intent`.
              */
-            get_modifier_mask(intent: Gdk.ModifierIntent | null): Gdk.ModifierType;
+            get_modifier_mask(intent: Gdk.ModifierIntent): Gdk.ModifierType;
             /**
              * Returns the current modifier style for the widget. (As set by
              * `gtk_widget_modify_style()`.) If no style has previously set, a new
@@ -63772,7 +63700,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param direction direction of focus movement
              * @returns `true` if stopping keyboard navigation is fine, `false`               if the emitting widget should try to handle the keyboard               navigation attempt in its parent container(s).
              */
-            keynav_failed(direction: DirectionType | null): boolean;
+            keynav_failed(direction: DirectionType): boolean;
             /**
              * Lists the closures used by `widget` for accelerator group connections
              * with `gtk_accel_group_connect_by_path()` or `gtk_accel_group_connect()`.
@@ -63833,7 +63761,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param state the state for which to set the base color
              * @param color the color to assign (does not need to     be allocated), or `null` to undo the effect of previous     calls to of `gtk_widget_modify_base()`.
              */
-            modify_base(state: StateType | null, color?: Gdk.Color | null): void;
+            modify_base(state: StateType, color?: Gdk.Color | null): void;
             /**
              * Sets the background color for a widget in a particular state.
              *
@@ -63852,7 +63780,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param state the state for which to set the background color
              * @param color the color to assign (does not need     to be allocated), or `null` to undo the effect of previous     calls to of `gtk_widget_modify_bg()`.
              */
-            modify_bg(state: StateType | null, color?: Gdk.Color | null): void;
+            modify_bg(state: StateType, color?: Gdk.Color | null): void;
             /**
              * Sets the cursor color to use in a widget, overriding the {@link Gtk.Widget}
              * cursor-color and secondary-cursor-color
@@ -63872,7 +63800,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param state the state for which to set the foreground color
              * @param color the color to assign (does not need to be allocated),     or `null` to undo the effect of previous calls to     of `gtk_widget_modify_fg()`.
              */
-            modify_fg(state: StateType | null, color?: Gdk.Color | null): void;
+            modify_fg(state: StateType, color?: Gdk.Color | null): void;
             /**
              * Sets the font to use for a widget.
              *
@@ -63914,7 +63842,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param state the state for which to set the text color
              * @param color the color to assign (does not need to     be allocated), or `null` to undo the effect of previous     calls to of `gtk_widget_modify_text()`.
              */
-            modify_text(state: StateType | null, color?: Gdk.Color | null): void;
+            modify_text(state: StateType, color?: Gdk.Color | null): void;
             /**
              * Sets the background color to use for a widget.
              *
@@ -63923,7 +63851,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param state the state for which to set the background color
              * @param color the color to assign, or `null` to undo the effect     of previous calls to `gtk_widget_override_background_color()`
              */
-            override_background_color(state: StateFlags | null, color?: Gdk.RGBA | null): void;
+            override_background_color(state: StateFlags, color?: Gdk.RGBA | null): void;
             /**
              * Sets the color to use for a widget.
              *
@@ -63953,7 +63881,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param state the state for which to set the color
              * @param color the color to assign, or `null` to undo the effect     of previous calls to `gtk_widget_override_color()`
              */
-            override_color(state: StateFlags | null, color?: Gdk.RGBA | null): void;
+            override_color(state: StateFlags, color?: Gdk.RGBA | null): void;
             /**
              * Sets the cursor color to use in a widget, overriding the
              * cursor-color and secondary-cursor-color
@@ -64120,11 +64048,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param accel_mods modifier key combination of the accelerator
              * @returns whether an accelerator was installed and could be removed
              */
-            remove_accelerator(
-                accel_group: AccelGroup,
-                accel_key: number,
-                accel_mods: Gdk.ModifierType | null,
-            ): boolean;
+            remove_accelerator(accel_group: AccelGroup, accel_key: number, accel_mods: Gdk.ModifierType): boolean;
             /**
              * Removes a widget from the list of mnemonic labels for
              * this widget. (See `gtk_widget_list_mnemonic_labels()`). The widget
@@ -64378,7 +64302,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param device a {@link Gdk.Device}
              * @param events event mask
              */
-            set_device_events(device: Gdk.Device, events: Gdk.EventMask | null): void;
+            set_device_events(device: Gdk.Device, events: Gdk.EventMask): void;
             /**
              * Sets the reading direction on a particular widget. This direction
              * controls the primary direction for widgets containing text,
@@ -64394,7 +64318,7 @@ declare module 'gi://Gtk?version=3.0' {
              * set by `gtk_widget_set_default_direction()` will be used.
              * @param dir the new direction
              */
-            set_direction(dir: TextDirection | null): void;
+            set_direction(dir: TextDirection): void;
             /**
              * Widgets are double buffered by default; you can use this function
              * to turn off the buffering. “Double buffered” simply means that
@@ -64464,7 +64388,7 @@ declare module 'gi://Gtk?version=3.0' {
              * See the {@link Gtk.Widget.halign} property.
              * @param align the horizontal alignment
              */
-            set_halign(align: Align | null): void;
+            set_halign(align: Align): void;
             /**
              * Sets the has-tooltip property on `widget` to `has_tooltip`.  See
              * {@link Gtk.Widget.has_tooltip} for more information.
@@ -64727,7 +64651,7 @@ declare module 'gi://Gtk?version=3.0' {
              * the state using wrapper functions such as `gtk_widget_set_sensitive()`.
              * @param state new state for `widget`
              */
-            set_state(state: StateType | null): void;
+            set_state(state: StateType): void;
             /**
              * This function is for use in widget implementations. Turns on flag
              * values in the current widget state (insensitive, prelighted, etc.).
@@ -64745,7 +64669,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param flags State flags to turn on
              * @param clear Whether to clear state before turning on `flags`
              */
-            set_state_flags(flags: StateFlags | null, clear: boolean): void;
+            set_state_flags(flags: StateFlags, clear: boolean): void;
             /**
              * Used to set the {@link Gtk.Style} for a widget (`widget`->style). Since
              * GTK 3, this function does nothing, the passed in style is ignored.
@@ -64795,7 +64719,7 @@ declare module 'gi://Gtk?version=3.0' {
              * See the {@link Gtk.Widget.valign} property.
              * @param align the vertical alignment
              */
-            set_valign(align: Align | null): void;
+            set_valign(align: Align): void;
             /**
              * Sets whether the widget would like any available extra vertical
              * space.
@@ -65006,7 +64930,7 @@ declare module 'gi://Gtk?version=3.0' {
              * See `gtk_widget_set_state_flags()`.
              * @param flags State flags to turn off
              */
-            unset_state_flags(flags: StateFlags | null): void;
+            unset_state_flags(flags: StateFlags): void;
             /**
              * @param baseline
              * @virtual
@@ -66210,7 +66134,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -66251,7 +66175,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -68061,7 +67985,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param colors_per_line the number of colors to show in each row/column
              * @param colors the colors of the palette, or `null`
              */
-            add_palette(orientation: Orientation | null, colors_per_line: number, colors?: Gdk.RGBA[] | null): void;
+            add_palette(orientation: Orientation, colors_per_line: number, colors?: Gdk.RGBA[] | null): void;
             /**
              * Gets the currently-selected color.
              */
@@ -68155,7 +68079,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -68196,7 +68120,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -68587,8 +68511,8 @@ declare module 'gi://Gtk?version=3.0' {
                 accel_signal: string,
                 accel_group: AccelGroup,
                 accel_key: number,
-                accel_mods: Gdk.ModifierType | null,
-                accel_flags: AccelFlags | null,
+                accel_mods: Gdk.ModifierType,
+                accel_flags: AccelFlags,
             ): void;
             /**
              * Adds the device events in the bitfield `events` to the event mask for
@@ -68596,7 +68520,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param device a {@link Gdk.Device}
              * @param events an event mask, see {@link Gdk.EventMask}
              */
-            add_device_events(device: Gdk.Device, events: Gdk.EventMask | null): void;
+            add_device_events(device: Gdk.Device, events: Gdk.EventMask): void;
             /**
              * Adds the events in the bitfield `events` to the event mask for
              * `widget`. See `gtk_widget_set_events()` and the
@@ -68674,7 +68598,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param direction direction of focus movement
              * @returns `true` if focus ended up inside `widget`
              */
-            child_focus(direction: DirectionType | null): boolean;
+            child_focus(direction: DirectionType): boolean;
             /**
              * Emits a {@link Gtk.Widget.SignalSignatures.child_notify | Gtk.Widget::child-notify} signal for the
              * [child property][child-properties] `child_property`
@@ -68711,7 +68635,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param orientation expand direction
              * @returns whether widget tree rooted here should be expanded
              */
-            compute_expand(orientation: Orientation | null): boolean;
+            compute_expand(orientation: Orientation): boolean;
             /**
              * Creates a new {@link Pango.Context} with the appropriate font map,
              * font options, font description, and base direction for drawing
@@ -68798,7 +68722,7 @@ declare module 'gi://Gtk?version=3.0' {
              */
             drag_begin(
                 targets: TargetList,
-                actions: Gdk.DragAction | null,
+                actions: Gdk.DragAction,
                 button: number,
                 event?: Gdk.Event | null,
             ): Gdk.DragContext;
@@ -68838,7 +68762,7 @@ declare module 'gi://Gtk?version=3.0' {
              */
             drag_begin_with_coordinates(
                 targets: TargetList,
-                actions: Gdk.DragAction | null,
+                actions: Gdk.DragAction,
                 button: number,
                 event: Gdk.Event | null,
                 x: number,
@@ -68950,22 +68874,14 @@ declare module 'gi://Gtk?version=3.0' {
              * @param targets a pointer to an array of     `GtkTargetEntrys` indicating the drop types that this `widget` will     accept, or `null`. Later you can access the list with     `gtk_drag_dest_get_target_list()` and `gtk_drag_dest_find_target()`.
              * @param actions a bitmask of possible actions for a drop onto this `widget`.
              */
-            drag_dest_set(
-                flags: DestDefaults | null,
-                targets: TargetEntry[] | null,
-                actions: Gdk.DragAction | null,
-            ): void;
+            drag_dest_set(flags: DestDefaults, targets: TargetEntry[] | null, actions: Gdk.DragAction): void;
             /**
              * Sets this widget as a proxy for drops to another window.
              * @param proxy_window the window to which to forward drag events
              * @param protocol the drag protocol which the `proxy_window` accepts   (You can use `gdk_drag_get_protocol()` to determine this)
              * @param use_coordinates If `true`, send the same coordinates to the   destination, because it is an embedded   subwindow.
              */
-            drag_dest_set_proxy(
-                proxy_window: Gdk.Window,
-                protocol: Gdk.DragProtocol | null,
-                use_coordinates: boolean,
-            ): void;
+            drag_dest_set_proxy(proxy_window: Gdk.Window, protocol: Gdk.DragProtocol, use_coordinates: boolean): void;
             /**
              * Sets the target types that this widget can accept from drag-and-drop.
              * The widget must first be made into a drag destination with
@@ -69047,9 +68963,9 @@ declare module 'gi://Gtk?version=3.0' {
              * @param actions the bitmask of possible actions for a drag from this widget
              */
             drag_source_set(
-                start_button_mask: Gdk.ModifierType | null,
+                start_button_mask: Gdk.ModifierType,
                 targets: TargetEntry[] | null,
-                actions: Gdk.DragAction | null,
+                actions: Gdk.DragAction,
             ): void;
             /**
              * Sets the icon that will be used for drags from a particular source
@@ -69508,7 +69424,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param intent the use case for the modifier mask
              * @returns the modifier mask used for `intent`.
              */
-            get_modifier_mask(intent: Gdk.ModifierIntent | null): Gdk.ModifierType;
+            get_modifier_mask(intent: Gdk.ModifierIntent): Gdk.ModifierType;
             /**
              * Returns the current modifier style for the widget. (As set by
              * `gtk_widget_modify_style()`.) If no style has previously set, a new
@@ -70142,7 +70058,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param direction direction of focus movement
              * @returns `true` if stopping keyboard navigation is fine, `false`               if the emitting widget should try to handle the keyboard               navigation attempt in its parent container(s).
              */
-            keynav_failed(direction: DirectionType | null): boolean;
+            keynav_failed(direction: DirectionType): boolean;
             /**
              * Lists the closures used by `widget` for accelerator group connections
              * with `gtk_accel_group_connect_by_path()` or `gtk_accel_group_connect()`.
@@ -70203,7 +70119,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param state the state for which to set the base color
              * @param color the color to assign (does not need to     be allocated), or `null` to undo the effect of previous     calls to of `gtk_widget_modify_base()`.
              */
-            modify_base(state: StateType | null, color?: Gdk.Color | null): void;
+            modify_base(state: StateType, color?: Gdk.Color | null): void;
             /**
              * Sets the background color for a widget in a particular state.
              *
@@ -70222,7 +70138,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param state the state for which to set the background color
              * @param color the color to assign (does not need     to be allocated), or `null` to undo the effect of previous     calls to of `gtk_widget_modify_bg()`.
              */
-            modify_bg(state: StateType | null, color?: Gdk.Color | null): void;
+            modify_bg(state: StateType, color?: Gdk.Color | null): void;
             /**
              * Sets the cursor color to use in a widget, overriding the {@link Gtk.Widget}
              * cursor-color and secondary-cursor-color
@@ -70242,7 +70158,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param state the state for which to set the foreground color
              * @param color the color to assign (does not need to be allocated),     or `null` to undo the effect of previous calls to     of `gtk_widget_modify_fg()`.
              */
-            modify_fg(state: StateType | null, color?: Gdk.Color | null): void;
+            modify_fg(state: StateType, color?: Gdk.Color | null): void;
             /**
              * Sets the font to use for a widget.
              *
@@ -70284,7 +70200,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param state the state for which to set the text color
              * @param color the color to assign (does not need to     be allocated), or `null` to undo the effect of previous     calls to of `gtk_widget_modify_text()`.
              */
-            modify_text(state: StateType | null, color?: Gdk.Color | null): void;
+            modify_text(state: StateType, color?: Gdk.Color | null): void;
             /**
              * Sets the background color to use for a widget.
              *
@@ -70293,7 +70209,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param state the state for which to set the background color
              * @param color the color to assign, or `null` to undo the effect     of previous calls to `gtk_widget_override_background_color()`
              */
-            override_background_color(state: StateFlags | null, color?: Gdk.RGBA | null): void;
+            override_background_color(state: StateFlags, color?: Gdk.RGBA | null): void;
             /**
              * Sets the color to use for a widget.
              *
@@ -70323,7 +70239,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param state the state for which to set the color
              * @param color the color to assign, or `null` to undo the effect     of previous calls to `gtk_widget_override_color()`
              */
-            override_color(state: StateFlags | null, color?: Gdk.RGBA | null): void;
+            override_color(state: StateFlags, color?: Gdk.RGBA | null): void;
             /**
              * Sets the cursor color to use in a widget, overriding the
              * cursor-color and secondary-cursor-color
@@ -70490,11 +70406,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param accel_mods modifier key combination of the accelerator
              * @returns whether an accelerator was installed and could be removed
              */
-            remove_accelerator(
-                accel_group: AccelGroup,
-                accel_key: number,
-                accel_mods: Gdk.ModifierType | null,
-            ): boolean;
+            remove_accelerator(accel_group: AccelGroup, accel_key: number, accel_mods: Gdk.ModifierType): boolean;
             /**
              * Removes a widget from the list of mnemonic labels for
              * this widget. (See `gtk_widget_list_mnemonic_labels()`). The widget
@@ -70743,7 +70655,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param device a {@link Gdk.Device}
              * @param events event mask
              */
-            set_device_events(device: Gdk.Device, events: Gdk.EventMask | null): void;
+            set_device_events(device: Gdk.Device, events: Gdk.EventMask): void;
             /**
              * Sets the reading direction on a particular widget. This direction
              * controls the primary direction for widgets containing text,
@@ -70759,7 +70671,7 @@ declare module 'gi://Gtk?version=3.0' {
              * set by `gtk_widget_set_default_direction()` will be used.
              * @param dir the new direction
              */
-            set_direction(dir: TextDirection | null): void;
+            set_direction(dir: TextDirection): void;
             /**
              * Widgets are double buffered by default; you can use this function
              * to turn off the buffering. “Double buffered” simply means that
@@ -70829,7 +70741,7 @@ declare module 'gi://Gtk?version=3.0' {
              * See the {@link Gtk.Widget.halign} property.
              * @param align the horizontal alignment
              */
-            set_halign(align: Align | null): void;
+            set_halign(align: Align): void;
             /**
              * Sets the has-tooltip property on `widget` to `has_tooltip`.  See
              * {@link Gtk.Widget.has_tooltip} for more information.
@@ -71092,7 +71004,7 @@ declare module 'gi://Gtk?version=3.0' {
              * the state using wrapper functions such as `gtk_widget_set_sensitive()`.
              * @param state new state for `widget`
              */
-            set_state(state: StateType | null): void;
+            set_state(state: StateType): void;
             /**
              * This function is for use in widget implementations. Turns on flag
              * values in the current widget state (insensitive, prelighted, etc.).
@@ -71110,7 +71022,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param flags State flags to turn on
              * @param clear Whether to clear state before turning on `flags`
              */
-            set_state_flags(flags: StateFlags | null, clear: boolean): void;
+            set_state_flags(flags: StateFlags, clear: boolean): void;
             /**
              * Used to set the {@link Gtk.Style} for a widget (`widget`->style). Since
              * GTK 3, this function does nothing, the passed in style is ignored.
@@ -71160,7 +71072,7 @@ declare module 'gi://Gtk?version=3.0' {
              * See the {@link Gtk.Widget.valign} property.
              * @param align the vertical alignment
              */
-            set_valign(align: Align | null): void;
+            set_valign(align: Align): void;
             /**
              * Sets whether the widget would like any available extra vertical
              * space.
@@ -71371,7 +71283,7 @@ declare module 'gi://Gtk?version=3.0' {
              * See `gtk_widget_set_state_flags()`.
              * @param flags State flags to turn off
              */
-            unset_state_flags(flags: StateFlags | null): void;
+            unset_state_flags(flags: StateFlags): void;
             /**
              * @param baseline
              * @virtual
@@ -72364,7 +72276,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param colors_per_line the number of colors to show in each row/column
              * @param colors the colors of the palette, or `null`
              */
-            add_palette(orientation: Orientation | null, colors_per_line: number, colors?: Gdk.RGBA[] | null): void;
+            add_palette(orientation: Orientation, colors_per_line: number, colors?: Gdk.RGBA[] | null): void;
             /**
              * Gets the currently-selected color.
              */
@@ -72468,7 +72380,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -72509,7 +72421,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -73092,7 +73004,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param colors_per_line the number of colors to show in each row/column
              * @param colors the colors of the palette, or `null`
              */
-            add_palette(orientation: Orientation | null, colors_per_line: number, colors?: Gdk.RGBA[] | null): void;
+            add_palette(orientation: Orientation, colors_per_line: number, colors?: Gdk.RGBA[] | null): void;
             /**
              * Gets the currently-selected color.
              */
@@ -73161,7 +73073,7 @@ declare module 'gi://Gtk?version=3.0' {
              * Sets the orientation of the `orientable`.
              * @param orientation the orientable’s new orientation.
              */
-            set_orientation(orientation: Orientation | null): void;
+            set_orientation(orientation: Orientation): void;
             /**
              * Creates a binding between `source_property` on `source` and `target_property`
              * on `target`.
@@ -73206,7 +73118,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -73247,7 +73159,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -73922,7 +73834,7 @@ declare module 'gi://Gtk?version=3.0' {
              * Sets the orientation of the `orientable`.
              * @param orientation the orientable’s new orientation.
              */
-            set_orientation(orientation: Orientation | null): void;
+            set_orientation(orientation: Orientation): void;
             /**
              * Creates a binding between `source_property` on `source` and `target_property`
              * on `target`.
@@ -73967,7 +73879,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -74008,7 +73920,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -74609,7 +74521,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -74650,7 +74562,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -75736,7 +75648,7 @@ declare module 'gi://Gtk?version=3.0' {
              * or only if there is at least one item to display ({@link Gtk.SensitivityType.AUTO}).
              * @param sensitivity specify the sensitivity of the dropdown button
              */
-            set_button_sensitivity(sensitivity: SensitivityType | null): void;
+            set_button_sensitivity(sensitivity: SensitivityType): void;
             /**
              * Sets the column with column span information for `combo_box` to be
              * `column_span`. The column span column contains integers which indicate
@@ -76550,7 +76462,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -76591,7 +76503,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -76982,8 +76894,8 @@ declare module 'gi://Gtk?version=3.0' {
                 accel_signal: string,
                 accel_group: AccelGroup,
                 accel_key: number,
-                accel_mods: Gdk.ModifierType | null,
-                accel_flags: AccelFlags | null,
+                accel_mods: Gdk.ModifierType,
+                accel_flags: AccelFlags,
             ): void;
             /**
              * Adds the device events in the bitfield `events` to the event mask for
@@ -76991,7 +76903,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param device a {@link Gdk.Device}
              * @param events an event mask, see {@link Gdk.EventMask}
              */
-            add_device_events(device: Gdk.Device, events: Gdk.EventMask | null): void;
+            add_device_events(device: Gdk.Device, events: Gdk.EventMask): void;
             /**
              * Adds the events in the bitfield `events` to the event mask for
              * `widget`. See `gtk_widget_set_events()` and the
@@ -77069,7 +76981,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param direction direction of focus movement
              * @returns `true` if focus ended up inside `widget`
              */
-            child_focus(direction: DirectionType | null): boolean;
+            child_focus(direction: DirectionType): boolean;
             /**
              * Emits a {@link Gtk.Widget.SignalSignatures.child_notify | Gtk.Widget::child-notify} signal for the
              * [child property][child-properties] `child_property`
@@ -77106,7 +77018,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param orientation expand direction
              * @returns whether widget tree rooted here should be expanded
              */
-            compute_expand(orientation: Orientation | null): boolean;
+            compute_expand(orientation: Orientation): boolean;
             /**
              * Creates a new {@link Pango.Context} with the appropriate font map,
              * font options, font description, and base direction for drawing
@@ -77193,7 +77105,7 @@ declare module 'gi://Gtk?version=3.0' {
              */
             drag_begin(
                 targets: TargetList,
-                actions: Gdk.DragAction | null,
+                actions: Gdk.DragAction,
                 button: number,
                 event?: Gdk.Event | null,
             ): Gdk.DragContext;
@@ -77233,7 +77145,7 @@ declare module 'gi://Gtk?version=3.0' {
              */
             drag_begin_with_coordinates(
                 targets: TargetList,
-                actions: Gdk.DragAction | null,
+                actions: Gdk.DragAction,
                 button: number,
                 event: Gdk.Event | null,
                 x: number,
@@ -77345,22 +77257,14 @@ declare module 'gi://Gtk?version=3.0' {
              * @param targets a pointer to an array of     `GtkTargetEntrys` indicating the drop types that this `widget` will     accept, or `null`. Later you can access the list with     `gtk_drag_dest_get_target_list()` and `gtk_drag_dest_find_target()`.
              * @param actions a bitmask of possible actions for a drop onto this `widget`.
              */
-            drag_dest_set(
-                flags: DestDefaults | null,
-                targets: TargetEntry[] | null,
-                actions: Gdk.DragAction | null,
-            ): void;
+            drag_dest_set(flags: DestDefaults, targets: TargetEntry[] | null, actions: Gdk.DragAction): void;
             /**
              * Sets this widget as a proxy for drops to another window.
              * @param proxy_window the window to which to forward drag events
              * @param protocol the drag protocol which the `proxy_window` accepts   (You can use `gdk_drag_get_protocol()` to determine this)
              * @param use_coordinates If `true`, send the same coordinates to the   destination, because it is an embedded   subwindow.
              */
-            drag_dest_set_proxy(
-                proxy_window: Gdk.Window,
-                protocol: Gdk.DragProtocol | null,
-                use_coordinates: boolean,
-            ): void;
+            drag_dest_set_proxy(proxy_window: Gdk.Window, protocol: Gdk.DragProtocol, use_coordinates: boolean): void;
             /**
              * Sets the target types that this widget can accept from drag-and-drop.
              * The widget must first be made into a drag destination with
@@ -77442,9 +77346,9 @@ declare module 'gi://Gtk?version=3.0' {
              * @param actions the bitmask of possible actions for a drag from this widget
              */
             drag_source_set(
-                start_button_mask: Gdk.ModifierType | null,
+                start_button_mask: Gdk.ModifierType,
                 targets: TargetEntry[] | null,
-                actions: Gdk.DragAction | null,
+                actions: Gdk.DragAction,
             ): void;
             /**
              * Sets the icon that will be used for drags from a particular source
@@ -77897,7 +77801,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param intent the use case for the modifier mask
              * @returns the modifier mask used for `intent`.
              */
-            get_modifier_mask(intent: Gdk.ModifierIntent | null): Gdk.ModifierType;
+            get_modifier_mask(intent: Gdk.ModifierIntent): Gdk.ModifierType;
             /**
              * Returns the current modifier style for the widget. (As set by
              * `gtk_widget_modify_style()`.) If no style has previously set, a new
@@ -78531,7 +78435,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param direction direction of focus movement
              * @returns `true` if stopping keyboard navigation is fine, `false`               if the emitting widget should try to handle the keyboard               navigation attempt in its parent container(s).
              */
-            keynav_failed(direction: DirectionType | null): boolean;
+            keynav_failed(direction: DirectionType): boolean;
             /**
              * Lists the closures used by `widget` for accelerator group connections
              * with `gtk_accel_group_connect_by_path()` or `gtk_accel_group_connect()`.
@@ -78592,7 +78496,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param state the state for which to set the base color
              * @param color the color to assign (does not need to     be allocated), or `null` to undo the effect of previous     calls to of `gtk_widget_modify_base()`.
              */
-            modify_base(state: StateType | null, color?: Gdk.Color | null): void;
+            modify_base(state: StateType, color?: Gdk.Color | null): void;
             /**
              * Sets the background color for a widget in a particular state.
              *
@@ -78611,7 +78515,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param state the state for which to set the background color
              * @param color the color to assign (does not need     to be allocated), or `null` to undo the effect of previous     calls to of `gtk_widget_modify_bg()`.
              */
-            modify_bg(state: StateType | null, color?: Gdk.Color | null): void;
+            modify_bg(state: StateType, color?: Gdk.Color | null): void;
             /**
              * Sets the cursor color to use in a widget, overriding the {@link Gtk.Widget}
              * cursor-color and secondary-cursor-color
@@ -78631,7 +78535,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param state the state for which to set the foreground color
              * @param color the color to assign (does not need to be allocated),     or `null` to undo the effect of previous calls to     of `gtk_widget_modify_fg()`.
              */
-            modify_fg(state: StateType | null, color?: Gdk.Color | null): void;
+            modify_fg(state: StateType, color?: Gdk.Color | null): void;
             /**
              * Sets the font to use for a widget.
              *
@@ -78673,7 +78577,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param state the state for which to set the text color
              * @param color the color to assign (does not need to     be allocated), or `null` to undo the effect of previous     calls to of `gtk_widget_modify_text()`.
              */
-            modify_text(state: StateType | null, color?: Gdk.Color | null): void;
+            modify_text(state: StateType, color?: Gdk.Color | null): void;
             /**
              * Sets the background color to use for a widget.
              *
@@ -78682,7 +78586,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param state the state for which to set the background color
              * @param color the color to assign, or `null` to undo the effect     of previous calls to `gtk_widget_override_background_color()`
              */
-            override_background_color(state: StateFlags | null, color?: Gdk.RGBA | null): void;
+            override_background_color(state: StateFlags, color?: Gdk.RGBA | null): void;
             /**
              * Sets the color to use for a widget.
              *
@@ -78712,7 +78616,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param state the state for which to set the color
              * @param color the color to assign, or `null` to undo the effect     of previous calls to `gtk_widget_override_color()`
              */
-            override_color(state: StateFlags | null, color?: Gdk.RGBA | null): void;
+            override_color(state: StateFlags, color?: Gdk.RGBA | null): void;
             /**
              * Sets the cursor color to use in a widget, overriding the
              * cursor-color and secondary-cursor-color
@@ -78879,11 +78783,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param accel_mods modifier key combination of the accelerator
              * @returns whether an accelerator was installed and could be removed
              */
-            remove_accelerator(
-                accel_group: AccelGroup,
-                accel_key: number,
-                accel_mods: Gdk.ModifierType | null,
-            ): boolean;
+            remove_accelerator(accel_group: AccelGroup, accel_key: number, accel_mods: Gdk.ModifierType): boolean;
             /**
              * Removes a widget from the list of mnemonic labels for
              * this widget. (See `gtk_widget_list_mnemonic_labels()`). The widget
@@ -79132,7 +79032,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param device a {@link Gdk.Device}
              * @param events event mask
              */
-            set_device_events(device: Gdk.Device, events: Gdk.EventMask | null): void;
+            set_device_events(device: Gdk.Device, events: Gdk.EventMask): void;
             /**
              * Sets the reading direction on a particular widget. This direction
              * controls the primary direction for widgets containing text,
@@ -79148,7 +79048,7 @@ declare module 'gi://Gtk?version=3.0' {
              * set by `gtk_widget_set_default_direction()` will be used.
              * @param dir the new direction
              */
-            set_direction(dir: TextDirection | null): void;
+            set_direction(dir: TextDirection): void;
             /**
              * Widgets are double buffered by default; you can use this function
              * to turn off the buffering. “Double buffered” simply means that
@@ -79210,7 +79110,7 @@ declare module 'gi://Gtk?version=3.0' {
              * See the {@link Gtk.Widget.halign} property.
              * @param align the horizontal alignment
              */
-            set_halign(align: Align | null): void;
+            set_halign(align: Align): void;
             /**
              * Sets the has-tooltip property on `widget` to `has_tooltip`.  See
              * {@link Gtk.Widget.has_tooltip} for more information.
@@ -79473,7 +79373,7 @@ declare module 'gi://Gtk?version=3.0' {
              * the state using wrapper functions such as `gtk_widget_set_sensitive()`.
              * @param state new state for `widget`
              */
-            set_state(state: StateType | null): void;
+            set_state(state: StateType): void;
             /**
              * This function is for use in widget implementations. Turns on flag
              * values in the current widget state (insensitive, prelighted, etc.).
@@ -79491,7 +79391,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param flags State flags to turn on
              * @param clear Whether to clear state before turning on `flags`
              */
-            set_state_flags(flags: StateFlags | null, clear: boolean): void;
+            set_state_flags(flags: StateFlags, clear: boolean): void;
             /**
              * Used to set the {@link Gtk.Style} for a widget (`widget`->style). Since
              * GTK 3, this function does nothing, the passed in style is ignored.
@@ -79541,7 +79441,7 @@ declare module 'gi://Gtk?version=3.0' {
              * See the {@link Gtk.Widget.valign} property.
              * @param align the vertical alignment
              */
-            set_valign(align: Align | null): void;
+            set_valign(align: Align): void;
             /**
              * Sets whether the widget would like any available extra vertical
              * space.
@@ -79752,7 +79652,7 @@ declare module 'gi://Gtk?version=3.0' {
              * See `gtk_widget_set_state_flags()`.
              * @param flags State flags to turn off
              */
-            unset_state_flags(flags: StateFlags | null): void;
+            unset_state_flags(flags: StateFlags): void;
             /**
              * @param baseline
              * @virtual
@@ -80956,7 +80856,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -80997,7 +80897,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -82360,7 +82260,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -82401,7 +82301,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -82792,8 +82692,8 @@ declare module 'gi://Gtk?version=3.0' {
                 accel_signal: string,
                 accel_group: AccelGroup,
                 accel_key: number,
-                accel_mods: Gdk.ModifierType | null,
-                accel_flags: AccelFlags | null,
+                accel_mods: Gdk.ModifierType,
+                accel_flags: AccelFlags,
             ): void;
             /**
              * Adds the device events in the bitfield `events` to the event mask for
@@ -82801,7 +82701,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param device a {@link Gdk.Device}
              * @param events an event mask, see {@link Gdk.EventMask}
              */
-            add_device_events(device: Gdk.Device, events: Gdk.EventMask | null): void;
+            add_device_events(device: Gdk.Device, events: Gdk.EventMask): void;
             /**
              * Adds the events in the bitfield `events` to the event mask for
              * `widget`. See `gtk_widget_set_events()` and the
@@ -82879,7 +82779,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param direction direction of focus movement
              * @returns `true` if focus ended up inside `widget`
              */
-            child_focus(direction: DirectionType | null): boolean;
+            child_focus(direction: DirectionType): boolean;
             /**
              * Emits a {@link Gtk.Widget.SignalSignatures.child_notify | Gtk.Widget::child-notify} signal for the
              * [child property][child-properties] `child_property`
@@ -82916,7 +82816,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param orientation expand direction
              * @returns whether widget tree rooted here should be expanded
              */
-            compute_expand(orientation: Orientation | null): boolean;
+            compute_expand(orientation: Orientation): boolean;
             /**
              * Creates a new {@link Pango.Context} with the appropriate font map,
              * font options, font description, and base direction for drawing
@@ -83003,7 +82903,7 @@ declare module 'gi://Gtk?version=3.0' {
              */
             drag_begin(
                 targets: TargetList,
-                actions: Gdk.DragAction | null,
+                actions: Gdk.DragAction,
                 button: number,
                 event?: Gdk.Event | null,
             ): Gdk.DragContext;
@@ -83043,7 +82943,7 @@ declare module 'gi://Gtk?version=3.0' {
              */
             drag_begin_with_coordinates(
                 targets: TargetList,
-                actions: Gdk.DragAction | null,
+                actions: Gdk.DragAction,
                 button: number,
                 event: Gdk.Event | null,
                 x: number,
@@ -83155,22 +83055,14 @@ declare module 'gi://Gtk?version=3.0' {
              * @param targets a pointer to an array of     `GtkTargetEntrys` indicating the drop types that this `widget` will     accept, or `null`. Later you can access the list with     `gtk_drag_dest_get_target_list()` and `gtk_drag_dest_find_target()`.
              * @param actions a bitmask of possible actions for a drop onto this `widget`.
              */
-            drag_dest_set(
-                flags: DestDefaults | null,
-                targets: TargetEntry[] | null,
-                actions: Gdk.DragAction | null,
-            ): void;
+            drag_dest_set(flags: DestDefaults, targets: TargetEntry[] | null, actions: Gdk.DragAction): void;
             /**
              * Sets this widget as a proxy for drops to another window.
              * @param proxy_window the window to which to forward drag events
              * @param protocol the drag protocol which the `proxy_window` accepts   (You can use `gdk_drag_get_protocol()` to determine this)
              * @param use_coordinates If `true`, send the same coordinates to the   destination, because it is an embedded   subwindow.
              */
-            drag_dest_set_proxy(
-                proxy_window: Gdk.Window,
-                protocol: Gdk.DragProtocol | null,
-                use_coordinates: boolean,
-            ): void;
+            drag_dest_set_proxy(proxy_window: Gdk.Window, protocol: Gdk.DragProtocol, use_coordinates: boolean): void;
             /**
              * Sets the target types that this widget can accept from drag-and-drop.
              * The widget must first be made into a drag destination with
@@ -83252,9 +83144,9 @@ declare module 'gi://Gtk?version=3.0' {
              * @param actions the bitmask of possible actions for a drag from this widget
              */
             drag_source_set(
-                start_button_mask: Gdk.ModifierType | null,
+                start_button_mask: Gdk.ModifierType,
                 targets: TargetEntry[] | null,
-                actions: Gdk.DragAction | null,
+                actions: Gdk.DragAction,
             ): void;
             /**
              * Sets the icon that will be used for drags from a particular source
@@ -83713,7 +83605,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param intent the use case for the modifier mask
              * @returns the modifier mask used for `intent`.
              */
-            get_modifier_mask(intent: Gdk.ModifierIntent | null): Gdk.ModifierType;
+            get_modifier_mask(intent: Gdk.ModifierIntent): Gdk.ModifierType;
             /**
              * Returns the current modifier style for the widget. (As set by
              * `gtk_widget_modify_style()`.) If no style has previously set, a new
@@ -84347,7 +84239,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param direction direction of focus movement
              * @returns `true` if stopping keyboard navigation is fine, `false`               if the emitting widget should try to handle the keyboard               navigation attempt in its parent container(s).
              */
-            keynav_failed(direction: DirectionType | null): boolean;
+            keynav_failed(direction: DirectionType): boolean;
             /**
              * Lists the closures used by `widget` for accelerator group connections
              * with `gtk_accel_group_connect_by_path()` or `gtk_accel_group_connect()`.
@@ -84408,7 +84300,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param state the state for which to set the base color
              * @param color the color to assign (does not need to     be allocated), or `null` to undo the effect of previous     calls to of `gtk_widget_modify_base()`.
              */
-            modify_base(state: StateType | null, color?: Gdk.Color | null): void;
+            modify_base(state: StateType, color?: Gdk.Color | null): void;
             /**
              * Sets the background color for a widget in a particular state.
              *
@@ -84427,7 +84319,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param state the state for which to set the background color
              * @param color the color to assign (does not need     to be allocated), or `null` to undo the effect of previous     calls to of `gtk_widget_modify_bg()`.
              */
-            modify_bg(state: StateType | null, color?: Gdk.Color | null): void;
+            modify_bg(state: StateType, color?: Gdk.Color | null): void;
             /**
              * Sets the cursor color to use in a widget, overriding the {@link Gtk.Widget}
              * cursor-color and secondary-cursor-color
@@ -84447,7 +84339,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param state the state for which to set the foreground color
              * @param color the color to assign (does not need to be allocated),     or `null` to undo the effect of previous calls to     of `gtk_widget_modify_fg()`.
              */
-            modify_fg(state: StateType | null, color?: Gdk.Color | null): void;
+            modify_fg(state: StateType, color?: Gdk.Color | null): void;
             /**
              * Sets the font to use for a widget.
              *
@@ -84489,7 +84381,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param state the state for which to set the text color
              * @param color the color to assign (does not need to     be allocated), or `null` to undo the effect of previous     calls to of `gtk_widget_modify_text()`.
              */
-            modify_text(state: StateType | null, color?: Gdk.Color | null): void;
+            modify_text(state: StateType, color?: Gdk.Color | null): void;
             /**
              * Sets the background color to use for a widget.
              *
@@ -84498,7 +84390,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param state the state for which to set the background color
              * @param color the color to assign, or `null` to undo the effect     of previous calls to `gtk_widget_override_background_color()`
              */
-            override_background_color(state: StateFlags | null, color?: Gdk.RGBA | null): void;
+            override_background_color(state: StateFlags, color?: Gdk.RGBA | null): void;
             /**
              * Sets the color to use for a widget.
              *
@@ -84528,7 +84420,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param state the state for which to set the color
              * @param color the color to assign, or `null` to undo the effect     of previous calls to `gtk_widget_override_color()`
              */
-            override_color(state: StateFlags | null, color?: Gdk.RGBA | null): void;
+            override_color(state: StateFlags, color?: Gdk.RGBA | null): void;
             /**
              * Sets the cursor color to use in a widget, overriding the
              * cursor-color and secondary-cursor-color
@@ -84695,11 +84587,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param accel_mods modifier key combination of the accelerator
              * @returns whether an accelerator was installed and could be removed
              */
-            remove_accelerator(
-                accel_group: AccelGroup,
-                accel_key: number,
-                accel_mods: Gdk.ModifierType | null,
-            ): boolean;
+            remove_accelerator(accel_group: AccelGroup, accel_key: number, accel_mods: Gdk.ModifierType): boolean;
             /**
              * Removes a widget from the list of mnemonic labels for
              * this widget. (See `gtk_widget_list_mnemonic_labels()`). The widget
@@ -84948,7 +84836,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param device a {@link Gdk.Device}
              * @param events event mask
              */
-            set_device_events(device: Gdk.Device, events: Gdk.EventMask | null): void;
+            set_device_events(device: Gdk.Device, events: Gdk.EventMask): void;
             /**
              * Sets the reading direction on a particular widget. This direction
              * controls the primary direction for widgets containing text,
@@ -84964,7 +84852,7 @@ declare module 'gi://Gtk?version=3.0' {
              * set by `gtk_widget_set_default_direction()` will be used.
              * @param dir the new direction
              */
-            set_direction(dir: TextDirection | null): void;
+            set_direction(dir: TextDirection): void;
             /**
              * Widgets are double buffered by default; you can use this function
              * to turn off the buffering. “Double buffered” simply means that
@@ -85034,7 +84922,7 @@ declare module 'gi://Gtk?version=3.0' {
              * See the {@link Gtk.Widget.halign} property.
              * @param align the horizontal alignment
              */
-            set_halign(align: Align | null): void;
+            set_halign(align: Align): void;
             /**
              * Sets the has-tooltip property on `widget` to `has_tooltip`.  See
              * {@link Gtk.Widget.has_tooltip} for more information.
@@ -85297,7 +85185,7 @@ declare module 'gi://Gtk?version=3.0' {
              * the state using wrapper functions such as `gtk_widget_set_sensitive()`.
              * @param state new state for `widget`
              */
-            set_state(state: StateType | null): void;
+            set_state(state: StateType): void;
             /**
              * This function is for use in widget implementations. Turns on flag
              * values in the current widget state (insensitive, prelighted, etc.).
@@ -85315,7 +85203,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param flags State flags to turn on
              * @param clear Whether to clear state before turning on `flags`
              */
-            set_state_flags(flags: StateFlags | null, clear: boolean): void;
+            set_state_flags(flags: StateFlags, clear: boolean): void;
             /**
              * Used to set the {@link Gtk.Style} for a widget (`widget`->style). Since
              * GTK 3, this function does nothing, the passed in style is ignored.
@@ -85365,7 +85253,7 @@ declare module 'gi://Gtk?version=3.0' {
              * See the {@link Gtk.Widget.valign} property.
              * @param align the vertical alignment
              */
-            set_valign(align: Align | null): void;
+            set_valign(align: Align): void;
             /**
              * Sets whether the widget would like any available extra vertical
              * space.
@@ -85576,7 +85464,7 @@ declare module 'gi://Gtk?version=3.0' {
              * See `gtk_widget_set_state_flags()`.
              * @param flags State flags to turn off
              */
-            unset_state_flags(flags: StateFlags | null): void;
+            unset_state_flags(flags: StateFlags): void;
             /**
              * @param baseline
              * @virtual
@@ -87099,7 +86987,7 @@ declare module 'gi://Gtk?version=3.0' {
              * or executed immediately.
              * @param resize_mode the new resize mode
              */
-            set_resize_mode(resize_mode: ResizeMode | null): void;
+            set_resize_mode(resize_mode: ResizeMode): void;
             /**
              * Removes a focus chain explicitly set with `gtk_container_set_focus_chain()`.
              */
@@ -87334,7 +87222,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -87375,7 +87263,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -87823,7 +87711,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param coord_type specifies whether the coordinates are relative to the screen or to the components top level window
              * @returns `true` or `false` indicating whether the specified point is within the extent of the `component` or not
              */
-            contains(x: number, y: number, coord_type: Atk.CoordType | null): boolean;
+            contains(x: number, y: number, coord_type: Atk.CoordType): boolean;
             /**
              * Returns the alpha value (i.e. the opacity) for this
              * `component`, on a scale from 0 (fully transparent) to 1.0
@@ -87838,7 +87726,7 @@ declare module 'gi://Gtk?version=3.0' {
              * support), all of x, y, width, height are set to -1.
              * @param coord_type specifies whether the coordinates are relative to the screen or to the components top level window
              */
-            get_extents(coord_type: Atk.CoordType | null): [number, number, number, number];
+            get_extents(coord_type: Atk.CoordType): [number, number, number, number];
             /**
              * Gets the layer of the component.
              * @returns an {@link Atk.Layer} which is the layer of the component
@@ -87858,7 +87746,7 @@ declare module 'gi://Gtk?version=3.0' {
              * support), x and y are set to -1.
              * @param coord_type specifies whether the coordinates are relative to the screen or to the components top level window
              */
-            get_position(coord_type: Atk.CoordType | null): [number, number];
+            get_position(coord_type: Atk.CoordType): [number, number];
             /**
              * Gets the size of the `component` in terms of width and height.
              *
@@ -87879,7 +87767,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param coord_type specifies whether the coordinates are relative to the screen or to the components top level window
              * @returns a reference to the accessible child, if one exists
              */
-            ref_accessible_at_point(x: number, y: number, coord_type: Atk.CoordType | null): Atk.Object | null;
+            ref_accessible_at_point(x: number, y: number, coord_type: Atk.CoordType): Atk.Object | null;
             /**
              * Remove the handler specified by `handler_id` from the list of
              * functions to be executed when this object receives focus events
@@ -87896,7 +87784,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param type specify where the object should be made visible.
              * @returns whether scrolling was successful.
              */
-            scroll_to(type: Atk.ScrollType | null): boolean;
+            scroll_to(type: Atk.ScrollType): boolean;
             /**
              * Move the top-left of `component` to a given position of the screen by
              * scrolling all necessary parents.
@@ -87905,7 +87793,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param y y-position where to scroll to
              * @returns whether scrolling was successful.
              */
-            scroll_to_point(coords: Atk.CoordType | null, x: number, y: number): boolean;
+            scroll_to_point(coords: Atk.CoordType, x: number, y: number): boolean;
             /**
              * Sets the extents of `component`.
              * @param x x coordinate
@@ -87915,7 +87803,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param coord_type specifies whether the coordinates are relative to the screen or to the components top level window
              * @returns `true` or `false` whether the extents were set or not
              */
-            set_extents(x: number, y: number, width: number, height: number, coord_type: Atk.CoordType | null): boolean;
+            set_extents(x: number, y: number, width: number, height: number, coord_type: Atk.CoordType): boolean;
             /**
              * Sets the position of `component`.
              *
@@ -87926,7 +87814,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param coord_type specifies whether the coordinates are relative to the screen or to the component's top level window
              * @returns `true` or `false` whether or not the position was set or not
              */
-            set_position(x: number, y: number, coord_type: Atk.CoordType | null): boolean;
+            set_position(x: number, y: number, coord_type: Atk.CoordType): boolean;
             /**
              * Set the size of the `component` in terms of width and height.
              * @param width width to set for `component`
@@ -88109,7 +87997,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -88150,7 +88038,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -88971,7 +88859,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param coord_type specifies whether the coordinates are relative to the screen or to the components top level window
              * @returns `true` or `false` indicating whether the specified point is within the extent of the `component` or not
              */
-            contains(x: number, y: number, coord_type: Atk.CoordType | null): boolean;
+            contains(x: number, y: number, coord_type: Atk.CoordType): boolean;
             /**
              * Returns the alpha value (i.e. the opacity) for this
              * `component`, on a scale from 0 (fully transparent) to 1.0
@@ -88986,7 +88874,7 @@ declare module 'gi://Gtk?version=3.0' {
              * support), all of x, y, width, height are set to -1.
              * @param coord_type specifies whether the coordinates are relative to the screen or to the components top level window
              */
-            get_extents(coord_type: Atk.CoordType | null): [number, number, number, number];
+            get_extents(coord_type: Atk.CoordType): [number, number, number, number];
             /**
              * Gets the layer of the component.
              * @returns an {@link Atk.Layer} which is the layer of the component
@@ -89006,7 +88894,7 @@ declare module 'gi://Gtk?version=3.0' {
              * support), x and y are set to -1.
              * @param coord_type specifies whether the coordinates are relative to the screen or to the components top level window
              */
-            get_position(coord_type: Atk.CoordType | null): [number, number];
+            get_position(coord_type: Atk.CoordType): [number, number];
             /**
              * @param args
              */
@@ -89032,7 +88920,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param coord_type specifies whether the coordinates are relative to the screen or to the components top level window
              * @returns a reference to the accessible child, if one exists
              */
-            ref_accessible_at_point(x: number, y: number, coord_type: Atk.CoordType | null): Atk.Object | null;
+            ref_accessible_at_point(x: number, y: number, coord_type: Atk.CoordType): Atk.Object | null;
             /**
              * Remove the handler specified by `handler_id` from the list of
              * functions to be executed when this object receives focus events
@@ -89049,7 +88937,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param type specify where the object should be made visible.
              * @returns whether scrolling was successful.
              */
-            scroll_to(type: Atk.ScrollType | null): boolean;
+            scroll_to(type: Atk.ScrollType): boolean;
             /**
              * Move the top-left of `component` to a given position of the screen by
              * scrolling all necessary parents.
@@ -89058,7 +88946,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param y y-position where to scroll to
              * @returns whether scrolling was successful.
              */
-            scroll_to_point(coords: Atk.CoordType | null, x: number, y: number): boolean;
+            scroll_to_point(coords: Atk.CoordType, x: number, y: number): boolean;
             /**
              * Sets the extents of `component`.
              * @param x x coordinate
@@ -89068,7 +88956,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param coord_type specifies whether the coordinates are relative to the screen or to the components top level window
              * @returns `true` or `false` whether the extents were set or not
              */
-            set_extents(x: number, y: number, width: number, height: number, coord_type: Atk.CoordType | null): boolean;
+            set_extents(x: number, y: number, width: number, height: number, coord_type: Atk.CoordType): boolean;
             /**
              * Sets the position of `component`.
              *
@@ -89079,7 +88967,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param coord_type specifies whether the coordinates are relative to the screen or to the component's top level window
              * @returns `true` or `false` whether or not the position was set or not
              */
-            set_position(x: number, y: number, coord_type: Atk.CoordType | null): boolean;
+            set_position(x: number, y: number, coord_type: Atk.CoordType): boolean;
             /**
              * Set the size of the `component` in terms of width and height.
              * @param width width to set for `component`
@@ -89336,7 +89224,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -89377,7 +89265,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -89747,7 +89635,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param target The {@link Atk.Object} which is to be the target of the relation.
              * @returns TRUE if the relationship is added.
              */
-            add_relationship(relationship: Atk.RelationType | null, target: Atk.Object): boolean;
+            add_relationship(relationship: Atk.RelationType, target: Atk.Object): boolean;
             /**
              * Gets the accessible id of the accessible.
              * @returns a character string representing the accessible id of the object, or NULL if no such string was set.
@@ -89858,7 +89746,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param target The {@link Atk.Object} which is the target of the relation to be removed.
              * @returns TRUE if the relationship is removed.
              */
-            remove_relationship(relationship: Atk.RelationType | null, target: Atk.Object): boolean;
+            remove_relationship(relationship: Atk.RelationType, target: Atk.Object): boolean;
             /**
              * Sets the accessible ID of the accessible.  This is not meant to be presented
              * to the user, but to be an ID which is stable over application development.
@@ -89894,7 +89782,7 @@ declare module 'gi://Gtk?version=3.0' {
              * Sets the role of the accessible.
              * @param role an {@link Atk.Role} to be set as the role
              */
-            set_role(role: Atk.Role | null): void;
+            set_role(role: Atk.Role): void;
             /**
              * @param child
              * @virtual
@@ -90201,11 +90089,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param pspec The {@link GObject.ParamSpec} to query
              * @returns `true` if the property was found and has a value, `false` otherwise
              */
-            get_style_property(
-                path: WidgetPath,
-                state: StateFlags | null,
-                pspec: GObject.ParamSpec,
-            ): [boolean, unknown];
+            get_style_property(path: WidgetPath, state: StateFlags, pspec: GObject.ParamSpec): [boolean, unknown];
             /**
              * Returns the {@link Gtk.IconFactory} defined to be in use for `path`, or `null` if none
              * is defined.
@@ -90277,7 +90161,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -90318,7 +90202,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -91191,7 +91075,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -91232,7 +91116,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -92010,7 +91894,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -92051,7 +91935,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -93720,7 +93604,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param icon_pos Icon position
              * @returns `true` if the icon is activatable.
              */
-            get_icon_activatable(icon_pos: EntryIconPosition | null): boolean;
+            get_icon_activatable(icon_pos: EntryIconPosition): boolean;
             /**
              * Gets the area where entry’s icon at `icon_pos` is drawn.
              * This function is useful when drawing something to the
@@ -93733,7 +93617,7 @@ declare module 'gi://Gtk?version=3.0' {
              * See also `gtk_entry_get_text_area()`
              * @param icon_pos Icon position
              */
-            get_icon_area(icon_pos: EntryIconPosition | null): Gdk.Rectangle;
+            get_icon_area(icon_pos: EntryIconPosition): Gdk.Rectangle;
             /**
              * Finds the icon at the given position and return its index. The
              * position’s coordinates are relative to the `entry`’s top left corner.
@@ -93752,7 +93636,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param icon_pos Icon position
              * @returns A {@link Gio.Icon}, or `null` if no icon is set     or if the icon is not a {@link Gio.Icon}
              */
-            get_icon_gicon(icon_pos: EntryIconPosition | null): Gio.Icon | null;
+            get_icon_gicon(icon_pos: EntryIconPosition): Gio.Icon | null;
             /**
              * Retrieves the icon name used for the icon, or `null` if there is
              * no icon or if the icon was set by some other method (e.g., by
@@ -93760,7 +93644,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param icon_pos Icon position
              * @returns An icon name, or `null` if no icon is set or if the icon          wasn’t set from an icon name
              */
-            get_icon_name(icon_pos: EntryIconPosition | null): string | null;
+            get_icon_name(icon_pos: EntryIconPosition): string | null;
             /**
              * Retrieves the image used for the icon.
              *
@@ -93770,13 +93654,13 @@ declare module 'gi://Gtk?version=3.0' {
              * @param icon_pos Icon position
              * @returns A {@link GdkPixbuf.Pixbuf}, or `null` if no icon is     set for this position.
              */
-            get_icon_pixbuf(icon_pos: EntryIconPosition | null): GdkPixbuf.Pixbuf | null;
+            get_icon_pixbuf(icon_pos: EntryIconPosition): GdkPixbuf.Pixbuf | null;
             /**
              * Returns whether the icon appears sensitive or insensitive.
              * @param icon_pos Icon position
              * @returns `true` if the icon is sensitive.
              */
-            get_icon_sensitive(icon_pos: EntryIconPosition | null): boolean;
+            get_icon_sensitive(icon_pos: EntryIconPosition): boolean;
             /**
              * Retrieves the stock id used for the icon, or `null` if there is
              * no icon or if the icon was set by some other method (e.g., by
@@ -93784,7 +93668,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param icon_pos Icon position
              * @returns A stock id, or `null` if no icon is set or if the icon          wasn’t set from a stock id
              */
-            get_icon_stock(icon_pos: EntryIconPosition | null): string;
+            get_icon_stock(icon_pos: EntryIconPosition): string;
             /**
              * Gets the type of representation being used by the icon
              * to store image data. If the icon has no image data,
@@ -93792,21 +93676,21 @@ declare module 'gi://Gtk?version=3.0' {
              * @param icon_pos Icon position
              * @returns image representation being used
              */
-            get_icon_storage_type(icon_pos: EntryIconPosition | null): ImageType;
+            get_icon_storage_type(icon_pos: EntryIconPosition): ImageType;
             /**
              * Gets the contents of the tooltip on the icon at the specified
              * position in `entry`.
              * @param icon_pos the icon position
              * @returns the tooltip text, or `null`. Free the returned     string with `g_free()` when done.
              */
-            get_icon_tooltip_markup(icon_pos: EntryIconPosition | null): string | null;
+            get_icon_tooltip_markup(icon_pos: EntryIconPosition): string | null;
             /**
              * Gets the contents of the tooltip on the icon at the specified
              * position in `entry`.
              * @param icon_pos the icon position
              * @returns the tooltip text, or `null`. Free the returned     string with `g_free()` when done.
              */
-            get_icon_tooltip_text(icon_pos: EntryIconPosition | null): string | null;
+            get_icon_tooltip_text(icon_pos: EntryIconPosition): string | null;
             /**
              * This function returns the entry’s {@link Gtk.Entry.inner_border} property. See
              * `gtk_entry_set_inner_border()` for more information.
@@ -94052,7 +93936,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param icon_pos Icon position
              * @param activatable `true` if the icon should be activatable
              */
-            set_icon_activatable(icon_pos: EntryIconPosition | null, activatable: boolean): void;
+            set_icon_activatable(icon_pos: EntryIconPosition, activatable: boolean): void;
             /**
              * Sets up the icon at the given position so that GTK+ will start a drag
              * operation when the user clicks and drags the icon.
@@ -94071,11 +93955,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param target_list the targets (data formats) in which the data can be provided
              * @param actions a bitmask of the allowed drag actions
              */
-            set_icon_drag_source(
-                icon_pos: EntryIconPosition | null,
-                target_list: TargetList,
-                actions: Gdk.DragAction | null,
-            ): void;
+            set_icon_drag_source(icon_pos: EntryIconPosition, target_list: TargetList, actions: Gdk.DragAction): void;
             /**
              * Sets the icon shown in the entry at the specified position
              * from the current icon theme.
@@ -94086,7 +93966,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param icon_pos The position at which to set the icon
              * @param icon The icon to set, or `null`
              */
-            set_icon_from_gicon(icon_pos: EntryIconPosition | null, icon?: Gio.Icon | null): void;
+            set_icon_from_gicon(icon_pos: EntryIconPosition, icon?: Gio.Icon | null): void;
             /**
              * Sets the icon shown in the entry at the specified position
              * from the current icon theme.
@@ -94098,7 +93978,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param icon_pos The position at which to set the icon
              * @param icon_name An icon name, or `null`
              */
-            set_icon_from_icon_name(icon_pos: EntryIconPosition | null, icon_name?: string | null): void;
+            set_icon_from_icon_name(icon_pos: EntryIconPosition, icon_name?: string | null): void;
             /**
              * Sets the icon shown in the specified position using a pixbuf.
              *
@@ -94106,7 +93986,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param icon_pos Icon position
              * @param pixbuf A {@link GdkPixbuf.Pixbuf}, or `null`
              */
-            set_icon_from_pixbuf(icon_pos: EntryIconPosition | null, pixbuf?: GdkPixbuf.Pixbuf | null): void;
+            set_icon_from_pixbuf(icon_pos: EntryIconPosition, pixbuf?: GdkPixbuf.Pixbuf | null): void;
             /**
              * Sets the icon shown in the entry at the specified position from
              * a stock image.
@@ -94115,13 +93995,13 @@ declare module 'gi://Gtk?version=3.0' {
              * @param icon_pos Icon position
              * @param stock_id The name of the stock item, or `null`
              */
-            set_icon_from_stock(icon_pos: EntryIconPosition | null, stock_id?: string | null): void;
+            set_icon_from_stock(icon_pos: EntryIconPosition, stock_id?: string | null): void;
             /**
              * Sets the sensitivity for the specified icon.
              * @param icon_pos Icon position
              * @param sensitive Specifies whether the icon should appear             sensitive or insensitive
              */
-            set_icon_sensitive(icon_pos: EntryIconPosition | null, sensitive: boolean): void;
+            set_icon_sensitive(icon_pos: EntryIconPosition, sensitive: boolean): void;
             /**
              * Sets `tooltip` as the contents of the tooltip for the icon at
              * the specified position. `tooltip` is assumed to be marked up with
@@ -94134,7 +94014,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param icon_pos the icon position
              * @param tooltip the contents of the tooltip for the icon, or `null`
              */
-            set_icon_tooltip_markup(icon_pos: EntryIconPosition | null, tooltip?: string | null): void;
+            set_icon_tooltip_markup(icon_pos: EntryIconPosition, tooltip?: string | null): void;
             /**
              * Sets `tooltip` as the contents of the tooltip for the icon
              * at the specified position.
@@ -94152,7 +94032,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param icon_pos the icon position
              * @param tooltip the contents of the tooltip for the icon, or `null`
              */
-            set_icon_tooltip_text(icon_pos: EntryIconPosition | null, tooltip?: string | null): void;
+            set_icon_tooltip_text(icon_pos: EntryIconPosition, tooltip?: string | null): void;
             /**
              * Sets %entry’s inner-border property to `border`, or clears it if `null`
              * is passed. The inner-border is the area around the entry’s text, but
@@ -94170,14 +94050,14 @@ declare module 'gi://Gtk?version=3.0' {
              * allows input methods to fine-tune their behaviour.
              * @param hints the hints
              */
-            set_input_hints(hints: InputHints | null): void;
+            set_input_hints(hints: InputHints): void;
             /**
              * Sets the {@link Gtk.Entry.input_purpose} property which
              * can be used by on-screen keyboards and other input
              * methods to adjust their behaviour.
              * @param purpose the purpose
              */
-            set_input_purpose(purpose: InputPurpose | null): void;
+            set_input_purpose(purpose: InputPurpose): void;
             /**
              * Sets the character to use in place of the actual text when
              * `gtk_entry_set_visibility()` has been called to set text visibility
@@ -95269,7 +95149,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -95310,7 +95190,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -95701,8 +95581,8 @@ declare module 'gi://Gtk?version=3.0' {
                 accel_signal: string,
                 accel_group: AccelGroup,
                 accel_key: number,
-                accel_mods: Gdk.ModifierType | null,
-                accel_flags: AccelFlags | null,
+                accel_mods: Gdk.ModifierType,
+                accel_flags: AccelFlags,
             ): void;
             /**
              * Adds the device events in the bitfield `events` to the event mask for
@@ -95710,7 +95590,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param device a {@link Gdk.Device}
              * @param events an event mask, see {@link Gdk.EventMask}
              */
-            add_device_events(device: Gdk.Device, events: Gdk.EventMask | null): void;
+            add_device_events(device: Gdk.Device, events: Gdk.EventMask): void;
             /**
              * Adds the events in the bitfield `events` to the event mask for
              * `widget`. See `gtk_widget_set_events()` and the
@@ -95788,7 +95668,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param direction direction of focus movement
              * @returns `true` if focus ended up inside `widget`
              */
-            child_focus(direction: DirectionType | null): boolean;
+            child_focus(direction: DirectionType): boolean;
             /**
              * Emits a {@link Gtk.Widget.SignalSignatures.child_notify | Gtk.Widget::child-notify} signal for the
              * [child property][child-properties] `child_property`
@@ -95820,7 +95700,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param orientation expand direction
              * @returns whether widget tree rooted here should be expanded
              */
-            compute_expand(orientation: Orientation | null): boolean;
+            compute_expand(orientation: Orientation): boolean;
             /**
              * Creates a new {@link Pango.Context} with the appropriate font map,
              * font options, font description, and base direction for drawing
@@ -95907,7 +95787,7 @@ declare module 'gi://Gtk?version=3.0' {
              */
             drag_begin(
                 targets: TargetList,
-                actions: Gdk.DragAction | null,
+                actions: Gdk.DragAction,
                 button: number,
                 event?: Gdk.Event | null,
             ): Gdk.DragContext;
@@ -95947,7 +95827,7 @@ declare module 'gi://Gtk?version=3.0' {
              */
             drag_begin_with_coordinates(
                 targets: TargetList,
-                actions: Gdk.DragAction | null,
+                actions: Gdk.DragAction,
                 button: number,
                 event: Gdk.Event | null,
                 x: number,
@@ -96059,22 +95939,14 @@ declare module 'gi://Gtk?version=3.0' {
              * @param targets a pointer to an array of     `GtkTargetEntrys` indicating the drop types that this `widget` will     accept, or `null`. Later you can access the list with     `gtk_drag_dest_get_target_list()` and `gtk_drag_dest_find_target()`.
              * @param actions a bitmask of possible actions for a drop onto this `widget`.
              */
-            drag_dest_set(
-                flags: DestDefaults | null,
-                targets: TargetEntry[] | null,
-                actions: Gdk.DragAction | null,
-            ): void;
+            drag_dest_set(flags: DestDefaults, targets: TargetEntry[] | null, actions: Gdk.DragAction): void;
             /**
              * Sets this widget as a proxy for drops to another window.
              * @param proxy_window the window to which to forward drag events
              * @param protocol the drag protocol which the `proxy_window` accepts   (You can use `gdk_drag_get_protocol()` to determine this)
              * @param use_coordinates If `true`, send the same coordinates to the   destination, because it is an embedded   subwindow.
              */
-            drag_dest_set_proxy(
-                proxy_window: Gdk.Window,
-                protocol: Gdk.DragProtocol | null,
-                use_coordinates: boolean,
-            ): void;
+            drag_dest_set_proxy(proxy_window: Gdk.Window, protocol: Gdk.DragProtocol, use_coordinates: boolean): void;
             /**
              * Sets the target types that this widget can accept from drag-and-drop.
              * The widget must first be made into a drag destination with
@@ -96156,9 +96028,9 @@ declare module 'gi://Gtk?version=3.0' {
              * @param actions the bitmask of possible actions for a drag from this widget
              */
             drag_source_set(
-                start_button_mask: Gdk.ModifierType | null,
+                start_button_mask: Gdk.ModifierType,
                 targets: TargetEntry[] | null,
-                actions: Gdk.DragAction | null,
+                actions: Gdk.DragAction,
             ): void;
             /**
              * Sets the icon that will be used for drags from a particular source
@@ -96617,7 +96489,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param intent the use case for the modifier mask
              * @returns the modifier mask used for `intent`.
              */
-            get_modifier_mask(intent: Gdk.ModifierIntent | null): Gdk.ModifierType;
+            get_modifier_mask(intent: Gdk.ModifierIntent): Gdk.ModifierType;
             /**
              * Returns the current modifier style for the widget. (As set by
              * `gtk_widget_modify_style()`.) If no style has previously set, a new
@@ -97245,7 +97117,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param direction direction of focus movement
              * @returns `true` if stopping keyboard navigation is fine, `false`               if the emitting widget should try to handle the keyboard               navigation attempt in its parent container(s).
              */
-            keynav_failed(direction: DirectionType | null): boolean;
+            keynav_failed(direction: DirectionType): boolean;
             /**
              * Lists the closures used by `widget` for accelerator group connections
              * with `gtk_accel_group_connect_by_path()` or `gtk_accel_group_connect()`.
@@ -97306,7 +97178,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param state the state for which to set the base color
              * @param color the color to assign (does not need to     be allocated), or `null` to undo the effect of previous     calls to of `gtk_widget_modify_base()`.
              */
-            modify_base(state: StateType | null, color?: Gdk.Color | null): void;
+            modify_base(state: StateType, color?: Gdk.Color | null): void;
             /**
              * Sets the background color for a widget in a particular state.
              *
@@ -97325,7 +97197,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param state the state for which to set the background color
              * @param color the color to assign (does not need     to be allocated), or `null` to undo the effect of previous     calls to of `gtk_widget_modify_bg()`.
              */
-            modify_bg(state: StateType | null, color?: Gdk.Color | null): void;
+            modify_bg(state: StateType, color?: Gdk.Color | null): void;
             /**
              * Sets the cursor color to use in a widget, overriding the {@link Gtk.Widget}
              * cursor-color and secondary-cursor-color
@@ -97345,7 +97217,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param state the state for which to set the foreground color
              * @param color the color to assign (does not need to be allocated),     or `null` to undo the effect of previous calls to     of `gtk_widget_modify_fg()`.
              */
-            modify_fg(state: StateType | null, color?: Gdk.Color | null): void;
+            modify_fg(state: StateType, color?: Gdk.Color | null): void;
             /**
              * Sets the font to use for a widget.
              *
@@ -97387,7 +97259,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param state the state for which to set the text color
              * @param color the color to assign (does not need to     be allocated), or `null` to undo the effect of previous     calls to of `gtk_widget_modify_text()`.
              */
-            modify_text(state: StateType | null, color?: Gdk.Color | null): void;
+            modify_text(state: StateType, color?: Gdk.Color | null): void;
             /**
              * Sets the background color to use for a widget.
              *
@@ -97396,7 +97268,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param state the state for which to set the background color
              * @param color the color to assign, or `null` to undo the effect     of previous calls to `gtk_widget_override_background_color()`
              */
-            override_background_color(state: StateFlags | null, color?: Gdk.RGBA | null): void;
+            override_background_color(state: StateFlags, color?: Gdk.RGBA | null): void;
             /**
              * Sets the color to use for a widget.
              *
@@ -97426,7 +97298,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param state the state for which to set the color
              * @param color the color to assign, or `null` to undo the effect     of previous calls to `gtk_widget_override_color()`
              */
-            override_color(state: StateFlags | null, color?: Gdk.RGBA | null): void;
+            override_color(state: StateFlags, color?: Gdk.RGBA | null): void;
             /**
              * Sets the cursor color to use in a widget, overriding the
              * cursor-color and secondary-cursor-color
@@ -97593,11 +97465,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param accel_mods modifier key combination of the accelerator
              * @returns whether an accelerator was installed and could be removed
              */
-            remove_accelerator(
-                accel_group: AccelGroup,
-                accel_key: number,
-                accel_mods: Gdk.ModifierType | null,
-            ): boolean;
+            remove_accelerator(accel_group: AccelGroup, accel_key: number, accel_mods: Gdk.ModifierType): boolean;
             /**
              * Removes a widget from the list of mnemonic labels for
              * this widget. (See `gtk_widget_list_mnemonic_labels()`). The widget
@@ -97846,7 +97714,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param device a {@link Gdk.Device}
              * @param events event mask
              */
-            set_device_events(device: Gdk.Device, events: Gdk.EventMask | null): void;
+            set_device_events(device: Gdk.Device, events: Gdk.EventMask): void;
             /**
              * Sets the reading direction on a particular widget. This direction
              * controls the primary direction for widgets containing text,
@@ -97862,7 +97730,7 @@ declare module 'gi://Gtk?version=3.0' {
              * set by `gtk_widget_set_default_direction()` will be used.
              * @param dir the new direction
              */
-            set_direction(dir: TextDirection | null): void;
+            set_direction(dir: TextDirection): void;
             /**
              * Widgets are double buffered by default; you can use this function
              * to turn off the buffering. “Double buffered” simply means that
@@ -97932,7 +97800,7 @@ declare module 'gi://Gtk?version=3.0' {
              * See the {@link Gtk.Widget.halign} property.
              * @param align the horizontal alignment
              */
-            set_halign(align: Align | null): void;
+            set_halign(align: Align): void;
             /**
              * Sets the has-tooltip property on `widget` to `has_tooltip`.  See
              * {@link Gtk.Widget.has_tooltip} for more information.
@@ -98182,7 +98050,7 @@ declare module 'gi://Gtk?version=3.0' {
              * the state using wrapper functions such as `gtk_widget_set_sensitive()`.
              * @param state new state for `widget`
              */
-            set_state(state: StateType | null): void;
+            set_state(state: StateType): void;
             /**
              * This function is for use in widget implementations. Turns on flag
              * values in the current widget state (insensitive, prelighted, etc.).
@@ -98200,7 +98068,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param flags State flags to turn on
              * @param clear Whether to clear state before turning on `flags`
              */
-            set_state_flags(flags: StateFlags | null, clear: boolean): void;
+            set_state_flags(flags: StateFlags, clear: boolean): void;
             /**
              * Used to set the {@link Gtk.Style} for a widget (`widget`->style). Since
              * GTK 3, this function does nothing, the passed in style is ignored.
@@ -98250,7 +98118,7 @@ declare module 'gi://Gtk?version=3.0' {
              * See the {@link Gtk.Widget.valign} property.
              * @param align the vertical alignment
              */
-            set_valign(align: Align | null): void;
+            set_valign(align: Align): void;
             /**
              * Sets whether the widget would like any available extra vertical
              * space.
@@ -98461,7 +98329,7 @@ declare module 'gi://Gtk?version=3.0' {
              * See `gtk_widget_set_state_flags()`.
              * @param flags State flags to turn off
              */
-            unset_state_flags(flags: StateFlags | null): void;
+            unset_state_flags(flags: StateFlags): void;
             /**
              * @param baseline
              * @virtual
@@ -99522,7 +99390,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param coord_type specifies whether the coordinates are relative to the screen or to the components top level window
              * @returns `true` or `false` indicating whether the specified point is within the extent of the `component` or not
              */
-            contains(x: number, y: number, coord_type: Atk.CoordType | null): boolean;
+            contains(x: number, y: number, coord_type: Atk.CoordType): boolean;
             /**
              * Returns the alpha value (i.e. the opacity) for this
              * `component`, on a scale from 0 (fully transparent) to 1.0
@@ -99537,7 +99405,7 @@ declare module 'gi://Gtk?version=3.0' {
              * support), all of x, y, width, height are set to -1.
              * @param coord_type specifies whether the coordinates are relative to the screen or to the components top level window
              */
-            get_extents(coord_type: Atk.CoordType | null): [number, number, number, number];
+            get_extents(coord_type: Atk.CoordType): [number, number, number, number];
             /**
              * Gets the layer of the component.
              * @returns an {@link Atk.Layer} which is the layer of the component
@@ -99557,7 +99425,7 @@ declare module 'gi://Gtk?version=3.0' {
              * support), x and y are set to -1.
              * @param coord_type specifies whether the coordinates are relative to the screen or to the components top level window
              */
-            get_position(coord_type: Atk.CoordType | null): [number, number];
+            get_position(coord_type: Atk.CoordType): [number, number];
             /**
              * Gets the size of the `component` in terms of width and height.
              *
@@ -99578,7 +99446,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param coord_type specifies whether the coordinates are relative to the screen or to the components top level window
              * @returns a reference to the accessible child, if one exists
              */
-            ref_accessible_at_point(x: number, y: number, coord_type: Atk.CoordType | null): Atk.Object | null;
+            ref_accessible_at_point(x: number, y: number, coord_type: Atk.CoordType): Atk.Object | null;
             /**
              * Remove the handler specified by `handler_id` from the list of
              * functions to be executed when this object receives focus events
@@ -99595,7 +99463,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param type specify where the object should be made visible.
              * @returns whether scrolling was successful.
              */
-            scroll_to(type: Atk.ScrollType | null): boolean;
+            scroll_to(type: Atk.ScrollType): boolean;
             /**
              * Move the top-left of `component` to a given position of the screen by
              * scrolling all necessary parents.
@@ -99604,7 +99472,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param y y-position where to scroll to
              * @returns whether scrolling was successful.
              */
-            scroll_to_point(coords: Atk.CoordType | null, x: number, y: number): boolean;
+            scroll_to_point(coords: Atk.CoordType, x: number, y: number): boolean;
             /**
              * Sets the extents of `component`.
              * @param x x coordinate
@@ -99614,7 +99482,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param coord_type specifies whether the coordinates are relative to the screen or to the components top level window
              * @returns `true` or `false` whether the extents were set or not
              */
-            set_extents(x: number, y: number, width: number, height: number, coord_type: Atk.CoordType | null): boolean;
+            set_extents(x: number, y: number, width: number, height: number, coord_type: Atk.CoordType): boolean;
             /**
              * Sets the position of `component`.
              *
@@ -99625,7 +99493,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param coord_type specifies whether the coordinates are relative to the screen or to the component's top level window
              * @returns `true` or `false` whether or not the position was set or not
              */
-            set_position(x: number, y: number, coord_type: Atk.CoordType | null): boolean;
+            set_position(x: number, y: number, coord_type: Atk.CoordType): boolean;
             /**
              * Set the size of the `component` in terms of width and height.
              * @param width width to set for `component`
@@ -99883,9 +99751,9 @@ declare module 'gi://Gtk?version=3.0' {
              */
             get_bounded_ranges(
                 rect: Atk.TextRectangle,
-                coord_type: Atk.CoordType | null,
-                x_clip_type: Atk.TextClipType | null,
-                y_clip_type: Atk.TextClipType | null,
+                coord_type: Atk.CoordType,
+                x_clip_type: Atk.TextClipType,
+                y_clip_type: Atk.TextClipType,
             ): Atk.TextRange[];
             /**
              * Gets the offset of the position of the caret (cursor).
@@ -99912,7 +99780,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param offset The offset of the text character for which bounding information is required.
              * @param coords specify whether coordinates are relative to the screen or widget window
              */
-            get_character_extents(offset: number, coords: Atk.CoordType | null): [number, number, number, number];
+            get_character_extents(offset: number, coords: Atk.CoordType): [number, number, number, number];
             /**
              * Creates an {@link Atk.AttributeSet} which consists of the default values of
              * attributes for the text. See the enum AtkTextAttribute for types of text
@@ -99935,7 +99803,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param coords specify whether coordinates are relative to the screen or widget window
              * @returns the offset to the character which is located at  the specified          `x` and `y` coordinates of -1 in case of failure.
              */
-            get_offset_at_point(x: number, y: number, coords: Atk.CoordType | null): number;
+            get_offset_at_point(x: number, y: number, coords: Atk.CoordType): number;
             /**
              * Get the bounding box for text within the specified range.
              *
@@ -99945,11 +99813,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param end_offset The offset of the text character after the last character        for which boundary information is required.
              * @param coord_type Specify whether coordinates are relative to the screen or widget window.
              */
-            get_range_extents(
-                start_offset: number,
-                end_offset: number,
-                coord_type: Atk.CoordType | null,
-            ): Atk.TextRectangle;
+            get_range_extents(start_offset: number, end_offset: number, coord_type: Atk.CoordType): Atk.TextRectangle;
             /**
              * Creates an {@link Atk.AttributeSet} which consists of the attributes explicitly
              * set at the position `offset` in the text. `start_offset` and `end_offset` are
@@ -100003,10 +99867,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param granularity An {@link Atk.TextGranularity}
              * @returns a newly allocated string containing the text at          the `offset` bounded by the specified `granularity`. Use `g_free()`          to free the returned string.  Returns `null` if the offset is invalid          or no implementation is available.
              */
-            get_string_at_offset(
-                offset: number,
-                granularity: Atk.TextGranularity | null,
-            ): [string | null, number, number];
+            get_string_at_offset(offset: number, granularity: Atk.TextGranularity): [string | null, number, number];
             /**
              * Gets the specified text.
              * @param start_offset a starting character offset within `text`
@@ -100020,7 +99881,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param boundary_type An {@link Atk.TextBoundary}
              * @returns a newly allocated string containing the text after `offset` bounded          by the specified `boundary_type`. Use `g_free()` to free the returned          string.
              */
-            get_text_after_offset(offset: number, boundary_type: Atk.TextBoundary | null): [string, number, number];
+            get_text_after_offset(offset: number, boundary_type: Atk.TextBoundary): [string, number, number];
             /**
              * Gets the specified text.
              *
@@ -100050,14 +99911,14 @@ declare module 'gi://Gtk?version=3.0' {
              * @param boundary_type An {@link Atk.TextBoundary}
              * @returns a newly allocated string containing the text at `offset` bounded          by the specified `boundary_type`. Use `g_free()` to free the returned          string.
              */
-            get_text_at_offset(offset: number, boundary_type: Atk.TextBoundary | null): [string, number, number];
+            get_text_at_offset(offset: number, boundary_type: Atk.TextBoundary): [string, number, number];
             /**
              * Gets the specified text.
              * @param offset position
              * @param boundary_type An {@link Atk.TextBoundary}
              * @returns a newly allocated string containing the text before `offset` bounded          by the specified `boundary_type`. Use `g_free()` to free the returned          string.
              */
-            get_text_before_offset(offset: number, boundary_type: Atk.TextBoundary | null): [string, number, number];
+            get_text_before_offset(offset: number, boundary_type: Atk.TextBoundary): [string, number, number];
             /**
              * Removes the specified selection.
              * @param selection_num The selection number.  The selected regions are assigned numbers that correspond to how far the region is from the start of the text.  The selected region closest to the beginning of the text region is assigned the number 0, etc.  Note that adding, moving or deleting a selected region can change the numbering.
@@ -100071,7 +99932,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param type specify where the object should be made visible.
              * @returns whether scrolling was successful.
              */
-            scroll_substring_to(start_offset: number, end_offset: number, type: Atk.ScrollType | null): boolean;
+            scroll_substring_to(start_offset: number, end_offset: number, type: Atk.ScrollType): boolean;
             /**
              * Move the top-left of a substring of `text` to a given position of the screen
              * by scrolling all necessary parents.
@@ -100085,7 +99946,7 @@ declare module 'gi://Gtk?version=3.0' {
             scroll_substring_to_point(
                 start_offset: number,
                 end_offset: number,
-                coords: Atk.CoordType | null,
+                coords: Atk.CoordType,
                 x: number,
                 y: number,
             ): boolean;
@@ -100440,7 +100301,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -100481,7 +100342,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -101997,7 +101858,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -102038,7 +101899,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -102675,7 +102536,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param coord_type specifies whether the coordinates are relative to the screen or to the components top level window
              * @returns `true` or `false` indicating whether the specified point is within the extent of the `component` or not
              */
-            contains(x: number, y: number, coord_type: Atk.CoordType | null): boolean;
+            contains(x: number, y: number, coord_type: Atk.CoordType): boolean;
             /**
              * Returns the alpha value (i.e. the opacity) for this
              * `component`, on a scale from 0 (fully transparent) to 1.0
@@ -102690,7 +102551,7 @@ declare module 'gi://Gtk?version=3.0' {
              * support), all of x, y, width, height are set to -1.
              * @param coord_type specifies whether the coordinates are relative to the screen or to the components top level window
              */
-            get_extents(coord_type: Atk.CoordType | null): [number, number, number, number];
+            get_extents(coord_type: Atk.CoordType): [number, number, number, number];
             /**
              * Gets the layer of the component.
              * @returns an {@link Atk.Layer} which is the layer of the component
@@ -102710,7 +102571,7 @@ declare module 'gi://Gtk?version=3.0' {
              * support), x and y are set to -1.
              * @param coord_type specifies whether the coordinates are relative to the screen or to the components top level window
              */
-            get_position(coord_type: Atk.CoordType | null): [number, number];
+            get_position(coord_type: Atk.CoordType): [number, number];
             /**
              * Gets the size of the `component` in terms of width and height.
              *
@@ -102731,7 +102592,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param coord_type specifies whether the coordinates are relative to the screen or to the components top level window
              * @returns a reference to the accessible child, if one exists
              */
-            ref_accessible_at_point(x: number, y: number, coord_type: Atk.CoordType | null): Atk.Object | null;
+            ref_accessible_at_point(x: number, y: number, coord_type: Atk.CoordType): Atk.Object | null;
             /**
              * Remove the handler specified by `handler_id` from the list of
              * functions to be executed when this object receives focus events
@@ -102748,7 +102609,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param type specify where the object should be made visible.
              * @returns whether scrolling was successful.
              */
-            scroll_to(type: Atk.ScrollType | null): boolean;
+            scroll_to(type: Atk.ScrollType): boolean;
             /**
              * Move the top-left of `component` to a given position of the screen by
              * scrolling all necessary parents.
@@ -102757,7 +102618,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param y y-position where to scroll to
              * @returns whether scrolling was successful.
              */
-            scroll_to_point(coords: Atk.CoordType | null, x: number, y: number): boolean;
+            scroll_to_point(coords: Atk.CoordType, x: number, y: number): boolean;
             /**
              * Sets the extents of `component`.
              * @param x x coordinate
@@ -102767,7 +102628,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param coord_type specifies whether the coordinates are relative to the screen or to the components top level window
              * @returns `true` or `false` whether the extents were set or not
              */
-            set_extents(x: number, y: number, width: number, height: number, coord_type: Atk.CoordType | null): boolean;
+            set_extents(x: number, y: number, width: number, height: number, coord_type: Atk.CoordType): boolean;
             /**
              * Sets the position of `component`.
              *
@@ -102778,7 +102639,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param coord_type specifies whether the coordinates are relative to the screen or to the component's top level window
              * @returns `true` or `false` whether or not the position was set or not
              */
-            set_position(x: number, y: number, coord_type: Atk.CoordType | null): boolean;
+            set_position(x: number, y: number, coord_type: Atk.CoordType): boolean;
             /**
              * Set the size of the `component` in terms of width and height.
              * @param width width to set for `component`
@@ -102961,7 +102822,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -103002,7 +102863,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -103597,7 +103458,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -103638,7 +103499,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -104121,7 +103982,7 @@ declare module 'gi://Gtk?version=3.0' {
              * the events can be managed by calling `gtk_event_controller_handle_event()`.
              * @param phase a propagation phase
              */
-            set_propagation_phase(phase: PropagationPhase | null): void;
+            set_propagation_phase(phase: PropagationPhase): void;
         }
 
         namespace EventControllerKey {
@@ -104464,7 +104325,7 @@ declare module 'gi://Gtk?version=3.0' {
              * Sets the flags conditioning scroll controller behavior.
              * @param flags behavior flags
              */
-            set_flags(flags: EventControllerScrollFlags | null): void;
+            set_flags(flags: EventControllerScrollFlags): void;
         }
 
         namespace Expander {
@@ -104906,7 +104767,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -104947,7 +104808,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -105621,7 +105482,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -105662,7 +105523,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -106671,7 +106532,7 @@ declare module 'gi://Gtk?version=3.0' {
              * {@link Gtk.FileChooserAction.OPEN}.
              * @param action the action that the file selector is performing
              */
-            set_action(action: FileChooserAction | null): void;
+            set_action(action: FileChooserAction): void;
             /**
              * Selects an option in a 'choice' that has been added with
              * `gtk_file_chooser_add_choice()`. For a boolean choice, the
@@ -106978,7 +106839,7 @@ declare module 'gi://Gtk?version=3.0' {
              * Sets the orientation of the `orientable`.
              * @param orientation the orientable’s new orientation.
              */
-            set_orientation(orientation: Orientation | null): void;
+            set_orientation(orientation: Orientation): void;
             /**
              * Creates a binding between `source_property` on `source` and `target_property`
              * on `target`.
@@ -107023,7 +106884,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -107064,7 +106925,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -108122,7 +107983,7 @@ declare module 'gi://Gtk?version=3.0' {
              * {@link Gtk.FileChooserAction.OPEN}.
              * @param action the action that the file selector is performing
              */
-            set_action(action: FileChooserAction | null): void;
+            set_action(action: FileChooserAction): void;
             /**
              * Selects an option in a 'choice' that has been added with
              * `gtk_file_chooser_add_choice()`. For a boolean choice, the
@@ -108464,7 +108325,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -108505,7 +108366,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -109562,7 +109423,7 @@ declare module 'gi://Gtk?version=3.0' {
              * {@link Gtk.FileChooserAction.OPEN}.
              * @param action the action that the file selector is performing
              */
-            set_action(action: FileChooserAction | null): void;
+            set_action(action: FileChooserAction): void;
             /**
              * Selects an option in a 'choice' that has been added with
              * `gtk_file_chooser_add_choice()`. For a boolean choice, the
@@ -109904,7 +109765,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -109945,7 +109806,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -111014,7 +110875,7 @@ declare module 'gi://Gtk?version=3.0' {
              * {@link Gtk.FileChooserAction.OPEN}.
              * @param action the action that the file selector is performing
              */
-            set_action(action: FileChooserAction | null): void;
+            set_action(action: FileChooserAction): void;
             /**
              * Selects an option in a 'choice' that has been added with
              * `gtk_file_chooser_add_choice()`. For a boolean choice, the
@@ -111321,7 +111182,7 @@ declare module 'gi://Gtk?version=3.0' {
              * Sets the orientation of the `orientable`.
              * @param orientation the orientable’s new orientation.
              */
-            set_orientation(orientation: Orientation | null): void;
+            set_orientation(orientation: Orientation): void;
             /**
              * Creates a binding between `source_property` on `source` and `target_property`
              * on `target`.
@@ -111366,7 +111227,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -111407,7 +111268,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -112085,7 +111946,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -112126,7 +111987,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -112599,7 +112460,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param needed bitfield of flags indicating the information that the custom          filter function needs.
              * @param func callback function; if the function returns `true`, then   the file will be displayed.
              */
-            add_custom(needed: FileFilterFlags | null, func: FileFilterFunc): void;
+            add_custom(needed: FileFilterFlags, func: FileFilterFunc): void;
             /**
              * Adds a rule allowing a given mime type to `filter`.
              * @param mime_type name of a MIME type
@@ -112880,7 +112741,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -112921,7 +112782,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -113488,7 +113349,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -113529,7 +113390,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -114472,7 +114333,7 @@ declare module 'gi://Gtk?version=3.0' {
              * See {@link Gtk.SelectionMode} for details.
              * @param mode the new selection mode
              */
-            set_selection_mode(mode: SelectionMode | null): void;
+            set_selection_mode(mode: SelectionMode): void;
             /**
              * By setting a sort function on the `box`, one can dynamically
              * reorder the children of the box, based on the contents of
@@ -114529,7 +114390,7 @@ declare module 'gi://Gtk?version=3.0' {
              * Sets the orientation of the `orientable`.
              * @param orientation the orientable’s new orientation.
              */
-            set_orientation(orientation: Orientation | null): void;
+            set_orientation(orientation: Orientation): void;
             /**
              * Creates a binding between `source_property` on `source` and `target_property`
              * on `target`.
@@ -114574,7 +114435,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -114615,7 +114476,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -115214,7 +115075,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -115255,7 +115116,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -115814,7 +115675,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -115855,7 +115716,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -116336,7 +116197,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -116377,7 +116238,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -118023,7 +117884,7 @@ declare module 'gi://Gtk?version=3.0' {
              * Sets the desired level of granularity for selecting fonts.
              * @param level the desired level of granularity
              */
-            set_level(level: FontChooserLevel | null): void;
+            set_level(level: FontChooserLevel): void;
             /**
              * Sets the text displayed in the preview area.
              * The `text` is used to show how the selected font looks.
@@ -118151,7 +118012,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -118192,7 +118053,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -118583,8 +118444,8 @@ declare module 'gi://Gtk?version=3.0' {
                 accel_signal: string,
                 accel_group: AccelGroup,
                 accel_key: number,
-                accel_mods: Gdk.ModifierType | null,
-                accel_flags: AccelFlags | null,
+                accel_mods: Gdk.ModifierType,
+                accel_flags: AccelFlags,
             ): void;
             /**
              * Adds the device events in the bitfield `events` to the event mask for
@@ -118592,7 +118453,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param device a {@link Gdk.Device}
              * @param events an event mask, see {@link Gdk.EventMask}
              */
-            add_device_events(device: Gdk.Device, events: Gdk.EventMask | null): void;
+            add_device_events(device: Gdk.Device, events: Gdk.EventMask): void;
             /**
              * Adds the events in the bitfield `events` to the event mask for
              * `widget`. See `gtk_widget_set_events()` and the
@@ -118670,7 +118531,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param direction direction of focus movement
              * @returns `true` if focus ended up inside `widget`
              */
-            child_focus(direction: DirectionType | null): boolean;
+            child_focus(direction: DirectionType): boolean;
             /**
              * Emits a {@link Gtk.Widget.SignalSignatures.child_notify | Gtk.Widget::child-notify} signal for the
              * [child property][child-properties] `child_property`
@@ -118707,7 +118568,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param orientation expand direction
              * @returns whether widget tree rooted here should be expanded
              */
-            compute_expand(orientation: Orientation | null): boolean;
+            compute_expand(orientation: Orientation): boolean;
             /**
              * Creates a new {@link Pango.Context} with the appropriate font map,
              * font options, font description, and base direction for drawing
@@ -118794,7 +118655,7 @@ declare module 'gi://Gtk?version=3.0' {
              */
             drag_begin(
                 targets: TargetList,
-                actions: Gdk.DragAction | null,
+                actions: Gdk.DragAction,
                 button: number,
                 event?: Gdk.Event | null,
             ): Gdk.DragContext;
@@ -118834,7 +118695,7 @@ declare module 'gi://Gtk?version=3.0' {
              */
             drag_begin_with_coordinates(
                 targets: TargetList,
-                actions: Gdk.DragAction | null,
+                actions: Gdk.DragAction,
                 button: number,
                 event: Gdk.Event | null,
                 x: number,
@@ -118946,22 +118807,14 @@ declare module 'gi://Gtk?version=3.0' {
              * @param targets a pointer to an array of     `GtkTargetEntrys` indicating the drop types that this `widget` will     accept, or `null`. Later you can access the list with     `gtk_drag_dest_get_target_list()` and `gtk_drag_dest_find_target()`.
              * @param actions a bitmask of possible actions for a drop onto this `widget`.
              */
-            drag_dest_set(
-                flags: DestDefaults | null,
-                targets: TargetEntry[] | null,
-                actions: Gdk.DragAction | null,
-            ): void;
+            drag_dest_set(flags: DestDefaults, targets: TargetEntry[] | null, actions: Gdk.DragAction): void;
             /**
              * Sets this widget as a proxy for drops to another window.
              * @param proxy_window the window to which to forward drag events
              * @param protocol the drag protocol which the `proxy_window` accepts   (You can use `gdk_drag_get_protocol()` to determine this)
              * @param use_coordinates If `true`, send the same coordinates to the   destination, because it is an embedded   subwindow.
              */
-            drag_dest_set_proxy(
-                proxy_window: Gdk.Window,
-                protocol: Gdk.DragProtocol | null,
-                use_coordinates: boolean,
-            ): void;
+            drag_dest_set_proxy(proxy_window: Gdk.Window, protocol: Gdk.DragProtocol, use_coordinates: boolean): void;
             /**
              * Sets the target types that this widget can accept from drag-and-drop.
              * The widget must first be made into a drag destination with
@@ -119043,9 +118896,9 @@ declare module 'gi://Gtk?version=3.0' {
              * @param actions the bitmask of possible actions for a drag from this widget
              */
             drag_source_set(
-                start_button_mask: Gdk.ModifierType | null,
+                start_button_mask: Gdk.ModifierType,
                 targets: TargetEntry[] | null,
-                actions: Gdk.DragAction | null,
+                actions: Gdk.DragAction,
             ): void;
             /**
              * Sets the icon that will be used for drags from a particular source
@@ -119499,7 +119352,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param intent the use case for the modifier mask
              * @returns the modifier mask used for `intent`.
              */
-            get_modifier_mask(intent: Gdk.ModifierIntent | null): Gdk.ModifierType;
+            get_modifier_mask(intent: Gdk.ModifierIntent): Gdk.ModifierType;
             /**
              * Returns the current modifier style for the widget. (As set by
              * `gtk_widget_modify_style()`.) If no style has previously set, a new
@@ -120133,7 +119986,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param direction direction of focus movement
              * @returns `true` if stopping keyboard navigation is fine, `false`               if the emitting widget should try to handle the keyboard               navigation attempt in its parent container(s).
              */
-            keynav_failed(direction: DirectionType | null): boolean;
+            keynav_failed(direction: DirectionType): boolean;
             /**
              * Lists the closures used by `widget` for accelerator group connections
              * with `gtk_accel_group_connect_by_path()` or `gtk_accel_group_connect()`.
@@ -120194,7 +120047,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param state the state for which to set the base color
              * @param color the color to assign (does not need to     be allocated), or `null` to undo the effect of previous     calls to of `gtk_widget_modify_base()`.
              */
-            modify_base(state: StateType | null, color?: Gdk.Color | null): void;
+            modify_base(state: StateType, color?: Gdk.Color | null): void;
             /**
              * Sets the background color for a widget in a particular state.
              *
@@ -120213,7 +120066,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param state the state for which to set the background color
              * @param color the color to assign (does not need     to be allocated), or `null` to undo the effect of previous     calls to of `gtk_widget_modify_bg()`.
              */
-            modify_bg(state: StateType | null, color?: Gdk.Color | null): void;
+            modify_bg(state: StateType, color?: Gdk.Color | null): void;
             /**
              * Sets the cursor color to use in a widget, overriding the {@link Gtk.Widget}
              * cursor-color and secondary-cursor-color
@@ -120233,7 +120086,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param state the state for which to set the foreground color
              * @param color the color to assign (does not need to be allocated),     or `null` to undo the effect of previous calls to     of `gtk_widget_modify_fg()`.
              */
-            modify_fg(state: StateType | null, color?: Gdk.Color | null): void;
+            modify_fg(state: StateType, color?: Gdk.Color | null): void;
             /**
              * Sets the font to use for a widget.
              *
@@ -120275,7 +120128,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param state the state for which to set the text color
              * @param color the color to assign (does not need to     be allocated), or `null` to undo the effect of previous     calls to of `gtk_widget_modify_text()`.
              */
-            modify_text(state: StateType | null, color?: Gdk.Color | null): void;
+            modify_text(state: StateType, color?: Gdk.Color | null): void;
             /**
              * Sets the background color to use for a widget.
              *
@@ -120284,7 +120137,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param state the state for which to set the background color
              * @param color the color to assign, or `null` to undo the effect     of previous calls to `gtk_widget_override_background_color()`
              */
-            override_background_color(state: StateFlags | null, color?: Gdk.RGBA | null): void;
+            override_background_color(state: StateFlags, color?: Gdk.RGBA | null): void;
             /**
              * Sets the color to use for a widget.
              *
@@ -120314,7 +120167,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param state the state for which to set the color
              * @param color the color to assign, or `null` to undo the effect     of previous calls to `gtk_widget_override_color()`
              */
-            override_color(state: StateFlags | null, color?: Gdk.RGBA | null): void;
+            override_color(state: StateFlags, color?: Gdk.RGBA | null): void;
             /**
              * Sets the cursor color to use in a widget, overriding the
              * cursor-color and secondary-cursor-color
@@ -120481,11 +120334,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param accel_mods modifier key combination of the accelerator
              * @returns whether an accelerator was installed and could be removed
              */
-            remove_accelerator(
-                accel_group: AccelGroup,
-                accel_key: number,
-                accel_mods: Gdk.ModifierType | null,
-            ): boolean;
+            remove_accelerator(accel_group: AccelGroup, accel_key: number, accel_mods: Gdk.ModifierType): boolean;
             /**
              * Removes a widget from the list of mnemonic labels for
              * this widget. (See `gtk_widget_list_mnemonic_labels()`). The widget
@@ -120734,7 +120583,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param device a {@link Gdk.Device}
              * @param events event mask
              */
-            set_device_events(device: Gdk.Device, events: Gdk.EventMask | null): void;
+            set_device_events(device: Gdk.Device, events: Gdk.EventMask): void;
             /**
              * Sets the reading direction on a particular widget. This direction
              * controls the primary direction for widgets containing text,
@@ -120750,7 +120599,7 @@ declare module 'gi://Gtk?version=3.0' {
              * set by `gtk_widget_set_default_direction()` will be used.
              * @param dir the new direction
              */
-            set_direction(dir: TextDirection | null): void;
+            set_direction(dir: TextDirection): void;
             /**
              * Widgets are double buffered by default; you can use this function
              * to turn off the buffering. “Double buffered” simply means that
@@ -120814,7 +120663,7 @@ declare module 'gi://Gtk?version=3.0' {
              * See the {@link Gtk.Widget.halign} property.
              * @param align the horizontal alignment
              */
-            set_halign(align: Align | null): void;
+            set_halign(align: Align): void;
             /**
              * Sets the has-tooltip property on `widget` to `has_tooltip`.  See
              * {@link Gtk.Widget.has_tooltip} for more information.
@@ -121077,7 +120926,7 @@ declare module 'gi://Gtk?version=3.0' {
              * the state using wrapper functions such as `gtk_widget_set_sensitive()`.
              * @param state new state for `widget`
              */
-            set_state(state: StateType | null): void;
+            set_state(state: StateType): void;
             /**
              * This function is for use in widget implementations. Turns on flag
              * values in the current widget state (insensitive, prelighted, etc.).
@@ -121095,7 +120944,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param flags State flags to turn on
              * @param clear Whether to clear state before turning on `flags`
              */
-            set_state_flags(flags: StateFlags | null, clear: boolean): void;
+            set_state_flags(flags: StateFlags, clear: boolean): void;
             /**
              * Used to set the {@link Gtk.Style} for a widget (`widget`->style). Since
              * GTK 3, this function does nothing, the passed in style is ignored.
@@ -121145,7 +120994,7 @@ declare module 'gi://Gtk?version=3.0' {
              * See the {@link Gtk.Widget.valign} property.
              * @param align the vertical alignment
              */
-            set_valign(align: Align | null): void;
+            set_valign(align: Align): void;
             /**
              * Sets whether the widget would like any available extra vertical
              * space.
@@ -121356,7 +121205,7 @@ declare module 'gi://Gtk?version=3.0' {
              * See `gtk_widget_set_state_flags()`.
              * @param flags State flags to turn off
              */
-            unset_state_flags(flags: StateFlags | null): void;
+            unset_state_flags(flags: StateFlags): void;
             /**
              * @param baseline
              * @virtual
@@ -122503,7 +122352,7 @@ declare module 'gi://Gtk?version=3.0' {
              * Sets the desired level of granularity for selecting fonts.
              * @param level the desired level of granularity
              */
-            set_level(level: FontChooserLevel | null): void;
+            set_level(level: FontChooserLevel): void;
             /**
              * Sets the text displayed in the preview area.
              * The `text` is used to show how the selected font looks.
@@ -122631,7 +122480,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -122672,7 +122521,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -123415,7 +123264,7 @@ declare module 'gi://Gtk?version=3.0' {
              * Sets the desired level of granularity for selecting fonts.
              * @param level the desired level of granularity
              */
-            set_level(level: FontChooserLevel | null): void;
+            set_level(level: FontChooserLevel): void;
             /**
              * Sets the text displayed in the preview area.
              * The `text` is used to show how the selected font looks.
@@ -123508,7 +123357,7 @@ declare module 'gi://Gtk?version=3.0' {
              * Sets the orientation of the `orientable`.
              * @param orientation the orientable’s new orientation.
              */
-            set_orientation(orientation: Orientation | null): void;
+            set_orientation(orientation: Orientation): void;
             /**
              * Creates a binding between `source_property` on `source` and `target_property`
              * on `target`.
@@ -123553,7 +123402,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -123594,7 +123443,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -124178,7 +124027,7 @@ declare module 'gi://Gtk?version=3.0' {
              * Sets the orientation of the `orientable`.
              * @param orientation the orientable’s new orientation.
              */
-            set_orientation(orientation: Orientation | null): void;
+            set_orientation(orientation: Orientation): void;
             /**
              * Creates a binding between `source_property` on `source` and `target_property`
              * on `target`.
@@ -124223,7 +124072,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -124264,7 +124113,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -124855,7 +124704,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -124896,7 +124745,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -125506,7 +125355,7 @@ declare module 'gi://Gtk?version=3.0' {
              * applied by removing or adding the .flat class to the CSS node named border.
              * @param type the new {@link Gtk.ShadowType}
              */
-            set_shadow_type(type: ShadowType | null): void;
+            set_shadow_type(type: ShadowType): void;
             /**
              * Creates a binding between `source_property` on `source` and `target_property`
              * on `target`.
@@ -125551,7 +125400,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -125592,7 +125441,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -126073,7 +125922,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -126114,7 +125963,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -127226,7 +127075,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -127267,7 +127116,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -128031,7 +127880,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param state the sequence state
              * @returns `true` if `sequence` is handled by `gesture`,          and the state is changed successfully
              */
-            set_sequence_state(sequence: Gdk.EventSequence, state: EventSequenceState | null): boolean;
+            set_sequence_state(sequence: Gdk.EventSequence, state: EventSequenceState): boolean;
             /**
              * Sets the state of all sequences that `gesture` is currently
              * interacting with. See `gtk_gesture_set_sequence_state()`
@@ -128039,7 +127888,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param state the sequence state
              * @returns `true` if the state of at least one sequence     was changed successfully
              */
-            set_state(state: EventSequenceState | null): boolean;
+            set_state(state: EventSequenceState): boolean;
             /**
              * Sets a specific window to receive events about, so `gesture`
              * will effectively handle only events targeting `window`, or
@@ -128489,7 +128338,7 @@ declare module 'gi://Gtk?version=3.0' {
              * Sets the orientation to be expected on pan gestures.
              * @param orientation expected orientation
              */
-            set_orientation(orientation: Orientation | null): void;
+            set_orientation(orientation: Orientation): void;
         }
 
         namespace GestureRotate {
@@ -128824,7 +128673,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param axes array of requested axes, terminated with #GDK_AXIS_IGNORE
              * @returns `TRUE` if there is a current value for the axes
              */
-            get_axes(axes: Gdk.AxisUse[] | null): [boolean, number[]];
+            get_axes(axes: Gdk.AxisUse[]): [boolean, number[]];
             /**
              * Returns the current value for the requested `axis`. This function
              * must be called from either the {@link Gtk.GestureStylus.down},
@@ -128833,7 +128682,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param axis requested device axis
              * @returns `TRUE` if there is a current value for the axis
              */
-            get_axis(axis: Gdk.AxisUse | null): [boolean, number];
+            get_axis(axis: Gdk.AxisUse): [boolean, number];
             /**
              * Returns the {@link Gdk.DeviceTool} currently driving input through this gesture.
              * This function must be called from either the {@link Gtk.GestureStylus.SignalSignatures.down | Gtk.GestureStylus::down},
@@ -129206,7 +129055,7 @@ declare module 'gi://Gtk?version=3.0' {
             attach_next_to(
                 child: Widget,
                 sibling: Widget | null,
-                side: PositionType | null,
+                side: PositionType,
                 width: number,
                 height: number,
             ): void;
@@ -129270,7 +129119,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param sibling the child of `grid` that the new row or column will be     placed next to
              * @param side the side of `sibling` that `child` is positioned next to
              */
-            insert_next_to(sibling: Widget, side: PositionType | null): void;
+            insert_next_to(sibling: Widget, side: PositionType): void;
             /**
              * Inserts a row at the specified position.
              *
@@ -129324,7 +129173,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param row a row index
              * @param pos a {@link Gtk.BaselinePosition}
              */
-            set_row_baseline_position(row: number, pos: BaselinePosition | null): void;
+            set_row_baseline_position(row: number, pos: BaselinePosition): void;
             /**
              * Sets whether all rows of `grid` will have the same height.
              * @param homogeneous `true` to make rows homogeneous
@@ -129351,7 +129200,7 @@ declare module 'gi://Gtk?version=3.0' {
              * Sets the orientation of the `orientable`.
              * @param orientation the orientable’s new orientation.
              */
-            set_orientation(orientation: Orientation | null): void;
+            set_orientation(orientation: Orientation): void;
             /**
              * Creates a binding between `source_property` on `source` and `target_property`
              * on `target`.
@@ -129396,7 +129245,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -129437,7 +129286,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -129948,7 +129797,7 @@ declare module 'gi://Gtk?version=3.0' {
              * Sets the orientation of the `orientable`.
              * @param orientation the orientable’s new orientation.
              */
-            set_orientation(orientation: Orientation | null): void;
+            set_orientation(orientation: Orientation): void;
             /**
              * Creates a binding between `source_property` on `source` and `target_property`
              * on `target`.
@@ -129993,7 +129842,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -130034,7 +129883,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -130552,7 +130401,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -130593,7 +130442,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -131091,7 +130940,7 @@ declare module 'gi://Gtk?version=3.0' {
              * Sets the orientation of the `orientable`.
              * @param orientation the orientable’s new orientation.
              */
-            set_orientation(orientation: Orientation | null): void;
+            set_orientation(orientation: Orientation): void;
             /**
              * Creates a binding between `source_property` on `source` and `target_property`
              * on `target`.
@@ -131136,7 +130985,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -131177,7 +131026,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -131944,7 +131793,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -131985,7 +131834,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -132523,7 +132372,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -132564,7 +132413,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -133094,7 +132943,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -133135,7 +132984,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -133629,7 +133478,7 @@ declare module 'gi://Gtk?version=3.0' {
              * Sets the orientation of the `orientable`.
              * @param orientation the orientable’s new orientation.
              */
-            set_orientation(orientation: Orientation | null): void;
+            set_orientation(orientation: Orientation): void;
             /**
              * Creates a binding between `source_property` on `source` and `target_property`
              * on `target`.
@@ -133674,7 +133523,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -133715,7 +133564,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -134312,13 +134161,13 @@ declare module 'gi://Gtk?version=3.0' {
              * Sets the side of the handlebox where the handle is drawn.
              * @param position the side of the handlebox where the handle should be drawn.
              */
-            set_handle_position(position: PositionType | null): void;
+            set_handle_position(position: PositionType): void;
             /**
              * Sets the type of shadow to be drawn around the border
              * of the handle box.
              * @param type the shadow type.
              */
-            set_shadow_type(type: ShadowType | null): void;
+            set_shadow_type(type: ShadowType): void;
             /**
              * Sets the snap edge of a handlebox. The snap edge is
              * the edge of the detached child that must be aligned
@@ -134335,7 +134184,7 @@ declare module 'gi://Gtk?version=3.0' {
              * it will be {@link Gtk.PositionType.LEFT}.
              * @param edge the snap edge, or -1 to unset the value; in which   case GTK+ will try to guess an appropriate value   in the future.
              */
-            set_snap_edge(edge: PositionType | null): void;
+            set_snap_edge(edge: PositionType): void;
             /**
              * Creates a binding between `source_property` on `source` and `target_property`
              * on `target`.
@@ -134380,7 +134229,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -134421,7 +134270,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -135162,7 +135011,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -135203,7 +135052,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -135685,7 +135534,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -135726,7 +135575,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -137118,7 +136967,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -137159,7 +137008,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -137884,7 +137733,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param state the widget state to use for colors
              * @returns a {@link GdkPixbuf.Pixbuf} representing the loaded icon
              */
-            load_symbolic_for_style(style: Style, state: StateType | null): [GdkPixbuf.Pixbuf, boolean];
+            load_symbolic_for_style(style: Style, state: StateType): [GdkPixbuf.Pixbuf, boolean];
             /**
              * Sets whether the coordinates returned by `gtk_icon_info_get_embedded_rect()`
              * and `gtk_icon_info_get_attach_points()` should be returned in their
@@ -138124,7 +137973,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param flags flags modifying the behavior of the icon lookup
              * @returns a {@link Gtk.IconInfo} object containing information about the icon, or `null` if the icon wasn’t found.
              */
-            choose_icon(icon_names: string[], size: number, flags: IconLookupFlags | null): IconInfo | null;
+            choose_icon(icon_names: string[], size: number, flags: IconLookupFlags): IconInfo | null;
             /**
              * Looks up a named icon for a particular window scale and returns
              * a {@link Gtk.IconInfo} containing information such as the filename of the
@@ -138145,7 +137994,7 @@ declare module 'gi://Gtk?version=3.0' {
                 icon_names: string[],
                 size: number,
                 scale: number,
-                flags: IconLookupFlags | null,
+                flags: IconLookupFlags,
             ): IconInfo | null;
             /**
              * Gets the name of an icon that is representative of the
@@ -138213,7 +138062,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param flags flags modifying the behavior of the icon lookup
              * @returns the rendered icon; this may be     a newly created icon or a new reference to an internal icon, so     you must not modify the icon. Use `g_object_unref()` to release     your reference to the icon. `null` if the icon isn’t found.
              */
-            load_icon(icon_name: string, size: number, flags: IconLookupFlags | null): GdkPixbuf.Pixbuf | null;
+            load_icon(icon_name: string, size: number, flags: IconLookupFlags): GdkPixbuf.Pixbuf | null;
             /**
              * Looks up an icon in an icon theme for a particular window scale,
              * scales it to the given size and renders it into a pixbuf. This is a
@@ -138238,7 +138087,7 @@ declare module 'gi://Gtk?version=3.0' {
                 icon_name: string,
                 size: number,
                 scale: number,
-                flags: IconLookupFlags | null,
+                flags: IconLookupFlags,
             ): GdkPixbuf.Pixbuf | null;
             /**
              * Looks up an icon in an icon theme for a particular window scale,
@@ -138262,7 +138111,7 @@ declare module 'gi://Gtk?version=3.0' {
                 size: number,
                 scale: number,
                 for_window: Gdk.Window | null,
-                flags: IconLookupFlags | null,
+                flags: IconLookupFlags,
             ): cairo.Surface | null;
             /**
              * Looks up an icon and returns a {@link Gtk.IconInfo} containing information
@@ -138279,7 +138128,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param flags flags modifying the behavior of the icon lookup
              * @returns a {@link Gtk.IconInfo} containing     information about the icon, or `null` if the icon wasn’t     found. Unref with `g_object_unref()`
              */
-            lookup_by_gicon(icon: Gio.Icon, size: number, flags: IconLookupFlags | null): IconInfo | null;
+            lookup_by_gicon(icon: Gio.Icon, size: number, flags: IconLookupFlags): IconInfo | null;
             /**
              * Looks up an icon and returns a {@link Gtk.IconInfo} containing information
              * such as the filename of the icon. The icon can then be rendered into
@@ -138294,7 +138143,7 @@ declare module 'gi://Gtk?version=3.0' {
                 icon: Gio.Icon,
                 size: number,
                 scale: number,
-                flags: IconLookupFlags | null,
+                flags: IconLookupFlags,
             ): IconInfo | null;
             /**
              * Looks up a named icon and returns a {@link Gtk.IconInfo} containing
@@ -138313,7 +138162,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param flags flags modifying the behavior of the icon lookup
              * @returns a {@link Gtk.IconInfo} object     containing information about the icon, or `null` if the     icon wasn’t found.
              */
-            lookup_icon(icon_name: string, size: number, flags: IconLookupFlags | null): IconInfo | null;
+            lookup_icon(icon_name: string, size: number, flags: IconLookupFlags): IconInfo | null;
             /**
              * Looks up a named icon for a particular window scale and returns a
              * {@link Gtk.IconInfo} containing information such as the filename of the
@@ -138330,7 +138179,7 @@ declare module 'gi://Gtk?version=3.0' {
                 icon_name: string,
                 size: number,
                 scale: number,
-                flags: IconLookupFlags | null,
+                flags: IconLookupFlags,
             ): IconInfo | null;
             /**
              * Prepends a directory to the search path.
@@ -138950,7 +138799,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param targets the table of targets that the drag will           support
              * @param actions the bitmask of possible actions for a drag to this    widget
              */
-            enable_model_drag_dest(targets: TargetEntry[], actions: Gdk.DragAction | null): void;
+            enable_model_drag_dest(targets: TargetEntry[], actions: Gdk.DragAction): void;
             /**
              * Turns `icon_view` into a drag source for automatic DND. Calling this
              * method sets {@link Gtk.IconView.reorderable} to `false`.
@@ -138959,9 +138808,9 @@ declare module 'gi://Gtk?version=3.0' {
              * @param actions the bitmask of possible actions for a drag from this    widget
              */
             enable_model_drag_source(
-                start_button_mask: Gdk.ModifierType | null,
+                start_button_mask: Gdk.ModifierType,
                 targets: TargetEntry[],
-                actions: Gdk.DragAction | null,
+                actions: Gdk.DragAction,
             ): void;
             /**
              * Gets the setting set by `gtk_icon_view_set_activate_on_single_click()`.
@@ -139251,13 +139100,13 @@ declare module 'gi://Gtk?version=3.0' {
              * @param path The path of the item to highlight, or `null`.
              * @param pos Specifies where to drop, relative to the item
              */
-            set_drag_dest_item(path: TreePath | null, pos: IconViewDropPosition | null): void;
+            set_drag_dest_item(path: TreePath | null, pos: IconViewDropPosition): void;
             /**
              * Sets the ::item-orientation property which determines whether the labels
              * are drawn beside the icons instead of below.
              * @param orientation the relative position of texts and icons
              */
-            set_item_orientation(orientation: Orientation | null): void;
+            set_item_orientation(orientation: Orientation): void;
             /**
              * Sets the {@link Gtk.IconView.item_padding} property which specifies the padding
              * around each of the icon view’s items.
@@ -139326,7 +139175,7 @@ declare module 'gi://Gtk?version=3.0' {
              * Sets the selection mode of the `icon_view`.
              * @param mode The selection mode
              */
-            set_selection_mode(mode: SelectionMode | null): void;
+            set_selection_mode(mode: SelectionMode): void;
             /**
              * Sets the ::spacing property which specifies the space
              * which is inserted between the cells (i.e. the icon and
@@ -139638,7 +139487,7 @@ declare module 'gi://Gtk?version=3.0' {
              * below the natural width.
              * @param policy the horizontal {@link Gtk.ScrollablePolicy}
              */
-            set_hscroll_policy(policy: ScrollablePolicy | null): void;
+            set_hscroll_policy(policy: ScrollablePolicy): void;
             /**
              * Sets the vertical adjustment of the {@link Gtk.Scrollable}.
              * @param vadjustment a {@link Gtk.Adjustment}
@@ -139650,7 +139499,7 @@ declare module 'gi://Gtk?version=3.0' {
              * below the natural height.
              * @param policy the vertical {@link Gtk.ScrollablePolicy}
              */
-            set_vscroll_policy(policy: ScrollablePolicy | null): void;
+            set_vscroll_policy(policy: ScrollablePolicy): void;
             /**
              * Returns the size of a non-scrolling border around the
              * outside of the scrollable. An example for this would
@@ -139704,7 +139553,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -139745,7 +139594,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -140344,7 +140193,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -140385,7 +140234,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -141262,7 +141111,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -141303,7 +141152,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -141752,7 +141601,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param coord_type specifies whether the coordinates are relative to the screen or to the components top level window
              * @returns `true` or `false` indicating whether the specified point is within the extent of the `component` or not
              */
-            contains(x: number, y: number, coord_type: Atk.CoordType | null): boolean;
+            contains(x: number, y: number, coord_type: Atk.CoordType): boolean;
             /**
              * Returns the alpha value (i.e. the opacity) for this
              * `component`, on a scale from 0 (fully transparent) to 1.0
@@ -141767,7 +141616,7 @@ declare module 'gi://Gtk?version=3.0' {
              * support), all of x, y, width, height are set to -1.
              * @param coord_type specifies whether the coordinates are relative to the screen or to the components top level window
              */
-            get_extents(coord_type: Atk.CoordType | null): [number, number, number, number];
+            get_extents(coord_type: Atk.CoordType): [number, number, number, number];
             /**
              * Gets the layer of the component.
              * @returns an {@link Atk.Layer} which is the layer of the component
@@ -141787,7 +141636,7 @@ declare module 'gi://Gtk?version=3.0' {
              * support), x and y are set to -1.
              * @param coord_type specifies whether the coordinates are relative to the screen or to the components top level window
              */
-            get_position(coord_type: Atk.CoordType | null): [number, number];
+            get_position(coord_type: Atk.CoordType): [number, number];
             /**
              * Gets the size of the `component` in terms of width and height.
              *
@@ -141808,7 +141657,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param coord_type specifies whether the coordinates are relative to the screen or to the components top level window
              * @returns a reference to the accessible child, if one exists
              */
-            ref_accessible_at_point(x: number, y: number, coord_type: Atk.CoordType | null): Atk.Object | null;
+            ref_accessible_at_point(x: number, y: number, coord_type: Atk.CoordType): Atk.Object | null;
             /**
              * Remove the handler specified by `handler_id` from the list of
              * functions to be executed when this object receives focus events
@@ -141825,7 +141674,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param type specify where the object should be made visible.
              * @returns whether scrolling was successful.
              */
-            scroll_to(type: Atk.ScrollType | null): boolean;
+            scroll_to(type: Atk.ScrollType): boolean;
             /**
              * Move the top-left of `component` to a given position of the screen by
              * scrolling all necessary parents.
@@ -141834,7 +141683,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param y y-position where to scroll to
              * @returns whether scrolling was successful.
              */
-            scroll_to_point(coords: Atk.CoordType | null, x: number, y: number): boolean;
+            scroll_to_point(coords: Atk.CoordType, x: number, y: number): boolean;
             /**
              * Sets the extents of `component`.
              * @param x x coordinate
@@ -141844,7 +141693,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param coord_type specifies whether the coordinates are relative to the screen or to the components top level window
              * @returns `true` or `false` whether the extents were set or not
              */
-            set_extents(x: number, y: number, width: number, height: number, coord_type: Atk.CoordType | null): boolean;
+            set_extents(x: number, y: number, width: number, height: number, coord_type: Atk.CoordType): boolean;
             /**
              * Sets the position of `component`.
              *
@@ -141855,7 +141704,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param coord_type specifies whether the coordinates are relative to the screen or to the component's top level window
              * @returns `true` or `false` whether or not the position was set or not
              */
-            set_position(x: number, y: number, coord_type: Atk.CoordType | null): boolean;
+            set_position(x: number, y: number, coord_type: Atk.CoordType): boolean;
             /**
              * Set the size of the `component` in terms of width and height.
              * @param width width to set for `component`
@@ -142012,7 +141861,7 @@ declare module 'gi://Gtk?version=3.0' {
              * to -1.
              * @param coord_type specifies whether the coordinates are relative to the screen or to the components top level window
              */
-            get_image_position(coord_type: Atk.CoordType | null): [number, number];
+            get_image_position(coord_type: Atk.CoordType): [number, number];
             /**
              * Get the width and height in pixels for the specified image.
              * The values of `width` and `height` are returned as -1 if the
@@ -142108,7 +141957,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -142149,7 +141998,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -142776,7 +142625,7 @@ declare module 'gi://Gtk?version=3.0' {
              * to -1.
              * @param coord_type specifies whether the coordinates are relative to the screen or to the components top level window
              */
-            get_image_position(coord_type: Atk.CoordType | null): [number, number];
+            get_image_position(coord_type: Atk.CoordType): [number, number];
             /**
              * Get the width and height in pixels for the specified image.
              * The values of `width` and `height` are returned as -1 if the
@@ -142872,7 +142721,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -142913,7 +142762,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -143283,7 +143132,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param target The {@link Atk.Object} which is to be the target of the relation.
              * @returns TRUE if the relationship is added.
              */
-            add_relationship(relationship: Atk.RelationType | null, target: Atk.Object): boolean;
+            add_relationship(relationship: Atk.RelationType, target: Atk.Object): boolean;
             /**
              * Gets the accessible id of the accessible.
              * @returns a character string representing the accessible id of the object, or NULL if no such string was set.
@@ -143425,7 +143274,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param target The {@link Atk.Object} which is the target of the relation to be removed.
              * @returns TRUE if the relationship is removed.
              */
-            remove_relationship(relationship: Atk.RelationType | null, target: Atk.Object): boolean;
+            remove_relationship(relationship: Atk.RelationType, target: Atk.Object): boolean;
             /**
              * Sets the accessible ID of the accessible.  This is not meant to be presented
              * to the user, but to be an ID which is stable over application development.
@@ -143474,7 +143323,7 @@ declare module 'gi://Gtk?version=3.0' {
              * Sets the role of the accessible.
              * @param role an {@link Atk.Role} to be set as the role
              */
-            set_role(role: Atk.Role | null): void;
+            set_role(role: Atk.Role): void;
             /**
              * @param child
              * @virtual
@@ -144743,7 +144592,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -144784,7 +144633,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -145180,8 +145029,8 @@ declare module 'gi://Gtk?version=3.0' {
                 accel_signal: string,
                 accel_group: AccelGroup,
                 accel_key: number,
-                accel_mods: Gdk.ModifierType | null,
-                accel_flags: AccelFlags | null,
+                accel_mods: Gdk.ModifierType,
+                accel_flags: AccelFlags,
             ): void;
             /**
              * Adds the device events in the bitfield `events` to the event mask for
@@ -145189,7 +145038,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param device a {@link Gdk.Device}
              * @param events an event mask, see {@link Gdk.EventMask}
              */
-            add_device_events(device: Gdk.Device, events: Gdk.EventMask | null): void;
+            add_device_events(device: Gdk.Device, events: Gdk.EventMask): void;
             /**
              * Adds the events in the bitfield `events` to the event mask for
              * `widget`. See `gtk_widget_set_events()` and the
@@ -145267,7 +145116,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param direction direction of focus movement
              * @returns `true` if focus ended up inside `widget`
              */
-            child_focus(direction: DirectionType | null): boolean;
+            child_focus(direction: DirectionType): boolean;
             /**
              * Emits a {@link Gtk.Widget.SignalSignatures.child_notify | Gtk.Widget::child-notify} signal for the
              * [child property][child-properties] `child_property`
@@ -145304,7 +145153,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param orientation expand direction
              * @returns whether widget tree rooted here should be expanded
              */
-            compute_expand(orientation: Orientation | null): boolean;
+            compute_expand(orientation: Orientation): boolean;
             /**
              * Creates a new {@link Pango.Context} with the appropriate font map,
              * font options, font description, and base direction for drawing
@@ -145391,7 +145240,7 @@ declare module 'gi://Gtk?version=3.0' {
              */
             drag_begin(
                 targets: TargetList,
-                actions: Gdk.DragAction | null,
+                actions: Gdk.DragAction,
                 button: number,
                 event?: Gdk.Event | null,
             ): Gdk.DragContext;
@@ -145431,7 +145280,7 @@ declare module 'gi://Gtk?version=3.0' {
              */
             drag_begin_with_coordinates(
                 targets: TargetList,
-                actions: Gdk.DragAction | null,
+                actions: Gdk.DragAction,
                 button: number,
                 event: Gdk.Event | null,
                 x: number,
@@ -145543,22 +145392,14 @@ declare module 'gi://Gtk?version=3.0' {
              * @param targets a pointer to an array of     `GtkTargetEntrys` indicating the drop types that this `widget` will     accept, or `null`. Later you can access the list with     `gtk_drag_dest_get_target_list()` and `gtk_drag_dest_find_target()`.
              * @param actions a bitmask of possible actions for a drop onto this `widget`.
              */
-            drag_dest_set(
-                flags: DestDefaults | null,
-                targets: TargetEntry[] | null,
-                actions: Gdk.DragAction | null,
-            ): void;
+            drag_dest_set(flags: DestDefaults, targets: TargetEntry[] | null, actions: Gdk.DragAction): void;
             /**
              * Sets this widget as a proxy for drops to another window.
              * @param proxy_window the window to which to forward drag events
              * @param protocol the drag protocol which the `proxy_window` accepts   (You can use `gdk_drag_get_protocol()` to determine this)
              * @param use_coordinates If `true`, send the same coordinates to the   destination, because it is an embedded   subwindow.
              */
-            drag_dest_set_proxy(
-                proxy_window: Gdk.Window,
-                protocol: Gdk.DragProtocol | null,
-                use_coordinates: boolean,
-            ): void;
+            drag_dest_set_proxy(proxy_window: Gdk.Window, protocol: Gdk.DragProtocol, use_coordinates: boolean): void;
             /**
              * Sets the target types that this widget can accept from drag-and-drop.
              * The widget must first be made into a drag destination with
@@ -145640,9 +145481,9 @@ declare module 'gi://Gtk?version=3.0' {
              * @param actions the bitmask of possible actions for a drag from this widget
              */
             drag_source_set(
-                start_button_mask: Gdk.ModifierType | null,
+                start_button_mask: Gdk.ModifierType,
                 targets: TargetEntry[] | null,
-                actions: Gdk.DragAction | null,
+                actions: Gdk.DragAction,
             ): void;
             /**
              * Sets the icon that will be used for drags from a particular source
@@ -146101,7 +145942,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param intent the use case for the modifier mask
              * @returns the modifier mask used for `intent`.
              */
-            get_modifier_mask(intent: Gdk.ModifierIntent | null): Gdk.ModifierType;
+            get_modifier_mask(intent: Gdk.ModifierIntent): Gdk.ModifierType;
             /**
              * Returns the current modifier style for the widget. (As set by
              * `gtk_widget_modify_style()`.) If no style has previously set, a new
@@ -146735,7 +146576,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param direction direction of focus movement
              * @returns `true` if stopping keyboard navigation is fine, `false`               if the emitting widget should try to handle the keyboard               navigation attempt in its parent container(s).
              */
-            keynav_failed(direction: DirectionType | null): boolean;
+            keynav_failed(direction: DirectionType): boolean;
             /**
              * Lists the closures used by `widget` for accelerator group connections
              * with `gtk_accel_group_connect_by_path()` or `gtk_accel_group_connect()`.
@@ -146796,7 +146637,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param state the state for which to set the base color
              * @param color the color to assign (does not need to     be allocated), or `null` to undo the effect of previous     calls to of `gtk_widget_modify_base()`.
              */
-            modify_base(state: StateType | null, color?: Gdk.Color | null): void;
+            modify_base(state: StateType, color?: Gdk.Color | null): void;
             /**
              * Sets the background color for a widget in a particular state.
              *
@@ -146815,7 +146656,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param state the state for which to set the background color
              * @param color the color to assign (does not need     to be allocated), or `null` to undo the effect of previous     calls to of `gtk_widget_modify_bg()`.
              */
-            modify_bg(state: StateType | null, color?: Gdk.Color | null): void;
+            modify_bg(state: StateType, color?: Gdk.Color | null): void;
             /**
              * Sets the cursor color to use in a widget, overriding the {@link Gtk.Widget}
              * cursor-color and secondary-cursor-color
@@ -146835,7 +146676,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param state the state for which to set the foreground color
              * @param color the color to assign (does not need to be allocated),     or `null` to undo the effect of previous calls to     of `gtk_widget_modify_fg()`.
              */
-            modify_fg(state: StateType | null, color?: Gdk.Color | null): void;
+            modify_fg(state: StateType, color?: Gdk.Color | null): void;
             /**
              * Sets the font to use for a widget.
              *
@@ -146877,7 +146718,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param state the state for which to set the text color
              * @param color the color to assign (does not need to     be allocated), or `null` to undo the effect of previous     calls to of `gtk_widget_modify_text()`.
              */
-            modify_text(state: StateType | null, color?: Gdk.Color | null): void;
+            modify_text(state: StateType, color?: Gdk.Color | null): void;
             /**
              * Sets the background color to use for a widget.
              *
@@ -146886,7 +146727,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param state the state for which to set the background color
              * @param color the color to assign, or `null` to undo the effect     of previous calls to `gtk_widget_override_background_color()`
              */
-            override_background_color(state: StateFlags | null, color?: Gdk.RGBA | null): void;
+            override_background_color(state: StateFlags, color?: Gdk.RGBA | null): void;
             /**
              * Sets the color to use for a widget.
              *
@@ -146916,7 +146757,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param state the state for which to set the color
              * @param color the color to assign, or `null` to undo the effect     of previous calls to `gtk_widget_override_color()`
              */
-            override_color(state: StateFlags | null, color?: Gdk.RGBA | null): void;
+            override_color(state: StateFlags, color?: Gdk.RGBA | null): void;
             /**
              * Sets the cursor color to use in a widget, overriding the
              * cursor-color and secondary-cursor-color
@@ -147083,11 +146924,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param accel_mods modifier key combination of the accelerator
              * @returns whether an accelerator was installed and could be removed
              */
-            remove_accelerator(
-                accel_group: AccelGroup,
-                accel_key: number,
-                accel_mods: Gdk.ModifierType | null,
-            ): boolean;
+            remove_accelerator(accel_group: AccelGroup, accel_key: number, accel_mods: Gdk.ModifierType): boolean;
             /**
              * Removes a widget from the list of mnemonic labels for
              * this widget. (See `gtk_widget_list_mnemonic_labels()`). The widget
@@ -147341,7 +147178,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param device a {@link Gdk.Device}
              * @param events event mask
              */
-            set_device_events(device: Gdk.Device, events: Gdk.EventMask | null): void;
+            set_device_events(device: Gdk.Device, events: Gdk.EventMask): void;
             /**
              * Sets the reading direction on a particular widget. This direction
              * controls the primary direction for widgets containing text,
@@ -147357,7 +147194,7 @@ declare module 'gi://Gtk?version=3.0' {
              * set by `gtk_widget_set_default_direction()` will be used.
              * @param dir the new direction
              */
-            set_direction(dir: TextDirection | null): void;
+            set_direction(dir: TextDirection): void;
             /**
              * Widgets are double buffered by default; you can use this function
              * to turn off the buffering. “Double buffered” simply means that
@@ -147427,7 +147264,7 @@ declare module 'gi://Gtk?version=3.0' {
              * See the {@link Gtk.Widget.halign} property.
              * @param align the horizontal alignment
              */
-            set_halign(align: Align | null): void;
+            set_halign(align: Align): void;
             /**
              * Sets the has-tooltip property on `widget` to `has_tooltip`.  See
              * {@link Gtk.Widget.has_tooltip} for more information.
@@ -147690,7 +147527,7 @@ declare module 'gi://Gtk?version=3.0' {
              * the state using wrapper functions such as `gtk_widget_set_sensitive()`.
              * @param state new state for `widget`
              */
-            set_state(state: StateType | null): void;
+            set_state(state: StateType): void;
             /**
              * This function is for use in widget implementations. Turns on flag
              * values in the current widget state (insensitive, prelighted, etc.).
@@ -147708,7 +147545,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param flags State flags to turn on
              * @param clear Whether to clear state before turning on `flags`
              */
-            set_state_flags(flags: StateFlags | null, clear: boolean): void;
+            set_state_flags(flags: StateFlags, clear: boolean): void;
             /**
              * Used to set the {@link Gtk.Style} for a widget (`widget`->style). Since
              * GTK 3, this function does nothing, the passed in style is ignored.
@@ -147758,7 +147595,7 @@ declare module 'gi://Gtk?version=3.0' {
              * See the {@link Gtk.Widget.valign} property.
              * @param align the vertical alignment
              */
-            set_valign(align: Align | null): void;
+            set_valign(align: Align): void;
             /**
              * Sets whether the widget would like any available extra vertical
              * space.
@@ -147969,7 +147806,7 @@ declare module 'gi://Gtk?version=3.0' {
              * See `gtk_widget_set_state_flags()`.
              * @param flags State flags to turn off
              */
-            unset_state_flags(flags: StateFlags | null): void;
+            unset_state_flags(flags: StateFlags): void;
             /**
              * @param baseline
              * @virtual
@@ -149071,7 +148908,7 @@ declare module 'gi://Gtk?version=3.0' {
              * GTK+ uses this type to determine how the message is displayed.
              * @param message_type a {@link Gtk.MessageType}
              */
-            set_message_type(message_type: MessageType | null): void;
+            set_message_type(message_type: MessageType): void;
             /**
              * Calls gtk_widget_set_sensitive (widget, setting) for each
              * widget in the info bars’s action area with the given response_id.
@@ -149111,7 +148948,7 @@ declare module 'gi://Gtk?version=3.0' {
              * Sets the orientation of the `orientable`.
              * @param orientation the orientable’s new orientation.
              */
-            set_orientation(orientation: Orientation | null): void;
+            set_orientation(orientation: Orientation): void;
             /**
              * Creates a binding between `source_property` on `source` and `target_property`
              * on `target`.
@@ -149156,7 +148993,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -149197,7 +149034,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -149918,7 +149755,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -149959,7 +149796,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -151177,7 +151014,7 @@ declare module 'gi://Gtk?version=3.0' {
              * if there is not enough space to render the entire string.
              * @param mode a {@link Pango.EllipsizeMode}
              */
-            set_ellipsize(mode: Pango.EllipsizeMode | null): void;
+            set_ellipsize(mode: Pango.EllipsizeMode): void;
             /**
              * Sets the alignment of the lines in the text of the label relative to
              * each other. {@link Gtk.Justification.LEFT} is the default value when the widget is
@@ -151187,7 +151024,7 @@ declare module 'gi://Gtk?version=3.0' {
              * single line.
              * @param jtype a {@link Gtk.Justification}
              */
-            set_justify(jtype: Justification | null): void;
+            set_justify(jtype: Justification): void;
             /**
              * Sets the text of the label. The label is interpreted as
              * including embedded underlines and/or Pango markup depending
@@ -151215,7 +151052,7 @@ declare module 'gi://Gtk?version=3.0' {
              * wrap on word boundaries.
              * @param wrap_mode the line wrapping mode
              */
-            set_line_wrap_mode(wrap_mode: Pango.WrapMode | null): void;
+            set_line_wrap_mode(wrap_mode: Pango.WrapMode): void;
             /**
              * Sets the number of lines to which an ellipsized, wrapping label
              * should be limited. This has no effect if the label is not wrapping
@@ -151411,7 +151248,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -151452,7 +151289,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -151905,7 +151742,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param coord_type specifies whether the coordinates are relative to the screen or to the components top level window
              * @returns `true` or `false` indicating whether the specified point is within the extent of the `component` or not
              */
-            contains(x: number, y: number, coord_type: Atk.CoordType | null): boolean;
+            contains(x: number, y: number, coord_type: Atk.CoordType): boolean;
             /**
              * Returns the alpha value (i.e. the opacity) for this
              * `component`, on a scale from 0 (fully transparent) to 1.0
@@ -151920,7 +151757,7 @@ declare module 'gi://Gtk?version=3.0' {
              * support), all of x, y, width, height are set to -1.
              * @param coord_type specifies whether the coordinates are relative to the screen or to the components top level window
              */
-            get_extents(coord_type: Atk.CoordType | null): [number, number, number, number];
+            get_extents(coord_type: Atk.CoordType): [number, number, number, number];
             /**
              * Gets the layer of the component.
              * @returns an {@link Atk.Layer} which is the layer of the component
@@ -151940,7 +151777,7 @@ declare module 'gi://Gtk?version=3.0' {
              * support), x and y are set to -1.
              * @param coord_type specifies whether the coordinates are relative to the screen or to the components top level window
              */
-            get_position(coord_type: Atk.CoordType | null): [number, number];
+            get_position(coord_type: Atk.CoordType): [number, number];
             /**
              * Gets the size of the `component` in terms of width and height.
              *
@@ -151961,7 +151798,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param coord_type specifies whether the coordinates are relative to the screen or to the components top level window
              * @returns a reference to the accessible child, if one exists
              */
-            ref_accessible_at_point(x: number, y: number, coord_type: Atk.CoordType | null): Atk.Object | null;
+            ref_accessible_at_point(x: number, y: number, coord_type: Atk.CoordType): Atk.Object | null;
             /**
              * Remove the handler specified by `handler_id` from the list of
              * functions to be executed when this object receives focus events
@@ -151978,7 +151815,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param type specify where the object should be made visible.
              * @returns whether scrolling was successful.
              */
-            scroll_to(type: Atk.ScrollType | null): boolean;
+            scroll_to(type: Atk.ScrollType): boolean;
             /**
              * Move the top-left of `component` to a given position of the screen by
              * scrolling all necessary parents.
@@ -151987,7 +151824,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param y y-position where to scroll to
              * @returns whether scrolling was successful.
              */
-            scroll_to_point(coords: Atk.CoordType | null, x: number, y: number): boolean;
+            scroll_to_point(coords: Atk.CoordType, x: number, y: number): boolean;
             /**
              * Sets the extents of `component`.
              * @param x x coordinate
@@ -151997,7 +151834,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param coord_type specifies whether the coordinates are relative to the screen or to the components top level window
              * @returns `true` or `false` whether the extents were set or not
              */
-            set_extents(x: number, y: number, width: number, height: number, coord_type: Atk.CoordType | null): boolean;
+            set_extents(x: number, y: number, width: number, height: number, coord_type: Atk.CoordType): boolean;
             /**
              * Sets the position of `component`.
              *
@@ -152008,7 +151845,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param coord_type specifies whether the coordinates are relative to the screen or to the component's top level window
              * @returns `true` or `false` whether or not the position was set or not
              */
-            set_position(x: number, y: number, coord_type: Atk.CoordType | null): boolean;
+            set_position(x: number, y: number, coord_type: Atk.CoordType): boolean;
             /**
              * Set the size of the `component` in terms of width and height.
              * @param width width to set for `component`
@@ -152207,9 +152044,9 @@ declare module 'gi://Gtk?version=3.0' {
              */
             get_bounded_ranges(
                 rect: Atk.TextRectangle,
-                coord_type: Atk.CoordType | null,
-                x_clip_type: Atk.TextClipType | null,
-                y_clip_type: Atk.TextClipType | null,
+                coord_type: Atk.CoordType,
+                x_clip_type: Atk.TextClipType,
+                y_clip_type: Atk.TextClipType,
             ): Atk.TextRange[];
             /**
              * Gets the offset of the position of the caret (cursor).
@@ -152236,7 +152073,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param offset The offset of the text character for which bounding information is required.
              * @param coords specify whether coordinates are relative to the screen or widget window
              */
-            get_character_extents(offset: number, coords: Atk.CoordType | null): [number, number, number, number];
+            get_character_extents(offset: number, coords: Atk.CoordType): [number, number, number, number];
             /**
              * Creates an {@link Atk.AttributeSet} which consists of the default values of
              * attributes for the text. See the enum AtkTextAttribute for types of text
@@ -152259,7 +152096,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param coords specify whether coordinates are relative to the screen or widget window
              * @returns the offset to the character which is located at  the specified          `x` and `y` coordinates of -1 in case of failure.
              */
-            get_offset_at_point(x: number, y: number, coords: Atk.CoordType | null): number;
+            get_offset_at_point(x: number, y: number, coords: Atk.CoordType): number;
             /**
              * Get the bounding box for text within the specified range.
              *
@@ -152269,11 +152106,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param end_offset The offset of the text character after the last character        for which boundary information is required.
              * @param coord_type Specify whether coordinates are relative to the screen or widget window.
              */
-            get_range_extents(
-                start_offset: number,
-                end_offset: number,
-                coord_type: Atk.CoordType | null,
-            ): Atk.TextRectangle;
+            get_range_extents(start_offset: number, end_offset: number, coord_type: Atk.CoordType): Atk.TextRectangle;
             /**
              * Creates an {@link Atk.AttributeSet} which consists of the attributes explicitly
              * set at the position `offset` in the text. `start_offset` and `end_offset` are
@@ -152327,10 +152160,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param granularity An {@link Atk.TextGranularity}
              * @returns a newly allocated string containing the text at          the `offset` bounded by the specified `granularity`. Use `g_free()`          to free the returned string.  Returns `null` if the offset is invalid          or no implementation is available.
              */
-            get_string_at_offset(
-                offset: number,
-                granularity: Atk.TextGranularity | null,
-            ): [string | null, number, number];
+            get_string_at_offset(offset: number, granularity: Atk.TextGranularity): [string | null, number, number];
             /**
              * Gets the specified text.
              * @param start_offset a starting character offset within `text`
@@ -152344,7 +152174,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param boundary_type An {@link Atk.TextBoundary}
              * @returns a newly allocated string containing the text after `offset` bounded          by the specified `boundary_type`. Use `g_free()` to free the returned          string.
              */
-            get_text_after_offset(offset: number, boundary_type: Atk.TextBoundary | null): [string, number, number];
+            get_text_after_offset(offset: number, boundary_type: Atk.TextBoundary): [string, number, number];
             /**
              * Gets the specified text.
              *
@@ -152374,14 +152204,14 @@ declare module 'gi://Gtk?version=3.0' {
              * @param boundary_type An {@link Atk.TextBoundary}
              * @returns a newly allocated string containing the text at `offset` bounded          by the specified `boundary_type`. Use `g_free()` to free the returned          string.
              */
-            get_text_at_offset(offset: number, boundary_type: Atk.TextBoundary | null): [string, number, number];
+            get_text_at_offset(offset: number, boundary_type: Atk.TextBoundary): [string, number, number];
             /**
              * Gets the specified text.
              * @param offset position
              * @param boundary_type An {@link Atk.TextBoundary}
              * @returns a newly allocated string containing the text before `offset` bounded          by the specified `boundary_type`. Use `g_free()` to free the returned          string.
              */
-            get_text_before_offset(offset: number, boundary_type: Atk.TextBoundary | null): [string, number, number];
+            get_text_before_offset(offset: number, boundary_type: Atk.TextBoundary): [string, number, number];
             /**
              * Removes the specified selection.
              * @param selection_num The selection number.  The selected regions are assigned numbers that correspond to how far the region is from the start of the text.  The selected region closest to the beginning of the text region is assigned the number 0, etc.  Note that adding, moving or deleting a selected region can change the numbering.
@@ -152395,7 +152225,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param type specify where the object should be made visible.
              * @returns whether scrolling was successful.
              */
-            scroll_substring_to(start_offset: number, end_offset: number, type: Atk.ScrollType | null): boolean;
+            scroll_substring_to(start_offset: number, end_offset: number, type: Atk.ScrollType): boolean;
             /**
              * Move the top-left of a substring of `text` to a given position of the screen
              * by scrolling all necessary parents.
@@ -152409,7 +152239,7 @@ declare module 'gi://Gtk?version=3.0' {
             scroll_substring_to_point(
                 start_offset: number,
                 end_offset: number,
-                coords: Atk.CoordType | null,
+                coords: Atk.CoordType,
                 x: number,
                 y: number,
             ): boolean;
@@ -152764,7 +152594,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -152805,7 +152635,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -153445,14 +153275,14 @@ declare module 'gi://Gtk?version=3.0' {
              * below the natural width.
              * @param policy the horizontal {@link Gtk.ScrollablePolicy}
              */
-            set_hscroll_policy(policy: ScrollablePolicy | null): void;
+            set_hscroll_policy(policy: ScrollablePolicy): void;
             /**
              * Sets the {@link Gtk.ScrollablePolicy} to determine whether
              * vertical scrolling should start below the minimum height or
              * below the natural height.
              * @param policy the vertical {@link Gtk.ScrollablePolicy}
              */
-            set_vscroll_policy(policy: ScrollablePolicy | null): void;
+            set_vscroll_policy(policy: ScrollablePolicy): void;
             /**
              * Returns the size of a non-scrolling border around the
              * outside of the scrollable. An example for this would
@@ -153506,7 +153336,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -153547,7 +153377,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -154866,7 +154696,7 @@ declare module 'gi://Gtk?version=3.0' {
              * Sets the value of the {@link Gtk.LevelBar.mode} property.
              * @param mode a {@link Gtk.LevelBarMode}
              */
-            set_mode(mode: LevelBarMode | null): void;
+            set_mode(mode: LevelBarMode): void;
             /**
              * Sets the value of the {@link Gtk.LevelBar.value} property.
              * @param value a value in the interval between     {@link Gtk.LevelBar.min_value} and {@link Gtk.LevelBar.max_value}
@@ -155074,7 +154904,7 @@ declare module 'gi://Gtk?version=3.0' {
              * Sets the orientation of the `orientable`.
              * @param orientation the orientable’s new orientation.
              */
-            set_orientation(orientation: Orientation | null): void;
+            set_orientation(orientation: Orientation): void;
             /**
              * Creates a binding between `source_property` on `source` and `target_property`
              * on `target`.
@@ -155119,7 +154949,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -155160,7 +154990,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -155609,7 +155439,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param coord_type specifies whether the coordinates are relative to the screen or to the components top level window
              * @returns `true` or `false` indicating whether the specified point is within the extent of the `component` or not
              */
-            contains(x: number, y: number, coord_type: Atk.CoordType | null): boolean;
+            contains(x: number, y: number, coord_type: Atk.CoordType): boolean;
             /**
              * Returns the alpha value (i.e. the opacity) for this
              * `component`, on a scale from 0 (fully transparent) to 1.0
@@ -155624,7 +155454,7 @@ declare module 'gi://Gtk?version=3.0' {
              * support), all of x, y, width, height are set to -1.
              * @param coord_type specifies whether the coordinates are relative to the screen or to the components top level window
              */
-            get_extents(coord_type: Atk.CoordType | null): [number, number, number, number];
+            get_extents(coord_type: Atk.CoordType): [number, number, number, number];
             /**
              * Gets the layer of the component.
              * @returns an {@link Atk.Layer} which is the layer of the component
@@ -155644,7 +155474,7 @@ declare module 'gi://Gtk?version=3.0' {
              * support), x and y are set to -1.
              * @param coord_type specifies whether the coordinates are relative to the screen or to the components top level window
              */
-            get_position(coord_type: Atk.CoordType | null): [number, number];
+            get_position(coord_type: Atk.CoordType): [number, number];
             /**
              * Gets the size of the `component` in terms of width and height.
              *
@@ -155665,7 +155495,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param coord_type specifies whether the coordinates are relative to the screen or to the components top level window
              * @returns a reference to the accessible child, if one exists
              */
-            ref_accessible_at_point(x: number, y: number, coord_type: Atk.CoordType | null): Atk.Object | null;
+            ref_accessible_at_point(x: number, y: number, coord_type: Atk.CoordType): Atk.Object | null;
             /**
              * Remove the handler specified by `handler_id` from the list of
              * functions to be executed when this object receives focus events
@@ -155682,7 +155512,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param type specify where the object should be made visible.
              * @returns whether scrolling was successful.
              */
-            scroll_to(type: Atk.ScrollType | null): boolean;
+            scroll_to(type: Atk.ScrollType): boolean;
             /**
              * Move the top-left of `component` to a given position of the screen by
              * scrolling all necessary parents.
@@ -155691,7 +155521,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param y y-position where to scroll to
              * @returns whether scrolling was successful.
              */
-            scroll_to_point(coords: Atk.CoordType | null, x: number, y: number): boolean;
+            scroll_to_point(coords: Atk.CoordType, x: number, y: number): boolean;
             /**
              * Sets the extents of `component`.
              * @param x x coordinate
@@ -155701,7 +155531,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param coord_type specifies whether the coordinates are relative to the screen or to the components top level window
              * @returns `true` or `false` whether the extents were set or not
              */
-            set_extents(x: number, y: number, width: number, height: number, coord_type: Atk.CoordType | null): boolean;
+            set_extents(x: number, y: number, width: number, height: number, coord_type: Atk.CoordType): boolean;
             /**
              * Sets the position of `component`.
              *
@@ -155712,7 +155542,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param coord_type specifies whether the coordinates are relative to the screen or to the component's top level window
              * @returns `true` or `false` whether or not the position was set or not
              */
-            set_position(x: number, y: number, coord_type: Atk.CoordType | null): boolean;
+            set_position(x: number, y: number, coord_type: Atk.CoordType): boolean;
             /**
              * Set the size of the `component` in terms of width and height.
              * @param width width to set for `component`
@@ -156035,7 +155865,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -156076,7 +155906,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -157441,7 +157271,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -157482,7 +157312,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -157873,8 +157703,8 @@ declare module 'gi://Gtk?version=3.0' {
                 accel_signal: string,
                 accel_group: AccelGroup,
                 accel_key: number,
-                accel_mods: Gdk.ModifierType | null,
-                accel_flags: AccelFlags | null,
+                accel_mods: Gdk.ModifierType,
+                accel_flags: AccelFlags,
             ): void;
             /**
              * Adds the device events in the bitfield `events` to the event mask for
@@ -157882,7 +157712,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param device a {@link Gdk.Device}
              * @param events an event mask, see {@link Gdk.EventMask}
              */
-            add_device_events(device: Gdk.Device, events: Gdk.EventMask | null): void;
+            add_device_events(device: Gdk.Device, events: Gdk.EventMask): void;
             /**
              * Adds the events in the bitfield `events` to the event mask for
              * `widget`. See `gtk_widget_set_events()` and the
@@ -157960,7 +157790,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param direction direction of focus movement
              * @returns `true` if focus ended up inside `widget`
              */
-            child_focus(direction: DirectionType | null): boolean;
+            child_focus(direction: DirectionType): boolean;
             /**
              * Emits a {@link Gtk.Widget.SignalSignatures.child_notify | Gtk.Widget::child-notify} signal for the
              * [child property][child-properties] `child_property`
@@ -157997,7 +157827,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param orientation expand direction
              * @returns whether widget tree rooted here should be expanded
              */
-            compute_expand(orientation: Orientation | null): boolean;
+            compute_expand(orientation: Orientation): boolean;
             /**
              * Creates a new {@link Pango.Context} with the appropriate font map,
              * font options, font description, and base direction for drawing
@@ -158084,7 +157914,7 @@ declare module 'gi://Gtk?version=3.0' {
              */
             drag_begin(
                 targets: TargetList,
-                actions: Gdk.DragAction | null,
+                actions: Gdk.DragAction,
                 button: number,
                 event?: Gdk.Event | null,
             ): Gdk.DragContext;
@@ -158124,7 +157954,7 @@ declare module 'gi://Gtk?version=3.0' {
              */
             drag_begin_with_coordinates(
                 targets: TargetList,
-                actions: Gdk.DragAction | null,
+                actions: Gdk.DragAction,
                 button: number,
                 event: Gdk.Event | null,
                 x: number,
@@ -158236,22 +158066,14 @@ declare module 'gi://Gtk?version=3.0' {
              * @param targets a pointer to an array of     `GtkTargetEntrys` indicating the drop types that this `widget` will     accept, or `null`. Later you can access the list with     `gtk_drag_dest_get_target_list()` and `gtk_drag_dest_find_target()`.
              * @param actions a bitmask of possible actions for a drop onto this `widget`.
              */
-            drag_dest_set(
-                flags: DestDefaults | null,
-                targets: TargetEntry[] | null,
-                actions: Gdk.DragAction | null,
-            ): void;
+            drag_dest_set(flags: DestDefaults, targets: TargetEntry[] | null, actions: Gdk.DragAction): void;
             /**
              * Sets this widget as a proxy for drops to another window.
              * @param proxy_window the window to which to forward drag events
              * @param protocol the drag protocol which the `proxy_window` accepts   (You can use `gdk_drag_get_protocol()` to determine this)
              * @param use_coordinates If `true`, send the same coordinates to the   destination, because it is an embedded   subwindow.
              */
-            drag_dest_set_proxy(
-                proxy_window: Gdk.Window,
-                protocol: Gdk.DragProtocol | null,
-                use_coordinates: boolean,
-            ): void;
+            drag_dest_set_proxy(proxy_window: Gdk.Window, protocol: Gdk.DragProtocol, use_coordinates: boolean): void;
             /**
              * Sets the target types that this widget can accept from drag-and-drop.
              * The widget must first be made into a drag destination with
@@ -158333,9 +158155,9 @@ declare module 'gi://Gtk?version=3.0' {
              * @param actions the bitmask of possible actions for a drag from this widget
              */
             drag_source_set(
-                start_button_mask: Gdk.ModifierType | null,
+                start_button_mask: Gdk.ModifierType,
                 targets: TargetEntry[] | null,
-                actions: Gdk.DragAction | null,
+                actions: Gdk.DragAction,
             ): void;
             /**
              * Sets the icon that will be used for drags from a particular source
@@ -158794,7 +158616,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param intent the use case for the modifier mask
              * @returns the modifier mask used for `intent`.
              */
-            get_modifier_mask(intent: Gdk.ModifierIntent | null): Gdk.ModifierType;
+            get_modifier_mask(intent: Gdk.ModifierIntent): Gdk.ModifierType;
             /**
              * Returns the current modifier style for the widget. (As set by
              * `gtk_widget_modify_style()`.) If no style has previously set, a new
@@ -159428,7 +159250,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param direction direction of focus movement
              * @returns `true` if stopping keyboard navigation is fine, `false`               if the emitting widget should try to handle the keyboard               navigation attempt in its parent container(s).
              */
-            keynav_failed(direction: DirectionType | null): boolean;
+            keynav_failed(direction: DirectionType): boolean;
             /**
              * Lists the closures used by `widget` for accelerator group connections
              * with `gtk_accel_group_connect_by_path()` or `gtk_accel_group_connect()`.
@@ -159489,7 +159311,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param state the state for which to set the base color
              * @param color the color to assign (does not need to     be allocated), or `null` to undo the effect of previous     calls to of `gtk_widget_modify_base()`.
              */
-            modify_base(state: StateType | null, color?: Gdk.Color | null): void;
+            modify_base(state: StateType, color?: Gdk.Color | null): void;
             /**
              * Sets the background color for a widget in a particular state.
              *
@@ -159508,7 +159330,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param state the state for which to set the background color
              * @param color the color to assign (does not need     to be allocated), or `null` to undo the effect of previous     calls to of `gtk_widget_modify_bg()`.
              */
-            modify_bg(state: StateType | null, color?: Gdk.Color | null): void;
+            modify_bg(state: StateType, color?: Gdk.Color | null): void;
             /**
              * Sets the cursor color to use in a widget, overriding the {@link Gtk.Widget}
              * cursor-color and secondary-cursor-color
@@ -159528,7 +159350,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param state the state for which to set the foreground color
              * @param color the color to assign (does not need to be allocated),     or `null` to undo the effect of previous calls to     of `gtk_widget_modify_fg()`.
              */
-            modify_fg(state: StateType | null, color?: Gdk.Color | null): void;
+            modify_fg(state: StateType, color?: Gdk.Color | null): void;
             /**
              * Sets the font to use for a widget.
              *
@@ -159570,7 +159392,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param state the state for which to set the text color
              * @param color the color to assign (does not need to     be allocated), or `null` to undo the effect of previous     calls to of `gtk_widget_modify_text()`.
              */
-            modify_text(state: StateType | null, color?: Gdk.Color | null): void;
+            modify_text(state: StateType, color?: Gdk.Color | null): void;
             /**
              * Sets the background color to use for a widget.
              *
@@ -159579,7 +159401,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param state the state for which to set the background color
              * @param color the color to assign, or `null` to undo the effect     of previous calls to `gtk_widget_override_background_color()`
              */
-            override_background_color(state: StateFlags | null, color?: Gdk.RGBA | null): void;
+            override_background_color(state: StateFlags, color?: Gdk.RGBA | null): void;
             /**
              * Sets the color to use for a widget.
              *
@@ -159609,7 +159431,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param state the state for which to set the color
              * @param color the color to assign, or `null` to undo the effect     of previous calls to `gtk_widget_override_color()`
              */
-            override_color(state: StateFlags | null, color?: Gdk.RGBA | null): void;
+            override_color(state: StateFlags, color?: Gdk.RGBA | null): void;
             /**
              * Sets the cursor color to use in a widget, overriding the
              * cursor-color and secondary-cursor-color
@@ -159776,11 +159598,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param accel_mods modifier key combination of the accelerator
              * @returns whether an accelerator was installed and could be removed
              */
-            remove_accelerator(
-                accel_group: AccelGroup,
-                accel_key: number,
-                accel_mods: Gdk.ModifierType | null,
-            ): boolean;
+            remove_accelerator(accel_group: AccelGroup, accel_key: number, accel_mods: Gdk.ModifierType): boolean;
             /**
              * Removes a widget from the list of mnemonic labels for
              * this widget. (See `gtk_widget_list_mnemonic_labels()`). The widget
@@ -160029,7 +159847,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param device a {@link Gdk.Device}
              * @param events event mask
              */
-            set_device_events(device: Gdk.Device, events: Gdk.EventMask | null): void;
+            set_device_events(device: Gdk.Device, events: Gdk.EventMask): void;
             /**
              * Sets the reading direction on a particular widget. This direction
              * controls the primary direction for widgets containing text,
@@ -160045,7 +159863,7 @@ declare module 'gi://Gtk?version=3.0' {
              * set by `gtk_widget_set_default_direction()` will be used.
              * @param dir the new direction
              */
-            set_direction(dir: TextDirection | null): void;
+            set_direction(dir: TextDirection): void;
             /**
              * Widgets are double buffered by default; you can use this function
              * to turn off the buffering. “Double buffered” simply means that
@@ -160115,7 +159933,7 @@ declare module 'gi://Gtk?version=3.0' {
              * See the {@link Gtk.Widget.halign} property.
              * @param align the horizontal alignment
              */
-            set_halign(align: Align | null): void;
+            set_halign(align: Align): void;
             /**
              * Sets the has-tooltip property on `widget` to `has_tooltip`.  See
              * {@link Gtk.Widget.has_tooltip} for more information.
@@ -160378,7 +160196,7 @@ declare module 'gi://Gtk?version=3.0' {
              * the state using wrapper functions such as `gtk_widget_set_sensitive()`.
              * @param state new state for `widget`
              */
-            set_state(state: StateType | null): void;
+            set_state(state: StateType): void;
             /**
              * This function is for use in widget implementations. Turns on flag
              * values in the current widget state (insensitive, prelighted, etc.).
@@ -160396,7 +160214,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param flags State flags to turn on
              * @param clear Whether to clear state before turning on `flags`
              */
-            set_state_flags(flags: StateFlags | null, clear: boolean): void;
+            set_state_flags(flags: StateFlags, clear: boolean): void;
             /**
              * Used to set the {@link Gtk.Style} for a widget (`widget`->style). Since
              * GTK 3, this function does nothing, the passed in style is ignored.
@@ -160446,7 +160264,7 @@ declare module 'gi://Gtk?version=3.0' {
              * See the {@link Gtk.Widget.valign} property.
              * @param align the vertical alignment
              */
-            set_valign(align: Align | null): void;
+            set_valign(align: Align): void;
             /**
              * Sets whether the widget would like any available extra vertical
              * space.
@@ -160657,7 +160475,7 @@ declare module 'gi://Gtk?version=3.0' {
              * See `gtk_widget_set_state_flags()`.
              * @param flags State flags to turn off
              */
-            unset_state_flags(flags: StateFlags | null): void;
+            unset_state_flags(flags: StateFlags): void;
             /**
              * @param baseline
              * @virtual
@@ -161735,7 +161553,7 @@ declare module 'gi://Gtk?version=3.0' {
              * to -1.
              * @param coord_type specifies whether the coordinates are relative to the screen or to the components top level window
              */
-            get_image_position(coord_type: Atk.CoordType | null): [number, number];
+            get_image_position(coord_type: Atk.CoordType): [number, number];
             /**
              * Get the width and height in pixels for the specified image.
              * The values of `width` and `height` are returned as -1 if the
@@ -161831,7 +161649,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -161872,7 +161690,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -162710,7 +162528,7 @@ declare module 'gi://Gtk?version=3.0' {
              * See {@link Gtk.SelectionMode} for details.
              * @param mode The {@link Gtk.SelectionMode}
              */
-            set_selection_mode(mode: SelectionMode | null): void;
+            set_selection_mode(mode: SelectionMode): void;
             /**
              * By setting a sort function on the `box` one can dynamically reorder the rows
              * of the list, based on the contents of the rows.
@@ -162777,7 +162595,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -162818,7 +162636,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -163417,7 +163235,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -163458,7 +163276,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -164685,7 +164503,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -164726,7 +164544,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -165117,8 +164935,8 @@ declare module 'gi://Gtk?version=3.0' {
                 accel_signal: string,
                 accel_group: AccelGroup,
                 accel_key: number,
-                accel_mods: Gdk.ModifierType | null,
-                accel_flags: AccelFlags | null,
+                accel_mods: Gdk.ModifierType,
+                accel_flags: AccelFlags,
             ): void;
             /**
              * Adds the device events in the bitfield `events` to the event mask for
@@ -165126,7 +164944,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param device a {@link Gdk.Device}
              * @param events an event mask, see {@link Gdk.EventMask}
              */
-            add_device_events(device: Gdk.Device, events: Gdk.EventMask | null): void;
+            add_device_events(device: Gdk.Device, events: Gdk.EventMask): void;
             /**
              * Adds the events in the bitfield `events` to the event mask for
              * `widget`. See `gtk_widget_set_events()` and the
@@ -165204,7 +165022,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param direction direction of focus movement
              * @returns `true` if focus ended up inside `widget`
              */
-            child_focus(direction: DirectionType | null): boolean;
+            child_focus(direction: DirectionType): boolean;
             /**
              * Emits a {@link Gtk.Widget.SignalSignatures.child_notify | Gtk.Widget::child-notify} signal for the
              * [child property][child-properties] `child_property`
@@ -165241,7 +165059,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param orientation expand direction
              * @returns whether widget tree rooted here should be expanded
              */
-            compute_expand(orientation: Orientation | null): boolean;
+            compute_expand(orientation: Orientation): boolean;
             /**
              * Creates a new {@link Pango.Context} with the appropriate font map,
              * font options, font description, and base direction for drawing
@@ -165328,7 +165146,7 @@ declare module 'gi://Gtk?version=3.0' {
              */
             drag_begin(
                 targets: TargetList,
-                actions: Gdk.DragAction | null,
+                actions: Gdk.DragAction,
                 button: number,
                 event?: Gdk.Event | null,
             ): Gdk.DragContext;
@@ -165368,7 +165186,7 @@ declare module 'gi://Gtk?version=3.0' {
              */
             drag_begin_with_coordinates(
                 targets: TargetList,
-                actions: Gdk.DragAction | null,
+                actions: Gdk.DragAction,
                 button: number,
                 event: Gdk.Event | null,
                 x: number,
@@ -165480,22 +165298,14 @@ declare module 'gi://Gtk?version=3.0' {
              * @param targets a pointer to an array of     `GtkTargetEntrys` indicating the drop types that this `widget` will     accept, or `null`. Later you can access the list with     `gtk_drag_dest_get_target_list()` and `gtk_drag_dest_find_target()`.
              * @param actions a bitmask of possible actions for a drop onto this `widget`.
              */
-            drag_dest_set(
-                flags: DestDefaults | null,
-                targets: TargetEntry[] | null,
-                actions: Gdk.DragAction | null,
-            ): void;
+            drag_dest_set(flags: DestDefaults, targets: TargetEntry[] | null, actions: Gdk.DragAction): void;
             /**
              * Sets this widget as a proxy for drops to another window.
              * @param proxy_window the window to which to forward drag events
              * @param protocol the drag protocol which the `proxy_window` accepts   (You can use `gdk_drag_get_protocol()` to determine this)
              * @param use_coordinates If `true`, send the same coordinates to the   destination, because it is an embedded   subwindow.
              */
-            drag_dest_set_proxy(
-                proxy_window: Gdk.Window,
-                protocol: Gdk.DragProtocol | null,
-                use_coordinates: boolean,
-            ): void;
+            drag_dest_set_proxy(proxy_window: Gdk.Window, protocol: Gdk.DragProtocol, use_coordinates: boolean): void;
             /**
              * Sets the target types that this widget can accept from drag-and-drop.
              * The widget must first be made into a drag destination with
@@ -165577,9 +165387,9 @@ declare module 'gi://Gtk?version=3.0' {
              * @param actions the bitmask of possible actions for a drag from this widget
              */
             drag_source_set(
-                start_button_mask: Gdk.ModifierType | null,
+                start_button_mask: Gdk.ModifierType,
                 targets: TargetEntry[] | null,
-                actions: Gdk.DragAction | null,
+                actions: Gdk.DragAction,
             ): void;
             /**
              * Sets the icon that will be used for drags from a particular source
@@ -166038,7 +165848,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param intent the use case for the modifier mask
              * @returns the modifier mask used for `intent`.
              */
-            get_modifier_mask(intent: Gdk.ModifierIntent | null): Gdk.ModifierType;
+            get_modifier_mask(intent: Gdk.ModifierIntent): Gdk.ModifierType;
             /**
              * Returns the current modifier style for the widget. (As set by
              * `gtk_widget_modify_style()`.) If no style has previously set, a new
@@ -166672,7 +166482,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param direction direction of focus movement
              * @returns `true` if stopping keyboard navigation is fine, `false`               if the emitting widget should try to handle the keyboard               navigation attempt in its parent container(s).
              */
-            keynav_failed(direction: DirectionType | null): boolean;
+            keynav_failed(direction: DirectionType): boolean;
             /**
              * Lists the closures used by `widget` for accelerator group connections
              * with `gtk_accel_group_connect_by_path()` or `gtk_accel_group_connect()`.
@@ -166733,7 +166543,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param state the state for which to set the base color
              * @param color the color to assign (does not need to     be allocated), or `null` to undo the effect of previous     calls to of `gtk_widget_modify_base()`.
              */
-            modify_base(state: StateType | null, color?: Gdk.Color | null): void;
+            modify_base(state: StateType, color?: Gdk.Color | null): void;
             /**
              * Sets the background color for a widget in a particular state.
              *
@@ -166752,7 +166562,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param state the state for which to set the background color
              * @param color the color to assign (does not need     to be allocated), or `null` to undo the effect of previous     calls to of `gtk_widget_modify_bg()`.
              */
-            modify_bg(state: StateType | null, color?: Gdk.Color | null): void;
+            modify_bg(state: StateType, color?: Gdk.Color | null): void;
             /**
              * Sets the cursor color to use in a widget, overriding the {@link Gtk.Widget}
              * cursor-color and secondary-cursor-color
@@ -166772,7 +166582,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param state the state for which to set the foreground color
              * @param color the color to assign (does not need to be allocated),     or `null` to undo the effect of previous calls to     of `gtk_widget_modify_fg()`.
              */
-            modify_fg(state: StateType | null, color?: Gdk.Color | null): void;
+            modify_fg(state: StateType, color?: Gdk.Color | null): void;
             /**
              * Sets the font to use for a widget.
              *
@@ -166814,7 +166624,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param state the state for which to set the text color
              * @param color the color to assign (does not need to     be allocated), or `null` to undo the effect of previous     calls to of `gtk_widget_modify_text()`.
              */
-            modify_text(state: StateType | null, color?: Gdk.Color | null): void;
+            modify_text(state: StateType, color?: Gdk.Color | null): void;
             /**
              * Sets the background color to use for a widget.
              *
@@ -166823,7 +166633,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param state the state for which to set the background color
              * @param color the color to assign, or `null` to undo the effect     of previous calls to `gtk_widget_override_background_color()`
              */
-            override_background_color(state: StateFlags | null, color?: Gdk.RGBA | null): void;
+            override_background_color(state: StateFlags, color?: Gdk.RGBA | null): void;
             /**
              * Sets the color to use for a widget.
              *
@@ -166853,7 +166663,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param state the state for which to set the color
              * @param color the color to assign, or `null` to undo the effect     of previous calls to `gtk_widget_override_color()`
              */
-            override_color(state: StateFlags | null, color?: Gdk.RGBA | null): void;
+            override_color(state: StateFlags, color?: Gdk.RGBA | null): void;
             /**
              * Sets the cursor color to use in a widget, overriding the
              * cursor-color and secondary-cursor-color
@@ -167020,11 +166830,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param accel_mods modifier key combination of the accelerator
              * @returns whether an accelerator was installed and could be removed
              */
-            remove_accelerator(
-                accel_group: AccelGroup,
-                accel_key: number,
-                accel_mods: Gdk.ModifierType | null,
-            ): boolean;
+            remove_accelerator(accel_group: AccelGroup, accel_key: number, accel_mods: Gdk.ModifierType): boolean;
             /**
              * Removes a widget from the list of mnemonic labels for
              * this widget. (See `gtk_widget_list_mnemonic_labels()`). The widget
@@ -167273,7 +167079,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param device a {@link Gdk.Device}
              * @param events event mask
              */
-            set_device_events(device: Gdk.Device, events: Gdk.EventMask | null): void;
+            set_device_events(device: Gdk.Device, events: Gdk.EventMask): void;
             /**
              * Sets the reading direction on a particular widget. This direction
              * controls the primary direction for widgets containing text,
@@ -167289,7 +167095,7 @@ declare module 'gi://Gtk?version=3.0' {
              * set by `gtk_widget_set_default_direction()` will be used.
              * @param dir the new direction
              */
-            set_direction(dir: TextDirection | null): void;
+            set_direction(dir: TextDirection): void;
             /**
              * Widgets are double buffered by default; you can use this function
              * to turn off the buffering. “Double buffered” simply means that
@@ -167359,7 +167165,7 @@ declare module 'gi://Gtk?version=3.0' {
              * See the {@link Gtk.Widget.halign} property.
              * @param align the horizontal alignment
              */
-            set_halign(align: Align | null): void;
+            set_halign(align: Align): void;
             /**
              * Sets the has-tooltip property on `widget` to `has_tooltip`.  See
              * {@link Gtk.Widget.has_tooltip} for more information.
@@ -167622,7 +167428,7 @@ declare module 'gi://Gtk?version=3.0' {
              * the state using wrapper functions such as `gtk_widget_set_sensitive()`.
              * @param state new state for `widget`
              */
-            set_state(state: StateType | null): void;
+            set_state(state: StateType): void;
             /**
              * This function is for use in widget implementations. Turns on flag
              * values in the current widget state (insensitive, prelighted, etc.).
@@ -167640,7 +167446,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param flags State flags to turn on
              * @param clear Whether to clear state before turning on `flags`
              */
-            set_state_flags(flags: StateFlags | null, clear: boolean): void;
+            set_state_flags(flags: StateFlags, clear: boolean): void;
             /**
              * Used to set the {@link Gtk.Style} for a widget (`widget`->style). Since
              * GTK 3, this function does nothing, the passed in style is ignored.
@@ -167690,7 +167496,7 @@ declare module 'gi://Gtk?version=3.0' {
              * See the {@link Gtk.Widget.valign} property.
              * @param align the vertical alignment
              */
-            set_valign(align: Align | null): void;
+            set_valign(align: Align): void;
             /**
              * Sets whether the widget would like any available extra vertical
              * space.
@@ -167901,7 +167707,7 @@ declare module 'gi://Gtk?version=3.0' {
              * See `gtk_widget_set_state_flags()`.
              * @param flags State flags to turn off
              */
-            unset_state_flags(flags: StateFlags | null): void;
+            unset_state_flags(flags: StateFlags): void;
             /**
              * @param baseline
              * @virtual
@@ -168797,7 +168603,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -168838,7 +168644,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -170290,7 +170096,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param sort_column_id the sort column id to set
              * @param order The sort order of the column
              */
-            set_sort_column_id(sort_column_id: number, order: SortType | null): void;
+            set_sort_column_id(sort_column_id: number, order: SortType): void;
             /**
              * Sets the comparison function used when sorting to be `sort_func`. If the
              * current sort column id of `sortable` is the same as `sort_column_id`, then
@@ -170416,7 +170222,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -170457,7 +170263,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -171806,7 +171612,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -171847,7 +171653,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -172238,8 +172044,8 @@ declare module 'gi://Gtk?version=3.0' {
                 accel_signal: string,
                 accel_group: AccelGroup,
                 accel_key: number,
-                accel_mods: Gdk.ModifierType | null,
-                accel_flags: AccelFlags | null,
+                accel_mods: Gdk.ModifierType,
+                accel_flags: AccelFlags,
             ): void;
             /**
              * Adds the device events in the bitfield `events` to the event mask for
@@ -172247,7 +172053,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param device a {@link Gdk.Device}
              * @param events an event mask, see {@link Gdk.EventMask}
              */
-            add_device_events(device: Gdk.Device, events: Gdk.EventMask | null): void;
+            add_device_events(device: Gdk.Device, events: Gdk.EventMask): void;
             /**
              * Adds the events in the bitfield `events` to the event mask for
              * `widget`. See `gtk_widget_set_events()` and the
@@ -172325,7 +172131,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param direction direction of focus movement
              * @returns `true` if focus ended up inside `widget`
              */
-            child_focus(direction: DirectionType | null): boolean;
+            child_focus(direction: DirectionType): boolean;
             /**
              * Emits a {@link Gtk.Widget.SignalSignatures.child_notify | Gtk.Widget::child-notify} signal for the
              * [child property][child-properties] `child_property`
@@ -172362,7 +172168,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param orientation expand direction
              * @returns whether widget tree rooted here should be expanded
              */
-            compute_expand(orientation: Orientation | null): boolean;
+            compute_expand(orientation: Orientation): boolean;
             /**
              * Creates a new {@link Pango.Context} with the appropriate font map,
              * font options, font description, and base direction for drawing
@@ -172449,7 +172255,7 @@ declare module 'gi://Gtk?version=3.0' {
              */
             drag_begin(
                 targets: TargetList,
-                actions: Gdk.DragAction | null,
+                actions: Gdk.DragAction,
                 button: number,
                 event?: Gdk.Event | null,
             ): Gdk.DragContext;
@@ -172489,7 +172295,7 @@ declare module 'gi://Gtk?version=3.0' {
              */
             drag_begin_with_coordinates(
                 targets: TargetList,
-                actions: Gdk.DragAction | null,
+                actions: Gdk.DragAction,
                 button: number,
                 event: Gdk.Event | null,
                 x: number,
@@ -172601,22 +172407,14 @@ declare module 'gi://Gtk?version=3.0' {
              * @param targets a pointer to an array of     `GtkTargetEntrys` indicating the drop types that this `widget` will     accept, or `null`. Later you can access the list with     `gtk_drag_dest_get_target_list()` and `gtk_drag_dest_find_target()`.
              * @param actions a bitmask of possible actions for a drop onto this `widget`.
              */
-            drag_dest_set(
-                flags: DestDefaults | null,
-                targets: TargetEntry[] | null,
-                actions: Gdk.DragAction | null,
-            ): void;
+            drag_dest_set(flags: DestDefaults, targets: TargetEntry[] | null, actions: Gdk.DragAction): void;
             /**
              * Sets this widget as a proxy for drops to another window.
              * @param proxy_window the window to which to forward drag events
              * @param protocol the drag protocol which the `proxy_window` accepts   (You can use `gdk_drag_get_protocol()` to determine this)
              * @param use_coordinates If `true`, send the same coordinates to the   destination, because it is an embedded   subwindow.
              */
-            drag_dest_set_proxy(
-                proxy_window: Gdk.Window,
-                protocol: Gdk.DragProtocol | null,
-                use_coordinates: boolean,
-            ): void;
+            drag_dest_set_proxy(proxy_window: Gdk.Window, protocol: Gdk.DragProtocol, use_coordinates: boolean): void;
             /**
              * Sets the target types that this widget can accept from drag-and-drop.
              * The widget must first be made into a drag destination with
@@ -172698,9 +172496,9 @@ declare module 'gi://Gtk?version=3.0' {
              * @param actions the bitmask of possible actions for a drag from this widget
              */
             drag_source_set(
-                start_button_mask: Gdk.ModifierType | null,
+                start_button_mask: Gdk.ModifierType,
                 targets: TargetEntry[] | null,
-                actions: Gdk.DragAction | null,
+                actions: Gdk.DragAction,
             ): void;
             /**
              * Sets the icon that will be used for drags from a particular source
@@ -173159,7 +172957,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param intent the use case for the modifier mask
              * @returns the modifier mask used for `intent`.
              */
-            get_modifier_mask(intent: Gdk.ModifierIntent | null): Gdk.ModifierType;
+            get_modifier_mask(intent: Gdk.ModifierIntent): Gdk.ModifierType;
             /**
              * Returns the current modifier style for the widget. (As set by
              * `gtk_widget_modify_style()`.) If no style has previously set, a new
@@ -173793,7 +173591,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param direction direction of focus movement
              * @returns `true` if stopping keyboard navigation is fine, `false`               if the emitting widget should try to handle the keyboard               navigation attempt in its parent container(s).
              */
-            keynav_failed(direction: DirectionType | null): boolean;
+            keynav_failed(direction: DirectionType): boolean;
             /**
              * Lists the closures used by `widget` for accelerator group connections
              * with `gtk_accel_group_connect_by_path()` or `gtk_accel_group_connect()`.
@@ -173854,7 +173652,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param state the state for which to set the base color
              * @param color the color to assign (does not need to     be allocated), or `null` to undo the effect of previous     calls to of `gtk_widget_modify_base()`.
              */
-            modify_base(state: StateType | null, color?: Gdk.Color | null): void;
+            modify_base(state: StateType, color?: Gdk.Color | null): void;
             /**
              * Sets the background color for a widget in a particular state.
              *
@@ -173873,7 +173671,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param state the state for which to set the background color
              * @param color the color to assign (does not need     to be allocated), or `null` to undo the effect of previous     calls to of `gtk_widget_modify_bg()`.
              */
-            modify_bg(state: StateType | null, color?: Gdk.Color | null): void;
+            modify_bg(state: StateType, color?: Gdk.Color | null): void;
             /**
              * Sets the cursor color to use in a widget, overriding the {@link Gtk.Widget}
              * cursor-color and secondary-cursor-color
@@ -173893,7 +173691,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param state the state for which to set the foreground color
              * @param color the color to assign (does not need to be allocated),     or `null` to undo the effect of previous calls to     of `gtk_widget_modify_fg()`.
              */
-            modify_fg(state: StateType | null, color?: Gdk.Color | null): void;
+            modify_fg(state: StateType, color?: Gdk.Color | null): void;
             /**
              * Sets the font to use for a widget.
              *
@@ -173935,7 +173733,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param state the state for which to set the text color
              * @param color the color to assign (does not need to     be allocated), or `null` to undo the effect of previous     calls to of `gtk_widget_modify_text()`.
              */
-            modify_text(state: StateType | null, color?: Gdk.Color | null): void;
+            modify_text(state: StateType, color?: Gdk.Color | null): void;
             /**
              * Sets the background color to use for a widget.
              *
@@ -173944,7 +173742,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param state the state for which to set the background color
              * @param color the color to assign, or `null` to undo the effect     of previous calls to `gtk_widget_override_background_color()`
              */
-            override_background_color(state: StateFlags | null, color?: Gdk.RGBA | null): void;
+            override_background_color(state: StateFlags, color?: Gdk.RGBA | null): void;
             /**
              * Sets the color to use for a widget.
              *
@@ -173974,7 +173772,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param state the state for which to set the color
              * @param color the color to assign, or `null` to undo the effect     of previous calls to `gtk_widget_override_color()`
              */
-            override_color(state: StateFlags | null, color?: Gdk.RGBA | null): void;
+            override_color(state: StateFlags, color?: Gdk.RGBA | null): void;
             /**
              * Sets the cursor color to use in a widget, overriding the
              * cursor-color and secondary-cursor-color
@@ -174141,11 +173939,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param accel_mods modifier key combination of the accelerator
              * @returns whether an accelerator was installed and could be removed
              */
-            remove_accelerator(
-                accel_group: AccelGroup,
-                accel_key: number,
-                accel_mods: Gdk.ModifierType | null,
-            ): boolean;
+            remove_accelerator(accel_group: AccelGroup, accel_key: number, accel_mods: Gdk.ModifierType): boolean;
             /**
              * Removes a widget from the list of mnemonic labels for
              * this widget. (See `gtk_widget_list_mnemonic_labels()`). The widget
@@ -174394,7 +174188,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param device a {@link Gdk.Device}
              * @param events event mask
              */
-            set_device_events(device: Gdk.Device, events: Gdk.EventMask | null): void;
+            set_device_events(device: Gdk.Device, events: Gdk.EventMask): void;
             /**
              * Sets the reading direction on a particular widget. This direction
              * controls the primary direction for widgets containing text,
@@ -174410,7 +174204,7 @@ declare module 'gi://Gtk?version=3.0' {
              * set by `gtk_widget_set_default_direction()` will be used.
              * @param dir the new direction
              */
-            set_direction(dir: TextDirection | null): void;
+            set_direction(dir: TextDirection): void;
             /**
              * Widgets are double buffered by default; you can use this function
              * to turn off the buffering. “Double buffered” simply means that
@@ -174480,7 +174274,7 @@ declare module 'gi://Gtk?version=3.0' {
              * See the {@link Gtk.Widget.halign} property.
              * @param align the horizontal alignment
              */
-            set_halign(align: Align | null): void;
+            set_halign(align: Align): void;
             /**
              * Sets the has-tooltip property on `widget` to `has_tooltip`.  See
              * {@link Gtk.Widget.has_tooltip} for more information.
@@ -174743,7 +174537,7 @@ declare module 'gi://Gtk?version=3.0' {
              * the state using wrapper functions such as `gtk_widget_set_sensitive()`.
              * @param state new state for `widget`
              */
-            set_state(state: StateType | null): void;
+            set_state(state: StateType): void;
             /**
              * This function is for use in widget implementations. Turns on flag
              * values in the current widget state (insensitive, prelighted, etc.).
@@ -174761,7 +174555,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param flags State flags to turn on
              * @param clear Whether to clear state before turning on `flags`
              */
-            set_state_flags(flags: StateFlags | null, clear: boolean): void;
+            set_state_flags(flags: StateFlags, clear: boolean): void;
             /**
              * Used to set the {@link Gtk.Style} for a widget (`widget`->style). Since
              * GTK 3, this function does nothing, the passed in style is ignored.
@@ -174811,7 +174605,7 @@ declare module 'gi://Gtk?version=3.0' {
              * See the {@link Gtk.Widget.valign} property.
              * @param align the vertical alignment
              */
-            set_valign(align: Align | null): void;
+            set_valign(align: Align): void;
             /**
              * Sets whether the widget would like any available extra vertical
              * space.
@@ -175022,7 +174816,7 @@ declare module 'gi://Gtk?version=3.0' {
              * See `gtk_widget_set_state_flags()`.
              * @param flags State flags to turn off
              */
-            unset_state_flags(flags: StateFlags | null): void;
+            unset_state_flags(flags: StateFlags): void;
             /**
              * @param baseline
              * @virtual
@@ -176086,7 +175880,7 @@ declare module 'gi://Gtk?version=3.0' {
              * to -1.
              * @param coord_type specifies whether the coordinates are relative to the screen or to the components top level window
              */
-            get_image_position(coord_type: Atk.CoordType | null): [number, number];
+            get_image_position(coord_type: Atk.CoordType): [number, number];
             /**
              * Get the width and height in pixels for the specified image.
              * The values of `width` and `height` are returned as -1 if the
@@ -176182,7 +175976,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -176223,7 +176017,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -177232,8 +177026,8 @@ declare module 'gi://Gtk?version=3.0' {
             popup_at_rect(
                 rect_window: Gdk.Window,
                 rect: Gdk.Rectangle,
-                rect_anchor: Gdk.Gravity | null,
-                menu_anchor: Gdk.Gravity | null,
+                rect_anchor: Gdk.Gravity,
+                menu_anchor: Gdk.Gravity,
                 trigger_event?: Gdk.Event | null,
             ): void;
             /**
@@ -177264,8 +177058,8 @@ declare module 'gi://Gtk?version=3.0' {
              */
             popup_at_widget(
                 widget: Widget,
-                widget_anchor: Gdk.Gravity | null,
-                menu_anchor: Gdk.Gravity | null,
+                widget_anchor: Gdk.Gravity,
+                menu_anchor: Gdk.Gravity,
                 trigger_event?: Gdk.Event | null,
             ): void;
             /**
@@ -177447,7 +177241,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -177488,7 +177282,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -178085,7 +177879,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -178126,7 +177920,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -178659,12 +178453,12 @@ declare module 'gi://Gtk?version=3.0' {
              * Sets how widgets should be packed inside the children of a menubar.
              * @param child_pack_dir a new {@link Gtk.PackDirection}
              */
-            set_child_pack_direction(child_pack_dir: PackDirection | null): void;
+            set_child_pack_direction(child_pack_dir: PackDirection): void;
             /**
              * Sets how items should be packed inside a menubar.
              * @param pack_dir a new {@link Gtk.PackDirection}
              */
-            set_pack_direction(pack_dir: PackDirection | null): void;
+            set_pack_direction(pack_dir: PackDirection): void;
             /**
              * Creates a binding between `source_property` on `source` and `target_property`
              * on `target`.
@@ -178709,7 +178503,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -178750,7 +178544,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -179465,7 +179259,7 @@ declare module 'gi://Gtk?version=3.0' {
              * as if you passed {@link Gtk.ArrowType.DOWN} (although you won’t see any arrows).
              * @param direction a {@link Gtk.ArrowType}
              */
-            set_direction(direction: ArrowType | null): void;
+            set_direction(direction: ArrowType): void;
             /**
              * @param args
              */
@@ -180029,7 +179823,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -180070,7 +179864,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -180461,8 +180255,8 @@ declare module 'gi://Gtk?version=3.0' {
                 accel_signal: string,
                 accel_group: AccelGroup,
                 accel_key: number,
-                accel_mods: Gdk.ModifierType | null,
-                accel_flags: AccelFlags | null,
+                accel_mods: Gdk.ModifierType,
+                accel_flags: AccelFlags,
             ): void;
             /**
              * Adds the device events in the bitfield `events` to the event mask for
@@ -180470,7 +180264,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param device a {@link Gdk.Device}
              * @param events an event mask, see {@link Gdk.EventMask}
              */
-            add_device_events(device: Gdk.Device, events: Gdk.EventMask | null): void;
+            add_device_events(device: Gdk.Device, events: Gdk.EventMask): void;
             /**
              * Adds the events in the bitfield `events` to the event mask for
              * `widget`. See `gtk_widget_set_events()` and the
@@ -180548,7 +180342,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param direction direction of focus movement
              * @returns `true` if focus ended up inside `widget`
              */
-            child_focus(direction: DirectionType | null): boolean;
+            child_focus(direction: DirectionType): boolean;
             /**
              * Emits a {@link Gtk.Widget.SignalSignatures.child_notify | Gtk.Widget::child-notify} signal for the
              * [child property][child-properties] `child_property`
@@ -180585,7 +180379,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param orientation expand direction
              * @returns whether widget tree rooted here should be expanded
              */
-            compute_expand(orientation: Orientation | null): boolean;
+            compute_expand(orientation: Orientation): boolean;
             /**
              * Creates a new {@link Pango.Context} with the appropriate font map,
              * font options, font description, and base direction for drawing
@@ -180672,7 +180466,7 @@ declare module 'gi://Gtk?version=3.0' {
              */
             drag_begin(
                 targets: TargetList,
-                actions: Gdk.DragAction | null,
+                actions: Gdk.DragAction,
                 button: number,
                 event?: Gdk.Event | null,
             ): Gdk.DragContext;
@@ -180712,7 +180506,7 @@ declare module 'gi://Gtk?version=3.0' {
              */
             drag_begin_with_coordinates(
                 targets: TargetList,
-                actions: Gdk.DragAction | null,
+                actions: Gdk.DragAction,
                 button: number,
                 event: Gdk.Event | null,
                 x: number,
@@ -180824,22 +180618,14 @@ declare module 'gi://Gtk?version=3.0' {
              * @param targets a pointer to an array of     `GtkTargetEntrys` indicating the drop types that this `widget` will     accept, or `null`. Later you can access the list with     `gtk_drag_dest_get_target_list()` and `gtk_drag_dest_find_target()`.
              * @param actions a bitmask of possible actions for a drop onto this `widget`.
              */
-            drag_dest_set(
-                flags: DestDefaults | null,
-                targets: TargetEntry[] | null,
-                actions: Gdk.DragAction | null,
-            ): void;
+            drag_dest_set(flags: DestDefaults, targets: TargetEntry[] | null, actions: Gdk.DragAction): void;
             /**
              * Sets this widget as a proxy for drops to another window.
              * @param proxy_window the window to which to forward drag events
              * @param protocol the drag protocol which the `proxy_window` accepts   (You can use `gdk_drag_get_protocol()` to determine this)
              * @param use_coordinates If `true`, send the same coordinates to the   destination, because it is an embedded   subwindow.
              */
-            drag_dest_set_proxy(
-                proxy_window: Gdk.Window,
-                protocol: Gdk.DragProtocol | null,
-                use_coordinates: boolean,
-            ): void;
+            drag_dest_set_proxy(proxy_window: Gdk.Window, protocol: Gdk.DragProtocol, use_coordinates: boolean): void;
             /**
              * Sets the target types that this widget can accept from drag-and-drop.
              * The widget must first be made into a drag destination with
@@ -180921,9 +180707,9 @@ declare module 'gi://Gtk?version=3.0' {
              * @param actions the bitmask of possible actions for a drag from this widget
              */
             drag_source_set(
-                start_button_mask: Gdk.ModifierType | null,
+                start_button_mask: Gdk.ModifierType,
                 targets: TargetEntry[] | null,
-                actions: Gdk.DragAction | null,
+                actions: Gdk.DragAction,
             ): void;
             /**
              * Sets the icon that will be used for drags from a particular source
@@ -181376,7 +181162,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param intent the use case for the modifier mask
              * @returns the modifier mask used for `intent`.
              */
-            get_modifier_mask(intent: Gdk.ModifierIntent | null): Gdk.ModifierType;
+            get_modifier_mask(intent: Gdk.ModifierIntent): Gdk.ModifierType;
             /**
              * Returns the current modifier style for the widget. (As set by
              * `gtk_widget_modify_style()`.) If no style has previously set, a new
@@ -182010,7 +181796,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param direction direction of focus movement
              * @returns `true` if stopping keyboard navigation is fine, `false`               if the emitting widget should try to handle the keyboard               navigation attempt in its parent container(s).
              */
-            keynav_failed(direction: DirectionType | null): boolean;
+            keynav_failed(direction: DirectionType): boolean;
             /**
              * Lists the closures used by `widget` for accelerator group connections
              * with `gtk_accel_group_connect_by_path()` or `gtk_accel_group_connect()`.
@@ -182071,7 +181857,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param state the state for which to set the base color
              * @param color the color to assign (does not need to     be allocated), or `null` to undo the effect of previous     calls to of `gtk_widget_modify_base()`.
              */
-            modify_base(state: StateType | null, color?: Gdk.Color | null): void;
+            modify_base(state: StateType, color?: Gdk.Color | null): void;
             /**
              * Sets the background color for a widget in a particular state.
              *
@@ -182090,7 +181876,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param state the state for which to set the background color
              * @param color the color to assign (does not need     to be allocated), or `null` to undo the effect of previous     calls to of `gtk_widget_modify_bg()`.
              */
-            modify_bg(state: StateType | null, color?: Gdk.Color | null): void;
+            modify_bg(state: StateType, color?: Gdk.Color | null): void;
             /**
              * Sets the cursor color to use in a widget, overriding the {@link Gtk.Widget}
              * cursor-color and secondary-cursor-color
@@ -182110,7 +181896,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param state the state for which to set the foreground color
              * @param color the color to assign (does not need to be allocated),     or `null` to undo the effect of previous calls to     of `gtk_widget_modify_fg()`.
              */
-            modify_fg(state: StateType | null, color?: Gdk.Color | null): void;
+            modify_fg(state: StateType, color?: Gdk.Color | null): void;
             /**
              * Sets the font to use for a widget.
              *
@@ -182152,7 +181938,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param state the state for which to set the text color
              * @param color the color to assign (does not need to     be allocated), or `null` to undo the effect of previous     calls to of `gtk_widget_modify_text()`.
              */
-            modify_text(state: StateType | null, color?: Gdk.Color | null): void;
+            modify_text(state: StateType, color?: Gdk.Color | null): void;
             /**
              * Sets the background color to use for a widget.
              *
@@ -182161,7 +181947,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param state the state for which to set the background color
              * @param color the color to assign, or `null` to undo the effect     of previous calls to `gtk_widget_override_background_color()`
              */
-            override_background_color(state: StateFlags | null, color?: Gdk.RGBA | null): void;
+            override_background_color(state: StateFlags, color?: Gdk.RGBA | null): void;
             /**
              * Sets the color to use for a widget.
              *
@@ -182191,7 +181977,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param state the state for which to set the color
              * @param color the color to assign, or `null` to undo the effect     of previous calls to `gtk_widget_override_color()`
              */
-            override_color(state: StateFlags | null, color?: Gdk.RGBA | null): void;
+            override_color(state: StateFlags, color?: Gdk.RGBA | null): void;
             /**
              * Sets the cursor color to use in a widget, overriding the
              * cursor-color and secondary-cursor-color
@@ -182358,11 +182144,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param accel_mods modifier key combination of the accelerator
              * @returns whether an accelerator was installed and could be removed
              */
-            remove_accelerator(
-                accel_group: AccelGroup,
-                accel_key: number,
-                accel_mods: Gdk.ModifierType | null,
-            ): boolean;
+            remove_accelerator(accel_group: AccelGroup, accel_key: number, accel_mods: Gdk.ModifierType): boolean;
             /**
              * Removes a widget from the list of mnemonic labels for
              * this widget. (See `gtk_widget_list_mnemonic_labels()`). The widget
@@ -182611,7 +182393,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param device a {@link Gdk.Device}
              * @param events event mask
              */
-            set_device_events(device: Gdk.Device, events: Gdk.EventMask | null): void;
+            set_device_events(device: Gdk.Device, events: Gdk.EventMask): void;
             /**
              * Widgets are double buffered by default; you can use this function
              * to turn off the buffering. “Double buffered” simply means that
@@ -182681,7 +182463,7 @@ declare module 'gi://Gtk?version=3.0' {
              * See the {@link Gtk.Widget.halign} property.
              * @param align the horizontal alignment
              */
-            set_halign(align: Align | null): void;
+            set_halign(align: Align): void;
             /**
              * Sets the has-tooltip property on `widget` to `has_tooltip`.  See
              * {@link Gtk.Widget.has_tooltip} for more information.
@@ -182944,7 +182726,7 @@ declare module 'gi://Gtk?version=3.0' {
              * the state using wrapper functions such as `gtk_widget_set_sensitive()`.
              * @param state new state for `widget`
              */
-            set_state(state: StateType | null): void;
+            set_state(state: StateType): void;
             /**
              * This function is for use in widget implementations. Turns on flag
              * values in the current widget state (insensitive, prelighted, etc.).
@@ -182962,7 +182744,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param flags State flags to turn on
              * @param clear Whether to clear state before turning on `flags`
              */
-            set_state_flags(flags: StateFlags | null, clear: boolean): void;
+            set_state_flags(flags: StateFlags, clear: boolean): void;
             /**
              * Used to set the {@link Gtk.Style} for a widget (`widget`->style). Since
              * GTK 3, this function does nothing, the passed in style is ignored.
@@ -183012,7 +182794,7 @@ declare module 'gi://Gtk?version=3.0' {
              * See the {@link Gtk.Widget.valign} property.
              * @param align the vertical alignment
              */
-            set_valign(align: Align | null): void;
+            set_valign(align: Align): void;
             /**
              * Sets whether the widget would like any available extra vertical
              * space.
@@ -183223,7 +183005,7 @@ declare module 'gi://Gtk?version=3.0' {
              * See `gtk_widget_set_state_flags()`.
              * @param flags State flags to turn off
              */
-            unset_state_flags(flags: StateFlags | null): void;
+            unset_state_flags(flags: StateFlags): void;
             /**
              * @param baseline
              * @virtual
@@ -184124,7 +183906,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -184165,7 +183947,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -185762,7 +185544,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -185803,7 +185585,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -186186,8 +185968,8 @@ declare module 'gi://Gtk?version=3.0' {
                 accel_signal: string,
                 accel_group: AccelGroup,
                 accel_key: number,
-                accel_mods: Gdk.ModifierType | null,
-                accel_flags: AccelFlags | null,
+                accel_mods: Gdk.ModifierType,
+                accel_flags: AccelFlags,
             ): void;
             /**
              * Adds the device events in the bitfield `events` to the event mask for
@@ -186195,7 +185977,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param device a {@link Gdk.Device}
              * @param events an event mask, see {@link Gdk.EventMask}
              */
-            add_device_events(device: Gdk.Device, events: Gdk.EventMask | null): void;
+            add_device_events(device: Gdk.Device, events: Gdk.EventMask): void;
             /**
              * Adds the events in the bitfield `events` to the event mask for
              * `widget`. See `gtk_widget_set_events()` and the
@@ -186273,7 +186055,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param direction direction of focus movement
              * @returns `true` if focus ended up inside `widget`
              */
-            child_focus(direction: DirectionType | null): boolean;
+            child_focus(direction: DirectionType): boolean;
             /**
              * Emits a {@link Gtk.Widget.SignalSignatures.child_notify | Gtk.Widget::child-notify} signal for the
              * [child property][child-properties] `child_property`
@@ -186310,7 +186092,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param orientation expand direction
              * @returns whether widget tree rooted here should be expanded
              */
-            compute_expand(orientation: Orientation | null): boolean;
+            compute_expand(orientation: Orientation): boolean;
             /**
              * Creates a new {@link Pango.Context} with the appropriate font map,
              * font options, font description, and base direction for drawing
@@ -186397,7 +186179,7 @@ declare module 'gi://Gtk?version=3.0' {
              */
             drag_begin(
                 targets: TargetList,
-                actions: Gdk.DragAction | null,
+                actions: Gdk.DragAction,
                 button: number,
                 event?: Gdk.Event | null,
             ): Gdk.DragContext;
@@ -186437,7 +186219,7 @@ declare module 'gi://Gtk?version=3.0' {
              */
             drag_begin_with_coordinates(
                 targets: TargetList,
-                actions: Gdk.DragAction | null,
+                actions: Gdk.DragAction,
                 button: number,
                 event: Gdk.Event | null,
                 x: number,
@@ -186549,22 +186331,14 @@ declare module 'gi://Gtk?version=3.0' {
              * @param targets a pointer to an array of     `GtkTargetEntrys` indicating the drop types that this `widget` will     accept, or `null`. Later you can access the list with     `gtk_drag_dest_get_target_list()` and `gtk_drag_dest_find_target()`.
              * @param actions a bitmask of possible actions for a drop onto this `widget`.
              */
-            drag_dest_set(
-                flags: DestDefaults | null,
-                targets: TargetEntry[] | null,
-                actions: Gdk.DragAction | null,
-            ): void;
+            drag_dest_set(flags: DestDefaults, targets: TargetEntry[] | null, actions: Gdk.DragAction): void;
             /**
              * Sets this widget as a proxy for drops to another window.
              * @param proxy_window the window to which to forward drag events
              * @param protocol the drag protocol which the `proxy_window` accepts   (You can use `gdk_drag_get_protocol()` to determine this)
              * @param use_coordinates If `true`, send the same coordinates to the   destination, because it is an embedded   subwindow.
              */
-            drag_dest_set_proxy(
-                proxy_window: Gdk.Window,
-                protocol: Gdk.DragProtocol | null,
-                use_coordinates: boolean,
-            ): void;
+            drag_dest_set_proxy(proxy_window: Gdk.Window, protocol: Gdk.DragProtocol, use_coordinates: boolean): void;
             /**
              * Sets the target types that this widget can accept from drag-and-drop.
              * The widget must first be made into a drag destination with
@@ -186646,9 +186420,9 @@ declare module 'gi://Gtk?version=3.0' {
              * @param actions the bitmask of possible actions for a drag from this widget
              */
             drag_source_set(
-                start_button_mask: Gdk.ModifierType | null,
+                start_button_mask: Gdk.ModifierType,
                 targets: TargetEntry[] | null,
-                actions: Gdk.DragAction | null,
+                actions: Gdk.DragAction,
             ): void;
             /**
              * Sets the icon that will be used for drags from a particular source
@@ -187107,7 +186881,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param intent the use case for the modifier mask
              * @returns the modifier mask used for `intent`.
              */
-            get_modifier_mask(intent: Gdk.ModifierIntent | null): Gdk.ModifierType;
+            get_modifier_mask(intent: Gdk.ModifierIntent): Gdk.ModifierType;
             /**
              * Returns the current modifier style for the widget. (As set by
              * `gtk_widget_modify_style()`.) If no style has previously set, a new
@@ -187741,7 +187515,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param direction direction of focus movement
              * @returns `true` if stopping keyboard navigation is fine, `false`               if the emitting widget should try to handle the keyboard               navigation attempt in its parent container(s).
              */
-            keynav_failed(direction: DirectionType | null): boolean;
+            keynav_failed(direction: DirectionType): boolean;
             /**
              * Lists the closures used by `widget` for accelerator group connections
              * with `gtk_accel_group_connect_by_path()` or `gtk_accel_group_connect()`.
@@ -187802,7 +187576,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param state the state for which to set the base color
              * @param color the color to assign (does not need to     be allocated), or `null` to undo the effect of previous     calls to of `gtk_widget_modify_base()`.
              */
-            modify_base(state: StateType | null, color?: Gdk.Color | null): void;
+            modify_base(state: StateType, color?: Gdk.Color | null): void;
             /**
              * Sets the background color for a widget in a particular state.
              *
@@ -187821,7 +187595,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param state the state for which to set the background color
              * @param color the color to assign (does not need     to be allocated), or `null` to undo the effect of previous     calls to of `gtk_widget_modify_bg()`.
              */
-            modify_bg(state: StateType | null, color?: Gdk.Color | null): void;
+            modify_bg(state: StateType, color?: Gdk.Color | null): void;
             /**
              * Sets the cursor color to use in a widget, overriding the {@link Gtk.Widget}
              * cursor-color and secondary-cursor-color
@@ -187841,7 +187615,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param state the state for which to set the foreground color
              * @param color the color to assign (does not need to be allocated),     or `null` to undo the effect of previous calls to     of `gtk_widget_modify_fg()`.
              */
-            modify_fg(state: StateType | null, color?: Gdk.Color | null): void;
+            modify_fg(state: StateType, color?: Gdk.Color | null): void;
             /**
              * Sets the font to use for a widget.
              *
@@ -187883,7 +187657,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param state the state for which to set the text color
              * @param color the color to assign (does not need to     be allocated), or `null` to undo the effect of previous     calls to of `gtk_widget_modify_text()`.
              */
-            modify_text(state: StateType | null, color?: Gdk.Color | null): void;
+            modify_text(state: StateType, color?: Gdk.Color | null): void;
             /**
              * Sets the background color to use for a widget.
              *
@@ -187892,7 +187666,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param state the state for which to set the background color
              * @param color the color to assign, or `null` to undo the effect     of previous calls to `gtk_widget_override_background_color()`
              */
-            override_background_color(state: StateFlags | null, color?: Gdk.RGBA | null): void;
+            override_background_color(state: StateFlags, color?: Gdk.RGBA | null): void;
             /**
              * Sets the color to use for a widget.
              *
@@ -187922,7 +187696,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param state the state for which to set the color
              * @param color the color to assign, or `null` to undo the effect     of previous calls to `gtk_widget_override_color()`
              */
-            override_color(state: StateFlags | null, color?: Gdk.RGBA | null): void;
+            override_color(state: StateFlags, color?: Gdk.RGBA | null): void;
             /**
              * Sets the cursor color to use in a widget, overriding the
              * cursor-color and secondary-cursor-color
@@ -188089,11 +187863,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param accel_mods modifier key combination of the accelerator
              * @returns whether an accelerator was installed and could be removed
              */
-            remove_accelerator(
-                accel_group: AccelGroup,
-                accel_key: number,
-                accel_mods: Gdk.ModifierType | null,
-            ): boolean;
+            remove_accelerator(accel_group: AccelGroup, accel_key: number, accel_mods: Gdk.ModifierType): boolean;
             /**
              * Removes a widget from the list of mnemonic labels for
              * this widget. (See `gtk_widget_list_mnemonic_labels()`). The widget
@@ -188316,7 +188086,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param device a {@link Gdk.Device}
              * @param events event mask
              */
-            set_device_events(device: Gdk.Device, events: Gdk.EventMask | null): void;
+            set_device_events(device: Gdk.Device, events: Gdk.EventMask): void;
             /**
              * Sets the reading direction on a particular widget. This direction
              * controls the primary direction for widgets containing text,
@@ -188332,7 +188102,7 @@ declare module 'gi://Gtk?version=3.0' {
              * set by `gtk_widget_set_default_direction()` will be used.
              * @param dir the new direction
              */
-            set_direction(dir: TextDirection | null): void;
+            set_direction(dir: TextDirection): void;
             /**
              * Widgets are double buffered by default; you can use this function
              * to turn off the buffering. “Double buffered” simply means that
@@ -188402,7 +188172,7 @@ declare module 'gi://Gtk?version=3.0' {
              * See the {@link Gtk.Widget.halign} property.
              * @param align the horizontal alignment
              */
-            set_halign(align: Align | null): void;
+            set_halign(align: Align): void;
             /**
              * Sets the has-tooltip property on `widget` to `has_tooltip`.  See
              * {@link Gtk.Widget.has_tooltip} for more information.
@@ -188665,7 +188435,7 @@ declare module 'gi://Gtk?version=3.0' {
              * the state using wrapper functions such as `gtk_widget_set_sensitive()`.
              * @param state new state for `widget`
              */
-            set_state(state: StateType | null): void;
+            set_state(state: StateType): void;
             /**
              * This function is for use in widget implementations. Turns on flag
              * values in the current widget state (insensitive, prelighted, etc.).
@@ -188683,7 +188453,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param flags State flags to turn on
              * @param clear Whether to clear state before turning on `flags`
              */
-            set_state_flags(flags: StateFlags | null, clear: boolean): void;
+            set_state_flags(flags: StateFlags, clear: boolean): void;
             /**
              * Used to set the {@link Gtk.Style} for a widget (`widget`->style). Since
              * GTK 3, this function does nothing, the passed in style is ignored.
@@ -188733,7 +188503,7 @@ declare module 'gi://Gtk?version=3.0' {
              * See the {@link Gtk.Widget.valign} property.
              * @param align the vertical alignment
              */
-            set_valign(align: Align | null): void;
+            set_valign(align: Align): void;
             /**
              * Sets whether the widget would like any available extra vertical
              * space.
@@ -188944,7 +188714,7 @@ declare module 'gi://Gtk?version=3.0' {
              * See `gtk_widget_set_state_flags()`.
              * @param flags State flags to turn off
              */
-            unset_state_flags(flags: StateFlags | null): void;
+            unset_state_flags(flags: StateFlags): void;
             /**
              * @param baseline
              * @virtual
@@ -190148,7 +189918,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -190189,7 +189959,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -191008,7 +190778,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -191049,7 +190819,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -191648,7 +191418,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -191689,7 +191459,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -192904,7 +192674,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -192945,7 +192715,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -193336,8 +193106,8 @@ declare module 'gi://Gtk?version=3.0' {
                 accel_signal: string,
                 accel_group: AccelGroup,
                 accel_key: number,
-                accel_mods: Gdk.ModifierType | null,
-                accel_flags: AccelFlags | null,
+                accel_mods: Gdk.ModifierType,
+                accel_flags: AccelFlags,
             ): void;
             /**
              * Adds the device events in the bitfield `events` to the event mask for
@@ -193345,7 +193115,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param device a {@link Gdk.Device}
              * @param events an event mask, see {@link Gdk.EventMask}
              */
-            add_device_events(device: Gdk.Device, events: Gdk.EventMask | null): void;
+            add_device_events(device: Gdk.Device, events: Gdk.EventMask): void;
             /**
              * Adds the events in the bitfield `events` to the event mask for
              * `widget`. See `gtk_widget_set_events()` and the
@@ -193423,7 +193193,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param direction direction of focus movement
              * @returns `true` if focus ended up inside `widget`
              */
-            child_focus(direction: DirectionType | null): boolean;
+            child_focus(direction: DirectionType): boolean;
             /**
              * Emits a {@link Gtk.Widget.SignalSignatures.child_notify | Gtk.Widget::child-notify} signal for the
              * [child property][child-properties] `child_property`
@@ -193460,7 +193230,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param orientation expand direction
              * @returns whether widget tree rooted here should be expanded
              */
-            compute_expand(orientation: Orientation | null): boolean;
+            compute_expand(orientation: Orientation): boolean;
             /**
              * Creates a new {@link Pango.Context} with the appropriate font map,
              * font options, font description, and base direction for drawing
@@ -193547,7 +193317,7 @@ declare module 'gi://Gtk?version=3.0' {
              */
             drag_begin(
                 targets: TargetList,
-                actions: Gdk.DragAction | null,
+                actions: Gdk.DragAction,
                 button: number,
                 event?: Gdk.Event | null,
             ): Gdk.DragContext;
@@ -193587,7 +193357,7 @@ declare module 'gi://Gtk?version=3.0' {
              */
             drag_begin_with_coordinates(
                 targets: TargetList,
-                actions: Gdk.DragAction | null,
+                actions: Gdk.DragAction,
                 button: number,
                 event: Gdk.Event | null,
                 x: number,
@@ -193699,22 +193469,14 @@ declare module 'gi://Gtk?version=3.0' {
              * @param targets a pointer to an array of     `GtkTargetEntrys` indicating the drop types that this `widget` will     accept, or `null`. Later you can access the list with     `gtk_drag_dest_get_target_list()` and `gtk_drag_dest_find_target()`.
              * @param actions a bitmask of possible actions for a drop onto this `widget`.
              */
-            drag_dest_set(
-                flags: DestDefaults | null,
-                targets: TargetEntry[] | null,
-                actions: Gdk.DragAction | null,
-            ): void;
+            drag_dest_set(flags: DestDefaults, targets: TargetEntry[] | null, actions: Gdk.DragAction): void;
             /**
              * Sets this widget as a proxy for drops to another window.
              * @param proxy_window the window to which to forward drag events
              * @param protocol the drag protocol which the `proxy_window` accepts   (You can use `gdk_drag_get_protocol()` to determine this)
              * @param use_coordinates If `true`, send the same coordinates to the   destination, because it is an embedded   subwindow.
              */
-            drag_dest_set_proxy(
-                proxy_window: Gdk.Window,
-                protocol: Gdk.DragProtocol | null,
-                use_coordinates: boolean,
-            ): void;
+            drag_dest_set_proxy(proxy_window: Gdk.Window, protocol: Gdk.DragProtocol, use_coordinates: boolean): void;
             /**
              * Sets the target types that this widget can accept from drag-and-drop.
              * The widget must first be made into a drag destination with
@@ -193796,9 +193558,9 @@ declare module 'gi://Gtk?version=3.0' {
              * @param actions the bitmask of possible actions for a drag from this widget
              */
             drag_source_set(
-                start_button_mask: Gdk.ModifierType | null,
+                start_button_mask: Gdk.ModifierType,
                 targets: TargetEntry[] | null,
-                actions: Gdk.DragAction | null,
+                actions: Gdk.DragAction,
             ): void;
             /**
              * Sets the icon that will be used for drags from a particular source
@@ -194257,7 +194019,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param intent the use case for the modifier mask
              * @returns the modifier mask used for `intent`.
              */
-            get_modifier_mask(intent: Gdk.ModifierIntent | null): Gdk.ModifierType;
+            get_modifier_mask(intent: Gdk.ModifierIntent): Gdk.ModifierType;
             /**
              * Returns the current modifier style for the widget. (As set by
              * `gtk_widget_modify_style()`.) If no style has previously set, a new
@@ -194891,7 +194653,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param direction direction of focus movement
              * @returns `true` if stopping keyboard navigation is fine, `false`               if the emitting widget should try to handle the keyboard               navigation attempt in its parent container(s).
              */
-            keynav_failed(direction: DirectionType | null): boolean;
+            keynav_failed(direction: DirectionType): boolean;
             /**
              * Lists the closures used by `widget` for accelerator group connections
              * with `gtk_accel_group_connect_by_path()` or `gtk_accel_group_connect()`.
@@ -194952,7 +194714,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param state the state for which to set the base color
              * @param color the color to assign (does not need to     be allocated), or `null` to undo the effect of previous     calls to of `gtk_widget_modify_base()`.
              */
-            modify_base(state: StateType | null, color?: Gdk.Color | null): void;
+            modify_base(state: StateType, color?: Gdk.Color | null): void;
             /**
              * Sets the background color for a widget in a particular state.
              *
@@ -194971,7 +194733,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param state the state for which to set the background color
              * @param color the color to assign (does not need     to be allocated), or `null` to undo the effect of previous     calls to of `gtk_widget_modify_bg()`.
              */
-            modify_bg(state: StateType | null, color?: Gdk.Color | null): void;
+            modify_bg(state: StateType, color?: Gdk.Color | null): void;
             /**
              * Sets the cursor color to use in a widget, overriding the {@link Gtk.Widget}
              * cursor-color and secondary-cursor-color
@@ -194991,7 +194753,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param state the state for which to set the foreground color
              * @param color the color to assign (does not need to be allocated),     or `null` to undo the effect of previous calls to     of `gtk_widget_modify_fg()`.
              */
-            modify_fg(state: StateType | null, color?: Gdk.Color | null): void;
+            modify_fg(state: StateType, color?: Gdk.Color | null): void;
             /**
              * Sets the font to use for a widget.
              *
@@ -195033,7 +194795,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param state the state for which to set the text color
              * @param color the color to assign (does not need to     be allocated), or `null` to undo the effect of previous     calls to of `gtk_widget_modify_text()`.
              */
-            modify_text(state: StateType | null, color?: Gdk.Color | null): void;
+            modify_text(state: StateType, color?: Gdk.Color | null): void;
             /**
              * Sets the background color to use for a widget.
              *
@@ -195042,7 +194804,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param state the state for which to set the background color
              * @param color the color to assign, or `null` to undo the effect     of previous calls to `gtk_widget_override_background_color()`
              */
-            override_background_color(state: StateFlags | null, color?: Gdk.RGBA | null): void;
+            override_background_color(state: StateFlags, color?: Gdk.RGBA | null): void;
             /**
              * Sets the color to use for a widget.
              *
@@ -195072,7 +194834,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param state the state for which to set the color
              * @param color the color to assign, or `null` to undo the effect     of previous calls to `gtk_widget_override_color()`
              */
-            override_color(state: StateFlags | null, color?: Gdk.RGBA | null): void;
+            override_color(state: StateFlags, color?: Gdk.RGBA | null): void;
             /**
              * Sets the cursor color to use in a widget, overriding the
              * cursor-color and secondary-cursor-color
@@ -195239,11 +195001,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param accel_mods modifier key combination of the accelerator
              * @returns whether an accelerator was installed and could be removed
              */
-            remove_accelerator(
-                accel_group: AccelGroup,
-                accel_key: number,
-                accel_mods: Gdk.ModifierType | null,
-            ): boolean;
+            remove_accelerator(accel_group: AccelGroup, accel_key: number, accel_mods: Gdk.ModifierType): boolean;
             /**
              * Removes a widget from the list of mnemonic labels for
              * this widget. (See `gtk_widget_list_mnemonic_labels()`). The widget
@@ -195492,7 +195250,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param device a {@link Gdk.Device}
              * @param events event mask
              */
-            set_device_events(device: Gdk.Device, events: Gdk.EventMask | null): void;
+            set_device_events(device: Gdk.Device, events: Gdk.EventMask): void;
             /**
              * Sets the reading direction on a particular widget. This direction
              * controls the primary direction for widgets containing text,
@@ -195508,7 +195266,7 @@ declare module 'gi://Gtk?version=3.0' {
              * set by `gtk_widget_set_default_direction()` will be used.
              * @param dir the new direction
              */
-            set_direction(dir: TextDirection | null): void;
+            set_direction(dir: TextDirection): void;
             /**
              * Widgets are double buffered by default; you can use this function
              * to turn off the buffering. “Double buffered” simply means that
@@ -195578,7 +195336,7 @@ declare module 'gi://Gtk?version=3.0' {
              * See the {@link Gtk.Widget.halign} property.
              * @param align the horizontal alignment
              */
-            set_halign(align: Align | null): void;
+            set_halign(align: Align): void;
             /**
              * Sets the has-tooltip property on `widget` to `has_tooltip`.  See
              * {@link Gtk.Widget.has_tooltip} for more information.
@@ -195841,7 +195599,7 @@ declare module 'gi://Gtk?version=3.0' {
              * the state using wrapper functions such as `gtk_widget_set_sensitive()`.
              * @param state new state for `widget`
              */
-            set_state(state: StateType | null): void;
+            set_state(state: StateType): void;
             /**
              * This function is for use in widget implementations. Turns on flag
              * values in the current widget state (insensitive, prelighted, etc.).
@@ -195859,7 +195617,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param flags State flags to turn on
              * @param clear Whether to clear state before turning on `flags`
              */
-            set_state_flags(flags: StateFlags | null, clear: boolean): void;
+            set_state_flags(flags: StateFlags, clear: boolean): void;
             /**
              * Used to set the {@link Gtk.Style} for a widget (`widget`->style). Since
              * GTK 3, this function does nothing, the passed in style is ignored.
@@ -195919,7 +195677,7 @@ declare module 'gi://Gtk?version=3.0' {
              * See the {@link Gtk.Widget.valign} property.
              * @param align the vertical alignment
              */
-            set_valign(align: Align | null): void;
+            set_valign(align: Align): void;
             /**
              * Sets whether the widget would like any available extra vertical
              * space.
@@ -196130,7 +195888,7 @@ declare module 'gi://Gtk?version=3.0' {
              * See `gtk_widget_set_state_flags()`.
              * @param flags State flags to turn off
              */
-            unset_state_flags(flags: StateFlags | null): void;
+            unset_state_flags(flags: StateFlags): void;
             /**
              * @param baseline
              * @virtual
@@ -197276,7 +197034,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -197317,7 +197075,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -198089,7 +197847,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -198130,7 +197888,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -199609,7 +199367,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -199650,7 +199408,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -200041,8 +199799,8 @@ declare module 'gi://Gtk?version=3.0' {
                 accel_signal: string,
                 accel_group: AccelGroup,
                 accel_key: number,
-                accel_mods: Gdk.ModifierType | null,
-                accel_flags: AccelFlags | null,
+                accel_mods: Gdk.ModifierType,
+                accel_flags: AccelFlags,
             ): void;
             /**
              * Adds the device events in the bitfield `events` to the event mask for
@@ -200050,7 +199808,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param device a {@link Gdk.Device}
              * @param events an event mask, see {@link Gdk.EventMask}
              */
-            add_device_events(device: Gdk.Device, events: Gdk.EventMask | null): void;
+            add_device_events(device: Gdk.Device, events: Gdk.EventMask): void;
             /**
              * Adds the events in the bitfield `events` to the event mask for
              * `widget`. See `gtk_widget_set_events()` and the
@@ -200128,7 +199886,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param direction direction of focus movement
              * @returns `true` if focus ended up inside `widget`
              */
-            child_focus(direction: DirectionType | null): boolean;
+            child_focus(direction: DirectionType): boolean;
             /**
              * Emits a {@link Gtk.Widget.SignalSignatures.child_notify | Gtk.Widget::child-notify} signal for the
              * [child property][child-properties] `child_property`
@@ -200165,7 +199923,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param orientation expand direction
              * @returns whether widget tree rooted here should be expanded
              */
-            compute_expand(orientation: Orientation | null): boolean;
+            compute_expand(orientation: Orientation): boolean;
             /**
              * Creates a new {@link Pango.Context} with the appropriate font map,
              * font options, font description, and base direction for drawing
@@ -200252,7 +200010,7 @@ declare module 'gi://Gtk?version=3.0' {
              */
             drag_begin(
                 targets: TargetList,
-                actions: Gdk.DragAction | null,
+                actions: Gdk.DragAction,
                 button: number,
                 event?: Gdk.Event | null,
             ): Gdk.DragContext;
@@ -200292,7 +200050,7 @@ declare module 'gi://Gtk?version=3.0' {
              */
             drag_begin_with_coordinates(
                 targets: TargetList,
-                actions: Gdk.DragAction | null,
+                actions: Gdk.DragAction,
                 button: number,
                 event: Gdk.Event | null,
                 x: number,
@@ -200404,22 +200162,14 @@ declare module 'gi://Gtk?version=3.0' {
              * @param targets a pointer to an array of     `GtkTargetEntrys` indicating the drop types that this `widget` will     accept, or `null`. Later you can access the list with     `gtk_drag_dest_get_target_list()` and `gtk_drag_dest_find_target()`.
              * @param actions a bitmask of possible actions for a drop onto this `widget`.
              */
-            drag_dest_set(
-                flags: DestDefaults | null,
-                targets: TargetEntry[] | null,
-                actions: Gdk.DragAction | null,
-            ): void;
+            drag_dest_set(flags: DestDefaults, targets: TargetEntry[] | null, actions: Gdk.DragAction): void;
             /**
              * Sets this widget as a proxy for drops to another window.
              * @param proxy_window the window to which to forward drag events
              * @param protocol the drag protocol which the `proxy_window` accepts   (You can use `gdk_drag_get_protocol()` to determine this)
              * @param use_coordinates If `true`, send the same coordinates to the   destination, because it is an embedded   subwindow.
              */
-            drag_dest_set_proxy(
-                proxy_window: Gdk.Window,
-                protocol: Gdk.DragProtocol | null,
-                use_coordinates: boolean,
-            ): void;
+            drag_dest_set_proxy(proxy_window: Gdk.Window, protocol: Gdk.DragProtocol, use_coordinates: boolean): void;
             /**
              * Sets the target types that this widget can accept from drag-and-drop.
              * The widget must first be made into a drag destination with
@@ -200501,9 +200251,9 @@ declare module 'gi://Gtk?version=3.0' {
              * @param actions the bitmask of possible actions for a drag from this widget
              */
             drag_source_set(
-                start_button_mask: Gdk.ModifierType | null,
+                start_button_mask: Gdk.ModifierType,
                 targets: TargetEntry[] | null,
-                actions: Gdk.DragAction | null,
+                actions: Gdk.DragAction,
             ): void;
             /**
              * Sets the icon that will be used for drags from a particular source
@@ -200962,7 +200712,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param intent the use case for the modifier mask
              * @returns the modifier mask used for `intent`.
              */
-            get_modifier_mask(intent: Gdk.ModifierIntent | null): Gdk.ModifierType;
+            get_modifier_mask(intent: Gdk.ModifierIntent): Gdk.ModifierType;
             /**
              * Returns the current modifier style for the widget. (As set by
              * `gtk_widget_modify_style()`.) If no style has previously set, a new
@@ -201596,7 +201346,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param direction direction of focus movement
              * @returns `true` if stopping keyboard navigation is fine, `false`               if the emitting widget should try to handle the keyboard               navigation attempt in its parent container(s).
              */
-            keynav_failed(direction: DirectionType | null): boolean;
+            keynav_failed(direction: DirectionType): boolean;
             /**
              * Lists the closures used by `widget` for accelerator group connections
              * with `gtk_accel_group_connect_by_path()` or `gtk_accel_group_connect()`.
@@ -201657,7 +201407,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param state the state for which to set the base color
              * @param color the color to assign (does not need to     be allocated), or `null` to undo the effect of previous     calls to of `gtk_widget_modify_base()`.
              */
-            modify_base(state: StateType | null, color?: Gdk.Color | null): void;
+            modify_base(state: StateType, color?: Gdk.Color | null): void;
             /**
              * Sets the background color for a widget in a particular state.
              *
@@ -201676,7 +201426,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param state the state for which to set the background color
              * @param color the color to assign (does not need     to be allocated), or `null` to undo the effect of previous     calls to of `gtk_widget_modify_bg()`.
              */
-            modify_bg(state: StateType | null, color?: Gdk.Color | null): void;
+            modify_bg(state: StateType, color?: Gdk.Color | null): void;
             /**
              * Sets the cursor color to use in a widget, overriding the {@link Gtk.Widget}
              * cursor-color and secondary-cursor-color
@@ -201696,7 +201446,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param state the state for which to set the foreground color
              * @param color the color to assign (does not need to be allocated),     or `null` to undo the effect of previous calls to     of `gtk_widget_modify_fg()`.
              */
-            modify_fg(state: StateType | null, color?: Gdk.Color | null): void;
+            modify_fg(state: StateType, color?: Gdk.Color | null): void;
             /**
              * Sets the font to use for a widget.
              *
@@ -201738,7 +201488,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param state the state for which to set the text color
              * @param color the color to assign (does not need to     be allocated), or `null` to undo the effect of previous     calls to of `gtk_widget_modify_text()`.
              */
-            modify_text(state: StateType | null, color?: Gdk.Color | null): void;
+            modify_text(state: StateType, color?: Gdk.Color | null): void;
             /**
              * Sets the background color to use for a widget.
              *
@@ -201747,7 +201497,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param state the state for which to set the background color
              * @param color the color to assign, or `null` to undo the effect     of previous calls to `gtk_widget_override_background_color()`
              */
-            override_background_color(state: StateFlags | null, color?: Gdk.RGBA | null): void;
+            override_background_color(state: StateFlags, color?: Gdk.RGBA | null): void;
             /**
              * Sets the color to use for a widget.
              *
@@ -201777,7 +201527,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param state the state for which to set the color
              * @param color the color to assign, or `null` to undo the effect     of previous calls to `gtk_widget_override_color()`
              */
-            override_color(state: StateFlags | null, color?: Gdk.RGBA | null): void;
+            override_color(state: StateFlags, color?: Gdk.RGBA | null): void;
             /**
              * Sets the cursor color to use in a widget, overriding the
              * cursor-color and secondary-cursor-color
@@ -201944,11 +201694,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param accel_mods modifier key combination of the accelerator
              * @returns whether an accelerator was installed and could be removed
              */
-            remove_accelerator(
-                accel_group: AccelGroup,
-                accel_key: number,
-                accel_mods: Gdk.ModifierType | null,
-            ): boolean;
+            remove_accelerator(accel_group: AccelGroup, accel_key: number, accel_mods: Gdk.ModifierType): boolean;
             /**
              * Removes a widget from the list of mnemonic labels for
              * this widget. (See `gtk_widget_list_mnemonic_labels()`). The widget
@@ -202197,7 +201943,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param device a {@link Gdk.Device}
              * @param events event mask
              */
-            set_device_events(device: Gdk.Device, events: Gdk.EventMask | null): void;
+            set_device_events(device: Gdk.Device, events: Gdk.EventMask): void;
             /**
              * Sets the reading direction on a particular widget. This direction
              * controls the primary direction for widgets containing text,
@@ -202213,7 +201959,7 @@ declare module 'gi://Gtk?version=3.0' {
              * set by `gtk_widget_set_default_direction()` will be used.
              * @param dir the new direction
              */
-            set_direction(dir: TextDirection | null): void;
+            set_direction(dir: TextDirection): void;
             /**
              * Widgets are double buffered by default; you can use this function
              * to turn off the buffering. “Double buffered” simply means that
@@ -202283,7 +202029,7 @@ declare module 'gi://Gtk?version=3.0' {
              * See the {@link Gtk.Widget.halign} property.
              * @param align the horizontal alignment
              */
-            set_halign(align: Align | null): void;
+            set_halign(align: Align): void;
             /**
              * Sets the has-tooltip property on `widget` to `has_tooltip`.  See
              * {@link Gtk.Widget.has_tooltip} for more information.
@@ -202546,7 +202292,7 @@ declare module 'gi://Gtk?version=3.0' {
              * the state using wrapper functions such as `gtk_widget_set_sensitive()`.
              * @param state new state for `widget`
              */
-            set_state(state: StateType | null): void;
+            set_state(state: StateType): void;
             /**
              * This function is for use in widget implementations. Turns on flag
              * values in the current widget state (insensitive, prelighted, etc.).
@@ -202564,7 +202310,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param flags State flags to turn on
              * @param clear Whether to clear state before turning on `flags`
              */
-            set_state_flags(flags: StateFlags | null, clear: boolean): void;
+            set_state_flags(flags: StateFlags, clear: boolean): void;
             /**
              * Used to set the {@link Gtk.Style} for a widget (`widget`->style). Since
              * GTK 3, this function does nothing, the passed in style is ignored.
@@ -202614,7 +202360,7 @@ declare module 'gi://Gtk?version=3.0' {
              * See the {@link Gtk.Widget.valign} property.
              * @param align the vertical alignment
              */
-            set_valign(align: Align | null): void;
+            set_valign(align: Align): void;
             /**
              * Sets whether the widget would like any available extra vertical
              * space.
@@ -202825,7 +202571,7 @@ declare module 'gi://Gtk?version=3.0' {
              * See `gtk_widget_set_state_flags()`.
              * @param flags State flags to turn off
              */
-            unset_state_flags(flags: StateFlags | null): void;
+            unset_state_flags(flags: StateFlags): void;
             /**
              * @param baseline
              * @virtual
@@ -204391,7 +204137,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param pack_type pack type of the action widget to receive
              * @returns The action widget with the given `pack_type` or `null` when this action widget has not been set
              */
-            get_action_widget(pack_type: PackType | null): Widget | null;
+            get_action_widget(pack_type: PackType): Widget | null;
             /**
              * Returns the page number of the current page.
              * @returns the index (starting from 0) of the current     page in the notebook. If the notebook has no pages,     then -1 will be returned.
@@ -204578,7 +204324,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param widget a {@link Gtk.Widget}
              * @param pack_type pack type of the action widget
              */
-            set_action_widget(widget: Widget, pack_type: PackType | null): void;
+            set_action_widget(widget: Widget, pack_type: PackType): void;
             /**
              * Switches to the page number `page_num`.
              *
@@ -204700,7 +204446,7 @@ declare module 'gi://Gtk?version=3.0' {
              * notebook are drawn.
              * @param pos the edge to draw the tabs at
              */
-            set_tab_pos(pos: PositionType | null): void;
+            set_tab_pos(pos: PositionType): void;
             /**
              * Sets whether the notebook tab can be reordered
              * via drag and drop or not.
@@ -204752,7 +204498,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -204793,7 +204539,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -205392,7 +205138,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -205433,7 +205179,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -205886,7 +205632,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param coord_type specifies whether the coordinates are relative to the screen or to the components top level window
              * @returns `true` or `false` indicating whether the specified point is within the extent of the `component` or not
              */
-            contains(x: number, y: number, coord_type: Atk.CoordType | null): boolean;
+            contains(x: number, y: number, coord_type: Atk.CoordType): boolean;
             /**
              * Returns the alpha value (i.e. the opacity) for this
              * `component`, on a scale from 0 (fully transparent) to 1.0
@@ -205901,7 +205647,7 @@ declare module 'gi://Gtk?version=3.0' {
              * support), all of x, y, width, height are set to -1.
              * @param coord_type specifies whether the coordinates are relative to the screen or to the components top level window
              */
-            get_extents(coord_type: Atk.CoordType | null): [number, number, number, number];
+            get_extents(coord_type: Atk.CoordType): [number, number, number, number];
             /**
              * Gets the layer of the component.
              * @returns an {@link Atk.Layer} which is the layer of the component
@@ -205921,7 +205667,7 @@ declare module 'gi://Gtk?version=3.0' {
              * support), x and y are set to -1.
              * @param coord_type specifies whether the coordinates are relative to the screen or to the components top level window
              */
-            get_position(coord_type: Atk.CoordType | null): [number, number];
+            get_position(coord_type: Atk.CoordType): [number, number];
             /**
              * Gets the size of the `component` in terms of width and height.
              *
@@ -205942,7 +205688,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param coord_type specifies whether the coordinates are relative to the screen or to the components top level window
              * @returns a reference to the accessible child, if one exists
              */
-            ref_accessible_at_point(x: number, y: number, coord_type: Atk.CoordType | null): Atk.Object | null;
+            ref_accessible_at_point(x: number, y: number, coord_type: Atk.CoordType): Atk.Object | null;
             /**
              * Remove the handler specified by `handler_id` from the list of
              * functions to be executed when this object receives focus events
@@ -205959,7 +205705,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param type specify where the object should be made visible.
              * @returns whether scrolling was successful.
              */
-            scroll_to(type: Atk.ScrollType | null): boolean;
+            scroll_to(type: Atk.ScrollType): boolean;
             /**
              * Move the top-left of `component` to a given position of the screen by
              * scrolling all necessary parents.
@@ -205968,7 +205714,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param y y-position where to scroll to
              * @returns whether scrolling was successful.
              */
-            scroll_to_point(coords: Atk.CoordType | null, x: number, y: number): boolean;
+            scroll_to_point(coords: Atk.CoordType, x: number, y: number): boolean;
             /**
              * Sets the extents of `component`.
              * @param x x coordinate
@@ -205978,7 +205724,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param coord_type specifies whether the coordinates are relative to the screen or to the components top level window
              * @returns `true` or `false` whether the extents were set or not
              */
-            set_extents(x: number, y: number, width: number, height: number, coord_type: Atk.CoordType | null): boolean;
+            set_extents(x: number, y: number, width: number, height: number, coord_type: Atk.CoordType): boolean;
             /**
              * Sets the position of `component`.
              *
@@ -205989,7 +205735,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param coord_type specifies whether the coordinates are relative to the screen or to the component's top level window
              * @returns `true` or `false` whether or not the position was set or not
              */
-            set_position(x: number, y: number, coord_type: Atk.CoordType | null): boolean;
+            set_position(x: number, y: number, coord_type: Atk.CoordType): boolean;
             /**
              * Set the size of the `component` in terms of width and height.
              * @param width width to set for `component`
@@ -206172,7 +205918,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -206213,7 +205959,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -206898,7 +206644,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -206939,7 +206685,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -207519,7 +207265,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -207560,7 +207306,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -208162,7 +207908,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -208203,7 +207949,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -208707,13 +208453,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param label Human readable description of this action, this string should   be deemed user-visible.
              * @param action_name action name that will be activated in the {@link Gio.ActionGroup}
              */
-            set_action(
-                type: PadActionType | null,
-                index: number,
-                mode: number,
-                label: string,
-                action_name: string,
-            ): void;
+            set_action(type: PadActionType, index: number, mode: number, label: string, action_name: string): void;
             /**
              * This is a convenience function to add a group of action entries on
              * `controller`. See {@link Gtk.PadActionEntry} and `gtk_pad_controller_set_action()`.
@@ -208838,13 +208578,13 @@ declare module 'gi://Gtk?version=3.0' {
              * @param unit the unit for the return value
              * @returns the bottom margin
              */
-            get_bottom_margin(unit: Unit | null): number;
+            get_bottom_margin(unit: Unit): number;
             /**
              * Gets the left margin in units of `unit`.
              * @param unit the unit for the return value
              * @returns the left margin
              */
-            get_left_margin(unit: Unit | null): number;
+            get_left_margin(unit: Unit): number;
             /**
              * Gets the page orientation of the {@link Gtk.PageSetup}.
              * @returns the page orientation
@@ -208859,7 +208599,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param unit the unit for the return value
              * @returns the page height.
              */
-            get_page_height(unit: Unit | null): number;
+            get_page_height(unit: Unit): number;
             /**
              * Returns the page width in units of `unit`.
              *
@@ -208869,7 +208609,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param unit the unit for the return value
              * @returns the page width.
              */
-            get_page_width(unit: Unit | null): number;
+            get_page_width(unit: Unit): number;
             /**
              * Returns the paper height in units of `unit`.
              *
@@ -208879,7 +208619,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param unit the unit for the return value
              * @returns the paper height.
              */
-            get_paper_height(unit: Unit | null): number;
+            get_paper_height(unit: Unit): number;
             /**
              * Gets the paper size of the {@link Gtk.PageSetup}.
              * @returns the paper size
@@ -208894,19 +208634,19 @@ declare module 'gi://Gtk?version=3.0' {
              * @param unit the unit for the return value
              * @returns the paper width.
              */
-            get_paper_width(unit: Unit | null): number;
+            get_paper_width(unit: Unit): number;
             /**
              * Gets the right margin in units of `unit`.
              * @param unit the unit for the return value
              * @returns the right margin
              */
-            get_right_margin(unit: Unit | null): number;
+            get_right_margin(unit: Unit): number;
             /**
              * Gets the top margin in units of `unit`.
              * @param unit the unit for the return value
              * @returns the top margin
              */
-            get_top_margin(unit: Unit | null): number;
+            get_top_margin(unit: Unit): number;
             /**
              * Reads the page setup from the file `file_name`.
              * See `gtk_page_setup_to_file()`.
@@ -208927,18 +208667,18 @@ declare module 'gi://Gtk?version=3.0' {
              * @param margin the new bottom margin in units of `unit`
              * @param unit the units for `margin`
              */
-            set_bottom_margin(margin: number, unit: Unit | null): void;
+            set_bottom_margin(margin: number, unit: Unit): void;
             /**
              * Sets the left margin of the {@link Gtk.PageSetup}.
              * @param margin the new left margin in units of `unit`
              * @param unit the units for `margin`
              */
-            set_left_margin(margin: number, unit: Unit | null): void;
+            set_left_margin(margin: number, unit: Unit): void;
             /**
              * Sets the page orientation of the {@link Gtk.PageSetup}.
              * @param orientation a {@link Gtk.PageOrientation} value
              */
-            set_orientation(orientation: PageOrientation | null): void;
+            set_orientation(orientation: PageOrientation): void;
             /**
              * Sets the paper size of the {@link Gtk.PageSetup} without
              * changing the margins. See
@@ -208957,13 +208697,13 @@ declare module 'gi://Gtk?version=3.0' {
              * @param margin the new right margin in units of `unit`
              * @param unit the units for `margin`
              */
-            set_right_margin(margin: number, unit: Unit | null): void;
+            set_right_margin(margin: number, unit: Unit): void;
             /**
              * Sets the top margin of the {@link Gtk.PageSetup}.
              * @param margin the new top margin in units of `unit`
              * @param unit the units for `margin`
              */
-            set_top_margin(margin: number, unit: Unit | null): void;
+            set_top_margin(margin: number, unit: Unit): void;
             /**
              * This function saves the information from `setup` to `file_name`.
              * @param file_name the file to save to
@@ -209419,7 +209159,7 @@ declare module 'gi://Gtk?version=3.0' {
              * Sets the orientation of the `orientable`.
              * @param orientation the orientable’s new orientation.
              */
-            set_orientation(orientation: Orientation | null): void;
+            set_orientation(orientation: Orientation): void;
             /**
              * Creates a binding between `source_property` on `source` and `target_property`
              * on `target`.
@@ -209464,7 +209204,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -209505,7 +209245,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -210130,7 +209870,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -210171,7 +209911,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -211072,7 +210812,7 @@ declare module 'gi://Gtk?version=3.0' {
              * to callbacks for the “open-location” signal.
              * @param flags Bitmask of modes in which the calling application can open locations
              */
-            set_open_flags(flags: PlacesOpenFlags | null): void;
+            set_open_flags(flags: PlacesOpenFlags): void;
             /**
              * Sets whether the `sidebar` should show an item for connecting to a network server;
              * this is off by default. An application may want to turn this on if it implements
@@ -211176,7 +210916,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -211217,7 +210957,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -211858,7 +211598,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -211899,7 +211639,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -212549,7 +212289,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -212590,7 +212330,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -212960,7 +212700,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param target The {@link Atk.Object} which is to be the target of the relation.
              * @returns TRUE if the relationship is added.
              */
-            add_relationship(relationship: Atk.RelationType | null, target: Atk.Object): boolean;
+            add_relationship(relationship: Atk.RelationType, target: Atk.Object): boolean;
             /**
              * Gets the accessible id of the accessible.
              * @returns a character string representing the accessible id of the object, or NULL if no such string was set.
@@ -213092,7 +212832,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param target The {@link Atk.Object} which is the target of the relation to be removed.
              * @returns TRUE if the relationship is removed.
              */
-            remove_relationship(relationship: Atk.RelationType | null, target: Atk.Object): boolean;
+            remove_relationship(relationship: Atk.RelationType, target: Atk.Object): boolean;
             /**
              * Sets the accessible ID of the accessible.  This is not meant to be presented
              * to the user, but to be an ID which is stable over application development.
@@ -213136,7 +212876,7 @@ declare module 'gi://Gtk?version=3.0' {
              * Sets the role of the accessible.
              * @param role an {@link Atk.Role} to be set as the role
              */
-            set_role(role: Atk.Role | null): void;
+            set_role(role: Atk.Role): void;
             /**
              * @param child
              * @virtual
@@ -213644,7 +213384,7 @@ declare module 'gi://Gtk?version=3.0' {
              * and may already impose constraints.
              * @param constraint the new constraint
              */
-            set_constrain_to(constraint: PopoverConstraint | null): void;
+            set_constrain_to(constraint: PopoverConstraint): void;
             /**
              * Sets the widget that should be set as default widget while
              * the popover is shown (see `gtk_window_set_default()`). {@link Gtk.Popover}
@@ -213677,7 +213417,7 @@ declare module 'gi://Gtk?version=3.0' {
              * {@link Gtk.Popover} may choose to appear on the opposite side
              * @param position preferred popover position
              */
-            set_position(position: PositionType | null): void;
+            set_position(position: PositionType): void;
             /**
              * Sets a new widget to be attached to `popover`. If `popover` is
              * visible, the position will be updated.
@@ -213738,7 +213478,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -213779,7 +213519,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -214260,7 +214000,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -214301,7 +214041,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -214914,7 +214654,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -214955,7 +214695,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -216465,7 +216205,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param parent Transient parent of the dialog
              * @returns the result of the print operation. A return value of   {@link Gtk.PrintOperationResult.APPLY} indicates that the printing was   completed successfully. In this case, it is a good idea to obtain   the used print settings with `gtk_print_operation_get_print_settings()`   and store them for reuse with the next print operation. A value of   {@link Gtk.PrintOperationResult.IN_PROGRESS} means the operation is running   asynchronously, and will emit the {@link Gtk.PrintOperation.SignalSignatures.done | Gtk.PrintOperation::done} signal when   done.
              */
-            run(action: PrintOperationAction | null, parent?: Window | null): PrintOperationResult;
+            run(action: PrintOperationAction, parent?: Window | null): PrintOperationResult;
             /**
              * Sets whether the `gtk_print_operation_run()` may return
              * before the print operation is completed. Note that
@@ -216591,7 +216331,7 @@ declare module 'gi://Gtk?version=3.0' {
              * units of `unit`.
              * @param unit the unit to use
              */
-            set_unit(unit: Unit | null): void;
+            set_unit(unit: Unit): void;
             /**
              * If `full_page` is `true`, the transformation for the cairo context
              * obtained from {@link Gtk.PrintContext} puts the origin at the top left
@@ -216711,7 +216451,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -216752,7 +216492,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -217280,7 +217020,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param unit the unit of the return value
              * @returns the length value of `key`, converted to `unit`
              */
-            get_length(key: string, unit: Unit | null): number;
+            get_length(key: string, unit: Unit): number;
             /**
              * Gets the value of `GTK_PRINT_SETTINGS_MEDIA_TYPE`.
              *
@@ -217330,7 +217070,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param unit the unit for the return value
              * @returns the paper height, in units of `unit`
              */
-            get_paper_height(unit: Unit | null): number;
+            get_paper_height(unit: Unit): number;
             /**
              * Gets the value of `GTK_PRINT_SETTINGS_PAPER_FORMAT`,
              * converted to a {@link Gtk.PaperSize}.
@@ -217343,7 +217083,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param unit the unit for the return value
              * @returns the paper width, in units of `unit`
              */
-            get_paper_width(unit: Unit | null): number;
+            get_paper_width(unit: Unit): number;
             /**
              * Gets the value of `GTK_PRINT_SETTINGS_PRINT_PAGES`.
              * @returns which pages to print
@@ -217460,7 +217200,7 @@ declare module 'gi://Gtk?version=3.0' {
              * Sets the value of `GTK_PRINT_SETTINGS_DUPLEX`.
              * @param duplex a {@link Gtk.PrintDuplex} value
              */
-            set_duplex(duplex: PrintDuplex | null): void;
+            set_duplex(duplex: PrintDuplex): void;
             /**
              * Sets the value of `GTK_PRINT_SETTINGS_FINISHINGS`.
              * @param finishings the finishings
@@ -217478,7 +217218,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param value a length
              * @param unit the unit of `length`
              */
-            set_length(key: string, value: number, unit: Unit | null): void;
+            set_length(key: string, value: number, unit: Unit): void;
             /**
              * Sets the value of `GTK_PRINT_SETTINGS_MEDIA_TYPE`.
              *
@@ -217500,12 +217240,12 @@ declare module 'gi://Gtk?version=3.0' {
              * Sets the value of `GTK_PRINT_SETTINGS_NUMBER_UP_LAYOUT`.
              * @param number_up_layout a {@link Gtk.NumberUpLayout} value
              */
-            set_number_up_layout(number_up_layout: NumberUpLayout | null): void;
+            set_number_up_layout(number_up_layout: NumberUpLayout): void;
             /**
              * Sets the value of `GTK_PRINT_SETTINGS_ORIENTATION`.
              * @param orientation a page orientation
              */
-            set_orientation(orientation: PageOrientation | null): void;
+            set_orientation(orientation: PageOrientation): void;
             /**
              * Sets the value of `GTK_PRINT_SETTINGS_OUTPUT_BIN`.
              * @param output_bin the output bin
@@ -217520,13 +217260,13 @@ declare module 'gi://Gtk?version=3.0' {
              * Sets the value of `GTK_PRINT_SETTINGS_PAGE_SET`.
              * @param page_set a {@link Gtk.PageSet} value
              */
-            set_page_set(page_set: PageSet | null): void;
+            set_page_set(page_set: PageSet): void;
             /**
              * Sets the value of `GTK_PRINT_SETTINGS_PAPER_HEIGHT`.
              * @param height the paper height
              * @param unit the units of `height`
              */
-            set_paper_height(height: number, unit: Unit | null): void;
+            set_paper_height(height: number, unit: Unit): void;
             /**
              * Sets the value of `GTK_PRINT_SETTINGS_PAPER_FORMAT`,
              * `GTK_PRINT_SETTINGS_PAPER_WIDTH` and
@@ -217539,12 +217279,12 @@ declare module 'gi://Gtk?version=3.0' {
              * @param width the paper width
              * @param unit the units of `width`
              */
-            set_paper_width(width: number, unit: Unit | null): void;
+            set_paper_width(width: number, unit: Unit): void;
             /**
              * Sets the value of `GTK_PRINT_SETTINGS_PRINT_PAGES`.
              * @param pages a {@link Gtk.PrintPages} value
              */
-            set_print_pages(pages: PrintPages | null): void;
+            set_print_pages(pages: PrintPages): void;
             /**
              * Convenience function to set `GTK_PRINT_SETTINGS_PRINTER`
              * to `printer`.
@@ -217560,7 +217300,7 @@ declare module 'gi://Gtk?version=3.0' {
              * Sets the value of `GTK_PRINT_SETTINGS_QUALITY`.
              * @param quality a {@link Gtk.PrintQuality} value
              */
-            set_quality(quality: PrintQuality | null): void;
+            set_quality(quality: PrintQuality): void;
             /**
              * Sets the values of `GTK_PRINT_SETTINGS_RESOLUTION`,
              * `GTK_PRINT_SETTINGS_RESOLUTION_X` and
@@ -217877,7 +217617,7 @@ declare module 'gi://Gtk?version=3.0' {
              * text if there is not enough space to render the entire string.
              * @param mode a {@link Pango.EllipsizeMode}
              */
-            set_ellipsize(mode: Pango.EllipsizeMode | null): void;
+            set_ellipsize(mode: Pango.EllipsizeMode): void;
             /**
              * Causes the progress bar to “fill in” the given fraction
              * of the bar. The fraction should be between 0.0 and 1.0,
@@ -218125,7 +217865,7 @@ declare module 'gi://Gtk?version=3.0' {
              * Sets the orientation of the `orientable`.
              * @param orientation the orientable’s new orientation.
              */
-            set_orientation(orientation: Orientation | null): void;
+            set_orientation(orientation: Orientation): void;
             /**
              * Creates a binding between `source_property` on `source` and `target_property`
              * on `target`.
@@ -218170,7 +217910,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -218211,7 +217951,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -218660,7 +218400,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param coord_type specifies whether the coordinates are relative to the screen or to the components top level window
              * @returns `true` or `false` indicating whether the specified point is within the extent of the `component` or not
              */
-            contains(x: number, y: number, coord_type: Atk.CoordType | null): boolean;
+            contains(x: number, y: number, coord_type: Atk.CoordType): boolean;
             /**
              * Returns the alpha value (i.e. the opacity) for this
              * `component`, on a scale from 0 (fully transparent) to 1.0
@@ -218675,7 +218415,7 @@ declare module 'gi://Gtk?version=3.0' {
              * support), all of x, y, width, height are set to -1.
              * @param coord_type specifies whether the coordinates are relative to the screen or to the components top level window
              */
-            get_extents(coord_type: Atk.CoordType | null): [number, number, number, number];
+            get_extents(coord_type: Atk.CoordType): [number, number, number, number];
             /**
              * Gets the layer of the component.
              * @returns an {@link Atk.Layer} which is the layer of the component
@@ -218695,7 +218435,7 @@ declare module 'gi://Gtk?version=3.0' {
              * support), x and y are set to -1.
              * @param coord_type specifies whether the coordinates are relative to the screen or to the components top level window
              */
-            get_position(coord_type: Atk.CoordType | null): [number, number];
+            get_position(coord_type: Atk.CoordType): [number, number];
             /**
              * Gets the size of the `component` in terms of width and height.
              *
@@ -218716,7 +218456,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param coord_type specifies whether the coordinates are relative to the screen or to the components top level window
              * @returns a reference to the accessible child, if one exists
              */
-            ref_accessible_at_point(x: number, y: number, coord_type: Atk.CoordType | null): Atk.Object | null;
+            ref_accessible_at_point(x: number, y: number, coord_type: Atk.CoordType): Atk.Object | null;
             /**
              * Remove the handler specified by `handler_id` from the list of
              * functions to be executed when this object receives focus events
@@ -218733,7 +218473,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param type specify where the object should be made visible.
              * @returns whether scrolling was successful.
              */
-            scroll_to(type: Atk.ScrollType | null): boolean;
+            scroll_to(type: Atk.ScrollType): boolean;
             /**
              * Move the top-left of `component` to a given position of the screen by
              * scrolling all necessary parents.
@@ -218742,7 +218482,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param y y-position where to scroll to
              * @returns whether scrolling was successful.
              */
-            scroll_to_point(coords: Atk.CoordType | null, x: number, y: number): boolean;
+            scroll_to_point(coords: Atk.CoordType, x: number, y: number): boolean;
             /**
              * Sets the extents of `component`.
              * @param x x coordinate
@@ -218752,7 +218492,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param coord_type specifies whether the coordinates are relative to the screen or to the components top level window
              * @returns `true` or `false` whether the extents were set or not
              */
-            set_extents(x: number, y: number, width: number, height: number, coord_type: Atk.CoordType | null): boolean;
+            set_extents(x: number, y: number, width: number, height: number, coord_type: Atk.CoordType): boolean;
             /**
              * Sets the position of `component`.
              *
@@ -218763,7 +218503,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param coord_type specifies whether the coordinates are relative to the screen or to the component's top level window
              * @returns `true` or `false` whether or not the position was set or not
              */
-            set_position(x: number, y: number, coord_type: Atk.CoordType | null): boolean;
+            set_position(x: number, y: number, coord_type: Atk.CoordType): boolean;
             /**
              * Set the size of the `component` in terms of width and height.
              * @param width width to set for `component`
@@ -219086,7 +218826,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -219127,7 +218867,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -219750,7 +219490,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -219791,7 +219531,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -220971,7 +220711,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -221012,7 +220752,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -221403,8 +221143,8 @@ declare module 'gi://Gtk?version=3.0' {
                 accel_signal: string,
                 accel_group: AccelGroup,
                 accel_key: number,
-                accel_mods: Gdk.ModifierType | null,
-                accel_flags: AccelFlags | null,
+                accel_mods: Gdk.ModifierType,
+                accel_flags: AccelFlags,
             ): void;
             /**
              * Adds the device events in the bitfield `events` to the event mask for
@@ -221412,7 +221152,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param device a {@link Gdk.Device}
              * @param events an event mask, see {@link Gdk.EventMask}
              */
-            add_device_events(device: Gdk.Device, events: Gdk.EventMask | null): void;
+            add_device_events(device: Gdk.Device, events: Gdk.EventMask): void;
             /**
              * Adds the events in the bitfield `events` to the event mask for
              * `widget`. See `gtk_widget_set_events()` and the
@@ -221490,7 +221230,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param direction direction of focus movement
              * @returns `true` if focus ended up inside `widget`
              */
-            child_focus(direction: DirectionType | null): boolean;
+            child_focus(direction: DirectionType): boolean;
             /**
              * Emits a {@link Gtk.Widget.SignalSignatures.child_notify | Gtk.Widget::child-notify} signal for the
              * [child property][child-properties] `child_property`
@@ -221527,7 +221267,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param orientation expand direction
              * @returns whether widget tree rooted here should be expanded
              */
-            compute_expand(orientation: Orientation | null): boolean;
+            compute_expand(orientation: Orientation): boolean;
             /**
              * Creates a new {@link Pango.Context} with the appropriate font map,
              * font options, font description, and base direction for drawing
@@ -221614,7 +221354,7 @@ declare module 'gi://Gtk?version=3.0' {
              */
             drag_begin(
                 targets: TargetList,
-                actions: Gdk.DragAction | null,
+                actions: Gdk.DragAction,
                 button: number,
                 event?: Gdk.Event | null,
             ): Gdk.DragContext;
@@ -221654,7 +221394,7 @@ declare module 'gi://Gtk?version=3.0' {
              */
             drag_begin_with_coordinates(
                 targets: TargetList,
-                actions: Gdk.DragAction | null,
+                actions: Gdk.DragAction,
                 button: number,
                 event: Gdk.Event | null,
                 x: number,
@@ -221766,22 +221506,14 @@ declare module 'gi://Gtk?version=3.0' {
              * @param targets a pointer to an array of     `GtkTargetEntrys` indicating the drop types that this `widget` will     accept, or `null`. Later you can access the list with     `gtk_drag_dest_get_target_list()` and `gtk_drag_dest_find_target()`.
              * @param actions a bitmask of possible actions for a drop onto this `widget`.
              */
-            drag_dest_set(
-                flags: DestDefaults | null,
-                targets: TargetEntry[] | null,
-                actions: Gdk.DragAction | null,
-            ): void;
+            drag_dest_set(flags: DestDefaults, targets: TargetEntry[] | null, actions: Gdk.DragAction): void;
             /**
              * Sets this widget as a proxy for drops to another window.
              * @param proxy_window the window to which to forward drag events
              * @param protocol the drag protocol which the `proxy_window` accepts   (You can use `gdk_drag_get_protocol()` to determine this)
              * @param use_coordinates If `true`, send the same coordinates to the   destination, because it is an embedded   subwindow.
              */
-            drag_dest_set_proxy(
-                proxy_window: Gdk.Window,
-                protocol: Gdk.DragProtocol | null,
-                use_coordinates: boolean,
-            ): void;
+            drag_dest_set_proxy(proxy_window: Gdk.Window, protocol: Gdk.DragProtocol, use_coordinates: boolean): void;
             /**
              * Sets the target types that this widget can accept from drag-and-drop.
              * The widget must first be made into a drag destination with
@@ -221863,9 +221595,9 @@ declare module 'gi://Gtk?version=3.0' {
              * @param actions the bitmask of possible actions for a drag from this widget
              */
             drag_source_set(
-                start_button_mask: Gdk.ModifierType | null,
+                start_button_mask: Gdk.ModifierType,
                 targets: TargetEntry[] | null,
-                actions: Gdk.DragAction | null,
+                actions: Gdk.DragAction,
             ): void;
             /**
              * Sets the icon that will be used for drags from a particular source
@@ -222324,7 +222056,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param intent the use case for the modifier mask
              * @returns the modifier mask used for `intent`.
              */
-            get_modifier_mask(intent: Gdk.ModifierIntent | null): Gdk.ModifierType;
+            get_modifier_mask(intent: Gdk.ModifierIntent): Gdk.ModifierType;
             /**
              * Returns the current modifier style for the widget. (As set by
              * `gtk_widget_modify_style()`.) If no style has previously set, a new
@@ -222958,7 +222690,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param direction direction of focus movement
              * @returns `true` if stopping keyboard navigation is fine, `false`               if the emitting widget should try to handle the keyboard               navigation attempt in its parent container(s).
              */
-            keynav_failed(direction: DirectionType | null): boolean;
+            keynav_failed(direction: DirectionType): boolean;
             /**
              * Lists the closures used by `widget` for accelerator group connections
              * with `gtk_accel_group_connect_by_path()` or `gtk_accel_group_connect()`.
@@ -223019,7 +222751,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param state the state for which to set the base color
              * @param color the color to assign (does not need to     be allocated), or `null` to undo the effect of previous     calls to of `gtk_widget_modify_base()`.
              */
-            modify_base(state: StateType | null, color?: Gdk.Color | null): void;
+            modify_base(state: StateType, color?: Gdk.Color | null): void;
             /**
              * Sets the background color for a widget in a particular state.
              *
@@ -223038,7 +222770,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param state the state for which to set the background color
              * @param color the color to assign (does not need     to be allocated), or `null` to undo the effect of previous     calls to of `gtk_widget_modify_bg()`.
              */
-            modify_bg(state: StateType | null, color?: Gdk.Color | null): void;
+            modify_bg(state: StateType, color?: Gdk.Color | null): void;
             /**
              * Sets the cursor color to use in a widget, overriding the {@link Gtk.Widget}
              * cursor-color and secondary-cursor-color
@@ -223058,7 +222790,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param state the state for which to set the foreground color
              * @param color the color to assign (does not need to be allocated),     or `null` to undo the effect of previous calls to     of `gtk_widget_modify_fg()`.
              */
-            modify_fg(state: StateType | null, color?: Gdk.Color | null): void;
+            modify_fg(state: StateType, color?: Gdk.Color | null): void;
             /**
              * Sets the font to use for a widget.
              *
@@ -223100,7 +222832,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param state the state for which to set the text color
              * @param color the color to assign (does not need to     be allocated), or `null` to undo the effect of previous     calls to of `gtk_widget_modify_text()`.
              */
-            modify_text(state: StateType | null, color?: Gdk.Color | null): void;
+            modify_text(state: StateType, color?: Gdk.Color | null): void;
             /**
              * Sets the background color to use for a widget.
              *
@@ -223109,7 +222841,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param state the state for which to set the background color
              * @param color the color to assign, or `null` to undo the effect     of previous calls to `gtk_widget_override_background_color()`
              */
-            override_background_color(state: StateFlags | null, color?: Gdk.RGBA | null): void;
+            override_background_color(state: StateFlags, color?: Gdk.RGBA | null): void;
             /**
              * Sets the color to use for a widget.
              *
@@ -223139,7 +222871,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param state the state for which to set the color
              * @param color the color to assign, or `null` to undo the effect     of previous calls to `gtk_widget_override_color()`
              */
-            override_color(state: StateFlags | null, color?: Gdk.RGBA | null): void;
+            override_color(state: StateFlags, color?: Gdk.RGBA | null): void;
             /**
              * Sets the cursor color to use in a widget, overriding the
              * cursor-color and secondary-cursor-color
@@ -223306,11 +223038,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param accel_mods modifier key combination of the accelerator
              * @returns whether an accelerator was installed and could be removed
              */
-            remove_accelerator(
-                accel_group: AccelGroup,
-                accel_key: number,
-                accel_mods: Gdk.ModifierType | null,
-            ): boolean;
+            remove_accelerator(accel_group: AccelGroup, accel_key: number, accel_mods: Gdk.ModifierType): boolean;
             /**
              * Removes a widget from the list of mnemonic labels for
              * this widget. (See `gtk_widget_list_mnemonic_labels()`). The widget
@@ -223559,7 +223287,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param device a {@link Gdk.Device}
              * @param events event mask
              */
-            set_device_events(device: Gdk.Device, events: Gdk.EventMask | null): void;
+            set_device_events(device: Gdk.Device, events: Gdk.EventMask): void;
             /**
              * Sets the reading direction on a particular widget. This direction
              * controls the primary direction for widgets containing text,
@@ -223575,7 +223303,7 @@ declare module 'gi://Gtk?version=3.0' {
              * set by `gtk_widget_set_default_direction()` will be used.
              * @param dir the new direction
              */
-            set_direction(dir: TextDirection | null): void;
+            set_direction(dir: TextDirection): void;
             /**
              * Widgets are double buffered by default; you can use this function
              * to turn off the buffering. “Double buffered” simply means that
@@ -223645,7 +223373,7 @@ declare module 'gi://Gtk?version=3.0' {
              * See the {@link Gtk.Widget.halign} property.
              * @param align the horizontal alignment
              */
-            set_halign(align: Align | null): void;
+            set_halign(align: Align): void;
             /**
              * Sets the has-tooltip property on `widget` to `has_tooltip`.  See
              * {@link Gtk.Widget.has_tooltip} for more information.
@@ -223908,7 +223636,7 @@ declare module 'gi://Gtk?version=3.0' {
              * the state using wrapper functions such as `gtk_widget_set_sensitive()`.
              * @param state new state for `widget`
              */
-            set_state(state: StateType | null): void;
+            set_state(state: StateType): void;
             /**
              * This function is for use in widget implementations. Turns on flag
              * values in the current widget state (insensitive, prelighted, etc.).
@@ -223926,7 +223654,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param flags State flags to turn on
              * @param clear Whether to clear state before turning on `flags`
              */
-            set_state_flags(flags: StateFlags | null, clear: boolean): void;
+            set_state_flags(flags: StateFlags, clear: boolean): void;
             /**
              * Used to set the {@link Gtk.Style} for a widget (`widget`->style). Since
              * GTK 3, this function does nothing, the passed in style is ignored.
@@ -223976,7 +223704,7 @@ declare module 'gi://Gtk?version=3.0' {
              * See the {@link Gtk.Widget.valign} property.
              * @param align the vertical alignment
              */
-            set_valign(align: Align | null): void;
+            set_valign(align: Align): void;
             /**
              * Sets whether the widget would like any available extra vertical
              * space.
@@ -224187,7 +223915,7 @@ declare module 'gi://Gtk?version=3.0' {
              * See `gtk_widget_set_state_flags()`.
              * @param flags State flags to turn off
              */
-            unset_state_flags(flags: StateFlags | null): void;
+            unset_state_flags(flags: StateFlags): void;
             /**
              * @param baseline
              * @virtual
@@ -225088,7 +224816,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -225129,7 +224857,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -226250,7 +225978,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -226291,7 +226019,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -226687,8 +226415,8 @@ declare module 'gi://Gtk?version=3.0' {
                 accel_signal: string,
                 accel_group: AccelGroup,
                 accel_key: number,
-                accel_mods: Gdk.ModifierType | null,
-                accel_flags: AccelFlags | null,
+                accel_mods: Gdk.ModifierType,
+                accel_flags: AccelFlags,
             ): void;
             /**
              * Adds the device events in the bitfield `events` to the event mask for
@@ -226696,7 +226424,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param device a {@link Gdk.Device}
              * @param events an event mask, see {@link Gdk.EventMask}
              */
-            add_device_events(device: Gdk.Device, events: Gdk.EventMask | null): void;
+            add_device_events(device: Gdk.Device, events: Gdk.EventMask): void;
             /**
              * Adds the events in the bitfield `events` to the event mask for
              * `widget`. See `gtk_widget_set_events()` and the
@@ -226774,7 +226502,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param direction direction of focus movement
              * @returns `true` if focus ended up inside `widget`
              */
-            child_focus(direction: DirectionType | null): boolean;
+            child_focus(direction: DirectionType): boolean;
             /**
              * Emits a {@link Gtk.Widget.SignalSignatures.child_notify | Gtk.Widget::child-notify} signal for the
              * [child property][child-properties] `child_property`
@@ -226811,7 +226539,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param orientation expand direction
              * @returns whether widget tree rooted here should be expanded
              */
-            compute_expand(orientation: Orientation | null): boolean;
+            compute_expand(orientation: Orientation): boolean;
             /**
              * Creates a new {@link Pango.Context} with the appropriate font map,
              * font options, font description, and base direction for drawing
@@ -226898,7 +226626,7 @@ declare module 'gi://Gtk?version=3.0' {
              */
             drag_begin(
                 targets: TargetList,
-                actions: Gdk.DragAction | null,
+                actions: Gdk.DragAction,
                 button: number,
                 event?: Gdk.Event | null,
             ): Gdk.DragContext;
@@ -226938,7 +226666,7 @@ declare module 'gi://Gtk?version=3.0' {
              */
             drag_begin_with_coordinates(
                 targets: TargetList,
-                actions: Gdk.DragAction | null,
+                actions: Gdk.DragAction,
                 button: number,
                 event: Gdk.Event | null,
                 x: number,
@@ -227050,22 +226778,14 @@ declare module 'gi://Gtk?version=3.0' {
              * @param targets a pointer to an array of     `GtkTargetEntrys` indicating the drop types that this `widget` will     accept, or `null`. Later you can access the list with     `gtk_drag_dest_get_target_list()` and `gtk_drag_dest_find_target()`.
              * @param actions a bitmask of possible actions for a drop onto this `widget`.
              */
-            drag_dest_set(
-                flags: DestDefaults | null,
-                targets: TargetEntry[] | null,
-                actions: Gdk.DragAction | null,
-            ): void;
+            drag_dest_set(flags: DestDefaults, targets: TargetEntry[] | null, actions: Gdk.DragAction): void;
             /**
              * Sets this widget as a proxy for drops to another window.
              * @param proxy_window the window to which to forward drag events
              * @param protocol the drag protocol which the `proxy_window` accepts   (You can use `gdk_drag_get_protocol()` to determine this)
              * @param use_coordinates If `true`, send the same coordinates to the   destination, because it is an embedded   subwindow.
              */
-            drag_dest_set_proxy(
-                proxy_window: Gdk.Window,
-                protocol: Gdk.DragProtocol | null,
-                use_coordinates: boolean,
-            ): void;
+            drag_dest_set_proxy(proxy_window: Gdk.Window, protocol: Gdk.DragProtocol, use_coordinates: boolean): void;
             /**
              * Sets the target types that this widget can accept from drag-and-drop.
              * The widget must first be made into a drag destination with
@@ -227147,9 +226867,9 @@ declare module 'gi://Gtk?version=3.0' {
              * @param actions the bitmask of possible actions for a drag from this widget
              */
             drag_source_set(
-                start_button_mask: Gdk.ModifierType | null,
+                start_button_mask: Gdk.ModifierType,
                 targets: TargetEntry[] | null,
-                actions: Gdk.DragAction | null,
+                actions: Gdk.DragAction,
             ): void;
             /**
              * Sets the icon that will be used for drags from a particular source
@@ -227608,7 +227328,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param intent the use case for the modifier mask
              * @returns the modifier mask used for `intent`.
              */
-            get_modifier_mask(intent: Gdk.ModifierIntent | null): Gdk.ModifierType;
+            get_modifier_mask(intent: Gdk.ModifierIntent): Gdk.ModifierType;
             /**
              * Returns the current modifier style for the widget. (As set by
              * `gtk_widget_modify_style()`.) If no style has previously set, a new
@@ -228242,7 +227962,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param direction direction of focus movement
              * @returns `true` if stopping keyboard navigation is fine, `false`               if the emitting widget should try to handle the keyboard               navigation attempt in its parent container(s).
              */
-            keynav_failed(direction: DirectionType | null): boolean;
+            keynav_failed(direction: DirectionType): boolean;
             /**
              * Lists the closures used by `widget` for accelerator group connections
              * with `gtk_accel_group_connect_by_path()` or `gtk_accel_group_connect()`.
@@ -228303,7 +228023,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param state the state for which to set the base color
              * @param color the color to assign (does not need to     be allocated), or `null` to undo the effect of previous     calls to of `gtk_widget_modify_base()`.
              */
-            modify_base(state: StateType | null, color?: Gdk.Color | null): void;
+            modify_base(state: StateType, color?: Gdk.Color | null): void;
             /**
              * Sets the background color for a widget in a particular state.
              *
@@ -228322,7 +228042,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param state the state for which to set the background color
              * @param color the color to assign (does not need     to be allocated), or `null` to undo the effect of previous     calls to of `gtk_widget_modify_bg()`.
              */
-            modify_bg(state: StateType | null, color?: Gdk.Color | null): void;
+            modify_bg(state: StateType, color?: Gdk.Color | null): void;
             /**
              * Sets the cursor color to use in a widget, overriding the {@link Gtk.Widget}
              * cursor-color and secondary-cursor-color
@@ -228342,7 +228062,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param state the state for which to set the foreground color
              * @param color the color to assign (does not need to be allocated),     or `null` to undo the effect of previous calls to     of `gtk_widget_modify_fg()`.
              */
-            modify_fg(state: StateType | null, color?: Gdk.Color | null): void;
+            modify_fg(state: StateType, color?: Gdk.Color | null): void;
             /**
              * Sets the font to use for a widget.
              *
@@ -228384,7 +228104,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param state the state for which to set the text color
              * @param color the color to assign (does not need to     be allocated), or `null` to undo the effect of previous     calls to of `gtk_widget_modify_text()`.
              */
-            modify_text(state: StateType | null, color?: Gdk.Color | null): void;
+            modify_text(state: StateType, color?: Gdk.Color | null): void;
             /**
              * Sets the background color to use for a widget.
              *
@@ -228393,7 +228113,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param state the state for which to set the background color
              * @param color the color to assign, or `null` to undo the effect     of previous calls to `gtk_widget_override_background_color()`
              */
-            override_background_color(state: StateFlags | null, color?: Gdk.RGBA | null): void;
+            override_background_color(state: StateFlags, color?: Gdk.RGBA | null): void;
             /**
              * Sets the color to use for a widget.
              *
@@ -228423,7 +228143,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param state the state for which to set the color
              * @param color the color to assign, or `null` to undo the effect     of previous calls to `gtk_widget_override_color()`
              */
-            override_color(state: StateFlags | null, color?: Gdk.RGBA | null): void;
+            override_color(state: StateFlags, color?: Gdk.RGBA | null): void;
             /**
              * Sets the cursor color to use in a widget, overriding the
              * cursor-color and secondary-cursor-color
@@ -228590,11 +228310,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param accel_mods modifier key combination of the accelerator
              * @returns whether an accelerator was installed and could be removed
              */
-            remove_accelerator(
-                accel_group: AccelGroup,
-                accel_key: number,
-                accel_mods: Gdk.ModifierType | null,
-            ): boolean;
+            remove_accelerator(accel_group: AccelGroup, accel_key: number, accel_mods: Gdk.ModifierType): boolean;
             /**
              * Removes a widget from the list of mnemonic labels for
              * this widget. (See `gtk_widget_list_mnemonic_labels()`). The widget
@@ -228848,7 +228564,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param device a {@link Gdk.Device}
              * @param events event mask
              */
-            set_device_events(device: Gdk.Device, events: Gdk.EventMask | null): void;
+            set_device_events(device: Gdk.Device, events: Gdk.EventMask): void;
             /**
              * Sets the reading direction on a particular widget. This direction
              * controls the primary direction for widgets containing text,
@@ -228864,7 +228580,7 @@ declare module 'gi://Gtk?version=3.0' {
              * set by `gtk_widget_set_default_direction()` will be used.
              * @param dir the new direction
              */
-            set_direction(dir: TextDirection | null): void;
+            set_direction(dir: TextDirection): void;
             /**
              * Widgets are double buffered by default; you can use this function
              * to turn off the buffering. “Double buffered” simply means that
@@ -228934,7 +228650,7 @@ declare module 'gi://Gtk?version=3.0' {
              * See the {@link Gtk.Widget.halign} property.
              * @param align the horizontal alignment
              */
-            set_halign(align: Align | null): void;
+            set_halign(align: Align): void;
             /**
              * Sets the has-tooltip property on `widget` to `has_tooltip`.  See
              * {@link Gtk.Widget.has_tooltip} for more information.
@@ -229197,7 +228913,7 @@ declare module 'gi://Gtk?version=3.0' {
              * the state using wrapper functions such as `gtk_widget_set_sensitive()`.
              * @param state new state for `widget`
              */
-            set_state(state: StateType | null): void;
+            set_state(state: StateType): void;
             /**
              * This function is for use in widget implementations. Turns on flag
              * values in the current widget state (insensitive, prelighted, etc.).
@@ -229215,7 +228931,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param flags State flags to turn on
              * @param clear Whether to clear state before turning on `flags`
              */
-            set_state_flags(flags: StateFlags | null, clear: boolean): void;
+            set_state_flags(flags: StateFlags, clear: boolean): void;
             /**
              * Used to set the {@link Gtk.Style} for a widget (`widget`->style). Since
              * GTK 3, this function does nothing, the passed in style is ignored.
@@ -229265,7 +228981,7 @@ declare module 'gi://Gtk?version=3.0' {
              * See the {@link Gtk.Widget.valign} property.
              * @param align the vertical alignment
              */
-            set_valign(align: Align | null): void;
+            set_valign(align: Align): void;
             /**
              * Sets whether the widget would like any available extra vertical
              * space.
@@ -229476,7 +229192,7 @@ declare module 'gi://Gtk?version=3.0' {
              * See `gtk_widget_set_state_flags()`.
              * @param flags State flags to turn off
              */
-            unset_state_flags(flags: StateFlags | null): void;
+            unset_state_flags(flags: StateFlags): void;
             /**
              * @param baseline
              * @virtual
@@ -230380,7 +230096,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -230421,7 +230137,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -231469,7 +231185,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -231510,7 +231226,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -231901,8 +231617,8 @@ declare module 'gi://Gtk?version=3.0' {
                 accel_signal: string,
                 accel_group: AccelGroup,
                 accel_key: number,
-                accel_mods: Gdk.ModifierType | null,
-                accel_flags: AccelFlags | null,
+                accel_mods: Gdk.ModifierType,
+                accel_flags: AccelFlags,
             ): void;
             /**
              * Adds the device events in the bitfield `events` to the event mask for
@@ -231910,7 +231626,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param device a {@link Gdk.Device}
              * @param events an event mask, see {@link Gdk.EventMask}
              */
-            add_device_events(device: Gdk.Device, events: Gdk.EventMask | null): void;
+            add_device_events(device: Gdk.Device, events: Gdk.EventMask): void;
             /**
              * Adds the events in the bitfield `events` to the event mask for
              * `widget`. See `gtk_widget_set_events()` and the
@@ -231988,7 +231704,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param direction direction of focus movement
              * @returns `true` if focus ended up inside `widget`
              */
-            child_focus(direction: DirectionType | null): boolean;
+            child_focus(direction: DirectionType): boolean;
             /**
              * Emits a {@link Gtk.Widget.SignalSignatures.child_notify | Gtk.Widget::child-notify} signal for the
              * [child property][child-properties] `child_property`
@@ -232025,7 +231741,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param orientation expand direction
              * @returns whether widget tree rooted here should be expanded
              */
-            compute_expand(orientation: Orientation | null): boolean;
+            compute_expand(orientation: Orientation): boolean;
             /**
              * Creates a new {@link Pango.Context} with the appropriate font map,
              * font options, font description, and base direction for drawing
@@ -232112,7 +231828,7 @@ declare module 'gi://Gtk?version=3.0' {
              */
             drag_begin(
                 targets: TargetList,
-                actions: Gdk.DragAction | null,
+                actions: Gdk.DragAction,
                 button: number,
                 event?: Gdk.Event | null,
             ): Gdk.DragContext;
@@ -232152,7 +231868,7 @@ declare module 'gi://Gtk?version=3.0' {
              */
             drag_begin_with_coordinates(
                 targets: TargetList,
-                actions: Gdk.DragAction | null,
+                actions: Gdk.DragAction,
                 button: number,
                 event: Gdk.Event | null,
                 x: number,
@@ -232264,22 +231980,14 @@ declare module 'gi://Gtk?version=3.0' {
              * @param targets a pointer to an array of     `GtkTargetEntrys` indicating the drop types that this `widget` will     accept, or `null`. Later you can access the list with     `gtk_drag_dest_get_target_list()` and `gtk_drag_dest_find_target()`.
              * @param actions a bitmask of possible actions for a drop onto this `widget`.
              */
-            drag_dest_set(
-                flags: DestDefaults | null,
-                targets: TargetEntry[] | null,
-                actions: Gdk.DragAction | null,
-            ): void;
+            drag_dest_set(flags: DestDefaults, targets: TargetEntry[] | null, actions: Gdk.DragAction): void;
             /**
              * Sets this widget as a proxy for drops to another window.
              * @param proxy_window the window to which to forward drag events
              * @param protocol the drag protocol which the `proxy_window` accepts   (You can use `gdk_drag_get_protocol()` to determine this)
              * @param use_coordinates If `true`, send the same coordinates to the   destination, because it is an embedded   subwindow.
              */
-            drag_dest_set_proxy(
-                proxy_window: Gdk.Window,
-                protocol: Gdk.DragProtocol | null,
-                use_coordinates: boolean,
-            ): void;
+            drag_dest_set_proxy(proxy_window: Gdk.Window, protocol: Gdk.DragProtocol, use_coordinates: boolean): void;
             /**
              * Sets the target types that this widget can accept from drag-and-drop.
              * The widget must first be made into a drag destination with
@@ -232361,9 +232069,9 @@ declare module 'gi://Gtk?version=3.0' {
              * @param actions the bitmask of possible actions for a drag from this widget
              */
             drag_source_set(
-                start_button_mask: Gdk.ModifierType | null,
+                start_button_mask: Gdk.ModifierType,
                 targets: TargetEntry[] | null,
-                actions: Gdk.DragAction | null,
+                actions: Gdk.DragAction,
             ): void;
             /**
              * Sets the icon that will be used for drags from a particular source
@@ -232822,7 +232530,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param intent the use case for the modifier mask
              * @returns the modifier mask used for `intent`.
              */
-            get_modifier_mask(intent: Gdk.ModifierIntent | null): Gdk.ModifierType;
+            get_modifier_mask(intent: Gdk.ModifierIntent): Gdk.ModifierType;
             /**
              * Returns the current modifier style for the widget. (As set by
              * `gtk_widget_modify_style()`.) If no style has previously set, a new
@@ -233456,7 +233164,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param direction direction of focus movement
              * @returns `true` if stopping keyboard navigation is fine, `false`               if the emitting widget should try to handle the keyboard               navigation attempt in its parent container(s).
              */
-            keynav_failed(direction: DirectionType | null): boolean;
+            keynav_failed(direction: DirectionType): boolean;
             /**
              * Lists the closures used by `widget` for accelerator group connections
              * with `gtk_accel_group_connect_by_path()` or `gtk_accel_group_connect()`.
@@ -233517,7 +233225,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param state the state for which to set the base color
              * @param color the color to assign (does not need to     be allocated), or `null` to undo the effect of previous     calls to of `gtk_widget_modify_base()`.
              */
-            modify_base(state: StateType | null, color?: Gdk.Color | null): void;
+            modify_base(state: StateType, color?: Gdk.Color | null): void;
             /**
              * Sets the background color for a widget in a particular state.
              *
@@ -233536,7 +233244,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param state the state for which to set the background color
              * @param color the color to assign (does not need     to be allocated), or `null` to undo the effect of previous     calls to of `gtk_widget_modify_bg()`.
              */
-            modify_bg(state: StateType | null, color?: Gdk.Color | null): void;
+            modify_bg(state: StateType, color?: Gdk.Color | null): void;
             /**
              * Sets the cursor color to use in a widget, overriding the {@link Gtk.Widget}
              * cursor-color and secondary-cursor-color
@@ -233556,7 +233264,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param state the state for which to set the foreground color
              * @param color the color to assign (does not need to be allocated),     or `null` to undo the effect of previous calls to     of `gtk_widget_modify_fg()`.
              */
-            modify_fg(state: StateType | null, color?: Gdk.Color | null): void;
+            modify_fg(state: StateType, color?: Gdk.Color | null): void;
             /**
              * Sets the font to use for a widget.
              *
@@ -233598,7 +233306,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param state the state for which to set the text color
              * @param color the color to assign (does not need to     be allocated), or `null` to undo the effect of previous     calls to of `gtk_widget_modify_text()`.
              */
-            modify_text(state: StateType | null, color?: Gdk.Color | null): void;
+            modify_text(state: StateType, color?: Gdk.Color | null): void;
             /**
              * Sets the background color to use for a widget.
              *
@@ -233607,7 +233315,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param state the state for which to set the background color
              * @param color the color to assign, or `null` to undo the effect     of previous calls to `gtk_widget_override_background_color()`
              */
-            override_background_color(state: StateFlags | null, color?: Gdk.RGBA | null): void;
+            override_background_color(state: StateFlags, color?: Gdk.RGBA | null): void;
             /**
              * Sets the color to use for a widget.
              *
@@ -233637,7 +233345,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param state the state for which to set the color
              * @param color the color to assign, or `null` to undo the effect     of previous calls to `gtk_widget_override_color()`
              */
-            override_color(state: StateFlags | null, color?: Gdk.RGBA | null): void;
+            override_color(state: StateFlags, color?: Gdk.RGBA | null): void;
             /**
              * Sets the cursor color to use in a widget, overriding the
              * cursor-color and secondary-cursor-color
@@ -233804,11 +233512,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param accel_mods modifier key combination of the accelerator
              * @returns whether an accelerator was installed and could be removed
              */
-            remove_accelerator(
-                accel_group: AccelGroup,
-                accel_key: number,
-                accel_mods: Gdk.ModifierType | null,
-            ): boolean;
+            remove_accelerator(accel_group: AccelGroup, accel_key: number, accel_mods: Gdk.ModifierType): boolean;
             /**
              * Removes a widget from the list of mnemonic labels for
              * this widget. (See `gtk_widget_list_mnemonic_labels()`). The widget
@@ -234057,7 +233761,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param device a {@link Gdk.Device}
              * @param events event mask
              */
-            set_device_events(device: Gdk.Device, events: Gdk.EventMask | null): void;
+            set_device_events(device: Gdk.Device, events: Gdk.EventMask): void;
             /**
              * Sets the reading direction on a particular widget. This direction
              * controls the primary direction for widgets containing text,
@@ -234073,7 +233777,7 @@ declare module 'gi://Gtk?version=3.0' {
              * set by `gtk_widget_set_default_direction()` will be used.
              * @param dir the new direction
              */
-            set_direction(dir: TextDirection | null): void;
+            set_direction(dir: TextDirection): void;
             /**
              * Widgets are double buffered by default; you can use this function
              * to turn off the buffering. “Double buffered” simply means that
@@ -234143,7 +233847,7 @@ declare module 'gi://Gtk?version=3.0' {
              * See the {@link Gtk.Widget.halign} property.
              * @param align the horizontal alignment
              */
-            set_halign(align: Align | null): void;
+            set_halign(align: Align): void;
             /**
              * Sets the has-tooltip property on `widget` to `has_tooltip`.  See
              * {@link Gtk.Widget.has_tooltip} for more information.
@@ -234406,7 +234110,7 @@ declare module 'gi://Gtk?version=3.0' {
              * the state using wrapper functions such as `gtk_widget_set_sensitive()`.
              * @param state new state for `widget`
              */
-            set_state(state: StateType | null): void;
+            set_state(state: StateType): void;
             /**
              * This function is for use in widget implementations. Turns on flag
              * values in the current widget state (insensitive, prelighted, etc.).
@@ -234424,7 +234128,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param flags State flags to turn on
              * @param clear Whether to clear state before turning on `flags`
              */
-            set_state_flags(flags: StateFlags | null, clear: boolean): void;
+            set_state_flags(flags: StateFlags, clear: boolean): void;
             /**
              * Used to set the {@link Gtk.Style} for a widget (`widget`->style). Since
              * GTK 3, this function does nothing, the passed in style is ignored.
@@ -234484,7 +234188,7 @@ declare module 'gi://Gtk?version=3.0' {
              * See the {@link Gtk.Widget.valign} property.
              * @param align the vertical alignment
              */
-            set_valign(align: Align | null): void;
+            set_valign(align: Align): void;
             /**
              * Sets whether the widget would like any available extra vertical
              * space.
@@ -234695,7 +234399,7 @@ declare module 'gi://Gtk?version=3.0' {
              * See `gtk_widget_set_state_flags()`.
              * @param flags State flags to turn off
              */
-            unset_state_flags(flags: StateFlags | null): void;
+            unset_state_flags(flags: StateFlags): void;
             /**
              * @param baseline
              * @virtual
@@ -235903,7 +235607,7 @@ declare module 'gi://Gtk?version=3.0' {
              * 'lower' end of the GtkRange’s adjustment.
              * @param sensitivity the lower stepper’s sensitivity policy.
              */
-            set_lower_stepper_sensitivity(sensitivity: SensitivityType | null): void;
+            set_lower_stepper_sensitivity(sensitivity: SensitivityType): void;
             /**
              * Sets the minimum size of the range’s slider.
              *
@@ -235952,7 +235656,7 @@ declare module 'gi://Gtk?version=3.0' {
              * 'upper' end of the GtkRange’s adjustment.
              * @param sensitivity the upper stepper’s sensitivity policy.
              */
-            set_upper_stepper_sensitivity(sensitivity: SensitivityType | null): void;
+            set_upper_stepper_sensitivity(sensitivity: SensitivityType): void;
             /**
              * Sets the current value of the range; if the value is outside the
              * minimum or maximum range values, it will be clamped to fit inside
@@ -236163,7 +235867,7 @@ declare module 'gi://Gtk?version=3.0' {
              * Sets the orientation of the `orientable`.
              * @param orientation the orientable’s new orientation.
              */
-            set_orientation(orientation: Orientation | null): void;
+            set_orientation(orientation: Orientation): void;
             /**
              * Creates a binding between `source_property` on `source` and `target_property`
              * on `target`.
@@ -236208,7 +235912,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -236249,7 +235953,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -236698,7 +236402,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param coord_type specifies whether the coordinates are relative to the screen or to the components top level window
              * @returns `true` or `false` indicating whether the specified point is within the extent of the `component` or not
              */
-            contains(x: number, y: number, coord_type: Atk.CoordType | null): boolean;
+            contains(x: number, y: number, coord_type: Atk.CoordType): boolean;
             /**
              * Returns the alpha value (i.e. the opacity) for this
              * `component`, on a scale from 0 (fully transparent) to 1.0
@@ -236713,7 +236417,7 @@ declare module 'gi://Gtk?version=3.0' {
              * support), all of x, y, width, height are set to -1.
              * @param coord_type specifies whether the coordinates are relative to the screen or to the components top level window
              */
-            get_extents(coord_type: Atk.CoordType | null): [number, number, number, number];
+            get_extents(coord_type: Atk.CoordType): [number, number, number, number];
             /**
              * Gets the layer of the component.
              * @returns an {@link Atk.Layer} which is the layer of the component
@@ -236733,7 +236437,7 @@ declare module 'gi://Gtk?version=3.0' {
              * support), x and y are set to -1.
              * @param coord_type specifies whether the coordinates are relative to the screen or to the components top level window
              */
-            get_position(coord_type: Atk.CoordType | null): [number, number];
+            get_position(coord_type: Atk.CoordType): [number, number];
             /**
              * Gets the size of the `component` in terms of width and height.
              *
@@ -236754,7 +236458,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param coord_type specifies whether the coordinates are relative to the screen or to the components top level window
              * @returns a reference to the accessible child, if one exists
              */
-            ref_accessible_at_point(x: number, y: number, coord_type: Atk.CoordType | null): Atk.Object | null;
+            ref_accessible_at_point(x: number, y: number, coord_type: Atk.CoordType): Atk.Object | null;
             /**
              * Remove the handler specified by `handler_id` from the list of
              * functions to be executed when this object receives focus events
@@ -236771,7 +236475,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param type specify where the object should be made visible.
              * @returns whether scrolling was successful.
              */
-            scroll_to(type: Atk.ScrollType | null): boolean;
+            scroll_to(type: Atk.ScrollType): boolean;
             /**
              * Move the top-left of `component` to a given position of the screen by
              * scrolling all necessary parents.
@@ -236780,7 +236484,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param y y-position where to scroll to
              * @returns whether scrolling was successful.
              */
-            scroll_to_point(coords: Atk.CoordType | null, x: number, y: number): boolean;
+            scroll_to_point(coords: Atk.CoordType, x: number, y: number): boolean;
             /**
              * Sets the extents of `component`.
              * @param x x coordinate
@@ -236790,7 +236494,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param coord_type specifies whether the coordinates are relative to the screen or to the components top level window
              * @returns `true` or `false` whether the extents were set or not
              */
-            set_extents(x: number, y: number, width: number, height: number, coord_type: Atk.CoordType | null): boolean;
+            set_extents(x: number, y: number, width: number, height: number, coord_type: Atk.CoordType): boolean;
             /**
              * Sets the position of `component`.
              *
@@ -236801,7 +236505,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param coord_type specifies whether the coordinates are relative to the screen or to the component's top level window
              * @returns `true` or `false` whether or not the position was set or not
              */
-            set_position(x: number, y: number, coord_type: Atk.CoordType | null): boolean;
+            set_position(x: number, y: number, coord_type: Atk.CoordType): boolean;
             /**
              * Set the size of the `component` in terms of width and height.
              * @param width width to set for `component`
@@ -237124,7 +236828,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -237165,7 +236869,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -238259,7 +237963,7 @@ declare module 'gi://Gtk?version=3.0' {
              * `chooser`.
              * @param sort_type sort order that the chooser should use
              */
-            set_sort_type(sort_type: RecentSortType | null): void;
+            set_sort_type(sort_type: RecentSortType): void;
             /**
              * Unselects all the items inside `chooser`.
              */
@@ -238401,7 +238105,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -238442,7 +238146,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -239307,7 +239011,7 @@ declare module 'gi://Gtk?version=3.0' {
              * `chooser`.
              * @param sort_type sort order that the chooser should use
              */
-            set_sort_type(sort_type: RecentSortType | null): void;
+            set_sort_type(sort_type: RecentSortType): void;
             /**
              * Unselects all the items inside `chooser`.
              */
@@ -239449,7 +239153,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -239490,7 +239194,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -240487,7 +240191,7 @@ declare module 'gi://Gtk?version=3.0' {
              * `chooser`.
              * @param sort_type sort order that the chooser should use
              */
-            set_sort_type(sort_type: RecentSortType | null): void;
+            set_sort_type(sort_type: RecentSortType): void;
             /**
              * Unselects all the items inside `chooser`.
              */
@@ -240629,7 +240333,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -240670,7 +240374,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -241312,7 +241016,7 @@ declare module 'gi://Gtk?version=3.0' {
              * Sets the orientation of the `orientable`.
              * @param orientation the orientable’s new orientation.
              */
-            set_orientation(orientation: Orientation | null): void;
+            set_orientation(orientation: Orientation): void;
             /**
              * Adds `filter` to the list of {@link Gtk.RecentFilter} objects held by `chooser`.
              *
@@ -241493,7 +241197,7 @@ declare module 'gi://Gtk?version=3.0' {
              * `chooser`.
              * @param sort_type sort order that the chooser should use
              */
-            set_sort_type(sort_type: RecentSortType | null): void;
+            set_sort_type(sort_type: RecentSortType): void;
             /**
              * Unselects all the items inside `chooser`.
              */
@@ -241635,7 +241339,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -241676,7 +241380,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -242168,7 +241872,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param needed bitfield of flags indicating the information that the custom          filter function needs.
              * @param func callback function; if the function returns `true`, then   the file will be displayed.
              */
-            add_custom(needed: RecentFilterFlags | null, func: RecentFilterFunc): void;
+            add_custom(needed: RecentFilterFlags, func: RecentFilterFunc): void;
             /**
              * Adds a rule that allows resources based on the name of the group
              * to which they belong
@@ -242449,7 +242153,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -242490,7 +242194,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -243555,7 +243259,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param coord_type specifies whether the coordinates are relative to the screen or to the components top level window
              * @returns `true` or `false` indicating whether the specified point is within the extent of the `component` or not
              */
-            contains(x: number, y: number, coord_type: Atk.CoordType | null): boolean;
+            contains(x: number, y: number, coord_type: Atk.CoordType): boolean;
             /**
              * Returns the alpha value (i.e. the opacity) for this
              * `component`, on a scale from 0 (fully transparent) to 1.0
@@ -243570,7 +243274,7 @@ declare module 'gi://Gtk?version=3.0' {
              * support), all of x, y, width, height are set to -1.
              * @param coord_type specifies whether the coordinates are relative to the screen or to the components top level window
              */
-            get_extents(coord_type: Atk.CoordType | null): [number, number, number, number];
+            get_extents(coord_type: Atk.CoordType): [number, number, number, number];
             /**
              * Gets the layer of the component.
              * @returns an {@link Atk.Layer} which is the layer of the component
@@ -243590,7 +243294,7 @@ declare module 'gi://Gtk?version=3.0' {
              * support), x and y are set to -1.
              * @param coord_type specifies whether the coordinates are relative to the screen or to the components top level window
              */
-            get_position(coord_type: Atk.CoordType | null): [number, number];
+            get_position(coord_type: Atk.CoordType): [number, number];
             /**
              * @param args
              */
@@ -243616,7 +243320,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param coord_type specifies whether the coordinates are relative to the screen or to the components top level window
              * @returns a reference to the accessible child, if one exists
              */
-            ref_accessible_at_point(x: number, y: number, coord_type: Atk.CoordType | null): Atk.Object | null;
+            ref_accessible_at_point(x: number, y: number, coord_type: Atk.CoordType): Atk.Object | null;
             /**
              * Remove the handler specified by `handler_id` from the list of
              * functions to be executed when this object receives focus events
@@ -243633,7 +243337,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param type specify where the object should be made visible.
              * @returns whether scrolling was successful.
              */
-            scroll_to(type: Atk.ScrollType | null): boolean;
+            scroll_to(type: Atk.ScrollType): boolean;
             /**
              * Move the top-left of `component` to a given position of the screen by
              * scrolling all necessary parents.
@@ -243642,7 +243346,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param y y-position where to scroll to
              * @returns whether scrolling was successful.
              */
-            scroll_to_point(coords: Atk.CoordType | null, x: number, y: number): boolean;
+            scroll_to_point(coords: Atk.CoordType, x: number, y: number): boolean;
             /**
              * Sets the extents of `component`.
              * @param x x coordinate
@@ -243652,7 +243356,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param coord_type specifies whether the coordinates are relative to the screen or to the components top level window
              * @returns `true` or `false` whether the extents were set or not
              */
-            set_extents(x: number, y: number, width: number, height: number, coord_type: Atk.CoordType | null): boolean;
+            set_extents(x: number, y: number, width: number, height: number, coord_type: Atk.CoordType): boolean;
             /**
              * Sets the position of `component`.
              *
@@ -243663,7 +243367,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param coord_type specifies whether the coordinates are relative to the screen or to the component's top level window
              * @returns `true` or `false` whether or not the position was set or not
              */
-            set_position(x: number, y: number, coord_type: Atk.CoordType | null): boolean;
+            set_position(x: number, y: number, coord_type: Atk.CoordType): boolean;
             /**
              * Set the size of the `component` in terms of width and height.
              * @param width width to set for `component`
@@ -243920,7 +243624,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -243961,7 +243665,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -244331,7 +244035,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param target The {@link Atk.Object} which is to be the target of the relation.
              * @returns TRUE if the relationship is added.
              */
-            add_relationship(relationship: Atk.RelationType | null, target: Atk.Object): boolean;
+            add_relationship(relationship: Atk.RelationType, target: Atk.Object): boolean;
             /**
              * Gets the accessible id of the accessible.
              * @returns a character string representing the accessible id of the object, or NULL if no such string was set.
@@ -244442,7 +244146,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param target The {@link Atk.Object} which is the target of the relation to be removed.
              * @returns TRUE if the relationship is removed.
              */
-            remove_relationship(relationship: Atk.RelationType | null, target: Atk.Object): boolean;
+            remove_relationship(relationship: Atk.RelationType, target: Atk.Object): boolean;
             /**
              * Sets the accessible ID of the accessible.  This is not meant to be presented
              * to the user, but to be an ID which is stable over application development.
@@ -244478,7 +244182,7 @@ declare module 'gi://Gtk?version=3.0' {
              * Sets the role of the accessible.
              * @param role an {@link Atk.Role} to be set as the role
              */
-            set_role(role: Atk.Role | null): void;
+            set_role(role: Atk.Role): void;
             /**
              * @param child
              * @virtual
@@ -244801,7 +244505,7 @@ declare module 'gi://Gtk?version=3.0' {
              * various kinds of fades and slides.
              * @param transition the new transition type
              */
-            set_transition_type(transition: RevealerTransitionType | null): void;
+            set_transition_type(transition: RevealerTransitionType): void;
             /**
              * Creates a binding between `source_property` on `source` and `target_property`
              * on `target`.
@@ -244846,7 +244550,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -244887,7 +244591,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -245533,7 +245237,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param position where to draw the mark. For a horizontal scale, #GTK_POS_TOP   and {@link Gtk.PositionType.LEFT} are drawn above the scale, anything else below.   For a vertical scale, #GTK_POS_LEFT and {@link Gtk.PositionType.TOP} are drawn to   the left of the scale, anything else to the right.
              * @param markup Text to be shown at the mark, using [Pango markup][PangoMarkupFormat], or `null`
              */
-            add_mark(value: number, position: PositionType | null, markup?: string | null): void;
+            add_mark(value: number, position: PositionType, markup?: string | null): void;
             /**
              * Removes any marks that have been added with `gtk_scale_add_mark()`.
              */
@@ -245607,7 +245311,7 @@ declare module 'gi://Gtk?version=3.0' {
              * Sets the position in which the current value is displayed.
              * @param pos the position in which the current value is displayed
              */
-            set_value_pos(pos: PositionType | null): void;
+            set_value_pos(pos: PositionType): void;
             /**
              * The orientation of the orientable.
              * @since 2.16
@@ -245624,7 +245328,7 @@ declare module 'gi://Gtk?version=3.0' {
              * Sets the orientation of the `orientable`.
              * @param orientation the orientable’s new orientation.
              */
-            set_orientation(orientation: Orientation | null): void;
+            set_orientation(orientation: Orientation): void;
             /**
              * Creates a binding between `source_property` on `source` and `target_property`
              * on `target`.
@@ -245669,7 +245373,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -245710,7 +245414,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -246332,7 +246036,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -246373,7 +246077,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -247757,7 +247461,7 @@ declare module 'gi://Gtk?version=3.0' {
              * Sets the orientation of the `orientable`.
              * @param orientation the orientable’s new orientation.
              */
-            set_orientation(orientation: Orientation | null): void;
+            set_orientation(orientation: Orientation): void;
             /**
              * Creates a binding between `source_property` on `source` and `target_property`
              * on `target`.
@@ -247802,7 +247506,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -247843,7 +247547,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -248234,8 +247938,8 @@ declare module 'gi://Gtk?version=3.0' {
                 accel_signal: string,
                 accel_group: AccelGroup,
                 accel_key: number,
-                accel_mods: Gdk.ModifierType | null,
-                accel_flags: AccelFlags | null,
+                accel_mods: Gdk.ModifierType,
+                accel_flags: AccelFlags,
             ): void;
             /**
              * Adds the device events in the bitfield `events` to the event mask for
@@ -248243,7 +247947,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param device a {@link Gdk.Device}
              * @param events an event mask, see {@link Gdk.EventMask}
              */
-            add_device_events(device: Gdk.Device, events: Gdk.EventMask | null): void;
+            add_device_events(device: Gdk.Device, events: Gdk.EventMask): void;
             /**
              * Adds the events in the bitfield `events` to the event mask for
              * `widget`. See `gtk_widget_set_events()` and the
@@ -248321,7 +248025,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param direction direction of focus movement
              * @returns `true` if focus ended up inside `widget`
              */
-            child_focus(direction: DirectionType | null): boolean;
+            child_focus(direction: DirectionType): boolean;
             /**
              * Emits a {@link Gtk.Widget.SignalSignatures.child_notify | Gtk.Widget::child-notify} signal for the
              * [child property][child-properties] `child_property`
@@ -248358,7 +248062,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param orientation expand direction
              * @returns whether widget tree rooted here should be expanded
              */
-            compute_expand(orientation: Orientation | null): boolean;
+            compute_expand(orientation: Orientation): boolean;
             /**
              * Creates a new {@link Pango.Context} with the appropriate font map,
              * font options, font description, and base direction for drawing
@@ -248445,7 +248149,7 @@ declare module 'gi://Gtk?version=3.0' {
              */
             drag_begin(
                 targets: TargetList,
-                actions: Gdk.DragAction | null,
+                actions: Gdk.DragAction,
                 button: number,
                 event?: Gdk.Event | null,
             ): Gdk.DragContext;
@@ -248485,7 +248189,7 @@ declare module 'gi://Gtk?version=3.0' {
              */
             drag_begin_with_coordinates(
                 targets: TargetList,
-                actions: Gdk.DragAction | null,
+                actions: Gdk.DragAction,
                 button: number,
                 event: Gdk.Event | null,
                 x: number,
@@ -248597,22 +248301,14 @@ declare module 'gi://Gtk?version=3.0' {
              * @param targets a pointer to an array of     `GtkTargetEntrys` indicating the drop types that this `widget` will     accept, or `null`. Later you can access the list with     `gtk_drag_dest_get_target_list()` and `gtk_drag_dest_find_target()`.
              * @param actions a bitmask of possible actions for a drop onto this `widget`.
              */
-            drag_dest_set(
-                flags: DestDefaults | null,
-                targets: TargetEntry[] | null,
-                actions: Gdk.DragAction | null,
-            ): void;
+            drag_dest_set(flags: DestDefaults, targets: TargetEntry[] | null, actions: Gdk.DragAction): void;
             /**
              * Sets this widget as a proxy for drops to another window.
              * @param proxy_window the window to which to forward drag events
              * @param protocol the drag protocol which the `proxy_window` accepts   (You can use `gdk_drag_get_protocol()` to determine this)
              * @param use_coordinates If `true`, send the same coordinates to the   destination, because it is an embedded   subwindow.
              */
-            drag_dest_set_proxy(
-                proxy_window: Gdk.Window,
-                protocol: Gdk.DragProtocol | null,
-                use_coordinates: boolean,
-            ): void;
+            drag_dest_set_proxy(proxy_window: Gdk.Window, protocol: Gdk.DragProtocol, use_coordinates: boolean): void;
             /**
              * Sets the target types that this widget can accept from drag-and-drop.
              * The widget must first be made into a drag destination with
@@ -248694,9 +248390,9 @@ declare module 'gi://Gtk?version=3.0' {
              * @param actions the bitmask of possible actions for a drag from this widget
              */
             drag_source_set(
-                start_button_mask: Gdk.ModifierType | null,
+                start_button_mask: Gdk.ModifierType,
                 targets: TargetEntry[] | null,
-                actions: Gdk.DragAction | null,
+                actions: Gdk.DragAction,
             ): void;
             /**
              * Sets the icon that will be used for drags from a particular source
@@ -249155,7 +248851,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param intent the use case for the modifier mask
              * @returns the modifier mask used for `intent`.
              */
-            get_modifier_mask(intent: Gdk.ModifierIntent | null): Gdk.ModifierType;
+            get_modifier_mask(intent: Gdk.ModifierIntent): Gdk.ModifierType;
             /**
              * Returns the current modifier style for the widget. (As set by
              * `gtk_widget_modify_style()`.) If no style has previously set, a new
@@ -249789,7 +249485,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param direction direction of focus movement
              * @returns `true` if stopping keyboard navigation is fine, `false`               if the emitting widget should try to handle the keyboard               navigation attempt in its parent container(s).
              */
-            keynav_failed(direction: DirectionType | null): boolean;
+            keynav_failed(direction: DirectionType): boolean;
             /**
              * Lists the closures used by `widget` for accelerator group connections
              * with `gtk_accel_group_connect_by_path()` or `gtk_accel_group_connect()`.
@@ -249850,7 +249546,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param state the state for which to set the base color
              * @param color the color to assign (does not need to     be allocated), or `null` to undo the effect of previous     calls to of `gtk_widget_modify_base()`.
              */
-            modify_base(state: StateType | null, color?: Gdk.Color | null): void;
+            modify_base(state: StateType, color?: Gdk.Color | null): void;
             /**
              * Sets the background color for a widget in a particular state.
              *
@@ -249869,7 +249565,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param state the state for which to set the background color
              * @param color the color to assign (does not need     to be allocated), or `null` to undo the effect of previous     calls to of `gtk_widget_modify_bg()`.
              */
-            modify_bg(state: StateType | null, color?: Gdk.Color | null): void;
+            modify_bg(state: StateType, color?: Gdk.Color | null): void;
             /**
              * Sets the cursor color to use in a widget, overriding the {@link Gtk.Widget}
              * cursor-color and secondary-cursor-color
@@ -249889,7 +249585,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param state the state for which to set the foreground color
              * @param color the color to assign (does not need to be allocated),     or `null` to undo the effect of previous calls to     of `gtk_widget_modify_fg()`.
              */
-            modify_fg(state: StateType | null, color?: Gdk.Color | null): void;
+            modify_fg(state: StateType, color?: Gdk.Color | null): void;
             /**
              * Sets the font to use for a widget.
              *
@@ -249931,7 +249627,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param state the state for which to set the text color
              * @param color the color to assign (does not need to     be allocated), or `null` to undo the effect of previous     calls to of `gtk_widget_modify_text()`.
              */
-            modify_text(state: StateType | null, color?: Gdk.Color | null): void;
+            modify_text(state: StateType, color?: Gdk.Color | null): void;
             /**
              * Sets the background color to use for a widget.
              *
@@ -249940,7 +249636,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param state the state for which to set the background color
              * @param color the color to assign, or `null` to undo the effect     of previous calls to `gtk_widget_override_background_color()`
              */
-            override_background_color(state: StateFlags | null, color?: Gdk.RGBA | null): void;
+            override_background_color(state: StateFlags, color?: Gdk.RGBA | null): void;
             /**
              * Sets the color to use for a widget.
              *
@@ -249970,7 +249666,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param state the state for which to set the color
              * @param color the color to assign, or `null` to undo the effect     of previous calls to `gtk_widget_override_color()`
              */
-            override_color(state: StateFlags | null, color?: Gdk.RGBA | null): void;
+            override_color(state: StateFlags, color?: Gdk.RGBA | null): void;
             /**
              * Sets the cursor color to use in a widget, overriding the
              * cursor-color and secondary-cursor-color
@@ -250137,11 +249833,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param accel_mods modifier key combination of the accelerator
              * @returns whether an accelerator was installed and could be removed
              */
-            remove_accelerator(
-                accel_group: AccelGroup,
-                accel_key: number,
-                accel_mods: Gdk.ModifierType | null,
-            ): boolean;
+            remove_accelerator(accel_group: AccelGroup, accel_key: number, accel_mods: Gdk.ModifierType): boolean;
             /**
              * Removes a widget from the list of mnemonic labels for
              * this widget. (See `gtk_widget_list_mnemonic_labels()`). The widget
@@ -250390,7 +250082,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param device a {@link Gdk.Device}
              * @param events event mask
              */
-            set_device_events(device: Gdk.Device, events: Gdk.EventMask | null): void;
+            set_device_events(device: Gdk.Device, events: Gdk.EventMask): void;
             /**
              * Sets the reading direction on a particular widget. This direction
              * controls the primary direction for widgets containing text,
@@ -250406,7 +250098,7 @@ declare module 'gi://Gtk?version=3.0' {
              * set by `gtk_widget_set_default_direction()` will be used.
              * @param dir the new direction
              */
-            set_direction(dir: TextDirection | null): void;
+            set_direction(dir: TextDirection): void;
             /**
              * Widgets are double buffered by default; you can use this function
              * to turn off the buffering. “Double buffered” simply means that
@@ -250476,7 +250168,7 @@ declare module 'gi://Gtk?version=3.0' {
              * See the {@link Gtk.Widget.halign} property.
              * @param align the horizontal alignment
              */
-            set_halign(align: Align | null): void;
+            set_halign(align: Align): void;
             /**
              * Sets the has-tooltip property on `widget` to `has_tooltip`.  See
              * {@link Gtk.Widget.has_tooltip} for more information.
@@ -250739,7 +250431,7 @@ declare module 'gi://Gtk?version=3.0' {
              * the state using wrapper functions such as `gtk_widget_set_sensitive()`.
              * @param state new state for `widget`
              */
-            set_state(state: StateType | null): void;
+            set_state(state: StateType): void;
             /**
              * This function is for use in widget implementations. Turns on flag
              * values in the current widget state (insensitive, prelighted, etc.).
@@ -250757,7 +250449,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param flags State flags to turn on
              * @param clear Whether to clear state before turning on `flags`
              */
-            set_state_flags(flags: StateFlags | null, clear: boolean): void;
+            set_state_flags(flags: StateFlags, clear: boolean): void;
             /**
              * Used to set the {@link Gtk.Style} for a widget (`widget`->style). Since
              * GTK 3, this function does nothing, the passed in style is ignored.
@@ -250807,7 +250499,7 @@ declare module 'gi://Gtk?version=3.0' {
              * See the {@link Gtk.Widget.valign} property.
              * @param align the vertical alignment
              */
-            set_valign(align: Align | null): void;
+            set_valign(align: Align): void;
             /**
              * Sets whether the widget would like any available extra vertical
              * space.
@@ -251018,7 +250710,7 @@ declare module 'gi://Gtk?version=3.0' {
              * See `gtk_widget_set_state_flags()`.
              * @param flags State flags to turn off
              */
-            unset_state_flags(flags: StateFlags | null): void;
+            unset_state_flags(flags: StateFlags): void;
             /**
              * @param baseline
              * @virtual
@@ -252086,7 +251778,7 @@ declare module 'gi://Gtk?version=3.0' {
              * to -1.
              * @param coord_type specifies whether the coordinates are relative to the screen or to the components top level window
              */
-            get_image_position(coord_type: Atk.CoordType | null): [number, number];
+            get_image_position(coord_type: Atk.CoordType): [number, number];
             /**
              * Get the width and height in pixels for the specified image.
              * The values of `width` and `height` are returned as -1 if the
@@ -252322,7 +252014,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -252363,7 +252055,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -252896,7 +252588,7 @@ declare module 'gi://Gtk?version=3.0' {
              * Sets the orientation of the `orientable`.
              * @param orientation the orientable’s new orientation.
              */
-            set_orientation(orientation: Orientation | null): void;
+            set_orientation(orientation: Orientation): void;
             /**
              * Creates a binding between `source_property` on `source` and `target_property`
              * on `target`.
@@ -252941,7 +252633,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -252982,7 +252674,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -254004,7 +253696,7 @@ declare module 'gi://Gtk?version=3.0' {
              * `gtk_scrolled_window_unset_placement()`.
              * @param window_placement position of the child window
              */
-            set_placement(window_placement: CornerType | null): void;
+            set_placement(window_placement: CornerType): void;
             /**
              * Sets the scrollbar policy for the horizontal and vertical scrollbars.
              *
@@ -254017,7 +253709,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param hscrollbar_policy policy for horizontal bar
              * @param vscrollbar_policy policy for vertical bar
              */
-            set_policy(hscrollbar_policy: PolicyType | null, vscrollbar_policy: PolicyType | null): void;
+            set_policy(hscrollbar_policy: PolicyType, vscrollbar_policy: PolicyType): void;
             /**
              * Sets whether the natural height of the child should be calculated and propagated
              * through the scrolled window’s requested natural height.
@@ -254035,7 +253727,7 @@ declare module 'gi://Gtk?version=3.0' {
              * `scrolled_window`.
              * @param type kind of shadow to draw around scrolled window contents
              */
-            set_shadow_type(type: ShadowType | null): void;
+            set_shadow_type(type: ShadowType): void;
             /**
              * Sets the {@link Gtk.Adjustment} for the vertical scrollbar.
              * @param vadjustment the {@link Gtk.Adjustment} to use, or `null` to create a new one
@@ -254094,7 +253786,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -254135,7 +253827,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -254616,7 +254308,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -254657,7 +254349,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -255284,7 +254976,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -255325,7 +255017,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -256747,7 +256439,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -256788,7 +256480,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -257179,8 +256871,8 @@ declare module 'gi://Gtk?version=3.0' {
                 accel_signal: string,
                 accel_group: AccelGroup,
                 accel_key: number,
-                accel_mods: Gdk.ModifierType | null,
-                accel_flags: AccelFlags | null,
+                accel_mods: Gdk.ModifierType,
+                accel_flags: AccelFlags,
             ): void;
             /**
              * Adds the device events in the bitfield `events` to the event mask for
@@ -257188,7 +256880,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param device a {@link Gdk.Device}
              * @param events an event mask, see {@link Gdk.EventMask}
              */
-            add_device_events(device: Gdk.Device, events: Gdk.EventMask | null): void;
+            add_device_events(device: Gdk.Device, events: Gdk.EventMask): void;
             /**
              * Adds the events in the bitfield `events` to the event mask for
              * `widget`. See `gtk_widget_set_events()` and the
@@ -257266,7 +256958,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param direction direction of focus movement
              * @returns `true` if focus ended up inside `widget`
              */
-            child_focus(direction: DirectionType | null): boolean;
+            child_focus(direction: DirectionType): boolean;
             /**
              * Emits a {@link Gtk.Widget.SignalSignatures.child_notify | Gtk.Widget::child-notify} signal for the
              * [child property][child-properties] `child_property`
@@ -257298,7 +256990,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param orientation expand direction
              * @returns whether widget tree rooted here should be expanded
              */
-            compute_expand(orientation: Orientation | null): boolean;
+            compute_expand(orientation: Orientation): boolean;
             /**
              * Creates a new {@link Pango.Context} with the appropriate font map,
              * font options, font description, and base direction for drawing
@@ -257385,7 +257077,7 @@ declare module 'gi://Gtk?version=3.0' {
              */
             drag_begin(
                 targets: TargetList,
-                actions: Gdk.DragAction | null,
+                actions: Gdk.DragAction,
                 button: number,
                 event?: Gdk.Event | null,
             ): Gdk.DragContext;
@@ -257425,7 +257117,7 @@ declare module 'gi://Gtk?version=3.0' {
              */
             drag_begin_with_coordinates(
                 targets: TargetList,
-                actions: Gdk.DragAction | null,
+                actions: Gdk.DragAction,
                 button: number,
                 event: Gdk.Event | null,
                 x: number,
@@ -257537,22 +257229,14 @@ declare module 'gi://Gtk?version=3.0' {
              * @param targets a pointer to an array of     `GtkTargetEntrys` indicating the drop types that this `widget` will     accept, or `null`. Later you can access the list with     `gtk_drag_dest_get_target_list()` and `gtk_drag_dest_find_target()`.
              * @param actions a bitmask of possible actions for a drop onto this `widget`.
              */
-            drag_dest_set(
-                flags: DestDefaults | null,
-                targets: TargetEntry[] | null,
-                actions: Gdk.DragAction | null,
-            ): void;
+            drag_dest_set(flags: DestDefaults, targets: TargetEntry[] | null, actions: Gdk.DragAction): void;
             /**
              * Sets this widget as a proxy for drops to another window.
              * @param proxy_window the window to which to forward drag events
              * @param protocol the drag protocol which the `proxy_window` accepts   (You can use `gdk_drag_get_protocol()` to determine this)
              * @param use_coordinates If `true`, send the same coordinates to the   destination, because it is an embedded   subwindow.
              */
-            drag_dest_set_proxy(
-                proxy_window: Gdk.Window,
-                protocol: Gdk.DragProtocol | null,
-                use_coordinates: boolean,
-            ): void;
+            drag_dest_set_proxy(proxy_window: Gdk.Window, protocol: Gdk.DragProtocol, use_coordinates: boolean): void;
             /**
              * Sets the target types that this widget can accept from drag-and-drop.
              * The widget must first be made into a drag destination with
@@ -257634,9 +257318,9 @@ declare module 'gi://Gtk?version=3.0' {
              * @param actions the bitmask of possible actions for a drag from this widget
              */
             drag_source_set(
-                start_button_mask: Gdk.ModifierType | null,
+                start_button_mask: Gdk.ModifierType,
                 targets: TargetEntry[] | null,
-                actions: Gdk.DragAction | null,
+                actions: Gdk.DragAction,
             ): void;
             /**
              * Sets the icon that will be used for drags from a particular source
@@ -258095,7 +257779,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param intent the use case for the modifier mask
              * @returns the modifier mask used for `intent`.
              */
-            get_modifier_mask(intent: Gdk.ModifierIntent | null): Gdk.ModifierType;
+            get_modifier_mask(intent: Gdk.ModifierIntent): Gdk.ModifierType;
             /**
              * Returns the current modifier style for the widget. (As set by
              * `gtk_widget_modify_style()`.) If no style has previously set, a new
@@ -258729,7 +258413,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param direction direction of focus movement
              * @returns `true` if stopping keyboard navigation is fine, `false`               if the emitting widget should try to handle the keyboard               navigation attempt in its parent container(s).
              */
-            keynav_failed(direction: DirectionType | null): boolean;
+            keynav_failed(direction: DirectionType): boolean;
             /**
              * Lists the closures used by `widget` for accelerator group connections
              * with `gtk_accel_group_connect_by_path()` or `gtk_accel_group_connect()`.
@@ -258790,7 +258474,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param state the state for which to set the base color
              * @param color the color to assign (does not need to     be allocated), or `null` to undo the effect of previous     calls to of `gtk_widget_modify_base()`.
              */
-            modify_base(state: StateType | null, color?: Gdk.Color | null): void;
+            modify_base(state: StateType, color?: Gdk.Color | null): void;
             /**
              * Sets the background color for a widget in a particular state.
              *
@@ -258809,7 +258493,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param state the state for which to set the background color
              * @param color the color to assign (does not need     to be allocated), or `null` to undo the effect of previous     calls to of `gtk_widget_modify_bg()`.
              */
-            modify_bg(state: StateType | null, color?: Gdk.Color | null): void;
+            modify_bg(state: StateType, color?: Gdk.Color | null): void;
             /**
              * Sets the cursor color to use in a widget, overriding the {@link Gtk.Widget}
              * cursor-color and secondary-cursor-color
@@ -258829,7 +258513,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param state the state for which to set the foreground color
              * @param color the color to assign (does not need to be allocated),     or `null` to undo the effect of previous calls to     of `gtk_widget_modify_fg()`.
              */
-            modify_fg(state: StateType | null, color?: Gdk.Color | null): void;
+            modify_fg(state: StateType, color?: Gdk.Color | null): void;
             /**
              * Sets the font to use for a widget.
              *
@@ -258871,7 +258555,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param state the state for which to set the text color
              * @param color the color to assign (does not need to     be allocated), or `null` to undo the effect of previous     calls to of `gtk_widget_modify_text()`.
              */
-            modify_text(state: StateType | null, color?: Gdk.Color | null): void;
+            modify_text(state: StateType, color?: Gdk.Color | null): void;
             /**
              * Sets the background color to use for a widget.
              *
@@ -258880,7 +258564,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param state the state for which to set the background color
              * @param color the color to assign, or `null` to undo the effect     of previous calls to `gtk_widget_override_background_color()`
              */
-            override_background_color(state: StateFlags | null, color?: Gdk.RGBA | null): void;
+            override_background_color(state: StateFlags, color?: Gdk.RGBA | null): void;
             /**
              * Sets the color to use for a widget.
              *
@@ -258910,7 +258594,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param state the state for which to set the color
              * @param color the color to assign, or `null` to undo the effect     of previous calls to `gtk_widget_override_color()`
              */
-            override_color(state: StateFlags | null, color?: Gdk.RGBA | null): void;
+            override_color(state: StateFlags, color?: Gdk.RGBA | null): void;
             /**
              * Sets the cursor color to use in a widget, overriding the
              * cursor-color and secondary-cursor-color
@@ -259077,11 +258761,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param accel_mods modifier key combination of the accelerator
              * @returns whether an accelerator was installed and could be removed
              */
-            remove_accelerator(
-                accel_group: AccelGroup,
-                accel_key: number,
-                accel_mods: Gdk.ModifierType | null,
-            ): boolean;
+            remove_accelerator(accel_group: AccelGroup, accel_key: number, accel_mods: Gdk.ModifierType): boolean;
             /**
              * Removes a widget from the list of mnemonic labels for
              * this widget. (See `gtk_widget_list_mnemonic_labels()`). The widget
@@ -259330,7 +259010,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param device a {@link Gdk.Device}
              * @param events event mask
              */
-            set_device_events(device: Gdk.Device, events: Gdk.EventMask | null): void;
+            set_device_events(device: Gdk.Device, events: Gdk.EventMask): void;
             /**
              * Sets the reading direction on a particular widget. This direction
              * controls the primary direction for widgets containing text,
@@ -259346,7 +259026,7 @@ declare module 'gi://Gtk?version=3.0' {
              * set by `gtk_widget_set_default_direction()` will be used.
              * @param dir the new direction
              */
-            set_direction(dir: TextDirection | null): void;
+            set_direction(dir: TextDirection): void;
             /**
              * Widgets are double buffered by default; you can use this function
              * to turn off the buffering. “Double buffered” simply means that
@@ -259416,7 +259096,7 @@ declare module 'gi://Gtk?version=3.0' {
              * See the {@link Gtk.Widget.halign} property.
              * @param align the horizontal alignment
              */
-            set_halign(align: Align | null): void;
+            set_halign(align: Align): void;
             /**
              * Sets the has-tooltip property on `widget` to `has_tooltip`.  See
              * {@link Gtk.Widget.has_tooltip} for more information.
@@ -259679,7 +259359,7 @@ declare module 'gi://Gtk?version=3.0' {
              * the state using wrapper functions such as `gtk_widget_set_sensitive()`.
              * @param state new state for `widget`
              */
-            set_state(state: StateType | null): void;
+            set_state(state: StateType): void;
             /**
              * This function is for use in widget implementations. Turns on flag
              * values in the current widget state (insensitive, prelighted, etc.).
@@ -259697,7 +259377,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param flags State flags to turn on
              * @param clear Whether to clear state before turning on `flags`
              */
-            set_state_flags(flags: StateFlags | null, clear: boolean): void;
+            set_state_flags(flags: StateFlags, clear: boolean): void;
             /**
              * Used to set the {@link Gtk.Style} for a widget (`widget`->style). Since
              * GTK 3, this function does nothing, the passed in style is ignored.
@@ -259747,7 +259427,7 @@ declare module 'gi://Gtk?version=3.0' {
              * See the {@link Gtk.Widget.valign} property.
              * @param align the vertical alignment
              */
-            set_valign(align: Align | null): void;
+            set_valign(align: Align): void;
             /**
              * Sets whether the widget would like any available extra vertical
              * space.
@@ -259958,7 +259638,7 @@ declare module 'gi://Gtk?version=3.0' {
              * See `gtk_widget_set_state_flags()`.
              * @param flags State flags to turn off
              */
-            unset_state_flags(flags: StateFlags | null): void;
+            unset_state_flags(flags: StateFlags): void;
             /**
              * @param baseline
              * @virtual
@@ -261052,7 +260732,7 @@ declare module 'gi://Gtk?version=3.0' {
              * Sets the orientation of the `orientable`.
              * @param orientation the orientable’s new orientation.
              */
-            set_orientation(orientation: Orientation | null): void;
+            set_orientation(orientation: Orientation): void;
             /**
              * Creates a binding between `source_property` on `source` and `target_property`
              * on `target`.
@@ -261097,7 +260777,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -261138,7 +260818,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -262412,7 +262092,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -262453,7 +262133,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -262849,8 +262529,8 @@ declare module 'gi://Gtk?version=3.0' {
                 accel_signal: string,
                 accel_group: AccelGroup,
                 accel_key: number,
-                accel_mods: Gdk.ModifierType | null,
-                accel_flags: AccelFlags | null,
+                accel_mods: Gdk.ModifierType,
+                accel_flags: AccelFlags,
             ): void;
             /**
              * Adds the device events in the bitfield `events` to the event mask for
@@ -262858,7 +262538,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param device a {@link Gdk.Device}
              * @param events an event mask, see {@link Gdk.EventMask}
              */
-            add_device_events(device: Gdk.Device, events: Gdk.EventMask | null): void;
+            add_device_events(device: Gdk.Device, events: Gdk.EventMask): void;
             /**
              * Adds the events in the bitfield `events` to the event mask for
              * `widget`. See `gtk_widget_set_events()` and the
@@ -262936,7 +262616,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param direction direction of focus movement
              * @returns `true` if focus ended up inside `widget`
              */
-            child_focus(direction: DirectionType | null): boolean;
+            child_focus(direction: DirectionType): boolean;
             /**
              * Emits a {@link Gtk.Widget.SignalSignatures.child_notify | Gtk.Widget::child-notify} signal for the
              * [child property][child-properties] `child_property`
@@ -262973,7 +262653,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param orientation expand direction
              * @returns whether widget tree rooted here should be expanded
              */
-            compute_expand(orientation: Orientation | null): boolean;
+            compute_expand(orientation: Orientation): boolean;
             /**
              * Creates a new {@link Pango.Context} with the appropriate font map,
              * font options, font description, and base direction for drawing
@@ -263060,7 +262740,7 @@ declare module 'gi://Gtk?version=3.0' {
              */
             drag_begin(
                 targets: TargetList,
-                actions: Gdk.DragAction | null,
+                actions: Gdk.DragAction,
                 button: number,
                 event?: Gdk.Event | null,
             ): Gdk.DragContext;
@@ -263100,7 +262780,7 @@ declare module 'gi://Gtk?version=3.0' {
              */
             drag_begin_with_coordinates(
                 targets: TargetList,
-                actions: Gdk.DragAction | null,
+                actions: Gdk.DragAction,
                 button: number,
                 event: Gdk.Event | null,
                 x: number,
@@ -263212,22 +262892,14 @@ declare module 'gi://Gtk?version=3.0' {
              * @param targets a pointer to an array of     `GtkTargetEntrys` indicating the drop types that this `widget` will     accept, or `null`. Later you can access the list with     `gtk_drag_dest_get_target_list()` and `gtk_drag_dest_find_target()`.
              * @param actions a bitmask of possible actions for a drop onto this `widget`.
              */
-            drag_dest_set(
-                flags: DestDefaults | null,
-                targets: TargetEntry[] | null,
-                actions: Gdk.DragAction | null,
-            ): void;
+            drag_dest_set(flags: DestDefaults, targets: TargetEntry[] | null, actions: Gdk.DragAction): void;
             /**
              * Sets this widget as a proxy for drops to another window.
              * @param proxy_window the window to which to forward drag events
              * @param protocol the drag protocol which the `proxy_window` accepts   (You can use `gdk_drag_get_protocol()` to determine this)
              * @param use_coordinates If `true`, send the same coordinates to the   destination, because it is an embedded   subwindow.
              */
-            drag_dest_set_proxy(
-                proxy_window: Gdk.Window,
-                protocol: Gdk.DragProtocol | null,
-                use_coordinates: boolean,
-            ): void;
+            drag_dest_set_proxy(proxy_window: Gdk.Window, protocol: Gdk.DragProtocol, use_coordinates: boolean): void;
             /**
              * Sets the target types that this widget can accept from drag-and-drop.
              * The widget must first be made into a drag destination with
@@ -263309,9 +262981,9 @@ declare module 'gi://Gtk?version=3.0' {
              * @param actions the bitmask of possible actions for a drag from this widget
              */
             drag_source_set(
-                start_button_mask: Gdk.ModifierType | null,
+                start_button_mask: Gdk.ModifierType,
                 targets: TargetEntry[] | null,
-                actions: Gdk.DragAction | null,
+                actions: Gdk.DragAction,
             ): void;
             /**
              * Sets the icon that will be used for drags from a particular source
@@ -263770,7 +263442,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param intent the use case for the modifier mask
              * @returns the modifier mask used for `intent`.
              */
-            get_modifier_mask(intent: Gdk.ModifierIntent | null): Gdk.ModifierType;
+            get_modifier_mask(intent: Gdk.ModifierIntent): Gdk.ModifierType;
             /**
              * Returns the current modifier style for the widget. (As set by
              * `gtk_widget_modify_style()`.) If no style has previously set, a new
@@ -264404,7 +264076,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param direction direction of focus movement
              * @returns `true` if stopping keyboard navigation is fine, `false`               if the emitting widget should try to handle the keyboard               navigation attempt in its parent container(s).
              */
-            keynav_failed(direction: DirectionType | null): boolean;
+            keynav_failed(direction: DirectionType): boolean;
             /**
              * Lists the closures used by `widget` for accelerator group connections
              * with `gtk_accel_group_connect_by_path()` or `gtk_accel_group_connect()`.
@@ -264465,7 +264137,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param state the state for which to set the base color
              * @param color the color to assign (does not need to     be allocated), or `null` to undo the effect of previous     calls to of `gtk_widget_modify_base()`.
              */
-            modify_base(state: StateType | null, color?: Gdk.Color | null): void;
+            modify_base(state: StateType, color?: Gdk.Color | null): void;
             /**
              * Sets the background color for a widget in a particular state.
              *
@@ -264484,7 +264156,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param state the state for which to set the background color
              * @param color the color to assign (does not need     to be allocated), or `null` to undo the effect of previous     calls to of `gtk_widget_modify_bg()`.
              */
-            modify_bg(state: StateType | null, color?: Gdk.Color | null): void;
+            modify_bg(state: StateType, color?: Gdk.Color | null): void;
             /**
              * Sets the cursor color to use in a widget, overriding the {@link Gtk.Widget}
              * cursor-color and secondary-cursor-color
@@ -264504,7 +264176,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param state the state for which to set the foreground color
              * @param color the color to assign (does not need to be allocated),     or `null` to undo the effect of previous calls to     of `gtk_widget_modify_fg()`.
              */
-            modify_fg(state: StateType | null, color?: Gdk.Color | null): void;
+            modify_fg(state: StateType, color?: Gdk.Color | null): void;
             /**
              * Sets the font to use for a widget.
              *
@@ -264546,7 +264218,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param state the state for which to set the text color
              * @param color the color to assign (does not need to     be allocated), or `null` to undo the effect of previous     calls to of `gtk_widget_modify_text()`.
              */
-            modify_text(state: StateType | null, color?: Gdk.Color | null): void;
+            modify_text(state: StateType, color?: Gdk.Color | null): void;
             /**
              * Sets the background color to use for a widget.
              *
@@ -264555,7 +264227,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param state the state for which to set the background color
              * @param color the color to assign, or `null` to undo the effect     of previous calls to `gtk_widget_override_background_color()`
              */
-            override_background_color(state: StateFlags | null, color?: Gdk.RGBA | null): void;
+            override_background_color(state: StateFlags, color?: Gdk.RGBA | null): void;
             /**
              * Sets the color to use for a widget.
              *
@@ -264585,7 +264257,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param state the state for which to set the color
              * @param color the color to assign, or `null` to undo the effect     of previous calls to `gtk_widget_override_color()`
              */
-            override_color(state: StateFlags | null, color?: Gdk.RGBA | null): void;
+            override_color(state: StateFlags, color?: Gdk.RGBA | null): void;
             /**
              * Sets the cursor color to use in a widget, overriding the
              * cursor-color and secondary-cursor-color
@@ -264752,11 +264424,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param accel_mods modifier key combination of the accelerator
              * @returns whether an accelerator was installed and could be removed
              */
-            remove_accelerator(
-                accel_group: AccelGroup,
-                accel_key: number,
-                accel_mods: Gdk.ModifierType | null,
-            ): boolean;
+            remove_accelerator(accel_group: AccelGroup, accel_key: number, accel_mods: Gdk.ModifierType): boolean;
             /**
              * Removes a widget from the list of mnemonic labels for
              * this widget. (See `gtk_widget_list_mnemonic_labels()`). The widget
@@ -265010,7 +264678,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param device a {@link Gdk.Device}
              * @param events event mask
              */
-            set_device_events(device: Gdk.Device, events: Gdk.EventMask | null): void;
+            set_device_events(device: Gdk.Device, events: Gdk.EventMask): void;
             /**
              * Sets the reading direction on a particular widget. This direction
              * controls the primary direction for widgets containing text,
@@ -265026,7 +264694,7 @@ declare module 'gi://Gtk?version=3.0' {
              * set by `gtk_widget_set_default_direction()` will be used.
              * @param dir the new direction
              */
-            set_direction(dir: TextDirection | null): void;
+            set_direction(dir: TextDirection): void;
             /**
              * Widgets are double buffered by default; you can use this function
              * to turn off the buffering. “Double buffered” simply means that
@@ -265096,7 +264764,7 @@ declare module 'gi://Gtk?version=3.0' {
              * See the {@link Gtk.Widget.halign} property.
              * @param align the horizontal alignment
              */
-            set_halign(align: Align | null): void;
+            set_halign(align: Align): void;
             /**
              * Sets the has-tooltip property on `widget` to `has_tooltip`.  See
              * {@link Gtk.Widget.has_tooltip} for more information.
@@ -265359,7 +265027,7 @@ declare module 'gi://Gtk?version=3.0' {
              * the state using wrapper functions such as `gtk_widget_set_sensitive()`.
              * @param state new state for `widget`
              */
-            set_state(state: StateType | null): void;
+            set_state(state: StateType): void;
             /**
              * This function is for use in widget implementations. Turns on flag
              * values in the current widget state (insensitive, prelighted, etc.).
@@ -265377,7 +265045,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param flags State flags to turn on
              * @param clear Whether to clear state before turning on `flags`
              */
-            set_state_flags(flags: StateFlags | null, clear: boolean): void;
+            set_state_flags(flags: StateFlags, clear: boolean): void;
             /**
              * Used to set the {@link Gtk.Style} for a widget (`widget`->style). Since
              * GTK 3, this function does nothing, the passed in style is ignored.
@@ -265427,7 +265095,7 @@ declare module 'gi://Gtk?version=3.0' {
              * See the {@link Gtk.Widget.valign} property.
              * @param align the vertical alignment
              */
-            set_valign(align: Align | null): void;
+            set_valign(align: Align): void;
             /**
              * Sets whether the widget would like any available extra vertical
              * space.
@@ -265638,7 +265306,7 @@ declare module 'gi://Gtk?version=3.0' {
              * See `gtk_widget_set_state_flags()`.
              * @param flags State flags to turn off
              */
-            unset_state_flags(flags: StateFlags | null): void;
+            unset_state_flags(flags: StateFlags): void;
             /**
              * @param baseline
              * @virtual
@@ -266741,7 +266409,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -266782,7 +266450,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -268751,11 +268419,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param pspec The {@link GObject.ParamSpec} to query
              * @returns `true` if the property was found and has a value, `false` otherwise
              */
-            get_style_property(
-                path: WidgetPath,
-                state: StateFlags | null,
-                pspec: GObject.ParamSpec,
-            ): [boolean, unknown];
+            get_style_property(path: WidgetPath, state: StateFlags, pspec: GObject.ParamSpec): [boolean, unknown];
             /**
              * Returns the {@link Gtk.IconFactory} defined to be in use for `path`, or `null` if none
              * is defined.
@@ -268827,7 +268491,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -268868,7 +268532,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -269410,7 +269074,7 @@ declare module 'gi://Gtk?version=3.0' {
              * Sets the orientation of the `orientable`.
              * @param orientation the orientable’s new orientation.
              */
-            set_orientation(orientation: Orientation | null): void;
+            set_orientation(orientation: Orientation): void;
             /**
              * Creates a binding between `source_property` on `source` and `target_property`
              * on `target`.
@@ -269455,7 +269119,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -269496,7 +269160,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -270051,7 +269715,7 @@ declare module 'gi://Gtk?version=3.0' {
              * Sets the orientation of the `orientable`.
              * @param orientation the orientable’s new orientation.
              */
-            set_orientation(orientation: Orientation | null): void;
+            set_orientation(orientation: Orientation): void;
             /**
              * Creates a binding between `source_property` on `source` and `target_property`
              * on `target`.
@@ -270096,7 +269760,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -270137,7 +269801,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -270711,7 +270375,7 @@ declare module 'gi://Gtk?version=3.0' {
              * Sets the orientation of the `orientable`.
              * @param orientation the orientable’s new orientation.
              */
-            set_orientation(orientation: Orientation | null): void;
+            set_orientation(orientation: Orientation): void;
             /**
              * Creates a binding between `source_property` on `source` and `target_property`
              * on `target`.
@@ -270756,7 +270420,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -270797,7 +270461,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -271450,7 +271114,7 @@ declare module 'gi://Gtk?version=3.0' {
              * Sets the orientation of the `orientable`.
              * @param orientation the orientable’s new orientation.
              */
-            set_orientation(orientation: Orientation | null): void;
+            set_orientation(orientation: Orientation): void;
             /**
              * Creates a binding between `source_property` on `source` and `target_property`
              * on `target`.
@@ -271495,7 +271159,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -271536,7 +271200,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -272200,7 +271864,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -272241,7 +271905,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -272805,7 +272469,7 @@ declare module 'gi://Gtk?version=3.0' {
              * ({@link Gtk.SizeGroupMode.BOTH}).
              * @param mode the mode to set for the size group.
              */
-            set_mode(mode: SizeGroupMode | null): void;
+            set_mode(mode: SizeGroupMode): void;
             /**
              * Adds a child to `buildable`. `type` is an optional string
              * describing how the child should be added.
@@ -273036,7 +272700,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -273077,7 +272741,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -273701,7 +273365,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -273742,7 +273406,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -274231,7 +273895,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -274272,7 +273936,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -275164,7 +274828,7 @@ declare module 'gi://Gtk?version=3.0' {
              * or only when a valid value is set.
              * @param policy a {@link Gtk.SpinButtonUpdatePolicy} value
              */
-            set_update_policy(policy: SpinButtonUpdatePolicy | null): void;
+            set_update_policy(policy: SpinButtonUpdatePolicy): void;
             /**
              * Sets the value of `spin_button`.
              * @param value the new value
@@ -275183,7 +274847,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param direction a {@link Gtk.SpinType} indicating the direction to spin
              * @param increment step increment to apply in the specified direction
              */
-            spin(direction: SpinType | null, increment: number): void;
+            spin(direction: SpinType, increment: number): void;
             /**
              * Manually force an update of the spin button.
              */
@@ -275951,7 +275615,7 @@ declare module 'gi://Gtk?version=3.0' {
              * Sets the orientation of the `orientable`.
              * @param orientation the orientable’s new orientation.
              */
-            set_orientation(orientation: Orientation | null): void;
+            set_orientation(orientation: Orientation): void;
             /**
              * Creates a binding between `source_property` on `source` and `target_property`
              * on `target`.
@@ -275996,7 +275660,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -276037,7 +275701,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -276428,8 +276092,8 @@ declare module 'gi://Gtk?version=3.0' {
                 accel_signal: string,
                 accel_group: AccelGroup,
                 accel_key: number,
-                accel_mods: Gdk.ModifierType | null,
-                accel_flags: AccelFlags | null,
+                accel_mods: Gdk.ModifierType,
+                accel_flags: AccelFlags,
             ): void;
             /**
              * Adds the device events in the bitfield `events` to the event mask for
@@ -276437,7 +276101,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param device a {@link Gdk.Device}
              * @param events an event mask, see {@link Gdk.EventMask}
              */
-            add_device_events(device: Gdk.Device, events: Gdk.EventMask | null): void;
+            add_device_events(device: Gdk.Device, events: Gdk.EventMask): void;
             /**
              * Adds the events in the bitfield `events` to the event mask for
              * `widget`. See `gtk_widget_set_events()` and the
@@ -276515,7 +276179,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param direction direction of focus movement
              * @returns `true` if focus ended up inside `widget`
              */
-            child_focus(direction: DirectionType | null): boolean;
+            child_focus(direction: DirectionType): boolean;
             /**
              * Emits a {@link Gtk.Widget.SignalSignatures.child_notify | Gtk.Widget::child-notify} signal for the
              * [child property][child-properties] `child_property`
@@ -276547,7 +276211,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param orientation expand direction
              * @returns whether widget tree rooted here should be expanded
              */
-            compute_expand(orientation: Orientation | null): boolean;
+            compute_expand(orientation: Orientation): boolean;
             /**
              * Creates a new {@link Pango.Context} with the appropriate font map,
              * font options, font description, and base direction for drawing
@@ -276634,7 +276298,7 @@ declare module 'gi://Gtk?version=3.0' {
              */
             drag_begin(
                 targets: TargetList,
-                actions: Gdk.DragAction | null,
+                actions: Gdk.DragAction,
                 button: number,
                 event?: Gdk.Event | null,
             ): Gdk.DragContext;
@@ -276674,7 +276338,7 @@ declare module 'gi://Gtk?version=3.0' {
              */
             drag_begin_with_coordinates(
                 targets: TargetList,
-                actions: Gdk.DragAction | null,
+                actions: Gdk.DragAction,
                 button: number,
                 event: Gdk.Event | null,
                 x: number,
@@ -276786,22 +276450,14 @@ declare module 'gi://Gtk?version=3.0' {
              * @param targets a pointer to an array of     `GtkTargetEntrys` indicating the drop types that this `widget` will     accept, or `null`. Later you can access the list with     `gtk_drag_dest_get_target_list()` and `gtk_drag_dest_find_target()`.
              * @param actions a bitmask of possible actions for a drop onto this `widget`.
              */
-            drag_dest_set(
-                flags: DestDefaults | null,
-                targets: TargetEntry[] | null,
-                actions: Gdk.DragAction | null,
-            ): void;
+            drag_dest_set(flags: DestDefaults, targets: TargetEntry[] | null, actions: Gdk.DragAction): void;
             /**
              * Sets this widget as a proxy for drops to another window.
              * @param proxy_window the window to which to forward drag events
              * @param protocol the drag protocol which the `proxy_window` accepts   (You can use `gdk_drag_get_protocol()` to determine this)
              * @param use_coordinates If `true`, send the same coordinates to the   destination, because it is an embedded   subwindow.
              */
-            drag_dest_set_proxy(
-                proxy_window: Gdk.Window,
-                protocol: Gdk.DragProtocol | null,
-                use_coordinates: boolean,
-            ): void;
+            drag_dest_set_proxy(proxy_window: Gdk.Window, protocol: Gdk.DragProtocol, use_coordinates: boolean): void;
             /**
              * Sets the target types that this widget can accept from drag-and-drop.
              * The widget must first be made into a drag destination with
@@ -276883,9 +276539,9 @@ declare module 'gi://Gtk?version=3.0' {
              * @param actions the bitmask of possible actions for a drag from this widget
              */
             drag_source_set(
-                start_button_mask: Gdk.ModifierType | null,
+                start_button_mask: Gdk.ModifierType,
                 targets: TargetEntry[] | null,
-                actions: Gdk.DragAction | null,
+                actions: Gdk.DragAction,
             ): void;
             /**
              * Sets the icon that will be used for drags from a particular source
@@ -277344,7 +277000,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param intent the use case for the modifier mask
              * @returns the modifier mask used for `intent`.
              */
-            get_modifier_mask(intent: Gdk.ModifierIntent | null): Gdk.ModifierType;
+            get_modifier_mask(intent: Gdk.ModifierIntent): Gdk.ModifierType;
             /**
              * Returns the current modifier style for the widget. (As set by
              * `gtk_widget_modify_style()`.) If no style has previously set, a new
@@ -277978,7 +277634,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param direction direction of focus movement
              * @returns `true` if stopping keyboard navigation is fine, `false`               if the emitting widget should try to handle the keyboard               navigation attempt in its parent container(s).
              */
-            keynav_failed(direction: DirectionType | null): boolean;
+            keynav_failed(direction: DirectionType): boolean;
             /**
              * Lists the closures used by `widget` for accelerator group connections
              * with `gtk_accel_group_connect_by_path()` or `gtk_accel_group_connect()`.
@@ -278039,7 +277695,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param state the state for which to set the base color
              * @param color the color to assign (does not need to     be allocated), or `null` to undo the effect of previous     calls to of `gtk_widget_modify_base()`.
              */
-            modify_base(state: StateType | null, color?: Gdk.Color | null): void;
+            modify_base(state: StateType, color?: Gdk.Color | null): void;
             /**
              * Sets the background color for a widget in a particular state.
              *
@@ -278058,7 +277714,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param state the state for which to set the background color
              * @param color the color to assign (does not need     to be allocated), or `null` to undo the effect of previous     calls to of `gtk_widget_modify_bg()`.
              */
-            modify_bg(state: StateType | null, color?: Gdk.Color | null): void;
+            modify_bg(state: StateType, color?: Gdk.Color | null): void;
             /**
              * Sets the cursor color to use in a widget, overriding the {@link Gtk.Widget}
              * cursor-color and secondary-cursor-color
@@ -278078,7 +277734,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param state the state for which to set the foreground color
              * @param color the color to assign (does not need to be allocated),     or `null` to undo the effect of previous calls to     of `gtk_widget_modify_fg()`.
              */
-            modify_fg(state: StateType | null, color?: Gdk.Color | null): void;
+            modify_fg(state: StateType, color?: Gdk.Color | null): void;
             /**
              * Sets the font to use for a widget.
              *
@@ -278120,7 +277776,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param state the state for which to set the text color
              * @param color the color to assign (does not need to     be allocated), or `null` to undo the effect of previous     calls to of `gtk_widget_modify_text()`.
              */
-            modify_text(state: StateType | null, color?: Gdk.Color | null): void;
+            modify_text(state: StateType, color?: Gdk.Color | null): void;
             /**
              * Sets the background color to use for a widget.
              *
@@ -278129,7 +277785,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param state the state for which to set the background color
              * @param color the color to assign, or `null` to undo the effect     of previous calls to `gtk_widget_override_background_color()`
              */
-            override_background_color(state: StateFlags | null, color?: Gdk.RGBA | null): void;
+            override_background_color(state: StateFlags, color?: Gdk.RGBA | null): void;
             /**
              * Sets the color to use for a widget.
              *
@@ -278159,7 +277815,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param state the state for which to set the color
              * @param color the color to assign, or `null` to undo the effect     of previous calls to `gtk_widget_override_color()`
              */
-            override_color(state: StateFlags | null, color?: Gdk.RGBA | null): void;
+            override_color(state: StateFlags, color?: Gdk.RGBA | null): void;
             /**
              * Sets the cursor color to use in a widget, overriding the
              * cursor-color and secondary-cursor-color
@@ -278326,11 +277982,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param accel_mods modifier key combination of the accelerator
              * @returns whether an accelerator was installed and could be removed
              */
-            remove_accelerator(
-                accel_group: AccelGroup,
-                accel_key: number,
-                accel_mods: Gdk.ModifierType | null,
-            ): boolean;
+            remove_accelerator(accel_group: AccelGroup, accel_key: number, accel_mods: Gdk.ModifierType): boolean;
             /**
              * Removes a widget from the list of mnemonic labels for
              * this widget. (See `gtk_widget_list_mnemonic_labels()`). The widget
@@ -278579,7 +278231,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param device a {@link Gdk.Device}
              * @param events event mask
              */
-            set_device_events(device: Gdk.Device, events: Gdk.EventMask | null): void;
+            set_device_events(device: Gdk.Device, events: Gdk.EventMask): void;
             /**
              * Sets the reading direction on a particular widget. This direction
              * controls the primary direction for widgets containing text,
@@ -278595,7 +278247,7 @@ declare module 'gi://Gtk?version=3.0' {
              * set by `gtk_widget_set_default_direction()` will be used.
              * @param dir the new direction
              */
-            set_direction(dir: TextDirection | null): void;
+            set_direction(dir: TextDirection): void;
             /**
              * Widgets are double buffered by default; you can use this function
              * to turn off the buffering. “Double buffered” simply means that
@@ -278665,7 +278317,7 @@ declare module 'gi://Gtk?version=3.0' {
              * See the {@link Gtk.Widget.halign} property.
              * @param align the horizontal alignment
              */
-            set_halign(align: Align | null): void;
+            set_halign(align: Align): void;
             /**
              * Sets the has-tooltip property on `widget` to `has_tooltip`.  See
              * {@link Gtk.Widget.has_tooltip} for more information.
@@ -278928,7 +278580,7 @@ declare module 'gi://Gtk?version=3.0' {
              * the state using wrapper functions such as `gtk_widget_set_sensitive()`.
              * @param state new state for `widget`
              */
-            set_state(state: StateType | null): void;
+            set_state(state: StateType): void;
             /**
              * This function is for use in widget implementations. Turns on flag
              * values in the current widget state (insensitive, prelighted, etc.).
@@ -278946,7 +278598,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param flags State flags to turn on
              * @param clear Whether to clear state before turning on `flags`
              */
-            set_state_flags(flags: StateFlags | null, clear: boolean): void;
+            set_state_flags(flags: StateFlags, clear: boolean): void;
             /**
              * Used to set the {@link Gtk.Style} for a widget (`widget`->style). Since
              * GTK 3, this function does nothing, the passed in style is ignored.
@@ -278996,7 +278648,7 @@ declare module 'gi://Gtk?version=3.0' {
              * See the {@link Gtk.Widget.valign} property.
              * @param align the vertical alignment
              */
-            set_valign(align: Align | null): void;
+            set_valign(align: Align): void;
             /**
              * Sets whether the widget would like any available extra vertical
              * space.
@@ -279207,7 +278859,7 @@ declare module 'gi://Gtk?version=3.0' {
              * See `gtk_widget_set_state_flags()`.
              * @param flags State flags to turn off
              */
-            unset_state_flags(flags: StateFlags | null): void;
+            unset_state_flags(flags: StateFlags): void;
             /**
              * @param baseline
              * @virtual
@@ -280377,9 +280029,9 @@ declare module 'gi://Gtk?version=3.0' {
              */
             get_bounded_ranges(
                 rect: Atk.TextRectangle,
-                coord_type: Atk.CoordType | null,
-                x_clip_type: Atk.TextClipType | null,
-                y_clip_type: Atk.TextClipType | null,
+                coord_type: Atk.CoordType,
+                x_clip_type: Atk.TextClipType,
+                y_clip_type: Atk.TextClipType,
             ): Atk.TextRange[];
             /**
              * Gets the offset of the position of the caret (cursor).
@@ -280406,7 +280058,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param offset The offset of the text character for which bounding information is required.
              * @param coords specify whether coordinates are relative to the screen or widget window
              */
-            get_character_extents(offset: number, coords: Atk.CoordType | null): [number, number, number, number];
+            get_character_extents(offset: number, coords: Atk.CoordType): [number, number, number, number];
             /**
              * Creates an {@link Atk.AttributeSet} which consists of the default values of
              * attributes for the text. See the enum AtkTextAttribute for types of text
@@ -280429,7 +280081,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param coords specify whether coordinates are relative to the screen or widget window
              * @returns the offset to the character which is located at  the specified          `x` and `y` coordinates of -1 in case of failure.
              */
-            get_offset_at_point(x: number, y: number, coords: Atk.CoordType | null): number;
+            get_offset_at_point(x: number, y: number, coords: Atk.CoordType): number;
             /**
              * Get the bounding box for text within the specified range.
              *
@@ -280439,11 +280091,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param end_offset The offset of the text character after the last character        for which boundary information is required.
              * @param coord_type Specify whether coordinates are relative to the screen or widget window.
              */
-            get_range_extents(
-                start_offset: number,
-                end_offset: number,
-                coord_type: Atk.CoordType | null,
-            ): Atk.TextRectangle;
+            get_range_extents(start_offset: number, end_offset: number, coord_type: Atk.CoordType): Atk.TextRectangle;
             /**
              * Creates an {@link Atk.AttributeSet} which consists of the attributes explicitly
              * set at the position `offset` in the text. `start_offset` and `end_offset` are
@@ -280497,10 +280145,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param granularity An {@link Atk.TextGranularity}
              * @returns a newly allocated string containing the text at          the `offset` bounded by the specified `granularity`. Use `g_free()`          to free the returned string.  Returns `null` if the offset is invalid          or no implementation is available.
              */
-            get_string_at_offset(
-                offset: number,
-                granularity: Atk.TextGranularity | null,
-            ): [string | null, number, number];
+            get_string_at_offset(offset: number, granularity: Atk.TextGranularity): [string | null, number, number];
             /**
              * Gets the specified text.
              * @param start_offset a starting character offset within `text`
@@ -280514,7 +280159,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param boundary_type An {@link Atk.TextBoundary}
              * @returns a newly allocated string containing the text after `offset` bounded          by the specified `boundary_type`. Use `g_free()` to free the returned          string.
              */
-            get_text_after_offset(offset: number, boundary_type: Atk.TextBoundary | null): [string, number, number];
+            get_text_after_offset(offset: number, boundary_type: Atk.TextBoundary): [string, number, number];
             /**
              * Gets the specified text.
              *
@@ -280544,14 +280189,14 @@ declare module 'gi://Gtk?version=3.0' {
              * @param boundary_type An {@link Atk.TextBoundary}
              * @returns a newly allocated string containing the text at `offset` bounded          by the specified `boundary_type`. Use `g_free()` to free the returned          string.
              */
-            get_text_at_offset(offset: number, boundary_type: Atk.TextBoundary | null): [string, number, number];
+            get_text_at_offset(offset: number, boundary_type: Atk.TextBoundary): [string, number, number];
             /**
              * Gets the specified text.
              * @param offset position
              * @param boundary_type An {@link Atk.TextBoundary}
              * @returns a newly allocated string containing the text before `offset` bounded          by the specified `boundary_type`. Use `g_free()` to free the returned          string.
              */
-            get_text_before_offset(offset: number, boundary_type: Atk.TextBoundary | null): [string, number, number];
+            get_text_before_offset(offset: number, boundary_type: Atk.TextBoundary): [string, number, number];
             /**
              * Removes the specified selection.
              * @param selection_num The selection number.  The selected regions are assigned numbers that correspond to how far the region is from the start of the text.  The selected region closest to the beginning of the text region is assigned the number 0, etc.  Note that adding, moving or deleting a selected region can change the numbering.
@@ -280565,7 +280210,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param type specify where the object should be made visible.
              * @returns whether scrolling was successful.
              */
-            scroll_substring_to(start_offset: number, end_offset: number, type: Atk.ScrollType | null): boolean;
+            scroll_substring_to(start_offset: number, end_offset: number, type: Atk.ScrollType): boolean;
             /**
              * Move the top-left of a substring of `text` to a given position of the screen
              * by scrolling all necessary parents.
@@ -280579,7 +280224,7 @@ declare module 'gi://Gtk?version=3.0' {
             scroll_substring_to_point(
                 start_offset: number,
                 end_offset: number,
-                coords: Atk.CoordType | null,
+                coords: Atk.CoordType,
                 x: number,
                 y: number,
             ): boolean;
@@ -281074,7 +280719,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -281115,7 +280760,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -281834,7 +281479,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -281875,7 +281520,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -282324,7 +281969,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param coord_type specifies whether the coordinates are relative to the screen or to the components top level window
              * @returns `true` or `false` indicating whether the specified point is within the extent of the `component` or not
              */
-            contains(x: number, y: number, coord_type: Atk.CoordType | null): boolean;
+            contains(x: number, y: number, coord_type: Atk.CoordType): boolean;
             /**
              * Returns the alpha value (i.e. the opacity) for this
              * `component`, on a scale from 0 (fully transparent) to 1.0
@@ -282339,7 +281984,7 @@ declare module 'gi://Gtk?version=3.0' {
              * support), all of x, y, width, height are set to -1.
              * @param coord_type specifies whether the coordinates are relative to the screen or to the components top level window
              */
-            get_extents(coord_type: Atk.CoordType | null): [number, number, number, number];
+            get_extents(coord_type: Atk.CoordType): [number, number, number, number];
             /**
              * Gets the layer of the component.
              * @returns an {@link Atk.Layer} which is the layer of the component
@@ -282359,7 +282004,7 @@ declare module 'gi://Gtk?version=3.0' {
              * support), x and y are set to -1.
              * @param coord_type specifies whether the coordinates are relative to the screen or to the components top level window
              */
-            get_position(coord_type: Atk.CoordType | null): [number, number];
+            get_position(coord_type: Atk.CoordType): [number, number];
             /**
              * Gets the size of the `component` in terms of width and height.
              *
@@ -282380,7 +282025,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param coord_type specifies whether the coordinates are relative to the screen or to the components top level window
              * @returns a reference to the accessible child, if one exists
              */
-            ref_accessible_at_point(x: number, y: number, coord_type: Atk.CoordType | null): Atk.Object | null;
+            ref_accessible_at_point(x: number, y: number, coord_type: Atk.CoordType): Atk.Object | null;
             /**
              * Remove the handler specified by `handler_id` from the list of
              * functions to be executed when this object receives focus events
@@ -282397,7 +282042,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param type specify where the object should be made visible.
              * @returns whether scrolling was successful.
              */
-            scroll_to(type: Atk.ScrollType | null): boolean;
+            scroll_to(type: Atk.ScrollType): boolean;
             /**
              * Move the top-left of `component` to a given position of the screen by
              * scrolling all necessary parents.
@@ -282406,7 +282051,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param y y-position where to scroll to
              * @returns whether scrolling was successful.
              */
-            scroll_to_point(coords: Atk.CoordType | null, x: number, y: number): boolean;
+            scroll_to_point(coords: Atk.CoordType, x: number, y: number): boolean;
             /**
              * Sets the extents of `component`.
              * @param x x coordinate
@@ -282416,7 +282061,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param coord_type specifies whether the coordinates are relative to the screen or to the components top level window
              * @returns `true` or `false` whether the extents were set or not
              */
-            set_extents(x: number, y: number, width: number, height: number, coord_type: Atk.CoordType | null): boolean;
+            set_extents(x: number, y: number, width: number, height: number, coord_type: Atk.CoordType): boolean;
             /**
              * Sets the position of `component`.
              *
@@ -282427,7 +282072,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param coord_type specifies whether the coordinates are relative to the screen or to the component's top level window
              * @returns `true` or `false` whether or not the position was set or not
              */
-            set_position(x: number, y: number, coord_type: Atk.CoordType | null): boolean;
+            set_position(x: number, y: number, coord_type: Atk.CoordType): boolean;
             /**
              * Set the size of the `component` in terms of width and height.
              * @param width width to set for `component`
@@ -282584,7 +282229,7 @@ declare module 'gi://Gtk?version=3.0' {
              * to -1.
              * @param coord_type specifies whether the coordinates are relative to the screen or to the components top level window
              */
-            get_image_position(coord_type: Atk.CoordType | null): [number, number];
+            get_image_position(coord_type: Atk.CoordType): [number, number];
             /**
              * Get the width and height in pixels for the specified image.
              * The values of `width` and `height` are returned as -1 if the
@@ -282680,7 +282325,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -282721,7 +282366,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -283396,7 +283041,7 @@ declare module 'gi://Gtk?version=3.0' {
              * based on the page that is about to become current.
              * @param transition the new transition type
              */
-            set_transition_type(transition: StackTransitionType | null): void;
+            set_transition_type(transition: StackTransitionType): void;
             /**
              * Sets the {@link Gtk.Stack} to be vertically homogeneous or not.
              * If it is homogeneous, the {@link Gtk.Stack} will request the same
@@ -283428,7 +283073,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param name the name of the child to make visible
              * @param transition the transition type to use
              */
-            set_visible_child_full(name: string, transition: StackTransitionType | null): void;
+            set_visible_child_full(name: string, transition: StackTransitionType): void;
             /**
              * Makes the child with the given name visible.
              *
@@ -283487,7 +283132,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -283528,7 +283173,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -284009,7 +283654,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -284050,7 +283695,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -284598,7 +284243,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -284639,7 +284284,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -285190,7 +284835,7 @@ declare module 'gi://Gtk?version=3.0' {
              * Sets the orientation of the `orientable`.
              * @param orientation the orientable’s new orientation.
              */
-            set_orientation(orientation: Orientation | null): void;
+            set_orientation(orientation: Orientation): void;
             /**
              * Creates a binding between `source_property` on `source` and `target_property`
              * on `target`.
@@ -285235,7 +284880,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -285276,7 +284921,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -286540,7 +286185,7 @@ declare module 'gi://Gtk?version=3.0' {
              * Sets the orientation of the `orientable`.
              * @param orientation the orientable’s new orientation.
              */
-            set_orientation(orientation: Orientation | null): void;
+            set_orientation(orientation: Orientation): void;
             /**
              * Creates a binding between `source_property` on `source` and `target_property`
              * on `target`.
@@ -286585,7 +286230,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -286626,7 +286271,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -287107,7 +286752,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -287148,7 +286793,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -288158,7 +287803,7 @@ declare module 'gi://Gtk?version=3.0' {
             apply_default_background(
                 cr: cairo.Context,
                 window: Gdk.Window,
-                state_type: StateType | null,
+                state_type: StateType,
                 x: number,
                 y: number,
                 width: number,
@@ -288218,8 +287863,8 @@ declare module 'gi://Gtk?version=3.0' {
              */
             render_icon(
                 source: IconSource,
-                direction: TextDirection | null,
-                state: StateType | null,
+                direction: TextDirection,
+                state: StateType,
                 size: number,
                 widget?: Widget | null,
                 detail?: string | null,
@@ -288230,7 +287875,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param window a {@link Gdk.Window}
              * @param state_type a state
              */
-            set_background(window: Gdk.Window, state_type: StateType | null): void;
+            set_background(window: Gdk.Window, state_type: StateType): void;
         }
 
         namespace StyleContext {
@@ -288496,7 +288141,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param region_name region name to use in styling
              * @param flags flags that apply to the region
              */
-            add_region(region_name: string, flags: RegionFlags | null): void;
+            add_region(region_name: string, flags: RegionFlags): void;
             /**
              * Stops all running animations for `region_id` and all animatable
              * regions underneath.
@@ -288523,7 +288168,7 @@ declare module 'gi://Gtk?version=3.0' {
              * style classes to modify the color to be rendered.
              * @param state state to retrieve the color for
              */
-            get_background_color(state: StateFlags | null): Gdk.RGBA;
+            get_background_color(state: StateFlags): Gdk.RGBA;
             /**
              * Gets the border for a given state as a {@link Gtk.Border}.
              *
@@ -288531,12 +288176,12 @@ declare module 'gi://Gtk?version=3.0' {
              * #GTK_STYLE_PROPERTY_BORDER_WIDTH for details.
              * @param state state to retrieve the border for
              */
-            get_border(state: StateFlags | null): Border;
+            get_border(state: StateFlags): Border;
             /**
              * Gets the border color for a given state.
              * @param state state to retrieve the color for
              */
-            get_border_color(state: StateFlags | null): Gdk.RGBA;
+            get_border_color(state: StateFlags): Gdk.RGBA;
             /**
              * Gets the foreground color for a given state.
              *
@@ -288544,7 +288189,7 @@ declare module 'gi://Gtk?version=3.0' {
              * #GTK_STYLE_PROPERTY_COLOR for details.
              * @param state state to retrieve the color for
              */
-            get_color(state: StateFlags | null): Gdk.RGBA;
+            get_color(state: StateFlags): Gdk.RGBA;
             /**
              * Returns the widget direction used for rendering.
              * @returns the widget direction
@@ -288557,7 +288202,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param state state to retrieve the font for
              * @returns the {@link Pango.FontDescription} for the given          state.  This object is owned by GTK+ and should not be          freed.
              */
-            get_font(state: StateFlags | null): Pango.FontDescription;
+            get_font(state: StateFlags): Pango.FontDescription;
             /**
              * Returns the {@link Gdk.FrameClock} to which `context` is attached.
              * @returns a {@link Gdk.FrameClock}, or `null`  if `context` does not have an attached frame clock.
@@ -288574,14 +288219,14 @@ declare module 'gi://Gtk?version=3.0' {
              * for details.
              * @param state state to retrieve the border for
              */
-            get_margin(state: StateFlags | null): Border;
+            get_margin(state: StateFlags): Border;
             /**
              * Gets the padding for a given state as a {@link Gtk.Border}.
              * See `gtk_style_context_get()` and #GTK_STYLE_PROPERTY_PADDING
              * for details.
              * @param state state to retrieve the padding for
              */
-            get_padding(state: StateFlags | null): Border;
+            get_padding(state: StateFlags): Border;
             /**
              * Gets the parent context set via `gtk_style_context_set_parent()`.
              * See that function for details.
@@ -288610,7 +288255,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param property style property name
              * @param state state to retrieve the property value for
              */
-            get_property(property: string, state: StateFlags | null): unknown;
+            get_property(property: string, state: StateFlags): unknown;
             /**
              * @param args
              */
@@ -288760,7 +288405,7 @@ declare module 'gi://Gtk?version=3.0' {
             notify_state_change(
                 window: Gdk.Window,
                 region_id: any | null,
-                state: StateType | null,
+                state: StateType,
                 state_value: boolean,
             ): void;
             /**
@@ -288835,7 +288480,7 @@ declare module 'gi://Gtk?version=3.0' {
              * call this yourself.
              * @param direction the new direction.
              */
-            set_direction(direction: TextDirection | null): void;
+            set_direction(direction: TextDirection): void;
             /**
              * Attaches `context` to the given frame clock.
              *
@@ -288859,7 +288504,7 @@ declare module 'gi://Gtk?version=3.0' {
              * this function manually.
              * @param sides sides where rendered elements are visually connected to     other elements
              */
-            set_junction_sides(sides: JunctionSides | null): void;
+            set_junction_sides(sides: JunctionSides): void;
             /**
              * Sets the parent style context for `context`. The parent style
              * context is used to implement
@@ -288903,7 +288548,7 @@ declare module 'gi://Gtk?version=3.0' {
              * Sets the state to be used for style matching.
              * @param flags state to represent
              */
-            set_state(flags: StateFlags | null): void;
+            set_state(flags: StateFlags): void;
             /**
              * Returns `true` if there is a transition animation running for the
              * current region (see `gtk_style_context_push_animatable_region()`).
@@ -288916,7 +288561,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param state a widget state
              * @returns `true` if there is a running transition animation for `state`.
              */
-            state_is_running(state: StateType | null): [boolean, number];
+            state_is_running(state: StateType): [boolean, number];
             /**
              * Converts the style context into a string representation.
              *
@@ -288931,7 +288576,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param flags Flags that determine what to print
              * @returns a newly allocated string representing `context`
              */
-            to_string(flags: StyleContextPrintFlags | null): string;
+            to_string(flags: StyleContextPrintFlags): string;
         }
 
         namespace StyleProperties {
@@ -289018,7 +288663,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param state state to retrieve the property value for
              * @returns `true` if the property exists in `props`, `false` otherwise
              */
-            get_property(property: string, state: StateFlags | null): [boolean, unknown];
+            get_property(property: string, state: StateFlags): [boolean, unknown];
             /**
              * @param args
              */
@@ -289053,7 +288698,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param state state to set the value for
              * @param value new value for the property
              */
-            set_property(property: string, state: StateFlags | null, value: GObject.Value | any): void;
+            set_property(property: string, state: StateFlags, value: GObject.Value | any): void;
             /**
              * @param args
              */
@@ -289064,7 +288709,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param property property to unset
              * @param state state to unset
              */
-            unset_property(property: string, state: StateFlags | null): void;
+            unset_property(property: string, state: StateFlags): void;
             /**
              * Returns the {@link Gtk.IconFactory} defined to be in use for `path`, or `null` if none
              * is defined.
@@ -289087,11 +288732,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param pspec The {@link GObject.ParamSpec} to query
              * @returns `true` if the property was found and has a value, `false` otherwise
              */
-            get_style_property(
-                path: WidgetPath,
-                state: StateFlags | null,
-                pspec: GObject.ParamSpec,
-            ): [boolean, unknown];
+            get_style_property(path: WidgetPath, state: StateFlags, pspec: GObject.ParamSpec): [boolean, unknown];
             /**
              * Returns the {@link Gtk.IconFactory} defined to be in use for `path`, or `null` if none
              * is defined.
@@ -289163,7 +288804,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -289204,7 +288845,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -290742,7 +290383,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -290783,7 +290424,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -291174,8 +290815,8 @@ declare module 'gi://Gtk?version=3.0' {
                 accel_signal: string,
                 accel_group: AccelGroup,
                 accel_key: number,
-                accel_mods: Gdk.ModifierType | null,
-                accel_flags: AccelFlags | null,
+                accel_mods: Gdk.ModifierType,
+                accel_flags: AccelFlags,
             ): void;
             /**
              * Adds the device events in the bitfield `events` to the event mask for
@@ -291183,7 +290824,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param device a {@link Gdk.Device}
              * @param events an event mask, see {@link Gdk.EventMask}
              */
-            add_device_events(device: Gdk.Device, events: Gdk.EventMask | null): void;
+            add_device_events(device: Gdk.Device, events: Gdk.EventMask): void;
             /**
              * Adds the events in the bitfield `events` to the event mask for
              * `widget`. See `gtk_widget_set_events()` and the
@@ -291261,7 +290902,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param direction direction of focus movement
              * @returns `true` if focus ended up inside `widget`
              */
-            child_focus(direction: DirectionType | null): boolean;
+            child_focus(direction: DirectionType): boolean;
             /**
              * Emits a {@link Gtk.Widget.SignalSignatures.child_notify | Gtk.Widget::child-notify} signal for the
              * [child property][child-properties] `child_property`
@@ -291293,7 +290934,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param orientation expand direction
              * @returns whether widget tree rooted here should be expanded
              */
-            compute_expand(orientation: Orientation | null): boolean;
+            compute_expand(orientation: Orientation): boolean;
             /**
              * Creates a new {@link Pango.Context} with the appropriate font map,
              * font options, font description, and base direction for drawing
@@ -291380,7 +291021,7 @@ declare module 'gi://Gtk?version=3.0' {
              */
             drag_begin(
                 targets: TargetList,
-                actions: Gdk.DragAction | null,
+                actions: Gdk.DragAction,
                 button: number,
                 event?: Gdk.Event | null,
             ): Gdk.DragContext;
@@ -291420,7 +291061,7 @@ declare module 'gi://Gtk?version=3.0' {
              */
             drag_begin_with_coordinates(
                 targets: TargetList,
-                actions: Gdk.DragAction | null,
+                actions: Gdk.DragAction,
                 button: number,
                 event: Gdk.Event | null,
                 x: number,
@@ -291532,22 +291173,14 @@ declare module 'gi://Gtk?version=3.0' {
              * @param targets a pointer to an array of     `GtkTargetEntrys` indicating the drop types that this `widget` will     accept, or `null`. Later you can access the list with     `gtk_drag_dest_get_target_list()` and `gtk_drag_dest_find_target()`.
              * @param actions a bitmask of possible actions for a drop onto this `widget`.
              */
-            drag_dest_set(
-                flags: DestDefaults | null,
-                targets: TargetEntry[] | null,
-                actions: Gdk.DragAction | null,
-            ): void;
+            drag_dest_set(flags: DestDefaults, targets: TargetEntry[] | null, actions: Gdk.DragAction): void;
             /**
              * Sets this widget as a proxy for drops to another window.
              * @param proxy_window the window to which to forward drag events
              * @param protocol the drag protocol which the `proxy_window` accepts   (You can use `gdk_drag_get_protocol()` to determine this)
              * @param use_coordinates If `true`, send the same coordinates to the   destination, because it is an embedded   subwindow.
              */
-            drag_dest_set_proxy(
-                proxy_window: Gdk.Window,
-                protocol: Gdk.DragProtocol | null,
-                use_coordinates: boolean,
-            ): void;
+            drag_dest_set_proxy(proxy_window: Gdk.Window, protocol: Gdk.DragProtocol, use_coordinates: boolean): void;
             /**
              * Sets the target types that this widget can accept from drag-and-drop.
              * The widget must first be made into a drag destination with
@@ -291629,9 +291262,9 @@ declare module 'gi://Gtk?version=3.0' {
              * @param actions the bitmask of possible actions for a drag from this widget
              */
             drag_source_set(
-                start_button_mask: Gdk.ModifierType | null,
+                start_button_mask: Gdk.ModifierType,
                 targets: TargetEntry[] | null,
-                actions: Gdk.DragAction | null,
+                actions: Gdk.DragAction,
             ): void;
             /**
              * Sets the icon that will be used for drags from a particular source
@@ -292090,7 +291723,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param intent the use case for the modifier mask
              * @returns the modifier mask used for `intent`.
              */
-            get_modifier_mask(intent: Gdk.ModifierIntent | null): Gdk.ModifierType;
+            get_modifier_mask(intent: Gdk.ModifierIntent): Gdk.ModifierType;
             /**
              * Returns the current modifier style for the widget. (As set by
              * `gtk_widget_modify_style()`.) If no style has previously set, a new
@@ -292713,7 +292346,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param direction direction of focus movement
              * @returns `true` if stopping keyboard navigation is fine, `false`               if the emitting widget should try to handle the keyboard               navigation attempt in its parent container(s).
              */
-            keynav_failed(direction: DirectionType | null): boolean;
+            keynav_failed(direction: DirectionType): boolean;
             /**
              * Lists the closures used by `widget` for accelerator group connections
              * with `gtk_accel_group_connect_by_path()` or `gtk_accel_group_connect()`.
@@ -292774,7 +292407,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param state the state for which to set the base color
              * @param color the color to assign (does not need to     be allocated), or `null` to undo the effect of previous     calls to of `gtk_widget_modify_base()`.
              */
-            modify_base(state: StateType | null, color?: Gdk.Color | null): void;
+            modify_base(state: StateType, color?: Gdk.Color | null): void;
             /**
              * Sets the background color for a widget in a particular state.
              *
@@ -292793,7 +292426,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param state the state for which to set the background color
              * @param color the color to assign (does not need     to be allocated), or `null` to undo the effect of previous     calls to of `gtk_widget_modify_bg()`.
              */
-            modify_bg(state: StateType | null, color?: Gdk.Color | null): void;
+            modify_bg(state: StateType, color?: Gdk.Color | null): void;
             /**
              * Sets the cursor color to use in a widget, overriding the {@link Gtk.Widget}
              * cursor-color and secondary-cursor-color
@@ -292813,7 +292446,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param state the state for which to set the foreground color
              * @param color the color to assign (does not need to be allocated),     or `null` to undo the effect of previous calls to     of `gtk_widget_modify_fg()`.
              */
-            modify_fg(state: StateType | null, color?: Gdk.Color | null): void;
+            modify_fg(state: StateType, color?: Gdk.Color | null): void;
             /**
              * Sets the font to use for a widget.
              *
@@ -292855,7 +292488,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param state the state for which to set the text color
              * @param color the color to assign (does not need to     be allocated), or `null` to undo the effect of previous     calls to of `gtk_widget_modify_text()`.
              */
-            modify_text(state: StateType | null, color?: Gdk.Color | null): void;
+            modify_text(state: StateType, color?: Gdk.Color | null): void;
             /**
              * Sets the background color to use for a widget.
              *
@@ -292864,7 +292497,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param state the state for which to set the background color
              * @param color the color to assign, or `null` to undo the effect     of previous calls to `gtk_widget_override_background_color()`
              */
-            override_background_color(state: StateFlags | null, color?: Gdk.RGBA | null): void;
+            override_background_color(state: StateFlags, color?: Gdk.RGBA | null): void;
             /**
              * Sets the color to use for a widget.
              *
@@ -292894,7 +292527,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param state the state for which to set the color
              * @param color the color to assign, or `null` to undo the effect     of previous calls to `gtk_widget_override_color()`
              */
-            override_color(state: StateFlags | null, color?: Gdk.RGBA | null): void;
+            override_color(state: StateFlags, color?: Gdk.RGBA | null): void;
             /**
              * Sets the cursor color to use in a widget, overriding the
              * cursor-color and secondary-cursor-color
@@ -293061,11 +292694,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param accel_mods modifier key combination of the accelerator
              * @returns whether an accelerator was installed and could be removed
              */
-            remove_accelerator(
-                accel_group: AccelGroup,
-                accel_key: number,
-                accel_mods: Gdk.ModifierType | null,
-            ): boolean;
+            remove_accelerator(accel_group: AccelGroup, accel_key: number, accel_mods: Gdk.ModifierType): boolean;
             /**
              * Removes a widget from the list of mnemonic labels for
              * this widget. (See `gtk_widget_list_mnemonic_labels()`). The widget
@@ -293314,7 +292943,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param device a {@link Gdk.Device}
              * @param events event mask
              */
-            set_device_events(device: Gdk.Device, events: Gdk.EventMask | null): void;
+            set_device_events(device: Gdk.Device, events: Gdk.EventMask): void;
             /**
              * Sets the reading direction on a particular widget. This direction
              * controls the primary direction for widgets containing text,
@@ -293330,7 +292959,7 @@ declare module 'gi://Gtk?version=3.0' {
              * set by `gtk_widget_set_default_direction()` will be used.
              * @param dir the new direction
              */
-            set_direction(dir: TextDirection | null): void;
+            set_direction(dir: TextDirection): void;
             /**
              * Widgets are double buffered by default; you can use this function
              * to turn off the buffering. “Double buffered” simply means that
@@ -293400,7 +293029,7 @@ declare module 'gi://Gtk?version=3.0' {
              * See the {@link Gtk.Widget.halign} property.
              * @param align the horizontal alignment
              */
-            set_halign(align: Align | null): void;
+            set_halign(align: Align): void;
             /**
              * Sets the has-tooltip property on `widget` to `has_tooltip`.  See
              * {@link Gtk.Widget.has_tooltip} for more information.
@@ -293661,7 +293290,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param flags State flags to turn on
              * @param clear Whether to clear state before turning on `flags`
              */
-            set_state_flags(flags: StateFlags | null, clear: boolean): void;
+            set_state_flags(flags: StateFlags, clear: boolean): void;
             /**
              * Used to set the {@link Gtk.Style} for a widget (`widget`->style). Since
              * GTK 3, this function does nothing, the passed in style is ignored.
@@ -293711,7 +293340,7 @@ declare module 'gi://Gtk?version=3.0' {
              * See the {@link Gtk.Widget.valign} property.
              * @param align the vertical alignment
              */
-            set_valign(align: Align | null): void;
+            set_valign(align: Align): void;
             /**
              * Sets whether the widget would like any available extra vertical
              * space.
@@ -293922,7 +293551,7 @@ declare module 'gi://Gtk?version=3.0' {
              * See `gtk_widget_set_state_flags()`.
              * @param flags State flags to turn off
              */
-            unset_state_flags(flags: StateFlags | null): void;
+            unset_state_flags(flags: StateFlags): void;
             /**
              * @param baseline
              * @virtual
@@ -294978,7 +294607,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param coord_type specifies whether the coordinates are relative to the screen or to the components top level window
              * @returns `true` or `false` indicating whether the specified point is within the extent of the `component` or not
              */
-            contains(x: number, y: number, coord_type: Atk.CoordType | null): boolean;
+            contains(x: number, y: number, coord_type: Atk.CoordType): boolean;
             /**
              * Returns the alpha value (i.e. the opacity) for this
              * `component`, on a scale from 0 (fully transparent) to 1.0
@@ -294993,7 +294622,7 @@ declare module 'gi://Gtk?version=3.0' {
              * support), all of x, y, width, height are set to -1.
              * @param coord_type specifies whether the coordinates are relative to the screen or to the components top level window
              */
-            get_extents(coord_type: Atk.CoordType | null): [number, number, number, number];
+            get_extents(coord_type: Atk.CoordType): [number, number, number, number];
             /**
              * Gets the layer of the component.
              * @returns an {@link Atk.Layer} which is the layer of the component
@@ -295013,7 +294642,7 @@ declare module 'gi://Gtk?version=3.0' {
              * support), x and y are set to -1.
              * @param coord_type specifies whether the coordinates are relative to the screen or to the components top level window
              */
-            get_position(coord_type: Atk.CoordType | null): [number, number];
+            get_position(coord_type: Atk.CoordType): [number, number];
             /**
              * Gets the size of the `component` in terms of width and height.
              *
@@ -295034,7 +294663,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param coord_type specifies whether the coordinates are relative to the screen or to the components top level window
              * @returns a reference to the accessible child, if one exists
              */
-            ref_accessible_at_point(x: number, y: number, coord_type: Atk.CoordType | null): Atk.Object | null;
+            ref_accessible_at_point(x: number, y: number, coord_type: Atk.CoordType): Atk.Object | null;
             /**
              * Remove the handler specified by `handler_id` from the list of
              * functions to be executed when this object receives focus events
@@ -295051,7 +294680,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param type specify where the object should be made visible.
              * @returns whether scrolling was successful.
              */
-            scroll_to(type: Atk.ScrollType | null): boolean;
+            scroll_to(type: Atk.ScrollType): boolean;
             /**
              * Move the top-left of `component` to a given position of the screen by
              * scrolling all necessary parents.
@@ -295060,7 +294689,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param y y-position where to scroll to
              * @returns whether scrolling was successful.
              */
-            scroll_to_point(coords: Atk.CoordType | null, x: number, y: number): boolean;
+            scroll_to_point(coords: Atk.CoordType, x: number, y: number): boolean;
             /**
              * Sets the extents of `component`.
              * @param x x coordinate
@@ -295070,7 +294699,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param coord_type specifies whether the coordinates are relative to the screen or to the components top level window
              * @returns `true` or `false` whether the extents were set or not
              */
-            set_extents(x: number, y: number, width: number, height: number, coord_type: Atk.CoordType | null): boolean;
+            set_extents(x: number, y: number, width: number, height: number, coord_type: Atk.CoordType): boolean;
             /**
              * Sets the position of `component`.
              *
@@ -295081,7 +294710,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param coord_type specifies whether the coordinates are relative to the screen or to the component's top level window
              * @returns `true` or `false` whether or not the position was set or not
              */
-            set_position(x: number, y: number, coord_type: Atk.CoordType | null): boolean;
+            set_position(x: number, y: number, coord_type: Atk.CoordType): boolean;
             /**
              * Set the size of the `component` in terms of width and height.
              * @param width width to set for `component`
@@ -295264,7 +294893,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -295305,7 +294934,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -295867,8 +295496,8 @@ declare module 'gi://Gtk?version=3.0' {
                 right_attach: number,
                 top_attach: number,
                 bottom_attach: number,
-                xoptions: AttachOptions | null,
-                yoptions: AttachOptions | null,
+                xoptions: AttachOptions,
+                yoptions: AttachOptions,
                 xpadding: number,
                 ypadding: number,
             ): void;
@@ -296008,7 +295637,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -296049,7 +295678,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -297331,7 +296960,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -297372,7 +297001,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -297768,8 +297397,8 @@ declare module 'gi://Gtk?version=3.0' {
                 accel_signal: string,
                 accel_group: AccelGroup,
                 accel_key: number,
-                accel_mods: Gdk.ModifierType | null,
-                accel_flags: AccelFlags | null,
+                accel_mods: Gdk.ModifierType,
+                accel_flags: AccelFlags,
             ): void;
             /**
              * Adds the device events in the bitfield `events` to the event mask for
@@ -297777,7 +297406,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param device a {@link Gdk.Device}
              * @param events an event mask, see {@link Gdk.EventMask}
              */
-            add_device_events(device: Gdk.Device, events: Gdk.EventMask | null): void;
+            add_device_events(device: Gdk.Device, events: Gdk.EventMask): void;
             /**
              * Adds the events in the bitfield `events` to the event mask for
              * `widget`. See `gtk_widget_set_events()` and the
@@ -297855,7 +297484,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param direction direction of focus movement
              * @returns `true` if focus ended up inside `widget`
              */
-            child_focus(direction: DirectionType | null): boolean;
+            child_focus(direction: DirectionType): boolean;
             /**
              * Emits a {@link Gtk.Widget.SignalSignatures.child_notify | Gtk.Widget::child-notify} signal for the
              * [child property][child-properties] `child_property`
@@ -297892,7 +297521,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param orientation expand direction
              * @returns whether widget tree rooted here should be expanded
              */
-            compute_expand(orientation: Orientation | null): boolean;
+            compute_expand(orientation: Orientation): boolean;
             /**
              * Creates a new {@link Pango.Context} with the appropriate font map,
              * font options, font description, and base direction for drawing
@@ -297979,7 +297608,7 @@ declare module 'gi://Gtk?version=3.0' {
              */
             drag_begin(
                 targets: TargetList,
-                actions: Gdk.DragAction | null,
+                actions: Gdk.DragAction,
                 button: number,
                 event?: Gdk.Event | null,
             ): Gdk.DragContext;
@@ -298019,7 +297648,7 @@ declare module 'gi://Gtk?version=3.0' {
              */
             drag_begin_with_coordinates(
                 targets: TargetList,
-                actions: Gdk.DragAction | null,
+                actions: Gdk.DragAction,
                 button: number,
                 event: Gdk.Event | null,
                 x: number,
@@ -298131,22 +297760,14 @@ declare module 'gi://Gtk?version=3.0' {
              * @param targets a pointer to an array of     `GtkTargetEntrys` indicating the drop types that this `widget` will     accept, or `null`. Later you can access the list with     `gtk_drag_dest_get_target_list()` and `gtk_drag_dest_find_target()`.
              * @param actions a bitmask of possible actions for a drop onto this `widget`.
              */
-            drag_dest_set(
-                flags: DestDefaults | null,
-                targets: TargetEntry[] | null,
-                actions: Gdk.DragAction | null,
-            ): void;
+            drag_dest_set(flags: DestDefaults, targets: TargetEntry[] | null, actions: Gdk.DragAction): void;
             /**
              * Sets this widget as a proxy for drops to another window.
              * @param proxy_window the window to which to forward drag events
              * @param protocol the drag protocol which the `proxy_window` accepts   (You can use `gdk_drag_get_protocol()` to determine this)
              * @param use_coordinates If `true`, send the same coordinates to the   destination, because it is an embedded   subwindow.
              */
-            drag_dest_set_proxy(
-                proxy_window: Gdk.Window,
-                protocol: Gdk.DragProtocol | null,
-                use_coordinates: boolean,
-            ): void;
+            drag_dest_set_proxy(proxy_window: Gdk.Window, protocol: Gdk.DragProtocol, use_coordinates: boolean): void;
             /**
              * Sets the target types that this widget can accept from drag-and-drop.
              * The widget must first be made into a drag destination with
@@ -298228,9 +297849,9 @@ declare module 'gi://Gtk?version=3.0' {
              * @param actions the bitmask of possible actions for a drag from this widget
              */
             drag_source_set(
-                start_button_mask: Gdk.ModifierType | null,
+                start_button_mask: Gdk.ModifierType,
                 targets: TargetEntry[] | null,
-                actions: Gdk.DragAction | null,
+                actions: Gdk.DragAction,
             ): void;
             /**
              * Sets the icon that will be used for drags from a particular source
@@ -298689,7 +298310,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param intent the use case for the modifier mask
              * @returns the modifier mask used for `intent`.
              */
-            get_modifier_mask(intent: Gdk.ModifierIntent | null): Gdk.ModifierType;
+            get_modifier_mask(intent: Gdk.ModifierIntent): Gdk.ModifierType;
             /**
              * Returns the current modifier style for the widget. (As set by
              * `gtk_widget_modify_style()`.) If no style has previously set, a new
@@ -299323,7 +298944,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param direction direction of focus movement
              * @returns `true` if stopping keyboard navigation is fine, `false`               if the emitting widget should try to handle the keyboard               navigation attempt in its parent container(s).
              */
-            keynav_failed(direction: DirectionType | null): boolean;
+            keynav_failed(direction: DirectionType): boolean;
             /**
              * Lists the closures used by `widget` for accelerator group connections
              * with `gtk_accel_group_connect_by_path()` or `gtk_accel_group_connect()`.
@@ -299384,7 +299005,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param state the state for which to set the base color
              * @param color the color to assign (does not need to     be allocated), or `null` to undo the effect of previous     calls to of `gtk_widget_modify_base()`.
              */
-            modify_base(state: StateType | null, color?: Gdk.Color | null): void;
+            modify_base(state: StateType, color?: Gdk.Color | null): void;
             /**
              * Sets the background color for a widget in a particular state.
              *
@@ -299403,7 +299024,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param state the state for which to set the background color
              * @param color the color to assign (does not need     to be allocated), or `null` to undo the effect of previous     calls to of `gtk_widget_modify_bg()`.
              */
-            modify_bg(state: StateType | null, color?: Gdk.Color | null): void;
+            modify_bg(state: StateType, color?: Gdk.Color | null): void;
             /**
              * Sets the cursor color to use in a widget, overriding the {@link Gtk.Widget}
              * cursor-color and secondary-cursor-color
@@ -299423,7 +299044,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param state the state for which to set the foreground color
              * @param color the color to assign (does not need to be allocated),     or `null` to undo the effect of previous calls to     of `gtk_widget_modify_fg()`.
              */
-            modify_fg(state: StateType | null, color?: Gdk.Color | null): void;
+            modify_fg(state: StateType, color?: Gdk.Color | null): void;
             /**
              * Sets the font to use for a widget.
              *
@@ -299465,7 +299086,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param state the state for which to set the text color
              * @param color the color to assign (does not need to     be allocated), or `null` to undo the effect of previous     calls to of `gtk_widget_modify_text()`.
              */
-            modify_text(state: StateType | null, color?: Gdk.Color | null): void;
+            modify_text(state: StateType, color?: Gdk.Color | null): void;
             /**
              * Sets the background color to use for a widget.
              *
@@ -299474,7 +299095,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param state the state for which to set the background color
              * @param color the color to assign, or `null` to undo the effect     of previous calls to `gtk_widget_override_background_color()`
              */
-            override_background_color(state: StateFlags | null, color?: Gdk.RGBA | null): void;
+            override_background_color(state: StateFlags, color?: Gdk.RGBA | null): void;
             /**
              * Sets the color to use for a widget.
              *
@@ -299504,7 +299125,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param state the state for which to set the color
              * @param color the color to assign, or `null` to undo the effect     of previous calls to `gtk_widget_override_color()`
              */
-            override_color(state: StateFlags | null, color?: Gdk.RGBA | null): void;
+            override_color(state: StateFlags, color?: Gdk.RGBA | null): void;
             /**
              * Sets the cursor color to use in a widget, overriding the
              * cursor-color and secondary-cursor-color
@@ -299671,11 +299292,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param accel_mods modifier key combination of the accelerator
              * @returns whether an accelerator was installed and could be removed
              */
-            remove_accelerator(
-                accel_group: AccelGroup,
-                accel_key: number,
-                accel_mods: Gdk.ModifierType | null,
-            ): boolean;
+            remove_accelerator(accel_group: AccelGroup, accel_key: number, accel_mods: Gdk.ModifierType): boolean;
             /**
              * Removes a widget from the list of mnemonic labels for
              * this widget. (See `gtk_widget_list_mnemonic_labels()`). The widget
@@ -299929,7 +299546,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param device a {@link Gdk.Device}
              * @param events event mask
              */
-            set_device_events(device: Gdk.Device, events: Gdk.EventMask | null): void;
+            set_device_events(device: Gdk.Device, events: Gdk.EventMask): void;
             /**
              * Sets the reading direction on a particular widget. This direction
              * controls the primary direction for widgets containing text,
@@ -299945,7 +299562,7 @@ declare module 'gi://Gtk?version=3.0' {
              * set by `gtk_widget_set_default_direction()` will be used.
              * @param dir the new direction
              */
-            set_direction(dir: TextDirection | null): void;
+            set_direction(dir: TextDirection): void;
             /**
              * Widgets are double buffered by default; you can use this function
              * to turn off the buffering. “Double buffered” simply means that
@@ -300015,7 +299632,7 @@ declare module 'gi://Gtk?version=3.0' {
              * See the {@link Gtk.Widget.halign} property.
              * @param align the horizontal alignment
              */
-            set_halign(align: Align | null): void;
+            set_halign(align: Align): void;
             /**
              * Sets the has-tooltip property on `widget` to `has_tooltip`.  See
              * {@link Gtk.Widget.has_tooltip} for more information.
@@ -300278,7 +299895,7 @@ declare module 'gi://Gtk?version=3.0' {
              * the state using wrapper functions such as `gtk_widget_set_sensitive()`.
              * @param state new state for `widget`
              */
-            set_state(state: StateType | null): void;
+            set_state(state: StateType): void;
             /**
              * This function is for use in widget implementations. Turns on flag
              * values in the current widget state (insensitive, prelighted, etc.).
@@ -300296,7 +299913,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param flags State flags to turn on
              * @param clear Whether to clear state before turning on `flags`
              */
-            set_state_flags(flags: StateFlags | null, clear: boolean): void;
+            set_state_flags(flags: StateFlags, clear: boolean): void;
             /**
              * Used to set the {@link Gtk.Style} for a widget (`widget`->style). Since
              * GTK 3, this function does nothing, the passed in style is ignored.
@@ -300346,7 +299963,7 @@ declare module 'gi://Gtk?version=3.0' {
              * See the {@link Gtk.Widget.valign} property.
              * @param align the vertical alignment
              */
-            set_valign(align: Align | null): void;
+            set_valign(align: Align): void;
             /**
              * Sets whether the widget would like any available extra vertical
              * space.
@@ -300557,7 +300174,7 @@ declare module 'gi://Gtk?version=3.0' {
              * See `gtk_widget_set_state_flags()`.
              * @param flags State flags to turn off
              */
-            unset_state_flags(flags: StateFlags | null): void;
+            unset_state_flags(flags: StateFlags): void;
             /**
              * @param baseline
              * @virtual
@@ -302771,9 +302388,9 @@ declare module 'gi://Gtk?version=3.0' {
              */
             get_bounded_ranges(
                 rect: Atk.TextRectangle,
-                coord_type: Atk.CoordType | null,
-                x_clip_type: Atk.TextClipType | null,
-                y_clip_type: Atk.TextClipType | null,
+                coord_type: Atk.CoordType,
+                x_clip_type: Atk.TextClipType,
+                y_clip_type: Atk.TextClipType,
             ): Atk.TextRange[];
             /**
              * Gets the offset of the position of the caret (cursor).
@@ -302800,7 +302417,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param offset The offset of the text character for which bounding information is required.
              * @param coords specify whether coordinates are relative to the screen or widget window
              */
-            get_character_extents(offset: number, coords: Atk.CoordType | null): [number, number, number, number];
+            get_character_extents(offset: number, coords: Atk.CoordType): [number, number, number, number];
             /**
              * Creates an {@link Atk.AttributeSet} which consists of the default values of
              * attributes for the text. See the enum AtkTextAttribute for types of text
@@ -302823,7 +302440,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param coords specify whether coordinates are relative to the screen or widget window
              * @returns the offset to the character which is located at  the specified          `x` and `y` coordinates of -1 in case of failure.
              */
-            get_offset_at_point(x: number, y: number, coords: Atk.CoordType | null): number;
+            get_offset_at_point(x: number, y: number, coords: Atk.CoordType): number;
             /**
              * Get the bounding box for text within the specified range.
              *
@@ -302833,11 +302450,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param end_offset The offset of the text character after the last character        for which boundary information is required.
              * @param coord_type Specify whether coordinates are relative to the screen or widget window.
              */
-            get_range_extents(
-                start_offset: number,
-                end_offset: number,
-                coord_type: Atk.CoordType | null,
-            ): Atk.TextRectangle;
+            get_range_extents(start_offset: number, end_offset: number, coord_type: Atk.CoordType): Atk.TextRectangle;
             /**
              * Creates an {@link Atk.AttributeSet} which consists of the attributes explicitly
              * set at the position `offset` in the text. `start_offset` and `end_offset` are
@@ -302891,10 +302504,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param granularity An {@link Atk.TextGranularity}
              * @returns a newly allocated string containing the text at          the `offset` bounded by the specified `granularity`. Use `g_free()`          to free the returned string.  Returns `null` if the offset is invalid          or no implementation is available.
              */
-            get_string_at_offset(
-                offset: number,
-                granularity: Atk.TextGranularity | null,
-            ): [string | null, number, number];
+            get_string_at_offset(offset: number, granularity: Atk.TextGranularity): [string | null, number, number];
             /**
              * Gets the specified text.
              * @param start_offset a starting character offset within `text`
@@ -302908,7 +302518,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param boundary_type An {@link Atk.TextBoundary}
              * @returns a newly allocated string containing the text after `offset` bounded          by the specified `boundary_type`. Use `g_free()` to free the returned          string.
              */
-            get_text_after_offset(offset: number, boundary_type: Atk.TextBoundary | null): [string, number, number];
+            get_text_after_offset(offset: number, boundary_type: Atk.TextBoundary): [string, number, number];
             /**
              * Gets the specified text.
              *
@@ -302938,14 +302548,14 @@ declare module 'gi://Gtk?version=3.0' {
              * @param boundary_type An {@link Atk.TextBoundary}
              * @returns a newly allocated string containing the text at `offset` bounded          by the specified `boundary_type`. Use `g_free()` to free the returned          string.
              */
-            get_text_at_offset(offset: number, boundary_type: Atk.TextBoundary | null): [string, number, number];
+            get_text_at_offset(offset: number, boundary_type: Atk.TextBoundary): [string, number, number];
             /**
              * Gets the specified text.
              * @param offset position
              * @param boundary_type An {@link Atk.TextBoundary}
              * @returns a newly allocated string containing the text before `offset` bounded          by the specified `boundary_type`. Use `g_free()` to free the returned          string.
              */
-            get_text_before_offset(offset: number, boundary_type: Atk.TextBoundary | null): [string, number, number];
+            get_text_before_offset(offset: number, boundary_type: Atk.TextBoundary): [string, number, number];
             /**
              * Removes the specified selection.
              * @param selection_num The selection number.  The selected regions are assigned numbers that correspond to how far the region is from the start of the text.  The selected region closest to the beginning of the text region is assigned the number 0, etc.  Note that adding, moving or deleting a selected region can change the numbering.
@@ -302959,7 +302569,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param type specify where the object should be made visible.
              * @returns whether scrolling was successful.
              */
-            scroll_substring_to(start_offset: number, end_offset: number, type: Atk.ScrollType | null): boolean;
+            scroll_substring_to(start_offset: number, end_offset: number, type: Atk.ScrollType): boolean;
             /**
              * Move the top-left of a substring of `text` to a given position of the screen
              * by scrolling all necessary parents.
@@ -302973,7 +302583,7 @@ declare module 'gi://Gtk?version=3.0' {
             scroll_substring_to_point(
                 start_offset: number,
                 end_offset: number,
-                coords: Atk.CoordType | null,
+                coords: Atk.CoordType,
                 x: number,
                 y: number,
             ): boolean;
@@ -303328,7 +302938,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -303369,7 +302979,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -303739,7 +303349,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param target The {@link Atk.Object} which is to be the target of the relation.
              * @returns TRUE if the relationship is added.
              */
-            add_relationship(relationship: Atk.RelationType | null, target: Atk.Object): boolean;
+            add_relationship(relationship: Atk.RelationType, target: Atk.Object): boolean;
             /**
              * Gets the accessible id of the accessible.
              * @returns a character string representing the accessible id of the object, or NULL if no such string was set.
@@ -303881,7 +303491,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param target The {@link Atk.Object} which is the target of the relation to be removed.
              * @returns TRUE if the relationship is removed.
              */
-            remove_relationship(relationship: Atk.RelationType | null, target: Atk.Object): boolean;
+            remove_relationship(relationship: Atk.RelationType, target: Atk.Object): boolean;
             /**
              * Sets the accessible ID of the accessible.  This is not meant to be presented
              * to the user, but to be an ID which is stable over application development.
@@ -303930,7 +303540,7 @@ declare module 'gi://Gtk?version=3.0' {
              * Sets the role of the accessible.
              * @param role an {@link Atk.Role} to be set as the role
              */
-            set_role(role: Atk.Role | null): void;
+            set_role(role: Atk.Role): void;
             /**
              * @param child
              * @virtual
@@ -305466,7 +305076,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -305507,7 +305117,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -306620,7 +306230,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param xpos X position of child in window coordinates
              * @param ypos Y position of child in window coordinates
              */
-            add_child_in_window(child: Widget, which_window: TextWindowType | null, xpos: number, ypos: number): void;
+            add_child_in_window(child: Widget, which_window: TextWindowType, xpos: number, ypos: number): void;
             /**
              * Moves the given `iter` backward by one display (wrapped) line.
              * A display line is different from a paragraph. Paragraphs are
@@ -306657,7 +306267,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param buffer_x buffer x coordinate
              * @param buffer_y buffer y coordinate
              */
-            buffer_to_window_coords(win: TextWindowType | null, buffer_x: number, buffer_y: number): [number, number];
+            buffer_to_window_coords(win: TextWindowType, buffer_x: number, buffer_y: number): [number, number];
             /**
              * Moves the given `iter` forward by one display (wrapped) line.
              * A display line is different from a paragraph. Paragraphs are
@@ -306696,7 +306306,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param type window to return size from
              * @returns width of window
              */
-            get_border_window_size(type: TextWindowType | null): number;
+            get_border_window_size(type: TextWindowType): number;
             /**
              * Gets the bottom margin for text in the `text_view`.
              * @returns bottom margin in pixels
@@ -306908,7 +306518,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param win window to get
              * @returns a {@link Gdk.Window}, or `null`
              */
-            get_window(win: TextWindowType | null): Gdk.Window | null;
+            get_window(win: TextWindowType): Gdk.Window | null;
             /**
              * @param args
              */
@@ -307094,7 +306704,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param type window to affect
              * @param size width or height of the window
              */
-            set_border_window_size(type: TextWindowType | null, size: number): void;
+            set_border_window_size(type: TextWindowType, size: number): void;
             /**
              * Sets the bottom margin for text in `text_view`.
              *
@@ -307140,20 +306750,20 @@ declare module 'gi://Gtk?version=3.0' {
              * allows input methods to fine-tune their behaviour.
              * @param hints the hints
              */
-            set_input_hints(hints: InputHints | null): void;
+            set_input_hints(hints: InputHints): void;
             /**
              * Sets the {@link Gtk.TextView.input_purpose} property which
              * can be used by on-screen keyboards and other input
              * methods to adjust their behaviour.
              * @param purpose the purpose
              */
-            set_input_purpose(purpose: InputPurpose | null): void;
+            set_input_purpose(purpose: InputPurpose): void;
             /**
              * Sets the default justification of text in `text_view`.
              * Tags in the view’s buffer may override the default.
              * @param justification justification
              */
-            set_justification(justification: Justification | null): void;
+            set_justification(justification: Justification): void;
             /**
              * Sets the default left margin for text in `text_view`.
              * Tags in the buffer may override the default.
@@ -307222,7 +306832,7 @@ declare module 'gi://Gtk?version=3.0' {
              * Sets the line wrapping for the view.
              * @param wrap_mode a {@link Gtk.WrapMode}
              */
-            set_wrap_mode(wrap_mode: WrapMode | null): void;
+            set_wrap_mode(wrap_mode: WrapMode): void;
             /**
              * Determines whether `iter` is at the start of a display line.
              * See `gtk_text_view_forward_display_line()` for an explanation of
@@ -307241,7 +306851,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param window_x window x coordinate
              * @param window_y window y coordinate
              */
-            window_to_buffer_coords(win: TextWindowType | null, window_x: number, window_y: number): [number, number];
+            window_to_buffer_coords(win: TextWindowType, window_x: number, window_y: number): [number, number];
             /**
              * Horizontal {@link Gtk.Adjustment} of the scrollable widget. This adjustment is
              * shared between the scrollable widget and its parent.
@@ -307320,7 +306930,7 @@ declare module 'gi://Gtk?version=3.0' {
              * below the natural width.
              * @param policy the horizontal {@link Gtk.ScrollablePolicy}
              */
-            set_hscroll_policy(policy: ScrollablePolicy | null): void;
+            set_hscroll_policy(policy: ScrollablePolicy): void;
             /**
              * Sets the vertical adjustment of the {@link Gtk.Scrollable}.
              * @param vadjustment a {@link Gtk.Adjustment}
@@ -307332,7 +306942,7 @@ declare module 'gi://Gtk?version=3.0' {
              * below the natural height.
              * @param policy the vertical {@link Gtk.ScrollablePolicy}
              */
-            set_vscroll_policy(policy: ScrollablePolicy | null): void;
+            set_vscroll_policy(policy: ScrollablePolicy): void;
             /**
              * Returns the size of a non-scrolling border around the
              * outside of the scrollable. An example for this would
@@ -307386,7 +306996,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -307427,7 +307037,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -308054,9 +307664,9 @@ declare module 'gi://Gtk?version=3.0' {
              */
             get_bounded_ranges(
                 rect: Atk.TextRectangle,
-                coord_type: Atk.CoordType | null,
-                x_clip_type: Atk.TextClipType | null,
-                y_clip_type: Atk.TextClipType | null,
+                coord_type: Atk.CoordType,
+                x_clip_type: Atk.TextClipType,
+                y_clip_type: Atk.TextClipType,
             ): Atk.TextRange[];
             /**
              * Gets the offset of the position of the caret (cursor).
@@ -308083,7 +307693,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param offset The offset of the text character for which bounding information is required.
              * @param coords specify whether coordinates are relative to the screen or widget window
              */
-            get_character_extents(offset: number, coords: Atk.CoordType | null): [number, number, number, number];
+            get_character_extents(offset: number, coords: Atk.CoordType): [number, number, number, number];
             /**
              * Creates an {@link Atk.AttributeSet} which consists of the default values of
              * attributes for the text. See the enum AtkTextAttribute for types of text
@@ -308106,7 +307716,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param coords specify whether coordinates are relative to the screen or widget window
              * @returns the offset to the character which is located at  the specified          `x` and `y` coordinates of -1 in case of failure.
              */
-            get_offset_at_point(x: number, y: number, coords: Atk.CoordType | null): number;
+            get_offset_at_point(x: number, y: number, coords: Atk.CoordType): number;
             /**
              * Get the bounding box for text within the specified range.
              *
@@ -308116,11 +307726,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param end_offset The offset of the text character after the last character        for which boundary information is required.
              * @param coord_type Specify whether coordinates are relative to the screen or widget window.
              */
-            get_range_extents(
-                start_offset: number,
-                end_offset: number,
-                coord_type: Atk.CoordType | null,
-            ): Atk.TextRectangle;
+            get_range_extents(start_offset: number, end_offset: number, coord_type: Atk.CoordType): Atk.TextRectangle;
             /**
              * Creates an {@link Atk.AttributeSet} which consists of the attributes explicitly
              * set at the position `offset` in the text. `start_offset` and `end_offset` are
@@ -308174,10 +307780,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param granularity An {@link Atk.TextGranularity}
              * @returns a newly allocated string containing the text at          the `offset` bounded by the specified `granularity`. Use `g_free()`          to free the returned string.  Returns `null` if the offset is invalid          or no implementation is available.
              */
-            get_string_at_offset(
-                offset: number,
-                granularity: Atk.TextGranularity | null,
-            ): [string | null, number, number];
+            get_string_at_offset(offset: number, granularity: Atk.TextGranularity): [string | null, number, number];
             /**
              * Gets the specified text.
              * @param start_offset a starting character offset within `text`
@@ -308191,7 +307794,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param boundary_type An {@link Atk.TextBoundary}
              * @returns a newly allocated string containing the text after `offset` bounded          by the specified `boundary_type`. Use `g_free()` to free the returned          string.
              */
-            get_text_after_offset(offset: number, boundary_type: Atk.TextBoundary | null): [string, number, number];
+            get_text_after_offset(offset: number, boundary_type: Atk.TextBoundary): [string, number, number];
             /**
              * Gets the specified text.
              *
@@ -308221,14 +307824,14 @@ declare module 'gi://Gtk?version=3.0' {
              * @param boundary_type An {@link Atk.TextBoundary}
              * @returns a newly allocated string containing the text at `offset` bounded          by the specified `boundary_type`. Use `g_free()` to free the returned          string.
              */
-            get_text_at_offset(offset: number, boundary_type: Atk.TextBoundary | null): [string, number, number];
+            get_text_at_offset(offset: number, boundary_type: Atk.TextBoundary): [string, number, number];
             /**
              * Gets the specified text.
              * @param offset position
              * @param boundary_type An {@link Atk.TextBoundary}
              * @returns a newly allocated string containing the text before `offset` bounded          by the specified `boundary_type`. Use `g_free()` to free the returned          string.
              */
-            get_text_before_offset(offset: number, boundary_type: Atk.TextBoundary | null): [string, number, number];
+            get_text_before_offset(offset: number, boundary_type: Atk.TextBoundary): [string, number, number];
             /**
              * Removes the specified selection.
              * @param selection_num The selection number.  The selected regions are assigned numbers that correspond to how far the region is from the start of the text.  The selected region closest to the beginning of the text region is assigned the number 0, etc.  Note that adding, moving or deleting a selected region can change the numbering.
@@ -308242,7 +307845,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param type specify where the object should be made visible.
              * @returns whether scrolling was successful.
              */
-            scroll_substring_to(start_offset: number, end_offset: number, type: Atk.ScrollType | null): boolean;
+            scroll_substring_to(start_offset: number, end_offset: number, type: Atk.ScrollType): boolean;
             /**
              * Move the top-left of a substring of `text` to a given position of the screen
              * by scrolling all necessary parents.
@@ -308256,7 +307859,7 @@ declare module 'gi://Gtk?version=3.0' {
             scroll_substring_to_point(
                 start_offset: number,
                 end_offset: number,
-                coords: Atk.CoordType | null,
+                coords: Atk.CoordType,
                 x: number,
                 y: number,
             ): boolean;
@@ -308611,7 +308214,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -308652,7 +308255,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -309308,22 +308911,22 @@ declare module 'gi://Gtk?version=3.0' {
              * Gets the background color for a given state.
              * @param state state to retrieve the color for
              */
-            get_background_color(state: StateFlags | null): Gdk.RGBA;
+            get_background_color(state: StateFlags): Gdk.RGBA;
             /**
              * Gets the border for a given state as a {@link Gtk.Border}.
              * @param state state to retrieve the border for
              */
-            get_border(state: StateFlags | null): Border;
+            get_border(state: StateFlags): Border;
             /**
              * Gets the border color for a given state.
              * @param state state to retrieve the color for
              */
-            get_border_color(state: StateFlags | null): Gdk.RGBA;
+            get_border_color(state: StateFlags): Gdk.RGBA;
             /**
              * Gets the foreground color for a given state.
              * @param state state to retrieve the color for
              */
-            get_color(state: StateFlags | null): Gdk.RGBA;
+            get_color(state: StateFlags): Gdk.RGBA;
             /**
              * Returns the widget direction used for rendering.
              * @returns the widget direction
@@ -309334,7 +308937,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param state state to retrieve the font for
              * @returns the {@link Pango.FontDescription} for the given          state. This object is owned by GTK+ and should not be          freed.
              */
-            get_font(state: StateFlags | null): Pango.FontDescription;
+            get_font(state: StateFlags): Pango.FontDescription;
             /**
              * Returns the widget direction used for rendering.
              * @returns the widget direction
@@ -309344,12 +308947,12 @@ declare module 'gi://Gtk?version=3.0' {
              * Gets the margin for a given state as a {@link Gtk.Border}.
              * @param state state to retrieve the border for
              */
-            get_margin(state: StateFlags | null): Border;
+            get_margin(state: StateFlags): Border;
             /**
              * Gets the padding for a given state as a {@link Gtk.Border}.
              * @param state state to retrieve the padding for
              */
-            get_padding(state: StateFlags | null): Border;
+            get_padding(state: StateFlags): Border;
             /**
              * Returns the widget path used for style matching.
              * @returns A {@link Gtk.WidgetPath}
@@ -309361,7 +308964,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param property the property name
              * @param state state to retrieve the value for
              */
-            get_property(property: string, state: StateFlags | null): unknown;
+            get_property(property: string, state: StateFlags): unknown;
             /**
              * @param args
              */
@@ -309415,7 +309018,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param state a widget state
              * @returns `true` if there is a running transition animation for `state`.
              */
-            state_is_running(state: StateType | null): [boolean, number];
+            state_is_running(state: StateType): [boolean, number];
         }
 
         namespace ToggleAction {
@@ -309801,7 +309404,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -309842,7 +309445,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -311269,7 +310872,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -311310,7 +310913,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -311701,8 +311304,8 @@ declare module 'gi://Gtk?version=3.0' {
                 accel_signal: string,
                 accel_group: AccelGroup,
                 accel_key: number,
-                accel_mods: Gdk.ModifierType | null,
-                accel_flags: AccelFlags | null,
+                accel_mods: Gdk.ModifierType,
+                accel_flags: AccelFlags,
             ): void;
             /**
              * Adds the device events in the bitfield `events` to the event mask for
@@ -311710,7 +311313,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param device a {@link Gdk.Device}
              * @param events an event mask, see {@link Gdk.EventMask}
              */
-            add_device_events(device: Gdk.Device, events: Gdk.EventMask | null): void;
+            add_device_events(device: Gdk.Device, events: Gdk.EventMask): void;
             /**
              * Adds the events in the bitfield `events` to the event mask for
              * `widget`. See `gtk_widget_set_events()` and the
@@ -311788,7 +311391,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param direction direction of focus movement
              * @returns `true` if focus ended up inside `widget`
              */
-            child_focus(direction: DirectionType | null): boolean;
+            child_focus(direction: DirectionType): boolean;
             /**
              * Emits a {@link Gtk.Widget.SignalSignatures.child_notify | Gtk.Widget::child-notify} signal for the
              * [child property][child-properties] `child_property`
@@ -311825,7 +311428,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param orientation expand direction
              * @returns whether widget tree rooted here should be expanded
              */
-            compute_expand(orientation: Orientation | null): boolean;
+            compute_expand(orientation: Orientation): boolean;
             /**
              * Creates a new {@link Pango.Context} with the appropriate font map,
              * font options, font description, and base direction for drawing
@@ -311912,7 +311515,7 @@ declare module 'gi://Gtk?version=3.0' {
              */
             drag_begin(
                 targets: TargetList,
-                actions: Gdk.DragAction | null,
+                actions: Gdk.DragAction,
                 button: number,
                 event?: Gdk.Event | null,
             ): Gdk.DragContext;
@@ -311952,7 +311555,7 @@ declare module 'gi://Gtk?version=3.0' {
              */
             drag_begin_with_coordinates(
                 targets: TargetList,
-                actions: Gdk.DragAction | null,
+                actions: Gdk.DragAction,
                 button: number,
                 event: Gdk.Event | null,
                 x: number,
@@ -312064,22 +311667,14 @@ declare module 'gi://Gtk?version=3.0' {
              * @param targets a pointer to an array of     `GtkTargetEntrys` indicating the drop types that this `widget` will     accept, or `null`. Later you can access the list with     `gtk_drag_dest_get_target_list()` and `gtk_drag_dest_find_target()`.
              * @param actions a bitmask of possible actions for a drop onto this `widget`.
              */
-            drag_dest_set(
-                flags: DestDefaults | null,
-                targets: TargetEntry[] | null,
-                actions: Gdk.DragAction | null,
-            ): void;
+            drag_dest_set(flags: DestDefaults, targets: TargetEntry[] | null, actions: Gdk.DragAction): void;
             /**
              * Sets this widget as a proxy for drops to another window.
              * @param proxy_window the window to which to forward drag events
              * @param protocol the drag protocol which the `proxy_window` accepts   (You can use `gdk_drag_get_protocol()` to determine this)
              * @param use_coordinates If `true`, send the same coordinates to the   destination, because it is an embedded   subwindow.
              */
-            drag_dest_set_proxy(
-                proxy_window: Gdk.Window,
-                protocol: Gdk.DragProtocol | null,
-                use_coordinates: boolean,
-            ): void;
+            drag_dest_set_proxy(proxy_window: Gdk.Window, protocol: Gdk.DragProtocol, use_coordinates: boolean): void;
             /**
              * Sets the target types that this widget can accept from drag-and-drop.
              * The widget must first be made into a drag destination with
@@ -312161,9 +311756,9 @@ declare module 'gi://Gtk?version=3.0' {
              * @param actions the bitmask of possible actions for a drag from this widget
              */
             drag_source_set(
-                start_button_mask: Gdk.ModifierType | null,
+                start_button_mask: Gdk.ModifierType,
                 targets: TargetEntry[] | null,
-                actions: Gdk.DragAction | null,
+                actions: Gdk.DragAction,
             ): void;
             /**
              * Sets the icon that will be used for drags from a particular source
@@ -312622,7 +312217,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param intent the use case for the modifier mask
              * @returns the modifier mask used for `intent`.
              */
-            get_modifier_mask(intent: Gdk.ModifierIntent | null): Gdk.ModifierType;
+            get_modifier_mask(intent: Gdk.ModifierIntent): Gdk.ModifierType;
             /**
              * Returns the current modifier style for the widget. (As set by
              * `gtk_widget_modify_style()`.) If no style has previously set, a new
@@ -313256,7 +312851,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param direction direction of focus movement
              * @returns `true` if stopping keyboard navigation is fine, `false`               if the emitting widget should try to handle the keyboard               navigation attempt in its parent container(s).
              */
-            keynav_failed(direction: DirectionType | null): boolean;
+            keynav_failed(direction: DirectionType): boolean;
             /**
              * Lists the closures used by `widget` for accelerator group connections
              * with `gtk_accel_group_connect_by_path()` or `gtk_accel_group_connect()`.
@@ -313317,7 +312912,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param state the state for which to set the base color
              * @param color the color to assign (does not need to     be allocated), or `null` to undo the effect of previous     calls to of `gtk_widget_modify_base()`.
              */
-            modify_base(state: StateType | null, color?: Gdk.Color | null): void;
+            modify_base(state: StateType, color?: Gdk.Color | null): void;
             /**
              * Sets the background color for a widget in a particular state.
              *
@@ -313336,7 +312931,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param state the state for which to set the background color
              * @param color the color to assign (does not need     to be allocated), or `null` to undo the effect of previous     calls to of `gtk_widget_modify_bg()`.
              */
-            modify_bg(state: StateType | null, color?: Gdk.Color | null): void;
+            modify_bg(state: StateType, color?: Gdk.Color | null): void;
             /**
              * Sets the cursor color to use in a widget, overriding the {@link Gtk.Widget}
              * cursor-color and secondary-cursor-color
@@ -313356,7 +312951,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param state the state for which to set the foreground color
              * @param color the color to assign (does not need to be allocated),     or `null` to undo the effect of previous calls to     of `gtk_widget_modify_fg()`.
              */
-            modify_fg(state: StateType | null, color?: Gdk.Color | null): void;
+            modify_fg(state: StateType, color?: Gdk.Color | null): void;
             /**
              * Sets the font to use for a widget.
              *
@@ -313398,7 +312993,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param state the state for which to set the text color
              * @param color the color to assign (does not need to     be allocated), or `null` to undo the effect of previous     calls to of `gtk_widget_modify_text()`.
              */
-            modify_text(state: StateType | null, color?: Gdk.Color | null): void;
+            modify_text(state: StateType, color?: Gdk.Color | null): void;
             /**
              * Sets the background color to use for a widget.
              *
@@ -313407,7 +313002,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param state the state for which to set the background color
              * @param color the color to assign, or `null` to undo the effect     of previous calls to `gtk_widget_override_background_color()`
              */
-            override_background_color(state: StateFlags | null, color?: Gdk.RGBA | null): void;
+            override_background_color(state: StateFlags, color?: Gdk.RGBA | null): void;
             /**
              * Sets the color to use for a widget.
              *
@@ -313437,7 +313032,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param state the state for which to set the color
              * @param color the color to assign, or `null` to undo the effect     of previous calls to `gtk_widget_override_color()`
              */
-            override_color(state: StateFlags | null, color?: Gdk.RGBA | null): void;
+            override_color(state: StateFlags, color?: Gdk.RGBA | null): void;
             /**
              * Sets the cursor color to use in a widget, overriding the
              * cursor-color and secondary-cursor-color
@@ -313604,11 +313199,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param accel_mods modifier key combination of the accelerator
              * @returns whether an accelerator was installed and could be removed
              */
-            remove_accelerator(
-                accel_group: AccelGroup,
-                accel_key: number,
-                accel_mods: Gdk.ModifierType | null,
-            ): boolean;
+            remove_accelerator(accel_group: AccelGroup, accel_key: number, accel_mods: Gdk.ModifierType): boolean;
             /**
              * Removes a widget from the list of mnemonic labels for
              * this widget. (See `gtk_widget_list_mnemonic_labels()`). The widget
@@ -313857,7 +313448,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param device a {@link Gdk.Device}
              * @param events event mask
              */
-            set_device_events(device: Gdk.Device, events: Gdk.EventMask | null): void;
+            set_device_events(device: Gdk.Device, events: Gdk.EventMask): void;
             /**
              * Sets the reading direction on a particular widget. This direction
              * controls the primary direction for widgets containing text,
@@ -313873,7 +313464,7 @@ declare module 'gi://Gtk?version=3.0' {
              * set by `gtk_widget_set_default_direction()` will be used.
              * @param dir the new direction
              */
-            set_direction(dir: TextDirection | null): void;
+            set_direction(dir: TextDirection): void;
             /**
              * Widgets are double buffered by default; you can use this function
              * to turn off the buffering. “Double buffered” simply means that
@@ -313943,7 +313534,7 @@ declare module 'gi://Gtk?version=3.0' {
              * See the {@link Gtk.Widget.halign} property.
              * @param align the horizontal alignment
              */
-            set_halign(align: Align | null): void;
+            set_halign(align: Align): void;
             /**
              * Sets the has-tooltip property on `widget` to `has_tooltip`.  See
              * {@link Gtk.Widget.has_tooltip} for more information.
@@ -314206,7 +313797,7 @@ declare module 'gi://Gtk?version=3.0' {
              * the state using wrapper functions such as `gtk_widget_set_sensitive()`.
              * @param state new state for `widget`
              */
-            set_state(state: StateType | null): void;
+            set_state(state: StateType): void;
             /**
              * This function is for use in widget implementations. Turns on flag
              * values in the current widget state (insensitive, prelighted, etc.).
@@ -314224,7 +313815,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param flags State flags to turn on
              * @param clear Whether to clear state before turning on `flags`
              */
-            set_state_flags(flags: StateFlags | null, clear: boolean): void;
+            set_state_flags(flags: StateFlags, clear: boolean): void;
             /**
              * Used to set the {@link Gtk.Style} for a widget (`widget`->style). Since
              * GTK 3, this function does nothing, the passed in style is ignored.
@@ -314274,7 +313865,7 @@ declare module 'gi://Gtk?version=3.0' {
              * See the {@link Gtk.Widget.valign} property.
              * @param align the vertical alignment
              */
-            set_valign(align: Align | null): void;
+            set_valign(align: Align): void;
             /**
              * Sets whether the widget would like any available extra vertical
              * space.
@@ -314485,7 +314076,7 @@ declare module 'gi://Gtk?version=3.0' {
              * See `gtk_widget_set_state_flags()`.
              * @param flags State flags to turn off
              */
-            unset_state_flags(flags: StateFlags | null): void;
+            unset_state_flags(flags: StateFlags): void;
             /**
              * @param baseline
              * @virtual
@@ -315549,7 +315140,7 @@ declare module 'gi://Gtk?version=3.0' {
              * to -1.
              * @param coord_type specifies whether the coordinates are relative to the screen or to the components top level window
              */
-            get_image_position(coord_type: Atk.CoordType | null): [number, number];
+            get_image_position(coord_type: Atk.CoordType): [number, number];
             /**
              * Get the width and height in pixels for the specified image.
              * The values of `width` and `height` are returned as -1 if the
@@ -315645,7 +315236,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -315686,7 +315277,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -316869,7 +316460,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -316910,7 +316501,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -317301,8 +316892,8 @@ declare module 'gi://Gtk?version=3.0' {
                 accel_signal: string,
                 accel_group: AccelGroup,
                 accel_key: number,
-                accel_mods: Gdk.ModifierType | null,
-                accel_flags: AccelFlags | null,
+                accel_mods: Gdk.ModifierType,
+                accel_flags: AccelFlags,
             ): void;
             /**
              * Adds the device events in the bitfield `events` to the event mask for
@@ -317310,7 +316901,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param device a {@link Gdk.Device}
              * @param events an event mask, see {@link Gdk.EventMask}
              */
-            add_device_events(device: Gdk.Device, events: Gdk.EventMask | null): void;
+            add_device_events(device: Gdk.Device, events: Gdk.EventMask): void;
             /**
              * Adds the events in the bitfield `events` to the event mask for
              * `widget`. See `gtk_widget_set_events()` and the
@@ -317388,7 +316979,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param direction direction of focus movement
              * @returns `true` if focus ended up inside `widget`
              */
-            child_focus(direction: DirectionType | null): boolean;
+            child_focus(direction: DirectionType): boolean;
             /**
              * Emits a {@link Gtk.Widget.SignalSignatures.child_notify | Gtk.Widget::child-notify} signal for the
              * [child property][child-properties] `child_property`
@@ -317425,7 +317016,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param orientation expand direction
              * @returns whether widget tree rooted here should be expanded
              */
-            compute_expand(orientation: Orientation | null): boolean;
+            compute_expand(orientation: Orientation): boolean;
             /**
              * Creates a new {@link Pango.Context} with the appropriate font map,
              * font options, font description, and base direction for drawing
@@ -317512,7 +317103,7 @@ declare module 'gi://Gtk?version=3.0' {
              */
             drag_begin(
                 targets: TargetList,
-                actions: Gdk.DragAction | null,
+                actions: Gdk.DragAction,
                 button: number,
                 event?: Gdk.Event | null,
             ): Gdk.DragContext;
@@ -317552,7 +317143,7 @@ declare module 'gi://Gtk?version=3.0' {
              */
             drag_begin_with_coordinates(
                 targets: TargetList,
-                actions: Gdk.DragAction | null,
+                actions: Gdk.DragAction,
                 button: number,
                 event: Gdk.Event | null,
                 x: number,
@@ -317664,22 +317255,14 @@ declare module 'gi://Gtk?version=3.0' {
              * @param targets a pointer to an array of     `GtkTargetEntrys` indicating the drop types that this `widget` will     accept, or `null`. Later you can access the list with     `gtk_drag_dest_get_target_list()` and `gtk_drag_dest_find_target()`.
              * @param actions a bitmask of possible actions for a drop onto this `widget`.
              */
-            drag_dest_set(
-                flags: DestDefaults | null,
-                targets: TargetEntry[] | null,
-                actions: Gdk.DragAction | null,
-            ): void;
+            drag_dest_set(flags: DestDefaults, targets: TargetEntry[] | null, actions: Gdk.DragAction): void;
             /**
              * Sets this widget as a proxy for drops to another window.
              * @param proxy_window the window to which to forward drag events
              * @param protocol the drag protocol which the `proxy_window` accepts   (You can use `gdk_drag_get_protocol()` to determine this)
              * @param use_coordinates If `true`, send the same coordinates to the   destination, because it is an embedded   subwindow.
              */
-            drag_dest_set_proxy(
-                proxy_window: Gdk.Window,
-                protocol: Gdk.DragProtocol | null,
-                use_coordinates: boolean,
-            ): void;
+            drag_dest_set_proxy(proxy_window: Gdk.Window, protocol: Gdk.DragProtocol, use_coordinates: boolean): void;
             /**
              * Sets the target types that this widget can accept from drag-and-drop.
              * The widget must first be made into a drag destination with
@@ -317761,9 +317344,9 @@ declare module 'gi://Gtk?version=3.0' {
              * @param actions the bitmask of possible actions for a drag from this widget
              */
             drag_source_set(
-                start_button_mask: Gdk.ModifierType | null,
+                start_button_mask: Gdk.ModifierType,
                 targets: TargetEntry[] | null,
-                actions: Gdk.DragAction | null,
+                actions: Gdk.DragAction,
             ): void;
             /**
              * Sets the icon that will be used for drags from a particular source
@@ -318222,7 +317805,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param intent the use case for the modifier mask
              * @returns the modifier mask used for `intent`.
              */
-            get_modifier_mask(intent: Gdk.ModifierIntent | null): Gdk.ModifierType;
+            get_modifier_mask(intent: Gdk.ModifierIntent): Gdk.ModifierType;
             /**
              * Returns the current modifier style for the widget. (As set by
              * `gtk_widget_modify_style()`.) If no style has previously set, a new
@@ -318856,7 +318439,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param direction direction of focus movement
              * @returns `true` if stopping keyboard navigation is fine, `false`               if the emitting widget should try to handle the keyboard               navigation attempt in its parent container(s).
              */
-            keynav_failed(direction: DirectionType | null): boolean;
+            keynav_failed(direction: DirectionType): boolean;
             /**
              * Lists the closures used by `widget` for accelerator group connections
              * with `gtk_accel_group_connect_by_path()` or `gtk_accel_group_connect()`.
@@ -318917,7 +318500,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param state the state for which to set the base color
              * @param color the color to assign (does not need to     be allocated), or `null` to undo the effect of previous     calls to of `gtk_widget_modify_base()`.
              */
-            modify_base(state: StateType | null, color?: Gdk.Color | null): void;
+            modify_base(state: StateType, color?: Gdk.Color | null): void;
             /**
              * Sets the background color for a widget in a particular state.
              *
@@ -318936,7 +318519,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param state the state for which to set the background color
              * @param color the color to assign (does not need     to be allocated), or `null` to undo the effect of previous     calls to of `gtk_widget_modify_bg()`.
              */
-            modify_bg(state: StateType | null, color?: Gdk.Color | null): void;
+            modify_bg(state: StateType, color?: Gdk.Color | null): void;
             /**
              * Sets the cursor color to use in a widget, overriding the {@link Gtk.Widget}
              * cursor-color and secondary-cursor-color
@@ -318956,7 +318539,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param state the state for which to set the foreground color
              * @param color the color to assign (does not need to be allocated),     or `null` to undo the effect of previous calls to     of `gtk_widget_modify_fg()`.
              */
-            modify_fg(state: StateType | null, color?: Gdk.Color | null): void;
+            modify_fg(state: StateType, color?: Gdk.Color | null): void;
             /**
              * Sets the font to use for a widget.
              *
@@ -318998,7 +318581,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param state the state for which to set the text color
              * @param color the color to assign (does not need to     be allocated), or `null` to undo the effect of previous     calls to of `gtk_widget_modify_text()`.
              */
-            modify_text(state: StateType | null, color?: Gdk.Color | null): void;
+            modify_text(state: StateType, color?: Gdk.Color | null): void;
             /**
              * Sets the background color to use for a widget.
              *
@@ -319007,7 +318590,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param state the state for which to set the background color
              * @param color the color to assign, or `null` to undo the effect     of previous calls to `gtk_widget_override_background_color()`
              */
-            override_background_color(state: StateFlags | null, color?: Gdk.RGBA | null): void;
+            override_background_color(state: StateFlags, color?: Gdk.RGBA | null): void;
             /**
              * Sets the color to use for a widget.
              *
@@ -319037,7 +318620,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param state the state for which to set the color
              * @param color the color to assign, or `null` to undo the effect     of previous calls to `gtk_widget_override_color()`
              */
-            override_color(state: StateFlags | null, color?: Gdk.RGBA | null): void;
+            override_color(state: StateFlags, color?: Gdk.RGBA | null): void;
             /**
              * Sets the cursor color to use in a widget, overriding the
              * cursor-color and secondary-cursor-color
@@ -319204,11 +318787,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param accel_mods modifier key combination of the accelerator
              * @returns whether an accelerator was installed and could be removed
              */
-            remove_accelerator(
-                accel_group: AccelGroup,
-                accel_key: number,
-                accel_mods: Gdk.ModifierType | null,
-            ): boolean;
+            remove_accelerator(accel_group: AccelGroup, accel_key: number, accel_mods: Gdk.ModifierType): boolean;
             /**
              * Removes a widget from the list of mnemonic labels for
              * this widget. (See `gtk_widget_list_mnemonic_labels()`). The widget
@@ -319457,7 +319036,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param device a {@link Gdk.Device}
              * @param events event mask
              */
-            set_device_events(device: Gdk.Device, events: Gdk.EventMask | null): void;
+            set_device_events(device: Gdk.Device, events: Gdk.EventMask): void;
             /**
              * Sets the reading direction on a particular widget. This direction
              * controls the primary direction for widgets containing text,
@@ -319473,7 +319052,7 @@ declare module 'gi://Gtk?version=3.0' {
              * set by `gtk_widget_set_default_direction()` will be used.
              * @param dir the new direction
              */
-            set_direction(dir: TextDirection | null): void;
+            set_direction(dir: TextDirection): void;
             /**
              * Widgets are double buffered by default; you can use this function
              * to turn off the buffering. “Double buffered” simply means that
@@ -319543,7 +319122,7 @@ declare module 'gi://Gtk?version=3.0' {
              * See the {@link Gtk.Widget.halign} property.
              * @param align the horizontal alignment
              */
-            set_halign(align: Align | null): void;
+            set_halign(align: Align): void;
             /**
              * Sets the has-tooltip property on `widget` to `has_tooltip`.  See
              * {@link Gtk.Widget.has_tooltip} for more information.
@@ -319806,7 +319385,7 @@ declare module 'gi://Gtk?version=3.0' {
              * the state using wrapper functions such as `gtk_widget_set_sensitive()`.
              * @param state new state for `widget`
              */
-            set_state(state: StateType | null): void;
+            set_state(state: StateType): void;
             /**
              * This function is for use in widget implementations. Turns on flag
              * values in the current widget state (insensitive, prelighted, etc.).
@@ -319824,7 +319403,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param flags State flags to turn on
              * @param clear Whether to clear state before turning on `flags`
              */
-            set_state_flags(flags: StateFlags | null, clear: boolean): void;
+            set_state_flags(flags: StateFlags, clear: boolean): void;
             /**
              * Used to set the {@link Gtk.Style} for a widget (`widget`->style). Since
              * GTK 3, this function does nothing, the passed in style is ignored.
@@ -319884,7 +319463,7 @@ declare module 'gi://Gtk?version=3.0' {
              * See the {@link Gtk.Widget.valign} property.
              * @param align the vertical alignment
              */
-            set_valign(align: Align | null): void;
+            set_valign(align: Align): void;
             /**
              * Sets whether the widget would like any available extra vertical
              * space.
@@ -320095,7 +319674,7 @@ declare module 'gi://Gtk?version=3.0' {
              * See `gtk_widget_set_state_flags()`.
              * @param flags State flags to turn off
              */
-            unset_state_flags(flags: StateFlags | null): void;
+            unset_state_flags(flags: StateFlags): void;
             /**
              * @param baseline
              * @virtual
@@ -321970,7 +321549,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -322011,7 +321590,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -322402,8 +321981,8 @@ declare module 'gi://Gtk?version=3.0' {
                 accel_signal: string,
                 accel_group: AccelGroup,
                 accel_key: number,
-                accel_mods: Gdk.ModifierType | null,
-                accel_flags: AccelFlags | null,
+                accel_mods: Gdk.ModifierType,
+                accel_flags: AccelFlags,
             ): void;
             /**
              * Adds the device events in the bitfield `events` to the event mask for
@@ -322411,7 +321990,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param device a {@link Gdk.Device}
              * @param events an event mask, see {@link Gdk.EventMask}
              */
-            add_device_events(device: Gdk.Device, events: Gdk.EventMask | null): void;
+            add_device_events(device: Gdk.Device, events: Gdk.EventMask): void;
             /**
              * Adds the events in the bitfield `events` to the event mask for
              * `widget`. See `gtk_widget_set_events()` and the
@@ -322489,7 +322068,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param direction direction of focus movement
              * @returns `true` if focus ended up inside `widget`
              */
-            child_focus(direction: DirectionType | null): boolean;
+            child_focus(direction: DirectionType): boolean;
             /**
              * Emits a {@link Gtk.Widget.SignalSignatures.child_notify | Gtk.Widget::child-notify} signal for the
              * [child property][child-properties] `child_property`
@@ -322526,7 +322105,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param orientation expand direction
              * @returns whether widget tree rooted here should be expanded
              */
-            compute_expand(orientation: Orientation | null): boolean;
+            compute_expand(orientation: Orientation): boolean;
             /**
              * Creates a new {@link Pango.Context} with the appropriate font map,
              * font options, font description, and base direction for drawing
@@ -322613,7 +322192,7 @@ declare module 'gi://Gtk?version=3.0' {
              */
             drag_begin(
                 targets: TargetList,
-                actions: Gdk.DragAction | null,
+                actions: Gdk.DragAction,
                 button: number,
                 event?: Gdk.Event | null,
             ): Gdk.DragContext;
@@ -322653,7 +322232,7 @@ declare module 'gi://Gtk?version=3.0' {
              */
             drag_begin_with_coordinates(
                 targets: TargetList,
-                actions: Gdk.DragAction | null,
+                actions: Gdk.DragAction,
                 button: number,
                 event: Gdk.Event | null,
                 x: number,
@@ -322765,22 +322344,14 @@ declare module 'gi://Gtk?version=3.0' {
              * @param targets a pointer to an array of     `GtkTargetEntrys` indicating the drop types that this `widget` will     accept, or `null`. Later you can access the list with     `gtk_drag_dest_get_target_list()` and `gtk_drag_dest_find_target()`.
              * @param actions a bitmask of possible actions for a drop onto this `widget`.
              */
-            drag_dest_set(
-                flags: DestDefaults | null,
-                targets: TargetEntry[] | null,
-                actions: Gdk.DragAction | null,
-            ): void;
+            drag_dest_set(flags: DestDefaults, targets: TargetEntry[] | null, actions: Gdk.DragAction): void;
             /**
              * Sets this widget as a proxy for drops to another window.
              * @param proxy_window the window to which to forward drag events
              * @param protocol the drag protocol which the `proxy_window` accepts   (You can use `gdk_drag_get_protocol()` to determine this)
              * @param use_coordinates If `true`, send the same coordinates to the   destination, because it is an embedded   subwindow.
              */
-            drag_dest_set_proxy(
-                proxy_window: Gdk.Window,
-                protocol: Gdk.DragProtocol | null,
-                use_coordinates: boolean,
-            ): void;
+            drag_dest_set_proxy(proxy_window: Gdk.Window, protocol: Gdk.DragProtocol, use_coordinates: boolean): void;
             /**
              * Sets the target types that this widget can accept from drag-and-drop.
              * The widget must first be made into a drag destination with
@@ -322862,9 +322433,9 @@ declare module 'gi://Gtk?version=3.0' {
              * @param actions the bitmask of possible actions for a drag from this widget
              */
             drag_source_set(
-                start_button_mask: Gdk.ModifierType | null,
+                start_button_mask: Gdk.ModifierType,
                 targets: TargetEntry[] | null,
-                actions: Gdk.DragAction | null,
+                actions: Gdk.DragAction,
             ): void;
             /**
              * Sets the icon that will be used for drags from a particular source
@@ -323323,7 +322894,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param intent the use case for the modifier mask
              * @returns the modifier mask used for `intent`.
              */
-            get_modifier_mask(intent: Gdk.ModifierIntent | null): Gdk.ModifierType;
+            get_modifier_mask(intent: Gdk.ModifierIntent): Gdk.ModifierType;
             /**
              * Returns the current modifier style for the widget. (As set by
              * `gtk_widget_modify_style()`.) If no style has previously set, a new
@@ -323957,7 +323528,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param direction direction of focus movement
              * @returns `true` if stopping keyboard navigation is fine, `false`               if the emitting widget should try to handle the keyboard               navigation attempt in its parent container(s).
              */
-            keynav_failed(direction: DirectionType | null): boolean;
+            keynav_failed(direction: DirectionType): boolean;
             /**
              * Lists the closures used by `widget` for accelerator group connections
              * with `gtk_accel_group_connect_by_path()` or `gtk_accel_group_connect()`.
@@ -324018,7 +323589,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param state the state for which to set the base color
              * @param color the color to assign (does not need to     be allocated), or `null` to undo the effect of previous     calls to of `gtk_widget_modify_base()`.
              */
-            modify_base(state: StateType | null, color?: Gdk.Color | null): void;
+            modify_base(state: StateType, color?: Gdk.Color | null): void;
             /**
              * Sets the background color for a widget in a particular state.
              *
@@ -324037,7 +323608,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param state the state for which to set the background color
              * @param color the color to assign (does not need     to be allocated), or `null` to undo the effect of previous     calls to of `gtk_widget_modify_bg()`.
              */
-            modify_bg(state: StateType | null, color?: Gdk.Color | null): void;
+            modify_bg(state: StateType, color?: Gdk.Color | null): void;
             /**
              * Sets the cursor color to use in a widget, overriding the {@link Gtk.Widget}
              * cursor-color and secondary-cursor-color
@@ -324057,7 +323628,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param state the state for which to set the foreground color
              * @param color the color to assign (does not need to be allocated),     or `null` to undo the effect of previous calls to     of `gtk_widget_modify_fg()`.
              */
-            modify_fg(state: StateType | null, color?: Gdk.Color | null): void;
+            modify_fg(state: StateType, color?: Gdk.Color | null): void;
             /**
              * Sets the font to use for a widget.
              *
@@ -324099,7 +323670,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param state the state for which to set the text color
              * @param color the color to assign (does not need to     be allocated), or `null` to undo the effect of previous     calls to of `gtk_widget_modify_text()`.
              */
-            modify_text(state: StateType | null, color?: Gdk.Color | null): void;
+            modify_text(state: StateType, color?: Gdk.Color | null): void;
             /**
              * Sets the background color to use for a widget.
              *
@@ -324108,7 +323679,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param state the state for which to set the background color
              * @param color the color to assign, or `null` to undo the effect     of previous calls to `gtk_widget_override_background_color()`
              */
-            override_background_color(state: StateFlags | null, color?: Gdk.RGBA | null): void;
+            override_background_color(state: StateFlags, color?: Gdk.RGBA | null): void;
             /**
              * Sets the color to use for a widget.
              *
@@ -324138,7 +323709,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param state the state for which to set the color
              * @param color the color to assign, or `null` to undo the effect     of previous calls to `gtk_widget_override_color()`
              */
-            override_color(state: StateFlags | null, color?: Gdk.RGBA | null): void;
+            override_color(state: StateFlags, color?: Gdk.RGBA | null): void;
             /**
              * Sets the cursor color to use in a widget, overriding the
              * cursor-color and secondary-cursor-color
@@ -324305,11 +323876,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param accel_mods modifier key combination of the accelerator
              * @returns whether an accelerator was installed and could be removed
              */
-            remove_accelerator(
-                accel_group: AccelGroup,
-                accel_key: number,
-                accel_mods: Gdk.ModifierType | null,
-            ): boolean;
+            remove_accelerator(accel_group: AccelGroup, accel_key: number, accel_mods: Gdk.ModifierType): boolean;
             /**
              * Removes a widget from the list of mnemonic labels for
              * this widget. (See `gtk_widget_list_mnemonic_labels()`). The widget
@@ -324558,7 +324125,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param device a {@link Gdk.Device}
              * @param events event mask
              */
-            set_device_events(device: Gdk.Device, events: Gdk.EventMask | null): void;
+            set_device_events(device: Gdk.Device, events: Gdk.EventMask): void;
             /**
              * Sets the reading direction on a particular widget. This direction
              * controls the primary direction for widgets containing text,
@@ -324574,7 +324141,7 @@ declare module 'gi://Gtk?version=3.0' {
              * set by `gtk_widget_set_default_direction()` will be used.
              * @param dir the new direction
              */
-            set_direction(dir: TextDirection | null): void;
+            set_direction(dir: TextDirection): void;
             /**
              * Widgets are double buffered by default; you can use this function
              * to turn off the buffering. “Double buffered” simply means that
@@ -324644,7 +324211,7 @@ declare module 'gi://Gtk?version=3.0' {
              * See the {@link Gtk.Widget.halign} property.
              * @param align the horizontal alignment
              */
-            set_halign(align: Align | null): void;
+            set_halign(align: Align): void;
             /**
              * Sets the has-tooltip property on `widget` to `has_tooltip`.  See
              * {@link Gtk.Widget.has_tooltip} for more information.
@@ -324907,7 +324474,7 @@ declare module 'gi://Gtk?version=3.0' {
              * the state using wrapper functions such as `gtk_widget_set_sensitive()`.
              * @param state new state for `widget`
              */
-            set_state(state: StateType | null): void;
+            set_state(state: StateType): void;
             /**
              * This function is for use in widget implementations. Turns on flag
              * values in the current widget state (insensitive, prelighted, etc.).
@@ -324925,7 +324492,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param flags State flags to turn on
              * @param clear Whether to clear state before turning on `flags`
              */
-            set_state_flags(flags: StateFlags | null, clear: boolean): void;
+            set_state_flags(flags: StateFlags, clear: boolean): void;
             /**
              * Used to set the {@link Gtk.Style} for a widget (`widget`->style). Since
              * GTK 3, this function does nothing, the passed in style is ignored.
@@ -324985,7 +324552,7 @@ declare module 'gi://Gtk?version=3.0' {
              * See the {@link Gtk.Widget.valign} property.
              * @param align the vertical alignment
              */
-            set_valign(align: Align | null): void;
+            set_valign(align: Align): void;
             /**
              * Sets whether the widget would like any available extra vertical
              * space.
@@ -325196,7 +324763,7 @@ declare module 'gi://Gtk?version=3.0' {
              * See `gtk_widget_set_state_flags()`.
              * @param flags State flags to turn off
              */
-            unset_state_flags(flags: StateFlags | null): void;
+            unset_state_flags(flags: StateFlags): void;
             /**
              * @param baseline
              * @virtual
@@ -326564,7 +326131,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -326605,7 +326172,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -327177,13 +326744,13 @@ declare module 'gi://Gtk?version=3.0' {
              * Sets the ellipsization mode which should be used by labels in `group`.
              * @param ellipsize the {@link Pango.EllipsizeMode} labels in `group` should use
              */
-            set_ellipsize(ellipsize: Pango.EllipsizeMode | null): void;
+            set_ellipsize(ellipsize: Pango.EllipsizeMode): void;
             /**
              * Set the button relief of the group header.
              * See `gtk_button_set_relief()` for details.
              * @param style the {@link Gtk.ReliefStyle}
              */
-            set_header_relief(style: ReliefStyle | null): void;
+            set_header_relief(style: ReliefStyle): void;
             /**
              * Sets the position of `item` in the list of children of `group`.
              * @param item the {@link Gtk.ToolItem} to move to a new position, should     be a child of `group`.
@@ -327852,7 +327419,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -327893,7 +327460,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -328284,8 +327851,8 @@ declare module 'gi://Gtk?version=3.0' {
                 accel_signal: string,
                 accel_group: AccelGroup,
                 accel_key: number,
-                accel_mods: Gdk.ModifierType | null,
-                accel_flags: AccelFlags | null,
+                accel_mods: Gdk.ModifierType,
+                accel_flags: AccelFlags,
             ): void;
             /**
              * Adds the device events in the bitfield `events` to the event mask for
@@ -328293,7 +327860,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param device a {@link Gdk.Device}
              * @param events an event mask, see {@link Gdk.EventMask}
              */
-            add_device_events(device: Gdk.Device, events: Gdk.EventMask | null): void;
+            add_device_events(device: Gdk.Device, events: Gdk.EventMask): void;
             /**
              * Adds the events in the bitfield `events` to the event mask for
              * `widget`. See `gtk_widget_set_events()` and the
@@ -328371,7 +327938,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param direction direction of focus movement
              * @returns `true` if focus ended up inside `widget`
              */
-            child_focus(direction: DirectionType | null): boolean;
+            child_focus(direction: DirectionType): boolean;
             /**
              * Emits a {@link Gtk.Widget.SignalSignatures.child_notify | Gtk.Widget::child-notify} signal for the
              * [child property][child-properties] `child_property`
@@ -328408,7 +327975,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param orientation expand direction
              * @returns whether widget tree rooted here should be expanded
              */
-            compute_expand(orientation: Orientation | null): boolean;
+            compute_expand(orientation: Orientation): boolean;
             /**
              * Creates a new {@link Pango.Context} with the appropriate font map,
              * font options, font description, and base direction for drawing
@@ -328495,7 +328062,7 @@ declare module 'gi://Gtk?version=3.0' {
              */
             drag_begin(
                 targets: TargetList,
-                actions: Gdk.DragAction | null,
+                actions: Gdk.DragAction,
                 button: number,
                 event?: Gdk.Event | null,
             ): Gdk.DragContext;
@@ -328535,7 +328102,7 @@ declare module 'gi://Gtk?version=3.0' {
              */
             drag_begin_with_coordinates(
                 targets: TargetList,
-                actions: Gdk.DragAction | null,
+                actions: Gdk.DragAction,
                 button: number,
                 event: Gdk.Event | null,
                 x: number,
@@ -328647,22 +328214,14 @@ declare module 'gi://Gtk?version=3.0' {
              * @param targets a pointer to an array of     `GtkTargetEntrys` indicating the drop types that this `widget` will     accept, or `null`. Later you can access the list with     `gtk_drag_dest_get_target_list()` and `gtk_drag_dest_find_target()`.
              * @param actions a bitmask of possible actions for a drop onto this `widget`.
              */
-            drag_dest_set(
-                flags: DestDefaults | null,
-                targets: TargetEntry[] | null,
-                actions: Gdk.DragAction | null,
-            ): void;
+            drag_dest_set(flags: DestDefaults, targets: TargetEntry[] | null, actions: Gdk.DragAction): void;
             /**
              * Sets this widget as a proxy for drops to another window.
              * @param proxy_window the window to which to forward drag events
              * @param protocol the drag protocol which the `proxy_window` accepts   (You can use `gdk_drag_get_protocol()` to determine this)
              * @param use_coordinates If `true`, send the same coordinates to the   destination, because it is an embedded   subwindow.
              */
-            drag_dest_set_proxy(
-                proxy_window: Gdk.Window,
-                protocol: Gdk.DragProtocol | null,
-                use_coordinates: boolean,
-            ): void;
+            drag_dest_set_proxy(proxy_window: Gdk.Window, protocol: Gdk.DragProtocol, use_coordinates: boolean): void;
             /**
              * Sets the target types that this widget can accept from drag-and-drop.
              * The widget must first be made into a drag destination with
@@ -328744,9 +328303,9 @@ declare module 'gi://Gtk?version=3.0' {
              * @param actions the bitmask of possible actions for a drag from this widget
              */
             drag_source_set(
-                start_button_mask: Gdk.ModifierType | null,
+                start_button_mask: Gdk.ModifierType,
                 targets: TargetEntry[] | null,
-                actions: Gdk.DragAction | null,
+                actions: Gdk.DragAction,
             ): void;
             /**
              * Sets the icon that will be used for drags from a particular source
@@ -329205,7 +328764,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param intent the use case for the modifier mask
              * @returns the modifier mask used for `intent`.
              */
-            get_modifier_mask(intent: Gdk.ModifierIntent | null): Gdk.ModifierType;
+            get_modifier_mask(intent: Gdk.ModifierIntent): Gdk.ModifierType;
             /**
              * Returns the current modifier style for the widget. (As set by
              * `gtk_widget_modify_style()`.) If no style has previously set, a new
@@ -329834,7 +329393,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param direction direction of focus movement
              * @returns `true` if stopping keyboard navigation is fine, `false`               if the emitting widget should try to handle the keyboard               navigation attempt in its parent container(s).
              */
-            keynav_failed(direction: DirectionType | null): boolean;
+            keynav_failed(direction: DirectionType): boolean;
             /**
              * Lists the closures used by `widget` for accelerator group connections
              * with `gtk_accel_group_connect_by_path()` or `gtk_accel_group_connect()`.
@@ -329895,7 +329454,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param state the state for which to set the base color
              * @param color the color to assign (does not need to     be allocated), or `null` to undo the effect of previous     calls to of `gtk_widget_modify_base()`.
              */
-            modify_base(state: StateType | null, color?: Gdk.Color | null): void;
+            modify_base(state: StateType, color?: Gdk.Color | null): void;
             /**
              * Sets the background color for a widget in a particular state.
              *
@@ -329914,7 +329473,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param state the state for which to set the background color
              * @param color the color to assign (does not need     to be allocated), or `null` to undo the effect of previous     calls to of `gtk_widget_modify_bg()`.
              */
-            modify_bg(state: StateType | null, color?: Gdk.Color | null): void;
+            modify_bg(state: StateType, color?: Gdk.Color | null): void;
             /**
              * Sets the cursor color to use in a widget, overriding the {@link Gtk.Widget}
              * cursor-color and secondary-cursor-color
@@ -329934,7 +329493,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param state the state for which to set the foreground color
              * @param color the color to assign (does not need to be allocated),     or `null` to undo the effect of previous calls to     of `gtk_widget_modify_fg()`.
              */
-            modify_fg(state: StateType | null, color?: Gdk.Color | null): void;
+            modify_fg(state: StateType, color?: Gdk.Color | null): void;
             /**
              * Sets the font to use for a widget.
              *
@@ -329976,7 +329535,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param state the state for which to set the text color
              * @param color the color to assign (does not need to     be allocated), or `null` to undo the effect of previous     calls to of `gtk_widget_modify_text()`.
              */
-            modify_text(state: StateType | null, color?: Gdk.Color | null): void;
+            modify_text(state: StateType, color?: Gdk.Color | null): void;
             /**
              * Sets the background color to use for a widget.
              *
@@ -329985,7 +329544,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param state the state for which to set the background color
              * @param color the color to assign, or `null` to undo the effect     of previous calls to `gtk_widget_override_background_color()`
              */
-            override_background_color(state: StateFlags | null, color?: Gdk.RGBA | null): void;
+            override_background_color(state: StateFlags, color?: Gdk.RGBA | null): void;
             /**
              * Sets the color to use for a widget.
              *
@@ -330015,7 +329574,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param state the state for which to set the color
              * @param color the color to assign, or `null` to undo the effect     of previous calls to `gtk_widget_override_color()`
              */
-            override_color(state: StateFlags | null, color?: Gdk.RGBA | null): void;
+            override_color(state: StateFlags, color?: Gdk.RGBA | null): void;
             /**
              * Sets the cursor color to use in a widget, overriding the
              * cursor-color and secondary-cursor-color
@@ -330182,11 +329741,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param accel_mods modifier key combination of the accelerator
              * @returns whether an accelerator was installed and could be removed
              */
-            remove_accelerator(
-                accel_group: AccelGroup,
-                accel_key: number,
-                accel_mods: Gdk.ModifierType | null,
-            ): boolean;
+            remove_accelerator(accel_group: AccelGroup, accel_key: number, accel_mods: Gdk.ModifierType): boolean;
             /**
              * Removes a widget from the list of mnemonic labels for
              * this widget. (See `gtk_widget_list_mnemonic_labels()`). The widget
@@ -330435,7 +329990,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param device a {@link Gdk.Device}
              * @param events event mask
              */
-            set_device_events(device: Gdk.Device, events: Gdk.EventMask | null): void;
+            set_device_events(device: Gdk.Device, events: Gdk.EventMask): void;
             /**
              * Sets the reading direction on a particular widget. This direction
              * controls the primary direction for widgets containing text,
@@ -330451,7 +330006,7 @@ declare module 'gi://Gtk?version=3.0' {
              * set by `gtk_widget_set_default_direction()` will be used.
              * @param dir the new direction
              */
-            set_direction(dir: TextDirection | null): void;
+            set_direction(dir: TextDirection): void;
             /**
              * Widgets are double buffered by default; you can use this function
              * to turn off the buffering. “Double buffered” simply means that
@@ -330521,7 +330076,7 @@ declare module 'gi://Gtk?version=3.0' {
              * See the {@link Gtk.Widget.halign} property.
              * @param align the horizontal alignment
              */
-            set_halign(align: Align | null): void;
+            set_halign(align: Align): void;
             /**
              * Sets the has-tooltip property on `widget` to `has_tooltip`.  See
              * {@link Gtk.Widget.has_tooltip} for more information.
@@ -330784,7 +330339,7 @@ declare module 'gi://Gtk?version=3.0' {
              * the state using wrapper functions such as `gtk_widget_set_sensitive()`.
              * @param state new state for `widget`
              */
-            set_state(state: StateType | null): void;
+            set_state(state: StateType): void;
             /**
              * This function is for use in widget implementations. Turns on flag
              * values in the current widget state (insensitive, prelighted, etc.).
@@ -330802,7 +330357,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param flags State flags to turn on
              * @param clear Whether to clear state before turning on `flags`
              */
-            set_state_flags(flags: StateFlags | null, clear: boolean): void;
+            set_state_flags(flags: StateFlags, clear: boolean): void;
             /**
              * Used to set the {@link Gtk.Style} for a widget (`widget`->style). Since
              * GTK 3, this function does nothing, the passed in style is ignored.
@@ -330852,7 +330407,7 @@ declare module 'gi://Gtk?version=3.0' {
              * See the {@link Gtk.Widget.valign} property.
              * @param align the vertical alignment
              */
-            set_valign(align: Align | null): void;
+            set_valign(align: Align): void;
             /**
              * Sets whether the widget would like any available extra vertical
              * space.
@@ -331063,7 +330618,7 @@ declare module 'gi://Gtk?version=3.0' {
              * See `gtk_widget_set_state_flags()`.
              * @param flags State flags to turn off
              */
-            unset_state_flags(flags: StateFlags | null): void;
+            unset_state_flags(flags: StateFlags): void;
             /**
              * @param baseline
              * @virtual
@@ -332108,9 +331663,9 @@ declare module 'gi://Gtk?version=3.0' {
              */
             add_drag_dest(
                 widget: Widget,
-                flags: DestDefaults | null,
-                targets: ToolPaletteDragTargets | null,
-                actions: Gdk.DragAction | null,
+                flags: DestDefaults,
+                targets: ToolPaletteDragTargets,
+                actions: Gdk.DragAction,
             ): void;
             /**
              * Get the dragged item from the selection.
@@ -332188,7 +331743,7 @@ declare module 'gi://Gtk?version=3.0' {
              * See `gtk_drag_source_set()`.
              * @param targets the {@link Gtk.ToolPaletteDragTargets}     which the widget should support
              */
-            set_drag_source(targets: ToolPaletteDragTargets | null): void;
+            set_drag_source(targets: ToolPaletteDragTargets): void;
             /**
              * Sets whether the group should be exclusive or not.
              * If an exclusive group is expanded all other groups are collapsed.
@@ -332219,7 +331774,7 @@ declare module 'gi://Gtk?version=3.0' {
              * Sets the style (text, icons or both) of items in the tool palette.
              * @param style the {@link Gtk.ToolbarStyle} that items in the tool palette shall have
              */
-            set_style(style: ToolbarStyle | null): void;
+            set_style(style: ToolbarStyle): void;
             /**
              * @param args
              */
@@ -332299,7 +331854,7 @@ declare module 'gi://Gtk?version=3.0' {
              * Sets the orientation of the `orientable`.
              * @param orientation the orientable’s new orientation.
              */
-            set_orientation(orientation: Orientation | null): void;
+            set_orientation(orientation: Orientation): void;
             /**
              * Returns the size of a non-scrolling border around the
              * outside of the scrollable. An example for this would
@@ -332330,7 +331885,7 @@ declare module 'gi://Gtk?version=3.0' {
              * below the natural width.
              * @param policy the horizontal {@link Gtk.ScrollablePolicy}
              */
-            set_hscroll_policy(policy: ScrollablePolicy | null): void;
+            set_hscroll_policy(policy: ScrollablePolicy): void;
             /**
              * Sets the vertical adjustment of the {@link Gtk.Scrollable}.
              * @param vadjustment a {@link Gtk.Adjustment}
@@ -332342,7 +331897,7 @@ declare module 'gi://Gtk?version=3.0' {
              * below the natural height.
              * @param policy the vertical {@link Gtk.ScrollablePolicy}
              */
-            set_vscroll_policy(policy: ScrollablePolicy | null): void;
+            set_vscroll_policy(policy: ScrollablePolicy): void;
             /**
              * Returns the size of a non-scrolling border around the
              * outside of the scrollable. An example for this would
@@ -332396,7 +331951,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -332437,7 +331992,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -333145,7 +332700,7 @@ declare module 'gi://Gtk?version=3.0' {
              * size of icons.
              * @param icon_size The {@link Gtk.IconSize} that stock icons in the toolbar shall have.
              */
-            set_icon_size(icon_size: IconSize | null): void;
+            set_icon_size(icon_size: IconSize): void;
             /**
              * Sets whether to show an overflow menu when `toolbar` isn’t allocated enough
              * size to show all of its items. If `true`, items which can’t fit in `toolbar`,
@@ -333160,7 +332715,7 @@ declare module 'gi://Gtk?version=3.0' {
              * Alters the view of `toolbar` to display either icons only, text only, or both.
              * @param style the new style for `toolbar`.
              */
-            set_style(style: ToolbarStyle | null): void;
+            set_style(style: ToolbarStyle): void;
             /**
              * @param args
              */
@@ -333666,7 +333221,7 @@ declare module 'gi://Gtk?version=3.0' {
              * Sets the orientation of the `orientable`.
              * @param orientation the orientable’s new orientation.
              */
-            set_orientation(orientation: Orientation | null): void;
+            set_orientation(orientation: Orientation): void;
             /**
              * Retrieves the current ellipsize mode for the tool shell. Tool items must not
              * call this function directly, but rely on `gtk_tool_item_get_ellipsize_mode()`
@@ -333811,7 +333366,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -333852,7 +333407,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -334243,8 +333798,8 @@ declare module 'gi://Gtk?version=3.0' {
                 accel_signal: string,
                 accel_group: AccelGroup,
                 accel_key: number,
-                accel_mods: Gdk.ModifierType | null,
-                accel_flags: AccelFlags | null,
+                accel_mods: Gdk.ModifierType,
+                accel_flags: AccelFlags,
             ): void;
             /**
              * Adds the device events in the bitfield `events` to the event mask for
@@ -334252,7 +333807,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param device a {@link Gdk.Device}
              * @param events an event mask, see {@link Gdk.EventMask}
              */
-            add_device_events(device: Gdk.Device, events: Gdk.EventMask | null): void;
+            add_device_events(device: Gdk.Device, events: Gdk.EventMask): void;
             /**
              * Adds the events in the bitfield `events` to the event mask for
              * `widget`. See `gtk_widget_set_events()` and the
@@ -334330,7 +333885,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param direction direction of focus movement
              * @returns `true` if focus ended up inside `widget`
              */
-            child_focus(direction: DirectionType | null): boolean;
+            child_focus(direction: DirectionType): boolean;
             /**
              * Emits a {@link Gtk.Widget.SignalSignatures.child_notify | Gtk.Widget::child-notify} signal for the
              * [child property][child-properties] `child_property`
@@ -334367,7 +333922,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param orientation expand direction
              * @returns whether widget tree rooted here should be expanded
              */
-            compute_expand(orientation: Orientation | null): boolean;
+            compute_expand(orientation: Orientation): boolean;
             /**
              * Creates a new {@link Pango.Context} with the appropriate font map,
              * font options, font description, and base direction for drawing
@@ -334454,7 +334009,7 @@ declare module 'gi://Gtk?version=3.0' {
              */
             drag_begin(
                 targets: TargetList,
-                actions: Gdk.DragAction | null,
+                actions: Gdk.DragAction,
                 button: number,
                 event?: Gdk.Event | null,
             ): Gdk.DragContext;
@@ -334494,7 +334049,7 @@ declare module 'gi://Gtk?version=3.0' {
              */
             drag_begin_with_coordinates(
                 targets: TargetList,
-                actions: Gdk.DragAction | null,
+                actions: Gdk.DragAction,
                 button: number,
                 event: Gdk.Event | null,
                 x: number,
@@ -334606,22 +334161,14 @@ declare module 'gi://Gtk?version=3.0' {
              * @param targets a pointer to an array of     `GtkTargetEntrys` indicating the drop types that this `widget` will     accept, or `null`. Later you can access the list with     `gtk_drag_dest_get_target_list()` and `gtk_drag_dest_find_target()`.
              * @param actions a bitmask of possible actions for a drop onto this `widget`.
              */
-            drag_dest_set(
-                flags: DestDefaults | null,
-                targets: TargetEntry[] | null,
-                actions: Gdk.DragAction | null,
-            ): void;
+            drag_dest_set(flags: DestDefaults, targets: TargetEntry[] | null, actions: Gdk.DragAction): void;
             /**
              * Sets this widget as a proxy for drops to another window.
              * @param proxy_window the window to which to forward drag events
              * @param protocol the drag protocol which the `proxy_window` accepts   (You can use `gdk_drag_get_protocol()` to determine this)
              * @param use_coordinates If `true`, send the same coordinates to the   destination, because it is an embedded   subwindow.
              */
-            drag_dest_set_proxy(
-                proxy_window: Gdk.Window,
-                protocol: Gdk.DragProtocol | null,
-                use_coordinates: boolean,
-            ): void;
+            drag_dest_set_proxy(proxy_window: Gdk.Window, protocol: Gdk.DragProtocol, use_coordinates: boolean): void;
             /**
              * Sets the target types that this widget can accept from drag-and-drop.
              * The widget must first be made into a drag destination with
@@ -334703,9 +334250,9 @@ declare module 'gi://Gtk?version=3.0' {
              * @param actions the bitmask of possible actions for a drag from this widget
              */
             drag_source_set(
-                start_button_mask: Gdk.ModifierType | null,
+                start_button_mask: Gdk.ModifierType,
                 targets: TargetEntry[] | null,
-                actions: Gdk.DragAction | null,
+                actions: Gdk.DragAction,
             ): void;
             /**
              * Sets the icon that will be used for drags from a particular source
@@ -335164,7 +334711,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param intent the use case for the modifier mask
              * @returns the modifier mask used for `intent`.
              */
-            get_modifier_mask(intent: Gdk.ModifierIntent | null): Gdk.ModifierType;
+            get_modifier_mask(intent: Gdk.ModifierIntent): Gdk.ModifierType;
             /**
              * Returns the current modifier style for the widget. (As set by
              * `gtk_widget_modify_style()`.) If no style has previously set, a new
@@ -335793,7 +335340,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param direction direction of focus movement
              * @returns `true` if stopping keyboard navigation is fine, `false`               if the emitting widget should try to handle the keyboard               navigation attempt in its parent container(s).
              */
-            keynav_failed(direction: DirectionType | null): boolean;
+            keynav_failed(direction: DirectionType): boolean;
             /**
              * Lists the closures used by `widget` for accelerator group connections
              * with `gtk_accel_group_connect_by_path()` or `gtk_accel_group_connect()`.
@@ -335854,7 +335401,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param state the state for which to set the base color
              * @param color the color to assign (does not need to     be allocated), or `null` to undo the effect of previous     calls to of `gtk_widget_modify_base()`.
              */
-            modify_base(state: StateType | null, color?: Gdk.Color | null): void;
+            modify_base(state: StateType, color?: Gdk.Color | null): void;
             /**
              * Sets the background color for a widget in a particular state.
              *
@@ -335873,7 +335420,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param state the state for which to set the background color
              * @param color the color to assign (does not need     to be allocated), or `null` to undo the effect of previous     calls to of `gtk_widget_modify_bg()`.
              */
-            modify_bg(state: StateType | null, color?: Gdk.Color | null): void;
+            modify_bg(state: StateType, color?: Gdk.Color | null): void;
             /**
              * Sets the cursor color to use in a widget, overriding the {@link Gtk.Widget}
              * cursor-color and secondary-cursor-color
@@ -335893,7 +335440,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param state the state for which to set the foreground color
              * @param color the color to assign (does not need to be allocated),     or `null` to undo the effect of previous calls to     of `gtk_widget_modify_fg()`.
              */
-            modify_fg(state: StateType | null, color?: Gdk.Color | null): void;
+            modify_fg(state: StateType, color?: Gdk.Color | null): void;
             /**
              * Sets the font to use for a widget.
              *
@@ -335935,7 +335482,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param state the state for which to set the text color
              * @param color the color to assign (does not need to     be allocated), or `null` to undo the effect of previous     calls to of `gtk_widget_modify_text()`.
              */
-            modify_text(state: StateType | null, color?: Gdk.Color | null): void;
+            modify_text(state: StateType, color?: Gdk.Color | null): void;
             /**
              * Sets the background color to use for a widget.
              *
@@ -335944,7 +335491,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param state the state for which to set the background color
              * @param color the color to assign, or `null` to undo the effect     of previous calls to `gtk_widget_override_background_color()`
              */
-            override_background_color(state: StateFlags | null, color?: Gdk.RGBA | null): void;
+            override_background_color(state: StateFlags, color?: Gdk.RGBA | null): void;
             /**
              * Sets the color to use for a widget.
              *
@@ -335974,7 +335521,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param state the state for which to set the color
              * @param color the color to assign, or `null` to undo the effect     of previous calls to `gtk_widget_override_color()`
              */
-            override_color(state: StateFlags | null, color?: Gdk.RGBA | null): void;
+            override_color(state: StateFlags, color?: Gdk.RGBA | null): void;
             /**
              * Sets the cursor color to use in a widget, overriding the
              * cursor-color and secondary-cursor-color
@@ -336141,11 +335688,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param accel_mods modifier key combination of the accelerator
              * @returns whether an accelerator was installed and could be removed
              */
-            remove_accelerator(
-                accel_group: AccelGroup,
-                accel_key: number,
-                accel_mods: Gdk.ModifierType | null,
-            ): boolean;
+            remove_accelerator(accel_group: AccelGroup, accel_key: number, accel_mods: Gdk.ModifierType): boolean;
             /**
              * Removes a widget from the list of mnemonic labels for
              * this widget. (See `gtk_widget_list_mnemonic_labels()`). The widget
@@ -336394,7 +335937,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param device a {@link Gdk.Device}
              * @param events event mask
              */
-            set_device_events(device: Gdk.Device, events: Gdk.EventMask | null): void;
+            set_device_events(device: Gdk.Device, events: Gdk.EventMask): void;
             /**
              * Sets the reading direction on a particular widget. This direction
              * controls the primary direction for widgets containing text,
@@ -336410,7 +335953,7 @@ declare module 'gi://Gtk?version=3.0' {
              * set by `gtk_widget_set_default_direction()` will be used.
              * @param dir the new direction
              */
-            set_direction(dir: TextDirection | null): void;
+            set_direction(dir: TextDirection): void;
             /**
              * Widgets are double buffered by default; you can use this function
              * to turn off the buffering. “Double buffered” simply means that
@@ -336480,7 +336023,7 @@ declare module 'gi://Gtk?version=3.0' {
              * See the {@link Gtk.Widget.halign} property.
              * @param align the horizontal alignment
              */
-            set_halign(align: Align | null): void;
+            set_halign(align: Align): void;
             /**
              * Sets the has-tooltip property on `widget` to `has_tooltip`.  See
              * {@link Gtk.Widget.has_tooltip} for more information.
@@ -336743,7 +336286,7 @@ declare module 'gi://Gtk?version=3.0' {
              * the state using wrapper functions such as `gtk_widget_set_sensitive()`.
              * @param state new state for `widget`
              */
-            set_state(state: StateType | null): void;
+            set_state(state: StateType): void;
             /**
              * This function is for use in widget implementations. Turns on flag
              * values in the current widget state (insensitive, prelighted, etc.).
@@ -336761,7 +336304,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param flags State flags to turn on
              * @param clear Whether to clear state before turning on `flags`
              */
-            set_state_flags(flags: StateFlags | null, clear: boolean): void;
+            set_state_flags(flags: StateFlags, clear: boolean): void;
             /**
              * Enables or disables multiple pointer awareness. If this setting is `true`,
              * `widget` will start receiving multiple, per device enter/leave events. Note
@@ -336805,7 +336348,7 @@ declare module 'gi://Gtk?version=3.0' {
              * See the {@link Gtk.Widget.valign} property.
              * @param align the vertical alignment
              */
-            set_valign(align: Align | null): void;
+            set_valign(align: Align): void;
             /**
              * Sets whether the widget would like any available extra vertical
              * space.
@@ -337016,7 +336559,7 @@ declare module 'gi://Gtk?version=3.0' {
              * See `gtk_widget_set_state_flags()`.
              * @param flags State flags to turn off
              */
-            unset_state_flags(flags: StateFlags | null): void;
+            unset_state_flags(flags: StateFlags): void;
             /**
              * @param baseline
              * @virtual
@@ -338851,7 +338394,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -338892,7 +338435,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -340007,7 +339550,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param sort_column_id the sort column id to set
              * @param order The sort order of the column
              */
-            set_sort_column_id(sort_column_id: number, order: SortType | null): void;
+            set_sort_column_id(sort_column_id: number, order: SortType): void;
             /**
              * Sets the comparison function used when sorting to be `sort_func`. If the
              * current sort column id of `sortable` is the same as `sort_column_id`, then
@@ -340133,7 +339676,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -340174,7 +339717,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -340744,7 +340287,7 @@ declare module 'gi://Gtk?version=3.0' {
              * previously selected.
              * @param type The selection mode
              */
-            set_mode(type: SelectionMode | null): void;
+            set_mode(type: SelectionMode): void;
             /**
              * Sets the selection function.
              *
@@ -341787,7 +341330,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param sort_column_id the sort column id to set
              * @param order The sort order of the column
              */
-            set_sort_column_id(sort_column_id: number, order: SortType | null): void;
+            set_sort_column_id(sort_column_id: number, order: SortType): void;
             /**
              * Sets the comparison function used when sorting to be `sort_func`. If the
              * current sort column id of `sortable` is the same as `sort_column_id`, then
@@ -341913,7 +341456,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -341954,7 +341497,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -342984,7 +342527,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param targets the table of targets that           the drag will support
              * @param actions the bitmask of possible actions for a drag from this    widget
              */
-            enable_model_drag_dest(targets: TargetEntry[], actions: Gdk.DragAction | null): void;
+            enable_model_drag_dest(targets: TargetEntry[], actions: Gdk.DragAction): void;
             /**
              * Turns `tree_view` into a drag source for automatic DND. Calling this
              * method sets {@link Gtk.TreeView.reorderable} to `false`.
@@ -342993,9 +342536,9 @@ declare module 'gi://Gtk?version=3.0' {
              * @param actions the bitmask of possible actions for a drag from this    widget
              */
             enable_model_drag_source(
-                start_button_mask: Gdk.ModifierType | null,
+                start_button_mask: Gdk.ModifierType,
                 targets: TargetEntry[],
-                actions: Gdk.DragAction | null,
+                actions: Gdk.DragAction,
             ): void;
             /**
              * Recursively expands all nodes in the `tree_view`.
@@ -343480,7 +343023,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param path The path of the row to highlight, or `null`
              * @param pos Specifies whether to drop before, after or into the row
              */
-            set_drag_dest_row(path: TreePath | null, pos: TreeViewDropPosition | null): void;
+            set_drag_dest_row(path: TreePath | null, pos: TreeViewDropPosition): void;
             /**
              * If `enable_search` is set, then the user can type in text to search through
              * the tree interactively (this is sometimes called "typeahead find").
@@ -343519,7 +343062,7 @@ declare module 'gi://Gtk?version=3.0' {
              * Sets which grid lines to draw in `tree_view`.
              * @param grid_lines a {@link Gtk.TreeViewGridLines} value indicating which grid lines to enable.
              */
-            set_grid_lines(grid_lines: TreeViewGridLines | null): void;
+            set_grid_lines(grid_lines: TreeViewGridLines): void;
             /**
              * Sets the {@link Gtk.Adjustment} for the current horizontal aspect.
              * @param adjustment The {@link Gtk.Adjustment} to set, or `null`
@@ -343806,14 +343349,14 @@ declare module 'gi://Gtk?version=3.0' {
              * below the natural width.
              * @param policy the horizontal {@link Gtk.ScrollablePolicy}
              */
-            set_hscroll_policy(policy: ScrollablePolicy | null): void;
+            set_hscroll_policy(policy: ScrollablePolicy): void;
             /**
              * Sets the {@link Gtk.ScrollablePolicy} to determine whether
              * vertical scrolling should start below the minimum height or
              * below the natural height.
              * @param policy the vertical {@link Gtk.ScrollablePolicy}
              */
-            set_vscroll_policy(policy: ScrollablePolicy | null): void;
+            set_vscroll_policy(policy: ScrollablePolicy): void;
             /**
              * Returns the size of a non-scrolling border around the
              * outside of the scrollable. An example for this would
@@ -343867,7 +343410,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -343908,7 +343451,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -344894,7 +344437,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param cell
              * @param coord_type
              */
-            get_cell_extents(cell: CellAccessible, coord_type: Atk.CoordType | null): [number, number, number, number];
+            get_cell_extents(cell: CellAccessible, coord_type: Atk.CoordType): [number, number, number, number];
             /**
              * @param cell
              */
@@ -345041,7 +344584,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -345082,7 +344625,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -345946,7 +345489,7 @@ declare module 'gi://Gtk?version=3.0' {
              * Sets the growth behavior of `tree_column` to `type`.
              * @param type The {@link Gtk.TreeViewColumnSizing}.
              */
-            set_sizing(type: TreeViewColumnSizing | null): void;
+            set_sizing(type: TreeViewColumnSizing): void;
             /**
              * Sets the logical `sort_column_id` that this column sorts on when this column
              * is selected for sorting.  Doing so makes the column header clickable.
@@ -345975,7 +345518,7 @@ declare module 'gi://Gtk?version=3.0' {
              * calling this function; see `gtk_tree_view_column_set_sort_indicator()`.
              * @param order sort order that the sort indicator should indicate
              */
-            set_sort_order(order: SortType | null): void;
+            set_sort_order(order: SortType): void;
             /**
              * Sets the spacing field of `tree_column`, which is the number of pixels to
              * place between cell renderers packed into it.
@@ -346333,7 +345876,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -346374,7 +345917,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -347209,7 +346752,7 @@ declare module 'gi://Gtk?version=3.0' {
                 path: string,
                 name: string,
                 action: string | null,
-                type: UIManagerItemType | null,
+                type: UIManagerItemType,
                 top: boolean,
             ): void;
             /**
@@ -347283,7 +346826,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param types specifies the types of toplevel widgets to include. Allowed   types are #GTK_UI_MANAGER_MENUBAR, #GTK_UI_MANAGER_TOOLBAR and   #GTK_UI_MANAGER_POPUP.
              * @returns a newly-allocated {@link GLib.SList} of all toplevel widgets of the requested types.  Free the returned list with `g_slist_free()`.
              */
-            get_toplevels(types: UIManagerItemType | null): Widget[];
+            get_toplevels(types: UIManagerItemType): Widget[];
             /**
              * Creates a [UI definition][XML-UI] of the merged UI.
              * @returns A newly allocated string containing an XML representation of the merged UI.
@@ -347576,7 +347119,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -347617,7 +347160,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -348137,7 +347680,7 @@ declare module 'gi://Gtk?version=3.0' {
              * Sets the orientation of the `orientable`.
              * @param orientation the orientable’s new orientation.
              */
-            set_orientation(orientation: Orientation | null): void;
+            set_orientation(orientation: Orientation): void;
             /**
              * Creates a binding between `source_property` on `source` and `target_property`
              * on `target`.
@@ -348182,7 +347725,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -348223,7 +347766,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -348741,7 +348284,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -348782,7 +348325,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -349280,7 +348823,7 @@ declare module 'gi://Gtk?version=3.0' {
              * Sets the orientation of the `orientable`.
              * @param orientation the orientable’s new orientation.
              */
-            set_orientation(orientation: Orientation | null): void;
+            set_orientation(orientation: Orientation): void;
             /**
              * Creates a binding between `source_property` on `source` and `target_property`
              * on `target`.
@@ -349325,7 +348868,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -349366,7 +348909,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -349904,7 +349447,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -349945,7 +349488,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -350475,7 +350018,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -350516,7 +350059,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -351005,7 +350548,7 @@ declare module 'gi://Gtk?version=3.0' {
              * Sets the orientation of the `orientable`.
              * @param orientation the orientable’s new orientation.
              */
-            set_orientation(orientation: Orientation | null): void;
+            set_orientation(orientation: Orientation): void;
             /**
              * Creates a binding between `source_property` on `source` and `target_property`
              * on `target`.
@@ -351050,7 +350593,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -351091,7 +350634,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -351633,7 +351176,7 @@ declare module 'gi://Gtk?version=3.0' {
              * Sets the shadow type of the viewport.
              * @param type the new shadow type.
              */
-            set_shadow_type(type: ShadowType | null): void;
+            set_shadow_type(type: ShadowType): void;
             /**
              * Sets the vertical adjustment of the viewport.
              * @param adjustment a {@link Gtk.Adjustment}.
@@ -351712,14 +351255,14 @@ declare module 'gi://Gtk?version=3.0' {
              * below the natural width.
              * @param policy the horizontal {@link Gtk.ScrollablePolicy}
              */
-            set_hscroll_policy(policy: ScrollablePolicy | null): void;
+            set_hscroll_policy(policy: ScrollablePolicy): void;
             /**
              * Sets the {@link Gtk.ScrollablePolicy} to determine whether
              * vertical scrolling should start below the minimum height or
              * below the natural height.
              * @param policy the vertical {@link Gtk.ScrollablePolicy}
              */
-            set_vscroll_policy(policy: ScrollablePolicy | null): void;
+            set_vscroll_policy(policy: ScrollablePolicy): void;
             /**
              * Returns the size of a non-scrolling border around the
              * outside of the scrollable. An example for this would
@@ -351773,7 +351316,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -351814,7 +351357,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -352817,7 +352360,7 @@ declare module 'gi://Gtk?version=3.0' {
              * Sets the orientation of the `orientable`.
              * @param orientation the orientable’s new orientation.
              */
-            set_orientation(orientation: Orientation | null): void;
+            set_orientation(orientation: Orientation): void;
             /**
              * Creates a binding between `source_property` on `source` and `target_property`
              * on `target`.
@@ -352862,7 +352405,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -352903,7 +352446,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -353294,8 +352837,8 @@ declare module 'gi://Gtk?version=3.0' {
                 accel_signal: string,
                 accel_group: AccelGroup,
                 accel_key: number,
-                accel_mods: Gdk.ModifierType | null,
-                accel_flags: AccelFlags | null,
+                accel_mods: Gdk.ModifierType,
+                accel_flags: AccelFlags,
             ): void;
             /**
              * Adds the device events in the bitfield `events` to the event mask for
@@ -353303,7 +352846,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param device a {@link Gdk.Device}
              * @param events an event mask, see {@link Gdk.EventMask}
              */
-            add_device_events(device: Gdk.Device, events: Gdk.EventMask | null): void;
+            add_device_events(device: Gdk.Device, events: Gdk.EventMask): void;
             /**
              * Adds the events in the bitfield `events` to the event mask for
              * `widget`. See `gtk_widget_set_events()` and the
@@ -353381,7 +352924,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param direction direction of focus movement
              * @returns `true` if focus ended up inside `widget`
              */
-            child_focus(direction: DirectionType | null): boolean;
+            child_focus(direction: DirectionType): boolean;
             /**
              * Emits a {@link Gtk.Widget.SignalSignatures.child_notify | Gtk.Widget::child-notify} signal for the
              * [child property][child-properties] `child_property`
@@ -353418,7 +352961,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param orientation expand direction
              * @returns whether widget tree rooted here should be expanded
              */
-            compute_expand(orientation: Orientation | null): boolean;
+            compute_expand(orientation: Orientation): boolean;
             /**
              * Creates a new {@link Pango.Context} with the appropriate font map,
              * font options, font description, and base direction for drawing
@@ -353505,7 +353048,7 @@ declare module 'gi://Gtk?version=3.0' {
              */
             drag_begin(
                 targets: TargetList,
-                actions: Gdk.DragAction | null,
+                actions: Gdk.DragAction,
                 button: number,
                 event?: Gdk.Event | null,
             ): Gdk.DragContext;
@@ -353545,7 +353088,7 @@ declare module 'gi://Gtk?version=3.0' {
              */
             drag_begin_with_coordinates(
                 targets: TargetList,
-                actions: Gdk.DragAction | null,
+                actions: Gdk.DragAction,
                 button: number,
                 event: Gdk.Event | null,
                 x: number,
@@ -353657,22 +353200,14 @@ declare module 'gi://Gtk?version=3.0' {
              * @param targets a pointer to an array of     `GtkTargetEntrys` indicating the drop types that this `widget` will     accept, or `null`. Later you can access the list with     `gtk_drag_dest_get_target_list()` and `gtk_drag_dest_find_target()`.
              * @param actions a bitmask of possible actions for a drop onto this `widget`.
              */
-            drag_dest_set(
-                flags: DestDefaults | null,
-                targets: TargetEntry[] | null,
-                actions: Gdk.DragAction | null,
-            ): void;
+            drag_dest_set(flags: DestDefaults, targets: TargetEntry[] | null, actions: Gdk.DragAction): void;
             /**
              * Sets this widget as a proxy for drops to another window.
              * @param proxy_window the window to which to forward drag events
              * @param protocol the drag protocol which the `proxy_window` accepts   (You can use `gdk_drag_get_protocol()` to determine this)
              * @param use_coordinates If `true`, send the same coordinates to the   destination, because it is an embedded   subwindow.
              */
-            drag_dest_set_proxy(
-                proxy_window: Gdk.Window,
-                protocol: Gdk.DragProtocol | null,
-                use_coordinates: boolean,
-            ): void;
+            drag_dest_set_proxy(proxy_window: Gdk.Window, protocol: Gdk.DragProtocol, use_coordinates: boolean): void;
             /**
              * Sets the target types that this widget can accept from drag-and-drop.
              * The widget must first be made into a drag destination with
@@ -353754,9 +353289,9 @@ declare module 'gi://Gtk?version=3.0' {
              * @param actions the bitmask of possible actions for a drag from this widget
              */
             drag_source_set(
-                start_button_mask: Gdk.ModifierType | null,
+                start_button_mask: Gdk.ModifierType,
                 targets: TargetEntry[] | null,
-                actions: Gdk.DragAction | null,
+                actions: Gdk.DragAction,
             ): void;
             /**
              * Sets the icon that will be used for drags from a particular source
@@ -354215,7 +353750,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param intent the use case for the modifier mask
              * @returns the modifier mask used for `intent`.
              */
-            get_modifier_mask(intent: Gdk.ModifierIntent | null): Gdk.ModifierType;
+            get_modifier_mask(intent: Gdk.ModifierIntent): Gdk.ModifierType;
             /**
              * Returns the current modifier style for the widget. (As set by
              * `gtk_widget_modify_style()`.) If no style has previously set, a new
@@ -354849,7 +354384,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param direction direction of focus movement
              * @returns `true` if stopping keyboard navigation is fine, `false`               if the emitting widget should try to handle the keyboard               navigation attempt in its parent container(s).
              */
-            keynav_failed(direction: DirectionType | null): boolean;
+            keynav_failed(direction: DirectionType): boolean;
             /**
              * Lists the closures used by `widget` for accelerator group connections
              * with `gtk_accel_group_connect_by_path()` or `gtk_accel_group_connect()`.
@@ -354910,7 +354445,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param state the state for which to set the base color
              * @param color the color to assign (does not need to     be allocated), or `null` to undo the effect of previous     calls to of `gtk_widget_modify_base()`.
              */
-            modify_base(state: StateType | null, color?: Gdk.Color | null): void;
+            modify_base(state: StateType, color?: Gdk.Color | null): void;
             /**
              * Sets the background color for a widget in a particular state.
              *
@@ -354929,7 +354464,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param state the state for which to set the background color
              * @param color the color to assign (does not need     to be allocated), or `null` to undo the effect of previous     calls to of `gtk_widget_modify_bg()`.
              */
-            modify_bg(state: StateType | null, color?: Gdk.Color | null): void;
+            modify_bg(state: StateType, color?: Gdk.Color | null): void;
             /**
              * Sets the cursor color to use in a widget, overriding the {@link Gtk.Widget}
              * cursor-color and secondary-cursor-color
@@ -354949,7 +354484,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param state the state for which to set the foreground color
              * @param color the color to assign (does not need to be allocated),     or `null` to undo the effect of previous calls to     of `gtk_widget_modify_fg()`.
              */
-            modify_fg(state: StateType | null, color?: Gdk.Color | null): void;
+            modify_fg(state: StateType, color?: Gdk.Color | null): void;
             /**
              * Sets the font to use for a widget.
              *
@@ -354991,7 +354526,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param state the state for which to set the text color
              * @param color the color to assign (does not need to     be allocated), or `null` to undo the effect of previous     calls to of `gtk_widget_modify_text()`.
              */
-            modify_text(state: StateType | null, color?: Gdk.Color | null): void;
+            modify_text(state: StateType, color?: Gdk.Color | null): void;
             /**
              * Sets the background color to use for a widget.
              *
@@ -355000,7 +354535,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param state the state for which to set the background color
              * @param color the color to assign, or `null` to undo the effect     of previous calls to `gtk_widget_override_background_color()`
              */
-            override_background_color(state: StateFlags | null, color?: Gdk.RGBA | null): void;
+            override_background_color(state: StateFlags, color?: Gdk.RGBA | null): void;
             /**
              * Sets the color to use for a widget.
              *
@@ -355030,7 +354565,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param state the state for which to set the color
              * @param color the color to assign, or `null` to undo the effect     of previous calls to `gtk_widget_override_color()`
              */
-            override_color(state: StateFlags | null, color?: Gdk.RGBA | null): void;
+            override_color(state: StateFlags, color?: Gdk.RGBA | null): void;
             /**
              * Sets the cursor color to use in a widget, overriding the
              * cursor-color and secondary-cursor-color
@@ -355197,11 +354732,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param accel_mods modifier key combination of the accelerator
              * @returns whether an accelerator was installed and could be removed
              */
-            remove_accelerator(
-                accel_group: AccelGroup,
-                accel_key: number,
-                accel_mods: Gdk.ModifierType | null,
-            ): boolean;
+            remove_accelerator(accel_group: AccelGroup, accel_key: number, accel_mods: Gdk.ModifierType): boolean;
             /**
              * Removes a widget from the list of mnemonic labels for
              * this widget. (See `gtk_widget_list_mnemonic_labels()`). The widget
@@ -355450,7 +354981,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param device a {@link Gdk.Device}
              * @param events event mask
              */
-            set_device_events(device: Gdk.Device, events: Gdk.EventMask | null): void;
+            set_device_events(device: Gdk.Device, events: Gdk.EventMask): void;
             /**
              * Sets the reading direction on a particular widget. This direction
              * controls the primary direction for widgets containing text,
@@ -355466,7 +354997,7 @@ declare module 'gi://Gtk?version=3.0' {
              * set by `gtk_widget_set_default_direction()` will be used.
              * @param dir the new direction
              */
-            set_direction(dir: TextDirection | null): void;
+            set_direction(dir: TextDirection): void;
             /**
              * Widgets are double buffered by default; you can use this function
              * to turn off the buffering. “Double buffered” simply means that
@@ -355536,7 +355067,7 @@ declare module 'gi://Gtk?version=3.0' {
              * See the {@link Gtk.Widget.halign} property.
              * @param align the horizontal alignment
              */
-            set_halign(align: Align | null): void;
+            set_halign(align: Align): void;
             /**
              * Sets the has-tooltip property on `widget` to `has_tooltip`.  See
              * {@link Gtk.Widget.has_tooltip} for more information.
@@ -355799,7 +355330,7 @@ declare module 'gi://Gtk?version=3.0' {
              * the state using wrapper functions such as `gtk_widget_set_sensitive()`.
              * @param state new state for `widget`
              */
-            set_state(state: StateType | null): void;
+            set_state(state: StateType): void;
             /**
              * This function is for use in widget implementations. Turns on flag
              * values in the current widget state (insensitive, prelighted, etc.).
@@ -355817,7 +355348,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param flags State flags to turn on
              * @param clear Whether to clear state before turning on `flags`
              */
-            set_state_flags(flags: StateFlags | null, clear: boolean): void;
+            set_state_flags(flags: StateFlags, clear: boolean): void;
             /**
              * Used to set the {@link Gtk.Style} for a widget (`widget`->style). Since
              * GTK 3, this function does nothing, the passed in style is ignored.
@@ -355867,7 +355398,7 @@ declare module 'gi://Gtk?version=3.0' {
              * See the {@link Gtk.Widget.valign} property.
              * @param align the vertical alignment
              */
-            set_valign(align: Align | null): void;
+            set_valign(align: Align): void;
             /**
              * Sets whether the widget would like any available extra vertical
              * space.
@@ -356078,7 +355609,7 @@ declare module 'gi://Gtk?version=3.0' {
              * See `gtk_widget_set_state_flags()`.
              * @param flags State flags to turn off
              */
-            unset_state_flags(flags: StateFlags | null): void;
+            unset_state_flags(flags: StateFlags): void;
             /**
              * @param baseline
              * @virtual
@@ -359903,8 +359434,8 @@ declare module 'gi://Gtk?version=3.0' {
                 accel_signal: string,
                 accel_group: AccelGroup,
                 accel_key: number,
-                accel_mods: Gdk.ModifierType | null,
-                accel_flags: AccelFlags | null,
+                accel_mods: Gdk.ModifierType,
+                accel_flags: AccelFlags,
             ): void;
             /**
              * Adds the device events in the bitfield `events` to the event mask for
@@ -359912,7 +359443,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param device a {@link Gdk.Device}
              * @param events an event mask, see {@link Gdk.EventMask}
              */
-            add_device_events(device: Gdk.Device, events: Gdk.EventMask | null): void;
+            add_device_events(device: Gdk.Device, events: Gdk.EventMask): void;
             /**
              * Adds the events in the bitfield `events` to the event mask for
              * `widget`. See `gtk_widget_set_events()` and the
@@ -359990,7 +359521,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param direction direction of focus movement
              * @returns `true` if focus ended up inside `widget`
              */
-            child_focus(direction: DirectionType | null): boolean;
+            child_focus(direction: DirectionType): boolean;
             /**
              * Emits a {@link Gtk.Widget.SignalSignatures.child_notify | Gtk.Widget::child-notify} signal for the
              * [child property][child-properties] `child_property`
@@ -360022,7 +359553,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param orientation expand direction
              * @returns whether widget tree rooted here should be expanded
              */
-            compute_expand(orientation: Orientation | null): boolean;
+            compute_expand(orientation: Orientation): boolean;
             /**
              * Creates a new {@link Pango.Context} with the appropriate font map,
              * font options, font description, and base direction for drawing
@@ -360109,7 +359640,7 @@ declare module 'gi://Gtk?version=3.0' {
              */
             drag_begin(
                 targets: TargetList,
-                actions: Gdk.DragAction | null,
+                actions: Gdk.DragAction,
                 button: number,
                 event?: Gdk.Event | null,
             ): Gdk.DragContext;
@@ -360149,7 +359680,7 @@ declare module 'gi://Gtk?version=3.0' {
              */
             drag_begin_with_coordinates(
                 targets: TargetList,
-                actions: Gdk.DragAction | null,
+                actions: Gdk.DragAction,
                 button: number,
                 event: Gdk.Event | null,
                 x: number,
@@ -360261,22 +359792,14 @@ declare module 'gi://Gtk?version=3.0' {
              * @param targets a pointer to an array of     `GtkTargetEntrys` indicating the drop types that this `widget` will     accept, or `null`. Later you can access the list with     `gtk_drag_dest_get_target_list()` and `gtk_drag_dest_find_target()`.
              * @param actions a bitmask of possible actions for a drop onto this `widget`.
              */
-            drag_dest_set(
-                flags: DestDefaults | null,
-                targets: TargetEntry[] | null,
-                actions: Gdk.DragAction | null,
-            ): void;
+            drag_dest_set(flags: DestDefaults, targets: TargetEntry[] | null, actions: Gdk.DragAction): void;
             /**
              * Sets this widget as a proxy for drops to another window.
              * @param proxy_window the window to which to forward drag events
              * @param protocol the drag protocol which the `proxy_window` accepts   (You can use `gdk_drag_get_protocol()` to determine this)
              * @param use_coordinates If `true`, send the same coordinates to the   destination, because it is an embedded   subwindow.
              */
-            drag_dest_set_proxy(
-                proxy_window: Gdk.Window,
-                protocol: Gdk.DragProtocol | null,
-                use_coordinates: boolean,
-            ): void;
+            drag_dest_set_proxy(proxy_window: Gdk.Window, protocol: Gdk.DragProtocol, use_coordinates: boolean): void;
             /**
              * Sets the target types that this widget can accept from drag-and-drop.
              * The widget must first be made into a drag destination with
@@ -360358,9 +359881,9 @@ declare module 'gi://Gtk?version=3.0' {
              * @param actions the bitmask of possible actions for a drag from this widget
              */
             drag_source_set(
-                start_button_mask: Gdk.ModifierType | null,
+                start_button_mask: Gdk.ModifierType,
                 targets: TargetEntry[] | null,
-                actions: Gdk.DragAction | null,
+                actions: Gdk.DragAction,
             ): void;
             /**
              * Sets the icon that will be used for drags from a particular source
@@ -360819,7 +360342,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param intent the use case for the modifier mask
              * @returns the modifier mask used for `intent`.
              */
-            get_modifier_mask(intent: Gdk.ModifierIntent | null): Gdk.ModifierType;
+            get_modifier_mask(intent: Gdk.ModifierIntent): Gdk.ModifierType;
             /**
              * Returns the current modifier style for the widget. (As set by
              * `gtk_widget_modify_style()`.) If no style has previously set, a new
@@ -361453,7 +360976,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param direction direction of focus movement
              * @returns `true` if stopping keyboard navigation is fine, `false`               if the emitting widget should try to handle the keyboard               navigation attempt in its parent container(s).
              */
-            keynav_failed(direction: DirectionType | null): boolean;
+            keynav_failed(direction: DirectionType): boolean;
             /**
              * Lists the closures used by `widget` for accelerator group connections
              * with `gtk_accel_group_connect_by_path()` or `gtk_accel_group_connect()`.
@@ -361514,7 +361037,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param state the state for which to set the base color
              * @param color the color to assign (does not need to     be allocated), or `null` to undo the effect of previous     calls to of `gtk_widget_modify_base()`.
              */
-            modify_base(state: StateType | null, color?: Gdk.Color | null): void;
+            modify_base(state: StateType, color?: Gdk.Color | null): void;
             /**
              * Sets the background color for a widget in a particular state.
              *
@@ -361533,7 +361056,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param state the state for which to set the background color
              * @param color the color to assign (does not need     to be allocated), or `null` to undo the effect of previous     calls to of `gtk_widget_modify_bg()`.
              */
-            modify_bg(state: StateType | null, color?: Gdk.Color | null): void;
+            modify_bg(state: StateType, color?: Gdk.Color | null): void;
             /**
              * Sets the cursor color to use in a widget, overriding the {@link Gtk.Widget}
              * cursor-color and secondary-cursor-color
@@ -361553,7 +361076,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param state the state for which to set the foreground color
              * @param color the color to assign (does not need to be allocated),     or `null` to undo the effect of previous calls to     of `gtk_widget_modify_fg()`.
              */
-            modify_fg(state: StateType | null, color?: Gdk.Color | null): void;
+            modify_fg(state: StateType, color?: Gdk.Color | null): void;
             /**
              * Sets the font to use for a widget.
              *
@@ -361595,7 +361118,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param state the state for which to set the text color
              * @param color the color to assign (does not need to     be allocated), or `null` to undo the effect of previous     calls to of `gtk_widget_modify_text()`.
              */
-            modify_text(state: StateType | null, color?: Gdk.Color | null): void;
+            modify_text(state: StateType, color?: Gdk.Color | null): void;
             /**
              * Sets the background color to use for a widget.
              *
@@ -361604,7 +361127,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param state the state for which to set the background color
              * @param color the color to assign, or `null` to undo the effect     of previous calls to `gtk_widget_override_background_color()`
              */
-            override_background_color(state: StateFlags | null, color?: Gdk.RGBA | null): void;
+            override_background_color(state: StateFlags, color?: Gdk.RGBA | null): void;
             /**
              * Sets the color to use for a widget.
              *
@@ -361634,7 +361157,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param state the state for which to set the color
              * @param color the color to assign, or `null` to undo the effect     of previous calls to `gtk_widget_override_color()`
              */
-            override_color(state: StateFlags | null, color?: Gdk.RGBA | null): void;
+            override_color(state: StateFlags, color?: Gdk.RGBA | null): void;
             /**
              * Sets the cursor color to use in a widget, overriding the
              * cursor-color and secondary-cursor-color
@@ -361801,11 +361324,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param accel_mods modifier key combination of the accelerator
              * @returns whether an accelerator was installed and could be removed
              */
-            remove_accelerator(
-                accel_group: AccelGroup,
-                accel_key: number,
-                accel_mods: Gdk.ModifierType | null,
-            ): boolean;
+            remove_accelerator(accel_group: AccelGroup, accel_key: number, accel_mods: Gdk.ModifierType): boolean;
             /**
              * Removes a widget from the list of mnemonic labels for
              * this widget. (See `gtk_widget_list_mnemonic_labels()`). The widget
@@ -362054,7 +361573,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param device a {@link Gdk.Device}
              * @param events event mask
              */
-            set_device_events(device: Gdk.Device, events: Gdk.EventMask | null): void;
+            set_device_events(device: Gdk.Device, events: Gdk.EventMask): void;
             /**
              * Sets the reading direction on a particular widget. This direction
              * controls the primary direction for widgets containing text,
@@ -362070,7 +361589,7 @@ declare module 'gi://Gtk?version=3.0' {
              * set by `gtk_widget_set_default_direction()` will be used.
              * @param dir the new direction
              */
-            set_direction(dir: TextDirection | null): void;
+            set_direction(dir: TextDirection): void;
             /**
              * Widgets are double buffered by default; you can use this function
              * to turn off the buffering. “Double buffered” simply means that
@@ -362140,7 +361659,7 @@ declare module 'gi://Gtk?version=3.0' {
              * See the {@link Gtk.Widget.halign} property.
              * @param align the horizontal alignment
              */
-            set_halign(align: Align | null): void;
+            set_halign(align: Align): void;
             /**
              * Sets the has-tooltip property on `widget` to `has_tooltip`.  See
              * {@link Gtk.Widget.has_tooltip} for more information.
@@ -362403,7 +361922,7 @@ declare module 'gi://Gtk?version=3.0' {
              * the state using wrapper functions such as `gtk_widget_set_sensitive()`.
              * @param state new state for `widget`
              */
-            set_state(state: StateType | null): void;
+            set_state(state: StateType): void;
             /**
              * This function is for use in widget implementations. Turns on flag
              * values in the current widget state (insensitive, prelighted, etc.).
@@ -362421,7 +361940,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param flags State flags to turn on
              * @param clear Whether to clear state before turning on `flags`
              */
-            set_state_flags(flags: StateFlags | null, clear: boolean): void;
+            set_state_flags(flags: StateFlags, clear: boolean): void;
             /**
              * Used to set the {@link Gtk.Style} for a widget (`widget`->style). Since
              * GTK 3, this function does nothing, the passed in style is ignored.
@@ -362471,7 +361990,7 @@ declare module 'gi://Gtk?version=3.0' {
              * See the {@link Gtk.Widget.valign} property.
              * @param align the vertical alignment
              */
-            set_valign(align: Align | null): void;
+            set_valign(align: Align): void;
             /**
              * Sets whether the widget would like any available extra vertical
              * space.
@@ -362682,7 +362201,7 @@ declare module 'gi://Gtk?version=3.0' {
              * See `gtk_widget_set_state_flags()`.
              * @param flags State flags to turn off
              */
-            unset_state_flags(flags: StateFlags | null): void;
+            unset_state_flags(flags: StateFlags): void;
             /**
              * Adds a child to `buildable`. `type` is an optional string
              * describing how the child should be added.
@@ -362899,7 +362418,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -362940,7 +362459,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -363388,7 +362907,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param coord_type specifies whether the coordinates are relative to the screen or to the components top level window
              * @returns `true` or `false` indicating whether the specified point is within the extent of the `component` or not
              */
-            contains(x: number, y: number, coord_type: Atk.CoordType | null): boolean;
+            contains(x: number, y: number, coord_type: Atk.CoordType): boolean;
             /**
              * Returns the alpha value (i.e. the opacity) for this
              * `component`, on a scale from 0 (fully transparent) to 1.0
@@ -363403,7 +362922,7 @@ declare module 'gi://Gtk?version=3.0' {
              * support), all of x, y, width, height are set to -1.
              * @param coord_type specifies whether the coordinates are relative to the screen or to the components top level window
              */
-            get_extents(coord_type: Atk.CoordType | null): [number, number, number, number];
+            get_extents(coord_type: Atk.CoordType): [number, number, number, number];
             /**
              * Gets the layer of the component.
              * @returns an {@link Atk.Layer} which is the layer of the component
@@ -363423,7 +362942,7 @@ declare module 'gi://Gtk?version=3.0' {
              * support), x and y are set to -1.
              * @param coord_type specifies whether the coordinates are relative to the screen or to the components top level window
              */
-            get_position(coord_type: Atk.CoordType | null): [number, number];
+            get_position(coord_type: Atk.CoordType): [number, number];
             /**
              * Gets the size of the `component` in terms of width and height.
              *
@@ -363444,7 +362963,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param coord_type specifies whether the coordinates are relative to the screen or to the components top level window
              * @returns a reference to the accessible child, if one exists
              */
-            ref_accessible_at_point(x: number, y: number, coord_type: Atk.CoordType | null): Atk.Object | null;
+            ref_accessible_at_point(x: number, y: number, coord_type: Atk.CoordType): Atk.Object | null;
             /**
              * Remove the handler specified by `handler_id` from the list of
              * functions to be executed when this object receives focus events
@@ -363461,7 +362980,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param type specify where the object should be made visible.
              * @returns whether scrolling was successful.
              */
-            scroll_to(type: Atk.ScrollType | null): boolean;
+            scroll_to(type: Atk.ScrollType): boolean;
             /**
              * Move the top-left of `component` to a given position of the screen by
              * scrolling all necessary parents.
@@ -363470,7 +362989,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param y y-position where to scroll to
              * @returns whether scrolling was successful.
              */
-            scroll_to_point(coords: Atk.CoordType | null, x: number, y: number): boolean;
+            scroll_to_point(coords: Atk.CoordType, x: number, y: number): boolean;
             /**
              * Sets the extents of `component`.
              * @param x x coordinate
@@ -363480,7 +362999,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param coord_type specifies whether the coordinates are relative to the screen or to the components top level window
              * @returns `true` or `false` whether the extents were set or not
              */
-            set_extents(x: number, y: number, width: number, height: number, coord_type: Atk.CoordType | null): boolean;
+            set_extents(x: number, y: number, width: number, height: number, coord_type: Atk.CoordType): boolean;
             /**
              * Sets the position of `component`.
              *
@@ -363491,7 +363010,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param coord_type specifies whether the coordinates are relative to the screen or to the component's top level window
              * @returns `true` or `false` whether or not the position was set or not
              */
-            set_position(x: number, y: number, coord_type: Atk.CoordType | null): boolean;
+            set_position(x: number, y: number, coord_type: Atk.CoordType): boolean;
             /**
              * Set the size of the `component` in terms of width and height.
              * @param width width to set for `component`
@@ -363674,7 +363193,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -363715,7 +363234,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -364843,7 +364362,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param timestamp timestamp from the click event that initiated the drag
              */
             begin_resize_drag(
-                edge: Gdk.WindowEdge | null,
+                edge: Gdk.WindowEdge,
                 button: number,
                 root_x: number,
                 root_y: number,
@@ -365250,7 +364769,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param modifier the modifiers
              * @returns `true` if the activation is done.
              */
-            mnemonic_activate(keyval: number, modifier: Gdk.ModifierType | null): boolean;
+            mnemonic_activate(keyval: number, modifier: Gdk.ModifierType): boolean;
             /**
              * @param args
              */
@@ -365641,7 +365160,7 @@ declare module 'gi://Gtk?version=3.0' {
             set_geometry_hints(
                 geometry_widget: Widget | null,
                 geometry: Gdk.Geometry | null,
-                geom_mask: Gdk.WindowHints | null,
+                geom_mask: Gdk.WindowHints,
             ): void;
             /**
              * Window gravity defines the meaning of coordinates passed to
@@ -365652,7 +365171,7 @@ declare module 'gi://Gtk?version=3.0' {
              * typically “do what you mean.”
              * @param gravity window gravity
              */
-            set_gravity(gravity: Gdk.Gravity | null): void;
+            set_gravity(gravity: Gdk.Gravity): void;
             /**
              * Sets whether `window` has a corner resize grip.
              *
@@ -365812,7 +365331,7 @@ declare module 'gi://Gtk?version=3.0' {
              * Sets the mnemonic modifier for this window.
              * @param modifier the modifier mask used to activate               mnemonics on this window.
              */
-            set_mnemonic_modifier(modifier: Gdk.ModifierType | null): void;
+            set_mnemonic_modifier(modifier: Gdk.ModifierType): void;
             /**
              * Sets the {@link Gtk.Window.mnemonics_visible} property.
              * @param setting the new value
@@ -365847,7 +365366,7 @@ declare module 'gi://Gtk?version=3.0' {
              * the window to be repositioned to satisfy the new constraint.
              * @param position a position constraint.
              */
-            set_position(position: WindowPosition | null): void;
+            set_position(position: WindowPosition): void;
             /**
              * Sets whether the user can resize a window. Windows are user resizable
              * by default.
@@ -365965,7 +365484,7 @@ declare module 'gi://Gtk?version=3.0' {
              * will sometimes call `gtk_window_set_type_hint()` on your behalf.
              * @param hint the window type
              */
-            set_type_hint(hint: Gdk.WindowTypeHint | null): void;
+            set_type_hint(hint: Gdk.WindowTypeHint): void;
             /**
              * Windows may set a hint asking the desktop environment to draw
              * the users attention to the window. This function sets this hint.
@@ -366081,7 +365600,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -366122,7 +365641,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -366769,7 +366288,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -366810,7 +366329,7 @@ declare module 'gi://Gtk?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -367180,7 +366699,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param target The {@link Atk.Object} which is to be the target of the relation.
              * @returns TRUE if the relationship is added.
              */
-            add_relationship(relationship: Atk.RelationType | null, target: Atk.Object): boolean;
+            add_relationship(relationship: Atk.RelationType, target: Atk.Object): boolean;
             /**
              * Gets the accessible id of the accessible.
              * @returns a character string representing the accessible id of the object, or NULL if no such string was set.
@@ -367312,7 +366831,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param target The {@link Atk.Object} which is the target of the relation to be removed.
              * @returns TRUE if the relationship is removed.
              */
-            remove_relationship(relationship: Atk.RelationType | null, target: Atk.Object): boolean;
+            remove_relationship(relationship: Atk.RelationType, target: Atk.Object): boolean;
             /**
              * Sets the accessible ID of the accessible.  This is not meant to be presented
              * to the user, but to be an ID which is stable over application development.
@@ -367356,7 +366875,7 @@ declare module 'gi://Gtk?version=3.0' {
              * Sets the role of the accessible.
              * @param role an {@link Atk.Role} to be set as the role
              */
-            set_role(role: Atk.Role | null): void;
+            set_role(role: Atk.Role): void;
             /**
              * @param child
              * @virtual
@@ -368012,7 +367531,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param object object to activate when binding found
              * @returns `true` if a binding was found and activated
              */
-            activate(keyval: number, modifiers: Gdk.ModifierType | null, object: GObject.Object): boolean;
+            activate(keyval: number, modifiers: Gdk.ModifierType, object: GObject.Object): boolean;
             /**
              * This function was used internally by the GtkRC parsing mechanism
              * to assign match patterns to {@link Gtk.BindingSet} structures.
@@ -368022,7 +367541,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param path_pattern the actual match pattern
              * @param priority binding priority
              */
-            add_path(path_type: PathType | null, path_pattern: string, priority: PathPriorityType | null): void;
+            add_path(path_type: PathType, path_pattern: string, priority: PathPriorityType): void;
         }
 
         /**
@@ -369233,8 +368752,8 @@ declare module 'gi://Gtk?version=3.0' {
              */
             render_icon(
                 style: Style | null,
-                direction: TextDirection | null,
-                state: StateType | null,
+                direction: TextDirection,
+                state: StateType,
                 size: number,
                 widget?: Widget | null,
                 detail?: string | null,
@@ -369371,7 +368890,7 @@ declare module 'gi://Gtk?version=3.0' {
              * in addition to calling this function.
              * @param direction text direction this source applies to
              */
-            set_direction(direction: TextDirection | null): void;
+            set_direction(direction: TextDirection): void;
             /**
              * If the text direction is wildcarded, this source can be used
              * as the base image for an icon in any {@link Gtk.TextDirection}.
@@ -369440,7 +368959,7 @@ declare module 'gi://Gtk?version=3.0' {
              * in addition to calling this function.
              * @param state widget state this source applies to
              */
-            set_state(state: StateType | null): void;
+            set_state(state: StateType): void;
             /**
              * If the widget state is wildcarded, this source can be used as the
              * base image for an icon in any {@link Gtk.StateType}.  If the widget state
@@ -370035,25 +369554,25 @@ declare module 'gi://Gtk?version=3.0' {
              * @param unit the unit for the return value, not {@link Gtk.Unit.NONE}
              * @returns the default bottom margin
              */
-            get_default_bottom_margin(unit: Unit | null): number;
+            get_default_bottom_margin(unit: Unit): number;
             /**
              * Gets the default left margin for the {@link Gtk.PaperSize}.
              * @param unit the unit for the return value, not {@link Gtk.Unit.NONE}
              * @returns the default left margin
              */
-            get_default_left_margin(unit: Unit | null): number;
+            get_default_left_margin(unit: Unit): number;
             /**
              * Gets the default right margin for the {@link Gtk.PaperSize}.
              * @param unit the unit for the return value, not {@link Gtk.Unit.NONE}
              * @returns the default right margin
              */
-            get_default_right_margin(unit: Unit | null): number;
+            get_default_right_margin(unit: Unit): number;
             /**
              * Gets the default top margin for the {@link Gtk.PaperSize}.
              * @param unit the unit for the return value, not {@link Gtk.Unit.NONE}
              * @returns the default top margin
              */
-            get_default_top_margin(unit: Unit | null): number;
+            get_default_top_margin(unit: Unit): number;
             /**
              * Gets the human-readable name of the {@link Gtk.PaperSize}.
              * @returns the human-readable name of `size`
@@ -370065,7 +369584,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param unit the unit for the return value, not {@link Gtk.Unit.NONE}
              * @returns the paper height
              */
-            get_height(unit: Unit | null): number;
+            get_height(unit: Unit): number;
             /**
              * Gets the name of the {@link Gtk.PaperSize}.
              * @returns the name of `size`
@@ -370083,7 +369602,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param unit the unit for the return value, not {@link Gtk.Unit.NONE}
              * @returns the paper width
              */
-            get_width(unit: Unit | null): number;
+            get_width(unit: Unit): number;
             /**
              * Returns `true` if `size` is not a standard paper size.
              * @returns whether `size` is a custom paper size.
@@ -370106,7 +369625,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param height the new height in units of `unit`
              * @param unit the unit for `width` and `height`
              */
-            set_size(width: number, height: number, unit: Unit | null): void;
+            set_size(width: number, height: number, unit: Unit): void;
             /**
              * Serialize a paper size to an a{sv} variant.
              * @returns a new, floating, {@link GLib.Variant}
@@ -371829,7 +371348,7 @@ declare module 'gi://Gtk?version=3.0' {
              */
             backward_search(
                 str: string,
-                flags: TextSearchFlags | null,
+                flags: TextSearchFlags,
                 limit?: TextIter | null,
             ): [boolean, TextIter | null, TextIter | null];
             /**
@@ -372127,7 +371646,7 @@ declare module 'gi://Gtk?version=3.0' {
              */
             forward_search(
                 str: string,
-                flags: TextSearchFlags | null,
+                flags: TextSearchFlags,
                 limit?: TextIter | null,
             ): [boolean, TextIter | null, TextIter | null];
             /**
@@ -373314,7 +372833,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param name region name
              * @param flags flags affecting the region
              */
-            iter_add_region(pos: number, name: string, flags: RegionFlags | null): void;
+            iter_add_region(pos: number, name: string, flags: RegionFlags): void;
             /**
              * Removes all classes from the widget at position `pos` in the
              * hierarchy defined in `path`.
@@ -373498,7 +373017,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param pos position to modify, -1 for the path head
              * @param state state flags
              */
-            iter_set_state(pos: number, state: StateFlags | null): void;
+            iter_set_state(pos: number, state: StateFlags): void;
             /**
              * Returns the number of {@link Gtk.Widget} `GTypes` between the represented
              * widget and its topmost container.
@@ -374641,7 +374160,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param cell
              * @param coord_type
              */
-            get_cell_extents(cell: CellAccessible, coord_type: Atk.CoordType | null): [number, number, number, number];
+            get_cell_extents(cell: CellAccessible, coord_type: Atk.CoordType): [number, number, number, number];
             /**
              * @param cell
              */
@@ -375211,7 +374730,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param colors_per_line the number of colors to show in each row/column
              * @param colors the colors of the palette, or `null`
              */
-            add_palette(orientation: Orientation | null, colors_per_line: number, colors?: Gdk.RGBA[] | null): void;
+            add_palette(orientation: Orientation, colors_per_line: number, colors?: Gdk.RGBA[] | null): void;
             /**
              * Gets the currently-selected color.
              */
@@ -376051,7 +375570,7 @@ declare module 'gi://Gtk?version=3.0' {
              * {@link Gtk.FileChooserAction.OPEN}.
              * @param action the action that the file selector is performing
              */
-            set_action(action: FileChooserAction | null): void;
+            set_action(action: FileChooserAction): void;
             /**
              * Selects an option in a 'choice' that has been added with
              * `gtk_file_chooser_add_choice()`. For a boolean choice, the
@@ -376672,7 +376191,7 @@ declare module 'gi://Gtk?version=3.0' {
              * Sets the desired level of granularity for selecting fonts.
              * @param level the desired level of granularity
              */
-            set_level(level: FontChooserLevel | null): void;
+            set_level(level: FontChooserLevel): void;
             /**
              * Sets the text displayed in the preview area.
              * The `text` is used to show how the selected font looks.
@@ -376734,7 +376253,7 @@ declare module 'gi://Gtk?version=3.0' {
              * Sets the orientation of the `orientable`.
              * @param orientation the orientable’s new orientation.
              */
-            set_orientation(orientation: Orientation | null): void;
+            set_orientation(orientation: Orientation): void;
         }
 
         export const Orientable: OrientableNamespace & {
@@ -377272,7 +376791,7 @@ declare module 'gi://Gtk?version=3.0' {
              * `chooser`.
              * @param sort_type sort order that the chooser should use
              */
-            set_sort_type(sort_type: RecentSortType | null): void;
+            set_sort_type(sort_type: RecentSortType): void;
             /**
              * Unselects all the items inside `chooser`.
              */
@@ -377441,7 +376960,7 @@ declare module 'gi://Gtk?version=3.0' {
              * below the natural width.
              * @param policy the horizontal {@link Gtk.ScrollablePolicy}
              */
-            set_hscroll_policy(policy: ScrollablePolicy | null): void;
+            set_hscroll_policy(policy: ScrollablePolicy): void;
             /**
              * Sets the vertical adjustment of the {@link Gtk.Scrollable}.
              * @param vadjustment a {@link Gtk.Adjustment}
@@ -377453,7 +376972,7 @@ declare module 'gi://Gtk?version=3.0' {
              * below the natural height.
              * @param policy the vertical {@link Gtk.ScrollablePolicy}
              */
-            set_vscroll_policy(policy: ScrollablePolicy | null): void;
+            set_vscroll_policy(policy: ScrollablePolicy): void;
         }
 
         export const Scrollable: ScrollableNamespace & {
@@ -377536,11 +377055,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param pspec The {@link GObject.ParamSpec} to query
              * @returns `true` if the property was found and has a value, `false` otherwise
              */
-            get_style_property(
-                path: WidgetPath,
-                state: StateFlags | null,
-                pspec: GObject.ParamSpec,
-            ): [boolean, unknown];
+            get_style_property(path: WidgetPath, state: StateFlags, pspec: GObject.ParamSpec): [boolean, unknown];
         }
 
         export const StyleProvider: StyleProviderNamespace & {
@@ -378658,7 +378173,7 @@ declare module 'gi://Gtk?version=3.0' {
              * @param sort_column_id the sort column id to set
              * @param order The sort order of the column
              */
-            set_sort_column_id(sort_column_id: number, order: SortType | null): void;
+            set_sort_column_id(sort_column_id: number, order: SortType): void;
             /**
              * Sets the comparison function used when sorting to be `sort_func`. If the
              * current sort column id of `sortable` is the same as `sort_column_id`, then

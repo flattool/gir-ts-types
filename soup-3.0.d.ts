@@ -1130,7 +1130,7 @@ declare module 'gi://Soup?version=3.0' {
          * @param format the format to generate the date in
          * @returns `date` as a string or `null`
          */
-        function date_time_to_string(date: GLib.DateTime, format: DateFormat | null): string;
+        function date_time_to_string(date: GLib.DateTime, format: DateFormat): string;
         /**
          * Decodes `form`.
          *
@@ -2866,7 +2866,7 @@ declare module 'gi://Soup?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -2907,7 +2907,7 @@ declare module 'gi://Soup?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -3600,7 +3600,7 @@ declare module 'gi://Soup?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -3641,7 +3641,7 @@ declare module 'gi://Soup?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -4125,7 +4125,7 @@ declare module 'gi://Soup?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -4166,7 +4166,7 @@ declare module 'gi://Soup?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -4649,7 +4649,7 @@ declare module 'gi://Soup?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -4690,7 +4690,7 @@ declare module 'gi://Soup?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -5317,7 +5317,7 @@ declare module 'gi://Soup?version=3.0' {
              * Sets `policy` as the cookie acceptance policy for `jar`.
              * @param policy a {@link Soup.CookieJarAcceptPolicy}
              */
-            set_accept_policy(policy: CookieJarAcceptPolicy | null): void;
+            set_accept_policy(policy: CookieJarAcceptPolicy): void;
             /**
              * Adds `cookie` to `jar`, exactly as though it had appeared in a
              * Set-Cookie header returned from a request to `uri`.
@@ -5387,7 +5387,7 @@ declare module 'gi://Soup?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -5428,7 +5428,7 @@ declare module 'gi://Soup?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -5915,7 +5915,7 @@ declare module 'gi://Soup?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -5956,7 +5956,7 @@ declare module 'gi://Soup?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -6439,7 +6439,7 @@ declare module 'gi://Soup?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -6480,7 +6480,7 @@ declare module 'gi://Soup?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -7050,7 +7050,7 @@ declare module 'gi://Soup?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -7091,7 +7091,7 @@ declare module 'gi://Soup?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -7572,7 +7572,7 @@ declare module 'gi://Soup?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -7613,7 +7613,7 @@ declare module 'gi://Soup?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -8201,7 +8201,7 @@ declare module 'gi://Soup?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -8242,7 +8242,7 @@ declare module 'gi://Soup?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -9120,7 +9120,7 @@ declare module 'gi://Soup?version=3.0' {
              * Adds `flags` to the set of `msg`'s flags.
              * @param flags a set of {@link Soup.MessageFlags} values
              */
-            add_flags(flags: MessageFlags | null): void;
+            add_flags(flags: MessageFlags): void;
             /**
              * Disables the actions of {@link SessionFeature}s with the
              * given `feature_type` (or a subclass of that type) on `msg`.
@@ -9290,12 +9290,12 @@ declare module 'gi://Soup?version=3.0' {
              * @param flags a set of {@link Soup.MessageFlags} values
              * @returns `true` if `flags` are enabled in `msg`
              */
-            query_flags(flags: MessageFlags | null): boolean;
+            query_flags(flags: MessageFlags): boolean;
             /**
              * Removes `flags` from the set of `msg`'s flags.
              * @param flags a set of {@link Soup.MessageFlags} values
              */
-            remove_flags(flags: MessageFlags | null): void;
+            remove_flags(flags: MessageFlags): void;
             /**
              * Sets `first_party` as the main document {@link GLib.Uri} for `msg`.
              *
@@ -9308,7 +9308,7 @@ declare module 'gi://Soup?version=3.0' {
              * Sets the specified flags on `msg`.
              * @param flags a set of {@link Soup.MessageFlags} values
              */
-            set_flags(flags: MessageFlags | null): void;
+            set_flags(flags: MessageFlags): void;
             /**
              * Sets whether HTTP/1 version should be used when sending this message.
              * Some connections can still override it, if needed.
@@ -9353,7 +9353,7 @@ declare module 'gi://Soup?version=3.0' {
              * semi-randomly by thread scheduling.
              * @param priority the {@link Soup.MessagePriority}
              */
-            set_priority(priority: MessagePriority | null): void;
+            set_priority(priority: MessagePriority): void;
             /**
              * Set the request body of a {@link Message}.
              *
@@ -11055,7 +11055,7 @@ declare module 'gi://Soup?version=3.0' {
              * @param options listening options for this server
              * @returns `true` on success, `false` if `address` could not be   bound or any other error occurred (in which case `error` will be   set).
              */
-            listen(address: Gio.SocketAddress, options: ServerListenOptions | null): boolean;
+            listen(address: Gio.SocketAddress, options: ServerListenOptions): boolean;
             /**
              * Attempts to set up `server` to listen for connections on all interfaces
              * on the system.
@@ -11072,7 +11072,7 @@ declare module 'gi://Soup?version=3.0' {
              * @param options listening options for this server
              * @returns `true` on success, `false` if `port` could not be bound   or any other error occurred (in which case `error` will be set).
              */
-            listen_all(port: number, options: ServerListenOptions | null): boolean;
+            listen_all(port: number, options: ServerListenOptions): boolean;
             /**
              * Attempts to set up `server` to listen for connections on "localhost".
              *
@@ -11087,7 +11087,7 @@ declare module 'gi://Soup?version=3.0' {
              * @param options listening options for this server
              * @returns `true` on success, `false` if `port` could not be bound   or any other error occurred (in which case `error` will be set).
              */
-            listen_local(port: number, options: ServerListenOptions | null): boolean;
+            listen_local(port: number, options: ServerListenOptions): boolean;
             /**
              * Attempts to set up `server` to listen for connections on `socket`.
              *
@@ -11096,7 +11096,7 @@ declare module 'gi://Soup?version=3.0' {
              * @param options listening options for this server
              * @returns `true` on success, `false` if an error occurred (in   which case `error` will be set).
              */
-            listen_socket(socket: Gio.Socket, options: ServerListenOptions | null): boolean;
+            listen_socket(socket: Gio.Socket, options: ServerListenOptions): boolean;
             /**
              * Pauses I/O on `msg`.
              *
@@ -11131,7 +11131,7 @@ declare module 'gi://Soup?version=3.0' {
              * Sets `server`'s {@link Gio.TlsAuthenticationMode} to use for SSL/TLS client authentication.
              * @param mode a {@link Gio.TlsAuthenticationMode}
              */
-            set_tls_auth_mode(mode: Gio.TlsAuthenticationMode | null): void;
+            set_tls_auth_mode(mode: Gio.TlsAuthenticationMode): void;
             /**
              * Sets `server` up to do https, using the given SSL/TLS `certificate`.
              * @param certificate a {@link Gio.TlsCertificate}
@@ -11454,7 +11454,7 @@ declare module 'gi://Soup?version=3.0' {
              * Set the HTTP version of `msg`.
              * @param version a {@link Soup.HTTPVersion}
              */
-            set_http_version(version: HTTPVersion | null): void;
+            set_http_version(version: HTTPVersion): void;
             /**
              * Sets `msg`'s status_code to `status_code` and adds a Location header
              * pointing to `redirect_uri`. Use this from a {@link Server} when you
@@ -11475,7 +11475,7 @@ declare module 'gi://Soup?version=3.0' {
              * @param resp_use a {@link Soup.MemoryUse} describing how to handle `resp_body`
              * @param resp_body a data buffer containing the body of the message response.
              */
-            set_response(content_type: string | null, resp_use: MemoryUse | null, resp_body?: Uint8Array | null): void;
+            set_response(content_type: string | null, resp_use: MemoryUse, resp_body?: Uint8Array | null): void;
             /**
              * Sets `msg`'s status code to `status_code`.
              *
@@ -12279,7 +12279,7 @@ declare module 'gi://Soup?version=3.0' {
             send_and_splice(
                 msg: Message,
                 out_stream: Gio.OutputStream,
-                flags: Gio.OutputStreamSpliceFlags | null,
+                flags: Gio.OutputStreamSpliceFlags,
                 cancellable?: Gio.Cancellable | null,
             ): number;
             /**
@@ -12297,7 +12297,7 @@ declare module 'gi://Soup?version=3.0' {
             send_and_splice_async(
                 msg: Message,
                 out_stream: Gio.OutputStream,
-                flags: Gio.OutputStreamSpliceFlags | null,
+                flags: Gio.OutputStreamSpliceFlags,
                 io_priority: number,
                 cancellable?: Gio.Cancellable | null,
             ): globalThis.Promise<number>;
@@ -12317,7 +12317,7 @@ declare module 'gi://Soup?version=3.0' {
             send_and_splice_async(
                 msg: Message,
                 out_stream: Gio.OutputStream,
-                flags: Gio.OutputStreamSpliceFlags | null,
+                flags: Gio.OutputStreamSpliceFlags,
                 io_priority: number,
                 cancellable: Gio.Cancellable | null,
                 callback: Gio.AsyncReadyCallback<this> | null,
@@ -12338,7 +12338,7 @@ declare module 'gi://Soup?version=3.0' {
             send_and_splice_async(
                 msg: Message,
                 out_stream: Gio.OutputStream,
-                flags: Gio.OutputStreamSpliceFlags | null,
+                flags: Gio.OutputStreamSpliceFlags,
                 io_priority: number,
                 cancellable?: Gio.Cancellable | null,
                 callback?: Gio.AsyncReadyCallback<this> | null,
@@ -12972,7 +12972,7 @@ declare module 'gi://Soup?version=3.0' {
              * @param type the type of message contents
              * @param message the message data as {@link GLib.Bytes}
              */
-            send_message(type: WebsocketDataType | null, message: GLib.Bytes | Uint8Array): void;
+            send_message(type: WebsocketDataType, message: GLib.Bytes | Uint8Array): void;
             /**
              * Send a `null`-terminated text (UTF-8) message to the peer.
              *
@@ -13128,10 +13128,7 @@ declare module 'gi://Soup?version=3.0' {
              * @param params the parameters
              * @returns `true` if extension could be configured with the given parameters, or `false` otherwise
              */
-            configure(
-                connection_type: WebsocketConnectionType | null,
-                params?: GLib.HashTable<any, any> | null,
-            ): boolean;
+            configure(connection_type: WebsocketConnectionType, params?: GLib.HashTable<any, any> | null): boolean;
             /**
              * Get the parameters strings to be included in the request header.
              *
@@ -13339,7 +13336,7 @@ declare module 'gi://Soup?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -13380,7 +13377,7 @@ declare module 'gi://Soup?version=3.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -13968,7 +13965,7 @@ declare module 'gi://Soup?version=3.0' {
              * of when this cookie should be exposed.
              * @param policy a {@link Soup.SameSitePolicy}
              */
-            set_same_site_policy(policy: SameSitePolicy | null): void;
+            set_same_site_policy(policy: SameSitePolicy): void;
             /**
              * Sets `cookie`'s secure attribute to `secure`.
              *
@@ -14156,7 +14153,7 @@ declare module 'gi://Soup?version=3.0' {
              * @param use how to use `data`
              * @param data data to append
              */
-            append(use: MemoryUse | null, data: Uint8Array | string): void;
+            append(use: MemoryUse, data: Uint8Array | string): void;
             /**
              * Appends the data from `buffer` to `body`.
              * @param buffer a {@link GLib.Bytes}
@@ -14564,7 +14561,7 @@ declare module 'gi://Soup?version=3.0' {
              * response in chunked encoding.
              * @param encoding a {@link Soup.Encoding}
              */
-            set_encoding(encoding: Encoding | null): void;
+            set_encoding(encoding: Encoding): void;
             /**
              * Sets `hdrs`'s "Expect" header according to `expectations`.
              *
@@ -14578,7 +14575,7 @@ declare module 'gi://Soup?version=3.0' {
              * server is just going to ignore it anyway.
              * @param expectations the expectations to set
              */
-            set_expectations(expectations: Expectation | null): void;
+            set_expectations(expectations: Expectation): void;
             /**
              * Sets `hdrs`'s Range header to request the indicated range.
              *

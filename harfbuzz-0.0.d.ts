@@ -3507,7 +3507,7 @@ declare module 'gi://HarfBuzz?version=0.0' {
          */
         function aat_layout_feature_type_get_name_id(
             face: face_t,
-            feature_type: aat_layout_feature_type_t | null,
+            feature_type: aat_layout_feature_type_t,
         ): ot_name_id_t;
         /**
          * Fetches a list of the selectors available for the specified feature in the given face.
@@ -3523,7 +3523,7 @@ declare module 'gi://HarfBuzz?version=0.0' {
          */
         function aat_layout_feature_type_get_selector_infos(
             face: face_t,
-            feature_type: aat_layout_feature_type_t | null,
+            feature_type: aat_layout_feature_type_t,
             start_offset: number,
         ): [number, aat_layout_feature_selector_info_t[] | null, number];
         /**
@@ -3809,7 +3809,7 @@ declare module 'gi://HarfBuzz?version=0.0' {
             buffer: buffer_t,
             buf: string[],
             font: font_t | null,
-            format: buffer_serialize_format_t | null,
+            format: buffer_serialize_format_t,
         ): [bool_t, string];
         /**
          * Deserializes Unicode `buffer` from textual representation in the format
@@ -3823,7 +3823,7 @@ declare module 'gi://HarfBuzz?version=0.0' {
         function buffer_deserialize_unicode(
             buffer: buffer_t,
             buf: string[],
-            format: buffer_serialize_format_t | null,
+            format: buffer_serialize_format_t,
         ): [bool_t, string];
         /**
          * If dottedcircle_glyph is (hb_codepoint_t) -1 then #HB_BUFFER_DIFF_FLAG_DOTTED_CIRCLE_PRESENT
@@ -4070,8 +4070,8 @@ declare module 'gi://HarfBuzz?version=0.0' {
             start: number,
             end: number,
             font: font_t | null,
-            format: buffer_serialize_format_t | null,
-            flags: buffer_serialize_flags_t | null,
+            format: buffer_serialize_format_t,
+            flags: buffer_serialize_flags_t,
         ): [number, Uint8Array, number];
         /**
          * Parses a string into an {@link HarfBuzz.buffer_serialize_format_t}. Does not check if
@@ -4089,7 +4089,7 @@ declare module 'gi://HarfBuzz?version=0.0' {
          * @returns A `NULL` terminated string corresponding to `format`. Should not be freed.
          * @since 0.9.7
          */
-        function buffer_serialize_format_to_string(format: buffer_serialize_format_t | null): string;
+        function buffer_serialize_format_to_string(format: buffer_serialize_format_t): string;
         /**
          * Serializes `buffer` into a textual representation of its glyph content,
          * useful for showing the contents of the buffer, for example during debugging.
@@ -4147,8 +4147,8 @@ declare module 'gi://HarfBuzz?version=0.0' {
             start: number,
             end: number,
             font: font_t | null,
-            format: buffer_serialize_format_t | null,
-            flags: buffer_serialize_flags_t | null,
+            format: buffer_serialize_format_t,
+            flags: buffer_serialize_flags_t,
         ): [number, Uint8Array, number];
         /**
          * Returns a list of supported buffer serialization formats.
@@ -4201,8 +4201,8 @@ declare module 'gi://HarfBuzz?version=0.0' {
             buffer: buffer_t,
             start: number,
             end: number,
-            format: buffer_serialize_format_t | null,
-            flags: buffer_serialize_flags_t | null,
+            format: buffer_serialize_format_t,
+            flags: buffer_serialize_flags_t,
         ): [number, Uint8Array, number];
         /**
          * Sets the cluster level of a buffer. The {@link HarfBuzz.buffer_cluster_level_t}
@@ -4212,7 +4212,7 @@ declare module 'gi://HarfBuzz?version=0.0' {
          * @param cluster_level The cluster level to set on the buffer
          * @since 0.9.42
          */
-        function buffer_set_cluster_level(buffer: buffer_t, cluster_level: buffer_cluster_level_t | null): void;
+        function buffer_set_cluster_level(buffer: buffer_t, cluster_level: buffer_cluster_level_t): void;
         /**
          * Sets the type of `buffer` contents. Buffers are either empty, contain
          * characters (before shaping), or contain glyphs (the result of shaping).
@@ -4246,7 +4246,7 @@ declare module 'gi://HarfBuzz?version=0.0' {
          * @param content_type The type of buffer contents to set
          * @since 0.9.5
          */
-        function buffer_set_content_type(buffer: buffer_t, content_type: buffer_content_type_t | null): void;
+        function buffer_set_content_type(buffer: buffer_t, content_type: buffer_content_type_t): void;
         /**
          * Set the text flow direction of the buffer. No shaping can happen without
          * setting `buffer` direction, and it controls the visual direction for the
@@ -4259,14 +4259,14 @@ declare module 'gi://HarfBuzz?version=0.0' {
          * @param direction the {@link HarfBuzz.direction_t} of the `buffer`
          * @since 0.9.2
          */
-        function buffer_set_direction(buffer: buffer_t, direction: direction_t | null): void;
+        function buffer_set_direction(buffer: buffer_t, direction: direction_t): void;
         /**
          * Sets `buffer` flags to `flags`. See {@link HarfBuzz.buffer_flags_t}.
          * @param buffer An {@link HarfBuzz.buffer_t}
          * @param flags The buffer flags to set
          * @since 0.9.7
          */
-        function buffer_set_flags(buffer: buffer_t, flags: buffer_flags_t | null): void;
+        function buffer_set_flags(buffer: buffer_t, flags: buffer_flags_t): void;
         /**
          * Sets the {@link HarfBuzz.codepoint_t} that replaces invisible characters in
          * the shaping result.  If set to zero (default), the glyph for the
@@ -4380,7 +4380,7 @@ declare module 'gi://HarfBuzz?version=0.0' {
          * @param script An {@link HarfBuzz.script_t} to set.
          * @since 0.9.2
          */
-        function buffer_set_script(buffer: buffer_t, script: script_t | null): void;
+        function buffer_set_script(buffer: buffer_t, script: script_t): void;
         /**
          * Sets the segment properties of the buffer, a shortcut for calling
          * `hb_buffer_set_direction()`, `hb_buffer_set_script()` and
@@ -4472,7 +4472,7 @@ declare module 'gi://HarfBuzz?version=0.0' {
          * @returns The string corresponding to `direction`
          * @since 0.9.2
          */
-        function direction_to_string(direction: direction_t | null): string;
+        function direction_to_string(direction: direction_t): string;
         /**
          * Perform a "close-path" draw operation.
          * @param dfuncs draw functions
@@ -4986,7 +4986,7 @@ declare module 'gi://HarfBuzz?version=0.0' {
         function font_add_glyph_origin_for_direction(
             font: font_t,
             glyph: codepoint_t,
-            direction: direction_t | null,
+            direction: direction_t,
             x: position_t,
             y: position_t,
         ): [position_t, position_t];
@@ -5404,7 +5404,7 @@ declare module 'gi://HarfBuzz?version=0.0' {
          * @param direction The direction of the text segment
          * @since 1.1.3
          */
-        function font_get_extents_for_direction(font: font_t, direction: direction_t | null): font_extents_t;
+        function font_get_extents_for_direction(font: font_t, direction: direction_t): font_extents_t;
         /**
          * Fetches the face associated with the specified font object.
          * @param font {@link HarfBuzz.font_t} to work upon
@@ -5443,7 +5443,7 @@ declare module 'gi://HarfBuzz?version=0.0' {
         function font_get_glyph_advance_for_direction(
             font: font_t,
             glyph: codepoint_t,
-            direction: direction_t | null,
+            direction: direction_t,
         ): [position_t, position_t];
         /**
          * Fetches the advances for a sequence of glyph IDs in the specified
@@ -5460,7 +5460,7 @@ declare module 'gi://HarfBuzz?version=0.0' {
          */
         function font_get_glyph_advances_for_direction(
             font: font_t,
-            direction: direction_t | null,
+            direction: direction_t,
             count: number,
             first_glyph: codepoint_t,
             glyph_stride: number,
@@ -5497,7 +5497,7 @@ declare module 'gi://HarfBuzz?version=0.0' {
             font: font_t,
             glyph: codepoint_t,
             point_index: number,
-            direction: direction_t | null,
+            direction: direction_t,
         ): [bool_t, position_t, position_t];
         /**
          * Fetches the {@link HarfBuzz.glyph_extents_t} data for a glyph ID
@@ -5524,7 +5524,7 @@ declare module 'gi://HarfBuzz?version=0.0' {
         function font_get_glyph_extents_for_origin(
             font: font_t,
             glyph: codepoint_t,
-            direction: direction_t | null,
+            direction: direction_t,
         ): [bool_t, glyph_extents_t];
         /**
          * Fetches the glyph ID that corresponds to a name string in the specified `font`.
@@ -5619,7 +5619,7 @@ declare module 'gi://HarfBuzz?version=0.0' {
             font: font_t,
             first_glyph: codepoint_t,
             second_glyph: codepoint_t,
-            direction: direction_t | null,
+            direction: direction_t,
         ): [position_t, position_t];
         /**
          * Fetches the glyph-name string for a glyph ID in the specified `font`.
@@ -5646,7 +5646,7 @@ declare module 'gi://HarfBuzz?version=0.0' {
         function font_get_glyph_origin_for_direction(
             font: font_t,
             glyph: codepoint_t,
-            direction: direction_t | null,
+            direction: direction_t,
         ): [position_t, position_t];
         /**
          * Fetches the glyph shape that corresponds to a glyph in the specified `font`.
@@ -6192,7 +6192,7 @@ declare module 'gi://HarfBuzz?version=0.0' {
         function font_subtract_glyph_origin_for_direction(
             font: font_t,
             glyph: codepoint_t,
-            direction: direction_t | null,
+            direction: direction_t,
             x: position_t,
             y: position_t,
         ): [position_t, position_t];
@@ -6381,7 +6381,7 @@ declare module 'gi://HarfBuzz?version=0.0' {
          * @returns the GUnicodeScript identifier found
          * @since 0.9.38
          */
-        function glib_script_from_script(script: script_t | null): GLib.UnicodeScript;
+        function glib_script_from_script(script: script_t): GLib.UnicodeScript;
         /**
          * Fetches the {@link HarfBuzz.script_t} script that corresponds to the
          * specified GUnicodeScript identifier.
@@ -6389,7 +6389,7 @@ declare module 'gi://HarfBuzz?version=0.0' {
          * @returns the {@link HarfBuzz.script_t} script found
          * @since 0.9.38
          */
-        function glib_script_to_script(script: GLib.UnicodeScript | null): script_t;
+        function glib_script_to_script(script: GLib.UnicodeScript): script_t;
         /**
          * Returns glyph flags encoded within a {@link HarfBuzz.glyph_info_t}.
          * @param info a {@link HarfBuzz.glyph_info_t}
@@ -6870,8 +6870,8 @@ declare module 'gi://HarfBuzz?version=0.0' {
          */
         function ot_layout_get_baseline(
             font: font_t,
-            baseline_tag: ot_layout_baseline_tag_t | null,
-            direction: direction_t | null,
+            baseline_tag: ot_layout_baseline_tag_t,
+            direction: direction_t,
             script_tag: tag_t,
             language_tag: tag_t,
         ): [bool_t, position_t | null];
@@ -6890,9 +6890,9 @@ declare module 'gi://HarfBuzz?version=0.0' {
          */
         function ot_layout_get_baseline2(
             font: font_t,
-            baseline_tag: ot_layout_baseline_tag_t | null,
-            direction: direction_t | null,
-            script: script_t | null,
+            baseline_tag: ot_layout_baseline_tag_t,
+            direction: direction_t,
+            script: script_t,
             language?: language_t | null,
         ): [bool_t, position_t | null];
         /**
@@ -6907,8 +6907,8 @@ declare module 'gi://HarfBuzz?version=0.0' {
          */
         function ot_layout_get_baseline_with_fallback(
             font: font_t,
-            baseline_tag: ot_layout_baseline_tag_t | null,
-            direction: direction_t | null,
+            baseline_tag: ot_layout_baseline_tag_t,
+            direction: direction_t,
             script_tag: tag_t,
             language_tag: tag_t,
         ): position_t;
@@ -6927,9 +6927,9 @@ declare module 'gi://HarfBuzz?version=0.0' {
          */
         function ot_layout_get_baseline_with_fallback2(
             font: font_t,
-            baseline_tag: ot_layout_baseline_tag_t | null,
-            direction: direction_t | null,
-            script: script_t | null,
+            baseline_tag: ot_layout_baseline_tag_t,
+            direction: direction_t,
+            script: script_t,
             language: language_t | null,
         ): position_t;
         /**
@@ -6950,7 +6950,7 @@ declare module 'gi://HarfBuzz?version=0.0' {
          */
         function ot_layout_get_font_extents(
             font: font_t,
-            direction: direction_t | null,
+            direction: direction_t,
             script_tag: tag_t,
             language_tag: tag_t,
         ): [bool_t, font_extents_t | null];
@@ -6975,8 +6975,8 @@ declare module 'gi://HarfBuzz?version=0.0' {
          */
         function ot_layout_get_font_extents2(
             font: font_t,
-            direction: direction_t | null,
-            script: script_t | null,
+            direction: direction_t,
+            script: script_t,
             language?: language_t | null,
         ): [bool_t, font_extents_t | null];
         /**
@@ -6994,14 +6994,14 @@ declare module 'gi://HarfBuzz?version=0.0' {
          * @param klass The {@link HarfBuzz.ot_layout_glyph_class_t} GDEF class to retrieve
          * @since 0.9.7
          */
-        function ot_layout_get_glyphs_in_class(face: face_t, klass: ot_layout_glyph_class_t | null): set_t;
+        function ot_layout_get_glyphs_in_class(face: face_t, klass: ot_layout_glyph_class_t): set_t;
         /**
          * Fetches the dominant horizontal baseline tag used by `script`.
          * @param script a script tag.
          * @returns dominant baseline tag for the `script`.
          * @since 4.0.0
          */
-        function ot_layout_get_horizontal_baseline_tag_for_script(script: script_t | null): ot_layout_baseline_tag_t;
+        function ot_layout_get_horizontal_baseline_tag_for_script(script: script_t): ot_layout_baseline_tag_t;
         /**
          * Fetches a list of the caret positions defined for a ligature glyph in the GDEF
          * table of the font. The list returned will begin at the offset provided.
@@ -7020,7 +7020,7 @@ declare module 'gi://HarfBuzz?version=0.0' {
          */
         function ot_layout_get_ligature_carets(
             font: font_t,
-            direction: direction_t | null,
+            direction: direction_t,
             glyph: codepoint_t,
             start_offset: number,
         ): [number, position_t[]];
@@ -7187,7 +7187,7 @@ declare module 'gi://HarfBuzz?version=0.0' {
         function ot_layout_lookup_get_optical_bound(
             font: font_t,
             lookup_index: number,
-            direction: direction_t | null,
+            direction: direction_t,
             glyph: codepoint_t,
         ): position_t;
         /**
@@ -7410,7 +7410,7 @@ declare module 'gi://HarfBuzz?version=0.0' {
          * @returns the requested constant or zero
          * @since 1.3.3
          */
-        function ot_math_get_constant(font: font_t, constant: ot_math_constant_t | null): position_t;
+        function ot_math_get_constant(font: font_t, constant: ot_math_constant_t): position_t;
         /**
          * Fetches the GlyphAssembly for the specified font, glyph index, and direction.
          * Returned are a list of {@link HarfBuzz.ot_math_glyph_part_t} glyph parts that can be
@@ -7431,7 +7431,7 @@ declare module 'gi://HarfBuzz?version=0.0' {
         function ot_math_get_glyph_assembly(
             font: font_t,
             glyph: codepoint_t,
-            direction: direction_t | null,
+            direction: direction_t,
             start_offset: number,
         ): [number, ot_math_glyph_part_t[], position_t];
         /**
@@ -7461,7 +7461,7 @@ declare module 'gi://HarfBuzz?version=0.0' {
         function ot_math_get_glyph_kerning(
             font: font_t,
             glyph: codepoint_t,
-            kern: ot_math_kern_t | null,
+            kern: ot_math_kern_t,
             correction_height: position_t,
         ): position_t;
         /**
@@ -7489,7 +7489,7 @@ declare module 'gi://HarfBuzz?version=0.0' {
         function ot_math_get_glyph_kernings(
             font: font_t,
             glyph: codepoint_t,
-            kern: ot_math_kern_t | null,
+            kern: ot_math_kern_t,
             start_offset: number,
         ): [number, ot_math_kern_entry_t[]];
         /**
@@ -7526,7 +7526,7 @@ declare module 'gi://HarfBuzz?version=0.0' {
         function ot_math_get_glyph_variants(
             font: font_t,
             glyph: codepoint_t,
-            direction: direction_t | null,
+            direction: direction_t,
             start_offset: number,
         ): [number, ot_math_glyph_variant_t[]];
         /**
@@ -7543,7 +7543,7 @@ declare module 'gi://HarfBuzz?version=0.0' {
          * @returns requested minimum connector overlap or zero
          * @since 1.3.3
          */
-        function ot_math_get_min_connector_overlap(font: font_t, direction: direction_t | null): position_t;
+        function ot_math_get_min_connector_overlap(font: font_t, direction: direction_t): position_t;
         /**
          * Tests whether a face has a `MATH` table.
          * @param face {@link HarfBuzz.face_t} to test
@@ -7574,7 +7574,7 @@ declare module 'gi://HarfBuzz?version=0.0' {
          * @returns A blob containing the blob.
          * @since 2.6.0
          */
-        function ot_meta_reference_entry(face: face_t, meta_tag: ot_meta_tag_t | null): blob_t;
+        function ot_meta_reference_entry(face: face_t, meta_tag: ot_meta_tag_t): blob_t;
         /**
          * Fetches metrics value corresponding to `metrics_tag` from `font`.
          * @param font an {@link HarfBuzz.font_t} object.
@@ -7582,10 +7582,7 @@ declare module 'gi://HarfBuzz?version=0.0' {
          * @returns Whether found the requested metrics in the font.
          * @since 2.6.0
          */
-        function ot_metrics_get_position(
-            font: font_t,
-            metrics_tag: ot_metrics_tag_t | null,
-        ): [bool_t, position_t | null];
+        function ot_metrics_get_position(font: font_t, metrics_tag: ot_metrics_tag_t): [bool_t, position_t | null];
         /**
          * Fetches metrics value corresponding to `metrics_tag` from `font`,
          * and synthesizes a value if it the value is missing in the font.
@@ -7593,10 +7590,7 @@ declare module 'gi://HarfBuzz?version=0.0' {
          * @param metrics_tag tag of metrics value you like to fetch.
          * @since 4.0.0
          */
-        function ot_metrics_get_position_with_fallback(
-            font: font_t,
-            metrics_tag: ot_metrics_tag_t | null,
-        ): position_t | null;
+        function ot_metrics_get_position_with_fallback(font: font_t, metrics_tag: ot_metrics_tag_t): position_t | null;
         /**
          * Fetches metrics value corresponding to `metrics_tag` from `font` with the
          * current font variation settings applied.
@@ -7605,7 +7599,7 @@ declare module 'gi://HarfBuzz?version=0.0' {
          * @returns The requested metric value.
          * @since 2.6.0
          */
-        function ot_metrics_get_variation(font: font_t, metrics_tag: ot_metrics_tag_t | null): number;
+        function ot_metrics_get_variation(font: font_t, metrics_tag: ot_metrics_tag_t): number;
         /**
          * Fetches horizontal metrics value corresponding to `metrics_tag` from `font`
          * with the current font variation settings applied.
@@ -7614,7 +7608,7 @@ declare module 'gi://HarfBuzz?version=0.0' {
          * @returns The requested metric value.
          * @since 2.6.0
          */
-        function ot_metrics_get_x_variation(font: font_t, metrics_tag: ot_metrics_tag_t | null): position_t;
+        function ot_metrics_get_x_variation(font: font_t, metrics_tag: ot_metrics_tag_t): position_t;
         /**
          * Fetches vertical metrics value corresponding to `metrics_tag` from `font` with
          * the current font variation settings applied.
@@ -7623,7 +7617,7 @@ declare module 'gi://HarfBuzz?version=0.0' {
          * @returns The requested metric value.
          * @since 2.6.0
          */
-        function ot_metrics_get_y_variation(font: font_t, metrics_tag: ot_metrics_tag_t | null): position_t;
+        function ot_metrics_get_y_variation(font: font_t, metrics_tag: ot_metrics_tag_t): position_t;
         /**
          * Fetches a font name from the OpenType 'name' table.
          * If `language` is #HB_LANGUAGE_INVALID, English ("en") is assumed.
@@ -7721,7 +7715,7 @@ declare module 'gi://HarfBuzz?version=0.0' {
          * @since 0.6.0
          * @deprecated since 2.0.0: use `hb_ot_tags_from_script_and_language()` instead
          */
-        function ot_tags_from_script(script: script_t | null): [tag_t, tag_t];
+        function ot_tags_from_script(script: script_t): [tag_t, tag_t];
         /**
          * Converts an {@link HarfBuzz.script_t} and an {@link HarfBuzz.language_t} to script and language tags.
          * @param script an {@link HarfBuzz.script_t} to convert.
@@ -7731,7 +7725,7 @@ declare module 'gi://HarfBuzz?version=0.0' {
          * @since 2.0.0
          */
         function ot_tags_from_script_and_language(
-            script: script_t | null,
+            script: script_t,
             language?: language_t | null,
             script_count?: number,
             language_count?: number,
@@ -8161,11 +8155,7 @@ declare module 'gi://HarfBuzz?version=0.0' {
          * @param mode the compositing mode to use
          * @since 7.0.0
          */
-        function paint_pop_group(
-            funcs: paint_funcs_t,
-            paint_data: any | null,
-            mode: paint_composite_mode_t | null,
-        ): void;
+        function paint_pop_group(funcs: paint_funcs_t, paint_data: any | null, mode: paint_composite_mode_t): void;
         /**
          * Perform a "pop-transform" paint operation.
          * @param funcs paint functions
@@ -8335,14 +8325,14 @@ declare module 'gi://HarfBuzz?version=0.0' {
          * @returns The horizontal {@link HarfBuzz.direction_t} of `script`
          * @since 0.9.2
          */
-        function script_get_horizontal_direction(script: script_t | null): direction_t;
+        function script_get_horizontal_direction(script: script_t): direction_t;
         /**
          * Converts an {@link HarfBuzz.script_t} to a corresponding ISO 15924 script tag.
          * @param script an {@link HarfBuzz.script_t} to convert.
          * @returns An {@link HarfBuzz.tag_t} representing an ISO 15924 script tag.
          * @since 0.9.2
          */
-        function script_to_iso15924_tag(script: script_t | null): tag_t;
+        function script_to_iso15924_tag(script: script_t): tag_t;
         /**
          * Checks the equality of two {@link HarfBuzz.segment_properties_t}'s.
          * @param a first {@link HarfBuzz.segment_properties_t} to compare.
@@ -8756,7 +8746,7 @@ declare module 'gi://HarfBuzz?version=0.0' {
          * @returns Corresponding axis or default value to a style tag.
          * @since 3.0.0
          */
-        function style_get_value(font: font_t, style_tag: style_tag_t | null): number;
+        function style_get_value(font: font_t, style_tag: style_tag_t): number;
         /**
          * Converts a string into an {@link HarfBuzz.tag_t}. Valid tags
          * are four characters. Shorter input strings will be

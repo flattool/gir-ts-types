@@ -221,7 +221,7 @@ declare module 'gi://Gly?version=2' {
          * @returns Returns `TRUE` if the memory format has an alpha channel
          * @since 2.0
          */
-        function memory_format_has_alpha(memory_format: MemoryFormat | null): boolean;
+        function memory_format_has_alpha(memory_format: MemoryFormat): boolean;
         /**
          * Whether a memory format has an alpha channel and the color values are
          * premultiplied with the alpha value
@@ -229,7 +229,7 @@ declare module 'gi://Gly?version=2' {
          * @returns Returns `TRUE` if color channels are premultiplied
          * @since 2.0
          */
-        function memory_format_is_premultiplied(memory_format: MemoryFormat | null): boolean;
+        function memory_format_is_premultiplied(memory_format: MemoryFormat): boolean;
         /**
          * @gir-type Callback
          */
@@ -471,7 +471,7 @@ declare module 'gi://Gly?version=2' {
             add_frame(
                 width: number,
                 height: number,
-                memory_format: MemoryFormat | null,
+                memory_format: MemoryFormat,
                 texture: GLib.Bytes | Uint8Array,
             ): NewFrame;
             /**
@@ -486,7 +486,7 @@ declare module 'gi://Gly?version=2' {
                 width: number,
                 height: number,
                 stride: number,
-                memory_format: MemoryFormat | null,
+                memory_format: MemoryFormat,
                 texture: GLib.Bytes | Uint8Array,
             ): NewFrame;
             /**
@@ -543,7 +543,7 @@ declare module 'gi://Gly?version=2' {
              * Selects which sandbox mechanism should be used. The default without calling this function is {@link SandboxSelector}`.AUTO`.
              * @param sandbox_selector Method by which the sandbox mechanism is selected
              */
-            set_sandbox_selector(sandbox_selector: SandboxSelector | null): boolean;
+            set_sandbox_selector(sandbox_selector: SandboxSelector): boolean;
         }
 
         namespace EncodedImage {
@@ -1210,7 +1210,7 @@ declare module 'gi://Gly?version=2' {
              * format will be transformed into the best suitable format selected.
              * @param memory_format_selection Accepted memory formats
              */
-            set_accepted_memory_formats(memory_format_selection: MemoryFormatSelection | null): void;
+            set_accepted_memory_formats(memory_format_selection: MemoryFormatSelection): void;
             /**
              * Set whether to apply transformations to texture
              *
@@ -1225,7 +1225,7 @@ declare module 'gi://Gly?version=2' {
              * Selects which sandbox mechanism should be used. The default without calling this function is {@link SandboxSelector}`.AUTO`.
              * @param sandbox_selector Method by which the sandbox mechanism is selected
              */
-            set_sandbox_selector(sandbox_selector: SandboxSelector | null): void;
+            set_sandbox_selector(sandbox_selector: SandboxSelector): void;
         }
 
         namespace NewFrame {
