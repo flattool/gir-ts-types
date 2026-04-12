@@ -50,14 +50,14 @@ declare module 'gi://GLibUnix?version=2.0' {
         function fd_add_full(
             priority: number,
             fd: number,
-            condition: GLib.IOCondition | null,
+            condition: GLib.IOCondition,
             _function: GLib.UnixFDSourceFunc,
         ): number;
         /**
          * @param fd
          * @param condition
          */
-        function fd_source_new(fd: number, condition: GLib.IOCondition | null): GLib.Source;
+        function fd_source_new(fd: number, condition: GLib.IOCondition): GLib.Source;
         /**
          * @param lowfd
          */

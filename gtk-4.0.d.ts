@@ -5405,7 +5405,7 @@ declare module 'gi://Gtk?version=4.0' {
          * @param accelerator_mods accelerator modifier mask
          * @returns a newly-allocated string representing the accelerator
          */
-        function accelerator_get_label(accelerator_key: number, accelerator_mods: Gdk.ModifierType | null): string;
+        function accelerator_get_label(accelerator_key: number, accelerator_mods: Gdk.ModifierType): string;
         /**
          * Converts an accelerator keyval and modifier mask
          * into a string that can be displayed to the user.
@@ -5426,7 +5426,7 @@ declare module 'gi://Gtk?version=4.0' {
             display: Gdk.Display | null,
             accelerator_key: number,
             keycode: number,
-            accelerator_mods: Gdk.ModifierType | null,
+            accelerator_mods: Gdk.ModifierType,
         ): string;
         /**
          * Converts an accelerator keyval and modifier mask into a string
@@ -5441,7 +5441,7 @@ declare module 'gi://Gtk?version=4.0' {
          * @param accelerator_mods accelerator modifier mask
          * @returns a newly-allocated accelerator name
          */
-        function accelerator_name(accelerator_key: number, accelerator_mods: Gdk.ModifierType | null): string;
+        function accelerator_name(accelerator_key: number, accelerator_mods: Gdk.ModifierType): string;
         /**
          * Converts an accelerator keyval and modifier mask
          * into a string that can be parsed by {@link Gtk.accelerator_parse_with_keycode}.
@@ -5459,7 +5459,7 @@ declare module 'gi://Gtk?version=4.0' {
             display: Gdk.Display | null,
             accelerator_key: number,
             keycode: number,
-            accelerator_mods: Gdk.ModifierType | null,
+            accelerator_mods: Gdk.ModifierType,
         ): string;
         /**
          * Parses a string representing an accelerator.
@@ -5523,7 +5523,7 @@ declare module 'gi://Gtk?version=4.0' {
          * @param modifiers modifier mask
          * @returns true if the accelerator is valid
          */
-        function accelerator_valid(keyval: number, modifiers: Gdk.ModifierType | null): boolean;
+        function accelerator_valid(keyval: number, modifiers: Gdk.ModifierType): boolean;
         /**
          * Initializes `value` with the appropriate type for the `property`.
          *
@@ -5532,7 +5532,7 @@ declare module 'gi://Gtk?version=4.0' {
          * @param property a {@link Gtk.AccessibleProperty}
          * @param value an uninitialized {@link GObject.Value}
          */
-        function accessible_property_init_value(property: AccessibleProperty | null, value: GObject.Value | any): void;
+        function accessible_property_init_value(property: AccessibleProperty, value: GObject.Value | any): void;
         /**
          * Initializes `value` with the appropriate type for the `relation`.
          *
@@ -5541,7 +5541,7 @@ declare module 'gi://Gtk?version=4.0' {
          * @param relation a {@link Gtk.AccessibleRelation}
          * @param value an uninitialized {@link GObject.Value}
          */
-        function accessible_relation_init_value(relation: AccessibleRelation | null, value: GObject.Value | any): void;
+        function accessible_relation_init_value(relation: AccessibleRelation, value: GObject.Value | any): void;
         /**
          * Initializes `value` with the appropriate type for the `state`.
          *
@@ -5550,7 +5550,7 @@ declare module 'gi://Gtk?version=4.0' {
          * @param state a {@link Gtk.AccessibleState}
          * @param value an uninitialized {@link GObject.Value}
          */
-        function accessible_state_init_value(state: AccessibleState | null, value: GObject.Value | any): void;
+        function accessible_state_init_value(state: AccessibleState, value: GObject.Value | any): void;
         /**
          * Initializes `iter` to point to `target`.
          *
@@ -5932,7 +5932,7 @@ declare module 'gi://Gtk?version=4.0' {
             name: string,
             nick: string,
             blurb: string,
-            flags: GObject.ParamFlags | null,
+            flags: GObject.ParamFlags,
         ): GObject.ParamSpec;
         /**
          * Registers an error quark for {@link Gtk.PrintOperation} if necessary.
@@ -6256,7 +6256,7 @@ declare module 'gi://Gtk?version=4.0' {
          * Sets the GTK debug flags.
          * @param flags the debug flags to set
          */
-        function set_debug_flags(flags: DebugFlags | null): void;
+        function set_debug_flags(flags: DebugFlags): void;
         /**
          * This function launches the default application for showing
          * a given uri, or shows an error dialog if that fails.
@@ -6357,8 +6357,8 @@ declare module 'gi://Gtk?version=4.0' {
             func: string,
             expr: string,
             accessible: Accessible,
-            expected_role: AccessibleRole | null,
-            actual_role: AccessibleRole | null,
+            expected_role: AccessibleRole,
+            actual_role: AccessibleRole,
         ): void;
         /**
          * Checks whether the {@link Gtk.Accessible} has `property` set.
@@ -6366,14 +6366,14 @@ declare module 'gi://Gtk?version=4.0' {
          * @param property a {@link Gtk.AccessibleProperty}
          * @returns `true` if the `property` is set in the `accessible`
          */
-        function test_accessible_has_property(accessible: Accessible, property: AccessibleProperty | null): boolean;
+        function test_accessible_has_property(accessible: Accessible, property: AccessibleProperty): boolean;
         /**
          * Checks whether the {@link Gtk.Accessible} has `relation` set.
          * @param accessible a {@link Gtk.Accessible}
          * @param relation a {@link Gtk.AccessibleRelation}
          * @returns `true` if the `relation` is set in the `accessible`
          */
-        function test_accessible_has_relation(accessible: Accessible, relation: AccessibleRelation | null): boolean;
+        function test_accessible_has_relation(accessible: Accessible, relation: AccessibleRelation): boolean;
         /**
          * Checks whether the {@link Gtk.Accessible.accessible_role} of the accessible
          * is `role`.
@@ -6381,14 +6381,14 @@ declare module 'gi://Gtk?version=4.0' {
          * @param role a {@link Gtk.AccessibleRole}
          * @returns `true` if the role matches
          */
-        function test_accessible_has_role(accessible: Accessible, role: AccessibleRole | null): boolean;
+        function test_accessible_has_role(accessible: Accessible, role: AccessibleRole): boolean;
         /**
          * Checks whether the {@link Gtk.Accessible} has `state` set.
          * @param accessible a {@link Gtk.Accessible}
          * @param state a {@link Gtk.AccessibleState}
          * @returns `true` if the `state` is set in the `accessible`
          */
-        function test_accessible_has_state(accessible: Accessible, state: AccessibleState | null): boolean;
+        function test_accessible_has_state(accessible: Accessible, state: AccessibleState): boolean;
         /**
          * Return the type ids that have been registered after
          * calling `gtk_test_register_all_types()`.
@@ -8282,7 +8282,7 @@ declare module 'gi://Gtk?version=4.0' {
              * {@link Gtk.AboutDialog.set_license}.
              * @param license_type the type of license
              */
-            set_license_type(license_type: License | null): void;
+            set_license_type(license_type: License): void;
             /**
              * Sets the logo in the about dialog.
              * @param logo a {@link Gdk.Paintable}
@@ -8961,7 +8961,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -9002,7 +9002,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -9522,7 +9522,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param direction direction of focus movement
              * @returns true if focus ended up inside `widget`
              */
-            child_focus(direction: DirectionType | null): boolean;
+            child_focus(direction: DirectionType): boolean;
             /**
              * Computes the bounds for `widget` in the coordinate space of `target`.
              *
@@ -9557,7 +9557,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param orientation expand direction
              * @returns whether widget tree rooted here should be expanded
              */
-            compute_expand(orientation: Orientation | null): boolean;
+            compute_expand(orientation: Orientation): boolean;
             /**
              * Translates the given `point` in `widget`'s coordinates to coordinates
              * in `target`’s coordinate system.
@@ -10153,7 +10153,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param orientation the orientation to query
              * @returns the size of `widget` in `orientation`
              */
-            get_size(orientation: Orientation | null): number;
+            get_size(orientation: Orientation): number;
             /**
              * Gets the size request that was explicitly set for the widget.
              *
@@ -10478,7 +10478,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param direction direction of focus movement
              * @returns true if stopping keyboard navigation is fine, false   if the emitting widget should try to handle the keyboard   navigation attempt in its parent widget
              */
-            keynav_failed(direction: DirectionType | null): boolean;
+            keynav_failed(direction: DirectionType): boolean;
             /**
              * Returns the widgets for which this widget is the target of a
              * mnemonic.
@@ -10512,7 +10512,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param orientation the orientation to measure
              * @param for_size Size for the opposite of `orientation`, i.e.   if `orientation` is {@link Gtk.Orientation.HORIZONTAL}, this is   the height the widget should be measured with. The {@link Gtk.Orientation.VERTICAL}   case is analogous. This way, both height-for-width and width-for-height   requests can be implemented. If no size is known, -1 can be passed.
              */
-            measure(orientation: Orientation | null, for_size: number): [number, number, number, number];
+            measure(orientation: Orientation, for_size: number): [number, number, number, number];
             /**
              * Emits the `Gtk.Widget::mnemonic-activate` signal.
              * @param group_cycling true if there are other widgets with the same mnemonic
@@ -10563,7 +10563,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param flags flags to influence what is picked
              * @returns the widget's descendant at (x, y)
              */
-            pick(x: number, y: number, flags: PickFlags | null): Widget | null;
+            pick(x: number, y: number, flags: PickFlags): Widget | null;
             /**
              * Flags the widget for a rerun of the {@link Gtk.Widget.size_allocate}
              * function.
@@ -10727,7 +10727,7 @@ declare module 'gi://Gtk?version=4.0' {
              * the value set by {@link Gtk.Widget.set_default_direction} will be used.
              * @param dir the new direction
              */
-            set_direction(dir: TextDirection | null): void;
+            set_direction(dir: TextDirection): void;
             /**
              * Set the focus child of the widget.
              *
@@ -10789,7 +10789,7 @@ declare module 'gi://Gtk?version=4.0' {
              * Sets the horizontal alignment of the widget.
              * @param align the horizontal alignment
              */
-            set_halign(align: Align | null): void;
+            set_halign(align: Align): void;
             /**
              * Sets the `has-tooltip` property on the widget.
              * @param has_tooltip whether or not `widget` has a tooltip
@@ -10929,7 +10929,7 @@ declare module 'gi://Gtk?version=4.0' {
              * The default value is {@link Gtk.Overflow.VISIBLE}.
              * @param overflow desired overflow value
              */
-            set_overflow(overflow: Overflow | null): void;
+            set_overflow(overflow: Overflow): void;
             /**
              * Sets the parent widget of the widget.
              *
@@ -11011,7 +11011,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param flags state flags to turn on
              * @param clear whether to clear state before turning on `flags`
              */
-            set_state_flags(flags: StateFlags | null, clear: boolean): void;
+            set_state_flags(flags: StateFlags, clear: boolean): void;
             /**
              * Sets the contents of the tooltip for widget.
              *
@@ -11043,7 +11043,7 @@ declare module 'gi://Gtk?version=4.0' {
              * Sets the vertical alignment of the widget.
              * @param align the vertical alignment
              */
-            set_valign(align: Align | null): void;
+            set_valign(align: Align): void;
             /**
              * Sets whether the widget would like any available extra vertical
              * space.
@@ -11156,7 +11156,7 @@ declare module 'gi://Gtk?version=4.0' {
              * This function is for use in widget implementations.
              * @param flags state flags to turn off
              */
-            unset_state_flags(flags: StateFlags | null): void;
+            unset_state_flags(flags: StateFlags): void;
             /**
              * Computes whether a container should give this
              *   widget extra space when possible.
@@ -11626,7 +11626,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param message the string to announce
              * @param priority the priority of the announcement
              */
-            announce(message: string, priority: AccessibleAnnouncementPriority | null): void;
+            announce(message: string, priority: AccessibleAnnouncementPriority): void;
             /**
              * Retrieves the accessible parent for an accessible object.
              *
@@ -11672,22 +11672,22 @@ declare module 'gi://Gtk?version=4.0' {
              * @param state platform state to query
              * @returns the value of state for the accessible
              */
-            get_platform_state(state: AccessiblePlatformState | null): boolean;
+            get_platform_state(state: AccessiblePlatformState): boolean;
             /**
              * Resets the accessible property to its default value.
              * @param property the accessible property
              */
-            reset_property(property: AccessibleProperty | null): void;
+            reset_property(property: AccessibleProperty): void;
             /**
              * Resets the accessible relation to its default value.
              * @param relation the accessible relation
              */
-            reset_relation(relation: AccessibleRelation | null): void;
+            reset_relation(relation: AccessibleRelation): void;
             /**
              * Resets the accessible state to its default value.
              * @param state the accessible state
              */
-            reset_state(state: AccessibleState | null): void;
+            reset_state(state: AccessibleState): void;
             /**
              * Sets the parent and sibling of an accessible object.
              *
@@ -11718,7 +11718,7 @@ declare module 'gi://Gtk?version=4.0' {
              * states automatically.
              * @param state the platform state to update
              */
-            update_platform_state(state: AccessiblePlatformState | null): void;
+            update_platform_state(state: AccessiblePlatformState): void;
             /**
              * Updates an array of accessible properties.
              *
@@ -11729,7 +11729,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param properties an array of accessible properties
              * @param values an array of `GValues`, one for each property
              */
-            update_property(properties: AccessibleProperty[] | null, values: (GObject.Value | any)[]): void;
+            update_property(properties: AccessibleProperty[], values: (GObject.Value | any)[]): void;
             /**
              * Updates an array of accessible relations.
              *
@@ -11740,7 +11740,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param relations an array of accessible relations
              * @param values an array of `GValues`, one for each relation
              */
-            update_relation(relations: AccessibleRelation[] | null, values: (GObject.Value | any)[]): void;
+            update_relation(relations: AccessibleRelation[], values: (GObject.Value | any)[]): void;
             /**
              * Updates an array of accessible states.
              *
@@ -11751,7 +11751,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param states an array of accessible states
              * @param values an array of `GValues`, one for each state
              */
-            update_state(states: AccessibleState[] | null, values: (GObject.Value | any)[]): void;
+            update_state(states: AccessibleState[], values: (GObject.Value | any)[]): void;
             /**
              * Retrieves the accessible parent for an accessible object.
              *
@@ -11939,7 +11939,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -11980,7 +11980,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -13430,7 +13430,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -13471,7 +13471,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -15072,7 +15072,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param message the string to announce
              * @param priority the priority of the announcement
              */
-            announce(message: string, priority: AccessibleAnnouncementPriority | null): void;
+            announce(message: string, priority: AccessibleAnnouncementPriority): void;
             /**
              * Retrieves the accessible parent for an accessible object.
              *
@@ -15118,22 +15118,22 @@ declare module 'gi://Gtk?version=4.0' {
              * @param state platform state to query
              * @returns the value of state for the accessible
              */
-            get_platform_state(state: AccessiblePlatformState | null): boolean;
+            get_platform_state(state: AccessiblePlatformState): boolean;
             /**
              * Resets the accessible property to its default value.
              * @param property the accessible property
              */
-            reset_property(property: AccessibleProperty | null): void;
+            reset_property(property: AccessibleProperty): void;
             /**
              * Resets the accessible relation to its default value.
              * @param relation the accessible relation
              */
-            reset_relation(relation: AccessibleRelation | null): void;
+            reset_relation(relation: AccessibleRelation): void;
             /**
              * Resets the accessible state to its default value.
              * @param state the accessible state
              */
-            reset_state(state: AccessibleState | null): void;
+            reset_state(state: AccessibleState): void;
             /**
              * Sets the parent and sibling of an accessible object.
              *
@@ -15164,7 +15164,7 @@ declare module 'gi://Gtk?version=4.0' {
              * states automatically.
              * @param state the platform state to update
              */
-            update_platform_state(state: AccessiblePlatformState | null): void;
+            update_platform_state(state: AccessiblePlatformState): void;
             /**
              * Updates an array of accessible properties.
              *
@@ -15175,7 +15175,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param properties an array of accessible properties
              * @param values an array of `GValues`, one for each property
              */
-            update_property(properties: AccessibleProperty[] | null, values: (GObject.Value | any)[]): void;
+            update_property(properties: AccessibleProperty[], values: (GObject.Value | any)[]): void;
             /**
              * Updates an array of accessible relations.
              *
@@ -15186,7 +15186,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param relations an array of accessible relations
              * @param values an array of `GValues`, one for each relation
              */
-            update_relation(relations: AccessibleRelation[] | null, values: (GObject.Value | any)[]): void;
+            update_relation(relations: AccessibleRelation[], values: (GObject.Value | any)[]): void;
             /**
              * Updates an array of accessible states.
              *
@@ -15197,7 +15197,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param states an array of accessible states
              * @param values an array of `GValues`, one for each state
              */
-            update_state(states: AccessibleState[] | null, values: (GObject.Value | any)[]): void;
+            update_state(states: AccessibleState[], values: (GObject.Value | any)[]): void;
             /**
              * Retrieves the accessible parent for an accessible object.
              *
@@ -15400,7 +15400,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -15441,7 +15441,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -15961,7 +15961,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param direction direction of focus movement
              * @returns true if focus ended up inside `widget`
              */
-            child_focus(direction: DirectionType | null): boolean;
+            child_focus(direction: DirectionType): boolean;
             /**
              * Computes the bounds for `widget` in the coordinate space of `target`.
              *
@@ -15996,7 +15996,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param orientation expand direction
              * @returns whether widget tree rooted here should be expanded
              */
-            compute_expand(orientation: Orientation | null): boolean;
+            compute_expand(orientation: Orientation): boolean;
             /**
              * Translates the given `point` in `widget`'s coordinates to coordinates
              * in `target`’s coordinate system.
@@ -16604,7 +16604,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param orientation the orientation to query
              * @returns the size of `widget` in `orientation`
              */
-            get_size(orientation: Orientation | null): number;
+            get_size(orientation: Orientation): number;
             /**
              * Gets the size request that was explicitly set for the widget.
              *
@@ -16929,7 +16929,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param direction direction of focus movement
              * @returns true if stopping keyboard navigation is fine, false   if the emitting widget should try to handle the keyboard   navigation attempt in its parent widget
              */
-            keynav_failed(direction: DirectionType | null): boolean;
+            keynav_failed(direction: DirectionType): boolean;
             /**
              * Returns the widgets for which this widget is the target of a
              * mnemonic.
@@ -16963,7 +16963,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param orientation the orientation to measure
              * @param for_size Size for the opposite of `orientation`, i.e.   if `orientation` is {@link Gtk.Orientation.HORIZONTAL}, this is   the height the widget should be measured with. The {@link Gtk.Orientation.VERTICAL}   case is analogous. This way, both height-for-width and width-for-height   requests can be implemented. If no size is known, -1 can be passed.
              */
-            measure(orientation: Orientation | null, for_size: number): [number, number, number, number];
+            measure(orientation: Orientation, for_size: number): [number, number, number, number];
             /**
              * Emits the `Gtk.Widget::mnemonic-activate` signal.
              * @param group_cycling true if there are other widgets with the same mnemonic
@@ -17014,7 +17014,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param flags flags to influence what is picked
              * @returns the widget's descendant at (x, y)
              */
-            pick(x: number, y: number, flags: PickFlags | null): Widget | null;
+            pick(x: number, y: number, flags: PickFlags): Widget | null;
             /**
              * Flags the widget for a rerun of the {@link Gtk.Widget.size_allocate}
              * function.
@@ -17197,7 +17197,7 @@ declare module 'gi://Gtk?version=4.0' {
              * the value set by {@link Gtk.Widget.set_default_direction} will be used.
              * @param dir the new direction
              */
-            set_direction(dir: TextDirection | null): void;
+            set_direction(dir: TextDirection): void;
             /**
              * Set the focus child of the widget.
              *
@@ -17259,7 +17259,7 @@ declare module 'gi://Gtk?version=4.0' {
              * Sets the horizontal alignment of the widget.
              * @param align the horizontal alignment
              */
-            set_halign(align: Align | null): void;
+            set_halign(align: Align): void;
             /**
              * Sets the `has-tooltip` property on the widget.
              * @param has_tooltip whether or not `widget` has a tooltip
@@ -17399,7 +17399,7 @@ declare module 'gi://Gtk?version=4.0' {
              * The default value is {@link Gtk.Overflow.VISIBLE}.
              * @param overflow desired overflow value
              */
-            set_overflow(overflow: Overflow | null): void;
+            set_overflow(overflow: Overflow): void;
             /**
              * Sets the parent widget of the widget.
              *
@@ -17481,7 +17481,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param flags state flags to turn on
              * @param clear whether to clear state before turning on `flags`
              */
-            set_state_flags(flags: StateFlags | null, clear: boolean): void;
+            set_state_flags(flags: StateFlags, clear: boolean): void;
             /**
              * Sets the contents of the tooltip for widget.
              *
@@ -17513,7 +17513,7 @@ declare module 'gi://Gtk?version=4.0' {
              * Sets the vertical alignment of the widget.
              * @param align the vertical alignment
              */
-            set_valign(align: Align | null): void;
+            set_valign(align: Align): void;
             /**
              * Sets whether the widget would like any available extra vertical
              * space.
@@ -17634,7 +17634,7 @@ declare module 'gi://Gtk?version=4.0' {
              * This function is for use in widget implementations.
              * @param flags state flags to turn off
              */
-            unset_state_flags(flags: StateFlags | null): void;
+            unset_state_flags(flags: StateFlags): void;
             /**
              * Computes whether a container should give this
              *   widget extra space when possible.
@@ -18656,7 +18656,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -18697,7 +18697,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -19217,7 +19217,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param direction direction of focus movement
              * @returns true if focus ended up inside `widget`
              */
-            child_focus(direction: DirectionType | null): boolean;
+            child_focus(direction: DirectionType): boolean;
             /**
              * Computes the bounds for `widget` in the coordinate space of `target`.
              *
@@ -19252,7 +19252,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param orientation expand direction
              * @returns whether widget tree rooted here should be expanded
              */
-            compute_expand(orientation: Orientation | null): boolean;
+            compute_expand(orientation: Orientation): boolean;
             /**
              * Translates the given `point` in `widget`'s coordinates to coordinates
              * in `target`’s coordinate system.
@@ -19860,7 +19860,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param orientation the orientation to query
              * @returns the size of `widget` in `orientation`
              */
-            get_size(orientation: Orientation | null): number;
+            get_size(orientation: Orientation): number;
             /**
              * Gets the size request that was explicitly set for the widget.
              *
@@ -20185,7 +20185,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param direction direction of focus movement
              * @returns true if stopping keyboard navigation is fine, false   if the emitting widget should try to handle the keyboard   navigation attempt in its parent widget
              */
-            keynav_failed(direction: DirectionType | null): boolean;
+            keynav_failed(direction: DirectionType): boolean;
             /**
              * Returns the widgets for which this widget is the target of a
              * mnemonic.
@@ -20219,7 +20219,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param orientation the orientation to measure
              * @param for_size Size for the opposite of `orientation`, i.e.   if `orientation` is {@link Gtk.Orientation.HORIZONTAL}, this is   the height the widget should be measured with. The {@link Gtk.Orientation.VERTICAL}   case is analogous. This way, both height-for-width and width-for-height   requests can be implemented. If no size is known, -1 can be passed.
              */
-            measure(orientation: Orientation | null, for_size: number): [number, number, number, number];
+            measure(orientation: Orientation, for_size: number): [number, number, number, number];
             /**
              * Emits the `Gtk.Widget::mnemonic-activate` signal.
              * @param group_cycling true if there are other widgets with the same mnemonic
@@ -20270,7 +20270,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param flags flags to influence what is picked
              * @returns the widget's descendant at (x, y)
              */
-            pick(x: number, y: number, flags: PickFlags | null): Widget | null;
+            pick(x: number, y: number, flags: PickFlags): Widget | null;
             /**
              * Flags the widget for a rerun of the {@link Gtk.Widget.size_allocate}
              * function.
@@ -20453,7 +20453,7 @@ declare module 'gi://Gtk?version=4.0' {
              * the value set by {@link Gtk.Widget.set_default_direction} will be used.
              * @param dir the new direction
              */
-            set_direction(dir: TextDirection | null): void;
+            set_direction(dir: TextDirection): void;
             /**
              * Set the focus child of the widget.
              *
@@ -20515,7 +20515,7 @@ declare module 'gi://Gtk?version=4.0' {
              * Sets the horizontal alignment of the widget.
              * @param align the horizontal alignment
              */
-            set_halign(align: Align | null): void;
+            set_halign(align: Align): void;
             /**
              * Sets the `has-tooltip` property on the widget.
              * @param has_tooltip whether or not `widget` has a tooltip
@@ -20655,7 +20655,7 @@ declare module 'gi://Gtk?version=4.0' {
              * The default value is {@link Gtk.Overflow.VISIBLE}.
              * @param overflow desired overflow value
              */
-            set_overflow(overflow: Overflow | null): void;
+            set_overflow(overflow: Overflow): void;
             /**
              * Sets the parent widget of the widget.
              *
@@ -20737,7 +20737,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param flags state flags to turn on
              * @param clear whether to clear state before turning on `flags`
              */
-            set_state_flags(flags: StateFlags | null, clear: boolean): void;
+            set_state_flags(flags: StateFlags, clear: boolean): void;
             /**
              * Sets the contents of the tooltip for widget.
              *
@@ -20769,7 +20769,7 @@ declare module 'gi://Gtk?version=4.0' {
              * Sets the vertical alignment of the widget.
              * @param align the vertical alignment
              */
-            set_valign(align: Align | null): void;
+            set_valign(align: Align): void;
             /**
              * Sets whether the widget would like any available extra vertical
              * space.
@@ -20890,7 +20890,7 @@ declare module 'gi://Gtk?version=4.0' {
              * This function is for use in widget implementations.
              * @param flags state flags to turn off
              */
-            unset_state_flags(flags: StateFlags | null): void;
+            unset_state_flags(flags: StateFlags): void;
             /**
              * Computes whether a container should give this
              *   widget extra space when possible.
@@ -22006,7 +22006,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param message the string to announce
              * @param priority the priority of the announcement
              */
-            announce(message: string, priority: AccessibleAnnouncementPriority | null): void;
+            announce(message: string, priority: AccessibleAnnouncementPriority): void;
             /**
              * Retrieves the accessible parent for an accessible object.
              *
@@ -22052,22 +22052,22 @@ declare module 'gi://Gtk?version=4.0' {
              * @param state platform state to query
              * @returns the value of state for the accessible
              */
-            get_platform_state(state: AccessiblePlatformState | null): boolean;
+            get_platform_state(state: AccessiblePlatformState): boolean;
             /**
              * Resets the accessible property to its default value.
              * @param property the accessible property
              */
-            reset_property(property: AccessibleProperty | null): void;
+            reset_property(property: AccessibleProperty): void;
             /**
              * Resets the accessible relation to its default value.
              * @param relation the accessible relation
              */
-            reset_relation(relation: AccessibleRelation | null): void;
+            reset_relation(relation: AccessibleRelation): void;
             /**
              * Resets the accessible state to its default value.
              * @param state the accessible state
              */
-            reset_state(state: AccessibleState | null): void;
+            reset_state(state: AccessibleState): void;
             /**
              * Sets the parent and sibling of an accessible object.
              *
@@ -22098,7 +22098,7 @@ declare module 'gi://Gtk?version=4.0' {
              * states automatically.
              * @param state the platform state to update
              */
-            update_platform_state(state: AccessiblePlatformState | null): void;
+            update_platform_state(state: AccessiblePlatformState): void;
             /**
              * Updates an array of accessible properties.
              *
@@ -22109,7 +22109,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param properties an array of accessible properties
              * @param values an array of `GValues`, one for each property
              */
-            update_property(properties: AccessibleProperty[] | null, values: (GObject.Value | any)[]): void;
+            update_property(properties: AccessibleProperty[], values: (GObject.Value | any)[]): void;
             /**
              * Updates an array of accessible relations.
              *
@@ -22120,7 +22120,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param relations an array of accessible relations
              * @param values an array of `GValues`, one for each relation
              */
-            update_relation(relations: AccessibleRelation[] | null, values: (GObject.Value | any)[]): void;
+            update_relation(relations: AccessibleRelation[], values: (GObject.Value | any)[]): void;
             /**
              * Updates an array of accessible states.
              *
@@ -22131,7 +22131,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param states an array of accessible states
              * @param values an array of `GValues`, one for each state
              */
-            update_state(states: AccessibleState[] | null, values: (GObject.Value | any)[]): void;
+            update_state(states: AccessibleState[], values: (GObject.Value | any)[]): void;
             /**
              * Retrieves the accessible parent for an accessible object.
              *
@@ -22334,7 +22334,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -22375,7 +22375,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -22895,7 +22895,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param direction direction of focus movement
              * @returns true if focus ended up inside `widget`
              */
-            child_focus(direction: DirectionType | null): boolean;
+            child_focus(direction: DirectionType): boolean;
             /**
              * Computes the bounds for `widget` in the coordinate space of `target`.
              *
@@ -22930,7 +22930,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param orientation expand direction
              * @returns whether widget tree rooted here should be expanded
              */
-            compute_expand(orientation: Orientation | null): boolean;
+            compute_expand(orientation: Orientation): boolean;
             /**
              * Translates the given `point` in `widget`'s coordinates to coordinates
              * in `target`’s coordinate system.
@@ -23538,7 +23538,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param orientation the orientation to query
              * @returns the size of `widget` in `orientation`
              */
-            get_size(orientation: Orientation | null): number;
+            get_size(orientation: Orientation): number;
             /**
              * Gets the size request that was explicitly set for the widget.
              *
@@ -23863,7 +23863,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param direction direction of focus movement
              * @returns true if stopping keyboard navigation is fine, false   if the emitting widget should try to handle the keyboard   navigation attempt in its parent widget
              */
-            keynav_failed(direction: DirectionType | null): boolean;
+            keynav_failed(direction: DirectionType): boolean;
             /**
              * Returns the widgets for which this widget is the target of a
              * mnemonic.
@@ -23897,7 +23897,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param orientation the orientation to measure
              * @param for_size Size for the opposite of `orientation`, i.e.   if `orientation` is {@link Gtk.Orientation.HORIZONTAL}, this is   the height the widget should be measured with. The {@link Gtk.Orientation.VERTICAL}   case is analogous. This way, both height-for-width and width-for-height   requests can be implemented. If no size is known, -1 can be passed.
              */
-            measure(orientation: Orientation | null, for_size: number): [number, number, number, number];
+            measure(orientation: Orientation, for_size: number): [number, number, number, number];
             /**
              * Emits the `Gtk.Widget::mnemonic-activate` signal.
              * @param group_cycling true if there are other widgets with the same mnemonic
@@ -23948,7 +23948,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param flags flags to influence what is picked
              * @returns the widget's descendant at (x, y)
              */
-            pick(x: number, y: number, flags: PickFlags | null): Widget | null;
+            pick(x: number, y: number, flags: PickFlags): Widget | null;
             /**
              * Flags the widget for a rerun of the {@link Gtk.Widget.size_allocate}
              * function.
@@ -24131,7 +24131,7 @@ declare module 'gi://Gtk?version=4.0' {
              * the value set by {@link Gtk.Widget.set_default_direction} will be used.
              * @param dir the new direction
              */
-            set_direction(dir: TextDirection | null): void;
+            set_direction(dir: TextDirection): void;
             /**
              * Set the focus child of the widget.
              *
@@ -24193,7 +24193,7 @@ declare module 'gi://Gtk?version=4.0' {
              * Sets the horizontal alignment of the widget.
              * @param align the horizontal alignment
              */
-            set_halign(align: Align | null): void;
+            set_halign(align: Align): void;
             /**
              * Sets the `has-tooltip` property on the widget.
              * @param has_tooltip whether or not `widget` has a tooltip
@@ -24333,7 +24333,7 @@ declare module 'gi://Gtk?version=4.0' {
              * The default value is {@link Gtk.Overflow.VISIBLE}.
              * @param overflow desired overflow value
              */
-            set_overflow(overflow: Overflow | null): void;
+            set_overflow(overflow: Overflow): void;
             /**
              * Sets the parent widget of the widget.
              *
@@ -24415,7 +24415,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param flags state flags to turn on
              * @param clear whether to clear state before turning on `flags`
              */
-            set_state_flags(flags: StateFlags | null, clear: boolean): void;
+            set_state_flags(flags: StateFlags, clear: boolean): void;
             /**
              * Sets the contents of the tooltip for widget.
              *
@@ -24447,7 +24447,7 @@ declare module 'gi://Gtk?version=4.0' {
              * Sets the vertical alignment of the widget.
              * @param align the vertical alignment
              */
-            set_valign(align: Align | null): void;
+            set_valign(align: Align): void;
             /**
              * Sets whether the widget would like any available extra vertical
              * space.
@@ -24568,7 +24568,7 @@ declare module 'gi://Gtk?version=4.0' {
              * This function is for use in widget implementations.
              * @param flags state flags to turn off
              */
-            unset_state_flags(flags: StateFlags | null): void;
+            unset_state_flags(flags: StateFlags): void;
             /**
              * Computes whether a container should give this
              *   widget extra space when possible.
@@ -25193,7 +25193,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param reason a short, human-readable string that explains   why these operations are inhibited
              * @returns A non-zero cookie that is used to uniquely identify this, or   0 if the platform does not support inhibiting or the request failed   for some reason
              */
-            inhibit(window: Window | null, flags: ApplicationInhibitFlags | null, reason?: string | null): number;
+            inhibit(window: Window | null, flags: ApplicationInhibitFlags, reason?: string | null): number;
             /**
              * Lists the detailed action names which have associated accelerators.
              *
@@ -25840,7 +25840,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -25881,7 +25881,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -27671,7 +27671,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -27712,7 +27712,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -28214,7 +28214,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param direction direction of focus movement
              * @returns true if focus ended up inside `widget`
              */
-            child_focus(direction: DirectionType | null): boolean;
+            child_focus(direction: DirectionType): boolean;
             /**
              * Computes the bounds for `widget` in the coordinate space of `target`.
              *
@@ -28249,7 +28249,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param orientation expand direction
              * @returns whether widget tree rooted here should be expanded
              */
-            compute_expand(orientation: Orientation | null): boolean;
+            compute_expand(orientation: Orientation): boolean;
             /**
              * Translates the given `point` in `widget`'s coordinates to coordinates
              * in `target`’s coordinate system.
@@ -28845,7 +28845,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param orientation the orientation to query
              * @returns the size of `widget` in `orientation`
              */
-            get_size(orientation: Orientation | null): number;
+            get_size(orientation: Orientation): number;
             /**
              * Gets the size request that was explicitly set for the widget.
              *
@@ -29170,7 +29170,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param direction direction of focus movement
              * @returns true if stopping keyboard navigation is fine, false   if the emitting widget should try to handle the keyboard   navigation attempt in its parent widget
              */
-            keynav_failed(direction: DirectionType | null): boolean;
+            keynav_failed(direction: DirectionType): boolean;
             /**
              * Returns the widgets for which this widget is the target of a
              * mnemonic.
@@ -29204,7 +29204,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param orientation the orientation to measure
              * @param for_size Size for the opposite of `orientation`, i.e.   if `orientation` is {@link Gtk.Orientation.HORIZONTAL}, this is   the height the widget should be measured with. The {@link Gtk.Orientation.VERTICAL}   case is analogous. This way, both height-for-width and width-for-height   requests can be implemented. If no size is known, -1 can be passed.
              */
-            measure(orientation: Orientation | null, for_size: number): [number, number, number, number];
+            measure(orientation: Orientation, for_size: number): [number, number, number, number];
             /**
              * Emits the `Gtk.Widget::mnemonic-activate` signal.
              * @param group_cycling true if there are other widgets with the same mnemonic
@@ -29255,7 +29255,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param flags flags to influence what is picked
              * @returns the widget's descendant at (x, y)
              */
-            pick(x: number, y: number, flags: PickFlags | null): Widget | null;
+            pick(x: number, y: number, flags: PickFlags): Widget | null;
             /**
              * Flags the widget for a rerun of the {@link Gtk.Widget.size_allocate}
              * function.
@@ -29419,7 +29419,7 @@ declare module 'gi://Gtk?version=4.0' {
              * the value set by {@link Gtk.Widget.set_default_direction} will be used.
              * @param dir the new direction
              */
-            set_direction(dir: TextDirection | null): void;
+            set_direction(dir: TextDirection): void;
             /**
              * Set the focus child of the widget.
              *
@@ -29481,7 +29481,7 @@ declare module 'gi://Gtk?version=4.0' {
              * Sets the horizontal alignment of the widget.
              * @param align the horizontal alignment
              */
-            set_halign(align: Align | null): void;
+            set_halign(align: Align): void;
             /**
              * Sets the `has-tooltip` property on the widget.
              * @param has_tooltip whether or not `widget` has a tooltip
@@ -29621,7 +29621,7 @@ declare module 'gi://Gtk?version=4.0' {
              * The default value is {@link Gtk.Overflow.VISIBLE}.
              * @param overflow desired overflow value
              */
-            set_overflow(overflow: Overflow | null): void;
+            set_overflow(overflow: Overflow): void;
             /**
              * Sets the parent widget of the widget.
              *
@@ -29703,7 +29703,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param flags state flags to turn on
              * @param clear whether to clear state before turning on `flags`
              */
-            set_state_flags(flags: StateFlags | null, clear: boolean): void;
+            set_state_flags(flags: StateFlags, clear: boolean): void;
             /**
              * Sets the contents of the tooltip for widget.
              *
@@ -29735,7 +29735,7 @@ declare module 'gi://Gtk?version=4.0' {
              * Sets the vertical alignment of the widget.
              * @param align the vertical alignment
              */
-            set_valign(align: Align | null): void;
+            set_valign(align: Align): void;
             /**
              * Sets whether the widget would like any available extra vertical
              * space.
@@ -29848,7 +29848,7 @@ declare module 'gi://Gtk?version=4.0' {
              * This function is for use in widget implementations.
              * @param flags state flags to turn off
              */
-            unset_state_flags(flags: StateFlags | null): void;
+            unset_state_flags(flags: StateFlags): void;
             /**
              * Computes whether a container should give this
              *   widget extra space when possible.
@@ -30344,7 +30344,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param message the string to announce
              * @param priority the priority of the announcement
              */
-            announce(message: string, priority: AccessibleAnnouncementPriority | null): void;
+            announce(message: string, priority: AccessibleAnnouncementPriority): void;
             /**
              * Retrieves the accessible parent for an accessible object.
              *
@@ -30390,22 +30390,22 @@ declare module 'gi://Gtk?version=4.0' {
              * @param state platform state to query
              * @returns the value of state for the accessible
              */
-            get_platform_state(state: AccessiblePlatformState | null): boolean;
+            get_platform_state(state: AccessiblePlatformState): boolean;
             /**
              * Resets the accessible property to its default value.
              * @param property the accessible property
              */
-            reset_property(property: AccessibleProperty | null): void;
+            reset_property(property: AccessibleProperty): void;
             /**
              * Resets the accessible relation to its default value.
              * @param relation the accessible relation
              */
-            reset_relation(relation: AccessibleRelation | null): void;
+            reset_relation(relation: AccessibleRelation): void;
             /**
              * Resets the accessible state to its default value.
              * @param state the accessible state
              */
-            reset_state(state: AccessibleState | null): void;
+            reset_state(state: AccessibleState): void;
             /**
              * Sets the parent and sibling of an accessible object.
              *
@@ -30436,7 +30436,7 @@ declare module 'gi://Gtk?version=4.0' {
              * states automatically.
              * @param state the platform state to update
              */
-            update_platform_state(state: AccessiblePlatformState | null): void;
+            update_platform_state(state: AccessiblePlatformState): void;
             /**
              * Updates an array of accessible properties.
              *
@@ -30447,7 +30447,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param properties an array of accessible properties
              * @param values an array of `GValues`, one for each property
              */
-            update_property(properties: AccessibleProperty[] | null, values: (GObject.Value | any)[]): void;
+            update_property(properties: AccessibleProperty[], values: (GObject.Value | any)[]): void;
             /**
              * Updates an array of accessible relations.
              *
@@ -30458,7 +30458,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param relations an array of accessible relations
              * @param values an array of `GValues`, one for each relation
              */
-            update_relation(relations: AccessibleRelation[] | null, values: (GObject.Value | any)[]): void;
+            update_relation(relations: AccessibleRelation[], values: (GObject.Value | any)[]): void;
             /**
              * Updates an array of accessible states.
              *
@@ -30469,7 +30469,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param states an array of accessible states
              * @param values an array of `GValues`, one for each state
              */
-            update_state(states: AccessibleState[] | null, values: (GObject.Value | any)[]): void;
+            update_state(states: AccessibleState[], values: (GObject.Value | any)[]): void;
             /**
              * Retrieves the accessible parent for an accessible object.
              *
@@ -30657,7 +30657,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -30698,7 +30698,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -31475,7 +31475,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param page a page of `assistant`
              * @param type the new type for `page`
              */
-            set_page_type(page: Widget, type: AssistantPageType | null): void;
+            set_page_type(page: Widget, type: AssistantPageType): void;
             /**
              * Forces `assistant` to recompute the buttons state.
              *
@@ -32094,7 +32094,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -32135,7 +32135,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -32655,7 +32655,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param direction direction of focus movement
              * @returns true if focus ended up inside `widget`
              */
-            child_focus(direction: DirectionType | null): boolean;
+            child_focus(direction: DirectionType): boolean;
             /**
              * Computes the bounds for `widget` in the coordinate space of `target`.
              *
@@ -32690,7 +32690,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param orientation expand direction
              * @returns whether widget tree rooted here should be expanded
              */
-            compute_expand(orientation: Orientation | null): boolean;
+            compute_expand(orientation: Orientation): boolean;
             /**
              * Translates the given `point` in `widget`'s coordinates to coordinates
              * in `target`’s coordinate system.
@@ -33286,7 +33286,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param orientation the orientation to query
              * @returns the size of `widget` in `orientation`
              */
-            get_size(orientation: Orientation | null): number;
+            get_size(orientation: Orientation): number;
             /**
              * Gets the size request that was explicitly set for the widget.
              *
@@ -33611,7 +33611,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param direction direction of focus movement
              * @returns true if stopping keyboard navigation is fine, false   if the emitting widget should try to handle the keyboard   navigation attempt in its parent widget
              */
-            keynav_failed(direction: DirectionType | null): boolean;
+            keynav_failed(direction: DirectionType): boolean;
             /**
              * Returns the widgets for which this widget is the target of a
              * mnemonic.
@@ -33645,7 +33645,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param orientation the orientation to measure
              * @param for_size Size for the opposite of `orientation`, i.e.   if `orientation` is {@link Gtk.Orientation.HORIZONTAL}, this is   the height the widget should be measured with. The {@link Gtk.Orientation.VERTICAL}   case is analogous. This way, both height-for-width and width-for-height   requests can be implemented. If no size is known, -1 can be passed.
              */
-            measure(orientation: Orientation | null, for_size: number): [number, number, number, number];
+            measure(orientation: Orientation, for_size: number): [number, number, number, number];
             /**
              * Emits the `Gtk.Widget::mnemonic-activate` signal.
              * @param group_cycling true if there are other widgets with the same mnemonic
@@ -33696,7 +33696,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param flags flags to influence what is picked
              * @returns the widget's descendant at (x, y)
              */
-            pick(x: number, y: number, flags: PickFlags | null): Widget | null;
+            pick(x: number, y: number, flags: PickFlags): Widget | null;
             /**
              * Flags the widget for a rerun of the {@link Gtk.Widget.size_allocate}
              * function.
@@ -33860,7 +33860,7 @@ declare module 'gi://Gtk?version=4.0' {
              * the value set by {@link Gtk.Widget.set_default_direction} will be used.
              * @param dir the new direction
              */
-            set_direction(dir: TextDirection | null): void;
+            set_direction(dir: TextDirection): void;
             /**
              * Set the focus child of the widget.
              *
@@ -33922,7 +33922,7 @@ declare module 'gi://Gtk?version=4.0' {
              * Sets the horizontal alignment of the widget.
              * @param align the horizontal alignment
              */
-            set_halign(align: Align | null): void;
+            set_halign(align: Align): void;
             /**
              * Sets the `has-tooltip` property on the widget.
              * @param has_tooltip whether or not `widget` has a tooltip
@@ -34062,7 +34062,7 @@ declare module 'gi://Gtk?version=4.0' {
              * The default value is {@link Gtk.Overflow.VISIBLE}.
              * @param overflow desired overflow value
              */
-            set_overflow(overflow: Overflow | null): void;
+            set_overflow(overflow: Overflow): void;
             /**
              * Sets the parent widget of the widget.
              *
@@ -34144,7 +34144,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param flags state flags to turn on
              * @param clear whether to clear state before turning on `flags`
              */
-            set_state_flags(flags: StateFlags | null, clear: boolean): void;
+            set_state_flags(flags: StateFlags, clear: boolean): void;
             /**
              * Sets the contents of the tooltip for widget.
              *
@@ -34176,7 +34176,7 @@ declare module 'gi://Gtk?version=4.0' {
              * Sets the vertical alignment of the widget.
              * @param align the vertical alignment
              */
-            set_valign(align: Align | null): void;
+            set_valign(align: Align): void;
             /**
              * Sets whether the widget would like any available extra vertical
              * space.
@@ -34289,7 +34289,7 @@ declare module 'gi://Gtk?version=4.0' {
              * This function is for use in widget implementations.
              * @param flags state flags to turn off
              */
-            unset_state_flags(flags: StateFlags | null): void;
+            unset_state_flags(flags: StateFlags): void;
             /**
              * Computes whether a container should give this
              *   widget extra space when possible.
@@ -35026,7 +35026,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -35067,7 +35067,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -35799,7 +35799,7 @@ declare module 'gi://Gtk?version=4.0' {
              * extra space available.
              * @param position the baseline position
              */
-            set_baseline_position(position: BaselinePosition | null): void;
+            set_baseline_position(position: BaselinePosition): void;
             /**
              * Sets whether or not all children are given equal space
              * in the box.
@@ -35846,7 +35846,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param message the string to announce
              * @param priority the priority of the announcement
              */
-            announce(message: string, priority: AccessibleAnnouncementPriority | null): void;
+            announce(message: string, priority: AccessibleAnnouncementPriority): void;
             /**
              * Retrieves the accessible parent for an accessible object.
              *
@@ -35892,22 +35892,22 @@ declare module 'gi://Gtk?version=4.0' {
              * @param state platform state to query
              * @returns the value of state for the accessible
              */
-            get_platform_state(state: AccessiblePlatformState | null): boolean;
+            get_platform_state(state: AccessiblePlatformState): boolean;
             /**
              * Resets the accessible property to its default value.
              * @param property the accessible property
              */
-            reset_property(property: AccessibleProperty | null): void;
+            reset_property(property: AccessibleProperty): void;
             /**
              * Resets the accessible relation to its default value.
              * @param relation the accessible relation
              */
-            reset_relation(relation: AccessibleRelation | null): void;
+            reset_relation(relation: AccessibleRelation): void;
             /**
              * Resets the accessible state to its default value.
              * @param state the accessible state
              */
-            reset_state(state: AccessibleState | null): void;
+            reset_state(state: AccessibleState): void;
             /**
              * Sets the parent and sibling of an accessible object.
              *
@@ -35938,7 +35938,7 @@ declare module 'gi://Gtk?version=4.0' {
              * states automatically.
              * @param state the platform state to update
              */
-            update_platform_state(state: AccessiblePlatformState | null): void;
+            update_platform_state(state: AccessiblePlatformState): void;
             /**
              * Updates an array of accessible properties.
              *
@@ -35949,7 +35949,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param properties an array of accessible properties
              * @param values an array of `GValues`, one for each property
              */
-            update_property(properties: AccessibleProperty[] | null, values: (GObject.Value | any)[]): void;
+            update_property(properties: AccessibleProperty[], values: (GObject.Value | any)[]): void;
             /**
              * Updates an array of accessible relations.
              *
@@ -35960,7 +35960,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param relations an array of accessible relations
              * @param values an array of `GValues`, one for each relation
              */
-            update_relation(relations: AccessibleRelation[] | null, values: (GObject.Value | any)[]): void;
+            update_relation(relations: AccessibleRelation[], values: (GObject.Value | any)[]): void;
             /**
              * Updates an array of accessible states.
              *
@@ -35971,7 +35971,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param states an array of accessible states
              * @param values an array of `GValues`, one for each state
              */
-            update_state(states: AccessibleState[] | null, values: (GObject.Value | any)[]): void;
+            update_state(states: AccessibleState[], values: (GObject.Value | any)[]): void;
             /**
              * Retrieves the accessible parent for an accessible object.
              *
@@ -36124,7 +36124,7 @@ declare module 'gi://Gtk?version=4.0' {
              * Sets the orientation of the `orientable`.
              * @param orientation the orientable’s new orientation
              */
-            set_orientation(orientation: Orientation | null): void;
+            set_orientation(orientation: Orientation): void;
             /**
              * Creates a binding between `source_property` on `source` and `target_property`
              * on `target`.
@@ -36169,7 +36169,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -36210,7 +36210,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -36747,7 +36747,7 @@ declare module 'gi://Gtk?version=4.0' {
              * space available.
              * @param position a {@link Gtk.BaselinePosition}
              */
-            set_baseline_position(position: BaselinePosition | null): void;
+            set_baseline_position(position: BaselinePosition): void;
             /**
              * Sets whether the box layout will allocate the same
              * size to all children.
@@ -36774,7 +36774,7 @@ declare module 'gi://Gtk?version=4.0' {
              * Sets the orientation of the `orientable`.
              * @param orientation the orientable’s new orientation
              */
-            set_orientation(orientation: Orientation | null): void;
+            set_orientation(orientation: Orientation): void;
             /**
              * Creates a binding between `source_property` on `source` and `target_property`
              * on `target`.
@@ -36819,7 +36819,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -36860,7 +36860,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -37820,7 +37820,7 @@ declare module 'gi://Gtk?version=4.0' {
              */
             create_closure(
                 function_name: string,
-                flags: BuilderClosureFlags | null,
+                flags: BuilderClosureFlags,
                 object?: GObject.Object | null,
             ): GObject.Closure | null;
             /**
@@ -38123,7 +38123,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -38164,7 +38164,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -39567,7 +39567,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param message the string to announce
              * @param priority the priority of the announcement
              */
-            announce(message: string, priority: AccessibleAnnouncementPriority | null): void;
+            announce(message: string, priority: AccessibleAnnouncementPriority): void;
             /**
              * Retrieves the accessible parent for an accessible object.
              *
@@ -39613,22 +39613,22 @@ declare module 'gi://Gtk?version=4.0' {
              * @param state platform state to query
              * @returns the value of state for the accessible
              */
-            get_platform_state(state: AccessiblePlatformState | null): boolean;
+            get_platform_state(state: AccessiblePlatformState): boolean;
             /**
              * Resets the accessible property to its default value.
              * @param property the accessible property
              */
-            reset_property(property: AccessibleProperty | null): void;
+            reset_property(property: AccessibleProperty): void;
             /**
              * Resets the accessible relation to its default value.
              * @param relation the accessible relation
              */
-            reset_relation(relation: AccessibleRelation | null): void;
+            reset_relation(relation: AccessibleRelation): void;
             /**
              * Resets the accessible state to its default value.
              * @param state the accessible state
              */
-            reset_state(state: AccessibleState | null): void;
+            reset_state(state: AccessibleState): void;
             /**
              * Sets the parent and sibling of an accessible object.
              *
@@ -39659,7 +39659,7 @@ declare module 'gi://Gtk?version=4.0' {
              * states automatically.
              * @param state the platform state to update
              */
-            update_platform_state(state: AccessiblePlatformState | null): void;
+            update_platform_state(state: AccessiblePlatformState): void;
             /**
              * Updates an array of accessible properties.
              *
@@ -39670,7 +39670,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param properties an array of accessible properties
              * @param values an array of `GValues`, one for each property
              */
-            update_property(properties: AccessibleProperty[] | null, values: (GObject.Value | any)[]): void;
+            update_property(properties: AccessibleProperty[], values: (GObject.Value | any)[]): void;
             /**
              * Updates an array of accessible relations.
              *
@@ -39681,7 +39681,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param relations an array of accessible relations
              * @param values an array of `GValues`, one for each relation
              */
-            update_relation(relations: AccessibleRelation[] | null, values: (GObject.Value | any)[]): void;
+            update_relation(relations: AccessibleRelation[], values: (GObject.Value | any)[]): void;
             /**
              * Updates an array of accessible states.
              *
@@ -39692,7 +39692,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param states an array of accessible states
              * @param values an array of `GValues`, one for each state
              */
-            update_state(states: AccessibleState[] | null, values: (GObject.Value | any)[]): void;
+            update_state(states: AccessibleState[], values: (GObject.Value | any)[]): void;
             /**
              * Retrieves the accessible parent for an accessible object.
              *
@@ -39989,7 +39989,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -40030,7 +40030,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -40550,7 +40550,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param direction direction of focus movement
              * @returns true if focus ended up inside `widget`
              */
-            child_focus(direction: DirectionType | null): boolean;
+            child_focus(direction: DirectionType): boolean;
             /**
              * Computes the bounds for `widget` in the coordinate space of `target`.
              *
@@ -40585,7 +40585,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param orientation expand direction
              * @returns whether widget tree rooted here should be expanded
              */
-            compute_expand(orientation: Orientation | null): boolean;
+            compute_expand(orientation: Orientation): boolean;
             /**
              * Translates the given `point` in `widget`'s coordinates to coordinates
              * in `target`’s coordinate system.
@@ -41193,7 +41193,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param orientation the orientation to query
              * @returns the size of `widget` in `orientation`
              */
-            get_size(orientation: Orientation | null): number;
+            get_size(orientation: Orientation): number;
             /**
              * Gets the size request that was explicitly set for the widget.
              *
@@ -41518,7 +41518,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param direction direction of focus movement
              * @returns true if stopping keyboard navigation is fine, false   if the emitting widget should try to handle the keyboard   navigation attempt in its parent widget
              */
-            keynav_failed(direction: DirectionType | null): boolean;
+            keynav_failed(direction: DirectionType): boolean;
             /**
              * Returns the widgets for which this widget is the target of a
              * mnemonic.
@@ -41552,7 +41552,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param orientation the orientation to measure
              * @param for_size Size for the opposite of `orientation`, i.e.   if `orientation` is {@link Gtk.Orientation.HORIZONTAL}, this is   the height the widget should be measured with. The {@link Gtk.Orientation.VERTICAL}   case is analogous. This way, both height-for-width and width-for-height   requests can be implemented. If no size is known, -1 can be passed.
              */
-            measure(orientation: Orientation | null, for_size: number): [number, number, number, number];
+            measure(orientation: Orientation, for_size: number): [number, number, number, number];
             /**
              * Emits the `Gtk.Widget::mnemonic-activate` signal.
              * @param group_cycling true if there are other widgets with the same mnemonic
@@ -41603,7 +41603,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param flags flags to influence what is picked
              * @returns the widget's descendant at (x, y)
              */
-            pick(x: number, y: number, flags: PickFlags | null): Widget | null;
+            pick(x: number, y: number, flags: PickFlags): Widget | null;
             /**
              * Flags the widget for a rerun of the {@link Gtk.Widget.size_allocate}
              * function.
@@ -41786,7 +41786,7 @@ declare module 'gi://Gtk?version=4.0' {
              * the value set by {@link Gtk.Widget.set_default_direction} will be used.
              * @param dir the new direction
              */
-            set_direction(dir: TextDirection | null): void;
+            set_direction(dir: TextDirection): void;
             /**
              * Set the focus child of the widget.
              *
@@ -41848,7 +41848,7 @@ declare module 'gi://Gtk?version=4.0' {
              * Sets the horizontal alignment of the widget.
              * @param align the horizontal alignment
              */
-            set_halign(align: Align | null): void;
+            set_halign(align: Align): void;
             /**
              * Sets the `has-tooltip` property on the widget.
              * @param has_tooltip whether or not `widget` has a tooltip
@@ -41988,7 +41988,7 @@ declare module 'gi://Gtk?version=4.0' {
              * The default value is {@link Gtk.Overflow.VISIBLE}.
              * @param overflow desired overflow value
              */
-            set_overflow(overflow: Overflow | null): void;
+            set_overflow(overflow: Overflow): void;
             /**
              * Sets the parent widget of the widget.
              *
@@ -42070,7 +42070,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param flags state flags to turn on
              * @param clear whether to clear state before turning on `flags`
              */
-            set_state_flags(flags: StateFlags | null, clear: boolean): void;
+            set_state_flags(flags: StateFlags, clear: boolean): void;
             /**
              * Sets the contents of the tooltip for widget.
              *
@@ -42102,7 +42102,7 @@ declare module 'gi://Gtk?version=4.0' {
              * Sets the vertical alignment of the widget.
              * @param align the vertical alignment
              */
-            set_valign(align: Align | null): void;
+            set_valign(align: Align): void;
             /**
              * Sets whether the widget would like any available extra vertical
              * space.
@@ -42223,7 +42223,7 @@ declare module 'gi://Gtk?version=4.0' {
              * This function is for use in widget implementations.
              * @param flags state flags to turn off
              */
-            unset_state_flags(flags: StateFlags | null): void;
+            unset_state_flags(flags: StateFlags): void;
             /**
              * Computes whether a container should give this
              *   widget extra space when possible.
@@ -42935,7 +42935,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param message the string to announce
              * @param priority the priority of the announcement
              */
-            announce(message: string, priority: AccessibleAnnouncementPriority | null): void;
+            announce(message: string, priority: AccessibleAnnouncementPriority): void;
             /**
              * Retrieves the accessible parent for an accessible object.
              *
@@ -42981,22 +42981,22 @@ declare module 'gi://Gtk?version=4.0' {
              * @param state platform state to query
              * @returns the value of state for the accessible
              */
-            get_platform_state(state: AccessiblePlatformState | null): boolean;
+            get_platform_state(state: AccessiblePlatformState): boolean;
             /**
              * Resets the accessible property to its default value.
              * @param property the accessible property
              */
-            reset_property(property: AccessibleProperty | null): void;
+            reset_property(property: AccessibleProperty): void;
             /**
              * Resets the accessible relation to its default value.
              * @param relation the accessible relation
              */
-            reset_relation(relation: AccessibleRelation | null): void;
+            reset_relation(relation: AccessibleRelation): void;
             /**
              * Resets the accessible state to its default value.
              * @param state the accessible state
              */
-            reset_state(state: AccessibleState | null): void;
+            reset_state(state: AccessibleState): void;
             /**
              * Sets the parent and sibling of an accessible object.
              *
@@ -43027,7 +43027,7 @@ declare module 'gi://Gtk?version=4.0' {
              * states automatically.
              * @param state the platform state to update
              */
-            update_platform_state(state: AccessiblePlatformState | null): void;
+            update_platform_state(state: AccessiblePlatformState): void;
             /**
              * Updates an array of accessible properties.
              *
@@ -43038,7 +43038,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param properties an array of accessible properties
              * @param values an array of `GValues`, one for each property
              */
-            update_property(properties: AccessibleProperty[] | null, values: (GObject.Value | any)[]): void;
+            update_property(properties: AccessibleProperty[], values: (GObject.Value | any)[]): void;
             /**
              * Updates an array of accessible relations.
              *
@@ -43049,7 +43049,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param relations an array of accessible relations
              * @param values an array of `GValues`, one for each relation
              */
-            update_relation(relations: AccessibleRelation[] | null, values: (GObject.Value | any)[]): void;
+            update_relation(relations: AccessibleRelation[], values: (GObject.Value | any)[]): void;
             /**
              * Updates an array of accessible states.
              *
@@ -43060,7 +43060,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param states an array of accessible states
              * @param values an array of `GValues`, one for each state
              */
-            update_state(states: AccessibleState[] | null, values: (GObject.Value | any)[]): void;
+            update_state(states: AccessibleState[], values: (GObject.Value | any)[]): void;
             /**
              * Retrieves the accessible parent for an accessible object.
              *
@@ -43248,7 +43248,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -43289,7 +43289,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -44463,7 +44463,7 @@ declare module 'gi://Gtk?version=4.0' {
                 context: CellAreaContext,
                 widget: Widget,
                 cell_area: Gdk.Rectangle,
-                flags: CellRendererState | null,
+                flags: CellRendererState,
                 edit_only: boolean,
             ): boolean;
             /**
@@ -44483,7 +44483,7 @@ declare module 'gi://Gtk?version=4.0' {
                 renderer: CellRenderer,
                 event: Gdk.Event,
                 cell_area: Gdk.Rectangle,
-                flags: CellRendererState | null,
+                flags: CellRendererState,
             ): boolean;
             /**
              * Adds `renderer` to `area` with the default child cell properties.
@@ -44588,7 +44588,7 @@ declare module 'gi://Gtk?version=4.0' {
                 widget: Widget,
                 event: Gdk.Event,
                 cell_area: Gdk.Rectangle,
-                flags: CellRendererState | null,
+                flags: CellRendererState,
             ): number;
             /**
              * This should be called by the `area`’s owning layout widget
@@ -44601,7 +44601,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param direction the {@link Gtk.DirectionType}
              * @returns `true` if focus remains inside `area` as a result of this call.
              */
-            focus(direction: DirectionType | null): boolean;
+            focus(direction: DirectionType): boolean;
             /**
              * Calls `callback` for every {@link Gtk.CellRenderer} in `area`.
              * @param callback the {@link Gtk.CellCallback} to call
@@ -44821,7 +44821,7 @@ declare module 'gi://Gtk?version=4.0' {
              */
             request_renderer(
                 renderer: CellRenderer,
-                orientation: Orientation | null,
+                orientation: Orientation,
                 widget: Widget,
                 for_size: number,
             ): [number, number];
@@ -44852,7 +44852,7 @@ declare module 'gi://Gtk?version=4.0' {
                 snapshot: Snapshot,
                 background_area: Gdk.Rectangle,
                 cell_area: Gdk.Rectangle,
-                flags: CellRendererState | null,
+                flags: CellRendererState,
                 paint_focus: boolean,
             ): void;
             /**
@@ -45174,7 +45174,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -45215,7 +45215,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -45977,7 +45977,7 @@ declare module 'gi://Gtk?version=4.0' {
              * Sets the orientation of the `orientable`.
              * @param orientation the orientable’s new orientation
              */
-            set_orientation(orientation: Orientation | null): void;
+            set_orientation(orientation: Orientation): void;
             /**
              * Creates a binding between `source_property` on `source` and `target_property`
              * on `target`.
@@ -46022,7 +46022,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -46063,7 +46063,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -47138,7 +47138,7 @@ declare module 'gi://Gtk?version=4.0' {
                 path: string,
                 background_area: Gdk.Rectangle,
                 cell_area: Gdk.Rectangle,
-                flags: CellRendererState | null,
+                flags: CellRendererState,
             ): boolean;
             /**
              * Gets the aligned area used by `cell` inside `cell_area`. Used for finding
@@ -47147,7 +47147,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param flags render flags
              * @param cell_area cell area which would be passed to `gtk_cell_renderer_render()`
              */
-            get_aligned_area(widget: Widget, flags: CellRendererState | null, cell_area: Gdk.Rectangle): Gdk.Rectangle;
+            get_aligned_area(widget: Widget, flags: CellRendererState, cell_area: Gdk.Rectangle): Gdk.Rectangle;
             /**
              * Fills in `xalign` and `yalign` with the appropriate values of `cell`.
              */
@@ -47219,7 +47219,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param cell_state cell renderer state
              * @returns the widget state flags applying to `cell`
              */
-            get_state(widget: Widget | null, cell_state: CellRendererState | null): StateFlags;
+            get_state(widget: Widget | null, cell_state: CellRendererState): StateFlags;
             /**
              * Returns the cell renderer’s visibility.
              * @returns `true` if the cell renderer is visible
@@ -47287,7 +47287,7 @@ declare module 'gi://Gtk?version=4.0' {
                 widget: Widget,
                 background_area: Gdk.Rectangle,
                 cell_area: Gdk.Rectangle,
-                flags: CellRendererState | null,
+                flags: CellRendererState,
             ): void;
             /**
              * Starts editing the contents of this `cell`, through a new {@link Gtk.CellEditable}
@@ -47306,7 +47306,7 @@ declare module 'gi://Gtk?version=4.0' {
                 path: string,
                 background_area: Gdk.Rectangle,
                 cell_area: Gdk.Rectangle,
-                flags: CellRendererState | null,
+                flags: CellRendererState,
             ): CellEditable | null;
             /**
              * Informs the cell renderer that the editing is stopped.
@@ -48040,7 +48040,7 @@ declare module 'gi://Gtk?version=4.0' {
              * Sets the orientation of the `orientable`.
              * @param orientation the orientable’s new orientation
              */
-            set_orientation(orientation: Orientation | null): void;
+            set_orientation(orientation: Orientation): void;
             /**
              * Creates a binding between `source_property` on `source` and `target_property`
              * on `target`.
@@ -48085,7 +48085,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -48126,7 +48126,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -49725,7 +49725,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param message the string to announce
              * @param priority the priority of the announcement
              */
-            announce(message: string, priority: AccessibleAnnouncementPriority | null): void;
+            announce(message: string, priority: AccessibleAnnouncementPriority): void;
             /**
              * Retrieves the accessible parent for an accessible object.
              *
@@ -49771,22 +49771,22 @@ declare module 'gi://Gtk?version=4.0' {
              * @param state platform state to query
              * @returns the value of state for the accessible
              */
-            get_platform_state(state: AccessiblePlatformState | null): boolean;
+            get_platform_state(state: AccessiblePlatformState): boolean;
             /**
              * Resets the accessible property to its default value.
              * @param property the accessible property
              */
-            reset_property(property: AccessibleProperty | null): void;
+            reset_property(property: AccessibleProperty): void;
             /**
              * Resets the accessible relation to its default value.
              * @param relation the accessible relation
              */
-            reset_relation(relation: AccessibleRelation | null): void;
+            reset_relation(relation: AccessibleRelation): void;
             /**
              * Resets the accessible state to its default value.
              * @param state the accessible state
              */
-            reset_state(state: AccessibleState | null): void;
+            reset_state(state: AccessibleState): void;
             /**
              * Sets the parent and sibling of an accessible object.
              *
@@ -49817,7 +49817,7 @@ declare module 'gi://Gtk?version=4.0' {
              * states automatically.
              * @param state the platform state to update
              */
-            update_platform_state(state: AccessiblePlatformState | null): void;
+            update_platform_state(state: AccessiblePlatformState): void;
             /**
              * Updates an array of accessible properties.
              *
@@ -49828,7 +49828,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param properties an array of accessible properties
              * @param values an array of `GValues`, one for each property
              */
-            update_property(properties: AccessibleProperty[] | null, values: (GObject.Value | any)[]): void;
+            update_property(properties: AccessibleProperty[], values: (GObject.Value | any)[]): void;
             /**
              * Updates an array of accessible relations.
              *
@@ -49839,7 +49839,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param relations an array of accessible relations
              * @param values an array of `GValues`, one for each relation
              */
-            update_relation(relations: AccessibleRelation[] | null, values: (GObject.Value | any)[]): void;
+            update_relation(relations: AccessibleRelation[], values: (GObject.Value | any)[]): void;
             /**
              * Updates an array of accessible states.
              *
@@ -49850,7 +49850,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param states an array of accessible states
              * @param values an array of `GValues`, one for each state
              */
-            update_state(states: AccessibleState[] | null, values: (GObject.Value | any)[]): void;
+            update_state(states: AccessibleState[], values: (GObject.Value | any)[]): void;
             /**
              * Retrieves the accessible parent for an accessible object.
              *
@@ -50164,7 +50164,7 @@ declare module 'gi://Gtk?version=4.0' {
              * Sets the orientation of the `orientable`.
              * @param orientation the orientable’s new orientation
              */
-            set_orientation(orientation: Orientation | null): void;
+            set_orientation(orientation: Orientation): void;
             /**
              * Creates a binding between `source_property` on `source` and `target_property`
              * on `target`.
@@ -50209,7 +50209,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -50250,7 +50250,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -50897,7 +50897,7 @@ declare module 'gi://Gtk?version=4.0' {
              * extra space available.
              * @param position the baseline position
              */
-            set_baseline_position(position: BaselinePosition | null): void;
+            set_baseline_position(position: BaselinePosition): void;
             /**
              * Sets the center widget.
              *
@@ -50966,7 +50966,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param message the string to announce
              * @param priority the priority of the announcement
              */
-            announce(message: string, priority: AccessibleAnnouncementPriority | null): void;
+            announce(message: string, priority: AccessibleAnnouncementPriority): void;
             /**
              * Retrieves the accessible parent for an accessible object.
              *
@@ -51012,22 +51012,22 @@ declare module 'gi://Gtk?version=4.0' {
              * @param state platform state to query
              * @returns the value of state for the accessible
              */
-            get_platform_state(state: AccessiblePlatformState | null): boolean;
+            get_platform_state(state: AccessiblePlatformState): boolean;
             /**
              * Resets the accessible property to its default value.
              * @param property the accessible property
              */
-            reset_property(property: AccessibleProperty | null): void;
+            reset_property(property: AccessibleProperty): void;
             /**
              * Resets the accessible relation to its default value.
              * @param relation the accessible relation
              */
-            reset_relation(relation: AccessibleRelation | null): void;
+            reset_relation(relation: AccessibleRelation): void;
             /**
              * Resets the accessible state to its default value.
              * @param state the accessible state
              */
-            reset_state(state: AccessibleState | null): void;
+            reset_state(state: AccessibleState): void;
             /**
              * Sets the parent and sibling of an accessible object.
              *
@@ -51058,7 +51058,7 @@ declare module 'gi://Gtk?version=4.0' {
              * states automatically.
              * @param state the platform state to update
              */
-            update_platform_state(state: AccessiblePlatformState | null): void;
+            update_platform_state(state: AccessiblePlatformState): void;
             /**
              * Updates an array of accessible properties.
              *
@@ -51069,7 +51069,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param properties an array of accessible properties
              * @param values an array of `GValues`, one for each property
              */
-            update_property(properties: AccessibleProperty[] | null, values: (GObject.Value | any)[]): void;
+            update_property(properties: AccessibleProperty[], values: (GObject.Value | any)[]): void;
             /**
              * Updates an array of accessible relations.
              *
@@ -51080,7 +51080,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param relations an array of accessible relations
              * @param values an array of `GValues`, one for each relation
              */
-            update_relation(relations: AccessibleRelation[] | null, values: (GObject.Value | any)[]): void;
+            update_relation(relations: AccessibleRelation[], values: (GObject.Value | any)[]): void;
             /**
              * Updates an array of accessible states.
              *
@@ -51091,7 +51091,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param states an array of accessible states
              * @param values an array of `GValues`, one for each state
              */
-            update_state(states: AccessibleState[] | null, values: (GObject.Value | any)[]): void;
+            update_state(states: AccessibleState[], values: (GObject.Value | any)[]): void;
             /**
              * Retrieves the accessible parent for an accessible object.
              *
@@ -51244,7 +51244,7 @@ declare module 'gi://Gtk?version=4.0' {
              * Sets the orientation of the `orientable`.
              * @param orientation the orientable’s new orientation
              */
-            set_orientation(orientation: Orientation | null): void;
+            set_orientation(orientation: Orientation): void;
             /**
              * Creates a binding between `source_property` on `source` and `target_property`
              * on `target`.
@@ -51289,7 +51289,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -51330,7 +51330,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -51826,7 +51826,7 @@ declare module 'gi://Gtk?version=4.0' {
              * Sets the new baseline position of `self`
              * @param baseline_position the new baseline position
              */
-            set_baseline_position(baseline_position: BaselinePosition | null): void;
+            set_baseline_position(baseline_position: BaselinePosition): void;
             /**
              * Sets the new center widget of `self`.
              *
@@ -51845,7 +51845,7 @@ declare module 'gi://Gtk?version=4.0' {
              * Sets the orientation of `self`.
              * @param orientation the new orientation
              */
-            set_orientation(orientation: Orientation | null): void;
+            set_orientation(orientation: Orientation): void;
             /**
              * Sets whether to shrink the center widget after other children.
              *
@@ -52768,7 +52768,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param message the string to announce
              * @param priority the priority of the announcement
              */
-            announce(message: string, priority: AccessibleAnnouncementPriority | null): void;
+            announce(message: string, priority: AccessibleAnnouncementPriority): void;
             /**
              * Retrieves the accessible parent for an accessible object.
              *
@@ -52814,22 +52814,22 @@ declare module 'gi://Gtk?version=4.0' {
              * @param state platform state to query
              * @returns the value of state for the accessible
              */
-            get_platform_state(state: AccessiblePlatformState | null): boolean;
+            get_platform_state(state: AccessiblePlatformState): boolean;
             /**
              * Resets the accessible property to its default value.
              * @param property the accessible property
              */
-            reset_property(property: AccessibleProperty | null): void;
+            reset_property(property: AccessibleProperty): void;
             /**
              * Resets the accessible relation to its default value.
              * @param relation the accessible relation
              */
-            reset_relation(relation: AccessibleRelation | null): void;
+            reset_relation(relation: AccessibleRelation): void;
             /**
              * Resets the accessible state to its default value.
              * @param state the accessible state
              */
-            reset_state(state: AccessibleState | null): void;
+            reset_state(state: AccessibleState): void;
             /**
              * Sets the parent and sibling of an accessible object.
              *
@@ -52860,7 +52860,7 @@ declare module 'gi://Gtk?version=4.0' {
              * states automatically.
              * @param state the platform state to update
              */
-            update_platform_state(state: AccessiblePlatformState | null): void;
+            update_platform_state(state: AccessiblePlatformState): void;
             /**
              * Updates an array of accessible properties.
              *
@@ -52871,7 +52871,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param properties an array of accessible properties
              * @param values an array of `GValues`, one for each property
              */
-            update_property(properties: AccessibleProperty[] | null, values: (GObject.Value | any)[]): void;
+            update_property(properties: AccessibleProperty[], values: (GObject.Value | any)[]): void;
             /**
              * Updates an array of accessible relations.
              *
@@ -52882,7 +52882,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param relations an array of accessible relations
              * @param values an array of `GValues`, one for each relation
              */
-            update_relation(relations: AccessibleRelation[] | null, values: (GObject.Value | any)[]): void;
+            update_relation(relations: AccessibleRelation[], values: (GObject.Value | any)[]): void;
             /**
              * Updates an array of accessible states.
              *
@@ -52893,7 +52893,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param states an array of accessible states
              * @param values an array of `GValues`, one for each state
              */
-            update_state(states: AccessibleState[] | null, values: (GObject.Value | any)[]): void;
+            update_state(states: AccessibleState[], values: (GObject.Value | any)[]): void;
             /**
              * Retrieves the accessible parent for an accessible object.
              *
@@ -53190,7 +53190,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -53231,7 +53231,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -53751,7 +53751,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param direction direction of focus movement
              * @returns true if focus ended up inside `widget`
              */
-            child_focus(direction: DirectionType | null): boolean;
+            child_focus(direction: DirectionType): boolean;
             /**
              * Computes the bounds for `widget` in the coordinate space of `target`.
              *
@@ -53786,7 +53786,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param orientation expand direction
              * @returns whether widget tree rooted here should be expanded
              */
-            compute_expand(orientation: Orientation | null): boolean;
+            compute_expand(orientation: Orientation): boolean;
             /**
              * Translates the given `point` in `widget`'s coordinates to coordinates
              * in `target`’s coordinate system.
@@ -54394,7 +54394,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param orientation the orientation to query
              * @returns the size of `widget` in `orientation`
              */
-            get_size(orientation: Orientation | null): number;
+            get_size(orientation: Orientation): number;
             /**
              * Gets the size request that was explicitly set for the widget.
              *
@@ -54719,7 +54719,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param direction direction of focus movement
              * @returns true if stopping keyboard navigation is fine, false   if the emitting widget should try to handle the keyboard   navigation attempt in its parent widget
              */
-            keynav_failed(direction: DirectionType | null): boolean;
+            keynav_failed(direction: DirectionType): boolean;
             /**
              * Returns the widgets for which this widget is the target of a
              * mnemonic.
@@ -54753,7 +54753,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param orientation the orientation to measure
              * @param for_size Size for the opposite of `orientation`, i.e.   if `orientation` is {@link Gtk.Orientation.HORIZONTAL}, this is   the height the widget should be measured with. The {@link Gtk.Orientation.VERTICAL}   case is analogous. This way, both height-for-width and width-for-height   requests can be implemented. If no size is known, -1 can be passed.
              */
-            measure(orientation: Orientation | null, for_size: number): [number, number, number, number];
+            measure(orientation: Orientation, for_size: number): [number, number, number, number];
             /**
              * Emits the `Gtk.Widget::mnemonic-activate` signal.
              * @param group_cycling true if there are other widgets with the same mnemonic
@@ -54804,7 +54804,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param flags flags to influence what is picked
              * @returns the widget's descendant at (x, y)
              */
-            pick(x: number, y: number, flags: PickFlags | null): Widget | null;
+            pick(x: number, y: number, flags: PickFlags): Widget | null;
             /**
              * Flags the widget for a rerun of the {@link Gtk.Widget.size_allocate}
              * function.
@@ -54987,7 +54987,7 @@ declare module 'gi://Gtk?version=4.0' {
              * the value set by {@link Gtk.Widget.set_default_direction} will be used.
              * @param dir the new direction
              */
-            set_direction(dir: TextDirection | null): void;
+            set_direction(dir: TextDirection): void;
             /**
              * Set the focus child of the widget.
              *
@@ -55049,7 +55049,7 @@ declare module 'gi://Gtk?version=4.0' {
              * Sets the horizontal alignment of the widget.
              * @param align the horizontal alignment
              */
-            set_halign(align: Align | null): void;
+            set_halign(align: Align): void;
             /**
              * Sets the `has-tooltip` property on the widget.
              * @param has_tooltip whether or not `widget` has a tooltip
@@ -55189,7 +55189,7 @@ declare module 'gi://Gtk?version=4.0' {
              * The default value is {@link Gtk.Overflow.VISIBLE}.
              * @param overflow desired overflow value
              */
-            set_overflow(overflow: Overflow | null): void;
+            set_overflow(overflow: Overflow): void;
             /**
              * Sets the parent widget of the widget.
              *
@@ -55271,7 +55271,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param flags state flags to turn on
              * @param clear whether to clear state before turning on `flags`
              */
-            set_state_flags(flags: StateFlags | null, clear: boolean): void;
+            set_state_flags(flags: StateFlags, clear: boolean): void;
             /**
              * Sets the contents of the tooltip for widget.
              *
@@ -55303,7 +55303,7 @@ declare module 'gi://Gtk?version=4.0' {
              * Sets the vertical alignment of the widget.
              * @param align the vertical alignment
              */
-            set_valign(align: Align | null): void;
+            set_valign(align: Align): void;
             /**
              * Sets whether the widget would like any available extra vertical
              * space.
@@ -55424,7 +55424,7 @@ declare module 'gi://Gtk?version=4.0' {
              * This function is for use in widget implementations.
              * @param flags state flags to turn off
              */
-            unset_state_flags(flags: StateFlags | null): void;
+            unset_state_flags(flags: StateFlags): void;
             /**
              * Computes whether a container should give this
              *   widget extra space when possible.
@@ -55996,7 +55996,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param message the string to announce
              * @param priority the priority of the announcement
              */
-            announce(message: string, priority: AccessibleAnnouncementPriority | null): void;
+            announce(message: string, priority: AccessibleAnnouncementPriority): void;
             /**
              * Retrieves the accessible parent for an accessible object.
              *
@@ -56042,22 +56042,22 @@ declare module 'gi://Gtk?version=4.0' {
              * @param state platform state to query
              * @returns the value of state for the accessible
              */
-            get_platform_state(state: AccessiblePlatformState | null): boolean;
+            get_platform_state(state: AccessiblePlatformState): boolean;
             /**
              * Resets the accessible property to its default value.
              * @param property the accessible property
              */
-            reset_property(property: AccessibleProperty | null): void;
+            reset_property(property: AccessibleProperty): void;
             /**
              * Resets the accessible relation to its default value.
              * @param relation the accessible relation
              */
-            reset_relation(relation: AccessibleRelation | null): void;
+            reset_relation(relation: AccessibleRelation): void;
             /**
              * Resets the accessible state to its default value.
              * @param state the accessible state
              */
-            reset_state(state: AccessibleState | null): void;
+            reset_state(state: AccessibleState): void;
             /**
              * Sets the parent and sibling of an accessible object.
              *
@@ -56088,7 +56088,7 @@ declare module 'gi://Gtk?version=4.0' {
              * states automatically.
              * @param state the platform state to update
              */
-            update_platform_state(state: AccessiblePlatformState | null): void;
+            update_platform_state(state: AccessiblePlatformState): void;
             /**
              * Updates an array of accessible properties.
              *
@@ -56099,7 +56099,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param properties an array of accessible properties
              * @param values an array of `GValues`, one for each property
              */
-            update_property(properties: AccessibleProperty[] | null, values: (GObject.Value | any)[]): void;
+            update_property(properties: AccessibleProperty[], values: (GObject.Value | any)[]): void;
             /**
              * Updates an array of accessible relations.
              *
@@ -56110,7 +56110,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param relations an array of accessible relations
              * @param values an array of `GValues`, one for each relation
              */
-            update_relation(relations: AccessibleRelation[] | null, values: (GObject.Value | any)[]): void;
+            update_relation(relations: AccessibleRelation[], values: (GObject.Value | any)[]): void;
             /**
              * Updates an array of accessible states.
              *
@@ -56121,7 +56121,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param states an array of accessible states
              * @param values an array of `GValues`, one for each state
              */
-            update_state(states: AccessibleState[] | null, values: (GObject.Value | any)[]): void;
+            update_state(states: AccessibleState[], values: (GObject.Value | any)[]): void;
             /**
              * Retrieves the accessible parent for an accessible object.
              *
@@ -56287,7 +56287,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param colors_per_line the number of colors to show in each row/column
              * @param colors the colors of the palette
              */
-            add_palette(orientation: Orientation | null, colors_per_line: number, colors?: Gdk.RGBA[] | null): void;
+            add_palette(orientation: Orientation, colors_per_line: number, colors?: Gdk.RGBA[] | null): void;
             /**
              * Gets the currently-selected color.
              */
@@ -56391,7 +56391,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -56432,7 +56432,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -57529,7 +57529,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param colors_per_line the number of colors to show in each row/column
              * @param colors the colors of the palette
              */
-            add_palette(orientation: Orientation | null, colors_per_line: number, colors?: Gdk.RGBA[] | null): void;
+            add_palette(orientation: Orientation, colors_per_line: number, colors?: Gdk.RGBA[] | null): void;
             /**
              * Gets the currently-selected color.
              */
@@ -57633,7 +57633,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -57674,7 +57674,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -58194,7 +58194,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param direction direction of focus movement
              * @returns true if focus ended up inside `widget`
              */
-            child_focus(direction: DirectionType | null): boolean;
+            child_focus(direction: DirectionType): boolean;
             /**
              * Computes the bounds for `widget` in the coordinate space of `target`.
              *
@@ -58229,7 +58229,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param orientation expand direction
              * @returns whether widget tree rooted here should be expanded
              */
-            compute_expand(orientation: Orientation | null): boolean;
+            compute_expand(orientation: Orientation): boolean;
             /**
              * Translates the given `point` in `widget`'s coordinates to coordinates
              * in `target`’s coordinate system.
@@ -58837,7 +58837,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param orientation the orientation to query
              * @returns the size of `widget` in `orientation`
              */
-            get_size(orientation: Orientation | null): number;
+            get_size(orientation: Orientation): number;
             /**
              * Gets the size request that was explicitly set for the widget.
              *
@@ -59162,7 +59162,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param direction direction of focus movement
              * @returns true if stopping keyboard navigation is fine, false   if the emitting widget should try to handle the keyboard   navigation attempt in its parent widget
              */
-            keynav_failed(direction: DirectionType | null): boolean;
+            keynav_failed(direction: DirectionType): boolean;
             /**
              * Returns the widgets for which this widget is the target of a
              * mnemonic.
@@ -59196,7 +59196,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param orientation the orientation to measure
              * @param for_size Size for the opposite of `orientation`, i.e.   if `orientation` is {@link Gtk.Orientation.HORIZONTAL}, this is   the height the widget should be measured with. The {@link Gtk.Orientation.VERTICAL}   case is analogous. This way, both height-for-width and width-for-height   requests can be implemented. If no size is known, -1 can be passed.
              */
-            measure(orientation: Orientation | null, for_size: number): [number, number, number, number];
+            measure(orientation: Orientation, for_size: number): [number, number, number, number];
             /**
              * Emits the `Gtk.Widget::mnemonic-activate` signal.
              * @param group_cycling true if there are other widgets with the same mnemonic
@@ -59247,7 +59247,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param flags flags to influence what is picked
              * @returns the widget's descendant at (x, y)
              */
-            pick(x: number, y: number, flags: PickFlags | null): Widget | null;
+            pick(x: number, y: number, flags: PickFlags): Widget | null;
             /**
              * Flags the widget for a rerun of the {@link Gtk.Widget.size_allocate}
              * function.
@@ -59430,7 +59430,7 @@ declare module 'gi://Gtk?version=4.0' {
              * the value set by {@link Gtk.Widget.set_default_direction} will be used.
              * @param dir the new direction
              */
-            set_direction(dir: TextDirection | null): void;
+            set_direction(dir: TextDirection): void;
             /**
              * Set the focus child of the widget.
              *
@@ -59492,7 +59492,7 @@ declare module 'gi://Gtk?version=4.0' {
              * Sets the horizontal alignment of the widget.
              * @param align the horizontal alignment
              */
-            set_halign(align: Align | null): void;
+            set_halign(align: Align): void;
             /**
              * Sets the `has-tooltip` property on the widget.
              * @param has_tooltip whether or not `widget` has a tooltip
@@ -59632,7 +59632,7 @@ declare module 'gi://Gtk?version=4.0' {
              * The default value is {@link Gtk.Overflow.VISIBLE}.
              * @param overflow desired overflow value
              */
-            set_overflow(overflow: Overflow | null): void;
+            set_overflow(overflow: Overflow): void;
             /**
              * Sets the parent widget of the widget.
              *
@@ -59714,7 +59714,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param flags state flags to turn on
              * @param clear whether to clear state before turning on `flags`
              */
-            set_state_flags(flags: StateFlags | null, clear: boolean): void;
+            set_state_flags(flags: StateFlags, clear: boolean): void;
             /**
              * Sets the contents of the tooltip for widget.
              *
@@ -59746,7 +59746,7 @@ declare module 'gi://Gtk?version=4.0' {
              * Sets the vertical alignment of the widget.
              * @param align the vertical alignment
              */
-            set_valign(align: Align | null): void;
+            set_valign(align: Align): void;
             /**
              * Sets whether the widget would like any available extra vertical
              * space.
@@ -59867,7 +59867,7 @@ declare module 'gi://Gtk?version=4.0' {
              * This function is for use in widget implementations.
              * @param flags state flags to turn off
              */
-            unset_state_flags(flags: StateFlags | null): void;
+            unset_state_flags(flags: StateFlags): void;
             /**
              * Computes whether a container should give this
              *   widget extra space when possible.
@@ -60338,7 +60338,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param message the string to announce
              * @param priority the priority of the announcement
              */
-            announce(message: string, priority: AccessibleAnnouncementPriority | null): void;
+            announce(message: string, priority: AccessibleAnnouncementPriority): void;
             /**
              * Retrieves the accessible parent for an accessible object.
              *
@@ -60384,22 +60384,22 @@ declare module 'gi://Gtk?version=4.0' {
              * @param state platform state to query
              * @returns the value of state for the accessible
              */
-            get_platform_state(state: AccessiblePlatformState | null): boolean;
+            get_platform_state(state: AccessiblePlatformState): boolean;
             /**
              * Resets the accessible property to its default value.
              * @param property the accessible property
              */
-            reset_property(property: AccessibleProperty | null): void;
+            reset_property(property: AccessibleProperty): void;
             /**
              * Resets the accessible relation to its default value.
              * @param relation the accessible relation
              */
-            reset_relation(relation: AccessibleRelation | null): void;
+            reset_relation(relation: AccessibleRelation): void;
             /**
              * Resets the accessible state to its default value.
              * @param state the accessible state
              */
-            reset_state(state: AccessibleState | null): void;
+            reset_state(state: AccessibleState): void;
             /**
              * Sets the parent and sibling of an accessible object.
              *
@@ -60430,7 +60430,7 @@ declare module 'gi://Gtk?version=4.0' {
              * states automatically.
              * @param state the platform state to update
              */
-            update_platform_state(state: AccessiblePlatformState | null): void;
+            update_platform_state(state: AccessiblePlatformState): void;
             /**
              * Updates an array of accessible properties.
              *
@@ -60441,7 +60441,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param properties an array of accessible properties
              * @param values an array of `GValues`, one for each property
              */
-            update_property(properties: AccessibleProperty[] | null, values: (GObject.Value | any)[]): void;
+            update_property(properties: AccessibleProperty[], values: (GObject.Value | any)[]): void;
             /**
              * Updates an array of accessible relations.
              *
@@ -60452,7 +60452,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param relations an array of accessible relations
              * @param values an array of `GValues`, one for each relation
              */
-            update_relation(relations: AccessibleRelation[] | null, values: (GObject.Value | any)[]): void;
+            update_relation(relations: AccessibleRelation[], values: (GObject.Value | any)[]): void;
             /**
              * Updates an array of accessible states.
              *
@@ -60463,7 +60463,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param states an array of accessible states
              * @param values an array of `GValues`, one for each state
              */
-            update_state(states: AccessibleState[] | null, values: (GObject.Value | any)[]): void;
+            update_state(states: AccessibleState[], values: (GObject.Value | any)[]): void;
             /**
              * Retrieves the accessible parent for an accessible object.
              *
@@ -60629,7 +60629,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param colors_per_line the number of colors to show in each row/column
              * @param colors the colors of the palette
              */
-            add_palette(orientation: Orientation | null, colors_per_line: number, colors?: Gdk.RGBA[] | null): void;
+            add_palette(orientation: Orientation, colors_per_line: number, colors?: Gdk.RGBA[] | null): void;
             /**
              * Gets the currently-selected color.
              */
@@ -60733,7 +60733,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -60774,7 +60774,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -61547,7 +61547,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param message the string to announce
              * @param priority the priority of the announcement
              */
-            announce(message: string, priority: AccessibleAnnouncementPriority | null): void;
+            announce(message: string, priority: AccessibleAnnouncementPriority): void;
             /**
              * Retrieves the accessible parent for an accessible object.
              *
@@ -61593,22 +61593,22 @@ declare module 'gi://Gtk?version=4.0' {
              * @param state platform state to query
              * @returns the value of state for the accessible
              */
-            get_platform_state(state: AccessiblePlatformState | null): boolean;
+            get_platform_state(state: AccessiblePlatformState): boolean;
             /**
              * Resets the accessible property to its default value.
              * @param property the accessible property
              */
-            reset_property(property: AccessibleProperty | null): void;
+            reset_property(property: AccessibleProperty): void;
             /**
              * Resets the accessible relation to its default value.
              * @param relation the accessible relation
              */
-            reset_relation(relation: AccessibleRelation | null): void;
+            reset_relation(relation: AccessibleRelation): void;
             /**
              * Resets the accessible state to its default value.
              * @param state the accessible state
              */
-            reset_state(state: AccessibleState | null): void;
+            reset_state(state: AccessibleState): void;
             /**
              * Sets the parent and sibling of an accessible object.
              *
@@ -61639,7 +61639,7 @@ declare module 'gi://Gtk?version=4.0' {
              * states automatically.
              * @param state the platform state to update
              */
-            update_platform_state(state: AccessiblePlatformState | null): void;
+            update_platform_state(state: AccessiblePlatformState): void;
             /**
              * Updates an array of accessible properties.
              *
@@ -61650,7 +61650,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param properties an array of accessible properties
              * @param values an array of `GValues`, one for each property
              */
-            update_property(properties: AccessibleProperty[] | null, values: (GObject.Value | any)[]): void;
+            update_property(properties: AccessibleProperty[], values: (GObject.Value | any)[]): void;
             /**
              * Updates an array of accessible relations.
              *
@@ -61661,7 +61661,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param relations an array of accessible relations
              * @param values an array of `GValues`, one for each relation
              */
-            update_relation(relations: AccessibleRelation[] | null, values: (GObject.Value | any)[]): void;
+            update_relation(relations: AccessibleRelation[], values: (GObject.Value | any)[]): void;
             /**
              * Updates an array of accessible states.
              *
@@ -61672,7 +61672,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param states an array of accessible states
              * @param values an array of `GValues`, one for each state
              */
-            update_state(states: AccessibleState[] | null, values: (GObject.Value | any)[]): void;
+            update_state(states: AccessibleState[], values: (GObject.Value | any)[]): void;
             /**
              * Retrieves the accessible parent for an accessible object.
              *
@@ -61860,7 +61860,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -61901,7 +61901,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -62691,7 +62691,7 @@ declare module 'gi://Gtk?version=4.0' {
             scroll_to(
                 pos: number,
                 column: ColumnViewColumn | null,
-                flags: ListScrollFlags | null,
+                flags: ListScrollFlags,
                 scroll?: ScrollInfo | null,
             ): void;
             /**
@@ -62758,7 +62758,7 @@ declare module 'gi://Gtk?version=4.0' {
              * focus in the columnview.
              * @param tab_behavior The desired tab behavior
              */
-            set_tab_behavior(tab_behavior: ListTabBehavior | null): void;
+            set_tab_behavior(tab_behavior: ListTabBehavior): void;
             /**
              * Sets the sorting of the view.
              *
@@ -62775,7 +62775,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param column the column to sort by
              * @param direction the direction to sort in
              */
-            sort_by_column(column: ColumnViewColumn | null, direction: SortType | null): void;
+            sort_by_column(column: ColumnViewColumn | null, direction: SortType): void;
             /**
              * The accessible role of the given {@link Gtk.Accessible} implementation.
              *
@@ -62845,7 +62845,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param message the string to announce
              * @param priority the priority of the announcement
              */
-            announce(message: string, priority: AccessibleAnnouncementPriority | null): void;
+            announce(message: string, priority: AccessibleAnnouncementPriority): void;
             /**
              * Retrieves the accessible parent for an accessible object.
              *
@@ -62891,22 +62891,22 @@ declare module 'gi://Gtk?version=4.0' {
              * @param state platform state to query
              * @returns the value of state for the accessible
              */
-            get_platform_state(state: AccessiblePlatformState | null): boolean;
+            get_platform_state(state: AccessiblePlatformState): boolean;
             /**
              * Resets the accessible property to its default value.
              * @param property the accessible property
              */
-            reset_property(property: AccessibleProperty | null): void;
+            reset_property(property: AccessibleProperty): void;
             /**
              * Resets the accessible relation to its default value.
              * @param relation the accessible relation
              */
-            reset_relation(relation: AccessibleRelation | null): void;
+            reset_relation(relation: AccessibleRelation): void;
             /**
              * Resets the accessible state to its default value.
              * @param state the accessible state
              */
-            reset_state(state: AccessibleState | null): void;
+            reset_state(state: AccessibleState): void;
             /**
              * Sets the parent and sibling of an accessible object.
              *
@@ -62937,7 +62937,7 @@ declare module 'gi://Gtk?version=4.0' {
              * states automatically.
              * @param state the platform state to update
              */
-            update_platform_state(state: AccessiblePlatformState | null): void;
+            update_platform_state(state: AccessiblePlatformState): void;
             /**
              * Updates an array of accessible properties.
              *
@@ -62948,7 +62948,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param properties an array of accessible properties
              * @param values an array of `GValues`, one for each property
              */
-            update_property(properties: AccessibleProperty[] | null, values: (GObject.Value | any)[]): void;
+            update_property(properties: AccessibleProperty[], values: (GObject.Value | any)[]): void;
             /**
              * Updates an array of accessible relations.
              *
@@ -62959,7 +62959,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param relations an array of accessible relations
              * @param values an array of `GValues`, one for each relation
              */
-            update_relation(relations: AccessibleRelation[] | null, values: (GObject.Value | any)[]): void;
+            update_relation(relations: AccessibleRelation[], values: (GObject.Value | any)[]): void;
             /**
              * Updates an array of accessible states.
              *
@@ -62970,7 +62970,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param states an array of accessible states
              * @param values an array of `GValues`, one for each state
              */
-            update_state(states: AccessibleState[] | null, values: (GObject.Value | any)[]): void;
+            update_state(states: AccessibleState[], values: (GObject.Value | any)[]): void;
             /**
              * Retrieves the accessible parent for an accessible object.
              *
@@ -63156,7 +63156,7 @@ declare module 'gi://Gtk?version=4.0' {
              * below the minimum width or below the natural width.
              * @param policy the horizontal {@link Gtk.ScrollablePolicy}
              */
-            set_hscroll_policy(policy: ScrollablePolicy | null): void;
+            set_hscroll_policy(policy: ScrollablePolicy): void;
             /**
              * Sets the vertical adjustment of the {@link Gtk.Scrollable}.
              * @param vadjustment a {@link Gtk.Adjustment}
@@ -63169,7 +63169,7 @@ declare module 'gi://Gtk?version=4.0' {
              * below the minimum height or below the natural height.
              * @param policy the vertical {@link Gtk.ScrollablePolicy}
              */
-            set_vscroll_policy(policy: ScrollablePolicy | null): void;
+            set_vscroll_policy(policy: ScrollablePolicy): void;
             /**
              * Returns the size of a non-scrolling border around the
              * outside of the scrollable.
@@ -63224,7 +63224,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -63265,7 +63265,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -65093,7 +65093,7 @@ declare module 'gi://Gtk?version=4.0' {
              * its sensitivity depending on the model contents.
              * @param sensitivity specify the sensitivity of the dropdown button
              */
-            set_button_sensitivity(sensitivity: SensitivityType | null): void;
+            set_button_sensitivity(sensitivity: SensitivityType): void;
             /**
              * Sets the child widget of `combo_box`.
              * @param child the child widget
@@ -65687,7 +65687,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param message the string to announce
              * @param priority the priority of the announcement
              */
-            announce(message: string, priority: AccessibleAnnouncementPriority | null): void;
+            announce(message: string, priority: AccessibleAnnouncementPriority): void;
             /**
              * Retrieves the accessible parent for an accessible object.
              *
@@ -65733,22 +65733,22 @@ declare module 'gi://Gtk?version=4.0' {
              * @param state platform state to query
              * @returns the value of state for the accessible
              */
-            get_platform_state(state: AccessiblePlatformState | null): boolean;
+            get_platform_state(state: AccessiblePlatformState): boolean;
             /**
              * Resets the accessible property to its default value.
              * @param property the accessible property
              */
-            reset_property(property: AccessibleProperty | null): void;
+            reset_property(property: AccessibleProperty): void;
             /**
              * Resets the accessible relation to its default value.
              * @param relation the accessible relation
              */
-            reset_relation(relation: AccessibleRelation | null): void;
+            reset_relation(relation: AccessibleRelation): void;
             /**
              * Resets the accessible state to its default value.
              * @param state the accessible state
              */
-            reset_state(state: AccessibleState | null): void;
+            reset_state(state: AccessibleState): void;
             /**
              * Sets the parent and sibling of an accessible object.
              *
@@ -65779,7 +65779,7 @@ declare module 'gi://Gtk?version=4.0' {
              * states automatically.
              * @param state the platform state to update
              */
-            update_platform_state(state: AccessiblePlatformState | null): void;
+            update_platform_state(state: AccessiblePlatformState): void;
             /**
              * Updates an array of accessible properties.
              *
@@ -65790,7 +65790,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param properties an array of accessible properties
              * @param values an array of `GValues`, one for each property
              */
-            update_property(properties: AccessibleProperty[] | null, values: (GObject.Value | any)[]): void;
+            update_property(properties: AccessibleProperty[], values: (GObject.Value | any)[]): void;
             /**
              * Updates an array of accessible relations.
              *
@@ -65801,7 +65801,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param relations an array of accessible relations
              * @param values an array of `GValues`, one for each relation
              */
-            update_relation(relations: AccessibleRelation[] | null, values: (GObject.Value | any)[]): void;
+            update_relation(relations: AccessibleRelation[], values: (GObject.Value | any)[]): void;
             /**
              * Updates an array of accessible states.
              *
@@ -65812,7 +65812,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param states an array of accessible states
              * @param values an array of `GValues`, one for each state
              */
-            update_state(states: AccessibleState[] | null, values: (GObject.Value | any)[]): void;
+            update_state(states: AccessibleState[], values: (GObject.Value | any)[]): void;
             /**
              * Retrieves the accessible parent for an accessible object.
              *
@@ -66208,7 +66208,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -66249,7 +66249,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -66769,7 +66769,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param direction direction of focus movement
              * @returns true if focus ended up inside `widget`
              */
-            child_focus(direction: DirectionType | null): boolean;
+            child_focus(direction: DirectionType): boolean;
             /**
              * Computes the bounds for `widget` in the coordinate space of `target`.
              *
@@ -66804,7 +66804,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param orientation expand direction
              * @returns whether widget tree rooted here should be expanded
              */
-            compute_expand(orientation: Orientation | null): boolean;
+            compute_expand(orientation: Orientation): boolean;
             /**
              * Translates the given `point` in `widget`'s coordinates to coordinates
              * in `target`’s coordinate system.
@@ -67412,7 +67412,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param orientation the orientation to query
              * @returns the size of `widget` in `orientation`
              */
-            get_size(orientation: Orientation | null): number;
+            get_size(orientation: Orientation): number;
             /**
              * Gets the size request that was explicitly set for the widget.
              *
@@ -67737,7 +67737,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param direction direction of focus movement
              * @returns true if stopping keyboard navigation is fine, false   if the emitting widget should try to handle the keyboard   navigation attempt in its parent widget
              */
-            keynav_failed(direction: DirectionType | null): boolean;
+            keynav_failed(direction: DirectionType): boolean;
             /**
              * Returns the widgets for which this widget is the target of a
              * mnemonic.
@@ -67771,7 +67771,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param orientation the orientation to measure
              * @param for_size Size for the opposite of `orientation`, i.e.   if `orientation` is {@link Gtk.Orientation.HORIZONTAL}, this is   the height the widget should be measured with. The {@link Gtk.Orientation.VERTICAL}   case is analogous. This way, both height-for-width and width-for-height   requests can be implemented. If no size is known, -1 can be passed.
              */
-            measure(orientation: Orientation | null, for_size: number): [number, number, number, number];
+            measure(orientation: Orientation, for_size: number): [number, number, number, number];
             /**
              * Emits the `Gtk.Widget::mnemonic-activate` signal.
              * @param group_cycling true if there are other widgets with the same mnemonic
@@ -67822,7 +67822,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param flags flags to influence what is picked
              * @returns the widget's descendant at (x, y)
              */
-            pick(x: number, y: number, flags: PickFlags | null): Widget | null;
+            pick(x: number, y: number, flags: PickFlags): Widget | null;
             /**
              * Flags the widget for a rerun of the {@link Gtk.Widget.size_allocate}
              * function.
@@ -68005,7 +68005,7 @@ declare module 'gi://Gtk?version=4.0' {
              * the value set by {@link Gtk.Widget.set_default_direction} will be used.
              * @param dir the new direction
              */
-            set_direction(dir: TextDirection | null): void;
+            set_direction(dir: TextDirection): void;
             /**
              * Set the focus child of the widget.
              *
@@ -68067,7 +68067,7 @@ declare module 'gi://Gtk?version=4.0' {
              * Sets the horizontal alignment of the widget.
              * @param align the horizontal alignment
              */
-            set_halign(align: Align | null): void;
+            set_halign(align: Align): void;
             /**
              * Sets the `has-tooltip` property on the widget.
              * @param has_tooltip whether or not `widget` has a tooltip
@@ -68207,7 +68207,7 @@ declare module 'gi://Gtk?version=4.0' {
              * The default value is {@link Gtk.Overflow.VISIBLE}.
              * @param overflow desired overflow value
              */
-            set_overflow(overflow: Overflow | null): void;
+            set_overflow(overflow: Overflow): void;
             /**
              * Sets the parent widget of the widget.
              *
@@ -68289,7 +68289,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param flags state flags to turn on
              * @param clear whether to clear state before turning on `flags`
              */
-            set_state_flags(flags: StateFlags | null, clear: boolean): void;
+            set_state_flags(flags: StateFlags, clear: boolean): void;
             /**
              * Sets the contents of the tooltip for widget.
              *
@@ -68321,7 +68321,7 @@ declare module 'gi://Gtk?version=4.0' {
              * Sets the vertical alignment of the widget.
              * @param align the vertical alignment
              */
-            set_valign(align: Align | null): void;
+            set_valign(align: Align): void;
             /**
              * Sets whether the widget would like any available extra vertical
              * space.
@@ -68442,7 +68442,7 @@ declare module 'gi://Gtk?version=4.0' {
              * This function is for use in widget implementations.
              * @param flags state flags to turn off
              */
-            unset_state_flags(flags: StateFlags | null): void;
+            unset_state_flags(flags: StateFlags): void;
             /**
              * Computes whether a container should give this
              *   widget extra space when possible.
@@ -69704,7 +69704,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -69745,7 +69745,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -70265,7 +70265,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param direction direction of focus movement
              * @returns true if focus ended up inside `widget`
              */
-            child_focus(direction: DirectionType | null): boolean;
+            child_focus(direction: DirectionType): boolean;
             /**
              * Computes the bounds for `widget` in the coordinate space of `target`.
              *
@@ -70300,7 +70300,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param orientation expand direction
              * @returns whether widget tree rooted here should be expanded
              */
-            compute_expand(orientation: Orientation | null): boolean;
+            compute_expand(orientation: Orientation): boolean;
             /**
              * Translates the given `point` in `widget`'s coordinates to coordinates
              * in `target`’s coordinate system.
@@ -70908,7 +70908,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param orientation the orientation to query
              * @returns the size of `widget` in `orientation`
              */
-            get_size(orientation: Orientation | null): number;
+            get_size(orientation: Orientation): number;
             /**
              * Gets the size request that was explicitly set for the widget.
              *
@@ -71233,7 +71233,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param direction direction of focus movement
              * @returns true if stopping keyboard navigation is fine, false   if the emitting widget should try to handle the keyboard   navigation attempt in its parent widget
              */
-            keynav_failed(direction: DirectionType | null): boolean;
+            keynav_failed(direction: DirectionType): boolean;
             /**
              * Returns the widgets for which this widget is the target of a
              * mnemonic.
@@ -71267,7 +71267,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param orientation the orientation to measure
              * @param for_size Size for the opposite of `orientation`, i.e.   if `orientation` is {@link Gtk.Orientation.HORIZONTAL}, this is   the height the widget should be measured with. The {@link Gtk.Orientation.VERTICAL}   case is analogous. This way, both height-for-width and width-for-height   requests can be implemented. If no size is known, -1 can be passed.
              */
-            measure(orientation: Orientation | null, for_size: number): [number, number, number, number];
+            measure(orientation: Orientation, for_size: number): [number, number, number, number];
             /**
              * Emits the `Gtk.Widget::mnemonic-activate` signal.
              * @param group_cycling true if there are other widgets with the same mnemonic
@@ -71318,7 +71318,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param flags flags to influence what is picked
              * @returns the widget's descendant at (x, y)
              */
-            pick(x: number, y: number, flags: PickFlags | null): Widget | null;
+            pick(x: number, y: number, flags: PickFlags): Widget | null;
             /**
              * Flags the widget for a rerun of the {@link Gtk.Widget.size_allocate}
              * function.
@@ -71501,7 +71501,7 @@ declare module 'gi://Gtk?version=4.0' {
              * the value set by {@link Gtk.Widget.set_default_direction} will be used.
              * @param dir the new direction
              */
-            set_direction(dir: TextDirection | null): void;
+            set_direction(dir: TextDirection): void;
             /**
              * Set the focus child of the widget.
              *
@@ -71563,7 +71563,7 @@ declare module 'gi://Gtk?version=4.0' {
              * Sets the horizontal alignment of the widget.
              * @param align the horizontal alignment
              */
-            set_halign(align: Align | null): void;
+            set_halign(align: Align): void;
             /**
              * Sets the `has-tooltip` property on the widget.
              * @param has_tooltip whether or not `widget` has a tooltip
@@ -71703,7 +71703,7 @@ declare module 'gi://Gtk?version=4.0' {
              * The default value is {@link Gtk.Overflow.VISIBLE}.
              * @param overflow desired overflow value
              */
-            set_overflow(overflow: Overflow | null): void;
+            set_overflow(overflow: Overflow): void;
             /**
              * Sets the parent widget of the widget.
              *
@@ -71785,7 +71785,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param flags state flags to turn on
              * @param clear whether to clear state before turning on `flags`
              */
-            set_state_flags(flags: StateFlags | null, clear: boolean): void;
+            set_state_flags(flags: StateFlags, clear: boolean): void;
             /**
              * Sets the contents of the tooltip for widget.
              *
@@ -71817,7 +71817,7 @@ declare module 'gi://Gtk?version=4.0' {
              * Sets the vertical alignment of the widget.
              * @param align the vertical alignment
              */
-            set_valign(align: Align | null): void;
+            set_valign(align: Align): void;
             /**
              * Sets whether the widget would like any available extra vertical
              * space.
@@ -71938,7 +71938,7 @@ declare module 'gi://Gtk?version=4.0' {
              * This function is for use in widget implementations.
              * @param flags state flags to turn off
              */
-            unset_state_flags(flags: StateFlags | null): void;
+            unset_state_flags(flags: StateFlags): void;
             /**
              * Computes whether a container should give this
              *   widget extra space when possible.
@@ -72710,7 +72710,7 @@ declare module 'gi://Gtk?version=4.0' {
              * given {@link Gtk.ConstraintGuide}.
              * @param strength the strength of the constraint
              */
-            set_strength(strength: ConstraintStrength | null): void;
+            set_strength(strength: ConstraintStrength): void;
             /**
              * Creates a binding between `source_property` on `source` and `target_property`
              * on `target`.
@@ -72755,7 +72755,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -72796,7 +72796,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -73688,7 +73688,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -73729,7 +73729,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -74466,7 +74466,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -74507,7 +74507,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -76107,7 +76107,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -76148,7 +76148,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -76668,7 +76668,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param direction direction of focus movement
              * @returns true if focus ended up inside `widget`
              */
-            child_focus(direction: DirectionType | null): boolean;
+            child_focus(direction: DirectionType): boolean;
             /**
              * Computes the bounds for `widget` in the coordinate space of `target`.
              *
@@ -76703,7 +76703,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param orientation expand direction
              * @returns whether widget tree rooted here should be expanded
              */
-            compute_expand(orientation: Orientation | null): boolean;
+            compute_expand(orientation: Orientation): boolean;
             /**
              * Translates the given `point` in `widget`'s coordinates to coordinates
              * in `target`’s coordinate system.
@@ -77299,7 +77299,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param orientation the orientation to query
              * @returns the size of `widget` in `orientation`
              */
-            get_size(orientation: Orientation | null): number;
+            get_size(orientation: Orientation): number;
             /**
              * Gets the size request that was explicitly set for the widget.
              *
@@ -77624,7 +77624,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param direction direction of focus movement
              * @returns true if stopping keyboard navigation is fine, false   if the emitting widget should try to handle the keyboard   navigation attempt in its parent widget
              */
-            keynav_failed(direction: DirectionType | null): boolean;
+            keynav_failed(direction: DirectionType): boolean;
             /**
              * Returns the widgets for which this widget is the target of a
              * mnemonic.
@@ -77658,7 +77658,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param orientation the orientation to measure
              * @param for_size Size for the opposite of `orientation`, i.e.   if `orientation` is {@link Gtk.Orientation.HORIZONTAL}, this is   the height the widget should be measured with. The {@link Gtk.Orientation.VERTICAL}   case is analogous. This way, both height-for-width and width-for-height   requests can be implemented. If no size is known, -1 can be passed.
              */
-            measure(orientation: Orientation | null, for_size: number): [number, number, number, number];
+            measure(orientation: Orientation, for_size: number): [number, number, number, number];
             /**
              * Emits the `Gtk.Widget::mnemonic-activate` signal.
              * @param group_cycling true if there are other widgets with the same mnemonic
@@ -77709,7 +77709,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param flags flags to influence what is picked
              * @returns the widget's descendant at (x, y)
              */
-            pick(x: number, y: number, flags: PickFlags | null): Widget | null;
+            pick(x: number, y: number, flags: PickFlags): Widget | null;
             /**
              * Flags the widget for a rerun of the {@link Gtk.Widget.size_allocate}
              * function.
@@ -77873,7 +77873,7 @@ declare module 'gi://Gtk?version=4.0' {
              * the value set by {@link Gtk.Widget.set_default_direction} will be used.
              * @param dir the new direction
              */
-            set_direction(dir: TextDirection | null): void;
+            set_direction(dir: TextDirection): void;
             /**
              * Set the focus child of the widget.
              *
@@ -77935,7 +77935,7 @@ declare module 'gi://Gtk?version=4.0' {
              * Sets the horizontal alignment of the widget.
              * @param align the horizontal alignment
              */
-            set_halign(align: Align | null): void;
+            set_halign(align: Align): void;
             /**
              * Sets the `has-tooltip` property on the widget.
              * @param has_tooltip whether or not `widget` has a tooltip
@@ -78075,7 +78075,7 @@ declare module 'gi://Gtk?version=4.0' {
              * The default value is {@link Gtk.Overflow.VISIBLE}.
              * @param overflow desired overflow value
              */
-            set_overflow(overflow: Overflow | null): void;
+            set_overflow(overflow: Overflow): void;
             /**
              * Sets the parent widget of the widget.
              *
@@ -78157,7 +78157,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param flags state flags to turn on
              * @param clear whether to clear state before turning on `flags`
              */
-            set_state_flags(flags: StateFlags | null, clear: boolean): void;
+            set_state_flags(flags: StateFlags, clear: boolean): void;
             /**
              * Sets the contents of the tooltip for widget.
              *
@@ -78189,7 +78189,7 @@ declare module 'gi://Gtk?version=4.0' {
              * Sets the vertical alignment of the widget.
              * @param align the vertical alignment
              */
-            set_valign(align: Align | null): void;
+            set_valign(align: Align): void;
             /**
              * Sets whether the widget would like any available extra vertical
              * space.
@@ -78302,7 +78302,7 @@ declare module 'gi://Gtk?version=4.0' {
              * This function is for use in widget implementations.
              * @param flags state flags to turn off
              */
-            unset_state_flags(flags: StateFlags | null): void;
+            unset_state_flags(flags: StateFlags): void;
             /**
              * Computes whether a container should give this
              *   widget extra space when possible.
@@ -78944,7 +78944,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -78985,7 +78985,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -80033,7 +80033,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param message the string to announce
              * @param priority the priority of the announcement
              */
-            announce(message: string, priority: AccessibleAnnouncementPriority | null): void;
+            announce(message: string, priority: AccessibleAnnouncementPriority): void;
             /**
              * Retrieves the accessible parent for an accessible object.
              *
@@ -80079,22 +80079,22 @@ declare module 'gi://Gtk?version=4.0' {
              * @param state platform state to query
              * @returns the value of state for the accessible
              */
-            get_platform_state(state: AccessiblePlatformState | null): boolean;
+            get_platform_state(state: AccessiblePlatformState): boolean;
             /**
              * Resets the accessible property to its default value.
              * @param property the accessible property
              */
-            reset_property(property: AccessibleProperty | null): void;
+            reset_property(property: AccessibleProperty): void;
             /**
              * Resets the accessible relation to its default value.
              * @param relation the accessible relation
              */
-            reset_relation(relation: AccessibleRelation | null): void;
+            reset_relation(relation: AccessibleRelation): void;
             /**
              * Resets the accessible state to its default value.
              * @param state the accessible state
              */
-            reset_state(state: AccessibleState | null): void;
+            reset_state(state: AccessibleState): void;
             /**
              * Sets the parent and sibling of an accessible object.
              *
@@ -80125,7 +80125,7 @@ declare module 'gi://Gtk?version=4.0' {
              * states automatically.
              * @param state the platform state to update
              */
-            update_platform_state(state: AccessiblePlatformState | null): void;
+            update_platform_state(state: AccessiblePlatformState): void;
             /**
              * Updates an array of accessible properties.
              *
@@ -80136,7 +80136,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param properties an array of accessible properties
              * @param values an array of `GValues`, one for each property
              */
-            update_property(properties: AccessibleProperty[] | null, values: (GObject.Value | any)[]): void;
+            update_property(properties: AccessibleProperty[], values: (GObject.Value | any)[]): void;
             /**
              * Updates an array of accessible relations.
              *
@@ -80147,7 +80147,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param relations an array of accessible relations
              * @param values an array of `GValues`, one for each relation
              */
-            update_relation(relations: AccessibleRelation[] | null, values: (GObject.Value | any)[]): void;
+            update_relation(relations: AccessibleRelation[], values: (GObject.Value | any)[]): void;
             /**
              * Updates an array of accessible states.
              *
@@ -80158,7 +80158,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param states an array of accessible states
              * @param values an array of `GValues`, one for each state
              */
-            update_state(states: AccessibleState[] | null, values: (GObject.Value | any)[]): void;
+            update_state(states: AccessibleState[], values: (GObject.Value | any)[]): void;
             /**
              * Retrieves the accessible parent for an accessible object.
              *
@@ -80402,7 +80402,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -80443,7 +80443,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -80963,7 +80963,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param direction direction of focus movement
              * @returns true if focus ended up inside `widget`
              */
-            child_focus(direction: DirectionType | null): boolean;
+            child_focus(direction: DirectionType): boolean;
             /**
              * Computes the bounds for `widget` in the coordinate space of `target`.
              *
@@ -80998,7 +80998,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param orientation expand direction
              * @returns whether widget tree rooted here should be expanded
              */
-            compute_expand(orientation: Orientation | null): boolean;
+            compute_expand(orientation: Orientation): boolean;
             /**
              * Translates the given `point` in `widget`'s coordinates to coordinates
              * in `target`’s coordinate system.
@@ -81594,7 +81594,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param orientation the orientation to query
              * @returns the size of `widget` in `orientation`
              */
-            get_size(orientation: Orientation | null): number;
+            get_size(orientation: Orientation): number;
             /**
              * Gets the size request that was explicitly set for the widget.
              *
@@ -81919,7 +81919,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param direction direction of focus movement
              * @returns true if stopping keyboard navigation is fine, false   if the emitting widget should try to handle the keyboard   navigation attempt in its parent widget
              */
-            keynav_failed(direction: DirectionType | null): boolean;
+            keynav_failed(direction: DirectionType): boolean;
             /**
              * Returns the widgets for which this widget is the target of a
              * mnemonic.
@@ -81953,7 +81953,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param orientation the orientation to measure
              * @param for_size Size for the opposite of `orientation`, i.e.   if `orientation` is {@link Gtk.Orientation.HORIZONTAL}, this is   the height the widget should be measured with. The {@link Gtk.Orientation.VERTICAL}   case is analogous. This way, both height-for-width and width-for-height   requests can be implemented. If no size is known, -1 can be passed.
              */
-            measure(orientation: Orientation | null, for_size: number): [number, number, number, number];
+            measure(orientation: Orientation, for_size: number): [number, number, number, number];
             /**
              * Emits the `Gtk.Widget::mnemonic-activate` signal.
              * @param group_cycling true if there are other widgets with the same mnemonic
@@ -82004,7 +82004,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param flags flags to influence what is picked
              * @returns the widget's descendant at (x, y)
              */
-            pick(x: number, y: number, flags: PickFlags | null): Widget | null;
+            pick(x: number, y: number, flags: PickFlags): Widget | null;
             /**
              * Flags the widget for a rerun of the {@link Gtk.Widget.size_allocate}
              * function.
@@ -82168,7 +82168,7 @@ declare module 'gi://Gtk?version=4.0' {
              * the value set by {@link Gtk.Widget.set_default_direction} will be used.
              * @param dir the new direction
              */
-            set_direction(dir: TextDirection | null): void;
+            set_direction(dir: TextDirection): void;
             /**
              * Set the focus child of the widget.
              *
@@ -82230,7 +82230,7 @@ declare module 'gi://Gtk?version=4.0' {
              * Sets the horizontal alignment of the widget.
              * @param align the horizontal alignment
              */
-            set_halign(align: Align | null): void;
+            set_halign(align: Align): void;
             /**
              * Sets the `has-tooltip` property on the widget.
              * @param has_tooltip whether or not `widget` has a tooltip
@@ -82370,7 +82370,7 @@ declare module 'gi://Gtk?version=4.0' {
              * The default value is {@link Gtk.Overflow.VISIBLE}.
              * @param overflow desired overflow value
              */
-            set_overflow(overflow: Overflow | null): void;
+            set_overflow(overflow: Overflow): void;
             /**
              * Sets the parent widget of the widget.
              *
@@ -82452,7 +82452,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param flags state flags to turn on
              * @param clear whether to clear state before turning on `flags`
              */
-            set_state_flags(flags: StateFlags | null, clear: boolean): void;
+            set_state_flags(flags: StateFlags, clear: boolean): void;
             /**
              * Sets the contents of the tooltip for widget.
              *
@@ -82484,7 +82484,7 @@ declare module 'gi://Gtk?version=4.0' {
              * Sets the vertical alignment of the widget.
              * @param align the vertical alignment
              */
-            set_valign(align: Align | null): void;
+            set_valign(align: Align): void;
             /**
              * Sets whether the widget would like any available extra vertical
              * space.
@@ -82597,7 +82597,7 @@ declare module 'gi://Gtk?version=4.0' {
              * This function is for use in widget implementations.
              * @param flags state flags to turn off
              */
-            unset_state_flags(flags: StateFlags | null): void;
+            unset_state_flags(flags: StateFlags): void;
             /**
              * Computes whether a container should give this
              *   widget extra space when possible.
@@ -83080,7 +83080,7 @@ declare module 'gi://Gtk?version=4.0' {
              * or in a handler for the `Gtk.DragSource::prepare` signal.
              * @param actions the actions to offer
              */
-            set_actions(actions: Gdk.DragAction | null): void;
+            set_actions(actions: Gdk.DragAction): void;
             /**
              * Sets a content provider on a {@link Gtk.DragSource}.
              *
@@ -83425,7 +83425,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param message the string to announce
              * @param priority the priority of the announcement
              */
-            announce(message: string, priority: AccessibleAnnouncementPriority | null): void;
+            announce(message: string, priority: AccessibleAnnouncementPriority): void;
             /**
              * Retrieves the accessible parent for an accessible object.
              *
@@ -83471,22 +83471,22 @@ declare module 'gi://Gtk?version=4.0' {
              * @param state platform state to query
              * @returns the value of state for the accessible
              */
-            get_platform_state(state: AccessiblePlatformState | null): boolean;
+            get_platform_state(state: AccessiblePlatformState): boolean;
             /**
              * Resets the accessible property to its default value.
              * @param property the accessible property
              */
-            reset_property(property: AccessibleProperty | null): void;
+            reset_property(property: AccessibleProperty): void;
             /**
              * Resets the accessible relation to its default value.
              * @param relation the accessible relation
              */
-            reset_relation(relation: AccessibleRelation | null): void;
+            reset_relation(relation: AccessibleRelation): void;
             /**
              * Resets the accessible state to its default value.
              * @param state the accessible state
              */
-            reset_state(state: AccessibleState | null): void;
+            reset_state(state: AccessibleState): void;
             /**
              * Sets the parent and sibling of an accessible object.
              *
@@ -83517,7 +83517,7 @@ declare module 'gi://Gtk?version=4.0' {
              * states automatically.
              * @param state the platform state to update
              */
-            update_platform_state(state: AccessiblePlatformState | null): void;
+            update_platform_state(state: AccessiblePlatformState): void;
             /**
              * Updates an array of accessible properties.
              *
@@ -83528,7 +83528,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param properties an array of accessible properties
              * @param values an array of `GValues`, one for each property
              */
-            update_property(properties: AccessibleProperty[] | null, values: (GObject.Value | any)[]): void;
+            update_property(properties: AccessibleProperty[], values: (GObject.Value | any)[]): void;
             /**
              * Updates an array of accessible relations.
              *
@@ -83539,7 +83539,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param relations an array of accessible relations
              * @param values an array of `GValues`, one for each relation
              */
-            update_relation(relations: AccessibleRelation[] | null, values: (GObject.Value | any)[]): void;
+            update_relation(relations: AccessibleRelation[], values: (GObject.Value | any)[]): void;
             /**
              * Updates an array of accessible states.
              *
@@ -83550,7 +83550,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param states an array of accessible states
              * @param values an array of `GValues`, one for each state
              */
-            update_state(states: AccessibleState[] | null, values: (GObject.Value | any)[]): void;
+            update_state(states: AccessibleState[], values: (GObject.Value | any)[]): void;
             /**
              * Retrieves the accessible parent for an accessible object.
              *
@@ -83738,7 +83738,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -83779,7 +83779,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -84714,7 +84714,7 @@ declare module 'gi://Gtk?version=4.0' {
              * Sets the match mode for the search filter.
              * @param search_match_mode the new match mode
              */
-            set_search_match_mode(search_match_mode: StringFilterMatchMode | null): void;
+            set_search_match_mode(search_match_mode: StringFilterMatchMode): void;
             /**
              * Selects the item at the given position.
              * @param position the position of the item to select, or `GTK_INVALID_LIST_POSITION`
@@ -84754,7 +84754,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param message the string to announce
              * @param priority the priority of the announcement
              */
-            announce(message: string, priority: AccessibleAnnouncementPriority | null): void;
+            announce(message: string, priority: AccessibleAnnouncementPriority): void;
             /**
              * Retrieves the accessible parent for an accessible object.
              *
@@ -84800,22 +84800,22 @@ declare module 'gi://Gtk?version=4.0' {
              * @param state platform state to query
              * @returns the value of state for the accessible
              */
-            get_platform_state(state: AccessiblePlatformState | null): boolean;
+            get_platform_state(state: AccessiblePlatformState): boolean;
             /**
              * Resets the accessible property to its default value.
              * @param property the accessible property
              */
-            reset_property(property: AccessibleProperty | null): void;
+            reset_property(property: AccessibleProperty): void;
             /**
              * Resets the accessible relation to its default value.
              * @param relation the accessible relation
              */
-            reset_relation(relation: AccessibleRelation | null): void;
+            reset_relation(relation: AccessibleRelation): void;
             /**
              * Resets the accessible state to its default value.
              * @param state the accessible state
              */
-            reset_state(state: AccessibleState | null): void;
+            reset_state(state: AccessibleState): void;
             /**
              * Sets the parent and sibling of an accessible object.
              *
@@ -84846,7 +84846,7 @@ declare module 'gi://Gtk?version=4.0' {
              * states automatically.
              * @param state the platform state to update
              */
-            update_platform_state(state: AccessiblePlatformState | null): void;
+            update_platform_state(state: AccessiblePlatformState): void;
             /**
              * Updates an array of accessible properties.
              *
@@ -84857,7 +84857,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param properties an array of accessible properties
              * @param values an array of `GValues`, one for each property
              */
-            update_property(properties: AccessibleProperty[] | null, values: (GObject.Value | any)[]): void;
+            update_property(properties: AccessibleProperty[], values: (GObject.Value | any)[]): void;
             /**
              * Updates an array of accessible relations.
              *
@@ -84868,7 +84868,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param relations an array of accessible relations
              * @param values an array of `GValues`, one for each relation
              */
-            update_relation(relations: AccessibleRelation[] | null, values: (GObject.Value | any)[]): void;
+            update_relation(relations: AccessibleRelation[], values: (GObject.Value | any)[]): void;
             /**
              * Updates an array of accessible states.
              *
@@ -84879,7 +84879,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param states an array of accessible states
              * @param values an array of `GValues`, one for each state
              */
-            update_state(states: AccessibleState[] | null, values: (GObject.Value | any)[]): void;
+            update_state(states: AccessibleState[], values: (GObject.Value | any)[]): void;
             /**
              * Retrieves the accessible parent for an accessible object.
              *
@@ -85067,7 +85067,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -85108,7 +85108,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -85801,7 +85801,7 @@ declare module 'gi://Gtk?version=4.0' {
              * Sets the actions that this drop target supports.
              * @param actions the supported actions
              */
-            set_actions(actions: Gdk.DragAction | null): void;
+            set_actions(actions: Gdk.DragAction): void;
             /**
              * Sets the supported {@link GObject.GType}s for this drop target.
              * @param types all supported {@link GObject.GType}s   that can be dropped on the target
@@ -86014,7 +86014,7 @@ declare module 'gi://Gtk?version=4.0' {
              * Sets the actions that this drop target supports.
              * @param actions the supported actions
              */
-            set_actions(actions: Gdk.DragAction | null): void;
+            set_actions(actions: Gdk.DragAction): void;
             /**
              * Sets the data formats that this drop target will accept.
              * @param formats the supported data formats or `null` for any format
@@ -86804,7 +86804,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param message the string to announce
              * @param priority the priority of the announcement
              */
-            announce(message: string, priority: AccessibleAnnouncementPriority | null): void;
+            announce(message: string, priority: AccessibleAnnouncementPriority): void;
             /**
              * Retrieves the accessible parent for an accessible object.
              *
@@ -86850,22 +86850,22 @@ declare module 'gi://Gtk?version=4.0' {
              * @param state platform state to query
              * @returns the value of state for the accessible
              */
-            get_platform_state(state: AccessiblePlatformState | null): boolean;
+            get_platform_state(state: AccessiblePlatformState): boolean;
             /**
              * Resets the accessible property to its default value.
              * @param property the accessible property
              */
-            reset_property(property: AccessibleProperty | null): void;
+            reset_property(property: AccessibleProperty): void;
             /**
              * Resets the accessible relation to its default value.
              * @param relation the accessible relation
              */
-            reset_relation(relation: AccessibleRelation | null): void;
+            reset_relation(relation: AccessibleRelation): void;
             /**
              * Resets the accessible state to its default value.
              * @param state the accessible state
              */
-            reset_state(state: AccessibleState | null): void;
+            reset_state(state: AccessibleState): void;
             /**
              * Sets the parent and sibling of an accessible object.
              *
@@ -86896,7 +86896,7 @@ declare module 'gi://Gtk?version=4.0' {
              * states automatically.
              * @param state the platform state to update
              */
-            update_platform_state(state: AccessiblePlatformState | null): void;
+            update_platform_state(state: AccessiblePlatformState): void;
             /**
              * Updates an array of accessible properties.
              *
@@ -86907,7 +86907,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param properties an array of accessible properties
              * @param values an array of `GValues`, one for each property
              */
-            update_property(properties: AccessibleProperty[] | null, values: (GObject.Value | any)[]): void;
+            update_property(properties: AccessibleProperty[], values: (GObject.Value | any)[]): void;
             /**
              * Updates an array of accessible relations.
              *
@@ -86918,7 +86918,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param relations an array of accessible relations
              * @param values an array of `GValues`, one for each relation
              */
-            update_relation(relations: AccessibleRelation[] | null, values: (GObject.Value | any)[]): void;
+            update_relation(relations: AccessibleRelation[], values: (GObject.Value | any)[]): void;
             /**
              * Updates an array of accessible states.
              *
@@ -86929,7 +86929,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param states an array of accessible states
              * @param values an array of `GValues`, one for each state
              */
-            update_state(states: AccessibleState[] | null, values: (GObject.Value | any)[]): void;
+            update_state(states: AccessibleState[], values: (GObject.Value | any)[]): void;
             /**
              * Retrieves the accessible parent for an accessible object.
              *
@@ -87109,7 +87109,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param state what kind of accessible state to retrieve
              * @returns the accessible platform state of the delegate
              */
-            delegate_get_accessible_platform_state(state: AccessiblePlatformState | null): boolean;
+            delegate_get_accessible_platform_state(state: AccessiblePlatformState): boolean;
             /**
              * Deletes the currently selected text of the editable.
              *
@@ -87443,7 +87443,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -87484,7 +87484,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -88004,7 +88004,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param direction direction of focus movement
              * @returns true if focus ended up inside `widget`
              */
-            child_focus(direction: DirectionType | null): boolean;
+            child_focus(direction: DirectionType): boolean;
             /**
              * Computes the bounds for `widget` in the coordinate space of `target`.
              *
@@ -88039,7 +88039,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param orientation expand direction
              * @returns whether widget tree rooted here should be expanded
              */
-            compute_expand(orientation: Orientation | null): boolean;
+            compute_expand(orientation: Orientation): boolean;
             /**
              * Translates the given `point` in `widget`'s coordinates to coordinates
              * in `target`’s coordinate system.
@@ -88647,7 +88647,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param orientation the orientation to query
              * @returns the size of `widget` in `orientation`
              */
-            get_size(orientation: Orientation | null): number;
+            get_size(orientation: Orientation): number;
             /**
              * Gets the size request that was explicitly set for the widget.
              *
@@ -88972,7 +88972,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param direction direction of focus movement
              * @returns true if stopping keyboard navigation is fine, false   if the emitting widget should try to handle the keyboard   navigation attempt in its parent widget
              */
-            keynav_failed(direction: DirectionType | null): boolean;
+            keynav_failed(direction: DirectionType): boolean;
             /**
              * Returns the widgets for which this widget is the target of a
              * mnemonic.
@@ -89006,7 +89006,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param orientation the orientation to measure
              * @param for_size Size for the opposite of `orientation`, i.e.   if `orientation` is {@link Gtk.Orientation.HORIZONTAL}, this is   the height the widget should be measured with. The {@link Gtk.Orientation.VERTICAL}   case is analogous. This way, both height-for-width and width-for-height   requests can be implemented. If no size is known, -1 can be passed.
              */
-            measure(orientation: Orientation | null, for_size: number): [number, number, number, number];
+            measure(orientation: Orientation, for_size: number): [number, number, number, number];
             /**
              * Emits the `Gtk.Widget::mnemonic-activate` signal.
              * @param group_cycling true if there are other widgets with the same mnemonic
@@ -89057,7 +89057,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param flags flags to influence what is picked
              * @returns the widget's descendant at (x, y)
              */
-            pick(x: number, y: number, flags: PickFlags | null): Widget | null;
+            pick(x: number, y: number, flags: PickFlags): Widget | null;
             /**
              * Flags the widget for a rerun of the {@link Gtk.Widget.size_allocate}
              * function.
@@ -89240,7 +89240,7 @@ declare module 'gi://Gtk?version=4.0' {
              * the value set by {@link Gtk.Widget.set_default_direction} will be used.
              * @param dir the new direction
              */
-            set_direction(dir: TextDirection | null): void;
+            set_direction(dir: TextDirection): void;
             /**
              * Set the focus child of the widget.
              *
@@ -89302,7 +89302,7 @@ declare module 'gi://Gtk?version=4.0' {
              * Sets the horizontal alignment of the widget.
              * @param align the horizontal alignment
              */
-            set_halign(align: Align | null): void;
+            set_halign(align: Align): void;
             /**
              * Sets the `has-tooltip` property on the widget.
              * @param has_tooltip whether or not `widget` has a tooltip
@@ -89442,7 +89442,7 @@ declare module 'gi://Gtk?version=4.0' {
              * The default value is {@link Gtk.Overflow.VISIBLE}.
              * @param overflow desired overflow value
              */
-            set_overflow(overflow: Overflow | null): void;
+            set_overflow(overflow: Overflow): void;
             /**
              * Sets the parent widget of the widget.
              *
@@ -89524,7 +89524,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param flags state flags to turn on
              * @param clear whether to clear state before turning on `flags`
              */
-            set_state_flags(flags: StateFlags | null, clear: boolean): void;
+            set_state_flags(flags: StateFlags, clear: boolean): void;
             /**
              * Sets the contents of the tooltip for widget.
              *
@@ -89556,7 +89556,7 @@ declare module 'gi://Gtk?version=4.0' {
              * Sets the vertical alignment of the widget.
              * @param align the vertical alignment
              */
-            set_valign(align: Align | null): void;
+            set_valign(align: Align): void;
             /**
              * Sets whether the widget would like any available extra vertical
              * space.
@@ -89677,7 +89677,7 @@ declare module 'gi://Gtk?version=4.0' {
              * This function is for use in widget implementations.
              * @param flags state flags to turn off
              */
-            unset_state_flags(flags: StateFlags | null): void;
+            unset_state_flags(flags: StateFlags): void;
             /**
              * Computes whether a container should give this
              *   widget extra space when possible.
@@ -90659,7 +90659,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -90700,7 +90700,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -91220,7 +91220,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param direction direction of focus movement
              * @returns true if focus ended up inside `widget`
              */
-            child_focus(direction: DirectionType | null): boolean;
+            child_focus(direction: DirectionType): boolean;
             /**
              * Computes the bounds for `widget` in the coordinate space of `target`.
              *
@@ -91255,7 +91255,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param orientation expand direction
              * @returns whether widget tree rooted here should be expanded
              */
-            compute_expand(orientation: Orientation | null): boolean;
+            compute_expand(orientation: Orientation): boolean;
             /**
              * Translates the given `point` in `widget`'s coordinates to coordinates
              * in `target`’s coordinate system.
@@ -91863,7 +91863,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param orientation the orientation to query
              * @returns the size of `widget` in `orientation`
              */
-            get_size(orientation: Orientation | null): number;
+            get_size(orientation: Orientation): number;
             /**
              * Gets the size request that was explicitly set for the widget.
              *
@@ -92188,7 +92188,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param direction direction of focus movement
              * @returns true if stopping keyboard navigation is fine, false   if the emitting widget should try to handle the keyboard   navigation attempt in its parent widget
              */
-            keynav_failed(direction: DirectionType | null): boolean;
+            keynav_failed(direction: DirectionType): boolean;
             /**
              * Returns the widgets for which this widget is the target of a
              * mnemonic.
@@ -92222,7 +92222,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param orientation the orientation to measure
              * @param for_size Size for the opposite of `orientation`, i.e.   if `orientation` is {@link Gtk.Orientation.HORIZONTAL}, this is   the height the widget should be measured with. The {@link Gtk.Orientation.VERTICAL}   case is analogous. This way, both height-for-width and width-for-height   requests can be implemented. If no size is known, -1 can be passed.
              */
-            measure(orientation: Orientation | null, for_size: number): [number, number, number, number];
+            measure(orientation: Orientation, for_size: number): [number, number, number, number];
             /**
              * Emits the `Gtk.Widget::mnemonic-activate` signal.
              * @param group_cycling true if there are other widgets with the same mnemonic
@@ -92273,7 +92273,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param flags flags to influence what is picked
              * @returns the widget's descendant at (x, y)
              */
-            pick(x: number, y: number, flags: PickFlags | null): Widget | null;
+            pick(x: number, y: number, flags: PickFlags): Widget | null;
             /**
              * Flags the widget for a rerun of the {@link Gtk.Widget.size_allocate}
              * function.
@@ -92437,7 +92437,7 @@ declare module 'gi://Gtk?version=4.0' {
              * the value set by {@link Gtk.Widget.set_default_direction} will be used.
              * @param dir the new direction
              */
-            set_direction(dir: TextDirection | null): void;
+            set_direction(dir: TextDirection): void;
             /**
              * Set the focus child of the widget.
              *
@@ -92499,7 +92499,7 @@ declare module 'gi://Gtk?version=4.0' {
              * Sets the horizontal alignment of the widget.
              * @param align the horizontal alignment
              */
-            set_halign(align: Align | null): void;
+            set_halign(align: Align): void;
             /**
              * Sets the `has-tooltip` property on the widget.
              * @param has_tooltip whether or not `widget` has a tooltip
@@ -92639,7 +92639,7 @@ declare module 'gi://Gtk?version=4.0' {
              * The default value is {@link Gtk.Overflow.VISIBLE}.
              * @param overflow desired overflow value
              */
-            set_overflow(overflow: Overflow | null): void;
+            set_overflow(overflow: Overflow): void;
             /**
              * Sets the parent widget of the widget.
              *
@@ -92721,7 +92721,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param flags state flags to turn on
              * @param clear whether to clear state before turning on `flags`
              */
-            set_state_flags(flags: StateFlags | null, clear: boolean): void;
+            set_state_flags(flags: StateFlags, clear: boolean): void;
             /**
              * Sets the contents of the tooltip for widget.
              *
@@ -92753,7 +92753,7 @@ declare module 'gi://Gtk?version=4.0' {
              * Sets the vertical alignment of the widget.
              * @param align the vertical alignment
              */
-            set_valign(align: Align | null): void;
+            set_valign(align: Align): void;
             /**
              * Sets whether the widget would like any available extra vertical
              * space.
@@ -92866,7 +92866,7 @@ declare module 'gi://Gtk?version=4.0' {
              * This function is for use in widget implementations.
              * @param flags state flags to turn off
              */
-            unset_state_flags(flags: StateFlags | null): void;
+            unset_state_flags(flags: StateFlags): void;
             /**
              * Computes whether a container should give this
              *   widget extra space when possible.
@@ -94076,7 +94076,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param icon_pos Icon position
              * @returns `true` if the icon is activatable.
              */
-            get_icon_activatable(icon_pos: EntryIconPosition | null): boolean;
+            get_icon_activatable(icon_pos: EntryIconPosition): boolean;
             /**
              * Gets the area where entry’s icon at `icon_pos` is drawn.
              *
@@ -94089,7 +94089,7 @@ declare module 'gi://Gtk?version=4.0' {
              * relative to `entry`'s allocation.
              * @param icon_pos Icon position
              */
-            get_icon_area(icon_pos: EntryIconPosition | null): Gdk.Rectangle;
+            get_icon_area(icon_pos: EntryIconPosition): Gdk.Rectangle;
             /**
              * Finds the icon at the given position and return its index.
              *
@@ -94110,7 +94110,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param icon_pos Icon position
              * @returns A {@link Gio.Icon}
              */
-            get_icon_gicon(icon_pos: EntryIconPosition | null): Gio.Icon | null;
+            get_icon_gicon(icon_pos: EntryIconPosition): Gio.Icon | null;
             /**
              * Retrieves the icon name used for the icon.
              *
@@ -94119,7 +94119,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param icon_pos Icon position
              * @returns An icon name
              */
-            get_icon_name(icon_pos: EntryIconPosition | null): string | null;
+            get_icon_name(icon_pos: EntryIconPosition): string | null;
             /**
              * Retrieves the {@link Gdk.Paintable} used for the icon.
              *
@@ -94127,13 +94127,13 @@ declare module 'gi://Gtk?version=4.0' {
              * @param icon_pos Icon position
              * @returns A {@link Gdk.Paintable}   if no icon is set for this position or the icon set is not   a {@link Gdk.Paintable}.
              */
-            get_icon_paintable(icon_pos: EntryIconPosition | null): Gdk.Paintable | null;
+            get_icon_paintable(icon_pos: EntryIconPosition): Gdk.Paintable | null;
             /**
              * Returns whether the icon appears sensitive or insensitive.
              * @param icon_pos Icon position
              * @returns `true` if the icon is sensitive.
              */
-            get_icon_sensitive(icon_pos: EntryIconPosition | null): boolean;
+            get_icon_sensitive(icon_pos: EntryIconPosition): boolean;
             /**
              * Gets the type of representation being used by the icon
              * to store image data.
@@ -94143,21 +94143,21 @@ declare module 'gi://Gtk?version=4.0' {
              * @param icon_pos Icon position
              * @returns image representation being used
              */
-            get_icon_storage_type(icon_pos: EntryIconPosition | null): ImageType;
+            get_icon_storage_type(icon_pos: EntryIconPosition): ImageType;
             /**
              * Gets the contents of the tooltip on the icon at the specified
              * position in `entry`.
              * @param icon_pos the icon position
              * @returns the tooltip text
              */
-            get_icon_tooltip_markup(icon_pos: EntryIconPosition | null): string | null;
+            get_icon_tooltip_markup(icon_pos: EntryIconPosition): string | null;
             /**
              * Gets the contents of the tooltip on the icon at the specified
              * position in `entry`.
              * @param icon_pos the icon position
              * @returns the tooltip text
              */
-            get_icon_tooltip_text(icon_pos: EntryIconPosition | null): string | null;
+            get_icon_tooltip_text(icon_pos: EntryIconPosition): string | null;
             /**
              * Gets the input hints of this {@link Gtk.Entry}.
              * @returns the input hints
@@ -94191,7 +94191,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param icon_pos either `GTK_ENTRY_ICON_PRIMARY` or `GTK_ENTRY_ICON_SECONDARY`
              * @returns the text that will be used in the menu item,   or NULL if no menu item is desired.
              */
-            get_menu_entry_icon_text(icon_pos: EntryIconPosition | null): string | null;
+            get_menu_entry_icon_text(icon_pos: EntryIconPosition): string | null;
             /**
              * Gets whether the {@link Gtk.Entry} is in overwrite mode.
              * @returns whether the text is overwritten when typing.
@@ -94328,7 +94328,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param icon_pos Icon position
              * @param activatable `true` if the icon should be activatable
              */
-            set_icon_activatable(icon_pos: EntryIconPosition | null, activatable: boolean): void;
+            set_icon_activatable(icon_pos: EntryIconPosition, activatable: boolean): void;
             /**
              * Sets up the icon at the given position as drag source.
              *
@@ -94339,9 +94339,9 @@ declare module 'gi://Gtk?version=4.0' {
              * @param actions a bitmask of the allowed drag actions
              */
             set_icon_drag_source(
-                icon_pos: EntryIconPosition | null,
+                icon_pos: EntryIconPosition,
                 provider: Gdk.ContentProvider,
-                actions: Gdk.DragAction | null,
+                actions: Gdk.DragAction,
             ): void;
             /**
              * Sets the icon shown in the entry at the specified position
@@ -94355,7 +94355,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param icon_pos The position at which to set the icon
              * @param icon The icon to set
              */
-            set_icon_from_gicon(icon_pos: EntryIconPosition | null, icon?: Gio.Icon | null): void;
+            set_icon_from_gicon(icon_pos: EntryIconPosition, icon?: Gio.Icon | null): void;
             /**
              * Sets the icon shown in the entry at the specified position
              * from the current icon theme.
@@ -94368,7 +94368,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param icon_pos The position at which to set the icon
              * @param icon_name An icon name
              */
-            set_icon_from_icon_name(icon_pos: EntryIconPosition | null, icon_name?: string | null): void;
+            set_icon_from_icon_name(icon_pos: EntryIconPosition, icon_name?: string | null): void;
             /**
              * Sets the icon shown in the specified position using a {@link Gdk.Paintable}.
              *
@@ -94376,13 +94376,13 @@ declare module 'gi://Gtk?version=4.0' {
              * @param icon_pos Icon position
              * @param paintable A {@link Gdk.Paintable}
              */
-            set_icon_from_paintable(icon_pos: EntryIconPosition | null, paintable?: Gdk.Paintable | null): void;
+            set_icon_from_paintable(icon_pos: EntryIconPosition, paintable?: Gdk.Paintable | null): void;
             /**
              * Sets the sensitivity for the specified icon.
              * @param icon_pos Icon position
              * @param sensitive Specifies whether the icon should appear   sensitive or insensitive
              */
-            set_icon_sensitive(icon_pos: EntryIconPosition | null, sensitive: boolean): void;
+            set_icon_sensitive(icon_pos: EntryIconPosition, sensitive: boolean): void;
             /**
              * Sets `tooltip` as the contents of the tooltip for the icon at
              * the specified position.
@@ -94396,7 +94396,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param icon_pos the icon position
              * @param tooltip the contents of the tooltip for the icon
              */
-            set_icon_tooltip_markup(icon_pos: EntryIconPosition | null, tooltip?: string | null): void;
+            set_icon_tooltip_markup(icon_pos: EntryIconPosition, tooltip?: string | null): void;
             /**
              * Sets `tooltip` as the contents of the tooltip for the icon
              * at the specified position.
@@ -94418,19 +94418,19 @@ declare module 'gi://Gtk?version=4.0' {
              * @param icon_pos the icon position
              * @param tooltip the contents of the tooltip for the icon
              */
-            set_icon_tooltip_text(icon_pos: EntryIconPosition | null, tooltip?: string | null): void;
+            set_icon_tooltip_text(icon_pos: EntryIconPosition, tooltip?: string | null): void;
             /**
              * Set additional hints which allow input methods to
              * fine-tune their behavior.
              * @param hints the hints
              */
-            set_input_hints(hints: InputHints | null): void;
+            set_input_hints(hints: InputHints): void;
             /**
              * Sets the input purpose which can be used by input methods
              * to adjust their behavior.
              * @param purpose the purpose
              */
-            set_input_purpose(purpose: InputPurpose | null): void;
+            set_input_purpose(purpose: InputPurpose): void;
             /**
              * Sets the character to use in place of the actual text
              * in “password mode”.
@@ -94466,7 +94466,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param icon_pos either `GTK_ENTRY_ICON_PRIMARY` or `GTK_ENTRY_ICON_SECONDARY`
              * @param text the text used for the menu item in the context menu, or NULL to not add a menu item.
              */
-            set_menu_entry_icon_text(icon_pos: EntryIconPosition | null, text: string): void;
+            set_menu_entry_icon_text(icon_pos: EntryIconPosition, text: string): void;
             /**
              * Sets whether the text is overwritten when typing in the {@link Gtk.Entry}.
              * @param overwrite new value
@@ -95141,7 +95141,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param message the string to announce
              * @param priority the priority of the announcement
              */
-            announce(message: string, priority: AccessibleAnnouncementPriority | null): void;
+            announce(message: string, priority: AccessibleAnnouncementPriority): void;
             /**
              * Retrieves the accessible parent for an accessible object.
              *
@@ -95187,22 +95187,22 @@ declare module 'gi://Gtk?version=4.0' {
              * @param state platform state to query
              * @returns the value of state for the accessible
              */
-            get_platform_state(state: AccessiblePlatformState | null): boolean;
+            get_platform_state(state: AccessiblePlatformState): boolean;
             /**
              * Resets the accessible property to its default value.
              * @param property the accessible property
              */
-            reset_property(property: AccessibleProperty | null): void;
+            reset_property(property: AccessibleProperty): void;
             /**
              * Resets the accessible relation to its default value.
              * @param relation the accessible relation
              */
-            reset_relation(relation: AccessibleRelation | null): void;
+            reset_relation(relation: AccessibleRelation): void;
             /**
              * Resets the accessible state to its default value.
              * @param state the accessible state
              */
-            reset_state(state: AccessibleState | null): void;
+            reset_state(state: AccessibleState): void;
             /**
              * Sets the parent and sibling of an accessible object.
              *
@@ -95233,7 +95233,7 @@ declare module 'gi://Gtk?version=4.0' {
              * states automatically.
              * @param state the platform state to update
              */
-            update_platform_state(state: AccessiblePlatformState | null): void;
+            update_platform_state(state: AccessiblePlatformState): void;
             /**
              * Updates an array of accessible properties.
              *
@@ -95244,7 +95244,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param properties an array of accessible properties
              * @param values an array of `GValues`, one for each property
              */
-            update_property(properties: AccessibleProperty[] | null, values: (GObject.Value | any)[]): void;
+            update_property(properties: AccessibleProperty[], values: (GObject.Value | any)[]): void;
             /**
              * Updates an array of accessible relations.
              *
@@ -95255,7 +95255,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param relations an array of accessible relations
              * @param values an array of `GValues`, one for each relation
              */
-            update_relation(relations: AccessibleRelation[] | null, values: (GObject.Value | any)[]): void;
+            update_relation(relations: AccessibleRelation[], values: (GObject.Value | any)[]): void;
             /**
              * Updates an array of accessible states.
              *
@@ -95266,7 +95266,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param states an array of accessible states
              * @param values an array of `GValues`, one for each state
              */
-            update_state(states: AccessibleState[] | null, values: (GObject.Value | any)[]): void;
+            update_state(states: AccessibleState[], values: (GObject.Value | any)[]): void;
             /**
              * Retrieves the accessible parent for an accessible object.
              *
@@ -95493,7 +95493,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param state what kind of accessible state to retrieve
              * @returns the accessible platform state of the delegate
              */
-            delegate_get_accessible_platform_state(state: AccessiblePlatformState | null): boolean;
+            delegate_get_accessible_platform_state(state: AccessiblePlatformState): boolean;
             /**
              * Deletes the currently selected text of the editable.
              *
@@ -95814,7 +95814,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -95855,7 +95855,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -96375,7 +96375,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param direction direction of focus movement
              * @returns true if focus ended up inside `widget`
              */
-            child_focus(direction: DirectionType | null): boolean;
+            child_focus(direction: DirectionType): boolean;
             /**
              * Computes the bounds for `widget` in the coordinate space of `target`.
              *
@@ -96410,7 +96410,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param orientation expand direction
              * @returns whether widget tree rooted here should be expanded
              */
-            compute_expand(orientation: Orientation | null): boolean;
+            compute_expand(orientation: Orientation): boolean;
             /**
              * Translates the given `point` in `widget`'s coordinates to coordinates
              * in `target`’s coordinate system.
@@ -97018,7 +97018,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param orientation the orientation to query
              * @returns the size of `widget` in `orientation`
              */
-            get_size(orientation: Orientation | null): number;
+            get_size(orientation: Orientation): number;
             /**
              * Gets the size request that was explicitly set for the widget.
              *
@@ -97343,7 +97343,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param direction direction of focus movement
              * @returns true if stopping keyboard navigation is fine, false   if the emitting widget should try to handle the keyboard   navigation attempt in its parent widget
              */
-            keynav_failed(direction: DirectionType | null): boolean;
+            keynav_failed(direction: DirectionType): boolean;
             /**
              * Returns the widgets for which this widget is the target of a
              * mnemonic.
@@ -97377,7 +97377,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param orientation the orientation to measure
              * @param for_size Size for the opposite of `orientation`, i.e.   if `orientation` is {@link Gtk.Orientation.HORIZONTAL}, this is   the height the widget should be measured with. The {@link Gtk.Orientation.VERTICAL}   case is analogous. This way, both height-for-width and width-for-height   requests can be implemented. If no size is known, -1 can be passed.
              */
-            measure(orientation: Orientation | null, for_size: number): [number, number, number, number];
+            measure(orientation: Orientation, for_size: number): [number, number, number, number];
             /**
              * Emits the `Gtk.Widget::mnemonic-activate` signal.
              * @param group_cycling true if there are other widgets with the same mnemonic
@@ -97428,7 +97428,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param flags flags to influence what is picked
              * @returns the widget's descendant at (x, y)
              */
-            pick(x: number, y: number, flags: PickFlags | null): Widget | null;
+            pick(x: number, y: number, flags: PickFlags): Widget | null;
             /**
              * Flags the widget for a rerun of the {@link Gtk.Widget.size_allocate}
              * function.
@@ -97611,7 +97611,7 @@ declare module 'gi://Gtk?version=4.0' {
              * the value set by {@link Gtk.Widget.set_default_direction} will be used.
              * @param dir the new direction
              */
-            set_direction(dir: TextDirection | null): void;
+            set_direction(dir: TextDirection): void;
             /**
              * Set the focus child of the widget.
              *
@@ -97673,7 +97673,7 @@ declare module 'gi://Gtk?version=4.0' {
              * Sets the horizontal alignment of the widget.
              * @param align the horizontal alignment
              */
-            set_halign(align: Align | null): void;
+            set_halign(align: Align): void;
             /**
              * Sets the `has-tooltip` property on the widget.
              * @param has_tooltip whether or not `widget` has a tooltip
@@ -97813,7 +97813,7 @@ declare module 'gi://Gtk?version=4.0' {
              * The default value is {@link Gtk.Overflow.VISIBLE}.
              * @param overflow desired overflow value
              */
-            set_overflow(overflow: Overflow | null): void;
+            set_overflow(overflow: Overflow): void;
             /**
              * Sets the parent widget of the widget.
              *
@@ -97895,7 +97895,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param flags state flags to turn on
              * @param clear whether to clear state before turning on `flags`
              */
-            set_state_flags(flags: StateFlags | null, clear: boolean): void;
+            set_state_flags(flags: StateFlags, clear: boolean): void;
             /**
              * Sets the contents of the tooltip for widget.
              *
@@ -97927,7 +97927,7 @@ declare module 'gi://Gtk?version=4.0' {
              * Sets the vertical alignment of the widget.
              * @param align the vertical alignment
              */
-            set_valign(align: Align | null): void;
+            set_valign(align: Align): void;
             /**
              * Sets whether the widget would like any available extra vertical
              * space.
@@ -98048,7 +98048,7 @@ declare module 'gi://Gtk?version=4.0' {
              * This function is for use in widget implementations.
              * @param flags state flags to turn off
              */
-            unset_state_flags(flags: StateFlags | null): void;
+            unset_state_flags(flags: StateFlags): void;
             /**
              * Computes whether a container should give this
              *   widget extra space when possible.
@@ -99320,7 +99320,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -99361,7 +99361,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -99907,7 +99907,7 @@ declare module 'gi://Gtk?version=4.0' {
              * surface, such as popovers.
              * @param limit the propagation limit
              */
-            set_propagation_limit(limit: PropagationLimit | null): void;
+            set_propagation_limit(limit: PropagationLimit): void;
             /**
              * Sets the propagation phase at which a controller handles events.
              *
@@ -99915,7 +99915,7 @@ declare module 'gi://Gtk?version=4.0' {
              * performed, but other additional gesture maintenance will.
              * @param phase a propagation phase
              */
-            set_propagation_phase(phase: PropagationPhase | null): void;
+            set_propagation_phase(phase: PropagationPhase): void;
             /**
              * Sets a name on the controller that can be used for debugging.
              * @param name a name for `controller`, must be a static string
@@ -100575,7 +100575,7 @@ declare module 'gi://Gtk?version=4.0' {
              * Sets the flags conditioning scroll controller behavior.
              * @param flags flags affecting the controller behavior
              */
-            set_flags(flags: EventControllerScrollFlags | null): void;
+            set_flags(flags: EventControllerScrollFlags): void;
         }
 
         namespace EveryFilter {
@@ -100883,7 +100883,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -100924,7 +100924,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -101681,7 +101681,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param message the string to announce
              * @param priority the priority of the announcement
              */
-            announce(message: string, priority: AccessibleAnnouncementPriority | null): void;
+            announce(message: string, priority: AccessibleAnnouncementPriority): void;
             /**
              * Retrieves the accessible parent for an accessible object.
              *
@@ -101727,22 +101727,22 @@ declare module 'gi://Gtk?version=4.0' {
              * @param state platform state to query
              * @returns the value of state for the accessible
              */
-            get_platform_state(state: AccessiblePlatformState | null): boolean;
+            get_platform_state(state: AccessiblePlatformState): boolean;
             /**
              * Resets the accessible property to its default value.
              * @param property the accessible property
              */
-            reset_property(property: AccessibleProperty | null): void;
+            reset_property(property: AccessibleProperty): void;
             /**
              * Resets the accessible relation to its default value.
              * @param relation the accessible relation
              */
-            reset_relation(relation: AccessibleRelation | null): void;
+            reset_relation(relation: AccessibleRelation): void;
             /**
              * Resets the accessible state to its default value.
              * @param state the accessible state
              */
-            reset_state(state: AccessibleState | null): void;
+            reset_state(state: AccessibleState): void;
             /**
              * Sets the parent and sibling of an accessible object.
              *
@@ -101773,7 +101773,7 @@ declare module 'gi://Gtk?version=4.0' {
              * states automatically.
              * @param state the platform state to update
              */
-            update_platform_state(state: AccessiblePlatformState | null): void;
+            update_platform_state(state: AccessiblePlatformState): void;
             /**
              * Updates an array of accessible properties.
              *
@@ -101784,7 +101784,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param properties an array of accessible properties
              * @param values an array of `GValues`, one for each property
              */
-            update_property(properties: AccessibleProperty[] | null, values: (GObject.Value | any)[]): void;
+            update_property(properties: AccessibleProperty[], values: (GObject.Value | any)[]): void;
             /**
              * Updates an array of accessible relations.
              *
@@ -101795,7 +101795,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param relations an array of accessible relations
              * @param values an array of `GValues`, one for each relation
              */
-            update_relation(relations: AccessibleRelation[] | null, values: (GObject.Value | any)[]): void;
+            update_relation(relations: AccessibleRelation[], values: (GObject.Value | any)[]): void;
             /**
              * Updates an array of accessible states.
              *
@@ -101806,7 +101806,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param states an array of accessible states
              * @param values an array of `GValues`, one for each state
              */
-            update_state(states: AccessibleState[] | null, values: (GObject.Value | any)[]): void;
+            update_state(states: AccessibleState[], values: (GObject.Value | any)[]): void;
             /**
              * Retrieves the accessible parent for an accessible object.
              *
@@ -101994,7 +101994,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -102035,7 +102035,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -103701,7 +103701,7 @@ declare module 'gi://Gtk?version=4.0' {
              * action is {@link Gtk.FileChooserAction.OPEN}.
              * @param action the action that the file selector is performing
              */
-            set_action(action: FileChooserAction | null): void;
+            set_action(action: FileChooserAction): void;
             /**
              * Selects an option in a 'choice' that has been added with
              * `gtk_file_chooser_add_choice()`.
@@ -103855,7 +103855,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -103896,7 +103896,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -104416,7 +104416,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param direction direction of focus movement
              * @returns true if focus ended up inside `widget`
              */
-            child_focus(direction: DirectionType | null): boolean;
+            child_focus(direction: DirectionType): boolean;
             /**
              * Computes the bounds for `widget` in the coordinate space of `target`.
              *
@@ -104451,7 +104451,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param orientation expand direction
              * @returns whether widget tree rooted here should be expanded
              */
-            compute_expand(orientation: Orientation | null): boolean;
+            compute_expand(orientation: Orientation): boolean;
             /**
              * Translates the given `point` in `widget`'s coordinates to coordinates
              * in `target`’s coordinate system.
@@ -105059,7 +105059,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param orientation the orientation to query
              * @returns the size of `widget` in `orientation`
              */
-            get_size(orientation: Orientation | null): number;
+            get_size(orientation: Orientation): number;
             /**
              * Gets the size request that was explicitly set for the widget.
              *
@@ -105384,7 +105384,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param direction direction of focus movement
              * @returns true if stopping keyboard navigation is fine, false   if the emitting widget should try to handle the keyboard   navigation attempt in its parent widget
              */
-            keynav_failed(direction: DirectionType | null): boolean;
+            keynav_failed(direction: DirectionType): boolean;
             /**
              * Returns the widgets for which this widget is the target of a
              * mnemonic.
@@ -105418,7 +105418,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param orientation the orientation to measure
              * @param for_size Size for the opposite of `orientation`, i.e.   if `orientation` is {@link Gtk.Orientation.HORIZONTAL}, this is   the height the widget should be measured with. The {@link Gtk.Orientation.VERTICAL}   case is analogous. This way, both height-for-width and width-for-height   requests can be implemented. If no size is known, -1 can be passed.
              */
-            measure(orientation: Orientation | null, for_size: number): [number, number, number, number];
+            measure(orientation: Orientation, for_size: number): [number, number, number, number];
             /**
              * Emits the `Gtk.Widget::mnemonic-activate` signal.
              * @param group_cycling true if there are other widgets with the same mnemonic
@@ -105469,7 +105469,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param flags flags to influence what is picked
              * @returns the widget's descendant at (x, y)
              */
-            pick(x: number, y: number, flags: PickFlags | null): Widget | null;
+            pick(x: number, y: number, flags: PickFlags): Widget | null;
             /**
              * Flags the widget for a rerun of the {@link Gtk.Widget.size_allocate}
              * function.
@@ -105652,7 +105652,7 @@ declare module 'gi://Gtk?version=4.0' {
              * the value set by {@link Gtk.Widget.set_default_direction} will be used.
              * @param dir the new direction
              */
-            set_direction(dir: TextDirection | null): void;
+            set_direction(dir: TextDirection): void;
             /**
              * Set the focus child of the widget.
              *
@@ -105714,7 +105714,7 @@ declare module 'gi://Gtk?version=4.0' {
              * Sets the horizontal alignment of the widget.
              * @param align the horizontal alignment
              */
-            set_halign(align: Align | null): void;
+            set_halign(align: Align): void;
             /**
              * Sets the `has-tooltip` property on the widget.
              * @param has_tooltip whether or not `widget` has a tooltip
@@ -105854,7 +105854,7 @@ declare module 'gi://Gtk?version=4.0' {
              * The default value is {@link Gtk.Overflow.VISIBLE}.
              * @param overflow desired overflow value
              */
-            set_overflow(overflow: Overflow | null): void;
+            set_overflow(overflow: Overflow): void;
             /**
              * Sets the parent widget of the widget.
              *
@@ -105936,7 +105936,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param flags state flags to turn on
              * @param clear whether to clear state before turning on `flags`
              */
-            set_state_flags(flags: StateFlags | null, clear: boolean): void;
+            set_state_flags(flags: StateFlags, clear: boolean): void;
             /**
              * Sets the contents of the tooltip for widget.
              *
@@ -105968,7 +105968,7 @@ declare module 'gi://Gtk?version=4.0' {
              * Sets the vertical alignment of the widget.
              * @param align the vertical alignment
              */
-            set_valign(align: Align | null): void;
+            set_valign(align: Align): void;
             /**
              * Sets whether the widget would like any available extra vertical
              * space.
@@ -106089,7 +106089,7 @@ declare module 'gi://Gtk?version=4.0' {
              * This function is for use in widget implementations.
              * @param flags state flags to turn off
              */
-            unset_state_flags(flags: StateFlags | null): void;
+            unset_state_flags(flags: StateFlags): void;
             /**
              * Computes whether a container should give this
              *   widget extra space when possible.
@@ -106842,7 +106842,7 @@ declare module 'gi://Gtk?version=4.0' {
              * action is {@link Gtk.FileChooserAction.OPEN}.
              * @param action the action that the file selector is performing
              */
-            set_action(action: FileChooserAction | null): void;
+            set_action(action: FileChooserAction): void;
             /**
              * Selects an option in a 'choice' that has been added with
              * `gtk_file_chooser_add_choice()`.
@@ -106996,7 +106996,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -107037,7 +107037,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -107862,7 +107862,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param message the string to announce
              * @param priority the priority of the announcement
              */
-            announce(message: string, priority: AccessibleAnnouncementPriority | null): void;
+            announce(message: string, priority: AccessibleAnnouncementPriority): void;
             /**
              * Retrieves the accessible parent for an accessible object.
              *
@@ -107908,22 +107908,22 @@ declare module 'gi://Gtk?version=4.0' {
              * @param state platform state to query
              * @returns the value of state for the accessible
              */
-            get_platform_state(state: AccessiblePlatformState | null): boolean;
+            get_platform_state(state: AccessiblePlatformState): boolean;
             /**
              * Resets the accessible property to its default value.
              * @param property the accessible property
              */
-            reset_property(property: AccessibleProperty | null): void;
+            reset_property(property: AccessibleProperty): void;
             /**
              * Resets the accessible relation to its default value.
              * @param relation the accessible relation
              */
-            reset_relation(relation: AccessibleRelation | null): void;
+            reset_relation(relation: AccessibleRelation): void;
             /**
              * Resets the accessible state to its default value.
              * @param state the accessible state
              */
-            reset_state(state: AccessibleState | null): void;
+            reset_state(state: AccessibleState): void;
             /**
              * Sets the parent and sibling of an accessible object.
              *
@@ -107954,7 +107954,7 @@ declare module 'gi://Gtk?version=4.0' {
              * states automatically.
              * @param state the platform state to update
              */
-            update_platform_state(state: AccessiblePlatformState | null): void;
+            update_platform_state(state: AccessiblePlatformState): void;
             /**
              * Updates an array of accessible properties.
              *
@@ -107965,7 +107965,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param properties an array of accessible properties
              * @param values an array of `GValues`, one for each property
              */
-            update_property(properties: AccessibleProperty[] | null, values: (GObject.Value | any)[]): void;
+            update_property(properties: AccessibleProperty[], values: (GObject.Value | any)[]): void;
             /**
              * Updates an array of accessible relations.
              *
@@ -107976,7 +107976,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param relations an array of accessible relations
              * @param values an array of `GValues`, one for each relation
              */
-            update_relation(relations: AccessibleRelation[] | null, values: (GObject.Value | any)[]): void;
+            update_relation(relations: AccessibleRelation[], values: (GObject.Value | any)[]): void;
             /**
              * Updates an array of accessible states.
              *
@@ -107987,7 +107987,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param states an array of accessible states
              * @param values an array of `GValues`, one for each state
              */
-            update_state(states: AccessibleState[] | null, values: (GObject.Value | any)[]): void;
+            update_state(states: AccessibleState[], values: (GObject.Value | any)[]): void;
             /**
              * Retrieves the accessible parent for an accessible object.
              *
@@ -108267,7 +108267,7 @@ declare module 'gi://Gtk?version=4.0' {
              * action is {@link Gtk.FileChooserAction.OPEN}.
              * @param action the action that the file selector is performing
              */
-            set_action(action: FileChooserAction | null): void;
+            set_action(action: FileChooserAction): void;
             /**
              * Selects an option in a 'choice' that has been added with
              * `gtk_file_chooser_add_choice()`.
@@ -108421,7 +108421,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -108462,7 +108462,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -109997,7 +109997,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -110038,7 +110038,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -110755,7 +110755,7 @@ declare module 'gi://Gtk?version=4.0' {
              * subclasses and should not be called from other functions.
              * @param change how the filter changed
              */
-            changed(change: FilterChange | null): void;
+            changed(change: FilterChange): void;
             /**
              * Gets the known strictness of a filter.
              *
@@ -111196,7 +111196,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -111237,7 +111237,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -111811,7 +111811,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param message the string to announce
              * @param priority the priority of the announcement
              */
-            announce(message: string, priority: AccessibleAnnouncementPriority | null): void;
+            announce(message: string, priority: AccessibleAnnouncementPriority): void;
             /**
              * Retrieves the accessible parent for an accessible object.
              *
@@ -111857,22 +111857,22 @@ declare module 'gi://Gtk?version=4.0' {
              * @param state platform state to query
              * @returns the value of state for the accessible
              */
-            get_platform_state(state: AccessiblePlatformState | null): boolean;
+            get_platform_state(state: AccessiblePlatformState): boolean;
             /**
              * Resets the accessible property to its default value.
              * @param property the accessible property
              */
-            reset_property(property: AccessibleProperty | null): void;
+            reset_property(property: AccessibleProperty): void;
             /**
              * Resets the accessible relation to its default value.
              * @param relation the accessible relation
              */
-            reset_relation(relation: AccessibleRelation | null): void;
+            reset_relation(relation: AccessibleRelation): void;
             /**
              * Resets the accessible state to its default value.
              * @param state the accessible state
              */
-            reset_state(state: AccessibleState | null): void;
+            reset_state(state: AccessibleState): void;
             /**
              * Sets the parent and sibling of an accessible object.
              *
@@ -111903,7 +111903,7 @@ declare module 'gi://Gtk?version=4.0' {
              * states automatically.
              * @param state the platform state to update
              */
-            update_platform_state(state: AccessiblePlatformState | null): void;
+            update_platform_state(state: AccessiblePlatformState): void;
             /**
              * Updates an array of accessible properties.
              *
@@ -111914,7 +111914,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param properties an array of accessible properties
              * @param values an array of `GValues`, one for each property
              */
-            update_property(properties: AccessibleProperty[] | null, values: (GObject.Value | any)[]): void;
+            update_property(properties: AccessibleProperty[], values: (GObject.Value | any)[]): void;
             /**
              * Updates an array of accessible relations.
              *
@@ -111925,7 +111925,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param relations an array of accessible relations
              * @param values an array of `GValues`, one for each relation
              */
-            update_relation(relations: AccessibleRelation[] | null, values: (GObject.Value | any)[]): void;
+            update_relation(relations: AccessibleRelation[], values: (GObject.Value | any)[]): void;
             /**
              * Updates an array of accessible states.
              *
@@ -111936,7 +111936,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param states an array of accessible states
              * @param values an array of `GValues`, one for each state
              */
-            update_state(states: AccessibleState[] | null, values: (GObject.Value | any)[]): void;
+            update_state(states: AccessibleState[], values: (GObject.Value | any)[]): void;
             /**
              * Retrieves the accessible parent for an accessible object.
              *
@@ -112124,7 +112124,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -112165,7 +112165,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -113000,7 +113000,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -113041,7 +113041,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -113996,7 +113996,7 @@ declare module 'gi://Gtk?version=4.0' {
              * Sets how selection works in `box`.
              * @param mode the new selection mode
              */
-            set_selection_mode(mode: SelectionMode | null): void;
+            set_selection_mode(mode: SelectionMode): void;
             /**
              * By setting a sort function on the `box`, one can dynamically
              * reorder the children of the box, based on the contents of
@@ -114073,7 +114073,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param message the string to announce
              * @param priority the priority of the announcement
              */
-            announce(message: string, priority: AccessibleAnnouncementPriority | null): void;
+            announce(message: string, priority: AccessibleAnnouncementPriority): void;
             /**
              * Retrieves the accessible parent for an accessible object.
              *
@@ -114119,22 +114119,22 @@ declare module 'gi://Gtk?version=4.0' {
              * @param state platform state to query
              * @returns the value of state for the accessible
              */
-            get_platform_state(state: AccessiblePlatformState | null): boolean;
+            get_platform_state(state: AccessiblePlatformState): boolean;
             /**
              * Resets the accessible property to its default value.
              * @param property the accessible property
              */
-            reset_property(property: AccessibleProperty | null): void;
+            reset_property(property: AccessibleProperty): void;
             /**
              * Resets the accessible relation to its default value.
              * @param relation the accessible relation
              */
-            reset_relation(relation: AccessibleRelation | null): void;
+            reset_relation(relation: AccessibleRelation): void;
             /**
              * Resets the accessible state to its default value.
              * @param state the accessible state
              */
-            reset_state(state: AccessibleState | null): void;
+            reset_state(state: AccessibleState): void;
             /**
              * Sets the parent and sibling of an accessible object.
              *
@@ -114165,7 +114165,7 @@ declare module 'gi://Gtk?version=4.0' {
              * states automatically.
              * @param state the platform state to update
              */
-            update_platform_state(state: AccessiblePlatformState | null): void;
+            update_platform_state(state: AccessiblePlatformState): void;
             /**
              * Updates an array of accessible properties.
              *
@@ -114176,7 +114176,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param properties an array of accessible properties
              * @param values an array of `GValues`, one for each property
              */
-            update_property(properties: AccessibleProperty[] | null, values: (GObject.Value | any)[]): void;
+            update_property(properties: AccessibleProperty[], values: (GObject.Value | any)[]): void;
             /**
              * Updates an array of accessible relations.
              *
@@ -114187,7 +114187,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param relations an array of accessible relations
              * @param values an array of `GValues`, one for each relation
              */
-            update_relation(relations: AccessibleRelation[] | null, values: (GObject.Value | any)[]): void;
+            update_relation(relations: AccessibleRelation[], values: (GObject.Value | any)[]): void;
             /**
              * Updates an array of accessible states.
              *
@@ -114198,7 +114198,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param states an array of accessible states
              * @param values an array of `GValues`, one for each state
              */
-            update_state(states: AccessibleState[] | null, values: (GObject.Value | any)[]): void;
+            update_state(states: AccessibleState[], values: (GObject.Value | any)[]): void;
             /**
              * Retrieves the accessible parent for an accessible object.
              *
@@ -114351,7 +114351,7 @@ declare module 'gi://Gtk?version=4.0' {
              * Sets the orientation of the `orientable`.
              * @param orientation the orientable’s new orientation
              */
-            set_orientation(orientation: Orientation | null): void;
+            set_orientation(orientation: Orientation): void;
             /**
              * Creates a binding between `source_property` on `source` and `target_property`
              * on `target`.
@@ -114396,7 +114396,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -114437,7 +114437,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -115009,7 +115009,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param message the string to announce
              * @param priority the priority of the announcement
              */
-            announce(message: string, priority: AccessibleAnnouncementPriority | null): void;
+            announce(message: string, priority: AccessibleAnnouncementPriority): void;
             /**
              * Retrieves the accessible parent for an accessible object.
              *
@@ -115055,22 +115055,22 @@ declare module 'gi://Gtk?version=4.0' {
              * @param state platform state to query
              * @returns the value of state for the accessible
              */
-            get_platform_state(state: AccessiblePlatformState | null): boolean;
+            get_platform_state(state: AccessiblePlatformState): boolean;
             /**
              * Resets the accessible property to its default value.
              * @param property the accessible property
              */
-            reset_property(property: AccessibleProperty | null): void;
+            reset_property(property: AccessibleProperty): void;
             /**
              * Resets the accessible relation to its default value.
              * @param relation the accessible relation
              */
-            reset_relation(relation: AccessibleRelation | null): void;
+            reset_relation(relation: AccessibleRelation): void;
             /**
              * Resets the accessible state to its default value.
              * @param state the accessible state
              */
-            reset_state(state: AccessibleState | null): void;
+            reset_state(state: AccessibleState): void;
             /**
              * Sets the parent and sibling of an accessible object.
              *
@@ -115101,7 +115101,7 @@ declare module 'gi://Gtk?version=4.0' {
              * states automatically.
              * @param state the platform state to update
              */
-            update_platform_state(state: AccessiblePlatformState | null): void;
+            update_platform_state(state: AccessiblePlatformState): void;
             /**
              * Updates an array of accessible properties.
              *
@@ -115112,7 +115112,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param properties an array of accessible properties
              * @param values an array of `GValues`, one for each property
              */
-            update_property(properties: AccessibleProperty[] | null, values: (GObject.Value | any)[]): void;
+            update_property(properties: AccessibleProperty[], values: (GObject.Value | any)[]): void;
             /**
              * Updates an array of accessible relations.
              *
@@ -115123,7 +115123,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param relations an array of accessible relations
              * @param values an array of `GValues`, one for each relation
              */
-            update_relation(relations: AccessibleRelation[] | null, values: (GObject.Value | any)[]): void;
+            update_relation(relations: AccessibleRelation[], values: (GObject.Value | any)[]): void;
             /**
              * Updates an array of accessible states.
              *
@@ -115134,7 +115134,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param states an array of accessible states
              * @param values an array of `GValues`, one for each state
              */
-            update_state(states: AccessibleState[] | null, values: (GObject.Value | any)[]): void;
+            update_state(states: AccessibleState[], values: (GObject.Value | any)[]): void;
             /**
              * Retrieves the accessible parent for an accessible object.
              *
@@ -115322,7 +115322,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -115363,7 +115363,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -116079,7 +116079,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param message the string to announce
              * @param priority the priority of the announcement
              */
-            announce(message: string, priority: AccessibleAnnouncementPriority | null): void;
+            announce(message: string, priority: AccessibleAnnouncementPriority): void;
             /**
              * Retrieves the accessible parent for an accessible object.
              *
@@ -116125,22 +116125,22 @@ declare module 'gi://Gtk?version=4.0' {
              * @param state platform state to query
              * @returns the value of state for the accessible
              */
-            get_platform_state(state: AccessiblePlatformState | null): boolean;
+            get_platform_state(state: AccessiblePlatformState): boolean;
             /**
              * Resets the accessible property to its default value.
              * @param property the accessible property
              */
-            reset_property(property: AccessibleProperty | null): void;
+            reset_property(property: AccessibleProperty): void;
             /**
              * Resets the accessible relation to its default value.
              * @param relation the accessible relation
              */
-            reset_relation(relation: AccessibleRelation | null): void;
+            reset_relation(relation: AccessibleRelation): void;
             /**
              * Resets the accessible state to its default value.
              * @param state the accessible state
              */
-            reset_state(state: AccessibleState | null): void;
+            reset_state(state: AccessibleState): void;
             /**
              * Sets the parent and sibling of an accessible object.
              *
@@ -116171,7 +116171,7 @@ declare module 'gi://Gtk?version=4.0' {
              * states automatically.
              * @param state the platform state to update
              */
-            update_platform_state(state: AccessiblePlatformState | null): void;
+            update_platform_state(state: AccessiblePlatformState): void;
             /**
              * Updates an array of accessible properties.
              *
@@ -116182,7 +116182,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param properties an array of accessible properties
              * @param values an array of `GValues`, one for each property
              */
-            update_property(properties: AccessibleProperty[] | null, values: (GObject.Value | any)[]): void;
+            update_property(properties: AccessibleProperty[], values: (GObject.Value | any)[]): void;
             /**
              * Updates an array of accessible relations.
              *
@@ -116193,7 +116193,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param relations an array of accessible relations
              * @param values an array of `GValues`, one for each relation
              */
-            update_relation(relations: AccessibleRelation[] | null, values: (GObject.Value | any)[]): void;
+            update_relation(relations: AccessibleRelation[], values: (GObject.Value | any)[]): void;
             /**
              * Updates an array of accessible states.
              *
@@ -116204,7 +116204,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param states an array of accessible states
              * @param values an array of `GValues`, one for each state
              */
-            update_state(states: AccessibleState[] | null, values: (GObject.Value | any)[]): void;
+            update_state(states: AccessibleState[], values: (GObject.Value | any)[]): void;
             /**
              * Retrieves the accessible parent for an accessible object.
              *
@@ -116487,7 +116487,7 @@ declare module 'gi://Gtk?version=4.0' {
              * Sets the desired level of granularity for selecting fonts.
              * @param level the desired level of granularity
              */
-            set_level(level: FontChooserLevel | null): void;
+            set_level(level: FontChooserLevel): void;
             /**
              * Sets the text displayed in the preview area.
              *
@@ -116614,7 +116614,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -116655,7 +116655,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -117898,7 +117898,7 @@ declare module 'gi://Gtk?version=4.0' {
              * Sets the desired level of granularity for selecting fonts.
              * @param level the desired level of granularity
              */
-            set_level(level: FontChooserLevel | null): void;
+            set_level(level: FontChooserLevel): void;
             /**
              * Sets the text displayed in the preview area.
              *
@@ -118025,7 +118025,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -118066,7 +118066,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -118586,7 +118586,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param direction direction of focus movement
              * @returns true if focus ended up inside `widget`
              */
-            child_focus(direction: DirectionType | null): boolean;
+            child_focus(direction: DirectionType): boolean;
             /**
              * Computes the bounds for `widget` in the coordinate space of `target`.
              *
@@ -118621,7 +118621,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param orientation expand direction
              * @returns whether widget tree rooted here should be expanded
              */
-            compute_expand(orientation: Orientation | null): boolean;
+            compute_expand(orientation: Orientation): boolean;
             /**
              * Translates the given `point` in `widget`'s coordinates to coordinates
              * in `target`’s coordinate system.
@@ -119222,7 +119222,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param orientation the orientation to query
              * @returns the size of `widget` in `orientation`
              */
-            get_size(orientation: Orientation | null): number;
+            get_size(orientation: Orientation): number;
             /**
              * Gets the size request that was explicitly set for the widget.
              *
@@ -119547,7 +119547,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param direction direction of focus movement
              * @returns true if stopping keyboard navigation is fine, false   if the emitting widget should try to handle the keyboard   navigation attempt in its parent widget
              */
-            keynav_failed(direction: DirectionType | null): boolean;
+            keynav_failed(direction: DirectionType): boolean;
             /**
              * Returns the widgets for which this widget is the target of a
              * mnemonic.
@@ -119581,7 +119581,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param orientation the orientation to measure
              * @param for_size Size for the opposite of `orientation`, i.e.   if `orientation` is {@link Gtk.Orientation.HORIZONTAL}, this is   the height the widget should be measured with. The {@link Gtk.Orientation.VERTICAL}   case is analogous. This way, both height-for-width and width-for-height   requests can be implemented. If no size is known, -1 can be passed.
              */
-            measure(orientation: Orientation | null, for_size: number): [number, number, number, number];
+            measure(orientation: Orientation, for_size: number): [number, number, number, number];
             /**
              * Emits the `Gtk.Widget::mnemonic-activate` signal.
              * @param group_cycling true if there are other widgets with the same mnemonic
@@ -119632,7 +119632,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param flags flags to influence what is picked
              * @returns the widget's descendant at (x, y)
              */
-            pick(x: number, y: number, flags: PickFlags | null): Widget | null;
+            pick(x: number, y: number, flags: PickFlags): Widget | null;
             /**
              * Flags the widget for a rerun of the {@link Gtk.Widget.size_allocate}
              * function.
@@ -119815,7 +119815,7 @@ declare module 'gi://Gtk?version=4.0' {
              * the value set by {@link Gtk.Widget.set_default_direction} will be used.
              * @param dir the new direction
              */
-            set_direction(dir: TextDirection | null): void;
+            set_direction(dir: TextDirection): void;
             /**
              * Set the focus child of the widget.
              *
@@ -119865,7 +119865,7 @@ declare module 'gi://Gtk?version=4.0' {
              * Sets the horizontal alignment of the widget.
              * @param align the horizontal alignment
              */
-            set_halign(align: Align | null): void;
+            set_halign(align: Align): void;
             /**
              * Sets the `has-tooltip` property on the widget.
              * @param has_tooltip whether or not `widget` has a tooltip
@@ -120005,7 +120005,7 @@ declare module 'gi://Gtk?version=4.0' {
              * The default value is {@link Gtk.Overflow.VISIBLE}.
              * @param overflow desired overflow value
              */
-            set_overflow(overflow: Overflow | null): void;
+            set_overflow(overflow: Overflow): void;
             /**
              * Sets the parent widget of the widget.
              *
@@ -120087,7 +120087,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param flags state flags to turn on
              * @param clear whether to clear state before turning on `flags`
              */
-            set_state_flags(flags: StateFlags | null, clear: boolean): void;
+            set_state_flags(flags: StateFlags, clear: boolean): void;
             /**
              * Sets the contents of the tooltip for widget.
              *
@@ -120119,7 +120119,7 @@ declare module 'gi://Gtk?version=4.0' {
              * Sets the vertical alignment of the widget.
              * @param align the vertical alignment
              */
-            set_valign(align: Align | null): void;
+            set_valign(align: Align): void;
             /**
              * Sets whether the widget would like any available extra vertical
              * space.
@@ -120240,7 +120240,7 @@ declare module 'gi://Gtk?version=4.0' {
              * This function is for use in widget implementations.
              * @param flags state flags to turn off
              */
-            unset_state_flags(flags: StateFlags | null): void;
+            unset_state_flags(flags: StateFlags): void;
             /**
              * Computes whether a container should give this
              *   widget extra space when possible.
@@ -120752,7 +120752,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param message the string to announce
              * @param priority the priority of the announcement
              */
-            announce(message: string, priority: AccessibleAnnouncementPriority | null): void;
+            announce(message: string, priority: AccessibleAnnouncementPriority): void;
             /**
              * Retrieves the accessible parent for an accessible object.
              *
@@ -120798,22 +120798,22 @@ declare module 'gi://Gtk?version=4.0' {
              * @param state platform state to query
              * @returns the value of state for the accessible
              */
-            get_platform_state(state: AccessiblePlatformState | null): boolean;
+            get_platform_state(state: AccessiblePlatformState): boolean;
             /**
              * Resets the accessible property to its default value.
              * @param property the accessible property
              */
-            reset_property(property: AccessibleProperty | null): void;
+            reset_property(property: AccessibleProperty): void;
             /**
              * Resets the accessible relation to its default value.
              * @param relation the accessible relation
              */
-            reset_relation(relation: AccessibleRelation | null): void;
+            reset_relation(relation: AccessibleRelation): void;
             /**
              * Resets the accessible state to its default value.
              * @param state the accessible state
              */
-            reset_state(state: AccessibleState | null): void;
+            reset_state(state: AccessibleState): void;
             /**
              * Sets the parent and sibling of an accessible object.
              *
@@ -120844,7 +120844,7 @@ declare module 'gi://Gtk?version=4.0' {
              * states automatically.
              * @param state the platform state to update
              */
-            update_platform_state(state: AccessiblePlatformState | null): void;
+            update_platform_state(state: AccessiblePlatformState): void;
             /**
              * Updates an array of accessible properties.
              *
@@ -120855,7 +120855,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param properties an array of accessible properties
              * @param values an array of `GValues`, one for each property
              */
-            update_property(properties: AccessibleProperty[] | null, values: (GObject.Value | any)[]): void;
+            update_property(properties: AccessibleProperty[], values: (GObject.Value | any)[]): void;
             /**
              * Updates an array of accessible relations.
              *
@@ -120866,7 +120866,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param relations an array of accessible relations
              * @param values an array of `GValues`, one for each relation
              */
-            update_relation(relations: AccessibleRelation[] | null, values: (GObject.Value | any)[]): void;
+            update_relation(relations: AccessibleRelation[], values: (GObject.Value | any)[]): void;
             /**
              * Updates an array of accessible states.
              *
@@ -120877,7 +120877,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param states an array of accessible states
              * @param values an array of `GValues`, one for each state
              */
-            update_state(states: AccessibleState[] | null, values: (GObject.Value | any)[]): void;
+            update_state(states: AccessibleState[], values: (GObject.Value | any)[]): void;
             /**
              * Retrieves the accessible parent for an accessible object.
              *
@@ -121160,7 +121160,7 @@ declare module 'gi://Gtk?version=4.0' {
              * Sets the desired level of granularity for selecting fonts.
              * @param level the desired level of granularity
              */
-            set_level(level: FontChooserLevel | null): void;
+            set_level(level: FontChooserLevel): void;
             /**
              * Sets the text displayed in the preview area.
              *
@@ -121287,7 +121287,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -121328,7 +121328,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -122443,7 +122443,7 @@ declare module 'gi://Gtk?version=4.0' {
              * lets the user select fonts.
              * @param level the level of detail
              */
-            set_level(level: FontLevel | null): void;
+            set_level(level: FontLevel): void;
             /**
              * If `use_font` is `TRUE`, the font name will be written
              * using the selected font.
@@ -122485,7 +122485,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param message the string to announce
              * @param priority the priority of the announcement
              */
-            announce(message: string, priority: AccessibleAnnouncementPriority | null): void;
+            announce(message: string, priority: AccessibleAnnouncementPriority): void;
             /**
              * Retrieves the accessible parent for an accessible object.
              *
@@ -122531,22 +122531,22 @@ declare module 'gi://Gtk?version=4.0' {
              * @param state platform state to query
              * @returns the value of state for the accessible
              */
-            get_platform_state(state: AccessiblePlatformState | null): boolean;
+            get_platform_state(state: AccessiblePlatformState): boolean;
             /**
              * Resets the accessible property to its default value.
              * @param property the accessible property
              */
-            reset_property(property: AccessibleProperty | null): void;
+            reset_property(property: AccessibleProperty): void;
             /**
              * Resets the accessible relation to its default value.
              * @param relation the accessible relation
              */
-            reset_relation(relation: AccessibleRelation | null): void;
+            reset_relation(relation: AccessibleRelation): void;
             /**
              * Resets the accessible state to its default value.
              * @param state the accessible state
              */
-            reset_state(state: AccessibleState | null): void;
+            reset_state(state: AccessibleState): void;
             /**
              * Sets the parent and sibling of an accessible object.
              *
@@ -122577,7 +122577,7 @@ declare module 'gi://Gtk?version=4.0' {
              * states automatically.
              * @param state the platform state to update
              */
-            update_platform_state(state: AccessiblePlatformState | null): void;
+            update_platform_state(state: AccessiblePlatformState): void;
             /**
              * Updates an array of accessible properties.
              *
@@ -122588,7 +122588,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param properties an array of accessible properties
              * @param values an array of `GValues`, one for each property
              */
-            update_property(properties: AccessibleProperty[] | null, values: (GObject.Value | any)[]): void;
+            update_property(properties: AccessibleProperty[], values: (GObject.Value | any)[]): void;
             /**
              * Updates an array of accessible relations.
              *
@@ -122599,7 +122599,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param relations an array of accessible relations
              * @param values an array of `GValues`, one for each relation
              */
-            update_relation(relations: AccessibleRelation[] | null, values: (GObject.Value | any)[]): void;
+            update_relation(relations: AccessibleRelation[], values: (GObject.Value | any)[]): void;
             /**
              * Updates an array of accessible states.
              *
@@ -122610,7 +122610,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param states an array of accessible states
              * @param values an array of `GValues`, one for each state
              */
-            update_state(states: AccessibleState[] | null, values: (GObject.Value | any)[]): void;
+            update_state(states: AccessibleState[], values: (GObject.Value | any)[]): void;
             /**
              * Retrieves the accessible parent for an accessible object.
              *
@@ -122798,7 +122798,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -122839,7 +122839,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -123476,7 +123476,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param message the string to announce
              * @param priority the priority of the announcement
              */
-            announce(message: string, priority: AccessibleAnnouncementPriority | null): void;
+            announce(message: string, priority: AccessibleAnnouncementPriority): void;
             /**
              * Retrieves the accessible parent for an accessible object.
              *
@@ -123522,22 +123522,22 @@ declare module 'gi://Gtk?version=4.0' {
              * @param state platform state to query
              * @returns the value of state for the accessible
              */
-            get_platform_state(state: AccessiblePlatformState | null): boolean;
+            get_platform_state(state: AccessiblePlatformState): boolean;
             /**
              * Resets the accessible property to its default value.
              * @param property the accessible property
              */
-            reset_property(property: AccessibleProperty | null): void;
+            reset_property(property: AccessibleProperty): void;
             /**
              * Resets the accessible relation to its default value.
              * @param relation the accessible relation
              */
-            reset_relation(relation: AccessibleRelation | null): void;
+            reset_relation(relation: AccessibleRelation): void;
             /**
              * Resets the accessible state to its default value.
              * @param state the accessible state
              */
-            reset_state(state: AccessibleState | null): void;
+            reset_state(state: AccessibleState): void;
             /**
              * Sets the parent and sibling of an accessible object.
              *
@@ -123568,7 +123568,7 @@ declare module 'gi://Gtk?version=4.0' {
              * states automatically.
              * @param state the platform state to update
              */
-            update_platform_state(state: AccessiblePlatformState | null): void;
+            update_platform_state(state: AccessiblePlatformState): void;
             /**
              * Updates an array of accessible properties.
              *
@@ -123579,7 +123579,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param properties an array of accessible properties
              * @param values an array of `GValues`, one for each property
              */
-            update_property(properties: AccessibleProperty[] | null, values: (GObject.Value | any)[]): void;
+            update_property(properties: AccessibleProperty[], values: (GObject.Value | any)[]): void;
             /**
              * Updates an array of accessible relations.
              *
@@ -123590,7 +123590,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param relations an array of accessible relations
              * @param values an array of `GValues`, one for each relation
              */
-            update_relation(relations: AccessibleRelation[] | null, values: (GObject.Value | any)[]): void;
+            update_relation(relations: AccessibleRelation[], values: (GObject.Value | any)[]): void;
             /**
              * Updates an array of accessible states.
              *
@@ -123601,7 +123601,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param states an array of accessible states
              * @param values an array of `GValues`, one for each state
              */
-            update_state(states: AccessibleState[] | null, values: (GObject.Value | any)[]): void;
+            update_state(states: AccessibleState[], values: (GObject.Value | any)[]): void;
             /**
              * Retrieves the accessible parent for an accessible object.
              *
@@ -123789,7 +123789,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -123830,7 +123830,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -124682,7 +124682,7 @@ declare module 'gi://Gtk?version=4.0' {
              * By default, all APIs are allowed.
              * @param apis the allowed APIs
              */
-            set_allowed_apis(apis: Gdk.GLAPI | null): void;
+            set_allowed_apis(apis: Gdk.GLAPI): void;
             /**
              * Sets whether the {@link Gtk.GLArea} is in auto render mode.
              *
@@ -124771,7 +124771,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param message the string to announce
              * @param priority the priority of the announcement
              */
-            announce(message: string, priority: AccessibleAnnouncementPriority | null): void;
+            announce(message: string, priority: AccessibleAnnouncementPriority): void;
             /**
              * Retrieves the accessible parent for an accessible object.
              *
@@ -124817,22 +124817,22 @@ declare module 'gi://Gtk?version=4.0' {
              * @param state platform state to query
              * @returns the value of state for the accessible
              */
-            get_platform_state(state: AccessiblePlatformState | null): boolean;
+            get_platform_state(state: AccessiblePlatformState): boolean;
             /**
              * Resets the accessible property to its default value.
              * @param property the accessible property
              */
-            reset_property(property: AccessibleProperty | null): void;
+            reset_property(property: AccessibleProperty): void;
             /**
              * Resets the accessible relation to its default value.
              * @param relation the accessible relation
              */
-            reset_relation(relation: AccessibleRelation | null): void;
+            reset_relation(relation: AccessibleRelation): void;
             /**
              * Resets the accessible state to its default value.
              * @param state the accessible state
              */
-            reset_state(state: AccessibleState | null): void;
+            reset_state(state: AccessibleState): void;
             /**
              * Sets the parent and sibling of an accessible object.
              *
@@ -124863,7 +124863,7 @@ declare module 'gi://Gtk?version=4.0' {
              * states automatically.
              * @param state the platform state to update
              */
-            update_platform_state(state: AccessiblePlatformState | null): void;
+            update_platform_state(state: AccessiblePlatformState): void;
             /**
              * Updates an array of accessible properties.
              *
@@ -124874,7 +124874,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param properties an array of accessible properties
              * @param values an array of `GValues`, one for each property
              */
-            update_property(properties: AccessibleProperty[] | null, values: (GObject.Value | any)[]): void;
+            update_property(properties: AccessibleProperty[], values: (GObject.Value | any)[]): void;
             /**
              * Updates an array of accessible relations.
              *
@@ -124885,7 +124885,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param relations an array of accessible relations
              * @param values an array of `GValues`, one for each relation
              */
-            update_relation(relations: AccessibleRelation[] | null, values: (GObject.Value | any)[]): void;
+            update_relation(relations: AccessibleRelation[], values: (GObject.Value | any)[]): void;
             /**
              * Updates an array of accessible states.
              *
@@ -124896,7 +124896,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param states an array of accessible states
              * @param values an array of `GValues`, one for each state
              */
-            update_state(states: AccessibleState[] | null, values: (GObject.Value | any)[]): void;
+            update_state(states: AccessibleState[], values: (GObject.Value | any)[]): void;
             /**
              * Retrieves the accessible parent for an accessible object.
              *
@@ -125084,7 +125084,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -125125,7 +125125,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -125888,7 +125888,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param state the sequence state
              * @returns `true` if `sequence` is handled by `gesture`,   and the state is changed successfully
              */
-            set_sequence_state(sequence: Gdk.EventSequence, state: EventSequenceState | null): boolean;
+            set_sequence_state(sequence: Gdk.EventSequence, state: EventSequenceState): boolean;
             /**
              * Sets the state of all sequences that `gesture` is currently
              * interacting with.
@@ -125936,7 +125936,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param state the sequence state
              * @returns `true` if the state of at least one sequence   was changed successfully
              */
-            set_state(state: EventSequenceState | null): boolean;
+            set_state(state: EventSequenceState): boolean;
             /**
              * Separates `gesture` into an isolated group.
              */
@@ -126392,7 +126392,7 @@ declare module 'gi://Gtk?version=4.0' {
              * Sets the orientation to be expected on pan gestures.
              * @param orientation expected orientation
              */
-            set_orientation(orientation: Orientation | null): void;
+            set_orientation(orientation: Orientation): void;
         }
 
         namespace GestureRotate {
@@ -126765,7 +126765,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param axes array of requested axes, terminated with {@link Gdk.AxisUse.IGNORE}
              * @returns `true` if there is a current value for the axes
              */
-            get_axes(axes: Gdk.AxisUse[] | null): [boolean, number[]];
+            get_axes(axes: Gdk.AxisUse[]): [boolean, number[]];
             /**
              * Returns the current value for the requested `axis`.
              *
@@ -126776,7 +126776,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param axis requested device axis
              * @returns `true` if there is a current value for the axis
              */
-            get_axis(axis: Gdk.AxisUse | null): [boolean, number];
+            get_axis(axis: Gdk.AxisUse): [boolean, number];
             /**
              * Returns the accumulated backlog of tracking information.
              *
@@ -127216,7 +127216,7 @@ declare module 'gi://Gtk?version=4.0' {
              * to offload the content of its child widget.
              * @param enabled whether to enable offload
              */
-            set_enabled(enabled: GraphicsOffloadEnabled | null): void;
+            set_enabled(enabled: GraphicsOffloadEnabled): void;
             /**
              * The accessible role of the given {@link Gtk.Accessible} implementation.
              *
@@ -127246,7 +127246,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param message the string to announce
              * @param priority the priority of the announcement
              */
-            announce(message: string, priority: AccessibleAnnouncementPriority | null): void;
+            announce(message: string, priority: AccessibleAnnouncementPriority): void;
             /**
              * Retrieves the accessible parent for an accessible object.
              *
@@ -127292,22 +127292,22 @@ declare module 'gi://Gtk?version=4.0' {
              * @param state platform state to query
              * @returns the value of state for the accessible
              */
-            get_platform_state(state: AccessiblePlatformState | null): boolean;
+            get_platform_state(state: AccessiblePlatformState): boolean;
             /**
              * Resets the accessible property to its default value.
              * @param property the accessible property
              */
-            reset_property(property: AccessibleProperty | null): void;
+            reset_property(property: AccessibleProperty): void;
             /**
              * Resets the accessible relation to its default value.
              * @param relation the accessible relation
              */
-            reset_relation(relation: AccessibleRelation | null): void;
+            reset_relation(relation: AccessibleRelation): void;
             /**
              * Resets the accessible state to its default value.
              * @param state the accessible state
              */
-            reset_state(state: AccessibleState | null): void;
+            reset_state(state: AccessibleState): void;
             /**
              * Sets the parent and sibling of an accessible object.
              *
@@ -127338,7 +127338,7 @@ declare module 'gi://Gtk?version=4.0' {
              * states automatically.
              * @param state the platform state to update
              */
-            update_platform_state(state: AccessiblePlatformState | null): void;
+            update_platform_state(state: AccessiblePlatformState): void;
             /**
              * Updates an array of accessible properties.
              *
@@ -127349,7 +127349,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param properties an array of accessible properties
              * @param values an array of `GValues`, one for each property
              */
-            update_property(properties: AccessibleProperty[] | null, values: (GObject.Value | any)[]): void;
+            update_property(properties: AccessibleProperty[], values: (GObject.Value | any)[]): void;
             /**
              * Updates an array of accessible relations.
              *
@@ -127360,7 +127360,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param relations an array of accessible relations
              * @param values an array of `GValues`, one for each relation
              */
-            update_relation(relations: AccessibleRelation[] | null, values: (GObject.Value | any)[]): void;
+            update_relation(relations: AccessibleRelation[], values: (GObject.Value | any)[]): void;
             /**
              * Updates an array of accessible states.
              *
@@ -127371,7 +127371,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param states an array of accessible states
              * @param values an array of `GValues`, one for each state
              */
-            update_state(states: AccessibleState[] | null, values: (GObject.Value | any)[]): void;
+            update_state(states: AccessibleState[], values: (GObject.Value | any)[]): void;
             /**
              * Retrieves the accessible parent for an accessible object.
              *
@@ -127559,7 +127559,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -127600,7 +127600,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -128252,7 +128252,7 @@ declare module 'gi://Gtk?version=4.0' {
             attach_next_to(
                 child: Widget,
                 sibling: Widget | null,
-                side: PositionType | null,
+                side: PositionType,
                 width: number,
                 height: number,
             ): void;
@@ -128316,7 +128316,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param sibling the child of `grid` that the new row or column will be   placed next to
              * @param side the side of `sibling` that `child` is positioned next to
              */
-            insert_next_to(sibling: Widget, side: PositionType | null): void;
+            insert_next_to(sibling: Widget, side: PositionType): void;
             /**
              * Inserts a row at the specified position.
              *
@@ -128386,7 +128386,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param row a row index
              * @param pos a {@link Gtk.BaselinePosition}
              */
-            set_row_baseline_position(row: number, pos: BaselinePosition | null): void;
+            set_row_baseline_position(row: number, pos: BaselinePosition): void;
             /**
              * Sets whether all rows of `grid` will have the same height.
              * @param homogeneous `true` to make rows homogeneous
@@ -128432,7 +128432,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param message the string to announce
              * @param priority the priority of the announcement
              */
-            announce(message: string, priority: AccessibleAnnouncementPriority | null): void;
+            announce(message: string, priority: AccessibleAnnouncementPriority): void;
             /**
              * Retrieves the accessible parent for an accessible object.
              *
@@ -128478,22 +128478,22 @@ declare module 'gi://Gtk?version=4.0' {
              * @param state platform state to query
              * @returns the value of state for the accessible
              */
-            get_platform_state(state: AccessiblePlatformState | null): boolean;
+            get_platform_state(state: AccessiblePlatformState): boolean;
             /**
              * Resets the accessible property to its default value.
              * @param property the accessible property
              */
-            reset_property(property: AccessibleProperty | null): void;
+            reset_property(property: AccessibleProperty): void;
             /**
              * Resets the accessible relation to its default value.
              * @param relation the accessible relation
              */
-            reset_relation(relation: AccessibleRelation | null): void;
+            reset_relation(relation: AccessibleRelation): void;
             /**
              * Resets the accessible state to its default value.
              * @param state the accessible state
              */
-            reset_state(state: AccessibleState | null): void;
+            reset_state(state: AccessibleState): void;
             /**
              * Sets the parent and sibling of an accessible object.
              *
@@ -128524,7 +128524,7 @@ declare module 'gi://Gtk?version=4.0' {
              * states automatically.
              * @param state the platform state to update
              */
-            update_platform_state(state: AccessiblePlatformState | null): void;
+            update_platform_state(state: AccessiblePlatformState): void;
             /**
              * Updates an array of accessible properties.
              *
@@ -128535,7 +128535,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param properties an array of accessible properties
              * @param values an array of `GValues`, one for each property
              */
-            update_property(properties: AccessibleProperty[] | null, values: (GObject.Value | any)[]): void;
+            update_property(properties: AccessibleProperty[], values: (GObject.Value | any)[]): void;
             /**
              * Updates an array of accessible relations.
              *
@@ -128546,7 +128546,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param relations an array of accessible relations
              * @param values an array of `GValues`, one for each relation
              */
-            update_relation(relations: AccessibleRelation[] | null, values: (GObject.Value | any)[]): void;
+            update_relation(relations: AccessibleRelation[], values: (GObject.Value | any)[]): void;
             /**
              * Updates an array of accessible states.
              *
@@ -128557,7 +128557,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param states an array of accessible states
              * @param values an array of `GValues`, one for each state
              */
-            update_state(states: AccessibleState[] | null, values: (GObject.Value | any)[]): void;
+            update_state(states: AccessibleState[], values: (GObject.Value | any)[]): void;
             /**
              * Retrieves the accessible parent for an accessible object.
              *
@@ -128710,7 +128710,7 @@ declare module 'gi://Gtk?version=4.0' {
              * Sets the orientation of the `orientable`.
              * @param orientation the orientable’s new orientation
              */
-            set_orientation(orientation: Orientation | null): void;
+            set_orientation(orientation: Orientation): void;
             /**
              * Creates a binding between `source_property` on `source` and `target_property`
              * on `target`.
@@ -128755,7 +128755,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -128796,7 +128796,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -129363,7 +129363,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param row a row index
              * @param pos a {@link Gtk.BaselinePosition}
              */
-            set_row_baseline_position(row: number, pos: BaselinePosition | null): void;
+            set_row_baseline_position(row: number, pos: BaselinePosition): void;
             /**
              * Sets whether all rows of `grid` should have the same height.
              * @param homogeneous `true` to make rows homogeneous
@@ -129816,7 +129816,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param flags actions to perform
              * @param scroll details of how to perform   the scroll operation or `null` to scroll into view
              */
-            scroll_to(pos: number, flags: ListScrollFlags | null, scroll?: ScrollInfo | null): void;
+            scroll_to(pos: number, flags: ListScrollFlags, scroll?: ScrollInfo | null): void;
             /**
              * Sets whether selections can be changed by dragging with the mouse.
              * @param enable_rubberband `true` to enable rubberband selection
@@ -129864,7 +129864,7 @@ declare module 'gi://Gtk?version=4.0' {
              * Sets the behavior of the <kbd>Tab</kbd> and <kbd>Shift</kbd>+<kbd>Tab</kbd> keys.
              * @param tab_behavior The desired tab behavior
              */
-            set_tab_behavior(tab_behavior: ListTabBehavior | null): void;
+            set_tab_behavior(tab_behavior: ListTabBehavior): void;
             /**
              * The orientation of the orientable.
              * @category Inherited from Gtk.Orientable
@@ -129920,7 +129920,7 @@ declare module 'gi://Gtk?version=4.0' {
              * Sets the orientation of the `orientable`.
              * @param orientation the orientable’s new orientation
              */
-            set_orientation(orientation: Orientation | null): void;
+            set_orientation(orientation: Orientation): void;
             /**
              * Returns the size of a non-scrolling border around the
              * outside of the scrollable.
@@ -129963,7 +129963,7 @@ declare module 'gi://Gtk?version=4.0' {
              * below the minimum width or below the natural width.
              * @param policy the horizontal {@link Gtk.ScrollablePolicy}
              */
-            set_hscroll_policy(policy: ScrollablePolicy | null): void;
+            set_hscroll_policy(policy: ScrollablePolicy): void;
             /**
              * Sets the vertical adjustment of the {@link Gtk.Scrollable}.
              * @param vadjustment a {@link Gtk.Adjustment}
@@ -129976,7 +129976,7 @@ declare module 'gi://Gtk?version=4.0' {
              * below the minimum height or below the natural height.
              * @param policy the vertical {@link Gtk.ScrollablePolicy}
              */
-            set_vscroll_policy(policy: ScrollablePolicy | null): void;
+            set_vscroll_policy(policy: ScrollablePolicy): void;
             /**
              * Returns the size of a non-scrolling border around the
              * outside of the scrollable.
@@ -130031,7 +130031,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -130072,7 +130072,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -130822,7 +130822,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param message the string to announce
              * @param priority the priority of the announcement
              */
-            announce(message: string, priority: AccessibleAnnouncementPriority | null): void;
+            announce(message: string, priority: AccessibleAnnouncementPriority): void;
             /**
              * Retrieves the accessible parent for an accessible object.
              *
@@ -130868,22 +130868,22 @@ declare module 'gi://Gtk?version=4.0' {
              * @param state platform state to query
              * @returns the value of state for the accessible
              */
-            get_platform_state(state: AccessiblePlatformState | null): boolean;
+            get_platform_state(state: AccessiblePlatformState): boolean;
             /**
              * Resets the accessible property to its default value.
              * @param property the accessible property
              */
-            reset_property(property: AccessibleProperty | null): void;
+            reset_property(property: AccessibleProperty): void;
             /**
              * Resets the accessible relation to its default value.
              * @param relation the accessible relation
              */
-            reset_relation(relation: AccessibleRelation | null): void;
+            reset_relation(relation: AccessibleRelation): void;
             /**
              * Resets the accessible state to its default value.
              * @param state the accessible state
              */
-            reset_state(state: AccessibleState | null): void;
+            reset_state(state: AccessibleState): void;
             /**
              * Sets the parent and sibling of an accessible object.
              *
@@ -130914,7 +130914,7 @@ declare module 'gi://Gtk?version=4.0' {
              * states automatically.
              * @param state the platform state to update
              */
-            update_platform_state(state: AccessiblePlatformState | null): void;
+            update_platform_state(state: AccessiblePlatformState): void;
             /**
              * Updates an array of accessible properties.
              *
@@ -130925,7 +130925,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param properties an array of accessible properties
              * @param values an array of `GValues`, one for each property
              */
-            update_property(properties: AccessibleProperty[] | null, values: (GObject.Value | any)[]): void;
+            update_property(properties: AccessibleProperty[], values: (GObject.Value | any)[]): void;
             /**
              * Updates an array of accessible relations.
              *
@@ -130936,7 +130936,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param relations an array of accessible relations
              * @param values an array of `GValues`, one for each relation
              */
-            update_relation(relations: AccessibleRelation[] | null, values: (GObject.Value | any)[]): void;
+            update_relation(relations: AccessibleRelation[], values: (GObject.Value | any)[]): void;
             /**
              * Updates an array of accessible states.
              *
@@ -130947,7 +130947,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param states an array of accessible states
              * @param values an array of `GValues`, one for each state
              */
-            update_state(states: AccessibleState[] | null, values: (GObject.Value | any)[]): void;
+            update_state(states: AccessibleState[], values: (GObject.Value | any)[]): void;
             /**
              * Retrieves the accessible parent for an accessible object.
              *
@@ -131135,7 +131135,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -131176,7 +131176,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -131974,7 +131974,7 @@ declare module 'gi://Gtk?version=4.0' {
                 device: Gdk.Device,
                 time: number,
                 keycode: number,
-                state: Gdk.ModifierType | null,
+                state: Gdk.ModifierType,
                 group: number,
             ): boolean;
             /**
@@ -132709,7 +132709,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -132750,7 +132750,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -133414,8 +133414,8 @@ declare module 'gi://Gtk?version=4.0' {
                 icon: Gio.Icon,
                 size: number,
                 scale: number,
-                direction: TextDirection | null,
-                flags: IconLookupFlags | null,
+                direction: TextDirection,
+                flags: IconLookupFlags,
             ): IconPaintable;
             /**
              * Looks up a named icon for a desired size and window scale,
@@ -133447,8 +133447,8 @@ declare module 'gi://Gtk?version=4.0' {
                 fallbacks: string[] | null,
                 size: number,
                 scale: number,
-                direction: TextDirection | null,
-                flags: IconLookupFlags | null,
+                direction: TextDirection,
+                flags: IconLookupFlags,
             ): IconPaintable;
             /**
              * Sets the resource paths that will be looked at when
@@ -134003,7 +134003,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param formats the formats that the drag will support
              * @param actions the bitmask of possible actions for a drag to this    widget
              */
-            enable_model_drag_dest(formats: Gdk.ContentFormats, actions: Gdk.DragAction | null): void;
+            enable_model_drag_dest(formats: Gdk.ContentFormats, actions: Gdk.DragAction): void;
             /**
              * Turns `icon_view` into a drag source for automatic DND. Calling this
              * method sets {@link Gtk.IconView}:reorderable to `false`.
@@ -134012,9 +134012,9 @@ declare module 'gi://Gtk?version=4.0' {
              * @param actions the bitmask of possible actions for a drag from this    widget
              */
             enable_model_drag_source(
-                start_button_mask: Gdk.ModifierType | null,
+                start_button_mask: Gdk.ModifierType,
                 formats: Gdk.ContentFormats,
-                actions: Gdk.DragAction | null,
+                actions: Gdk.DragAction,
             ): void;
             /**
              * Gets the setting set by `gtk_icon_view_set_activate_on_single_click()`.
@@ -134310,13 +134310,13 @@ declare module 'gi://Gtk?version=4.0' {
              * @param path The path of the item to highlight
              * @param pos Specifies where to drop, relative to the item
              */
-            set_drag_dest_item(path: TreePath | null, pos: IconViewDropPosition | null): void;
+            set_drag_dest_item(path: TreePath | null, pos: IconViewDropPosition): void;
             /**
              * Sets the ::item-orientation property which determines whether the labels
              * are drawn beside the icons instead of below.
              * @param orientation the relative position of texts and icons
              */
-            set_item_orientation(orientation: Orientation | null): void;
+            set_item_orientation(orientation: Orientation): void;
             /**
              * Sets the {@link Gtk.IconView}:item-padding property which specifies the padding
              * around each of the icon view’s items.
@@ -134385,7 +134385,7 @@ declare module 'gi://Gtk?version=4.0' {
              * Sets the selection mode of the `icon_view`.
              * @param mode The selection mode
              */
-            set_selection_mode(mode: SelectionMode | null): void;
+            set_selection_mode(mode: SelectionMode): void;
             /**
              * Sets the ::spacing property which specifies the space
              * which is inserted between the cells (i.e. the icon and
@@ -134519,7 +134519,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param message the string to announce
              * @param priority the priority of the announcement
              */
-            announce(message: string, priority: AccessibleAnnouncementPriority | null): void;
+            announce(message: string, priority: AccessibleAnnouncementPriority): void;
             /**
              * Retrieves the accessible parent for an accessible object.
              *
@@ -134565,22 +134565,22 @@ declare module 'gi://Gtk?version=4.0' {
              * @param state platform state to query
              * @returns the value of state for the accessible
              */
-            get_platform_state(state: AccessiblePlatformState | null): boolean;
+            get_platform_state(state: AccessiblePlatformState): boolean;
             /**
              * Resets the accessible property to its default value.
              * @param property the accessible property
              */
-            reset_property(property: AccessibleProperty | null): void;
+            reset_property(property: AccessibleProperty): void;
             /**
              * Resets the accessible relation to its default value.
              * @param relation the accessible relation
              */
-            reset_relation(relation: AccessibleRelation | null): void;
+            reset_relation(relation: AccessibleRelation): void;
             /**
              * Resets the accessible state to its default value.
              * @param state the accessible state
              */
-            reset_state(state: AccessibleState | null): void;
+            reset_state(state: AccessibleState): void;
             /**
              * Sets the parent and sibling of an accessible object.
              *
@@ -134611,7 +134611,7 @@ declare module 'gi://Gtk?version=4.0' {
              * states automatically.
              * @param state the platform state to update
              */
-            update_platform_state(state: AccessiblePlatformState | null): void;
+            update_platform_state(state: AccessiblePlatformState): void;
             /**
              * Updates an array of accessible properties.
              *
@@ -134622,7 +134622,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param properties an array of accessible properties
              * @param values an array of `GValues`, one for each property
              */
-            update_property(properties: AccessibleProperty[] | null, values: (GObject.Value | any)[]): void;
+            update_property(properties: AccessibleProperty[], values: (GObject.Value | any)[]): void;
             /**
              * Updates an array of accessible relations.
              *
@@ -134633,7 +134633,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param relations an array of accessible relations
              * @param values an array of `GValues`, one for each relation
              */
-            update_relation(relations: AccessibleRelation[] | null, values: (GObject.Value | any)[]): void;
+            update_relation(relations: AccessibleRelation[], values: (GObject.Value | any)[]): void;
             /**
              * Updates an array of accessible states.
              *
@@ -134644,7 +134644,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param states an array of accessible states
              * @param values an array of `GValues`, one for each state
              */
-            update_state(states: AccessibleState[] | null, values: (GObject.Value | any)[]): void;
+            update_state(states: AccessibleState[], values: (GObject.Value | any)[]): void;
             /**
              * Retrieves the accessible parent for an accessible object.
              *
@@ -134991,7 +134991,7 @@ declare module 'gi://Gtk?version=4.0' {
              * below the minimum width or below the natural width.
              * @param policy the horizontal {@link Gtk.ScrollablePolicy}
              */
-            set_hscroll_policy(policy: ScrollablePolicy | null): void;
+            set_hscroll_policy(policy: ScrollablePolicy): void;
             /**
              * Sets the vertical adjustment of the {@link Gtk.Scrollable}.
              * @param vadjustment a {@link Gtk.Adjustment}
@@ -135004,7 +135004,7 @@ declare module 'gi://Gtk?version=4.0' {
              * below the minimum height or below the natural height.
              * @param policy the vertical {@link Gtk.ScrollablePolicy}
              */
-            set_vscroll_policy(policy: ScrollablePolicy | null): void;
+            set_vscroll_policy(policy: ScrollablePolicy): void;
             /**
              * Returns the size of a non-scrolling border around the
              * outside of the scrollable.
@@ -135059,7 +135059,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -135100,7 +135100,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -135846,7 +135846,7 @@ declare module 'gi://Gtk?version=4.0' {
              * Suggests an icon size to the theme for named icons.
              * @param icon_size the new icon size
              */
-            set_icon_size(icon_size: IconSize | null): void;
+            set_icon_size(icon_size: IconSize): void;
             /**
              * Sets the pixel size to use for named icons.
              *
@@ -135884,7 +135884,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param message the string to announce
              * @param priority the priority of the announcement
              */
-            announce(message: string, priority: AccessibleAnnouncementPriority | null): void;
+            announce(message: string, priority: AccessibleAnnouncementPriority): void;
             /**
              * Retrieves the accessible parent for an accessible object.
              *
@@ -135930,22 +135930,22 @@ declare module 'gi://Gtk?version=4.0' {
              * @param state platform state to query
              * @returns the value of state for the accessible
              */
-            get_platform_state(state: AccessiblePlatformState | null): boolean;
+            get_platform_state(state: AccessiblePlatformState): boolean;
             /**
              * Resets the accessible property to its default value.
              * @param property the accessible property
              */
-            reset_property(property: AccessibleProperty | null): void;
+            reset_property(property: AccessibleProperty): void;
             /**
              * Resets the accessible relation to its default value.
              * @param relation the accessible relation
              */
-            reset_relation(relation: AccessibleRelation | null): void;
+            reset_relation(relation: AccessibleRelation): void;
             /**
              * Resets the accessible state to its default value.
              * @param state the accessible state
              */
-            reset_state(state: AccessibleState | null): void;
+            reset_state(state: AccessibleState): void;
             /**
              * Sets the parent and sibling of an accessible object.
              *
@@ -135976,7 +135976,7 @@ declare module 'gi://Gtk?version=4.0' {
              * states automatically.
              * @param state the platform state to update
              */
-            update_platform_state(state: AccessiblePlatformState | null): void;
+            update_platform_state(state: AccessiblePlatformState): void;
             /**
              * Updates an array of accessible properties.
              *
@@ -135987,7 +135987,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param properties an array of accessible properties
              * @param values an array of `GValues`, one for each property
              */
-            update_property(properties: AccessibleProperty[] | null, values: (GObject.Value | any)[]): void;
+            update_property(properties: AccessibleProperty[], values: (GObject.Value | any)[]): void;
             /**
              * Updates an array of accessible relations.
              *
@@ -135998,7 +135998,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param relations an array of accessible relations
              * @param values an array of `GValues`, one for each relation
              */
-            update_relation(relations: AccessibleRelation[] | null, values: (GObject.Value | any)[]): void;
+            update_relation(relations: AccessibleRelation[], values: (GObject.Value | any)[]): void;
             /**
              * Updates an array of accessible states.
              *
@@ -136009,7 +136009,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param states an array of accessible states
              * @param values an array of `GValues`, one for each state
              */
-            update_state(states: AccessibleState[] | null, values: (GObject.Value | any)[]): void;
+            update_state(states: AccessibleState[], values: (GObject.Value | any)[]): void;
             /**
              * Retrieves the accessible parent for an accessible object.
              *
@@ -136197,7 +136197,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -136238,7 +136238,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -136918,7 +136918,7 @@ declare module 'gi://Gtk?version=4.0' {
              * GTK uses this type to determine how the message is displayed.
              * @param message_type a {@link Gtk.MessageType}
              */
-            set_message_type(message_type: MessageType | null): void;
+            set_message_type(message_type: MessageType): void;
             /**
              * Sets the sensitivity of action widgets for `response_id`.
              *
@@ -136977,7 +136977,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param message the string to announce
              * @param priority the priority of the announcement
              */
-            announce(message: string, priority: AccessibleAnnouncementPriority | null): void;
+            announce(message: string, priority: AccessibleAnnouncementPriority): void;
             /**
              * Retrieves the accessible parent for an accessible object.
              *
@@ -137023,22 +137023,22 @@ declare module 'gi://Gtk?version=4.0' {
              * @param state platform state to query
              * @returns the value of state for the accessible
              */
-            get_platform_state(state: AccessiblePlatformState | null): boolean;
+            get_platform_state(state: AccessiblePlatformState): boolean;
             /**
              * Resets the accessible property to its default value.
              * @param property the accessible property
              */
-            reset_property(property: AccessibleProperty | null): void;
+            reset_property(property: AccessibleProperty): void;
             /**
              * Resets the accessible relation to its default value.
              * @param relation the accessible relation
              */
-            reset_relation(relation: AccessibleRelation | null): void;
+            reset_relation(relation: AccessibleRelation): void;
             /**
              * Resets the accessible state to its default value.
              * @param state the accessible state
              */
-            reset_state(state: AccessibleState | null): void;
+            reset_state(state: AccessibleState): void;
             /**
              * Sets the parent and sibling of an accessible object.
              *
@@ -137069,7 +137069,7 @@ declare module 'gi://Gtk?version=4.0' {
              * states automatically.
              * @param state the platform state to update
              */
-            update_platform_state(state: AccessiblePlatformState | null): void;
+            update_platform_state(state: AccessiblePlatformState): void;
             /**
              * Updates an array of accessible properties.
              *
@@ -137080,7 +137080,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param properties an array of accessible properties
              * @param values an array of `GValues`, one for each property
              */
-            update_property(properties: AccessibleProperty[] | null, values: (GObject.Value | any)[]): void;
+            update_property(properties: AccessibleProperty[], values: (GObject.Value | any)[]): void;
             /**
              * Updates an array of accessible relations.
              *
@@ -137091,7 +137091,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param relations an array of accessible relations
              * @param values an array of `GValues`, one for each relation
              */
-            update_relation(relations: AccessibleRelation[] | null, values: (GObject.Value | any)[]): void;
+            update_relation(relations: AccessibleRelation[], values: (GObject.Value | any)[]): void;
             /**
              * Updates an array of accessible states.
              *
@@ -137102,7 +137102,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param states an array of accessible states
              * @param values an array of `GValues`, one for each state
              */
-            update_state(states: AccessibleState[] | null, values: (GObject.Value | any)[]): void;
+            update_state(states: AccessibleState[], values: (GObject.Value | any)[]): void;
             /**
              * Retrieves the accessible parent for an accessible object.
              *
@@ -137290,7 +137290,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -137331,7 +137331,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -138143,12 +138143,12 @@ declare module 'gi://Gtk?version=4.0' {
              * Sets what to do when the text doesn't fit.
              * @param overflow the overflow method to use
              */
-            set_text_overflow(overflow: InscriptionOverflow | null): void;
+            set_text_overflow(overflow: InscriptionOverflow): void;
             /**
              * Controls how line wrapping is done.
              * @param wrap_mode the line wrapping mode
              */
-            set_wrap_mode(wrap_mode: Pango.WrapMode | null): void;
+            set_wrap_mode(wrap_mode: Pango.WrapMode): void;
             /**
              * Sets the `xalign` of the inscription.
              *
@@ -138192,7 +138192,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param message the string to announce
              * @param priority the priority of the announcement
              */
-            announce(message: string, priority: AccessibleAnnouncementPriority | null): void;
+            announce(message: string, priority: AccessibleAnnouncementPriority): void;
             /**
              * Retrieves the accessible parent for an accessible object.
              *
@@ -138238,22 +138238,22 @@ declare module 'gi://Gtk?version=4.0' {
              * @param state platform state to query
              * @returns the value of state for the accessible
              */
-            get_platform_state(state: AccessiblePlatformState | null): boolean;
+            get_platform_state(state: AccessiblePlatformState): boolean;
             /**
              * Resets the accessible property to its default value.
              * @param property the accessible property
              */
-            reset_property(property: AccessibleProperty | null): void;
+            reset_property(property: AccessibleProperty): void;
             /**
              * Resets the accessible relation to its default value.
              * @param relation the accessible relation
              */
-            reset_relation(relation: AccessibleRelation | null): void;
+            reset_relation(relation: AccessibleRelation): void;
             /**
              * Resets the accessible state to its default value.
              * @param state the accessible state
              */
-            reset_state(state: AccessibleState | null): void;
+            reset_state(state: AccessibleState): void;
             /**
              * Sets the parent and sibling of an accessible object.
              *
@@ -138284,7 +138284,7 @@ declare module 'gi://Gtk?version=4.0' {
              * states automatically.
              * @param state the platform state to update
              */
-            update_platform_state(state: AccessiblePlatformState | null): void;
+            update_platform_state(state: AccessiblePlatformState): void;
             /**
              * Updates an array of accessible properties.
              *
@@ -138295,7 +138295,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param properties an array of accessible properties
              * @param values an array of `GValues`, one for each property
              */
-            update_property(properties: AccessibleProperty[] | null, values: (GObject.Value | any)[]): void;
+            update_property(properties: AccessibleProperty[], values: (GObject.Value | any)[]): void;
             /**
              * Updates an array of accessible relations.
              *
@@ -138306,7 +138306,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param relations an array of accessible relations
              * @param values an array of `GValues`, one for each relation
              */
-            update_relation(relations: AccessibleRelation[] | null, values: (GObject.Value | any)[]): void;
+            update_relation(relations: AccessibleRelation[], values: (GObject.Value | any)[]): void;
             /**
              * Updates an array of accessible states.
              *
@@ -138317,7 +138317,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param states an array of accessible states
              * @param values an array of `GValues`, one for each state
              */
-            update_state(states: AccessibleState[] | null, values: (GObject.Value | any)[]): void;
+            update_state(states: AccessibleState[], values: (GObject.Value | any)[]): void;
             /**
              * Retrieves the accessible parent for an accessible object.
              *
@@ -138381,7 +138381,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param start the starting offset of the change, in characters
              * @param end the end offset of the change, in characters
              */
-            update_contents(change: AccessibleTextContentChange | null, start: number, end: number): void;
+            update_contents(change: AccessibleTextContentChange, start: number, end: number): void;
             /**
              * Updates the boundary of the selection.
              *
@@ -138628,7 +138628,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -138669,7 +138669,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -140041,7 +140041,7 @@ declare module 'gi://Gtk?version=4.0' {
              * enough space to render the entire string.
              * @param mode the ellipsization mode
              */
-            set_ellipsize(mode: Pango.EllipsizeMode | null): void;
+            set_ellipsize(mode: Pango.EllipsizeMode): void;
             /**
              * Sets a menu model to add to the context menu of the label.
              * @param model a menu model
@@ -140059,7 +140059,7 @@ declare module 'gi://Gtk?version=4.0' {
              * use {@link Gtk.Widget.set_halign} instead.
              * @param jtype the new justification
              */
-            set_justify(jtype: Justification | null): void;
+            set_justify(jtype: Justification): void;
             /**
              * Sets the text of the label.
              *
@@ -140151,7 +140151,7 @@ declare module 'gi://Gtk?version=4.0' {
              * see the {@link Gtk.Label.wrap_mode} property.
              * @param wrap_mode the line wrapping mode
              */
-            set_natural_wrap_mode(wrap_mode: NaturalWrapMode | null): void;
+            set_natural_wrap_mode(wrap_mode: NaturalWrapMode): void;
             /**
              * Makes text in the label selectable.
              *
@@ -140237,7 +140237,7 @@ declare module 'gi://Gtk?version=4.0' {
              * {@link Gtk.Label.natural_wrap_mode} property.
              * @param wrap_mode the line wrapping mode
              */
-            set_wrap_mode(wrap_mode: Pango.WrapMode | null): void;
+            set_wrap_mode(wrap_mode: Pango.WrapMode): void;
             /**
              * Sets the `xalign` of the label.
              *
@@ -140281,7 +140281,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param message the string to announce
              * @param priority the priority of the announcement
              */
-            announce(message: string, priority: AccessibleAnnouncementPriority | null): void;
+            announce(message: string, priority: AccessibleAnnouncementPriority): void;
             /**
              * Retrieves the accessible parent for an accessible object.
              *
@@ -140327,22 +140327,22 @@ declare module 'gi://Gtk?version=4.0' {
              * @param state platform state to query
              * @returns the value of state for the accessible
              */
-            get_platform_state(state: AccessiblePlatformState | null): boolean;
+            get_platform_state(state: AccessiblePlatformState): boolean;
             /**
              * Resets the accessible property to its default value.
              * @param property the accessible property
              */
-            reset_property(property: AccessibleProperty | null): void;
+            reset_property(property: AccessibleProperty): void;
             /**
              * Resets the accessible relation to its default value.
              * @param relation the accessible relation
              */
-            reset_relation(relation: AccessibleRelation | null): void;
+            reset_relation(relation: AccessibleRelation): void;
             /**
              * Resets the accessible state to its default value.
              * @param state the accessible state
              */
-            reset_state(state: AccessibleState | null): void;
+            reset_state(state: AccessibleState): void;
             /**
              * Sets the parent and sibling of an accessible object.
              *
@@ -140373,7 +140373,7 @@ declare module 'gi://Gtk?version=4.0' {
              * states automatically.
              * @param state the platform state to update
              */
-            update_platform_state(state: AccessiblePlatformState | null): void;
+            update_platform_state(state: AccessiblePlatformState): void;
             /**
              * Updates an array of accessible properties.
              *
@@ -140384,7 +140384,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param properties an array of accessible properties
              * @param values an array of `GValues`, one for each property
              */
-            update_property(properties: AccessibleProperty[] | null, values: (GObject.Value | any)[]): void;
+            update_property(properties: AccessibleProperty[], values: (GObject.Value | any)[]): void;
             /**
              * Updates an array of accessible relations.
              *
@@ -140395,7 +140395,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param relations an array of accessible relations
              * @param values an array of `GValues`, one for each relation
              */
-            update_relation(relations: AccessibleRelation[] | null, values: (GObject.Value | any)[]): void;
+            update_relation(relations: AccessibleRelation[], values: (GObject.Value | any)[]): void;
             /**
              * Updates an array of accessible states.
              *
@@ -140406,7 +140406,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param states an array of accessible states
              * @param values an array of `GValues`, one for each state
              */
-            update_state(states: AccessibleState[] | null, values: (GObject.Value | any)[]): void;
+            update_state(states: AccessibleState[], values: (GObject.Value | any)[]): void;
             /**
              * Retrieves the accessible parent for an accessible object.
              *
@@ -140470,7 +140470,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param start the starting offset of the change, in characters
              * @param end the end offset of the change, in characters
              */
-            update_contents(change: AccessibleTextContentChange | null, start: number, end: number): void;
+            update_contents(change: AccessibleTextContentChange, start: number, end: number): void;
             /**
              * Updates the boundary of the selection.
              *
@@ -140717,7 +140717,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -140758,7 +140758,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -141432,11 +141432,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param orientation the orientation to measure
              * @param for_size Size for the opposite of `orientation`; for instance, if   the `orientation` is {@link Gtk.Orientation.HORIZONTAL}, this is the height   of the widget; if the `orientation` is {@link Gtk.Orientation.VERTICAL}, this   is the width of the widget. This allows to measure the height for the   given width, and the width for the given height. Use -1 if the size   is not known
              */
-            measure(
-                widget: Widget,
-                orientation: Orientation | null,
-                for_size: number,
-            ): [number, number, number, number];
+            measure(widget: Widget, orientation: Orientation, for_size: number): [number, number, number, number];
         }
 
         namespace LevelBar {
@@ -142385,7 +142381,7 @@ declare module 'gi://Gtk?version=4.0' {
              * Sets the `mode` of the {@link Gtk.LevelBar}.
              * @param mode a {@link Gtk.LevelBarMode}
              */
-            set_mode(mode: LevelBarMode | null): void;
+            set_mode(mode: LevelBarMode): void;
             /**
              * Sets the value of the {@link Gtk.LevelBar}.
              * @param value a value in the interval between   {@link Gtk.LevelBar.min_value} and {@link Gtk.LevelBar.max_value}
@@ -142426,7 +142422,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param message the string to announce
              * @param priority the priority of the announcement
              */
-            announce(message: string, priority: AccessibleAnnouncementPriority | null): void;
+            announce(message: string, priority: AccessibleAnnouncementPriority): void;
             /**
              * Retrieves the accessible parent for an accessible object.
              *
@@ -142472,22 +142468,22 @@ declare module 'gi://Gtk?version=4.0' {
              * @param state platform state to query
              * @returns the value of state for the accessible
              */
-            get_platform_state(state: AccessiblePlatformState | null): boolean;
+            get_platform_state(state: AccessiblePlatformState): boolean;
             /**
              * Resets the accessible property to its default value.
              * @param property the accessible property
              */
-            reset_property(property: AccessibleProperty | null): void;
+            reset_property(property: AccessibleProperty): void;
             /**
              * Resets the accessible relation to its default value.
              * @param relation the accessible relation
              */
-            reset_relation(relation: AccessibleRelation | null): void;
+            reset_relation(relation: AccessibleRelation): void;
             /**
              * Resets the accessible state to its default value.
              * @param state the accessible state
              */
-            reset_state(state: AccessibleState | null): void;
+            reset_state(state: AccessibleState): void;
             /**
              * Sets the parent and sibling of an accessible object.
              *
@@ -142518,7 +142514,7 @@ declare module 'gi://Gtk?version=4.0' {
              * states automatically.
              * @param state the platform state to update
              */
-            update_platform_state(state: AccessiblePlatformState | null): void;
+            update_platform_state(state: AccessiblePlatformState): void;
             /**
              * Updates an array of accessible properties.
              *
@@ -142529,7 +142525,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param properties an array of accessible properties
              * @param values an array of `GValues`, one for each property
              */
-            update_property(properties: AccessibleProperty[] | null, values: (GObject.Value | any)[]): void;
+            update_property(properties: AccessibleProperty[], values: (GObject.Value | any)[]): void;
             /**
              * Updates an array of accessible relations.
              *
@@ -142540,7 +142536,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param relations an array of accessible relations
              * @param values an array of `GValues`, one for each relation
              */
-            update_relation(relations: AccessibleRelation[] | null, values: (GObject.Value | any)[]): void;
+            update_relation(relations: AccessibleRelation[], values: (GObject.Value | any)[]): void;
             /**
              * Updates an array of accessible states.
              *
@@ -142551,7 +142547,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param states an array of accessible states
              * @param values an array of `GValues`, one for each state
              */
-            update_state(states: AccessibleState[] | null, values: (GObject.Value | any)[]): void;
+            update_state(states: AccessibleState[], values: (GObject.Value | any)[]): void;
             /**
              * Retrieves the accessible parent for an accessible object.
              *
@@ -142713,7 +142709,7 @@ declare module 'gi://Gtk?version=4.0' {
              * Sets the orientation of the `orientable`.
              * @param orientation the orientable’s new orientation
              */
-            set_orientation(orientation: Orientation | null): void;
+            set_orientation(orientation: Orientation): void;
             /**
              * Creates a binding between `source_property` on `source` and `target_property`
              * on `target`.
@@ -142758,7 +142754,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -142799,7 +142795,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -144052,7 +144048,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -144093,7 +144089,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -144613,7 +144609,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param direction direction of focus movement
              * @returns true if focus ended up inside `widget`
              */
-            child_focus(direction: DirectionType | null): boolean;
+            child_focus(direction: DirectionType): boolean;
             /**
              * Computes the bounds for `widget` in the coordinate space of `target`.
              *
@@ -144648,7 +144644,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param orientation expand direction
              * @returns whether widget tree rooted here should be expanded
              */
-            compute_expand(orientation: Orientation | null): boolean;
+            compute_expand(orientation: Orientation): boolean;
             /**
              * Translates the given `point` in `widget`'s coordinates to coordinates
              * in `target`’s coordinate system.
@@ -145256,7 +145252,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param orientation the orientation to query
              * @returns the size of `widget` in `orientation`
              */
-            get_size(orientation: Orientation | null): number;
+            get_size(orientation: Orientation): number;
             /**
              * Gets the size request that was explicitly set for the widget.
              *
@@ -145581,7 +145577,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param direction direction of focus movement
              * @returns true if stopping keyboard navigation is fine, false   if the emitting widget should try to handle the keyboard   navigation attempt in its parent widget
              */
-            keynav_failed(direction: DirectionType | null): boolean;
+            keynav_failed(direction: DirectionType): boolean;
             /**
              * Returns the widgets for which this widget is the target of a
              * mnemonic.
@@ -145615,7 +145611,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param orientation the orientation to measure
              * @param for_size Size for the opposite of `orientation`, i.e.   if `orientation` is {@link Gtk.Orientation.HORIZONTAL}, this is   the height the widget should be measured with. The {@link Gtk.Orientation.VERTICAL}   case is analogous. This way, both height-for-width and width-for-height   requests can be implemented. If no size is known, -1 can be passed.
              */
-            measure(orientation: Orientation | null, for_size: number): [number, number, number, number];
+            measure(orientation: Orientation, for_size: number): [number, number, number, number];
             /**
              * Emits the `Gtk.Widget::mnemonic-activate` signal.
              * @param group_cycling true if there are other widgets with the same mnemonic
@@ -145666,7 +145662,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param flags flags to influence what is picked
              * @returns the widget's descendant at (x, y)
              */
-            pick(x: number, y: number, flags: PickFlags | null): Widget | null;
+            pick(x: number, y: number, flags: PickFlags): Widget | null;
             /**
              * Flags the widget for a rerun of the {@link Gtk.Widget.size_allocate}
              * function.
@@ -145849,7 +145845,7 @@ declare module 'gi://Gtk?version=4.0' {
              * the value set by {@link Gtk.Widget.set_default_direction} will be used.
              * @param dir the new direction
              */
-            set_direction(dir: TextDirection | null): void;
+            set_direction(dir: TextDirection): void;
             /**
              * Set the focus child of the widget.
              *
@@ -145911,7 +145907,7 @@ declare module 'gi://Gtk?version=4.0' {
              * Sets the horizontal alignment of the widget.
              * @param align the horizontal alignment
              */
-            set_halign(align: Align | null): void;
+            set_halign(align: Align): void;
             /**
              * Sets the `has-tooltip` property on the widget.
              * @param has_tooltip whether or not `widget` has a tooltip
@@ -146051,7 +146047,7 @@ declare module 'gi://Gtk?version=4.0' {
              * The default value is {@link Gtk.Overflow.VISIBLE}.
              * @param overflow desired overflow value
              */
-            set_overflow(overflow: Overflow | null): void;
+            set_overflow(overflow: Overflow): void;
             /**
              * Sets the parent widget of the widget.
              *
@@ -146133,7 +146129,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param flags state flags to turn on
              * @param clear whether to clear state before turning on `flags`
              */
-            set_state_flags(flags: StateFlags | null, clear: boolean): void;
+            set_state_flags(flags: StateFlags, clear: boolean): void;
             /**
              * Sets the contents of the tooltip for widget.
              *
@@ -146165,7 +146161,7 @@ declare module 'gi://Gtk?version=4.0' {
              * Sets the vertical alignment of the widget.
              * @param align the vertical alignment
              */
-            set_valign(align: Align | null): void;
+            set_valign(align: Align): void;
             /**
              * Sets whether the widget would like any available extra vertical
              * space.
@@ -146286,7 +146282,7 @@ declare module 'gi://Gtk?version=4.0' {
              * This function is for use in widget implementations.
              * @param flags state flags to turn off
              */
-            unset_state_flags(flags: StateFlags | null): void;
+            unset_state_flags(flags: StateFlags): void;
             /**
              * Computes whether a container should give this
              *   widget extra space when possible.
@@ -146763,7 +146759,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param message the string to announce
              * @param priority the priority of the announcement
              */
-            announce(message: string, priority: AccessibleAnnouncementPriority | null): void;
+            announce(message: string, priority: AccessibleAnnouncementPriority): void;
             /**
              * Retrieves the accessible parent for an accessible object.
              *
@@ -146809,22 +146805,22 @@ declare module 'gi://Gtk?version=4.0' {
              * @param state platform state to query
              * @returns the value of state for the accessible
              */
-            get_platform_state(state: AccessiblePlatformState | null): boolean;
+            get_platform_state(state: AccessiblePlatformState): boolean;
             /**
              * Resets the accessible property to its default value.
              * @param property the accessible property
              */
-            reset_property(property: AccessibleProperty | null): void;
+            reset_property(property: AccessibleProperty): void;
             /**
              * Resets the accessible relation to its default value.
              * @param relation the accessible relation
              */
-            reset_relation(relation: AccessibleRelation | null): void;
+            reset_relation(relation: AccessibleRelation): void;
             /**
              * Resets the accessible state to its default value.
              * @param state the accessible state
              */
-            reset_state(state: AccessibleState | null): void;
+            reset_state(state: AccessibleState): void;
             /**
              * Sets the parent and sibling of an accessible object.
              *
@@ -146855,7 +146851,7 @@ declare module 'gi://Gtk?version=4.0' {
              * states automatically.
              * @param state the platform state to update
              */
-            update_platform_state(state: AccessiblePlatformState | null): void;
+            update_platform_state(state: AccessiblePlatformState): void;
             /**
              * Updates an array of accessible properties.
              *
@@ -146866,7 +146862,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param properties an array of accessible properties
              * @param values an array of `GValues`, one for each property
              */
-            update_property(properties: AccessibleProperty[] | null, values: (GObject.Value | any)[]): void;
+            update_property(properties: AccessibleProperty[], values: (GObject.Value | any)[]): void;
             /**
              * Updates an array of accessible relations.
              *
@@ -146877,7 +146873,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param relations an array of accessible relations
              * @param values an array of `GValues`, one for each relation
              */
-            update_relation(relations: AccessibleRelation[] | null, values: (GObject.Value | any)[]): void;
+            update_relation(relations: AccessibleRelation[], values: (GObject.Value | any)[]): void;
             /**
              * Updates an array of accessible states.
              *
@@ -146888,7 +146884,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param states an array of accessible states
              * @param values an array of `GValues`, one for each state
              */
-            update_state(states: AccessibleState[] | null, values: (GObject.Value | any)[]): void;
+            update_state(states: AccessibleState[], values: (GObject.Value | any)[]): void;
             /**
              * Retrieves the accessible parent for an accessible object.
              *
@@ -147041,7 +147037,7 @@ declare module 'gi://Gtk?version=4.0' {
              * Sets the orientation of the `orientable`.
              * @param orientation the orientable’s new orientation
              */
-            set_orientation(orientation: Orientation | null): void;
+            set_orientation(orientation: Orientation): void;
             /**
              * Returns the size of a non-scrolling border around the
              * outside of the scrollable.
@@ -147084,7 +147080,7 @@ declare module 'gi://Gtk?version=4.0' {
              * below the minimum width or below the natural width.
              * @param policy the horizontal {@link Gtk.ScrollablePolicy}
              */
-            set_hscroll_policy(policy: ScrollablePolicy | null): void;
+            set_hscroll_policy(policy: ScrollablePolicy): void;
             /**
              * Sets the vertical adjustment of the {@link Gtk.Scrollable}.
              * @param vadjustment a {@link Gtk.Adjustment}
@@ -147097,7 +147093,7 @@ declare module 'gi://Gtk?version=4.0' {
              * below the minimum height or below the natural height.
              * @param policy the vertical {@link Gtk.ScrollablePolicy}
              */
-            set_vscroll_policy(policy: ScrollablePolicy | null): void;
+            set_vscroll_policy(policy: ScrollablePolicy): void;
             /**
              * Returns the size of a non-scrolling border around the
              * outside of the scrollable.
@@ -147152,7 +147148,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -147193,7 +147189,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -148131,7 +148127,7 @@ declare module 'gi://Gtk?version=4.0' {
              * Sets how selection works in the listbox.
              * @param mode The {@link Gtk.SelectionMode}
              */
-            set_selection_mode(mode: SelectionMode | null): void;
+            set_selection_mode(mode: SelectionMode): void;
             /**
              * Sets whether the list box should show separators
              * between rows.
@@ -148158,7 +148154,7 @@ declare module 'gi://Gtk?version=4.0' {
              * Sets the behavior of the <kbd>Tab</kbd> and <kbd>Shift</kbd>+<kbd>Tab</kbd> keys.
              * @param behavior the tab behavior
              */
-            set_tab_behavior(behavior: ListTabBehavior | null): void;
+            set_tab_behavior(behavior: ListTabBehavior): void;
             /**
              * Unselect all children of `box`, if the selection mode allows it.
              */
@@ -148197,7 +148193,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param message the string to announce
              * @param priority the priority of the announcement
              */
-            announce(message: string, priority: AccessibleAnnouncementPriority | null): void;
+            announce(message: string, priority: AccessibleAnnouncementPriority): void;
             /**
              * Retrieves the accessible parent for an accessible object.
              *
@@ -148243,22 +148239,22 @@ declare module 'gi://Gtk?version=4.0' {
              * @param state platform state to query
              * @returns the value of state for the accessible
              */
-            get_platform_state(state: AccessiblePlatformState | null): boolean;
+            get_platform_state(state: AccessiblePlatformState): boolean;
             /**
              * Resets the accessible property to its default value.
              * @param property the accessible property
              */
-            reset_property(property: AccessibleProperty | null): void;
+            reset_property(property: AccessibleProperty): void;
             /**
              * Resets the accessible relation to its default value.
              * @param relation the accessible relation
              */
-            reset_relation(relation: AccessibleRelation | null): void;
+            reset_relation(relation: AccessibleRelation): void;
             /**
              * Resets the accessible state to its default value.
              * @param state the accessible state
              */
-            reset_state(state: AccessibleState | null): void;
+            reset_state(state: AccessibleState): void;
             /**
              * Sets the parent and sibling of an accessible object.
              *
@@ -148289,7 +148285,7 @@ declare module 'gi://Gtk?version=4.0' {
              * states automatically.
              * @param state the platform state to update
              */
-            update_platform_state(state: AccessiblePlatformState | null): void;
+            update_platform_state(state: AccessiblePlatformState): void;
             /**
              * Updates an array of accessible properties.
              *
@@ -148300,7 +148296,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param properties an array of accessible properties
              * @param values an array of `GValues`, one for each property
              */
-            update_property(properties: AccessibleProperty[] | null, values: (GObject.Value | any)[]): void;
+            update_property(properties: AccessibleProperty[], values: (GObject.Value | any)[]): void;
             /**
              * Updates an array of accessible relations.
              *
@@ -148311,7 +148307,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param relations an array of accessible relations
              * @param values an array of `GValues`, one for each relation
              */
-            update_relation(relations: AccessibleRelation[] | null, values: (GObject.Value | any)[]): void;
+            update_relation(relations: AccessibleRelation[], values: (GObject.Value | any)[]): void;
             /**
              * Updates an array of accessible states.
              *
@@ -148322,7 +148318,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param states an array of accessible states
              * @param values an array of `GValues`, one for each state
              */
-            update_state(states: AccessibleState[] | null, values: (GObject.Value | any)[]): void;
+            update_state(states: AccessibleState[], values: (GObject.Value | any)[]): void;
             /**
              * Retrieves the accessible parent for an accessible object.
              *
@@ -148510,7 +148506,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -148551,7 +148547,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -149693,7 +149689,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param message the string to announce
              * @param priority the priority of the announcement
              */
-            announce(message: string, priority: AccessibleAnnouncementPriority | null): void;
+            announce(message: string, priority: AccessibleAnnouncementPriority): void;
             /**
              * Retrieves the accessible parent for an accessible object.
              *
@@ -149739,22 +149735,22 @@ declare module 'gi://Gtk?version=4.0' {
              * @param state platform state to query
              * @returns the value of state for the accessible
              */
-            get_platform_state(state: AccessiblePlatformState | null): boolean;
+            get_platform_state(state: AccessiblePlatformState): boolean;
             /**
              * Resets the accessible property to its default value.
              * @param property the accessible property
              */
-            reset_property(property: AccessibleProperty | null): void;
+            reset_property(property: AccessibleProperty): void;
             /**
              * Resets the accessible relation to its default value.
              * @param relation the accessible relation
              */
-            reset_relation(relation: AccessibleRelation | null): void;
+            reset_relation(relation: AccessibleRelation): void;
             /**
              * Resets the accessible state to its default value.
              * @param state the accessible state
              */
-            reset_state(state: AccessibleState | null): void;
+            reset_state(state: AccessibleState): void;
             /**
              * Sets the parent and sibling of an accessible object.
              *
@@ -149785,7 +149781,7 @@ declare module 'gi://Gtk?version=4.0' {
              * states automatically.
              * @param state the platform state to update
              */
-            update_platform_state(state: AccessiblePlatformState | null): void;
+            update_platform_state(state: AccessiblePlatformState): void;
             /**
              * Updates an array of accessible properties.
              *
@@ -149796,7 +149792,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param properties an array of accessible properties
              * @param values an array of `GValues`, one for each property
              */
-            update_property(properties: AccessibleProperty[] | null, values: (GObject.Value | any)[]): void;
+            update_property(properties: AccessibleProperty[], values: (GObject.Value | any)[]): void;
             /**
              * Updates an array of accessible relations.
              *
@@ -149807,7 +149803,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param relations an array of accessible relations
              * @param values an array of `GValues`, one for each relation
              */
-            update_relation(relations: AccessibleRelation[] | null, values: (GObject.Value | any)[]): void;
+            update_relation(relations: AccessibleRelation[], values: (GObject.Value | any)[]): void;
             /**
              * Updates an array of accessible states.
              *
@@ -149818,7 +149814,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param states an array of accessible states
              * @param values an array of `GValues`, one for each state
              */
-            update_state(states: AccessibleState[] | null, values: (GObject.Value | any)[]): void;
+            update_state(states: AccessibleState[], values: (GObject.Value | any)[]): void;
             /**
              * Retrieves the accessible parent for an accessible object.
              *
@@ -150115,7 +150111,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -150156,7 +150152,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -150676,7 +150672,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param direction direction of focus movement
              * @returns true if focus ended up inside `widget`
              */
-            child_focus(direction: DirectionType | null): boolean;
+            child_focus(direction: DirectionType): boolean;
             /**
              * Computes the bounds for `widget` in the coordinate space of `target`.
              *
@@ -150711,7 +150707,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param orientation expand direction
              * @returns whether widget tree rooted here should be expanded
              */
-            compute_expand(orientation: Orientation | null): boolean;
+            compute_expand(orientation: Orientation): boolean;
             /**
              * Translates the given `point` in `widget`'s coordinates to coordinates
              * in `target`’s coordinate system.
@@ -151319,7 +151315,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param orientation the orientation to query
              * @returns the size of `widget` in `orientation`
              */
-            get_size(orientation: Orientation | null): number;
+            get_size(orientation: Orientation): number;
             /**
              * Gets the size request that was explicitly set for the widget.
              *
@@ -151644,7 +151640,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param direction direction of focus movement
              * @returns true if stopping keyboard navigation is fine, false   if the emitting widget should try to handle the keyboard   navigation attempt in its parent widget
              */
-            keynav_failed(direction: DirectionType | null): boolean;
+            keynav_failed(direction: DirectionType): boolean;
             /**
              * Returns the widgets for which this widget is the target of a
              * mnemonic.
@@ -151678,7 +151674,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param orientation the orientation to measure
              * @param for_size Size for the opposite of `orientation`, i.e.   if `orientation` is {@link Gtk.Orientation.HORIZONTAL}, this is   the height the widget should be measured with. The {@link Gtk.Orientation.VERTICAL}   case is analogous. This way, both height-for-width and width-for-height   requests can be implemented. If no size is known, -1 can be passed.
              */
-            measure(orientation: Orientation | null, for_size: number): [number, number, number, number];
+            measure(orientation: Orientation, for_size: number): [number, number, number, number];
             /**
              * Emits the `Gtk.Widget::mnemonic-activate` signal.
              * @param group_cycling true if there are other widgets with the same mnemonic
@@ -151729,7 +151725,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param flags flags to influence what is picked
              * @returns the widget's descendant at (x, y)
              */
-            pick(x: number, y: number, flags: PickFlags | null): Widget | null;
+            pick(x: number, y: number, flags: PickFlags): Widget | null;
             /**
              * Flags the widget for a rerun of the {@link Gtk.Widget.size_allocate}
              * function.
@@ -151912,7 +151908,7 @@ declare module 'gi://Gtk?version=4.0' {
              * the value set by {@link Gtk.Widget.set_default_direction} will be used.
              * @param dir the new direction
              */
-            set_direction(dir: TextDirection | null): void;
+            set_direction(dir: TextDirection): void;
             /**
              * Set the focus child of the widget.
              *
@@ -151974,7 +151970,7 @@ declare module 'gi://Gtk?version=4.0' {
              * Sets the horizontal alignment of the widget.
              * @param align the horizontal alignment
              */
-            set_halign(align: Align | null): void;
+            set_halign(align: Align): void;
             /**
              * Sets the `has-tooltip` property on the widget.
              * @param has_tooltip whether or not `widget` has a tooltip
@@ -152114,7 +152110,7 @@ declare module 'gi://Gtk?version=4.0' {
              * The default value is {@link Gtk.Overflow.VISIBLE}.
              * @param overflow desired overflow value
              */
-            set_overflow(overflow: Overflow | null): void;
+            set_overflow(overflow: Overflow): void;
             /**
              * Sets the parent widget of the widget.
              *
@@ -152196,7 +152192,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param flags state flags to turn on
              * @param clear whether to clear state before turning on `flags`
              */
-            set_state_flags(flags: StateFlags | null, clear: boolean): void;
+            set_state_flags(flags: StateFlags, clear: boolean): void;
             /**
              * Sets the contents of the tooltip for widget.
              *
@@ -152228,7 +152224,7 @@ declare module 'gi://Gtk?version=4.0' {
              * Sets the vertical alignment of the widget.
              * @param align the vertical alignment
              */
-            set_valign(align: Align | null): void;
+            set_valign(align: Align): void;
             /**
              * Sets whether the widget would like any available extra vertical
              * space.
@@ -152349,7 +152345,7 @@ declare module 'gi://Gtk?version=4.0' {
              * This function is for use in widget implementations.
              * @param flags state flags to turn off
              */
-            unset_state_flags(flags: StateFlags | null): void;
+            unset_state_flags(flags: StateFlags): void;
             /**
              * Computes whether a container should give this
              *   widget extra space when possible.
@@ -154171,7 +154167,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param sort_column_id the sort column id to set
              * @param order The sort order of the column
              */
-            set_sort_column_id(sort_column_id: number, order: SortType | null): void;
+            set_sort_column_id(sort_column_id: number, order: SortType): void;
             /**
              * Sets the comparison function used when sorting to be `sort_func`. If the
              * current sort column id of `sortable` is the same as `sort_column_id`, then
@@ -154297,7 +154293,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -154338,7 +154334,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -155059,7 +155055,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param flags actions to perform
              * @param scroll details of how to perform   the scroll operation or `null` to scroll into view
              */
-            scroll_to(pos: number, flags: ListScrollFlags | null, scroll?: ScrollInfo | null): void;
+            scroll_to(pos: number, flags: ListScrollFlags, scroll?: ScrollInfo | null): void;
             /**
              * Sets whether selections can be changed by dragging with the mouse.
              * @param enable_rubberband whether to enable rubberband selection
@@ -155106,7 +155102,7 @@ declare module 'gi://Gtk?version=4.0' {
              * focus in the listview.
              * @param tab_behavior The desired tab behavior
              */
-            set_tab_behavior(tab_behavior: ListTabBehavior | null): void;
+            set_tab_behavior(tab_behavior: ListTabBehavior): void;
             /**
              * The orientation of the orientable.
              * @category Inherited from Gtk.Orientable
@@ -155162,7 +155158,7 @@ declare module 'gi://Gtk?version=4.0' {
              * Sets the orientation of the `orientable`.
              * @param orientation the orientable’s new orientation
              */
-            set_orientation(orientation: Orientation | null): void;
+            set_orientation(orientation: Orientation): void;
             /**
              * Returns the size of a non-scrolling border around the
              * outside of the scrollable.
@@ -155205,7 +155201,7 @@ declare module 'gi://Gtk?version=4.0' {
              * below the minimum width or below the natural width.
              * @param policy the horizontal {@link Gtk.ScrollablePolicy}
              */
-            set_hscroll_policy(policy: ScrollablePolicy | null): void;
+            set_hscroll_policy(policy: ScrollablePolicy): void;
             /**
              * Sets the vertical adjustment of the {@link Gtk.Scrollable}.
              * @param vadjustment a {@link Gtk.Adjustment}
@@ -155218,7 +155214,7 @@ declare module 'gi://Gtk?version=4.0' {
              * below the minimum height or below the natural height.
              * @param policy the vertical {@link Gtk.ScrollablePolicy}
              */
-            set_vscroll_policy(policy: ScrollablePolicy | null): void;
+            set_vscroll_policy(policy: ScrollablePolicy): void;
             /**
              * Returns the size of a non-scrolling border around the
              * outside of the scrollable.
@@ -155273,7 +155269,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -155314,7 +155310,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -156605,7 +156601,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -156646,7 +156642,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -157166,7 +157162,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param direction direction of focus movement
              * @returns true if focus ended up inside `widget`
              */
-            child_focus(direction: DirectionType | null): boolean;
+            child_focus(direction: DirectionType): boolean;
             /**
              * Computes the bounds for `widget` in the coordinate space of `target`.
              *
@@ -157201,7 +157197,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param orientation expand direction
              * @returns whether widget tree rooted here should be expanded
              */
-            compute_expand(orientation: Orientation | null): boolean;
+            compute_expand(orientation: Orientation): boolean;
             /**
              * Translates the given `point` in `widget`'s coordinates to coordinates
              * in `target`’s coordinate system.
@@ -157809,7 +157805,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param orientation the orientation to query
              * @returns the size of `widget` in `orientation`
              */
-            get_size(orientation: Orientation | null): number;
+            get_size(orientation: Orientation): number;
             /**
              * Gets the size request that was explicitly set for the widget.
              *
@@ -158134,7 +158130,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param direction direction of focus movement
              * @returns true if stopping keyboard navigation is fine, false   if the emitting widget should try to handle the keyboard   navigation attempt in its parent widget
              */
-            keynav_failed(direction: DirectionType | null): boolean;
+            keynav_failed(direction: DirectionType): boolean;
             /**
              * Returns the widgets for which this widget is the target of a
              * mnemonic.
@@ -158168,7 +158164,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param orientation the orientation to measure
              * @param for_size Size for the opposite of `orientation`, i.e.   if `orientation` is {@link Gtk.Orientation.HORIZONTAL}, this is   the height the widget should be measured with. The {@link Gtk.Orientation.VERTICAL}   case is analogous. This way, both height-for-width and width-for-height   requests can be implemented. If no size is known, -1 can be passed.
              */
-            measure(orientation: Orientation | null, for_size: number): [number, number, number, number];
+            measure(orientation: Orientation, for_size: number): [number, number, number, number];
             /**
              * Emits the `Gtk.Widget::mnemonic-activate` signal.
              * @param group_cycling true if there are other widgets with the same mnemonic
@@ -158219,7 +158215,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param flags flags to influence what is picked
              * @returns the widget's descendant at (x, y)
              */
-            pick(x: number, y: number, flags: PickFlags | null): Widget | null;
+            pick(x: number, y: number, flags: PickFlags): Widget | null;
             /**
              * Flags the widget for a rerun of the {@link Gtk.Widget.size_allocate}
              * function.
@@ -158402,7 +158398,7 @@ declare module 'gi://Gtk?version=4.0' {
              * the value set by {@link Gtk.Widget.set_default_direction} will be used.
              * @param dir the new direction
              */
-            set_direction(dir: TextDirection | null): void;
+            set_direction(dir: TextDirection): void;
             /**
              * Set the focus child of the widget.
              *
@@ -158464,7 +158460,7 @@ declare module 'gi://Gtk?version=4.0' {
              * Sets the horizontal alignment of the widget.
              * @param align the horizontal alignment
              */
-            set_halign(align: Align | null): void;
+            set_halign(align: Align): void;
             /**
              * Sets the `has-tooltip` property on the widget.
              * @param has_tooltip whether or not `widget` has a tooltip
@@ -158604,7 +158600,7 @@ declare module 'gi://Gtk?version=4.0' {
              * The default value is {@link Gtk.Overflow.VISIBLE}.
              * @param overflow desired overflow value
              */
-            set_overflow(overflow: Overflow | null): void;
+            set_overflow(overflow: Overflow): void;
             /**
              * Sets the parent widget of the widget.
              *
@@ -158686,7 +158682,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param flags state flags to turn on
              * @param clear whether to clear state before turning on `flags`
              */
-            set_state_flags(flags: StateFlags | null, clear: boolean): void;
+            set_state_flags(flags: StateFlags, clear: boolean): void;
             /**
              * Sets the contents of the tooltip for widget.
              *
@@ -158718,7 +158714,7 @@ declare module 'gi://Gtk?version=4.0' {
              * Sets the vertical alignment of the widget.
              * @param align the vertical alignment
              */
-            set_valign(align: Align | null): void;
+            set_valign(align: Align): void;
             /**
              * Sets whether the widget would like any available extra vertical
              * space.
@@ -158839,7 +158835,7 @@ declare module 'gi://Gtk?version=4.0' {
              * This function is for use in widget implementations.
              * @param flags state flags to turn off
              */
-            unset_state_flags(flags: StateFlags | null): void;
+            unset_state_flags(flags: StateFlags): void;
             /**
              * Computes whether a container should give this
              *   widget extra space when possible.
@@ -159442,7 +159438,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -159483,7 +159479,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -160010,7 +160006,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param message the string to announce
              * @param priority the priority of the announcement
              */
-            announce(message: string, priority: AccessibleAnnouncementPriority | null): void;
+            announce(message: string, priority: AccessibleAnnouncementPriority): void;
             /**
              * Retrieves the accessible parent for an accessible object.
              *
@@ -160056,22 +160052,22 @@ declare module 'gi://Gtk?version=4.0' {
              * @param state platform state to query
              * @returns the value of state for the accessible
              */
-            get_platform_state(state: AccessiblePlatformState | null): boolean;
+            get_platform_state(state: AccessiblePlatformState): boolean;
             /**
              * Resets the accessible property to its default value.
              * @param property the accessible property
              */
-            reset_property(property: AccessibleProperty | null): void;
+            reset_property(property: AccessibleProperty): void;
             /**
              * Resets the accessible relation to its default value.
              * @param relation the accessible relation
              */
-            reset_relation(relation: AccessibleRelation | null): void;
+            reset_relation(relation: AccessibleRelation): void;
             /**
              * Resets the accessible state to its default value.
              * @param state the accessible state
              */
-            reset_state(state: AccessibleState | null): void;
+            reset_state(state: AccessibleState): void;
             /**
              * Sets the parent and sibling of an accessible object.
              *
@@ -160102,7 +160098,7 @@ declare module 'gi://Gtk?version=4.0' {
              * states automatically.
              * @param state the platform state to update
              */
-            update_platform_state(state: AccessiblePlatformState | null): void;
+            update_platform_state(state: AccessiblePlatformState): void;
             /**
              * Updates an array of accessible properties.
              *
@@ -160113,7 +160109,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param properties an array of accessible properties
              * @param values an array of `GValues`, one for each property
              */
-            update_property(properties: AccessibleProperty[] | null, values: (GObject.Value | any)[]): void;
+            update_property(properties: AccessibleProperty[], values: (GObject.Value | any)[]): void;
             /**
              * Updates an array of accessible relations.
              *
@@ -160124,7 +160120,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param relations an array of accessible relations
              * @param values an array of `GValues`, one for each relation
              */
-            update_relation(relations: AccessibleRelation[] | null, values: (GObject.Value | any)[]): void;
+            update_relation(relations: AccessibleRelation[], values: (GObject.Value | any)[]): void;
             /**
              * Updates an array of accessible states.
              *
@@ -160135,7 +160131,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param states an array of accessible states
              * @param values an array of `GValues`, one for each state
              */
-            update_state(states: AccessibleState[] | null, values: (GObject.Value | any)[]): void;
+            update_state(states: AccessibleState[], values: (GObject.Value | any)[]): void;
             /**
              * Retrieves the accessible parent for an accessible object.
              *
@@ -160323,7 +160319,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -160364,7 +160360,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -161158,7 +161154,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -161199,7 +161195,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -162328,7 +162324,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -162369,7 +162365,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -163195,7 +163191,7 @@ declare module 'gi://Gtk?version=4.0' {
              * as if you passed {@link Gtk.ArrowType.DOWN} (although you won’t see any arrows).
              * @param direction a {@link Gtk.ArrowType}
              */
-            set_direction(direction: ArrowType | null): void;
+            set_direction(direction: ArrowType): void;
             /**
              * @param args
              */
@@ -163294,7 +163290,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param message the string to announce
              * @param priority the priority of the announcement
              */
-            announce(message: string, priority: AccessibleAnnouncementPriority | null): void;
+            announce(message: string, priority: AccessibleAnnouncementPriority): void;
             /**
              * Retrieves the accessible parent for an accessible object.
              *
@@ -163340,22 +163336,22 @@ declare module 'gi://Gtk?version=4.0' {
              * @param state platform state to query
              * @returns the value of state for the accessible
              */
-            get_platform_state(state: AccessiblePlatformState | null): boolean;
+            get_platform_state(state: AccessiblePlatformState): boolean;
             /**
              * Resets the accessible property to its default value.
              * @param property the accessible property
              */
-            reset_property(property: AccessibleProperty | null): void;
+            reset_property(property: AccessibleProperty): void;
             /**
              * Resets the accessible relation to its default value.
              * @param relation the accessible relation
              */
-            reset_relation(relation: AccessibleRelation | null): void;
+            reset_relation(relation: AccessibleRelation): void;
             /**
              * Resets the accessible state to its default value.
              * @param state the accessible state
              */
-            reset_state(state: AccessibleState | null): void;
+            reset_state(state: AccessibleState): void;
             /**
              * Sets the parent and sibling of an accessible object.
              *
@@ -163386,7 +163382,7 @@ declare module 'gi://Gtk?version=4.0' {
              * states automatically.
              * @param state the platform state to update
              */
-            update_platform_state(state: AccessiblePlatformState | null): void;
+            update_platform_state(state: AccessiblePlatformState): void;
             /**
              * Updates an array of accessible properties.
              *
@@ -163397,7 +163393,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param properties an array of accessible properties
              * @param values an array of `GValues`, one for each property
              */
-            update_property(properties: AccessibleProperty[] | null, values: (GObject.Value | any)[]): void;
+            update_property(properties: AccessibleProperty[], values: (GObject.Value | any)[]): void;
             /**
              * Updates an array of accessible relations.
              *
@@ -163408,7 +163404,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param relations an array of accessible relations
              * @param values an array of `GValues`, one for each relation
              */
-            update_relation(relations: AccessibleRelation[] | null, values: (GObject.Value | any)[]): void;
+            update_relation(relations: AccessibleRelation[], values: (GObject.Value | any)[]): void;
             /**
              * Updates an array of accessible states.
              *
@@ -163419,7 +163415,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param states an array of accessible states
              * @param values an array of `GValues`, one for each state
              */
-            update_state(states: AccessibleState[] | null, values: (GObject.Value | any)[]): void;
+            update_state(states: AccessibleState[], values: (GObject.Value | any)[]): void;
             /**
              * Retrieves the accessible parent for an accessible object.
              *
@@ -163607,7 +163603,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -163648,7 +163644,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -164852,7 +164848,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -164893,7 +164889,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -165413,7 +165409,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param direction direction of focus movement
              * @returns true if focus ended up inside `widget`
              */
-            child_focus(direction: DirectionType | null): boolean;
+            child_focus(direction: DirectionType): boolean;
             /**
              * Computes the bounds for `widget` in the coordinate space of `target`.
              *
@@ -165448,7 +165444,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param orientation expand direction
              * @returns whether widget tree rooted here should be expanded
              */
-            compute_expand(orientation: Orientation | null): boolean;
+            compute_expand(orientation: Orientation): boolean;
             /**
              * Translates the given `point` in `widget`'s coordinates to coordinates
              * in `target`’s coordinate system.
@@ -166056,7 +166052,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param orientation the orientation to query
              * @returns the size of `widget` in `orientation`
              */
-            get_size(orientation: Orientation | null): number;
+            get_size(orientation: Orientation): number;
             /**
              * Gets the size request that was explicitly set for the widget.
              *
@@ -166381,7 +166377,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param direction direction of focus movement
              * @returns true if stopping keyboard navigation is fine, false   if the emitting widget should try to handle the keyboard   navigation attempt in its parent widget
              */
-            keynav_failed(direction: DirectionType | null): boolean;
+            keynav_failed(direction: DirectionType): boolean;
             /**
              * Returns the widgets for which this widget is the target of a
              * mnemonic.
@@ -166415,7 +166411,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param orientation the orientation to measure
              * @param for_size Size for the opposite of `orientation`, i.e.   if `orientation` is {@link Gtk.Orientation.HORIZONTAL}, this is   the height the widget should be measured with. The {@link Gtk.Orientation.VERTICAL}   case is analogous. This way, both height-for-width and width-for-height   requests can be implemented. If no size is known, -1 can be passed.
              */
-            measure(orientation: Orientation | null, for_size: number): [number, number, number, number];
+            measure(orientation: Orientation, for_size: number): [number, number, number, number];
             /**
              * Emits the `Gtk.Widget::mnemonic-activate` signal.
              * @param group_cycling true if there are other widgets with the same mnemonic
@@ -166466,7 +166462,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param flags flags to influence what is picked
              * @returns the widget's descendant at (x, y)
              */
-            pick(x: number, y: number, flags: PickFlags | null): Widget | null;
+            pick(x: number, y: number, flags: PickFlags): Widget | null;
             /**
              * Flags the widget for a rerun of the {@link Gtk.Widget.size_allocate}
              * function.
@@ -166649,7 +166645,7 @@ declare module 'gi://Gtk?version=4.0' {
              * the value set by {@link Gtk.Widget.set_default_direction} will be used.
              * @param dir the new direction
              */
-            set_direction(dir: TextDirection | null): void;
+            set_direction(dir: TextDirection): void;
             /**
              * Set the focus child of the widget.
              *
@@ -166711,7 +166707,7 @@ declare module 'gi://Gtk?version=4.0' {
              * Sets the horizontal alignment of the widget.
              * @param align the horizontal alignment
              */
-            set_halign(align: Align | null): void;
+            set_halign(align: Align): void;
             /**
              * Sets the `has-tooltip` property on the widget.
              * @param has_tooltip whether or not `widget` has a tooltip
@@ -166851,7 +166847,7 @@ declare module 'gi://Gtk?version=4.0' {
              * The default value is {@link Gtk.Overflow.VISIBLE}.
              * @param overflow desired overflow value
              */
-            set_overflow(overflow: Overflow | null): void;
+            set_overflow(overflow: Overflow): void;
             /**
              * Sets the parent widget of the widget.
              *
@@ -166933,7 +166929,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param flags state flags to turn on
              * @param clear whether to clear state before turning on `flags`
              */
-            set_state_flags(flags: StateFlags | null, clear: boolean): void;
+            set_state_flags(flags: StateFlags, clear: boolean): void;
             /**
              * Sets the contents of the tooltip for widget.
              *
@@ -166965,7 +166961,7 @@ declare module 'gi://Gtk?version=4.0' {
              * Sets the vertical alignment of the widget.
              * @param align the vertical alignment
              */
-            set_valign(align: Align | null): void;
+            set_valign(align: Align): void;
             /**
              * Sets whether the widget would like any available extra vertical
              * space.
@@ -167086,7 +167082,7 @@ declare module 'gi://Gtk?version=4.0' {
              * This function is for use in widget implementations.
              * @param flags state flags to turn off
              */
-            unset_state_flags(flags: StateFlags | null): void;
+            unset_state_flags(flags: StateFlags): void;
             /**
              * Computes whether a container should give this
              *   widget extra space when possible.
@@ -167975,7 +167971,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -168016,7 +168012,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -168890,7 +168886,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -168931,7 +168927,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -169654,7 +169650,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -169695,7 +169691,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -170957,7 +170953,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -170998,7 +170994,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -171797,7 +171793,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param pack_type pack type of the action widget to receive
              * @returns The action widget   with the given `pack_type` or `null` when this action   widget has not been set
              */
-            get_action_widget(pack_type: PackType | null): Widget | null;
+            get_action_widget(pack_type: PackType): Widget | null;
             /**
              * Returns the page number of the current page.
              * @returns the index (starting from 0) of the current   page in the notebook. If the notebook has no pages,   then -1 will be returned.
@@ -171989,7 +171985,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param widget a {@link Gtk.Widget}
              * @param pack_type pack type of the action widget
              */
-            set_action_widget(widget: Widget, pack_type: PackType | null): void;
+            set_action_widget(widget: Widget, pack_type: PackType): void;
             /**
              * Switches to the page number `page_num`.
              *
@@ -172109,7 +172105,7 @@ declare module 'gi://Gtk?version=4.0' {
              * Sets the edge at which the tabs are drawn.
              * @param pos the edge to draw the tabs at
              */
-            set_tab_pos(pos: PositionType | null): void;
+            set_tab_pos(pos: PositionType): void;
             /**
              * Sets whether the notebook tab can be reordered
              * via drag and drop or not.
@@ -172146,7 +172142,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param message the string to announce
              * @param priority the priority of the announcement
              */
-            announce(message: string, priority: AccessibleAnnouncementPriority | null): void;
+            announce(message: string, priority: AccessibleAnnouncementPriority): void;
             /**
              * Retrieves the accessible parent for an accessible object.
              *
@@ -172192,22 +172188,22 @@ declare module 'gi://Gtk?version=4.0' {
              * @param state platform state to query
              * @returns the value of state for the accessible
              */
-            get_platform_state(state: AccessiblePlatformState | null): boolean;
+            get_platform_state(state: AccessiblePlatformState): boolean;
             /**
              * Resets the accessible property to its default value.
              * @param property the accessible property
              */
-            reset_property(property: AccessibleProperty | null): void;
+            reset_property(property: AccessibleProperty): void;
             /**
              * Resets the accessible relation to its default value.
              * @param relation the accessible relation
              */
-            reset_relation(relation: AccessibleRelation | null): void;
+            reset_relation(relation: AccessibleRelation): void;
             /**
              * Resets the accessible state to its default value.
              * @param state the accessible state
              */
-            reset_state(state: AccessibleState | null): void;
+            reset_state(state: AccessibleState): void;
             /**
              * Sets the parent and sibling of an accessible object.
              *
@@ -172238,7 +172234,7 @@ declare module 'gi://Gtk?version=4.0' {
              * states automatically.
              * @param state the platform state to update
              */
-            update_platform_state(state: AccessiblePlatformState | null): void;
+            update_platform_state(state: AccessiblePlatformState): void;
             /**
              * Updates an array of accessible properties.
              *
@@ -172249,7 +172245,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param properties an array of accessible properties
              * @param values an array of `GValues`, one for each property
              */
-            update_property(properties: AccessibleProperty[] | null, values: (GObject.Value | any)[]): void;
+            update_property(properties: AccessibleProperty[], values: (GObject.Value | any)[]): void;
             /**
              * Updates an array of accessible relations.
              *
@@ -172260,7 +172256,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param relations an array of accessible relations
              * @param values an array of `GValues`, one for each relation
              */
-            update_relation(relations: AccessibleRelation[] | null, values: (GObject.Value | any)[]): void;
+            update_relation(relations: AccessibleRelation[], values: (GObject.Value | any)[]): void;
             /**
              * Updates an array of accessible states.
              *
@@ -172271,7 +172267,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param states an array of accessible states
              * @param values an array of `GValues`, one for each state
              */
-            update_state(states: AccessibleState[] | null, values: (GObject.Value | any)[]): void;
+            update_state(states: AccessibleState[], values: (GObject.Value | any)[]): void;
             /**
              * Retrieves the accessible parent for an accessible object.
              *
@@ -172459,7 +172455,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -172500,7 +172496,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -173198,7 +173194,7 @@ declare module 'gi://Gtk?version=4.0' {
              * Sets whether to sort smaller numbers before larger ones.
              * @param sort_order whether to sort smaller numbers first
              */
-            set_sort_order(sort_order: SortType | null): void;
+            set_sort_order(sort_order: SortType): void;
         }
 
         namespace ObjectExpression {
@@ -173497,7 +173493,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param message the string to announce
              * @param priority the priority of the announcement
              */
-            announce(message: string, priority: AccessibleAnnouncementPriority | null): void;
+            announce(message: string, priority: AccessibleAnnouncementPriority): void;
             /**
              * Retrieves the accessible parent for an accessible object.
              *
@@ -173543,22 +173539,22 @@ declare module 'gi://Gtk?version=4.0' {
              * @param state platform state to query
              * @returns the value of state for the accessible
              */
-            get_platform_state(state: AccessiblePlatformState | null): boolean;
+            get_platform_state(state: AccessiblePlatformState): boolean;
             /**
              * Resets the accessible property to its default value.
              * @param property the accessible property
              */
-            reset_property(property: AccessibleProperty | null): void;
+            reset_property(property: AccessibleProperty): void;
             /**
              * Resets the accessible relation to its default value.
              * @param relation the accessible relation
              */
-            reset_relation(relation: AccessibleRelation | null): void;
+            reset_relation(relation: AccessibleRelation): void;
             /**
              * Resets the accessible state to its default value.
              * @param state the accessible state
              */
-            reset_state(state: AccessibleState | null): void;
+            reset_state(state: AccessibleState): void;
             /**
              * Sets the parent and sibling of an accessible object.
              *
@@ -173589,7 +173585,7 @@ declare module 'gi://Gtk?version=4.0' {
              * states automatically.
              * @param state the platform state to update
              */
-            update_platform_state(state: AccessiblePlatformState | null): void;
+            update_platform_state(state: AccessiblePlatformState): void;
             /**
              * Updates an array of accessible properties.
              *
@@ -173600,7 +173596,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param properties an array of accessible properties
              * @param values an array of `GValues`, one for each property
              */
-            update_property(properties: AccessibleProperty[] | null, values: (GObject.Value | any)[]): void;
+            update_property(properties: AccessibleProperty[], values: (GObject.Value | any)[]): void;
             /**
              * Updates an array of accessible relations.
              *
@@ -173611,7 +173607,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param relations an array of accessible relations
              * @param values an array of `GValues`, one for each relation
              */
-            update_relation(relations: AccessibleRelation[] | null, values: (GObject.Value | any)[]): void;
+            update_relation(relations: AccessibleRelation[], values: (GObject.Value | any)[]): void;
             /**
              * Updates an array of accessible states.
              *
@@ -173622,7 +173618,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param states an array of accessible states
              * @param values an array of `GValues`, one for each state
              */
-            update_state(states: AccessibleState[] | null, values: (GObject.Value | any)[]): void;
+            update_state(states: AccessibleState[], values: (GObject.Value | any)[]): void;
             /**
              * Retrieves the accessible parent for an accessible object.
              *
@@ -173810,7 +173806,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -173851,7 +173847,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -174537,13 +174533,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param label Human readable description of this action, this string should   be deemed user-visible.
              * @param action_name action name that will be activated in the {@link Gio.ActionGroup}
              */
-            set_action(
-                type: PadActionType | null,
-                index: number,
-                mode: number,
-                label: string,
-                action_name: string,
-            ): void;
+            set_action(type: PadActionType, index: number, mode: number, label: string, action_name: string): void;
             /**
              * A convenience function to add a group of action entries on
              * `controller`.
@@ -174667,13 +174657,13 @@ declare module 'gi://Gtk?version=4.0' {
              * @param unit the unit for the return value
              * @returns the bottom margin
              */
-            get_bottom_margin(unit: Unit | null): number;
+            get_bottom_margin(unit: Unit): number;
             /**
              * Gets the left margin in units of `unit`.
              * @param unit the unit for the return value
              * @returns the left margin
              */
-            get_left_margin(unit: Unit | null): number;
+            get_left_margin(unit: Unit): number;
             /**
              * Gets the page orientation of the {@link Gtk.PageSetup}.
              * @returns the page orientation
@@ -174688,7 +174678,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param unit the unit for the return value
              * @returns the page height.
              */
-            get_page_height(unit: Unit | null): number;
+            get_page_height(unit: Unit): number;
             /**
              * Returns the page width in units of `unit`.
              *
@@ -174698,7 +174688,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param unit the unit for the return value
              * @returns the page width.
              */
-            get_page_width(unit: Unit | null): number;
+            get_page_width(unit: Unit): number;
             /**
              * Returns the paper height in units of `unit`.
              *
@@ -174708,7 +174698,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param unit the unit for the return value
              * @returns the paper height.
              */
-            get_paper_height(unit: Unit | null): number;
+            get_paper_height(unit: Unit): number;
             /**
              * Gets the paper size of the {@link Gtk.PageSetup}.
              * @returns the paper size
@@ -174723,19 +174713,19 @@ declare module 'gi://Gtk?version=4.0' {
              * @param unit the unit for the return value
              * @returns the paper width.
              */
-            get_paper_width(unit: Unit | null): number;
+            get_paper_width(unit: Unit): number;
             /**
              * Gets the right margin in units of `unit`.
              * @param unit the unit for the return value
              * @returns the right margin
              */
-            get_right_margin(unit: Unit | null): number;
+            get_right_margin(unit: Unit): number;
             /**
              * Gets the top margin in units of `unit`.
              * @param unit the unit for the return value
              * @returns the top margin
              */
-            get_top_margin(unit: Unit | null): number;
+            get_top_margin(unit: Unit): number;
             /**
              * Reads the page setup from the file `file_name`.
              *
@@ -174757,18 +174747,18 @@ declare module 'gi://Gtk?version=4.0' {
              * @param margin the new bottom margin in units of `unit`
              * @param unit the units for `margin`
              */
-            set_bottom_margin(margin: number, unit: Unit | null): void;
+            set_bottom_margin(margin: number, unit: Unit): void;
             /**
              * Sets the left margin of the {@link Gtk.PageSetup}.
              * @param margin the new left margin in units of `unit`
              * @param unit the units for `margin`
              */
-            set_left_margin(margin: number, unit: Unit | null): void;
+            set_left_margin(margin: number, unit: Unit): void;
             /**
              * Sets the page orientation of the {@link Gtk.PageSetup}.
              * @param orientation a {@link Gtk.PageOrientation} value
              */
-            set_orientation(orientation: PageOrientation | null): void;
+            set_orientation(orientation: PageOrientation): void;
             /**
              * Sets the paper size of the {@link Gtk.PageSetup} without
              * changing the margins.
@@ -174788,13 +174778,13 @@ declare module 'gi://Gtk?version=4.0' {
              * @param margin the new right margin in units of `unit`
              * @param unit the units for `margin`
              */
-            set_right_margin(margin: number, unit: Unit | null): void;
+            set_right_margin(margin: number, unit: Unit): void;
             /**
              * Sets the top margin of the {@link Gtk.PageSetup}.
              * @param margin the new top margin in units of `unit`
              * @param unit the units for `margin`
              */
-            set_top_margin(margin: number, unit: Unit | null): void;
+            set_top_margin(margin: number, unit: Unit): void;
             /**
              * This function saves the information from `setup` to `file_name`.
              * @param file_name the file to save to
@@ -175523,7 +175513,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -175564,7 +175554,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -176084,7 +176074,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param direction direction of focus movement
              * @returns true if focus ended up inside `widget`
              */
-            child_focus(direction: DirectionType | null): boolean;
+            child_focus(direction: DirectionType): boolean;
             /**
              * Computes the bounds for `widget` in the coordinate space of `target`.
              *
@@ -176119,7 +176109,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param orientation expand direction
              * @returns whether widget tree rooted here should be expanded
              */
-            compute_expand(orientation: Orientation | null): boolean;
+            compute_expand(orientation: Orientation): boolean;
             /**
              * Translates the given `point` in `widget`'s coordinates to coordinates
              * in `target`’s coordinate system.
@@ -176727,7 +176717,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param orientation the orientation to query
              * @returns the size of `widget` in `orientation`
              */
-            get_size(orientation: Orientation | null): number;
+            get_size(orientation: Orientation): number;
             /**
              * Gets the size request that was explicitly set for the widget.
              *
@@ -177052,7 +177042,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param direction direction of focus movement
              * @returns true if stopping keyboard navigation is fine, false   if the emitting widget should try to handle the keyboard   navigation attempt in its parent widget
              */
-            keynav_failed(direction: DirectionType | null): boolean;
+            keynav_failed(direction: DirectionType): boolean;
             /**
              * Returns the widgets for which this widget is the target of a
              * mnemonic.
@@ -177086,7 +177076,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param orientation the orientation to measure
              * @param for_size Size for the opposite of `orientation`, i.e.   if `orientation` is {@link Gtk.Orientation.HORIZONTAL}, this is   the height the widget should be measured with. The {@link Gtk.Orientation.VERTICAL}   case is analogous. This way, both height-for-width and width-for-height   requests can be implemented. If no size is known, -1 can be passed.
              */
-            measure(orientation: Orientation | null, for_size: number): [number, number, number, number];
+            measure(orientation: Orientation, for_size: number): [number, number, number, number];
             /**
              * Emits the `Gtk.Widget::mnemonic-activate` signal.
              * @param group_cycling true if there are other widgets with the same mnemonic
@@ -177137,7 +177127,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param flags flags to influence what is picked
              * @returns the widget's descendant at (x, y)
              */
-            pick(x: number, y: number, flags: PickFlags | null): Widget | null;
+            pick(x: number, y: number, flags: PickFlags): Widget | null;
             /**
              * Flags the widget for a rerun of the {@link Gtk.Widget.size_allocate}
              * function.
@@ -177320,7 +177310,7 @@ declare module 'gi://Gtk?version=4.0' {
              * the value set by {@link Gtk.Widget.set_default_direction} will be used.
              * @param dir the new direction
              */
-            set_direction(dir: TextDirection | null): void;
+            set_direction(dir: TextDirection): void;
             /**
              * Set the focus child of the widget.
              *
@@ -177382,7 +177372,7 @@ declare module 'gi://Gtk?version=4.0' {
              * Sets the horizontal alignment of the widget.
              * @param align the horizontal alignment
              */
-            set_halign(align: Align | null): void;
+            set_halign(align: Align): void;
             /**
              * Sets the `has-tooltip` property on the widget.
              * @param has_tooltip whether or not `widget` has a tooltip
@@ -177522,7 +177512,7 @@ declare module 'gi://Gtk?version=4.0' {
              * The default value is {@link Gtk.Overflow.VISIBLE}.
              * @param overflow desired overflow value
              */
-            set_overflow(overflow: Overflow | null): void;
+            set_overflow(overflow: Overflow): void;
             /**
              * Sets the parent widget of the widget.
              *
@@ -177604,7 +177594,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param flags state flags to turn on
              * @param clear whether to clear state before turning on `flags`
              */
-            set_state_flags(flags: StateFlags | null, clear: boolean): void;
+            set_state_flags(flags: StateFlags, clear: boolean): void;
             /**
              * Sets the contents of the tooltip for widget.
              *
@@ -177636,7 +177626,7 @@ declare module 'gi://Gtk?version=4.0' {
              * Sets the vertical alignment of the widget.
              * @param align the vertical alignment
              */
-            set_valign(align: Align | null): void;
+            set_valign(align: Align): void;
             /**
              * Sets whether the widget would like any available extra vertical
              * space.
@@ -177757,7 +177747,7 @@ declare module 'gi://Gtk?version=4.0' {
              * This function is for use in widget implementations.
              * @param flags state flags to turn off
              */
-            unset_state_flags(flags: StateFlags | null): void;
+            unset_state_flags(flags: StateFlags): void;
             /**
              * Computes whether a container should give this
              *   widget extra space when possible.
@@ -178558,7 +178548,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param message the string to announce
              * @param priority the priority of the announcement
              */
-            announce(message: string, priority: AccessibleAnnouncementPriority | null): void;
+            announce(message: string, priority: AccessibleAnnouncementPriority): void;
             /**
              * Retrieves the accessible parent for an accessible object.
              *
@@ -178604,22 +178594,22 @@ declare module 'gi://Gtk?version=4.0' {
              * @param state platform state to query
              * @returns the value of state for the accessible
              */
-            get_platform_state(state: AccessiblePlatformState | null): boolean;
+            get_platform_state(state: AccessiblePlatformState): boolean;
             /**
              * Resets the accessible property to its default value.
              * @param property the accessible property
              */
-            reset_property(property: AccessibleProperty | null): void;
+            reset_property(property: AccessibleProperty): void;
             /**
              * Resets the accessible relation to its default value.
              * @param relation the accessible relation
              */
-            reset_relation(relation: AccessibleRelation | null): void;
+            reset_relation(relation: AccessibleRelation): void;
             /**
              * Resets the accessible state to its default value.
              * @param state the accessible state
              */
-            reset_state(state: AccessibleState | null): void;
+            reset_state(state: AccessibleState): void;
             /**
              * Sets the parent and sibling of an accessible object.
              *
@@ -178650,7 +178640,7 @@ declare module 'gi://Gtk?version=4.0' {
              * states automatically.
              * @param state the platform state to update
              */
-            update_platform_state(state: AccessiblePlatformState | null): void;
+            update_platform_state(state: AccessiblePlatformState): void;
             /**
              * Updates an array of accessible properties.
              *
@@ -178661,7 +178651,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param properties an array of accessible properties
              * @param values an array of `GValues`, one for each property
              */
-            update_property(properties: AccessibleProperty[] | null, values: (GObject.Value | any)[]): void;
+            update_property(properties: AccessibleProperty[], values: (GObject.Value | any)[]): void;
             /**
              * Updates an array of accessible relations.
              *
@@ -178672,7 +178662,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param relations an array of accessible relations
              * @param values an array of `GValues`, one for each relation
              */
-            update_relation(relations: AccessibleRelation[] | null, values: (GObject.Value | any)[]): void;
+            update_relation(relations: AccessibleRelation[], values: (GObject.Value | any)[]): void;
             /**
              * Updates an array of accessible states.
              *
@@ -178683,7 +178673,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param states an array of accessible states
              * @param values an array of `GValues`, one for each state
              */
-            update_state(states: AccessibleState[] | null, values: (GObject.Value | any)[]): void;
+            update_state(states: AccessibleState[], values: (GObject.Value | any)[]): void;
             /**
              * Retrieves the accessible parent for an accessible object.
              *
@@ -178845,7 +178835,7 @@ declare module 'gi://Gtk?version=4.0' {
              * Sets the orientation of the `orientable`.
              * @param orientation the orientable’s new orientation
              */
-            set_orientation(orientation: Orientation | null): void;
+            set_orientation(orientation: Orientation): void;
             /**
              * Creates a binding between `source_property` on `source` and `target_property`
              * on `target`.
@@ -178890,7 +178880,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -178931,7 +178921,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -180134,7 +180124,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param message the string to announce
              * @param priority the priority of the announcement
              */
-            announce(message: string, priority: AccessibleAnnouncementPriority | null): void;
+            announce(message: string, priority: AccessibleAnnouncementPriority): void;
             /**
              * Retrieves the accessible parent for an accessible object.
              *
@@ -180180,22 +180170,22 @@ declare module 'gi://Gtk?version=4.0' {
              * @param state platform state to query
              * @returns the value of state for the accessible
              */
-            get_platform_state(state: AccessiblePlatformState | null): boolean;
+            get_platform_state(state: AccessiblePlatformState): boolean;
             /**
              * Resets the accessible property to its default value.
              * @param property the accessible property
              */
-            reset_property(property: AccessibleProperty | null): void;
+            reset_property(property: AccessibleProperty): void;
             /**
              * Resets the accessible relation to its default value.
              * @param relation the accessible relation
              */
-            reset_relation(relation: AccessibleRelation | null): void;
+            reset_relation(relation: AccessibleRelation): void;
             /**
              * Resets the accessible state to its default value.
              * @param state the accessible state
              */
-            reset_state(state: AccessibleState | null): void;
+            reset_state(state: AccessibleState): void;
             /**
              * Sets the parent and sibling of an accessible object.
              *
@@ -180226,7 +180216,7 @@ declare module 'gi://Gtk?version=4.0' {
              * states automatically.
              * @param state the platform state to update
              */
-            update_platform_state(state: AccessiblePlatformState | null): void;
+            update_platform_state(state: AccessiblePlatformState): void;
             /**
              * Updates an array of accessible properties.
              *
@@ -180237,7 +180227,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param properties an array of accessible properties
              * @param values an array of `GValues`, one for each property
              */
-            update_property(properties: AccessibleProperty[] | null, values: (GObject.Value | any)[]): void;
+            update_property(properties: AccessibleProperty[], values: (GObject.Value | any)[]): void;
             /**
              * Updates an array of accessible relations.
              *
@@ -180248,7 +180238,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param relations an array of accessible relations
              * @param values an array of `GValues`, one for each relation
              */
-            update_relation(relations: AccessibleRelation[] | null, values: (GObject.Value | any)[]): void;
+            update_relation(relations: AccessibleRelation[], values: (GObject.Value | any)[]): void;
             /**
              * Updates an array of accessible states.
              *
@@ -180259,7 +180249,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param states an array of accessible states
              * @param values an array of `GValues`, one for each state
              */
-            update_state(states: AccessibleState[] | null, values: (GObject.Value | any)[]): void;
+            update_state(states: AccessibleState[], values: (GObject.Value | any)[]): void;
             /**
              * Retrieves the accessible parent for an accessible object.
              *
@@ -180439,7 +180429,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param state what kind of accessible state to retrieve
              * @returns the accessible platform state of the delegate
              */
-            delegate_get_accessible_platform_state(state: AccessiblePlatformState | null): boolean;
+            delegate_get_accessible_platform_state(state: AccessiblePlatformState): boolean;
             /**
              * Deletes the currently selected text of the editable.
              *
@@ -180773,7 +180763,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -180814,7 +180804,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -181334,7 +181324,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param direction direction of focus movement
              * @returns true if focus ended up inside `widget`
              */
-            child_focus(direction: DirectionType | null): boolean;
+            child_focus(direction: DirectionType): boolean;
             /**
              * Computes the bounds for `widget` in the coordinate space of `target`.
              *
@@ -181369,7 +181359,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param orientation expand direction
              * @returns whether widget tree rooted here should be expanded
              */
-            compute_expand(orientation: Orientation | null): boolean;
+            compute_expand(orientation: Orientation): boolean;
             /**
              * Translates the given `point` in `widget`'s coordinates to coordinates
              * in `target`’s coordinate system.
@@ -181977,7 +181967,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param orientation the orientation to query
              * @returns the size of `widget` in `orientation`
              */
-            get_size(orientation: Orientation | null): number;
+            get_size(orientation: Orientation): number;
             /**
              * Gets the size request that was explicitly set for the widget.
              *
@@ -182302,7 +182292,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param direction direction of focus movement
              * @returns true if stopping keyboard navigation is fine, false   if the emitting widget should try to handle the keyboard   navigation attempt in its parent widget
              */
-            keynav_failed(direction: DirectionType | null): boolean;
+            keynav_failed(direction: DirectionType): boolean;
             /**
              * Returns the widgets for which this widget is the target of a
              * mnemonic.
@@ -182336,7 +182326,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param orientation the orientation to measure
              * @param for_size Size for the opposite of `orientation`, i.e.   if `orientation` is {@link Gtk.Orientation.HORIZONTAL}, this is   the height the widget should be measured with. The {@link Gtk.Orientation.VERTICAL}   case is analogous. This way, both height-for-width and width-for-height   requests can be implemented. If no size is known, -1 can be passed.
              */
-            measure(orientation: Orientation | null, for_size: number): [number, number, number, number];
+            measure(orientation: Orientation, for_size: number): [number, number, number, number];
             /**
              * Emits the `Gtk.Widget::mnemonic-activate` signal.
              * @param group_cycling true if there are other widgets with the same mnemonic
@@ -182387,7 +182377,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param flags flags to influence what is picked
              * @returns the widget's descendant at (x, y)
              */
-            pick(x: number, y: number, flags: PickFlags | null): Widget | null;
+            pick(x: number, y: number, flags: PickFlags): Widget | null;
             /**
              * Flags the widget for a rerun of the {@link Gtk.Widget.size_allocate}
              * function.
@@ -182570,7 +182560,7 @@ declare module 'gi://Gtk?version=4.0' {
              * the value set by {@link Gtk.Widget.set_default_direction} will be used.
              * @param dir the new direction
              */
-            set_direction(dir: TextDirection | null): void;
+            set_direction(dir: TextDirection): void;
             /**
              * Set the focus child of the widget.
              *
@@ -182632,7 +182622,7 @@ declare module 'gi://Gtk?version=4.0' {
              * Sets the horizontal alignment of the widget.
              * @param align the horizontal alignment
              */
-            set_halign(align: Align | null): void;
+            set_halign(align: Align): void;
             /**
              * Sets the `has-tooltip` property on the widget.
              * @param has_tooltip whether or not `widget` has a tooltip
@@ -182772,7 +182762,7 @@ declare module 'gi://Gtk?version=4.0' {
              * The default value is {@link Gtk.Overflow.VISIBLE}.
              * @param overflow desired overflow value
              */
-            set_overflow(overflow: Overflow | null): void;
+            set_overflow(overflow: Overflow): void;
             /**
              * Sets the parent widget of the widget.
              *
@@ -182854,7 +182844,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param flags state flags to turn on
              * @param clear whether to clear state before turning on `flags`
              */
-            set_state_flags(flags: StateFlags | null, clear: boolean): void;
+            set_state_flags(flags: StateFlags, clear: boolean): void;
             /**
              * Sets the contents of the tooltip for widget.
              *
@@ -182886,7 +182876,7 @@ declare module 'gi://Gtk?version=4.0' {
              * Sets the vertical alignment of the widget.
              * @param align the vertical alignment
              */
-            set_valign(align: Align | null): void;
+            set_valign(align: Align): void;
             /**
              * Sets whether the widget would like any available extra vertical
              * space.
@@ -183007,7 +182997,7 @@ declare module 'gi://Gtk?version=4.0' {
              * This function is for use in widget implementations.
              * @param flags state flags to turn off
              */
-            unset_state_flags(flags: StateFlags | null): void;
+            unset_state_flags(flags: StateFlags): void;
             /**
              * Computes whether a container should give this
              *   widget extra space when possible.
@@ -183623,7 +183613,7 @@ declare module 'gi://Gtk?version=4.0' {
              * See {@link Gtk.ContentFit} for details.
              * @param content_fit the content fit mode
              */
-            set_content_fit(content_fit: ContentFit | null): void;
+            set_content_fit(content_fit: ContentFit): void;
             /**
              * Makes `self` load and display `file`.
              *
@@ -183717,7 +183707,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param message the string to announce
              * @param priority the priority of the announcement
              */
-            announce(message: string, priority: AccessibleAnnouncementPriority | null): void;
+            announce(message: string, priority: AccessibleAnnouncementPriority): void;
             /**
              * Retrieves the accessible parent for an accessible object.
              *
@@ -183763,22 +183753,22 @@ declare module 'gi://Gtk?version=4.0' {
              * @param state platform state to query
              * @returns the value of state for the accessible
              */
-            get_platform_state(state: AccessiblePlatformState | null): boolean;
+            get_platform_state(state: AccessiblePlatformState): boolean;
             /**
              * Resets the accessible property to its default value.
              * @param property the accessible property
              */
-            reset_property(property: AccessibleProperty | null): void;
+            reset_property(property: AccessibleProperty): void;
             /**
              * Resets the accessible relation to its default value.
              * @param relation the accessible relation
              */
-            reset_relation(relation: AccessibleRelation | null): void;
+            reset_relation(relation: AccessibleRelation): void;
             /**
              * Resets the accessible state to its default value.
              * @param state the accessible state
              */
-            reset_state(state: AccessibleState | null): void;
+            reset_state(state: AccessibleState): void;
             /**
              * Sets the parent and sibling of an accessible object.
              *
@@ -183809,7 +183799,7 @@ declare module 'gi://Gtk?version=4.0' {
              * states automatically.
              * @param state the platform state to update
              */
-            update_platform_state(state: AccessiblePlatformState | null): void;
+            update_platform_state(state: AccessiblePlatformState): void;
             /**
              * Updates an array of accessible properties.
              *
@@ -183820,7 +183810,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param properties an array of accessible properties
              * @param values an array of `GValues`, one for each property
              */
-            update_property(properties: AccessibleProperty[] | null, values: (GObject.Value | any)[]): void;
+            update_property(properties: AccessibleProperty[], values: (GObject.Value | any)[]): void;
             /**
              * Updates an array of accessible relations.
              *
@@ -183831,7 +183821,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param relations an array of accessible relations
              * @param values an array of `GValues`, one for each relation
              */
-            update_relation(relations: AccessibleRelation[] | null, values: (GObject.Value | any)[]): void;
+            update_relation(relations: AccessibleRelation[], values: (GObject.Value | any)[]): void;
             /**
              * Updates an array of accessible states.
              *
@@ -183842,7 +183832,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param states an array of accessible states
              * @param values an array of `GValues`, one for each state
              */
-            update_state(states: AccessibleState[] | null, values: (GObject.Value | any)[]): void;
+            update_state(states: AccessibleState[], values: (GObject.Value | any)[]): void;
             /**
              * Retrieves the accessible parent for an accessible object.
              *
@@ -184030,7 +184020,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -184071,7 +184061,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -184897,7 +184887,7 @@ declare module 'gi://Gtk?version=4.0' {
              * {@link Gtk.Popover} may choose to appear on the opposite side.
              * @param position preferred popover position
              */
-            set_position(position: PositionType | null): void;
+            set_position(position: PositionType): void;
             /**
              * The accessible role of the given {@link Gtk.Accessible} implementation.
              *
@@ -185420,7 +185410,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param message the string to announce
              * @param priority the priority of the announcement
              */
-            announce(message: string, priority: AccessibleAnnouncementPriority | null): void;
+            announce(message: string, priority: AccessibleAnnouncementPriority): void;
             /**
              * Retrieves the accessible parent for an accessible object.
              *
@@ -185466,22 +185456,22 @@ declare module 'gi://Gtk?version=4.0' {
              * @param state platform state to query
              * @returns the value of state for the accessible
              */
-            get_platform_state(state: AccessiblePlatformState | null): boolean;
+            get_platform_state(state: AccessiblePlatformState): boolean;
             /**
              * Resets the accessible property to its default value.
              * @param property the accessible property
              */
-            reset_property(property: AccessibleProperty | null): void;
+            reset_property(property: AccessibleProperty): void;
             /**
              * Resets the accessible relation to its default value.
              * @param relation the accessible relation
              */
-            reset_relation(relation: AccessibleRelation | null): void;
+            reset_relation(relation: AccessibleRelation): void;
             /**
              * Resets the accessible state to its default value.
              * @param state the accessible state
              */
-            reset_state(state: AccessibleState | null): void;
+            reset_state(state: AccessibleState): void;
             /**
              * Sets the parent and sibling of an accessible object.
              *
@@ -185512,7 +185502,7 @@ declare module 'gi://Gtk?version=4.0' {
              * states automatically.
              * @param state the platform state to update
              */
-            update_platform_state(state: AccessiblePlatformState | null): void;
+            update_platform_state(state: AccessiblePlatformState): void;
             /**
              * Updates an array of accessible properties.
              *
@@ -185523,7 +185513,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param properties an array of accessible properties
              * @param values an array of `GValues`, one for each property
              */
-            update_property(properties: AccessibleProperty[] | null, values: (GObject.Value | any)[]): void;
+            update_property(properties: AccessibleProperty[], values: (GObject.Value | any)[]): void;
             /**
              * Updates an array of accessible relations.
              *
@@ -185534,7 +185524,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param relations an array of accessible relations
              * @param values an array of `GValues`, one for each relation
              */
-            update_relation(relations: AccessibleRelation[] | null, values: (GObject.Value | any)[]): void;
+            update_relation(relations: AccessibleRelation[], values: (GObject.Value | any)[]): void;
             /**
              * Updates an array of accessible states.
              *
@@ -185545,7 +185535,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param states an array of accessible states
              * @param values an array of `GValues`, one for each state
              */
-            update_state(states: AccessibleState[] | null, values: (GObject.Value | any)[]): void;
+            update_state(states: AccessibleState[], values: (GObject.Value | any)[]): void;
             /**
              * Retrieves the accessible parent for an accessible object.
              *
@@ -185775,7 +185765,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -185816,7 +185806,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -186336,7 +186326,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param direction direction of focus movement
              * @returns true if focus ended up inside `widget`
              */
-            child_focus(direction: DirectionType | null): boolean;
+            child_focus(direction: DirectionType): boolean;
             /**
              * Computes the bounds for `widget` in the coordinate space of `target`.
              *
@@ -186371,7 +186361,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param orientation expand direction
              * @returns whether widget tree rooted here should be expanded
              */
-            compute_expand(orientation: Orientation | null): boolean;
+            compute_expand(orientation: Orientation): boolean;
             /**
              * Translates the given `point` in `widget`'s coordinates to coordinates
              * in `target`’s coordinate system.
@@ -186979,7 +186969,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param orientation the orientation to query
              * @returns the size of `widget` in `orientation`
              */
-            get_size(orientation: Orientation | null): number;
+            get_size(orientation: Orientation): number;
             /**
              * Gets the size request that was explicitly set for the widget.
              *
@@ -187304,7 +187294,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param direction direction of focus movement
              * @returns true if stopping keyboard navigation is fine, false   if the emitting widget should try to handle the keyboard   navigation attempt in its parent widget
              */
-            keynav_failed(direction: DirectionType | null): boolean;
+            keynav_failed(direction: DirectionType): boolean;
             /**
              * Returns the widgets for which this widget is the target of a
              * mnemonic.
@@ -187338,7 +187328,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param orientation the orientation to measure
              * @param for_size Size for the opposite of `orientation`, i.e.   if `orientation` is {@link Gtk.Orientation.HORIZONTAL}, this is   the height the widget should be measured with. The {@link Gtk.Orientation.VERTICAL}   case is analogous. This way, both height-for-width and width-for-height   requests can be implemented. If no size is known, -1 can be passed.
              */
-            measure(orientation: Orientation | null, for_size: number): [number, number, number, number];
+            measure(orientation: Orientation, for_size: number): [number, number, number, number];
             /**
              * Emits the `Gtk.Widget::mnemonic-activate` signal.
              * @param group_cycling true if there are other widgets with the same mnemonic
@@ -187389,7 +187379,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param flags flags to influence what is picked
              * @returns the widget's descendant at (x, y)
              */
-            pick(x: number, y: number, flags: PickFlags | null): Widget | null;
+            pick(x: number, y: number, flags: PickFlags): Widget | null;
             /**
              * Flags the widget for a rerun of the {@link Gtk.Widget.size_allocate}
              * function.
@@ -187553,7 +187543,7 @@ declare module 'gi://Gtk?version=4.0' {
              * the value set by {@link Gtk.Widget.set_default_direction} will be used.
              * @param dir the new direction
              */
-            set_direction(dir: TextDirection | null): void;
+            set_direction(dir: TextDirection): void;
             /**
              * Set the focus child of the widget.
              *
@@ -187615,7 +187605,7 @@ declare module 'gi://Gtk?version=4.0' {
              * Sets the horizontal alignment of the widget.
              * @param align the horizontal alignment
              */
-            set_halign(align: Align | null): void;
+            set_halign(align: Align): void;
             /**
              * Sets the `has-tooltip` property on the widget.
              * @param has_tooltip whether or not `widget` has a tooltip
@@ -187755,7 +187745,7 @@ declare module 'gi://Gtk?version=4.0' {
              * The default value is {@link Gtk.Overflow.VISIBLE}.
              * @param overflow desired overflow value
              */
-            set_overflow(overflow: Overflow | null): void;
+            set_overflow(overflow: Overflow): void;
             /**
              * Sets the parent widget of the widget.
              *
@@ -187837,7 +187827,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param flags state flags to turn on
              * @param clear whether to clear state before turning on `flags`
              */
-            set_state_flags(flags: StateFlags | null, clear: boolean): void;
+            set_state_flags(flags: StateFlags, clear: boolean): void;
             /**
              * Sets the contents of the tooltip for widget.
              *
@@ -187869,7 +187859,7 @@ declare module 'gi://Gtk?version=4.0' {
              * Sets the vertical alignment of the widget.
              * @param align the vertical alignment
              */
-            set_valign(align: Align | null): void;
+            set_valign(align: Align): void;
             /**
              * Sets whether the widget would like any available extra vertical
              * space.
@@ -187982,7 +187972,7 @@ declare module 'gi://Gtk?version=4.0' {
              * This function is for use in widget implementations.
              * @param flags state flags to turn off
              */
-            unset_state_flags(flags: StateFlags | null): void;
+            unset_state_flags(flags: StateFlags): void;
             /**
              * Computes whether a container should give this
              *   widget extra space when possible.
@@ -188535,7 +188525,7 @@ declare module 'gi://Gtk?version=4.0' {
              * properties individually, set flags before model to avoid a redundant rebuild.
              * @param flags a set of {@link Gtk.PopoverMenuFlags}
              */
-            set_flags(flags: PopoverMenuFlags | null): void;
+            set_flags(flags: PopoverMenuFlags): void;
             /**
              * Sets a new menu model on `popover`.
              *
@@ -189124,7 +189114,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -189165,7 +189155,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -189685,7 +189675,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param direction direction of focus movement
              * @returns true if focus ended up inside `widget`
              */
-            child_focus(direction: DirectionType | null): boolean;
+            child_focus(direction: DirectionType): boolean;
             /**
              * Computes the bounds for `widget` in the coordinate space of `target`.
              *
@@ -189720,7 +189710,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param orientation expand direction
              * @returns whether widget tree rooted here should be expanded
              */
-            compute_expand(orientation: Orientation | null): boolean;
+            compute_expand(orientation: Orientation): boolean;
             /**
              * Translates the given `point` in `widget`'s coordinates to coordinates
              * in `target`’s coordinate system.
@@ -190328,7 +190318,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param orientation the orientation to query
              * @returns the size of `widget` in `orientation`
              */
-            get_size(orientation: Orientation | null): number;
+            get_size(orientation: Orientation): number;
             /**
              * Gets the size request that was explicitly set for the widget.
              *
@@ -190653,7 +190643,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param direction direction of focus movement
              * @returns true if stopping keyboard navigation is fine, false   if the emitting widget should try to handle the keyboard   navigation attempt in its parent widget
              */
-            keynav_failed(direction: DirectionType | null): boolean;
+            keynav_failed(direction: DirectionType): boolean;
             /**
              * Returns the widgets for which this widget is the target of a
              * mnemonic.
@@ -190687,7 +190677,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param orientation the orientation to measure
              * @param for_size Size for the opposite of `orientation`, i.e.   if `orientation` is {@link Gtk.Orientation.HORIZONTAL}, this is   the height the widget should be measured with. The {@link Gtk.Orientation.VERTICAL}   case is analogous. This way, both height-for-width and width-for-height   requests can be implemented. If no size is known, -1 can be passed.
              */
-            measure(orientation: Orientation | null, for_size: number): [number, number, number, number];
+            measure(orientation: Orientation, for_size: number): [number, number, number, number];
             /**
              * Emits the `Gtk.Widget::mnemonic-activate` signal.
              * @param group_cycling true if there are other widgets with the same mnemonic
@@ -190738,7 +190728,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param flags flags to influence what is picked
              * @returns the widget's descendant at (x, y)
              */
-            pick(x: number, y: number, flags: PickFlags | null): Widget | null;
+            pick(x: number, y: number, flags: PickFlags): Widget | null;
             /**
              * Flags the widget for a rerun of the {@link Gtk.Widget.size_allocate}
              * function.
@@ -190902,7 +190892,7 @@ declare module 'gi://Gtk?version=4.0' {
              * the value set by {@link Gtk.Widget.set_default_direction} will be used.
              * @param dir the new direction
              */
-            set_direction(dir: TextDirection | null): void;
+            set_direction(dir: TextDirection): void;
             /**
              * Set the focus child of the widget.
              *
@@ -190964,7 +190954,7 @@ declare module 'gi://Gtk?version=4.0' {
              * Sets the horizontal alignment of the widget.
              * @param align the horizontal alignment
              */
-            set_halign(align: Align | null): void;
+            set_halign(align: Align): void;
             /**
              * Sets the `has-tooltip` property on the widget.
              * @param has_tooltip whether or not `widget` has a tooltip
@@ -191104,7 +191094,7 @@ declare module 'gi://Gtk?version=4.0' {
              * The default value is {@link Gtk.Overflow.VISIBLE}.
              * @param overflow desired overflow value
              */
-            set_overflow(overflow: Overflow | null): void;
+            set_overflow(overflow: Overflow): void;
             /**
              * Sets the parent widget of the widget.
              *
@@ -191186,7 +191176,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param flags state flags to turn on
              * @param clear whether to clear state before turning on `flags`
              */
-            set_state_flags(flags: StateFlags | null, clear: boolean): void;
+            set_state_flags(flags: StateFlags, clear: boolean): void;
             /**
              * Sets the contents of the tooltip for widget.
              *
@@ -191218,7 +191208,7 @@ declare module 'gi://Gtk?version=4.0' {
              * Sets the vertical alignment of the widget.
              * @param align the vertical alignment
              */
-            set_valign(align: Align | null): void;
+            set_valign(align: Align): void;
             /**
              * Sets whether the widget would like any available extra vertical
              * space.
@@ -191331,7 +191321,7 @@ declare module 'gi://Gtk?version=4.0' {
              * This function is for use in widget implementations.
              * @param flags state flags to turn off
              */
-            unset_state_flags(flags: StateFlags | null): void;
+            unset_state_flags(flags: StateFlags): void;
             /**
              * Computes whether a container should give this
              *   widget extra space when possible.
@@ -191788,7 +191778,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param message the string to announce
              * @param priority the priority of the announcement
              */
-            announce(message: string, priority: AccessibleAnnouncementPriority | null): void;
+            announce(message: string, priority: AccessibleAnnouncementPriority): void;
             /**
              * Retrieves the accessible parent for an accessible object.
              *
@@ -191834,22 +191824,22 @@ declare module 'gi://Gtk?version=4.0' {
              * @param state platform state to query
              * @returns the value of state for the accessible
              */
-            get_platform_state(state: AccessiblePlatformState | null): boolean;
+            get_platform_state(state: AccessiblePlatformState): boolean;
             /**
              * Resets the accessible property to its default value.
              * @param property the accessible property
              */
-            reset_property(property: AccessibleProperty | null): void;
+            reset_property(property: AccessibleProperty): void;
             /**
              * Resets the accessible relation to its default value.
              * @param relation the accessible relation
              */
-            reset_relation(relation: AccessibleRelation | null): void;
+            reset_relation(relation: AccessibleRelation): void;
             /**
              * Resets the accessible state to its default value.
              * @param state the accessible state
              */
-            reset_state(state: AccessibleState | null): void;
+            reset_state(state: AccessibleState): void;
             /**
              * Sets the parent and sibling of an accessible object.
              *
@@ -191880,7 +191870,7 @@ declare module 'gi://Gtk?version=4.0' {
              * states automatically.
              * @param state the platform state to update
              */
-            update_platform_state(state: AccessiblePlatformState | null): void;
+            update_platform_state(state: AccessiblePlatformState): void;
             /**
              * Updates an array of accessible properties.
              *
@@ -191891,7 +191881,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param properties an array of accessible properties
              * @param values an array of `GValues`, one for each property
              */
-            update_property(properties: AccessibleProperty[] | null, values: (GObject.Value | any)[]): void;
+            update_property(properties: AccessibleProperty[], values: (GObject.Value | any)[]): void;
             /**
              * Updates an array of accessible relations.
              *
@@ -191902,7 +191892,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param relations an array of accessible relations
              * @param values an array of `GValues`, one for each relation
              */
-            update_relation(relations: AccessibleRelation[] | null, values: (GObject.Value | any)[]): void;
+            update_relation(relations: AccessibleRelation[], values: (GObject.Value | any)[]): void;
             /**
              * Updates an array of accessible states.
              *
@@ -191913,7 +191903,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param states an array of accessible states
              * @param values an array of `GValues`, one for each state
              */
-            update_state(states: AccessibleState[] | null, values: (GObject.Value | any)[]): void;
+            update_state(states: AccessibleState[], values: (GObject.Value | any)[]): void;
             /**
              * Retrieves the accessible parent for an accessible object.
              *
@@ -192101,7 +192091,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -192142,7 +192132,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -193333,7 +193323,7 @@ declare module 'gi://Gtk?version=4.0' {
              * Sets the n-up layout setting for this job.
              * @param layout the n-up layout setting
              */
-            set_n_up_layout(layout: NumberUpLayout | null): void;
+            set_n_up_layout(layout: NumberUpLayout): void;
             /**
              * Sets the number of copies for this job.
              * @param num_copies the number of copies
@@ -193348,12 +193338,12 @@ declare module 'gi://Gtk?version=4.0' {
              * Sets the {@link Gtk.PageSet} setting for this job.
              * @param page_set a {@link Gtk.PageSet} setting
              */
-            set_page_set(page_set: PageSet | null): void;
+            set_page_set(page_set: PageSet): void;
             /**
              * Sets the {@link Gtk.PrintPages} setting for this job.
              * @param pages the {@link Gtk.PrintPages} setting
              */
-            set_pages(pages: PrintPages | null): void;
+            set_pages(pages: PrintPages): void;
             /**
              * Sets whether this job is printed reversed.
              * @param reverse whether the job is printed reversed
@@ -194355,7 +194345,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param parent Transient parent of the dialog
              * @returns the result of the print operation. A return value of   {@link Gtk.PrintOperationResult.APPLY} indicates that the printing was   completed successfully. In this case, it is a good idea to obtain   the used print settings with   {@link Gtk.PrintOperation.get_print_settings}   and store them for reuse with the next print operation. A value of   {@link Gtk.PrintOperationResult.IN_PROGRESS} means the operation is running   asynchronously, and will emit the `Gtk.PrintOperation::done`   signal when done.
              */
-            run(action: PrintOperationAction | null, parent?: Window | null): PrintOperationResult;
+            run(action: PrintOperationAction, parent?: Window | null): PrintOperationResult;
             /**
              * Sets whether `gtk_print_operation_run()` may return
              * before the print operation is completed.
@@ -194492,7 +194482,7 @@ declare module 'gi://Gtk?version=4.0' {
              * units of `unit`.
              * @param unit the unit to use
              */
-            set_unit(unit: Unit | null): void;
+            set_unit(unit: Unit): void;
             /**
              * If `full_page` is `true`, the transformation for the cairo context
              * obtained from {@link Gtk.PrintContext} puts the origin at the top left
@@ -194617,7 +194607,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -194658,7 +194648,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -195187,7 +195177,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param unit the unit of the return value
              * @returns the length value of `key`, converted to `unit`
              */
-            get_length(key: string, unit: Unit | null): number;
+            get_length(key: string, unit: Unit): number;
             /**
              * Gets the value of `GTK_PRINT_SETTINGS_MEDIA_TYPE`.
              *
@@ -195237,7 +195227,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param unit the unit for the return value
              * @returns the paper height, in units of `unit`
              */
-            get_paper_height(unit: Unit | null): number;
+            get_paper_height(unit: Unit): number;
             /**
              * Gets the value of `GTK_PRINT_SETTINGS_PAPER_FORMAT`,
              * converted to a {@link Gtk.PaperSize}.
@@ -195250,7 +195240,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param unit the unit for the return value
              * @returns the paper width, in units of `unit`
              */
-            get_paper_width(unit: Unit | null): number;
+            get_paper_width(unit: Unit): number;
             /**
              * Gets the value of `GTK_PRINT_SETTINGS_PRINT_PAGES`.
              * @returns which pages to print
@@ -195371,7 +195361,7 @@ declare module 'gi://Gtk?version=4.0' {
              * Sets the value of `GTK_PRINT_SETTINGS_DUPLEX`.
              * @param duplex a {@link Gtk.PrintDuplex} value
              */
-            set_duplex(duplex: PrintDuplex | null): void;
+            set_duplex(duplex: PrintDuplex): void;
             /**
              * Sets the value of `GTK_PRINT_SETTINGS_FINISHINGS`.
              * @param finishings the finishings
@@ -195389,7 +195379,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param value a length
              * @param unit the unit of `length`
              */
-            set_length(key: string, value: number, unit: Unit | null): void;
+            set_length(key: string, value: number, unit: Unit): void;
             /**
              * Sets the value of `GTK_PRINT_SETTINGS_MEDIA_TYPE`.
              *
@@ -195411,12 +195401,12 @@ declare module 'gi://Gtk?version=4.0' {
              * Sets the value of `GTK_PRINT_SETTINGS_NUMBER_UP_LAYOUT`.
              * @param number_up_layout a {@link Gtk.NumberUpLayout} value
              */
-            set_number_up_layout(number_up_layout: NumberUpLayout | null): void;
+            set_number_up_layout(number_up_layout: NumberUpLayout): void;
             /**
              * Sets the value of `GTK_PRINT_SETTINGS_ORIENTATION`.
              * @param orientation a page orientation
              */
-            set_orientation(orientation: PageOrientation | null): void;
+            set_orientation(orientation: PageOrientation): void;
             /**
              * Sets the value of `GTK_PRINT_SETTINGS_OUTPUT_BIN`.
              * @param output_bin the output bin
@@ -195431,13 +195421,13 @@ declare module 'gi://Gtk?version=4.0' {
              * Sets the value of `GTK_PRINT_SETTINGS_PAGE_SET`.
              * @param page_set a {@link Gtk.PageSet} value
              */
-            set_page_set(page_set: PageSet | null): void;
+            set_page_set(page_set: PageSet): void;
             /**
              * Sets the value of `GTK_PRINT_SETTINGS_PAPER_HEIGHT`.
              * @param height the paper height
              * @param unit the units of `height`
              */
-            set_paper_height(height: number, unit: Unit | null): void;
+            set_paper_height(height: number, unit: Unit): void;
             /**
              * Sets the value of `GTK_PRINT_SETTINGS_PAPER_FORMAT`,
              * `GTK_PRINT_SETTINGS_PAPER_WIDTH` and
@@ -195450,12 +195440,12 @@ declare module 'gi://Gtk?version=4.0' {
              * @param width the paper width
              * @param unit the units of `width`
              */
-            set_paper_width(width: number, unit: Unit | null): void;
+            set_paper_width(width: number, unit: Unit): void;
             /**
              * Sets the value of `GTK_PRINT_SETTINGS_PRINT_PAGES`.
              * @param pages a {@link Gtk.PrintPages} value
              */
-            set_print_pages(pages: PrintPages | null): void;
+            set_print_pages(pages: PrintPages): void;
             /**
              * Convenience function to set `GTK_PRINT_SETTINGS_PRINTER`
              * to `printer`.
@@ -195471,7 +195461,7 @@ declare module 'gi://Gtk?version=4.0' {
              * Sets the value of `GTK_PRINT_SETTINGS_QUALITY`.
              * @param quality a {@link Gtk.PrintQuality} value
              */
-            set_quality(quality: PrintQuality | null): void;
+            set_quality(quality: PrintQuality): void;
             /**
              * Sets the values of `GTK_PRINT_SETTINGS_RESOLUTION`,
              * `GTK_PRINT_SETTINGS_RESOLUTION_X` and
@@ -195920,7 +195910,7 @@ declare module 'gi://Gtk?version=4.0' {
              * handles scaling.
              * @param capabilities the printing capabilities of your application
              */
-            set_manual_capabilities(capabilities: PrintCapabilities | null): void;
+            set_manual_capabilities(capabilities: PrintCapabilities): void;
             /**
              * Sets the page setup of the {@link Gtk.PrintUnixDialog}.
              * @param page_setup a {@link Gtk.PageSetup}
@@ -196477,7 +196467,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -196518,7 +196508,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -197038,7 +197028,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param direction direction of focus movement
              * @returns true if focus ended up inside `widget`
              */
-            child_focus(direction: DirectionType | null): boolean;
+            child_focus(direction: DirectionType): boolean;
             /**
              * Computes the bounds for `widget` in the coordinate space of `target`.
              *
@@ -197073,7 +197063,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param orientation expand direction
              * @returns whether widget tree rooted here should be expanded
              */
-            compute_expand(orientation: Orientation | null): boolean;
+            compute_expand(orientation: Orientation): boolean;
             /**
              * Translates the given `point` in `widget`'s coordinates to coordinates
              * in `target`’s coordinate system.
@@ -197671,7 +197661,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param orientation the orientation to query
              * @returns the size of `widget` in `orientation`
              */
-            get_size(orientation: Orientation | null): number;
+            get_size(orientation: Orientation): number;
             /**
              * Gets the size request that was explicitly set for the widget.
              *
@@ -197996,7 +197986,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param direction direction of focus movement
              * @returns true if stopping keyboard navigation is fine, false   if the emitting widget should try to handle the keyboard   navigation attempt in its parent widget
              */
-            keynav_failed(direction: DirectionType | null): boolean;
+            keynav_failed(direction: DirectionType): boolean;
             /**
              * Returns the widgets for which this widget is the target of a
              * mnemonic.
@@ -198030,7 +198020,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param orientation the orientation to measure
              * @param for_size Size for the opposite of `orientation`, i.e.   if `orientation` is {@link Gtk.Orientation.HORIZONTAL}, this is   the height the widget should be measured with. The {@link Gtk.Orientation.VERTICAL}   case is analogous. This way, both height-for-width and width-for-height   requests can be implemented. If no size is known, -1 can be passed.
              */
-            measure(orientation: Orientation | null, for_size: number): [number, number, number, number];
+            measure(orientation: Orientation, for_size: number): [number, number, number, number];
             /**
              * Emits the `Gtk.Widget::mnemonic-activate` signal.
              * @param group_cycling true if there are other widgets with the same mnemonic
@@ -198081,7 +198071,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param flags flags to influence what is picked
              * @returns the widget's descendant at (x, y)
              */
-            pick(x: number, y: number, flags: PickFlags | null): Widget | null;
+            pick(x: number, y: number, flags: PickFlags): Widget | null;
             /**
              * Flags the widget for a rerun of the {@link Gtk.Widget.size_allocate}
              * function.
@@ -198264,7 +198254,7 @@ declare module 'gi://Gtk?version=4.0' {
              * the value set by {@link Gtk.Widget.set_default_direction} will be used.
              * @param dir the new direction
              */
-            set_direction(dir: TextDirection | null): void;
+            set_direction(dir: TextDirection): void;
             /**
              * Set the focus child of the widget.
              *
@@ -198326,7 +198316,7 @@ declare module 'gi://Gtk?version=4.0' {
              * Sets the horizontal alignment of the widget.
              * @param align the horizontal alignment
              */
-            set_halign(align: Align | null): void;
+            set_halign(align: Align): void;
             /**
              * Sets the `has-tooltip` property on the widget.
              * @param has_tooltip whether or not `widget` has a tooltip
@@ -198466,7 +198456,7 @@ declare module 'gi://Gtk?version=4.0' {
              * The default value is {@link Gtk.Overflow.VISIBLE}.
              * @param overflow desired overflow value
              */
-            set_overflow(overflow: Overflow | null): void;
+            set_overflow(overflow: Overflow): void;
             /**
              * Sets the parent widget of the widget.
              *
@@ -198548,7 +198538,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param flags state flags to turn on
              * @param clear whether to clear state before turning on `flags`
              */
-            set_state_flags(flags: StateFlags | null, clear: boolean): void;
+            set_state_flags(flags: StateFlags, clear: boolean): void;
             /**
              * Sets the contents of the tooltip for widget.
              *
@@ -198580,7 +198570,7 @@ declare module 'gi://Gtk?version=4.0' {
              * Sets the vertical alignment of the widget.
              * @param align the vertical alignment
              */
-            set_valign(align: Align | null): void;
+            set_valign(align: Align): void;
             /**
              * Sets whether the widget would like any available extra vertical
              * space.
@@ -198701,7 +198691,7 @@ declare module 'gi://Gtk?version=4.0' {
              * This function is for use in widget implementations.
              * @param flags state flags to turn off
              */
-            unset_state_flags(flags: StateFlags | null): void;
+            unset_state_flags(flags: StateFlags): void;
             /**
              * Computes whether a container should give this
              *   widget extra space when possible.
@@ -199571,7 +199561,7 @@ declare module 'gi://Gtk?version=4.0' {
              * to render the entire string.
              * @param mode a {@link Pango.EllipsizeMode}
              */
-            set_ellipsize(mode: Pango.EllipsizeMode | null): void;
+            set_ellipsize(mode: Pango.EllipsizeMode): void;
             /**
              * Causes the progress bar to “fill in” the given fraction
              * of the bar.
@@ -199660,7 +199650,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param message the string to announce
              * @param priority the priority of the announcement
              */
-            announce(message: string, priority: AccessibleAnnouncementPriority | null): void;
+            announce(message: string, priority: AccessibleAnnouncementPriority): void;
             /**
              * Retrieves the accessible parent for an accessible object.
              *
@@ -199706,22 +199696,22 @@ declare module 'gi://Gtk?version=4.0' {
              * @param state platform state to query
              * @returns the value of state for the accessible
              */
-            get_platform_state(state: AccessiblePlatformState | null): boolean;
+            get_platform_state(state: AccessiblePlatformState): boolean;
             /**
              * Resets the accessible property to its default value.
              * @param property the accessible property
              */
-            reset_property(property: AccessibleProperty | null): void;
+            reset_property(property: AccessibleProperty): void;
             /**
              * Resets the accessible relation to its default value.
              * @param relation the accessible relation
              */
-            reset_relation(relation: AccessibleRelation | null): void;
+            reset_relation(relation: AccessibleRelation): void;
             /**
              * Resets the accessible state to its default value.
              * @param state the accessible state
              */
-            reset_state(state: AccessibleState | null): void;
+            reset_state(state: AccessibleState): void;
             /**
              * Sets the parent and sibling of an accessible object.
              *
@@ -199752,7 +199742,7 @@ declare module 'gi://Gtk?version=4.0' {
              * states automatically.
              * @param state the platform state to update
              */
-            update_platform_state(state: AccessiblePlatformState | null): void;
+            update_platform_state(state: AccessiblePlatformState): void;
             /**
              * Updates an array of accessible properties.
              *
@@ -199763,7 +199753,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param properties an array of accessible properties
              * @param values an array of `GValues`, one for each property
              */
-            update_property(properties: AccessibleProperty[] | null, values: (GObject.Value | any)[]): void;
+            update_property(properties: AccessibleProperty[], values: (GObject.Value | any)[]): void;
             /**
              * Updates an array of accessible relations.
              *
@@ -199774,7 +199764,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param relations an array of accessible relations
              * @param values an array of `GValues`, one for each relation
              */
-            update_relation(relations: AccessibleRelation[] | null, values: (GObject.Value | any)[]): void;
+            update_relation(relations: AccessibleRelation[], values: (GObject.Value | any)[]): void;
             /**
              * Updates an array of accessible states.
              *
@@ -199785,7 +199775,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param states an array of accessible states
              * @param values an array of `GValues`, one for each state
              */
-            update_state(states: AccessibleState[] | null, values: (GObject.Value | any)[]): void;
+            update_state(states: AccessibleState[], values: (GObject.Value | any)[]): void;
             /**
              * Retrieves the accessible parent for an accessible object.
              *
@@ -199947,7 +199937,7 @@ declare module 'gi://Gtk?version=4.0' {
              * Sets the orientation of the `orientable`.
              * @param orientation the orientable’s new orientation
              */
-            set_orientation(orientation: Orientation | null): void;
+            set_orientation(orientation: Orientation): void;
             /**
              * Creates a binding between `source_property` on `source` and `target_property`
              * on `target`.
@@ -199992,7 +199982,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -200033,7 +200023,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -200939,7 +200929,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param message the string to announce
              * @param priority the priority of the announcement
              */
-            announce(message: string, priority: AccessibleAnnouncementPriority | null): void;
+            announce(message: string, priority: AccessibleAnnouncementPriority): void;
             /**
              * Retrieves the accessible parent for an accessible object.
              *
@@ -200985,22 +200975,22 @@ declare module 'gi://Gtk?version=4.0' {
              * @param state platform state to query
              * @returns the value of state for the accessible
              */
-            get_platform_state(state: AccessiblePlatformState | null): boolean;
+            get_platform_state(state: AccessiblePlatformState): boolean;
             /**
              * Resets the accessible property to its default value.
              * @param property the accessible property
              */
-            reset_property(property: AccessibleProperty | null): void;
+            reset_property(property: AccessibleProperty): void;
             /**
              * Resets the accessible relation to its default value.
              * @param relation the accessible relation
              */
-            reset_relation(relation: AccessibleRelation | null): void;
+            reset_relation(relation: AccessibleRelation): void;
             /**
              * Resets the accessible state to its default value.
              * @param state the accessible state
              */
-            reset_state(state: AccessibleState | null): void;
+            reset_state(state: AccessibleState): void;
             /**
              * Sets the parent and sibling of an accessible object.
              *
@@ -201031,7 +201021,7 @@ declare module 'gi://Gtk?version=4.0' {
              * states automatically.
              * @param state the platform state to update
              */
-            update_platform_state(state: AccessiblePlatformState | null): void;
+            update_platform_state(state: AccessiblePlatformState): void;
             /**
              * Updates an array of accessible properties.
              *
@@ -201042,7 +201032,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param properties an array of accessible properties
              * @param values an array of `GValues`, one for each property
              */
-            update_property(properties: AccessibleProperty[] | null, values: (GObject.Value | any)[]): void;
+            update_property(properties: AccessibleProperty[], values: (GObject.Value | any)[]): void;
             /**
              * Updates an array of accessible relations.
              *
@@ -201053,7 +201043,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param relations an array of accessible relations
              * @param values an array of `GValues`, one for each relation
              */
-            update_relation(relations: AccessibleRelation[] | null, values: (GObject.Value | any)[]): void;
+            update_relation(relations: AccessibleRelation[], values: (GObject.Value | any)[]): void;
             /**
              * Updates an array of accessible states.
              *
@@ -201064,7 +201054,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param states an array of accessible states
              * @param values an array of `GValues`, one for each state
              */
-            update_state(states: AccessibleState[] | null, values: (GObject.Value | any)[]): void;
+            update_state(states: AccessibleState[], values: (GObject.Value | any)[]): void;
             /**
              * Retrieves the accessible parent for an accessible object.
              *
@@ -201226,7 +201216,7 @@ declare module 'gi://Gtk?version=4.0' {
              * Sets the orientation of the `orientable`.
              * @param orientation the orientable’s new orientation
              */
-            set_orientation(orientation: Orientation | null): void;
+            set_orientation(orientation: Orientation): void;
             /**
              * Creates a binding between `source_property` on `source` and `target_property`
              * on `target`.
@@ -201271,7 +201261,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -201312,7 +201302,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -202158,7 +202148,7 @@ declare module 'gi://Gtk?version=4.0' {
              * Available types include various kinds of fades and slides.
              * @param transition the new transition type
              */
-            set_transition_type(transition: RevealerTransitionType | null): void;
+            set_transition_type(transition: RevealerTransitionType): void;
             /**
              * The accessible role of the given {@link Gtk.Accessible} implementation.
              *
@@ -202188,7 +202178,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param message the string to announce
              * @param priority the priority of the announcement
              */
-            announce(message: string, priority: AccessibleAnnouncementPriority | null): void;
+            announce(message: string, priority: AccessibleAnnouncementPriority): void;
             /**
              * Retrieves the accessible parent for an accessible object.
              *
@@ -202234,22 +202224,22 @@ declare module 'gi://Gtk?version=4.0' {
              * @param state platform state to query
              * @returns the value of state for the accessible
              */
-            get_platform_state(state: AccessiblePlatformState | null): boolean;
+            get_platform_state(state: AccessiblePlatformState): boolean;
             /**
              * Resets the accessible property to its default value.
              * @param property the accessible property
              */
-            reset_property(property: AccessibleProperty | null): void;
+            reset_property(property: AccessibleProperty): void;
             /**
              * Resets the accessible relation to its default value.
              * @param relation the accessible relation
              */
-            reset_relation(relation: AccessibleRelation | null): void;
+            reset_relation(relation: AccessibleRelation): void;
             /**
              * Resets the accessible state to its default value.
              * @param state the accessible state
              */
-            reset_state(state: AccessibleState | null): void;
+            reset_state(state: AccessibleState): void;
             /**
              * Sets the parent and sibling of an accessible object.
              *
@@ -202280,7 +202270,7 @@ declare module 'gi://Gtk?version=4.0' {
              * states automatically.
              * @param state the platform state to update
              */
-            update_platform_state(state: AccessiblePlatformState | null): void;
+            update_platform_state(state: AccessiblePlatformState): void;
             /**
              * Updates an array of accessible properties.
              *
@@ -202291,7 +202281,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param properties an array of accessible properties
              * @param values an array of `GValues`, one for each property
              */
-            update_property(properties: AccessibleProperty[] | null, values: (GObject.Value | any)[]): void;
+            update_property(properties: AccessibleProperty[], values: (GObject.Value | any)[]): void;
             /**
              * Updates an array of accessible relations.
              *
@@ -202302,7 +202292,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param relations an array of accessible relations
              * @param values an array of `GValues`, one for each relation
              */
-            update_relation(relations: AccessibleRelation[] | null, values: (GObject.Value | any)[]): void;
+            update_relation(relations: AccessibleRelation[], values: (GObject.Value | any)[]): void;
             /**
              * Updates an array of accessible states.
              *
@@ -202313,7 +202303,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param states an array of accessible states
              * @param values an array of `GValues`, one for each state
              */
-            update_state(states: AccessibleState[] | null, values: (GObject.Value | any)[]): void;
+            update_state(states: AccessibleState[], values: (GObject.Value | any)[]): void;
             /**
              * Retrieves the accessible parent for an accessible object.
              *
@@ -202501,7 +202491,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -202542,7 +202532,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -203186,7 +203176,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param position where to draw the mark. For a horizontal scale, {@link Gtk.PositionType.TOP}   and {@link Gtk.PositionType.LEFT} are drawn above the scale, anything else below.   For a vertical scale, {@link Gtk.PositionType.LEFT} and {@link Gtk.PositionType.TOP} are drawn to   the left of the scale, anything else to the right.
              * @param markup Text to be shown at the mark, using Pango markup
              */
-            add_mark(value: number, position: PositionType | null, markup?: string | null): void;
+            add_mark(value: number, position: PositionType, markup?: string | null): void;
             /**
              * Removes any marks that have been added.
              */
@@ -203279,7 +203269,7 @@ declare module 'gi://Gtk?version=4.0' {
              * Sets the position in which the current value is displayed.
              * @param pos the position in which the current value is displayed
              */
-            set_value_pos(pos: PositionType | null): void;
+            set_value_pos(pos: PositionType): void;
             /**
              * The orientation of the orientable.
              * @category Inherited from Gtk.Orientable
@@ -203304,7 +203294,7 @@ declare module 'gi://Gtk?version=4.0' {
              * Sets the orientation of the `orientable`.
              * @param orientation the orientable’s new orientation
              */
-            set_orientation(orientation: Orientation | null): void;
+            set_orientation(orientation: Orientation): void;
             /**
              * Creates a binding between `source_property` on `source` and `target_property`
              * on `target`.
@@ -203349,7 +203339,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -203390,7 +203380,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -204085,7 +204075,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param message the string to announce
              * @param priority the priority of the announcement
              */
-            announce(message: string, priority: AccessibleAnnouncementPriority | null): void;
+            announce(message: string, priority: AccessibleAnnouncementPriority): void;
             /**
              * Retrieves the accessible parent for an accessible object.
              *
@@ -204131,22 +204121,22 @@ declare module 'gi://Gtk?version=4.0' {
              * @param state platform state to query
              * @returns the value of state for the accessible
              */
-            get_platform_state(state: AccessiblePlatformState | null): boolean;
+            get_platform_state(state: AccessiblePlatformState): boolean;
             /**
              * Resets the accessible property to its default value.
              * @param property the accessible property
              */
-            reset_property(property: AccessibleProperty | null): void;
+            reset_property(property: AccessibleProperty): void;
             /**
              * Resets the accessible relation to its default value.
              * @param relation the accessible relation
              */
-            reset_relation(relation: AccessibleRelation | null): void;
+            reset_relation(relation: AccessibleRelation): void;
             /**
              * Resets the accessible state to its default value.
              * @param state the accessible state
              */
-            reset_state(state: AccessibleState | null): void;
+            reset_state(state: AccessibleState): void;
             /**
              * Sets the parent and sibling of an accessible object.
              *
@@ -204177,7 +204167,7 @@ declare module 'gi://Gtk?version=4.0' {
              * states automatically.
              * @param state the platform state to update
              */
-            update_platform_state(state: AccessiblePlatformState | null): void;
+            update_platform_state(state: AccessiblePlatformState): void;
             /**
              * Updates an array of accessible properties.
              *
@@ -204188,7 +204178,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param properties an array of accessible properties
              * @param values an array of `GValues`, one for each property
              */
-            update_property(properties: AccessibleProperty[] | null, values: (GObject.Value | any)[]): void;
+            update_property(properties: AccessibleProperty[], values: (GObject.Value | any)[]): void;
             /**
              * Updates an array of accessible relations.
              *
@@ -204199,7 +204189,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param relations an array of accessible relations
              * @param values an array of `GValues`, one for each relation
              */
-            update_relation(relations: AccessibleRelation[] | null, values: (GObject.Value | any)[]): void;
+            update_relation(relations: AccessibleRelation[], values: (GObject.Value | any)[]): void;
             /**
              * Updates an array of accessible states.
              *
@@ -204210,7 +204200,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param states an array of accessible states
              * @param values an array of `GValues`, one for each state
              */
-            update_state(states: AccessibleState[] | null, values: (GObject.Value | any)[]): void;
+            update_state(states: AccessibleState[], values: (GObject.Value | any)[]): void;
             /**
              * Retrieves the accessible parent for an accessible object.
              *
@@ -204372,7 +204362,7 @@ declare module 'gi://Gtk?version=4.0' {
              * Sets the orientation of the `orientable`.
              * @param orientation the orientable’s new orientation
              */
-            set_orientation(orientation: Orientation | null): void;
+            set_orientation(orientation: Orientation): void;
             /**
              * Creates a binding between `source_property` on `source` and `target_property`
              * on `target`.
@@ -204417,7 +204407,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -204458,7 +204448,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -205025,7 +205015,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param message the string to announce
              * @param priority the priority of the announcement
              */
-            announce(message: string, priority: AccessibleAnnouncementPriority | null): void;
+            announce(message: string, priority: AccessibleAnnouncementPriority): void;
             /**
              * Retrieves the accessible parent for an accessible object.
              *
@@ -205071,22 +205061,22 @@ declare module 'gi://Gtk?version=4.0' {
              * @param state platform state to query
              * @returns the value of state for the accessible
              */
-            get_platform_state(state: AccessiblePlatformState | null): boolean;
+            get_platform_state(state: AccessiblePlatformState): boolean;
             /**
              * Resets the accessible property to its default value.
              * @param property the accessible property
              */
-            reset_property(property: AccessibleProperty | null): void;
+            reset_property(property: AccessibleProperty): void;
             /**
              * Resets the accessible relation to its default value.
              * @param relation the accessible relation
              */
-            reset_relation(relation: AccessibleRelation | null): void;
+            reset_relation(relation: AccessibleRelation): void;
             /**
              * Resets the accessible state to its default value.
              * @param state the accessible state
              */
-            reset_state(state: AccessibleState | null): void;
+            reset_state(state: AccessibleState): void;
             /**
              * Sets the parent and sibling of an accessible object.
              *
@@ -205117,7 +205107,7 @@ declare module 'gi://Gtk?version=4.0' {
              * states automatically.
              * @param state the platform state to update
              */
-            update_platform_state(state: AccessiblePlatformState | null): void;
+            update_platform_state(state: AccessiblePlatformState): void;
             /**
              * Updates an array of accessible properties.
              *
@@ -205128,7 +205118,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param properties an array of accessible properties
              * @param values an array of `GValues`, one for each property
              */
-            update_property(properties: AccessibleProperty[] | null, values: (GObject.Value | any)[]): void;
+            update_property(properties: AccessibleProperty[], values: (GObject.Value | any)[]): void;
             /**
              * Updates an array of accessible relations.
              *
@@ -205139,7 +205129,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param relations an array of accessible relations
              * @param values an array of `GValues`, one for each relation
              */
-            update_relation(relations: AccessibleRelation[] | null, values: (GObject.Value | any)[]): void;
+            update_relation(relations: AccessibleRelation[], values: (GObject.Value | any)[]): void;
             /**
              * Updates an array of accessible states.
              *
@@ -205150,7 +205140,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param states an array of accessible states
              * @param values an array of `GValues`, one for each state
              */
-            update_state(states: AccessibleState[] | null, values: (GObject.Value | any)[]): void;
+            update_state(states: AccessibleState[], values: (GObject.Value | any)[]): void;
             /**
              * Retrieves the accessible parent for an accessible object.
              *
@@ -205312,7 +205302,7 @@ declare module 'gi://Gtk?version=4.0' {
              * Sets the orientation of the `orientable`.
              * @param orientation the orientable’s new orientation
              */
-            set_orientation(orientation: Orientation | null): void;
+            set_orientation(orientation: Orientation): void;
             /**
              * Creates a binding between `source_property` on `source` and `target_property`
              * on `target`.
@@ -205357,7 +205347,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -205398,7 +205388,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -206409,7 +206399,7 @@ declare module 'gi://Gtk?version=4.0' {
              * {@link Gtk.ScrolledWindow.unset_placement}.
              * @param window_placement position of the child window
              */
-            set_placement(window_placement: CornerType | null): void;
+            set_placement(window_placement: CornerType): void;
             /**
              * Sets the scrollbar policy for the horizontal and vertical scrollbars.
              *
@@ -206422,7 +206412,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param hscrollbar_policy policy for horizontal bar
              * @param vscrollbar_policy policy for vertical bar
              */
-            set_policy(hscrollbar_policy: PolicyType | null, vscrollbar_policy: PolicyType | null): void;
+            set_policy(hscrollbar_policy: PolicyType, vscrollbar_policy: PolicyType): void;
             /**
              * Sets whether the natural height of the child should be calculated
              * and propagated through the scrolled window’s requested natural height.
@@ -206476,7 +206466,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param message the string to announce
              * @param priority the priority of the announcement
              */
-            announce(message: string, priority: AccessibleAnnouncementPriority | null): void;
+            announce(message: string, priority: AccessibleAnnouncementPriority): void;
             /**
              * Retrieves the accessible parent for an accessible object.
              *
@@ -206522,22 +206512,22 @@ declare module 'gi://Gtk?version=4.0' {
              * @param state platform state to query
              * @returns the value of state for the accessible
              */
-            get_platform_state(state: AccessiblePlatformState | null): boolean;
+            get_platform_state(state: AccessiblePlatformState): boolean;
             /**
              * Resets the accessible property to its default value.
              * @param property the accessible property
              */
-            reset_property(property: AccessibleProperty | null): void;
+            reset_property(property: AccessibleProperty): void;
             /**
              * Resets the accessible relation to its default value.
              * @param relation the accessible relation
              */
-            reset_relation(relation: AccessibleRelation | null): void;
+            reset_relation(relation: AccessibleRelation): void;
             /**
              * Resets the accessible state to its default value.
              * @param state the accessible state
              */
-            reset_state(state: AccessibleState | null): void;
+            reset_state(state: AccessibleState): void;
             /**
              * Sets the parent and sibling of an accessible object.
              *
@@ -206568,7 +206558,7 @@ declare module 'gi://Gtk?version=4.0' {
              * states automatically.
              * @param state the platform state to update
              */
-            update_platform_state(state: AccessiblePlatformState | null): void;
+            update_platform_state(state: AccessiblePlatformState): void;
             /**
              * Updates an array of accessible properties.
              *
@@ -206579,7 +206569,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param properties an array of accessible properties
              * @param values an array of `GValues`, one for each property
              */
-            update_property(properties: AccessibleProperty[] | null, values: (GObject.Value | any)[]): void;
+            update_property(properties: AccessibleProperty[], values: (GObject.Value | any)[]): void;
             /**
              * Updates an array of accessible relations.
              *
@@ -206590,7 +206580,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param relations an array of accessible relations
              * @param values an array of `GValues`, one for each relation
              */
-            update_relation(relations: AccessibleRelation[] | null, values: (GObject.Value | any)[]): void;
+            update_relation(relations: AccessibleRelation[], values: (GObject.Value | any)[]): void;
             /**
              * Updates an array of accessible states.
              *
@@ -206601,7 +206591,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param states an array of accessible states
              * @param values an array of `GValues`, one for each state
              */
-            update_state(states: AccessibleState[] | null, values: (GObject.Value | any)[]): void;
+            update_state(states: AccessibleState[], values: (GObject.Value | any)[]): void;
             /**
              * Retrieves the accessible parent for an accessible object.
              *
@@ -206789,7 +206779,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -206830,7 +206820,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -207490,7 +207480,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param message the string to announce
              * @param priority the priority of the announcement
              */
-            announce(message: string, priority: AccessibleAnnouncementPriority | null): void;
+            announce(message: string, priority: AccessibleAnnouncementPriority): void;
             /**
              * Retrieves the accessible parent for an accessible object.
              *
@@ -207536,22 +207526,22 @@ declare module 'gi://Gtk?version=4.0' {
              * @param state platform state to query
              * @returns the value of state for the accessible
              */
-            get_platform_state(state: AccessiblePlatformState | null): boolean;
+            get_platform_state(state: AccessiblePlatformState): boolean;
             /**
              * Resets the accessible property to its default value.
              * @param property the accessible property
              */
-            reset_property(property: AccessibleProperty | null): void;
+            reset_property(property: AccessibleProperty): void;
             /**
              * Resets the accessible relation to its default value.
              * @param relation the accessible relation
              */
-            reset_relation(relation: AccessibleRelation | null): void;
+            reset_relation(relation: AccessibleRelation): void;
             /**
              * Resets the accessible state to its default value.
              * @param state the accessible state
              */
-            reset_state(state: AccessibleState | null): void;
+            reset_state(state: AccessibleState): void;
             /**
              * Sets the parent and sibling of an accessible object.
              *
@@ -207582,7 +207572,7 @@ declare module 'gi://Gtk?version=4.0' {
              * states automatically.
              * @param state the platform state to update
              */
-            update_platform_state(state: AccessiblePlatformState | null): void;
+            update_platform_state(state: AccessiblePlatformState): void;
             /**
              * Updates an array of accessible properties.
              *
@@ -207593,7 +207583,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param properties an array of accessible properties
              * @param values an array of `GValues`, one for each property
              */
-            update_property(properties: AccessibleProperty[] | null, values: (GObject.Value | any)[]): void;
+            update_property(properties: AccessibleProperty[], values: (GObject.Value | any)[]): void;
             /**
              * Updates an array of accessible relations.
              *
@@ -207604,7 +207594,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param relations an array of accessible relations
              * @param values an array of `GValues`, one for each relation
              */
-            update_relation(relations: AccessibleRelation[] | null, values: (GObject.Value | any)[]): void;
+            update_relation(relations: AccessibleRelation[], values: (GObject.Value | any)[]): void;
             /**
              * Updates an array of accessible states.
              *
@@ -207615,7 +207605,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param states an array of accessible states
              * @param values an array of `GValues`, one for each state
              */
-            update_state(states: AccessibleState[] | null, values: (GObject.Value | any)[]): void;
+            update_state(states: AccessibleState[], values: (GObject.Value | any)[]): void;
             /**
              * Retrieves the accessible parent for an accessible object.
              *
@@ -207803,7 +207793,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -207844,7 +207834,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -208552,12 +208542,12 @@ declare module 'gi://Gtk?version=4.0' {
              * Sets the input hints for `entry`.
              * @param hints the new input hints
              */
-            set_input_hints(hints: InputHints | null): void;
+            set_input_hints(hints: InputHints): void;
             /**
              * Sets the input purpose of `entry`.
              * @param purpose the new input purpose
              */
-            set_input_purpose(purpose: InputPurpose | null): void;
+            set_input_purpose(purpose: InputPurpose): void;
             /**
              * Sets `widget` as the widget that `entry` will capture key
              * events from.
@@ -209192,7 +209182,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param message the string to announce
              * @param priority the priority of the announcement
              */
-            announce(message: string, priority: AccessibleAnnouncementPriority | null): void;
+            announce(message: string, priority: AccessibleAnnouncementPriority): void;
             /**
              * Retrieves the accessible parent for an accessible object.
              *
@@ -209238,22 +209228,22 @@ declare module 'gi://Gtk?version=4.0' {
              * @param state platform state to query
              * @returns the value of state for the accessible
              */
-            get_platform_state(state: AccessiblePlatformState | null): boolean;
+            get_platform_state(state: AccessiblePlatformState): boolean;
             /**
              * Resets the accessible property to its default value.
              * @param property the accessible property
              */
-            reset_property(property: AccessibleProperty | null): void;
+            reset_property(property: AccessibleProperty): void;
             /**
              * Resets the accessible relation to its default value.
              * @param relation the accessible relation
              */
-            reset_relation(relation: AccessibleRelation | null): void;
+            reset_relation(relation: AccessibleRelation): void;
             /**
              * Resets the accessible state to its default value.
              * @param state the accessible state
              */
-            reset_state(state: AccessibleState | null): void;
+            reset_state(state: AccessibleState): void;
             /**
              * Sets the parent and sibling of an accessible object.
              *
@@ -209284,7 +209274,7 @@ declare module 'gi://Gtk?version=4.0' {
              * states automatically.
              * @param state the platform state to update
              */
-            update_platform_state(state: AccessiblePlatformState | null): void;
+            update_platform_state(state: AccessiblePlatformState): void;
             /**
              * Updates an array of accessible properties.
              *
@@ -209295,7 +209285,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param properties an array of accessible properties
              * @param values an array of `GValues`, one for each property
              */
-            update_property(properties: AccessibleProperty[] | null, values: (GObject.Value | any)[]): void;
+            update_property(properties: AccessibleProperty[], values: (GObject.Value | any)[]): void;
             /**
              * Updates an array of accessible relations.
              *
@@ -209306,7 +209296,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param relations an array of accessible relations
              * @param values an array of `GValues`, one for each relation
              */
-            update_relation(relations: AccessibleRelation[] | null, values: (GObject.Value | any)[]): void;
+            update_relation(relations: AccessibleRelation[], values: (GObject.Value | any)[]): void;
             /**
              * Updates an array of accessible states.
              *
@@ -209317,7 +209307,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param states an array of accessible states
              * @param values an array of `GValues`, one for each state
              */
-            update_state(states: AccessibleState[] | null, values: (GObject.Value | any)[]): void;
+            update_state(states: AccessibleState[], values: (GObject.Value | any)[]): void;
             /**
              * Retrieves the accessible parent for an accessible object.
              *
@@ -209497,7 +209487,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param state what kind of accessible state to retrieve
              * @returns the accessible platform state of the delegate
              */
-            delegate_get_accessible_platform_state(state: AccessiblePlatformState | null): boolean;
+            delegate_get_accessible_platform_state(state: AccessiblePlatformState): boolean;
             /**
              * Deletes the currently selected text of the editable.
              *
@@ -209831,7 +209821,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -209872,7 +209862,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -210392,7 +210382,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param direction direction of focus movement
              * @returns true if focus ended up inside `widget`
              */
-            child_focus(direction: DirectionType | null): boolean;
+            child_focus(direction: DirectionType): boolean;
             /**
              * Computes the bounds for `widget` in the coordinate space of `target`.
              *
@@ -210427,7 +210417,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param orientation expand direction
              * @returns whether widget tree rooted here should be expanded
              */
-            compute_expand(orientation: Orientation | null): boolean;
+            compute_expand(orientation: Orientation): boolean;
             /**
              * Translates the given `point` in `widget`'s coordinates to coordinates
              * in `target`’s coordinate system.
@@ -211035,7 +211025,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param orientation the orientation to query
              * @returns the size of `widget` in `orientation`
              */
-            get_size(orientation: Orientation | null): number;
+            get_size(orientation: Orientation): number;
             /**
              * Gets the size request that was explicitly set for the widget.
              *
@@ -211360,7 +211350,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param direction direction of focus movement
              * @returns true if stopping keyboard navigation is fine, false   if the emitting widget should try to handle the keyboard   navigation attempt in its parent widget
              */
-            keynav_failed(direction: DirectionType | null): boolean;
+            keynav_failed(direction: DirectionType): boolean;
             /**
              * Returns the widgets for which this widget is the target of a
              * mnemonic.
@@ -211394,7 +211384,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param orientation the orientation to measure
              * @param for_size Size for the opposite of `orientation`, i.e.   if `orientation` is {@link Gtk.Orientation.HORIZONTAL}, this is   the height the widget should be measured with. The {@link Gtk.Orientation.VERTICAL}   case is analogous. This way, both height-for-width and width-for-height   requests can be implemented. If no size is known, -1 can be passed.
              */
-            measure(orientation: Orientation | null, for_size: number): [number, number, number, number];
+            measure(orientation: Orientation, for_size: number): [number, number, number, number];
             /**
              * Emits the `Gtk.Widget::mnemonic-activate` signal.
              * @param group_cycling true if there are other widgets with the same mnemonic
@@ -211445,7 +211435,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param flags flags to influence what is picked
              * @returns the widget's descendant at (x, y)
              */
-            pick(x: number, y: number, flags: PickFlags | null): Widget | null;
+            pick(x: number, y: number, flags: PickFlags): Widget | null;
             /**
              * Flags the widget for a rerun of the {@link Gtk.Widget.size_allocate}
              * function.
@@ -211628,7 +211618,7 @@ declare module 'gi://Gtk?version=4.0' {
              * the value set by {@link Gtk.Widget.set_default_direction} will be used.
              * @param dir the new direction
              */
-            set_direction(dir: TextDirection | null): void;
+            set_direction(dir: TextDirection): void;
             /**
              * Set the focus child of the widget.
              *
@@ -211690,7 +211680,7 @@ declare module 'gi://Gtk?version=4.0' {
              * Sets the horizontal alignment of the widget.
              * @param align the horizontal alignment
              */
-            set_halign(align: Align | null): void;
+            set_halign(align: Align): void;
             /**
              * Sets the `has-tooltip` property on the widget.
              * @param has_tooltip whether or not `widget` has a tooltip
@@ -211830,7 +211820,7 @@ declare module 'gi://Gtk?version=4.0' {
              * The default value is {@link Gtk.Overflow.VISIBLE}.
              * @param overflow desired overflow value
              */
-            set_overflow(overflow: Overflow | null): void;
+            set_overflow(overflow: Overflow): void;
             /**
              * Sets the parent widget of the widget.
              *
@@ -211912,7 +211902,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param flags state flags to turn on
              * @param clear whether to clear state before turning on `flags`
              */
-            set_state_flags(flags: StateFlags | null, clear: boolean): void;
+            set_state_flags(flags: StateFlags, clear: boolean): void;
             /**
              * Sets the contents of the tooltip for widget.
              *
@@ -211944,7 +211934,7 @@ declare module 'gi://Gtk?version=4.0' {
              * Sets the vertical alignment of the widget.
              * @param align the vertical alignment
              */
-            set_valign(align: Align | null): void;
+            set_valign(align: Align): void;
             /**
              * Sets whether the widget would like any available extra vertical
              * space.
@@ -212065,7 +212055,7 @@ declare module 'gi://Gtk?version=4.0' {
              * This function is for use in widget implementations.
              * @param flags state flags to turn off
              */
-            unset_state_flags(flags: StateFlags | null): void;
+            unset_state_flags(flags: StateFlags): void;
             /**
              * Computes whether a container should give this
              *   widget extra space when possible.
@@ -212576,7 +212566,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -212617,7 +212607,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -213133,7 +213123,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param message the string to announce
              * @param priority the priority of the announcement
              */
-            announce(message: string, priority: AccessibleAnnouncementPriority | null): void;
+            announce(message: string, priority: AccessibleAnnouncementPriority): void;
             /**
              * Retrieves the accessible parent for an accessible object.
              *
@@ -213179,22 +213169,22 @@ declare module 'gi://Gtk?version=4.0' {
              * @param state platform state to query
              * @returns the value of state for the accessible
              */
-            get_platform_state(state: AccessiblePlatformState | null): boolean;
+            get_platform_state(state: AccessiblePlatformState): boolean;
             /**
              * Resets the accessible property to its default value.
              * @param property the accessible property
              */
-            reset_property(property: AccessibleProperty | null): void;
+            reset_property(property: AccessibleProperty): void;
             /**
              * Resets the accessible relation to its default value.
              * @param relation the accessible relation
              */
-            reset_relation(relation: AccessibleRelation | null): void;
+            reset_relation(relation: AccessibleRelation): void;
             /**
              * Resets the accessible state to its default value.
              * @param state the accessible state
              */
-            reset_state(state: AccessibleState | null): void;
+            reset_state(state: AccessibleState): void;
             /**
              * Sets the parent and sibling of an accessible object.
              *
@@ -213225,7 +213215,7 @@ declare module 'gi://Gtk?version=4.0' {
              * states automatically.
              * @param state the platform state to update
              */
-            update_platform_state(state: AccessiblePlatformState | null): void;
+            update_platform_state(state: AccessiblePlatformState): void;
             /**
              * Updates an array of accessible properties.
              *
@@ -213236,7 +213226,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param properties an array of accessible properties
              * @param values an array of `GValues`, one for each property
              */
-            update_property(properties: AccessibleProperty[] | null, values: (GObject.Value | any)[]): void;
+            update_property(properties: AccessibleProperty[], values: (GObject.Value | any)[]): void;
             /**
              * Updates an array of accessible relations.
              *
@@ -213247,7 +213237,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param relations an array of accessible relations
              * @param values an array of `GValues`, one for each relation
              */
-            update_relation(relations: AccessibleRelation[] | null, values: (GObject.Value | any)[]): void;
+            update_relation(relations: AccessibleRelation[], values: (GObject.Value | any)[]): void;
             /**
              * Updates an array of accessible states.
              *
@@ -213258,7 +213248,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param states an array of accessible states
              * @param values an array of `GValues`, one for each state
              */
-            update_state(states: AccessibleState[] | null, values: (GObject.Value | any)[]): void;
+            update_state(states: AccessibleState[], values: (GObject.Value | any)[]): void;
             /**
              * Retrieves the accessible parent for an accessible object.
              *
@@ -213411,7 +213401,7 @@ declare module 'gi://Gtk?version=4.0' {
              * Sets the orientation of the `orientable`.
              * @param orientation the orientable’s new orientation
              */
-            set_orientation(orientation: Orientation | null): void;
+            set_orientation(orientation: Orientation): void;
             /**
              * Creates a binding between `source_property` on `source` and `target_property`
              * on `target`.
@@ -213456,7 +213446,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -213497,7 +213487,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -215116,7 +215106,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -215157,7 +215147,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -215745,7 +215735,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param args arguments to pass
              * @returns `true` if this action was activated successfully
              */
-            activate(flags: ShortcutActionFlags | null, widget: Widget, args?: GLib.Variant | null): boolean;
+            activate(flags: ShortcutActionFlags, widget: Widget, args?: GLib.Variant | null): boolean;
             /**
              * Prints the given action into a string for the developer.
              *
@@ -215979,7 +215969,7 @@ declare module 'gi://Gtk?version=4.0' {
              * have their own modifiers for activating mnemonics.
              * @param modifiers the new mnemonics_modifiers to use
              */
-            set_mnemonics_modifiers(modifiers: Gdk.ModifierType | null): void;
+            set_mnemonics_modifiers(modifiers: Gdk.ModifierType): void;
             /**
              * Sets the controller to have the given `scope`.
              *
@@ -215992,7 +215982,7 @@ declare module 'gi://Gtk?version=4.0' {
              * when the widget has focus.
              * @param scope the new scope to use
              */
-            set_scope(scope: ShortcutScope | null): void;
+            set_scope(scope: ShortcutScope): void;
             /**
              * Gets the type of the items in `list`.
              *
@@ -216236,7 +216226,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -216277,7 +216267,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -216823,7 +216813,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param message the string to announce
              * @param priority the priority of the announcement
              */
-            announce(message: string, priority: AccessibleAnnouncementPriority | null): void;
+            announce(message: string, priority: AccessibleAnnouncementPriority): void;
             /**
              * Retrieves the accessible parent for an accessible object.
              *
@@ -216869,22 +216859,22 @@ declare module 'gi://Gtk?version=4.0' {
              * @param state platform state to query
              * @returns the value of state for the accessible
              */
-            get_platform_state(state: AccessiblePlatformState | null): boolean;
+            get_platform_state(state: AccessiblePlatformState): boolean;
             /**
              * Resets the accessible property to its default value.
              * @param property the accessible property
              */
-            reset_property(property: AccessibleProperty | null): void;
+            reset_property(property: AccessibleProperty): void;
             /**
              * Resets the accessible relation to its default value.
              * @param relation the accessible relation
              */
-            reset_relation(relation: AccessibleRelation | null): void;
+            reset_relation(relation: AccessibleRelation): void;
             /**
              * Resets the accessible state to its default value.
              * @param state the accessible state
              */
-            reset_state(state: AccessibleState | null): void;
+            reset_state(state: AccessibleState): void;
             /**
              * Sets the parent and sibling of an accessible object.
              *
@@ -216915,7 +216905,7 @@ declare module 'gi://Gtk?version=4.0' {
              * states automatically.
              * @param state the platform state to update
              */
-            update_platform_state(state: AccessiblePlatformState | null): void;
+            update_platform_state(state: AccessiblePlatformState): void;
             /**
              * Updates an array of accessible properties.
              *
@@ -216926,7 +216916,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param properties an array of accessible properties
              * @param values an array of `GValues`, one for each property
              */
-            update_property(properties: AccessibleProperty[] | null, values: (GObject.Value | any)[]): void;
+            update_property(properties: AccessibleProperty[], values: (GObject.Value | any)[]): void;
             /**
              * Updates an array of accessible relations.
              *
@@ -216937,7 +216927,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param relations an array of accessible relations
              * @param values an array of `GValues`, one for each relation
              */
-            update_relation(relations: AccessibleRelation[] | null, values: (GObject.Value | any)[]): void;
+            update_relation(relations: AccessibleRelation[], values: (GObject.Value | any)[]): void;
             /**
              * Updates an array of accessible states.
              *
@@ -216948,7 +216938,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param states an array of accessible states
              * @param values an array of `GValues`, one for each state
              */
-            update_state(states: AccessibleState[] | null, values: (GObject.Value | any)[]): void;
+            update_state(states: AccessibleState[], values: (GObject.Value | any)[]): void;
             /**
              * Retrieves the accessible parent for an accessible object.
              *
@@ -217136,7 +217126,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -217177,7 +217167,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -217916,7 +217906,7 @@ declare module 'gi://Gtk?version=4.0' {
              * Sets the orientation of the `orientable`.
              * @param orientation the orientable’s new orientation
              */
-            set_orientation(orientation: Orientation | null): void;
+            set_orientation(orientation: Orientation): void;
             /**
              * Creates a binding between `source_property` on `source` and `target_property`
              * on `target`.
@@ -217961,7 +217951,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -218002,7 +217992,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -218628,7 +218618,7 @@ declare module 'gi://Gtk?version=4.0' {
              * Sets the orientation of the `orientable`.
              * @param orientation the orientable’s new orientation
              */
-            set_orientation(orientation: Orientation | null): void;
+            set_orientation(orientation: Orientation): void;
             /**
              * Creates a binding between `source_property` on `source` and `target_property`
              * on `target`.
@@ -218673,7 +218663,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -218714,7 +218704,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -219401,7 +219391,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param message the string to announce
              * @param priority the priority of the announcement
              */
-            announce(message: string, priority: AccessibleAnnouncementPriority | null): void;
+            announce(message: string, priority: AccessibleAnnouncementPriority): void;
             /**
              * Retrieves the accessible parent for an accessible object.
              *
@@ -219447,22 +219437,22 @@ declare module 'gi://Gtk?version=4.0' {
              * @param state platform state to query
              * @returns the value of state for the accessible
              */
-            get_platform_state(state: AccessiblePlatformState | null): boolean;
+            get_platform_state(state: AccessiblePlatformState): boolean;
             /**
              * Resets the accessible property to its default value.
              * @param property the accessible property
              */
-            reset_property(property: AccessibleProperty | null): void;
+            reset_property(property: AccessibleProperty): void;
             /**
              * Resets the accessible relation to its default value.
              * @param relation the accessible relation
              */
-            reset_relation(relation: AccessibleRelation | null): void;
+            reset_relation(relation: AccessibleRelation): void;
             /**
              * Resets the accessible state to its default value.
              * @param state the accessible state
              */
-            reset_state(state: AccessibleState | null): void;
+            reset_state(state: AccessibleState): void;
             /**
              * Sets the parent and sibling of an accessible object.
              *
@@ -219493,7 +219483,7 @@ declare module 'gi://Gtk?version=4.0' {
              * states automatically.
              * @param state the platform state to update
              */
-            update_platform_state(state: AccessiblePlatformState | null): void;
+            update_platform_state(state: AccessiblePlatformState): void;
             /**
              * Updates an array of accessible properties.
              *
@@ -219504,7 +219494,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param properties an array of accessible properties
              * @param values an array of `GValues`, one for each property
              */
-            update_property(properties: AccessibleProperty[] | null, values: (GObject.Value | any)[]): void;
+            update_property(properties: AccessibleProperty[], values: (GObject.Value | any)[]): void;
             /**
              * Updates an array of accessible relations.
              *
@@ -219515,7 +219505,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param relations an array of accessible relations
              * @param values an array of `GValues`, one for each relation
              */
-            update_relation(relations: AccessibleRelation[] | null, values: (GObject.Value | any)[]): void;
+            update_relation(relations: AccessibleRelation[], values: (GObject.Value | any)[]): void;
             /**
              * Updates an array of accessible states.
              *
@@ -219526,7 +219516,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param states an array of accessible states
              * @param values an array of `GValues`, one for each state
              */
-            update_state(states: AccessibleState[] | null, values: (GObject.Value | any)[]): void;
+            update_state(states: AccessibleState[], values: (GObject.Value | any)[]): void;
             /**
              * Retrieves the accessible parent for an accessible object.
              *
@@ -219714,7 +219704,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -219755,7 +219745,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -221010,7 +221000,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -221051,7 +221041,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -221571,7 +221561,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param direction direction of focus movement
              * @returns true if focus ended up inside `widget`
              */
-            child_focus(direction: DirectionType | null): boolean;
+            child_focus(direction: DirectionType): boolean;
             /**
              * Computes the bounds for `widget` in the coordinate space of `target`.
              *
@@ -221606,7 +221596,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param orientation expand direction
              * @returns whether widget tree rooted here should be expanded
              */
-            compute_expand(orientation: Orientation | null): boolean;
+            compute_expand(orientation: Orientation): boolean;
             /**
              * Translates the given `point` in `widget`'s coordinates to coordinates
              * in `target`’s coordinate system.
@@ -222202,7 +222192,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param orientation the orientation to query
              * @returns the size of `widget` in `orientation`
              */
-            get_size(orientation: Orientation | null): number;
+            get_size(orientation: Orientation): number;
             /**
              * Gets the size request that was explicitly set for the widget.
              *
@@ -222527,7 +222517,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param direction direction of focus movement
              * @returns true if stopping keyboard navigation is fine, false   if the emitting widget should try to handle the keyboard   navigation attempt in its parent widget
              */
-            keynav_failed(direction: DirectionType | null): boolean;
+            keynav_failed(direction: DirectionType): boolean;
             /**
              * Returns the widgets for which this widget is the target of a
              * mnemonic.
@@ -222561,7 +222551,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param orientation the orientation to measure
              * @param for_size Size for the opposite of `orientation`, i.e.   if `orientation` is {@link Gtk.Orientation.HORIZONTAL}, this is   the height the widget should be measured with. The {@link Gtk.Orientation.VERTICAL}   case is analogous. This way, both height-for-width and width-for-height   requests can be implemented. If no size is known, -1 can be passed.
              */
-            measure(orientation: Orientation | null, for_size: number): [number, number, number, number];
+            measure(orientation: Orientation, for_size: number): [number, number, number, number];
             /**
              * Emits the `Gtk.Widget::mnemonic-activate` signal.
              * @param group_cycling true if there are other widgets with the same mnemonic
@@ -222612,7 +222602,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param flags flags to influence what is picked
              * @returns the widget's descendant at (x, y)
              */
-            pick(x: number, y: number, flags: PickFlags | null): Widget | null;
+            pick(x: number, y: number, flags: PickFlags): Widget | null;
             /**
              * Flags the widget for a rerun of the {@link Gtk.Widget.size_allocate}
              * function.
@@ -222776,7 +222766,7 @@ declare module 'gi://Gtk?version=4.0' {
              * the value set by {@link Gtk.Widget.set_default_direction} will be used.
              * @param dir the new direction
              */
-            set_direction(dir: TextDirection | null): void;
+            set_direction(dir: TextDirection): void;
             /**
              * Set the focus child of the widget.
              *
@@ -222838,7 +222828,7 @@ declare module 'gi://Gtk?version=4.0' {
              * Sets the horizontal alignment of the widget.
              * @param align the horizontal alignment
              */
-            set_halign(align: Align | null): void;
+            set_halign(align: Align): void;
             /**
              * Sets the `has-tooltip` property on the widget.
              * @param has_tooltip whether or not `widget` has a tooltip
@@ -222978,7 +222968,7 @@ declare module 'gi://Gtk?version=4.0' {
              * The default value is {@link Gtk.Overflow.VISIBLE}.
              * @param overflow desired overflow value
              */
-            set_overflow(overflow: Overflow | null): void;
+            set_overflow(overflow: Overflow): void;
             /**
              * Sets the parent widget of the widget.
              *
@@ -223060,7 +223050,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param flags state flags to turn on
              * @param clear whether to clear state before turning on `flags`
              */
-            set_state_flags(flags: StateFlags | null, clear: boolean): void;
+            set_state_flags(flags: StateFlags, clear: boolean): void;
             /**
              * Sets the contents of the tooltip for widget.
              *
@@ -223092,7 +223082,7 @@ declare module 'gi://Gtk?version=4.0' {
              * Sets the vertical alignment of the widget.
              * @param align the vertical alignment
              */
-            set_valign(align: Align | null): void;
+            set_valign(align: Align): void;
             /**
              * Sets whether the widget would like any available extra vertical
              * space.
@@ -223205,7 +223195,7 @@ declare module 'gi://Gtk?version=4.0' {
              * This function is for use in widget implementations.
              * @param flags state flags to turn off
              */
-            unset_state_flags(flags: StateFlags | null): void;
+            unset_state_flags(flags: StateFlags): void;
             /**
              * Computes whether a container should give this
              *   widget extra space when possible.
@@ -224303,7 +224293,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -224344,7 +224334,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -224921,7 +224911,7 @@ declare module 'gi://Gtk?version=4.0' {
              * in both directions ({@link Gtk.SizeGroupMode.BOTH}).
              * @param mode the mode to set for the size group.
              */
-            set_mode(mode: SizeGroupMode | null): void;
+            set_mode(mode: SizeGroupMode): void;
             /**
              * Gets the ID of the `buildable` object.
              *
@@ -225068,7 +225058,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -225109,7 +225099,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -225816,7 +225806,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -225857,7 +225847,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -226340,7 +226330,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param fill_rule The fill rule to use
              * @param color the color to fill the path with
              */
-            append_fill(path: Gsk.Path, fill_rule: Gsk.FillRule | null, color: Gdk.RGBA): void;
+            append_fill(path: Gsk.Path, fill_rule: Gsk.FillRule, color: Gdk.RGBA): void;
             /**
              * Appends an inset shadow into the box given by `outline`.
              * @param outline outline of the region surrounded by shadow
@@ -226472,7 +226462,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param filter the filter to use
              * @param bounds the bounds for the new node
              */
-            append_scaled_texture(texture: Gdk.Texture, filter: Gsk.ScalingFilter | null, bounds: Graphene.Rect): void;
+            append_scaled_texture(texture: Gdk.Texture, filter: Gsk.ScalingFilter, bounds: Graphene.Rect): void;
             /**
              * A convenience method to stroke a path with a color.
              *
@@ -226529,7 +226519,7 @@ declare module 'gi://Gtk?version=4.0' {
              * to {@link Gtk.Snapshot.pop}.
              * @param blend_mode blend mode to use
              */
-            push_blend(blend_mode: Gsk.BlendMode | null): void;
+            push_blend(blend_mode: Gsk.BlendMode): void;
             /**
              * Blurs an image.
              *
@@ -226603,7 +226593,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param path The path describing the area to fill
              * @param fill_rule The fill rule to use
              */
-            push_fill(path: Gsk.Path, fill_rule: Gsk.FillRule | null): void;
+            push_fill(path: Gsk.Path, fill_rule: Gsk.FillRule): void;
             /**
              * Push a {@link Gsk.GLShaderNode}.
              *
@@ -226654,7 +226644,7 @@ declare module 'gi://Gtk?version=4.0' {
              * Calling this function requires 2 subsequent calls to `gtk_snapshot_pop()`.
              * @param mask_mode mask mode to use
              */
-            push_mask(mask_mode: Gsk.MaskMode | null): void;
+            push_mask(mask_mode: Gsk.MaskMode): void;
             /**
              * Modifies the opacity of an image.
              *
@@ -226748,7 +226738,7 @@ declare module 'gi://Gtk?version=4.0' {
                 y: number,
                 layout: Pango.Layout,
                 index: number,
-                direction: Pango.Direction | null,
+                direction: Pango.Direction,
             ): void;
             /**
              * Creates a render node for rendering `layout` according to the style
@@ -227287,7 +227277,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -227328,7 +227318,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -227829,7 +227819,7 @@ declare module 'gi://Gtk?version=4.0' {
              * subclasses and should not be called from other functions.
              * @param change How the sorter changed
              */
-            changed(change: SorterChange | null): void;
+            changed(change: SorterChange): void;
             /**
              * Compares two given items according to the sort order implemented
              * by the sorter.
@@ -228418,7 +228408,7 @@ declare module 'gi://Gtk?version=4.0' {
              * updated or only when a valid value is set.
              * @param policy a {@link Gtk.SpinButtonUpdatePolicy} value
              */
-            set_update_policy(policy: SpinButtonUpdatePolicy | null): void;
+            set_update_policy(policy: SpinButtonUpdatePolicy): void;
             /**
              * Sets the value of `spin_button`.
              * @param value the new value
@@ -228437,7 +228427,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param direction a {@link Gtk.SpinType} indicating the direction to spin
              * @param increment step increment to apply in the specified direction
              */
-            spin(direction: SpinType | null, increment: number): void;
+            spin(direction: SpinType, increment: number): void;
             /**
              * Manually force an update of the spin button.
              */
@@ -229062,7 +229052,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param message the string to announce
              * @param priority the priority of the announcement
              */
-            announce(message: string, priority: AccessibleAnnouncementPriority | null): void;
+            announce(message: string, priority: AccessibleAnnouncementPriority): void;
             /**
              * Retrieves the accessible parent for an accessible object.
              *
@@ -229108,22 +229098,22 @@ declare module 'gi://Gtk?version=4.0' {
              * @param state platform state to query
              * @returns the value of state for the accessible
              */
-            get_platform_state(state: AccessiblePlatformState | null): boolean;
+            get_platform_state(state: AccessiblePlatformState): boolean;
             /**
              * Resets the accessible property to its default value.
              * @param property the accessible property
              */
-            reset_property(property: AccessibleProperty | null): void;
+            reset_property(property: AccessibleProperty): void;
             /**
              * Resets the accessible relation to its default value.
              * @param relation the accessible relation
              */
-            reset_relation(relation: AccessibleRelation | null): void;
+            reset_relation(relation: AccessibleRelation): void;
             /**
              * Resets the accessible state to its default value.
              * @param state the accessible state
              */
-            reset_state(state: AccessibleState | null): void;
+            reset_state(state: AccessibleState): void;
             /**
              * Sets the parent and sibling of an accessible object.
              *
@@ -229154,7 +229144,7 @@ declare module 'gi://Gtk?version=4.0' {
              * states automatically.
              * @param state the platform state to update
              */
-            update_platform_state(state: AccessiblePlatformState | null): void;
+            update_platform_state(state: AccessiblePlatformState): void;
             /**
              * Updates an array of accessible properties.
              *
@@ -229165,7 +229155,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param properties an array of accessible properties
              * @param values an array of `GValues`, one for each property
              */
-            update_property(properties: AccessibleProperty[] | null, values: (GObject.Value | any)[]): void;
+            update_property(properties: AccessibleProperty[], values: (GObject.Value | any)[]): void;
             /**
              * Updates an array of accessible relations.
              *
@@ -229176,7 +229166,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param relations an array of accessible relations
              * @param values an array of `GValues`, one for each relation
              */
-            update_relation(relations: AccessibleRelation[] | null, values: (GObject.Value | any)[]): void;
+            update_relation(relations: AccessibleRelation[], values: (GObject.Value | any)[]): void;
             /**
              * Updates an array of accessible states.
              *
@@ -229187,7 +229177,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param states an array of accessible states
              * @param values an array of `GValues`, one for each state
              */
-            update_state(states: AccessibleState[] | null, values: (GObject.Value | any)[]): void;
+            update_state(states: AccessibleState[], values: (GObject.Value | any)[]): void;
             /**
              * Retrieves the accessible parent for an accessible object.
              *
@@ -229423,7 +229413,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param state what kind of accessible state to retrieve
              * @returns the accessible platform state of the delegate
              */
-            delegate_get_accessible_platform_state(state: AccessiblePlatformState | null): boolean;
+            delegate_get_accessible_platform_state(state: AccessiblePlatformState): boolean;
             /**
              * Deletes the currently selected text of the editable.
              *
@@ -229722,7 +229712,7 @@ declare module 'gi://Gtk?version=4.0' {
              * Sets the orientation of the `orientable`.
              * @param orientation the orientable’s new orientation
              */
-            set_orientation(orientation: Orientation | null): void;
+            set_orientation(orientation: Orientation): void;
             /**
              * Creates a binding between `source_property` on `source` and `target_property`
              * on `target`.
@@ -229767,7 +229757,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -229808,7 +229798,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -230328,7 +230318,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param direction direction of focus movement
              * @returns true if focus ended up inside `widget`
              */
-            child_focus(direction: DirectionType | null): boolean;
+            child_focus(direction: DirectionType): boolean;
             /**
              * Computes the bounds for `widget` in the coordinate space of `target`.
              *
@@ -230363,7 +230353,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param orientation expand direction
              * @returns whether widget tree rooted here should be expanded
              */
-            compute_expand(orientation: Orientation | null): boolean;
+            compute_expand(orientation: Orientation): boolean;
             /**
              * Translates the given `point` in `widget`'s coordinates to coordinates
              * in `target`’s coordinate system.
@@ -230971,7 +230961,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param orientation the orientation to query
              * @returns the size of `widget` in `orientation`
              */
-            get_size(orientation: Orientation | null): number;
+            get_size(orientation: Orientation): number;
             /**
              * Gets the size request that was explicitly set for the widget.
              *
@@ -231296,7 +231286,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param direction direction of focus movement
              * @returns true if stopping keyboard navigation is fine, false   if the emitting widget should try to handle the keyboard   navigation attempt in its parent widget
              */
-            keynav_failed(direction: DirectionType | null): boolean;
+            keynav_failed(direction: DirectionType): boolean;
             /**
              * Returns the widgets for which this widget is the target of a
              * mnemonic.
@@ -231330,7 +231320,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param orientation the orientation to measure
              * @param for_size Size for the opposite of `orientation`, i.e.   if `orientation` is {@link Gtk.Orientation.HORIZONTAL}, this is   the height the widget should be measured with. The {@link Gtk.Orientation.VERTICAL}   case is analogous. This way, both height-for-width and width-for-height   requests can be implemented. If no size is known, -1 can be passed.
              */
-            measure(orientation: Orientation | null, for_size: number): [number, number, number, number];
+            measure(orientation: Orientation, for_size: number): [number, number, number, number];
             /**
              * Emits the `Gtk.Widget::mnemonic-activate` signal.
              * @param group_cycling true if there are other widgets with the same mnemonic
@@ -231381,7 +231371,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param flags flags to influence what is picked
              * @returns the widget's descendant at (x, y)
              */
-            pick(x: number, y: number, flags: PickFlags | null): Widget | null;
+            pick(x: number, y: number, flags: PickFlags): Widget | null;
             /**
              * Flags the widget for a rerun of the {@link Gtk.Widget.size_allocate}
              * function.
@@ -231564,7 +231554,7 @@ declare module 'gi://Gtk?version=4.0' {
              * the value set by {@link Gtk.Widget.set_default_direction} will be used.
              * @param dir the new direction
              */
-            set_direction(dir: TextDirection | null): void;
+            set_direction(dir: TextDirection): void;
             /**
              * Set the focus child of the widget.
              *
@@ -231626,7 +231616,7 @@ declare module 'gi://Gtk?version=4.0' {
              * Sets the horizontal alignment of the widget.
              * @param align the horizontal alignment
              */
-            set_halign(align: Align | null): void;
+            set_halign(align: Align): void;
             /**
              * Sets the `has-tooltip` property on the widget.
              * @param has_tooltip whether or not `widget` has a tooltip
@@ -231766,7 +231756,7 @@ declare module 'gi://Gtk?version=4.0' {
              * The default value is {@link Gtk.Overflow.VISIBLE}.
              * @param overflow desired overflow value
              */
-            set_overflow(overflow: Overflow | null): void;
+            set_overflow(overflow: Overflow): void;
             /**
              * Sets the parent widget of the widget.
              *
@@ -231848,7 +231838,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param flags state flags to turn on
              * @param clear whether to clear state before turning on `flags`
              */
-            set_state_flags(flags: StateFlags | null, clear: boolean): void;
+            set_state_flags(flags: StateFlags, clear: boolean): void;
             /**
              * Sets the contents of the tooltip for widget.
              *
@@ -231880,7 +231870,7 @@ declare module 'gi://Gtk?version=4.0' {
              * Sets the vertical alignment of the widget.
              * @param align the vertical alignment
              */
-            set_valign(align: Align | null): void;
+            set_valign(align: Align): void;
             /**
              * Sets whether the widget would like any available extra vertical
              * space.
@@ -232001,7 +231991,7 @@ declare module 'gi://Gtk?version=4.0' {
              * This function is for use in widget implementations.
              * @param flags state flags to turn off
              */
-            unset_state_flags(flags: StateFlags | null): void;
+            unset_state_flags(flags: StateFlags): void;
             /**
              * Computes whether a container should give this
              *   widget extra space when possible.
@@ -232429,7 +232419,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param message the string to announce
              * @param priority the priority of the announcement
              */
-            announce(message: string, priority: AccessibleAnnouncementPriority | null): void;
+            announce(message: string, priority: AccessibleAnnouncementPriority): void;
             /**
              * Retrieves the accessible parent for an accessible object.
              *
@@ -232475,22 +232465,22 @@ declare module 'gi://Gtk?version=4.0' {
              * @param state platform state to query
              * @returns the value of state for the accessible
              */
-            get_platform_state(state: AccessiblePlatformState | null): boolean;
+            get_platform_state(state: AccessiblePlatformState): boolean;
             /**
              * Resets the accessible property to its default value.
              * @param property the accessible property
              */
-            reset_property(property: AccessibleProperty | null): void;
+            reset_property(property: AccessibleProperty): void;
             /**
              * Resets the accessible relation to its default value.
              * @param relation the accessible relation
              */
-            reset_relation(relation: AccessibleRelation | null): void;
+            reset_relation(relation: AccessibleRelation): void;
             /**
              * Resets the accessible state to its default value.
              * @param state the accessible state
              */
-            reset_state(state: AccessibleState | null): void;
+            reset_state(state: AccessibleState): void;
             /**
              * Sets the parent and sibling of an accessible object.
              *
@@ -232521,7 +232511,7 @@ declare module 'gi://Gtk?version=4.0' {
              * states automatically.
              * @param state the platform state to update
              */
-            update_platform_state(state: AccessiblePlatformState | null): void;
+            update_platform_state(state: AccessiblePlatformState): void;
             /**
              * Updates an array of accessible properties.
              *
@@ -232532,7 +232522,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param properties an array of accessible properties
              * @param values an array of `GValues`, one for each property
              */
-            update_property(properties: AccessibleProperty[] | null, values: (GObject.Value | any)[]): void;
+            update_property(properties: AccessibleProperty[], values: (GObject.Value | any)[]): void;
             /**
              * Updates an array of accessible relations.
              *
@@ -232543,7 +232533,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param relations an array of accessible relations
              * @param values an array of `GValues`, one for each relation
              */
-            update_relation(relations: AccessibleRelation[] | null, values: (GObject.Value | any)[]): void;
+            update_relation(relations: AccessibleRelation[], values: (GObject.Value | any)[]): void;
             /**
              * Updates an array of accessible states.
              *
@@ -232554,7 +232544,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param states an array of accessible states
              * @param values an array of `GValues`, one for each state
              */
-            update_state(states: AccessibleState[] | null, values: (GObject.Value | any)[]): void;
+            update_state(states: AccessibleState[], values: (GObject.Value | any)[]): void;
             /**
              * Retrieves the accessible parent for an accessible object.
              *
@@ -232742,7 +232732,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -232783,7 +232773,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -233540,7 +233530,7 @@ declare module 'gi://Gtk?version=4.0' {
              * based on the page that is about to become current.
              * @param transition the new transition type
              */
-            set_transition_type(transition: StackTransitionType | null): void;
+            set_transition_type(transition: StackTransitionType): void;
             /**
              * Sets the {@link Gtk.Stack} to be vertically homogeneous or not.
              *
@@ -233572,7 +233562,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param name the name of the child to make visible
              * @param transition the transition type to use
              */
-            set_visible_child_full(name: string, transition: StackTransitionType | null): void;
+            set_visible_child_full(name: string, transition: StackTransitionType): void;
             /**
              * Makes the child with the given name visible.
              *
@@ -233615,7 +233605,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param message the string to announce
              * @param priority the priority of the announcement
              */
-            announce(message: string, priority: AccessibleAnnouncementPriority | null): void;
+            announce(message: string, priority: AccessibleAnnouncementPriority): void;
             /**
              * Retrieves the accessible parent for an accessible object.
              *
@@ -233661,22 +233651,22 @@ declare module 'gi://Gtk?version=4.0' {
              * @param state platform state to query
              * @returns the value of state for the accessible
              */
-            get_platform_state(state: AccessiblePlatformState | null): boolean;
+            get_platform_state(state: AccessiblePlatformState): boolean;
             /**
              * Resets the accessible property to its default value.
              * @param property the accessible property
              */
-            reset_property(property: AccessibleProperty | null): void;
+            reset_property(property: AccessibleProperty): void;
             /**
              * Resets the accessible relation to its default value.
              * @param relation the accessible relation
              */
-            reset_relation(relation: AccessibleRelation | null): void;
+            reset_relation(relation: AccessibleRelation): void;
             /**
              * Resets the accessible state to its default value.
              * @param state the accessible state
              */
-            reset_state(state: AccessibleState | null): void;
+            reset_state(state: AccessibleState): void;
             /**
              * Sets the parent and sibling of an accessible object.
              *
@@ -233707,7 +233697,7 @@ declare module 'gi://Gtk?version=4.0' {
              * states automatically.
              * @param state the platform state to update
              */
-            update_platform_state(state: AccessiblePlatformState | null): void;
+            update_platform_state(state: AccessiblePlatformState): void;
             /**
              * Updates an array of accessible properties.
              *
@@ -233718,7 +233708,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param properties an array of accessible properties
              * @param values an array of `GValues`, one for each property
              */
-            update_property(properties: AccessibleProperty[] | null, values: (GObject.Value | any)[]): void;
+            update_property(properties: AccessibleProperty[], values: (GObject.Value | any)[]): void;
             /**
              * Updates an array of accessible relations.
              *
@@ -233729,7 +233719,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param relations an array of accessible relations
              * @param values an array of `GValues`, one for each relation
              */
-            update_relation(relations: AccessibleRelation[] | null, values: (GObject.Value | any)[]): void;
+            update_relation(relations: AccessibleRelation[], values: (GObject.Value | any)[]): void;
             /**
              * Updates an array of accessible states.
              *
@@ -233740,7 +233730,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param states an array of accessible states
              * @param values an array of `GValues`, one for each state
              */
-            update_state(states: AccessibleState[] | null, values: (GObject.Value | any)[]): void;
+            update_state(states: AccessibleState[], values: (GObject.Value | any)[]): void;
             /**
              * Retrieves the accessible parent for an accessible object.
              *
@@ -233928,7 +233918,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -233969,7 +233959,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -234567,7 +234557,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param message the string to announce
              * @param priority the priority of the announcement
              */
-            announce(message: string, priority: AccessibleAnnouncementPriority | null): void;
+            announce(message: string, priority: AccessibleAnnouncementPriority): void;
             /**
              * Retrieves the accessible parent for an accessible object.
              *
@@ -234613,22 +234603,22 @@ declare module 'gi://Gtk?version=4.0' {
              * @param state platform state to query
              * @returns the value of state for the accessible
              */
-            get_platform_state(state: AccessiblePlatformState | null): boolean;
+            get_platform_state(state: AccessiblePlatformState): boolean;
             /**
              * Resets the accessible property to its default value.
              * @param property the accessible property
              */
-            reset_property(property: AccessibleProperty | null): void;
+            reset_property(property: AccessibleProperty): void;
             /**
              * Resets the accessible relation to its default value.
              * @param relation the accessible relation
              */
-            reset_relation(relation: AccessibleRelation | null): void;
+            reset_relation(relation: AccessibleRelation): void;
             /**
              * Resets the accessible state to its default value.
              * @param state the accessible state
              */
-            reset_state(state: AccessibleState | null): void;
+            reset_state(state: AccessibleState): void;
             /**
              * Sets the parent and sibling of an accessible object.
              *
@@ -234659,7 +234649,7 @@ declare module 'gi://Gtk?version=4.0' {
              * states automatically.
              * @param state the platform state to update
              */
-            update_platform_state(state: AccessiblePlatformState | null): void;
+            update_platform_state(state: AccessiblePlatformState): void;
             /**
              * Updates an array of accessible properties.
              *
@@ -234670,7 +234660,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param properties an array of accessible properties
              * @param values an array of `GValues`, one for each property
              */
-            update_property(properties: AccessibleProperty[] | null, values: (GObject.Value | any)[]): void;
+            update_property(properties: AccessibleProperty[], values: (GObject.Value | any)[]): void;
             /**
              * Updates an array of accessible relations.
              *
@@ -234681,7 +234671,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param relations an array of accessible relations
              * @param values an array of `GValues`, one for each relation
              */
-            update_relation(relations: AccessibleRelation[] | null, values: (GObject.Value | any)[]): void;
+            update_relation(relations: AccessibleRelation[], values: (GObject.Value | any)[]): void;
             /**
              * Updates an array of accessible states.
              *
@@ -234692,7 +234682,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param states an array of accessible states
              * @param values an array of `GValues`, one for each state
              */
-            update_state(states: AccessibleState[] | null, values: (GObject.Value | any)[]): void;
+            update_state(states: AccessibleState[], values: (GObject.Value | any)[]): void;
             /**
              * Retrieves the accessible parent for an accessible object.
              *
@@ -234778,7 +234768,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -234819,7 +234809,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -235355,7 +235345,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param message the string to announce
              * @param priority the priority of the announcement
              */
-            announce(message: string, priority: AccessibleAnnouncementPriority | null): void;
+            announce(message: string, priority: AccessibleAnnouncementPriority): void;
             /**
              * Retrieves the accessible parent for an accessible object.
              *
@@ -235401,22 +235391,22 @@ declare module 'gi://Gtk?version=4.0' {
              * @param state platform state to query
              * @returns the value of state for the accessible
              */
-            get_platform_state(state: AccessiblePlatformState | null): boolean;
+            get_platform_state(state: AccessiblePlatformState): boolean;
             /**
              * Resets the accessible property to its default value.
              * @param property the accessible property
              */
-            reset_property(property: AccessibleProperty | null): void;
+            reset_property(property: AccessibleProperty): void;
             /**
              * Resets the accessible relation to its default value.
              * @param relation the accessible relation
              */
-            reset_relation(relation: AccessibleRelation | null): void;
+            reset_relation(relation: AccessibleRelation): void;
             /**
              * Resets the accessible state to its default value.
              * @param state the accessible state
              */
-            reset_state(state: AccessibleState | null): void;
+            reset_state(state: AccessibleState): void;
             /**
              * Sets the parent and sibling of an accessible object.
              *
@@ -235447,7 +235437,7 @@ declare module 'gi://Gtk?version=4.0' {
              * states automatically.
              * @param state the platform state to update
              */
-            update_platform_state(state: AccessiblePlatformState | null): void;
+            update_platform_state(state: AccessiblePlatformState): void;
             /**
              * Updates an array of accessible properties.
              *
@@ -235458,7 +235448,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param properties an array of accessible properties
              * @param values an array of `GValues`, one for each property
              */
-            update_property(properties: AccessibleProperty[] | null, values: (GObject.Value | any)[]): void;
+            update_property(properties: AccessibleProperty[], values: (GObject.Value | any)[]): void;
             /**
              * Updates an array of accessible relations.
              *
@@ -235469,7 +235459,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param relations an array of accessible relations
              * @param values an array of `GValues`, one for each relation
              */
-            update_relation(relations: AccessibleRelation[] | null, values: (GObject.Value | any)[]): void;
+            update_relation(relations: AccessibleRelation[], values: (GObject.Value | any)[]): void;
             /**
              * Updates an array of accessible states.
              *
@@ -235480,7 +235470,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param states an array of accessible states
              * @param values an array of `GValues`, one for each state
              */
-            update_state(states: AccessibleState[] | null, values: (GObject.Value | any)[]): void;
+            update_state(states: AccessibleState[], values: (GObject.Value | any)[]): void;
             /**
              * Retrieves the accessible parent for an accessible object.
              *
@@ -235668,7 +235658,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -235709,7 +235699,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -236265,7 +236255,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param message the string to announce
              * @param priority the priority of the announcement
              */
-            announce(message: string, priority: AccessibleAnnouncementPriority | null): void;
+            announce(message: string, priority: AccessibleAnnouncementPriority): void;
             /**
              * Retrieves the accessible parent for an accessible object.
              *
@@ -236311,22 +236301,22 @@ declare module 'gi://Gtk?version=4.0' {
              * @param state platform state to query
              * @returns the value of state for the accessible
              */
-            get_platform_state(state: AccessiblePlatformState | null): boolean;
+            get_platform_state(state: AccessiblePlatformState): boolean;
             /**
              * Resets the accessible property to its default value.
              * @param property the accessible property
              */
-            reset_property(property: AccessibleProperty | null): void;
+            reset_property(property: AccessibleProperty): void;
             /**
              * Resets the accessible relation to its default value.
              * @param relation the accessible relation
              */
-            reset_relation(relation: AccessibleRelation | null): void;
+            reset_relation(relation: AccessibleRelation): void;
             /**
              * Resets the accessible state to its default value.
              * @param state the accessible state
              */
-            reset_state(state: AccessibleState | null): void;
+            reset_state(state: AccessibleState): void;
             /**
              * Sets the parent and sibling of an accessible object.
              *
@@ -236357,7 +236347,7 @@ declare module 'gi://Gtk?version=4.0' {
              * states automatically.
              * @param state the platform state to update
              */
-            update_platform_state(state: AccessiblePlatformState | null): void;
+            update_platform_state(state: AccessiblePlatformState): void;
             /**
              * Updates an array of accessible properties.
              *
@@ -236368,7 +236358,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param properties an array of accessible properties
              * @param values an array of `GValues`, one for each property
              */
-            update_property(properties: AccessibleProperty[] | null, values: (GObject.Value | any)[]): void;
+            update_property(properties: AccessibleProperty[], values: (GObject.Value | any)[]): void;
             /**
              * Updates an array of accessible relations.
              *
@@ -236379,7 +236369,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param relations an array of accessible relations
              * @param values an array of `GValues`, one for each relation
              */
-            update_relation(relations: AccessibleRelation[] | null, values: (GObject.Value | any)[]): void;
+            update_relation(relations: AccessibleRelation[], values: (GObject.Value | any)[]): void;
             /**
              * Updates an array of accessible states.
              *
@@ -236390,7 +236380,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param states an array of accessible states
              * @param values an array of `GValues`, one for each state
              */
-            update_state(states: AccessibleState[] | null, values: (GObject.Value | any)[]): void;
+            update_state(states: AccessibleState[], values: (GObject.Value | any)[]): void;
             /**
              * Retrieves the accessible parent for an accessible object.
              *
@@ -236543,7 +236533,7 @@ declare module 'gi://Gtk?version=4.0' {
              * Sets the orientation of the `orientable`.
              * @param orientation the orientable’s new orientation
              */
-            set_orientation(orientation: Orientation | null): void;
+            set_orientation(orientation: Orientation): void;
             /**
              * Creates a binding between `source_property` on `source` and `target_property`
              * on `target`.
@@ -236588,7 +236578,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -236629,7 +236619,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -237214,7 +237204,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param message the string to announce
              * @param priority the priority of the announcement
              */
-            announce(message: string, priority: AccessibleAnnouncementPriority | null): void;
+            announce(message: string, priority: AccessibleAnnouncementPriority): void;
             /**
              * Retrieves the accessible parent for an accessible object.
              *
@@ -237260,22 +237250,22 @@ declare module 'gi://Gtk?version=4.0' {
              * @param state platform state to query
              * @returns the value of state for the accessible
              */
-            get_platform_state(state: AccessiblePlatformState | null): boolean;
+            get_platform_state(state: AccessiblePlatformState): boolean;
             /**
              * Resets the accessible property to its default value.
              * @param property the accessible property
              */
-            reset_property(property: AccessibleProperty | null): void;
+            reset_property(property: AccessibleProperty): void;
             /**
              * Resets the accessible relation to its default value.
              * @param relation the accessible relation
              */
-            reset_relation(relation: AccessibleRelation | null): void;
+            reset_relation(relation: AccessibleRelation): void;
             /**
              * Resets the accessible state to its default value.
              * @param state the accessible state
              */
-            reset_state(state: AccessibleState | null): void;
+            reset_state(state: AccessibleState): void;
             /**
              * Sets the parent and sibling of an accessible object.
              *
@@ -237306,7 +237296,7 @@ declare module 'gi://Gtk?version=4.0' {
              * states automatically.
              * @param state the platform state to update
              */
-            update_platform_state(state: AccessiblePlatformState | null): void;
+            update_platform_state(state: AccessiblePlatformState): void;
             /**
              * Updates an array of accessible properties.
              *
@@ -237317,7 +237307,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param properties an array of accessible properties
              * @param values an array of `GValues`, one for each property
              */
-            update_property(properties: AccessibleProperty[] | null, values: (GObject.Value | any)[]): void;
+            update_property(properties: AccessibleProperty[], values: (GObject.Value | any)[]): void;
             /**
              * Updates an array of accessible relations.
              *
@@ -237328,7 +237318,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param relations an array of accessible relations
              * @param values an array of `GValues`, one for each relation
              */
-            update_relation(relations: AccessibleRelation[] | null, values: (GObject.Value | any)[]): void;
+            update_relation(relations: AccessibleRelation[], values: (GObject.Value | any)[]): void;
             /**
              * Updates an array of accessible states.
              *
@@ -237339,7 +237329,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param states an array of accessible states
              * @param values an array of `GValues`, one for each state
              */
-            update_state(states: AccessibleState[] | null, values: (GObject.Value | any)[]): void;
+            update_state(states: AccessibleState[], values: (GObject.Value | any)[]): void;
             /**
              * Retrieves the accessible parent for an accessible object.
              *
@@ -237527,7 +237517,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -237568,7 +237558,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -238085,7 +238075,7 @@ declare module 'gi://Gtk?version=4.0' {
              * Sets the match mode for the filter.
              * @param mode the new match mode
              */
-            set_match_mode(mode: StringFilterMatchMode | null): void;
+            set_match_mode(mode: StringFilterMatchMode): void;
             /**
              * Sets the string to search for.
              * @param search the string to search for
@@ -238531,7 +238521,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -238572,7 +238562,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -239138,7 +239128,7 @@ declare module 'gi://Gtk?version=4.0' {
              * Sets the collation method to use for sorting.
              * @param collation the collation method
              */
-            set_collation(collation: Collation | null): void;
+            set_collation(collation: Collation): void;
             /**
              * Sets the expression that is evaluated to obtain strings from items.
              *
@@ -239425,7 +239415,7 @@ declare module 'gi://Gtk?version=4.0' {
              * Sets the state to be used for style matching.
              * @param flags state to represent
              */
-            set_state(flags: StateFlags | null): void;
+            set_state(flags: StateFlags): void;
             /**
              * Converts the style context into a string representation.
              *
@@ -239440,7 +239430,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param flags Flags that determine what to print
              * @returns a newly allocated string representing `context`
              */
-            to_string(flags: StyleContextPrintFlags | null): string;
+            to_string(flags: StyleContextPrintFlags): string;
         }
 
         namespace Switch {
@@ -240207,7 +240197,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param message the string to announce
              * @param priority the priority of the announcement
              */
-            announce(message: string, priority: AccessibleAnnouncementPriority | null): void;
+            announce(message: string, priority: AccessibleAnnouncementPriority): void;
             /**
              * Retrieves the accessible parent for an accessible object.
              *
@@ -240253,22 +240243,22 @@ declare module 'gi://Gtk?version=4.0' {
              * @param state platform state to query
              * @returns the value of state for the accessible
              */
-            get_platform_state(state: AccessiblePlatformState | null): boolean;
+            get_platform_state(state: AccessiblePlatformState): boolean;
             /**
              * Resets the accessible property to its default value.
              * @param property the accessible property
              */
-            reset_property(property: AccessibleProperty | null): void;
+            reset_property(property: AccessibleProperty): void;
             /**
              * Resets the accessible relation to its default value.
              * @param relation the accessible relation
              */
-            reset_relation(relation: AccessibleRelation | null): void;
+            reset_relation(relation: AccessibleRelation): void;
             /**
              * Resets the accessible state to its default value.
              * @param state the accessible state
              */
-            reset_state(state: AccessibleState | null): void;
+            reset_state(state: AccessibleState): void;
             /**
              * Sets the parent and sibling of an accessible object.
              *
@@ -240299,7 +240289,7 @@ declare module 'gi://Gtk?version=4.0' {
              * states automatically.
              * @param state the platform state to update
              */
-            update_platform_state(state: AccessiblePlatformState | null): void;
+            update_platform_state(state: AccessiblePlatformState): void;
             /**
              * Updates an array of accessible properties.
              *
@@ -240310,7 +240300,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param properties an array of accessible properties
              * @param values an array of `GValues`, one for each property
              */
-            update_property(properties: AccessibleProperty[] | null, values: (GObject.Value | any)[]): void;
+            update_property(properties: AccessibleProperty[], values: (GObject.Value | any)[]): void;
             /**
              * Updates an array of accessible relations.
              *
@@ -240321,7 +240311,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param relations an array of accessible relations
              * @param values an array of `GValues`, one for each relation
              */
-            update_relation(relations: AccessibleRelation[] | null, values: (GObject.Value | any)[]): void;
+            update_relation(relations: AccessibleRelation[], values: (GObject.Value | any)[]): void;
             /**
              * Updates an array of accessible states.
              *
@@ -240332,7 +240322,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param states an array of accessible states
              * @param values an array of `GValues`, one for each state
              */
-            update_state(states: AccessibleState[] | null, values: (GObject.Value | any)[]): void;
+            update_state(states: AccessibleState[], values: (GObject.Value | any)[]): void;
             /**
              * Retrieves the accessible parent for an accessible object.
              *
@@ -240629,7 +240619,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -240670,7 +240660,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -241190,7 +241180,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param direction direction of focus movement
              * @returns true if focus ended up inside `widget`
              */
-            child_focus(direction: DirectionType | null): boolean;
+            child_focus(direction: DirectionType): boolean;
             /**
              * Computes the bounds for `widget` in the coordinate space of `target`.
              *
@@ -241225,7 +241215,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param orientation expand direction
              * @returns whether widget tree rooted here should be expanded
              */
-            compute_expand(orientation: Orientation | null): boolean;
+            compute_expand(orientation: Orientation): boolean;
             /**
              * Translates the given `point` in `widget`'s coordinates to coordinates
              * in `target`’s coordinate system.
@@ -241833,7 +241823,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param orientation the orientation to query
              * @returns the size of `widget` in `orientation`
              */
-            get_size(orientation: Orientation | null): number;
+            get_size(orientation: Orientation): number;
             /**
              * Gets the size request that was explicitly set for the widget.
              *
@@ -242158,7 +242148,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param direction direction of focus movement
              * @returns true if stopping keyboard navigation is fine, false   if the emitting widget should try to handle the keyboard   navigation attempt in its parent widget
              */
-            keynav_failed(direction: DirectionType | null): boolean;
+            keynav_failed(direction: DirectionType): boolean;
             /**
              * Returns the widgets for which this widget is the target of a
              * mnemonic.
@@ -242192,7 +242182,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param orientation the orientation to measure
              * @param for_size Size for the opposite of `orientation`, i.e.   if `orientation` is {@link Gtk.Orientation.HORIZONTAL}, this is   the height the widget should be measured with. The {@link Gtk.Orientation.VERTICAL}   case is analogous. This way, both height-for-width and width-for-height   requests can be implemented. If no size is known, -1 can be passed.
              */
-            measure(orientation: Orientation | null, for_size: number): [number, number, number, number];
+            measure(orientation: Orientation, for_size: number): [number, number, number, number];
             /**
              * Emits the `Gtk.Widget::mnemonic-activate` signal.
              * @param group_cycling true if there are other widgets with the same mnemonic
@@ -242243,7 +242233,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param flags flags to influence what is picked
              * @returns the widget's descendant at (x, y)
              */
-            pick(x: number, y: number, flags: PickFlags | null): Widget | null;
+            pick(x: number, y: number, flags: PickFlags): Widget | null;
             /**
              * Flags the widget for a rerun of the {@link Gtk.Widget.size_allocate}
              * function.
@@ -242426,7 +242416,7 @@ declare module 'gi://Gtk?version=4.0' {
              * the value set by {@link Gtk.Widget.set_default_direction} will be used.
              * @param dir the new direction
              */
-            set_direction(dir: TextDirection | null): void;
+            set_direction(dir: TextDirection): void;
             /**
              * Set the focus child of the widget.
              *
@@ -242488,7 +242478,7 @@ declare module 'gi://Gtk?version=4.0' {
              * Sets the horizontal alignment of the widget.
              * @param align the horizontal alignment
              */
-            set_halign(align: Align | null): void;
+            set_halign(align: Align): void;
             /**
              * Sets the `has-tooltip` property on the widget.
              * @param has_tooltip whether or not `widget` has a tooltip
@@ -242628,7 +242618,7 @@ declare module 'gi://Gtk?version=4.0' {
              * The default value is {@link Gtk.Overflow.VISIBLE}.
              * @param overflow desired overflow value
              */
-            set_overflow(overflow: Overflow | null): void;
+            set_overflow(overflow: Overflow): void;
             /**
              * Sets the parent widget of the widget.
              *
@@ -242710,7 +242700,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param flags state flags to turn on
              * @param clear whether to clear state before turning on `flags`
              */
-            set_state_flags(flags: StateFlags | null, clear: boolean): void;
+            set_state_flags(flags: StateFlags, clear: boolean): void;
             /**
              * Sets the contents of the tooltip for widget.
              *
@@ -242742,7 +242732,7 @@ declare module 'gi://Gtk?version=4.0' {
              * Sets the vertical alignment of the widget.
              * @param align the vertical alignment
              */
-            set_valign(align: Align | null): void;
+            set_valign(align: Align): void;
             /**
              * Sets whether the widget would like any available extra vertical
              * space.
@@ -242863,7 +242853,7 @@ declare module 'gi://Gtk?version=4.0' {
              * This function is for use in widget implementations.
              * @param flags state flags to turn off
              */
-            unset_state_flags(flags: StateFlags | null): void;
+            unset_state_flags(flags: StateFlags): void;
             /**
              * Computes whether a container should give this
              *   widget extra space when possible.
@@ -243909,7 +243899,7 @@ declare module 'gi://Gtk?version=4.0' {
              * Sets hints that allow input methods to fine-tune their behaviour.
              * @param hints input hints
              */
-            set_input_hints(hints: InputHints | null): void;
+            set_input_hints(hints: InputHints): void;
             /**
              * Sets the input purpose of the text widget.
              *
@@ -243917,7 +243907,7 @@ declare module 'gi://Gtk?version=4.0' {
              * and other input methods to adjust their behaviour.
              * @param purpose the input purpose
              */
-            set_input_purpose(purpose: InputPurpose | null): void;
+            set_input_purpose(purpose: InputPurpose): void;
             /**
              * Sets the character to use when in “password mode”.
              *
@@ -244594,7 +244584,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param message the string to announce
              * @param priority the priority of the announcement
              */
-            announce(message: string, priority: AccessibleAnnouncementPriority | null): void;
+            announce(message: string, priority: AccessibleAnnouncementPriority): void;
             /**
              * Retrieves the accessible parent for an accessible object.
              *
@@ -244640,22 +244630,22 @@ declare module 'gi://Gtk?version=4.0' {
              * @param state platform state to query
              * @returns the value of state for the accessible
              */
-            get_platform_state(state: AccessiblePlatformState | null): boolean;
+            get_platform_state(state: AccessiblePlatformState): boolean;
             /**
              * Resets the accessible property to its default value.
              * @param property the accessible property
              */
-            reset_property(property: AccessibleProperty | null): void;
+            reset_property(property: AccessibleProperty): void;
             /**
              * Resets the accessible relation to its default value.
              * @param relation the accessible relation
              */
-            reset_relation(relation: AccessibleRelation | null): void;
+            reset_relation(relation: AccessibleRelation): void;
             /**
              * Resets the accessible state to its default value.
              * @param state the accessible state
              */
-            reset_state(state: AccessibleState | null): void;
+            reset_state(state: AccessibleState): void;
             /**
              * Sets the parent and sibling of an accessible object.
              *
@@ -244686,7 +244676,7 @@ declare module 'gi://Gtk?version=4.0' {
              * states automatically.
              * @param state the platform state to update
              */
-            update_platform_state(state: AccessiblePlatformState | null): void;
+            update_platform_state(state: AccessiblePlatformState): void;
             /**
              * Updates an array of accessible properties.
              *
@@ -244697,7 +244687,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param properties an array of accessible properties
              * @param values an array of `GValues`, one for each property
              */
-            update_property(properties: AccessibleProperty[] | null, values: (GObject.Value | any)[]): void;
+            update_property(properties: AccessibleProperty[], values: (GObject.Value | any)[]): void;
             /**
              * Updates an array of accessible relations.
              *
@@ -244708,7 +244698,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param relations an array of accessible relations
              * @param values an array of `GValues`, one for each relation
              */
-            update_relation(relations: AccessibleRelation[] | null, values: (GObject.Value | any)[]): void;
+            update_relation(relations: AccessibleRelation[], values: (GObject.Value | any)[]): void;
             /**
              * Updates an array of accessible states.
              *
@@ -244719,7 +244709,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param states an array of accessible states
              * @param values an array of `GValues`, one for each state
              */
-            update_state(states: AccessibleState[] | null, values: (GObject.Value | any)[]): void;
+            update_state(states: AccessibleState[], values: (GObject.Value | any)[]): void;
             /**
              * Retrieves the accessible parent for an accessible object.
              *
@@ -244783,7 +244773,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param start the starting offset of the change, in characters
              * @param end the end offset of the change, in characters
              */
-            update_contents(change: AccessibleTextContentChange | null, start: number, end: number): void;
+            update_contents(change: AccessibleTextContentChange, start: number, end: number): void;
             /**
              * Updates the boundary of the selection.
              *
@@ -245022,7 +245012,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param state what kind of accessible state to retrieve
              * @returns the accessible platform state of the delegate
              */
-            delegate_get_accessible_platform_state(state: AccessiblePlatformState | null): boolean;
+            delegate_get_accessible_platform_state(state: AccessiblePlatformState): boolean;
             /**
              * Deletes the currently selected text of the editable.
              *
@@ -245356,7 +245346,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -245397,7 +245387,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -245917,7 +245907,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param direction direction of focus movement
              * @returns true if focus ended up inside `widget`
              */
-            child_focus(direction: DirectionType | null): boolean;
+            child_focus(direction: DirectionType): boolean;
             /**
              * Computes the bounds for `widget` in the coordinate space of `target`.
              *
@@ -245952,7 +245942,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param orientation expand direction
              * @returns whether widget tree rooted here should be expanded
              */
-            compute_expand(orientation: Orientation | null): boolean;
+            compute_expand(orientation: Orientation): boolean;
             /**
              * Translates the given `point` in `widget`'s coordinates to coordinates
              * in `target`’s coordinate system.
@@ -246560,7 +246550,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param orientation the orientation to query
              * @returns the size of `widget` in `orientation`
              */
-            get_size(orientation: Orientation | null): number;
+            get_size(orientation: Orientation): number;
             /**
              * Gets the size request that was explicitly set for the widget.
              *
@@ -246885,7 +246875,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param direction direction of focus movement
              * @returns true if stopping keyboard navigation is fine, false   if the emitting widget should try to handle the keyboard   navigation attempt in its parent widget
              */
-            keynav_failed(direction: DirectionType | null): boolean;
+            keynav_failed(direction: DirectionType): boolean;
             /**
              * Returns the widgets for which this widget is the target of a
              * mnemonic.
@@ -246919,7 +246909,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param orientation the orientation to measure
              * @param for_size Size for the opposite of `orientation`, i.e.   if `orientation` is {@link Gtk.Orientation.HORIZONTAL}, this is   the height the widget should be measured with. The {@link Gtk.Orientation.VERTICAL}   case is analogous. This way, both height-for-width and width-for-height   requests can be implemented. If no size is known, -1 can be passed.
              */
-            measure(orientation: Orientation | null, for_size: number): [number, number, number, number];
+            measure(orientation: Orientation, for_size: number): [number, number, number, number];
             /**
              * Emits the `Gtk.Widget::mnemonic-activate` signal.
              * @param group_cycling true if there are other widgets with the same mnemonic
@@ -246970,7 +246960,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param flags flags to influence what is picked
              * @returns the widget's descendant at (x, y)
              */
-            pick(x: number, y: number, flags: PickFlags | null): Widget | null;
+            pick(x: number, y: number, flags: PickFlags): Widget | null;
             /**
              * Flags the widget for a rerun of the {@link Gtk.Widget.size_allocate}
              * function.
@@ -247153,7 +247143,7 @@ declare module 'gi://Gtk?version=4.0' {
              * the value set by {@link Gtk.Widget.set_default_direction} will be used.
              * @param dir the new direction
              */
-            set_direction(dir: TextDirection | null): void;
+            set_direction(dir: TextDirection): void;
             /**
              * Set the focus child of the widget.
              *
@@ -247215,7 +247205,7 @@ declare module 'gi://Gtk?version=4.0' {
              * Sets the horizontal alignment of the widget.
              * @param align the horizontal alignment
              */
-            set_halign(align: Align | null): void;
+            set_halign(align: Align): void;
             /**
              * Sets the `has-tooltip` property on the widget.
              * @param has_tooltip whether or not `widget` has a tooltip
@@ -247355,7 +247345,7 @@ declare module 'gi://Gtk?version=4.0' {
              * The default value is {@link Gtk.Overflow.VISIBLE}.
              * @param overflow desired overflow value
              */
-            set_overflow(overflow: Overflow | null): void;
+            set_overflow(overflow: Overflow): void;
             /**
              * Sets the parent widget of the widget.
              *
@@ -247437,7 +247427,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param flags state flags to turn on
              * @param clear whether to clear state before turning on `flags`
              */
-            set_state_flags(flags: StateFlags | null, clear: boolean): void;
+            set_state_flags(flags: StateFlags, clear: boolean): void;
             /**
              * Sets the contents of the tooltip for widget.
              *
@@ -247469,7 +247459,7 @@ declare module 'gi://Gtk?version=4.0' {
              * Sets the vertical alignment of the widget.
              * @param align the vertical alignment
              */
-            set_valign(align: Align | null): void;
+            set_valign(align: Align): void;
             /**
              * Sets whether the widget would like any available extra vertical
              * space.
@@ -247590,7 +247580,7 @@ declare module 'gi://Gtk?version=4.0' {
              * This function is for use in widget implementations.
              * @param flags state flags to turn off
              */
-            unset_state_flags(flags: StateFlags | null): void;
+            unset_state_flags(flags: StateFlags): void;
             /**
              * Computes whether a container should give this
              *   widget extra space when possible.
@@ -248348,7 +248338,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param commit_notify a   {@link Gtk.TextBufferCommitNotify} to call for commit notifications
              * @returns a handler id which may be used to remove the commit notify   callback using {@link Gtk.TextBuffer.remove_commit_notify}.
              */
-            add_commit_notify(flags: TextBufferNotifyFlags | null, commit_notify: TextBufferCommitNotify): number;
+            add_commit_notify(flags: TextBufferNotifyFlags, commit_notify: TextBufferCommitNotify): number;
             /**
              * Adds the mark at position `where`.
              *
@@ -250842,7 +250832,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -250883,7 +250873,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -252102,7 +252092,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param buffer_x buffer x coordinate
              * @param buffer_y buffer y coordinate
              */
-            buffer_to_window_coords(win: TextWindowType | null, buffer_x: number, buffer_y: number): [number, number];
+            buffer_to_window_coords(win: TextWindowType, buffer_x: number, buffer_y: number): [number, number];
             /**
              * Moves the given `iter` forward by one display (wrapped) line.
              *
@@ -252203,7 +252193,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param win a {@link Gtk.TextWindowType}
              * @returns a {@link Gtk.Widget}
              */
-            get_gutter(win: TextWindowType | null): Widget | null;
+            get_gutter(win: TextWindowType): Widget | null;
             /**
              * Gets the default indentation of paragraphs in `text_view`.
              *
@@ -252608,7 +252598,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param win a {@link Gtk.TextWindowType}
              * @param widget a {@link Gtk.Widget}
              */
-            set_gutter(win: TextWindowType | null, widget?: Widget | null): void;
+            set_gutter(win: TextWindowType, widget?: Widget | null): void;
             /**
              * Sets the default indentation for paragraphs in `text_view`.
              *
@@ -252623,7 +252613,7 @@ declare module 'gi://Gtk?version=4.0' {
              * their behaviour.
              * @param hints the hints
              */
-            set_input_hints(hints: InputHints | null): void;
+            set_input_hints(hints: InputHints): void;
             /**
              * Sets the `input-purpose` of the {@link Gtk.TextView}.
              *
@@ -252631,14 +252621,14 @@ declare module 'gi://Gtk?version=4.0' {
              * and other input methods to adjust their behaviour.
              * @param purpose the purpose
              */
-            set_input_purpose(purpose: InputPurpose | null): void;
+            set_input_purpose(purpose: InputPurpose): void;
             /**
              * Sets the default justification of text in `text_view`.
              *
              * Tags in the view’s buffer may override the default.
              * @param justification justification
              */
-            set_justification(justification: Justification | null): void;
+            set_justification(justification: Justification): void;
             /**
              * Sets the default left margin for text in `text_view`.
              *
@@ -252712,7 +252702,7 @@ declare module 'gi://Gtk?version=4.0' {
              * Sets the line wrapping for the view.
              * @param wrap_mode a {@link Gtk.WrapMode}
              */
-            set_wrap_mode(wrap_mode: WrapMode | null): void;
+            set_wrap_mode(wrap_mode: WrapMode): void;
             /**
              * Determines whether `iter` is at the start of a display line.
              *
@@ -252729,7 +252719,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param window_x window x coordinate
              * @param window_y window y coordinate
              */
-            window_to_buffer_coords(win: TextWindowType | null, window_x: number, window_y: number): [number, number];
+            window_to_buffer_coords(win: TextWindowType, window_x: number, window_y: number): [number, number];
             /**
              * The accessible role of the given {@link Gtk.Accessible} implementation.
              *
@@ -252799,7 +252789,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param message the string to announce
              * @param priority the priority of the announcement
              */
-            announce(message: string, priority: AccessibleAnnouncementPriority | null): void;
+            announce(message: string, priority: AccessibleAnnouncementPriority): void;
             /**
              * Retrieves the accessible parent for an accessible object.
              *
@@ -252845,22 +252835,22 @@ declare module 'gi://Gtk?version=4.0' {
              * @param state platform state to query
              * @returns the value of state for the accessible
              */
-            get_platform_state(state: AccessiblePlatformState | null): boolean;
+            get_platform_state(state: AccessiblePlatformState): boolean;
             /**
              * Resets the accessible property to its default value.
              * @param property the accessible property
              */
-            reset_property(property: AccessibleProperty | null): void;
+            reset_property(property: AccessibleProperty): void;
             /**
              * Resets the accessible relation to its default value.
              * @param relation the accessible relation
              */
-            reset_relation(relation: AccessibleRelation | null): void;
+            reset_relation(relation: AccessibleRelation): void;
             /**
              * Resets the accessible state to its default value.
              * @param state the accessible state
              */
-            reset_state(state: AccessibleState | null): void;
+            reset_state(state: AccessibleState): void;
             /**
              * Sets the parent and sibling of an accessible object.
              *
@@ -252891,7 +252881,7 @@ declare module 'gi://Gtk?version=4.0' {
              * states automatically.
              * @param state the platform state to update
              */
-            update_platform_state(state: AccessiblePlatformState | null): void;
+            update_platform_state(state: AccessiblePlatformState): void;
             /**
              * Updates an array of accessible properties.
              *
@@ -252902,7 +252892,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param properties an array of accessible properties
              * @param values an array of `GValues`, one for each property
              */
-            update_property(properties: AccessibleProperty[] | null, values: (GObject.Value | any)[]): void;
+            update_property(properties: AccessibleProperty[], values: (GObject.Value | any)[]): void;
             /**
              * Updates an array of accessible relations.
              *
@@ -252913,7 +252903,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param relations an array of accessible relations
              * @param values an array of `GValues`, one for each relation
              */
-            update_relation(relations: AccessibleRelation[] | null, values: (GObject.Value | any)[]): void;
+            update_relation(relations: AccessibleRelation[], values: (GObject.Value | any)[]): void;
             /**
              * Updates an array of accessible states.
              *
@@ -252924,7 +252914,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param states an array of accessible states
              * @param values an array of `GValues`, one for each state
              */
-            update_state(states: AccessibleState[] | null, values: (GObject.Value | any)[]): void;
+            update_state(states: AccessibleState[], values: (GObject.Value | any)[]): void;
             /**
              * Retrieves the accessible parent for an accessible object.
              *
@@ -252988,7 +252978,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param start the starting offset of the change, in characters
              * @param end the end offset of the change, in characters
              */
-            update_contents(change: AccessibleTextContentChange | null, start: number, end: number): void;
+            update_contents(change: AccessibleTextContentChange, start: number, end: number): void;
             /**
              * Updates the boundary of the selection.
              *
@@ -253233,7 +253223,7 @@ declare module 'gi://Gtk?version=4.0' {
              * below the minimum width or below the natural width.
              * @param policy the horizontal {@link Gtk.ScrollablePolicy}
              */
-            set_hscroll_policy(policy: ScrollablePolicy | null): void;
+            set_hscroll_policy(policy: ScrollablePolicy): void;
             /**
              * Sets the vertical adjustment of the {@link Gtk.Scrollable}.
              * @param vadjustment a {@link Gtk.Adjustment}
@@ -253246,7 +253236,7 @@ declare module 'gi://Gtk?version=4.0' {
              * below the minimum height or below the natural height.
              * @param policy the vertical {@link Gtk.ScrollablePolicy}
              */
-            set_vscroll_policy(policy: ScrollablePolicy | null): void;
+            set_vscroll_policy(policy: ScrollablePolicy): void;
             /**
              * Returns the size of a non-scrolling border around the
              * outside of the scrollable.
@@ -253301,7 +253291,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -253342,7 +253332,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -254633,7 +254623,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -254674,7 +254664,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -255194,7 +255184,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param direction direction of focus movement
              * @returns true if focus ended up inside `widget`
              */
-            child_focus(direction: DirectionType | null): boolean;
+            child_focus(direction: DirectionType): boolean;
             /**
              * Computes the bounds for `widget` in the coordinate space of `target`.
              *
@@ -255229,7 +255219,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param orientation expand direction
              * @returns whether widget tree rooted here should be expanded
              */
-            compute_expand(orientation: Orientation | null): boolean;
+            compute_expand(orientation: Orientation): boolean;
             /**
              * Translates the given `point` in `widget`'s coordinates to coordinates
              * in `target`’s coordinate system.
@@ -255837,7 +255827,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param orientation the orientation to query
              * @returns the size of `widget` in `orientation`
              */
-            get_size(orientation: Orientation | null): number;
+            get_size(orientation: Orientation): number;
             /**
              * Gets the size request that was explicitly set for the widget.
              *
@@ -256162,7 +256152,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param direction direction of focus movement
              * @returns true if stopping keyboard navigation is fine, false   if the emitting widget should try to handle the keyboard   navigation attempt in its parent widget
              */
-            keynav_failed(direction: DirectionType | null): boolean;
+            keynav_failed(direction: DirectionType): boolean;
             /**
              * Returns the widgets for which this widget is the target of a
              * mnemonic.
@@ -256196,7 +256186,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param orientation the orientation to measure
              * @param for_size Size for the opposite of `orientation`, i.e.   if `orientation` is {@link Gtk.Orientation.HORIZONTAL}, this is   the height the widget should be measured with. The {@link Gtk.Orientation.VERTICAL}   case is analogous. This way, both height-for-width and width-for-height   requests can be implemented. If no size is known, -1 can be passed.
              */
-            measure(orientation: Orientation | null, for_size: number): [number, number, number, number];
+            measure(orientation: Orientation, for_size: number): [number, number, number, number];
             /**
              * Emits the `Gtk.Widget::mnemonic-activate` signal.
              * @param group_cycling true if there are other widgets with the same mnemonic
@@ -256247,7 +256237,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param flags flags to influence what is picked
              * @returns the widget's descendant at (x, y)
              */
-            pick(x: number, y: number, flags: PickFlags | null): Widget | null;
+            pick(x: number, y: number, flags: PickFlags): Widget | null;
             /**
              * Flags the widget for a rerun of the {@link Gtk.Widget.size_allocate}
              * function.
@@ -256430,7 +256420,7 @@ declare module 'gi://Gtk?version=4.0' {
              * the value set by {@link Gtk.Widget.set_default_direction} will be used.
              * @param dir the new direction
              */
-            set_direction(dir: TextDirection | null): void;
+            set_direction(dir: TextDirection): void;
             /**
              * Set the focus child of the widget.
              *
@@ -256492,7 +256482,7 @@ declare module 'gi://Gtk?version=4.0' {
              * Sets the horizontal alignment of the widget.
              * @param align the horizontal alignment
              */
-            set_halign(align: Align | null): void;
+            set_halign(align: Align): void;
             /**
              * Sets the `has-tooltip` property on the widget.
              * @param has_tooltip whether or not `widget` has a tooltip
@@ -256632,7 +256622,7 @@ declare module 'gi://Gtk?version=4.0' {
              * The default value is {@link Gtk.Overflow.VISIBLE}.
              * @param overflow desired overflow value
              */
-            set_overflow(overflow: Overflow | null): void;
+            set_overflow(overflow: Overflow): void;
             /**
              * Sets the parent widget of the widget.
              *
@@ -256714,7 +256704,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param flags state flags to turn on
              * @param clear whether to clear state before turning on `flags`
              */
-            set_state_flags(flags: StateFlags | null, clear: boolean): void;
+            set_state_flags(flags: StateFlags, clear: boolean): void;
             /**
              * Sets the contents of the tooltip for widget.
              *
@@ -256746,7 +256736,7 @@ declare module 'gi://Gtk?version=4.0' {
              * Sets the vertical alignment of the widget.
              * @param align the vertical alignment
              */
-            set_valign(align: Align | null): void;
+            set_valign(align: Align): void;
             /**
              * Sets whether the widget would like any available extra vertical
              * space.
@@ -256867,7 +256857,7 @@ declare module 'gi://Gtk?version=4.0' {
              * This function is for use in widget implementations.
              * @param flags state flags to turn off
              */
-            unset_state_flags(flags: StateFlags | null): void;
+            unset_state_flags(flags: StateFlags): void;
             /**
              * Computes whether a container should give this
              *   widget extra space when possible.
@@ -257607,7 +257597,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param message the string to announce
              * @param priority the priority of the announcement
              */
-            announce(message: string, priority: AccessibleAnnouncementPriority | null): void;
+            announce(message: string, priority: AccessibleAnnouncementPriority): void;
             /**
              * Retrieves the accessible parent for an accessible object.
              *
@@ -257653,22 +257643,22 @@ declare module 'gi://Gtk?version=4.0' {
              * @param state platform state to query
              * @returns the value of state for the accessible
              */
-            get_platform_state(state: AccessiblePlatformState | null): boolean;
+            get_platform_state(state: AccessiblePlatformState): boolean;
             /**
              * Resets the accessible property to its default value.
              * @param property the accessible property
              */
-            reset_property(property: AccessibleProperty | null): void;
+            reset_property(property: AccessibleProperty): void;
             /**
              * Resets the accessible relation to its default value.
              * @param relation the accessible relation
              */
-            reset_relation(relation: AccessibleRelation | null): void;
+            reset_relation(relation: AccessibleRelation): void;
             /**
              * Resets the accessible state to its default value.
              * @param state the accessible state
              */
-            reset_state(state: AccessibleState | null): void;
+            reset_state(state: AccessibleState): void;
             /**
              * Sets the parent and sibling of an accessible object.
              *
@@ -257699,7 +257689,7 @@ declare module 'gi://Gtk?version=4.0' {
              * states automatically.
              * @param state the platform state to update
              */
-            update_platform_state(state: AccessiblePlatformState | null): void;
+            update_platform_state(state: AccessiblePlatformState): void;
             /**
              * Updates an array of accessible properties.
              *
@@ -257710,7 +257700,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param properties an array of accessible properties
              * @param values an array of `GValues`, one for each property
              */
-            update_property(properties: AccessibleProperty[] | null, values: (GObject.Value | any)[]): void;
+            update_property(properties: AccessibleProperty[], values: (GObject.Value | any)[]): void;
             /**
              * Updates an array of accessible relations.
              *
@@ -257721,7 +257711,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param relations an array of accessible relations
              * @param values an array of `GValues`, one for each relation
              */
-            update_relation(relations: AccessibleRelation[] | null, values: (GObject.Value | any)[]): void;
+            update_relation(relations: AccessibleRelation[], values: (GObject.Value | any)[]): void;
             /**
              * Updates an array of accessible states.
              *
@@ -257732,7 +257722,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param states an array of accessible states
              * @param values an array of `GValues`, one for each state
              */
-            update_state(states: AccessibleState[] | null, values: (GObject.Value | any)[]): void;
+            update_state(states: AccessibleState[], values: (GObject.Value | any)[]): void;
             /**
              * Retrieves the accessible parent for an accessible object.
              *
@@ -257920,7 +257910,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -257961,7 +257951,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -258664,7 +258654,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -258705,7 +258695,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -260194,7 +260184,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -260235,7 +260225,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -261373,7 +261363,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param sort_column_id the sort column id to set
              * @param order The sort order of the column
              */
-            set_sort_column_id(sort_column_id: number, order: SortType | null): void;
+            set_sort_column_id(sort_column_id: number, order: SortType): void;
             /**
              * Sets the comparison function used when sorting to be `sort_func`. If the
              * current sort column id of `sortable` is the same as `sort_column_id`, then
@@ -261499,7 +261489,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -261540,7 +261530,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -262094,7 +262084,7 @@ declare module 'gi://Gtk?version=4.0' {
              * previously selected.
              * @param type The selection mode
              */
-            set_mode(type: SelectionMode | null): void;
+            set_mode(type: SelectionMode): void;
             /**
              * Sets the selection function.
              *
@@ -263115,7 +263105,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param sort_column_id the sort column id to set
              * @param order The sort order of the column
              */
-            set_sort_column_id(sort_column_id: number, order: SortType | null): void;
+            set_sort_column_id(sort_column_id: number, order: SortType): void;
             /**
              * Sets the comparison function used when sorting to be `sort_func`. If the
              * current sort column id of `sortable` is the same as `sort_column_id`, then
@@ -263241,7 +263231,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -263282,7 +263272,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -264297,7 +264287,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param formats the target formats that the drag will support
              * @param actions the bitmask of possible actions for a drag from this    widget
              */
-            enable_model_drag_dest(formats: Gdk.ContentFormats, actions: Gdk.DragAction | null): void;
+            enable_model_drag_dest(formats: Gdk.ContentFormats, actions: Gdk.DragAction): void;
             /**
              * Turns `tree_view` into a drag source for automatic DND. Calling this
              * method sets {@link Gtk.TreeView}:reorderable to `false`.
@@ -264306,9 +264296,9 @@ declare module 'gi://Gtk?version=4.0' {
              * @param actions the bitmask of possible actions for a drag from this    widget
              */
             enable_model_drag_source(
-                start_button_mask: Gdk.ModifierType | null,
+                start_button_mask: Gdk.ModifierType,
                 formats: Gdk.ContentFormats,
-                actions: Gdk.DragAction | null,
+                actions: Gdk.DragAction,
             ): void;
             /**
              * Recursively expands all nodes in the `tree_view`.
@@ -264773,7 +264763,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param path The path of the row to highlight
              * @param pos Specifies whether to drop before, after or into the row
              */
-            set_drag_dest_row(path: TreePath | null, pos: TreeViewDropPosition | null): void;
+            set_drag_dest_row(path: TreePath | null, pos: TreeViewDropPosition): void;
             /**
              * If `enable_search` is set, then the user can type in text to search through
              * the tree interactively (this is sometimes called "typeahead find").
@@ -264812,7 +264802,7 @@ declare module 'gi://Gtk?version=4.0' {
              * Sets which grid lines to draw in `tree_view`.
              * @param grid_lines a {@link Gtk.TreeView}GridLines value indicating which grid lines to enable.
              */
-            set_grid_lines(grid_lines: TreeViewGridLines | null): void;
+            set_grid_lines(grid_lines: TreeViewGridLines): void;
             /**
              * Allow the column title buttons to be clicked.
              * @param setting `true` if the columns are clickable.
@@ -265057,7 +265047,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param message the string to announce
              * @param priority the priority of the announcement
              */
-            announce(message: string, priority: AccessibleAnnouncementPriority | null): void;
+            announce(message: string, priority: AccessibleAnnouncementPriority): void;
             /**
              * Retrieves the accessible parent for an accessible object.
              *
@@ -265103,22 +265093,22 @@ declare module 'gi://Gtk?version=4.0' {
              * @param state platform state to query
              * @returns the value of state for the accessible
              */
-            get_platform_state(state: AccessiblePlatformState | null): boolean;
+            get_platform_state(state: AccessiblePlatformState): boolean;
             /**
              * Resets the accessible property to its default value.
              * @param property the accessible property
              */
-            reset_property(property: AccessibleProperty | null): void;
+            reset_property(property: AccessibleProperty): void;
             /**
              * Resets the accessible relation to its default value.
              * @param relation the accessible relation
              */
-            reset_relation(relation: AccessibleRelation | null): void;
+            reset_relation(relation: AccessibleRelation): void;
             /**
              * Resets the accessible state to its default value.
              * @param state the accessible state
              */
-            reset_state(state: AccessibleState | null): void;
+            reset_state(state: AccessibleState): void;
             /**
              * Sets the parent and sibling of an accessible object.
              *
@@ -265149,7 +265139,7 @@ declare module 'gi://Gtk?version=4.0' {
              * states automatically.
              * @param state the platform state to update
              */
-            update_platform_state(state: AccessiblePlatformState | null): void;
+            update_platform_state(state: AccessiblePlatformState): void;
             /**
              * Updates an array of accessible properties.
              *
@@ -265160,7 +265150,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param properties an array of accessible properties
              * @param values an array of `GValues`, one for each property
              */
-            update_property(properties: AccessibleProperty[] | null, values: (GObject.Value | any)[]): void;
+            update_property(properties: AccessibleProperty[], values: (GObject.Value | any)[]): void;
             /**
              * Updates an array of accessible relations.
              *
@@ -265171,7 +265161,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param relations an array of accessible relations
              * @param values an array of `GValues`, one for each relation
              */
-            update_relation(relations: AccessibleRelation[] | null, values: (GObject.Value | any)[]): void;
+            update_relation(relations: AccessibleRelation[], values: (GObject.Value | any)[]): void;
             /**
              * Updates an array of accessible states.
              *
@@ -265182,7 +265172,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param states an array of accessible states
              * @param values an array of `GValues`, one for each state
              */
-            update_state(states: AccessibleState[] | null, values: (GObject.Value | any)[]): void;
+            update_state(states: AccessibleState[], values: (GObject.Value | any)[]): void;
             /**
              * Retrieves the accessible parent for an accessible object.
              *
@@ -265368,7 +265358,7 @@ declare module 'gi://Gtk?version=4.0' {
              * below the minimum width or below the natural width.
              * @param policy the horizontal {@link Gtk.ScrollablePolicy}
              */
-            set_hscroll_policy(policy: ScrollablePolicy | null): void;
+            set_hscroll_policy(policy: ScrollablePolicy): void;
             /**
              * Sets the vertical adjustment of the {@link Gtk.Scrollable}.
              * @param vadjustment a {@link Gtk.Adjustment}
@@ -265381,7 +265371,7 @@ declare module 'gi://Gtk?version=4.0' {
              * below the minimum height or below the natural height.
              * @param policy the vertical {@link Gtk.ScrollablePolicy}
              */
-            set_vscroll_policy(policy: ScrollablePolicy | null): void;
+            set_vscroll_policy(policy: ScrollablePolicy): void;
             /**
              * Returns the size of a non-scrolling border around the
              * outside of the scrollable.
@@ -265436,7 +265426,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -265477,7 +265467,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -266341,7 +266331,7 @@ declare module 'gi://Gtk?version=4.0' {
              * Sets the growth behavior of `tree_column` to `type`.
              * @param type The {@link Gtk.TreeViewColumn}Sizing.
              */
-            set_sizing(type: TreeViewColumnSizing | null): void;
+            set_sizing(type: TreeViewColumnSizing): void;
             /**
              * Sets the logical `sort_column_id` that this column sorts on when this column
              * is selected for sorting.  Doing so makes the column header clickable.
@@ -266370,7 +266360,7 @@ declare module 'gi://Gtk?version=4.0' {
              * calling this function; see `gtk_tree_view_column_set_sort_indicator()`.
              * @param order sort order that the sort indicator should indicate
              */
-            set_sort_order(order: SortType | null): void;
+            set_sort_order(order: SortType): void;
             /**
              * Sets the spacing field of `tree_column`, which is the number of pixels to
              * place between cell renderers packed into it.
@@ -266645,7 +266635,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -266686,7 +266676,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -267422,7 +267412,7 @@ declare module 'gi://Gtk?version=4.0' {
              * See {@link Gtk.GraphicsOffload} for more information on graphics offload.
              * @param enabled the new graphics offload status
              */
-            set_graphics_offload(enabled: GraphicsOffloadEnabled | null): void;
+            set_graphics_offload(enabled: GraphicsOffloadEnabled): void;
             /**
              * Sets whether new files loaded by `self` should be set to loop.
              * @param loop whether media streams should loop
@@ -267476,7 +267466,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param message the string to announce
              * @param priority the priority of the announcement
              */
-            announce(message: string, priority: AccessibleAnnouncementPriority | null): void;
+            announce(message: string, priority: AccessibleAnnouncementPriority): void;
             /**
              * Retrieves the accessible parent for an accessible object.
              *
@@ -267522,22 +267512,22 @@ declare module 'gi://Gtk?version=4.0' {
              * @param state platform state to query
              * @returns the value of state for the accessible
              */
-            get_platform_state(state: AccessiblePlatformState | null): boolean;
+            get_platform_state(state: AccessiblePlatformState): boolean;
             /**
              * Resets the accessible property to its default value.
              * @param property the accessible property
              */
-            reset_property(property: AccessibleProperty | null): void;
+            reset_property(property: AccessibleProperty): void;
             /**
              * Resets the accessible relation to its default value.
              * @param relation the accessible relation
              */
-            reset_relation(relation: AccessibleRelation | null): void;
+            reset_relation(relation: AccessibleRelation): void;
             /**
              * Resets the accessible state to its default value.
              * @param state the accessible state
              */
-            reset_state(state: AccessibleState | null): void;
+            reset_state(state: AccessibleState): void;
             /**
              * Sets the parent and sibling of an accessible object.
              *
@@ -267568,7 +267558,7 @@ declare module 'gi://Gtk?version=4.0' {
              * states automatically.
              * @param state the platform state to update
              */
-            update_platform_state(state: AccessiblePlatformState | null): void;
+            update_platform_state(state: AccessiblePlatformState): void;
             /**
              * Updates an array of accessible properties.
              *
@@ -267579,7 +267569,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param properties an array of accessible properties
              * @param values an array of `GValues`, one for each property
              */
-            update_property(properties: AccessibleProperty[] | null, values: (GObject.Value | any)[]): void;
+            update_property(properties: AccessibleProperty[], values: (GObject.Value | any)[]): void;
             /**
              * Updates an array of accessible relations.
              *
@@ -267590,7 +267580,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param relations an array of accessible relations
              * @param values an array of `GValues`, one for each relation
              */
-            update_relation(relations: AccessibleRelation[] | null, values: (GObject.Value | any)[]): void;
+            update_relation(relations: AccessibleRelation[], values: (GObject.Value | any)[]): void;
             /**
              * Updates an array of accessible states.
              *
@@ -267601,7 +267591,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param states an array of accessible states
              * @param values an array of `GValues`, one for each state
              */
-            update_state(states: AccessibleState[] | null, values: (GObject.Value | any)[]): void;
+            update_state(states: AccessibleState[], values: (GObject.Value | any)[]): void;
             /**
              * Retrieves the accessible parent for an accessible object.
              *
@@ -267789,7 +267779,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -267830,7 +267820,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -268448,7 +268438,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param message the string to announce
              * @param priority the priority of the announcement
              */
-            announce(message: string, priority: AccessibleAnnouncementPriority | null): void;
+            announce(message: string, priority: AccessibleAnnouncementPriority): void;
             /**
              * Retrieves the accessible parent for an accessible object.
              *
@@ -268494,22 +268484,22 @@ declare module 'gi://Gtk?version=4.0' {
              * @param state platform state to query
              * @returns the value of state for the accessible
              */
-            get_platform_state(state: AccessiblePlatformState | null): boolean;
+            get_platform_state(state: AccessiblePlatformState): boolean;
             /**
              * Resets the accessible property to its default value.
              * @param property the accessible property
              */
-            reset_property(property: AccessibleProperty | null): void;
+            reset_property(property: AccessibleProperty): void;
             /**
              * Resets the accessible relation to its default value.
              * @param relation the accessible relation
              */
-            reset_relation(relation: AccessibleRelation | null): void;
+            reset_relation(relation: AccessibleRelation): void;
             /**
              * Resets the accessible state to its default value.
              * @param state the accessible state
              */
-            reset_state(state: AccessibleState | null): void;
+            reset_state(state: AccessibleState): void;
             /**
              * Sets the parent and sibling of an accessible object.
              *
@@ -268540,7 +268530,7 @@ declare module 'gi://Gtk?version=4.0' {
              * states automatically.
              * @param state the platform state to update
              */
-            update_platform_state(state: AccessiblePlatformState | null): void;
+            update_platform_state(state: AccessiblePlatformState): void;
             /**
              * Updates an array of accessible properties.
              *
@@ -268551,7 +268541,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param properties an array of accessible properties
              * @param values an array of `GValues`, one for each property
              */
-            update_property(properties: AccessibleProperty[] | null, values: (GObject.Value | any)[]): void;
+            update_property(properties: AccessibleProperty[], values: (GObject.Value | any)[]): void;
             /**
              * Updates an array of accessible relations.
              *
@@ -268562,7 +268552,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param relations an array of accessible relations
              * @param values an array of `GValues`, one for each relation
              */
-            update_relation(relations: AccessibleRelation[] | null, values: (GObject.Value | any)[]): void;
+            update_relation(relations: AccessibleRelation[], values: (GObject.Value | any)[]): void;
             /**
              * Updates an array of accessible states.
              *
@@ -268573,7 +268563,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param states an array of accessible states
              * @param values an array of `GValues`, one for each state
              */
-            update_state(states: AccessibleState[] | null, values: (GObject.Value | any)[]): void;
+            update_state(states: AccessibleState[], values: (GObject.Value | any)[]): void;
             /**
              * Retrieves the accessible parent for an accessible object.
              *
@@ -268759,7 +268749,7 @@ declare module 'gi://Gtk?version=4.0' {
              * below the minimum width or below the natural width.
              * @param policy the horizontal {@link Gtk.ScrollablePolicy}
              */
-            set_hscroll_policy(policy: ScrollablePolicy | null): void;
+            set_hscroll_policy(policy: ScrollablePolicy): void;
             /**
              * Sets the vertical adjustment of the {@link Gtk.Scrollable}.
              * @param vadjustment a {@link Gtk.Adjustment}
@@ -268772,7 +268762,7 @@ declare module 'gi://Gtk?version=4.0' {
              * below the minimum height or below the natural height.
              * @param policy the vertical {@link Gtk.ScrollablePolicy}
              */
-            set_vscroll_policy(policy: ScrollablePolicy | null): void;
+            set_vscroll_policy(policy: ScrollablePolicy): void;
             /**
              * Returns the size of a non-scrolling border around the
              * outside of the scrollable.
@@ -268827,7 +268817,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -268868,7 +268858,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -269395,7 +269385,7 @@ declare module 'gi://Gtk?version=4.0' {
              * Sets the orientation of the `orientable`.
              * @param orientation the orientable’s new orientation
              */
-            set_orientation(orientation: Orientation | null): void;
+            set_orientation(orientation: Orientation): void;
             /**
              * Creates a binding between `source_property` on `source` and `target_property`
              * on `target`.
@@ -269440,7 +269430,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -269481,7 +269471,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -271463,7 +271453,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param direction direction of focus movement
              * @returns true if focus ended up inside `widget`
              */
-            child_focus(direction: DirectionType | null): boolean;
+            child_focus(direction: DirectionType): boolean;
             /**
              * Computes the bounds for `widget` in the coordinate space of `target`.
              *
@@ -271498,7 +271488,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param orientation expand direction
              * @returns whether widget tree rooted here should be expanded
              */
-            compute_expand(orientation: Orientation | null): boolean;
+            compute_expand(orientation: Orientation): boolean;
             /**
              * Translates the given `point` in `widget`'s coordinates to coordinates
              * in `target`’s coordinate system.
@@ -272106,7 +272096,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param orientation the orientation to query
              * @returns the size of `widget` in `orientation`
              */
-            get_size(orientation: Orientation | null): number;
+            get_size(orientation: Orientation): number;
             /**
              * Gets the size request that was explicitly set for the widget.
              *
@@ -272431,7 +272421,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param direction direction of focus movement
              * @returns true if stopping keyboard navigation is fine, false   if the emitting widget should try to handle the keyboard   navigation attempt in its parent widget
              */
-            keynav_failed(direction: DirectionType | null): boolean;
+            keynav_failed(direction: DirectionType): boolean;
             /**
              * Returns the widgets for which this widget is the target of a
              * mnemonic.
@@ -272465,7 +272455,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param orientation the orientation to measure
              * @param for_size Size for the opposite of `orientation`, i.e.   if `orientation` is {@link Gtk.Orientation.HORIZONTAL}, this is   the height the widget should be measured with. The {@link Gtk.Orientation.VERTICAL}   case is analogous. This way, both height-for-width and width-for-height   requests can be implemented. If no size is known, -1 can be passed.
              */
-            measure(orientation: Orientation | null, for_size: number): [number, number, number, number];
+            measure(orientation: Orientation, for_size: number): [number, number, number, number];
             /**
              * Emits the `Gtk.Widget::mnemonic-activate` signal.
              * @param group_cycling true if there are other widgets with the same mnemonic
@@ -272516,7 +272506,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param flags flags to influence what is picked
              * @returns the widget's descendant at (x, y)
              */
-            pick(x: number, y: number, flags: PickFlags | null): Widget | null;
+            pick(x: number, y: number, flags: PickFlags): Widget | null;
             /**
              * Flags the widget for a rerun of the {@link Gtk.Widget.size_allocate}
              * function.
@@ -272699,7 +272689,7 @@ declare module 'gi://Gtk?version=4.0' {
              * the value set by {@link Gtk.Widget.set_default_direction} will be used.
              * @param dir the new direction
              */
-            set_direction(dir: TextDirection | null): void;
+            set_direction(dir: TextDirection): void;
             /**
              * Set the focus child of the widget.
              *
@@ -272761,7 +272751,7 @@ declare module 'gi://Gtk?version=4.0' {
              * Sets the horizontal alignment of the widget.
              * @param align the horizontal alignment
              */
-            set_halign(align: Align | null): void;
+            set_halign(align: Align): void;
             /**
              * Sets the `has-tooltip` property on the widget.
              * @param has_tooltip whether or not `widget` has a tooltip
@@ -272901,7 +272891,7 @@ declare module 'gi://Gtk?version=4.0' {
              * The default value is {@link Gtk.Overflow.VISIBLE}.
              * @param overflow desired overflow value
              */
-            set_overflow(overflow: Overflow | null): void;
+            set_overflow(overflow: Overflow): void;
             /**
              * Sets the parent widget of the widget.
              *
@@ -272983,7 +272973,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param flags state flags to turn on
              * @param clear whether to clear state before turning on `flags`
              */
-            set_state_flags(flags: StateFlags | null, clear: boolean): void;
+            set_state_flags(flags: StateFlags, clear: boolean): void;
             /**
              * Sets the contents of the tooltip for widget.
              *
@@ -273015,7 +273005,7 @@ declare module 'gi://Gtk?version=4.0' {
              * Sets the vertical alignment of the widget.
              * @param align the vertical alignment
              */
-            set_valign(align: Align | null): void;
+            set_valign(align: Align): void;
             /**
              * Sets whether the widget would like any available extra vertical
              * space.
@@ -273136,7 +273126,7 @@ declare module 'gi://Gtk?version=4.0' {
              * This function is for use in widget implementations.
              * @param flags state flags to turn off
              */
-            unset_state_flags(flags: StateFlags | null): void;
+            unset_state_flags(flags: StateFlags): void;
             /**
              * The accessible role of the given {@link Gtk.Accessible} implementation.
              *
@@ -273166,7 +273156,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param message the string to announce
              * @param priority the priority of the announcement
              */
-            announce(message: string, priority: AccessibleAnnouncementPriority | null): void;
+            announce(message: string, priority: AccessibleAnnouncementPriority): void;
             /**
              * Retrieves the accessible parent for an accessible object.
              *
@@ -273212,22 +273202,22 @@ declare module 'gi://Gtk?version=4.0' {
              * @param state platform state to query
              * @returns the value of state for the accessible
              */
-            get_platform_state(state: AccessiblePlatformState | null): boolean;
+            get_platform_state(state: AccessiblePlatformState): boolean;
             /**
              * Resets the accessible property to its default value.
              * @param property the accessible property
              */
-            reset_property(property: AccessibleProperty | null): void;
+            reset_property(property: AccessibleProperty): void;
             /**
              * Resets the accessible relation to its default value.
              * @param relation the accessible relation
              */
-            reset_relation(relation: AccessibleRelation | null): void;
+            reset_relation(relation: AccessibleRelation): void;
             /**
              * Resets the accessible state to its default value.
              * @param state the accessible state
              */
-            reset_state(state: AccessibleState | null): void;
+            reset_state(state: AccessibleState): void;
             /**
              * Sets the parent and sibling of an accessible object.
              *
@@ -273258,7 +273248,7 @@ declare module 'gi://Gtk?version=4.0' {
              * states automatically.
              * @param state the platform state to update
              */
-            update_platform_state(state: AccessiblePlatformState | null): void;
+            update_platform_state(state: AccessiblePlatformState): void;
             /**
              * Updates an array of accessible properties.
              *
@@ -273269,7 +273259,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param properties an array of accessible properties
              * @param values an array of `GValues`, one for each property
              */
-            update_property(properties: AccessibleProperty[] | null, values: (GObject.Value | any)[]): void;
+            update_property(properties: AccessibleProperty[], values: (GObject.Value | any)[]): void;
             /**
              * Updates an array of accessible relations.
              *
@@ -273280,7 +273270,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param relations an array of accessible relations
              * @param values an array of `GValues`, one for each relation
              */
-            update_relation(relations: AccessibleRelation[] | null, values: (GObject.Value | any)[]): void;
+            update_relation(relations: AccessibleRelation[], values: (GObject.Value | any)[]): void;
             /**
              * Updates an array of accessible states.
              *
@@ -273291,7 +273281,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param states an array of accessible states
              * @param values an array of `GValues`, one for each state
              */
-            update_state(states: AccessibleState[] | null, values: (GObject.Value | any)[]): void;
+            update_state(states: AccessibleState[], values: (GObject.Value | any)[]): void;
             /**
              * Retrieves the accessible parent for an accessible object.
              *
@@ -273479,7 +273469,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -273520,7 +273510,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -274235,7 +274225,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -274276,7 +274266,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -275688,7 +275678,7 @@ declare module 'gi://Gtk?version=4.0' {
              * Sets the gravity that is used when changing the window size programmatically.
              * @param gravity the new gravity
              */
-            set_gravity(gravity: WindowGravity | null): void;
+            set_gravity(gravity: WindowGravity): void;
             /**
              * Sets whether this window should react to <kbd>F10</kbd>
              * presses by activating a menubar it contains.
@@ -276375,7 +276365,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param message the string to announce
              * @param priority the priority of the announcement
              */
-            announce(message: string, priority: AccessibleAnnouncementPriority | null): void;
+            announce(message: string, priority: AccessibleAnnouncementPriority): void;
             /**
              * Retrieves the accessible parent for an accessible object.
              *
@@ -276421,22 +276411,22 @@ declare module 'gi://Gtk?version=4.0' {
              * @param state platform state to query
              * @returns the value of state for the accessible
              */
-            get_platform_state(state: AccessiblePlatformState | null): boolean;
+            get_platform_state(state: AccessiblePlatformState): boolean;
             /**
              * Resets the accessible property to its default value.
              * @param property the accessible property
              */
-            reset_property(property: AccessibleProperty | null): void;
+            reset_property(property: AccessibleProperty): void;
             /**
              * Resets the accessible relation to its default value.
              * @param relation the accessible relation
              */
-            reset_relation(relation: AccessibleRelation | null): void;
+            reset_relation(relation: AccessibleRelation): void;
             /**
              * Resets the accessible state to its default value.
              * @param state the accessible state
              */
-            reset_state(state: AccessibleState | null): void;
+            reset_state(state: AccessibleState): void;
             /**
              * Sets the parent and sibling of an accessible object.
              *
@@ -276467,7 +276457,7 @@ declare module 'gi://Gtk?version=4.0' {
              * states automatically.
              * @param state the platform state to update
              */
-            update_platform_state(state: AccessiblePlatformState | null): void;
+            update_platform_state(state: AccessiblePlatformState): void;
             /**
              * Updates an array of accessible properties.
              *
@@ -276478,7 +276468,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param properties an array of accessible properties
              * @param values an array of `GValues`, one for each property
              */
-            update_property(properties: AccessibleProperty[] | null, values: (GObject.Value | any)[]): void;
+            update_property(properties: AccessibleProperty[], values: (GObject.Value | any)[]): void;
             /**
              * Updates an array of accessible relations.
              *
@@ -276489,7 +276479,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param relations an array of accessible relations
              * @param values an array of `GValues`, one for each relation
              */
-            update_relation(relations: AccessibleRelation[] | null, values: (GObject.Value | any)[]): void;
+            update_relation(relations: AccessibleRelation[], values: (GObject.Value | any)[]): void;
             /**
              * Updates an array of accessible states.
              *
@@ -276500,7 +276490,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param states an array of accessible states
              * @param values an array of `GValues`, one for each state
              */
-            update_state(states: AccessibleState[] | null, values: (GObject.Value | any)[]): void;
+            update_state(states: AccessibleState[], values: (GObject.Value | any)[]): void;
             /**
              * Retrieves the accessible parent for an accessible object.
              *
@@ -276735,7 +276725,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -276776,7 +276766,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -277296,7 +277286,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param direction direction of focus movement
              * @returns true if focus ended up inside `widget`
              */
-            child_focus(direction: DirectionType | null): boolean;
+            child_focus(direction: DirectionType): boolean;
             /**
              * Computes the bounds for `widget` in the coordinate space of `target`.
              *
@@ -277331,7 +277321,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param orientation expand direction
              * @returns whether widget tree rooted here should be expanded
              */
-            compute_expand(orientation: Orientation | null): boolean;
+            compute_expand(orientation: Orientation): boolean;
             /**
              * Translates the given `point` in `widget`'s coordinates to coordinates
              * in `target`’s coordinate system.
@@ -277927,7 +277917,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param orientation the orientation to query
              * @returns the size of `widget` in `orientation`
              */
-            get_size(orientation: Orientation | null): number;
+            get_size(orientation: Orientation): number;
             /**
              * Gets the size request that was explicitly set for the widget.
              *
@@ -278252,7 +278242,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param direction direction of focus movement
              * @returns true if stopping keyboard navigation is fine, false   if the emitting widget should try to handle the keyboard   navigation attempt in its parent widget
              */
-            keynav_failed(direction: DirectionType | null): boolean;
+            keynav_failed(direction: DirectionType): boolean;
             /**
              * Returns the widgets for which this widget is the target of a
              * mnemonic.
@@ -278286,7 +278276,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param orientation the orientation to measure
              * @param for_size Size for the opposite of `orientation`, i.e.   if `orientation` is {@link Gtk.Orientation.HORIZONTAL}, this is   the height the widget should be measured with. The {@link Gtk.Orientation.VERTICAL}   case is analogous. This way, both height-for-width and width-for-height   requests can be implemented. If no size is known, -1 can be passed.
              */
-            measure(orientation: Orientation | null, for_size: number): [number, number, number, number];
+            measure(orientation: Orientation, for_size: number): [number, number, number, number];
             /**
              * Emits the `Gtk.Widget::mnemonic-activate` signal.
              * @param group_cycling true if there are other widgets with the same mnemonic
@@ -278337,7 +278327,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param flags flags to influence what is picked
              * @returns the widget's descendant at (x, y)
              */
-            pick(x: number, y: number, flags: PickFlags | null): Widget | null;
+            pick(x: number, y: number, flags: PickFlags): Widget | null;
             /**
              * Flags the widget for a rerun of the {@link Gtk.Widget.size_allocate}
              * function.
@@ -278501,7 +278491,7 @@ declare module 'gi://Gtk?version=4.0' {
              * the value set by {@link Gtk.Widget.set_default_direction} will be used.
              * @param dir the new direction
              */
-            set_direction(dir: TextDirection | null): void;
+            set_direction(dir: TextDirection): void;
             /**
              * Set the focus child of the widget.
              *
@@ -278563,7 +278553,7 @@ declare module 'gi://Gtk?version=4.0' {
              * Sets the horizontal alignment of the widget.
              * @param align the horizontal alignment
              */
-            set_halign(align: Align | null): void;
+            set_halign(align: Align): void;
             /**
              * Sets the `has-tooltip` property on the widget.
              * @param has_tooltip whether or not `widget` has a tooltip
@@ -278703,7 +278693,7 @@ declare module 'gi://Gtk?version=4.0' {
              * The default value is {@link Gtk.Overflow.VISIBLE}.
              * @param overflow desired overflow value
              */
-            set_overflow(overflow: Overflow | null): void;
+            set_overflow(overflow: Overflow): void;
             /**
              * Sets the parent widget of the widget.
              *
@@ -278785,7 +278775,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param flags state flags to turn on
              * @param clear whether to clear state before turning on `flags`
              */
-            set_state_flags(flags: StateFlags | null, clear: boolean): void;
+            set_state_flags(flags: StateFlags, clear: boolean): void;
             /**
              * Sets the contents of the tooltip for widget.
              *
@@ -278817,7 +278807,7 @@ declare module 'gi://Gtk?version=4.0' {
              * Sets the vertical alignment of the widget.
              * @param align the vertical alignment
              */
-            set_valign(align: Align | null): void;
+            set_valign(align: Align): void;
             /**
              * Sets whether the widget would like any available extra vertical
              * space.
@@ -278930,7 +278920,7 @@ declare module 'gi://Gtk?version=4.0' {
              * This function is for use in widget implementations.
              * @param flags state flags to turn off
              */
-            unset_state_flags(flags: StateFlags | null): void;
+            unset_state_flags(flags: StateFlags): void;
             /**
              * Computes whether a container should give this
              *   widget extra space when possible.
@@ -279445,7 +279435,7 @@ declare module 'gi://Gtk?version=4.0' {
              * See {@link Gtk.WindowControls.decoration_layout}.
              * @param side a side
              */
-            set_side(side: PackType | null): void;
+            set_side(side: PackType): void;
             /**
              * Sets whether platform native window controls are used.
              *
@@ -279485,7 +279475,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param message the string to announce
              * @param priority the priority of the announcement
              */
-            announce(message: string, priority: AccessibleAnnouncementPriority | null): void;
+            announce(message: string, priority: AccessibleAnnouncementPriority): void;
             /**
              * Retrieves the accessible parent for an accessible object.
              *
@@ -279531,22 +279521,22 @@ declare module 'gi://Gtk?version=4.0' {
              * @param state platform state to query
              * @returns the value of state for the accessible
              */
-            get_platform_state(state: AccessiblePlatformState | null): boolean;
+            get_platform_state(state: AccessiblePlatformState): boolean;
             /**
              * Resets the accessible property to its default value.
              * @param property the accessible property
              */
-            reset_property(property: AccessibleProperty | null): void;
+            reset_property(property: AccessibleProperty): void;
             /**
              * Resets the accessible relation to its default value.
              * @param relation the accessible relation
              */
-            reset_relation(relation: AccessibleRelation | null): void;
+            reset_relation(relation: AccessibleRelation): void;
             /**
              * Resets the accessible state to its default value.
              * @param state the accessible state
              */
-            reset_state(state: AccessibleState | null): void;
+            reset_state(state: AccessibleState): void;
             /**
              * Sets the parent and sibling of an accessible object.
              *
@@ -279577,7 +279567,7 @@ declare module 'gi://Gtk?version=4.0' {
              * states automatically.
              * @param state the platform state to update
              */
-            update_platform_state(state: AccessiblePlatformState | null): void;
+            update_platform_state(state: AccessiblePlatformState): void;
             /**
              * Updates an array of accessible properties.
              *
@@ -279588,7 +279578,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param properties an array of accessible properties
              * @param values an array of `GValues`, one for each property
              */
-            update_property(properties: AccessibleProperty[] | null, values: (GObject.Value | any)[]): void;
+            update_property(properties: AccessibleProperty[], values: (GObject.Value | any)[]): void;
             /**
              * Updates an array of accessible relations.
              *
@@ -279599,7 +279589,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param relations an array of accessible relations
              * @param values an array of `GValues`, one for each relation
              */
-            update_relation(relations: AccessibleRelation[] | null, values: (GObject.Value | any)[]): void;
+            update_relation(relations: AccessibleRelation[], values: (GObject.Value | any)[]): void;
             /**
              * Updates an array of accessible states.
              *
@@ -279610,7 +279600,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param states an array of accessible states
              * @param values an array of `GValues`, one for each state
              */
-            update_state(states: AccessibleState[] | null, values: (GObject.Value | any)[]): void;
+            update_state(states: AccessibleState[], values: (GObject.Value | any)[]): void;
             /**
              * Retrieves the accessible parent for an accessible object.
              *
@@ -279798,7 +279788,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -279839,7 +279829,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -280456,7 +280446,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param message the string to announce
              * @param priority the priority of the announcement
              */
-            announce(message: string, priority: AccessibleAnnouncementPriority | null): void;
+            announce(message: string, priority: AccessibleAnnouncementPriority): void;
             /**
              * Retrieves the accessible parent for an accessible object.
              *
@@ -280502,22 +280492,22 @@ declare module 'gi://Gtk?version=4.0' {
              * @param state platform state to query
              * @returns the value of state for the accessible
              */
-            get_platform_state(state: AccessiblePlatformState | null): boolean;
+            get_platform_state(state: AccessiblePlatformState): boolean;
             /**
              * Resets the accessible property to its default value.
              * @param property the accessible property
              */
-            reset_property(property: AccessibleProperty | null): void;
+            reset_property(property: AccessibleProperty): void;
             /**
              * Resets the accessible relation to its default value.
              * @param relation the accessible relation
              */
-            reset_relation(relation: AccessibleRelation | null): void;
+            reset_relation(relation: AccessibleRelation): void;
             /**
              * Resets the accessible state to its default value.
              * @param state the accessible state
              */
-            reset_state(state: AccessibleState | null): void;
+            reset_state(state: AccessibleState): void;
             /**
              * Sets the parent and sibling of an accessible object.
              *
@@ -280548,7 +280538,7 @@ declare module 'gi://Gtk?version=4.0' {
              * states automatically.
              * @param state the platform state to update
              */
-            update_platform_state(state: AccessiblePlatformState | null): void;
+            update_platform_state(state: AccessiblePlatformState): void;
             /**
              * Updates an array of accessible properties.
              *
@@ -280559,7 +280549,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param properties an array of accessible properties
              * @param values an array of `GValues`, one for each property
              */
-            update_property(properties: AccessibleProperty[] | null, values: (GObject.Value | any)[]): void;
+            update_property(properties: AccessibleProperty[], values: (GObject.Value | any)[]): void;
             /**
              * Updates an array of accessible relations.
              *
@@ -280570,7 +280560,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param relations an array of accessible relations
              * @param values an array of `GValues`, one for each relation
              */
-            update_relation(relations: AccessibleRelation[] | null, values: (GObject.Value | any)[]): void;
+            update_relation(relations: AccessibleRelation[], values: (GObject.Value | any)[]): void;
             /**
              * Updates an array of accessible states.
              *
@@ -280581,7 +280571,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param states an array of accessible states
              * @param values an array of `GValues`, one for each state
              */
-            update_state(states: AccessibleState[] | null, values: (GObject.Value | any)[]): void;
+            update_state(states: AccessibleState[], values: (GObject.Value | any)[]): void;
             /**
              * Retrieves the accessible parent for an accessible object.
              *
@@ -280769,7 +280759,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -280810,7 +280800,7 @@ declare module 'gi://Gtk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -282563,25 +282553,25 @@ declare module 'gi://Gtk?version=4.0' {
              * @param unit the unit for the return value, not {@link Gtk.Unit.NONE}
              * @returns the default bottom margin
              */
-            get_default_bottom_margin(unit: Unit | null): number;
+            get_default_bottom_margin(unit: Unit): number;
             /**
              * Gets the default left margin for the {@link Gtk.PaperSize}.
              * @param unit the unit for the return value, not {@link Gtk.Unit.NONE}
              * @returns the default left margin
              */
-            get_default_left_margin(unit: Unit | null): number;
+            get_default_left_margin(unit: Unit): number;
             /**
              * Gets the default right margin for the {@link Gtk.PaperSize}.
              * @param unit the unit for the return value, not {@link Gtk.Unit.NONE}
              * @returns the default right margin
              */
-            get_default_right_margin(unit: Unit | null): number;
+            get_default_right_margin(unit: Unit): number;
             /**
              * Gets the default top margin for the {@link Gtk.PaperSize}.
              * @param unit the unit for the return value, not {@link Gtk.Unit.NONE}
              * @returns the default top margin
              */
-            get_default_top_margin(unit: Unit | null): number;
+            get_default_top_margin(unit: Unit): number;
             /**
              * Gets the human-readable name of the {@link Gtk.PaperSize}.
              * @returns the human-readable name of `size`
@@ -282593,7 +282583,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param unit the unit for the return value, not {@link Gtk.Unit.NONE}
              * @returns the paper height
              */
-            get_height(unit: Unit | null): number;
+            get_height(unit: Unit): number;
             /**
              * Gets the name of the {@link Gtk.PaperSize}.
              * @returns the name of `size`
@@ -282611,7 +282601,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param unit the unit for the return value, not {@link Gtk.Unit.NONE}
              * @returns the paper width
              */
-            get_width(unit: Unit | null): number;
+            get_width(unit: Unit): number;
             /**
              * Returns `true` if `size` is not a standard paper size.
              * @returns whether `size` is a custom paper size.
@@ -282634,7 +282624,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param height the new height in units of `unit`
              * @param unit the unit for `width` and `height`
              */
-            set_size(width: number, height: number, unit: Unit | null): void;
+            set_size(width: number, height: number, unit: Unit): void;
             /**
              * Serialize a paper size to an `a{sv}` variant.
              * @returns a new, floating, {@link GLib.Variant}
@@ -283321,7 +283311,7 @@ declare module 'gi://Gtk?version=4.0' {
              */
             backward_search(
                 str: string,
-                flags: TextSearchFlags | null,
+                flags: TextSearchFlags,
                 limit?: TextIter | null,
             ): [boolean, TextIter | null, TextIter | null];
             /**
@@ -283650,7 +283640,7 @@ declare module 'gi://Gtk?version=4.0' {
              */
             forward_search(
                 str: string,
-                flags: TextSearchFlags | null,
+                flags: TextSearchFlags,
                 limit?: TextIter | null,
             ): [boolean, TextIter | null, TextIter | null];
             /**
@@ -284670,7 +284660,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param message the string to announce
              * @param priority the priority of the announcement
              */
-            announce(message: string, priority: AccessibleAnnouncementPriority | null): void;
+            announce(message: string, priority: AccessibleAnnouncementPriority): void;
             /**
              * Retrieves the accessible parent for an accessible object.
              *
@@ -284716,22 +284706,22 @@ declare module 'gi://Gtk?version=4.0' {
              * @param state platform state to query
              * @returns the value of state for the accessible
              */
-            get_platform_state(state: AccessiblePlatformState | null): boolean;
+            get_platform_state(state: AccessiblePlatformState): boolean;
             /**
              * Resets the accessible property to its default value.
              * @param property the accessible property
              */
-            reset_property(property: AccessibleProperty | null): void;
+            reset_property(property: AccessibleProperty): void;
             /**
              * Resets the accessible relation to its default value.
              * @param relation the accessible relation
              */
-            reset_relation(relation: AccessibleRelation | null): void;
+            reset_relation(relation: AccessibleRelation): void;
             /**
              * Resets the accessible state to its default value.
              * @param state the accessible state
              */
-            reset_state(state: AccessibleState | null): void;
+            reset_state(state: AccessibleState): void;
             /**
              * Sets the parent and sibling of an accessible object.
              *
@@ -284762,7 +284752,7 @@ declare module 'gi://Gtk?version=4.0' {
              * states automatically.
              * @param state the platform state to update
              */
-            update_platform_state(state: AccessiblePlatformState | null): void;
+            update_platform_state(state: AccessiblePlatformState): void;
             /**
              * Updates an array of accessible properties.
              *
@@ -284773,7 +284763,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param properties an array of accessible properties
              * @param values an array of `GValues`, one for each property
              */
-            update_property(properties: AccessibleProperty[] | null, values: (GObject.Value | any)[]): void;
+            update_property(properties: AccessibleProperty[], values: (GObject.Value | any)[]): void;
             /**
              * Updates an array of accessible relations.
              *
@@ -284784,7 +284774,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param relations an array of accessible relations
              * @param values an array of `GValues`, one for each relation
              */
-            update_relation(relations: AccessibleRelation[] | null, values: (GObject.Value | any)[]): void;
+            update_relation(relations: AccessibleRelation[], values: (GObject.Value | any)[]): void;
             /**
              * Updates an array of accessible states.
              *
@@ -284795,7 +284785,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param states an array of accessible states
              * @param values an array of `GValues`, one for each state
              */
-            update_state(states: AccessibleState[] | null, values: (GObject.Value | any)[]): void;
+            update_state(states: AccessibleState[], values: (GObject.Value | any)[]): void;
         }
 
         export const Accessible: AccessibleNamespace & {
@@ -285013,7 +285003,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param start the starting offset of the change, in characters
              * @param end the end offset of the change, in characters
              */
-            update_contents(change: AccessibleTextContentChange | null, start: number, end: number): void;
+            update_contents(change: AccessibleTextContentChange, start: number, end: number): void;
             /**
              * Updates the boundary of the selection.
              *
@@ -286054,7 +286044,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param colors_per_line the number of colors to show in each row/column
              * @param colors the colors of the palette
              */
-            add_palette(orientation: Orientation | null, colors_per_line: number, colors?: Gdk.RGBA[] | null): void;
+            add_palette(orientation: Orientation, colors_per_line: number, colors?: Gdk.RGBA[] | null): void;
             /**
              * Gets the currently-selected color.
              */
@@ -286533,7 +286523,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param state what kind of accessible state to retrieve
              * @returns the accessible platform state of the delegate
              */
-            delegate_get_accessible_platform_state(state: AccessiblePlatformState | null): boolean;
+            delegate_get_accessible_platform_state(state: AccessiblePlatformState): boolean;
             /**
              * Deletes the currently selected text of the editable.
              *
@@ -287005,7 +286995,7 @@ declare module 'gi://Gtk?version=4.0' {
              * action is {@link Gtk.FileChooserAction.OPEN}.
              * @param action the action that the file selector is performing
              */
-            set_action(action: FileChooserAction | null): void;
+            set_action(action: FileChooserAction): void;
             /**
              * Selects an option in a 'choice' that has been added with
              * `gtk_file_chooser_add_choice()`.
@@ -287449,7 +287439,7 @@ declare module 'gi://Gtk?version=4.0' {
              * Sets the desired level of granularity for selecting fonts.
              * @param level the desired level of granularity
              */
-            set_level(level: FontChooserLevel | null): void;
+            set_level(level: FontChooserLevel): void;
             /**
              * Sets the text displayed in the preview area.
              *
@@ -287584,7 +287574,7 @@ declare module 'gi://Gtk?version=4.0' {
              * Sets the orientation of the `orientable`.
              * @param orientation the orientable’s new orientation
              */
-            set_orientation(orientation: Orientation | null): void;
+            set_orientation(orientation: Orientation): void;
         }
 
         export const Orientable: OrientableNamespace & {
@@ -287907,7 +287897,7 @@ declare module 'gi://Gtk?version=4.0' {
              * below the minimum width or below the natural width.
              * @param policy the horizontal {@link Gtk.ScrollablePolicy}
              */
-            set_hscroll_policy(policy: ScrollablePolicy | null): void;
+            set_hscroll_policy(policy: ScrollablePolicy): void;
             /**
              * Sets the vertical adjustment of the {@link Gtk.Scrollable}.
              * @param vadjustment a {@link Gtk.Adjustment}
@@ -287920,7 +287910,7 @@ declare module 'gi://Gtk?version=4.0' {
              * below the minimum height or below the natural height.
              * @param policy the vertical {@link Gtk.ScrollablePolicy}
              */
-            set_vscroll_policy(policy: ScrollablePolicy | null): void;
+            set_vscroll_policy(policy: ScrollablePolicy): void;
         }
 
         export const Scrollable: ScrollableNamespace & {
@@ -289421,7 +289411,7 @@ declare module 'gi://Gtk?version=4.0' {
              * @param sort_column_id the sort column id to set
              * @param order The sort order of the column
              */
-            set_sort_column_id(sort_column_id: number, order: SortType | null): void;
+            set_sort_column_id(sort_column_id: number, order: SortType): void;
             /**
              * Sets the comparison function used when sorting to be `sort_func`. If the
              * current sort column id of `sortable` is the same as `sort_column_id`, then

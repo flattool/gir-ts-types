@@ -1994,9 +1994,9 @@ declare module 'gi://GstBase?version=1.0' {
              * @returns `true` if conversion was successful.
              */
             convert_default(
-                src_format: Gst.Format | null,
+                src_format: Gst.Format,
                 src_value: bigint | number,
-                dest_format: Gst.Format | null,
+                dest_format: Gst.Format,
             ): [boolean, number];
             /**
              * Drains the adapter until it is empty. It decreases the min_frame_size to
@@ -2034,7 +2034,7 @@ declare module 'gi://GstBase?version=1.0' {
              * @param tags a {@link Gst.TagList} to merge, or NULL to unset     previously-set tags
              * @param mode the {@link Gst.TagMergeMode} to use, usually #GST_TAG_MERGE_REPLACE
              */
-            merge_tags(tags: Gst.TagList | null, mode: Gst.TagMergeMode | null): void;
+            merge_tags(tags: Gst.TagList | null, mode: Gst.TagMergeMode): void;
             /**
              * Pushes the frame's buffer downstream, sends any pending events and
              * does some timestamp and segment handling. Takes ownership of
@@ -2066,7 +2066,7 @@ declare module 'gi://GstBase?version=1.0' {
              * @param duration duration value.
              * @param interval how often to update the duration estimate based on bitrate, or 0.
              */
-            set_duration(fmt: Gst.Format | null, duration: bigint | number, interval: number): void;
+            set_duration(fmt: Gst.Format, duration: bigint | number, interval: number): void;
             /**
              * If frames per second is configured, parser can take care of buffer duration
              * and timestamping.  When performing segment clipping, or seeking to a specific
@@ -3425,7 +3425,7 @@ declare module 'gi://GstBase?version=1.0' {
              * This function must only be called in states < {@link Gst.State.PAUSED}.
              * @param format the format to use
              */
-            set_format(format: Gst.Format | null): void;
+            set_format(format: Gst.Format): void;
             /**
              * If the element listens to a live source, `live` should
              * be set to `true`.
@@ -3445,7 +3445,7 @@ declare module 'gi://GstBase?version=1.0' {
              * helper thread.
              * @param ret a {@link Gst.FlowReturn}
              */
-            start_complete(ret: Gst.FlowReturn | null): void;
+            start_complete(ret: Gst.FlowReturn): void;
             /**
              * Wait until the start operation completes.
              * @returns a {@link Gst.FlowReturn}.
@@ -5859,7 +5859,7 @@ declare module 'gi://GstBase?version=1.0' {
              * @param fret the latest {@link Gst.FlowReturn} received for a pad in this {@link GstBase.FlowCombiner}
              * @returns The combined {@link Gst.FlowReturn}
              */
-            update_flow(fret: Gst.FlowReturn | null): Gst.FlowReturn;
+            update_flow(fret: Gst.FlowReturn): Gst.FlowReturn;
             /**
              * Sets the provided pad's last flow return to provided value and computes
              * the combined flow return for the pads in it.
@@ -5872,7 +5872,7 @@ declare module 'gi://GstBase?version=1.0' {
              * @param fret the latest {@link Gst.FlowReturn} received for a pad in this {@link GstBase.FlowCombiner}
              * @returns The combined {@link Gst.FlowReturn}
              */
-            update_pad_flow(pad: Gst.Pad, fret: Gst.FlowReturn | null): Gst.FlowReturn;
+            update_pad_flow(pad: Gst.Pad, fret: Gst.FlowReturn): Gst.FlowReturn;
         }
 
         /**

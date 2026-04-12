@@ -500,7 +500,7 @@ declare module 'gi://GstAnalytics?version=1.0' {
              */
             add_segmentation_mtd(
                 buffer: Gst.Buffer,
-                segmentation_type: SegmentationType | null,
+                segmentation_type: SegmentationType,
                 region_ids: number[],
                 masks_loc_x: number,
                 masks_loc_y: number,
@@ -528,7 +528,7 @@ declare module 'gi://GstAnalytics?version=1.0' {
                 an_meta_first_id: number,
                 an_meta_second_id: number,
                 max_relation_span: number,
-                cond_types: RelTypes | null,
+                cond_types: RelTypes,
             ): [boolean, number[] | null];
             /**
              * Fill `rlt` if a analytics-meta with id == `an_meta_id` exist in `meta` instance,
@@ -546,7 +546,7 @@ declare module 'gi://GstAnalytics?version=1.0' {
              */
             get_direct_related(
                 an_meta_id: number,
-                relation_type: RelTypes | null,
+                relation_type: RelTypes,
                 type: MtdType,
                 state: any,
             ): [boolean, any, Mtd];
@@ -604,7 +604,7 @@ declare module 'gi://GstAnalytics?version=1.0' {
              * @param an_meta_second_id second meta id
              * @returns TRUE on success and FALSE on failure.
              */
-            set_relation(type: RelTypes | null, an_meta_first_id: number, an_meta_second_id: number): boolean;
+            set_relation(type: RelTypes, an_meta_first_id: number, an_meta_second_id: number): boolean;
         }
 
         /**
@@ -915,7 +915,7 @@ declare module 'gi://GstAnalytics?version=1.0' {
          * Type of analytics meta data
          * @gir-type Alias
          */
-        type MtdType = never;
+        type MtdType = bigint | number;
         /**
          * Name of the imported GIR library
          * `see` https://gitlab.gnome.org/GNOME/gjs/-/blob/master/gi/ns.cpp#L188

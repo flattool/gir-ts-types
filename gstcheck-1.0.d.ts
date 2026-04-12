@@ -147,7 +147,7 @@ declare module 'gi://GstCheck?version=1.0' {
             caps_in: Gst.Caps,
             buffer_out: Gst.Buffer[],
             caps_out: Gst.Caps,
-            last_flow_return: Gst.FlowReturn | null,
+            last_flow_return: Gst.FlowReturn,
         ): void;
         /**
          * @param argc
@@ -162,7 +162,7 @@ declare module 'gi://GstCheck?version=1.0' {
          */
         function check_message_error(
             message: Gst.Message,
-            type: Gst.MessageType | null,
+            type: Gst.MessageType,
             domain: GLib.Quark,
             code: number,
         ): void;
@@ -201,7 +201,7 @@ declare module 'gi://GstCheck?version=1.0' {
             srcpad: Gst.Pad,
             element: Gst.Element,
             caps: Gst.Caps | null,
-            format: Gst.Format | null,
+            format: Gst.Format,
         ): void;
         /**
          * Push stream-start, caps and segment event, which consist of the minimum
@@ -217,7 +217,7 @@ declare module 'gi://GstCheck?version=1.0' {
             srcpad: Gst.Pad,
             element: Gst.Element,
             caps: Gst.Caps | null,
-            format: Gst.Format | null,
+            format: Gst.Format,
             stream_id: string,
         ): void;
         /**
@@ -941,7 +941,7 @@ declare module 'gi://GstCheck?version=1.0' {
             add_probe(
                 element_name: string,
                 pad_name: string,
-                mask: Gst.PadProbeType | null,
+                mask: Gst.PadProbeType,
                 callback: Gst.PadProbeCallback,
             ): void;
             /**

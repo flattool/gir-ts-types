@@ -3414,7 +3414,7 @@ declare module 'gi://Gio?version=2.0' {
         function app_info_create_from_commandline(
             commandline: string,
             application_name: string | null,
-            flags: AppInfoCreateFlags | null,
+            flags: AppInfoCreateFlags,
         ): AppInfo;
         /**
          * Gets a list of all of the applications currently registered
@@ -3718,10 +3718,7 @@ declare module 'gi://Gio?version=2.0' {
          * @param cancellable a {@link Gio.Cancellable} or `null`
          * @since 2.26
          */
-        function bus_get(
-            bus_type: BusType | null,
-            cancellable?: Cancellable | null,
-        ): globalThis.Promise<DBusConnection>;
+        function bus_get(bus_type: BusType, cancellable?: Cancellable | null): globalThis.Promise<DBusConnection>;
         /**
          * Asynchronously connects to the message bus specified by `bus_type`.
          *
@@ -3736,9 +3733,9 @@ declare module 'gi://Gio?version=2.0' {
          * @since 2.26
          */
         function bus_get(
-            bus_type: BusType | null,
+            bus_type: BusType,
             cancellable: Cancellable | null,
-            callback: AsyncReadyCallback<BusType | null> | null,
+            callback: AsyncReadyCallback<BusType> | null,
         ): void;
         /**
          * Asynchronously connects to the message bus specified by `bus_type`.
@@ -3754,9 +3751,9 @@ declare module 'gi://Gio?version=2.0' {
          * @since 2.26
          */
         function bus_get(
-            bus_type: BusType | null,
+            bus_type: BusType,
             cancellable?: Cancellable | null,
-            callback?: AsyncReadyCallback<BusType | null> | null,
+            callback?: AsyncReadyCallback<BusType> | null,
         ): globalThis.Promise<DBusConnection> | void;
         /**
          * Finishes an operation started with `g_bus_get()`.
@@ -3800,7 +3797,7 @@ declare module 'gi://Gio?version=2.0' {
          * @returns a {@link Gio.DBusConnection} or `null` if `error` is set.     Free with `g_object_unref()`.
          * @since 2.26
          */
-        function bus_get_sync(bus_type: BusType | null, cancellable?: Cancellable | null): DBusConnection;
+        function bus_get_sync(bus_type: BusType, cancellable?: Cancellable | null): DBusConnection;
         /**
          * Version of [func@Gio.bus_own_name using closures instead of callbacks for
          * easier binding in other languages.
@@ -3814,9 +3811,9 @@ declare module 'gi://Gio?version=2.0' {
          * @since 2.26
          */
         function bus_own_name(
-            bus_type: BusType | null,
+            bus_type: BusType,
             name: string,
-            flags: BusNameOwnerFlags | null,
+            flags: BusNameOwnerFlags,
             bus_acquired_closure?: GObject.Closure | null,
             name_acquired_closure?: GObject.Closure | null,
             name_lost_closure?: GObject.Closure | null,
@@ -3835,7 +3832,7 @@ declare module 'gi://Gio?version=2.0' {
         function bus_own_name_on_connection(
             connection: DBusConnection,
             name: string,
-            flags: BusNameOwnerFlags | null,
+            flags: BusNameOwnerFlags,
             name_acquired_closure?: GObject.Closure | null,
             name_lost_closure?: GObject.Closure | null,
         ): number;
@@ -3878,9 +3875,9 @@ declare module 'gi://Gio?version=2.0' {
          * @since 2.26
          */
         function bus_watch_name(
-            bus_type: BusType | null,
+            bus_type: BusType,
             name: string,
-            flags: BusNameWatcherFlags | null,
+            flags: BusNameWatcherFlags,
             name_appeared_closure?: GObject.Closure | null,
             name_vanished_closure?: GObject.Closure | null,
         ): number;
@@ -3898,7 +3895,7 @@ declare module 'gi://Gio?version=2.0' {
         function bus_watch_name_on_connection(
             connection: DBusConnection,
             name: string,
-            flags: BusNameWatcherFlags | null,
+            flags: BusNameWatcherFlags,
             name_appeared_closure?: GObject.Closure | null,
             name_vanished_closure?: GObject.Closure | null,
         ): number;
@@ -4081,7 +4078,7 @@ declare module 'gi://Gio?version=2.0' {
          * @returns a valid D-Bus address string for `bus_type` or     `null` if `error` is set
          * @since 2.26
          */
-        function dbus_address_get_for_bus_sync(bus_type: BusType | null, cancellable?: Cancellable | null): string;
+        function dbus_address_get_for_bus_sync(bus_type: BusType, cancellable?: Cancellable | null): string;
         /**
          * Asynchronously connects to an endpoint specified by `address` and
          * sets up the connection so it is in a state to run the client-side
@@ -4808,7 +4805,7 @@ declare module 'gi://Gio?version=2.0' {
          * @returns {@link Gio.IOErrorEnum} value for the given {@link GLib.FileError} error value.
          * @since 2.74
          */
-        function io_error_from_file_error(file_error: GLib.FileError | null): IOErrorEnum;
+        function io_error_from_file_error(file_error: GLib.FileError): IOErrorEnum;
         /**
          * Gets the GIO Error Quark.
          * @returns a {@link GLib.Quark}.
@@ -5194,7 +5191,7 @@ declare module 'gi://Gio?version=2.0' {
          * @returns an array of constant strings
          * @since 2.32
          */
-        function resources_enumerate_children(path: string, lookup_flags: ResourceLookupFlags | null): string[];
+        function resources_enumerate_children(path: string, lookup_flags: ResourceLookupFlags): string[];
         /**
          * Looks for a file at the specified `path` in the set of
          * globally registered resources and if found returns information about it.
@@ -5205,7 +5202,7 @@ declare module 'gi://Gio?version=2.0' {
          * @returns `TRUE` if the file was found, `FALSE` if there were errors
          * @since 2.32
          */
-        function resources_get_info(path: string, lookup_flags: ResourceLookupFlags | null): [boolean, number, number];
+        function resources_get_info(path: string, lookup_flags: ResourceLookupFlags): [boolean, number, number];
         /**
          * Returns whether the specified `path` in the set of
          * globally registered resources has children.
@@ -5234,7 +5231,7 @@ declare module 'gi://Gio?version=2.0' {
          * @returns {@link GLib.Bytes} or `NULL` on error
          * @since 2.32
          */
-        function resources_lookup_data(path: string, lookup_flags: ResourceLookupFlags | null): GLib.Bytes;
+        function resources_lookup_data(path: string, lookup_flags: ResourceLookupFlags): GLib.Bytes;
         /**
          * Looks for a file at the specified `path` in the set of
          * globally registered resources and returns a {@link Gio.InputStream}
@@ -5246,7 +5243,7 @@ declare module 'gi://Gio?version=2.0' {
          * @returns {@link Gio.InputStream} or `NULL` on error
          * @since 2.32
          */
-        function resources_open_stream(path: string, lookup_flags: ResourceLookupFlags | null): InputStream;
+        function resources_open_stream(path: string, lookup_flags: ResourceLookupFlags): InputStream;
         /**
          * Registers the resource with the process-global set of resources.
          *
@@ -7935,8 +7932,8 @@ declare module 'gi://Gio?version=2.0' {
             add_main_option(
                 long_name: string,
                 short_name: number,
-                flags: GLib.OptionFlags | null,
-                arg: GLib.OptionArg | null,
+                flags: GLib.OptionFlags,
+                arg: GLib.OptionArg,
                 description: string,
                 arg_description?: string | null,
             ): void;
@@ -8388,7 +8385,7 @@ declare module 'gi://Gio?version=2.0' {
              * See {@link Gio.ApplicationFlags}.
              * @param flags the flags for `application`
              */
-            set_flags(flags: ApplicationFlags | null): void;
+            set_flags(flags: ApplicationFlags): void;
             /**
              * Sets the current inactivity timeout for the application.
              *
@@ -9092,7 +9089,7 @@ declare module 'gi://Gio?version=2.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -9133,7 +9130,7 @@ declare module 'gi://Gio?version=2.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -10346,7 +10343,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
              * @returns `true` if successful. If an error     has occurred, this function will return `false` and set `error`     appropriately if present.
              */
-            seek(offset: bigint | number, type: GLib.SeekType | null, cancellable?: Cancellable | null): boolean;
+            seek(offset: bigint | number, type: GLib.SeekType, cancellable?: Cancellable | null): boolean;
             /**
              * Tells the current position within the stream.
              * @returns the (positive or zero) offset from the beginning of the buffer, zero if the target is not seekable.
@@ -10463,7 +10460,7 @@ declare module 'gi://Gio?version=2.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -10504,7 +10501,7 @@ declare module 'gi://Gio?version=2.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -11029,7 +11026,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
              * @returns `true` if successful. If an error     has occurred, this function will return `false` and set `error`     appropriately if present.
              */
-            seek(offset: bigint | number, type: GLib.SeekType | null, cancellable?: Cancellable | null): boolean;
+            seek(offset: bigint | number, type: GLib.SeekType, cancellable?: Cancellable | null): boolean;
             /**
              * Tells the current position within the stream.
              * @returns the (positive or zero) offset from the beginning of the buffer, zero if the target is not seekable.
@@ -11146,7 +11143,7 @@ declare module 'gi://Gio?version=2.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -11187,7 +11184,7 @@ declare module 'gi://Gio?version=2.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -11811,7 +11808,7 @@ declare module 'gi://Gio?version=2.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -11852,7 +11849,7 @@ declare module 'gi://Gio?version=2.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -12780,7 +12777,7 @@ declare module 'gi://Gio?version=2.0' {
             convert(
                 inbuf: Uint8Array | string,
                 outbuf: Uint8Array | string,
-                flags: ConverterFlags | null,
+                flags: ConverterFlags,
             ): [ConverterResult, number, number];
             /**
              * Applies `converter` to the data in `bytes`.
@@ -13024,7 +13021,7 @@ declare module 'gi://Gio?version=2.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -13065,7 +13062,7 @@ declare module 'gi://Gio?version=2.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -14874,11 +14871,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
              * @returns a `gssize` containing the size of the data spliced, or     -1 if an error occurred. Note that if the number of bytes     spliced is greater than `G_MAXSSIZE`, then that will be     returned, and there is no way to determine the actual number     of bytes spliced.
              */
-            splice(
-                source: InputStream,
-                flags: OutputStreamSpliceFlags | null,
-                cancellable?: Cancellable | null,
-            ): number;
+            splice(source: InputStream, flags: OutputStreamSpliceFlags, cancellable?: Cancellable | null): number;
             /**
              * Splices a stream asynchronously.
              * When the operation is finished `callback` will be called.
@@ -14894,7 +14887,7 @@ declare module 'gi://Gio?version=2.0' {
              */
             splice_async(
                 source: InputStream,
-                flags: OutputStreamSpliceFlags | null,
+                flags: OutputStreamSpliceFlags,
                 io_priority: number,
                 cancellable?: Cancellable | null,
             ): globalThis.Promise<number>;
@@ -14914,7 +14907,7 @@ declare module 'gi://Gio?version=2.0' {
              */
             splice_async(
                 source: InputStream,
-                flags: OutputStreamSpliceFlags | null,
+                flags: OutputStreamSpliceFlags,
                 io_priority: number,
                 cancellable: Cancellable | null,
                 callback: AsyncReadyCallback<this> | null,
@@ -14935,7 +14928,7 @@ declare module 'gi://Gio?version=2.0' {
              */
             splice_async(
                 source: InputStream,
-                flags: OutputStreamSpliceFlags | null,
+                flags: OutputStreamSpliceFlags,
                 io_priority: number,
                 cancellable?: Cancellable | null,
                 callback?: AsyncReadyCallback<this> | null,
@@ -16016,7 +16009,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param native_type The type of native credentials to set.
              * @param _native A pointer to native credentials.
              */
-            set_native(native_type: CredentialsType | null, _native: any): void;
+            set_native(native_type: CredentialsType, _native: any): void;
             /**
              * Tries to set the UNIX user identifier on `credentials`. This method
              * is only available on UNIX platforms.
@@ -16687,7 +16680,7 @@ declare module 'gi://Gio?version=2.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -16728,7 +16721,7 @@ declare module 'gi://Gio?version=2.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -17709,7 +17702,7 @@ declare module 'gi://Gio?version=2.0' {
                 method_name: string,
                 parameters: GLib.Variant | null,
                 reply_type: GLib.VariantType<T> | null,
-                flags: DBusCallFlags | null,
+                flags: DBusCallFlags,
                 timeout_msec: number,
                 cancellable?: Cancellable | null,
             ): globalThis.Promise<GLib.Variant<T>>;
@@ -17779,7 +17772,7 @@ declare module 'gi://Gio?version=2.0' {
                 method_name: string,
                 parameters: GLib.Variant | null,
                 reply_type: GLib.VariantType<T> | null,
-                flags: DBusCallFlags | null,
+                flags: DBusCallFlags,
                 timeout_msec: number,
                 cancellable: Cancellable | null,
                 callback: AsyncReadyCallback<this> | null,
@@ -17850,7 +17843,7 @@ declare module 'gi://Gio?version=2.0' {
                 method_name: string,
                 parameters: GLib.Variant | null,
                 reply_type: GLib.VariantType<T> | null,
-                flags: DBusCallFlags | null,
+                flags: DBusCallFlags,
                 timeout_msec: number,
                 cancellable?: Cancellable | null,
                 callback?: AsyncReadyCallback<this> | null,
@@ -17918,7 +17911,7 @@ declare module 'gi://Gio?version=2.0' {
                 method_name: string,
                 parameters: GLib.Variant | null,
                 reply_type: GLib.VariantType | null,
-                flags: DBusCallFlags | null,
+                flags: DBusCallFlags,
                 timeout_msec: number,
                 cancellable?: Cancellable | null,
             ): GLib.Variant;
@@ -17956,7 +17949,7 @@ declare module 'gi://Gio?version=2.0' {
                 method_name: string,
                 parameters: GLib.Variant | null,
                 reply_type: GLib.VariantType | null,
-                flags: DBusCallFlags | null,
+                flags: DBusCallFlags,
                 timeout_msec: number,
                 fd_list?: UnixFDList | null,
                 cancellable?: Cancellable | null,
@@ -17996,7 +17989,7 @@ declare module 'gi://Gio?version=2.0' {
                 method_name: string,
                 parameters: GLib.Variant | null,
                 reply_type: GLib.VariantType | null,
-                flags: DBusCallFlags | null,
+                flags: DBusCallFlags,
                 timeout_msec: number,
                 fd_list: UnixFDList | null,
                 cancellable: Cancellable | null,
@@ -18037,7 +18030,7 @@ declare module 'gi://Gio?version=2.0' {
                 method_name: string,
                 parameters: GLib.Variant | null,
                 reply_type: GLib.VariantType | null,
-                flags: DBusCallFlags | null,
+                flags: DBusCallFlags,
                 timeout_msec: number,
                 fd_list?: UnixFDList | null,
                 cancellable?: Cancellable | null,
@@ -18085,7 +18078,7 @@ declare module 'gi://Gio?version=2.0' {
                 method_name: string,
                 parameters: GLib.Variant | null,
                 reply_type: GLib.VariantType | null,
-                flags: DBusCallFlags | null,
+                flags: DBusCallFlags,
                 timeout_msec: number,
                 fd_list?: UnixFDList | null,
                 cancellable?: Cancellable | null,
@@ -18550,7 +18543,7 @@ declare module 'gi://Gio?version=2.0' {
             register_subtree(
                 object_path: string,
                 vtable: DBusSubtreeVTable,
-                flags: DBusSubtreeFlags | null,
+                flags: DBusSubtreeFlags,
                 user_data?: any | null,
             ): number;
             /**
@@ -18592,7 +18585,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param flags flags affecting how the message is sent
              * @returns `true` if the message was well-formed and queued for     transmission, `false` if `error` is set
              */
-            send_message(message: DBusMessage, flags: DBusSendMessageFlags | null): [boolean, number];
+            send_message(message: DBusMessage, flags: DBusSendMessageFlags): [boolean, number];
             /**
              * Asynchronously sends `message` to the peer represented by `connection`.
              *
@@ -18631,7 +18624,7 @@ declare module 'gi://Gio?version=2.0' {
              */
             send_message_with_reply(
                 message: DBusMessage,
-                flags: DBusSendMessageFlags | null,
+                flags: DBusSendMessageFlags,
                 timeout_msec: number,
                 cancellable?: Cancellable | null,
             ): [globalThis.Promise<DBusMessage>, number];
@@ -18674,7 +18667,7 @@ declare module 'gi://Gio?version=2.0' {
              */
             send_message_with_reply(
                 message: DBusMessage,
-                flags: DBusSendMessageFlags | null,
+                flags: DBusSendMessageFlags,
                 timeout_msec: number,
                 cancellable: Cancellable | null,
                 callback: AsyncReadyCallback<this> | null,
@@ -18718,7 +18711,7 @@ declare module 'gi://Gio?version=2.0' {
              */
             send_message_with_reply(
                 message: DBusMessage,
-                flags: DBusSendMessageFlags | null,
+                flags: DBusSendMessageFlags,
                 timeout_msec: number,
                 cancellable?: Cancellable | null,
                 callback?: AsyncReadyCallback<this> | null,
@@ -18779,7 +18772,7 @@ declare module 'gi://Gio?version=2.0' {
              */
             send_message_with_reply_sync(
                 message: DBusMessage,
-                flags: DBusSendMessageFlags | null,
+                flags: DBusSendMessageFlags,
                 timeout_msec: number,
                 cancellable?: Cancellable | null,
             ): [DBusMessage, number];
@@ -18863,7 +18856,7 @@ declare module 'gi://Gio?version=2.0' {
                 member: string | null,
                 object_path: string | null,
                 arg0: string | null,
-                flags: DBusSignalFlags | null,
+                flags: DBusSignalFlags,
                 callback: DBusSignalCallback,
                 user_data_free_func?: GLib.DestroyNotify | null,
             ): number;
@@ -18930,7 +18923,7 @@ declare module 'gi://Gio?version=2.0' {
              */
             watch_name(
                 name: string,
-                flags: BusNameWatcherFlags | null,
+                flags: BusNameWatcherFlags,
                 name_appeared_closure?: GObject.Closure | null,
                 name_vanished_closure?: GObject.Closure | null,
             ): number;
@@ -18946,7 +18939,7 @@ declare module 'gi://Gio?version=2.0' {
              */
             own_name(
                 name: string,
-                flags: BusNameOwnerFlags | null,
+                flags: BusNameOwnerFlags,
                 name_acquired_closure?: GObject.Closure | null,
                 name_lost_closure?: GObject.Closure | null,
             ): number;
@@ -19285,7 +19278,7 @@ declare module 'gi://Gio?version=2.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -19326,7 +19319,7 @@ declare module 'gi://Gio?version=2.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -19920,7 +19913,7 @@ declare module 'gi://Gio?version=2.0' {
              * Sets flags describing what the behavior of `skeleton` should be.
              * @param flags Flags from the {@link Gio.DBusInterfaceSkeletonFlags} enumeration.
              */
-            set_flags(flags: DBusInterfaceSkeletonFlags | null): void;
+            set_flags(flags: DBusInterfaceSkeletonFlags): void;
             /**
              * Stops exporting `interface_` on all connections it is exported on.
              *
@@ -20005,7 +19998,7 @@ declare module 'gi://Gio?version=2.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -20046,7 +20039,7 @@ declare module 'gi://Gio?version=2.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -20631,7 +20624,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param header_field A 8-bit unsigned integer (typically a value from the {@link Gio.DBusMessageHeaderField} enumeration)
              * @returns A {@link GLib.Variant} with the value if the header was found, `null` otherwise. Do not free, it is owned by `message`.
              */
-            get_header(header_field: DBusMessageHeaderField | null): GLib.Variant | null;
+            get_header(header_field: DBusMessageHeaderField): GLib.Variant | null;
             /**
              * Gets an array of all header fields on `message` that are set.
              * @returns An array of header fields terminated by {@link Gio.DBusMessageHeaderField.INVALID}.  Each element is a `guchar`. Free with `g_free()`.
@@ -20770,7 +20763,7 @@ declare module 'gi://Gio?version=2.0' {
              * Sets the byte order of `message`.
              * @param byte_order The byte order.
              */
-            set_byte_order(byte_order: DBusMessageByteOrder | null): void;
+            set_byte_order(byte_order: DBusMessageByteOrder): void;
             /**
              * Convenience setter for the {@link Gio.DBusMessageHeaderField.DESTINATION} header field.
              * @param value The value to set.
@@ -20785,7 +20778,7 @@ declare module 'gi://Gio?version=2.0' {
              * Sets the flags to set on `message`.
              * @param flags Flags for `message` that are set (typically values from the {@link Gio.DBusMessageFlags} enumeration bitwise ORed together).
              */
-            set_flags(flags: DBusMessageFlags | null): void;
+            set_flags(flags: DBusMessageFlags): void;
             /**
              * Sets a header field on `message`.
              *
@@ -20793,7 +20786,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param header_field A 8-bit unsigned integer (typically a value from the {@link Gio.DBusMessageHeaderField} enumeration)
              * @param value A {@link GLib.Variant} to set the header field or `null` to clear the header field.
              */
-            set_header(header_field: DBusMessageHeaderField | null, value?: GLib.Variant | null): void;
+            set_header(header_field: DBusMessageHeaderField, value?: GLib.Variant | null): void;
             /**
              * Convenience setter for the {@link Gio.DBusMessageHeaderField.INTERFACE} header field.
              * @param value The value to set.
@@ -20808,7 +20801,7 @@ declare module 'gi://Gio?version=2.0' {
              * Sets `message` to be of `type`.
              * @param type A 8-bit unsigned integer (typically a value from the {@link Gio.DBusMessageType} enumeration).
              */
-            set_message_type(type: DBusMessageType | null): void;
+            set_message_type(type: DBusMessageType): void;
             /**
              * Convenience setter for the {@link Gio.DBusMessageHeaderField.NUM_UNIX_FDS} header field.
              * @param value The value to set.
@@ -20863,7 +20856,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param capabilities A {@link Gio.DBusCapabilityFlags} describing what protocol features are supported.
              * @returns A pointer to a valid binary D-Bus message of `out_size` bytes generated by `message` or `null` if `error` is set. Free with `g_free()`.
              */
-            to_blob(capabilities: DBusCapabilityFlags | null): Uint8Array;
+            to_blob(capabilities: DBusCapabilityFlags): Uint8Array;
             /**
              * If `message` is not of type {@link Gio.DBusMessageType.ERROR} does
              * nothing and returns `false`.
@@ -21970,7 +21963,7 @@ declare module 'gi://Gio?version=2.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -22011,7 +22004,7 @@ declare module 'gi://Gio?version=2.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -22651,7 +22644,7 @@ declare module 'gi://Gio?version=2.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -22692,7 +22685,7 @@ declare module 'gi://Gio?version=2.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -23250,7 +23243,7 @@ declare module 'gi://Gio?version=2.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -23291,7 +23284,7 @@ declare module 'gi://Gio?version=2.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -23889,7 +23882,7 @@ declare module 'gi://Gio?version=2.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -23930,7 +23923,7 @@ declare module 'gi://Gio?version=2.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -24939,7 +24932,7 @@ declare module 'gi://Gio?version=2.0' {
             call(
                 method_name: string,
                 parameters: GLib.Variant | null,
-                flags: DBusCallFlags | null,
+                flags: DBusCallFlags,
                 timeout_msec: number,
                 cancellable?: Cancellable | null,
             ): globalThis.Promise<GLib.Variant>;
@@ -24998,7 +24991,7 @@ declare module 'gi://Gio?version=2.0' {
             call(
                 method_name: string,
                 parameters: GLib.Variant | null,
-                flags: DBusCallFlags | null,
+                flags: DBusCallFlags,
                 timeout_msec: number,
                 cancellable: Cancellable | null,
                 callback: AsyncReadyCallback<this> | null,
@@ -25058,7 +25051,7 @@ declare module 'gi://Gio?version=2.0' {
             call(
                 method_name: string,
                 parameters: GLib.Variant | null,
-                flags: DBusCallFlags | null,
+                flags: DBusCallFlags,
                 timeout_msec: number,
                 cancellable?: Cancellable | null,
                 callback?: AsyncReadyCallback<this> | null,
@@ -25116,7 +25109,7 @@ declare module 'gi://Gio?version=2.0' {
             call_sync(
                 method_name: string,
                 parameters: GLib.Variant | null,
-                flags: DBusCallFlags | null,
+                flags: DBusCallFlags,
                 timeout_msec: number,
                 cancellable?: Cancellable | null,
             ): GLib.Variant;
@@ -25134,7 +25127,7 @@ declare module 'gi://Gio?version=2.0' {
             call_with_unix_fd_list(
                 method_name: string,
                 parameters: GLib.Variant | null,
-                flags: DBusCallFlags | null,
+                flags: DBusCallFlags,
                 timeout_msec: number,
                 fd_list?: UnixFDList | null,
                 cancellable?: Cancellable | null,
@@ -25154,7 +25147,7 @@ declare module 'gi://Gio?version=2.0' {
             call_with_unix_fd_list(
                 method_name: string,
                 parameters: GLib.Variant | null,
-                flags: DBusCallFlags | null,
+                flags: DBusCallFlags,
                 timeout_msec: number,
                 fd_list: UnixFDList | null,
                 cancellable: Cancellable | null,
@@ -25175,7 +25168,7 @@ declare module 'gi://Gio?version=2.0' {
             call_with_unix_fd_list(
                 method_name: string,
                 parameters: GLib.Variant | null,
-                flags: DBusCallFlags | null,
+                flags: DBusCallFlags,
                 timeout_msec: number,
                 fd_list?: UnixFDList | null,
                 cancellable?: Cancellable | null,
@@ -25202,7 +25195,7 @@ declare module 'gi://Gio?version=2.0' {
             call_with_unix_fd_list_sync(
                 method_name: string,
                 parameters: GLib.Variant | null,
-                flags: DBusCallFlags | null,
+                flags: DBusCallFlags,
                 timeout_msec: number,
                 fd_list?: UnixFDList | null,
                 cancellable?: Cancellable | null,
@@ -25710,7 +25703,7 @@ declare module 'gi://Gio?version=2.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -25751,7 +25744,7 @@ declare module 'gi://Gio?version=2.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -26457,7 +26450,7 @@ declare module 'gi://Gio?version=2.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -26498,7 +26491,7 @@ declare module 'gi://Gio?version=2.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -27359,7 +27352,7 @@ declare module 'gi://Gio?version=2.0' {
              * reads from the `stream` will be read in the given `order`.
              * @param order a {@link Gio.DataStreamByteOrder} to set.
              */
-            set_byte_order(order: DataStreamByteOrder | null): void;
+            set_byte_order(order: DataStreamByteOrder): void;
             /**
              * Sets the newline type for the `stream`.
              *
@@ -27368,7 +27361,7 @@ declare module 'gi://Gio?version=2.0' {
              * "CR LF", and this might block if there is no more data available.
              * @param type the type of new line return as {@link Gio.DataStreamNewlineType}.
              */
-            set_newline_type(type: DataStreamNewlineType | null): void;
+            set_newline_type(type: DataStreamNewlineType): void;
             /**
              * Tests if the stream supports the {@link Gio.SeekableIface}.
              * @returns `true` if `seekable` can be seeked. `false` otherwise.
@@ -27400,7 +27393,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
              * @returns `true` if successful. If an error     has occurred, this function will return `false` and set `error`     appropriately if present.
              */
-            seek(offset: bigint | number, type: GLib.SeekType | null, cancellable?: Cancellable | null): boolean;
+            seek(offset: bigint | number, type: GLib.SeekType, cancellable?: Cancellable | null): boolean;
             /**
              * Tells the current position within the stream.
              * @returns the (positive or zero) offset from the beginning of the buffer, zero if the target is not seekable.
@@ -27517,7 +27510,7 @@ declare module 'gi://Gio?version=2.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -27558,7 +27551,7 @@ declare module 'gi://Gio?version=2.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -28070,7 +28063,7 @@ declare module 'gi://Gio?version=2.0' {
              * Sets the byte order of the data output stream to `order`.
              * @param order a %GDataStreamByteOrder.
              */
-            set_byte_order(order: DataStreamByteOrder | null): void;
+            set_byte_order(order: DataStreamByteOrder): void;
             /**
              * Tests if the stream supports the {@link Gio.SeekableIface}.
              * @returns `true` if `seekable` can be seeked. `false` otherwise.
@@ -28102,7 +28095,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
              * @returns `true` if successful. If an error     has occurred, this function will return `false` and set `error`     appropriately if present.
              */
-            seek(offset: bigint | number, type: GLib.SeekType | null, cancellable?: Cancellable | null): boolean;
+            seek(offset: bigint | number, type: GLib.SeekType, cancellable?: Cancellable | null): boolean;
             /**
              * Tells the current position within the stream.
              * @returns the (positive or zero) offset from the beginning of the buffer, zero if the target is not seekable.
@@ -28219,7 +28212,7 @@ declare module 'gi://Gio?version=2.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -28260,7 +28253,7 @@ declare module 'gi://Gio?version=2.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -29020,7 +29013,7 @@ declare module 'gi://Gio?version=2.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -29061,7 +29054,7 @@ declare module 'gi://Gio?version=2.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -29631,7 +29624,7 @@ declare module 'gi://Gio?version=2.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -29672,7 +29665,7 @@ declare module 'gi://Gio?version=2.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -30241,7 +30234,7 @@ declare module 'gi://Gio?version=2.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -30282,7 +30275,7 @@ declare module 'gi://Gio?version=2.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -31615,7 +31608,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
              * @returns `true` if successful. If an error     has occurred, this function will return `false` and set `error`     appropriately if present.
              */
-            seek(offset: bigint | number, type: GLib.SeekType | null, cancellable?: Cancellable | null): boolean;
+            seek(offset: bigint | number, type: GLib.SeekType, cancellable?: Cancellable | null): boolean;
             /**
              * Tells the current position within the stream.
              * @returns the (positive or zero) offset from the beginning of the buffer, zero if the target is not seekable.
@@ -31680,7 +31673,7 @@ declare module 'gi://Gio?version=2.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -31721,7 +31714,7 @@ declare module 'gi://Gio?version=2.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -32346,7 +32339,7 @@ declare module 'gi://Gio?version=2.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -32387,7 +32380,7 @@ declare module 'gi://Gio?version=2.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -33193,7 +33186,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param type a {@link Gio.FileAttributeType}
              * @param value_p pointer to the value
              */
-            set_attribute(attribute: string, type: FileAttributeType | null, value_p: any): void;
+            set_attribute(attribute: string, type: FileAttributeType, value_p: any): void;
             /**
              * Sets the `attribute` to contain the given `attr_value`,
              * if possible.
@@ -33255,7 +33248,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param status a {@link Gio.FileAttributeStatus}
              * @returns `true` if the status was changed, `false` if the key was not set.
              */
-            set_attribute_status(attribute: string, status: FileAttributeStatus | null): boolean;
+            set_attribute_status(attribute: string, status: FileAttributeStatus): boolean;
             /**
              * Sets the `attribute` to contain the given `attr_value`,
              * if possible.
@@ -33318,7 +33311,7 @@ declare module 'gi://Gio?version=2.0' {
              * See `G_FILE_ATTRIBUTE_STANDARD_TYPE`.
              * @param type a {@link Gio.FileType}.
              */
-            set_file_type(type: FileType | null): void;
+            set_file_type(type: FileType): void;
             /**
              * Sets the icon for a given {@link Gio.FileInfo}.
              * See `G_FILE_ATTRIBUTE_STANDARD_ICON`.
@@ -33630,7 +33623,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
              * @returns `true` if successful. If an error     has occurred, this function will return `false` and set `error`     appropriately if present.
              */
-            seek(offset: bigint | number, type: GLib.SeekType | null, cancellable?: Cancellable | null): boolean;
+            seek(offset: bigint | number, type: GLib.SeekType, cancellable?: Cancellable | null): boolean;
             /**
              * Tells the current position within the stream.
              * @returns the (positive or zero) offset from the beginning of the buffer, zero if the target is not seekable.
@@ -33716,7 +33709,7 @@ declare module 'gi://Gio?version=2.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -33757,7 +33750,7 @@ declare module 'gi://Gio?version=2.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -34279,7 +34272,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param other_file a {@link Gio.File}, or `null`.
              * @param event_type a set of {@link Gio.FileMonitorEvent} flags.
              */
-            emit_event(child: File, other_file: File | null, event_type: FileMonitorEvent | null): void;
+            emit_event(child: File, other_file: File | null, event_type: FileMonitorEvent): void;
             /**
              * Returns whether the monitor is canceled.
              * @returns `true` if monitor is canceled. `false` otherwise.
@@ -34566,7 +34559,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
              * @returns `true` if successful. If an error     has occurred, this function will return `false` and set `error`     appropriately if present.
              */
-            seek(offset: bigint | number, type: GLib.SeekType | null, cancellable?: Cancellable | null): boolean;
+            seek(offset: bigint | number, type: GLib.SeekType, cancellable?: Cancellable | null): boolean;
             /**
              * Tells the current position within the stream.
              * @returns the (positive or zero) offset from the beginning of the buffer, zero if the target is not seekable.
@@ -34631,7 +34624,7 @@ declare module 'gi://Gio?version=2.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -34672,7 +34665,7 @@ declare module 'gi://Gio?version=2.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -35534,7 +35527,7 @@ declare module 'gi://Gio?version=2.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -35575,7 +35568,7 @@ declare module 'gi://Gio?version=2.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -36289,7 +36282,7 @@ declare module 'gi://Gio?version=2.0' {
              */
             splice_async(
                 stream2: IOStream,
-                flags: IOStreamSpliceFlags | null,
+                flags: IOStreamSpliceFlags,
                 io_priority: number,
                 cancellable?: Cancellable | null,
                 callback?: AsyncReadyCallback<this> | null,
@@ -36943,7 +36936,7 @@ declare module 'gi://Gio?version=2.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -36984,7 +36977,7 @@ declare module 'gi://Gio?version=2.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -37589,7 +37582,7 @@ declare module 'gi://Gio?version=2.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -37630,7 +37623,7 @@ declare module 'gi://Gio?version=2.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -39200,7 +39193,7 @@ declare module 'gi://Gio?version=2.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -39241,7 +39234,7 @@ declare module 'gi://Gio?version=2.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -39837,7 +39830,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
              * @returns `true` if successful. If an error     has occurred, this function will return `false` and set `error`     appropriately if present.
              */
-            seek(offset: bigint | number, type: GLib.SeekType | null, cancellable?: Cancellable | null): boolean;
+            seek(offset: bigint | number, type: GLib.SeekType, cancellable?: Cancellable | null): boolean;
             /**
              * Tells the current position within the stream.
              * @returns the (positive or zero) offset from the beginning of the buffer, zero if the target is not seekable.
@@ -40733,7 +40726,7 @@ declare module 'gi://Gio?version=2.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -40774,7 +40767,7 @@ declare module 'gi://Gio?version=2.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -41502,7 +41495,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
              * @returns `true` if successful. If an error     has occurred, this function will return `false` and set `error`     appropriately if present.
              */
-            seek(offset: bigint | number, type: GLib.SeekType | null, cancellable?: Cancellable | null): boolean;
+            seek(offset: bigint | number, type: GLib.SeekType, cancellable?: Cancellable | null): boolean;
             /**
              * Tells the current position within the stream.
              * @returns the (positive or zero) offset from the beginning of the buffer, zero if the target is not seekable.
@@ -41772,11 +41765,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
              * @returns a `gssize` containing the size of the data spliced, or     -1 if an error occurred. Note that if the number of bytes     spliced is greater than `G_MAXSSIZE`, then that will be     returned, and there is no way to determine the actual number     of bytes spliced.
              */
-            splice(
-                source: InputStream,
-                flags: OutputStreamSpliceFlags | null,
-                cancellable?: Cancellable | null,
-            ): number;
+            splice(source: InputStream, flags: OutputStreamSpliceFlags, cancellable?: Cancellable | null): number;
             /**
              * Splices a stream asynchronously.
              * When the operation is finished `callback` will be called.
@@ -41792,7 +41781,7 @@ declare module 'gi://Gio?version=2.0' {
              */
             splice_async(
                 source: InputStream,
-                flags: OutputStreamSpliceFlags | null,
+                flags: OutputStreamSpliceFlags,
                 io_priority: number,
                 cancellable?: Cancellable | null,
             ): globalThis.Promise<number>;
@@ -41812,7 +41801,7 @@ declare module 'gi://Gio?version=2.0' {
              */
             splice_async(
                 source: InputStream,
-                flags: OutputStreamSpliceFlags | null,
+                flags: OutputStreamSpliceFlags,
                 io_priority: number,
                 cancellable: Cancellable | null,
                 callback: AsyncReadyCallback<this> | null,
@@ -41833,7 +41822,7 @@ declare module 'gi://Gio?version=2.0' {
              */
             splice_async(
                 source: InputStream,
-                flags: OutputStreamSpliceFlags | null,
+                flags: OutputStreamSpliceFlags,
                 io_priority: number,
                 cancellable?: Cancellable | null,
                 callback?: AsyncReadyCallback<this> | null,
@@ -42826,7 +42815,7 @@ declare module 'gi://Gio?version=2.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -42867,7 +42856,7 @@ declare module 'gi://Gio?version=2.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -44629,7 +44618,7 @@ declare module 'gi://Gio?version=2.0' {
              * Emits the {@link Gio.MountOperation.SignalSignatures.reply | Gio.MountOperation::reply} signal.
              * @param result a {@link Gio.MountOperationResult}
              */
-            reply(result: MountOperationResult | null): void;
+            reply(result: MountOperationResult): void;
             /**
              * Sets the mount operation to use an anonymous user if `anonymous` is `true`.
              * @param anonymous boolean value.
@@ -44664,7 +44653,7 @@ declare module 'gi://Gio?version=2.0' {
              * Sets the state of saving passwords for the mount operation.
              * @param save a set of {@link Gio.PasswordSave} flags.
              */
-            set_password_save(save: PasswordSave | null): void;
+            set_password_save(save: PasswordSave): void;
             /**
              * Sets the mount operation's PIM to `pim`.
              * @param pim an unsigned integer.
@@ -44836,7 +44825,7 @@ declare module 'gi://Gio?version=2.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -44877,7 +44866,7 @@ declare module 'gi://Gio?version=2.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -45547,7 +45536,7 @@ declare module 'gi://Gio?version=2.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -45588,7 +45577,7 @@ declare module 'gi://Gio?version=2.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -46181,7 +46170,7 @@ declare module 'gi://Gio?version=2.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -46222,7 +46211,7 @@ declare module 'gi://Gio?version=2.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -46767,7 +46756,7 @@ declare module 'gi://Gio?version=2.0' {
              * {@link Gio.NotificationPriority} for possible values.
              * @param priority a {@link Gio.NotificationPriority}
              */
-            set_priority(priority: NotificationPriority | null): void;
+            set_priority(priority: NotificationPriority): void;
             /**
              * Sets the title of `notification` to `title`.
              * @param title the new title for `notification`
@@ -47318,11 +47307,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
              * @returns a `gssize` containing the size of the data spliced, or     -1 if an error occurred. Note that if the number of bytes     spliced is greater than `G_MAXSSIZE`, then that will be     returned, and there is no way to determine the actual number     of bytes spliced.
              */
-            splice(
-                source: InputStream,
-                flags: OutputStreamSpliceFlags | null,
-                cancellable?: Cancellable | null,
-            ): number;
+            splice(source: InputStream, flags: OutputStreamSpliceFlags, cancellable?: Cancellable | null): number;
             /**
              * Splices a stream asynchronously.
              * When the operation is finished `callback` will be called.
@@ -47338,7 +47323,7 @@ declare module 'gi://Gio?version=2.0' {
              */
             splice_async(
                 source: InputStream,
-                flags: OutputStreamSpliceFlags | null,
+                flags: OutputStreamSpliceFlags,
                 io_priority: number,
                 cancellable?: Cancellable | null,
             ): globalThis.Promise<number>;
@@ -47358,7 +47343,7 @@ declare module 'gi://Gio?version=2.0' {
              */
             splice_async(
                 source: InputStream,
-                flags: OutputStreamSpliceFlags | null,
+                flags: OutputStreamSpliceFlags,
                 io_priority: number,
                 cancellable: Cancellable | null,
                 callback: AsyncReadyCallback<this> | null,
@@ -47379,7 +47364,7 @@ declare module 'gi://Gio?version=2.0' {
              */
             splice_async(
                 source: InputStream,
-                flags: OutputStreamSpliceFlags | null,
+                flags: OutputStreamSpliceFlags,
                 io_priority: number,
                 cancellable?: Cancellable | null,
                 callback?: AsyncReadyCallback<this> | null,
@@ -48876,7 +48861,7 @@ declare module 'gi://Gio?version=2.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -48917,7 +48902,7 @@ declare module 'gi://Gio?version=2.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -49525,7 +49510,7 @@ declare module 'gi://Gio?version=2.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -49566,7 +49551,7 @@ declare module 'gi://Gio?version=2.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -50527,7 +50512,7 @@ declare module 'gi://Gio?version=2.0' {
              */
             lookup_by_name_with_flags(
                 hostname: string,
-                flags: ResolverNameLookupFlags | null,
+                flags: ResolverNameLookupFlags,
                 cancellable?: Cancellable | null,
             ): InetAddress[];
             /**
@@ -50541,7 +50526,7 @@ declare module 'gi://Gio?version=2.0' {
              */
             lookup_by_name_with_flags_async(
                 hostname: string,
-                flags: ResolverNameLookupFlags | null,
+                flags: ResolverNameLookupFlags,
                 cancellable?: Cancellable | null,
             ): globalThis.Promise<InetAddress[]>;
             /**
@@ -50556,7 +50541,7 @@ declare module 'gi://Gio?version=2.0' {
              */
             lookup_by_name_with_flags_async(
                 hostname: string,
-                flags: ResolverNameLookupFlags | null,
+                flags: ResolverNameLookupFlags,
                 cancellable: Cancellable | null,
                 callback: AsyncReadyCallback<this> | null,
             ): void;
@@ -50572,7 +50557,7 @@ declare module 'gi://Gio?version=2.0' {
              */
             lookup_by_name_with_flags_async(
                 hostname: string,
-                flags: ResolverNameLookupFlags | null,
+                flags: ResolverNameLookupFlags,
                 cancellable?: Cancellable | null,
                 callback?: AsyncReadyCallback<this> | null,
             ): globalThis.Promise<InetAddress[]> | void;
@@ -50605,7 +50590,7 @@ declare module 'gi://Gio?version=2.0' {
              */
             lookup_records(
                 rrname: string,
-                record_type: ResolverRecordType | null,
+                record_type: ResolverRecordType,
                 cancellable?: Cancellable | null,
             ): GLib.Variant[];
             /**
@@ -50619,7 +50604,7 @@ declare module 'gi://Gio?version=2.0' {
              */
             lookup_records_async(
                 rrname: string,
-                record_type: ResolverRecordType | null,
+                record_type: ResolverRecordType,
                 cancellable?: Cancellable | null,
             ): globalThis.Promise<GLib.Variant[]>;
             /**
@@ -50634,7 +50619,7 @@ declare module 'gi://Gio?version=2.0' {
              */
             lookup_records_async(
                 rrname: string,
-                record_type: ResolverRecordType | null,
+                record_type: ResolverRecordType,
                 cancellable: Cancellable | null,
                 callback: AsyncReadyCallback<this> | null,
             ): void;
@@ -50650,7 +50635,7 @@ declare module 'gi://Gio?version=2.0' {
              */
             lookup_records_async(
                 rrname: string,
-                record_type: ResolverRecordType | null,
+                record_type: ResolverRecordType,
                 cancellable?: Cancellable | null,
                 callback?: AsyncReadyCallback<this> | null,
             ): globalThis.Promise<GLib.Variant[]> | void;
@@ -51735,7 +51720,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param property the name of the property to bind
              * @param flags flags for the binding
              */
-            bind(key: string, object: GObject.Object, property: string, flags: SettingsBindFlags | null): void;
+            bind(key: string, object: GObject.Object, property: string, flags: SettingsBindFlags): void;
             /**
              * Version of {@link Gio.Settings.bind_with_mapping} using closures instead of
              * callbacks for easier binding in other languages.
@@ -51750,7 +51735,7 @@ declare module 'gi://Gio?version=2.0' {
                 key: string,
                 object: GObject.Object,
                 property: string,
-                flags: SettingsBindFlags | null,
+                flags: SettingsBindFlags,
                 get_mapping?: GObject.Closure | null,
                 set_mapping?: GObject.Closure | null,
             ): void;
@@ -52997,7 +52982,7 @@ declare module 'gi://Gio?version=2.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -53038,7 +53023,7 @@ declare module 'gi://Gio?version=2.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -54078,7 +54063,7 @@ declare module 'gi://Gio?version=2.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -54119,7 +54104,7 @@ declare module 'gi://Gio?version=2.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -54915,7 +54900,7 @@ declare module 'gi://Gio?version=2.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -54956,7 +54941,7 @@ declare module 'gi://Gio?version=2.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -55862,7 +55847,7 @@ declare module 'gi://Gio?version=2.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -55903,7 +55888,7 @@ declare module 'gi://Gio?version=2.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -56655,7 +56640,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param condition a {@link GObject.IOCondition} mask to check
              * @returns the `GIOCondition` mask of the current state
              */
-            condition_check(condition: GLib.IOCondition | null): GLib.IOCondition;
+            condition_check(condition: GLib.IOCondition): GLib.IOCondition;
             /**
              * Waits for up to `timeout_us` microseconds for `condition` to become true
              * on `socket`. If the condition is met, `true` is returned.
@@ -56679,7 +56664,7 @@ declare module 'gi://Gio?version=2.0' {
              * @returns `true` if the condition was met, `false` otherwise
              */
             condition_timed_wait(
-                condition: GLib.IOCondition | null,
+                condition: GLib.IOCondition,
                 timeout_us: bigint | number,
                 cancellable?: Cancellable | null,
             ): boolean;
@@ -56698,7 +56683,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param cancellable a {@link Gio.Cancellable}, or `null`
              * @returns `true` if the condition was met, `false` otherwise
              */
-            condition_wait(condition: GLib.IOCondition | null, cancellable?: Cancellable | null): boolean;
+            condition_wait(condition: GLib.IOCondition, cancellable?: Cancellable | null): boolean;
             /**
              * @param args
              */
@@ -57553,7 +57538,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param cancellable a {@link Gio.Cancellable}
              * @returns a newly allocated {@link GLib.Source}
              */
-            create_source(condition: GLib.IOCondition | null, cancellable?: Cancellable | null): GLib.Source;
+            create_source(condition: GLib.IOCondition, cancellable?: Cancellable | null): GLib.Source;
             /**
              * Checks on the readiness of `datagram_based` to perform operations. The
              * operations specified in `condition` are checked for and masked against the
@@ -57879,7 +57864,7 @@ declare module 'gi://Gio?version=2.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -57920,7 +57905,7 @@ declare module 'gi://Gio?version=2.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -58507,7 +58492,7 @@ declare module 'gi://Gio?version=2.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -58548,7 +58533,7 @@ declare module 'gi://Gio?version=2.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -59812,7 +59797,7 @@ declare module 'gi://Gio?version=2.0' {
              * be an ipv6 mapped to ipv4 address.
              * @param family a {@link Gio.SocketFamily}
              */
-            set_family(family: SocketFamily | null): void;
+            set_family(family: SocketFamily): void;
             /**
              * Sets the local address of the socket client.
              * The sockets created by this object will bound to the
@@ -59833,7 +59818,7 @@ declare module 'gi://Gio?version=2.0' {
              * protocol for the socket family and type.
              * @param protocol a {@link Gio.SocketProtocol}
              */
-            set_protocol(protocol: SocketProtocol | null): void;
+            set_protocol(protocol: SocketProtocol): void;
             /**
              * Overrides the {@link Gio.ProxyResolver} used by `client`. You can call this if
              * you want to use specific proxies, rather than using the system
@@ -59854,7 +59839,7 @@ declare module 'gi://Gio?version=2.0' {
              * as GSocketClient is used for connection oriented services.
              * @param type a {@link Gio.SocketType}
              */
-            set_socket_type(type: SocketType | null): void;
+            set_socket_type(type: SocketType): void;
             /**
              * Sets the I/O timeout for sockets created by `client`. `timeout` is a
              * time in seconds, or 0 for no timeout (the default).
@@ -59896,7 +59881,7 @@ declare module 'gi://Gio?version=2.0' {
              * information.
              * @param flags the validation flags
              */
-            set_tls_validation_flags(flags: TlsCertificateFlags | null): void;
+            set_tls_validation_flags(flags: TlsCertificateFlags): void;
         }
 
         namespace SocketConnection {
@@ -60533,8 +60518,8 @@ declare module 'gi://Gio?version=2.0' {
              */
             add_address(
                 address: SocketAddress,
-                type: SocketType | null,
-                protocol: SocketProtocol | null,
+                type: SocketType,
+                protocol: SocketProtocol,
                 source_object?: GObject.Object | null,
             ): [boolean, SocketAddress | null];
             /**
@@ -61400,7 +61385,7 @@ declare module 'gi://Gio?version=2.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -61441,7 +61426,7 @@ declare module 'gi://Gio?version=2.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -61956,7 +61941,7 @@ declare module 'gi://Gio?version=2.0' {
              * `g_subprocess_launcher_take_stdout_fd()`.
              * @param flags {@link Gio.SubprocessFlags}
              */
-            set_flags(flags: SubprocessFlags | null): void;
+            set_flags(flags: SubprocessFlags): void;
             /**
              * Sets the file path to use as the stderr for spawned processes.
              *
@@ -63190,7 +63175,7 @@ declare module 'gi://Gio?version=2.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -63231,7 +63216,7 @@ declare module 'gi://Gio?version=2.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -64253,7 +64238,7 @@ declare module 'gi://Gio?version=2.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -64294,7 +64279,7 @@ declare module 'gi://Gio?version=2.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -65828,7 +65813,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param errors the problems with `peer_cert`
              * @returns `true` if one of the signal handlers has returned     `true` to accept `peer_cert`
              */
-            emit_accept_certificate(peer_cert: TlsCertificate, errors: TlsCertificateFlags | null): boolean;
+            emit_accept_certificate(peer_cert: TlsCertificate, errors: TlsCertificateFlags): boolean;
             /**
              * Gets `conn`'s certificate, as set by
              * `g_tls_connection_set_certificate()`.
@@ -65852,7 +65837,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param type {@link Gio.TlsChannelBindingType} type of data to fetch
              * @returns `true` on success, `false` otherwise
              */
-            get_channel_binding_data(type: TlsChannelBindingType | null): [boolean, Uint8Array | null];
+            get_channel_binding_data(type: TlsChannelBindingType): [boolean, Uint8Array | null];
             /**
              * Returns the name of the current TLS ciphersuite, or `null` if the
              * connection has not handshaked or has been closed. Beware that the TLS
@@ -66074,7 +66059,7 @@ declare module 'gi://Gio?version=2.0' {
              * rekey operations.
              * @param mode the rehandshaking mode
              */
-            set_rehandshake_mode(mode: TlsRehandshakeMode | null): void;
+            set_rehandshake_mode(mode: TlsRehandshakeMode): void;
             /**
              * Sets whether or not `conn` expects a proper TLS close notification
              * before the connection is closed. If this is `true` (the default),
@@ -66502,7 +66487,7 @@ declare module 'gi://Gio?version=2.0' {
             lookup_certificate_for_handle(
                 handle: string,
                 interaction: TlsInteraction | null,
-                flags: TlsDatabaseLookupFlags | null,
+                flags: TlsDatabaseLookupFlags,
                 cancellable?: Cancellable | null,
             ): TlsCertificate | null;
             /**
@@ -66516,7 +66501,7 @@ declare module 'gi://Gio?version=2.0' {
             lookup_certificate_for_handle_async(
                 handle: string,
                 interaction: TlsInteraction | null,
-                flags: TlsDatabaseLookupFlags | null,
+                flags: TlsDatabaseLookupFlags,
                 cancellable?: Cancellable | null,
             ): globalThis.Promise<TlsCertificate>;
             /**
@@ -66531,7 +66516,7 @@ declare module 'gi://Gio?version=2.0' {
             lookup_certificate_for_handle_async(
                 handle: string,
                 interaction: TlsInteraction | null,
-                flags: TlsDatabaseLookupFlags | null,
+                flags: TlsDatabaseLookupFlags,
                 cancellable: Cancellable | null,
                 callback: AsyncReadyCallback<this> | null,
             ): void;
@@ -66547,7 +66532,7 @@ declare module 'gi://Gio?version=2.0' {
             lookup_certificate_for_handle_async(
                 handle: string,
                 interaction: TlsInteraction | null,
-                flags: TlsDatabaseLookupFlags | null,
+                flags: TlsDatabaseLookupFlags,
                 cancellable?: Cancellable | null,
                 callback?: AsyncReadyCallback<this> | null,
             ): globalThis.Promise<TlsCertificate> | void;
@@ -66591,7 +66576,7 @@ declare module 'gi://Gio?version=2.0' {
             lookup_certificate_issuer(
                 certificate: TlsCertificate,
                 interaction: TlsInteraction | null,
-                flags: TlsDatabaseLookupFlags | null,
+                flags: TlsDatabaseLookupFlags,
                 cancellable?: Cancellable | null,
             ): TlsCertificate;
             /**
@@ -66605,7 +66590,7 @@ declare module 'gi://Gio?version=2.0' {
             lookup_certificate_issuer_async(
                 certificate: TlsCertificate,
                 interaction: TlsInteraction | null,
-                flags: TlsDatabaseLookupFlags | null,
+                flags: TlsDatabaseLookupFlags,
                 cancellable?: Cancellable | null,
             ): globalThis.Promise<TlsCertificate>;
             /**
@@ -66620,7 +66605,7 @@ declare module 'gi://Gio?version=2.0' {
             lookup_certificate_issuer_async(
                 certificate: TlsCertificate,
                 interaction: TlsInteraction | null,
-                flags: TlsDatabaseLookupFlags | null,
+                flags: TlsDatabaseLookupFlags,
                 cancellable: Cancellable | null,
                 callback: AsyncReadyCallback<this> | null,
             ): void;
@@ -66636,7 +66621,7 @@ declare module 'gi://Gio?version=2.0' {
             lookup_certificate_issuer_async(
                 certificate: TlsCertificate,
                 interaction: TlsInteraction | null,
-                flags: TlsDatabaseLookupFlags | null,
+                flags: TlsDatabaseLookupFlags,
                 cancellable?: Cancellable | null,
                 callback?: AsyncReadyCallback<this> | null,
             ): globalThis.Promise<TlsCertificate> | void;
@@ -66661,7 +66646,7 @@ declare module 'gi://Gio?version=2.0' {
             lookup_certificates_issued_by(
                 issuer_raw_dn: Uint8Array | string,
                 interaction: TlsInteraction | null,
-                flags: TlsDatabaseLookupFlags | null,
+                flags: TlsDatabaseLookupFlags,
                 cancellable?: Cancellable | null,
             ): TlsCertificate[];
             /**
@@ -66679,7 +66664,7 @@ declare module 'gi://Gio?version=2.0' {
             lookup_certificates_issued_by_async(
                 issuer_raw_dn: Uint8Array | string,
                 interaction: TlsInteraction | null,
-                flags: TlsDatabaseLookupFlags | null,
+                flags: TlsDatabaseLookupFlags,
                 cancellable?: Cancellable | null,
             ): globalThis.Promise<TlsCertificate[]>;
             /**
@@ -66698,7 +66683,7 @@ declare module 'gi://Gio?version=2.0' {
             lookup_certificates_issued_by_async(
                 issuer_raw_dn: Uint8Array | string,
                 interaction: TlsInteraction | null,
-                flags: TlsDatabaseLookupFlags | null,
+                flags: TlsDatabaseLookupFlags,
                 cancellable: Cancellable | null,
                 callback: AsyncReadyCallback<this> | null,
             ): void;
@@ -66718,7 +66703,7 @@ declare module 'gi://Gio?version=2.0' {
             lookup_certificates_issued_by_async(
                 issuer_raw_dn: Uint8Array | string,
                 interaction: TlsInteraction | null,
-                flags: TlsDatabaseLookupFlags | null,
+                flags: TlsDatabaseLookupFlags,
                 cancellable?: Cancellable | null,
                 callback?: AsyncReadyCallback<this> | null,
             ): globalThis.Promise<TlsCertificate[]> | void;
@@ -66803,7 +66788,7 @@ declare module 'gi://Gio?version=2.0' {
                 purpose: string,
                 identity: SocketConnectable | null,
                 interaction: TlsInteraction | null,
-                flags: TlsDatabaseVerifyFlags | null,
+                flags: TlsDatabaseVerifyFlags,
                 cancellable?: Cancellable | null,
             ): TlsCertificateFlags;
             /**
@@ -66822,7 +66807,7 @@ declare module 'gi://Gio?version=2.0' {
                 purpose: string,
                 identity: SocketConnectable | null,
                 interaction: TlsInteraction | null,
-                flags: TlsDatabaseVerifyFlags | null,
+                flags: TlsDatabaseVerifyFlags,
                 cancellable?: Cancellable | null,
             ): globalThis.Promise<TlsCertificateFlags>;
             /**
@@ -66842,7 +66827,7 @@ declare module 'gi://Gio?version=2.0' {
                 purpose: string,
                 identity: SocketConnectable | null,
                 interaction: TlsInteraction | null,
-                flags: TlsDatabaseVerifyFlags | null,
+                flags: TlsDatabaseVerifyFlags,
                 cancellable: Cancellable | null,
                 callback: AsyncReadyCallback<this> | null,
             ): void;
@@ -66863,7 +66848,7 @@ declare module 'gi://Gio?version=2.0' {
                 purpose: string,
                 identity: SocketConnectable | null,
                 interaction: TlsInteraction | null,
-                flags: TlsDatabaseVerifyFlags | null,
+                flags: TlsDatabaseVerifyFlags,
                 cancellable?: Cancellable | null,
                 callback?: AsyncReadyCallback<this> | null,
             ): globalThis.Promise<TlsCertificateFlags> | void;
@@ -67243,7 +67228,7 @@ declare module 'gi://Gio?version=2.0' {
              */
             invoke_request_certificate(
                 connection: TlsConnection,
-                flags: TlsCertificateRequestFlags | null,
+                flags: TlsCertificateRequestFlags,
                 cancellable?: Cancellable | null,
             ): TlsInteractionResult;
             /**
@@ -67270,7 +67255,7 @@ declare module 'gi://Gio?version=2.0' {
              */
             request_certificate(
                 connection: TlsConnection,
-                flags: TlsCertificateRequestFlags | null,
+                flags: TlsCertificateRequestFlags,
                 cancellable?: Cancellable | null,
             ): TlsInteractionResult;
             /**
@@ -67288,7 +67273,7 @@ declare module 'gi://Gio?version=2.0' {
              */
             request_certificate_async(
                 connection: TlsConnection,
-                flags: TlsCertificateRequestFlags | null,
+                flags: TlsCertificateRequestFlags,
                 cancellable?: Cancellable | null,
             ): globalThis.Promise<TlsInteractionResult>;
             /**
@@ -67307,7 +67292,7 @@ declare module 'gi://Gio?version=2.0' {
              */
             request_certificate_async(
                 connection: TlsConnection,
-                flags: TlsCertificateRequestFlags | null,
+                flags: TlsCertificateRequestFlags,
                 cancellable: Cancellable | null,
                 callback: AsyncReadyCallback<this> | null,
             ): void;
@@ -67327,7 +67312,7 @@ declare module 'gi://Gio?version=2.0' {
              */
             request_certificate_async(
                 connection: TlsConnection,
-                flags: TlsCertificateRequestFlags | null,
+                flags: TlsCertificateRequestFlags,
                 cancellable?: Cancellable | null,
                 callback?: AsyncReadyCallback<this> | null,
             ): globalThis.Promise<TlsInteractionResult> | void;
@@ -67503,7 +67488,7 @@ declare module 'gi://Gio?version=2.0' {
              * Set flags about the password.
              * @param flags The flags about the password
              */
-            set_flags(flags: TlsPasswordFlags | null): void;
+            set_flags(flags: TlsPasswordFlags): void;
             /**
              * Set the value for this password. The `value` will be copied by the password
              * object.
@@ -68289,7 +68274,7 @@ declare module 'gi://Gio?version=2.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -68330,7 +68315,7 @@ declare module 'gi://Gio?version=2.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -69486,7 +69471,7 @@ declare module 'gi://Gio?version=2.0' {
             convert(
                 inbuf: Uint8Array | string,
                 outbuf: Uint8Array | string,
-                flags: ConverterFlags | null,
+                flags: ConverterFlags,
             ): [ConverterResult, number, number];
             /**
              * Applies `converter` to the data in `bytes`.
@@ -69644,7 +69629,7 @@ declare module 'gi://Gio?version=2.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -69685,7 +69670,7 @@ declare module 'gi://Gio?version=2.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -70244,7 +70229,7 @@ declare module 'gi://Gio?version=2.0' {
             convert(
                 inbuf: Uint8Array | string,
                 outbuf: Uint8Array | string,
-                flags: ConverterFlags | null,
+                flags: ConverterFlags,
             ): [ConverterResult, number, number];
             /**
              * Applies `converter` to the data in `bytes`.
@@ -70402,7 +70387,7 @@ declare module 'gi://Gio?version=2.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -70443,7 +70428,7 @@ declare module 'gi://Gio?version=2.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -71598,7 +71583,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param type the {@link Gio.FileAttributeType} for the attribute.
              * @param flags {@link Gio.FileAttributeInfoFlags} for the attribute.
              */
-            add(name: string, type: FileAttributeType | null, flags: FileAttributeInfoFlags | null): void;
+            add(name: string, type: FileAttributeType, flags: FileAttributeInfoFlags): void;
             /**
              * Makes a duplicate of a file attribute info list.
              * @returns a copy of the given `list`.
@@ -72578,7 +72563,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param lookup_flags A {@link Gio.ResourceLookupFlags}
              * @returns an array of constant strings
              */
-            enumerate_children(path: string, lookup_flags: ResourceLookupFlags | null): string[];
+            enumerate_children(path: string, lookup_flags: ResourceLookupFlags): string[];
             /**
              * Looks for a file at the specified `path` in the resource and
              * if found returns information about it.
@@ -72591,7 +72576,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param lookup_flags A {@link Gio.ResourceLookupFlags}
              * @returns `TRUE` if the file was found, `FALSE` if there were errors
              */
-            get_info(path: string, lookup_flags: ResourceLookupFlags | null): [boolean, number, number];
+            get_info(path: string, lookup_flags: ResourceLookupFlags): [boolean, number, number];
             /**
              * Returns whether the specified `path` in the resource
              * has children.
@@ -72622,7 +72607,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param lookup_flags A {@link Gio.ResourceLookupFlags}
              * @returns {@link GLib.Bytes} or `NULL` on error
              */
-            lookup_data(path: string, lookup_flags: ResourceLookupFlags | null): GLib.Bytes;
+            lookup_data(path: string, lookup_flags: ResourceLookupFlags): GLib.Bytes;
             /**
              * Looks for a file at the specified `path` in the resource and
              * returns a {@link Gio.InputStream} that lets you read the data.
@@ -72635,7 +72620,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param lookup_flags A {@link Gio.ResourceLookupFlags}
              * @returns {@link Gio.InputStream} or `NULL` on error
              */
-            open_stream(path: string, lookup_flags: ResourceLookupFlags | null): InputStream;
+            open_stream(path: string, lookup_flags: ResourceLookupFlags): InputStream;
             /**
              * Atomically increments the reference count of `resource` by one.
              *
@@ -75956,7 +75941,7 @@ declare module 'gi://Gio?version=2.0' {
             convert(
                 inbuf: Uint8Array | string,
                 outbuf: Uint8Array | string,
-                flags: ConverterFlags | null,
+                flags: ConverterFlags,
             ): [ConverterResult, number, number];
             /**
              * Applies `converter` to the data in `bytes`.
@@ -76553,7 +76538,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param condition a {@link GObject.IOCondition} mask to check
              * @returns the {@link GObject.IOCondition} mask of the current state
              */
-            condition_check(condition: GLib.IOCondition | null): GLib.IOCondition;
+            condition_check(condition: GLib.IOCondition): GLib.IOCondition;
             /**
              * Waits for up to `timeout` microseconds for condition to become true on
              * `datagram_based`. If the condition is met, `true` is returned.
@@ -76567,7 +76552,7 @@ declare module 'gi://Gio?version=2.0' {
              * @returns `true` if the condition was met, `false` otherwise
              */
             condition_wait(
-                condition: GLib.IOCondition | null,
+                condition: GLib.IOCondition,
                 timeout: bigint | number,
                 cancellable?: Cancellable | null,
             ): boolean;
@@ -76590,7 +76575,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param cancellable a {@link Gio.Cancellable}
              * @returns a newly allocated {@link GLib.Source}
              */
-            create_source(condition: GLib.IOCondition | null, cancellable?: Cancellable | null): GLib.Source;
+            create_source(condition: GLib.IOCondition, cancellable?: Cancellable | null): GLib.Source;
             /**
              * Receive one or more data messages from `datagram_based` in one go.
              *
@@ -77102,7 +77087,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param flags flags affecting the unmount if required for eject
              * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
              */
-            eject(flags: MountUnmountFlags | null, cancellable?: Cancellable | null): globalThis.Promise<boolean>;
+            eject(flags: MountUnmountFlags, cancellable?: Cancellable | null): globalThis.Promise<boolean>;
             /**
              * Asynchronously ejects a drive.
              *
@@ -77114,7 +77099,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param callback a {@link Gio.AsyncReadyCallback}, or `null`.
              */
             eject(
-                flags: MountUnmountFlags | null,
+                flags: MountUnmountFlags,
                 cancellable: Cancellable | null,
                 callback: AsyncReadyCallback<this> | null,
             ): void;
@@ -77129,7 +77114,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param callback a {@link Gio.AsyncReadyCallback}, or `null`.
              */
             eject(
-                flags: MountUnmountFlags | null,
+                flags: MountUnmountFlags,
                 cancellable?: Cancellable | null,
                 callback?: AsyncReadyCallback<this> | null,
             ): globalThis.Promise<boolean> | void;
@@ -77148,7 +77133,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
              */
             eject_with_operation(
-                flags: MountUnmountFlags | null,
+                flags: MountUnmountFlags,
                 mount_operation?: MountOperation | null,
                 cancellable?: Cancellable | null,
             ): globalThis.Promise<boolean>;
@@ -77162,7 +77147,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param callback a {@link Gio.AsyncReadyCallback}, or `null`.
              */
             eject_with_operation(
-                flags: MountUnmountFlags | null,
+                flags: MountUnmountFlags,
                 mount_operation: MountOperation | null,
                 cancellable: Cancellable | null,
                 callback: AsyncReadyCallback<this> | null,
@@ -77177,7 +77162,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param callback a {@link Gio.AsyncReadyCallback}, or `null`.
              */
             eject_with_operation(
-                flags: MountUnmountFlags | null,
+                flags: MountUnmountFlags,
                 mount_operation?: MountOperation | null,
                 cancellable?: Cancellable | null,
                 callback?: AsyncReadyCallback<this> | null,
@@ -77314,7 +77299,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
              */
             start(
-                flags: DriveStartFlags | null,
+                flags: DriveStartFlags,
                 mount_operation?: MountOperation | null,
                 cancellable?: Cancellable | null,
             ): globalThis.Promise<boolean>;
@@ -77330,7 +77315,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param callback a {@link Gio.AsyncReadyCallback}, or `null`.
              */
             start(
-                flags: DriveStartFlags | null,
+                flags: DriveStartFlags,
                 mount_operation: MountOperation | null,
                 cancellable: Cancellable | null,
                 callback: AsyncReadyCallback<this> | null,
@@ -77347,7 +77332,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param callback a {@link Gio.AsyncReadyCallback}, or `null`.
              */
             start(
-                flags: DriveStartFlags | null,
+                flags: DriveStartFlags,
                 mount_operation?: MountOperation | null,
                 cancellable?: Cancellable | null,
                 callback?: AsyncReadyCallback<this> | null,
@@ -77369,7 +77354,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
              */
             stop(
-                flags: MountUnmountFlags | null,
+                flags: MountUnmountFlags,
                 mount_operation?: MountOperation | null,
                 cancellable?: Cancellable | null,
             ): globalThis.Promise<boolean>;
@@ -77385,7 +77370,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param callback a {@link Gio.AsyncReadyCallback}, or `null`.
              */
             stop(
-                flags: MountUnmountFlags | null,
+                flags: MountUnmountFlags,
                 mount_operation: MountOperation | null,
                 cancellable: Cancellable | null,
                 callback: AsyncReadyCallback<this> | null,
@@ -77402,7 +77387,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param callback a {@link Gio.AsyncReadyCallback}, or `null`.
              */
             stop(
-                flags: MountUnmountFlags | null,
+                flags: MountUnmountFlags,
                 mount_operation?: MountOperation | null,
                 cancellable?: Cancellable | null,
                 callback?: AsyncReadyCallback<this> | null,
@@ -77605,7 +77590,7 @@ declare module 'gi://Gio?version=2.0' {
              * information.
              * @param flags the {@link Gio.TlsCertificateFlags} to use
              */
-            set_validation_flags(flags: TlsCertificateFlags | null): void;
+            set_validation_flags(flags: TlsCertificateFlags): void;
         }
 
         export const DtlsClientConnection: DtlsClientConnectionNamespace & {
@@ -78089,7 +78074,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param errors the problems with `peer_cert`
              * @returns `true` if one of the signal handlers has returned     `true` to accept `peer_cert`
              */
-            emit_accept_certificate(peer_cert: TlsCertificate, errors: TlsCertificateFlags | null): boolean;
+            emit_accept_certificate(peer_cert: TlsCertificate, errors: TlsCertificateFlags): boolean;
             /**
              * Gets `conn`'s certificate, as set by
              * `g_dtls_connection_set_certificate()`.
@@ -78113,7 +78098,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param type {@link Gio.TlsChannelBindingType} type of data to fetch
              * @returns `true` on success, `false` otherwise
              */
-            get_channel_binding_data(type: TlsChannelBindingType | null): [boolean, Uint8Array | null];
+            get_channel_binding_data(type: TlsChannelBindingType): [boolean, Uint8Array | null];
             /**
              * Returns the name of the current DTLS ciphersuite, or `null` if the
              * connection has not handshaked or has been closed. Beware that the TLS
@@ -78322,7 +78307,7 @@ declare module 'gi://Gio?version=2.0' {
              * rekey operations.
              * @param mode the rehandshaking mode
              */
-            set_rehandshake_mode(mode: TlsRehandshakeMode | null): void;
+            set_rehandshake_mode(mode: TlsRehandshakeMode): void;
             /**
              * Sets whether or not `conn` expects a proper TLS close notification
              * before the connection is closed. If this is `true` (the default),
@@ -80437,7 +80422,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param cancellable optional {@link Gio.Cancellable} object,   `null` to ignore
              * @returns a {@link Gio.FileOutputStream}, or `null` on error.   Free the returned object with `g_object_unref()`.
              */
-            append_to(flags: FileCreateFlags | null, cancellable?: Cancellable | null): FileOutputStream;
+            append_to(flags: FileCreateFlags, cancellable?: Cancellable | null): FileOutputStream;
             /**
              * Asynchronously opens `file` for appending.
              *
@@ -80452,7 +80437,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param cancellable optional {@link Gio.Cancellable} object,   `null` to ignore
              */
             append_to_async(
-                flags: FileCreateFlags | null,
+                flags: FileCreateFlags,
                 io_priority: number,
                 cancellable?: Cancellable | null,
             ): globalThis.Promise<FileOutputStream>;
@@ -80471,7 +80456,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param callback a {@link Gio.AsyncReadyCallback}   to call when the request is satisfied
              */
             append_to_async(
-                flags: FileCreateFlags | null,
+                flags: FileCreateFlags,
                 io_priority: number,
                 cancellable: Cancellable | null,
                 callback: AsyncReadyCallback<this> | null,
@@ -80491,7 +80476,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param callback a {@link Gio.AsyncReadyCallback}   to call when the request is satisfied
              */
             append_to_async(
-                flags: FileCreateFlags | null,
+                flags: FileCreateFlags,
                 io_priority: number,
                 cancellable?: Cancellable | null,
                 callback?: AsyncReadyCallback<this> | null,
@@ -80517,7 +80502,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param cancellable optional {@link Gio.Cancellable} object,   `null` to ignore
              * @returns an attribute query string for `g_file_query_info()`,   or `null` if an error occurs.
              */
-            build_attribute_list_for_copy(flags: FileCopyFlags | null, cancellable?: Cancellable | null): string;
+            build_attribute_list_for_copy(flags: FileCopyFlags, cancellable?: Cancellable | null): string;
             /**
              * Copies the file `source` to the location specified by `destination`.
              * Can not handle recursive copies of directories.
@@ -80567,7 +80552,7 @@ declare module 'gi://Gio?version=2.0' {
              */
             copy(
                 destination: File,
-                flags: FileCopyFlags | null,
+                flags: FileCopyFlags,
                 cancellable?: Cancellable | null,
                 progress_callback?: FileProgressCallback | null,
             ): boolean;
@@ -80590,7 +80575,7 @@ declare module 'gi://Gio?version=2.0' {
              */
             copy_async(
                 destination: File,
-                flags: FileCopyFlags | null,
+                flags: FileCopyFlags,
                 io_priority: number,
                 cancellable?: Cancellable | null,
                 progress_callback?: FileProgressCallback | null,
@@ -80615,7 +80600,7 @@ declare module 'gi://Gio?version=2.0' {
              */
             copy_async(
                 destination: File,
-                flags: FileCopyFlags | null,
+                flags: FileCopyFlags,
                 io_priority: number,
                 cancellable: Cancellable | null,
                 progress_callback: FileProgressCallback | null,
@@ -80641,7 +80626,7 @@ declare module 'gi://Gio?version=2.0' {
              */
             copy_async(
                 destination: File,
-                flags: FileCopyFlags | null,
+                flags: FileCopyFlags,
                 io_priority: number,
                 cancellable?: Cancellable | null,
                 progress_callback?: FileProgressCallback | null,
@@ -80659,7 +80644,7 @@ declare module 'gi://Gio?version=2.0' {
              */
             copy_async(
                 destination: File,
-                flags: FileCopyFlags | null,
+                flags: FileCopyFlags,
                 io_priority: number,
                 cancellable: Cancellable | null,
                 progress_callback_closure: GObject.Closure | null,
@@ -80679,7 +80664,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param cancellable optional {@link Gio.Cancellable} object,   `null` to ignore
              * @returns `true` if the attributes were copied successfully,   `false` otherwise.
              */
-            copy_attributes(destination: File, flags: FileCopyFlags | null, cancellable?: Cancellable | null): boolean;
+            copy_attributes(destination: File, flags: FileCopyFlags, cancellable?: Cancellable | null): boolean;
             /**
              * Finishes copying the file started with `g_file_copy_async()`.
              * @param res a {@link Gio.AsyncResult}
@@ -80710,7 +80695,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param cancellable optional {@link Gio.Cancellable} object,   `null` to ignore
              * @returns a {@link Gio.FileOutputStream} for the newly created   file, or `null` on error.   Free the returned object with `g_object_unref()`.
              */
-            create(flags: FileCreateFlags | null, cancellable?: Cancellable | null): FileOutputStream;
+            create(flags: FileCreateFlags, cancellable?: Cancellable | null): FileOutputStream;
             /**
              * Asynchronously creates a new file and returns an output stream
              * for writing to it. The file must not already exist.
@@ -80726,7 +80711,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param cancellable optional {@link Gio.Cancellable} object,   `null` to ignore
              */
             create_async(
-                flags: FileCreateFlags | null,
+                flags: FileCreateFlags,
                 io_priority: number,
                 cancellable?: Cancellable | null,
             ): globalThis.Promise<FileOutputStream>;
@@ -80746,7 +80731,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param callback a {@link Gio.AsyncReadyCallback}   to call when the request is satisfied
              */
             create_async(
-                flags: FileCreateFlags | null,
+                flags: FileCreateFlags,
                 io_priority: number,
                 cancellable: Cancellable | null,
                 callback: AsyncReadyCallback<this> | null,
@@ -80767,7 +80752,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param callback a {@link Gio.AsyncReadyCallback}   to call when the request is satisfied
              */
             create_async(
-                flags: FileCreateFlags | null,
+                flags: FileCreateFlags,
                 io_priority: number,
                 cancellable?: Cancellable | null,
                 callback?: AsyncReadyCallback<this> | null,
@@ -80807,7 +80792,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param cancellable optional {@link Gio.Cancellable} object,   `null` to ignore
              * @returns a {@link Gio.FileIOStream} for the newly created   file, or `null` on error.   Free the returned object with `g_object_unref()`.
              */
-            create_readwrite(flags: FileCreateFlags | null, cancellable?: Cancellable | null): FileIOStream;
+            create_readwrite(flags: FileCreateFlags, cancellable?: Cancellable | null): FileIOStream;
             /**
              * Asynchronously creates a new file and returns a stream
              * for reading and writing to it. The file must not already exist.
@@ -80823,7 +80808,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param cancellable optional {@link Gio.Cancellable} object,   `null` to ignore
              */
             create_readwrite_async(
-                flags: FileCreateFlags | null,
+                flags: FileCreateFlags,
                 io_priority: number,
                 cancellable?: Cancellable | null,
             ): globalThis.Promise<FileIOStream>;
@@ -80843,7 +80828,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param callback a {@link Gio.AsyncReadyCallback}   to call when the request is satisfied
              */
             create_readwrite_async(
-                flags: FileCreateFlags | null,
+                flags: FileCreateFlags,
                 io_priority: number,
                 cancellable: Cancellable | null,
                 callback: AsyncReadyCallback<this> | null,
@@ -80864,7 +80849,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param callback a {@link Gio.AsyncReadyCallback}   to call when the request is satisfied
              */
             create_readwrite_async(
-                flags: FileCreateFlags | null,
+                flags: FileCreateFlags,
                 io_priority: number,
                 cancellable?: Cancellable | null,
                 callback?: AsyncReadyCallback<this> | null,
@@ -80970,10 +80955,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param flags flags affecting the operation
              * @param cancellable optional {@link Gio.Cancellable} object,   `null` to ignore
              */
-            eject_mountable(
-                flags: MountUnmountFlags | null,
-                cancellable?: Cancellable | null,
-            ): globalThis.Promise<boolean>;
+            eject_mountable(flags: MountUnmountFlags, cancellable?: Cancellable | null): globalThis.Promise<boolean>;
             /**
              * Starts an asynchronous eject on a mountable.
              * When this operation has completed, `callback` will be called with
@@ -80988,7 +80970,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param callback a {@link Gio.AsyncReadyCallback}   to call when the request is satisfied
              */
             eject_mountable(
-                flags: MountUnmountFlags | null,
+                flags: MountUnmountFlags,
                 cancellable: Cancellable | null,
                 callback: AsyncReadyCallback<this> | null,
             ): void;
@@ -81006,7 +80988,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param callback a {@link Gio.AsyncReadyCallback}   to call when the request is satisfied
              */
             eject_mountable(
-                flags: MountUnmountFlags | null,
+                flags: MountUnmountFlags,
                 cancellable?: Cancellable | null,
                 callback?: AsyncReadyCallback<this> | null,
             ): globalThis.Promise<boolean> | void;
@@ -81031,7 +81013,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param cancellable optional {@link Gio.Cancellable} object,   `null` to ignore
              */
             eject_mountable_with_operation(
-                flags: MountUnmountFlags | null,
+                flags: MountUnmountFlags,
                 mount_operation?: MountOperation | null,
                 cancellable?: Cancellable | null,
             ): globalThis.Promise<boolean>;
@@ -81050,7 +81032,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param callback a {@link Gio.AsyncReadyCallback}   to call when the request is satisfied
              */
             eject_mountable_with_operation(
-                flags: MountUnmountFlags | null,
+                flags: MountUnmountFlags,
                 mount_operation: MountOperation | null,
                 cancellable: Cancellable | null,
                 callback: AsyncReadyCallback<this> | null,
@@ -81070,7 +81052,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param callback a {@link Gio.AsyncReadyCallback}   to call when the request is satisfied
              */
             eject_mountable_with_operation(
-                flags: MountUnmountFlags | null,
+                flags: MountUnmountFlags,
                 mount_operation?: MountOperation | null,
                 cancellable?: Cancellable | null,
                 callback?: AsyncReadyCallback<this> | null,
@@ -81115,7 +81097,7 @@ declare module 'gi://Gio?version=2.0' {
              */
             enumerate_children(
                 attributes: string,
-                flags: FileQueryInfoFlags | null,
+                flags: FileQueryInfoFlags,
                 cancellable?: Cancellable | null,
             ): FileEnumerator;
             /**
@@ -81136,7 +81118,7 @@ declare module 'gi://Gio?version=2.0' {
              */
             enumerate_children_async(
                 attributes: string,
-                flags: FileQueryInfoFlags | null,
+                flags: FileQueryInfoFlags,
                 io_priority: number,
                 cancellable?: Cancellable | null,
             ): globalThis.Promise<FileEnumerator>;
@@ -81159,7 +81141,7 @@ declare module 'gi://Gio?version=2.0' {
              */
             enumerate_children_async(
                 attributes: string,
-                flags: FileQueryInfoFlags | null,
+                flags: FileQueryInfoFlags,
                 io_priority: number,
                 cancellable: Cancellable | null,
                 callback: AsyncReadyCallback<this> | null,
@@ -81183,7 +81165,7 @@ declare module 'gi://Gio?version=2.0' {
              */
             enumerate_children_async(
                 attributes: string,
-                flags: FileQueryInfoFlags | null,
+                flags: FileQueryInfoFlags,
                 io_priority: number,
                 cancellable?: Cancellable | null,
                 callback?: AsyncReadyCallback<this> | null,
@@ -81774,7 +81756,7 @@ declare module 'gi://Gio?version=2.0' {
              * @returns `true` if successful, with the out parameters set.   `false` otherwise, with `error` set.
              */
             measure_disk_usage(
-                flags: FileMeasureFlags | null,
+                flags: FileMeasureFlags,
                 cancellable: Cancellable | null,
                 progress_callback: FileMeasureProgressCallback | null,
             ): [boolean, number, number, number];
@@ -81797,7 +81779,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param cancellable optional {@link Gio.Cancellable} object,   `null` to ignore
              * @returns a {@link Gio.FileMonitor} for the given `file`,   or `null` on error.   Free the returned object with `g_object_unref()`.
              */
-            monitor(flags: FileMonitorFlags | null, cancellable?: Cancellable | null): FileMonitor;
+            monitor(flags: FileMonitorFlags, cancellable?: Cancellable | null): FileMonitor;
             /**
              * Obtains a directory monitor for the given file.
              * This may fail if directory monitoring is not supported.
@@ -81815,7 +81797,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param cancellable optional {@link Gio.Cancellable} object,   `null` to ignore
              * @returns a {@link Gio.FileMonitor} for the given `file`,   or `null` on error. Free the returned object with `g_object_unref()`.
              */
-            monitor_directory(flags: FileMonitorFlags | null, cancellable?: Cancellable | null): FileMonitor;
+            monitor_directory(flags: FileMonitorFlags, cancellable?: Cancellable | null): FileMonitor;
             /**
              * Obtains a file monitor for the given file. If no file notification
              * mechanism exists, then regular polling of the file is used.
@@ -81835,7 +81817,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param cancellable optional {@link Gio.Cancellable} object,   `null` to ignore
              * @returns a {@link Gio.FileMonitor} for the given `file`,   or `null` on error.   Free the returned object with `g_object_unref()`.
              */
-            monitor_file(flags: FileMonitorFlags | null, cancellable?: Cancellable | null): FileMonitor;
+            monitor_file(flags: FileMonitorFlags, cancellable?: Cancellable | null): FileMonitor;
             /**
              * Starts a `mount_operation`, mounting the volume that contains
              * the file `location`.
@@ -81852,7 +81834,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param cancellable optional {@link Gio.Cancellable} object,   `null` to ignore
              */
             mount_enclosing_volume(
-                flags: MountMountFlags | null,
+                flags: MountMountFlags,
                 mount_operation?: MountOperation | null,
                 cancellable?: Cancellable | null,
             ): globalThis.Promise<boolean>;
@@ -81873,7 +81855,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param callback a {@link Gio.AsyncReadyCallback} to call   when the request is satisfied, or `null`
              */
             mount_enclosing_volume(
-                flags: MountMountFlags | null,
+                flags: MountMountFlags,
                 mount_operation: MountOperation | null,
                 cancellable: Cancellable | null,
                 callback: AsyncReadyCallback<this> | null,
@@ -81895,7 +81877,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param callback a {@link Gio.AsyncReadyCallback} to call   when the request is satisfied, or `null`
              */
             mount_enclosing_volume(
-                flags: MountMountFlags | null,
+                flags: MountMountFlags,
                 mount_operation?: MountOperation | null,
                 cancellable?: Cancellable | null,
                 callback?: AsyncReadyCallback<this> | null,
@@ -81923,7 +81905,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param cancellable optional {@link Gio.Cancellable} object,   `null` to ignore
              */
             mount_mountable(
-                flags: MountMountFlags | null,
+                flags: MountMountFlags,
                 mount_operation?: MountOperation | null,
                 cancellable?: Cancellable | null,
             ): globalThis.Promise<File>;
@@ -81945,7 +81927,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param callback a {@link Gio.AsyncReadyCallback}   to call when the request is satisfied
              */
             mount_mountable(
-                flags: MountMountFlags | null,
+                flags: MountMountFlags,
                 mount_operation: MountOperation | null,
                 cancellable: Cancellable | null,
                 callback: AsyncReadyCallback<this> | null,
@@ -81968,7 +81950,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param callback a {@link Gio.AsyncReadyCallback}   to call when the request is satisfied
              */
             mount_mountable(
-                flags: MountMountFlags | null,
+                flags: MountMountFlags,
                 mount_operation?: MountOperation | null,
                 cancellable?: Cancellable | null,
                 callback?: AsyncReadyCallback<this> | null,
@@ -82024,7 +82006,7 @@ declare module 'gi://Gio?version=2.0' {
              */
             move(
                 destination: File,
-                flags: FileCopyFlags | null,
+                flags: FileCopyFlags,
                 cancellable?: Cancellable | null,
                 progress_callback?: FileProgressCallback | null,
             ): boolean;
@@ -82046,7 +82028,7 @@ declare module 'gi://Gio?version=2.0' {
              */
             move_async(
                 destination: File,
-                flags: FileCopyFlags | null,
+                flags: FileCopyFlags,
                 io_priority: number,
                 cancellable?: Cancellable | null,
                 progress_callback?: FileProgressCallback | null,
@@ -82070,7 +82052,7 @@ declare module 'gi://Gio?version=2.0' {
              */
             move_async(
                 destination: File,
-                flags: FileCopyFlags | null,
+                flags: FileCopyFlags,
                 io_priority: number,
                 cancellable: Cancellable | null,
                 progress_callback: FileProgressCallback | null,
@@ -82095,7 +82077,7 @@ declare module 'gi://Gio?version=2.0' {
              */
             move_async(
                 destination: File,
-                flags: FileCopyFlags | null,
+                flags: FileCopyFlags,
                 io_priority: number,
                 cancellable?: Cancellable | null,
                 progress_callback?: FileProgressCallback | null,
@@ -82113,7 +82095,7 @@ declare module 'gi://Gio?version=2.0' {
              */
             move_async(
                 destination: File,
-                flags: FileCopyFlags | null,
+                flags: FileCopyFlags,
                 io_priority: number,
                 cancellable: Cancellable | null,
                 progress_callback_closure: GObject.Closure | null,
@@ -82358,7 +82340,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param cancellable optional {@link Gio.Cancellable} object,   `null` to ignore
              * @returns The {@link Gio.FileType} of the file and {@link Gio.FileType.UNKNOWN}   if the file does not exist
              */
-            query_file_type(flags: FileQueryInfoFlags | null, cancellable?: Cancellable | null): FileType;
+            query_file_type(flags: FileQueryInfoFlags, cancellable?: Cancellable | null): FileType;
             /**
              * Similar to `g_file_query_info()`, but obtains information
              * about the filesystem the `file` is on, rather than the file itself.
@@ -82513,11 +82495,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param cancellable optional cancellable object
              * @returns a {@link Gio.FileInfo} for the given `file`
              */
-            query_info(
-                attributes: string,
-                flags: FileQueryInfoFlags | null,
-                cancellable?: Cancellable | null,
-            ): FileInfo;
+            query_info(attributes: string, flags: FileQueryInfoFlags, cancellable?: Cancellable | null): FileInfo;
             /**
              * Asynchronously gets the requested information about specified `file`.
              * The result is a {@link Gio.FileInfo} object that contains key-value attributes
@@ -82535,7 +82513,7 @@ declare module 'gi://Gio?version=2.0' {
              */
             query_info_async(
                 attributes: string,
-                flags: FileQueryInfoFlags | null,
+                flags: FileQueryInfoFlags,
                 io_priority: number,
                 cancellable?: Cancellable | null,
             ): globalThis.Promise<FileInfo>;
@@ -82557,7 +82535,7 @@ declare module 'gi://Gio?version=2.0' {
              */
             query_info_async(
                 attributes: string,
-                flags: FileQueryInfoFlags | null,
+                flags: FileQueryInfoFlags,
                 io_priority: number,
                 cancellable: Cancellable | null,
                 callback: AsyncReadyCallback<this> | null,
@@ -82580,7 +82558,7 @@ declare module 'gi://Gio?version=2.0' {
              */
             query_info_async(
                 attributes: string,
-                flags: FileQueryInfoFlags | null,
+                flags: FileQueryInfoFlags,
                 io_priority: number,
                 cancellable?: Cancellable | null,
                 callback?: AsyncReadyCallback<this> | null,
@@ -82742,7 +82720,7 @@ declare module 'gi://Gio?version=2.0' {
             replace(
                 etag: string | null,
                 make_backup: boolean,
-                flags: FileCreateFlags | null,
+                flags: FileCreateFlags,
                 cancellable?: Cancellable | null,
             ): FileOutputStream;
             /**
@@ -82764,7 +82742,7 @@ declare module 'gi://Gio?version=2.0' {
             replace_async(
                 etag: string | null,
                 make_backup: boolean,
-                flags: FileCreateFlags | null,
+                flags: FileCreateFlags,
                 io_priority: number,
                 cancellable?: Cancellable | null,
             ): globalThis.Promise<FileOutputStream>;
@@ -82788,7 +82766,7 @@ declare module 'gi://Gio?version=2.0' {
             replace_async(
                 etag: string | null,
                 make_backup: boolean,
-                flags: FileCreateFlags | null,
+                flags: FileCreateFlags,
                 io_priority: number,
                 cancellable: Cancellable | null,
                 callback: AsyncReadyCallback<this> | null,
@@ -82813,7 +82791,7 @@ declare module 'gi://Gio?version=2.0' {
             replace_async(
                 etag: string | null,
                 make_backup: boolean,
-                flags: FileCreateFlags | null,
+                flags: FileCreateFlags,
                 io_priority: number,
                 cancellable?: Cancellable | null,
                 callback?: AsyncReadyCallback<this> | null,
@@ -82846,7 +82824,7 @@ declare module 'gi://Gio?version=2.0' {
                 contents: Uint8Array | string,
                 etag: string | null,
                 make_backup: boolean,
-                flags: FileCreateFlags | null,
+                flags: FileCreateFlags,
                 cancellable?: Cancellable | null,
             ): [boolean, string];
             /**
@@ -82879,7 +82857,7 @@ declare module 'gi://Gio?version=2.0' {
                 contents: Uint8Array | string,
                 etag: string | null,
                 make_backup: boolean,
-                flags: FileCreateFlags | null,
+                flags: FileCreateFlags,
                 cancellable?: Cancellable | null,
             ): globalThis.Promise<string>;
             /**
@@ -82913,7 +82891,7 @@ declare module 'gi://Gio?version=2.0' {
                 contents: Uint8Array | string,
                 etag: string | null,
                 make_backup: boolean,
-                flags: FileCreateFlags | null,
+                flags: FileCreateFlags,
                 cancellable: Cancellable | null,
                 callback: AsyncReadyCallback<this> | null,
             ): void;
@@ -82948,7 +82926,7 @@ declare module 'gi://Gio?version=2.0' {
                 contents: Uint8Array | string,
                 etag: string | null,
                 make_backup: boolean,
-                flags: FileCreateFlags | null,
+                flags: FileCreateFlags,
                 cancellable?: Cancellable | null,
                 callback?: AsyncReadyCallback<this> | null,
             ): globalThis.Promise<string> | void;
@@ -82972,7 +82950,7 @@ declare module 'gi://Gio?version=2.0' {
                 contents: GLib.Bytes | Uint8Array,
                 etag: string | null,
                 make_backup: boolean,
-                flags: FileCreateFlags | null,
+                flags: FileCreateFlags,
                 cancellable?: Cancellable | null,
                 callback?: AsyncReadyCallback<this> | null,
             ): void;
@@ -83011,7 +82989,7 @@ declare module 'gi://Gio?version=2.0' {
             replace_readwrite(
                 etag: string | null,
                 make_backup: boolean,
-                flags: FileCreateFlags | null,
+                flags: FileCreateFlags,
                 cancellable?: Cancellable | null,
             ): FileIOStream;
             /**
@@ -83034,7 +83012,7 @@ declare module 'gi://Gio?version=2.0' {
             replace_readwrite_async(
                 etag: string | null,
                 make_backup: boolean,
-                flags: FileCreateFlags | null,
+                flags: FileCreateFlags,
                 io_priority: number,
                 cancellable?: Cancellable | null,
             ): globalThis.Promise<FileIOStream>;
@@ -83059,7 +83037,7 @@ declare module 'gi://Gio?version=2.0' {
             replace_readwrite_async(
                 etag: string | null,
                 make_backup: boolean,
-                flags: FileCreateFlags | null,
+                flags: FileCreateFlags,
                 io_priority: number,
                 cancellable: Cancellable | null,
                 callback: AsyncReadyCallback<this> | null,
@@ -83085,7 +83063,7 @@ declare module 'gi://Gio?version=2.0' {
             replace_readwrite_async(
                 etag: string | null,
                 make_backup: boolean,
-                flags: FileCreateFlags | null,
+                flags: FileCreateFlags,
                 io_priority: number,
                 cancellable?: Cancellable | null,
                 callback?: AsyncReadyCallback<this> | null,
@@ -83126,9 +83104,9 @@ declare module 'gi://Gio?version=2.0' {
              */
             set_attribute(
                 attribute: string,
-                type: FileAttributeType | null,
+                type: FileAttributeType,
                 value_p: any | null,
-                flags: FileQueryInfoFlags | null,
+                flags: FileQueryInfoFlags,
                 cancellable?: Cancellable | null,
             ): boolean;
             /**
@@ -83148,7 +83126,7 @@ declare module 'gi://Gio?version=2.0' {
             set_attribute_byte_string(
                 attribute: string,
                 value: string,
-                flags: FileQueryInfoFlags | null,
+                flags: FileQueryInfoFlags,
                 cancellable?: Cancellable | null,
             ): boolean;
             /**
@@ -83167,7 +83145,7 @@ declare module 'gi://Gio?version=2.0' {
             set_attribute_int32(
                 attribute: string,
                 value: number,
-                flags: FileQueryInfoFlags | null,
+                flags: FileQueryInfoFlags,
                 cancellable?: Cancellable | null,
             ): boolean;
             /**
@@ -83186,7 +83164,7 @@ declare module 'gi://Gio?version=2.0' {
             set_attribute_int64(
                 attribute: string,
                 value: bigint | number,
-                flags: FileQueryInfoFlags | null,
+                flags: FileQueryInfoFlags,
                 cancellable?: Cancellable | null,
             ): boolean;
             /**
@@ -83205,7 +83183,7 @@ declare module 'gi://Gio?version=2.0' {
             set_attribute_string(
                 attribute: string,
                 value: string,
-                flags: FileQueryInfoFlags | null,
+                flags: FileQueryInfoFlags,
                 cancellable?: Cancellable | null,
             ): boolean;
             /**
@@ -83224,7 +83202,7 @@ declare module 'gi://Gio?version=2.0' {
             set_attribute_uint32(
                 attribute: string,
                 value: number,
-                flags: FileQueryInfoFlags | null,
+                flags: FileQueryInfoFlags,
                 cancellable?: Cancellable | null,
             ): boolean;
             /**
@@ -83243,7 +83221,7 @@ declare module 'gi://Gio?version=2.0' {
             set_attribute_uint64(
                 attribute: string,
                 value: bigint | number,
-                flags: FileQueryInfoFlags | null,
+                flags: FileQueryInfoFlags,
                 cancellable?: Cancellable | null,
             ): boolean;
             /**
@@ -83262,7 +83240,7 @@ declare module 'gi://Gio?version=2.0' {
              */
             set_attributes_async(
                 info: FileInfo,
-                flags: FileQueryInfoFlags | null,
+                flags: FileQueryInfoFlags,
                 io_priority: number,
                 cancellable?: Cancellable | null,
             ): globalThis.Promise<FileInfo>;
@@ -83283,7 +83261,7 @@ declare module 'gi://Gio?version=2.0' {
              */
             set_attributes_async(
                 info: FileInfo,
-                flags: FileQueryInfoFlags | null,
+                flags: FileQueryInfoFlags,
                 io_priority: number,
                 cancellable: Cancellable | null,
                 callback: AsyncReadyCallback<this> | null,
@@ -83305,7 +83283,7 @@ declare module 'gi://Gio?version=2.0' {
              */
             set_attributes_async(
                 info: FileInfo,
-                flags: FileQueryInfoFlags | null,
+                flags: FileQueryInfoFlags,
                 io_priority: number,
                 cancellable?: Cancellable | null,
                 callback?: AsyncReadyCallback<this> | null,
@@ -83336,7 +83314,7 @@ declare module 'gi://Gio?version=2.0' {
              */
             set_attributes_from_info(
                 info: FileInfo,
-                flags: FileQueryInfoFlags | null,
+                flags: FileQueryInfoFlags,
                 cancellable?: Cancellable | null,
             ): boolean;
             /**
@@ -83442,7 +83420,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore
              */
             start_mountable(
-                flags: DriveStartFlags | null,
+                flags: DriveStartFlags,
                 start_operation?: MountOperation | null,
                 cancellable?: Cancellable | null,
             ): globalThis.Promise<boolean>;
@@ -83464,7 +83442,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param callback a {@link Gio.AsyncReadyCallback} to call when the request is satisfied, or `null`
              */
             start_mountable(
-                flags: DriveStartFlags | null,
+                flags: DriveStartFlags,
                 start_operation: MountOperation | null,
                 cancellable: Cancellable | null,
                 callback: AsyncReadyCallback<this> | null,
@@ -83487,7 +83465,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param callback a {@link Gio.AsyncReadyCallback} to call when the request is satisfied, or `null`
              */
             start_mountable(
-                flags: DriveStartFlags | null,
+                flags: DriveStartFlags,
                 start_operation?: MountOperation | null,
                 cancellable?: Cancellable | null,
                 callback?: AsyncReadyCallback<this> | null,
@@ -83516,7 +83494,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param cancellable optional {@link Gio.Cancellable} object,   `null` to ignore
              */
             stop_mountable(
-                flags: MountUnmountFlags | null,
+                flags: MountUnmountFlags,
                 mount_operation?: MountOperation | null,
                 cancellable?: Cancellable | null,
             ): globalThis.Promise<boolean>;
@@ -83536,7 +83514,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param callback a {@link Gio.AsyncReadyCallback} to call   when the request is satisfied, or `null`
              */
             stop_mountable(
-                flags: MountUnmountFlags | null,
+                flags: MountUnmountFlags,
                 mount_operation: MountOperation | null,
                 cancellable: Cancellable | null,
                 callback: AsyncReadyCallback<this> | null,
@@ -83557,7 +83535,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param callback a {@link Gio.AsyncReadyCallback} to call   when the request is satisfied, or `null`
              */
             stop_mountable(
-                flags: MountUnmountFlags | null,
+                flags: MountUnmountFlags,
                 mount_operation?: MountOperation | null,
                 cancellable?: Cancellable | null,
                 callback?: AsyncReadyCallback<this> | null,
@@ -83645,10 +83623,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param flags flags affecting the operation
              * @param cancellable optional {@link Gio.Cancellable} object,   `null` to ignore
              */
-            unmount_mountable(
-                flags: MountUnmountFlags | null,
-                cancellable?: Cancellable | null,
-            ): globalThis.Promise<boolean>;
+            unmount_mountable(flags: MountUnmountFlags, cancellable?: Cancellable | null): globalThis.Promise<boolean>;
             /**
              * Unmounts a file of type G_FILE_TYPE_MOUNTABLE.
              *
@@ -83664,7 +83639,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param callback a {@link Gio.AsyncReadyCallback}   to call when the request is satisfied
              */
             unmount_mountable(
-                flags: MountUnmountFlags | null,
+                flags: MountUnmountFlags,
                 cancellable: Cancellable | null,
                 callback: AsyncReadyCallback<this> | null,
             ): void;
@@ -83683,7 +83658,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param callback a {@link Gio.AsyncReadyCallback}   to call when the request is satisfied
              */
             unmount_mountable(
-                flags: MountUnmountFlags | null,
+                flags: MountUnmountFlags,
                 cancellable?: Cancellable | null,
                 callback?: AsyncReadyCallback<this> | null,
             ): globalThis.Promise<boolean> | void;
@@ -83711,7 +83686,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param cancellable optional {@link Gio.Cancellable} object,   `null` to ignore
              */
             unmount_mountable_with_operation(
-                flags: MountUnmountFlags | null,
+                flags: MountUnmountFlags,
                 mount_operation?: MountOperation | null,
                 cancellable?: Cancellable | null,
             ): globalThis.Promise<boolean>;
@@ -83731,7 +83706,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param callback a {@link Gio.AsyncReadyCallback}   to call when the request is satisfied
              */
             unmount_mountable_with_operation(
-                flags: MountUnmountFlags | null,
+                flags: MountUnmountFlags,
                 mount_operation: MountOperation | null,
                 cancellable: Cancellable | null,
                 callback: AsyncReadyCallback<this> | null,
@@ -83752,7 +83727,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param callback a {@link Gio.AsyncReadyCallback}   to call when the request is satisfied
              */
             unmount_mountable_with_operation(
-                flags: MountUnmountFlags | null,
+                flags: MountUnmountFlags,
                 mount_operation?: MountOperation | null,
                 cancellable?: Cancellable | null,
                 callback?: AsyncReadyCallback<this> | null,
@@ -84788,7 +84763,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param flags flags affecting the unmount if required for eject
              * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
              */
-            eject(flags: MountUnmountFlags | null, cancellable?: Cancellable | null): globalThis.Promise<boolean>;
+            eject(flags: MountUnmountFlags, cancellable?: Cancellable | null): globalThis.Promise<boolean>;
             /**
              * Ejects a mount. This is an asynchronous operation, and is
              * finished by calling `g_mount_eject_finish()` with the `mount`
@@ -84798,7 +84773,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param callback a {@link Gio.AsyncReadyCallback}, or `null`.
              */
             eject(
-                flags: MountUnmountFlags | null,
+                flags: MountUnmountFlags,
                 cancellable: Cancellable | null,
                 callback: AsyncReadyCallback<this> | null,
             ): void;
@@ -84811,7 +84786,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param callback a {@link Gio.AsyncReadyCallback}, or `null`.
              */
             eject(
-                flags: MountUnmountFlags | null,
+                flags: MountUnmountFlags,
                 cancellable?: Cancellable | null,
                 callback?: AsyncReadyCallback<this> | null,
             ): globalThis.Promise<boolean> | void;
@@ -84831,7 +84806,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
              */
             eject_with_operation(
-                flags: MountUnmountFlags | null,
+                flags: MountUnmountFlags,
                 mount_operation?: MountOperation | null,
                 cancellable?: Cancellable | null,
             ): globalThis.Promise<boolean>;
@@ -84845,7 +84820,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param callback a {@link Gio.AsyncReadyCallback}, or `null`.
              */
             eject_with_operation(
-                flags: MountUnmountFlags | null,
+                flags: MountUnmountFlags,
                 mount_operation: MountOperation | null,
                 cancellable: Cancellable | null,
                 callback: AsyncReadyCallback<this> | null,
@@ -84860,7 +84835,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param callback a {@link Gio.AsyncReadyCallback}, or `null`.
              */
             eject_with_operation(
-                flags: MountUnmountFlags | null,
+                flags: MountUnmountFlags,
                 mount_operation?: MountOperation | null,
                 cancellable?: Cancellable | null,
                 callback?: AsyncReadyCallback<this> | null,
@@ -85050,7 +85025,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
              */
             remount(
-                flags: MountMountFlags | null,
+                flags: MountMountFlags,
                 mount_operation?: MountOperation | null,
                 cancellable?: Cancellable | null,
             ): globalThis.Promise<boolean>;
@@ -85070,7 +85045,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param callback a {@link Gio.AsyncReadyCallback}, or `null`.
              */
             remount(
-                flags: MountMountFlags | null,
+                flags: MountMountFlags,
                 mount_operation: MountOperation | null,
                 cancellable: Cancellable | null,
                 callback: AsyncReadyCallback<this> | null,
@@ -85091,7 +85066,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param callback a {@link Gio.AsyncReadyCallback}, or `null`.
              */
             remount(
-                flags: MountMountFlags | null,
+                flags: MountMountFlags,
                 mount_operation?: MountOperation | null,
                 cancellable?: Cancellable | null,
                 callback?: AsyncReadyCallback<this> | null,
@@ -85117,7 +85092,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param flags flags affecting the operation
              * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
              */
-            unmount(flags: MountUnmountFlags | null, cancellable?: Cancellable | null): globalThis.Promise<boolean>;
+            unmount(flags: MountUnmountFlags, cancellable?: Cancellable | null): globalThis.Promise<boolean>;
             /**
              * Unmounts a mount. This is an asynchronous operation, and is
              * finished by calling `g_mount_unmount_finish()` with the `mount`
@@ -85127,7 +85102,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param callback a {@link Gio.AsyncReadyCallback}, or `null`.
              */
             unmount(
-                flags: MountUnmountFlags | null,
+                flags: MountUnmountFlags,
                 cancellable: Cancellable | null,
                 callback: AsyncReadyCallback<this> | null,
             ): void;
@@ -85140,7 +85115,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param callback a {@link Gio.AsyncReadyCallback}, or `null`.
              */
             unmount(
-                flags: MountUnmountFlags | null,
+                flags: MountUnmountFlags,
                 cancellable?: Cancellable | null,
                 callback?: AsyncReadyCallback<this> | null,
             ): globalThis.Promise<boolean> | void;
@@ -85160,7 +85135,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
              */
             unmount_with_operation(
-                flags: MountUnmountFlags | null,
+                flags: MountUnmountFlags,
                 mount_operation?: MountOperation | null,
                 cancellable?: Cancellable | null,
             ): globalThis.Promise<boolean>;
@@ -85174,7 +85149,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param callback a {@link Gio.AsyncReadyCallback}, or `null`.
              */
             unmount_with_operation(
-                flags: MountUnmountFlags | null,
+                flags: MountUnmountFlags,
                 mount_operation: MountOperation | null,
                 cancellable: Cancellable | null,
                 callback: AsyncReadyCallback<this> | null,
@@ -85189,7 +85164,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param callback a {@link Gio.AsyncReadyCallback}, or `null`.
              */
             unmount_with_operation(
-                flags: MountUnmountFlags | null,
+                flags: MountUnmountFlags,
                 mount_operation?: MountOperation | null,
                 cancellable?: Cancellable | null,
                 callback?: AsyncReadyCallback<this> | null,
@@ -86577,7 +86552,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
              * @returns `true` if successful. If an error     has occurred, this function will return `false` and set `error`     appropriately if present.
              */
-            seek(offset: bigint | number, type: GLib.SeekType | null, cancellable?: Cancellable | null): boolean;
+            seek(offset: bigint | number, type: GLib.SeekType, cancellable?: Cancellable | null): boolean;
             /**
              * Tells the current position within the stream.
              * @returns the (positive or zero) offset from the beginning of the buffer, zero if the target is not seekable.
@@ -87165,7 +87140,7 @@ declare module 'gi://Gio?version=2.0' {
              * information.
              * @param flags the {@link Gio.TlsCertificateFlags} to use
              */
-            set_validation_flags(flags: TlsCertificateFlags | null): void;
+            set_validation_flags(flags: TlsCertificateFlags): void;
         }
 
         export const TlsClientConnection: TlsClientConnectionNamespace & {
@@ -87546,7 +87521,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param flags flags affecting the unmount if required for eject
              * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore
              */
-            eject(flags: MountUnmountFlags | null, cancellable?: Cancellable | null): globalThis.Promise<boolean>;
+            eject(flags: MountUnmountFlags, cancellable?: Cancellable | null): globalThis.Promise<boolean>;
             /**
              * Ejects a volume. This is an asynchronous operation, and is
              * finished by calling `g_volume_eject_finish()` with the `volume`
@@ -87556,7 +87531,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param callback a {@link Gio.AsyncReadyCallback}, or `null`
              */
             eject(
-                flags: MountUnmountFlags | null,
+                flags: MountUnmountFlags,
                 cancellable: Cancellable | null,
                 callback: AsyncReadyCallback<this> | null,
             ): void;
@@ -87569,7 +87544,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param callback a {@link Gio.AsyncReadyCallback}, or `null`
              */
             eject(
-                flags: MountUnmountFlags | null,
+                flags: MountUnmountFlags,
                 cancellable?: Cancellable | null,
                 callback?: AsyncReadyCallback<this> | null,
             ): globalThis.Promise<boolean> | void;
@@ -87589,7 +87564,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore
              */
             eject_with_operation(
-                flags: MountUnmountFlags | null,
+                flags: MountUnmountFlags,
                 mount_operation?: MountOperation | null,
                 cancellable?: Cancellable | null,
             ): globalThis.Promise<boolean>;
@@ -87603,7 +87578,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param callback a {@link Gio.AsyncReadyCallback}, or `null`
              */
             eject_with_operation(
-                flags: MountUnmountFlags | null,
+                flags: MountUnmountFlags,
                 mount_operation: MountOperation | null,
                 cancellable: Cancellable | null,
                 callback: AsyncReadyCallback<this> | null,
@@ -87618,7 +87593,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param callback a {@link Gio.AsyncReadyCallback}, or `null`
              */
             eject_with_operation(
-                flags: MountUnmountFlags | null,
+                flags: MountUnmountFlags,
                 mount_operation?: MountOperation | null,
                 cancellable?: Cancellable | null,
                 callback?: AsyncReadyCallback<this> | null,
@@ -87725,7 +87700,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore
              */
             mount(
-                flags: MountMountFlags | null,
+                flags: MountMountFlags,
                 mount_operation?: MountOperation | null,
                 cancellable?: Cancellable | null,
             ): globalThis.Promise<boolean>;
@@ -87739,7 +87714,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param callback a {@link Gio.AsyncReadyCallback}, or `null`
              */
             mount(
-                flags: MountMountFlags | null,
+                flags: MountMountFlags,
                 mount_operation: MountOperation | null,
                 cancellable: Cancellable | null,
                 callback: AsyncReadyCallback<this> | null,
@@ -87754,7 +87729,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param callback a {@link Gio.AsyncReadyCallback}, or `null`
              */
             mount(
-                flags: MountMountFlags | null,
+                flags: MountMountFlags,
                 mount_operation?: MountOperation | null,
                 cancellable?: Cancellable | null,
                 callback?: AsyncReadyCallback<this> | null,
@@ -87799,9 +87774,9 @@ declare module 'gi://Gio?version=2.0' {
              * @param callback a {@link Gio.AsyncReadyCallback} to call when the request is satisfied
              */
             get(
-                bus_type: BusType | null,
+                bus_type: BusType,
                 cancellable?: Cancellable | null,
-                callback?: AsyncReadyCallback<BusType | null> | null,
+                callback?: AsyncReadyCallback<BusType> | null,
             ): void;
             /**
              * Finishes an operation started with `g_bus_get()`.
@@ -87841,7 +87816,7 @@ declare module 'gi://Gio?version=2.0' {
              * @param bus_type a {@link Gio.BusType}
              * @param cancellable a {@link Gio.Cancellable} or `null`
              */
-            get_sync(bus_type: BusType | null, cancellable?: Cancellable | null): DBusConnection;
+            get_sync(bus_type: BusType, cancellable?: Cancellable | null): DBusConnection;
             /**
              * Version of [func@Gio.bus_own_name using closures instead of callbacks for
              * easier binding in other languages.
@@ -87853,9 +87828,9 @@ declare module 'gi://Gio?version=2.0' {
              * @param name_lost_closure closure to invoke when `name` is lost, or   `NULL` to ignore
              */
             own_name(
-                bus_type: BusType | null,
+                bus_type: BusType,
                 name: string,
-                flags: BusNameOwnerFlags | null,
+                flags: BusNameOwnerFlags,
                 bus_acquired_closure?: GObject.Closure | null,
                 name_acquired_closure?: GObject.Closure | null,
                 name_lost_closure?: GObject.Closure | null,
@@ -87872,7 +87847,7 @@ declare module 'gi://Gio?version=2.0' {
             own_name_on_connection(
                 connection: DBusConnection,
                 name: string,
-                flags: BusNameOwnerFlags | null,
+                flags: BusNameOwnerFlags,
                 name_acquired_closure?: GObject.Closure | null,
                 name_lost_closure?: GObject.Closure | null,
             ): number;
@@ -87899,9 +87874,9 @@ declare module 'gi://Gio?version=2.0' {
              * @param name_vanished_closure {@link GObject.Closure} to invoke when `name` is known to not exist or `null`.
              */
             watch_name(
-                bus_type: BusType | null,
+                bus_type: BusType,
                 name: string,
-                flags: BusNameWatcherFlags | null,
+                flags: BusNameWatcherFlags,
                 name_appeared_closure?: GObject.Closure | null,
                 name_vanished_closure?: GObject.Closure | null,
             ): number;
@@ -87929,7 +87904,7 @@ declare module 'gi://Gio?version=2.0' {
             watch_name_on_connection(
                 connection: DBusConnection,
                 name: string,
-                flags: BusNameWatcherFlags | null,
+                flags: BusNameWatcherFlags,
                 name_appeared_closure?: GObject.Closure | null,
                 name_vanished_closure?: GObject.Closure | null,
             ): number;

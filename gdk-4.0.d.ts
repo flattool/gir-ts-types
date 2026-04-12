@@ -4567,7 +4567,7 @@ declare module 'gi://Gdk?version=4.0' {
          * @param action a {@link Gdk.DragAction}
          * @returns `true` if exactly one action was given
          */
-        function drag_action_is_unique(action: DragAction | null): boolean;
+        function drag_action_is_unique(action: DragAction): boolean;
         /**
          * Returns the relative angle from `event1` to `event2`.
          *
@@ -5827,7 +5827,7 @@ declare module 'gi://Gdk?version=4.0' {
              * Sets the range property of `self`
              * @param range the range value
              */
-            set_range(range: CicpRange | null): void;
+            set_range(range: CicpRange): void;
             /**
              * Sets the transfer-function property of `self`.
              * @param transfer_function the new transfer-function value
@@ -6487,7 +6487,7 @@ declare module 'gi://Gdk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -6528,7 +6528,7 @@ declare module 'gi://Gdk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -7391,7 +7391,7 @@ declare module 'gi://Gdk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -7432,7 +7432,7 @@ declare module 'gi://Gdk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -9221,7 +9221,7 @@ declare module 'gi://Gdk?version=4.0' {
              */
             translate_key(
                 keycode: number,
-                state: ModifierType | null,
+                state: ModifierType,
                 group: number,
             ): [boolean, number, number, number, ModifierType | null];
         }
@@ -9846,7 +9846,7 @@ declare module 'gi://Gdk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -9887,7 +9887,7 @@ declare module 'gi://Gdk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -11209,7 +11209,7 @@ declare module 'gi://Gdk?version=4.0' {
              * available via {@link Gdk.Drop.get_actions}.
              * @param action the action performed by the destination or `GDK_ACTION_NONE` if the   drop failed
              */
-            finish(action: DragAction | null): void;
+            finish(action: DragAction): void;
             /**
              * Returns the possible actions for this {@link Gdk.Drop}.
              *
@@ -11387,7 +11387,7 @@ declare module 'gi://Gdk?version=4.0' {
              * @param actions Supported actions of the destination, or `GDK_ACTION_NONE` to    indicate that a drop will not be accepted
              * @param preferred A unique action that's a member of `actions` indicating the    preferred action
              */
-            status(actions: DragAction | null, preferred: DragAction | null): void;
+            status(actions: DragAction, preferred: DragAction): void;
         }
 
         namespace Event {
@@ -11483,7 +11483,7 @@ declare module 'gi://Gdk?version=4.0' {
              * @param axis_use the axis use to look for
              * @returns `true` if the specified axis was found, otherwise `false`
              */
-            get_axis(axis_use: AxisUse | null): [boolean, number];
+            get_axis(axis_use: AxisUse): [boolean, number];
             /**
              * Returns the device of an event.
              * @returns a {@link Gdk.Device}
@@ -11892,7 +11892,7 @@ declare module 'gi://Gdk?version=4.0' {
              * smooth animations.
              * @param phase the phase that is requested
              */
-            request_phase(phase: FrameClockPhase | null): void;
+            request_phase(phase: FrameClockPhase): void;
         }
 
         namespace GLContext {
@@ -12183,7 +12183,7 @@ declare module 'gi://Gdk?version=4.0' {
              * By default, all APIs are allowed.
              * @param apis the allowed APIs
              */
-            set_allowed_apis(apis: GLAPI | null): void;
+            set_allowed_apis(apis: GLAPI): void;
             /**
              * Sets whether the {@link Gdk.GLContext} should perform extra validations and
              * runtime checking.
@@ -12710,7 +12710,7 @@ declare module 'gi://Gdk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -12751,7 +12751,7 @@ declare module 'gi://Gdk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -13410,7 +13410,7 @@ declare module 'gi://Gdk?version=4.0' {
              * in GSK's shaders.
              * @param format The texture's format
              */
-            set_format(format: MemoryFormat | null): void;
+            set_format(format: MemoryFormat): void;
             /**
              * Sets whether the texture has a mipmap. This allows the renderer and other users of the
              * generated texture to use a higher quality downscaling.
@@ -13619,7 +13619,7 @@ declare module 'gi://Gdk?version=4.0' {
              * @param modifiers the modifiers to match
              * @returns a {@link Gdk.KeyMatch} value describing whether `event` matches
              */
-            matches(keyval: number, modifiers: ModifierType | null): KeyMatch;
+            matches(keyval: number, modifiers: ModifierType): KeyMatch;
         }
 
         namespace MemoryTexture {
@@ -14086,7 +14086,7 @@ declare module 'gi://Gdk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -14127,7 +14127,7 @@ declare module 'gi://Gdk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -14744,7 +14744,7 @@ declare module 'gi://Gdk?version=4.0' {
              * The default is `GDK_MEMORY_R8G8B8A8_PREMULTIPLIED`.
              * @param format The texture's format
              */
-            set_format(format: MemoryFormat | null): void;
+            set_format(format: MemoryFormat): void;
             /**
              * Sets the height of the texture.
              *
@@ -15427,7 +15427,7 @@ declare module 'gi://Gdk?version=4.0' {
              * @param capabilities capabilities to get devices for
              * @returns A list   of `GdkDevices`. The list must be freed with `g_list_free()`,   the elements are owned by GTK and must not be freed.
              */
-            get_devices(capabilities: SeatCapabilities | null): Device[];
+            get_devices(capabilities: SeatCapabilities): Device[];
             /**
              * Returns the {@link Gdk.Display} this seat belongs to.
              * @returns a {@link Gdk.Display}. This object   is owned by GTK and must not be freed.
@@ -15728,7 +15728,7 @@ declare module 'gi://Gdk?version=4.0' {
              * @param height height of the new surface
              * @returns a pointer to the newly allocated surface. The caller   owns the surface and should call `cairo_surface_destroy()` when done   with it.
              */
-            create_similar_surface(content: cairo.Content | null, width: number, height: number): cairo.Surface;
+            create_similar_surface(content: cairo.Content, width: number, height: number): cairo.Surface;
             /**
              * Sets an error and returns `null`.
              * @returns `null`
@@ -16580,7 +16580,7 @@ declare module 'gi://Gdk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -16621,7 +16621,7 @@ declare module 'gi://Gdk?version=4.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -17940,7 +17940,7 @@ declare module 'gi://Gdk?version=4.0' {
              * beyond the left or right edges of the monitor.
              * @param anchor_hints the new anchor hints
              */
-            set_anchor_hints(anchor_hints: AnchorHints | null): void;
+            set_anchor_hints(anchor_hints: AnchorHints): void;
             /**
              * Set the anchor rectangle.
              * @param anchor_rect the new anchor rectangle
@@ -17956,7 +17956,7 @@ declare module 'gi://Gdk?version=4.0' {
              * Set the anchor on the anchor rectangle.
              * @param anchor the new rect anchor
              */
-            set_rect_anchor(anchor: Gravity | null): void;
+            set_rect_anchor(anchor: Gravity): void;
             /**
              * Sets the shadow width of the popup.
              *
@@ -17973,7 +17973,7 @@ declare module 'gi://Gdk?version=4.0' {
              * Set the anchor on the popup surface.
              * @param anchor the new popup surface anchor
              */
-            set_surface_anchor(anchor: Gravity | null): void;
+            set_surface_anchor(anchor: Gravity): void;
             /**
              * Decreases the reference count of `value`.
              */
@@ -18283,7 +18283,7 @@ declare module 'gi://Gdk?version=4.0' {
              * By default, GDK_MEMORY_DEFAULT is set.
              * @param format the format to use
              */
-            set_format(format: MemoryFormat | null): void;
+            set_format(format: MemoryFormat): void;
             /**
              * Changes the texture the downloader will download.
              * @param texture the new texture to download
@@ -18505,7 +18505,7 @@ declare module 'gi://Gdk?version=4.0' {
              * @param feature_idx the index of the feature to get the group from
              * @returns The group number of the queried pad feature.
              */
-            get_feature_group(feature: DevicePadFeature | null, feature_idx: number): number;
+            get_feature_group(feature: DevicePadFeature, feature_idx: number): number;
             /**
              * Returns the number of modes that `group` may have.
              * @param group_idx group to get the number of available modes from
@@ -18517,7 +18517,7 @@ declare module 'gi://Gdk?version=4.0' {
              * @param feature a pad feature
              * @returns The amount of elements of type `feature` that this pad has.
              */
-            get_n_features(feature: DevicePadFeature | null): number;
+            get_n_features(feature: DevicePadFeature): number;
             /**
              * Returns the number of groups this pad device has.
              *
@@ -19128,7 +19128,7 @@ declare module 'gi://Gdk?version=4.0' {
              * @param timestamp timestamp of mouse click that began the drag (use   {@link Gdk.Event.get_time})
              */
             begin_resize(
-                edge: SurfaceEdge | null,
+                edge: SurfaceEdge,
                 device: Device | null,
                 button: number,
                 x: number,
@@ -19243,7 +19243,7 @@ declare module 'gi://Gdk?version=4.0' {
              * size programmatically.
              * @param gravity the new gravity
              */
-            set_gravity(gravity: Gravity | null): void;
+            set_gravity(gravity: Gravity): void;
             /**
              * Sets a list of icons for the surface.
              *
@@ -19322,7 +19322,7 @@ declare module 'gi://Gdk?version=4.0' {
              * @param gesture a {@link Gdk.TitlebarGesture}
              * @returns whether the gesture was performed
              */
-            titlebar_gesture(gesture: TitlebarGesture | null): boolean;
+            titlebar_gesture(gesture: TitlebarGesture): boolean;
         }
 
         export const Toplevel: ToplevelNamespace & {

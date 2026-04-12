@@ -691,7 +691,7 @@ declare module 'gi://GioUnix?version=2.0' {
             launch_uris_as_manager(
                 uris: string[],
                 launch_context: Gio.AppLaunchContext | null,
-                spawn_flags: GLib.SpawnFlags | null,
+                spawn_flags: GLib.SpawnFlags,
                 user_setup?: GLib.SpawnChildSetupFunc | null,
                 pid_callback?: DesktopAppLaunchCallback | null,
             ): boolean;
@@ -715,7 +715,7 @@ declare module 'gi://GioUnix?version=2.0' {
             launch_uris_as_manager_with_fds(
                 uris: string[],
                 launch_context: Gio.AppLaunchContext | null,
-                spawn_flags: GLib.SpawnFlags | null,
+                spawn_flags: GLib.SpawnFlags,
                 user_setup: GLib.SpawnChildSetupFunc | null,
                 pid_callback: DesktopAppLaunchCallback | null,
                 stdin_fd: number,
@@ -1245,7 +1245,7 @@ declare module 'gi://GioUnix?version=2.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -1286,7 +1286,7 @@ declare module 'gi://GioUnix?version=2.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -2850,7 +2850,7 @@ declare module 'gi://GioUnix?version=2.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -2891,7 +2891,7 @@ declare module 'gi://GioUnix?version=2.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,
@@ -3861,7 +3861,7 @@ declare module 'gi://GioUnix?version=2.0' {
              */
             splice(
                 source: Gio.InputStream,
-                flags: Gio.OutputStreamSpliceFlags | null,
+                flags: Gio.OutputStreamSpliceFlags,
                 cancellable?: Gio.Cancellable | null,
             ): number;
             /**
@@ -3879,7 +3879,7 @@ declare module 'gi://GioUnix?version=2.0' {
              */
             splice_async(
                 source: Gio.InputStream,
-                flags: Gio.OutputStreamSpliceFlags | null,
+                flags: Gio.OutputStreamSpliceFlags,
                 io_priority: number,
                 cancellable?: Gio.Cancellable | null,
             ): globalThis.Promise<number>;
@@ -3899,7 +3899,7 @@ declare module 'gi://GioUnix?version=2.0' {
              */
             splice_async(
                 source: Gio.InputStream,
-                flags: Gio.OutputStreamSpliceFlags | null,
+                flags: Gio.OutputStreamSpliceFlags,
                 io_priority: number,
                 cancellable: Gio.Cancellable | null,
                 callback: Gio.AsyncReadyCallback<this> | null,
@@ -3920,7 +3920,7 @@ declare module 'gi://GioUnix?version=2.0' {
              */
             splice_async(
                 source: Gio.InputStream,
-                flags: Gio.OutputStreamSpliceFlags | null,
+                flags: Gio.OutputStreamSpliceFlags,
                 io_priority: number,
                 cancellable?: Gio.Cancellable | null,
                 callback?: Gio.AsyncReadyCallback<this> | null,
@@ -4916,7 +4916,7 @@ declare module 'gi://GioUnix?version=2.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
             ): GObject.Binding;
             /**
              * Complete version of `g_object_bind_property()`.
@@ -4957,7 +4957,7 @@ declare module 'gi://GioUnix?version=2.0' {
                 source_property: string,
                 target: GObject.Object,
                 target_property: string,
-                flags: GObject.BindingFlags | null,
+                flags: GObject.BindingFlags,
                 transform_to?: GObject.BindingTransformFunc | null,
                 transform_from?: GObject.BindingTransformFunc | null,
                 notify?: GLib.DestroyNotify | null,

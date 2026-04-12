@@ -89,7 +89,7 @@ declare module 'gi://Xmlb?version=2.0' {
          * @returns opcode kind, e.g. `FUNC`
          * @since 0.1.1
          */
-        function opcode_kind_to_string(kind: OpcodeKind | null): string;
+        function opcode_kind_to_string(kind: OpcodeKind): string;
         /**
          * Escapes XPath control sequences such as newlines, tabs, and forward slashes.
          * @param str string, e.g. `app/org.gnome.ghex/x86_64/stable`
@@ -513,7 +513,7 @@ declare module 'gi://Xmlb?version=2.0' {
              * @param cancellable a {@link Gio.Cancellable}, or `null`
              * @returns a {@link Xmlb.Silo}, or `null` for error
              */
-            compile(flags: BuilderCompileFlags | null, cancellable?: Gio.Cancellable | null): Silo;
+            compile(flags: BuilderCompileFlags, cancellable?: Gio.Cancellable | null): Silo;
             /**
              * Ensures `file` is up to date, and returns a compiled {@link Xmlb.Silo}.
              *
@@ -527,7 +527,7 @@ declare module 'gi://Xmlb?version=2.0' {
              * @param cancellable a {@link Gio.Cancellable}, or `null`
              * @returns a {@link Xmlb.Silo}, or `null` for error
              */
-            ensure(file: Gio.File, flags: BuilderCompileFlags | null, cancellable?: Gio.Cancellable | null): Silo;
+            ensure(file: Gio.File, flags: BuilderCompileFlags, cancellable?: Gio.Cancellable | null): Silo;
             /**
              * Adds a node tree to the builder.
              *
@@ -552,7 +552,7 @@ declare module 'gi://Xmlb?version=2.0' {
              * Enables or disables the collection of profiling data.
              * @param profile_flags some {@link Xmlb.SiloProfileFlags}, e.g. {@link Xmlb.SiloProfileFlags.DEBUG}
              */
-            set_profile_flags(profile_flags: SiloProfileFlags | null): void;
+            set_profile_flags(profile_flags: SiloProfileFlags): void;
         }
 
         namespace BuilderFixup {
@@ -690,7 +690,7 @@ declare module 'gi://Xmlb?version=2.0' {
              * Adds a flag to the builder node.
              * @param flag a {@link Xmlb.BuilderNodeFlags}
              */
-            add_flag(flag: BuilderNodeFlags | null): void;
+            add_flag(flag: BuilderNodeFlags): void;
             /**
              * Adds a token to the builder node.
              * @param token a new token
@@ -705,7 +705,7 @@ declare module 'gi://Xmlb?version=2.0' {
              * @param flags some {@link Xmlb.NodeExportFlags}, e.g. #XB_NODE_EXPORT_FLAG_NONE
              * @returns XML data, or `null` for an error
              */
-            ['export'](flags: NodeExportFlags | null): string;
+            ['export'](flags: NodeExportFlags): string;
             /**
              * Gets an attribute from the builder node.
              * @param name attribute name, e.g. `type`
@@ -775,7 +775,7 @@ declare module 'gi://Xmlb?version=2.0' {
              * @param flag a {@link Xmlb.BuilderNodeFlags}
              * @returns `true` if `flag` is set
              */
-            has_flag(flag: BuilderNodeFlags | null): boolean;
+            has_flag(flag: BuilderNodeFlags): boolean;
             /**
              * Removes an attribute from the builder node.
              * @param name attribute name, e.g. `type`
@@ -842,8 +842,8 @@ declare module 'gi://Xmlb?version=2.0' {
              * @param func a {@link Xmlb.BuilderNodeTraverseFunc}
              */
             traverse(
-                order: GLib.TraverseType | null,
-                flags: GLib.TraverseFlags | null,
+                order: GLib.TraverseType,
+                flags: GLib.TraverseFlags,
                 max_depth: number,
                 func: BuilderNodeTraverseFunc,
             ): void;
@@ -925,7 +925,7 @@ declare module 'gi://Xmlb?version=2.0' {
              * @param flags some {@link Xmlb.BuilderSourceFlags}, e.g. {@link Xmlb.BuilderSourceFlags.LITERAL_TEXT}
              * @returns `true` for success
              */
-            load_bytes(bytes: GLib.Bytes | Uint8Array, flags: BuilderSourceFlags | null): boolean;
+            load_bytes(bytes: GLib.Bytes | Uint8Array, flags: BuilderSourceFlags): boolean;
             /**
              * Loads an optionally compressed XML file to build a {@link Xmlb.Silo}.
              * @param file a {@link Gio.File}
@@ -933,14 +933,14 @@ declare module 'gi://Xmlb?version=2.0' {
              * @param cancellable a {@link Gio.Cancellable}, or `null`
              * @returns `true` for success
              */
-            load_file(file: Gio.File, flags: BuilderSourceFlags | null, cancellable?: Gio.Cancellable | null): boolean;
+            load_file(file: Gio.File, flags: BuilderSourceFlags, cancellable?: Gio.Cancellable | null): boolean;
             /**
              * Loads XML data and begins to build a {@link Xmlb.Silo}.
              * @param xml XML data
              * @param flags some {@link Xmlb.BuilderSourceFlags}, e.g. {@link Xmlb.BuilderSourceFlags.LITERAL_TEXT}
              * @returns `true` for success
              */
-            load_xml(xml: string, flags: BuilderSourceFlags | null): boolean;
+            load_xml(xml: string, flags: BuilderSourceFlags): boolean;
             /**
              * Sets an optional information metadata node on the root node.
              * @param info a {@link Xmlb.BuilderNode}
@@ -1157,7 +1157,7 @@ declare module 'gi://Xmlb?version=2.0' {
              * @param flags {@link Xmlb.MachineParseFlags}, e.g. {@link Xmlb.MachineParseFlags.OPTIMIZE}
              * @returns opcodes, or `null` on error
              */
-            parse_full(text: string, text_len: bigint | number, flags: MachineParseFlags | null): Stack;
+            parse_full(text: string, text_len: bigint | number, flags: MachineParseFlags): Stack;
             /**
              * Runs a set of opcodes on the virtual machine.
              *
@@ -1188,7 +1188,7 @@ declare module 'gi://Xmlb?version=2.0' {
              * Sets the debug level of the virtual machine.
              * @param flags {@link Xmlb.MachineDebugFlags}, e.g. {@link Xmlb.MachineDebugFlags.SHOW_STACK}
              */
-            set_debug_flags(flags: MachineDebugFlags | null): void;
+            set_debug_flags(flags: MachineDebugFlags): void;
             /**
              * Sets the maximum stack size used for the machine.
              *
@@ -1308,7 +1308,7 @@ declare module 'gi://Xmlb?version=2.0' {
              * @param flags some {@link Xmlb.NodeExportFlags}, e.g. #XB_NODE_EXPORT_FLAG_NONE
              * @returns XML data, or `null` for an error
              */
-            ['export'](flags: NodeExportFlags | null): string;
+            ['export'](flags: NodeExportFlags): string;
             /**
              * Gets some attribute text data for a specific node.
              * @param name an attribute name, e.g. "type"
@@ -1640,7 +1640,7 @@ declare module 'gi://Xmlb?version=2.0' {
              * Sets the flags to use for this query.
              * @param flags a {@link Xmlb.QueryFlags}, e.g. {@link Xmlb.QueryFlags.USE_INDEXES}
              */
-            set_flags(flags: QueryFlags | null): void;
+            set_flags(flags: QueryFlags): void;
             /**
              * Sets the results limit on this query, where 0 is 'all'.
              * @param limit integer
@@ -1768,7 +1768,7 @@ declare module 'gi://Xmlb?version=2.0' {
              * @param flags some {@link Xmlb.NodeExportFlags}, e.g. #XB_NODE_EXPORT_FLAG_NONE
              * @returns XML data, or `null` for an error
              */
-            ['export'](flags: NodeExportFlags | null): string;
+            ['export'](flags: NodeExportFlags): string;
             /**
              * Exports the silo back to an XML file.
              * @param file a {@link Gio.File}
@@ -1776,7 +1776,7 @@ declare module 'gi://Xmlb?version=2.0' {
              * @param cancellable a {@link Gio.Cancellable}, or `null`
              * @returns `true` on success
              */
-            export_file(file: Gio.File, flags: NodeExportFlags | null, cancellable?: Gio.Cancellable | null): boolean;
+            export_file(file: Gio.File, flags: NodeExportFlags, cancellable?: Gio.Cancellable | null): boolean;
             /**
              * Gets the backing object that created the blob.
              *
@@ -1826,7 +1826,7 @@ declare module 'gi://Xmlb?version=2.0' {
              * @param flags {@link Xmlb.SiloLoadFlags}, e.g. {@link Xmlb.SiloLoadFlags.NONE}
              * @returns `true` for success, otherwise `error` is set.
              */
-            load_from_bytes(blob: GLib.Bytes | Uint8Array, flags: SiloLoadFlags | null): boolean;
+            load_from_bytes(blob: GLib.Bytes | Uint8Array, flags: SiloLoadFlags): boolean;
             /**
              * Loads a silo from file.
              * @param file a {@link Gio.File}
@@ -1834,7 +1834,7 @@ declare module 'gi://Xmlb?version=2.0' {
              * @param cancellable a {@link Gio.Cancellable}, or `null`
              * @returns `true` for success, otherwise `error` is set.
              */
-            load_from_file(file: Gio.File, flags: SiloLoadFlags | null, cancellable?: Gio.Cancellable | null): boolean;
+            load_from_file(file: Gio.File, flags: SiloLoadFlags, cancellable?: Gio.Cancellable | null): boolean;
             /**
              * Create an {@link Xmlb.Query} from the given `xpath` XPath string, or return it from the
              * query cache in the {@link Xmlb.Silo}.
@@ -1942,7 +1942,7 @@ declare module 'gi://Xmlb?version=2.0' {
              * Enables or disables the collection of profiling data.
              * @param profile_flags some {@link Xmlb.SiloProfileFlags}, e.g. {@link Xmlb.SiloProfileFlags.DEBUG}
              */
-            set_profile_flags(profile_flags: SiloProfileFlags | null): void;
+            set_profile_flags(profile_flags: SiloProfileFlags): void;
             /**
              * Converts the silo to an internal string representation. This is only
              * really useful for debugging {@link Xmlb.Silo} itself.
@@ -2236,7 +2236,7 @@ declare module 'gi://Xmlb?version=2.0' {
              * Set flags which affect the behaviour of the query.
              * @param flags query flags, or {@link Xmlb.QueryFlags.NONE} for none
              */
-            set_flags(flags: QueryFlags | null): void;
+            set_flags(flags: QueryFlags): void;
             /**
              * Set the limit on the number of results to return from the query.
              * @param limit number of query results to return, or `0` for unlimited

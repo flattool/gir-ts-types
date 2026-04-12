@@ -1755,7 +1755,7 @@ declare module 'gi://AppStream?version=1.0' {
          * @returns string version of `value`
          * @since 0.12.1
          */
-        function agreement_kind_to_string(value: AgreementKind | null): string;
+        function agreement_kind_to_string(value: AgreementKind): string;
         /**
          * Converts the text representation to an enumerated value.
          * @param kind the string.
@@ -1767,7 +1767,7 @@ declare module 'gi://AppStream?version=1.0' {
          * @param kind the {@link AppStream.ArtifactKind}.
          * @returns string version of `kind`
          */
-        function artifact_kind_to_string(kind: ArtifactKind | null): string;
+        function artifact_kind_to_string(kind: ArtifactKind): string;
         /**
          * Converts the text representation to an enumerated value.
          * @param bundle_str the string.
@@ -1780,7 +1780,7 @@ declare module 'gi://AppStream?version=1.0' {
          * @returns string version of `kind`
          * @since 0.8.0
          */
-        function bundle_kind_to_string(kind: BundleKind | null): string;
+        function bundle_kind_to_string(kind: BundleKind): string;
         /**
          * Converts the text representation to an enumerated value.
          * @param kind_str the string.
@@ -1794,7 +1794,7 @@ declare module 'gi://AppStream?version=1.0' {
          * @returns string version of `kind`
          * @since 1.0.0
          */
-        function chassis_kind_to_string(kind: ChassisKind | null): string;
+        function chassis_kind_to_string(kind: ChassisKind): string;
         /**
          * Converts the text representation to an enumerated value.
          * @param kind_str the string.
@@ -1806,7 +1806,7 @@ declare module 'gi://AppStream?version=1.0' {
          * @param kind the %AsChecksumKind.
          * @returns string version of `kind`
          */
-        function checksum_kind_to_string(kind: ChecksumKind | null): string;
+        function checksum_kind_to_string(kind: ChecksumKind): string;
         /**
          * Converts the text representation to an enumerated value.
          * @param str the string.
@@ -1820,7 +1820,7 @@ declare module 'gi://AppStream?version=1.0' {
          * @returns string version of `kind`
          * @since 0.15.2
          */
-        function color_kind_to_string(kind: ColorKind | null): string;
+        function color_kind_to_string(kind: ColorKind): string;
         /**
          * Converts the text representation to an enumerated value.
          * @param str the string.
@@ -1834,7 +1834,7 @@ declare module 'gi://AppStream?version=1.0' {
          * @returns string version of `kind`
          * @since 0.15.2
          */
-        function color_scheme_kind_to_string(kind: ColorSchemeKind | null): string;
+        function color_scheme_kind_to_string(kind: ColorSchemeKind): string;
         /**
          * Converts the text representation to an enumerated value.
          * @param kind_str the string.
@@ -1846,7 +1846,7 @@ declare module 'gi://AppStream?version=1.0' {
          * @param kind the {@link AppStream.ComponentKind}.
          * @returns string version of `kind`
          */
-        function component_kind_to_string(kind: ComponentKind | null): string;
+        function component_kind_to_string(kind: ComponentKind): string;
         /**
          * Converts the text representation to an enumerated value.
          * @param scope_str the string.
@@ -1858,7 +1858,7 @@ declare module 'gi://AppStream?version=1.0' {
          * @param scope the {@link AppStream.ComponentScope}.
          * @returns string version of `scope`
          */
-        function component_scope_to_string(scope: ComponentScope | null): string;
+        function component_scope_to_string(scope: ComponentScope): string;
         /**
          * Format `age` as a human-readable string in the given rating `system`. This is
          * the way to present system-specific strings in a UI.
@@ -1867,7 +1867,7 @@ declare module 'gi://AppStream?version=1.0' {
          * @returns a newly allocated formatted version of    `age`, or `null` if the given `system` has no representation for `age`
          * @since 0.12.12
          */
-        function content_rating_system_format_age(system: ContentRatingSystem | null, age: number): string | null;
+        function content_rating_system_format_age(system: ContentRatingSystem, age: number): string | null;
         /**
          * Determine the most appropriate {@link AppStream.ContentRatingSystem} for the given `locale`.
          * Content rating systems are selected by territory. If no content rating system
@@ -1884,7 +1884,7 @@ declare module 'gi://AppStream?version=1.0' {
          * @returns an array of CSM ages
          * @since 0.12.12
          */
-        function content_rating_system_get_csm_ages(system: ContentRatingSystem | null): number[];
+        function content_rating_system_get_csm_ages(system: ContentRatingSystem): number[];
         /**
          * Get an array of all the possible return values of
          * `as_content_rating_system_format_age()` for the given `system`. The array is
@@ -1893,7 +1893,7 @@ declare module 'gi://AppStream?version=1.0' {
          * @returns `null`-terminated array of human-readable age strings
          * @since 0.12.12
          */
-        function content_rating_system_get_formatted_ages(system: ContentRatingSystem | null): string[];
+        function content_rating_system_get_formatted_ages(system: ContentRatingSystem): string[];
         /**
          * Get a human-readable string to identify `system`. `null` will be returned for
          * {@link AppStream.ContentRatingSystem.UNKNOWN}.
@@ -1901,7 +1901,7 @@ declare module 'gi://AppStream?version=1.0' {
          * @returns a human-readable string for `system`, or `null` if unknown
          * @since 0.12.12
          */
-        function content_rating_system_to_string(system: ContentRatingSystem | null): string | null;
+        function content_rating_system_to_string(system: ContentRatingSystem): string | null;
         /**
          * Converts the text representation to an enumerated value.
          * @param value the string.
@@ -1915,7 +1915,7 @@ declare module 'gi://AppStream?version=1.0' {
          * @returns string version of `value`
          * @since 0.11.0
          */
-        function content_rating_value_to_string(value: ContentRatingValue | null): string;
+        function content_rating_value_to_string(value: ContentRatingValue): string;
         /**
          * Converts the text representation to an enumerated value.
          * @param kind_str the string.
@@ -1929,7 +1929,7 @@ declare module 'gi://AppStream?version=1.0' {
          * @returns string version of `kind`
          * @since 0.12.11
          */
-        function control_kind_to_string(kind: ControlKind | null): string;
+        function control_kind_to_string(kind: ControlKind): string;
         /**
          * Converts the text representation to an enumerated value.
          * @param kind_str the string.
@@ -1943,7 +1943,7 @@ declare module 'gi://AppStream?version=1.0' {
          * @returns string version of `kind`
          * @since 0.12.12
          */
-        function display_side_kind_to_string(kind: DisplaySideKind | null): string;
+        function display_side_kind_to_string(kind: DisplaySideKind): string;
         /**
          * Converts the text representation to an enumerated value.
          * @param kind_str the string.
@@ -1957,7 +1957,7 @@ declare module 'gi://AppStream?version=1.0' {
          * @returns string version of `kind`
          * @since 0.10.0
          */
-        function format_kind_to_string(kind: FormatKind | null): string;
+        function format_kind_to_string(kind: FormatKind): string;
         /**
          * Converts the text representation to an enumerated value.
          * @param version_str the string.
@@ -1971,7 +1971,7 @@ declare module 'gi://AppStream?version=1.0' {
          * @returns string version of `version`
          * @since 0.10.0
          */
-        function format_version_to_string(version: FormatVersion | null): string;
+        function format_version_to_string(version: FormatVersion): string;
         /**
          * Returns the component-ID of the current distribution based on contents
          * of the `/etc/os-release` file.
@@ -2027,7 +2027,7 @@ declare module 'gi://AppStream?version=1.0' {
          * @param kind the %AsIconKind.
          * @returns string version of `kind`
          */
-        function icon_kind_to_string(kind: IconKind | null): string;
+        function icon_kind_to_string(kind: IconKind): string;
         /**
          * Converts the text representation to an enumerated value.
          * @param kind the string.
@@ -2039,7 +2039,7 @@ declare module 'gi://AppStream?version=1.0' {
          * @param kind the {@link AppStream.ImageKind}.
          * @returns string version of `kind`
          */
-        function image_kind_to_string(kind: ImageKind | null): string;
+        function image_kind_to_string(kind: ImageKind): string;
         /**
          * Converts the text representation to an enumerated value.
          * @param kind_str the string.
@@ -2053,7 +2053,7 @@ declare module 'gi://AppStream?version=1.0' {
          * @returns string version of `kind`
          * @since 0.15.5
          */
-        function internet_kind_to_string(kind: InternetKind | null): string;
+        function internet_kind_to_string(kind: InternetKind): string;
         /**
          * Searches the known list of SPDX license exception IDs.
          * @param exception_id a single SPDX license exception ID, e.g. "GCC-exception-3.1"
@@ -2087,7 +2087,7 @@ declare module 'gi://AppStream?version=1.0' {
          * @param kind the %AsIssueKind.
          * @returns string version of `kind`
          */
-        function issue_kind_to_string(kind: IssueKind | null): string;
+        function issue_kind_to_string(kind: IssueKind): string;
         /**
          * Converts the text representation to an enumerated value.
          * @param str the string.
@@ -2099,7 +2099,7 @@ declare module 'gi://AppStream?version=1.0' {
          * @param severity the {@link AppStream.IssueSeverity}.
          * @returns string version of `severity`
          */
-        function issue_severity_to_string(severity: IssueSeverity | null): string;
+        function issue_severity_to_string(severity: IssueSeverity): string;
         /**
          * Converts the text representation to an enumerated value.
          * @param kind_str the string.
@@ -2113,7 +2113,7 @@ declare module 'gi://AppStream?version=1.0' {
          * @returns string version of `kind`
          * @since 0.11.0
          */
-        function launchable_kind_to_string(kind: LaunchableKind | null): string;
+        function launchable_kind_to_string(kind: LaunchableKind): string;
         /**
          * Check if the given license is for free-as-in-freedom software.
          * A free software license is either approved by the Free Software Foundation
@@ -2167,7 +2167,7 @@ declare module 'gi://AppStream?version=1.0' {
          * @param to_kind The markup style to convert into.
          * @returns a newly allocated string, or `null` on error.
          */
-        function markup_convert(markup: string, to_kind: MarkupKind | null): string;
+        function markup_convert(markup: string, to_kind: MarkupKind): string;
         /**
          * Splits up a long line into an array of smaller strings, each being no longer
          * than `line_len`. Words are not split.
@@ -2188,7 +2188,7 @@ declare module 'gi://AppStream?version=1.0' {
          * @param kind the {@link AppStream.MergeKind}.
          * @returns string version of `kind`
          */
-        function merge_kind_to_string(kind: MergeKind | null): string;
+        function merge_kind_to_string(kind: MergeKind): string;
         /**
          * @returns An error quark.
          */
@@ -2211,13 +2211,13 @@ declare module 'gi://AppStream?version=1.0' {
          * @param kind the {@link AppStream.ProvidedKind}.
          * @returns Pluralized, l10n string version of `kind`
          */
-        function provided_kind_to_l10n_string(kind: ProvidedKind | null): string;
+        function provided_kind_to_l10n_string(kind: ProvidedKind): string;
         /**
          * Converts the enumerated value to a text representation.
          * @param kind the {@link AppStream.ProvidedKind}.
          * @returns string version of `kind`
          */
-        function provided_kind_to_string(kind: ProvidedKind | null): string;
+        function provided_kind_to_string(kind: ProvidedKind): string;
         /**
          * Converts the text representation to an enumerated value.
          * @param str the string.
@@ -2230,7 +2230,7 @@ declare module 'gi://AppStream?version=1.0' {
          * @returns string version of `kind`
          * @since 1.0.0
          */
-        function reference_kind_to_string(kind: ReferenceKind | null): string;
+        function reference_kind_to_string(kind: ReferenceKind): string;
         /**
          * Converts the text representation to an enumerated value.
          * @param compare_str the string.
@@ -2246,7 +2246,7 @@ declare module 'gi://AppStream?version=1.0' {
          * @returns string version of `compare`
          * @since 0.12.0
          */
-        function relation_compare_to_string(compare: RelationCompare | null): string;
+        function relation_compare_to_string(compare: RelationCompare): string;
         /**
          * Converts the enumerated value to an text representation.
          * The enum is converted into an identifier consisting of two
@@ -2256,7 +2256,7 @@ declare module 'gi://AppStream?version=1.0' {
          * @returns string version of `compare`
          * @since 0.12.0
          */
-        function relation_compare_to_symbols_string(compare: RelationCompare | null): string;
+        function relation_compare_to_symbols_string(compare: RelationCompare): string;
         /**
          * @returns An error quark.
          * @since 0.16.0
@@ -2275,7 +2275,7 @@ declare module 'gi://AppStream?version=1.0' {
          * @returns string version of `kind`
          * @since 0.12.0
          */
-        function relation_item_kind_to_string(kind: RelationItemKind | null): string;
+        function relation_item_kind_to_string(kind: RelationItemKind): string;
         /**
          * Converts the text representation to an enumerated value.
          * @param kind_str the string.
@@ -2289,7 +2289,7 @@ declare module 'gi://AppStream?version=1.0' {
          * @returns string version of `kind`
          * @since 0.12.0
          */
-        function relation_kind_to_string(kind: RelationKind | null): string;
+        function relation_kind_to_string(kind: RelationKind): string;
         /**
          * Converts the text representation to an enumerated value.
          * @param kind_str the string.
@@ -2303,7 +2303,7 @@ declare module 'gi://AppStream?version=1.0' {
          * @returns string version of `kind`
          * @since 0.12.0
          */
-        function release_kind_to_string(kind: ReleaseKind | null): string;
+        function release_kind_to_string(kind: ReleaseKind): string;
         /**
          * Converts the text representation to an enumerated value.
          * @param kind_str the string.
@@ -2317,7 +2317,7 @@ declare module 'gi://AppStream?version=1.0' {
          * @returns string version of `kind`
          * @since 0.16.0
          */
-        function release_list_kind_to_string(kind: ReleaseListKind | null): string;
+        function release_list_kind_to_string(kind: ReleaseListKind): string;
         /**
          * Converts the text representation to an enumerated value.
          * @param kind_str the string.
@@ -2331,7 +2331,7 @@ declare module 'gi://AppStream?version=1.0' {
          * @returns string version of `kind`
          * @since 0.12.5
          */
-        function release_url_kind_to_string(kind: ReleaseUrlKind | null): string;
+        function release_url_kind_to_string(kind: ReleaseUrlKind): string;
         /**
          * Converts the text representation to an enumerated value.
          * @param kind the string.
@@ -2343,7 +2343,7 @@ declare module 'gi://AppStream?version=1.0' {
          * @param kind the {@link AppStream.ScreenshotKind}.
          * @returns string version of `kind`
          */
-        function screenshot_kind_to_string(kind: ScreenshotKind | null): string;
+        function screenshot_kind_to_string(kind: ScreenshotKind): string;
         /**
          * Converts the text representation to an enumerated value.
          * @param size_kind the string.
@@ -2355,7 +2355,7 @@ declare module 'gi://AppStream?version=1.0' {
          * @param size_kind the {@link AppStream.SizeKind}.
          * @returns string version of `size_kind`
          */
-        function size_kind_to_string(size_kind: SizeKind | null): string;
+        function size_kind_to_string(size_kind: SizeKind): string;
         /**
          * De-tokenizes the SPDX licenses into a string.
          * @param license_tokens license tokens, typically from `as_spdx_license_tokenize()`
@@ -2386,7 +2386,7 @@ declare module 'gi://AppStream?version=1.0' {
          * @param kind the %AsSuggestedKind.
          * @returns string version of `kind`
          */
-        function suggested_kind_to_string(kind: SuggestedKind | null): string;
+        function suggested_kind_to_string(kind: SuggestedKind): string;
         /**
          * @returns An error quark.
          * @since 0.16.0
@@ -2403,7 +2403,7 @@ declare module 'gi://AppStream?version=1.0' {
          * @param kind the {@link AppStream.TranslationKind}.
          * @returns string version of `kind`
          */
-        function translation_kind_to_string(kind: TranslationKind | null): string;
+        function translation_kind_to_string(kind: TranslationKind): string;
         /**
          * Converts the text representation to an enumerated value.
          * @param urgency_kind the string.
@@ -2417,7 +2417,7 @@ declare module 'gi://AppStream?version=1.0' {
          * @returns string version of `urgency_kind`
          * @since 0.6.5
          */
-        function urgency_kind_to_string(urgency_kind: UrgencyKind | null): string;
+        function urgency_kind_to_string(urgency_kind: UrgencyKind): string;
         /**
          * Converts the text representation to an enumerated value.
          * @param url_kind the string.
@@ -2429,7 +2429,7 @@ declare module 'gi://AppStream?version=1.0' {
          * @param url_kind the %AsUrlKind.
          * @returns string version of `url_kind`
          */
-        function url_kind_to_string(url_kind: UrlKind | null): string;
+        function url_kind_to_string(url_kind: UrlKind): string;
         /**
          * Builds an identifier string unique to the individual dataset using the supplied information.
          * @param scope Scope of the metadata as {@link AppStream.ComponentScope} e.g. {@link AppStream.ComponentScope.SYSTEM}
@@ -2440,8 +2440,8 @@ declare module 'gi://AppStream?version=1.0' {
          * @since 0.14.0
          */
         function utils_build_data_id(
-            scope: ComponentScope | null,
-            bundle_kind: BundleKind | null,
+            scope: ComponentScope,
+            bundle_kind: BundleKind,
             origin: string,
             cid: string,
             branch: string,
@@ -2481,7 +2481,7 @@ declare module 'gi://AppStream?version=1.0' {
          * @returns `true` if the IDs should be considered equal.
          * @since 0.14.0
          */
-        function utils_data_id_match(data_id1: string, data_id2: string, match_flags: DataIdMatchFlags | null): boolean;
+        function utils_data_id_match(data_id1: string, data_id2: string, match_flags: DataIdMatchFlags): boolean;
         /**
          * Checks if a data ID is valid i.e. has the correct number of
          * sections.
@@ -2540,7 +2540,7 @@ declare module 'gi://AppStream?version=1.0' {
          * @since 0.14.0
          */
         function utils_install_metadata_file(
-            location: MetadataLocation | null,
+            location: MetadataLocation,
             filename: string,
             origin: string,
             destdir: string,
@@ -2626,7 +2626,7 @@ declare module 'gi://AppStream?version=1.0' {
          * @param flags Flags, e.g. {@link AppStream.VercmpFlags.NONE}
          * @returns an integer > 0 if a is newer than b;     0 if a and b are the same version;     < 0 if b is newer than a
          */
-        function vercmp(a: string, b: string, flags: VercmpFlags | null): number;
+        function vercmp(a: string, b: string, flags: VercmpFlags): number;
         /**
          * Compare alpha and numeric segments of two software versions.
          * @param a First version number
@@ -2643,12 +2643,7 @@ declare module 'gi://AppStream?version=1.0' {
          * @returns `true` if the version comparison matches, `false` otherwise.
          * @since 0.16.0
          */
-        function vercmp_test_match(
-            ver1: string,
-            compare: RelationCompare | null,
-            ver2: string,
-            flags: VercmpFlags | null,
-        ): boolean;
+        function vercmp_test_match(ver1: string, compare: RelationCompare, ver2: string, flags: VercmpFlags): boolean;
         /**
          * Get the version of the AppStream library that is currently used
          * at runtime as a string.
@@ -2667,7 +2662,7 @@ declare module 'gi://AppStream?version=1.0' {
          * @param kind the {@link AppStream.VideoCodecKind}.
          * @returns string version of `codec`
          */
-        function video_codec_kind_to_string(kind: VideoCodecKind | null): string;
+        function video_codec_kind_to_string(kind: VideoCodecKind): string;
         /**
          * Converts the text representation to an enumerated value.
          * @param str the string.
@@ -2679,7 +2674,7 @@ declare module 'gi://AppStream?version=1.0' {
          * @param kind the {@link AppStream.VideoContainerKind}.
          * @returns string version of `kind`
          */
-        function video_container_kind_to_string(kind: VideoContainerKind | null): string;
+        function video_container_kind_to_string(kind: VideoContainerKind): string;
         /**
          * @gir-type Flags
          */
@@ -3005,7 +3000,7 @@ declare module 'gi://AppStream?version=1.0' {
              * Sets the agreement kind.
              * @param kind the agreement kind, e.g. {@link AppStream.AgreementKind.EULA}
              */
-            set_kind(kind: AgreementKind | null): void;
+            set_kind(kind: AgreementKind): void;
             /**
              * Sets the agreement version identifier.
              * @param version_id the agreement version ID, e.g. "1.4a"
@@ -3191,7 +3186,7 @@ declare module 'gi://AppStream?version=1.0' {
              * @param kind
              * @returns an {@link AppStream.Checksum}, or `null` for not set or invalid
              */
-            get_checksum(kind: ChecksumKind | null): Checksum | null;
+            get_checksum(kind: ChecksumKind): Checksum | null;
             /**
              * Get a list of all checksums we have for this artifact.
              * @returns an array of {@link AppStream.Checksum} objects.
@@ -3223,12 +3218,12 @@ declare module 'gi://AppStream?version=1.0' {
              * @param kind a {@link AppStream.SizeKind}
              * @returns The size of the given kind of this artifact.
              */
-            get_size(kind: SizeKind | null): number;
+            get_size(kind: SizeKind): number;
             /**
              * Sets the bundle kind for this release artifact.
              * @param kind the {@link AppStream.BundleKind}, e.g. {@link AppStream.BundleKind.TARBALL}.
              */
-            set_bundle_kind(kind: BundleKind | null): void;
+            set_bundle_kind(kind: BundleKind): void;
             /**
              * Sets a suggested filename for this artifact after it has been downloaded.
              * @param filename the file name suggestion.
@@ -3238,7 +3233,7 @@ declare module 'gi://AppStream?version=1.0' {
              * Sets the artifact kind.
              * @param kind the {@link AppStream.ArtifactKind}, e.g. {@link AppStream.ArtifactKind.SOURCE}.
              */
-            set_kind(kind: ArtifactKind | null): void;
+            set_kind(kind: ArtifactKind): void;
             /**
              * Sets the artifact platform triplet or identifier string.
              * @param platform the platform triplet.
@@ -3249,7 +3244,7 @@ declare module 'gi://AppStream?version=1.0' {
              * @param size a size in bytes, or 0 for unknown
              * @param kind a {@link AppStream.SizeKind}
              */
-            set_size(size: bigint | number, kind: SizeKind | null): void;
+            set_size(size: bigint | number, kind: SizeKind): void;
         }
 
         namespace Branding {
@@ -3315,13 +3310,13 @@ declare module 'gi://AppStream?version=1.0' {
              * @param scheme_kind Color scheme preference for the color, e.g. {@link AppStream.ColorSchemeKind.LIGHT}
              * @returns The HTML color code of the found color, or `null` if no color was found.
              */
-            get_color(kind: ColorKind | null, scheme_kind: ColorSchemeKind | null): string | null;
+            get_color(kind: ColorKind, scheme_kind: ColorSchemeKind): string | null;
             /**
              * Deletes a color that matches the given type and scheme preference.
              * @param kind the {@link AppStream.ColorKind}, e.g. {@link AppStream.ColorKind.PRIMARY}.
              * @param scheme_preference Type of color scheme preferred for this color, e.g. {@link AppStream.ColorSchemeKind.LIGHT}
              */
-            remove_color(kind: ColorKind | null, scheme_preference: ColorSchemeKind | null): void;
+            remove_color(kind: ColorKind, scheme_preference: ColorSchemeKind): void;
             /**
              * Sets a new accent color. If a color of the given kind with the given scheme preference already exists,
              * it will be overriden with the new color code.
@@ -3329,7 +3324,7 @@ declare module 'gi://AppStream?version=1.0' {
              * @param scheme_preference Type of color scheme preferred for this color, e.g. {@link AppStream.ColorSchemeKind.LIGHT}
              * @param colorcode a HTML color code.
              */
-            set_color(kind: ColorKind | null, scheme_preference: ColorSchemeKind | null, colorcode: string): void;
+            set_color(kind: ColorKind, scheme_preference: ColorSchemeKind, colorcode: string): void;
         }
 
         namespace Bundle {
@@ -3406,7 +3401,7 @@ declare module 'gi://AppStream?version=1.0' {
              * Sets the bundle kind.
              * @param kind the {@link AppStream.BundleKind}, e.g. {@link AppStream.BundleKind.LIMBA}.
              */
-            set_kind(kind: BundleKind | null): void;
+            set_kind(kind: BundleKind): void;
         }
 
         namespace Category {
@@ -3647,7 +3642,7 @@ declare module 'gi://AppStream?version=1.0' {
              * Sets the checksum type.
              * @param kind the {@link AppStream.ChecksumKind}, e.g. {@link AppStream.ChecksumKind.SHA256}.
              */
-            set_kind(kind: ChecksumKind | null): void;
+            set_kind(kind: ChecksumKind): void;
             /**
              * Sets the checksum value filename.
              * @param value the new value.
@@ -3882,7 +3877,7 @@ declare module 'gi://AppStream?version=1.0' {
              * @param kind the kind of the provided item (e.g. {@link AppStream.ProvidedKind.MEDIATYPE})
              * @param item the item to add.
              */
-            add_provided_item(kind: ProvidedKind | null, item: string): void;
+            add_provided_item(kind: ProvidedKind, item: string): void;
             /**
              * Adds an external reference to the software component.
              * @param reference an {@link AppStream.Reference} instance.
@@ -3937,7 +3932,7 @@ declare module 'gi://AppStream?version=1.0' {
              * @param url_kind the URL kind, e.g. {@link AppStream.UrlKind.HOMEPAGE}
              * @param url the full URL.
              */
-            add_url(url_kind: UrlKind | null, url: string): void;
+            add_url(url_kind: UrlKind, url: string): void;
             /**
              * Verifies the respective relations and presents whether the system specified
              * in {@link AppStream.SystemInfo} `sysinfo` and data from `pool` supply the requested facilities.
@@ -3949,7 +3944,7 @@ declare module 'gi://AppStream?version=1.0' {
             check_relations(
                 sysinfo: SystemInfo | null,
                 pool: Pool | null,
-                rel_kind: RelationKind | null,
+                rel_kind: RelationKind,
             ): RelationCheckResult[];
             /**
              * Remove all keywords for the given locale.
@@ -3977,7 +3972,7 @@ declare module 'gi://AppStream?version=1.0' {
              * @param kind an agreement kind, e.g. {@link AppStream.AgreementKind.EULA}
              * @returns a {@link AppStream.Agreement} or `null` for not found
              */
-            get_agreement_by_kind(kind: AgreementKind | null): Agreement | null;
+            get_agreement_by_kind(kind: AgreementKind): Agreement | null;
             /**
              * Get a list of all agreements registered with this software component.
              * @returns An array of {@link AppStream.Agreement}.
@@ -3999,7 +3994,7 @@ declare module 'gi://AppStream?version=1.0' {
              * @param bundle_kind the bundle kind, e.g. {@link AppStream.BundleKind.LIMBA}.
              * @returns An {@link AppStream.Bundle}, or `null` if not set.
              */
-            get_bundle(bundle_kind: BundleKind | null): Bundle | null;
+            get_bundle(bundle_kind: BundleKind): Bundle | null;
             /**
              * Get a list of all software bundles associated with this component.
              * @returns A list of {@link AppStream.Bundle}.
@@ -4146,7 +4141,7 @@ declare module 'gi://AppStream?version=1.0' {
              * @param kind a launch kind, e.g. {@link AppStream.LaunchableKind.DESKTOP_ID}
              * @returns a {@link AppStream.Launchable} or `null` if not found
              */
-            get_launchable(kind: LaunchableKind | null): Launchable | null;
+            get_launchable(kind: LaunchableKind): Launchable | null;
             /**
              * @returns an array
              */
@@ -4225,7 +4220,7 @@ declare module 'gi://AppStream?version=1.0' {
              * @param kind kind of the provided item, e.g. {@link AppStream.ProvidedKind.MEDIATYPE}
              * @returns {@link AppStream.Provided} containing the items this component provides, or `null`.
              */
-            get_provided_for_kind(kind: ProvidedKind | null): Provided | null;
+            get_provided_for_kind(kind: ProvidedKind): Provided | null;
             /**
              * Get an array of items that are recommended by this component.
              * @returns an array
@@ -4346,7 +4341,7 @@ declare module 'gi://AppStream?version=1.0' {
              * @param url_kind the URL kind, e.g. {@link AppStream.UrlKind.HOMEPAGE}.
              * @returns string, or `null` if unset
              */
-            get_url(url_kind: UrlKind | null): string | null;
+            get_url(url_kind: UrlKind): string | null;
             /**
              * @returns `true` if this component has a bundle associated.
              */
@@ -4414,7 +4409,7 @@ declare module 'gi://AppStream?version=1.0' {
              * @param bytes the data to load.
              * @returns `true` on success.
              */
-            load_from_bytes(context: Context, format: FormatKind | null, bytes: GLib.Bytes | Uint8Array): boolean;
+            load_from_bytes(context: Context, format: FormatKind, bytes: GLib.Bytes | Uint8Array): boolean;
             /**
              * Get release information for this component, download it
              * if necessary.
@@ -4514,12 +4509,12 @@ declare module 'gi://AppStream?version=1.0' {
              * Sets the {@link AppStream.ComponentKind} of this component.
              * @param value the {@link AppStream.ComponentKind}.
              */
-            set_kind(value: ComponentKind | null): void;
+            set_kind(value: ComponentKind): void;
             /**
              * Sets the {@link AppStream.MergeKind} for this component.
              * @param kind the {@link AppStream.MergeKind}.
              */
-            set_merge_kind(kind: MergeKind | null): void;
+            set_merge_kind(kind: MergeKind): void;
             /**
              * Set the license this metadata is licensed under.
              * @param value the metadata license.
@@ -4578,7 +4573,7 @@ declare module 'gi://AppStream?version=1.0' {
              * Sets the {@link AppStream.ComponentScope} of this component.
              * @param scope the {@link AppStream.ComponentKind}.
              */
-            set_scope(scope: ComponentScope | null): void;
+            set_scope(scope: ComponentScope): void;
             /**
              * Sets the sorting score of this component.
              * @param score the given sorting score
@@ -4841,7 +4836,7 @@ declare module 'gi://AppStream?version=1.0' {
              * @param id a content rating ID, e.g. `money-gambling`.
              * @param value a {@link AppStream.ContentRatingValue}, e.g. {@link AppStream.ContentRatingValue.MODERATE}.
              */
-            add_attribute(id: string, value: ContentRatingValue | null): void;
+            add_attribute(id: string, value: ContentRatingValue): void;
             /**
              * Gets the content_rating kind.
              * @returns a string, e.g. "oars-1.0", or NULL
@@ -4884,7 +4879,7 @@ declare module 'gi://AppStream?version=1.0' {
              * @param id A ratings ID, e.g. `violence-bloodshed`.
              * @param value A {@link AppStream.ContentRatingValue}, e.g. {@link AppStream.ContentRatingValue.INTENSE}
              */
-            set_value(id: string, value: ContentRatingValue | null): void;
+            set_value(id: string, value: ContentRatingValue): void;
         }
 
         namespace Context {
@@ -4991,7 +4986,7 @@ declare module 'gi://AppStream?version=1.0' {
              * Sets the AppStream format version.
              * @param ver the new format version.
              */
-            set_format_version(ver: FormatVersion | null): void;
+            set_format_version(ver: FormatVersion): void;
             /**
              * Sets the active locale.
              * If the magic value "ALL" is used, the current system locale will be used
@@ -5018,11 +5013,11 @@ declare module 'gi://AppStream?version=1.0' {
              * Sets the AppStream document style.
              * @param style the new document style.
              */
-            set_style(style: FormatStyle | null): void;
+            set_style(style: FormatStyle): void;
             /**
              * @param flags {@link AppStream.ValueFlags} to set on `cpt`.
              */
-            set_value_flags(flags: ValueFlags | null): void;
+            set_value_flags(flags: ValueFlags): void;
         }
 
         namespace Developer {
@@ -5203,7 +5198,7 @@ declare module 'gi://AppStream?version=1.0' {
              * Sets the icon kind.
              * @param kind the {@link AppStream.IconKind}, e.g. {@link AppStream.IconKind.CACHED}.
              */
-            set_kind(kind: IconKind | null): void;
+            set_kind(kind: IconKind): void;
             /**
              * Sets the stock name or basename to use for the icon.
              * @param name the icon stock name, e.g. "gwenview"
@@ -5320,7 +5315,7 @@ declare module 'gi://AppStream?version=1.0' {
              * Sets the image kind.
              * @param kind the {@link AppStream.ImageKind}, e.g. {@link AppStream.ImageKind.THUMBNAIL}.
              */
-            set_kind(kind: ImageKind | null): void;
+            set_kind(kind: ImageKind): void;
             /**
              * Sets the locale for this image.
              * @param locale the BCP47 locale string.
@@ -5423,7 +5418,7 @@ declare module 'gi://AppStream?version=1.0' {
              * Sets the issue type.
              * @param kind the {@link AppStream.IssueKind}, e.g. `AS_ISSUE_KIND_SHA256`.
              */
-            set_kind(kind: IssueKind | null): void;
+            set_kind(kind: IssueKind): void;
             /**
              * Sets an URL describing this issue.
              * @param url the new URL.
@@ -5507,7 +5502,7 @@ declare module 'gi://AppStream?version=1.0' {
              * object stores.
              * @param kind the new {@link AppStream.LaunchableKind}
              */
-            set_kind(kind: LaunchableKind | null): void;
+            set_kind(kind: LaunchableKind): void;
         }
 
         namespace Metadata {
@@ -5601,7 +5596,7 @@ declare module 'gi://AppStream?version=1.0' {
              * @param format The format to use (XML or YAML)
              * @returns A string containing the XML metadata. Free with `g_free()`
              */
-            component_to_metainfo(format: FormatKind | null): string;
+            component_to_metainfo(format: FormatKind): string;
             /**
              * Serialize all {@link AppStream.Component} instances into AppStream
              * catalog metadata.
@@ -5609,7 +5604,7 @@ declare module 'gi://AppStream?version=1.0' {
              * @param format The format to serialize the data to (XML or YAML).
              * @returns A string containing the YAML or XML data. Free with `g_free()`
              */
-            components_to_catalog(format: FormatKind | null): string;
+            components_to_catalog(format: FormatKind): string;
             /**
              * @returns The architecture of AppStream distro metadata
              */
@@ -5674,7 +5669,7 @@ declare module 'gi://AppStream?version=1.0' {
              * @param format The format of the data (XML or YAML).
              * @returns `true` on success.
              */
-            parse_bytes(bytes: GLib.Bytes | Uint8Array, format: FormatKind | null): boolean;
+            parse_bytes(bytes: GLib.Bytes | Uint8Array, format: FormatKind): boolean;
             /**
              * Parses any AppStream metadata into one or more {@link AppStream.Component} instances.
              * @param data Metadata describing one or more software components as string.
@@ -5682,7 +5677,7 @@ declare module 'gi://AppStream?version=1.0' {
              * @param format The format of the data (XML or YAML).
              * @returns `true` on success.
              */
-            parse_data(data: string, data_len: bigint | number, format: FormatKind | null): boolean;
+            parse_data(data: string, data_len: bigint | number, format: FormatKind): boolean;
             /**
              * Parses XDG Desktop Entry metadata and adds it to the list of parsed entities.
              *
@@ -5704,7 +5699,7 @@ declare module 'gi://AppStream?version=1.0' {
              * @param format The format the data is in, or {@link AppStream.FormatKind.UNKNOWN} if not known.
              * @returns `true` if the file was parsed without error.
              */
-            parse_file(file: Gio.File, format: FormatKind | null): boolean;
+            parse_file(file: Gio.File, format: FormatKind): boolean;
             /**
              * Parses any AppStream release metadata into {@link AppStream.Release} objects.
              * You can retrieve the last parsed {@link AppStream.ReleaseList} using %as_metadata_get_release_list.
@@ -5734,7 +5729,7 @@ declare module 'gi://AppStream?version=1.0' {
              * @param format
              * @returns `true` if the file was written without error.
              */
-            save_catalog(fname: string, format: FormatKind | null): boolean;
+            save_catalog(fname: string, format: FormatKind): boolean;
             /**
              * Serialize {@link AppStream.Component} instance to XML and save it to file.
              * An existing file at the same location will be overridden.
@@ -5742,7 +5737,7 @@ declare module 'gi://AppStream?version=1.0' {
              * @param format The format to save this file in. Only XML is supported at time.
              * @returns `true` if the file was written without error.
              */
-            save_metainfo(fname: string, format: FormatKind | null): boolean;
+            save_metainfo(fname: string, format: FormatKind): boolean;
             /**
              * Set the architecture the components in this metadata belong to.
              * @param arch an architecture string.
@@ -5752,13 +5747,13 @@ declare module 'gi://AppStream?version=1.0' {
              * Sets the current metadata parsing mode.
              * @param mode the {@link AppStream.FormatStyle}.
              */
-            set_format_style(mode: FormatStyle | null): void;
+            set_format_style(mode: FormatStyle): void;
             /**
              * Set the current AppStream format version that we should generate data for
              * or be able to read.
              * @param version the AppStream metadata format version as {@link AppStream.FormatVersion}.
              */
-            set_format_version(version: FormatVersion | null): void;
+            set_format_version(version: FormatVersion): void;
             /**
              * Sets the locale which should be read when processing metadata.
              * All other locales are ignored, which increases parsing speed and
@@ -5782,7 +5777,7 @@ declare module 'gi://AppStream?version=1.0' {
              * Sets the current metadata parse flags.
              * @param flags the {@link AppStream.ParseFlags}.
              */
-            set_parse_flags(flags: ParseFlags | null): void;
+            set_parse_flags(flags: ParseFlags): void;
             /**
              * If set to `true`, the parser will not create new components but
              * instead update existing components in the pool with new metadata.
@@ -5890,13 +5885,13 @@ declare module 'gi://AppStream?version=1.0' {
              * @param directory An existing filesystem location.
              * @param format_style The expected format style of the metadata, e.g. {@link AppStream.FormatStyle.CATALOG}
              */
-            add_extra_data_location(directory: string, format_style: FormatStyle | null): void;
+            add_extra_data_location(directory: string, format_style: FormatStyle): void;
             /**
              * Convenience function to add one or multiple {@link AppStream.PoolFlags} to
              * the flag set of this data pool.
              * @param flags The {@link AppStream.PoolFlags} to add.
              */
-            add_flags(flags: PoolFlags | null): void;
+            add_flags(flags: PoolFlags): void;
             /**
              * Splits up a string into an array of tokens that are suitable for searching.
              * This includes stripping whitespaces, casefolding the terms and removing greylist words.
@@ -5928,11 +5923,7 @@ declare module 'gi://AppStream?version=1.0' {
              * @param match_prefix `true` to match the ID by prefix, `false` to perform an absolute match.
              * @returns an {@link AppStream.ComponentBox}.
              */
-            get_components_by_bundle_id(
-                kind: BundleKind | null,
-                bundle_id: string,
-                match_prefix: boolean,
-            ): ComponentBox;
+            get_components_by_bundle_id(kind: BundleKind, bundle_id: string, match_prefix: boolean): ComponentBox;
             /**
              * Return a list of components which are in all of the categories.
              * @param categories An array of XDG categories to include.
@@ -5962,7 +5953,7 @@ declare module 'gi://AppStream?version=1.0' {
              * @param kind An {@link AppStream.ComponentKind}.
              * @returns an {@link AppStream.ComponentBox} of found components.
              */
-            get_components_by_kind(kind: ComponentKind | null): ComponentBox;
+            get_components_by_kind(kind: ComponentKind): ComponentBox;
             /**
              * Find components in the AppStream data pool which provide a specific launchable.
              * See {@link AppStream.Launchable} for details on launchables, or refer to the AppStream specification.
@@ -5970,14 +5961,14 @@ declare module 'gi://AppStream?version=1.0' {
              * @param id The ID of the launchable.
              * @returns an {@link AppStream.ComponentBox} of found components.
              */
-            get_components_by_launchable(kind: LaunchableKind | null, id: string): ComponentBox;
+            get_components_by_launchable(kind: LaunchableKind, id: string): ComponentBox;
             /**
              * Find components in the AppStream data pool which provide a certain item.
              * @param kind An `AsProvidesKind`
              * @param item The value of the provided item.
              * @returns an {@link AppStream.ComponentBox} of found components.
              */
-            get_components_by_provided_item(kind: ProvidedKind | null, item: string): ComponentBox;
+            get_components_by_provided_item(kind: ProvidedKind, item: string): ComponentBox;
             /**
              * Get the {@link AppStream.PoolFlags} for this data pool.
              */
@@ -6037,7 +6028,7 @@ declare module 'gi://AppStream?version=1.0' {
              * the flag set of this data pool.
              * @param flags The {@link AppStream.PoolFlags} to remove.
              */
-            remove_flags(flags: PoolFlags | null): void;
+            remove_flags(flags: PoolFlags): void;
             /**
              * Remove all explicitly added metadata locations.
              */
@@ -6053,7 +6044,7 @@ declare module 'gi://AppStream?version=1.0' {
              * Set the {@link AppStream.PoolFlags} for this data pool.
              * @param flags The new {@link AppStream.PoolFlags}.
              */
-            set_flags(flags: PoolFlags | null): void;
+            set_flags(flags: PoolFlags): void;
             /**
              * This is a convenience function that enables or disables loading of metadata
              * from well-known standard locations by configuring the {@link AppStream.PoolFlags} of this
@@ -6152,7 +6143,7 @@ declare module 'gi://AppStream?version=1.0' {
              * Set the kind of items this {@link AppStream.Provided} object stores.
              * @param kind the new {@link AppStream.ProvidedKind}
              */
-            set_kind(kind: ProvidedKind | null): void;
+            set_kind(kind: ProvidedKind): void;
         }
 
         namespace Reference {
@@ -6233,7 +6224,7 @@ declare module 'gi://AppStream?version=1.0' {
              * Sets the reference kind.
              * @param kind the {@link AppStream.ReferenceKind}, e.g. {@link AppStream.ReferenceKind.DOI}.
              */
-            set_kind(kind: ReferenceKind | null): void;
+            set_kind(kind: ReferenceKind): void;
             /**
              * Sets a name of a registry if this reference is of
              * type {@link AppStream.ReferenceKind.REGISTRY}.
@@ -6390,28 +6381,28 @@ declare module 'gi://AppStream?version=1.0' {
              * Set the version comparison type of this {@link AppStream.Relation}.
              * @param compare the new {@link AppStream.RelationCompare}
              */
-            set_compare(compare: RelationCompare | null): void;
+            set_compare(compare: RelationCompare): void;
             /**
              * Sets the display side kind, in case this item is of
              * kind {@link AppStream.RelationItemKind.DISPLAY_LENGTH}
              * @param kind the new {@link AppStream.DisplaySideKind}.
              */
-            set_display_side_kind(kind: DisplaySideKind | null): void;
+            set_display_side_kind(kind: DisplaySideKind): void;
             /**
              * Set the kind of the item this {@link AppStream.Relation} is about.
              * @param kind the new {@link AppStream.RelationItemKind}
              */
-            set_item_kind(kind: RelationItemKind | null): void;
+            set_item_kind(kind: RelationItemKind): void;
             /**
              * Set the kind of this {@link AppStream.Relation}.
              * @param kind the new {@link AppStream.RelationKind}
              */
-            set_kind(kind: RelationKind | null): void;
+            set_kind(kind: RelationKind): void;
             /**
              * Set relation item value from an {@link AppStream.ControlKind}.
              * @param kind an {@link AppStream.ControlKind}
              */
-            set_value_control_kind(kind: ControlKind | null): void;
+            set_value_control_kind(kind: ControlKind): void;
             /**
              * Sets the item value as an integer, if the given item type
              * of this {@link AppStream.Relation} permits integer values.
@@ -6426,7 +6417,7 @@ declare module 'gi://AppStream?version=1.0' {
              * Set relation item value from an {@link AppStream.InternetKind}.
              * @param kind an {@link AppStream.InternetKind}
              */
-            set_value_internet_kind(kind: InternetKind | null): void;
+            set_value_internet_kind(kind: InternetKind): void;
             /**
              * Sets the item value as logical pixel count. This requires the relation
              * to be of item kind {@link AppStream.RelationItemKind.DISPLAY_LENGTH}.
@@ -6538,7 +6529,7 @@ declare module 'gi://AppStream?version=1.0' {
              * Set the error code in case this result represents an error.
              * @param ecode the {@link AppStream.RelationError}
              */
-            set_error_code(ecode: RelationError | null): void;
+            set_error_code(ecode: RelationError): void;
             /**
              * Set an {@link AppStream.Relation} to associate with this check result.
              * @param relation the {@link AppStream.Relation}
@@ -6548,7 +6539,7 @@ declare module 'gi://AppStream?version=1.0' {
              * Set the outcome of this relation check result.
              * @param status the new {@link AppStream.RelationStatus}
              */
-            set_status(status: RelationStatus | null): void;
+            set_status(status: RelationStatus): void;
         }
 
         namespace Release {
@@ -6684,7 +6675,7 @@ declare module 'gi://AppStream?version=1.0' {
              * @param url_kind the URL kind, e.g. {@link AppStream.ReleaseUrlKind.DETAILS}.
              * @returns string, or `null` if unset
              */
-            get_url(url_kind: ReleaseUrlKind | null): string | null;
+            get_url(url_kind: ReleaseUrlKind): string | null;
             /**
              * Gets the release version.
              * @returns string, or `null` for not set or invalid
@@ -6731,7 +6722,7 @@ declare module 'gi://AppStream?version=1.0' {
              * stable releases and development prereleases..
              * @param kind the {@link AppStream.ReleaseKind}
              */
-            set_kind(kind: ReleaseKind | null): void;
+            set_kind(kind: ReleaseKind): void;
             /**
              * Sets the release timestamp.
              * @param timestamp the timestamp value.
@@ -6747,13 +6738,13 @@ declare module 'gi://AppStream?version=1.0' {
              * Sets the release urgency.
              * @param urgency the urgency of this release/update (as {@link AppStream.UrgencyKind})
              */
-            set_urgency(urgency: UrgencyKind | null): void;
+            set_urgency(urgency: UrgencyKind): void;
             /**
              * Sets an URL for this release.
              * @param url_kind the URL kind, e.g. {@link AppStream.ReleaseUrlKind.DETAILS}
              * @param url the full URL.
              */
-            set_url(url_kind: ReleaseUrlKind | null, url: string): void;
+            set_url(url_kind: ReleaseUrlKind, url: string): void;
             /**
              * Sets the release version.
              * @param version the version string.
@@ -6887,7 +6878,7 @@ declare module 'gi://AppStream?version=1.0' {
              * associated with this component.
              * @param kind the {@link AppStream.ComponentKind}.
              */
-            set_kind(kind: ReleaseListKind | null): void;
+            set_kind(kind: ReleaseListKind): void;
             /**
              * Set the amount of release entries stored.
              * @param size
@@ -7060,7 +7051,7 @@ declare module 'gi://AppStream?version=1.0' {
              * Adds flags to an existing review without replacing the other flags.
              * @param flags a {@link AppStream.ReviewFlags}, e.g. {@link AppStream.ReviewFlags.SELF}
              */
-            add_flags(flags: ReviewFlags | null): void;
+            add_flags(flags: ReviewFlags): void;
             /**
              * Adds metadata to the review object.
              * It is left for the the plugin to use this method as required, but a
@@ -7155,7 +7146,7 @@ declare module 'gi://AppStream?version=1.0' {
              * voted on the review or if the user wrote the review themselves.
              * @param flags a {@link AppStream.ReviewFlags}, e.g. {@link AppStream.ReviewFlags.SELF}
              */
-            set_flags(flags: ReviewFlags | null): void;
+            set_flags(flags: ReviewFlags): void;
             /**
              * Sets the review identifier that is unique to each review.
              * @param id review identifier, e.g. "deadbeef"
@@ -7357,7 +7348,7 @@ declare module 'gi://AppStream?version=1.0' {
              * Sets the screenshot kind.
              * @param kind the {@link AppStream.ScreenshotKind}.
              */
-            set_kind(kind: ScreenshotKind | null): void;
+            set_kind(kind: ScreenshotKind): void;
         }
 
         namespace Suggested {
@@ -7440,7 +7431,7 @@ declare module 'gi://AppStream?version=1.0' {
              * Sets the suggested kind.
              * @param kind the {@link AppStream.SuggestedKind}, e.g. {@link AppStream.SuggestedKind.HEURISTIC}.
              */
-            set_kind(kind: SuggestedKind | null): void;
+            set_kind(kind: SuggestedKind): void;
         }
 
         namespace SystemInfo {
@@ -7517,7 +7508,7 @@ declare module 'gi://AppStream?version=1.0' {
              * @param side the {@link AppStream.DisplaySideKind} to select.
              * @returns the display size in logical pixels.
              */
-            get_display_length(side: DisplaySideKind | null): number;
+            get_display_length(side: DisplaySideKind): number;
             /**
              * Check whether graphical applications can be displayed via X11 or Wayland.
              * @returns `true` if graphical applications can be displayed.
@@ -7581,7 +7572,7 @@ declare module 'gi://AppStream?version=1.0' {
              * @param kind the {@link AppStream.ControlKind} to test for.
              * @returns {@link AppStream.CheckResult.TRUE} if control was found
              */
-            has_input_control(kind: ControlKind | null): CheckResult;
+            has_input_control(kind: ControlKind): CheckResult;
             /**
              * Receive a path in /sys for the devices with the given modalias.
              * @param modalias the modalias value to resolve.
@@ -7596,7 +7587,7 @@ declare module 'gi://AppStream?version=1.0' {
              * @param side the {@link AppStream.DisplaySideKind} to select.
              * @param value_dip the length value in device-independt pixels.
              */
-            set_display_length(side: DisplaySideKind | null, value_dip: bigint | number): void;
+            set_display_length(side: DisplaySideKind, value_dip: bigint | number): void;
             /**
              * Set whether this system has a GUI / desktop environment available.
              * @param available `true` if GUI is available.
@@ -7607,7 +7598,7 @@ declare module 'gi://AppStream?version=1.0' {
              * @param kind the {@link AppStream.ControlKind} to set.
              * @param found `true` if the control should be marked as found.
              */
-            set_input_control(kind: ControlKind | null, found: boolean): void;
+            set_input_control(kind: ControlKind, found: boolean): void;
         }
 
         namespace Translation {
@@ -7689,7 +7680,7 @@ declare module 'gi://AppStream?version=1.0' {
              * Set the translation system type.
              * @param kind the new {@link AppStream.TranslationKind}
              */
-            set_kind(kind: TranslationKind | null): void;
+            set_kind(kind: TranslationKind): void;
             /**
              * Set the locale of the source strings for this component. In gettext, this is
              * referred to as the `C` locale. It’s almost always `en_US`, but for some
@@ -7764,7 +7755,7 @@ declare module 'gi://AppStream?version=1.0' {
              * @param tag the issue tag to override, e.g. "release-time-missing"
              * @param severity_override the new severity for the tag.
              */
-            add_override(tag: string, severity_override: IssueSeverity | null): boolean;
+            add_override(tag: string, severity_override: IssueSeverity): boolean;
             /**
              * Add release metadata explicitly from bytes.
              * @param release_fname File basename of the release metadata file to add.
@@ -8002,7 +7993,7 @@ declare module 'gi://AppStream?version=1.0' {
              * Sets the severity for this issue.
              * @param severity the {@link AppStream.IssueSeverity}.
              */
-            set_severity(severity: IssueSeverity | null): void;
+            set_severity(severity: IssueSeverity): void;
             /**
              * Sets the issue tag.
              * @param tag the tag.
@@ -8099,12 +8090,12 @@ declare module 'gi://AppStream?version=1.0' {
              * Sets the video codec.
              * @param kind the {@link AppStream.VideoCodecKind}, e.g. {@link AppStream.VideoCodecKind.AV1}.
              */
-            set_codec_kind(kind: VideoCodecKind | null): void;
+            set_codec_kind(kind: VideoCodecKind): void;
             /**
              * Sets the video container.
              * @param kind the {@link AppStream.VideoContainerKind}, e.g. {@link AppStream.VideoContainerKind.MKV}.
              */
-            set_container_kind(kind: VideoContainerKind | null): void;
+            set_container_kind(kind: VideoContainerKind): void;
             /**
              * Sets the video height.
              * @param height the height in pixels.
