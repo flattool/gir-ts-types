@@ -60329,7 +60329,7 @@ declare module 'gi://Gio?version=2.0' {
              * Gets the underlying {@link Gio.Socket} object of the connection.
              * This can be useful if you want to do something unusual on it
              * not supported by the {@link Gio.SocketConnection} APIs.
-             * @returns a {@link Gio.Socket} or `null` on error.
+             * @returns the underlying socket
              */
             get_socket(): Socket;
             /**
