@@ -46999,6 +46999,7 @@ declare module 'gi://Adw?version=1' {
                 'notify::vexpand-set': (pspec: GObject.ParamSpec) => void;
                 'notify::visible': (pspec: GObject.ParamSpec) => void;
                 'notify::width-request': (pspec: GObject.ParamSpec) => void;
+                'notify::complete-text': (pspec: GObject.ParamSpec) => void;
                 'notify::cursor-position': (pspec: GObject.ParamSpec) => void;
                 'notify::editable': (pspec: GObject.ParamSpec) => void;
                 'notify::enable-undo': (pspec: GObject.ParamSpec) => void;
@@ -47365,6 +47366,22 @@ declare module 'gi://Adw?version=1' {
              * @param show_apply_button whether to show the apply button
              */
             set_show_apply_button(show_apply_button: boolean): void;
+            /**
+             * The contents of the entry, including uncommited content such as the
+             * preedit.
+             * @since 4.24
+             * @read-only
+             * @category Inherited from Gtk.Editable
+             */
+            get complete_text(): string;
+            /**
+             * The contents of the entry, including uncommited content such as the
+             * preedit.
+             * @since 4.24
+             * @read-only
+             * @category Inherited from Gtk.Editable
+             */
+            get completeText(): string;
             /**
              * The current position of the insertion cursor in chars.
              * @read-only
@@ -48021,6 +48038,12 @@ declare module 'gi://Adw?version=1' {
              */
             get_chars(start_pos: number, end_pos: number): string;
             /**
+             * Retrieves the contents of `editable`, including *pseudo-content*
+             * such as the preedit buffer.
+             * @returns the complete contents of the editable
+             */
+            get_complete_text(): string;
+            /**
              * Gets the {@link Gtk.Editable} that `editable` is delegating its
              * implementation to.
              *
@@ -48211,6 +48234,12 @@ declare module 'gi://Adw?version=1' {
              * @virtual
              */
             vfunc_do_insert_text(text: string, length: number, position: number): number;
+            /**
+             * Retrieves the contents of `editable`, including *pseudo-content*
+             * such as the preedit buffer.
+             * @virtual
+             */
+            vfunc_get_complete_text(): string;
             /**
              * Gets the {@link Gtk.Editable} that `editable` is delegating its
              * implementation to.
@@ -83643,6 +83672,7 @@ declare module 'gi://Adw?version=1' {
                 'notify::vexpand-set': (pspec: GObject.ParamSpec) => void;
                 'notify::visible': (pspec: GObject.ParamSpec) => void;
                 'notify::width-request': (pspec: GObject.ParamSpec) => void;
+                'notify::complete-text': (pspec: GObject.ParamSpec) => void;
                 'notify::cursor-position': (pspec: GObject.ParamSpec) => void;
                 'notify::editable': (pspec: GObject.ParamSpec) => void;
                 'notify::enable-undo': (pspec: GObject.ParamSpec) => void;
@@ -83733,6 +83763,22 @@ declare module 'gi://Adw?version=1' {
                     : never
             ): void;
             emit(signal: string, ...args: any[]): void;
+            /**
+             * The contents of the entry, including uncommited content such as the
+             * preedit.
+             * @since 4.24
+             * @read-only
+             * @category Inherited from Gtk.Editable
+             */
+            get complete_text(): string;
+            /**
+             * The contents of the entry, including uncommited content such as the
+             * preedit.
+             * @since 4.24
+             * @read-only
+             * @category Inherited from Gtk.Editable
+             */
+            get completeText(): string;
             /**
              * The current position of the insertion cursor in chars.
              * @read-only
@@ -84389,6 +84435,12 @@ declare module 'gi://Adw?version=1' {
              */
             get_chars(start_pos: number, end_pos: number): string;
             /**
+             * Retrieves the contents of `editable`, including *pseudo-content*
+             * such as the preedit buffer.
+             * @returns the complete contents of the editable
+             */
+            get_complete_text(): string;
+            /**
              * Gets the {@link Gtk.Editable} that `editable` is delegating its
              * implementation to.
              *
@@ -84579,6 +84631,12 @@ declare module 'gi://Adw?version=1' {
              * @virtual
              */
             vfunc_do_insert_text(text: string, length: number, position: number): number;
+            /**
+             * Retrieves the contents of `editable`, including *pseudo-content*
+             * such as the preedit buffer.
+             * @virtual
+             */
+            vfunc_get_complete_text(): string;
             /**
              * Gets the {@link Gtk.Editable} that `editable` is delegating its
              * implementation to.
@@ -102293,6 +102351,7 @@ declare module 'gi://Adw?version=1' {
                 'notify::vexpand-set': (pspec: GObject.ParamSpec) => void;
                 'notify::visible': (pspec: GObject.ParamSpec) => void;
                 'notify::width-request': (pspec: GObject.ParamSpec) => void;
+                'notify::complete-text': (pspec: GObject.ParamSpec) => void;
                 'notify::cursor-position': (pspec: GObject.ParamSpec) => void;
                 'notify::editable': (pspec: GObject.ParamSpec) => void;
                 'notify::enable-undo': (pspec: GObject.ParamSpec) => void;
@@ -102595,6 +102654,22 @@ declare module 'gi://Adw?version=1' {
              * Manually force an update of the spin row.
              */
             update(): void;
+            /**
+             * The contents of the entry, including uncommited content such as the
+             * preedit.
+             * @since 4.24
+             * @read-only
+             * @category Inherited from Gtk.Editable
+             */
+            get complete_text(): string;
+            /**
+             * The contents of the entry, including uncommited content such as the
+             * preedit.
+             * @since 4.24
+             * @read-only
+             * @category Inherited from Gtk.Editable
+             */
+            get completeText(): string;
             /**
              * The current position of the insertion cursor in chars.
              * @read-only
@@ -103251,6 +103326,12 @@ declare module 'gi://Adw?version=1' {
              */
             get_chars(start_pos: number, end_pos: number): string;
             /**
+             * Retrieves the contents of `editable`, including *pseudo-content*
+             * such as the preedit buffer.
+             * @returns the complete contents of the editable
+             */
+            get_complete_text(): string;
+            /**
              * Gets the {@link Gtk.Editable} that `editable` is delegating its
              * implementation to.
              *
@@ -103441,6 +103522,12 @@ declare module 'gi://Adw?version=1' {
              * @virtual
              */
             vfunc_do_insert_text(text: string, length: number, position: number): number;
+            /**
+             * Retrieves the contents of `editable`, including *pseudo-content*
+             * such as the preedit buffer.
+             * @virtual
+             */
+            vfunc_get_complete_text(): string;
             /**
              * Gets the {@link Gtk.Editable} that `editable` is delegating its
              * implementation to.

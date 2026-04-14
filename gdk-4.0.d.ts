@@ -8332,6 +8332,8 @@ declare module 'gi://Gdk?version=4.0' {
              * Will be -1 if there is no valid active layout.
              *
              * This is only relevant for keyboard devices.
+             *
+             * Value changes from compositor events, connect to notify if needed.
              * @since 4.18
              * @read-only
              */
@@ -8342,6 +8344,8 @@ declare module 'gi://Gdk?version=4.0' {
              * Will be -1 if there is no valid active layout.
              *
              * This is only relevant for keyboard devices.
+             *
+             * Value changes from compositor events, connect to notify if needed.
              * @since 4.18
              * @read-only
              */
@@ -8400,6 +8404,8 @@ declare module 'gi://Gdk?version=4.0' {
              * The names of the keyboard layouts of a {@link Gdk.Device}.
              *
              * This is only relevant for keyboard devices.
+             *
+             * Value changes from compositor events, connect to notify if needed.
              * @since 4.18
              * @read-only
              */
@@ -8408,6 +8414,8 @@ declare module 'gi://Gdk?version=4.0' {
              * The names of the keyboard layouts of a {@link Gdk.Device}.
              *
              * This is only relevant for keyboard devices.
+             *
+             * Value changes from compositor events, connect to notify if needed.
              * @since 4.18
              * @read-only
              */
