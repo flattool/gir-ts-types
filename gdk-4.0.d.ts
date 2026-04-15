@@ -10347,8 +10347,10 @@ declare module 'gi://Gdk?version=4.0' {
          * multiple planes, by specifying offsets from the beginning of the data.
          *
          * DMA buffers are exposed to user-space as file descriptors allowing to pass them
-         * between processes. If a DMA buffer has multiple planes, there is one file
-         * descriptor per plane.
+         * between processes. If a DMA buffer has multiple planes, more than one file
+         * descriptor may be present, up to the number of planes. If the number of file
+         * descriptors is less than the number of planes, the remaining ones should be set to
+         * -1.
          *
          * The format of the data (for graphics data, essentially its colorspace) is described
          * by a 32-bit integer. These format identifiers are defined in the header file `drm_fourcc.h`
@@ -10557,7 +10559,7 @@ declare module 'gi://Gdk?version=4.0' {
              */
             get_display(): Display;
             /**
-             * Gets the file descriptor for a plane.
+             * Gets the file descriptor for a plane or -1 if none.
              * @param plane the plane to get the fd for
              * @returns the file descriptor
              */
@@ -10640,7 +10642,7 @@ declare module 'gi://Gdk?version=4.0' {
              */
             set_display(display: Display): void;
             /**
-             * Sets the file descriptor for a plane.
+             * Sets the file descriptor for a plane or to -1 to unset it.
              * @param plane the plane to set the fd for
              * @param fd the file descriptor
              */
