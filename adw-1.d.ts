@@ -1327,6 +1327,7 @@ declare module 'gi://Adw?version=1' {
                 'notify::issue-url': (pspec: GObject.ParamSpec) => void;
                 'notify::license': (pspec: GObject.ParamSpec) => void;
                 'notify::license-type': (pspec: GObject.ParamSpec) => void;
+                'notify::other-apps-title': (pspec: GObject.ParamSpec) => void;
                 'notify::release-notes': (pspec: GObject.ParamSpec) => void;
                 'notify::release-notes-version': (pspec: GObject.ParamSpec) => void;
                 'notify::support-url': (pspec: GObject.ParamSpec) => void;
@@ -1412,6 +1413,8 @@ declare module 'gi://Adw?version=1' {
                 license: string;
                 license_type: Gtk.License;
                 licenseType: Gtk.License;
+                other_apps_title: string;
+                otherAppsTitle: string;
                 release_notes: string;
                 releaseNotes: string;
                 release_notes_version: string;
@@ -1557,6 +1560,10 @@ declare module 'gi://Adw?version=1' {
          *
          * {@link Adw.AboutDialog} can show links to your other apps at the end of the main
          * page. To add them, use {@link AboutDialog.add_other_app}.
+         *
+         * By default the other apps section will have "Other Apps by
+         * {@link AboutDialog.developer_name}" as its title. Use
+         * {@link AboutDialog.other_apps_title} to override it.
          *
          * ## Constructing
          *
@@ -1937,6 +1944,26 @@ declare module 'gi://Adw?version=1' {
              */
             get licenseType(): Gtk.License;
             set licenseType(val: Gtk.License);
+            /**
+             * The "Other apps" section title.
+             *
+             * If not set, the section will say "Other Apps by (developer name)".
+             *
+             * See {@link AboutDialog.add_other_app}.
+             * @since 1.10
+             */
+            get other_apps_title(): string;
+            set other_apps_title(val: string);
+            /**
+             * The "Other apps" section title.
+             *
+             * If not set, the section will say "Other Apps by (developer name)".
+             *
+             * See {@link AboutDialog.add_other_app}.
+             * @since 1.10
+             */
+            get otherAppsTitle(): string;
+            set otherAppsTitle(val: string);
             /**
              * The release notes of the application.
              *
@@ -2361,6 +2388,11 @@ declare module 'gi://Adw?version=1' {
              */
             get_license_type(): Gtk.License;
             /**
+             * Gets The other apps section title for `self`.
+             * @returns the section title
+             */
+            get_other_apps_title(): string;
+            /**
              * Gets the release notes for `self`.
              * @returns the release notes
              */
@@ -2588,6 +2620,15 @@ declare module 'gi://Adw?version=1' {
              * @param license_type the license type
              */
             set_license_type(license_type: Gtk.License): void;
+            /**
+             * Sets the "Other apps" section title for `self`.
+             *
+             * If not set, the section will say "Other Apps by (developer name)".
+             *
+             * See {@link AboutDialog.add_other_app}.
+             * @param title the new title
+             */
+            set_other_apps_title(title: string): void;
             /**
              * Sets the release notes for `self`.
              *
