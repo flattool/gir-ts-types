@@ -50883,6 +50883,7 @@ declare module 'gi://Adw?version=1' {
         /**
          * {@link Adw.EnumListItem} is the type of items in a {@link EnumListModel}.
          * @gir-type Class
+         * @deprecated since 1.10: Use {@link Gtk.EnumListItem}.
          */
         class EnumListItem extends GObject.Object {
             static $gtype: GObject.GType<EnumListItem>;
@@ -50891,16 +50892,19 @@ declare module 'gi://Adw?version=1' {
 
             /**
              * The enum value name.
+             * @deprecated since 1.10: Use {@link Gtk.EnumListItem}.
              * @read-only
              */
             get name(): string;
             /**
              * The enum value nick.
+             * @deprecated since 1.10: Use {@link Gtk.EnumListItem}.
              * @read-only
              */
             get nick(): string;
             /**
              * The enum value.
+             * @deprecated since 1.10: Use {@link Gtk.EnumListItem}.
              * @read-only
              */
             get value(): number;
@@ -50986,6 +50990,7 @@ declare module 'gi://Adw?version=1' {
          *
          * {@link Adw.EnumListModel} contains objects of type {@link EnumListItem}.
          * @gir-type Class
+         * @deprecated since 1.10: Use {@link Gtk.EnumList}.
          */
         class EnumListModel<A extends GObject.Object = GObject.Object>
             extends GObject.Object
@@ -50997,35 +51002,41 @@ declare module 'gi://Adw?version=1' {
 
             /**
              * The type of the enum represented by the model.
+             * @deprecated since 1.10: Use {@link Gtk.EnumList}.
              * @construct-only
              */
             get enum_type(): GObject.GType;
             /**
              * The type of the enum represented by the model.
+             * @deprecated since 1.10: Use {@link Gtk.EnumList}.
              * @construct-only
              */
             get enumType(): GObject.GType;
             /**
              * The type of the items. See {@link Gio.ListModel.get_item_type}.
              * @since 1.9
+             * @deprecated since 1.10: Use {@link Gtk.EnumList}.
              * @read-only
              */
             get item_type(): GObject.GType;
             /**
              * The type of the items. See {@link Gio.ListModel.get_item_type}.
              * @since 1.9
+             * @deprecated since 1.10: Use {@link Gtk.EnumList}.
              * @read-only
              */
             get itemType(): GObject.GType;
             /**
              * The number of items. See {@link Gio.ListModel.get_n_items}.
              * @since 1.9
+             * @deprecated since 1.10: Use {@link Gtk.EnumList}.
              * @read-only
              */
             get n_items(): number;
             /**
              * The number of items. See {@link Gio.ListModel.get_n_items}.
              * @since 1.9
+             * @deprecated since 1.10: Use {@link Gtk.EnumList}.
              * @read-only
              */
             get nItems(): number;
