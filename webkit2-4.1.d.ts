@@ -612,7 +612,7 @@ declare module 'gi://WebKit2?version=4.1' {
          */
         enum HardwareAccelerationPolicy {
             /**
-             * Hardware acceleration is enabled/disabled as request by web contents.
+             * Hardware acceleration is enabled/disabled as request by web contents. Deprecated 2.54.
              */
             ON_DEMAND,
             /**
@@ -20282,6 +20282,16 @@ declare module 'gi://WebKit2?version=4.1' {
              */
             get_dom_cache_directory(): string | null;
             /**
+             * Get the {@link WebKit2.FaviconDatabase} of `manager`.
+             * @returns a {@link WebKit2.FaviconDatabase}, or `null` if website icons are disabled
+             */
+            get_favicon_database(): FaviconDatabase | null;
+            /**
+             * Get whether website icons are enabled.
+             * @returns `true` if website icons are enabled, or `false` otherwise.
+             */
+            get_favicons_enabled(): boolean;
+            /**
              * Get the {@link WebKit2.WebsiteDataManager.hsts_cache_directory} property.
              * @returns the directory where the HSTS cache is stored or `null` if `manager` is ephemeral.
              */
@@ -20438,6 +20448,15 @@ declare module 'gi://WebKit2?version=4.1' {
              * @returns `true` if website data resources were successfully removed, or `false` otherwise.
              */
             remove_finish(result: Gio.AsyncResult): boolean;
+            /**
+             * Set whether website icons are enabled. Website icons are disabled by default.
+             * When website icons are disabled, the {@link WebKit2.FaviconDatabase} of `manager` is closed and
+             * its reference removed, so `webkit_website_data_manager_get_favicon_database()` will
+             * return `null`. If website icons are enabled again, a new {@link WebKit2.FaviconDatabase} will
+             * be created.
+             * @param enabled value to set
+             */
+            set_favicons_enabled(enabled: boolean): void;
             /**
              * Enable or disable Intelligent Tracking Prevention (ITP).
              *
@@ -21803,6 +21822,12 @@ declare module 'gi://WebKit2?version=4.1' {
 
             // Methods
 
+            /**
+             * Finds a feature given its identifier.
+             * @param identifier a {@link WebKit2.Feature} identifier
+             * @returns The feature with the given     `identifier`, or `NULL` if it cannot be found.
+             */
+            find(identifier: string): Feature | null;
             /**
              * Gets a feature given its index.
              * @param index index of the feature
