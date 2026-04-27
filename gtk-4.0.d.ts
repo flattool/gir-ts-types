@@ -245744,10 +245744,26 @@ declare module 'gi://Gtk?version=4.0' {
 
             // Properties
 
+            /**
+             * Resource to load SVG data from.
+             *
+             * This property is meant for use in ui files.
+             * @since 4.24
+             */
             get resource(): string;
             set resource(val: string);
+            /**
+             * The current state of the renderer.
+             *
+             * This can be a number between 0 and 63.
+             * @since 4.24
+             */
             get state(): number;
             set state(val: number);
+            /**
+             * A CSS stylesheet to apply to the SVG.
+             * @since 4.24
+             */
             get stylesheet(): GLib.Bytes;
             set stylesheet(val: GLib.Bytes | Uint8Array);
 
@@ -282171,6 +282187,15 @@ declare module 'gi://Gtk?version=4.0' {
                  */
                 'enable-debugging': (arg0: boolean) => boolean | void;
                 /**
+                 * Emitted when the compositor has decided to eliminate a window.
+                 *
+                 * `window` *has* to be in a hidden state after this signal was handled.
+                 * @signal
+                 * @since 4.24
+                 * @run-last
+                 */
+                'force-close': () => void;
+                /**
                  * Emitted when the set of accelerators or mnemonics that
                  * are associated with the window changes.
                  * @signal
@@ -282757,6 +282782,11 @@ declare module 'gi://Gtk?version=4.0' {
              * @virtual
              */
             vfunc_enable_debugging(toggle: boolean): boolean;
+            /**
+             * Class handler for the `Gtk.Window::force-close` signal.
+             * @virtual
+             */
+            vfunc_force_close(): void;
             /**
              * Signal gets emitted when the set of accelerators or
              *   mnemonics that are associated with window changes.
