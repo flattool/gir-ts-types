@@ -8022,6 +8022,7 @@ declare module 'gi://Gio?version=2.0' {
              *
              * It is important to use the proper GVariant format when retrieving
              * the options with `g_variant_dict_lookup()`:
+             *
              * - for {@link GLib.OptionArg.NONE}, use `b`
              * - for {@link GLib.OptionArg.STRING}, use `&s`
              * - for {@link GLib.OptionArg.INT}, use `i`
@@ -44280,6 +44281,7 @@ declare module 'gi://Gio?version=2.0' {
          * While a wide variety of stateful actions is possible, the following
          * is the minimum that is expected to be supported by all users of exported
          * menu information:
+         *
          * - an action with no parameter type and no state
          * - an action with no parameter type and boolean state
          * - an action with string parameter type and string state

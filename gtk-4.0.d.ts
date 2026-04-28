@@ -245628,7 +245628,7 @@ declare module 'gi://Gtk?version=4.0' {
                  * @since 4.24
                  * @run-last
                  */
-                activate: (arg0: string | null) => void;
+                activate: (arg0: string | null, arg1: string | null) => void;
                 /**
                  * Signals that an error occurred.
                  *
