@@ -4311,7 +4311,7 @@ declare module 'gi://HarfBuzz?version=0.0' {
         function buffer_set_message_func(
             buffer: buffer_t,
             func: buffer_message_func_t,
-            destroy?: destroy_func_t | null,
+            destroy: destroy_func_t | null,
         ): void;
         /**
          * Sets the {@link HarfBuzz.codepoint_t} that replaces characters not found in
@@ -4540,7 +4540,7 @@ declare module 'gi://HarfBuzz?version=0.0' {
         function draw_funcs_set_close_path_func(
             dfuncs: draw_funcs_t,
             func: draw_close_path_func_t,
-            destroy?: destroy_func_t | null,
+            destroy: destroy_func_t | null,
         ): void;
         /**
          * Sets cubic-to callback to the draw functions object.
@@ -4552,7 +4552,7 @@ declare module 'gi://HarfBuzz?version=0.0' {
         function draw_funcs_set_cubic_to_func(
             dfuncs: draw_funcs_t,
             func: draw_cubic_to_func_t,
-            destroy?: destroy_func_t | null,
+            destroy: destroy_func_t | null,
         ): void;
         /**
          * Sets line-to callback to the draw functions object.
@@ -4564,7 +4564,7 @@ declare module 'gi://HarfBuzz?version=0.0' {
         function draw_funcs_set_line_to_func(
             dfuncs: draw_funcs_t,
             func: draw_line_to_func_t,
-            destroy?: destroy_func_t | null,
+            destroy: destroy_func_t | null,
         ): void;
         /**
          * Sets move-to callback to the draw functions object.
@@ -4576,7 +4576,7 @@ declare module 'gi://HarfBuzz?version=0.0' {
         function draw_funcs_set_move_to_func(
             dfuncs: draw_funcs_t,
             func: draw_move_to_func_t,
-            destroy?: destroy_func_t | null,
+            destroy: destroy_func_t | null,
         ): void;
         /**
          * Sets quadratic-to callback to the draw functions object.
@@ -4588,7 +4588,7 @@ declare module 'gi://HarfBuzz?version=0.0' {
         function draw_funcs_set_quadratic_to_func(
             dfuncs: draw_funcs_t,
             func: draw_quadratic_to_func_t,
-            destroy?: destroy_func_t | null,
+            destroy: destroy_func_t | null,
         ): void;
         /**
          * Perform a "line-to" draw operation.
@@ -4741,7 +4741,7 @@ declare module 'gi://HarfBuzz?version=0.0' {
          */
         function face_create_for_tables(
             reference_table_func: reference_table_func_t,
-            destroy?: destroy_func_t | null,
+            destroy: destroy_func_t | null,
         ): face_t;
         /**
          * A thin wrapper around `hb_blob_create_from_file_or_fail()`
@@ -4769,7 +4769,7 @@ declare module 'gi://HarfBuzz?version=0.0' {
         function face_create_from_file_or_fail_using(
             file_name: string,
             index: number,
-            loader_name?: string | null,
+            loader_name: string | null,
         ): face_t;
         /**
          * Like `hb_face_create()`, but returns `NULL` if the blob data
@@ -4794,7 +4794,7 @@ declare module 'gi://HarfBuzz?version=0.0' {
          * @returns The new face object, or `NULL` if the loader fails to load the face.
          * @since 11.0.0
          */
-        function face_create_or_fail_using(blob: blob_t, index: number, loader_name?: string | null): face_t;
+        function face_create_or_fail_using(blob: blob_t, index: number, loader_name: string | null): face_t;
         /**
          * Fetches the singleton empty face object.
          * @returns The empty face object
@@ -4885,7 +4885,7 @@ declare module 'gi://HarfBuzz?version=0.0' {
         function face_set_get_table_tags_func(
             face: face_t,
             func: get_table_tags_func_t,
-            destroy?: destroy_func_t | null,
+            destroy: destroy_func_t | null,
         ): void;
         /**
          * Sets the glyph count for a face object to the specified value.
@@ -5034,7 +5034,7 @@ declare module 'gi://HarfBuzz?version=0.0' {
          * @param draw_data User data to pass to draw callbacks
          * @since 7.0.0
          */
-        function font_draw_glyph(font: font_t, glyph: codepoint_t, dfuncs: draw_funcs_t, draw_data?: any | null): void;
+        function font_draw_glyph(font: font_t, glyph: codepoint_t, dfuncs: draw_funcs_t, draw_data: any | null): void;
         /**
          * Draws the outline that corresponds to a glyph in the specified `font`.
          *
@@ -5054,7 +5054,7 @@ declare module 'gi://HarfBuzz?version=0.0' {
             font: font_t,
             glyph: codepoint_t,
             dfuncs: draw_funcs_t,
-            draw_data?: any | null,
+            draw_data: any | null,
         ): bool_t;
         /**
          * Creates a new {@link HarfBuzz.font_funcs_t} structure of font functions.
@@ -5092,7 +5092,7 @@ declare module 'gi://HarfBuzz?version=0.0' {
         function font_funcs_set_draw_glyph_func(
             ffuncs: font_funcs_t,
             func: font_draw_glyph_func_t,
-            destroy?: destroy_func_t | null,
+            destroy: destroy_func_t | null,
         ): void;
         /**
          * Sets the implementation function for {@link HarfBuzz.font_draw_glyph_or_fail_func_t}.
@@ -5104,7 +5104,7 @@ declare module 'gi://HarfBuzz?version=0.0' {
         function font_funcs_set_draw_glyph_or_fail_func(
             ffuncs: font_funcs_t,
             func: font_draw_glyph_or_fail_func_t,
-            destroy?: destroy_func_t | null,
+            destroy: destroy_func_t | null,
         ): void;
         /**
          * Sets the implementation function for {@link HarfBuzz.font_get_font_h_extents_func_t}.
@@ -5116,7 +5116,7 @@ declare module 'gi://HarfBuzz?version=0.0' {
         function font_funcs_set_font_h_extents_func(
             ffuncs: font_funcs_t,
             func: font_get_font_h_extents_func_t,
-            destroy?: destroy_func_t | null,
+            destroy: destroy_func_t | null,
         ): void;
         /**
          * Sets the implementation function for {@link HarfBuzz.font_get_font_v_extents_func_t}.
@@ -5128,7 +5128,7 @@ declare module 'gi://HarfBuzz?version=0.0' {
         function font_funcs_set_font_v_extents_func(
             ffuncs: font_funcs_t,
             func: font_get_font_v_extents_func_t,
-            destroy?: destroy_func_t | null,
+            destroy: destroy_func_t | null,
         ): void;
         /**
          * Sets the implementation function for {@link HarfBuzz.font_get_glyph_contour_point_func_t}.
@@ -5140,7 +5140,7 @@ declare module 'gi://HarfBuzz?version=0.0' {
         function font_funcs_set_glyph_contour_point_func(
             ffuncs: font_funcs_t,
             func: font_get_glyph_contour_point_func_t,
-            destroy?: destroy_func_t | null,
+            destroy: destroy_func_t | null,
         ): void;
         /**
          * Sets the implementation function for {@link HarfBuzz.font_get_glyph_extents_func_t}.
@@ -5152,7 +5152,7 @@ declare module 'gi://HarfBuzz?version=0.0' {
         function font_funcs_set_glyph_extents_func(
             ffuncs: font_funcs_t,
             func: font_get_glyph_extents_func_t,
-            destroy?: destroy_func_t | null,
+            destroy: destroy_func_t | null,
         ): void;
         /**
          * Sets the implementation function for {@link HarfBuzz.font_get_glyph_from_name_func_t}.
@@ -5164,7 +5164,7 @@ declare module 'gi://HarfBuzz?version=0.0' {
         function font_funcs_set_glyph_from_name_func(
             ffuncs: font_funcs_t,
             func: font_get_glyph_from_name_func_t,
-            destroy?: destroy_func_t | null,
+            destroy: destroy_func_t | null,
         ): void;
         /**
          * Deprecated.  Use `hb_font_funcs_set_nominal_glyph_func()` and
@@ -5178,7 +5178,7 @@ declare module 'gi://HarfBuzz?version=0.0' {
         function font_funcs_set_glyph_func(
             ffuncs: font_funcs_t,
             func: font_get_glyph_func_t,
-            destroy?: destroy_func_t | null,
+            destroy: destroy_func_t | null,
         ): void;
         /**
          * Sets the implementation function for {@link HarfBuzz.font_get_glyph_h_advance_func_t}.
@@ -5190,7 +5190,7 @@ declare module 'gi://HarfBuzz?version=0.0' {
         function font_funcs_set_glyph_h_advance_func(
             ffuncs: font_funcs_t,
             func: font_get_glyph_h_advance_func_t,
-            destroy?: destroy_func_t | null,
+            destroy: destroy_func_t | null,
         ): void;
         /**
          * Sets the implementation function for {@link HarfBuzz.font_get_glyph_h_advances_func_t}.
@@ -5202,7 +5202,7 @@ declare module 'gi://HarfBuzz?version=0.0' {
         function font_funcs_set_glyph_h_advances_func(
             ffuncs: font_funcs_t,
             func: font_get_glyph_h_advances_func_t,
-            destroy?: destroy_func_t | null,
+            destroy: destroy_func_t | null,
         ): void;
         /**
          * Sets the implementation function for {@link HarfBuzz.font_get_glyph_h_kerning_func_t}.
@@ -5214,7 +5214,7 @@ declare module 'gi://HarfBuzz?version=0.0' {
         function font_funcs_set_glyph_h_kerning_func(
             ffuncs: font_funcs_t,
             func: font_get_glyph_h_kerning_func_t,
-            destroy?: destroy_func_t | null,
+            destroy: destroy_func_t | null,
         ): void;
         /**
          * Sets the implementation function for {@link HarfBuzz.font_get_glyph_h_origin_func_t}.
@@ -5226,7 +5226,7 @@ declare module 'gi://HarfBuzz?version=0.0' {
         function font_funcs_set_glyph_h_origin_func(
             ffuncs: font_funcs_t,
             func: font_get_glyph_h_origin_func_t,
-            destroy?: destroy_func_t | null,
+            destroy: destroy_func_t | null,
         ): void;
         /**
          * Sets the implementation function for {@link HarfBuzz.font_get_glyph_h_origins_func_t}.
@@ -5238,7 +5238,7 @@ declare module 'gi://HarfBuzz?version=0.0' {
         function font_funcs_set_glyph_h_origins_func(
             ffuncs: font_funcs_t,
             func: font_get_glyph_h_origins_func_t,
-            destroy?: destroy_func_t | null,
+            destroy: destroy_func_t | null,
         ): void;
         /**
          * Sets the implementation function for {@link HarfBuzz.font_get_glyph_name_func_t}.
@@ -5250,7 +5250,7 @@ declare module 'gi://HarfBuzz?version=0.0' {
         function font_funcs_set_glyph_name_func(
             ffuncs: font_funcs_t,
             func: font_get_glyph_name_func_t,
-            destroy?: destroy_func_t | null,
+            destroy: destroy_func_t | null,
         ): void;
         /**
          * Sets the implementation function for {@link HarfBuzz.font_get_glyph_shape_func_t},
@@ -5264,7 +5264,7 @@ declare module 'gi://HarfBuzz?version=0.0' {
         function font_funcs_set_glyph_shape_func(
             ffuncs: font_funcs_t,
             func: font_get_glyph_shape_func_t,
-            destroy?: destroy_func_t | null,
+            destroy: destroy_func_t | null,
         ): void;
         /**
          * Sets the implementation function for {@link HarfBuzz.font_get_glyph_v_advance_func_t}.
@@ -5276,7 +5276,7 @@ declare module 'gi://HarfBuzz?version=0.0' {
         function font_funcs_set_glyph_v_advance_func(
             ffuncs: font_funcs_t,
             func: font_get_glyph_v_advance_func_t,
-            destroy?: destroy_func_t | null,
+            destroy: destroy_func_t | null,
         ): void;
         /**
          * Sets the implementation function for {@link HarfBuzz.font_get_glyph_v_advances_func_t}.
@@ -5288,7 +5288,7 @@ declare module 'gi://HarfBuzz?version=0.0' {
         function font_funcs_set_glyph_v_advances_func(
             ffuncs: font_funcs_t,
             func: font_get_glyph_v_advances_func_t,
-            destroy?: destroy_func_t | null,
+            destroy: destroy_func_t | null,
         ): void;
         /**
          * Sets the implementation function for {@link HarfBuzz.font_get_glyph_v_kerning_func_t}.
@@ -5301,7 +5301,7 @@ declare module 'gi://HarfBuzz?version=0.0' {
         function font_funcs_set_glyph_v_kerning_func(
             ffuncs: font_funcs_t,
             func: font_get_glyph_v_kerning_func_t,
-            destroy?: destroy_func_t | null,
+            destroy: destroy_func_t | null,
         ): void;
         /**
          * Sets the implementation function for {@link HarfBuzz.font_get_glyph_v_origin_func_t}.
@@ -5313,7 +5313,7 @@ declare module 'gi://HarfBuzz?version=0.0' {
         function font_funcs_set_glyph_v_origin_func(
             ffuncs: font_funcs_t,
             func: font_get_glyph_v_origin_func_t,
-            destroy?: destroy_func_t | null,
+            destroy: destroy_func_t | null,
         ): void;
         /**
          * Sets the implementation function for {@link HarfBuzz.font_get_glyph_v_origins_func_t}.
@@ -5325,7 +5325,7 @@ declare module 'gi://HarfBuzz?version=0.0' {
         function font_funcs_set_glyph_v_origins_func(
             ffuncs: font_funcs_t,
             func: font_get_glyph_v_origins_func_t,
-            destroy?: destroy_func_t | null,
+            destroy: destroy_func_t | null,
         ): void;
         /**
          * Sets the implementation function for {@link HarfBuzz.font_get_nominal_glyph_func_t}.
@@ -5337,7 +5337,7 @@ declare module 'gi://HarfBuzz?version=0.0' {
         function font_funcs_set_nominal_glyph_func(
             ffuncs: font_funcs_t,
             func: font_get_nominal_glyph_func_t,
-            destroy?: destroy_func_t | null,
+            destroy: destroy_func_t | null,
         ): void;
         /**
          * Sets the implementation function for {@link HarfBuzz.font_get_nominal_glyphs_func_t}.
@@ -5349,7 +5349,7 @@ declare module 'gi://HarfBuzz?version=0.0' {
         function font_funcs_set_nominal_glyphs_func(
             ffuncs: font_funcs_t,
             func: font_get_nominal_glyphs_func_t,
-            destroy?: destroy_func_t | null,
+            destroy: destroy_func_t | null,
         ): void;
         /**
          * Sets the implementation function for {@link HarfBuzz.font_paint_glyph_func_t}.
@@ -5362,7 +5362,7 @@ declare module 'gi://HarfBuzz?version=0.0' {
         function font_funcs_set_paint_glyph_func(
             ffuncs: font_funcs_t,
             func: font_paint_glyph_func_t,
-            destroy?: destroy_func_t | null,
+            destroy: destroy_func_t | null,
         ): void;
         /**
          * Sets the implementation function for {@link HarfBuzz.font_paint_glyph_or_fail_func_t}.
@@ -5374,7 +5374,7 @@ declare module 'gi://HarfBuzz?version=0.0' {
         function font_funcs_set_paint_glyph_or_fail_func(
             ffuncs: font_funcs_t,
             func: font_paint_glyph_or_fail_func_t,
-            destroy?: destroy_func_t | null,
+            destroy: destroy_func_t | null,
         ): void;
         /**
          * Sets the implementation function for {@link HarfBuzz.font_get_variation_glyph_func_t}.
@@ -5386,7 +5386,7 @@ declare module 'gi://HarfBuzz?version=0.0' {
         function font_funcs_set_variation_glyph_func(
             ffuncs: font_funcs_t,
             func: font_get_variation_glyph_func_t,
-            destroy?: destroy_func_t | null,
+            destroy: destroy_func_t | null,
         ): void;
         /**
          * Fetches the empty font object.
@@ -5663,7 +5663,7 @@ declare module 'gi://HarfBuzz?version=0.0' {
             font: font_t,
             glyph: codepoint_t,
             dfuncs: draw_funcs_t,
-            draw_data?: any | null,
+            draw_data: any | null,
         ): void;
         /**
          * Fetches the advance for a glyph ID in the specified font,
@@ -6202,7 +6202,7 @@ declare module 'gi://HarfBuzz?version=0.0' {
          * @param ptr The pointer to the memory to free.
          * @since 11.0.0
          */
-        function free(ptr?: any | null): void;
+        function free(ptr: any | null): void;
         /**
          * Creates an {@link HarfBuzz.face_t} face object from the specified FT_Face.
          *
@@ -6893,7 +6893,7 @@ declare module 'gi://HarfBuzz?version=0.0' {
             baseline_tag: ot_layout_baseline_tag_t,
             direction: direction_t,
             script: script_t,
-            language?: language_t | null,
+            language: language_t | null,
         ): [bool_t, position_t | null];
         /**
          * Fetches a baseline value from the face, and synthesizes
@@ -6977,7 +6977,7 @@ declare module 'gi://HarfBuzz?version=0.0' {
             font: font_t,
             direction: direction_t,
             script: script_t,
-            language?: language_t | null,
+            language: language_t | null,
         ): [bool_t, font_extents_t | null];
         /**
          * Fetches the GDEF class of the requested glyph in the specified face.
@@ -7726,10 +7726,10 @@ declare module 'gi://HarfBuzz?version=0.0' {
          */
         function ot_tags_from_script_and_language(
             script: script_t,
-            language?: language_t | null,
-            script_count?: number,
-            language_count?: number,
-        ): [number, tag_t | null, number, tag_t | null];
+            language: language_t | null,
+            script_count: number | null,
+            language_count: number | null,
+        ): [number | null, tag_t | null, number | null, tag_t | null];
         /**
          * Converts a script tag and a language tag to an {@link HarfBuzz.script_t} and an
          * {@link HarfBuzz.language_t}.
@@ -7937,7 +7937,7 @@ declare module 'gi://HarfBuzz?version=0.0' {
         function paint_funcs_set_color_func(
             funcs: paint_funcs_t,
             func: paint_color_func_t,
-            destroy?: destroy_func_t | null,
+            destroy: destroy_func_t | null,
         ): void;
         /**
          * Sets the color-glyph callback on the paint functions struct.
@@ -7949,7 +7949,7 @@ declare module 'gi://HarfBuzz?version=0.0' {
         function paint_funcs_set_color_glyph_func(
             funcs: paint_funcs_t,
             func: paint_color_glyph_func_t,
-            destroy?: destroy_func_t | null,
+            destroy: destroy_func_t | null,
         ): void;
         /**
          * Sets the custom-palette-color callback on the paint functions struct.
@@ -7961,7 +7961,7 @@ declare module 'gi://HarfBuzz?version=0.0' {
         function paint_funcs_set_custom_palette_color_func(
             funcs: paint_funcs_t,
             func: paint_custom_palette_color_func_t,
-            destroy?: destroy_func_t | null,
+            destroy: destroy_func_t | null,
         ): void;
         /**
          * Sets the paint-image callback on the paint functions struct.
@@ -7973,7 +7973,7 @@ declare module 'gi://HarfBuzz?version=0.0' {
         function paint_funcs_set_image_func(
             funcs: paint_funcs_t,
             func: paint_image_func_t,
-            destroy?: destroy_func_t | null,
+            destroy: destroy_func_t | null,
         ): void;
         /**
          * Sets the linear-gradient callback on the paint functions struct.
@@ -7985,7 +7985,7 @@ declare module 'gi://HarfBuzz?version=0.0' {
         function paint_funcs_set_linear_gradient_func(
             funcs: paint_funcs_t,
             func: paint_linear_gradient_func_t,
-            destroy?: destroy_func_t | null,
+            destroy: destroy_func_t | null,
         ): void;
         /**
          * Sets the pop-clip callback on the paint functions struct.
@@ -7997,7 +7997,7 @@ declare module 'gi://HarfBuzz?version=0.0' {
         function paint_funcs_set_pop_clip_func(
             funcs: paint_funcs_t,
             func: paint_pop_clip_func_t,
-            destroy?: destroy_func_t | null,
+            destroy: destroy_func_t | null,
         ): void;
         /**
          * Sets the pop-group callback on the paint functions struct.
@@ -8009,7 +8009,7 @@ declare module 'gi://HarfBuzz?version=0.0' {
         function paint_funcs_set_pop_group_func(
             funcs: paint_funcs_t,
             func: paint_pop_group_func_t,
-            destroy?: destroy_func_t | null,
+            destroy: destroy_func_t | null,
         ): void;
         /**
          * Sets the pop-transform callback on the paint functions struct.
@@ -8021,7 +8021,7 @@ declare module 'gi://HarfBuzz?version=0.0' {
         function paint_funcs_set_pop_transform_func(
             funcs: paint_funcs_t,
             func: paint_pop_transform_func_t,
-            destroy?: destroy_func_t | null,
+            destroy: destroy_func_t | null,
         ): void;
         /**
          * Sets the push-clip-glyph callback on the paint functions struct.
@@ -8033,7 +8033,7 @@ declare module 'gi://HarfBuzz?version=0.0' {
         function paint_funcs_set_push_clip_glyph_func(
             funcs: paint_funcs_t,
             func: paint_push_clip_glyph_func_t,
-            destroy?: destroy_func_t | null,
+            destroy: destroy_func_t | null,
         ): void;
         /**
          * Sets the push-clip-rect callback on the paint functions struct.
@@ -8045,7 +8045,7 @@ declare module 'gi://HarfBuzz?version=0.0' {
         function paint_funcs_set_push_clip_rectangle_func(
             funcs: paint_funcs_t,
             func: paint_push_clip_rectangle_func_t,
-            destroy?: destroy_func_t | null,
+            destroy: destroy_func_t | null,
         ): void;
         /**
          * Sets the push-group callback on the paint functions struct.
@@ -8057,7 +8057,7 @@ declare module 'gi://HarfBuzz?version=0.0' {
         function paint_funcs_set_push_group_func(
             funcs: paint_funcs_t,
             func: paint_push_group_func_t,
-            destroy?: destroy_func_t | null,
+            destroy: destroy_func_t | null,
         ): void;
         /**
          * Sets the push-transform callback on the paint functions struct.
@@ -8069,7 +8069,7 @@ declare module 'gi://HarfBuzz?version=0.0' {
         function paint_funcs_set_push_transform_func(
             funcs: paint_funcs_t,
             func: paint_push_transform_func_t,
-            destroy?: destroy_func_t | null,
+            destroy: destroy_func_t | null,
         ): void;
         /**
          * Sets the radial-gradient callback on the paint functions struct.
@@ -8081,7 +8081,7 @@ declare module 'gi://HarfBuzz?version=0.0' {
         function paint_funcs_set_radial_gradient_func(
             funcs: paint_funcs_t,
             func: paint_radial_gradient_func_t,
-            destroy?: destroy_func_t | null,
+            destroy: destroy_func_t | null,
         ): void;
         /**
          * Sets the sweep-gradient callback on the paint functions struct.
@@ -8093,7 +8093,7 @@ declare module 'gi://HarfBuzz?version=0.0' {
         function paint_funcs_set_sweep_gradient_func(
             funcs: paint_funcs_t,
             func: paint_sweep_gradient_func_t,
-            destroy?: destroy_func_t | null,
+            destroy: destroy_func_t | null,
         ): void;
         /**
          * Perform a "image" paint operation.
@@ -8115,7 +8115,7 @@ declare module 'gi://HarfBuzz?version=0.0' {
             height: number,
             format: tag_t,
             slant: number,
-            extents?: glyph_extents_t | null,
+            extents: glyph_extents_t | null,
         ): void;
         /**
          * Perform a "linear-gradient" paint operation.
@@ -8147,7 +8147,7 @@ declare module 'gi://HarfBuzz?version=0.0' {
          * @param paint_data associated data passed by the caller
          * @since 7.0.0
          */
-        function paint_pop_clip(funcs: paint_funcs_t, paint_data?: any | null): void;
+        function paint_pop_clip(funcs: paint_funcs_t, paint_data: any | null): void;
         /**
          * Perform a "pop-group" paint operation.
          * @param funcs paint functions
@@ -8162,7 +8162,7 @@ declare module 'gi://HarfBuzz?version=0.0' {
          * @param paint_data associated data passed by the caller
          * @since 7.0.0
          */
-        function paint_pop_transform(funcs: paint_funcs_t, paint_data?: any | null): void;
+        function paint_pop_transform(funcs: paint_funcs_t, paint_data: any | null): void;
         /**
          * Perform a "push-clip-glyph" paint operation.
          * @param funcs paint functions
@@ -8210,7 +8210,7 @@ declare module 'gi://HarfBuzz?version=0.0' {
          * @param paint_data associated data passed by the caller
          * @since 7.0.0
          */
-        function paint_push_group(funcs: paint_funcs_t, paint_data?: any | null): void;
+        function paint_push_group(funcs: paint_funcs_t, paint_data: any | null): void;
         /**
          * Push the inverse of the transform reflecting the font's
          * scale and slant settings onto the paint functions.
@@ -8613,7 +8613,7 @@ declare module 'gi://HarfBuzz?version=0.0' {
          * @param features an array of user    specified {@link HarfBuzz.feature_t} or `NULL`
          * @since 0.9.2
          */
-        function shape(font: font_t, buffer: buffer_t, features?: feature_t[] | null): void;
+        function shape(font: font_t, buffer: buffer_t, features: feature_t[] | null): void;
         /**
          * See `hb_shape()` for details. If `shaper_list` is not `NULL`, the specified
          * shapers will be used in the given order, otherwise the default shapers list
@@ -8628,8 +8628,8 @@ declare module 'gi://HarfBuzz?version=0.0' {
         function shape_full(
             font: font_t,
             buffer: buffer_t,
-            features?: feature_t[] | null,
-            shaper_list?: string[] | null,
+            features: feature_t[] | null,
+            shaper_list: string[] | null,
         ): bool_t;
         /**
          * Retrieves the list of shapers supported by HarfBuzz.
@@ -8821,7 +8821,7 @@ declare module 'gi://HarfBuzz?version=0.0' {
          * @returns The Unicode-functions structure
          * @since 0.9.2
          */
-        function unicode_funcs_create(parent?: unicode_funcs_t | null): unicode_funcs_t;
+        function unicode_funcs_create(parent: unicode_funcs_t | null): unicode_funcs_t;
         /**
          * Fetches a pointer to the default Unicode-functions structure that is used
          * when no functions are explicitly set on {@link HarfBuzz.buffer_t}.
@@ -8868,7 +8868,7 @@ declare module 'gi://HarfBuzz?version=0.0' {
         function unicode_funcs_set_combining_class_func(
             ufuncs: unicode_funcs_t,
             func: unicode_combining_class_func_t,
-            destroy?: destroy_func_t | null,
+            destroy: destroy_func_t | null,
         ): void;
         /**
          * Sets the implementation function for {@link HarfBuzz.unicode_compose_func_t}.
@@ -8880,7 +8880,7 @@ declare module 'gi://HarfBuzz?version=0.0' {
         function unicode_funcs_set_compose_func(
             ufuncs: unicode_funcs_t,
             func: unicode_compose_func_t,
-            destroy?: destroy_func_t | null,
+            destroy: destroy_func_t | null,
         ): void;
         /**
          * Sets the implementation function for {@link HarfBuzz.unicode_decompose_compatibility_func_t}.
@@ -8893,7 +8893,7 @@ declare module 'gi://HarfBuzz?version=0.0' {
         function unicode_funcs_set_decompose_compatibility_func(
             ufuncs: unicode_funcs_t,
             func: unicode_decompose_compatibility_func_t,
-            destroy?: destroy_func_t | null,
+            destroy: destroy_func_t | null,
         ): void;
         /**
          * Sets the implementation function for {@link HarfBuzz.unicode_decompose_func_t}.
@@ -8905,7 +8905,7 @@ declare module 'gi://HarfBuzz?version=0.0' {
         function unicode_funcs_set_decompose_func(
             ufuncs: unicode_funcs_t,
             func: unicode_decompose_func_t,
-            destroy?: destroy_func_t | null,
+            destroy: destroy_func_t | null,
         ): void;
         /**
          * Sets the implementation function for {@link HarfBuzz.unicode_eastasian_width_func_t}.
@@ -8918,7 +8918,7 @@ declare module 'gi://HarfBuzz?version=0.0' {
         function unicode_funcs_set_eastasian_width_func(
             ufuncs: unicode_funcs_t,
             func: unicode_eastasian_width_func_t,
-            destroy?: destroy_func_t | null,
+            destroy: destroy_func_t | null,
         ): void;
         /**
          * Sets the implementation function for {@link HarfBuzz.unicode_general_category_func_t}.
@@ -8930,7 +8930,7 @@ declare module 'gi://HarfBuzz?version=0.0' {
         function unicode_funcs_set_general_category_func(
             ufuncs: unicode_funcs_t,
             func: unicode_general_category_func_t,
-            destroy?: destroy_func_t | null,
+            destroy: destroy_func_t | null,
         ): void;
         /**
          * Sets the implementation function for {@link HarfBuzz.unicode_mirroring_func_t}.
@@ -8942,7 +8942,7 @@ declare module 'gi://HarfBuzz?version=0.0' {
         function unicode_funcs_set_mirroring_func(
             ufuncs: unicode_funcs_t,
             func: unicode_mirroring_func_t,
-            destroy?: destroy_func_t | null,
+            destroy: destroy_func_t | null,
         ): void;
         /**
          * Sets the implementation function for {@link HarfBuzz.unicode_script_func_t}.
@@ -8954,7 +8954,7 @@ declare module 'gi://HarfBuzz?version=0.0' {
         function unicode_funcs_set_script_func(
             ufuncs: unicode_funcs_t,
             func: unicode_script_func_t,
-            destroy?: destroy_func_t | null,
+            destroy: destroy_func_t | null,
         ): void;
         /**
          * Retrieves the General Category (gc) property
@@ -9023,13 +9023,13 @@ declare module 'gi://HarfBuzz?version=0.0' {
          * @gir-type Callback
          */
         interface color_line_get_extend_func_t {
-            (color_line: color_line_t, color_line_data?: any | null): paint_extend_t;
+            (color_line: color_line_t, color_line_data: any | null): paint_extend_t;
         }
         /**
          * @gir-type Callback
          */
         interface destroy_func_t {
-            (user_data?: any | null): void;
+            (user_data: any | null): void;
         }
         /**
          * @gir-type Callback
@@ -9088,7 +9088,7 @@ declare module 'gi://HarfBuzz?version=0.0' {
                 font_data: any | null,
                 glyph: codepoint_t,
                 draw_funcs: draw_funcs_t,
-                draw_data?: any | null,
+                draw_data: any | null,
             ): void;
         }
         /**
@@ -9100,7 +9100,7 @@ declare module 'gi://HarfBuzz?version=0.0' {
                 font_data: any | null,
                 glyph: codepoint_t,
                 draw_funcs: draw_funcs_t,
-                draw_data?: any | null,
+                draw_data: any | null,
             ): bool_t;
         }
         /**
@@ -9193,7 +9193,7 @@ declare module 'gi://HarfBuzz?version=0.0' {
                 font_data: any | null,
                 glyph: codepoint_t,
                 draw_funcs: draw_funcs_t,
-                draw_data?: any | null,
+                draw_data: any | null,
             ): void;
         }
         /**
@@ -9285,7 +9285,7 @@ declare module 'gi://HarfBuzz?version=0.0' {
                 height: number,
                 format: tag_t,
                 slant: number,
-                extents?: glyph_extents_t | null,
+                extents: glyph_extents_t | null,
             ): bool_t;
         }
         /**
@@ -9308,7 +9308,7 @@ declare module 'gi://HarfBuzz?version=0.0' {
          * @gir-type Callback
          */
         interface paint_pop_clip_func_t {
-            (funcs: paint_funcs_t, paint_data?: any | null): void;
+            (funcs: paint_funcs_t, paint_data: any | null): void;
         }
         /**
          * @gir-type Callback
@@ -9320,7 +9320,7 @@ declare module 'gi://HarfBuzz?version=0.0' {
          * @gir-type Callback
          */
         interface paint_pop_transform_func_t {
-            (funcs: paint_funcs_t, paint_data?: any | null): void;
+            (funcs: paint_funcs_t, paint_data: any | null): void;
         }
         /**
          * @gir-type Callback
@@ -9345,7 +9345,7 @@ declare module 'gi://HarfBuzz?version=0.0' {
          * @gir-type Callback
          */
         interface paint_push_group_func_t {
-            (funcs: paint_funcs_t, paint_data?: any | null): void;
+            (funcs: paint_funcs_t, paint_data: any | null): void;
         }
         /**
          * @gir-type Callback

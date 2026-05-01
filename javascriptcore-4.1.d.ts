@@ -377,7 +377,7 @@ declare module 'gi://JavaScriptCore?version=4.1' {
          * @gir-type Callback
          */
         interface ClassEnumeratePropertiesFunction {
-            (jsc_class: Class, context: Context, instance?: any | null): string[] | null;
+            (jsc_class: Class, context: Context, instance: any | null): string[] | null;
         }
         /**
          * @gir-type Callback
@@ -413,7 +413,7 @@ declare module 'gi://JavaScriptCore?version=4.1' {
          * @gir-type Callback
          */
         interface OptionsFunc {
-            (option: string, type: OptionType, description?: string | null): boolean;
+            (option: string, type: OptionType, description: string | null): boolean;
         }
         /**
          * Flags used when defining properties with `jsc_value_object_define_property_data()` and
@@ -476,6 +476,7 @@ declare module 'gi://JavaScriptCore?version=4.1' {
             /**
              * The name of the class.
              * @construct-only
+             * @default null
              */
             get name(): string;
             /**
@@ -568,7 +569,7 @@ declare module 'gi://JavaScriptCore?version=4.1' {
                 callback: GObject.Callback,
                 destroy_notify: GLib.DestroyNotify | null,
                 return_type: GObject.GType,
-                parameter_types?: GObject.GType[] | null,
+                parameter_types: GObject.GType[] | null,
             ): Value;
             /**
              * Add method with `name` to `jsc_class`. When the method is called by JavaScript or `jsc_value_object_invoke_method()`,
@@ -612,7 +613,7 @@ declare module 'gi://JavaScriptCore?version=4.1' {
                 callback: GObject.Callback,
                 destroy_notify: GLib.DestroyNotify | null,
                 return_type: GObject.GType,
-                parameter_types?: GObject.GType[] | null,
+                parameter_types: GObject.GType[] | null,
             ): void;
             /**
              * Add a property with `name` to `jsc_class`. When the property value is read, `getter` is called
@@ -634,9 +635,9 @@ declare module 'gi://JavaScriptCore?version=4.1' {
             add_property(
                 name: string,
                 property_type: GObject.GType,
-                getter?: GObject.Callback | null,
-                setter?: GObject.Callback | null,
-                destroy_notify?: GLib.DestroyNotify | null,
+                getter: GObject.Callback | null,
+                setter: GObject.Callback | null,
+                destroy_notify: GLib.DestroyNotify | null,
             ): void;
             /**
              * Get the class name of `jsc_class`
@@ -841,7 +842,7 @@ declare module 'gi://JavaScriptCore?version=4.1' {
              * @param handler a {@link JavaScriptCore.ExceptionHandler}
              * @param destroy_notify destroy notifier for `user_data`
              */
-            push_exception_handler(handler: ExceptionHandler, destroy_notify?: GLib.DestroyNotify | null): void;
+            push_exception_handler(handler: ExceptionHandler, destroy_notify: GLib.DestroyNotify | null): void;
             /**
              * Register a custom class in `context` using the given `name`. If the new class inherits from
              * another {@link JavaScriptCore.Class}, the parent should be passed as `parent_class`, otherwise `null` should be
@@ -857,9 +858,9 @@ declare module 'gi://JavaScriptCore?version=4.1' {
              */
             register_class(
                 name: string,
-                parent_class?: Class | null,
-                vtable?: ClassVTable | null,
-                destroy_notify?: GLib.DestroyNotify | null,
+                parent_class: Class | null,
+                vtable: ClassVTable | null,
+                destroy_notify: GLib.DestroyNotify | null,
             ): Class;
             /**
              * Set a property of `context` global object with `name` and `value`.
@@ -1036,10 +1037,10 @@ declare module 'gi://JavaScriptCore?version=4.1' {
                 context: Context,
                 data: any | null,
                 size: bigint | number,
-                destroy_notify?: GLib.DestroyNotify | null,
+                destroy_notify: GLib.DestroyNotify | null,
             ): Value;
 
-            static new_array_from_garray(context: Context, array?: Value[] | null): Value;
+            static new_array_from_garray(context: Context, array: Value[] | null): Value;
 
             static new_array_from_strv(context: Context, strv: string[]): Value;
 
@@ -1061,20 +1062,20 @@ declare module 'gi://JavaScriptCore?version=4.1' {
                 callback: GObject.Callback,
                 destroy_notify: GLib.DestroyNotify | null,
                 return_type: GObject.GType,
-                parameter_types?: GObject.GType[] | null,
+                parameter_types: GObject.GType[] | null,
             ): Value;
 
             static new_null(context: Context): Value;
 
             static new_number(context: Context, number: number): Value;
 
-            static new_object(context: Context, instance?: any | null, jsc_class?: Class | null): Value;
+            static new_object(context: Context, instance: any | null, jsc_class: Class | null): Value;
 
             static new_promise(context: Context, executor: Executor): Value;
 
-            static new_string(context: Context, string?: string | null): Value;
+            static new_string(context: Context, string: string | null): Value;
 
-            static new_string_from_bytes(context: Context, bytes?: GLib.Bytes | null): Value;
+            static new_string_from_bytes(context: Context, bytes: GLib.Bytes | null): Value;
 
             static new_typed_array(context: Context, type: TypedArrayType, length: bigint | number): Value;
 
@@ -1136,7 +1137,7 @@ declare module 'gi://JavaScriptCore?version=4.1' {
              * @param parameters the {@link JavaScriptCore.Value}<!-- -->s to pass as parameters to the constructor, or `null`
              * @returns a {@link JavaScriptCore.Value} referencing the newly created object instance.
              */
-            constructor_call(parameters?: Value[] | null): Value;
+            constructor_call(parameters: Value[] | null): Value;
             /**
              * Call function referenced by `value`, passing the given `parameters`. If `n_parameters`
              * is 0 no parameters will be passed to the function.
@@ -1146,7 +1147,7 @@ declare module 'gi://JavaScriptCore?version=4.1' {
              * @param parameters the {@link JavaScriptCore.Value}<!-- -->s to pass as parameters to the function, or `null`
              * @returns a {@link JavaScriptCore.Value} with the return value of the function.
              */
-            function_call(parameters?: Value[] | null): Value;
+            function_call(parameters: Value[] | null): Value;
             /**
              * Get the {@link JavaScriptCore.Context} in which `value` was created.
              * @returns the {@link JavaScriptCore.Value} context.
@@ -1253,9 +1254,9 @@ declare module 'gi://JavaScriptCore?version=4.1' {
                 property_name: string,
                 flags: ValuePropertyFlags,
                 property_type: GObject.GType,
-                getter?: GObject.Callback | null,
-                setter?: GObject.Callback | null,
-                destroy_notify?: GLib.DestroyNotify | null,
+                getter: GObject.Callback | null,
+                setter: GObject.Callback | null,
+                destroy_notify: GLib.DestroyNotify | null,
             ): void;
             /**
              * Define or modify a property with `property_name` in object referenced by `value`. This is equivalent to
@@ -1267,7 +1268,7 @@ declare module 'gi://JavaScriptCore?version=4.1' {
             object_define_property_data(
                 property_name: string,
                 flags: ValuePropertyFlags,
-                property_value?: Value | null,
+                property_value: Value | null,
             ): void;
             /**
              * Try to delete property with `name` from `value`. This function will return `false` if
@@ -1313,7 +1314,7 @@ declare module 'gi://JavaScriptCore?version=4.1' {
              * @param parameters the {@link JavaScriptCore.Value}<!-- -->s to pass as parameters to the method, or `null`
              * @returns a {@link JavaScriptCore.Value} with the return value of the method.
              */
-            object_invoke_method(name: string, parameters?: Value[] | null): Value;
+            object_invoke_method(name: string, parameters: Value[] | null): Value;
             /**
              * Get whether the value referenced by `value` is an instance of class `name`.
              * @param name a class name

@@ -323,28 +323,28 @@ declare module 'gi://GstVulkan?version=1.0' {
          * @param device a {@link GstVulkan.VulkanDevice}
          * @since 1.18
          */
-        function context_set_vulkan_device(context: Gst.Context, device?: VulkanDevice | null): void;
+        function context_set_vulkan_device(context: Gst.Context, device: VulkanDevice | null): void;
         /**
          * Sets `display` on `context`
          * @param context a {@link Gst.Context}
          * @param display a {@link GstVulkan.VulkanDisplay}
          * @since 1.18
          */
-        function context_set_vulkan_display(context: Gst.Context, display?: VulkanDisplay | null): void;
+        function context_set_vulkan_display(context: Gst.Context, display: VulkanDisplay | null): void;
         /**
          * Sets `instance` on `context`
          * @param context a {@link Gst.Context}
          * @param instance a {@link GstVulkan.VulkanInstance}
          * @since 1.18
          */
-        function context_set_vulkan_instance(context: Gst.Context, instance?: VulkanInstance | null): void;
+        function context_set_vulkan_instance(context: Gst.Context, instance: VulkanInstance | null): void;
         /**
          * Sets `queue` on `context`
          * @param context a {@link Gst.Context}
          * @param queue a {@link GstVulkan.VulkanQueue}
          * @since 1.18
          */
-        function context_set_vulkan_queue(context: Gst.Context, queue?: VulkanQueue | null): void;
+        function context_set_vulkan_queue(context: Gst.Context, queue: VulkanQueue | null): void;
         /**
          * @param mem a {@link Gst.Memory}
          * @returns whether the memory at `mem` is a {@link GstVulkan.VulkanBufferMemory}
@@ -411,8 +411,8 @@ declare module 'gi://GstVulkan?version=1.0' {
             device: VulkanDevice,
             buffer: Vulkan.Buffer,
             usage: Vulkan.BufferUsageFlags,
-            user_data?: any | null,
-            notify?: GLib.DestroyNotify | null,
+            user_data: any | null,
+            notify: GLib.DestroyNotify | null,
         ): Gst.Memory;
         /**
          * @param device a {@link GstVulkan.VulkanDevice}
@@ -504,7 +504,7 @@ declare module 'gi://GstVulkan?version=1.0' {
          */
         function vulkan_get_or_create_image_view_with_info(
             image: VulkanImageMemory,
-            create_info?: Vulkan.ImageViewCreateInfo | null,
+            create_info: Vulkan.ImageViewCreateInfo | null,
         ): VulkanImageView;
         /**
          * Performs the steps necessary for executing a context query including
@@ -526,9 +526,9 @@ declare module 'gi://GstVulkan?version=1.0' {
         function vulkan_handle_context_query(
             element: Gst.Element,
             query: Gst.Query,
-            display?: VulkanDisplay | null,
-            instance?: VulkanInstance | null,
-            device?: VulkanDevice | null,
+            display: VulkanDisplay | null,
+            instance: VulkanInstance | null,
+            device: VulkanDevice | null,
         ): boolean;
         /**
          * Helper function for implementing {@link Gst.ElementClass}.set_context() in
@@ -608,7 +608,7 @@ declare module 'gi://GstVulkan?version=1.0' {
             height: bigint | number,
             tiling: Vulkan.ImageTiling,
             usage: Vulkan.ImageUsageFlags,
-            user_data?: any | null,
+            user_data: any | null,
         ): Gst.Memory;
         /**
          * Performs the steps necessary for executing a context query between only
@@ -689,7 +689,7 @@ declare module 'gi://GstVulkan?version=1.0' {
          * @param user_data the {@link Gst.MiniObject}
          * @since 1.18
          */
-        function vulkan_trash_mini_object_unref(device: VulkanDevice, user_data?: any | null): void;
+        function vulkan_trash_mini_object_unref(device: VulkanDevice, user_data: any | null): void;
         /**
          * A {@link GstVulkan.VulkanTrashNotify} implementation for unreffing a {@link Gst.Object} when the
          * associated {@link GstVulkan.VulkanFence} is signalled
@@ -697,7 +697,7 @@ declare module 'gi://GstVulkan?version=1.0' {
          * @param user_data the {@link Gst.MiniObject}
          * @since 1.18
          */
-        function vulkan_trash_object_unref(device: VulkanDevice, user_data?: any | null): void;
+        function vulkan_trash_object_unref(device: VulkanDevice, user_data: any | null): void;
         /**
          * @since 1.18
          */
@@ -1225,7 +1225,7 @@ declare module 'gi://GstVulkan?version=1.0' {
             // Constructor properties interface
 
             interface ConstructorProps extends Gst.Object.ConstructorProps {
-                instance: VulkanInstance;
+                instance: VulkanInstance | null;
                 physical_device: VulkanPhysicalDevice;
                 physicalDevice: VulkanPhysicalDevice;
             }
@@ -1243,7 +1243,7 @@ declare module 'gi://GstVulkan?version=1.0' {
             /**
              * @read-only
              */
-            get instance(): VulkanInstance;
+            get instance(): VulkanInstance | null;
             /**
              * @construct-only
              */
@@ -1468,11 +1468,7 @@ declare module 'gi://GstVulkan?version=1.0' {
              * @param query a {@link Gst.Query} of type #GST_QUERY_CONTEXT
              * @param display the {@link GstVulkan.VulkanDisplay}
              */
-            static handle_context_query(
-                element: Gst.Element,
-                query: Gst.Query,
-                display?: VulkanDisplay | null,
-            ): boolean;
+            static handle_context_query(element: Gst.Element, query: Gst.Query, display: VulkanDisplay | null): boolean;
             /**
              * Attempt to retrieve a {@link GstVulkan.VulkanDisplay} using #GST_QUERY_CONTEXT from the
              * surrounding elements of `element`.
@@ -1731,12 +1727,12 @@ declare module 'gi://GstVulkan?version=1.0' {
              * @param buffer the input {@link Gst.Buffer} to set
              * @returns whether the input buffer could be changed
              */
-            set_input_buffer(buffer?: Gst.Buffer | null): boolean;
+            set_input_buffer(buffer: Gst.Buffer | null): boolean;
             /**
              * @param buffer the output {@link Gst.Buffer} to set
              * @returns whether the input buffer could be changed
              */
-            set_output_buffer(buffer?: Gst.Buffer | null): boolean;
+            set_output_buffer(buffer: Gst.Buffer | null): boolean;
             /**
              * @param vert the vertex shader to set
              * @param frag the fragment shader to set
@@ -1841,13 +1837,13 @@ declare module 'gi://GstVulkan?version=1.0' {
              * @param handle
              * @virtual
              */
-            vfunc_free(handle?: any | null): void;
+            vfunc_free(handle: any | null): void;
             /**
              * release a handle for possible reuse at the next call to `acquire`
              * @param handle
              * @virtual
              */
-            vfunc_release(handle?: any | null): void;
+            vfunc_release(handle: any | null): void;
 
             // Methods
 
@@ -1856,7 +1852,7 @@ declare module 'gi://GstVulkan?version=1.0' {
             /**
              * @param handle
              */
-            release(handle?: any | null): void;
+            release(handle: any | null): void;
         }
 
         namespace VulkanImageBufferPool {
@@ -2068,21 +2064,25 @@ declare module 'gi://GstVulkan?version=1.0' {
 
             /**
              * @since 1.18
+             * @default 0
              */
             get requested_api_major(): number;
             set requested_api_major(val: number);
             /**
              * @since 1.18
+             * @default 0
              */
             get requestedApiMajor(): number;
             set requestedApiMajor(val: number);
             /**
              * @since 1.18
+             * @default 0
              */
             get requested_api_minor(): number;
             set requested_api_minor(val: number);
             /**
              * @since 1.18
+             * @default 0
              */
             get requestedApiMinor(): number;
             set requestedApiMinor(val: number);
@@ -2143,7 +2143,7 @@ declare module 'gi://GstVulkan?version=1.0' {
             static handle_context_query(
                 element: Gst.Element,
                 query: Gst.Query,
-                instance?: VulkanInstance | null,
+                instance: VulkanInstance | null,
             ): boolean;
             /**
              * Attempt to retrieve a {@link GstVulkan.VulkanInstance} using #GST_QUERY_CONTEXT from the
@@ -2443,7 +2443,7 @@ declare module 'gi://GstVulkan?version=1.0' {
                 dst_stage: bigint | number,
                 new_access: bigint | number,
                 new_layout: Vulkan.ImageLayout,
-                new_queue?: VulkanQueue | null,
+                new_queue: VulkanQueue | null,
             ): boolean;
             /**
              * See also: `gst_vulkan_operation_end()` and `gst_vulkan_operation_reset()`
@@ -2478,7 +2478,7 @@ declare module 'gi://GstVulkan?version=1.0' {
              * @param pnext the structure pointer to use as pNext
              * @returns whether the query pool was enabled. It might populate `error` in case    of error.
              */
-            enable_query(query_type: number, n_queries: number, pnext?: any | null): boolean;
+            enable_query(query_type: number, n_queries: number, pnext: any | null): boolean;
             /**
              * See also: `gst_vulkan_operation_begin()` and `gst_vulkan_operation_reset()`
              *
@@ -2512,7 +2512,7 @@ declare module 'gi://GstVulkan?version=1.0' {
              * @param dependency_info a pointer to VkDependencyInfo
              * @returns `true` if vkCmdPipelineBarrier2{KHR} it's available. `false`,   otherwise.
              */
-            pipeline_barrier2(dependency_info?: any | null): boolean;
+            pipeline_barrier2(dependency_info: any | null): boolean;
             /**
              * Resets the operation to a clean state.
              */
@@ -2534,7 +2534,7 @@ declare module 'gi://GstVulkan?version=1.0' {
                 dst_stage: bigint | number,
                 new_access: bigint | number,
                 new_layout: Vulkan.ImageLayout,
-                new_queue?: VulkanQueue | null,
+                new_queue: VulkanQueue | null,
             ): void;
             /**
              * @returns whether the operations are using synchronization2 extension.
@@ -2562,7 +2562,7 @@ declare module 'gi://GstVulkan?version=1.0' {
                 device_index: number;
                 deviceIndex: number;
                 instance: VulkanInstance;
-                name: string;
+                name: string | any;
             }
         }
 
@@ -2577,10 +2577,12 @@ declare module 'gi://GstVulkan?version=1.0' {
 
             /**
              * @construct-only
+             * @default 0
              */
             get device_index(): number;
             /**
              * @construct-only
+             * @default 0
              */
             get deviceIndex(): number;
             /**
@@ -2589,8 +2591,10 @@ declare module 'gi://GstVulkan?version=1.0' {
             get instance(): VulkanInstance;
             /**
              * @read-only
+             * @default null
              */
-            get name(): string;
+            // This accessor conflicts with another accessor's type in a parent class or interface.
+            get name(): string | any;
 
             /**
              * Compile-time signal type information.
@@ -2762,7 +2766,7 @@ declare module 'gi://GstVulkan?version=1.0' {
              * @param query a {@link Gst.Query} of type #GST_QUERY_CONTEXT
              * @param queue the {@link GstVulkan.VulkanQueue}
              */
-            static handle_context_query(element: Gst.Element, query: Gst.Query, queue?: VulkanQueue | null): boolean;
+            static handle_context_query(element: Gst.Element, query: Gst.Query, queue: VulkanQueue | null): boolean;
             /**
              * Attempt to retrieve a {@link GstVulkan.VulkanQueue} using #GST_QUERY_CONTEXT from the
              * surrounding elements of `element`.
@@ -2822,12 +2826,24 @@ declare module 'gi://GstVulkan?version=1.0' {
 
             // Properties
 
+            /**
+             * @default true
+             */
             get force_aspect_ratio(): boolean;
             set force_aspect_ratio(val: boolean);
+            /**
+             * @default true
+             */
             get forceAspectRatio(): boolean;
             set forceAspectRatio(val: boolean);
+            /**
+             * @default 1/1
+             */
             get pixel_aspect_ratio(): Gst.Fraction;
             set pixel_aspect_ratio(val: Gst.Fraction);
+            /**
+             * @default 1/1
+             */
             get pixelAspectRatio(): Gst.Fraction;
             set pixelAspectRatio(val: Gst.Fraction);
 
@@ -2881,7 +2897,7 @@ declare module 'gi://GstVulkan?version=1.0' {
             /**
              * @param available_queue a {@link GstVulkan.VulkanQueue} chosen elsewhere
              */
-            choose_queue(available_queue?: VulkanQueue | null): boolean;
+            choose_queue(available_queue: VulkanQueue | null): boolean;
             get_supported_caps(): Gst.Caps;
             get_surface_rectangles(): [
                 GstVideo.VideoRectangle | null,
@@ -3431,8 +3447,8 @@ declare module 'gi://GstVulkan?version=1.0' {
                 device: VulkanDevice,
                 buffer: Vulkan.Buffer,
                 usage: Vulkan.BufferUsageFlags,
-                user_data?: any | null,
-                notify?: GLib.DestroyNotify | null,
+                user_data: any | null,
+                notify: GLib.DestroyNotify | null,
             ): Gst.Memory;
         }
 
@@ -3656,6 +3672,7 @@ declare module 'gi://GstVulkan?version=1.0' {
             // Fields
 
             format: GstVideo.VideoFormat;
+            vkfrmts: Vulkan.Format[];
         }
 
         /**
@@ -3716,9 +3733,9 @@ declare module 'gi://GstVulkan?version=1.0' {
             static context_query(
                 element: Gst.Element,
                 query: Gst.Query,
-                display?: VulkanDisplay | null,
-                instance?: VulkanInstance | null,
-                device?: VulkanDevice | null,
+                display: VulkanDisplay | null,
+                instance: VulkanInstance | null,
+                device: VulkanDevice | null,
             ): boolean;
             /**
              * Helper function for implementing {@link Gst.ElementClass}.set_context() in
@@ -3744,37 +3761,37 @@ declare module 'gi://GstVulkan?version=1.0' {
              * Frees the descriptor set layout in `handle`
              * @param user_data callback user data
              */
-            free_descriptor_set_layout(user_data?: any | null): void;
+            free_descriptor_set_layout(user_data: any | null): void;
             /**
              * Frees the framebuffer in `handle`
              * @param user_data callback user data
              */
-            free_framebuffer(user_data?: any | null): void;
+            free_framebuffer(user_data: any | null): void;
             /**
              * Frees the pipeline in `handle`
              * @param user_data callback user data
              */
-            free_pipeline(user_data?: any | null): void;
+            free_pipeline(user_data: any | null): void;
             /**
              * Frees the pipeline layout in `handle`
              * @param user_data callback user data
              */
-            free_pipeline_layout(user_data?: any | null): void;
+            free_pipeline_layout(user_data: any | null): void;
             /**
              * Frees the render pass in `handle`
              * @param user_data callback user data
              */
-            free_render_pass(user_data?: any | null): void;
+            free_render_pass(user_data: any | null): void;
             /**
              * Frees the sampler in `handle`
              * @param user_data callback user data
              */
-            free_sampler(user_data?: any | null): void;
+            free_sampler(user_data: any | null): void;
             /**
              * Frees the shader in `handle`
              * @param user_data callback user data
              */
-            free_shader(user_data?: any | null): void;
+            free_shader(user_data: any | null): void;
             /**
              * Increases the refcount of the given handle by one.
              * @returns `buf`
@@ -3862,7 +3879,7 @@ declare module 'gi://GstVulkan?version=1.0' {
                 height: bigint | number,
                 tiling: Vulkan.ImageTiling,
                 usage: Vulkan.ImageUsageFlags,
-                user_data?: any | null,
+                user_data: any | null,
             ): Gst.Memory;
 
             // Methods
@@ -3904,7 +3921,7 @@ declare module 'gi://GstVulkan?version=1.0' {
                 initial_layout: Vulkan.ImageLayout,
                 params: Gst.AllocationParams,
                 size: bigint | number,
-                user_data?: any | null,
+                user_data: any | null,
             ): boolean;
         }
 
@@ -4103,14 +4120,14 @@ declare module 'gi://GstVulkan?version=1.0' {
              * @param device the {@link GstVulkan.VulkanDevice}
              * @param user_data the {@link Gst.MiniObject}
              */
-            static mini_object_unref(device: VulkanDevice, user_data?: any | null): void;
+            static mini_object_unref(device: VulkanDevice, user_data: any | null): void;
             /**
              * A {@link GstVulkan.VulkanTrashNotify} implementation for unreffing a {@link Gst.Object} when the
              * associated {@link GstVulkan.VulkanFence} is signalled
              * @param device the {@link GstVulkan.VulkanDevice}
              * @param user_data the {@link Gst.MiniObject}
              */
-            static object_unref(device: VulkanDevice, user_data?: any | null): void;
+            static object_unref(device: VulkanDevice, user_data: any | null): void;
 
             // Methods
 

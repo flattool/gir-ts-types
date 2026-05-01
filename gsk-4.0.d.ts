@@ -809,7 +809,7 @@ declare module 'gi://Gsk?version=4.0' {
          * @returns true if the two strokes are equal, false otherwise
          * @since 4.14
          */
-        function stroke_equal(stroke1?: any | null, stroke2?: any | null): boolean;
+        function stroke_equal(stroke1: any | null, stroke2: any | null): boolean;
         /**
          * Parses a given into a transform.
          *
@@ -856,7 +856,7 @@ declare module 'gi://Gsk?version=4.0' {
          * @param node a render node
          * @since 4.6
          */
-        function value_take_render_node(value: GObject.Value | any, node?: RenderNode | null): void;
+        function value_take_render_node(value: GObject.Value | any, node: RenderNode | null): void;
         /**
          * @gir-type Callback
          */
@@ -1869,7 +1869,7 @@ declare module 'gi://Gsk?version=4.0' {
             // Constructor properties interface
 
             interface ConstructorProps extends GObject.Object.ConstructorProps {
-                resource: string;
+                resource: string | null;
                 source: GLib.Bytes | Uint8Array;
             }
         }
@@ -2001,8 +2001,9 @@ declare module 'gi://Gsk?version=4.0' {
              * If the shader source is not coming from a resource, this
              * will be `null`.
              * @construct-only
+             * @default null
              */
-            get resource(): string;
+            get resource(): string | null;
             /**
              * The source code for the shader, as a {@link GLib.Bytes}.
              * @construct-only
@@ -2208,7 +2209,7 @@ declare module 'gi://Gsk?version=4.0' {
                 shader: GLShader,
                 bounds: Graphene.Rect,
                 args: GLib.Bytes | Uint8Array,
-                children?: RenderNode[] | null,
+                children: RenderNode[] | null,
             ): GLShaderNode;
 
             // Signals
@@ -2814,7 +2815,7 @@ declare module 'gi://Gsk?version=4.0' {
              * @param bytes the bytes containing the data
              * @param error_func callback on parsing errors
              */
-            static deserialize(bytes: GLib.Bytes | Uint8Array, error_func?: ParseErrorFunc | null): RenderNode | null;
+            static deserialize(bytes: GLib.Bytes | Uint8Array, error_func: ParseErrorFunc | null): RenderNode | null;
 
             // Methods
 
@@ -2903,7 +2904,7 @@ declare module 'gi://Gsk?version=4.0' {
 
             interface ConstructorProps extends GObject.Object.ConstructorProps {
                 realized: boolean;
-                surface: Gdk.Surface;
+                surface: Gdk.Surface | null;
             }
         }
 
@@ -2928,13 +2929,14 @@ declare module 'gi://Gsk?version=4.0' {
             /**
              * Whether the renderer has been associated with a surface or draw context.
              * @read-only
+             * @default false
              */
             get realized(): boolean;
             /**
              * The surface associated with renderer.
              * @read-only
              */
-            get surface(): Gdk.Surface;
+            get surface(): Gdk.Surface | null;
 
             /**
              * Compile-time signal type information.
@@ -3001,7 +3003,7 @@ declare module 'gi://Gsk?version=4.0' {
              * @param surface the surface that renderer will be used on
              * @returns whether the renderer was successfully realized
              */
-            realize(surface?: Gdk.Surface | null): boolean;
+            realize(surface: Gdk.Surface | null): boolean;
             /**
              * Creates the resources needed by the renderer.
              *
@@ -3027,7 +3029,7 @@ declare module 'gi://Gsk?version=4.0' {
              * @param root the render node to render
              * @param region the `cairo_region_t` that must be redrawn or `NULL`   for the whole surface
              */
-            render(root: RenderNode, region?: cairo.Region | null): void;
+            render(root: RenderNode, region: cairo.Region | null): void;
             /**
              * Renders a scene graph, described by a tree of {@link Gsk.RenderNode} instances,
              * to a texture.
@@ -3041,7 +3043,7 @@ declare module 'gi://Gsk?version=4.0' {
              * @param viewport the section to draw or `NULL` to use `root`'s bounds
              * @returns a texture with the rendered contents of `root`
              */
-            render_texture(root: RenderNode, viewport?: Graphene.Rect | null): Gdk.Texture;
+            render_texture(root: RenderNode, viewport: Graphene.Rect | null): Gdk.Texture;
             /**
              * Releases all the resources created by {@link Gsk.Renderer.realize}.
              */
@@ -3064,7 +3066,7 @@ declare module 'gi://Gsk?version=4.0' {
 
             _init(...args: any[]): void;
 
-            static ['new'](bounds: Graphene.Rect, child: RenderNode, child_bounds?: Graphene.Rect | null): RepeatNode;
+            static ['new'](bounds: Graphene.Rect, child: RenderNode, child_bounds: Graphene.Rect | null): RepeatNode;
 
             // Signals
 
@@ -4805,9 +4807,9 @@ declare module 'gi://Gsk?version=4.0' {
 
             // Constructors
 
-            constructor(shader: GLShader, initial_values?: GLib.Bytes | null);
+            constructor(shader: GLShader, initial_values: GLib.Bytes | null);
 
-            static ['new'](shader: GLShader, initial_values?: GLib.Bytes | null): ShaderArgsBuilder;
+            static ['new'](shader: GLShader, initial_values: GLib.Bytes | null): ShaderArgsBuilder;
 
             // Methods
 
@@ -4942,7 +4944,7 @@ declare module 'gi://Gsk?version=4.0' {
              * @param stroke1 the first stroke
              * @param stroke2 the second stroke
              */
-            static equal(stroke1?: any | null, stroke2?: any | null): boolean;
+            static equal(stroke1: any | null, stroke2: any | null): boolean;
 
             // Methods
 
@@ -5015,7 +5017,7 @@ declare module 'gi://Gsk?version=4.0' {
              * {@link Gsk.Stroke.set_dash_offset}.
              * @param dash the array of dashes
              */
-            set_dash(dash?: number[] | null): void;
+            set_dash(dash: number[] | null): void;
             /**
              * Sets the offset into the dash pattern where dashing should begin.
              *
@@ -5110,7 +5112,7 @@ declare module 'gi://Gsk?version=4.0' {
              * @param second the second transform
              * @returns true if the two transforms perform the same operation
              */
-            equal(second?: Transform | null): boolean;
+            equal(second: Transform | null): boolean;
             /**
              * Returns the category this transform belongs to.
              * @returns The category of the transform
@@ -5340,7 +5342,7 @@ declare module 'gi://Gsk?version=4.0' {
              * @param other transform to apply
              * @returns The new transform
              */
-            transform(other?: Transform | null): Transform | null;
+            transform(other: Transform | null): Transform | null;
             /**
              * Transforms a rectangle using the given transform.
              *

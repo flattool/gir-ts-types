@@ -131,7 +131,7 @@ declare module 'gi://Xmlb?version=2.0' {
          * @gir-type Callback
          */
         interface MachineMethodFunc {
-            (self: Machine, stack: Stack, result_unused: boolean, exec_data?: any | null): boolean;
+            (self: Machine, stack: Stack, result_unused: boolean, exec_data: any | null): boolean;
         }
         /**
          * @gir-type Callback
@@ -513,7 +513,7 @@ declare module 'gi://Xmlb?version=2.0' {
              * @param cancellable a {@link Gio.Cancellable}, or `null`
              * @returns a {@link Xmlb.Silo}, or `null` for error
              */
-            compile(flags: BuilderCompileFlags, cancellable?: Gio.Cancellable | null): Silo;
+            compile(flags: BuilderCompileFlags, cancellable: Gio.Cancellable | null): Silo;
             /**
              * Ensures `file` is up to date, and returns a compiled {@link Xmlb.Silo}.
              *
@@ -527,7 +527,7 @@ declare module 'gi://Xmlb?version=2.0' {
              * @param cancellable a {@link Gio.Cancellable}, or `null`
              * @returns a {@link Xmlb.Silo}, or `null` for error
              */
-            ensure(file: Gio.File, flags: BuilderCompileFlags, cancellable?: Gio.Cancellable | null): Silo;
+            ensure(file: Gio.File, flags: BuilderCompileFlags, cancellable: Gio.Cancellable | null): Silo;
             /**
              * Adds a node tree to the builder.
              *
@@ -724,7 +724,7 @@ declare module 'gi://Xmlb?version=2.0' {
              * @param text node text, e.g. "gimp.desktop"
              * @returns a new {@link Xmlb.BuilderNode}, or `null` if not found
              */
-            get_child(element: string, text?: string | null): BuilderNode;
+            get_child(element: string, text: string | null): BuilderNode;
             /**
              * Gets the children of the builder node.
              * @returns children
@@ -933,7 +933,7 @@ declare module 'gi://Xmlb?version=2.0' {
              * @param cancellable a {@link Gio.Cancellable}, or `null`
              * @returns `true` for success
              */
-            load_file(file: Gio.File, flags: BuilderSourceFlags, cancellable?: Gio.Cancellable | null): boolean;
+            load_file(file: Gio.File, flags: BuilderSourceFlags, cancellable: Gio.Cancellable | null): boolean;
             /**
              * Loads XML data and begins to build a {@link Xmlb.Silo}.
              * @param xml XML data
@@ -945,13 +945,13 @@ declare module 'gi://Xmlb?version=2.0' {
              * Sets an optional information metadata node on the root node.
              * @param info a {@link Xmlb.BuilderNode}
              */
-            set_info(info?: BuilderNode | null): void;
+            set_info(info: BuilderNode | null): void;
             /**
              * Sets an optional prefix on the root node. This makes any nodes added
              * using this source reside under a common shared parent node.
              * @param prefix an XPath prefix, e.g. `installed`
              */
-            set_prefix(prefix?: string | null): void;
+            set_prefix(prefix: string | null): void;
         }
 
         namespace BuilderSourceCtx {
@@ -1018,7 +1018,7 @@ declare module 'gi://Xmlb?version=2.0' {
              * @param cancellable a {@link Gio.Cancellable}, or `null`
              * @returns a {@link GLib.Bytes}
              */
-            get_bytes(cancellable?: Gio.Cancellable | null): GLib.Bytes;
+            get_bytes(cancellable: Gio.Cancellable | null): GLib.Bytes;
             /**
              * Returns the basename of the file currently being processed.
              * @returns a basename, or `null` if unset
@@ -1167,7 +1167,7 @@ declare module 'gi://Xmlb?version=2.0' {
              * @param exec_data per-run user data that is passed to all the {@link Xmlb.MachineMethodFunc} functions
              * @returns a new {@link Xmlb.Opcode}, or `null`
              */
-            run(opcodes: Stack, exec_data?: any | null): [boolean, boolean];
+            run(opcodes: Stack, exec_data: any | null): [boolean, boolean];
             /**
              * Runs a set of opcodes on the virtual machine, using the bound values given in
              * `bindings` to substitute for bound opcodes.
@@ -1182,7 +1182,7 @@ declare module 'gi://Xmlb?version=2.0' {
             run_with_bindings(
                 opcodes: Stack,
                 bindings: ValueBindings | null,
-                exec_data?: any | null,
+                exec_data: any | null,
             ): [boolean, boolean];
             /**
              * Sets the debug level of the virtual machine.
@@ -1472,7 +1472,7 @@ declare module 'gi://Xmlb?version=2.0' {
              * @param context context including values bound to opcodes of type     {@link Xmlb.OpcodeKind.BOUND_INTEGER} or {@link Xmlb.OpcodeKind.BOUND_TEXT}, or `null` if     the query doesn’t need any context
              * @returns a {@link Xmlb.Node}, or `null` if unfound
              */
-            query_first_with_context(query: Query, context?: QueryContext | null): Node;
+            query_first_with_context(query: Query, context: QueryContext | null): Node;
             /**
              * Searches the silo using a prepared query. To search using a query with
              * bound values, use `xb_node_query_with_context()`.
@@ -1519,7 +1519,7 @@ declare module 'gi://Xmlb?version=2.0' {
              * @param context context including values bound to opcodes of type     {@link Xmlb.OpcodeKind.BOUND_INTEGER} or {@link Xmlb.OpcodeKind.BOUND_TEXT}, or `null` if     the query doesn’t need any context
              * @returns results, or `null` if unfound
              */
-            query_with_context(query: Query, context?: QueryContext | null): Node[];
+            query_with_context(query: Query, context: QueryContext | null): Node[];
             /**
              * Sets some data on the node which can be retrieved using `xb_node_get_data()`.
              *
@@ -1691,6 +1691,7 @@ declare module 'gi://Xmlb?version=2.0' {
              * This property can only be changed before the {@link Xmlb.Silo} is passed
              * between threads. Changing it is not thread-safe.
              * @since 0.2.0
+             * @default true
              */
             get enable_node_cache(): boolean;
             set enable_node_cache(val: boolean);
@@ -1711,13 +1712,18 @@ declare module 'gi://Xmlb?version=2.0' {
              * This property can only be changed before the {@link Xmlb.Silo} is passed
              * between threads. Changing it is not thread-safe.
              * @since 0.2.0
+             * @default true
              */
             get enableNodeCache(): boolean;
             set enableNodeCache(val: boolean);
+            /**
+             * @default null
+             */
             get guid(): string;
             set guid(val: string);
             /**
              * @read-only
+             * @default true
              */
             get valid(): boolean;
 
@@ -1776,7 +1782,7 @@ declare module 'gi://Xmlb?version=2.0' {
              * @param cancellable a {@link Gio.Cancellable}, or `null`
              * @returns `true` on success
              */
-            export_file(file: Gio.File, flags: NodeExportFlags, cancellable?: Gio.Cancellable | null): boolean;
+            export_file(file: Gio.File, flags: NodeExportFlags, cancellable: Gio.Cancellable | null): boolean;
             /**
              * Gets the backing object that created the blob.
              *
@@ -1834,7 +1840,7 @@ declare module 'gi://Xmlb?version=2.0' {
              * @param cancellable a {@link Gio.Cancellable}, or `null`
              * @returns `true` for success, otherwise `error` is set.
              */
-            load_from_file(file: Gio.File, flags: SiloLoadFlags, cancellable?: Gio.Cancellable | null): boolean;
+            load_from_file(file: Gio.File, flags: SiloLoadFlags, cancellable: Gio.Cancellable | null): boolean;
             /**
              * Create an {@link Xmlb.Query} from the given `xpath` XPath string, or return it from the
              * query cache in the {@link Xmlb.Silo}.
@@ -1865,7 +1871,7 @@ declare module 'gi://Xmlb?version=2.0' {
              * @param attr Attribute name, e.g. `type`, or NULL
              * @returns `true` for success
              */
-            query_build_index(xpath: string, attr?: string | null): boolean;
+            query_build_index(xpath: string, attr: string | null): boolean;
             /**
              * Searches the silo using an XPath query, returning up to one result.
              *
@@ -1899,7 +1905,7 @@ declare module 'gi://Xmlb?version=2.0' {
              * @param context context including values bound to opcodes of type     {@link Xmlb.OpcodeKind.BOUND_INTEGER} or {@link Xmlb.OpcodeKind.BOUND_TEXT}, or `null` if     the query doesn’t need any context
              * @returns a {@link Xmlb.Node}, or `null` if unfound
              */
-            query_first_with_context(query: Query, context?: QueryContext | null): Node;
+            query_first_with_context(query: Query, context: QueryContext | null): Node;
             /**
              * Searches the silo using an XPath query.
              *
@@ -1922,14 +1928,14 @@ declare module 'gi://Xmlb?version=2.0' {
              * @param context context including values bound to opcodes of type     {@link Xmlb.OpcodeKind.BOUND_INTEGER} or {@link Xmlb.OpcodeKind.BOUND_TEXT}, or `null` if     the query doesn’t need any context
              * @returns results, or `null` if unfound
              */
-            query_with_context(query: Query, context?: QueryContext | null): Node[];
+            query_with_context(query: Query, context: QueryContext | null): Node[];
             /**
              * Saves a silo to a file.
              * @param file a {@link Gio.File}
              * @param cancellable a {@link Gio.Cancellable}, or `null`
              * @returns `true` for success, otherwise `error` is set.
              */
-            save_to_file(file: Gio.File, cancellable?: Gio.Cancellable | null): boolean;
+            save_to_file(file: Gio.File, cancellable: Gio.Cancellable | null): boolean;
             /**
              * Set {@link Xmlb.Silo.enable_node_cache}.
              *
@@ -1960,7 +1966,7 @@ declare module 'gi://Xmlb?version=2.0' {
              * @param cancellable a {@link Gio.Cancellable}, or `null`
              * @returns `true` for success, otherwise `error` is set.
              */
-            watch_file(file: Gio.File, cancellable?: Gio.Cancellable | null): boolean;
+            watch_file(file: Gio.File, cancellable: Gio.Cancellable | null): boolean;
         }
 
         /**
@@ -2301,7 +2307,7 @@ declare module 'gi://Xmlb?version=2.0' {
              * @param str a string to bind to `idx`
              * @param destroy_func function to free `str`
              */
-            bind_str(idx: number, str: string, destroy_func?: GLib.DestroyNotify | null): void;
+            bind_str(idx: number, str: string, destroy_func: GLib.DestroyNotify | null): void;
             /**
              * Bind `val` to `idx` in the value bindings.
              *
