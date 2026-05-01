@@ -68,7 +68,7 @@ declare module 'gi://GstVulkanXCB?version=1.0' {
 
             _init(...args: any[]): void;
 
-            static ['new'](name?: string | null): VulkanDisplayXCB;
+            static ['new'](name: string | null): VulkanDisplayXCB;
             // Conflicted with GstVulkan.VulkanDisplay.new
 
             static ['new'](...args: never[]): any;

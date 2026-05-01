@@ -355,7 +355,7 @@ declare module 'gi://Rsvg?version=2.0' {
             interface ConstructorProps extends GObject.Object.ConstructorProps {
                 base_uri: string;
                 baseUri: string;
-                desc: string;
+                desc: string | null;
                 dpi_x: number;
                 dpiX: number;
                 dpi_y: number;
@@ -364,8 +364,8 @@ declare module 'gi://Rsvg?version=2.0' {
                 ex: number;
                 flags: HandleFlags;
                 height: number;
-                metadata: string;
-                title: string;
+                metadata: string | null;
+                title: string | null;
                 width: number;
             }
         }
@@ -543,12 +543,14 @@ declare module 'gi://Rsvg?version=2.0' {
             /**
              * Base URI, to be used to resolve relative references for resources.  See the section
              * "Security and locations of referenced files" for details.
+             * @default null
              */
             get base_uri(): string;
             set base_uri(val: string);
             /**
              * Base URI, to be used to resolve relative references for resources.  See the section
              * "Security and locations of referenced files" for details.
+             * @default null
              */
             get baseUri(): string;
             set baseUri(val: string);
@@ -556,13 +558,15 @@ declare module 'gi://Rsvg?version=2.0' {
              * SVG's description.
              * @deprecated since 2.36.: Reading this property always returns `NULL`.
              * @read-only
+             * @default null
              */
-            get desc(): string;
+            get desc(): string | null;
             /**
              * Horizontal resolution in dots per inch.
              *
              * The default is 90.  Note that current CSS assumes a default of 96,
              * so you may want to set it to `96.0` before rendering the handle.
+             * @default 0
              */
             get dpi_x(): number;
             set dpi_x(val: number);
@@ -571,6 +575,7 @@ declare module 'gi://Rsvg?version=2.0' {
              *
              * The default is 90.  Note that current CSS assumes a default of 96,
              * so you may want to set it to `96.0` before rendering the handle.
+             * @default 0
              */
             get dpiX(): number;
             set dpiX(val: number);
@@ -579,6 +584,7 @@ declare module 'gi://Rsvg?version=2.0' {
              *
              * The default is 90.  Note that current CSS assumes a default of 96,
              * so you may want to set it to `96.0` before rendering the handle.
+             * @default 0
              */
             get dpi_y(): number;
             set dpi_y(val: number);
@@ -587,6 +593,7 @@ declare module 'gi://Rsvg?version=2.0' {
              *
              * The default is 90.  Note that current CSS assumes a default of 96,
              * so you may want to set it to `96.0` before rendering the handle.
+             * @default 0
              */
             get dpiY(): number;
             set dpiY(val: number);
@@ -595,6 +602,7 @@ declare module 'gi://Rsvg?version=2.0' {
              * as specified by {@link Rsvg.Handle.set_size_callback}.
              * @deprecated since 2.46.: Reading each of the size properties causes the size of the SVG to be recomputed, so reading both the `em` and `ex` properties will cause two such computations.  Please use {@link Rsvg.Handle.get_intrinsic_dimensions} instead.
              * @read-only
+             * @default 0
              */
             get em(): number;
             /**
@@ -602,12 +610,14 @@ declare module 'gi://Rsvg?version=2.0' {
              * as specified by {@link Rsvg.Handle.set_size_callback}.
              * @deprecated since 2.46.: Reading each of the size properties causes the size of the SVG to be recomputed, so reading both the `em` and `ex` properties will cause two such computations.  Please use {@link Rsvg.Handle.get_intrinsic_dimensions} instead.
              * @read-only
+             * @default 0
              */
             get ex(): number;
             /**
              * Flags from {@link Rsvg.HandleFlags}.
              * @since 2.36
              * @construct-only
+             * @default Rsvg.HandleFlags.FLAGS_NONE
              */
             get flags(): HandleFlags;
             /**
@@ -615,25 +625,29 @@ declare module 'gi://Rsvg?version=2.0' {
              * as specified by {@link Rsvg.Handle.set_size_callback}.
              * @deprecated since 2.46.: For historical reasons, this property is of integer type, which cannot give the exact size of SVG images that are not pixel-aligned. Moreover, reading each of the size properties causes the size of the SVG to be recomputed, so reading both the `width` and `height` properties will cause two such computations. Please use {@link Rsvg.Handle.get_intrinsic_dimensions} instead.
              * @read-only
+             * @default 0
              */
             get height(): number;
             /**
              * SVG's metadata
              * @deprecated since 2.36.: Reading this property always returns `NULL`.
              * @read-only
+             * @default null
              */
-            get metadata(): string;
+            get metadata(): string | null;
             /**
              * SVG's title.
              * @deprecated since 2.36.: Reading this property always returns `NULL`.
              * @read-only
+             * @default null
              */
-            get title(): string;
+            get title(): string | null;
             /**
              * Width, in pixels, of the rendered SVG after calling the size callback
              * as specified by {@link Rsvg.Handle.set_size_callback}.
              * @deprecated since 2.46.: For historical reasons, this property is of integer type, which cannot give the exact size of SVG images that are not pixel-aligned. Moreover, reading each of the size properties causes the size of the SVG to be recomputed, so reading both the `width` and `height` properties will cause two such computations. Please use {@link Rsvg.Handle.get_intrinsic_dimensions} instead.
              * @read-only
+             * @default 0
              */
             get width(): number;
 
@@ -658,17 +672,13 @@ declare module 'gi://Rsvg?version=2.0' {
 
             static new_from_file(filename: string): Handle;
 
-            static new_from_gfile_sync(
-                file: Gio.File,
-                flags: HandleFlags,
-                cancellable?: Gio.Cancellable | null,
-            ): Handle;
+            static new_from_gfile_sync(file: Gio.File, flags: HandleFlags, cancellable: Gio.Cancellable | null): Handle;
 
             static new_from_stream_sync(
                 input_stream: Gio.InputStream,
                 base_file: Gio.File | null,
                 flags: HandleFlags,
-                cancellable?: Gio.Cancellable | null,
+                cancellable: Gio.Cancellable | null,
             ): Handle;
 
             static new_with_flags(flags: HandleFlags): Handle;
@@ -743,7 +753,7 @@ declare module 'gi://Rsvg?version=2.0' {
              * @param id An element's id within the SVG, starting with "#" (a single hash character), for example, `#layer1`.  This notation corresponds to a URL's fragment ID.  Alternatively, pass `NULL` to use the whole SVG.
              * @returns `TRUE` if the dimensions could be obtained, `FALSE` if there was an error.
              */
-            get_dimensions_sub(id?: string | null): [boolean, DimensionData];
+            get_dimensions_sub(id: string | null): [boolean, DimensionData];
             /**
              * Computes the ink rectangle and logical rectangle of a single SVG element.
              *
@@ -776,7 +786,7 @@ declare module 'gi://Rsvg?version=2.0' {
              * @param id An element's id within the SVG, starting with "#" (a single hash character), for example, `#layer1`.  This notation corresponds to a URL's fragment ID.  Alternatively, pass `NULL` to compute the geometry for the whole SVG.
              * @returns `TRUE` if the geometry could be obtained, or `FALSE` on error.  Errors are returned in the `error` argument. API ordering: This function must be called on a fully-loaded `handle`.  See the section "[API ordering](class.Handle.html#api-ordering)" for details. Panics: this function will panic if the `handle` is not fully-loaded.
              */
-            get_geometry_for_element(id?: string | null): [boolean, Rectangle | null, Rectangle | null];
+            get_geometry_for_element(id: string | null): [boolean, Rectangle | null, Rectangle | null];
             /**
              * Computes the ink rectangle and logical rectangle of an SVG element, or the
              * whole SVG, as if the whole SVG were rendered to a specific viewport.
@@ -961,7 +971,7 @@ declare module 'gi://Rsvg?version=2.0' {
              * @param id An element's id within the SVG, starting with "#" (a single hash character), for example, `#layer1`.  This notation corresponds to a URL's fragment ID.  Alternatively, pass `NULL` to use the whole SVG.
              * @returns a pixbuf, or `NULL` if an error occurs during rendering.
              */
-            get_pixbuf_sub(id?: string | null): GdkPixbuf.Pixbuf | null;
+            get_pixbuf_sub(id: string | null): GdkPixbuf.Pixbuf | null;
             /**
              * Get the position of a subelement of the SVG file. Do not call from within
              * the size_func callback, because an infinite loop will occur.
@@ -975,7 +985,7 @@ declare module 'gi://Rsvg?version=2.0' {
              * @param id An element's id within the SVG, starting with "#" (a single hash character), for example, `#layer1`.  This notation corresponds to a URL's fragment ID.  Alternatively, pass `null` to use the whole SVG.
              * @returns `TRUE` if the position could be obtained, `FALSE` if there was an error.
              */
-            get_position_sub(id?: string | null): [boolean, PositionData];
+            get_position_sub(id: string | null): [boolean, PositionData];
             /**
              * @returns This function always returns `NULL`.
              */
@@ -1013,7 +1023,7 @@ declare module 'gi://Rsvg?version=2.0' {
              * @param cancellable a {@link Gio.Cancellable}, or `NULL`
              * @returns `TRUE` if reading `stream` succeeded, or `FALSE` otherwise   with `error` filled in
              */
-            read_stream_sync(stream: Gio.InputStream, cancellable?: Gio.Cancellable | null): boolean;
+            read_stream_sync(stream: Gio.InputStream, cancellable: Gio.Cancellable | null): boolean;
             /**
              * Draws a loaded SVG handle to a Cairo context.  Please try to use
              * {@link Rsvg.Handle.render_document} instead, which allows you to pick the size
@@ -1110,7 +1120,7 @@ declare module 'gi://Rsvg?version=2.0' {
              * @param id An element's id within the SVG, starting with "#" (a single hash character), for example, `#layer1`.  This notation corresponds to a URL's fragment ID.  Alternatively, pass `NULL` to render the whole SVG.
              * @returns `TRUE` if drawing succeeded; `FALSE` otherwise.  This function will emit a `g_warning()` if a rendering error occurs.
              */
-            render_cairo_sub(cr: cairo.Context, id?: string | null): boolean;
+            render_cairo_sub(cr: cairo.Context, id: string | null): boolean;
             /**
              * Renders the whole SVG document fitted to a viewport.
              *
@@ -1204,7 +1214,7 @@ declare module 'gi://Rsvg?version=2.0' {
              * `G_IO_ERROR_CANCELLED`.
              * @param cancellable A {@link Gio.Cancellable} or `NULL`.
              */
-            set_cancellable_for_rendering(cancellable?: Gio.Cancellable | null): void;
+            set_cancellable_for_rendering(cancellable: Gio.Cancellable | null): void;
             /**
              * Sets the DPI at which the `handle` will be rendered. Common values are
              * 75, 90, and 300 DPI.
@@ -1242,7 +1252,7 @@ declare module 'gi://Rsvg?version=2.0' {
              * generated image.
              * @param size_func A sizing function, or `NULL`
              */
-            set_size_callback(size_func?: SizeFunc | null): void;
+            set_size_callback(size_func: SizeFunc | null): void;
             /**
              * Sets a CSS stylesheet to use for an SVG document.
              *

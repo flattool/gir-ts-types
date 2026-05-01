@@ -501,7 +501,7 @@ declare module 'gi://GstPbutils?version=1.0' {
             channel_mapping_family: number,
             stream_count: number,
             coupled_count: number,
-            channel_mapping?: Uint8Array | null,
+            channel_mapping: Uint8Array | null,
         ): Gst.Caps | null;
         /**
          * Creates Opus caps from the given OpusHead `header` and comment header
@@ -513,7 +513,7 @@ declare module 'gi://GstPbutils?version=1.0' {
          */
         function codec_utils_opus_create_caps_from_header(
             header: Gst.Buffer,
-            comments?: Gst.Buffer | null,
+            comments: Gst.Buffer | null,
         ): Gst.Caps | null;
         /**
          * Creates OpusHead header from the given parameters.
@@ -562,7 +562,7 @@ declare module 'gi://GstPbutils?version=1.0' {
          * @param categoryname The category, for ex: #GST_ENCODING_CATEGORY_DEVICE. Can be `null`.
          * @returns The list of {@link GstPbutils.EncodingTarget}
          */
-        function encoding_list_all_targets(categoryname?: string | null): EncodingTarget[];
+        function encoding_list_all_targets(categoryname: string | null): EncodingTarget[];
         /**
          * Lists all {@link GstPbutils.EncodingTarget} categories present on disk.
          * @returns A list of {@link GstPbutils.EncodingTarget} categories.
@@ -631,7 +631,7 @@ declare module 'gi://GstPbutils?version=1.0' {
          * @param ctx a {@link GstPbutils.InstallPluginsContext}, or NULL
          * @returns the result of the installation.
          */
-        function install_plugins_sync(details: string[], ctx?: InstallPluginsContext | null): InstallPluginsReturn;
+        function install_plugins_sync(details: string[], ctx: InstallPluginsContext | null): InstallPluginsReturn;
         /**
          * Checks whether `msg` is a missing plugins message.
          * @param msg a {@link Gst.Message}
@@ -1023,10 +1023,19 @@ declare module 'gi://GstPbutils?version=1.0' {
 
             // Properties
 
+            /**
+             * @default 657930
+             */
             get shade_amount(): number;
             set shade_amount(val: number);
+            /**
+             * @default 657930
+             */
             get shadeAmount(): number;
             set shadeAmount(val: number);
+            /**
+             * @default GstPbutils.AudioVisualizerShader.FADE
+             */
             get shader(): AudioVisualizerShader;
             set shader(val: AudioVisualizerShader);
 
@@ -1180,11 +1189,18 @@ declare module 'gi://GstPbutils?version=1.0' {
              *
              * If the discovery of a URI times out, the {@link GstPbutils.DiscovererResult.TIMEOUT} will be
              * set on the result flags.
+             * @default 15000000000
              */
             get timeout(): number;
             set timeout(val: bigint | number);
+            /**
+             * @default false
+             */
             get use_cache(): boolean;
             set use_cache(val: boolean);
+            /**
+             * @default false
+             */
             get useCache(): boolean;
             set useCache(val: boolean);
 
@@ -1977,7 +1993,7 @@ declare module 'gi://GstPbutils?version=1.0' {
                 name: string | null,
                 description: string | null,
                 format: Gst.Caps,
-                preset?: string | null,
+                preset: string | null,
             ): EncodingContainerProfile;
 
             // Signals
@@ -2037,8 +2053,8 @@ declare module 'gi://GstPbutils?version=1.0' {
             // Constructor properties interface
 
             interface ConstructorProps extends GObject.Object.ConstructorProps {
-                element_properties: Gst.Structure;
-                elementProperties: Gst.Structure;
+                element_properties: Gst.Structure | null;
+                elementProperties: Gst.Structure | null;
                 restriction_caps: Gst.Caps;
                 restrictionCaps: Gst.Caps;
             }
@@ -2065,8 +2081,8 @@ declare module 'gi://GstPbutils?version=1.0' {
              * ```
              * @since 1.20
              */
-            get element_properties(): Gst.Structure;
-            set element_properties(val: Gst.Structure);
+            get element_properties(): Gst.Structure | null;
+            set element_properties(val: Gst.Structure | null);
             /**
              * A {@link Gst.Structure} defining the properties to be set to the element
              * the profile represents.
@@ -2078,8 +2094,8 @@ declare module 'gi://GstPbutils?version=1.0' {
              * ```
              * @since 1.20
              */
-            get elementProperties(): Gst.Structure;
-            set elementProperties(val: Gst.Structure);
+            get elementProperties(): Gst.Structure | null;
+            set elementProperties(val: Gst.Structure | null);
             get restriction_caps(): Gst.Caps;
             set restriction_caps(val: Gst.Caps);
             get restrictionCaps(): Gst.Caps;
@@ -2133,8 +2149,8 @@ declare module 'gi://GstPbutils?version=1.0' {
              */
             static find(
                 targetname: string,
-                profilename?: string | null,
-                category?: string | null,
+                profilename: string | null,
+                category: string | null,
             ): EncodingProfile | null;
             /**
              * Creates a {@link GstPbutils.EncodingProfile} matching the formats from the given
@@ -2223,7 +2239,7 @@ declare module 'gi://GstPbutils?version=1.0' {
              * `description` will be made internally.
              * @param description the description to set on the profile
              */
-            set_description(description?: string | null): void;
+            set_description(description: string | null): void;
             /**
              * This allows setting the muxing/encoding element properties.
              *
@@ -2259,7 +2275,7 @@ declare module 'gi://GstPbutils?version=1.0' {
              * internally.
              * @param name the name to set on the profile
              */
-            set_name(name?: string | null): void;
+            set_name(name: string | null): void;
             /**
              * Set the number of time the profile is used in its parent
              * container profile. If 0, it is not a mandatory stream
@@ -2272,19 +2288,19 @@ declare module 'gi://GstPbutils?version=1.0' {
              * This is the name that has been set when saving the preset.
              * @param preset the element preset to use
              */
-            set_preset(preset?: string | null): void;
+            set_preset(preset: string | null): void;
             /**
              * Sets the name of the {@link Gst.Preset}'s factory to be used in the profile.
              * @param preset_name The name of the preset to use in this `profile`.
              */
-            set_preset_name(preset_name?: string | null): void;
+            set_preset_name(preset_name: string | null): void;
             /**
              * Set the restriction {@link Gst.Caps} to apply before the encoder
              * that will be used in the profile. See `gst_encoding_profile_get_restriction()`
              * for more about restrictions. Does not apply to {@link GstPbutils.EncodingContainerProfile}.
              * @param restriction the restriction to apply
              */
-            set_restriction(restriction?: Gst.Caps | null): void;
+            set_restriction(restriction: Gst.Caps | null): void;
             /**
              * If using a single segment, buffers will be retimestamped and segments will be
              * eat so as to appear as one segment.
@@ -2369,7 +2385,7 @@ declare module 'gi://GstPbutils?version=1.0' {
              * @param name the name of the {@link GstPbutils.EncodingTarget} to load (automatically converted to lower case internally as capital letters are not valid for target names).
              * @param category the name of the target category, like #GST_ENCODING_CATEGORY_DEVICE. Can be `null`
              */
-            static load(name: string, category?: string | null): EncodingTarget;
+            static load(name: string, category: string | null): EncodingTarget;
             /**
              * Opens the provided file and returns the contained {@link GstPbutils.EncodingTarget}.
              * @param filepath The file location to load the {@link GstPbutils.EncodingTarget} from

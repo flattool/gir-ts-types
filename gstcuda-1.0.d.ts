@@ -166,7 +166,7 @@ declare module 'gi://GstCuda?version=1.0' {
         function cuda_handle_context_query(
             element: Gst.Element,
             query: Gst.Query,
-            cuda_ctx?: CudaContext | null,
+            cuda_ctx: CudaContext | null,
         ): boolean;
         /**
          * Helper function for implementing {@link Gst.ElementClass}.set_context() in
@@ -346,7 +346,7 @@ declare module 'gi://GstCuda?version=1.0' {
                 stream: CudaStream | null,
                 info: GstVideo.VideoInfo,
                 dev_ptr: CudaGst.deviceptr,
-                notify?: GLib.DestroyNotify | null,
+                notify: GLib.DestroyNotify | null,
             ): Gst.Memory;
             /**
              * Controls the active state of `allocator`. Default {@link GstCuda.CudaAllocator} is
@@ -475,34 +475,40 @@ declare module 'gi://GstCuda?version=1.0' {
 
             /**
              * @construct-only
+             * @default 0
              */
             get cuda_device_id(): number;
             /**
              * @construct-only
+             * @default 0
              */
             get cudaDeviceId(): number;
             /**
              * OS handle supportability in virtual memory management
              * @since 1.24
              * @read-only
+             * @default false
              */
             get os_handle(): boolean;
             /**
              * OS handle supportability in virtual memory management
              * @since 1.24
              * @read-only
+             * @default false
              */
             get osHandle(): boolean;
             /**
              * Virtual memory management supportability
              * @since 1.24
              * @read-only
+             * @default false
              */
             get virtual_memory(): boolean;
             /**
              * Virtual memory management supportability
              * @since 1.24
              * @read-only
+             * @default false
              */
             get virtualMemory(): boolean;
 
@@ -793,7 +799,7 @@ declare module 'gi://GstCuda?version=1.0' {
              * @param token an user token
              * @param data an user data
              */
-            set_token_data(token: bigint | number, data?: any | null): void;
+            set_token_data(token: bigint | number, data: any | null): void;
             /**
              * Performs synchronization if needed
              */

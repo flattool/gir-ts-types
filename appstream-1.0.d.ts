@@ -2594,7 +2594,7 @@ declare module 'gi://AppStream?version=1.0' {
          * @returns `true` if the locale is compatible.
          * @since 0.9.5
          */
-        function utils_locale_is_compatible(locale1?: string | null, locale2?: string | null): boolean;
+        function utils_locale_is_compatible(locale1: string | null, locale2: string | null): boolean;
         /**
          * Converts a POSIX locale string to the corresponding IETF BCP47 format.
          * If the given locale is already in BCP47 format, no change will be done.
@@ -3097,7 +3097,7 @@ declare module 'gi://AppStream?version=1.0' {
              * @param desc the agreement description, e.g. "GDPR"
              * @param locale the locale in BCP47 format. e.g. "en-GB"
              */
-            set_description(desc: string, locale?: string | null): void;
+            set_description(desc: string, locale: string | null): void;
             /**
              * Sets the agreement section kind.
              * @param kind the agreement kind, e.g. "GDPR"
@@ -3108,7 +3108,7 @@ declare module 'gi://AppStream?version=1.0' {
              * @param name the agreement name, e.g. "GDPR"
              * @param locale the locale. e.g. "en_GB"
              */
-            set_name(name: string, locale?: string | null): void;
+            set_name(name: string, locale: string | null): void;
         }
 
         namespace Artifact {
@@ -3437,14 +3437,24 @@ declare module 'gi://AppStream?version=1.0' {
              * @read-only
              */
             get children(): any;
+            /**
+             * @default null
+             */
             get icon(): string;
             set icon(val: string);
+            /**
+             * @default null
+             */
             get id(): string;
             set id(val: string);
+            /**
+             * @default null
+             */
             get name(): string;
             set name(val: string);
             /**
              * @read-only
+             * @default null
              */
             get summary(): string;
 
@@ -3704,6 +3714,7 @@ declare module 'gi://AppStream?version=1.0' {
             get categories(): any[];
             /**
              * the description
+             * @default null
              */
             get description(): string;
             set description(val: string);
@@ -3714,6 +3725,7 @@ declare module 'gi://AppStream?version=1.0' {
             get icons(): Icon[];
             /**
              * the unique identifier
+             * @default null
              */
             get id(): string;
             set id(val: string);
@@ -3724,11 +3736,13 @@ declare module 'gi://AppStream?version=1.0' {
             set keywords(val: string[]);
             /**
              * the {@link AppStream.ComponentKind} of this component
+             * @default AppStream.ComponentKind.UNKNOWN
              */
             get kind(): ComponentKind;
             set kind(val: ComponentKind);
             /**
              * the name
+             * @default null
              */
             get name(): string;
             set name(val: string);
@@ -3739,21 +3753,25 @@ declare module 'gi://AppStream?version=1.0' {
             set pkgnames(val: string[]);
             /**
              * the project group
+             * @default null
              */
             get project_group(): string;
             set project_group(val: string);
             /**
              * the project group
+             * @default null
              */
             get projectGroup(): string;
             set projectGroup(val: string);
             /**
              * the project license
+             * @default null
              */
             get project_license(): string;
             set project_license(val: string);
             /**
              * the project license
+             * @default null
              */
             get projectLicense(): string;
             set projectLicense(val: string);
@@ -3764,6 +3782,7 @@ declare module 'gi://AppStream?version=1.0' {
             get screenshots(): Screenshot[];
             /**
              * the summary
+             * @default null
              */
             get summary(): string;
             set summary(val: string);
@@ -3854,7 +3873,7 @@ declare module 'gi://AppStream?version=1.0' {
              * @param keyword The new keyword to add.
              * @param locale BCP47 locale of the values, or `null` to use current locale.
              */
-            add_keyword(keyword: string, locale?: string | null): void;
+            add_keyword(keyword: string, locale: string | null): void;
             /**
              * Adds a language to the component.
              * @param locale the BCP47 locale, or `null`. e.g. "en-GB"
@@ -3950,7 +3969,7 @@ declare module 'gi://AppStream?version=1.0' {
              * Remove all keywords for the given locale.
              * @param locale BCP47 locale of the values, or `null` to use current locale.
              */
-            clear_keywords(locale?: string | null): void;
+            clear_keywords(locale: string | null): void;
             /**
              * Remove all registered language translation information.
              */
@@ -4129,7 +4148,7 @@ declare module 'gi://AppStream?version=1.0' {
              * @param locale the BCP47 locale, or `null`. e.g. "en-GB"
              * @returns a percentage value, -1 if locale was not found
              */
-            get_language(locale?: string | null): number;
+            get_language(locale: string | null): number;
             /**
              * Get a list of all languages.
              * @returns list of locales
@@ -4487,7 +4506,7 @@ declare module 'gi://AppStream?version=1.0' {
              * @param value The long description
              * @param locale The BCP47 locale for this value, or `null` to use the current active one.
              */
-            set_description(value: string, locale?: string | null): void;
+            set_description(value: string, locale: string | null): void;
             /**
              * Set the the component's developer.
              * @param developer the new {@link AppStream.Developer}
@@ -4525,14 +4544,14 @@ declare module 'gi://AppStream?version=1.0' {
              * @param value The name
              * @param locale The BCP47 locale for this value, or `null` to use the current active one.
              */
-            set_name(value: string, locale?: string | null): void;
+            set_name(value: string, locale: string | null): void;
             /**
              * Set a variant suffix for the component name
              * (only to be displayed if components have the same name).
              * @param value the developer or developer team name
              * @param locale the BCP47 locale, or `null`. e.g. "en-GB"
              */
-            set_name_variant_suffix(value: string, locale?: string | null): void;
+            set_name_variant_suffix(value: string, locale: string | null): void;
             /**
              * @param origin the origin.
              */
@@ -4588,7 +4607,7 @@ declare module 'gi://AppStream?version=1.0' {
              * @param value The summary
              * @param locale The BCP47 locale for this value, or `null` to use the current active one.
              */
-            set_summary(value: string, locale?: string | null): void;
+            set_summary(value: string, locale: string | null): void;
             /**
              * Reorder the screenshots to prioritize a certain environment or style, instead of using the default
              * screenshot order.
@@ -4638,6 +4657,7 @@ declare module 'gi://AppStream?version=1.0' {
 
             /**
              * @construct-only
+             * @default 0
              */
             get flags(): number;
 
@@ -4993,7 +5013,7 @@ declare module 'gi://AppStream?version=1.0' {
              * for data reading, but when writing data all locale will be written.
              * @param locale a POSIX or BCP47 locale, or `null`. e.g. "en_GB"
              */
-            set_locale(locale?: string | null): void;
+            set_locale(locale: string | null): void;
             /**
              * Sets the media base URL.
              * @param value the new value.
@@ -5095,7 +5115,7 @@ declare module 'gi://AppStream?version=1.0' {
              * @param value the developer or developer team name
              * @param locale the BCP47 locale, or `null`. e.g. "en-GB"
              */
-            set_name(value: string, locale?: string | null): void;
+            set_name(value: string, locale: string | null): void;
         }
 
         namespace Icon {
@@ -5993,13 +6013,13 @@ declare module 'gi://AppStream?version=1.0' {
              * @param cancellable a {@link Gio.Cancellable}.
              * @returns `true` if update completed without error.
              */
-            load(cancellable?: Gio.Cancellable | null): boolean;
+            load(cancellable: Gio.Cancellable | null): boolean;
             /**
              * Asynchronously loads data from all registered locations.
              * Equivalent to `as_pool_load()` (but asynchronous)
              * @param cancellable a {@link Gio.Cancellable}.
              */
-            load_async(cancellable?: Gio.Cancellable | null): globalThis.Promise<boolean>;
+            load_async(cancellable: Gio.Cancellable | null): globalThis.Promise<boolean>;
             /**
              * Asynchronously loads data from all registered locations.
              * Equivalent to `as_pool_load()` (but asynchronous)
@@ -6014,7 +6034,7 @@ declare module 'gi://AppStream?version=1.0' {
              * @param callback A {@link Gio.AsyncReadyCallback}
              */
             load_async(
-                cancellable?: Gio.Cancellable | null,
+                cancellable: Gio.Cancellable | null,
                 callback?: Gio.AsyncReadyCallback<this> | null,
             ): globalThis.Promise<boolean> | void;
             /**
@@ -6376,7 +6396,7 @@ declare module 'gi://AppStream?version=1.0' {
              * @param pool an {@link AppStream.Pool} to find component dependencies in.
              * @returns an {@link AppStream.RelationCheckResult} with details about the result, or `null` on error.
              */
-            is_satisfied(system_info?: SystemInfo | null, pool?: Pool | null): RelationCheckResult | null;
+            is_satisfied(system_info: SystemInfo | null, pool: Pool | null): RelationCheckResult | null;
             /**
              * Set the version comparison type of this {@link AppStream.Relation}.
              * @param compare the new {@link AppStream.RelationCompare}
@@ -6716,7 +6736,7 @@ declare module 'gi://AppStream?version=1.0' {
              * @param description the description markup.
              * @param locale the BCP47 locale, or `null`. e.g. "en-GB".
              */
-            set_description(description: string, locale?: string | null): void;
+            set_description(description: string, locale: string | null): void;
             /**
              * Sets the release kind to distinguish between end-user ready
              * stable releases and development prereleases..
@@ -6946,21 +6966,25 @@ declare module 'gi://AppStream?version=1.0' {
             set date(val: Review);
             /**
              * @since 0.14.0
+             * @default null
              */
             get description(): string;
             set description(val: string);
             /**
              * @since 0.14.0
+             * @default 0
              */
             get flags(): number;
             set flags(val: bigint | number);
             /**
              * @since 0.14.0
+             * @default null
              */
             get id(): string;
             set id(val: string);
             /**
              * @since 0.14.0
+             * @default null
              */
             get locale(): string;
             set locale(val: string);
@@ -6968,41 +6992,49 @@ declare module 'gi://AppStream?version=1.0' {
              * The priority for the review, where positive numbers indicate
              * a better review for the specific user.
              * @since 0.15.6
+             * @default 0
              */
             get priority(): number;
             set priority(val: number);
             /**
              * @since 0.14.0
+             * @default 0
              */
             get rating(): number;
             set rating(val: number);
             /**
              * @since 0.14.0
+             * @default null
              */
             get reviewer_id(): string;
             set reviewer_id(val: string);
             /**
              * @since 0.14.0
+             * @default null
              */
             get reviewerId(): string;
             set reviewerId(val: string);
             /**
              * @since 0.14.0
+             * @default null
              */
             get reviewer_name(): string;
             set reviewer_name(val: string);
             /**
              * @since 0.14.0
+             * @default null
              */
             get reviewerName(): string;
             set reviewerName(val: string);
             /**
              * @since 0.14.0
+             * @default null
              */
             get summary(): string;
             set summary(val: string);
             /**
              * @since 0.14.0
+             * @default null
              */
             get version(): string;
             set version(val: string);
@@ -7343,7 +7375,7 @@ declare module 'gi://AppStream?version=1.0' {
              * Sets the GUI environment ID of this screenshot.
              * @param env_id the GUI environment ID, e.g. "plasma-mobile" or "gnome:dark"
              */
-            set_environment(env_id?: string | null): void;
+            set_environment(env_id: string | null): void;
             /**
              * Sets the screenshot kind.
              * @param kind the {@link AppStream.ScreenshotKind}.
@@ -7687,7 +7719,7 @@ declare module 'gi://AppStream?version=1.0' {
              * components it may not be.
              * @param locale The POSIX locale that the source strings are in, or `null` if unknown or default.
              */
-            set_source_locale(locale?: string | null): void;
+            set_source_locale(locale: string | null): void;
         }
 
         namespace Validator {

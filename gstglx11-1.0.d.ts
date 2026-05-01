@@ -65,7 +65,7 @@ declare module 'gi://GstGLX11?version=1.0' {
 
             _init(...args: any[]): void;
 
-            static ['new'](name?: string | null): GLDisplayX11;
+            static ['new'](name: string | null): GLDisplayX11;
             // Conflicted with GstGL.GLDisplay.new
 
             static ['new'](...args: never[]): any;

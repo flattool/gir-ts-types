@@ -535,8 +535,8 @@ declare module 'gi://GstRtp?version=1.0' {
          */
         function buffer_add_rtp_source_meta(
             buffer: Gst.Buffer,
-            ssrc?: number | null,
-            csrc?: number[] | null,
+            ssrc: number | null,
+            csrc: number[] | null,
         ): RTPSourceMeta;
         /**
          * Find the {@link GstRtp.RTPSourceMeta} on `buffer`.
@@ -1032,8 +1032,14 @@ declare module 'gi://GstRtp?version=1.0' {
 
             // Properties
 
+            /**
+             * @default false
+             */
             get buffer_list(): boolean;
             set buffer_list(val: boolean);
+            /**
+             * @default false
+             */
             get bufferList(): boolean;
             set bufferList(val: boolean);
 
@@ -1242,6 +1248,7 @@ declare module 'gi://GstRtp?version=1.0' {
              * the need to handle these extensions manually using the
              * GstRTPBaseDepayload::request-extension: signal.
              * @since 1.20
+             * @default true
              */
             get auto_header_extension(): boolean;
             set auto_header_extension(val: boolean);
@@ -1251,6 +1258,7 @@ declare module 'gi://GstRtp?version=1.0' {
              * the need to handle these extensions manually using the
              * GstRTPBaseDepayload::request-extension: signal.
              * @since 1.20
+             * @default true
              */
             get autoHeaderExtension(): boolean;
             set autoHeaderExtension(val: boolean);
@@ -1267,6 +1275,7 @@ declare module 'gi://GstRtp?version=1.0' {
              * "notify::extensions".
              * @since 1.24
              * @read-only
+             * @default <  >
              */
             get extensions(): Gst.ValueArray;
             /**
@@ -1275,6 +1284,7 @@ declare module 'gi://GstRtp?version=1.0' {
              * When max-reorder is set to 0 all reordered/duplicate packets are
              * considered coming from a restarted sender.
              * @since 1.18
+             * @default 100
              */
             get max_reorder(): number;
             set max_reorder(val: number);
@@ -1284,18 +1294,21 @@ declare module 'gi://GstRtp?version=1.0' {
              * When max-reorder is set to 0 all reordered/duplicate packets are
              * considered coming from a restarted sender.
              * @since 1.18
+             * @default 100
              */
             get maxReorder(): number;
             set maxReorder(val: number);
             /**
              * Add RTP source information found in RTP header as meta to output buffer.
              * @since 1.16
+             * @default false
              */
             get source_info(): boolean;
             set source_info(val: boolean);
             /**
              * Add RTP source information found in RTP header as meta to output buffer.
              * @since 1.16
+             * @default false
              */
             get sourceInfo(): boolean;
             set sourceInfo(val: boolean);
@@ -1597,6 +1610,7 @@ declare module 'gi://GstRtp?version=1.0' {
              * the need to handle these extensions manually using the
              * GstRTPBasePayload::request-extension: signal.
              * @since 1.20
+             * @default true
              */
             get auto_header_extension(): boolean;
             set auto_header_extension(val: boolean);
@@ -1606,6 +1620,7 @@ declare module 'gi://GstRtp?version=1.0' {
              * the need to handle these extensions manually using the
              * GstRTPBasePayload::request-extension: signal.
              * @since 1.20
+             * @default true
              */
             get autoHeaderExtension(): boolean;
             set autoHeaderExtension(val: boolean);
@@ -1622,28 +1637,41 @@ declare module 'gi://GstRtp?version=1.0' {
              * "notify::extensions".
              * @since 1.24
              * @read-only
+             * @default <  >
              */
             get extensions(): Gst.ValueArray;
+            /**
+             * @default -1
+             */
             get max_ptime(): number;
             set max_ptime(val: bigint | number);
+            /**
+             * @default -1
+             */
             get maxPtime(): number;
             set maxPtime(val: bigint | number);
             /**
              * Minimum duration of the packet data in ns (can't go above MTU)
+             * @default 0
              */
             get min_ptime(): number;
             set min_ptime(val: bigint | number);
             /**
              * Minimum duration of the packet data in ns (can't go above MTU)
+             * @default 0
              */
             get minPtime(): number;
             set minPtime(val: bigint | number);
+            /**
+             * @default 1400
+             */
             get mtu(): number;
             set mtu(val: number);
             /**
              * Make the payloader timestamp packets according to the Rate-Control=no
              * behaviour specified in the ONVIF replay spec.
              * @since 1.16
+             * @default false
              */
             get onvif_no_rate_control(): boolean;
             set onvif_no_rate_control(val: boolean);
@@ -1651,6 +1679,7 @@ declare module 'gi://GstRtp?version=1.0' {
              * Make the payloader timestamp packets according to the Rate-Control=no
              * behaviour specified in the ONVIF replay spec.
              * @since 1.16
+             * @default false
              */
             get onvifNoRateControl(): boolean;
             set onvifNoRateControl(val: boolean);
@@ -1670,6 +1699,7 @@ declare module 'gi://GstRtp?version=1.0' {
              * timestamps will more closely correlate with the amount of data in each
              * buffer. Currently GstRTPBasePayload is limited to handling perfect RTP
              * timestamps for audio streams.
+             * @default true
              */
             get perfect_rtptime(): boolean;
             set perfect_rtptime(val: boolean);
@@ -1689,18 +1719,24 @@ declare module 'gi://GstRtp?version=1.0' {
              * timestamps will more closely correlate with the amount of data in each
              * buffer. Currently GstRTPBasePayload is limited to handling perfect RTP
              * timestamps for audio streams.
+             * @default true
              */
             get perfectRtptime(): boolean;
             set perfectRtptime(val: boolean);
+            /**
+             * @default 96
+             */
             get pt(): number;
             set pt(val: number);
             /**
              * Force buffers to be multiples of this duration in ns (0 disables)
+             * @default 0
              */
             get ptime_multiple(): number;
             set ptime_multiple(val: bigint | number);
             /**
              * Force buffers to be multiples of this duration in ns (0 disables)
+             * @default 0
              */
             get ptimeMultiple(): number;
             set ptimeMultiple(val: bigint | number);
@@ -1714,6 +1750,7 @@ declare module 'gi://GstRtp?version=1.0' {
              * video. This is achieved by the client setting RTSP Speed to 2 while the
              * server has this property disabled.
              * @since 1.18
+             * @default true
              */
             get scale_rtptime(): boolean;
             set scale_rtptime(val: boolean);
@@ -1727,21 +1764,30 @@ declare module 'gi://GstRtp?version=1.0' {
              * video. This is achieved by the client setting RTSP Speed to 2 while the
              * server has this property disabled.
              * @since 1.18
+             * @default true
              */
             get scaleRtptime(): boolean;
             set scaleRtptime(val: boolean);
             /**
              * @read-only
+             * @default 0
              */
             get seqnum(): number;
+            /**
+             * @default -1
+             */
             get seqnum_offset(): number;
             set seqnum_offset(val: number);
+            /**
+             * @default -1
+             */
             get seqnumOffset(): number;
             set seqnumOffset(val: number);
             /**
              * Enable writing the CSRC field in allocated RTP header based on RTP source
              * information found in the input buffer's {@link GstRtp.RTPSourceMeta}.
              * @since 1.16
+             * @default false
              */
             get source_info(): boolean;
             set source_info(val: boolean);
@@ -1749,9 +1795,13 @@ declare module 'gi://GstRtp?version=1.0' {
              * Enable writing the CSRC field in allocated RTP header based on RTP source
              * information found in the input buffer's {@link GstRtp.RTPSourceMeta}.
              * @since 1.16
+             * @default false
              */
             get sourceInfo(): boolean;
             set sourceInfo(val: boolean);
+            /**
+             * @default 4294967295
+             */
             get ssrc(): number;
             set ssrc(val: number);
             /**
@@ -1774,10 +1824,17 @@ declare module 'gi://GstRtp?version=1.0' {
             get stats(): Gst.Structure;
             /**
              * @read-only
+             * @default 0
              */
             get timestamp(): number;
+            /**
+             * @default 4294967295
+             */
             get timestamp_offset(): number;
             set timestamp_offset(val: number);
+            /**
+             * @default 4294967295
+             */
             get timestampOffset(): number;
             set timestampOffset(val: number);
 
@@ -1936,7 +1993,7 @@ declare module 'gi://GstRtp?version=1.0' {
              * @param s a {@link Gst.Structure} with the caps fields
              * @returns `true` if the caps could be set.
              */
-            set_outcaps_structure(s?: Gst.Structure | null): boolean;
+            set_outcaps_structure(s: Gst.Structure | null): boolean;
             /**
              * Enable or disable adding contributing sources to RTP packets from
              * {@link GstRtp.RTPSourceMeta}.
@@ -2920,6 +2977,7 @@ declare module 'gi://GstRtp?version=1.0' {
             state: number;
             data: any[];
             size: number[];
+            map: Gst.MapInfo[];
 
             // Static methods
 
@@ -3362,7 +3420,7 @@ declare module 'gi://GstRtp?version=1.0' {
              * @param ssrc pointer to the SSRC
              * @returns `true` on success, `false` otherwise.
              */
-            set_ssrc(ssrc?: number | null): boolean;
+            set_ssrc(ssrc: number | null): boolean;
         }
 
         /**

@@ -106,7 +106,7 @@ declare module 'gi://GstController?version=1.0' {
          * @gir-type Callback
          */
         interface DirectControlBindingConvertValue {
-            (self: DirectControlBinding, src_value: number, dest_value?: any | null): void;
+            (self: DirectControlBinding, src_value: number, dest_value: any | null): void;
         }
         namespace ARGBControlBinding {
             // Signal signatures
@@ -245,6 +245,7 @@ declare module 'gi://GstController?version=1.0' {
 
             /**
              * @construct-only
+             * @default false
              */
             get absolute(): boolean;
             get control_source(): Gst.ControlSource;
@@ -326,6 +327,9 @@ declare module 'gi://GstController?version=1.0' {
 
             // Properties
 
+            /**
+             * @default GstController.InterpolationMode.NONE
+             */
             get mode(): InterpolationMode;
             set mode(val: InterpolationMode);
 
@@ -411,6 +415,7 @@ declare module 'gi://GstController?version=1.0' {
 
             /**
              * Specifies the amplitude for the waveform of this {@link GstController.LFOControlSource}.
+             * @default 1
              */
             get amplitude(): number;
             set amplitude(val: number);
@@ -418,11 +423,13 @@ declare module 'gi://GstController?version=1.0' {
              * Specifies the frequency that should be used for the waveform
              * of this {@link GstController.LFOControlSource}. It should be large enough
              * so that the period is longer than one nanosecond.
+             * @default 1
              */
             get frequency(): number;
             set frequency(val: number);
             /**
              * Specifies the value offset for the waveform of this {@link GstController.LFOControlSource}.
+             * @default 1
              */
             get offset(): number;
             set offset(val: number);
@@ -432,11 +439,13 @@ declare module 'gi://GstController?version=1.0' {
              *
              * To get a n nanosecond shift to the left use
              * "(GST_SECOND / frequency) - n".
+             * @default 0
              */
             get timeshift(): number;
             set timeshift(val: bigint | number);
             /**
              * Specifies the waveform that should be used for this {@link GstController.LFOControlSource}.
+             * @default GstController.LFOWaveform.SINE
              */
             get waveform(): LFOWaveform;
             set waveform(val: LFOWaveform);
@@ -721,6 +730,9 @@ declare module 'gi://GstController?version=1.0' {
 
             // Properties
 
+            /**
+             * @default 0
+             */
             get tolerance(): number;
             set tolerance(val: bigint | number);
 

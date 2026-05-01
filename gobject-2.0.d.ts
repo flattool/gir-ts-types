@@ -512,8 +512,8 @@ declare module 'gi://GObject?version=2.0' {
             return_value: Value | any,
             n_param_values: number,
             param_values: Value | any,
-            invocation_hint?: any | null,
-            marshal_data?: any | null,
+            invocation_hint: any | null,
+            marshal_data: any | null,
         ): void;
         /**
          * A {@link GObject.ClosureMarshal} function for use with signals with handlers that
@@ -532,8 +532,8 @@ declare module 'gi://GObject?version=2.0' {
             return_value: Value | any,
             n_param_values: number,
             param_values: Value | any,
-            invocation_hint?: any | null,
-            marshal_data?: any | null,
+            invocation_hint: any | null,
+            marshal_data: any | null,
         ): void;
         /**
          * A {@link GObject.ClosureMarshal} function for use with signals with handlers that
@@ -551,8 +551,8 @@ declare module 'gi://GObject?version=2.0' {
             return_value: Value | any,
             n_param_values: number,
             param_values: Value | any,
-            invocation_hint?: any | null,
-            marshal_data?: any | null,
+            invocation_hint: any | null,
+            marshal_data: any | null,
         ): void;
         /**
          * A {@link GObject.ClosureMarshal} function for use with signals with a single
@@ -569,8 +569,8 @@ declare module 'gi://GObject?version=2.0' {
             return_value: Value | any,
             n_param_values: number,
             param_values: Value | any,
-            invocation_hint?: any | null,
-            marshal_data?: any | null,
+            invocation_hint: any | null,
+            marshal_data: any | null,
         ): void;
         /**
          * A {@link GObject.ClosureMarshal} function for use with signals with a single
@@ -587,8 +587,8 @@ declare module 'gi://GObject?version=2.0' {
             return_value: Value | any,
             n_param_values: number,
             param_values: Value | any,
-            invocation_hint?: any | null,
-            marshal_data?: any | null,
+            invocation_hint: any | null,
+            marshal_data: any | null,
         ): void;
         /**
          * A {@link GObject.ClosureMarshal} function for use with signals with a single
@@ -605,8 +605,8 @@ declare module 'gi://GObject?version=2.0' {
             return_value: Value | any,
             n_param_values: number,
             param_values: Value | any,
-            invocation_hint?: any | null,
-            marshal_data?: any | null,
+            invocation_hint: any | null,
+            marshal_data: any | null,
         ): void;
         /**
          * A {@link GObject.ClosureMarshal} function for use with signals with one
@@ -623,8 +623,8 @@ declare module 'gi://GObject?version=2.0' {
             return_value: Value | any,
             n_param_values: number,
             param_values: Value | any,
-            invocation_hint?: any | null,
-            marshal_data?: any | null,
+            invocation_hint: any | null,
+            marshal_data: any | null,
         ): void;
         /**
          * A {@link GObject.ClosureMarshal} function for use with signals with a single
@@ -641,8 +641,8 @@ declare module 'gi://GObject?version=2.0' {
             return_value: Value | any,
             n_param_values: number,
             param_values: Value | any,
-            invocation_hint?: any | null,
-            marshal_data?: any | null,
+            invocation_hint: any | null,
+            marshal_data: any | null,
         ): void;
         /**
          * A {@link GObject.ClosureMarshal} function for use with signals with a single
@@ -659,8 +659,8 @@ declare module 'gi://GObject?version=2.0' {
             return_value: Value | any,
             n_param_values: number,
             param_values: Value | any,
-            invocation_hint?: any | null,
-            marshal_data?: any | null,
+            invocation_hint: any | null,
+            marshal_data: any | null,
         ): void;
         /**
          * A {@link GObject.ClosureMarshal} function for use with signals with one
@@ -677,8 +677,8 @@ declare module 'gi://GObject?version=2.0' {
             return_value: Value | any,
             n_param_values: number,
             param_values: Value | any,
-            invocation_hint?: any | null,
-            marshal_data?: any | null,
+            invocation_hint: any | null,
+            marshal_data: any | null,
         ): void;
         /**
          * A {@link GObject.ClosureMarshal} function for use with signals with a single
@@ -695,8 +695,8 @@ declare module 'gi://GObject?version=2.0' {
             return_value: Value | any,
             n_param_values: number,
             param_values: Value | any,
-            invocation_hint?: any | null,
-            marshal_data?: any | null,
+            invocation_hint: any | null,
+            marshal_data: any | null,
         ): void;
         /**
          * A {@link GObject.ClosureMarshal} function for use with signals with with a single
@@ -713,8 +713,8 @@ declare module 'gi://GObject?version=2.0' {
             return_value: Value | any,
             n_param_values: number,
             param_values: Value | any,
-            invocation_hint?: any | null,
-            marshal_data?: any | null,
+            invocation_hint: any | null,
+            marshal_data: any | null,
         ): void;
         /**
          * A {@link GObject.ClosureMarshal} function for use with signals with a single
@@ -731,8 +731,8 @@ declare module 'gi://GObject?version=2.0' {
             return_value: Value | any,
             n_param_values: number,
             param_values: Value | any,
-            invocation_hint?: any | null,
-            marshal_data?: any | null,
+            invocation_hint: any | null,
+            marshal_data: any | null,
         ): void;
         /**
          * A {@link GObject.ClosureMarshal} function for use with signals with a single
@@ -749,8 +749,8 @@ declare module 'gi://GObject?version=2.0' {
             return_value: Value | any,
             n_param_values: number,
             param_values: Value | any,
-            invocation_hint?: any | null,
-            marshal_data?: any | null,
+            invocation_hint: any | null,
+            marshal_data: any | null,
         ): void;
         /**
          * A {@link GObject.ClosureMarshal} function for use with signals with a single raw
@@ -771,8 +771,8 @@ declare module 'gi://GObject?version=2.0' {
             return_value: Value | any,
             n_param_values: number,
             param_values: Value | any,
-            invocation_hint?: any | null,
-            marshal_data?: any | null,
+            invocation_hint: any | null,
+            marshal_data: any | null,
         ): void;
         /**
          * A {@link GObject.ClosureMarshal} function for use with signals with a single string
@@ -789,8 +789,8 @@ declare module 'gi://GObject?version=2.0' {
             return_value: Value | any,
             n_param_values: number,
             param_values: Value | any,
-            invocation_hint?: any | null,
-            marshal_data?: any | null,
+            invocation_hint: any | null,
+            marshal_data: any | null,
         ): void;
         /**
          * A {@link GObject.ClosureMarshal} function for use with signals with a single
@@ -807,8 +807,8 @@ declare module 'gi://GObject?version=2.0' {
             return_value: Value | any,
             n_param_values: number,
             param_values: Value | any,
-            invocation_hint?: any | null,
-            marshal_data?: any | null,
+            invocation_hint: any | null,
+            marshal_data: any | null,
         ): void;
         /**
          * A {@link GObject.ClosureMarshal} function for use with signals with with a single
@@ -825,8 +825,8 @@ declare module 'gi://GObject?version=2.0' {
             return_value: Value | any,
             n_param_values: number,
             param_values: Value | any,
-            invocation_hint?: any | null,
-            marshal_data?: any | null,
+            invocation_hint: any | null,
+            marshal_data: any | null,
         ): void;
         /**
          * A {@link GObject.ClosureMarshal} function for use with signals with an unsigned int
@@ -843,8 +843,8 @@ declare module 'gi://GObject?version=2.0' {
             return_value: Value | any,
             n_param_values: number,
             param_values: Value | any,
-            invocation_hint?: any | null,
-            marshal_data?: any | null,
+            invocation_hint: any | null,
+            marshal_data: any | null,
         ): void;
         /**
          * A {@link GObject.ClosureMarshal} function for use with signals with a single
@@ -861,8 +861,8 @@ declare module 'gi://GObject?version=2.0' {
             return_value: Value | any,
             n_param_values: number,
             param_values: Value | any,
-            invocation_hint?: any | null,
-            marshal_data?: any | null,
+            invocation_hint: any | null,
+            marshal_data: any | null,
         ): void;
         /**
          * A {@link GObject.ClosureMarshal} function for use with signals with a single
@@ -879,8 +879,8 @@ declare module 'gi://GObject?version=2.0' {
             return_value: Value | any,
             n_param_values: number,
             param_values: Value | any,
-            invocation_hint?: any | null,
-            marshal_data?: any | null,
+            invocation_hint: any | null,
+            marshal_data: any | null,
         ): void;
         /**
          * A {@link GObject.ClosureMarshal} function for use with signals with no arguments.
@@ -896,8 +896,8 @@ declare module 'gi://GObject?version=2.0' {
             return_value: Value | any,
             n_param_values: number,
             param_values: Value | any,
-            invocation_hint?: any | null,
-            marshal_data?: any | null,
+            invocation_hint: any | null,
+            marshal_data: any | null,
         ): void;
         /**
          * A generic marshaller function implemented via
@@ -918,8 +918,8 @@ declare module 'gi://GObject?version=2.0' {
             return_gvalue: Value | any,
             n_param_values: number,
             param_values: Value | any,
-            invocation_hint?: any | null,
-            marshal_data?: any | null,
+            invocation_hint: any | null,
+            marshal_data: any | null,
         ): void;
         /**
          * Disconnects a handler from `instance` so it will not be called during
@@ -1603,7 +1603,7 @@ declare module 'gi://GObject?version=2.0' {
             ihint: SignalInvocationHint,
             return_accu: Value | any,
             handler_return: Value | any,
-            dummy?: any | null,
+            dummy: any | null,
         ): boolean;
         /**
          * A predefined {@link GObject.SignalAccumulator} for signals that return a
@@ -1624,7 +1624,7 @@ declare module 'gi://GObject?version=2.0' {
             ihint: SignalInvocationHint,
             return_accu: Value | any,
             handler_return: Value | any,
-            dummy?: any | null,
+            dummy: any | null,
         ): boolean;
         /**
          * Adds an emission hook for a signal, which will get called for any emission
@@ -1640,7 +1640,7 @@ declare module 'gi://GObject?version=2.0' {
             signal_id: number,
             detail: GLib.Quark,
             hook_func: SignalEmissionHook,
-            data_destroy?: GLib.DestroyNotify | null,
+            data_destroy: GLib.DestroyNotify | null,
         ): number;
         /**
          * Calls the original class closure of a signal. This function should only
@@ -1803,9 +1803,9 @@ declare module 'gi://GObject?version=2.0' {
             mask: SignalMatchType,
             signal_id: number,
             detail: GLib.Quark,
-            closure?: Closure | null,
-            func?: any | null,
-            data?: any | null,
+            closure: Closure | null,
+            func: any | null,
+            data: any | null,
         ): number;
         /**
          * Destroy all signal handlers of a type instance. This function is
@@ -1843,9 +1843,9 @@ declare module 'gi://GObject?version=2.0' {
             mask: SignalMatchType,
             signal_id: number,
             detail: GLib.Quark,
-            closure?: Closure | null,
-            func?: any | null,
-            data?: any | null,
+            closure: Closure | null,
+            func: any | null,
+            data: any | null,
         ): number;
         /**
          * Unblocks all handlers on an instance that match a certain selection
@@ -1877,9 +1877,9 @@ declare module 'gi://GObject?version=2.0' {
             mask: SignalMatchType,
             signal_id: number,
             detail: GLib.Quark,
-            closure?: Closure | null,
-            func?: any | null,
-            data?: any | null,
+            closure: Closure | null,
+            func: any | null,
+            data: any | null,
         ): number;
         /**
          * Returns whether there are any handlers connected to `instance` for the
@@ -2558,7 +2558,7 @@ declare module 'gi://GObject?version=2.0' {
          * @param quark a {@link GLib.Quark} id to identify the data
          * @param data the data
          */
-        function type_set_qdata(type: GType, quark: GLib.Quark, data?: any | null): void;
+        function type_set_qdata(type: GType, quark: GLib.Quark, data: any | null): void;
         /**
          * @param type
          * @param flags
@@ -2623,13 +2623,13 @@ declare module 'gi://GObject?version=2.0' {
          * @gir-type Callback
          */
         interface ClassFinalizeFunc {
-            (g_class: TypeClass, class_data?: any | null): void;
+            (g_class: TypeClass, class_data: any | null): void;
         }
         /**
          * @gir-type Callback
          */
         interface ClassInitFunc {
-            (g_class: TypeClass, class_data?: any | null): void;
+            (g_class: TypeClass, class_data: any | null): void;
         }
         /**
          * @gir-type Callback
@@ -2639,8 +2639,8 @@ declare module 'gi://GObject?version=2.0' {
                 closure: Closure,
                 return_value: Value | null,
                 param_values: unknown[],
-                invocation_hint?: any | null,
-                marshal_data?: any | null,
+                invocation_hint: any | null,
+                marshal_data: any | null,
             ): void;
         }
         /**
@@ -2659,13 +2659,13 @@ declare module 'gi://GObject?version=2.0' {
          * @gir-type Callback
          */
         interface InterfaceFinalizeFunc {
-            (g_iface: TypeInterface, iface_data?: any | null): void;
+            (g_iface: TypeInterface, iface_data: any | null): void;
         }
         /**
          * @gir-type Callback
          */
         interface InterfaceInitFunc {
-            (g_iface: TypeInterface, iface_data?: any | null): void;
+            (g_iface: TypeInterface, iface_data: any | null): void;
         }
         /**
          * @gir-type Callback
@@ -2689,13 +2689,13 @@ declare module 'gi://GObject?version=2.0' {
          * @gir-type Callback
          */
         interface SignalAccumulator {
-            (ihint: SignalInvocationHint, return_accu: unknown, handler_return: unknown, data?: any | null): boolean;
+            (ihint: SignalInvocationHint, return_accu: unknown, handler_return: unknown, data: any | null): boolean;
         }
         /**
          * @gir-type Callback
          */
         interface SignalEmissionHook {
-            (ihint: SignalInvocationHint, param_values: unknown[], data?: any | null): boolean;
+            (ihint: SignalInvocationHint, param_values: unknown[], data: any | null): boolean;
         }
         /**
          * @gir-type Callback
@@ -3287,10 +3287,10 @@ declare module 'gi://GObject?version=2.0' {
 
             interface ConstructorProps extends Object.ConstructorProps {
                 flags: BindingFlags;
-                source: Object;
+                source: Object | null;
                 source_property: string;
                 sourceProperty: string;
-                target: Object;
+                target: Object | null;
                 target_property: string;
                 targetProperty: string;
             }
@@ -3384,6 +3384,7 @@ declare module 'gi://GObject?version=2.0' {
              * Flags to be used to control the {@link GObject.Binding}
              * @since 2.26
              * @construct-only
+             * @default GObject.BindingFlags.DEFAULT
              */
             get flags(): BindingFlags;
             /**
@@ -3391,7 +3392,7 @@ declare module 'gi://GObject?version=2.0' {
              * @since 2.26
              * @construct-only
              */
-            get source(): Object;
+            get source(): Object | null;
             /**
              * The name of the property of {@link GObject.Binding.source} that should be used
              * as the source of the binding.
@@ -3400,6 +3401,7 @@ declare module 'gi://GObject?version=2.0' {
              * best performance.
              * @since 2.26
              * @construct-only
+             * @default null
              */
             get source_property(): string;
             /**
@@ -3410,6 +3412,7 @@ declare module 'gi://GObject?version=2.0' {
              * best performance.
              * @since 2.26
              * @construct-only
+             * @default null
              */
             get sourceProperty(): string;
             /**
@@ -3417,7 +3420,7 @@ declare module 'gi://GObject?version=2.0' {
              * @since 2.26
              * @construct-only
              */
-            get target(): Object;
+            get target(): Object | null;
             /**
              * The name of the property of {@link GObject.Binding.target} that should be used
              * as the target of the binding.
@@ -3426,6 +3429,7 @@ declare module 'gi://GObject?version=2.0' {
              * best performance.
              * @since 2.26
              * @construct-only
+             * @default null
              */
             get target_property(): string;
             /**
@@ -3436,6 +3440,7 @@ declare module 'gi://GObject?version=2.0' {
              * best performance.
              * @since 2.26
              * @construct-only
+             * @default null
              */
             get targetProperty(): string;
 
@@ -3649,28 +3654,6 @@ declare module 'gi://GObject?version=2.0' {
              * functions to be used by the binding. The binding flag
              * {@link GObject.BindingFlags.SYNC_CREATE} is automatically specified.
              *
-             * See `g_object_bind_property_full()` for more information.
-             * @param source_property the property on the source to bind
-             * @param target the target {@link GObject.Object}
-             * @param target_property the property on `target` to bind
-             * @param flags the flags used to create the {@link GObject.Binding}
-             * @param transform_to the transformation function     from the source object to the `target`, or `null` to use the default
-             * @param transform_from the transformation function     from the `target` to the source object, or `null` to use the default
-             */
-            bind_full(
-                source_property: string,
-                target: Object,
-                target_property: string,
-                flags: BindingFlags,
-                transform_to?: BindingTransformFunc | null,
-                transform_from?: BindingTransformFunc | null,
-            ): void;
-            /**
-             * Creates a binding between `source_property` on the source object and
-             * `target_property` on `target`, allowing you to set the transformation
-             * functions to be used by the binding. The binding flag
-             * {@link GObject.BindingFlags.SYNC_CREATE} is automatically specified.
-             *
              * This function is the language bindings friendly version of
              * `g_binding_group_bind_property_full()`, using `GClosures`
              * instead of function pointers.
@@ -3688,8 +3671,8 @@ declare module 'gi://GObject?version=2.0' {
                 target: Object,
                 target_property: string,
                 flags: BindingFlags,
-                transform_to?: Closure | null,
-                transform_from?: Closure | null,
+                transform_to: Closure | null,
+                transform_from: Closure | null,
             ): void;
             /**
              * Gets the source object used for binding properties.
@@ -3704,7 +3687,7 @@ declare module 'gi://GObject?version=2.0' {
              * Note that all properties that have been bound must exist on `source`.
              * @param source the source {@link GObject.Object},   or `null` to clear it
              */
-            set_source(source?: Object | null): void;
+            set_source(source: Object | null): void;
         }
 
         namespace InitiallyUnowned {
@@ -3880,7 +3863,7 @@ declare module 'gi://GObject?version=2.0' {
              * @param what
              * @param data
              */
-            static compat_control(what: bigint | number, data?: any | null): number;
+            static compat_control(what: bigint | number, data: any | null): number;
             /**
              * Find the {@link GObject.ParamSpec} with the given name for an
              * interface. Generally, the interface vtable passed in as `g_iface`
@@ -4066,50 +4049,6 @@ declare module 'gi://GObject?version=2.0' {
                 target: Object,
                 target_property: string,
                 flags: BindingFlags,
-            ): Binding;
-            /**
-             * Complete version of `g_object_bind_property()`.
-             *
-             * Creates a binding between `source_property` on `source` and `target_property`
-             * on `target`, allowing you to set the transformation functions to be used by
-             * the binding.
-             *
-             * If `flags` contains {@link GObject.BindingFlags.BIDIRECTIONAL} then the binding will be mutual:
-             * if `target_property` on `target` changes then the `source_property` on `source`
-             * will be updated as well. The `transform_from` function is only used in case
-             * of bidirectional bindings, otherwise it will be ignored
-             *
-             * The binding will automatically be removed when either the `source` or the
-             * `target` instances are finalized. This will release the reference that is
-             * being held on the {@link GObject.Binding} instance; if you want to hold on to the
-             * {@link GObject.Binding} instance, you will need to hold a reference to it.
-             *
-             * To remove the binding, call `g_binding_unbind()`.
-             *
-             * A {@link GObject.Object} can have multiple bindings.
-             *
-             * The same `user_data` parameter will be used for both `transform_to`
-             * and `transform_from` transformation functions; the `notify` function will
-             * be called once, when the binding is removed. If you need different data
-             * for each transformation function, please use
-             * `g_object_bind_property_with_closures()` instead.
-             * @param source_property the property on `source` to bind
-             * @param target the target {@link GObject.Object}
-             * @param target_property the property on `target` to bind
-             * @param flags flags to pass to {@link GObject.Binding}
-             * @param transform_to the transformation function     from the `source` to the `target`, or `null` to use the default
-             * @param transform_from the transformation function     from the `target` to the `source`, or `null` to use the default
-             * @param notify a function to call when disposing the binding, to free     resources used by the transformation functions, or `null` if not required
-             * @returns the {@link GObject.Binding} instance representing the     binding between the two {@link GObject.Object} instances. The binding is released     whenever the {@link GObject.Binding} reference count reaches zero.
-             */
-            bind_property_full(
-                source_property: string,
-                target: Object,
-                target_property: string,
-                flags: BindingFlags,
-                transform_to?: BindingTransformFunc | null,
-                transform_from?: BindingTransformFunc | null,
-                notify?: GLib.DestroyNotify | null,
             ): Binding;
             /**
              * Creates a binding between `source_property` on `source` and `target_property`
@@ -4301,7 +4240,7 @@ declare module 'gi://GObject?version=2.0' {
              * @param key name of the key
              * @param data data to associate with that key
              */
-            set_data(key: string, data?: any | null): void;
+            set_data(key: string, data: any | null): void;
             /**
              * Sets a property on an object.
              * @param property_name The name of the property to set
@@ -4663,6 +4602,23 @@ declare module 'gi://GObject?version=2.0' {
                 defaultValue?: boolean,
             ): ParamSpec<boolean>;
             /**
+             * Creates a new GParamSpecFlags instance specifying a G_TYPE_FLAGS property.
+             * @param name The name of the property
+             * @param nick A human readable name for the property (can be null)
+             * @param blurb A longer description of the property (can be null)
+             * @param flags The flags for this property (e.g. READABLE, WRITABLE)
+             * @param flagsType The GType for this property
+             * @param defaultValue The default value for this property (optional)
+             */
+            static flags(
+                name: string,
+                nick: string | null,
+                blurb: string | null,
+                flags: ParamFlags | number,
+                flagsType: any,
+                defaultValue?: any,
+            ): ParamSpec<number>;
+            /**
              * Creates a new GParamSpecEnum instance specifying a G_TYPE_ENUM property.
              * @param name The name of the property
              * @param nick A human readable name for the property (can be null)
@@ -4872,7 +4828,7 @@ declare module 'gi://GObject?version=2.0' {
              * @param quark a {@link GLib.Quark}, naming the user data pointer
              * @param data an opaque user data pointer
              */
-            set_qdata(quark: GLib.Quark, data?: any | null): void;
+            set_qdata(quark: GLib.Quark, data: any | null): void;
             /**
              * The initial reference count of a newly created {@link GObject.ParamSpec} is 1,
              * even though no one has explicitly called `g_param_spec_ref()` on it
@@ -5087,7 +5043,7 @@ declare module 'gi://GObject?version=2.0' {
              * disconnected from that object prior to connecting to `target`.
              * @param target The target instance used     when connecting signals.
              */
-            set_target(target?: Object | null): void;
+            set_target(target: Object | null): void;
             /**
              * Unblocks all signal handlers managed by `self` so they will be
              * called again during any signal emissions unless it is blocked
@@ -5315,455 +5271,6 @@ declare module 'gi://GObject?version=2.0' {
              * @param value_table the {@link GObject.TypeValueTable} to fill in
              */
             complete_type_info(g_type: GType, info: TypeInfo, value_table: TypeValueTable): void;
-            /**
-             * Creates a binding between `source_property` on `source` and `target_property`
-             * on `target`.
-             *
-             * Whenever the `source_property` is changed the `target_property` is
-             * updated using the same value. For instance:
-             *
-             *
-             * ```c
-             *   g_object_bind_property (action, "active", widget, "sensitive", 0);
-             * ```
-             *
-             *
-             * Will result in the "sensitive" property of the widget {@link GObject.Object} instance to be
-             * updated with the same value of the "active" property of the action {@link GObject.Object}
-             * instance.
-             *
-             * If `flags` contains {@link GObject.BindingFlags.BIDIRECTIONAL} then the binding will be mutual:
-             * if `target_property` on `target` changes then the `source_property` on `source`
-             * will be updated as well.
-             *
-             * The binding will automatically be removed when either the `source` or the
-             * `target` instances are finalized. To remove the binding without affecting the
-             * `source` and the `target` you can just call `g_object_unref()` on the returned
-             * {@link GObject.Binding} instance.
-             *
-             * Removing the binding by calling `g_object_unref()` on it must only be done if
-             * the binding, `source` and `target` are only used from a single thread and it
-             * is clear that both `source` and `target` outlive the binding. Especially it
-             * is not safe to rely on this if the binding, `source` or `target` can be
-             * finalized from different threads. Keep another reference to the binding and
-             * use `g_binding_unbind()` instead to be on the safe side.
-             *
-             * A {@link GObject.Object} can have multiple bindings.
-             * @param source_property the property on `source` to bind
-             * @param target the target {@link GObject.Object}
-             * @param target_property the property on `target` to bind
-             * @param flags flags to pass to {@link GObject.Binding}
-             * @returns the {@link GObject.Binding} instance representing the     binding between the two {@link GObject.Object} instances. The binding is released     whenever the {@link GObject.Binding} reference count reaches zero.
-             */
-            bind_property(
-                source_property: string,
-                target: Object,
-                target_property: string,
-                flags: BindingFlags,
-            ): Binding;
-            /**
-             * Complete version of `g_object_bind_property()`.
-             *
-             * Creates a binding between `source_property` on `source` and `target_property`
-             * on `target`, allowing you to set the transformation functions to be used by
-             * the binding.
-             *
-             * If `flags` contains {@link GObject.BindingFlags.BIDIRECTIONAL} then the binding will be mutual:
-             * if `target_property` on `target` changes then the `source_property` on `source`
-             * will be updated as well. The `transform_from` function is only used in case
-             * of bidirectional bindings, otherwise it will be ignored
-             *
-             * The binding will automatically be removed when either the `source` or the
-             * `target` instances are finalized. This will release the reference that is
-             * being held on the {@link GObject.Binding} instance; if you want to hold on to the
-             * {@link GObject.Binding} instance, you will need to hold a reference to it.
-             *
-             * To remove the binding, call `g_binding_unbind()`.
-             *
-             * A {@link GObject.Object} can have multiple bindings.
-             *
-             * The same `user_data` parameter will be used for both `transform_to`
-             * and `transform_from` transformation functions; the `notify` function will
-             * be called once, when the binding is removed. If you need different data
-             * for each transformation function, please use
-             * `g_object_bind_property_with_closures()` instead.
-             * @param source_property the property on `source` to bind
-             * @param target the target {@link GObject.Object}
-             * @param target_property the property on `target` to bind
-             * @param flags flags to pass to {@link GObject.Binding}
-             * @param transform_to the transformation function     from the `source` to the `target`, or `null` to use the default
-             * @param transform_from the transformation function     from the `target` to the `source`, or `null` to use the default
-             * @param notify a function to call when disposing the binding, to free     resources used by the transformation functions, or `null` if not required
-             * @returns the {@link GObject.Binding} instance representing the     binding between the two {@link GObject.Object} instances. The binding is released     whenever the {@link GObject.Binding} reference count reaches zero.
-             */
-            bind_property_full(
-                source_property: string,
-                target: Object,
-                target_property: string,
-                flags: BindingFlags,
-                transform_to?: BindingTransformFunc | null,
-                transform_from?: BindingTransformFunc | null,
-                notify?: GLib.DestroyNotify | null,
-            ): Binding;
-            /**
-             * @param args
-             */
-            // Conflicted with GObject.Object.bind_property_full
-            bind_property_full(...args: never[]): any;
-            /**
-             * This function is intended for {@link GObject.Object} implementations to re-enforce
-             * a [floating][floating-ref] object reference. Doing this is seldom
-             * required: all `GInitiallyUnowneds` are created with a floating reference
-             * which usually just needs to be sunken by calling `g_object_ref_sink()`.
-             */
-            force_floating(): void;
-            /**
-             * Increases the freeze count on `object`. If the freeze count is
-             * non-zero, the emission of "notify" signals on `object` is
-             * stopped. The signals are queued until the freeze count is decreased
-             * to zero. Duplicate notifications are squashed so that at most one
-             * {@link GObject.Object.SignalSignatures.notify | GObject.Object::notify} signal is emitted for each property modified while the
-             * object is frozen.
-             *
-             * This is necessary for accessors that modify multiple properties to prevent
-             * premature notification while the object is still being modified.
-             */
-            freeze_notify(): void;
-            /**
-             * Gets a named field from the objects table of associations (see `g_object_set_data()`).
-             * @param key name of the key for that association
-             * @returns the data if found,          or `null` if no such data exists.
-             */
-            get_data(key: string): any | null;
-            /**
-             * Gets a property of an object.
-             *
-             * The value can be:
-             * - an empty GObject.Value initialized by G_VALUE_INIT, which will be automatically initialized with the expected type of the property (since GLib 2.60)
-             * - a GObject.Value initialized with the expected type of the property
-             * - a GObject.Value initialized with a type to which the expected type of the property can be transformed
-             *
-             * In general, a copy is made of the property contents and the caller is responsible for freeing the memory by calling GObject.Value.unset.
-             *
-             * Note that GObject.Object.get_property is really intended for language bindings, GObject.Object.get is much more convenient for C programming.
-             * @param property_name The name of the property to get
-             * @param value Return location for the property value. Can be an empty GObject.Value initialized by G_VALUE_INIT (auto-initialized with expected type since GLib 2.60), a GObject.Value initialized with the expected property type, or a GObject.Value initialized with a transformable type
-             */
-            get_property(property_name: string, value: Value | any): any;
-            /**
-             * This function gets back user data pointers stored via
-             * `g_object_set_qdata()`.
-             * @param quark A {@link GLib.Quark}, naming the user data pointer
-             * @returns The user data pointer set, or `null`
-             */
-            get_qdata(quark: GLib.Quark): any | null;
-            /**
-             * Gets `n_properties` properties for an `object`.
-             * Obtained properties will be set to `values`. All properties must be valid.
-             * Warnings will be emitted and undefined behaviour may result if invalid
-             * properties are passed in.
-             * @param names the names of each property to get
-             * @param values the values of each property to get
-             */
-            getv(names: string[], values: (Value | any)[]): void;
-            /**
-             * Checks whether `object` has a [floating][floating-ref] reference.
-             * @returns `true` if `object` has a floating reference
-             */
-            is_floating(): boolean;
-            /**
-             * Emits a "notify" signal for the property `property_name` on `object`.
-             *
-             * When possible, eg. when signaling a property change from within the class
-             * that registered the property, you should use `g_object_notify_by_pspec()`
-             * instead.
-             *
-             * Note that emission of the notify signal may be blocked with
-             * `g_object_freeze_notify()`. In this case, the signal emissions are queued
-             * and will be emitted (in reverse order) when `g_object_thaw_notify()` is
-             * called.
-             * @param property_name the name of a property installed on the class of `object`.
-             */
-            notify(property_name: string): void;
-            /**
-             * Emits a "notify" signal for the property specified by `pspec` on `object`.
-             *
-             * This function omits the property name lookup, hence it is faster than
-             * `g_object_notify()`.
-             *
-             * One way to avoid using `g_object_notify()` from within the
-             * class that registered the properties, and using `g_object_notify_by_pspec()`
-             * instead, is to store the GParamSpec used with
-             * `g_object_class_install_property()` inside a static array, e.g.:
-             *
-             *
-             * ```c
-             *   typedef enum
-             *   {
-             *     PROP_FOO = 1,
-             *     PROP_LAST
-             *   } MyObjectProperty;
-             *
-             *   static GParamSpec *properties[PROP_LAST];
-             *
-             *   static void
-             *   my_object_class_init (MyObjectClass *klass)
-             *   {
-             *     properties[PROP_FOO] = g_param_spec_int ("foo", NULL, NULL,
-             *                                              0, 100,
-             *                                              50,
-             *                                              G_PARAM_READWRITE | G_PARAM_STATIC_STRINGS);
-             *     g_object_class_install_property (gobject_class,
-             *                                      PROP_FOO,
-             *                                      properties[PROP_FOO]);
-             *   }
-             * ```
-             *
-             *
-             * and then notify a change on the "foo" property with:
-             *
-             *
-             * ```c
-             *   g_object_notify_by_pspec (self, properties[PROP_FOO]);
-             * ```
-             *
-             * @param pspec the {@link GObject.ParamSpec} of a property installed on the class of `object`.
-             */
-            notify_by_pspec(pspec: ParamSpec): void;
-            /**
-             * Increases the reference count of `object`.
-             *
-             * Since GLib 2.56, if `GLIB_VERSION_MAX_ALLOWED` is 2.56 or greater, the type
-             * of `object` will be propagated to the return type (using the GCC `typeof()`
-             * extension), so any casting the caller needs to do on the return type must be
-             * explicit.
-             * @returns the same `object`
-             */
-            ref(): Object;
-            /**
-             * Increase the reference count of `object`, and possibly remove the
-             * [floating][floating-ref] reference, if `object` has a floating reference.
-             *
-             * In other words, if the object is floating, then this call "assumes
-             * ownership" of the floating reference, converting it to a normal
-             * reference by clearing the floating flag while leaving the reference
-             * count unchanged.  If the object is not floating, then this call
-             * adds a new normal reference increasing the reference count by one.
-             *
-             * Since GLib 2.56, the type of `object` will be propagated to the return type
-             * under the same conditions as for `g_object_ref()`.
-             * @returns `object`
-             */
-            ref_sink(): Object;
-            /**
-             * Releases all references to other objects. This can be used to break
-             * reference cycles.
-             *
-             * This function should only be called from object system implementations.
-             */
-            run_dispose(): void;
-            /**
-             * Each object carries around a table of associations from
-             * strings to pointers.  This function lets you set an association.
-             *
-             * If the object already had an association with that name,
-             * the old association will be destroyed.
-             *
-             * Internally, the `key` is converted to a {@link GLib.Quark} using `g_quark_from_string()`.
-             * This means a copy of `key` is kept permanently (even after `object` has been
-             * finalized) — so it is recommended to only use a small, bounded set of values
-             * for `key` in your program, to avoid the {@link GLib.Quark} storage growing unbounded.
-             * @param key name of the key
-             * @param data data to associate with that key
-             */
-            set_data(key: string, data?: any | null): void;
-            /**
-             * Sets a property on an object.
-             * @param property_name The name of the property to set
-             * @param value The value to set the property to
-             */
-            set_property(property_name: string, value: Value | any): void;
-            /**
-             * Remove a specified datum from the object's data associations,
-             * without invoking the association's destroy handler.
-             * @param key name of the key
-             * @returns the data if found, or `null`          if no such data exists.
-             */
-            steal_data(key: string): any | null;
-            /**
-             * This function gets back user data pointers stored via
-             * `g_object_set_qdata()` and removes the `data` from object
-             * without invoking its `destroy()` function (if any was
-             * set).
-             * Usually, calling this function is only required to update
-             * user data pointers with a destroy notifier, for example:
-             *
-             * ```c
-             * void
-             * object_add_to_user_list (GObject     *object,
-             *                          const gchar *new_string)
-             * {
-             *   // the quark, naming the object data
-             *   GQuark quark_string_list = g_quark_from_static_string ("my-string-list");
-             *   // retrieve the old string list
-             *   GList *list = g_object_steal_qdata (object, quark_string_list);
-             *
-             *   // prepend new string
-             *   list = g_list_prepend (list, g_strdup (new_string));
-             *   // this changed 'list', so we need to set it again
-             *   g_object_set_qdata_full (object, quark_string_list, list, free_string_list);
-             * }
-             * static void
-             * free_string_list (gpointer data)
-             * {
-             *   GList *node, *list = data;
-             *
-             *   for (node = list; node; node = node->next)
-             *     g_free (node->data);
-             *   g_list_free (list);
-             * }
-             * ```
-             *
-             * Using `g_object_get_qdata()` in the above example, instead of
-             * `g_object_steal_qdata()` would have left the destroy function set,
-             * and thus the partial string list would have been freed upon
-             * `g_object_set_qdata_full()`.
-             * @param quark A {@link GLib.Quark}, naming the user data pointer
-             * @returns The user data pointer set, or `null`
-             */
-            steal_qdata(quark: GLib.Quark): any | null;
-            /**
-             * Reverts the effect of a previous call to
-             * `g_object_freeze_notify()`. The freeze count is decreased on `object`
-             * and when it reaches zero, queued "notify" signals are emitted.
-             *
-             * Duplicate notifications for each property are squashed so that at most one
-             * {@link GObject.Object.SignalSignatures.notify | GObject.Object::notify} signal is emitted for each property, in the reverse order
-             * in which they have been queued.
-             *
-             * It is an error to call this function when the freeze count is zero.
-             */
-            thaw_notify(): void;
-            /**
-             * Decreases the reference count of `object`. When its reference count
-             * drops to 0, the object is finalized (i.e. its memory is freed).
-             *
-             * If the pointer to the {@link GObject.Object} may be reused in future (for example, if it is
-             * an instance variable of another object), it is recommended to clear the
-             * pointer to `null` rather than retain a dangling pointer to a potentially
-             * invalid {@link GObject.Object} instance. Use `g_clear_object()` for this.
-             */
-            unref(): void;
-            /**
-             * This function essentially limits the life time of the `closure` to
-             * the life time of the object. That is, when the object is finalized,
-             * the `closure` is invalidated by calling `g_closure_invalidate()` on
-             * it, in order to prevent invocations of the closure with a finalized
-             * (nonexisting) object. Also, `g_object_ref()` and `g_object_unref()` are
-             * added as marshal guards to the `closure`, to ensure that an extra
-             * reference count is held on `object` during invocation of the
-             * `closure`.  Usually, this function will be called on closures that
-             * use this `object` as closure data.
-             * @param closure {@link GObject.Closure} to watch
-             */
-            watch_closure(closure: Closure): void;
-            /**
-             * the `constructed` function is called by `g_object_new()` as the
-             *  final step of the object creation process.  At the point of the call, all
-             *  construction properties have been set on the object.  The purpose of this
-             *  call is to allow for object initialisation steps that can only be performed
-             *  after construction properties have been set.  `constructed` implementors
-             *  should chain up to the `constructed` call of their parent class to allow it
-             *  to complete its initialisation.
-             * @virtual
-             */
-            vfunc_constructed(): void;
-            /**
-             * emits property change notification for a bunch
-             *  of properties. Overriding `dispatch_properties_changed` should be rarely
-             *  needed.
-             * @param n_pspecs
-             * @param pspecs
-             * @virtual
-             */
-            vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: ParamSpec): void;
-            /**
-             * the `dispose` function is supposed to drop all references to other
-             *  objects, but keep the instance otherwise intact, so that client method
-             *  invocations still work. It may be run multiple times (due to reference
-             *  loops). Before returning, `dispose` should chain up to the `dispose` method
-             *  of the parent class.
-             * @virtual
-             */
-            vfunc_dispose(): void;
-            /**
-             * instance finalization function, should finish the finalization of
-             *  the instance begun in `dispose` and chain up to the `finalize` method of the
-             *  parent class.
-             * @virtual
-             */
-            vfunc_finalize(): void;
-            /**
-             * the generic getter for all properties of this type. Should be
-             *  overridden for every type with properties.
-             * @param property_id
-             * @param value
-             * @param pspec
-             * @virtual
-             */
-            vfunc_get_property(property_id: number, value: unknown, pspec: ParamSpec): void;
-            /**
-             * Emits a "notify" signal for the property `property_name` on `object`.
-             *
-             * When possible, eg. when signaling a property change from within the class
-             * that registered the property, you should use `g_object_notify_by_pspec()`
-             * instead.
-             *
-             * Note that emission of the notify signal may be blocked with
-             * `g_object_freeze_notify()`. In this case, the signal emissions are queued
-             * and will be emitted (in reverse order) when `g_object_thaw_notify()` is
-             * called.
-             * @param pspec
-             * @virtual
-             */
-            vfunc_notify(pspec: ParamSpec): void;
-            /**
-             * the generic setter for all properties of this type. Should be
-             *  overridden for every type with properties. If implementations of
-             *  `set_property` don't emit property change notification explicitly, this will
-             *  be done implicitly by the type system. However, if the notify signal is
-             *  emitted explicitly, the type system will not emit it a second time.
-             * @param property_id
-             * @param value
-             * @param pspec
-             * @virtual
-             */
-            vfunc_set_property(property_id: number, value: unknown, pspec: ParamSpec): void;
-            /**
-             * Disconnects a handler from an instance so it will not be called during any future or currently ongoing emissions of the signal it has been connected to.
-             * @param id Handler ID of the handler to be disconnected
-             */
-            disconnect(id: number): void;
-            /**
-             * Sets multiple properties of an object at once. The properties argument should be a dictionary mapping property names to values.
-             * @param properties Object containing the properties to set
-             */
-            set(properties: { [key: string]: any }): void;
-            /**
-             * Blocks a handler of an instance so it will not be called during any signal emissions
-             * @param id Handler ID of the handler to be blocked
-             */
-            block_signal_handler(id: number): void;
-            /**
-             * Unblocks a handler so it will be called again during any signal emissions
-             * @param id Handler ID of the handler to be unblocked
-             */
-            unblock_signal_handler(id: number): void;
-            /**
-             * Stops a signal's emission by the given signal name. This will prevent the default handler and any subsequent signal handlers from being invoked.
-             * @param detailedName Name of the signal to stop emission of
-             */
-            stop_emission_by_name(detailedName: string): void;
         }
 
         /**
@@ -5796,8 +5303,8 @@ declare module 'gi://GObject?version=2.0' {
                 return_value: Value | any,
                 n_param_values: number,
                 param_values: Value | any,
-                invocation_hint?: any | null,
-                marshal_data?: any | null,
+                invocation_hint: any | null,
+                marshal_data: any | null,
             ): void;
             /**
              * A {@link GObject.ClosureMarshal} function for use with signals with handlers that
@@ -5816,8 +5323,8 @@ declare module 'gi://GObject?version=2.0' {
                 return_value: Value | any,
                 n_param_values: number,
                 param_values: Value | any,
-                invocation_hint?: any | null,
-                marshal_data?: any | null,
+                invocation_hint: any | null,
+                marshal_data: any | null,
             ): void;
             /**
              * A {@link GObject.ClosureMarshal} function for use with signals with handlers that
@@ -5835,8 +5342,8 @@ declare module 'gi://GObject?version=2.0' {
                 return_value: Value | any,
                 n_param_values: number,
                 param_values: Value | any,
-                invocation_hint?: any | null,
-                marshal_data?: any | null,
+                invocation_hint: any | null,
+                marshal_data: any | null,
             ): void;
             /**
              * A {@link GObject.ClosureMarshal} function for use with signals with a single
@@ -5853,8 +5360,8 @@ declare module 'gi://GObject?version=2.0' {
                 return_value: Value | any,
                 n_param_values: number,
                 param_values: Value | any,
-                invocation_hint?: any | null,
-                marshal_data?: any | null,
+                invocation_hint: any | null,
+                marshal_data: any | null,
             ): void;
             /**
              * A {@link GObject.ClosureMarshal} function for use with signals with a single
@@ -5871,8 +5378,8 @@ declare module 'gi://GObject?version=2.0' {
                 return_value: Value | any,
                 n_param_values: number,
                 param_values: Value | any,
-                invocation_hint?: any | null,
-                marshal_data?: any | null,
+                invocation_hint: any | null,
+                marshal_data: any | null,
             ): void;
             /**
              * A {@link GObject.ClosureMarshal} function for use with signals with a single
@@ -5889,8 +5396,8 @@ declare module 'gi://GObject?version=2.0' {
                 return_value: Value | any,
                 n_param_values: number,
                 param_values: Value | any,
-                invocation_hint?: any | null,
-                marshal_data?: any | null,
+                invocation_hint: any | null,
+                marshal_data: any | null,
             ): void;
             /**
              * A {@link GObject.ClosureMarshal} function for use with signals with one
@@ -5907,8 +5414,8 @@ declare module 'gi://GObject?version=2.0' {
                 return_value: Value | any,
                 n_param_values: number,
                 param_values: Value | any,
-                invocation_hint?: any | null,
-                marshal_data?: any | null,
+                invocation_hint: any | null,
+                marshal_data: any | null,
             ): void;
             /**
              * A {@link GObject.ClosureMarshal} function for use with signals with a single
@@ -5925,8 +5432,8 @@ declare module 'gi://GObject?version=2.0' {
                 return_value: Value | any,
                 n_param_values: number,
                 param_values: Value | any,
-                invocation_hint?: any | null,
-                marshal_data?: any | null,
+                invocation_hint: any | null,
+                marshal_data: any | null,
             ): void;
             /**
              * A {@link GObject.ClosureMarshal} function for use with signals with a single
@@ -5943,8 +5450,8 @@ declare module 'gi://GObject?version=2.0' {
                 return_value: Value | any,
                 n_param_values: number,
                 param_values: Value | any,
-                invocation_hint?: any | null,
-                marshal_data?: any | null,
+                invocation_hint: any | null,
+                marshal_data: any | null,
             ): void;
             /**
              * A {@link GObject.ClosureMarshal} function for use with signals with one
@@ -5961,8 +5468,8 @@ declare module 'gi://GObject?version=2.0' {
                 return_value: Value | any,
                 n_param_values: number,
                 param_values: Value | any,
-                invocation_hint?: any | null,
-                marshal_data?: any | null,
+                invocation_hint: any | null,
+                marshal_data: any | null,
             ): void;
             /**
              * A {@link GObject.ClosureMarshal} function for use with signals with a single
@@ -5979,8 +5486,8 @@ declare module 'gi://GObject?version=2.0' {
                 return_value: Value | any,
                 n_param_values: number,
                 param_values: Value | any,
-                invocation_hint?: any | null,
-                marshal_data?: any | null,
+                invocation_hint: any | null,
+                marshal_data: any | null,
             ): void;
             /**
              * A {@link GObject.ClosureMarshal} function for use with signals with with a single
@@ -5997,8 +5504,8 @@ declare module 'gi://GObject?version=2.0' {
                 return_value: Value | any,
                 n_param_values: number,
                 param_values: Value | any,
-                invocation_hint?: any | null,
-                marshal_data?: any | null,
+                invocation_hint: any | null,
+                marshal_data: any | null,
             ): void;
             /**
              * A {@link GObject.ClosureMarshal} function for use with signals with a single
@@ -6015,8 +5522,8 @@ declare module 'gi://GObject?version=2.0' {
                 return_value: Value | any,
                 n_param_values: number,
                 param_values: Value | any,
-                invocation_hint?: any | null,
-                marshal_data?: any | null,
+                invocation_hint: any | null,
+                marshal_data: any | null,
             ): void;
             /**
              * A {@link GObject.ClosureMarshal} function for use with signals with a single
@@ -6033,8 +5540,8 @@ declare module 'gi://GObject?version=2.0' {
                 return_value: Value | any,
                 n_param_values: number,
                 param_values: Value | any,
-                invocation_hint?: any | null,
-                marshal_data?: any | null,
+                invocation_hint: any | null,
+                marshal_data: any | null,
             ): void;
             /**
              * A {@link GObject.ClosureMarshal} function for use with signals with a single raw
@@ -6055,8 +5562,8 @@ declare module 'gi://GObject?version=2.0' {
                 return_value: Value | any,
                 n_param_values: number,
                 param_values: Value | any,
-                invocation_hint?: any | null,
-                marshal_data?: any | null,
+                invocation_hint: any | null,
+                marshal_data: any | null,
             ): void;
             /**
              * A {@link GObject.ClosureMarshal} function for use with signals with a single string
@@ -6073,8 +5580,8 @@ declare module 'gi://GObject?version=2.0' {
                 return_value: Value | any,
                 n_param_values: number,
                 param_values: Value | any,
-                invocation_hint?: any | null,
-                marshal_data?: any | null,
+                invocation_hint: any | null,
+                marshal_data: any | null,
             ): void;
             /**
              * A {@link GObject.ClosureMarshal} function for use with signals with a single
@@ -6091,8 +5598,8 @@ declare module 'gi://GObject?version=2.0' {
                 return_value: Value | any,
                 n_param_values: number,
                 param_values: Value | any,
-                invocation_hint?: any | null,
-                marshal_data?: any | null,
+                invocation_hint: any | null,
+                marshal_data: any | null,
             ): void;
             /**
              * A {@link GObject.ClosureMarshal} function for use with signals with with a single
@@ -6109,8 +5616,8 @@ declare module 'gi://GObject?version=2.0' {
                 return_value: Value | any,
                 n_param_values: number,
                 param_values: Value | any,
-                invocation_hint?: any | null,
-                marshal_data?: any | null,
+                invocation_hint: any | null,
+                marshal_data: any | null,
             ): void;
             /**
              * A {@link GObject.ClosureMarshal} function for use with signals with an unsigned int
@@ -6127,8 +5634,8 @@ declare module 'gi://GObject?version=2.0' {
                 return_value: Value | any,
                 n_param_values: number,
                 param_values: Value | any,
-                invocation_hint?: any | null,
-                marshal_data?: any | null,
+                invocation_hint: any | null,
+                marshal_data: any | null,
             ): void;
             /**
              * A {@link GObject.ClosureMarshal} function for use with signals with a single
@@ -6145,8 +5652,8 @@ declare module 'gi://GObject?version=2.0' {
                 return_value: Value | any,
                 n_param_values: number,
                 param_values: Value | any,
-                invocation_hint?: any | null,
-                marshal_data?: any | null,
+                invocation_hint: any | null,
+                marshal_data: any | null,
             ): void;
             /**
              * A {@link GObject.ClosureMarshal} function for use with signals with a single
@@ -6163,8 +5670,8 @@ declare module 'gi://GObject?version=2.0' {
                 return_value: Value | any,
                 n_param_values: number,
                 param_values: Value | any,
-                invocation_hint?: any | null,
-                marshal_data?: any | null,
+                invocation_hint: any | null,
+                marshal_data: any | null,
             ): void;
             /**
              * A {@link GObject.ClosureMarshal} function for use with signals with no arguments.
@@ -6180,8 +5687,8 @@ declare module 'gi://GObject?version=2.0' {
                 return_value: Value | any,
                 n_param_values: number,
                 param_values: Value | any,
-                invocation_hint?: any | null,
-                marshal_data?: any | null,
+                invocation_hint: any | null,
+                marshal_data: any | null,
             ): void;
             /**
              * A generic marshaller function implemented via
@@ -6201,8 +5708,8 @@ declare module 'gi://GObject?version=2.0' {
                 return_gvalue: Value | any,
                 n_param_values: number,
                 param_values: Value | any,
-                invocation_hint?: any | null,
-                marshal_data?: any | null,
+                invocation_hint: any | null,
+                marshal_data: any | null,
             ): void;
         }
 
@@ -7009,12 +6516,12 @@ declare module 'gi://GObject?version=2.0' {
              * Set the contents of a `G_TYPE_BOXED` derived {@link GObject.Value} to `v_boxed`.
              * @param v_boxed boxed value to be set
              */
-            set_boxed(v_boxed?: any | null): void;
+            set_boxed(v_boxed: any | null): void;
             /**
              * This is an internal function introduced mainly for C marshallers.
              * @param v_boxed duplicated unowned boxed value to be set
              */
-            set_boxed_take_ownership(v_boxed?: any | null): void;
+            set_boxed_take_ownership(v_boxed: any | null): void;
             /**
              * Set the contents of a `G_TYPE_CHAR` {@link GObject.Value} to `v_char`.
              * @param v_char character value to be set
@@ -7050,7 +6557,7 @@ declare module 'gi://GObject?version=2.0' {
              * value_table's `collect_value()` function.
              * @param instance the instance
              */
-            set_instance(instance?: any | null): void;
+            set_instance(instance: any | null): void;
             /**
              * Set the contents of a `G_TYPE_INT` {@link GObject.Value} to `v_int`.
              * @param v_int integer value to be set
@@ -7067,7 +6574,7 @@ declare module 'gi://GObject?version=2.0' {
              * `g_intern_string()`), and is thus not duplicated when setting the {@link GObject.Value}.
              * @param v_string static string to be set
              */
-            set_interned_string(v_string?: string | null): void;
+            set_interned_string(v_string: string | null): void;
             /**
              * Set the contents of a `G_TYPE_LONG` {@link GObject.Value} to `v_long`.
              * @param v_long long integer value to be set
@@ -7087,17 +6594,17 @@ declare module 'gi://GObject?version=2.0' {
              * the {@link GObject.Value} still exists).
              * @param v_object object value to be set
              */
-            set_object(v_object?: Object | null): void;
+            set_object(v_object: Object | null): void;
             /**
              * Set the contents of a `G_TYPE_PARAM` {@link GObject.Value} to `param`.
              * @param param the {@link GObject.ParamSpec} to be set
              */
-            set_param(param?: ParamSpec | null): void;
+            set_param(param: ParamSpec | null): void;
             /**
              * Set the contents of a pointer {@link GObject.Value} to `v_pointer`.
              * @param v_pointer pointer value to be set
              */
-            set_pointer(v_pointer?: any | null): void;
+            set_pointer(v_pointer: any | null): void;
             /**
              * Set the contents of a `G_TYPE_CHAR` {@link GObject.Value} to `v_char`.
              * @param v_char signed 8 bit integer to be set
@@ -7110,7 +6617,7 @@ declare module 'gi://GObject?version=2.0' {
              * when setting the {@link GObject.Value}.
              * @param v_boxed static boxed value to be set
              */
-            set_static_boxed(v_boxed?: any | null): void;
+            set_static_boxed(v_boxed: any | null): void;
             /**
              * Set the contents of a `G_TYPE_STRING` {@link GObject.Value} to `v_string`.
              * The string is assumed to be static, and is thus not duplicated
@@ -7120,17 +6627,17 @@ declare module 'gi://GObject?version=2.0' {
              * is more appropriate.
              * @param v_string static string to be set
              */
-            set_static_string(v_string?: string | null): void;
+            set_static_string(v_string: string | null): void;
             /**
              * Set the contents of a `G_TYPE_STRING` {@link GObject.Value} to a copy of `v_string`.
              * @param v_string caller-owned string to be duplicated for the {@link GObject.Value}
              */
-            set_string(v_string?: string | null): void;
+            set_string(v_string: string | null): void;
             /**
              * This is an internal function introduced mainly for C marshallers.
              * @param v_string duplicated unowned string to be set
              */
-            set_string_take_ownership(v_string?: string | null): void;
+            set_string_take_ownership(v_string: string | null): void;
             /**
              * Set the contents of a `G_TYPE_UCHAR` {@link GObject.Value} to `v_uchar`.
              * @param v_uchar unsigned character value to be set
@@ -7156,7 +6663,7 @@ declare module 'gi://GObject?version=2.0' {
              * If the variant is floating, it is consumed.
              * @param variant a {@link GLib.Variant}, or `null`
              */
-            set_variant(variant?: GLib.Variant | null): void;
+            set_variant(variant: GLib.Variant | null): void;
             /**
              * Steal ownership on contents of a `G_TYPE_STRING` {@link GObject.Value}.
              * As a result of this operation the value's contents will be reset to `null`.
@@ -7176,12 +6683,12 @@ declare module 'gi://GObject?version=2.0' {
              * the caller doesn’t have to unref it any more.
              * @param v_boxed duplicated unowned boxed value to be set
              */
-            take_boxed(v_boxed?: any | null): void;
+            take_boxed(v_boxed: any | null): void;
             /**
              * Sets the contents of a `G_TYPE_STRING` {@link GObject.Value} to `v_string`.
              * @param v_string string to take ownership of
              */
-            take_string(v_string?: string | null): void;
+            take_string(v_string: string | null): void;
             /**
              * Set the contents of a variant {@link GObject.Value} to `variant`, and takes over
              * the ownership of the caller's reference to `variant`;
@@ -7197,7 +6704,7 @@ declare module 'gi://GObject?version=2.0' {
              * This is an internal function introduced mainly for C marshallers.
              * @param variant a {@link GLib.Variant}, or `null`
              */
-            take_variant(variant?: GLib.Variant | null): void;
+            take_variant(variant: GLib.Variant | null): void;
             /**
              * Tries to cast the contents of `src_value` into a type appropriate
              * to store in `dest_value`, e.g. to transform a `G_TYPE_INT` value
@@ -7267,7 +6774,7 @@ declare module 'gi://GObject?version=2.0' {
              * @param value {@link GObject.Value} to copy into {@link GObject.ValueArray}, or `null`
              * @returns the {@link GObject.ValueArray} passed in as `value_array`
              */
-            append(value?: Value | null): ValueArray;
+            append(value: Value | null): ValueArray;
             /**
              * Construct an exact copy of a {@link GObject.ValueArray} by duplicating all its
              * contents.
@@ -7291,30 +6798,20 @@ declare module 'gi://GObject?version=2.0' {
              * @param value {@link GObject.Value} to copy into {@link GObject.ValueArray}, or `null`
              * @returns the {@link GObject.ValueArray} passed in as `value_array`
              */
-            insert(index_: number, value?: Value | null): ValueArray;
+            insert(index_: number, value: Value | null): ValueArray;
             /**
              * Insert a copy of `value` as first element of `value_array`. If `value` is
              * `null`, an uninitialized value is prepended.
              * @param value {@link GObject.Value} to copy into {@link GObject.ValueArray}, or `null`
              * @returns the {@link GObject.ValueArray} passed in as `value_array`
              */
-            prepend(value?: Value | null): ValueArray;
+            prepend(value: Value | null): ValueArray;
             /**
              * Remove the value at position `index_` from `value_array`.
              * @param index_ position of value to remove, which must be less than     `value_array`->n_values
              * @returns the {@link GObject.ValueArray} passed in as `value_array`
              */
             remove(index_: number): ValueArray;
-            /**
-             * Sort `value_array` using `compare_func` to compare the elements according to
-             * the semantics of {@link GLib.CompareFunc}.
-             *
-             * The current implementation uses the same sorting algorithm as standard
-             * C `qsort()` function.
-             * @param compare_func function to compare elements
-             * @returns the {@link GObject.ValueArray} passed in as `value_array`
-             */
-            sort(compare_func: GLib.CompareFunc): ValueArray;
             /**
              * Sort `value_array` using `compare_func` to compare the elements according
              * to the semantics of {@link GLib.CompareDataFunc}.
