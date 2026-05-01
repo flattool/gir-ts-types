@@ -229,12 +229,24 @@ declare module 'gi://GstBadAudio?version=1.0' {
 
             // Properties
 
+            /**
+             * @default 0
+             */
             get current_subsong(): number;
             set current_subsong(val: number);
+            /**
+             * @default 0
+             */
             get currentSubsong(): number;
             set currentSubsong(val: number);
+            /**
+             * @default 0
+             */
             get num_loops(): number;
             set num_loops(val: number);
+            /**
+             * @default 0
+             */
             get numLoops(): number;
             set numLoops(val: number);
 

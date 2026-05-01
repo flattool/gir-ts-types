@@ -171,7 +171,7 @@ declare module 'gi://GstGLEGL?version=1.0' {
          * @gir-type Callback
          */
         interface EGLImageDestroyNotify {
-            (image: EGLImage, data?: any | null): void;
+            (image: EGLImage, data: any | null): void;
         }
         namespace GLDisplayEGL {
             // Signal signatures
@@ -212,7 +212,7 @@ declare module 'gi://GstGLEGL?version=1.0' {
 
             static new_surfaceless(): GLDisplayEGL;
 
-            static new_with_egl_display(display?: any | null): GLDisplayEGL;
+            static new_with_egl_display(display: any | null): GLDisplayEGL;
 
             // Signals
 
@@ -326,7 +326,7 @@ declare module 'gi://GstGLEGL?version=1.0' {
 
             static ['new'](...args: never[]): any;
 
-            static new_with_egl_device(device?: any | null): GLDisplayEGLDevice;
+            static new_with_egl_device(device: any | null): GLDisplayEGLDevice;
 
             // Signals
 

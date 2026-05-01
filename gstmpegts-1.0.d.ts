@@ -1459,8 +1459,8 @@ declare module 'gi://GstMpegts?version=1.0' {
          */
         function descriptor_from_dvb_service(
             service_type: DVBServiceType,
-            service_name?: string | null,
-            service_provider?: string | null,
+            service_name: string | null,
+            service_provider: string | null,
         ): Descriptor | null;
         /**
          * @param lang a string containing the ISO639 language
@@ -1507,7 +1507,7 @@ declare module 'gi://GstMpegts?version=1.0' {
          */
         function descriptor_from_registration(
             format_identifier: string,
-            additional_info?: Uint8Array | null,
+            additional_info: Uint8Array | null,
         ): Descriptor;
         /**
          * @param source
@@ -2567,8 +2567,8 @@ declare module 'gi://GstMpegts?version=1.0' {
              */
             static from_dvb_service(
                 service_type: DVBServiceType,
-                service_name?: string | null,
-                service_provider?: string | null,
+                service_name: string | null,
+                service_provider: string | null,
             ): Descriptor | null;
             /**
              * @param lang a string containing the ISO639 language
@@ -2601,7 +2601,7 @@ declare module 'gi://GstMpegts?version=1.0' {
              * @param format_identifier a 4 character format identifier string
              * @param additional_info pointer to optional additional info
              */
-            static from_registration(format_identifier: string, additional_info?: Uint8Array | null): Descriptor;
+            static from_registration(format_identifier: string, additional_info: Uint8Array | null): Descriptor;
             /**
              * @param source
              */
@@ -2951,6 +2951,7 @@ declare module 'gi://GstMpegts?version=1.0' {
             last_table_id: number;
             actual_stream: boolean;
             present_following: boolean;
+            events: EITEvent[];
         }
 
         /**
@@ -3495,6 +3496,7 @@ declare module 'gi://GstMpegts?version=1.0' {
             original_network_id: number;
             actual_ts: boolean;
             transport_stream_id: number;
+            services: SDTService[];
 
             // Constructors
 
@@ -3552,6 +3554,7 @@ declare module 'gi://GstMpegts?version=1.0' {
             // Fields
 
             descriptors: Descriptor[];
+            services: SITService[];
         }
 
         /**

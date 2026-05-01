@@ -228,10 +228,10 @@ declare module 'gi://GCab?version=1.0' {
              * @returns `true` on success.
              */
             extract(
-                path?: Gio.File | null,
-                file_callback?: FileCallback | null,
-                progress_callback?: Gio.FileProgressCallback | null,
-                cancellable?: Gio.Cancellable | null,
+                path: Gio.File | null,
+                file_callback: FileCallback | null,
+                progress_callback: Gio.FileProgressCallback | null,
+                cancellable: Gio.Cancellable | null,
             ): boolean;
             /**
              * Extract files to given path.
@@ -242,8 +242,8 @@ declare module 'gi://GCab?version=1.0' {
              */
             extract_simple(
                 path: Gio.File,
-                file_callback?: FileCallback | null,
-                cancellable?: Gio.Cancellable | null,
+                file_callback: FileCallback | null,
+                cancellable: Gio.Cancellable | null,
             ): boolean;
             /**
              * Get the Cabinet folders within the `cabinet`.
@@ -257,7 +257,7 @@ declare module 'gi://GCab?version=1.0' {
              * @param cancellable optional {@link Gio.Cancellable} object,     `null` to ignore
              * @returns the array containing the PKCS#7 signed data or `null` on error.
              */
-            get_signature(cancellable?: Gio.Cancellable | null): Uint8Array;
+            get_signature(cancellable: Gio.Cancellable | null): Uint8Array;
             /**
              * Get the size of the compressed cabinet file.
              * @returns size in bytes
@@ -269,7 +269,7 @@ declare module 'gi://GCab?version=1.0' {
              * @param cancellable optional {@link Gio.Cancellable} object,     `null` to ignore
              * @returns `true` on success
              */
-            load(stream: Gio.InputStream, cancellable?: Gio.Cancellable | null): boolean;
+            load(stream: Gio.InputStream, cancellable: Gio.Cancellable | null): boolean;
             /**
              * Save `cabinet` to the output stream `out`. `out` must be a {@link Gio.Seekable}.
              * @param stream a {@link Gio.OutputStream} also {@link Gio.Seekable}
@@ -280,9 +280,9 @@ declare module 'gi://GCab?version=1.0' {
              */
             write(
                 stream: Gio.OutputStream,
-                file_callback?: FileCallback | null,
-                progress_callback?: Gio.FileProgressCallback | null,
-                cancellable?: Gio.Cancellable | null,
+                file_callback: FileCallback | null,
+                progress_callback: Gio.FileProgressCallback | null,
+                cancellable: Gio.Cancellable | null,
             ): boolean;
             /**
              * Save `cabinet` to the output stream `out`. `out` must be a {@link Gio.Seekable}.
@@ -293,8 +293,8 @@ declare module 'gi://GCab?version=1.0' {
              */
             write_simple(
                 stream: Gio.OutputStream,
-                file_callback?: FileCallback | null,
-                cancellable?: Gio.Cancellable | null,
+                file_callback: FileCallback | null,
+                cancellable: Gio.Cancellable | null,
             ): boolean;
         }
 
@@ -328,6 +328,9 @@ declare module 'gi://GCab?version=1.0' {
             set bytes(val: GLib.Bytes | Uint8Array);
             get file(): Gio.File;
             set file(val: Gio.File);
+            /**
+             * @default null
+             */
             get name(): string;
             set name(val: string);
 
@@ -447,7 +450,7 @@ declare module 'gi://GCab?version=1.0' {
              * provided by the Cabinet.
              * @param name a file name or `null`
              */
-            set_extract_name(name?: string | null): void;
+            set_extract_name(name: string | null): void;
         }
 
         namespace Folder {
@@ -478,10 +481,12 @@ declare module 'gi://GCab?version=1.0' {
 
             /**
              * @read-only
+             * @default GCab.Compression.NONE
              */
             get compression(): Compression;
             /**
              * @construct-only
+             * @default 0
              */
             get comptype(): number;
             get reserved(): Uint8Array;
@@ -534,7 +539,7 @@ declare module 'gi://GCab?version=1.0' {
              * @param cancellable optional {@link Gio.Cancellable} object,     `null` to ignore
              * @returns `true` on succes
              */
-            add_file(cabfile: File, recurse: boolean, cancellable?: Gio.Cancellable | null): boolean;
+            add_file(cabfile: File, recurse: boolean, cancellable: Gio.Cancellable | null): boolean;
             /**
              * Returns the compression used in this folder.
              * @returns a {@link GCab.Compression}, e.g. {@link GCab.Compression.MSZIP}

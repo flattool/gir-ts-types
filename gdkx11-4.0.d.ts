@@ -121,7 +121,7 @@ declare module 'gi://GdkX11?version=4.0' {
          * session management and the Inter-Client Communication Conventions Manual
          * @param sm_client_id the client id assigned by the session manager    when the connection was opened, or `null` to remove the property.
          */
-        function x11_set_sm_client_id(sm_client_id?: string | null): void;
+        function x11_set_sm_client_id(sm_client_id: string | null): void;
         namespace X11AppLaunchContext {
             // Signal signatures
             interface SignalSignatures extends Gdk.AppLaunchContext.SignalSignatures {
@@ -211,14 +211,17 @@ declare module 'gi://GdkX11?version=4.0' {
             get display(): Gdk.Display;
             /**
              * @construct-only
+             * @default 0
              */
             get major(): number;
             /**
              * @construct-only
+             * @default 0
              */
             get minor(): number;
             /**
              * @construct-only
+             * @default 0
              */
             get opcode(): number;
 
@@ -303,10 +306,12 @@ declare module 'gi://GdkX11?version=4.0' {
 
             /**
              * @construct-only
+             * @default 0
              */
             get device_id(): number;
             /**
              * @construct-only
+             * @default 0
              */
             get deviceId(): number;
 
@@ -432,7 +437,7 @@ declare module 'gi://GdkX11?version=4.0' {
              * returned.
              * @param display_name name of the X display.   See the XOpenDisplay() for details.
              */
-            static open(display_name?: string | null): Gdk.Display | null;
+            static open(display_name: string | null): Gdk.Display | null;
             /**
              * Sets the program class.
              *
@@ -1134,7 +1139,7 @@ declare module 'gi://GdkX11?version=4.0' {
              * @param name Property name, will be interned as an X atom
              * @param value Property value, or `null` to delete
              */
-            set_utf8_property(name: string, value?: string | null): void;
+            set_utf8_property(name: string, value: string | null): void;
         }
 
         /**

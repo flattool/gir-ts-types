@@ -76,12 +76,12 @@ declare module 'gi://GstVulkanWayland?version=1.0' {
 
             _init(...args: any[]): void;
 
-            static ['new'](name?: string | null): VulkanDisplayWayland;
+            static ['new'](name: string | null): VulkanDisplayWayland;
             // Conflicted with GstVulkan.VulkanDisplay.new
 
             static ['new'](...args: never[]): any;
 
-            static new_with_display(display?: any | null): VulkanDisplayWayland;
+            static new_with_display(display: any | null): VulkanDisplayWayland;
 
             // Signals
 
