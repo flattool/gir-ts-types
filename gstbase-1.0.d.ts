@@ -143,7 +143,7 @@ declare module 'gi://GstBase?version=1.0' {
         function type_find_helper_for_buffer_with_extension(
             obj: Gst.Object | null,
             buf: Gst.Buffer,
-            extension?: string | null,
+            extension: string | null,
         ): [Gst.Caps | null, Gst.TypeFindProbability | null];
         /**
          * Tries to find what type of data is contained in the given `data`, the
@@ -213,7 +213,7 @@ declare module 'gi://GstBase?version=1.0' {
         function type_find_helper_for_data_with_extension(
             obj: Gst.Object | null,
             data: Uint8Array | string,
-            extension?: string | null,
+            extension: string | null,
         ): [Gst.Caps | null, Gst.TypeFindProbability | null];
         /**
          * Tries to find the best {@link Gst.Caps} associated with `extension`.
@@ -255,7 +255,7 @@ declare module 'gi://GstBase?version=1.0' {
             parent: Gst.Object | null,
             func: TypeFindHelperGetRangeFunction,
             size: bigint | number,
-            extension?: string | null,
+            extension: string | null,
         ): [Gst.Caps | null, Gst.TypeFindProbability | null];
         /**
          * Utility function to do pull-based typefinding. Unlike `gst_type_find_helper()`
@@ -358,13 +358,13 @@ declare module 'gi://GstBase?version=1.0' {
          * @gir-type Callback
          */
         interface DataQueueEmptyCallback {
-            (queue: DataQueue, checkdata?: any | null): void;
+            (queue: DataQueue, checkdata: any | null): void;
         }
         /**
          * @gir-type Callback
          */
         interface DataQueueFullCallback {
-            (queue: DataQueue, checkdata?: any | null): void;
+            (queue: DataQueue, checkdata: any | null): void;
         }
         /**
          * @gir-type Callback
@@ -1072,15 +1072,20 @@ declare module 'gi://GstBase?version=1.0' {
             /**
              * Enables the emission of signals such as {@link GstBase.Aggregator.SignalSignatures.samples_selected | GstBase.Aggregator::samples-selected}
              * @since 1.18
+             * @default false
              */
             get emit_signals(): boolean;
             set emit_signals(val: boolean);
             /**
              * Enables the emission of signals such as {@link GstBase.Aggregator.SignalSignatures.samples_selected | GstBase.Aggregator::samples-selected}
              * @since 1.18
+             * @default false
              */
             get emitSignals(): boolean;
             set emitSignals(val: boolean);
+            /**
+             * @default 0
+             */
             get latency(): number;
             set latency(val: bigint | number);
             /**
@@ -1090,6 +1095,7 @@ declare module 'gi://GstBase?version=1.0' {
              * latency reported by the initial source(s). This is only taken into
              * account when larger than the actually reported minimum latency.
              * @since 1.16
+             * @default 0
              */
             get min_upstream_latency(): number;
             set min_upstream_latency(val: bigint | number);
@@ -1100,15 +1106,28 @@ declare module 'gi://GstBase?version=1.0' {
              * latency reported by the initial source(s). This is only taken into
              * account when larger than the actually reported minimum latency.
              * @since 1.16
+             * @default 0
              */
             get minUpstreamLatency(): number;
             set minUpstreamLatency(val: bigint | number);
+            /**
+             * @default 18446744073709551615
+             */
             // This accessor conflicts with a property or field in a parent class or interface.
             start_time: (bigint | number) | any;
+            /**
+             * @default 18446744073709551615
+             */
             get startTime(): number;
             set startTime(val: bigint | number);
+            /**
+             * @default GstBase.AggregatorStartTimeSelection.ZERO
+             */
             get start_time_selection(): AggregatorStartTimeSelection;
             set start_time_selection(val: AggregatorStartTimeSelection);
+            /**
+             * @default GstBase.AggregatorStartTimeSelection.ZERO
+             */
             get startTimeSelection(): AggregatorStartTimeSelection;
             set startTimeSelection(val: AggregatorStartTimeSelection);
 
@@ -1440,7 +1459,7 @@ declare module 'gi://GstBase?version=1.0' {
                 pts: Gst.ClockTime,
                 dts: Gst.ClockTime,
                 duration: Gst.ClockTime,
-                info?: Gst.Structure | null,
+                info: Gst.Structure | null,
             ): void;
             /**
              * Subclasses should call this at construction time in order for `self` to
@@ -1533,12 +1552,14 @@ declare module 'gi://GstBase?version=1.0' {
             /**
              * Enables the emission of signals such as {@link GstBase.AggregatorPad.SignalSignatures.buffer_consumed | GstBase.AggregatorPad::buffer-consumed}
              * @since 1.16
+             * @default false
              */
             get emit_signals(): boolean;
             set emit_signals(val: boolean);
             /**
              * Enables the emission of signals such as {@link GstBase.AggregatorPad.SignalSignatures.buffer_consumed | GstBase.AggregatorPad::buffer-consumed}
              * @since 1.16
+             * @default false
              */
             get emitSignals(): boolean;
             set emitSignals(val: boolean);
@@ -1800,6 +1821,7 @@ declare module 'gi://GstBase?version=1.0' {
              * force validation and parsing of the incoming data.
              * If set to `false`, decision of whether to parse the data or not is up to
              * the implementation (standard behaviour).
+             * @default false
              */
             get disable_passthrough(): boolean;
             set disable_passthrough(val: boolean);
@@ -1810,6 +1832,7 @@ declare module 'gi://GstBase?version=1.0' {
              * force validation and parsing of the incoming data.
              * If set to `false`, decision of whether to parse the data or not is up to
              * the implementation (standard behaviour).
+             * @default false
              */
             get disablePassthrough(): boolean;
             set disablePassthrough(val: boolean);
@@ -2179,8 +2202,8 @@ declare module 'gi://GstBase?version=1.0' {
                 blocksize: number;
                 enable_last_sample: boolean;
                 enableLastSample: boolean;
-                last_sample: Gst.Sample;
-                lastSample: Gst.Sample;
+                last_sample: Gst.Sample | null;
+                lastSample: Gst.Sample | null;
                 max_bitrate: bigint | number;
                 maxBitrate: bigint | number;
                 max_lateness: bigint | number;
@@ -2327,11 +2350,13 @@ declare module 'gi://GstBase?version=1.0' {
              * When set to `false`, the sink will not signal the parent when it prerolls.
              * Use this option when dealing with sparse streams or when synchronisation is
              * not required.
+             * @default true
              */
             get async(): boolean;
             set async(val: boolean);
             /**
              * The amount of bytes to pull when operating in pull mode.
+             * @default 4096
              */
             get blocksize(): number;
             set blocksize(val: number);
@@ -2340,6 +2365,7 @@ declare module 'gi://GstBase?version=1.0' {
              * reference to the last buffer arrived and the last-sample property is always
              * set to `null`. This can be useful if you need buffers to be released as soon
              * as possible, eg. if you're using a buffer pool.
+             * @default true
              */
             get enable_last_sample(): boolean;
             set enable_last_sample(val: boolean);
@@ -2348,6 +2374,7 @@ declare module 'gi://GstBase?version=1.0' {
              * reference to the last buffer arrived and the last-sample property is always
              * set to `null`. This can be useful if you need buffers to be released as soon
              * as possible, eg. if you're using a buffer pool.
+             * @default true
              */
             get enableLastSample(): boolean;
             set enableLastSample(val: boolean);
@@ -2357,19 +2384,20 @@ declare module 'gi://GstBase?version=1.0' {
              * can be `null` when the sink has not yet received a buffer.
              * @read-only
              */
-            get last_sample(): Gst.Sample;
+            get last_sample(): Gst.Sample | null;
             /**
              * The last buffer that arrived in the sink and was used for preroll or for
              * rendering. This property can be used to generate thumbnails. This property
              * can be `null` when the sink has not yet received a buffer.
              * @read-only
              */
-            get lastSample(): Gst.Sample;
+            get lastSample(): Gst.Sample | null;
             /**
              * Control the maximum amount of bits that will be rendered per second.
              * Setting this property to a value bigger than 0 will make the sink delay
              * rendering of the buffers when it would exceed to max-bitrate.
              * @since 1.2
+             * @default 0
              */
             get max_bitrate(): number;
             set max_bitrate(val: bigint | number);
@@ -2378,11 +2406,18 @@ declare module 'gi://GstBase?version=1.0' {
              * Setting this property to a value bigger than 0 will make the sink delay
              * rendering of the buffers when it would exceed to max-bitrate.
              * @since 1.2
+             * @default 0
              */
             get maxBitrate(): number;
             set maxBitrate(val: bigint | number);
+            /**
+             * @default -1
+             */
             get max_lateness(): number;
             set max_lateness(val: bigint | number);
+            /**
+             * @default -1
+             */
             get maxLateness(): number;
             set maxLateness(val: bigint | number);
             /**
@@ -2390,6 +2425,7 @@ declare module 'gi://GstBase?version=1.0' {
              * for processing the buffer. This is added to the latency of live
              * pipelines.
              * @since 1.16
+             * @default 20000000
              */
             get processing_deadline(): number;
             set processing_deadline(val: bigint | number);
@@ -2398,15 +2434,20 @@ declare module 'gi://GstBase?version=1.0' {
              * for processing the buffer. This is added to the latency of live
              * pipelines.
              * @since 1.16
+             * @default 20000000
              */
             get processingDeadline(): number;
             set processingDeadline(val: bigint | number);
+            /**
+             * @default false
+             */
             get qos(): boolean;
             set qos(val: boolean);
             /**
              * The additional delay between synchronisation and actual rendering of the
              * media. This property will add additional latency to the device in order to
              * make other sinks compensate for the delay.
+             * @default 0
              */
             get render_delay(): number;
             set render_delay(val: bigint | number);
@@ -2414,6 +2455,7 @@ declare module 'gi://GstBase?version=1.0' {
              * The additional delay between synchronisation and actual rendering of the
              * media. This property will add additional latency to the device in order to
              * make other sinks compensate for the delay.
+             * @default 0
              */
             get renderDelay(): number;
             set renderDelay(val: bigint | number);
@@ -2428,12 +2470,16 @@ declare module 'gi://GstBase?version=1.0' {
              * @read-only
              */
             get stats(): Gst.Structure;
+            /**
+             * @default true
+             */
             get sync(): boolean;
             set sync(val: boolean);
             /**
              * The time to insert between buffers. This property can be used to control
              * the maximum amount of buffers per second to render. Setting this property
              * to a value bigger than 0 will make the sink create THROTTLE QoS events.
+             * @default 0
              */
             get throttle_time(): number;
             set throttle_time(val: bigint | number);
@@ -2441,6 +2487,7 @@ declare module 'gi://GstBase?version=1.0' {
              * The time to insert between buffers. This property can be used to control
              * the maximum amount of buffers per second to render. Setting this property
              * to a value bigger than 0 will make the sink create THROTTLE QoS events.
+             * @default 0
              */
             get throttleTime(): number;
             set throttleTime(val: bigint | number);
@@ -2448,6 +2495,7 @@ declare module 'gi://GstBase?version=1.0' {
              * Controls the final synchronisation, a negative value will render the buffer
              * earlier while a positive value delays playback. This property can be
              * used to fix synchronisation in bad files.
+             * @default 0
              */
             get ts_offset(): number;
             set ts_offset(val: bigint | number);
@@ -2455,6 +2503,7 @@ declare module 'gi://GstBase?version=1.0' {
              * Controls the final synchronisation, a negative value will render the buffer
              * earlier while a positive value delays playback. This property can be
              * used to fix synchronisation in bad files.
+             * @default 0
              */
             get tsOffset(): number;
             set tsOffset(val: bigint | number);
@@ -2539,7 +2588,7 @@ declare module 'gi://GstBase?version=1.0' {
              * @param filter
              * @virtual
              */
-            vfunc_get_caps(filter?: Gst.Caps | null): Gst.Caps;
+            vfunc_get_caps(filter: Gst.Caps | null): Gst.Caps;
             /**
              * Get the start and end times for syncing on this buffer.
              * @param buffer
@@ -3055,25 +3104,45 @@ declare module 'gi://GstBase?version=1.0' {
             /**
              * See `gst_base_src_set_automatic_eos()`
              * @since 1.24
+             * @default true
              */
             get automatic_eos(): boolean;
             set automatic_eos(val: boolean);
             /**
              * See `gst_base_src_set_automatic_eos()`
              * @since 1.24
+             * @default true
              */
             get automaticEos(): boolean;
             set automaticEos(val: boolean);
+            /**
+             * @default 4096
+             */
             get blocksize(): number;
             set blocksize(val: number);
+            /**
+             * @default false
+             */
             get do_timestamp(): boolean;
             set do_timestamp(val: boolean);
+            /**
+             * @default false
+             */
             get doTimestamp(): boolean;
             set doTimestamp(val: boolean);
+            /**
+             * @default -1
+             */
             get num_buffers(): number;
             set num_buffers(val: number);
+            /**
+             * @default -1
+             */
             get numBuffers(): number;
             set numBuffers(val: number);
+            /**
+             * @default false
+             */
             get typefind(): boolean;
             set typefind(val: boolean);
 
@@ -3143,7 +3212,7 @@ declare module 'gi://GstBase?version=1.0' {
              * @param buf
              * @virtual
              */
-            vfunc_create(offset: number, size: number, buf?: Gst.Buffer | null): [Gst.FlowReturn, Gst.Buffer | null];
+            vfunc_create(offset: number, size: number, buf: Gst.Buffer | null): [Gst.FlowReturn, Gst.Buffer | null];
             /**
              * configure the allocation query
              * @param query
@@ -3182,7 +3251,7 @@ declare module 'gi://GstBase?version=1.0' {
              * @param filter
              * @virtual
              */
-            vfunc_get_caps(filter?: Gst.Caps | null): Gst.Caps;
+            vfunc_get_caps(filter: Gst.Caps | null): Gst.Caps;
             /**
              * Get the total size of the resource in the format set by
              * `gst_base_src_set_format()`.
@@ -3612,6 +3681,9 @@ declare module 'gi://GstBase?version=1.0' {
 
             // Properties
 
+            /**
+             * @default false
+             */
             get qos(): boolean;
             set qos(val: boolean);
 
@@ -4062,6 +4134,7 @@ declare module 'gi://GstBase?version=1.0' {
             // Fields
 
             object: Gst.Object;
+            data: CollectData[];
 
             // Constructors
 
@@ -4158,7 +4231,7 @@ declare module 'gi://GstBase?version=1.0' {
             clip_running_time(
                 cdata: CollectData,
                 buf: Gst.Buffer,
-                user_data?: any | null,
+                user_data: any | null,
             ): [Gst.FlowReturn, Gst.Buffer | null];
             /**
              * Default {@link GstBase.CollectPads} event handling that elements should always
@@ -4414,26 +4487,32 @@ declare module 'gi://GstBase?version=1.0' {
 
             /**
              * @read-only
+             * @default 0
              */
             get current_level_bytes(): number;
             /**
              * @read-only
+             * @default 0
              */
             get currentLevelBytes(): number;
             /**
              * @read-only
+             * @default 0
              */
             get current_level_time(): number;
             /**
              * @read-only
+             * @default 0
              */
             get currentLevelTime(): number;
             /**
              * @read-only
+             * @default 0
              */
             get current_level_visible(): number;
             /**
              * @read-only
+             * @default 0
              */
             get currentLevelVisible(): number;
 
@@ -4580,7 +4659,7 @@ declare module 'gi://GstBase?version=1.0' {
              * @param buf
              * @virtual
              */
-            vfunc_create(buf?: Gst.Buffer | null): [Gst.FlowReturn, Gst.Buffer | null];
+            vfunc_create(buf: Gst.Buffer | null): [Gst.FlowReturn, Gst.Buffer | null];
             /**
              * @param args
              * @virtual

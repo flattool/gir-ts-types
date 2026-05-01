@@ -399,6 +399,7 @@ declare module 'gi://GstVa?version=1.0' {
 
             /**
              * @read-only
+             * @default null
              */
             get description(): string;
             /**
@@ -516,6 +517,7 @@ declare module 'gi://GstVa?version=1.0' {
 
             /**
              * @construct-only
+             * @default /dev/dri/renderD128
              */
             get path(): string;
 
@@ -596,7 +598,7 @@ declare module 'gi://GstVa?version=1.0' {
 
             _init(...args: any[]): void;
 
-            static ['new'](handle?: any | null): VaDisplayWrapped;
+            static ['new'](handle: any | null): VaDisplayWrapped;
 
             // Signals
 

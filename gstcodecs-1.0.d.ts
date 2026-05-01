@@ -527,6 +527,7 @@ declare module 'gi://GstCodecs?version=1.0' {
              * mapping the baseline profile as the constrained-baseline profile,
              * etc.
              * @since 1.20
+             * @default GstCodecs.H264DecoderCompliance.AUTO
              */
             get compliance(): H264DecoderCompliance;
             set compliance(val: H264DecoderCompliance);
@@ -1302,6 +1303,10 @@ declare module 'gi://GstCodecs?version=1.0' {
         class AV1Dpb {
             static $gtype: GObject.GType<AV1Dpb>;
 
+            // Fields
+
+            pic_list: AV1Picture[];
+
             // Methods
 
             /**
@@ -1370,7 +1375,7 @@ declare module 'gi://GstCodecs?version=1.0' {
              * Sets `discont_state` to `picture`
              * @param discont_state a {@link GstVideo.VideoCodecState}
              */
-            set_discont_state(discont_state?: GstVideo.VideoCodecState | null): void;
+            set_discont_state(discont_state: GstVideo.VideoCodecState | null): void;
             /**
              * Sets `user_data` on the picture and the {@link GLib.DestroyNotify} that will be called when
              * the picture is freed.
@@ -1379,7 +1384,7 @@ declare module 'gi://GstCodecs?version=1.0' {
              * before the `user_data` is replaced.
              * @param user_data private data
              */
-            set_user_data(user_data?: any | null): void;
+            set_user_data(user_data: any | null): void;
         }
 
         /**
@@ -1954,6 +1959,10 @@ declare module 'gi://GstCodecs?version=1.0' {
          */
         class Vp9Dpb {
             static $gtype: GObject.GType<Vp9Dpb>;
+
+            // Fields
+
+            pic_list: Vp9Picture[];
 
             // Methods
 
