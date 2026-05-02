@@ -11,101 +11,103 @@
  */
 
 declare module 'gi://DBusGLib?version=1.0' {
-    // Module dependencies
-    import type GObject from 'gi://GObject?version=2.0';
-    import type GLib from 'gi://GLib?version=2.0';
 
-    export namespace DBusGLib {
-        /**
-         * DBusGLib-1.0
-         */
+// Module dependencies
+import type GObject from 'gi://GObject?version=2.0';
+import type GLib from 'gi://GLib?version=2.0';
 
-        namespace Proxy {
-            // Signal signatures
-            interface SignalSignatures extends GObject.Object.SignalSignatures {}
+export namespace DBusGLib {
 
-            // Constructor properties interface
+    /**
+     * DBusGLib-1.0
+     */
 
-            interface ConstructorProps extends GObject.Object.ConstructorProps {}
+
+    namespace Proxy {
+        // Signal signatures
+        interface SignalSignatures extends GObject.Object.SignalSignatures {
         }
 
-        /**
-         * @gir-type Class
-         */
-        class Proxy extends GObject.Object {
-            static $gtype: GObject.GType<Proxy>;
+        // Constructor properties interface
+        interface ConstructorProps extends GObject.Object.ConstructorProps {
 
-            /**
-             * Compile-time signal type information.
-             *
-             * This instance property is generated only for TypeScript type checking.
-             * It is not defined at runtime and should not be accessed in JS code.
-             * @internal
-             */
-            $signals: Proxy.SignalSignatures;
-
-            // Constructors
-
-            constructor(properties?: Partial<Proxy.ConstructorProps>, ...args: any[]);
-
-            _init(...args: any[]): void;
-
-            // Signals
-
-            /** @signal */
-            connect<K extends keyof Proxy.SignalSignatures>(
-                signal: K,
-                callback: GObject.SignalCallback<this, Proxy.SignalSignatures[K]>,
-            ): number;
-            connect(signal: string, callback: (...args: any[]) => any): number;
-            /** @signal */
-            connect_after<K extends keyof Proxy.SignalSignatures>(
-                signal: K,
-                callback: GObject.SignalCallback<this, Proxy.SignalSignatures[K]>,
-            ): number;
-            connect_after(signal: string, callback: (...args: any[]) => any): number;
-            /** @signal */
-            emit<K extends keyof Proxy.SignalSignatures>(
-                signal: K,
-                ...args: GObject.GjsParameters<Proxy.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never
-            ): void;
-            emit(signal: string, ...args: any[]): void;
         }
-
-        /**
-         * @gir-type Struct
-         */
-        class Connection {
-            static $gtype: GObject.GType<Connection>;
-        }
-
-        /**
-         * @gir-type Struct
-         */
-        class MethodInvocation {
-            static $gtype: GObject.GType<MethodInvocation>;
-        }
-
-        /**
-         * @gir-type Struct
-         */
-        class ProxyClass {
-            static $gtype: GObject.GType<ProxyClass>;
-        }
-
-        /**
-         * Name of the imported GIR library
-         * `see` https://gitlab.gnome.org/GNOME/gjs/-/blob/master/gi/ns.cpp#L188
-         */
-        const __name__: string;
-        /**
-         * Version of the imported GIR library
-         * `see` https://gitlab.gnome.org/GNOME/gjs/-/blob/master/gi/ns.cpp#L189
-         */
-        const __version__: string;
     }
 
-    export default DBusGLib;
+    /**
+     * @gir-type Class
+     */
+    class Proxy extends GObject.Object {
+        static $gtype: GObject.GType<Proxy>;
+
+        /**
+         * Compile-time signal type information.
+         *
+         * This instance property is generated only for TypeScript type checking.
+         * It is not defined at runtime and should not be accessed in JS code.
+         * @internal
+         */
+        $signals: Proxy.SignalSignatures;
+
+        // Constructors
+        constructor(properties?: Partial<Proxy.ConstructorProps>, ...args: any[]);
+
+        _init(...args: any[]): void;
+
+        // Signals
+        /** @signal */
+        connect<K extends keyof Proxy.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, Proxy.SignalSignatures[K]>): number;
+        connect(signal: string, callback: (...args: any[]) => any): number;
+
+        /** @signal */
+        connect_after<K extends keyof Proxy.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, Proxy.SignalSignatures[K]>): number;
+        connect_after(signal: string, callback: (...args: any[]) => any): number;
+
+        /** @signal */
+        emit<K extends keyof Proxy.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<Proxy.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
+        emit(signal: string, ...args: any[]): void;
+    }
+
+
+    /**
+     * @gir-type Struct
+     */
+    class Connection {
+        static $gtype: GObject.GType<Connection>;
+    }
+
+
+    /**
+     * @gir-type Struct
+     */
+    class MethodInvocation {
+        static $gtype: GObject.GType<MethodInvocation>;
+    }
+
+
+    /**
+     * @gir-type Struct
+     */
+    class ProxyClass {
+        static $gtype: GObject.GType<ProxyClass>;
+    }
+
+
+    /**
+     * Name of the imported GIR library
+     * `see` https://gitlab.gnome.org/GNOME/gjs/-/blob/master/gi/ns.cpp#L188
+     */
+    const __name__: string;
+
+    /**
+     * Version of the imported GIR library
+     * `see` https://gitlab.gnome.org/GNOME/gjs/-/blob/master/gi/ns.cpp#L189
+     */
+    const __version__: string;
+}
+
+export default DBusGLib;
+
 }
 
 declare module 'gi://DBusGLib' {

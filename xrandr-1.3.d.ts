@@ -10,76 +10,88 @@
  */
 
 declare module 'gi://xrandr?version=1.3' {
-    // Module dependencies
-    import type GObject from 'gi://GObject?version=2.0';
 
-    export namespace xrandr {
-        /**
-         * xrandr-1.3
-         */
+// Module dependencies
+import type GObject from 'gi://GObject?version=2.0';
 
-        /**
-         * @gir-type Struct
-         */
-        class ScreenSize {
-            static $gtype: GObject.GType<ScreenSize>;
-        }
+export namespace xrandr {
 
-        /**
-         * @gir-type Struct
-         */
-        class ScreenChangeNotifyEvent {
-            static $gtype: GObject.GType<ScreenChangeNotifyEvent>;
-        }
+    /**
+     * xrandr-1.3
+     */
 
-        /**
-         * @gir-type Struct
-         */
-        class NotifyEvent {
-            static $gtype: GObject.GType<NotifyEvent>;
-        }
 
-        /**
-         * @gir-type Struct
-         */
-        class ScreenResources {
-            static $gtype: GObject.GType<ScreenResources>;
-        }
-
-        /**
-         * @gir-type Struct
-         */
-        class OutputChangeNotifyEvent {
-            static $gtype: GObject.GType<OutputChangeNotifyEvent>;
-        }
-
-        /**
-         * @gir-type Struct
-         */
-        class CrtcChangeNotifyEvent {
-            static $gtype: GObject.GType<CrtcChangeNotifyEvent>;
-        }
-
-        /**
-         * @gir-type Struct
-         */
-        class OutputPropertyNotifyEvent {
-            static $gtype: GObject.GType<OutputPropertyNotifyEvent>;
-        }
-
-        /**
-         * Name of the imported GIR library
-         * `see` https://gitlab.gnome.org/GNOME/gjs/-/blob/master/gi/ns.cpp#L188
-         */
-        const __name__: string;
-        /**
-         * Version of the imported GIR library
-         * `see` https://gitlab.gnome.org/GNOME/gjs/-/blob/master/gi/ns.cpp#L189
-         */
-        const __version__: string;
+    /**
+     * @gir-type Struct
+     */
+    class ScreenSize {
+        static $gtype: GObject.GType<ScreenSize>;
     }
 
-    export default xrandr;
+
+    /**
+     * @gir-type Struct
+     */
+    class ScreenChangeNotifyEvent {
+        static $gtype: GObject.GType<ScreenChangeNotifyEvent>;
+    }
+
+
+    /**
+     * @gir-type Struct
+     */
+    class NotifyEvent {
+        static $gtype: GObject.GType<NotifyEvent>;
+    }
+
+
+    /**
+     * @gir-type Struct
+     */
+    class ScreenResources {
+        static $gtype: GObject.GType<ScreenResources>;
+    }
+
+
+    /**
+     * @gir-type Struct
+     */
+    class OutputChangeNotifyEvent {
+        static $gtype: GObject.GType<OutputChangeNotifyEvent>;
+    }
+
+
+    /**
+     * @gir-type Struct
+     */
+    class CrtcChangeNotifyEvent {
+        static $gtype: GObject.GType<CrtcChangeNotifyEvent>;
+    }
+
+
+    /**
+     * @gir-type Struct
+     */
+    class OutputPropertyNotifyEvent {
+        static $gtype: GObject.GType<OutputPropertyNotifyEvent>;
+    }
+
+
+    /**
+     * Name of the imported GIR library
+     * `see` https://gitlab.gnome.org/GNOME/gjs/-/blob/master/gi/ns.cpp#L188
+     */
+    const __name__: string;
+
+    /**
+     * Version of the imported GIR library
+     * `see` https://gitlab.gnome.org/GNOME/gjs/-/blob/master/gi/ns.cpp#L189
+     */
+    const __version__: string;
+}
+
+export default xrandr;
+
 }
 
 declare module 'gi://xrandr' {

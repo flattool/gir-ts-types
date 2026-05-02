@@ -10,34 +10,40 @@
  */
 
 declare module 'gi://xfixes?version=4.0' {
-    // Module dependencies
-    import type GObject from 'gi://GObject?version=2.0';
 
-    export namespace xfixes {
-        /**
-         * xfixes-4.0
-         */
+// Module dependencies
+import type GObject from 'gi://GObject?version=2.0';
 
-        /**
-         * @gir-type Struct
-         */
-        class XserverRegion {
-            static $gtype: GObject.GType<XserverRegion>;
-        }
+export namespace xfixes {
 
-        /**
-         * Name of the imported GIR library
-         * `see` https://gitlab.gnome.org/GNOME/gjs/-/blob/master/gi/ns.cpp#L188
-         */
-        const __name__: string;
-        /**
-         * Version of the imported GIR library
-         * `see` https://gitlab.gnome.org/GNOME/gjs/-/blob/master/gi/ns.cpp#L189
-         */
-        const __version__: string;
+    /**
+     * xfixes-4.0
+     */
+
+
+    /**
+     * @gir-type Struct
+     */
+    class XserverRegion {
+        static $gtype: GObject.GType<XserverRegion>;
     }
 
-    export default xfixes;
+
+    /**
+     * Name of the imported GIR library
+     * `see` https://gitlab.gnome.org/GNOME/gjs/-/blob/master/gi/ns.cpp#L188
+     */
+    const __name__: string;
+
+    /**
+     * Version of the imported GIR library
+     * `see` https://gitlab.gnome.org/GNOME/gjs/-/blob/master/gi/ns.cpp#L189
+     */
+    const __version__: string;
+}
+
+export default xfixes;
+
 }
 
 declare module 'gi://xfixes' {

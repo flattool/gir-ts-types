@@ -24,46 +24,52 @@
  */
 
 declare module 'gi://XdpGtk3?version=1.0' {
-    // Module dependencies
-    import type Xdp from 'gi://Xdp?version=1.0';
-    import type Gio from 'gi://Gio?version=2.0';
-    import type GObject from 'gi://GObject?version=2.0';
-    import type GLib from 'gi://GLib?version=2.0';
-    import type GModule from 'gi://GModule?version=2.0';
-    import type Gtk from 'gi://Gtk?version=3.0';
-    import type xlib from 'gi://xlib?version=2.0';
-    import type Gdk from 'gi://Gdk?version=3.0';
-    import type cairo from 'cairo';
-    import type Pango from 'gi://Pango?version=1.0';
-    import type HarfBuzz from 'gi://HarfBuzz?version=0.0';
-    import type freetype2 from 'gi://freetype2?version=2.0';
-    import type GdkPixbuf from 'gi://GdkPixbuf?version=2.0';
-    import type Atk from 'gi://Atk?version=1.0';
 
-    export namespace XdpGtk3 {
-        /**
-         * XdpGtk3-1.0
-         */
+// Module dependencies
+import type Xdp from 'gi://Xdp?version=1.0';
+import type Gio from 'gi://Gio?version=2.0';
+import type GObject from 'gi://GObject?version=2.0';
+import type GLib from 'gi://GLib?version=2.0';
+import type GModule from 'gi://GModule?version=2.0';
+import type Gtk from 'gi://Gtk?version=3.0';
+import type xlib from 'gi://xlib?version=2.0';
+import type Gdk from 'gi://Gdk?version=3.0';
+import type cairo from 'cairo';
+import type Pango from 'gi://Pango?version=1.0';
+import type HarfBuzz from 'gi://HarfBuzz?version=0.0';
+import type freetype2 from 'gi://freetype2?version=2.0';
+import type GdkPixbuf from 'gi://GdkPixbuf?version=2.0';
+import type Atk from 'gi://Atk?version=1.0';
 
-        /**
-         * Creates a new {@link Parent} from `window`.
-         * @param window a {@link Gtk.Window}
-         * @returns a {@link Parent}
-         */
-        function parent_new_gtk(window: Gtk.Window): Xdp.Parent;
-        /**
-         * Name of the imported GIR library
-         * `see` https://gitlab.gnome.org/GNOME/gjs/-/blob/master/gi/ns.cpp#L188
-         */
-        const __name__: string;
-        /**
-         * Version of the imported GIR library
-         * `see` https://gitlab.gnome.org/GNOME/gjs/-/blob/master/gi/ns.cpp#L189
-         */
-        const __version__: string;
-    }
+export namespace XdpGtk3 {
 
-    export default XdpGtk3;
+    /**
+     * XdpGtk3-1.0
+     */
+
+
+    /**
+     * Creates a new {@link Parent} from `window`.
+     * @param window a {@link Gtk.Window}
+     * @returns a {@link Parent}
+     */
+    function parent_new_gtk(window: Gtk.Window): Xdp.Parent;
+
+    /**
+     * Name of the imported GIR library
+     * `see` https://gitlab.gnome.org/GNOME/gjs/-/blob/master/gi/ns.cpp#L188
+     */
+    const __name__: string;
+
+    /**
+     * Version of the imported GIR library
+     * `see` https://gitlab.gnome.org/GNOME/gjs/-/blob/master/gi/ns.cpp#L189
+     */
+    const __version__: string;
+}
+
+export default XdpGtk3;
+
 }
 
 declare module 'gi://XdpGtk3' {
