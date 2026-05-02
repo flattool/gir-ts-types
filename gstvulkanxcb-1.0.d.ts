@@ -17,103 +17,100 @@
  */
 
 declare module 'gi://GstVulkanXCB?version=1.0' {
-    // Module dependencies
-    import type Vulkan from 'gi://Vulkan?version=1.0';
-    import type GstVulkan from 'gi://GstVulkan?version=1.0';
-    import type GstVideo from 'gi://GstVideo?version=1.0';
-    import type GstBase from 'gi://GstBase?version=1.0';
-    import type Gst from 'gi://Gst?version=1.0';
-    import type GObject from 'gi://GObject?version=2.0';
-    import type GLib from 'gi://GLib?version=2.0';
-    import type GModule from 'gi://GModule?version=2.0';
 
-    export namespace GstVulkanXCB {
-        /**
-         * GstVulkanXCB-1.0
-         */
+// Module dependencies
+import type Vulkan from 'gi://Vulkan?version=1.0';
+import type GstVulkan from 'gi://GstVulkan?version=1.0';
+import type GstVideo from 'gi://GstVideo?version=1.0';
+import type GstBase from 'gi://GstBase?version=1.0';
+import type Gst from 'gi://Gst?version=1.0';
+import type GObject from 'gi://GObject?version=2.0';
+import type GLib from 'gi://GLib?version=2.0';
+import type GModule from 'gi://GModule?version=2.0';
 
-        namespace VulkanDisplayXCB {
-            // Signal signatures
-            interface SignalSignatures extends GstVulkan.VulkanDisplay.SignalSignatures {
-                'notify::name': (pspec: GObject.ParamSpec) => void;
-                'notify::parent': (pspec: GObject.ParamSpec) => void;
-            }
+export namespace GstVulkanXCB {
 
-            // Constructor properties interface
+    /**
+     * GstVulkanXCB-1.0
+     */
 
-            interface ConstructorProps extends GstVulkan.VulkanDisplay.ConstructorProps {}
+
+    namespace VulkanDisplayXCB {
+        // Signal signatures
+        interface SignalSignatures extends GstVulkan.VulkanDisplay.SignalSignatures {
+            "notify::name": (pspec: GObject.ParamSpec) => void;
+            "notify::parent": (pspec: GObject.ParamSpec) => void;
         }
 
-        /**
-         * the contents of a {@link GstVulkanXCB.VulkanDisplayXCB} are private and should only be accessed
-         * through the provided API
-         * @gir-type Class
-         * @since 1.18
-         */
-        class VulkanDisplayXCB extends GstVulkan.VulkanDisplay {
-            static $gtype: GObject.GType<VulkanDisplayXCB>;
+        // Constructor properties interface
+        interface ConstructorProps extends GstVulkan.VulkanDisplay.ConstructorProps {
 
-            /**
-             * Compile-time signal type information.
-             *
-             * This instance property is generated only for TypeScript type checking.
-             * It is not defined at runtime and should not be accessed in JS code.
-             * @internal
-             */
-            $signals: VulkanDisplayXCB.SignalSignatures;
-
-            // Constructors
-
-            constructor(properties?: Partial<VulkanDisplayXCB.ConstructorProps>, ...args: any[]);
-
-            _init(...args: any[]): void;
-
-            static ['new'](name: string | null): VulkanDisplayXCB;
-            // Conflicted with GstVulkan.VulkanDisplay.new
-
-            static ['new'](...args: never[]): any;
-
-            // Signals
-
-            /** @signal */
-            connect<K extends keyof VulkanDisplayXCB.SignalSignatures>(
-                signal: K,
-                callback: GObject.SignalCallback<this, VulkanDisplayXCB.SignalSignatures[K]>,
-            ): number;
-            connect(signal: string, callback: (...args: any[]) => any): number;
-            /** @signal */
-            connect_after<K extends keyof VulkanDisplayXCB.SignalSignatures>(
-                signal: K,
-                callback: GObject.SignalCallback<this, VulkanDisplayXCB.SignalSignatures[K]>,
-            ): number;
-            connect_after(signal: string, callback: (...args: any[]) => any): number;
-            /** @signal */
-            emit<K extends keyof VulkanDisplayXCB.SignalSignatures>(
-                signal: K,
-                ...args: GObject.GjsParameters<VulkanDisplayXCB.SignalSignatures[K]> extends [any, ...infer Q]
-                    ? Q
-                    : never
-            ): void;
-            emit(signal: string, ...args: any[]): void;
         }
-
-        /**
-         * @gir-type Alias
-         */
-        type VulkanDisplayXCBClass = typeof VulkanDisplayXCB;
-        /**
-         * Name of the imported GIR library
-         * `see` https://gitlab.gnome.org/GNOME/gjs/-/blob/master/gi/ns.cpp#L188
-         */
-        const __name__: string;
-        /**
-         * Version of the imported GIR library
-         * `see` https://gitlab.gnome.org/GNOME/gjs/-/blob/master/gi/ns.cpp#L189
-         */
-        const __version__: string;
     }
 
-    export default GstVulkanXCB;
+    /**
+     * the contents of a {@link GstVulkanXCB.VulkanDisplayXCB} are private and should only be accessed
+     * through the provided API
+     * @gir-type Class
+     * @since 1.18
+     */
+    class VulkanDisplayXCB extends GstVulkan.VulkanDisplay {
+        static $gtype: GObject.GType<VulkanDisplayXCB>;
+
+        /**
+         * Compile-time signal type information.
+         *
+         * This instance property is generated only for TypeScript type checking.
+         * It is not defined at runtime and should not be accessed in JS code.
+         * @internal
+         */
+        $signals: VulkanDisplayXCB.SignalSignatures;
+
+        // Constructors
+        constructor(properties?: Partial<VulkanDisplayXCB.ConstructorProps>, ...args: any[]);
+
+        _init(...args: any[]): void;
+
+        static ["new"](name: (string | null)): VulkanDisplayXCB;
+
+        // Conflicted with GstVulkan.VulkanDisplay.new
+        static ["new"](...args: never[]): any;
+
+        // Signals
+        /** @signal */
+        connect<K extends keyof VulkanDisplayXCB.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, VulkanDisplayXCB.SignalSignatures[K]>): number;
+        connect(signal: string, callback: (...args: any[]) => any): number;
+
+        /** @signal */
+        connect_after<K extends keyof VulkanDisplayXCB.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, VulkanDisplayXCB.SignalSignatures[K]>): number;
+        connect_after(signal: string, callback: (...args: any[]) => any): number;
+
+        /** @signal */
+        emit<K extends keyof VulkanDisplayXCB.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<VulkanDisplayXCB.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
+        emit(signal: string, ...args: any[]): void;
+    }
+
+
+    /**
+     * @gir-type Alias
+     */
+    type VulkanDisplayXCBClass = typeof VulkanDisplayXCB;
+
+    /**
+     * Name of the imported GIR library
+     * `see` https://gitlab.gnome.org/GNOME/gjs/-/blob/master/gi/ns.cpp#L188
+     */
+    const __name__: string;
+
+    /**
+     * Version of the imported GIR library
+     * `see` https://gitlab.gnome.org/GNOME/gjs/-/blob/master/gi/ns.cpp#L189
+     */
+    const __version__: string;
+}
+
+export default GstVulkanXCB;
+
 }
 
 declare module 'gi://GstVulkanXCB' {

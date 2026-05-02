@@ -10,50 +10,60 @@
  */
 
 declare module 'gi://win32?version=1.0' {
-    // Module dependencies
-    import type GObject from 'gi://GObject?version=2.0';
 
-    export namespace win32 {
-        /**
-         * win32-1.0
-         */
+// Module dependencies
+import type GObject from 'gi://GObject?version=2.0';
 
-        /**
-         * @gir-type Struct
-         */
-        class MSG {
-            static $gtype: GObject.GType<MSG>;
-        }
+export namespace win32 {
 
-        /**
-         * @gir-type Alias
-         */
-        type HWND = number;
-        /**
-         * @gir-type Alias
-         */
-        type HICON = bigint | number;
-        /**
-         * @gir-type Alias
-         */
-        type HCURSOR = bigint | number;
-        /**
-         * @gir-type Alias
-         */
-        type HGDIOBJ = bigint | number;
-        /**
-         * Name of the imported GIR library
-         * `see` https://gitlab.gnome.org/GNOME/gjs/-/blob/master/gi/ns.cpp#L188
-         */
-        const __name__: string;
-        /**
-         * Version of the imported GIR library
-         * `see` https://gitlab.gnome.org/GNOME/gjs/-/blob/master/gi/ns.cpp#L189
-         */
-        const __version__: string;
+    /**
+     * win32-1.0
+     */
+
+
+    /**
+     * @gir-type Struct
+     */
+    class MSG {
+        static $gtype: GObject.GType<MSG>;
     }
 
-    export default win32;
+
+    /**
+     * @gir-type Alias
+     */
+    type HWND = number;
+
+    /**
+     * @gir-type Alias
+     */
+    type HICON = (bigint | number);
+
+    /**
+     * @gir-type Alias
+     */
+    type HCURSOR = (bigint | number);
+
+    /**
+     * @gir-type Alias
+     */
+    type HGDIOBJ = (bigint | number);
+
+    /**
+     * Name of the imported GIR library
+     * `see` https://gitlab.gnome.org/GNOME/gjs/-/blob/master/gi/ns.cpp#L188
+     */
+    const __name__: string;
+
+    /**
+     * Version of the imported GIR library
+     * `see` https://gitlab.gnome.org/GNOME/gjs/-/blob/master/gi/ns.cpp#L189
+     */
+    const __version__: string;
+}
+
+export default win32;
+
 }
 
 declare module 'gi://win32' {
