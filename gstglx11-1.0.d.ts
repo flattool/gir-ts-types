@@ -16,99 +16,98 @@
  */
 
 declare module 'gi://GstGLX11?version=1.0' {
-    // Module dependencies
-    import type GstVideo from 'gi://GstVideo?version=1.0';
-    import type GstBase from 'gi://GstBase?version=1.0';
-    import type Gst from 'gi://Gst?version=1.0';
-    import type GObject from 'gi://GObject?version=2.0';
-    import type GLib from 'gi://GLib?version=2.0';
-    import type GModule from 'gi://GModule?version=2.0';
-    import type GstGL from 'gi://GstGL?version=1.0';
 
-    export namespace GstGLX11 {
-        /**
-         * GstGLX11-1.0
-         */
+// Module dependencies
+import type GstVideo from 'gi://GstVideo?version=1.0';
+import type GstBase from 'gi://GstBase?version=1.0';
+import type Gst from 'gi://Gst?version=1.0';
+import type GObject from 'gi://GObject?version=2.0';
+import type GLib from 'gi://GLib?version=2.0';
+import type GModule from 'gi://GModule?version=2.0';
+import type GstGL from 'gi://GstGL?version=1.0';
 
-        namespace GLDisplayX11 {
-            // Signal signatures
-            interface SignalSignatures extends GstGL.GLDisplay.SignalSignatures {
-                'notify::name': (pspec: GObject.ParamSpec) => void;
-                'notify::parent': (pspec: GObject.ParamSpec) => void;
-            }
+export namespace GstGLX11 {
 
-            // Constructor properties interface
+    /**
+     * GstGLX11-1.0
+     */
 
-            interface ConstructorProps extends GstGL.GLDisplay.ConstructorProps {}
+
+    namespace GLDisplayX11 {
+        // Signal signatures
+        interface SignalSignatures extends GstGL.GLDisplay.SignalSignatures {
+            "notify::name": (pspec: GObject.ParamSpec) => void;
+            "notify::parent": (pspec: GObject.ParamSpec) => void;
         }
 
-        /**
-         * the contents of a {@link GstGLX11.GLDisplayX11} are private and should only be accessed
-         * through the provided API
-         * @gir-type Class
-         */
-        class GLDisplayX11 extends GstGL.GLDisplay {
-            static $gtype: GObject.GType<GLDisplayX11>;
+        // Constructor properties interface
+        interface ConstructorProps extends GstGL.GLDisplay.ConstructorProps {
 
-            /**
-             * Compile-time signal type information.
-             *
-             * This instance property is generated only for TypeScript type checking.
-             * It is not defined at runtime and should not be accessed in JS code.
-             * @internal
-             */
-            $signals: GLDisplayX11.SignalSignatures;
-
-            // Constructors
-
-            constructor(properties?: Partial<GLDisplayX11.ConstructorProps>, ...args: any[]);
-
-            _init(...args: any[]): void;
-
-            static ['new'](name: string | null): GLDisplayX11;
-            // Conflicted with GstGL.GLDisplay.new
-
-            static ['new'](...args: never[]): any;
-
-            // Signals
-
-            /** @signal */
-            connect<K extends keyof GLDisplayX11.SignalSignatures>(
-                signal: K,
-                callback: GObject.SignalCallback<this, GLDisplayX11.SignalSignatures[K]>,
-            ): number;
-            connect(signal: string, callback: (...args: any[]) => any): number;
-            /** @signal */
-            connect_after<K extends keyof GLDisplayX11.SignalSignatures>(
-                signal: K,
-                callback: GObject.SignalCallback<this, GLDisplayX11.SignalSignatures[K]>,
-            ): number;
-            connect_after(signal: string, callback: (...args: any[]) => any): number;
-            /** @signal */
-            emit<K extends keyof GLDisplayX11.SignalSignatures>(
-                signal: K,
-                ...args: GObject.GjsParameters<GLDisplayX11.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never
-            ): void;
-            emit(signal: string, ...args: any[]): void;
         }
-
-        /**
-         * @gir-type Alias
-         */
-        type GLDisplayX11Class = typeof GLDisplayX11;
-        /**
-         * Name of the imported GIR library
-         * `see` https://gitlab.gnome.org/GNOME/gjs/-/blob/master/gi/ns.cpp#L188
-         */
-        const __name__: string;
-        /**
-         * Version of the imported GIR library
-         * `see` https://gitlab.gnome.org/GNOME/gjs/-/blob/master/gi/ns.cpp#L189
-         */
-        const __version__: string;
     }
 
-    export default GstGLX11;
+    /**
+     * the contents of a {@link GstGLX11.GLDisplayX11} are private and should only be accessed
+     * through the provided API
+     * @gir-type Class
+     */
+    class GLDisplayX11 extends GstGL.GLDisplay {
+        static $gtype: GObject.GType<GLDisplayX11>;
+
+        /**
+         * Compile-time signal type information.
+         *
+         * This instance property is generated only for TypeScript type checking.
+         * It is not defined at runtime and should not be accessed in JS code.
+         * @internal
+         */
+        $signals: GLDisplayX11.SignalSignatures;
+
+        // Constructors
+        constructor(properties?: Partial<GLDisplayX11.ConstructorProps>, ...args: any[]);
+
+        _init(...args: any[]): void;
+
+        static ["new"](name: (string | null)): GLDisplayX11;
+
+        // Conflicted with GstGL.GLDisplay.new
+        static ["new"](...args: never[]): any;
+
+        // Signals
+        /** @signal */
+        connect<K extends keyof GLDisplayX11.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, GLDisplayX11.SignalSignatures[K]>): number;
+        connect(signal: string, callback: (...args: any[]) => any): number;
+
+        /** @signal */
+        connect_after<K extends keyof GLDisplayX11.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, GLDisplayX11.SignalSignatures[K]>): number;
+        connect_after(signal: string, callback: (...args: any[]) => any): number;
+
+        /** @signal */
+        emit<K extends keyof GLDisplayX11.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<GLDisplayX11.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
+        emit(signal: string, ...args: any[]): void;
+    }
+
+
+    /**
+     * @gir-type Alias
+     */
+    type GLDisplayX11Class = typeof GLDisplayX11;
+
+    /**
+     * Name of the imported GIR library
+     * `see` https://gitlab.gnome.org/GNOME/gjs/-/blob/master/gi/ns.cpp#L188
+     */
+    const __name__: string;
+
+    /**
+     * Version of the imported GIR library
+     * `see` https://gitlab.gnome.org/GNOME/gjs/-/blob/master/gi/ns.cpp#L189
+     */
+    const __version__: string;
+}
+
+export default GstGLX11;
+
 }
 
 declare module 'gi://GstGLX11' {

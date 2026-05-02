@@ -10,71 +10,82 @@
  */
 
 declare module 'gi://DBus?version=1.0' {
-    // Module dependencies
-    import type GObject from 'gi://GObject?version=2.0';
 
-    export namespace DBus {
-        /**
-         * DBus-1.0
-         */
+// Module dependencies
+import type GObject from 'gi://GObject?version=2.0';
 
-        /**
-         * @gir-type Enum
-         */
-        enum BusType {
-            SESSION,
-            SYSTEM,
-            STARTER,
-        }
+export namespace DBus {
 
-        /**
-         * @gir-type Struct
-         */
-        class Connection {
-            static $gtype: GObject.GType<Connection>;
-        }
+    /**
+     * DBus-1.0
+     */
 
-        /**
-         * @gir-type Struct
-         */
-        class Error {
-            static $gtype: GObject.GType<Error>;
-        }
 
-        /**
-         * @gir-type Struct
-         */
-        class Message {
-            static $gtype: GObject.GType<Message>;
-        }
-
-        /**
-         * @gir-type Struct
-         */
-        class MessageIter {
-            static $gtype: GObject.GType<MessageIter>;
-        }
-
-        /**
-         * @gir-type Struct
-         */
-        class PendingCall {
-            static $gtype: GObject.GType<PendingCall>;
-        }
-
-        /**
-         * Name of the imported GIR library
-         * `see` https://gitlab.gnome.org/GNOME/gjs/-/blob/master/gi/ns.cpp#L188
-         */
-        const __name__: string;
-        /**
-         * Version of the imported GIR library
-         * `see` https://gitlab.gnome.org/GNOME/gjs/-/blob/master/gi/ns.cpp#L189
-         */
-        const __version__: string;
+    /**
+     * @gir-type Enum
+     */
+    enum BusType {
+        SESSION,
+        SYSTEM,
+        STARTER,
     }
 
-    export default DBus;
+
+    /**
+     * @gir-type Struct
+     */
+    class Connection {
+        static $gtype: GObject.GType<Connection>;
+    }
+
+
+    /**
+     * @gir-type Struct
+     */
+    class Error {
+        static $gtype: GObject.GType<Error>;
+    }
+
+
+    /**
+     * @gir-type Struct
+     */
+    class Message {
+        static $gtype: GObject.GType<Message>;
+    }
+
+
+    /**
+     * @gir-type Struct
+     */
+    class MessageIter {
+        static $gtype: GObject.GType<MessageIter>;
+    }
+
+
+    /**
+     * @gir-type Struct
+     */
+    class PendingCall {
+        static $gtype: GObject.GType<PendingCall>;
+    }
+
+
+    /**
+     * Name of the imported GIR library
+     * `see` https://gitlab.gnome.org/GNOME/gjs/-/blob/master/gi/ns.cpp#L188
+     */
+    const __name__: string;
+
+    /**
+     * Version of the imported GIR library
+     * `see` https://gitlab.gnome.org/GNOME/gjs/-/blob/master/gi/ns.cpp#L189
+     */
+    const __version__: string;
+}
+
+export default DBus;
+
 }
 
 declare module 'gi://DBus' {

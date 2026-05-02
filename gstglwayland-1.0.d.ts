@@ -16,111 +16,111 @@
  */
 
 declare module 'gi://GstGLWayland?version=1.0' {
-    // Module dependencies
-    import type GstVideo from 'gi://GstVideo?version=1.0';
-    import type GstBase from 'gi://GstBase?version=1.0';
-    import type Gst from 'gi://Gst?version=1.0';
-    import type GObject from 'gi://GObject?version=2.0';
-    import type GLib from 'gi://GLib?version=2.0';
-    import type GModule from 'gi://GModule?version=2.0';
-    import type GstGL from 'gi://GstGL?version=1.0';
 
-    export namespace GstGLWayland {
-        /**
-         * GstGLWayland-1.0
-         */
+// Module dependencies
+import type GstVideo from 'gi://GstVideo?version=1.0';
+import type GstBase from 'gi://GstBase?version=1.0';
+import type Gst from 'gi://Gst?version=1.0';
+import type GObject from 'gi://GObject?version=2.0';
+import type GLib from 'gi://GLib?version=2.0';
+import type GModule from 'gi://GModule?version=2.0';
+import type GstGL from 'gi://GstGL?version=1.0';
 
-        namespace GLDisplayWayland {
-            // Signal signatures
-            interface SignalSignatures extends GstGL.GLDisplay.SignalSignatures {
-                'notify::name': (pspec: GObject.ParamSpec) => void;
-                'notify::parent': (pspec: GObject.ParamSpec) => void;
-            }
+export namespace GstGLWayland {
 
-            // Constructor properties interface
+    /**
+     * GstGLWayland-1.0
+     */
 
-            interface ConstructorProps extends GstGL.GLDisplay.ConstructorProps {}
+
+    namespace GLDisplayWayland {
+        // Signal signatures
+        interface SignalSignatures extends GstGL.GLDisplay.SignalSignatures {
+            "notify::name": (pspec: GObject.ParamSpec) => void;
+            "notify::parent": (pspec: GObject.ParamSpec) => void;
         }
 
-        /**
-         * the contents of a {@link GstGLWayland.GLDisplayWayland} are private and should only be accessed
-         * through the provided API
-         * @gir-type Class
-         */
-        class GLDisplayWayland extends GstGL.GLDisplay {
-            static $gtype: GObject.GType<GLDisplayWayland>;
+        // Constructor properties interface
+        interface ConstructorProps extends GstGL.GLDisplay.ConstructorProps {
 
-            /**
-             * Compile-time signal type information.
-             *
-             * This instance property is generated only for TypeScript type checking.
-             * It is not defined at runtime and should not be accessed in JS code.
-             * @internal
-             */
-            $signals: GLDisplayWayland.SignalSignatures;
-
-            // Fields
-
-            display: any;
-            registry: any;
-            compositor: any;
-            subcompositor: any;
-            shell: any;
-
-            // Constructors
-
-            constructor(properties?: Partial<GLDisplayWayland.ConstructorProps>, ...args: any[]);
-
-            _init(...args: any[]): void;
-
-            static ['new'](name: string | null): GLDisplayWayland;
-            // Conflicted with GstGL.GLDisplay.new
-
-            static ['new'](...args: never[]): any;
-
-            static new_with_display(display: any | null): GLDisplayWayland;
-
-            // Signals
-
-            /** @signal */
-            connect<K extends keyof GLDisplayWayland.SignalSignatures>(
-                signal: K,
-                callback: GObject.SignalCallback<this, GLDisplayWayland.SignalSignatures[K]>,
-            ): number;
-            connect(signal: string, callback: (...args: any[]) => any): number;
-            /** @signal */
-            connect_after<K extends keyof GLDisplayWayland.SignalSignatures>(
-                signal: K,
-                callback: GObject.SignalCallback<this, GLDisplayWayland.SignalSignatures[K]>,
-            ): number;
-            connect_after(signal: string, callback: (...args: any[]) => any): number;
-            /** @signal */
-            emit<K extends keyof GLDisplayWayland.SignalSignatures>(
-                signal: K,
-                ...args: GObject.GjsParameters<GLDisplayWayland.SignalSignatures[K]> extends [any, ...infer Q]
-                    ? Q
-                    : never
-            ): void;
-            emit(signal: string, ...args: any[]): void;
         }
-
-        /**
-         * @gir-type Alias
-         */
-        type GLDisplayWaylandClass = typeof GLDisplayWayland;
-        /**
-         * Name of the imported GIR library
-         * `see` https://gitlab.gnome.org/GNOME/gjs/-/blob/master/gi/ns.cpp#L188
-         */
-        const __name__: string;
-        /**
-         * Version of the imported GIR library
-         * `see` https://gitlab.gnome.org/GNOME/gjs/-/blob/master/gi/ns.cpp#L189
-         */
-        const __version__: string;
     }
 
-    export default GstGLWayland;
+    /**
+     * the contents of a {@link GstGLWayland.GLDisplayWayland} are private and should only be accessed
+     * through the provided API
+     * @gir-type Class
+     */
+    class GLDisplayWayland extends GstGL.GLDisplay {
+        static $gtype: GObject.GType<GLDisplayWayland>;
+
+        /**
+         * Compile-time signal type information.
+         *
+         * This instance property is generated only for TypeScript type checking.
+         * It is not defined at runtime and should not be accessed in JS code.
+         * @internal
+         */
+        $signals: GLDisplayWayland.SignalSignatures;
+
+        // Fields
+        display: any;
+
+        registry: any;
+
+        compositor: any;
+
+        subcompositor: any;
+
+        shell: any;
+
+        // Constructors
+        constructor(properties?: Partial<GLDisplayWayland.ConstructorProps>, ...args: any[]);
+
+        _init(...args: any[]): void;
+
+        static ["new"](name: (string | null)): GLDisplayWayland;
+
+        // Conflicted with GstGL.GLDisplay.new
+        static ["new"](...args: never[]): any;
+
+        static new_with_display(display: (any | null)): GLDisplayWayland;
+
+        // Signals
+        /** @signal */
+        connect<K extends keyof GLDisplayWayland.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, GLDisplayWayland.SignalSignatures[K]>): number;
+        connect(signal: string, callback: (...args: any[]) => any): number;
+
+        /** @signal */
+        connect_after<K extends keyof GLDisplayWayland.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, GLDisplayWayland.SignalSignatures[K]>): number;
+        connect_after(signal: string, callback: (...args: any[]) => any): number;
+
+        /** @signal */
+        emit<K extends keyof GLDisplayWayland.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<GLDisplayWayland.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
+        emit(signal: string, ...args: any[]): void;
+    }
+
+
+    /**
+     * @gir-type Alias
+     */
+    type GLDisplayWaylandClass = typeof GLDisplayWayland;
+
+    /**
+     * Name of the imported GIR library
+     * `see` https://gitlab.gnome.org/GNOME/gjs/-/blob/master/gi/ns.cpp#L188
+     */
+    const __name__: string;
+
+    /**
+     * Version of the imported GIR library
+     * `see` https://gitlab.gnome.org/GNOME/gjs/-/blob/master/gi/ns.cpp#L189
+     */
+    const __version__: string;
+}
+
+export default GstGLWayland;
+
 }
 
 declare module 'gi://GstGLWayland' {

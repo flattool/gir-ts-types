@@ -10,119 +10,138 @@
  */
 
 declare module 'gi://GL?version=1.0' {
-    // Module dependencies
-    import type GObject from 'gi://GObject?version=2.0';
 
-    export namespace GL {
-        /**
-         * GL-1.0
-         */
+// Module dependencies
+import type GObject from 'gi://GObject?version=2.0';
 
-        function InitNames(): void;
-        /**
-         * @gir-type Struct
-         */
-        class bitfield {
-            static $gtype: GObject.GType<bitfield>;
-        }
+export namespace GL {
 
-        /**
-         * @gir-type Struct
-         */
-        class charARB {
-            static $gtype: GObject.GType<charARB>;
-        }
+    /**
+     * GL-1.0
+     */
 
-        /**
-         * @gir-type Struct
-         */
-        class clampf {
-            static $gtype: GObject.GType<clampf>;
-        }
 
-        /**
-         * @gir-type Struct
-         */
-        class __boolean {
-            static $gtype: GObject.GType<__boolean>;
-        }
+    function InitNames(): void;
 
-        /**
-         * @gir-type Struct
-         */
-        class __enum {
-            static $gtype: GObject.GType<__enum>;
-        }
-
-        /**
-         * @gir-type Struct
-         */
-        class float {
-            static $gtype: GObject.GType<float>;
-        }
-
-        /**
-         * @gir-type Struct
-         */
-        class handleARB {
-            static $gtype: GObject.GType<handleARB>;
-        }
-
-        /**
-         * @gir-type Struct
-         */
-        class int {
-            static $gtype: GObject.GType<int>;
-        }
-
-        /**
-         * @gir-type Struct
-         */
-        class intptr {
-            static $gtype: GObject.GType<intptr>;
-        }
-
-        /**
-         * @gir-type Struct
-         */
-        class sizei {
-            static $gtype: GObject.GType<sizei>;
-        }
-
-        /**
-         * @gir-type Struct
-         */
-        class sizeiptr {
-            static $gtype: GObject.GType<sizeiptr>;
-        }
-
-        /**
-         * @gir-type Struct
-         */
-        class uint {
-            static $gtype: GObject.GType<uint>;
-        }
-
-        /**
-         * @gir-type Struct
-         */
-        class __void {
-            static $gtype: GObject.GType<__void>;
-        }
-
-        /**
-         * Name of the imported GIR library
-         * `see` https://gitlab.gnome.org/GNOME/gjs/-/blob/master/gi/ns.cpp#L188
-         */
-        const __name__: string;
-        /**
-         * Version of the imported GIR library
-         * `see` https://gitlab.gnome.org/GNOME/gjs/-/blob/master/gi/ns.cpp#L189
-         */
-        const __version__: string;
+    /**
+     * @gir-type Struct
+     */
+    class bitfield {
+        static $gtype: GObject.GType<bitfield>;
     }
 
-    export default GL;
+
+    /**
+     * @gir-type Struct
+     */
+    class charARB {
+        static $gtype: GObject.GType<charARB>;
+    }
+
+
+    /**
+     * @gir-type Struct
+     */
+    class clampf {
+        static $gtype: GObject.GType<clampf>;
+    }
+
+
+    /**
+     * @gir-type Struct
+     */
+    class __boolean {
+        static $gtype: GObject.GType<__boolean>;
+    }
+
+
+    /**
+     * @gir-type Struct
+     */
+    class __enum {
+        static $gtype: GObject.GType<__enum>;
+    }
+
+
+    /**
+     * @gir-type Struct
+     */
+    class float {
+        static $gtype: GObject.GType<float>;
+    }
+
+
+    /**
+     * @gir-type Struct
+     */
+    class handleARB {
+        static $gtype: GObject.GType<handleARB>;
+    }
+
+
+    /**
+     * @gir-type Struct
+     */
+    class int {
+        static $gtype: GObject.GType<int>;
+    }
+
+
+    /**
+     * @gir-type Struct
+     */
+    class intptr {
+        static $gtype: GObject.GType<intptr>;
+    }
+
+
+    /**
+     * @gir-type Struct
+     */
+    class sizei {
+        static $gtype: GObject.GType<sizei>;
+    }
+
+
+    /**
+     * @gir-type Struct
+     */
+    class sizeiptr {
+        static $gtype: GObject.GType<sizeiptr>;
+    }
+
+
+    /**
+     * @gir-type Struct
+     */
+    class uint {
+        static $gtype: GObject.GType<uint>;
+    }
+
+
+    /**
+     * @gir-type Struct
+     */
+    class __void {
+        static $gtype: GObject.GType<__void>;
+    }
+
+
+    /**
+     * Name of the imported GIR library
+     * `see` https://gitlab.gnome.org/GNOME/gjs/-/blob/master/gi/ns.cpp#L188
+     */
+    const __name__: string;
+
+    /**
+     * Version of the imported GIR library
+     * `see` https://gitlab.gnome.org/GNOME/gjs/-/blob/master/gi/ns.cpp#L189
+     */
+    const __version__: string;
+}
+
+export default GL;
+
 }
 
 declare module 'gi://GL' {

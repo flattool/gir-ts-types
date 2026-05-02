@@ -10,84 +10,98 @@
  */
 
 declare module 'gi://libxml2?version=2.0' {
-    // Module dependencies
-    import type GObject from 'gi://GObject?version=2.0';
 
-    export namespace libxml2 {
-        /**
-         * libxml2-2.0
-         */
+// Module dependencies
+import type GObject from 'gi://GObject?version=2.0';
 
-        function dummy(): void;
-        /**
-         * @gir-type Struct
-         */
-        class Node {
-            static $gtype: GObject.GType<Node>;
-        }
+export namespace libxml2 {
 
-        /**
-         * @gir-type Struct
-         */
-        class NodePtr {
-            static $gtype: GObject.GType<NodePtr>;
-        }
+    /**
+     * libxml2-2.0
+     */
 
-        /**
-         * @gir-type Struct
-         */
-        class Doc {
-            static $gtype: GObject.GType<Doc>;
-        }
 
-        /**
-         * @gir-type Struct
-         */
-        class DocPtr {
-            static $gtype: GObject.GType<DocPtr>;
-        }
+    function dummy(): void;
 
-        /**
-         * @gir-type Struct
-         */
-        class NsPtr {
-            static $gtype: GObject.GType<NsPtr>;
-        }
-
-        /**
-         * @gir-type Struct
-         */
-        class Char {
-            static $gtype: GObject.GType<Char>;
-        }
-
-        /**
-         * @gir-type Struct
-         */
-        class TextWriter {
-            static $gtype: GObject.GType<TextWriter>;
-        }
-
-        /**
-         * @gir-type Struct
-         */
-        class TextReader {
-            static $gtype: GObject.GType<TextReader>;
-        }
-
-        /**
-         * Name of the imported GIR library
-         * `see` https://gitlab.gnome.org/GNOME/gjs/-/blob/master/gi/ns.cpp#L188
-         */
-        const __name__: string;
-        /**
-         * Version of the imported GIR library
-         * `see` https://gitlab.gnome.org/GNOME/gjs/-/blob/master/gi/ns.cpp#L189
-         */
-        const __version__: string;
+    /**
+     * @gir-type Struct
+     */
+    class Node {
+        static $gtype: GObject.GType<Node>;
     }
 
-    export default libxml2;
+
+    /**
+     * @gir-type Struct
+     */
+    class NodePtr {
+        static $gtype: GObject.GType<NodePtr>;
+    }
+
+
+    /**
+     * @gir-type Struct
+     */
+    class Doc {
+        static $gtype: GObject.GType<Doc>;
+    }
+
+
+    /**
+     * @gir-type Struct
+     */
+    class DocPtr {
+        static $gtype: GObject.GType<DocPtr>;
+    }
+
+
+    /**
+     * @gir-type Struct
+     */
+    class NsPtr {
+        static $gtype: GObject.GType<NsPtr>;
+    }
+
+
+    /**
+     * @gir-type Struct
+     */
+    class Char {
+        static $gtype: GObject.GType<Char>;
+    }
+
+
+    /**
+     * @gir-type Struct
+     */
+    class TextWriter {
+        static $gtype: GObject.GType<TextWriter>;
+    }
+
+
+    /**
+     * @gir-type Struct
+     */
+    class TextReader {
+        static $gtype: GObject.GType<TextReader>;
+    }
+
+
+    /**
+     * Name of the imported GIR library
+     * `see` https://gitlab.gnome.org/GNOME/gjs/-/blob/master/gi/ns.cpp#L188
+     */
+    const __name__: string;
+
+    /**
+     * Version of the imported GIR library
+     * `see` https://gitlab.gnome.org/GNOME/gjs/-/blob/master/gi/ns.cpp#L189
+     */
+    const __version__: string;
+}
+
+export default libxml2;
+
 }
 
 declare module 'gi://libxml2' {

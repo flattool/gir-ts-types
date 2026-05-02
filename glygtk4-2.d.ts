@@ -22,46 +22,52 @@
  */
 
 declare module 'gi://GlyGtk4?version=2' {
-    // Module dependencies
-    import type Gly from 'gi://Gly?version=2';
-    import type Gio from 'gi://Gio?version=2.0';
-    import type GObject from 'gi://GObject?version=2.0';
-    import type GLib from 'gi://GLib?version=2.0';
-    import type GModule from 'gi://GModule?version=2.0';
-    import type Gdk from 'gi://Gdk?version=4.0';
-    import type cairo from 'cairo';
-    import type PangoCairo from 'gi://PangoCairo?version=1.0';
-    import type Pango from 'gi://Pango?version=1.0';
-    import type HarfBuzz from 'gi://HarfBuzz?version=0.0';
-    import type freetype2 from 'gi://freetype2?version=2.0';
-    import type GdkPixbuf from 'gi://GdkPixbuf?version=2.0';
 
-    export namespace GlyGtk4 {
-        /**
-         * GlyGtk4-2
-         */
+// Module dependencies
+import type Gly from 'gi://Gly?version=2';
+import type Gio from 'gi://Gio?version=2.0';
+import type GObject from 'gi://GObject?version=2.0';
+import type GLib from 'gi://GLib?version=2.0';
+import type GModule from 'gi://GModule?version=2.0';
+import type Gdk from 'gi://Gdk?version=4.0';
+import type cairo from 'cairo';
+import type PangoCairo from 'gi://PangoCairo?version=1.0';
+import type Pango from 'gi://Pango?version=1.0';
+import type HarfBuzz from 'gi://HarfBuzz?version=0.0';
+import type freetype2 from 'gi://freetype2?version=2.0';
+import type GdkPixbuf from 'gi://GdkPixbuf?version=2.0';
 
-        /**
-         * Gets the actual image from a frame. See the {@link Gly.Loader} docs
-         * for a complete example.
-         * @param frame Frame
-         * @returns A GDK Texture
-         * @since 2.0
-         */
-        function frame_get_texture(frame: Gly.Frame): Gdk.Texture;
-        /**
-         * Name of the imported GIR library
-         * `see` https://gitlab.gnome.org/GNOME/gjs/-/blob/master/gi/ns.cpp#L188
-         */
-        const __name__: string;
-        /**
-         * Version of the imported GIR library
-         * `see` https://gitlab.gnome.org/GNOME/gjs/-/blob/master/gi/ns.cpp#L189
-         */
-        const __version__: string;
-    }
+export namespace GlyGtk4 {
 
-    export default GlyGtk4;
+    /**
+     * GlyGtk4-2
+     */
+
+
+    /**
+     * Gets the actual image from a frame. See the {@link Gly.Loader} docs
+     * for a complete example.
+     * @param frame Frame
+     * @returns A GDK Texture
+     * @since 2.0
+     */
+    function frame_get_texture(frame: Gly.Frame): Gdk.Texture;
+
+    /**
+     * Name of the imported GIR library
+     * `see` https://gitlab.gnome.org/GNOME/gjs/-/blob/master/gi/ns.cpp#L188
+     */
+    const __name__: string;
+
+    /**
+     * Version of the imported GIR library
+     * `see` https://gitlab.gnome.org/GNOME/gjs/-/blob/master/gi/ns.cpp#L189
+     */
+    const __version__: string;
+}
+
+export default GlyGtk4;
+
 }
 
 declare module 'gi://GlyGtk4' {
