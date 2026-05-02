@@ -10,49 +10,58 @@
  */
 
 declare module 'gi://fontconfig?version=2.0' {
-    // Module dependencies
-    import type GObject from 'gi://GObject?version=2.0';
 
-    export namespace fontconfig {
-        /**
-         * fontconfig-2.0
-         */
+// Module dependencies
+import type GObject from 'gi://GObject?version=2.0';
 
-        function init(): void;
-        /**
-         * @gir-type Struct
-         */
-        class Pattern {
-            static $gtype: GObject.GType<Pattern>;
-        }
+export namespace fontconfig {
 
-        /**
-         * @gir-type Struct
-         */
-        class CharSet {
-            static $gtype: GObject.GType<CharSet>;
-        }
+    /**
+     * fontconfig-2.0
+     */
 
-        /**
-         * @gir-type Struct
-         */
-        class Config {
-            static $gtype: GObject.GType<Config>;
-        }
 
-        /**
-         * Name of the imported GIR library
-         * `see` https://gitlab.gnome.org/GNOME/gjs/-/blob/master/gi/ns.cpp#L188
-         */
-        const __name__: string;
-        /**
-         * Version of the imported GIR library
-         * `see` https://gitlab.gnome.org/GNOME/gjs/-/blob/master/gi/ns.cpp#L189
-         */
-        const __version__: string;
+    function init(): void;
+
+    /**
+     * @gir-type Struct
+     */
+    class Pattern {
+        static $gtype: GObject.GType<Pattern>;
     }
 
-    export default fontconfig;
+
+    /**
+     * @gir-type Struct
+     */
+    class CharSet {
+        static $gtype: GObject.GType<CharSet>;
+    }
+
+
+    /**
+     * @gir-type Struct
+     */
+    class Config {
+        static $gtype: GObject.GType<Config>;
+    }
+
+
+    /**
+     * Name of the imported GIR library
+     * `see` https://gitlab.gnome.org/GNOME/gjs/-/blob/master/gi/ns.cpp#L188
+     */
+    const __name__: string;
+
+    /**
+     * Version of the imported GIR library
+     * `see` https://gitlab.gnome.org/GNOME/gjs/-/blob/master/gi/ns.cpp#L189
+     */
+    const __version__: string;
+}
+
+export default fontconfig;
+
 }
 
 declare module 'gi://fontconfig' {

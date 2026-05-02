@@ -11,57 +11,67 @@
  */
 
 declare module 'gi://xft?version=2.0' {
-    // Module dependencies
-    import type xlib from 'gi://xlib?version=2.0';
-    import type GObject from 'gi://GObject?version=2.0';
 
-    export namespace xft {
-        /**
-         * xft-2.0
-         */
+// Module dependencies
+import type xlib from 'gi://xlib?version=2.0';
+import type GObject from 'gi://GObject?version=2.0';
 
-        function init(): void;
-        /**
-         * @gir-type Struct
-         */
-        class Color {
-            static $gtype: GObject.GType<Color>;
-        }
+export namespace xft {
 
-        /**
-         * @gir-type Struct
-         */
-        class Draw {
-            static $gtype: GObject.GType<Draw>;
-        }
+    /**
+     * xft-2.0
+     */
 
-        /**
-         * @gir-type Struct
-         */
-        class Font {
-            static $gtype: GObject.GType<Font>;
-        }
 
-        /**
-         * @gir-type Struct
-         */
-        class GlyphSpec {
-            static $gtype: GObject.GType<GlyphSpec>;
-        }
+    function init(): void;
 
-        /**
-         * Name of the imported GIR library
-         * `see` https://gitlab.gnome.org/GNOME/gjs/-/blob/master/gi/ns.cpp#L188
-         */
-        const __name__: string;
-        /**
-         * Version of the imported GIR library
-         * `see` https://gitlab.gnome.org/GNOME/gjs/-/blob/master/gi/ns.cpp#L189
-         */
-        const __version__: string;
+    /**
+     * @gir-type Struct
+     */
+    class Color {
+        static $gtype: GObject.GType<Color>;
     }
 
-    export default xft;
+
+    /**
+     * @gir-type Struct
+     */
+    class Draw {
+        static $gtype: GObject.GType<Draw>;
+    }
+
+
+    /**
+     * @gir-type Struct
+     */
+    class Font {
+        static $gtype: GObject.GType<Font>;
+    }
+
+
+    /**
+     * @gir-type Struct
+     */
+    class GlyphSpec {
+        static $gtype: GObject.GType<GlyphSpec>;
+    }
+
+
+    /**
+     * Name of the imported GIR library
+     * `see` https://gitlab.gnome.org/GNOME/gjs/-/blob/master/gi/ns.cpp#L188
+     */
+    const __name__: string;
+
+    /**
+     * Version of the imported GIR library
+     * `see` https://gitlab.gnome.org/GNOME/gjs/-/blob/master/gi/ns.cpp#L189
+     */
+    const __version__: string;
+}
+
+export default xft;
+
 }
 
 declare module 'gi://xft' {
