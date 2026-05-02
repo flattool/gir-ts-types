@@ -1,4 +1,4 @@
-# gir-ts-types | SDK `master`
+# gir-ts-types | SDK `50`
 
 Up-to-date TypeScript type declarations for use with GNOME JavaScript (GJS) projects.
 
