@@ -118,17 +118,17 @@ export namespace Gee {
     /**
      * @param t 
      */
-    function functions_get_equal_func_for(t: GObject.GType): [EqualDataFunc, any];
+    function functions_get_equal_func_for(t: GObject.GType): [EqualDataFunc, null];
 
     /**
      * @param t 
      */
-    function functions_get_hash_func_for(t: GObject.GType): [HashDataFunc, any];
+    function functions_get_hash_func_for(t: GObject.GType): [HashDataFunc, null];
 
     /**
      * @param t 
      */
-    function functions_get_compare_func_for(t: GObject.GType): [GLib.CompareDataFunc, any];
+    function functions_get_compare_func_for(t: GObject.GType): [GLib.CompareDataFunc, null];
 
     function hazard_pointer_policy_is_concrete(): boolean;
 
@@ -164,56 +164,56 @@ export namespace Gee {
      * @gir-type Callback
      */
     interface HashDataFunc {
-        (t_type: GObject.GType, t_dup_func: GObject.BoxedCopyFunc, v: (any | null)): number;
+        (t_type: GObject.GType, t_dup_func: GObject.BoxedCopyFunc, v: null): number;
     }
 
     /**
      * @gir-type Callback
      */
     interface EqualDataFunc {
-        (t_type: GObject.GType, t_dup_func: GObject.BoxedCopyFunc, a: (any | null), b: (any | null)): boolean;
+        (t_type: GObject.GType, t_dup_func: GObject.BoxedCopyFunc, a: null, b: null): boolean;
     }
 
     /**
      * @gir-type Callback
      */
     interface LazyFunc {
-        (g_type: GObject.GType, g_dup_func: GObject.BoxedCopyFunc): (any | null);
+        (g_type: GObject.GType, g_dup_func: GObject.BoxedCopyFunc): null;
     }
 
     /**
      * @gir-type Callback
      */
     interface FoldMapFunc {
-        (a_type: GObject.GType, a_dup_func: GObject.BoxedCopyFunc, k_type: GObject.GType, k_dup_func: GObject.BoxedCopyFunc, v_type: GObject.GType, v_dup_func: GObject.BoxedCopyFunc, k: (any | null), v: (any | null), a: (any | null)): (any | null);
+        (a_type: GObject.GType, a_dup_func: GObject.BoxedCopyFunc, k_type: GObject.GType, k_dup_func: GObject.BoxedCopyFunc, v_type: GObject.GType, v_dup_func: GObject.BoxedCopyFunc, k: null, v: null, a: null): null;
     }
 
     /**
      * @gir-type Callback
      */
     interface ForallMapFunc {
-        (k_type: GObject.GType, k_dup_func: GObject.BoxedCopyFunc, v_type: GObject.GType, v_dup_func: GObject.BoxedCopyFunc, k: (any | null), v: (any | null)): boolean;
+        (k_type: GObject.GType, k_dup_func: GObject.BoxedCopyFunc, v_type: GObject.GType, v_dup_func: GObject.BoxedCopyFunc, k: null, v: null): boolean;
     }
 
     /**
      * @gir-type Callback
      */
     interface Task {
-        (g_type: GObject.GType, g_dup_func: GObject.BoxedCopyFunc): (any | null);
+        (g_type: GObject.GType, g_dup_func: GObject.BoxedCopyFunc): null;
     }
 
     /**
      * @gir-type Callback
      */
     interface FoldFunc {
-        (a_type: GObject.GType, a_dup_func: GObject.BoxedCopyFunc, g_type: GObject.GType, g_dup_func: GObject.BoxedCopyFunc, g: (any | null), a: (any | null)): (any | null);
+        (a_type: GObject.GType, a_dup_func: GObject.BoxedCopyFunc, g_type: GObject.GType, g_dup_func: GObject.BoxedCopyFunc, g: null, a: null): null;
     }
 
     /**
      * @gir-type Callback
      */
     interface ForallFunc {
-        (g_type: GObject.GType, g_dup_func: GObject.BoxedCopyFunc, g: (any | null)): boolean;
+        (g_type: GObject.GType, g_dup_func: GObject.BoxedCopyFunc, g: null): boolean;
     }
 
     /**
@@ -234,21 +234,21 @@ export namespace Gee {
      * @gir-type Callback
      */
     interface MapFunc {
-        (a_type: GObject.GType, a_dup_func: GObject.BoxedCopyFunc, g_type: GObject.GType, g_dup_func: GObject.BoxedCopyFunc, g: (any | null)): (any | null);
+        (a_type: GObject.GType, a_dup_func: GObject.BoxedCopyFunc, g_type: GObject.GType, g_dup_func: GObject.BoxedCopyFunc, g: null): null;
     }
 
     /**
      * @gir-type Callback
      */
     interface Predicate {
-        (g_type: GObject.GType, g_dup_func: GObject.BoxedCopyFunc, g: (any | null)): boolean;
+        (g_type: GObject.GType, g_dup_func: GObject.BoxedCopyFunc, g: null): boolean;
     }
 
     /**
      * @gir-type Callback
      */
     interface FlatMapFunc {
-        (a_type: GObject.GType, a_dup_func: GObject.BoxedCopyFunc, g_type: GObject.GType, g_dup_func: GObject.BoxedCopyFunc, g: (any | null)): Iterator;
+        (a_type: GObject.GType, a_dup_func: GObject.BoxedCopyFunc, g_type: GObject.GType, g_dup_func: GObject.BoxedCopyFunc, g: null): Iterator;
     }
 
     namespace AbstractBidirList {
@@ -440,13 +440,13 @@ export namespace Gee {
         /**
          * @param index 
          */
-        get(index: number): (any | null);
+        get(index: number): null;
 
         /**
          * @param index 
          * @param item 
          */
-        set(index: number, item: (any | null)): void;
+        set(index: number, item: null): void;
 
         /**
          * @param args 
@@ -457,18 +457,18 @@ export namespace Gee {
         /**
          * @param item 
          */
-        index_of(item: (any | null)): number;
+        index_of(item: null): number;
 
         /**
          * @param index 
          * @param item 
          */
-        insert(index: number, item: (any | null)): void;
+        insert(index: number, item: null): void;
 
         /**
          * @param index 
          */
-        remove_at(index: number): (any | null);
+        remove_at(index: number): null;
 
         /**
          * @param start 
@@ -476,9 +476,9 @@ export namespace Gee {
          */
         slice(start: number, stop: number): (List | null);
 
-        first(): (any | null);
+        first(): null;
 
-        last(): (any | null);
+        last(): null;
 
         /**
          * @param index 
@@ -500,33 +500,33 @@ export namespace Gee {
          * @param index 
          * @virtual
          */
-        vfunc_get(index: number): (any | null);
+        vfunc_get(index: number): null;
 
         /**
          * @param index 
          * @param item 
          * @virtual
          */
-        vfunc_set(index: number, item: (any | null)): void;
+        vfunc_set(index: number, item: null): void;
 
         /**
          * @param item 
          * @virtual
          */
-        vfunc_index_of(item: (any | null)): number;
+        vfunc_index_of(item: null): number;
 
         /**
          * @param index 
          * @param item 
          * @virtual
          */
-        vfunc_insert(index: number, item: (any | null)): void;
+        vfunc_insert(index: number, item: null): void;
 
         /**
          * @param index 
          * @virtual
          */
-        vfunc_remove_at(index: number): (any | null);
+        vfunc_remove_at(index: number): null;
 
         /**
          * @param start 
@@ -538,12 +538,12 @@ export namespace Gee {
         /**
          * @virtual
          */
-        vfunc_first(): (any | null);
+        vfunc_first(): null;
 
         /**
          * @virtual
          */
-        vfunc_last(): (any | null);
+        vfunc_last(): null;
 
         /**
          * @param index 
@@ -744,109 +744,109 @@ export namespace Gee {
 
         get_read_only_view(): BidirSortedSet;
 
-        first(): (any | null);
+        first(): null;
 
-        last(): (any | null);
-
-        /**
-         * @param element 
-         */
-        iterator_at(element: (any | null)): (Iterator | null);
+        last(): null;
 
         /**
          * @param element 
          */
-        lower(element: (any | null)): (any | null);
+        iterator_at(element: null): (Iterator | null);
 
         /**
          * @param element 
          */
-        higher(element: (any | null)): (any | null);
+        lower(element: null): null;
 
         /**
          * @param element 
          */
-        floor(element: (any | null)): (any | null);
+        higher(element: null): null;
 
         /**
          * @param element 
          */
-        ceil(element: (any | null)): (any | null);
+        floor(element: null): null;
+
+        /**
+         * @param element 
+         */
+        ceil(element: null): null;
 
         /**
          * @param before 
          */
-        head_set(before: (any | null)): SortedSet;
+        head_set(before: null): SortedSet;
 
         /**
          * @param after 
          */
-        tail_set(after: (any | null)): SortedSet;
+        tail_set(after: null): SortedSet;
 
         /**
          * @param from 
          * @param to 
          */
-        sub_set(from: (any | null), to: (any | null)): SortedSet;
+        sub_set(from: null, to: null): SortedSet;
 
         /**
          * @virtual
          */
-        vfunc_first(): (any | null);
+        vfunc_first(): null;
 
         /**
          * @virtual
          */
-        vfunc_last(): (any | null);
-
-        /**
-         * @param element 
-         * @virtual
-         */
-        vfunc_iterator_at(element: (any | null)): (Iterator | null);
+        vfunc_last(): null;
 
         /**
          * @param element 
          * @virtual
          */
-        vfunc_lower(element: (any | null)): (any | null);
+        vfunc_iterator_at(element: null): (Iterator | null);
 
         /**
          * @param element 
          * @virtual
          */
-        vfunc_higher(element: (any | null)): (any | null);
+        vfunc_lower(element: null): null;
 
         /**
          * @param element 
          * @virtual
          */
-        vfunc_floor(element: (any | null)): (any | null);
+        vfunc_higher(element: null): null;
 
         /**
          * @param element 
          * @virtual
          */
-        vfunc_ceil(element: (any | null)): (any | null);
+        vfunc_floor(element: null): null;
+
+        /**
+         * @param element 
+         * @virtual
+         */
+        vfunc_ceil(element: null): null;
 
         /**
          * @param before 
          * @virtual
          */
-        vfunc_head_set(before: (any | null)): SortedSet;
+        vfunc_head_set(before: null): SortedSet;
 
         /**
          * @param after 
          * @virtual
          */
-        vfunc_tail_set(after: (any | null)): SortedSet;
+        vfunc_tail_set(after: null): SortedSet;
 
         /**
          * @param from 
          * @param to 
          * @virtual
          */
-        vfunc_sub_set(from: (any | null), to: (any | null)): SortedSet;
+        vfunc_sub_set(from: null, to: null): SortedSet;
     }
 
 
@@ -1107,18 +1107,18 @@ export namespace Gee {
         /**
          * @param before 
          */
-        head_map(before: (any | null)): SortedMap;
+        head_map(before: null): SortedMap;
 
         /**
          * @param after 
          */
-        tail_map(after: (any | null)): SortedMap;
+        tail_map(after: null): SortedMap;
 
         /**
          * @param before 
          * @param after 
          */
-        sub_map(before: (any | null), after: (any | null)): SortedMap;
+        sub_map(before: null, after: null): SortedMap;
 
         get_ascending_keys(): SortedSet;
 
@@ -1128,20 +1128,20 @@ export namespace Gee {
          * @param before 
          * @virtual
          */
-        vfunc_head_map(before: (any | null)): SortedMap;
+        vfunc_head_map(before: null): SortedMap;
 
         /**
          * @param after 
          * @virtual
          */
-        vfunc_tail_map(after: (any | null)): SortedMap;
+        vfunc_tail_map(after: null): SortedMap;
 
         /**
          * @param before 
          * @param after 
          * @virtual
          */
-        vfunc_sub_map(before: (any | null), after: (any | null)): SortedMap;
+        vfunc_sub_map(before: null, after: null): SortedMap;
 
         /**
          * @virtual
@@ -1276,19 +1276,19 @@ export namespace Gee {
          * @param item 
          * @virtual
          */
-        vfunc_contains(item: (any | null)): boolean;
+        vfunc_contains(item: null): boolean;
 
         /**
          * @param item 
          * @virtual
          */
-        vfunc_add(item: (any | null)): boolean;
+        vfunc_add(item: null): boolean;
 
         /**
          * @param item 
          * @virtual
          */
-        vfunc_remove(item: (any | null)): boolean;
+        vfunc_remove(item: null): boolean;
 
         /**
          * @virtual
@@ -1375,17 +1375,17 @@ export namespace Gee {
         /**
          * @param item 
          */
-        contains(item: (any | null)): boolean;
+        contains(item: null): boolean;
 
         /**
          * @param item 
          */
-        add(item: (any | null)): boolean;
+        add(item: null): boolean;
 
         /**
          * @param item 
          */
-        remove(item: (any | null)): boolean;
+        remove(item: null): boolean;
 
         clear(): void;
 
@@ -1435,7 +1435,7 @@ export namespace Gee {
          * @param f 
          * @param seed 
          */
-        fold(a_type: GObject.GType, a_dup_func: GObject.BoxedCopyFunc, f: FoldFunc, seed: (any | null)): (any | null);
+        fold(a_type: GObject.GType, a_dup_func: GObject.BoxedCopyFunc, f: FoldFunc, seed: null): null;
 
         /**
          * @param a_type 
@@ -1450,7 +1450,7 @@ export namespace Gee {
          * @param f 
          * @param seed 
          */
-        scan(a_type: GObject.GType, a_dup_func: GObject.BoxedCopyFunc, f: FoldFunc, seed: (any | null)): Iterator;
+        scan(a_type: GObject.GType, a_dup_func: GObject.BoxedCopyFunc, f: FoldFunc, seed: null): Iterator;
 
         /**
          * @param pred 
@@ -1478,7 +1478,7 @@ export namespace Gee {
         /**
          * @param pred 
          */
-        first_match(pred: Predicate): (any | null);
+        first_match(pred: Predicate): null;
 
         /**
          * @param pred 
@@ -1493,12 +1493,12 @@ export namespace Gee {
         /**
          * @param compare 
          */
-        max(compare: GLib.CompareDataFunc): (any | null);
+        max(compare: GLib.CompareDataFunc): null;
 
         /**
          * @param compare 
          */
-        min(compare: GLib.CompareDataFunc): (any | null);
+        min(compare: GLib.CompareDataFunc): null;
 
         /**
          * @param compare 
@@ -1522,7 +1522,7 @@ export namespace Gee {
          * @param seed 
          * @virtual
          */
-        vfunc_fold(a_type: GObject.GType, a_dup_func: GObject.BoxedCopyFunc, f: FoldFunc, seed: (any | null)): (any | null);
+        vfunc_fold(a_type: GObject.GType, a_dup_func: GObject.BoxedCopyFunc, f: FoldFunc, seed: null): null;
 
         /**
          * @param a_type 
@@ -1539,7 +1539,7 @@ export namespace Gee {
          * @param seed 
          * @virtual
          */
-        vfunc_scan(a_type: GObject.GType, a_dup_func: GObject.BoxedCopyFunc, f: FoldFunc, seed: (any | null)): Iterator;
+        vfunc_scan(a_type: GObject.GType, a_dup_func: GObject.BoxedCopyFunc, f: FoldFunc, seed: null): Iterator;
 
         /**
          * @param pred 
@@ -1572,7 +1572,7 @@ export namespace Gee {
          * @param pred 
          * @virtual
          */
-        vfunc_first_match(pred: Predicate): (any | null);
+        vfunc_first_match(pred: Predicate): null;
 
         /**
          * @param pred 
@@ -1590,13 +1590,13 @@ export namespace Gee {
          * @param compare 
          * @virtual
          */
-        vfunc_max(compare: GLib.CompareDataFunc): (any | null);
+        vfunc_max(compare: GLib.CompareDataFunc): null;
 
         /**
          * @param compare 
          * @virtual
          */
-        vfunc_min(compare: GLib.CompareDataFunc): (any | null);
+        vfunc_min(compare: GLib.CompareDataFunc): null;
 
         /**
          * @param compare 
@@ -1629,22 +1629,22 @@ export namespace Gee {
          */
         retain_all(collection: Collection): boolean;
 
-        to_array(): any[];
+        to_array(): null[];
 
         /**
          * @param array 
          */
-        add_all_array(array: any[]): boolean;
+        add_all_array(array: never[]): boolean;
 
         /**
          * @param array 
          */
-        contains_all_array(array: any[]): boolean;
+        contains_all_array(array: never[]): boolean;
 
         /**
          * @param array 
          */
-        remove_all_array(array: any[]): boolean;
+        remove_all_array(array: never[]): boolean;
 
         /**
          * @param iter 
@@ -1690,25 +1690,25 @@ export namespace Gee {
         /**
          * @virtual
          */
-        vfunc_to_array(): any[];
+        vfunc_to_array(): never[];
 
         /**
          * @param array 
          * @virtual
          */
-        vfunc_add_all_array(array: any[]): boolean;
+        vfunc_add_all_array(array: null[]): boolean;
 
         /**
          * @param array 
          * @virtual
          */
-        vfunc_contains_all_array(array: any[]): boolean;
+        vfunc_contains_all_array(array: null[]): boolean;
 
         /**
          * @param array 
          * @virtual
          */
-        vfunc_remove_all_array(array: any[]): boolean;
+        vfunc_remove_all_array(array: null[]): boolean;
 
         /**
          * @param iter 
@@ -1843,33 +1843,33 @@ export namespace Gee {
          * @param index 
          * @virtual
          */
-        vfunc_get(index: number): (any | null);
+        vfunc_get(index: number): null;
 
         /**
          * @param index 
          * @param item 
          * @virtual
          */
-        vfunc_set(index: number, item: (any | null)): void;
+        vfunc_set(index: number, item: null): void;
 
         /**
          * @param item 
          * @virtual
          */
-        vfunc_index_of(item: (any | null)): number;
+        vfunc_index_of(item: null): number;
 
         /**
          * @param index 
          * @param item 
          * @virtual
          */
-        vfunc_insert(index: number, item: (any | null)): void;
+        vfunc_insert(index: number, item: null): void;
 
         /**
          * @param index 
          * @virtual
          */
-        vfunc_remove_at(index: number): (any | null);
+        vfunc_remove_at(index: number): null;
 
         /**
          * @param start 
@@ -1939,13 +1939,13 @@ export namespace Gee {
         /**
          * @param index 
          */
-        get(index: number): (any | null);
+        get(index: number): null;
 
         /**
          * @param index 
          * @param item 
          */
-        set(index: number, item: (any | null)): void;
+        set(index: number, item: null): void;
 
         /**
          * @param args 
@@ -1956,18 +1956,18 @@ export namespace Gee {
         /**
          * @param item 
          */
-        index_of(item: (any | null)): number;
+        index_of(item: null): number;
 
         /**
          * @param index 
          * @param item 
          */
-        insert(index: number, item: (any | null)): void;
+        insert(index: number, item: null): void;
 
         /**
          * @param index 
          */
-        remove_at(index: number): (any | null);
+        remove_at(index: number): null;
 
         /**
          * @param start 
@@ -2015,9 +2015,9 @@ export namespace Gee {
          */
         get readOnly(): boolean;
 
-        first(): (any | null);
+        first(): null;
 
-        last(): (any | null);
+        last(): null;
 
         /**
          * @param index 
@@ -2033,12 +2033,12 @@ export namespace Gee {
         /**
          * @virtual
          */
-        vfunc_first(): (any | null);
+        vfunc_first(): null;
 
         /**
          * @virtual
          */
-        vfunc_last(): (any | null);
+        vfunc_last(): null;
 
         /**
          * @param index 
@@ -2056,17 +2056,17 @@ export namespace Gee {
         /**
          * @param item 
          */
-        contains(item: (any | null)): boolean;
+        contains(item: null): boolean;
 
         /**
          * @param item 
          */
-        add(item: (any | null)): boolean;
+        add(item: null): boolean;
 
         /**
          * @param item 
          */
-        remove(item: (any | null)): boolean;
+        remove(item: null): boolean;
 
         clear(): void;
 
@@ -2090,22 +2090,22 @@ export namespace Gee {
          */
         retain_all(collection: Collection): boolean;
 
-        to_array(): any[];
+        to_array(): null[];
 
         /**
          * @param array 
          */
-        add_all_array(array: any[]): boolean;
+        add_all_array(array: never[]): boolean;
 
         /**
          * @param array 
          */
-        contains_all_array(array: any[]): boolean;
+        contains_all_array(array: never[]): boolean;
 
         /**
          * @param array 
          */
-        remove_all_array(array: any[]): boolean;
+        remove_all_array(array: never[]): boolean;
 
         /**
          * @param iter 
@@ -2132,19 +2132,19 @@ export namespace Gee {
          * @param item 
          * @virtual
          */
-        vfunc_contains(item: (any | null)): boolean;
+        vfunc_contains(item: null): boolean;
 
         /**
          * @param item 
          * @virtual
          */
-        vfunc_add(item: (any | null)): boolean;
+        vfunc_add(item: null): boolean;
 
         /**
          * @param item 
          * @virtual
          */
-        vfunc_remove(item: (any | null)): boolean;
+        vfunc_remove(item: null): boolean;
 
         /**
          * @virtual
@@ -2178,25 +2178,25 @@ export namespace Gee {
         /**
          * @virtual
          */
-        vfunc_to_array(): any[];
+        vfunc_to_array(): never[];
 
         /**
          * @param array 
          * @virtual
          */
-        vfunc_add_all_array(array: any[]): boolean;
+        vfunc_add_all_array(array: null[]): boolean;
 
         /**
          * @param array 
          * @virtual
          */
-        vfunc_contains_all_array(array: any[]): boolean;
+        vfunc_contains_all_array(array: null[]): boolean;
 
         /**
          * @param array 
          * @virtual
          */
-        vfunc_remove_all_array(array: any[]): boolean;
+        vfunc_remove_all_array(array: null[]): boolean;
 
         /**
          * @param iter 
@@ -2421,33 +2421,33 @@ export namespace Gee {
          * @param key 
          * @virtual
          */
-        vfunc_has_key(key: (any | null)): boolean;
+        vfunc_has_key(key: null): boolean;
 
         /**
          * @param key 
          * @param value 
          * @virtual
          */
-        vfunc_has(key: (any | null), value: (any | null)): boolean;
+        vfunc_has(key: null, value: null): boolean;
 
         /**
          * @param key 
          * @virtual
          */
-        vfunc_get(key: (any | null)): (any | null);
+        vfunc_get(key: null): null;
 
         /**
          * @param key 
          * @param value 
          * @virtual
          */
-        vfunc_set(key: (any | null), value: (any | null)): void;
+        vfunc_set(key: null, value: null): void;
 
         /**
          * @param key 
          * @virtual
          */
-        vfunc_unset(key: (any | null)): [boolean, any];
+        vfunc_unset(key: null): [boolean, never];
 
         /**
          * @virtual
@@ -2557,24 +2557,24 @@ export namespace Gee {
         /**
          * @param key 
          */
-        has_key(key: (any | null)): boolean;
+        has_key(key: null): boolean;
 
         /**
          * @param key 
          * @param value 
          */
-        has(key: (any | null), value: (any | null)): boolean;
+        has(key: null, value: null): boolean;
 
         /**
          * @param key 
          */
-        get(key: (any | null)): (any | null);
+        get(key: null): null;
 
         /**
          * @param key 
          * @param value 
          */
-        set(key: (any | null), value: (any | null)): void;
+        set(key: null, value: null): void;
 
         /**
          * @param args 
@@ -2585,7 +2585,7 @@ export namespace Gee {
         /**
          * @param key 
          */
-        unset(key: (any | null)): [boolean, any];
+        unset(key: null): [boolean, null];
 
         map_iterator(): MapIterator;
 
@@ -2641,7 +2641,7 @@ export namespace Gee {
          * @param f 
          * @param seed 
          */
-        fold(a_type: GObject.GType, a_dup_func: GObject.BoxedCopyFunc, f: FoldFunc, seed: (any | null)): (any | null);
+        fold(a_type: GObject.GType, a_dup_func: GObject.BoxedCopyFunc, f: FoldFunc, seed: null): null;
 
         /**
          * @param a_type 
@@ -2656,7 +2656,7 @@ export namespace Gee {
          * @param f 
          * @param seed 
          */
-        scan(a_type: GObject.GType, a_dup_func: GObject.BoxedCopyFunc, f: FoldFunc, seed: (any | null)): Iterator;
+        scan(a_type: GObject.GType, a_dup_func: GObject.BoxedCopyFunc, f: FoldFunc, seed: null): Iterator;
 
         /**
          * @param pred 
@@ -2684,7 +2684,7 @@ export namespace Gee {
         /**
          * @param pred 
          */
-        first_match(pred: Predicate): (any | null);
+        first_match(pred: Predicate): null;
 
         /**
          * @param pred 
@@ -2699,12 +2699,12 @@ export namespace Gee {
         /**
          * @param compare 
          */
-        max(compare: GLib.CompareDataFunc): (any | null);
+        max(compare: GLib.CompareDataFunc): null;
 
         /**
          * @param compare 
          */
-        min(compare: GLib.CompareDataFunc): (any | null);
+        min(compare: GLib.CompareDataFunc): null;
 
         /**
          * @param compare 
@@ -2720,7 +2720,7 @@ export namespace Gee {
          * @param seed 
          * @virtual
          */
-        vfunc_fold(a_type: GObject.GType, a_dup_func: GObject.BoxedCopyFunc, f: FoldFunc, seed: (any | null)): (any | null);
+        vfunc_fold(a_type: GObject.GType, a_dup_func: GObject.BoxedCopyFunc, f: FoldFunc, seed: null): null;
 
         /**
          * @param a_type 
@@ -2737,7 +2737,7 @@ export namespace Gee {
          * @param seed 
          * @virtual
          */
-        vfunc_scan(a_type: GObject.GType, a_dup_func: GObject.BoxedCopyFunc, f: FoldFunc, seed: (any | null)): Iterator;
+        vfunc_scan(a_type: GObject.GType, a_dup_func: GObject.BoxedCopyFunc, f: FoldFunc, seed: null): Iterator;
 
         /**
          * @param pred 
@@ -2770,7 +2770,7 @@ export namespace Gee {
          * @param pred 
          * @virtual
          */
-        vfunc_first_match(pred: Predicate): (any | null);
+        vfunc_first_match(pred: Predicate): null;
 
         /**
          * @param pred 
@@ -2788,13 +2788,13 @@ export namespace Gee {
          * @param compare 
          * @virtual
          */
-        vfunc_max(compare: GLib.CompareDataFunc): (any | null);
+        vfunc_max(compare: GLib.CompareDataFunc): null;
 
         /**
          * @param compare 
          * @virtual
          */
-        vfunc_min(compare: GLib.CompareDataFunc): (any | null);
+        vfunc_min(compare: GLib.CompareDataFunc): null;
 
         /**
          * @param compare 
@@ -2817,12 +2817,12 @@ export namespace Gee {
         /**
          * @param key 
          */
-        contains(key: (any | null)): boolean;
+        contains(key: null): boolean;
 
         /**
          * @param key 
          */
-        remove(key: (any | null)): [boolean, any];
+        remove(key: null): [boolean, null];
 
         /**
          * @param map 
@@ -3018,7 +3018,7 @@ export namespace Gee {
         /**
          * @virtual
          */
-        vfunc_get_value_equal_func(): [EqualDataFunc, any];
+        vfunc_get_value_equal_func(): [EqualDataFunc, never];
 
         /**
          * @virtual
@@ -3075,7 +3075,7 @@ export namespace Gee {
 
         create_multi_key_set(): MultiSet;
 
-        get_value_equal_func(): [EqualDataFunc, any];
+        get_value_equal_func(): [EqualDataFunc, null];
 
         reserved0(): void;
 
@@ -3124,18 +3124,18 @@ export namespace Gee {
         /**
          * @param key 
          */
-        contains(key: (any | null)): boolean;
+        contains(key: null): boolean;
 
         /**
          * @param key 
          */
-        get(key: (any | null)): Collection;
+        get(key: null): Collection;
 
         /**
          * @param key 
          * @param value 
          */
-        set(key: (any | null), value: (any | null)): void;
+        set(key: null, value: null): void;
 
         /**
          * @param args 
@@ -3147,12 +3147,12 @@ export namespace Gee {
          * @param key 
          * @param value 
          */
-        remove(key: (any | null), value: (any | null)): boolean;
+        remove(key: null, value: null): boolean;
 
         /**
          * @param key 
          */
-        remove_all(key: (any | null)): boolean;
+        remove_all(key: null): boolean;
 
         clear(): void;
 
@@ -3185,33 +3185,33 @@ export namespace Gee {
          * @param key 
          * @virtual
          */
-        vfunc_contains(key: (any | null)): boolean;
+        vfunc_contains(key: null): boolean;
 
         /**
          * @param key 
          * @virtual
          */
-        vfunc_get(key: (any | null)): Collection;
-
-        /**
-         * @param key 
-         * @param value 
-         * @virtual
-         */
-        vfunc_set(key: (any | null), value: (any | null)): void;
+        vfunc_get(key: null): Collection;
 
         /**
          * @param key 
          * @param value 
          * @virtual
          */
-        vfunc_remove(key: (any | null), value: (any | null)): boolean;
+        vfunc_set(key: null, value: null): void;
+
+        /**
+         * @param key 
+         * @param value 
+         * @virtual
+         */
+        vfunc_remove(key: null, value: null): boolean;
 
         /**
          * @param key 
          * @virtual
          */
-        vfunc_remove_all(key: (any | null)): boolean;
+        vfunc_remove_all(key: null): boolean;
 
         /**
          * @virtual
@@ -3426,28 +3426,28 @@ export namespace Gee {
         /**
          * @param item 
          */
-        count(item: (any | null)): number;
+        count(item: null): number;
 
         /**
          * @param item 
          * @virtual
          */
-        vfunc_count(item: (any | null)): number;
+        vfunc_count(item: null): number;
 
         /**
          * @param item 
          */
-        contains(item: (any | null)): boolean;
+        contains(item: null): boolean;
 
         /**
          * @param item 
          */
-        add(item: (any | null)): boolean;
+        add(item: null): boolean;
 
         /**
          * @param item 
          */
-        remove(item: (any | null)): boolean;
+        remove(item: null): boolean;
 
         clear(): void;
 
@@ -3471,22 +3471,22 @@ export namespace Gee {
          */
         retain_all(collection: Collection): boolean;
 
-        to_array(): any[];
+        to_array(): null[];
 
         /**
          * @param array 
          */
-        add_all_array(array: any[]): boolean;
+        add_all_array(array: never[]): boolean;
 
         /**
          * @param array 
          */
-        contains_all_array(array: any[]): boolean;
+        contains_all_array(array: never[]): boolean;
 
         /**
          * @param array 
          */
-        remove_all_array(array: any[]): boolean;
+        remove_all_array(array: never[]): boolean;
 
         /**
          * @param iter 
@@ -3513,19 +3513,19 @@ export namespace Gee {
          * @param item 
          * @virtual
          */
-        vfunc_contains(item: (any | null)): boolean;
+        vfunc_contains(item: null): boolean;
 
         /**
          * @param item 
          * @virtual
          */
-        vfunc_add(item: (any | null)): boolean;
+        vfunc_add(item: null): boolean;
 
         /**
          * @param item 
          * @virtual
          */
-        vfunc_remove(item: (any | null)): boolean;
+        vfunc_remove(item: null): boolean;
 
         /**
          * @virtual
@@ -3559,25 +3559,25 @@ export namespace Gee {
         /**
          * @virtual
          */
-        vfunc_to_array(): any[];
+        vfunc_to_array(): never[];
 
         /**
          * @param array 
          * @virtual
          */
-        vfunc_add_all_array(array: any[]): boolean;
+        vfunc_add_all_array(array: null[]): boolean;
 
         /**
          * @param array 
          * @virtual
          */
-        vfunc_contains_all_array(array: any[]): boolean;
+        vfunc_contains_all_array(array: null[]): boolean;
 
         /**
          * @param array 
          * @virtual
          */
-        vfunc_remove_all_array(array: any[]): boolean;
+        vfunc_remove_all_array(array: null[]): boolean;
 
         /**
          * @param iter 
@@ -3744,12 +3744,12 @@ export namespace Gee {
         /**
          * @virtual
          */
-        vfunc_peek(): (any | null);
+        vfunc_peek(): null;
 
         /**
          * @virtual
          */
-        vfunc_poll(): (any | null);
+        vfunc_poll(): null;
 
         /**
          * @virtual
@@ -3817,9 +3817,9 @@ export namespace Gee {
         vfunc_get_is_full(): boolean;
 
         // Methods
-        peek(): (any | null);
+        peek(): null;
 
-        poll(): (any | null);
+        poll(): null;
 
         reserved0(): void;
 
@@ -3880,7 +3880,7 @@ export namespace Gee {
         /**
          * @param element 
          */
-        offer(element: (any | null)): boolean;
+        offer(element: null): boolean;
 
         /**
          * @param recipient 
@@ -3892,7 +3892,7 @@ export namespace Gee {
          * @param element 
          * @virtual
          */
-        vfunc_offer(element: (any | null)): boolean;
+        vfunc_offer(element: null): boolean;
 
         /**
          * @param recipient 
@@ -3904,17 +3904,17 @@ export namespace Gee {
         /**
          * @param item 
          */
-        contains(item: (any | null)): boolean;
+        contains(item: null): boolean;
 
         /**
          * @param item 
          */
-        add(item: (any | null)): boolean;
+        add(item: null): boolean;
 
         /**
          * @param item 
          */
-        remove(item: (any | null)): boolean;
+        remove(item: null): boolean;
 
         clear(): void;
 
@@ -3938,22 +3938,22 @@ export namespace Gee {
          */
         retain_all(collection: Collection): boolean;
 
-        to_array(): any[];
+        to_array(): null[];
 
         /**
          * @param array 
          */
-        add_all_array(array: any[]): boolean;
+        add_all_array(array: never[]): boolean;
 
         /**
          * @param array 
          */
-        contains_all_array(array: any[]): boolean;
+        contains_all_array(array: never[]): boolean;
 
         /**
          * @param array 
          */
-        remove_all_array(array: any[]): boolean;
+        remove_all_array(array: never[]): boolean;
 
         /**
          * @param iter 
@@ -3982,19 +3982,19 @@ export namespace Gee {
          * @param item 
          * @virtual
          */
-        vfunc_contains(item: (any | null)): boolean;
+        vfunc_contains(item: null): boolean;
 
         /**
          * @param item 
          * @virtual
          */
-        vfunc_add(item: (any | null)): boolean;
+        vfunc_add(item: null): boolean;
 
         /**
          * @param item 
          * @virtual
          */
-        vfunc_remove(item: (any | null)): boolean;
+        vfunc_remove(item: null): boolean;
 
         /**
          * @virtual
@@ -4028,25 +4028,25 @@ export namespace Gee {
         /**
          * @virtual
          */
-        vfunc_to_array(): any[];
+        vfunc_to_array(): never[];
 
         /**
          * @param array 
          * @virtual
          */
-        vfunc_add_all_array(array: any[]): boolean;
+        vfunc_add_all_array(array: null[]): boolean;
 
         /**
          * @param array 
          * @virtual
          */
-        vfunc_contains_all_array(array: any[]): boolean;
+        vfunc_contains_all_array(array: null[]): boolean;
 
         /**
          * @param array 
          * @virtual
          */
-        vfunc_remove_all_array(array: any[]): boolean;
+        vfunc_remove_all_array(array: null[]): boolean;
 
         /**
          * @param iter 
@@ -4293,17 +4293,17 @@ export namespace Gee {
         /**
          * @param item 
          */
-        contains(item: (any | null)): boolean;
+        contains(item: null): boolean;
 
         /**
          * @param item 
          */
-        add(item: (any | null)): boolean;
+        add(item: null): boolean;
 
         /**
          * @param item 
          */
-        remove(item: (any | null)): boolean;
+        remove(item: null): boolean;
 
         clear(): void;
 
@@ -4327,22 +4327,22 @@ export namespace Gee {
          */
         retain_all(collection: Collection): boolean;
 
-        to_array(): any[];
+        to_array(): null[];
 
         /**
          * @param array 
          */
-        add_all_array(array: any[]): boolean;
+        add_all_array(array: never[]): boolean;
 
         /**
          * @param array 
          */
-        contains_all_array(array: any[]): boolean;
+        contains_all_array(array: never[]): boolean;
 
         /**
          * @param array 
          */
-        remove_all_array(array: any[]): boolean;
+        remove_all_array(array: never[]): boolean;
 
         /**
          * @param iter 
@@ -4369,19 +4369,19 @@ export namespace Gee {
          * @param item 
          * @virtual
          */
-        vfunc_contains(item: (any | null)): boolean;
+        vfunc_contains(item: null): boolean;
 
         /**
          * @param item 
          * @virtual
          */
-        vfunc_add(item: (any | null)): boolean;
+        vfunc_add(item: null): boolean;
 
         /**
          * @param item 
          * @virtual
          */
-        vfunc_remove(item: (any | null)): boolean;
+        vfunc_remove(item: null): boolean;
 
         /**
          * @virtual
@@ -4415,25 +4415,25 @@ export namespace Gee {
         /**
          * @virtual
          */
-        vfunc_to_array(): any[];
+        vfunc_to_array(): never[];
 
         /**
          * @param array 
          * @virtual
          */
-        vfunc_add_all_array(array: any[]): boolean;
+        vfunc_add_all_array(array: null[]): boolean;
 
         /**
          * @param array 
          * @virtual
          */
-        vfunc_contains_all_array(array: any[]): boolean;
+        vfunc_contains_all_array(array: null[]): boolean;
 
         /**
          * @param array 
          * @virtual
          */
-        vfunc_remove_all_array(array: any[]): boolean;
+        vfunc_remove_all_array(array: null[]): boolean;
 
         /**
          * @param iter 
@@ -4648,20 +4648,20 @@ export namespace Gee {
          * @param before 
          * @virtual
          */
-        vfunc_head_map(before: (any | null)): SortedMap;
+        vfunc_head_map(before: null): SortedMap;
 
         /**
          * @param after 
          * @virtual
          */
-        vfunc_tail_map(after: (any | null)): SortedMap;
+        vfunc_tail_map(after: null): SortedMap;
 
         /**
          * @param before 
          * @param after 
          * @virtual
          */
-        vfunc_sub_map(before: (any | null), after: (any | null)): SortedMap;
+        vfunc_sub_map(before: null, after: null): SortedMap;
 
         /**
          * @virtual
@@ -4727,18 +4727,18 @@ export namespace Gee {
         /**
          * @param before 
          */
-        head_map(before: (any | null)): SortedMap;
+        head_map(before: null): SortedMap;
 
         /**
          * @param after 
          */
-        tail_map(after: (any | null)): SortedMap;
+        tail_map(after: null): SortedMap;
 
         /**
          * @param before 
          * @param after 
          */
-        sub_map(before: (any | null), after: (any | null)): SortedMap;
+        sub_map(before: null, after: null): SortedMap;
 
         reserved0(): void;
 
@@ -4810,29 +4810,29 @@ export namespace Gee {
         /**
          * @param key 
          */
-        has_key(key: (any | null)): boolean;
+        has_key(key: null): boolean;
 
         /**
          * @param key 
          */
-        contains(key: (any | null)): boolean;
-
-        /**
-         * @param key 
-         * @param value 
-         */
-        has(key: (any | null), value: (any | null)): boolean;
-
-        /**
-         * @param key 
-         */
-        get(key: (any | null)): (any | null);
+        contains(key: null): boolean;
 
         /**
          * @param key 
          * @param value 
          */
-        set(key: (any | null), value: (any | null)): void;
+        has(key: null, value: null): boolean;
+
+        /**
+         * @param key 
+         */
+        get(key: null): null;
+
+        /**
+         * @param key 
+         * @param value 
+         */
+        set(key: null, value: null): void;
 
         /**
          * @param args 
@@ -4843,12 +4843,12 @@ export namespace Gee {
         /**
          * @param key 
          */
-        unset(key: (any | null)): [boolean, any];
+        unset(key: null): [boolean, null];
 
         /**
          * @param key 
          */
-        remove(key: (any | null)): [boolean, any];
+        remove(key: null): [boolean, null];
 
         clear(): void;
 
@@ -4899,33 +4899,33 @@ export namespace Gee {
          * @param key 
          * @virtual
          */
-        vfunc_has_key(key: (any | null)): boolean;
+        vfunc_has_key(key: null): boolean;
 
         /**
          * @param key 
          * @param value 
          * @virtual
          */
-        vfunc_has(key: (any | null), value: (any | null)): boolean;
+        vfunc_has(key: null, value: null): boolean;
 
         /**
          * @param key 
          * @virtual
          */
-        vfunc_get(key: (any | null)): (any | null);
+        vfunc_get(key: null): null;
 
         /**
          * @param key 
          * @param value 
          * @virtual
          */
-        vfunc_set(key: (any | null), value: (any | null)): void;
+        vfunc_set(key: null, value: null): void;
 
         /**
          * @param key 
          * @virtual
          */
-        vfunc_unset(key: (any | null)): [boolean, any];
+        vfunc_unset(key: null): [boolean, never];
 
         /**
          * @virtual
@@ -5089,61 +5089,61 @@ export namespace Gee {
         /**
          * @virtual
          */
-        vfunc_first(): (any | null);
+        vfunc_first(): null;
 
         /**
          * @virtual
          */
-        vfunc_last(): (any | null);
-
-        /**
-         * @param element 
-         * @virtual
-         */
-        vfunc_iterator_at(element: (any | null)): (Iterator | null);
+        vfunc_last(): null;
 
         /**
          * @param element 
          * @virtual
          */
-        vfunc_lower(element: (any | null)): (any | null);
+        vfunc_iterator_at(element: null): (Iterator | null);
 
         /**
          * @param element 
          * @virtual
          */
-        vfunc_higher(element: (any | null)): (any | null);
+        vfunc_lower(element: null): null;
 
         /**
          * @param element 
          * @virtual
          */
-        vfunc_floor(element: (any | null)): (any | null);
+        vfunc_higher(element: null): null;
 
         /**
          * @param element 
          * @virtual
          */
-        vfunc_ceil(element: (any | null)): (any | null);
+        vfunc_floor(element: null): null;
+
+        /**
+         * @param element 
+         * @virtual
+         */
+        vfunc_ceil(element: null): null;
 
         /**
          * @param before 
          * @virtual
          */
-        vfunc_head_set(before: (any | null)): SortedSet;
+        vfunc_head_set(before: null): SortedSet;
 
         /**
          * @param after 
          * @virtual
          */
-        vfunc_tail_set(after: (any | null)): SortedSet;
+        vfunc_tail_set(after: null): SortedSet;
 
         /**
          * @param from 
          * @param to 
          * @virtual
          */
-        vfunc_sub_set(from: (any | null), to: (any | null)): SortedSet;
+        vfunc_sub_set(from: null, to: null): SortedSet;
 
         /**
          * @virtual
@@ -5201,50 +5201,50 @@ export namespace Gee {
         vfunc_get_read_only_view(): SortedSet;
 
         // Methods
-        first(): (any | null);
+        first(): null;
 
-        last(): (any | null);
-
-        /**
-         * @param element 
-         */
-        iterator_at(element: (any | null)): (Iterator | null);
+        last(): null;
 
         /**
          * @param element 
          */
-        lower(element: (any | null)): (any | null);
+        iterator_at(element: null): (Iterator | null);
 
         /**
          * @param element 
          */
-        higher(element: (any | null)): (any | null);
+        lower(element: null): null;
 
         /**
          * @param element 
          */
-        floor(element: (any | null)): (any | null);
+        higher(element: null): null;
 
         /**
          * @param element 
          */
-        ceil(element: (any | null)): (any | null);
+        floor(element: null): null;
+
+        /**
+         * @param element 
+         */
+        ceil(element: null): null;
 
         /**
          * @param before 
          */
-        head_set(before: (any | null)): SortedSet;
+        head_set(before: null): SortedSet;
 
         /**
          * @param after 
          */
-        tail_set(after: (any | null)): SortedSet;
+        tail_set(after: null): SortedSet;
 
         /**
          * @param from 
          * @param to 
          */
-        sub_set(from: (any | null), to: (any | null)): SortedSet;
+        sub_set(from: null, to: null): SortedSet;
 
         reserved0(): void;
 
@@ -5345,7 +5345,7 @@ export namespace Gee {
 
         static ["new"](g_type: GObject.GType, g_dup_func: GObject.BoxedCopyFunc, equal_func: (EqualDataFunc | null)): ArrayList;
 
-        static wrap(g_type: GObject.GType, g_dup_func: GObject.BoxedCopyFunc, items: any[], equal_func: (EqualDataFunc | null)): ArrayList;
+        static wrap(g_type: GObject.GType, g_dup_func: GObject.BoxedCopyFunc, items: never[], equal_func: (EqualDataFunc | null)): ArrayList;
 
         // Signals
         /** @signal */
@@ -5366,7 +5366,7 @@ export namespace Gee {
          */
         add_all(collection: Collection): boolean;
 
-        get_equal_func(): [EqualDataFunc, any];
+        get_equal_func(): [EqualDataFunc, null];
     }
 
 
@@ -5475,7 +5475,7 @@ export namespace Gee {
         emit(signal: string, ...args: any[]): void;
 
         // Methods
-        get_equal_func(): [EqualDataFunc, any];
+        get_equal_func(): [EqualDataFunc, null];
 
         get_is_empty(): boolean;
 
@@ -5512,11 +5512,11 @@ export namespace Gee {
         /**
          * @param element 
          */
-        offer_head(element: (any | null)): boolean;
+        offer_head(element: null): boolean;
 
-        peek_head(): (any | null);
+        peek_head(): null;
 
-        poll_head(): (any | null);
+        poll_head(): null;
 
         /**
          * @param recipient 
@@ -5527,11 +5527,11 @@ export namespace Gee {
         /**
          * @param element 
          */
-        offer_tail(element: (any | null)): boolean;
+        offer_tail(element: null): boolean;
 
-        peek_tail(): (any | null);
+        peek_tail(): null;
 
-        poll_tail(): (any | null);
+        poll_tail(): null;
 
         /**
          * @param recipient 
@@ -5543,17 +5543,17 @@ export namespace Gee {
          * @param element 
          * @virtual
          */
-        vfunc_offer_head(element: (any | null)): boolean;
+        vfunc_offer_head(element: null): boolean;
 
         /**
          * @virtual
          */
-        vfunc_peek_head(): (any | null);
+        vfunc_peek_head(): null;
 
         /**
          * @virtual
          */
-        vfunc_poll_head(): (any | null);
+        vfunc_poll_head(): null;
 
         /**
          * @param recipient 
@@ -5566,17 +5566,17 @@ export namespace Gee {
          * @param element 
          * @virtual
          */
-        vfunc_offer_tail(element: (any | null)): boolean;
+        vfunc_offer_tail(element: null): boolean;
 
         /**
          * @virtual
          */
-        vfunc_peek_tail(): (any | null);
+        vfunc_peek_tail(): null;
 
         /**
          * @virtual
          */
-        vfunc_poll_tail(): (any | null);
+        vfunc_poll_tail(): null;
 
         /**
          * @param recipient 
@@ -5588,11 +5588,11 @@ export namespace Gee {
         /**
          * @param element 
          */
-        offer(element: (any | null)): boolean;
+        offer(element: null): boolean;
 
-        peek(): (any | null);
+        peek(): null;
 
-        poll(): (any | null);
+        poll(): null;
 
         /**
          * @param recipient 
@@ -5610,17 +5610,17 @@ export namespace Gee {
          * @param element 
          * @virtual
          */
-        vfunc_offer(element: (any | null)): boolean;
+        vfunc_offer(element: null): boolean;
 
         /**
          * @virtual
          */
-        vfunc_peek(): (any | null);
+        vfunc_peek(): null;
 
         /**
          * @virtual
          */
-        vfunc_poll(): (any | null);
+        vfunc_poll(): null;
 
         /**
          * @param recipient 
@@ -5748,7 +5748,7 @@ export namespace Gee {
         emit(signal: string, ...args: any[]): void;
 
         // Methods
-        get_equal_func(): [EqualDataFunc, any];
+        get_equal_func(): [EqualDataFunc, null];
 
         get_is_empty(): boolean;
     }
@@ -5975,11 +5975,11 @@ export namespace Gee {
         emit(signal: string, ...args: any[]): void;
 
         // Methods
-        get_key_hash_func(): [HashDataFunc, any];
+        get_key_hash_func(): [HashDataFunc, null];
 
-        get_key_equal_func(): [EqualDataFunc, any];
+        get_key_equal_func(): [EqualDataFunc, null];
 
-        get_value_equal_func(): [EqualDataFunc, any];
+        get_value_equal_func(): [EqualDataFunc, null];
     }
 
 
@@ -6108,13 +6108,13 @@ export namespace Gee {
         emit(signal: string, ...args: any[]): void;
 
         // Methods
-        get_key_hash_func(): [HashDataFunc, any];
+        get_key_hash_func(): [HashDataFunc, null];
 
-        get_key_equal_func(): [EqualDataFunc, any];
+        get_key_equal_func(): [EqualDataFunc, null];
 
-        get_value_hash_func(): [HashDataFunc, any];
+        get_value_hash_func(): [HashDataFunc, null];
 
-        get_value_equal_func(): [EqualDataFunc, any];
+        get_value_equal_func(): [EqualDataFunc, null];
     }
 
 
@@ -6209,9 +6209,9 @@ export namespace Gee {
         emit(signal: string, ...args: any[]): void;
 
         // Methods
-        get_hash_func(): [HashDataFunc, any];
+        get_hash_func(): [HashDataFunc, null];
 
-        get_equal_func(): [EqualDataFunc, any];
+        get_equal_func(): [EqualDataFunc, null];
     }
 
 
@@ -6304,9 +6304,9 @@ export namespace Gee {
         emit(signal: string, ...args: any[]): void;
 
         // Methods
-        get_hash_func(): [HashDataFunc, any];
+        get_hash_func(): [HashDataFunc, null];
 
-        get_equal_func(): [EqualDataFunc, any];
+        get_equal_func(): [EqualDataFunc, null];
     }
 
 
@@ -6330,7 +6330,7 @@ export namespace Gee {
 
         static ["new"](g_type: GObject.GType, g_dup_func: GObject.BoxedCopyFunc, func: LazyFunc): Lazy;
 
-        static from_value(g_type: GObject.GType, g_dup_func: GObject.BoxedCopyFunc, item: (any | null)): Lazy;
+        static from_value(g_type: GObject.GType, g_dup_func: GObject.BoxedCopyFunc, item: null): Lazy;
 
         // Signals
         /** @signal */
@@ -6348,9 +6348,9 @@ export namespace Gee {
         // Methods
         ["eval"](): void;
 
-        get(): (any | null);
+        get(): null;
 
-        get_value(): (any | null);
+        get_value(): null;
 
         get_future(): (Future | null);
     }
@@ -6460,11 +6460,11 @@ export namespace Gee {
         emit(signal: string, ...args: any[]): void;
 
         // Methods
-        first(): (any | null);
+        first(): null;
 
-        last(): (any | null);
+        last(): null;
 
-        get_equal_func(): [EqualDataFunc, any];
+        get_equal_func(): [EqualDataFunc, null];
 
         /**
          * @read-only
@@ -6499,11 +6499,11 @@ export namespace Gee {
         /**
          * @param element 
          */
-        offer(element: (any | null)): boolean;
+        offer(element: null): boolean;
 
-        peek(): (any | null);
+        peek(): null;
 
-        poll(): (any | null);
+        poll(): null;
 
         /**
          * @param recipient 
@@ -6521,17 +6521,17 @@ export namespace Gee {
          * @param element 
          * @virtual
          */
-        vfunc_offer(element: (any | null)): boolean;
+        vfunc_offer(element: null): boolean;
 
         /**
          * @virtual
          */
-        vfunc_peek(): (any | null);
+        vfunc_peek(): null;
 
         /**
          * @virtual
          */
-        vfunc_poll(): (any | null);
+        vfunc_poll(): null;
 
         /**
          * @param recipient 
@@ -6558,11 +6558,11 @@ export namespace Gee {
         /**
          * @param element 
          */
-        offer_head(element: (any | null)): boolean;
+        offer_head(element: null): boolean;
 
-        peek_head(): (any | null);
+        peek_head(): null;
 
-        poll_head(): (any | null);
+        poll_head(): null;
 
         /**
          * @param recipient 
@@ -6573,11 +6573,11 @@ export namespace Gee {
         /**
          * @param element 
          */
-        offer_tail(element: (any | null)): boolean;
+        offer_tail(element: null): boolean;
 
-        peek_tail(): (any | null);
+        peek_tail(): null;
 
-        poll_tail(): (any | null);
+        poll_tail(): null;
 
         /**
          * @param recipient 
@@ -6589,17 +6589,17 @@ export namespace Gee {
          * @param element 
          * @virtual
          */
-        vfunc_offer_head(element: (any | null)): boolean;
+        vfunc_offer_head(element: null): boolean;
 
         /**
          * @virtual
          */
-        vfunc_peek_head(): (any | null);
+        vfunc_peek_head(): null;
 
         /**
          * @virtual
          */
-        vfunc_poll_head(): (any | null);
+        vfunc_poll_head(): null;
 
         /**
          * @param recipient 
@@ -6612,17 +6612,17 @@ export namespace Gee {
          * @param element 
          * @virtual
          */
-        vfunc_offer_tail(element: (any | null)): boolean;
+        vfunc_offer_tail(element: null): boolean;
 
         /**
          * @virtual
          */
-        vfunc_peek_tail(): (any | null);
+        vfunc_peek_tail(): null;
 
         /**
          * @virtual
          */
-        vfunc_poll_tail(): (any | null);
+        vfunc_poll_tail(): null;
 
         /**
          * @param recipient 
@@ -6728,7 +6728,7 @@ export namespace Gee {
         /**
          * @param element 
          */
-        offer(element: (any | null)): boolean;
+        offer(element: null): boolean;
 
         /**
          * @param recipient 
@@ -6736,7 +6736,7 @@ export namespace Gee {
          */
         drain(recipient: Collection, amount: number): number;
 
-        get_compare_func(): [GLib.CompareDataFunc, any];
+        get_compare_func(): [GLib.CompareDataFunc, null];
     }
 
 
@@ -6777,7 +6777,7 @@ export namespace Gee {
         /**
          * @param value 
          */
-        set_value(value: (any | null)): void;
+        set_value(value: null): void;
 
         /**
          * @param exception 
@@ -6921,9 +6921,9 @@ export namespace Gee {
         emit(signal: string, ...args: any[]): void;
 
         // Methods
-        get_key_compare_func(): [GLib.CompareDataFunc, any];
+        get_key_compare_func(): [GLib.CompareDataFunc, null];
 
-        get_value_equal_func(): [EqualDataFunc, any];
+        get_value_equal_func(): [EqualDataFunc, null];
     }
 
 
@@ -7052,9 +7052,9 @@ export namespace Gee {
         emit(signal: string, ...args: any[]): void;
 
         // Methods
-        get_key_compare_func(): [GLib.CompareDataFunc, any];
+        get_key_compare_func(): [GLib.CompareDataFunc, null];
 
-        get_value_compare_func(): [GLib.CompareDataFunc, any];
+        get_value_compare_func(): [GLib.CompareDataFunc, null];
     }
 
 
@@ -7147,7 +7147,7 @@ export namespace Gee {
         emit(signal: string, ...args: any[]): void;
 
         // Methods
-        get_compare_func(): [GLib.CompareDataFunc, any];
+        get_compare_func(): [GLib.CompareDataFunc, null];
     }
 
 
@@ -7240,7 +7240,7 @@ export namespace Gee {
         emit(signal: string, ...args: any[]): void;
 
         // Methods
-        get_compare_func(): [GLib.CompareDataFunc, any];
+        get_compare_func(): [GLib.CompareDataFunc, null];
     }
 
 
@@ -7348,7 +7348,7 @@ export namespace Gee {
         emit(signal: string, ...args: any[]): void;
 
         // Methods
-        get_equal_func(): [EqualDataFunc, any];
+        get_equal_func(): [EqualDataFunc, null];
 
         /**
          * @read-only
@@ -7383,11 +7383,11 @@ export namespace Gee {
         /**
          * @param element 
          */
-        offer(element: (any | null)): boolean;
+        offer(element: null): boolean;
 
-        peek(): (any | null);
+        peek(): null;
 
-        poll(): (any | null);
+        poll(): null;
 
         /**
          * @param recipient 
@@ -7405,17 +7405,17 @@ export namespace Gee {
          * @param element 
          * @virtual
          */
-        vfunc_offer(element: (any | null)): boolean;
+        vfunc_offer(element: null): boolean;
 
         /**
          * @virtual
          */
-        vfunc_peek(): (any | null);
+        vfunc_peek(): null;
 
         /**
          * @virtual
          */
-        vfunc_poll(): (any | null);
+        vfunc_poll(): null;
 
         /**
          * @param recipient 
@@ -7442,11 +7442,11 @@ export namespace Gee {
         /**
          * @param element 
          */
-        offer_head(element: (any | null)): boolean;
+        offer_head(element: null): boolean;
 
-        peek_head(): (any | null);
+        peek_head(): null;
 
-        poll_head(): (any | null);
+        poll_head(): null;
 
         /**
          * @param recipient 
@@ -7457,11 +7457,11 @@ export namespace Gee {
         /**
          * @param element 
          */
-        offer_tail(element: (any | null)): boolean;
+        offer_tail(element: null): boolean;
 
-        peek_tail(): (any | null);
+        peek_tail(): null;
 
-        poll_tail(): (any | null);
+        poll_tail(): null;
 
         /**
          * @param recipient 
@@ -7473,17 +7473,17 @@ export namespace Gee {
          * @param element 
          * @virtual
          */
-        vfunc_offer_head(element: (any | null)): boolean;
+        vfunc_offer_head(element: null): boolean;
 
         /**
          * @virtual
          */
-        vfunc_peek_head(): (any | null);
+        vfunc_peek_head(): null;
 
         /**
          * @virtual
          */
-        vfunc_poll_head(): (any | null);
+        vfunc_poll_head(): null;
 
         /**
          * @param recipient 
@@ -7496,17 +7496,17 @@ export namespace Gee {
          * @param element 
          * @virtual
          */
-        vfunc_offer_tail(element: (any | null)): boolean;
+        vfunc_offer_tail(element: null): boolean;
 
         /**
          * @virtual
          */
-        vfunc_peek_tail(): (any | null);
+        vfunc_peek_tail(): null;
 
         /**
          * @virtual
          */
-        vfunc_poll_tail(): (any | null);
+        vfunc_poll_tail(): null;
 
         /**
          * @param recipient 
@@ -7545,8 +7545,8 @@ export namespace Gee {
             vDupFunc: GObject.BoxedCopyFunc;
             v_destroy_func: GLib.DestroyNotify;
             vDestroyFunc: GLib.DestroyNotify;
-            key: (any | null);
-            value: (any | null);
+            key: never;
+            value: never;
             read_only: boolean;
             readOnly: boolean;
         }
@@ -7622,10 +7622,10 @@ export namespace Gee {
         /**
          * @read-only
          */
-        get key(): (any | null);
+        get key(): null;
 
-        get value(): (any | null);
-        set value(val: (any | null));
+        get value(): null;
+        set value(val: never);
 
         /**
          * @read-only
@@ -7668,18 +7668,18 @@ export namespace Gee {
         /**
          * @virtual
          */
-        vfunc_get_key(): (any | null);
+        vfunc_get_key(): null;
 
         /**
          * @virtual
          */
-        vfunc_get_value(): (any | null);
+        vfunc_get_value(): null;
 
         /**
          * @param value 
          * @virtual
          */
-        vfunc_set_value(value: (any | null)): void;
+        vfunc_set_value(value: null): void;
 
         /**
          * @virtual
@@ -7687,14 +7687,14 @@ export namespace Gee {
         vfunc_get_read_only(): boolean;
 
         // Methods
-        get_key(): (any | null);
+        get_key(): null;
 
-        get_value(): (any | null);
+        get_value(): null;
 
         /**
          * @param value 
          */
-        set_value(value: (any | null)): void;
+        set_value(value: null): void;
 
         get_read_only(): boolean;
     }
@@ -7967,9 +7967,9 @@ export namespace Gee {
         static $gtype: GObject.GType<HazardPointer>;
 
         // Constructors
-        constructor(g_type: GObject.GType, g_dup_func: GObject.BoxedCopyFunc, ptr: (any | null));
+        constructor(g_type: GObject.GType, g_dup_func: GObject.BoxedCopyFunc, ptr: null);
 
-        static ["new"](g_type: GObject.GType, g_dup_func: GObject.BoxedCopyFunc, ptr: (any | null)): HazardPointer;
+        static ["new"](g_type: GObject.GType, g_dup_func: GObject.BoxedCopyFunc, ptr: null): HazardPointer;
 
         // Static methods
         /**
@@ -7978,7 +7978,7 @@ export namespace Gee {
          * @param aptr 
          * @param mask 
          */
-        static get_hazard_pointer(g_type: GObject.GType, g_dup_func: GObject.BoxedCopyFunc, aptr: (any | null), mask: (bigint | number)): [(HazardPointer | null), number];
+        static get_hazard_pointer(g_type: GObject.GType, g_dup_func: GObject.BoxedCopyFunc, aptr: null, mask: (bigint | number)): [(HazardPointer | null), number];
 
         /**
          * @param g_type 
@@ -7986,17 +7986,7 @@ export namespace Gee {
          * @param aptr 
          * @param mask 
          */
-        static get_pointer(g_type: GObject.GType, g_dup_func: GObject.BoxedCopyFunc, aptr: (any | null), mask: (bigint | number)): [(any | null), number];
-
-        /**
-         * @param g_type 
-         * @param g_dup_func 
-         * @param aptr 
-         * @param new_ptr 
-         * @param mask 
-         * @param new_mask 
-         */
-        static exchange_hazard_pointer(g_type: GObject.GType, g_dup_func: GObject.BoxedCopyFunc, aptr: (any | null), new_ptr: (any | null), mask: (bigint | number), new_mask: (bigint | number)): [(HazardPointer | null), number];
+        static get_pointer(g_type: GObject.GType, g_dup_func: GObject.BoxedCopyFunc, aptr: null, mask: (bigint | number)): [null, number];
 
         /**
          * @param g_type 
@@ -8006,7 +7996,7 @@ export namespace Gee {
          * @param mask 
          * @param new_mask 
          */
-        static set_pointer(g_type: GObject.GType, g_dup_func: GObject.BoxedCopyFunc, aptr: (any | null), new_ptr: (any | null), mask: (bigint | number), new_mask: (bigint | number)): void;
+        static exchange_hazard_pointer(g_type: GObject.GType, g_dup_func: GObject.BoxedCopyFunc, aptr: null, new_ptr: null, mask: (bigint | number), new_mask: (bigint | number)): [(HazardPointer | null), number];
 
         /**
          * @param g_type 
@@ -8016,7 +8006,17 @@ export namespace Gee {
          * @param mask 
          * @param new_mask 
          */
-        static exchange_pointer(g_type: GObject.GType, g_dup_func: GObject.BoxedCopyFunc, aptr: (any | null), new_ptr: (any | null), mask: (bigint | number), new_mask: (bigint | number)): [(any | null), number];
+        static set_pointer(g_type: GObject.GType, g_dup_func: GObject.BoxedCopyFunc, aptr: null, new_ptr: null, mask: (bigint | number), new_mask: (bigint | number)): void;
+
+        /**
+         * @param g_type 
+         * @param g_dup_func 
+         * @param aptr 
+         * @param new_ptr 
+         * @param mask 
+         * @param new_mask 
+         */
+        static exchange_pointer(g_type: GObject.GType, g_dup_func: GObject.BoxedCopyFunc, aptr: null, new_ptr: null, mask: (bigint | number), new_mask: (bigint | number)): [null, number];
 
         /**
          * @param g_type 
@@ -8028,7 +8028,7 @@ export namespace Gee {
          * @param old_mask 
          * @param new_mask 
          */
-        static compare_and_exchange_pointer(g_type: GObject.GType, g_dup_func: GObject.BoxedCopyFunc, aptr: (any | null), old_ptr: (any | null), _new_ptr: (any | null), mask: (bigint | number), old_mask: (bigint | number), new_mask: (bigint | number)): boolean;
+        static compare_and_exchange_pointer(g_type: GObject.GType, g_dup_func: GObject.BoxedCopyFunc, aptr: null, old_ptr: null, _new_ptr: null, mask: (bigint | number), old_mask: (bigint | number), new_mask: (bigint | number)): boolean;
 
         /**
          * @param policy 
@@ -8049,7 +8049,7 @@ export namespace Gee {
         /**
          * @param other_thread 
          */
-        get(other_thread: boolean): (any | null);
+        get(other_thread: boolean): null;
 
         release(): void;
     }
@@ -8480,7 +8480,7 @@ export namespace Gee {
              * @param item 
              * @virtual
              */
-            vfunc_insert(item: (any | null)): void;
+            vfunc_insert(item: null): void;
         }
 
 
@@ -8503,7 +8503,7 @@ export namespace Gee {
         /**
          * @param item 
          */
-        insert(item: (any | null)): void;
+        insert(item: null): void;
     }
 
 
@@ -8762,19 +8762,19 @@ export namespace Gee {
              * @param item 
              * @virtual
              */
-            vfunc_contains(item: (any | null)): boolean;
+            vfunc_contains(item: null): boolean;
 
             /**
              * @param item 
              * @virtual
              */
-            vfunc_add(item: (any | null)): boolean;
+            vfunc_add(item: null): boolean;
 
             /**
              * @param item 
              * @virtual
              */
-            vfunc_remove(item: (any | null)): boolean;
+            vfunc_remove(item: null): boolean;
 
             /**
              * @virtual
@@ -8808,25 +8808,25 @@ export namespace Gee {
             /**
              * @virtual
              */
-            vfunc_to_array(): any[];
+            vfunc_to_array(): never[];
 
             /**
              * @param array 
              * @virtual
              */
-            vfunc_add_all_array(array: any[]): boolean;
+            vfunc_add_all_array(array: null[]): boolean;
 
             /**
              * @param array 
              * @virtual
              */
-            vfunc_contains_all_array(array: any[]): boolean;
+            vfunc_contains_all_array(array: null[]): boolean;
 
             /**
              * @param array 
              * @virtual
              */
-            vfunc_remove_all_array(array: any[]): boolean;
+            vfunc_remove_all_array(array: null[]): boolean;
 
             /**
              * @param iter 
@@ -8922,17 +8922,17 @@ export namespace Gee {
         /**
          * @param item 
          */
-        contains(item: (any | null)): boolean;
+        contains(item: null): boolean;
 
         /**
          * @param item 
          */
-        add(item: (any | null)): boolean;
+        add(item: null): boolean;
 
         /**
          * @param item 
          */
-        remove(item: (any | null)): boolean;
+        remove(item: null): boolean;
 
         clear(): void;
 
@@ -8956,22 +8956,22 @@ export namespace Gee {
          */
         retain_all(collection: Collection): boolean;
 
-        to_array(): any[];
+        to_array(): null[];
 
         /**
          * @param array 
          */
-        add_all_array(array: any[]): boolean;
+        add_all_array(array: never[]): boolean;
 
         /**
          * @param array 
          */
-        contains_all_array(array: any[]): boolean;
+        contains_all_array(array: never[]): boolean;
 
         /**
          * @param array 
          */
-        remove_all_array(array: any[]): boolean;
+        remove_all_array(array: never[]): boolean;
 
         /**
          * @param iter 
@@ -9014,7 +9014,7 @@ export namespace Gee {
              * @param object 
              * @virtual
              */
-            vfunc_compare_to(object: (any | null)): number;
+            vfunc_compare_to(object: null): number;
         }
 
 
@@ -9037,7 +9037,7 @@ export namespace Gee {
         /**
          * @param object 
          */
-        compare_to(object: (any | null)): number;
+        compare_to(object: null): number;
     }
 
 
@@ -9057,17 +9057,17 @@ export namespace Gee {
              * @param element 
              * @virtual
              */
-            vfunc_offer_head(element: (any | null)): boolean;
+            vfunc_offer_head(element: null): boolean;
 
             /**
              * @virtual
              */
-            vfunc_peek_head(): (any | null);
+            vfunc_peek_head(): null;
 
             /**
              * @virtual
              */
-            vfunc_poll_head(): (any | null);
+            vfunc_poll_head(): null;
 
             /**
              * @param recipient 
@@ -9080,17 +9080,17 @@ export namespace Gee {
              * @param element 
              * @virtual
              */
-            vfunc_offer_tail(element: (any | null)): boolean;
+            vfunc_offer_tail(element: null): boolean;
 
             /**
              * @virtual
              */
-            vfunc_peek_tail(): (any | null);
+            vfunc_peek_tail(): null;
 
             /**
              * @virtual
              */
-            vfunc_poll_tail(): (any | null);
+            vfunc_poll_tail(): null;
 
             /**
              * @param recipient 
@@ -9120,11 +9120,11 @@ export namespace Gee {
         /**
          * @param element 
          */
-        offer_head(element: (any | null)): boolean;
+        offer_head(element: null): boolean;
 
-        peek_head(): (any | null);
+        peek_head(): null;
 
-        poll_head(): (any | null);
+        poll_head(): null;
 
         /**
          * @param recipient 
@@ -9135,11 +9135,11 @@ export namespace Gee {
         /**
          * @param element 
          */
-        offer_tail(element: (any | null)): boolean;
+        offer_tail(element: null): boolean;
 
-        peek_tail(): (any | null);
+        peek_tail(): null;
 
-        poll_tail(): (any | null);
+        poll_tail(): null;
 
         /**
          * @param recipient 
@@ -9164,13 +9164,13 @@ export namespace Gee {
             /**
              * @virtual
              */
-            vfunc_wait(): (any | null);
+            vfunc_wait(): null;
 
             /**
              * @param end_time 
              * @virtual
              */
-            vfunc_wait_until(end_time: number): [boolean, any];
+            vfunc_wait_until(end_time: number): [boolean, never];
 
             /**
              * @param _callback_ 
@@ -9182,7 +9182,7 @@ export namespace Gee {
              * @param _res_ 
              * @virtual
              */
-            vfunc_wait_finish(_res_: Gio.AsyncResult): (any | null);
+            vfunc_wait_finish(_res_: Gio.AsyncResult): null;
 
             /**
              * @param a_type 
@@ -9230,7 +9230,7 @@ export namespace Gee {
             /**
              * @virtual
              */
-            vfunc_get_value(): (any | null);
+            vfunc_get_value(): null;
 
             /**
              * @virtual
@@ -9244,16 +9244,16 @@ export namespace Gee {
         }
 
     interface MapFunc {
-        (a_type: GObject.GType, a_dup_func: GObject.BoxedCopyFunc, g_type: GObject.GType, g_dup_func: GObject.BoxedCopyFunc, value: (any | null)): (any | null);
+        (a_type: GObject.GType, a_dup_func: GObject.BoxedCopyFunc, g_type: GObject.GType, g_dup_func: GObject.BoxedCopyFunc, value: null): null;
     }
     interface LightMapFunc {
-        (a_type: GObject.GType, a_dup_func: GObject.BoxedCopyFunc, g_type: GObject.GType, g_dup_func: GObject.BoxedCopyFunc, value: (any | null)): (any | null);
+        (a_type: GObject.GType, a_dup_func: GObject.BoxedCopyFunc, g_type: GObject.GType, g_dup_func: GObject.BoxedCopyFunc, value: null): null;
     }
     interface ZipFunc {
-        (a_type: GObject.GType, a_dup_func: GObject.BoxedCopyFunc, b_type: GObject.GType, b_dup_func: GObject.BoxedCopyFunc, c_type: GObject.GType, c_dup_func: GObject.BoxedCopyFunc, a: (any | null), b: (any | null)): (any | null);
+        (a_type: GObject.GType, a_dup_func: GObject.BoxedCopyFunc, b_type: GObject.GType, b_dup_func: GObject.BoxedCopyFunc, c_type: GObject.GType, c_dup_func: GObject.BoxedCopyFunc, a: null, b: null): null;
     }
     interface FlatMapFunc {
-        (a_type: GObject.GType, a_dup_func: GObject.BoxedCopyFunc, g_type: GObject.GType, g_dup_func: GObject.BoxedCopyFunc, value: (any | null)): Future;
+        (a_type: GObject.GType, a_dup_func: GObject.BoxedCopyFunc, g_type: GObject.GType, g_dup_func: GObject.BoxedCopyFunc, value: null): Future;
     }
 
         // Constructor properties interface
@@ -9284,14 +9284,14 @@ export namespace Gee {
         get exception(): (GLib.Error | null);
 
         // Methods
-        wait(): (any | null);
+        wait(): null;
 
         /**
          * @param end_time 
          */
-        wait_until(end_time: (bigint | number)): [boolean, any];
+        wait_until(end_time: (bigint | number)): [boolean, null];
 
-        wait_async(): globalThis.Promise<(any | null)>;
+        wait_async(): globalThis.Promise<null>;
 
         /**
          * @param _callback_ 
@@ -9301,12 +9301,12 @@ export namespace Gee {
         /**
          * @param _callback_ 
          */
-        wait_async(_callback_?: (Gio.AsyncReadyCallback<this> | null)): (globalThis.Promise<(any | null)> | void);
+        wait_async(_callback_?: (Gio.AsyncReadyCallback<this> | null)): (globalThis.Promise<null> | void);
 
         /**
          * @param _res_ 
          */
-        wait_finish(_res_: Gio.AsyncResult): (any | null);
+        wait_finish(_res_: Gio.AsyncResult): null;
 
         /**
          * @param a_type 
@@ -9346,7 +9346,7 @@ export namespace Gee {
          */
         flat_map(a_type: GObject.GType, a_dup_func: GObject.BoxedCopyFunc, func: Future.FlatMapFunc): Future;
 
-        get_value(): (any | null);
+        get_value(): null;
 
         get_ready(): boolean;
 
@@ -9375,7 +9375,7 @@ export namespace Gee {
              * @param object 
              * @virtual
              */
-            vfunc_equal_to(object: (any | null)): boolean;
+            vfunc_equal_to(object: null): boolean;
         }
 
 
@@ -9400,7 +9400,7 @@ export namespace Gee {
         /**
          * @param object 
          */
-        equal_to(object: (any | null)): boolean;
+        equal_to(object: null): boolean;
     }
 
 
@@ -9468,7 +9468,7 @@ export namespace Gee {
             /**
              * @virtual
              */
-            vfunc_get(): (any | null);
+            vfunc_get(): null;
 
             /**
              * @virtual
@@ -9538,7 +9538,7 @@ export namespace Gee {
 
         has_next(): boolean;
 
-        get(): (any | null);
+        get(): null;
 
         remove(): void;
 
@@ -9569,33 +9569,33 @@ export namespace Gee {
              * @param index 
              * @virtual
              */
-            vfunc_get(index: number): (any | null);
+            vfunc_get(index: number): null;
 
             /**
              * @param index 
              * @param item 
              * @virtual
              */
-            vfunc_set(index: number, item: (any | null)): void;
+            vfunc_set(index: number, item: null): void;
 
             /**
              * @param item 
              * @virtual
              */
-            vfunc_index_of(item: (any | null)): number;
+            vfunc_index_of(item: null): number;
 
             /**
              * @param index 
              * @param item 
              * @virtual
              */
-            vfunc_insert(index: number, item: (any | null)): void;
+            vfunc_insert(index: number, item: null): void;
 
             /**
              * @param index 
              * @virtual
              */
-            vfunc_remove_at(index: number): (any | null);
+            vfunc_remove_at(index: number): null;
 
             /**
              * @param start 
@@ -9607,12 +9607,12 @@ export namespace Gee {
             /**
              * @virtual
              */
-            vfunc_first(): (any | null);
+            vfunc_first(): null;
 
             /**
              * @virtual
              */
-            vfunc_last(): (any | null);
+            vfunc_last(): null;
 
             /**
              * @param index 
@@ -9672,13 +9672,13 @@ export namespace Gee {
         /**
          * @param index 
          */
-        get(index: number): (any | null);
+        get(index: number): null;
 
         /**
          * @param index 
          * @param item 
          */
-        set(index: number, item: (any | null)): void;
+        set(index: number, item: null): void;
 
         /**
          * @param args 
@@ -9689,18 +9689,18 @@ export namespace Gee {
         /**
          * @param item 
          */
-        index_of(item: (any | null)): number;
+        index_of(item: null): number;
 
         /**
          * @param index 
          * @param item 
          */
-        insert(index: number, item: (any | null)): void;
+        insert(index: number, item: null): void;
 
         /**
          * @param index 
          */
-        remove_at(index: number): (any | null);
+        remove_at(index: number): null;
 
         /**
          * @param start 
@@ -9708,9 +9708,9 @@ export namespace Gee {
          */
         slice(start: number, stop: number): (List | null);
 
-        first(): (any | null);
+        first(): null;
 
-        last(): (any | null);
+        last(): null;
 
         /**
          * @param index 
@@ -9737,33 +9737,33 @@ export namespace Gee {
      * @param index 
      * @virtual
      */
-    vfunc_get(index: number): (any | null);
+    vfunc_get(index: number): null;
         /** @ignore */
     /**
      * @param index 
      * @param item 
      * @virtual
      */
-    vfunc_set(index: number, item: (any | null)): void;
+    vfunc_set(index: number, item: null): void;
         /** @ignore */
     /**
      * @param item 
      * @virtual
      */
-    vfunc_index_of(item: (any | null)): number;
+    vfunc_index_of(item: null): number;
         /** @ignore */
     /**
      * @param index 
      * @param item 
      * @virtual
      */
-    vfunc_insert(index: number, item: (any | null)): void;
+    vfunc_insert(index: number, item: null): void;
         /** @ignore */
     /**
      * @param index 
      * @virtual
      */
-    vfunc_remove_at(index: number): (any | null);
+    vfunc_remove_at(index: number): null;
         /** @ignore */
     /**
      * @param start 
@@ -9775,12 +9775,12 @@ export namespace Gee {
     /**
      * @virtual
      */
-    vfunc_first(): (any | null);
+    vfunc_first(): null;
         /** @ignore */
     /**
      * @virtual
      */
-    vfunc_last(): (any | null);
+    vfunc_last(): null;
         /** @ignore */
     /**
      * @param index 
@@ -9823,13 +9823,13 @@ export namespace Gee {
              * @param item 
              * @virtual
              */
-            vfunc_set(item: (any | null)): void;
+            vfunc_set(item: null): void;
 
             /**
              * @param item 
              * @virtual
              */
-            vfunc_add(item: (any | null)): void;
+            vfunc_add(item: null): void;
 
             /**
              * @virtual
@@ -9857,7 +9857,7 @@ export namespace Gee {
         /**
          * @param item 
          */
-        set(item: (any | null)): void;
+        set(item: null): void;
 
         /**
          * @param args 
@@ -9868,7 +9868,7 @@ export namespace Gee {
         /**
          * @param item 
          */
-        add(item: (any | null)): void;
+        add(item: null): void;
 
         index(): number;
     }
@@ -9890,33 +9890,33 @@ export namespace Gee {
              * @param key 
              * @virtual
              */
-            vfunc_has_key(key: (any | null)): boolean;
+            vfunc_has_key(key: null): boolean;
 
             /**
              * @param key 
              * @param value 
              * @virtual
              */
-            vfunc_has(key: (any | null), value: (any | null)): boolean;
+            vfunc_has(key: null, value: null): boolean;
 
             /**
              * @param key 
              * @virtual
              */
-            vfunc_get(key: (any | null)): (any | null);
+            vfunc_get(key: null): null;
 
             /**
              * @param key 
              * @param value 
              * @virtual
              */
-            vfunc_set(key: (any | null), value: (any | null)): void;
+            vfunc_set(key: null, value: null): void;
 
             /**
              * @param key 
              * @virtual
              */
-            vfunc_unset(key: (any | null)): [boolean, any];
+            vfunc_unset(key: null): [boolean, never];
 
             /**
              * @virtual
@@ -10057,29 +10057,29 @@ export namespace Gee {
         /**
          * @param key 
          */
-        has_key(key: (any | null)): boolean;
+        has_key(key: null): boolean;
 
         /**
          * @param key 
          */
-        contains(key: (any | null)): boolean;
-
-        /**
-         * @param key 
-         * @param value 
-         */
-        has(key: (any | null), value: (any | null)): boolean;
-
-        /**
-         * @param key 
-         */
-        get(key: (any | null)): (any | null);
+        contains(key: null): boolean;
 
         /**
          * @param key 
          * @param value 
          */
-        set(key: (any | null), value: (any | null)): void;
+        has(key: null, value: null): boolean;
+
+        /**
+         * @param key 
+         */
+        get(key: null): null;
+
+        /**
+         * @param key 
+         * @param value 
+         */
+        set(key: null, value: null): void;
 
         /**
          * @param args 
@@ -10090,12 +10090,12 @@ export namespace Gee {
         /**
          * @param key 
          */
-        unset(key: (any | null)): [boolean, any];
+        unset(key: null): [boolean, null];
 
         /**
          * @param key 
          */
-        remove(key: (any | null)): [boolean, any];
+        remove(key: null): [boolean, null];
 
         clear(): void;
 
@@ -10171,18 +10171,18 @@ export namespace Gee {
             /**
              * @virtual
              */
-            vfunc_get_key(): (any | null);
+            vfunc_get_key(): null;
 
             /**
              * @virtual
              */
-            vfunc_get_value(): (any | null);
+            vfunc_get_value(): null;
 
             /**
              * @param value 
              * @virtual
              */
-            vfunc_set_value(value: (any | null)): void;
+            vfunc_set_value(value: null): void;
 
             /**
              * @virtual
@@ -10196,7 +10196,7 @@ export namespace Gee {
              * @param seed 
              * @virtual
              */
-            vfunc_fold(a_type: GObject.GType, a_dup_func: GObject.BoxedCopyFunc, f: FoldMapFunc, seed: (any | null)): (any | null);
+            vfunc_fold(a_type: GObject.GType, a_dup_func: GObject.BoxedCopyFunc, f: FoldMapFunc, seed: null): null;
 
             /**
              * @param f 
@@ -10265,14 +10265,14 @@ export namespace Gee {
 
         has_next(): boolean;
 
-        get_key(): (any | null);
+        get_key(): null;
 
-        get_value(): (any | null);
+        get_value(): null;
 
         /**
          * @param value 
          */
-        set_value(value: (any | null)): void;
+        set_value(value: null): void;
 
         unset(): void;
 
@@ -10282,7 +10282,7 @@ export namespace Gee {
          * @param f 
          * @param seed 
          */
-        fold(a_type: GObject.GType, a_dup_func: GObject.BoxedCopyFunc, f: FoldMapFunc, seed: (any | null)): (any | null);
+        fold(a_type: GObject.GType, a_dup_func: GObject.BoxedCopyFunc, f: FoldMapFunc, seed: null): null;
 
         /**
          * @param f 
@@ -10328,33 +10328,33 @@ export namespace Gee {
              * @param key 
              * @virtual
              */
-            vfunc_contains(key: (any | null)): boolean;
+            vfunc_contains(key: null): boolean;
 
             /**
              * @param key 
              * @virtual
              */
-            vfunc_get(key: (any | null)): Collection;
-
-            /**
-             * @param key 
-             * @param value 
-             * @virtual
-             */
-            vfunc_set(key: (any | null), value: (any | null)): void;
+            vfunc_get(key: null): Collection;
 
             /**
              * @param key 
              * @param value 
              * @virtual
              */
-            vfunc_remove(key: (any | null), value: (any | null)): boolean;
+            vfunc_set(key: null, value: null): void;
+
+            /**
+             * @param key 
+             * @param value 
+             * @virtual
+             */
+            vfunc_remove(key: null, value: null): boolean;
 
             /**
              * @param key 
              * @virtual
              */
-            vfunc_remove_all(key: (any | null)): boolean;
+            vfunc_remove_all(key: null): boolean;
 
             /**
              * @virtual
@@ -10426,18 +10426,18 @@ export namespace Gee {
         /**
          * @param key 
          */
-        contains(key: (any | null)): boolean;
+        contains(key: null): boolean;
 
         /**
          * @param key 
          */
-        get(key: (any | null)): Collection;
+        get(key: null): Collection;
 
         /**
          * @param key 
          * @param value 
          */
-        set(key: (any | null), value: (any | null)): void;
+        set(key: null, value: null): void;
 
         /**
          * @param args 
@@ -10449,12 +10449,12 @@ export namespace Gee {
          * @param key 
          * @param value 
          */
-        remove(key: (any | null), value: (any | null)): boolean;
+        remove(key: null, value: null): boolean;
 
         /**
          * @param key 
          */
-        remove_all(key: (any | null)): boolean;
+        remove_all(key: null): boolean;
 
         clear(): void;
 
@@ -10488,7 +10488,7 @@ export namespace Gee {
              * @param item 
              * @virtual
              */
-            vfunc_count(item: (any | null)): number;
+            vfunc_count(item: null): number;
 
             /**
              * @virtual
@@ -10521,7 +10521,7 @@ export namespace Gee {
         /**
          * @param item 
          */
-        count(item: (any | null)): number;
+        count(item: null): number;
 
         get_read_only_view(): MultiSet;
 
@@ -10532,7 +10532,7 @@ export namespace Gee {
      * @param item 
      * @virtual
      */
-    vfunc_count(item: (any | null)): number;
+    vfunc_count(item: null): number;
         /** @ignore */
     /**
      * @virtual
@@ -10562,17 +10562,17 @@ export namespace Gee {
              * @param element 
              * @virtual
              */
-            vfunc_offer(element: (any | null)): boolean;
+            vfunc_offer(element: null): boolean;
 
             /**
              * @virtual
              */
-            vfunc_peek(): (any | null);
+            vfunc_peek(): null;
 
             /**
              * @virtual
              */
-            vfunc_poll(): (any | null);
+            vfunc_poll(): null;
 
             /**
              * @param recipient 
@@ -10647,11 +10647,11 @@ export namespace Gee {
         /**
          * @param element 
          */
-        offer(element: (any | null)): boolean;
+        offer(element: null): boolean;
 
-        peek(): (any | null);
+        peek(): null;
 
-        poll(): (any | null);
+        poll(): null;
 
         /**
          * @param recipient 
@@ -10752,20 +10752,20 @@ export namespace Gee {
              * @param before 
              * @virtual
              */
-            vfunc_head_map(before: (any | null)): SortedMap;
+            vfunc_head_map(before: null): SortedMap;
 
             /**
              * @param after 
              * @virtual
              */
-            vfunc_tail_map(after: (any | null)): SortedMap;
+            vfunc_tail_map(after: null): SortedMap;
 
             /**
              * @param before 
              * @param after 
              * @virtual
              */
-            vfunc_sub_map(before: (any | null), after: (any | null)): SortedMap;
+            vfunc_sub_map(before: null, after: null): SortedMap;
 
             /**
              * @virtual
@@ -10846,18 +10846,18 @@ export namespace Gee {
         /**
          * @param before 
          */
-        head_map(before: (any | null)): SortedMap;
+        head_map(before: null): SortedMap;
 
         /**
          * @param after 
          */
-        tail_map(after: (any | null)): SortedMap;
+        tail_map(after: null): SortedMap;
 
         /**
          * @param before 
          * @param after 
          */
-        sub_map(before: (any | null), after: (any | null)): SortedMap;
+        sub_map(before: null, after: null): SortedMap;
 
         get_ascending_keys(): SortedSet;
 
@@ -10872,20 +10872,20 @@ export namespace Gee {
      * @param before 
      * @virtual
      */
-    vfunc_head_map(before: (any | null)): SortedMap;
+    vfunc_head_map(before: null): SortedMap;
         /** @ignore */
     /**
      * @param after 
      * @virtual
      */
-    vfunc_tail_map(after: (any | null)): SortedMap;
+    vfunc_tail_map(after: null): SortedMap;
         /** @ignore */
     /**
      * @param before 
      * @param after 
      * @virtual
      */
-    vfunc_sub_map(before: (any | null), after: (any | null)): SortedMap;
+    vfunc_sub_map(before: null, after: null): SortedMap;
         /** @ignore */
     /**
      * @virtual
@@ -10924,61 +10924,61 @@ export namespace Gee {
             /**
              * @virtual
              */
-            vfunc_first(): (any | null);
+            vfunc_first(): null;
 
             /**
              * @virtual
              */
-            vfunc_last(): (any | null);
-
-            /**
-             * @param element 
-             * @virtual
-             */
-            vfunc_iterator_at(element: (any | null)): (Iterator | null);
+            vfunc_last(): null;
 
             /**
              * @param element 
              * @virtual
              */
-            vfunc_lower(element: (any | null)): (any | null);
+            vfunc_iterator_at(element: null): (Iterator | null);
 
             /**
              * @param element 
              * @virtual
              */
-            vfunc_higher(element: (any | null)): (any | null);
+            vfunc_lower(element: null): null;
 
             /**
              * @param element 
              * @virtual
              */
-            vfunc_floor(element: (any | null)): (any | null);
+            vfunc_higher(element: null): null;
 
             /**
              * @param element 
              * @virtual
              */
-            vfunc_ceil(element: (any | null)): (any | null);
+            vfunc_floor(element: null): null;
+
+            /**
+             * @param element 
+             * @virtual
+             */
+            vfunc_ceil(element: null): null;
 
             /**
              * @param before 
              * @virtual
              */
-            vfunc_head_set(before: (any | null)): SortedSet;
+            vfunc_head_set(before: null): SortedSet;
 
             /**
              * @param after 
              * @virtual
              */
-            vfunc_tail_set(after: (any | null)): SortedSet;
+            vfunc_tail_set(after: null): SortedSet;
 
             /**
              * @param from 
              * @param to 
              * @virtual
              */
-            vfunc_sub_set(from: (any | null), to: (any | null)): SortedSet;
+            vfunc_sub_set(from: null, to: null): SortedSet;
 
             /**
              * @virtual
@@ -11020,50 +11020,50 @@ export namespace Gee {
         get readOnlyView(): SortedSet;
 
         // Methods
-        first(): (any | null);
+        first(): null;
 
-        last(): (any | null);
-
-        /**
-         * @param element 
-         */
-        iterator_at(element: (any | null)): (Iterator | null);
+        last(): null;
 
         /**
          * @param element 
          */
-        lower(element: (any | null)): (any | null);
+        iterator_at(element: null): (Iterator | null);
 
         /**
          * @param element 
          */
-        higher(element: (any | null)): (any | null);
+        lower(element: null): null;
 
         /**
          * @param element 
          */
-        floor(element: (any | null)): (any | null);
+        higher(element: null): null;
 
         /**
          * @param element 
          */
-        ceil(element: (any | null)): (any | null);
+        floor(element: null): null;
+
+        /**
+         * @param element 
+         */
+        ceil(element: null): null;
 
         /**
          * @param before 
          */
-        head_set(before: (any | null)): SortedSet;
+        head_set(before: null): SortedSet;
 
         /**
          * @param after 
          */
-        tail_set(after: (any | null)): SortedSet;
+        tail_set(after: null): SortedSet;
 
         /**
          * @param from 
          * @param to 
          */
-        sub_set(from: (any | null), to: (any | null)): SortedSet;
+        sub_set(from: null, to: null): SortedSet;
 
         get_read_only_view(): SortedSet;
 
@@ -11073,61 +11073,61 @@ export namespace Gee {
     /**
      * @virtual
      */
-    vfunc_first(): (any | null);
+    vfunc_first(): null;
         /** @ignore */
     /**
      * @virtual
      */
-    vfunc_last(): (any | null);
-        /** @ignore */
-    /**
-     * @param element 
-     * @virtual
-     */
-    vfunc_iterator_at(element: (any | null)): (Iterator | null);
+    vfunc_last(): null;
         /** @ignore */
     /**
      * @param element 
      * @virtual
      */
-    vfunc_lower(element: (any | null)): (any | null);
+    vfunc_iterator_at(element: null): (Iterator | null);
         /** @ignore */
     /**
      * @param element 
      * @virtual
      */
-    vfunc_higher(element: (any | null)): (any | null);
+    vfunc_lower(element: null): null;
         /** @ignore */
     /**
      * @param element 
      * @virtual
      */
-    vfunc_floor(element: (any | null)): (any | null);
+    vfunc_higher(element: null): null;
         /** @ignore */
     /**
      * @param element 
      * @virtual
      */
-    vfunc_ceil(element: (any | null)): (any | null);
+    vfunc_floor(element: null): null;
+        /** @ignore */
+    /**
+     * @param element 
+     * @virtual
+     */
+    vfunc_ceil(element: null): null;
         /** @ignore */
     /**
      * @param before 
      * @virtual
      */
-    vfunc_head_set(before: (any | null)): SortedSet;
+    vfunc_head_set(before: null): SortedSet;
         /** @ignore */
     /**
      * @param after 
      * @virtual
      */
-    vfunc_tail_set(after: (any | null)): SortedSet;
+    vfunc_tail_set(after: null): SortedSet;
         /** @ignore */
     /**
      * @param from 
      * @param to 
      * @virtual
      */
-    vfunc_sub_set(from: (any | null), to: (any | null)): SortedSet;
+    vfunc_sub_set(from: null, to: null): SortedSet;
         /** @ignore */
     /**
      * @virtual
@@ -11179,7 +11179,7 @@ export namespace Gee {
              * @param seed 
              * @virtual
              */
-            vfunc_fold(a_type: GObject.GType, a_dup_func: GObject.BoxedCopyFunc, f: FoldFunc, seed: (any | null)): (any | null);
+            vfunc_fold(a_type: GObject.GType, a_dup_func: GObject.BoxedCopyFunc, f: FoldFunc, seed: null): null;
 
             /**
              * @param a_type 
@@ -11196,7 +11196,7 @@ export namespace Gee {
              * @param seed 
              * @virtual
              */
-            vfunc_scan(a_type: GObject.GType, a_dup_func: GObject.BoxedCopyFunc, f: FoldFunc, seed: (any | null)): Iterator;
+            vfunc_scan(a_type: GObject.GType, a_dup_func: GObject.BoxedCopyFunc, f: FoldFunc, seed: null): Iterator;
 
             /**
              * @param pred 
@@ -11229,7 +11229,7 @@ export namespace Gee {
              * @param pred 
              * @virtual
              */
-            vfunc_first_match(pred: Predicate): (any | null);
+            vfunc_first_match(pred: Predicate): null;
 
             /**
              * @param pred 
@@ -11247,13 +11247,13 @@ export namespace Gee {
              * @param compare 
              * @virtual
              */
-            vfunc_max(compare: GLib.CompareDataFunc): (any | null);
+            vfunc_max(compare: GLib.CompareDataFunc): null;
 
             /**
              * @param compare 
              * @virtual
              */
-            vfunc_min(compare: GLib.CompareDataFunc): (any | null);
+            vfunc_min(compare: GLib.CompareDataFunc): null;
 
             /**
              * @param compare 
@@ -11302,7 +11302,7 @@ export namespace Gee {
          * @param f 
          * @param seed 
          */
-        fold(a_type: GObject.GType, a_dup_func: GObject.BoxedCopyFunc, f: FoldFunc, seed: (any | null)): (any | null);
+        fold(a_type: GObject.GType, a_dup_func: GObject.BoxedCopyFunc, f: FoldFunc, seed: null): null;
 
         /**
          * @param a_type 
@@ -11317,7 +11317,7 @@ export namespace Gee {
          * @param f 
          * @param seed 
          */
-        scan(a_type: GObject.GType, a_dup_func: GObject.BoxedCopyFunc, f: FoldFunc, seed: (any | null)): Iterator;
+        scan(a_type: GObject.GType, a_dup_func: GObject.BoxedCopyFunc, f: FoldFunc, seed: null): Iterator;
 
         /**
          * @param pred 
@@ -11345,7 +11345,7 @@ export namespace Gee {
         /**
          * @param pred 
          */
-        first_match(pred: Predicate): (any | null);
+        first_match(pred: Predicate): null;
 
         /**
          * @param pred 
@@ -11360,12 +11360,12 @@ export namespace Gee {
         /**
          * @param compare 
          */
-        max(compare: GLib.CompareDataFunc): (any | null);
+        max(compare: GLib.CompareDataFunc): null;
 
         /**
          * @param compare 
          */
-        min(compare: GLib.CompareDataFunc): (any | null);
+        min(compare: GLib.CompareDataFunc): null;
 
         /**
          * @param compare 

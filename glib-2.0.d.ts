@@ -5169,7 +5169,7 @@ export class VariantType<S extends string = any> {
      * @returns the allocated memory
      * @since 2.72
      */
-    function aligned_alloc(n_blocks: (bigint | number), n_block_bytes: (bigint | number), alignment: (bigint | number)): (any | null);
+    function aligned_alloc(n_blocks: (bigint | number), n_block_bytes: (bigint | number), alignment: (bigint | number)): null;
 
     /**
      * This function is similar to `g_aligned_alloc()`, but it will
@@ -5180,14 +5180,14 @@ export class VariantType<S extends string = any> {
      * @returns the allocated, cleared memory
      * @since 2.72
      */
-    function aligned_alloc0(n_blocks: (bigint | number), n_block_bytes: (bigint | number), alignment: (bigint | number)): (any | null);
+    function aligned_alloc0(n_blocks: (bigint | number), n_block_bytes: (bigint | number), alignment: (bigint | number)): null;
 
     /**
      * Frees the memory allocated by `g_aligned_alloc()`.
      * @param mem the memory to deallocate
      * @since 2.72
      */
-    function aligned_free(mem: (any | null)): void;
+    function aligned_free(mem: null): void;
 
     /**
      * Frees the memory pointed to by `mem`, assuming it is has the given `size` and
@@ -5204,7 +5204,7 @@ export class VariantType<S extends string = any> {
      * @param size size of `mem`, in bytes
      * @since 2.76
      */
-    function aligned_free_sized(mem: (any | null), alignment: (bigint | number), size: (bigint | number)): void;
+    function aligned_free_sized(mem: null, alignment: (bigint | number), size: (bigint | number)): void;
 
     /**
      * Determines the numeric value of a character as a decimal digit. If the
@@ -5648,7 +5648,7 @@ export class VariantType<S extends string = any> {
      * @returns the value of `atomic` before the add, signed
      * @since 2.4
      */
-    function atomic_int_add(atomic: (any | null), val: number): number;
+    function atomic_int_add(atomic: null, val: number): number;
 
     /**
      * Performs an atomic bitwise 'and' of the value of `atomic` and `val`,
@@ -5666,7 +5666,7 @@ export class VariantType<S extends string = any> {
      * @returns the value of `atomic` before the operation, unsigned
      * @since 2.30
      */
-    function atomic_int_and(atomic: (any | null), val: number): number;
+    function atomic_int_and(atomic: null, val: number): number;
 
     /**
      * Compares `atomic` to `oldval` and, if equal, sets it to `newval`.
@@ -5687,7 +5687,7 @@ export class VariantType<S extends string = any> {
      * @returns `true` if the exchange took place
      * @since 2.4
      */
-    function atomic_int_compare_and_exchange(atomic: (any | null), oldval: number, newval: number): boolean;
+    function atomic_int_compare_and_exchange(atomic: null, oldval: number, newval: number): boolean;
 
     /**
      * Compares `atomic` to `oldval` and, if equal, sets it to `newval`.
@@ -5708,7 +5708,7 @@ export class VariantType<S extends string = any> {
      * @returns `true` if the exchange took place
      * @since 2.74
      */
-    function atomic_int_compare_and_exchange_full(atomic: (any | null), oldval: number, newval: number): [boolean, number];
+    function atomic_int_compare_and_exchange_full(atomic: null, oldval: number, newval: number): [boolean, number];
 
     /**
      * Decrements the value of `atomic` by 1.
@@ -5724,7 +5724,7 @@ export class VariantType<S extends string = any> {
      * @returns `true` if the resultant value is zero
      * @since 2.4
      */
-    function atomic_int_dec_and_test(atomic: (any | null)): boolean;
+    function atomic_int_dec_and_test(atomic: null): boolean;
 
     /**
      * Sets the `atomic` to `newval` and returns the old value from `atomic`.
@@ -5740,7 +5740,7 @@ export class VariantType<S extends string = any> {
      * @returns the value of `atomic` before the exchange, signed
      * @since 2.74
      */
-    function atomic_int_exchange(atomic: (any | null), newval: number): number;
+    function atomic_int_exchange(atomic: null, newval: number): number;
 
     /**
      * This function existed before `g_atomic_int_add()` returned the prior
@@ -5752,7 +5752,7 @@ export class VariantType<S extends string = any> {
      * @since 2.4
      * @deprecated since 2.30: Use `g_atomic_int_add()` instead.
      */
-    function atomic_int_exchange_and_add(atomic: (any | null), val: number): number;
+    function atomic_int_exchange_and_add(atomic: null, val: number): number;
 
     /**
      * Gets the current value of `atomic`.
@@ -5766,7 +5766,7 @@ export class VariantType<S extends string = any> {
      * @returns the value of the integer
      * @since 2.4
      */
-    function atomic_int_get(atomic: (any | null)): number;
+    function atomic_int_get(atomic: null): number;
 
     /**
      * Increments the value of `atomic` by 1.
@@ -5780,7 +5780,7 @@ export class VariantType<S extends string = any> {
      * @param atomic a pointer to a `gint` or `guint`
      * @since 2.4
      */
-    function atomic_int_inc(atomic: (any | null)): void;
+    function atomic_int_inc(atomic: null): void;
 
     /**
      * Performs an atomic bitwise 'or' of the value of `atomic` and `val`,
@@ -5798,7 +5798,7 @@ export class VariantType<S extends string = any> {
      * @returns the value of `atomic` before the operation, unsigned
      * @since 2.30
      */
-    function atomic_int_or(atomic: (any | null), val: number): number;
+    function atomic_int_or(atomic: null, val: number): number;
 
     /**
      * Sets the value of `atomic` to `newval`.
@@ -5812,7 +5812,7 @@ export class VariantType<S extends string = any> {
      * @param newval a new value to store
      * @since 2.4
      */
-    function atomic_int_set(atomic: (any | null), newval: number): void;
+    function atomic_int_set(atomic: null, newval: number): void;
 
     /**
      * Performs an atomic bitwise 'xor' of the value of `atomic` and `val`,
@@ -5830,7 +5830,7 @@ export class VariantType<S extends string = any> {
      * @returns the value of `atomic` before the operation, unsigned
      * @since 2.30
      */
-    function atomic_int_xor(atomic: (any | null), val: number): number;
+    function atomic_int_xor(atomic: null, val: number): number;
 
     /**
      * Atomically adds `val` to the value of `atomic`.
@@ -5851,7 +5851,7 @@ export class VariantType<S extends string = any> {
      * @returns the value of `atomic` before the add, signed
      * @since 2.30
      */
-    function atomic_pointer_add(atomic: any, val: (bigint | number)): never;
+    function atomic_pointer_add(atomic: never, val: (bigint | number)): never;
 
     /**
      * Performs an atomic bitwise 'and' of the value of `atomic` and `val`,
@@ -5873,7 +5873,7 @@ export class VariantType<S extends string = any> {
      * @returns the value of `atomic` before the operation, unsigned
      * @since 2.30
      */
-    function atomic_pointer_and(atomic: any, val: (bigint | number)): number;
+    function atomic_pointer_and(atomic: never, val: (bigint | number)): number;
 
     /**
      * Compares `atomic` to `oldval` and, if equal, sets it to `newval`.
@@ -5894,7 +5894,7 @@ export class VariantType<S extends string = any> {
      * @returns `true` if the exchange took place
      * @since 2.4
      */
-    function atomic_pointer_compare_and_exchange(atomic: any, oldval: (any | null), newval: (any | null)): boolean;
+    function atomic_pointer_compare_and_exchange(atomic: never, oldval: null, newval: null): boolean;
 
     /**
      * Compares `atomic` to `oldval` and, if equal, sets it to `newval`.
@@ -5915,7 +5915,7 @@ export class VariantType<S extends string = any> {
      * @returns `true` if the exchange took place
      * @since 2.74
      */
-    function atomic_pointer_compare_and_exchange_full(atomic: any, oldval: (any | null), newval: (any | null)): [boolean, any];
+    function atomic_pointer_compare_and_exchange_full(atomic: never, oldval: null, newval: null): [boolean, null];
 
     /**
      * Sets the `atomic` to `newval` and returns the old value from `atomic`.
@@ -5931,7 +5931,7 @@ export class VariantType<S extends string = any> {
      * @returns the value of `atomic` before the exchange
      * @since 2.74
      */
-    function atomic_pointer_exchange(atomic: (any | null), newval: (any | null)): (any | null);
+    function atomic_pointer_exchange(atomic: null, newval: null): null;
 
     /**
      * Gets the current value of `atomic`.
@@ -5945,7 +5945,7 @@ export class VariantType<S extends string = any> {
      * @returns the value of the pointer
      * @since 2.4
      */
-    function atomic_pointer_get(atomic: any): (any | null);
+    function atomic_pointer_get(atomic: never): null;
 
     /**
      * Performs an atomic bitwise 'or' of the value of `atomic` and `val`,
@@ -5967,7 +5967,7 @@ export class VariantType<S extends string = any> {
      * @returns the value of `atomic` before the operation, unsigned
      * @since 2.30
      */
-    function atomic_pointer_or(atomic: any, val: (bigint | number)): number;
+    function atomic_pointer_or(atomic: never, val: (bigint | number)): number;
 
     /**
      * Sets the value of `atomic` to `newval`.
@@ -5981,7 +5981,7 @@ export class VariantType<S extends string = any> {
      * @param newval a new value to store
      * @since 2.4
      */
-    function atomic_pointer_set(atomic: any, newval: (any | null)): void;
+    function atomic_pointer_set(atomic: never, newval: null): void;
 
     /**
      * Performs an atomic bitwise 'xor' of the value of `atomic` and `val`,
@@ -6003,7 +6003,7 @@ export class VariantType<S extends string = any> {
      * @returns the value of `atomic` before the operation, unsigned
      * @since 2.30
      */
-    function atomic_pointer_xor(atomic: any, val: (bigint | number)): number;
+    function atomic_pointer_xor(atomic: never, val: (bigint | number)): number;
 
     /**
      * Atomically acquires a reference on the data pointed by `mem_block`.
@@ -6011,7 +6011,7 @@ export class VariantType<S extends string = any> {
      * @returns a pointer to the data,   with its reference count increased
      * @since 2.58
      */
-    function atomic_rc_box_acquire(mem_block: any): any;
+    function atomic_rc_box_acquire(mem_block: never): null;
 
     /**
      * Allocates `block_size` bytes of memory, and adds atomic
@@ -6026,7 +6026,7 @@ export class VariantType<S extends string = any> {
      * @returns a pointer to the allocated memory
      * @since 2.58
      */
-    function atomic_rc_box_alloc(block_size: (bigint | number)): any;
+    function atomic_rc_box_alloc(block_size: (bigint | number)): null;
 
     /**
      * Allocates `block_size` bytes of memory, and adds atomic
@@ -6043,7 +6043,7 @@ export class VariantType<S extends string = any> {
      * @returns a pointer to the allocated memory
      * @since 2.58
      */
-    function atomic_rc_box_alloc0(block_size: (bigint | number)): any;
+    function atomic_rc_box_alloc0(block_size: (bigint | number)): null;
 
     /**
      * Allocates a new block of data with atomic reference counting
@@ -6054,7 +6054,7 @@ export class VariantType<S extends string = any> {
      * @returns a pointer to the allocated   memory
      * @since 2.58
      */
-    function atomic_rc_box_dup(block_size: (bigint | number), mem_block: any): any;
+    function atomic_rc_box_dup(block_size: (bigint | number), mem_block: never): null;
 
     /**
      * Retrieves the size of the reference counted data pointed by `mem_block`.
@@ -6062,7 +6062,7 @@ export class VariantType<S extends string = any> {
      * @returns the size of the data, in bytes
      * @since 2.58
      */
-    function atomic_rc_box_get_size(mem_block: any): number;
+    function atomic_rc_box_get_size(mem_block: never): number;
 
     /**
      * Atomically releases a reference on the data pointed by `mem_block`.
@@ -6072,7 +6072,7 @@ export class VariantType<S extends string = any> {
      * @param mem_block a pointer to reference counted data
      * @since 2.58
      */
-    function atomic_rc_box_release(mem_block: any): void;
+    function atomic_rc_box_release(mem_block: never): void;
 
     /**
      * Atomically releases a reference on the data pointed by `mem_block`.
@@ -6088,7 +6088,7 @@ export class VariantType<S extends string = any> {
      * @param mem_block a pointer to reference counted data
      * @since 2.58
      */
-    function atomic_rc_box_release_full(mem_block: any): void;
+    function atomic_rc_box_release_full(mem_block: never): void;
 
     /**
      * Atomically compares the current value of `arc` with `val`.
@@ -6226,7 +6226,7 @@ export class VariantType<S extends string = any> {
      * @param lock_bit a bit value between 0 and 31
      * @since 2.24
      */
-    function bit_lock(address: (any | null), lock_bit: number): void;
+    function bit_lock(address: null, lock_bit: number): void;
 
     /**
      * Sets the indicated `lock_bit` in `address` and atomically returns the new value.
@@ -6238,7 +6238,7 @@ export class VariantType<S extends string = any> {
      * @param lock_bit a bit value between 0 and 31
      * @since 2.86
      */
-    function bit_lock_and_get(address: (any | null), lock_bit: number): number;
+    function bit_lock_and_get(address: null, lock_bit: number): number;
 
     /**
      * Find the position of the first bit set in `mask`, searching
@@ -6290,7 +6290,7 @@ export class VariantType<S extends string = any> {
      * @returns `true` if the lock was acquired
      * @since 2.24
      */
-    function bit_trylock(address: (any | null), lock_bit: number): boolean;
+    function bit_trylock(address: null, lock_bit: number): boolean;
 
     /**
      * Clears the indicated `lock_bit` in `address`.  If another thread is
@@ -6305,7 +6305,7 @@ export class VariantType<S extends string = any> {
      * @param lock_bit a bit value between 0 and 31
      * @since 2.24
      */
-    function bit_unlock(address: (any | null), lock_bit: number): void;
+    function bit_unlock(address: null, lock_bit: number): void;
 
     /**
      * This is like {@link GLib.bit_unlock} but also atomically sets `address` to
@@ -6322,7 +6322,7 @@ export class VariantType<S extends string = any> {
      * @param preserve_mask mask for bits from `address` to preserve
      * @since 2.86
      */
-    function bit_unlock_and_set(address: (any | null), lock_bit: number, new_val: number, preserve_mask: number): void;
+    function bit_unlock_and_set(address: null, lock_bit: number, new_val: number, preserve_mask: number): void;
 
     /**
      * @deprecated since 2.10
@@ -6900,7 +6900,7 @@ export class VariantType<S extends string = any> {
      * @param key the string identifying a data element.
      * @returns the data element, or `null` if it          is not found.
      */
-    function datalist_get_data(datalist: Data, key: string): (any | null);
+    function datalist_get_data(datalist: Data, key: string): null;
 
     /**
      * Gets flags values packed in together with the datalist.
@@ -6917,7 +6917,7 @@ export class VariantType<S extends string = any> {
      * @param key_id the {@link GLib.Quark} identifying a data element.
      * @returns the data element, or `null` if          it is not found.
      */
-    function datalist_id_get_data(datalist: Data, key_id: Quark): (any | null);
+    function datalist_id_get_data(datalist: Data, key_id: Quark): null;
 
     /**
      * Removes multiple keys from a datalist.
@@ -6959,7 +6959,7 @@ export class VariantType<S extends string = any> {
      * destroy functions set for data elements.
      * @param dataset_location the location identifying the dataset.
      */
-    function dataset_destroy(dataset_location: any): void;
+    function dataset_destroy(dataset_location: never): void;
 
     /**
      * Calls the given function for each data element which is associated
@@ -6973,7 +6973,7 @@ export class VariantType<S extends string = any> {
      * @param dataset_location the location identifying the dataset.
      * @param func the function to call for each data element.
      */
-    function dataset_foreach(dataset_location: any, func: DataForeachFunc): void;
+    function dataset_foreach(dataset_location: never, func: DataForeachFunc): void;
 
     /**
      * Gets the data element corresponding to a {@link GLib.Quark}.
@@ -6981,7 +6981,7 @@ export class VariantType<S extends string = any> {
      * @param key_id the {@link GLib.Quark} id to identify the data element.
      * @returns the data element corresponding to          the {@link GLib.Quark}, or `null` if it is not found.
      */
-    function dataset_id_get_data(dataset_location: any, key_id: Quark): (any | null);
+    function dataset_id_get_data(dataset_location: never, key_id: Quark): null;
 
     /**
      * Returns the number of days in a month, taking leap
@@ -7203,7 +7203,7 @@ export class VariantType<S extends string = any> {
      * @param v2 a key to compare with `v1`
      * @returns `true` if the two keys match.
      */
-    function direct_equal(v1: (any | null), v2: (any | null)): boolean;
+    function direct_equal(v1: null, v2: null): boolean;
 
     /**
      * Converts a gpointer to a hash value.
@@ -7216,7 +7216,7 @@ export class VariantType<S extends string = any> {
      * @param v a `gpointer` key
      * @returns a hash value corresponding to the key.
      */
-    function direct_hash(v: (any | null)): number;
+    function direct_hash(v: null): number;
 
     /**
      * This function is a wrapper of `dngettext()` which does not translate
@@ -7245,7 +7245,7 @@ export class VariantType<S extends string = any> {
      * @returns `true` if the two keys match.
      * @since 2.22
      */
-    function double_equal(v1: any, v2: any): boolean;
+    function double_equal(v1: never, v2: never): boolean;
 
     /**
      * Converts a pointer to a `gdouble` to a hash value.
@@ -7256,7 +7256,7 @@ export class VariantType<S extends string = any> {
      * @returns a hash value corresponding to the key.
      * @since 2.22
      */
-    function double_hash(v: any): number;
+    function double_hash(v: never): number;
 
     /**
      * This function is a variant of `g_dgettext()` which supports
@@ -7759,7 +7759,7 @@ export class VariantType<S extends string = any> {
      * @returns A `FILE*` if the file was successfully opened, or `null` if     an error occurred
      * @since 2.6
      */
-    function fopen(filename: string, mode: string): (any | null);
+    function fopen(filename: string, mode: string): null;
 
     /**
      * Formats a size (for example the size of a file) into a human readable
@@ -7826,7 +7826,7 @@ export class VariantType<S extends string = any> {
      * against `null` before calling this function.
      * @param mem the memory to free
      */
-    function free(mem: (any | null)): void;
+    function free(mem: null): void;
 
     /**
      * Frees the memory pointed to by `mem`, assuming it is has the given `size`.
@@ -7844,7 +7844,7 @@ export class VariantType<S extends string = any> {
      * @param size size of `mem`, in bytes
      * @since 2.76
      */
-    function free_sized(mem: (any | null), size: (bigint | number)): void;
+    function free_sized(mem: null, size: (bigint | number)): void;
 
     /**
      * A wrapper for the POSIX `freopen()` function. The `freopen()` function
@@ -7860,7 +7860,7 @@ export class VariantType<S extends string = any> {
      * @returns A FILE* if the file was successfully opened, or `null` if     an error occurred.
      * @since 2.6
      */
-    function freopen(filename: string, mode: string, stream: (any | null)): (any | null);
+    function freopen(filename: string, mode: string, stream: null): null;
 
     /**
      * A wrapper for the POSIX `fsync()` function. On Windows, `_commit()` will be
@@ -8477,7 +8477,7 @@ export class VariantType<S extends string = any> {
      * @returns `true` if the key did not exist yet
      * @since 2.32
      */
-    function hash_table_add(hash_table: ({ [key: string]: any } | HashTable<any, any>), key: (any | null)): boolean;
+    function hash_table_add(hash_table: ({ [key: string]: any } | HashTable<never, never>), key: null): boolean;
 
     /**
      * Checks if `key` is in `hash_table`.
@@ -8486,7 +8486,7 @@ export class VariantType<S extends string = any> {
      * @returns `true` if `key` is in `hash_table`, `false` otherwise.
      * @since 2.32
      */
-    function hash_table_contains(hash_table: ({ [key: string]: any } | HashTable<any, any>), key: (any | null)): boolean;
+    function hash_table_contains(hash_table: ({ [key: string]: any } | HashTable<never, never>), key: null): boolean;
 
     /**
      * Destroys all keys and values in the {@link GLib.HashTable} and decrements its
@@ -8497,7 +8497,7 @@ export class VariantType<S extends string = any> {
      * destruction phase.
      * @param hash_table a {@link GLib.HashTable}
      */
-    function hash_table_destroy(hash_table: ({ [key: string]: any } | HashTable<any, any>)): void;
+    function hash_table_destroy(hash_table: ({ [key: string]: any } | HashTable<never, never>)): void;
 
     /**
      * Calls the given function for key/value pairs in the {@link GLib.HashTable}
@@ -8518,7 +8518,7 @@ export class VariantType<S extends string = any> {
      * @returns The value of the first key/value pair is returned,     for which `predicate` evaluates to `true`. If no pair with the     requested property is found, `null` is returned.
      * @since 2.4
      */
-    function hash_table_find(hash_table: ({ [key: string]: any } | HashTable<any, any>), predicate: HRFunc): (any | null);
+    function hash_table_find(hash_table: ({ [key: string]: any } | HashTable<never, never>), predicate: HRFunc): null;
 
     /**
      * Calls the given function for each of the key/value pairs in the
@@ -8536,7 +8536,7 @@ export class VariantType<S extends string = any> {
      * @param hash_table a {@link GLib.HashTable}
      * @param func the function to call for each key/value pair
      */
-    function hash_table_foreach(hash_table: ({ [key: string]: any } | HashTable<any, any>), func: HFunc): void;
+    function hash_table_foreach(hash_table: ({ [key: string]: any } | HashTable<never, never>), func: HFunc): void;
 
     /**
      * Calls the given function for each key/value pair in the
@@ -8551,7 +8551,7 @@ export class VariantType<S extends string = any> {
      * @param func the function to call for each key/value pair
      * @returns the number of key/value pairs removed
      */
-    function hash_table_foreach_remove(hash_table: ({ [key: string]: any } | HashTable<any, any>), func: HRFunc): number;
+    function hash_table_foreach_remove(hash_table: ({ [key: string]: any } | HashTable<never, never>), func: HRFunc): number;
 
     /**
      * Calls the given function for each key/value pair in the
@@ -8565,7 +8565,7 @@ export class VariantType<S extends string = any> {
      * @param func the function to call for each key/value pair
      * @returns the number of key/value pairs removed.
      */
-    function hash_table_foreach_steal(hash_table: ({ [key: string]: any } | HashTable<any, any>), func: HRFunc): number;
+    function hash_table_foreach_steal(hash_table: ({ [key: string]: any } | HashTable<never, never>), func: HRFunc): number;
 
     /**
      * Inserts a new key and value into a {@link GLib.HashTable}.
@@ -8585,7 +8585,7 @@ export class VariantType<S extends string = any> {
      * @param value the value to associate with the key
      * @returns `true` if the key did not exist yet
      */
-    function hash_table_insert(hash_table: ({ [key: string]: any } | HashTable<any, any>), key: (any | null), value: (any | null)): boolean;
+    function hash_table_insert(hash_table: ({ [key: string]: any } | HashTable<never, never>), key: null, value: null): boolean;
 
     /**
      * Looks up a key in a {@link GLib.HashTable}. Note that this function cannot
@@ -8596,7 +8596,7 @@ export class VariantType<S extends string = any> {
      * @param key the key to look up
      * @returns the associated value, or `null` if the key is not found
      */
-    function hash_table_lookup(hash_table: ({ [key: string]: any } | HashTable<any, any>), key: (any | null)): (any | null);
+    function hash_table_lookup(hash_table: ({ [key: string]: any } | HashTable<never, never>), key: null): null;
 
     /**
      * Looks up a key in the {@link GLib.HashTable}, returning the original key and the
@@ -8611,7 +8611,7 @@ export class VariantType<S extends string = any> {
      * @param lookup_key the key to look up
      * @returns `true` if the key was found in the {@link GLib.HashTable}
      */
-    function hash_table_lookup_extended(hash_table: ({ [key: string]: any } | HashTable<any, any>), lookup_key: (any | null)): [boolean, any, any];
+    function hash_table_lookup_extended(hash_table: ({ [key: string]: any } | HashTable<never, never>), lookup_key: null): [boolean, null, null];
 
     /**
      * Creates a new {@link GLib.HashTable} like `g_hash_table_new_full()` with a reference
@@ -8626,7 +8626,7 @@ export class VariantType<S extends string = any> {
      * @returns a new {@link GLib.HashTable}
      * @since 2.72
      */
-    function hash_table_new_similar(other_hash_table: ({ [key: string]: any } | HashTable<any, any>)): HashTable<any, any>;
+    function hash_table_new_similar(other_hash_table: ({ [key: string]: any } | HashTable<never, never>)): HashTable<never, never>;
 
     /**
      * Atomically increments the reference count of `hash_table` by one.
@@ -8635,7 +8635,7 @@ export class VariantType<S extends string = any> {
      * @returns the passed in {@link GLib.HashTable}
      * @since 2.10
      */
-    function hash_table_ref(hash_table: ({ [key: string]: any } | HashTable<any, any>)): HashTable<any, any>;
+    function hash_table_ref(hash_table: ({ [key: string]: any } | HashTable<never, never>)): HashTable<never, never>;
 
     /**
      * Removes a key and its associated value from a {@link GLib.HashTable}.
@@ -8648,7 +8648,7 @@ export class VariantType<S extends string = any> {
      * @param key the key to remove
      * @returns `true` if the key was found and removed from the {@link GLib.HashTable}
      */
-    function hash_table_remove(hash_table: ({ [key: string]: any } | HashTable<any, any>), key: (any | null)): boolean;
+    function hash_table_remove(hash_table: ({ [key: string]: any } | HashTable<never, never>), key: null): boolean;
 
     /**
      * Removes all keys and their associated values from a {@link GLib.HashTable}.
@@ -8660,7 +8660,7 @@ export class VariantType<S extends string = any> {
      * @param hash_table a {@link GLib.HashTable}
      * @since 2.12
      */
-    function hash_table_remove_all(hash_table: ({ [key: string]: any } | HashTable<any, any>)): void;
+    function hash_table_remove_all(hash_table: ({ [key: string]: any } | HashTable<never, never>)): void;
 
     /**
      * Inserts a new key and value into a {@link GLib.HashTable} similar to
@@ -8679,14 +8679,14 @@ export class VariantType<S extends string = any> {
      * @param value the value to associate with the key
      * @returns `true` if the key did not exist yet
      */
-    function hash_table_replace(hash_table: ({ [key: string]: any } | HashTable<any, any>), key: (any | null), value: (any | null)): boolean;
+    function hash_table_replace(hash_table: ({ [key: string]: any } | HashTable<never, never>), key: null, value: null): boolean;
 
     /**
      * Returns the number of elements contained in the {@link GLib.HashTable}.
      * @param hash_table a {@link GLib.HashTable}
      * @returns the number of key/value pairs in the {@link GLib.HashTable}.
      */
-    function hash_table_size(hash_table: ({ [key: string]: any } | HashTable<any, any>)): number;
+    function hash_table_size(hash_table: ({ [key: string]: any } | HashTable<never, never>)): number;
 
     /**
      * Removes a key and its associated value from a {@link GLib.HashTable} without
@@ -8695,7 +8695,7 @@ export class VariantType<S extends string = any> {
      * @param key the key to remove
      * @returns `true` if the key was found and removed from the {@link GLib.HashTable}
      */
-    function hash_table_steal(hash_table: ({ [key: string]: any } | HashTable<any, any>), key: (any | null)): boolean;
+    function hash_table_steal(hash_table: ({ [key: string]: any } | HashTable<never, never>), key: null): boolean;
 
     /**
      * Removes all keys and their associated values from a {@link GLib.HashTable}
@@ -8703,7 +8703,7 @@ export class VariantType<S extends string = any> {
      * @param hash_table a {@link GLib.HashTable}
      * @since 2.12
      */
-    function hash_table_steal_all(hash_table: ({ [key: string]: any } | HashTable<any, any>)): void;
+    function hash_table_steal_all(hash_table: ({ [key: string]: any } | HashTable<never, never>)): void;
 
     /**
      * Looks up a key in the {@link GLib.HashTable}, stealing the original key and the
@@ -8728,7 +8728,7 @@ export class VariantType<S extends string = any> {
      * @returns `true` if the key was found in the {@link GLib.HashTable}
      * @since 2.58
      */
-    function hash_table_steal_extended(hash_table: ({ [key: string]: any } | HashTable<any, any>), lookup_key: (any | null)): [boolean, any, any];
+    function hash_table_steal_extended(hash_table: ({ [key: string]: any } | HashTable<never, never>), lookup_key: null): [boolean, null, null];
 
     /**
      * Atomically decrements the reference count of `hash_table` by one.
@@ -8738,7 +8738,7 @@ export class VariantType<S extends string = any> {
      * @param hash_table a valid {@link GLib.HashTable}
      * @since 2.10
      */
-    function hash_table_unref(hash_table: ({ [key: string]: any } | HashTable<any, any>)): void;
+    function hash_table_unref(hash_table: ({ [key: string]: any } | HashTable<never, never>)): void;
 
     /**
      * Destroys a {@link GLib.Hook}, given its ID.
@@ -8886,7 +8886,7 @@ export class VariantType<S extends string = any> {
      * @param data the data for the idle source’s callback.
      * @returns true if an idle source was found and removed, false otherwise
      */
-    function idle_remove_by_data(data: (any | null)): boolean;
+    function idle_remove_by_data(data: null): boolean;
 
     /**
      * Creates a new idle source.
@@ -8912,7 +8912,7 @@ export class VariantType<S extends string = any> {
      * @returns `true` if the two keys match.
      * @since 2.22
      */
-    function int64_equal(v1: any, v2: any): boolean;
+    function int64_equal(v1: never, v2: never): boolean;
 
     /**
      * Converts a pointer to a `gint64` to a hash value.
@@ -8924,7 +8924,7 @@ export class VariantType<S extends string = any> {
      * @returns a hash value corresponding to the key.
      * @since 2.22
      */
-    function int64_hash(v: any): number;
+    function int64_hash(v: never): number;
 
     /**
      * Compares the two `gint` values being pointed to and returns
@@ -8940,7 +8940,7 @@ export class VariantType<S extends string = any> {
      * @param v2 a pointer to a `gint` key to compare with `v1`
      * @returns `true` if the two keys match.
      */
-    function int_equal(v1: any, v2: any): boolean;
+    function int_equal(v1: never, v2: never): boolean;
 
     /**
      * Converts a pointer to a `gint` to a hash value.
@@ -8953,7 +8953,7 @@ export class VariantType<S extends string = any> {
      * @param v a pointer to a `gint` key
      * @returns a hash value corresponding to the key.
      */
-    function int_hash(v: any): number;
+    function int_hash(v: never): number;
 
     /**
      * Returns a canonical representation for `string`. Interned strings
@@ -9126,7 +9126,7 @@ export class VariantType<S extends string = any> {
      * @param message the message
      * @param unused_data data passed from {@link GLib.log} which is unused
      */
-    function log_default_handler(log_domain: (string | null), log_level: LogLevelFlags, message: (string | null), unused_data: (any | null)): void;
+    function log_default_handler(log_domain: (string | null), log_level: LogLevelFlags, message: (string | null), unused_data: null): void;
 
     /**
      * Gets the current fatal mask.
@@ -9348,7 +9348,7 @@ export class VariantType<S extends string = any> {
      * @returns {@link GLib.LogWriterOutput.HANDLED} on success,   {@link GLib.LogWriterOutput.UNHANDLED} otherwise
      * @since 2.50
      */
-    function log_writer_default(log_level: LogLevelFlags, fields: LogField[], user_data: (any | null)): LogWriterOutput;
+    function log_writer_default(log_level: LogLevelFlags, fields: LogField[], user_data: null): LogWriterOutput;
 
     /**
      * Reset the list of domains to be logged, that might be initially set by the
@@ -9471,7 +9471,7 @@ export class VariantType<S extends string = any> {
      * @returns {@link GLib.LogWriterOutput.HANDLED} on success, {@link GLib.LogWriterOutput.UNHANDLED} otherwise
      * @since 2.50
      */
-    function log_writer_journald(log_level: LogLevelFlags, fields: LogField[], user_data: (any | null)): LogWriterOutput;
+    function log_writer_journald(log_level: LogLevelFlags, fields: LogField[], user_data: null): LogWriterOutput;
 
     /**
      * Format a structured log message and print it to either `stdout` or `stderr`,
@@ -9497,7 +9497,7 @@ export class VariantType<S extends string = any> {
      * @returns {@link GLib.LogWriterOutput.HANDLED} on success,   {@link GLib.LogWriterOutput.UNHANDLED} otherwise
      * @since 2.50
      */
-    function log_writer_standard_streams(log_level: LogLevelFlags, fields: LogField[], user_data: (any | null)): LogWriterOutput;
+    function log_writer_standard_streams(log_level: LogLevelFlags, fields: LogField[], user_data: null): LogWriterOutput;
 
     /**
      * Check whether the given `output_fd` file descriptor supports
@@ -9529,7 +9529,7 @@ export class VariantType<S extends string = any> {
      * @returns {@link GLib.LogWriterOutput.HANDLED} on success, {@link GLib.LogWriterOutput.UNHANDLED} otherwise
      * @since 2.80
      */
-    function log_writer_syslog(log_level: LogLevelFlags, fields: LogField[], user_data: (any | null)): LogWriterOutput;
+    function log_writer_syslog(log_level: LogLevelFlags, fields: LogField[], user_data: null): LogWriterOutput;
 
     /**
      * A wrapper for the POSIX `lstat()` function. The `lstat()` function is
@@ -9714,7 +9714,7 @@ export class VariantType<S extends string = any> {
      * @param n_bytes the number of bytes to allocate
      * @returns a pointer to the allocated memory
      */
-    function malloc(n_bytes: (bigint | number)): (any | null);
+    function malloc(n_bytes: (bigint | number)): null;
 
     /**
      * Allocates `n_bytes` bytes of memory, initialized to 0's.
@@ -9725,7 +9725,7 @@ export class VariantType<S extends string = any> {
      * @param n_bytes the number of bytes to allocate
      * @returns a pointer to the allocated memory
      */
-    function malloc0(n_bytes: (bigint | number)): (any | null);
+    function malloc0(n_bytes: (bigint | number)): null;
 
     /**
      * This function is similar to `g_malloc0()`, allocating (`n_blocks` * `n_block_bytes`) bytes,
@@ -9738,7 +9738,7 @@ export class VariantType<S extends string = any> {
      * @returns a pointer to the allocated memory
      * @since 2.24
      */
-    function malloc0_n(n_blocks: (bigint | number), n_block_bytes: (bigint | number)): (any | null);
+    function malloc0_n(n_blocks: (bigint | number), n_block_bytes: (bigint | number)): null;
 
     /**
      * This function is similar to `g_malloc()`, allocating (`n_blocks` * `n_block_bytes`) bytes,
@@ -9751,7 +9751,7 @@ export class VariantType<S extends string = any> {
      * @returns a pointer to the allocated memory
      * @since 2.24
      */
-    function malloc_n(n_blocks: (bigint | number), n_block_bytes: (bigint | number)): (any | null);
+    function malloc_n(n_blocks: (bigint | number), n_block_bytes: (bigint | number)): null;
 
     function markup_error_quark(): Quark;
 
@@ -9818,7 +9818,7 @@ export class VariantType<S extends string = any> {
      * @returns a pointer to the newly-allocated copy of the memory
      * @deprecated since 2.68: Use {@link GLib.memdup2} instead, as it accepts a gsize argument   for `byte_size`, avoiding the possibility of overflow in a `gsize` → `guint`   conversion
      */
-    function memdup(mem: (any | null), byte_size: number): (any | null);
+    function memdup(mem: null, byte_size: number): null;
 
     /**
      * Allocates `byte_size` bytes of memory, and copies `byte_size` bytes into it
@@ -9831,7 +9831,7 @@ export class VariantType<S extends string = any> {
      * @returns a pointer to the newly-allocated copy of the memory
      * @since 2.68
      */
-    function memdup2(mem: (any | null), byte_size: (bigint | number)): (any | null);
+    function memdup2(mem: null, byte_size: (bigint | number)): null;
 
     /**
      * A wrapper for the POSIX `mkdir()` function. The `mkdir()` function
@@ -9871,7 +9871,7 @@ export class VariantType<S extends string = any> {
      * Set the pointer at the specified location to `null`.
      * @param nullify_location the memory address of the pointer.
      */
-    function nullify_pointer(nullify_location: any): void;
+    function nullify_pointer(nullify_location: never): void;
 
     function number_parser_error_quark(): Quark;
 
@@ -9978,7 +9978,7 @@ export class VariantType<S extends string = any> {
      * @returns `true` if the initialization section should be entered,     `false` and blocks otherwise
      * @since 2.14
      */
-    function once_init_enter(location: any): [boolean, any];
+    function once_init_enter(location: never): [boolean, null];
 
     /**
      * @param location 
@@ -10007,7 +10007,7 @@ export class VariantType<S extends string = any> {
      * @returns `true` if the initialization section should be entered,     `false` and blocks otherwise
      * @since 2.80
      */
-    function once_init_enter_pointer(location: any): boolean;
+    function once_init_enter_pointer(location: never): boolean;
 
     /**
      * Counterpart to `g_once_init_enter()`. Expects a location of a static
@@ -10022,7 +10022,7 @@ export class VariantType<S extends string = any> {
      * @param result new non-0 value for `*value_location`
      * @since 2.14
      */
-    function once_init_leave(location: any, result: (bigint | number)): any;
+    function once_init_leave(location: never, result: (bigint | number)): null;
 
     /**
      * Counterpart to `g_once_init_enter_pointer()`. Expects a location of a static
@@ -10037,7 +10037,7 @@ export class VariantType<S extends string = any> {
      * @param result new non-`NULL` value for `*location`
      * @since 2.80
      */
-    function once_init_leave_pointer(location: any, result: (any | null)): void;
+    function once_init_leave_pointer(location: never, result: null): void;
 
     /**
      * A wrapper for the POSIX `open()` function. The `open()` function is
@@ -10102,7 +10102,7 @@ export class VariantType<S extends string = any> {
      * @returns `TRUE` if the two path buffers are equal,   and `FALSE` otherwise
      * @since 2.76
      */
-    function path_buf_equal(v1: any, v2: any): boolean;
+    function path_buf_equal(v1: never, v2: never): boolean;
 
     /**
      * Gets the last component of the filename.
@@ -10193,7 +10193,7 @@ export class VariantType<S extends string = any> {
      * @param lock_bit a bit value between 0 and 31
      * @since 2.30
      */
-    function pointer_bit_lock(address: any, lock_bit: number): void;
+    function pointer_bit_lock(address: never, lock_bit: number): void;
 
     /**
      * This is equivalent to g_bit_lock, but working on pointers (or other
@@ -10205,7 +10205,7 @@ export class VariantType<S extends string = any> {
      * @param lock_bit a bit value between 0 and 31
      * @since 2.80
      */
-    function pointer_bit_lock_and_get(address: any, lock_bit: number): number;
+    function pointer_bit_lock_and_get(address: never, lock_bit: number): number;
 
     /**
      * This mangles `ptr` as `g_pointer_bit_lock()` and `g_pointer_bit_unlock()`
@@ -10218,7 +10218,7 @@ export class VariantType<S extends string = any> {
      * @returns the mangled pointer.
      * @since 2.80
      */
-    function pointer_bit_lock_mask_ptr(ptr: (any | null), lock_bit: number, set: boolean, preserve_mask: (bigint | number), preserve_ptr: (any | null)): (any | null);
+    function pointer_bit_lock_mask_ptr(ptr: null, lock_bit: number, set: boolean, preserve_mask: (bigint | number), preserve_ptr: null): null;
 
     /**
      * This is equivalent to `g_bit_trylock()`, but working on pointers (or
@@ -10234,7 +10234,7 @@ export class VariantType<S extends string = any> {
      * @returns `true` if the lock was acquired
      * @since 2.30
      */
-    function pointer_bit_trylock(address: any, lock_bit: number): boolean;
+    function pointer_bit_trylock(address: never, lock_bit: number): boolean;
 
     /**
      * This is equivalent to g_bit_unlock, but working on pointers (or other
@@ -10249,7 +10249,7 @@ export class VariantType<S extends string = any> {
      * @param lock_bit a bit value between 0 and 31
      * @since 2.30
      */
-    function pointer_bit_unlock(address: any, lock_bit: number): void;
+    function pointer_bit_unlock(address: never, lock_bit: number): void;
 
     /**
      * This is equivalent to `g_pointer_bit_unlock()` and atomically setting
@@ -10265,7 +10265,7 @@ export class VariantType<S extends string = any> {
      * @param preserve_mask if non-zero, those bits of the current pointer in `address`   are preserved.   Note that the `lock_bit` bit will be always unset regardless of   `ptr`, `preserve_mask` and the currently set value in `address`.
      * @since 2.80
      */
-    function pointer_bit_unlock_and_set(address: any, lock_bit: number, ptr: (any | null), preserve_mask: (bigint | number)): void;
+    function pointer_bit_unlock_and_set(address: never, lock_bit: number, ptr: null, preserve_mask: (bigint | number)): void;
 
     /**
      * Polls `fds`, as with the `poll()` system call, but portably. (On
@@ -10327,7 +10327,7 @@ export class VariantType<S extends string = any> {
      * @param compare_func function to compare elements
      * @deprecated since 2.82: `total_elems` is too small to represent larger arrays; use   {@link GLib.sort_array} instead
      */
-    function qsort_with_data(pbase: any, total_elems: number, size: (bigint | number), compare_func: CompareDataFunc): void;
+    function qsort_with_data(pbase: never, total_elems: number, size: (bigint | number), compare_func: CompareDataFunc): void;
 
     /**
      * Gets the {@link GLib.Quark} identifying the given (static) string. If the
@@ -10429,7 +10429,7 @@ export class VariantType<S extends string = any> {
      * @returns a pointer to the data,   with its reference count increased
      * @since 2.58
      */
-    function rc_box_acquire(mem_block: any): any;
+    function rc_box_acquire(mem_block: never): null;
 
     /**
      * Allocates `block_size` bytes of memory, and adds reference
@@ -10444,7 +10444,7 @@ export class VariantType<S extends string = any> {
      * @returns a pointer to the allocated memory
      * @since 2.58
      */
-    function rc_box_alloc(block_size: (bigint | number)): any;
+    function rc_box_alloc(block_size: (bigint | number)): null;
 
     /**
      * Allocates `block_size` bytes of memory, and adds reference
@@ -10461,7 +10461,7 @@ export class VariantType<S extends string = any> {
      * @returns a pointer to the allocated memory
      * @since 2.58
      */
-    function rc_box_alloc0(block_size: (bigint | number)): any;
+    function rc_box_alloc0(block_size: (bigint | number)): null;
 
     /**
      * Allocates a new block of data with reference counting
@@ -10472,7 +10472,7 @@ export class VariantType<S extends string = any> {
      * @returns a pointer to the allocated   memory
      * @since 2.58
      */
-    function rc_box_dup(block_size: (bigint | number), mem_block: any): any;
+    function rc_box_dup(block_size: (bigint | number), mem_block: never): null;
 
     /**
      * Retrieves the size of the reference counted data pointed by `mem_block`.
@@ -10480,7 +10480,7 @@ export class VariantType<S extends string = any> {
      * @returns the size of the data, in bytes
      * @since 2.58
      */
-    function rc_box_get_size(mem_block: any): number;
+    function rc_box_get_size(mem_block: never): number;
 
     /**
      * Releases a reference on the data pointed by `mem_block`.
@@ -10490,7 +10490,7 @@ export class VariantType<S extends string = any> {
      * @param mem_block a pointer to reference counted data
      * @since 2.58
      */
-    function rc_box_release(mem_block: any): void;
+    function rc_box_release(mem_block: never): void;
 
     /**
      * Releases a reference on the data pointed by `mem_block`.
@@ -10501,7 +10501,7 @@ export class VariantType<S extends string = any> {
      * @param mem_block a pointer to reference counted data
      * @since 2.58
      */
-    function rc_box_release_full(mem_block: any): void;
+    function rc_box_release_full(mem_block: never): void;
 
     /**
      * Reallocates the memory pointed to by `mem`, so that it now has space for
@@ -10516,7 +10516,7 @@ export class VariantType<S extends string = any> {
      * @param n_bytes new size of the memory in bytes
      * @returns the new address of the allocated memory
      */
-    function realloc(mem: (any | null), n_bytes: (bigint | number)): (any | null);
+    function realloc(mem: null, n_bytes: (bigint | number)): null;
 
     /**
      * This function is similar to `g_realloc()`, allocating (`n_blocks` * `n_block_bytes`) bytes,
@@ -10530,7 +10530,7 @@ export class VariantType<S extends string = any> {
      * @returns the new address of the allocated memory
      * @since 2.24
      */
-    function realloc_n(mem: (any | null), n_blocks: (bigint | number), n_block_bytes: (bigint | number)): (any | null);
+    function realloc_n(mem: null, n_blocks: (bigint | number), n_block_bytes: (bigint | number)): null;
 
     /**
      * Compares the current value of `rc` with `val`.
@@ -10821,7 +10821,7 @@ export class VariantType<S extends string = any> {
      * @returns the data that `iter` points to
      * @since 2.14
      */
-    function sequence_get(iter: SequenceIter): (any | null);
+    function sequence_get(iter: SequenceIter): null;
 
     /**
      * Inserts a new item just before the item pointed to by `iter`.
@@ -10830,7 +10830,7 @@ export class VariantType<S extends string = any> {
      * @returns an iterator pointing to the new item
      * @since 2.14
      */
-    function sequence_insert_before(iter: SequenceIter, data: (any | null)): SequenceIter;
+    function sequence_insert_before(iter: SequenceIter, data: null): SequenceIter;
 
     /**
      * Moves the item pointed to by `src` to the position indicated by `dest`.
@@ -10903,7 +10903,7 @@ export class VariantType<S extends string = any> {
      * @param data new data for the item
      * @since 2.14
      */
-    function sequence_set(iter: SequenceIter, data: (any | null)): void;
+    function sequence_set(iter: SequenceIter, data: null): void;
 
     /**
      * Moves the data pointed to by `iter` to a new position as indicated by
@@ -11112,7 +11112,7 @@ export class VariantType<S extends string = any> {
      * @returns a pointer to the allocated memory block, which will   be `null` if and only if `mem_size` is 0
      * @since 2.10
      */
-    function slice_alloc(block_size: (bigint | number)): (any | null);
+    function slice_alloc(block_size: (bigint | number)): null;
 
     /**
      * Allocates a block of memory via `g_slice_alloc()` and initializes
@@ -11124,7 +11124,7 @@ export class VariantType<S extends string = any> {
      * @returns a pointer to the allocated block, which will be `null`    if and only if `mem_size` is 0
      * @since 2.10
      */
-    function slice_alloc0(block_size: (bigint | number)): (any | null);
+    function slice_alloc0(block_size: (bigint | number)): null;
 
     /**
      * Allocates a block of memory from the slice allocator
@@ -11139,7 +11139,7 @@ export class VariantType<S extends string = any> {
      * @returns a pointer to the allocated memory block,    which will be `null` if and only if `mem_size` is 0
      * @since 2.14
      */
-    function slice_copy(block_size: (bigint | number), mem_block: (any | null)): (any | null);
+    function slice_copy(block_size: (bigint | number), mem_block: null): null;
 
     /**
      * Frees a block of memory.
@@ -11158,7 +11158,7 @@ export class VariantType<S extends string = any> {
      * @param mem_block a pointer to the block to free
      * @since 2.10
      */
-    function slice_free1(block_size: (bigint | number), mem_block: (any | null)): void;
+    function slice_free1(block_size: (bigint | number), mem_block: null): void;
 
     /**
      * Frees a linked list of memory blocks of structure type `type`.
@@ -11179,7 +11179,7 @@ export class VariantType<S extends string = any> {
      * @param next_offset the offset of the `next` field in the blocks
      * @since 2.10
      */
-    function slice_free_chain_with_offset(block_size: (bigint | number), mem_chain: (any | null), next_offset: (bigint | number)): void;
+    function slice_free_chain_with_offset(block_size: (bigint | number), mem_chain: null, next_offset: (bigint | number)): void;
 
     /**
      * @param ckey 
@@ -11248,7 +11248,7 @@ export class VariantType<S extends string = any> {
      * @param user_data the user data for the callback
      * @returns true if a source was found and removed, false otherwise
      */
-    function source_remove_by_funcs_user_data(funcs: SourceFuncs, user_data: (any | null)): boolean;
+    function source_remove_by_funcs_user_data(funcs: SourceFuncs, user_data: null): boolean;
 
     /**
      * Removes a source from the default main loop context given the user
@@ -11258,7 +11258,7 @@ export class VariantType<S extends string = any> {
      * @param user_data the user_data for the callback
      * @returns true if a source was found and removed, false otherwise
      */
-    function source_remove_by_user_data(user_data: (any | null)): boolean;
+    function source_remove_by_user_data(user_data: null): boolean;
 
     /**
      * Sets the name of a source using its ID.
@@ -11773,7 +11773,7 @@ export class VariantType<S extends string = any> {
      * @param v2 a key to compare with `v1`
      * @returns `true` if the two keys match
      */
-    function str_equal(v1: any, v2: any): boolean;
+    function str_equal(v1: never, v2: never): boolean;
 
     /**
      * Looks whether the string `str` begins with `prefix`.
@@ -11811,7 +11811,7 @@ export class VariantType<S extends string = any> {
      * @param v a string key
      * @returns a hash value corresponding to the key
      */
-    function str_hash(v: any): number;
+    function str_hash(v: never): number;
 
     /**
      * Determines if a string is pure ASCII. A string is pure ASCII if it
@@ -12413,7 +12413,7 @@ export class VariantType<S extends string = any> {
      * @param test_func the test function to invoke for this test
      * @since 2.16
      */
-    function test_add_data_func(testpath: string, test_data: (any | null), test_func: TestDataFunc): void;
+    function test_add_data_func(testpath: string, test_data: null, test_func: TestDataFunc): void;
 
     /**
      * Creates a new test case.
@@ -12425,7 +12425,7 @@ export class VariantType<S extends string = any> {
      * @param test_func the test function to invoke for this test
      * @since 2.34
      */
-    function test_add_data_func_full(testpath: string, test_data: (any | null), test_func: TestDataFunc): void;
+    function test_add_data_func_full(testpath: string, test_data: null, test_func: TestDataFunc): void;
 
     /**
      * Creates a new test case.
@@ -12647,7 +12647,7 @@ export class VariantType<S extends string = any> {
      * @param destroy_data destroy callback data
      * @since 2.16
      */
-    function test_queue_destroy(destroy_data: (any | null)): void;
+    function test_queue_destroy(destroy_data: null): void;
 
     /**
      * Enqueues a pointer to be released with {@link GLib.free}
@@ -12658,7 +12658,7 @@ export class VariantType<S extends string = any> {
      * @param gfree_pointer the pointer to be stored
      * @since 2.16
      */
-    function test_queue_free(gfree_pointer: (any | null)): void;
+    function test_queue_free(gfree_pointer: null): void;
 
     /**
      * Gets a reproducible random floating point number.
@@ -13055,7 +13055,7 @@ export class VariantType<S extends string = any> {
      * or or from within a {@link GLib.ThreadPool}.
      * @param retval the return value of this thread
      */
-    function thread_exit(retval: (any | null)): void;
+    function thread_exit(retval: null): void;
 
     /**
      * This function will return the maximum `interval` that a
@@ -13297,7 +13297,7 @@ export class VariantType<S extends string = any> {
      * @returns the element at the top of the stack
      * @deprecated since 2.48: {@link GLib.TrashStack} is deprecated without replacement
      */
-    function trash_stack_peek(stack_p: TrashStack): (any | null);
+    function trash_stack_peek(stack_p: TrashStack): null;
 
     /**
      * Pops a piece of memory off a {@link GLib.TrashStack}.
@@ -13305,7 +13305,7 @@ export class VariantType<S extends string = any> {
      * @returns the element at the top of the stack
      * @deprecated since 2.48: {@link GLib.TrashStack} is deprecated without replacement
      */
-    function trash_stack_pop(stack_p: TrashStack): (any | null);
+    function trash_stack_pop(stack_p: TrashStack): null;
 
     /**
      * Pushes a piece of memory onto a {@link GLib.TrashStack}.
@@ -13313,7 +13313,7 @@ export class VariantType<S extends string = any> {
      * @param data_p the piece of memory to push on the stack
      * @deprecated since 2.48: {@link GLib.TrashStack} is deprecated without replacement
      */
-    function trash_stack_push(stack_p: TrashStack, data_p: any): void;
+    function trash_stack_push(stack_p: TrashStack, data_p: never): void;
 
     /**
      * Attempts to allocate `n_bytes`, and returns `null` on failure.
@@ -13321,7 +13321,7 @@ export class VariantType<S extends string = any> {
      * @param n_bytes number of bytes to allocate.
      * @returns the allocated memory, or `null`.
      */
-    function try_malloc(n_bytes: (bigint | number)): (any | null);
+    function try_malloc(n_bytes: (bigint | number)): null;
 
     /**
      * Attempts to allocate `n_bytes`, initialized to 0's, and returns `null` on
@@ -13330,7 +13330,7 @@ export class VariantType<S extends string = any> {
      * @returns the allocated memory, or `null`
      * @since 2.8
      */
-    function try_malloc0(n_bytes: (bigint | number)): (any | null);
+    function try_malloc0(n_bytes: (bigint | number)): null;
 
     /**
      * This function is similar to `g_try_malloc0()`, allocating (`n_blocks` * `n_block_bytes`) bytes,
@@ -13340,7 +13340,7 @@ export class VariantType<S extends string = any> {
      * @returns the allocated memory, or `null`
      * @since 2.24
      */
-    function try_malloc0_n(n_blocks: (bigint | number), n_block_bytes: (bigint | number)): (any | null);
+    function try_malloc0_n(n_blocks: (bigint | number), n_block_bytes: (bigint | number)): null;
 
     /**
      * This function is similar to `g_try_malloc()`, allocating (`n_blocks` * `n_block_bytes`) bytes,
@@ -13350,7 +13350,7 @@ export class VariantType<S extends string = any> {
      * @returns the allocated memory, or `null`.
      * @since 2.24
      */
-    function try_malloc_n(n_blocks: (bigint | number), n_block_bytes: (bigint | number)): (any | null);
+    function try_malloc_n(n_blocks: (bigint | number), n_block_bytes: (bigint | number)): null;
 
     /**
      * Attempts to realloc `mem` to a new size, `n_bytes`, and returns `null`
@@ -13362,7 +13362,7 @@ export class VariantType<S extends string = any> {
      * @param n_bytes number of bytes to allocate.
      * @returns the allocated memory, or `null`.
      */
-    function try_realloc(mem: (any | null), n_bytes: (bigint | number)): (any | null);
+    function try_realloc(mem: null, n_bytes: (bigint | number)): null;
 
     /**
      * This function is similar to `g_try_realloc()`, allocating (`n_blocks` * `n_block_bytes`) bytes,
@@ -13373,7 +13373,7 @@ export class VariantType<S extends string = any> {
      * @returns the allocated memory, or `null`.
      * @since 2.24
      */
-    function try_realloc_n(mem: (any | null), n_blocks: (bigint | number), n_block_bytes: (bigint | number)): (any | null);
+    function try_realloc_n(mem: null, n_blocks: (bigint | number), n_block_bytes: (bigint | number)): null;
 
     /**
      * Convert a string from UCS-4 to UTF-16.
@@ -14693,7 +14693,7 @@ export class VariantType<S extends string = any> {
      * @returns 0 if the operation was successful, -1 if an error occurred
      * @since 2.18
      */
-    function utime(filename: string, utb: (any | null)): number;
+    function utime(filename: string, utb: null): number;
 
     /**
      * Parses the string `str` and verify if it is a UUID.
@@ -14890,21 +14890,21 @@ export class VariantType<S extends string = any> {
      * @gir-type Callback
      */
     interface CacheDestroyFunc {
-        (value: (any | null)): void;
+        (value: null): void;
     }
 
     /**
      * @gir-type Callback
      */
     interface CacheDupFunc {
-        (value: (any | null)): (any | null);
+        (value: null): null;
     }
 
     /**
      * @gir-type Callback
      */
     interface CacheNewFunc {
-        (key: (any | null)): (any | null);
+        (key: null): null;
     }
 
     /**
@@ -14925,21 +14925,21 @@ export class VariantType<S extends string = any> {
      * @gir-type Callback
      */
     interface CompareDataFunc {
-        (a: (any | null), b: (any | null)): number;
+        (a: null, b: null): number;
     }
 
     /**
      * @gir-type Callback
      */
     interface CompareFunc {
-        (a: (any | null), b: (any | null)): number;
+        (a: null, b: null): number;
     }
 
     /**
      * @gir-type Callback
      */
     interface CompletionFunc {
-        (item: (any | null)): string;
+        (item: null): string;
     }
 
     /**
@@ -14953,42 +14953,42 @@ export class VariantType<S extends string = any> {
      * @gir-type Callback
      */
     interface CopyFunc {
-        (src: any, data: (any | null)): any;
+        (src: null, data: null): never;
     }
 
     /**
      * @gir-type Callback
      */
     interface DataForeachFunc {
-        (key_id: Quark, data: (any | null)): void;
+        (key_id: Quark, data: null): void;
     }
 
     /**
      * @gir-type Callback
      */
     interface DestroyNotify {
-        (data: (any | null)): void;
+        (data: null): void;
     }
 
     /**
      * @gir-type Callback
      */
     interface DuplicateFunc {
-        (data: (any | null)): (any | null);
+        (data: null): null;
     }
 
     /**
      * @gir-type Callback
      */
     interface EqualFunc {
-        (a: (any | null), b: (any | null)): boolean;
+        (a: null, b: null): boolean;
     }
 
     /**
      * @gir-type Callback
      */
     interface EqualFuncFull {
-        (a: (any | null), b: (any | null)): boolean;
+        (a: null, b: null): boolean;
     }
 
     /**
@@ -15016,49 +15016,49 @@ export class VariantType<S extends string = any> {
      * @gir-type Callback
      */
     interface FreeFunc {
-        (data: (any | null)): void;
+        (data: null): void;
     }
 
     /**
      * @gir-type Callback
      */
     interface Func {
-        (data: (any | null)): void;
+        (data: null): void;
     }
 
     /**
      * @gir-type Callback
      */
     interface HFunc {
-        (key: (any | null), value: (any | null)): void;
+        (key: null, value: null): void;
     }
 
     /**
      * @gir-type Callback
      */
     interface HRFunc {
-        (key: (any | null), value: (any | null)): boolean;
+        (key: null, value: null): boolean;
     }
 
     /**
      * @gir-type Callback
      */
     interface HashFunc {
-        (key: (any | null)): number;
+        (key: null): number;
     }
 
     /**
      * @gir-type Callback
      */
     interface HookCheckFunc {
-        (data: (any | null)): boolean;
+        (data: null): boolean;
     }
 
     /**
      * @gir-type Callback
      */
     interface HookCheckMarshaller {
-        (hook: Hook, marshal_data: (any | null)): boolean;
+        (hook: Hook, marshal_data: null): boolean;
     }
 
     /**
@@ -15079,28 +15079,28 @@ export class VariantType<S extends string = any> {
      * @gir-type Callback
      */
     interface HookFindFunc {
-        (hook: Hook, data: (any | null)): boolean;
+        (hook: Hook, data: null): boolean;
     }
 
     /**
      * @gir-type Callback
      */
     interface HookFunc {
-        (data: (any | null)): void;
+        (data: null): void;
     }
 
     /**
      * @gir-type Callback
      */
     interface HookMarshaller {
-        (hook: Hook, marshal_data: (any | null)): void;
+        (hook: Hook, marshal_data: null): void;
     }
 
     /**
      * @gir-type Callback
      */
     interface IOFunc {
-        (source: IOChannel, condition: IOCondition, data: (any | null)): boolean;
+        (source: IOChannel, condition: IOCondition, data: null): boolean;
     }
 
     /**
@@ -15121,35 +15121,35 @@ export class VariantType<S extends string = any> {
      * @gir-type Callback
      */
     interface NodeForeachFunc {
-        (node: Node, data: (any | null)): void;
+        (node: Node, data: null): void;
     }
 
     /**
      * @gir-type Callback
      */
     interface NodeTraverseFunc {
-        (node: Node, data: (any | null)): boolean;
+        (node: Node, data: null): boolean;
     }
 
     /**
      * @gir-type Callback
      */
     interface OptionArgFunc {
-        (option_name: string, value: string, data: (any | null)): boolean;
+        (option_name: string, value: string, data: null): boolean;
     }
 
     /**
      * @gir-type Callback
      */
     interface OptionErrorFunc {
-        (context: OptionContext, group: OptionGroup, data: (any | null)): void;
+        (context: OptionContext, group: OptionGroup, data: null): void;
     }
 
     /**
      * @gir-type Callback
      */
     interface OptionParseFunc {
-        (context: OptionContext, group: OptionGroup, data: (any | null)): boolean;
+        (context: OptionContext, group: OptionGroup, data: null): boolean;
     }
 
     /**
@@ -15184,7 +15184,7 @@ export class VariantType<S extends string = any> {
      * @gir-type Callback
      */
     interface SequenceIterCompareFunc {
-        (a: SequenceIter, b: SequenceIter, data: (any | null)): number;
+        (a: SequenceIter, b: SequenceIter, data: null): number;
     }
 
     /**
@@ -15205,7 +15205,7 @@ export class VariantType<S extends string = any> {
      * @gir-type Callback
      */
     interface SourceFunc {
-        (user_data: (any | null)): boolean;
+        (user_data: null): boolean;
     }
 
     /**
@@ -15233,28 +15233,28 @@ export class VariantType<S extends string = any> {
      * @gir-type Callback
      */
     interface SourceOnceFunc {
-        (user_data: (any | null)): void;
+        (user_data: null): void;
     }
 
     /**
      * @gir-type Callback
      */
     interface SpawnChildSetupFunc {
-        (data: (any | null)): void;
+        (data: null): void;
     }
 
     /**
      * @gir-type Callback
      */
     interface TestDataFunc {
-        (user_data: (any | null)): void;
+        (user_data: null): void;
     }
 
     /**
      * @gir-type Callback
      */
     interface TestFixtureFunc {
-        (fixture: any): void;
+        (fixture: null): void;
     }
 
     /**
@@ -15275,28 +15275,28 @@ export class VariantType<S extends string = any> {
      * @gir-type Callback
      */
     interface ThreadFunc {
-        (data: (any | null)): (any | null);
+        (data: null): null;
     }
 
     /**
      * @gir-type Callback
      */
     interface TranslateFunc {
-        (str: string, data: (any | null)): string;
+        (str: string, data: null): string;
     }
 
     /**
      * @gir-type Callback
      */
     interface TraverseFunc {
-        (key: (any | null), value: (any | null), data: (any | null)): boolean;
+        (key: null, value: null, data: null): boolean;
     }
 
     /**
      * @gir-type Callback
      */
     interface TraverseNodeFunc {
-        (node: TreeNode, data: (any | null)): boolean;
+        (node: TreeNode, data: null): boolean;
     }
 
     /**
@@ -16398,7 +16398,7 @@ export class VariantType<S extends string = any> {
          * pointers to data, the pointers are copied but the actual data is not.
          * @param array an array
          */
-        static copy(array: any[]): any[];
+        static copy(array: never[]): null[];
 
         /**
          * Frees the memory allocated for the {@link GLib.Array}. If `free_segment` is
@@ -16418,14 +16418,14 @@ export class VariantType<S extends string = any> {
          * @param array an array
          * @param free_segment if true, the actual element data is freed as well
          */
-        static free(array: any[], free_segment: boolean): string;
+        static free(array: never[], free_segment: boolean): string;
 
         /**
          * Atomically increments the reference count of `array` by one.
          * This function is thread-safe and may be called from any thread.
          * @param array an array
          */
-        static ref(array: any[]): any[];
+        static ref(array: never[]): null[];
 
         /**
          * Atomically decrements the reference count of `array` by one. If the
@@ -16434,7 +16434,7 @@ export class VariantType<S extends string = any> {
          * thread-safe and may be called from any thread.
          * @param array an array
          */
-        static unref(array: any[]): void;
+        static unref(array: never[]): void;
     }
 
 
@@ -16507,7 +16507,7 @@ export class VariantType<S extends string = any> {
          * blocks until data becomes available.
          * @returns data from the queue
          */
-        pop(): any;
+        pop(): null;
 
         /**
          * Pops data from the `queue`. If `queue` is empty, this function
@@ -16516,7 +16516,7 @@ export class VariantType<S extends string = any> {
          * This function must be called while holding the `queue`'s lock.
          * @returns data from the queue.
          */
-        pop_unlocked(): any;
+        pop_unlocked(): null;
 
         /**
          * Pushes the `data` into the `queue`.
@@ -16524,7 +16524,7 @@ export class VariantType<S extends string = any> {
          * The `data` parameter must not be `null`.
          * @param data data to push onto the `queue`
          */
-        push(data: any): void;
+        push(data: never): void;
 
         /**
          * Pushes the `item` into the `queue`. `item` must not be `null`.
@@ -16533,7 +16533,7 @@ export class VariantType<S extends string = any> {
          * so that it will be the next one to be popped off the queue.
          * @param item data to push into the `queue`
          */
-        push_front(item: any): void;
+        push_front(item: never): void;
 
         /**
          * Pushes the `item` into the `queue`. `item` must not be `null`.
@@ -16544,7 +16544,7 @@ export class VariantType<S extends string = any> {
          * This function must be called while holding the `queue`'s lock.
          * @param item data to push into the `queue`
          */
-        push_front_unlocked(item: any): void;
+        push_front_unlocked(item: never): void;
 
         /**
          * Inserts `data` into `queue` using `func` to determine the new
@@ -16560,7 +16560,7 @@ export class VariantType<S extends string = any> {
          * @param data the `data` to push into the `queue`
          * @param func the {@link GLib.CompareDataFunc} is used to sort `queue`
          */
-        push_sorted(data: any, func: CompareDataFunc): void;
+        push_sorted(data: never, func: CompareDataFunc): void;
 
         /**
          * Inserts `data` into `queue` using `func` to determine the new
@@ -16581,7 +16581,7 @@ export class VariantType<S extends string = any> {
          * @param data the data to push into the `queue`
          * @param func the {@link GLib.CompareDataFunc} is used to sort `queue`
          */
-        push_sorted_unlocked(data: any, func: CompareDataFunc): void;
+        push_sorted_unlocked(data: never, func: CompareDataFunc): void;
 
         /**
          * Pushes the `data` into the `queue`.
@@ -16591,7 +16591,7 @@ export class VariantType<S extends string = any> {
          * This function must be called while holding the `queue`'s lock.
          * @param data data to push onto the `queue`
          */
-        push_unlocked(data: any): void;
+        push_unlocked(data: never): void;
 
         /**
          * Increases the reference count of the asynchronous `queue` by 1.
@@ -16610,7 +16610,7 @@ export class VariantType<S extends string = any> {
          * @param item the data to remove from the `queue`
          * @returns `true` if the item was removed
          */
-        remove(item: any): boolean;
+        remove(item: never): boolean;
 
         /**
          * Remove an item from the queue.
@@ -16619,7 +16619,7 @@ export class VariantType<S extends string = any> {
          * @param item the data to remove from the `queue`
          * @returns `true` if the item was removed
          */
-        remove_unlocked(item: any): boolean;
+        remove_unlocked(item: never): boolean;
 
         /**
          * Sorts `queue` using `func`.
@@ -16675,7 +16675,7 @@ export class VariantType<S extends string = any> {
          * @param end_time a {@link GLib.TimeVal}, determining the final time
          * @returns data from the queue or `null`, when no   data is received before `end_time`.
          */
-        timed_pop(end_time: TimeVal): (any | null);
+        timed_pop(end_time: TimeVal): null;
 
         /**
          * Pops data from the `queue`. If the queue is empty, blocks until
@@ -16690,7 +16690,7 @@ export class VariantType<S extends string = any> {
          * @param end_time a {@link GLib.TimeVal}, determining the final time
          * @returns data from the queue or `null`, when no   data is received before `end_time`.
          */
-        timed_pop_unlocked(end_time: TimeVal): (any | null);
+        timed_pop_unlocked(end_time: TimeVal): null;
 
         /**
          * Pops data from the `queue`. If the queue is empty, blocks for
@@ -16700,7 +16700,7 @@ export class VariantType<S extends string = any> {
          * @param timeout the number of microseconds to wait
          * @returns data from the queue or `null`, when no   data is received before the timeout.
          */
-        timeout_pop(timeout: (bigint | number)): (any | null);
+        timeout_pop(timeout: (bigint | number)): null;
 
         /**
          * Pops data from the `queue`. If the queue is empty, blocks for
@@ -16712,14 +16712,14 @@ export class VariantType<S extends string = any> {
          * @param timeout the number of microseconds to wait
          * @returns data from the queue or `null`, when no   data is received before the timeout.
          */
-        timeout_pop_unlocked(timeout: (bigint | number)): (any | null);
+        timeout_pop_unlocked(timeout: (bigint | number)): null;
 
         /**
          * Tries to pop data from the `queue`. If no data is available,
          * `null` is returned.
          * @returns data from the queue or `null`, when no   data is available immediately.
          */
-        try_pop(): (any | null);
+        try_pop(): null;
 
         /**
          * Tries to pop data from the `queue`. If no data is available,
@@ -16728,7 +16728,7 @@ export class VariantType<S extends string = any> {
          * This function must be called while holding the `queue`'s lock.
          * @returns data from the queue or `null`, when no   data is available immediately.
          */
-        try_pop_unlocked(): (any | null);
+        try_pop_unlocked(): null;
 
         /**
          * Releases the queue's lock.
@@ -17681,7 +17681,7 @@ export class VariantType<S extends string = any> {
          * @param n_elements the number of elements in the region
          * @returns the requested region, or `NULL` in case of an error
          */
-        get_region(element_size: (bigint | number), offset: (bigint | number), n_elements: (bigint | number)): (any | null);
+        get_region(element_size: (bigint | number), offset: (bigint | number), n_elements: (bigint | number)): null;
 
         /**
          * Get the size of the byte data in the {@link GLib.Bytes}.
@@ -17787,7 +17787,7 @@ export class VariantType<S extends string = any> {
          * @param key a key describing a {@link GLib.Cache} object
          * @returns a pointer to a {@link GLib.Cache} value
          */
-        insert(key: (any | null)): (any | null);
+        insert(key: null): null;
 
         /**
          * Calls the given function for each of the keys in the {@link GLib.Cache}.
@@ -17806,7 +17806,7 @@ export class VariantType<S extends string = any> {
          * `value_destroy_func` and `key_destroy_func` passed to `g_cache_new()`.
          * @param value the value to remove
          */
-        remove(value: (any | null)): void;
+        remove(value: null): void;
 
         /**
          * Calls the given function for each of the values in the {@link GLib.Cache}.
@@ -17920,13 +17920,13 @@ export class VariantType<S extends string = any> {
         static $gtype: GObject.GType<Completion>;
 
         // Fields
-        items: any[];
+        items: null[];
 
         func: CompletionFunc;
 
         prefix: string;
 
-        cache: any[];
+        cache: null[];
 
         strncmp_func: CompletionStrncmpFunc;
 
@@ -18677,7 +18677,7 @@ export class VariantType<S extends string = any> {
          * Initializes the non-date parts with something safe but meaningless.
          * @param tm struct tm to fill
          */
-        to_struct_tm(tm: any): void;
+        to_struct_tm(tm: never): void;
 
         /**
          * Returns `true` if the {@link GLib.Date} represents an existing day. The date must not
@@ -19500,14 +19500,14 @@ export class VariantType<S extends string = any> {
          * @param hash_table a {@link GLib.HashTable}
          * @param key a key to insert
          */
-        static add(hash_table: ({ [key: string]: any } | HashTable<any, any>), key: (any | null)): boolean;
+        static add(hash_table: ({ [key: string]: any } | HashTable<never, never>), key: null): boolean;
 
         /**
          * Checks if `key` is in `hash_table`.
          * @param hash_table a {@link GLib.HashTable}
          * @param key a key to check
          */
-        static contains(hash_table: ({ [key: string]: any } | HashTable<any, any>), key: (any | null)): boolean;
+        static contains(hash_table: ({ [key: string]: any } | HashTable<never, never>), key: null): boolean;
 
         /**
          * Destroys all keys and values in the {@link GLib.HashTable} and decrements its
@@ -19518,7 +19518,7 @@ export class VariantType<S extends string = any> {
          * destruction phase.
          * @param hash_table a {@link GLib.HashTable}
          */
-        static destroy(hash_table: ({ [key: string]: any } | HashTable<any, any>)): void;
+        static destroy(hash_table: ({ [key: string]: any } | HashTable<never, never>)): void;
 
         /**
          * Calls the given function for key/value pairs in the {@link GLib.HashTable}
@@ -19537,7 +19537,7 @@ export class VariantType<S extends string = any> {
          * @param hash_table a {@link GLib.HashTable}
          * @param predicate function to test the key/value pairs for a certain property
          */
-        static find(hash_table: ({ [key: string]: any } | HashTable<any, any>), predicate: HRFunc): (any | null);
+        static find(hash_table: ({ [key: string]: any } | HashTable<never, never>), predicate: HRFunc): null;
 
         /**
          * Calls the given function for each of the key/value pairs in the
@@ -19555,7 +19555,7 @@ export class VariantType<S extends string = any> {
          * @param hash_table a {@link GLib.HashTable}
          * @param func the function to call for each key/value pair
          */
-        static foreach(hash_table: ({ [key: string]: any } | HashTable<any, any>), func: HFunc): void;
+        static foreach(hash_table: ({ [key: string]: any } | HashTable<never, never>), func: HFunc): void;
 
         /**
          * Calls the given function for each key/value pair in the
@@ -19569,7 +19569,7 @@ export class VariantType<S extends string = any> {
          * @param hash_table a {@link GLib.HashTable}
          * @param func the function to call for each key/value pair
          */
-        static foreach_remove(hash_table: ({ [key: string]: any } | HashTable<any, any>), func: HRFunc): number;
+        static foreach_remove(hash_table: ({ [key: string]: any } | HashTable<never, never>), func: HRFunc): number;
 
         /**
          * Calls the given function for each key/value pair in the
@@ -19582,7 +19582,7 @@ export class VariantType<S extends string = any> {
          * @param hash_table a {@link GLib.HashTable}
          * @param func the function to call for each key/value pair
          */
-        static foreach_steal(hash_table: ({ [key: string]: any } | HashTable<any, any>), func: HRFunc): number;
+        static foreach_steal(hash_table: ({ [key: string]: any } | HashTable<never, never>), func: HRFunc): number;
 
         /**
          * Inserts a new key and value into a {@link GLib.HashTable}.
@@ -19601,7 +19601,7 @@ export class VariantType<S extends string = any> {
          * @param key a key to insert
          * @param value the value to associate with the key
          */
-        static insert(hash_table: ({ [key: string]: any } | HashTable<any, any>), key: (any | null), value: (any | null)): boolean;
+        static insert(hash_table: ({ [key: string]: any } | HashTable<never, never>), key: null, value: null): boolean;
 
         /**
          * Looks up a key in a {@link GLib.HashTable}. Note that this function cannot
@@ -19611,7 +19611,7 @@ export class VariantType<S extends string = any> {
          * @param hash_table a {@link GLib.HashTable}
          * @param key the key to look up
          */
-        static lookup(hash_table: ({ [key: string]: any } | HashTable<any, any>), key: (any | null)): (any | null);
+        static lookup(hash_table: ({ [key: string]: any } | HashTable<never, never>), key: null): null;
 
         /**
          * Looks up a key in the {@link GLib.HashTable}, returning the original key and the
@@ -19625,7 +19625,7 @@ export class VariantType<S extends string = any> {
          * @param hash_table a {@link GLib.HashTable}
          * @param lookup_key the key to look up
          */
-        static lookup_extended(hash_table: ({ [key: string]: any } | HashTable<any, any>), lookup_key: (any | null)): [boolean, any, any];
+        static lookup_extended(hash_table: ({ [key: string]: any } | HashTable<never, never>), lookup_key: null): [boolean, null, null];
 
         /**
          * Creates a new {@link GLib.HashTable} like `g_hash_table_new_full()` with a reference
@@ -19638,14 +19638,14 @@ export class VariantType<S extends string = any> {
          * or values from `other_hash_table`.
          * @param other_hash_table Another {@link GLib.HashTable}
          */
-        static new_similar(other_hash_table: ({ [key: string]: any } | HashTable<any, any>)): HashTable<any, any>;
+        static new_similar(other_hash_table: ({ [key: string]: any } | HashTable<never, never>)): HashTable<never, never>;
 
         /**
          * Atomically increments the reference count of `hash_table` by one.
          * This function is MT-safe and may be called from any thread.
          * @param hash_table a valid {@link GLib.HashTable}
          */
-        static ref(hash_table: ({ [key: string]: any } | HashTable<any, any>)): HashTable<any, any>;
+        static ref(hash_table: ({ [key: string]: any } | HashTable<never, never>)): HashTable<never, never>;
 
         /**
          * Removes a key and its associated value from a {@link GLib.HashTable}.
@@ -19657,7 +19657,7 @@ export class VariantType<S extends string = any> {
          * @param hash_table a {@link GLib.HashTable}
          * @param key the key to remove
          */
-        static remove(hash_table: ({ [key: string]: any } | HashTable<any, any>), key: (any | null)): boolean;
+        static remove(hash_table: ({ [key: string]: any } | HashTable<never, never>), key: null): boolean;
 
         /**
          * Removes all keys and their associated values from a {@link GLib.HashTable}.
@@ -19668,7 +19668,7 @@ export class VariantType<S extends string = any> {
          * values are freed yourself.
          * @param hash_table a {@link GLib.HashTable}
          */
-        static remove_all(hash_table: ({ [key: string]: any } | HashTable<any, any>)): void;
+        static remove_all(hash_table: ({ [key: string]: any } | HashTable<never, never>)): void;
 
         /**
          * Inserts a new key and value into a {@link GLib.HashTable} similar to
@@ -19686,13 +19686,13 @@ export class VariantType<S extends string = any> {
          * @param key a key to insert
          * @param value the value to associate with the key
          */
-        static replace(hash_table: ({ [key: string]: any } | HashTable<any, any>), key: (any | null), value: (any | null)): boolean;
+        static replace(hash_table: ({ [key: string]: any } | HashTable<never, never>), key: null, value: null): boolean;
 
         /**
          * Returns the number of elements contained in the {@link GLib.HashTable}.
          * @param hash_table a {@link GLib.HashTable}
          */
-        static size(hash_table: ({ [key: string]: any } | HashTable<any, any>)): number;
+        static size(hash_table: ({ [key: string]: any } | HashTable<never, never>)): number;
 
         /**
          * Removes a key and its associated value from a {@link GLib.HashTable} without
@@ -19700,14 +19700,14 @@ export class VariantType<S extends string = any> {
          * @param hash_table a {@link GLib.HashTable}
          * @param key the key to remove
          */
-        static steal(hash_table: ({ [key: string]: any } | HashTable<any, any>), key: (any | null)): boolean;
+        static steal(hash_table: ({ [key: string]: any } | HashTable<never, never>), key: null): boolean;
 
         /**
          * Removes all keys and their associated values from a {@link GLib.HashTable}
          * without calling the key and value destroy functions.
          * @param hash_table a {@link GLib.HashTable}
          */
-        static steal_all(hash_table: ({ [key: string]: any } | HashTable<any, any>)): void;
+        static steal_all(hash_table: ({ [key: string]: any } | HashTable<never, never>)): void;
 
         /**
          * Looks up a key in the {@link GLib.HashTable}, stealing the original key and the
@@ -19730,7 +19730,7 @@ export class VariantType<S extends string = any> {
          * @param hash_table a {@link GLib.HashTable}
          * @param lookup_key the key to look up
          */
-        static steal_extended(hash_table: ({ [key: string]: any } | HashTable<any, any>), lookup_key: (any | null)): [boolean, any, any];
+        static steal_extended(hash_table: ({ [key: string]: any } | HashTable<never, never>), lookup_key: null): [boolean, null, null];
 
         /**
          * Atomically decrements the reference count of `hash_table` by one.
@@ -19739,7 +19739,7 @@ export class VariantType<S extends string = any> {
          * This function is MT-safe and may be called from any thread.
          * @param hash_table a valid {@link GLib.HashTable}
          */
-        static unref(hash_table: ({ [key: string]: any } | HashTable<any, any>)): void;
+        static unref(hash_table: ({ [key: string]: any } | HashTable<never, never>)): void;
     }
 
 
@@ -19767,7 +19767,7 @@ export class VariantType<S extends string = any> {
          * Returns the {@link GLib.HashTable} associated with `iter`.
          * @returns the {@link GLib.HashTable} associated with `iter`.
          */
-        get_hash_table(): HashTable<any, any>;
+        get_hash_table(): HashTable<never, never>;
 
         /**
          * Initializes a key/value pair iterator and associates it with
@@ -19791,7 +19791,7 @@ export class VariantType<S extends string = any> {
          * 
          * @param hash_table a {@link GLib.HashTable}
          */
-        init(hash_table: ({ [key: string]: any } | HashTable<any, any>)): void;
+        init(hash_table: ({ [key: string]: any } | HashTable<never, never>)): void;
 
         /**
          * Advances `iter` and retrieves the key and/or value that are now
@@ -19799,7 +19799,7 @@ export class VariantType<S extends string = any> {
          * `key` and `value` are not set, and the iterator becomes invalid.
          * @returns `false` if the end of the {@link GLib.HashTable} has been reached.
          */
-        next(): [boolean, any, any];
+        next(): [boolean, null, null];
 
         /**
          * Removes the key/value pair currently pointed to by the iterator
@@ -19834,7 +19834,7 @@ export class VariantType<S extends string = any> {
          * {@link GLib.HashTable}, the old value is freed using that function.
          * @param value the value to replace with
          */
-        replace(value: (any | null)): void;
+        replace(value: null): void;
 
         /**
          * Removes the key/value pair currently pointed to by the
@@ -19941,7 +19941,7 @@ export class VariantType<S extends string = any> {
         static $gtype: GObject.GType<Hook>;
 
         // Fields
-        data: any;
+        data: null;
 
         ref_count: number;
 
@@ -19949,7 +19949,7 @@ export class VariantType<S extends string = any> {
 
         flags: number;
 
-        func: any;
+        func: null;
 
         destroy: DestroyNotify;
 
@@ -20041,11 +20041,11 @@ export class VariantType<S extends string = any> {
 
         is_setup: number;
 
-        dummy3: any;
+        dummy3: null;
 
         finalize_hook: HookFinalizeFunc;
 
-        dummy: any[];
+        dummy: null[];
 
         // Methods
         /**
@@ -21206,16 +21206,16 @@ export class VariantType<S extends string = any> {
         static $gtype: GObject.GType<List>;
 
         // Fields
-        data: any;
+        data: null;
 
-        next: any[];
+        next: null[];
 
-        prev: any[];
+        prev: null[];
 
         // Constructors
 
         constructor(properties?: Partial<{
-            data: any;
+            data: null;
         }>);
 
         // Static methods
@@ -21228,7 +21228,7 @@ export class VariantType<S extends string = any> {
          * to copy the data as well.
          * @param list a {@link GLib.List}, this must point to the top of the list
          */
-        static copy(list: any[]): any[];
+        static copy(list: never[]): null[];
 
         /**
          * Frees all of the memory used by a {@link GLib.List}.
@@ -21247,7 +21247,7 @@ export class VariantType<S extends string = any> {
          * 
          * @param list the first link of a {@link GLib.List}
          */
-        static free(list: any[]): void;
+        static free(list: never[]): void;
 
         static pop_allocator(): void;
 
@@ -21275,7 +21275,7 @@ export class VariantType<S extends string = any> {
         // Fields
         key: string;
 
-        value: any;
+        value: null;
 
         length: number;
     }
@@ -21411,7 +21411,7 @@ export class VariantType<S extends string = any> {
          * @param user_data the user data from the callback
          * @returns the source, if one was found,   otherwise `NULL`
          */
-        find_source_by_funcs_user_data(funcs: SourceFuncs, user_data: (any | null)): (Source | null);
+        find_source_by_funcs_user_data(funcs: SourceFuncs, user_data: null): (Source | null);
 
         /**
          * Finds a {@link GLib.Source} given a pair of context and ID.
@@ -21439,7 +21439,7 @@ export class VariantType<S extends string = any> {
          * @param user_data the user_data for the callback
          * @returns the source, if one was found,   otherwise `NULL`
          */
-        find_source_by_user_data(user_data: (any | null)): (Source | null);
+        find_source_by_user_data(user_data: null): (Source | null);
 
         /**
          * Invokes a function in such a way that `context` is owned during the
@@ -21842,9 +21842,9 @@ export class VariantType<S extends string = any> {
         static $gtype: GObject.GType<MarkupParseContext>;
 
         // Constructors
-        constructor(parser: MarkupParser, flags: MarkupParseFlags, user_data: (any | null));
+        constructor(parser: MarkupParser, flags: MarkupParseFlags, user_data: null);
 
-        static ["new"](parser: MarkupParser, flags: MarkupParseFlags, user_data: (any | null)): MarkupParseContext;
+        static ["new"](parser: MarkupParser, flags: MarkupParseFlags, user_data: null): MarkupParseContext;
 
         // Methods
         /**
@@ -21935,7 +21935,7 @@ export class VariantType<S extends string = any> {
          * of `g_markup_parse_context_push()`.
          * @returns the provided user_data. The returned data belongs to     the markup context and will be freed when     `g_markup_parse_context_free()` is called.
          */
-        get_user_data(): (any | null);
+        get_user_data(): null;
 
         /**
          * Feed some data to the {@link GLib.MarkupParseContext}.
@@ -21970,7 +21970,7 @@ export class VariantType<S extends string = any> {
          * interface.
          * @returns the user data passed to `g_markup_parse_context_push()`
          */
-        pop(): (any | null);
+        pop(): null;
 
         /**
          * Temporarily redirects markup data to a sub-parser.
@@ -22096,7 +22096,7 @@ export class VariantType<S extends string = any> {
          * @param parser a {@link GLib.MarkupParser}
          * @param user_data user data to pass to {@link GLib.MarkupParser} functions
          */
-        push(parser: MarkupParser, user_data: (any | null)): void;
+        push(parser: MarkupParser, user_data: null): void;
 
         /**
          * Increases the reference count of `context`.
@@ -22558,9 +22558,9 @@ export class VariantType<S extends string = any> {
         static info(): void;
 
         // Methods
-        alloc(): (any | null);
+        alloc(): null;
 
-        alloc0(): (any | null);
+        alloc0(): null;
 
         clean(): void;
 
@@ -22569,7 +22569,7 @@ export class VariantType<S extends string = any> {
         /**
          * @param mem 
          */
-        free(mem: (any | null)): void;
+        free(mem: null): void;
 
         print(): void;
 
@@ -22598,7 +22598,7 @@ export class VariantType<S extends string = any> {
         static $gtype: GObject.GType<Node>;
 
         // Fields
-        data: any;
+        data: null;
 
         // Static methods
         static pop_allocator(): void;
@@ -22615,7 +22615,7 @@ export class VariantType<S extends string = any> {
          * @param data the data to find
          * @returns the index of the child of `node` which contains     `data`, or -1 if the data is not found
          */
-        child_index(data: (any | null)): number;
+        child_index(data: null): number;
 
         /**
          * Gets the position of a {@link GLib.Node} with respect to its siblings.
@@ -22727,7 +22727,7 @@ export class VariantType<S extends string = any> {
         // Fields
         status: OnceStatus;
 
-        retval: any;
+        retval: null;
 
         // Static methods
         /**
@@ -22760,7 +22760,7 @@ export class VariantType<S extends string = any> {
          * the pointer passed to it should not be `volatile`.
          * @param location location of a static initializable variable    containing 0
          */
-        static init_enter(location: any): [boolean, any];
+        static init_enter(location: never): [boolean, null];
 
         /**
          * @param location 
@@ -22787,7 +22787,7 @@ export class VariantType<S extends string = any> {
          * 
          * @param location location of a static initializable variable    containing `NULL`
          */
-        static init_enter_pointer(location: any): boolean;
+        static init_enter_pointer(location: never): boolean;
 
         /**
          * Counterpart to `g_once_init_enter()`. Expects a location of a static
@@ -22801,7 +22801,7 @@ export class VariantType<S extends string = any> {
          * @param location location of a static initializable variable    containing 0
          * @param result new non-0 value for `*value_location`
          */
-        static init_leave(location: any, result: (bigint | number)): any;
+        static init_leave(location: never, result: (bigint | number)): null;
 
         /**
          * Counterpart to `g_once_init_enter_pointer()`. Expects a location of a static
@@ -22815,7 +22815,7 @@ export class VariantType<S extends string = any> {
          * @param location location of a static initializable variable    containing `NULL`
          * @param result new non-`NULL` value for `*location`
          */
-        static init_leave_pointer(location: any, result: (any | null)): void;
+        static init_leave_pointer(location: never, result: null): void;
     }
 
 
@@ -23093,7 +23093,7 @@ export class VariantType<S extends string = any> {
 
         arg: OptionArg;
 
-        arg_data: any;
+        arg_data: null;
 
         description: string;
 
@@ -23115,9 +23115,9 @@ export class VariantType<S extends string = any> {
         static $gtype: GObject.GType<OptionGroup>;
 
         // Constructors
-        constructor(name: string, description: string, help_description: string, user_data: (any | null));
+        constructor(name: string, description: string, help_description: string, user_data: null);
 
-        static ["new"](name: string, description: string, help_description: string, user_data: (any | null)): OptionGroup;
+        static ["new"](name: string, description: string, help_description: string, user_data: null): OptionGroup;
 
         // Methods
         /**
@@ -23222,7 +23222,7 @@ export class VariantType<S extends string = any> {
          * @param v1 a path buffer to compare
          * @param v2 a path buffer to compare
          */
-        static equal(v1: any, v2: any): boolean;
+        static equal(v1: never, v2: never): boolean;
 
         // Methods
         /**
@@ -23551,7 +23551,7 @@ export class VariantType<S extends string = any> {
          * created, for example).
          * @returns the thread-local value
          */
-        get(): (any | null);
+        get(): null;
 
         /**
          * Sets the thread local variable `key` to have the value `value` in the
@@ -23562,7 +23562,7 @@ export class VariantType<S extends string = any> {
          * `key` is run on it.
          * @param value the new value
          */
-        replace(value: (any | null)): void;
+        replace(value: null): void;
 
         /**
          * Sets the thread local variable `key` to have the value `value` in the
@@ -23572,7 +23572,7 @@ export class VariantType<S extends string = any> {
          * the {@link GLib.DestroyNotify} for `key` is not called on the old value.
          * @param value the new value
          */
-        set(value: (any | null)): void;
+        set(value: null): void;
     }
 
 
@@ -23584,14 +23584,14 @@ export class VariantType<S extends string = any> {
         static $gtype: GObject.GType<PtrArray>;
 
         // Fields
-        pdata: any;
+        pdata: null;
 
         len: number;
 
         // Constructors
 
         constructor(properties?: Partial<{
-            pdata: any;
+            pdata: null;
             len: number;
         }>);
 
@@ -23616,7 +23616,7 @@ export class VariantType<S extends string = any> {
          * @param array a pointer array to duplicate
          * @param func a copy function used to copy every element in the array
          */
-        static copy(array: any[], func: (CopyFunc | null)): any[];
+        static copy(array: never[], func: (CopyFunc | null)): null[];
 
         /**
          * Frees the memory allocated for the {@link GLib.PtrArray}. If `free_segment` is true
@@ -23640,14 +23640,14 @@ export class VariantType<S extends string = any> {
          * @param array a pointer array
          * @param free_segment if true, the actual pointer array is freed as well
          */
-        static free(array: any[], free_segment: boolean): (any[] | null);
+        static free(array: never[], free_segment: boolean): (never[] | null);
 
         /**
          * Atomically increments the reference count of `array` by one.
          * This function is thread-safe and may be called from any thread.
          * @param array a pointer array
          */
-        static ref(array: any[]): any[];
+        static ref(array: never[]): null[];
 
         /**
          * Atomically decrements the reference count of `array` by one. If the
@@ -23656,7 +23656,7 @@ export class VariantType<S extends string = any> {
          * is thread-safe and may be called from any thread.
          * @param array a pointer array
          */
-        static unref(array: any[]): void;
+        static unref(array: never[]): void;
     }
 
 
@@ -23669,9 +23669,9 @@ export class VariantType<S extends string = any> {
         static $gtype: GObject.GType<Queue>;
 
         // Fields
-        head: any[];
+        head: null[];
 
-        tail: any[];
+        tail: null[];
 
         length: number;
 
@@ -23742,7 +23742,7 @@ export class VariantType<S extends string = any> {
          * @param data the data to find
          * @returns the position of the first element in `queue` which     contains `data`, or -1 if no element in `queue` contains `data`
          */
-        index(data: (any | null)): number;
+        index(data: null): number;
 
         /**
          * A statically-allocated {@link GLib.Queue} must be initialized with this function
@@ -23757,7 +23757,7 @@ export class VariantType<S extends string = any> {
          * @param data the data to insert
          * @param func the {@link GLib.CompareDataFunc} used to compare elements in the queue. It is     called with two elements of the `queue` and `user_data`. It should     return 0 if the elements are equal, a negative value if the first     element comes before the second, and a positive value if the second     element comes before the first.
          */
-        insert_sorted(data: (any | null), func: CompareDataFunc): void;
+        insert_sorted(data: null, func: CompareDataFunc): void;
 
         /**
          * Returns `true` if the queue is empty.
@@ -23769,72 +23769,72 @@ export class VariantType<S extends string = any> {
          * Returns the first element of the queue.
          * @returns the data of the first element in the queue, or `null`     if the queue is empty
          */
-        peek_head(): (any | null);
+        peek_head(): null;
 
         /**
          * Returns the `n`'th element of `queue`.
          * @param n the position of the element
          * @returns the data for the `n`'th element of `queue`,     or `null` if `n` is off the end of `queue`
          */
-        peek_nth(n: number): (any | null);
+        peek_nth(n: number): null;
 
         /**
          * Returns the last element of the queue.
          * @returns the data of the last element in the queue, or `null`     if the queue is empty
          */
-        peek_tail(): (any | null);
+        peek_tail(): null;
 
         /**
          * Removes the first element of the queue and returns its data.
          * @returns the data of the first element in the queue, or `null`     if the queue is empty
          */
-        pop_head(): (any | null);
+        pop_head(): null;
 
         /**
          * Removes the `n`'th element of `queue` and returns its data.
          * @param n the position of the element
          * @returns the element's data, or `null` if `n` is off the end of `queue`
          */
-        pop_nth(n: number): (any | null);
+        pop_nth(n: number): null;
 
         /**
          * Removes the last element of the queue and returns its data.
          * @returns the data of the last element in the queue, or `null`     if the queue is empty
          */
-        pop_tail(): (any | null);
+        pop_tail(): null;
 
         /**
          * Adds a new element at the head of the queue.
          * @param data the data for the new element.
          */
-        push_head(data: (any | null)): void;
+        push_head(data: null): void;
 
         /**
          * Inserts a new element into `queue` at the given position.
          * @param data the data for the new element
          * @param n the position to insert the new element. If `n` is negative or     larger than the number of elements in the `queue`, the element is     added to the end of the queue.
          */
-        push_nth(data: (any | null), n: number): void;
+        push_nth(data: null, n: number): void;
 
         /**
          * Adds a new element at the tail of the queue.
          * @param data the data for the new element
          */
-        push_tail(data: (any | null)): void;
+        push_tail(data: null): void;
 
         /**
          * Removes the first element in `queue` that contains `data`.
          * @param data the data to remove
          * @returns `true` if `data` was found and removed from `queue`
          */
-        remove(data: (any | null)): boolean;
+        remove(data: null): boolean;
 
         /**
          * Remove all elements whose data equals `data` from `queue`.
          * @param data the data to remove
          * @returns the number of elements removed from `queue`
          */
-        remove_all(data: (any | null)): number;
+        remove_all(data: null): number;
 
         /**
          * Reverses the order of the items in `queue`.
@@ -24918,7 +24918,7 @@ export class VariantType<S extends string = any> {
          * @param field the field of each record to match.
          * @returns the number of matches.
          */
-        count(key: (any | null), field: number): number;
+        count(key: null, field: number): number;
 
         /**
          * Deletes any records from a {@link GLib.Relation} that have the given key value
@@ -24927,7 +24927,7 @@ export class VariantType<S extends string = any> {
          * @param field the field of each record to match.
          * @returns the number of records deleted.
          */
-        ["delete"](key: (any | null), field: number): number;
+        ["delete"](key: null, field: number): number;
 
         /**
          * Destroys the {@link GLib.Relation}, freeing all memory allocated. However, it
@@ -24953,14 +24953,14 @@ export class VariantType<S extends string = any> {
         static $gtype: GObject.GType<SList>;
 
         // Fields
-        data: any;
+        data: null;
 
-        next: any[];
+        next: null[];
 
         // Constructors
 
         constructor(properties?: Partial<{
-            data: any;
+            data: null;
         }>);
 
         // Static methods
@@ -24973,7 +24973,7 @@ export class VariantType<S extends string = any> {
          * to copy the data as well.
          * @param list a {@link GLib.SList}
          */
-        static copy(list: any[]): any[];
+        static copy(list: never[]): null[];
 
         /**
          * Frees all of the memory used by a {@link GLib.SList}.
@@ -24993,7 +24993,7 @@ export class VariantType<S extends string = any> {
          * 
          * @param list the first link of a {@link GLib.SList}
          */
-        static free(list: any[]): void;
+        static free(list: never[]): void;
 
         static pop_allocator(): void;
 
@@ -25025,7 +25025,7 @@ export class VariantType<S extends string = any> {
         static $gtype: GObject.GType<Scanner>;
 
         // Fields
-        user_data: any;
+        user_data: null;
 
         max_parse_errors: number;
 
@@ -25114,7 +25114,7 @@ export class VariantType<S extends string = any> {
          * @param symbol the symbol to look up
          * @returns the value of `symbol` in the current scope, or `null`     if `symbol` is not bound in the current scope
          */
-        lookup_symbol(symbol: string): (any | null);
+        lookup_symbol(symbol: string): null;
 
         /**
          * Parses the next token, without removing it from the input stream.
@@ -25138,7 +25138,7 @@ export class VariantType<S extends string = any> {
          * @param symbol the symbol to add
          * @param value the value of the symbol
          */
-        scope_add_symbol(scope_id: number, symbol: string, value: (any | null)): void;
+        scope_add_symbol(scope_id: number, symbol: string, value: null): void;
 
         /**
          * Calls the given function for each of the symbol/value pairs
@@ -25157,7 +25157,7 @@ export class VariantType<S extends string = any> {
          * @param symbol the symbol to look up
          * @returns the value of `symbol` in the given scope, or `null`     if `symbol` is not bound in the given scope.
          */
-        scope_lookup_symbol(scope_id: number, symbol: string): (any | null);
+        scope_lookup_symbol(scope_id: number, symbol: string): null;
 
         /**
          * Removes a symbol from a scope.
@@ -25318,14 +25318,14 @@ export class VariantType<S extends string = any> {
          * Returns the data that `iter` points to.
          * @param iter a {@link GLib.SequenceIter}
          */
-        static get(iter: SequenceIter): (any | null);
+        static get(iter: SequenceIter): null;
 
         /**
          * Inserts a new item just before the item pointed to by `iter`.
          * @param iter a {@link GLib.SequenceIter}
          * @param data the data for the new item
          */
-        static insert_before(iter: SequenceIter, data: (any | null)): SequenceIter;
+        static insert_before(iter: SequenceIter, data: null): SequenceIter;
 
         /**
          * Moves the item pointed to by `src` to the position indicated by `dest`.
@@ -25391,7 +25391,7 @@ export class VariantType<S extends string = any> {
          * @param iter a {@link GLib.SequenceIter}
          * @param data new data for the item
          */
-        static set(iter: SequenceIter, data: (any | null)): void;
+        static set(iter: SequenceIter, data: null): void;
 
         /**
          * Moves the data pointed to by `iter` to a new position as indicated by
@@ -25438,7 +25438,7 @@ export class VariantType<S extends string = any> {
          * @param data the data for the new item
          * @returns an iterator pointing to the new item
          */
-        append(data: (any | null)): SequenceIter;
+        append(data: null): SequenceIter;
 
         /**
          * Calls `func` for each item in the sequence passing `user_data`
@@ -25499,7 +25499,7 @@ export class VariantType<S extends string = any> {
          * @param cmp_func the function used to compare items in the sequence
          * @returns a {@link GLib.SequenceIter} pointing to the new item.
          */
-        insert_sorted(data: (any | null), cmp_func: CompareDataFunc): SequenceIter;
+        insert_sorted(data: null, cmp_func: CompareDataFunc): SequenceIter;
 
         /**
          * Like `g_sequence_insert_sorted()`, but uses
@@ -25518,7 +25518,7 @@ export class VariantType<S extends string = any> {
          * @param iter_cmp the function used to compare iterators in the sequence
          * @returns a {@link GLib.SequenceIter} pointing to the new item
          */
-        insert_sorted_iter(data: (any | null), iter_cmp: SequenceIterCompareFunc): SequenceIter;
+        insert_sorted_iter(data: null, iter_cmp: SequenceIterCompareFunc): SequenceIter;
 
         /**
          * Returns `true` if the sequence contains zero items.
@@ -25548,7 +25548,7 @@ export class VariantType<S extends string = any> {
          * @param cmp_func the function used to compare items in the sequence
          * @returns an {@link GLib.SequenceIter} pointing to the position of the     first item found equal to `data` according to `cmp_func` and     `cmp_data`, or `null` if no such item exists
          */
-        lookup(data: (any | null), cmp_func: CompareDataFunc): (SequenceIter | null);
+        lookup(data: null, cmp_func: CompareDataFunc): (SequenceIter | null);
 
         /**
          * Like `g_sequence_lookup()`, but uses a {@link GLib.SequenceIterCompareFunc}
@@ -25565,14 +25565,14 @@ export class VariantType<S extends string = any> {
          * @param iter_cmp the function used to compare iterators in the sequence
          * @returns an {@link GLib.SequenceIter} pointing to the position of     the first item found equal to `data` according to `iter_cmp`     and `cmp_data`, or `null` if no such item exists
          */
-        lookup_iter(data: (any | null), iter_cmp: SequenceIterCompareFunc): (SequenceIter | null);
+        lookup_iter(data: null, iter_cmp: SequenceIterCompareFunc): (SequenceIter | null);
 
         /**
          * Adds a new item to the front of `seq`
          * @param data the data for the new item
          * @returns an iterator pointing to the new item
          */
-        prepend(data: (any | null)): SequenceIter;
+        prepend(data: null): SequenceIter;
 
         /**
          * Returns an iterator pointing to the position where `data` would
@@ -25592,7 +25592,7 @@ export class VariantType<S extends string = any> {
          * @param cmp_func the function used to compare items in the sequence
          * @returns an {@link GLib.SequenceIter} pointing to the position where `data`     would have been inserted according to `cmp_func` and `cmp_data`
          */
-        search(data: (any | null), cmp_func: CompareDataFunc): SequenceIter;
+        search(data: null, cmp_func: CompareDataFunc): SequenceIter;
 
         /**
          * Like `g_sequence_search()`, but uses a {@link GLib.SequenceIterCompareFunc}
@@ -25612,7 +25612,7 @@ export class VariantType<S extends string = any> {
          * @param iter_cmp the function used to compare iterators in the sequence
          * @returns a {@link GLib.SequenceIter} pointing to the position in `seq`     where `data` would have been inserted according to `iter_cmp`     and `cmp_data`
          */
-        search_iter(data: (any | null), iter_cmp: SequenceIterCompareFunc): SequenceIter;
+        search_iter(data: null, iter_cmp: SequenceIterCompareFunc): SequenceIter;
 
         /**
          * Sorts `seq` using `cmp_func`.
@@ -25758,7 +25758,7 @@ export class VariantType<S extends string = any> {
          * @param funcs the `source_funcs` passed to {@link GLib.Source.new}
          * @param user_data the user data for the callback
          */
-        static remove_by_funcs_user_data(funcs: SourceFuncs, user_data: (any | null)): boolean;
+        static remove_by_funcs_user_data(funcs: SourceFuncs, user_data: null): boolean;
 
         /**
          * Removes a source from the default main loop context given the user
@@ -25767,7 +25767,7 @@ export class VariantType<S extends string = any> {
          * If multiple sources exist with the same user data, only one will be destroyed.
          * @param user_data the user_data for the callback
          */
-        static remove_by_user_data(user_data: (any | null)): boolean;
+        static remove_by_user_data(user_data: null): boolean;
 
         /**
          * Sets the name of a source using its ID.
@@ -25853,7 +25853,7 @@ export class VariantType<S extends string = any> {
          * @param events an event mask
          * @returns an opaque tag
          */
-        add_unix_fd(fd: number, events: IOCondition): any;
+        add_unix_fd(fd: number, events: IOCondition): null;
 
         /**
          * Adds a {@link GLib.Source} to a `context` so that it will be executed within
@@ -26086,7 +26086,7 @@ export class VariantType<S extends string = any> {
          * @param tag the tag from {@link GLib.Source.add_unix_fd}
          * @param new_events the new event mask to watch
          */
-        modify_unix_fd(tag: any, new_events: IOCondition): void;
+        modify_unix_fd(tag: never, new_events: IOCondition): void;
 
         /**
          * Queries the events reported for the file descriptor corresponding to `tag`
@@ -26102,7 +26102,7 @@ export class VariantType<S extends string = any> {
          * @param tag the tag from {@link GLib.Source.add_unix_fd}
          * @returns the conditions reported on the file descriptor
          */
-        query_unix_fd(tag: any): IOCondition;
+        query_unix_fd(tag: never): IOCondition;
 
         /**
          * Increases the reference count on a source by one.
@@ -26142,7 +26142,7 @@ export class VariantType<S extends string = any> {
          * As the name suggests, this function is not available on Windows.
          * @param tag the tag from {@link GLib.Source.add_unix_fd}
          */
-        remove_unix_fd(tag: any): void;
+        remove_unix_fd(tag: never): void;
 
         /**
          * Sets the callback function for a source. The callback for a source is
@@ -26186,7 +26186,7 @@ export class VariantType<S extends string = any> {
          * @param callback_data pointer to callback data ‘object’
          * @param callback_funcs functions for reference counting `callback_data`   and getting the callback and data
          */
-        set_callback_indirect(callback_data: (any | null), callback_funcs: SourceCallbackFuncs): void;
+        set_callback_indirect(callback_data: null, callback_funcs: SourceCallbackFuncs): void;
 
         /**
          * Sets whether a source can be called recursively.
@@ -27050,7 +27050,7 @@ export class VariantType<S extends string = any> {
          * or or from within a {@link GLib.ThreadPool}.
          * @param retval the return value of this thread
          */
-        static exit(retval: (any | null)): void;
+        static exit(retval: null): void;
 
         /**
          * This function returns the {@link GLib.Thread} corresponding to the
@@ -27101,7 +27101,7 @@ export class VariantType<S extends string = any> {
          * want to keep the GThread alive beyond the `g_thread_join()` call.
          * @returns the return value of the thread
          */
-        join(): (any | null);
+        join(): null;
 
         /**
          * Increase the reference count on `thread`.
@@ -27156,7 +27156,7 @@ export class VariantType<S extends string = any> {
         // Fields
         func: Func;
 
-        user_data: any;
+        user_data: null;
 
         exclusive: boolean;
 
@@ -27251,7 +27251,7 @@ export class VariantType<S extends string = any> {
          * @param data an unprocessed item in the pool
          * @returns `true` if the item was found and moved
          */
-        move_to_front(data: (any | null)): boolean;
+        move_to_front(data: null): boolean;
 
         /**
          * Inserts `data` into the list of tasks to be executed by `pool`.
@@ -27271,7 +27271,7 @@ export class VariantType<S extends string = any> {
          * @param data a new task for `pool`
          * @returns `true` on success, `false` if an error occurred
          */
-        push(data: (any | null)): boolean;
+        push(data: null): boolean;
 
         /**
          * Sets the maximal allowed number of threads for `pool`.
@@ -27661,20 +27661,20 @@ export class VariantType<S extends string = any> {
          * which may be `null`.
          * @param stack_p a {@link GLib.TrashStack}
          */
-        static peek(stack_p: TrashStack): (any | null);
+        static peek(stack_p: TrashStack): null;
 
         /**
          * Pops a piece of memory off a {@link GLib.TrashStack}.
          * @param stack_p a {@link GLib.TrashStack}
          */
-        static pop(stack_p: TrashStack): (any | null);
+        static pop(stack_p: TrashStack): null;
 
         /**
          * Pushes a piece of memory onto a {@link GLib.TrashStack}.
          * @param stack_p a {@link GLib.TrashStack}
          * @param data_p the piece of memory to push on the stack
          */
-        static push(stack_p: TrashStack, data_p: any): void;
+        static push(stack_p: TrashStack, data_p: never): void;
     }
 
 
@@ -27747,7 +27747,7 @@ export class VariantType<S extends string = any> {
          * @param key the key to insert
          * @param value the value corresponding to the key
          */
-        insert(key: (any | null), value: (any | null)): void;
+        insert(key: null, value: null): void;
 
         /**
          * Inserts a key/value pair into a {@link GLib.Tree}.
@@ -27767,7 +27767,7 @@ export class VariantType<S extends string = any> {
          * @param value the value corresponding to the key
          * @returns the inserted (or set) node or `null` if insertion would overflow the tree node counter.
          */
-        insert_node(key: (any | null), value: (any | null)): (TreeNode | null);
+        insert_node(key: null, value: null): (TreeNode | null);
 
         /**
          * Gets the value corresponding to the given key. Since a {@link GLib.Tree} is
@@ -27776,7 +27776,7 @@ export class VariantType<S extends string = any> {
          * @param key the key to look up
          * @returns the value corresponding to the key, or `null`     if the key was not found
          */
-        lookup(key: (any | null)): (any | null);
+        lookup(key: null): null;
 
         /**
          * Looks up a key in the {@link GLib.Tree}, returning the original key and the
@@ -27786,7 +27786,7 @@ export class VariantType<S extends string = any> {
          * @param lookup_key the key to look up
          * @returns `true` if the key was found in the {@link GLib.Tree}
          */
-        lookup_extended(lookup_key: (any | null)): [boolean, any, any];
+        lookup_extended(lookup_key: null): [boolean, null, null];
 
         /**
          * Gets the tree node corresponding to the given key. Since a {@link GLib.Tree} is
@@ -27795,7 +27795,7 @@ export class VariantType<S extends string = any> {
          * @param key the key to look up
          * @returns the tree node corresponding to          the key, or `null` if the key was not found
          */
-        lookup_node(key: (any | null)): (TreeNode | null);
+        lookup_node(key: null): (TreeNode | null);
 
         /**
          * Gets the lower bound node corresponding to the given key,
@@ -27807,7 +27807,7 @@ export class VariantType<S extends string = any> {
          * @param key the key to calculate the lower bound for
          * @returns the tree node corresponding to          the lower bound, or `null` if the tree is empty or has only          keys strictly lower than the searched key.
          */
-        lower_bound(key: (any | null)): (TreeNode | null);
+        lower_bound(key: null): (TreeNode | null);
 
         /**
          * Gets the number of nodes in a {@link GLib.Tree}.
@@ -27851,7 +27851,7 @@ export class VariantType<S extends string = any> {
          * @param key the key to remove
          * @returns `true` if the key was found (prior to 2.8, this function     returned nothing)
          */
-        remove(key: (any | null)): boolean;
+        remove(key: null): boolean;
 
         /**
          * Removes all nodes from a {@link GLib.Tree} and destroys their keys and values,
@@ -27865,7 +27865,7 @@ export class VariantType<S extends string = any> {
          * @param key the key to insert
          * @param value the value corresponding to the key
          */
-        replace(key: (any | null), value: (any | null)): void;
+        replace(key: null, value: null): void;
 
         /**
          * Inserts a new key and value into a {@link GLib.Tree} similar to `g_tree_insert_node()`.
@@ -27881,7 +27881,7 @@ export class VariantType<S extends string = any> {
          * @param value the value corresponding to the key
          * @returns the inserted (or set) node or `null` if insertion would overflow the tree node counter.
          */
-        replace_node(key: (any | null), value: (any | null)): (TreeNode | null);
+        replace_node(key: null, value: null): (TreeNode | null);
 
         /**
          * Searches a {@link GLib.Tree} using `search_func`.
@@ -27896,7 +27896,7 @@ export class VariantType<S extends string = any> {
          * @param search_func a function used to search the {@link GLib.Tree}
          * @returns the value corresponding to the found key, or `null`     if the key was not found
          */
-        search(search_func: CompareFunc): (any | null);
+        search(search_func: CompareFunc): null;
 
         /**
          * Searches a {@link GLib.Tree} using `search_func`.
@@ -27921,7 +27921,7 @@ export class VariantType<S extends string = any> {
          * @param key the key to remove
          * @returns `true` if the key was found (prior to 2.8, this function     returned nothing)
          */
-        steal(key: (any | null)): boolean;
+        steal(key: null): boolean;
 
         /**
          * Calls the given function for each node in the {@link GLib.Tree}.
@@ -27950,7 +27950,7 @@ export class VariantType<S extends string = any> {
          * @param key the key to calculate the upper bound for
          * @returns the tree node corresponding to the          upper bound, or `null` if the tree is empty or has only keys          lower than or equal to the searched key.
          */
-        upper_bound(key: (any | null)): (TreeNode | null);
+        upper_bound(key: null): (TreeNode | null);
     }
 
 
@@ -27967,7 +27967,7 @@ export class VariantType<S extends string = any> {
          * Gets the key stored at a particular tree node.
          * @returns the key at the node.
          */
-        key(): (any | null);
+        key(): null;
 
         /**
          * Returns the next in-order node of the tree, or `null`
@@ -27987,7 +27987,7 @@ export class VariantType<S extends string = any> {
          * Gets the value stored at a particular tree node.
          * @returns the value at the node.
          */
-        value(): (any | null);
+        value(): null;
     }
 
 
@@ -28028,7 +28028,7 @@ export class VariantType<S extends string = any> {
          * @param field the field to return.
          * @returns the field of the record.
          */
-        index(index_: number, field: number): (any | null);
+        index(index_: number, field: number): null;
     }
 
 
@@ -28952,7 +28952,7 @@ export class VariantType<S extends string = any> {
         static $gtype: GObject.GType<TokenValue>;
 
         // Fields
-        v_symbol: any;
+        v_symbol: null;
 
         v_identifier: string;
 

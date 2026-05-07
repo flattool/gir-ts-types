@@ -116,7 +116,7 @@ export namespace PangoFc {
      * @gir-type Callback
      */
     interface SubstituteFunc {
-        (pattern: fontconfig.Pattern, data: (any | null)): void;
+        (pattern: fontconfig.Pattern, data: null): void;
     }
 
     namespace Decoder {
@@ -240,7 +240,7 @@ export namespace PangoFc {
         // Constructor properties interface
         interface ConstructorProps extends Pango.Font.ConstructorProps {
             fontmap: FontMap;
-            pattern: any;
+            pattern: never;
         }
     }
 
@@ -268,7 +268,7 @@ export namespace PangoFc {
          * The fontconfig pattern for this font.
          * @construct-only
          */
-        get pattern(): any;
+        get pattern(): null;
 
         /**
          * Compile-time signal type information.
@@ -280,11 +280,11 @@ export namespace PangoFc {
         $signals: Font.SignalSignatures;
 
         // Fields
-        priv: any;
+        priv: null;
 
         matrix: Pango.Matrix;
 
-        metrics_by_lang: any[];
+        metrics_by_lang: null[];
 
         is_hinted: number;
 

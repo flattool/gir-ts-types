@@ -163,7 +163,7 @@ export namespace PangoFT2 {
      * @gir-type Callback
      */
     interface SubstituteFunc {
-        (pattern: fontconfig.Pattern, data: (any | null)): void;
+        (pattern: fontconfig.Pattern, data: null): void;
     }
 
     namespace FontMap {
