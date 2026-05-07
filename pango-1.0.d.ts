@@ -1974,7 +1974,7 @@ export namespace Pango {
      * @returns the newly allocated   {@link Pango.Attribute}, which should be freed with   {@link Pango.Attribute.destroy}
      * @since 1.8
      */
-    function attr_shape_new_with_data(ink_rect: Rectangle, logical_rect: Rectangle, data: (any | null), copy_func: (AttrDataCopyFunc | null)): Attribute;
+    function attr_shape_new_with_data(ink_rect: Rectangle, logical_rect: Rectangle, data: null, copy_func: (AttrDataCopyFunc | null)): Attribute;
 
     /**
      * Create a new attribute that influences how invisible
@@ -2661,7 +2661,7 @@ export namespace Pango {
      * @returns 0 if the stream was already at an `EOF` character,   otherwise the number of lines read (this is useful for maintaining   a line number counter which doesn't combine lines with '\')
      * @deprecated since 1.38
      */
-    function read_line(stream: (any | null), str: GLib.String): number;
+    function read_line(stream: null, str: GLib.String): number;
 
     /**
      * Reorder items from logical order to visual order.
@@ -3017,7 +3017,7 @@ export namespace Pango {
      * @gir-type Callback
      */
     interface AttrDataCopyFunc {
-        (user_data: (any | null)): (any | null);
+        (user_data: null): null;
     }
 
     /**
@@ -6192,9 +6192,9 @@ export namespace Pango {
         static $gtype: GObject.GType<Analysis>;
 
         // Fields
-        shape_engine: any;
+        shape_engine: null;
 
-        lang_engine: any;
+        lang_engine: null;
 
         font: Font;
 
@@ -6206,7 +6206,7 @@ export namespace Pango {
 
         script: number;
 
-        extra_attrs: any[];
+        extra_attrs: null[];
     }
 
 
@@ -6623,7 +6623,7 @@ export namespace Pango {
 
         logical_rect: Rectangle;
 
-        data: any;
+        data: null;
 
         copy_func: AttrDataCopyFunc;
 
@@ -6653,7 +6653,7 @@ export namespace Pango {
          * @param data user data pointer
          * @param copy_func function to copy `data` when the   attribute is copied. If `null`, `data` is simply copied   as a pointer
          */
-        static new_with_data(ink_rect: Rectangle, logical_rect: Rectangle, data: (any | null), copy_func: (AttrDataCopyFunc | null)): Attribute;
+        static new_with_data(ink_rect: Rectangle, logical_rect: Rectangle, data: null, copy_func: (AttrDataCopyFunc | null)): Attribute;
     }
 
 

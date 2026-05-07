@@ -1873,7 +1873,7 @@ export namespace Atk {
      * @gir-type Callback
      */
     interface Function {
-        (user_data: (any | null)): boolean;
+        (user_data: null): boolean;
     }
 
     /**
@@ -3118,7 +3118,7 @@ export namespace Atk {
          * how to cast this pointer.
          * @returns a %gpointer that points to an instance of the DOM.
          */
-        get_document(): (any | null);
+        get_document(): null;
 
         /**
          * Gets a string indicating the document type.
@@ -3179,7 +3179,7 @@ export namespace Atk {
          * how to cast this pointer.
          * @virtual
          */
-        vfunc_get_document(): (any | null);
+        vfunc_get_document(): null;
 
         /**
          * Retrieves the value of the given `attribute_name` inside `document`.
@@ -6125,14 +6125,14 @@ export namespace Atk {
          * @param child 
          * @virtual
          */
-        vfunc_active_descendant_changed(child: (any | null)): void;
+        vfunc_active_descendant_changed(child: null): void;
 
         /**
          * @param change_index 
          * @param changed_child 
          * @virtual
          */
-        vfunc_children_changed(change_index: number, changed_child: (any | null)): void;
+        vfunc_children_changed(change_index: number, changed_child: null): void;
 
         /**
          * The signal handler which is executed when there is a
@@ -6224,7 +6224,7 @@ export namespace Atk {
          * @param data a `gpointer` which identifies the object for which the AtkObject was created.
          * @virtual
          */
-        vfunc_initialize(data: (any | null)): void;
+        vfunc_initialize(data: null): void;
 
         /**
          * @param values 
@@ -6399,7 +6399,7 @@ export namespace Atk {
          * to create an instance of a subclass of {@link Atk.Object}
          * @param data a `gpointer` which identifies the object for which the AtkObject was created.
          */
-        initialize(data: (any | null)): void;
+        initialize(data: null): void;
 
         /**
          * Emits a state-change signal for the specified state.
@@ -7212,7 +7212,7 @@ export namespace Atk {
         $signals: RelationSet.SignalSignatures;
 
         // Fields
-        relations: any[];
+        relations: null[];
 
         // Constructors
         constructor(properties?: Partial<RelationSet.ConstructorProps>, ...args: any[]);
@@ -8897,7 +8897,7 @@ export namespace Atk {
              * how to cast this pointer.
              * @virtual
              */
-            vfunc_get_document(): (any | null);
+            vfunc_get_document(): null;
 
             /**
              * Retrieves the value of the given `attribute_name` inside `document`.
@@ -9014,7 +9014,7 @@ export namespace Atk {
          * how to cast this pointer.
          * @returns a %gpointer that points to an instance of the DOM.
          */
-        get_document(): (any | null);
+        get_document(): null;
 
         /**
          * Gets a string indicating the document type.

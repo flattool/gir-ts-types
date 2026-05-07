@@ -579,9 +579,9 @@ export namespace GstSdp {
 
         map_type: MIKEYMapType;
 
-        map_info: any[];
+        map_info: null[];
 
-        payloads: any[];
+        payloads: null[];
 
         // Constructors
 
@@ -592,8 +592,8 @@ export namespace GstSdp {
             prf_func: MIKEYPRFFunc;
             CSB_id: number;
             map_type: MIKEYMapType;
-            map_info: any[];
-            payloads: any[];
+            map_info: null[];
+            payloads: null[];
         }>);
 
         static ["new"](): MIKEYMessage;
@@ -939,7 +939,7 @@ export namespace GstSdp {
 
         mac_alg: MIKEYMacAlg;
 
-        subpayloads: any[];
+        subpayloads: null[];
     }
 
 
@@ -1016,7 +1016,7 @@ export namespace GstSdp {
 
         proto: MIKEYSecProto;
 
-        params: any[];
+        params: null[];
     }
 
 
@@ -1217,17 +1217,17 @@ export namespace GstSdp {
 
         proto: string;
 
-        fmts: any[];
+        fmts: null[];
 
         information: string;
 
-        connections: any[];
+        connections: null[];
 
-        bandwidths: any[];
+        bandwidths: null[];
 
         key: SDPKey;
 
-        attributes: any[];
+        attributes: null[];
 
         // Constructors
 
@@ -1236,12 +1236,12 @@ export namespace GstSdp {
             port: number;
             num_ports: number;
             proto: string;
-            fmts: any[];
+            fmts: null[];
             information: string;
-            connections: any[];
-            bandwidths: any[];
+            connections: null[];
+            bandwidths: null[];
             key: SDPKey;
-            attributes: any[];
+            attributes: null[];
         }>);
 
         // Static methods
@@ -1626,23 +1626,23 @@ export namespace GstSdp {
 
         uri: string;
 
-        emails: any[];
+        emails: null[];
 
-        phones: any[];
+        phones: null[];
 
         connection: SDPConnection;
 
-        bandwidths: any[];
+        bandwidths: null[];
 
-        times: any[];
+        times: null[];
 
-        zones: any[];
+        zones: null[];
 
         key: SDPKey;
 
-        attributes: any[];
+        attributes: null[];
 
-        medias: any[];
+        medias: null[];
 
         // Constructors
 
@@ -1652,15 +1652,15 @@ export namespace GstSdp {
             session_name: string;
             information: string;
             uri: string;
-            emails: any[];
-            phones: any[];
+            emails: null[];
+            phones: null[];
             connection: SDPConnection;
-            bandwidths: any[];
-            times: any[];
-            zones: any[];
+            bandwidths: null[];
+            times: null[];
+            zones: null[];
             key: SDPKey;
-            attributes: any[];
-            medias: any[];
+            attributes: null[];
+            medias: null[];
         }>);
 
         // Static methods
@@ -2237,14 +2237,14 @@ export namespace GstSdp {
 
         stop: string;
 
-        repeat: any[];
+        repeat: null[];
 
         // Constructors
 
         constructor(properties?: Partial<{
             start: string;
             stop: string;
-            repeat: any[];
+            repeat: null[];
         }>);
 
         // Methods

@@ -5949,7 +5949,7 @@ export const _LocalFilePrototype: typeof File.prototype;
      * @gir-type Callback
      */
     interface AsyncReadyCallback<A = GObject.Object> {
-        (source_object: (A | null), res: AsyncResult, data: (any | null)): void;
+        (source_object: (A | null), res: AsyncResult, data: null): void;
     }
 
     /**
@@ -5991,7 +5991,7 @@ export const _LocalFilePrototype: typeof File.prototype;
      * @gir-type Callback
      */
     interface CancellableSourceFunc {
-        (cancellable: (Cancellable | null), data: (any | null)): boolean;
+        (cancellable: (Cancellable | null), data: null): boolean;
     }
 
     /**
@@ -6026,7 +6026,7 @@ export const _LocalFilePrototype: typeof File.prototype;
      * @gir-type Callback
      */
     interface DBusProxyTypeFunc {
-        (manager: DBusObjectManagerClient, object_path: string, interface_name: (string | null), data: (any | null)): GObject.GType;
+        (manager: DBusObjectManagerClient, object_path: string, interface_name: (string | null), data: null): GObject.GType;
     }
 
     /**
@@ -6040,7 +6040,7 @@ export const _LocalFilePrototype: typeof File.prototype;
      * @gir-type Callback
      */
     interface DBusSubtreeDispatchFunc {
-        (connection: DBusConnection, sender: string, object_path: string, interface_name: string, node: string, out_user_data: any): (DBusInterfaceVTable | null);
+        (connection: DBusConnection, sender: string, object_path: string, interface_name: string, node: string, out_user_data: null): (DBusInterfaceVTable | null);
     }
 
     /**
@@ -6061,7 +6061,7 @@ export const _LocalFilePrototype: typeof File.prototype;
      * @gir-type Callback
      */
     interface DatagramBasedSourceFunc {
-        (datagram_based: DatagramBased, condition: GLib.IOCondition, data: (any | null)): boolean;
+        (datagram_based: DatagramBased, condition: GLib.IOCondition, data: null): boolean;
     }
 
     /**
@@ -6075,42 +6075,42 @@ export const _LocalFilePrototype: typeof File.prototype;
      * @gir-type Callback
      */
     interface FileMeasureProgressCallback {
-        (reporting: boolean, current_size: number, num_dirs: number, num_files: number, data: (any | null)): void;
+        (reporting: boolean, current_size: number, num_dirs: number, num_files: number, data: null): void;
     }
 
     /**
      * @gir-type Callback
      */
     interface FileProgressCallback {
-        (current_num_bytes: number, total_num_bytes: number, data: (any | null)): void;
+        (current_num_bytes: number, total_num_bytes: number, data: null): void;
     }
 
     /**
      * @gir-type Callback
      */
     interface FileReadMoreCallback {
-        (file_contents: string, file_size: number, callback_data: (any | null)): boolean;
+        (file_contents: string, file_size: number, callback_data: null): boolean;
     }
 
     /**
      * @gir-type Callback
      */
     interface IOSchedulerJobFunc {
-        (job: IOSchedulerJob, cancellable: (Cancellable | null), data: (any | null)): boolean;
+        (job: IOSchedulerJob, cancellable: (Cancellable | null), data: null): boolean;
     }
 
     /**
      * @gir-type Callback
      */
     interface PollableSourceFunc<A = GObject.Object> {
-        (pollable_stream: A, data: (any | null)): boolean;
+        (pollable_stream: A, data: null): boolean;
     }
 
     /**
      * @gir-type Callback
      */
     interface ReallocFunc {
-        (data: (any | null), size: number): (any | null);
+        (data: null, size: number): null;
     }
 
     /**
@@ -6145,14 +6145,14 @@ export const _LocalFilePrototype: typeof File.prototype;
      * @gir-type Callback
      */
     interface SocketSourceFunc {
-        (socket: Socket, condition: GLib.IOCondition, data: (any | null)): boolean;
+        (socket: Socket, condition: GLib.IOCondition, data: null): boolean;
     }
 
     /**
      * @gir-type Callback
      */
     interface TaskThreadFunc<A = GObject.Object> {
-        (task: Task, source_object: A, task_data: (any | null), cancellable: (Cancellable | null)): void;
+        (task: Task, source_object: A, task_data: null, cancellable: (Cancellable | null)): void;
     }
 
     /**
@@ -12463,7 +12463,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param native_type The type of native credentials to set.
          * @param _native A pointer to native credentials.
          */
-        set_native(native_type: CredentialsType, _native: any): void;
+        set_native(native_type: CredentialsType, _native: never): void;
 
         /**
          * Tries to set the UNIX user identifier on `credentials`. This method
@@ -14386,7 +14386,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param user_data data to pass to functions in `vtable`
          * @returns 0 if `error` is set, otherwise a subtree registration ID (never 0) that can be used with `g_dbus_connection_unregister_subtree()`
          */
-        register_subtree(object_path: string, vtable: DBusSubtreeVTable, flags: DBusSubtreeFlags, user_data: (any | null)): number;
+        register_subtree(object_path: string, vtable: DBusSubtreeVTable, flags: DBusSubtreeFlags, user_data: null): number;
 
         /**
          * Removes a filter.
@@ -16100,12 +16100,12 @@ export const _LocalFilePrototype: typeof File.prototype;
             busType: BusType;
             connection: DBusConnection;
             flags: DBusObjectManagerClientFlags;
-            get_proxy_type_destroy_notify: any;
-            getProxyTypeDestroyNotify: any;
-            get_proxy_type_func: any;
-            getProxyTypeFunc: any;
-            get_proxy_type_user_data: any;
-            getProxyTypeUserData: any;
+            get_proxy_type_destroy_notify: never;
+            getProxyTypeDestroyNotify: never;
+            get_proxy_type_func: never;
+            getProxyTypeFunc: never;
+            get_proxy_type_user_data: never;
+            getProxyTypeUserData: never;
             name: string;
             name_owner: (string | null);
             nameOwner: (string | null);
@@ -16242,14 +16242,14 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @since 2.30
          * @construct-only
          */
-        get get_proxy_type_destroy_notify(): any;
+        get get_proxy_type_destroy_notify(): null;
 
         /**
          * A {@link GLib.DestroyNotify} for the `gpointer` user_data in {@link Gio.DBusObjectManagerClient.get_proxy_type_user_data}.
          * @since 2.30
          * @construct-only
          */
-        get getProxyTypeDestroyNotify(): any;
+        get getProxyTypeDestroyNotify(): null;
 
         /**
          * The {@link Gio.DBusProxyTypeFunc} to use when determining what {@link GObject.GType} to
@@ -16257,7 +16257,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @since 2.30
          * @construct-only
          */
-        get get_proxy_type_func(): any;
+        get get_proxy_type_func(): null;
 
         /**
          * The {@link Gio.DBusProxyTypeFunc} to use when determining what {@link GObject.GType} to
@@ -16265,21 +16265,21 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @since 2.30
          * @construct-only
          */
-        get getProxyTypeFunc(): any;
+        get getProxyTypeFunc(): null;
 
         /**
          * The `gpointer` user_data to pass to {@link Gio.DBusObjectManagerClient.get_proxy_type_func}.
          * @since 2.30
          * @construct-only
          */
-        get get_proxy_type_user_data(): any;
+        get get_proxy_type_user_data(): null;
 
         /**
          * The `gpointer` user_data to pass to {@link Gio.DBusObjectManagerClient.get_proxy_type_func}.
          * @since 2.30
          * @construct-only
          */
-        get getProxyTypeUserData(): any;
+        get getProxyTypeUserData(): null;
 
         /**
          * The well-known name or unique name that the manager is for.
@@ -22701,7 +22701,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param attribute a file attribute key
          * @returns `true` if `info` has an attribute named `attribute`,      `false` otherwise.
          */
-        get_attribute_data(attribute: string): [boolean, FileAttributeType | null, any, FileAttributeStatus | null];
+        get_attribute_data(attribute: string): [boolean, FileAttributeType | null, null, FileAttributeStatus | null];
 
         /**
          * Gets the value of a byte string attribute as a file path.
@@ -23013,7 +23013,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param type a {@link Gio.FileAttributeType}
          * @param value_p pointer to the value
          */
-        set_attribute(attribute: string, type: FileAttributeType, value_p: any): void;
+        set_attribute(attribute: string, type: FileAttributeType, value_p: never): void;
 
         /**
          * Sets the `attribute` to contain the given `attr_value`,
@@ -24741,7 +24741,7 @@ export const _LocalFilePrototype: typeof File.prototype;
 
         // Constructor properties interface
         interface ConstructorProps extends GObject.Object.ConstructorProps {
-            bytes: any;
+            bytes: never;
             family: SocketFamily;
             is_any: boolean;
             isAny: boolean;
@@ -24788,7 +24788,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @since 2.22
          * @construct-only
          */
-        get bytes(): any;
+        get bytes(): null;
 
         /**
          * The address family (IPv4 or IPv6).
@@ -25649,7 +25649,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable 
          * @virtual
          */
-        vfunc_read_fn(buffer: (any | null), count: number, cancellable: (Cancellable | null)): (bigint | number);
+        vfunc_read_fn(buffer: null, count: number, cancellable: (Cancellable | null)): (bigint | number);
 
         /**
          * Tries to skip `count` bytes from the stream. Will block during the operation.
@@ -26971,7 +26971,7 @@ export const _LocalFilePrototype: typeof File.prototype;
 
         // Constructor properties interface
         interface ConstructorProps extends OutputStream.ConstructorProps, PollableOutputStream.ConstructorProps, Seekable.ConstructorProps {
-            data: (any | null);
+            data: never;
             data_size: (bigint | number);
             dataSize: (bigint | number);
             size: (bigint | number);
@@ -26995,7 +26995,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @since 2.24
          * @construct-only
          */
-        get data(): (any | null);
+        get data(): null;
 
         /**
          * Size of data written to the buffer.
@@ -27058,7 +27058,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * write or truncate operation on the stream.
          * @returns pointer to the stream's data, or `null` if the data    has been stolen
          */
-        get_data(): (any | null);
+        get_data(): null;
 
         /**
          * Returns the number of bytes from the start up to including the last
@@ -27103,7 +27103,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * `ostream` must be closed before calling this function.
          * @returns the stream's data, or `null` if it has previously    been stolen
          */
-        steal_data(): (any | null);
+        steal_data(): null;
 
         /**
          * Checks if `stream` is actually pollable. Some classes may implement
@@ -28925,7 +28925,7 @@ export const _LocalFilePrototype: typeof File.prototype;
 
         _init(...args: any[]): void;
 
-        static ["new"](_native: (any | null), len: (bigint | number)): NativeSocketAddress;
+        static ["new"](_native: null, len: (bigint | number)): NativeSocketAddress;
 
         // Signals
         /** @signal */
@@ -33830,7 +33830,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param mapping the function to map the value in the   settings database to the value used by the application
          * @returns the result, which may be `NULL`
          */
-        get_mapped(key: string, mapping: SettingsGetMapping): (any | null);
+        get_mapped(key: string, mapping: SettingsGetMapping): null;
 
         /**
          * Queries the range of a key.
@@ -34264,7 +34264,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param origin_tag 
          * @virtual
          */
-        vfunc_reset(key: string, origin_tag: (any | null)): void;
+        vfunc_reset(key: string, origin_tag: null): void;
 
         /**
          * virtual method to subscribe to key changes
@@ -34293,7 +34293,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param origin_tag 
          * @virtual
          */
-        vfunc_write(key: string, value: GLib.Variant, origin_tag: (any | null)): boolean;
+        vfunc_write(key: string, value: GLib.Variant, origin_tag: null): boolean;
 
         /**
          * virtual method to change a tree of keys
@@ -34301,7 +34301,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param origin_tag 
          * @virtual
          */
-        vfunc_write_tree(tree: GLib.Tree, origin_tag: (any | null)): boolean;
+        vfunc_write_tree(tree: GLib.Tree, origin_tag: null): boolean;
 
         // Methods
         /**
@@ -34330,7 +34330,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param key the name of the key
          * @param origin_tag the origin tag
          */
-        changed(key: string, origin_tag: (any | null)): void;
+        changed(key: string, origin_tag: null): void;
 
         /**
          * This call is a convenience wrapper.  It gets the list of changes from
@@ -34339,7 +34339,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param tree a {@link GLib.Tree} containing the changes
          * @param origin_tag the origin tag
          */
-        changed_tree(tree: GLib.Tree, origin_tag: (any | null)): void;
+        changed_tree(tree: GLib.Tree, origin_tag: null): void;
 
         /**
          * Signals that a list of keys have possibly changed.  Backend
@@ -34367,7 +34367,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param items the `null`-terminated list of changed keys
          * @param origin_tag the origin tag
          */
-        keys_changed(path: string, items: string[], origin_tag: (any | null)): void;
+        keys_changed(path: string, items: string[], origin_tag: null): void;
 
         /**
          * Signals that all keys below a given path may have possibly changed.
@@ -34394,7 +34394,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param path the path containing the changes
          * @param origin_tag the origin tag
          */
-        path_changed(path: string, origin_tag: (any | null)): void;
+        path_changed(path: string, origin_tag: null): void;
 
         /**
          * Signals that the writability of all keys below a given path may have
@@ -34921,7 +34921,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param entries a pointer to the first item in           an array of {@link Gio.ActionEntry} structs
          * @param user_data the user data for signal connections
          */
-        add_entries(entries: ActionEntry[], user_data: (any | null)): void;
+        add_entries(entries: ActionEntry[], user_data: null): void;
 
         /**
          * Adds an action to the action group.
@@ -35704,7 +35704,7 @@ export const _LocalFilePrototype: typeof File.prototype;
 
         _init(...args: any[]): void;
 
-        static ["new"](source_object: (GObject.Object | null), callback: (AsyncReadyCallback | null), source_tag: (any | null)): SimpleAsyncResult;
+        static ["new"](source_object: (GObject.Object | null), callback: (AsyncReadyCallback | null), source_tag: null): SimpleAsyncResult;
 
         static new_from_error(source_object: (GObject.Object | null), callback: (AsyncReadyCallback | null), error: GLib.Error): SimpleAsyncResult;
 
@@ -35739,7 +35739,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param source the {@link GObject.Object} passed to the _finish function.
          * @param source_tag the asynchronous function.
          */
-        static is_valid(result: AsyncResult, source: (GObject.Object | null), source_tag: (any | null)): boolean;
+        static is_valid(result: AsyncResult, source: (GObject.Object | null), source_tag: null): boolean;
 
         // Methods
         /**
@@ -35846,7 +35846,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * Gets the user data from a {@link Gio.AsyncResult}.
          * @returns the user data for `res`.
          */
-        get_user_data(): (any | null);
+        get_user_data(): null;
 
         /**
          * Checks if `res` has the given `source_tag` (generally a function
@@ -35854,7 +35854,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param source_tag an application-defined tag
          * @returns `TRUE` if `res` has the indicated `source_tag`, `FALSE` if   not.
          */
-        is_tagged(source_tag: (any | null)): boolean;
+        is_tagged(source_tag: null): boolean;
 
         /**
          * If `res` is a {@link Gio.SimpleAsyncResult}, this is equivalent to
@@ -35881,7 +35881,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * Gets the user data from a {@link Gio.AsyncResult}.
          * @virtual
          */
-        vfunc_get_user_data(): (any | null);
+        vfunc_get_user_data(): null;
 
         /**
          * Checks if `res` has the given `source_tag` (generally a function
@@ -35889,7 +35889,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param source_tag an application-defined tag
          * @virtual
          */
-        vfunc_is_tagged(source_tag: (any | null)): boolean;
+        vfunc_is_tagged(source_tag: null): boolean;
     }
 
 
@@ -38013,7 +38013,7 @@ export const _LocalFilePrototype: typeof File.prototype;
 
         _init(...args: any[]): void;
 
-        static new_from_native(_native: any, len: (bigint | number)): SocketAddress;
+        static new_from_native(_native: never, len: (bigint | number)): SocketAddress;
 
         // Signals
         /** @signal */
@@ -38054,7 +38054,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param destlen the size of `dest`. Must be at least as large as     `g_socket_address_get_native_size()`
          * @virtual
          */
-        vfunc_to_native(dest: (any | null), destlen: number): boolean;
+        vfunc_to_native(dest: null, destlen: number): boolean;
 
         // Methods
         /**
@@ -38082,7 +38082,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param destlen the size of `dest`. Must be at least as large as     `g_socket_address_get_native_size()`
          * @returns `true` if `dest` was filled in, `false` on error
          */
-        to_native(dest: (any | null), destlen: (bigint | number)): boolean;
+        to_native(dest: null, destlen: (bigint | number)): boolean;
 
         /**
          * Creates a {@link Gio.SocketAddressEnumerator} for `connectable`.
@@ -39430,7 +39430,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param data A buffer to write data to
          * @virtual
          */
-        vfunc_serialize(data: any): void;
+        vfunc_serialize(data: null): void;
 
         // Methods
         /**
@@ -39463,7 +39463,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * object.
          * @param data A buffer to write data to
          */
-        serialize(data: any): void;
+        serialize(data: never): void;
     }
 
 
@@ -41438,7 +41438,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param source_tag an opaque pointer indicating the source of this task
          * @param error error to report
          */
-        static report_error(source_object: (GObject.Object | null), callback: (AsyncReadyCallback<Task> | null), source_tag: (any | null), error: GLib.Error): void;
+        static report_error(source_object: (GObject.Object | null), callback: (AsyncReadyCallback<Task> | null), source_tag: null, error: GLib.Error): void;
 
         // Methods
         /**
@@ -41502,13 +41502,13 @@ export const _LocalFilePrototype: typeof File.prototype;
          * Gets `task`'s source tag. See `g_task_set_source_tag()`.
          * @returns `task`'s source tag
          */
-        get_source_tag(): (any | null);
+        get_source_tag(): null;
 
         /**
          * Gets `task`'s `task_data`.
          * @returns `task`'s `task_data`.
          */
-        get_task_data(): (any | null);
+        get_task_data(): null;
 
         /**
          * Tests if `task` resulted in an error.
@@ -41551,7 +41551,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * error) to the caller, you may only call it once.
          * @returns the task result, or `null` on error
          */
-        propagate_pointer(): (any | null);
+        propagate_pointer(): null;
 
         /**
          * Gets the result of `task` as a {@link GObject.Value}, and transfers ownership of
@@ -41645,7 +41645,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * reference on it.
          * @param result the pointer result of a task     function
          */
-        return_pointer(result: (any | null)): void;
+        return_pointer(result: null): void;
 
         /**
          * Sets `task`'s result to `result` (by copying it) and completes the task.
@@ -41799,7 +41799,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * set, for convenience.
          * @param source_tag an opaque pointer indicating the source of this task
          */
-        set_source_tag(source_tag: (any | null)): void;
+        set_source_tag(source_tag: null): void;
 
         /**
          * Sets `task`’s name, used in debugging and profiling.
@@ -41816,13 +41816,13 @@ export const _LocalFilePrototype: typeof File.prototype;
          * Sets `task`'s task data (freeing the existing task data, if any).
          * @param task_data task-specific data
          */
-        set_task_data(task_data: (any | null)): void;
+        set_task_data(task_data: null): void;
 
         /**
          * Gets the user data from a {@link Gio.AsyncResult}.
          * @returns the user data for `res`.
          */
-        get_user_data(): (any | null);
+        get_user_data(): null;
 
         /**
          * Checks if `res` has the given `source_tag` (generally a function
@@ -41830,7 +41830,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param source_tag an application-defined tag
          * @returns `TRUE` if `res` has the indicated `source_tag`, `FALSE` if   not.
          */
-        is_tagged(source_tag: (any | null)): boolean;
+        is_tagged(source_tag: null): boolean;
 
         /**
          * If `res` is a {@link Gio.SimpleAsyncResult}, this is equivalent to
@@ -41857,7 +41857,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * Gets the user data from a {@link Gio.AsyncResult}.
          * @virtual
          */
-        vfunc_get_user_data(): (any | null);
+        vfunc_get_user_data(): null;
 
         /**
          * Checks if `res` has the given `source_tag` (generally a function
@@ -41865,7 +41865,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param source_tag an application-defined tag
          * @virtual
          */
-        vfunc_is_tagged(source_tag: (any | null)): boolean;
+        vfunc_is_tagged(source_tag: null): boolean;
     }
 
 
@@ -42648,10 +42648,10 @@ export const _LocalFilePrototype: typeof File.prototype;
             certificate: (Uint8Array | string);
             certificate_pem: string;
             certificatePem: string;
-            dns_names: (any[] | null);
-            dnsNames: (any[] | null);
-            ip_addresses: (any[] | null);
-            ipAddresses: (any[] | null);
+            dns_names: (never[] | null);
+            dnsNames: (never[] | null);
+            ip_addresses: (never[] | null);
+            ipAddresses: (never[] | null);
             issuer: (TlsCertificate | null);
             issuer_name: (string | null);
             issuerName: (string | null);
@@ -42723,7 +42723,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @since 2.70
          * @read-only
          */
-        get dns_names(): (any[] | null);
+        get dns_names(): (never[] | null);
 
         /**
          * The DNS names from the certificate's Subject Alternative Names (SANs),
@@ -42731,7 +42731,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @since 2.70
          * @read-only
          */
-        get dnsNames(): (any[] | null);
+        get dnsNames(): (never[] | null);
 
         /**
          * The IP addresses from the certificate's Subject Alternative Names (SANs),
@@ -42739,7 +42739,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @since 2.70
          * @read-only
          */
-        get ip_addresses(): (any[] | null);
+        get ip_addresses(): (never[] | null);
 
         /**
          * The IP addresses from the certificate's Subject Alternative Names (SANs),
@@ -42747,7 +42747,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @since 2.70
          * @read-only
          */
-        get ipAddresses(): (any[] | null);
+        get ipAddresses(): (never[] | null);
 
         /**
          * A {@link Gio.TlsCertificate} representing the entity that issued this
@@ -46806,7 +46806,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param extra_data 
          * @virtual
          */
-        vfunc_local_file_add_info(filename: string, device: number, attribute_matcher: FileAttributeMatcher, info: FileInfo, cancellable: (Cancellable | null), extra_data: (any | null)): void;
+        vfunc_local_file_add_info(filename: string, device: number, attribute_matcher: FileAttributeMatcher, info: FileInfo, cancellable: (Cancellable | null), extra_data: null): void;
 
         /**
          * @param source 
@@ -49302,7 +49302,7 @@ export const _LocalFilePrototype: typeof File.prototype;
         static $gtype: GObject.GType<InputVector>;
 
         // Fields
-        buffer: any;
+        buffer: null;
 
         size: number;
     }
@@ -49512,7 +49512,7 @@ export const _LocalFilePrototype: typeof File.prototype;
         static $gtype: GObject.GType<OutputVector>;
 
         // Fields
-        buffer: any;
+        buffer: null;
 
         size: number;
     }
@@ -53258,7 +53258,7 @@ export const _LocalFilePrototype: typeof File.prototype;
              * Gets the user data from a {@link Gio.AsyncResult}.
              * @virtual
              */
-            vfunc_get_user_data(): (any | null);
+            vfunc_get_user_data(): null;
 
             /**
              * Checks if `res` has the given `source_tag` (generally a function
@@ -53266,7 +53266,7 @@ export const _LocalFilePrototype: typeof File.prototype;
              * @param source_tag an application-defined tag
              * @virtual
              */
-            vfunc_is_tagged(source_tag: (any | null)): boolean;
+            vfunc_is_tagged(source_tag: null): boolean;
         }
 
 
@@ -53381,7 +53381,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * Gets the user data from a {@link Gio.AsyncResult}.
          * @returns the user data for `res`.
          */
-        get_user_data(): (any | null);
+        get_user_data(): null;
 
         /**
          * Checks if `res` has the given `source_tag` (generally a function
@@ -53389,7 +53389,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param source_tag an application-defined tag
          * @returns `TRUE` if `res` has the indicated `source_tag`, `FALSE` if   not.
          */
-        is_tagged(source_tag: (any | null)): boolean;
+        is_tagged(source_tag: null): boolean;
 
         /**
          * If `res` is a {@link Gio.SimpleAsyncResult}, this is equivalent to
@@ -55180,8 +55180,8 @@ export const _LocalFilePrototype: typeof File.prototype;
 
         // Constructor properties interface
         interface ConstructorProps extends DatagramBased.ConstructorProps {
-            accepted_cas: any[];
-            acceptedCas: any[];
+            accepted_cas: never[];
+            acceptedCas: never[];
             server_identity: SocketConnectable;
             serverIdentity: SocketConnectable;
             validation_flags: TlsCertificateFlags;
@@ -55220,7 +55220,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @since 2.48
          * @read-only
          */
-        get accepted_cas(): any[];
+        get accepted_cas(): null[];
 
         /**
          * A list of the distinguished names of the Certificate Authorities
@@ -55233,7 +55233,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @since 2.48
          * @read-only
          */
-        get acceptedCas(): any[];
+        get acceptedCas(): null[];
 
         /**
          * A {@link Gio.SocketConnectable} describing the identity of the server that
@@ -57631,7 +57631,7 @@ export const _LocalFilePrototype: typeof File.prototype;
              * @param cancellable optional {@link Gio.Cancellable} object,   `null` to ignore
              * @virtual
              */
-            vfunc_set_attribute(attribute: string, type: FileAttributeType, value_p: (any | null), flags: FileQueryInfoFlags, cancellable: (Cancellable | null)): boolean;
+            vfunc_set_attribute(attribute: string, type: FileAttributeType, value_p: null, flags: FileQueryInfoFlags, cancellable: (Cancellable | null)): boolean;
 
             /**
              * Asynchronously sets the attributes of `file` with `info`.
@@ -60454,7 +60454,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object,   `null` to ignore
          * @returns `true` if the attribute was set, `false` otherwise.
          */
-        set_attribute(attribute: string, type: FileAttributeType, value_p: (any | null), flags: FileQueryInfoFlags, cancellable: (Cancellable | null)): boolean;
+        set_attribute(attribute: string, type: FileAttributeType, value_p: null, flags: FileQueryInfoFlags, cancellable: (Cancellable | null)): boolean;
 
         /**
          * Sets `attribute` of type {@link Gio.FileAttributeType.BYTE_STRING} to `value`.
@@ -64222,8 +64222,8 @@ export const _LocalFilePrototype: typeof File.prototype;
 
         // Constructor properties interface
         interface ConstructorProps extends TlsConnection.ConstructorProps {
-            accepted_cas: any[];
-            acceptedCas: any[];
+            accepted_cas: never[];
+            acceptedCas: never[];
             server_identity: (SocketConnectable | null);
             serverIdentity: (SocketConnectable | null);
             use_ssl3: boolean;
@@ -64269,7 +64269,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @since 2.28
          * @read-only
          */
-        get accepted_cas(): any[];
+        get accepted_cas(): null[];
 
         /**
          * A list of the distinguished names of the Certificate Authorities
@@ -64282,7 +64282,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @since 2.28
          * @read-only
          */
-        get acceptedCas(): any[];
+        get acceptedCas(): null[];
 
         /**
          * A {@link Gio.SocketConnectable} describing the identity of the server that

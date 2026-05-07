@@ -274,7 +274,7 @@ export namespace Secret {
      * @returns whether or not the given attributes table is valid
      * @since 0.21.2
      */
-    function attributes_validate(schema: Schema, attributes: ({ [key: string]: any } | GLib.HashTable<any, any>)): boolean;
+    function attributes_validate(schema: Schema, attributes: ({ [key: string]: any } | GLib.HashTable<never, never>)): boolean;
 
     /**
      * Get a {@link Secret.Backend} instance.
@@ -4867,7 +4867,7 @@ export namespace Secret {
          * @param callback 
          * @virtual
          */
-        vfunc_clear(schema: Schema, attributes: GLib.HashTable<any, any>, cancellable: (Gio.Cancellable | null), callback: (Gio.AsyncReadyCallback<this> | null)): void;
+        vfunc_clear(schema: Schema, attributes: GLib.HashTable<never, never>, cancellable: (Gio.Cancellable | null), callback: (Gio.AsyncReadyCallback<this> | null)): void;
 
         /**
          * implementation of {@link password_clear_finish}, required
@@ -4900,7 +4900,7 @@ export namespace Secret {
          * @param callback 
          * @virtual
          */
-        vfunc_lookup(schema: Schema, attributes: GLib.HashTable<any, any>, cancellable: (Gio.Cancellable | null), callback: (Gio.AsyncReadyCallback<this> | null)): void;
+        vfunc_lookup(schema: Schema, attributes: GLib.HashTable<never, never>, cancellable: (Gio.Cancellable | null), callback: (Gio.AsyncReadyCallback<this> | null)): void;
 
         /**
          * implementation of {@link password_lookup_finish}, required
@@ -4918,7 +4918,7 @@ export namespace Secret {
          * @param callback 
          * @virtual
          */
-        vfunc_search(schema: Schema, attributes: GLib.HashTable<any, any>, flags: SearchFlags, cancellable: (Gio.Cancellable | null), callback: (Gio.AsyncReadyCallback<this> | null)): void;
+        vfunc_search(schema: Schema, attributes: GLib.HashTable<never, never>, flags: SearchFlags, cancellable: (Gio.Cancellable | null), callback: (Gio.AsyncReadyCallback<this> | null)): void;
 
         /**
          * implementation of {@link password_store}, required
@@ -4931,7 +4931,7 @@ export namespace Secret {
          * @param callback 
          * @virtual
          */
-        vfunc_store(schema: Schema, attributes: GLib.HashTable<any, any>, collection: string, label: string, value: Value, cancellable: (Gio.Cancellable | null), callback: (Gio.AsyncReadyCallback<this> | null)): void;
+        vfunc_store(schema: Schema, attributes: GLib.HashTable<never, never>, collection: string, label: string, value: Value, cancellable: (Gio.Cancellable | null), callback: (Gio.AsyncReadyCallback<this> | null)): void;
 
         /**
          * implementation of {@link password_store_finish}, required
@@ -5208,7 +5208,7 @@ export namespace Secret {
              * @param callback 
              * @virtual
              */
-            vfunc_clear(schema: Schema, attributes: GLib.HashTable<any, any>, cancellable: (Gio.Cancellable | null), callback: (Gio.AsyncReadyCallback<this> | null)): void;
+            vfunc_clear(schema: Schema, attributes: GLib.HashTable<never, never>, cancellable: (Gio.Cancellable | null), callback: (Gio.AsyncReadyCallback<this> | null)): void;
 
             /**
              * implementation of {@link password_clear_finish}, required
@@ -5241,7 +5241,7 @@ export namespace Secret {
              * @param callback 
              * @virtual
              */
-            vfunc_lookup(schema: Schema, attributes: GLib.HashTable<any, any>, cancellable: (Gio.Cancellable | null), callback: (Gio.AsyncReadyCallback<this> | null)): void;
+            vfunc_lookup(schema: Schema, attributes: GLib.HashTable<never, never>, cancellable: (Gio.Cancellable | null), callback: (Gio.AsyncReadyCallback<this> | null)): void;
 
             /**
              * implementation of {@link password_lookup_finish}, required
@@ -5259,7 +5259,7 @@ export namespace Secret {
              * @param callback 
              * @virtual
              */
-            vfunc_search(schema: Schema, attributes: GLib.HashTable<any, any>, flags: SearchFlags, cancellable: (Gio.Cancellable | null), callback: (Gio.AsyncReadyCallback<this> | null)): void;
+            vfunc_search(schema: Schema, attributes: GLib.HashTable<never, never>, flags: SearchFlags, cancellable: (Gio.Cancellable | null), callback: (Gio.AsyncReadyCallback<this> | null)): void;
 
             /**
              * implementation of {@link password_store}, required
@@ -5272,7 +5272,7 @@ export namespace Secret {
              * @param callback 
              * @virtual
              */
-            vfunc_store(schema: Schema, attributes: GLib.HashTable<any, any>, collection: string, label: string, value: Value, cancellable: (Gio.Cancellable | null), callback: (Gio.AsyncReadyCallback<this> | null)): void;
+            vfunc_store(schema: Schema, attributes: GLib.HashTable<never, never>, collection: string, label: string, value: Value, cancellable: (Gio.Cancellable | null), callback: (Gio.AsyncReadyCallback<this> | null)): void;
 
             /**
              * implementation of {@link password_store_finish}, required

@@ -324,7 +324,7 @@ export namespace Gck {
      * @gir-type Callback
      */
     interface Allocator {
-        (data: (any | null), length: number): (any | null);
+        (data: null, length: number): null;
     }
 
     /**
@@ -585,7 +585,7 @@ export namespace Gck {
 
         // Constructor properties interface
         interface ConstructorProps extends GObject.Object.ConstructorProps {
-            functions: any;
+            functions: never;
             path: string;
         }
     }
@@ -609,7 +609,7 @@ export namespace Gck {
          * This points to a CK_FUNCTION_LIST structure.
          * @construct-only
          */
-        get functions(): any;
+        get functions(): null;
 
         /**
          * The PKCS&num;11 module file path.
@@ -1374,8 +1374,8 @@ export namespace Gck {
 
         // Constructor properties interface
         interface ConstructorProps extends GObject.Object.ConstructorProps, Gio.AsyncInitable.ConstructorProps, Gio.Initable.ConstructorProps {
-            app_data: any;
-            appData: any;
+            app_data: never;
+            appData: never;
             handle: (bigint | number);
             interaction: (Gio.TlsInteraction | null);
             module: Module;
@@ -1401,13 +1401,13 @@ export namespace Gck {
          * Raw PKCS#11 application data used to open the PKCS#11 session.
          * @construct-only
          */
-        set app_data(val: any);
+        set app_data(val: never);
 
         /**
          * Raw PKCS#11 application data used to open the PKCS#11 session.
          * @construct-only
          */
-        set appData(val: any);
+        set appData(val: never);
 
         /**
          * The raw CK_SESSION_HANDLE handle of this session.
@@ -3609,7 +3609,7 @@ export namespace Gck {
         // Fields
         type: number;
 
-        parameter: any;
+        parameter: null;
 
         n_parameter: number;
     }

@@ -781,7 +781,7 @@ export namespace Gsk {
      * @returns true if the two strokes are equal, false otherwise
      * @since 4.14
      */
-    function stroke_equal(stroke1: (any | null), stroke2: (any | null)): boolean;
+    function stroke_equal(stroke1: null, stroke2: null): boolean;
 
     /**
      * Parses a given into a transform.
@@ -4533,7 +4533,7 @@ export namespace Gsk {
          * @param stroke1 the first stroke
          * @param stroke2 the second stroke
          */
-        static equal(stroke1: (any | null), stroke2: (any | null)): boolean;
+        static equal(stroke1: null, stroke2: null): boolean;
 
         // Methods
         /**

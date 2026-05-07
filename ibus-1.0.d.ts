@@ -9264,7 +9264,7 @@ export namespace IBus {
      * @param path A path of the saved dictionary file.
      * @returns An Emoji dictionary file loaded from the saved cache file. A hash table of { emoji character, {@link IBus.EmojiData} object } is loaded from the saved cache file. Recommend to use `ibus_emoji_data_load()` instead becase GSList in GHashTable does not work with Gir and Vala. Calls `ibus_emoji_data_load()` internally.
      */
-    function emoji_dict_load(path: string): GLib.HashTable<string, any>;
+    function emoji_dict_load(path: string): GLib.HashTable<string, never>;
 
     /**
      * @param dict An Emoji dictionary
@@ -9282,7 +9282,7 @@ export namespace IBus {
      * @param path A path of the saved dictionary file.
      * @param dict An Emoji dictionary
      */
-    function emoji_dict_save(path: string, dict: ({ [key: string]: any } | GLib.HashTable<string, any>)): void;
+    function emoji_dict_save(path: string, dict: ({ [key: string]: any } | GLib.HashTable<string, never>)): void;
 
     function error_quark(): GLib.Quark;
 
@@ -9504,7 +9504,7 @@ export namespace IBus {
      * @gir-type Callback
      */
     interface FreeFunc {
-        (object: (any | null)): void;
+        (object: null): void;
     }
 
     /**
@@ -9858,7 +9858,7 @@ export namespace IBus {
         $signals: AttrList.SignalSignatures;
 
         // Fields
-        attributes: any[];
+        attributes: null[];
 
         // Constructors
         constructor(properties?: Partial<AttrList.ConstructorProps>, ...args: any[]);
@@ -11915,7 +11915,7 @@ export namespace IBus {
 
         // Constructor properties interface
         interface ConstructorProps extends Serializable.ConstructorProps {
-            annotations: any;
+            annotations: never;
             category: string;
             description: string;
             emoji: string;
@@ -11934,8 +11934,8 @@ export namespace IBus {
         /**
          * The emoji annotations
          */
-        get annotations(): any;
-        set annotations(val: any);
+        get annotations(): null;
+        set annotations(val: never);
 
         /**
          * The emoji category
@@ -12215,7 +12215,7 @@ export namespace IBus {
              * @signal
              * @run-last
              */
-            "process-hand-writing-event": (arg0: (any | null), arg1: number) => void;
+            "process-hand-writing-event": (arg0: null, arg1: number) => void;
             /**
              * Emitted when a key event is received.
              * Implement the member function IBusEngineClass::process_key_event
@@ -13415,8 +13415,8 @@ export namespace IBus {
              * @detailed
              * @run-last
              */
-            trigger: (arg0: number, arg1: (any | null)) => void;
-            [key: `trigger::${string}`]: (arg0: number, arg1: (any | null)) => void;
+            trigger: (arg0: number, arg1: null) => void;
+            [key: `trigger::${string}`]: (arg0: number, arg1: null) => void;
         }
 
         // Constructor properties interface
@@ -13497,7 +13497,7 @@ export namespace IBus {
          * @param user_data user data for signal "trigger".
          * @returns 0 if releasing a hotkey and the hotkey is not in the profile; an associated event otherwise. See also: ::trigger
          */
-        filter_key_event(keyval: number, modifiers: number, prev_keyval: number, prev_modifiers: number, user_data: (any | null)): GLib.Quark;
+        filter_key_event(keyval: number, modifiers: number, prev_keyval: number, prev_modifiers: number, user_data: null): GLib.Quark;
 
         /**
          * @param keyval Keycode of the hotkey.
@@ -14408,9 +14408,9 @@ export namespace IBus {
 
         orientation: number;
 
-        candidates: any[];
+        candidates: null[];
 
-        labels: any[];
+        labels: null[];
 
         // Constructors
         constructor(properties?: Partial<LookupTable.ConstructorProps>, ...args: any[]);
@@ -15496,7 +15496,7 @@ export namespace IBus {
         $signals: PropList.SignalSignatures;
 
         // Fields
-        properties: any[];
+        properties: null[];
 
         // Constructors
         constructor(properties?: Partial<PropList.ConstructorProps>, ...args: any[]);
@@ -17748,7 +17748,7 @@ export namespace IBus {
 
         attributes: string;
 
-        sub_nodes: any[];
+        sub_nodes: null[];
 
         // Constructors
 

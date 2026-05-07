@@ -363,7 +363,7 @@ export namespace GstAnalytics {
          * @param rlt_mtd Handle updated to directly related relatable meta.
          * @returns TRUE if `rlt_mtd` was updated, other wise FALSE
          */
-        get_direct_related(an_meta_id: number, relation_type: RelTypes, type: MtdType, state: any, rlt_mtd: Mtd): [boolean, any];
+        get_direct_related(an_meta_id: number, relation_type: RelTypes, type: MtdType, state: never, rlt_mtd: Mtd): [boolean, null];
 
         /**
          * Fill `rlt` if a analytics-meta with id == `an_meta_id` exist in `meta` instance,
@@ -406,7 +406,7 @@ export namespace GstAnalytics {
          * @param rlt_mtd Handle updated to iterated GstAnalyticsRelatableMtd.
          * @returns FALSE if end was reached and iteration is completed.
          */
-        iterate(state: (any | null), type: MtdType, rlt_mtd: Mtd): boolean;
+        iterate(state: null, type: MtdType, rlt_mtd: Mtd): boolean;
 
         /**
          * Sets the relation ({@link GstAnalytics.RelTypes}) between `an_meta_first` and
