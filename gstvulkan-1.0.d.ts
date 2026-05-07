@@ -429,7 +429,7 @@ export namespace GstVulkan {
      * @returns a {@link Gst.Memory} object backed by a vulkan device memory
      * @since 1.18
      */
-    function vulkan_buffer_memory_wrapped(device: VulkanDevice, buffer: Vulkan.Buffer, usage: Vulkan.BufferUsageFlags, user_data: (any | null)): Gst.Memory;
+    function vulkan_buffer_memory_wrapped(device: VulkanDevice, buffer: Vulkan.Buffer, usage: Vulkan.BufferUsageFlags, user_data: null): Gst.Memory;
 
     /**
      * @param device a {@link GstVulkan.VulkanDevice}
@@ -598,7 +598,7 @@ export namespace GstVulkan {
      * @returns a new {@link GstVulkan.VulkanImageMemory} wrapping `image`
      * @since 1.18
      */
-    function vulkan_image_memory_wrapped(device: VulkanDevice, image: Vulkan.Image, format: Vulkan.Format, width: (bigint | number), height: (bigint | number), tiling: Vulkan.ImageTiling, usage: Vulkan.ImageUsageFlags, user_data: (any | null)): Gst.Memory;
+    function vulkan_image_memory_wrapped(device: VulkanDevice, image: Vulkan.Image, format: Vulkan.Format, width: (bigint | number), height: (bigint | number), tiling: Vulkan.ImageTiling, usage: Vulkan.ImageUsageFlags, user_data: null): Gst.Memory;
 
     /**
      * Performs the steps necessary for executing a context query between only
@@ -678,7 +678,7 @@ export namespace GstVulkan {
      * @param user_data the {@link Gst.MiniObject}
      * @since 1.18
      */
-    function vulkan_trash_mini_object_unref(device: VulkanDevice, user_data: (any | null)): void;
+    function vulkan_trash_mini_object_unref(device: VulkanDevice, user_data: null): void;
 
     /**
      * A {@link GstVulkan.VulkanTrashNotify} implementation for unreffing a {@link Gst.Object} when the
@@ -687,7 +687,7 @@ export namespace GstVulkan {
      * @param user_data the {@link Gst.MiniObject}
      * @since 1.18
      */
-    function vulkan_trash_object_unref(device: VulkanDevice, user_data: (any | null)): void;
+    function vulkan_trash_object_unref(device: VulkanDevice, user_data: null): void;
 
     /**
      * @since 1.18
@@ -1294,7 +1294,7 @@ export namespace GstVulkan {
          * @param name name of the function to retrieve
          * @returns the function pointer for `name` or `null`
          */
-        get_proc_address(name: string): (any | null);
+        get_proc_address(name: string): null;
 
         /**
          * @param queue_family a queue family to retrieve
@@ -1428,7 +1428,7 @@ export namespace GstVulkan {
          * get the native handle to the display
          * @virtual
          */
-        vfunc_get_handle(): (any | null);
+        vfunc_get_handle(): null;
 
         // Methods
         /**
@@ -1444,12 +1444,12 @@ export namespace GstVulkan {
          * @param compare_func a comparison function to run
          * @returns The first {@link GstVulkan.VulkanWindow} that                                      `compare_func` matches, or `null`
          */
-        find_window(data: (any | null), compare_func: GLib.CompareFunc): (VulkanWindow | null);
+        find_window(data: null, compare_func: GLib.CompareFunc): (VulkanWindow | null);
 
         /**
          * @returns the winsys specific handle of `display`
          */
-        get_handle(): (any | null);
+        get_handle(): null;
 
         /**
          * @returns the {@link GstVulkan.VulkanDisplayType} of `display`
@@ -1727,9 +1727,9 @@ export namespace GstVulkan {
         // Fields
         device: VulkanDevice;
 
-        outstanding: any[];
+        outstanding: null[];
 
-        available: any[];
+        available: null[];
 
         // Constructors
         constructor(properties?: Partial<VulkanHandlePool.ConstructorProps>, ...args: any[]);
@@ -1754,37 +1754,37 @@ export namespace GstVulkan {
          * acquire a handle for usage
          * @virtual
          */
-        vfunc_acquire(): (any | null);
+        vfunc_acquire(): null;
 
         /**
          * allocate a new handle
          * @virtual
          */
-        vfunc_alloc(): (any | null);
+        vfunc_alloc(): null;
 
         /**
          * free a handle
          * @param handle 
          * @virtual
          */
-        vfunc_free(handle: (any | null)): void;
+        vfunc_free(handle: null): void;
 
         /**
          * release a handle for possible reuse at the next call to `acquire`
          * @param handle 
          * @virtual
          */
-        vfunc_release(handle: (any | null)): void;
+        vfunc_release(handle: null): void;
 
         // Methods
-        acquire(): (any | null);
+        acquire(): null;
 
-        alloc(): (any | null);
+        alloc(): null;
 
         /**
          * @param handle 
          */
-        release(handle: (any | null)): void;
+        release(handle: null): void;
     }
 
 
@@ -2150,7 +2150,7 @@ export namespace GstVulkan {
          * @param name name of the function to retrieve
          * @returns the function pointer for `name` or `null`
          */
-        get_proc_address(name: string): (any | null);
+        get_proc_address(name: string): null;
 
         /**
          * Retrieve the vulkan instance supported version.  Only returns the supported
@@ -2361,7 +2361,7 @@ export namespace GstVulkan {
          * @param pnext the structure pointer to use as pNext
          * @returns whether the query pool was enabled. It might populate `error` in case    of error.
          */
-        enable_query(query_type: number, n_queries: number, pnext: (any | null)): boolean;
+        enable_query(query_type: number, n_queries: number, pnext: null): boolean;
 
         /**
          * See also: `gst_vulkan_operation_begin()` and `gst_vulkan_operation_reset()`
@@ -2392,14 +2392,14 @@ export namespace GstVulkan {
          * Don't free `data`.
          * @returns whether a status was fetched. If not, it might populate `error`
          */
-        get_query(): [boolean, any];
+        get_query(): [boolean, null];
 
         /**
          * It's a wrapper to vkCmdPipelineBarrier2{KHR} if it's available.
          * @param dependency_info a pointer to VkDependencyInfo
          * @returns `true` if vkCmdPipelineBarrier2{KHR} it's available. `false`,   otherwise.
          */
-        pipeline_barrier2(dependency_info: (any | null)): boolean;
+        pipeline_barrier2(dependency_info: null): boolean;
 
         /**
          * Resets the operation to a clean state.
@@ -3293,7 +3293,7 @@ export namespace GstVulkan {
          * @param usage usage flags of `buffer`
          * @param user_data user data to call `notify` with
          */
-        static wrapped(device: VulkanDevice, buffer: Vulkan.Buffer, usage: Vulkan.BufferUsageFlags, user_data: (any | null)): Gst.Memory;
+        static wrapped(device: VulkanDevice, buffer: Vulkan.Buffer, usage: Vulkan.BufferUsageFlags, user_data: null): Gst.Memory;
     }
 
 
@@ -3574,7 +3574,7 @@ export namespace GstVulkan {
 
         notify: VulkanHandleDestroyNotify;
 
-        user_data: any;
+        user_data: null;
 
         // Constructors
         constructor(device: VulkanDevice, type: VulkanHandleType, handle: VulkanHandleTypedef, notify: VulkanHandleDestroyNotify);
@@ -3609,43 +3609,43 @@ export namespace GstVulkan {
          * Frees the descriptor set layout in `handle`
          * @param user_data callback user data
          */
-        free_descriptor_set_layout(user_data: (any | null)): void;
+        free_descriptor_set_layout(user_data: null): void;
 
         /**
          * Frees the framebuffer in `handle`
          * @param user_data callback user data
          */
-        free_framebuffer(user_data: (any | null)): void;
+        free_framebuffer(user_data: null): void;
 
         /**
          * Frees the pipeline in `handle`
          * @param user_data callback user data
          */
-        free_pipeline(user_data: (any | null)): void;
+        free_pipeline(user_data: null): void;
 
         /**
          * Frees the pipeline layout in `handle`
          * @param user_data callback user data
          */
-        free_pipeline_layout(user_data: (any | null)): void;
+        free_pipeline_layout(user_data: null): void;
 
         /**
          * Frees the render pass in `handle`
          * @param user_data callback user data
          */
-        free_render_pass(user_data: (any | null)): void;
+        free_render_pass(user_data: null): void;
 
         /**
          * Frees the sampler in `handle`
          * @param user_data callback user data
          */
-        free_sampler(user_data: (any | null)): void;
+        free_sampler(user_data: null): void;
 
         /**
          * Frees the shader in `handle`
          * @param user_data callback user data
          */
-        free_shader(user_data: (any | null)): void;
+        free_shader(user_data: null): void;
 
         /**
          * Increases the refcount of the given handle by one.
@@ -3719,7 +3719,7 @@ export namespace GstVulkan {
          * @param usage usage flags of `image`
          * @param user_data user data for `notify`
          */
-        static wrapped(device: VulkanDevice, image: Vulkan.Image, format: Vulkan.Format, width: (bigint | number), height: (bigint | number), tiling: Vulkan.ImageTiling, usage: Vulkan.ImageUsageFlags, user_data: (any | null)): Gst.Memory;
+        static wrapped(device: VulkanDevice, image: Vulkan.Image, format: Vulkan.Format, width: (bigint | number), height: (bigint | number), tiling: Vulkan.ImageTiling, usage: Vulkan.ImageUsageFlags, user_data: null): Gst.Memory;
 
         // Methods
         /**
@@ -3754,7 +3754,7 @@ export namespace GstVulkan {
          * @param size 
          * @param user_data 
          */
-        init(allocator: Gst.Allocator, parent: Gst.Memory, device: VulkanDevice, format: Vulkan.Format, usage: Vulkan.ImageUsageFlags, initial_layout: Vulkan.ImageLayout, params: Gst.AllocationParams, size: (bigint | number), user_data: (any | null)): boolean;
+        init(allocator: Gst.Allocator, parent: Gst.Memory, device: VulkanDevice, format: Vulkan.Format, usage: Vulkan.ImageUsageFlags, initial_layout: Vulkan.ImageLayout, params: Gst.AllocationParams, size: (bigint | number), user_data: null): boolean;
     }
 
 
@@ -3812,7 +3812,7 @@ export namespace GstVulkan {
 
         map_count: number;
 
-        mapping: any;
+        mapping: null;
 
         // Static methods
         /**
@@ -3940,7 +3940,7 @@ export namespace GstVulkan {
 
         notify: VulkanTrashNotify;
 
-        user_data: any;
+        user_data: null;
 
         // Constructors
         constructor(fence: VulkanFence, notify: VulkanTrashNotify);
@@ -3956,7 +3956,7 @@ export namespace GstVulkan {
          * @param device the {@link GstVulkan.VulkanDevice}
          * @param user_data the {@link Gst.MiniObject}
          */
-        static mini_object_unref(device: VulkanDevice, user_data: (any | null)): void;
+        static mini_object_unref(device: VulkanDevice, user_data: null): void;
 
         /**
          * A {@link GstVulkan.VulkanTrashNotify} implementation for unreffing a {@link Gst.Object} when the
@@ -3964,7 +3964,7 @@ export namespace GstVulkan {
          * @param device the {@link GstVulkan.VulkanDevice}
          * @param user_data the {@link Gst.MiniObject}
          */
-        static object_unref(device: VulkanDevice, user_data: (any | null)): void;
+        static object_unref(device: VulkanDevice, user_data: null): void;
 
         // Methods
         /**

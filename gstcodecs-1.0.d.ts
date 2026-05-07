@@ -1375,7 +1375,7 @@ export namespace GstCodecs {
          * `gst_codec_picture_set_user_data()` previously.
          * @returns The previously set user_data
          */
-        get_user_data(): (any | null);
+        get_user_data(): null;
 
         /**
          * Sets `discont_state` to `picture`
@@ -1391,7 +1391,7 @@ export namespace GstCodecs {
          * before the `user_data` is replaced.
          * @param user_data private data
          */
-        set_user_data(user_data: (any | null)): void;
+        set_user_data(user_data: null): void;
     }
 
 
@@ -2313,12 +2313,12 @@ export namespace GstCodecs {
         static $gtype: GObject.GType<Vp9StatefulParser>;
 
         // Fields
-        reference: any[];
+        reference: null[];
 
         // Constructors
 
         constructor(properties?: Partial<{
-            reference: any[];
+            reference: null[];
         }>);
 
         // Methods

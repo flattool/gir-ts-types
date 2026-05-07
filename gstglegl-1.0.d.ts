@@ -157,7 +157,7 @@ export namespace GstGLEGL {
      * @gir-type Callback
      */
     interface EGLImageDestroyNotify {
-        (image: EGLImage, data: (any | null)): void;
+        (image: EGLImage, data: null): void;
     }
 
     namespace GLDisplayEGL {
@@ -199,7 +199,7 @@ export namespace GstGLEGL {
 
         static new_surfaceless(): GLDisplayEGL;
 
-        static new_with_egl_display(display: (any | null)): GLDisplayEGL;
+        static new_with_egl_display(display: null): GLDisplayEGL;
 
         // Signals
         /** @signal */
@@ -236,7 +236,7 @@ export namespace GstGLEGL {
          * @param type a {@link GstGL.GLDisplayType}
          * @param display pointer to a display (or 0)
          */
-        static get_from_native(type: GstGL.GLDisplayType, display: (bigint | number)): (any | null);
+        static get_from_native(type: GstGL.GLDisplayType, display: (bigint | number)): null;
 
         // Methods
         /**
@@ -292,7 +292,7 @@ export namespace GstGLEGL {
         $signals: GLDisplayEGLDevice.SignalSignatures;
 
         // Fields
-        device: any;
+        device: null;
 
         // Constructors
         constructor(properties?: Partial<GLDisplayEGLDevice.ConstructorProps>, ...args: any[]);
@@ -304,7 +304,7 @@ export namespace GstGLEGL {
         // Conflicted with GstGL.GLDisplay.new
         static ["new"](...args: never[]): any;
 
-        static new_with_egl_device(device: (any | null)): GLDisplayEGLDevice;
+        static new_with_egl_device(device: null): GLDisplayEGLDevice;
 
         // Signals
         /** @signal */
@@ -382,9 +382,9 @@ export namespace GstGLEGL {
         static $gtype: GObject.GType<EGLImage>;
 
         // Constructors
-        constructor(context: GstGL.GLContext, image: (any | null), format: GstGL.GLFormat, user_data: (any | null), user_data_destroy: EGLImageDestroyNotify);
+        constructor(context: GstGL.GLContext, image: null, format: GstGL.GLFormat, user_data: null, user_data_destroy: EGLImageDestroyNotify);
 
-        static new_wrapped(context: GstGL.GLContext, image: (any | null), format: GstGL.GLFormat, user_data: (any | null), user_data_destroy: EGLImageDestroyNotify): EGLImage;
+        static new_wrapped(context: GstGL.GLContext, image: null, format: GstGL.GLFormat, user_data: null, user_data_destroy: EGLImageDestroyNotify): EGLImage;
 
         // Static methods
         /**
@@ -482,7 +482,7 @@ export namespace GstGLEGL {
         /**
          * @returns the {@link GstGLEGL.EGLImage} of `image`
          */
-        get_image(): (any | null);
+        get_image(): null;
     }
 
 
@@ -515,12 +515,12 @@ export namespace GstGLEGL {
         /**
          * @returns The EGLDisplay `mem` is associated with
          */
-        get_display(): (any | null);
+        get_display(): null;
 
         /**
          * @returns The EGLImage held by `mem`
          */
-        get_image(): (any | null);
+        get_image(): null;
     }
 
 

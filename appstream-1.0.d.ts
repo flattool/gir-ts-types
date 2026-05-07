@@ -3581,7 +3581,7 @@ export namespace AppStream {
 
         // Constructor properties interface
         interface ConstructorProps extends GObject.Object.ConstructorProps {
-            children: any;
+            children: never;
             icon: string;
             id: string;
             name: string;
@@ -3599,7 +3599,7 @@ export namespace AppStream {
         /**
          * @read-only
          */
-        get children(): any;
+        get children(): null;
 
         /**
          * @default null
@@ -3850,7 +3850,7 @@ export namespace AppStream {
 
         // Constructor properties interface
         interface ConstructorProps extends GObject.Object.ConstructorProps {
-            categories: any[];
+            categories: never[];
             description: string;
             icons: Icon[];
             id: string;
@@ -3879,7 +3879,7 @@ export namespace AppStream {
          * string array of categories
          * @read-only
          */
-        get categories(): any[];
+        get categories(): null[];
 
         /**
          * the description
@@ -4255,7 +4255,7 @@ export namespace AppStream {
         /**
          * @returns Hash table of custom user defined data fields.
          */
-        get_custom(): GLib.HashTable<any, any>;
+        get_custom(): GLib.HashTable<never, never>;
 
         /**
          * Retrieve value for a custom data entry with the given key.
@@ -4355,7 +4355,7 @@ export namespace AppStream {
          * keword arrays.
          * @returns Hash table locale->keyword arrays
          */
-        get_keywords_table(): GLib.HashTable<any, any>;
+        get_keywords_table(): GLib.HashTable<never, never>;
 
         /**
          * Returns the {@link AppStream.ComponentKind} of this component.
@@ -4413,7 +4413,7 @@ export namespace AppStream {
          * mapping table.
          * @returns locale->names map
          */
-        get_name_table(): GLib.HashTable<any, any>;
+        get_name_table(): GLib.HashTable<never, never>;
 
         /**
          * Get variant suffix for the component name
@@ -4569,7 +4569,7 @@ export namespace AppStream {
          * mapping table.
          * @returns locale->summary map
          */
-        get_summary_table(): GLib.HashTable<any, any>;
+        get_summary_table(): GLib.HashTable<never, never>;
 
         /**
          * Get an array of items that are supported by this component,

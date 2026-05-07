@@ -2691,7 +2691,7 @@ export namespace Polkit {
         interface ConstructorProps extends GObject.Object.ConstructorProps, Subject.ConstructorProps {
             cgroupid: (bigint | number);
             ctty: number;
-            gids: (any[] | null);
+            gids: (never[] | null);
             pid: number;
             pidfd: number;
             pidfd_is_safe: boolean;
@@ -2749,8 +2749,8 @@ export namespace Polkit {
         /**
          * The UNIX group ids of the process.
          */
-        get gids(): (any[] | null);
-        set gids(val: (any[] | null));
+        get gids(): (never[] | null);
+        set gids(val: (never[] | null));
 
         /**
          * The UNIX process id.
@@ -2891,7 +2891,7 @@ export namespace Polkit {
          * not the effective group-ids.
          * @returns a {@link GLib.Array}          of `gid_t` containing the group ids for `process` or NULL if unknown,          as a new reference to the array, caller must deref it when done.
          */
-        get_gids(): (any[][] | null);
+        get_gids(): (never[][] | null);
 
         /**
          * (deprecated)
@@ -2952,7 +2952,7 @@ export namespace Polkit {
          * Sets the (real, not effective) group ids for `process`.
          * @param gids A {@link GLib.List} of `gid_t` containing the group        ids to set for `process` or NULL to unset them.        A reference to `gids` is taken.
          */
-        set_gids(gids: any[][]): void;
+        set_gids(gids: never[][]): void;
 
         /**
          * Sets `pid` for `process`.

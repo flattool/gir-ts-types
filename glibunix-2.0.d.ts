@@ -140,7 +140,7 @@ export namespace GLibUnix {
      * @returns passwd entry, or `null` on error; free the returned    value with `g_free()`
      * @since 2.64
      */
-    function get_passwd_entry(user_name: string): (any | null);
+    function get_passwd_entry(user_name: string): null;
 
     /**
      * Similar to the UNIX `pipe()` call, but on modern systems like Linux
