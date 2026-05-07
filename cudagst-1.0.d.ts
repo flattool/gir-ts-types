@@ -356,7 +356,7 @@ export namespace CudaGst {
 
         srcMemoryType: memorytype;
 
-        srcHost: any;
+        srcHost: null;
 
         srcDevice: deviceptr;
 
@@ -370,7 +370,7 @@ export namespace CudaGst {
 
         dstMemoryType: memorytype;
 
-        dstHost: any;
+        dstHost: null;
 
         dstDevice: deviceptr;
 
@@ -509,7 +509,7 @@ export namespace CudaGst {
 
         requestedHandleTypes: memAllocationHandleType;
 
-        win32HandleMetaData: any;
+        win32HandleMetaData: null;
 
         allocFlags: memAllocationPropAllocFlags;
     }
@@ -565,7 +565,7 @@ export namespace CudaGst {
 
         handleTypes: memAllocationHandleType;
 
-        win32SecurityAttributes: any;
+        win32SecurityAttributes: null;
 
         maxSize: number;
 
@@ -576,12 +576,12 @@ export namespace CudaGst {
     /**
      * @gir-type Alias
      */
-    type array = any;
+    type array = never;
 
     /**
      * @gir-type Alias
      */
-    type context = any;
+    type context = never;
 
     /**
      * @gir-type Alias
@@ -596,47 +596,47 @@ export namespace CudaGst {
     /**
      * @gir-type Alias
      */
-    type event = any;
+    type event = never;
 
     /**
      * @gir-type Alias
      */
-    type externalMemory = any;
+    type externalMemory = never;
 
     /**
      * @gir-type Alias
      */
-    type externalSemaphore = any;
+    type externalSemaphore = never;
 
     /**
      * @gir-type Alias
      */
-    type __function = any;
+    type __function = never;
 
     /**
      * @gir-type Alias
      */
-    type graphicsResource = any;
+    type graphicsResource = never;
 
     /**
      * @gir-type Alias
      */
-    type memoryPool = any;
+    type memoryPool = never;
 
     /**
      * @gir-type Alias
      */
-    type mipmappedArray = any;
+    type mipmappedArray = never;
 
     /**
      * @gir-type Alias
      */
-    type module = any;
+    type module = never;
 
     /**
      * @gir-type Alias
      */
-    type stream = any;
+    type stream = never;
 
     /**
      * @gir-type Alias

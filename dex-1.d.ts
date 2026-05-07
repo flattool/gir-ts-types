@@ -498,7 +498,7 @@ export namespace Dex {
      * @gir-type Callback
      */
     interface FiberFunc {
-        (user_data: (any | null)): (Future | null);
+        (user_data: null): (Future | null);
     }
 
     /**
@@ -512,14 +512,14 @@ export namespace Dex {
      * @gir-type Callback
      */
     interface SchedulerFunc {
-        (user_data: (any | null)): void;
+        (user_data: null): void;
     }
 
     /**
      * @gir-type Callback
      */
     interface ThreadFunc {
-        (user_data: (any | null)): Future;
+        (user_data: null): Future;
     }
 
     /**
@@ -547,7 +547,7 @@ export namespace Dex {
         // Constructors
         _init(...args: any[]): void;
 
-        static ["new"](instance: (any | null), info: AsyncPairInfo): AsyncPair;
+        static ["new"](instance: null, info: AsyncPairInfo): AsyncPair;
 
         // Signals
         /** @signal */
@@ -666,7 +666,7 @@ export namespace Dex {
 
         _init(...args: any[]): void;
 
-        static ["new"](source_object: (any | null), cancellable: (Gio.Cancellable | null), callback: (Gio.AsyncReadyCallback | null)): AsyncResult;
+        static ["new"](source_object: null, cancellable: (Gio.Cancellable | null), callback: (Gio.AsyncReadyCallback | null)): AsyncResult;
 
         // Signals
         /** @signal */
@@ -704,7 +704,7 @@ export namespace Dex {
 
         propagate_int(): number;
 
-        propagate_pointer(): (any | null);
+        propagate_pointer(): null;
 
         /**
          * @param name 
@@ -731,7 +731,7 @@ export namespace Dex {
          * Gets the user data from a {@link Gio.AsyncResult}.
          * @returns the user data for `res`.
          */
-        get_user_data(): (any | null);
+        get_user_data(): null;
 
         /**
          * Checks if `res` has the given `source_tag` (generally a function
@@ -739,7 +739,7 @@ export namespace Dex {
          * @param source_tag an application-defined tag
          * @returns `TRUE` if `res` has the indicated `source_tag`, `FALSE` if   not.
          */
-        is_tagged(source_tag: (any | null)): boolean;
+        is_tagged(source_tag: null): boolean;
 
         /**
          * If `res` is a {@link Gio.SimpleAsyncResult}, this is equivalent to
@@ -766,7 +766,7 @@ export namespace Dex {
          * Gets the user data from a {@link Gio.AsyncResult}.
          * @virtual
          */
-        vfunc_get_user_data(): (any | null);
+        vfunc_get_user_data(): null;
 
         /**
          * Checks if `res` has the given `source_tag` (generally a function
@@ -774,7 +774,7 @@ export namespace Dex {
          * @param source_tag an application-defined tag
          * @virtual
          */
-        vfunc_is_tagged(source_tag: (any | null)): boolean;
+        vfunc_is_tagged(source_tag: null): boolean;
     }
 
 
@@ -1123,7 +1123,7 @@ export namespace Dex {
 
         static new_for_object(value: GObject.Object): Future;
 
-        static new_for_pointer(pointer: (any | null)): Future;
+        static new_for_pointer(pointer: null): Future;
 
         static new_for_string(string: string): Future;
 
@@ -1187,7 +1187,7 @@ export namespace Dex {
          * Awaits on `future` and returns the `G_TYPE_BOXED` based result.
          * @returns the boxed result, or `null` and `error` is set.
          */
-        await_boxed(): (any | null);
+        await_boxed(): null;
 
         /**
          * Awaits on `future` and returns the result as an double.
@@ -1256,7 +1256,7 @@ export namespace Dex {
          * otherwise `error` is set if the future rejected.
          * @returns a pointer or `null`
          */
-        await_pointer(): (any | null);
+        await_pointer(): null;
 
         /**
          * Awaits on `future` and returns the string result.
@@ -1546,7 +1546,7 @@ export namespace Dex {
          * @param boxed_type a {@link GObject.GType} of `G_TYPE_BOXED`
          * @param instance the boxed value to store
          */
-        resolve_boxed(boxed_type: GObject.GType, instance: (any | null)): void;
+        resolve_boxed(boxed_type: GObject.GType, instance: null): void;
 
         /**
          * Resolve promise to `value`.
@@ -1923,9 +1923,9 @@ export namespace Dex {
         static $gtype: GObject.GType<AsyncPairInfo>;
 
         // Fields
-        async: any;
+        async: null;
 
-        finish: any;
+        finish: null;
 
         return_type: GObject.GType;
     }

@@ -6759,7 +6759,7 @@ export interface Builder {
      * @gir-type Callback
      */
     interface ExpressionNotify {
-        (user_data: (any | null)): void;
+        (user_data: null): void;
     }
 
     /**
@@ -9182,7 +9182,7 @@ export interface Builder {
          * @param data user data created in custom_tag_start
          * @virtual
          */
-        vfunc_custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: (any | null)): void;
+        vfunc_custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
 
         /**
          * Called at the end of each custom element handled by
@@ -9193,7 +9193,7 @@ export interface Builder {
          * @param data user data that will be passed in to parser functions
          * @virtual
          */
-        vfunc_custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: (any | null)): void;
+        vfunc_custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
 
         /**
          * Called for each unknown element under `<child>`.
@@ -9202,7 +9202,7 @@ export interface Builder {
          * @param tagname name of tag
          * @virtual
          */
-        vfunc_custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, BuildableParser, any];
+        vfunc_custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, BuildableParser, never];
 
         /**
          * The getter corresponding to `set_id`. Implement this
@@ -10215,7 +10215,7 @@ export interface Builder {
          * @param data user data created in custom_tag_start
          * @virtual
          */
-        vfunc_custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: (any | null)): void;
+        vfunc_custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
 
         /**
          * Called at the end of each custom element handled by
@@ -10226,7 +10226,7 @@ export interface Builder {
          * @param data user data that will be passed in to parser functions
          * @virtual
          */
-        vfunc_custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: (any | null)): void;
+        vfunc_custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
 
         /**
          * Called for each unknown element under `<child>`.
@@ -10235,7 +10235,7 @@ export interface Builder {
          * @param tagname name of tag
          * @virtual
          */
-        vfunc_custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, BuildableParser, any];
+        vfunc_custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, BuildableParser, never];
 
         /**
          * The getter corresponding to `set_id`. Implement this
@@ -11275,7 +11275,7 @@ export interface Builder {
          * @param data user data created in custom_tag_start
          * @virtual
          */
-        vfunc_custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: (any | null)): void;
+        vfunc_custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
 
         /**
          * Called at the end of each custom element handled by
@@ -11286,7 +11286,7 @@ export interface Builder {
          * @param data user data that will be passed in to parser functions
          * @virtual
          */
-        vfunc_custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: (any | null)): void;
+        vfunc_custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
 
         /**
          * Called for each unknown element under `<child>`.
@@ -11295,7 +11295,7 @@ export interface Builder {
          * @param tagname name of tag
          * @virtual
          */
-        vfunc_custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, BuildableParser, any];
+        vfunc_custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, BuildableParser, never];
 
         /**
          * The getter corresponding to `set_id`. Implement this
@@ -12196,7 +12196,7 @@ export interface Builder {
          * @param data user data created in custom_tag_start
          * @virtual
          */
-        vfunc_custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: (any | null)): void;
+        vfunc_custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
 
         /**
          * Called at the end of each custom element handled by
@@ -12207,7 +12207,7 @@ export interface Builder {
          * @param data user data that will be passed in to parser functions
          * @virtual
          */
-        vfunc_custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: (any | null)): void;
+        vfunc_custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
 
         /**
          * Called for each unknown element under `<child>`.
@@ -12216,7 +12216,7 @@ export interface Builder {
          * @param tagname name of tag
          * @virtual
          */
-        vfunc_custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, BuildableParser, any];
+        vfunc_custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, BuildableParser, never];
 
         /**
          * The getter corresponding to `set_id`. Implement this
@@ -14634,7 +14634,7 @@ export interface Builder {
          * @param data user data created in custom_tag_start
          * @virtual
          */
-        vfunc_custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: (any | null)): void;
+        vfunc_custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
 
         /**
          * Called at the end of each custom element handled by
@@ -14645,7 +14645,7 @@ export interface Builder {
          * @param data user data that will be passed in to parser functions
          * @virtual
          */
-        vfunc_custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: (any | null)): void;
+        vfunc_custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
 
         /**
          * Called for each unknown element under `<child>`.
@@ -14654,7 +14654,7 @@ export interface Builder {
          * @param tagname name of tag
          * @virtual
          */
-        vfunc_custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, BuildableParser, any];
+        vfunc_custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, BuildableParser, never];
 
         /**
          * The getter corresponding to `set_id`. Implement this
@@ -16299,7 +16299,7 @@ export interface Builder {
          * @param data user data created in custom_tag_start
          * @virtual
          */
-        vfunc_custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: (any | null)): void;
+        vfunc_custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
 
         /**
          * Called at the end of each custom element handled by
@@ -16310,7 +16310,7 @@ export interface Builder {
          * @param data user data that will be passed in to parser functions
          * @virtual
          */
-        vfunc_custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: (any | null)): void;
+        vfunc_custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
 
         /**
          * Called for each unknown element under `<child>`.
@@ -16319,7 +16319,7 @@ export interface Builder {
          * @param tagname name of tag
          * @virtual
          */
-        vfunc_custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, BuildableParser, any];
+        vfunc_custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, BuildableParser, never];
 
         /**
          * The getter corresponding to `set_id`. Implement this
@@ -18340,7 +18340,7 @@ export interface Builder {
          * @param data user data created in custom_tag_start
          * @virtual
          */
-        vfunc_custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: (any | null)): void;
+        vfunc_custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
 
         /**
          * Called at the end of each custom element handled by
@@ -18351,7 +18351,7 @@ export interface Builder {
          * @param data user data that will be passed in to parser functions
          * @virtual
          */
-        vfunc_custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: (any | null)): void;
+        vfunc_custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
 
         /**
          * Called for each unknown element under `<child>`.
@@ -18360,7 +18360,7 @@ export interface Builder {
          * @param tagname name of tag
          * @virtual
          */
-        vfunc_custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, BuildableParser, any];
+        vfunc_custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, BuildableParser, never];
 
         /**
          * The getter corresponding to `set_id`. Implement this
@@ -19100,7 +19100,7 @@ export interface Builder {
          * @param data user data created in custom_tag_start
          * @virtual
          */
-        vfunc_custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: (any | null)): void;
+        vfunc_custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
 
         /**
          * Called at the end of each custom element handled by
@@ -19111,7 +19111,7 @@ export interface Builder {
          * @param data user data that will be passed in to parser functions
          * @virtual
          */
-        vfunc_custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: (any | null)): void;
+        vfunc_custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
 
         /**
          * Called for each unknown element under `<child>`.
@@ -19120,7 +19120,7 @@ export interface Builder {
          * @param tagname name of tag
          * @virtual
          */
-        vfunc_custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, BuildableParser, any];
+        vfunc_custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, BuildableParser, never];
 
         /**
          * The getter corresponding to `set_id`. Implement this
@@ -20355,7 +20355,7 @@ export interface Builder {
          * @param data user data created in custom_tag_start
          * @virtual
          */
-        vfunc_custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: (any | null)): void;
+        vfunc_custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
 
         /**
          * Called at the end of each custom element handled by
@@ -20366,7 +20366,7 @@ export interface Builder {
          * @param data user data that will be passed in to parser functions
          * @virtual
          */
-        vfunc_custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: (any | null)): void;
+        vfunc_custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
 
         /**
          * Called for each unknown element under `<child>`.
@@ -20375,7 +20375,7 @@ export interface Builder {
          * @param tagname name of tag
          * @virtual
          */
-        vfunc_custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, BuildableParser, any];
+        vfunc_custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, BuildableParser, never];
 
         /**
          * The getter corresponding to `set_id`. Implement this
@@ -20770,7 +20770,7 @@ export interface Builder {
          * @param data user data created in custom_tag_start
          * @virtual
          */
-        vfunc_custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: (any | null)): void;
+        vfunc_custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
 
         /**
          * Called at the end of each custom element handled by
@@ -20781,7 +20781,7 @@ export interface Builder {
          * @param data user data that will be passed in to parser functions
          * @virtual
          */
-        vfunc_custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: (any | null)): void;
+        vfunc_custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
 
         /**
          * Called for each unknown element under `<child>`.
@@ -20790,7 +20790,7 @@ export interface Builder {
          * @param tagname name of tag
          * @virtual
          */
-        vfunc_custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, BuildableParser, any];
+        vfunc_custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, BuildableParser, never];
 
         /**
          * The getter corresponding to `set_id`. Implement this
@@ -24370,7 +24370,7 @@ export interface Builder {
          * @param data user data created in custom_tag_start
          * @virtual
          */
-        vfunc_custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: (any | null)): void;
+        vfunc_custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
 
         /**
          * Called at the end of each custom element handled by
@@ -24381,7 +24381,7 @@ export interface Builder {
          * @param data user data that will be passed in to parser functions
          * @virtual
          */
-        vfunc_custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: (any | null)): void;
+        vfunc_custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
 
         /**
          * Called for each unknown element under `<child>`.
@@ -24390,7 +24390,7 @@ export interface Builder {
          * @param tagname name of tag
          * @virtual
          */
-        vfunc_custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, BuildableParser, any];
+        vfunc_custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, BuildableParser, never];
 
         /**
          * The getter corresponding to `set_id`. Implement this
@@ -25212,7 +25212,7 @@ export interface Builder {
          * @param data user data created in custom_tag_start
          * @virtual
          */
-        vfunc_custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: (any | null)): void;
+        vfunc_custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
 
         /**
          * Called at the end of each custom element handled by
@@ -25223,7 +25223,7 @@ export interface Builder {
          * @param data user data that will be passed in to parser functions
          * @virtual
          */
-        vfunc_custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: (any | null)): void;
+        vfunc_custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
 
         /**
          * Called for each unknown element under `<child>`.
@@ -25232,7 +25232,7 @@ export interface Builder {
          * @param tagname name of tag
          * @virtual
          */
-        vfunc_custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, BuildableParser, any];
+        vfunc_custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, BuildableParser, never];
 
         /**
          * The getter corresponding to `set_id`. Implement this
@@ -26228,7 +26228,7 @@ export interface Builder {
          * @param data user data created in custom_tag_start
          * @virtual
          */
-        vfunc_custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: (any | null)): void;
+        vfunc_custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
 
         /**
          * Called at the end of each custom element handled by
@@ -26239,7 +26239,7 @@ export interface Builder {
          * @param data user data that will be passed in to parser functions
          * @virtual
          */
-        vfunc_custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: (any | null)): void;
+        vfunc_custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
 
         /**
          * Called for each unknown element under `<child>`.
@@ -26248,7 +26248,7 @@ export interface Builder {
          * @param tagname name of tag
          * @virtual
          */
-        vfunc_custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, BuildableParser, any];
+        vfunc_custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, BuildableParser, never];
 
         /**
          * The getter corresponding to `set_id`. Implement this
@@ -26828,7 +26828,7 @@ export interface Builder {
          * @param data user data created in custom_tag_start
          * @virtual
          */
-        vfunc_custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: (any | null)): void;
+        vfunc_custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
 
         /**
          * Called at the end of each custom element handled by
@@ -26839,7 +26839,7 @@ export interface Builder {
          * @param data user data that will be passed in to parser functions
          * @virtual
          */
-        vfunc_custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: (any | null)): void;
+        vfunc_custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
 
         /**
          * Called for each unknown element under `<child>`.
@@ -26848,7 +26848,7 @@ export interface Builder {
          * @param tagname name of tag
          * @virtual
          */
-        vfunc_custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, BuildableParser, any];
+        vfunc_custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, BuildableParser, never];
 
         /**
          * The getter corresponding to `set_id`. Implement this
@@ -27716,7 +27716,7 @@ export interface Builder {
          * @param data user data created in custom_tag_start
          * @virtual
          */
-        vfunc_custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: (any | null)): void;
+        vfunc_custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
 
         /**
          * Called at the end of each custom element handled by
@@ -27727,7 +27727,7 @@ export interface Builder {
          * @param data user data that will be passed in to parser functions
          * @virtual
          */
-        vfunc_custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: (any | null)): void;
+        vfunc_custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
 
         /**
          * Called for each unknown element under `<child>`.
@@ -27736,7 +27736,7 @@ export interface Builder {
          * @param tagname name of tag
          * @virtual
          */
-        vfunc_custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, BuildableParser, any];
+        vfunc_custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, BuildableParser, never];
 
         /**
          * The getter corresponding to `set_id`. Implement this
@@ -28485,7 +28485,7 @@ export interface Builder {
          * @param data user data created in custom_tag_start
          * @virtual
          */
-        vfunc_custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: (any | null)): void;
+        vfunc_custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
 
         /**
          * Called at the end of each custom element handled by
@@ -28496,7 +28496,7 @@ export interface Builder {
          * @param data user data that will be passed in to parser functions
          * @virtual
          */
-        vfunc_custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: (any | null)): void;
+        vfunc_custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
 
         /**
          * Called for each unknown element under `<child>`.
@@ -28505,7 +28505,7 @@ export interface Builder {
          * @param tagname name of tag
          * @virtual
          */
-        vfunc_custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, BuildableParser, any];
+        vfunc_custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, BuildableParser, never];
 
         /**
          * The getter corresponding to `set_id`. Implement this
@@ -29397,7 +29397,7 @@ export interface Builder {
          * @param data user data created in custom_tag_start
          * @virtual
          */
-        vfunc_custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: (any | null)): void;
+        vfunc_custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
 
         /**
          * Called at the end of each custom element handled by
@@ -29408,7 +29408,7 @@ export interface Builder {
          * @param data user data that will be passed in to parser functions
          * @virtual
          */
-        vfunc_custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: (any | null)): void;
+        vfunc_custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
 
         /**
          * Called for each unknown element under `<child>`.
@@ -29417,7 +29417,7 @@ export interface Builder {
          * @param tagname name of tag
          * @virtual
          */
-        vfunc_custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, BuildableParser, any];
+        vfunc_custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, BuildableParser, never];
 
         /**
          * The getter corresponding to `set_id`. Implement this
@@ -31413,7 +31413,7 @@ export interface Builder {
          * @param data user data created in custom_tag_start
          * @virtual
          */
-        vfunc_custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: (any | null)): void;
+        vfunc_custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
 
         /**
          * Called at the end of each custom element handled by
@@ -31424,7 +31424,7 @@ export interface Builder {
          * @param data user data that will be passed in to parser functions
          * @virtual
          */
-        vfunc_custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: (any | null)): void;
+        vfunc_custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
 
         /**
          * Called for each unknown element under `<child>`.
@@ -31433,7 +31433,7 @@ export interface Builder {
          * @param tagname name of tag
          * @virtual
          */
-        vfunc_custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, BuildableParser, any];
+        vfunc_custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, BuildableParser, never];
 
         /**
          * The getter corresponding to `set_id`. Implement this
@@ -33150,7 +33150,7 @@ export interface Builder {
          * @param data user data created in custom_tag_start
          * @virtual
          */
-        vfunc_custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: (any | null)): void;
+        vfunc_custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
 
         /**
          * Called at the end of each custom element handled by
@@ -33161,7 +33161,7 @@ export interface Builder {
          * @param data user data that will be passed in to parser functions
          * @virtual
          */
-        vfunc_custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: (any | null)): void;
+        vfunc_custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
 
         /**
          * Called for each unknown element under `<child>`.
@@ -33170,7 +33170,7 @@ export interface Builder {
          * @param tagname name of tag
          * @virtual
          */
-        vfunc_custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, BuildableParser, any];
+        vfunc_custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, BuildableParser, never];
 
         /**
          * The getter corresponding to `set_id`. Implement this
@@ -34980,7 +34980,7 @@ export interface Builder {
          * @param data user data created in custom_tag_start
          * @virtual
          */
-        vfunc_custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: (any | null)): void;
+        vfunc_custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
 
         /**
          * Called at the end of each custom element handled by
@@ -34991,7 +34991,7 @@ export interface Builder {
          * @param data user data that will be passed in to parser functions
          * @virtual
          */
-        vfunc_custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: (any | null)): void;
+        vfunc_custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
 
         /**
          * Called for each unknown element under `<child>`.
@@ -35000,7 +35000,7 @@ export interface Builder {
          * @param tagname name of tag
          * @virtual
          */
-        vfunc_custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, BuildableParser, any];
+        vfunc_custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, BuildableParser, never];
 
         /**
          * The getter corresponding to `set_id`. Implement this
@@ -35905,7 +35905,7 @@ export interface Builder {
          * @param data user data created in custom_tag_start
          * @virtual
          */
-        vfunc_custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: (any | null)): void;
+        vfunc_custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
 
         /**
          * Called at the end of each custom element handled by
@@ -35916,7 +35916,7 @@ export interface Builder {
          * @param data user data that will be passed in to parser functions
          * @virtual
          */
-        vfunc_custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: (any | null)): void;
+        vfunc_custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
 
         /**
          * Called for each unknown element under `<child>`.
@@ -35925,7 +35925,7 @@ export interface Builder {
          * @param tagname name of tag
          * @virtual
          */
-        vfunc_custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, BuildableParser, any];
+        vfunc_custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, BuildableParser, never];
 
         /**
          * The getter corresponding to `set_id`. Implement this
@@ -36827,7 +36827,7 @@ export interface Builder {
          * @param data user data created in custom_tag_start
          * @virtual
          */
-        vfunc_custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: (any | null)): void;
+        vfunc_custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
 
         /**
          * Called at the end of each custom element handled by
@@ -36838,7 +36838,7 @@ export interface Builder {
          * @param data user data that will be passed in to parser functions
          * @virtual
          */
-        vfunc_custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: (any | null)): void;
+        vfunc_custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
 
         /**
          * Called for each unknown element under `<child>`.
@@ -36847,7 +36847,7 @@ export interface Builder {
          * @param tagname name of tag
          * @virtual
          */
-        vfunc_custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, BuildableParser, any];
+        vfunc_custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, BuildableParser, never];
 
         /**
          * The getter corresponding to `set_id`. Implement this
@@ -37969,7 +37969,7 @@ export interface Builder {
          * @param data user data created in custom_tag_start
          * @virtual
          */
-        vfunc_custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: (any | null)): void;
+        vfunc_custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
 
         /**
          * Called at the end of each custom element handled by
@@ -37980,7 +37980,7 @@ export interface Builder {
          * @param data user data that will be passed in to parser functions
          * @virtual
          */
-        vfunc_custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: (any | null)): void;
+        vfunc_custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
 
         /**
          * Called for each unknown element under `<child>`.
@@ -37989,7 +37989,7 @@ export interface Builder {
          * @param tagname name of tag
          * @virtual
          */
-        vfunc_custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, BuildableParser, any];
+        vfunc_custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, BuildableParser, never];
 
         /**
          * The getter corresponding to `set_id`. Implement this
@@ -40546,7 +40546,7 @@ export interface Builder {
          * @param data user data created in custom_tag_start
          * @virtual
          */
-        vfunc_custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: (any | null)): void;
+        vfunc_custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
 
         /**
          * Called at the end of each custom element handled by
@@ -40557,7 +40557,7 @@ export interface Builder {
          * @param data user data that will be passed in to parser functions
          * @virtual
          */
-        vfunc_custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: (any | null)): void;
+        vfunc_custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
 
         /**
          * Called for each unknown element under `<child>`.
@@ -40566,7 +40566,7 @@ export interface Builder {
          * @param tagname name of tag
          * @virtual
          */
-        vfunc_custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, BuildableParser, any];
+        vfunc_custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, BuildableParser, never];
 
         /**
          * The getter corresponding to `set_id`. Implement this
@@ -41802,7 +41802,7 @@ export interface Builder {
          * @param data user data created in custom_tag_start
          * @virtual
          */
-        vfunc_custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: (any | null)): void;
+        vfunc_custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
 
         /**
          * Called at the end of each custom element handled by
@@ -41813,7 +41813,7 @@ export interface Builder {
          * @param data user data that will be passed in to parser functions
          * @virtual
          */
-        vfunc_custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: (any | null)): void;
+        vfunc_custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
 
         /**
          * Called for each unknown element under `<child>`.
@@ -41822,7 +41822,7 @@ export interface Builder {
          * @param tagname name of tag
          * @virtual
          */
-        vfunc_custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, BuildableParser, any];
+        vfunc_custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, BuildableParser, never];
 
         /**
          * The getter corresponding to `set_id`. Implement this
@@ -43060,7 +43060,7 @@ export interface Builder {
          * @param data user data created in custom_tag_start
          * @virtual
          */
-        vfunc_custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: (any | null)): void;
+        vfunc_custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
 
         /**
          * Called at the end of each custom element handled by
@@ -43071,7 +43071,7 @@ export interface Builder {
          * @param data user data that will be passed in to parser functions
          * @virtual
          */
-        vfunc_custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: (any | null)): void;
+        vfunc_custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
 
         /**
          * Called for each unknown element under `<child>`.
@@ -43080,7 +43080,7 @@ export interface Builder {
          * @param tagname name of tag
          * @virtual
          */
-        vfunc_custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, BuildableParser, any];
+        vfunc_custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, BuildableParser, never];
 
         /**
          * The getter corresponding to `set_id`. Implement this
@@ -43760,7 +43760,7 @@ export interface Builder {
          * @param data user data created in custom_tag_start
          * @virtual
          */
-        vfunc_custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: (any | null)): void;
+        vfunc_custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
 
         /**
          * Called at the end of each custom element handled by
@@ -43771,7 +43771,7 @@ export interface Builder {
          * @param data user data that will be passed in to parser functions
          * @virtual
          */
-        vfunc_custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: (any | null)): void;
+        vfunc_custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
 
         /**
          * Called for each unknown element under `<child>`.
@@ -43780,7 +43780,7 @@ export interface Builder {
          * @param tagname name of tag
          * @virtual
          */
-        vfunc_custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, BuildableParser, any];
+        vfunc_custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, BuildableParser, never];
 
         /**
          * The getter corresponding to `set_id`. Implement this
@@ -46096,7 +46096,7 @@ export interface Builder {
          * @param data user data created in custom_tag_start
          * @virtual
          */
-        vfunc_custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: (any | null)): void;
+        vfunc_custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
 
         /**
          * Called at the end of each custom element handled by
@@ -46107,7 +46107,7 @@ export interface Builder {
          * @param data user data that will be passed in to parser functions
          * @virtual
          */
-        vfunc_custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: (any | null)): void;
+        vfunc_custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
 
         /**
          * Called for each unknown element under `<child>`.
@@ -46116,7 +46116,7 @@ export interface Builder {
          * @param tagname name of tag
          * @virtual
          */
-        vfunc_custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, BuildableParser, any];
+        vfunc_custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, BuildableParser, never];
 
         /**
          * The getter corresponding to `set_id`. Implement this
@@ -47466,7 +47466,7 @@ export interface Builder {
          * @param data user data created in custom_tag_start
          * @virtual
          */
-        vfunc_custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: (any | null)): void;
+        vfunc_custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
 
         /**
          * Called at the end of each custom element handled by
@@ -47477,7 +47477,7 @@ export interface Builder {
          * @param data user data that will be passed in to parser functions
          * @virtual
          */
-        vfunc_custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: (any | null)): void;
+        vfunc_custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
 
         /**
          * Called for each unknown element under `<child>`.
@@ -47486,7 +47486,7 @@ export interface Builder {
          * @param tagname name of tag
          * @virtual
          */
-        vfunc_custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, BuildableParser, any];
+        vfunc_custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, BuildableParser, never];
 
         /**
          * The getter corresponding to `set_id`. Implement this
@@ -48709,7 +48709,7 @@ export interface Builder {
          * @param data user data created in custom_tag_start
          * @virtual
          */
-        vfunc_custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: (any | null)): void;
+        vfunc_custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
 
         /**
          * Called at the end of each custom element handled by
@@ -48720,7 +48720,7 @@ export interface Builder {
          * @param data user data that will be passed in to parser functions
          * @virtual
          */
-        vfunc_custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: (any | null)): void;
+        vfunc_custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
 
         /**
          * Called for each unknown element under `<child>`.
@@ -48729,7 +48729,7 @@ export interface Builder {
          * @param tagname name of tag
          * @virtual
          */
-        vfunc_custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, BuildableParser, any];
+        vfunc_custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, BuildableParser, never];
 
         /**
          * The getter corresponding to `set_id`. Implement this
@@ -50123,7 +50123,7 @@ export interface Builder {
          * @param data user data created in custom_tag_start
          * @virtual
          */
-        vfunc_custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: (any | null)): void;
+        vfunc_custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
 
         /**
          * Called at the end of each custom element handled by
@@ -50134,7 +50134,7 @@ export interface Builder {
          * @param data user data that will be passed in to parser functions
          * @virtual
          */
-        vfunc_custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: (any | null)): void;
+        vfunc_custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
 
         /**
          * Called for each unknown element under `<child>`.
@@ -50143,7 +50143,7 @@ export interface Builder {
          * @param tagname name of tag
          * @virtual
          */
-        vfunc_custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, BuildableParser, any];
+        vfunc_custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, BuildableParser, never];
 
         /**
          * The getter corresponding to `set_id`. Implement this
@@ -50622,7 +50622,7 @@ export interface Builder {
          * @param data user data created in custom_tag_start
          * @virtual
          */
-        vfunc_custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: (any | null)): void;
+        vfunc_custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
 
         /**
          * Called at the end of each custom element handled by
@@ -50633,7 +50633,7 @@ export interface Builder {
          * @param data user data that will be passed in to parser functions
          * @virtual
          */
-        vfunc_custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: (any | null)): void;
+        vfunc_custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
 
         /**
          * Called for each unknown element under `<child>`.
@@ -50642,7 +50642,7 @@ export interface Builder {
          * @param tagname name of tag
          * @virtual
          */
-        vfunc_custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, BuildableParser, any];
+        vfunc_custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, BuildableParser, never];
 
         /**
          * The getter corresponding to `set_id`. Implement this
@@ -51284,7 +51284,7 @@ export interface Builder {
          * @param data user data created in custom_tag_start
          * @virtual
          */
-        vfunc_custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: (any | null)): void;
+        vfunc_custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
 
         /**
          * Called at the end of each custom element handled by
@@ -51295,7 +51295,7 @@ export interface Builder {
          * @param data user data that will be passed in to parser functions
          * @virtual
          */
-        vfunc_custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: (any | null)): void;
+        vfunc_custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
 
         /**
          * Called for each unknown element under `<child>`.
@@ -51304,7 +51304,7 @@ export interface Builder {
          * @param tagname name of tag
          * @virtual
          */
-        vfunc_custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, BuildableParser, any];
+        vfunc_custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, BuildableParser, never];
 
         /**
          * The getter corresponding to `set_id`. Implement this
@@ -52578,7 +52578,7 @@ export interface Builder {
          * @param data user data created in custom_tag_start
          * @virtual
          */
-        vfunc_custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: (any | null)): void;
+        vfunc_custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
 
         /**
          * Called at the end of each custom element handled by
@@ -52589,7 +52589,7 @@ export interface Builder {
          * @param data user data that will be passed in to parser functions
          * @virtual
          */
-        vfunc_custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: (any | null)): void;
+        vfunc_custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
 
         /**
          * Called for each unknown element under `<child>`.
@@ -52598,7 +52598,7 @@ export interface Builder {
          * @param tagname name of tag
          * @virtual
          */
-        vfunc_custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, BuildableParser, any];
+        vfunc_custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, BuildableParser, never];
 
         /**
          * The getter corresponding to `set_id`. Implement this
@@ -53886,7 +53886,7 @@ export interface Builder {
          * @param data user data created in custom_tag_start
          * @virtual
          */
-        vfunc_custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: (any | null)): void;
+        vfunc_custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
 
         /**
          * Called at the end of each custom element handled by
@@ -53897,7 +53897,7 @@ export interface Builder {
          * @param data user data that will be passed in to parser functions
          * @virtual
          */
-        vfunc_custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: (any | null)): void;
+        vfunc_custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
 
         /**
          * Called for each unknown element under `<child>`.
@@ -53906,7 +53906,7 @@ export interface Builder {
          * @param tagname name of tag
          * @virtual
          */
-        vfunc_custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, BuildableParser, any];
+        vfunc_custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, BuildableParser, never];
 
         /**
          * The getter corresponding to `set_id`. Implement this
@@ -54449,7 +54449,7 @@ export interface Builder {
          * @param data user data created in custom_tag_start
          * @virtual
          */
-        vfunc_custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: (any | null)): void;
+        vfunc_custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
 
         /**
          * Called at the end of each custom element handled by
@@ -54460,7 +54460,7 @@ export interface Builder {
          * @param data user data that will be passed in to parser functions
          * @virtual
          */
-        vfunc_custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: (any | null)): void;
+        vfunc_custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
 
         /**
          * Called for each unknown element under `<child>`.
@@ -54469,7 +54469,7 @@ export interface Builder {
          * @param tagname name of tag
          * @virtual
          */
-        vfunc_custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, BuildableParser, any];
+        vfunc_custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, BuildableParser, never];
 
         /**
          * The getter corresponding to `set_id`. Implement this
@@ -55342,7 +55342,7 @@ export interface Builder {
          * @param data user data created in custom_tag_start
          * @virtual
          */
-        vfunc_custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: (any | null)): void;
+        vfunc_custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
 
         /**
          * Called at the end of each custom element handled by
@@ -55353,7 +55353,7 @@ export interface Builder {
          * @param data user data that will be passed in to parser functions
          * @virtual
          */
-        vfunc_custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: (any | null)): void;
+        vfunc_custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
 
         /**
          * Called for each unknown element under `<child>`.
@@ -55362,7 +55362,7 @@ export interface Builder {
          * @param tagname name of tag
          * @virtual
          */
-        vfunc_custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, BuildableParser, any];
+        vfunc_custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, BuildableParser, never];
 
         /**
          * The getter corresponding to `set_id`. Implement this
@@ -57336,7 +57336,7 @@ export interface Builder {
          * @param data user data created in custom_tag_start
          * @virtual
          */
-        vfunc_custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: (any | null)): void;
+        vfunc_custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
 
         /**
          * Called at the end of each custom element handled by
@@ -57347,7 +57347,7 @@ export interface Builder {
          * @param data user data that will be passed in to parser functions
          * @virtual
          */
-        vfunc_custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: (any | null)): void;
+        vfunc_custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
 
         /**
          * Called for each unknown element under `<child>`.
@@ -57356,7 +57356,7 @@ export interface Builder {
          * @param tagname name of tag
          * @virtual
          */
-        vfunc_custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, BuildableParser, any];
+        vfunc_custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, BuildableParser, never];
 
         /**
          * The getter corresponding to `set_id`. Implement this
@@ -58115,7 +58115,7 @@ export interface Builder {
          * @param data user data created in custom_tag_start
          * @virtual
          */
-        vfunc_custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: (any | null)): void;
+        vfunc_custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
 
         /**
          * Called at the end of each custom element handled by
@@ -58126,7 +58126,7 @@ export interface Builder {
          * @param data user data that will be passed in to parser functions
          * @virtual
          */
-        vfunc_custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: (any | null)): void;
+        vfunc_custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
 
         /**
          * Called for each unknown element under `<child>`.
@@ -58135,7 +58135,7 @@ export interface Builder {
          * @param tagname name of tag
          * @virtual
          */
-        vfunc_custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, BuildableParser, any];
+        vfunc_custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, BuildableParser, never];
 
         /**
          * The getter corresponding to `set_id`. Implement this
@@ -59704,7 +59704,7 @@ export interface Builder {
          * @param data user data created in custom_tag_start
          * @virtual
          */
-        vfunc_custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: (any | null)): void;
+        vfunc_custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
 
         /**
          * Called at the end of each custom element handled by
@@ -59715,7 +59715,7 @@ export interface Builder {
          * @param data user data that will be passed in to parser functions
          * @virtual
          */
-        vfunc_custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: (any | null)): void;
+        vfunc_custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
 
         /**
          * Called for each unknown element under `<child>`.
@@ -59724,7 +59724,7 @@ export interface Builder {
          * @param tagname name of tag
          * @virtual
          */
-        vfunc_custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, BuildableParser, any];
+        vfunc_custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, BuildableParser, never];
 
         /**
          * The getter corresponding to `set_id`. Implement this
@@ -62631,7 +62631,7 @@ export interface Builder {
          * @param data user data created in custom_tag_start
          * @virtual
          */
-        vfunc_custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: (any | null)): void;
+        vfunc_custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
 
         /**
          * Called at the end of each custom element handled by
@@ -62642,7 +62642,7 @@ export interface Builder {
          * @param data user data that will be passed in to parser functions
          * @virtual
          */
-        vfunc_custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: (any | null)): void;
+        vfunc_custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
 
         /**
          * Called for each unknown element under `<child>`.
@@ -62651,7 +62651,7 @@ export interface Builder {
          * @param tagname name of tag
          * @virtual
          */
-        vfunc_custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, BuildableParser, any];
+        vfunc_custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, BuildableParser, never];
 
         /**
          * The getter corresponding to `set_id`. Implement this
@@ -63621,7 +63621,7 @@ export interface Builder {
          * @param data user data created in custom_tag_start
          * @virtual
          */
-        vfunc_custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: (any | null)): void;
+        vfunc_custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
 
         /**
          * Called at the end of each custom element handled by
@@ -63632,7 +63632,7 @@ export interface Builder {
          * @param data user data that will be passed in to parser functions
          * @virtual
          */
-        vfunc_custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: (any | null)): void;
+        vfunc_custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
 
         /**
          * Called for each unknown element under `<child>`.
@@ -63641,7 +63641,7 @@ export interface Builder {
          * @param tagname name of tag
          * @virtual
          */
-        vfunc_custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, BuildableParser, any];
+        vfunc_custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, BuildableParser, never];
 
         /**
          * The getter corresponding to `set_id`. Implement this
@@ -64294,7 +64294,7 @@ export interface Builder {
          * @param data user data created in custom_tag_start
          * @virtual
          */
-        vfunc_custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: (any | null)): void;
+        vfunc_custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
 
         /**
          * Called at the end of each custom element handled by
@@ -64305,7 +64305,7 @@ export interface Builder {
          * @param data user data that will be passed in to parser functions
          * @virtual
          */
-        vfunc_custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: (any | null)): void;
+        vfunc_custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
 
         /**
          * Called for each unknown element under `<child>`.
@@ -64314,7 +64314,7 @@ export interface Builder {
          * @param tagname name of tag
          * @virtual
          */
-        vfunc_custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, BuildableParser, any];
+        vfunc_custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, BuildableParser, never];
 
         /**
          * The getter corresponding to `set_id`. Implement this
@@ -65247,7 +65247,7 @@ export interface Builder {
          * @param data user data created in custom_tag_start
          * @virtual
          */
-        vfunc_custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: (any | null)): void;
+        vfunc_custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
 
         /**
          * Called at the end of each custom element handled by
@@ -65258,7 +65258,7 @@ export interface Builder {
          * @param data user data that will be passed in to parser functions
          * @virtual
          */
-        vfunc_custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: (any | null)): void;
+        vfunc_custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
 
         /**
          * Called for each unknown element under `<child>`.
@@ -65267,7 +65267,7 @@ export interface Builder {
          * @param tagname name of tag
          * @virtual
          */
-        vfunc_custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, BuildableParser, any];
+        vfunc_custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, BuildableParser, never];
 
         /**
          * The getter corresponding to `set_id`. Implement this
@@ -66992,7 +66992,7 @@ export interface Builder {
          * @param data user data created in custom_tag_start
          * @virtual
          */
-        vfunc_custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: (any | null)): void;
+        vfunc_custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
 
         /**
          * Called at the end of each custom element handled by
@@ -67003,7 +67003,7 @@ export interface Builder {
          * @param data user data that will be passed in to parser functions
          * @virtual
          */
-        vfunc_custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: (any | null)): void;
+        vfunc_custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
 
         /**
          * Called for each unknown element under `<child>`.
@@ -67012,7 +67012,7 @@ export interface Builder {
          * @param tagname name of tag
          * @virtual
          */
-        vfunc_custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, BuildableParser, any];
+        vfunc_custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, BuildableParser, never];
 
         /**
          * The getter corresponding to `set_id`. Implement this
@@ -68598,7 +68598,7 @@ export interface Builder {
          * @param data user data created in custom_tag_start
          * @virtual
          */
-        vfunc_custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: (any | null)): void;
+        vfunc_custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
 
         /**
          * Called at the end of each custom element handled by
@@ -68609,7 +68609,7 @@ export interface Builder {
          * @param data user data that will be passed in to parser functions
          * @virtual
          */
-        vfunc_custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: (any | null)): void;
+        vfunc_custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
 
         /**
          * Called for each unknown element under `<child>`.
@@ -68618,7 +68618,7 @@ export interface Builder {
          * @param tagname name of tag
          * @virtual
          */
-        vfunc_custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, BuildableParser, any];
+        vfunc_custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, BuildableParser, never];
 
         /**
          * The getter corresponding to `set_id`. Implement this
@@ -69477,7 +69477,7 @@ export interface Builder {
          * @param data user data created in custom_tag_start
          * @virtual
          */
-        vfunc_custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: (any | null)): void;
+        vfunc_custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
 
         /**
          * Called at the end of each custom element handled by
@@ -69488,7 +69488,7 @@ export interface Builder {
          * @param data user data that will be passed in to parser functions
          * @virtual
          */
-        vfunc_custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: (any | null)): void;
+        vfunc_custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
 
         /**
          * Called for each unknown element under `<child>`.
@@ -69497,7 +69497,7 @@ export interface Builder {
          * @param tagname name of tag
          * @virtual
          */
-        vfunc_custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, BuildableParser, any];
+        vfunc_custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, BuildableParser, never];
 
         /**
          * The getter corresponding to `set_id`. Implement this
@@ -70530,7 +70530,7 @@ export interface Builder {
          * @param data user data created in custom_tag_start
          * @virtual
          */
-        vfunc_custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: (any | null)): void;
+        vfunc_custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
 
         /**
          * Called at the end of each custom element handled by
@@ -70541,7 +70541,7 @@ export interface Builder {
          * @param data user data that will be passed in to parser functions
          * @virtual
          */
-        vfunc_custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: (any | null)): void;
+        vfunc_custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
 
         /**
          * Called for each unknown element under `<child>`.
@@ -70550,7 +70550,7 @@ export interface Builder {
          * @param tagname name of tag
          * @virtual
          */
-        vfunc_custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, BuildableParser, any];
+        vfunc_custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, BuildableParser, never];
 
         /**
          * The getter corresponding to `set_id`. Implement this
@@ -71227,7 +71227,7 @@ export interface Builder {
          * @param data user data created in custom_tag_start
          * @virtual
          */
-        vfunc_custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: (any | null)): void;
+        vfunc_custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
 
         /**
          * Called at the end of each custom element handled by
@@ -71238,7 +71238,7 @@ export interface Builder {
          * @param data user data that will be passed in to parser functions
          * @virtual
          */
-        vfunc_custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: (any | null)): void;
+        vfunc_custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
 
         /**
          * Called for each unknown element under `<child>`.
@@ -71247,7 +71247,7 @@ export interface Builder {
          * @param tagname name of tag
          * @virtual
          */
-        vfunc_custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, BuildableParser, any];
+        vfunc_custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, BuildableParser, never];
 
         /**
          * The getter corresponding to `set_id`. Implement this
@@ -72225,7 +72225,7 @@ export interface Builder {
          * @param data user data created in custom_tag_start
          * @virtual
          */
-        vfunc_custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: (any | null)): void;
+        vfunc_custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
 
         /**
          * Called at the end of each custom element handled by
@@ -72236,7 +72236,7 @@ export interface Builder {
          * @param data user data that will be passed in to parser functions
          * @virtual
          */
-        vfunc_custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: (any | null)): void;
+        vfunc_custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
 
         /**
          * Called for each unknown element under `<child>`.
@@ -72245,7 +72245,7 @@ export interface Builder {
          * @param tagname name of tag
          * @virtual
          */
-        vfunc_custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, BuildableParser, any];
+        vfunc_custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, BuildableParser, never];
 
         /**
          * The getter corresponding to `set_id`. Implement this
@@ -74686,7 +74686,7 @@ export interface Builder {
          * @param data user data created in custom_tag_start
          * @virtual
          */
-        vfunc_custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: (any | null)): void;
+        vfunc_custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
 
         /**
          * Called at the end of each custom element handled by
@@ -74697,7 +74697,7 @@ export interface Builder {
          * @param data user data that will be passed in to parser functions
          * @virtual
          */
-        vfunc_custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: (any | null)): void;
+        vfunc_custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
 
         /**
          * Called for each unknown element under `<child>`.
@@ -74706,7 +74706,7 @@ export interface Builder {
          * @param tagname name of tag
          * @virtual
          */
-        vfunc_custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, BuildableParser, any];
+        vfunc_custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, BuildableParser, never];
 
         /**
          * The getter corresponding to `set_id`. Implement this
@@ -76749,7 +76749,7 @@ export interface Builder {
          * @param data user data created in custom_tag_start
          * @virtual
          */
-        vfunc_custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: (any | null)): void;
+        vfunc_custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
 
         /**
          * Called at the end of each custom element handled by
@@ -76760,7 +76760,7 @@ export interface Builder {
          * @param data user data that will be passed in to parser functions
          * @virtual
          */
-        vfunc_custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: (any | null)): void;
+        vfunc_custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
 
         /**
          * Called for each unknown element under `<child>`.
@@ -76769,7 +76769,7 @@ export interface Builder {
          * @param tagname name of tag
          * @virtual
          */
-        vfunc_custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, BuildableParser, any];
+        vfunc_custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, BuildableParser, never];
 
         /**
          * The getter corresponding to `set_id`. Implement this
@@ -77619,7 +77619,7 @@ export interface Builder {
          * @param data user data created in custom_tag_start
          * @virtual
          */
-        vfunc_custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: (any | null)): void;
+        vfunc_custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
 
         /**
          * Called at the end of each custom element handled by
@@ -77630,7 +77630,7 @@ export interface Builder {
          * @param data user data that will be passed in to parser functions
          * @virtual
          */
-        vfunc_custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: (any | null)): void;
+        vfunc_custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
 
         /**
          * Called for each unknown element under `<child>`.
@@ -77639,7 +77639,7 @@ export interface Builder {
          * @param tagname name of tag
          * @virtual
          */
-        vfunc_custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, BuildableParser, any];
+        vfunc_custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, BuildableParser, never];
 
         /**
          * The getter corresponding to `set_id`. Implement this
@@ -78412,7 +78412,7 @@ export interface Builder {
          * @param data user data created in custom_tag_start
          * @virtual
          */
-        vfunc_custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: (any | null)): void;
+        vfunc_custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
 
         /**
          * Called at the end of each custom element handled by
@@ -78423,7 +78423,7 @@ export interface Builder {
          * @param data user data that will be passed in to parser functions
          * @virtual
          */
-        vfunc_custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: (any | null)): void;
+        vfunc_custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
 
         /**
          * Called for each unknown element under `<child>`.
@@ -78432,7 +78432,7 @@ export interface Builder {
          * @param tagname name of tag
          * @virtual
          */
-        vfunc_custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, BuildableParser, any];
+        vfunc_custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, BuildableParser, never];
 
         /**
          * The getter corresponding to `set_id`. Implement this
@@ -80397,7 +80397,7 @@ export interface Builder {
          * @param data user data created in custom_tag_start
          * @virtual
          */
-        vfunc_custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: (any | null)): void;
+        vfunc_custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
 
         /**
          * Called at the end of each custom element handled by
@@ -80408,7 +80408,7 @@ export interface Builder {
          * @param data user data that will be passed in to parser functions
          * @virtual
          */
-        vfunc_custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: (any | null)): void;
+        vfunc_custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
 
         /**
          * Called for each unknown element under `<child>`.
@@ -80417,7 +80417,7 @@ export interface Builder {
          * @param tagname name of tag
          * @virtual
          */
-        vfunc_custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, BuildableParser, any];
+        vfunc_custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, BuildableParser, never];
 
         /**
          * The getter corresponding to `set_id`. Implement this
@@ -81305,7 +81305,7 @@ export interface Builder {
          * @param data user data created in custom_tag_start
          * @virtual
          */
-        vfunc_custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: (any | null)): void;
+        vfunc_custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
 
         /**
          * Called at the end of each custom element handled by
@@ -81316,7 +81316,7 @@ export interface Builder {
          * @param data user data that will be passed in to parser functions
          * @virtual
          */
-        vfunc_custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: (any | null)): void;
+        vfunc_custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
 
         /**
          * Called for each unknown element under `<child>`.
@@ -81325,7 +81325,7 @@ export interface Builder {
          * @param tagname name of tag
          * @virtual
          */
-        vfunc_custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, BuildableParser, any];
+        vfunc_custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, BuildableParser, never];
 
         /**
          * The getter corresponding to `set_id`. Implement this
@@ -82938,7 +82938,7 @@ export interface Builder {
          * @param data user data created in custom_tag_start
          * @virtual
          */
-        vfunc_custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: (any | null)): void;
+        vfunc_custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
 
         /**
          * Called at the end of each custom element handled by
@@ -82949,7 +82949,7 @@ export interface Builder {
          * @param data user data that will be passed in to parser functions
          * @virtual
          */
-        vfunc_custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: (any | null)): void;
+        vfunc_custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
 
         /**
          * Called for each unknown element under `<child>`.
@@ -82958,7 +82958,7 @@ export interface Builder {
          * @param tagname name of tag
          * @virtual
          */
-        vfunc_custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, BuildableParser, any];
+        vfunc_custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, BuildableParser, never];
 
         /**
          * The getter corresponding to `set_id`. Implement this
@@ -83612,7 +83612,7 @@ export interface Builder {
          * @param data user data created in custom_tag_start
          * @virtual
          */
-        vfunc_custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: (any | null)): void;
+        vfunc_custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
 
         /**
          * Called at the end of each custom element handled by
@@ -83623,7 +83623,7 @@ export interface Builder {
          * @param data user data that will be passed in to parser functions
          * @virtual
          */
-        vfunc_custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: (any | null)): void;
+        vfunc_custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
 
         /**
          * Called for each unknown element under `<child>`.
@@ -83632,7 +83632,7 @@ export interface Builder {
          * @param tagname name of tag
          * @virtual
          */
-        vfunc_custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, BuildableParser, any];
+        vfunc_custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, BuildableParser, never];
 
         /**
          * The getter corresponding to `set_id`. Implement this
@@ -84730,7 +84730,7 @@ export interface Builder {
          * @param data user data created in custom_tag_start
          * @virtual
          */
-        vfunc_custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: (any | null)): void;
+        vfunc_custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
 
         /**
          * Called at the end of each custom element handled by
@@ -84741,7 +84741,7 @@ export interface Builder {
          * @param data user data that will be passed in to parser functions
          * @virtual
          */
-        vfunc_custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: (any | null)): void;
+        vfunc_custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
 
         /**
          * Called for each unknown element under `<child>`.
@@ -84750,7 +84750,7 @@ export interface Builder {
          * @param tagname name of tag
          * @virtual
          */
-        vfunc_custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, BuildableParser, any];
+        vfunc_custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, BuildableParser, never];
 
         /**
          * The getter corresponding to `set_id`. Implement this
@@ -85535,7 +85535,7 @@ export interface Builder {
          * @param data user data created in custom_tag_start
          * @virtual
          */
-        vfunc_custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: (any | null)): void;
+        vfunc_custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
 
         /**
          * Called at the end of each custom element handled by
@@ -85546,7 +85546,7 @@ export interface Builder {
          * @param data user data that will be passed in to parser functions
          * @virtual
          */
-        vfunc_custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: (any | null)): void;
+        vfunc_custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
 
         /**
          * Called for each unknown element under `<child>`.
@@ -85555,7 +85555,7 @@ export interface Builder {
          * @param tagname name of tag
          * @virtual
          */
-        vfunc_custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, BuildableParser, any];
+        vfunc_custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, BuildableParser, never];
 
         /**
          * The getter corresponding to `set_id`. Implement this
@@ -86429,7 +86429,7 @@ export interface Builder {
          * @param data user data created in custom_tag_start
          * @virtual
          */
-        vfunc_custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: (any | null)): void;
+        vfunc_custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
 
         /**
          * Called at the end of each custom element handled by
@@ -86440,7 +86440,7 @@ export interface Builder {
          * @param data user data that will be passed in to parser functions
          * @virtual
          */
-        vfunc_custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: (any | null)): void;
+        vfunc_custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
 
         /**
          * Called for each unknown element under `<child>`.
@@ -86449,7 +86449,7 @@ export interface Builder {
          * @param tagname name of tag
          * @virtual
          */
-        vfunc_custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, BuildableParser, any];
+        vfunc_custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, BuildableParser, never];
 
         /**
          * The getter corresponding to `set_id`. Implement this
@@ -90657,7 +90657,7 @@ export interface Builder {
          * @param data user data created in custom_tag_start
          * @virtual
          */
-        vfunc_custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: (any | null)): void;
+        vfunc_custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
 
         /**
          * Called at the end of each custom element handled by
@@ -90668,7 +90668,7 @@ export interface Builder {
          * @param data user data that will be passed in to parser functions
          * @virtual
          */
-        vfunc_custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: (any | null)): void;
+        vfunc_custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
 
         /**
          * Called for each unknown element under `<child>`.
@@ -90677,7 +90677,7 @@ export interface Builder {
          * @param tagname name of tag
          * @virtual
          */
-        vfunc_custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, BuildableParser, any];
+        vfunc_custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, BuildableParser, never];
 
         /**
          * The getter corresponding to `set_id`. Implement this
@@ -91526,7 +91526,7 @@ export interface Builder {
          * @param data user data created in custom_tag_start
          * @virtual
          */
-        vfunc_custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: (any | null)): void;
+        vfunc_custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
 
         /**
          * Called at the end of each custom element handled by
@@ -91537,7 +91537,7 @@ export interface Builder {
          * @param data user data that will be passed in to parser functions
          * @virtual
          */
-        vfunc_custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: (any | null)): void;
+        vfunc_custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
 
         /**
          * Called for each unknown element under `<child>`.
@@ -91546,7 +91546,7 @@ export interface Builder {
          * @param tagname name of tag
          * @virtual
          */
-        vfunc_custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, BuildableParser, any];
+        vfunc_custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, BuildableParser, never];
 
         /**
          * The getter corresponding to `set_id`. Implement this
@@ -92347,7 +92347,7 @@ export interface Builder {
          * @param data user data created in custom_tag_start
          * @virtual
          */
-        vfunc_custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: (any | null)): void;
+        vfunc_custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
 
         /**
          * Called at the end of each custom element handled by
@@ -92358,7 +92358,7 @@ export interface Builder {
          * @param data user data that will be passed in to parser functions
          * @virtual
          */
-        vfunc_custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: (any | null)): void;
+        vfunc_custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
 
         /**
          * Called for each unknown element under `<child>`.
@@ -92367,7 +92367,7 @@ export interface Builder {
          * @param tagname name of tag
          * @virtual
          */
-        vfunc_custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, BuildableParser, any];
+        vfunc_custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, BuildableParser, never];
 
         /**
          * The getter corresponding to `set_id`. Implement this
@@ -93388,7 +93388,7 @@ export interface Builder {
          * @param data user data created in custom_tag_start
          * @virtual
          */
-        vfunc_custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: (any | null)): void;
+        vfunc_custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
 
         /**
          * Called at the end of each custom element handled by
@@ -93399,7 +93399,7 @@ export interface Builder {
          * @param data user data that will be passed in to parser functions
          * @virtual
          */
-        vfunc_custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: (any | null)): void;
+        vfunc_custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
 
         /**
          * Called for each unknown element under `<child>`.
@@ -93408,7 +93408,7 @@ export interface Builder {
          * @param tagname name of tag
          * @virtual
          */
-        vfunc_custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, BuildableParser, any];
+        vfunc_custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, BuildableParser, never];
 
         /**
          * The getter corresponding to `set_id`. Implement this
@@ -93890,7 +93890,7 @@ export interface Builder {
          * @param data user data created in custom_tag_start
          * @virtual
          */
-        vfunc_custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: (any | null)): void;
+        vfunc_custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
 
         /**
          * Called at the end of each custom element handled by
@@ -93901,7 +93901,7 @@ export interface Builder {
          * @param data user data that will be passed in to parser functions
          * @virtual
          */
-        vfunc_custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: (any | null)): void;
+        vfunc_custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
 
         /**
          * Called for each unknown element under `<child>`.
@@ -93910,7 +93910,7 @@ export interface Builder {
          * @param tagname name of tag
          * @virtual
          */
-        vfunc_custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, BuildableParser, any];
+        vfunc_custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, BuildableParser, never];
 
         /**
          * The getter corresponding to `set_id`. Implement this
@@ -94972,7 +94972,7 @@ export interface Builder {
          * @param data user data created in custom_tag_start
          * @virtual
          */
-        vfunc_custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: (any | null)): void;
+        vfunc_custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
 
         /**
          * Called at the end of each custom element handled by
@@ -94983,7 +94983,7 @@ export interface Builder {
          * @param data user data that will be passed in to parser functions
          * @virtual
          */
-        vfunc_custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: (any | null)): void;
+        vfunc_custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
 
         /**
          * Called for each unknown element under `<child>`.
@@ -94992,7 +94992,7 @@ export interface Builder {
          * @param tagname name of tag
          * @virtual
          */
-        vfunc_custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, BuildableParser, any];
+        vfunc_custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, BuildableParser, never];
 
         /**
          * The getter corresponding to `set_id`. Implement this
@@ -95562,7 +95562,7 @@ export interface Builder {
          * @param data user data created in custom_tag_start
          * @virtual
          */
-        vfunc_custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: (any | null)): void;
+        vfunc_custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
 
         /**
          * Called at the end of each custom element handled by
@@ -95573,7 +95573,7 @@ export interface Builder {
          * @param data user data that will be passed in to parser functions
          * @virtual
          */
-        vfunc_custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: (any | null)): void;
+        vfunc_custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
 
         /**
          * Called for each unknown element under `<child>`.
@@ -95582,7 +95582,7 @@ export interface Builder {
          * @param tagname name of tag
          * @virtual
          */
-        vfunc_custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, BuildableParser, any];
+        vfunc_custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, BuildableParser, never];
 
         /**
          * The getter corresponding to `set_id`. Implement this
@@ -96381,7 +96381,7 @@ export interface Builder {
          * @param data user data created in custom_tag_start
          * @virtual
          */
-        vfunc_custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: (any | null)): void;
+        vfunc_custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
 
         /**
          * Called at the end of each custom element handled by
@@ -96392,7 +96392,7 @@ export interface Builder {
          * @param data user data that will be passed in to parser functions
          * @virtual
          */
-        vfunc_custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: (any | null)): void;
+        vfunc_custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
 
         /**
          * Called for each unknown element under `<child>`.
@@ -96401,7 +96401,7 @@ export interface Builder {
          * @param tagname name of tag
          * @virtual
          */
-        vfunc_custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, BuildableParser, any];
+        vfunc_custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, BuildableParser, never];
 
         /**
          * The getter corresponding to `set_id`. Implement this
@@ -97388,7 +97388,7 @@ export interface Builder {
          * @param data user data created in custom_tag_start
          * @virtual
          */
-        vfunc_custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: (any | null)): void;
+        vfunc_custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
 
         /**
          * Called at the end of each custom element handled by
@@ -97399,7 +97399,7 @@ export interface Builder {
          * @param data user data that will be passed in to parser functions
          * @virtual
          */
-        vfunc_custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: (any | null)): void;
+        vfunc_custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
 
         /**
          * Called for each unknown element under `<child>`.
@@ -97408,7 +97408,7 @@ export interface Builder {
          * @param tagname name of tag
          * @virtual
          */
-        vfunc_custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, BuildableParser, any];
+        vfunc_custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, BuildableParser, never];
 
         /**
          * The getter corresponding to `set_id`. Implement this
@@ -99480,7 +99480,7 @@ export interface Builder {
          * @param data user data created in custom_tag_start
          * @virtual
          */
-        vfunc_custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: (any | null)): void;
+        vfunc_custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
 
         /**
          * Called at the end of each custom element handled by
@@ -99491,7 +99491,7 @@ export interface Builder {
          * @param data user data that will be passed in to parser functions
          * @virtual
          */
-        vfunc_custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: (any | null)): void;
+        vfunc_custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
 
         /**
          * Called for each unknown element under `<child>`.
@@ -99500,7 +99500,7 @@ export interface Builder {
          * @param tagname name of tag
          * @virtual
          */
-        vfunc_custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, BuildableParser, any];
+        vfunc_custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, BuildableParser, never];
 
         /**
          * The getter corresponding to `set_id`. Implement this
@@ -99946,7 +99946,7 @@ export interface Builder {
          * @param data user data created in custom_tag_start
          * @virtual
          */
-        vfunc_custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: (any | null)): void;
+        vfunc_custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
 
         /**
          * Called at the end of each custom element handled by
@@ -99957,7 +99957,7 @@ export interface Builder {
          * @param data user data that will be passed in to parser functions
          * @virtual
          */
-        vfunc_custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: (any | null)): void;
+        vfunc_custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
 
         /**
          * Called for each unknown element under `<child>`.
@@ -99966,7 +99966,7 @@ export interface Builder {
          * @param tagname name of tag
          * @virtual
          */
-        vfunc_custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, BuildableParser, any];
+        vfunc_custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, BuildableParser, never];
 
         /**
          * The getter corresponding to `set_id`. Implement this
@@ -101200,7 +101200,7 @@ export interface Builder {
          * @param data user data created in custom_tag_start
          * @virtual
          */
-        vfunc_custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: (any | null)): void;
+        vfunc_custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
 
         /**
          * Called at the end of each custom element handled by
@@ -101211,7 +101211,7 @@ export interface Builder {
          * @param data user data that will be passed in to parser functions
          * @virtual
          */
-        vfunc_custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: (any | null)): void;
+        vfunc_custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
 
         /**
          * Called for each unknown element under `<child>`.
@@ -101220,7 +101220,7 @@ export interface Builder {
          * @param tagname name of tag
          * @virtual
          */
-        vfunc_custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, BuildableParser, any];
+        vfunc_custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, BuildableParser, never];
 
         /**
          * The getter corresponding to `set_id`. Implement this
@@ -102674,7 +102674,7 @@ export interface Builder {
          * @param data user data created in custom_tag_start
          * @virtual
          */
-        vfunc_custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: (any | null)): void;
+        vfunc_custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
 
         /**
          * Called at the end of each custom element handled by
@@ -102685,7 +102685,7 @@ export interface Builder {
          * @param data user data that will be passed in to parser functions
          * @virtual
          */
-        vfunc_custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: (any | null)): void;
+        vfunc_custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
 
         /**
          * Called for each unknown element under `<child>`.
@@ -102694,7 +102694,7 @@ export interface Builder {
          * @param tagname name of tag
          * @virtual
          */
-        vfunc_custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, BuildableParser, any];
+        vfunc_custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, BuildableParser, never];
 
         /**
          * The getter corresponding to `set_id`. Implement this
@@ -105236,7 +105236,7 @@ export interface Builder {
          * @param data user data created in custom_tag_start
          * @virtual
          */
-        vfunc_custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: (any | null)): void;
+        vfunc_custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
 
         /**
          * Called at the end of each custom element handled by
@@ -105247,7 +105247,7 @@ export interface Builder {
          * @param data user data that will be passed in to parser functions
          * @virtual
          */
-        vfunc_custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: (any | null)): void;
+        vfunc_custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
 
         /**
          * Called for each unknown element under `<child>`.
@@ -105256,7 +105256,7 @@ export interface Builder {
          * @param tagname name of tag
          * @virtual
          */
-        vfunc_custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, BuildableParser, any];
+        vfunc_custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, BuildableParser, never];
 
         /**
          * The getter corresponding to `set_id`. Implement this
@@ -106119,7 +106119,7 @@ export interface Builder {
          * @param data user data created in custom_tag_start
          * @virtual
          */
-        vfunc_custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: (any | null)): void;
+        vfunc_custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
 
         /**
          * Called at the end of each custom element handled by
@@ -106130,7 +106130,7 @@ export interface Builder {
          * @param data user data that will be passed in to parser functions
          * @virtual
          */
-        vfunc_custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: (any | null)): void;
+        vfunc_custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
 
         /**
          * Called for each unknown element under `<child>`.
@@ -106139,7 +106139,7 @@ export interface Builder {
          * @param tagname name of tag
          * @virtual
          */
-        vfunc_custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, BuildableParser, any];
+        vfunc_custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, BuildableParser, never];
 
         /**
          * The getter corresponding to `set_id`. Implement this
@@ -106911,7 +106911,7 @@ export interface Builder {
          * @param data user data created in custom_tag_start
          * @virtual
          */
-        vfunc_custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: (any | null)): void;
+        vfunc_custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
 
         /**
          * Called at the end of each custom element handled by
@@ -106922,7 +106922,7 @@ export interface Builder {
          * @param data user data that will be passed in to parser functions
          * @virtual
          */
-        vfunc_custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: (any | null)): void;
+        vfunc_custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
 
         /**
          * Called for each unknown element under `<child>`.
@@ -106931,7 +106931,7 @@ export interface Builder {
          * @param tagname name of tag
          * @virtual
          */
-        vfunc_custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, BuildableParser, any];
+        vfunc_custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, BuildableParser, never];
 
         /**
          * The getter corresponding to `set_id`. Implement this
@@ -107807,7 +107807,7 @@ export interface Builder {
          * @param data user data created in custom_tag_start
          * @virtual
          */
-        vfunc_custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: (any | null)): void;
+        vfunc_custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
 
         /**
          * Called at the end of each custom element handled by
@@ -107818,7 +107818,7 @@ export interface Builder {
          * @param data user data that will be passed in to parser functions
          * @virtual
          */
-        vfunc_custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: (any | null)): void;
+        vfunc_custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
 
         /**
          * Called for each unknown element under `<child>`.
@@ -107827,7 +107827,7 @@ export interface Builder {
          * @param tagname name of tag
          * @virtual
          */
-        vfunc_custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, BuildableParser, any];
+        vfunc_custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, BuildableParser, never];
 
         /**
          * The getter corresponding to `set_id`. Implement this
@@ -108277,7 +108277,7 @@ export interface Builder {
          * @param data user data created in custom_tag_start
          * @virtual
          */
-        vfunc_custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: (any | null)): void;
+        vfunc_custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
 
         /**
          * Called at the end of each custom element handled by
@@ -108288,7 +108288,7 @@ export interface Builder {
          * @param data user data that will be passed in to parser functions
          * @virtual
          */
-        vfunc_custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: (any | null)): void;
+        vfunc_custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
 
         /**
          * Called for each unknown element under `<child>`.
@@ -108297,7 +108297,7 @@ export interface Builder {
          * @param tagname name of tag
          * @virtual
          */
-        vfunc_custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, BuildableParser, any];
+        vfunc_custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, BuildableParser, never];
 
         /**
          * The getter corresponding to `set_id`. Implement this
@@ -108793,7 +108793,7 @@ export interface Builder {
          * @param data user data created in custom_tag_start
          * @virtual
          */
-        vfunc_custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: (any | null)): void;
+        vfunc_custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
 
         /**
          * Called at the end of each custom element handled by
@@ -108804,7 +108804,7 @@ export interface Builder {
          * @param data user data that will be passed in to parser functions
          * @virtual
          */
-        vfunc_custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: (any | null)): void;
+        vfunc_custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
 
         /**
          * Called for each unknown element under `<child>`.
@@ -108813,7 +108813,7 @@ export interface Builder {
          * @param tagname name of tag
          * @virtual
          */
-        vfunc_custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, BuildableParser, any];
+        vfunc_custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, BuildableParser, never];
 
         /**
          * The getter corresponding to `set_id`. Implement this
@@ -109353,7 +109353,7 @@ export interface Builder {
          * @param data user data created in custom_tag_start
          * @virtual
          */
-        vfunc_custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: (any | null)): void;
+        vfunc_custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
 
         /**
          * Called at the end of each custom element handled by
@@ -109364,7 +109364,7 @@ export interface Builder {
          * @param data user data that will be passed in to parser functions
          * @virtual
          */
-        vfunc_custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: (any | null)): void;
+        vfunc_custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
 
         /**
          * Called for each unknown element under `<child>`.
@@ -109373,7 +109373,7 @@ export interface Builder {
          * @param tagname name of tag
          * @virtual
          */
-        vfunc_custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, BuildableParser, any];
+        vfunc_custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, BuildableParser, never];
 
         /**
          * The getter corresponding to `set_id`. Implement this
@@ -110531,7 +110531,7 @@ export interface Builder {
          * @param data user data created in custom_tag_start
          * @virtual
          */
-        vfunc_custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: (any | null)): void;
+        vfunc_custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
 
         /**
          * Called at the end of each custom element handled by
@@ -110542,7 +110542,7 @@ export interface Builder {
          * @param data user data that will be passed in to parser functions
          * @virtual
          */
-        vfunc_custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: (any | null)): void;
+        vfunc_custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
 
         /**
          * Called for each unknown element under `<child>`.
@@ -110551,7 +110551,7 @@ export interface Builder {
          * @param tagname name of tag
          * @virtual
          */
-        vfunc_custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, BuildableParser, any];
+        vfunc_custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, BuildableParser, never];
 
         /**
          * The getter corresponding to `set_id`. Implement this
@@ -112039,7 +112039,7 @@ export interface Builder {
          * @param data user data created in custom_tag_start
          * @virtual
          */
-        vfunc_custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: (any | null)): void;
+        vfunc_custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
 
         /**
          * Called at the end of each custom element handled by
@@ -112050,7 +112050,7 @@ export interface Builder {
          * @param data user data that will be passed in to parser functions
          * @virtual
          */
-        vfunc_custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: (any | null)): void;
+        vfunc_custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
 
         /**
          * Called for each unknown element under `<child>`.
@@ -112059,7 +112059,7 @@ export interface Builder {
          * @param tagname name of tag
          * @virtual
          */
-        vfunc_custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, BuildableParser, any];
+        vfunc_custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, BuildableParser, never];
 
         /**
          * The getter corresponding to `set_id`. Implement this
@@ -115704,7 +115704,7 @@ export interface Builder {
          * @param data user data created in custom_tag_start
          * @virtual
          */
-        vfunc_custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: (any | null)): void;
+        vfunc_custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
 
         /**
          * Called at the end of each custom element handled by
@@ -115715,7 +115715,7 @@ export interface Builder {
          * @param data user data that will be passed in to parser functions
          * @virtual
          */
-        vfunc_custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: (any | null)): void;
+        vfunc_custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
 
         /**
          * Called for each unknown element under `<child>`.
@@ -115724,7 +115724,7 @@ export interface Builder {
          * @param tagname name of tag
          * @virtual
          */
-        vfunc_custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, BuildableParser, any];
+        vfunc_custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, BuildableParser, never];
 
         /**
          * The getter corresponding to `set_id`. Implement this
@@ -117793,7 +117793,7 @@ export interface Builder {
          * @param data user data created in custom_tag_start
          * @virtual
          */
-        vfunc_custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: (any | null)): void;
+        vfunc_custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
 
         /**
          * Called at the end of each custom element handled by
@@ -117804,7 +117804,7 @@ export interface Builder {
          * @param data user data that will be passed in to parser functions
          * @virtual
          */
-        vfunc_custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: (any | null)): void;
+        vfunc_custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
 
         /**
          * Called for each unknown element under `<child>`.
@@ -117813,7 +117813,7 @@ export interface Builder {
          * @param tagname name of tag
          * @virtual
          */
-        vfunc_custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, BuildableParser, any];
+        vfunc_custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, BuildableParser, never];
 
         /**
          * The getter corresponding to `set_id`. Implement this
@@ -119052,7 +119052,7 @@ export interface Builder {
          * @param data user data created in custom_tag_start
          * @virtual
          */
-        vfunc_custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: (any | null)): void;
+        vfunc_custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
 
         /**
          * Called at the end of each custom element handled by
@@ -119063,7 +119063,7 @@ export interface Builder {
          * @param data user data that will be passed in to parser functions
          * @virtual
          */
-        vfunc_custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: (any | null)): void;
+        vfunc_custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
 
         /**
          * Called for each unknown element under `<child>`.
@@ -119072,7 +119072,7 @@ export interface Builder {
          * @param tagname name of tag
          * @virtual
          */
-        vfunc_custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, BuildableParser, any];
+        vfunc_custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, BuildableParser, never];
 
         /**
          * The getter corresponding to `set_id`. Implement this
@@ -121983,7 +121983,7 @@ export interface Builder {
          * @param data user data created in custom_tag_start
          * @virtual
          */
-        vfunc_custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: (any | null)): void;
+        vfunc_custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
 
         /**
          * Called at the end of each custom element handled by
@@ -121994,7 +121994,7 @@ export interface Builder {
          * @param data user data that will be passed in to parser functions
          * @virtual
          */
-        vfunc_custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: (any | null)): void;
+        vfunc_custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
 
         /**
          * Called for each unknown element under `<child>`.
@@ -122003,7 +122003,7 @@ export interface Builder {
          * @param tagname name of tag
          * @virtual
          */
-        vfunc_custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, BuildableParser, any];
+        vfunc_custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, BuildableParser, never];
 
         /**
          * The getter corresponding to `set_id`. Implement this
@@ -124563,7 +124563,7 @@ export interface Builder {
          * @param data user data created in custom_tag_start
          * @virtual
          */
-        vfunc_custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: (any | null)): void;
+        vfunc_custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
 
         /**
          * Called at the end of each custom element handled by
@@ -124574,7 +124574,7 @@ export interface Builder {
          * @param data user data that will be passed in to parser functions
          * @virtual
          */
-        vfunc_custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: (any | null)): void;
+        vfunc_custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
 
         /**
          * Called for each unknown element under `<child>`.
@@ -124583,7 +124583,7 @@ export interface Builder {
          * @param tagname name of tag
          * @virtual
          */
-        vfunc_custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, BuildableParser, any];
+        vfunc_custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, BuildableParser, never];
 
         /**
          * The getter corresponding to `set_id`. Implement this
@@ -125409,7 +125409,7 @@ export interface Builder {
          * @param data user data created in custom_tag_start
          * @virtual
          */
-        vfunc_custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: (any | null)): void;
+        vfunc_custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
 
         /**
          * Called at the end of each custom element handled by
@@ -125420,7 +125420,7 @@ export interface Builder {
          * @param data user data that will be passed in to parser functions
          * @virtual
          */
-        vfunc_custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: (any | null)): void;
+        vfunc_custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
 
         /**
          * Called for each unknown element under `<child>`.
@@ -125429,7 +125429,7 @@ export interface Builder {
          * @param tagname name of tag
          * @virtual
          */
-        vfunc_custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, BuildableParser, any];
+        vfunc_custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, BuildableParser, never];
 
         /**
          * The getter corresponding to `set_id`. Implement this
@@ -126237,7 +126237,7 @@ export interface Builder {
          * @param data user data created in custom_tag_start
          * @virtual
          */
-        vfunc_custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: (any | null)): void;
+        vfunc_custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
 
         /**
          * Called at the end of each custom element handled by
@@ -126248,7 +126248,7 @@ export interface Builder {
          * @param data user data that will be passed in to parser functions
          * @virtual
          */
-        vfunc_custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: (any | null)): void;
+        vfunc_custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
 
         /**
          * Called for each unknown element under `<child>`.
@@ -126257,7 +126257,7 @@ export interface Builder {
          * @param tagname name of tag
          * @virtual
          */
-        vfunc_custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, BuildableParser, any];
+        vfunc_custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, BuildableParser, never];
 
         /**
          * The getter corresponding to `set_id`. Implement this
@@ -126784,7 +126784,7 @@ export interface Builder {
          * @param data user data created in custom_tag_start
          * @virtual
          */
-        vfunc_custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: (any | null)): void;
+        vfunc_custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
 
         /**
          * Called at the end of each custom element handled by
@@ -126795,7 +126795,7 @@ export interface Builder {
          * @param data user data that will be passed in to parser functions
          * @virtual
          */
-        vfunc_custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: (any | null)): void;
+        vfunc_custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
 
         /**
          * Called for each unknown element under `<child>`.
@@ -126804,7 +126804,7 @@ export interface Builder {
          * @param tagname name of tag
          * @virtual
          */
-        vfunc_custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, BuildableParser, any];
+        vfunc_custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, BuildableParser, never];
 
         /**
          * The getter corresponding to `set_id`. Implement this
@@ -130907,7 +130907,7 @@ export interface Builder {
          * @param data user data created in custom_tag_start
          * @virtual
          */
-        vfunc_custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: (any | null)): void;
+        vfunc_custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
 
         /**
          * Called at the end of each custom element handled by
@@ -130918,7 +130918,7 @@ export interface Builder {
          * @param data user data that will be passed in to parser functions
          * @virtual
          */
-        vfunc_custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: (any | null)): void;
+        vfunc_custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
 
         /**
          * Called for each unknown element under `<child>`.
@@ -130927,7 +130927,7 @@ export interface Builder {
          * @param tagname name of tag
          * @virtual
          */
-        vfunc_custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, BuildableParser, any];
+        vfunc_custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, BuildableParser, never];
 
         /**
          * The getter corresponding to `set_id`. Implement this
@@ -132856,7 +132856,7 @@ export interface Builder {
          * @param data user data created in custom_tag_start
          * @virtual
          */
-        vfunc_custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: (any | null)): void;
+        vfunc_custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
 
         /**
          * Called at the end of each custom element handled by
@@ -132867,7 +132867,7 @@ export interface Builder {
          * @param data user data that will be passed in to parser functions
          * @virtual
          */
-        vfunc_custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: (any | null)): void;
+        vfunc_custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
 
         /**
          * Called for each unknown element under `<child>`.
@@ -132876,7 +132876,7 @@ export interface Builder {
          * @param tagname name of tag
          * @virtual
          */
-        vfunc_custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, BuildableParser, any];
+        vfunc_custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, BuildableParser, never];
 
         /**
          * The getter corresponding to `set_id`. Implement this
@@ -133510,7 +133510,7 @@ export interface Builder {
          * @param data user data created in custom_tag_start
          * @virtual
          */
-        vfunc_custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: (any | null)): void;
+        vfunc_custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
 
         /**
          * Called at the end of each custom element handled by
@@ -133521,7 +133521,7 @@ export interface Builder {
          * @param data user data that will be passed in to parser functions
          * @virtual
          */
-        vfunc_custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: (any | null)): void;
+        vfunc_custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
 
         /**
          * Called for each unknown element under `<child>`.
@@ -133530,7 +133530,7 @@ export interface Builder {
          * @param tagname name of tag
          * @virtual
          */
-        vfunc_custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, BuildableParser, any];
+        vfunc_custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, BuildableParser, never];
 
         /**
          * The getter corresponding to `set_id`. Implement this
@@ -134035,7 +134035,7 @@ export interface Builder {
          * @param data user data created in custom_tag_start
          * @virtual
          */
-        vfunc_custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: (any | null)): void;
+        vfunc_custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
 
         /**
          * Called at the end of each custom element handled by
@@ -134046,7 +134046,7 @@ export interface Builder {
          * @param data user data that will be passed in to parser functions
          * @virtual
          */
-        vfunc_custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: (any | null)): void;
+        vfunc_custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
 
         /**
          * Called for each unknown element under `<child>`.
@@ -134055,7 +134055,7 @@ export interface Builder {
          * @param tagname name of tag
          * @virtual
          */
-        vfunc_custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, BuildableParser, any];
+        vfunc_custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, BuildableParser, never];
 
         /**
          * The getter corresponding to `set_id`. Implement this
@@ -134698,7 +134698,7 @@ export interface Builder {
          * interface.
          * @returns the user data passed to `gtk_buildable_parse_context_push()`
          */
-        pop(): (any | null);
+        pop(): null;
 
         /**
          * Temporarily redirects markup data to a sub-parser.
@@ -134733,7 +134733,7 @@ export interface Builder {
          * @param parser a {@link Gtk.BuildableParser}
          * @param user_data user data to pass to {@link Gtk.BuildableParser} functions
          */
-        push(parser: BuildableParser, user_data: (any | null)): void;
+        push(parser: BuildableParser, user_data: null): void;
     }
 
 
@@ -136162,7 +136162,7 @@ export interface Builder {
         static $gtype: GObject.GType<RequestedSize>;
 
         // Fields
-        data: any;
+        data: null;
 
         minimum_size: number;
 
@@ -136171,7 +136171,7 @@ export interface Builder {
         // Constructors
 
         constructor(properties?: Partial<{
-            data: any;
+            data: null;
             minimum_size: number;
             natural_size: number;
         }>);
@@ -137538,19 +137538,19 @@ export interface Builder {
         // Fields
         stamp: number;
 
-        user_data: any;
+        user_data: null;
 
-        user_data2: any;
+        user_data2: null;
 
-        user_data3: any;
+        user_data3: null;
 
         // Constructors
 
         constructor(properties?: Partial<{
             stamp: number;
-            user_data: any;
-            user_data2: any;
-            user_data3: any;
+            user_data: null;
+            user_data2: null;
+            user_data3: null;
         }>);
 
         // Methods
@@ -138727,7 +138727,7 @@ export interface Builder {
              * @param data user data created in custom_tag_start
              * @virtual
              */
-            vfunc_custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: (any | null)): void;
+            vfunc_custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
 
             /**
              * Called at the end of each custom element handled by
@@ -138738,7 +138738,7 @@ export interface Builder {
              * @param data user data that will be passed in to parser functions
              * @virtual
              */
-            vfunc_custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: (any | null)): void;
+            vfunc_custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
 
             /**
              * Called for each unknown element under `<child>`.
@@ -138747,7 +138747,7 @@ export interface Builder {
              * @param tagname name of tag
              * @virtual
              */
-            vfunc_custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, BuildableParser, any];
+            vfunc_custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, BuildableParser, never];
 
             /**
              * The getter corresponding to `set_id`. Implement this

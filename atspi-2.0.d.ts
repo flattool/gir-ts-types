@@ -2112,7 +2112,7 @@ export namespace Atspi {
      * @param filter Unused parameter.
      * @returns `true` if successful, otherwise `false`.
      */
-    function deregister_device_event_listener(listener: DeviceListener, filter: (any | null)): boolean;
+    function deregister_device_event_listener(listener: DeviceListener, filter: null): boolean;
 
     /**
      * Removes a keystroke event listener from the registry's listener queue,
@@ -2235,7 +2235,7 @@ export namespace Atspi {
      * @param filter 
      * @returns Always returns `false`.
      */
-    function register_device_event_listener(listener: DeviceListener, event_types: DeviceEventMask, filter: (any | null)): boolean;
+    function register_device_event_listener(listener: DeviceListener, event_types: DeviceEventMask, filter: null): boolean;
 
     /**
      * Registers a listener for keystroke events, either pre-emptively for
@@ -2334,7 +2334,7 @@ export namespace Atspi {
      * @gir-type Callback
      */
     interface GenerateMouseEventCB {
-        (user_data: (any | null)): void;
+        (user_data: null): void;
     }
 
     /**
@@ -2474,7 +2474,7 @@ export namespace Atspi {
         // Fields
         accessible_parent: Accessible;
 
-        children: any[];
+        children: null[];
 
         role: Role;
 
@@ -4014,7 +4014,7 @@ export namespace Atspi {
         // Fields
         bus_name: string;
 
-        root: any;
+        root: null;
 
         cache: Cache;
 
@@ -4024,7 +4024,7 @@ export namespace Atspi {
 
         atspi_version: string;
 
-        time_added: any;
+        time_added: null;
 
         // Constructors
         constructor(properties?: Partial<Application.ConstructorProps>, ...args: any[]);
@@ -4502,7 +4502,7 @@ export namespace Atspi {
         // Fields
         id: number;
 
-        callbacks: any[];
+        callbacks: null[];
 
         // Constructors
         constructor(properties?: Partial<DeviceListener.ConstructorProps>, ...args: any[]);
@@ -4634,7 +4634,7 @@ export namespace Atspi {
         // Fields
         callback: EventListenerCB;
 
-        user_data: any;
+        user_data: null;
 
         cb_destroyed: GLib.DestroyNotify;
 
@@ -4950,7 +4950,7 @@ export namespace Atspi {
 
         attributematchtype: CollectionMatchType;
 
-        interfaces: any[];
+        interfaces: null[];
 
         interfacematchtype: CollectionMatchType;
 
@@ -5068,7 +5068,7 @@ export namespace Atspi {
         // Fields
         relation_type: RelationType;
 
-        targets: any[];
+        targets: null[];
 
         // Constructors
         constructor(properties?: Partial<Relation.ConstructorProps>, ...args: any[]);
@@ -5141,7 +5141,7 @@ export namespace Atspi {
         $signals: StateSet.SignalSignatures;
 
         // Fields
-        accessible: any;
+        accessible: null;
 
         states: number;
 

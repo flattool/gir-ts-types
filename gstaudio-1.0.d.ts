@@ -3148,7 +3148,7 @@ export namespace GstAudio {
 
         func: AudioClockGetTimeFunc;
 
-        user_data: any;
+        user_data: null;
 
         destroy_notify: GLib.DestroyNotify;
 
@@ -5578,7 +5578,7 @@ export namespace GstAudio {
 
         n_planes: number;
 
-        planes: any;
+        planes: null;
 
         // Static methods
         /**
@@ -5743,7 +5743,7 @@ export namespace GstAudio {
          * @param out output samples
          * @param samples number of samples
          */
-        samples(_in: (any | null), out: (any | null), samples: number): void;
+        samples(_in: null, out: null, samples: number): void;
     }
 
 
@@ -5884,7 +5884,7 @@ export namespace GstAudio {
          * @param out_frames number of output frames
          * @returns `true` is the conversion could be performed.
          */
-        samples(flags: AudioConverterFlags, _in: (any | null), in_frames: (bigint | number), out: (any | null), out_frames: (bigint | number)): boolean;
+        samples(flags: AudioConverterFlags, _in: null, in_frames: (bigint | number), out: null, out_frames: (bigint | number)): boolean;
 
         /**
          * Returns whether the audio converter can perform the conversion in-place.
@@ -6192,7 +6192,7 @@ export namespace GstAudio {
          * @param out output samples
          * @param samples number of samples
          */
-        samples(_in: (any | null), out: (any | null), samples: number): void;
+        samples(_in: null, out: null, samples: number): void;
     }
 
 
@@ -6279,7 +6279,7 @@ export namespace GstAudio {
          * @param out output samples
          * @param out_frames number of output frames
          */
-        resample(_in: (any | null), in_frames: (bigint | number), out: (any | null), out_frames: (bigint | number)): void;
+        resample(_in: null, in_frames: (bigint | number), out: null, out_frames: (bigint | number)): void;
 
         /**
          * Reset `resampler` to the state it was when it was first created, discarding
