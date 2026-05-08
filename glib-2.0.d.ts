@@ -8166,6 +8166,10 @@ export class VariantType<S extends string = any> {
      * schedule simultaneously for this process.  This is intended to be
      * used as a parameter to `g_thread_pool_new()` for CPU bound tasks and
      * similar cases.
+     * 
+     * On platforms where enough information is known, this will be the number of
+     * high performance cores and will not include low power ‘efficiency’ cores.
+     * Use platform specific APIs to query for low power cores if needed.
      * @returns Number of schedulable threads, always greater than 0
      * @since 2.36
      */
