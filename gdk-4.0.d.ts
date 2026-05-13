@@ -18115,7 +18115,9 @@ export namespace Gdk {
         parse(spec: string): boolean;
 
         /**
-         * @param string 
+         * Appends a representation of `rgba` to `string`.
+         * @param string the string to print to
+         * @returns A newly allocated text string
          */
         print(string: GLib.String): GLib.String;
 

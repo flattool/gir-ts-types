@@ -121,6 +121,7 @@ export namespace GdkX11 {
      * Find the {@link Gdk.Display} corresponding to `xdisplay`, if any exists.
      * @param xdisplay a pointer to an X Display
      * @returns the {@link Gdk.Display}, if found, otherwise `null`.
+     * @deprecated since 4.18
      */
     function x11_lookup_xdisplay(xdisplay: xlib.Display): X11Display;
 
@@ -132,6 +133,7 @@ export namespace GdkX11 {
      * See the X Session Management Library documentation for more information on
      * session management and the Inter-Client Communication Conventions Manual
      * @param sm_client_id the client id assigned by the session manager    when the connection was opened, or `null` to remove the property.
+     * @deprecated since 4.18
      */
     function x11_set_sm_client_id(sm_client_id: (string | null)): void;
 

@@ -1157,7 +1157,7 @@ export interface Builder {
          */
         CENTER,
         /**
-         * a different name for `GTK_ALIGN_BASELINE`.
+         * stretch to fill all space, but align the baseline.
          */
         BASELINE_FILL,
         /**
@@ -1165,7 +1165,7 @@ export interface Builder {
          */
         BASELINE,
         /**
-         * stretch to fill all space, but align the baseline.
+         * align the baseline.
          */
         BASELINE_CENTER,
     }
@@ -45740,7 +45740,7 @@ export interface Builder {
      *                              "Expression",
      *                              "The expression used by the widget",
      *                              G_PARAM_READWRITE |
-     *                              G_PARAM_STATIC_STRINGS |
+     *                              G_PARAM_STATIC_NAME |
      *                              G_PARAM_EXPLICIT_NOTIFY);
      * ```
      * 
@@ -114267,6 +114267,13 @@ export interface Builder {
         set_overflow(overflow: Overflow): void;
 
         /**
+         * Sets a settings object holding settinsg used when
+         * rendering the SVG.
+         * @param settings the settings object
+         */
+        set_settings(settings: (Settings | null)): void;
+
+        /**
          * Sets the state of the paintable.
          * 
          * If the paintable is currently playing, the state change
@@ -143718,6 +143725,7 @@ export interface Builder {
      * by calling {@link Gtk.Accessible.set_accessible_parent} and
      * updating the sibling by {@link Gtk.Accessible.update_next_accessible_sibling}.
      * @gir-type Interface
+     * @since 4.10
      */
     interface Accessible extends GObject.Object, Accessible.Interface {
 
