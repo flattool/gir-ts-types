@@ -233,6 +233,16 @@ export namespace Dex {
     function fd_watch(fd: number, events: number): Future;
 
     /**
+     * Wraps {@link Gio.File.append_to_async} as a {@link Dex.Future}.
+     * @param file a {@link Gio.File}
+     * @param flags flags for appending to the file
+     * @param io_priority priority for the IO operation
+     * @returns a {@link Dex.Future} that resolves to a   {@link Gio.FileOutputStream} or rejects with error.
+     * @since 1.2
+     */
+    function file_append_to(file: Gio.File, flags: Gio.FileCreateFlags, io_priority: number): Future;
+
+    /**
      * Asynchronously copies a file and returns a {@link Dex.Future} which
      * can be observed for the result.
      * @param source a {@link Gio.File}
@@ -244,6 +254,18 @@ export namespace Dex {
     function file_copy(source: Gio.File, destination: Gio.File, flags: Gio.FileCopyFlags, io_priority: number): Future;
 
     /**
+     * Wraps {@link Gio.File.copy_async} with progress callback support.
+     * @param source source {@link Gio.File}
+     * @param destination destination {@link Gio.File}
+     * @param flags a set of {@link Gio.FileCopyFlags}
+     * @param io_priority the [IO priority][iface@Gio.AsyncResult#io-priority] of the   request
+     * @param progress_callback {@link Gio.FileProgressCallback} function for updates
+     * @returns a {@link Dex.Future} that resolves to `true`   or rejects with error
+     * @since 1.2
+     */
+    function file_copy_with_progress(source: Gio.File, destination: Gio.File, flags: Gio.FileCopyFlags, io_priority: number, progress_callback: (Gio.FileProgressCallback | null)): Future;
+
+    /**
      * Wraps {@link Gio.File.create} as a {@link Dex.Future}.
      * @param file a {@link Gio.File}
      * @param flags flags for creating the file
@@ -252,6 +274,16 @@ export namespace Dex {
      * @since 1.1
      */
     function file_create(file: Gio.File, flags: Gio.FileCreateFlags, io_priority: number): Future;
+
+    /**
+     * Wraps {@link Gio.File.create_readwrite_async} as a {@link Dex.Future}.
+     * @param file a {@link Gio.File}
+     * @param flags flags for creating the file
+     * @param io_priority priority for the IO operation
+     * @returns a {@link Dex.Future} that resolves to a   {@link Gio.FileIOStream} or rejects with error.
+     * @since 1.2
+     */
+    function file_create_readwrite(file: Gio.File, flags: Gio.FileCreateFlags, io_priority: number): Future;
 
     /**
      * Asynchronously deletes a file and returns a {@link Dex.Future} which
@@ -289,10 +321,36 @@ export namespace Dex {
     function file_enumerator_next_files(file_enumerator: Gio.FileEnumerator, num_files: number, io_priority: number): Future;
 
     /**
+     * Wraps {@link Gio.File.find_enclosing_mount_async}.
+     * @param file a {@link Gio.File}
+     * @param io_priority priority for the IO operation
+     * @returns a {@link Dex.Future} that resolves to a   {@link Gio.Mount} or rejects with error.
+     * @since 1.2
+     */
+    function file_find_enclosing_mount(file: Gio.File, io_priority: number): Future;
+
+    /**
+     * Wraps {@link Gio.File.load_bytes_async}.
+     * @param file a {@link Gio.File}
+     * @returns a {@link Dex.Future} that resolves to a   {@link GLib.Bytes} or rejects with error.
+     * @since 1.2
+     */
+    function file_load_bytes(file: Gio.File): Future;
+
+    /**
      * @param file a {@link Gio.File}
      * @returns a {@link Dex.Future} that resolves   to a {@link GLib.Bytes}.
      */
     function file_load_contents_bytes(file: Gio.File): Future;
+
+    /**
+     * Wraps {@link Gio.File.load_partial_contents_async}.
+     * @param file a {@link Gio.File}
+     * @param read_more_callback callback to determine if more bytes should be loaded
+     * @returns a {@link Dex.Future} that resolves to a   {@link GLib.Bytes} or rejects with error.
+     * @since 1.2
+     */
+    function file_load_partial_contents_bytes(file: Gio.File, read_more_callback: (Gio.FileReadMoreCallback | null)): Future;
 
     /**
      * Asynchronously creates a directory and returns {@link Dex.Future} which
@@ -315,6 +373,16 @@ export namespace Dex {
     function file_make_directory_with_parents(file: Gio.File): Future;
 
     /**
+     * Wraps {@link Gio.File.make_symbolic_link_async}.
+     * @param file a {@link Gio.File}
+     * @param symlink_value the path for the target of the symbolic link
+     * @param io_priority priority for the IO operation
+     * @returns a {@link Dex.Future} that resolves to `true`   or rejects with error.
+     * @since 1.2
+     */
+    function file_make_symbolic_link(file: Gio.File, symlink_value: string, io_priority: number): Future;
+
+    /**
      * @param source source {@link Gio.File}
      * @param destination destination {@link Gio.File}
      * @param flags a set of {@link Gio.FileCopyFlags}
@@ -323,6 +391,33 @@ export namespace Dex {
      * @returns a {@link Dex.Future} that resolves to `true`   or rejects with error
      */
     function file_move(source: Gio.File, destination: Gio.File, flags: Gio.FileCopyFlags, io_priority: number, progress_callback: Gio.FileProgressCallback): Future;
+
+    /**
+     * Wraps {@link Gio.File.new_tmp_dir_async} as a {@link Dex.Future}.
+     * @param tmpl template for the directory name, or `null`
+     * @param io_priority priority for the IO operation
+     * @returns a {@link Dex.Future} that resolves to a   {@link Gio.File} or rejects with error.
+     * @since 1.2
+     */
+    function file_new_tmp_dir(tmpl: (string | null), io_priority: number): Future;
+
+    /**
+     * Wraps {@link Gio.File.open_readwrite_async} as a {@link Dex.Future}.
+     * @param file a {@link Gio.File}
+     * @param io_priority priority for the IO operation
+     * @returns a {@link Dex.Future} that resolves to a   {@link Gio.FileIOStream} or rejects with error.
+     * @since 1.2
+     */
+    function file_open_readwrite(file: Gio.File, io_priority: number): Future;
+
+    /**
+     * Wraps {@link Gio.File.query_default_handler_async}.
+     * @param file a {@link Gio.File}
+     * @param io_priority priority for the IO operation
+     * @returns a {@link Dex.Future} that resolves to a   {@link Gio.AppInfo} or rejects with error.
+     * @since 1.2
+     */
+    function file_query_default_handler(file: Gio.File, io_priority: number): Future;
 
     /**
      * Queries to see if `file` exists asynchronously.
@@ -339,6 +434,16 @@ export namespace Dex {
      * @returns a {@link Dex.Future} that resolves to a   {@link Gio.FileType}.
      */
     function file_query_file_type(file: Gio.File, flags: Gio.FileQueryInfoFlags, io_priority: number): Future;
+
+    /**
+     * Wraps {@link Gio.File.query_filesystem_info_async}.
+     * @param file a {@link Gio.File}
+     * @param attributes an attribute query string
+     * @param io_priority priority for the IO operation
+     * @returns a {@link Dex.Future} that resolves to a   {@link Gio.FileInfo} or rejects with error.
+     * @since 1.2
+     */
+    function file_query_filesystem_info(file: Gio.File, attributes: string, io_priority: number): Future;
 
     /**
      * @param file a {@link Gio.File}
@@ -370,6 +475,21 @@ export namespace Dex {
     function file_replace(file: Gio.File, etag: (string | null), make_backup: boolean, flags: Gio.FileCreateFlags, io_priority: number): Future;
 
     /**
+     * Wraps {@link Gio.File.replace_contents_async}.
+     * 
+     * This function copies `contents` into a {@link GLib.Bytes} so the caller does
+     * not need to keep the buffer alive for the duration of the operation.
+     * @param file a {@link Gio.File}
+     * @param contents the contents to write
+     * @param etag the etag or `null`
+     * @param make_backup if a backup file should be created
+     * @param flags a set of {@link Gio.FileCreateFlags}
+     * @returns a {@link Dex.Future} which resolves to the new   etag, or `null` if no etag is available.
+     * @since 1.2
+     */
+    function file_replace_contents(file: Gio.File, contents: (Uint8Array | string), etag: (string | null), make_backup: boolean, flags: Gio.FileCreateFlags): Future;
+
+    /**
      * Wraps {@link Gio.File.replace_contents_bytes_async}
      * @param file a {@link Gio.File}
      * @param contents a {@link GLib.Bytes}
@@ -381,6 +501,18 @@ export namespace Dex {
     function file_replace_contents_bytes(file: Gio.File, contents: (GLib.Bytes | Uint8Array), etag: (string | null), make_backup: boolean, flags: Gio.FileCreateFlags): Future;
 
     /**
+     * Wraps {@link Gio.File.replace_readwrite_async} as a {@link Dex.Future}.
+     * @param file a {@link Gio.File}
+     * @param etag the etag or `null`
+     * @param make_backup if a backup file should be created
+     * @param flags flags for replacing the file
+     * @param io_priority priority for the IO operation
+     * @returns a {@link Dex.Future} that resolves to a   {@link Gio.FileIOStream} or rejects with error.
+     * @since 1.2
+     */
+    function file_replace_readwrite(file: Gio.File, etag: (string | null), make_backup: boolean, flags: Gio.FileCreateFlags, io_priority: number): Future;
+
+    /**
      * @param file a {@link Gio.File}
      * @param file_info a {@link Gio.FileInfo}
      * @param flags a set of {@link Gio.FileQueryInfoFlags}
@@ -389,6 +521,25 @@ export namespace Dex {
      * @since 1.0
      */
     function file_set_attributes(file: Gio.File, file_info: Gio.FileInfo, flags: Gio.FileQueryInfoFlags, io_priority: number): Future;
+
+    /**
+     * Wraps {@link Gio.File.set_display_name_async}.
+     * @param file a {@link Gio.File}
+     * @param display_name a new display name
+     * @param io_priority priority for the IO operation
+     * @returns a {@link Dex.Future} that resolves to the renamed   {@link Gio.File} or rejects with error.
+     * @since 1.2
+     */
+    function file_set_display_name(file: Gio.File, display_name: string, io_priority: number): Future;
+
+    /**
+     * Wraps {@link Gio.File.trash_async}.
+     * @param file a {@link Gio.File}
+     * @param io_priority priority for the IO operation
+     * @returns a {@link Dex.Future} that resolves to `true`   or rejects with error.
+     * @since 1.2
+     */
+    function file_trash(file: Gio.File, io_priority: number): Future;
 
     /**
      * Locates the first executable named program in the user’s path.
@@ -1433,6 +1584,14 @@ export namespace Dex {
 
         static then_loop(future: Future, callback: FutureCallback): Future;
 
+        static with_deadline(future: Future, deadline: (bigint | number)): Future;
+
+        static with_timeout(future: Future, usec: (bigint | number)): Future;
+
+        static with_timeout_msec(future: Future, msec: number): Future;
+
+        static with_timeout_seconds(future: Future, seconds: number): Future;
+
         // Signals
         /** @signal */
         connect<K extends keyof Future.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, Future.SignalSignatures[K]>): number;
@@ -1846,6 +2005,98 @@ export namespace Dex {
          * @returns a {@link GObject.Value} if successful; otherwise   `null` and `error` is set.
          */
         get_value_at(position: number): unknown;
+    }
+
+
+    namespace Limiter {
+        // Signal signatures
+        interface SignalSignatures extends Object.SignalSignatures {
+        }
+    }
+
+    /**
+     * {@link Dex.Limiter} limits the number of operations running concurrently.
+     * 
+     * A limiter starts with a fixed number of permits. Use {@link Dex.Limiter.acquire}
+     * and {@link Dex.Limiter.release} directly when a permit must cover a custom
+     * scope, or use {@link Dex.Limiter.run} to acquire a permit, spawn a fiber, and
+     * release the permit automatically when that fiber completes.
+     * @gir-type Class
+     * @since 1.2
+     */
+    class Limiter extends Object {
+        static $gtype: GObject.GType<Limiter>;
+
+        // Constructors
+        _init(...args: any[]): void;
+
+        static ["new"](max_concurrency: number): Limiter;
+
+        // Signals
+        /** @signal */
+        connect<K extends keyof Limiter.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, Limiter.SignalSignatures[K]>): number;
+        connect(signal: string, callback: (...args: any[]) => any): number;
+
+        /** @signal */
+        connect_after<K extends keyof Limiter.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, Limiter.SignalSignatures[K]>): number;
+        connect_after(signal: string, callback: (...args: any[]) => any): number;
+
+        /** @signal */
+        emit<K extends keyof Limiter.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<Limiter.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
+        emit(signal: string, ...args: any[]): void;
+
+        // Methods
+        /**
+         * Acquires one permit from `limiter`.
+         * 
+         * The returned future resolves to `true` when a permit has been acquired. Call
+         * {@link Dex.Limiter.release} exactly once for each resolved acquisition.
+         * 
+         * If the returned future is discarded before the permit is acquired, the permit
+         * is returned to the limiter when it becomes available. If `limiter` is closed
+         * before acquisition completes, the returned future rejects with
+         * {@link Dex.Error.SEMAPHORE_CLOSED}.
+         * @returns a future that resolves when a permit is acquired
+         */
+        acquire(): Future;
+
+        /**
+         * Closes `limiter`.
+         * 
+         * Pending and future acquisitions reject with {@link Dex.Error.SEMAPHORE_CLOSED}.
+         * Permits already acquired remain valid, but releasing them after close will
+         * not make them available for new work.
+         */
+        close(): void;
+
+        /**
+         * Gets the maximum number of permits available from `limiter`.
+         * @returns the maximum number of concurrent operations
+         */
+        get_max_concurrency(): number;
+
+        /**
+         * Releases one permit previously acquired from `limiter`.
+         * 
+         * This must be called exactly once for each successful
+         * {@link Dex.Limiter.acquire} unless the permit is managed by
+         * {@link Dex.Limiter.run}.
+         */
+        release(): void;
+
+        /**
+         * Runs `func` while holding one permit from `limiter`.
+         * 
+         * The returned future resolves or rejects with the result of the spawned fiber.
+         * The permit is released automatically after the fiber resolves or rejects. If
+         * the returned future is discarded after the fiber starts, the fiber is allowed
+         * to complete so that the permit can be released.
+         * @param scheduler scheduler to spawn `func` on, or `null` for the thread default
+         * @param stack_size stack size for the spawned fiber, or zero to use the default
+         * @param func fiber function to run after a permit is acquired
+         * @returns a future representing the spawned fiber
+         */
+        run(scheduler: (Scheduler | null), stack_size: (bigint | number), func: FiberFunc): Future;
     }
 
 
