@@ -146610,7 +146610,7 @@ export interface Builder {
      * {@link Gtk.FontChooserWidget}, {@link Gtk.FontChooserDialog} and
      * {@link Gtk.FontButton}.
      * @gir-type Interface
-     * @deprecated since 4.10: Use {@link Gtk.FontDialog} and {@link Gtk.FontDialogButton} instead
+     * @deprecated since 4.10: Use {@link Gtk.FontDialog} and {@link Gtk.FontDialogButton}   instead
      */
     interface FontChooser extends GObject.Object, FontChooser.Interface {
 

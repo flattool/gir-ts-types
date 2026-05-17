@@ -664,6 +664,22 @@ export namespace Dex {
     function output_stream_write_bytes(stream: Gio.OutputStream, bytes: (GLib.Bytes | Uint8Array), io_priority: number): Future;
 
     /**
+     * Creates a new {@link GObject.ParamSpec} instance specifying a
+     * `DEX_TYPE_OBJECT` derived property.
+     * 
+     * This is similar to {@link GObject.param_spec_object}, but for {@link Dex.Object}
+     * instances such as {@link Dex.Future}.
+     * @param name canonical name of the property specified
+     * @param nick nick name for the property specified
+     * @param blurb description of the property specified
+     * @param object_type a `DEX_TYPE_OBJECT` derived type for this property
+     * @param flags flags for the property specified
+     * @returns a newly created parameter specification
+     * @since 1.2
+     */
+    function param_spec_object(name: string, nick: (string | null), blurb: (string | null), object_type: GObject.GType, flags: GObject.ParamFlags): GObject.ParamSpec;
+
+    /**
      * @param resolver a {@link Gio.Resolver}
      * @param address the address to look up
      * @returns a {@link Dex.Future} that resolves to a   {@link GLib.List} of {@link Gio.InetAddress}.
@@ -720,6 +736,14 @@ export namespace Dex {
      * @since 1.0
      */
     function thread_wait_for(future: Future): boolean;
+
+    /**
+     * @param tls_connection a {@link Gio.TlsConnection}
+     * @param io_priority the [IO priority][iface@Gio.AsyncResult#io-priority] of the   request
+     * @returns a {@link Dex.Future} that resolves to   true or rejects with error.
+     * @since 1.2
+     */
+    function tls_connection_handshake(tls_connection: Gio.TlsConnection, io_priority: number): Future;
 
     /**
      * This runs {@link GLib.unlink} on a dedicated thread.

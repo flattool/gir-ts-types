@@ -3691,6 +3691,7 @@ export namespace GtkSource {
             "notify::file": (pspec: GObject.ParamSpec) => void;
             "notify::input-stream": (pspec: GObject.ParamSpec) => void;
             "notify::location": (pspec: GObject.ParamSpec) => void;
+            "notify::max-size": (pspec: GObject.ParamSpec) => void;
         }
 
         // Constructor properties interface
@@ -3700,6 +3701,8 @@ export namespace GtkSource {
             input_stream: (Gio.InputStream | null);
             inputStream: (Gio.InputStream | null);
             location: (Gio.File | null);
+            max_size: (bigint | number);
+            maxSize: (bigint | number);
         }
     }
 
@@ -3765,6 +3768,24 @@ export namespace GtkSource {
         get location(): (Gio.File | null);
 
         /**
+         * The maximum expanded size, in bytes, that the loader will insert into
+         * the buffer. A value of 0 disables the limit.
+         * @since 5.22
+         * @default 1073741824
+         */
+        get max_size(): number;
+        set max_size(val: (bigint | number));
+
+        /**
+         * The maximum expanded size, in bytes, that the loader will insert into
+         * the buffer. A value of 0 disables the limit.
+         * @since 5.22
+         * @default 1073741824
+         */
+        get maxSize(): number;
+        set maxSize(val: (bigint | number));
+
+        /**
          * Compile-time signal type information.
          *
          * This instance property is generated only for TypeScript type checking.
@@ -3825,6 +3846,12 @@ export namespace GtkSource {
          * @returns the {@link Gio.File} to load, or `null` if an input stream is used.
          */
         get_location(): (Gio.File | null);
+
+        /**
+         * Gets the maximum expanded size that `loader` will insert into the buffer.
+         * @returns the maximum expanded size in bytes, or 0 if the limit is disabled.
+         */
+        get_max_size(): number;
 
         /**
          * @returns the detected newline type.
@@ -3892,6 +3919,15 @@ export namespace GtkSource {
          * @param candidate_encodings a list of   {@link GtkSource.Encoding}<!-- -->s.
          */
         set_candidate_encodings(candidate_encodings: Encoding[]): void;
+
+        /**
+         * Sets the maximum expanded size that `loader` will insert into the buffer.
+         * 
+         * The limit is checked after decompression, so compressed files are limited by
+         * the size of their uncompressed contents rather than their on-disk size.
+         * @param max_size maximum expanded size in bytes, or 0 to disable the limit.
+         */
+        set_max_size(max_size: (bigint | number)): void;
     }
 
 
