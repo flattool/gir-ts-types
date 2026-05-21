@@ -52,7 +52,7 @@ export namespace GstAnalytics {
      * @returns Newly attached {@link GstAnalytics.RelationMeta}
      * @since 1.24
      */
-    function buffer_add_analytics_relation_meta(buffer: Gst.Buffer): (RelationMeta | null);
+    function buffer_add_analytics_relation_meta(buffer: Gst.Buffer): RelationMeta | null;
 
     /**
      * Attache a analysis-results relation-meta ({@link GstAnalytics.RelationMeta}) to `buffer`.
@@ -64,7 +64,7 @@ export namespace GstAnalytics {
      * @returns Newly attached {@link GstAnalytics.RelationMeta}
      * @since 1.24
      */
-    function buffer_add_analytics_relation_meta_full(buffer: Gst.Buffer, init_params: RelationMetaInitParams): (RelationMeta | null);
+    function buffer_add_analytics_relation_meta_full(buffer: Gst.Buffer, init_params: RelationMetaInitParams): RelationMeta | null;
 
     /**
      * Retrives the meta or `null` if it doesn't exist
@@ -72,7 +72,7 @@ export namespace GstAnalytics {
      * @returns The {@link GstAnalytics.RelationMeta} if there is one
      * @since 1.24
      */
-    function buffer_get_analytics_relation_meta(buffer: Gst.Buffer): (RelationMeta | null);
+    function buffer_get_analytics_relation_meta(buffer: Gst.Buffer): RelationMeta | null;
 
     /**
      * Get an id identifying {@link GstAnalytics.Mtd} type.
@@ -180,13 +180,13 @@ export namespace GstAnalytics {
          * @param index Object class index
          * @returns confidence level for `index`, <0.0 if the call failed.
          */
-        get_level(index: (bigint | number)): number;
+        get_level(index: bigint | number): number;
 
         /**
          * @param index index of the class Get quark of the class at `index`
          * @returns Quark of this class (label) associated with `index`
          */
-        get_quark(index: (bigint | number)): GLib.Quark;
+        get_quark(index: bigint | number): GLib.Quark;
     }
 
 
@@ -332,7 +332,7 @@ export namespace GstAnalytics {
          * @param tracking_first_seen Timestamp of first time the object was observed.
          * @returns Added successfully
          */
-        add_tracking_mtd(tracking_id: (bigint | number), tracking_first_seen: Gst.ClockTime): [boolean, TrackingMtd];
+        add_tracking_mtd(tracking_id: bigint | number, tracking_first_seen: Gst.ClockTime): [boolean, TrackingMtd];
 
         /**
          * Verify existence of relation(s) between `an_meta_first_d` and
@@ -474,7 +474,7 @@ export namespace GstAnalytics {
      * Type of analytics meta data
      * @gir-type Alias
      */
-    type MtdType = (bigint | number);
+    type MtdType = bigint | number;
 
     /**
      * Name of the imported GIR library

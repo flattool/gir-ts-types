@@ -530,7 +530,7 @@ export function registerClass<
      * @param invocation_hint The invocation hint given as the last argument to   `g_closure_invoke()`.
      * @param marshal_data Additional data specified when registering the   marshaller, see `g_closure_set_marshal()` and   `g_closure_set_meta_marshal()`
      */
-    function cclosure_marshal_BOOLEAN__BOXED_BOXED(closure: Closure, return_value: (Value | any), n_param_values: number, param_values: (Value | any), invocation_hint: null, marshal_data: null): void;
+    function cclosure_marshal_BOOLEAN__BOXED_BOXED(closure: Closure, return_value: Value | any, n_param_values: number, param_values: Value | any, invocation_hint: null, marshal_data: null): void;
 
     /**
      * A {@link GObject.ClosureMarshal} function for use with signals with handlers that
@@ -544,7 +544,7 @@ export function registerClass<
      * @param invocation_hint The invocation hint given as the last argument to   `g_closure_invoke()`.
      * @param marshal_data Additional data specified when registering the   marshaller, see `g_closure_set_marshal()` and   `g_closure_set_meta_marshal()`
      */
-    function cclosure_marshal_BOOLEAN__FLAGS(closure: Closure, return_value: (Value | any), n_param_values: number, param_values: (Value | any), invocation_hint: null, marshal_data: null): void;
+    function cclosure_marshal_BOOLEAN__FLAGS(closure: Closure, return_value: Value | any, n_param_values: number, param_values: Value | any, invocation_hint: null, marshal_data: null): void;
 
     /**
      * A {@link GObject.ClosureMarshal} function for use with signals with handlers that
@@ -557,7 +557,7 @@ export function registerClass<
      * @param invocation_hint The invocation hint given as the last argument to   `g_closure_invoke()`.
      * @param marshal_data Additional data specified when registering the   marshaller, see `g_closure_set_marshal()` and   `g_closure_set_meta_marshal()`
      */
-    function cclosure_marshal_STRING__OBJECT_POINTER(closure: Closure, return_value: (Value | any), n_param_values: number, param_values: (Value | any), invocation_hint: null, marshal_data: null): void;
+    function cclosure_marshal_STRING__OBJECT_POINTER(closure: Closure, return_value: Value | any, n_param_values: number, param_values: Value | any, invocation_hint: null, marshal_data: null): void;
 
     /**
      * A {@link GObject.ClosureMarshal} function for use with signals with a single
@@ -569,7 +569,7 @@ export function registerClass<
      * @param invocation_hint The invocation hint given as the last argument to   `g_closure_invoke()`.
      * @param marshal_data Additional data specified when registering the   marshaller, see `g_closure_set_marshal()` and   `g_closure_set_meta_marshal()`
      */
-    function cclosure_marshal_VOID__BOOLEAN(closure: Closure, return_value: (Value | any), n_param_values: number, param_values: (Value | any), invocation_hint: null, marshal_data: null): void;
+    function cclosure_marshal_VOID__BOOLEAN(closure: Closure, return_value: Value | any, n_param_values: number, param_values: Value | any, invocation_hint: null, marshal_data: null): void;
 
     /**
      * A {@link GObject.ClosureMarshal} function for use with signals with a single
@@ -581,7 +581,7 @@ export function registerClass<
      * @param invocation_hint The invocation hint given as the last argument to   `g_closure_invoke()`.
      * @param marshal_data Additional data specified when registering the   marshaller, see `g_closure_set_marshal()` and   `g_closure_set_meta_marshal()`
      */
-    function cclosure_marshal_VOID__BOXED(closure: Closure, return_value: (Value | any), n_param_values: number, param_values: (Value | any), invocation_hint: null, marshal_data: null): void;
+    function cclosure_marshal_VOID__BOXED(closure: Closure, return_value: Value | any, n_param_values: number, param_values: Value | any, invocation_hint: null, marshal_data: null): void;
 
     /**
      * A {@link GObject.ClosureMarshal} function for use with signals with a single
@@ -593,7 +593,7 @@ export function registerClass<
      * @param invocation_hint The invocation hint given as the last argument to   `g_closure_invoke()`.
      * @param marshal_data Additional data specified when registering the   marshaller, see `g_closure_set_marshal()` and   `g_closure_set_meta_marshal()`
      */
-    function cclosure_marshal_VOID__CHAR(closure: Closure, return_value: (Value | any), n_param_values: number, param_values: (Value | any), invocation_hint: null, marshal_data: null): void;
+    function cclosure_marshal_VOID__CHAR(closure: Closure, return_value: Value | any, n_param_values: number, param_values: Value | any, invocation_hint: null, marshal_data: null): void;
 
     /**
      * A {@link GObject.ClosureMarshal} function for use with signals with one
@@ -605,7 +605,7 @@ export function registerClass<
      * @param invocation_hint The invocation hint given as the last argument to   `g_closure_invoke()`.
      * @param marshal_data Additional data specified when registering the   marshaller, see `g_closure_set_marshal()` and   `g_closure_set_meta_marshal()`
      */
-    function cclosure_marshal_VOID__DOUBLE(closure: Closure, return_value: (Value | any), n_param_values: number, param_values: (Value | any), invocation_hint: null, marshal_data: null): void;
+    function cclosure_marshal_VOID__DOUBLE(closure: Closure, return_value: Value | any, n_param_values: number, param_values: Value | any, invocation_hint: null, marshal_data: null): void;
 
     /**
      * A {@link GObject.ClosureMarshal} function for use with signals with a single
@@ -617,7 +617,7 @@ export function registerClass<
      * @param invocation_hint The invocation hint given as the last argument to   `g_closure_invoke()`.
      * @param marshal_data Additional data specified when registering the   marshaller, see `g_closure_set_marshal()` and   `g_closure_set_meta_marshal()`
      */
-    function cclosure_marshal_VOID__ENUM(closure: Closure, return_value: (Value | any), n_param_values: number, param_values: (Value | any), invocation_hint: null, marshal_data: null): void;
+    function cclosure_marshal_VOID__ENUM(closure: Closure, return_value: Value | any, n_param_values: number, param_values: Value | any, invocation_hint: null, marshal_data: null): void;
 
     /**
      * A {@link GObject.ClosureMarshal} function for use with signals with a single
@@ -629,7 +629,7 @@ export function registerClass<
      * @param invocation_hint The invocation hint given as the last argument to   `g_closure_invoke()`.
      * @param marshal_data Additional data specified when registering the   marshaller, see `g_closure_set_marshal()` and   `g_closure_set_meta_marshal()`
      */
-    function cclosure_marshal_VOID__FLAGS(closure: Closure, return_value: (Value | any), n_param_values: number, param_values: (Value | any), invocation_hint: null, marshal_data: null): void;
+    function cclosure_marshal_VOID__FLAGS(closure: Closure, return_value: Value | any, n_param_values: number, param_values: Value | any, invocation_hint: null, marshal_data: null): void;
 
     /**
      * A {@link GObject.ClosureMarshal} function for use with signals with one
@@ -641,7 +641,7 @@ export function registerClass<
      * @param invocation_hint The invocation hint given as the last argument to   `g_closure_invoke()`.
      * @param marshal_data Additional data specified when registering the   marshaller, see `g_closure_set_marshal()` and   `g_closure_set_meta_marshal()`
      */
-    function cclosure_marshal_VOID__FLOAT(closure: Closure, return_value: (Value | any), n_param_values: number, param_values: (Value | any), invocation_hint: null, marshal_data: null): void;
+    function cclosure_marshal_VOID__FLOAT(closure: Closure, return_value: Value | any, n_param_values: number, param_values: Value | any, invocation_hint: null, marshal_data: null): void;
 
     /**
      * A {@link GObject.ClosureMarshal} function for use with signals with a single
@@ -653,7 +653,7 @@ export function registerClass<
      * @param invocation_hint The invocation hint given as the last argument to   `g_closure_invoke()`.
      * @param marshal_data Additional data specified when registering the   marshaller, see `g_closure_set_marshal()` and   `g_closure_set_meta_marshal()`
      */
-    function cclosure_marshal_VOID__INT(closure: Closure, return_value: (Value | any), n_param_values: number, param_values: (Value | any), invocation_hint: null, marshal_data: null): void;
+    function cclosure_marshal_VOID__INT(closure: Closure, return_value: Value | any, n_param_values: number, param_values: Value | any, invocation_hint: null, marshal_data: null): void;
 
     /**
      * A {@link GObject.ClosureMarshal} function for use with signals with with a single
@@ -665,7 +665,7 @@ export function registerClass<
      * @param invocation_hint The invocation hint given as the last argument to   `g_closure_invoke()`.
      * @param marshal_data Additional data specified when registering the   marshaller, see `g_closure_set_marshal()` and   `g_closure_set_meta_marshal()`
      */
-    function cclosure_marshal_VOID__LONG(closure: Closure, return_value: (Value | any), n_param_values: number, param_values: (Value | any), invocation_hint: null, marshal_data: null): void;
+    function cclosure_marshal_VOID__LONG(closure: Closure, return_value: Value | any, n_param_values: number, param_values: Value | any, invocation_hint: null, marshal_data: null): void;
 
     /**
      * A {@link GObject.ClosureMarshal} function for use with signals with a single
@@ -677,7 +677,7 @@ export function registerClass<
      * @param invocation_hint The invocation hint given as the last argument to   `g_closure_invoke()`.
      * @param marshal_data Additional data specified when registering the   marshaller, see `g_closure_set_marshal()` and   `g_closure_set_meta_marshal()`
      */
-    function cclosure_marshal_VOID__OBJECT(closure: Closure, return_value: (Value | any), n_param_values: number, param_values: (Value | any), invocation_hint: null, marshal_data: null): void;
+    function cclosure_marshal_VOID__OBJECT(closure: Closure, return_value: Value | any, n_param_values: number, param_values: Value | any, invocation_hint: null, marshal_data: null): void;
 
     /**
      * A {@link GObject.ClosureMarshal} function for use with signals with a single
@@ -689,7 +689,7 @@ export function registerClass<
      * @param invocation_hint The invocation hint given as the last argument to   `g_closure_invoke()`.
      * @param marshal_data Additional data specified when registering the   marshaller, see `g_closure_set_marshal()` and   `g_closure_set_meta_marshal()`
      */
-    function cclosure_marshal_VOID__PARAM(closure: Closure, return_value: (Value | any), n_param_values: number, param_values: (Value | any), invocation_hint: null, marshal_data: null): void;
+    function cclosure_marshal_VOID__PARAM(closure: Closure, return_value: Value | any, n_param_values: number, param_values: Value | any, invocation_hint: null, marshal_data: null): void;
 
     /**
      * A {@link GObject.ClosureMarshal} function for use with signals with a single raw
@@ -705,7 +705,7 @@ export function registerClass<
      * @param invocation_hint The invocation hint given as the last argument to   `g_closure_invoke()`.
      * @param marshal_data Additional data specified when registering the   marshaller, see `g_closure_set_marshal()` and   `g_closure_set_meta_marshal()`
      */
-    function cclosure_marshal_VOID__POINTER(closure: Closure, return_value: (Value | any), n_param_values: number, param_values: (Value | any), invocation_hint: null, marshal_data: null): void;
+    function cclosure_marshal_VOID__POINTER(closure: Closure, return_value: Value | any, n_param_values: number, param_values: Value | any, invocation_hint: null, marshal_data: null): void;
 
     /**
      * A {@link GObject.ClosureMarshal} function for use with signals with a single string
@@ -717,7 +717,7 @@ export function registerClass<
      * @param invocation_hint The invocation hint given as the last argument to   `g_closure_invoke()`.
      * @param marshal_data Additional data specified when registering the   marshaller, see `g_closure_set_marshal()` and   `g_closure_set_meta_marshal()`
      */
-    function cclosure_marshal_VOID__STRING(closure: Closure, return_value: (Value | any), n_param_values: number, param_values: (Value | any), invocation_hint: null, marshal_data: null): void;
+    function cclosure_marshal_VOID__STRING(closure: Closure, return_value: Value | any, n_param_values: number, param_values: Value | any, invocation_hint: null, marshal_data: null): void;
 
     /**
      * A {@link GObject.ClosureMarshal} function for use with signals with a single
@@ -729,7 +729,7 @@ export function registerClass<
      * @param invocation_hint The invocation hint given as the last argument to   `g_closure_invoke()`.
      * @param marshal_data Additional data specified when registering the   marshaller, see `g_closure_set_marshal()` and   `g_closure_set_meta_marshal()`
      */
-    function cclosure_marshal_VOID__UCHAR(closure: Closure, return_value: (Value | any), n_param_values: number, param_values: (Value | any), invocation_hint: null, marshal_data: null): void;
+    function cclosure_marshal_VOID__UCHAR(closure: Closure, return_value: Value | any, n_param_values: number, param_values: Value | any, invocation_hint: null, marshal_data: null): void;
 
     /**
      * A {@link GObject.ClosureMarshal} function for use with signals with with a single
@@ -741,7 +741,7 @@ export function registerClass<
      * @param invocation_hint The invocation hint given as the last argument to   `g_closure_invoke()`.
      * @param marshal_data Additional data specified when registering the   marshaller, see `g_closure_set_marshal()` and   `g_closure_set_meta_marshal()`
      */
-    function cclosure_marshal_VOID__UINT(closure: Closure, return_value: (Value | any), n_param_values: number, param_values: (Value | any), invocation_hint: null, marshal_data: null): void;
+    function cclosure_marshal_VOID__UINT(closure: Closure, return_value: Value | any, n_param_values: number, param_values: Value | any, invocation_hint: null, marshal_data: null): void;
 
     /**
      * A {@link GObject.ClosureMarshal} function for use with signals with an unsigned int
@@ -753,7 +753,7 @@ export function registerClass<
      * @param invocation_hint The invocation hint given as the last argument to   `g_closure_invoke()`.
      * @param marshal_data Additional data specified when registering the   marshaller, see `g_closure_set_marshal()` and   `g_closure_set_meta_marshal()`
      */
-    function cclosure_marshal_VOID__UINT_POINTER(closure: Closure, return_value: (Value | any), n_param_values: number, param_values: (Value | any), invocation_hint: null, marshal_data: null): void;
+    function cclosure_marshal_VOID__UINT_POINTER(closure: Closure, return_value: Value | any, n_param_values: number, param_values: Value | any, invocation_hint: null, marshal_data: null): void;
 
     /**
      * A {@link GObject.ClosureMarshal} function for use with signals with a single
@@ -765,7 +765,7 @@ export function registerClass<
      * @param invocation_hint The invocation hint given as the last argument to   `g_closure_invoke()`.
      * @param marshal_data Additional data specified when registering the   marshaller, see `g_closure_set_marshal()` and   `g_closure_set_meta_marshal()`
      */
-    function cclosure_marshal_VOID__ULONG(closure: Closure, return_value: (Value | any), n_param_values: number, param_values: (Value | any), invocation_hint: null, marshal_data: null): void;
+    function cclosure_marshal_VOID__ULONG(closure: Closure, return_value: Value | any, n_param_values: number, param_values: Value | any, invocation_hint: null, marshal_data: null): void;
 
     /**
      * A {@link GObject.ClosureMarshal} function for use with signals with a single
@@ -777,7 +777,7 @@ export function registerClass<
      * @param invocation_hint The invocation hint given as the last argument to   `g_closure_invoke()`.
      * @param marshal_data Additional data specified when registering the   marshaller, see `g_closure_set_marshal()` and   `g_closure_set_meta_marshal()`
      */
-    function cclosure_marshal_VOID__VARIANT(closure: Closure, return_value: (Value | any), n_param_values: number, param_values: (Value | any), invocation_hint: null, marshal_data: null): void;
+    function cclosure_marshal_VOID__VARIANT(closure: Closure, return_value: Value | any, n_param_values: number, param_values: Value | any, invocation_hint: null, marshal_data: null): void;
 
     /**
      * A {@link GObject.ClosureMarshal} function for use with signals with no arguments.
@@ -788,7 +788,7 @@ export function registerClass<
      * @param invocation_hint The invocation hint given as the last argument to   `g_closure_invoke()`.
      * @param marshal_data Additional data specified when registering the   marshaller, see `g_closure_set_marshal()` and   `g_closure_set_meta_marshal()`
      */
-    function cclosure_marshal_VOID__VOID(closure: Closure, return_value: (Value | any), n_param_values: number, param_values: (Value | any), invocation_hint: null, marshal_data: null): void;
+    function cclosure_marshal_VOID__VOID(closure: Closure, return_value: Value | any, n_param_values: number, param_values: Value | any, invocation_hint: null, marshal_data: null): void;
 
     /**
      * A generic marshaller function implemented via
@@ -804,7 +804,7 @@ export function registerClass<
      * @param marshal_data Additional data specified when registering the   marshaller, see `g_closure_set_marshal()` and   `g_closure_set_meta_marshal()`
      * @since 2.30
      */
-    function cclosure_marshal_generic(closure: Closure, return_gvalue: (Value | any), n_param_values: number, param_values: (Value | any), invocation_hint: null, marshal_data: null): void;
+    function cclosure_marshal_generic(closure: Closure, return_gvalue: Value | any, n_param_values: number, param_values: Value | any, invocation_hint: null, marshal_data: null): void;
 
     /**
      * Disconnects a handler from `instance` so it will not be called during
@@ -819,7 +819,7 @@ export function registerClass<
      * @param instance The instance to remove the signal handler from.   This pointer may be `null` or invalid, if the handler ID is zero.
      * @since 2.62
      */
-    function clear_signal_handler(handler_id_ptr: (bigint | number), instance: Object): void;
+    function clear_signal_handler(handler_id_ptr: bigint | number, instance: Object): void;
 
     /**
      * This function is meant to be called from the `complete_type_info`
@@ -855,7 +855,7 @@ export function registerClass<
      * @param value the value to look up
      * @returns the {@link GObject.EnumValue} for `value`, or `null`          if `value` is not a member of the enumeration
      */
-    function enum_get_value(enum_class: EnumClass, value: number): (EnumValue | null);
+    function enum_get_value(enum_class: EnumClass, value: number): EnumValue | null;
 
     /**
      * Looks up a {@link GObject.EnumValue} by name.
@@ -863,7 +863,7 @@ export function registerClass<
      * @param name the name to look up
      * @returns the {@link GObject.EnumValue} with name `name`,          or `null` if the enumeration doesn't have a member          with that name
      */
-    function enum_get_value_by_name(enum_class: EnumClass, name: string): (EnumValue | null);
+    function enum_get_value_by_name(enum_class: EnumClass, name: string): EnumValue | null;
 
     /**
      * Looks up a {@link GObject.EnumValue} by nickname.
@@ -871,7 +871,7 @@ export function registerClass<
      * @param nick the nickname to look up
      * @returns the {@link GObject.EnumValue} with nickname `nick`,          or `null` if the enumeration doesn't have a member          with that nickname
      */
-    function enum_get_value_by_nick(enum_class: EnumClass, nick: string): (EnumValue | null);
+    function enum_get_value_by_nick(enum_class: EnumClass, nick: string): EnumValue | null;
 
     /**
      * Registers a new static enumeration type with the name `name`.
@@ -912,7 +912,7 @@ export function registerClass<
      * @param value the value
      * @returns the first {@link GObject.FlagsValue} which is set in          `value`, or `null` if none is set
      */
-    function flags_get_first_value(flags_class: FlagsClass, value: number): (FlagsValue | null);
+    function flags_get_first_value(flags_class: FlagsClass, value: number): FlagsValue | null;
 
     /**
      * Looks up a {@link GObject.FlagsValue} by name.
@@ -920,7 +920,7 @@ export function registerClass<
      * @param name the name to look up
      * @returns the {@link GObject.FlagsValue} with name `name`,          or `null` if there is no flag with that name
      */
-    function flags_get_value_by_name(flags_class: FlagsClass, name: string): (FlagsValue | null);
+    function flags_get_value_by_name(flags_class: FlagsClass, name: string): FlagsValue | null;
 
     /**
      * Looks up a {@link GObject.FlagsValue} by nickname.
@@ -928,7 +928,7 @@ export function registerClass<
      * @param nick the nickname to look up
      * @returns the {@link GObject.FlagsValue} with nickname `nick`,          or `null` if there is no flag with that nickname
      */
-    function flags_get_value_by_nick(flags_class: FlagsClass, nick: string): (FlagsValue | null);
+    function flags_get_value_by_nick(flags_class: FlagsClass, nick: string): FlagsValue | null;
 
     /**
      * Registers a new static flags type with the name `name`.
@@ -972,7 +972,7 @@ export function registerClass<
      * @param flags flags for the property specified
      * @returns a newly created parameter specification
      */
-    function param_spec_boolean(name: string, nick: (string | null), blurb: (string | null), default_value: boolean, flags: ParamFlags): ParamSpec;
+    function param_spec_boolean(name: string, nick: string | null, blurb: string | null, default_value: boolean, flags: ParamFlags): ParamSpec;
 
     /**
      * Creates a new {@link GObject.ParamSpecBoxed} instance specifying a `G_TYPE_BOXED`
@@ -986,7 +986,7 @@ export function registerClass<
      * @param flags flags for the property specified
      * @returns a newly created parameter specification
      */
-    function param_spec_boxed(name: string, nick: (string | null), blurb: (string | null), boxed_type: GType, flags: ParamFlags): ParamSpec;
+    function param_spec_boxed(name: string, nick: string | null, blurb: string | null, boxed_type: GType, flags: ParamFlags): ParamSpec;
 
     /**
      * Creates a new {@link GObject.ParamSpecChar} instance specifying a `G_TYPE_CHAR` property.
@@ -999,7 +999,7 @@ export function registerClass<
      * @param flags flags for the property specified
      * @returns a newly created parameter specification
      */
-    function param_spec_char(name: string, nick: (string | null), blurb: (string | null), minimum: number, maximum: number, default_value: number, flags: ParamFlags): ParamSpec;
+    function param_spec_char(name: string, nick: string | null, blurb: string | null, minimum: number, maximum: number, default_value: number, flags: ParamFlags): ParamSpec;
 
     /**
      * Creates a new {@link GObject.ParamSpecDouble} instance specifying a `G_TYPE_DOUBLE`
@@ -1015,7 +1015,7 @@ export function registerClass<
      * @param flags flags for the property specified
      * @returns a newly created parameter specification
      */
-    function param_spec_double(name: string, nick: (string | null), blurb: (string | null), minimum: number, maximum: number, default_value: number, flags: ParamFlags): ParamSpec;
+    function param_spec_double(name: string, nick: string | null, blurb: string | null, minimum: number, maximum: number, default_value: number, flags: ParamFlags): ParamSpec;
 
     /**
      * Creates a new {@link GObject.ParamSpecEnum} instance specifying a `G_TYPE_ENUM`
@@ -1030,7 +1030,7 @@ export function registerClass<
      * @param flags flags for the property specified
      * @returns a newly created parameter specification
      */
-    function param_spec_enum(name: string, nick: (string | null), blurb: (string | null), enum_type: GType, default_value: number, flags: ParamFlags): ParamSpec;
+    function param_spec_enum(name: string, nick: string | null, blurb: string | null, enum_type: GType, default_value: number, flags: ParamFlags): ParamSpec;
 
     /**
      * Creates a new {@link GObject.ParamSpecFlags} instance specifying a `G_TYPE_FLAGS`
@@ -1045,7 +1045,7 @@ export function registerClass<
      * @param flags flags for the property specified
      * @returns a newly created parameter specification
      */
-    function param_spec_flags(name: string, nick: (string | null), blurb: (string | null), flags_type: GType, default_value: number, flags: ParamFlags): ParamSpec;
+    function param_spec_flags(name: string, nick: string | null, blurb: string | null, flags_type: GType, default_value: number, flags: ParamFlags): ParamSpec;
 
     /**
      * Creates a new {@link GObject.ParamSpecFloat} instance specifying a `G_TYPE_FLOAT` property.
@@ -1060,7 +1060,7 @@ export function registerClass<
      * @param flags flags for the property specified
      * @returns a newly created parameter specification
      */
-    function param_spec_float(name: string, nick: (string | null), blurb: (string | null), minimum: number, maximum: number, default_value: number, flags: ParamFlags): ParamSpec;
+    function param_spec_float(name: string, nick: string | null, blurb: string | null, minimum: number, maximum: number, default_value: number, flags: ParamFlags): ParamSpec;
 
     /**
      * Creates a new {@link GObject.ParamSpecGType} instance specifying a
@@ -1075,7 +1075,7 @@ export function registerClass<
      * @returns a newly created parameter specification
      * @since 2.10
      */
-    function param_spec_gtype(name: string, nick: (string | null), blurb: (string | null), is_a_type: GType, flags: ParamFlags): ParamSpec;
+    function param_spec_gtype(name: string, nick: string | null, blurb: string | null, is_a_type: GType, flags: ParamFlags): ParamSpec;
 
     /**
      * Creates a new {@link GObject.ParamSpecInt} instance specifying a `G_TYPE_INT` property.
@@ -1090,7 +1090,7 @@ export function registerClass<
      * @param flags flags for the property specified
      * @returns a newly created parameter specification
      */
-    function param_spec_int(name: string, nick: (string | null), blurb: (string | null), minimum: number, maximum: number, default_value: number, flags: ParamFlags): ParamSpec;
+    function param_spec_int(name: string, nick: string | null, blurb: string | null, minimum: number, maximum: number, default_value: number, flags: ParamFlags): ParamSpec;
 
     /**
      * Creates a new {@link GObject.ParamSpecInt64} instance specifying a `G_TYPE_INT64` property.
@@ -1105,7 +1105,7 @@ export function registerClass<
      * @param flags flags for the property specified
      * @returns a newly created parameter specification
      */
-    function param_spec_int64(name: string, nick: (string | null), blurb: (string | null), minimum: (bigint | number), maximum: (bigint | number), default_value: (bigint | number), flags: ParamFlags): ParamSpec;
+    function param_spec_int64(name: string, nick: string | null, blurb: string | null, minimum: bigint | number, maximum: bigint | number, default_value: bigint | number, flags: ParamFlags): ParamSpec;
 
     /**
      * Creates a new {@link GObject.ParamSpecLong} instance specifying a `G_TYPE_LONG` property.
@@ -1120,7 +1120,7 @@ export function registerClass<
      * @param flags flags for the property specified
      * @returns a newly created parameter specification
      */
-    function param_spec_long(name: string, nick: (string | null), blurb: (string | null), minimum: (bigint | number), maximum: (bigint | number), default_value: (bigint | number), flags: ParamFlags): ParamSpec;
+    function param_spec_long(name: string, nick: string | null, blurb: string | null, minimum: bigint | number, maximum: bigint | number, default_value: bigint | number, flags: ParamFlags): ParamSpec;
 
     /**
      * Creates a new {@link GObject.ParamSpecBoxed} instance specifying a `G_TYPE_OBJECT`
@@ -1134,7 +1134,7 @@ export function registerClass<
      * @param flags flags for the property specified
      * @returns a newly created parameter specification
      */
-    function param_spec_object(name: string, nick: (string | null), blurb: (string | null), object_type: GType, flags: ParamFlags): ParamSpec;
+    function param_spec_object(name: string, nick: string | null, blurb: string | null, object_type: GType, flags: ParamFlags): ParamSpec;
 
     /**
      * Creates a new {@link GObject.ParamSpecParam} instance specifying a `G_TYPE_PARAM`
@@ -1148,7 +1148,7 @@ export function registerClass<
      * @param flags flags for the property specified
      * @returns a newly created parameter specification
      */
-    function param_spec_param(name: string, nick: (string | null), blurb: (string | null), param_type: GType, flags: ParamFlags): ParamSpec;
+    function param_spec_param(name: string, nick: string | null, blurb: string | null, param_type: GType, flags: ParamFlags): ParamSpec;
 
     /**
      * Creates a new {@link GObject.ParamSpecPointer} instance specifying a pointer property.
@@ -1162,7 +1162,7 @@ export function registerClass<
      * @param flags flags for the property specified
      * @returns a newly created parameter specification
      */
-    function param_spec_pointer(name: string, nick: (string | null), blurb: (string | null), flags: ParamFlags): ParamSpec;
+    function param_spec_pointer(name: string, nick: string | null, blurb: string | null, flags: ParamFlags): ParamSpec;
 
     /**
      * Creates a new {@link GObject.ParamSpecString} instance.
@@ -1175,7 +1175,7 @@ export function registerClass<
      * @param flags flags for the property specified
      * @returns a newly created parameter specification
      */
-    function param_spec_string(name: string, nick: (string | null), blurb: (string | null), default_value: (string | null), flags: ParamFlags): ParamSpec;
+    function param_spec_string(name: string, nick: string | null, blurb: string | null, default_value: string | null, flags: ParamFlags): ParamSpec;
 
     /**
      * Creates a new {@link GObject.ParamSpecUChar} instance specifying a `G_TYPE_UCHAR` property.
@@ -1188,7 +1188,7 @@ export function registerClass<
      * @param flags flags for the property specified
      * @returns a newly created parameter specification
      */
-    function param_spec_uchar(name: string, nick: (string | null), blurb: (string | null), minimum: number, maximum: number, default_value: number, flags: ParamFlags): ParamSpec;
+    function param_spec_uchar(name: string, nick: string | null, blurb: string | null, minimum: number, maximum: number, default_value: number, flags: ParamFlags): ParamSpec;
 
     /**
      * Creates a new {@link GObject.ParamSpecUInt} instance specifying a `G_TYPE_UINT` property.
@@ -1203,7 +1203,7 @@ export function registerClass<
      * @param flags flags for the property specified
      * @returns a newly created parameter specification
      */
-    function param_spec_uint(name: string, nick: (string | null), blurb: (string | null), minimum: number, maximum: number, default_value: number, flags: ParamFlags): ParamSpec;
+    function param_spec_uint(name: string, nick: string | null, blurb: string | null, minimum: number, maximum: number, default_value: number, flags: ParamFlags): ParamSpec;
 
     /**
      * Creates a new {@link GObject.ParamSpecUInt64} instance specifying a `G_TYPE_UINT64`
@@ -1219,7 +1219,7 @@ export function registerClass<
      * @param flags flags for the property specified
      * @returns a newly created parameter specification
      */
-    function param_spec_uint64(name: string, nick: (string | null), blurb: (string | null), minimum: (bigint | number), maximum: (bigint | number), default_value: (bigint | number), flags: ParamFlags): ParamSpec;
+    function param_spec_uint64(name: string, nick: string | null, blurb: string | null, minimum: bigint | number, maximum: bigint | number, default_value: bigint | number, flags: ParamFlags): ParamSpec;
 
     /**
      * Creates a new {@link GObject.ParamSpecULong} instance specifying a `G_TYPE_ULONG`
@@ -1235,7 +1235,7 @@ export function registerClass<
      * @param flags flags for the property specified
      * @returns a newly created parameter specification
      */
-    function param_spec_ulong(name: string, nick: (string | null), blurb: (string | null), minimum: (bigint | number), maximum: (bigint | number), default_value: (bigint | number), flags: ParamFlags): ParamSpec;
+    function param_spec_ulong(name: string, nick: string | null, blurb: string | null, minimum: bigint | number, maximum: bigint | number, default_value: bigint | number, flags: ParamFlags): ParamSpec;
 
     /**
      * Creates a new {@link GObject.ParamSpecUnichar} instance specifying a `G_TYPE_UINT`
@@ -1250,7 +1250,7 @@ export function registerClass<
      * @param flags flags for the property specified
      * @returns a newly created parameter specification
      */
-    function param_spec_unichar(name: string, nick: (string | null), blurb: (string | null), default_value: string, flags: ParamFlags): ParamSpec;
+    function param_spec_unichar(name: string, nick: string | null, blurb: string | null, default_value: string, flags: ParamFlags): ParamSpec;
 
     /**
      * Creates a new {@link GObject.ParamSpecVariant} instance specifying a {@link GLib.Variant}
@@ -1268,7 +1268,7 @@ export function registerClass<
      * @returns the newly created {@link GObject.ParamSpec}
      * @since 2.26
      */
-    function param_spec_variant(name: string, nick: (string | null), blurb: (string | null), type: GLib.VariantType, default_value: (GLib.Variant | null), flags: ParamFlags): ParamSpec;
+    function param_spec_variant(name: string, nick: string | null, blurb: string | null, type: GLib.VariantType, default_value: GLib.Variant | null, flags: ParamFlags): ParamSpec;
 
     /**
      * Registers `name` as the name of a new static type derived
@@ -1297,7 +1297,7 @@ export function registerClass<
      * @param strict_validation `true` requires `dest_value` to conform to `pspec` without modifications
      * @returns `true` if transformation and validation were successful,  `false` otherwise and `dest_value` is left untouched.
      */
-    function param_value_convert(pspec: ParamSpec, src_value: (Value | any), dest_value: (Value | any), strict_validation: boolean): boolean;
+    function param_value_convert(pspec: ParamSpec, src_value: Value | any, dest_value: Value | any, strict_validation: boolean): boolean;
 
     /**
      * Checks whether `value` contains the default value as specified in `pspec`.
@@ -1305,7 +1305,7 @@ export function registerClass<
      * @param value a {@link GObject.Value} of correct type for `pspec`
      * @returns whether `value` contains the canonical default for this `pspec`
      */
-    function param_value_defaults(pspec: ParamSpec, value: (Value | any)): boolean;
+    function param_value_defaults(pspec: ParamSpec, value: Value | any): boolean;
 
     /**
      * Return whether the contents of `value` comply with the specifications
@@ -1315,14 +1315,14 @@ export function registerClass<
      * @returns whether the contents of `value` comply with the specifications   set out by `pspec`.
      * @since 2.74
      */
-    function param_value_is_valid(pspec: ParamSpec, value: (Value | any)): boolean;
+    function param_value_is_valid(pspec: ParamSpec, value: Value | any): boolean;
 
     /**
      * Sets `value` to its default value as specified in `pspec`.
      * @param pspec a valid {@link GObject.ParamSpec}
      * @param value a {@link GObject.Value} of correct type for `pspec`; since 2.64, you   can also pass an empty {@link GObject.Value}, initialized with `G_VALUE_INIT`
      */
-    function param_value_set_default(pspec: ParamSpec, value: (Value | any)): void;
+    function param_value_set_default(pspec: ParamSpec, value: Value | any): void;
 
     /**
      * Ensures that the contents of `value` comply with the specifications
@@ -1335,7 +1335,7 @@ export function registerClass<
      * @param value a {@link GObject.Value} of correct type for `pspec`
      * @returns whether modifying `value` was necessary to ensure validity
      */
-    function param_value_validate(pspec: ParamSpec, value: (Value | any)): boolean;
+    function param_value_validate(pspec: ParamSpec, value: Value | any): boolean;
 
     /**
      * Compares `value1` with `value2` according to `pspec`, and return -1, 0 or +1,
@@ -1346,7 +1346,7 @@ export function registerClass<
      * @param value2 a {@link GObject.Value} of correct type for `pspec`
      * @returns -1, 0 or +1, for a less than, equal to or greater than result
      */
-    function param_values_cmp(pspec: ParamSpec, value1: (Value | any), value2: (Value | any)): number;
+    function param_values_cmp(pspec: ParamSpec, value1: Value | any, value2: Value | any): number;
 
     /**
      * Creates a new `G_TYPE_POINTER` derived type id for a new
@@ -1374,7 +1374,7 @@ export function registerClass<
      * @returns standard {@link GObject.SignalAccumulator} result
      * @since 2.28
      */
-    function signal_accumulator_first_wins(ihint: SignalInvocationHint, return_accu: (Value | any), handler_return: (Value | any), dummy: null): boolean;
+    function signal_accumulator_first_wins(ihint: SignalInvocationHint, return_accu: Value | any, handler_return: Value | any, dummy: null): boolean;
 
     /**
      * A predefined {@link GObject.SignalAccumulator} for signals that return a
@@ -1391,7 +1391,7 @@ export function registerClass<
      * @returns standard {@link GObject.SignalAccumulator} result
      * @since 2.4
      */
-    function signal_accumulator_true_handled(ihint: SignalInvocationHint, return_accu: (Value | any), handler_return: (Value | any), dummy: null): boolean;
+    function signal_accumulator_true_handled(ihint: SignalInvocationHint, return_accu: Value | any, handler_return: Value | any, dummy: null): boolean;
 
     /**
      * Adds an emission hook for a signal, which will get called for any emission
@@ -1412,7 +1412,7 @@ export function registerClass<
      * @param instance_and_params the argument list of the signal emission.  The first element in the array is a {@link GObject.Value} for the instance the signal  is being emitted on. The rest are any arguments to be passed to the signal.
      * @param return_value Location for the return value.
      */
-    function signal_chain_from_overridden(instance_and_params: (Value | any)[], return_value: (Value | any)): void;
+    function signal_chain_from_overridden(instance_and_params: (Value | any)[], return_value: Value | any): void;
 
     /**
      * Connects a closure to a signal for a particular object.
@@ -1468,14 +1468,14 @@ export function registerClass<
      * @param detail the detail
      * @param return_value Location to store the return value of the signal emission. This must be provided if the specified signal returns a value, but may be ignored otherwise.
      */
-    function signal_emitv(instance_and_params: (Value | any)[], signal_id: number, detail: GLib.Quark, return_value?: (Value | any)): unknown;
+    function signal_emitv(instance_and_params: (Value | any)[], signal_id: number, detail: GLib.Quark, return_value?: Value | any): unknown;
 
     /**
      * Returns the invocation hint of the innermost signal emission of instance.
      * @param instance the instance to query
      * @returns the invocation hint of the innermost     signal emission, or `null` if not found.
      */
-    function signal_get_invocation_hint(instance: Object): (SignalInvocationHint | null);
+    function signal_get_invocation_hint(instance: Object): SignalInvocationHint | null;
 
     /**
      * Blocks a handler of an instance so it will not be called during any
@@ -1489,7 +1489,7 @@ export function registerClass<
      * @param instance The instance to block the signal handler of.
      * @param handler_id Handler id of the handler to be blocked.
      */
-    function signal_handler_block(instance: Object, handler_id: (bigint | number)): void;
+    function signal_handler_block(instance: Object, handler_id: bigint | number): void;
 
     /**
      * Disconnects a handler from an instance so it will not be called during
@@ -1501,7 +1501,7 @@ export function registerClass<
      * @param instance The instance to remove the signal handler from.
      * @param handler_id Handler id of the handler to be disconnected.
      */
-    function signal_handler_disconnect(instance: Object, handler_id: (bigint | number)): void;
+    function signal_handler_disconnect(instance: Object, handler_id: bigint | number): void;
 
     /**
      * Returns whether `handler_id` is the ID of a handler connected to `instance`.
@@ -1509,7 +1509,7 @@ export function registerClass<
      * @param handler_id the handler ID.
      * @returns whether `handler_id` identifies a handler connected to `instance`.
      */
-    function signal_handler_is_connected(instance: Object, handler_id: (bigint | number)): boolean;
+    function signal_handler_is_connected(instance: Object, handler_id: bigint | number): boolean;
 
     /**
      * Undoes the effect of a previous `g_signal_handler_block()` call.  A
@@ -1528,7 +1528,7 @@ export function registerClass<
      * @param instance The instance to unblock the signal handler of.
      * @param handler_id Handler id of the handler to be unblocked.
      */
-    function signal_handler_unblock(instance: Object, handler_id: (bigint | number)): void;
+    function signal_handler_unblock(instance: Object, handler_id: bigint | number): void;
 
     /**
      * Blocks all handlers on an instance that match a certain selection criteria.
@@ -1553,7 +1553,7 @@ export function registerClass<
      * @param data The closure data of the handlers' closures.
      * @returns The number of handlers that matched.
      */
-    function signal_handlers_block_matched(instance: Object, mask: SignalMatchType, signal_id: number, detail: GLib.Quark, closure: (Closure | null), func: null, data: null): number;
+    function signal_handlers_block_matched(instance: Object, mask: SignalMatchType, signal_id: number, detail: GLib.Quark, closure: Closure | null, func: null, data: null): number;
 
     /**
      * Destroy all signal handlers of a type instance. This function is
@@ -1587,7 +1587,7 @@ export function registerClass<
      * @param data The closure data of the handlers' closures.
      * @returns The number of handlers that matched.
      */
-    function signal_handlers_disconnect_matched(instance: Object, mask: SignalMatchType, signal_id: number, detail: GLib.Quark, closure: (Closure | null), func: null, data: null): number;
+    function signal_handlers_disconnect_matched(instance: Object, mask: SignalMatchType, signal_id: number, detail: GLib.Quark, closure: Closure | null, func: null, data: null): number;
 
     /**
      * Unblocks all handlers on an instance that match a certain selection
@@ -1614,7 +1614,7 @@ export function registerClass<
      * @param data The closure data of the handlers' closures.
      * @returns The number of handlers that matched.
      */
-    function signal_handlers_unblock_matched(instance: Object, mask: SignalMatchType, signal_id: number, detail: GLib.Quark, closure: (Closure | null), func: null, data: null): number;
+    function signal_handlers_unblock_matched(instance: Object, mask: SignalMatchType, signal_id: number, detail: GLib.Quark, closure: Closure | null, func: null, data: null): number;
 
     /**
      * Returns whether there are any handlers connected to `instance` for the
@@ -1687,7 +1687,7 @@ export function registerClass<
      * @param signal_id the signal's identifying number.
      * @returns the signal name, or `null` if the signal number was invalid.
      */
-    function signal_name(signal_id: number): (string | null);
+    function signal_name(signal_id: number): string | null;
 
     /**
      * Overrides the class closure (i.e. the default handler) for the given signal
@@ -1745,7 +1745,7 @@ export function registerClass<
      * @param signal_id the id of the signal
      * @param hook_id the id of the emission hook, as returned by  `g_signal_add_emission_hook()`
      */
-    function signal_remove_emission_hook(signal_id: number, hook_id: (bigint | number)): void;
+    function signal_remove_emission_hook(signal_id: number, hook_id: bigint | number): void;
 
     /**
      * Stops a signal's current emission.
@@ -1815,7 +1815,7 @@ export function registerClass<
      * @param value {@link GObject.Value} which contents are to be described.
      * @returns Newly allocated string.
      */
-    function strdup_value_contents(value: (Value | any)): string;
+    function strdup_value_contents(value: Value | any): string;
 
     /**
      * Registers a private class structure for a classed type;
@@ -1832,13 +1832,13 @@ export function registerClass<
      * @param private_size size of private structure
      * @since 2.24
      */
-    function type_add_class_private(class_type: GType, private_size: (bigint | number)): void;
+    function type_add_class_private(class_type: GType, private_size: bigint | number): void;
 
     /**
      * @param class_type 
      * @param private_size 
      */
-    function type_add_instance_private(class_type: GType, private_size: (bigint | number)): number;
+    function type_add_instance_private(class_type: GType, private_size: bigint | number): number;
 
     /**
      * Adds `interface_type` to the dynamic `instance_type`. The information
@@ -1894,13 +1894,13 @@ export function registerClass<
     /**
      * @param value 
      */
-    function type_check_value(value: (Value | any)): boolean;
+    function type_check_value(value: Value | any): boolean;
 
     /**
      * @param value 
      * @param type 
      */
-    function type_check_value_holds(value: (Value | any), type: GType): boolean;
+    function type_check_value_holds(value: Value | any, type: GType): boolean;
 
     /**
      * Return a newly allocated and 0-terminated array of type IDs, listing
@@ -1941,7 +1941,7 @@ export function registerClass<
      * @param type type ID of a classed type
      * @returns the   {@link GObject.TypeClass} structure for the given type ID or `null` if the class   does not currently exist
      */
-    function type_class_peek(type: GType): (TypeClass | null);
+    function type_class_peek(type: GType): TypeClass | null;
 
     /**
      * A more efficient version of `g_type_class_peek()` which works only for
@@ -1950,7 +1950,7 @@ export function registerClass<
      * @returns the   {@link GObject.TypeClass} structure for the given type ID or `null` if the class   does not currently exist or is dynamically loaded
      * @since 2.4
      */
-    function type_class_peek_static(type: GType): (TypeClass | null);
+    function type_class_peek_static(type: GType): TypeClass | null;
 
     /**
      * Increments the reference count of the class structure belonging to
@@ -2190,7 +2190,7 @@ export function registerClass<
      * @param iface_type an interface ID which this class conforms to
      * @returns the {@link GObject.TypeInterface}   structure of `iface_type` if implemented by `instance_class`, `null`   otherwise
      */
-    function type_interface_peek(instance_class: TypeClass, iface_type: GType): (TypeInterface | null);
+    function type_interface_peek(instance_class: TypeClass, iface_type: GType): TypeInterface | null;
 
     /**
      * Returns the prerequisites of an interfaces type.
@@ -2228,7 +2228,7 @@ export function registerClass<
      * @param type type to return name for
      * @returns static type name or `null`
      */
-    function type_name(type: GType): (string | null);
+    function type_name(type: GType): string | null;
 
     /**
      * @param g_class 
@@ -2425,7 +2425,7 @@ export function registerClass<
      * @gir-type Callback
      */
     interface ClosureMarshal {
-        (closure: Closure, return_value: (Value | null), param_values: unknown[], invocation_hint: null, marshal_data: null): void;
+        (closure: Closure, return_value: Value | null, param_values: unknown[], invocation_hint: null, marshal_data: null): void;
     }
 
     /**
@@ -2544,7 +2544,7 @@ export function registerClass<
      * @gir-type Callback
      */
     interface TypeValueCollectFunc {
-        (value: unknown, collect_values: TypeCValue[], collect_flags: number): (string | null);
+        (value: unknown, collect_values: TypeCValue[], collect_flags: number): string | null;
     }
 
     /**
@@ -2572,7 +2572,7 @@ export function registerClass<
      * @gir-type Callback
      */
     interface TypeValueLCopyFunc {
-        (value: unknown, collect_values: TypeCValue[], collect_flags: number): (string | null);
+        (value: unknown, collect_values: TypeCValue[], collect_flags: number): string | null;
     }
 
     /**
@@ -2599,177 +2599,177 @@ export function registerClass<
     /**
      * @gir-type Alias
      */
-    type Array = (object | null);
+    type Array = object | null;
 
     /**
      * @gir-type Alias
      */
-    type BookmarkFile = (object | null);
+    type BookmarkFile = object | null;
 
     /**
      * @gir-type Alias
      */
-    type ByteArray = (object | null);
+    type ByteArray = object | null;
 
     /**
      * @gir-type Alias
      */
-    type Bytes = (object | null);
+    type Bytes = object | null;
 
     /**
      * @gir-type Alias
      */
-    type Checksum = (object | null);
+    type Checksum = object | null;
 
     /**
      * @gir-type Alias
      */
-    type Date = (object | null);
+    type Date = object | null;
 
     /**
      * @gir-type Alias
      */
-    type DateTime = (object | null);
+    type DateTime = object | null;
 
     /**
      * @gir-type Alias
      */
-    type Dir = (object | null);
+    type Dir = object | null;
 
     /**
      * @gir-type Alias
      */
-    type Error = (object | null);
+    type Error = object | null;
 
     /**
      * @gir-type Alias
      */
-    type HashTable = (object | null);
+    type HashTable = object | null;
 
     /**
      * @gir-type Alias
      */
-    type Hmac = (object | null);
+    type Hmac = object | null;
 
     /**
      * @gir-type Alias
      */
-    type IOChannel = (object | null);
+    type IOChannel = object | null;
 
     /**
      * @gir-type Alias
      */
-    type KeyFile = (object | null);
+    type KeyFile = object | null;
 
     /**
      * @gir-type Alias
      */
-    type MainContext = (object | null);
+    type MainContext = object | null;
 
     /**
      * @gir-type Alias
      */
-    type MainLoop = (object | null);
+    type MainLoop = object | null;
 
     /**
      * @gir-type Alias
      */
-    type MappedFile = (object | null);
+    type MappedFile = object | null;
 
     /**
      * @gir-type Alias
      */
-    type MarkupParseContext = (object | null);
+    type MarkupParseContext = object | null;
 
     /**
      * @gir-type Alias
      */
-    type MatchInfo = (object | null);
+    type MatchInfo = object | null;
 
     /**
      * @gir-type Alias
      */
-    type OptionGroup = (object | null);
+    type OptionGroup = object | null;
 
     /**
      * @gir-type Alias
      */
-    type PatternSpec = (object | null);
+    type PatternSpec = object | null;
 
     /**
      * @gir-type Alias
      */
-    type PollFD = (object | null);
+    type PollFD = object | null;
 
     /**
      * @gir-type Alias
      */
-    type PtrArray = (object | null);
+    type PtrArray = object | null;
 
     /**
      * @gir-type Alias
      */
-    type Rand = (object | null);
+    type Rand = object | null;
 
     /**
      * @gir-type Alias
      */
-    type Regex = (object | null);
+    type Regex = object | null;
 
     /**
      * @gir-type Alias
      */
-    type Source = (object | null);
+    type Source = object | null;
 
     /**
      * @gir-type Alias
      */
-    type String = (object | null);
+    type String = object | null;
 
     /**
      * @gir-type Alias
      */
-    type Strv = (object | null);
+    type Strv = object | null;
 
     /**
      * @gir-type Alias
      */
-    type StrvBuilder = (object | null);
+    type StrvBuilder = object | null;
 
     /**
      * @gir-type Alias
      */
-    type Thread = (object | null);
+    type Thread = object | null;
 
     /**
      * @gir-type Alias
      */
-    type TimeZone = (object | null);
+    type TimeZone = object | null;
 
     /**
      * @gir-type Alias
      */
-    type Tree = (object | null);
+    type Tree = object | null;
 
     /**
      * @gir-type Alias
      */
-    type Uri = (object | null);
+    type Uri = object | null;
 
     /**
      * @gir-type Alias
      */
-    type VariantBuilder = (object | null);
+    type VariantBuilder = object | null;
 
     /**
      * @gir-type Alias
      */
-    type VariantDict = (object | null);
+    type VariantDict = object | null;
 
     /**
      * @gir-type Alias
      */
-    type VariantType = (object | null);
+    type VariantType = object | null;
 
     /**
      * @gir-type Flags
@@ -3139,10 +3139,10 @@ export function registerClass<
         // Constructor properties interface
         interface ConstructorProps extends Object.ConstructorProps {
             flags: BindingFlags;
-            source: (Object | null);
+            source: Object | null;
             source_property: string;
             sourceProperty: string;
-            target: (Object | null);
+            target: Object | null;
             target_property: string;
             targetProperty: string;
         }
@@ -3244,7 +3244,7 @@ export function registerClass<
          * @since 2.26
          * @construct-only
          */
-        get source(): (Object | null);
+        get source(): Object | null;
 
         /**
          * The name of the property of {@link GObject.Binding.source} that should be used
@@ -3275,7 +3275,7 @@ export function registerClass<
          * @since 2.26
          * @construct-only
          */
-        get target(): (Object | null);
+        get target(): Object | null;
 
         /**
          * The name of the property of {@link GObject.Binding.target} that should be used
@@ -3510,7 +3510,7 @@ export function registerClass<
          * @param transform_to a {@link GObject.Closure} wrapping the     transformation function from the source object to the `target`,     or `null` to use the default
          * @param transform_from a {@link GObject.Closure} wrapping the     transformation function from the `target` to the source object,     or `null` to use the default
          */
-        bind_full(source_property: string, target: Object, target_property: string, flags: BindingFlags, transform_to: (Closure | null), transform_from: (Closure | null)): void;
+        bind_full(source_property: string, target: Object, target_property: string, flags: BindingFlags, transform_to: Closure | null, transform_from: Closure | null): void;
 
         /**
          * Gets the source object used for binding properties.
@@ -3526,19 +3526,16 @@ export function registerClass<
          * Note that all properties that have been bound must exist on `source`.
          * @param source the source {@link GObject.Object},   or `null` to clear it
          */
-        set_source(source: (Object | null)): void;
+        set_source(source: Object | null): void;
     }
 
 
     namespace InitiallyUnowned {
         // Signal signatures
-        interface SignalSignatures extends Object.SignalSignatures {
-        }
+        interface SignalSignatures extends Object.SignalSignatures {}
 
         // Constructor properties interface
-        interface ConstructorProps extends Object.ConstructorProps {
-
-        }
+        interface ConstructorProps extends Object.ConstructorProps {}
     }
 
     /**
@@ -3621,9 +3618,7 @@ export function registerClass<
         }
 
         // Constructor properties interface
-        interface ConstructorProps  {
-
-        }
+        interface ConstructorProps  {}
     }
 
     /**
@@ -3688,7 +3683,7 @@ export function registerClass<
          * @param what 
          * @param data 
          */
-        static compat_control(what: (bigint | number), data: null): number;
+        static compat_control(what: bigint | number, data: null): number;
 
         /**
          * Find the {@link GObject.ParamSpec} with the given name for an
@@ -3900,7 +3895,7 @@ export function registerClass<
          * @param transform_from a {@link GObject.Closure} wrapping the transformation function     from the `target` to the `source`, or `null` to use the default
          * @returns the {@link GObject.Binding} instance representing the     binding between the two {@link GObject.Object} instances. The binding is released     whenever the {@link GObject.Binding} reference count reaches zero.
          */
-        bind_property_full(source_property: string, target: Object, target_property: string, flags: BindingFlags, transform_to: (Closure | null), transform_from: (Closure | null)): Binding;
+        bind_property_full(source_property: string, target: Object, target_property: string, flags: BindingFlags, transform_to: Closure | null, transform_from: Closure | null): Binding;
 
         /**
          * This function is intended for {@link GObject.Object} implementations to re-enforce
@@ -3944,7 +3939,7 @@ export function registerClass<
          * @param property_name The name of the property to get
          * @param value Return location for the property value. Can be an empty GObject.Value initialized by G_VALUE_INIT (auto-initialized with expected type since GLib 2.60), a GObject.Value initialized with the expected property type, or a GObject.Value initialized with a transformable type
          */
-        get_property(property_name: string, value: (Value | any)): any;
+        get_property(property_name: string, value: Value | any): any;
 
         /**
          * This function gets back user data pointers stored via
@@ -4087,7 +4082,7 @@ export function registerClass<
          * @param property_name The name of the property to set
          * @param value The value to set the property to
          */
-        set_property(property_name: string, value: (Value | any)): void;
+        set_property(property_name: string, value: Value | any): void;
 
         /**
          * Remove a specified datum from the object's data associations,
@@ -4212,8 +4207,7 @@ export function registerClass<
 
     namespace ParamSpec {
         // Signal signatures
-        interface SignalSignatures extends Object.SignalSignatures {
-        }
+        interface SignalSignatures extends Object.SignalSignatures {}
     }
 
     /**
@@ -4271,7 +4265,7 @@ export function registerClass<
          * @param maximum The maximum value for this property
          * @param defaultValue The default value for this property (optional)
          */
-        static ["char"](name: string, nick: (string | null), blurb: (string | null), flags: (ParamFlags | number), minimum: number, maximum: number, defaultValue?: number): ParamSpec<number>;
+        static ["char"](name: string, nick: string | null, blurb: string | null, flags: ParamFlags | number, minimum: number, maximum: number, defaultValue?: number): ParamSpec<number>;
 
         /**
          * Creates a new GParamSpecUChar instance specifying a G_TYPE_UCHAR property.
@@ -4283,7 +4277,7 @@ export function registerClass<
          * @param maximum The maximum value for this property
          * @param defaultValue The default value for this property (optional)
          */
-        static uchar(name: string, nick: (string | null), blurb: (string | null), flags: (ParamFlags | number), minimum: number, maximum: number, defaultValue?: number): ParamSpec<number>;
+        static uchar(name: string, nick: string | null, blurb: string | null, flags: ParamFlags | number, minimum: number, maximum: number, defaultValue?: number): ParamSpec<number>;
 
         /**
          * Creates a new GParamSpecInt instance specifying a G_TYPE_INT property.
@@ -4295,7 +4289,7 @@ export function registerClass<
          * @param maximum The maximum value for this property
          * @param defaultValue The default value for this property (optional)
          */
-        static int(name: string, nick: (string | null), blurb: (string | null), flags: (ParamFlags | number), minimum: number, maximum: number, defaultValue?: number): ParamSpec<number>;
+        static int(name: string, nick: string | null, blurb: string | null, flags: ParamFlags | number, minimum: number, maximum: number, defaultValue?: number): ParamSpec<number>;
 
         /**
          * Creates a new GParamSpecUInt instance specifying a G_TYPE_UINT property.
@@ -4307,7 +4301,7 @@ export function registerClass<
          * @param maximum The maximum value for this property
          * @param defaultValue The default value for this property (optional)
          */
-        static uint(name: string, nick: (string | null), blurb: (string | null), flags: (ParamFlags | number), minimum: number, maximum: number, defaultValue?: number): ParamSpec<number>;
+        static uint(name: string, nick: string | null, blurb: string | null, flags: ParamFlags | number, minimum: number, maximum: number, defaultValue?: number): ParamSpec<number>;
 
         /**
          * Creates a new GParamSpecLong instance specifying a G_TYPE_LONG property.
@@ -4319,7 +4313,7 @@ export function registerClass<
          * @param maximum The maximum value for this property
          * @param defaultValue The default value for this property (optional)
          */
-        static long(name: string, nick: (string | null), blurb: (string | null), flags: (ParamFlags | number), minimum: number, maximum: number, defaultValue?: number): ParamSpec<number>;
+        static long(name: string, nick: string | null, blurb: string | null, flags: ParamFlags | number, minimum: number, maximum: number, defaultValue?: number): ParamSpec<number>;
 
         /**
          * Creates a new GParamSpecULong instance specifying a G_TYPE_ULONG property.
@@ -4331,7 +4325,7 @@ export function registerClass<
          * @param maximum The maximum value for this property
          * @param defaultValue The default value for this property (optional)
          */
-        static ulong(name: string, nick: (string | null), blurb: (string | null), flags: (ParamFlags | number), minimum: number, maximum: number, defaultValue?: number): ParamSpec<number>;
+        static ulong(name: string, nick: string | null, blurb: string | null, flags: ParamFlags | number, minimum: number, maximum: number, defaultValue?: number): ParamSpec<number>;
 
         /**
          * Creates a new GParamSpecInt64 instance specifying a G_TYPE_INT64 property.
@@ -4343,7 +4337,7 @@ export function registerClass<
          * @param maximum The maximum value for this property
          * @param defaultValue The default value for this property (optional)
          */
-        static int64(name: string, nick: (string | null), blurb: (string | null), flags: (ParamFlags | number), minimum: number, maximum: number, defaultValue?: number): ParamSpec<number>;
+        static int64(name: string, nick: string | null, blurb: string | null, flags: ParamFlags | number, minimum: number, maximum: number, defaultValue?: number): ParamSpec<number>;
 
         /**
          * Creates a new GParamSpecUInt64 instance specifying a G_TYPE_UINT64 property.
@@ -4355,7 +4349,7 @@ export function registerClass<
          * @param maximum The maximum value for this property
          * @param defaultValue The default value for this property (optional)
          */
-        static uint64(name: string, nick: (string | null), blurb: (string | null), flags: (ParamFlags | number), minimum: number, maximum: number, defaultValue?: number): ParamSpec<number>;
+        static uint64(name: string, nick: string | null, blurb: string | null, flags: ParamFlags | number, minimum: number, maximum: number, defaultValue?: number): ParamSpec<number>;
 
         /**
          * Creates a new GParamSpecFloat instance specifying a G_TYPE_FLOAT property.
@@ -4367,7 +4361,7 @@ export function registerClass<
          * @param maximum The maximum value for this property
          * @param defaultValue The default value for this property (optional)
          */
-        static float(name: string, nick: (string | null), blurb: (string | null), flags: (ParamFlags | number), minimum: number, maximum: number, defaultValue?: number): ParamSpec<number>;
+        static float(name: string, nick: string | null, blurb: string | null, flags: ParamFlags | number, minimum: number, maximum: number, defaultValue?: number): ParamSpec<number>;
 
         /**
          * Creates a new GParamSpecBoolean instance specifying a G_TYPE_BOOLEAN property. In many cases, it may be more appropriate to use an enum with `g_param_spec_enum()`, both to improve code clarity by using explicitly named values, and to allow for more values to be added in future without breaking API.
@@ -4377,7 +4371,7 @@ export function registerClass<
          * @param flags The flags for this property (e.g. READABLE, WRITABLE)
          * @param defaultValue The default value for this property (optional)
          */
-        static ["boolean"](name: string, nick: (string | null), blurb: (string | null), flags: (ParamFlags | number), defaultValue?: boolean): ParamSpec<boolean>;
+        static ["boolean"](name: string, nick: string | null, blurb: string | null, flags: ParamFlags | number, defaultValue?: boolean): ParamSpec<boolean>;
 
         /**
          * Creates a new GParamSpecFlags instance specifying a G_TYPE_FLAGS property.
@@ -4388,7 +4382,7 @@ export function registerClass<
          * @param flagsType The GType for this property
          * @param defaultValue The default value for this property (optional)
          */
-        static flags(name: string, nick: (string | null), blurb: (string | null), flags: (ParamFlags | number), flagsType: any, defaultValue?: any): ParamSpec<number>;
+        static flags(name: string, nick: string | null, blurb: string | null, flags: ParamFlags | number, flagsType: any, defaultValue?: any): ParamSpec<number>;
 
         /**
          * Creates a new GParamSpecEnum instance specifying a G_TYPE_ENUM property.
@@ -4399,7 +4393,7 @@ export function registerClass<
          * @param enumType The GType for this property
          * @param defaultValue The default value for this property (optional)
          */
-        static ["enum"]<T>(name: string, nick: (string | null), blurb: (string | null), flags: (ParamFlags | number), enumType: GType<T> | { $gtype: GType<T> }, defaultValue?: any): ParamSpec<T>;
+        static ["enum"]<T>(name: string, nick: string | null, blurb: string | null, flags: ParamFlags | number, enumType: GType<T> | { $gtype: GType<T> }, defaultValue?: any): ParamSpec<T>;
 
         /**
          * Creates a new GParamSpecDouble instance specifying a G_TYPE_DOUBLE property.
@@ -4411,7 +4405,7 @@ export function registerClass<
          * @param maximum The maximum value for this property
          * @param defaultValue The default value for this property (optional)
          */
-        static double(name: string, nick: (string | null), blurb: (string | null), flags: (ParamFlags | number), minimum: number, maximum: number, defaultValue?: number): ParamSpec<number>;
+        static double(name: string, nick: string | null, blurb: string | null, flags: ParamFlags | number, minimum: number, maximum: number, defaultValue?: number): ParamSpec<number>;
 
         /**
          * Creates a new GParamSpecString instance specifying a G_TYPE_STRING property.
@@ -4421,7 +4415,7 @@ export function registerClass<
          * @param flags The flags for this property (e.g. READABLE, WRITABLE)
          * @param defaultValue The default value for this property (optional, defaults to null if not provided)
          */
-        static string(name: string, nick: (string | null), blurb: (string | null), flags: (ParamFlags | number), defaultValue?: (string | null)): ParamSpec<string>;
+        static string(name: string, nick: string | null, blurb: string | null, flags: ParamFlags | number, defaultValue?: string | null): ParamSpec<string>;
 
         /**
          * Creates a new GParamSpecBoxed instance specifying a G_TYPE_BOXED derived property.
@@ -4431,7 +4425,7 @@ export function registerClass<
          * @param flags The flags for this property (e.g. READABLE, WRITABLE)
          * @param boxedType The GType for this property
          */
-        static boxed<T>(name: string, nick: (string | null), blurb: (string | null), flags: (ParamFlags | number), boxedType: GType<T> | { $gtype: GType<T> }): ParamSpec<T>;
+        static boxed<T>(name: string, nick: string | null, blurb: string | null, flags: ParamFlags | number, boxedType: GType<T> | { $gtype: GType<T> }): ParamSpec<T>;
 
         /**
          * Creates a new GParamSpecObject instance specifying a property holding object references.
@@ -4441,7 +4435,7 @@ export function registerClass<
          * @param flags The flags for this property (e.g. READABLE, WRITABLE)
          * @param objectType The GType of the object (optional)
          */
-        static object<T>(name: string, nick: (string | null), blurb: (string | null), flags: (ParamFlags | number), objectType?: GType<T> | { $gtype: GType<T> }): ParamSpec<T>;
+        static object<T>(name: string, nick: string | null, blurb: string | null, flags: ParamFlags | number, objectType?: GType<T> | { $gtype: GType<T> }): ParamSpec<T>;
 
         /**
          * Creates a new GParamSpecParam instance specifying a G_TYPE_PARAM property.
@@ -4451,7 +4445,7 @@ export function registerClass<
          * @param flags The flags for this property (e.g. READABLE, WRITABLE)
          * @param paramType The GType for this property
          */
-        static param(name: string, nick: (string | null), blurb: (string | null), flags: (ParamFlags | number), paramType: any): ParamSpec;
+        static param(name: string, nick: string | null, blurb: string | null, flags: ParamFlags | number, paramType: any): ParamSpec;
 
         /**
          * Creates a new ParamSpec instance for JavaScript object properties.
@@ -4460,7 +4454,7 @@ export function registerClass<
          * @param blurb A longer description of the property (can be null)
          * @param flags The flags for this property (e.g. READABLE, WRITABLE)
          */
-        static jsobject<T>(name: string, nick: (string | null), blurb: (string | null), flags: (ParamFlags | number)): ParamSpec<T>;
+        static jsobject<T>(name: string, nick: string | null, blurb: string | null, flags: ParamFlags | number): ParamSpec<T>;
 
         // Virtual methods
         /**
@@ -4511,7 +4505,7 @@ export function registerClass<
          * Get the short description of a {@link GObject.ParamSpec}.
          * @returns the short description of `pspec`.
          */
-        get_blurb(): (string | null);
+        get_blurb(): string | null;
 
         /**
          * Gets the default value of `pspec` as a pointer to a {@link GObject.Value}.
@@ -4559,7 +4553,7 @@ export function registerClass<
          * for an example of the use of this capability.
          * @returns paramspec to which requests on this          paramspec should be redirected, or `null` if none.
          */
-        get_redirect_target(): (ParamSpec | null);
+        get_redirect_target(): ParamSpec | null;
 
         /**
          * Sets an opaque, named pointer on a {@link GObject.ParamSpec}. The name is
@@ -4599,7 +4593,7 @@ export function registerClass<
          * @param name The name of the property to override
          * @param oclass The object class or type that contains the property to override
          */
-        override(name: string, oclass: (Object | Function | GType)): ParamSpec;
+        override(name: string, oclass: Object | Function | GType): ParamSpec;
 
         /**
          * @param arg 
@@ -4781,7 +4775,7 @@ export function registerClass<
          * disconnected from that object prior to connecting to `target`.
          * @param target The target instance used     when connecting signals.
          */
-        set_target(target: (Object | null)): void;
+        set_target(target: Object | null): void;
 
         /**
          * Unblocks all signal handlers managed by `self` so they will be
@@ -4795,13 +4789,10 @@ export function registerClass<
 
     namespace TypeModule {
         // Signal signatures
-        interface SignalSignatures extends Object.SignalSignatures {
-        }
+        interface SignalSignatures extends Object.SignalSignatures {}
 
         // Constructor properties interface
-        interface ConstructorProps extends Object.ConstructorProps, TypePlugin.ConstructorProps {
-
-        }
+        interface ConstructorProps extends Object.ConstructorProps, TypePlugin.ConstructorProps {}
     }
 
     /**
@@ -5040,7 +5031,7 @@ export function registerClass<
          * @param invocation_hint The invocation hint given as the last argument to   `g_closure_invoke()`.
          * @param marshal_data Additional data specified when registering the   marshaller, see `g_closure_set_marshal()` and   `g_closure_set_meta_marshal()`
          */
-        static marshal_BOOLEAN__BOXED_BOXED(closure: Closure, return_value: (Value | any), n_param_values: number, param_values: (Value | any), invocation_hint: null, marshal_data: null): void;
+        static marshal_BOOLEAN__BOXED_BOXED(closure: Closure, return_value: Value | any, n_param_values: number, param_values: Value | any, invocation_hint: null, marshal_data: null): void;
 
         /**
          * A {@link GObject.ClosureMarshal} function for use with signals with handlers that
@@ -5054,7 +5045,7 @@ export function registerClass<
          * @param invocation_hint The invocation hint given as the last argument to   `g_closure_invoke()`.
          * @param marshal_data Additional data specified when registering the   marshaller, see `g_closure_set_marshal()` and   `g_closure_set_meta_marshal()`
          */
-        static marshal_BOOLEAN__FLAGS(closure: Closure, return_value: (Value | any), n_param_values: number, param_values: (Value | any), invocation_hint: null, marshal_data: null): void;
+        static marshal_BOOLEAN__FLAGS(closure: Closure, return_value: Value | any, n_param_values: number, param_values: Value | any, invocation_hint: null, marshal_data: null): void;
 
         /**
          * A {@link GObject.ClosureMarshal} function for use with signals with handlers that
@@ -5067,7 +5058,7 @@ export function registerClass<
          * @param invocation_hint The invocation hint given as the last argument to   `g_closure_invoke()`.
          * @param marshal_data Additional data specified when registering the   marshaller, see `g_closure_set_marshal()` and   `g_closure_set_meta_marshal()`
          */
-        static marshal_STRING__OBJECT_POINTER(closure: Closure, return_value: (Value | any), n_param_values: number, param_values: (Value | any), invocation_hint: null, marshal_data: null): void;
+        static marshal_STRING__OBJECT_POINTER(closure: Closure, return_value: Value | any, n_param_values: number, param_values: Value | any, invocation_hint: null, marshal_data: null): void;
 
         /**
          * A {@link GObject.ClosureMarshal} function for use with signals with a single
@@ -5079,7 +5070,7 @@ export function registerClass<
          * @param invocation_hint The invocation hint given as the last argument to   `g_closure_invoke()`.
          * @param marshal_data Additional data specified when registering the   marshaller, see `g_closure_set_marshal()` and   `g_closure_set_meta_marshal()`
          */
-        static marshal_VOID__BOOLEAN(closure: Closure, return_value: (Value | any), n_param_values: number, param_values: (Value | any), invocation_hint: null, marshal_data: null): void;
+        static marshal_VOID__BOOLEAN(closure: Closure, return_value: Value | any, n_param_values: number, param_values: Value | any, invocation_hint: null, marshal_data: null): void;
 
         /**
          * A {@link GObject.ClosureMarshal} function for use with signals with a single
@@ -5091,7 +5082,7 @@ export function registerClass<
          * @param invocation_hint The invocation hint given as the last argument to   `g_closure_invoke()`.
          * @param marshal_data Additional data specified when registering the   marshaller, see `g_closure_set_marshal()` and   `g_closure_set_meta_marshal()`
          */
-        static marshal_VOID__BOXED(closure: Closure, return_value: (Value | any), n_param_values: number, param_values: (Value | any), invocation_hint: null, marshal_data: null): void;
+        static marshal_VOID__BOXED(closure: Closure, return_value: Value | any, n_param_values: number, param_values: Value | any, invocation_hint: null, marshal_data: null): void;
 
         /**
          * A {@link GObject.ClosureMarshal} function for use with signals with a single
@@ -5103,7 +5094,7 @@ export function registerClass<
          * @param invocation_hint The invocation hint given as the last argument to   `g_closure_invoke()`.
          * @param marshal_data Additional data specified when registering the   marshaller, see `g_closure_set_marshal()` and   `g_closure_set_meta_marshal()`
          */
-        static marshal_VOID__CHAR(closure: Closure, return_value: (Value | any), n_param_values: number, param_values: (Value | any), invocation_hint: null, marshal_data: null): void;
+        static marshal_VOID__CHAR(closure: Closure, return_value: Value | any, n_param_values: number, param_values: Value | any, invocation_hint: null, marshal_data: null): void;
 
         /**
          * A {@link GObject.ClosureMarshal} function for use with signals with one
@@ -5115,7 +5106,7 @@ export function registerClass<
          * @param invocation_hint The invocation hint given as the last argument to   `g_closure_invoke()`.
          * @param marshal_data Additional data specified when registering the   marshaller, see `g_closure_set_marshal()` and   `g_closure_set_meta_marshal()`
          */
-        static marshal_VOID__DOUBLE(closure: Closure, return_value: (Value | any), n_param_values: number, param_values: (Value | any), invocation_hint: null, marshal_data: null): void;
+        static marshal_VOID__DOUBLE(closure: Closure, return_value: Value | any, n_param_values: number, param_values: Value | any, invocation_hint: null, marshal_data: null): void;
 
         /**
          * A {@link GObject.ClosureMarshal} function for use with signals with a single
@@ -5127,7 +5118,7 @@ export function registerClass<
          * @param invocation_hint The invocation hint given as the last argument to   `g_closure_invoke()`.
          * @param marshal_data Additional data specified when registering the   marshaller, see `g_closure_set_marshal()` and   `g_closure_set_meta_marshal()`
          */
-        static marshal_VOID__ENUM(closure: Closure, return_value: (Value | any), n_param_values: number, param_values: (Value | any), invocation_hint: null, marshal_data: null): void;
+        static marshal_VOID__ENUM(closure: Closure, return_value: Value | any, n_param_values: number, param_values: Value | any, invocation_hint: null, marshal_data: null): void;
 
         /**
          * A {@link GObject.ClosureMarshal} function for use with signals with a single
@@ -5139,7 +5130,7 @@ export function registerClass<
          * @param invocation_hint The invocation hint given as the last argument to   `g_closure_invoke()`.
          * @param marshal_data Additional data specified when registering the   marshaller, see `g_closure_set_marshal()` and   `g_closure_set_meta_marshal()`
          */
-        static marshal_VOID__FLAGS(closure: Closure, return_value: (Value | any), n_param_values: number, param_values: (Value | any), invocation_hint: null, marshal_data: null): void;
+        static marshal_VOID__FLAGS(closure: Closure, return_value: Value | any, n_param_values: number, param_values: Value | any, invocation_hint: null, marshal_data: null): void;
 
         /**
          * A {@link GObject.ClosureMarshal} function for use with signals with one
@@ -5151,7 +5142,7 @@ export function registerClass<
          * @param invocation_hint The invocation hint given as the last argument to   `g_closure_invoke()`.
          * @param marshal_data Additional data specified when registering the   marshaller, see `g_closure_set_marshal()` and   `g_closure_set_meta_marshal()`
          */
-        static marshal_VOID__FLOAT(closure: Closure, return_value: (Value | any), n_param_values: number, param_values: (Value | any), invocation_hint: null, marshal_data: null): void;
+        static marshal_VOID__FLOAT(closure: Closure, return_value: Value | any, n_param_values: number, param_values: Value | any, invocation_hint: null, marshal_data: null): void;
 
         /**
          * A {@link GObject.ClosureMarshal} function for use with signals with a single
@@ -5163,7 +5154,7 @@ export function registerClass<
          * @param invocation_hint The invocation hint given as the last argument to   `g_closure_invoke()`.
          * @param marshal_data Additional data specified when registering the   marshaller, see `g_closure_set_marshal()` and   `g_closure_set_meta_marshal()`
          */
-        static marshal_VOID__INT(closure: Closure, return_value: (Value | any), n_param_values: number, param_values: (Value | any), invocation_hint: null, marshal_data: null): void;
+        static marshal_VOID__INT(closure: Closure, return_value: Value | any, n_param_values: number, param_values: Value | any, invocation_hint: null, marshal_data: null): void;
 
         /**
          * A {@link GObject.ClosureMarshal} function for use with signals with with a single
@@ -5175,7 +5166,7 @@ export function registerClass<
          * @param invocation_hint The invocation hint given as the last argument to   `g_closure_invoke()`.
          * @param marshal_data Additional data specified when registering the   marshaller, see `g_closure_set_marshal()` and   `g_closure_set_meta_marshal()`
          */
-        static marshal_VOID__LONG(closure: Closure, return_value: (Value | any), n_param_values: number, param_values: (Value | any), invocation_hint: null, marshal_data: null): void;
+        static marshal_VOID__LONG(closure: Closure, return_value: Value | any, n_param_values: number, param_values: Value | any, invocation_hint: null, marshal_data: null): void;
 
         /**
          * A {@link GObject.ClosureMarshal} function for use with signals with a single
@@ -5187,7 +5178,7 @@ export function registerClass<
          * @param invocation_hint The invocation hint given as the last argument to   `g_closure_invoke()`.
          * @param marshal_data Additional data specified when registering the   marshaller, see `g_closure_set_marshal()` and   `g_closure_set_meta_marshal()`
          */
-        static marshal_VOID__OBJECT(closure: Closure, return_value: (Value | any), n_param_values: number, param_values: (Value | any), invocation_hint: null, marshal_data: null): void;
+        static marshal_VOID__OBJECT(closure: Closure, return_value: Value | any, n_param_values: number, param_values: Value | any, invocation_hint: null, marshal_data: null): void;
 
         /**
          * A {@link GObject.ClosureMarshal} function for use with signals with a single
@@ -5199,7 +5190,7 @@ export function registerClass<
          * @param invocation_hint The invocation hint given as the last argument to   `g_closure_invoke()`.
          * @param marshal_data Additional data specified when registering the   marshaller, see `g_closure_set_marshal()` and   `g_closure_set_meta_marshal()`
          */
-        static marshal_VOID__PARAM(closure: Closure, return_value: (Value | any), n_param_values: number, param_values: (Value | any), invocation_hint: null, marshal_data: null): void;
+        static marshal_VOID__PARAM(closure: Closure, return_value: Value | any, n_param_values: number, param_values: Value | any, invocation_hint: null, marshal_data: null): void;
 
         /**
          * A {@link GObject.ClosureMarshal} function for use with signals with a single raw
@@ -5215,7 +5206,7 @@ export function registerClass<
          * @param invocation_hint The invocation hint given as the last argument to   `g_closure_invoke()`.
          * @param marshal_data Additional data specified when registering the   marshaller, see `g_closure_set_marshal()` and   `g_closure_set_meta_marshal()`
          */
-        static marshal_VOID__POINTER(closure: Closure, return_value: (Value | any), n_param_values: number, param_values: (Value | any), invocation_hint: null, marshal_data: null): void;
+        static marshal_VOID__POINTER(closure: Closure, return_value: Value | any, n_param_values: number, param_values: Value | any, invocation_hint: null, marshal_data: null): void;
 
         /**
          * A {@link GObject.ClosureMarshal} function for use with signals with a single string
@@ -5227,7 +5218,7 @@ export function registerClass<
          * @param invocation_hint The invocation hint given as the last argument to   `g_closure_invoke()`.
          * @param marshal_data Additional data specified when registering the   marshaller, see `g_closure_set_marshal()` and   `g_closure_set_meta_marshal()`
          */
-        static marshal_VOID__STRING(closure: Closure, return_value: (Value | any), n_param_values: number, param_values: (Value | any), invocation_hint: null, marshal_data: null): void;
+        static marshal_VOID__STRING(closure: Closure, return_value: Value | any, n_param_values: number, param_values: Value | any, invocation_hint: null, marshal_data: null): void;
 
         /**
          * A {@link GObject.ClosureMarshal} function for use with signals with a single
@@ -5239,7 +5230,7 @@ export function registerClass<
          * @param invocation_hint The invocation hint given as the last argument to   `g_closure_invoke()`.
          * @param marshal_data Additional data specified when registering the   marshaller, see `g_closure_set_marshal()` and   `g_closure_set_meta_marshal()`
          */
-        static marshal_VOID__UCHAR(closure: Closure, return_value: (Value | any), n_param_values: number, param_values: (Value | any), invocation_hint: null, marshal_data: null): void;
+        static marshal_VOID__UCHAR(closure: Closure, return_value: Value | any, n_param_values: number, param_values: Value | any, invocation_hint: null, marshal_data: null): void;
 
         /**
          * A {@link GObject.ClosureMarshal} function for use with signals with with a single
@@ -5251,7 +5242,7 @@ export function registerClass<
          * @param invocation_hint The invocation hint given as the last argument to   `g_closure_invoke()`.
          * @param marshal_data Additional data specified when registering the   marshaller, see `g_closure_set_marshal()` and   `g_closure_set_meta_marshal()`
          */
-        static marshal_VOID__UINT(closure: Closure, return_value: (Value | any), n_param_values: number, param_values: (Value | any), invocation_hint: null, marshal_data: null): void;
+        static marshal_VOID__UINT(closure: Closure, return_value: Value | any, n_param_values: number, param_values: Value | any, invocation_hint: null, marshal_data: null): void;
 
         /**
          * A {@link GObject.ClosureMarshal} function for use with signals with an unsigned int
@@ -5263,7 +5254,7 @@ export function registerClass<
          * @param invocation_hint The invocation hint given as the last argument to   `g_closure_invoke()`.
          * @param marshal_data Additional data specified when registering the   marshaller, see `g_closure_set_marshal()` and   `g_closure_set_meta_marshal()`
          */
-        static marshal_VOID__UINT_POINTER(closure: Closure, return_value: (Value | any), n_param_values: number, param_values: (Value | any), invocation_hint: null, marshal_data: null): void;
+        static marshal_VOID__UINT_POINTER(closure: Closure, return_value: Value | any, n_param_values: number, param_values: Value | any, invocation_hint: null, marshal_data: null): void;
 
         /**
          * A {@link GObject.ClosureMarshal} function for use with signals with a single
@@ -5275,7 +5266,7 @@ export function registerClass<
          * @param invocation_hint The invocation hint given as the last argument to   `g_closure_invoke()`.
          * @param marshal_data Additional data specified when registering the   marshaller, see `g_closure_set_marshal()` and   `g_closure_set_meta_marshal()`
          */
-        static marshal_VOID__ULONG(closure: Closure, return_value: (Value | any), n_param_values: number, param_values: (Value | any), invocation_hint: null, marshal_data: null): void;
+        static marshal_VOID__ULONG(closure: Closure, return_value: Value | any, n_param_values: number, param_values: Value | any, invocation_hint: null, marshal_data: null): void;
 
         /**
          * A {@link GObject.ClosureMarshal} function for use with signals with a single
@@ -5287,7 +5278,7 @@ export function registerClass<
          * @param invocation_hint The invocation hint given as the last argument to   `g_closure_invoke()`.
          * @param marshal_data Additional data specified when registering the   marshaller, see `g_closure_set_marshal()` and   `g_closure_set_meta_marshal()`
          */
-        static marshal_VOID__VARIANT(closure: Closure, return_value: (Value | any), n_param_values: number, param_values: (Value | any), invocation_hint: null, marshal_data: null): void;
+        static marshal_VOID__VARIANT(closure: Closure, return_value: Value | any, n_param_values: number, param_values: Value | any, invocation_hint: null, marshal_data: null): void;
 
         /**
          * A {@link GObject.ClosureMarshal} function for use with signals with no arguments.
@@ -5298,7 +5289,7 @@ export function registerClass<
          * @param invocation_hint The invocation hint given as the last argument to   `g_closure_invoke()`.
          * @param marshal_data Additional data specified when registering the   marshaller, see `g_closure_set_marshal()` and   `g_closure_set_meta_marshal()`
          */
-        static marshal_VOID__VOID(closure: Closure, return_value: (Value | any), n_param_values: number, param_values: (Value | any), invocation_hint: null, marshal_data: null): void;
+        static marshal_VOID__VOID(closure: Closure, return_value: Value | any, n_param_values: number, param_values: Value | any, invocation_hint: null, marshal_data: null): void;
 
         /**
          * A generic marshaller function implemented via
@@ -5313,7 +5304,7 @@ export function registerClass<
          * @param invocation_hint The invocation hint given as the last argument to   `g_closure_invoke()`.
          * @param marshal_data Additional data specified when registering the   marshaller, see `g_closure_set_marshal()` and   `g_closure_set_meta_marshal()`
          */
-        static marshal_generic(closure: Closure, return_gvalue: (Value | any), n_param_values: number, param_values: (Value | any), invocation_hint: null, marshal_data: null): void;
+        static marshal_generic(closure: Closure, return_gvalue: Value | any, n_param_values: number, param_values: Value | any, invocation_hint: null, marshal_data: null): void;
     }
 
 
@@ -5508,7 +5499,7 @@ export function registerClass<
          * @param walk_ancestors If `true`, also try to find a {@link GObject.ParamSpec} with `param_name`  owned by an ancestor of `owner_type`.
          * @returns The found {@link GObject.ParamSpec}, or `null` if no matching {@link GObject.ParamSpec} was found.
          */
-        lookup(param_name: string, owner_type: GType, walk_ancestors: boolean): (ParamSpec | null);
+        lookup(param_name: string, owner_type: GType, walk_ancestors: boolean): ParamSpec | null;
 
         /**
          * Removes a {@link GObject.ParamSpec} from the pool.
@@ -5634,14 +5625,14 @@ export function registerClass<
          * referenced before).
          * @param type type ID of a classed type
          */
-        static peek(type: GType): (TypeClass | null);
+        static peek(type: GType): TypeClass | null;
 
         /**
          * A more efficient version of `g_type_class_peek()` which works only for
          * static types.
          * @param type type ID of a classed type
          */
-        static peek_static(type: GType): (TypeClass | null);
+        static peek_static(type: GType): TypeClass | null;
 
         /**
          * Increments the reference count of the class structure belonging to
@@ -5720,7 +5711,7 @@ export function registerClass<
          * 
          * @param private_size size of private structure
          */
-        add_private(private_size: (bigint | number)): void;
+        add_private(private_size: bigint | number): void;
 
         /**
          * @param private_type 
@@ -5863,7 +5854,7 @@ export function registerClass<
          * @param instance_class a {@link GObject.TypeClass} structure
          * @param iface_type an interface ID which this class conforms to
          */
-        static peek(instance_class: TypeClass, iface_type: GType): (TypeInterface | null);
+        static peek(instance_class: TypeClass, iface_type: GType): TypeInterface | null;
 
         /**
          * Returns the prerequisites of an interfaces type.
@@ -5880,7 +5871,7 @@ export function registerClass<
          * parent type and then possibly overriding some methods.
          * @returns the   corresponding {@link GObject.TypeInterface} structure of the parent type of the   instance type to which `g_iface` belongs, or `null` if the parent   type doesn't conform to the interface
          */
-        peek_parent(): (TypeInterface | null);
+        peek_parent(): TypeInterface | null;
     }
 
 
@@ -6004,7 +5995,7 @@ export function registerClass<
          * Copies the value of `src_value` into `dest_value`.
          * @param dest_value An initialized {@link GObject.Value} structure of the same type as `src_value`.
          */
-        copy(dest_value: (Value | any)): void;
+        copy(dest_value: Value | any): void;
 
         /**
          * Get the contents of a `G_TYPE_OBJECT` derived {@link GObject.Value}, increasing
@@ -6018,14 +6009,14 @@ export function registerClass<
          * Get a copy the contents of a `G_TYPE_STRING` {@link GObject.Value}.
          * @returns a newly allocated copy of the string content of `value`
          */
-        dup_string(): (string | null);
+        dup_string(): string | null;
 
         /**
          * Get the contents of a variant {@link GObject.Value}, increasing its refcount. The returned
          * {@link GLib.Variant} is never floating.
          * @returns variant contents of `value` (may be `null`);    should be unreffed using `g_variant_unref()` when no longer needed
          */
-        dup_variant(): (GLib.Variant | null);
+        dup_variant(): GLib.Variant | null;
 
         /**
          * Determines if `value` will fit inside the size of a pointer value.
@@ -6131,7 +6122,7 @@ export function registerClass<
          * Get the contents of a `G_TYPE_STRING` {@link GObject.Value}.
          * @returns string content of `value`
          */
-        get_string(): (string | null);
+        get_string(): string | null;
 
         /**
          * Get the contents of a `G_TYPE_UCHAR` {@link GObject.Value}.
@@ -6161,7 +6152,7 @@ export function registerClass<
          * Get the contents of a variant {@link GObject.Value}.
          * @returns variant contents of `value` (may be `null`)
          */
-        get_variant(): (GLib.Variant | null);
+        get_variant(): GLib.Variant | null;
 
         /**
          * Initializes `value` with the default value of `type`.
@@ -6268,7 +6259,7 @@ export function registerClass<
          * Set the contents of a `G_TYPE_INT64` {@link GObject.Value} to `v_int64`.
          * @param v_int64 64bit integer value to be set
          */
-        set_int64(v_int64: (bigint | number)): void;
+        set_int64(v_int64: bigint | number): void;
 
         /**
          * Set the contents of a `G_TYPE_STRING` {@link GObject.Value} to `v_string`.  The string is
@@ -6276,13 +6267,13 @@ export function registerClass<
          * `g_intern_string()`), and is thus not duplicated when setting the {@link GObject.Value}.
          * @param v_string static string to be set
          */
-        set_interned_string(v_string: (string | null)): void;
+        set_interned_string(v_string: string | null): void;
 
         /**
          * Set the contents of a `G_TYPE_LONG` {@link GObject.Value} to `v_long`.
          * @param v_long long integer value to be set
          */
-        set_long(v_long: (bigint | number)): void;
+        set_long(v_long: bigint | number): void;
 
         /**
          * Set the contents of a `G_TYPE_OBJECT` derived {@link GObject.Value} to `v_object`.
@@ -6298,13 +6289,13 @@ export function registerClass<
          * the {@link GObject.Value} still exists).
          * @param v_object object value to be set
          */
-        set_object(v_object: (Object | null)): void;
+        set_object(v_object: Object | null): void;
 
         /**
          * Set the contents of a `G_TYPE_PARAM` {@link GObject.Value} to `param`.
          * @param param the {@link GObject.ParamSpec} to be set
          */
-        set_param(param: (ParamSpec | null)): void;
+        set_param(param: ParamSpec | null): void;
 
         /**
          * Set the contents of a pointer {@link GObject.Value} to `v_pointer`.
@@ -6336,19 +6327,19 @@ export function registerClass<
          * is more appropriate.
          * @param v_string static string to be set
          */
-        set_static_string(v_string: (string | null)): void;
+        set_static_string(v_string: string | null): void;
 
         /**
          * Set the contents of a `G_TYPE_STRING` {@link GObject.Value} to a copy of `v_string`.
          * @param v_string caller-owned string to be duplicated for the {@link GObject.Value}
          */
-        set_string(v_string: (string | null)): void;
+        set_string(v_string: string | null): void;
 
         /**
          * This is an internal function introduced mainly for C marshallers.
          * @param v_string duplicated unowned string to be set
          */
-        set_string_take_ownership(v_string: (string | null)): void;
+        set_string_take_ownership(v_string: string | null): void;
 
         /**
          * Set the contents of a `G_TYPE_UCHAR` {@link GObject.Value} to `v_uchar`.
@@ -6366,20 +6357,20 @@ export function registerClass<
          * Set the contents of a `G_TYPE_UINT64` {@link GObject.Value} to `v_uint64`.
          * @param v_uint64 unsigned 64bit integer value to be set
          */
-        set_uint64(v_uint64: (bigint | number)): void;
+        set_uint64(v_uint64: bigint | number): void;
 
         /**
          * Set the contents of a `G_TYPE_ULONG` {@link GObject.Value} to `v_ulong`.
          * @param v_ulong unsigned long integer value to be set
          */
-        set_ulong(v_ulong: (bigint | number)): void;
+        set_ulong(v_ulong: bigint | number): void;
 
         /**
          * Set the contents of a variant {@link GObject.Value} to `variant`.
          * If the variant is floating, it is consumed.
          * @param variant a {@link GLib.Variant}, or `null`
          */
-        set_variant(variant: (GLib.Variant | null)): void;
+        set_variant(variant: GLib.Variant | null): void;
 
         /**
          * Steal ownership on contents of a `G_TYPE_STRING` {@link GObject.Value}.
@@ -6393,7 +6384,7 @@ export function registerClass<
          * of the string. Otherwise the transfer notation would be ambiguous.
          * @returns string content of `value`;  Should be freed with `g_free()` when no longer needed.
          */
-        steal_string(): (string | null);
+        steal_string(): string | null;
 
         /**
          * Sets the contents of a `G_TYPE_BOXED` derived {@link GObject.Value} to `v_boxed`
@@ -6407,7 +6398,7 @@ export function registerClass<
          * Sets the contents of a `G_TYPE_STRING` {@link GObject.Value} to `v_string`.
          * @param v_string string to take ownership of
          */
-        take_string(v_string: (string | null)): void;
+        take_string(v_string: string | null): void;
 
         /**
          * Set the contents of a variant {@link GObject.Value} to `variant`, and takes over
@@ -6424,7 +6415,7 @@ export function registerClass<
          * This is an internal function introduced mainly for C marshallers.
          * @param variant a {@link GLib.Variant}, or `null`
          */
-        take_variant(variant: (GLib.Variant | null)): void;
+        take_variant(variant: GLib.Variant | null): void;
 
         /**
          * Tries to cast the contents of `src_value` into a type appropriate
@@ -6437,7 +6428,7 @@ export function registerClass<
          * @param dest_value Target value.
          * @returns Whether a transformation rule was found and could be applied.  Upon failing transformations, `dest_value` is left untouched.
          */
-        transform(dest_value: (Value | any)): boolean;
+        transform(dest_value: Value | any): boolean;
 
         /**
          * Clears the current value in `value` (if any) and "unsets" the type,
@@ -6494,7 +6485,7 @@ export function registerClass<
          * @param value {@link GObject.Value} to copy into {@link GObject.ValueArray}, or `null`
          * @returns the {@link GObject.ValueArray} passed in as `value_array`
          */
-        append(value: (Value | null)): ValueArray;
+        append(value: Value | null): ValueArray;
 
         /**
          * Construct an exact copy of a {@link GObject.ValueArray} by duplicating all its
@@ -6522,7 +6513,7 @@ export function registerClass<
          * @param value {@link GObject.Value} to copy into {@link GObject.ValueArray}, or `null`
          * @returns the {@link GObject.ValueArray} passed in as `value_array`
          */
-        insert(index_: number, value: (Value | null)): ValueArray;
+        insert(index_: number, value: Value | null): ValueArray;
 
         /**
          * Insert a copy of `value` as first element of `value_array`. If `value` is
@@ -6530,7 +6521,7 @@ export function registerClass<
          * @param value {@link GObject.Value} to copy into {@link GObject.ValueArray}, or `null`
          * @returns the {@link GObject.ValueArray} passed in as `value_array`
          */
-        prepend(value: (Value | null)): ValueArray;
+        prepend(value: Value | null): ValueArray;
 
         /**
          * Remove the value at position `index_` from `value_array`.
@@ -6634,9 +6625,7 @@ export function registerClass<
     namespace TypePlugin {
 
         // Constructor properties interface
-        interface ConstructorProps extends Object.ConstructorProps {
-
-        }
+        interface ConstructorProps extends Object.ConstructorProps {}
     }
 
     export interface TypePluginNamespace {
@@ -6762,7 +6751,7 @@ export function registerClass<
      * type.
      * @gir-type Alias
      */
-    type Type = (bigint | number);
+    type Type = bigint | number;
 
     /**
      * @gir-type Interface
@@ -6804,7 +6793,7 @@ export function registerClass<
     /**
      * @param args 
      */
-    function signal_handler_find(...args: ([Object, SignalMatch] | [Object, SignalMatchType, number, GLib.Quark, (Closure | null), (object | null), (object | null)])): number;
+    function signal_handler_find(...args: [Object, SignalMatch] | [Object, SignalMatchType, number, GLib.Quark, Closure | null, object | null, object | null]): number;
     /**
      * @param instance 
      * @param match 
@@ -6819,7 +6808,7 @@ export function registerClass<
      * @param func 
      * @param object 
      */
-    function signal_handler_find(instance: Object, match: SignalMatchType, signal_id: number, detail: GLib.Quark, closure: (Closure | null), func: (object | null), object: (object | null)): number;
+    function signal_handler_find(instance: Object, match: SignalMatchType, signal_id: number, detail: GLib.Quark, closure: Closure | null, func: object | null, object: object | null): number;
     /**
      * @param instance 
      * @param match 
@@ -6829,12 +6818,12 @@ export function registerClass<
      * @param func 
      * @param object 
      */
-    function _real_signal_handler_find(instance: Object, match: SignalMatchType, signal_id: number, detail: GLib.Quark, closure: (Closure | null), func: (object | null), object: (object | null)): number;
+    function _real_signal_handler_find(instance: Object, match: SignalMatchType, signal_id: number, detail: GLib.Quark, closure: Closure | null, func: object | null, object: object | null): number;
 
     /**
      * @param args 
      */
-    function signal_handler_block_matched(...args: ([Object, SignalMatch] | [Object, SignalMatchType, number, GLib.Quark, (Closure | null), (object | null), (object | null)])): number;
+    function signal_handler_block_matched(...args: [Object, SignalMatch] | [Object, SignalMatchType, number, GLib.Quark, Closure | null, object | null, object | null]): number;
     /**
      * @param instance 
      * @param match 
@@ -6849,7 +6838,7 @@ export function registerClass<
      * @param func 
      * @param object 
      */
-    function signal_handler_block_matched(instance: Object, match: SignalMatchType, signal_id: number, detail: GLib.Quark, closure: (Closure | null), func: (object | null), object: (object | null)): number;
+    function signal_handler_block_matched(instance: Object, match: SignalMatchType, signal_id: number, detail: GLib.Quark, closure: Closure | null, func: object | null, object: object | null): number;
     /**
      * @param instance 
      * @param match 
@@ -6859,12 +6848,12 @@ export function registerClass<
      * @param func 
      * @param object 
      */
-    function _real_signal_handler_block_matched(instance: Object, match: SignalMatchType, signal_id: number, detail: GLib.Quark, closure: (Closure | null), func: (object | null), object: (object | null)): number;
+    function _real_signal_handler_block_matched(instance: Object, match: SignalMatchType, signal_id: number, detail: GLib.Quark, closure: Closure | null, func: object | null, object: object | null): number;
 
     /**
      * @param args 
      */
-    function signal_handler_block_disconnect_matched(...args: ([Object, SignalMatch] | [Object, SignalMatchType, number, GLib.Quark, (Closure | null), (object | null), (object | null)])): number;
+    function signal_handler_block_disconnect_matched(...args: [Object, SignalMatch] | [Object, SignalMatchType, number, GLib.Quark, Closure | null, object | null, object | null]): number;
     /**
      * @param instance 
      * @param match 
@@ -6879,7 +6868,7 @@ export function registerClass<
      * @param func 
      * @param object 
      */
-    function signal_handler_block_disconnect_matched(instance: Object, match: SignalMatchType, signal_id: number, detail: GLib.Quark, closure: (Closure | null), func: (object | null), object: (object | null)): number;
+    function signal_handler_block_disconnect_matched(instance: Object, match: SignalMatchType, signal_id: number, detail: GLib.Quark, closure: Closure | null, func: object | null, object: object | null): number;
     /**
      * @param instance 
      * @param match 
@@ -6889,12 +6878,12 @@ export function registerClass<
      * @param func 
      * @param object 
      */
-    function _real_signal_handler_block_disconnect_matched(instance: Object, match: SignalMatchType, signal_id: number, detail: GLib.Quark, closure: (Closure | null), func: (object | null), object: (object | null)): number;
+    function _real_signal_handler_block_disconnect_matched(instance: Object, match: SignalMatchType, signal_id: number, detail: GLib.Quark, closure: Closure | null, func: object | null, object: object | null): number;
 
     /**
      * @param args 
      */
-    function signal_handler_block_unblock_matched(...args: ([Object, SignalMatch] | [Object, SignalMatchType, number, GLib.Quark, (Closure | null), (object | null), (object | null)])): number;
+    function signal_handler_block_unblock_matched(...args: [Object, SignalMatch] | [Object, SignalMatchType, number, GLib.Quark, Closure | null, object | null, object | null]): number;
     /**
      * @param instance 
      * @param match 
@@ -6909,7 +6898,7 @@ export function registerClass<
      * @param func 
      * @param object 
      */
-    function signal_handler_block_unblock_matched(instance: Object, match: SignalMatchType, signal_id: number, detail: GLib.Quark, closure: (Closure | null), func: (object | null), object: (object | null)): number;
+    function signal_handler_block_unblock_matched(instance: Object, match: SignalMatchType, signal_id: number, detail: GLib.Quark, closure: Closure | null, func: object | null, object: object | null): number;
     /**
      * @param instance 
      * @param match 
@@ -6919,7 +6908,7 @@ export function registerClass<
      * @param func 
      * @param object 
      */
-    function _real_signal_handler_block_unblock_matched(instance: Object, match: SignalMatchType, signal_id: number, detail: GLib.Quark, closure: (Closure | null), func: (object | null), object: (object | null)): number;
+    function _real_signal_handler_block_unblock_matched(instance: Object, match: SignalMatchType, signal_id: number, detail: GLib.Quark, closure: Closure | null, func: object | null, object: object | null): number;
 
     /**
      * Name of the imported GIR library

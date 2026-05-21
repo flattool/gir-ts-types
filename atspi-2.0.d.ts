@@ -2121,7 +2121,7 @@ export namespace Atspi {
      * @param event_types an {@link Atspi.KeyMaskType} mask indicating which             types of key events were requested ({@link Atspi.KeyEventType.PRESSED}, etc.).
      * @returns `true` if successful, otherwise `false`.
      */
-    function deregister_keystroke_listener(listener: DeviceListener, key_set: (KeyDefinition[] | null), modmask: KeyMaskType, event_types: KeyEventMask): boolean;
+    function deregister_keystroke_listener(listener: DeviceListener, key_set: KeyDefinition[] | null, modmask: KeyMaskType, event_types: KeyEventMask): boolean;
 
     /**
      * Starts/enters the main event loop for the AT-SPI services.
@@ -2152,7 +2152,7 @@ export namespace Atspi {
      * @param synth_type an {@link Atspi.KeySynthType} flag indicating whether `keyval`           is to be interpreted as a keysym rather than a keycode           ({@link Atspi.KeySynthType.SYM}) or a string ({@link Atspi.KeySynthType.STRING}) or a modifier           mask ({@link Atspi.KeySynthType.LOCKMODIFIERS} and {@link Atspi.KeySynthType.UNLOCKMODIFIERS}), or           whether to synthesize {@link Atspi.KeySynthType.PRESS},           {@link Atspi.KeySynthType.RELEASE}, or both ({@link Atspi.KeySynthType.PRESSRELEASE}).
      * @returns `true` if successful, otherwise `false`.
      */
-    function generate_keyboard_event(keyval: (bigint | number), keystring: (string | null), synth_type: KeySynthType): boolean;
+    function generate_keyboard_event(keyval: bigint | number, keystring: string | null, synth_type: KeySynthType): boolean;
 
     /**
      * Synthesizes a mouse event at a specific screen coordinate.
@@ -2166,7 +2166,7 @@ export namespace Atspi {
      * @param name a string indicating which mouse event to be synthesized        (e.g. "b1p", "b1c", "b2r", "rel", "abs").
      * @returns `true` if successful, otherwise `false`.
      */
-    function generate_mouse_event(x: (bigint | number), y: (bigint | number), name: string): boolean;
+    function generate_mouse_event(x: bigint | number, y: bigint | number, name: string): boolean;
 
     /**
      * Like atspi_generate_mouse_event, but asynchronous.
@@ -2175,7 +2175,7 @@ export namespace Atspi {
      * @param name a string indicating which mouse event to be synthesized        (e.g. "b1p", "b1c", "b2r", "rel", "abs").
      * @param callback a callback to be called when a reply is received. May be NULL.
      */
-    function generate_mouse_event_async(x: (bigint | number), y: (bigint | number), name: string, callback: GenerateMouseEventCB): void;
+    function generate_mouse_event_async(x: bigint | number, y: bigint | number, name: string, callback: GenerateMouseEventCB): void;
 
     /**
      * Gets the virtual desktop indicated by index `i`.
@@ -2250,7 +2250,7 @@ export namespace Atspi {
      * @param sync_type an {@link Atspi.KeyListenerSyncType} parameter indicating             the behavior of the notification/listener transaction.
      * @returns `true` if successful, otherwise `false`.
      */
-    function register_keystroke_listener(listener: DeviceListener, key_set: (KeyDefinition[] | null), modmask: KeyMaskType, event_types: KeyEventMask, sync_type: KeyListenerSyncType): boolean;
+    function register_keystroke_listener(listener: DeviceListener, key_set: KeyDefinition[] | null, modmask: KeyMaskType, event_types: KeyEventMask, sync_type: KeyListenerSyncType): boolean;
 
     /**
      * Gets the localized description string describing the {@link Atspi.Role} `role`.
@@ -2444,9 +2444,7 @@ export namespace Atspi {
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends Object.ConstructorProps, Action.ConstructorProps, Collection.ConstructorProps, Component.ConstructorProps, Document.ConstructorProps, EditableText.ConstructorProps, Hypertext.ConstructorProps, Image.ConstructorProps, Selection.ConstructorProps, Table.ConstructorProps, TableCell.ConstructorProps, Text.ConstructorProps, Value.ConstructorProps {
-
-        }
+        interface ConstructorProps extends Object.ConstructorProps, Action.ConstructorProps, Collection.ConstructorProps, Component.ConstructorProps, Document.ConstructorProps, EditableText.ConstructorProps, Hypertext.ConstructorProps, Image.ConstructorProps, Selection.ConstructorProps, Table.ConstructorProps, TableCell.ConstructorProps, Text.ConstructorProps, Value.ConstructorProps {}
     }
 
     /**
@@ -2728,7 +2726,7 @@ export namespace Atspi {
          * Gets an {@link Atspi.Accessible} object's parent container.
          * @returns a pointer to the          {@link Atspi.Accessible} object which contains the given          {@link Atspi.Accessible} instance, or NULL if the `obj` has no          parent container.
          */
-        get_parent(): (Accessible | null);
+        get_parent(): Accessible | null;
 
         /**
          * Returns the process id associated with the given accessible.  Mainly
@@ -3090,7 +3088,7 @@ export namespace Atspi {
          * @param ctype the coordinate system of the point (`x`, `y`)         (e.g. ATSPI_COORD_TYPE_WINDOW, ATSPI_COORD_TYPE_SCREEN).
          * @returns a pointer to an          {@link Atspi.Accessible} child of the specified component which          contains the point (`x`, `y`), or NULL if no child contains          the point.
          */
-        get_accessible_at_point(x: number, y: number, ctype: CoordType): (Accessible | null);
+        get_accessible_at_point(x: number, y: number, ctype: CoordType): Accessible | null;
 
         /**
          * Gets the opacity/alpha value of a component, if alpha blending is in use.
@@ -3313,7 +3311,7 @@ export namespace Atspi {
          * @param link_index a (zero-index) `gint` indicating which hyperlink to query.
          * @returns the {@link Atspi.Hyperlink} object          specified by `link_index`.
          */
-        get_link(link_index: number): (Hyperlink | null);
+        get_link(link_index: number): Hyperlink | null;
 
         /**
          * Gets the index of the {@link Atspi.Hyperlink} object at a specified
@@ -3744,7 +3742,7 @@ export namespace Atspi {
          * @param attribute_name The attribute to query.
          * @returns the value of a given attribute at the given offset, or `null` if not present.
          */
-        get_text_attribute_value(offset: number, attribute_name: string): (string | null);
+        get_text_attribute_value(offset: number, attribute_name: string): string | null;
 
         /**
          * Gets the attributes applied to a range of text from an {@link Atspi.Text}
@@ -3980,13 +3978,10 @@ export namespace Atspi {
 
     namespace Application {
         // Signal signatures
-        interface SignalSignatures extends GObject.Object.SignalSignatures {
-        }
+        interface SignalSignatures extends GObject.Object.SignalSignatures {}
 
         // Constructor properties interface
-        interface ConstructorProps extends GObject.Object.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GObject.Object.ConstructorProps {}
     }
 
     /**
@@ -4098,7 +4093,7 @@ export namespace Atspi {
 
         static ["new"](): Device;
 
-        static new_full(app_id: (string | null)): Device;
+        static new_full(app_id: string | null): Device;
 
         // Signals
         /** @signal */
@@ -4231,7 +4226,7 @@ export namespace Atspi {
          * @param callback the function to call when the            given key is pressed.
          * @returns an identifier that can be later used to remove the grab, or 0 if the key/modifier combination could not be grabbed. Add a key grab for the given key/modifier combination.
          */
-        add_key_grab(kd: KeyDefinition, callback: (KeyCallback | null)): number;
+        add_key_grab(kd: KeyDefinition, callback: KeyCallback | null): number;
 
         /**
          * Add a callback that will receive a notification whenever a key is
@@ -4374,9 +4369,7 @@ export namespace Atspi {
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends Device.ConstructorProps {
-
-        }
+        interface ConstructorProps extends Device.ConstructorProps {}
     }
 
     /**
@@ -4401,7 +4394,7 @@ export namespace Atspi {
 
         static try_new(): DeviceA11yManager;
 
-        static try_new_full(app_id: (string | null)): DeviceA11yManager;
+        static try_new_full(app_id: string | null): DeviceA11yManager;
 
         // Signals
         /** @signal */
@@ -4425,9 +4418,7 @@ export namespace Atspi {
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends Device.ConstructorProps {
-
-        }
+        interface ConstructorProps extends Device.ConstructorProps {}
     }
 
     /**
@@ -4452,7 +4443,7 @@ export namespace Atspi {
 
         static ["new"](): DeviceLegacy;
 
-        static new_full(app_id: (string | null)): DeviceLegacy;
+        static new_full(app_id: string | null): DeviceLegacy;
 
         // Signals
         /** @signal */
@@ -4471,13 +4462,10 @@ export namespace Atspi {
 
     namespace DeviceListener {
         // Signal signatures
-        interface SignalSignatures extends GObject.Object.SignalSignatures {
-        }
+        interface SignalSignatures extends GObject.Object.SignalSignatures {}
 
         // Constructor properties interface
-        interface ConstructorProps extends GObject.Object.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GObject.Object.ConstructorProps {}
     }
 
     /**
@@ -4505,7 +4493,7 @@ export namespace Atspi {
 
         _init(...args: any[]): void;
 
-        static ["new"](callback: (DeviceListenerCB | null)): DeviceListener;
+        static ["new"](callback: DeviceListenerCB | null): DeviceListener;
 
         // Signals
         /** @signal */
@@ -4550,9 +4538,7 @@ export namespace Atspi {
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends Device.ConstructorProps {
-
-        }
+        interface ConstructorProps extends Device.ConstructorProps {}
     }
 
     /**
@@ -4577,7 +4563,7 @@ export namespace Atspi {
 
         static ["new"](): DeviceX11;
 
-        static new_full(app_id: (string | null)): DeviceX11;
+        static new_full(app_id: string | null): DeviceX11;
 
         // Signals
         /** @signal */
@@ -4596,13 +4582,10 @@ export namespace Atspi {
 
     namespace EventListener {
         // Signal signatures
-        interface SignalSignatures extends GObject.Object.SignalSignatures {
-        }
+        interface SignalSignatures extends GObject.Object.SignalSignatures {}
 
         // Constructor properties interface
-        interface ConstructorProps extends GObject.Object.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GObject.Object.ConstructorProps {}
     }
 
     /**
@@ -4683,7 +4666,7 @@ export namespace Atspi {
          * @param properties 
          * @param app 
          */
-        static register_from_callback_with_app(callback: EventListenerCB, event_type: string, properties: string[], app: (Accessible | null)): boolean;
+        static register_from_callback_with_app(callback: EventListenerCB, event_type: string, properties: string[], app: Accessible | null): boolean;
 
         // Methods
         /**
@@ -4790,7 +4773,7 @@ export namespace Atspi {
          * @param properties a list of             properties that should be sent along with the event. The             properties are valued for the duration of the event callback.             TODO: Document.
          * @returns `TRUE` if successful, otherwise `FALSE`.
          */
-        register_full(event_type: string, properties: (string[] | null)): boolean;
+        register_full(event_type: string, properties: string[] | null): boolean;
 
         /**
          * Adds an in-process callback function to an existing {@link Atspi.EventListener}.
@@ -4799,19 +4782,16 @@ export namespace Atspi {
          * @param app the application whose events should be reported, or      %null for all applications.
          * @returns `TRUE` if successful, otherwise `FALSE`.
          */
-        register_with_app(event_type: string, properties: (string[] | null), app: (Accessible | null)): boolean;
+        register_with_app(event_type: string, properties: string[] | null, app: Accessible | null): boolean;
     }
 
 
     namespace Hyperlink {
         // Signal signatures
-        interface SignalSignatures extends Object.SignalSignatures {
-        }
+        interface SignalSignatures extends Object.SignalSignatures {}
 
         // Constructor properties interface
-        interface ConstructorProps extends Object.ConstructorProps {
-
-        }
+        interface ConstructorProps extends Object.ConstructorProps {}
     }
 
     /**
@@ -4913,13 +4893,10 @@ export namespace Atspi {
 
     namespace MatchRule {
         // Signal signatures
-        interface SignalSignatures extends GObject.Object.SignalSignatures {
-        }
+        interface SignalSignatures extends GObject.Object.SignalSignatures {}
 
         // Constructor properties interface
-        interface ConstructorProps extends GObject.Object.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GObject.Object.ConstructorProps {}
     }
 
     /**
@@ -4961,7 +4938,7 @@ export namespace Atspi {
 
         _init(...args: any[]): void;
 
-        static ["new"](states: (StateSet | null), statematchtype: CollectionMatchType, attributes: (GLib.HashTable<string, string> | null), attributematchtype: CollectionMatchType, roles: (Role[] | null), rolematchtype: CollectionMatchType, interfaces: (string[] | null), interfacematchtype: CollectionMatchType, invert: boolean): MatchRule;
+        static ["new"](states: StateSet | null, statematchtype: CollectionMatchType, attributes: GLib.HashTable<string, string> | null, attributematchtype: CollectionMatchType, roles: Role[] | null, rolematchtype: CollectionMatchType, interfaces: string[] | null, interfacematchtype: CollectionMatchType, invert: boolean): MatchRule;
 
         // Signals
         /** @signal */
@@ -4980,13 +4957,10 @@ export namespace Atspi {
 
     namespace Object {
         // Signal signatures
-        interface SignalSignatures extends GObject.Object.SignalSignatures {
-        }
+        interface SignalSignatures extends GObject.Object.SignalSignatures {}
 
         // Constructor properties interface
-        interface ConstructorProps extends GObject.Object.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GObject.Object.ConstructorProps {}
     }
 
     /**
@@ -5031,13 +5005,10 @@ export namespace Atspi {
 
     namespace Relation {
         // Signal signatures
-        interface SignalSignatures extends GObject.Object.SignalSignatures {
-        }
+        interface SignalSignatures extends GObject.Object.SignalSignatures {}
 
         // Constructor properties interface
-        interface ConstructorProps extends GObject.Object.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GObject.Object.ConstructorProps {}
     }
 
     /**
@@ -5110,13 +5081,10 @@ export namespace Atspi {
 
     namespace StateSet {
         // Signal signatures
-        interface SignalSignatures extends GObject.Object.SignalSignatures {
-        }
+        interface SignalSignatures extends GObject.Object.SignalSignatures {}
 
         // Constructor properties interface
-        interface ConstructorProps extends GObject.Object.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GObject.Object.ConstructorProps {}
     }
 
     /**
@@ -5575,9 +5543,7 @@ export namespace Atspi {
     namespace Action {
 
         // Constructor properties interface
-        interface ConstructorProps extends GObject.Object.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GObject.Object.ConstructorProps {}
     }
 
     export interface ActionNamespace {
@@ -5663,9 +5629,7 @@ export namespace Atspi {
     namespace Collection {
 
         // Constructor properties interface
-        interface ConstructorProps extends GObject.Object.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GObject.Object.ConstructorProps {}
     }
 
     export interface CollectionNamespace {
@@ -5742,9 +5706,7 @@ export namespace Atspi {
     namespace Component {
 
         // Constructor properties interface
-        interface ConstructorProps extends GObject.Object.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GObject.Object.ConstructorProps {}
     }
 
     export interface ComponentNamespace {
@@ -5784,7 +5746,7 @@ export namespace Atspi {
          * @param ctype the coordinate system of the point (`x`, `y`)         (e.g. ATSPI_COORD_TYPE_WINDOW, ATSPI_COORD_TYPE_SCREEN).
          * @returns a pointer to an          {@link Atspi.Accessible} child of the specified component which          contains the point (`x`, `y`), or NULL if no child contains          the point.
          */
-        get_accessible_at_point(x: number, y: number, ctype: CoordType): (Accessible | null);
+        get_accessible_at_point(x: number, y: number, ctype: CoordType): Accessible | null;
 
         /**
          * Gets the opacity/alpha value of a component, if alpha blending is in use.
@@ -5894,9 +5856,7 @@ export namespace Atspi {
     namespace Document {
 
         // Constructor properties interface
-        interface ConstructorProps extends GObject.Object.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GObject.Object.ConstructorProps {}
     }
 
     export interface DocumentNamespace {
@@ -5968,9 +5928,7 @@ export namespace Atspi {
     namespace EditableText {
 
         // Constructor properties interface
-        interface ConstructorProps extends GObject.Object.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GObject.Object.ConstructorProps {}
     }
 
     export interface EditableTextNamespace {
@@ -6053,9 +6011,7 @@ export namespace Atspi {
     namespace Hypertext {
 
         // Constructor properties interface
-        interface ConstructorProps extends GObject.Object.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GObject.Object.ConstructorProps {}
     }
 
     export interface HypertextNamespace {
@@ -6081,7 +6037,7 @@ export namespace Atspi {
          * @param link_index a (zero-index) `gint` indicating which hyperlink to query.
          * @returns the {@link Atspi.Hyperlink} object          specified by `link_index`.
          */
-        get_link(link_index: number): (Hyperlink | null);
+        get_link(link_index: number): Hyperlink | null;
 
         /**
          * Gets the index of the {@link Atspi.Hyperlink} object at a specified
@@ -6107,9 +6063,7 @@ export namespace Atspi {
     namespace Image {
 
         // Constructor properties interface
-        interface ConstructorProps extends GObject.Object.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GObject.Object.ConstructorProps {}
     }
 
     export interface ImageNamespace {
@@ -6171,9 +6125,7 @@ export namespace Atspi {
     namespace Selection {
 
         // Constructor properties interface
-        interface ConstructorProps extends GObject.Object.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GObject.Object.ConstructorProps {}
     }
 
     export interface SelectionNamespace {
@@ -6279,9 +6231,7 @@ export namespace Atspi {
     namespace Table {
 
         // Constructor properties interface
-        interface ConstructorProps extends GObject.Object.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GObject.Object.ConstructorProps {}
     }
 
     export interface TableNamespace {
@@ -6552,9 +6502,7 @@ export namespace Atspi {
     namespace TableCell {
 
         // Constructor properties interface
-        interface ConstructorProps extends GObject.Object.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GObject.Object.ConstructorProps {}
     }
 
     export interface TableCellNamespace {
@@ -6625,9 +6573,7 @@ export namespace Atspi {
     namespace Text {
 
         // Constructor properties interface
-        interface ConstructorProps extends GObject.Object.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GObject.Object.ConstructorProps {}
     }
 
     export interface TextNamespace {
@@ -6672,7 +6618,7 @@ export namespace Atspi {
          * @param attribute_name The attribute to query.
          * @returns the value of a given attribute at the given offset, or `null` if not present.
          */
-        get_text_attribute_value(offset: number, attribute_name: string): (string | null);
+        get_text_attribute_value(offset: number, attribute_name: string): string | null;
 
         /**
          * Gets the attributes applied to a range of text from an {@link Atspi.Text}
@@ -6899,9 +6845,7 @@ export namespace Atspi {
     namespace Value {
 
         // Constructor properties interface
-        interface ConstructorProps extends GObject.Object.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GObject.Object.ConstructorProps {}
     }
 
     export interface ValueNamespace {

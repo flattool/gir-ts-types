@@ -451,7 +451,7 @@ export namespace CudaGst {
     /**
      * @gir-type Alias
      */
-    type deviceptr = (bigint | number);
+    type deviceptr = bigint | number;
 
     /**
      * @gir-type Alias
@@ -486,7 +486,7 @@ export namespace CudaGst {
     /**
      * @gir-type Alias
      */
-    type texObject = (bigint | number);
+    type texObject = bigint | number;
 
     /**
      * Name of the imported GIR library

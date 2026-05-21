@@ -61,7 +61,7 @@ export namespace GstGLEGL {
      * @param offset the byte-offset in the data
      * @returns a {@link GstGLEGL.EGLImage} wrapping `dmabuf` or `null` on failure
      */
-    function egl_image_from_dmabuf(context: GstGL.GLContext, dmabuf: number, in_info: GstVideo.VideoInfo, plane: number, offset: (bigint | number)): (EGLImage | null);
+    function egl_image_from_dmabuf(context: GstGL.GLContext, dmabuf: number, in_info: GstVideo.VideoInfo, plane: number, offset: bigint | number): EGLImage | null;
 
     /**
      * Creates an EGL image that imports the dmabuf FD. The dmabuf data
@@ -79,7 +79,7 @@ export namespace GstGLEGL {
      * @param in_info the {@link GstVideo.VideoInfo}
      * @returns a {@link GstGLEGL.EGLImage} wrapping `dmabuf` or `null` on failure
      */
-    function egl_image_from_dmabuf_direct(context: GstGL.GLContext, fd: number, offset: (bigint | number), in_info: GstVideo.VideoInfo): (EGLImage | null);
+    function egl_image_from_dmabuf_direct(context: GstGL.GLContext, fd: number, offset: bigint | number, in_info: GstVideo.VideoInfo): EGLImage | null;
 
     /**
      * Creates an EGL image that imports the dmabuf FD. The dmabuf data
@@ -99,7 +99,7 @@ export namespace GstGLEGL {
      * @returns a {@link GstGLEGL.EGLImage} wrapping `dmabuf` or `null` on failure
      * @since 1.18
      */
-    function egl_image_from_dmabuf_direct_target(context: GstGL.GLContext, fd: number, offset: (bigint | number), in_info: GstVideo.VideoInfo, target: GstGL.GLTextureTarget): (EGLImage | null);
+    function egl_image_from_dmabuf_direct_target(context: GstGL.GLContext, fd: number, offset: bigint | number, in_info: GstVideo.VideoInfo, target: GstGL.GLTextureTarget): EGLImage | null;
 
     /**
      * Creates an EGL image that imports the dmabuf FD. The dmabuf data is passed
@@ -117,7 +117,7 @@ export namespace GstGLEGL {
      * @returns a {@link GstGLEGL.EGLImage} wrapping `dmabuf` or `null` on failure
      * @since 1.24
      */
-    function egl_image_from_dmabuf_direct_target_with_dma_drm(context: GstGL.GLContext, n_planes: number, fd: number, offset: (bigint | number), in_info_dma: GstVideo.VideoInfoDmaDrm, target: GstGL.GLTextureTarget): (EGLImage | null);
+    function egl_image_from_dmabuf_direct_target_with_dma_drm(context: GstGL.GLContext, n_planes: number, fd: number, offset: bigint | number, in_info_dma: GstVideo.VideoInfoDmaDrm, target: GstGL.GLTextureTarget): EGLImage | null;
 
     /**
      * @param context a {@link GstGL.GLContext} (must be an EGL context)
@@ -125,7 +125,7 @@ export namespace GstGLEGL {
      * @param attribs additional attributes to add to the `eglCreateImage`() call.
      * @returns a {@link GstGLEGL.EGLImage} wrapping `gl_mem` or `null` on failure
      */
-    function egl_image_from_texture(context: GstGL.GLContext, gl_mem: GstGL.GLMemory, attribs: (bigint | number)): (EGLImage | null);
+    function egl_image_from_texture(context: GstGL.GLContext, gl_mem: GstGL.GLMemory, attribs: bigint | number): EGLImage | null;
 
     /**
      * Initializes the GL Memory allocator. It is safe to call this function
@@ -156,9 +156,7 @@ export namespace GstGLEGL {
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends GstGL.GLDisplay.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GstGL.GLDisplay.ConstructorProps {}
     }
 
     /**
@@ -210,7 +208,7 @@ export namespace GstGLEGL {
          * `display`.
          * @param display an existing {@link GstGL.GLDisplay}
          */
-        static from_gl_display(display: GstGL.GLDisplay): (GLDisplayEGL | null);
+        static from_gl_display(display: GstGL.GLDisplay): GLDisplayEGL | null;
 
         /**
          * Attempts to create a new `EGLDisplay` from `display`.  If `type` is
@@ -219,7 +217,7 @@ export namespace GstGLEGL {
          * @param type a {@link GstGL.GLDisplayType}
          * @param display pointer to a display (or 0)
          */
-        static get_from_native(type: GstGL.GLDisplayType, display: (bigint | number)): null;
+        static get_from_native(type: GstGL.GLDisplayType, display: bigint | number): null;
     }
 
 
@@ -231,9 +229,7 @@ export namespace GstGLEGL {
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends GstGL.GLDisplay.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GstGL.GLDisplay.ConstructorProps {}
     }
 
     /**
@@ -292,9 +288,7 @@ export namespace GstGLEGL {
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends GstGL.GLMemoryAllocator.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GstGL.GLMemoryAllocator.ConstructorProps {}
     }
 
     /**
@@ -364,7 +358,7 @@ export namespace GstGLEGL {
          * @param plane the plane in `in_info` to create and {@link GstGLEGL.EGLImage} for
          * @param offset the byte-offset in the data
          */
-        static from_dmabuf(context: GstGL.GLContext, dmabuf: number, in_info: GstVideo.VideoInfo, plane: number, offset: (bigint | number)): (EGLImage | null);
+        static from_dmabuf(context: GstGL.GLContext, dmabuf: number, in_info: GstVideo.VideoInfo, plane: number, offset: bigint | number): EGLImage | null;
 
         /**
          * Creates an EGL image that imports the dmabuf FD. The dmabuf data
@@ -381,7 +375,7 @@ export namespace GstGLEGL {
          * @param offset Array of offsets, relative to the DMABuf
          * @param in_info the {@link GstVideo.VideoInfo}
          */
-        static from_dmabuf_direct(context: GstGL.GLContext, fd: number, offset: (bigint | number), in_info: GstVideo.VideoInfo): (EGLImage | null);
+        static from_dmabuf_direct(context: GstGL.GLContext, fd: number, offset: bigint | number, in_info: GstVideo.VideoInfo): EGLImage | null;
 
         /**
          * Creates an EGL image that imports the dmabuf FD. The dmabuf data
@@ -399,7 +393,7 @@ export namespace GstGLEGL {
          * @param in_info the {@link GstVideo.VideoInfo}
          * @param target GL texture target this GstEGLImage is intended for
          */
-        static from_dmabuf_direct_target(context: GstGL.GLContext, fd: number, offset: (bigint | number), in_info: GstVideo.VideoInfo, target: GstGL.GLTextureTarget): (EGLImage | null);
+        static from_dmabuf_direct_target(context: GstGL.GLContext, fd: number, offset: bigint | number, in_info: GstVideo.VideoInfo, target: GstGL.GLTextureTarget): EGLImage | null;
 
         /**
          * Creates an EGL image that imports the dmabuf FD. The dmabuf data is passed
@@ -415,14 +409,14 @@ export namespace GstGLEGL {
          * @param in_info_dma the {@link GstVideo.VideoInfoDmaDrm}
          * @param target GL texture target this GstEGLImage is intended for
          */
-        static from_dmabuf_direct_target_with_dma_drm(context: GstGL.GLContext, n_planes: number, fd: number, offset: (bigint | number), in_info_dma: GstVideo.VideoInfoDmaDrm, target: GstGL.GLTextureTarget): (EGLImage | null);
+        static from_dmabuf_direct_target_with_dma_drm(context: GstGL.GLContext, n_planes: number, fd: number, offset: bigint | number, in_info_dma: GstVideo.VideoInfoDmaDrm, target: GstGL.GLTextureTarget): EGLImage | null;
 
         /**
          * @param context a {@link GstGL.GLContext} (must be an EGL context)
          * @param gl_mem a {@link GstGL.GLMemory}
          * @param attribs additional attributes to add to the `eglCreateImage`() call.
          */
-        static from_texture(context: GstGL.GLContext, gl_mem: GstGL.GLMemory, attribs: (bigint | number)): (EGLImage | null);
+        static from_texture(context: GstGL.GLContext, gl_mem: GstGL.GLMemory, attribs: bigint | number): EGLImage | null;
 
         // Methods
         /**
@@ -430,7 +424,7 @@ export namespace GstGLEGL {
          * @param stride 
          * @param offset 
          */
-        export_dmabuf(fd: number, stride: number, offset: (bigint | number)): boolean;
+        export_dmabuf(fd: number, stride: number, offset: bigint | number): boolean;
 
         /**
          * @returns the {@link GstGLEGL.EGLImage} of `image`

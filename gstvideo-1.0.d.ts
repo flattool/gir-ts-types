@@ -2594,7 +2594,7 @@ export namespace GstVideo {
      * @returns the {@link GstVideo.VideoCaptionMeta} on `buffer`.
      * @since 1.16
      */
-    function buffer_add_video_caption_meta(buffer: Gst.Buffer, caption_type: VideoCaptionType, data: (Uint8Array | string)): VideoCaptionMeta;
+    function buffer_add_video_caption_meta(buffer: Gst.Buffer, caption_type: VideoCaptionType, data: Uint8Array | string): VideoCaptionMeta;
 
     /**
      * Attaches a {@link GstVideo.VideoCodecAlphaMeta} metadata to `buffer` with
@@ -2657,7 +2657,7 @@ export namespace GstVideo {
      * @param comp a {@link GstVideo.VideoOverlayComposition}
      * @returns a {@link GstVideo.VideoOverlayCompositionMeta}
      */
-    function buffer_add_video_overlay_composition_meta(buf: Gst.Buffer, comp: (VideoOverlayComposition | null)): VideoOverlayCompositionMeta;
+    function buffer_add_video_overlay_composition_meta(buf: Gst.Buffer, comp: VideoOverlayComposition | null): VideoOverlayCompositionMeta;
 
     /**
      * Attaches {@link GstVideo.VideoRegionOfInterestMeta} metadata to `buffer` with the given
@@ -2695,7 +2695,7 @@ export namespace GstVideo {
      * @returns the {@link GstVideo.VideoSEIUserDataUnregisteredMeta} on `buffer`.
      * @since 1.22
      */
-    function buffer_add_video_sei_user_data_unregistered_meta(buffer: Gst.Buffer, uuid: number, data: (number | null), size: (bigint | number)): VideoSEIUserDataUnregisteredMeta;
+    function buffer_add_video_sei_user_data_unregistered_meta(buffer: Gst.Buffer, uuid: number, data: number | null, size: bigint | number): VideoSEIUserDataUnregisteredMeta;
 
     /**
      * Attaches {@link GstVideo.VideoTimeCodeMeta} metadata to `buffer` with the given
@@ -2705,7 +2705,7 @@ export namespace GstVideo {
      * @returns the {@link GstVideo.VideoTimeCodeMeta} on `buffer`, or (since 1.16) `null` if the timecode was invalid.
      * @since 1.10
      */
-    function buffer_add_video_time_code_meta(buffer: Gst.Buffer, tc: VideoTimeCode): (VideoTimeCodeMeta | null);
+    function buffer_add_video_time_code_meta(buffer: Gst.Buffer, tc: VideoTimeCode): VideoTimeCodeMeta | null;
 
     /**
      * Attaches {@link GstVideo.VideoTimeCodeMeta} metadata to `buffer` with the given
@@ -2723,7 +2723,7 @@ export namespace GstVideo {
      * @returns the {@link GstVideo.VideoTimeCodeMeta} on `buffer`, or (since 1.16) `null` if the timecode was invalid.
      * @since 1.10
      */
-    function buffer_add_video_time_code_meta_full(buffer: Gst.Buffer, fps_n: number, fps_d: number, latest_daily_jam: GLib.DateTime, flags: VideoTimeCodeFlags, hours: number, minutes: number, seconds: number, frames: number, field_count: number): (VideoTimeCodeMeta | null);
+    function buffer_add_video_time_code_meta_full(buffer: Gst.Buffer, fps_n: number, fps_d: number, latest_daily_jam: GLib.DateTime, flags: VideoTimeCodeFlags, hours: number, minutes: number, seconds: number, frames: number, field_count: number): VideoTimeCodeMeta | null;
 
     /**
      * Find the {@link GstVideo.VideoMeta} on `buffer` with the lowest `id`.
@@ -2733,7 +2733,7 @@ export namespace GstVideo {
      * @param buffer a {@link Gst.Buffer}
      * @returns the {@link GstVideo.VideoMeta} with lowest id (usually 0) or `null` when there is no such metadata on `buffer`.
      */
-    function buffer_get_video_meta(buffer: Gst.Buffer): (VideoMeta | null);
+    function buffer_get_video_meta(buffer: Gst.Buffer): VideoMeta | null;
 
     /**
      * Find the {@link GstVideo.VideoMeta} on `buffer` with the given `id`.
@@ -2744,7 +2744,7 @@ export namespace GstVideo {
      * @param id a metadata id
      * @returns the {@link GstVideo.VideoMeta} with `id` or `null` when there is no such metadata on `buffer`.
      */
-    function buffer_get_video_meta_id(buffer: Gst.Buffer, id: number): (VideoMeta | null);
+    function buffer_get_video_meta_id(buffer: Gst.Buffer, id: number): VideoMeta | null;
 
     /**
      * Find the {@link GstVideo.VideoRegionOfInterestMeta} on `buffer` with the given `id`.
@@ -2755,7 +2755,7 @@ export namespace GstVideo {
      * @param id a metadata id
      * @returns the {@link GstVideo.VideoRegionOfInterestMeta} with `id` or `null` when there is no such metadata on `buffer`.
      */
-    function buffer_get_video_region_of_interest_meta_id(buffer: Gst.Buffer, id: number): (VideoRegionOfInterestMeta | null);
+    function buffer_get_video_region_of_interest_meta_id(buffer: Gst.Buffer, id: number): VideoRegionOfInterestMeta | null;
 
     /**
      * Get the video alignment from the bufferpool configuration `config` in
@@ -3252,7 +3252,7 @@ export namespace GstVideo {
      * @returns a string representation of `site`          or `null` if `site` contains undefined value or          is equal to {@link GstVideo.VideoChromaSite.UNKNOWN}
      * @since 1.20
      */
-    function video_chroma_site_to_string(site: VideoChromaSite): (string | null);
+    function video_chroma_site_to_string(site: VideoChromaSite): string | null;
 
     /**
      * Converts `site` to its string representation.
@@ -3413,7 +3413,7 @@ export namespace GstVideo {
      * @param timeout the maximum amount of time allowed for the processing.
      * @returns The converted {@link Gst.Sample}, or `null` if an error happened (in which case `err` will point to the {@link GLib.Error}).
      */
-    function video_convert_sample(sample: Gst.Sample, to_caps: Gst.Caps, timeout: Gst.ClockTime): (Gst.Sample | null);
+    function video_convert_sample(sample: Gst.Sample, to_caps: Gst.Caps, timeout: Gst.ClockTime): Gst.Sample | null;
 
     /**
      * Converts a raw video buffer into the specified output caps.
@@ -3476,7 +3476,7 @@ export namespace GstVideo {
      * @returns the drm kind string composed   of to `fourcc` and `modifier`.
      * @since 1.24
      */
-    function video_dma_drm_fourcc_to_string(fourcc: number, modifier: (bigint | number)): (string | null);
+    function video_dma_drm_fourcc_to_string(fourcc: number, modifier: bigint | number): string | null;
 
     /**
      * Checks if an event is a force key unit event. Returns true for both upstream
@@ -3773,7 +3773,7 @@ export namespace GstVideo {
      * @returns `true` if `drm_info` is filled correctly.
      * @since 1.24
      */
-    function video_info_dma_drm_from_video_info(info: VideoInfo, modifier: (bigint | number)): [boolean, VideoInfoDmaDrm];
+    function video_info_dma_drm_from_video_info(info: VideoInfo, modifier: bigint | number): [boolean, VideoInfoDmaDrm];
 
     /**
      * Initialize `drm_info` with default values.
@@ -3839,7 +3839,7 @@ export namespace GstVideo {
      * @returns a video `GstCaps`
      * @since 1.18
      */
-    function video_make_raw_caps(formats: (VideoFormat[] | null)): Gst.Caps;
+    function video_make_raw_caps(formats: VideoFormat[] | null): Gst.Caps;
 
     /**
      * Return a generic raw video caps for formats defined in `formats` with features
@@ -3851,7 +3851,7 @@ export namespace GstVideo {
      * @returns a video `GstCaps`
      * @since 1.18
      */
-    function video_make_raw_caps_with_features(formats: (VideoFormat[] | null), features: (Gst.CapsFeatures | null)): Gst.Caps;
+    function video_make_raw_caps_with_features(formats: VideoFormat[] | null, features: Gst.CapsFeatures | null): Gst.Caps;
 
     /**
      * Extract {@link GstVideo.VideoMasteringDisplayInfo} from `mastering`
@@ -3926,7 +3926,7 @@ export namespace GstVideo {
      * @returns The caps string representation of the mode, or NULL if invalid.
      * @since 1.6
      */
-    function video_multiview_mode_to_caps_string(mview_mode: VideoMultiviewMode): (string | null);
+    function video_multiview_mode_to_caps_string(mview_mode: VideoMultiviewMode): string | null;
 
     /**
      * Utility function that transforms the width/height/PAR
@@ -3975,7 +3975,7 @@ export namespace GstVideo {
      * @returns `true` if the `property_id` matches the GstVideoOverlay property
      * @since 1.14
      */
-    function video_overlay_set_property(object: GObject.Object, last_prop_id: number, property_id: number, value: (GObject.Value | any)): boolean;
+    function video_overlay_set_property(object: GObject.Object, last_prop_id: number, property_id: number, value: GObject.Value | any): boolean;
 
     function video_region_of_interest_meta_api_get_type(): GObject.GType;
 
@@ -4860,9 +4860,7 @@ export namespace GstVideo {
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends GObject.Object.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GObject.Object.ConstructorProps {}
     }
 
     /**
@@ -5159,8 +5157,8 @@ export namespace GstVideo {
 
         // Constructor properties interface
         interface ConstructorProps extends GstBase.AggregatorPad.ConstructorProps {
-            max_last_buffer_repeat: (bigint | number);
-            maxLastBufferRepeat: (bigint | number);
+            max_last_buffer_repeat: bigint | number;
+            maxLastBufferRepeat: bigint | number;
             repeat_after_eos: boolean;
             repeatAfterEos: boolean;
             zorder: number;
@@ -5179,13 +5177,13 @@ export namespace GstVideo {
          * @default 18446744073709551615
          */
         get max_last_buffer_repeat(): number;
-        set max_last_buffer_repeat(val: (bigint | number));
+        set max_last_buffer_repeat(val: bigint | number);
 
         /**
          * @default 18446744073709551615
          */
         get maxLastBufferRepeat(): number;
-        set maxLastBufferRepeat(val: (bigint | number));
+        set maxLastBufferRepeat(val: bigint | number);
 
         /**
          * @default false
@@ -5342,9 +5340,7 @@ export namespace GstVideo {
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends VideoAggregatorConvertPad.ConstructorProps {
-
-        }
+        interface ConstructorProps extends VideoAggregatorConvertPad.ConstructorProps {}
     }
 
     /**
@@ -5394,9 +5390,7 @@ export namespace GstVideo {
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends Gst.BufferPool.ConstructorProps {
-
-        }
+        interface ConstructorProps extends Gst.BufferPool.ConstructorProps {}
     }
 
     /**
@@ -5462,8 +5456,8 @@ export namespace GstVideo {
             discardCorruptedFrames: boolean;
             max_errors: number;
             maxErrors: number;
-            min_force_key_unit_interval: (bigint | number);
-            minForceKeyUnitInterval: (bigint | number);
+            min_force_key_unit_interval: bigint | number;
+            minForceKeyUnitInterval: bigint | number;
             qos: boolean;
         }
     }
@@ -5678,7 +5672,7 @@ export namespace GstVideo {
          * @default 0
          */
         get min_force_key_unit_interval(): number;
-        set min_force_key_unit_interval(val: (bigint | number));
+        set min_force_key_unit_interval(val: bigint | number);
 
         /**
          * Minimum interval between force-key-unit events sent upstream by the
@@ -5691,7 +5685,7 @@ export namespace GstVideo {
          * @default 0
          */
         get minForceKeyUnitInterval(): number;
-        set minForceKeyUnitInterval(val: (bigint | number));
+        set minForceKeyUnitInterval(val: bigint | number);
 
         /**
          * If set to `true` the decoder will handle QoS events received
@@ -5944,7 +5938,7 @@ export namespace GstVideo {
          * function, if possible at all.
          * @returns allocated buffer, or NULL if no buffer could be     allocated (e.g. when downstream is flushing or shutting down)
          */
-        allocate_output_buffer(): (Gst.Buffer | null);
+        allocate_output_buffer(): Gst.Buffer | null;
 
         /**
          * Helper function that allocates a buffer to hold a video frame for `decoder`'s
@@ -6020,7 +6014,7 @@ export namespace GstVideo {
         /**
          * @returns the instance of the {@link Gst.BufferPool} used by the decoder; free it after use it
          */
-        get_buffer_pool(): (Gst.BufferPool | null);
+        get_buffer_pool(): Gst.BufferPool | null;
 
         /**
          * @returns currently configured byte to time conversion setting
@@ -6032,7 +6026,7 @@ export namespace GstVideo {
          * @param frame_number system_frame_number of a frame
          * @returns pending unfinished {@link GstVideo.VideoCodecFrame} identified by `frame_number`.
          */
-        get_frame(frame_number: number): (VideoCodecFrame | null);
+        get_frame(frame_number: number): VideoCodecFrame | null;
 
         /**
          * Get all pending unfinished {@link GstVideo.VideoCodecFrame}
@@ -6086,13 +6080,13 @@ export namespace GstVideo {
          * Get the oldest pending unfinished {@link GstVideo.VideoCodecFrame}
          * @returns oldest pending unfinished {@link GstVideo.VideoCodecFrame}.
          */
-        get_oldest_frame(): (VideoCodecFrame | null);
+        get_oldest_frame(): VideoCodecFrame | null;
 
         /**
          * Get the {@link GstVideo.VideoCodecState} currently describing the output stream.
          * @returns {@link GstVideo.VideoCodecState} describing format of video data.
          */
-        get_output_state(): (VideoCodecState | null);
+        get_output_state(): VideoCodecState | null;
 
         /**
          * Queries whether input data is considered packetized or not by the
@@ -6158,7 +6152,7 @@ export namespace GstVideo {
          * @param tags a {@link Gst.TagList} to merge, or NULL to unset     previously-set tags
          * @param mode the {@link Gst.TagMergeMode} to use, usually #GST_TAG_MERGE_REPLACE
          */
-        merge_tags(tags: (Gst.TagList | null), mode: Gst.TagMergeMode): void;
+        merge_tags(tags: Gst.TagList | null, mode: Gst.TagMergeMode): void;
 
         /**
          * Negotiate with downstream elements to currently configured {@link GstVideo.VideoCodecState}.
@@ -6176,7 +6170,7 @@ export namespace GstVideo {
          * @param filter filter caps
          * @returns a {@link Gst.Caps} owned by caller
          */
-        proxy_getcaps(caps: (Gst.Caps | null), filter: (Gst.Caps | null)): Gst.Caps;
+        proxy_getcaps(caps: Gst.Caps | null, filter: Gst.Caps | null): Gst.Caps;
 
         /**
          * Similar to `gst_video_decoder_drop_frame()`, but simply releases `frame`
@@ -6231,7 +6225,7 @@ export namespace GstVideo {
          * @param reference An optional reference {@link GstVideo.VideoCodecState}
          * @returns the newly configured output state.
          */
-        set_interlaced_output_state(fmt: VideoFormat, interlace_mode: VideoInterlaceMode, width: number, height: number, reference: (VideoCodecState | null)): (VideoCodecState | null);
+        set_interlaced_output_state(fmt: VideoFormat, interlace_mode: VideoInterlaceMode, width: number, height: number, reference: VideoCodecState | null): VideoCodecState | null;
 
         /**
          * Lets {@link GstVideo.VideoDecoder} sub-classes tell the baseclass what the decoder latency
@@ -6298,7 +6292,7 @@ export namespace GstVideo {
          * @param reference An optional reference {@link GstVideo.VideoCodecState}
          * @returns the newly configured output state.
          */
-        set_output_state(fmt: VideoFormat, width: number, height: number, reference: (VideoCodecState | null)): (VideoCodecState | null);
+        set_output_state(fmt: VideoFormat, width: number, height: number, reference: VideoCodecState | null): VideoCodecState | null;
 
         /**
          * Allows baseclass to consider input data as packetized or not. If the
@@ -6351,8 +6345,8 @@ export namespace GstVideo {
 
         // Constructor properties interface
         interface ConstructorProps extends Gst.Element.ConstructorProps, Gst.Preset.ConstructorProps {
-            min_force_key_unit_interval: (bigint | number);
-            minForceKeyUnitInterval: (bigint | number);
+            min_force_key_unit_interval: bigint | number;
+            minForceKeyUnitInterval: bigint | number;
             qos: boolean;
         }
     }
@@ -6429,7 +6423,7 @@ export namespace GstVideo {
          * @default 0
          */
         get min_force_key_unit_interval(): number;
-        set min_force_key_unit_interval(val: (bigint | number));
+        set min_force_key_unit_interval(val: bigint | number);
 
         /**
          * Minimum interval between force-keyunit requests in nanoseconds. See
@@ -6438,7 +6432,7 @@ export namespace GstVideo {
          * @default 0
          */
         get minForceKeyUnitInterval(): number;
-        set minForceKeyUnitInterval(val: (bigint | number));
+        set minForceKeyUnitInterval(val: bigint | number);
 
         /**
          * @default false
@@ -6664,7 +6658,7 @@ export namespace GstVideo {
          * @param size size of the buffer
          * @returns allocated buffer
          */
-        allocate_output_buffer(size: (bigint | number)): Gst.Buffer;
+        allocate_output_buffer(size: bigint | number): Gst.Buffer;
 
         /**
          * Helper function that allocates a buffer to hold an encoded video frame for `encoder`'s
@@ -6677,7 +6671,7 @@ export namespace GstVideo {
          * @param size size of the buffer
          * @returns {@link Gst.FlowReturn.OK} if an output buffer could be allocated
          */
-        allocate_output_frame(frame: VideoCodecFrame, size: (bigint | number)): Gst.FlowReturn;
+        allocate_output_frame(frame: VideoCodecFrame, size: bigint | number): Gst.FlowReturn;
 
         /**
          * `frame` must have a valid encoded data buffer, whose metadata fields
@@ -6722,7 +6716,7 @@ export namespace GstVideo {
          * @param frame_number system_frame_number of a frame
          * @returns pending unfinished {@link GstVideo.VideoCodecFrame} identified by `frame_number`.
          */
-        get_frame(frame_number: number): (VideoCodecFrame | null);
+        get_frame(frame_number: number): VideoCodecFrame | null;
 
         /**
          * Get all pending unfinished {@link GstVideo.VideoCodecFrame}
@@ -6760,13 +6754,13 @@ export namespace GstVideo {
          * Get the oldest unfinished pending {@link GstVideo.VideoCodecFrame}
          * @returns oldest unfinished pending {@link GstVideo.VideoCodecFrame}
          */
-        get_oldest_frame(): (VideoCodecFrame | null);
+        get_oldest_frame(): VideoCodecFrame | null;
 
         /**
          * Get the current {@link GstVideo.VideoCodecState}
          * @returns {@link GstVideo.VideoCodecState} describing format of video data.
          */
-        get_output_state(): (VideoCodecState | null);
+        get_output_state(): VideoCodecState | null;
 
         /**
          * Checks if `encoder` is currently configured to handle Quality-of-Service
@@ -6787,7 +6781,7 @@ export namespace GstVideo {
          * @param tags a {@link Gst.TagList} to merge, or NULL to unset     previously-set tags
          * @param mode the {@link Gst.TagMergeMode} to use, usually #GST_TAG_MERGE_REPLACE
          */
-        merge_tags(tags: (Gst.TagList | null), mode: Gst.TagMergeMode): void;
+        merge_tags(tags: Gst.TagList | null, mode: Gst.TagMergeMode): void;
 
         /**
          * Negotiate with downstream elements to currently configured {@link GstVideo.VideoCodecState}.
@@ -6805,7 +6799,7 @@ export namespace GstVideo {
          * @param filter filter caps
          * @returns a {@link Gst.Caps} owned by caller
          */
-        proxy_getcaps(caps: (Gst.Caps | null), filter: (Gst.Caps | null)): Gst.Caps;
+        proxy_getcaps(caps: Gst.Caps | null, filter: Gst.Caps | null): Gst.Caps;
 
         /**
          * Set the codec headers to be sent downstream whenever requested.
@@ -6862,7 +6856,7 @@ export namespace GstVideo {
          * @param reference An optional reference `GstVideoCodecState`
          * @returns the newly configured output state.
          */
-        set_output_state(caps: Gst.Caps, reference: (VideoCodecState | null)): (VideoCodecState | null);
+        set_output_state(caps: Gst.Caps, reference: VideoCodecState | null): VideoCodecState | null;
 
         /**
          * Configures `encoder` to handle Quality-of-Service events from downstream.
@@ -6937,7 +6931,7 @@ export namespace GstVideo {
          * @param value new value
          * @returns `true` for success, `false` if e.g. there is no preset with that `name`
          */
-        set_meta(name: string, tag: string, value: (string | null)): boolean;
+        set_meta(name: string, tag: string, value: string | null): boolean;
 
         /**
          * Delete the given preset.
@@ -7000,7 +6994,7 @@ export namespace GstVideo {
          * @param value new value
          * @virtual
          */
-        vfunc_set_meta(name: string, tag: string, value: (string | null)): boolean;
+        vfunc_set_meta(name: string, tag: string, value: string | null): boolean;
 
         /**
          * Increases the reference count of `object`.
@@ -7041,9 +7035,7 @@ export namespace GstVideo {
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends GstBase.BaseTransform.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GstBase.BaseTransform.ConstructorProps {}
     }
 
     /**
@@ -7118,8 +7110,7 @@ export namespace GstVideo {
 
     namespace VideoMultiviewFlagsSet {
         // Signal signatures
-        interface SignalSignatures extends Gst.FlagSet.SignalSignatures {
-        }
+        interface SignalSignatures extends Gst.FlagSet.SignalSignatures {}
     }
 
     /**
@@ -7769,7 +7760,7 @@ export namespace GstVideo {
          * Make a string representation of `cinfo`.
          * @returns a string representation of `cinfo` or `null` if all the entries of `cinfo` are unknown values.
          */
-        to_string(): (string | null);
+        to_string(): string | null;
     }
 
 
@@ -8312,7 +8303,7 @@ export namespace GstVideo {
          * @param dest_format {@link Gst.Format} of the `dest_value`
          * @returns TRUE if the conversion was successful.
          */
-        convert(src_format: Gst.Format, src_value: (bigint | number), dest_format: Gst.Format): [boolean, number];
+        convert(src_format: Gst.Format, src_value: bigint | number, dest_format: Gst.Format): [boolean, number];
 
         /**
          * Copy a GstVideoInfo structure.
@@ -8407,7 +8398,7 @@ export namespace GstVideo {
          * @param info a {@link GstVideo.VideoInfo}
          * @param modifier the associated modifier value.
          */
-        static from_video_info(info: VideoInfo, modifier: (bigint | number)): [boolean, VideoInfoDmaDrm];
+        static from_video_info(info: VideoInfo, modifier: bigint | number): [boolean, VideoInfoDmaDrm];
 
         /**
          * Initialize `drm_info` with default values.
@@ -8428,7 +8419,7 @@ export namespace GstVideo {
          * composed of a drm fourcc and a modifier, such as NV12:0x0100000000000002.
          * @returns a new {@link Gst.Caps} containing the info in `drm_info`.
          */
-        to_caps(): (Gst.Caps | null);
+        to_caps(): Gst.Caps | null;
 
         /**
          * Convert the {@link GstVideo.VideoInfoDmaDrm} into a traditional {@link GstVideo.VideoInfo} with
@@ -8678,9 +8669,9 @@ export namespace GstVideo {
         static $gtype: GObject.GType<VideoOverlayComposition>;
 
         // Constructors
-        constructor(rectangle: (VideoOverlayRectangle | null));
+        constructor(rectangle: VideoOverlayRectangle | null);
 
-        static ["new"](rectangle: (VideoOverlayRectangle | null)): VideoOverlayComposition;
+        static ["new"](rectangle: VideoOverlayRectangle | null): VideoOverlayComposition;
 
         // Methods
         /**
@@ -8716,7 +8707,7 @@ export namespace GstVideo {
          * @param n number of the rectangle to get
          * @returns the `n`-th rectangle, or NULL if `n` is out of     bounds. Will not return a new reference, the caller will need to     obtain her own reference using `gst_video_overlay_rectangle_ref()`     if needed.
          */
-        get_rectangle(n: number): (VideoOverlayRectangle | null);
+        get_rectangle(n: number): VideoOverlayRectangle | null;
 
         /**
          * Returns the sequence number of this composition. Sequence numbers are
@@ -8982,7 +8973,7 @@ export namespace GstVideo {
          * @param name a name.
          * @returns a {@link Gst.Structure}
          */
-        get_param(name: string): (Gst.Structure | null);
+        get_param(name: string): Gst.Structure | null;
     }
 
 
@@ -9238,7 +9229,7 @@ export namespace GstVideo {
          * contain valid data, as verified by `gst_video_time_code_is_valid()`.
          * @param frames How many frames to add or subtract
          */
-        add_frames(frames: (bigint | number)): void;
+        add_frames(frames: bigint | number): void;
 
         /**
          * This makes a component-wise addition of `tc_inter` to `tc`. For example,
@@ -9251,7 +9242,7 @@ export namespace GstVideo {
          * @param tc_inter The {@link GstVideo.VideoTimeCodeInterval} to add to `tc`. The interval must contain valid values, except that for drop-frame timecode, it may also contain timecodes which would normally be dropped. These are then corrected to the next reasonable timecode.
          * @returns A new {@link GstVideo.VideoTimeCode} with `tc_inter` added or `null`   if the interval can't be added.
          */
-        add_interval(tc_inter: VideoTimeCodeInterval): (VideoTimeCode | null);
+        add_interval(tc_inter: VideoTimeCodeInterval): VideoTimeCode | null;
 
         /**
          * Initializes `tc` with empty/zero/NULL values and frees any memory
@@ -9305,7 +9296,7 @@ export namespace GstVideo {
          * @param frames the frames field of {@link GstVideo.VideoTimeCode}
          * @param field_count Interlaced video field count
          */
-        init(fps_n: number, fps_d: number, latest_daily_jam: (GLib.DateTime | null), flags: VideoTimeCodeFlags, hours: number, minutes: number, seconds: number, frames: number, field_count: number): void;
+        init(fps_n: number, fps_d: number, latest_daily_jam: GLib.DateTime | null, flags: VideoTimeCodeFlags, hours: number, minutes: number, seconds: number, frames: number, field_count: number): void;
 
         /**
          * The resulting config->latest_daily_jam is set to midnight, and timecode is
@@ -9347,7 +9338,7 @@ export namespace GstVideo {
          * The `tc`.config->latest_daily_jam is required to be non-NULL.
          * @returns the {@link GLib.DateTime} representation of `tc` or `null` if `tc`   has no daily jam.
          */
-        to_date_time(): (GLib.DateTime | null);
+        to_date_time(): GLib.DateTime | null;
 
         /**
          * @returns the SMPTE ST 2059-1:2015 string representation of `tc`. That will take the form hh:mm:ss:ff. The last separator (between seconds and frames) may vary: ';' for drop-frame, non-interlaced content and for drop-frame interlaced field 2 ',' for drop-frame interlaced field 1 ':' for non-drop-frame, non-interlaced content and for non-drop-frame interlaced field 2 '.' for non-drop-frame interlaced field 1
@@ -9479,7 +9470,7 @@ export namespace GstVideo {
          * @param data The user data content of the Ancillary packet.    Does not contain the ADF, DID, SDID nor CS.
          * @returns `true` if enough space was left in the current line, `false`          otherwise.
          */
-        add_ancillary(composite: boolean, DID: number, SDID_block_number: number, data: (Uint8Array | string)): boolean;
+        add_ancillary(composite: boolean, DID: number, SDID_block_number: number, data: Uint8Array | string): boolean;
 
         copy(): VideoVBIEncoder;
 
@@ -9515,7 +9506,7 @@ export namespace GstVideo {
          * to get the Ancillary data that might be present on that line.
          * @param data The line of data to parse
          */
-        add_line(data: (Uint8Array | string)): void;
+        add_line(data: Uint8Array | string): void;
 
         copy(): VideoVBIParser;
 
@@ -9591,9 +9582,7 @@ export namespace GstVideo {
 
 
         // Constructor properties interface
-        interface ConstructorProps extends GObject.Object.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GObject.Object.ConstructorProps {}
     }
 
     export interface ColorBalanceNamespace {
@@ -9688,9 +9677,7 @@ export namespace GstVideo {
 
 
         // Constructor properties interface
-        interface ConstructorProps extends GObject.Object.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GObject.Object.ConstructorProps {}
     }
 
     export interface NavigationNamespace {
@@ -10148,9 +10135,7 @@ export namespace GstVideo {
 
 
         // Constructor properties interface
-        interface ConstructorProps extends GObject.Object.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GObject.Object.ConstructorProps {}
     }
 
     export interface VideoOrientationNamespace {
@@ -10278,9 +10263,7 @@ export namespace GstVideo {
 
 
         // Constructor properties interface
-        interface ConstructorProps extends GObject.Object.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GObject.Object.ConstructorProps {}
     }
 
     export interface VideoOverlayNamespace {
@@ -10309,7 +10292,7 @@ export namespace GstVideo {
         * @param property_id The property ID
         * @param value The {@link GObject.Value} to be set
         */
-        set_property(object: GObject.Object, last_prop_id: number, property_id: number, value: (GObject.Value | any)): boolean;
+        set_property(object: GObject.Object, last_prop_id: number, property_id: number, value: GObject.Value | any): boolean;
     }
     /**
      * The {@link GstVideo.VideoOverlay} interface is used for 2 main purposes :
@@ -10593,7 +10576,7 @@ export namespace GstVideo {
          * This function should only be used by video overlay plugin developers.
          * @param handle a platform-specific handle referencing the window
          */
-        got_window_handle(handle: (bigint | number)): void;
+        got_window_handle(handle: bigint | number): void;
 
         /**
          * Tell an overlay that it should handle events from the window system. These
@@ -10641,7 +10624,7 @@ export namespace GstVideo {
          * tell the overlay to stop using that window and create an internal one.
          * @param handle a handle referencing the window.
          */
-        set_window_handle(handle: (bigint | number)): void;
+        set_window_handle(handle: bigint | number): void;
     }
 
 

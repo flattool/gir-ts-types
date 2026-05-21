@@ -91,7 +91,7 @@ export namespace GCab {
         static INVALID_DATA: number;
 
         // Constructors
-        constructor(options: { message: string, code: number });
+        constructor(options: { message: string; code: number });
     }
 
 
@@ -152,8 +152,8 @@ export namespace GCab {
 
         // Constructor properties interface
         interface ConstructorProps extends GObject.Object.ConstructorProps {
-            reserved: (Uint8Array | string);
-            signature: (Uint8Array | string);
+            reserved: Uint8Array | string;
+            signature: Uint8Array | string;
         }
     }
 
@@ -166,10 +166,10 @@ export namespace GCab {
 
         // Properties
         get reserved(): Uint8Array;
-        set reserved(val: (Uint8Array | string));
+        set reserved(val: Uint8Array | string);
 
         get signature(): Uint8Array;
-        set signature(val: (Uint8Array | string));
+        set signature(val: Uint8Array | string);
 
         /**
          * Compile-time signal type information.
@@ -227,7 +227,7 @@ export namespace GCab {
          * @param cancellable optional {@link Gio.Cancellable} object,     `null` to ignore
          * @returns `true` on success.
          */
-        extract(path: (Gio.File | null), file_callback: (FileCallback | null), progress_callback: (Gio.FileProgressCallback | null), cancellable: (Gio.Cancellable | null)): boolean;
+        extract(path: Gio.File | null, file_callback: FileCallback | null, progress_callback: Gio.FileProgressCallback | null, cancellable: Gio.Cancellable | null): boolean;
 
         /**
          * Extract files to given path.
@@ -236,7 +236,7 @@ export namespace GCab {
          * @param cancellable optional {@link Gio.Cancellable} object,     `null` to ignore
          * @returns `true` on success.
          */
-        extract_simple(path: Gio.File, file_callback: (FileCallback | null), cancellable: (Gio.Cancellable | null)): boolean;
+        extract_simple(path: Gio.File, file_callback: FileCallback | null, cancellable: Gio.Cancellable | null): boolean;
 
         /**
          * Get the Cabinet folders within the `cabinet`.
@@ -251,7 +251,7 @@ export namespace GCab {
          * @param cancellable optional {@link Gio.Cancellable} object,     `null` to ignore
          * @returns the array containing the PKCS#7 signed data or `null` on error.
          */
-        get_signature(cancellable: (Gio.Cancellable | null)): Uint8Array;
+        get_signature(cancellable: Gio.Cancellable | null): Uint8Array;
 
         /**
          * Get the size of the compressed cabinet file.
@@ -265,7 +265,7 @@ export namespace GCab {
          * @param cancellable optional {@link Gio.Cancellable} object,     `null` to ignore
          * @returns `true` on success
          */
-        load(stream: Gio.InputStream, cancellable: (Gio.Cancellable | null)): boolean;
+        load(stream: Gio.InputStream, cancellable: Gio.Cancellable | null): boolean;
 
         /**
          * Save `cabinet` to the output stream `out`. `out` must be a {@link Gio.Seekable}.
@@ -275,7 +275,7 @@ export namespace GCab {
          * @param cancellable optional {@link Gio.Cancellable} object,     `null` to ignore
          * @returns `true` on success.
          */
-        write(stream: Gio.OutputStream, file_callback: (FileCallback | null), progress_callback: (Gio.FileProgressCallback | null), cancellable: (Gio.Cancellable | null)): boolean;
+        write(stream: Gio.OutputStream, file_callback: FileCallback | null, progress_callback: Gio.FileProgressCallback | null, cancellable: Gio.Cancellable | null): boolean;
 
         /**
          * Save `cabinet` to the output stream `out`. `out` must be a {@link Gio.Seekable}.
@@ -284,7 +284,7 @@ export namespace GCab {
          * @param cancellable optional {@link Gio.Cancellable} object,     `null` to ignore
          * @returns `true` on success.
          */
-        write_simple(stream: Gio.OutputStream, file_callback: (FileCallback | null), cancellable: (Gio.Cancellable | null)): boolean;
+        write_simple(stream: Gio.OutputStream, file_callback: FileCallback | null, cancellable: Gio.Cancellable | null): boolean;
     }
 
 
@@ -298,7 +298,7 @@ export namespace GCab {
 
         // Constructor properties interface
         interface ConstructorProps extends GObject.Object.ConstructorProps {
-            bytes: (GLib.Bytes | Uint8Array);
+            bytes: GLib.Bytes | Uint8Array;
             file: Gio.File;
             name: string;
         }
@@ -313,7 +313,7 @@ export namespace GCab {
 
         // Properties
         get bytes(): GLib.Bytes;
-        set bytes(val: (GLib.Bytes | Uint8Array));
+        set bytes(val: GLib.Bytes | Uint8Array);
 
         get file(): Gio.File;
         set file(val: Gio.File);
@@ -338,7 +338,7 @@ export namespace GCab {
 
         _init(...args: any[]): void;
 
-        static new_with_bytes(name: string, bytes: (GLib.Bytes | Uint8Array)): File;
+        static new_with_bytes(name: string, bytes: GLib.Bytes | Uint8Array): File;
 
         static new_with_file(name: string, file: Gio.File): File;
 
@@ -386,7 +386,7 @@ export namespace GCab {
          * Get the file name to use for extraction, or `null`.
          * @returns a file name
          */
-        get_extract_name(): (string | null);
+        get_extract_name(): string | null;
 
         /**
          * If the cabinet is being created, get the {@link Gio.File} associated with
@@ -423,7 +423,7 @@ export namespace GCab {
          * `gcab_file_new_with_bytes()` and the data needs to be modified.
          * @param bytes a {@link GLib.Bytes}
          */
-        set_bytes(bytes: (GLib.Bytes | Uint8Array)): void;
+        set_bytes(bytes: GLib.Bytes | Uint8Array): void;
 
         /**
          * Sets the file modification date, instead of the value provided by the GFile.
@@ -442,7 +442,7 @@ export namespace GCab {
          * provided by the Cabinet.
          * @param name a file name or `null`
          */
-        set_extract_name(name: (string | null)): void;
+        set_extract_name(name: string | null): void;
     }
 
 
@@ -458,7 +458,7 @@ export namespace GCab {
         interface ConstructorProps extends GObject.Object.ConstructorProps {
             compression: Compression;
             comptype: number;
-            reserved: (Uint8Array | string);
+            reserved: Uint8Array | string;
         }
     }
 
@@ -483,7 +483,7 @@ export namespace GCab {
         get comptype(): number;
 
         get reserved(): Uint8Array;
-        set reserved(val: (Uint8Array | string));
+        set reserved(val: Uint8Array | string);
 
         /**
          * Compile-time signal type information.
@@ -522,7 +522,7 @@ export namespace GCab {
          * @param cancellable optional {@link Gio.Cancellable} object,     `null` to ignore
          * @returns `true` on succes
          */
-        add_file(cabfile: File, recurse: boolean, cancellable: (Gio.Cancellable | null)): boolean;
+        add_file(cabfile: File, recurse: boolean, cancellable: Gio.Cancellable | null): boolean;
 
         /**
          * Returns the compression used in this folder.

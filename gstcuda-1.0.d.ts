@@ -123,7 +123,7 @@ export namespace GstCuda {
      * @returns the currently configured {@link GstCuda.CudaStream} on `config` or `null` if `config` doesn't hold {@link GstCuda.CudaStream}
      * @since 1.24
      */
-    function buffer_pool_config_get_cuda_stream(config: Gst.Structure): (CudaStream | null);
+    function buffer_pool_config_get_cuda_stream(config: Gst.Structure): CudaStream | null;
 
     /**
      * Sets allocation method
@@ -176,7 +176,7 @@ export namespace GstCuda {
      * @returns Whether the `query` was successfully responded to from the passed          `context`.
      * @since 1.22
      */
-    function cuda_handle_context_query(element: Gst.Element, query: Gst.Query, cuda_ctx: (CudaContext | null)): boolean;
+    function cuda_handle_context_query(element: Gst.Element, query: Gst.Query, cuda_ctx: CudaContext | null): boolean;
 
     /**
      * Helper function for implementing {@link Gst.ElementClass}.set_context() in
@@ -261,9 +261,7 @@ export namespace GstCuda {
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends Gst.Allocator.ConstructorProps {
-
-        }
+        interface ConstructorProps extends Gst.Allocator.ConstructorProps {}
     }
 
     /**
@@ -321,7 +319,7 @@ export namespace GstCuda {
          * @param info a {@link GstVideo.VideoInfo}
          * @returns a newly allocated {@link GstCuda.CudaMemory}
          */
-        alloc(context: CudaContext, stream: (CudaStream | null), info: GstVideo.VideoInfo): (Gst.Memory | null);
+        alloc(context: CudaContext, stream: CudaStream | null, info: GstVideo.VideoInfo): Gst.Memory | null;
 
         /**
          * @param args 
@@ -346,7 +344,7 @@ export namespace GstCuda {
          * @param notify Called with `user_data` when the memory is freed
          * @returns a new {@link Gst.Memory}
          */
-        alloc_wrapped(context: CudaContext, stream: (CudaStream | null), info: GstVideo.VideoInfo, dev_ptr: CudaGst.deviceptr, notify: (GLib.DestroyNotify | null)): Gst.Memory;
+        alloc_wrapped(context: CudaContext, stream: CudaStream | null, info: GstVideo.VideoInfo, dev_ptr: CudaGst.deviceptr, notify: GLib.DestroyNotify | null): Gst.Memory;
 
         /**
          * Controls the active state of `allocator`. Default {@link GstCuda.CudaAllocator} is
@@ -369,7 +367,7 @@ export namespace GstCuda {
          * @param granularity_flags allocation flags
          * @returns a newly allocated memory object or `null` if allocation is not supported
          */
-        virtual_alloc(context: CudaContext, stream: CudaStream, info: GstVideo.VideoInfo, prop: CudaGst.memAllocationProp, granularity_flags: CudaGst.memAllocationGranularity_flags): (Gst.Memory | null);
+        virtual_alloc(context: CudaContext, stream: CudaStream, info: GstVideo.VideoInfo, prop: CudaGst.memAllocationProp, granularity_flags: CudaGst.memAllocationGranularity_flags): Gst.Memory | null;
     }
 
 
@@ -381,9 +379,7 @@ export namespace GstCuda {
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends Gst.BufferPool.ConstructorProps {
-
-        }
+        interface ConstructorProps extends Gst.BufferPool.ConstructorProps {}
     }
 
     /**
@@ -583,9 +579,7 @@ export namespace GstCuda {
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends CudaAllocator.ConstructorProps {
-
-        }
+        interface ConstructorProps extends CudaAllocator.ConstructorProps {}
     }
 
     /**
@@ -613,9 +607,9 @@ export namespace GstCuda {
 
         _init(...args: any[]): void;
 
-        static ["new"](context: CudaContext, stream: (CudaStream | null), info: GstVideo.VideoInfo): CudaPoolAllocator;
+        static ["new"](context: CudaContext, stream: CudaStream | null, info: GstVideo.VideoInfo): CudaPoolAllocator;
 
-        static new_for_virtual_memory(context: CudaContext, stream: (CudaStream | null), info: GstVideo.VideoInfo, prop: CudaGst.memAllocationProp, granularity_flags: CudaGst.memAllocationGranularity_flags): CudaPoolAllocator;
+        static new_for_virtual_memory(context: CudaContext, stream: CudaStream | null, info: GstVideo.VideoInfo, prop: CudaGst.memAllocationProp, granularity_flags: CudaGst.memAllocationGranularity_flags): CudaPoolAllocator;
 
         // Signals
         /** @signal */
@@ -747,7 +741,7 @@ export namespace GstCuda {
          * Gets CUDA stream object associated with `mem`
          * @returns a {@link GstCuda.CudaStream} or `null` if default CUDA stream is in use
          */
-        get_stream(): (CudaStream | null);
+        get_stream(): CudaStream | null;
 
         /**
          * Creates CUtexObject with given parameters
@@ -762,7 +756,7 @@ export namespace GstCuda {
          * @param token an user token
          * @returns user data pointer or `null`
          */
-        get_token_data(token: (bigint | number)): null;
+        get_token_data(token: bigint | number): null;
 
         /**
          * Gets user data pointer stored via `gst_cuda_allocator_alloc_wrapped()`
@@ -775,7 +769,7 @@ export namespace GstCuda {
          * @param token an user token
          * @param data an user data
          */
-        set_token_data(token: (bigint | number), data: null): void;
+        set_token_data(token: bigint | number, data: null): void;
 
         /**
          * Performs synchronization if needed

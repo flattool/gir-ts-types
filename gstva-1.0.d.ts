@@ -253,9 +253,7 @@ export namespace GstVa {
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends Gst.Allocator.ConstructorProps {
-
-        }
+        interface ConstructorProps extends Gst.Allocator.ConstructorProps {}
     }
 
     /**
@@ -546,9 +544,7 @@ export namespace GstVa {
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends VaDisplay.ConstructorProps {
-
-        }
+        interface ConstructorProps extends VaDisplay.ConstructorProps {}
     }
 
     /**
@@ -599,9 +595,7 @@ export namespace GstVa {
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends Gst.Allocator.ConstructorProps {
-
-        }
+        interface ConstructorProps extends Gst.Allocator.ConstructorProps {}
     }
 
     /**
@@ -695,9 +689,7 @@ export namespace GstVa {
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends Gst.BufferPool.ConstructorProps {
-
-        }
+        interface ConstructorProps extends Gst.BufferPool.ConstructorProps {}
     }
 
     /**

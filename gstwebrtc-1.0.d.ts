@@ -224,7 +224,7 @@ export namespace GstWebRTC {
         static TYPE_ERROR: number;
 
         // Constructors
-        constructor(options: { message: string, code: number });
+        constructor(options: { message: string; code: number });
 
         // Static methods
         static quark(): GLib.Quark;
@@ -855,12 +855,12 @@ export namespace GstWebRTC {
              * @signal
              * @run-last
              */
-            "on-message-data": (arg0: (GLib.Bytes | null)) => void;
+            "on-message-data": (arg0: GLib.Bytes | null) => void;
             /**
              * @signal
              * @run-last
              */
-            "on-message-string": (arg0: (string | null)) => void;
+            "on-message-string": (arg0: string | null) => void;
             /**
              * @signal
              * @run-last
@@ -871,13 +871,13 @@ export namespace GstWebRTC {
              * @action
              * @run-last
              */
-            "send-data": (arg0: (GLib.Bytes | null)) => void;
+            "send-data": (arg0: GLib.Bytes | null) => void;
             /**
              * @signal
              * @action
              * @run-last
              */
-            "send-string": (arg0: (string | null)) => void;
+            "send-string": (arg0: string | null) => void;
             "notify::buffered-amount": (pspec: GObject.ParamSpec) => void;
             "notify::buffered-amount-low-threshold": (pspec: GObject.ParamSpec) => void;
             "notify::id": (pspec: GObject.ParamSpec) => void;
@@ -893,10 +893,10 @@ export namespace GstWebRTC {
 
         // Constructor properties interface
         interface ConstructorProps extends GObject.Object.ConstructorProps {
-            buffered_amount: (bigint | number);
-            bufferedAmount: (bigint | number);
-            buffered_amount_low_threshold: (bigint | number);
-            bufferedAmountLowThreshold: (bigint | number);
+            buffered_amount: bigint | number;
+            bufferedAmount: bigint | number;
+            buffered_amount_low_threshold: bigint | number;
+            bufferedAmountLowThreshold: bigint | number;
             id: number;
             label: string;
             max_packet_lifetime: number;
@@ -936,13 +936,13 @@ export namespace GstWebRTC {
          * @default 0
          */
         get buffered_amount_low_threshold(): number;
-        set buffered_amount_low_threshold(val: (bigint | number));
+        set buffered_amount_low_threshold(val: bigint | number);
 
         /**
          * @default 0
          */
         get bufferedAmountLowThreshold(): number;
-        set bufferedAmountLowThreshold(val: (bigint | number));
+        set bufferedAmountLowThreshold(val: bigint | number);
 
         /**
          * @construct-only
@@ -1052,27 +1052,27 @@ export namespace GstWebRTC {
          * Send `data` as a data message over `channel`.
          * @param data a {@link GLib.Bytes} or `null`
          */
-        send_data(data: (GLib.Bytes | null)): void;
+        send_data(data: GLib.Bytes | null): void;
 
         /**
          * Send `data` as a data message over `channel`.
          * @param data a {@link GLib.Bytes} or `null`
          * @returns TRUE if `channel` is open and data could be queued
          */
-        send_data_full(data: (GLib.Bytes | null)): boolean;
+        send_data_full(data: GLib.Bytes | null): boolean;
 
         /**
          * Send `str` as a string message over `channel`.
          * @param str a string or `null`
          */
-        send_string(str: (string | null)): void;
+        send_string(str: string | null): void;
 
         /**
          * Send `str` as a string message over `channel`.
          * @param str a string or `null`
          * @returns TRUE if `channel` is open and data could be queued
          */
-        send_string_full(str: (string | null)): boolean;
+        send_string_full(str: string | null): boolean;
     }
 
 
@@ -1087,7 +1087,7 @@ export namespace GstWebRTC {
              * @action
              * @run-last
              */
-            "add-local-ip-address": (arg0: string) => (boolean | void);
+            "add-local-ip-address": (arg0: string) => boolean | void;
             "notify::max-rtp-port": (pspec: GObject.ParamSpec) => void;
             "notify::min-rtp-port": (pspec: GObject.ParamSpec) => void;
             "notify::name": (pspec: GObject.ParamSpec) => void;
@@ -1186,13 +1186,13 @@ export namespace GstWebRTC {
          * @param promise A {@link Gst.Promise} for task notifications (Since: 1.24)
          * @virtual
          */
-        vfunc_add_candidate(stream: WebRTCICEStream, candidate: string, promise: (Gst.Promise | null)): void;
+        vfunc_add_candidate(stream: WebRTCICEStream, candidate: string, promise: Gst.Promise | null): void;
 
         /**
          * @param session_id The session id
          * @virtual
          */
-        vfunc_add_stream(session_id: number): (WebRTCICEStream | null);
+        vfunc_add_stream(session_id: number): WebRTCICEStream | null;
 
         /**
          * @param uri URI of the TURN server
@@ -1205,7 +1205,7 @@ export namespace GstWebRTC {
          * @param component The {@link GstWebRTC.WebRTCICEComponent}
          * @virtual
          */
-        vfunc_find_transport(stream: WebRTCICEStream, component: WebRTCICEComponent): (WebRTCICETransport | null);
+        vfunc_find_transport(stream: WebRTCICEStream, component: WebRTCICEComponent): WebRTCICETransport | null;
 
         /**
          * @param stream The {@link GstWebRTC.WebRTCICEStream}
@@ -1245,12 +1245,12 @@ export namespace GstWebRTC {
         /**
          * @virtual
          */
-        vfunc_get_stun_server(): (string | null);
+        vfunc_get_stun_server(): string | null;
 
         /**
          * @virtual
          */
-        vfunc_get_turn_server(): (string | null);
+        vfunc_get_turn_server(): string | null;
 
         /**
          * @param force_relay TRUE to enable force relay
@@ -1297,7 +1297,7 @@ export namespace GstWebRTC {
          * @param uri URI of the STUN server
          * @virtual
          */
-        vfunc_set_stun_server(uri: (string | null)): void;
+        vfunc_set_stun_server(uri: string | null): void;
 
         /**
          * @param stream The {@link GstWebRTC.WebRTCICEStream}
@@ -1310,7 +1310,7 @@ export namespace GstWebRTC {
          * @param uri URI of the TURN sever
          * @virtual
          */
-        vfunc_set_turn_server(uri: (string | null)): void;
+        vfunc_set_turn_server(uri: string | null): void;
 
         // Methods
         /**
@@ -1318,13 +1318,13 @@ export namespace GstWebRTC {
          * @param candidate The ICE candidate
          * @param promise A {@link Gst.Promise} for task notifications (Since: 1.24)
          */
-        add_candidate(stream: WebRTCICEStream, candidate: string, promise: (Gst.Promise | null)): void;
+        add_candidate(stream: WebRTCICEStream, candidate: string, promise: Gst.Promise | null): void;
 
         /**
          * @param session_id The session id
          * @returns The {@link GstWebRTC.WebRTCICEStream}, or `null`
          */
-        add_stream(session_id: number): (WebRTCICEStream | null);
+        add_stream(session_id: number): WebRTCICEStream | null;
 
         /**
          * @param uri URI of the TURN server
@@ -1337,7 +1337,7 @@ export namespace GstWebRTC {
          * @param component The {@link GstWebRTC.WebRTCICEComponent}
          * @returns The {@link GstWebRTC.WebRTCICETransport}, or `null`
          */
-        find_transport(stream: WebRTCICEStream, component: WebRTCICEComponent): (WebRTCICETransport | null);
+        find_transport(stream: WebRTCICEStream, component: WebRTCICEComponent): WebRTCICETransport | null;
 
         /**
          * @param stream The {@link GstWebRTC.WebRTCICEStream}
@@ -1376,12 +1376,12 @@ export namespace GstWebRTC {
         /**
          * @returns URI of the STUN sever
          */
-        get_stun_server(): (string | null);
+        get_stun_server(): string | null;
 
         /**
          * @returns URI of the TURN sever
          */
-        get_turn_server(): (string | null);
+        get_turn_server(): string | null;
 
         /**
          * @param force_relay TRUE to enable force relay
@@ -1423,7 +1423,7 @@ export namespace GstWebRTC {
         /**
          * @param uri URI of the STUN server
          */
-        set_stun_server(uri: (string | null)): void;
+        set_stun_server(uri: string | null): void;
 
         /**
          * @param stream The {@link GstWebRTC.WebRTCICEStream}
@@ -1434,7 +1434,7 @@ export namespace GstWebRTC {
         /**
          * @param uri URI of the TURN sever
          */
-        set_turn_server(uri: (string | null)): void;
+        set_turn_server(uri: string | null): void;
     }
 
 
@@ -1505,7 +1505,7 @@ export namespace GstWebRTC {
          * @param component The {@link GstWebRTC.WebRTCICEComponent}
          * @virtual
          */
-        vfunc_find_transport(component: WebRTCICEComponent): (WebRTCICETransport | null);
+        vfunc_find_transport(component: WebRTCICEComponent): WebRTCICETransport | null;
 
         /**
          * @virtual
@@ -1517,7 +1517,7 @@ export namespace GstWebRTC {
          * @param component The {@link GstWebRTC.WebRTCICEComponent}
          * @returns the {@link GstWebRTC.WebRTCICETransport}, or `null`
          */
-        find_transport(component: WebRTCICEComponent): (WebRTCICETransport | null);
+        find_transport(component: WebRTCICEComponent): WebRTCICETransport | null;
 
         /**
          * @returns FALSE on error, TRUE otherwise
@@ -1950,8 +1950,8 @@ export namespace GstWebRTC {
         interface ConstructorProps extends Gst.Object.ConstructorProps {
             max_channels: number;
             maxChannels: number;
-            max_message_size: (bigint | number);
-            maxMessageSize: (bigint | number);
+            max_message_size: bigint | number;
+            maxMessageSize: bigint | number;
             state: WebRTCSCTPTransportState;
             transport: WebRTCDTLSTransport;
         }

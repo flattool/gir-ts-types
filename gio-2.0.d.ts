@@ -418,7 +418,7 @@ export const _LocalFilePrototype: typeof File.prototype;
         static PROPERTY_READ_ONLY: number;
 
         // Constructors
-        constructor(options: { message: string, code: number });
+        constructor(options: { message: string; code: number });
 
         // Static methods
         /**
@@ -446,7 +446,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * `g_dbus_error_strip_remote_error()` has been used on `error`.
          * @param error a {@link GLib.Error}
          */
-        static get_remote_error(error: GLib.Error): (string | null);
+        static get_remote_error(error: GLib.Error): string | null;
 
         /**
          * Checks if `error` represents an error received via D-Bus from a remote peer. If so,
@@ -510,7 +510,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param quark_volatile A pointer where to store the {@link GLib.Quark}.
          * @param entries A pointer to `num_entries` {@link Gio.DBusErrorEntry} struct items.
          */
-        static register_error_domain(error_domain_quark_name: string, quark_volatile: (bigint | number), entries: DBusErrorEntry[]): void;
+        static register_error_domain(error_domain_quark_name: string, quark_volatile: bigint | number, entries: DBusErrorEntry[]): void;
 
         /**
          * Does nothing if `error` is `null`. Otherwise sets `*error` to
@@ -522,7 +522,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param format `printf()`-style format to prepend to `dbus_error_message` or `null`.
          * @param ___ Arguments for `format`.
          */
-        static set_dbus_error(error: GLib.Error, dbus_error_name: string, dbus_error_message: string, format: (string | null), ___: any[]): void;
+        static set_dbus_error(error: GLib.Error, dbus_error_name: string, dbus_error_message: string, format: string | null, ___: any[]): void;
 
         /**
          * Like `g_dbus_error_set_dbus_error()` but intended for language bindings.
@@ -532,7 +532,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param format `printf()`-style format to prepend to `dbus_error_message` or `null`.
          * @param var_args Arguments for `format`.
          */
-        static set_dbus_error_valist(error: GLib.Error, dbus_error_name: string, dbus_error_message: string, format: (string | null), var_args: any): void;
+        static set_dbus_error_valist(error: GLib.Error, dbus_error_name: string, dbus_error_message: string, format: string | null, var_args: any): void;
 
         /**
          * Looks for extra information in the error message used to recover
@@ -1329,7 +1329,7 @@ export const _LocalFilePrototype: typeof File.prototype;
         static DESTINATION_UNSET: number;
 
         // Constructors
-        constructor(options: { message: string, code: number });
+        constructor(options: { message: string; code: number });
     }
 
 
@@ -1604,7 +1604,7 @@ export const _LocalFilePrototype: typeof File.prototype;
         static INTERNAL: number;
 
         // Constructors
-        constructor(options: { message: string, code: number });
+        constructor(options: { message: string; code: number });
 
         // Static methods
         /**
@@ -1699,7 +1699,7 @@ export const _LocalFilePrototype: typeof File.prototype;
         static INTERNAL: number;
 
         // Constructors
-        constructor(options: { message: string, code: number });
+        constructor(options: { message: string; code: number });
 
         // Static methods
         /**
@@ -2015,7 +2015,7 @@ export const _LocalFilePrototype: typeof File.prototype;
         static GENERAL_ERROR: number;
 
         // Constructors
-        constructor(options: { message: string, code: number });
+        constructor(options: { message: string; code: number });
 
         // Static methods
         /**
@@ -2151,7 +2151,7 @@ export const _LocalFilePrototype: typeof File.prototype;
         static BAD_CERTIFICATE_PASSWORD: number;
 
         // Constructors
-        constructor(options: { message: string, code: number });
+        constructor(options: { message: string; code: number });
 
         // Static methods
         /**
@@ -3653,7 +3653,7 @@ export const _LocalFilePrototype: typeof File.prototype;
      * @returns a detailed format string
      * @since 2.38
      */
-    function action_print_detailed_name(action_name: string, target_value: (GLib.Variant | null)): string;
+    function action_print_detailed_name(action_name: string, target_value: GLib.Variant | null): string;
 
     /**
      * Creates a new {@link Gio.AppInfo} from the given information.
@@ -3670,7 +3670,7 @@ export const _LocalFilePrototype: typeof File.prototype;
      * @param flags flags that can specify details of the created {@link Gio.AppInfo}
      * @returns new {@link Gio.AppInfo} for given command.
      */
-    function app_info_create_from_commandline(commandline: string, application_name: (string | null), flags: AppInfoCreateFlags): AppInfo;
+    function app_info_create_from_commandline(commandline: string, application_name: string | null, flags: AppInfoCreateFlags): AppInfo;
 
     /**
      * Gets a list of all of the applications currently registered
@@ -3706,7 +3706,7 @@ export const _LocalFilePrototype: typeof File.prototype;
      * @param must_support_uris if `TRUE`, the {@link Gio.AppInfo} is expected to   support URIs
      * @returns {@link Gio.AppInfo} for given   `content_type` or `NULL` on error.
      */
-    function app_info_get_default_for_type(content_type: string, must_support_uris: boolean): (AppInfo | null);
+    function app_info_get_default_for_type(content_type: string, must_support_uris: boolean): AppInfo | null;
 
     /**
      * Asynchronously gets the default {@link Gio.AppInfo} for a given content
@@ -3716,7 +3716,7 @@ export const _LocalFilePrototype: typeof File.prototype;
      * @param cancellable a {@link Gio.Cancellable}
      * @since 2.74
      */
-    function app_info_get_default_for_type_async(content_type: string, must_support_uris: boolean, cancellable: (Cancellable | null)): globalThis.Promise<AppInfo>;
+    function app_info_get_default_for_type_async(content_type: string, must_support_uris: boolean, cancellable: Cancellable | null): globalThis.Promise<AppInfo>;
     /**
      * Asynchronously gets the default {@link Gio.AppInfo} for a given content
      * type.
@@ -3726,7 +3726,7 @@ export const _LocalFilePrototype: typeof File.prototype;
      * @param callback a {@link Gio.AsyncReadyCallback} to call   when the request is done
      * @since 2.74
      */
-    function app_info_get_default_for_type_async(content_type: string, must_support_uris: boolean, cancellable: (Cancellable | null), callback: (AsyncReadyCallback<string> | null)): void;
+    function app_info_get_default_for_type_async(content_type: string, must_support_uris: boolean, cancellable: Cancellable | null, callback: AsyncReadyCallback<string> | null): void;
     /**
      * Asynchronously gets the default {@link Gio.AppInfo} for a given content
      * type.
@@ -3736,7 +3736,7 @@ export const _LocalFilePrototype: typeof File.prototype;
      * @param callback a {@link Gio.AsyncReadyCallback} to call   when the request is done
      * @since 2.74
      */
-    function app_info_get_default_for_type_async(content_type: string, must_support_uris: boolean, cancellable: (Cancellable | null), callback: (AsyncReadyCallback<string> | null)): (globalThis.Promise<AppInfo> | void);
+    function app_info_get_default_for_type_async(content_type: string, must_support_uris: boolean, cancellable: Cancellable | null, callback: AsyncReadyCallback<string> | null): globalThis.Promise<AppInfo> | void;
 
     /**
      * Finishes a default {@link Gio.AppInfo} lookup started by
@@ -3758,7 +3758,7 @@ export const _LocalFilePrototype: typeof File.prototype;
      * @param uri_scheme a string containing a URI scheme.
      * @returns {@link Gio.AppInfo} for given   `uri_scheme` or `NULL` on error.
      */
-    function app_info_get_default_for_uri_scheme(uri_scheme: string): (AppInfo | null);
+    function app_info_get_default_for_uri_scheme(uri_scheme: string): AppInfo | null;
 
     /**
      * Asynchronously gets the default application for handling URIs with
@@ -3769,7 +3769,7 @@ export const _LocalFilePrototype: typeof File.prototype;
      * @param cancellable a {@link Gio.Cancellable}
      * @since 2.74
      */
-    function app_info_get_default_for_uri_scheme_async(uri_scheme: string, cancellable: (Cancellable | null)): globalThis.Promise<AppInfo>;
+    function app_info_get_default_for_uri_scheme_async(uri_scheme: string, cancellable: Cancellable | null): globalThis.Promise<AppInfo>;
     /**
      * Asynchronously gets the default application for handling URIs with
      * the given URI scheme. A URI scheme is the initial part
@@ -3780,7 +3780,7 @@ export const _LocalFilePrototype: typeof File.prototype;
      * @param callback a {@link Gio.AsyncReadyCallback} to call   when the request is done
      * @since 2.74
      */
-    function app_info_get_default_for_uri_scheme_async(uri_scheme: string, cancellable: (Cancellable | null), callback: (AsyncReadyCallback<string> | null)): void;
+    function app_info_get_default_for_uri_scheme_async(uri_scheme: string, cancellable: Cancellable | null, callback: AsyncReadyCallback<string> | null): void;
     /**
      * Asynchronously gets the default application for handling URIs with
      * the given URI scheme. A URI scheme is the initial part
@@ -3791,7 +3791,7 @@ export const _LocalFilePrototype: typeof File.prototype;
      * @param callback a {@link Gio.AsyncReadyCallback} to call   when the request is done
      * @since 2.74
      */
-    function app_info_get_default_for_uri_scheme_async(uri_scheme: string, cancellable: (Cancellable | null), callback: (AsyncReadyCallback<string> | null)): (globalThis.Promise<AppInfo> | void);
+    function app_info_get_default_for_uri_scheme_async(uri_scheme: string, cancellable: Cancellable | null, callback: AsyncReadyCallback<string> | null): globalThis.Promise<AppInfo> | void;
 
     /**
      * Finishes a default {@link Gio.AppInfo} lookup started by
@@ -3841,7 +3841,7 @@ export const _LocalFilePrototype: typeof File.prototype;
      * @param context optional launch context
      * @returns `TRUE` on success, `FALSE` on error.
      */
-    function app_info_launch_default_for_uri(uri: string, context: (AppLaunchContext | null)): boolean;
+    function app_info_launch_default_for_uri(uri: string, context: AppLaunchContext | null): boolean;
 
     /**
      * Async version of {@link Gio.AppInfo.launch_default_for_uri}.
@@ -3858,7 +3858,7 @@ export const _LocalFilePrototype: typeof File.prototype;
      * @param cancellable a {@link Gio.Cancellable}
      * @since 2.50
      */
-    function app_info_launch_default_for_uri_async(uri: string, context: (AppLaunchContext | null), cancellable: (Cancellable | null)): globalThis.Promise<boolean>;
+    function app_info_launch_default_for_uri_async(uri: string, context: AppLaunchContext | null, cancellable: Cancellable | null): globalThis.Promise<boolean>;
     /**
      * Async version of {@link Gio.AppInfo.launch_default_for_uri}.
      * 
@@ -3875,7 +3875,7 @@ export const _LocalFilePrototype: typeof File.prototype;
      * @param callback a {@link Gio.AsyncReadyCallback} to call   when the request is done
      * @since 2.50
      */
-    function app_info_launch_default_for_uri_async(uri: string, context: (AppLaunchContext | null), cancellable: (Cancellable | null), callback: (AsyncReadyCallback<string> | null)): void;
+    function app_info_launch_default_for_uri_async(uri: string, context: AppLaunchContext | null, cancellable: Cancellable | null, callback: AsyncReadyCallback<string> | null): void;
     /**
      * Async version of {@link Gio.AppInfo.launch_default_for_uri}.
      * 
@@ -3892,7 +3892,7 @@ export const _LocalFilePrototype: typeof File.prototype;
      * @param callback a {@link Gio.AsyncReadyCallback} to call   when the request is done
      * @since 2.50
      */
-    function app_info_launch_default_for_uri_async(uri: string, context: (AppLaunchContext | null), cancellable: (Cancellable | null), callback: (AsyncReadyCallback<string> | null)): (globalThis.Promise<boolean> | void);
+    function app_info_launch_default_for_uri_async(uri: string, context: AppLaunchContext | null, cancellable: Cancellable | null, callback: AsyncReadyCallback<string> | null): globalThis.Promise<boolean> | void;
 
     /**
      * Finishes an asynchronous launch-default-for-uri operation.
@@ -3929,7 +3929,7 @@ export const _LocalFilePrototype: typeof File.prototype;
      * @since 2.22
      * @deprecated since 2.54: Use `g_object_new_with_properties()` and `g_async_initable_init_async()` instead. See {@link GObject.Parameter} for more information.
      */
-    function async_initable_newv_async(object_type: GObject.GType, n_parameters: number, parameters: GObject.Parameter, io_priority: number, cancellable: (Cancellable | null), callback: (AsyncReadyCallback<GObject.GType> | null)): void;
+    function async_initable_newv_async(object_type: GObject.GType, n_parameters: number, parameters: GObject.Parameter, io_priority: number, cancellable: Cancellable | null, callback: AsyncReadyCallback<GObject.GType> | null): void;
 
     /**
      * Asynchronously connects to the message bus specified by `bus_type`.
@@ -3943,7 +3943,7 @@ export const _LocalFilePrototype: typeof File.prototype;
      * @param cancellable a {@link Gio.Cancellable} or `null`
      * @since 2.26
      */
-    function bus_get(bus_type: BusType, cancellable: (Cancellable | null)): globalThis.Promise<DBusConnection>;
+    function bus_get(bus_type: BusType, cancellable: Cancellable | null): globalThis.Promise<DBusConnection>;
     /**
      * Asynchronously connects to the message bus specified by `bus_type`.
      * 
@@ -3957,7 +3957,7 @@ export const _LocalFilePrototype: typeof File.prototype;
      * @param callback a {@link Gio.AsyncReadyCallback} to call when the request is satisfied
      * @since 2.26
      */
-    function bus_get(bus_type: BusType, cancellable: (Cancellable | null), callback: (AsyncReadyCallback<BusType> | null)): void;
+    function bus_get(bus_type: BusType, cancellable: Cancellable | null, callback: AsyncReadyCallback<BusType> | null): void;
     /**
      * Asynchronously connects to the message bus specified by `bus_type`.
      * 
@@ -3971,7 +3971,7 @@ export const _LocalFilePrototype: typeof File.prototype;
      * @param callback a {@link Gio.AsyncReadyCallback} to call when the request is satisfied
      * @since 2.26
      */
-    function bus_get(bus_type: BusType, cancellable: (Cancellable | null), callback: (AsyncReadyCallback<BusType> | null)): (globalThis.Promise<DBusConnection> | void);
+    function bus_get(bus_type: BusType, cancellable: Cancellable | null, callback: AsyncReadyCallback<BusType> | null): globalThis.Promise<DBusConnection> | void;
 
     /**
      * Finishes an operation started with `g_bus_get()`.
@@ -4016,7 +4016,7 @@ export const _LocalFilePrototype: typeof File.prototype;
      * @returns a {@link Gio.DBusConnection} or `null` if `error` is set.     Free with `g_object_unref()`.
      * @since 2.26
      */
-    function bus_get_sync(bus_type: BusType, cancellable: (Cancellable | null)): DBusConnection;
+    function bus_get_sync(bus_type: BusType, cancellable: Cancellable | null): DBusConnection;
 
     /**
      * Version of [func@Gio.bus_own_name using closures instead of callbacks for
@@ -4030,7 +4030,7 @@ export const _LocalFilePrototype: typeof File.prototype;
      * @returns an identifier (never 0) that can be used with   {@link Gio.bus_unown_name} to stop owning the name.
      * @since 2.26
      */
-    function bus_own_name(bus_type: BusType, name: string, flags: BusNameOwnerFlags, bus_acquired_closure: (GObject.Closure | null), name_acquired_closure: (GObject.Closure | null), name_lost_closure: (GObject.Closure | null)): number;
+    function bus_own_name(bus_type: BusType, name: string, flags: BusNameOwnerFlags, bus_acquired_closure: GObject.Closure | null, name_acquired_closure: GObject.Closure | null, name_lost_closure: GObject.Closure | null): number;
 
     /**
      * Version of {@link Gio.bus_own_name_on_connection} using closures instead of
@@ -4043,7 +4043,7 @@ export const _LocalFilePrototype: typeof File.prototype;
      * @returns an identifier (never 0) that can be used with   {@link Gio.bus_unown_name} to stop owning the name.
      * @since 2.26
      */
-    function bus_own_name_on_connection(connection: DBusConnection, name: string, flags: BusNameOwnerFlags, name_acquired_closure: (GObject.Closure | null), name_lost_closure: (GObject.Closure | null)): number;
+    function bus_own_name_on_connection(connection: DBusConnection, name: string, flags: BusNameOwnerFlags, name_acquired_closure: GObject.Closure | null, name_lost_closure: GObject.Closure | null): number;
 
     /**
      * Stops owning a name.
@@ -4085,7 +4085,7 @@ export const _LocalFilePrototype: typeof File.prototype;
      * @returns An identifier (never 0) that can be used with `g_bus_unwatch_name()` to stop watching the name.
      * @since 2.26
      */
-    function bus_watch_name(bus_type: BusType, name: string, flags: BusNameWatcherFlags, name_appeared_closure: (GObject.Closure | null), name_vanished_closure: (GObject.Closure | null)): number;
+    function bus_watch_name(bus_type: BusType, name: string, flags: BusNameWatcherFlags, name_appeared_closure: GObject.Closure | null, name_vanished_closure: GObject.Closure | null): number;
 
     /**
      * Version of `g_bus_watch_name_on_connection()` using closures instead of callbacks for
@@ -4098,7 +4098,7 @@ export const _LocalFilePrototype: typeof File.prototype;
      * @returns An identifier (never 0) that can be used with `g_bus_unwatch_name()` to stop watching the name.
      * @since 2.26
      */
-    function bus_watch_name_on_connection(connection: DBusConnection, name: string, flags: BusNameWatcherFlags, name_appeared_closure: (GObject.Closure | null), name_vanished_closure: (GObject.Closure | null)): number;
+    function bus_watch_name_on_connection(connection: DBusConnection, name: string, flags: BusNameWatcherFlags, name_appeared_closure: GObject.Closure | null, name_vanished_closure: GObject.Closure | null): number;
 
     /**
      * Checks if a content type can be executable. Note that for instance
@@ -4122,7 +4122,7 @@ export const _LocalFilePrototype: typeof File.prototype;
      * @returns Newly allocated string with content type or     `null`. Free with `g_free()`
      * @since 2.18
      */
-    function content_type_from_mime_type(mime_type: string): (string | null);
+    function content_type_from_mime_type(mime_type: string): string | null;
 
     /**
      * Gets the human readable description of the content type.
@@ -4141,7 +4141,7 @@ export const _LocalFilePrototype: typeof File.prototype;
      * @returns the registered generic icon name for the given `type`,     or `null` if unknown. Free with `g_free()`
      * @since 2.34
      */
-    function content_type_get_generic_icon_name(type: string): (string | null);
+    function content_type_get_generic_icon_name(type: string): string | null;
 
     /**
      * Gets the icon for a content type.
@@ -4163,7 +4163,7 @@ export const _LocalFilePrototype: typeof File.prototype;
      * @param type a content type string
      * @returns the registered mime type for the     given `type`, or `null` if unknown; free with `g_free()`.
      */
-    function content_type_get_mime_type(type: string): (string | null);
+    function content_type_get_mime_type(type: string): string | null;
 
     /**
      * Gets the symbolic icon for a content type.
@@ -4182,7 +4182,7 @@ export const _LocalFilePrototype: typeof File.prototype;
      * @param data a stream of data, or `null`
      * @returns a string indicating a guessed content type for the     given data. Free with `g_free()`
      */
-    function content_type_guess(filename: (string | null), data: (Uint8Array | null)): [string, boolean];
+    function content_type_guess(filename: string | null, data: Uint8Array | null): [string, boolean];
 
     /**
      * Tries to guess the type of the tree with root `root`, by
@@ -4260,7 +4260,7 @@ export const _LocalFilePrototype: typeof File.prototype;
      * @param dirs `null`-terminated list of    directories to load MIME data from, including any `mime/` subdirectory,    and with the first directory to try listed first
      * @since 2.60
      */
-    function content_type_set_mime_dirs(dirs: (string[] | null)): void;
+    function content_type_set_mime_dirs(dirs: string[] | null): void;
 
     /**
      * Gets a list of strings containing all the registered content types
@@ -4296,7 +4296,7 @@ export const _LocalFilePrototype: typeof File.prototype;
      * @returns a valid D-Bus address string for `bus_type` or     `null` if `error` is set
      * @since 2.26
      */
-    function dbus_address_get_for_bus_sync(bus_type: BusType, cancellable: (Cancellable | null)): string;
+    function dbus_address_get_for_bus_sync(bus_type: BusType, cancellable: Cancellable | null): string;
 
     /**
      * Asynchronously connects to an endpoint specified by `address` and
@@ -4314,7 +4314,7 @@ export const _LocalFilePrototype: typeof File.prototype;
      * @param cancellable A {@link Gio.Cancellable} or `null`.
      * @since 2.26
      */
-    function dbus_address_get_stream(address: string, cancellable: (Cancellable | null)): globalThis.Promise<[IOStream, string]>;
+    function dbus_address_get_stream(address: string, cancellable: Cancellable | null): globalThis.Promise<[IOStream, string]>;
     /**
      * Asynchronously connects to an endpoint specified by `address` and
      * sets up the connection so it is in a state to run the client-side
@@ -4332,7 +4332,7 @@ export const _LocalFilePrototype: typeof File.prototype;
      * @param callback A {@link Gio.AsyncReadyCallback} to call when the request is satisfied.
      * @since 2.26
      */
-    function dbus_address_get_stream(address: string, cancellable: (Cancellable | null), callback: (AsyncReadyCallback<string> | null)): void;
+    function dbus_address_get_stream(address: string, cancellable: Cancellable | null, callback: AsyncReadyCallback<string> | null): void;
     /**
      * Asynchronously connects to an endpoint specified by `address` and
      * sets up the connection so it is in a state to run the client-side
@@ -4350,7 +4350,7 @@ export const _LocalFilePrototype: typeof File.prototype;
      * @param callback A {@link Gio.AsyncReadyCallback} to call when the request is satisfied.
      * @since 2.26
      */
-    function dbus_address_get_stream(address: string, cancellable: (Cancellable | null), callback: (AsyncReadyCallback<string> | null)): (globalThis.Promise<[IOStream, string]> | void);
+    function dbus_address_get_stream(address: string, cancellable: Cancellable | null, callback: AsyncReadyCallback<string> | null): globalThis.Promise<[IOStream, string]> | void;
 
     /**
      * Finishes an operation started with `g_dbus_address_get_stream()`.
@@ -4379,7 +4379,7 @@ export const _LocalFilePrototype: typeof File.prototype;
      * @returns A {@link Gio.IOStream} or `null` if `error` is set.
      * @since 2.26
      */
-    function dbus_address_get_stream_sync(address: string, cancellable: (Cancellable | null)): [IOStream, string];
+    function dbus_address_get_stream_sync(address: string, cancellable: Cancellable | null): [IOStream, string];
 
     /**
      * Looks up the value of an annotation.
@@ -4390,7 +4390,7 @@ export const _LocalFilePrototype: typeof File.prototype;
      * @returns The value or `null` if not found. Do not free, it is owned by `annotations`.
      * @since 2.26
      */
-    function dbus_annotation_info_lookup(annotations: (DBusAnnotationInfo[] | null), name: string): (string | null);
+    function dbus_annotation_info_lookup(annotations: DBusAnnotationInfo[] | null, name: string): string | null;
 
     /**
      * Creates a D-Bus error name to use for `error`. If `error` matches
@@ -4421,7 +4421,7 @@ export const _LocalFilePrototype: typeof File.prototype;
      * @returns an allocated string or `null` if the     D-Bus error name could not be found. Free with `g_free()`.
      * @since 2.26
      */
-    function dbus_error_get_remote_error(error: GLib.Error): (string | null);
+    function dbus_error_get_remote_error(error: GLib.Error): string | null;
 
     /**
      * Checks if `error` represents an error received via D-Bus from a remote peer. If so,
@@ -4492,7 +4492,7 @@ export const _LocalFilePrototype: typeof File.prototype;
      * @param entries A pointer to `num_entries` {@link Gio.DBusErrorEntry} struct items.
      * @since 2.26
      */
-    function dbus_error_register_error_domain(error_domain_quark_name: string, quark_volatile: (bigint | number), entries: DBusErrorEntry[]): void;
+    function dbus_error_register_error_domain(error_domain_quark_name: string, quark_volatile: bigint | number, entries: DBusErrorEntry[]): void;
 
     /**
      * Looks for extra information in the error message used to recover
@@ -4546,7 +4546,7 @@ export const _LocalFilePrototype: typeof File.prototype;
      * @returns an escaped version of `bytes`. Free with `g_free()`.
      * @since 2.68
      */
-    function dbus_escape_object_path_bytestring(bytes: (Uint8Array | string)): string;
+    function dbus_escape_object_path_bytestring(bytes: Uint8Array | string): string;
 
     /**
      * Generate a D-Bus GUID that can be used with
@@ -4599,7 +4599,7 @@ export const _LocalFilePrototype: typeof File.prototype;
      * @returns A {@link GLib.Variant} (never floating) of     {@link GLib.VariantType} `type` holding the data from `gvalue` or an empty {@link GLib.Variant}     in case of failure. Free with `g_variant_unref()`.
      * @since 2.30
      */
-    function dbus_gvalue_to_gvariant(gvalue: (GObject.Value | any), type: GLib.VariantType): GLib.Variant;
+    function dbus_gvalue_to_gvariant(gvalue: GObject.Value | any, type: GLib.VariantType): GLib.Variant;
 
     /**
      * Converts a {@link GLib.Variant} to a {@link GObject.Value}. If `value` is floating, it is consumed.
@@ -4710,7 +4710,7 @@ export const _LocalFilePrototype: typeof File.prototype;
      * @returns an   unescaped version of `s`, or `null` if `s` is not a string returned   from `g_dbus_escape_object_path()`. Free with `g_free()`.
      * @since 2.68
      */
-    function dbus_unescape_object_path(s: string): (Uint8Array | null);
+    function dbus_unescape_object_path(s: string): Uint8Array | null;
 
     /**
      * Creates a new {@link Gio.DtlsClientConnection} wrapping `base_socket` which is
@@ -4720,7 +4720,7 @@ export const _LocalFilePrototype: typeof File.prototype;
      * @returns the new   {@link Gio.DtlsClientConnection}, or `null` on error
      * @since 2.48
      */
-    function dtls_client_connection_new(base_socket: DatagramBased, server_identity: (SocketConnectable | null)): DtlsClientConnection;
+    function dtls_client_connection_new(base_socket: DatagramBased, server_identity: SocketConnectable | null): DtlsClientConnection;
 
     /**
      * Creates a new {@link Gio.DtlsServerConnection} wrapping `base_socket`.
@@ -4729,7 +4729,7 @@ export const _LocalFilePrototype: typeof File.prototype;
      * @returns the new   {@link Gio.DtlsServerConnection}, or `null` on error
      * @since 2.48
      */
-    function dtls_server_connection_new(base_socket: DatagramBased, certificate: (TlsCertificate | null)): DtlsServerConnection;
+    function dtls_server_connection_new(base_socket: DatagramBased, certificate: TlsCertificate | null): DtlsServerConnection;
 
     /**
      * Constructs a {@link Gio.File} from a vector of elements using the correct
@@ -4816,7 +4816,7 @@ export const _LocalFilePrototype: typeof File.prototype;
      * @returns a new {@link Gio.File}.   Free the returned object with `g_object_unref()`.
      * @since 2.32
      */
-    function file_new_tmp(tmpl: (string | null)): [File, FileIOStream];
+    function file_new_tmp(tmpl: string | null): [File, FileIOStream];
 
     /**
      * Asynchronously opens a file in the preferred directory for temporary files
@@ -4830,7 +4830,7 @@ export const _LocalFilePrototype: typeof File.prototype;
      * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore
      * @since 2.74
      */
-    function file_new_tmp_async(tmpl: (string | null), io_priority: number, cancellable: (Cancellable | null)): globalThis.Promise<[File, FileIOStream]>;
+    function file_new_tmp_async(tmpl: string | null, io_priority: number, cancellable: Cancellable | null): globalThis.Promise<[File, FileIOStream]>;
     /**
      * Asynchronously opens a file in the preferred directory for temporary files
      *  (as returned by `g_get_tmp_dir()`) as `g_file_new_tmp()`.
@@ -4844,7 +4844,7 @@ export const _LocalFilePrototype: typeof File.prototype;
      * @param callback a {@link Gio.AsyncReadyCallback} to call when the request is done
      * @since 2.74
      */
-    function file_new_tmp_async(tmpl: (string | null), io_priority: number, cancellable: (Cancellable | null), callback: (AsyncReadyCallback<(string | null)> | null)): void;
+    function file_new_tmp_async(tmpl: string | null, io_priority: number, cancellable: Cancellable | null, callback: AsyncReadyCallback<string | null> | null): void;
     /**
      * Asynchronously opens a file in the preferred directory for temporary files
      *  (as returned by `g_get_tmp_dir()`) as `g_file_new_tmp()`.
@@ -4858,7 +4858,7 @@ export const _LocalFilePrototype: typeof File.prototype;
      * @param callback a {@link Gio.AsyncReadyCallback} to call when the request is done
      * @since 2.74
      */
-    function file_new_tmp_async(tmpl: (string | null), io_priority: number, cancellable: (Cancellable | null), callback: (AsyncReadyCallback<(string | null)> | null)): (globalThis.Promise<[File, FileIOStream]> | void);
+    function file_new_tmp_async(tmpl: string | null, io_priority: number, cancellable: Cancellable | null, callback: AsyncReadyCallback<string | null> | null): globalThis.Promise<[File, FileIOStream]> | void;
 
     /**
      * Asynchronously creates a directory in the preferred directory for
@@ -4872,7 +4872,7 @@ export const _LocalFilePrototype: typeof File.prototype;
      * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore
      * @since 2.74
      */
-    function file_new_tmp_dir_async(tmpl: (string | null), io_priority: number, cancellable: (Cancellable | null)): globalThis.Promise<File>;
+    function file_new_tmp_dir_async(tmpl: string | null, io_priority: number, cancellable: Cancellable | null): globalThis.Promise<File>;
     /**
      * Asynchronously creates a directory in the preferred directory for
      * temporary files (as returned by `g_get_tmp_dir()`) as `g_dir_make_tmp()`.
@@ -4886,7 +4886,7 @@ export const _LocalFilePrototype: typeof File.prototype;
      * @param callback a {@link Gio.AsyncReadyCallback} to call when the request is done
      * @since 2.74
      */
-    function file_new_tmp_dir_async(tmpl: (string | null), io_priority: number, cancellable: (Cancellable | null), callback: (AsyncReadyCallback<(string | null)> | null)): void;
+    function file_new_tmp_dir_async(tmpl: string | null, io_priority: number, cancellable: Cancellable | null, callback: AsyncReadyCallback<string | null> | null): void;
     /**
      * Asynchronously creates a directory in the preferred directory for
      * temporary files (as returned by `g_get_tmp_dir()`) as `g_dir_make_tmp()`.
@@ -4900,7 +4900,7 @@ export const _LocalFilePrototype: typeof File.prototype;
      * @param callback a {@link Gio.AsyncReadyCallback} to call when the request is done
      * @since 2.74
      */
-    function file_new_tmp_dir_async(tmpl: (string | null), io_priority: number, cancellable: (Cancellable | null), callback: (AsyncReadyCallback<(string | null)> | null)): (globalThis.Promise<File> | void);
+    function file_new_tmp_dir_async(tmpl: string | null, io_priority: number, cancellable: Cancellable | null, callback: AsyncReadyCallback<string | null> | null): globalThis.Promise<File> | void;
 
     /**
      * Finishes a temporary directory creation started by
@@ -4935,7 +4935,7 @@ export const _LocalFilePrototype: typeof File.prototype;
      * @returns a {@link Gio.Icon}, or `null` when deserialization fails.
      * @since 2.38
      */
-    function icon_deserialize(value: GLib.Variant): (Icon | null);
+    function icon_deserialize(value: GLib.Variant): Icon | null;
 
     /**
      * Generate a {@link Gio.Icon} instance from `str`. This function can fail if
@@ -4961,7 +4961,7 @@ export const _LocalFilePrototype: typeof File.prototype;
      * @since 2.22
      * @deprecated since 2.54: Use `g_object_new_with_properties()` and `g_initable_init()` instead. See {@link GObject.Parameter} for more information.
      */
-    function initable_newv<T = GObject.Object>(object_type: GObject.GType, parameters: GObject.Parameter[], cancellable: (Cancellable | null)): T;
+    function initable_newv<T = GObject.Object>(object_type: GObject.GType, parameters: GObject.Parameter[], cancellable: Cancellable | null): T;
 
     /**
      * Converts `errno.h` error codes into GIO error codes.
@@ -5114,7 +5114,7 @@ export const _LocalFilePrototype: typeof File.prototype;
      * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
      * @deprecated since 2.36: use {@link GLib.ThreadPool} or `g_task_run_in_thread()`
      */
-    function io_scheduler_push_job(job_func: IOSchedulerJobFunc, io_priority: number, cancellable: (Cancellable | null)): void;
+    function io_scheduler_push_job(job_func: IOSchedulerJobFunc, io_priority: number, cancellable: Cancellable | null): void;
 
     /**
      * Creates a keyfile-backed {@link Gio.SettingsBackend}.
@@ -5171,7 +5171,7 @@ export const _LocalFilePrototype: typeof File.prototype;
      * @param root_group the group name corresponding to `root_path`, or    `NULL` to disallow storing keys directly beneath `root_path`
      * @returns a keyfile-backed {@link Gio.SettingsBackend}
      */
-    function keyfile_settings_backend_new(filename: string, root_path: string, root_group: (string | null)): SettingsBackend;
+    function keyfile_settings_backend_new(filename: string, root_path: string, root_group: string | null): SettingsBackend;
 
     /**
      * Gets a reference to the default {@link Gio.MemoryMonitor} for the system.
@@ -5240,7 +5240,7 @@ export const _LocalFilePrototype: typeof File.prototype;
      * @returns the new {@link GLib.Source}.
      * @since 2.34
      */
-    function pollable_source_new_full(pollable_stream: GObject.Object, child_source: (GLib.Source | null), cancellable: (Cancellable | null)): GLib.Source;
+    function pollable_source_new_full(pollable_stream: GObject.Object, child_source: GLib.Source | null, cancellable: Cancellable | null): GLib.Source;
 
     /**
      * Tries to read from `stream`, as with `g_input_stream_read()` (if
@@ -5259,7 +5259,7 @@ export const _LocalFilePrototype: typeof File.prototype;
      * @returns the number of bytes read, or -1 on error.
      * @since 2.34
      */
-    function pollable_stream_read(stream: InputStream, buffer: (Uint8Array | string), blocking: boolean, cancellable: (Cancellable | null)): number;
+    function pollable_stream_read(stream: InputStream, buffer: Uint8Array | string, blocking: boolean, cancellable: Cancellable | null): number;
 
     /**
      * Tries to write to `stream`, as with `g_output_stream_write()` (if
@@ -5279,7 +5279,7 @@ export const _LocalFilePrototype: typeof File.prototype;
      * @returns the number of bytes written, or -1 on error.
      * @since 2.34
      */
-    function pollable_stream_write(stream: OutputStream, buffer: (Uint8Array | string), blocking: boolean, cancellable: (Cancellable | null)): number;
+    function pollable_stream_write(stream: OutputStream, buffer: Uint8Array | string, blocking: boolean, cancellable: Cancellable | null): number;
 
     /**
      * Tries to write `count` bytes to `stream`, as with
@@ -5307,7 +5307,7 @@ export const _LocalFilePrototype: typeof File.prototype;
      * @returns `true` on success, `false` if there was an error
      * @since 2.34
      */
-    function pollable_stream_write_all(stream: OutputStream, buffer: (Uint8Array | string), blocking: boolean, cancellable: (Cancellable | null)): [boolean, number];
+    function pollable_stream_write_all(stream: OutputStream, buffer: Uint8Array | string, blocking: boolean, cancellable: Cancellable | null): [boolean, number];
 
     /**
      * Gets a reference to the default {@link Gio.PowerProfileMonitor} for the system.
@@ -5323,7 +5323,7 @@ export const _LocalFilePrototype: typeof File.prototype;
      * @returns return a {@link Gio.Proxy} or NULL if protocol               is not supported.
      * @since 2.26
      */
-    function proxy_get_default_for_protocol(protocol: string): (Proxy | null);
+    function proxy_get_default_for_protocol(protocol: string): Proxy | null;
 
     /**
      * Gets the default {@link Gio.ProxyResolver} for the system.
@@ -5469,7 +5469,7 @@ export const _LocalFilePrototype: typeof File.prototype;
      * @returns the default schema source
      * @since 2.32
      */
-    function settings_schema_source_get_default(): (SettingsSchemaSource | null);
+    function settings_schema_source_get_default(): SettingsSchemaSource | null;
 
     /**
      * Reports an error in an idle function. Similar to
@@ -5480,7 +5480,7 @@ export const _LocalFilePrototype: typeof File.prototype;
      * @param error the {@link GLib.Error} to report
      * @deprecated since 2.46: Use `g_task_report_error()`.
      */
-    function simple_async_report_gerror_in_idle(object: (GObject.Object | null), callback: (AsyncReadyCallback<(GObject.Object | null)> | null), error: GLib.Error): void;
+    function simple_async_report_gerror_in_idle(object: GObject.Object | null, callback: AsyncReadyCallback<GObject.Object | null> | null, error: GLib.Error): void;
 
     /**
      * Gets the default {@link Gio.TlsBackend} for the system.
@@ -5509,7 +5509,7 @@ export const _LocalFilePrototype: typeof File.prototype;
      * @returns the new {@link Gio.TlsClientConnection}, or `null` on error
      * @since 2.28
      */
-    function tls_client_connection_new(base_io_stream: IOStream, server_identity: (SocketConnectable | null)): TlsClientConnection;
+    function tls_client_connection_new(base_io_stream: IOStream, server_identity: SocketConnectable | null): TlsClientConnection;
 
     /**
      * Gets the TLS error quark.
@@ -5541,7 +5541,7 @@ export const _LocalFilePrototype: typeof File.prototype;
      * @returns the new {@link Gio.TlsServerConnection}, or `null` on error
      * @since 2.28
      */
-    function tls_server_connection_new(base_io_stream: IOStream, certificate: (TlsCertificate | null)): TlsServerConnection;
+    function tls_server_connection_new(base_io_stream: IOStream, certificate: TlsCertificate | null): TlsServerConnection;
 
     /**
      * Determines if `mount_path` is considered an implementation of the
@@ -5602,7 +5602,7 @@ export const _LocalFilePrototype: typeof File.prototype;
      * @returns a {@link GioUnix.MountEntry}
      * @deprecated since 2.84: Use {@link GioUnix.MountEntry.at} instead.
      */
-    function unix_mount_at(mount_path: string): [(UnixMountEntry | null), number];
+    function unix_mount_at(mount_path: string): [UnixMountEntry | null, number];
 
     /**
      * Compares two Unix mounts.
@@ -5637,7 +5637,7 @@ export const _LocalFilePrototype: typeof File.prototype;
      * @param time a timestamp
      * @returns true if the mounts have changed since `time`; false otherwise Since 2.84
      */
-    function unix_mount_entries_changed_since(time: (bigint | number)): boolean;
+    function unix_mount_entries_changed_since(time: bigint | number): boolean;
 
     /**
      * Gets a list of {@link GioUnix.MountEntry} instances representing the Unix
@@ -5666,7 +5666,7 @@ export const _LocalFilePrototype: typeof File.prototype;
      * @returns mount   entries, or `NULL` if there was an error loading them
      * @since 2.84
      */
-    function unix_mount_entries_get_from_file(table_path: string): [(UnixMountEntry[] | null), number];
+    function unix_mount_entries_get_from_file(table_path: string): [UnixMountEntry[] | null, number];
 
     /**
      * Gets a {@link GioUnix.MountEntry} for a given mount path.
@@ -5683,7 +5683,7 @@ export const _LocalFilePrototype: typeof File.prototype;
      * @returns a {@link GioUnix.MountEntry}
      * @since 2.84
      */
-    function unix_mount_entry_at(mount_path: string): [(UnixMountEntry | null), number];
+    function unix_mount_entry_at(mount_path: string): [UnixMountEntry | null, number];
 
     /**
      * Gets a {@link GioUnix.MountEntry} for a given file path.
@@ -5701,7 +5701,7 @@ export const _LocalFilePrototype: typeof File.prototype;
      * @returns a {@link GioUnix.MountEntry}
      * @since 2.84
      */
-    function unix_mount_entry_for(file_path: string): [(UnixMountEntry | null), number];
+    function unix_mount_entry_for(file_path: string): [UnixMountEntry | null, number];
 
     /**
      * Gets a {@link GioUnix.MountEntry} for a given file path.
@@ -5720,7 +5720,7 @@ export const _LocalFilePrototype: typeof File.prototype;
      * @since 2.52
      * @deprecated since 2.84: Use {@link GioUnix.MountEntry.for} instead.
      */
-    function unix_mount_for(file_path: string): [(UnixMountEntry | null), number];
+    function unix_mount_for(file_path: string): [UnixMountEntry | null, number];
 
     /**
      * Frees a Unix mount.
@@ -5765,7 +5765,7 @@ export const _LocalFilePrototype: typeof File.prototype;
      * @since 2.58
      * @deprecated since 2.84: Use {@link GioUnix.MountEntry.get_options} instead.
      */
-    function unix_mount_get_options(mount_entry: UnixMountEntry): (string | null);
+    function unix_mount_get_options(mount_entry: UnixMountEntry): string | null;
 
     /**
      * Gets the root of the mount within the filesystem. This is useful e.g. for
@@ -5779,7 +5779,7 @@ export const _LocalFilePrototype: typeof File.prototype;
      * @since 2.60
      * @deprecated since 2.84: Use {@link GioUnix.MountEntry.get_root_path} instead.
      */
-    function unix_mount_get_root_path(mount_entry: UnixMountEntry): (string | null);
+    function unix_mount_get_root_path(mount_entry: UnixMountEntry): string | null;
 
     /**
      * Guesses whether a Unix mount entry can be ejected.
@@ -5860,7 +5860,7 @@ export const _LocalFilePrototype: typeof File.prototype;
      * @returns a {@link GioUnix.MountPoint}, or `NULL`    if no match is found
      * @since 2.66
      */
-    function unix_mount_point_at(mount_path: string): [(UnixMountPoint | null), number];
+    function unix_mount_point_at(mount_path: string): [UnixMountPoint | null, number];
 
     /**
      * Checks if the Unix mount points have changed since a given Unix time.
@@ -5877,7 +5877,7 @@ export const _LocalFilePrototype: typeof File.prototype;
      * @param time a timestamp
      * @returns true if the mount points have changed since `time`; false otherwise
      */
-    function unix_mount_points_changed_since(time: (bigint | number)): boolean;
+    function unix_mount_points_changed_since(time: bigint | number): boolean;
 
     /**
      * Gets a list of {@link GioUnix.MountPoint} instances representing the Unix
@@ -5905,7 +5905,7 @@ export const _LocalFilePrototype: typeof File.prototype;
      * @returns mount   points, or `NULL` if there was an error loading them
      * @since 2.82
      */
-    function unix_mount_points_get_from_file(table_path: string): [(UnixMountPoint[] | null), number];
+    function unix_mount_points_get_from_file(table_path: string): [UnixMountPoint[] | null, number];
 
     /**
      * Checks if the Unix mounts have changed since a given Unix time.
@@ -5913,7 +5913,7 @@ export const _LocalFilePrototype: typeof File.prototype;
      * @returns true if the mounts have changed since `time`; false otherwise
      * @deprecated since 2.84: Use {@link GioUnix.mount_entries_changed_since} instead.
      */
-    function unix_mounts_changed_since(time: (bigint | number)): boolean;
+    function unix_mounts_changed_since(time: bigint | number): boolean;
 
     /**
      * Gets a list of {@link GioUnix.MountEntry} instances representing the Unix
@@ -5943,13 +5943,13 @@ export const _LocalFilePrototype: typeof File.prototype;
      * @since 2.82
      * @deprecated since 2.84: Use {@link GioUnix.mount_entries_get_from_file} instead.
      */
-    function unix_mounts_get_from_file(table_path: string): [(UnixMountEntry[] | null), number];
+    function unix_mounts_get_from_file(table_path: string): [UnixMountEntry[] | null, number];
 
     /**
      * @gir-type Callback
      */
     interface AsyncReadyCallback<A = GObject.Object> {
-        (source_object: (A | null), res: AsyncResult, data: null): void;
+        (source_object: A | null, res: AsyncResult, data: null): void;
     }
 
     /**
@@ -5991,56 +5991,56 @@ export const _LocalFilePrototype: typeof File.prototype;
      * @gir-type Callback
      */
     interface CancellableSourceFunc {
-        (cancellable: (Cancellable | null), data: null): boolean;
+        (cancellable: Cancellable | null, data: null): boolean;
     }
 
     /**
      * @gir-type Callback
      */
     interface DBusInterfaceGetPropertyFunc {
-        (connection: DBusConnection, sender: (string | null), object_path: string, interface_name: string, property_name: string, error: GLib.Error): GLib.Variant;
+        (connection: DBusConnection, sender: string | null, object_path: string, interface_name: string, property_name: string, error: GLib.Error): GLib.Variant;
     }
 
     /**
      * @gir-type Callback
      */
     interface DBusInterfaceMethodCallFunc {
-        (connection: DBusConnection, sender: (string | null), object_path: string, interface_name: (string | null), method_name: string, parameters: GLib.Variant, invocation: DBusMethodInvocation): void;
+        (connection: DBusConnection, sender: string | null, object_path: string, interface_name: string | null, method_name: string, parameters: GLib.Variant, invocation: DBusMethodInvocation): void;
     }
 
     /**
      * @gir-type Callback
      */
     interface DBusInterfaceSetPropertyFunc {
-        (connection: DBusConnection, sender: (string | null), object_path: string, interface_name: string, property_name: string, value: GLib.Variant, error: GLib.Error): boolean;
+        (connection: DBusConnection, sender: string | null, object_path: string, interface_name: string, property_name: string, value: GLib.Variant, error: GLib.Error): boolean;
     }
 
     /**
      * @gir-type Callback
      */
     interface DBusMessageFilterFunction {
-        (connection: DBusConnection, message: DBusMessage, incoming: boolean): (DBusMessage | null);
+        (connection: DBusConnection, message: DBusMessage, incoming: boolean): DBusMessage | null;
     }
 
     /**
      * @gir-type Callback
      */
     interface DBusProxyTypeFunc {
-        (manager: DBusObjectManagerClient, object_path: string, interface_name: (string | null), data: null): GObject.GType;
+        (manager: DBusObjectManagerClient, object_path: string, interface_name: string | null, data: null): GObject.GType;
     }
 
     /**
      * @gir-type Callback
      */
     interface DBusSignalCallback {
-        (connection: DBusConnection, sender_name: (string | null), object_path: string, interface_name: string, signal_name: string, parameters: GLib.Variant): void;
+        (connection: DBusConnection, sender_name: string | null, object_path: string, interface_name: string, signal_name: string, parameters: GLib.Variant): void;
     }
 
     /**
      * @gir-type Callback
      */
     interface DBusSubtreeDispatchFunc {
-        (connection: DBusConnection, sender: string, object_path: string, interface_name: string, node: string, out_user_data: null): (DBusInterfaceVTable | null);
+        (connection: DBusConnection, sender: string, object_path: string, interface_name: string, node: string, out_user_data: null): DBusInterfaceVTable | null;
     }
 
     /**
@@ -6054,7 +6054,7 @@ export const _LocalFilePrototype: typeof File.prototype;
      * @gir-type Callback
      */
     interface DBusSubtreeIntrospectFunc {
-        (connection: DBusConnection, sender: string, object_path: string, node: string): (DBusInterfaceInfo[] | null);
+        (connection: DBusConnection, sender: string, object_path: string, node: string): DBusInterfaceInfo[] | null;
     }
 
     /**
@@ -6096,7 +6096,7 @@ export const _LocalFilePrototype: typeof File.prototype;
      * @gir-type Callback
      */
     interface IOSchedulerJobFunc {
-        (job: IOSchedulerJob, cancellable: (Cancellable | null), data: null): boolean;
+        (job: IOSchedulerJob, cancellable: Cancellable | null, data: null): boolean;
     }
 
     /**
@@ -6124,21 +6124,21 @@ export const _LocalFilePrototype: typeof File.prototype;
      * @gir-type Callback
      */
     interface SettingsBindSetMapping {
-        (value: unknown, expected_type: GLib.VariantType): (GLib.Variant | null);
+        (value: unknown, expected_type: GLib.VariantType): GLib.Variant | null;
     }
 
     /**
      * @gir-type Callback
      */
     interface SettingsGetMapping {
-        (value: (GLib.Variant | null)): boolean;
+        (value: GLib.Variant | null): boolean;
     }
 
     /**
      * @gir-type Callback
      */
     interface SimpleAsyncThreadFunc<A = GObject.Object> {
-        (res: SimpleAsyncResult, object: A, cancellable: (Cancellable | null)): void;
+        (res: SimpleAsyncResult, object: A, cancellable: Cancellable | null): void;
     }
 
     /**
@@ -6152,14 +6152,14 @@ export const _LocalFilePrototype: typeof File.prototype;
      * @gir-type Callback
      */
     interface TaskThreadFunc<A = GObject.Object> {
-        (task: Task, source_object: A, task_data: null, cancellable: (Cancellable | null)): void;
+        (task: Task, source_object: A, task_data: null, cancellable: Cancellable | null): void;
     }
 
     /**
      * @gir-type Callback
      */
     interface VfsFileLookupFunc {
-        (vfs: Vfs, identifier: string): (File | null);
+        (vfs: Vfs, identifier: string): File | null;
     }
 
     /**
@@ -7575,9 +7575,7 @@ export const _LocalFilePrototype: typeof File.prototype;
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends GObject.Object.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GObject.Object.ConstructorProps {}
     }
 
     /**
@@ -7713,7 +7711,7 @@ export const _LocalFilePrototype: typeof File.prototype;
              * @since 2.72
              * @run-last
              */
-            "launch-started": (arg0: AppInfo, arg1: (GLib.Variant | null)) => void;
+            "launch-started": (arg0: AppInfo, arg1: GLib.Variant | null) => void;
             /**
              * The `Gio.AppLaunchContext::launched` signal is emitted when a
              * {@link Gio.AppInfo} is successfully launched.
@@ -7744,9 +7742,7 @@ export const _LocalFilePrototype: typeof File.prototype;
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends GObject.Object.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GObject.Object.ConstructorProps {}
     }
 
     /**
@@ -7796,7 +7792,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param files a list of {@link Gio.File} objects
          * @virtual
          */
-        vfunc_get_display(info: AppInfo, files: File[]): (string | null);
+        vfunc_get_display(info: AppInfo, files: File[]): string | null;
 
         /**
          * Initiates startup notification for the application and returns the
@@ -7818,7 +7814,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param files a list of {@link Gio.File} objects
          * @virtual
          */
-        vfunc_get_startup_notify_id(info: (AppInfo | null), files: (File[] | null)): (string | null);
+        vfunc_get_startup_notify_id(info: AppInfo | null, files: File[] | null): string | null;
 
         /**
          * Called when an application has failed to launch, so that it can cancel
@@ -7852,7 +7848,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param files a list of {@link Gio.File} objects
          * @returns a display string for the display.
          */
-        get_display(info: AppInfo, files: File[]): (string | null);
+        get_display(info: AppInfo, files: File[]): string | null;
 
         /**
          * Gets the complete environment variable list to be passed to
@@ -7883,7 +7879,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param files a list of {@link Gio.File} objects
          * @returns a startup notification ID for the application, or `NULL` if   not supported.
          */
-        get_startup_notify_id(info: (AppInfo | null), files: (File[] | null)): (string | null);
+        get_startup_notify_id(info: AppInfo | null, files: File[] | null): string | null;
 
         /**
          * Called when an application has failed to launch, so that it can cancel
@@ -7985,7 +7981,7 @@ export const _LocalFilePrototype: typeof File.prototype;
              * @since 2.60
              * @run-last
              */
-            "name-lost": () => (boolean | void);
+            "name-lost": () => boolean | void;
             /**
              * The ::open signal is emitted on the primary instance when there are
              * files to open. See `g_application_open()` for more information.
@@ -8022,8 +8018,8 @@ export const _LocalFilePrototype: typeof File.prototype;
         interface ConstructorProps extends GObject.Object.ConstructorProps, ActionGroup.ConstructorProps, ActionMap.ConstructorProps {
             action_group: ActionGroup;
             actionGroup: ActionGroup;
-            application_id: (string | null);
-            applicationId: (string | null);
+            application_id: string | null;
+            applicationId: string | null;
             flags: ApplicationFlags;
             inactivity_timeout: number;
             inactivityTimeout: number;
@@ -8033,9 +8029,9 @@ export const _LocalFilePrototype: typeof File.prototype;
             isRegistered: boolean;
             is_remote: boolean;
             isRemote: boolean;
-            resource_base_path: (string | null);
-            resourceBasePath: (string | null);
-            version: (string | null);
+            resource_base_path: string | null;
+            resourceBasePath: string | null;
+            version: string | null;
         }
     }
 
@@ -8191,16 +8187,16 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @since 2.28
          * @default null
          */
-        get application_id(): (string | null);
-        set application_id(val: (string | null));
+        get application_id(): string | null;
+        set application_id(val: string | null);
 
         /**
          * The unique identifier for the application.
          * @since 2.28
          * @default null
          */
-        get applicationId(): (string | null);
-        set applicationId(val: (string | null));
+        get applicationId(): string | null;
+        set applicationId(val: string | null);
 
         /**
          * Flags specifying the behaviour of the application.
@@ -8281,24 +8277,24 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @since 2.28
          * @default null
          */
-        get resource_base_path(): (string | null);
-        set resource_base_path(val: (string | null));
+        get resource_base_path(): string | null;
+        set resource_base_path(val: string | null);
 
         /**
          * The base resource path for the application.
          * @since 2.28
          * @default null
          */
-        get resourceBasePath(): (string | null);
-        set resourceBasePath(val: (string | null));
+        get resourceBasePath(): string | null;
+        set resourceBasePath(val: string | null);
 
         /**
          * The human-readable version number of the application.
          * @since 2.80
          * @default null
          */
-        get version(): (string | null);
-        set version(val: (string | null));
+        get version(): string | null;
+        set version(val: string | null);
 
         /**
          * Compile-time signal type information.
@@ -8314,7 +8310,7 @@ export const _LocalFilePrototype: typeof File.prototype;
 
         _init(...args: any[]): void;
 
-        static ["new"](application_id: (string | null), flags: ApplicationFlags): Application;
+        static ["new"](application_id: string | null, flags: ApplicationFlags): Application;
 
         // Signals
         /** @signal */
@@ -8339,7 +8335,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * 
          * If there is no default application then `null` is returned.
          */
-        static get_default(): (Application | null);
+        static get_default(): Application | null;
 
         /**
          * Checks if `application_id` is a valid application identifier.
@@ -8574,7 +8570,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param description the description for the option in `--help` output
          * @param arg_description the placeholder to use for the extra argument    parsed by the option in `--help` output
          */
-        add_main_option(long_name: string, short_name: number, flags: GLib.OptionFlags, arg: GLib.OptionArg, description: string, arg_description: (string | null)): void;
+        add_main_option(long_name: string, short_name: number, flags: GLib.OptionFlags, arg: GLib.OptionArg, description: string, arg_description: string | null): void;
 
         /**
          * Adds main option entries to be handled by `application`.
@@ -8683,7 +8679,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * Gets the unique identifier for `application`.
          * @returns the identifier for `application`, owned by `application`
          */
-        get_application_id(): (string | null);
+        get_application_id(): string | null;
 
         /**
          * Gets the {@link Gio.DBusConnection} being used by the application, or `null`.
@@ -8701,7 +8697,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * registered.  See `g_application_get_is_registered()`.
          * @returns a {@link Gio.DBusConnection}, or `null`
          */
-        get_dbus_connection(): (DBusConnection | null);
+        get_dbus_connection(): DBusConnection | null;
 
         /**
          * Gets the D-Bus object path being used by the application, or `null`.
@@ -8720,7 +8716,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * registered.  See `g_application_get_is_registered()`.
          * @returns the object path, or `null`
          */
-        get_dbus_object_path(): (string | null);
+        get_dbus_object_path(): string | null;
 
         /**
          * Gets the flags for `application`.
@@ -8776,13 +8772,13 @@ export const _LocalFilePrototype: typeof File.prototype;
          * See `g_application_set_resource_base_path()` for more information.
          * @returns the base resource path, if one is set
          */
-        get_resource_base_path(): (string | null);
+        get_resource_base_path(): string | null;
 
         /**
          * Gets the version of `application`.
          * @returns the version of `application`
          */
-        get_version(): (string | null);
+        get_version(): string | null;
 
         /**
          * Increases the use count of `application`.
@@ -8882,7 +8878,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable a {@link Gio.Cancellable}, or `null`
          * @returns `true` if registration succeeded
          */
-        register(cancellable: (Cancellable | null)): boolean;
+        register(cancellable: Cancellable | null): boolean;
 
         /**
          * Decrease the use count of `application`.
@@ -8973,7 +8969,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param argv the argv from `main()`, or `null`
          * @returns the exit status
          */
-        run(argv: (string[] | null)): number;
+        run(argv: string[] | null): number;
 
         /**
          * Sends a notification on behalf of `application` to the desktop shell.
@@ -9008,14 +9004,14 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param id id of the notification, or `null`
          * @param notification the {@link Gio.Notification} to send
          */
-        send_notification(id: (string | null), notification: Notification): void;
+        send_notification(id: string | null, notification: Notification): void;
 
         /**
          * This used to be how actions were associated with a {@link Gio.Application}.
          * Now there is {@link Gio.ActionMap} for that.
          * @param action_group a {@link Gio.ActionGroup}, or `null`
          */
-        set_action_group(action_group: (ActionGroup | null)): void;
+        set_action_group(action_group: ActionGroup | null): void;
 
         /**
          * Sets the unique identifier for `application`.
@@ -9027,7 +9023,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * `g_application_id_is_valid()`.
          * @param application_id the identifier for `application`
          */
-        set_application_id(application_id: (string | null)): void;
+        set_application_id(application_id: string | null): void;
 
         /**
          * Sets or unsets the default application for the process, as returned
@@ -9069,7 +9065,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * See `g_option_context_set_description()` for more information.
          * @param description a string to be shown in `--help` output  after the list of options, or `null`
          */
-        set_option_context_description(description: (string | null)): void;
+        set_option_context_description(description: string | null): void;
 
         /**
          * Sets the parameter string to be used by the commandline handling of `application`.
@@ -9080,7 +9076,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * See `g_option_context_new()` for more information about `parameter_string`.
          * @param parameter_string a string which is displayed   in the first line of `--help` output, after the usage summary `programname [OPTION...]`.
          */
-        set_option_context_parameter_string(parameter_string: (string | null)): void;
+        set_option_context_parameter_string(parameter_string: string | null): void;
 
         /**
          * Adds a summary to the `application` option context.
@@ -9088,7 +9084,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * See `g_option_context_set_summary()` for more information.
          * @param summary a string to be shown in `--help` output  before the list of options, or `null`
          */
-        set_option_context_summary(summary: (string | null)): void;
+        set_option_context_summary(summary: string | null): void;
 
         /**
          * Sets (or unsets) the base resource path of `application`.
@@ -9126,7 +9122,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * before chaining up to the parent implementation.
          * @param resource_path the resource path to use
          */
-        set_resource_base_path(resource_path: (string | null)): void;
+        set_resource_base_path(resource_path: string | null): void;
 
         /**
          * Sets the version number of `application`. This will be used to implement
@@ -9254,7 +9250,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param action_name the name of the action to activate
          * @param parameter parameters to the activation
          */
-        activate_action(action_name: string, parameter: (GLib.Variant | null)): void;
+        activate_action(action_name: string, parameter: GLib.Variant | null): void;
 
         /**
          * Request for the state of the named action within `action_group` to be
@@ -9300,7 +9296,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param action_name the name of the action to query
          * @returns the parameter type
          */
-        get_action_parameter_type(action_name: string): (GLib.VariantType | null);
+        get_action_parameter_type(action_name: string): GLib.VariantType | null;
 
         /**
          * Queries the current state of the named action within `action_group`.
@@ -9314,7 +9310,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param action_name the name of the action to query
          * @returns the current state of the action
          */
-        get_action_state(action_name: string): (GLib.Variant | null);
+        get_action_state(action_name: string): GLib.Variant | null;
 
         /**
          * Requests a hint about the valid range of values for the state of the
@@ -9338,7 +9334,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param action_name the name of the action to query
          * @returns the state range hint
          */
-        get_action_state_hint(action_name: string): (GLib.Variant | null);
+        get_action_state_hint(action_name: string): GLib.Variant | null;
 
         /**
          * Queries the type of the state of the named action within
@@ -9360,7 +9356,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param action_name the name of the action to query
          * @returns the state type, if the action is stateful
          */
-        get_action_state_type(action_name: string): (GLib.VariantType | null);
+        get_action_state_type(action_name: string): GLib.VariantType | null;
 
         /**
          * Checks if the named action exists within `action_group`.
@@ -9487,7 +9483,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param parameter parameters to the activation
          * @virtual
          */
-        vfunc_activate_action(action_name: string, parameter: (GLib.Variant | null)): void;
+        vfunc_activate_action(action_name: string, parameter: GLib.Variant | null): void;
 
         /**
          * Request for the state of the named action within `action_group` to be
@@ -9534,7 +9530,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param action_name the name of the action to query
          * @virtual
          */
-        vfunc_get_action_parameter_type(action_name: string): (GLib.VariantType | null);
+        vfunc_get_action_parameter_type(action_name: string): GLib.VariantType | null;
 
         /**
          * Queries the current state of the named action within `action_group`.
@@ -9548,7 +9544,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param action_name the name of the action to query
          * @virtual
          */
-        vfunc_get_action_state(action_name: string): (GLib.Variant | null);
+        vfunc_get_action_state(action_name: string): GLib.Variant | null;
 
         /**
          * Requests a hint about the valid range of values for the state of the
@@ -9572,7 +9568,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param action_name the name of the action to query
          * @virtual
          */
-        vfunc_get_action_state_hint(action_name: string): (GLib.Variant | null);
+        vfunc_get_action_state_hint(action_name: string): GLib.Variant | null;
 
         /**
          * Queries the type of the state of the named action within
@@ -9594,7 +9590,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param action_name the name of the action to query
          * @virtual
          */
-        vfunc_get_action_state_type(action_name: string): (GLib.VariantType | null);
+        vfunc_get_action_state_type(action_name: string): GLib.VariantType | null;
 
         /**
          * Checks if the named action exists within `action_group`.
@@ -9670,7 +9666,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param action_name the name of an action
          * @returns a {@link Gio.Action}
          */
-        lookup_action(action_name: string): (Action | null);
+        lookup_action(action_name: string): Action | null;
 
         /**
          * Removes the named action from the action map.
@@ -9726,7 +9722,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param action_name the name of an action
          * @virtual
          */
-        vfunc_lookup_action(action_name: string): (Action | null);
+        vfunc_lookup_action(action_name: string): Action | null;
 
         /**
          * Removes the named action from the action map.
@@ -9754,7 +9750,7 @@ export const _LocalFilePrototype: typeof File.prototype;
             is_remote: boolean;
             isRemote: boolean;
             options: GLib.Variant;
-            platform_data: (GLib.Variant | null);
+            platform_data: GLib.Variant | null;
             platformData: GLib.Variant;
         }
     }
@@ -9970,7 +9966,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @since 2.28
          * @construct-only
          */
-        set platform_data(val: (GLib.Variant | null));
+        set platform_data(val: GLib.Variant | null);
 
         /**
          * Platform-specific data for the commandline.
@@ -10040,7 +10036,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * You must only call this function once per commandline invocation.
          * @virtual
          */
-        vfunc_get_stdin(): (InputStream | null);
+        vfunc_get_stdin(): InputStream | null;
 
         /**
          * Prints a message using the stdout print handler in the invoking process.
@@ -10123,7 +10119,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * long as `cmdline` exists.
          * @returns the current directory, or `null`
          */
-        get_cwd(): (string | null);
+        get_cwd(): string | null;
 
         /**
          * Gets the contents of the 'environ' variable of the command line
@@ -10189,7 +10185,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * For local invocation, it will be `null`.
          * @returns the platform data, or `null`
          */
-        get_platform_data(): (GLib.Variant | null);
+        get_platform_data(): GLib.Variant | null;
 
         /**
          * Gets the stdin of the invoking process.
@@ -10204,7 +10200,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * You must only call this function once per commandline invocation.
          * @returns a {@link Gio.InputStream} for stdin
          */
-        get_stdin(): (InputStream | null);
+        get_stdin(): InputStream | null;
 
         /**
          * Gets the value of a particular environment variable of the command
@@ -10221,7 +10217,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param name the environment variable to get
          * @returns the value of the variable, or `null` if unset or unsent
          */
-        getenv(name: string): (string | null);
+        getenv(name: string): string | null;
 
         /**
          * Prints a message using the stdout print handler in the invoking process.
@@ -10339,7 +10335,7 @@ export const _LocalFilePrototype: typeof File.prototype;
 
         static ["new"](base_stream: InputStream): BufferedInputStream;
 
-        static new_sized(base_stream: InputStream, size: (bigint | number)): BufferedInputStream;
+        static new_sized(base_stream: InputStream, size: bigint | number): BufferedInputStream;
 
         // Signals
         /** @signal */
@@ -10385,7 +10381,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object, `NULL` to ignore
          * @virtual
          */
-        vfunc_fill(count: number, cancellable: (Cancellable | null)): (bigint | number);
+        vfunc_fill(count: number, cancellable: Cancellable | null): bigint | number;
 
         /**
          * Reads data into `stream`'s buffer asynchronously, up to `count` size.
@@ -10400,14 +10396,14 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param callback a {@link Gio.AsyncReadyCallback}
          * @virtual
          */
-        vfunc_fill_async(count: number, io_priority: number, cancellable: (Cancellable | null), callback: (AsyncReadyCallback<this> | null)): void;
+        vfunc_fill_async(count: number, io_priority: number, cancellable: Cancellable | null, callback: AsyncReadyCallback<this> | null): void;
 
         /**
          * Finishes an asynchronous read.
          * @param result a {@link Gio.AsyncResult}
          * @virtual
          */
-        vfunc_fill_finish(result: AsyncResult): (bigint | number);
+        vfunc_fill_finish(result: AsyncResult): bigint | number;
 
         // Methods
         /**
@@ -10440,7 +10436,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object, `NULL` to ignore
          * @returns the number of bytes read into `stream`'s buffer, up to `count`,     or `-1` on error.
          */
-        fill(count: (bigint | number), cancellable: (Cancellable | null)): number;
+        fill(count: bigint | number, cancellable: Cancellable | null): number;
 
         /**
          * Reads data into `stream`'s buffer asynchronously, up to `count` size.
@@ -10453,21 +10449,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param io_priority the [I/O priority](https://docs.gtk.org/gio/iface.AsyncResult.html#io-priority) of the request
          * @param cancellable optional {@link Gio.Cancellable} object
          */
-        fill_async(count: (bigint | number), io_priority: number, cancellable: (Cancellable | null)): globalThis.Promise<number>;
-
-        /**
-         * Reads data into `stream`'s buffer asynchronously, up to `count` size.
-         * `io_priority` can be used to prioritize reads. For the synchronous
-         * version of this function, see {@link Gio.BufferedInputStream.fill}.
-         * 
-         * If `count` is `-1` then the attempted read size is equal to the number
-         * of bytes that are required to fill the buffer.
-         * @param count the number of bytes that will be read from the stream
-         * @param io_priority the [I/O priority](https://docs.gtk.org/gio/iface.AsyncResult.html#io-priority) of the request
-         * @param cancellable optional {@link Gio.Cancellable} object
-         * @param callback a {@link Gio.AsyncReadyCallback}
-         */
-        fill_async(count: (bigint | number), io_priority: number, cancellable: (Cancellable | null), callback: (AsyncReadyCallback<this> | null)): void;
+        fill_async(count: bigint | number, io_priority: number, cancellable: Cancellable | null): globalThis.Promise<number>;
 
         /**
          * Reads data into `stream`'s buffer asynchronously, up to `count` size.
@@ -10481,7 +10463,21 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object
          * @param callback a {@link Gio.AsyncReadyCallback}
          */
-        fill_async(count: (bigint | number), io_priority: number, cancellable: (Cancellable | null), callback?: (AsyncReadyCallback<this> | null)): (globalThis.Promise<number> | void);
+        fill_async(count: bigint | number, io_priority: number, cancellable: Cancellable | null, callback: AsyncReadyCallback<this> | null): void;
+
+        /**
+         * Reads data into `stream`'s buffer asynchronously, up to `count` size.
+         * `io_priority` can be used to prioritize reads. For the synchronous
+         * version of this function, see {@link Gio.BufferedInputStream.fill}.
+         * 
+         * If `count` is `-1` then the attempted read size is equal to the number
+         * of bytes that are required to fill the buffer.
+         * @param count the number of bytes that will be read from the stream
+         * @param io_priority the [I/O priority](https://docs.gtk.org/gio/iface.AsyncResult.html#io-priority) of the request
+         * @param cancellable optional {@link Gio.Cancellable} object
+         * @param callback a {@link Gio.AsyncReadyCallback}
+         */
+        fill_async(count: bigint | number, io_priority: number, cancellable: Cancellable | null, callback?: AsyncReadyCallback<this> | null): globalThis.Promise<number> | void;
 
         /**
          * Finishes an asynchronous read.
@@ -10509,7 +10505,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param offset a `gsize`
          * @returns a `gsize` of the number of bytes peeked, or `-1` on error.
          */
-        peek(buffer: (Uint8Array | string), offset: (bigint | number)): number;
+        peek(buffer: Uint8Array | string, offset: bigint | number): number;
 
         /**
          * Returns the buffer with the currently available bytes. The returned
@@ -10536,7 +10532,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object, `NULL` to ignore
          * @returns the byte read from the `stream`, or `-1` on end of stream or error.
          */
-        read_byte(cancellable: (Cancellable | null)): number;
+        read_byte(cancellable: Cancellable | null): number;
 
         /**
          * Sets the size of the internal buffer of `stream` to `size`, or to the
@@ -10544,7 +10540,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * smaller than its current contents.
          * @param size a `gsize`
          */
-        set_buffer_size(size: (bigint | number)): void;
+        set_buffer_size(size: bigint | number): void;
 
         /**
          * Tests if the stream supports the {@link Gio.SeekableIface}.
@@ -10579,7 +10575,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          * @returns `true` if successful. If an error     has occurred, this function will return `false` and set `error`     appropriately if present.
          */
-        seek(offset: (bigint | number), type: GLib.SeekType, cancellable: (Cancellable | null)): boolean;
+        seek(offset: bigint | number, type: GLib.SeekType, cancellable: Cancellable | null): boolean;
 
         /**
          * Tells the current position within the stream.
@@ -10601,7 +10597,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          * @returns `true` if successful. If an error     has occurred, this function will return `false` and set `error`     appropriately if present.
          */
-        truncate(offset: (bigint | number), cancellable: (Cancellable | null)): boolean;
+        truncate(offset: bigint | number, cancellable: Cancellable | null): boolean;
 
         /**
          * Tests if the stream supports the {@link Gio.SeekableIface}.
@@ -10636,13 +10632,13 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          * @virtual
          */
-        vfunc_seek(offset: number, type: GLib.SeekType, cancellable: (Cancellable | null)): boolean;
+        vfunc_seek(offset: number, type: GLib.SeekType, cancellable: Cancellable | null): boolean;
 
         /**
          * Tells the current position within the stream.
          * @virtual
          */
-        vfunc_tell(): (bigint | number);
+        vfunc_tell(): bigint | number;
 
         /**
          * Sets the length of the stream to `offset`. If the stream was previously
@@ -10658,7 +10654,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          * @virtual
          */
-        vfunc_truncate_fn(offset: number, cancellable: (Cancellable | null)): boolean;
+        vfunc_truncate_fn(offset: number, cancellable: Cancellable | null): boolean;
     }
 
 
@@ -10744,7 +10740,7 @@ export const _LocalFilePrototype: typeof File.prototype;
 
         static ["new"](base_stream: OutputStream): BufferedOutputStream;
 
-        static new_sized(base_stream: OutputStream, size: (bigint | number)): BufferedOutputStream;
+        static new_sized(base_stream: OutputStream, size: bigint | number): BufferedOutputStream;
 
         // Signals
         /** @signal */
@@ -10785,7 +10781,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * Sets the size of the internal buffer to `size`.
          * @param size a `gsize`.
          */
-        set_buffer_size(size: (bigint | number)): void;
+        set_buffer_size(size: bigint | number): void;
 
         /**
          * Tests if the stream supports the {@link Gio.SeekableIface}.
@@ -10820,7 +10816,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          * @returns `true` if successful. If an error     has occurred, this function will return `false` and set `error`     appropriately if present.
          */
-        seek(offset: (bigint | number), type: GLib.SeekType, cancellable: (Cancellable | null)): boolean;
+        seek(offset: bigint | number, type: GLib.SeekType, cancellable: Cancellable | null): boolean;
 
         /**
          * Tells the current position within the stream.
@@ -10842,7 +10838,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          * @returns `true` if successful. If an error     has occurred, this function will return `false` and set `error`     appropriately if present.
          */
-        truncate(offset: (bigint | number), cancellable: (Cancellable | null)): boolean;
+        truncate(offset: bigint | number, cancellable: Cancellable | null): boolean;
 
         /**
          * Tests if the stream supports the {@link Gio.SeekableIface}.
@@ -10877,13 +10873,13 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          * @virtual
          */
-        vfunc_seek(offset: number, type: GLib.SeekType, cancellable: (Cancellable | null)): boolean;
+        vfunc_seek(offset: number, type: GLib.SeekType, cancellable: Cancellable | null): boolean;
 
         /**
          * Tells the current position within the stream.
          * @virtual
          */
-        vfunc_tell(): (bigint | number);
+        vfunc_tell(): bigint | number;
 
         /**
          * Sets the length of the stream to `offset`. If the stream was previously
@@ -10899,7 +10895,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          * @virtual
          */
-        vfunc_truncate_fn(offset: number, cancellable: (Cancellable | null)): boolean;
+        vfunc_truncate_fn(offset: number, cancellable: Cancellable | null): boolean;
     }
 
 
@@ -10911,7 +10907,7 @@ export const _LocalFilePrototype: typeof File.prototype;
 
         // Constructor properties interface
         interface ConstructorProps extends GObject.Object.ConstructorProps, Icon.ConstructorProps, LoadableIcon.ConstructorProps {
-            bytes: (GLib.Bytes | Uint8Array);
+            bytes: GLib.Bytes | Uint8Array;
         }
     }
 
@@ -10945,7 +10941,7 @@ export const _LocalFilePrototype: typeof File.prototype;
 
         _init(...args: any[]): void;
 
-        static ["new"](bytes: (GLib.Bytes | Uint8Array)): BytesIcon;
+        static ["new"](bytes: GLib.Bytes | Uint8Array): BytesIcon;
 
         // Signals
         /** @signal */
@@ -10972,7 +10968,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param icon2 pointer to the second {@link Gio.Icon}.
          * @returns `true` if `icon1` is equal to `icon2`. `false` otherwise.
          */
-        equal(icon2: (Icon | null)): boolean;
+        equal(icon2: Icon | null): boolean;
 
         /**
          * Gets a hash for an icon.
@@ -10988,7 +10984,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * (as opposed to over the network), and within the same file system namespace.
          * @returns a {@link GLib.Variant}, or `null` when serialization fails. The {@link GLib.Variant} will not be floating.
          */
-        serialize(): (GLib.Variant | null);
+        serialize(): GLib.Variant | null;
 
         /**
          * Generates a textual representation of `icon` that can be used for
@@ -11009,14 +11005,14 @@ export const _LocalFilePrototype: typeof File.prototype;
          *   the encoding is simply the name (such as `network-server`).
          * @returns An allocated NUL-terminated UTF8 string or `null` if `icon` can't be serialized. Use `g_free()` to free.
          */
-        to_string(): (string | null);
+        to_string(): string | null;
 
         /**
          * Checks if two icons are equal.
          * @param icon2 pointer to the second {@link Gio.Icon}.
          * @virtual
          */
-        vfunc_equal(icon2: (Icon | null)): boolean;
+        vfunc_equal(icon2: Icon | null): boolean;
 
         /**
          * Gets a hash for an icon.
@@ -11032,7 +11028,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * (as opposed to over the network), and within the same file system namespace.
          * @virtual
          */
-        vfunc_serialize(): (GLib.Variant | null);
+        vfunc_serialize(): GLib.Variant | null;
 
         /**
          * Serializes the `icon` into string tokens.
@@ -11048,7 +11044,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          * @returns a {@link Gio.InputStream} to read the icon from.
          */
-        load(size: number, cancellable: (Cancellable | null)): [InputStream, string];
+        load(size: number, cancellable: Cancellable | null): [InputStream, string];
 
         /**
          * Loads an icon asynchronously. To finish this function, see
@@ -11057,17 +11053,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param size an integer.
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          */
-        load_async(size: number, cancellable: (Cancellable | null)): globalThis.Promise<[InputStream, string]>;
-
-        /**
-         * Loads an icon asynchronously. To finish this function, see
-         * `g_loadable_icon_load_finish()`. For the synchronous, blocking
-         * version of this function, see `g_loadable_icon_load()`.
-         * @param size an integer.
-         * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
-         * @param callback a {@link Gio.AsyncReadyCallback}   to call when the request is satisfied
-         */
-        load_async(size: number, cancellable: (Cancellable | null), callback: (AsyncReadyCallback<this> | null)): void;
+        load_async(size: number, cancellable: Cancellable | null): globalThis.Promise<[InputStream, string]>;
 
         /**
          * Loads an icon asynchronously. To finish this function, see
@@ -11077,7 +11063,17 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          * @param callback a {@link Gio.AsyncReadyCallback}   to call when the request is satisfied
          */
-        load_async(size: number, cancellable: (Cancellable | null), callback?: (AsyncReadyCallback<this> | null)): (globalThis.Promise<[InputStream, string]> | void);
+        load_async(size: number, cancellable: Cancellable | null, callback: AsyncReadyCallback<this> | null): void;
+
+        /**
+         * Loads an icon asynchronously. To finish this function, see
+         * `g_loadable_icon_load_finish()`. For the synchronous, blocking
+         * version of this function, see `g_loadable_icon_load()`.
+         * @param size an integer.
+         * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
+         * @param callback a {@link Gio.AsyncReadyCallback}   to call when the request is satisfied
+         */
+        load_async(size: number, cancellable: Cancellable | null, callback?: AsyncReadyCallback<this> | null): globalThis.Promise<[InputStream, string]> | void;
 
         /**
          * Finishes an asynchronous icon load started in `g_loadable_icon_load_async()`.
@@ -11093,7 +11089,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          * @virtual
          */
-        vfunc_load(size: number, cancellable: (Cancellable | null)): [InputStream, string];
+        vfunc_load(size: number, cancellable: Cancellable | null): [InputStream, string];
 
         /**
          * Loads an icon asynchronously. To finish this function, see
@@ -11104,7 +11100,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param callback a {@link Gio.AsyncReadyCallback}   to call when the request is satisfied
          * @virtual
          */
-        vfunc_load_async(size: number, cancellable: (Cancellable | null), callback: (AsyncReadyCallback<this> | null)): void;
+        vfunc_load_async(size: number, cancellable: Cancellable | null, callback: AsyncReadyCallback<this> | null): void;
 
         /**
          * Finishes an asynchronous icon load started in `g_loadable_icon_load_async()`.
@@ -11179,9 +11175,7 @@ export const _LocalFilePrototype: typeof File.prototype;
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends GObject.Object.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GObject.Object.ConstructorProps {}
     }
 
     /**
@@ -11228,7 +11222,7 @@ export const _LocalFilePrototype: typeof File.prototype;
         /**
          * Gets the top cancellable from the stack.
          */
-        static get_current(): (Cancellable | null);
+        static get_current(): Cancellable | null;
 
         // Virtual methods
         /**
@@ -11323,7 +11317,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * nothing.
          * @param handler_id Handler id of the handler to be disconnected, or `0`.
          */
-        disconnect(handler_id: (bigint | number)): void;
+        disconnect(handler_id: bigint | number): void;
 
         /**
          * @param args 
@@ -11675,14 +11669,14 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param flags a {@link Gio.ConverterFlags} controlling the conversion details
          * @returns a {@link Gio.ConverterResult}, {@link Gio.ConverterResult.ERROR} on error.
          */
-        convert(inbuf: (Uint8Array | string), outbuf: (Uint8Array | string), flags: ConverterFlags): [ConverterResult, number, number];
+        convert(inbuf: Uint8Array | string, outbuf: Uint8Array | string, flags: ConverterFlags): [ConverterResult, number, number];
 
         /**
          * Applies `converter` to the data in `bytes`.
          * @param bytes the data to convert
          * @returns A newly-allocated   {@link GLib.Bytes} with the converted data, or `NULL` if an error   occurred
          */
-        convert_bytes(bytes: (GLib.Bytes | Uint8Array)): GLib.Bytes;
+        convert_bytes(bytes: GLib.Bytes | Uint8Array): GLib.Bytes;
 
         /**
          * Resets all internal state in the converter, making it behave
@@ -11779,7 +11773,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param flags a {@link Gio.ConverterFlags} controlling the conversion details
          * @virtual
          */
-        vfunc_convert(inbuf: (Uint8Array | null), outbuf: Uint8Array, flags: ConverterFlags): [ConverterResult, bigint | number, bigint | number];
+        vfunc_convert(inbuf: Uint8Array | null, outbuf: Uint8Array, flags: ConverterFlags): [ConverterResult, bigint | number, bigint | number];
 
         /**
          * Resets all internal state in the converter, making it behave
@@ -11831,7 +11825,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          * @returns `true` if successful. If an error has occurred, this function will     return `false` and set `error` appropriately if present.
          */
-        init(cancellable: (Cancellable | null)): boolean;
+        init(cancellable: Cancellable | null): boolean;
 
         /**
          * Initializes the object implementing the interface.
@@ -11875,7 +11869,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          * @virtual
          */
-        vfunc_init(cancellable: (Cancellable | null)): boolean;
+        vfunc_init(cancellable: Cancellable | null): boolean;
     }
 
 
@@ -11974,7 +11968,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable a {@link Gio.Cancellable}, or `null`
          * @returns a new {@link GLib.Source}
          */
-        create_source(cancellable: (Cancellable | null)): GLib.Source;
+        create_source(cancellable: Cancellable | null): GLib.Source;
 
         /**
          * Checks if `stream` can be read.
@@ -12010,7 +12004,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable a {@link Gio.Cancellable}, or `null`
          * @returns the number of bytes read, or -1 on error (including   {@link Gio.IOErrorEnum.WOULD_BLOCK}).
          */
-        read_nonblocking(cancellable: (Cancellable | null)): [number, Uint8Array];
+        read_nonblocking(cancellable: Cancellable | null): [number, Uint8Array];
 
         /**
          * Checks if `stream` is actually pollable. Some classes may implement
@@ -12039,7 +12033,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable a {@link Gio.Cancellable}, or `null`
          * @virtual
          */
-        vfunc_create_source(cancellable: (Cancellable | null)): GLib.Source;
+        vfunc_create_source(cancellable: Cancellable | null): GLib.Source;
 
         /**
          * Checks if `stream` can be read.
@@ -12074,7 +12068,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * `g_pollable_input_stream_can_poll()` returns `false` for `stream`.
          * @virtual
          */
-        vfunc_read_nonblocking(): [(bigint | number), Uint8Array | null];
+        vfunc_read_nonblocking(): [bigint | number, Uint8Array | null];
     }
 
 
@@ -12173,7 +12167,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable a {@link Gio.Cancellable}, or `null`
          * @returns a new {@link GLib.Source}
          */
-        create_source(cancellable: (Cancellable | null)): GLib.Source;
+        create_source(cancellable: Cancellable | null): GLib.Source;
 
         /**
          * Checks if `stream` can be written.
@@ -12214,7 +12208,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable a {@link Gio.Cancellable}, or `null`
          * @returns the number of bytes written, or -1 on error (including   {@link Gio.IOErrorEnum.WOULD_BLOCK}).
          */
-        write_nonblocking(buffer: (Uint8Array | string), cancellable: (Cancellable | null)): number;
+        write_nonblocking(buffer: Uint8Array | string, cancellable: Cancellable | null): number;
 
         /**
          * Attempts to write the bytes contained in the `n_vectors` `vectors` to `stream`,
@@ -12240,7 +12234,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable a {@link Gio.Cancellable}, or `null`
          * @returns %`G_POLLABLE_RETURN_OK` on success, {@link Gio.PollableReturn.WOULD_BLOCK} if the stream is not currently writable (and `error` is *not* set), or {@link Gio.PollableReturn.FAILED} if there was an error in which case `error` will be set.
          */
-        writev_nonblocking(vectors: OutputVector[], cancellable: (Cancellable | null)): [PollableReturn, number];
+        writev_nonblocking(vectors: OutputVector[], cancellable: Cancellable | null): [PollableReturn, number];
 
         /**
          * Checks if `stream` is actually pollable. Some classes may implement
@@ -12269,7 +12263,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable a {@link Gio.Cancellable}, or `null`
          * @virtual
          */
-        vfunc_create_source(cancellable: (Cancellable | null)): GLib.Source;
+        vfunc_create_source(cancellable: Cancellable | null): GLib.Source;
 
         /**
          * Checks if `stream` can be written.
@@ -12309,7 +12303,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param buffer a buffer to write     data from
          * @virtual
          */
-        vfunc_write_nonblocking(buffer: (Uint8Array | null)): (bigint | number);
+        vfunc_write_nonblocking(buffer: Uint8Array | null): bigint | number;
 
         /**
          * Attempts to write the bytes contained in the `n_vectors` `vectors` to `stream`,
@@ -12340,13 +12334,10 @@ export const _LocalFilePrototype: typeof File.prototype;
 
     namespace Credentials {
         // Signal signatures
-        interface SignalSignatures extends GObject.Object.SignalSignatures {
-        }
+        interface SignalSignatures extends GObject.Object.SignalSignatures {}
 
         // Constructor properties interface
-        interface ConstructorProps extends GObject.Object.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GObject.Object.ConstructorProps {}
     }
 
     /**
@@ -12490,13 +12481,10 @@ export const _LocalFilePrototype: typeof File.prototype;
 
     namespace DBusActionGroup {
         // Signal signatures
-        interface SignalSignatures extends GObject.Object.SignalSignatures {
-        }
+        interface SignalSignatures extends GObject.Object.SignalSignatures {}
 
         // Constructor properties interface
-        interface ConstructorProps extends GObject.Object.ConstructorProps, ActionGroup.ConstructorProps, RemoteActionGroup.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GObject.Object.ConstructorProps, ActionGroup.ConstructorProps, RemoteActionGroup.ConstructorProps {}
     }
 
     /**
@@ -12556,7 +12544,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param bus_name the bus name which exports the action     group or `null` if `connection` is not a message bus connection
          * @param object_path the object path at which the action group is exported
          */
-        static get(connection: DBusConnection, bus_name: (string | null), object_path: string): DBusActionGroup;
+        static get(connection: DBusConnection, bus_name: string | null, object_path: string): DBusActionGroup;
 
         /**
          * Emits the `Gio.ActionGroup::action-added` signal on `action_group`.
@@ -12629,7 +12617,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param action_name the name of the action to activate
          * @param parameter parameters to the activation
          */
-        activate_action(action_name: string, parameter: (GLib.Variant | null)): void;
+        activate_action(action_name: string, parameter: GLib.Variant | null): void;
 
         /**
          * Request for the state of the named action within `action_group` to be
@@ -12675,7 +12663,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param action_name the name of the action to query
          * @returns the parameter type
          */
-        get_action_parameter_type(action_name: string): (GLib.VariantType | null);
+        get_action_parameter_type(action_name: string): GLib.VariantType | null;
 
         /**
          * Queries the current state of the named action within `action_group`.
@@ -12689,7 +12677,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param action_name the name of the action to query
          * @returns the current state of the action
          */
-        get_action_state(action_name: string): (GLib.Variant | null);
+        get_action_state(action_name: string): GLib.Variant | null;
 
         /**
          * Requests a hint about the valid range of values for the state of the
@@ -12713,7 +12701,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param action_name the name of the action to query
          * @returns the state range hint
          */
-        get_action_state_hint(action_name: string): (GLib.Variant | null);
+        get_action_state_hint(action_name: string): GLib.Variant | null;
 
         /**
          * Queries the type of the state of the named action within
@@ -12735,7 +12723,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param action_name the name of the action to query
          * @returns the state type, if the action is stateful
          */
-        get_action_state_type(action_name: string): (GLib.VariantType | null);
+        get_action_state_type(action_name: string): GLib.VariantType | null;
 
         /**
          * Checks if the named action exists within `action_group`.
@@ -12862,7 +12850,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param parameter parameters to the activation
          * @virtual
          */
-        vfunc_activate_action(action_name: string, parameter: (GLib.Variant | null)): void;
+        vfunc_activate_action(action_name: string, parameter: GLib.Variant | null): void;
 
         /**
          * Request for the state of the named action within `action_group` to be
@@ -12909,7 +12897,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param action_name the name of the action to query
          * @virtual
          */
-        vfunc_get_action_parameter_type(action_name: string): (GLib.VariantType | null);
+        vfunc_get_action_parameter_type(action_name: string): GLib.VariantType | null;
 
         /**
          * Queries the current state of the named action within `action_group`.
@@ -12923,7 +12911,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param action_name the name of the action to query
          * @virtual
          */
-        vfunc_get_action_state(action_name: string): (GLib.Variant | null);
+        vfunc_get_action_state(action_name: string): GLib.Variant | null;
 
         /**
          * Requests a hint about the valid range of values for the state of the
@@ -12947,7 +12935,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param action_name the name of the action to query
          * @virtual
          */
-        vfunc_get_action_state_hint(action_name: string): (GLib.Variant | null);
+        vfunc_get_action_state_hint(action_name: string): GLib.Variant | null;
 
         /**
          * Queries the type of the state of the named action within
@@ -12969,7 +12957,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param action_name the name of the action to query
          * @virtual
          */
-        vfunc_get_action_state_type(action_name: string): (GLib.VariantType | null);
+        vfunc_get_action_state_type(action_name: string): GLib.VariantType | null;
 
         /**
          * Checks if the named action exists within `action_group`.
@@ -13034,7 +13022,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param parameter the optional parameter to the activation
          * @param platform_data the platform data to send
          */
-        activate_action_full(action_name: string, parameter: (GLib.Variant | null), platform_data: GLib.Variant): void;
+        activate_action_full(action_name: string, parameter: GLib.Variant | null, platform_data: GLib.Variant): void;
 
         /**
          * Changes the state of a remote action.
@@ -13067,7 +13055,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param platform_data the platform data to send
          * @virtual
          */
-        vfunc_activate_action_full(action_name: string, parameter: (GLib.Variant | null), platform_data: GLib.Variant): void;
+        vfunc_activate_action_full(action_name: string, parameter: GLib.Variant | null, platform_data: GLib.Variant): void;
 
         /**
          * Changes the state of a remote action.
@@ -13097,7 +13085,7 @@ export const _LocalFilePrototype: typeof File.prototype;
              * @since 2.34
              * @run-last
              */
-            "allow-mechanism": (arg0: string) => (boolean | void);
+            "allow-mechanism": (arg0: string) => boolean | void;
             /**
              * Emitted to check if a peer that is successfully authenticated
              * is authorized.
@@ -13105,13 +13093,11 @@ export const _LocalFilePrototype: typeof File.prototype;
              * @since 2.26
              * @run-last
              */
-            "authorize-authenticated-peer": (arg0: IOStream, arg1: (Credentials | null)) => (boolean | void);
+            "authorize-authenticated-peer": (arg0: IOStream, arg1: Credentials | null) => boolean | void;
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends GObject.Object.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GObject.Object.ConstructorProps {}
     }
 
     /**
@@ -13227,7 +13213,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param credentials Credentials received from the peer or `null`.
          * @returns `true` if the peer is authorized, `false` if not.
          */
-        authorize_authenticated_peer(stream: IOStream, credentials: (Credentials | null)): boolean;
+        authorize_authenticated_peer(stream: IOStream, credentials: Credentials | null): boolean;
     }
 
 
@@ -13255,7 +13241,7 @@ export const _LocalFilePrototype: typeof File.prototype;
              * @since 2.26
              * @run-last
              */
-            closed: (arg0: boolean, arg1: (GLib.Error | null)) => void;
+            closed: (arg0: boolean, arg1: GLib.Error | null) => void;
             "notify::address": (pspec: GObject.ParamSpec) => void;
             "notify::authentication-observer": (pspec: GObject.ParamSpec) => void;
             "notify::capabilities": (pspec: GObject.ParamSpec) => void;
@@ -13279,8 +13265,8 @@ export const _LocalFilePrototype: typeof File.prototype;
             flags: DBusConnectionFlags;
             guid: string;
             stream: IOStream;
-            unique_name: (string | null);
-            uniqueName: (string | null);
+            unique_name: string | null;
+            uniqueName: string | null;
         }
     }
 
@@ -13468,7 +13454,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @read-only
          * @default null
          */
-        get unique_name(): (string | null);
+        get unique_name(): string | null;
 
         /**
          * The unique name as assigned by the message bus or `null` if the
@@ -13477,7 +13463,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @read-only
          * @default null
          */
-        get uniqueName(): (string | null);
+        get uniqueName(): string | null;
 
         /**
          * Compile-time signal type information.
@@ -13500,9 +13486,9 @@ export const _LocalFilePrototype: typeof File.prototype;
 
         static new_for_address_finish(res: AsyncResult): DBusConnection;
 
-        static new_for_address_sync(address: string, flags: DBusConnectionFlags, observer: (DBusAuthObserver | null), cancellable: (Cancellable | null)): DBusConnection;
+        static new_for_address_sync(address: string, flags: DBusConnectionFlags, observer: DBusAuthObserver | null, cancellable: Cancellable | null): DBusConnection;
 
-        static new_sync(stream: IOStream, guid: (string | null), flags: DBusConnectionFlags, observer: (DBusAuthObserver | null), cancellable: (Cancellable | null)): DBusConnection;
+        static new_sync(stream: IOStream, guid: string | null, flags: DBusConnectionFlags, observer: DBusAuthObserver | null, cancellable: Cancellable | null): DBusConnection;
 
         // Signals
         /** @signal */
@@ -13546,7 +13532,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable a {@link Gio.Cancellable} or `null`
          * @param callback a {@link Gio.AsyncReadyCallback} to call when the request is satisfied
          */
-        static ["new"](stream: IOStream, guid: (string | null), flags: DBusConnectionFlags, observer: (DBusAuthObserver | null), cancellable: (Cancellable | null), callback: (AsyncReadyCallback<DBusConnection> | null)): void;
+        static ["new"](stream: IOStream, guid: string | null, flags: DBusConnectionFlags, observer: DBusAuthObserver | null, cancellable: Cancellable | null, callback: AsyncReadyCallback<DBusConnection> | null): void;
 
         /**
          * Asynchronously connects and sets up a D-Bus client connection for
@@ -13577,7 +13563,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable a {@link Gio.Cancellable} or `null`
          * @param callback a {@link Gio.AsyncReadyCallback} to call when the request is satisfied
          */
-        static new_for_address(address: string, flags: DBusConnectionFlags, observer: (DBusAuthObserver | null), cancellable: (Cancellable | null), callback: (AsyncReadyCallback<DBusConnection> | null)): void;
+        static new_for_address(address: string, flags: DBusConnectionFlags, observer: DBusAuthObserver | null, cancellable: Cancellable | null, callback: AsyncReadyCallback<DBusConnection> | null): void;
 
         // Methods
         /**
@@ -13671,7 +13657,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param timeout_msec the timeout in milliseconds, -1 to use the default     timeout or `G_MAXINT` for no timeout
          * @param cancellable a {@link Gio.Cancellable} or `null`
          */
-        call<T extends string = any>(bus_name: (string | null), object_path: string, interface_name: string, method_name: string, parameters: (GLib.Variant | null), reply_type: (GLib.VariantType<T> | null), flags: DBusCallFlags, timeout_msec: number, cancellable: (Cancellable | null)): globalThis.Promise<GLib.Variant<T>>;
+        call<T extends string = any>(bus_name: string | null, object_path: string, interface_name: string, method_name: string, parameters: GLib.Variant | null, reply_type: GLib.VariantType<T> | null, flags: DBusCallFlags, timeout_msec: number, cancellable: Cancellable | null): globalThis.Promise<GLib.Variant<T>>;
 
         /**
          * Asynchronously invokes the `method_name` method on the
@@ -13732,7 +13718,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable a {@link Gio.Cancellable} or `null`
          * @param callback a {@link Gio.AsyncReadyCallback} to call when the request     is satisfied or `null` if you don't care about the result of the     method invocation
          */
-        call<T extends string = any>(bus_name: (string | null), object_path: string, interface_name: string, method_name: string, parameters: (GLib.Variant | null), reply_type: (GLib.VariantType<T> | null), flags: DBusCallFlags, timeout_msec: number, cancellable: (Cancellable | null), callback: (AsyncReadyCallback<this> | null)): void;
+        call<T extends string = any>(bus_name: string | null, object_path: string, interface_name: string, method_name: string, parameters: GLib.Variant | null, reply_type: GLib.VariantType<T> | null, flags: DBusCallFlags, timeout_msec: number, cancellable: Cancellable | null, callback: AsyncReadyCallback<this> | null): void;
 
         /**
          * Asynchronously invokes the `method_name` method on the
@@ -13793,7 +13779,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable a {@link Gio.Cancellable} or `null`
          * @param callback a {@link Gio.AsyncReadyCallback} to call when the request     is satisfied or `null` if you don't care about the result of the     method invocation
          */
-        call<T extends string = any>(bus_name: (string | null), object_path: string, interface_name: string, method_name: string, parameters: (GLib.Variant | null), reply_type: (GLib.VariantType<T> | null), flags: DBusCallFlags, timeout_msec: number, cancellable: (Cancellable | null), callback?: (AsyncReadyCallback<this> | null)): (globalThis.Promise<GLib.Variant<T>> | void);
+        call<T extends string = any>(bus_name: string | null, object_path: string, interface_name: string, method_name: string, parameters: GLib.Variant | null, reply_type: GLib.VariantType<T> | null, flags: DBusCallFlags, timeout_msec: number, cancellable: Cancellable | null, callback?: AsyncReadyCallback<this> | null): globalThis.Promise<GLib.Variant<T>> | void;
 
         /**
          * Finishes an operation started with `g_dbus_connection_call()`.
@@ -13852,7 +13838,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable a {@link Gio.Cancellable} or `null`
          * @returns `null` if `error` is set. Otherwise a non-floating     {@link GLib.Variant} tuple with return values. Free with `g_variant_unref()`.
          */
-        call_sync(bus_name: (string | null), object_path: string, interface_name: string, method_name: string, parameters: (GLib.Variant | null), reply_type: (GLib.VariantType | null), flags: DBusCallFlags, timeout_msec: number, cancellable: (Cancellable | null)): GLib.Variant;
+        call_sync(bus_name: string | null, object_path: string, interface_name: string, method_name: string, parameters: GLib.Variant | null, reply_type: GLib.VariantType | null, flags: DBusCallFlags, timeout_msec: number, cancellable: Cancellable | null): GLib.Variant;
 
         /**
          * Like `g_dbus_connection_call()` but also takes a {@link Gio.UnixFDList} object.
@@ -13881,37 +13867,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param fd_list a {@link Gio.UnixFDList} or `null`
          * @param cancellable a {@link Gio.Cancellable} or `null`
          */
-        call_with_unix_fd_list(bus_name: (string | null), object_path: string, interface_name: string, method_name: string, parameters: (GLib.Variant | null), reply_type: (GLib.VariantType | null), flags: DBusCallFlags, timeout_msec: number, fd_list: (UnixFDList | null), cancellable: (Cancellable | null)): globalThis.Promise<[GLib.Variant, (UnixFDList | null)]>;
-
-        /**
-         * Like `g_dbus_connection_call()` but also takes a {@link Gio.UnixFDList} object.
-         * 
-         * The file descriptors normally correspond to `G_VARIANT_TYPE_HANDLE`
-         * values in the body of the message. For example, if a message contains
-         * two file descriptors, `fd_list` would have length 2, and
-         * `g_variant_new_handle (0)` and `g_variant_new_handle (1)` would appear
-         * somewhere in the body of the message (not necessarily in that order!)
-         * to represent the file descriptors at indexes 0 and 1 respectively.
-         * 
-         * When designing D-Bus APIs that are intended to be interoperable,
-         * please note that non-GDBus implementations of D-Bus can usually only
-         * access file descriptors if they are referenced in this way by a
-         * value of type `G_VARIANT_TYPE_HANDLE` in the body of the message.
-         * 
-         * This method is only available on UNIX.
-         * @param bus_name a unique or well-known bus name or `null` if     `connection` is not a message bus connection
-         * @param object_path path of remote object
-         * @param interface_name D-Bus interface to invoke method on
-         * @param method_name the name of the method to invoke
-         * @param parameters a {@link GLib.Variant} tuple with parameters for the method     or `null` if not passing parameters
-         * @param reply_type the expected type of the reply, or `null`
-         * @param flags flags from the {@link Gio.DBusCallFlags} enumeration
-         * @param timeout_msec the timeout in milliseconds, -1 to use the default     timeout or `G_MAXINT` for no timeout
-         * @param fd_list a {@link Gio.UnixFDList} or `null`
-         * @param cancellable a {@link Gio.Cancellable} or `null`
-         * @param callback a {@link Gio.AsyncReadyCallback} to call when the request is     satisfied or `null` if you don't * care about the result of the     method invocation
-         */
-        call_with_unix_fd_list(bus_name: (string | null), object_path: string, interface_name: string, method_name: string, parameters: (GLib.Variant | null), reply_type: (GLib.VariantType | null), flags: DBusCallFlags, timeout_msec: number, fd_list: (UnixFDList | null), cancellable: (Cancellable | null), callback: (AsyncReadyCallback<this> | null)): void;
+        call_with_unix_fd_list(bus_name: string | null, object_path: string, interface_name: string, method_name: string, parameters: GLib.Variant | null, reply_type: GLib.VariantType | null, flags: DBusCallFlags, timeout_msec: number, fd_list: UnixFDList | null, cancellable: Cancellable | null): globalThis.Promise<[GLib.Variant, UnixFDList | null]>;
 
         /**
          * Like `g_dbus_connection_call()` but also takes a {@link Gio.UnixFDList} object.
@@ -13941,7 +13897,37 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable a {@link Gio.Cancellable} or `null`
          * @param callback a {@link Gio.AsyncReadyCallback} to call when the request is     satisfied or `null` if you don't * care about the result of the     method invocation
          */
-        call_with_unix_fd_list(bus_name: (string | null), object_path: string, interface_name: string, method_name: string, parameters: (GLib.Variant | null), reply_type: (GLib.VariantType | null), flags: DBusCallFlags, timeout_msec: number, fd_list: (UnixFDList | null), cancellable: (Cancellable | null), callback?: (AsyncReadyCallback<this> | null)): (globalThis.Promise<[GLib.Variant, (UnixFDList | null)]> | void);
+        call_with_unix_fd_list(bus_name: string | null, object_path: string, interface_name: string, method_name: string, parameters: GLib.Variant | null, reply_type: GLib.VariantType | null, flags: DBusCallFlags, timeout_msec: number, fd_list: UnixFDList | null, cancellable: Cancellable | null, callback: AsyncReadyCallback<this> | null): void;
+
+        /**
+         * Like `g_dbus_connection_call()` but also takes a {@link Gio.UnixFDList} object.
+         * 
+         * The file descriptors normally correspond to `G_VARIANT_TYPE_HANDLE`
+         * values in the body of the message. For example, if a message contains
+         * two file descriptors, `fd_list` would have length 2, and
+         * `g_variant_new_handle (0)` and `g_variant_new_handle (1)` would appear
+         * somewhere in the body of the message (not necessarily in that order!)
+         * to represent the file descriptors at indexes 0 and 1 respectively.
+         * 
+         * When designing D-Bus APIs that are intended to be interoperable,
+         * please note that non-GDBus implementations of D-Bus can usually only
+         * access file descriptors if they are referenced in this way by a
+         * value of type `G_VARIANT_TYPE_HANDLE` in the body of the message.
+         * 
+         * This method is only available on UNIX.
+         * @param bus_name a unique or well-known bus name or `null` if     `connection` is not a message bus connection
+         * @param object_path path of remote object
+         * @param interface_name D-Bus interface to invoke method on
+         * @param method_name the name of the method to invoke
+         * @param parameters a {@link GLib.Variant} tuple with parameters for the method     or `null` if not passing parameters
+         * @param reply_type the expected type of the reply, or `null`
+         * @param flags flags from the {@link Gio.DBusCallFlags} enumeration
+         * @param timeout_msec the timeout in milliseconds, -1 to use the default     timeout or `G_MAXINT` for no timeout
+         * @param fd_list a {@link Gio.UnixFDList} or `null`
+         * @param cancellable a {@link Gio.Cancellable} or `null`
+         * @param callback a {@link Gio.AsyncReadyCallback} to call when the request is     satisfied or `null` if you don't * care about the result of the     method invocation
+         */
+        call_with_unix_fd_list(bus_name: string | null, object_path: string, interface_name: string, method_name: string, parameters: GLib.Variant | null, reply_type: GLib.VariantType | null, flags: DBusCallFlags, timeout_msec: number, fd_list: UnixFDList | null, cancellable: Cancellable | null, callback?: AsyncReadyCallback<this> | null): globalThis.Promise<[GLib.Variant, UnixFDList | null]> | void;
 
         /**
          * Finishes an operation started with `g_dbus_connection_call_with_unix_fd_list()`.
@@ -13979,7 +13965,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable a {@link Gio.Cancellable} or `null`
          * @returns `null` if `error` is set. Otherwise a non-floating     {@link GLib.Variant} tuple with return values. Free with `g_variant_unref()`.
          */
-        call_with_unix_fd_list_sync(bus_name: (string | null), object_path: string, interface_name: string, method_name: string, parameters: (GLib.Variant | null), reply_type: (GLib.VariantType | null), flags: DBusCallFlags, timeout_msec: number, fd_list: (UnixFDList | null), cancellable: (Cancellable | null)): [GLib.Variant, UnixFDList | null];
+        call_with_unix_fd_list_sync(bus_name: string | null, object_path: string, interface_name: string, method_name: string, parameters: GLib.Variant | null, reply_type: GLib.VariantType | null, flags: DBusCallFlags, timeout_msec: number, fd_list: UnixFDList | null, cancellable: Cancellable | null): [GLib.Variant, UnixFDList | null];
 
         /**
          * Closes `connection`. Note that this never causes the process to
@@ -14008,37 +13994,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * version.
          * @param cancellable a {@link Gio.Cancellable} or `null`
          */
-        close(cancellable: (Cancellable | null)): globalThis.Promise<boolean>;
-
-        /**
-         * Closes `connection`. Note that this never causes the process to
-         * exit (this might only happen if the other end of a shared message
-         * bus connection disconnects, see {@link Gio.DBusConnection.exit_on_close}).
-         * 
-         * Once the connection is closed, operations such as sending a message
-         * will return with the error {@link Gio.IOErrorEnum.CLOSED}. Closing a connection
-         * will not automatically flush the connection so queued messages may
-         * be lost. Use `g_dbus_connection_flush()` if you need such guarantees.
-         * 
-         * If `connection` is already closed, this method fails with
-         * {@link Gio.IOErrorEnum.CLOSED}.
-         * 
-         * When `connection` has been closed, the {@link Gio.DBusConnection.SignalSignatures.closed | Gio.DBusConnection::closed}
-         * signal is emitted in the thread-default main context
-         * (see {@link GLib.MainContext.push_thread_default})
-         * of the thread that `connection` was constructed in.
-         * 
-         * This is an asynchronous method. When the operation is finished,
-         * `callback` will be invoked in the thread-default main context
-         * (see {@link GLib.MainContext.push_thread_default})
-         * of the thread you are calling this method from. You can
-         * then call `g_dbus_connection_close_finish()` to get the result of the
-         * operation. See `g_dbus_connection_close_sync()` for the synchronous
-         * version.
-         * @param cancellable a {@link Gio.Cancellable} or `null`
-         * @param callback a {@link Gio.AsyncReadyCallback} to call when the request is     satisfied or `null` if you don't care about the result
-         */
-        close(cancellable: (Cancellable | null), callback: (AsyncReadyCallback<this> | null)): void;
+        close(cancellable: Cancellable | null): globalThis.Promise<boolean>;
 
         /**
          * Closes `connection`. Note that this never causes the process to
@@ -14068,7 +14024,37 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable a {@link Gio.Cancellable} or `null`
          * @param callback a {@link Gio.AsyncReadyCallback} to call when the request is     satisfied or `null` if you don't care about the result
          */
-        close(cancellable: (Cancellable | null), callback?: (AsyncReadyCallback<this> | null)): (globalThis.Promise<boolean> | void);
+        close(cancellable: Cancellable | null, callback: AsyncReadyCallback<this> | null): void;
+
+        /**
+         * Closes `connection`. Note that this never causes the process to
+         * exit (this might only happen if the other end of a shared message
+         * bus connection disconnects, see {@link Gio.DBusConnection.exit_on_close}).
+         * 
+         * Once the connection is closed, operations such as sending a message
+         * will return with the error {@link Gio.IOErrorEnum.CLOSED}. Closing a connection
+         * will not automatically flush the connection so queued messages may
+         * be lost. Use `g_dbus_connection_flush()` if you need such guarantees.
+         * 
+         * If `connection` is already closed, this method fails with
+         * {@link Gio.IOErrorEnum.CLOSED}.
+         * 
+         * When `connection` has been closed, the {@link Gio.DBusConnection.SignalSignatures.closed | Gio.DBusConnection::closed}
+         * signal is emitted in the thread-default main context
+         * (see {@link GLib.MainContext.push_thread_default})
+         * of the thread that `connection` was constructed in.
+         * 
+         * This is an asynchronous method. When the operation is finished,
+         * `callback` will be invoked in the thread-default main context
+         * (see {@link GLib.MainContext.push_thread_default})
+         * of the thread you are calling this method from. You can
+         * then call `g_dbus_connection_close_finish()` to get the result of the
+         * operation. See `g_dbus_connection_close_sync()` for the synchronous
+         * version.
+         * @param cancellable a {@link Gio.Cancellable} or `null`
+         * @param callback a {@link Gio.AsyncReadyCallback} to call when the request is     satisfied or `null` if you don't care about the result
+         */
+        close(cancellable: Cancellable | null, callback?: AsyncReadyCallback<this> | null): globalThis.Promise<boolean> | void;
 
         /**
          * Finishes an operation started with `g_dbus_connection_close()`.
@@ -14085,7 +14071,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable a {@link Gio.Cancellable} or `null`
          * @returns `true` if the operation succeeded, `false` if `error` is set
          */
-        close_sync(cancellable: (Cancellable | null)): boolean;
+        close_sync(cancellable: Cancellable | null): boolean;
 
         /**
          * Emits a signal.
@@ -14102,7 +14088,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param parameters a {@link GLib.Variant} tuple with parameters for the signal              or `null` if not passing parameters
          * @returns `true` unless `error` is set
          */
-        emit_signal(destination_bus_name: (string | null), object_path: string, interface_name: string, signal_name: string, parameters: (GLib.Variant | null)): boolean;
+        emit_signal(destination_bus_name: string | null, object_path: string, interface_name: string, signal_name: string, parameters: GLib.Variant | null): boolean;
 
         /**
          * Exports `action_group` on `connection` at `object_path`.
@@ -14172,7 +14158,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * version.
          * @param cancellable a {@link Gio.Cancellable} or `null`
          */
-        flush(cancellable: (Cancellable | null)): globalThis.Promise<boolean>;
+        flush(cancellable: Cancellable | null): globalThis.Promise<boolean>;
 
         /**
          * Asynchronously flushes `connection`, that is, writes all queued
@@ -14192,7 +14178,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable a {@link Gio.Cancellable} or `null`
          * @param callback a {@link Gio.AsyncReadyCallback} to call when the     request is satisfied or `null` if you don't care about the result
          */
-        flush(cancellable: (Cancellable | null), callback: (AsyncReadyCallback<this> | null)): void;
+        flush(cancellable: Cancellable | null, callback: AsyncReadyCallback<this> | null): void;
 
         /**
          * Asynchronously flushes `connection`, that is, writes all queued
@@ -14212,7 +14198,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable a {@link Gio.Cancellable} or `null`
          * @param callback a {@link Gio.AsyncReadyCallback} to call when the     request is satisfied or `null` if you don't care about the result
          */
-        flush(cancellable: (Cancellable | null), callback?: (AsyncReadyCallback<this> | null)): (globalThis.Promise<boolean> | void);
+        flush(cancellable: Cancellable | null, callback?: AsyncReadyCallback<this> | null): globalThis.Promise<boolean> | void;
 
         /**
          * Finishes an operation started with `g_dbus_connection_flush()`.
@@ -14229,7 +14215,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable a {@link Gio.Cancellable} or `null`
          * @returns `true` if the operation succeeded, `false` if `error` is set
          */
-        flush_sync(cancellable: (Cancellable | null)): boolean;
+        flush_sync(cancellable: Cancellable | null): boolean;
 
         /**
          * Gets the capabilities negotiated with the remote peer
@@ -14280,7 +14266,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * `null` for message bus clients.
          * @returns a {@link Gio.Credentials} or `null` if not     available. Do not free this object, it is owned by `connection`.
          */
-        get_peer_credentials(): (Credentials | null);
+        get_peer_credentials(): Credentials | null;
 
         /**
          * Gets the underlying stream used for IO.
@@ -14298,7 +14284,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * message bus connection.
          * @returns the unique name or `null` if `connection` is not a message     bus connection. Do not free this string, it is owned by     `connection`.
          */
-        get_unique_name(): (string | null);
+        get_unique_name(): string | null;
 
         /**
          * Gets whether `connection` is closed.
@@ -14321,7 +14307,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param set_property_closure {@link GObject.Closure} for setting a property.
          * @returns 0 if `error` is set, otherwise a registration ID (never 0) that can be used with `g_dbus_connection_unregister_object()` .
          */
-        register_object(object_path: string, interface_info: DBusInterfaceInfo, method_call_closure: (GObject.Closure | null), get_property_closure: (GObject.Closure | null), set_property_closure: (GObject.Closure | null)): number;
+        register_object(object_path: string, interface_info: DBusInterfaceInfo, method_call_closure: GObject.Closure | null, get_property_closure: GObject.Closure | null, set_property_closure: GObject.Closure | null): number;
 
         /**
          * Version of {@link Gio.DBusConnection.register_object} using closures instead
@@ -14343,7 +14329,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param set_property_closure {@link GObject.Closure} for setting a property.
          * @returns `0` if `error` is set, otherwise a registration ID (never `0`) that can be used with {@link Gio.DBusConnection.unregister_object}.
          */
-        register_object_with_closures2(object_path: string, interface_info: DBusInterfaceInfo, method_call_closure: (GObject.Closure | null), get_property_closure: (GObject.Closure | null), set_property_closure: (GObject.Closure | null)): number;
+        register_object_with_closures2(object_path: string, interface_info: DBusInterfaceInfo, method_call_closure: GObject.Closure | null, get_property_closure: GObject.Closure | null, set_property_closure: GObject.Closure | null): number;
 
         /**
          * Registers a whole subtree of dynamic objects.
@@ -14466,7 +14452,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param timeout_msec the timeout in milliseconds, -1 to use the default     timeout or `G_MAXINT` for no timeout
          * @param cancellable a {@link Gio.Cancellable} or `null`
          */
-        send_message_with_reply(message: DBusMessage, flags: DBusSendMessageFlags, timeout_msec: number, cancellable: (Cancellable | null)): [globalThis.Promise<DBusMessage>, number];
+        send_message_with_reply(message: DBusMessage, flags: DBusSendMessageFlags, timeout_msec: number, cancellable: Cancellable | null): [globalThis.Promise<DBusMessage>, number];
 
         /**
          * Asynchronously sends `message` to the peer represented by `connection`.
@@ -14505,7 +14491,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable a {@link Gio.Cancellable} or `null`
          * @param callback a {@link Gio.AsyncReadyCallback} to call when the request     is satisfied or `null` if you don't care about the result
          */
-        send_message_with_reply(message: DBusMessage, flags: DBusSendMessageFlags, timeout_msec: number, cancellable: (Cancellable | null), callback: (AsyncReadyCallback<this> | null)): number;
+        send_message_with_reply(message: DBusMessage, flags: DBusSendMessageFlags, timeout_msec: number, cancellable: Cancellable | null, callback: AsyncReadyCallback<this> | null): number;
 
         /**
          * Asynchronously sends `message` to the peer represented by `connection`.
@@ -14544,7 +14530,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable a {@link Gio.Cancellable} or `null`
          * @param callback a {@link Gio.AsyncReadyCallback} to call when the request     is satisfied or `null` if you don't care about the result
          */
-        send_message_with_reply(message: DBusMessage, flags: DBusSendMessageFlags, timeout_msec: number, cancellable: (Cancellable | null), callback?: (AsyncReadyCallback<this> | null)): [(globalThis.Promise<DBusMessage> | void), number];
+        send_message_with_reply(message: DBusMessage, flags: DBusSendMessageFlags, timeout_msec: number, cancellable: Cancellable | null, callback?: AsyncReadyCallback<this> | null): [globalThis.Promise<DBusMessage> | void, number];
 
         /**
          * Finishes an operation started with `g_dbus_connection_send_message_with_reply()`.
@@ -14601,7 +14587,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable a {@link Gio.Cancellable} or `null`
          * @returns a locked {@link Gio.DBusMessage} that is the reply     to `message` or `null` if `error` is set
          */
-        send_message_with_reply_sync(message: DBusMessage, flags: DBusSendMessageFlags, timeout_msec: number, cancellable: (Cancellable | null)): [DBusMessage, number];
+        send_message_with_reply_sync(message: DBusMessage, flags: DBusSendMessageFlags, timeout_msec: number, cancellable: Cancellable | null): [DBusMessage, number];
 
         /**
          * Sets whether the process should be terminated when `connection` is
@@ -14677,7 +14663,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param callback callback to invoke when there is a signal matching the requested data
          * @returns a subscription identifier that can be used with `g_dbus_connection_signal_unsubscribe()`
          */
-        signal_subscribe(sender: (string | null), interface_name: (string | null), member: (string | null), object_path: (string | null), arg0: (string | null), flags: DBusSignalFlags, callback: DBusSignalCallback): number;
+        signal_subscribe(sender: string | null, interface_name: string | null, member: string | null, object_path: string | null, arg0: string | null, flags: DBusSignalFlags, callback: DBusSignalCallback): number;
 
         /**
          * Unsubscribes from signals.
@@ -14746,7 +14732,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param name_appeared_closure {@link GObject.Closure} to invoke when `name` is known to exist or `null`.
          * @param name_vanished_closure {@link GObject.Closure} to invoke when `name` is known to not exist or `null`.
          */
-        watch_name(name: string, flags: BusNameWatcherFlags, name_appeared_closure: (GObject.Closure | null), name_vanished_closure: (GObject.Closure | null)): number;
+        watch_name(name: string, flags: BusNameWatcherFlags, name_appeared_closure: GObject.Closure | null, name_vanished_closure: GObject.Closure | null): number;
 
         /**
          * @param watcher_id An identifier obtained from `g_bus_watch_name()`
@@ -14759,7 +14745,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param name_acquired_closure closure to invoke when `name` is   acquired, or `NULL` to ignore
          * @param name_lost_closure closure to invoke when `name` is lost,   or `NULL` to ignore
          */
-        own_name(name: string, flags: BusNameOwnerFlags, name_acquired_closure: (GObject.Closure | null), name_lost_closure: (GObject.Closure | null)): number;
+        own_name(name: string, flags: BusNameOwnerFlags, name_acquired_closure: GObject.Closure | null, name_lost_closure: GObject.Closure | null): number;
 
         /**
          * @param owner_id an identifier obtained from {@link Gio.bus_own_name}
@@ -14806,7 +14792,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param io_priority the [I/O priority](https://docs.gtk.org/gio/iface.AsyncResult.html#io-priority) of the operation
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          */
-        init_async(io_priority: number, cancellable: (Cancellable | null)): globalThis.Promise<boolean>;
+        init_async(io_priority: number, cancellable: Cancellable | null): globalThis.Promise<boolean>;
 
         /**
          * Starts asynchronous initialization of the object implementing the
@@ -14849,7 +14835,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          * @param callback a {@link Gio.AsyncReadyCallback} to call when the request is satisfied
          */
-        init_async(io_priority: number, cancellable: (Cancellable | null), callback: (AsyncReadyCallback<this> | null)): void;
+        init_async(io_priority: number, cancellable: Cancellable | null, callback: AsyncReadyCallback<this> | null): void;
 
         /**
          * Starts asynchronous initialization of the object implementing the
@@ -14892,7 +14878,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          * @param callback a {@link Gio.AsyncReadyCallback} to call when the request is satisfied
          */
-        init_async(io_priority: number, cancellable: (Cancellable | null), callback?: (AsyncReadyCallback<this> | null)): (globalThis.Promise<boolean> | void);
+        init_async(io_priority: number, cancellable: Cancellable | null, callback?: AsyncReadyCallback<this> | null): globalThis.Promise<boolean> | void;
 
         /**
          * Finishes asynchronous initialization and returns the result.
@@ -14952,7 +14938,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param callback a {@link Gio.AsyncReadyCallback} to call when the request is satisfied
          * @virtual
          */
-        vfunc_init_async(io_priority: number, cancellable: (Cancellable | null), callback: (AsyncReadyCallback<this> | null)): void;
+        vfunc_init_async(io_priority: number, cancellable: Cancellable | null, callback: AsyncReadyCallback<this> | null): void;
 
         /**
          * Finishes asynchronous initialization and returns the result.
@@ -15004,7 +14990,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          * @returns `true` if successful. If an error has occurred, this function will     return `false` and set `error` appropriately if present.
          */
-        init(cancellable: (Cancellable | null)): boolean;
+        init(cancellable: Cancellable | null): boolean;
 
         /**
          * Initializes the object implementing the interface.
@@ -15048,7 +15034,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          * @virtual
          */
-        vfunc_init(cancellable: (Cancellable | null)): boolean;
+        vfunc_init(cancellable: Cancellable | null): boolean;
     }
 
 
@@ -15093,7 +15079,7 @@ export const _LocalFilePrototype: typeof File.prototype;
              * @since 2.30
              * @run-last
              */
-            "g-authorize-method": (arg0: DBusMethodInvocation) => (boolean | void);
+            "g-authorize-method": (arg0: DBusMethodInvocation) => boolean | void;
             "notify::g-flags": (pspec: GObject.ParamSpec) => void;
         }
 
@@ -15229,7 +15215,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * Gets the first connection that `interface_` is exported on, if any.
          * @returns A {@link Gio.DBusConnection} or `null` if `interface_` is not exported anywhere. Do not free, the object belongs to `interface_`.
          */
-        get_connection(): (DBusConnection | null);
+        get_connection(): DBusConnection | null;
 
         /**
          * Gets a list of the connections that `interface_` is exported on.
@@ -15255,7 +15241,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * Gets the object path that `interface_` is exported on, if any.
          * @returns A string owned by `interface_` or `null` if `interface_` is not exported anywhere. Do not free, the string belongs to `interface_`.
          */
-        get_object_path(): (string | null);
+        get_object_path(): string | null;
 
         /**
          * Gets all D-Bus properties for `interface_`.
@@ -15305,7 +15291,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * Gets the {@link Gio.DBusObject} that `interface_` belongs to, if any.
          * @returns A {@link Gio.DBusObject} or `null`. The returned reference should be freed with `g_object_unref()`.
          */
-        get_object(): (DBusObject | null);
+        get_object(): DBusObject | null;
 
         /**
          * Sets the {@link Gio.DBusObject} for `interface_` to `object`.
@@ -15313,13 +15299,13 @@ export const _LocalFilePrototype: typeof File.prototype;
          * Note that `interface_` will hold a weak reference to `object`.
          * @param object A {@link Gio.DBusObject} or `null`.
          */
-        set_object(object: (DBusObject | null)): void;
+        set_object(object: DBusObject | null): void;
 
         /**
          * Gets the {@link Gio.DBusObject} that `interface_` belongs to, if any.
          * @virtual
          */
-        vfunc_dup_object(): (DBusObject | null);
+        vfunc_dup_object(): DBusObject | null;
 
         /**
          * Sets the {@link Gio.DBusObject} for `interface_` to `object`.
@@ -15328,19 +15314,16 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param object A {@link Gio.DBusObject} or `null`.
          * @virtual
          */
-        vfunc_set_object(object: (DBusObject | null)): void;
+        vfunc_set_object(object: DBusObject | null): void;
     }
 
 
     namespace DBusMenuModel {
         // Signal signatures
-        interface SignalSignatures extends MenuModel.SignalSignatures {
-        }
+        interface SignalSignatures extends MenuModel.SignalSignatures {}
 
         // Constructor properties interface
-        interface ConstructorProps extends MenuModel.ConstructorProps {
-
-        }
+        interface ConstructorProps extends MenuModel.ConstructorProps {}
     }
 
     /**
@@ -15393,7 +15376,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param bus_name the bus name which exports the menu model     or `null` if `connection` is not a message bus connection
          * @param object_path the object path at which the menu model is exported
          */
-        static get(connection: DBusConnection, bus_name: (string | null), object_path: string): DBusMenuModel;
+        static get(connection: DBusConnection, bus_name: string | null, object_path: string): DBusMenuModel;
     }
 
 
@@ -15441,9 +15424,9 @@ export const _LocalFilePrototype: typeof File.prototype;
 
         static ["new"](): DBusMessage;
 
-        static new_from_blob(blob: (Uint8Array | string), capabilities: DBusCapabilityFlags): DBusMessage;
+        static new_from_blob(blob: Uint8Array | string, capabilities: DBusCapabilityFlags): DBusMessage;
 
-        static new_method_call(name: (string | null), path: string, interface_: (string | null), method: string): DBusMessage;
+        static new_method_call(name: string | null, path: string, interface_: string | null, method: string): DBusMessage;
 
         static new_signal(path: string, interface_: string, signal: string): DBusMessage;
 
@@ -15466,7 +15449,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * completely deserialize the D-Bus message stored at `blob`.
          * @param blob A blob representing a binary D-Bus message.
          */
-        static bytes_needed(blob: (Uint8Array | string)): number;
+        static bytes_needed(blob: Uint8Array | string): number;
 
         // Methods
         /**
@@ -15487,7 +15470,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * arg0 values.
          * @returns The string item or `null` if the first item in the body of `message` is not a string.
          */
-        get_arg0(): (string | null);
+        get_arg0(): string | null;
 
         /**
          * Convenience to get the first item in the body of `message`.
@@ -15495,13 +15478,13 @@ export const _LocalFilePrototype: typeof File.prototype;
          * See {@link Gio.DBusMessage.get_arg0} for returning string-typed arg0 values.
          * @returns The object path item or `NULL` if the first item in the   body of `message` is not an object path.
          */
-        get_arg0_path(): (string | null);
+        get_arg0_path(): string | null;
 
         /**
          * Gets the body of a message.
          * @returns A {@link GLib.Variant} or `null` if the body is empty. Do not free, it is owned by `message`.
          */
-        get_body(): (GLib.Variant | null);
+        get_body(): GLib.Variant | null;
 
         /**
          * Gets the byte order of `message`.
@@ -15513,13 +15496,13 @@ export const _LocalFilePrototype: typeof File.prototype;
          * Convenience getter for the {@link Gio.DBusMessageHeaderField.DESTINATION} header field.
          * @returns The value.
          */
-        get_destination(): (string | null);
+        get_destination(): string | null;
 
         /**
          * Convenience getter for the {@link Gio.DBusMessageHeaderField.ERROR_NAME} header field.
          * @returns The value.
          */
-        get_error_name(): (string | null);
+        get_error_name(): string | null;
 
         /**
          * Gets the flags for `message`.
@@ -15535,7 +15518,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param header_field A 8-bit unsigned integer (typically a value from the {@link Gio.DBusMessageHeaderField} enumeration)
          * @returns A {@link GLib.Variant} with the value if the header was found, `null` otherwise. Do not free, it is owned by `message`.
          */
-        get_header(header_field: DBusMessageHeaderField): (GLib.Variant | null);
+        get_header(header_field: DBusMessageHeaderField): GLib.Variant | null;
 
         /**
          * Gets an array of all header fields on `message` that are set.
@@ -15547,7 +15530,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * Convenience getter for the {@link Gio.DBusMessageHeaderField.INTERFACE} header field.
          * @returns The value.
          */
-        get_interface(): (string | null);
+        get_interface(): string | null;
 
         /**
          * Checks whether `message` is locked. To monitor changes to this
@@ -15561,7 +15544,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * Convenience getter for the {@link Gio.DBusMessageHeaderField.MEMBER} header field.
          * @returns The value.
          */
-        get_member(): (string | null);
+        get_member(): string | null;
 
         /**
          * Gets the type of `message`.
@@ -15579,7 +15562,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * Convenience getter for the {@link Gio.DBusMessageHeaderField.PATH} header field.
          * @returns The value.
          */
-        get_path(): (string | null);
+        get_path(): string | null;
 
         /**
          * Convenience getter for the {@link Gio.DBusMessageHeaderField.REPLY_SERIAL} header field.
@@ -15591,7 +15574,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * Convenience getter for the {@link Gio.DBusMessageHeaderField.SENDER} header field.
          * @returns The value.
          */
-        get_sender(): (string | null);
+        get_sender(): string | null;
 
         /**
          * Gets the serial for `message`.
@@ -15619,7 +15602,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * `g_unix_fd_list_get (list, 5, ...)`.
          * @returns A {@link Gio.UnixFDList} or `null` if no file descriptors are associated. Do not free, this object is owned by `message`.
          */
-        get_unix_fd_list(): (UnixFDList | null);
+        get_unix_fd_list(): UnixFDList | null;
 
         /**
          * If `message` is locked, does nothing. Otherwise locks the message.
@@ -15698,7 +15681,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * Convenience setter for the {@link Gio.DBusMessageHeaderField.DESTINATION} header field.
          * @param value The value to set.
          */
-        set_destination(value: (string | null)): void;
+        set_destination(value: string | null): void;
 
         /**
          * Convenience setter for the {@link Gio.DBusMessageHeaderField.ERROR_NAME} header field.
@@ -15719,19 +15702,19 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param header_field A 8-bit unsigned integer (typically a value from the {@link Gio.DBusMessageHeaderField} enumeration)
          * @param value A {@link GLib.Variant} to set the header field or `null` to clear the header field.
          */
-        set_header(header_field: DBusMessageHeaderField, value: (GLib.Variant | null)): void;
+        set_header(header_field: DBusMessageHeaderField, value: GLib.Variant | null): void;
 
         /**
          * Convenience setter for the {@link Gio.DBusMessageHeaderField.INTERFACE} header field.
          * @param value The value to set.
          */
-        set_interface(value: (string | null)): void;
+        set_interface(value: string | null): void;
 
         /**
          * Convenience setter for the {@link Gio.DBusMessageHeaderField.MEMBER} header field.
          * @param value The value to set.
          */
-        set_member(value: (string | null)): void;
+        set_member(value: string | null): void;
 
         /**
          * Sets `message` to be of `type`.
@@ -15749,7 +15732,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * Convenience setter for the {@link Gio.DBusMessageHeaderField.PATH} header field.
          * @param value The value to set.
          */
-        set_path(value: (string | null)): void;
+        set_path(value: string | null): void;
 
         /**
          * Convenience setter for the {@link Gio.DBusMessageHeaderField.REPLY_SERIAL} header field.
@@ -15761,7 +15744,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * Convenience setter for the {@link Gio.DBusMessageHeaderField.SENDER} header field.
          * @param value The value to set.
          */
-        set_sender(value: (string | null)): void;
+        set_sender(value: string | null): void;
 
         /**
          * Sets the serial for `message`.
@@ -15776,7 +15759,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * Convenience setter for the {@link Gio.DBusMessageHeaderField.SIGNATURE} header field.
          * @param value The value to set.
          */
-        set_signature(value: (string | null)): void;
+        set_signature(value: string | null): void;
 
         /**
          * Sets the UNIX file descriptors associated with `message`. As a
@@ -15792,7 +15775,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * `G_VARIANT_TYPE_HANDLE` in the body of the message.
          * @param fd_list A {@link Gio.UnixFDList} or `null`.
          */
-        set_unix_fd_list(fd_list: (UnixFDList | null)): void;
+        set_unix_fd_list(fd_list: UnixFDList | null): void;
 
         /**
          * Serializes `message` to a blob. The byte order returned by
@@ -15818,13 +15801,10 @@ export const _LocalFilePrototype: typeof File.prototype;
 
     namespace DBusMethodInvocation {
         // Signal signatures
-        interface SignalSignatures extends GObject.Object.SignalSignatures {
-        }
+        interface SignalSignatures extends GObject.Object.SignalSignatures {}
 
         // Constructor properties interface
-        interface ConstructorProps extends GObject.Object.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GObject.Object.ConstructorProps {}
     }
 
     /**
@@ -15890,7 +15870,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * {@link Gio.DBusInterfaceVTable} for more information.
          * @returns A string. Do not free, it is owned by `invocation`.
          */
-        get_interface_name(): (string | null);
+        get_interface_name(): string | null;
 
         /**
          * Gets the {@link Gio.DBusMessage} for the method invocation. This is useful if
@@ -15915,7 +15895,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * {@link Gio.DBusInterfaceVTable} for more information.
          * @returns A {@link Gio.DBusMethodInfo} or `null`. Do not free, it is owned by `invocation`.
          */
-        get_method_info(): (DBusMethodInfo | null);
+        get_method_info(): DBusMethodInfo | null;
 
         /**
          * Gets the name of the method that was invoked.
@@ -15950,7 +15930,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * If the call was GetAll, `null` will be returned.
          * @returns a {@link Gio.DBusPropertyInfo} or `null`
          */
-        get_property_info(): (DBusPropertyInfo | null);
+        get_property_info(): DBusPropertyInfo | null;
 
         /**
          * Gets the bus name that invoked the method.
@@ -15959,7 +15939,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * connections.
          * @returns A string. Do not free, it is owned by `invocation`.
          */
-        get_sender(): (string | null);
+        get_sender(): string | null;
 
         /**
          * Finishes handling a D-Bus method call by returning an error.
@@ -16032,7 +16012,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * specification).
          * @param parameters A {@link GLib.Variant} tuple with out parameters for the method or `null` if not passing any parameters.
          */
-        return_value(parameters: (GLib.Variant | null)): void;
+        return_value(parameters: GLib.Variant | null): void;
 
         /**
          * Like `g_dbus_method_invocation_return_value()` but also takes a {@link Gio.UnixFDList}.
@@ -16045,7 +16025,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param parameters A {@link GLib.Variant} tuple with out parameters for the method or `null` if not passing any parameters.
          * @param fd_list A {@link Gio.UnixFDList} or `null`.
          */
-        return_value_with_unix_fd_list(parameters: (GLib.Variant | null), fd_list: (UnixFDList | null)): void;
+        return_value_with_unix_fd_list(parameters: GLib.Variant | null, fd_list: UnixFDList | null): void;
     }
 
 
@@ -16107,8 +16087,8 @@ export const _LocalFilePrototype: typeof File.prototype;
             get_proxy_type_user_data: never;
             getProxyTypeUserData: never;
             name: string;
-            name_owner: (string | null);
-            nameOwner: (string | null);
+            name_owner: string | null;
+            nameOwner: string | null;
             object_path: string;
             objectPath: string;
         }
@@ -16297,7 +16277,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @read-only
          * @default null
          */
-        get name_owner(): (string | null);
+        get name_owner(): string | null;
 
         /**
          * The unique name that owns {@link Gio.DBusObjectManagerClient.name} or `null` if
@@ -16307,7 +16287,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @read-only
          * @default null
          */
-        get nameOwner(): (string | null);
+        get nameOwner(): string | null;
 
         /**
          * The object path the manager is for.
@@ -16346,9 +16326,9 @@ export const _LocalFilePrototype: typeof File.prototype;
 
         static new_for_bus_finish(res: AsyncResult): DBusObjectManagerClient;
 
-        static new_for_bus_sync(bus_type: BusType, flags: DBusObjectManagerClientFlags, name: string, object_path: string, get_proxy_type_func: (DBusProxyTypeFunc | null), cancellable: (Cancellable | null)): DBusObjectManagerClient;
+        static new_for_bus_sync(bus_type: BusType, flags: DBusObjectManagerClientFlags, name: string, object_path: string, get_proxy_type_func: DBusProxyTypeFunc | null, cancellable: Cancellable | null): DBusObjectManagerClient;
 
-        static new_sync(connection: DBusConnection, flags: DBusObjectManagerClientFlags, name: (string | null), object_path: string, get_proxy_type_func: (DBusProxyTypeFunc | null), cancellable: (Cancellable | null)): DBusObjectManagerClient;
+        static new_sync(connection: DBusConnection, flags: DBusObjectManagerClientFlags, name: string | null, object_path: string, get_proxy_type_func: DBusProxyTypeFunc | null, cancellable: Cancellable | null): DBusObjectManagerClient;
 
         // Signals
         /** @signal */
@@ -16381,7 +16361,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable A {@link Gio.Cancellable} or `null`
          * @param callback A {@link Gio.AsyncReadyCallback} to call when the request is satisfied.
          */
-        static ["new"](connection: DBusConnection, flags: DBusObjectManagerClientFlags, name: string, object_path: string, get_proxy_type_func: (DBusProxyTypeFunc | null), cancellable: (Cancellable | null), callback: (AsyncReadyCallback<DBusObjectManagerClient> | null)): void;
+        static ["new"](connection: DBusConnection, flags: DBusObjectManagerClientFlags, name: string, object_path: string, get_proxy_type_func: DBusProxyTypeFunc | null, cancellable: Cancellable | null, callback: AsyncReadyCallback<DBusObjectManagerClient> | null): void;
 
         /**
          * Like `g_dbus_object_manager_client_new()` but takes a {@link Gio.BusType} instead of a
@@ -16401,7 +16381,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable A {@link Gio.Cancellable} or `null`
          * @param callback A {@link Gio.AsyncReadyCallback} to call when the request is satisfied.
          */
-        static new_for_bus(bus_type: BusType, flags: DBusObjectManagerClientFlags, name: string, object_path: string, get_proxy_type_func: (DBusProxyTypeFunc | null), cancellable: (Cancellable | null), callback: (AsyncReadyCallback<DBusObjectManagerClient> | null)): void;
+        static new_for_bus(bus_type: BusType, flags: DBusObjectManagerClientFlags, name: string, object_path: string, get_proxy_type_func: DBusProxyTypeFunc | null, cancellable: Cancellable | null, callback: AsyncReadyCallback<DBusObjectManagerClient> | null): void;
 
         // Virtual methods
         /**
@@ -16452,7 +16432,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * {@link Gio.DBusObjectManagerClient.name_owner} property.
          * @returns The name owner or `null` if no name owner exists. Free with `g_free()`.
          */
-        get_name_owner(): (string | null);
+        get_name_owner(): string | null;
 
         /**
          * Starts asynchronous initialization of the object implementing the
@@ -16494,50 +16474,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param io_priority the [I/O priority](https://docs.gtk.org/gio/iface.AsyncResult.html#io-priority) of the operation
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          */
-        init_async(io_priority: number, cancellable: (Cancellable | null)): globalThis.Promise<boolean>;
-
-        /**
-         * Starts asynchronous initialization of the object implementing the
-         * interface. This must be done before any real use of the object after
-         * initial construction. If the object also implements {@link Gio.Initable} you can
-         * optionally call `g_initable_init()` instead.
-         * 
-         * This method is intended for language bindings. If writing in C,
-         * `g_async_initable_new_async()` should typically be used instead.
-         * 
-         * When the initialization is finished, `callback` will be called. You can
-         * then call `g_async_initable_init_finish()` to get the result of the
-         * initialization.
-         * 
-         * Implementations may also support cancellation. If `cancellable` is not
-         * `null`, then initialization can be cancelled by triggering the cancellable
-         * object from another thread. If the operation was cancelled, the error
-         * {@link Gio.IOErrorEnum.CANCELLED} will be returned. If `cancellable` is not `null`, and
-         * the object doesn't support cancellable initialization, the error
-         * {@link Gio.IOErrorEnum.NOT_SUPPORTED} will be returned.
-         * 
-         * As with {@link Gio.Initable}, if the object is not initialized, or initialization
-         * returns with an error, then all operations on the object except
-         * `g_object_ref()` and `g_object_unref()` are considered to be invalid, and
-         * have undefined behaviour. They will often fail with `g_critical()` or
-         * `g_warning()`, but this must not be relied on.
-         * 
-         * Callers should not assume that a class which implements {@link Gio.AsyncInitable} can
-         * be initialized multiple times; for more information, see `g_initable_init()`.
-         * If a class explicitly supports being initialized multiple times,
-         * implementation requires yielding all subsequent calls to `init_async()` on the
-         * results of the first call.
-         * 
-         * For classes that also support the {@link Gio.Initable} interface, the default
-         * implementation of this method will run the `g_initable_init()` function
-         * in a thread, so if you want to support asynchronous initialization via
-         * threads, just implement the {@link Gio.AsyncInitable} interface without overriding
-         * any interface methods.
-         * @param io_priority the [I/O priority](https://docs.gtk.org/gio/iface.AsyncResult.html#io-priority) of the operation
-         * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
-         * @param callback a {@link Gio.AsyncReadyCallback} to call when the request is satisfied
-         */
-        init_async(io_priority: number, cancellable: (Cancellable | null), callback: (AsyncReadyCallback<this> | null)): void;
+        init_async(io_priority: number, cancellable: Cancellable | null): globalThis.Promise<boolean>;
 
         /**
          * Starts asynchronous initialization of the object implementing the
@@ -16580,7 +16517,50 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          * @param callback a {@link Gio.AsyncReadyCallback} to call when the request is satisfied
          */
-        init_async(io_priority: number, cancellable: (Cancellable | null), callback?: (AsyncReadyCallback<this> | null)): (globalThis.Promise<boolean> | void);
+        init_async(io_priority: number, cancellable: Cancellable | null, callback: AsyncReadyCallback<this> | null): void;
+
+        /**
+         * Starts asynchronous initialization of the object implementing the
+         * interface. This must be done before any real use of the object after
+         * initial construction. If the object also implements {@link Gio.Initable} you can
+         * optionally call `g_initable_init()` instead.
+         * 
+         * This method is intended for language bindings. If writing in C,
+         * `g_async_initable_new_async()` should typically be used instead.
+         * 
+         * When the initialization is finished, `callback` will be called. You can
+         * then call `g_async_initable_init_finish()` to get the result of the
+         * initialization.
+         * 
+         * Implementations may also support cancellation. If `cancellable` is not
+         * `null`, then initialization can be cancelled by triggering the cancellable
+         * object from another thread. If the operation was cancelled, the error
+         * {@link Gio.IOErrorEnum.CANCELLED} will be returned. If `cancellable` is not `null`, and
+         * the object doesn't support cancellable initialization, the error
+         * {@link Gio.IOErrorEnum.NOT_SUPPORTED} will be returned.
+         * 
+         * As with {@link Gio.Initable}, if the object is not initialized, or initialization
+         * returns with an error, then all operations on the object except
+         * `g_object_ref()` and `g_object_unref()` are considered to be invalid, and
+         * have undefined behaviour. They will often fail with `g_critical()` or
+         * `g_warning()`, but this must not be relied on.
+         * 
+         * Callers should not assume that a class which implements {@link Gio.AsyncInitable} can
+         * be initialized multiple times; for more information, see `g_initable_init()`.
+         * If a class explicitly supports being initialized multiple times,
+         * implementation requires yielding all subsequent calls to `init_async()` on the
+         * results of the first call.
+         * 
+         * For classes that also support the {@link Gio.Initable} interface, the default
+         * implementation of this method will run the `g_initable_init()` function
+         * in a thread, so if you want to support asynchronous initialization via
+         * threads, just implement the {@link Gio.AsyncInitable} interface without overriding
+         * any interface methods.
+         * @param io_priority the [I/O priority](https://docs.gtk.org/gio/iface.AsyncResult.html#io-priority) of the operation
+         * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
+         * @param callback a {@link Gio.AsyncReadyCallback} to call when the request is satisfied
+         */
+        init_async(io_priority: number, cancellable: Cancellable | null, callback?: AsyncReadyCallback<this> | null): globalThis.Promise<boolean> | void;
 
         /**
          * Finishes asynchronous initialization and returns the result.
@@ -16640,7 +16620,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param callback a {@link Gio.AsyncReadyCallback} to call when the request is satisfied
          * @virtual
          */
-        vfunc_init_async(io_priority: number, cancellable: (Cancellable | null), callback: (AsyncReadyCallback<this> | null)): void;
+        vfunc_init_async(io_priority: number, cancellable: Cancellable | null, callback: AsyncReadyCallback<this> | null): void;
 
         /**
          * Finishes asynchronous initialization and returns the result.
@@ -16657,14 +16637,14 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param interface_name D-Bus interface name to look up.
          * @returns A {@link Gio.DBusInterface} instance or `null`. Free   with `g_object_unref()`.
          */
-        get_interface(object_path: string, interface_name: string): (DBusInterface | null);
+        get_interface(object_path: string, interface_name: string): DBusInterface | null;
 
         /**
          * Gets the {@link Gio.DBusObject} at `object_path`, if any.
          * @param object_path Object path to look up.
          * @returns A {@link Gio.DBusObject} or `null`. Free with   `g_object_unref()`.
          */
-        get_object(object_path: string): (DBusObject | null);
+        get_object(object_path: string): DBusObject | null;
 
         /**
          * Gets the object path that `manager` is for.
@@ -16685,14 +16665,14 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param interface_name D-Bus interface name to look up.
          * @virtual
          */
-        vfunc_get_interface(object_path: string, interface_name: string): (DBusInterface | null);
+        vfunc_get_interface(object_path: string, interface_name: string): DBusInterface | null;
 
         /**
          * Gets the {@link Gio.DBusObject} at `object_path`, if any.
          * @param object_path Object path to look up.
          * @virtual
          */
-        vfunc_get_object(object_path: string): (DBusObject | null);
+        vfunc_get_object(object_path: string): DBusObject | null;
 
         /**
          * Gets the object path that `manager` is for.
@@ -16778,7 +16758,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          * @returns `true` if successful. If an error has occurred, this function will     return `false` and set `error` appropriately if present.
          */
-        init(cancellable: (Cancellable | null)): boolean;
+        init(cancellable: Cancellable | null): boolean;
 
         /**
          * Initializes the object implementing the interface.
@@ -16822,7 +16802,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          * @virtual
          */
-        vfunc_init(cancellable: (Cancellable | null)): boolean;
+        vfunc_init(cancellable: Cancellable | null): boolean;
     }
 
 
@@ -16835,7 +16815,7 @@ export const _LocalFilePrototype: typeof File.prototype;
 
         // Constructor properties interface
         interface ConstructorProps extends GObject.Object.ConstructorProps, DBusObjectManager.ConstructorProps {
-            connection: (DBusConnection | null);
+            connection: DBusConnection | null;
             object_path: string;
             objectPath: string;
         }
@@ -16874,8 +16854,8 @@ export const _LocalFilePrototype: typeof File.prototype;
          * The {@link Gio.DBusConnection} to export objects on.
          * @since 2.30
          */
-        get connection(): (DBusConnection | null);
-        set connection(val: (DBusConnection | null));
+        get connection(): DBusConnection | null;
+        set connection(val: DBusConnection | null);
 
         /**
          * The object path to register the manager object at.
@@ -16951,7 +16931,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * Gets the {@link Gio.DBusConnection} used by `manager`.
          * @returns A {@link Gio.DBusConnection} object or `null` if   `manager` isn't exported on a connection. The returned object should   be freed with `g_object_unref()`.
          */
-        get_connection(): (DBusConnection | null);
+        get_connection(): DBusConnection | null;
 
         /**
          * Returns whether `object` is currently exported on `manager`.
@@ -16965,7 +16945,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * `connection` is `null`, stops exporting objects.
          * @param connection A {@link Gio.DBusConnection} or `null`.
          */
-        set_connection(connection: (DBusConnection | null)): void;
+        set_connection(connection: DBusConnection | null): void;
 
         /**
          * If `manager` has an object at `path`, removes the object. Otherwise
@@ -16985,14 +16965,14 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param interface_name D-Bus interface name to look up.
          * @returns A {@link Gio.DBusInterface} instance or `null`. Free   with `g_object_unref()`.
          */
-        get_interface(object_path: string, interface_name: string): (DBusInterface | null);
+        get_interface(object_path: string, interface_name: string): DBusInterface | null;
 
         /**
          * Gets the {@link Gio.DBusObject} at `object_path`, if any.
          * @param object_path Object path to look up.
          * @returns A {@link Gio.DBusObject} or `null`. Free with   `g_object_unref()`.
          */
-        get_object(object_path: string): (DBusObject | null);
+        get_object(object_path: string): DBusObject | null;
 
         /**
          * Gets the object path that `manager` is for.
@@ -17013,14 +16993,14 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param interface_name D-Bus interface name to look up.
          * @virtual
          */
-        vfunc_get_interface(object_path: string, interface_name: string): (DBusInterface | null);
+        vfunc_get_interface(object_path: string, interface_name: string): DBusInterface | null;
 
         /**
          * Gets the {@link Gio.DBusObject} at `object_path`, if any.
          * @param object_path Object path to look up.
          * @virtual
          */
-        vfunc_get_object(object_path: string): (DBusObject | null);
+        vfunc_get_object(object_path: string): DBusObject | null;
 
         /**
          * Gets the object path that `manager` is for.
@@ -17166,7 +17146,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param interface_name A D-Bus interface name.
          * @returns `null` if not found, otherwise a   {@link Gio.DBusInterface} that must be freed with `g_object_unref()`.
          */
-        get_interface(interface_name: string): (DBusInterface | null);
+        get_interface(interface_name: string): DBusInterface | null;
 
         /**
          * Gets the D-Bus interfaces associated with `object`.
@@ -17186,7 +17166,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param interface_name A D-Bus interface name.
          * @virtual
          */
-        vfunc_get_interface(interface_name: string): (DBusInterface | null);
+        vfunc_get_interface(interface_name: string): DBusInterface | null;
 
         /**
          * Gets the D-Bus interfaces associated with `object`.
@@ -17232,7 +17212,7 @@ export const _LocalFilePrototype: typeof File.prototype;
              * @since 2.30
              * @run-last
              */
-            "authorize-method": (arg0: DBusInterfaceSkeleton, arg1: DBusMethodInvocation) => (boolean | void);
+            "authorize-method": (arg0: DBusInterfaceSkeleton, arg1: DBusMethodInvocation) => boolean | void;
             "notify::g-object-path": (pspec: GObject.ParamSpec) => void;
         }
 
@@ -17357,7 +17337,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param interface_name A D-Bus interface name.
          * @returns `null` if not found, otherwise a   {@link Gio.DBusInterface} that must be freed with `g_object_unref()`.
          */
-        get_interface(interface_name: string): (DBusInterface | null);
+        get_interface(interface_name: string): DBusInterface | null;
 
         /**
          * Gets the D-Bus interfaces associated with `object`.
@@ -17377,7 +17357,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param interface_name A D-Bus interface name.
          * @virtual
          */
-        vfunc_get_interface(interface_name: string): (DBusInterface | null);
+        vfunc_get_interface(interface_name: string): DBusInterface | null;
 
         /**
          * Gets the D-Bus interfaces associated with `object`.
@@ -17439,7 +17419,7 @@ export const _LocalFilePrototype: typeof File.prototype;
              * @detailed
              * @run-last
              */
-            "g-signal": (arg0: (string | null), arg1: string, arg2: GLib.Variant) => void;
+            "g-signal": (arg0: string | null, arg1: string, arg2: GLib.Variant) => void;
             "notify::g-bus-type": (pspec: GObject.ParamSpec) => void;
             "notify::g-connection": (pspec: GObject.ParamSpec) => void;
             "notify::g-default-timeout": (pspec: GObject.ParamSpec) => void;
@@ -17460,7 +17440,7 @@ export const _LocalFilePrototype: typeof File.prototype;
              * @detailed
              * @run-last
              */
-            "g-signal::g-bus-type": (arg0: (string | null), arg1: string, arg2: GLib.Variant) => void;
+            "g-signal::g-bus-type": (arg0: string | null, arg1: string, arg2: GLib.Variant) => void;
             /**
              * Emitted when a signal from the remote object and interface that `proxy` is for, has been received.
              * 
@@ -17472,7 +17452,7 @@ export const _LocalFilePrototype: typeof File.prototype;
              * @detailed
              * @run-last
              */
-            "g-signal::g-connection": (arg0: (string | null), arg1: string, arg2: GLib.Variant) => void;
+            "g-signal::g-connection": (arg0: string | null, arg1: string, arg2: GLib.Variant) => void;
             /**
              * Emitted when a signal from the remote object and interface that `proxy` is for, has been received.
              * 
@@ -17484,7 +17464,7 @@ export const _LocalFilePrototype: typeof File.prototype;
              * @detailed
              * @run-last
              */
-            "g-signal::g-default-timeout": (arg0: (string | null), arg1: string, arg2: GLib.Variant) => void;
+            "g-signal::g-default-timeout": (arg0: string | null, arg1: string, arg2: GLib.Variant) => void;
             /**
              * Emitted when a signal from the remote object and interface that `proxy` is for, has been received.
              * 
@@ -17496,7 +17476,7 @@ export const _LocalFilePrototype: typeof File.prototype;
              * @detailed
              * @run-last
              */
-            "g-signal::g-flags": (arg0: (string | null), arg1: string, arg2: GLib.Variant) => void;
+            "g-signal::g-flags": (arg0: string | null, arg1: string, arg2: GLib.Variant) => void;
             /**
              * Emitted when a signal from the remote object and interface that `proxy` is for, has been received.
              * 
@@ -17508,7 +17488,7 @@ export const _LocalFilePrototype: typeof File.prototype;
              * @detailed
              * @run-last
              */
-            "g-signal::g-interface-info": (arg0: (string | null), arg1: string, arg2: GLib.Variant) => void;
+            "g-signal::g-interface-info": (arg0: string | null, arg1: string, arg2: GLib.Variant) => void;
             /**
              * Emitted when a signal from the remote object and interface that `proxy` is for, has been received.
              * 
@@ -17520,7 +17500,7 @@ export const _LocalFilePrototype: typeof File.prototype;
              * @detailed
              * @run-last
              */
-            "g-signal::g-interface-name": (arg0: (string | null), arg1: string, arg2: GLib.Variant) => void;
+            "g-signal::g-interface-name": (arg0: string | null, arg1: string, arg2: GLib.Variant) => void;
             /**
              * Emitted when a signal from the remote object and interface that `proxy` is for, has been received.
              * 
@@ -17532,7 +17512,7 @@ export const _LocalFilePrototype: typeof File.prototype;
              * @detailed
              * @run-last
              */
-            "g-signal::g-name": (arg0: (string | null), arg1: string, arg2: GLib.Variant) => void;
+            "g-signal::g-name": (arg0: string | null, arg1: string, arg2: GLib.Variant) => void;
             /**
              * Emitted when a signal from the remote object and interface that `proxy` is for, has been received.
              * 
@@ -17544,7 +17524,7 @@ export const _LocalFilePrototype: typeof File.prototype;
              * @detailed
              * @run-last
              */
-            "g-signal::g-name-owner": (arg0: (string | null), arg1: string, arg2: GLib.Variant) => void;
+            "g-signal::g-name-owner": (arg0: string | null, arg1: string, arg2: GLib.Variant) => void;
             /**
              * Emitted when a signal from the remote object and interface that `proxy` is for, has been received.
              * 
@@ -17556,8 +17536,8 @@ export const _LocalFilePrototype: typeof File.prototype;
              * @detailed
              * @run-last
              */
-            "g-signal::g-object-path": (arg0: (string | null), arg1: string, arg2: GLib.Variant) => void;
-            [key: `g-signal::${string}`]: (arg0: (string | null), arg1: string, arg2: GLib.Variant) => void;
+            "g-signal::g-object-path": (arg0: string | null, arg1: string, arg2: GLib.Variant) => void;
+            [key: `g-signal::${string}`]: (arg0: string | null, arg1: string, arg2: GLib.Variant) => void;
         }
 
         // Constructor properties interface
@@ -17873,9 +17853,9 @@ export const _LocalFilePrototype: typeof File.prototype;
 
         static new_for_bus_finish(res: AsyncResult): DBusProxy;
 
-        static new_for_bus_sync(bus_type: BusType, flags: DBusProxyFlags, info: (DBusInterfaceInfo | null), name: string, object_path: string, interface_name: string, cancellable: (Cancellable | null)): DBusProxy;
+        static new_for_bus_sync(bus_type: BusType, flags: DBusProxyFlags, info: DBusInterfaceInfo | null, name: string, object_path: string, interface_name: string, cancellable: Cancellable | null): DBusProxy;
 
-        static new_sync(connection: DBusConnection, flags: DBusProxyFlags, info: (DBusInterfaceInfo | null), name: (string | null), object_path: string, interface_name: string, cancellable: (Cancellable | null)): DBusProxy;
+        static new_sync(connection: DBusConnection, flags: DBusProxyFlags, info: DBusInterfaceInfo | null, name: string | null, object_path: string, interface_name: string, cancellable: Cancellable | null): DBusProxy;
 
         // Signals
         /** @signal */
@@ -17928,7 +17908,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable A {@link Gio.Cancellable} or `null`.
          * @param callback Callback function to invoke when the proxy is ready.
          */
-        static ["new"](connection: DBusConnection, flags: DBusProxyFlags, info: (DBusInterfaceInfo | null), name: (string | null), object_path: string, interface_name: string, cancellable: (Cancellable | null), callback: (AsyncReadyCallback<DBusProxy> | null)): void;
+        static ["new"](connection: DBusConnection, flags: DBusProxyFlags, info: DBusInterfaceInfo | null, name: string | null, object_path: string, interface_name: string, cancellable: Cancellable | null, callback: AsyncReadyCallback<DBusProxy> | null): void;
 
         /**
          * Like `g_dbus_proxy_new()` but takes a {@link Gio.BusType} instead of a {@link Gio.DBusConnection}.
@@ -17943,7 +17923,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable A {@link Gio.Cancellable} or `null`.
          * @param callback Callback function to invoke when the proxy is ready.
          */
-        static new_for_bus(bus_type: BusType, flags: DBusProxyFlags, info: (DBusInterfaceInfo | null), name: string, object_path: string, interface_name: string, cancellable: (Cancellable | null), callback: (AsyncReadyCallback<DBusProxy> | null)): void;
+        static new_for_bus(bus_type: BusType, flags: DBusProxyFlags, info: DBusInterfaceInfo | null, name: string, object_path: string, interface_name: string, cancellable: Cancellable | null, callback: AsyncReadyCallback<DBusProxy> | null): void;
 
         /**
          * @param args 
@@ -18020,7 +18000,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param timeout_msec The timeout in milliseconds (with `G_MAXINT` meaning                "infinite") or -1 to use the proxy default timeout.
          * @param cancellable A {@link Gio.Cancellable} or `null`.
          */
-        call(method_name: string, parameters: (GLib.Variant | null), flags: DBusCallFlags, timeout_msec: number, cancellable: (Cancellable | null)): globalThis.Promise<GLib.Variant>;
+        call(method_name: string, parameters: GLib.Variant | null, flags: DBusCallFlags, timeout_msec: number, cancellable: Cancellable | null): globalThis.Promise<GLib.Variant>;
 
         /**
          * Asynchronously invokes the `method_name` method on `proxy`.
@@ -18074,7 +18054,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable A {@link Gio.Cancellable} or `null`.
          * @param callback A {@link Gio.AsyncReadyCallback} to call when the request is satisfied or `null` if you don't care about the result of the method invocation.
          */
-        call(method_name: string, parameters: (GLib.Variant | null), flags: DBusCallFlags, timeout_msec: number, cancellable: (Cancellable | null), callback: (AsyncReadyCallback<this> | null)): void;
+        call(method_name: string, parameters: GLib.Variant | null, flags: DBusCallFlags, timeout_msec: number, cancellable: Cancellable | null, callback: AsyncReadyCallback<this> | null): void;
 
         /**
          * Asynchronously invokes the `method_name` method on `proxy`.
@@ -18128,7 +18108,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable A {@link Gio.Cancellable} or `null`.
          * @param callback A {@link Gio.AsyncReadyCallback} to call when the request is satisfied or `null` if you don't care about the result of the method invocation.
          */
-        call(method_name: string, parameters: (GLib.Variant | null), flags: DBusCallFlags, timeout_msec: number, cancellable: (Cancellable | null), callback?: (AsyncReadyCallback<this> | null)): (globalThis.Promise<GLib.Variant> | void);
+        call(method_name: string, parameters: GLib.Variant | null, flags: DBusCallFlags, timeout_msec: number, cancellable: Cancellable | null, callback?: AsyncReadyCallback<this> | null): globalThis.Promise<GLib.Variant> | void;
 
         /**
          * Finishes an operation started with `g_dbus_proxy_call()`.
@@ -18181,7 +18161,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable A {@link Gio.Cancellable} or `null`.
          * @returns `null` if `error` is set. Otherwise a {@link GLib.Variant} tuple with return values. Free with `g_variant_unref()`.
          */
-        call_sync(method_name: string, parameters: (GLib.Variant | null), flags: DBusCallFlags, timeout_msec: number, cancellable: (Cancellable | null)): GLib.Variant;
+        call_sync(method_name: string, parameters: GLib.Variant | null, flags: DBusCallFlags, timeout_msec: number, cancellable: Cancellable | null): GLib.Variant;
 
         /**
          * Like `g_dbus_proxy_call()` but also takes a {@link Gio.UnixFDList} object.
@@ -18194,21 +18174,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param fd_list A {@link Gio.UnixFDList} or `null`.
          * @param cancellable A {@link Gio.Cancellable} or `null`.
          */
-        call_with_unix_fd_list(method_name: string, parameters: (GLib.Variant | null), flags: DBusCallFlags, timeout_msec: number, fd_list: (UnixFDList | null), cancellable: (Cancellable | null)): globalThis.Promise<[GLib.Variant, (UnixFDList | null)]>;
-
-        /**
-         * Like `g_dbus_proxy_call()` but also takes a {@link Gio.UnixFDList} object.
-         * 
-         * This method is only available on UNIX.
-         * @param method_name Name of method to invoke.
-         * @param parameters A {@link GLib.Variant} tuple with parameters for the signal or `null` if not passing parameters.
-         * @param flags Flags from the {@link Gio.DBusCallFlags} enumeration.
-         * @param timeout_msec The timeout in milliseconds (with `G_MAXINT` meaning                "infinite") or -1 to use the proxy default timeout.
-         * @param fd_list A {@link Gio.UnixFDList} or `null`.
-         * @param cancellable A {@link Gio.Cancellable} or `null`.
-         * @param callback A {@link Gio.AsyncReadyCallback} to call when the request is satisfied or `null` if you don't care about the result of the method invocation.
-         */
-        call_with_unix_fd_list(method_name: string, parameters: (GLib.Variant | null), flags: DBusCallFlags, timeout_msec: number, fd_list: (UnixFDList | null), cancellable: (Cancellable | null), callback: (AsyncReadyCallback<this> | null)): void;
+        call_with_unix_fd_list(method_name: string, parameters: GLib.Variant | null, flags: DBusCallFlags, timeout_msec: number, fd_list: UnixFDList | null, cancellable: Cancellable | null): globalThis.Promise<[GLib.Variant, UnixFDList | null]>;
 
         /**
          * Like `g_dbus_proxy_call()` but also takes a {@link Gio.UnixFDList} object.
@@ -18222,7 +18188,21 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable A {@link Gio.Cancellable} or `null`.
          * @param callback A {@link Gio.AsyncReadyCallback} to call when the request is satisfied or `null` if you don't care about the result of the method invocation.
          */
-        call_with_unix_fd_list(method_name: string, parameters: (GLib.Variant | null), flags: DBusCallFlags, timeout_msec: number, fd_list: (UnixFDList | null), cancellable: (Cancellable | null), callback?: (AsyncReadyCallback<this> | null)): (globalThis.Promise<[GLib.Variant, (UnixFDList | null)]> | void);
+        call_with_unix_fd_list(method_name: string, parameters: GLib.Variant | null, flags: DBusCallFlags, timeout_msec: number, fd_list: UnixFDList | null, cancellable: Cancellable | null, callback: AsyncReadyCallback<this> | null): void;
+
+        /**
+         * Like `g_dbus_proxy_call()` but also takes a {@link Gio.UnixFDList} object.
+         * 
+         * This method is only available on UNIX.
+         * @param method_name Name of method to invoke.
+         * @param parameters A {@link GLib.Variant} tuple with parameters for the signal or `null` if not passing parameters.
+         * @param flags Flags from the {@link Gio.DBusCallFlags} enumeration.
+         * @param timeout_msec The timeout in milliseconds (with `G_MAXINT` meaning                "infinite") or -1 to use the proxy default timeout.
+         * @param fd_list A {@link Gio.UnixFDList} or `null`.
+         * @param cancellable A {@link Gio.Cancellable} or `null`.
+         * @param callback A {@link Gio.AsyncReadyCallback} to call when the request is satisfied or `null` if you don't care about the result of the method invocation.
+         */
+        call_with_unix_fd_list(method_name: string, parameters: GLib.Variant | null, flags: DBusCallFlags, timeout_msec: number, fd_list: UnixFDList | null, cancellable: Cancellable | null, callback?: AsyncReadyCallback<this> | null): globalThis.Promise<[GLib.Variant, UnixFDList | null]> | void;
 
         /**
          * Finishes an operation started with `g_dbus_proxy_call_with_unix_fd_list()`.
@@ -18243,7 +18223,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable A {@link Gio.Cancellable} or `null`.
          * @returns `null` if `error` is set. Otherwise a {@link GLib.Variant} tuple with return values. Free with `g_variant_unref()`.
          */
-        call_with_unix_fd_list_sync(method_name: string, parameters: (GLib.Variant | null), flags: DBusCallFlags, timeout_msec: number, fd_list: (UnixFDList | null), cancellable: (Cancellable | null)): [GLib.Variant, UnixFDList | null];
+        call_with_unix_fd_list_sync(method_name: string, parameters: GLib.Variant | null, flags: DBusCallFlags, timeout_msec: number, fd_list: UnixFDList | null, cancellable: Cancellable | null): [GLib.Variant, UnixFDList | null];
 
         /**
          * Looks up the value for a property from the cache. This call does no
@@ -18255,13 +18235,13 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param property_name Property name.
          * @returns A reference to the {@link GLib.Variant} instance    that holds the value for `property_name` or `null` if the value is not in    the cache. The returned reference must be freed with `g_variant_unref()`.
          */
-        get_cached_property(property_name: string): (GLib.Variant | null);
+        get_cached_property(property_name: string): GLib.Variant | null;
 
         /**
          * Gets the names of all cached properties on `proxy`.
          * @returns A          `null`-terminated array of strings or `null` if          `proxy` has no cached properties. Free the returned array with          `g_strfreev()`.
          */
-        get_cached_property_names(): (string[] | null);
+        get_cached_property_names(): string[] | null;
 
         /**
          * Gets the connection `proxy` is for.
@@ -18291,7 +18271,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * property for more details.
          * @returns A {@link Gio.DBusInterfaceInfo} or `null`.    Do not unref the returned object, it is owned by `proxy`.
          */
-        get_interface_info(): (DBusInterfaceInfo | null);
+        get_interface_info(): DBusInterfaceInfo | null;
 
         /**
          * Gets the D-Bus interface name `proxy` is for.
@@ -18307,7 +18287,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * pattern.
          * @returns A string owned by `proxy`. Do not free.
          */
-        get_name(): (string | null);
+        get_name(): string | null;
 
         /**
          * The unique name that owns the name that `proxy` is for or `null` if
@@ -18316,7 +18296,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * {@link Gio.DBusProxy.g_name_owner} property.
          * @returns The name owner or `null` if no name    owner exists. Free with `g_free()`.
          */
-        get_name_owner(): (string | null);
+        get_name_owner(): string | null;
 
         /**
          * Gets the object path `proxy` is for.
@@ -18363,7 +18343,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param property_name Property name.
          * @param value Value for the property or `null` to remove it from the cache.
          */
-        set_cached_property(property_name: string, value: (GLib.Variant | null)): void;
+        set_cached_property(property_name: string, value: GLib.Variant | null): void;
 
         /**
          * Sets the timeout to use if -1 (specifying default timeout) is
@@ -18381,7 +18361,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * details.
          * @param info Minimum interface this proxy conforms to    or `null` to unset.
          */
-        set_interface_info(info: (DBusInterfaceInfo | null)): void;
+        set_interface_info(info: DBusInterfaceInfo | null): void;
 
         /**
          * @param proxy 
@@ -18435,7 +18415,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param io_priority the [I/O priority](https://docs.gtk.org/gio/iface.AsyncResult.html#io-priority) of the operation
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          */
-        init_async(io_priority: number, cancellable: (Cancellable | null)): globalThis.Promise<boolean>;
+        init_async(io_priority: number, cancellable: Cancellable | null): globalThis.Promise<boolean>;
 
         /**
          * Starts asynchronous initialization of the object implementing the
@@ -18478,7 +18458,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          * @param callback a {@link Gio.AsyncReadyCallback} to call when the request is satisfied
          */
-        init_async(io_priority: number, cancellable: (Cancellable | null), callback: (AsyncReadyCallback<this> | null)): void;
+        init_async(io_priority: number, cancellable: Cancellable | null, callback: AsyncReadyCallback<this> | null): void;
 
         /**
          * Starts asynchronous initialization of the object implementing the
@@ -18521,7 +18501,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          * @param callback a {@link Gio.AsyncReadyCallback} to call when the request is satisfied
          */
-        init_async(io_priority: number, cancellable: (Cancellable | null), callback?: (AsyncReadyCallback<this> | null)): (globalThis.Promise<boolean> | void);
+        init_async(io_priority: number, cancellable: Cancellable | null, callback?: AsyncReadyCallback<this> | null): globalThis.Promise<boolean> | void;
 
         /**
          * Finishes asynchronous initialization and returns the result.
@@ -18581,7 +18561,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param callback a {@link Gio.AsyncReadyCallback} to call when the request is satisfied
          * @virtual
          */
-        vfunc_init_async(io_priority: number, cancellable: (Cancellable | null), callback: (AsyncReadyCallback<this> | null)): void;
+        vfunc_init_async(io_priority: number, cancellable: Cancellable | null, callback: AsyncReadyCallback<this> | null): void;
 
         /**
          * Finishes asynchronous initialization and returns the result.
@@ -18595,7 +18575,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * Gets the {@link Gio.DBusObject} that `interface_` belongs to, if any.
          * @returns A {@link Gio.DBusObject} or `null`. The returned reference should be freed with `g_object_unref()`.
          */
-        get_object(): (DBusObject | null);
+        get_object(): DBusObject | null;
 
         /**
          * Gets D-Bus introspection information for the D-Bus interface
@@ -18610,13 +18590,13 @@ export const _LocalFilePrototype: typeof File.prototype;
          * Note that `interface_` will hold a weak reference to `object`.
          * @param object A {@link Gio.DBusObject} or `null`.
          */
-        set_object(object: (DBusObject | null)): void;
+        set_object(object: DBusObject | null): void;
 
         /**
          * Gets the {@link Gio.DBusObject} that `interface_` belongs to, if any.
          * @virtual
          */
-        vfunc_dup_object(): (DBusObject | null);
+        vfunc_dup_object(): DBusObject | null;
 
         /**
          * Gets D-Bus introspection information for the D-Bus interface
@@ -18632,7 +18612,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param object A {@link Gio.DBusObject} or `null`.
          * @virtual
          */
-        vfunc_set_object(object: (DBusObject | null)): void;
+        vfunc_set_object(object: DBusObject | null): void;
 
         /**
          * Initializes the object implementing the interface.
@@ -18676,7 +18656,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          * @returns `true` if successful. If an error has occurred, this function will     return `false` and set `error` appropriately if present.
          */
-        init(cancellable: (Cancellable | null)): boolean;
+        init(cancellable: Cancellable | null): boolean;
 
         /**
          * Initializes the object implementing the interface.
@@ -18720,7 +18700,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          * @virtual
          */
-        vfunc_init(cancellable: (Cancellable | null)): boolean;
+        vfunc_init(cancellable: Cancellable | null): boolean;
     }
 
 
@@ -18753,7 +18733,7 @@ export const _LocalFilePrototype: typeof File.prototype;
              * @since 2.26
              * @run-last
              */
-            "new-connection": (arg0: DBusConnection) => (boolean | void);
+            "new-connection": (arg0: DBusConnection) => boolean | void;
             "notify::active": (pspec: GObject.ParamSpec) => void;
             "notify::address": (pspec: GObject.ParamSpec) => void;
             "notify::authentication-observer": (pspec: GObject.ParamSpec) => void;
@@ -18881,7 +18861,7 @@ export const _LocalFilePrototype: typeof File.prototype;
 
         _init(...args: any[]): void;
 
-        static new_sync(address: string, flags: DBusServerFlags, guid: string, observer: (DBusAuthObserver | null), cancellable: (Cancellable | null)): DBusServer;
+        static new_sync(address: string, flags: DBusServerFlags, guid: string, observer: DBusAuthObserver | null, cancellable: Cancellable | null): DBusServer;
 
         // Signals
         /** @signal */
@@ -18977,7 +18957,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          * @returns `true` if successful. If an error has occurred, this function will     return `false` and set `error` appropriately if present.
          */
-        init(cancellable: (Cancellable | null)): boolean;
+        init(cancellable: Cancellable | null): boolean;
 
         /**
          * Initializes the object implementing the interface.
@@ -19021,7 +19001,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          * @virtual
          */
-        vfunc_init(cancellable: (Cancellable | null)): boolean;
+        vfunc_init(cancellable: Cancellable | null): boolean;
     }
 
 
@@ -19134,7 +19114,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          * @returns an unsigned 8-bit/1-byte value read from the `stream` or `0` if an error occurred.
          */
-        read_byte(cancellable: (Cancellable | null)): number;
+        read_byte(cancellable: Cancellable | null): number;
 
         /**
          * Reads a 16-bit/2-byte value from `stream`.
@@ -19144,7 +19124,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          * @returns a signed 16-bit/2-byte value read from `stream` or `0` if an error occurred.
          */
-        read_int16(cancellable: (Cancellable | null)): number;
+        read_int16(cancellable: Cancellable | null): number;
 
         /**
          * Reads a signed 32-bit/4-byte value from `stream`.
@@ -19158,7 +19138,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          * @returns a signed 32-bit/4-byte value read from the `stream` or `0` if an error occurred.
          */
-        read_int32(cancellable: (Cancellable | null)): number;
+        read_int32(cancellable: Cancellable | null): number;
 
         /**
          * Reads a 64-bit/8-byte value from `stream`.
@@ -19172,7 +19152,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          * @returns a signed 64-bit/8-byte value read from `stream` or `0` if an error occurred.
          */
-        read_int64(cancellable: (Cancellable | null)): number;
+        read_int64(cancellable: Cancellable | null): number;
 
         /**
          * Reads a line from the data input stream.  Note that no encoding
@@ -19185,7 +19165,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          * @returns a NUL terminated byte array with the line that was read in  (without the newlines).  Set `length` to a `gsize` to get the length  of the read line.  On an error, it will return `null` and `error`  will be set. If there's no content to read, it will still return  `null`, but `error` won't be set.
          */
-        read_line(cancellable: (Cancellable | null)): [(Uint8Array | null), number];
+        read_line(cancellable: Cancellable | null): [Uint8Array | null, number];
 
         /**
          * The asynchronous version of `g_data_input_stream_read_line()`.  It is
@@ -19197,20 +19177,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param io_priority the [I/O priority](https://docs.gtk.org/gio/iface.AsyncResult.html#io-priority) of the request
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          */
-        read_line_async(io_priority: number, cancellable: (Cancellable | null)): globalThis.Promise<[(Uint8Array | null), (bigint | number)]>;
-
-        /**
-         * The asynchronous version of `g_data_input_stream_read_line()`.  It is
-         * an error to have two outstanding calls to this function.
-         * 
-         * When the operation is finished, `callback` will be called. You
-         * can then call `g_data_input_stream_read_line_finish()` to get
-         * the result of the operation.
-         * @param io_priority the [I/O priority](https://docs.gtk.org/gio/iface.AsyncResult.html#io-priority) of the request
-         * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
-         * @param callback callback to call when the request is satisfied.
-         */
-        read_line_async(io_priority: number, cancellable: (Cancellable | null), callback: (AsyncReadyCallback<this> | null)): void;
+        read_line_async(io_priority: number, cancellable: Cancellable | null): globalThis.Promise<[Uint8Array | null, bigint | number]>;
 
         /**
          * The asynchronous version of `g_data_input_stream_read_line()`.  It is
@@ -19223,7 +19190,20 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          * @param callback callback to call when the request is satisfied.
          */
-        read_line_async(io_priority: number, cancellable: (Cancellable | null), callback?: (AsyncReadyCallback<this> | null)): (globalThis.Promise<[(Uint8Array | null), (bigint | number)]> | void);
+        read_line_async(io_priority: number, cancellable: Cancellable | null, callback: AsyncReadyCallback<this> | null): void;
+
+        /**
+         * The asynchronous version of `g_data_input_stream_read_line()`.  It is
+         * an error to have two outstanding calls to this function.
+         * 
+         * When the operation is finished, `callback` will be called. You
+         * can then call `g_data_input_stream_read_line_finish()` to get
+         * the result of the operation.
+         * @param io_priority the [I/O priority](https://docs.gtk.org/gio/iface.AsyncResult.html#io-priority) of the request
+         * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
+         * @param callback callback to call when the request is satisfied.
+         */
+        read_line_async(io_priority: number, cancellable: Cancellable | null, callback?: AsyncReadyCallback<this> | null): globalThis.Promise<[Uint8Array | null, bigint | number]> | void;
 
         /**
          * Finish an asynchronous call started by
@@ -19233,7 +19213,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param result the {@link Gio.AsyncResult} that was provided to the callback.
          * @returns a NUL-terminated byte array with the line that was read in  (without the newlines).  Set `length` to a `gsize` to get the length  of the read line.  On an error, it will return `null` and `error`  will be set. If there's no content to read, it will still return  `null`, but `error` won't be set.
          */
-        read_line_finish(result: AsyncResult): [(Uint8Array | null), number];
+        read_line_finish(result: AsyncResult): [Uint8Array | null, number];
 
         /**
          * Finish an asynchronous call started by
@@ -19241,7 +19221,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param result the {@link Gio.AsyncResult} that was provided to the callback.
          * @returns a string with the line that  was read in (without the newlines).  Set `length` to a `gsize` to  get the length of the read line.  On an error, it will return  `null` and `error` will be set. For UTF-8 conversion errors, the set  error domain is `G_CONVERT_ERROR`.  If there's no content to read,  it will still return `null`, but `error` won't be set.
          */
-        read_line_finish_utf8(result: AsyncResult): [(string | null), number];
+        read_line_finish_utf8(result: AsyncResult): [string | null, number];
 
         /**
          * Reads a UTF-8 encoded line from the data input stream.
@@ -19252,7 +19232,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          * @returns a NUL terminated UTF-8 string  with the line that was read in (without the newlines).  Set  `length` to a `gsize` to get the length of the read line.  On an  error, it will return `null` and `error` will be set.  For UTF-8  conversion errors, the set error domain is `G_CONVERT_ERROR`.  If  there's no content to read, it will still return `null`, but `error`  won't be set.
          */
-        read_line_utf8(cancellable: (Cancellable | null)): [(string | null), number];
+        read_line_utf8(cancellable: Cancellable | null): [string | null, number];
 
         /**
          * Reads an unsigned 16-bit/2-byte value from `stream`.
@@ -19262,7 +19242,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          * @returns an unsigned 16-bit/2-byte value read from the `stream` or `0` if an error occurred.
          */
-        read_uint16(cancellable: (Cancellable | null)): number;
+        read_uint16(cancellable: Cancellable | null): number;
 
         /**
          * Reads an unsigned 32-bit/4-byte value from `stream`.
@@ -19276,7 +19256,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          * @returns an unsigned 32-bit/4-byte value read from the `stream` or `0` if an error occurred.
          */
-        read_uint32(cancellable: (Cancellable | null)): number;
+        read_uint32(cancellable: Cancellable | null): number;
 
         /**
          * Reads an unsigned 64-bit/8-byte value from `stream`.
@@ -19290,7 +19270,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          * @returns an unsigned 64-bit/8-byte read from `stream` or `0` if an error occurred.
          */
-        read_uint64(cancellable: (Cancellable | null)): number;
+        read_uint64(cancellable: Cancellable | null): number;
 
         /**
          * Reads a string from the data input stream, up to the first
@@ -19308,7 +19288,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          * @returns a string with the data that was read     before encountering any of the stop characters. Set `length` to     a `gsize` to get the length of the string. This function will     return `null` on an error.
          */
-        read_until(stop_chars: string, cancellable: (Cancellable | null)): [string, number];
+        read_until(stop_chars: string, cancellable: Cancellable | null): [string, number];
 
         /**
          * The asynchronous version of `g_data_input_stream_read_until()`.
@@ -19330,30 +19310,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param io_priority the [I/O priority](https://docs.gtk.org/gio/iface.AsyncResult.html#io-priority) of the request
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          */
-        read_until_async(stop_chars: string, io_priority: number, cancellable: (Cancellable | null)): globalThis.Promise<[string, (bigint | number)]>;
-
-        /**
-         * The asynchronous version of `g_data_input_stream_read_until()`.
-         * It is an error to have two outstanding calls to this function.
-         * 
-         * Note that, in contrast to `g_data_input_stream_read_until()`,
-         * this function does not consume the stop character that it finds.  You
-         * must read it for yourself.
-         * 
-         * When the operation is finished, `callback` will be called. You
-         * can then call `g_data_input_stream_read_until_finish()` to get
-         * the result of the operation.
-         * 
-         * Don't use this function in new code.  Its functionality is
-         * inconsistent with `g_data_input_stream_read_until()`.  Both functions
-         * will be marked as deprecated in a future release.  Use
-         * `g_data_input_stream_read_upto_async()` instead.
-         * @param stop_chars characters to terminate the read.
-         * @param io_priority the [I/O priority](https://docs.gtk.org/gio/iface.AsyncResult.html#io-priority) of the request
-         * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
-         * @param callback callback to call when the request is satisfied.
-         */
-        read_until_async(stop_chars: string, io_priority: number, cancellable: (Cancellable | null), callback: (AsyncReadyCallback<this> | null)): void;
+        read_until_async(stop_chars: string, io_priority: number, cancellable: Cancellable | null): globalThis.Promise<[string, bigint | number]>;
 
         /**
          * The asynchronous version of `g_data_input_stream_read_until()`.
@@ -19376,7 +19333,30 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          * @param callback callback to call when the request is satisfied.
          */
-        read_until_async(stop_chars: string, io_priority: number, cancellable: (Cancellable | null), callback?: (AsyncReadyCallback<this> | null)): (globalThis.Promise<[string, (bigint | number)]> | void);
+        read_until_async(stop_chars: string, io_priority: number, cancellable: Cancellable | null, callback: AsyncReadyCallback<this> | null): void;
+
+        /**
+         * The asynchronous version of `g_data_input_stream_read_until()`.
+         * It is an error to have two outstanding calls to this function.
+         * 
+         * Note that, in contrast to `g_data_input_stream_read_until()`,
+         * this function does not consume the stop character that it finds.  You
+         * must read it for yourself.
+         * 
+         * When the operation is finished, `callback` will be called. You
+         * can then call `g_data_input_stream_read_until_finish()` to get
+         * the result of the operation.
+         * 
+         * Don't use this function in new code.  Its functionality is
+         * inconsistent with `g_data_input_stream_read_until()`.  Both functions
+         * will be marked as deprecated in a future release.  Use
+         * `g_data_input_stream_read_upto_async()` instead.
+         * @param stop_chars characters to terminate the read.
+         * @param io_priority the [I/O priority](https://docs.gtk.org/gio/iface.AsyncResult.html#io-priority) of the request
+         * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
+         * @param callback callback to call when the request is satisfied.
+         */
+        read_until_async(stop_chars: string, io_priority: number, cancellable: Cancellable | null, callback?: AsyncReadyCallback<this> | null): globalThis.Promise<[string, bigint | number]> | void;
 
         /**
          * Finish an asynchronous call started by
@@ -19404,7 +19384,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore
          * @returns a string with the data that was read     before encountering any of the stop characters. Set `length` to     a `gsize` to get the length of the string. This function will     return `null` on an error
          */
-        read_upto(stop_chars: string, stop_chars_len: (bigint | number), cancellable: (Cancellable | null)): [string, number];
+        read_upto(stop_chars: string, stop_chars_len: bigint | number, cancellable: Cancellable | null): [string, number];
 
         /**
          * The asynchronous version of `g_data_input_stream_read_upto()`.
@@ -19426,30 +19406,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param io_priority the [I/O priority](https://docs.gtk.org/gio/iface.AsyncResult.html#io-priority) of the request
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore
          */
-        read_upto_async(stop_chars: string, stop_chars_len: (bigint | number), io_priority: number, cancellable: (Cancellable | null)): globalThis.Promise<[string, (bigint | number)]>;
-
-        /**
-         * The asynchronous version of `g_data_input_stream_read_upto()`.
-         * It is an error to have two outstanding calls to this function.
-         * 
-         * In contrast to `g_data_input_stream_read_until()`, this function
-         * does not consume the stop character. You have to use
-         * `g_data_input_stream_read_byte()` to get it before calling
-         * `g_data_input_stream_read_upto()` again.
-         * 
-         * Note that `stop_chars` may contain '\0' if `stop_chars_len` is
-         * specified.
-         * 
-         * When the operation is finished, `callback` will be called. You
-         * can then call `g_data_input_stream_read_upto_finish()` to get
-         * the result of the operation.
-         * @param stop_chars characters to terminate the read
-         * @param stop_chars_len length of `stop_chars`. May be -1 if `stop_chars` is     nul-terminated
-         * @param io_priority the [I/O priority](https://docs.gtk.org/gio/iface.AsyncResult.html#io-priority) of the request
-         * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore
-         * @param callback callback to call when the request is satisfied
-         */
-        read_upto_async(stop_chars: string, stop_chars_len: (bigint | number), io_priority: number, cancellable: (Cancellable | null), callback: (AsyncReadyCallback<this> | null)): void;
+        read_upto_async(stop_chars: string, stop_chars_len: bigint | number, io_priority: number, cancellable: Cancellable | null): globalThis.Promise<[string, bigint | number]>;
 
         /**
          * The asynchronous version of `g_data_input_stream_read_upto()`.
@@ -19472,7 +19429,30 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore
          * @param callback callback to call when the request is satisfied
          */
-        read_upto_async(stop_chars: string, stop_chars_len: (bigint | number), io_priority: number, cancellable: (Cancellable | null), callback?: (AsyncReadyCallback<this> | null)): (globalThis.Promise<[string, (bigint | number)]> | void);
+        read_upto_async(stop_chars: string, stop_chars_len: bigint | number, io_priority: number, cancellable: Cancellable | null, callback: AsyncReadyCallback<this> | null): void;
+
+        /**
+         * The asynchronous version of `g_data_input_stream_read_upto()`.
+         * It is an error to have two outstanding calls to this function.
+         * 
+         * In contrast to `g_data_input_stream_read_until()`, this function
+         * does not consume the stop character. You have to use
+         * `g_data_input_stream_read_byte()` to get it before calling
+         * `g_data_input_stream_read_upto()` again.
+         * 
+         * Note that `stop_chars` may contain '\0' if `stop_chars_len` is
+         * specified.
+         * 
+         * When the operation is finished, `callback` will be called. You
+         * can then call `g_data_input_stream_read_upto_finish()` to get
+         * the result of the operation.
+         * @param stop_chars characters to terminate the read
+         * @param stop_chars_len length of `stop_chars`. May be -1 if `stop_chars` is     nul-terminated
+         * @param io_priority the [I/O priority](https://docs.gtk.org/gio/iface.AsyncResult.html#io-priority) of the request
+         * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore
+         * @param callback callback to call when the request is satisfied
+         */
+        read_upto_async(stop_chars: string, stop_chars_len: bigint | number, io_priority: number, cancellable: Cancellable | null, callback?: AsyncReadyCallback<this> | null): globalThis.Promise<[string, bigint | number]> | void;
 
         /**
          * Finish an asynchronous call started by
@@ -19538,7 +19518,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          * @returns `true` if successful. If an error     has occurred, this function will return `false` and set `error`     appropriately if present.
          */
-        seek(offset: (bigint | number), type: GLib.SeekType, cancellable: (Cancellable | null)): boolean;
+        seek(offset: bigint | number, type: GLib.SeekType, cancellable: Cancellable | null): boolean;
 
         /**
          * Tells the current position within the stream.
@@ -19560,7 +19540,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          * @returns `true` if successful. If an error     has occurred, this function will return `false` and set `error`     appropriately if present.
          */
-        truncate(offset: (bigint | number), cancellable: (Cancellable | null)): boolean;
+        truncate(offset: bigint | number, cancellable: Cancellable | null): boolean;
 
         /**
          * Tests if the stream supports the {@link Gio.SeekableIface}.
@@ -19595,13 +19575,13 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          * @virtual
          */
-        vfunc_seek(offset: number, type: GLib.SeekType, cancellable: (Cancellable | null)): boolean;
+        vfunc_seek(offset: number, type: GLib.SeekType, cancellable: Cancellable | null): boolean;
 
         /**
          * Tells the current position within the stream.
          * @virtual
          */
-        vfunc_tell(): (bigint | number);
+        vfunc_tell(): bigint | number;
 
         /**
          * Sets the length of the stream to `offset`. If the stream was previously
@@ -19617,7 +19597,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          * @virtual
          */
-        vfunc_truncate_fn(offset: number, cancellable: (Cancellable | null)): boolean;
+        vfunc_truncate_fn(offset: number, cancellable: Cancellable | null): boolean;
     }
 
 
@@ -19703,7 +19683,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          * @returns `true` if `data` was successfully added to the `stream`.
          */
-        put_byte(data: number, cancellable: (Cancellable | null)): boolean;
+        put_byte(data: number, cancellable: Cancellable | null): boolean;
 
         /**
          * Puts a signed 16-bit integer into the output stream.
@@ -19711,7 +19691,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          * @returns `true` if `data` was successfully added to the `stream`.
          */
-        put_int16(data: number, cancellable: (Cancellable | null)): boolean;
+        put_int16(data: number, cancellable: Cancellable | null): boolean;
 
         /**
          * Puts a signed 32-bit integer into the output stream.
@@ -19719,7 +19699,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          * @returns `true` if `data` was successfully added to the `stream`.
          */
-        put_int32(data: number, cancellable: (Cancellable | null)): boolean;
+        put_int32(data: number, cancellable: Cancellable | null): boolean;
 
         /**
          * Puts a signed 64-bit integer into the stream.
@@ -19727,7 +19707,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          * @returns `true` if `data` was successfully added to the `stream`.
          */
-        put_int64(data: (bigint | number), cancellable: (Cancellable | null)): boolean;
+        put_int64(data: bigint | number, cancellable: Cancellable | null): boolean;
 
         /**
          * Puts a string into the output stream.
@@ -19735,7 +19715,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          * @returns `true` if `string` was successfully added to the `stream`.
          */
-        put_string(str: string, cancellable: (Cancellable | null)): boolean;
+        put_string(str: string, cancellable: Cancellable | null): boolean;
 
         /**
          * Puts an unsigned 16-bit integer into the output stream.
@@ -19743,7 +19723,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          * @returns `true` if `data` was successfully added to the `stream`.
          */
-        put_uint16(data: number, cancellable: (Cancellable | null)): boolean;
+        put_uint16(data: number, cancellable: Cancellable | null): boolean;
 
         /**
          * Puts an unsigned 32-bit integer into the stream.
@@ -19751,7 +19731,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          * @returns `true` if `data` was successfully added to the `stream`.
          */
-        put_uint32(data: number, cancellable: (Cancellable | null)): boolean;
+        put_uint32(data: number, cancellable: Cancellable | null): boolean;
 
         /**
          * Puts an unsigned 64-bit integer into the stream.
@@ -19759,7 +19739,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          * @returns `true` if `data` was successfully added to the `stream`.
          */
-        put_uint64(data: (bigint | number), cancellable: (Cancellable | null)): boolean;
+        put_uint64(data: bigint | number, cancellable: Cancellable | null): boolean;
 
         /**
          * Sets the byte order of the data output stream to `order`.
@@ -19800,7 +19780,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          * @returns `true` if successful. If an error     has occurred, this function will return `false` and set `error`     appropriately if present.
          */
-        seek(offset: (bigint | number), type: GLib.SeekType, cancellable: (Cancellable | null)): boolean;
+        seek(offset: bigint | number, type: GLib.SeekType, cancellable: Cancellable | null): boolean;
 
         /**
          * Tells the current position within the stream.
@@ -19822,7 +19802,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          * @returns `true` if successful. If an error     has occurred, this function will return `false` and set `error`     appropriately if present.
          */
-        truncate(offset: (bigint | number), cancellable: (Cancellable | null)): boolean;
+        truncate(offset: bigint | number, cancellable: Cancellable | null): boolean;
 
         /**
          * Tests if the stream supports the {@link Gio.SeekableIface}.
@@ -19857,13 +19837,13 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          * @virtual
          */
-        vfunc_seek(offset: number, type: GLib.SeekType, cancellable: (Cancellable | null)): boolean;
+        vfunc_seek(offset: number, type: GLib.SeekType, cancellable: Cancellable | null): boolean;
 
         /**
          * Tells the current position within the stream.
          * @virtual
          */
-        vfunc_tell(): (bigint | number);
+        vfunc_tell(): bigint | number;
 
         /**
          * Sets the length of the stream to `offset`. If the stream was previously
@@ -19879,7 +19859,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          * @virtual
          */
-        vfunc_truncate_fn(offset: number, cancellable: (Cancellable | null)): boolean;
+        vfunc_truncate_fn(offset: number, cancellable: Cancellable | null): boolean;
     }
 
 
@@ -19908,7 +19888,7 @@ export const _LocalFilePrototype: typeof File.prototype;
              * @since 2.72
              * @run-last
              */
-            authorize: (arg0: DBusMethodInvocation) => (boolean | void);
+            authorize: (arg0: DBusMethodInvocation) => boolean | void;
             "notify::connection": (pspec: GObject.ParamSpec) => void;
             "notify::debug-enabled": (pspec: GObject.ParamSpec) => void;
         }
@@ -20062,7 +20042,7 @@ export const _LocalFilePrototype: typeof File.prototype;
 
         _init(...args: any[]): void;
 
-        static ["new"](connection: DBusConnection, cancellable: (Cancellable | null)): DebugControllerDBus;
+        static ["new"](connection: DBusConnection, cancellable: Cancellable | null): DebugControllerDBus;
 
         // Signals
         /** @signal */
@@ -20180,7 +20160,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          * @returns `true` if successful. If an error has occurred, this function will     return `false` and set `error` appropriately if present.
          */
-        init(cancellable: (Cancellable | null)): boolean;
+        init(cancellable: Cancellable | null): boolean;
 
         /**
          * Initializes the object implementing the interface.
@@ -20224,7 +20204,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          * @virtual
          */
-        vfunc_init(cancellable: (Cancellable | null)): boolean;
+        vfunc_init(cancellable: Cancellable | null): boolean;
     }
 
 
@@ -20236,7 +20216,7 @@ export const _LocalFilePrototype: typeof File.prototype;
 
         // Constructor properties interface
         interface ConstructorProps extends GObject.Object.ConstructorProps, AppInfo.ConstructorProps {
-            filename: (string | null);
+            filename: string | null;
         }
     }
 
@@ -20258,7 +20238,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @construct-only
          * @default null
          */
-        get filename(): (string | null);
+        get filename(): string | null;
 
         /**
          * Compile-time signal type information.
@@ -20363,7 +20343,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * Gets the categories from the desktop file.
          * @returns The unparsed   [`Categories` key](https://specifications.freedesktop.org/desktop-entry-spec/latest/ar01s06.html#key-categories)   from the desktop file;   i.e. no attempt is made to split it by `;` or validate it.
          */
-        get_categories(): (string | null);
+        get_categories(): string | null;
 
         /**
          * When `info` was created from a known filename, return it.  In some
@@ -20371,13 +20351,13 @@ export const _LocalFilePrototype: typeof File.prototype;
          * {@link Gio.DesktopAppInfo.new_from_keyfile}, this function will return `NULL`.
          * @returns The full path to the file for `info`,   or `NULL` if not known.
          */
-        get_filename(): (string | null);
+        get_filename(): string | null;
 
         /**
          * Gets the generic name from the desktop file.
          * @returns The value of the   [`GenericName` key](https://specifications.freedesktop.org/desktop-entry-spec/latest/ar01s06.html#key-genericname)
          */
-        get_generic_name(): (string | null);
+        get_generic_name(): string | null;
 
         /**
          * A desktop file is hidden if the
@@ -20401,7 +20381,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param key the key to look up
          * @returns a newly allocated string, or `NULL` if the key is not   found
          */
-        get_locale_string(key: string): (string | null);
+        get_locale_string(key: string): string | null;
 
         /**
          * Gets the value of the
@@ -20429,7 +20409,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param desktop_env a string specifying a desktop name
          * @returns `TRUE` if the `info` should be shown in `desktop_env` according to the `OnlyShowIn` and `NotShowIn` keys, `FALSE` otherwise.
          */
-        get_show_in(desktop_env: (string | null)): boolean;
+        get_show_in(desktop_env: string | null): boolean;
 
         /**
          * Retrieves the `StartupWMClass` field from `info`. This represents the
@@ -20437,7 +20417,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * through `info`.
          * @returns the startup WM class, or `NULL` if none   is set in the desktop file.
          */
-        get_startup_wm_class(): (string | null);
+        get_startup_wm_class(): string | null;
 
         /**
          * Looks up a string value in the keyfile backing `info`.
@@ -20446,7 +20426,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param key the key to look up
          * @returns a newly allocated string, or `NULL` if the key is not   found
          */
-        get_string(key: string): (string | null);
+        get_string(key: string): string | null;
 
         /**
          * Looks up a string list value in the keyfile backing `info`.
@@ -20485,7 +20465,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param action_name the name of the action as from   {@link Gio.DesktopAppInfo.list_actions}
          * @param launch_context a {@link Gio.AppLaunchContext}
          */
-        launch_action(action_name: string, launch_context: (AppLaunchContext | null)): void;
+        launch_action(action_name: string, launch_context: AppLaunchContext | null): void;
 
         /**
          * This function performs the equivalent of {@link Gio.AppInfo.launch_uris},
@@ -20511,7 +20491,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param pid_callback Callback for child processes
          * @returns `TRUE` on successful launch, `FALSE` otherwise.
          */
-        launch_uris_as_manager(uris: string[], launch_context: (AppLaunchContext | null), spawn_flags: GLib.SpawnFlags, user_setup: (GLib.SpawnChildSetupFunc | null), pid_callback: (DesktopAppLaunchCallback | null)): boolean;
+        launch_uris_as_manager(uris: string[], launch_context: AppLaunchContext | null, spawn_flags: GLib.SpawnFlags, user_setup: GLib.SpawnChildSetupFunc | null, pid_callback: DesktopAppLaunchCallback | null): boolean;
 
         /**
          * Equivalent to {@link Gio.DesktopAppInfo.launch_uris_as_manager} but allows
@@ -20530,7 +20510,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param stderr_fd file descriptor to use for child’s stderr, or `-1`
          * @returns `TRUE` on successful launch, `FALSE` otherwise.
          */
-        launch_uris_as_manager_with_fds(uris: string[], launch_context: (AppLaunchContext | null), spawn_flags: GLib.SpawnFlags, user_setup: (GLib.SpawnChildSetupFunc | null), pid_callback: (DesktopAppLaunchCallback | null), stdin_fd: number, stdout_fd: number, stderr_fd: number): boolean;
+        launch_uris_as_manager_with_fds(uris: string[], launch_context: AppLaunchContext | null, spawn_flags: GLib.SpawnFlags, user_setup: GLib.SpawnChildSetupFunc | null, pid_callback: DesktopAppLaunchCallback | null, stdin_fd: number, stdout_fd: number, stderr_fd: number): boolean;
 
         /**
          * Returns the list of
@@ -20596,13 +20576,13 @@ export const _LocalFilePrototype: typeof File.prototype;
          * started.
          * @returns a string containing the `appinfo`’s   commandline, or `NULL` if this information is not available
          */
-        get_commandline(): (string | null);
+        get_commandline(): string | null;
 
         /**
          * Gets a human-readable description of an installed application.
          * @returns a string containing a description of the application `appinfo`, or `NULL` if none.
          */
-        get_description(): (string | null);
+        get_description(): string | null;
 
         /**
          * Gets the display name of the application. The display name is often more
@@ -20625,7 +20605,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * Gets the icon for the application.
          * @returns the default {@link Gio.Icon} for   `appinfo` or `NULL` if there is no default icon.
          */
-        get_icon(): (Icon | null);
+        get_icon(): Icon | null;
 
         /**
          * Gets the ID of an application. An id is a string that identifies the
@@ -20636,7 +20616,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * been constructed.
          * @returns a string containing the application’s ID.
          */
-        get_id(): (string | null);
+        get_id(): string | null;
 
         /**
          * Gets the installed name of the application.
@@ -20688,7 +20668,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param context the launch context
          * @returns `TRUE` on successful launch, `FALSE` otherwise.
          */
-        launch(files: (File[] | null), context: (AppLaunchContext | null)): boolean;
+        launch(files: File[] | null, context: AppLaunchContext | null): boolean;
 
         /**
          * Launches the application. This passes the `uris` to the launched application
@@ -20707,7 +20687,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param context the launch context
          * @returns `TRUE` on successful launch, `FALSE` otherwise.
          */
-        launch_uris(uris: (string[] | null), context: (AppLaunchContext | null)): boolean;
+        launch_uris(uris: string[] | null, context: AppLaunchContext | null): boolean;
 
         /**
          * Async version of {@link Gio.AppInfo.launch_uris}.
@@ -20720,21 +20700,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param context the launch context
          * @param cancellable a {@link Gio.Cancellable}
          */
-        launch_uris_async(uris: (string[] | null), context: (AppLaunchContext | null), cancellable: (Cancellable | null)): globalThis.Promise<boolean>;
-
-        /**
-         * Async version of {@link Gio.AppInfo.launch_uris}.
-         * 
-         * The `callback` is invoked immediately after the application launch, but it
-         * waits for activation in case of D-Bus–activated applications and also provides
-         * extended error information for sandboxed applications, see notes for
-         * {@link Gio.AppInfo.launch_default_for_uri_async}.
-         * @param uris a list of URIs to launch.
-         * @param context the launch context
-         * @param cancellable a {@link Gio.Cancellable}
-         * @param callback a {@link Gio.AsyncReadyCallback} to call   when the request is done
-         */
-        launch_uris_async(uris: (string[] | null), context: (AppLaunchContext | null), cancellable: (Cancellable | null), callback: (AsyncReadyCallback<this> | null)): void;
+        launch_uris_async(uris: string[] | null, context: AppLaunchContext | null, cancellable: Cancellable | null): globalThis.Promise<boolean>;
 
         /**
          * Async version of {@link Gio.AppInfo.launch_uris}.
@@ -20748,7 +20714,21 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable a {@link Gio.Cancellable}
          * @param callback a {@link Gio.AsyncReadyCallback} to call   when the request is done
          */
-        launch_uris_async(uris: (string[] | null), context: (AppLaunchContext | null), cancellable: (Cancellable | null), callback?: (AsyncReadyCallback<this> | null)): (globalThis.Promise<boolean> | void);
+        launch_uris_async(uris: string[] | null, context: AppLaunchContext | null, cancellable: Cancellable | null, callback: AsyncReadyCallback<this> | null): void;
+
+        /**
+         * Async version of {@link Gio.AppInfo.launch_uris}.
+         * 
+         * The `callback` is invoked immediately after the application launch, but it
+         * waits for activation in case of D-Bus–activated applications and also provides
+         * extended error information for sandboxed applications, see notes for
+         * {@link Gio.AppInfo.launch_default_for_uri_async}.
+         * @param uris a list of URIs to launch.
+         * @param context the launch context
+         * @param cancellable a {@link Gio.Cancellable}
+         * @param callback a {@link Gio.AsyncReadyCallback} to call   when the request is done
+         */
+        launch_uris_async(uris: string[] | null, context: AppLaunchContext | null, cancellable: Cancellable | null, callback?: AsyncReadyCallback<this> | null): globalThis.Promise<boolean> | void;
 
         /**
          * Finishes a {@link Gio.AppInfo.launch_uris_async} operation.
@@ -20860,13 +20840,13 @@ export const _LocalFilePrototype: typeof File.prototype;
          * started.
          * @virtual
          */
-        vfunc_get_commandline(): (string | null);
+        vfunc_get_commandline(): string | null;
 
         /**
          * Gets a human-readable description of an installed application.
          * @virtual
          */
-        vfunc_get_description(): (string | null);
+        vfunc_get_description(): string | null;
 
         /**
          * Gets the display name of the application. The display name is often more
@@ -20889,7 +20869,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * Gets the icon for the application.
          * @virtual
          */
-        vfunc_get_icon(): (Icon | null);
+        vfunc_get_icon(): Icon | null;
 
         /**
          * Gets the ID of an application. An id is a string that identifies the
@@ -20900,7 +20880,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * been constructed.
          * @virtual
          */
-        vfunc_get_id(): (string | null);
+        vfunc_get_id(): string | null;
 
         /**
          * Gets the installed name of the application.
@@ -20952,7 +20932,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param context the launch context
          * @virtual
          */
-        vfunc_launch(files: (File[] | null), context: (AppLaunchContext | null)): boolean;
+        vfunc_launch(files: File[] | null, context: AppLaunchContext | null): boolean;
 
         /**
          * Launches the application. This passes the `uris` to the launched application
@@ -20971,7 +20951,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param context the launch context
          * @virtual
          */
-        vfunc_launch_uris(uris: (string[] | null), context: (AppLaunchContext | null)): boolean;
+        vfunc_launch_uris(uris: string[] | null, context: AppLaunchContext | null): boolean;
 
         /**
          * Async version of {@link Gio.AppInfo.launch_uris}.
@@ -20986,7 +20966,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param callback a {@link Gio.AsyncReadyCallback} to call   when the request is done
          * @virtual
          */
-        vfunc_launch_uris_async(uris: (string[] | null), context: (AppLaunchContext | null), cancellable: (Cancellable | null), callback: (AsyncReadyCallback<this> | null)): void;
+        vfunc_launch_uris_async(uris: string[] | null, context: AppLaunchContext | null, cancellable: Cancellable | null, callback: AsyncReadyCallback<this> | null): void;
 
         /**
          * Finishes a {@link Gio.AppInfo.launch_uris_async} operation.
@@ -21138,7 +21118,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param icon2 pointer to the second {@link Gio.Icon}.
          * @returns `true` if `icon1` is equal to `icon2`. `false` otherwise.
          */
-        equal(icon2: (Icon | null)): boolean;
+        equal(icon2: Icon | null): boolean;
 
         /**
          * Gets a hash for an icon.
@@ -21154,7 +21134,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * (as opposed to over the network), and within the same file system namespace.
          * @returns a {@link GLib.Variant}, or `null` when serialization fails. The {@link GLib.Variant} will not be floating.
          */
-        serialize(): (GLib.Variant | null);
+        serialize(): GLib.Variant | null;
 
         /**
          * Generates a textual representation of `icon` that can be used for
@@ -21175,14 +21155,14 @@ export const _LocalFilePrototype: typeof File.prototype;
          *   the encoding is simply the name (such as `network-server`).
          * @returns An allocated NUL-terminated UTF8 string or `null` if `icon` can't be serialized. Use `g_free()` to free.
          */
-        to_string(): (string | null);
+        to_string(): string | null;
 
         /**
          * Checks if two icons are equal.
          * @param icon2 pointer to the second {@link Gio.Icon}.
          * @virtual
          */
-        vfunc_equal(icon2: (Icon | null)): boolean;
+        vfunc_equal(icon2: Icon | null): boolean;
 
         /**
          * Gets a hash for an icon.
@@ -21198,7 +21178,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * (as opposed to over the network), and within the same file system namespace.
          * @virtual
          */
-        vfunc_serialize(): (GLib.Variant | null);
+        vfunc_serialize(): GLib.Variant | null;
 
         /**
          * Serializes the `icon` into string tokens.
@@ -21255,7 +21235,7 @@ export const _LocalFilePrototype: typeof File.prototype;
 
         _init(...args: any[]): void;
 
-        static ["new"](icon: Icon, emblem: (Emblem | null)): EmblemedIcon;
+        static ["new"](icon: Icon, emblem: Emblem | null): EmblemedIcon;
 
         // Signals
         /** @signal */
@@ -21299,7 +21279,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param icon2 pointer to the second {@link Gio.Icon}.
          * @returns `true` if `icon1` is equal to `icon2`. `false` otherwise.
          */
-        equal(icon2: (Icon | null)): boolean;
+        equal(icon2: Icon | null): boolean;
 
         /**
          * Gets a hash for an icon.
@@ -21315,7 +21295,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * (as opposed to over the network), and within the same file system namespace.
          * @returns a {@link GLib.Variant}, or `null` when serialization fails. The {@link GLib.Variant} will not be floating.
          */
-        serialize(): (GLib.Variant | null);
+        serialize(): GLib.Variant | null;
 
         /**
          * Generates a textual representation of `icon` that can be used for
@@ -21336,14 +21316,14 @@ export const _LocalFilePrototype: typeof File.prototype;
          *   the encoding is simply the name (such as `network-server`).
          * @returns An allocated NUL-terminated UTF8 string or `null` if `icon` can't be serialized. Use `g_free()` to free.
          */
-        to_string(): (string | null);
+        to_string(): string | null;
 
         /**
          * Checks if two icons are equal.
          * @param icon2 pointer to the second {@link Gio.Icon}.
          * @virtual
          */
-        vfunc_equal(icon2: (Icon | null)): boolean;
+        vfunc_equal(icon2: Icon | null): boolean;
 
         /**
          * Gets a hash for an icon.
@@ -21359,7 +21339,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * (as opposed to over the network), and within the same file system namespace.
          * @virtual
          */
-        vfunc_serialize(): (GLib.Variant | null);
+        vfunc_serialize(): GLib.Variant | null;
 
         /**
          * Serializes the `icon` into string tokens.
@@ -21506,7 +21486,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param callback a {@link Gio.AsyncReadyCallback}   to call when the request is satisfied
          * @virtual
          */
-        vfunc_close_async(io_priority: number, cancellable: (Cancellable | null), callback: (AsyncReadyCallback<this> | null)): void;
+        vfunc_close_async(io_priority: number, cancellable: Cancellable | null, callback: AsyncReadyCallback<this> | null): void;
 
         /**
          * Finishes closing a file enumerator, started from `g_file_enumerator_close_async()`.
@@ -21528,7 +21508,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable 
          * @virtual
          */
-        vfunc_close_fn(cancellable: (Cancellable | null)): boolean;
+        vfunc_close_fn(cancellable: Cancellable | null): boolean;
 
         /**
          * Returns information for the next file in the enumerated object.
@@ -21545,7 +21525,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          * @virtual
          */
-        vfunc_next_file(cancellable: (Cancellable | null)): (FileInfo | null);
+        vfunc_next_file(cancellable: Cancellable | null): FileInfo | null;
 
         /**
          * Request information for a number of files from the enumerator asynchronously.
@@ -21620,7 +21600,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param callback a {@link Gio.AsyncReadyCallback}   to call when the request is satisfied
          * @virtual
          */
-        vfunc_next_files_async(num_files: number, io_priority: number, cancellable: (Cancellable | null), callback: (AsyncReadyCallback<this> | null)): void;
+        vfunc_next_files_async(num_files: number, io_priority: number, cancellable: Cancellable | null, callback: AsyncReadyCallback<this> | null): void;
 
         /**
          * Finishes the asynchronous operation started with `g_file_enumerator_next_files_async()`.
@@ -21640,7 +21620,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          * @returns `TRUE` on success or `FALSE` on error.
          */
-        close(cancellable: (Cancellable | null)): boolean;
+        close(cancellable: Cancellable | null): boolean;
 
         /**
          * Asynchronously closes the file enumerator.
@@ -21652,20 +21632,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param io_priority the [I/O priority](https://docs.gtk.org/gio/iface.AsyncResult.html#io-priority) of the request
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          */
-        close_async(io_priority: number, cancellable: (Cancellable | null)): globalThis.Promise<boolean>;
-
-        /**
-         * Asynchronously closes the file enumerator.
-         * 
-         * If `cancellable` is not `null`, then the operation can be cancelled by
-         * triggering the cancellable object from another thread. If the operation
-         * was cancelled, the error {@link Gio.IOErrorEnum.CANCELLED} will be returned in
-         * `g_file_enumerator_close_finish()`.
-         * @param io_priority the [I/O priority](https://docs.gtk.org/gio/iface.AsyncResult.html#io-priority) of the request
-         * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
-         * @param callback a {@link Gio.AsyncReadyCallback}   to call when the request is satisfied
-         */
-        close_async(io_priority: number, cancellable: (Cancellable | null), callback: (AsyncReadyCallback<this> | null)): void;
+        close_async(io_priority: number, cancellable: Cancellable | null): globalThis.Promise<boolean>;
 
         /**
          * Asynchronously closes the file enumerator.
@@ -21678,7 +21645,20 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          * @param callback a {@link Gio.AsyncReadyCallback}   to call when the request is satisfied
          */
-        close_async(io_priority: number, cancellable: (Cancellable | null), callback?: (AsyncReadyCallback<this> | null)): (globalThis.Promise<boolean> | void);
+        close_async(io_priority: number, cancellable: Cancellable | null, callback: AsyncReadyCallback<this> | null): void;
+
+        /**
+         * Asynchronously closes the file enumerator.
+         * 
+         * If `cancellable` is not `null`, then the operation can be cancelled by
+         * triggering the cancellable object from another thread. If the operation
+         * was cancelled, the error {@link Gio.IOErrorEnum.CANCELLED} will be returned in
+         * `g_file_enumerator_close_finish()`.
+         * @param io_priority the [I/O priority](https://docs.gtk.org/gio/iface.AsyncResult.html#io-priority) of the request
+         * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
+         * @param callback a {@link Gio.AsyncReadyCallback}   to call when the request is satisfied
+         */
+        close_async(io_priority: number, cancellable: Cancellable | null, callback?: AsyncReadyCallback<this> | null): globalThis.Promise<boolean> | void;
 
         /**
          * Finishes closing a file enumerator, started from `g_file_enumerator_close_async()`.
@@ -21778,7 +21758,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * 
          * @param cancellable a {@link Gio.Cancellable}
          */
-        iterate(cancellable: (Cancellable | null)): [boolean, FileInfo | null, File | null];
+        iterate(cancellable: Cancellable | null): [boolean, FileInfo | null, File | null];
 
         /**
          * Returns information for the next file in the enumerated object.
@@ -21795,7 +21775,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          * @returns A {@link Gio.FileInfo} or `null` on error    or end of enumerator.  Free the returned object with    `g_object_unref()` when no longer needed.
          */
-        next_file(cancellable: (Cancellable | null)): (FileInfo | null);
+        next_file(cancellable: Cancellable | null): FileInfo | null;
 
         /**
          * Request information for a number of files from the enumerator asynchronously.
@@ -21868,81 +21848,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param io_priority the [I/O priority](https://docs.gtk.org/gio/iface.AsyncResult.html#io-priority) of the request
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          */
-        next_files_async(num_files: number, io_priority: number, cancellable: (Cancellable | null)): globalThis.Promise<FileInfo[]>;
-
-        /**
-         * Request information for a number of files from the enumerator asynchronously.
-         * When all I/O for the operation is finished the `callback` will be called with
-         * the requested information.
-         * 
-         * See the documentation of {@link Gio.FileEnumerator} for information about the
-         * order of returned files.
-         * 
-         * Once the end of the enumerator is reached, or if an error occurs, the
-         * `callback` will be called with an empty list. In this case, the previous call
-         * to `g_file_enumerator_next_files_async()` will typically have returned fewer
-         * than `num_files` items.
-         * 
-         * If a request is cancelled the callback will be called with
-         * {@link Gio.IOErrorEnum.CANCELLED}.
-         * 
-         * This leads to the following pseudo-code usage:
-         * 
-         * ```
-         * g_autoptr(GFile) dir = get_directory ();
-         * g_autoptr(GFileEnumerator) enumerator = NULL;
-         * g_autolist(GFileInfo) files = NULL;
-         * g_autoptr(GError) local_error = NULL;
-         * 
-         * enumerator = yield g_file_enumerate_children_async (dir,
-         *                                                     G_FILE_ATTRIBUTE_STANDARD_NAME ","
-         *                                                     G_FILE_ATTRIBUTE_STANDARD_TYPE,
-         *                                                     G_FILE_QUERY_INFO_NONE,
-         *                                                     G_PRIORITY_DEFAULT,
-         *                                                     cancellable,
-         *                                                     …,
-         *                                                     &local_error);
-         * if (enumerator == NULL)
-         *   g_error ("Error enumerating: %s", local_error->message);
-         * 
-         * // Loop until no files are returned, either because the end of the enumerator
-         * // has been reached, or an error was returned.
-         * do
-         *   {
-         *     files = yield g_file_enumerator_next_files_async (enumerator,
-         *                                                       5,  // number of files to request
-         *                                                       G_PRIORITY_DEFAULT,
-         *                                                       cancellable,
-         *                                                       …,
-         *                                                       &local_error);
-         * 
-         *     // Process the returned files, but don’t assume that exactly 5 were returned.
-         *     for (GList *l = files; l != NULL; l = l->next)
-         *       {
-         *         GFileInfo *info = l->data;
-         *         handle_file_info (info);
-         *       }
-         *   }
-         * while (files != NULL);
-         * 
-         * if (local_error != NULL &&
-         *     !g_error_matches (local_error, G_IO_ERROR, G_IO_ERROR_CANCELLED))
-         *   g_error ("Error while enumerating: %s", local_error->message);
-         * ```
-         * 
-         * 
-         * During an async request no other sync and async calls are allowed, and will
-         * result in {@link Gio.IOErrorEnum.PENDING} errors.
-         * 
-         * Any outstanding I/O request with higher priority (lower numerical value) will
-         * be executed before an outstanding request with lower priority. Default
-         * priority is `G_PRIORITY_DEFAULT`.
-         * @param num_files the number of file info objects to request
-         * @param io_priority the [I/O priority](https://docs.gtk.org/gio/iface.AsyncResult.html#io-priority) of the request
-         * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
-         * @param callback a {@link Gio.AsyncReadyCallback}   to call when the request is satisfied
-         */
-        next_files_async(num_files: number, io_priority: number, cancellable: (Cancellable | null), callback: (AsyncReadyCallback<this> | null)): void;
+        next_files_async(num_files: number, io_priority: number, cancellable: Cancellable | null): globalThis.Promise<FileInfo[]>;
 
         /**
          * Request information for a number of files from the enumerator asynchronously.
@@ -22016,7 +21922,81 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          * @param callback a {@link Gio.AsyncReadyCallback}   to call when the request is satisfied
          */
-        next_files_async(num_files: number, io_priority: number, cancellable: (Cancellable | null), callback?: (AsyncReadyCallback<this> | null)): (globalThis.Promise<FileInfo[]> | void);
+        next_files_async(num_files: number, io_priority: number, cancellable: Cancellable | null, callback: AsyncReadyCallback<this> | null): void;
+
+        /**
+         * Request information for a number of files from the enumerator asynchronously.
+         * When all I/O for the operation is finished the `callback` will be called with
+         * the requested information.
+         * 
+         * See the documentation of {@link Gio.FileEnumerator} for information about the
+         * order of returned files.
+         * 
+         * Once the end of the enumerator is reached, or if an error occurs, the
+         * `callback` will be called with an empty list. In this case, the previous call
+         * to `g_file_enumerator_next_files_async()` will typically have returned fewer
+         * than `num_files` items.
+         * 
+         * If a request is cancelled the callback will be called with
+         * {@link Gio.IOErrorEnum.CANCELLED}.
+         * 
+         * This leads to the following pseudo-code usage:
+         * 
+         * ```
+         * g_autoptr(GFile) dir = get_directory ();
+         * g_autoptr(GFileEnumerator) enumerator = NULL;
+         * g_autolist(GFileInfo) files = NULL;
+         * g_autoptr(GError) local_error = NULL;
+         * 
+         * enumerator = yield g_file_enumerate_children_async (dir,
+         *                                                     G_FILE_ATTRIBUTE_STANDARD_NAME ","
+         *                                                     G_FILE_ATTRIBUTE_STANDARD_TYPE,
+         *                                                     G_FILE_QUERY_INFO_NONE,
+         *                                                     G_PRIORITY_DEFAULT,
+         *                                                     cancellable,
+         *                                                     …,
+         *                                                     &local_error);
+         * if (enumerator == NULL)
+         *   g_error ("Error enumerating: %s", local_error->message);
+         * 
+         * // Loop until no files are returned, either because the end of the enumerator
+         * // has been reached, or an error was returned.
+         * do
+         *   {
+         *     files = yield g_file_enumerator_next_files_async (enumerator,
+         *                                                       5,  // number of files to request
+         *                                                       G_PRIORITY_DEFAULT,
+         *                                                       cancellable,
+         *                                                       …,
+         *                                                       &local_error);
+         * 
+         *     // Process the returned files, but don’t assume that exactly 5 were returned.
+         *     for (GList *l = files; l != NULL; l = l->next)
+         *       {
+         *         GFileInfo *info = l->data;
+         *         handle_file_info (info);
+         *       }
+         *   }
+         * while (files != NULL);
+         * 
+         * if (local_error != NULL &&
+         *     !g_error_matches (local_error, G_IO_ERROR, G_IO_ERROR_CANCELLED))
+         *   g_error ("Error while enumerating: %s", local_error->message);
+         * ```
+         * 
+         * 
+         * During an async request no other sync and async calls are allowed, and will
+         * result in {@link Gio.IOErrorEnum.PENDING} errors.
+         * 
+         * Any outstanding I/O request with higher priority (lower numerical value) will
+         * be executed before an outstanding request with lower priority. Default
+         * priority is `G_PRIORITY_DEFAULT`.
+         * @param num_files the number of file info objects to request
+         * @param io_priority the [I/O priority](https://docs.gtk.org/gio/iface.AsyncResult.html#io-priority) of the request
+         * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
+         * @param callback a {@link Gio.AsyncReadyCallback}   to call when the request is satisfied
+         */
+        next_files_async(num_files: number, io_priority: number, cancellable: Cancellable | null, callback?: AsyncReadyCallback<this> | null): globalThis.Promise<FileInfo[]> | void;
 
         /**
          * Finishes the asynchronous operation started with `g_file_enumerator_next_files_async()`.
@@ -22042,9 +22022,7 @@ export const _LocalFilePrototype: typeof File.prototype;
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends IOStream.ConstructorProps, Seekable.ConstructorProps {
-
-        }
+        interface ConstructorProps extends IOStream.ConstructorProps, Seekable.ConstructorProps {}
     }
 
     /**
@@ -22117,7 +22095,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * and closed, as the etag can change while writing.
          * @virtual
          */
-        vfunc_get_etag(): (string | null);
+        vfunc_get_etag(): string | null;
 
         /**
          * Queries a file io stream for the given `attributes`.
@@ -22141,7 +22119,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          * @virtual
          */
-        vfunc_query_info(attributes: string, cancellable: (Cancellable | null)): FileInfo;
+        vfunc_query_info(attributes: string, cancellable: Cancellable | null): FileInfo;
 
         /**
          * Asynchronously queries the `stream` for a {@link Gio.FileInfo}. When completed,
@@ -22156,7 +22134,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param callback a {@link Gio.AsyncReadyCallback}   to call when the request is satisfied
          * @virtual
          */
-        vfunc_query_info_async(attributes: string, io_priority: number, cancellable: (Cancellable | null), callback: (AsyncReadyCallback<this> | null)): void;
+        vfunc_query_info_async(attributes: string, io_priority: number, cancellable: Cancellable | null, callback: AsyncReadyCallback<this> | null): void;
 
         /**
          * Finalizes the asynchronous query started
@@ -22172,19 +22150,19 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable 
          * @virtual
          */
-        vfunc_seek(offset: number, type: GLib.SeekType, cancellable: (Cancellable | null)): boolean;
+        vfunc_seek(offset: number, type: GLib.SeekType, cancellable: Cancellable | null): boolean;
 
         /**
          * @virtual
          */
-        vfunc_tell(): (bigint | number);
+        vfunc_tell(): bigint | number;
 
         /**
          * @param size 
          * @param cancellable 
          * @virtual
          */
-        vfunc_truncate_fn(size: number, cancellable: (Cancellable | null)): boolean;
+        vfunc_truncate_fn(size: number, cancellable: Cancellable | null): boolean;
 
         // Methods
         /**
@@ -22193,7 +22171,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * and closed, as the etag can change while writing.
          * @returns the entity tag for the stream.
          */
-        get_etag(): (string | null);
+        get_etag(): string | null;
 
         /**
          * Queries a file io stream for the given `attributes`.
@@ -22217,7 +22195,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          * @returns a {@link Gio.FileInfo} for the `stream`, or `null` on error.
          */
-        query_info(attributes: string, cancellable: (Cancellable | null)): FileInfo;
+        query_info(attributes: string, cancellable: Cancellable | null): FileInfo;
 
         /**
          * Asynchronously queries the `stream` for a {@link Gio.FileInfo}. When completed,
@@ -22230,21 +22208,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param io_priority the [I/O priority](https://docs.gtk.org/gio/iface.AsyncResult.html#io-priority) of the   request
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          */
-        query_info_async(attributes: string, io_priority: number, cancellable: (Cancellable | null)): globalThis.Promise<FileInfo>;
-
-        /**
-         * Asynchronously queries the `stream` for a {@link Gio.FileInfo}. When completed,
-         * `callback` will be called with a {@link Gio.AsyncResult} which can be used to
-         * finish the operation with `g_file_io_stream_query_info_finish()`.
-         * 
-         * For the synchronous version of this function, see
-         * `g_file_io_stream_query_info()`.
-         * @param attributes a file attribute query string.
-         * @param io_priority the [I/O priority](https://docs.gtk.org/gio/iface.AsyncResult.html#io-priority) of the   request
-         * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
-         * @param callback a {@link Gio.AsyncReadyCallback}   to call when the request is satisfied
-         */
-        query_info_async(attributes: string, io_priority: number, cancellable: (Cancellable | null), callback: (AsyncReadyCallback<this> | null)): void;
+        query_info_async(attributes: string, io_priority: number, cancellable: Cancellable | null): globalThis.Promise<FileInfo>;
 
         /**
          * Asynchronously queries the `stream` for a {@link Gio.FileInfo}. When completed,
@@ -22258,7 +22222,21 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          * @param callback a {@link Gio.AsyncReadyCallback}   to call when the request is satisfied
          */
-        query_info_async(attributes: string, io_priority: number, cancellable: (Cancellable | null), callback?: (AsyncReadyCallback<this> | null)): (globalThis.Promise<FileInfo> | void);
+        query_info_async(attributes: string, io_priority: number, cancellable: Cancellable | null, callback: AsyncReadyCallback<this> | null): void;
+
+        /**
+         * Asynchronously queries the `stream` for a {@link Gio.FileInfo}. When completed,
+         * `callback` will be called with a {@link Gio.AsyncResult} which can be used to
+         * finish the operation with `g_file_io_stream_query_info_finish()`.
+         * 
+         * For the synchronous version of this function, see
+         * `g_file_io_stream_query_info()`.
+         * @param attributes a file attribute query string.
+         * @param io_priority the [I/O priority](https://docs.gtk.org/gio/iface.AsyncResult.html#io-priority) of the   request
+         * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
+         * @param callback a {@link Gio.AsyncReadyCallback}   to call when the request is satisfied
+         */
+        query_info_async(attributes: string, io_priority: number, cancellable: Cancellable | null, callback?: AsyncReadyCallback<this> | null): globalThis.Promise<FileInfo> | void;
 
         /**
          * Finalizes the asynchronous query started
@@ -22301,7 +22279,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          * @returns `true` if successful. If an error     has occurred, this function will return `false` and set `error`     appropriately if present.
          */
-        seek(offset: (bigint | number), type: GLib.SeekType, cancellable: (Cancellable | null)): boolean;
+        seek(offset: bigint | number, type: GLib.SeekType, cancellable: Cancellable | null): boolean;
 
         /**
          * Tells the current position within the stream.
@@ -22323,7 +22301,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          * @returns `true` if successful. If an error     has occurred, this function will return `false` and set `error`     appropriately if present.
          */
-        truncate(offset: (bigint | number), cancellable: (Cancellable | null)): boolean;
+        truncate(offset: bigint | number, cancellable: Cancellable | null): boolean;
     }
 
 
@@ -22397,7 +22375,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param icon2 pointer to the second {@link Gio.Icon}.
          * @returns `true` if `icon1` is equal to `icon2`. `false` otherwise.
          */
-        equal(icon2: (Icon | null)): boolean;
+        equal(icon2: Icon | null): boolean;
 
         /**
          * Gets a hash for an icon.
@@ -22413,7 +22391,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * (as opposed to over the network), and within the same file system namespace.
          * @returns a {@link GLib.Variant}, or `null` when serialization fails. The {@link GLib.Variant} will not be floating.
          */
-        serialize(): (GLib.Variant | null);
+        serialize(): GLib.Variant | null;
 
         /**
          * Generates a textual representation of `icon` that can be used for
@@ -22434,14 +22412,14 @@ export const _LocalFilePrototype: typeof File.prototype;
          *   the encoding is simply the name (such as `network-server`).
          * @returns An allocated NUL-terminated UTF8 string or `null` if `icon` can't be serialized. Use `g_free()` to free.
          */
-        to_string(): (string | null);
+        to_string(): string | null;
 
         /**
          * Checks if two icons are equal.
          * @param icon2 pointer to the second {@link Gio.Icon}.
          * @virtual
          */
-        vfunc_equal(icon2: (Icon | null)): boolean;
+        vfunc_equal(icon2: Icon | null): boolean;
 
         /**
          * Gets a hash for an icon.
@@ -22457,7 +22435,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * (as opposed to over the network), and within the same file system namespace.
          * @virtual
          */
-        vfunc_serialize(): (GLib.Variant | null);
+        vfunc_serialize(): GLib.Variant | null;
 
         /**
          * Serializes the `icon` into string tokens.
@@ -22473,7 +22451,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          * @returns a {@link Gio.InputStream} to read the icon from.
          */
-        load(size: number, cancellable: (Cancellable | null)): [InputStream, string];
+        load(size: number, cancellable: Cancellable | null): [InputStream, string];
 
         /**
          * Loads an icon asynchronously. To finish this function, see
@@ -22482,17 +22460,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param size an integer.
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          */
-        load_async(size: number, cancellable: (Cancellable | null)): globalThis.Promise<[InputStream, string]>;
-
-        /**
-         * Loads an icon asynchronously. To finish this function, see
-         * `g_loadable_icon_load_finish()`. For the synchronous, blocking
-         * version of this function, see `g_loadable_icon_load()`.
-         * @param size an integer.
-         * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
-         * @param callback a {@link Gio.AsyncReadyCallback}   to call when the request is satisfied
-         */
-        load_async(size: number, cancellable: (Cancellable | null), callback: (AsyncReadyCallback<this> | null)): void;
+        load_async(size: number, cancellable: Cancellable | null): globalThis.Promise<[InputStream, string]>;
 
         /**
          * Loads an icon asynchronously. To finish this function, see
@@ -22502,7 +22470,17 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          * @param callback a {@link Gio.AsyncReadyCallback}   to call when the request is satisfied
          */
-        load_async(size: number, cancellable: (Cancellable | null), callback?: (AsyncReadyCallback<this> | null)): (globalThis.Promise<[InputStream, string]> | void);
+        load_async(size: number, cancellable: Cancellable | null, callback: AsyncReadyCallback<this> | null): void;
+
+        /**
+         * Loads an icon asynchronously. To finish this function, see
+         * `g_loadable_icon_load_finish()`. For the synchronous, blocking
+         * version of this function, see `g_loadable_icon_load()`.
+         * @param size an integer.
+         * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
+         * @param callback a {@link Gio.AsyncReadyCallback}   to call when the request is satisfied
+         */
+        load_async(size: number, cancellable: Cancellable | null, callback?: AsyncReadyCallback<this> | null): globalThis.Promise<[InputStream, string]> | void;
 
         /**
          * Finishes an asynchronous icon load started in `g_loadable_icon_load_async()`.
@@ -22518,7 +22496,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          * @virtual
          */
-        vfunc_load(size: number, cancellable: (Cancellable | null)): [InputStream, string];
+        vfunc_load(size: number, cancellable: Cancellable | null): [InputStream, string];
 
         /**
          * Loads an icon asynchronously. To finish this function, see
@@ -22529,7 +22507,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param callback a {@link Gio.AsyncReadyCallback}   to call when the request is satisfied
          * @virtual
          */
-        vfunc_load_async(size: number, cancellable: (Cancellable | null), callback: (AsyncReadyCallback<this> | null)): void;
+        vfunc_load_async(size: number, cancellable: Cancellable | null, callback: AsyncReadyCallback<this> | null): void;
 
         /**
          * Finishes an asynchronous icon load started in `g_loadable_icon_load_async()`.
@@ -22542,13 +22520,10 @@ export const _LocalFilePrototype: typeof File.prototype;
 
     namespace FileInfo {
         // Signal signatures
-        interface SignalSignatures extends GObject.Object.SignalSignatures {
-        }
+        interface SignalSignatures extends GObject.Object.SignalSignatures {}
 
         // Constructor properties interface
-        interface ConstructorProps extends GObject.Object.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GObject.Object.ConstructorProps {}
     }
 
     /**
@@ -22654,7 +22629,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * be queried separately using `g_file_info_get_attribute_uint32()`.
          * @returns access time, or `null` if unknown
          */
-        get_access_date_time(): (GLib.DateTime | null);
+        get_access_date_time(): GLib.DateTime | null;
 
         /**
          * Gets the value of an attribute, formatted as a human readable string.
@@ -22678,7 +22653,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param attribute a file attribute key.
          * @returns a UTF-8 string associated with the given `attribute`, or    `null` if the attribute wasn’t set.    When you're done with the string it must be freed with `g_free()`.
          */
-        get_attribute_as_string(attribute: string): (string | null);
+        get_attribute_as_string(attribute: string): string | null;
 
         /**
          * Gets the value of a boolean attribute. If the attribute does not
@@ -22694,7 +22669,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param attribute a file attribute key.
          * @returns the contents of the `attribute` value as a byte string, or `null` otherwise.
          */
-        get_attribute_byte_string(attribute: string): (string | null);
+        get_attribute_byte_string(attribute: string): string | null;
 
         /**
          * Gets the attribute type, value and status for an attribute key.
@@ -22713,7 +22688,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param attribute a file attribute key.
          * @returns the contents of the `attribute` value as a file path, or `null` otherwise.
          */
-        get_attribute_file_path(attribute: string): (string | null);
+        get_attribute_file_path(attribute: string): string | null;
 
         /**
          * Gets a signed 32-bit integer contained within the attribute. If the
@@ -22754,7 +22729,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param attribute a file attribute key.
          * @returns the contents of the `attribute` value as a UTF-8 string, or `null` otherwise.
          */
-        get_attribute_string(attribute: string): (string | null);
+        get_attribute_string(attribute: string): string | null;
 
         /**
          * Gets the value of a stringv attribute. If the attribute does
@@ -22762,7 +22737,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param attribute a file attribute key.
          * @returns the contents of the `attribute` value as a stringv, or `null` otherwise. Do not free. These returned strings are UTF-8.
          */
-        get_attribute_stringv(attribute: string): (string[] | null);
+        get_attribute_stringv(attribute: string): string[] | null;
 
         /**
          * Gets the attribute type for an attribute key.
@@ -22796,7 +22771,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * `G_FILE_ATTRIBUTE_STANDARD_CONTENT_TYPE`.
          * @returns a string containing the file's content type, or `null` if unknown.
          */
-        get_content_type(): (string | null);
+        get_content_type(): string | null;
 
         /**
          * Gets the creation time of the current `info` and returns it as a
@@ -22811,7 +22786,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * be queried separately using `g_file_info_get_attribute_uint32()`.
          * @returns creation time, or `null` if unknown
          */
-        get_creation_date_time(): (GLib.DateTime | null);
+        get_creation_date_time(): GLib.DateTime | null;
 
         /**
          * Returns the {@link GLib.DateTime} representing the deletion date of the file, as
@@ -22819,7 +22794,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * `G_FILE_ATTRIBUTE_TRASH_DELETION_DATE` attribute is unset, `null` is returned.
          * @returns a {@link GLib.DateTime}, or `null`.
          */
-        get_deletion_date(): (GLib.DateTime | null);
+        get_deletion_date(): GLib.DateTime | null;
 
         /**
          * Gets a display name for a file. This is guaranteed to always be set.
@@ -22847,7 +22822,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * `G_FILE_ATTRIBUTE_ETAG_VALUE`.
          * @returns a string containing the value of the "etag:value" attribute.
          */
-        get_etag(): (string | null);
+        get_etag(): string | null;
 
         /**
          * Gets a file's type (whether it is a regular file, symlink, etc).
@@ -22866,7 +22841,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * `G_FILE_ATTRIBUTE_STANDARD_ICON`.
          * @returns {@link Gio.Icon} for the given `info`.
          */
-        get_icon(): (Icon | null);
+        get_icon(): Icon | null;
 
         /**
          * Checks if a file is a backup file.
@@ -22908,7 +22883,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * be queried separately using `g_file_info_get_attribute_uint32()`.
          * @returns modification time, or `null` if unknown
          */
-        get_modification_date_time(): (GLib.DateTime | null);
+        get_modification_date_time(): GLib.DateTime | null;
 
         /**
          * Gets the modification time of the current `info` and sets it
@@ -22957,7 +22932,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * `G_FILE_ATTRIBUTE_STANDARD_SYMBOLIC_ICON`.
          * @returns {@link Gio.Icon} for the given `info`.
          */
-        get_symbolic_icon(): (Icon | null);
+        get_symbolic_icon(): Icon | null;
 
         /**
          * Gets the symlink target for a given {@link Gio.FileInfo}.
@@ -22966,7 +22941,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * `G_FILE_ATTRIBUTE_STANDARD_SYMLINK_TARGET`.
          * @returns a string containing the symlink target.
          */
-        get_symlink_target(): (string | null);
+        get_symlink_target(): string | null;
 
         /**
          * Checks if a file info structure has an attribute named `attribute`.
@@ -22988,7 +22963,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param name_space a file attribute key's namespace, or `null` to list   all attributes.
          * @returns a null-terminated array of strings of all of the possible attribute types for the given `name_space`, or `null` on error.
          */
-        list_attributes(name_space: (string | null)): (string[] | null);
+        list_attributes(name_space: string | null): string[] | null;
 
         /**
          * Removes all cases of `attribute` from `info` if it exists.
@@ -23056,7 +23031,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param attribute attribute name to set.
          * @param attr_value int64 value to set attribute to.
          */
-        set_attribute_int64(attribute: string, attr_value: (bigint | number)): void;
+        set_attribute_int64(attribute: string, attr_value: bigint | number): void;
 
         /**
          * Sets `mask` on `info` to match specific attribute types.
@@ -23117,7 +23092,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param attribute a file attribute key.
          * @param attr_value an unsigned 64-bit integer.
          */
-        set_attribute_uint64(attribute: string, attr_value: (bigint | number)): void;
+        set_attribute_uint64(attribute: string, attr_value: bigint | number): void;
 
         /**
          * Sets the content type attribute for a given {@link Gio.FileInfo}.
@@ -23210,7 +23185,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * to the given size.
          * @param size a `goffset` containing the file's size.
          */
-        set_size(size: (bigint | number)): void;
+        set_size(size: bigint | number): void;
 
         /**
          * Sets the sort order attribute in the file info structure. See
@@ -23243,13 +23218,10 @@ export const _LocalFilePrototype: typeof File.prototype;
 
     namespace FileInputStream {
         // Signal signatures
-        interface SignalSignatures extends InputStream.SignalSignatures {
-        }
+        interface SignalSignatures extends InputStream.SignalSignatures {}
 
         // Constructor properties interface
-        interface ConstructorProps extends InputStream.ConstructorProps, Seekable.ConstructorProps {
-
-        }
+        interface ConstructorProps extends InputStream.ConstructorProps, Seekable.ConstructorProps {}
     }
 
     /**
@@ -23310,7 +23282,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          * @virtual
          */
-        vfunc_query_info(attributes: string, cancellable: (Cancellable | null)): FileInfo;
+        vfunc_query_info(attributes: string, cancellable: Cancellable | null): FileInfo;
 
         /**
          * Queries the stream information asynchronously.
@@ -23330,7 +23302,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param callback a {@link Gio.AsyncReadyCallback}   to call when the request is satisfied
          * @virtual
          */
-        vfunc_query_info_async(attributes: string, io_priority: number, cancellable: (Cancellable | null), callback: (AsyncReadyCallback<this> | null)): void;
+        vfunc_query_info_async(attributes: string, io_priority: number, cancellable: Cancellable | null, callback: AsyncReadyCallback<this> | null): void;
 
         /**
          * Finishes an asynchronous info query operation.
@@ -23345,12 +23317,12 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable 
          * @virtual
          */
-        vfunc_seek(offset: number, type: GLib.SeekType, cancellable: (Cancellable | null)): boolean;
+        vfunc_seek(offset: number, type: GLib.SeekType, cancellable: Cancellable | null): boolean;
 
         /**
          * @virtual
          */
-        vfunc_tell(): (bigint | number);
+        vfunc_tell(): bigint | number;
 
         // Methods
         /**
@@ -23363,7 +23335,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          * @returns a {@link Gio.FileInfo}, or `null` on error.
          */
-        query_info(attributes: string, cancellable: (Cancellable | null)): FileInfo;
+        query_info(attributes: string, cancellable: Cancellable | null): FileInfo;
 
         /**
          * Queries the stream information asynchronously.
@@ -23381,26 +23353,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param io_priority the [I/O priority](https://docs.gtk.org/gio/iface.AsyncResult.html#io-priority) of the request
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          */
-        query_info_async(attributes: string, io_priority: number, cancellable: (Cancellable | null)): globalThis.Promise<FileInfo>;
-
-        /**
-         * Queries the stream information asynchronously.
-         * When the operation is finished `callback` will be called.
-         * You can then call `g_file_input_stream_query_info_finish()`
-         * to get the result of the operation.
-         * 
-         * For the synchronous version of this function,
-         * see `g_file_input_stream_query_info()`.
-         * 
-         * If `cancellable` is not `null`, then the operation can be cancelled by
-         * triggering the cancellable object from another thread. If the operation
-         * was cancelled, the error {@link Gio.IOErrorEnum.CANCELLED} will be set
-         * @param attributes a file attribute query string.
-         * @param io_priority the [I/O priority](https://docs.gtk.org/gio/iface.AsyncResult.html#io-priority) of the request
-         * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
-         * @param callback a {@link Gio.AsyncReadyCallback}   to call when the request is satisfied
-         */
-        query_info_async(attributes: string, io_priority: number, cancellable: (Cancellable | null), callback: (AsyncReadyCallback<this> | null)): void;
+        query_info_async(attributes: string, io_priority: number, cancellable: Cancellable | null): globalThis.Promise<FileInfo>;
 
         /**
          * Queries the stream information asynchronously.
@@ -23419,7 +23372,26 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          * @param callback a {@link Gio.AsyncReadyCallback}   to call when the request is satisfied
          */
-        query_info_async(attributes: string, io_priority: number, cancellable: (Cancellable | null), callback?: (AsyncReadyCallback<this> | null)): (globalThis.Promise<FileInfo> | void);
+        query_info_async(attributes: string, io_priority: number, cancellable: Cancellable | null, callback: AsyncReadyCallback<this> | null): void;
+
+        /**
+         * Queries the stream information asynchronously.
+         * When the operation is finished `callback` will be called.
+         * You can then call `g_file_input_stream_query_info_finish()`
+         * to get the result of the operation.
+         * 
+         * For the synchronous version of this function,
+         * see `g_file_input_stream_query_info()`.
+         * 
+         * If `cancellable` is not `null`, then the operation can be cancelled by
+         * triggering the cancellable object from another thread. If the operation
+         * was cancelled, the error {@link Gio.IOErrorEnum.CANCELLED} will be set
+         * @param attributes a file attribute query string.
+         * @param io_priority the [I/O priority](https://docs.gtk.org/gio/iface.AsyncResult.html#io-priority) of the request
+         * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
+         * @param callback a {@link Gio.AsyncReadyCallback}   to call when the request is satisfied
+         */
+        query_info_async(attributes: string, io_priority: number, cancellable: Cancellable | null, callback?: AsyncReadyCallback<this> | null): globalThis.Promise<FileInfo> | void;
 
         /**
          * Finishes an asynchronous info query operation.
@@ -23461,7 +23433,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          * @returns `true` if successful. If an error     has occurred, this function will return `false` and set `error`     appropriately if present.
          */
-        seek(offset: (bigint | number), type: GLib.SeekType, cancellable: (Cancellable | null)): boolean;
+        seek(offset: bigint | number, type: GLib.SeekType, cancellable: Cancellable | null): boolean;
 
         /**
          * Tells the current position within the stream.
@@ -23483,7 +23455,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          * @returns `true` if successful. If an error     has occurred, this function will return `false` and set `error`     appropriately if present.
          */
-        truncate(offset: (bigint | number), cancellable: (Cancellable | null)): boolean;
+        truncate(offset: bigint | number, cancellable: Cancellable | null): boolean;
 
         /**
          * Tests if the length of the stream can be adjusted with
@@ -23506,7 +23478,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          * @virtual
          */
-        vfunc_truncate_fn(offset: number, cancellable: (Cancellable | null)): boolean;
+        vfunc_truncate_fn(offset: number, cancellable: Cancellable | null): boolean;
     }
 
 
@@ -23545,7 +23517,7 @@ export const _LocalFilePrototype: typeof File.prototype;
              * @signal
              * @run-last
              */
-            changed: (arg0: File, arg1: (File | null), arg2: FileMonitorEvent) => void;
+            changed: (arg0: File, arg1: File | null, arg2: FileMonitorEvent) => void;
             "notify::cancelled": (pspec: GObject.ParamSpec) => void;
             "notify::rate-limit": (pspec: GObject.ParamSpec) => void;
         }
@@ -23679,13 +23651,10 @@ export const _LocalFilePrototype: typeof File.prototype;
 
     namespace FileOutputStream {
         // Signal signatures
-        interface SignalSignatures extends OutputStream.SignalSignatures {
-        }
+        interface SignalSignatures extends OutputStream.SignalSignatures {}
 
         // Constructor properties interface
-        interface ConstructorProps extends OutputStream.ConstructorProps, Seekable.ConstructorProps {
-
-        }
+        interface ConstructorProps extends OutputStream.ConstructorProps, Seekable.ConstructorProps {}
     }
 
     /**
@@ -23752,7 +23721,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * and closed, as the etag can change while writing.
          * @virtual
          */
-        vfunc_get_etag(): (string | null);
+        vfunc_get_etag(): string | null;
 
         /**
          * Queries a file output stream for the given `attributes`.
@@ -23776,7 +23745,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          * @virtual
          */
-        vfunc_query_info(attributes: string, cancellable: (Cancellable | null)): FileInfo;
+        vfunc_query_info(attributes: string, cancellable: Cancellable | null): FileInfo;
 
         /**
          * Asynchronously queries the `stream` for a {@link Gio.FileInfo}. When completed,
@@ -23791,7 +23760,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param callback callback to call when the request is satisfied
          * @virtual
          */
-        vfunc_query_info_async(attributes: string, io_priority: number, cancellable: (Cancellable | null), callback: (AsyncReadyCallback<this> | null)): void;
+        vfunc_query_info_async(attributes: string, io_priority: number, cancellable: Cancellable | null, callback: AsyncReadyCallback<this> | null): void;
 
         /**
          * Finalizes the asynchronous query started
@@ -23807,19 +23776,19 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable 
          * @virtual
          */
-        vfunc_seek(offset: number, type: GLib.SeekType, cancellable: (Cancellable | null)): boolean;
+        vfunc_seek(offset: number, type: GLib.SeekType, cancellable: Cancellable | null): boolean;
 
         /**
          * @virtual
          */
-        vfunc_tell(): (bigint | number);
+        vfunc_tell(): bigint | number;
 
         /**
          * @param size 
          * @param cancellable 
          * @virtual
          */
-        vfunc_truncate_fn(size: number, cancellable: (Cancellable | null)): boolean;
+        vfunc_truncate_fn(size: number, cancellable: Cancellable | null): boolean;
 
         // Methods
         /**
@@ -23828,7 +23797,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * and closed, as the etag can change while writing.
          * @returns the entity tag for the stream.
          */
-        get_etag(): (string | null);
+        get_etag(): string | null;
 
         /**
          * Queries a file output stream for the given `attributes`.
@@ -23852,7 +23821,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          * @returns a {@link Gio.FileInfo} for the `stream`, or `null` on error.
          */
-        query_info(attributes: string, cancellable: (Cancellable | null)): FileInfo;
+        query_info(attributes: string, cancellable: Cancellable | null): FileInfo;
 
         /**
          * Asynchronously queries the `stream` for a {@link Gio.FileInfo}. When completed,
@@ -23865,21 +23834,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param io_priority the [I/O priority](https://docs.gtk.org/gio/iface.AsyncResult.html#io-priority) of the   request
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          */
-        query_info_async(attributes: string, io_priority: number, cancellable: (Cancellable | null)): globalThis.Promise<FileInfo>;
-
-        /**
-         * Asynchronously queries the `stream` for a {@link Gio.FileInfo}. When completed,
-         * `callback` will be called with a {@link Gio.AsyncResult} which can be used to
-         * finish the operation with `g_file_output_stream_query_info_finish()`.
-         * 
-         * For the synchronous version of this function, see
-         * `g_file_output_stream_query_info()`.
-         * @param attributes a file attribute query string.
-         * @param io_priority the [I/O priority](https://docs.gtk.org/gio/iface.AsyncResult.html#io-priority) of the   request
-         * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
-         * @param callback callback to call when the request is satisfied
-         */
-        query_info_async(attributes: string, io_priority: number, cancellable: (Cancellable | null), callback: (AsyncReadyCallback<this> | null)): void;
+        query_info_async(attributes: string, io_priority: number, cancellable: Cancellable | null): globalThis.Promise<FileInfo>;
 
         /**
          * Asynchronously queries the `stream` for a {@link Gio.FileInfo}. When completed,
@@ -23893,7 +23848,21 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          * @param callback callback to call when the request is satisfied
          */
-        query_info_async(attributes: string, io_priority: number, cancellable: (Cancellable | null), callback?: (AsyncReadyCallback<this> | null)): (globalThis.Promise<FileInfo> | void);
+        query_info_async(attributes: string, io_priority: number, cancellable: Cancellable | null, callback: AsyncReadyCallback<this> | null): void;
+
+        /**
+         * Asynchronously queries the `stream` for a {@link Gio.FileInfo}. When completed,
+         * `callback` will be called with a {@link Gio.AsyncResult} which can be used to
+         * finish the operation with `g_file_output_stream_query_info_finish()`.
+         * 
+         * For the synchronous version of this function, see
+         * `g_file_output_stream_query_info()`.
+         * @param attributes a file attribute query string.
+         * @param io_priority the [I/O priority](https://docs.gtk.org/gio/iface.AsyncResult.html#io-priority) of the   request
+         * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
+         * @param callback callback to call when the request is satisfied
+         */
+        query_info_async(attributes: string, io_priority: number, cancellable: Cancellable | null, callback?: AsyncReadyCallback<this> | null): globalThis.Promise<FileInfo> | void;
 
         /**
          * Finalizes the asynchronous query started
@@ -23936,7 +23905,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          * @returns `true` if successful. If an error     has occurred, this function will return `false` and set `error`     appropriately if present.
          */
-        seek(offset: (bigint | number), type: GLib.SeekType, cancellable: (Cancellable | null)): boolean;
+        seek(offset: bigint | number, type: GLib.SeekType, cancellable: Cancellable | null): boolean;
 
         /**
          * Tells the current position within the stream.
@@ -23958,7 +23927,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          * @returns `true` if successful. If an error     has occurred, this function will return `false` and set `error`     appropriately if present.
          */
-        truncate(offset: (bigint | number), cancellable: (Cancellable | null)): boolean;
+        truncate(offset: bigint | number, cancellable: Cancellable | null): boolean;
     }
 
 
@@ -23974,9 +23943,7 @@ export const _LocalFilePrototype: typeof File.prototype;
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends GObject.Object.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GObject.Object.ConstructorProps {}
     }
 
     /**
@@ -24029,7 +23996,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param initial_text text to be completed.
          * @returns a completed string, or `null` if no     completion exists. This string is not owned by GIO, so remember to `g_free()`     it when finished.
          */
-        get_completion_suffix(initial_text: string): (string | null);
+        get_completion_suffix(initial_text: string): string | null;
 
         /**
          * Gets an array of completion strings for a given initial text.
@@ -24253,13 +24220,10 @@ export const _LocalFilePrototype: typeof File.prototype;
 
     namespace IOModule {
         // Signal signatures
-        interface SignalSignatures extends GObject.TypeModule.SignalSignatures {
-        }
+        interface SignalSignatures extends GObject.TypeModule.SignalSignatures {}
 
         // Constructor properties interface
-        interface ConstructorProps extends GObject.TypeModule.ConstructorProps, GObject.TypePlugin.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GObject.TypeModule.ConstructorProps, GObject.TypePlugin.ConstructorProps {}
     }
 
     /**
@@ -24539,7 +24503,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param callback a {@link Gio.AsyncReadyCallback}   to call when the request is satisfied
          * @virtual
          */
-        vfunc_close_async(io_priority: number, cancellable: (Cancellable | null), callback: (AsyncReadyCallback<this> | null)): void;
+        vfunc_close_async(io_priority: number, cancellable: Cancellable | null, callback: AsyncReadyCallback<this> | null): void;
 
         /**
          * Closes a stream.
@@ -24552,7 +24516,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable 
          * @virtual
          */
-        vfunc_close_fn(cancellable: (Cancellable | null)): boolean;
+        vfunc_close_fn(cancellable: Cancellable | null): boolean;
 
         /**
          * Gets the input stream for this object. This is used
@@ -24611,7 +24575,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore
          * @returns `true` on success, `false` on failure
          */
-        close(cancellable: (Cancellable | null)): boolean;
+        close(cancellable: Cancellable | null): boolean;
 
         /**
          * Requests an asynchronous close of the stream, releasing resources
@@ -24627,24 +24591,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param io_priority the io priority of the request
          * @param cancellable optional cancellable object
          */
-        close_async(io_priority: number, cancellable: (Cancellable | null)): globalThis.Promise<boolean>;
-
-        /**
-         * Requests an asynchronous close of the stream, releasing resources
-         * related to it. When the operation is finished `callback` will be
-         * called. You can then call `g_io_stream_close_finish()` to get
-         * the result of the operation.
-         * 
-         * For behaviour details see `g_io_stream_close()`.
-         * 
-         * The asynchronous methods have a default fallback that uses threads
-         * to implement asynchronicity, so they are optional for inheriting
-         * classes. However, if you override one you must override all.
-         * @param io_priority the io priority of the request
-         * @param cancellable optional cancellable object
-         * @param callback a {@link Gio.AsyncReadyCallback}   to call when the request is satisfied
-         */
-        close_async(io_priority: number, cancellable: (Cancellable | null), callback: (AsyncReadyCallback<this> | null)): void;
+        close_async(io_priority: number, cancellable: Cancellable | null): globalThis.Promise<boolean>;
 
         /**
          * Requests an asynchronous close of the stream, releasing resources
@@ -24661,7 +24608,24 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional cancellable object
          * @param callback a {@link Gio.AsyncReadyCallback}   to call when the request is satisfied
          */
-        close_async(io_priority: number, cancellable: (Cancellable | null), callback?: (AsyncReadyCallback<this> | null)): (globalThis.Promise<boolean> | void);
+        close_async(io_priority: number, cancellable: Cancellable | null, callback: AsyncReadyCallback<this> | null): void;
+
+        /**
+         * Requests an asynchronous close of the stream, releasing resources
+         * related to it. When the operation is finished `callback` will be
+         * called. You can then call `g_io_stream_close_finish()` to get
+         * the result of the operation.
+         * 
+         * For behaviour details see `g_io_stream_close()`.
+         * 
+         * The asynchronous methods have a default fallback that uses threads
+         * to implement asynchronicity, so they are optional for inheriting
+         * classes. However, if you override one you must override all.
+         * @param io_priority the io priority of the request
+         * @param cancellable optional cancellable object
+         * @param callback a {@link Gio.AsyncReadyCallback}   to call when the request is satisfied
+         */
+        close_async(io_priority: number, cancellable: Cancellable | null, callback?: AsyncReadyCallback<this> | null): globalThis.Promise<boolean> | void;
 
         /**
          * Closes a stream.
@@ -24718,7 +24682,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          * @param callback a {@link Gio.AsyncReadyCallback}   to call when the request is satisfied
          */
-        splice_async(stream2: IOStream, flags: IOStreamSpliceFlags, io_priority: number, cancellable: (Cancellable | null), callback: (AsyncReadyCallback<this> | null)): void;
+        splice_async(stream2: IOStream, flags: IOStreamSpliceFlags, io_priority: number, cancellable: Cancellable | null, callback: AsyncReadyCallback<this> | null): void;
     }
 
 
@@ -24994,7 +24958,7 @@ export const _LocalFilePrototype: typeof File.prototype;
 
         static new_any(family: SocketFamily): InetAddress;
 
-        static new_from_bytes(bytes: (Uint8Array | string), family: SocketFamily): InetAddress;
+        static new_from_bytes(bytes: Uint8Array | string, family: SocketFamily): InetAddress;
 
         static new_from_string(string: string): InetAddress;
 
@@ -25277,7 +25241,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          * @returns `true` if successful. If an error has occurred, this function will     return `false` and set `error` appropriately if present.
          */
-        init(cancellable: (Cancellable | null)): boolean;
+        init(cancellable: Cancellable | null): boolean;
 
         /**
          * Initializes the object implementing the interface.
@@ -25321,7 +25285,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          * @virtual
          */
-        vfunc_init(cancellable: (Cancellable | null)): boolean;
+        vfunc_init(cancellable: Cancellable | null): boolean;
     }
 
 
@@ -25518,13 +25482,10 @@ export const _LocalFilePrototype: typeof File.prototype;
 
     namespace InputStream {
         // Signal signatures
-        interface SignalSignatures extends GObject.Object.SignalSignatures {
-        }
+        interface SignalSignatures extends GObject.Object.SignalSignatures {}
 
         // Constructor properties interface
-        interface ConstructorProps extends GObject.Object.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GObject.Object.ConstructorProps {}
     }
 
     /**
@@ -25590,7 +25551,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param callback a {@link Gio.AsyncReadyCallback}   to call when the request is satisfied
          * @virtual
          */
-        vfunc_close_async(io_priority: number, cancellable: (Cancellable | null), callback: (AsyncReadyCallback<this> | null)): void;
+        vfunc_close_async(io_priority: number, cancellable: Cancellable | null, callback: AsyncReadyCallback<this> | null): void;
 
         /**
          * Finishes closing a stream asynchronously, started from `g_input_stream_close_async()`.
@@ -25603,7 +25564,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable 
          * @virtual
          */
-        vfunc_close_fn(cancellable: (Cancellable | null)): boolean;
+        vfunc_close_fn(cancellable: Cancellable | null): boolean;
 
         /**
          * Request an asynchronous read of `count` bytes from the stream into the buffer
@@ -25634,14 +25595,14 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param callback a {@link Gio.AsyncReadyCallback}   to call when the request is satisfied
          * @virtual
          */
-        vfunc_read_async(io_priority: number, cancellable: (Cancellable | null), callback: (AsyncReadyCallback<this> | null)): Uint8Array | null;
+        vfunc_read_async(io_priority: number, cancellable: Cancellable | null, callback: AsyncReadyCallback<this> | null): Uint8Array | null;
 
         /**
          * Finishes an asynchronous stream read operation.
          * @param result a {@link Gio.AsyncResult}.
          * @virtual
          */
-        vfunc_read_finish(result: AsyncResult): (bigint | number);
+        vfunc_read_finish(result: AsyncResult): bigint | number;
 
         /**
          * @param buffer 
@@ -25649,7 +25610,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable 
          * @virtual
          */
-        vfunc_read_fn(buffer: null, count: number, cancellable: (Cancellable | null)): (bigint | number);
+        vfunc_read_fn(buffer: null, count: number, cancellable: Cancellable | null): bigint | number;
 
         /**
          * Tries to skip `count` bytes from the stream. Will block during the operation.
@@ -25670,7 +25631,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          * @virtual
          */
-        vfunc_skip(count: number, cancellable: (Cancellable | null)): (bigint | number);
+        vfunc_skip(count: number, cancellable: Cancellable | null): bigint | number;
 
         /**
          * Request an asynchronous skip of `count` bytes from the stream.
@@ -25702,14 +25663,14 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param callback a {@link Gio.AsyncReadyCallback}   to call when the request is satisfied
          * @virtual
          */
-        vfunc_skip_async(count: number, io_priority: number, cancellable: (Cancellable | null), callback: (AsyncReadyCallback<this> | null)): void;
+        vfunc_skip_async(count: number, io_priority: number, cancellable: Cancellable | null, callback: AsyncReadyCallback<this> | null): void;
 
         /**
          * Finishes a stream skip operation.
          * @param result a {@link Gio.AsyncResult}.
          * @virtual
          */
-        vfunc_skip_finish(result: AsyncResult): (bigint | number);
+        vfunc_skip_finish(result: AsyncResult): bigint | number;
 
         // Methods
         /**
@@ -25744,7 +25705,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          * @returns `true` on success, `false` on failure
          */
-        close(cancellable: (Cancellable | null)): boolean;
+        close(cancellable: Cancellable | null): boolean;
 
         /**
          * Requests an asynchronous closes of the stream, releasing resources related to it.
@@ -25760,24 +25721,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param io_priority the [I/O priority](https://docs.gtk.org/gio/iface.AsyncResult.html#io-priority) of the request
          * @param cancellable optional cancellable object
          */
-        close_async(io_priority: number, cancellable: (Cancellable | null)): globalThis.Promise<boolean>;
-
-        /**
-         * Requests an asynchronous closes of the stream, releasing resources related to it.
-         * When the operation is finished `callback` will be called.
-         * You can then call `g_input_stream_close_finish()` to get the result of the
-         * operation.
-         * 
-         * For behaviour details see `g_input_stream_close()`.
-         * 
-         * The asynchronous methods have a default fallback that uses threads to implement
-         * asynchronicity, so they are optional for inheriting classes. However, if you
-         * override one you must override all.
-         * @param io_priority the [I/O priority](https://docs.gtk.org/gio/iface.AsyncResult.html#io-priority) of the request
-         * @param cancellable optional cancellable object
-         * @param callback a {@link Gio.AsyncReadyCallback}   to call when the request is satisfied
-         */
-        close_async(io_priority: number, cancellable: (Cancellable | null), callback: (AsyncReadyCallback<this> | null)): void;
+        close_async(io_priority: number, cancellable: Cancellable | null): globalThis.Promise<boolean>;
 
         /**
          * Requests an asynchronous closes of the stream, releasing resources related to it.
@@ -25794,7 +25738,24 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional cancellable object
          * @param callback a {@link Gio.AsyncReadyCallback}   to call when the request is satisfied
          */
-        close_async(io_priority: number, cancellable: (Cancellable | null), callback?: (AsyncReadyCallback<this> | null)): (globalThis.Promise<boolean> | void);
+        close_async(io_priority: number, cancellable: Cancellable | null, callback: AsyncReadyCallback<this> | null): void;
+
+        /**
+         * Requests an asynchronous closes of the stream, releasing resources related to it.
+         * When the operation is finished `callback` will be called.
+         * You can then call `g_input_stream_close_finish()` to get the result of the
+         * operation.
+         * 
+         * For behaviour details see `g_input_stream_close()`.
+         * 
+         * The asynchronous methods have a default fallback that uses threads to implement
+         * asynchronicity, so they are optional for inheriting classes. However, if you
+         * override one you must override all.
+         * @param io_priority the [I/O priority](https://docs.gtk.org/gio/iface.AsyncResult.html#io-priority) of the request
+         * @param cancellable optional cancellable object
+         * @param callback a {@link Gio.AsyncReadyCallback}   to call when the request is satisfied
+         */
+        close_async(io_priority: number, cancellable: Cancellable | null, callback?: AsyncReadyCallback<this> | null): globalThis.Promise<boolean> | void;
 
         /**
          * Finishes closing a stream asynchronously, started from `g_input_stream_close_async()`.
@@ -25840,7 +25801,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          * @returns Number of bytes read, or -1 on error, or 0 on end of file.
          */
-        read(cancellable: (Cancellable | null)): [number, Uint8Array];
+        read(cancellable: Cancellable | null): [number, Uint8Array];
 
         /**
          * Tries to read `count` bytes from the stream into the buffer starting at
@@ -25865,7 +25826,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          * @returns `true` on success, `false` if there was an error
          */
-        read_all(cancellable: (Cancellable | null)): [boolean, Uint8Array, number];
+        read_all(cancellable: Cancellable | null): [boolean, Uint8Array, number];
 
         /**
          * Request an asynchronous read of `count` bytes from the stream into the
@@ -25881,24 +25842,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param io_priority the [I/O priority](https://docs.gtk.org/gio/iface.AsyncResult.html#io-priority) of the request
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore
          */
-        read_all_async(io_priority: number, cancellable: (Cancellable | null)): [globalThis.Promise<number>, Uint8Array];
-
-        /**
-         * Request an asynchronous read of `count` bytes from the stream into the
-         * buffer starting at `buffer`.
-         * 
-         * This is the asynchronous equivalent of {@link InputStream.read_all}.
-         * 
-         * Call {@link InputStream.read_all_finish} to collect the result.
-         * 
-         * Any outstanding I/O request with higher priority (lower numerical
-         * value) will be executed before an outstanding request with lower
-         * priority. Default priority is `G_PRIORITY_DEFAULT`.
-         * @param io_priority the [I/O priority](https://docs.gtk.org/gio/iface.AsyncResult.html#io-priority) of the request
-         * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore
-         * @param callback a {@link Gio.AsyncReadyCallback}   to call when the request is satisfied
-         */
-        read_all_async(io_priority: number, cancellable: (Cancellable | null), callback: (AsyncReadyCallback<this> | null)): Uint8Array;
+        read_all_async(io_priority: number, cancellable: Cancellable | null): [globalThis.Promise<number>, Uint8Array];
 
         /**
          * Request an asynchronous read of `count` bytes from the stream into the
@@ -25915,7 +25859,24 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore
          * @param callback a {@link Gio.AsyncReadyCallback}   to call when the request is satisfied
          */
-        read_all_async(io_priority: number, cancellable: (Cancellable | null), callback?: (AsyncReadyCallback<this> | null)): [(globalThis.Promise<number> | void), Uint8Array];
+        read_all_async(io_priority: number, cancellable: Cancellable | null, callback: AsyncReadyCallback<this> | null): Uint8Array;
+
+        /**
+         * Request an asynchronous read of `count` bytes from the stream into the
+         * buffer starting at `buffer`.
+         * 
+         * This is the asynchronous equivalent of {@link InputStream.read_all}.
+         * 
+         * Call {@link InputStream.read_all_finish} to collect the result.
+         * 
+         * Any outstanding I/O request with higher priority (lower numerical
+         * value) will be executed before an outstanding request with lower
+         * priority. Default priority is `G_PRIORITY_DEFAULT`.
+         * @param io_priority the [I/O priority](https://docs.gtk.org/gio/iface.AsyncResult.html#io-priority) of the request
+         * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore
+         * @param callback a {@link Gio.AsyncReadyCallback}   to call when the request is satisfied
+         */
+        read_all_async(io_priority: number, cancellable: Cancellable | null, callback?: AsyncReadyCallback<this> | null): [globalThis.Promise<number> | void, Uint8Array];
 
         /**
          * Finishes an asynchronous stream read operation started with
@@ -25959,7 +25920,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param io_priority the [I/O priority](https://docs.gtk.org/gio/iface.AsyncResult.html#io-priority) of the request.
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          */
-        read_async(io_priority: number, cancellable: (Cancellable | null)): [globalThis.Promise<number>, Uint8Array];
+        read_async(io_priority: number, cancellable: Cancellable | null): [globalThis.Promise<number>, Uint8Array];
 
         /**
          * Request an asynchronous read of `count` bytes from the stream into the buffer
@@ -25989,7 +25950,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          * @param callback a {@link Gio.AsyncReadyCallback}   to call when the request is satisfied
          */
-        read_async(io_priority: number, cancellable: (Cancellable | null), callback: (AsyncReadyCallback<this> | null)): Uint8Array;
+        read_async(io_priority: number, cancellable: Cancellable | null, callback: AsyncReadyCallback<this> | null): Uint8Array;
 
         /**
          * Request an asynchronous read of `count` bytes from the stream into the buffer
@@ -26019,7 +25980,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          * @param callback a {@link Gio.AsyncReadyCallback}   to call when the request is satisfied
          */
-        read_async(io_priority: number, cancellable: (Cancellable | null), callback?: (AsyncReadyCallback<this> | null)): [(globalThis.Promise<number> | void), Uint8Array];
+        read_async(io_priority: number, cancellable: Cancellable | null, callback?: AsyncReadyCallback<this> | null): [globalThis.Promise<number> | void, Uint8Array];
 
         /**
          * Like `g_input_stream_read()`, this tries to read `count` bytes from
@@ -26049,7 +26010,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          * @returns a new {@link GLib.Bytes}, or `null` on error
          */
-        read_bytes(count: (bigint | number), cancellable: (Cancellable | null)): GLib.Bytes;
+        read_bytes(count: bigint | number, cancellable: Cancellable | null): GLib.Bytes;
 
         /**
          * Request an asynchronous read of `count` bytes from the stream into a
@@ -26076,35 +26037,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param io_priority the [I/O priority](https://docs.gtk.org/gio/iface.AsyncResult.html#io-priority) of the request
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          */
-        read_bytes_async(count: (bigint | number), io_priority: number, cancellable: (Cancellable | null)): globalThis.Promise<GLib.Bytes>;
-
-        /**
-         * Request an asynchronous read of `count` bytes from the stream into a
-         * new {@link GLib.Bytes}. When the operation is finished `callback` will be
-         * called. You can then call `g_input_stream_read_bytes_finish()` to get the
-         * result of the operation.
-         * 
-         * During an async request no other sync and async calls are allowed
-         * on `stream`, and will result in {@link Gio.IOErrorEnum.PENDING} errors.
-         * 
-         * A value of `count` larger than `G_MAXSSIZE` will cause a
-         * {@link Gio.IOErrorEnum.INVALID_ARGUMENT} error.
-         * 
-         * On success, the new {@link GLib.Bytes} will be passed to the callback. It is
-         * not an error if this is smaller than the requested size, as it can
-         * happen e.g. near the end of a file, but generally we try to read as
-         * many bytes as requested. Zero is returned on end of file (or if
-         * `count` is zero), but never otherwise.
-         * 
-         * Any outstanding I/O request with higher priority (lower numerical
-         * value) will be executed before an outstanding request with lower
-         * priority. Default priority is `G_PRIORITY_DEFAULT`.
-         * @param count the number of bytes that will be read from the stream
-         * @param io_priority the [I/O priority](https://docs.gtk.org/gio/iface.AsyncResult.html#io-priority) of the request
-         * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
-         * @param callback a {@link Gio.AsyncReadyCallback}   to call when the request is satisfied
-         */
-        read_bytes_async(count: (bigint | number), io_priority: number, cancellable: (Cancellable | null), callback: (AsyncReadyCallback<this> | null)): void;
+        read_bytes_async(count: bigint | number, io_priority: number, cancellable: Cancellable | null): globalThis.Promise<GLib.Bytes>;
 
         /**
          * Request an asynchronous read of `count` bytes from the stream into a
@@ -26132,7 +26065,35 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          * @param callback a {@link Gio.AsyncReadyCallback}   to call when the request is satisfied
          */
-        read_bytes_async(count: (bigint | number), io_priority: number, cancellable: (Cancellable | null), callback?: (AsyncReadyCallback<this> | null)): (globalThis.Promise<GLib.Bytes> | void);
+        read_bytes_async(count: bigint | number, io_priority: number, cancellable: Cancellable | null, callback: AsyncReadyCallback<this> | null): void;
+
+        /**
+         * Request an asynchronous read of `count` bytes from the stream into a
+         * new {@link GLib.Bytes}. When the operation is finished `callback` will be
+         * called. You can then call `g_input_stream_read_bytes_finish()` to get the
+         * result of the operation.
+         * 
+         * During an async request no other sync and async calls are allowed
+         * on `stream`, and will result in {@link Gio.IOErrorEnum.PENDING} errors.
+         * 
+         * A value of `count` larger than `G_MAXSSIZE` will cause a
+         * {@link Gio.IOErrorEnum.INVALID_ARGUMENT} error.
+         * 
+         * On success, the new {@link GLib.Bytes} will be passed to the callback. It is
+         * not an error if this is smaller than the requested size, as it can
+         * happen e.g. near the end of a file, but generally we try to read as
+         * many bytes as requested. Zero is returned on end of file (or if
+         * `count` is zero), but never otherwise.
+         * 
+         * Any outstanding I/O request with higher priority (lower numerical
+         * value) will be executed before an outstanding request with lower
+         * priority. Default priority is `G_PRIORITY_DEFAULT`.
+         * @param count the number of bytes that will be read from the stream
+         * @param io_priority the [I/O priority](https://docs.gtk.org/gio/iface.AsyncResult.html#io-priority) of the request
+         * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
+         * @param callback a {@link Gio.AsyncReadyCallback}   to call when the request is satisfied
+         */
+        read_bytes_async(count: bigint | number, io_priority: number, cancellable: Cancellable | null, callback?: AsyncReadyCallback<this> | null): globalThis.Promise<GLib.Bytes> | void;
 
         /**
          * Finishes an asynchronous stream read-into-{@link GLib.Bytes} operation.
@@ -26175,7 +26136,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          * @returns Number of bytes skipped, or -1 on error
          */
-        skip(count: (bigint | number), cancellable: (Cancellable | null)): number;
+        skip(count: bigint | number, cancellable: Cancellable | null): number;
 
         /**
          * Request an asynchronous skip of `count` bytes from the stream.
@@ -26205,38 +26166,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param io_priority the [I/O priority](https://docs.gtk.org/gio/iface.AsyncResult.html#io-priority) of the request
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          */
-        skip_async(count: (bigint | number), io_priority: number, cancellable: (Cancellable | null)): globalThis.Promise<number>;
-
-        /**
-         * Request an asynchronous skip of `count` bytes from the stream.
-         * When the operation is finished `callback` will be called.
-         * You can then call `g_input_stream_skip_finish()` to get the result
-         * of the operation.
-         * 
-         * During an async request no other sync and async calls are allowed,
-         * and will result in {@link Gio.IOErrorEnum.PENDING} errors.
-         * 
-         * A value of `count` larger than `G_MAXSSIZE` will cause a {@link Gio.IOErrorEnum.INVALID_ARGUMENT} error.
-         * 
-         * On success, the number of bytes skipped will be passed to the callback.
-         * It is not an error if this is not the same as the requested size, as it
-         * can happen e.g. near the end of a file, but generally we try to skip
-         * as many bytes as requested. Zero is returned on end of file
-         * (or if `count` is zero), but never otherwise.
-         * 
-         * Any outstanding i/o request with higher priority (lower numerical value)
-         * will be executed before an outstanding request with lower priority.
-         * Default priority is `G_PRIORITY_DEFAULT`.
-         * 
-         * The asynchronous methods have a default fallback that uses threads to
-         * implement asynchronicity, so they are optional for inheriting classes.
-         * However, if you override one, you must override all.
-         * @param count the number of bytes that will be skipped from the stream
-         * @param io_priority the [I/O priority](https://docs.gtk.org/gio/iface.AsyncResult.html#io-priority) of the request
-         * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
-         * @param callback a {@link Gio.AsyncReadyCallback}   to call when the request is satisfied
-         */
-        skip_async(count: (bigint | number), io_priority: number, cancellable: (Cancellable | null), callback: (AsyncReadyCallback<this> | null)): void;
+        skip_async(count: bigint | number, io_priority: number, cancellable: Cancellable | null): globalThis.Promise<number>;
 
         /**
          * Request an asynchronous skip of `count` bytes from the stream.
@@ -26267,7 +26197,38 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          * @param callback a {@link Gio.AsyncReadyCallback}   to call when the request is satisfied
          */
-        skip_async(count: (bigint | number), io_priority: number, cancellable: (Cancellable | null), callback?: (AsyncReadyCallback<this> | null)): (globalThis.Promise<number> | void);
+        skip_async(count: bigint | number, io_priority: number, cancellable: Cancellable | null, callback: AsyncReadyCallback<this> | null): void;
+
+        /**
+         * Request an asynchronous skip of `count` bytes from the stream.
+         * When the operation is finished `callback` will be called.
+         * You can then call `g_input_stream_skip_finish()` to get the result
+         * of the operation.
+         * 
+         * During an async request no other sync and async calls are allowed,
+         * and will result in {@link Gio.IOErrorEnum.PENDING} errors.
+         * 
+         * A value of `count` larger than `G_MAXSSIZE` will cause a {@link Gio.IOErrorEnum.INVALID_ARGUMENT} error.
+         * 
+         * On success, the number of bytes skipped will be passed to the callback.
+         * It is not an error if this is not the same as the requested size, as it
+         * can happen e.g. near the end of a file, but generally we try to skip
+         * as many bytes as requested. Zero is returned on end of file
+         * (or if `count` is zero), but never otherwise.
+         * 
+         * Any outstanding i/o request with higher priority (lower numerical value)
+         * will be executed before an outstanding request with lower priority.
+         * Default priority is `G_PRIORITY_DEFAULT`.
+         * 
+         * The asynchronous methods have a default fallback that uses threads to
+         * implement asynchronicity, so they are optional for inheriting classes.
+         * However, if you override one, you must override all.
+         * @param count the number of bytes that will be skipped from the stream
+         * @param io_priority the [I/O priority](https://docs.gtk.org/gio/iface.AsyncResult.html#io-priority) of the request
+         * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
+         * @param callback a {@link Gio.AsyncReadyCallback}   to call when the request is satisfied
+         */
+        skip_async(count: bigint | number, io_priority: number, cancellable: Cancellable | null, callback?: AsyncReadyCallback<this> | null): globalThis.Promise<number> | void;
 
         /**
          * Finishes a stream skip operation.
@@ -26457,7 +26418,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param equal_func A custom equality check function
          * @returns Whether `store` contains `item`. If it was found, `position` will be set to the position where `item` occurred for the first time.
          */
-        find_with_equal_func(item: (A | null), equal_func: GLib.EqualFunc): [boolean, number];
+        find_with_equal_func(item: A | null, equal_func: GLib.EqualFunc): [boolean, number];
 
         /**
          * Like `g_list_store_find_with_equal_func()` but with an additional `user_data`
@@ -26470,7 +26431,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param equal_func A custom equality check function
          * @returns Whether `store` contains `item`. If it was found, `position` will be set to the position where `item` occurred for the first time.
          */
-        find_with_equal_func_full(item: (A | null), equal_func: GLib.EqualFuncFull): [boolean, number];
+        find_with_equal_func_full(item: A | null, equal_func: GLib.EqualFuncFull): [boolean, number];
 
         /**
          * Inserts `item` into `store` at `position`. `item` must be of type
@@ -26581,7 +26542,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param position the position of the item to fetch
          * @returns the object at `position`.
          */
-        get_item(position: number): (A | null);
+        get_item(position: number): A | null;
 
         /**
          * Emits the {@link Gio.ListModel.SignalSignatures.items_changed | Gio.ListModel::items-changed} signal on `list`.
@@ -26621,7 +26582,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param position the position of the item to fetch
          * @virtual
          */
-        vfunc_get_item(position: number): (A | null);
+        vfunc_get_item(position: number): A | null;
 
         /**
          * Gets the type of the items in `list`.
@@ -26650,13 +26611,10 @@ export const _LocalFilePrototype: typeof File.prototype;
 
     namespace MemoryInputStream {
         // Signal signatures
-        interface SignalSignatures extends InputStream.SignalSignatures {
-        }
+        interface SignalSignatures extends InputStream.SignalSignatures {}
 
         // Constructor properties interface
-        interface ConstructorProps extends InputStream.ConstructorProps, PollableInputStream.ConstructorProps, Seekable.ConstructorProps {
-
-        }
+        interface ConstructorProps extends InputStream.ConstructorProps, PollableInputStream.ConstructorProps, Seekable.ConstructorProps {}
     }
 
     /**
@@ -26686,9 +26644,9 @@ export const _LocalFilePrototype: typeof File.prototype;
 
         static ["new"](): MemoryInputStream;
 
-        static new_from_bytes(bytes: (GLib.Bytes | Uint8Array)): MemoryInputStream;
+        static new_from_bytes(bytes: GLib.Bytes | Uint8Array): MemoryInputStream;
 
-        static new_from_data(data: (Uint8Array | string)): MemoryInputStream;
+        static new_from_data(data: Uint8Array | string): MemoryInputStream;
 
         // Signals
         /** @signal */
@@ -26708,13 +26666,13 @@ export const _LocalFilePrototype: typeof File.prototype;
          * Appends `bytes` to data that can be read from the input stream.
          * @param bytes input data
          */
-        add_bytes(bytes: (GLib.Bytes | Uint8Array)): void;
+        add_bytes(bytes: GLib.Bytes | Uint8Array): void;
 
         /**
          * Appends `data` to data that can be read from the input stream
          * @param data input data
          */
-        add_data(data: (Uint8Array | string)): void;
+        add_data(data: Uint8Array | string): void;
 
         /**
          * Checks if `stream` is actually pollable. Some classes may implement
@@ -26743,7 +26701,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable a {@link Gio.Cancellable}, or `null`
          * @returns a new {@link GLib.Source}
          */
-        create_source(cancellable: (Cancellable | null)): GLib.Source;
+        create_source(cancellable: Cancellable | null): GLib.Source;
 
         /**
          * Checks if `stream` can be read.
@@ -26779,7 +26737,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable a {@link Gio.Cancellable}, or `null`
          * @returns the number of bytes read, or -1 on error (including   {@link Gio.IOErrorEnum.WOULD_BLOCK}).
          */
-        read_nonblocking(cancellable: (Cancellable | null)): [number, Uint8Array];
+        read_nonblocking(cancellable: Cancellable | null): [number, Uint8Array];
 
         /**
          * Checks if `stream` is actually pollable. Some classes may implement
@@ -26808,7 +26766,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable a {@link Gio.Cancellable}, or `null`
          * @virtual
          */
-        vfunc_create_source(cancellable: (Cancellable | null)): GLib.Source;
+        vfunc_create_source(cancellable: Cancellable | null): GLib.Source;
 
         /**
          * Checks if `stream` can be read.
@@ -26843,7 +26801,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * `g_pollable_input_stream_can_poll()` returns `false` for `stream`.
          * @virtual
          */
-        vfunc_read_nonblocking(): [(bigint | number), Uint8Array | null];
+        vfunc_read_nonblocking(): [bigint | number, Uint8Array | null];
 
         /**
          * Tests if the stream supports the {@link Gio.SeekableIface}.
@@ -26878,7 +26836,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          * @returns `true` if successful. If an error     has occurred, this function will return `false` and set `error`     appropriately if present.
          */
-        seek(offset: (bigint | number), type: GLib.SeekType, cancellable: (Cancellable | null)): boolean;
+        seek(offset: bigint | number, type: GLib.SeekType, cancellable: Cancellable | null): boolean;
 
         /**
          * Tells the current position within the stream.
@@ -26900,7 +26858,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          * @returns `true` if successful. If an error     has occurred, this function will return `false` and set `error`     appropriately if present.
          */
-        truncate(offset: (bigint | number), cancellable: (Cancellable | null)): boolean;
+        truncate(offset: bigint | number, cancellable: Cancellable | null): boolean;
 
         /**
          * Tests if the stream supports the {@link Gio.SeekableIface}.
@@ -26935,13 +26893,13 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          * @virtual
          */
-        vfunc_seek(offset: number, type: GLib.SeekType, cancellable: (Cancellable | null)): boolean;
+        vfunc_seek(offset: number, type: GLib.SeekType, cancellable: Cancellable | null): boolean;
 
         /**
          * Tells the current position within the stream.
          * @virtual
          */
-        vfunc_tell(): (bigint | number);
+        vfunc_tell(): bigint | number;
 
         /**
          * Sets the length of the stream to `offset`. If the stream was previously
@@ -26957,7 +26915,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          * @virtual
          */
-        vfunc_truncate_fn(offset: number, cancellable: (Cancellable | null)): boolean;
+        vfunc_truncate_fn(offset: number, cancellable: Cancellable | null): boolean;
     }
 
 
@@ -26972,9 +26930,9 @@ export const _LocalFilePrototype: typeof File.prototype;
         // Constructor properties interface
         interface ConstructorProps extends OutputStream.ConstructorProps, PollableOutputStream.ConstructorProps, Seekable.ConstructorProps {
             data: never;
-            data_size: (bigint | number);
-            dataSize: (bigint | number);
-            size: (bigint | number);
+            data_size: bigint | number;
+            dataSize: bigint | number;
+            size: bigint | number;
         }
     }
 
@@ -27132,7 +27090,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable a {@link Gio.Cancellable}, or `null`
          * @returns a new {@link GLib.Source}
          */
-        create_source(cancellable: (Cancellable | null)): GLib.Source;
+        create_source(cancellable: Cancellable | null): GLib.Source;
 
         /**
          * Checks if `stream` can be written.
@@ -27173,7 +27131,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable a {@link Gio.Cancellable}, or `null`
          * @returns the number of bytes written, or -1 on error (including   {@link Gio.IOErrorEnum.WOULD_BLOCK}).
          */
-        write_nonblocking(buffer: (Uint8Array | string), cancellable: (Cancellable | null)): number;
+        write_nonblocking(buffer: Uint8Array | string, cancellable: Cancellable | null): number;
 
         /**
          * Attempts to write the bytes contained in the `n_vectors` `vectors` to `stream`,
@@ -27199,7 +27157,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable a {@link Gio.Cancellable}, or `null`
          * @returns %`G_POLLABLE_RETURN_OK` on success, {@link Gio.PollableReturn.WOULD_BLOCK} if the stream is not currently writable (and `error` is *not* set), or {@link Gio.PollableReturn.FAILED} if there was an error in which case `error` will be set.
          */
-        writev_nonblocking(vectors: OutputVector[], cancellable: (Cancellable | null)): [PollableReturn, number];
+        writev_nonblocking(vectors: OutputVector[], cancellable: Cancellable | null): [PollableReturn, number];
 
         /**
          * Checks if `stream` is actually pollable. Some classes may implement
@@ -27228,7 +27186,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable a {@link Gio.Cancellable}, or `null`
          * @virtual
          */
-        vfunc_create_source(cancellable: (Cancellable | null)): GLib.Source;
+        vfunc_create_source(cancellable: Cancellable | null): GLib.Source;
 
         /**
          * Checks if `stream` can be written.
@@ -27268,7 +27226,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param buffer a buffer to write     data from
          * @virtual
          */
-        vfunc_write_nonblocking(buffer: (Uint8Array | null)): (bigint | number);
+        vfunc_write_nonblocking(buffer: Uint8Array | null): bigint | number;
 
         /**
          * Attempts to write the bytes contained in the `n_vectors` `vectors` to `stream`,
@@ -27328,7 +27286,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          * @returns `true` if successful. If an error     has occurred, this function will return `false` and set `error`     appropriately if present.
          */
-        seek(offset: (bigint | number), type: GLib.SeekType, cancellable: (Cancellable | null)): boolean;
+        seek(offset: bigint | number, type: GLib.SeekType, cancellable: Cancellable | null): boolean;
 
         /**
          * Tells the current position within the stream.
@@ -27350,7 +27308,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          * @returns `true` if successful. If an error     has occurred, this function will return `false` and set `error`     appropriately if present.
          */
-        truncate(offset: (bigint | number), cancellable: (Cancellable | null)): boolean;
+        truncate(offset: bigint | number, cancellable: Cancellable | null): boolean;
 
         /**
          * Tests if the stream supports the {@link Gio.SeekableIface}.
@@ -27385,13 +27343,13 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          * @virtual
          */
-        vfunc_seek(offset: number, type: GLib.SeekType, cancellable: (Cancellable | null)): boolean;
+        vfunc_seek(offset: number, type: GLib.SeekType, cancellable: Cancellable | null): boolean;
 
         /**
          * Tells the current position within the stream.
          * @virtual
          */
-        vfunc_tell(): (bigint | number);
+        vfunc_tell(): bigint | number;
 
         /**
          * Sets the length of the stream to `offset`. If the stream was previously
@@ -27407,19 +27365,16 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          * @virtual
          */
-        vfunc_truncate_fn(offset: number, cancellable: (Cancellable | null)): boolean;
+        vfunc_truncate_fn(offset: number, cancellable: Cancellable | null): boolean;
     }
 
 
     namespace Menu {
         // Signal signatures
-        interface SignalSignatures extends MenuModel.SignalSignatures {
-        }
+        interface SignalSignatures extends MenuModel.SignalSignatures {}
 
         // Constructor properties interface
-        interface ConstructorProps extends MenuModel.ConstructorProps {
-
-        }
+        interface ConstructorProps extends MenuModel.ConstructorProps {}
     }
 
     /**
@@ -27474,7 +27429,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param label the section label, or `null`
          * @param detailed_action the detailed action string, or `null`
          */
-        append(label: (string | null), detailed_action: (string | null)): void;
+        append(label: string | null, detailed_action: string | null): void;
 
         /**
          * Appends `item` to the end of `menu`.
@@ -27491,7 +27446,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param label the section label, or `null`
          * @param section a {@link Gio.MenuModel} with the items of the section
          */
-        append_section(label: (string | null), section: MenuModel): void;
+        append_section(label: string | null, section: MenuModel): void;
 
         /**
          * Convenience function for appending a submenu menu item to the end of
@@ -27500,7 +27455,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param label the section label, or `null`
          * @param submenu a {@link Gio.MenuModel} with the items of the submenu
          */
-        append_submenu(label: (string | null), submenu: MenuModel): void;
+        append_submenu(label: string | null, submenu: MenuModel): void;
 
         /**
          * Marks `menu` as frozen.
@@ -27522,7 +27477,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param label the section label, or `null`
          * @param detailed_action the detailed action string, or `null`
          */
-        insert(position: number, label: (string | null), detailed_action: (string | null)): void;
+        insert(position: number, label: string | null, detailed_action: string | null): void;
 
         /**
          * Inserts `item` into `menu`.
@@ -27555,7 +27510,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param label the section label, or `null`
          * @param section a {@link Gio.MenuModel} with the items of the section
          */
-        insert_section(position: number, label: (string | null), section: MenuModel): void;
+        insert_section(position: number, label: string | null, section: MenuModel): void;
 
         /**
          * Convenience function for inserting a submenu menu item into `menu`.
@@ -27565,7 +27520,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param label the section label, or `null`
          * @param submenu a {@link Gio.MenuModel} with the items of the submenu
          */
-        insert_submenu(position: number, label: (string | null), submenu: MenuModel): void;
+        insert_submenu(position: number, label: string | null, submenu: MenuModel): void;
 
         /**
          * Convenience function for prepending a normal menu item to the start
@@ -27574,7 +27529,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param label the section label, or `null`
          * @param detailed_action the detailed action string, or `null`
          */
-        prepend(label: (string | null), detailed_action: (string | null)): void;
+        prepend(label: string | null, detailed_action: string | null): void;
 
         /**
          * Prepends `item` to the start of `menu`.
@@ -27591,7 +27546,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param label the section label, or `null`
          * @param section a {@link Gio.MenuModel} with the items of the section
          */
-        prepend_section(label: (string | null), section: MenuModel): void;
+        prepend_section(label: string | null, section: MenuModel): void;
 
         /**
          * Convenience function for prepending a submenu menu item to the start
@@ -27600,7 +27555,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param label the section label, or `null`
          * @param submenu a {@link Gio.MenuModel} with the items of the submenu
          */
-        prepend_submenu(label: (string | null), submenu: MenuModel): void;
+        prepend_submenu(label: string | null, submenu: MenuModel): void;
 
         /**
          * Removes an item from the menu.
@@ -27626,13 +27581,10 @@ export const _LocalFilePrototype: typeof File.prototype;
 
     namespace MenuAttributeIter {
         // Signal signatures
-        interface SignalSignatures extends GObject.Object.SignalSignatures {
-        }
+        interface SignalSignatures extends GObject.Object.SignalSignatures {}
 
         // Constructor properties interface
-        interface ConstructorProps extends GObject.Object.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GObject.Object.ConstructorProps {}
     }
 
     /**
@@ -27748,13 +27700,10 @@ export const _LocalFilePrototype: typeof File.prototype;
 
     namespace MenuItem {
         // Signal signatures
-        interface SignalSignatures extends GObject.Object.SignalSignatures {
-        }
+        interface SignalSignatures extends GObject.Object.SignalSignatures {}
 
         // Constructor properties interface
-        interface ConstructorProps extends GObject.Object.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GObject.Object.ConstructorProps {}
     }
 
     /**
@@ -27780,13 +27729,13 @@ export const _LocalFilePrototype: typeof File.prototype;
 
         _init(...args: any[]): void;
 
-        static ["new"](label: (string | null), detailed_action: (string | null)): MenuItem;
+        static ["new"](label: string | null, detailed_action: string | null): MenuItem;
 
         static new_from_model(model: MenuModel, item_index: number): MenuItem;
 
-        static new_section(label: (string | null), section: MenuModel): MenuItem;
+        static new_section(label: string | null, section: MenuModel): MenuItem;
 
-        static new_submenu(label: (string | null), submenu: MenuModel): MenuItem;
+        static new_submenu(label: string | null, submenu: MenuModel): MenuItem;
 
         // Signals
         /** @signal */
@@ -27812,14 +27761,14 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param expected_type the expected type of the attribute
          * @returns the attribute value, or `null`
          */
-        get_attribute_value(attribute: string, expected_type: (GLib.VariantType | null)): (GLib.Variant | null);
+        get_attribute_value(attribute: string, expected_type: GLib.VariantType | null): GLib.Variant | null;
 
         /**
          * Queries the named `link` on `menu_item`.
          * @param link the link name to query
          * @returns the link, or `null`
          */
-        get_link(link: string): (MenuModel | null);
+        get_link(link: string): MenuModel | null;
 
         /**
          * Sets or unsets the "action" and "target" attributes of `menu_item`.
@@ -27861,7 +27810,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param action the name of the action for this item
          * @param target_value a {@link GLib.Variant} to use as the action target
          */
-        set_action_and_target_value(action: (string | null), target_value: (GLib.Variant | null)): void;
+        set_action_and_target_value(action: string | null, target_value: GLib.Variant | null): void;
 
         /**
          * Sets or unsets an attribute on `menu_item`.
@@ -27886,7 +27835,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param attribute the attribute to set
          * @param value a {@link GLib.Variant} to use as the value, or `null`
          */
-        set_attribute_value(attribute: string, value: (GLib.Variant | null)): void;
+        set_attribute_value(attribute: string, value: GLib.Variant | null): void;
 
         /**
          * Sets the "action" and possibly the "target" attribute of `menu_item`.
@@ -27928,7 +27877,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * it is `null` then the label attribute is unset.
          * @param label the label to set, or `null` to unset
          */
-        set_label(label: (string | null)): void;
+        set_label(label: string | null): void;
 
         /**
          * Creates a link from `menu_item` to `model` if non-`null`, or unsets it.
@@ -27944,7 +27893,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param link type of link to establish or unset
          * @param model the {@link Gio.MenuModel} to link to (or `null` to unset)
          */
-        set_link(link: string, model: (MenuModel | null)): void;
+        set_link(link: string, model: MenuModel | null): void;
 
         /**
          * Sets or unsets the "section" link of `menu_item` to `section`.
@@ -27956,7 +27905,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * section.
          * @param section a {@link Gio.MenuModel}, or `null`
          */
-        set_section(section: (MenuModel | null)): void;
+        set_section(section: MenuModel | null): void;
 
         /**
          * Sets or unsets the "submenu" link of `menu_item` to `submenu`.
@@ -27968,19 +27917,16 @@ export const _LocalFilePrototype: typeof File.prototype;
          * exactly as it sounds.
          * @param submenu a {@link Gio.MenuModel}, or `null`
          */
-        set_submenu(submenu: (MenuModel | null)): void;
+        set_submenu(submenu: MenuModel | null): void;
     }
 
 
     namespace MenuLinkIter {
         // Signal signatures
-        interface SignalSignatures extends GObject.Object.SignalSignatures {
-        }
+        interface SignalSignatures extends GObject.Object.SignalSignatures {}
 
         // Constructor properties interface
-        interface ConstructorProps extends GObject.Object.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GObject.Object.ConstructorProps {}
     }
 
     /**
@@ -28121,9 +28067,7 @@ export const _LocalFilePrototype: typeof File.prototype;
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends GObject.Object.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GObject.Object.ConstructorProps {}
     }
 
     /**
@@ -28297,7 +28241,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param expected_type the expected type of the attribute, or     `null`
          * @virtual
          */
-        vfunc_get_item_attribute_value(item_index: number, attribute: string, expected_type: (GLib.VariantType | null)): (GLib.Variant | null);
+        vfunc_get_item_attribute_value(item_index: number, attribute: string, expected_type: GLib.VariantType | null): GLib.Variant | null;
 
         /**
          * Gets all the attributes associated with the item in the menu model.
@@ -28316,7 +28260,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param link the link to query
          * @virtual
          */
-        vfunc_get_item_link(item_index: number, link: string): (MenuModel | null);
+        vfunc_get_item_link(item_index: number, link: string): MenuModel | null;
 
         /**
          * Gets all the links associated with the item in the menu model.
@@ -28378,7 +28322,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param expected_type the expected type of the attribute, or     `null`
          * @returns the value of the attribute
          */
-        get_item_attribute_value(item_index: number, attribute: string, expected_type: (GLib.VariantType | null)): (GLib.Variant | null);
+        get_item_attribute_value(item_index: number, attribute: string, expected_type: GLib.VariantType | null): GLib.Variant | null;
 
         /**
          * Queries the item at position `item_index` in `model` for the link
@@ -28390,7 +28334,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param link the link to query
          * @returns the linked {@link Gio.MenuModel}, or `null`
          */
-        get_item_link(item_index: number, link: string): (MenuModel | null);
+        get_item_link(item_index: number, link: string): MenuModel | null;
 
         /**
          * Query the number of items in `model`.
@@ -28547,16 +28491,16 @@ export const _LocalFilePrototype: typeof File.prototype;
         interface ConstructorProps extends GObject.Object.ConstructorProps {
             anonymous: boolean;
             choice: number;
-            domain: (string | null);
+            domain: string | null;
             is_tcrypt_hidden_volume: boolean;
             isTcryptHiddenVolume: boolean;
             is_tcrypt_system_volume: boolean;
             isTcryptSystemVolume: boolean;
-            password: (string | null);
+            password: string | null;
             password_save: PasswordSave;
             passwordSave: PasswordSave;
             pim: number;
-            username: (string | null);
+            username: string | null;
         }
     }
 
@@ -28608,8 +28552,8 @@ export const _LocalFilePrototype: typeof File.prototype;
          * The domain to use for the mount operation.
          * @default null
          */
-        get domain(): (string | null);
-        set domain(val: (string | null));
+        get domain(): string | null;
+        set domain(val: string | null);
 
         /**
          * Whether the device to be unlocked is a TCRYPT hidden volume.
@@ -28658,8 +28602,8 @@ export const _LocalFilePrototype: typeof File.prototype;
          * the mount operation.
          * @default null
          */
-        get password(): (string | null);
-        set password(val: (string | null));
+        get password(): string | null;
+        set password(val: string | null);
 
         /**
          * Determines if and how the password information should be saved.
@@ -28689,8 +28633,8 @@ export const _LocalFilePrototype: typeof File.prototype;
          * the mount operation.
          * @default null
          */
-        get username(): (string | null);
-        set username(val: (string | null));
+        get username(): string | null;
+        set username(val: string | null);
 
         /**
          * Compile-time signal type information.
@@ -28786,7 +28730,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * Gets the domain of the mount operation.
          * @returns a string set to the domain.
          */
-        get_domain(): (string | null);
+        get_domain(): string | null;
 
         /**
          * Check to see whether the mount operation is being used
@@ -28806,7 +28750,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * Gets a password from the mount operation.
          * @returns a string containing the password within `op`.
          */
-        get_password(): (string | null);
+        get_password(): string | null;
 
         /**
          * Gets the state of saving passwords for the mount operation.
@@ -28824,7 +28768,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * Get the user name from the mount operation.
          * @returns a string containing the user name.
          */
-        get_username(): (string | null);
+        get_username(): string | null;
 
         /**
          * Emits the {@link Gio.MountOperation.SignalSignatures.reply | Gio.MountOperation::reply} signal.
@@ -28848,7 +28792,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * Sets the mount operation's domain.
          * @param domain the domain to set.
          */
-        set_domain(domain: (string | null)): void;
+        set_domain(domain: string | null): void;
 
         /**
          * Sets the mount operation to use a hidden volume if `hidden_volume` is `true`.
@@ -28866,7 +28810,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * Sets the mount operation's password to `password`.
          * @param password password to set.
          */
-        set_password(password: (string | null)): void;
+        set_password(password: string | null): void;
 
         /**
          * Sets the state of saving passwords for the mount operation.
@@ -28884,7 +28828,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * Sets the user name within `op` to `username`.
          * @param username input username.
          */
-        set_username(username: (string | null)): void;
+        set_username(username: string | null): void;
     }
 
 
@@ -28895,9 +28839,7 @@ export const _LocalFilePrototype: typeof File.prototype;
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends SocketAddress.ConstructorProps, SocketConnectable.ConstructorProps {
-
-        }
+        interface ConstructorProps extends SocketAddress.ConstructorProps, SocketConnectable.ConstructorProps {}
     }
 
     /**
@@ -28925,7 +28867,7 @@ export const _LocalFilePrototype: typeof File.prototype;
 
         _init(...args: any[]): void;
 
-        static ["new"](_native: null, len: (bigint | number)): NativeSocketAddress;
+        static ["new"](_native: null, len: bigint | number): NativeSocketAddress;
 
         // Signals
         /** @signal */
@@ -29004,13 +28946,10 @@ export const _LocalFilePrototype: typeof File.prototype;
 
     namespace NativeVolumeMonitor {
         // Signal signatures
-        interface SignalSignatures extends VolumeMonitor.SignalSignatures {
-        }
+        interface SignalSignatures extends VolumeMonitor.SignalSignatures {}
 
         // Constructor properties interface
-        interface ConstructorProps extends VolumeMonitor.ConstructorProps {
-
-        }
+        interface ConstructorProps extends VolumeMonitor.ConstructorProps {}
     }
 
     /**
@@ -29060,7 +28999,7 @@ export const _LocalFilePrototype: typeof File.prototype;
         interface ConstructorProps extends GObject.Object.ConstructorProps, SocketConnectable.ConstructorProps {
             hostname: string;
             port: number;
-            scheme: (string | null);
+            scheme: string | null;
         }
     }
 
@@ -29103,7 +29042,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @construct-only
          * @default null
          */
-        get scheme(): (string | null);
+        get scheme(): string | null;
 
         /**
          * Compile-time signal type information.
@@ -29194,7 +29133,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * Gets `addr`'s scheme
          * @returns `addr`'s scheme (`null` if not built from URI)
          */
-        get_scheme(): (string | null);
+        get_scheme(): string | null;
 
         /**
          * Creates a {@link Gio.SocketAddressEnumerator} for `connectable`.
@@ -29451,13 +29390,10 @@ export const _LocalFilePrototype: typeof File.prototype;
 
     namespace Notification {
         // Signal signatures
-        interface SignalSignatures extends GObject.Object.SignalSignatures {
-        }
+        interface SignalSignatures extends GObject.Object.SignalSignatures {}
 
         // Constructor properties interface
-        interface ConstructorProps extends GObject.Object.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GObject.Object.ConstructorProps {}
     }
 
     /**
@@ -29566,13 +29502,13 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param action an action name
          * @param target a {@link GLib.Variant} to use as `action`'s parameter, or `null`
          */
-        add_button_with_target(label: string, action: string, target: (GLib.Variant | null)): void;
+        add_button_with_target(label: string, action: string, target: GLib.Variant | null): void;
 
         /**
          * Sets the body of `notification` to `body`.
          * @param body the new body for `notification`, or `null`
          */
-        set_body(body: (string | null)): void;
+        set_body(body: string | null): void;
 
         /**
          * Sets the type of `notification` to `category`. Categories have a main
@@ -29583,7 +29519,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * Standard categories are [listed in the specification](https://specifications.freedesktop.org/notification-spec/latest/ar01s06.html).
          * @param category the category for `notification`, or `null` for no category
          */
-        set_category(category: (string | null)): void;
+        set_category(category: string | null): void;
 
         /**
          * Sets the default action of `notification` to `detailed_action`. This
@@ -29614,7 +29550,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param action an action name
          * @param target a {@link GLib.Variant} to use as `action`'s parameter, or `null`
          */
-        set_default_action_and_target(action: string, target: (GLib.Variant | null)): void;
+        set_default_action_and_target(action: string, target: GLib.Variant | null): void;
 
         /**
          * Sets the icon of `notification` to `icon`.
@@ -29645,13 +29581,10 @@ export const _LocalFilePrototype: typeof File.prototype;
 
     namespace OutputStream {
         // Signal signatures
-        interface SignalSignatures extends GObject.Object.SignalSignatures {
-        }
+        interface SignalSignatures extends GObject.Object.SignalSignatures {}
 
         // Constructor properties interface
-        interface ConstructorProps extends GObject.Object.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GObject.Object.ConstructorProps {}
     }
 
     /**
@@ -29721,7 +29654,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param callback a {@link Gio.AsyncReadyCallback}   to call when the request is satisfied
          * @virtual
          */
-        vfunc_close_async(io_priority: number, cancellable: (Cancellable | null), callback: (AsyncReadyCallback<this> | null)): void;
+        vfunc_close_async(io_priority: number, cancellable: Cancellable | null, callback: AsyncReadyCallback<this> | null): void;
 
         /**
          * Closes an output stream.
@@ -29734,7 +29667,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable 
          * @virtual
          */
-        vfunc_close_fn(cancellable: (Cancellable | null)): boolean;
+        vfunc_close_fn(cancellable: Cancellable | null): boolean;
 
         /**
          * Forces a write of all user-space buffered data for the given
@@ -29749,7 +29682,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional cancellable object
          * @virtual
          */
-        vfunc_flush(cancellable: (Cancellable | null)): boolean;
+        vfunc_flush(cancellable: Cancellable | null): boolean;
 
         /**
          * Forces an asynchronous write of all user-space buffered data for
@@ -29764,7 +29697,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param callback a {@link Gio.AsyncReadyCallback}   to call when the request is satisfied
          * @virtual
          */
-        vfunc_flush_async(io_priority: number, cancellable: (Cancellable | null), callback: (AsyncReadyCallback<this> | null)): void;
+        vfunc_flush_async(io_priority: number, cancellable: Cancellable | null, callback: AsyncReadyCallback<this> | null): void;
 
         /**
          * Finishes flushing an output stream.
@@ -29780,7 +29713,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          * @virtual
          */
-        vfunc_splice(source: InputStream, flags: OutputStreamSpliceFlags, cancellable: (Cancellable | null)): (bigint | number);
+        vfunc_splice(source: InputStream, flags: OutputStreamSpliceFlags, cancellable: Cancellable | null): bigint | number;
 
         /**
          * Splices a stream asynchronously.
@@ -29797,14 +29730,14 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param callback a {@link Gio.AsyncReadyCallback}   to call when the request is satisfied
          * @virtual
          */
-        vfunc_splice_async(source: InputStream, flags: OutputStreamSpliceFlags, io_priority: number, cancellable: (Cancellable | null), callback: (AsyncReadyCallback<this> | null)): void;
+        vfunc_splice_async(source: InputStream, flags: OutputStreamSpliceFlags, io_priority: number, cancellable: Cancellable | null, callback: AsyncReadyCallback<this> | null): void;
 
         /**
          * Finishes an asynchronous stream splice operation.
          * @param result a {@link Gio.AsyncResult}.
          * @virtual
          */
-        vfunc_splice_finish(result: AsyncResult): (bigint | number);
+        vfunc_splice_finish(result: AsyncResult): bigint | number;
 
         /**
          * Request an asynchronous write of `count` bytes from `buffer` into
@@ -29848,14 +29781,14 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param callback a {@link Gio.AsyncReadyCallback}     to call when the request is satisfied
          * @virtual
          */
-        vfunc_write_async(buffer: (Uint8Array | null), io_priority: number, cancellable: (Cancellable | null), callback: (AsyncReadyCallback<this> | null)): void;
+        vfunc_write_async(buffer: Uint8Array | null, io_priority: number, cancellable: Cancellable | null, callback: AsyncReadyCallback<this> | null): void;
 
         /**
          * Finishes a stream write operation.
          * @param result a {@link Gio.AsyncResult}.
          * @virtual
          */
-        vfunc_write_finish(result: AsyncResult): (bigint | number);
+        vfunc_write_finish(result: AsyncResult): bigint | number;
 
         /**
          * Tries to write `count` bytes from `buffer` into the stream. Will block
@@ -29882,7 +29815,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional cancellable object
          * @virtual
          */
-        vfunc_write_fn(buffer: (Uint8Array | null), cancellable: (Cancellable | null)): (bigint | number);
+        vfunc_write_fn(buffer: Uint8Array | null, cancellable: Cancellable | null): bigint | number;
 
         /**
          * Request an asynchronous write of the bytes contained in `n_vectors` `vectors` into
@@ -29921,7 +29854,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param callback a {@link Gio.AsyncReadyCallback}     to call when the request is satisfied
          * @virtual
          */
-        vfunc_writev_async(vectors: OutputVector[], io_priority: number, cancellable: (Cancellable | null), callback: (AsyncReadyCallback<this> | null)): void;
+        vfunc_writev_async(vectors: OutputVector[], io_priority: number, cancellable: Cancellable | null, callback: AsyncReadyCallback<this> | null): void;
 
         /**
          * Finishes a stream writev operation.
@@ -29958,7 +29891,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional cancellable object
          * @virtual
          */
-        vfunc_writev_fn(vectors: OutputVector[], cancellable: (Cancellable | null)): [boolean, bigint | number];
+        vfunc_writev_fn(vectors: OutputVector[], cancellable: Cancellable | null): [boolean, bigint | number];
 
         // Methods
         /**
@@ -29999,7 +29932,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional cancellable object
          * @returns `true` on success, `false` on failure
          */
-        close(cancellable: (Cancellable | null)): boolean;
+        close(cancellable: Cancellable | null): boolean;
 
         /**
          * Requests an asynchronous close of the stream, releasing resources
@@ -30015,24 +29948,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param io_priority the io priority of the request.
          * @param cancellable optional cancellable object
          */
-        close_async(io_priority: number, cancellable: (Cancellable | null)): globalThis.Promise<boolean>;
-
-        /**
-         * Requests an asynchronous close of the stream, releasing resources
-         * related to it. When the operation is finished `callback` will be
-         * called. You can then call `g_output_stream_close_finish()` to get
-         * the result of the operation.
-         * 
-         * For behaviour details see `g_output_stream_close()`.
-         * 
-         * The asynchronous methods have a default fallback that uses threads
-         * to implement asynchronicity, so they are optional for inheriting
-         * classes. However, if you override one you must override all.
-         * @param io_priority the io priority of the request.
-         * @param cancellable optional cancellable object
-         * @param callback a {@link Gio.AsyncReadyCallback}   to call when the request is satisfied
-         */
-        close_async(io_priority: number, cancellable: (Cancellable | null), callback: (AsyncReadyCallback<this> | null)): void;
+        close_async(io_priority: number, cancellable: Cancellable | null): globalThis.Promise<boolean>;
 
         /**
          * Requests an asynchronous close of the stream, releasing resources
@@ -30049,7 +29965,24 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional cancellable object
          * @param callback a {@link Gio.AsyncReadyCallback}   to call when the request is satisfied
          */
-        close_async(io_priority: number, cancellable: (Cancellable | null), callback?: (AsyncReadyCallback<this> | null)): (globalThis.Promise<boolean> | void);
+        close_async(io_priority: number, cancellable: Cancellable | null, callback: AsyncReadyCallback<this> | null): void;
+
+        /**
+         * Requests an asynchronous close of the stream, releasing resources
+         * related to it. When the operation is finished `callback` will be
+         * called. You can then call `g_output_stream_close_finish()` to get
+         * the result of the operation.
+         * 
+         * For behaviour details see `g_output_stream_close()`.
+         * 
+         * The asynchronous methods have a default fallback that uses threads
+         * to implement asynchronicity, so they are optional for inheriting
+         * classes. However, if you override one you must override all.
+         * @param io_priority the io priority of the request.
+         * @param cancellable optional cancellable object
+         * @param callback a {@link Gio.AsyncReadyCallback}   to call when the request is satisfied
+         */
+        close_async(io_priority: number, cancellable: Cancellable | null, callback?: AsyncReadyCallback<this> | null): globalThis.Promise<boolean> | void;
 
         /**
          * Closes an output stream.
@@ -30071,7 +30004,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional cancellable object
          * @returns `true` on success, `false` on error
          */
-        flush(cancellable: (Cancellable | null)): boolean;
+        flush(cancellable: Cancellable | null): boolean;
 
         /**
          * Forces an asynchronous write of all user-space buffered data for
@@ -30084,21 +30017,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param io_priority the io priority of the request.
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          */
-        flush_async(io_priority: number, cancellable: (Cancellable | null)): globalThis.Promise<boolean>;
-
-        /**
-         * Forces an asynchronous write of all user-space buffered data for
-         * the given `stream`.
-         * For behaviour details see `g_output_stream_flush()`.
-         * 
-         * When the operation is finished `callback` will be
-         * called. You can then call `g_output_stream_flush_finish()` to get the
-         * result of the operation.
-         * @param io_priority the io priority of the request.
-         * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
-         * @param callback a {@link Gio.AsyncReadyCallback}   to call when the request is satisfied
-         */
-        flush_async(io_priority: number, cancellable: (Cancellable | null), callback: (AsyncReadyCallback<this> | null)): void;
+        flush_async(io_priority: number, cancellable: Cancellable | null): globalThis.Promise<boolean>;
 
         /**
          * Forces an asynchronous write of all user-space buffered data for
@@ -30112,7 +30031,21 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          * @param callback a {@link Gio.AsyncReadyCallback}   to call when the request is satisfied
          */
-        flush_async(io_priority: number, cancellable: (Cancellable | null), callback?: (AsyncReadyCallback<this> | null)): (globalThis.Promise<boolean> | void);
+        flush_async(io_priority: number, cancellable: Cancellable | null, callback: AsyncReadyCallback<this> | null): void;
+
+        /**
+         * Forces an asynchronous write of all user-space buffered data for
+         * the given `stream`.
+         * For behaviour details see `g_output_stream_flush()`.
+         * 
+         * When the operation is finished `callback` will be
+         * called. You can then call `g_output_stream_flush_finish()` to get the
+         * result of the operation.
+         * @param io_priority the io priority of the request.
+         * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
+         * @param callback a {@link Gio.AsyncReadyCallback}   to call when the request is satisfied
+         */
+        flush_async(io_priority: number, cancellable: Cancellable | null, callback?: AsyncReadyCallback<this> | null): globalThis.Promise<boolean> | void;
 
         /**
          * Finishes flushing an output stream.
@@ -30157,7 +30090,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          * @returns a `gssize` containing the size of the data spliced, or     -1 if an error occurred. Note that if the number of bytes     spliced is greater than `G_MAXSSIZE`, then that will be     returned, and there is no way to determine the actual number     of bytes spliced.
          */
-        splice(source: InputStream, flags: OutputStreamSpliceFlags, cancellable: (Cancellable | null)): number;
+        splice(source: InputStream, flags: OutputStreamSpliceFlags, cancellable: Cancellable | null): number;
 
         /**
          * Splices a stream asynchronously.
@@ -30172,23 +30105,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param io_priority the io priority of the request.
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          */
-        splice_async(source: InputStream, flags: OutputStreamSpliceFlags, io_priority: number, cancellable: (Cancellable | null)): globalThis.Promise<number>;
-
-        /**
-         * Splices a stream asynchronously.
-         * When the operation is finished `callback` will be called.
-         * You can then call `g_output_stream_splice_finish()` to get the
-         * result of the operation.
-         * 
-         * For the synchronous, blocking version of this function, see
-         * `g_output_stream_splice()`.
-         * @param source a {@link Gio.InputStream}.
-         * @param flags a set of {@link Gio.OutputStreamSpliceFlags}.
-         * @param io_priority the io priority of the request.
-         * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
-         * @param callback a {@link Gio.AsyncReadyCallback}   to call when the request is satisfied
-         */
-        splice_async(source: InputStream, flags: OutputStreamSpliceFlags, io_priority: number, cancellable: (Cancellable | null), callback: (AsyncReadyCallback<this> | null)): void;
+        splice_async(source: InputStream, flags: OutputStreamSpliceFlags, io_priority: number, cancellable: Cancellable | null): globalThis.Promise<number>;
 
         /**
          * Splices a stream asynchronously.
@@ -30204,7 +30121,23 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          * @param callback a {@link Gio.AsyncReadyCallback}   to call when the request is satisfied
          */
-        splice_async(source: InputStream, flags: OutputStreamSpliceFlags, io_priority: number, cancellable: (Cancellable | null), callback?: (AsyncReadyCallback<this> | null)): (globalThis.Promise<number> | void);
+        splice_async(source: InputStream, flags: OutputStreamSpliceFlags, io_priority: number, cancellable: Cancellable | null, callback: AsyncReadyCallback<this> | null): void;
+
+        /**
+         * Splices a stream asynchronously.
+         * When the operation is finished `callback` will be called.
+         * You can then call `g_output_stream_splice_finish()` to get the
+         * result of the operation.
+         * 
+         * For the synchronous, blocking version of this function, see
+         * `g_output_stream_splice()`.
+         * @param source a {@link Gio.InputStream}.
+         * @param flags a set of {@link Gio.OutputStreamSpliceFlags}.
+         * @param io_priority the io priority of the request.
+         * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
+         * @param callback a {@link Gio.AsyncReadyCallback}   to call when the request is satisfied
+         */
+        splice_async(source: InputStream, flags: OutputStreamSpliceFlags, io_priority: number, cancellable: Cancellable | null, callback?: AsyncReadyCallback<this> | null): globalThis.Promise<number> | void;
 
         /**
          * Finishes an asynchronous stream splice operation.
@@ -30238,7 +30171,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional cancellable object
          * @returns Number of bytes written, or -1 on error
          */
-        write(buffer: (Uint8Array | string), cancellable: (Cancellable | null)): number;
+        write(buffer: Uint8Array | string, cancellable: Cancellable | null): number;
 
         /**
          * Tries to write `count` bytes from `buffer` into the stream. Will block
@@ -30264,7 +30197,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          * @returns `true` on success, `false` if there was an error
          */
-        write_all(buffer: (Uint8Array | string), cancellable: (Cancellable | null)): [boolean, number];
+        write_all(buffer: Uint8Array | string, cancellable: Cancellable | null): [boolean, number];
 
         /**
          * Request an asynchronous write of `count` bytes from `buffer` into
@@ -30286,30 +30219,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param io_priority the io priority of the request
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore
          */
-        write_all_async(buffer: (Uint8Array | string), io_priority: number, cancellable: (Cancellable | null)): globalThis.Promise<number>;
-
-        /**
-         * Request an asynchronous write of `count` bytes from `buffer` into
-         * the stream. When the operation is finished `callback` will be called.
-         * You can then call `g_output_stream_write_all_finish()` to get the result of the
-         * operation.
-         * 
-         * This is the asynchronous version of `g_output_stream_write_all()`.
-         * 
-         * Call `g_output_stream_write_all_finish()` to collect the result.
-         * 
-         * Any outstanding I/O request with higher priority (lower numerical
-         * value) will be executed before an outstanding request with lower
-         * priority. Default priority is `G_PRIORITY_DEFAULT`.
-         * 
-         * Note that no copy of `buffer` will be made, so it must stay valid
-         * until `callback` is called.
-         * @param buffer the buffer containing the data to write
-         * @param io_priority the io priority of the request
-         * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore
-         * @param callback a {@link Gio.AsyncReadyCallback}     to call when the request is satisfied
-         */
-        write_all_async(buffer: (Uint8Array | string), io_priority: number, cancellable: (Cancellable | null), callback: (AsyncReadyCallback<this> | null)): void;
+        write_all_async(buffer: Uint8Array | string, io_priority: number, cancellable: Cancellable | null): globalThis.Promise<number>;
 
         /**
          * Request an asynchronous write of `count` bytes from `buffer` into
@@ -30332,7 +30242,30 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore
          * @param callback a {@link Gio.AsyncReadyCallback}     to call when the request is satisfied
          */
-        write_all_async(buffer: (Uint8Array | string), io_priority: number, cancellable: (Cancellable | null), callback?: (AsyncReadyCallback<this> | null)): (globalThis.Promise<number> | void);
+        write_all_async(buffer: Uint8Array | string, io_priority: number, cancellable: Cancellable | null, callback: AsyncReadyCallback<this> | null): void;
+
+        /**
+         * Request an asynchronous write of `count` bytes from `buffer` into
+         * the stream. When the operation is finished `callback` will be called.
+         * You can then call `g_output_stream_write_all_finish()` to get the result of the
+         * operation.
+         * 
+         * This is the asynchronous version of `g_output_stream_write_all()`.
+         * 
+         * Call `g_output_stream_write_all_finish()` to collect the result.
+         * 
+         * Any outstanding I/O request with higher priority (lower numerical
+         * value) will be executed before an outstanding request with lower
+         * priority. Default priority is `G_PRIORITY_DEFAULT`.
+         * 
+         * Note that no copy of `buffer` will be made, so it must stay valid
+         * until `callback` is called.
+         * @param buffer the buffer containing the data to write
+         * @param io_priority the io priority of the request
+         * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore
+         * @param callback a {@link Gio.AsyncReadyCallback}     to call when the request is satisfied
+         */
+        write_all_async(buffer: Uint8Array | string, io_priority: number, cancellable: Cancellable | null, callback?: AsyncReadyCallback<this> | null): globalThis.Promise<number> | void;
 
         /**
          * Finishes an asynchronous stream write operation started with
@@ -30390,7 +30323,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param io_priority the io priority of the request.
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          */
-        write_async(buffer: (Uint8Array | string), io_priority: number, cancellable: (Cancellable | null)): globalThis.Promise<number>;
+        write_async(buffer: Uint8Array | string, io_priority: number, cancellable: Cancellable | null): globalThis.Promise<number>;
 
         /**
          * Request an asynchronous write of `count` bytes from `buffer` into
@@ -30433,7 +30366,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          * @param callback a {@link Gio.AsyncReadyCallback}     to call when the request is satisfied
          */
-        write_async(buffer: (Uint8Array | string), io_priority: number, cancellable: (Cancellable | null), callback: (AsyncReadyCallback<this> | null)): void;
+        write_async(buffer: Uint8Array | string, io_priority: number, cancellable: Cancellable | null, callback: AsyncReadyCallback<this> | null): void;
 
         /**
          * Request an asynchronous write of `count` bytes from `buffer` into
@@ -30476,7 +30409,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          * @param callback a {@link Gio.AsyncReadyCallback}     to call when the request is satisfied
          */
-        write_async(buffer: (Uint8Array | string), io_priority: number, cancellable: (Cancellable | null), callback?: (AsyncReadyCallback<this> | null)): (globalThis.Promise<number> | void);
+        write_async(buffer: Uint8Array | string, io_priority: number, cancellable: Cancellable | null, callback?: AsyncReadyCallback<this> | null): globalThis.Promise<number> | void;
 
         /**
          * A wrapper function for `g_output_stream_write()` which takes a
@@ -30494,7 +30427,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional cancellable object
          * @returns Number of bytes written, or -1 on error
          */
-        write_bytes(bytes: (GLib.Bytes | Uint8Array), cancellable: (Cancellable | null)): number;
+        write_bytes(bytes: GLib.Bytes | Uint8Array, cancellable: Cancellable | null): number;
 
         /**
          * This function is similar to `g_output_stream_write_async()`, but
@@ -30514,28 +30447,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param io_priority the io priority of the request.
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          */
-        write_bytes_async(bytes: (GLib.Bytes | Uint8Array), io_priority: number, cancellable: (Cancellable | null)): globalThis.Promise<number>;
-
-        /**
-         * This function is similar to `g_output_stream_write_async()`, but
-         * takes a {@link GLib.Bytes} as input.  Due to the refcounted nature of {@link GLib.Bytes},
-         * this allows the stream to avoid taking a copy of the data.
-         * 
-         * However, note that this function may still perform partial writes,
-         * just like `g_output_stream_write_async()`. If that occurs, to continue
-         * writing, you will need to create a new {@link GLib.Bytes} containing just the
-         * remaining bytes, using `g_bytes_new_from_bytes()`. Passing the same
-         * {@link GLib.Bytes} instance multiple times potentially can result in duplicated
-         * data in the output stream.
-         * 
-         * For the synchronous, blocking version of this function, see
-         * `g_output_stream_write_bytes()`.
-         * @param bytes The bytes to write
-         * @param io_priority the io priority of the request.
-         * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
-         * @param callback a {@link Gio.AsyncReadyCallback}   to call when the request is satisfied
-         */
-        write_bytes_async(bytes: (GLib.Bytes | Uint8Array), io_priority: number, cancellable: (Cancellable | null), callback: (AsyncReadyCallback<this> | null)): void;
+        write_bytes_async(bytes: GLib.Bytes | Uint8Array, io_priority: number, cancellable: Cancellable | null): globalThis.Promise<number>;
 
         /**
          * This function is similar to `g_output_stream_write_async()`, but
@@ -30556,7 +30468,28 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          * @param callback a {@link Gio.AsyncReadyCallback}   to call when the request is satisfied
          */
-        write_bytes_async(bytes: (GLib.Bytes | Uint8Array), io_priority: number, cancellable: (Cancellable | null), callback?: (AsyncReadyCallback<this> | null)): (globalThis.Promise<number> | void);
+        write_bytes_async(bytes: GLib.Bytes | Uint8Array, io_priority: number, cancellable: Cancellable | null, callback: AsyncReadyCallback<this> | null): void;
+
+        /**
+         * This function is similar to `g_output_stream_write_async()`, but
+         * takes a {@link GLib.Bytes} as input.  Due to the refcounted nature of {@link GLib.Bytes},
+         * this allows the stream to avoid taking a copy of the data.
+         * 
+         * However, note that this function may still perform partial writes,
+         * just like `g_output_stream_write_async()`. If that occurs, to continue
+         * writing, you will need to create a new {@link GLib.Bytes} containing just the
+         * remaining bytes, using `g_bytes_new_from_bytes()`. Passing the same
+         * {@link GLib.Bytes} instance multiple times potentially can result in duplicated
+         * data in the output stream.
+         * 
+         * For the synchronous, blocking version of this function, see
+         * `g_output_stream_write_bytes()`.
+         * @param bytes The bytes to write
+         * @param io_priority the io priority of the request.
+         * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
+         * @param callback a {@link Gio.AsyncReadyCallback}   to call when the request is satisfied
+         */
+        write_bytes_async(bytes: GLib.Bytes | Uint8Array, io_priority: number, cancellable: Cancellable | null, callback?: AsyncReadyCallback<this> | null): globalThis.Promise<number> | void;
 
         /**
          * Finishes a stream write-from-{@link GLib.Bytes} operation.
@@ -30600,7 +30533,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional cancellable object
          * @returns `true` on success, `false` if there was an error
          */
-        writev(vectors: OutputVector[], cancellable: (Cancellable | null)): [boolean, number];
+        writev(vectors: OutputVector[], cancellable: Cancellable | null): [boolean, number];
 
         /**
          * Tries to write the bytes contained in the `n_vectors` `vectors` into the
@@ -30629,7 +30562,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          * @returns `true` on success, `false` if there was an error
          */
-        writev_all(vectors: OutputVector[], cancellable: (Cancellable | null)): [boolean, number];
+        writev_all(vectors: OutputVector[], cancellable: Cancellable | null): [boolean, number];
 
         /**
          * Request an asynchronous write of the bytes contained in the `n_vectors` `vectors` into
@@ -30652,31 +30585,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param io_priority the I/O priority of the request
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore
          */
-        writev_all_async(vectors: OutputVector[], io_priority: number, cancellable: (Cancellable | null)): globalThis.Promise<number>;
-
-        /**
-         * Request an asynchronous write of the bytes contained in the `n_vectors` `vectors` into
-         * the stream. When the operation is finished `callback` will be called.
-         * You can then call `g_output_stream_writev_all_finish()` to get the result of the
-         * operation.
-         * 
-         * This is the asynchronous version of `g_output_stream_writev_all()`.
-         * 
-         * Call `g_output_stream_writev_all_finish()` to collect the result.
-         * 
-         * Any outstanding I/O request with higher priority (lower numerical
-         * value) will be executed before an outstanding request with lower
-         * priority. Default priority is `G_PRIORITY_DEFAULT`.
-         * 
-         * Note that no copy of `vectors` will be made, so it must stay valid
-         * until `callback` is called. The content of the individual elements
-         * of `vectors` might be changed by this function.
-         * @param vectors the buffer containing the `GOutputVectors` to write.
-         * @param io_priority the I/O priority of the request
-         * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore
-         * @param callback a {@link Gio.AsyncReadyCallback}     to call when the request is satisfied
-         */
-        writev_all_async(vectors: OutputVector[], io_priority: number, cancellable: (Cancellable | null), callback: (AsyncReadyCallback<this> | null)): void;
+        writev_all_async(vectors: OutputVector[], io_priority: number, cancellable: Cancellable | null): globalThis.Promise<number>;
 
         /**
          * Request an asynchronous write of the bytes contained in the `n_vectors` `vectors` into
@@ -30700,7 +30609,31 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore
          * @param callback a {@link Gio.AsyncReadyCallback}     to call when the request is satisfied
          */
-        writev_all_async(vectors: OutputVector[], io_priority: number, cancellable: (Cancellable | null), callback?: (AsyncReadyCallback<this> | null)): (globalThis.Promise<number> | void);
+        writev_all_async(vectors: OutputVector[], io_priority: number, cancellable: Cancellable | null, callback: AsyncReadyCallback<this> | null): void;
+
+        /**
+         * Request an asynchronous write of the bytes contained in the `n_vectors` `vectors` into
+         * the stream. When the operation is finished `callback` will be called.
+         * You can then call `g_output_stream_writev_all_finish()` to get the result of the
+         * operation.
+         * 
+         * This is the asynchronous version of `g_output_stream_writev_all()`.
+         * 
+         * Call `g_output_stream_writev_all_finish()` to collect the result.
+         * 
+         * Any outstanding I/O request with higher priority (lower numerical
+         * value) will be executed before an outstanding request with lower
+         * priority. Default priority is `G_PRIORITY_DEFAULT`.
+         * 
+         * Note that no copy of `vectors` will be made, so it must stay valid
+         * until `callback` is called. The content of the individual elements
+         * of `vectors` might be changed by this function.
+         * @param vectors the buffer containing the `GOutputVectors` to write.
+         * @param io_priority the I/O priority of the request
+         * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore
+         * @param callback a {@link Gio.AsyncReadyCallback}     to call when the request is satisfied
+         */
+        writev_all_async(vectors: OutputVector[], io_priority: number, cancellable: Cancellable | null, callback?: AsyncReadyCallback<this> | null): globalThis.Promise<number> | void;
 
         /**
          * Finishes an asynchronous stream write operation started with
@@ -30753,7 +30686,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param io_priority the I/O priority of the request.
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          */
-        writev_async(vectors: OutputVector[], io_priority: number, cancellable: (Cancellable | null)): globalThis.Promise<number>;
+        writev_async(vectors: OutputVector[], io_priority: number, cancellable: Cancellable | null): globalThis.Promise<number>;
 
         /**
          * Request an asynchronous write of the bytes contained in `n_vectors` `vectors` into
@@ -30791,7 +30724,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          * @param callback a {@link Gio.AsyncReadyCallback}     to call when the request is satisfied
          */
-        writev_async(vectors: OutputVector[], io_priority: number, cancellable: (Cancellable | null), callback: (AsyncReadyCallback<this> | null)): void;
+        writev_async(vectors: OutputVector[], io_priority: number, cancellable: Cancellable | null, callback: AsyncReadyCallback<this> | null): void;
 
         /**
          * Request an asynchronous write of the bytes contained in `n_vectors` `vectors` into
@@ -30829,7 +30762,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          * @param callback a {@link Gio.AsyncReadyCallback}     to call when the request is satisfied
          */
-        writev_async(vectors: OutputVector[], io_priority: number, cancellable: (Cancellable | null), callback?: (AsyncReadyCallback<this> | null)): (globalThis.Promise<number> | void);
+        writev_async(vectors: OutputVector[], io_priority: number, cancellable: Cancellable | null, callback?: AsyncReadyCallback<this> | null): globalThis.Promise<number> | void;
 
         /**
          * Finishes a stream writev operation.
@@ -30967,7 +30900,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable a {@link Gio.Cancellable}, or `null`
          * @virtual
          */
-        vfunc_acquire(cancellable: (Cancellable | null)): boolean;
+        vfunc_acquire(cancellable: Cancellable | null): boolean;
 
         /**
          * Attempts to acquire the permission represented by `permission`.
@@ -30978,7 +30911,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param callback the {@link Gio.AsyncReadyCallback} to call when done
          * @virtual
          */
-        vfunc_acquire_async(cancellable: (Cancellable | null), callback: (AsyncReadyCallback<this> | null)): void;
+        vfunc_acquire_async(cancellable: Cancellable | null, callback: AsyncReadyCallback<this> | null): void;
 
         /**
          * Collects the result of attempting to acquire the permission
@@ -31010,7 +30943,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable a {@link Gio.Cancellable}, or `null`
          * @virtual
          */
-        vfunc_release(cancellable: (Cancellable | null)): boolean;
+        vfunc_release(cancellable: Cancellable | null): boolean;
 
         /**
          * Attempts to release the permission represented by `permission`.
@@ -31021,7 +30954,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param callback the {@link Gio.AsyncReadyCallback} to call when done
          * @virtual
          */
-        vfunc_release_async(cancellable: (Cancellable | null), callback: (AsyncReadyCallback<this> | null)): void;
+        vfunc_release_async(cancellable: Cancellable | null, callback: AsyncReadyCallback<this> | null): void;
 
         /**
          * Collects the result of attempting to release the permission
@@ -31054,7 +30987,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable a {@link Gio.Cancellable}, or `null`
          * @returns `true` if the permission was successfully acquired
          */
-        acquire(cancellable: (Cancellable | null)): boolean;
+        acquire(cancellable: Cancellable | null): boolean;
 
         /**
          * Attempts to acquire the permission represented by `permission`.
@@ -31063,17 +30996,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * `g_permission_acquire()`.
          * @param cancellable a {@link Gio.Cancellable}, or `null`
          */
-        acquire_async(cancellable: (Cancellable | null)): globalThis.Promise<boolean>;
-
-        /**
-         * Attempts to acquire the permission represented by `permission`.
-         * 
-         * This is the first half of the asynchronous version of
-         * `g_permission_acquire()`.
-         * @param cancellable a {@link Gio.Cancellable}, or `null`
-         * @param callback the {@link Gio.AsyncReadyCallback} to call when done
-         */
-        acquire_async(cancellable: (Cancellable | null), callback: (AsyncReadyCallback<this> | null)): void;
+        acquire_async(cancellable: Cancellable | null): globalThis.Promise<boolean>;
 
         /**
          * Attempts to acquire the permission represented by `permission`.
@@ -31083,7 +31006,17 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable a {@link Gio.Cancellable}, or `null`
          * @param callback the {@link Gio.AsyncReadyCallback} to call when done
          */
-        acquire_async(cancellable: (Cancellable | null), callback?: (AsyncReadyCallback<this> | null)): (globalThis.Promise<boolean> | void);
+        acquire_async(cancellable: Cancellable | null, callback: AsyncReadyCallback<this> | null): void;
+
+        /**
+         * Attempts to acquire the permission represented by `permission`.
+         * 
+         * This is the first half of the asynchronous version of
+         * `g_permission_acquire()`.
+         * @param cancellable a {@link Gio.Cancellable}, or `null`
+         * @param callback the {@link Gio.AsyncReadyCallback} to call when done
+         */
+        acquire_async(cancellable: Cancellable | null, callback?: AsyncReadyCallback<this> | null): globalThis.Promise<boolean> | void;
 
         /**
          * Collects the result of attempting to acquire the permission
@@ -31151,7 +31084,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable a {@link Gio.Cancellable}, or `null`
          * @returns `true` if the permission was successfully released
          */
-        release(cancellable: (Cancellable | null)): boolean;
+        release(cancellable: Cancellable | null): boolean;
 
         /**
          * Attempts to release the permission represented by `permission`.
@@ -31160,17 +31093,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * `g_permission_release()`.
          * @param cancellable a {@link Gio.Cancellable}, or `null`
          */
-        release_async(cancellable: (Cancellable | null)): globalThis.Promise<boolean>;
-
-        /**
-         * Attempts to release the permission represented by `permission`.
-         * 
-         * This is the first half of the asynchronous version of
-         * `g_permission_release()`.
-         * @param cancellable a {@link Gio.Cancellable}, or `null`
-         * @param callback the {@link Gio.AsyncReadyCallback} to call when done
-         */
-        release_async(cancellable: (Cancellable | null), callback: (AsyncReadyCallback<this> | null)): void;
+        release_async(cancellable: Cancellable | null): globalThis.Promise<boolean>;
 
         /**
          * Attempts to release the permission represented by `permission`.
@@ -31180,7 +31103,17 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable a {@link Gio.Cancellable}, or `null`
          * @param callback the {@link Gio.AsyncReadyCallback} to call when done
          */
-        release_async(cancellable: (Cancellable | null), callback?: (AsyncReadyCallback<this> | null)): (globalThis.Promise<boolean> | void);
+        release_async(cancellable: Cancellable | null, callback: AsyncReadyCallback<this> | null): void;
+
+        /**
+         * Attempts to release the permission represented by `permission`.
+         * 
+         * This is the first half of the asynchronous version of
+         * `g_permission_release()`.
+         * @param cancellable a {@link Gio.Cancellable}, or `null`
+         * @param callback the {@link Gio.AsyncReadyCallback} to call when done
+         */
+        release_async(cancellable: Cancellable | null, callback?: AsyncReadyCallback<this> | null): globalThis.Promise<boolean> | void;
 
         /**
          * Collects the result of attempting to release the permission
@@ -31215,13 +31148,13 @@ export const _LocalFilePrototype: typeof File.prototype;
             invertBoolean: boolean;
             name: string;
             object: GObject.Object;
-            parameter_type: (GLib.VariantType | any);
-            parameterType: (GLib.VariantType | any);
+            parameter_type: GLib.VariantType | any;
+            parameterType: GLib.VariantType | any;
             property_name: string;
             propertyName: string;
-            state: (GLib.Variant | any);
-            state_type: (GLib.VariantType | any);
-            stateType: (GLib.VariantType | any);
+            state: GLib.Variant | any;
+            state_type: GLib.VariantType | any;
+            stateType: GLib.VariantType | any;
         }
     }
 
@@ -31339,7 +31272,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @read-only
          */
     // This accessor conflicts with another accessor's type in a parent class or interface.
-        get parameter_type(): (GLib.VariantType | any);
+        get parameter_type(): GLib.VariantType | any;
 
         /**
          * The type of the parameter that must be given when activating the
@@ -31348,7 +31281,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @read-only
          */
     // This accessor conflicts with another accessor's type in a parent class or interface.
-        get parameterType(): (GLib.VariantType | any);
+        get parameterType(): GLib.VariantType | any;
 
         /**
          * The name of the property to wrap on the object.
@@ -31378,7 +31311,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @read-only
          */
     // This accessor conflicts with another accessor's type in a parent class or interface.
-        get state(): (GLib.Variant | any);
+        get state(): GLib.Variant | any;
 
         /**
          * The {@link GLib.VariantType} of the state that the action has, or `null` if the
@@ -31387,7 +31320,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @read-only
          */
     // This accessor conflicts with another accessor's type in a parent class or interface.
-        get state_type(): (GLib.VariantType | any);
+        get state_type(): GLib.VariantType | any;
 
         /**
          * The {@link GLib.VariantType} of the state that the action has, or `null` if the
@@ -31396,7 +31329,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @read-only
          */
     // This accessor conflicts with another accessor's type in a parent class or interface.
-        get stateType(): (GLib.VariantType | any);
+        get stateType(): GLib.VariantType | any;
 
         /**
          * Compile-time signal type information.
@@ -31437,7 +31370,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * If the `parameter` {@link GLib.Variant} is floating, it is consumed.
          * @param parameter the parameter to the activation
          */
-        activate(parameter: (GLib.Variant | null)): void;
+        activate(parameter: GLib.Variant | null): void;
 
         /**
          * Request for the state of `action` to be changed to `value`.
@@ -31481,7 +31414,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * {@link GLib.Variant}, but `NULL` instead.
          * @returns the parameter type
          */
-        get_parameter_type(): (GLib.VariantType | null);
+        get_parameter_type(): GLib.VariantType | null;
 
         /**
          * Queries the current state of `action`.
@@ -31494,7 +31427,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * {@link GLib.Variant.unref} when it is no longer required.
          * @returns the current state of the action
          */
-        get_state(): (GLib.Variant | null);
+        get_state(): GLib.Variant | null;
 
         /**
          * Requests a hint about the valid range of values for the state of
@@ -31517,7 +31450,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * {@link GLib.Variant.unref} when it is no longer required.
          * @returns the state range hint
          */
-        get_state_hint(): (GLib.Variant | null);
+        get_state_hint(): GLib.Variant | null;
 
         /**
          * Queries the type of the state of `action`.
@@ -31534,7 +31467,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * will return `NULL` and you must not call {@link Gio.Action.change_state}.
          * @returns the state type, if the action is stateful
          */
-        get_state_type(): (GLib.VariantType | null);
+        get_state_type(): GLib.VariantType | null;
 
         /**
          * Activates the action.
@@ -31547,7 +31480,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param parameter the parameter to the activation
          * @virtual
          */
-        vfunc_activate(parameter: (GLib.Variant | null)): void;
+        vfunc_activate(parameter: GLib.Variant | null): void;
 
         /**
          * Request for the state of `action` to be changed to `value`.
@@ -31592,7 +31525,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * {@link GLib.Variant}, but `NULL` instead.
          * @virtual
          */
-        vfunc_get_parameter_type(): (GLib.VariantType | null);
+        vfunc_get_parameter_type(): GLib.VariantType | null;
 
         /**
          * Queries the current state of `action`.
@@ -31605,7 +31538,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * {@link GLib.Variant.unref} when it is no longer required.
          * @virtual
          */
-        vfunc_get_state(): (GLib.Variant | null);
+        vfunc_get_state(): GLib.Variant | null;
 
         /**
          * Requests a hint about the valid range of values for the state of
@@ -31628,7 +31561,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * {@link GLib.Variant.unref} when it is no longer required.
          * @virtual
          */
-        vfunc_get_state_hint(): (GLib.Variant | null);
+        vfunc_get_state_hint(): GLib.Variant | null;
 
         /**
          * Queries the type of the state of `action`.
@@ -31645,7 +31578,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * will return `NULL` and you must not call {@link Gio.Action.change_state}.
          * @virtual
          */
-        vfunc_get_state_type(): (GLib.VariantType | null);
+        vfunc_get_state_type(): GLib.VariantType | null;
     }
 
 
@@ -31674,10 +31607,10 @@ export const _LocalFilePrototype: typeof File.prototype;
             destinationPort: number;
             destination_protocol: string;
             destinationProtocol: string;
-            password: (string | null);
+            password: string | null;
             protocol: string;
-            uri: (string | null);
-            username: (string | null);
+            uri: string | null;
+            username: string | null;
         }
     }
 
@@ -31746,7 +31679,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @construct-only
          * @default null
          */
-        get password(): (string | null);
+        get password(): string | null;
 
         /**
          * The proxy protocol.
@@ -31763,7 +31696,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @construct-only
          * @default null
          */
-        get uri(): (string | null);
+        get uri(): string | null;
 
         /**
          * The proxy username.
@@ -31771,7 +31704,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @construct-only
          * @default null
          */
-        get username(): (string | null);
+        get username(): string | null;
 
         /**
          * Compile-time signal type information.
@@ -31787,7 +31720,7 @@ export const _LocalFilePrototype: typeof File.prototype;
 
         _init(...args: any[]): void;
 
-        static ["new"](inetaddr: InetAddress, port: number, protocol: string, dest_hostname: string, dest_port: number, username: (string | null), password: (string | null)): ProxyAddress;
+        static ["new"](inetaddr: InetAddress, port: number, protocol: string, dest_hostname: string, dest_port: number, username: string | null, password: string | null): ProxyAddress;
 
         // Conflicted with Gio.InetSocketAddress.new
         static ["new"](...args: never[]): any;
@@ -31833,7 +31766,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * Gets `proxy`'s password.
          * @returns the `proxy`'s password
          */
-        get_password(): (string | null);
+        get_password(): string | null;
 
         /**
          * Gets `proxy`'s protocol. eg, "socks" or "http"
@@ -31845,13 +31778,13 @@ export const _LocalFilePrototype: typeof File.prototype;
          * Gets the proxy URI that `proxy` was constructed from.
          * @returns the `proxy`'s URI, or `null` if unknown
          */
-        get_uri(): (string | null);
+        get_uri(): string | null;
 
         /**
          * Gets `proxy`'s username.
          * @returns the `proxy`'s username
          */
-        get_username(): (string | null);
+        get_username(): string | null;
     }
 
 
@@ -32078,7 +32011,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable a {@link Gio.Cancellable}, or `null`
          * @virtual
          */
-        vfunc_lookup_by_address(address: InetAddress, cancellable: (Cancellable | null)): string;
+        vfunc_lookup_by_address(address: InetAddress, cancellable: Cancellable | null): string;
 
         /**
          * Begins asynchronously reverse-resolving `address` to determine its
@@ -32089,7 +32022,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param callback callback to call after resolution completes
          * @virtual
          */
-        vfunc_lookup_by_address_async(address: InetAddress, cancellable: (Cancellable | null), callback: (AsyncReadyCallback<this> | null)): void;
+        vfunc_lookup_by_address_async(address: InetAddress, cancellable: Cancellable | null, callback: AsyncReadyCallback<this> | null): void;
 
         /**
          * Retrieves the result of a previous call to
@@ -32131,7 +32064,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable a {@link Gio.Cancellable}, or `null`
          * @virtual
          */
-        vfunc_lookup_by_name(hostname: string, cancellable: (Cancellable | null)): InetAddress[];
+        vfunc_lookup_by_name(hostname: string, cancellable: Cancellable | null): InetAddress[];
 
         /**
          * Begins asynchronously resolving `hostname` to determine its
@@ -32143,7 +32076,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param callback callback to call after resolution completes
          * @virtual
          */
-        vfunc_lookup_by_name_async(hostname: string, cancellable: (Cancellable | null), callback: (AsyncReadyCallback<this> | null)): void;
+        vfunc_lookup_by_name_async(hostname: string, cancellable: Cancellable | null, callback: AsyncReadyCallback<this> | null): void;
 
         /**
          * Retrieves the result of a call to
@@ -32166,7 +32099,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable a {@link Gio.Cancellable}, or `null`
          * @virtual
          */
-        vfunc_lookup_by_name_with_flags(hostname: string, flags: ResolverNameLookupFlags, cancellable: (Cancellable | null)): InetAddress[];
+        vfunc_lookup_by_name_with_flags(hostname: string, flags: ResolverNameLookupFlags, cancellable: Cancellable | null): InetAddress[];
 
         /**
          * Begins asynchronously resolving `hostname` to determine its
@@ -32179,7 +32112,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param callback callback to call after resolution completes
          * @virtual
          */
-        vfunc_lookup_by_name_with_flags_async(hostname: string, flags: ResolverNameLookupFlags, cancellable: (Cancellable | null), callback: (AsyncReadyCallback<this> | null)): void;
+        vfunc_lookup_by_name_with_flags_async(hostname: string, flags: ResolverNameLookupFlags, cancellable: Cancellable | null, callback: AsyncReadyCallback<this> | null): void;
 
         /**
          * Retrieves the result of a call to
@@ -32209,7 +32142,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable a {@link Gio.Cancellable}, or `null`
          * @virtual
          */
-        vfunc_lookup_records(rrname: string, record_type: ResolverRecordType, cancellable: (Cancellable | null)): GLib.Variant[];
+        vfunc_lookup_records(rrname: string, record_type: ResolverRecordType, cancellable: Cancellable | null): GLib.Variant[];
 
         /**
          * Begins asynchronously performing a DNS lookup for the given
@@ -32222,7 +32155,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param callback callback to call after resolution completes
          * @virtual
          */
-        vfunc_lookup_records_async(rrname: string, record_type: ResolverRecordType, cancellable: (Cancellable | null), callback: (AsyncReadyCallback<this> | null)): void;
+        vfunc_lookup_records_async(rrname: string, record_type: ResolverRecordType, cancellable: Cancellable | null, callback: AsyncReadyCallback<this> | null): void;
 
         /**
          * Retrieves the result of a previous call to
@@ -32244,7 +32177,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param callback 
          * @virtual
          */
-        vfunc_lookup_service_async(rrname: string, cancellable: (Cancellable | null), callback: (AsyncReadyCallback<this> | null)): void;
+        vfunc_lookup_service_async(rrname: string, cancellable: Cancellable | null, callback: AsyncReadyCallback<this> | null): void;
 
         /**
          * Retrieves the result of a previous call to
@@ -32284,7 +32217,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable a {@link Gio.Cancellable}, or `null`
          * @returns a hostname (either ASCII-only, or in ASCII-encoded     form), or `null` on error.
          */
-        lookup_by_address(address: InetAddress, cancellable: (Cancellable | null)): string;
+        lookup_by_address(address: InetAddress, cancellable: Cancellable | null): string;
 
         /**
          * Begins asynchronously reverse-resolving `address` to determine its
@@ -32293,17 +32226,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param address the address to reverse-resolve
          * @param cancellable a {@link Gio.Cancellable}, or `null`
          */
-        lookup_by_address_async(address: InetAddress, cancellable: (Cancellable | null)): globalThis.Promise<string>;
-
-        /**
-         * Begins asynchronously reverse-resolving `address` to determine its
-         * associated hostname, and eventually calls `callback`, which must
-         * call `g_resolver_lookup_by_address_finish()` to get the final result.
-         * @param address the address to reverse-resolve
-         * @param cancellable a {@link Gio.Cancellable}, or `null`
-         * @param callback callback to call after resolution completes
-         */
-        lookup_by_address_async(address: InetAddress, cancellable: (Cancellable | null), callback: (AsyncReadyCallback<this> | null)): void;
+        lookup_by_address_async(address: InetAddress, cancellable: Cancellable | null): globalThis.Promise<string>;
 
         /**
          * Begins asynchronously reverse-resolving `address` to determine its
@@ -32313,7 +32236,17 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable a {@link Gio.Cancellable}, or `null`
          * @param callback callback to call after resolution completes
          */
-        lookup_by_address_async(address: InetAddress, cancellable: (Cancellable | null), callback?: (AsyncReadyCallback<this> | null)): (globalThis.Promise<string> | void);
+        lookup_by_address_async(address: InetAddress, cancellable: Cancellable | null, callback: AsyncReadyCallback<this> | null): void;
+
+        /**
+         * Begins asynchronously reverse-resolving `address` to determine its
+         * associated hostname, and eventually calls `callback`, which must
+         * call `g_resolver_lookup_by_address_finish()` to get the final result.
+         * @param address the address to reverse-resolve
+         * @param cancellable a {@link Gio.Cancellable}, or `null`
+         * @param callback callback to call after resolution completes
+         */
+        lookup_by_address_async(address: InetAddress, cancellable: Cancellable | null, callback?: AsyncReadyCallback<this> | null): globalThis.Promise<string> | void;
 
         /**
          * Retrieves the result of a previous call to
@@ -32355,7 +32288,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable a {@link Gio.Cancellable}, or `null`
          * @returns a non-empty {@link GLib.List} of {@link Gio.InetAddress}, or `null` on error. You must unref each of the addresses and free the list when you are done with it. (You can use `g_resolver_free_addresses()` to do this.)
          */
-        lookup_by_name(hostname: string, cancellable: (Cancellable | null)): InetAddress[];
+        lookup_by_name(hostname: string, cancellable: Cancellable | null): InetAddress[];
 
         /**
          * Begins asynchronously resolving `hostname` to determine its
@@ -32365,18 +32298,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param hostname the hostname to look up the address of
          * @param cancellable a {@link Gio.Cancellable}, or `null`
          */
-        lookup_by_name_async(hostname: string, cancellable: (Cancellable | null)): globalThis.Promise<InetAddress[]>;
-
-        /**
-         * Begins asynchronously resolving `hostname` to determine its
-         * associated IP address(es), and eventually calls `callback`, which
-         * must call `g_resolver_lookup_by_name_finish()` to get the result.
-         * See `g_resolver_lookup_by_name()` for more details.
-         * @param hostname the hostname to look up the address of
-         * @param cancellable a {@link Gio.Cancellable}, or `null`
-         * @param callback callback to call after resolution completes
-         */
-        lookup_by_name_async(hostname: string, cancellable: (Cancellable | null), callback: (AsyncReadyCallback<this> | null)): void;
+        lookup_by_name_async(hostname: string, cancellable: Cancellable | null): globalThis.Promise<InetAddress[]>;
 
         /**
          * Begins asynchronously resolving `hostname` to determine its
@@ -32387,7 +32309,18 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable a {@link Gio.Cancellable}, or `null`
          * @param callback callback to call after resolution completes
          */
-        lookup_by_name_async(hostname: string, cancellable: (Cancellable | null), callback?: (AsyncReadyCallback<this> | null)): (globalThis.Promise<InetAddress[]> | void);
+        lookup_by_name_async(hostname: string, cancellable: Cancellable | null, callback: AsyncReadyCallback<this> | null): void;
+
+        /**
+         * Begins asynchronously resolving `hostname` to determine its
+         * associated IP address(es), and eventually calls `callback`, which
+         * must call `g_resolver_lookup_by_name_finish()` to get the result.
+         * See `g_resolver_lookup_by_name()` for more details.
+         * @param hostname the hostname to look up the address of
+         * @param cancellable a {@link Gio.Cancellable}, or `null`
+         * @param callback callback to call after resolution completes
+         */
+        lookup_by_name_async(hostname: string, cancellable: Cancellable | null, callback?: AsyncReadyCallback<this> | null): globalThis.Promise<InetAddress[]> | void;
 
         /**
          * Retrieves the result of a call to
@@ -32410,7 +32343,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable a {@link Gio.Cancellable}, or `null`
          * @returns a non-empty {@link GLib.List} of {@link Gio.InetAddress}, or `null` on error. You must unref each of the addresses and free the list when you are done with it. (You can use `g_resolver_free_addresses()` to do this.)
          */
-        lookup_by_name_with_flags(hostname: string, flags: ResolverNameLookupFlags, cancellable: (Cancellable | null)): InetAddress[];
+        lookup_by_name_with_flags(hostname: string, flags: ResolverNameLookupFlags, cancellable: Cancellable | null): InetAddress[];
 
         /**
          * Begins asynchronously resolving `hostname` to determine its
@@ -32421,19 +32354,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param flags extra {@link Gio.ResolverNameLookupFlags} for the lookup
          * @param cancellable a {@link Gio.Cancellable}, or `null`
          */
-        lookup_by_name_with_flags_async(hostname: string, flags: ResolverNameLookupFlags, cancellable: (Cancellable | null)): globalThis.Promise<InetAddress[]>;
-
-        /**
-         * Begins asynchronously resolving `hostname` to determine its
-         * associated IP address(es), and eventually calls `callback`, which
-         * must call `g_resolver_lookup_by_name_with_flags_finish()` to get the result.
-         * See `g_resolver_lookup_by_name()` for more details.
-         * @param hostname the hostname to look up the address of
-         * @param flags extra {@link Gio.ResolverNameLookupFlags} for the lookup
-         * @param cancellable a {@link Gio.Cancellable}, or `null`
-         * @param callback callback to call after resolution completes
-         */
-        lookup_by_name_with_flags_async(hostname: string, flags: ResolverNameLookupFlags, cancellable: (Cancellable | null), callback: (AsyncReadyCallback<this> | null)): void;
+        lookup_by_name_with_flags_async(hostname: string, flags: ResolverNameLookupFlags, cancellable: Cancellable | null): globalThis.Promise<InetAddress[]>;
 
         /**
          * Begins asynchronously resolving `hostname` to determine its
@@ -32445,7 +32366,19 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable a {@link Gio.Cancellable}, or `null`
          * @param callback callback to call after resolution completes
          */
-        lookup_by_name_with_flags_async(hostname: string, flags: ResolverNameLookupFlags, cancellable: (Cancellable | null), callback?: (AsyncReadyCallback<this> | null)): (globalThis.Promise<InetAddress[]> | void);
+        lookup_by_name_with_flags_async(hostname: string, flags: ResolverNameLookupFlags, cancellable: Cancellable | null, callback: AsyncReadyCallback<this> | null): void;
+
+        /**
+         * Begins asynchronously resolving `hostname` to determine its
+         * associated IP address(es), and eventually calls `callback`, which
+         * must call `g_resolver_lookup_by_name_with_flags_finish()` to get the result.
+         * See `g_resolver_lookup_by_name()` for more details.
+         * @param hostname the hostname to look up the address of
+         * @param flags extra {@link Gio.ResolverNameLookupFlags} for the lookup
+         * @param cancellable a {@link Gio.Cancellable}, or `null`
+         * @param callback callback to call after resolution completes
+         */
+        lookup_by_name_with_flags_async(hostname: string, flags: ResolverNameLookupFlags, cancellable: Cancellable | null, callback?: AsyncReadyCallback<this> | null): globalThis.Promise<InetAddress[]> | void;
 
         /**
          * Retrieves the result of a call to
@@ -32475,7 +32408,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable a {@link Gio.Cancellable}, or `null`
          * @returns a non-empty {@link GLib.List} of {@link GLib.Variant}, or `null` on error. You must free each of the records and the list when you are done with it. (You can use `g_list_free_full()` with `g_variant_unref()` to do this.)
          */
-        lookup_records(rrname: string, record_type: ResolverRecordType, cancellable: (Cancellable | null)): GLib.Variant[];
+        lookup_records(rrname: string, record_type: ResolverRecordType, cancellable: Cancellable | null): GLib.Variant[];
 
         /**
          * Begins asynchronously performing a DNS lookup for the given
@@ -32486,19 +32419,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param record_type the type of DNS record to look up
          * @param cancellable a {@link Gio.Cancellable}, or `null`
          */
-        lookup_records_async(rrname: string, record_type: ResolverRecordType, cancellable: (Cancellable | null)): globalThis.Promise<GLib.Variant[]>;
-
-        /**
-         * Begins asynchronously performing a DNS lookup for the given
-         * `rrname`, and eventually calls `callback`, which must call
-         * `g_resolver_lookup_records_finish()` to get the final result. See
-         * `g_resolver_lookup_records()` for more details.
-         * @param rrname the DNS name to look up the record for
-         * @param record_type the type of DNS record to look up
-         * @param cancellable a {@link Gio.Cancellable}, or `null`
-         * @param callback callback to call after resolution completes
-         */
-        lookup_records_async(rrname: string, record_type: ResolverRecordType, cancellable: (Cancellable | null), callback: (AsyncReadyCallback<this> | null)): void;
+        lookup_records_async(rrname: string, record_type: ResolverRecordType, cancellable: Cancellable | null): globalThis.Promise<GLib.Variant[]>;
 
         /**
          * Begins asynchronously performing a DNS lookup for the given
@@ -32510,7 +32431,19 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable a {@link Gio.Cancellable}, or `null`
          * @param callback callback to call after resolution completes
          */
-        lookup_records_async(rrname: string, record_type: ResolverRecordType, cancellable: (Cancellable | null), callback?: (AsyncReadyCallback<this> | null)): (globalThis.Promise<GLib.Variant[]> | void);
+        lookup_records_async(rrname: string, record_type: ResolverRecordType, cancellable: Cancellable | null, callback: AsyncReadyCallback<this> | null): void;
+
+        /**
+         * Begins asynchronously performing a DNS lookup for the given
+         * `rrname`, and eventually calls `callback`, which must call
+         * `g_resolver_lookup_records_finish()` to get the final result. See
+         * `g_resolver_lookup_records()` for more details.
+         * @param rrname the DNS name to look up the record for
+         * @param record_type the type of DNS record to look up
+         * @param cancellable a {@link Gio.Cancellable}, or `null`
+         * @param callback callback to call after resolution completes
+         */
+        lookup_records_async(rrname: string, record_type: ResolverRecordType, cancellable: Cancellable | null, callback?: AsyncReadyCallback<this> | null): globalThis.Promise<GLib.Variant[]> | void;
 
         /**
          * Retrieves the result of a previous call to
@@ -32554,7 +32487,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable a {@link Gio.Cancellable}, or `null`
          * @returns a non-empty {@link GLib.List} of {@link Gio.SrvTarget}, or `null` on error. You must free each of the targets and the list when you are done with it. (You can use `g_resolver_free_targets()` to do this.)
          */
-        lookup_service(service: string, protocol: string, domain: string, cancellable: (Cancellable | null)): SrvTarget[];
+        lookup_service(service: string, protocol: string, domain: string, cancellable: Cancellable | null): SrvTarget[];
 
         /**
          * Begins asynchronously performing a DNS SRV lookup for the given
@@ -32567,21 +32500,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param domain the DNS domain to look up the service in
          * @param cancellable a {@link Gio.Cancellable}, or `null`
          */
-        lookup_service_async(service: string, protocol: string, domain: string, cancellable: (Cancellable | null)): globalThis.Promise<SrvTarget[]>;
-
-        /**
-         * Begins asynchronously performing a DNS SRV lookup for the given
-         * `service` and `protocol` in the given `domain`, and eventually calls
-         * `callback`, which must call `g_resolver_lookup_service_finish()` to
-         * get the final result. See `g_resolver_lookup_service()` for more
-         * details.
-         * @param service the service type to look up (eg, "ldap")
-         * @param protocol the networking protocol to use for `service` (eg, "tcp")
-         * @param domain the DNS domain to look up the service in
-         * @param cancellable a {@link Gio.Cancellable}, or `null`
-         * @param callback callback to call after resolution completes
-         */
-        lookup_service_async(service: string, protocol: string, domain: string, cancellable: (Cancellable | null), callback: (AsyncReadyCallback<this> | null)): void;
+        lookup_service_async(service: string, protocol: string, domain: string, cancellable: Cancellable | null): globalThis.Promise<SrvTarget[]>;
 
         /**
          * Begins asynchronously performing a DNS SRV lookup for the given
@@ -32595,7 +32514,21 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable a {@link Gio.Cancellable}, or `null`
          * @param callback callback to call after resolution completes
          */
-        lookup_service_async(service: string, protocol: string, domain: string, cancellable: (Cancellable | null), callback?: (AsyncReadyCallback<this> | null)): (globalThis.Promise<SrvTarget[]> | void);
+        lookup_service_async(service: string, protocol: string, domain: string, cancellable: Cancellable | null, callback: AsyncReadyCallback<this> | null): void;
+
+        /**
+         * Begins asynchronously performing a DNS SRV lookup for the given
+         * `service` and `protocol` in the given `domain`, and eventually calls
+         * `callback`, which must call `g_resolver_lookup_service_finish()` to
+         * get the final result. See `g_resolver_lookup_service()` for more
+         * details.
+         * @param service the service type to look up (eg, "ldap")
+         * @param protocol the networking protocol to use for `service` (eg, "tcp")
+         * @param domain the DNS domain to look up the service in
+         * @param cancellable a {@link Gio.Cancellable}, or `null`
+         * @param callback callback to call after resolution completes
+         */
+        lookup_service_async(service: string, protocol: string, domain: string, cancellable: Cancellable | null, callback?: AsyncReadyCallback<this> | null): globalThis.Promise<SrvTarget[]> | void;
 
         /**
          * Retrieves the result of a previous call to
@@ -32653,7 +32586,7 @@ export const _LocalFilePrototype: typeof File.prototype;
              * @signal
              * @run-last
              */
-            "change-event": (arg0: (GLib.Quark[] | null)) => (boolean | void);
+            "change-event": (arg0: GLib.Quark[] | null) => boolean | void;
             /**
              * Emitted when a key has potentially changed.
              * 
@@ -32694,7 +32627,7 @@ export const _LocalFilePrototype: typeof File.prototype;
              * @signal
              * @run-last
              */
-            "writable-change-event": (arg0: number) => (boolean | void);
+            "writable-change-event": (arg0: number) => boolean | void;
             /**
              * Emitted when the writability of a key has potentially changed.
              * 
@@ -33473,7 +33406,7 @@ export const _LocalFilePrototype: typeof File.prototype;
 
         static ["new"](schema_id: string): Settings;
 
-        static new_full(schema: SettingsSchema, backend: (SettingsBackend | null), path: (string | null)): Settings;
+        static new_full(schema: SettingsSchema, backend: SettingsBackend | null, path: string | null): Settings;
 
         static new_with_backend(schema_id: string, backend: SettingsBackend): Settings;
 
@@ -33604,7 +33537,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param get_mapping a function that gets called to convert values   from `settings` to `object`, or `NULL` to use the default GIO mapping
          * @param set_mapping a function that gets called to convert values   from `object` to `settings`, or `NULL` to use the default GIO mapping
          */
-        bind_with_mapping(key: string, object: GObject.Object, property: string, flags: SettingsBindFlags, get_mapping: (GObject.Closure | null), set_mapping: (GObject.Closure | null)): void;
+        bind_with_mapping(key: string, object: GObject.Object, property: string, flags: SettingsBindFlags, get_mapping: GObject.Closure | null, set_mapping: GObject.Closure | null): void;
 
         /**
          * Create a binding between the writability of `key` in the
@@ -33714,7 +33647,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param key the key to get the default value for
          * @returns the default value
          */
-        get_default_value<T extends string = any>(key: string): (GLib.Variant<T> | null);
+        get_default_value<T extends string = any>(key: string): GLib.Variant<T> | null;
 
         /**
          * Gets the value that is stored at `key` in `settings`.
@@ -33908,7 +33841,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param key the key to get the user value for
          * @returns the user’s value, if set
          */
-        get_user_value<T extends string = any>(key: string): (GLib.Variant<T> | null);
+        get_user_value<T extends string = any>(key: string): GLib.Variant<T> | null;
 
         /**
          * Gets the value that is stored in `settings` for `key`.
@@ -34071,7 +34004,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param value the value to set it to
          * @returns true if setting the key succeeded,   false if the key was not writable
          */
-        set_int64(key: string, value: (bigint | number)): boolean;
+        set_int64(key: string, value: bigint | number): boolean;
 
         /**
          * Sets `key` in `settings` to `value`.
@@ -34098,7 +34031,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param value the value to set it to
          * @returns true if setting the key succeeded,   false if the key was not writable
          */
-        set_strv(key: string, value: (string[] | null)): boolean;
+        set_strv(key: string, value: string[] | null): boolean;
 
         /**
          * Sets `key` in `settings` to `value`.
@@ -34126,7 +34059,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param value the value to set it to
          * @returns true if setting the key succeeded,   false if the key was not writable
          */
-        set_uint64(key: string, value: (bigint | number)): boolean;
+        set_uint64(key: string, value: bigint | number): boolean;
 
         /**
          * Sets `key` in `settings` to `value`.
@@ -34146,13 +34079,10 @@ export const _LocalFilePrototype: typeof File.prototype;
 
     namespace SettingsBackend {
         // Signal signatures
-        interface SignalSignatures extends GObject.Object.SignalSignatures {
-        }
+        interface SignalSignatures extends GObject.Object.SignalSignatures {}
 
         // Constructor properties interface
-        interface ConstructorProps extends GObject.Object.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GObject.Object.ConstructorProps {}
     }
 
     /**
@@ -34438,7 +34368,7 @@ export const _LocalFilePrototype: typeof File.prototype;
              * @since 2.28
              * @run-last
              */
-            activate: (arg0: (GLib.Variant | null)) => void;
+            activate: (arg0: GLib.Variant | null) => void;
             /**
              * Indicates that the action just received a request to change its
              * state.
@@ -34479,7 +34409,7 @@ export const _LocalFilePrototype: typeof File.prototype;
              * @since 2.30
              * @run-last
              */
-            "change-state": (arg0: (GLib.Variant | null)) => void;
+            "change-state": (arg0: GLib.Variant | null) => void;
             "notify::enabled": (pspec: GObject.ParamSpec) => void;
             "notify::name": (pspec: GObject.ParamSpec) => void;
             "notify::parameter-type": (pspec: GObject.ParamSpec) => void;
@@ -34491,11 +34421,11 @@ export const _LocalFilePrototype: typeof File.prototype;
         interface ConstructorProps extends GObject.Object.ConstructorProps, Action.ConstructorProps {
             enabled: boolean;
             name: string;
-            parameter_type: (GLib.VariantType | any);
-            parameterType: (GLib.VariantType | any);
-            state: (GLib.Variant | any);
-            state_type: (GLib.VariantType | any);
-            stateType: (GLib.VariantType | any);
+            parameter_type: GLib.VariantType | any;
+            parameterType: GLib.VariantType | any;
+            state: GLib.Variant | any;
+            state_type: GLib.VariantType | any;
+            stateType: GLib.VariantType | any;
         }
     }
 
@@ -34536,7 +34466,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @construct-only
          */
     // This accessor conflicts with another accessor's type in a parent class or interface.
-        get parameter_type(): (GLib.VariantType | any);
+        get parameter_type(): GLib.VariantType | any;
 
         /**
          * The type of the parameter that must be given when activating the
@@ -34545,16 +34475,16 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @construct-only
          */
     // This accessor conflicts with another accessor's type in a parent class or interface.
-        get parameterType(): (GLib.VariantType | any);
+        get parameterType(): GLib.VariantType | any;
 
         /**
          * The state of the action, or `null` if the action is stateless.
          * @since 2.28
          */
     // This accessor conflicts with another accessor's type in a parent class or interface.
-        get state(): (GLib.Variant | any);
+        get state(): GLib.Variant | any;
     // This accessor conflicts with another accessor's type in a parent class or interface.
-        set state(val: (GLib.Variant | any));
+        set state(val: GLib.Variant | any);
 
         /**
          * The {@link GLib.VariantType} of the state that the action has, or `null` if the
@@ -34563,7 +34493,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @read-only
          */
     // This accessor conflicts with another accessor's type in a parent class or interface.
-        get state_type(): (GLib.VariantType | any);
+        get state_type(): GLib.VariantType | any;
 
         /**
          * The {@link GLib.VariantType} of the state that the action has, or `null` if the
@@ -34572,7 +34502,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @read-only
          */
     // This accessor conflicts with another accessor's type in a parent class or interface.
-        get stateType(): (GLib.VariantType | any);
+        get stateType(): GLib.VariantType | any;
 
         /**
          * Compile-time signal type information.
@@ -34588,9 +34518,9 @@ export const _LocalFilePrototype: typeof File.prototype;
 
         _init(...args: any[]): void;
 
-        static ["new"](name: string, parameter_type: (GLib.VariantType | null)): SimpleAction;
+        static ["new"](name: string, parameter_type: GLib.VariantType | null): SimpleAction;
 
-        static new_stateful(name: string, parameter_type: (GLib.VariantType | null), state: GLib.Variant): SimpleAction;
+        static new_stateful(name: string, parameter_type: GLib.VariantType | null, state: GLib.Variant): SimpleAction;
 
         // Signals
         /** @signal */
@@ -34640,7 +34570,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * action state hints.
          * @param state_hint a {@link GLib.Variant} representing the state hint
          */
-        set_state_hint(state_hint: (GLib.Variant | null)): void;
+        set_state_hint(state_hint: GLib.Variant | null): void;
 
         /**
          * Activates the action.
@@ -34652,7 +34582,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * If the `parameter` {@link GLib.Variant} is floating, it is consumed.
          * @param parameter the parameter to the activation
          */
-        activate(parameter: (GLib.Variant | null)): void;
+        activate(parameter: GLib.Variant | null): void;
 
         /**
          * Request for the state of `action` to be changed to `value`.
@@ -34696,7 +34626,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * {@link GLib.Variant}, but `NULL` instead.
          * @returns the parameter type
          */
-        get_parameter_type(): (GLib.VariantType | null);
+        get_parameter_type(): GLib.VariantType | null;
 
         /**
          * Queries the current state of `action`.
@@ -34709,7 +34639,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * {@link GLib.Variant.unref} when it is no longer required.
          * @returns the current state of the action
          */
-        get_state(): (GLib.Variant | null);
+        get_state(): GLib.Variant | null;
 
         /**
          * Requests a hint about the valid range of values for the state of
@@ -34732,7 +34662,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * {@link GLib.Variant.unref} when it is no longer required.
          * @returns the state range hint
          */
-        get_state_hint(): (GLib.Variant | null);
+        get_state_hint(): GLib.Variant | null;
 
         /**
          * Queries the type of the state of `action`.
@@ -34749,7 +34679,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * will return `NULL` and you must not call {@link Gio.Action.change_state}.
          * @returns the state type, if the action is stateful
          */
-        get_state_type(): (GLib.VariantType | null);
+        get_state_type(): GLib.VariantType | null;
 
         /**
          * Activates the action.
@@ -34762,7 +34692,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param parameter the parameter to the activation
          * @virtual
          */
-        vfunc_activate(parameter: (GLib.Variant | null)): void;
+        vfunc_activate(parameter: GLib.Variant | null): void;
 
         /**
          * Request for the state of `action` to be changed to `value`.
@@ -34807,7 +34737,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * {@link GLib.Variant}, but `NULL` instead.
          * @virtual
          */
-        vfunc_get_parameter_type(): (GLib.VariantType | null);
+        vfunc_get_parameter_type(): GLib.VariantType | null;
 
         /**
          * Queries the current state of `action`.
@@ -34820,7 +34750,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * {@link GLib.Variant.unref} when it is no longer required.
          * @virtual
          */
-        vfunc_get_state(): (GLib.Variant | null);
+        vfunc_get_state(): GLib.Variant | null;
 
         /**
          * Requests a hint about the valid range of values for the state of
@@ -34843,7 +34773,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * {@link GLib.Variant.unref} when it is no longer required.
          * @virtual
          */
-        vfunc_get_state_hint(): (GLib.Variant | null);
+        vfunc_get_state_hint(): GLib.Variant | null;
 
         /**
          * Queries the type of the state of `action`.
@@ -34860,19 +34790,16 @@ export const _LocalFilePrototype: typeof File.prototype;
          * will return `NULL` and you must not call {@link Gio.Action.change_state}.
          * @virtual
          */
-        vfunc_get_state_type(): (GLib.VariantType | null);
+        vfunc_get_state_type(): GLib.VariantType | null;
     }
 
 
     namespace SimpleActionGroup {
         // Signal signatures
-        interface SignalSignatures extends GObject.Object.SignalSignatures {
-        }
+        interface SignalSignatures extends GObject.Object.SignalSignatures {}
 
         // Constructor properties interface
-        interface ConstructorProps extends GObject.Object.ConstructorProps, ActionGroup.ConstructorProps, ActionMap.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GObject.Object.ConstructorProps, ActionGroup.ConstructorProps, ActionMap.ConstructorProps {}
     }
 
     /**
@@ -35022,7 +34949,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param action_name the name of the action to activate
          * @param parameter parameters to the activation
          */
-        activate_action(action_name: string, parameter: (GLib.Variant | null)): void;
+        activate_action(action_name: string, parameter: GLib.Variant | null): void;
 
         /**
          * Request for the state of the named action within `action_group` to be
@@ -35068,7 +34995,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param action_name the name of the action to query
          * @returns the parameter type
          */
-        get_action_parameter_type(action_name: string): (GLib.VariantType | null);
+        get_action_parameter_type(action_name: string): GLib.VariantType | null;
 
         /**
          * Queries the current state of the named action within `action_group`.
@@ -35082,7 +35009,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param action_name the name of the action to query
          * @returns the current state of the action
          */
-        get_action_state(action_name: string): (GLib.Variant | null);
+        get_action_state(action_name: string): GLib.Variant | null;
 
         /**
          * Requests a hint about the valid range of values for the state of the
@@ -35106,7 +35033,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param action_name the name of the action to query
          * @returns the state range hint
          */
-        get_action_state_hint(action_name: string): (GLib.Variant | null);
+        get_action_state_hint(action_name: string): GLib.Variant | null;
 
         /**
          * Queries the type of the state of the named action within
@@ -35128,7 +35055,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param action_name the name of the action to query
          * @returns the state type, if the action is stateful
          */
-        get_action_state_type(action_name: string): (GLib.VariantType | null);
+        get_action_state_type(action_name: string): GLib.VariantType | null;
 
         /**
          * Checks if the named action exists within `action_group`.
@@ -35255,7 +35182,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param parameter parameters to the activation
          * @virtual
          */
-        vfunc_activate_action(action_name: string, parameter: (GLib.Variant | null)): void;
+        vfunc_activate_action(action_name: string, parameter: GLib.Variant | null): void;
 
         /**
          * Request for the state of the named action within `action_group` to be
@@ -35302,7 +35229,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param action_name the name of the action to query
          * @virtual
          */
-        vfunc_get_action_parameter_type(action_name: string): (GLib.VariantType | null);
+        vfunc_get_action_parameter_type(action_name: string): GLib.VariantType | null;
 
         /**
          * Queries the current state of the named action within `action_group`.
@@ -35316,7 +35243,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param action_name the name of the action to query
          * @virtual
          */
-        vfunc_get_action_state(action_name: string): (GLib.Variant | null);
+        vfunc_get_action_state(action_name: string): GLib.Variant | null;
 
         /**
          * Requests a hint about the valid range of values for the state of the
@@ -35340,7 +35267,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param action_name the name of the action to query
          * @virtual
          */
-        vfunc_get_action_state_hint(action_name: string): (GLib.Variant | null);
+        vfunc_get_action_state_hint(action_name: string): GLib.Variant | null;
 
         /**
          * Queries the type of the state of the named action within
@@ -35362,7 +35289,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param action_name the name of the action to query
          * @virtual
          */
-        vfunc_get_action_state_type(action_name: string): (GLib.VariantType | null);
+        vfunc_get_action_state_type(action_name: string): GLib.VariantType | null;
 
         /**
          * Checks if the named action exists within `action_group`.
@@ -35438,7 +35365,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param action_name the name of an action
          * @returns a {@link Gio.Action}
          */
-        lookup_action(action_name: string): (Action | null);
+        lookup_action(action_name: string): Action | null;
 
         /**
          * Removes the named action from the action map.
@@ -35494,7 +35421,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param action_name the name of an action
          * @virtual
          */
-        vfunc_lookup_action(action_name: string): (Action | null);
+        vfunc_lookup_action(action_name: string): Action | null;
 
         /**
          * Removes the named action from the action map.
@@ -35509,13 +35436,10 @@ export const _LocalFilePrototype: typeof File.prototype;
 
     namespace SimpleAsyncResult {
         // Signal signatures
-        interface SignalSignatures extends GObject.Object.SignalSignatures {
-        }
+        interface SignalSignatures extends GObject.Object.SignalSignatures {}
 
         // Constructor properties interface
-        interface ConstructorProps extends GObject.Object.ConstructorProps, AsyncResult.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GObject.Object.ConstructorProps, AsyncResult.ConstructorProps {}
     }
 
     /**
@@ -35704,9 +35628,9 @@ export const _LocalFilePrototype: typeof File.prototype;
 
         _init(...args: any[]): void;
 
-        static ["new"](source_object: (GObject.Object | null), callback: (AsyncReadyCallback | null), source_tag: null): SimpleAsyncResult;
+        static ["new"](source_object: GObject.Object | null, callback: AsyncReadyCallback | null, source_tag: null): SimpleAsyncResult;
 
-        static new_from_error(source_object: (GObject.Object | null), callback: (AsyncReadyCallback | null), error: GLib.Error): SimpleAsyncResult;
+        static new_from_error(source_object: GObject.Object | null, callback: AsyncReadyCallback | null, error: GLib.Error): SimpleAsyncResult;
 
         // Signals
         /** @signal */
@@ -35739,7 +35663,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param source the {@link GObject.Object} passed to the _finish function.
          * @param source_tag the asynchronous function.
          */
-        static is_valid(result: AsyncResult, source: (GObject.Object | null), source_tag: null): boolean;
+        static is_valid(result: AsyncResult, source: GObject.Object | null, source_tag: null): boolean;
 
         // Methods
         /**
@@ -35805,7 +35729,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * unrelated `g_simple_async_result_set_handle_cancellation()` function.
          * @param check_cancellable a {@link Gio.Cancellable} to check, or `null` to unset
          */
-        set_check_cancellable(check_cancellable: (Cancellable | null)): void;
+        set_check_cancellable(check_cancellable: Cancellable | null): void;
 
         /**
          * Sets the result from a {@link GLib.Error}.
@@ -35834,7 +35758,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * the given `op_res`.
          * @param op_res a `gssize`.
          */
-        set_op_res_gssize(op_res: (bigint | number)): void;
+        set_op_res_gssize(op_res: bigint | number): void;
 
         /**
          * Gets the source object from a {@link Gio.AsyncResult}.
@@ -35996,9 +35920,7 @@ export const _LocalFilePrototype: typeof File.prototype;
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends Permission.ConstructorProps {
-
-        }
+        interface ConstructorProps extends Permission.ConstructorProps {}
     }
 
     /**
@@ -36216,7 +36138,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param default_proxy the default proxy to use, eg     "socks://192.168.1.1"
          * @param ignore_hosts an optional list of hosts/IP addresses     to not use a proxy for.
          */
-        static ["new"](default_proxy: (string | null), ignore_hosts: (string[] | null)): ProxyResolver;
+        static ["new"](default_proxy: string | null, ignore_hosts: string[] | null): ProxyResolver;
 
         // Methods
         /**
@@ -36229,7 +36151,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * the socks5, socks4a, and socks4 proxy types.
          * @param default_proxy the default proxy to use
          */
-        set_default_proxy(default_proxy: (string | null)): void;
+        set_default_proxy(default_proxy: string | null): void;
 
         /**
          * Sets the list of ignored hosts.
@@ -36282,7 +36204,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable a {@link Gio.Cancellable}, or `null`
          * @returns A               NULL-terminated array of proxy URIs. Must be freed               with `g_strfreev()`.
          */
-        lookup(uri: string, cancellable: (Cancellable | null)): string[];
+        lookup(uri: string, cancellable: Cancellable | null): string[];
 
         /**
          * Asynchronous lookup of proxy. See `g_proxy_resolver_lookup()` for more
@@ -36290,16 +36212,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param uri a URI representing the destination to connect to
          * @param cancellable a {@link Gio.Cancellable}, or `null`
          */
-        lookup_async(uri: string, cancellable: (Cancellable | null)): globalThis.Promise<string[]>;
-
-        /**
-         * Asynchronous lookup of proxy. See `g_proxy_resolver_lookup()` for more
-         * details.
-         * @param uri a URI representing the destination to connect to
-         * @param cancellable a {@link Gio.Cancellable}, or `null`
-         * @param callback callback to call after resolution completes
-         */
-        lookup_async(uri: string, cancellable: (Cancellable | null), callback: (AsyncReadyCallback<this> | null)): void;
+        lookup_async(uri: string, cancellable: Cancellable | null): globalThis.Promise<string[]>;
 
         /**
          * Asynchronous lookup of proxy. See `g_proxy_resolver_lookup()` for more
@@ -36308,7 +36221,16 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable a {@link Gio.Cancellable}, or `null`
          * @param callback callback to call after resolution completes
          */
-        lookup_async(uri: string, cancellable: (Cancellable | null), callback?: (AsyncReadyCallback<this> | null)): (globalThis.Promise<string[]> | void);
+        lookup_async(uri: string, cancellable: Cancellable | null, callback: AsyncReadyCallback<this> | null): void;
+
+        /**
+         * Asynchronous lookup of proxy. See `g_proxy_resolver_lookup()` for more
+         * details.
+         * @param uri a URI representing the destination to connect to
+         * @param cancellable a {@link Gio.Cancellable}, or `null`
+         * @param callback callback to call after resolution completes
+         */
+        lookup_async(uri: string, cancellable: Cancellable | null, callback?: AsyncReadyCallback<this> | null): globalThis.Promise<string[]> | void;
 
         /**
          * Call this function to obtain the array of proxy URIs when
@@ -36347,7 +36269,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable a {@link Gio.Cancellable}, or `null`
          * @virtual
          */
-        vfunc_lookup(uri: string, cancellable: (Cancellable | null)): string[];
+        vfunc_lookup(uri: string, cancellable: Cancellable | null): string[];
 
         /**
          * Asynchronous lookup of proxy. See `g_proxy_resolver_lookup()` for more
@@ -36357,7 +36279,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param callback callback to call after resolution completes
          * @virtual
          */
-        vfunc_lookup_async(uri: string, cancellable: (Cancellable | null), callback: (AsyncReadyCallback<this> | null)): void;
+        vfunc_lookup_async(uri: string, cancellable: Cancellable | null, callback: AsyncReadyCallback<this> | null): void;
 
         /**
          * Call this function to obtain the array of proxy URIs when
@@ -36685,7 +36607,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable a %GCancellable or `null`
          * @returns a new {@link Gio.Socket}, or `null` on error.     Free the returned object with `g_object_unref()`.
          */
-        accept(cancellable: (Cancellable | null)): Socket;
+        accept(cancellable: Cancellable | null): Socket;
 
         /**
          * When a socket is created it is attached to an address family, but it
@@ -36804,7 +36726,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable a {@link Gio.Cancellable}, or `null`
          * @returns `true` if the condition was met, `false` otherwise
          */
-        condition_timed_wait(condition: GLib.IOCondition, timeout_us: (bigint | number), cancellable: (Cancellable | null)): boolean;
+        condition_timed_wait(condition: GLib.IOCondition, timeout_us: bigint | number, cancellable: Cancellable | null): boolean;
 
         /**
          * Waits for `condition` to become true on `socket`. When the condition
@@ -36821,7 +36743,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable a {@link Gio.Cancellable}, or `null`
          * @returns `true` if the condition was met, `false` otherwise
          */
-        condition_wait(condition: GLib.IOCondition, cancellable: (Cancellable | null)): boolean;
+        condition_wait(condition: GLib.IOCondition, cancellable: Cancellable | null): boolean;
 
         /**
          * @param args 
@@ -36850,7 +36772,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable a %GCancellable or `null`
          * @returns `true` if connected, `false` on error.
          */
-        connect(address: SocketAddress, cancellable: (Cancellable | null)): boolean;
+        connect(address: SocketAddress, cancellable: Cancellable | null): boolean;
 
         /**
          * @param args 
@@ -37066,7 +36988,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param iface Name of the interface to use, or `null`
          * @returns `true` on success, `false` on error.
          */
-        join_multicast_group(group: InetAddress, source_specific: boolean, iface: (string | null)): boolean;
+        join_multicast_group(group: InetAddress, source_specific: boolean, iface: string | null): boolean;
 
         /**
          * Registers `socket` to receive multicast messages sent to `group`.
@@ -37089,7 +37011,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param iface Name of the interface to use, or `null`
          * @returns `true` on success, `false` on error.
          */
-        join_multicast_group_ssm(group: InetAddress, source_specific: (InetAddress | null), iface: (string | null)): boolean;
+        join_multicast_group_ssm(group: InetAddress, source_specific: InetAddress | null, iface: string | null): boolean;
 
         /**
          * Removes `socket` from the multicast group defined by `group`, `iface`,
@@ -37106,7 +37028,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param iface Interface used
          * @returns `true` on success, `false` on error.
          */
-        leave_multicast_group(group: InetAddress, source_specific: boolean, iface: (string | null)): boolean;
+        leave_multicast_group(group: InetAddress, source_specific: boolean, iface: string | null): boolean;
 
         /**
          * Removes `socket` from the multicast group defined by `group`, `iface`,
@@ -37120,7 +37042,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param iface Name of the interface to use, or `null`
          * @returns `true` on success, `false` on error.
          */
-        leave_multicast_group_ssm(group: InetAddress, source_specific: (InetAddress | null), iface: (string | null)): boolean;
+        leave_multicast_group_ssm(group: InetAddress, source_specific: InetAddress | null, iface: string | null): boolean;
 
         /**
          * Marks the socket as a server socket, i.e. a socket that is used
@@ -37162,7 +37084,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable a %GCancellable or `null`
          * @returns Number of bytes read, or 0 if the connection was closed by the peer, or -1 on error
          */
-        receive(cancellable: (Cancellable | null)): [number, Uint8Array];
+        receive(cancellable: Cancellable | null): [number, Uint8Array];
 
         /**
          * Receives data (up to `size` bytes) from a socket.
@@ -37179,7 +37101,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable a %GCancellable, or `NULL`
          * @returns a bytes buffer containing the   received bytes, or `NULL` on error
          */
-        receive_bytes(size: (bigint | number), timeout_us: (bigint | number), cancellable: (Cancellable | null)): GLib.Bytes;
+        receive_bytes(size: bigint | number, timeout_us: bigint | number, cancellable: Cancellable | null): GLib.Bytes;
 
         /**
          * Receive data (up to `size` bytes) from a socket.
@@ -37201,7 +37123,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable a {@link Gio.Cancellable}, or `NULL`
          * @returns a bytes buffer containing the   received bytes, or `NULL` on error
          */
-        receive_bytes_from(size: (bigint | number), timeout_us: (bigint | number), cancellable: (Cancellable | null)): [GLib.Bytes, SocketAddress | null];
+        receive_bytes_from(size: bigint | number, timeout_us: bigint | number, cancellable: Cancellable | null): [GLib.Bytes, SocketAddress | null];
 
         /**
          * Receive data (up to `size` bytes) from a socket.
@@ -37214,7 +37136,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable a %GCancellable or `null`
          * @returns Number of bytes read, or 0 if the connection was closed by the peer, or -1 on error
          */
-        receive_from(cancellable: (Cancellable | null)): [number, SocketAddress | null, Uint8Array];
+        receive_from(cancellable: Cancellable | null): [number, SocketAddress | null, Uint8Array];
 
         /**
          * Receive data from a socket.  For receiving multiple messages, see
@@ -37281,7 +37203,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable a %GCancellable or `null`
          * @returns Number of bytes read, or 0 if the connection was closed by the peer, or -1 on error
          */
-        receive_message(vectors: InputVector[], flags: number, cancellable: (Cancellable | null)): [number, SocketAddress | null, SocketControlMessage[] | null, number];
+        receive_message(vectors: InputVector[], flags: number, cancellable: Cancellable | null): [number, SocketAddress | null, SocketControlMessage[] | null, number];
 
         /**
          * Receive multiple data messages from `socket` in one go.  This is the most
@@ -37337,7 +37259,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable a %GCancellable or `null`
          * @returns number of messages received, or -1 on error. Note that the number     of messages received may be smaller than `num_messages` if in non-blocking     mode, if the peer closed the connection, or if `num_messages`     was larger than `UIO_MAXIOV` (1024), in which case the caller may re-try     to receive the remaining messages.
          */
-        receive_messages(messages: InputMessage[], flags: number, cancellable: (Cancellable | null)): number;
+        receive_messages(messages: InputMessage[], flags: number, cancellable: Cancellable | null): number;
 
         /**
          * @param args 
@@ -37353,7 +37275,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable a %GCancellable or `null`
          * @returns Number of bytes read, or 0 if the connection was closed by the peer, or -1 on error
          */
-        receive_with_blocking(blocking: boolean, cancellable: (Cancellable | null)): [number, Uint8Array];
+        receive_with_blocking(blocking: boolean, cancellable: Cancellable | null): [number, Uint8Array];
 
         /**
          * Tries to send `size` bytes from `buffer` on the socket. This is
@@ -37374,7 +37296,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable a %GCancellable or `null`
          * @returns Number of bytes written (which may be less than `size`), or -1 on error
          */
-        send(buffer: (Uint8Array | string), cancellable: (Cancellable | null)): number;
+        send(buffer: Uint8Array | string, cancellable: Cancellable | null): number;
 
         /**
          * Send data to `address` on `socket`.  For sending multiple messages see
@@ -37426,7 +37348,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable a %GCancellable or `null`
          * @returns Number of bytes written (which may be less than `size`), or -1 on error
          */
-        send_message(address: (SocketAddress | null), vectors: OutputVector[], messages: (SocketControlMessage[] | null), flags: number, cancellable: (Cancellable | null)): number;
+        send_message(address: SocketAddress | null, vectors: OutputVector[], messages: SocketControlMessage[] | null, flags: number, cancellable: Cancellable | null): number;
 
         /**
          * This behaves exactly the same as `g_socket_send_message()`, except that
@@ -37444,7 +37366,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable a %GCancellable or `null`
          * @returns {@link Gio.PollableReturn.OK} if all data was successfully written, {@link Gio.PollableReturn.WOULD_BLOCK} if the socket is currently not writable, or {@link Gio.PollableReturn.FAILED} if an error happened and `error` is set.
          */
-        send_message_with_timeout(address: (SocketAddress | null), vectors: OutputVector[], messages: (SocketControlMessage[] | null), flags: number, timeout_us: (bigint | number), cancellable: (Cancellable | null)): [PollableReturn, number];
+        send_message_with_timeout(address: SocketAddress | null, vectors: OutputVector[], messages: SocketControlMessage[] | null, flags: number, timeout_us: bigint | number, cancellable: Cancellable | null): [PollableReturn, number];
 
         /**
          * Send multiple data messages from `socket` in one go.  This is the most
@@ -37486,7 +37408,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable a %GCancellable or `null`
          * @returns number of messages sent, or -1 on error. Note that the number of     messages sent may be smaller than `num_messages` if the socket is     non-blocking or if `num_messages` was larger than UIO_MAXIOV (1024),     in which case the caller may re-try to send the remaining messages.
          */
-        send_messages(messages: OutputMessage[], flags: number, cancellable: (Cancellable | null)): number;
+        send_messages(messages: OutputMessage[], flags: number, cancellable: Cancellable | null): number;
 
         /**
          * @param args 
@@ -37505,7 +37427,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable a %GCancellable or `null`
          * @returns Number of bytes written (which may be less than `size`), or -1 on error
          */
-        send_to(address: (SocketAddress | null), buffer: (Uint8Array | string), cancellable: (Cancellable | null)): number;
+        send_to(address: SocketAddress | null, buffer: Uint8Array | string, cancellable: Cancellable | null): number;
 
         /**
          * This behaves exactly the same as `g_socket_send()`, except that
@@ -37516,7 +37438,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable a %GCancellable or `null`
          * @returns Number of bytes written (which may be less than `size`), or -1 on error
          */
-        send_with_blocking(buffer: (Uint8Array | string), blocking: boolean, cancellable: (Cancellable | null)): number;
+        send_with_blocking(buffer: Uint8Array | string, blocking: boolean, cancellable: Cancellable | null): number;
 
         /**
          * Sets the blocking mode of the socket. In blocking mode
@@ -37690,7 +37612,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable a {@link Gio.Cancellable}
          * @returns a newly allocated {@link GLib.Source}
          */
-        create_source(condition: GLib.IOCondition, cancellable: (Cancellable | null)): GLib.Source;
+        create_source(condition: GLib.IOCondition, cancellable: Cancellable | null): GLib.Source;
 
         /**
          * Checks on the readiness of `datagram_based` to perform operations. The
@@ -37746,7 +37668,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable a {@link Gio.Cancellable}
          * @virtual
          */
-        vfunc_condition_wait(condition: GLib.IOCondition, timeout: number, cancellable: (Cancellable | null)): boolean;
+        vfunc_condition_wait(condition: GLib.IOCondition, timeout: number, cancellable: Cancellable | null): boolean;
 
         /**
          * Creates a {@link GLib.Source} that can be attached to a {@link GLib.MainContext} to monitor for
@@ -37767,7 +37689,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable a {@link Gio.Cancellable}
          * @virtual
          */
-        vfunc_create_source(condition: GLib.IOCondition, cancellable: (Cancellable | null)): GLib.Source;
+        vfunc_create_source(condition: GLib.IOCondition, cancellable: Cancellable | null): GLib.Source;
 
         /**
          * Receive one or more data messages from `datagram_based` in one go.
@@ -37826,7 +37748,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable a %GCancellable
          * @virtual
          */
-        vfunc_receive_messages(messages: InputMessage[], flags: number, timeout: number, cancellable: (Cancellable | null)): number;
+        vfunc_receive_messages(messages: InputMessage[], flags: number, timeout: number, cancellable: Cancellable | null): number;
 
         /**
          * Send one or more data messages from `datagram_based` in one go.
@@ -37876,7 +37798,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable a %GCancellable
          * @virtual
          */
-        vfunc_send_messages(messages: OutputMessage[], flags: number, timeout: number, cancellable: (Cancellable | null)): number;
+        vfunc_send_messages(messages: OutputMessage[], flags: number, timeout: number, cancellable: Cancellable | null): number;
 
         /**
          * Initializes the object implementing the interface.
@@ -37920,7 +37842,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          * @returns `true` if successful. If an error has occurred, this function will     return `false` and set `error` appropriately if present.
          */
-        init(cancellable: (Cancellable | null)): boolean;
+        init(cancellable: Cancellable | null): boolean;
 
         /**
          * Initializes the object implementing the interface.
@@ -37964,7 +37886,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          * @virtual
          */
-        vfunc_init(cancellable: (Cancellable | null)): boolean;
+        vfunc_init(cancellable: Cancellable | null): boolean;
     }
 
 
@@ -38013,7 +37935,7 @@ export const _LocalFilePrototype: typeof File.prototype;
 
         _init(...args: any[]): void;
 
-        static new_from_native(_native: never, len: (bigint | number)): SocketAddress;
+        static new_from_native(_native: never, len: bigint | number): SocketAddress;
 
         // Signals
         /** @signal */
@@ -38041,7 +37963,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * `g_socket_address_to_native()`.
          * @virtual
          */
-        vfunc_get_native_size(): (bigint | number);
+        vfunc_get_native_size(): bigint | number;
 
         /**
          * Converts a {@link Gio.SocketAddress} to a native struct sockaddr, which can
@@ -38082,7 +38004,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param destlen the size of `dest`. Must be at least as large as     `g_socket_address_get_native_size()`
          * @returns `true` if `dest` was filled in, `false` on error
          */
-        to_native(dest: null, destlen: (bigint | number)): boolean;
+        to_native(dest: null, destlen: bigint | number): boolean;
 
         /**
          * Creates a {@link Gio.SocketAddressEnumerator} for `connectable`.
@@ -38148,13 +38070,10 @@ export const _LocalFilePrototype: typeof File.prototype;
 
     namespace SocketAddressEnumerator {
         // Signal signatures
-        interface SignalSignatures extends GObject.Object.SignalSignatures {
-        }
+        interface SignalSignatures extends GObject.Object.SignalSignatures {}
 
         // Constructor properties interface
-        interface ConstructorProps extends GObject.Object.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GObject.Object.ConstructorProps {}
     }
 
     /**
@@ -38223,7 +38142,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          * @virtual
          */
-        vfunc_next(cancellable: (Cancellable | null)): (SocketAddress | null);
+        vfunc_next(cancellable: Cancellable | null): SocketAddress | null;
 
         /**
          * Asynchronously retrieves the next {@link Gio.SocketAddress} from `enumerator`
@@ -38235,7 +38154,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param callback a {@link Gio.AsyncReadyCallback} to call   when the request is satisfied
          * @virtual
          */
-        vfunc_next_async(cancellable: (Cancellable | null), callback: (AsyncReadyCallback<this> | null)): void;
+        vfunc_next_async(cancellable: Cancellable | null, callback: AsyncReadyCallback<this> | null): void;
 
         /**
          * Retrieves the result of a completed call to
@@ -38245,7 +38164,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param result a {@link Gio.AsyncResult}
          * @virtual
          */
-        vfunc_next_finish(result: AsyncResult): (SocketAddress | null);
+        vfunc_next_finish(result: AsyncResult): SocketAddress | null;
 
         // Methods
         /**
@@ -38265,7 +38184,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          * @returns a {@link Gio.SocketAddress} (owned by the caller), or `null` on     error (in which case `*error` will be set) or if there are no     more addresses.
          */
-        next(cancellable: (Cancellable | null)): (SocketAddress | null);
+        next(cancellable: Cancellable | null): SocketAddress | null;
 
         /**
          * Asynchronously retrieves the next {@link Gio.SocketAddress} from `enumerator`
@@ -38275,18 +38194,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * It is an error to call this multiple times before the previous callback has finished.
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          */
-        next_async(cancellable: (Cancellable | null)): globalThis.Promise<(SocketAddress | null)>;
-
-        /**
-         * Asynchronously retrieves the next {@link Gio.SocketAddress} from `enumerator`
-         * and then calls `callback`, which must call
-         * `g_socket_address_enumerator_next_finish()` to get the result.
-         * 
-         * It is an error to call this multiple times before the previous callback has finished.
-         * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
-         * @param callback a {@link Gio.AsyncReadyCallback} to call   when the request is satisfied
-         */
-        next_async(cancellable: (Cancellable | null), callback: (AsyncReadyCallback<this> | null)): void;
+        next_async(cancellable: Cancellable | null): globalThis.Promise<SocketAddress | null>;
 
         /**
          * Asynchronously retrieves the next {@link Gio.SocketAddress} from `enumerator`
@@ -38297,7 +38205,18 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          * @param callback a {@link Gio.AsyncReadyCallback} to call   when the request is satisfied
          */
-        next_async(cancellable: (Cancellable | null), callback?: (AsyncReadyCallback<this> | null)): (globalThis.Promise<(SocketAddress | null)> | void);
+        next_async(cancellable: Cancellable | null, callback: AsyncReadyCallback<this> | null): void;
+
+        /**
+         * Asynchronously retrieves the next {@link Gio.SocketAddress} from `enumerator`
+         * and then calls `callback`, which must call
+         * `g_socket_address_enumerator_next_finish()` to get the result.
+         * 
+         * It is an error to call this multiple times before the previous callback has finished.
+         * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
+         * @param callback a {@link Gio.AsyncReadyCallback} to call   when the request is satisfied
+         */
+        next_async(cancellable: Cancellable | null, callback?: AsyncReadyCallback<this> | null): globalThis.Promise<SocketAddress | null> | void;
 
         /**
          * Retrieves the result of a completed call to
@@ -38307,7 +38226,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param result a {@link Gio.AsyncResult}
          * @returns a {@link Gio.SocketAddress} (owned by the caller), or `null` on     error (in which case `*error` will be set) or if there are no     more addresses.
          */
-        next_finish(result: AsyncResult): (SocketAddress | null);
+        next_finish(result: AsyncResult): SocketAddress | null;
     }
 
 
@@ -38368,7 +38287,7 @@ export const _LocalFilePrototype: typeof File.prototype;
              * @since 2.32
              * @run-last
              */
-            event: (arg0: SocketClientEvent, arg1: SocketConnectable, arg2: (IOStream | null)) => void;
+            event: (arg0: SocketClientEvent, arg1: SocketConnectable, arg2: IOStream | null) => void;
             "notify::enable-proxy": (pspec: GObject.ParamSpec) => void;
             "notify::family": (pspec: GObject.ParamSpec) => void;
             "notify::local-address": (pspec: GObject.ParamSpec) => void;
@@ -38385,8 +38304,8 @@ export const _LocalFilePrototype: typeof File.prototype;
             enable_proxy: boolean;
             enableProxy: boolean;
             family: SocketFamily;
-            local_address: (SocketAddress | null);
-            localAddress: (SocketAddress | null);
+            local_address: SocketAddress | null;
+            localAddress: SocketAddress | null;
             protocol: SocketProtocol;
             proxy_resolver: ProxyResolver;
             proxyResolver: ProxyResolver;
@@ -38447,15 +38366,15 @@ export const _LocalFilePrototype: typeof File.prototype;
          * The local address constructed sockets will be bound to.
          * @since 2.22
          */
-        get local_address(): (SocketAddress | null);
-        set local_address(val: (SocketAddress | null));
+        get local_address(): SocketAddress | null;
+        set local_address(val: SocketAddress | null);
 
         /**
          * The local address constructed sockets will be bound to.
          * @since 2.22
          */
-        get localAddress(): (SocketAddress | null);
-        set localAddress(val: (SocketAddress | null));
+        get localAddress(): SocketAddress | null;
+        set localAddress(val: SocketAddress | null);
 
         /**
          * The protocol to use for socket construction, or `0` for default.
@@ -38635,7 +38554,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          * @returns a {@link Gio.SocketConnection} on success, `null` on error.
          */
-        connect(connectable: SocketConnectable, cancellable: (Cancellable | null)): SocketConnection;
+        connect(connectable: SocketConnectable, cancellable: Cancellable | null): SocketConnection;
 
         /**
          * @param args 
@@ -38660,7 +38579,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param connectable a {@link Gio.SocketConnectable} specifying the remote address.
          * @param cancellable a {@link Gio.Cancellable}, or `null`
          */
-        connect_async(connectable: SocketConnectable, cancellable: (Cancellable | null)): globalThis.Promise<SocketConnection>;
+        connect_async(connectable: SocketConnectable, cancellable: Cancellable | null): globalThis.Promise<SocketConnection>;
 
         /**
          * This is the asynchronous version of `g_socket_client_connect()`.
@@ -38681,7 +38600,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable a {@link Gio.Cancellable}, or `null`
          * @param callback a {@link Gio.AsyncReadyCallback}
          */
-        connect_async(connectable: SocketConnectable, cancellable: (Cancellable | null), callback: (AsyncReadyCallback<this> | null)): void;
+        connect_async(connectable: SocketConnectable, cancellable: Cancellable | null, callback: AsyncReadyCallback<this> | null): void;
 
         /**
          * This is the asynchronous version of `g_socket_client_connect()`.
@@ -38702,7 +38621,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable a {@link Gio.Cancellable}, or `null`
          * @param callback a {@link Gio.AsyncReadyCallback}
          */
-        connect_async(connectable: SocketConnectable, cancellable: (Cancellable | null), callback?: (AsyncReadyCallback<this> | null)): (globalThis.Promise<SocketConnection> | void);
+        connect_async(connectable: SocketConnectable, cancellable: Cancellable | null, callback?: AsyncReadyCallback<this> | null): globalThis.Promise<SocketConnection> | void;
 
         /**
          * Finishes an async connect operation. See `g_socket_client_connect_async()`
@@ -38747,7 +38666,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable a {@link Gio.Cancellable}, or `null`
          * @returns a {@link Gio.SocketConnection} on success, `null` on error.
          */
-        connect_to_host(host_and_port: string, default_port: number, cancellable: (Cancellable | null)): SocketConnection;
+        connect_to_host(host_and_port: string, default_port: number, cancellable: Cancellable | null): SocketConnection;
 
         /**
          * This is the asynchronous version of `g_socket_client_connect_to_host()`.
@@ -38759,20 +38678,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param default_port the default port to connect to
          * @param cancellable a {@link Gio.Cancellable}, or `null`
          */
-        connect_to_host_async(host_and_port: string, default_port: number, cancellable: (Cancellable | null)): globalThis.Promise<SocketConnection>;
-
-        /**
-         * This is the asynchronous version of `g_socket_client_connect_to_host()`.
-         * 
-         * When the operation is finished `callback` will be
-         * called. You can then call `g_socket_client_connect_to_host_finish()` to get
-         * the result of the operation.
-         * @param host_and_port the name and optionally the port of the host to connect to
-         * @param default_port the default port to connect to
-         * @param cancellable a {@link Gio.Cancellable}, or `null`
-         * @param callback a {@link Gio.AsyncReadyCallback}
-         */
-        connect_to_host_async(host_and_port: string, default_port: number, cancellable: (Cancellable | null), callback: (AsyncReadyCallback<this> | null)): void;
+        connect_to_host_async(host_and_port: string, default_port: number, cancellable: Cancellable | null): globalThis.Promise<SocketConnection>;
 
         /**
          * This is the asynchronous version of `g_socket_client_connect_to_host()`.
@@ -38785,7 +38691,20 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable a {@link Gio.Cancellable}, or `null`
          * @param callback a {@link Gio.AsyncReadyCallback}
          */
-        connect_to_host_async(host_and_port: string, default_port: number, cancellable: (Cancellable | null), callback?: (AsyncReadyCallback<this> | null)): (globalThis.Promise<SocketConnection> | void);
+        connect_to_host_async(host_and_port: string, default_port: number, cancellable: Cancellable | null, callback: AsyncReadyCallback<this> | null): void;
+
+        /**
+         * This is the asynchronous version of `g_socket_client_connect_to_host()`.
+         * 
+         * When the operation is finished `callback` will be
+         * called. You can then call `g_socket_client_connect_to_host_finish()` to get
+         * the result of the operation.
+         * @param host_and_port the name and optionally the port of the host to connect to
+         * @param default_port the default port to connect to
+         * @param cancellable a {@link Gio.Cancellable}, or `null`
+         * @param callback a {@link Gio.AsyncReadyCallback}
+         */
+        connect_to_host_async(host_and_port: string, default_port: number, cancellable: Cancellable | null, callback?: AsyncReadyCallback<this> | null): globalThis.Promise<SocketConnection> | void;
 
         /**
          * Finishes an async connect operation. See `g_socket_client_connect_to_host_async()`
@@ -38814,7 +38733,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable a {@link Gio.Cancellable}, or `null`
          * @returns a {@link Gio.SocketConnection} if successful, or `null` on error
          */
-        connect_to_service(domain: string, service: string, cancellable: (Cancellable | null)): SocketConnection;
+        connect_to_service(domain: string, service: string, cancellable: Cancellable | null): SocketConnection;
 
         /**
          * This is the asynchronous version of
@@ -38823,17 +38742,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param service the name of the service to connect to
          * @param cancellable a {@link Gio.Cancellable}, or `null`
          */
-        connect_to_service_async(domain: string, service: string, cancellable: (Cancellable | null)): globalThis.Promise<SocketConnection>;
-
-        /**
-         * This is the asynchronous version of
-         * `g_socket_client_connect_to_service()`.
-         * @param domain a domain name
-         * @param service the name of the service to connect to
-         * @param cancellable a {@link Gio.Cancellable}, or `null`
-         * @param callback a {@link Gio.AsyncReadyCallback}
-         */
-        connect_to_service_async(domain: string, service: string, cancellable: (Cancellable | null), callback: (AsyncReadyCallback<this> | null)): void;
+        connect_to_service_async(domain: string, service: string, cancellable: Cancellable | null): globalThis.Promise<SocketConnection>;
 
         /**
          * This is the asynchronous version of
@@ -38843,7 +38752,17 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable a {@link Gio.Cancellable}, or `null`
          * @param callback a {@link Gio.AsyncReadyCallback}
          */
-        connect_to_service_async(domain: string, service: string, cancellable: (Cancellable | null), callback?: (AsyncReadyCallback<this> | null)): (globalThis.Promise<SocketConnection> | void);
+        connect_to_service_async(domain: string, service: string, cancellable: Cancellable | null, callback: AsyncReadyCallback<this> | null): void;
+
+        /**
+         * This is the asynchronous version of
+         * `g_socket_client_connect_to_service()`.
+         * @param domain a domain name
+         * @param service the name of the service to connect to
+         * @param cancellable a {@link Gio.Cancellable}, or `null`
+         * @param callback a {@link Gio.AsyncReadyCallback}
+         */
+        connect_to_service_async(domain: string, service: string, cancellable: Cancellable | null, callback?: AsyncReadyCallback<this> | null): globalThis.Promise<SocketConnection> | void;
 
         /**
          * Finishes an async connect operation. See `g_socket_client_connect_to_service_async()`
@@ -38879,7 +38798,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable a {@link Gio.Cancellable}, or `null`
          * @returns a {@link Gio.SocketConnection} on success, `null` on error.
          */
-        connect_to_uri(uri: string, default_port: number, cancellable: (Cancellable | null)): SocketConnection;
+        connect_to_uri(uri: string, default_port: number, cancellable: Cancellable | null): SocketConnection;
 
         /**
          * This is the asynchronous version of `g_socket_client_connect_to_uri()`.
@@ -38891,20 +38810,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param default_port the default port to connect to
          * @param cancellable a {@link Gio.Cancellable}, or `null`
          */
-        connect_to_uri_async(uri: string, default_port: number, cancellable: (Cancellable | null)): globalThis.Promise<SocketConnection>;
-
-        /**
-         * This is the asynchronous version of `g_socket_client_connect_to_uri()`.
-         * 
-         * When the operation is finished `callback` will be
-         * called. You can then call `g_socket_client_connect_to_uri_finish()` to get
-         * the result of the operation.
-         * @param uri a network uri
-         * @param default_port the default port to connect to
-         * @param cancellable a {@link Gio.Cancellable}, or `null`
-         * @param callback a {@link Gio.AsyncReadyCallback}
-         */
-        connect_to_uri_async(uri: string, default_port: number, cancellable: (Cancellable | null), callback: (AsyncReadyCallback<this> | null)): void;
+        connect_to_uri_async(uri: string, default_port: number, cancellable: Cancellable | null): globalThis.Promise<SocketConnection>;
 
         /**
          * This is the asynchronous version of `g_socket_client_connect_to_uri()`.
@@ -38917,7 +38823,20 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable a {@link Gio.Cancellable}, or `null`
          * @param callback a {@link Gio.AsyncReadyCallback}
          */
-        connect_to_uri_async(uri: string, default_port: number, cancellable: (Cancellable | null), callback?: (AsyncReadyCallback<this> | null)): (globalThis.Promise<SocketConnection> | void);
+        connect_to_uri_async(uri: string, default_port: number, cancellable: Cancellable | null, callback: AsyncReadyCallback<this> | null): void;
+
+        /**
+         * This is the asynchronous version of `g_socket_client_connect_to_uri()`.
+         * 
+         * When the operation is finished `callback` will be
+         * called. You can then call `g_socket_client_connect_to_uri_finish()` to get
+         * the result of the operation.
+         * @param uri a network uri
+         * @param default_port the default port to connect to
+         * @param cancellable a {@link Gio.Cancellable}, or `null`
+         * @param callback a {@link Gio.AsyncReadyCallback}
+         */
+        connect_to_uri_async(uri: string, default_port: number, cancellable: Cancellable | null, callback?: AsyncReadyCallback<this> | null): globalThis.Promise<SocketConnection> | void;
 
         /**
          * Finishes an async connect operation. See `g_socket_client_connect_to_uri_async()`
@@ -38946,7 +38865,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * See `g_socket_client_set_local_address()` for details.
          * @returns a {@link Gio.SocketAddress} or `null`. Do not free.
          */
-        get_local_address(): (SocketAddress | null);
+        get_local_address(): SocketAddress | null;
 
         /**
          * Gets the protocol name type of the socket client.
@@ -39032,7 +38951,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * a specific interface.
          * @param address a {@link Gio.SocketAddress}, or `null`
          */
-        set_local_address(address: (SocketAddress | null)): void;
+        set_local_address(address: SocketAddress | null): void;
 
         /**
          * Sets the protocol of the socket client.
@@ -39055,7 +38974,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * changed by this function (but which is `true` by default)
          * @param proxy_resolver a {@link Gio.ProxyResolver}, or `null` for the   default.
          */
-        set_proxy_resolver(proxy_resolver: (ProxyResolver | null)): void;
+        set_proxy_resolver(proxy_resolver: ProxyResolver | null): void;
 
         /**
          * Sets the socket type of the socket client.
@@ -39219,7 +39138,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable a %GCancellable or `null`
          * @returns `true` if the connection succeeded, `false` on error
          */
-        connect(address: SocketAddress, cancellable: (Cancellable | null)): boolean;
+        connect(address: SocketAddress, cancellable: Cancellable | null): boolean;
 
         /**
          * @param args 
@@ -39240,7 +39159,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param address a {@link Gio.SocketAddress} specifying the remote address.
          * @param cancellable a %GCancellable or `null`
          */
-        connect_async(address: SocketAddress, cancellable: (Cancellable | null)): globalThis.Promise<boolean>;
+        connect_async(address: SocketAddress, cancellable: Cancellable | null): globalThis.Promise<boolean>;
 
         /**
          * Asynchronously connect `connection` to the specified remote address.
@@ -39257,7 +39176,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable a %GCancellable or `null`
          * @param callback a {@link Gio.AsyncReadyCallback}
          */
-        connect_async(address: SocketAddress, cancellable: (Cancellable | null), callback: (AsyncReadyCallback<this> | null)): void;
+        connect_async(address: SocketAddress, cancellable: Cancellable | null, callback: AsyncReadyCallback<this> | null): void;
 
         /**
          * Asynchronously connect `connection` to the specified remote address.
@@ -39274,7 +39193,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable a %GCancellable or `null`
          * @param callback a {@link Gio.AsyncReadyCallback}
          */
-        connect_async(address: SocketAddress, cancellable: (Cancellable | null), callback?: (AsyncReadyCallback<this> | null)): (globalThis.Promise<boolean> | void);
+        connect_async(address: SocketAddress, cancellable: Cancellable | null, callback?: AsyncReadyCallback<this> | null): globalThis.Promise<boolean> | void;
 
         /**
          * Gets the result of a `g_socket_connection_connect_async()` call.
@@ -39321,13 +39240,10 @@ export const _LocalFilePrototype: typeof File.prototype;
 
     namespace SocketControlMessage {
         // Signal signatures
-        interface SignalSignatures extends GObject.Object.SignalSignatures {
-        }
+        interface SignalSignatures extends GObject.Object.SignalSignatures {}
 
         // Constructor properties interface
-        interface ConstructorProps extends GObject.Object.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GObject.Object.ConstructorProps {}
     }
 
     /**
@@ -39397,7 +39313,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param type a socket control message type for the given `level`
          * @param data pointer to the message data
          */
-        static deserialize(level: number, type: number, data: (Uint8Array | string)): (SocketControlMessage | null);
+        static deserialize(level: number, type: number, data: Uint8Array | string): SocketControlMessage | null;
 
         // Virtual methods
         /**
@@ -39412,7 +39328,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * headers or alignment.
          * @virtual
          */
-        vfunc_get_size(): (bigint | number);
+        vfunc_get_size(): bigint | number;
 
         /**
          * gets the protocol specific type of the message.
@@ -39588,7 +39504,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          * @returns a {@link Gio.SocketConnection} on success, `null` on error.
          */
-        accept(cancellable: (Cancellable | null)): [SocketConnection, GObject.Object | null];
+        accept(cancellable: Cancellable | null): [SocketConnection, GObject.Object | null];
 
         /**
          * This is the asynchronous version of `g_socket_listener_accept()`.
@@ -39598,18 +39514,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * to get the result of the operation.
          * @param cancellable a {@link Gio.Cancellable}, or `null`
          */
-        accept_async(cancellable: (Cancellable | null)): globalThis.Promise<[SocketConnection, (GObject.Object | null)]>;
-
-        /**
-         * This is the asynchronous version of `g_socket_listener_accept()`.
-         * 
-         * When the operation is finished `callback` will be
-         * called. You can then call `g_socket_listener_accept_finish()`
-         * to get the result of the operation.
-         * @param cancellable a {@link Gio.Cancellable}, or `null`
-         * @param callback a {@link Gio.AsyncReadyCallback}
-         */
-        accept_async(cancellable: (Cancellable | null), callback: (AsyncReadyCallback<this> | null)): void;
+        accept_async(cancellable: Cancellable | null): globalThis.Promise<[SocketConnection, GObject.Object | null]>;
 
         /**
          * This is the asynchronous version of `g_socket_listener_accept()`.
@@ -39620,7 +39525,18 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable a {@link Gio.Cancellable}, or `null`
          * @param callback a {@link Gio.AsyncReadyCallback}
          */
-        accept_async(cancellable: (Cancellable | null), callback?: (AsyncReadyCallback<this> | null)): (globalThis.Promise<[SocketConnection, (GObject.Object | null)]> | void);
+        accept_async(cancellable: Cancellable | null, callback: AsyncReadyCallback<this> | null): void;
+
+        /**
+         * This is the asynchronous version of `g_socket_listener_accept()`.
+         * 
+         * When the operation is finished `callback` will be
+         * called. You can then call `g_socket_listener_accept_finish()`
+         * to get the result of the operation.
+         * @param cancellable a {@link Gio.Cancellable}, or `null`
+         * @param callback a {@link Gio.AsyncReadyCallback}
+         */
+        accept_async(cancellable: Cancellable | null, callback?: AsyncReadyCallback<this> | null): globalThis.Promise<[SocketConnection, GObject.Object | null]> | void;
 
         /**
          * Finishes an async accept operation. See `g_socket_listener_accept_async()`
@@ -39647,7 +39563,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          * @returns a {@link Gio.Socket} on success, `null` on error.
          */
-        accept_socket(cancellable: (Cancellable | null)): [Socket, GObject.Object | null];
+        accept_socket(cancellable: Cancellable | null): [Socket, GObject.Object | null];
 
         /**
          * This is the asynchronous version of `g_socket_listener_accept_socket()`.
@@ -39657,18 +39573,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * to get the result of the operation.
          * @param cancellable a {@link Gio.Cancellable}, or `null`
          */
-        accept_socket_async(cancellable: (Cancellable | null)): globalThis.Promise<[Socket, (GObject.Object | null)]>;
-
-        /**
-         * This is the asynchronous version of `g_socket_listener_accept_socket()`.
-         * 
-         * When the operation is finished `callback` will be
-         * called. You can then call `g_socket_listener_accept_socket_finish()`
-         * to get the result of the operation.
-         * @param cancellable a {@link Gio.Cancellable}, or `null`
-         * @param callback a {@link Gio.AsyncReadyCallback}
-         */
-        accept_socket_async(cancellable: (Cancellable | null), callback: (AsyncReadyCallback<this> | null)): void;
+        accept_socket_async(cancellable: Cancellable | null): globalThis.Promise<[Socket, GObject.Object | null]>;
 
         /**
          * This is the asynchronous version of `g_socket_listener_accept_socket()`.
@@ -39679,7 +39584,18 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable a {@link Gio.Cancellable}, or `null`
          * @param callback a {@link Gio.AsyncReadyCallback}
          */
-        accept_socket_async(cancellable: (Cancellable | null), callback?: (AsyncReadyCallback<this> | null)): (globalThis.Promise<[Socket, (GObject.Object | null)]> | void);
+        accept_socket_async(cancellable: Cancellable | null, callback: AsyncReadyCallback<this> | null): void;
+
+        /**
+         * This is the asynchronous version of `g_socket_listener_accept_socket()`.
+         * 
+         * When the operation is finished `callback` will be
+         * called. You can then call `g_socket_listener_accept_socket_finish()`
+         * to get the result of the operation.
+         * @param cancellable a {@link Gio.Cancellable}, or `null`
+         * @param callback a {@link Gio.AsyncReadyCallback}
+         */
+        accept_socket_async(cancellable: Cancellable | null, callback?: AsyncReadyCallback<this> | null): globalThis.Promise<[Socket, GObject.Object | null]> | void;
 
         /**
          * Finishes an async accept operation. See `g_socket_listener_accept_socket_async()`
@@ -39718,7 +39634,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param source_object Optional {@link GObject.Object} identifying this source
          * @returns `true` on success, `false` on error.
          */
-        add_address(address: SocketAddress, type: SocketType, protocol: SocketProtocol, source_object: (GObject.Object | null)): [boolean, SocketAddress | null];
+        add_address(address: SocketAddress, type: SocketType, protocol: SocketProtocol, source_object: GObject.Object | null): [boolean, SocketAddress | null];
 
         /**
          * Listens for TCP connections on any available port number for both
@@ -39734,7 +39650,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param source_object Optional {@link GObject.Object} identifying this source
          * @returns the port number, or 0 in case of failure.
          */
-        add_any_inet_port(source_object: (GObject.Object | null)): number;
+        add_any_inet_port(source_object: GObject.Object | null): number;
 
         /**
          * Helper function for `g_socket_listener_add_address()` that
@@ -39753,7 +39669,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param source_object Optional {@link GObject.Object} identifying this source
          * @returns `true` on success, `false` on error.
          */
-        add_inet_port(port: number, source_object: (GObject.Object | null)): boolean;
+        add_inet_port(port: number, source_object: GObject.Object | null): boolean;
 
         /**
          * Adds `socket` to the set of sockets that we try to accept
@@ -39773,7 +39689,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param source_object Optional {@link GObject.Object} identifying this source
          * @returns `true` on success, `false` on error.
          */
-        add_socket(socket: Socket, source_object: (GObject.Object | null)): boolean;
+        add_socket(socket: Socket, source_object: GObject.Object | null): boolean;
 
         /**
          * Closes all the sockets in the listener.
@@ -39807,7 +39723,7 @@ export const _LocalFilePrototype: typeof File.prototype;
              * @since 2.22
              * @run-last
              */
-            incoming: (arg0: SocketConnection, arg1: (GObject.Object | null)) => (boolean | void);
+            incoming: (arg0: SocketConnection, arg1: GObject.Object | null) => boolean | void;
             "notify::active": (pspec: GObject.ParamSpec) => void;
             "notify::listen-backlog": (pspec: GObject.ParamSpec) => void;
         }
@@ -40116,7 +40032,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable a {@link Gio.Cancellable}
          * @returns `true` if successful
          */
-        communicate(stdin_buf: (GLib.Bytes | null), cancellable: (Cancellable | null)): [boolean, GLib.Bytes | null, GLib.Bytes | null];
+        communicate(stdin_buf: GLib.Bytes | null, cancellable: Cancellable | null): [boolean, GLib.Bytes | null, GLib.Bytes | null];
 
         /**
          * Asynchronous version of `g_subprocess_communicate()`.  Complete
@@ -40124,16 +40040,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param stdin_buf Input data, or `null`
          * @param cancellable Cancellable
          */
-        communicate_async(stdin_buf: (GLib.Bytes | null), cancellable: (Cancellable | null)): globalThis.Promise<[(GLib.Bytes | null), (GLib.Bytes | null)]>;
-
-        /**
-         * Asynchronous version of `g_subprocess_communicate()`.  Complete
-         * invocation with `g_subprocess_communicate_finish()`.
-         * @param stdin_buf Input data, or `null`
-         * @param cancellable Cancellable
-         * @param callback Callback
-         */
-        communicate_async(stdin_buf: (GLib.Bytes | null), cancellable: (Cancellable | null), callback: (AsyncReadyCallback<this> | null)): void;
+        communicate_async(stdin_buf: GLib.Bytes | null, cancellable: Cancellable | null): globalThis.Promise<[GLib.Bytes | null, GLib.Bytes | null]>;
 
         /**
          * Asynchronous version of `g_subprocess_communicate()`.  Complete
@@ -40142,7 +40049,16 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable Cancellable
          * @param callback Callback
          */
-        communicate_async(stdin_buf: (GLib.Bytes | null), cancellable: (Cancellable | null), callback?: (AsyncReadyCallback<this> | null)): (globalThis.Promise<[(GLib.Bytes | null), (GLib.Bytes | null)]> | void);
+        communicate_async(stdin_buf: GLib.Bytes | null, cancellable: Cancellable | null, callback: AsyncReadyCallback<this> | null): void;
+
+        /**
+         * Asynchronous version of `g_subprocess_communicate()`.  Complete
+         * invocation with `g_subprocess_communicate_finish()`.
+         * @param stdin_buf Input data, or `null`
+         * @param cancellable Cancellable
+         * @param callback Callback
+         */
+        communicate_async(stdin_buf: GLib.Bytes | null, cancellable: Cancellable | null, callback?: AsyncReadyCallback<this> | null): globalThis.Promise<[GLib.Bytes | null, GLib.Bytes | null]> | void;
 
         /**
          * Complete an invocation of `g_subprocess_communicate_async()`.
@@ -40159,7 +40075,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param stdin_buf data to send to the stdin of the subprocess, or `null`
          * @param cancellable a {@link Gio.Cancellable}
          */
-        communicate_utf8(stdin_buf: (string | null), cancellable: (Cancellable | null)): [boolean, string, string];
+        communicate_utf8(stdin_buf: string | null, cancellable: Cancellable | null): [boolean, string, string];
 
         /**
          * Asynchronous version of `g_subprocess_communicate_utf8()`.  Complete
@@ -40167,16 +40083,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param stdin_buf Input data, or `null`
          * @param cancellable Cancellable
          */
-        communicate_utf8_async(stdin_buf: (string | null), cancellable: (Cancellable | null)): globalThis.Promise<[string, string]>;
-
-        /**
-         * Asynchronous version of `g_subprocess_communicate_utf8()`.  Complete
-         * invocation with `g_subprocess_communicate_utf8_finish()`.
-         * @param stdin_buf Input data, or `null`
-         * @param cancellable Cancellable
-         * @param callback Callback
-         */
-        communicate_utf8_async(stdin_buf: (string | null), cancellable: (Cancellable | null), callback: (AsyncReadyCallback<this> | null)): void;
+        communicate_utf8_async(stdin_buf: string | null, cancellable: Cancellable | null): globalThis.Promise<[string, string]>;
 
         /**
          * Asynchronous version of `g_subprocess_communicate_utf8()`.  Complete
@@ -40185,7 +40092,16 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable Cancellable
          * @param callback Callback
          */
-        communicate_utf8_async(stdin_buf: (string | null), cancellable: (Cancellable | null), callback?: (AsyncReadyCallback<this> | null)): (globalThis.Promise<[string, string]> | void);
+        communicate_utf8_async(stdin_buf: string | null, cancellable: Cancellable | null, callback: AsyncReadyCallback<this> | null): void;
+
+        /**
+         * Asynchronous version of `g_subprocess_communicate_utf8()`.  Complete
+         * invocation with `g_subprocess_communicate_utf8_finish()`.
+         * @param stdin_buf Input data, or `null`
+         * @param cancellable Cancellable
+         * @param callback Callback
+         */
+        communicate_utf8_async(stdin_buf: string | null, cancellable: Cancellable | null, callback?: AsyncReadyCallback<this> | null): globalThis.Promise<[string, string]> | void;
 
         /**
          * Complete an invocation of `g_subprocess_communicate_utf8_async()`.
@@ -40223,7 +40139,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * If the subprocess has terminated, this will return `null`.
          * @returns the subprocess identifier, or `null` if the subprocess    has terminated
          */
-        get_identifier(): (string | null);
+        get_identifier(): string | null;
 
         /**
          * Check if the given subprocess exited normally (ie: by way of `exit()`
@@ -40272,7 +40188,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * otherwise `null` will be returned.
          * @returns the stderr pipe
          */
-        get_stderr_pipe(): (InputStream | null);
+        get_stderr_pipe(): InputStream | null;
 
         /**
          * Gets the {@link Gio.OutputStream} that you can write to in order to give data
@@ -40282,7 +40198,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * not {@link Gio.SubprocessFlags.STDIN_INHERIT}, otherwise `null` will be returned.
          * @returns the stdout pipe
          */
-        get_stdin_pipe(): (OutputStream | null);
+        get_stdin_pipe(): OutputStream | null;
 
         /**
          * Gets the {@link Gio.InputStream} from which to read the stdout output of
@@ -40292,7 +40208,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * otherwise `null` will be returned.
          * @returns the stdout pipe
          */
-        get_stdout_pipe(): (InputStream | null);
+        get_stdout_pipe(): InputStream | null;
 
         /**
          * Checks if the process was "successful".  A process is considered
@@ -40344,7 +40260,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable a {@link Gio.Cancellable}
          * @returns `true` on success, `false` if `cancellable` was cancelled
          */
-        wait(cancellable: (Cancellable | null)): boolean;
+        wait(cancellable: Cancellable | null): boolean;
 
         /**
          * Wait for the subprocess to terminate.
@@ -40352,16 +40268,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * This is the asynchronous version of `g_subprocess_wait()`.
          * @param cancellable a {@link Gio.Cancellable}, or `null`
          */
-        wait_async(cancellable: (Cancellable | null)): globalThis.Promise<boolean>;
-
-        /**
-         * Wait for the subprocess to terminate.
-         * 
-         * This is the asynchronous version of `g_subprocess_wait()`.
-         * @param cancellable a {@link Gio.Cancellable}, or `null`
-         * @param callback a {@link Gio.AsyncReadyCallback} to call when the operation is complete
-         */
-        wait_async(cancellable: (Cancellable | null), callback: (AsyncReadyCallback<this> | null)): void;
+        wait_async(cancellable: Cancellable | null): globalThis.Promise<boolean>;
 
         /**
          * Wait for the subprocess to terminate.
@@ -40370,14 +40277,23 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable a {@link Gio.Cancellable}, or `null`
          * @param callback a {@link Gio.AsyncReadyCallback} to call when the operation is complete
          */
-        wait_async(cancellable: (Cancellable | null), callback?: (AsyncReadyCallback<this> | null)): (globalThis.Promise<boolean> | void);
+        wait_async(cancellable: Cancellable | null, callback: AsyncReadyCallback<this> | null): void;
+
+        /**
+         * Wait for the subprocess to terminate.
+         * 
+         * This is the asynchronous version of `g_subprocess_wait()`.
+         * @param cancellable a {@link Gio.Cancellable}, or `null`
+         * @param callback a {@link Gio.AsyncReadyCallback} to call when the operation is complete
+         */
+        wait_async(cancellable: Cancellable | null, callback?: AsyncReadyCallback<this> | null): globalThis.Promise<boolean> | void;
 
         /**
          * Combines `g_subprocess_wait()` with `g_spawn_check_wait_status()`.
          * @param cancellable a {@link Gio.Cancellable}
          * @returns `true` on success, `false` if process exited abnormally, or `cancellable` was cancelled
          */
-        wait_check(cancellable: (Cancellable | null)): boolean;
+        wait_check(cancellable: Cancellable | null): boolean;
 
         /**
          * Combines `g_subprocess_wait_async()` with `g_spawn_check_wait_status()`.
@@ -40385,16 +40301,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * This is the asynchronous version of `g_subprocess_wait_check()`.
          * @param cancellable a {@link Gio.Cancellable}, or `null`
          */
-        wait_check_async(cancellable: (Cancellable | null)): globalThis.Promise<boolean>;
-
-        /**
-         * Combines `g_subprocess_wait_async()` with `g_spawn_check_wait_status()`.
-         * 
-         * This is the asynchronous version of `g_subprocess_wait_check()`.
-         * @param cancellable a {@link Gio.Cancellable}, or `null`
-         * @param callback a {@link Gio.AsyncReadyCallback} to call when the operation is complete
-         */
-        wait_check_async(cancellable: (Cancellable | null), callback: (AsyncReadyCallback<this> | null)): void;
+        wait_check_async(cancellable: Cancellable | null): globalThis.Promise<boolean>;
 
         /**
          * Combines `g_subprocess_wait_async()` with `g_spawn_check_wait_status()`.
@@ -40403,7 +40310,16 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable a {@link Gio.Cancellable}, or `null`
          * @param callback a {@link Gio.AsyncReadyCallback} to call when the operation is complete
          */
-        wait_check_async(cancellable: (Cancellable | null), callback?: (AsyncReadyCallback<this> | null)): (globalThis.Promise<boolean> | void);
+        wait_check_async(cancellable: Cancellable | null, callback: AsyncReadyCallback<this> | null): void;
+
+        /**
+         * Combines `g_subprocess_wait_async()` with `g_spawn_check_wait_status()`.
+         * 
+         * This is the asynchronous version of `g_subprocess_wait_check()`.
+         * @param cancellable a {@link Gio.Cancellable}, or `null`
+         * @param callback a {@link Gio.AsyncReadyCallback} to call when the operation is complete
+         */
+        wait_check_async(cancellable: Cancellable | null, callback?: AsyncReadyCallback<this> | null): globalThis.Promise<boolean> | void;
 
         /**
          * Collects the result of a previous call to
@@ -40463,7 +40379,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          * @returns `true` if successful. If an error has occurred, this function will     return `false` and set `error` appropriately if present.
          */
-        init(cancellable: (Cancellable | null)): boolean;
+        init(cancellable: Cancellable | null): boolean;
 
         /**
          * Initializes the object implementing the interface.
@@ -40507,7 +40423,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          * @virtual
          */
-        vfunc_init(cancellable: (Cancellable | null)): boolean;
+        vfunc_init(cancellable: Cancellable | null): boolean;
     }
 
 
@@ -40600,7 +40516,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param variable the environment variable to get
          * @returns the value of the environment variable,     `null` if unset
          */
-        getenv(variable: string): (string | null);
+        getenv(variable: string): string | null;
 
         /**
          * Sets the current working directory that processes will be launched
@@ -40670,7 +40586,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * This feature is only available on UNIX.
          * @param path a filename or `null`
          */
-        set_stderr_file_path(path: (string | null)): void;
+        set_stderr_file_path(path: string | null): void;
 
         /**
          * Sets the file path to use as the stdin for spawned processes.
@@ -40685,7 +40601,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * This feature is only available on UNIX.
          * @param path a filename or `null`
          */
-        set_stdin_file_path(path: (string | null)): void;
+        set_stdin_file_path(path: string | null): void;
 
         /**
          * Sets the file path to use as the stdout for spawned processes.
@@ -40701,7 +40617,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * This feature is only available on UNIX.
          * @param path a filename or `null`
          */
-        set_stdout_file_path(path: (string | null)): void;
+        set_stdout_file_path(path: string | null): void;
 
         /**
          * Sets the environment variable `variable` in the environment of
@@ -41399,7 +41315,7 @@ export const _LocalFilePrototype: typeof File.prototype;
 
         _init(...args: any[]): void;
 
-        static ["new"](source_object: (GObject.Object | null), cancellable: (Cancellable | null), callback: (AsyncReadyCallback | null)): Task;
+        static ["new"](source_object: GObject.Object | null, cancellable: Cancellable | null, callback: AsyncReadyCallback | null): Task;
 
         // Signals
         /** @signal */
@@ -41422,7 +41338,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param result A {@link Gio.AsyncResult}
          * @param source_object the source object   expected to be associated with the task
          */
-        static is_valid(result: AsyncResult, source_object: (GObject.Object | null)): boolean;
+        static is_valid(result: AsyncResult, source_object: GObject.Object | null): boolean;
 
         /**
          * Creates a {@link Gio.Task} and then immediately calls `g_task_return_error()`
@@ -41438,14 +41354,14 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param source_tag an opaque pointer indicating the source of this task
          * @param error error to report
          */
-        static report_error(source_object: (GObject.Object | null), callback: (AsyncReadyCallback<Task> | null), source_tag: null, error: GLib.Error): void;
+        static report_error(source_object: GObject.Object | null, callback: AsyncReadyCallback<Task> | null, source_tag: null, error: GLib.Error): void;
 
         // Methods
         /**
          * Gets `task`'s {@link Gio.Cancellable}
          * @returns `task`'s {@link Gio.Cancellable}
          */
-        get_cancellable(): (Cancellable | null);
+        get_cancellable(): Cancellable | null;
 
         /**
          * Gets `task`'s check-cancellable flag. See
@@ -41477,7 +41393,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * Gets `task`’s name. See `g_task_set_name()`.
          * @returns `task`’s name, or `null`
          */
-        get_name(): (string | null);
+        get_name(): string | null;
 
         /**
          * Gets `task`'s priority
@@ -41608,7 +41524,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * means).
          * @param result the integer (`gssize`) result of a task function.
          */
-        return_int(result: (bigint | number)): void;
+        return_int(result: bigint | number): void;
 
         /**
          * Sets `task`’s result to a new {@link GLib.Error} created from `domain`, `code`,
@@ -41658,7 +41574,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * like will normally be much easier to use.
          * @param result the {@link GObject.Value} result of                                      a task function
          */
-        return_value(result: (GObject.Value | null)): void;
+        return_value(result: GObject.Value | null): void;
 
         /**
          * Runs `task_func` in another thread. When `task_func` returns, `task`'s
@@ -41736,7 +41652,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * other than the one it was constructed in.
          * @param name a human readable name for the task, or `null` to unset it
          */
-        set_name(name: (string | null)): void;
+        set_name(name: string | null): void;
 
         /**
          * Sets `task`'s priority. If you do not call this, it will default to
@@ -41810,7 +41726,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * unless a name is set.
          * @param name a human readable name for the task. Must be a string literal
          */
-        set_static_name(name: (string | null)): void;
+        set_static_name(name: string | null): void;
 
         /**
          * Sets `task`'s task data (freeing the existing task data, if any).
@@ -42209,7 +42125,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * `g_dbus_connection_new_for_address()`.
          * @returns the address of the bus, or `null`.
          */
-        get_bus_address(): (string | null);
+        get_bus_address(): string | null;
 
         /**
          * Get the flags of the {@link Gio.TestDBus} object.
@@ -42396,7 +42312,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param icon2 pointer to the second {@link Gio.Icon}.
          * @returns `true` if `icon1` is equal to `icon2`. `false` otherwise.
          */
-        equal(icon2: (Icon | null)): boolean;
+        equal(icon2: Icon | null): boolean;
 
         /**
          * Gets a hash for an icon.
@@ -42412,7 +42328,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * (as opposed to over the network), and within the same file system namespace.
          * @returns a {@link GLib.Variant}, or `null` when serialization fails. The {@link GLib.Variant} will not be floating.
          */
-        serialize(): (GLib.Variant | null);
+        serialize(): GLib.Variant | null;
 
         /**
          * Generates a textual representation of `icon` that can be used for
@@ -42433,14 +42349,14 @@ export const _LocalFilePrototype: typeof File.prototype;
          *   the encoding is simply the name (such as `network-server`).
          * @returns An allocated NUL-terminated UTF8 string or `null` if `icon` can't be serialized. Use `g_free()` to free.
          */
-        to_string(): (string | null);
+        to_string(): string | null;
 
         /**
          * Checks if two icons are equal.
          * @param icon2 pointer to the second {@link Gio.Icon}.
          * @virtual
          */
-        vfunc_equal(icon2: (Icon | null)): boolean;
+        vfunc_equal(icon2: Icon | null): boolean;
 
         /**
          * Gets a hash for an icon.
@@ -42456,7 +42372,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * (as opposed to over the network), and within the same file system namespace.
          * @virtual
          */
-        vfunc_serialize(): (GLib.Variant | null);
+        vfunc_serialize(): GLib.Variant | null;
 
         /**
          * Serializes the `icon` into string tokens.
@@ -42474,9 +42390,7 @@ export const _LocalFilePrototype: typeof File.prototype;
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends Resolver.ConstructorProps {
-
-        }
+        interface ConstructorProps extends Resolver.ConstructorProps {}
     }
 
     /**
@@ -42528,7 +42442,7 @@ export const _LocalFilePrototype: typeof File.prototype;
              * @signal
              * @run-last
              */
-            run: (arg0: SocketConnection, arg1: (GObject.Object | null)) => (boolean | void);
+            run: (arg0: SocketConnection, arg1: GObject.Object | null) => boolean | void;
             "notify::max-threads": (pspec: GObject.ParamSpec) => void;
             "notify::active": (pspec: GObject.ParamSpec) => void;
             "notify::listen-backlog": (pspec: GObject.ParamSpec) => void;
@@ -42645,33 +42559,33 @@ export const _LocalFilePrototype: typeof File.prototype;
 
         // Constructor properties interface
         interface ConstructorProps extends GObject.Object.ConstructorProps {
-            certificate: (Uint8Array | string);
+            certificate: Uint8Array | string;
             certificate_pem: string;
             certificatePem: string;
-            dns_names: (never[] | null);
-            dnsNames: (never[] | null);
-            ip_addresses: (never[] | null);
-            ipAddresses: (never[] | null);
-            issuer: (TlsCertificate | null);
-            issuer_name: (string | null);
-            issuerName: (string | null);
-            not_valid_after: (GLib.DateTime | null);
-            notValidAfter: (GLib.DateTime | null);
-            not_valid_before: (GLib.DateTime | null);
-            notValidBefore: (GLib.DateTime | null);
+            dns_names: never[] | null;
+            dnsNames: never[] | null;
+            ip_addresses: never[] | null;
+            ipAddresses: never[] | null;
+            issuer: TlsCertificate | null;
+            issuer_name: string | null;
+            issuerName: string | null;
+            not_valid_after: GLib.DateTime | null;
+            notValidAfter: GLib.DateTime | null;
+            not_valid_before: GLib.DateTime | null;
+            notValidBefore: GLib.DateTime | null;
             password: string;
             pkcs11_uri: string;
             pkcs11Uri: string;
-            pkcs12_data: (Uint8Array | string);
-            pkcs12Data: (Uint8Array | string);
-            private_key: (Uint8Array | string);
-            privateKey: (Uint8Array | string);
+            pkcs12_data: Uint8Array | string;
+            pkcs12Data: Uint8Array | string;
+            private_key: Uint8Array | string;
+            privateKey: Uint8Array | string;
             private_key_pem: string;
             privateKeyPem: string;
             private_key_pkcs11_uri: string;
             privateKeyPkcs11Uri: string;
-            subject_name: (string | null);
-            subjectName: (string | null);
+            subject_name: string | null;
+            subjectName: string | null;
         }
     }
 
@@ -42723,7 +42637,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @since 2.70
          * @read-only
          */
-        get dns_names(): (never[] | null);
+        get dns_names(): never[] | null;
 
         /**
          * The DNS names from the certificate's Subject Alternative Names (SANs),
@@ -42731,7 +42645,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @since 2.70
          * @read-only
          */
-        get dnsNames(): (never[] | null);
+        get dnsNames(): never[] | null;
 
         /**
          * The IP addresses from the certificate's Subject Alternative Names (SANs),
@@ -42739,7 +42653,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @since 2.70
          * @read-only
          */
-        get ip_addresses(): (never[] | null);
+        get ip_addresses(): never[] | null;
 
         /**
          * The IP addresses from the certificate's Subject Alternative Names (SANs),
@@ -42747,7 +42661,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @since 2.70
          * @read-only
          */
-        get ipAddresses(): (never[] | null);
+        get ipAddresses(): never[] | null;
 
         /**
          * A {@link Gio.TlsCertificate} representing the entity that issued this
@@ -42769,7 +42683,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @since 2.28
          * @construct-only
          */
-        get issuer(): (TlsCertificate | null);
+        get issuer(): TlsCertificate | null;
 
         /**
          * The issuer from the certificate,
@@ -42778,7 +42692,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @read-only
          * @default null
          */
-        get issuer_name(): (string | null);
+        get issuer_name(): string | null;
 
         /**
          * The issuer from the certificate,
@@ -42787,7 +42701,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @read-only
          * @default null
          */
-        get issuerName(): (string | null);
+        get issuerName(): string | null;
 
         /**
          * The time at which this cert is no longer valid,
@@ -42795,7 +42709,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @since 2.70
          * @read-only
          */
-        get not_valid_after(): (GLib.DateTime | null);
+        get not_valid_after(): GLib.DateTime | null;
 
         /**
          * The time at which this cert is no longer valid,
@@ -42803,7 +42717,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @since 2.70
          * @read-only
          */
-        get notValidAfter(): (GLib.DateTime | null);
+        get notValidAfter(): GLib.DateTime | null;
 
         /**
          * The time at which this cert is considered to be valid,
@@ -42811,7 +42725,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @since 2.70
          * @read-only
          */
-        get not_valid_before(): (GLib.DateTime | null);
+        get not_valid_before(): GLib.DateTime | null;
 
         /**
          * The time at which this cert is considered to be valid,
@@ -42819,7 +42733,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @since 2.70
          * @read-only
          */
-        get notValidBefore(): (GLib.DateTime | null);
+        get notValidBefore(): GLib.DateTime | null;
 
         /**
          * An optional password used when constructed with GTlsCertificate:pkcs12-data.
@@ -42860,7 +42774,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @since 2.72
          * @construct-only
          */
-        set pkcs12_data(val: (Uint8Array | string));
+        set pkcs12_data(val: Uint8Array | string);
 
         /**
          * The PKCS #12 formatted data used to construct the object.
@@ -42869,7 +42783,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @since 2.72
          * @construct-only
          */
-        set pkcs12Data(val: (Uint8Array | string));
+        set pkcs12Data(val: Uint8Array | string);
 
         /**
          * The DER (binary) encoded representation of the certificate's
@@ -42992,7 +42906,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @read-only
          * @default null
          */
-        get subject_name(): (string | null);
+        get subject_name(): string | null;
 
         /**
          * The subject from the cert,
@@ -43001,7 +42915,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @read-only
          * @default null
          */
-        get subjectName(): (string | null);
+        get subjectName(): string | null;
 
         /**
          * Compile-time signal type information.
@@ -43023,11 +42937,11 @@ export const _LocalFilePrototype: typeof File.prototype;
 
         static new_from_files(cert_file: string, key_file: string): TlsCertificate;
 
-        static new_from_pem(data: string, length: (bigint | number)): TlsCertificate;
+        static new_from_pem(data: string, length: bigint | number): TlsCertificate;
 
-        static new_from_pkcs11_uris(pkcs11_uri: string, private_key_pkcs11_uri: (string | null)): TlsCertificate;
+        static new_from_pkcs11_uris(pkcs11_uri: string, private_key_pkcs11_uri: string | null): TlsCertificate;
 
-        static new_from_pkcs12(data: (Uint8Array | string), password: (string | null)): TlsCertificate;
+        static new_from_pkcs12(data: Uint8Array | string, password: string | null): TlsCertificate;
 
         // Signals
         /** @signal */
@@ -43092,50 +43006,50 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param trusted_ca the certificate of a trusted authority
          * @virtual
          */
-        vfunc_verify(identity: (SocketConnectable | null), trusted_ca: (TlsCertificate | null)): TlsCertificateFlags;
+        vfunc_verify(identity: SocketConnectable | null, trusted_ca: TlsCertificate | null): TlsCertificateFlags;
 
         // Methods
         /**
          * Gets the value of {@link Gio.TlsCertificate.dns_names}.
          * @returns A {@link GLib.PtrArray} of {@link GLib.Bytes} elements, or `null` if it's not available.
          */
-        get_dns_names(): (GLib.Bytes[] | null);
+        get_dns_names(): GLib.Bytes[] | null;
 
         /**
          * Gets the value of {@link Gio.TlsCertificate.ip_addresses}.
          * @returns A {@link GLib.PtrArray} of {@link Gio.InetAddress} elements, or `null` if it's not available.
          */
-        get_ip_addresses(): (InetAddress[] | null);
+        get_ip_addresses(): InetAddress[] | null;
 
         /**
          * Gets the {@link Gio.TlsCertificate} representing `cert`'s issuer, if known
          * @returns The certificate of `cert`'s issuer, or `null` if `cert` is self-signed or signed with an unknown certificate.
          */
-        get_issuer(): (TlsCertificate | null);
+        get_issuer(): TlsCertificate | null;
 
         /**
          * Returns the issuer name from the certificate.
          * @returns The issuer name, or `null` if it's not available.
          */
-        get_issuer_name(): (string | null);
+        get_issuer_name(): string | null;
 
         /**
          * Returns the time at which the certificate became or will become invalid.
          * @returns The not-valid-after date, or `null` if it's not available.
          */
-        get_not_valid_after(): (GLib.DateTime | null);
+        get_not_valid_after(): GLib.DateTime | null;
 
         /**
          * Returns the time at which the certificate became or will become valid.
          * @returns The not-valid-before date, or `null` if it's not available.
          */
-        get_not_valid_before(): (GLib.DateTime | null);
+        get_not_valid_before(): GLib.DateTime | null;
 
         /**
          * Returns the subject name from the certificate.
          * @returns The subject name, or `null` if it's not available.
          */
-        get_subject_name(): (string | null);
+        get_subject_name(): string | null;
 
         /**
          * Check if two {@link Gio.TlsCertificate} objects represent the same certificate.
@@ -43186,7 +43100,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param trusted_ca the certificate of a trusted authority
          * @returns the appropriate {@link Gio.TlsCertificateFlags}
          */
-        verify(identity: (SocketConnectable | null), trusted_ca: (TlsCertificate | null)): TlsCertificateFlags;
+        verify(identity: SocketConnectable | null, trusted_ca: TlsCertificate | null): TlsCertificateFlags;
     }
 
 
@@ -43240,7 +43154,7 @@ export const _LocalFilePrototype: typeof File.prototype;
              * @since 2.28
              * @run-last
              */
-            "accept-certificate": (arg0: TlsCertificate, arg1: TlsCertificateFlags) => (boolean | void);
+            "accept-certificate": (arg0: TlsCertificate, arg1: TlsCertificateFlags) => boolean | void;
             "notify::advertised-protocols": (pspec: GObject.ParamSpec) => void;
             "notify::base-io-stream": (pspec: GObject.ParamSpec) => void;
             "notify::certificate": (pspec: GObject.ParamSpec) => void;
@@ -43265,15 +43179,15 @@ export const _LocalFilePrototype: typeof File.prototype;
             advertisedProtocols: string[];
             base_io_stream: IOStream;
             baseIoStream: IOStream;
-            certificate: (TlsCertificate | null);
-            ciphersuite_name: (string | null);
-            ciphersuiteName: (string | null);
-            database: (TlsDatabase | null);
-            interaction: (TlsInteraction | null);
-            negotiated_protocol: (string | null);
-            negotiatedProtocol: (string | null);
-            peer_certificate: (TlsCertificate | null);
-            peerCertificate: (TlsCertificate | null);
+            certificate: TlsCertificate | null;
+            ciphersuite_name: string | null;
+            ciphersuiteName: string | null;
+            database: TlsDatabase | null;
+            interaction: TlsInteraction | null;
+            negotiated_protocol: string | null;
+            negotiatedProtocol: string | null;
+            peer_certificate: TlsCertificate | null;
+            peerCertificate: TlsCertificate | null;
             peer_certificate_errors: TlsCertificateFlags;
             peerCertificateErrors: TlsCertificateFlags;
             protocol_version: TlsProtocolVersion;
@@ -43347,8 +43261,8 @@ export const _LocalFilePrototype: typeof File.prototype;
          * `g_tls_connection_set_certificate()`.
          * @since 2.28
          */
-        get certificate(): (TlsCertificate | null);
-        set certificate(val: (TlsCertificate | null));
+        get certificate(): TlsCertificate | null;
+        set certificate(val: TlsCertificate | null);
 
         /**
          * The name of the TLS ciphersuite in use. See `g_tls_connection_get_ciphersuite_name()`.
@@ -43356,7 +43270,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @read-only
          * @default null
          */
-        get ciphersuite_name(): (string | null);
+        get ciphersuite_name(): string | null;
 
         /**
          * The name of the TLS ciphersuite in use. See `g_tls_connection_get_ciphersuite_name()`.
@@ -43364,7 +43278,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @read-only
          * @default null
          */
-        get ciphersuiteName(): (string | null);
+        get ciphersuiteName(): string | null;
 
         /**
          * The certificate database to use when verifying this TLS connection.
@@ -43385,8 +43299,8 @@ export const _LocalFilePrototype: typeof File.prototype;
          * unusual security requirements.
          * @since 2.30
          */
-        get database(): (TlsDatabase | null);
-        set database(val: (TlsDatabase | null));
+        get database(): TlsDatabase | null;
+        set database(val: TlsDatabase | null);
 
         /**
          * A {@link Gio.TlsInteraction} object to be used when the connection or certificate
@@ -43394,8 +43308,8 @@ export const _LocalFilePrototype: typeof File.prototype;
          * user for passwords where necessary.
          * @since 2.30
          */
-        get interaction(): (TlsInteraction | null);
-        set interaction(val: (TlsInteraction | null));
+        get interaction(): TlsInteraction | null;
+        set interaction(val: TlsInteraction | null);
 
         /**
          * The application-layer protocol negotiated during the TLS
@@ -43404,7 +43318,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @read-only
          * @default null
          */
-        get negotiated_protocol(): (string | null);
+        get negotiated_protocol(): string | null;
 
         /**
          * The application-layer protocol negotiated during the TLS
@@ -43413,7 +43327,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @read-only
          * @default null
          */
-        get negotiatedProtocol(): (string | null);
+        get negotiatedProtocol(): string | null;
 
         /**
          * The connection's peer's certificate, after the TLS handshake has
@@ -43425,7 +43339,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @since 2.28
          * @read-only
          */
-        get peer_certificate(): (TlsCertificate | null);
+        get peer_certificate(): TlsCertificate | null;
 
         /**
          * The connection's peer's certificate, after the TLS handshake has
@@ -43437,7 +43351,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @since 2.28
          * @read-only
          */
-        get peerCertificate(): (TlsCertificate | null);
+        get peerCertificate(): TlsCertificate | null;
 
         /**
          * The errors noticed while verifying
@@ -43609,7 +43523,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * `g_tls_connection_set_advertised_protocols()`.
          * @virtual
          */
-        vfunc_get_negotiated_protocol(): (string | null);
+        vfunc_get_negotiated_protocol(): string | null;
 
         /**
          * Attempts a TLS handshake on `conn`.
@@ -43646,7 +43560,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable a {@link Gio.Cancellable}, or `null`
          * @virtual
          */
-        vfunc_handshake(cancellable: (Cancellable | null)): boolean;
+        vfunc_handshake(cancellable: Cancellable | null): boolean;
 
         /**
          * Asynchronously performs a TLS handshake on `conn`. See
@@ -43656,7 +43570,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param callback callback to call when the handshake is complete
          * @virtual
          */
-        vfunc_handshake_async(io_priority: number, cancellable: (Cancellable | null), callback: (AsyncReadyCallback<this> | null)): void;
+        vfunc_handshake_async(io_priority: number, cancellable: Cancellable | null, callback: AsyncReadyCallback<this> | null): void;
 
         /**
          * Finish an asynchronous TLS handshake operation. See
@@ -43681,7 +43595,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * `g_tls_connection_set_certificate()`.
          * @returns `conn`'s certificate, or `null`
          */
-        get_certificate(): (TlsCertificate | null);
+        get_certificate(): TlsCertificate | null;
 
         /**
          * Query the TLS backend for TLS channel binding data of `type` for `conn`.
@@ -43713,14 +43627,14 @@ export const _LocalFilePrototype: typeof File.prototype;
          * is not recommended.
          * @returns The name of the current TLS ciphersuite, or `null`
          */
-        get_ciphersuite_name(): (string | null);
+        get_ciphersuite_name(): string | null;
 
         /**
          * Gets the certificate database that `conn` uses to verify
          * peer certificates. See `g_tls_connection_set_database()`.
          * @returns the certificate database that `conn` uses or `null`
          */
-        get_database(): (TlsDatabase | null);
+        get_database(): TlsDatabase | null;
 
         /**
          * Get the object that will be used to interact with the user. It will be used
@@ -43728,7 +43642,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * no user interaction will occur for this connection.
          * @returns The interaction object.
          */
-        get_interaction(): (TlsInteraction | null);
+        get_interaction(): TlsInteraction | null;
 
         /**
          * Gets the name of the application-layer protocol negotiated during
@@ -43740,7 +43654,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * `g_tls_connection_set_advertised_protocols()`.
          * @returns the negotiated protocol, or `null`
          */
-        get_negotiated_protocol(): (string | null);
+        get_negotiated_protocol(): string | null;
 
         /**
          * Gets `conn`'s peer's certificate after the handshake has completed
@@ -43748,7 +43662,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * {@link Gio.TlsConnection.SignalSignatures.accept_certificate | Gio.TlsConnection::accept-certificate}.)
          * @returns `conn`'s peer's certificate, or `null`
          */
-        get_peer_certificate(): (TlsCertificate | null);
+        get_peer_certificate(): TlsCertificate | null;
 
         /**
          * Gets the errors associated with validating `conn`'s peer's
@@ -43826,7 +43740,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable a {@link Gio.Cancellable}, or `null`
          * @returns success or failure
          */
-        handshake(cancellable: (Cancellable | null)): boolean;
+        handshake(cancellable: Cancellable | null): boolean;
 
         /**
          * Asynchronously performs a TLS handshake on `conn`. See
@@ -43834,16 +43748,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param io_priority the [I/O priority](https://docs.gtk.org/gio/iface.AsyncResult.html#io-priority) of the request
          * @param cancellable a {@link Gio.Cancellable}, or `null`
          */
-        handshake_async(io_priority: number, cancellable: (Cancellable | null)): globalThis.Promise<boolean>;
-
-        /**
-         * Asynchronously performs a TLS handshake on `conn`. See
-         * `g_tls_connection_handshake()` for more information.
-         * @param io_priority the [I/O priority](https://docs.gtk.org/gio/iface.AsyncResult.html#io-priority) of the request
-         * @param cancellable a {@link Gio.Cancellable}, or `null`
-         * @param callback callback to call when the handshake is complete
-         */
-        handshake_async(io_priority: number, cancellable: (Cancellable | null), callback: (AsyncReadyCallback<this> | null)): void;
+        handshake_async(io_priority: number, cancellable: Cancellable | null): globalThis.Promise<boolean>;
 
         /**
          * Asynchronously performs a TLS handshake on `conn`. See
@@ -43852,7 +43757,16 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable a {@link Gio.Cancellable}, or `null`
          * @param callback callback to call when the handshake is complete
          */
-        handshake_async(io_priority: number, cancellable: (Cancellable | null), callback?: (AsyncReadyCallback<this> | null)): (globalThis.Promise<boolean> | void);
+        handshake_async(io_priority: number, cancellable: Cancellable | null, callback: AsyncReadyCallback<this> | null): void;
+
+        /**
+         * Asynchronously performs a TLS handshake on `conn`. See
+         * `g_tls_connection_handshake()` for more information.
+         * @param io_priority the [I/O priority](https://docs.gtk.org/gio/iface.AsyncResult.html#io-priority) of the request
+         * @param cancellable a {@link Gio.Cancellable}, or `null`
+         * @param callback callback to call when the handshake is complete
+         */
+        handshake_async(io_priority: number, cancellable: Cancellable | null, callback?: AsyncReadyCallback<this> | null): globalThis.Promise<boolean> | void;
 
         /**
          * Finish an asynchronous TLS handshake operation. See
@@ -43875,7 +43789,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * for a list of registered protocol IDs.
          * @param protocols a `null`-terminated   array of ALPN protocol names (eg, "http/1.1", "h2"), or `null`
          */
-        set_advertised_protocols(protocols: (string[] | null)): void;
+        set_advertised_protocols(protocols: string[] | null): void;
 
         /**
          * This sets the certificate that `conn` will present to its peer
@@ -43914,7 +43828,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * database. See {@link Gio.TlsConnection.database} for details.
          * @param database a {@link Gio.TlsDatabase}
          */
-        set_database(database: (TlsDatabase | null)): void;
+        set_database(database: TlsDatabase | null): void;
 
         /**
          * Set the object that will be used to interact with the user. It will be used
@@ -43925,7 +43839,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * should occur for this connection.
          * @param interaction an interaction object, or `null`
          */
-        set_interaction(interaction: (TlsInteraction | null)): void;
+        set_interaction(interaction: TlsInteraction | null): void;
 
         /**
          * Since GLib 2.64, changing the rehandshake mode is no longer supported
@@ -43984,13 +43898,10 @@ export const _LocalFilePrototype: typeof File.prototype;
 
     namespace TlsDatabase {
         // Signal signatures
-        interface SignalSignatures extends GObject.Object.SignalSignatures {
-        }
+        interface SignalSignatures extends GObject.Object.SignalSignatures {}
 
         // Constructor properties interface
-        interface ConstructorProps extends GObject.Object.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GObject.Object.ConstructorProps {}
     }
 
     /**
@@ -44049,7 +43960,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param certificate certificate for which to create a handle.
          * @virtual
          */
-        vfunc_create_certificate_handle(certificate: TlsCertificate): (string | null);
+        vfunc_create_certificate_handle(certificate: TlsCertificate): string | null;
 
         /**
          * Look up a certificate by its handle.
@@ -44070,7 +43981,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable a {@link Gio.Cancellable}, or `null`
          * @virtual
          */
-        vfunc_lookup_certificate_for_handle(handle: string, interaction: (TlsInteraction | null), flags: TlsDatabaseLookupFlags, cancellable: (Cancellable | null)): (TlsCertificate | null);
+        vfunc_lookup_certificate_for_handle(handle: string, interaction: TlsInteraction | null, flags: TlsDatabaseLookupFlags, cancellable: Cancellable | null): TlsCertificate | null;
 
         /**
          * Asynchronously look up a certificate by its handle in the database. See
@@ -44082,7 +43993,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param callback callback to call when the operation completes
          * @virtual
          */
-        vfunc_lookup_certificate_for_handle_async(handle: string, interaction: (TlsInteraction | null), flags: TlsDatabaseLookupFlags, cancellable: (Cancellable | null), callback: (AsyncReadyCallback<this> | null)): void;
+        vfunc_lookup_certificate_for_handle_async(handle: string, interaction: TlsInteraction | null, flags: TlsDatabaseLookupFlags, cancellable: Cancellable | null, callback: AsyncReadyCallback<this> | null): void;
 
         /**
          * Finish an asynchronous lookup of a certificate by its handle. See
@@ -44122,7 +44033,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable a {@link Gio.Cancellable}, or `null`
          * @virtual
          */
-        vfunc_lookup_certificate_issuer(certificate: TlsCertificate, interaction: (TlsInteraction | null), flags: TlsDatabaseLookupFlags, cancellable: (Cancellable | null)): TlsCertificate;
+        vfunc_lookup_certificate_issuer(certificate: TlsCertificate, interaction: TlsInteraction | null, flags: TlsDatabaseLookupFlags, cancellable: Cancellable | null): TlsCertificate;
 
         /**
          * Asynchronously look up the issuer of `certificate` in the database. See
@@ -44134,7 +44045,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param callback callback to call when the operation completes
          * @virtual
          */
-        vfunc_lookup_certificate_issuer_async(certificate: TlsCertificate, interaction: (TlsInteraction | null), flags: TlsDatabaseLookupFlags, cancellable: (Cancellable | null), callback: (AsyncReadyCallback<this> | null)): void;
+        vfunc_lookup_certificate_issuer_async(certificate: TlsCertificate, interaction: TlsInteraction | null, flags: TlsDatabaseLookupFlags, cancellable: Cancellable | null, callback: AsyncReadyCallback<this> | null): void;
 
         /**
          * Finish an asynchronous lookup issuer operation. See
@@ -44155,7 +44066,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable a {@link Gio.Cancellable}, or `null`
          * @virtual
          */
-        vfunc_lookup_certificates_issued_by(issuer_raw_dn: Uint8Array, interaction: (TlsInteraction | null), flags: TlsDatabaseLookupFlags, cancellable: (Cancellable | null)): TlsCertificate[];
+        vfunc_lookup_certificates_issued_by(issuer_raw_dn: Uint8Array, interaction: TlsInteraction | null, flags: TlsDatabaseLookupFlags, cancellable: Cancellable | null): TlsCertificate[];
 
         /**
          * Asynchronously look up certificates issued by this issuer in the database. See
@@ -44171,7 +44082,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param callback callback to call when the operation completes
          * @virtual
          */
-        vfunc_lookup_certificates_issued_by_async(issuer_raw_dn: Uint8Array, interaction: (TlsInteraction | null), flags: TlsDatabaseLookupFlags, cancellable: (Cancellable | null), callback: (AsyncReadyCallback<this> | null)): void;
+        vfunc_lookup_certificates_issued_by_async(issuer_raw_dn: Uint8Array, interaction: TlsInteraction | null, flags: TlsDatabaseLookupFlags, cancellable: Cancellable | null, callback: AsyncReadyCallback<this> | null): void;
 
         /**
          * Finish an asynchronous lookup of certificates. See
@@ -44250,7 +44161,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable a {@link Gio.Cancellable}, or `null`
          * @virtual
          */
-        vfunc_verify_chain(chain: TlsCertificate, purpose: string, identity: (SocketConnectable | null), interaction: (TlsInteraction | null), flags: TlsDatabaseVerifyFlags, cancellable: (Cancellable | null)): TlsCertificateFlags;
+        vfunc_verify_chain(chain: TlsCertificate, purpose: string, identity: SocketConnectable | null, interaction: TlsInteraction | null, flags: TlsDatabaseVerifyFlags, cancellable: Cancellable | null): TlsCertificateFlags;
 
         /**
          * Asynchronously determines the validity of a certificate chain after
@@ -44265,7 +44176,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param callback callback to call when the operation completes
          * @virtual
          */
-        vfunc_verify_chain_async(chain: TlsCertificate, purpose: string, identity: (SocketConnectable | null), interaction: (TlsInteraction | null), flags: TlsDatabaseVerifyFlags, cancellable: (Cancellable | null), callback: (AsyncReadyCallback<this> | null)): void;
+        vfunc_verify_chain_async(chain: TlsCertificate, purpose: string, identity: SocketConnectable | null, interaction: TlsInteraction | null, flags: TlsDatabaseVerifyFlags, cancellable: Cancellable | null, callback: AsyncReadyCallback<this> | null): void;
 
         /**
          * Finish an asynchronous verify chain operation. See
@@ -44297,7 +44208,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param certificate certificate for which to create a handle.
          * @returns a newly allocated string containing the handle.
          */
-        create_certificate_handle(certificate: TlsCertificate): (string | null);
+        create_certificate_handle(certificate: TlsCertificate): string | null;
 
         /**
          * Look up a certificate by its handle.
@@ -44318,7 +44229,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable a {@link Gio.Cancellable}, or `null`
          * @returns a newly allocated {@link Gio.TlsCertificate}, or `null`. Use `g_object_unref()` to release the certificate.
          */
-        lookup_certificate_for_handle(handle: string, interaction: (TlsInteraction | null), flags: TlsDatabaseLookupFlags, cancellable: (Cancellable | null)): (TlsCertificate | null);
+        lookup_certificate_for_handle(handle: string, interaction: TlsInteraction | null, flags: TlsDatabaseLookupFlags, cancellable: Cancellable | null): TlsCertificate | null;
 
         /**
          * Asynchronously look up a certificate by its handle in the database. See
@@ -44328,18 +44239,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param flags Flags which affect the lookup.
          * @param cancellable a {@link Gio.Cancellable}, or `null`
          */
-        lookup_certificate_for_handle_async(handle: string, interaction: (TlsInteraction | null), flags: TlsDatabaseLookupFlags, cancellable: (Cancellable | null)): globalThis.Promise<TlsCertificate>;
-
-        /**
-         * Asynchronously look up a certificate by its handle in the database. See
-         * `g_tls_database_lookup_certificate_for_handle()` for more information.
-         * @param handle a certificate handle
-         * @param interaction used to interact with the user if necessary
-         * @param flags Flags which affect the lookup.
-         * @param cancellable a {@link Gio.Cancellable}, or `null`
-         * @param callback callback to call when the operation completes
-         */
-        lookup_certificate_for_handle_async(handle: string, interaction: (TlsInteraction | null), flags: TlsDatabaseLookupFlags, cancellable: (Cancellable | null), callback: (AsyncReadyCallback<this> | null)): void;
+        lookup_certificate_for_handle_async(handle: string, interaction: TlsInteraction | null, flags: TlsDatabaseLookupFlags, cancellable: Cancellable | null): globalThis.Promise<TlsCertificate>;
 
         /**
          * Asynchronously look up a certificate by its handle in the database. See
@@ -44350,7 +44250,18 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable a {@link Gio.Cancellable}, or `null`
          * @param callback callback to call when the operation completes
          */
-        lookup_certificate_for_handle_async(handle: string, interaction: (TlsInteraction | null), flags: TlsDatabaseLookupFlags, cancellable: (Cancellable | null), callback?: (AsyncReadyCallback<this> | null)): (globalThis.Promise<TlsCertificate> | void);
+        lookup_certificate_for_handle_async(handle: string, interaction: TlsInteraction | null, flags: TlsDatabaseLookupFlags, cancellable: Cancellable | null, callback: AsyncReadyCallback<this> | null): void;
+
+        /**
+         * Asynchronously look up a certificate by its handle in the database. See
+         * `g_tls_database_lookup_certificate_for_handle()` for more information.
+         * @param handle a certificate handle
+         * @param interaction used to interact with the user if necessary
+         * @param flags Flags which affect the lookup.
+         * @param cancellable a {@link Gio.Cancellable}, or `null`
+         * @param callback callback to call when the operation completes
+         */
+        lookup_certificate_for_handle_async(handle: string, interaction: TlsInteraction | null, flags: TlsDatabaseLookupFlags, cancellable: Cancellable | null, callback?: AsyncReadyCallback<this> | null): globalThis.Promise<TlsCertificate> | void;
 
         /**
          * Finish an asynchronous lookup of a certificate by its handle. See
@@ -44390,7 +44301,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable a {@link Gio.Cancellable}, or `null`
          * @returns a newly allocated issuer {@link Gio.TlsCertificate}, or `null`. Use `g_object_unref()` to release the certificate.
          */
-        lookup_certificate_issuer(certificate: TlsCertificate, interaction: (TlsInteraction | null), flags: TlsDatabaseLookupFlags, cancellable: (Cancellable | null)): TlsCertificate;
+        lookup_certificate_issuer(certificate: TlsCertificate, interaction: TlsInteraction | null, flags: TlsDatabaseLookupFlags, cancellable: Cancellable | null): TlsCertificate;
 
         /**
          * Asynchronously look up the issuer of `certificate` in the database. See
@@ -44400,18 +44311,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param flags flags which affect the lookup operation
          * @param cancellable a {@link Gio.Cancellable}, or `null`
          */
-        lookup_certificate_issuer_async(certificate: TlsCertificate, interaction: (TlsInteraction | null), flags: TlsDatabaseLookupFlags, cancellable: (Cancellable | null)): globalThis.Promise<TlsCertificate>;
-
-        /**
-         * Asynchronously look up the issuer of `certificate` in the database. See
-         * `g_tls_database_lookup_certificate_issuer()` for more information.
-         * @param certificate a {@link Gio.TlsCertificate}
-         * @param interaction used to interact with the user if necessary
-         * @param flags flags which affect the lookup operation
-         * @param cancellable a {@link Gio.Cancellable}, or `null`
-         * @param callback callback to call when the operation completes
-         */
-        lookup_certificate_issuer_async(certificate: TlsCertificate, interaction: (TlsInteraction | null), flags: TlsDatabaseLookupFlags, cancellable: (Cancellable | null), callback: (AsyncReadyCallback<this> | null)): void;
+        lookup_certificate_issuer_async(certificate: TlsCertificate, interaction: TlsInteraction | null, flags: TlsDatabaseLookupFlags, cancellable: Cancellable | null): globalThis.Promise<TlsCertificate>;
 
         /**
          * Asynchronously look up the issuer of `certificate` in the database. See
@@ -44422,7 +44322,18 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable a {@link Gio.Cancellable}, or `null`
          * @param callback callback to call when the operation completes
          */
-        lookup_certificate_issuer_async(certificate: TlsCertificate, interaction: (TlsInteraction | null), flags: TlsDatabaseLookupFlags, cancellable: (Cancellable | null), callback?: (AsyncReadyCallback<this> | null)): (globalThis.Promise<TlsCertificate> | void);
+        lookup_certificate_issuer_async(certificate: TlsCertificate, interaction: TlsInteraction | null, flags: TlsDatabaseLookupFlags, cancellable: Cancellable | null, callback: AsyncReadyCallback<this> | null): void;
+
+        /**
+         * Asynchronously look up the issuer of `certificate` in the database. See
+         * `g_tls_database_lookup_certificate_issuer()` for more information.
+         * @param certificate a {@link Gio.TlsCertificate}
+         * @param interaction used to interact with the user if necessary
+         * @param flags flags which affect the lookup operation
+         * @param cancellable a {@link Gio.Cancellable}, or `null`
+         * @param callback callback to call when the operation completes
+         */
+        lookup_certificate_issuer_async(certificate: TlsCertificate, interaction: TlsInteraction | null, flags: TlsDatabaseLookupFlags, cancellable: Cancellable | null, callback?: AsyncReadyCallback<this> | null): globalThis.Promise<TlsCertificate> | void;
 
         /**
          * Finish an asynchronous lookup issuer operation. See
@@ -44443,7 +44354,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable a {@link Gio.Cancellable}, or `null`
          * @returns a newly allocated list of {@link Gio.TlsCertificate} objects. Use `g_object_unref()` on each certificate, and `g_list_free()` on the release the list.
          */
-        lookup_certificates_issued_by(issuer_raw_dn: (Uint8Array | string), interaction: (TlsInteraction | null), flags: TlsDatabaseLookupFlags, cancellable: (Cancellable | null)): TlsCertificate[];
+        lookup_certificates_issued_by(issuer_raw_dn: Uint8Array | string, interaction: TlsInteraction | null, flags: TlsDatabaseLookupFlags, cancellable: Cancellable | null): TlsCertificate[];
 
         /**
          * Asynchronously look up certificates issued by this issuer in the database. See
@@ -44457,22 +44368,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param flags Flags which affect the lookup operation.
          * @param cancellable a {@link Gio.Cancellable}, or `null`
          */
-        lookup_certificates_issued_by_async(issuer_raw_dn: (Uint8Array | string), interaction: (TlsInteraction | null), flags: TlsDatabaseLookupFlags, cancellable: (Cancellable | null)): globalThis.Promise<TlsCertificate[]>;
-
-        /**
-         * Asynchronously look up certificates issued by this issuer in the database. See
-         * `g_tls_database_lookup_certificates_issued_by()` for more information.
-         * 
-         * The database may choose to hold a reference to the issuer byte array for the duration
-         * of this asynchronous operation. The byte array should not be modified during
-         * this time.
-         * @param issuer_raw_dn a {@link GLib.ByteArray} which holds the DER encoded issuer DN.
-         * @param interaction used to interact with the user if necessary
-         * @param flags Flags which affect the lookup operation.
-         * @param cancellable a {@link Gio.Cancellable}, or `null`
-         * @param callback callback to call when the operation completes
-         */
-        lookup_certificates_issued_by_async(issuer_raw_dn: (Uint8Array | string), interaction: (TlsInteraction | null), flags: TlsDatabaseLookupFlags, cancellable: (Cancellable | null), callback: (AsyncReadyCallback<this> | null)): void;
+        lookup_certificates_issued_by_async(issuer_raw_dn: Uint8Array | string, interaction: TlsInteraction | null, flags: TlsDatabaseLookupFlags, cancellable: Cancellable | null): globalThis.Promise<TlsCertificate[]>;
 
         /**
          * Asynchronously look up certificates issued by this issuer in the database. See
@@ -44487,7 +44383,22 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable a {@link Gio.Cancellable}, or `null`
          * @param callback callback to call when the operation completes
          */
-        lookup_certificates_issued_by_async(issuer_raw_dn: (Uint8Array | string), interaction: (TlsInteraction | null), flags: TlsDatabaseLookupFlags, cancellable: (Cancellable | null), callback?: (AsyncReadyCallback<this> | null)): (globalThis.Promise<TlsCertificate[]> | void);
+        lookup_certificates_issued_by_async(issuer_raw_dn: Uint8Array | string, interaction: TlsInteraction | null, flags: TlsDatabaseLookupFlags, cancellable: Cancellable | null, callback: AsyncReadyCallback<this> | null): void;
+
+        /**
+         * Asynchronously look up certificates issued by this issuer in the database. See
+         * `g_tls_database_lookup_certificates_issued_by()` for more information.
+         * 
+         * The database may choose to hold a reference to the issuer byte array for the duration
+         * of this asynchronous operation. The byte array should not be modified during
+         * this time.
+         * @param issuer_raw_dn a {@link GLib.ByteArray} which holds the DER encoded issuer DN.
+         * @param interaction used to interact with the user if necessary
+         * @param flags Flags which affect the lookup operation.
+         * @param cancellable a {@link Gio.Cancellable}, or `null`
+         * @param callback callback to call when the operation completes
+         */
+        lookup_certificates_issued_by_async(issuer_raw_dn: Uint8Array | string, interaction: TlsInteraction | null, flags: TlsDatabaseLookupFlags, cancellable: Cancellable | null, callback?: AsyncReadyCallback<this> | null): globalThis.Promise<TlsCertificate[]> | void;
 
         /**
          * Finish an asynchronous lookup of certificates. See
@@ -44566,7 +44477,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable a {@link Gio.Cancellable}, or `null`
          * @returns the appropriate {@link Gio.TlsCertificateFlags} which represents the result of verification.
          */
-        verify_chain(chain: TlsCertificate, purpose: string, identity: (SocketConnectable | null), interaction: (TlsInteraction | null), flags: TlsDatabaseVerifyFlags, cancellable: (Cancellable | null)): TlsCertificateFlags;
+        verify_chain(chain: TlsCertificate, purpose: string, identity: SocketConnectable | null, interaction: TlsInteraction | null, flags: TlsDatabaseVerifyFlags, cancellable: Cancellable | null): TlsCertificateFlags;
 
         /**
          * Asynchronously determines the validity of a certificate chain after
@@ -44579,21 +44490,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param flags additional verify flags
          * @param cancellable a {@link Gio.Cancellable}, or `null`
          */
-        verify_chain_async(chain: TlsCertificate, purpose: string, identity: (SocketConnectable | null), interaction: (TlsInteraction | null), flags: TlsDatabaseVerifyFlags, cancellable: (Cancellable | null)): globalThis.Promise<TlsCertificateFlags>;
-
-        /**
-         * Asynchronously determines the validity of a certificate chain after
-         * looking up and adding any missing certificates to the chain. See
-         * `g_tls_database_verify_chain()` for more information.
-         * @param chain a {@link Gio.TlsCertificate} chain
-         * @param purpose the purpose that this certificate chain will be used for.
-         * @param identity the expected peer identity
-         * @param interaction used to interact with the user if necessary
-         * @param flags additional verify flags
-         * @param cancellable a {@link Gio.Cancellable}, or `null`
-         * @param callback callback to call when the operation completes
-         */
-        verify_chain_async(chain: TlsCertificate, purpose: string, identity: (SocketConnectable | null), interaction: (TlsInteraction | null), flags: TlsDatabaseVerifyFlags, cancellable: (Cancellable | null), callback: (AsyncReadyCallback<this> | null)): void;
+        verify_chain_async(chain: TlsCertificate, purpose: string, identity: SocketConnectable | null, interaction: TlsInteraction | null, flags: TlsDatabaseVerifyFlags, cancellable: Cancellable | null): globalThis.Promise<TlsCertificateFlags>;
 
         /**
          * Asynchronously determines the validity of a certificate chain after
@@ -44607,7 +44504,21 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable a {@link Gio.Cancellable}, or `null`
          * @param callback callback to call when the operation completes
          */
-        verify_chain_async(chain: TlsCertificate, purpose: string, identity: (SocketConnectable | null), interaction: (TlsInteraction | null), flags: TlsDatabaseVerifyFlags, cancellable: (Cancellable | null), callback?: (AsyncReadyCallback<this> | null)): (globalThis.Promise<TlsCertificateFlags> | void);
+        verify_chain_async(chain: TlsCertificate, purpose: string, identity: SocketConnectable | null, interaction: TlsInteraction | null, flags: TlsDatabaseVerifyFlags, cancellable: Cancellable | null, callback: AsyncReadyCallback<this> | null): void;
+
+        /**
+         * Asynchronously determines the validity of a certificate chain after
+         * looking up and adding any missing certificates to the chain. See
+         * `g_tls_database_verify_chain()` for more information.
+         * @param chain a {@link Gio.TlsCertificate} chain
+         * @param purpose the purpose that this certificate chain will be used for.
+         * @param identity the expected peer identity
+         * @param interaction used to interact with the user if necessary
+         * @param flags additional verify flags
+         * @param cancellable a {@link Gio.Cancellable}, or `null`
+         * @param callback callback to call when the operation completes
+         */
+        verify_chain_async(chain: TlsCertificate, purpose: string, identity: SocketConnectable | null, interaction: TlsInteraction | null, flags: TlsDatabaseVerifyFlags, cancellable: Cancellable | null, callback?: AsyncReadyCallback<this> | null): globalThis.Promise<TlsCertificateFlags> | void;
 
         /**
          * Finish an asynchronous verify chain operation. See
@@ -44630,13 +44541,10 @@ export const _LocalFilePrototype: typeof File.prototype;
 
     namespace TlsInteraction {
         // Signal signatures
-        interface SignalSignatures extends GObject.Object.SignalSignatures {
-        }
+        interface SignalSignatures extends GObject.Object.SignalSignatures {}
 
         // Constructor properties interface
-        interface ConstructorProps extends GObject.Object.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GObject.Object.ConstructorProps {}
     }
 
     /**
@@ -44712,7 +44620,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable an optional {@link Gio.Cancellable} cancellation object
          * @virtual
          */
-        vfunc_ask_password(password: TlsPassword, cancellable: (Cancellable | null)): TlsInteractionResult;
+        vfunc_ask_password(password: TlsPassword, cancellable: Cancellable | null): TlsInteractionResult;
 
         /**
          * Run asynchronous interaction to ask the user for a password. In general,
@@ -44735,7 +44643,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param callback will be called when the interaction completes
          * @virtual
          */
-        vfunc_ask_password_async(password: TlsPassword, cancellable: (Cancellable | null), callback: (AsyncReadyCallback<this> | null)): void;
+        vfunc_ask_password_async(password: TlsPassword, cancellable: Cancellable | null, callback: AsyncReadyCallback<this> | null): void;
 
         /**
          * Complete an ask password user interaction request. This should be once
@@ -44774,7 +44682,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable an optional {@link Gio.Cancellable} cancellation object
          * @virtual
          */
-        vfunc_request_certificate(connection: TlsConnection, flags: TlsCertificateRequestFlags, cancellable: (Cancellable | null)): TlsInteractionResult;
+        vfunc_request_certificate(connection: TlsConnection, flags: TlsCertificateRequestFlags, cancellable: Cancellable | null): TlsInteractionResult;
 
         /**
          * Run asynchronous interaction to ask the user for a certificate to use with
@@ -44791,7 +44699,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param callback will be called when the interaction completes
          * @virtual
          */
-        vfunc_request_certificate_async(connection: TlsConnection, flags: TlsCertificateRequestFlags, cancellable: (Cancellable | null), callback: (AsyncReadyCallback<this> | null)): void;
+        vfunc_request_certificate_async(connection: TlsConnection, flags: TlsCertificateRequestFlags, cancellable: Cancellable | null, callback: AsyncReadyCallback<this> | null): void;
 
         /**
          * Complete a request certificate user interaction request. This should be once
@@ -44828,7 +44736,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable an optional {@link Gio.Cancellable} cancellation object
          * @returns The status of the ask password interaction.
          */
-        ask_password(password: TlsPassword, cancellable: (Cancellable | null)): TlsInteractionResult;
+        ask_password(password: TlsPassword, cancellable: Cancellable | null): TlsInteractionResult;
 
         /**
          * Run asynchronous interaction to ask the user for a password. In general,
@@ -44849,29 +44757,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param password a {@link Gio.TlsPassword} object
          * @param cancellable an optional {@link Gio.Cancellable} cancellation object
          */
-        ask_password_async(password: TlsPassword, cancellable: (Cancellable | null)): globalThis.Promise<TlsInteractionResult>;
-
-        /**
-         * Run asynchronous interaction to ask the user for a password. In general,
-         * `g_tls_interaction_invoke_ask_password()` should be used instead of this
-         * function.
-         * 
-         * Derived subclasses usually implement a password prompt, although they may
-         * also choose to provide a password from elsewhere. The `password` value will
-         * be filled in and then `callback` will be called. Alternatively the user may
-         * abort this password request, which will usually abort the TLS connection.
-         * 
-         * If the interaction is cancelled by the cancellation object, or by the
-         * user then {@link Gio.TlsInteractionResult.FAILED} will be returned with an error that
-         * contains a {@link Gio.IOErrorEnum.CANCELLED} error code. Certain implementations may
-         * not support immediate cancellation.
-         * 
-         * Certain implementations may not support immediate cancellation.
-         * @param password a {@link Gio.TlsPassword} object
-         * @param cancellable an optional {@link Gio.Cancellable} cancellation object
-         * @param callback will be called when the interaction completes
-         */
-        ask_password_async(password: TlsPassword, cancellable: (Cancellable | null), callback: (AsyncReadyCallback<this> | null)): void;
+        ask_password_async(password: TlsPassword, cancellable: Cancellable | null): globalThis.Promise<TlsInteractionResult>;
 
         /**
          * Run asynchronous interaction to ask the user for a password. In general,
@@ -44893,7 +44779,29 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable an optional {@link Gio.Cancellable} cancellation object
          * @param callback will be called when the interaction completes
          */
-        ask_password_async(password: TlsPassword, cancellable: (Cancellable | null), callback?: (AsyncReadyCallback<this> | null)): (globalThis.Promise<TlsInteractionResult> | void);
+        ask_password_async(password: TlsPassword, cancellable: Cancellable | null, callback: AsyncReadyCallback<this> | null): void;
+
+        /**
+         * Run asynchronous interaction to ask the user for a password. In general,
+         * `g_tls_interaction_invoke_ask_password()` should be used instead of this
+         * function.
+         * 
+         * Derived subclasses usually implement a password prompt, although they may
+         * also choose to provide a password from elsewhere. The `password` value will
+         * be filled in and then `callback` will be called. Alternatively the user may
+         * abort this password request, which will usually abort the TLS connection.
+         * 
+         * If the interaction is cancelled by the cancellation object, or by the
+         * user then {@link Gio.TlsInteractionResult.FAILED} will be returned with an error that
+         * contains a {@link Gio.IOErrorEnum.CANCELLED} error code. Certain implementations may
+         * not support immediate cancellation.
+         * 
+         * Certain implementations may not support immediate cancellation.
+         * @param password a {@link Gio.TlsPassword} object
+         * @param cancellable an optional {@link Gio.Cancellable} cancellation object
+         * @param callback will be called when the interaction completes
+         */
+        ask_password_async(password: TlsPassword, cancellable: Cancellable | null, callback?: AsyncReadyCallback<this> | null): globalThis.Promise<TlsInteractionResult> | void;
 
         /**
          * Complete an ask password user interaction request. This should be once
@@ -44934,7 +44842,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable an optional {@link Gio.Cancellable} cancellation object
          * @returns The status of the ask password interaction.
          */
-        invoke_ask_password(password: TlsPassword, cancellable: (Cancellable | null)): TlsInteractionResult;
+        invoke_ask_password(password: TlsPassword, cancellable: Cancellable | null): TlsInteractionResult;
 
         /**
          * Invoke the interaction to ask the user to choose a certificate to
@@ -44962,7 +44870,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable an optional {@link Gio.Cancellable} cancellation object
          * @returns The status of the certificate request interaction.
          */
-        invoke_request_certificate(connection: TlsConnection, flags: TlsCertificateRequestFlags, cancellable: (Cancellable | null)): TlsInteractionResult;
+        invoke_request_certificate(connection: TlsConnection, flags: TlsCertificateRequestFlags, cancellable: Cancellable | null): TlsInteractionResult;
 
         /**
          * Run synchronous interaction to ask the user to choose a certificate to use
@@ -44986,7 +44894,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable an optional {@link Gio.Cancellable} cancellation object
          * @returns The status of the request certificate interaction.
          */
-        request_certificate(connection: TlsConnection, flags: TlsCertificateRequestFlags, cancellable: (Cancellable | null)): TlsInteractionResult;
+        request_certificate(connection: TlsConnection, flags: TlsCertificateRequestFlags, cancellable: Cancellable | null): TlsInteractionResult;
 
         /**
          * Run asynchronous interaction to ask the user for a certificate to use with
@@ -45001,23 +44909,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param flags flags providing more information about the request
          * @param cancellable an optional {@link Gio.Cancellable} cancellation object
          */
-        request_certificate_async(connection: TlsConnection, flags: TlsCertificateRequestFlags, cancellable: (Cancellable | null)): globalThis.Promise<TlsInteractionResult>;
-
-        /**
-         * Run asynchronous interaction to ask the user for a certificate to use with
-         * the connection. In general, `g_tls_interaction_invoke_request_certificate()` should
-         * be used instead of this function.
-         * 
-         * Derived subclasses usually implement a certificate selector, although they may
-         * also choose to provide a certificate from elsewhere. `callback` will be called
-         * when the operation completes. Alternatively the user may abort this certificate
-         * request, which will usually abort the TLS connection.
-         * @param connection a {@link Gio.TlsConnection} object
-         * @param flags flags providing more information about the request
-         * @param cancellable an optional {@link Gio.Cancellable} cancellation object
-         * @param callback will be called when the interaction completes
-         */
-        request_certificate_async(connection: TlsConnection, flags: TlsCertificateRequestFlags, cancellable: (Cancellable | null), callback: (AsyncReadyCallback<this> | null)): void;
+        request_certificate_async(connection: TlsConnection, flags: TlsCertificateRequestFlags, cancellable: Cancellable | null): globalThis.Promise<TlsInteractionResult>;
 
         /**
          * Run asynchronous interaction to ask the user for a certificate to use with
@@ -45033,7 +44925,23 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable an optional {@link Gio.Cancellable} cancellation object
          * @param callback will be called when the interaction completes
          */
-        request_certificate_async(connection: TlsConnection, flags: TlsCertificateRequestFlags, cancellable: (Cancellable | null), callback?: (AsyncReadyCallback<this> | null)): (globalThis.Promise<TlsInteractionResult> | void);
+        request_certificate_async(connection: TlsConnection, flags: TlsCertificateRequestFlags, cancellable: Cancellable | null, callback: AsyncReadyCallback<this> | null): void;
+
+        /**
+         * Run asynchronous interaction to ask the user for a certificate to use with
+         * the connection. In general, `g_tls_interaction_invoke_request_certificate()` should
+         * be used instead of this function.
+         * 
+         * Derived subclasses usually implement a certificate selector, although they may
+         * also choose to provide a certificate from elsewhere. `callback` will be called
+         * when the operation completes. Alternatively the user may abort this certificate
+         * request, which will usually abort the TLS connection.
+         * @param connection a {@link Gio.TlsConnection} object
+         * @param flags flags providing more information about the request
+         * @param cancellable an optional {@link Gio.Cancellable} cancellation object
+         * @param callback will be called when the interaction completes
+         */
+        request_certificate_async(connection: TlsConnection, flags: TlsCertificateRequestFlags, cancellable: Cancellable | null, callback?: AsyncReadyCallback<this> | null): globalThis.Promise<TlsInteractionResult> | void;
 
         /**
          * Complete a request certificate user interaction request. This should be once
@@ -45148,7 +45056,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * certain fixed length.)
          * @virtual
          */
-        vfunc_get_value(): (Uint8Array | string);
+        vfunc_get_value(): Uint8Array | string;
 
         /**
          * Provide the value for this password.
@@ -45218,7 +45126,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * considered part of the password in this case.)
          * @param value the new password value
          */
-        set_value(value: (Uint8Array | string)): void;
+        set_value(value: Uint8Array | string): void;
 
         /**
          * Provide the value for this password.
@@ -45232,7 +45140,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * considered part of the password in this case.)
          * @param value the value for the password
          */
-        set_value_full(value: (Uint8Array | string)): void;
+        set_value_full(value: Uint8Array | string): void;
 
         /**
          * Set a user readable translated warning. Usually this warning is a
@@ -45254,9 +45162,7 @@ export const _LocalFilePrototype: typeof File.prototype;
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends SocketConnection.ConstructorProps {
-
-        }
+        interface ConstructorProps extends SocketConnection.ConstructorProps {}
     }
 
     /**
@@ -45324,7 +45230,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable A {@link Gio.Cancellable} or `null`.
          * @returns Received credentials on success (free with `g_object_unref()`), `null` if `error` is set.
          */
-        receive_credentials(cancellable: (Cancellable | null)): Credentials;
+        receive_credentials(cancellable: Cancellable | null): Credentials;
 
         /**
          * Asynchronously receive credentials.
@@ -45336,20 +45242,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * `g_unix_connection_receive_credentials_finish()` to get the result of the operation.
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          */
-        receive_credentials_async(cancellable: (Cancellable | null)): globalThis.Promise<Credentials>;
-
-        /**
-         * Asynchronously receive credentials.
-         * 
-         * For more details, see `g_unix_connection_receive_credentials()` which is
-         * the synchronous version of this call.
-         * 
-         * When the operation is finished, `callback` will be called. You can then call
-         * `g_unix_connection_receive_credentials_finish()` to get the result of the operation.
-         * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
-         * @param callback a {@link Gio.AsyncReadyCallback}   to call when the request is satisfied
-         */
-        receive_credentials_async(cancellable: (Cancellable | null), callback: (AsyncReadyCallback<this> | null)): void;
+        receive_credentials_async(cancellable: Cancellable | null): globalThis.Promise<Credentials>;
 
         /**
          * Asynchronously receive credentials.
@@ -45362,7 +45255,20 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          * @param callback a {@link Gio.AsyncReadyCallback}   to call when the request is satisfied
          */
-        receive_credentials_async(cancellable: (Cancellable | null), callback?: (AsyncReadyCallback<this> | null)): (globalThis.Promise<Credentials> | void);
+        receive_credentials_async(cancellable: Cancellable | null, callback: AsyncReadyCallback<this> | null): void;
+
+        /**
+         * Asynchronously receive credentials.
+         * 
+         * For more details, see `g_unix_connection_receive_credentials()` which is
+         * the synchronous version of this call.
+         * 
+         * When the operation is finished, `callback` will be called. You can then call
+         * `g_unix_connection_receive_credentials_finish()` to get the result of the operation.
+         * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
+         * @param callback a {@link Gio.AsyncReadyCallback}   to call when the request is satisfied
+         */
+        receive_credentials_async(cancellable: Cancellable | null, callback?: AsyncReadyCallback<this> | null): globalThis.Promise<Credentials> | void;
 
         /**
          * Finishes an asynchronous receive credentials operation started with
@@ -45383,7 +45289,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore
          * @returns a file descriptor on success, -1 on error.
          */
-        receive_fd(cancellable: (Cancellable | null)): number;
+        receive_fd(cancellable: Cancellable | null): number;
 
         /**
          * Passes the credentials of the current user the receiving side
@@ -45408,7 +45314,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable A {@link Gio.Cancellable} or `null`.
          * @returns `true` on success, `false` if `error` is set.
          */
-        send_credentials(cancellable: (Cancellable | null)): boolean;
+        send_credentials(cancellable: Cancellable | null): boolean;
 
         /**
          * Asynchronously send credentials.
@@ -45420,20 +45326,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * `g_unix_connection_send_credentials_finish()` to get the result of the operation.
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          */
-        send_credentials_async(cancellable: (Cancellable | null)): globalThis.Promise<boolean>;
-
-        /**
-         * Asynchronously send credentials.
-         * 
-         * For more details, see `g_unix_connection_send_credentials()` which is
-         * the synchronous version of this call.
-         * 
-         * When the operation is finished, `callback` will be called. You can then call
-         * `g_unix_connection_send_credentials_finish()` to get the result of the operation.
-         * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
-         * @param callback a {@link Gio.AsyncReadyCallback}   to call when the request is satisfied
-         */
-        send_credentials_async(cancellable: (Cancellable | null), callback: (AsyncReadyCallback<this> | null)): void;
+        send_credentials_async(cancellable: Cancellable | null): globalThis.Promise<boolean>;
 
         /**
          * Asynchronously send credentials.
@@ -45446,7 +45339,20 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          * @param callback a {@link Gio.AsyncReadyCallback}   to call when the request is satisfied
          */
-        send_credentials_async(cancellable: (Cancellable | null), callback?: (AsyncReadyCallback<this> | null)): (globalThis.Promise<boolean> | void);
+        send_credentials_async(cancellable: Cancellable | null, callback: AsyncReadyCallback<this> | null): void;
+
+        /**
+         * Asynchronously send credentials.
+         * 
+         * For more details, see `g_unix_connection_send_credentials()` which is
+         * the synchronous version of this call.
+         * 
+         * When the operation is finished, `callback` will be called. You can then call
+         * `g_unix_connection_send_credentials_finish()` to get the result of the operation.
+         * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
+         * @param callback a {@link Gio.AsyncReadyCallback}   to call when the request is satisfied
+         */
+        send_credentials_async(cancellable: Cancellable | null, callback?: AsyncReadyCallback<this> | null): globalThis.Promise<boolean> | void;
 
         /**
          * Finishes an asynchronous send credentials operation started with
@@ -45468,7 +45374,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          * @returns a `true` on success, `null` on error.
          */
-        send_fd(fd: number, cancellable: (Cancellable | null)): boolean;
+        send_fd(fd: number, cancellable: Cancellable | null): boolean;
     }
 
 
@@ -45566,13 +45472,10 @@ export const _LocalFilePrototype: typeof File.prototype;
 
     namespace UnixFDList {
         // Signal signatures
-        interface SignalSignatures extends GObject.Object.SignalSignatures {
-        }
+        interface SignalSignatures extends GObject.Object.SignalSignatures {}
 
         // Constructor properties interface
-        interface ConstructorProps extends GObject.Object.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GObject.Object.ConstructorProps {}
     }
 
     /**
@@ -45976,7 +45879,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable a {@link Gio.Cancellable}, or `null`
          * @returns a new {@link GLib.Source}
          */
-        create_source(cancellable: (Cancellable | null)): GLib.Source;
+        create_source(cancellable: Cancellable | null): GLib.Source;
 
         /**
          * Checks if `stream` can be read.
@@ -46012,7 +45915,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable a {@link Gio.Cancellable}, or `null`
          * @returns the number of bytes read, or -1 on error (including   {@link Gio.IOErrorEnum.WOULD_BLOCK}).
          */
-        read_nonblocking(cancellable: (Cancellable | null)): [number, Uint8Array];
+        read_nonblocking(cancellable: Cancellable | null): [number, Uint8Array];
 
         /**
          * Checks if `stream` is actually pollable. Some classes may implement
@@ -46041,7 +45944,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable a {@link Gio.Cancellable}, or `null`
          * @virtual
          */
-        vfunc_create_source(cancellable: (Cancellable | null)): GLib.Source;
+        vfunc_create_source(cancellable: Cancellable | null): GLib.Source;
 
         /**
          * Checks if `stream` can be read.
@@ -46076,7 +45979,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * `g_pollable_input_stream_can_poll()` returns `false` for `stream`.
          * @virtual
          */
-        vfunc_read_nonblocking(): [(bigint | number), Uint8Array | null];
+        vfunc_read_nonblocking(): [bigint | number, Uint8Array | null];
     }
 
 
@@ -46098,9 +46001,7 @@ export const _LocalFilePrototype: typeof File.prototype;
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends GObject.Object.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GObject.Object.ConstructorProps {}
     }
 
     /**
@@ -46313,7 +46214,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable a {@link Gio.Cancellable}, or `null`
          * @returns a new {@link GLib.Source}
          */
-        create_source(cancellable: (Cancellable | null)): GLib.Source;
+        create_source(cancellable: Cancellable | null): GLib.Source;
 
         /**
          * Checks if `stream` can be written.
@@ -46354,7 +46255,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable a {@link Gio.Cancellable}, or `null`
          * @returns the number of bytes written, or -1 on error (including   {@link Gio.IOErrorEnum.WOULD_BLOCK}).
          */
-        write_nonblocking(buffer: (Uint8Array | string), cancellable: (Cancellable | null)): number;
+        write_nonblocking(buffer: Uint8Array | string, cancellable: Cancellable | null): number;
 
         /**
          * Attempts to write the bytes contained in the `n_vectors` `vectors` to `stream`,
@@ -46380,7 +46281,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable a {@link Gio.Cancellable}, or `null`
          * @returns %`G_POLLABLE_RETURN_OK` on success, {@link Gio.PollableReturn.WOULD_BLOCK} if the stream is not currently writable (and `error` is *not* set), or {@link Gio.PollableReturn.FAILED} if there was an error in which case `error` will be set.
          */
-        writev_nonblocking(vectors: OutputVector[], cancellable: (Cancellable | null)): [PollableReturn, number];
+        writev_nonblocking(vectors: OutputVector[], cancellable: Cancellable | null): [PollableReturn, number];
 
         /**
          * Checks if `stream` is actually pollable. Some classes may implement
@@ -46409,7 +46310,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable a {@link Gio.Cancellable}, or `null`
          * @virtual
          */
-        vfunc_create_source(cancellable: (Cancellable | null)): GLib.Source;
+        vfunc_create_source(cancellable: Cancellable | null): GLib.Source;
 
         /**
          * Checks if `stream` can be written.
@@ -46449,7 +46350,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param buffer a buffer to write     data from
          * @virtual
          */
-        vfunc_write_nonblocking(buffer: (Uint8Array | null)): (bigint | number);
+        vfunc_write_nonblocking(buffer: Uint8Array | null): bigint | number;
 
         /**
          * Attempts to write the bytes contained in the `n_vectors` `vectors` to `stream`,
@@ -46494,8 +46395,8 @@ export const _LocalFilePrototype: typeof File.prototype;
             address_type: UnixSocketAddressType;
             addressType: UnixSocketAddressType;
             path: string;
-            path_as_array: (Uint8Array | string);
-            pathAsArray: (Uint8Array | string);
+            path_as_array: Uint8Array | string;
+            pathAsArray: Uint8Array | string;
         }
     }
 
@@ -46706,13 +46607,10 @@ export const _LocalFilePrototype: typeof File.prototype;
 
     namespace Vfs {
         // Signal signatures
-        interface SignalSignatures extends GObject.Object.SignalSignatures {
-        }
+        interface SignalSignatures extends GObject.Object.SignalSignatures {}
 
         // Constructor properties interface
-        interface ConstructorProps extends GObject.Object.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GObject.Object.ConstructorProps {}
     }
 
     /**
@@ -46806,7 +46704,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param extra_data 
          * @virtual
          */
-        vfunc_local_file_add_info(filename: string, device: number, attribute_matcher: FileAttributeMatcher, info: FileInfo, cancellable: (Cancellable | null), extra_data: null): void;
+        vfunc_local_file_add_info(filename: string, device: number, attribute_matcher: FileAttributeMatcher, info: FileInfo, cancellable: Cancellable | null, extra_data: null): void;
 
         /**
          * @param source 
@@ -46828,7 +46726,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable 
          * @virtual
          */
-        vfunc_local_file_set_attributes(filename: string, info: FileInfo, flags: FileQueryInfoFlags, cancellable: (Cancellable | null)): boolean;
+        vfunc_local_file_set_attributes(filename: string, info: FileInfo, flags: FileQueryInfoFlags, cancellable: Cancellable | null): boolean;
 
         /**
          * This operation never fails, but the returned object might
@@ -46905,7 +46803,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param parse_name_func a {@link Gio.VfsFileLookupFunc}
          * @returns `true` if `scheme` was successfully registered, or `false` if a handler     for `scheme` already exists.
          */
-        register_uri_scheme(scheme: string, uri_func: (VfsFileLookupFunc | null), parse_name_func: (VfsFileLookupFunc | null)): boolean;
+        register_uri_scheme(scheme: string, uri_func: VfsFileLookupFunc | null, parse_name_func: VfsFileLookupFunc | null): boolean;
 
         /**
          * Unregisters the URI handler for `scheme` previously registered with
@@ -47000,9 +46898,7 @@ export const _LocalFilePrototype: typeof File.prototype;
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends GObject.Object.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GObject.Object.ConstructorProps {}
     }
 
     /**
@@ -47133,7 +47029,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param uuid the UUID to look for
          * @virtual
          */
-        vfunc_get_mount_for_uuid(uuid: string): (Mount | null);
+        vfunc_get_mount_for_uuid(uuid: string): Mount | null;
 
         /**
          * Gets a list of the mounts on the system.
@@ -47149,7 +47045,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param uuid the UUID to look for
          * @virtual
          */
-        vfunc_get_volume_for_uuid(uuid: string): (Volume | null);
+        vfunc_get_volume_for_uuid(uuid: string): Volume | null;
 
         /**
          * Gets a list of the volumes on the system.
@@ -47217,7 +47113,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param uuid the UUID to look for
          * @returns a {@link Gio.Mount} or `null` if no such mount is available.     Free the returned object with `g_object_unref()`.
          */
-        get_mount_for_uuid(uuid: string): (Mount | null);
+        get_mount_for_uuid(uuid: string): Mount | null;
 
         /**
          * Gets a list of the mounts on the system.
@@ -47233,7 +47129,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param uuid the UUID to look for
          * @returns a {@link Gio.Volume} or `null` if no such volume is available.     Free the returned object with `g_object_unref()`.
          */
-        get_volume_for_uuid(uuid: string): (Volume | null);
+        get_volume_for_uuid(uuid: string): Volume | null;
 
         /**
          * Gets a list of the volumes on the system.
@@ -47256,8 +47152,8 @@ export const _LocalFilePrototype: typeof File.prototype;
 
         // Constructor properties interface
         interface ConstructorProps extends GObject.Object.ConstructorProps, Converter.ConstructorProps {
-            file_info: (FileInfo | null);
-            fileInfo: (FileInfo | null);
+            file_info: FileInfo | null;
+            fileInfo: FileInfo | null;
             format: ZlibCompressorFormat;
             level: number;
         }
@@ -47278,8 +47174,8 @@ export const _LocalFilePrototype: typeof File.prototype;
          * and modification time from the file info to the GZIP header.
          * @since 2.26
          */
-        get file_info(): (FileInfo | null);
-        set file_info(val: (FileInfo | null));
+        get file_info(): FileInfo | null;
+        set file_info(val: FileInfo | null);
 
         /**
          * If set to a non-`null` {@link Gio.FileInfo} object, and {@link Gio.ZlibCompressor.format} is
@@ -47287,8 +47183,8 @@ export const _LocalFilePrototype: typeof File.prototype;
          * and modification time from the file info to the GZIP header.
          * @since 2.26
          */
-        get fileInfo(): (FileInfo | null);
-        set fileInfo(val: (FileInfo | null));
+        get fileInfo(): FileInfo | null;
+        set fileInfo(val: FileInfo | null);
 
         /**
          * The format of the compressed data.
@@ -47341,7 +47237,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * Returns the {@link Gio.ZlibCompressor.file_info} property.
          * @returns a {@link Gio.FileInfo}, or `null`
          */
-        get_file_info(): (FileInfo | null);
+        get_file_info(): FileInfo | null;
 
         /**
          * Sets `file_info` in `compressor`. If non-`null`, and `compressor`'s
@@ -47354,7 +47250,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * or after resetting it with `g_converter_reset()`.
          * @param file_info a {@link Gio.FileInfo}
          */
-        set_file_info(file_info: (FileInfo | null)): void;
+        set_file_info(file_info: FileInfo | null): void;
 
         /**
          * This is the main operation used when converting data. It is to be called
@@ -47444,14 +47340,14 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param flags a {@link Gio.ConverterFlags} controlling the conversion details
          * @returns a {@link Gio.ConverterResult}, {@link Gio.ConverterResult.ERROR} on error.
          */
-        convert(inbuf: (Uint8Array | string), outbuf: (Uint8Array | string), flags: ConverterFlags): [ConverterResult, number, number];
+        convert(inbuf: Uint8Array | string, outbuf: Uint8Array | string, flags: ConverterFlags): [ConverterResult, number, number];
 
         /**
          * Applies `converter` to the data in `bytes`.
          * @param bytes the data to convert
          * @returns A newly-allocated   {@link GLib.Bytes} with the converted data, or `NULL` if an error   occurred
          */
-        convert_bytes(bytes: (GLib.Bytes | Uint8Array)): GLib.Bytes;
+        convert_bytes(bytes: GLib.Bytes | Uint8Array): GLib.Bytes;
 
         /**
          * Resets all internal state in the converter, making it behave
@@ -47548,7 +47444,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param flags a {@link Gio.ConverterFlags} controlling the conversion details
          * @virtual
          */
-        vfunc_convert(inbuf: (Uint8Array | null), outbuf: Uint8Array, flags: ConverterFlags): [ConverterResult, bigint | number, bigint | number];
+        vfunc_convert(inbuf: Uint8Array | null, outbuf: Uint8Array, flags: ConverterFlags): [ConverterResult, bigint | number, bigint | number];
 
         /**
          * Resets all internal state in the converter, making it behave
@@ -47569,8 +47465,8 @@ export const _LocalFilePrototype: typeof File.prototype;
 
         // Constructor properties interface
         interface ConstructorProps extends GObject.Object.ConstructorProps, Converter.ConstructorProps {
-            file_info: (FileInfo | null);
-            fileInfo: (FileInfo | null);
+            file_info: FileInfo | null;
+            fileInfo: FileInfo | null;
             format: ZlibCompressorFormat;
         }
     }
@@ -47592,7 +47488,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @since 2.26
          * @read-only
          */
-        get file_info(): (FileInfo | null);
+        get file_info(): FileInfo | null;
 
         /**
          * A {@link Gio.FileInfo} containing the information found in the GZIP header
@@ -47602,7 +47498,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @since 2.26
          * @read-only
          */
-        get fileInfo(): (FileInfo | null);
+        get fileInfo(): FileInfo | null;
 
         /**
          * The format of the compressed data.
@@ -47650,7 +47546,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * data stream at all.
          * @returns a {@link Gio.FileInfo}, or `null`
          */
-        get_file_info(): (FileInfo | null);
+        get_file_info(): FileInfo | null;
 
         /**
          * This is the main operation used when converting data. It is to be called
@@ -47740,14 +47636,14 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param flags a {@link Gio.ConverterFlags} controlling the conversion details
          * @returns a {@link Gio.ConverterResult}, {@link Gio.ConverterResult.ERROR} on error.
          */
-        convert(inbuf: (Uint8Array | string), outbuf: (Uint8Array | string), flags: ConverterFlags): [ConverterResult, number, number];
+        convert(inbuf: Uint8Array | string, outbuf: Uint8Array | string, flags: ConverterFlags): [ConverterResult, number, number];
 
         /**
          * Applies `converter` to the data in `bytes`.
          * @param bytes the data to convert
          * @returns A newly-allocated   {@link GLib.Bytes} with the converted data, or `NULL` if an error   occurred
          */
-        convert_bytes(bytes: (GLib.Bytes | Uint8Array)): GLib.Bytes;
+        convert_bytes(bytes: GLib.Bytes | Uint8Array): GLib.Bytes;
 
         /**
          * Resets all internal state in the converter, making it behave
@@ -47844,7 +47740,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param flags a {@link Gio.ConverterFlags} controlling the conversion details
          * @virtual
          */
-        vfunc_convert(inbuf: (Uint8Array | null), outbuf: Uint8Array, flags: ConverterFlags): [ConverterResult, bigint | number, bigint | number];
+        vfunc_convert(inbuf: Uint8Array | null, outbuf: Uint8Array, flags: ConverterFlags): [ConverterResult, bigint | number, bigint | number];
 
         /**
          * Resets all internal state in the converter, making it behave
@@ -48064,7 +47960,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param annotations A `null`-terminated array of annotations or `null`.
          * @param name The name of the annotation to look up.
          */
-        static lookup(annotations: (DBusAnnotationInfo[] | null), name: string): (string | null);
+        static lookup(annotations: DBusAnnotationInfo[] | null, name: string): string | null;
 
         // Methods
         /**
@@ -48219,7 +48115,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param name A D-Bus method name (typically in CamelCase)
          * @returns A {@link Gio.DBusMethodInfo} or `null` if not found. Do not free, it is owned by `info`.
          */
-        lookup_method(name: string): (DBusMethodInfo | null);
+        lookup_method(name: string): DBusMethodInfo | null;
 
         /**
          * Looks up information about a property.
@@ -48229,7 +48125,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param name A D-Bus property name (typically in CamelCase).
          * @returns A {@link Gio.DBusPropertyInfo} or `null` if not found. Do not free, it is owned by `info`.
          */
-        lookup_property(name: string): (DBusPropertyInfo | null);
+        lookup_property(name: string): DBusPropertyInfo | null;
 
         /**
          * Looks up information about a signal.
@@ -48239,7 +48135,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param name A D-Bus signal name (typically in CamelCase)
          * @returns A {@link Gio.DBusSignalInfo} or `null` if not found. Do not free, it is owned by `info`.
          */
-        lookup_signal(name: string): (DBusSignalInfo | null);
+        lookup_signal(name: string): DBusSignalInfo | null;
 
         /**
          * If `info` is statically allocated does nothing. Otherwise increases
@@ -48417,7 +48313,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param name A D-Bus interface name.
          * @returns A {@link Gio.DBusInterfaceInfo} or `null` if not found. Do not free, it is owned by `info`.
          */
-        lookup_interface(name: string): (DBusInterfaceInfo | null);
+        lookup_interface(name: string): DBusInterfaceInfo | null;
 
         /**
          * If `info` is statically allocated does nothing. Otherwise increases
@@ -48796,7 +48692,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * Gets the next matched attribute from a {@link Gio.FileAttributeMatcher}.
          * @returns a string containing the next attribute or, `null` if no more attribute exist.
          */
-        enumerate_next(): (string | null);
+        enumerate_next(): string | null;
 
         /**
          * Checks if an attribute will be matched by an attribute matcher. If
@@ -48833,7 +48729,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param subtract The matcher to subtract
          * @returns A file attribute matcher matching all attributes of     `matcher` that are not matched by `subtract`
          */
-        subtract(subtract: (FileAttributeMatcher | null)): (FileAttributeMatcher | null);
+        subtract(subtract: FileAttributeMatcher | null): FileAttributeMatcher | null;
 
         /**
          * Prints what the matcher is matching against. The format will be
@@ -49769,9 +49665,9 @@ export const _LocalFilePrototype: typeof File.prototype;
         static $gtype: GObject.GType<Resource>;
 
         // Constructors
-        constructor(data: (GLib.Bytes | Uint8Array));
+        constructor(data: GLib.Bytes | Uint8Array);
 
-        static new_from_data(data: (GLib.Bytes | Uint8Array)): Resource;
+        static new_from_data(data: GLib.Bytes | Uint8Array): Resource;
 
         // Static methods
         /**
@@ -50060,7 +49956,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * relocatable schemas, this function will return `null`.
          * @returns the path of the schema, or `null`
          */
-        get_path(): (string | null);
+        get_path(): string | null;
 
         /**
          * Checks if `schema` has a key named `name`.
@@ -50136,7 +50032,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * directory.
          * @returns the description for `key`, or `null`
          */
-        get_description(): (string | null);
+        get_description(): string | null;
 
         /**
          * Gets the name of `key`.
@@ -50201,7 +50097,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * directory.
          * @returns the summary for `key`, or `null`
          */
-        get_summary(): (string | null);
+        get_summary(): string | null;
 
         /**
          * Gets the {@link GLib.VariantType} of `key`.
@@ -50242,9 +50138,9 @@ export const _LocalFilePrototype: typeof File.prototype;
         static $gtype: GObject.GType<SettingsSchemaSource>;
 
         // Constructors
-        constructor(directory: string, parent: (SettingsSchemaSource | null), trusted: boolean);
+        constructor(directory: string, parent: SettingsSchemaSource | null, trusted: boolean);
 
-        static new_from_directory(directory: string, parent: (SettingsSchemaSource | null), trusted: boolean): SettingsSchemaSource;
+        static new_from_directory(directory: string, parent: SettingsSchemaSource | null, trusted: boolean): SettingsSchemaSource;
 
         // Static methods
         /**
@@ -50262,7 +50158,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * lookups performed against the default source should probably be done
          * recursively.
          */
-        static get_default(): (SettingsSchemaSource | null);
+        static get_default(): SettingsSchemaSource | null;
 
         // Methods
         /**
@@ -50297,7 +50193,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param recursive `true` if the lookup should be recursive
          * @returns a new {@link Gio.SettingsSchema}
          */
-        lookup(schema_id: string, recursive: boolean): (SettingsSchema | null);
+        lookup(schema_id: string, recursive: boolean): SettingsSchema | null;
 
         /**
          * Increase the reference count of `source`, returning a new reference.
@@ -50776,7 +50672,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * This will return `NULL` if there is no mount point at `mount_path`.
          * @param mount_path path for a possible Unix mount
          */
-        static at(mount_path: string): [(UnixMountEntry | null), number];
+        static at(mount_path: string): [UnixMountEntry | null, number];
 
         /**
          * Gets a {@link GioUnix.MountEntry} for a given file path.
@@ -50792,7 +50688,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * `file_path` doesn’t exist or there is an I/O error.
          * @param file_path file path on some Unix mount
          */
-        static ["for"](file_path: string): [(UnixMountEntry | null), number];
+        static ["for"](file_path: string): [UnixMountEntry | null, number];
 
         // Methods
         /**
@@ -50840,7 +50736,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * a {@link GioUnix.MountEntry} as an argument.
          * @returns a string containing the options, or `NULL` if not    available.
          */
-        get_options(): (string | null);
+        get_options(): string | null;
 
         /**
          * Gets the root of the mount within the filesystem. This is useful e.g. for
@@ -50851,7 +50747,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * `mount --bind /mnt/foo/bar /mnt/bar`.
          * @returns a string containing the root, or `NULL` if not supported
          */
-        get_root_path(): (string | null);
+        get_root_path(): string | null;
 
         /**
          * Guesses whether a Unix mount entry can be ejected.
@@ -50931,7 +50827,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * is returned.
          * @param mount_path path for a possible Unix mount point
          */
-        static at(mount_path: string): [(UnixMountPoint | null), number];
+        static at(mount_path: string): [UnixMountPoint | null, number];
 
         // Methods
         /**
@@ -50974,7 +50870,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * Gets the options for the mount point.
          * @returns a string containing the options
          */
-        get_options(): (string | null);
+        get_options(): string | null;
 
         /**
          * Guesses whether a Unix mount point can be ejected.
@@ -51092,7 +50988,7 @@ export const _LocalFilePrototype: typeof File.prototype;
              * @param parameter the parameter to the activation
              * @virtual
              */
-            vfunc_activate(parameter: (GLib.Variant | null)): void;
+            vfunc_activate(parameter: GLib.Variant | null): void;
 
             /**
              * Request for the state of `action` to be changed to `value`.
@@ -51137,7 +51033,7 @@ export const _LocalFilePrototype: typeof File.prototype;
              * {@link GLib.Variant}, but `NULL` instead.
              * @virtual
              */
-            vfunc_get_parameter_type(): (GLib.VariantType | null);
+            vfunc_get_parameter_type(): GLib.VariantType | null;
 
             /**
              * Queries the current state of `action`.
@@ -51150,7 +51046,7 @@ export const _LocalFilePrototype: typeof File.prototype;
              * {@link GLib.Variant.unref} when it is no longer required.
              * @virtual
              */
-            vfunc_get_state(): (GLib.Variant | null);
+            vfunc_get_state(): GLib.Variant | null;
 
             /**
              * Requests a hint about the valid range of values for the state of
@@ -51173,7 +51069,7 @@ export const _LocalFilePrototype: typeof File.prototype;
              * {@link GLib.Variant.unref} when it is no longer required.
              * @virtual
              */
-            vfunc_get_state_hint(): (GLib.Variant | null);
+            vfunc_get_state_hint(): GLib.Variant | null;
 
             /**
              * Queries the type of the state of `action`.
@@ -51190,7 +51086,7 @@ export const _LocalFilePrototype: typeof File.prototype;
              * will return `NULL` and you must not call {@link Gio.Action.change_state}.
              * @virtual
              */
-            vfunc_get_state_type(): (GLib.VariantType | null);
+            vfunc_get_state_type(): GLib.VariantType | null;
         }
 
 
@@ -51198,11 +51094,11 @@ export const _LocalFilePrototype: typeof File.prototype;
         interface ConstructorProps extends GObject.Object.ConstructorProps {
             enabled: boolean;
             name: string;
-            parameter_type: (GLib.VariantType | null);
-            parameterType: (GLib.VariantType | null);
-            state: (GLib.Variant | null);
-            state_type: (GLib.VariantType | null);
-            stateType: (GLib.VariantType | null);
+            parameter_type: GLib.VariantType | null;
+            parameterType: GLib.VariantType | null;
+            state: GLib.Variant | null;
+            state_type: GLib.VariantType | null;
+            stateType: GLib.VariantType | null;
         }
     }
 
@@ -51268,7 +51164,7 @@ export const _LocalFilePrototype: typeof File.prototype;
         * @param action_name a valid action name
         * @param target_value a {@link GLib.Variant} target value, or `NULL`
         */
-        print_detailed_name(action_name: string, target_value: (GLib.Variant | null)): string;
+        print_detailed_name(action_name: string, target_value: GLib.Variant | null): string;
     }
     /**
      * {@link Gio.Action} represents a single named action.
@@ -51332,7 +51228,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @since 2.28
          * @read-only
          */
-        get parameter_type(): (GLib.VariantType | null);
+        get parameter_type(): GLib.VariantType | null;
 
         /**
          * The type of the parameter that must be given when activating the
@@ -51341,14 +51237,14 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @since 2.28
          * @read-only
          */
-        get parameterType(): (GLib.VariantType | null);
+        get parameterType(): GLib.VariantType | null;
 
         /**
          * The state of the action, or `NULL` if the action is stateless.
          * @since 2.28
          * @read-only
          */
-        get state(): (GLib.Variant | null);
+        get state(): GLib.Variant | null;
 
         /**
          * The {@link GLib.VariantType} of the state that the action has, or `NULL` if the
@@ -51356,7 +51252,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @since 2.28
          * @read-only
          */
-        get state_type(): (GLib.VariantType | null);
+        get state_type(): GLib.VariantType | null;
 
         /**
          * The {@link GLib.VariantType} of the state that the action has, or `NULL` if the
@@ -51364,7 +51260,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @since 2.28
          * @read-only
          */
-        get stateType(): (GLib.VariantType | null);
+        get stateType(): GLib.VariantType | null;
 
         // Methods
         /**
@@ -51377,7 +51273,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * If the `parameter` {@link GLib.Variant} is floating, it is consumed.
          * @param parameter the parameter to the activation
          */
-        activate(parameter: (GLib.Variant | null)): void;
+        activate(parameter: GLib.Variant | null): void;
 
         /**
          * Request for the state of `action` to be changed to `value`.
@@ -51421,7 +51317,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * {@link GLib.Variant}, but `NULL` instead.
          * @returns the parameter type
          */
-        get_parameter_type(): (GLib.VariantType | null);
+        get_parameter_type(): GLib.VariantType | null;
 
         /**
          * Queries the current state of `action`.
@@ -51434,7 +51330,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * {@link GLib.Variant.unref} when it is no longer required.
          * @returns the current state of the action
          */
-        get_state(): (GLib.Variant | null);
+        get_state(): GLib.Variant | null;
 
         /**
          * Requests a hint about the valid range of values for the state of
@@ -51457,7 +51353,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * {@link GLib.Variant.unref} when it is no longer required.
          * @returns the state range hint
          */
-        get_state_hint(): (GLib.Variant | null);
+        get_state_hint(): GLib.Variant | null;
 
         /**
          * Queries the type of the state of `action`.
@@ -51474,7 +51370,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * will return `NULL` and you must not call {@link Gio.Action.change_state}.
          * @returns the state type, if the action is stateful
          */
-        get_state_type(): (GLib.VariantType | null);
+        get_state_type(): GLib.VariantType | null;
     }
 
 
@@ -51566,7 +51462,7 @@ export const _LocalFilePrototype: typeof File.prototype;
              * @param parameter parameters to the activation
              * @virtual
              */
-            vfunc_activate_action(action_name: string, parameter: (GLib.Variant | null)): void;
+            vfunc_activate_action(action_name: string, parameter: GLib.Variant | null): void;
 
             /**
              * Request for the state of the named action within `action_group` to be
@@ -51613,7 +51509,7 @@ export const _LocalFilePrototype: typeof File.prototype;
              * @param action_name the name of the action to query
              * @virtual
              */
-            vfunc_get_action_parameter_type(action_name: string): (GLib.VariantType | null);
+            vfunc_get_action_parameter_type(action_name: string): GLib.VariantType | null;
 
             /**
              * Queries the current state of the named action within `action_group`.
@@ -51627,7 +51523,7 @@ export const _LocalFilePrototype: typeof File.prototype;
              * @param action_name the name of the action to query
              * @virtual
              */
-            vfunc_get_action_state(action_name: string): (GLib.Variant | null);
+            vfunc_get_action_state(action_name: string): GLib.Variant | null;
 
             /**
              * Requests a hint about the valid range of values for the state of the
@@ -51651,7 +51547,7 @@ export const _LocalFilePrototype: typeof File.prototype;
              * @param action_name the name of the action to query
              * @virtual
              */
-            vfunc_get_action_state_hint(action_name: string): (GLib.Variant | null);
+            vfunc_get_action_state_hint(action_name: string): GLib.Variant | null;
 
             /**
              * Queries the type of the state of the named action within
@@ -51673,7 +51569,7 @@ export const _LocalFilePrototype: typeof File.prototype;
              * @param action_name the name of the action to query
              * @virtual
              */
-            vfunc_get_action_state_type(action_name: string): (GLib.VariantType | null);
+            vfunc_get_action_state_type(action_name: string): GLib.VariantType | null;
 
             /**
              * Checks if the named action exists within `action_group`.
@@ -51727,9 +51623,7 @@ export const _LocalFilePrototype: typeof File.prototype;
 
 
         // Constructor properties interface
-        interface ConstructorProps extends GObject.Object.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GObject.Object.ConstructorProps {}
     }
 
     export interface ActionGroupNamespace {
@@ -51857,7 +51751,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param action_name the name of the action to activate
          * @param parameter parameters to the activation
          */
-        activate_action(action_name: string, parameter: (GLib.Variant | null)): void;
+        activate_action(action_name: string, parameter: GLib.Variant | null): void;
 
         /**
          * Request for the state of the named action within `action_group` to be
@@ -51903,7 +51797,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param action_name the name of the action to query
          * @returns the parameter type
          */
-        get_action_parameter_type(action_name: string): (GLib.VariantType | null);
+        get_action_parameter_type(action_name: string): GLib.VariantType | null;
 
         /**
          * Queries the current state of the named action within `action_group`.
@@ -51917,7 +51811,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param action_name the name of the action to query
          * @returns the current state of the action
          */
-        get_action_state(action_name: string): (GLib.Variant | null);
+        get_action_state(action_name: string): GLib.Variant | null;
 
         /**
          * Requests a hint about the valid range of values for the state of the
@@ -51941,7 +51835,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param action_name the name of the action to query
          * @returns the state range hint
          */
-        get_action_state_hint(action_name: string): (GLib.Variant | null);
+        get_action_state_hint(action_name: string): GLib.Variant | null;
 
         /**
          * Queries the type of the state of the named action within
@@ -51963,7 +51857,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param action_name the name of the action to query
          * @returns the state type, if the action is stateful
          */
-        get_action_state_type(action_name: string): (GLib.VariantType | null);
+        get_action_state_type(action_name: string): GLib.VariantType | null;
 
         /**
          * Checks if the named action exists within `action_group`.
@@ -52047,7 +51941,7 @@ export const _LocalFilePrototype: typeof File.prototype;
              * @param action_name the name of an action
              * @virtual
              */
-            vfunc_lookup_action(action_name: string): (Action | null);
+            vfunc_lookup_action(action_name: string): Action | null;
 
             /**
              * Removes the named action from the action map.
@@ -52061,9 +51955,7 @@ export const _LocalFilePrototype: typeof File.prototype;
 
 
         // Constructor properties interface
-        interface ConstructorProps extends GObject.Object.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GObject.Object.ConstructorProps {}
     }
 
     export interface ActionMapNamespace {
@@ -52113,7 +52005,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param action_name the name of an action
          * @returns a {@link Gio.Action}
          */
-        lookup_action(action_name: string): (Action | null);
+        lookup_action(action_name: string): Action | null;
 
         /**
          * Removes the named action from the action map.
@@ -52217,13 +52109,13 @@ export const _LocalFilePrototype: typeof File.prototype;
              * started.
              * @virtual
              */
-            vfunc_get_commandline(): (string | null);
+            vfunc_get_commandline(): string | null;
 
             /**
              * Gets a human-readable description of an installed application.
              * @virtual
              */
-            vfunc_get_description(): (string | null);
+            vfunc_get_description(): string | null;
 
             /**
              * Gets the display name of the application. The display name is often more
@@ -52246,7 +52138,7 @@ export const _LocalFilePrototype: typeof File.prototype;
              * Gets the icon for the application.
              * @virtual
              */
-            vfunc_get_icon(): (Icon | null);
+            vfunc_get_icon(): Icon | null;
 
             /**
              * Gets the ID of an application. An id is a string that identifies the
@@ -52257,7 +52149,7 @@ export const _LocalFilePrototype: typeof File.prototype;
              * been constructed.
              * @virtual
              */
-            vfunc_get_id(): (string | null);
+            vfunc_get_id(): string | null;
 
             /**
              * Gets the installed name of the application.
@@ -52309,7 +52201,7 @@ export const _LocalFilePrototype: typeof File.prototype;
              * @param context the launch context
              * @virtual
              */
-            vfunc_launch(files: (File[] | null), context: (AppLaunchContext | null)): boolean;
+            vfunc_launch(files: File[] | null, context: AppLaunchContext | null): boolean;
 
             /**
              * Launches the application. This passes the `uris` to the launched application
@@ -52328,7 +52220,7 @@ export const _LocalFilePrototype: typeof File.prototype;
              * @param context the launch context
              * @virtual
              */
-            vfunc_launch_uris(uris: (string[] | null), context: (AppLaunchContext | null)): boolean;
+            vfunc_launch_uris(uris: string[] | null, context: AppLaunchContext | null): boolean;
 
             /**
              * Async version of {@link Gio.AppInfo.launch_uris}.
@@ -52343,7 +52235,7 @@ export const _LocalFilePrototype: typeof File.prototype;
              * @param callback a {@link Gio.AsyncReadyCallback} to call   when the request is done
              * @virtual
              */
-            vfunc_launch_uris_async(uris: (string[] | null), context: (AppLaunchContext | null), cancellable: (Cancellable | null), callback: (AsyncReadyCallback<this> | null)): void;
+            vfunc_launch_uris_async(uris: string[] | null, context: AppLaunchContext | null, cancellable: Cancellable | null, callback: AsyncReadyCallback<this> | null): void;
 
             /**
              * Finishes a {@link Gio.AppInfo.launch_uris_async} operation.
@@ -52405,9 +52297,7 @@ export const _LocalFilePrototype: typeof File.prototype;
 
 
         // Constructor properties interface
-        interface ConstructorProps extends GObject.Object.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GObject.Object.ConstructorProps {}
     }
 
     export interface AppInfoNamespace {
@@ -52427,7 +52317,7 @@ export const _LocalFilePrototype: typeof File.prototype;
         * @param application_name the application name, or `NULL` to use `commandline`
         * @param flags flags that can specify details of the created {@link Gio.AppInfo}
         */
-        create_from_commandline(commandline: string, application_name: (string | null), flags: AppInfoCreateFlags): AppInfo;
+        create_from_commandline(commandline: string, application_name: string | null, flags: AppInfoCreateFlags): AppInfo;
         /**
         * Gets a list of all of the applications currently registered
         * on this system.
@@ -52457,7 +52347,7 @@ export const _LocalFilePrototype: typeof File.prototype;
         * @param content_type the content type to find a {@link Gio.AppInfo} for
         * @param must_support_uris if `TRUE`, the {@link Gio.AppInfo} is expected to   support URIs
         */
-        get_default_for_type(content_type: string, must_support_uris: boolean): (AppInfo | null);
+        get_default_for_type(content_type: string, must_support_uris: boolean): AppInfo | null;
         /**
         * Asynchronously gets the default {@link Gio.AppInfo} for a given content
         * type.
@@ -52466,7 +52356,7 @@ export const _LocalFilePrototype: typeof File.prototype;
         * @param cancellable a {@link Gio.Cancellable}
         * @param callback a {@link Gio.AsyncReadyCallback} to call   when the request is done
         */
-        get_default_for_type_async(content_type: string, must_support_uris: boolean, cancellable: (Cancellable | null), callback: (AsyncReadyCallback<AppInfo> | null)): void;
+        get_default_for_type_async(content_type: string, must_support_uris: boolean, cancellable: Cancellable | null, callback: AsyncReadyCallback<AppInfo> | null): void;
         /**
         * Finishes a default {@link Gio.AppInfo} lookup started by
         * {@link Gio.AppInfo.get_default_for_type_async}.
@@ -52483,7 +52373,7 @@ export const _LocalFilePrototype: typeof File.prototype;
         * For example, `http`, `ftp` or `sip`.
         * @param uri_scheme a string containing a URI scheme.
         */
-        get_default_for_uri_scheme(uri_scheme: string): (AppInfo | null);
+        get_default_for_uri_scheme(uri_scheme: string): AppInfo | null;
         /**
         * Asynchronously gets the default application for handling URIs with
         * the given URI scheme. A URI scheme is the initial part
@@ -52493,7 +52383,7 @@ export const _LocalFilePrototype: typeof File.prototype;
         * @param cancellable a {@link Gio.Cancellable}
         * @param callback a {@link Gio.AsyncReadyCallback} to call   when the request is done
         */
-        get_default_for_uri_scheme_async(uri_scheme: string, cancellable: (Cancellable | null), callback: (AsyncReadyCallback<AppInfo> | null)): void;
+        get_default_for_uri_scheme_async(uri_scheme: string, cancellable: Cancellable | null, callback: AsyncReadyCallback<AppInfo> | null): void;
         /**
         * Finishes a default {@link Gio.AppInfo} lookup started by
         * {@link Gio.AppInfo.get_default_for_uri_scheme_async}.
@@ -52532,7 +52422,7 @@ export const _LocalFilePrototype: typeof File.prototype;
         * @param uri the uri to show
         * @param context optional launch context
         */
-        launch_default_for_uri(uri: string, context: (AppLaunchContext | null)): boolean;
+        launch_default_for_uri(uri: string, context: AppLaunchContext | null): boolean;
         /**
         * Async version of {@link Gio.AppInfo.launch_default_for_uri}.
         * 
@@ -52548,7 +52438,7 @@ export const _LocalFilePrototype: typeof File.prototype;
         * @param cancellable a {@link Gio.Cancellable}
         * @param callback a {@link Gio.AsyncReadyCallback} to call   when the request is done
         */
-        launch_default_for_uri_async(uri: string, context: (AppLaunchContext | null), cancellable: (Cancellable | null), callback: (AsyncReadyCallback<AppInfo> | null)): void;
+        launch_default_for_uri_async(uri: string, context: AppLaunchContext | null, cancellable: Cancellable | null, callback: AsyncReadyCallback<AppInfo> | null): void;
         /**
         * Finishes an asynchronous launch-default-for-uri operation.
         * @param result the async result
@@ -52678,13 +52568,13 @@ export const _LocalFilePrototype: typeof File.prototype;
          * started.
          * @returns a string containing the `appinfo`’s   commandline, or `NULL` if this information is not available
          */
-        get_commandline(): (string | null);
+        get_commandline(): string | null;
 
         /**
          * Gets a human-readable description of an installed application.
          * @returns a string containing a description of the application `appinfo`, or `NULL` if none.
          */
-        get_description(): (string | null);
+        get_description(): string | null;
 
         /**
          * Gets the display name of the application. The display name is often more
@@ -52707,7 +52597,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * Gets the icon for the application.
          * @returns the default {@link Gio.Icon} for   `appinfo` or `NULL` if there is no default icon.
          */
-        get_icon(): (Icon | null);
+        get_icon(): Icon | null;
 
         /**
          * Gets the ID of an application. An id is a string that identifies the
@@ -52718,7 +52608,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * been constructed.
          * @returns a string containing the application’s ID.
          */
-        get_id(): (string | null);
+        get_id(): string | null;
 
         /**
          * Gets the installed name of the application.
@@ -52770,7 +52660,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param context the launch context
          * @returns `TRUE` on successful launch, `FALSE` otherwise.
          */
-        launch(files: (File[] | null), context: (AppLaunchContext | null)): boolean;
+        launch(files: File[] | null, context: AppLaunchContext | null): boolean;
 
         /**
          * Launches the application. This passes the `uris` to the launched application
@@ -52789,7 +52679,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param context the launch context
          * @returns `TRUE` on successful launch, `FALSE` otherwise.
          */
-        launch_uris(uris: (string[] | null), context: (AppLaunchContext | null)): boolean;
+        launch_uris(uris: string[] | null, context: AppLaunchContext | null): boolean;
 
         /**
          * Async version of {@link Gio.AppInfo.launch_uris}.
@@ -52802,21 +52692,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param context the launch context
          * @param cancellable a {@link Gio.Cancellable}
          */
-        launch_uris_async(uris: (string[] | null), context: (AppLaunchContext | null), cancellable: (Cancellable | null)): globalThis.Promise<boolean>;
-
-        /**
-         * Async version of {@link Gio.AppInfo.launch_uris}.
-         * 
-         * The `callback` is invoked immediately after the application launch, but it
-         * waits for activation in case of D-Bus–activated applications and also provides
-         * extended error information for sandboxed applications, see notes for
-         * {@link Gio.AppInfo.launch_default_for_uri_async}.
-         * @param uris a list of URIs to launch.
-         * @param context the launch context
-         * @param cancellable a {@link Gio.Cancellable}
-         * @param callback a {@link Gio.AsyncReadyCallback} to call   when the request is done
-         */
-        launch_uris_async(uris: (string[] | null), context: (AppLaunchContext | null), cancellable: (Cancellable | null), callback: (AsyncReadyCallback<this> | null)): void;
+        launch_uris_async(uris: string[] | null, context: AppLaunchContext | null, cancellable: Cancellable | null): globalThis.Promise<boolean>;
 
         /**
          * Async version of {@link Gio.AppInfo.launch_uris}.
@@ -52830,7 +52706,21 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable a {@link Gio.Cancellable}
          * @param callback a {@link Gio.AsyncReadyCallback} to call   when the request is done
          */
-        launch_uris_async(uris: (string[] | null), context: (AppLaunchContext | null), cancellable: (Cancellable | null), callback?: (AsyncReadyCallback<this> | null)): (globalThis.Promise<boolean> | void);
+        launch_uris_async(uris: string[] | null, context: AppLaunchContext | null, cancellable: Cancellable | null, callback: AsyncReadyCallback<this> | null): void;
+
+        /**
+         * Async version of {@link Gio.AppInfo.launch_uris}.
+         * 
+         * The `callback` is invoked immediately after the application launch, but it
+         * waits for activation in case of D-Bus–activated applications and also provides
+         * extended error information for sandboxed applications, see notes for
+         * {@link Gio.AppInfo.launch_default_for_uri_async}.
+         * @param uris a list of URIs to launch.
+         * @param context the launch context
+         * @param cancellable a {@link Gio.Cancellable}
+         * @param callback a {@link Gio.AsyncReadyCallback} to call   when the request is done
+         */
+        launch_uris_async(uris: string[] | null, context: AppLaunchContext | null, cancellable: Cancellable | null, callback?: AsyncReadyCallback<this> | null): globalThis.Promise<boolean> | void;
 
         /**
          * Finishes a {@link Gio.AppInfo.launch_uris_async} operation.
@@ -52945,7 +52835,7 @@ export const _LocalFilePrototype: typeof File.prototype;
              * @param callback a {@link Gio.AsyncReadyCallback} to call when the request is satisfied
              * @virtual
              */
-            vfunc_init_async(io_priority: number, cancellable: (Cancellable | null), callback: (AsyncReadyCallback<this> | null)): void;
+            vfunc_init_async(io_priority: number, cancellable: Cancellable | null, callback: AsyncReadyCallback<this> | null): void;
 
             /**
              * Finishes asynchronous initialization and returns the result.
@@ -52958,9 +52848,7 @@ export const _LocalFilePrototype: typeof File.prototype;
 
 
         // Constructor properties interface
-        interface ConstructorProps<A extends GObject.Object = GObject.Object> extends GObject.Object.ConstructorProps {
-
-        }
+        interface ConstructorProps<A extends GObject.Object = GObject.Object> extends GObject.Object.ConstructorProps {}
     }
 
     export interface AsyncInitableNamespace {
@@ -52980,7 +52868,7 @@ export const _LocalFilePrototype: typeof File.prototype;
         * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
         * @param callback a {@link Gio.AsyncReadyCallback} to call when the initialization is     finished
         */
-        newv_async(object_type: GObject.GType, n_parameters: number, parameters: GObject.Parameter, io_priority: number, cancellable: (Cancellable | null), callback: (AsyncReadyCallback<AsyncInitable> | null)): void;
+        newv_async(object_type: GObject.GType, n_parameters: number, parameters: GObject.Parameter, io_priority: number, cancellable: Cancellable | null, callback: AsyncReadyCallback<AsyncInitable> | null): void;
     }
     /**
      * {@link Gio.AsyncInitable} is an interface for asynchronously initializable objects.
@@ -53130,7 +53018,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param io_priority the [I/O priority](https://docs.gtk.org/gio/iface.AsyncResult.html#io-priority) of the operation
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          */
-        init_async(io_priority: number, cancellable: (Cancellable | null)): globalThis.Promise<boolean>;
+        init_async(io_priority: number, cancellable: Cancellable | null): globalThis.Promise<boolean>;
 
         /**
          * Starts asynchronous initialization of the object implementing the
@@ -53173,7 +53061,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          * @param callback a {@link Gio.AsyncReadyCallback} to call when the request is satisfied
          */
-        init_async(io_priority: number, cancellable: (Cancellable | null), callback: (AsyncReadyCallback<this> | null)): void;
+        init_async(io_priority: number, cancellable: Cancellable | null, callback: AsyncReadyCallback<this> | null): void;
 
         /**
          * Starts asynchronous initialization of the object implementing the
@@ -53216,7 +53104,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          * @param callback a {@link Gio.AsyncReadyCallback} to call when the request is satisfied
          */
-        init_async(io_priority: number, cancellable: (Cancellable | null), callback?: (AsyncReadyCallback<this> | null)): (globalThis.Promise<boolean> | void);
+        init_async(io_priority: number, cancellable: Cancellable | null, callback?: AsyncReadyCallback<this> | null): globalThis.Promise<boolean> | void;
 
         /**
          * Finishes asynchronous initialization and returns the result.
@@ -53271,9 +53159,7 @@ export const _LocalFilePrototype: typeof File.prototype;
 
 
         // Constructor properties interface
-        interface ConstructorProps extends GObject.Object.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GObject.Object.ConstructorProps {}
     }
 
     export interface AsyncResultNamespace {
@@ -53508,7 +53394,7 @@ export const _LocalFilePrototype: typeof File.prototype;
              * @param flags a {@link Gio.ConverterFlags} controlling the conversion details
              * @virtual
              */
-            vfunc_convert(inbuf: (Uint8Array | null), outbuf: Uint8Array, flags: ConverterFlags): [ConverterResult, bigint | number, bigint | number];
+            vfunc_convert(inbuf: Uint8Array | null, outbuf: Uint8Array, flags: ConverterFlags): [ConverterResult, bigint | number, bigint | number];
 
             /**
              * Resets all internal state in the converter, making it behave
@@ -53521,9 +53407,7 @@ export const _LocalFilePrototype: typeof File.prototype;
 
 
         // Constructor properties interface
-        interface ConstructorProps extends GObject.Object.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GObject.Object.ConstructorProps {}
     }
 
     export interface ConverterNamespace {
@@ -53634,14 +53518,14 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param flags a {@link Gio.ConverterFlags} controlling the conversion details
          * @returns a {@link Gio.ConverterResult}, {@link Gio.ConverterResult.ERROR} on error.
          */
-        convert(inbuf: (Uint8Array | string), outbuf: (Uint8Array | string), flags: ConverterFlags): [ConverterResult, number, number];
+        convert(inbuf: Uint8Array | string, outbuf: Uint8Array | string, flags: ConverterFlags): [ConverterResult, number, number];
 
         /**
          * Applies `converter` to the data in `bytes`.
          * @param bytes the data to convert
          * @returns A newly-allocated   {@link GLib.Bytes} with the converted data, or `NULL` if an error   occurred
          */
-        convert_bytes(bytes: (GLib.Bytes | Uint8Array)): GLib.Bytes;
+        convert_bytes(bytes: GLib.Bytes | Uint8Array): GLib.Bytes;
 
         /**
          * Resets all internal state in the converter, making it behave
@@ -53668,7 +53552,7 @@ export const _LocalFilePrototype: typeof File.prototype;
              * Gets the {@link Gio.DBusObject} that `interface_` belongs to, if any.
              * @virtual
              */
-            vfunc_dup_object(): (DBusObject | null);
+            vfunc_dup_object(): DBusObject | null;
 
             /**
              * Gets D-Bus introspection information for the D-Bus interface
@@ -53684,14 +53568,12 @@ export const _LocalFilePrototype: typeof File.prototype;
              * @param object A {@link Gio.DBusObject} or `null`.
              * @virtual
              */
-            vfunc_set_object(object: (DBusObject | null)): void;
+            vfunc_set_object(object: DBusObject | null): void;
         }
 
 
         // Constructor properties interface
-        interface ConstructorProps extends GObject.Object.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GObject.Object.ConstructorProps {}
     }
 
     export interface DBusInterfaceNamespace {
@@ -53714,7 +53596,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * Gets the {@link Gio.DBusObject} that `interface_` belongs to, if any.
          * @returns A {@link Gio.DBusObject} or `null`. The returned reference should be freed with `g_object_unref()`.
          */
-        get_object(): (DBusObject | null);
+        get_object(): DBusObject | null;
 
         /**
          * Gets D-Bus introspection information for the D-Bus interface
@@ -53729,7 +53611,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * Note that `interface_` will hold a weak reference to `object`.
          * @param object A {@link Gio.DBusObject} or `null`.
          */
-        set_object(object: (DBusObject | null)): void;
+        set_object(object: DBusObject | null): void;
     }
 
 
@@ -53751,7 +53633,7 @@ export const _LocalFilePrototype: typeof File.prototype;
              * @param interface_name A D-Bus interface name.
              * @virtual
              */
-            vfunc_get_interface(interface_name: string): (DBusInterface | null);
+            vfunc_get_interface(interface_name: string): DBusInterface | null;
 
             /**
              * Gets the D-Bus interfaces associated with `object`.
@@ -53782,9 +53664,7 @@ export const _LocalFilePrototype: typeof File.prototype;
 
 
         // Constructor properties interface
-        interface ConstructorProps extends GObject.Object.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GObject.Object.ConstructorProps {}
     }
 
     export interface DBusObjectNamespace {
@@ -53807,7 +53687,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param interface_name A D-Bus interface name.
          * @returns `null` if not found, otherwise a   {@link Gio.DBusInterface} that must be freed with `g_object_unref()`.
          */
-        get_interface(interface_name: string): (DBusInterface | null);
+        get_interface(interface_name: string): DBusInterface | null;
 
         /**
          * Gets the D-Bus interfaces associated with `object`.
@@ -53842,14 +53722,14 @@ export const _LocalFilePrototype: typeof File.prototype;
              * @param interface_name D-Bus interface name to look up.
              * @virtual
              */
-            vfunc_get_interface(object_path: string, interface_name: string): (DBusInterface | null);
+            vfunc_get_interface(object_path: string, interface_name: string): DBusInterface | null;
 
             /**
              * Gets the {@link Gio.DBusObject} at `object_path`, if any.
              * @param object_path Object path to look up.
              * @virtual
              */
-            vfunc_get_object(object_path: string): (DBusObject | null);
+            vfunc_get_object(object_path: string): DBusObject | null;
 
             /**
              * Gets the object path that `manager` is for.
@@ -53896,9 +53776,7 @@ export const _LocalFilePrototype: typeof File.prototype;
 
 
         // Constructor properties interface
-        interface ConstructorProps extends GObject.Object.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GObject.Object.ConstructorProps {}
     }
 
     export interface DBusObjectManagerNamespace {
@@ -53925,14 +53803,14 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param interface_name D-Bus interface name to look up.
          * @returns A {@link Gio.DBusInterface} instance or `null`. Free   with `g_object_unref()`.
          */
-        get_interface(object_path: string, interface_name: string): (DBusInterface | null);
+        get_interface(object_path: string, interface_name: string): DBusInterface | null;
 
         /**
          * Gets the {@link Gio.DBusObject} at `object_path`, if any.
          * @param object_path Object path to look up.
          * @returns A {@link Gio.DBusObject} or `null`. Free with   `g_object_unref()`.
          */
-        get_object(object_path: string): (DBusObject | null);
+        get_object(object_path: string): DBusObject | null;
 
         /**
          * Gets the object path that `manager` is for.
@@ -54014,7 +53892,7 @@ export const _LocalFilePrototype: typeof File.prototype;
              * @param cancellable a {@link Gio.Cancellable}
              * @virtual
              */
-            vfunc_condition_wait(condition: GLib.IOCondition, timeout: number, cancellable: (Cancellable | null)): boolean;
+            vfunc_condition_wait(condition: GLib.IOCondition, timeout: number, cancellable: Cancellable | null): boolean;
 
             /**
              * Creates a {@link GLib.Source} that can be attached to a {@link GLib.MainContext} to monitor for
@@ -54035,7 +53913,7 @@ export const _LocalFilePrototype: typeof File.prototype;
              * @param cancellable a {@link Gio.Cancellable}
              * @virtual
              */
-            vfunc_create_source(condition: GLib.IOCondition, cancellable: (Cancellable | null)): GLib.Source;
+            vfunc_create_source(condition: GLib.IOCondition, cancellable: Cancellable | null): GLib.Source;
 
             /**
              * Receive one or more data messages from `datagram_based` in one go.
@@ -54094,7 +53972,7 @@ export const _LocalFilePrototype: typeof File.prototype;
              * @param cancellable a %GCancellable
              * @virtual
              */
-            vfunc_receive_messages(messages: InputMessage[], flags: number, timeout: number, cancellable: (Cancellable | null)): number;
+            vfunc_receive_messages(messages: InputMessage[], flags: number, timeout: number, cancellable: Cancellable | null): number;
 
             /**
              * Send one or more data messages from `datagram_based` in one go.
@@ -54144,14 +54022,12 @@ export const _LocalFilePrototype: typeof File.prototype;
              * @param cancellable a %GCancellable
              * @virtual
              */
-            vfunc_send_messages(messages: OutputMessage[], flags: number, timeout: number, cancellable: (Cancellable | null)): number;
+            vfunc_send_messages(messages: OutputMessage[], flags: number, timeout: number, cancellable: Cancellable | null): number;
         }
 
 
         // Constructor properties interface
-        interface ConstructorProps extends GObject.Object.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GObject.Object.ConstructorProps {}
     }
 
     export interface DatagramBasedNamespace {
@@ -54268,7 +54144,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable a {@link Gio.Cancellable}
          * @returns `true` if the condition was met, `false` otherwise
          */
-        condition_wait(condition: GLib.IOCondition, timeout: (bigint | number), cancellable: (Cancellable | null)): boolean;
+        condition_wait(condition: GLib.IOCondition, timeout: bigint | number, cancellable: Cancellable | null): boolean;
 
         /**
          * Creates a {@link GLib.Source} that can be attached to a {@link GLib.MainContext} to monitor for
@@ -54289,7 +54165,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable a {@link Gio.Cancellable}
          * @returns a newly allocated {@link GLib.Source}
          */
-        create_source(condition: GLib.IOCondition, cancellable: (Cancellable | null)): GLib.Source;
+        create_source(condition: GLib.IOCondition, cancellable: Cancellable | null): GLib.Source;
 
         /**
          * Receive one or more data messages from `datagram_based` in one go.
@@ -54348,7 +54224,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable a %GCancellable
          * @returns number of messages received, or -1 on error. Note that the number     of messages received may be smaller than `num_messages` if `timeout` is     zero or positive, if the peer closed the connection, or if `num_messages`     was larger than `UIO_MAXIOV` (1024), in which case the caller may re-try     to receive the remaining messages.
          */
-        receive_messages(messages: InputMessage[], flags: number, timeout: (bigint | number), cancellable: (Cancellable | null)): number;
+        receive_messages(messages: InputMessage[], flags: number, timeout: bigint | number, cancellable: Cancellable | null): number;
 
         /**
          * Send one or more data messages from `datagram_based` in one go.
@@ -54398,7 +54274,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable a %GCancellable
          * @returns number of messages sent, or -1 on error. Note that the number of     messages sent may be smaller than `num_messages` if `timeout` is zero     or positive, or if `num_messages` was larger than `UIO_MAXIOV` (1024), in     which case the caller may re-try to send the remaining messages.
          */
-        send_messages(messages: OutputMessage[], flags: number, timeout: (bigint | number), cancellable: (Cancellable | null)): number;
+        send_messages(messages: OutputMessage[], flags: number, timeout: bigint | number, cancellable: Cancellable | null): number;
     }
 
 
@@ -54500,14 +54376,12 @@ export const _LocalFilePrototype: typeof File.prototype;
              * @param uri_scheme a string containing a URI scheme.
              * @virtual
              */
-            vfunc_get_default_for_uri_scheme(uri_scheme: string): (AppInfo | null);
+            vfunc_get_default_for_uri_scheme(uri_scheme: string): AppInfo | null;
         }
 
 
         // Constructor properties interface
-        interface ConstructorProps extends GObject.Object.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GObject.Object.ConstructorProps {}
     }
 
     export interface DesktopAppInfoLookupNamespace {
@@ -54536,7 +54410,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param uri_scheme a string containing a URI scheme.
          * @returns {@link Gio.AppInfo} for given   `uri_scheme` or `NULL` on error.
          */
-        get_default_for_uri_scheme(uri_scheme: string): (AppInfo | null);
+        get_default_for_uri_scheme(uri_scheme: string): AppInfo | null;
     }
 
 
@@ -54605,7 +54479,7 @@ export const _LocalFilePrototype: typeof File.prototype;
              * @param callback a {@link Gio.AsyncReadyCallback}, or `null`.
              * @virtual
              */
-            vfunc_eject(flags: MountUnmountFlags, cancellable: (Cancellable | null), callback: (AsyncReadyCallback<this> | null)): void;
+            vfunc_eject(flags: MountUnmountFlags, cancellable: Cancellable | null, callback: AsyncReadyCallback<this> | null): void;
 
             /**
              * Signal emitted when the physical eject button (if any) of a drive have been pressed.
@@ -54630,7 +54504,7 @@ export const _LocalFilePrototype: typeof File.prototype;
              * @param callback a {@link Gio.AsyncReadyCallback}, or `null`.
              * @virtual
              */
-            vfunc_eject_with_operation(flags: MountUnmountFlags, mount_operation: (MountOperation | null), cancellable: (Cancellable | null), callback: (AsyncReadyCallback<this> | null)): void;
+            vfunc_eject_with_operation(flags: MountUnmountFlags, mount_operation: MountOperation | null, cancellable: Cancellable | null, callback: AsyncReadyCallback<this> | null): void;
 
             /**
              * Finishes ejecting a drive. If any errors occurred during the operation,
@@ -54661,7 +54535,7 @@ export const _LocalFilePrototype: typeof File.prototype;
              * @param kind the kind of identifier to return
              * @virtual
              */
-            vfunc_get_identifier(kind: string): (string | null);
+            vfunc_get_identifier(kind: string): string | null;
 
             /**
              * Gets the name of `drive`.
@@ -54673,7 +54547,7 @@ export const _LocalFilePrototype: typeof File.prototype;
              * Gets the sort key for `drive`, if any.
              * @virtual
              */
-            vfunc_get_sort_key(): (string | null);
+            vfunc_get_sort_key(): string | null;
 
             /**
              * Gets a hint about how a drive can be started/stopped.
@@ -54739,7 +54613,7 @@ export const _LocalFilePrototype: typeof File.prototype;
              * @param callback a {@link Gio.AsyncReadyCallback}, or `null`.
              * @virtual
              */
-            vfunc_poll_for_media(cancellable: (Cancellable | null), callback: (AsyncReadyCallback<this> | null)): void;
+            vfunc_poll_for_media(cancellable: Cancellable | null, callback: AsyncReadyCallback<this> | null): void;
 
             /**
              * Finishes an operation started with `g_drive_poll_for_media()` on a drive.
@@ -54760,7 +54634,7 @@ export const _LocalFilePrototype: typeof File.prototype;
              * @param callback a {@link Gio.AsyncReadyCallback}, or `null`.
              * @virtual
              */
-            vfunc_start(flags: DriveStartFlags, mount_operation: (MountOperation | null), cancellable: (Cancellable | null), callback: (AsyncReadyCallback<this> | null)): void;
+            vfunc_start(flags: DriveStartFlags, mount_operation: MountOperation | null, cancellable: Cancellable | null, callback: AsyncReadyCallback<this> | null): void;
 
             /**
              * Finishes starting a drive.
@@ -54781,7 +54655,7 @@ export const _LocalFilePrototype: typeof File.prototype;
              * @param callback a {@link Gio.AsyncReadyCallback}, or `null`.
              * @virtual
              */
-            vfunc_stop(flags: MountUnmountFlags, mount_operation: (MountOperation | null), cancellable: (Cancellable | null), callback: (AsyncReadyCallback<this> | null)): void;
+            vfunc_stop(flags: MountUnmountFlags, mount_operation: MountOperation | null, cancellable: Cancellable | null, callback: AsyncReadyCallback<this> | null): void;
 
             /**
              * Signal emitted when the physical stop button (if any) of a drive have been pressed. Since 2.22.
@@ -54799,9 +54673,7 @@ export const _LocalFilePrototype: typeof File.prototype;
 
 
         // Constructor properties interface
-        interface ConstructorProps extends GObject.Object.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GObject.Object.ConstructorProps {}
     }
 
     export interface DriveNamespace {
@@ -54879,7 +54751,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param flags flags affecting the unmount if required for eject
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          */
-        eject(flags: MountUnmountFlags, cancellable: (Cancellable | null)): globalThis.Promise<boolean>;
+        eject(flags: MountUnmountFlags, cancellable: Cancellable | null): globalThis.Promise<boolean>;
 
         /**
          * Asynchronously ejects a drive.
@@ -54891,7 +54763,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          * @param callback a {@link Gio.AsyncReadyCallback}, or `null`.
          */
-        eject(flags: MountUnmountFlags, cancellable: (Cancellable | null), callback: (AsyncReadyCallback<this> | null)): void;
+        eject(flags: MountUnmountFlags, cancellable: Cancellable | null, callback: AsyncReadyCallback<this> | null): void;
 
         /**
          * Asynchronously ejects a drive.
@@ -54903,7 +54775,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          * @param callback a {@link Gio.AsyncReadyCallback}, or `null`.
          */
-        eject(flags: MountUnmountFlags, cancellable: (Cancellable | null), callback?: (AsyncReadyCallback<this> | null)): (globalThis.Promise<boolean> | void);
+        eject(flags: MountUnmountFlags, cancellable: Cancellable | null, callback?: AsyncReadyCallback<this> | null): globalThis.Promise<boolean> | void;
 
         /**
          * Finishes ejecting a drive.
@@ -54920,7 +54792,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param mount_operation a {@link Gio.MountOperation} or `null` to avoid     user interaction.
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          */
-        eject_with_operation(flags: MountUnmountFlags, mount_operation: (MountOperation | null), cancellable: (Cancellable | null)): globalThis.Promise<boolean>;
+        eject_with_operation(flags: MountUnmountFlags, mount_operation: MountOperation | null, cancellable: Cancellable | null): globalThis.Promise<boolean>;
 
         /**
          * Ejects a drive. This is an asynchronous operation, and is
@@ -54931,7 +54803,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          * @param callback a {@link Gio.AsyncReadyCallback}, or `null`.
          */
-        eject_with_operation(flags: MountUnmountFlags, mount_operation: (MountOperation | null), cancellable: (Cancellable | null), callback: (AsyncReadyCallback<this> | null)): void;
+        eject_with_operation(flags: MountUnmountFlags, mount_operation: MountOperation | null, cancellable: Cancellable | null, callback: AsyncReadyCallback<this> | null): void;
 
         /**
          * Ejects a drive. This is an asynchronous operation, and is
@@ -54942,7 +54814,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          * @param callback a {@link Gio.AsyncReadyCallback}, or `null`.
          */
-        eject_with_operation(flags: MountUnmountFlags, mount_operation: (MountOperation | null), cancellable: (Cancellable | null), callback?: (AsyncReadyCallback<this> | null)): (globalThis.Promise<boolean> | void);
+        eject_with_operation(flags: MountUnmountFlags, mount_operation: MountOperation | null, cancellable: Cancellable | null, callback?: AsyncReadyCallback<this> | null): globalThis.Promise<boolean> | void;
 
         /**
          * Finishes ejecting a drive. If any errors occurred during the operation,
@@ -54973,7 +54845,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param kind the kind of identifier to return
          * @returns a newly allocated string containing the     requested identifier, or `null` if the {@link Gio.Drive}     doesn't have this kind of identifier.
          */
-        get_identifier(kind: string): (string | null);
+        get_identifier(kind: string): string | null;
 
         /**
          * Gets the name of `drive`.
@@ -54985,7 +54857,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * Gets the sort key for `drive`, if any.
          * @returns Sorting key for `drive` or `null` if no such key is available.
          */
-        get_sort_key(): (string | null);
+        get_sort_key(): string | null;
 
         /**
          * Gets a hint about how a drive can be started/stopped.
@@ -55049,7 +54921,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * result of the operation.
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          */
-        poll_for_media(cancellable: (Cancellable | null)): globalThis.Promise<boolean>;
+        poll_for_media(cancellable: Cancellable | null): globalThis.Promise<boolean>;
 
         /**
          * Asynchronously polls `drive` to see if media has been inserted or removed.
@@ -55060,7 +54932,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          * @param callback a {@link Gio.AsyncReadyCallback}, or `null`.
          */
-        poll_for_media(cancellable: (Cancellable | null), callback: (AsyncReadyCallback<this> | null)): void;
+        poll_for_media(cancellable: Cancellable | null, callback: AsyncReadyCallback<this> | null): void;
 
         /**
          * Asynchronously polls `drive` to see if media has been inserted or removed.
@@ -55071,7 +54943,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          * @param callback a {@link Gio.AsyncReadyCallback}, or `null`.
          */
-        poll_for_media(cancellable: (Cancellable | null), callback?: (AsyncReadyCallback<this> | null)): (globalThis.Promise<boolean> | void);
+        poll_for_media(cancellable: Cancellable | null, callback?: AsyncReadyCallback<this> | null): globalThis.Promise<boolean> | void;
 
         /**
          * Finishes an operation started with `g_drive_poll_for_media()` on a drive.
@@ -55090,7 +54962,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param mount_operation a {@link Gio.MountOperation} or `null` to avoid     user interaction.
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          */
-        start(flags: DriveStartFlags, mount_operation: (MountOperation | null), cancellable: (Cancellable | null)): globalThis.Promise<boolean>;
+        start(flags: DriveStartFlags, mount_operation: MountOperation | null, cancellable: Cancellable | null): globalThis.Promise<boolean>;
 
         /**
          * Asynchronously starts a drive.
@@ -55103,7 +54975,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          * @param callback a {@link Gio.AsyncReadyCallback}, or `null`.
          */
-        start(flags: DriveStartFlags, mount_operation: (MountOperation | null), cancellable: (Cancellable | null), callback: (AsyncReadyCallback<this> | null)): void;
+        start(flags: DriveStartFlags, mount_operation: MountOperation | null, cancellable: Cancellable | null, callback: AsyncReadyCallback<this> | null): void;
 
         /**
          * Asynchronously starts a drive.
@@ -55116,7 +54988,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          * @param callback a {@link Gio.AsyncReadyCallback}, or `null`.
          */
-        start(flags: DriveStartFlags, mount_operation: (MountOperation | null), cancellable: (Cancellable | null), callback?: (AsyncReadyCallback<this> | null)): (globalThis.Promise<boolean> | void);
+        start(flags: DriveStartFlags, mount_operation: MountOperation | null, cancellable: Cancellable | null, callback?: AsyncReadyCallback<this> | null): globalThis.Promise<boolean> | void;
 
         /**
          * Finishes starting a drive.
@@ -55135,7 +55007,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param mount_operation a {@link Gio.MountOperation} or `null` to avoid     user interaction.
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          */
-        stop(flags: MountUnmountFlags, mount_operation: (MountOperation | null), cancellable: (Cancellable | null)): globalThis.Promise<boolean>;
+        stop(flags: MountUnmountFlags, mount_operation: MountOperation | null, cancellable: Cancellable | null): globalThis.Promise<boolean>;
 
         /**
          * Asynchronously stops a drive.
@@ -55148,7 +55020,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          * @param callback a {@link Gio.AsyncReadyCallback}, or `null`.
          */
-        stop(flags: MountUnmountFlags, mount_operation: (MountOperation | null), cancellable: (Cancellable | null), callback: (AsyncReadyCallback<this> | null)): void;
+        stop(flags: MountUnmountFlags, mount_operation: MountOperation | null, cancellable: Cancellable | null, callback: AsyncReadyCallback<this> | null): void;
 
         /**
          * Asynchronously stops a drive.
@@ -55161,7 +55033,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          * @param callback a {@link Gio.AsyncReadyCallback}, or `null`.
          */
-        stop(flags: MountUnmountFlags, mount_operation: (MountOperation | null), cancellable: (Cancellable | null), callback?: (AsyncReadyCallback<this> | null)): (globalThis.Promise<boolean> | void);
+        stop(flags: MountUnmountFlags, mount_operation: MountOperation | null, cancellable: Cancellable | null, callback?: AsyncReadyCallback<this> | null): globalThis.Promise<boolean> | void;
 
         /**
          * Finishes stopping a drive.
@@ -55198,7 +55070,7 @@ export const _LocalFilePrototype: typeof File.prototype;
         * @param base_socket the {@link Gio.DatagramBased} to wrap
         * @param server_identity the expected identity of the server
         */
-        ["new"](base_socket: DatagramBased, server_identity: (SocketConnectable | null)): DtlsClientConnection;
+        ["new"](base_socket: DatagramBased, server_identity: SocketConnectable | null): DtlsClientConnection;
     }
     /**
      * {@link Gio.DtlsClientConnection} is the client-side subclass of
@@ -55413,7 +55285,7 @@ export const _LocalFilePrototype: typeof File.prototype;
              * `g_dtls_connection_set_advertised_protocols()`.
              * @virtual
              */
-            vfunc_get_negotiated_protocol(): (string | null);
+            vfunc_get_negotiated_protocol(): string | null;
 
             /**
              * Attempts a TLS handshake on `conn`.
@@ -55445,7 +55317,7 @@ export const _LocalFilePrototype: typeof File.prototype;
              * @param cancellable a {@link Gio.Cancellable}, or `null`
              * @virtual
              */
-            vfunc_handshake(cancellable: (Cancellable | null)): boolean;
+            vfunc_handshake(cancellable: Cancellable | null): boolean;
 
             /**
              * Asynchronously performs a TLS handshake on `conn`. See
@@ -55455,7 +55327,7 @@ export const _LocalFilePrototype: typeof File.prototype;
              * @param callback callback to call when the handshake is complete
              * @virtual
              */
-            vfunc_handshake_async(io_priority: number, cancellable: (Cancellable | null), callback: (AsyncReadyCallback<this> | null)): void;
+            vfunc_handshake_async(io_priority: number, cancellable: Cancellable | null, callback: AsyncReadyCallback<this> | null): void;
 
             /**
              * Finish an asynchronous TLS handshake operation. See
@@ -55479,7 +55351,7 @@ export const _LocalFilePrototype: typeof File.prototype;
              * @param protocols a `null`-terminated   array of ALPN protocol names (eg, "http/1.1", "h2"), or `null`
              * @virtual
              */
-            vfunc_set_advertised_protocols(protocols: (string[] | null)): void;
+            vfunc_set_advertised_protocols(protocols: string[] | null): void;
 
             /**
              * Shut down part or all of a DTLS connection.
@@ -55503,7 +55375,7 @@ export const _LocalFilePrototype: typeof File.prototype;
              * @param cancellable a {@link Gio.Cancellable}, or `null`
              * @virtual
              */
-            vfunc_shutdown(shutdown_read: boolean, shutdown_write: boolean, cancellable: (Cancellable | null)): boolean;
+            vfunc_shutdown(shutdown_read: boolean, shutdown_write: boolean, cancellable: Cancellable | null): boolean;
 
             /**
              * Asynchronously shut down part or all of the DTLS connection. See
@@ -55515,7 +55387,7 @@ export const _LocalFilePrototype: typeof File.prototype;
              * @param callback callback to call when the shutdown operation is complete
              * @virtual
              */
-            vfunc_shutdown_async(shutdown_read: boolean, shutdown_write: boolean, io_priority: number, cancellable: (Cancellable | null), callback: (AsyncReadyCallback<this> | null)): void;
+            vfunc_shutdown_async(shutdown_read: boolean, shutdown_write: boolean, io_priority: number, cancellable: Cancellable | null, callback: AsyncReadyCallback<this> | null): void;
 
             /**
              * Finish an asynchronous TLS shutdown operation. See
@@ -55533,15 +55405,15 @@ export const _LocalFilePrototype: typeof File.prototype;
             advertisedProtocols: string[];
             base_socket: DatagramBased;
             baseSocket: DatagramBased;
-            certificate: (TlsCertificate | null);
-            ciphersuite_name: (string | null);
-            ciphersuiteName: (string | null);
-            database: (TlsDatabase | null);
-            interaction: (TlsInteraction | null);
-            negotiated_protocol: (string | null);
-            negotiatedProtocol: (string | null);
-            peer_certificate: (TlsCertificate | null);
-            peerCertificate: (TlsCertificate | null);
+            certificate: TlsCertificate | null;
+            ciphersuite_name: string | null;
+            ciphersuiteName: string | null;
+            database: TlsDatabase | null;
+            interaction: TlsInteraction | null;
+            negotiated_protocol: string | null;
+            negotiatedProtocol: string | null;
+            peer_certificate: TlsCertificate | null;
+            peerCertificate: TlsCertificate | null;
             peer_certificate_errors: TlsCertificateFlags;
             peerCertificateErrors: TlsCertificateFlags;
             protocol_version: TlsProtocolVersion;
@@ -55624,8 +55496,8 @@ export const _LocalFilePrototype: typeof File.prototype;
          * `g_dtls_connection_set_certificate()`.
          * @since 2.48
          */
-        get certificate(): (TlsCertificate | null);
-        set certificate(val: (TlsCertificate | null));
+        get certificate(): TlsCertificate | null;
+        set certificate(val: TlsCertificate | null);
 
         /**
          * The name of the DTLS ciphersuite in use. See `g_dtls_connection_get_ciphersuite_name()`.
@@ -55633,7 +55505,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @read-only
          * @default null
          */
-        get ciphersuite_name(): (string | null);
+        get ciphersuite_name(): string | null;
 
         /**
          * The name of the DTLS ciphersuite in use. See `g_dtls_connection_get_ciphersuite_name()`.
@@ -55641,7 +55513,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @read-only
          * @default null
          */
-        get ciphersuiteName(): (string | null);
+        get ciphersuiteName(): string | null;
 
         /**
          * The certificate database to use when verifying this TLS connection.
@@ -55662,8 +55534,8 @@ export const _LocalFilePrototype: typeof File.prototype;
          * unusual security requirements.
          * @since 2.48
          */
-        get database(): (TlsDatabase | null);
-        set database(val: (TlsDatabase | null));
+        get database(): TlsDatabase | null;
+        set database(val: TlsDatabase | null);
 
         /**
          * A {@link Gio.TlsInteraction} object to be used when the connection or certificate
@@ -55671,8 +55543,8 @@ export const _LocalFilePrototype: typeof File.prototype;
          * user for passwords where necessary.
          * @since 2.48
          */
-        get interaction(): (TlsInteraction | null);
-        set interaction(val: (TlsInteraction | null));
+        get interaction(): TlsInteraction | null;
+        set interaction(val: TlsInteraction | null);
 
         /**
          * The application-layer protocol negotiated during the TLS
@@ -55681,7 +55553,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @read-only
          * @default null
          */
-        get negotiated_protocol(): (string | null);
+        get negotiated_protocol(): string | null;
 
         /**
          * The application-layer protocol negotiated during the TLS
@@ -55690,7 +55562,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @read-only
          * @default null
          */
-        get negotiatedProtocol(): (string | null);
+        get negotiatedProtocol(): string | null;
 
         /**
          * The connection's peer's certificate, after the TLS handshake has
@@ -55702,7 +55574,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @since 2.48
          * @read-only
          */
-        get peer_certificate(): (TlsCertificate | null);
+        get peer_certificate(): TlsCertificate | null;
 
         /**
          * The connection's peer's certificate, after the TLS handshake has
@@ -55714,7 +55586,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @since 2.48
          * @read-only
          */
-        get peerCertificate(): (TlsCertificate | null);
+        get peerCertificate(): TlsCertificate | null;
 
         /**
          * The errors noticed while verifying
@@ -55836,7 +55708,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable a {@link Gio.Cancellable}, or `null`
          * @returns `true` on success, `false` otherwise
          */
-        close(cancellable: (Cancellable | null)): boolean;
+        close(cancellable: Cancellable | null): boolean;
 
         /**
          * Asynchronously close the DTLS connection. See `g_dtls_connection_close()` for
@@ -55844,16 +55716,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param io_priority the [I/O priority](https://docs.gtk.org/gio/iface.AsyncResult.html#io-priority) of the request
          * @param cancellable a {@link Gio.Cancellable}, or `null`
          */
-        close_async(io_priority: number, cancellable: (Cancellable | null)): globalThis.Promise<boolean>;
-
-        /**
-         * Asynchronously close the DTLS connection. See `g_dtls_connection_close()` for
-         * more information.
-         * @param io_priority the [I/O priority](https://docs.gtk.org/gio/iface.AsyncResult.html#io-priority) of the request
-         * @param cancellable a {@link Gio.Cancellable}, or `null`
-         * @param callback callback to call when the close operation is complete
-         */
-        close_async(io_priority: number, cancellable: (Cancellable | null), callback: (AsyncReadyCallback<this> | null)): void;
+        close_async(io_priority: number, cancellable: Cancellable | null): globalThis.Promise<boolean>;
 
         /**
          * Asynchronously close the DTLS connection. See `g_dtls_connection_close()` for
@@ -55862,7 +55725,16 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable a {@link Gio.Cancellable}, or `null`
          * @param callback callback to call when the close operation is complete
          */
-        close_async(io_priority: number, cancellable: (Cancellable | null), callback?: (AsyncReadyCallback<this> | null)): (globalThis.Promise<boolean> | void);
+        close_async(io_priority: number, cancellable: Cancellable | null, callback: AsyncReadyCallback<this> | null): void;
+
+        /**
+         * Asynchronously close the DTLS connection. See `g_dtls_connection_close()` for
+         * more information.
+         * @param io_priority the [I/O priority](https://docs.gtk.org/gio/iface.AsyncResult.html#io-priority) of the request
+         * @param cancellable a {@link Gio.Cancellable}, or `null`
+         * @param callback callback to call when the close operation is complete
+         */
+        close_async(io_priority: number, cancellable: Cancellable | null, callback?: AsyncReadyCallback<this> | null): globalThis.Promise<boolean> | void;
 
         /**
          * Finish an asynchronous TLS close operation. See `g_dtls_connection_close()`
@@ -55886,7 +55758,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * `g_dtls_connection_set_certificate()`.
          * @returns `conn`'s certificate, or `null`
          */
-        get_certificate(): (TlsCertificate | null);
+        get_certificate(): TlsCertificate | null;
 
         /**
          * Query the TLS backend for TLS channel binding data of `type` for `conn`.
@@ -55918,14 +55790,14 @@ export const _LocalFilePrototype: typeof File.prototype;
          * is not recommended.
          * @returns The name of the current DTLS ciphersuite, or `null`
          */
-        get_ciphersuite_name(): (string | null);
+        get_ciphersuite_name(): string | null;
 
         /**
          * Gets the certificate database that `conn` uses to verify
          * peer certificates. See `g_dtls_connection_set_database()`.
          * @returns the certificate database that `conn` uses or `null`
          */
-        get_database(): (TlsDatabase | null);
+        get_database(): TlsDatabase | null;
 
         /**
          * Get the object that will be used to interact with the user. It will be used
@@ -55933,7 +55805,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * no user interaction will occur for this connection.
          * @returns The interaction object.
          */
-        get_interaction(): (TlsInteraction | null);
+        get_interaction(): TlsInteraction | null;
 
         /**
          * Gets the name of the application-layer protocol negotiated during
@@ -55945,7 +55817,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * `g_dtls_connection_set_advertised_protocols()`.
          * @returns the negotiated protocol, or `null`
          */
-        get_negotiated_protocol(): (string | null);
+        get_negotiated_protocol(): string | null;
 
         /**
          * Gets `conn`'s peer's certificate after the handshake has completed
@@ -55953,7 +55825,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * {@link Gio.DtlsConnection.SignalSignatures.accept_certificate | Gio.DtlsConnection::accept-certificate}.)
          * @returns `conn`'s peer's certificate, or `null`
          */
-        get_peer_certificate(): (TlsCertificate | null);
+        get_peer_certificate(): TlsCertificate | null;
 
         /**
          * Gets the errors associated with validating `conn`'s peer's
@@ -56017,7 +55889,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable a {@link Gio.Cancellable}, or `null`
          * @returns success or failure
          */
-        handshake(cancellable: (Cancellable | null)): boolean;
+        handshake(cancellable: Cancellable | null): boolean;
 
         /**
          * Asynchronously performs a TLS handshake on `conn`. See
@@ -56025,16 +55897,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param io_priority the [I/O priority](https://docs.gtk.org/gio/iface.AsyncResult.html#io-priority) of the request
          * @param cancellable a {@link Gio.Cancellable}, or `null`
          */
-        handshake_async(io_priority: number, cancellable: (Cancellable | null)): globalThis.Promise<boolean>;
-
-        /**
-         * Asynchronously performs a TLS handshake on `conn`. See
-         * `g_dtls_connection_handshake()` for more information.
-         * @param io_priority the [I/O priority](https://docs.gtk.org/gio/iface.AsyncResult.html#io-priority) of the request
-         * @param cancellable a {@link Gio.Cancellable}, or `null`
-         * @param callback callback to call when the handshake is complete
-         */
-        handshake_async(io_priority: number, cancellable: (Cancellable | null), callback: (AsyncReadyCallback<this> | null)): void;
+        handshake_async(io_priority: number, cancellable: Cancellable | null): globalThis.Promise<boolean>;
 
         /**
          * Asynchronously performs a TLS handshake on `conn`. See
@@ -56043,7 +55906,16 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable a {@link Gio.Cancellable}, or `null`
          * @param callback callback to call when the handshake is complete
          */
-        handshake_async(io_priority: number, cancellable: (Cancellable | null), callback?: (AsyncReadyCallback<this> | null)): (globalThis.Promise<boolean> | void);
+        handshake_async(io_priority: number, cancellable: Cancellable | null, callback: AsyncReadyCallback<this> | null): void;
+
+        /**
+         * Asynchronously performs a TLS handshake on `conn`. See
+         * `g_dtls_connection_handshake()` for more information.
+         * @param io_priority the [I/O priority](https://docs.gtk.org/gio/iface.AsyncResult.html#io-priority) of the request
+         * @param cancellable a {@link Gio.Cancellable}, or `null`
+         * @param callback callback to call when the handshake is complete
+         */
+        handshake_async(io_priority: number, cancellable: Cancellable | null, callback?: AsyncReadyCallback<this> | null): globalThis.Promise<boolean> | void;
 
         /**
          * Finish an asynchronous TLS handshake operation. See
@@ -56066,7 +55938,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * for a list of registered protocol IDs.
          * @param protocols a `null`-terminated   array of ALPN protocol names (eg, "http/1.1", "h2"), or `null`
          */
-        set_advertised_protocols(protocols: (string[] | null)): void;
+        set_advertised_protocols(protocols: string[] | null): void;
 
         /**
          * This sets the certificate that `conn` will present to its peer
@@ -56105,7 +55977,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * database. See {@link Gio.DtlsConnection.database} for details.
          * @param database a {@link Gio.TlsDatabase}
          */
-        set_database(database: (TlsDatabase | null)): void;
+        set_database(database: TlsDatabase | null): void;
 
         /**
          * Set the object that will be used to interact with the user. It will be used
@@ -56116,7 +55988,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * should occur for this connection.
          * @param interaction an interaction object, or `null`
          */
-        set_interaction(interaction: (TlsInteraction | null)): void;
+        set_interaction(interaction: TlsInteraction | null): void;
 
         /**
          * Since GLib 2.64, changing the rehandshake mode is no longer supported
@@ -56179,7 +56051,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable a {@link Gio.Cancellable}, or `null`
          * @returns `true` on success, `false` otherwise
          */
-        shutdown(shutdown_read: boolean, shutdown_write: boolean, cancellable: (Cancellable | null)): boolean;
+        shutdown(shutdown_read: boolean, shutdown_write: boolean, cancellable: Cancellable | null): boolean;
 
         /**
          * Asynchronously shut down part or all of the DTLS connection. See
@@ -56189,18 +56061,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param io_priority the [I/O priority](https://docs.gtk.org/gio/iface.AsyncResult.html#io-priority) of the request
          * @param cancellable a {@link Gio.Cancellable}, or `null`
          */
-        shutdown_async(shutdown_read: boolean, shutdown_write: boolean, io_priority: number, cancellable: (Cancellable | null)): globalThis.Promise<boolean>;
-
-        /**
-         * Asynchronously shut down part or all of the DTLS connection. See
-         * `g_dtls_connection_shutdown()` for more information.
-         * @param shutdown_read `true` to stop reception of incoming datagrams
-         * @param shutdown_write `true` to stop sending outgoing datagrams
-         * @param io_priority the [I/O priority](https://docs.gtk.org/gio/iface.AsyncResult.html#io-priority) of the request
-         * @param cancellable a {@link Gio.Cancellable}, or `null`
-         * @param callback callback to call when the shutdown operation is complete
-         */
-        shutdown_async(shutdown_read: boolean, shutdown_write: boolean, io_priority: number, cancellable: (Cancellable | null), callback: (AsyncReadyCallback<this> | null)): void;
+        shutdown_async(shutdown_read: boolean, shutdown_write: boolean, io_priority: number, cancellable: Cancellable | null): globalThis.Promise<boolean>;
 
         /**
          * Asynchronously shut down part or all of the DTLS connection. See
@@ -56211,7 +56072,18 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable a {@link Gio.Cancellable}, or `null`
          * @param callback callback to call when the shutdown operation is complete
          */
-        shutdown_async(shutdown_read: boolean, shutdown_write: boolean, io_priority: number, cancellable: (Cancellable | null), callback?: (AsyncReadyCallback<this> | null)): (globalThis.Promise<boolean> | void);
+        shutdown_async(shutdown_read: boolean, shutdown_write: boolean, io_priority: number, cancellable: Cancellable | null, callback: AsyncReadyCallback<this> | null): void;
+
+        /**
+         * Asynchronously shut down part or all of the DTLS connection. See
+         * `g_dtls_connection_shutdown()` for more information.
+         * @param shutdown_read `true` to stop reception of incoming datagrams
+         * @param shutdown_write `true` to stop sending outgoing datagrams
+         * @param io_priority the [I/O priority](https://docs.gtk.org/gio/iface.AsyncResult.html#io-priority) of the request
+         * @param cancellable a {@link Gio.Cancellable}, or `null`
+         * @param callback callback to call when the shutdown operation is complete
+         */
+        shutdown_async(shutdown_read: boolean, shutdown_write: boolean, io_priority: number, cancellable: Cancellable | null, callback?: AsyncReadyCallback<this> | null): globalThis.Promise<boolean> | void;
 
         /**
          * Finish an asynchronous TLS shutdown operation. See
@@ -56244,7 +56116,7 @@ export const _LocalFilePrototype: typeof File.prototype;
         * @param base_socket the {@link Gio.DatagramBased} to wrap
         * @param certificate the default server certificate, or `null`
         */
-        ["new"](base_socket: DatagramBased, certificate: (TlsCertificate | null)): DtlsServerConnection;
+        ["new"](base_socket: DatagramBased, certificate: TlsCertificate | null): DtlsServerConnection;
     }
     /**
      * {@link Gio.DtlsServerConnection} is the server-side subclass of
@@ -56311,7 +56183,7 @@ export const _LocalFilePrototype: typeof File.prototype;
              * @param cancellable optional {@link Gio.Cancellable} object,   `null` to ignore
              * @virtual
              */
-            vfunc_append_to(flags: FileCreateFlags, cancellable: (Cancellable | null)): FileOutputStream;
+            vfunc_append_to(flags: FileCreateFlags, cancellable: Cancellable | null): FileOutputStream;
 
             /**
              * Asynchronously opens `file` for appending.
@@ -56328,7 +56200,7 @@ export const _LocalFilePrototype: typeof File.prototype;
              * @param callback a {@link Gio.AsyncReadyCallback}   to call when the request is satisfied
              * @virtual
              */
-            vfunc_append_to_async(flags: FileCreateFlags, io_priority: number, cancellable: (Cancellable | null), callback: (AsyncReadyCallback<this> | null)): void;
+            vfunc_append_to_async(flags: FileCreateFlags, io_priority: number, cancellable: Cancellable | null, callback: AsyncReadyCallback<this> | null): void;
 
             /**
              * Finishes an asynchronous file append operation started with
@@ -56385,7 +56257,7 @@ export const _LocalFilePrototype: typeof File.prototype;
              * @param progress_callback function to callback with   progress information, or `null` if progress information is not needed
              * @virtual
              */
-            vfunc_copy(destination: File, flags: FileCopyFlags, cancellable: (Cancellable | null), progress_callback: (FileProgressCallback | null)): boolean;
+            vfunc_copy(destination: File, flags: FileCopyFlags, cancellable: Cancellable | null, progress_callback: FileProgressCallback | null): boolean;
 
             /**
              * Copies the file `source` to the location specified by `destination`
@@ -56406,7 +56278,7 @@ export const _LocalFilePrototype: typeof File.prototype;
              * @param callback a {@link Gio.AsyncReadyCallback}   to call when the request is satisfied
              * @virtual
              */
-            vfunc_copy_async(destination: File, flags: FileCopyFlags, io_priority: number, cancellable: (Cancellable | null), progress_callback: (FileProgressCallback | null), callback: (AsyncReadyCallback<this> | null)): void;
+            vfunc_copy_async(destination: File, flags: FileCopyFlags, io_priority: number, cancellable: Cancellable | null, progress_callback: FileProgressCallback | null, callback: AsyncReadyCallback<this> | null): void;
 
             /**
              * Finishes copying the file started with `g_file_copy_async()`.
@@ -56439,7 +56311,7 @@ export const _LocalFilePrototype: typeof File.prototype;
              * @param cancellable optional {@link Gio.Cancellable} object,   `null` to ignore
              * @virtual
              */
-            vfunc_create(flags: FileCreateFlags, cancellable: (Cancellable | null)): FileOutputStream;
+            vfunc_create(flags: FileCreateFlags, cancellable: Cancellable | null): FileOutputStream;
 
             /**
              * Asynchronously creates a new file and returns an output stream
@@ -56457,7 +56329,7 @@ export const _LocalFilePrototype: typeof File.prototype;
              * @param callback a {@link Gio.AsyncReadyCallback}   to call when the request is satisfied
              * @virtual
              */
-            vfunc_create_async(flags: FileCreateFlags, io_priority: number, cancellable: (Cancellable | null), callback: (AsyncReadyCallback<this> | null)): void;
+            vfunc_create_async(flags: FileCreateFlags, io_priority: number, cancellable: Cancellable | null, callback: AsyncReadyCallback<this> | null): void;
 
             /**
              * Finishes an asynchronous file create operation started with
@@ -56495,7 +56367,7 @@ export const _LocalFilePrototype: typeof File.prototype;
              * @param cancellable optional {@link Gio.Cancellable} object,   `null` to ignore
              * @virtual
              */
-            vfunc_create_readwrite(flags: FileCreateFlags, cancellable: (Cancellable | null)): FileIOStream;
+            vfunc_create_readwrite(flags: FileCreateFlags, cancellable: Cancellable | null): FileIOStream;
 
             /**
              * Asynchronously creates a new file and returns a stream
@@ -56513,7 +56385,7 @@ export const _LocalFilePrototype: typeof File.prototype;
              * @param callback a {@link Gio.AsyncReadyCallback}   to call when the request is satisfied
              * @virtual
              */
-            vfunc_create_readwrite_async(flags: FileCreateFlags, io_priority: number, cancellable: (Cancellable | null), callback: (AsyncReadyCallback<this> | null)): void;
+            vfunc_create_readwrite_async(flags: FileCreateFlags, io_priority: number, cancellable: Cancellable | null, callback: AsyncReadyCallback<this> | null): void;
 
             /**
              * Finishes an asynchronous file create operation started with
@@ -56550,7 +56422,7 @@ export const _LocalFilePrototype: typeof File.prototype;
              * @param cancellable optional {@link Gio.Cancellable} object,   `null` to ignore
              * @virtual
              */
-            vfunc_delete_file(cancellable: (Cancellable | null)): boolean;
+            vfunc_delete_file(cancellable: Cancellable | null): boolean;
 
             /**
              * Asynchronously delete a file. If the `file` is a directory, it will
@@ -56561,7 +56433,7 @@ export const _LocalFilePrototype: typeof File.prototype;
              * @param callback a {@link Gio.AsyncReadyCallback} to call   when the request is satisfied
              * @virtual
              */
-            vfunc_delete_file_async(io_priority: number, cancellable: (Cancellable | null), callback: (AsyncReadyCallback<this> | null)): void;
+            vfunc_delete_file_async(io_priority: number, cancellable: Cancellable | null, callback: AsyncReadyCallback<this> | null): void;
 
             /**
              * Finishes deleting a file started with `g_file_delete_async()`.
@@ -56599,7 +56471,7 @@ export const _LocalFilePrototype: typeof File.prototype;
              * @param callback a {@link Gio.AsyncReadyCallback}   to call when the request is satisfied
              * @virtual
              */
-            vfunc_eject_mountable(flags: MountUnmountFlags, cancellable: (Cancellable | null), callback: (AsyncReadyCallback<this> | null)): void;
+            vfunc_eject_mountable(flags: MountUnmountFlags, cancellable: Cancellable | null, callback: AsyncReadyCallback<this> | null): void;
 
             /**
              * Finishes an asynchronous eject operation started by
@@ -56624,7 +56496,7 @@ export const _LocalFilePrototype: typeof File.prototype;
              * @param callback a {@link Gio.AsyncReadyCallback}   to call when the request is satisfied
              * @virtual
              */
-            vfunc_eject_mountable_with_operation(flags: MountUnmountFlags, mount_operation: (MountOperation | null), cancellable: (Cancellable | null), callback: (AsyncReadyCallback<this> | null)): void;
+            vfunc_eject_mountable_with_operation(flags: MountUnmountFlags, mount_operation: MountOperation | null, cancellable: Cancellable | null, callback: AsyncReadyCallback<this> | null): void;
 
             /**
              * Finishes an asynchronous eject operation started by
@@ -56665,7 +56537,7 @@ export const _LocalFilePrototype: typeof File.prototype;
              * @param cancellable optional {@link Gio.Cancellable} object,   `null` to ignore
              * @virtual
              */
-            vfunc_enumerate_children(attributes: string, flags: FileQueryInfoFlags, cancellable: (Cancellable | null)): FileEnumerator;
+            vfunc_enumerate_children(attributes: string, flags: FileQueryInfoFlags, cancellable: Cancellable | null): FileEnumerator;
 
             /**
              * Asynchronously gets the requested information about the files
@@ -56685,7 +56557,7 @@ export const _LocalFilePrototype: typeof File.prototype;
              * @param callback a {@link Gio.AsyncReadyCallback}   to call when the request is satisfied
              * @virtual
              */
-            vfunc_enumerate_children_async(attributes: string, flags: FileQueryInfoFlags, io_priority: number, cancellable: (Cancellable | null), callback: (AsyncReadyCallback<this> | null)): void;
+            vfunc_enumerate_children_async(attributes: string, flags: FileQueryInfoFlags, io_priority: number, cancellable: Cancellable | null, callback: AsyncReadyCallback<this> | null): void;
 
             /**
              * Finishes an async enumerate children operation.
@@ -56721,7 +56593,7 @@ export const _LocalFilePrototype: typeof File.prototype;
              * @param cancellable optional {@link Gio.Cancellable} object,   `null` to ignore
              * @virtual
              */
-            vfunc_find_enclosing_mount(cancellable: (Cancellable | null)): Mount;
+            vfunc_find_enclosing_mount(cancellable: Cancellable | null): Mount;
 
             /**
              * Asynchronously gets the mount for the file.
@@ -56737,7 +56609,7 @@ export const _LocalFilePrototype: typeof File.prototype;
              * @param callback a {@link Gio.AsyncReadyCallback}   to call when the request is satisfied
              * @virtual
              */
-            vfunc_find_enclosing_mount_async(io_priority: number, cancellable: (Cancellable | null), callback: (AsyncReadyCallback<this> | null)): void;
+            vfunc_find_enclosing_mount_async(io_priority: number, cancellable: Cancellable | null, callback: AsyncReadyCallback<this> | null): void;
 
             /**
              * Finishes an asynchronous find mount request.
@@ -56763,7 +56635,7 @@ export const _LocalFilePrototype: typeof File.prototype;
              * This call does no blocking I/O.
              * @virtual
              */
-            vfunc_get_basename(): (string | null);
+            vfunc_get_basename(): string | null;
 
             /**
              * Gets the child of `file` for a given `display_name` (i.e. a UTF-8
@@ -56787,7 +56659,7 @@ export const _LocalFilePrototype: typeof File.prototype;
              * This call does no blocking I/O.
              * @virtual
              */
-            vfunc_get_parent(): (File | null);
+            vfunc_get_parent(): File | null;
 
             /**
              * Gets the parse name of the `file`.
@@ -56815,7 +56687,7 @@ export const _LocalFilePrototype: typeof File.prototype;
              * This call does no blocking I/O.
              * @virtual
              */
-            vfunc_get_path(): (string | null);
+            vfunc_get_path(): string | null;
 
             /**
              * Gets the path for `descendant` relative to `parent`.
@@ -56824,7 +56696,7 @@ export const _LocalFilePrototype: typeof File.prototype;
              * @param descendant input {@link Gio.File}
              * @virtual
              */
-            vfunc_get_relative_path(descendant: File): (string | null);
+            vfunc_get_relative_path(descendant: File): string | null;
 
             /**
              * Gets the URI for the `file`.
@@ -56850,7 +56722,7 @@ export const _LocalFilePrototype: typeof File.prototype;
              * This call does no blocking I/O.
              * @virtual
              */
-            vfunc_get_uri_scheme(): (string | null);
+            vfunc_get_uri_scheme(): string | null;
 
             /**
              * Checks to see if a {@link Gio.File} has a given URI scheme.
@@ -56907,7 +56779,7 @@ export const _LocalFilePrototype: typeof File.prototype;
              * @param cancellable optional {@link Gio.Cancellable} object,   `null` to ignore
              * @virtual
              */
-            vfunc_make_directory(cancellable: (Cancellable | null)): boolean;
+            vfunc_make_directory(cancellable: Cancellable | null): boolean;
 
             /**
              * Asynchronously creates a directory.
@@ -56916,7 +56788,7 @@ export const _LocalFilePrototype: typeof File.prototype;
              * @param callback a {@link Gio.AsyncReadyCallback} to call   when the request is satisfied
              * @virtual
              */
-            vfunc_make_directory_async(io_priority: number, cancellable: (Cancellable | null), callback: (AsyncReadyCallback<this> | null)): void;
+            vfunc_make_directory_async(io_priority: number, cancellable: Cancellable | null, callback: AsyncReadyCallback<this> | null): void;
 
             /**
              * Finishes an asynchronous directory creation, started with
@@ -56937,7 +56809,7 @@ export const _LocalFilePrototype: typeof File.prototype;
              * @param cancellable optional {@link Gio.Cancellable} object,   `null` to ignore
              * @virtual
              */
-            vfunc_make_symbolic_link(symlink_value: string, cancellable: (Cancellable | null)): boolean;
+            vfunc_make_symbolic_link(symlink_value: string, cancellable: Cancellable | null): boolean;
 
             /**
              * Asynchronously creates a symbolic link named `file` which contains the
@@ -56948,7 +56820,7 @@ export const _LocalFilePrototype: typeof File.prototype;
              * @param callback a {@link Gio.AsyncReadyCallback} to call   when the request is satisfied
              * @virtual
              */
-            vfunc_make_symbolic_link_async(symlink_value: string, io_priority: number, cancellable: (Cancellable | null), callback: (AsyncReadyCallback<this> | null)): void;
+            vfunc_make_symbolic_link_async(symlink_value: string, io_priority: number, cancellable: Cancellable | null, callback: AsyncReadyCallback<this> | null): void;
 
             /**
              * Finishes an asynchronous symbolic link creation, started with
@@ -56982,7 +56854,7 @@ export const _LocalFilePrototype: typeof File.prototype;
              * @param progress_callback a {@link Gio.FileMeasureProgressCallback}
              * @virtual
              */
-            vfunc_measure_disk_usage(flags: FileMeasureFlags, cancellable: (Cancellable | null), progress_callback: (FileMeasureProgressCallback | null)): [boolean, bigint | number, bigint | number, bigint | number];
+            vfunc_measure_disk_usage(flags: FileMeasureFlags, cancellable: Cancellable | null, progress_callback: FileMeasureProgressCallback | null): [boolean, bigint | number, bigint | number, bigint | number];
 
             /**
              * Collects the results from an earlier call to
@@ -57010,7 +56882,7 @@ export const _LocalFilePrototype: typeof File.prototype;
              * @param cancellable optional {@link Gio.Cancellable} object,   `null` to ignore
              * @virtual
              */
-            vfunc_monitor_dir(flags: FileMonitorFlags, cancellable: (Cancellable | null)): FileMonitor;
+            vfunc_monitor_dir(flags: FileMonitorFlags, cancellable: Cancellable | null): FileMonitor;
 
             /**
              * Obtains a file monitor for the given file. If no file notification
@@ -57031,7 +56903,7 @@ export const _LocalFilePrototype: typeof File.prototype;
              * @param cancellable optional {@link Gio.Cancellable} object,   `null` to ignore
              * @virtual
              */
-            vfunc_monitor_file(flags: FileMonitorFlags, cancellable: (Cancellable | null)): FileMonitor;
+            vfunc_monitor_file(flags: FileMonitorFlags, cancellable: Cancellable | null): FileMonitor;
 
             /**
              * Starts a `mount_operation`, mounting the volume that contains
@@ -57050,7 +56922,7 @@ export const _LocalFilePrototype: typeof File.prototype;
              * @param callback a {@link Gio.AsyncReadyCallback} to call   when the request is satisfied, or `null`
              * @virtual
              */
-            vfunc_mount_enclosing_volume(flags: MountMountFlags, mount_operation: (MountOperation | null), cancellable: (Cancellable | null), callback: (AsyncReadyCallback<this> | null)): void;
+            vfunc_mount_enclosing_volume(flags: MountMountFlags, mount_operation: MountOperation | null, cancellable: Cancellable | null, callback: AsyncReadyCallback<this> | null): void;
 
             /**
              * Finishes a mount operation started by `g_file_mount_enclosing_volume()`.
@@ -57077,7 +56949,7 @@ export const _LocalFilePrototype: typeof File.prototype;
              * @param callback a {@link Gio.AsyncReadyCallback}   to call when the request is satisfied
              * @virtual
              */
-            vfunc_mount_mountable(flags: MountMountFlags, mount_operation: (MountOperation | null), cancellable: (Cancellable | null), callback: (AsyncReadyCallback<this> | null)): void;
+            vfunc_mount_mountable(flags: MountMountFlags, mount_operation: MountOperation | null, cancellable: Cancellable | null, callback: AsyncReadyCallback<this> | null): void;
 
             /**
              * Finishes a mount operation. See `g_file_mount_mountable()` for details.
@@ -57129,7 +57001,7 @@ export const _LocalFilePrototype: typeof File.prototype;
              * @param progress_callback {@link Gio.FileProgressCallback}   function for updates
              * @virtual
              */
-            vfunc_move(destination: File, flags: FileCopyFlags, cancellable: (Cancellable | null), progress_callback: (FileProgressCallback | null)): boolean;
+            vfunc_move(destination: File, flags: FileCopyFlags, cancellable: Cancellable | null, progress_callback: FileProgressCallback | null): boolean;
 
             /**
              * Asynchronously moves a file `source` to the location of `destination`. For details of the behaviour, see `g_file_move()`.
@@ -57149,7 +57021,7 @@ export const _LocalFilePrototype: typeof File.prototype;
              * @param callback a {@link Gio.AsyncReadyCallback}   to call when the request is satisfied
              * @virtual
              */
-            vfunc_move_async(destination: File, flags: FileCopyFlags, io_priority: number, cancellable: (Cancellable | null), progress_callback: (FileProgressCallback | null), callback: (AsyncReadyCallback<this> | null)): void;
+            vfunc_move_async(destination: File, flags: FileCopyFlags, io_priority: number, cancellable: Cancellable | null, progress_callback: FileProgressCallback | null, callback: AsyncReadyCallback<this> | null): void;
 
             /**
              * Finishes an asynchronous file movement, started with
@@ -57179,7 +57051,7 @@ export const _LocalFilePrototype: typeof File.prototype;
              * @param cancellable a {@link Gio.Cancellable}
              * @virtual
              */
-            vfunc_open_readwrite(cancellable: (Cancellable | null)): FileIOStream;
+            vfunc_open_readwrite(cancellable: Cancellable | null): FileIOStream;
 
             /**
              * Asynchronously opens `file` for reading and writing.
@@ -57195,7 +57067,7 @@ export const _LocalFilePrototype: typeof File.prototype;
              * @param callback a {@link Gio.AsyncReadyCallback}   to call when the request is satisfied
              * @virtual
              */
-            vfunc_open_readwrite_async(io_priority: number, cancellable: (Cancellable | null), callback: (AsyncReadyCallback<this> | null)): void;
+            vfunc_open_readwrite_async(io_priority: number, cancellable: Cancellable | null, callback: AsyncReadyCallback<this> | null): void;
 
             /**
              * Finishes an asynchronous file read operation started with
@@ -57219,7 +57091,7 @@ export const _LocalFilePrototype: typeof File.prototype;
              * @param callback a {@link Gio.AsyncReadyCallback} to call   when the request is satisfied, or `null`
              * @virtual
              */
-            vfunc_poll_mountable(cancellable: (Cancellable | null), callback: (AsyncReadyCallback<this> | null)): void;
+            vfunc_poll_mountable(cancellable: Cancellable | null, callback: AsyncReadyCallback<this> | null): void;
 
             /**
              * Finishes a poll operation. See `g_file_poll_mountable()` for details.
@@ -57280,7 +57152,7 @@ export const _LocalFilePrototype: typeof File.prototype;
              * @param cancellable optional {@link Gio.Cancellable} object,   `null` to ignore
              * @virtual
              */
-            vfunc_query_exists(cancellable: (Cancellable | null)): boolean;
+            vfunc_query_exists(cancellable: Cancellable | null): boolean;
 
             /**
              * Similar to `g_file_query_info()`, but obtains information
@@ -57312,7 +57184,7 @@ export const _LocalFilePrototype: typeof File.prototype;
              * @param cancellable optional {@link Gio.Cancellable} object,   `null` to ignore
              * @virtual
              */
-            vfunc_query_filesystem_info(attributes: string, cancellable: (Cancellable | null)): FileInfo;
+            vfunc_query_filesystem_info(attributes: string, cancellable: Cancellable | null): FileInfo;
 
             /**
              * Asynchronously gets the requested information about the filesystem
@@ -57332,7 +57204,7 @@ export const _LocalFilePrototype: typeof File.prototype;
              * @param callback a {@link Gio.AsyncReadyCallback}   to call when the request is satisfied
              * @virtual
              */
-            vfunc_query_filesystem_info_async(attributes: string, io_priority: number, cancellable: (Cancellable | null), callback: (AsyncReadyCallback<this> | null)): void;
+            vfunc_query_filesystem_info_async(attributes: string, io_priority: number, cancellable: Cancellable | null, callback: AsyncReadyCallback<this> | null): void;
 
             /**
              * Finishes an asynchronous filesystem info query.
@@ -57378,7 +57250,7 @@ export const _LocalFilePrototype: typeof File.prototype;
              * @param cancellable optional {@link Gio.Cancellable} object,   `null` to ignore
              * @virtual
              */
-            vfunc_query_info(attributes: string, flags: FileQueryInfoFlags, cancellable: (Cancellable | null)): FileInfo;
+            vfunc_query_info(attributes: string, flags: FileQueryInfoFlags, cancellable: Cancellable | null): FileInfo;
 
             /**
              * Asynchronously gets the requested information about specified `file`.
@@ -57397,7 +57269,7 @@ export const _LocalFilePrototype: typeof File.prototype;
              * @param callback a {@link Gio.AsyncReadyCallback}   to call when the request is satisfied
              * @virtual
              */
-            vfunc_query_info_async(attributes: string, flags: FileQueryInfoFlags, io_priority: number, cancellable: (Cancellable | null), callback: (AsyncReadyCallback<this> | null)): void;
+            vfunc_query_info_async(attributes: string, flags: FileQueryInfoFlags, io_priority: number, cancellable: Cancellable | null, callback: AsyncReadyCallback<this> | null): void;
 
             /**
              * Finishes an asynchronous file info query.
@@ -57421,7 +57293,7 @@ export const _LocalFilePrototype: typeof File.prototype;
              * @param cancellable optional {@link Gio.Cancellable} object,   `null` to ignore
              * @virtual
              */
-            vfunc_query_settable_attributes(cancellable: (Cancellable | null)): FileAttributeInfoList;
+            vfunc_query_settable_attributes(cancellable: Cancellable | null): FileAttributeInfoList;
 
             /**
              * Obtain the list of attribute namespaces where new attributes
@@ -57434,7 +57306,7 @@ export const _LocalFilePrototype: typeof File.prototype;
              * @param cancellable optional {@link Gio.Cancellable} object,   `null` to ignore
              * @virtual
              */
-            vfunc_query_writable_namespaces(cancellable: (Cancellable | null)): FileAttributeInfoList;
+            vfunc_query_writable_namespaces(cancellable: Cancellable | null): FileAttributeInfoList;
 
             /**
              * Asynchronously opens `file` for reading.
@@ -57450,7 +57322,7 @@ export const _LocalFilePrototype: typeof File.prototype;
              * @param callback a {@link Gio.AsyncReadyCallback}   to call when the request is satisfied
              * @virtual
              */
-            vfunc_read_async(io_priority: number, cancellable: (Cancellable | null), callback: (AsyncReadyCallback<this> | null)): void;
+            vfunc_read_async(io_priority: number, cancellable: Cancellable | null, callback: AsyncReadyCallback<this> | null): void;
 
             /**
              * Finishes an asynchronous file read operation started with
@@ -57475,7 +57347,7 @@ export const _LocalFilePrototype: typeof File.prototype;
              * @param cancellable a {@link Gio.Cancellable}
              * @virtual
              */
-            vfunc_read_fn(cancellable: (Cancellable | null)): FileInputStream;
+            vfunc_read_fn(cancellable: Cancellable | null): FileInputStream;
 
             /**
              * Returns an output stream for overwriting the file, possibly
@@ -57525,7 +57397,7 @@ export const _LocalFilePrototype: typeof File.prototype;
              * @param cancellable optional {@link Gio.Cancellable} object,   `null` to ignore
              * @virtual
              */
-            vfunc_replace(etag: (string | null), make_backup: boolean, flags: FileCreateFlags, cancellable: (Cancellable | null)): FileOutputStream;
+            vfunc_replace(etag: string | null, make_backup: boolean, flags: FileCreateFlags, cancellable: Cancellable | null): FileOutputStream;
 
             /**
              * Asynchronously overwrites the file, replacing the contents,
@@ -57545,7 +57417,7 @@ export const _LocalFilePrototype: typeof File.prototype;
              * @param callback a {@link Gio.AsyncReadyCallback}   to call when the request is satisfied
              * @virtual
              */
-            vfunc_replace_async(etag: (string | null), make_backup: boolean, flags: FileCreateFlags, io_priority: number, cancellable: (Cancellable | null), callback: (AsyncReadyCallback<this> | null)): void;
+            vfunc_replace_async(etag: string | null, make_backup: boolean, flags: FileCreateFlags, io_priority: number, cancellable: Cancellable | null, callback: AsyncReadyCallback<this> | null): void;
 
             /**
              * Finishes an asynchronous file replace operation started with
@@ -57572,7 +57444,7 @@ export const _LocalFilePrototype: typeof File.prototype;
              * @param cancellable optional {@link Gio.Cancellable} object,   `null` to ignore
              * @virtual
              */
-            vfunc_replace_readwrite(etag: (string | null), make_backup: boolean, flags: FileCreateFlags, cancellable: (Cancellable | null)): FileIOStream;
+            vfunc_replace_readwrite(etag: string | null, make_backup: boolean, flags: FileCreateFlags, cancellable: Cancellable | null): FileIOStream;
 
             /**
              * Asynchronously overwrites the file in read-write mode,
@@ -57593,7 +57465,7 @@ export const _LocalFilePrototype: typeof File.prototype;
              * @param callback a {@link Gio.AsyncReadyCallback}   to call when the request is satisfied
              * @virtual
              */
-            vfunc_replace_readwrite_async(etag: (string | null), make_backup: boolean, flags: FileCreateFlags, io_priority: number, cancellable: (Cancellable | null), callback: (AsyncReadyCallback<this> | null)): void;
+            vfunc_replace_readwrite_async(etag: string | null, make_backup: boolean, flags: FileCreateFlags, io_priority: number, cancellable: Cancellable | null, callback: AsyncReadyCallback<this> | null): void;
 
             /**
              * Finishes an asynchronous file replace operation started with
@@ -57631,7 +57503,7 @@ export const _LocalFilePrototype: typeof File.prototype;
              * @param cancellable optional {@link Gio.Cancellable} object,   `null` to ignore
              * @virtual
              */
-            vfunc_set_attribute(attribute: string, type: FileAttributeType, value_p: null, flags: FileQueryInfoFlags, cancellable: (Cancellable | null)): boolean;
+            vfunc_set_attribute(attribute: string, type: FileAttributeType, value_p: null, flags: FileQueryInfoFlags, cancellable: Cancellable | null): boolean;
 
             /**
              * Asynchronously sets the attributes of `file` with `info`.
@@ -57649,7 +57521,7 @@ export const _LocalFilePrototype: typeof File.prototype;
              * @param callback a {@link Gio.AsyncReadyCallback}   to call when the request is satisfied
              * @virtual
              */
-            vfunc_set_attributes_async(info: FileInfo, flags: FileQueryInfoFlags, io_priority: number, cancellable: (Cancellable | null), callback: (AsyncReadyCallback<this> | null)): void;
+            vfunc_set_attributes_async(info: FileInfo, flags: FileQueryInfoFlags, io_priority: number, cancellable: Cancellable | null, callback: AsyncReadyCallback<this> | null): void;
 
             /**
              * Finishes setting an attribute started in `g_file_set_attributes_async()`.
@@ -57676,7 +57548,7 @@ export const _LocalFilePrototype: typeof File.prototype;
              * @param cancellable optional {@link Gio.Cancellable} object,   `null` to ignore
              * @virtual
              */
-            vfunc_set_attributes_from_info(info: FileInfo, flags: FileQueryInfoFlags, cancellable: (Cancellable | null)): boolean;
+            vfunc_set_attributes_from_info(info: FileInfo, flags: FileQueryInfoFlags, cancellable: Cancellable | null): boolean;
 
             /**
              * Renames `file` to the specified display name.
@@ -57698,7 +57570,7 @@ export const _LocalFilePrototype: typeof File.prototype;
              * @param cancellable optional {@link Gio.Cancellable} object,   `null` to ignore
              * @virtual
              */
-            vfunc_set_display_name(display_name: string, cancellable: (Cancellable | null)): File;
+            vfunc_set_display_name(display_name: string, cancellable: Cancellable | null): File;
 
             /**
              * Asynchronously sets the display name for a given {@link Gio.File}.
@@ -57715,7 +57587,7 @@ export const _LocalFilePrototype: typeof File.prototype;
              * @param callback a {@link Gio.AsyncReadyCallback}   to call when the request is satisfied
              * @virtual
              */
-            vfunc_set_display_name_async(display_name: string, io_priority: number, cancellable: (Cancellable | null), callback: (AsyncReadyCallback<this> | null)): void;
+            vfunc_set_display_name_async(display_name: string, io_priority: number, cancellable: Cancellable | null, callback: AsyncReadyCallback<this> | null): void;
 
             /**
              * Finishes setting a display name started with
@@ -57743,7 +57615,7 @@ export const _LocalFilePrototype: typeof File.prototype;
              * @param callback a {@link Gio.AsyncReadyCallback} to call when the request is satisfied, or `null`
              * @virtual
              */
-            vfunc_start_mountable(flags: DriveStartFlags, start_operation: (MountOperation | null), cancellable: (Cancellable | null), callback: (AsyncReadyCallback<this> | null)): void;
+            vfunc_start_mountable(flags: DriveStartFlags, start_operation: MountOperation | null, cancellable: Cancellable | null, callback: AsyncReadyCallback<this> | null): void;
 
             /**
              * Finishes a start operation. See `g_file_start_mountable()` for details.
@@ -57771,7 +57643,7 @@ export const _LocalFilePrototype: typeof File.prototype;
              * @param callback a {@link Gio.AsyncReadyCallback} to call   when the request is satisfied, or `null`
              * @virtual
              */
-            vfunc_stop_mountable(flags: MountUnmountFlags, mount_operation: (MountOperation | null), cancellable: (Cancellable | null), callback: (AsyncReadyCallback<this> | null)): void;
+            vfunc_stop_mountable(flags: MountUnmountFlags, mount_operation: MountOperation | null, cancellable: Cancellable | null, callback: AsyncReadyCallback<this> | null): void;
 
             /**
              * Finishes a stop operation, see `g_file_stop_mountable()` for details.
@@ -57800,7 +57672,7 @@ export const _LocalFilePrototype: typeof File.prototype;
              * @param cancellable optional {@link Gio.Cancellable} object,   `null` to ignore
              * @virtual
              */
-            vfunc_trash(cancellable: (Cancellable | null)): boolean;
+            vfunc_trash(cancellable: Cancellable | null): boolean;
 
             /**
              * Asynchronously sends `file` to the Trash location, if possible.
@@ -57809,7 +57681,7 @@ export const _LocalFilePrototype: typeof File.prototype;
              * @param callback a {@link Gio.AsyncReadyCallback} to call   when the request is satisfied
              * @virtual
              */
-            vfunc_trash_async(io_priority: number, cancellable: (Cancellable | null), callback: (AsyncReadyCallback<this> | null)): void;
+            vfunc_trash_async(io_priority: number, cancellable: Cancellable | null, callback: AsyncReadyCallback<this> | null): void;
 
             /**
              * Finishes an asynchronous file trashing operation, started with
@@ -57834,7 +57706,7 @@ export const _LocalFilePrototype: typeof File.prototype;
              * @param callback a {@link Gio.AsyncReadyCallback}   to call when the request is satisfied
              * @virtual
              */
-            vfunc_unmount_mountable(flags: MountUnmountFlags, cancellable: (Cancellable | null), callback: (AsyncReadyCallback<this> | null)): void;
+            vfunc_unmount_mountable(flags: MountUnmountFlags, cancellable: Cancellable | null, callback: AsyncReadyCallback<this> | null): void;
 
             /**
              * Finishes an unmount operation, see `g_file_unmount_mountable()` for details.
@@ -57862,7 +57734,7 @@ export const _LocalFilePrototype: typeof File.prototype;
              * @param callback a {@link Gio.AsyncReadyCallback}   to call when the request is satisfied
              * @virtual
              */
-            vfunc_unmount_mountable_with_operation(flags: MountUnmountFlags, mount_operation: (MountOperation | null), cancellable: (Cancellable | null), callback: (AsyncReadyCallback<this> | null)): void;
+            vfunc_unmount_mountable_with_operation(flags: MountUnmountFlags, mount_operation: MountOperation | null, cancellable: Cancellable | null, callback: AsyncReadyCallback<this> | null): void;
 
             /**
              * Finishes an unmount operation,
@@ -57878,9 +57750,7 @@ export const _LocalFilePrototype: typeof File.prototype;
 
 
         // Constructor properties interface
-        interface ConstructorProps extends GObject.Object.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GObject.Object.ConstructorProps {}
     }
 
     export interface FileNamespace {
@@ -57957,7 +57827,7 @@ export const _LocalFilePrototype: typeof File.prototype;
         * a temporary file could not be created.
         * @param tmpl Template for the file   name, as in `g_file_open_tmp()`, or `null` for a default template
         */
-        new_tmp(tmpl: (string | null)): [File, FileIOStream];
+        new_tmp(tmpl: string | null): [File, FileIOStream];
         /**
         * Asynchronously opens a file in the preferred directory for temporary files
         *  (as returned by `g_get_tmp_dir()`) as `g_file_new_tmp()`.
@@ -57970,7 +57840,7 @@ export const _LocalFilePrototype: typeof File.prototype;
         * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore
         * @param callback a {@link Gio.AsyncReadyCallback} to call when the request is done
         */
-        new_tmp_async(tmpl: (string | null), io_priority: number, cancellable: (Cancellable | null), callback: (AsyncReadyCallback<File> | null)): void;
+        new_tmp_async(tmpl: string | null, io_priority: number, cancellable: Cancellable | null, callback: AsyncReadyCallback<File> | null): void;
         /**
         * Asynchronously creates a directory in the preferred directory for
         * temporary files (as returned by `g_get_tmp_dir()`) as `g_dir_make_tmp()`.
@@ -57983,7 +57853,7 @@ export const _LocalFilePrototype: typeof File.prototype;
         * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore
         * @param callback a {@link Gio.AsyncReadyCallback} to call when the request is done
         */
-        new_tmp_dir_async(tmpl: (string | null), io_priority: number, cancellable: (Cancellable | null), callback: (AsyncReadyCallback<File> | null)): void;
+        new_tmp_dir_async(tmpl: string | null, io_priority: number, cancellable: Cancellable | null, callback: AsyncReadyCallback<File> | null): void;
         /**
         * Finishes a temporary directory creation started by
         * `g_file_new_tmp_dir_async()`.
@@ -58123,7 +57993,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object,   `null` to ignore
          * @returns a {@link Gio.FileOutputStream}, or `null` on error.   Free the returned object with `g_object_unref()`.
          */
-        append_to(flags: FileCreateFlags, cancellable: (Cancellable | null)): FileOutputStream;
+        append_to(flags: FileCreateFlags, cancellable: Cancellable | null): FileOutputStream;
 
         /**
          * Asynchronously opens `file` for appending.
@@ -58138,23 +58008,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param io_priority the [I/O priority](https://docs.gtk.org/gio/iface.AsyncResult.html#io-priority) of the request
          * @param cancellable optional {@link Gio.Cancellable} object,   `null` to ignore
          */
-        append_to_async(flags: FileCreateFlags, io_priority: number, cancellable: (Cancellable | null)): globalThis.Promise<FileOutputStream>;
-
-        /**
-         * Asynchronously opens `file` for appending.
-         * 
-         * For more details, see `g_file_append_to()` which is
-         * the synchronous version of this call.
-         * 
-         * When the operation is finished, `callback` will be called.
-         * You can then call `g_file_append_to_finish()` to get the result
-         * of the operation.
-         * @param flags a set of {@link Gio.FileCreateFlags}
-         * @param io_priority the [I/O priority](https://docs.gtk.org/gio/iface.AsyncResult.html#io-priority) of the request
-         * @param cancellable optional {@link Gio.Cancellable} object,   `null` to ignore
-         * @param callback a {@link Gio.AsyncReadyCallback}   to call when the request is satisfied
-         */
-        append_to_async(flags: FileCreateFlags, io_priority: number, cancellable: (Cancellable | null), callback: (AsyncReadyCallback<this> | null)): void;
+        append_to_async(flags: FileCreateFlags, io_priority: number, cancellable: Cancellable | null): globalThis.Promise<FileOutputStream>;
 
         /**
          * Asynchronously opens `file` for appending.
@@ -58170,7 +58024,23 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object,   `null` to ignore
          * @param callback a {@link Gio.AsyncReadyCallback}   to call when the request is satisfied
          */
-        append_to_async(flags: FileCreateFlags, io_priority: number, cancellable: (Cancellable | null), callback?: (AsyncReadyCallback<this> | null)): (globalThis.Promise<FileOutputStream> | void);
+        append_to_async(flags: FileCreateFlags, io_priority: number, cancellable: Cancellable | null, callback: AsyncReadyCallback<this> | null): void;
+
+        /**
+         * Asynchronously opens `file` for appending.
+         * 
+         * For more details, see `g_file_append_to()` which is
+         * the synchronous version of this call.
+         * 
+         * When the operation is finished, `callback` will be called.
+         * You can then call `g_file_append_to_finish()` to get the result
+         * of the operation.
+         * @param flags a set of {@link Gio.FileCreateFlags}
+         * @param io_priority the [I/O priority](https://docs.gtk.org/gio/iface.AsyncResult.html#io-priority) of the request
+         * @param cancellable optional {@link Gio.Cancellable} object,   `null` to ignore
+         * @param callback a {@link Gio.AsyncReadyCallback}   to call when the request is satisfied
+         */
+        append_to_async(flags: FileCreateFlags, io_priority: number, cancellable: Cancellable | null, callback?: AsyncReadyCallback<this> | null): globalThis.Promise<FileOutputStream> | void;
 
         /**
          * Finishes an asynchronous file append operation started with
@@ -58194,7 +58064,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object,   `null` to ignore
          * @returns an attribute query string for `g_file_query_info()`,   or `null` if an error occurs.
          */
-        build_attribute_list_for_copy(flags: FileCopyFlags, cancellable: (Cancellable | null)): string;
+        build_attribute_list_for_copy(flags: FileCopyFlags, cancellable: Cancellable | null): string;
 
         /**
          * Copies the file `source` to the location specified by `destination`.
@@ -58243,7 +58113,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param progress_callback function to callback with   progress information, or `null` if progress information is not needed
          * @returns `true` on success, `false` otherwise.
          */
-        copy(destination: File, flags: FileCopyFlags, cancellable: (Cancellable | null), progress_callback: (FileProgressCallback | null)): boolean;
+        copy(destination: File, flags: FileCopyFlags, cancellable: Cancellable | null, progress_callback: FileProgressCallback | null): boolean;
 
         /**
          * Version of {@link Gio.File.copy_async} using closures instead of callbacks for
@@ -58255,7 +58125,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param progress_callback_closure {@link GObject.Closure} to invoke with progress   information, or `NULL` if progress information is not needed
          * @param ready_callback_closure {@link GObject.Closure} to invoke when the request is satisfied
          */
-        copy_async(destination: File, flags: FileCopyFlags, io_priority: number, cancellable: (Cancellable | null), progress_callback_closure: (GObject.Closure | null), ready_callback_closure: GObject.Closure): void;
+        copy_async(destination: File, flags: FileCopyFlags, io_priority: number, cancellable: Cancellable | null, progress_callback_closure: GObject.Closure | null, ready_callback_closure: GObject.Closure): void;
 
         /**
          * Copies the file attributes from `source` to `destination`.
@@ -58271,7 +58141,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object,   `null` to ignore
          * @returns `true` if the attributes were copied successfully,   `false` otherwise.
          */
-        copy_attributes(destination: File, flags: FileCopyFlags, cancellable: (Cancellable | null)): boolean;
+        copy_attributes(destination: File, flags: FileCopyFlags, cancellable: Cancellable | null): boolean;
 
         /**
          * Finishes copying the file started with `g_file_copy_async()`.
@@ -58304,7 +58174,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object,   `null` to ignore
          * @returns a {@link Gio.FileOutputStream} for the newly created   file, or `null` on error.   Free the returned object with `g_object_unref()`.
          */
-        create(flags: FileCreateFlags, cancellable: (Cancellable | null)): FileOutputStream;
+        create(flags: FileCreateFlags, cancellable: Cancellable | null): FileOutputStream;
 
         /**
          * Asynchronously creates a new file and returns an output stream
@@ -58320,24 +58190,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param io_priority the [I/O priority](https://docs.gtk.org/gio/iface.AsyncResult.html#io-priority) of the request
          * @param cancellable optional {@link Gio.Cancellable} object,   `null` to ignore
          */
-        create_async(flags: FileCreateFlags, io_priority: number, cancellable: (Cancellable | null)): globalThis.Promise<FileOutputStream>;
-
-        /**
-         * Asynchronously creates a new file and returns an output stream
-         * for writing to it. The file must not already exist.
-         * 
-         * For more details, see `g_file_create()` which is
-         * the synchronous version of this call.
-         * 
-         * When the operation is finished, `callback` will be called.
-         * You can then call `g_file_create_finish()` to get the result
-         * of the operation.
-         * @param flags a set of {@link Gio.FileCreateFlags}
-         * @param io_priority the [I/O priority](https://docs.gtk.org/gio/iface.AsyncResult.html#io-priority) of the request
-         * @param cancellable optional {@link Gio.Cancellable} object,   `null` to ignore
-         * @param callback a {@link Gio.AsyncReadyCallback}   to call when the request is satisfied
-         */
-        create_async(flags: FileCreateFlags, io_priority: number, cancellable: (Cancellable | null), callback: (AsyncReadyCallback<this> | null)): void;
+        create_async(flags: FileCreateFlags, io_priority: number, cancellable: Cancellable | null): globalThis.Promise<FileOutputStream>;
 
         /**
          * Asynchronously creates a new file and returns an output stream
@@ -58354,7 +58207,24 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object,   `null` to ignore
          * @param callback a {@link Gio.AsyncReadyCallback}   to call when the request is satisfied
          */
-        create_async(flags: FileCreateFlags, io_priority: number, cancellable: (Cancellable | null), callback?: (AsyncReadyCallback<this> | null)): (globalThis.Promise<FileOutputStream> | void);
+        create_async(flags: FileCreateFlags, io_priority: number, cancellable: Cancellable | null, callback: AsyncReadyCallback<this> | null): void;
+
+        /**
+         * Asynchronously creates a new file and returns an output stream
+         * for writing to it. The file must not already exist.
+         * 
+         * For more details, see `g_file_create()` which is
+         * the synchronous version of this call.
+         * 
+         * When the operation is finished, `callback` will be called.
+         * You can then call `g_file_create_finish()` to get the result
+         * of the operation.
+         * @param flags a set of {@link Gio.FileCreateFlags}
+         * @param io_priority the [I/O priority](https://docs.gtk.org/gio/iface.AsyncResult.html#io-priority) of the request
+         * @param cancellable optional {@link Gio.Cancellable} object,   `null` to ignore
+         * @param callback a {@link Gio.AsyncReadyCallback}   to call when the request is satisfied
+         */
+        create_async(flags: FileCreateFlags, io_priority: number, cancellable: Cancellable | null, callback?: AsyncReadyCallback<this> | null): globalThis.Promise<FileOutputStream> | void;
 
         /**
          * Finishes an asynchronous file create operation started with
@@ -58392,7 +58262,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object,   `null` to ignore
          * @returns a {@link Gio.FileIOStream} for the newly created   file, or `null` on error.   Free the returned object with `g_object_unref()`.
          */
-        create_readwrite(flags: FileCreateFlags, cancellable: (Cancellable | null)): FileIOStream;
+        create_readwrite(flags: FileCreateFlags, cancellable: Cancellable | null): FileIOStream;
 
         /**
          * Asynchronously creates a new file and returns a stream
@@ -58408,24 +58278,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param io_priority the [I/O priority](https://docs.gtk.org/gio/iface.AsyncResult.html#io-priority) of the request
          * @param cancellable optional {@link Gio.Cancellable} object,   `null` to ignore
          */
-        create_readwrite_async(flags: FileCreateFlags, io_priority: number, cancellable: (Cancellable | null)): globalThis.Promise<FileIOStream>;
-
-        /**
-         * Asynchronously creates a new file and returns a stream
-         * for reading and writing to it. The file must not already exist.
-         * 
-         * For more details, see `g_file_create_readwrite()` which is
-         * the synchronous version of this call.
-         * 
-         * When the operation is finished, `callback` will be called.
-         * You can then call `g_file_create_readwrite_finish()` to get
-         * the result of the operation.
-         * @param flags a set of {@link Gio.FileCreateFlags}
-         * @param io_priority the [I/O priority](https://docs.gtk.org/gio/iface.AsyncResult.html#io-priority) of the request
-         * @param cancellable optional {@link Gio.Cancellable} object,   `null` to ignore
-         * @param callback a {@link Gio.AsyncReadyCallback}   to call when the request is satisfied
-         */
-        create_readwrite_async(flags: FileCreateFlags, io_priority: number, cancellable: (Cancellable | null), callback: (AsyncReadyCallback<this> | null)): void;
+        create_readwrite_async(flags: FileCreateFlags, io_priority: number, cancellable: Cancellable | null): globalThis.Promise<FileIOStream>;
 
         /**
          * Asynchronously creates a new file and returns a stream
@@ -58442,7 +58295,24 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object,   `null` to ignore
          * @param callback a {@link Gio.AsyncReadyCallback}   to call when the request is satisfied
          */
-        create_readwrite_async(flags: FileCreateFlags, io_priority: number, cancellable: (Cancellable | null), callback?: (AsyncReadyCallback<this> | null)): (globalThis.Promise<FileIOStream> | void);
+        create_readwrite_async(flags: FileCreateFlags, io_priority: number, cancellable: Cancellable | null, callback: AsyncReadyCallback<this> | null): void;
+
+        /**
+         * Asynchronously creates a new file and returns a stream
+         * for reading and writing to it. The file must not already exist.
+         * 
+         * For more details, see `g_file_create_readwrite()` which is
+         * the synchronous version of this call.
+         * 
+         * When the operation is finished, `callback` will be called.
+         * You can then call `g_file_create_readwrite_finish()` to get
+         * the result of the operation.
+         * @param flags a set of {@link Gio.FileCreateFlags}
+         * @param io_priority the [I/O priority](https://docs.gtk.org/gio/iface.AsyncResult.html#io-priority) of the request
+         * @param cancellable optional {@link Gio.Cancellable} object,   `null` to ignore
+         * @param callback a {@link Gio.AsyncReadyCallback}   to call when the request is satisfied
+         */
+        create_readwrite_async(flags: FileCreateFlags, io_priority: number, cancellable: Cancellable | null, callback?: AsyncReadyCallback<this> | null): globalThis.Promise<FileIOStream> | void;
 
         /**
          * Finishes an asynchronous file create operation started with
@@ -58479,7 +58349,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object,   `null` to ignore
          * @returns `true` if the file was deleted. `false` otherwise.
          */
-        ["delete"](cancellable: (Cancellable | null)): boolean;
+        ["delete"](cancellable: Cancellable | null): boolean;
 
         /**
          * Asynchronously delete a file. If the `file` is a directory, it will
@@ -58488,17 +58358,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param io_priority the [I/O priority](https://docs.gtk.org/gio/iface.AsyncResult.html#io-priority) of the request
          * @param cancellable optional {@link Gio.Cancellable} object,   `null` to ignore
          */
-        delete_async(io_priority: number, cancellable: (Cancellable | null)): globalThis.Promise<boolean>;
-
-        /**
-         * Asynchronously delete a file. If the `file` is a directory, it will
-         * only be deleted if it is empty.  This has the same semantics as
-         * `g_unlink()`.
-         * @param io_priority the [I/O priority](https://docs.gtk.org/gio/iface.AsyncResult.html#io-priority) of the request
-         * @param cancellable optional {@link Gio.Cancellable} object,   `null` to ignore
-         * @param callback a {@link Gio.AsyncReadyCallback} to call   when the request is satisfied
-         */
-        delete_async(io_priority: number, cancellable: (Cancellable | null), callback: (AsyncReadyCallback<this> | null)): void;
+        delete_async(io_priority: number, cancellable: Cancellable | null): globalThis.Promise<boolean>;
 
         /**
          * Asynchronously delete a file. If the `file` is a directory, it will
@@ -58508,7 +58368,17 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object,   `null` to ignore
          * @param callback a {@link Gio.AsyncReadyCallback} to call   when the request is satisfied
          */
-        delete_async(io_priority: number, cancellable: (Cancellable | null), callback?: (AsyncReadyCallback<this> | null)): (globalThis.Promise<boolean> | void);
+        delete_async(io_priority: number, cancellable: Cancellable | null, callback: AsyncReadyCallback<this> | null): void;
+
+        /**
+         * Asynchronously delete a file. If the `file` is a directory, it will
+         * only be deleted if it is empty.  This has the same semantics as
+         * `g_unlink()`.
+         * @param io_priority the [I/O priority](https://docs.gtk.org/gio/iface.AsyncResult.html#io-priority) of the request
+         * @param cancellable optional {@link Gio.Cancellable} object,   `null` to ignore
+         * @param callback a {@link Gio.AsyncReadyCallback} to call   when the request is satisfied
+         */
+        delete_async(io_priority: number, cancellable: Cancellable | null, callback?: AsyncReadyCallback<this> | null): globalThis.Promise<boolean> | void;
 
         /**
          * Finishes deleting a file started with `g_file_delete_async()`.
@@ -58544,7 +58414,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param flags flags affecting the operation
          * @param cancellable optional {@link Gio.Cancellable} object,   `null` to ignore
          */
-        eject_mountable(flags: MountUnmountFlags, cancellable: (Cancellable | null)): globalThis.Promise<boolean>;
+        eject_mountable(flags: MountUnmountFlags, cancellable: Cancellable | null): globalThis.Promise<boolean>;
 
         /**
          * Starts an asynchronous eject on a mountable.
@@ -58559,7 +58429,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object,   `null` to ignore
          * @param callback a {@link Gio.AsyncReadyCallback}   to call when the request is satisfied
          */
-        eject_mountable(flags: MountUnmountFlags, cancellable: (Cancellable | null), callback: (AsyncReadyCallback<this> | null)): void;
+        eject_mountable(flags: MountUnmountFlags, cancellable: Cancellable | null, callback: AsyncReadyCallback<this> | null): void;
 
         /**
          * Starts an asynchronous eject on a mountable.
@@ -58574,7 +58444,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object,   `null` to ignore
          * @param callback a {@link Gio.AsyncReadyCallback}   to call when the request is satisfied
          */
-        eject_mountable(flags: MountUnmountFlags, cancellable: (Cancellable | null), callback?: (AsyncReadyCallback<this> | null)): (globalThis.Promise<boolean> | void);
+        eject_mountable(flags: MountUnmountFlags, cancellable: Cancellable | null, callback?: AsyncReadyCallback<this> | null): globalThis.Promise<boolean> | void;
 
         /**
          * Finishes an asynchronous eject operation started by
@@ -58597,7 +58467,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param mount_operation a {@link Gio.MountOperation},   or `null` to avoid user interaction
          * @param cancellable optional {@link Gio.Cancellable} object,   `null` to ignore
          */
-        eject_mountable_with_operation(flags: MountUnmountFlags, mount_operation: (MountOperation | null), cancellable: (Cancellable | null)): globalThis.Promise<boolean>;
+        eject_mountable_with_operation(flags: MountUnmountFlags, mount_operation: MountOperation | null, cancellable: Cancellable | null): globalThis.Promise<boolean>;
 
         /**
          * Starts an asynchronous eject on a mountable.
@@ -58613,7 +58483,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object,   `null` to ignore
          * @param callback a {@link Gio.AsyncReadyCallback}   to call when the request is satisfied
          */
-        eject_mountable_with_operation(flags: MountUnmountFlags, mount_operation: (MountOperation | null), cancellable: (Cancellable | null), callback: (AsyncReadyCallback<this> | null)): void;
+        eject_mountable_with_operation(flags: MountUnmountFlags, mount_operation: MountOperation | null, cancellable: Cancellable | null, callback: AsyncReadyCallback<this> | null): void;
 
         /**
          * Starts an asynchronous eject on a mountable.
@@ -58629,7 +58499,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object,   `null` to ignore
          * @param callback a {@link Gio.AsyncReadyCallback}   to call when the request is satisfied
          */
-        eject_mountable_with_operation(flags: MountUnmountFlags, mount_operation: (MountOperation | null), cancellable: (Cancellable | null), callback?: (AsyncReadyCallback<this> | null)): (globalThis.Promise<boolean> | void);
+        eject_mountable_with_operation(flags: MountUnmountFlags, mount_operation: MountOperation | null, cancellable: Cancellable | null, callback?: AsyncReadyCallback<this> | null): globalThis.Promise<boolean> | void;
 
         /**
          * Finishes an asynchronous eject operation started by
@@ -58670,7 +58540,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object,   `null` to ignore
          * @returns A {@link Gio.FileEnumerator} if successful,   `null` on error. Free the returned object with `g_object_unref()`.
          */
-        enumerate_children(attributes: string, flags: FileQueryInfoFlags, cancellable: (Cancellable | null)): FileEnumerator;
+        enumerate_children(attributes: string, flags: FileQueryInfoFlags, cancellable: Cancellable | null): FileEnumerator;
 
         /**
          * Asynchronously gets the requested information about the files
@@ -58688,26 +58558,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param io_priority the [I/O priority](https://docs.gtk.org/gio/iface.AsyncResult.html#io-priority) of the request
          * @param cancellable optional {@link Gio.Cancellable} object,   `null` to ignore
          */
-        enumerate_children_async(attributes: string, flags: FileQueryInfoFlags, io_priority: number, cancellable: (Cancellable | null)): globalThis.Promise<FileEnumerator>;
-
-        /**
-         * Asynchronously gets the requested information about the files
-         * in a directory. The result is a {@link Gio.FileEnumerator} object that will
-         * give out {@link Gio.FileInfo} objects for all the files in the directory.
-         * 
-         * For more details, see `g_file_enumerate_children()` which is
-         * the synchronous version of this call.
-         * 
-         * When the operation is finished, `callback` will be called. You can
-         * then call `g_file_enumerate_children_finish()` to get the result of
-         * the operation.
-         * @param attributes an attribute query string
-         * @param flags a set of {@link Gio.FileQueryInfoFlags}
-         * @param io_priority the [I/O priority](https://docs.gtk.org/gio/iface.AsyncResult.html#io-priority) of the request
-         * @param cancellable optional {@link Gio.Cancellable} object,   `null` to ignore
-         * @param callback a {@link Gio.AsyncReadyCallback}   to call when the request is satisfied
-         */
-        enumerate_children_async(attributes: string, flags: FileQueryInfoFlags, io_priority: number, cancellable: (Cancellable | null), callback: (AsyncReadyCallback<this> | null)): void;
+        enumerate_children_async(attributes: string, flags: FileQueryInfoFlags, io_priority: number, cancellable: Cancellable | null): globalThis.Promise<FileEnumerator>;
 
         /**
          * Asynchronously gets the requested information about the files
@@ -58726,7 +58577,26 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object,   `null` to ignore
          * @param callback a {@link Gio.AsyncReadyCallback}   to call when the request is satisfied
          */
-        enumerate_children_async(attributes: string, flags: FileQueryInfoFlags, io_priority: number, cancellable: (Cancellable | null), callback?: (AsyncReadyCallback<this> | null)): (globalThis.Promise<FileEnumerator> | void);
+        enumerate_children_async(attributes: string, flags: FileQueryInfoFlags, io_priority: number, cancellable: Cancellable | null, callback: AsyncReadyCallback<this> | null): void;
+
+        /**
+         * Asynchronously gets the requested information about the files
+         * in a directory. The result is a {@link Gio.FileEnumerator} object that will
+         * give out {@link Gio.FileInfo} objects for all the files in the directory.
+         * 
+         * For more details, see `g_file_enumerate_children()` which is
+         * the synchronous version of this call.
+         * 
+         * When the operation is finished, `callback` will be called. You can
+         * then call `g_file_enumerate_children_finish()` to get the result of
+         * the operation.
+         * @param attributes an attribute query string
+         * @param flags a set of {@link Gio.FileQueryInfoFlags}
+         * @param io_priority the [I/O priority](https://docs.gtk.org/gio/iface.AsyncResult.html#io-priority) of the request
+         * @param cancellable optional {@link Gio.Cancellable} object,   `null` to ignore
+         * @param callback a {@link Gio.AsyncReadyCallback}   to call when the request is satisfied
+         */
+        enumerate_children_async(attributes: string, flags: FileQueryInfoFlags, io_priority: number, cancellable: Cancellable | null, callback?: AsyncReadyCallback<this> | null): globalThis.Promise<FileEnumerator> | void;
 
         /**
          * Finishes an async enumerate children operation.
@@ -58762,7 +58632,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object,   `null` to ignore
          * @returns a {@link Gio.Mount} where the `file` is located   or `null` on error.   Free the returned object with `g_object_unref()`.
          */
-        find_enclosing_mount(cancellable: (Cancellable | null)): Mount;
+        find_enclosing_mount(cancellable: Cancellable | null): Mount;
 
         /**
          * Asynchronously gets the mount for the file.
@@ -58776,22 +58646,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param io_priority the [I/O priority](https://docs.gtk.org/gio/iface.AsyncResult.html#io-priority) of the request
          * @param cancellable optional {@link Gio.Cancellable} object,   `null` to ignore
          */
-        find_enclosing_mount_async(io_priority: number, cancellable: (Cancellable | null)): globalThis.Promise<Mount>;
-
-        /**
-         * Asynchronously gets the mount for the file.
-         * 
-         * For more details, see `g_file_find_enclosing_mount()` which is
-         * the synchronous version of this call.
-         * 
-         * When the operation is finished, `callback` will be called.
-         * You can then call `g_file_find_enclosing_mount_finish()` to
-         * get the result of the operation.
-         * @param io_priority the [I/O priority](https://docs.gtk.org/gio/iface.AsyncResult.html#io-priority) of the request
-         * @param cancellable optional {@link Gio.Cancellable} object,   `null` to ignore
-         * @param callback a {@link Gio.AsyncReadyCallback}   to call when the request is satisfied
-         */
-        find_enclosing_mount_async(io_priority: number, cancellable: (Cancellable | null), callback: (AsyncReadyCallback<this> | null)): void;
+        find_enclosing_mount_async(io_priority: number, cancellable: Cancellable | null): globalThis.Promise<Mount>;
 
         /**
          * Asynchronously gets the mount for the file.
@@ -58806,7 +58661,22 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object,   `null` to ignore
          * @param callback a {@link Gio.AsyncReadyCallback}   to call when the request is satisfied
          */
-        find_enclosing_mount_async(io_priority: number, cancellable: (Cancellable | null), callback?: (AsyncReadyCallback<this> | null)): (globalThis.Promise<Mount> | void);
+        find_enclosing_mount_async(io_priority: number, cancellable: Cancellable | null, callback: AsyncReadyCallback<this> | null): void;
+
+        /**
+         * Asynchronously gets the mount for the file.
+         * 
+         * For more details, see `g_file_find_enclosing_mount()` which is
+         * the synchronous version of this call.
+         * 
+         * When the operation is finished, `callback` will be called.
+         * You can then call `g_file_find_enclosing_mount_finish()` to
+         * get the result of the operation.
+         * @param io_priority the [I/O priority](https://docs.gtk.org/gio/iface.AsyncResult.html#io-priority) of the request
+         * @param cancellable optional {@link Gio.Cancellable} object,   `null` to ignore
+         * @param callback a {@link Gio.AsyncReadyCallback}   to call when the request is satisfied
+         */
+        find_enclosing_mount_async(io_priority: number, cancellable: Cancellable | null, callback?: AsyncReadyCallback<this> | null): globalThis.Promise<Mount> | void;
 
         /**
          * Finishes an asynchronous find mount request.
@@ -58832,7 +58702,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * This call does no blocking I/O.
          * @returns string containing the {@link Gio.File}'s   base name, or `null` if given {@link Gio.File} is invalid. The returned string   should be freed with `g_free()` when no longer needed.
          */
-        get_basename(): (string | null);
+        get_basename(): string | null;
 
         /**
          * Gets a child of `file` with basename equal to `name`.
@@ -58869,7 +58739,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * This call does no blocking I/O.
          * @returns a {@link Gio.File} structure to the   parent of the given {@link Gio.File} or `null` if there is no parent. Free   the returned object with `g_object_unref()`.
          */
-        get_parent(): (File | null);
+        get_parent(): File | null;
 
         /**
          * Gets the parse name of the `file`.
@@ -58897,7 +58767,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * This call does no blocking I/O.
          * @returns string containing the {@link Gio.File}'s path,   or `null` if no such path exists. The returned string should be freed   with `g_free()` when no longer needed.
          */
-        get_path(): (string | null);
+        get_path(): string | null;
 
         /**
          * Gets the path for `descendant` relative to `parent`.
@@ -58906,7 +58776,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param descendant input {@link Gio.File}
          * @returns string with the relative path from   `descendant` to `parent`, or `null` if `descendant` doesn't have `parent` as   prefix. The returned string should be freed with `g_free()` when   no longer needed.
          */
-        get_relative_path(descendant: File): (string | null);
+        get_relative_path(descendant: File): string | null;
 
         /**
          * Gets the URI for the `file`.
@@ -58932,7 +58802,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * This call does no blocking I/O.
          * @returns a string containing the URI scheme for the given   {@link Gio.File} or `null` if the {@link Gio.File} was constructed with an invalid URI. The   returned string should be freed with `g_free()` when no longer needed.
          */
-        get_uri_scheme(): (string | null);
+        get_uri_scheme(): string | null;
 
         /**
          * Checks if `file` has a parent, and optionally, if it is `parent`.
@@ -58943,7 +58813,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param parent the parent to check for, or `null`
          * @returns `true` if `file` is an immediate child of `parent` (or any parent in   the case that `parent` is `null`).
          */
-        has_parent(parent: (File | null)): boolean;
+        has_parent(parent: File | null): boolean;
 
         /**
          * Checks whether `file` has the prefix specified by `prefix`.
@@ -59013,7 +58883,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable a {@link Gio.Cancellable} or `null`
          * @returns a {@link GLib.Bytes} or `null` and `error` is set
          */
-        load_bytes(cancellable: (Cancellable | null)): [GLib.Bytes, string];
+        load_bytes(cancellable: Cancellable | null): [GLib.Bytes, string];
 
         /**
          * Asynchronously loads the contents of `file` as {@link GLib.Bytes}.
@@ -59028,23 +58898,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * See `g_file_load_bytes()` for more information.
          * @param cancellable a {@link Gio.Cancellable} or `null`
          */
-        load_bytes_async(cancellable: (Cancellable | null)): globalThis.Promise<[GLib.Bytes, string]>;
-
-        /**
-         * Asynchronously loads the contents of `file` as {@link GLib.Bytes}.
-         * 
-         * If `file` is a resource:// based URI, the resulting bytes will reference the
-         * embedded resource instead of a copy. Otherwise, this is equivalent to calling
-         * `g_file_load_contents_async()` and `g_bytes_new_take()`.
-         * 
-         * `callback` should call `g_file_load_bytes_finish()` to get the result of this
-         * asynchronous operation.
-         * 
-         * See `g_file_load_bytes()` for more information.
-         * @param cancellable a {@link Gio.Cancellable} or `null`
-         * @param callback a {@link Gio.AsyncReadyCallback}   to call when the request is satisfied
-         */
-        load_bytes_async(cancellable: (Cancellable | null), callback: (AsyncReadyCallback<this> | null)): void;
+        load_bytes_async(cancellable: Cancellable | null): globalThis.Promise<[GLib.Bytes, string]>;
 
         /**
          * Asynchronously loads the contents of `file` as {@link GLib.Bytes}.
@@ -59060,7 +58914,23 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable a {@link Gio.Cancellable} or `null`
          * @param callback a {@link Gio.AsyncReadyCallback}   to call when the request is satisfied
          */
-        load_bytes_async(cancellable: (Cancellable | null), callback?: (AsyncReadyCallback<this> | null)): (globalThis.Promise<[GLib.Bytes, string]> | void);
+        load_bytes_async(cancellable: Cancellable | null, callback: AsyncReadyCallback<this> | null): void;
+
+        /**
+         * Asynchronously loads the contents of `file` as {@link GLib.Bytes}.
+         * 
+         * If `file` is a resource:// based URI, the resulting bytes will reference the
+         * embedded resource instead of a copy. Otherwise, this is equivalent to calling
+         * `g_file_load_contents_async()` and `g_bytes_new_take()`.
+         * 
+         * `callback` should call `g_file_load_bytes_finish()` to get the result of this
+         * asynchronous operation.
+         * 
+         * See `g_file_load_bytes()` for more information.
+         * @param cancellable a {@link Gio.Cancellable} or `null`
+         * @param callback a {@link Gio.AsyncReadyCallback}   to call when the request is satisfied
+         */
+        load_bytes_async(cancellable: Cancellable | null, callback?: AsyncReadyCallback<this> | null): globalThis.Promise<[GLib.Bytes, string]> | void;
 
         /**
          * Completes an asynchronous request to `g_file_load_bytes_async()`.
@@ -59089,7 +58959,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore
          * @returns `true` if the `file`'s contents were successfully loaded.   `false` if there were errors.
          */
-        load_contents(cancellable: (Cancellable | null)): [boolean, Uint8Array, string];
+        load_contents(cancellable: Cancellable | null): [boolean, Uint8Array, string];
 
         /**
          * Starts an asynchronous load of the `file`'s contents.
@@ -59107,26 +58977,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * was cancelled, the error {@link Gio.IOErrorEnum.CANCELLED} will be returned.
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore
          */
-        load_contents_async(cancellable: (Cancellable | null)): globalThis.Promise<[Uint8Array, string]>;
-
-        /**
-         * Starts an asynchronous load of the `file`'s contents.
-         * 
-         * For more details, see `g_file_load_contents()` which is
-         * the synchronous version of this call.
-         * 
-         * When the load operation has completed, `callback` will be called
-         * with `user` data. To finish the operation, call
-         * `g_file_load_contents_finish()` with the {@link Gio.AsyncResult} returned by
-         * the `callback`.
-         * 
-         * If `cancellable` is not `null`, then the operation can be cancelled by
-         * triggering the cancellable object from another thread. If the operation
-         * was cancelled, the error {@link Gio.IOErrorEnum.CANCELLED} will be returned.
-         * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore
-         * @param callback a {@link Gio.AsyncReadyCallback} to call when the request is satisfied
-         */
-        load_contents_async(cancellable: (Cancellable | null), callback: (AsyncReadyCallback<this> | null)): void;
+        load_contents_async(cancellable: Cancellable | null): globalThis.Promise<[Uint8Array, string]>;
 
         /**
          * Starts an asynchronous load of the `file`'s contents.
@@ -59145,7 +58996,26 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore
          * @param callback a {@link Gio.AsyncReadyCallback} to call when the request is satisfied
          */
-        load_contents_async(cancellable: (Cancellable | null), callback?: (AsyncReadyCallback<this> | null)): (globalThis.Promise<[Uint8Array, string]> | void);
+        load_contents_async(cancellable: Cancellable | null, callback: AsyncReadyCallback<this> | null): void;
+
+        /**
+         * Starts an asynchronous load of the `file`'s contents.
+         * 
+         * For more details, see `g_file_load_contents()` which is
+         * the synchronous version of this call.
+         * 
+         * When the load operation has completed, `callback` will be called
+         * with `user` data. To finish the operation, call
+         * `g_file_load_contents_finish()` with the {@link Gio.AsyncResult} returned by
+         * the `callback`.
+         * 
+         * If `cancellable` is not `null`, then the operation can be cancelled by
+         * triggering the cancellable object from another thread. If the operation
+         * was cancelled, the error {@link Gio.IOErrorEnum.CANCELLED} will be returned.
+         * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore
+         * @param callback a {@link Gio.AsyncReadyCallback} to call when the request is satisfied
+         */
+        load_contents_async(cancellable: Cancellable | null, callback?: AsyncReadyCallback<this> | null): globalThis.Promise<[Uint8Array, string]> | void;
 
         /**
          * Finishes an asynchronous load of the `file`'s contents.
@@ -59191,22 +59061,14 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object,   `null` to ignore
          * @returns `true` on successful creation, `false` otherwise.
          */
-        make_directory(cancellable: (Cancellable | null)): boolean;
+        make_directory(cancellable: Cancellable | null): boolean;
 
         /**
          * Asynchronously creates a directory.
          * @param io_priority the [I/O priority](https://docs.gtk.org/gio/iface.AsyncResult.html#io-priority) of the request
          * @param cancellable optional {@link Gio.Cancellable} object,   `null` to ignore
          */
-        make_directory_async(io_priority: number, cancellable: (Cancellable | null)): globalThis.Promise<boolean>;
-
-        /**
-         * Asynchronously creates a directory.
-         * @param io_priority the [I/O priority](https://docs.gtk.org/gio/iface.AsyncResult.html#io-priority) of the request
-         * @param cancellable optional {@link Gio.Cancellable} object,   `null` to ignore
-         * @param callback a {@link Gio.AsyncReadyCallback} to call   when the request is satisfied
-         */
-        make_directory_async(io_priority: number, cancellable: (Cancellable | null), callback: (AsyncReadyCallback<this> | null)): void;
+        make_directory_async(io_priority: number, cancellable: Cancellable | null): globalThis.Promise<boolean>;
 
         /**
          * Asynchronously creates a directory.
@@ -59214,7 +59076,15 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object,   `null` to ignore
          * @param callback a {@link Gio.AsyncReadyCallback} to call   when the request is satisfied
          */
-        make_directory_async(io_priority: number, cancellable: (Cancellable | null), callback?: (AsyncReadyCallback<this> | null)): (globalThis.Promise<boolean> | void);
+        make_directory_async(io_priority: number, cancellable: Cancellable | null, callback: AsyncReadyCallback<this> | null): void;
+
+        /**
+         * Asynchronously creates a directory.
+         * @param io_priority the [I/O priority](https://docs.gtk.org/gio/iface.AsyncResult.html#io-priority) of the request
+         * @param cancellable optional {@link Gio.Cancellable} object,   `null` to ignore
+         * @param callback a {@link Gio.AsyncReadyCallback} to call   when the request is satisfied
+         */
+        make_directory_async(io_priority: number, cancellable: Cancellable | null, callback?: AsyncReadyCallback<this> | null): globalThis.Promise<boolean> | void;
 
         /**
          * Finishes an asynchronous directory creation, started with
@@ -59241,7 +59111,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object,   `null` to ignore
          * @returns `true` if all directories have been successfully created, `false` otherwise.
          */
-        make_directory_with_parents(cancellable: (Cancellable | null)): boolean;
+        make_directory_with_parents(cancellable: Cancellable | null): boolean;
 
         /**
          * Creates a symbolic link named `file` which contains the string
@@ -59254,7 +59124,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object,   `null` to ignore
          * @returns `true` on the creation of a new symlink, `false` otherwise.
          */
-        make_symbolic_link(symlink_value: string, cancellable: (Cancellable | null)): boolean;
+        make_symbolic_link(symlink_value: string, cancellable: Cancellable | null): boolean;
 
         /**
          * Asynchronously creates a symbolic link named `file` which contains the
@@ -59263,17 +59133,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param io_priority the [I/O priority](https://docs.gtk.org/gio/iface.AsyncResult.html#io-priority) of the request
          * @param cancellable optional {@link Gio.Cancellable} object,   `null` to ignore
          */
-        make_symbolic_link_async(symlink_value: string, io_priority: number, cancellable: (Cancellable | null)): globalThis.Promise<boolean>;
-
-        /**
-         * Asynchronously creates a symbolic link named `file` which contains the
-         * string `symlink_value`.
-         * @param symlink_value a string with the path for the target   of the new symlink
-         * @param io_priority the [I/O priority](https://docs.gtk.org/gio/iface.AsyncResult.html#io-priority) of the request
-         * @param cancellable optional {@link Gio.Cancellable} object,   `null` to ignore
-         * @param callback a {@link Gio.AsyncReadyCallback} to call   when the request is satisfied
-         */
-        make_symbolic_link_async(symlink_value: string, io_priority: number, cancellable: (Cancellable | null), callback: (AsyncReadyCallback<this> | null)): void;
+        make_symbolic_link_async(symlink_value: string, io_priority: number, cancellable: Cancellable | null): globalThis.Promise<boolean>;
 
         /**
          * Asynchronously creates a symbolic link named `file` which contains the
@@ -59283,7 +59143,17 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object,   `null` to ignore
          * @param callback a {@link Gio.AsyncReadyCallback} to call   when the request is satisfied
          */
-        make_symbolic_link_async(symlink_value: string, io_priority: number, cancellable: (Cancellable | null), callback?: (AsyncReadyCallback<this> | null)): (globalThis.Promise<boolean> | void);
+        make_symbolic_link_async(symlink_value: string, io_priority: number, cancellable: Cancellable | null, callback: AsyncReadyCallback<this> | null): void;
+
+        /**
+         * Asynchronously creates a symbolic link named `file` which contains the
+         * string `symlink_value`.
+         * @param symlink_value a string with the path for the target   of the new symlink
+         * @param io_priority the [I/O priority](https://docs.gtk.org/gio/iface.AsyncResult.html#io-priority) of the request
+         * @param cancellable optional {@link Gio.Cancellable} object,   `null` to ignore
+         * @param callback a {@link Gio.AsyncReadyCallback} to call   when the request is satisfied
+         */
+        make_symbolic_link_async(symlink_value: string, io_priority: number, cancellable: Cancellable | null, callback?: AsyncReadyCallback<this> | null): globalThis.Promise<boolean> | void;
 
         /**
          * Finishes an asynchronous symbolic link creation, started with
@@ -59317,7 +59187,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param progress_callback a {@link Gio.FileMeasureProgressCallback}
          * @returns `true` if successful, with the out parameters set.   `false` otherwise, with `error` set.
          */
-        measure_disk_usage(flags: FileMeasureFlags, cancellable: (Cancellable | null), progress_callback: (FileMeasureProgressCallback | null)): [boolean, number, number, number];
+        measure_disk_usage(flags: FileMeasureFlags, cancellable: Cancellable | null, progress_callback: FileMeasureProgressCallback | null): [boolean, number, number, number];
 
         /**
          * Collects the results from an earlier call to
@@ -59339,7 +59209,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object,   `null` to ignore
          * @returns a {@link Gio.FileMonitor} for the given `file`,   or `null` on error.   Free the returned object with `g_object_unref()`.
          */
-        monitor(flags: FileMonitorFlags, cancellable: (Cancellable | null)): FileMonitor;
+        monitor(flags: FileMonitorFlags, cancellable: Cancellable | null): FileMonitor;
 
         /**
          * Obtains a directory monitor for the given file.
@@ -59358,7 +59228,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object,   `null` to ignore
          * @returns a {@link Gio.FileMonitor} for the given `file`,   or `null` on error. Free the returned object with `g_object_unref()`.
          */
-        monitor_directory(flags: FileMonitorFlags, cancellable: (Cancellable | null)): FileMonitor;
+        monitor_directory(flags: FileMonitorFlags, cancellable: Cancellable | null): FileMonitor;
 
         /**
          * Obtains a file monitor for the given file. If no file notification
@@ -59379,7 +59249,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object,   `null` to ignore
          * @returns a {@link Gio.FileMonitor} for the given `file`,   or `null` on error.   Free the returned object with `g_object_unref()`.
          */
-        monitor_file(flags: FileMonitorFlags, cancellable: (Cancellable | null)): FileMonitor;
+        monitor_file(flags: FileMonitorFlags, cancellable: Cancellable | null): FileMonitor;
 
         /**
          * Starts a `mount_operation`, mounting the volume that contains
@@ -59396,25 +59266,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param mount_operation a {@link Gio.MountOperation}   or `null` to avoid user interaction
          * @param cancellable optional {@link Gio.Cancellable} object,   `null` to ignore
          */
-        mount_enclosing_volume(flags: MountMountFlags, mount_operation: (MountOperation | null), cancellable: (Cancellable | null)): globalThis.Promise<boolean>;
-
-        /**
-         * Starts a `mount_operation`, mounting the volume that contains
-         * the file `location`.
-         * 
-         * When this operation has completed, `callback` will be called with
-         * `user_user` data, and the operation can be finalized with
-         * `g_file_mount_enclosing_volume_finish()`.
-         * 
-         * If `cancellable` is not `null`, then the operation can be cancelled by
-         * triggering the cancellable object from another thread. If the operation
-         * was cancelled, the error {@link Gio.IOErrorEnum.CANCELLED} will be returned.
-         * @param flags flags affecting the operation
-         * @param mount_operation a {@link Gio.MountOperation}   or `null` to avoid user interaction
-         * @param cancellable optional {@link Gio.Cancellable} object,   `null` to ignore
-         * @param callback a {@link Gio.AsyncReadyCallback} to call   when the request is satisfied, or `null`
-         */
-        mount_enclosing_volume(flags: MountMountFlags, mount_operation: (MountOperation | null), cancellable: (Cancellable | null), callback: (AsyncReadyCallback<this> | null)): void;
+        mount_enclosing_volume(flags: MountMountFlags, mount_operation: MountOperation | null, cancellable: Cancellable | null): globalThis.Promise<boolean>;
 
         /**
          * Starts a `mount_operation`, mounting the volume that contains
@@ -59432,7 +59284,25 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object,   `null` to ignore
          * @param callback a {@link Gio.AsyncReadyCallback} to call   when the request is satisfied, or `null`
          */
-        mount_enclosing_volume(flags: MountMountFlags, mount_operation: (MountOperation | null), cancellable: (Cancellable | null), callback?: (AsyncReadyCallback<this> | null)): (globalThis.Promise<boolean> | void);
+        mount_enclosing_volume(flags: MountMountFlags, mount_operation: MountOperation | null, cancellable: Cancellable | null, callback: AsyncReadyCallback<this> | null): void;
+
+        /**
+         * Starts a `mount_operation`, mounting the volume that contains
+         * the file `location`.
+         * 
+         * When this operation has completed, `callback` will be called with
+         * `user_user` data, and the operation can be finalized with
+         * `g_file_mount_enclosing_volume_finish()`.
+         * 
+         * If `cancellable` is not `null`, then the operation can be cancelled by
+         * triggering the cancellable object from another thread. If the operation
+         * was cancelled, the error {@link Gio.IOErrorEnum.CANCELLED} will be returned.
+         * @param flags flags affecting the operation
+         * @param mount_operation a {@link Gio.MountOperation}   or `null` to avoid user interaction
+         * @param cancellable optional {@link Gio.Cancellable} object,   `null` to ignore
+         * @param callback a {@link Gio.AsyncReadyCallback} to call   when the request is satisfied, or `null`
+         */
+        mount_enclosing_volume(flags: MountMountFlags, mount_operation: MountOperation | null, cancellable: Cancellable | null, callback?: AsyncReadyCallback<this> | null): globalThis.Promise<boolean> | void;
 
         /**
          * Finishes a mount operation started by `g_file_mount_enclosing_volume()`.
@@ -59457,7 +59327,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param mount_operation a {@link Gio.MountOperation},   or `null` to avoid user interaction
          * @param cancellable optional {@link Gio.Cancellable} object,   `null` to ignore
          */
-        mount_mountable(flags: MountMountFlags, mount_operation: (MountOperation | null), cancellable: (Cancellable | null)): globalThis.Promise<File>;
+        mount_mountable(flags: MountMountFlags, mount_operation: MountOperation | null, cancellable: Cancellable | null): globalThis.Promise<File>;
 
         /**
          * Mounts a file of type G_FILE_TYPE_MOUNTABLE.
@@ -59476,7 +59346,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object,   `null` to ignore
          * @param callback a {@link Gio.AsyncReadyCallback}   to call when the request is satisfied
          */
-        mount_mountable(flags: MountMountFlags, mount_operation: (MountOperation | null), cancellable: (Cancellable | null), callback: (AsyncReadyCallback<this> | null)): void;
+        mount_mountable(flags: MountMountFlags, mount_operation: MountOperation | null, cancellable: Cancellable | null, callback: AsyncReadyCallback<this> | null): void;
 
         /**
          * Mounts a file of type G_FILE_TYPE_MOUNTABLE.
@@ -59495,7 +59365,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object,   `null` to ignore
          * @param callback a {@link Gio.AsyncReadyCallback}   to call when the request is satisfied
          */
-        mount_mountable(flags: MountMountFlags, mount_operation: (MountOperation | null), cancellable: (Cancellable | null), callback?: (AsyncReadyCallback<this> | null)): (globalThis.Promise<File> | void);
+        mount_mountable(flags: MountMountFlags, mount_operation: MountOperation | null, cancellable: Cancellable | null, callback?: AsyncReadyCallback<this> | null): globalThis.Promise<File> | void;
 
         /**
          * Finishes a mount operation. See `g_file_mount_mountable()` for details.
@@ -59547,7 +59417,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param progress_callback {@link Gio.FileProgressCallback}   function for updates
          * @returns `true` on successful move, `false` otherwise.
          */
-        move(destination: File, flags: FileCopyFlags, cancellable: (Cancellable | null), progress_callback: (FileProgressCallback | null)): boolean;
+        move(destination: File, flags: FileCopyFlags, cancellable: Cancellable | null, progress_callback: FileProgressCallback | null): boolean;
 
         /**
          * Version of {@link Gio.File.move_async} using closures instead of callbacks for
@@ -59559,7 +59429,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param progress_callback_closure {@link GObject.Closure} to invoke with progress   information, or `NULL` if progress information is not needed
          * @param ready_callback_closure {@link GObject.Closure} to invoke when the request is satisfied
          */
-        move_async(destination: File, flags: FileCopyFlags, io_priority: number, cancellable: (Cancellable | null), progress_callback_closure: (GObject.Closure | null), ready_callback_closure: GObject.Closure): void;
+        move_async(destination: File, flags: FileCopyFlags, io_priority: number, cancellable: Cancellable | null, progress_callback_closure: GObject.Closure | null, ready_callback_closure: GObject.Closure): void;
 
         /**
          * Finishes an asynchronous file movement, started with
@@ -59589,7 +59459,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable a {@link Gio.Cancellable}
          * @returns {@link Gio.FileIOStream} or `null` on error.   Free the returned object with `g_object_unref()`.
          */
-        open_readwrite(cancellable: (Cancellable | null)): FileIOStream;
+        open_readwrite(cancellable: Cancellable | null): FileIOStream;
 
         /**
          * Asynchronously opens `file` for reading and writing.
@@ -59603,22 +59473,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param io_priority the [I/O priority](https://docs.gtk.org/gio/iface.AsyncResult.html#io-priority) of the request
          * @param cancellable optional {@link Gio.Cancellable} object,   `null` to ignore
          */
-        open_readwrite_async(io_priority: number, cancellable: (Cancellable | null)): globalThis.Promise<FileIOStream>;
-
-        /**
-         * Asynchronously opens `file` for reading and writing.
-         * 
-         * For more details, see `g_file_open_readwrite()` which is
-         * the synchronous version of this call.
-         * 
-         * When the operation is finished, `callback` will be called.
-         * You can then call `g_file_open_readwrite_finish()` to get
-         * the result of the operation.
-         * @param io_priority the [I/O priority](https://docs.gtk.org/gio/iface.AsyncResult.html#io-priority) of the request
-         * @param cancellable optional {@link Gio.Cancellable} object,   `null` to ignore
-         * @param callback a {@link Gio.AsyncReadyCallback}   to call when the request is satisfied
-         */
-        open_readwrite_async(io_priority: number, cancellable: (Cancellable | null), callback: (AsyncReadyCallback<this> | null)): void;
+        open_readwrite_async(io_priority: number, cancellable: Cancellable | null): globalThis.Promise<FileIOStream>;
 
         /**
          * Asynchronously opens `file` for reading and writing.
@@ -59633,7 +59488,22 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object,   `null` to ignore
          * @param callback a {@link Gio.AsyncReadyCallback}   to call when the request is satisfied
          */
-        open_readwrite_async(io_priority: number, cancellable: (Cancellable | null), callback?: (AsyncReadyCallback<this> | null)): (globalThis.Promise<FileIOStream> | void);
+        open_readwrite_async(io_priority: number, cancellable: Cancellable | null, callback: AsyncReadyCallback<this> | null): void;
+
+        /**
+         * Asynchronously opens `file` for reading and writing.
+         * 
+         * For more details, see `g_file_open_readwrite()` which is
+         * the synchronous version of this call.
+         * 
+         * When the operation is finished, `callback` will be called.
+         * You can then call `g_file_open_readwrite_finish()` to get
+         * the result of the operation.
+         * @param io_priority the [I/O priority](https://docs.gtk.org/gio/iface.AsyncResult.html#io-priority) of the request
+         * @param cancellable optional {@link Gio.Cancellable} object,   `null` to ignore
+         * @param callback a {@link Gio.AsyncReadyCallback}   to call when the request is satisfied
+         */
+        open_readwrite_async(io_priority: number, cancellable: Cancellable | null, callback?: AsyncReadyCallback<this> | null): globalThis.Promise<FileIOStream> | void;
 
         /**
          * Finishes an asynchronous file read operation started with
@@ -59653,7 +59523,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * This call does no blocking I/O.
          * @returns string containing the {@link Gio.File}'s path,   or `null` if no such path exists. The returned string is owned by `file`.
          */
-        peek_path(): (string | null);
+        peek_path(): string | null;
 
         /**
          * Polls a file of type {@link Gio.FileType.MOUNTABLE}.
@@ -59667,22 +59537,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * the result of the operation.
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore
          */
-        poll_mountable(cancellable: (Cancellable | null)): globalThis.Promise<boolean>;
-
-        /**
-         * Polls a file of type {@link Gio.FileType.MOUNTABLE}.
-         * 
-         * If `cancellable` is not `null`, then the operation can be cancelled by
-         * triggering the cancellable object from another thread. If the operation
-         * was cancelled, the error {@link Gio.IOErrorEnum.CANCELLED} will be returned.
-         * 
-         * When the operation is finished, `callback` will be called.
-         * You can then call `g_file_mount_mountable_finish()` to get
-         * the result of the operation.
-         * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore
-         * @param callback a {@link Gio.AsyncReadyCallback} to call   when the request is satisfied, or `null`
-         */
-        poll_mountable(cancellable: (Cancellable | null), callback: (AsyncReadyCallback<this> | null)): void;
+        poll_mountable(cancellable: Cancellable | null): globalThis.Promise<boolean>;
 
         /**
          * Polls a file of type {@link Gio.FileType.MOUNTABLE}.
@@ -59697,7 +59552,22 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore
          * @param callback a {@link Gio.AsyncReadyCallback} to call   when the request is satisfied, or `null`
          */
-        poll_mountable(cancellable: (Cancellable | null), callback?: (AsyncReadyCallback<this> | null)): (globalThis.Promise<boolean> | void);
+        poll_mountable(cancellable: Cancellable | null, callback: AsyncReadyCallback<this> | null): void;
+
+        /**
+         * Polls a file of type {@link Gio.FileType.MOUNTABLE}.
+         * 
+         * If `cancellable` is not `null`, then the operation can be cancelled by
+         * triggering the cancellable object from another thread. If the operation
+         * was cancelled, the error {@link Gio.IOErrorEnum.CANCELLED} will be returned.
+         * 
+         * When the operation is finished, `callback` will be called.
+         * You can then call `g_file_mount_mountable_finish()` to get
+         * the result of the operation.
+         * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore
+         * @param callback a {@link Gio.AsyncReadyCallback} to call   when the request is satisfied, or `null`
+         */
+        poll_mountable(cancellable: Cancellable | null, callback?: AsyncReadyCallback<this> | null): globalThis.Promise<boolean> | void;
 
         /**
          * Finishes a poll operation. See `g_file_poll_mountable()` for details.
@@ -59719,22 +59589,14 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore
          * @returns a {@link Gio.AppInfo} if the handle was found,   `null` if there were errors.   When you are done with it, release it with `g_object_unref()`
          */
-        query_default_handler(cancellable: (Cancellable | null)): AppInfo;
+        query_default_handler(cancellable: Cancellable | null): AppInfo;
 
         /**
          * Async version of `g_file_query_default_handler()`.
          * @param io_priority the [I/O priority](https://docs.gtk.org/gio/iface.AsyncResult.html#io-priority) of the request
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore
          */
-        query_default_handler_async(io_priority: number, cancellable: (Cancellable | null)): globalThis.Promise<AppInfo>;
-
-        /**
-         * Async version of `g_file_query_default_handler()`.
-         * @param io_priority the [I/O priority](https://docs.gtk.org/gio/iface.AsyncResult.html#io-priority) of the request
-         * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore
-         * @param callback a {@link Gio.AsyncReadyCallback} to call when the request is done
-         */
-        query_default_handler_async(io_priority: number, cancellable: (Cancellable | null), callback: (AsyncReadyCallback<this> | null)): void;
+        query_default_handler_async(io_priority: number, cancellable: Cancellable | null): globalThis.Promise<AppInfo>;
 
         /**
          * Async version of `g_file_query_default_handler()`.
@@ -59742,7 +59604,15 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore
          * @param callback a {@link Gio.AsyncReadyCallback} to call when the request is done
          */
-        query_default_handler_async(io_priority: number, cancellable: (Cancellable | null), callback?: (AsyncReadyCallback<this> | null)): (globalThis.Promise<AppInfo> | void);
+        query_default_handler_async(io_priority: number, cancellable: Cancellable | null, callback: AsyncReadyCallback<this> | null): void;
+
+        /**
+         * Async version of `g_file_query_default_handler()`.
+         * @param io_priority the [I/O priority](https://docs.gtk.org/gio/iface.AsyncResult.html#io-priority) of the request
+         * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore
+         * @param callback a {@link Gio.AsyncReadyCallback} to call when the request is done
+         */
+        query_default_handler_async(io_priority: number, cancellable: Cancellable | null, callback?: AsyncReadyCallback<this> | null): globalThis.Promise<AppInfo> | void;
 
         /**
          * Finishes a `g_file_query_default_handler_async()` operation.
@@ -59780,7 +59650,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object,   `null` to ignore
          * @returns `true` if the file exists (and can be detected without error),   `false` otherwise (or if cancelled).
          */
-        query_exists(cancellable: (Cancellable | null)): boolean;
+        query_exists(cancellable: Cancellable | null): boolean;
 
         /**
          * Utility function to inspect the {@link Gio.FileType} of a file. This is
@@ -59792,7 +59662,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object,   `null` to ignore
          * @returns The {@link Gio.FileType} of the file and {@link Gio.FileType.UNKNOWN}   if the file does not exist
          */
-        query_file_type(flags: FileQueryInfoFlags, cancellable: (Cancellable | null)): FileType;
+        query_file_type(flags: FileQueryInfoFlags, cancellable: Cancellable | null): FileType;
 
         /**
          * Similar to `g_file_query_info()`, but obtains information
@@ -59824,7 +59694,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object,   `null` to ignore
          * @returns a {@link Gio.FileInfo} or `null` if there was an error.   Free the returned object with `g_object_unref()`.
          */
-        query_filesystem_info(attributes: string, cancellable: (Cancellable | null)): FileInfo;
+        query_filesystem_info(attributes: string, cancellable: Cancellable | null): FileInfo;
 
         /**
          * Asynchronously gets the requested information about the filesystem
@@ -59842,26 +59712,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param io_priority the [I/O priority](https://docs.gtk.org/gio/iface.AsyncResult.html#io-priority) of the request
          * @param cancellable optional {@link Gio.Cancellable} object,   `null` to ignore
          */
-        query_filesystem_info_async(attributes: string, io_priority: number, cancellable: (Cancellable | null)): globalThis.Promise<FileInfo>;
-
-        /**
-         * Asynchronously gets the requested information about the filesystem
-         * that the specified `file` is on. The result is a {@link Gio.FileInfo} object
-         * that contains key-value attributes (such as type or size for the
-         * file).
-         * 
-         * For more details, see `g_file_query_filesystem_info()` which is the
-         * synchronous version of this call.
-         * 
-         * When the operation is finished, `callback` will be called. You can
-         * then call `g_file_query_info_finish()` to get the result of the
-         * operation.
-         * @param attributes an attribute query string
-         * @param io_priority the [I/O priority](https://docs.gtk.org/gio/iface.AsyncResult.html#io-priority) of the request
-         * @param cancellable optional {@link Gio.Cancellable} object,   `null` to ignore
-         * @param callback a {@link Gio.AsyncReadyCallback}   to call when the request is satisfied
-         */
-        query_filesystem_info_async(attributes: string, io_priority: number, cancellable: (Cancellable | null), callback: (AsyncReadyCallback<this> | null)): void;
+        query_filesystem_info_async(attributes: string, io_priority: number, cancellable: Cancellable | null): globalThis.Promise<FileInfo>;
 
         /**
          * Asynchronously gets the requested information about the filesystem
@@ -59880,7 +59731,26 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object,   `null` to ignore
          * @param callback a {@link Gio.AsyncReadyCallback}   to call when the request is satisfied
          */
-        query_filesystem_info_async(attributes: string, io_priority: number, cancellable: (Cancellable | null), callback?: (AsyncReadyCallback<this> | null)): (globalThis.Promise<FileInfo> | void);
+        query_filesystem_info_async(attributes: string, io_priority: number, cancellable: Cancellable | null, callback: AsyncReadyCallback<this> | null): void;
+
+        /**
+         * Asynchronously gets the requested information about the filesystem
+         * that the specified `file` is on. The result is a {@link Gio.FileInfo} object
+         * that contains key-value attributes (such as type or size for the
+         * file).
+         * 
+         * For more details, see `g_file_query_filesystem_info()` which is the
+         * synchronous version of this call.
+         * 
+         * When the operation is finished, `callback` will be called. You can
+         * then call `g_file_query_info_finish()` to get the result of the
+         * operation.
+         * @param attributes an attribute query string
+         * @param io_priority the [I/O priority](https://docs.gtk.org/gio/iface.AsyncResult.html#io-priority) of the request
+         * @param cancellable optional {@link Gio.Cancellable} object,   `null` to ignore
+         * @param callback a {@link Gio.AsyncReadyCallback}   to call when the request is satisfied
+         */
+        query_filesystem_info_async(attributes: string, io_priority: number, cancellable: Cancellable | null, callback?: AsyncReadyCallback<this> | null): globalThis.Promise<FileInfo> | void;
 
         /**
          * Finishes an asynchronous filesystem info query.
@@ -59926,7 +59796,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object,   `null` to ignore
          * @returns a {@link Gio.FileInfo} for the given `file`, or `null`   on error. Free the returned object with `g_object_unref()`.
          */
-        query_info(attributes: string, flags: FileQueryInfoFlags, cancellable: (Cancellable | null)): FileInfo;
+        query_info(attributes: string, flags: FileQueryInfoFlags, cancellable: Cancellable | null): FileInfo;
 
         /**
          * Asynchronously gets the requested information about specified `file`.
@@ -59943,25 +59813,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param io_priority the [I/O priority](https://docs.gtk.org/gio/iface.AsyncResult.html#io-priority) of the request
          * @param cancellable optional {@link Gio.Cancellable} object,   `null` to ignore
          */
-        query_info_async(attributes: string, flags: FileQueryInfoFlags, io_priority: number, cancellable: (Cancellable | null)): globalThis.Promise<FileInfo>;
-
-        /**
-         * Asynchronously gets the requested information about specified `file`.
-         * The result is a {@link Gio.FileInfo} object that contains key-value attributes
-         * (such as type or size for the file).
-         * 
-         * For more details, see `g_file_query_info()` which is the synchronous
-         * version of this call.
-         * 
-         * When the operation is finished, `callback` will be called. You can
-         * then call `g_file_query_info_finish()` to get the result of the operation.
-         * @param attributes an attribute query string
-         * @param flags a set of {@link Gio.FileQueryInfoFlags}
-         * @param io_priority the [I/O priority](https://docs.gtk.org/gio/iface.AsyncResult.html#io-priority) of the request
-         * @param cancellable optional {@link Gio.Cancellable} object,   `null` to ignore
-         * @param callback a {@link Gio.AsyncReadyCallback}   to call when the request is satisfied
-         */
-        query_info_async(attributes: string, flags: FileQueryInfoFlags, io_priority: number, cancellable: (Cancellable | null), callback: (AsyncReadyCallback<this> | null)): void;
+        query_info_async(attributes: string, flags: FileQueryInfoFlags, io_priority: number, cancellable: Cancellable | null): globalThis.Promise<FileInfo>;
 
         /**
          * Asynchronously gets the requested information about specified `file`.
@@ -59979,7 +59831,25 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object,   `null` to ignore
          * @param callback a {@link Gio.AsyncReadyCallback}   to call when the request is satisfied
          */
-        query_info_async(attributes: string, flags: FileQueryInfoFlags, io_priority: number, cancellable: (Cancellable | null), callback?: (AsyncReadyCallback<this> | null)): (globalThis.Promise<FileInfo> | void);
+        query_info_async(attributes: string, flags: FileQueryInfoFlags, io_priority: number, cancellable: Cancellable | null, callback: AsyncReadyCallback<this> | null): void;
+
+        /**
+         * Asynchronously gets the requested information about specified `file`.
+         * The result is a {@link Gio.FileInfo} object that contains key-value attributes
+         * (such as type or size for the file).
+         * 
+         * For more details, see `g_file_query_info()` which is the synchronous
+         * version of this call.
+         * 
+         * When the operation is finished, `callback` will be called. You can
+         * then call `g_file_query_info_finish()` to get the result of the operation.
+         * @param attributes an attribute query string
+         * @param flags a set of {@link Gio.FileQueryInfoFlags}
+         * @param io_priority the [I/O priority](https://docs.gtk.org/gio/iface.AsyncResult.html#io-priority) of the request
+         * @param cancellable optional {@link Gio.Cancellable} object,   `null` to ignore
+         * @param callback a {@link Gio.AsyncReadyCallback}   to call when the request is satisfied
+         */
+        query_info_async(attributes: string, flags: FileQueryInfoFlags, io_priority: number, cancellable: Cancellable | null, callback?: AsyncReadyCallback<this> | null): globalThis.Promise<FileInfo> | void;
 
         /**
          * Finishes an asynchronous file info query.
@@ -60003,7 +59873,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object,   `null` to ignore
          * @returns a {@link Gio.FileAttributeInfoList} describing the settable attributes.   When you are done with it, release it with   `g_file_attribute_info_list_unref()`
          */
-        query_settable_attributes(cancellable: (Cancellable | null)): FileAttributeInfoList;
+        query_settable_attributes(cancellable: Cancellable | null): FileAttributeInfoList;
 
         /**
          * Obtain the list of attribute namespaces where new attributes
@@ -60016,7 +59886,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object,   `null` to ignore
          * @returns a {@link Gio.FileAttributeInfoList} describing the writable namespaces.   When you are done with it, release it with   `g_file_attribute_info_list_unref()`
          */
-        query_writable_namespaces(cancellable: (Cancellable | null)): FileAttributeInfoList;
+        query_writable_namespaces(cancellable: Cancellable | null): FileAttributeInfoList;
 
         /**
          * Opens a file for reading. The result is a {@link Gio.FileInputStream} that
@@ -60033,7 +59903,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable a {@link Gio.Cancellable}
          * @returns {@link Gio.FileInputStream} or `null` on error.   Free the returned object with `g_object_unref()`.
          */
-        read(cancellable: (Cancellable | null)): FileInputStream;
+        read(cancellable: Cancellable | null): FileInputStream;
 
         /**
          * Asynchronously opens `file` for reading.
@@ -60047,22 +59917,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param io_priority the [I/O priority](https://docs.gtk.org/gio/iface.AsyncResult.html#io-priority) of the request
          * @param cancellable optional {@link Gio.Cancellable} object,   `null` to ignore
          */
-        read_async(io_priority: number, cancellable: (Cancellable | null)): globalThis.Promise<FileInputStream>;
-
-        /**
-         * Asynchronously opens `file` for reading.
-         * 
-         * For more details, see `g_file_read()` which is
-         * the synchronous version of this call.
-         * 
-         * When the operation is finished, `callback` will be called.
-         * You can then call `g_file_read_finish()` to get the result
-         * of the operation.
-         * @param io_priority the [I/O priority](https://docs.gtk.org/gio/iface.AsyncResult.html#io-priority) of the request
-         * @param cancellable optional {@link Gio.Cancellable} object,   `null` to ignore
-         * @param callback a {@link Gio.AsyncReadyCallback}   to call when the request is satisfied
-         */
-        read_async(io_priority: number, cancellable: (Cancellable | null), callback: (AsyncReadyCallback<this> | null)): void;
+        read_async(io_priority: number, cancellable: Cancellable | null): globalThis.Promise<FileInputStream>;
 
         /**
          * Asynchronously opens `file` for reading.
@@ -60077,7 +59932,22 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object,   `null` to ignore
          * @param callback a {@link Gio.AsyncReadyCallback}   to call when the request is satisfied
          */
-        read_async(io_priority: number, cancellable: (Cancellable | null), callback?: (AsyncReadyCallback<this> | null)): (globalThis.Promise<FileInputStream> | void);
+        read_async(io_priority: number, cancellable: Cancellable | null, callback: AsyncReadyCallback<this> | null): void;
+
+        /**
+         * Asynchronously opens `file` for reading.
+         * 
+         * For more details, see `g_file_read()` which is
+         * the synchronous version of this call.
+         * 
+         * When the operation is finished, `callback` will be called.
+         * You can then call `g_file_read_finish()` to get the result
+         * of the operation.
+         * @param io_priority the [I/O priority](https://docs.gtk.org/gio/iface.AsyncResult.html#io-priority) of the request
+         * @param cancellable optional {@link Gio.Cancellable} object,   `null` to ignore
+         * @param callback a {@link Gio.AsyncReadyCallback}   to call when the request is satisfied
+         */
+        read_async(io_priority: number, cancellable: Cancellable | null, callback?: AsyncReadyCallback<this> | null): globalThis.Promise<FileInputStream> | void;
 
         /**
          * Finishes an asynchronous file read operation started with
@@ -60135,7 +60005,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object,   `null` to ignore
          * @returns a {@link Gio.FileOutputStream} or `null` on error.   Free the returned object with `g_object_unref()`.
          */
-        replace(etag: (string | null), make_backup: boolean, flags: FileCreateFlags, cancellable: (Cancellable | null)): FileOutputStream;
+        replace(etag: string | null, make_backup: boolean, flags: FileCreateFlags, cancellable: Cancellable | null): FileOutputStream;
 
         /**
          * Asynchronously overwrites the file, replacing the contents,
@@ -60153,26 +60023,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param io_priority the [I/O priority](https://docs.gtk.org/gio/iface.AsyncResult.html#io-priority) of the request
          * @param cancellable optional {@link Gio.Cancellable} object,   `null` to ignore
          */
-        replace_async(etag: (string | null), make_backup: boolean, flags: FileCreateFlags, io_priority: number, cancellable: (Cancellable | null)): globalThis.Promise<FileOutputStream>;
-
-        /**
-         * Asynchronously overwrites the file, replacing the contents,
-         * possibly creating a backup copy of the file first.
-         * 
-         * For more details, see `g_file_replace()` which is
-         * the synchronous version of this call.
-         * 
-         * When the operation is finished, `callback` will be called.
-         * You can then call `g_file_replace_finish()` to get the result
-         * of the operation.
-         * @param etag an [entity tag](#entity-tags) for the current {@link Gio.File},   or `null` to ignore
-         * @param make_backup `true` if a backup should be created
-         * @param flags a set of {@link Gio.FileCreateFlags}
-         * @param io_priority the [I/O priority](https://docs.gtk.org/gio/iface.AsyncResult.html#io-priority) of the request
-         * @param cancellable optional {@link Gio.Cancellable} object,   `null` to ignore
-         * @param callback a {@link Gio.AsyncReadyCallback}   to call when the request is satisfied
-         */
-        replace_async(etag: (string | null), make_backup: boolean, flags: FileCreateFlags, io_priority: number, cancellable: (Cancellable | null), callback: (AsyncReadyCallback<this> | null)): void;
+        replace_async(etag: string | null, make_backup: boolean, flags: FileCreateFlags, io_priority: number, cancellable: Cancellable | null): globalThis.Promise<FileOutputStream>;
 
         /**
          * Asynchronously overwrites the file, replacing the contents,
@@ -60191,7 +60042,26 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object,   `null` to ignore
          * @param callback a {@link Gio.AsyncReadyCallback}   to call when the request is satisfied
          */
-        replace_async(etag: (string | null), make_backup: boolean, flags: FileCreateFlags, io_priority: number, cancellable: (Cancellable | null), callback?: (AsyncReadyCallback<this> | null)): (globalThis.Promise<FileOutputStream> | void);
+        replace_async(etag: string | null, make_backup: boolean, flags: FileCreateFlags, io_priority: number, cancellable: Cancellable | null, callback: AsyncReadyCallback<this> | null): void;
+
+        /**
+         * Asynchronously overwrites the file, replacing the contents,
+         * possibly creating a backup copy of the file first.
+         * 
+         * For more details, see `g_file_replace()` which is
+         * the synchronous version of this call.
+         * 
+         * When the operation is finished, `callback` will be called.
+         * You can then call `g_file_replace_finish()` to get the result
+         * of the operation.
+         * @param etag an [entity tag](#entity-tags) for the current {@link Gio.File},   or `null` to ignore
+         * @param make_backup `true` if a backup should be created
+         * @param flags a set of {@link Gio.FileCreateFlags}
+         * @param io_priority the [I/O priority](https://docs.gtk.org/gio/iface.AsyncResult.html#io-priority) of the request
+         * @param cancellable optional {@link Gio.Cancellable} object,   `null` to ignore
+         * @param callback a {@link Gio.AsyncReadyCallback}   to call when the request is satisfied
+         */
+        replace_async(etag: string | null, make_backup: boolean, flags: FileCreateFlags, io_priority: number, cancellable: Cancellable | null, callback?: AsyncReadyCallback<this> | null): globalThis.Promise<FileOutputStream> | void;
 
         /**
          * Replaces the contents of `file` with `contents` of `length` bytes.
@@ -60217,7 +60087,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore
          * @returns `true` if successful. If an error has occurred, this function   will return `false` and set `error` appropriately if present.
          */
-        replace_contents(contents: (Uint8Array | string), etag: (string | null), make_backup: boolean, flags: FileCreateFlags, cancellable: (Cancellable | null)): [boolean, string];
+        replace_contents(contents: Uint8Array | string, etag: string | null, make_backup: boolean, flags: FileCreateFlags, cancellable: Cancellable | null): [boolean, string];
 
         /**
          * Starts an asynchronous replacement of `file` with the given
@@ -60245,36 +60115,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param flags a set of {@link Gio.FileCreateFlags}
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore
          */
-        replace_contents_async(contents: (Uint8Array | string), etag: (string | null), make_backup: boolean, flags: FileCreateFlags, cancellable: (Cancellable | null)): globalThis.Promise<string>;
-
-        /**
-         * Starts an asynchronous replacement of `file` with the given
-         * `contents` of `length` bytes. `etag` will replace the document's
-         * current entity tag.
-         * 
-         * When this operation has completed, `callback` will be called with
-         * `user_user` data, and the operation can be finalized with
-         * `g_file_replace_contents_finish()`.
-         * 
-         * If `cancellable` is not `null`, then the operation can be cancelled by
-         * triggering the cancellable object from another thread. If the operation
-         * was cancelled, the error {@link Gio.IOErrorEnum.CANCELLED} will be returned.
-         * 
-         * If `make_backup` is `true`, this function will attempt to
-         * make a backup of `file`.
-         * 
-         * Note that no copy of `contents` will be made, so it must stay valid
-         * until `callback` is called. See `g_file_replace_contents_bytes_async()`
-         * for a {@link GLib.Bytes} version that will automatically hold a reference to the
-         * contents (without copying) for the duration of the call.
-         * @param contents string of contents to replace the file with
-         * @param etag a new [entity tag](#entity-tags) for the `file`, or `null`
-         * @param make_backup `true` if a backup should be created
-         * @param flags a set of {@link Gio.FileCreateFlags}
-         * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore
-         * @param callback a {@link Gio.AsyncReadyCallback} to call when the request is satisfied
-         */
-        replace_contents_async(contents: (Uint8Array | string), etag: (string | null), make_backup: boolean, flags: FileCreateFlags, cancellable: (Cancellable | null), callback: (AsyncReadyCallback<this> | null)): void;
+        replace_contents_async(contents: Uint8Array | string, etag: string | null, make_backup: boolean, flags: FileCreateFlags, cancellable: Cancellable | null): globalThis.Promise<string>;
 
         /**
          * Starts an asynchronous replacement of `file` with the given
@@ -60303,7 +60144,36 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore
          * @param callback a {@link Gio.AsyncReadyCallback} to call when the request is satisfied
          */
-        replace_contents_async(contents: (Uint8Array | string), etag: (string | null), make_backup: boolean, flags: FileCreateFlags, cancellable: (Cancellable | null), callback?: (AsyncReadyCallback<this> | null)): (globalThis.Promise<string> | void);
+        replace_contents_async(contents: Uint8Array | string, etag: string | null, make_backup: boolean, flags: FileCreateFlags, cancellable: Cancellable | null, callback: AsyncReadyCallback<this> | null): void;
+
+        /**
+         * Starts an asynchronous replacement of `file` with the given
+         * `contents` of `length` bytes. `etag` will replace the document's
+         * current entity tag.
+         * 
+         * When this operation has completed, `callback` will be called with
+         * `user_user` data, and the operation can be finalized with
+         * `g_file_replace_contents_finish()`.
+         * 
+         * If `cancellable` is not `null`, then the operation can be cancelled by
+         * triggering the cancellable object from another thread. If the operation
+         * was cancelled, the error {@link Gio.IOErrorEnum.CANCELLED} will be returned.
+         * 
+         * If `make_backup` is `true`, this function will attempt to
+         * make a backup of `file`.
+         * 
+         * Note that no copy of `contents` will be made, so it must stay valid
+         * until `callback` is called. See `g_file_replace_contents_bytes_async()`
+         * for a {@link GLib.Bytes} version that will automatically hold a reference to the
+         * contents (without copying) for the duration of the call.
+         * @param contents string of contents to replace the file with
+         * @param etag a new [entity tag](#entity-tags) for the `file`, or `null`
+         * @param make_backup `true` if a backup should be created
+         * @param flags a set of {@link Gio.FileCreateFlags}
+         * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore
+         * @param callback a {@link Gio.AsyncReadyCallback} to call when the request is satisfied
+         */
+        replace_contents_async(contents: Uint8Array | string, etag: string | null, make_backup: boolean, flags: FileCreateFlags, cancellable: Cancellable | null, callback?: AsyncReadyCallback<this> | null): globalThis.Promise<string> | void;
 
         /**
          * Same as `g_file_replace_contents_async()` but takes a {@link GLib.Bytes} input instead.
@@ -60321,7 +60191,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore
          * @param callback a {@link Gio.AsyncReadyCallback} to call when the request is satisfied
          */
-        replace_contents_bytes_async(contents: (GLib.Bytes | Uint8Array), etag: (string | null), make_backup: boolean, flags: FileCreateFlags, cancellable: (Cancellable | null), callback: (AsyncReadyCallback<this> | null)): void;
+        replace_contents_bytes_async(contents: GLib.Bytes | Uint8Array, etag: string | null, make_backup: boolean, flags: FileCreateFlags, cancellable: Cancellable | null, callback: AsyncReadyCallback<this> | null): void;
 
         /**
          * Finishes an asynchronous replace of the given `file`. See
@@ -60357,7 +60227,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object,   `null` to ignore
          * @returns a {@link Gio.FileIOStream} or `null` on error.   Free the returned object with `g_object_unref()`.
          */
-        replace_readwrite(etag: (string | null), make_backup: boolean, flags: FileCreateFlags, cancellable: (Cancellable | null)): FileIOStream;
+        replace_readwrite(etag: string | null, make_backup: boolean, flags: FileCreateFlags, cancellable: Cancellable | null): FileIOStream;
 
         /**
          * Asynchronously overwrites the file in read-write mode,
@@ -60376,27 +60246,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param io_priority the [I/O priority](https://docs.gtk.org/gio/iface.AsyncResult.html#io-priority) of the request
          * @param cancellable optional {@link Gio.Cancellable} object,   `null` to ignore
          */
-        replace_readwrite_async(etag: (string | null), make_backup: boolean, flags: FileCreateFlags, io_priority: number, cancellable: (Cancellable | null)): globalThis.Promise<FileIOStream>;
-
-        /**
-         * Asynchronously overwrites the file in read-write mode,
-         * replacing the contents, possibly creating a backup copy
-         * of the file first.
-         * 
-         * For more details, see `g_file_replace_readwrite()` which is
-         * the synchronous version of this call.
-         * 
-         * When the operation is finished, `callback` will be called.
-         * You can then call `g_file_replace_readwrite_finish()` to get
-         * the result of the operation.
-         * @param etag an [entity tag](#entity-tags) for the current {@link Gio.File},   or `null` to ignore
-         * @param make_backup `true` if a backup should be created
-         * @param flags a set of {@link Gio.FileCreateFlags}
-         * @param io_priority the [I/O priority](https://docs.gtk.org/gio/iface.AsyncResult.html#io-priority) of the request
-         * @param cancellable optional {@link Gio.Cancellable} object,   `null` to ignore
-         * @param callback a {@link Gio.AsyncReadyCallback}   to call when the request is satisfied
-         */
-        replace_readwrite_async(etag: (string | null), make_backup: boolean, flags: FileCreateFlags, io_priority: number, cancellable: (Cancellable | null), callback: (AsyncReadyCallback<this> | null)): void;
+        replace_readwrite_async(etag: string | null, make_backup: boolean, flags: FileCreateFlags, io_priority: number, cancellable: Cancellable | null): globalThis.Promise<FileIOStream>;
 
         /**
          * Asynchronously overwrites the file in read-write mode,
@@ -60416,7 +60266,27 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object,   `null` to ignore
          * @param callback a {@link Gio.AsyncReadyCallback}   to call when the request is satisfied
          */
-        replace_readwrite_async(etag: (string | null), make_backup: boolean, flags: FileCreateFlags, io_priority: number, cancellable: (Cancellable | null), callback?: (AsyncReadyCallback<this> | null)): (globalThis.Promise<FileIOStream> | void);
+        replace_readwrite_async(etag: string | null, make_backup: boolean, flags: FileCreateFlags, io_priority: number, cancellable: Cancellable | null, callback: AsyncReadyCallback<this> | null): void;
+
+        /**
+         * Asynchronously overwrites the file in read-write mode,
+         * replacing the contents, possibly creating a backup copy
+         * of the file first.
+         * 
+         * For more details, see `g_file_replace_readwrite()` which is
+         * the synchronous version of this call.
+         * 
+         * When the operation is finished, `callback` will be called.
+         * You can then call `g_file_replace_readwrite_finish()` to get
+         * the result of the operation.
+         * @param etag an [entity tag](#entity-tags) for the current {@link Gio.File},   or `null` to ignore
+         * @param make_backup `true` if a backup should be created
+         * @param flags a set of {@link Gio.FileCreateFlags}
+         * @param io_priority the [I/O priority](https://docs.gtk.org/gio/iface.AsyncResult.html#io-priority) of the request
+         * @param cancellable optional {@link Gio.Cancellable} object,   `null` to ignore
+         * @param callback a {@link Gio.AsyncReadyCallback}   to call when the request is satisfied
+         */
+        replace_readwrite_async(etag: string | null, make_backup: boolean, flags: FileCreateFlags, io_priority: number, cancellable: Cancellable | null, callback?: AsyncReadyCallback<this> | null): globalThis.Promise<FileIOStream> | void;
 
         /**
          * Finishes an asynchronous file replace operation started with
@@ -60454,7 +60324,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object,   `null` to ignore
          * @returns `true` if the attribute was set, `false` otherwise.
          */
-        set_attribute(attribute: string, type: FileAttributeType, value_p: null, flags: FileQueryInfoFlags, cancellable: (Cancellable | null)): boolean;
+        set_attribute(attribute: string, type: FileAttributeType, value_p: null, flags: FileQueryInfoFlags, cancellable: Cancellable | null): boolean;
 
         /**
          * Sets `attribute` of type {@link Gio.FileAttributeType.BYTE_STRING} to `value`.
@@ -60470,7 +60340,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object,   `null` to ignore
          * @returns `true` if the `attribute` was successfully set to `value`   in the `file`, `false` otherwise.
          */
-        set_attribute_byte_string(attribute: string, value: string, flags: FileQueryInfoFlags, cancellable: (Cancellable | null)): boolean;
+        set_attribute_byte_string(attribute: string, value: string, flags: FileQueryInfoFlags, cancellable: Cancellable | null): boolean;
 
         /**
          * Sets `attribute` of type {@link Gio.FileAttributeType.INT32} to `value`.
@@ -60485,7 +60355,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object,   `null` to ignore
          * @returns `true` if the `attribute` was successfully set to `value`   in the `file`, `false` otherwise.
          */
-        set_attribute_int32(attribute: string, value: number, flags: FileQueryInfoFlags, cancellable: (Cancellable | null)): boolean;
+        set_attribute_int32(attribute: string, value: number, flags: FileQueryInfoFlags, cancellable: Cancellable | null): boolean;
 
         /**
          * Sets `attribute` of type {@link Gio.FileAttributeType.INT64} to `value`.
@@ -60500,7 +60370,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object,   `null` to ignore
          * @returns `true` if the `attribute` was successfully set, `false` otherwise.
          */
-        set_attribute_int64(attribute: string, value: (bigint | number), flags: FileQueryInfoFlags, cancellable: (Cancellable | null)): boolean;
+        set_attribute_int64(attribute: string, value: bigint | number, flags: FileQueryInfoFlags, cancellable: Cancellable | null): boolean;
 
         /**
          * Sets `attribute` of type {@link Gio.FileAttributeType.STRING} to `value`.
@@ -60515,7 +60385,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object,   `null` to ignore
          * @returns `true` if the `attribute` was successfully set, `false` otherwise.
          */
-        set_attribute_string(attribute: string, value: string, flags: FileQueryInfoFlags, cancellable: (Cancellable | null)): boolean;
+        set_attribute_string(attribute: string, value: string, flags: FileQueryInfoFlags, cancellable: Cancellable | null): boolean;
 
         /**
          * Sets `attribute` of type {@link Gio.FileAttributeType.UINT32} to `value`.
@@ -60530,7 +60400,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object,   `null` to ignore
          * @returns `true` if the `attribute` was successfully set to `value`   in the `file`, `false` otherwise.
          */
-        set_attribute_uint32(attribute: string, value: number, flags: FileQueryInfoFlags, cancellable: (Cancellable | null)): boolean;
+        set_attribute_uint32(attribute: string, value: number, flags: FileQueryInfoFlags, cancellable: Cancellable | null): boolean;
 
         /**
          * Sets `attribute` of type {@link Gio.FileAttributeType.UINT64} to `value`.
@@ -60545,7 +60415,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object,   `null` to ignore
          * @returns `true` if the `attribute` was successfully set to `value`   in the `file`, `false` otherwise.
          */
-        set_attribute_uint64(attribute: string, value: (bigint | number), flags: FileQueryInfoFlags, cancellable: (Cancellable | null)): boolean;
+        set_attribute_uint64(attribute: string, value: bigint | number, flags: FileQueryInfoFlags, cancellable: Cancellable | null): boolean;
 
         /**
          * Asynchronously sets the attributes of `file` with `info`.
@@ -60561,24 +60431,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param io_priority the [I/O priority](https://docs.gtk.org/gio/iface.AsyncResult.html#io-priority) of the request
          * @param cancellable optional {@link Gio.Cancellable} object,   `null` to ignore
          */
-        set_attributes_async(info: FileInfo, flags: FileQueryInfoFlags, io_priority: number, cancellable: (Cancellable | null)): globalThis.Promise<FileInfo>;
-
-        /**
-         * Asynchronously sets the attributes of `file` with `info`.
-         * 
-         * For more details, see `g_file_set_attributes_from_info()`,
-         * which is the synchronous version of this call.
-         * 
-         * When the operation is finished, `callback` will be called.
-         * You can then call `g_file_set_attributes_finish()` to get
-         * the result of the operation.
-         * @param info a {@link Gio.FileInfo}
-         * @param flags a {@link Gio.FileQueryInfoFlags}
-         * @param io_priority the [I/O priority](https://docs.gtk.org/gio/iface.AsyncResult.html#io-priority) of the request
-         * @param cancellable optional {@link Gio.Cancellable} object,   `null` to ignore
-         * @param callback a {@link Gio.AsyncReadyCallback}   to call when the request is satisfied
-         */
-        set_attributes_async(info: FileInfo, flags: FileQueryInfoFlags, io_priority: number, cancellable: (Cancellable | null), callback: (AsyncReadyCallback<this> | null)): void;
+        set_attributes_async(info: FileInfo, flags: FileQueryInfoFlags, io_priority: number, cancellable: Cancellable | null): globalThis.Promise<FileInfo>;
 
         /**
          * Asynchronously sets the attributes of `file` with `info`.
@@ -60595,7 +60448,24 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object,   `null` to ignore
          * @param callback a {@link Gio.AsyncReadyCallback}   to call when the request is satisfied
          */
-        set_attributes_async(info: FileInfo, flags: FileQueryInfoFlags, io_priority: number, cancellable: (Cancellable | null), callback?: (AsyncReadyCallback<this> | null)): (globalThis.Promise<FileInfo> | void);
+        set_attributes_async(info: FileInfo, flags: FileQueryInfoFlags, io_priority: number, cancellable: Cancellable | null, callback: AsyncReadyCallback<this> | null): void;
+
+        /**
+         * Asynchronously sets the attributes of `file` with `info`.
+         * 
+         * For more details, see `g_file_set_attributes_from_info()`,
+         * which is the synchronous version of this call.
+         * 
+         * When the operation is finished, `callback` will be called.
+         * You can then call `g_file_set_attributes_finish()` to get
+         * the result of the operation.
+         * @param info a {@link Gio.FileInfo}
+         * @param flags a {@link Gio.FileQueryInfoFlags}
+         * @param io_priority the [I/O priority](https://docs.gtk.org/gio/iface.AsyncResult.html#io-priority) of the request
+         * @param cancellable optional {@link Gio.Cancellable} object,   `null` to ignore
+         * @param callback a {@link Gio.AsyncReadyCallback}   to call when the request is satisfied
+         */
+        set_attributes_async(info: FileInfo, flags: FileQueryInfoFlags, io_priority: number, cancellable: Cancellable | null, callback?: AsyncReadyCallback<this> | null): globalThis.Promise<FileInfo> | void;
 
         /**
          * Finishes setting an attribute started in `g_file_set_attributes_async()`.
@@ -60622,7 +60492,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object,   `null` to ignore
          * @returns `false` if there was any error, `true` otherwise.
          */
-        set_attributes_from_info(info: FileInfo, flags: FileQueryInfoFlags, cancellable: (Cancellable | null)): boolean;
+        set_attributes_from_info(info: FileInfo, flags: FileQueryInfoFlags, cancellable: Cancellable | null): boolean;
 
         /**
          * Renames `file` to the specified display name.
@@ -60644,7 +60514,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object,   `null` to ignore
          * @returns a {@link Gio.File} specifying what `file` was renamed to,   or `null` if there was an error.   Free the returned object with `g_object_unref()`.
          */
-        set_display_name(display_name: string, cancellable: (Cancellable | null)): File;
+        set_display_name(display_name: string, cancellable: Cancellable | null): File;
 
         /**
          * Asynchronously sets the display name for a given {@link Gio.File}.
@@ -60659,23 +60529,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param io_priority the [I/O priority](https://docs.gtk.org/gio/iface.AsyncResult.html#io-priority) of the request
          * @param cancellable optional {@link Gio.Cancellable} object,   `null` to ignore
          */
-        set_display_name_async(display_name: string, io_priority: number, cancellable: (Cancellable | null)): globalThis.Promise<File>;
-
-        /**
-         * Asynchronously sets the display name for a given {@link Gio.File}.
-         * 
-         * For more details, see `g_file_set_display_name()` which is
-         * the synchronous version of this call.
-         * 
-         * When the operation is finished, `callback` will be called.
-         * You can then call `g_file_set_display_name_finish()` to get
-         * the result of the operation.
-         * @param display_name a string
-         * @param io_priority the [I/O priority](https://docs.gtk.org/gio/iface.AsyncResult.html#io-priority) of the request
-         * @param cancellable optional {@link Gio.Cancellable} object,   `null` to ignore
-         * @param callback a {@link Gio.AsyncReadyCallback}   to call when the request is satisfied
-         */
-        set_display_name_async(display_name: string, io_priority: number, cancellable: (Cancellable | null), callback: (AsyncReadyCallback<this> | null)): void;
+        set_display_name_async(display_name: string, io_priority: number, cancellable: Cancellable | null): globalThis.Promise<File>;
 
         /**
          * Asynchronously sets the display name for a given {@link Gio.File}.
@@ -60691,7 +60545,23 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object,   `null` to ignore
          * @param callback a {@link Gio.AsyncReadyCallback}   to call when the request is satisfied
          */
-        set_display_name_async(display_name: string, io_priority: number, cancellable: (Cancellable | null), callback?: (AsyncReadyCallback<this> | null)): (globalThis.Promise<File> | void);
+        set_display_name_async(display_name: string, io_priority: number, cancellable: Cancellable | null, callback: AsyncReadyCallback<this> | null): void;
+
+        /**
+         * Asynchronously sets the display name for a given {@link Gio.File}.
+         * 
+         * For more details, see `g_file_set_display_name()` which is
+         * the synchronous version of this call.
+         * 
+         * When the operation is finished, `callback` will be called.
+         * You can then call `g_file_set_display_name_finish()` to get
+         * the result of the operation.
+         * @param display_name a string
+         * @param io_priority the [I/O priority](https://docs.gtk.org/gio/iface.AsyncResult.html#io-priority) of the request
+         * @param cancellable optional {@link Gio.Cancellable} object,   `null` to ignore
+         * @param callback a {@link Gio.AsyncReadyCallback}   to call when the request is satisfied
+         */
+        set_display_name_async(display_name: string, io_priority: number, cancellable: Cancellable | null, callback?: AsyncReadyCallback<this> | null): globalThis.Promise<File> | void;
 
         /**
          * Finishes setting a display name started with
@@ -60717,7 +60587,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param start_operation a {@link Gio.MountOperation}, or `null` to avoid user interaction
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore
          */
-        start_mountable(flags: DriveStartFlags, start_operation: (MountOperation | null), cancellable: (Cancellable | null)): globalThis.Promise<boolean>;
+        start_mountable(flags: DriveStartFlags, start_operation: MountOperation | null, cancellable: Cancellable | null): globalThis.Promise<boolean>;
 
         /**
          * Starts a file of type {@link Gio.FileType.MOUNTABLE}.
@@ -60736,7 +60606,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore
          * @param callback a {@link Gio.AsyncReadyCallback} to call when the request is satisfied, or `null`
          */
-        start_mountable(flags: DriveStartFlags, start_operation: (MountOperation | null), cancellable: (Cancellable | null), callback: (AsyncReadyCallback<this> | null)): void;
+        start_mountable(flags: DriveStartFlags, start_operation: MountOperation | null, cancellable: Cancellable | null, callback: AsyncReadyCallback<this> | null): void;
 
         /**
          * Starts a file of type {@link Gio.FileType.MOUNTABLE}.
@@ -60755,7 +60625,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore
          * @param callback a {@link Gio.AsyncReadyCallback} to call when the request is satisfied, or `null`
          */
-        start_mountable(flags: DriveStartFlags, start_operation: (MountOperation | null), cancellable: (Cancellable | null), callback?: (AsyncReadyCallback<this> | null)): (globalThis.Promise<boolean> | void);
+        start_mountable(flags: DriveStartFlags, start_operation: MountOperation | null, cancellable: Cancellable | null, callback?: AsyncReadyCallback<this> | null): globalThis.Promise<boolean> | void;
 
         /**
          * Finishes a start operation. See `g_file_start_mountable()` for details.
@@ -60781,7 +60651,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param mount_operation a {@link Gio.MountOperation},   or `null` to avoid user interaction.
          * @param cancellable optional {@link Gio.Cancellable} object,   `null` to ignore
          */
-        stop_mountable(flags: MountUnmountFlags, mount_operation: (MountOperation | null), cancellable: (Cancellable | null)): globalThis.Promise<boolean>;
+        stop_mountable(flags: MountUnmountFlags, mount_operation: MountOperation | null, cancellable: Cancellable | null): globalThis.Promise<boolean>;
 
         /**
          * Stops a file of type {@link Gio.FileType.MOUNTABLE}.
@@ -60798,7 +60668,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object,   `null` to ignore
          * @param callback a {@link Gio.AsyncReadyCallback} to call   when the request is satisfied, or `null`
          */
-        stop_mountable(flags: MountUnmountFlags, mount_operation: (MountOperation | null), cancellable: (Cancellable | null), callback: (AsyncReadyCallback<this> | null)): void;
+        stop_mountable(flags: MountUnmountFlags, mount_operation: MountOperation | null, cancellable: Cancellable | null, callback: AsyncReadyCallback<this> | null): void;
 
         /**
          * Stops a file of type {@link Gio.FileType.MOUNTABLE}.
@@ -60815,7 +60685,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object,   `null` to ignore
          * @param callback a {@link Gio.AsyncReadyCallback} to call   when the request is satisfied, or `null`
          */
-        stop_mountable(flags: MountUnmountFlags, mount_operation: (MountOperation | null), cancellable: (Cancellable | null), callback?: (AsyncReadyCallback<this> | null)): (globalThis.Promise<boolean> | void);
+        stop_mountable(flags: MountUnmountFlags, mount_operation: MountOperation | null, cancellable: Cancellable | null, callback?: AsyncReadyCallback<this> | null): globalThis.Promise<boolean> | void;
 
         /**
          * Finishes a stop operation, see `g_file_stop_mountable()` for details.
@@ -60853,22 +60723,14 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object,   `null` to ignore
          * @returns `true` on successful trash, `false` otherwise.
          */
-        trash(cancellable: (Cancellable | null)): boolean;
+        trash(cancellable: Cancellable | null): boolean;
 
         /**
          * Asynchronously sends `file` to the Trash location, if possible.
          * @param io_priority the [I/O priority](https://docs.gtk.org/gio/iface.AsyncResult.html#io-priority) of the request
          * @param cancellable optional {@link Gio.Cancellable} object,   `null` to ignore
          */
-        trash_async(io_priority: number, cancellable: (Cancellable | null)): globalThis.Promise<boolean>;
-
-        /**
-         * Asynchronously sends `file` to the Trash location, if possible.
-         * @param io_priority the [I/O priority](https://docs.gtk.org/gio/iface.AsyncResult.html#io-priority) of the request
-         * @param cancellable optional {@link Gio.Cancellable} object,   `null` to ignore
-         * @param callback a {@link Gio.AsyncReadyCallback} to call   when the request is satisfied
-         */
-        trash_async(io_priority: number, cancellable: (Cancellable | null), callback: (AsyncReadyCallback<this> | null)): void;
+        trash_async(io_priority: number, cancellable: Cancellable | null): globalThis.Promise<boolean>;
 
         /**
          * Asynchronously sends `file` to the Trash location, if possible.
@@ -60876,7 +60738,15 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object,   `null` to ignore
          * @param callback a {@link Gio.AsyncReadyCallback} to call   when the request is satisfied
          */
-        trash_async(io_priority: number, cancellable: (Cancellable | null), callback?: (AsyncReadyCallback<this> | null)): (globalThis.Promise<boolean> | void);
+        trash_async(io_priority: number, cancellable: Cancellable | null, callback: AsyncReadyCallback<this> | null): void;
+
+        /**
+         * Asynchronously sends `file` to the Trash location, if possible.
+         * @param io_priority the [I/O priority](https://docs.gtk.org/gio/iface.AsyncResult.html#io-priority) of the request
+         * @param cancellable optional {@link Gio.Cancellable} object,   `null` to ignore
+         * @param callback a {@link Gio.AsyncReadyCallback} to call   when the request is satisfied
+         */
+        trash_async(io_priority: number, cancellable: Cancellable | null, callback?: AsyncReadyCallback<this> | null): globalThis.Promise<boolean> | void;
 
         /**
          * Finishes an asynchronous file trashing operation, started with
@@ -60899,7 +60769,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param flags flags affecting the operation
          * @param cancellable optional {@link Gio.Cancellable} object,   `null` to ignore
          */
-        unmount_mountable(flags: MountUnmountFlags, cancellable: (Cancellable | null)): globalThis.Promise<boolean>;
+        unmount_mountable(flags: MountUnmountFlags, cancellable: Cancellable | null): globalThis.Promise<boolean>;
 
         /**
          * Unmounts a file of type G_FILE_TYPE_MOUNTABLE.
@@ -60915,7 +60785,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object,   `null` to ignore
          * @param callback a {@link Gio.AsyncReadyCallback}   to call when the request is satisfied
          */
-        unmount_mountable(flags: MountUnmountFlags, cancellable: (Cancellable | null), callback: (AsyncReadyCallback<this> | null)): void;
+        unmount_mountable(flags: MountUnmountFlags, cancellable: Cancellable | null, callback: AsyncReadyCallback<this> | null): void;
 
         /**
          * Unmounts a file of type G_FILE_TYPE_MOUNTABLE.
@@ -60931,7 +60801,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object,   `null` to ignore
          * @param callback a {@link Gio.AsyncReadyCallback}   to call when the request is satisfied
          */
-        unmount_mountable(flags: MountUnmountFlags, cancellable: (Cancellable | null), callback?: (AsyncReadyCallback<this> | null)): (globalThis.Promise<boolean> | void);
+        unmount_mountable(flags: MountUnmountFlags, cancellable: Cancellable | null, callback?: AsyncReadyCallback<this> | null): globalThis.Promise<boolean> | void;
 
         /**
          * Finishes an unmount operation, see `g_file_unmount_mountable()` for details.
@@ -60957,7 +60827,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param mount_operation a {@link Gio.MountOperation},   or `null` to avoid user interaction
          * @param cancellable optional {@link Gio.Cancellable} object,   `null` to ignore
          */
-        unmount_mountable_with_operation(flags: MountUnmountFlags, mount_operation: (MountOperation | null), cancellable: (Cancellable | null)): globalThis.Promise<boolean>;
+        unmount_mountable_with_operation(flags: MountUnmountFlags, mount_operation: MountOperation | null, cancellable: Cancellable | null): globalThis.Promise<boolean>;
 
         /**
          * Unmounts a file of type {@link Gio.FileType.MOUNTABLE}.
@@ -60974,7 +60844,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object,   `null` to ignore
          * @param callback a {@link Gio.AsyncReadyCallback}   to call when the request is satisfied
          */
-        unmount_mountable_with_operation(flags: MountUnmountFlags, mount_operation: (MountOperation | null), cancellable: (Cancellable | null), callback: (AsyncReadyCallback<this> | null)): void;
+        unmount_mountable_with_operation(flags: MountUnmountFlags, mount_operation: MountOperation | null, cancellable: Cancellable | null, callback: AsyncReadyCallback<this> | null): void;
 
         /**
          * Unmounts a file of type {@link Gio.FileType.MOUNTABLE}.
@@ -60991,7 +60861,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object,   `null` to ignore
          * @param callback a {@link Gio.AsyncReadyCallback}   to call when the request is satisfied
          */
-        unmount_mountable_with_operation(flags: MountUnmountFlags, mount_operation: (MountOperation | null), cancellable: (Cancellable | null), callback?: (AsyncReadyCallback<this> | null)): (globalThis.Promise<boolean> | void);
+        unmount_mountable_with_operation(flags: MountUnmountFlags, mount_operation: MountOperation | null, cancellable: Cancellable | null, callback?: AsyncReadyCallback<this> | null): globalThis.Promise<boolean> | void;
 
         /**
          * Finishes an unmount operation,
@@ -61037,9 +60907,7 @@ export const _LocalFilePrototype: typeof File.prototype;
 
 
         // Constructor properties interface
-        interface ConstructorProps extends GObject.Object.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GObject.Object.ConstructorProps {}
     }
 
     export interface FileDescriptorBasedNamespace {
@@ -61086,7 +60954,7 @@ export const _LocalFilePrototype: typeof File.prototype;
              * @param icon2 pointer to the second {@link Gio.Icon}.
              * @virtual
              */
-            vfunc_equal(icon2: (Icon | null)): boolean;
+            vfunc_equal(icon2: Icon | null): boolean;
 
             /**
              * Gets a hash for an icon.
@@ -61102,7 +60970,7 @@ export const _LocalFilePrototype: typeof File.prototype;
              * (as opposed to over the network), and within the same file system namespace.
              * @virtual
              */
-            vfunc_serialize(): (GLib.Variant | null);
+            vfunc_serialize(): GLib.Variant | null;
 
             /**
              * Serializes the `icon` into string tokens.
@@ -61114,9 +60982,7 @@ export const _LocalFilePrototype: typeof File.prototype;
 
 
         // Constructor properties interface
-        interface ConstructorProps extends GObject.Object.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GObject.Object.ConstructorProps {}
     }
 
     export interface IconNamespace {
@@ -61126,7 +60992,7 @@ export const _LocalFilePrototype: typeof File.prototype;
         * Deserializes a {@link Gio.Icon} previously serialized using `g_icon_serialize()`.
         * @param value a {@link GLib.Variant} created with `g_icon_serialize()`
         */
-        deserialize(value: GLib.Variant): (Icon | null);
+        deserialize(value: GLib.Variant): Icon | null;
         /**
         * Generate a {@link Gio.Icon} instance from `str`. This function can fail if
         * `str` is not valid - see `g_icon_to_string()` for discussion.
@@ -61179,7 +61045,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param icon2 pointer to the second {@link Gio.Icon}.
          * @returns `true` if `icon1` is equal to `icon2`. `false` otherwise.
          */
-        equal(icon2: (Icon | null)): boolean;
+        equal(icon2: Icon | null): boolean;
 
         /**
          * Gets a hash for an icon.
@@ -61195,7 +61061,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * (as opposed to over the network), and within the same file system namespace.
          * @returns a {@link GLib.Variant}, or `null` when serialization fails. The {@link GLib.Variant} will not be floating.
          */
-        serialize(): (GLib.Variant | null);
+        serialize(): GLib.Variant | null;
 
         /**
          * Generates a textual representation of `icon` that can be used for
@@ -61216,7 +61082,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          *   the encoding is simply the name (such as `network-server`).
          * @returns An allocated NUL-terminated UTF8 string or `null` if `icon` can't be serialized. Use `g_free()` to free.
          */
-        to_string(): (string | null);
+        to_string(): string | null;
     }
 
 
@@ -61274,14 +61140,12 @@ export const _LocalFilePrototype: typeof File.prototype;
              * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
              * @virtual
              */
-            vfunc_init(cancellable: (Cancellable | null)): boolean;
+            vfunc_init(cancellable: Cancellable | null): boolean;
         }
 
 
         // Constructor properties interface
-        interface ConstructorProps extends GObject.Object.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GObject.Object.ConstructorProps {}
     }
 
     export interface InitableNamespace {
@@ -61295,7 +61159,7 @@ export const _LocalFilePrototype: typeof File.prototype;
         * @param parameters the parameters to use to construct the object
         * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
         */
-        newv<T = GObject.Object>(object_type: GObject.GType, parameters: GObject.Parameter[], cancellable: (Cancellable | null)): T;
+        newv<T = GObject.Object>(object_type: GObject.GType, parameters: GObject.Parameter[], cancellable: Cancellable | null): T;
         /**
         * @param args 
         */
@@ -61374,7 +61238,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          * @returns `true` if successful. If an error has occurred, this function will     return `false` and set `error` appropriately if present.
          */
-        init(cancellable: (Cancellable | null)): boolean;
+        init(cancellable: Cancellable | null): boolean;
     }
 
 
@@ -61401,7 +61265,7 @@ export const _LocalFilePrototype: typeof File.prototype;
              * @param position the position of the item to fetch
              * @virtual
              */
-            vfunc_get_item(position: number): (A | null);
+            vfunc_get_item(position: number): A | null;
 
             /**
              * Gets the type of the items in `list`.
@@ -61429,9 +61293,7 @@ export const _LocalFilePrototype: typeof File.prototype;
 
 
         // Constructor properties interface
-        interface ConstructorProps<A extends GObject.Object = GObject.Object> extends GObject.Object.ConstructorProps {
-
-        }
+        interface ConstructorProps<A extends GObject.Object = GObject.Object> extends GObject.Object.ConstructorProps {}
     }
 
     export interface ListModelNamespace {
@@ -61547,7 +61409,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param position the position of the item to fetch
          * @returns the object at `position`.
          */
-        get_item(position: number): (A | null);
+        get_item(position: number): A | null;
 
         /**
          * Emits the {@link Gio.ListModel.SignalSignatures.items_changed | Gio.ListModel::items-changed} signal on `list`.
@@ -61597,7 +61459,7 @@ export const _LocalFilePrototype: typeof File.prototype;
              * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
              * @virtual
              */
-            vfunc_load(size: number, cancellable: (Cancellable | null)): [InputStream, string];
+            vfunc_load(size: number, cancellable: Cancellable | null): [InputStream, string];
 
             /**
              * Loads an icon asynchronously. To finish this function, see
@@ -61608,7 +61470,7 @@ export const _LocalFilePrototype: typeof File.prototype;
              * @param callback a {@link Gio.AsyncReadyCallback}   to call when the request is satisfied
              * @virtual
              */
-            vfunc_load_async(size: number, cancellable: (Cancellable | null), callback: (AsyncReadyCallback<this> | null)): void;
+            vfunc_load_async(size: number, cancellable: Cancellable | null, callback: AsyncReadyCallback<this> | null): void;
 
             /**
              * Finishes an asynchronous icon load started in `g_loadable_icon_load_async()`.
@@ -61620,9 +61482,7 @@ export const _LocalFilePrototype: typeof File.prototype;
 
 
         // Constructor properties interface
-        interface ConstructorProps extends Icon.ConstructorProps {
-
-        }
+        interface ConstructorProps extends Icon.ConstructorProps {}
     }
 
     export interface LoadableIconNamespace {
@@ -61644,7 +61504,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          * @returns a {@link Gio.InputStream} to read the icon from.
          */
-        load(size: number, cancellable: (Cancellable | null)): [InputStream, string];
+        load(size: number, cancellable: Cancellable | null): [InputStream, string];
 
         /**
          * Loads an icon asynchronously. To finish this function, see
@@ -61653,17 +61513,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param size an integer.
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          */
-        load_async(size: number, cancellable: (Cancellable | null)): globalThis.Promise<[InputStream, string]>;
-
-        /**
-         * Loads an icon asynchronously. To finish this function, see
-         * `g_loadable_icon_load_finish()`. For the synchronous, blocking
-         * version of this function, see `g_loadable_icon_load()`.
-         * @param size an integer.
-         * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
-         * @param callback a {@link Gio.AsyncReadyCallback}   to call when the request is satisfied
-         */
-        load_async(size: number, cancellable: (Cancellable | null), callback: (AsyncReadyCallback<this> | null)): void;
+        load_async(size: number, cancellable: Cancellable | null): globalThis.Promise<[InputStream, string]>;
 
         /**
          * Loads an icon asynchronously. To finish this function, see
@@ -61673,7 +61523,17 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          * @param callback a {@link Gio.AsyncReadyCallback}   to call when the request is satisfied
          */
-        load_async(size: number, cancellable: (Cancellable | null), callback?: (AsyncReadyCallback<this> | null)): (globalThis.Promise<[InputStream, string]> | void);
+        load_async(size: number, cancellable: Cancellable | null, callback: AsyncReadyCallback<this> | null): void;
+
+        /**
+         * Loads an icon asynchronously. To finish this function, see
+         * `g_loadable_icon_load_finish()`. For the synchronous, blocking
+         * version of this function, see `g_loadable_icon_load()`.
+         * @param size an integer.
+         * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
+         * @param callback a {@link Gio.AsyncReadyCallback}   to call when the request is satisfied
+         */
+        load_async(size: number, cancellable: Cancellable | null, callback?: AsyncReadyCallback<this> | null): globalThis.Promise<[InputStream, string]> | void;
 
         /**
          * Finishes an asynchronous icon load started in `g_loadable_icon_load_async()`.
@@ -61707,9 +61567,7 @@ export const _LocalFilePrototype: typeof File.prototype;
 
 
         // Constructor properties interface
-        interface ConstructorProps extends Initable.ConstructorProps {
-
-        }
+        interface ConstructorProps extends Initable.ConstructorProps {}
     }
 
     export interface MemoryMonitorNamespace {
@@ -61815,7 +61673,7 @@ export const _LocalFilePrototype: typeof File.prototype;
              * @param callback a {@link Gio.AsyncReadyCallback}, or `null`.
              * @virtual
              */
-            vfunc_eject(flags: MountUnmountFlags, cancellable: (Cancellable | null), callback: (AsyncReadyCallback<this> | null)): void;
+            vfunc_eject(flags: MountUnmountFlags, cancellable: Cancellable | null, callback: AsyncReadyCallback<this> | null): void;
 
             /**
              * Finishes ejecting a mount. If any errors occurred during the operation,
@@ -61835,7 +61693,7 @@ export const _LocalFilePrototype: typeof File.prototype;
              * @param callback a {@link Gio.AsyncReadyCallback}, or `null`.
              * @virtual
              */
-            vfunc_eject_with_operation(flags: MountUnmountFlags, mount_operation: (MountOperation | null), cancellable: (Cancellable | null), callback: (AsyncReadyCallback<this> | null)): void;
+            vfunc_eject_with_operation(flags: MountUnmountFlags, mount_operation: MountOperation | null, cancellable: Cancellable | null, callback: AsyncReadyCallback<this> | null): void;
 
             /**
              * Finishes ejecting a mount. If any errors occurred during the operation,
@@ -61860,7 +61718,7 @@ export const _LocalFilePrototype: typeof File.prototype;
              * using that object to get the {@link Gio.Drive}.
              * @virtual
              */
-            vfunc_get_drive(): (Drive | null);
+            vfunc_get_drive(): Drive | null;
 
             /**
              * Gets the icon for `mount`.
@@ -61884,7 +61742,7 @@ export const _LocalFilePrototype: typeof File.prototype;
              * Gets the sort key for `mount`, if any.
              * @virtual
              */
-            vfunc_get_sort_key(): (string | null);
+            vfunc_get_sort_key(): string | null;
 
             /**
              * Gets the symbolic icon for `mount`.
@@ -61899,13 +61757,13 @@ export const _LocalFilePrototype: typeof File.prototype;
              * available.
              * @virtual
              */
-            vfunc_get_uuid(): (string | null);
+            vfunc_get_uuid(): string | null;
 
             /**
              * Gets the volume for the `mount`.
              * @virtual
              */
-            vfunc_get_volume(): (Volume | null);
+            vfunc_get_volume(): Volume | null;
 
             /**
              * Tries to guess the type of content stored on `mount`. Returns one or
@@ -61924,7 +61782,7 @@ export const _LocalFilePrototype: typeof File.prototype;
              * @param callback a {@link Gio.AsyncReadyCallback}
              * @virtual
              */
-            vfunc_guess_content_type(force_rescan: boolean, cancellable: (Cancellable | null), callback: (AsyncReadyCallback<this> | null)): void;
+            vfunc_guess_content_type(force_rescan: boolean, cancellable: Cancellable | null, callback: AsyncReadyCallback<this> | null): void;
 
             /**
              * Finishes guessing content types of `mount`. If any errors occurred
@@ -61951,7 +61809,7 @@ export const _LocalFilePrototype: typeof File.prototype;
              * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore
              * @virtual
              */
-            vfunc_guess_content_type_sync(force_rescan: boolean, cancellable: (Cancellable | null)): string[];
+            vfunc_guess_content_type_sync(force_rescan: boolean, cancellable: Cancellable | null): string[];
 
             /**
              * The ::pre-unmount signal that is emitted when the {@link Gio.Mount} will soon be emitted. If the recipient is somehow holding the mount open by keeping an open file on it it should close the file.
@@ -61975,7 +61833,7 @@ export const _LocalFilePrototype: typeof File.prototype;
              * @param callback a {@link Gio.AsyncReadyCallback}, or `null`.
              * @virtual
              */
-            vfunc_remount(flags: MountMountFlags, mount_operation: (MountOperation | null), cancellable: (Cancellable | null), callback: (AsyncReadyCallback<this> | null)): void;
+            vfunc_remount(flags: MountMountFlags, mount_operation: MountOperation | null, cancellable: Cancellable | null, callback: AsyncReadyCallback<this> | null): void;
 
             /**
              * Finishes remounting a mount. If any errors occurred during the operation,
@@ -61994,7 +61852,7 @@ export const _LocalFilePrototype: typeof File.prototype;
              * @param callback a {@link Gio.AsyncReadyCallback}, or `null`.
              * @virtual
              */
-            vfunc_unmount(flags: MountUnmountFlags, cancellable: (Cancellable | null), callback: (AsyncReadyCallback<this> | null)): void;
+            vfunc_unmount(flags: MountUnmountFlags, cancellable: Cancellable | null, callback: AsyncReadyCallback<this> | null): void;
 
             /**
              * Finishes unmounting a mount. If any errors occurred during the operation,
@@ -62014,7 +61872,7 @@ export const _LocalFilePrototype: typeof File.prototype;
              * @param callback a {@link Gio.AsyncReadyCallback}, or `null`.
              * @virtual
              */
-            vfunc_unmount_with_operation(flags: MountUnmountFlags, mount_operation: (MountOperation | null), cancellable: (Cancellable | null), callback: (AsyncReadyCallback<this> | null)): void;
+            vfunc_unmount_with_operation(flags: MountUnmountFlags, mount_operation: MountOperation | null, cancellable: Cancellable | null, callback: AsyncReadyCallback<this> | null): void;
 
             /**
              * Finishes unmounting a mount. If any errors occurred during the operation,
@@ -62033,9 +61891,7 @@ export const _LocalFilePrototype: typeof File.prototype;
 
 
         // Constructor properties interface
-        interface ConstructorProps extends GObject.Object.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GObject.Object.ConstructorProps {}
     }
 
     export interface MountNamespace {
@@ -62092,7 +61948,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param flags flags affecting the unmount if required for eject
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          */
-        eject(flags: MountUnmountFlags, cancellable: (Cancellable | null)): globalThis.Promise<boolean>;
+        eject(flags: MountUnmountFlags, cancellable: Cancellable | null): globalThis.Promise<boolean>;
 
         /**
          * Ejects a mount. This is an asynchronous operation, and is
@@ -62102,7 +61958,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          * @param callback a {@link Gio.AsyncReadyCallback}, or `null`.
          */
-        eject(flags: MountUnmountFlags, cancellable: (Cancellable | null), callback: (AsyncReadyCallback<this> | null)): void;
+        eject(flags: MountUnmountFlags, cancellable: Cancellable | null, callback: AsyncReadyCallback<this> | null): void;
 
         /**
          * Ejects a mount. This is an asynchronous operation, and is
@@ -62112,7 +61968,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          * @param callback a {@link Gio.AsyncReadyCallback}, or `null`.
          */
-        eject(flags: MountUnmountFlags, cancellable: (Cancellable | null), callback?: (AsyncReadyCallback<this> | null)): (globalThis.Promise<boolean> | void);
+        eject(flags: MountUnmountFlags, cancellable: Cancellable | null, callback?: AsyncReadyCallback<this> | null): globalThis.Promise<boolean> | void;
 
         /**
          * Finishes ejecting a mount. If any errors occurred during the operation,
@@ -62130,7 +61986,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param mount_operation a {@link Gio.MountOperation} or `null` to avoid     user interaction.
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          */
-        eject_with_operation(flags: MountUnmountFlags, mount_operation: (MountOperation | null), cancellable: (Cancellable | null)): globalThis.Promise<boolean>;
+        eject_with_operation(flags: MountUnmountFlags, mount_operation: MountOperation | null, cancellable: Cancellable | null): globalThis.Promise<boolean>;
 
         /**
          * Ejects a mount. This is an asynchronous operation, and is
@@ -62141,7 +61997,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          * @param callback a {@link Gio.AsyncReadyCallback}, or `null`.
          */
-        eject_with_operation(flags: MountUnmountFlags, mount_operation: (MountOperation | null), cancellable: (Cancellable | null), callback: (AsyncReadyCallback<this> | null)): void;
+        eject_with_operation(flags: MountUnmountFlags, mount_operation: MountOperation | null, cancellable: Cancellable | null, callback: AsyncReadyCallback<this> | null): void;
 
         /**
          * Ejects a mount. This is an asynchronous operation, and is
@@ -62152,7 +62008,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          * @param callback a {@link Gio.AsyncReadyCallback}, or `null`.
          */
-        eject_with_operation(flags: MountUnmountFlags, mount_operation: (MountOperation | null), cancellable: (Cancellable | null), callback?: (AsyncReadyCallback<this> | null)): (globalThis.Promise<boolean> | void);
+        eject_with_operation(flags: MountUnmountFlags, mount_operation: MountOperation | null, cancellable: Cancellable | null, callback?: AsyncReadyCallback<this> | null): globalThis.Promise<boolean> | void;
 
         /**
          * Finishes ejecting a mount. If any errors occurred during the operation,
@@ -62177,7 +62033,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * using that object to get the {@link Gio.Drive}.
          * @returns a {@link Gio.Drive} or `null` if `mount` is not      associated with a volume or a drive.      The returned object should be unreffed with      `g_object_unref()` when no longer needed.
          */
-        get_drive(): (Drive | null);
+        get_drive(): Drive | null;
 
         /**
          * Gets the icon for `mount`.
@@ -62201,7 +62057,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * Gets the sort key for `mount`, if any.
          * @returns Sorting key for `mount` or `null` if no such key is available.
          */
-        get_sort_key(): (string | null);
+        get_sort_key(): string | null;
 
         /**
          * Gets the symbolic icon for `mount`.
@@ -62216,13 +62072,13 @@ export const _LocalFilePrototype: typeof File.prototype;
          * available.
          * @returns the UUID for `mount` or `null` if no UUID     can be computed.     The returned string should be freed with `g_free()`     when no longer needed.
          */
-        get_uuid(): (string | null);
+        get_uuid(): string | null;
 
         /**
          * Gets the volume for the `mount`.
          * @returns a {@link Gio.Volume} or `null` if `mount` is not      associated with a volume.      The returned object should be unreffed with      `g_object_unref()` when no longer needed.
          */
-        get_volume(): (Volume | null);
+        get_volume(): Volume | null;
 
         /**
          * Tries to guess the type of content stored on `mount`. Returns one or
@@ -62239,25 +62095,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param force_rescan Whether to force a rescan of the content.     Otherwise a cached result will be used if available
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore
          */
-        guess_content_type(force_rescan: boolean, cancellable: (Cancellable | null)): globalThis.Promise<string[]>;
-
-        /**
-         * Tries to guess the type of content stored on `mount`. Returns one or
-         * more textual identifiers of well-known content types (typically
-         * prefixed with "x-content/"), e.g. x-content/image-dcf for camera
-         * memory cards. See the
-         * [shared-mime-info](http://www.freedesktop.org/wiki/Specifications/shared-mime-info-spec)
-         * specification for more on x-content types.
-         * 
-         * This is an asynchronous operation (see
-         * `g_mount_guess_content_type_sync()` for the synchronous version), and
-         * is finished by calling `g_mount_guess_content_type_finish()` with the
-         * `mount` and {@link Gio.AsyncResult} data returned in the `callback`.
-         * @param force_rescan Whether to force a rescan of the content.     Otherwise a cached result will be used if available
-         * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore
-         * @param callback a {@link Gio.AsyncReadyCallback}
-         */
-        guess_content_type(force_rescan: boolean, cancellable: (Cancellable | null), callback: (AsyncReadyCallback<this> | null)): void;
+        guess_content_type(force_rescan: boolean, cancellable: Cancellable | null): globalThis.Promise<string[]>;
 
         /**
          * Tries to guess the type of content stored on `mount`. Returns one or
@@ -62275,7 +62113,25 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore
          * @param callback a {@link Gio.AsyncReadyCallback}
          */
-        guess_content_type(force_rescan: boolean, cancellable: (Cancellable | null), callback?: (AsyncReadyCallback<this> | null)): (globalThis.Promise<string[]> | void);
+        guess_content_type(force_rescan: boolean, cancellable: Cancellable | null, callback: AsyncReadyCallback<this> | null): void;
+
+        /**
+         * Tries to guess the type of content stored on `mount`. Returns one or
+         * more textual identifiers of well-known content types (typically
+         * prefixed with "x-content/"), e.g. x-content/image-dcf for camera
+         * memory cards. See the
+         * [shared-mime-info](http://www.freedesktop.org/wiki/Specifications/shared-mime-info-spec)
+         * specification for more on x-content types.
+         * 
+         * This is an asynchronous operation (see
+         * `g_mount_guess_content_type_sync()` for the synchronous version), and
+         * is finished by calling `g_mount_guess_content_type_finish()` with the
+         * `mount` and {@link Gio.AsyncResult} data returned in the `callback`.
+         * @param force_rescan Whether to force a rescan of the content.     Otherwise a cached result will be used if available
+         * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore
+         * @param callback a {@link Gio.AsyncReadyCallback}
+         */
+        guess_content_type(force_rescan: boolean, cancellable: Cancellable | null, callback?: AsyncReadyCallback<this> | null): globalThis.Promise<string[]> | void;
 
         /**
          * Finishes guessing content types of `mount`. If any errors occurred
@@ -62302,7 +62158,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore
          * @returns a `null`-terminated array of content types or `null` on error.     Caller should free this array with `g_strfreev()` when done with it.
          */
-        guess_content_type_sync(force_rescan: boolean, cancellable: (Cancellable | null)): string[];
+        guess_content_type_sync(force_rescan: boolean, cancellable: Cancellable | null): string[];
 
         /**
          * Determines if `mount` is shadowed. Applications or libraries should
@@ -62346,7 +62202,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param mount_operation a {@link Gio.MountOperation} or `null` to avoid     user interaction.
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          */
-        remount(flags: MountMountFlags, mount_operation: (MountOperation | null), cancellable: (Cancellable | null)): globalThis.Promise<boolean>;
+        remount(flags: MountMountFlags, mount_operation: MountOperation | null, cancellable: Cancellable | null): globalThis.Promise<boolean>;
 
         /**
          * Remounts a mount. This is an asynchronous operation, and is
@@ -62363,7 +62219,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          * @param callback a {@link Gio.AsyncReadyCallback}, or `null`.
          */
-        remount(flags: MountMountFlags, mount_operation: (MountOperation | null), cancellable: (Cancellable | null), callback: (AsyncReadyCallback<this> | null)): void;
+        remount(flags: MountMountFlags, mount_operation: MountOperation | null, cancellable: Cancellable | null, callback: AsyncReadyCallback<this> | null): void;
 
         /**
          * Remounts a mount. This is an asynchronous operation, and is
@@ -62380,7 +62236,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          * @param callback a {@link Gio.AsyncReadyCallback}, or `null`.
          */
-        remount(flags: MountMountFlags, mount_operation: (MountOperation | null), cancellable: (Cancellable | null), callback?: (AsyncReadyCallback<this> | null)): (globalThis.Promise<boolean> | void);
+        remount(flags: MountMountFlags, mount_operation: MountOperation | null, cancellable: Cancellable | null, callback?: AsyncReadyCallback<this> | null): globalThis.Promise<boolean> | void;
 
         /**
          * Finishes remounting a mount. If any errors occurred during the operation,
@@ -62405,7 +62261,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param flags flags affecting the operation
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          */
-        unmount(flags: MountUnmountFlags, cancellable: (Cancellable | null)): globalThis.Promise<boolean>;
+        unmount(flags: MountUnmountFlags, cancellable: Cancellable | null): globalThis.Promise<boolean>;
 
         /**
          * Unmounts a mount. This is an asynchronous operation, and is
@@ -62415,7 +62271,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          * @param callback a {@link Gio.AsyncReadyCallback}, or `null`.
          */
-        unmount(flags: MountUnmountFlags, cancellable: (Cancellable | null), callback: (AsyncReadyCallback<this> | null)): void;
+        unmount(flags: MountUnmountFlags, cancellable: Cancellable | null, callback: AsyncReadyCallback<this> | null): void;
 
         /**
          * Unmounts a mount. This is an asynchronous operation, and is
@@ -62425,7 +62281,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          * @param callback a {@link Gio.AsyncReadyCallback}, or `null`.
          */
-        unmount(flags: MountUnmountFlags, cancellable: (Cancellable | null), callback?: (AsyncReadyCallback<this> | null)): (globalThis.Promise<boolean> | void);
+        unmount(flags: MountUnmountFlags, cancellable: Cancellable | null, callback?: AsyncReadyCallback<this> | null): globalThis.Promise<boolean> | void;
 
         /**
          * Finishes unmounting a mount. If any errors occurred during the operation,
@@ -62443,7 +62299,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param mount_operation a {@link Gio.MountOperation} or `null` to avoid     user interaction.
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          */
-        unmount_with_operation(flags: MountUnmountFlags, mount_operation: (MountOperation | null), cancellable: (Cancellable | null)): globalThis.Promise<boolean>;
+        unmount_with_operation(flags: MountUnmountFlags, mount_operation: MountOperation | null, cancellable: Cancellable | null): globalThis.Promise<boolean>;
 
         /**
          * Unmounts a mount. This is an asynchronous operation, and is
@@ -62454,7 +62310,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          * @param callback a {@link Gio.AsyncReadyCallback}, or `null`.
          */
-        unmount_with_operation(flags: MountUnmountFlags, mount_operation: (MountOperation | null), cancellable: (Cancellable | null), callback: (AsyncReadyCallback<this> | null)): void;
+        unmount_with_operation(flags: MountUnmountFlags, mount_operation: MountOperation | null, cancellable: Cancellable | null, callback: AsyncReadyCallback<this> | null): void;
 
         /**
          * Unmounts a mount. This is an asynchronous operation, and is
@@ -62465,7 +62321,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          * @param callback a {@link Gio.AsyncReadyCallback}, or `null`.
          */
-        unmount_with_operation(flags: MountUnmountFlags, mount_operation: (MountOperation | null), cancellable: (Cancellable | null), callback?: (AsyncReadyCallback<this> | null)): (globalThis.Promise<boolean> | void);
+        unmount_with_operation(flags: MountUnmountFlags, mount_operation: MountOperation | null, cancellable: Cancellable | null, callback?: AsyncReadyCallback<this> | null): globalThis.Promise<boolean> | void;
 
         /**
          * Finishes unmounting a mount. If any errors occurred during the operation,
@@ -62519,7 +62375,7 @@ export const _LocalFilePrototype: typeof File.prototype;
              * @param cancellable a {@link Gio.Cancellable}, or `null`
              * @virtual
              */
-            vfunc_can_reach(connectable: SocketConnectable, cancellable: (Cancellable | null)): boolean;
+            vfunc_can_reach(connectable: SocketConnectable, cancellable: Cancellable | null): boolean;
 
             /**
              * Asynchronously attempts to determine whether or not the host
@@ -62536,7 +62392,7 @@ export const _LocalFilePrototype: typeof File.prototype;
              * @param callback a {@link Gio.AsyncReadyCallback}     to call when the request is satisfied
              * @virtual
              */
-            vfunc_can_reach_async(connectable: SocketConnectable, cancellable: (Cancellable | null), callback: (AsyncReadyCallback<this> | null)): void;
+            vfunc_can_reach_async(connectable: SocketConnectable, cancellable: Cancellable | null, callback: AsyncReadyCallback<this> | null): void;
 
             /**
              * Finishes an async network connectivity test.
@@ -62724,7 +62580,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable a {@link Gio.Cancellable}, or `null`
          * @returns `true` if `connectable` is reachable, `false` if not.
          */
-        can_reach(connectable: SocketConnectable, cancellable: (Cancellable | null)): boolean;
+        can_reach(connectable: SocketConnectable, cancellable: Cancellable | null): boolean;
 
         /**
          * Asynchronously attempts to determine whether or not the host
@@ -62739,23 +62595,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param connectable a {@link Gio.SocketConnectable}
          * @param cancellable a {@link Gio.Cancellable}, or `null`
          */
-        can_reach_async(connectable: SocketConnectable, cancellable: (Cancellable | null)): globalThis.Promise<boolean>;
-
-        /**
-         * Asynchronously attempts to determine whether or not the host
-         * pointed to by `connectable` can be reached, without actually
-         * trying to connect to it.
-         * 
-         * For more details, see `g_network_monitor_can_reach()`.
-         * 
-         * When the operation is finished, `callback` will be called.
-         * You can then call `g_network_monitor_can_reach_finish()`
-         * to get the result of the operation.
-         * @param connectable a {@link Gio.SocketConnectable}
-         * @param cancellable a {@link Gio.Cancellable}, or `null`
-         * @param callback a {@link Gio.AsyncReadyCallback}     to call when the request is satisfied
-         */
-        can_reach_async(connectable: SocketConnectable, cancellable: (Cancellable | null), callback: (AsyncReadyCallback<this> | null)): void;
+        can_reach_async(connectable: SocketConnectable, cancellable: Cancellable | null): globalThis.Promise<boolean>;
 
         /**
          * Asynchronously attempts to determine whether or not the host
@@ -62771,7 +62611,23 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable a {@link Gio.Cancellable}, or `null`
          * @param callback a {@link Gio.AsyncReadyCallback}     to call when the request is satisfied
          */
-        can_reach_async(connectable: SocketConnectable, cancellable: (Cancellable | null), callback?: (AsyncReadyCallback<this> | null)): (globalThis.Promise<boolean> | void);
+        can_reach_async(connectable: SocketConnectable, cancellable: Cancellable | null, callback: AsyncReadyCallback<this> | null): void;
+
+        /**
+         * Asynchronously attempts to determine whether or not the host
+         * pointed to by `connectable` can be reached, without actually
+         * trying to connect to it.
+         * 
+         * For more details, see `g_network_monitor_can_reach()`.
+         * 
+         * When the operation is finished, `callback` will be called.
+         * You can then call `g_network_monitor_can_reach_finish()`
+         * to get the result of the operation.
+         * @param connectable a {@link Gio.SocketConnectable}
+         * @param cancellable a {@link Gio.Cancellable}, or `null`
+         * @param callback a {@link Gio.AsyncReadyCallback}     to call when the request is satisfied
+         */
+        can_reach_async(connectable: SocketConnectable, cancellable: Cancellable | null, callback?: AsyncReadyCallback<this> | null): globalThis.Promise<boolean> | void;
 
         /**
          * Finishes an async network connectivity test.
@@ -62862,7 +62718,7 @@ export const _LocalFilePrototype: typeof File.prototype;
              * @param cancellable a {@link Gio.Cancellable}, or `null`
              * @virtual
              */
-            vfunc_create_source(cancellable: (Cancellable | null)): GLib.Source;
+            vfunc_create_source(cancellable: Cancellable | null): GLib.Source;
 
             /**
              * Checks if `stream` can be read.
@@ -62897,14 +62753,12 @@ export const _LocalFilePrototype: typeof File.prototype;
              * `g_pollable_input_stream_can_poll()` returns `false` for `stream`.
              * @virtual
              */
-            vfunc_read_nonblocking(): [(bigint | number), Uint8Array | null];
+            vfunc_read_nonblocking(): [bigint | number, Uint8Array | null];
         }
 
 
         // Constructor properties interface
-        interface ConstructorProps extends InputStream.ConstructorProps {
-
-        }
+        interface ConstructorProps extends InputStream.ConstructorProps {}
     }
 
     export interface PollableInputStreamNamespace {
@@ -62954,7 +62808,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable a {@link Gio.Cancellable}, or `null`
          * @returns a new {@link GLib.Source}
          */
-        create_source(cancellable: (Cancellable | null)): GLib.Source;
+        create_source(cancellable: Cancellable | null): GLib.Source;
 
         /**
          * Checks if `stream` can be read.
@@ -62990,7 +62844,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable a {@link Gio.Cancellable}, or `null`
          * @returns the number of bytes read, or -1 on error (including   {@link Gio.IOErrorEnum.WOULD_BLOCK}).
          */
-        read_nonblocking(cancellable: (Cancellable | null)): [number, Uint8Array];
+        read_nonblocking(cancellable: Cancellable | null): [number, Uint8Array];
     }
 
 
@@ -63033,7 +62887,7 @@ export const _LocalFilePrototype: typeof File.prototype;
              * @param cancellable a {@link Gio.Cancellable}, or `null`
              * @virtual
              */
-            vfunc_create_source(cancellable: (Cancellable | null)): GLib.Source;
+            vfunc_create_source(cancellable: Cancellable | null): GLib.Source;
 
             /**
              * Checks if `stream` can be written.
@@ -63073,7 +62927,7 @@ export const _LocalFilePrototype: typeof File.prototype;
              * @param buffer a buffer to write     data from
              * @virtual
              */
-            vfunc_write_nonblocking(buffer: (Uint8Array | null)): (bigint | number);
+            vfunc_write_nonblocking(buffer: Uint8Array | null): bigint | number;
 
             /**
              * Attempts to write the bytes contained in the `n_vectors` `vectors` to `stream`,
@@ -63103,9 +62957,7 @@ export const _LocalFilePrototype: typeof File.prototype;
 
 
         // Constructor properties interface
-        interface ConstructorProps extends OutputStream.ConstructorProps {
-
-        }
+        interface ConstructorProps extends OutputStream.ConstructorProps {}
     }
 
     export interface PollableOutputStreamNamespace {
@@ -63155,7 +63007,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable a {@link Gio.Cancellable}, or `null`
          * @returns a new {@link GLib.Source}
          */
-        create_source(cancellable: (Cancellable | null)): GLib.Source;
+        create_source(cancellable: Cancellable | null): GLib.Source;
 
         /**
          * Checks if `stream` can be written.
@@ -63196,7 +63048,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable a {@link Gio.Cancellable}, or `null`
          * @returns the number of bytes written, or -1 on error (including   {@link Gio.IOErrorEnum.WOULD_BLOCK}).
          */
-        write_nonblocking(buffer: (Uint8Array | string), cancellable: (Cancellable | null)): number;
+        write_nonblocking(buffer: Uint8Array | string, cancellable: Cancellable | null): number;
 
         /**
          * Attempts to write the bytes contained in the `n_vectors` `vectors` to `stream`,
@@ -63222,7 +63074,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable a {@link Gio.Cancellable}, or `null`
          * @returns %`G_POLLABLE_RETURN_OK` on success, {@link Gio.PollableReturn.WOULD_BLOCK} if the stream is not currently writable (and `error` is *not* set), or {@link Gio.PollableReturn.FAILED} if there was an error in which case `error` will be set.
          */
-        writev_nonblocking(vectors: OutputVector[], cancellable: (Cancellable | null)): [PollableReturn, number];
+        writev_nonblocking(vectors: OutputVector[], cancellable: Cancellable | null): [PollableReturn, number];
     }
 
 
@@ -63329,7 +63181,7 @@ export const _LocalFilePrototype: typeof File.prototype;
              * @param cancellable a {@link Gio.Cancellable}
              * @virtual
              */
-            vfunc_connect(connection: IOStream, proxy_address: ProxyAddress, cancellable: (Cancellable | null)): IOStream;
+            vfunc_connect(connection: IOStream, proxy_address: ProxyAddress, cancellable: Cancellable | null): IOStream;
 
             /**
              * Asynchronous version of `g_proxy_connect()`.
@@ -63339,7 +63191,7 @@ export const _LocalFilePrototype: typeof File.prototype;
              * @param callback a {@link Gio.AsyncReadyCallback}
              * @virtual
              */
-            vfunc_connect_async(connection: IOStream, proxy_address: ProxyAddress, cancellable: (Cancellable | null), callback: (AsyncReadyCallback<this> | null)): void;
+            vfunc_connect_async(connection: IOStream, proxy_address: ProxyAddress, cancellable: Cancellable | null, callback: AsyncReadyCallback<this> | null): void;
 
             /**
              * See `g_proxy_connect()`.
@@ -63363,9 +63215,7 @@ export const _LocalFilePrototype: typeof File.prototype;
 
 
         // Constructor properties interface
-        interface ConstructorProps extends GObject.Object.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GObject.Object.ConstructorProps {}
     }
 
     export interface ProxyNamespace {
@@ -63376,7 +63226,7 @@ export const _LocalFilePrototype: typeof File.prototype;
         * the specified protocol.
         * @param protocol the proxy protocol name (e.g. http, socks, etc)
         */
-        get_default_for_protocol(protocol: string): (Proxy | null);
+        get_default_for_protocol(protocol: string): Proxy | null;
     }
     /**
      * A {@link Gio.Proxy} handles connecting to a remote host via a given type of
@@ -63401,7 +63251,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable a {@link Gio.Cancellable}
          * @returns a {@link Gio.IOStream} that will replace `connection`. This might               be the same as `connection`, in which case a reference               will be added.
          */
-        connect(connection: IOStream, proxy_address: ProxyAddress, cancellable: (Cancellable | null)): IOStream;
+        connect(connection: IOStream, proxy_address: ProxyAddress, cancellable: Cancellable | null): IOStream;
 
         /**
          * @param args 
@@ -63414,7 +63264,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param proxy_address a {@link Gio.ProxyAddress}
          * @param cancellable a {@link Gio.Cancellable}
          */
-        connect_async(connection: IOStream, proxy_address: ProxyAddress, cancellable: (Cancellable | null)): globalThis.Promise<IOStream>;
+        connect_async(connection: IOStream, proxy_address: ProxyAddress, cancellable: Cancellable | null): globalThis.Promise<IOStream>;
 
         /**
          * Asynchronous version of `g_proxy_connect()`.
@@ -63423,7 +63273,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable a {@link Gio.Cancellable}
          * @param callback a {@link Gio.AsyncReadyCallback}
          */
-        connect_async(connection: IOStream, proxy_address: ProxyAddress, cancellable: (Cancellable | null), callback: (AsyncReadyCallback<this> | null)): void;
+        connect_async(connection: IOStream, proxy_address: ProxyAddress, cancellable: Cancellable | null, callback: AsyncReadyCallback<this> | null): void;
 
         /**
          * Asynchronous version of `g_proxy_connect()`.
@@ -63432,7 +63282,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable a {@link Gio.Cancellable}
          * @param callback a {@link Gio.AsyncReadyCallback}
          */
-        connect_async(connection: IOStream, proxy_address: ProxyAddress, cancellable: (Cancellable | null), callback?: (AsyncReadyCallback<this> | null)): (globalThis.Promise<IOStream> | void);
+        connect_async(connection: IOStream, proxy_address: ProxyAddress, cancellable: Cancellable | null, callback?: AsyncReadyCallback<this> | null): globalThis.Promise<IOStream> | void;
 
         /**
          * See `g_proxy_connect()`.
@@ -63495,7 +63345,7 @@ export const _LocalFilePrototype: typeof File.prototype;
              * @param cancellable a {@link Gio.Cancellable}, or `null`
              * @virtual
              */
-            vfunc_lookup(uri: string, cancellable: (Cancellable | null)): string[];
+            vfunc_lookup(uri: string, cancellable: Cancellable | null): string[];
 
             /**
              * Asynchronous lookup of proxy. See `g_proxy_resolver_lookup()` for more
@@ -63505,7 +63355,7 @@ export const _LocalFilePrototype: typeof File.prototype;
              * @param callback callback to call after resolution completes
              * @virtual
              */
-            vfunc_lookup_async(uri: string, cancellable: (Cancellable | null), callback: (AsyncReadyCallback<this> | null)): void;
+            vfunc_lookup_async(uri: string, cancellable: Cancellable | null, callback: AsyncReadyCallback<this> | null): void;
 
             /**
              * Call this function to obtain the array of proxy URIs when
@@ -63519,9 +63369,7 @@ export const _LocalFilePrototype: typeof File.prototype;
 
 
         // Constructor properties interface
-        interface ConstructorProps extends GObject.Object.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GObject.Object.ConstructorProps {}
     }
 
     export interface ProxyResolverNamespace {
@@ -63575,7 +63423,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable a {@link Gio.Cancellable}, or `null`
          * @returns A               NULL-terminated array of proxy URIs. Must be freed               with `g_strfreev()`.
          */
-        lookup(uri: string, cancellable: (Cancellable | null)): string[];
+        lookup(uri: string, cancellable: Cancellable | null): string[];
 
         /**
          * Asynchronous lookup of proxy. See `g_proxy_resolver_lookup()` for more
@@ -63583,16 +63431,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param uri a URI representing the destination to connect to
          * @param cancellable a {@link Gio.Cancellable}, or `null`
          */
-        lookup_async(uri: string, cancellable: (Cancellable | null)): globalThis.Promise<string[]>;
-
-        /**
-         * Asynchronous lookup of proxy. See `g_proxy_resolver_lookup()` for more
-         * details.
-         * @param uri a URI representing the destination to connect to
-         * @param cancellable a {@link Gio.Cancellable}, or `null`
-         * @param callback callback to call after resolution completes
-         */
-        lookup_async(uri: string, cancellable: (Cancellable | null), callback: (AsyncReadyCallback<this> | null)): void;
+        lookup_async(uri: string, cancellable: Cancellable | null): globalThis.Promise<string[]>;
 
         /**
          * Asynchronous lookup of proxy. See `g_proxy_resolver_lookup()` for more
@@ -63601,7 +63440,16 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable a {@link Gio.Cancellable}, or `null`
          * @param callback callback to call after resolution completes
          */
-        lookup_async(uri: string, cancellable: (Cancellable | null), callback?: (AsyncReadyCallback<this> | null)): (globalThis.Promise<string[]> | void);
+        lookup_async(uri: string, cancellable: Cancellable | null, callback: AsyncReadyCallback<this> | null): void;
+
+        /**
+         * Asynchronous lookup of proxy. See `g_proxy_resolver_lookup()` for more
+         * details.
+         * @param uri a URI representing the destination to connect to
+         * @param cancellable a {@link Gio.Cancellable}, or `null`
+         * @param callback callback to call after resolution completes
+         */
+        lookup_async(uri: string, cancellable: Cancellable | null, callback?: AsyncReadyCallback<this> | null): globalThis.Promise<string[]> | void;
 
         /**
          * Call this function to obtain the array of proxy URIs when
@@ -63641,7 +63489,7 @@ export const _LocalFilePrototype: typeof File.prototype;
              * @param platform_data the platform data to send
              * @virtual
              */
-            vfunc_activate_action_full(action_name: string, parameter: (GLib.Variant | null), platform_data: GLib.Variant): void;
+            vfunc_activate_action_full(action_name: string, parameter: GLib.Variant | null, platform_data: GLib.Variant): void;
 
             /**
              * Changes the state of a remote action.
@@ -63663,9 +63511,7 @@ export const _LocalFilePrototype: typeof File.prototype;
 
 
         // Constructor properties interface
-        interface ConstructorProps extends ActionGroup.ConstructorProps {
-
-        }
+        interface ConstructorProps extends ActionGroup.ConstructorProps {}
     }
 
     export interface RemoteActionGroupNamespace {
@@ -63714,7 +63560,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param parameter the optional parameter to the activation
          * @param platform_data the platform data to send
          */
-        activate_action_full(action_name: string, parameter: (GLib.Variant | null), platform_data: GLib.Variant): void;
+        activate_action_full(action_name: string, parameter: GLib.Variant | null, platform_data: GLib.Variant): void;
 
         /**
          * Changes the state of a remote action.
@@ -63779,13 +63625,13 @@ export const _LocalFilePrototype: typeof File.prototype;
              * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
              * @virtual
              */
-            vfunc_seek(offset: number, type: GLib.SeekType, cancellable: (Cancellable | null)): boolean;
+            vfunc_seek(offset: number, type: GLib.SeekType, cancellable: Cancellable | null): boolean;
 
             /**
              * Tells the current position within the stream.
              * @virtual
              */
-            vfunc_tell(): (bigint | number);
+            vfunc_tell(): bigint | number;
 
             /**
              * Sets the length of the stream to `offset`. If the stream was previously
@@ -63801,14 +63647,12 @@ export const _LocalFilePrototype: typeof File.prototype;
              * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
              * @virtual
              */
-            vfunc_truncate_fn(offset: number, cancellable: (Cancellable | null)): boolean;
+            vfunc_truncate_fn(offset: number, cancellable: Cancellable | null): boolean;
         }
 
 
         // Constructor properties interface
-        interface ConstructorProps extends GObject.Object.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GObject.Object.ConstructorProps {}
     }
 
     export interface SeekableNamespace {
@@ -63868,7 +63712,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          * @returns `true` if successful. If an error     has occurred, this function will return `false` and set `error`     appropriately if present.
          */
-        seek(offset: (bigint | number), type: GLib.SeekType, cancellable: (Cancellable | null)): boolean;
+        seek(offset: bigint | number, type: GLib.SeekType, cancellable: Cancellable | null): boolean;
 
         /**
          * Tells the current position within the stream.
@@ -63890,7 +63734,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          * @returns `true` if successful. If an error     has occurred, this function will return `false` and set `error`     appropriately if present.
          */
-        truncate(offset: (bigint | number), cancellable: (Cancellable | null)): boolean;
+        truncate(offset: bigint | number, cancellable: Cancellable | null): boolean;
     }
 
 
@@ -63939,9 +63783,7 @@ export const _LocalFilePrototype: typeof File.prototype;
 
 
         // Constructor properties interface
-        interface ConstructorProps extends GObject.Object.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GObject.Object.ConstructorProps {}
     }
 
     export interface SocketConnectableNamespace {
@@ -64078,9 +63920,7 @@ export const _LocalFilePrototype: typeof File.prototype;
 
 
         // Constructor properties interface
-        interface ConstructorProps extends GObject.Object.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GObject.Object.ConstructorProps {}
     }
 
     export interface TlsBackendNamespace {
@@ -64154,7 +63994,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * database as if `g_tls_backend_set_default_database()` had never been called.
          * @param database the {@link Gio.TlsDatabase}
          */
-        set_default_database(database: (TlsDatabase | null)): void;
+        set_default_database(database: TlsDatabase | null): void;
 
         /**
          * Checks if DTLS is supported. DTLS support may not be available even if TLS
@@ -64224,8 +64064,8 @@ export const _LocalFilePrototype: typeof File.prototype;
         interface ConstructorProps extends TlsConnection.ConstructorProps {
             accepted_cas: never[];
             acceptedCas: never[];
-            server_identity: (SocketConnectable | null);
-            serverIdentity: (SocketConnectable | null);
+            server_identity: SocketConnectable | null;
+            serverIdentity: SocketConnectable | null;
             use_ssl3: boolean;
             useSsl3: boolean;
             validation_flags: TlsCertificateFlags;
@@ -64247,7 +64087,7 @@ export const _LocalFilePrototype: typeof File.prototype;
         * @param base_io_stream the {@link Gio.IOStream} to wrap
         * @param server_identity the expected identity of the server
         */
-        ["new"](base_io_stream: IOStream, server_identity: (SocketConnectable | null)): TlsClientConnection;
+        ["new"](base_io_stream: IOStream, server_identity: SocketConnectable | null): TlsClientConnection;
     }
     /**
      * {@link Gio.TlsClientConnection} is the client-side subclass of
@@ -64301,8 +64141,8 @@ export const _LocalFilePrototype: typeof File.prototype;
          * virtual hosts.
          * @since 2.28
          */
-        get server_identity(): (SocketConnectable | null);
-        set server_identity(val: (SocketConnectable | null));
+        get server_identity(): SocketConnectable | null;
+        set server_identity(val: SocketConnectable | null);
 
         /**
          * A {@link Gio.SocketConnectable} describing the identity of the server that
@@ -64321,8 +64161,8 @@ export const _LocalFilePrototype: typeof File.prototype;
          * virtual hosts.
          * @since 2.28
          */
-        get serverIdentity(): (SocketConnectable | null);
-        set serverIdentity(val: (SocketConnectable | null));
+        get serverIdentity(): SocketConnectable | null;
+        set serverIdentity(val: SocketConnectable | null);
 
         /**
          * SSL 3.0 is no longer supported. See
@@ -64442,7 +64282,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * Gets `conn`'s expected server identity
          * @returns a {@link Gio.SocketConnectable} describing the expected server identity, or `null` if the expected identity is not known.
          */
-        get_server_identity(): (SocketConnectable | null);
+        get_server_identity(): SocketConnectable | null;
 
         /**
          * SSL 3.0 is no longer supported. See
@@ -64572,7 +64412,7 @@ export const _LocalFilePrototype: typeof File.prototype;
         * @param base_io_stream the {@link Gio.IOStream} to wrap
         * @param certificate the default server certificate, or `null`
         */
-        ["new"](base_io_stream: IOStream, certificate: (TlsCertificate | null)): TlsServerConnection;
+        ["new"](base_io_stream: IOStream, certificate: TlsCertificate | null): TlsServerConnection;
     }
     /**
      * {@link Gio.TlsServerConnection} is the server-side subclass of
@@ -64644,7 +64484,7 @@ export const _LocalFilePrototype: typeof File.prototype;
              * @param callback a {@link Gio.AsyncReadyCallback}, or `null`
              * @virtual
              */
-            vfunc_eject(flags: MountUnmountFlags, cancellable: (Cancellable | null), callback: (AsyncReadyCallback<this> | null)): void;
+            vfunc_eject(flags: MountUnmountFlags, cancellable: Cancellable | null, callback: AsyncReadyCallback<this> | null): void;
 
             /**
              * Finishes ejecting a volume. If any errors occurred during the operation,
@@ -64664,7 +64504,7 @@ export const _LocalFilePrototype: typeof File.prototype;
              * @param callback a {@link Gio.AsyncReadyCallback}, or `null`
              * @virtual
              */
-            vfunc_eject_with_operation(flags: MountUnmountFlags, mount_operation: (MountOperation | null), cancellable: (Cancellable | null), callback: (AsyncReadyCallback<this> | null)): void;
+            vfunc_eject_with_operation(flags: MountUnmountFlags, mount_operation: MountOperation | null, cancellable: Cancellable | null, callback: AsyncReadyCallback<this> | null): void;
 
             /**
              * Finishes ejecting a volume. If any errors occurred during the operation,
@@ -64714,13 +64554,13 @@ export const _LocalFilePrototype: typeof File.prototype;
              * `g_mount_is_shadowed()` for more details.
              * @virtual
              */
-            vfunc_get_activation_root(): (File | null);
+            vfunc_get_activation_root(): File | null;
 
             /**
              * Gets the drive for the `volume`.
              * @virtual
              */
-            vfunc_get_drive(): (Drive | null);
+            vfunc_get_drive(): Drive | null;
 
             /**
              * Gets the icon for `volume`.
@@ -64735,13 +64575,13 @@ export const _LocalFilePrototype: typeof File.prototype;
              * @param kind the kind of identifier to return
              * @virtual
              */
-            vfunc_get_identifier(kind: string): (string | null);
+            vfunc_get_identifier(kind: string): string | null;
 
             /**
              * Gets the mount for the `volume`.
              * @virtual
              */
-            vfunc_get_mount(): (Mount | null);
+            vfunc_get_mount(): Mount | null;
 
             /**
              * Gets the name of `volume`.
@@ -64753,7 +64593,7 @@ export const _LocalFilePrototype: typeof File.prototype;
              * Gets the sort key for `volume`, if any.
              * @virtual
              */
-            vfunc_get_sort_key(): (string | null);
+            vfunc_get_sort_key(): string | null;
 
             /**
              * Gets the symbolic icon for `volume`.
@@ -64768,7 +64608,7 @@ export const _LocalFilePrototype: typeof File.prototype;
              * available.
              * @virtual
              */
-            vfunc_get_uuid(): (string | null);
+            vfunc_get_uuid(): string | null;
 
             /**
              * Finishes mounting a volume. If any errors occurred during the operation,
@@ -64793,7 +64633,7 @@ export const _LocalFilePrototype: typeof File.prototype;
              * @param callback a {@link Gio.AsyncReadyCallback}, or `null`
              * @virtual
              */
-            vfunc_mount_fn(flags: MountMountFlags, mount_operation: (MountOperation | null), cancellable: (Cancellable | null), callback: (AsyncReadyCallback<this> | null)): void;
+            vfunc_mount_fn(flags: MountMountFlags, mount_operation: MountOperation | null, cancellable: Cancellable | null, callback: AsyncReadyCallback<this> | null): void;
 
             /**
              * The removed signal that is emitted when the {@link Gio.Volume} have been removed. If the recipient is holding references to the object they should release them so the object can be finalized.
@@ -64810,9 +64650,7 @@ export const _LocalFilePrototype: typeof File.prototype;
 
 
         // Constructor properties interface
-        interface ConstructorProps extends GObject.Object.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GObject.Object.ConstructorProps {}
     }
 
     export interface VolumeNamespace {
@@ -64891,7 +64729,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param flags flags affecting the unmount if required for eject
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore
          */
-        eject(flags: MountUnmountFlags, cancellable: (Cancellable | null)): globalThis.Promise<boolean>;
+        eject(flags: MountUnmountFlags, cancellable: Cancellable | null): globalThis.Promise<boolean>;
 
         /**
          * Ejects a volume. This is an asynchronous operation, and is
@@ -64901,7 +64739,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore
          * @param callback a {@link Gio.AsyncReadyCallback}, or `null`
          */
-        eject(flags: MountUnmountFlags, cancellable: (Cancellable | null), callback: (AsyncReadyCallback<this> | null)): void;
+        eject(flags: MountUnmountFlags, cancellable: Cancellable | null, callback: AsyncReadyCallback<this> | null): void;
 
         /**
          * Ejects a volume. This is an asynchronous operation, and is
@@ -64911,7 +64749,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore
          * @param callback a {@link Gio.AsyncReadyCallback}, or `null`
          */
-        eject(flags: MountUnmountFlags, cancellable: (Cancellable | null), callback?: (AsyncReadyCallback<this> | null)): (globalThis.Promise<boolean> | void);
+        eject(flags: MountUnmountFlags, cancellable: Cancellable | null, callback?: AsyncReadyCallback<this> | null): globalThis.Promise<boolean> | void;
 
         /**
          * Finishes ejecting a volume. If any errors occurred during the operation,
@@ -64929,7 +64767,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param mount_operation a {@link Gio.MountOperation} or `null` to     avoid user interaction
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore
          */
-        eject_with_operation(flags: MountUnmountFlags, mount_operation: (MountOperation | null), cancellable: (Cancellable | null)): globalThis.Promise<boolean>;
+        eject_with_operation(flags: MountUnmountFlags, mount_operation: MountOperation | null, cancellable: Cancellable | null): globalThis.Promise<boolean>;
 
         /**
          * Ejects a volume. This is an asynchronous operation, and is
@@ -64940,7 +64778,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore
          * @param callback a {@link Gio.AsyncReadyCallback}, or `null`
          */
-        eject_with_operation(flags: MountUnmountFlags, mount_operation: (MountOperation | null), cancellable: (Cancellable | null), callback: (AsyncReadyCallback<this> | null)): void;
+        eject_with_operation(flags: MountUnmountFlags, mount_operation: MountOperation | null, cancellable: Cancellable | null, callback: AsyncReadyCallback<this> | null): void;
 
         /**
          * Ejects a volume. This is an asynchronous operation, and is
@@ -64951,7 +64789,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore
          * @param callback a {@link Gio.AsyncReadyCallback}, or `null`
          */
-        eject_with_operation(flags: MountUnmountFlags, mount_operation: (MountOperation | null), cancellable: (Cancellable | null), callback?: (AsyncReadyCallback<this> | null)): (globalThis.Promise<boolean> | void);
+        eject_with_operation(flags: MountUnmountFlags, mount_operation: MountOperation | null, cancellable: Cancellable | null, callback?: AsyncReadyCallback<this> | null): globalThis.Promise<boolean> | void;
 
         /**
          * Finishes ejecting a volume. If any errors occurred during the operation,
@@ -65001,13 +64839,13 @@ export const _LocalFilePrototype: typeof File.prototype;
          * `g_mount_is_shadowed()` for more details.
          * @returns the activation root of `volume`     or `null`. Use `g_object_unref()` to free.
          */
-        get_activation_root(): (File | null);
+        get_activation_root(): File | null;
 
         /**
          * Gets the drive for the `volume`.
          * @returns a {@link Gio.Drive} or `null` if `volume` is not     associated with a drive. The returned object should be unreffed     with `g_object_unref()` when no longer needed.
          */
-        get_drive(): (Drive | null);
+        get_drive(): Drive | null;
 
         /**
          * Gets the icon for `volume`.
@@ -65022,13 +64860,13 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param kind the kind of identifier to return
          * @returns a newly allocated string containing the     requested identifier, or `null` if the {@link Gio.Volume}     doesn't have this kind of identifier
          */
-        get_identifier(kind: string): (string | null);
+        get_identifier(kind: string): string | null;
 
         /**
          * Gets the mount for the `volume`.
          * @returns a {@link Gio.Mount} or `null` if `volume` isn't mounted.     The returned object should be unreffed with `g_object_unref()`     when no longer needed.
          */
-        get_mount(): (Mount | null);
+        get_mount(): Mount | null;
 
         /**
          * Gets the name of `volume`.
@@ -65040,7 +64878,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * Gets the sort key for `volume`, if any.
          * @returns Sorting key for `volume` or `null` if no such key is available
          */
-        get_sort_key(): (string | null);
+        get_sort_key(): string | null;
 
         /**
          * Gets the symbolic icon for `volume`.
@@ -65055,7 +64893,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * available.
          * @returns the UUID for `volume` or `null` if no UUID     can be computed.     The returned string should be freed with `g_free()`     when no longer needed.
          */
-        get_uuid(): (string | null);
+        get_uuid(): string | null;
 
         /**
          * Mounts a volume. This is an asynchronous operation, and is
@@ -65065,18 +64903,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param mount_operation a {@link Gio.MountOperation} or `null` to avoid user interaction
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore
          */
-        mount(flags: MountMountFlags, mount_operation: (MountOperation | null), cancellable: (Cancellable | null)): globalThis.Promise<boolean>;
-
-        /**
-         * Mounts a volume. This is an asynchronous operation, and is
-         * finished by calling `g_volume_mount_finish()` with the `volume`
-         * and {@link Gio.AsyncResult} returned in the `callback`.
-         * @param flags flags affecting the operation
-         * @param mount_operation a {@link Gio.MountOperation} or `null` to avoid user interaction
-         * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore
-         * @param callback a {@link Gio.AsyncReadyCallback}, or `null`
-         */
-        mount(flags: MountMountFlags, mount_operation: (MountOperation | null), cancellable: (Cancellable | null), callback: (AsyncReadyCallback<this> | null)): void;
+        mount(flags: MountMountFlags, mount_operation: MountOperation | null, cancellable: Cancellable | null): globalThis.Promise<boolean>;
 
         /**
          * Mounts a volume. This is an asynchronous operation, and is
@@ -65087,7 +64914,18 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore
          * @param callback a {@link Gio.AsyncReadyCallback}, or `null`
          */
-        mount(flags: MountMountFlags, mount_operation: (MountOperation | null), cancellable: (Cancellable | null), callback?: (AsyncReadyCallback<this> | null)): (globalThis.Promise<boolean> | void);
+        mount(flags: MountMountFlags, mount_operation: MountOperation | null, cancellable: Cancellable | null, callback: AsyncReadyCallback<this> | null): void;
+
+        /**
+         * Mounts a volume. This is an asynchronous operation, and is
+         * finished by calling `g_volume_mount_finish()` with the `volume`
+         * and {@link Gio.AsyncResult} returned in the `callback`.
+         * @param flags flags affecting the operation
+         * @param mount_operation a {@link Gio.MountOperation} or `null` to avoid user interaction
+         * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore
+         * @param callback a {@link Gio.AsyncReadyCallback}, or `null`
+         */
+        mount(flags: MountMountFlags, mount_operation: MountOperation | null, cancellable: Cancellable | null, callback?: AsyncReadyCallback<this> | null): globalThis.Promise<boolean> | void;
 
         /**
          * Finishes mounting a volume. If any errors occurred during the operation,
@@ -65130,7 +64968,7 @@ export const _LocalFilePrototype: typeof File.prototype;
         * @param cancellable a {@link Gio.Cancellable} or `null`
         * @param callback a {@link Gio.AsyncReadyCallback} to call when the request is satisfied
         */
-        get(bus_type: BusType, cancellable: (Cancellable | null), callback: (AsyncReadyCallback<BusType> | null)): void;
+        get(bus_type: BusType, cancellable: Cancellable | null, callback: AsyncReadyCallback<BusType> | null): void;
         /**
         * Finishes an operation started with `g_bus_get()`.
         * 
@@ -65169,7 +65007,7 @@ export const _LocalFilePrototype: typeof File.prototype;
         * @param bus_type a {@link Gio.BusType}
         * @param cancellable a {@link Gio.Cancellable} or `null`
         */
-        get_sync(bus_type: BusType, cancellable: (Cancellable | null)): DBusConnection;
+        get_sync(bus_type: BusType, cancellable: Cancellable | null): DBusConnection;
         /**
         * Version of [func@Gio.bus_own_name using closures instead of callbacks for
         * easier binding in other languages.
@@ -65180,7 +65018,7 @@ export const _LocalFilePrototype: typeof File.prototype;
         * @param name_acquired_closure closure to invoke when `name` is   acquired, or `NULL` to ignore
         * @param name_lost_closure closure to invoke when `name` is lost, or   `NULL` to ignore
         */
-        own_name(bus_type: BusType, name: string, flags: BusNameOwnerFlags, bus_acquired_closure: (GObject.Closure | null), name_acquired_closure: (GObject.Closure | null), name_lost_closure: (GObject.Closure | null)): number;
+        own_name(bus_type: BusType, name: string, flags: BusNameOwnerFlags, bus_acquired_closure: GObject.Closure | null, name_acquired_closure: GObject.Closure | null, name_lost_closure: GObject.Closure | null): number;
         /**
         * Version of {@link Gio.bus_own_name_on_connection} using closures instead of
         * callbacks for easier binding in other languages.
@@ -65190,7 +65028,7 @@ export const _LocalFilePrototype: typeof File.prototype;
         * @param name_acquired_closure closure to invoke when `name` is   acquired, or `NULL` to ignore
         * @param name_lost_closure closure to invoke when `name` is lost,   or `NULL` to ignore
         */
-        own_name_on_connection(connection: DBusConnection, name: string, flags: BusNameOwnerFlags, name_acquired_closure: (GObject.Closure | null), name_lost_closure: (GObject.Closure | null)): number;
+        own_name_on_connection(connection: DBusConnection, name: string, flags: BusNameOwnerFlags, name_acquired_closure: GObject.Closure | null, name_lost_closure: GObject.Closure | null): number;
         /**
         * Stops owning a name.
         * 
@@ -65213,7 +65051,7 @@ export const _LocalFilePrototype: typeof File.prototype;
         * @param name_appeared_closure {@link GObject.Closure} to invoke when `name` is known to exist or `null`.
         * @param name_vanished_closure {@link GObject.Closure} to invoke when `name` is known to not exist or `null`.
         */
-        watch_name(bus_type: BusType, name: string, flags: BusNameWatcherFlags, name_appeared_closure: (GObject.Closure | null), name_vanished_closure: (GObject.Closure | null)): number;
+        watch_name(bus_type: BusType, name: string, flags: BusNameWatcherFlags, name_appeared_closure: GObject.Closure | null, name_vanished_closure: GObject.Closure | null): number;
         /**
         * Stops watching a name.
         * 
@@ -65235,7 +65073,7 @@ export const _LocalFilePrototype: typeof File.prototype;
         * @param name_appeared_closure {@link GObject.Closure} to invoke when `name` is known to exist or `null`.
         * @param name_vanished_closure {@link GObject.Closure} to invoke when `name` is known to not exist or `null`.
         */
-        watch_name_on_connection(connection: DBusConnection, name: string, flags: BusNameWatcherFlags, name_appeared_closure: (GObject.Closure | null), name_vanished_closure: (GObject.Closure | null)): number;
+        watch_name_on_connection(connection: DBusConnection, name: string, flags: BusNameWatcherFlags, name_appeared_closure: GObject.Closure | null, name_vanished_closure: GObject.Closure | null): number;
     }
     /**
      * @gir-type Interface
@@ -65250,8 +65088,7 @@ export const _LocalFilePrototype: typeof File.prototype;
 
     namespace DBusExportedObject {
         // Signal signatures
-        interface SignalSignatures extends GObject.Object.SignalSignatures {
-        }
+        interface SignalSignatures extends GObject.Object.SignalSignatures {}
     }
 
     /**

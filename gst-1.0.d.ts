@@ -317,7 +317,7 @@ export namespace Gst {
         static NUM_ERRORS: number;
 
         // Constructors
-        constructor(options: { message: string, code: number });
+        constructor(options: { message: string; code: number });
 
         // Static methods
         static quark(): GLib.Quark;
@@ -839,7 +839,7 @@ export namespace Gst {
         static NUM_ERRORS: number;
 
         // Constructors
-        constructor(options: { message: string, code: number });
+        constructor(options: { message: string; code: number });
 
         // Static methods
         static quark(): GLib.Quark;
@@ -1076,7 +1076,7 @@ export namespace Gst {
         static DELAYED_LINK: number;
 
         // Constructors
-        constructor(options: { message: string, code: number });
+        constructor(options: { message: string; code: number });
 
         // Static methods
         /**
@@ -1110,7 +1110,7 @@ export namespace Gst {
         static NAME_MISMATCH: number;
 
         // Constructors
-        constructor(options: { message: string, code: number });
+        constructor(options: { message: string; code: number });
 
         // Static methods
         /**
@@ -1459,7 +1459,7 @@ export namespace Gst {
         static NUM_ERRORS: number;
 
         // Constructors
-        constructor(options: { message: string, code: number });
+        constructor(options: { message: string; code: number });
 
         // Static methods
         static quark(): GLib.Quark;
@@ -1793,7 +1793,7 @@ export namespace Gst {
         static NUM_ERRORS: number;
 
         // Constructors
-        constructor(options: { message: string, code: number });
+        constructor(options: { message: string; code: number });
 
         // Static methods
         static quark(): GLib.Quark;
@@ -2229,7 +2229,7 @@ export namespace Gst {
         static BAD_REFERENCE: number;
 
         // Constructors
-        constructor(options: { message: string, code: number });
+        constructor(options: { message: string; code: number });
 
         // Static methods
         static quark(): GLib.Quark;
@@ -3239,7 +3239,7 @@ export namespace Gst {
      * @returns a new {@link Gst.CapsFeatures} or     `null` when the string could not be parsed.
      * @since 1.2
      */
-    function caps_features_from_string(features: string): (CapsFeatures | null);
+    function caps_features_from_string(features: string): CapsFeatures | null;
 
     /**
      * Converts `caps` from a string representation.
@@ -3249,7 +3249,7 @@ export namespace Gst {
      * @param string a string to convert to {@link Gst.Caps}
      * @returns a newly allocated {@link Gst.Caps}
      */
-    function caps_from_string(string: string): (Caps | null);
+    function caps_from_string(string: string): Caps | null;
 
     function core_error_quark(): GLib.Quark;
 
@@ -3353,7 +3353,7 @@ export namespace Gst {
      * @returns a stack trace, if libunwind or glibc backtrace are present, else `null`.
      * @since 1.12
      */
-    function debug_get_stack_trace(flags: StackTraceFlags): (string | null);
+    function debug_get_stack_trace(flags: StackTraceFlags): string | null;
 
     /**
      * Checks if debugging output is activated.
@@ -3393,7 +3393,7 @@ export namespace Gst {
      * @param message the actual message
      * @param user_data the FILE* to log to
      */
-    function debug_log_default(category: DebugCategory, level: DebugLevel, file: string, _function: string, line: number, object: (GObject.Object | null), message: DebugMessage, user_data: null): void;
+    function debug_log_default(category: DebugCategory, level: DebugLevel, file: string, _function: string, line: number, object: GObject.Object | null, message: DebugMessage, user_data: null): void;
 
     /**
      * Returns the string representation for the specified debug log message
@@ -3410,7 +3410,7 @@ export namespace Gst {
      * @param message the actual message
      * @since 1.18
      */
-    function debug_log_get_line(category: DebugCategory, level: DebugLevel, file: string, _function: string, line: number, object: (GObject.Object | null), message: DebugMessage): string;
+    function debug_log_get_line(category: DebugCategory, level: DebugLevel, file: string, _function: string, line: number, object: GObject.Object | null, message: DebugMessage): string;
 
     /**
      * Logs the given message using the currently registered debugging handlers.
@@ -3423,7 +3423,7 @@ export namespace Gst {
      * @param message_string a message string
      * @since 1.22
      */
-    function debug_log_id_literal(category: DebugCategory, level: DebugLevel, file: string, _function: string, line: number, id: (string | null), message_string: string): void;
+    function debug_log_id_literal(category: DebugCategory, level: DebugLevel, file: string, _function: string, line: number, id: string | null, message_string: string): void;
 
     /**
      * Logs the given message using the currently registered debugging handlers.
@@ -3436,7 +3436,7 @@ export namespace Gst {
      * @param message_string a message string
      * @since 1.20
      */
-    function debug_log_literal(category: DebugCategory, level: DebugLevel, file: string, _function: string, line: number, object: (GObject.Object | null), message_string: string): void;
+    function debug_log_literal(category: DebugCategory, level: DebugLevel, file: string, _function: string, line: number, object: GObject.Object | null, message_string: string): void;
 
     /**
      * If libunwind, glibc backtrace or DbgHelp are present
@@ -3449,7 +3449,7 @@ export namespace Gst {
      * @param func the log function to remove, or `null` to     remove the default log function
      * @returns How many instances of the function were removed
      */
-    function debug_remove_log_function(func: (LogFunction | null)): number;
+    function debug_remove_log_function(func: LogFunction | null): number;
 
     /**
      * Removes all registered instances of log functions with the given user data.
@@ -3614,7 +3614,7 @@ export namespace Gst {
      * @param filename absolute or relative file name path
      * @returns newly-allocated URI string, or NULL on error. The caller must   free the URI string with `g_free()` when no longer needed.
      */
-    function filename_to_uri(filename: string): (string | null);
+    function filename_to_uri(filename: string): string | null;
 
     /**
      * Gets a string representing the given flow return.
@@ -3642,14 +3642,14 @@ export namespace Gst {
      * @param format The format to get details of
      * @returns The {@link Gst.FormatDefinition} for `format` or `null` on failure. MT safe.
      */
-    function format_get_details(format: Format): (FormatDefinition | null);
+    function format_get_details(format: Format): FormatDefinition | null;
 
     /**
      * Get a printable name for the given format. Do not modify or free.
      * @param format a {@link Gst.Format}
      * @returns a reference to the static name of the format or `null` if the format is unknown.
      */
-    function format_get_name(format: Format): (string | null);
+    function format_get_name(format: Format): string | null;
 
     /**
      * Iterate all the registered formats. The format definition is read
@@ -3693,7 +3693,7 @@ export namespace Gst {
      * @returns The path of the executable that   initialized GStreamer, or `null` if it could not be determined.
      * @since 1.14
      */
-    function get_main_executable_path(): (string | null);
+    function get_main_executable_path(): string | null;
 
     /**
      * Initializes the GStreamer library, setting up internal path lists,
@@ -3711,7 +3711,7 @@ export namespace Gst {
      * use `gst_init_check()` instead.
      * @param argv pointer to application's argv
      */
-    function init(argv: (string[] | null)): string[] | null;
+    function init(argv: string[] | null): string[] | null;
 
     /**
      * Initializes the GStreamer library, setting up internal path lists,
@@ -3723,7 +3723,7 @@ export namespace Gst {
      * @param argv pointer to application's argv
      * @returns `true` if GStreamer could be initialized.
      */
-    function init_check(argv: (string[] | null)): [boolean, string[] | null];
+    function init_check(argv: string[] | null): [boolean, string[] | null];
 
     /**
      * Checks if `obj` is a {@link Gst.CapsFeatures}
@@ -3795,7 +3795,7 @@ export namespace Gst {
      * @returns the metadata owned by `buffer`, or `null`.
      * @since 1.24
      */
-    function meta_deserialize(buffer: Buffer, data: number, size: (bigint | number)): [(Meta | null), number];
+    function meta_deserialize(buffer: Buffer, data: number, size: bigint | number): [Meta | null, number];
 
     /**
      * Lookup a previously registered meta info structure by its implementation name
@@ -3803,7 +3803,7 @@ export namespace Gst {
      * @param impl the name
      * @returns a {@link Gst.MetaInfo} with `impl`, or `null` when no such metainfo exists.
      */
-    function meta_get_info(impl: string): (MetaInfo | null);
+    function meta_get_info(impl: string): MetaInfo | null;
 
     /**
      * Register a new custom {@link Gst.Meta} implementation, backed by an opaque
@@ -3825,7 +3825,7 @@ export namespace Gst {
      * @returns a {@link Gst.MetaInfo} that can be used to access metadata.
      * @since 1.20
      */
-    function meta_register_custom(name: string, tags: string[], transform_func: (CustomMetaTransformFunction | null)): MetaInfo;
+    function meta_register_custom(name: string, tags: string[], transform_func: CustomMetaTransformFunction | null): MetaInfo;
 
     /**
      * Simplified version of `gst_meta_register_custom()`, with no tags and no
@@ -3846,7 +3846,7 @@ export namespace Gst {
      * @param newdata pointer to new mini-object
      * @returns `true` if `newdata` was different from `olddata`
      */
-    function mini_object_replace(olddata: (MiniObject | null), newdata: (MiniObject | null)): [boolean, MiniObject | null];
+    function mini_object_replace(olddata: MiniObject | null, newdata: MiniObject | null): [boolean, MiniObject | null];
 
     /**
      * Modifies a pointer to point to a new mini-object. The modification
@@ -3900,7 +3900,7 @@ export namespace Gst {
      * @param flags flags for the property specified
      * @returns a newly created parameter specification
      */
-    function param_spec_fraction(name: string, nick: string, blurb: string, min_num: number, min_denom: number, max_num: number, max_denom: number, default_num: number, default_denom: number, flags: GObject.ParamFlags): (GObject.ParamSpec | null);
+    function param_spec_fraction(name: string, nick: string, blurb: string, min_num: number, min_denom: number, max_num: number, max_denom: number, default_num: number, default_denom: number, flags: GObject.ParamFlags): GObject.ParamSpec | null;
 
     function parent_buffer_meta_api_get_type(): GObject.GType;
 
@@ -3943,7 +3943,7 @@ export namespace Gst {
      * @param flags parsing options, or #GST_PARSE_FLAG_NONE
      * @returns a newly-created   element, which is guaranteed to be a bin unless   #GST_PARSE_FLAG_NO_SINGLE_ELEMENT_BINS was passed, or `null` if an error   occurred.
      */
-    function parse_bin_from_description_full(bin_description: string, ghost_unlinked_pads: boolean, context: (ParseContext | null), flags: ParseFlags): Element;
+    function parse_bin_from_description_full(bin_description: string, ghost_unlinked_pads: boolean, context: ParseContext | null, flags: ParseFlags): Element;
 
     /**
      * Get the error quark used by the parsing subsystem.
@@ -3977,7 +3977,7 @@ export namespace Gst {
      * @param flags parsing options, or #GST_PARSE_FLAG_NONE
      * @returns a new element on success, `null` on    failure. If more than one toplevel element is specified by the    `pipeline_description`, all elements are put into a {@link Gst.Pipeline}, which    then is returned (unless the GST_PARSE_FLAG_PLACE_IN_BIN flag is set, in    which case they are put in a {@link Gst.Bin} instead).
      */
-    function parse_launch_full(pipeline_description: string, context: (ParseContext | null), flags: ParseFlags): Element;
+    function parse_launch_full(pipeline_description: string, context: ParseContext | null, flags: ParseFlags): Element;
 
     /**
      * Create a new element based on command line syntax.
@@ -3997,7 +3997,7 @@ export namespace Gst {
      * @param flags parsing options, or #GST_PARSE_FLAG_NONE
      * @returns a new element on success; on   failure, either `null` or a partially-constructed bin or element will be   returned and `error` will be set (unless you passed   #GST_PARSE_FLAG_FATAL_ERRORS in `flags`, then `null` will always be returned   on failure)
      */
-    function parse_launchv_full(argv: string[], context: (ParseContext | null), flags: ParseFlags): Element;
+    function parse_launchv_full(argv: string[], context: ParseContext | null, flags: ParseFlags): Element;
 
     /**
      * Get the error quark.
@@ -4010,7 +4010,7 @@ export namespace Gst {
      * application.
      * @returns the directory or `null`, don't free or modify the string
      */
-    function preset_get_app_dir(): (string | null);
+    function preset_get_app_dir(): string | null;
 
     /**
      * Sets an extra directory as an absolute path that should be considered when
@@ -4028,7 +4028,7 @@ export namespace Gst {
      * @returns A null terminated array containing all the `system_identifiers` supported by the set of available decryptors, or `null` if no matches were found.
      * @since 1.14
      */
-    function protection_filter_systems_by_available_decryptors(system_identifiers: string[]): (string[] | null);
+    function protection_filter_systems_by_available_decryptors(system_identifiers: string[]): string[] | null;
 
     function protection_meta_api_get_type(): GObject.GType;
 
@@ -4042,7 +4042,7 @@ export namespace Gst {
      * @returns One of the strings from `system_identifiers` that indicates the highest ranked element that implements the protection system indicated by that system ID, or `null` if no element has been found.
      * @since 1.6
      */
-    function protection_select_system(system_identifiers: string[]): (string | null);
+    function protection_select_system(system_identifiers: string[]): string | null;
 
     /**
      * Gets the {@link Gst.QueryTypeFlags} associated with `type`.
@@ -4127,7 +4127,7 @@ export namespace Gst {
      * @returns `true` if `newstr` was different from `oldstr_ptr`
      * @since 1.18
      */
-    function structure_take(oldstr_ptr: (Structure | null), newstr: (Structure | null)): [boolean, Structure | null];
+    function structure_take(oldstr_ptr: Structure | null, newstr: Structure | null): [boolean, Structure | null];
 
     /**
      * Checks if the given type is already registered.
@@ -4191,14 +4191,14 @@ export namespace Gst {
      * as a G_TYPE_STRING or this function will fail.
      * @param src GValue to copy from
      */
-    function tag_merge_strings_with_comma(src: (GObject.Value | any)): unknown;
+    function tag_merge_strings_with_comma(src: GObject.Value | any): unknown;
 
     /**
      * This is a convenience function for the func argument of `gst_tag_register()`.
      * It creates a copy of the first value from the list.
      * @param src GValue to copy from
      */
-    function tag_merge_use_first(src: (GObject.Value | any)): unknown;
+    function tag_merge_use_first(src: GObject.Value | any): unknown;
 
     /**
      * Converts `type` to a string representation.
@@ -4237,7 +4237,7 @@ export namespace Gst {
      * @param possible_caps Optionally the caps that could be returned when typefinding                 succeeds
      * @returns `true` on success, `false` otherwise
      */
-    function type_find_register(plugin: (Plugin | null), name: string, rank: number, func: TypeFindFunction, extensions: (string | null), possible_caps: (Caps | null)): boolean;
+    function type_find_register(plugin: Plugin | null, name: string, rank: number, func: TypeFindFunction, extensions: string | null, possible_caps: Caps | null): boolean;
 
     /**
      * Checks if `type` is plugin API. See `gst_type_mark_as_plugin_api()` for
@@ -4306,7 +4306,7 @@ export namespace Gst {
      * @returns A new {@link Gst.Uri} object, or NULL.
      * @since 1.6
      */
-    function uri_from_string(uri: string): (Uri | null);
+    function uri_from_string(uri: string): Uri | null;
 
     /**
      * Parses a URI string into a new {@link Gst.Uri} object. Will return NULL if the URI
@@ -4326,7 +4326,7 @@ export namespace Gst {
      * @returns A new {@link Gst.Uri} object, or NULL.
      * @since 1.18
      */
-    function uri_from_string_escaped(uri: string): (Uri | null);
+    function uri_from_string_escaped(uri: string): Uri | null;
 
     /**
      * Extracts the location out of a given valid URI, ie. the protocol and "://"
@@ -4338,7 +4338,7 @@ export namespace Gst {
      * @param uri A URI string
      * @returns the location for this URI. Returns     `null` if the URI isn't valid. If the URI does not contain a location, an     empty string is returned.
      */
-    function uri_get_location(uri: string): (string | null);
+    function uri_get_location(uri: string): string | null;
 
     /**
      * Extracts the protocol out of a given valid URI. The returned string must be
@@ -4346,7 +4346,7 @@ export namespace Gst {
      * @param uri A URI string
      * @returns The protocol for this URI.
      */
-    function uri_get_protocol(uri: string): (string | null);
+    function uri_get_protocol(uri: string): string | null;
 
     /**
      * Checks if the protocol of a given valid URI matches `protocol`.
@@ -4372,7 +4372,7 @@ export namespace Gst {
      * @returns A string representing the percent-encoded join of          the two URIs.
      * @since 1.6
      */
-    function uri_join_strings(base_uri: string, ref_uri: string): (string | null);
+    function uri_join_strings(base_uri: string, ref_uri: string): string | null;
 
     /**
      * Checks if an element exists that supports the given URI protocol. Note
@@ -4409,7 +4409,7 @@ export namespace Gst {
      * @param search_data element that should be found
      * @returns The address of the found element or `null` if nothing was found
      */
-    function util_array_binary_search(array: null, num_elements: number, element_size: (bigint | number), search_func: GLib.CompareDataFunc, mode: SearchMode, search_data: null): null;
+    function util_array_binary_search(array: null, num_elements: number, element_size: bigint | number, search_func: GLib.CompareDataFunc, mode: SearchMode, search_data: null): null;
 
     /**
      * Returns smallest integral value not less than log2(v).
@@ -4437,7 +4437,7 @@ export namespace Gst {
      * Dumps the memory block into a hex representation. Useful for debugging.
      * @param mem a pointer to the memory to dump
      */
-    function util_dump_mem(mem: (Uint8Array | string)): void;
+    function util_dump_mem(mem: Uint8Array | string): void;
 
     /**
      * Compares the given filenames using natural ordering.
@@ -4526,7 +4526,7 @@ export namespace Gst {
      * @param b Second value as `gint64`
      * @returns Greatest common divisor of `a` and `b`
      */
-    function util_greatest_common_divisor_int64(a: (bigint | number), b: (bigint | number)): number;
+    function util_greatest_common_divisor_int64(a: bigint | number, b: bigint | number): number;
 
     /**
      * Return a constantly incrementing group id.
@@ -4543,7 +4543,7 @@ export namespace Gst {
      * @param value The `guint64` value to convert to double
      * @returns `value` casted to `gdouble`
      */
-    function util_guint64_to_gdouble(value: (bigint | number)): number;
+    function util_guint64_to_gdouble(value: bigint | number): number;
 
     /**
      * Compare two sequence numbers, handling wraparound.
@@ -4630,7 +4630,7 @@ export namespace Gst {
      * @param denom the denominator of the scale ratio
      * @returns `val` * `num` / `denom`.  In the case of an overflow, this function returns G_MAXUINT64.  If the result is not exactly representable as an integer it is truncated.  See also `gst_util_uint64_scale_round()`, `gst_util_uint64_scale_ceil()`, `gst_util_uint64_scale_int()`, `gst_util_uint64_scale_int_round()`, `gst_util_uint64_scale_int_ceil()`.
      */
-    function util_uint64_scale(val: (bigint | number), num: (bigint | number), denom: (bigint | number)): number;
+    function util_uint64_scale(val: bigint | number, num: bigint | number, denom: bigint | number): number;
 
     /**
      * Scale `val` by the rational number `num` / `denom`, avoiding overflows and
@@ -4643,7 +4643,7 @@ export namespace Gst {
      * @param denom the denominator of the scale ratio
      * @returns `val` * `num` / `denom`.  In the case of an overflow, this function returns G_MAXUINT64.  If the result is not exactly representable as an integer, it is rounded up.  See also `gst_util_uint64_scale()`, `gst_util_uint64_scale_round()`, `gst_util_uint64_scale_int()`, `gst_util_uint64_scale_int_round()`, `gst_util_uint64_scale_int_ceil()`.
      */
-    function util_uint64_scale_ceil(val: (bigint | number), num: (bigint | number), denom: (bigint | number)): number;
+    function util_uint64_scale_ceil(val: bigint | number, num: bigint | number, denom: bigint | number): number;
 
     /**
      * Scale `val` by the rational number `num` / `denom`, avoiding overflows and
@@ -4654,7 +4654,7 @@ export namespace Gst {
      * @param denom denominator of the scale factor.
      * @returns `val` * `num` / `denom`.  In the case of an overflow, this function returns G_MAXUINT64.  If the result is not exactly representable as an integer, it is truncated.  See also `gst_util_uint64_scale_int_round()`, `gst_util_uint64_scale_int_ceil()`, `gst_util_uint64_scale()`, `gst_util_uint64_scale_round()`, `gst_util_uint64_scale_ceil()`.
      */
-    function util_uint64_scale_int(val: (bigint | number), num: number, denom: number): number;
+    function util_uint64_scale_int(val: bigint | number, num: number, denom: number): number;
 
     /**
      * Scale `val` by the rational number `num` / `denom`, avoiding overflows and
@@ -4665,7 +4665,7 @@ export namespace Gst {
      * @param denom denominator of the scale factor.
      * @returns `val` * `num` / `denom`.  In the case of an overflow, this function returns G_MAXUINT64.  If the result is not exactly representable as an integer, it is rounded up.  See also `gst_util_uint64_scale_int()`, `gst_util_uint64_scale_int_round()`, `gst_util_uint64_scale()`, `gst_util_uint64_scale_round()`, `gst_util_uint64_scale_ceil()`.
      */
-    function util_uint64_scale_int_ceil(val: (bigint | number), num: number, denom: number): number;
+    function util_uint64_scale_int_ceil(val: bigint | number, num: number, denom: number): number;
 
     /**
      * Scale `val` by the rational number `num` / `denom`, avoiding overflows and
@@ -4676,7 +4676,7 @@ export namespace Gst {
      * @param denom denominator of the scale factor.
      * @returns `val` * `num` / `denom`.  In the case of an overflow, this function returns G_MAXUINT64.  If the result is not exactly representable as an integer, it is rounded to the nearest integer (half-way cases are rounded up).  See also `gst_util_uint64_scale_int()`, `gst_util_uint64_scale_int_ceil()`, `gst_util_uint64_scale()`, `gst_util_uint64_scale_round()`, `gst_util_uint64_scale_ceil()`.
      */
-    function util_uint64_scale_int_round(val: (bigint | number), num: number, denom: number): number;
+    function util_uint64_scale_int_round(val: bigint | number, num: number, denom: number): number;
 
     /**
      * Scale `val` by the rational number `num` / `denom`, avoiding overflows and
@@ -4689,7 +4689,7 @@ export namespace Gst {
      * @param denom the denominator of the scale ratio
      * @returns `val` * `num` / `denom`.  In the case of an overflow, this function returns G_MAXUINT64.  If the result is not exactly representable as an integer, it is rounded to the nearest integer (half-way cases are rounded up).  See also `gst_util_uint64_scale()`, `gst_util_uint64_scale_ceil()`, `gst_util_uint64_scale_int()`, `gst_util_uint64_scale_int_round()`, `gst_util_uint64_scale_int_ceil()`.
      */
-    function util_uint64_scale_round(val: (bigint | number), num: (bigint | number), denom: (bigint | number)): number;
+    function util_uint64_scale_round(val: bigint | number, num: bigint | number, denom: bigint | number): number;
 
     /**
      * Determines if `value1` and `value2` can be compared.
@@ -4697,7 +4697,7 @@ export namespace Gst {
      * @param value2 another value to compare
      * @returns `true` if the values can be compared
      */
-    function value_can_compare(value1: (GObject.Value | any), value2: (GObject.Value | any)): boolean;
+    function value_can_compare(value1: GObject.Value | any, value2: GObject.Value | any): boolean;
 
     /**
      * Determines if intersecting two values will produce a valid result.
@@ -4707,7 +4707,7 @@ export namespace Gst {
      * @param value2 another value to intersect
      * @returns `true` if the values can intersect
      */
-    function value_can_intersect(value1: (GObject.Value | any), value2: (GObject.Value | any)): boolean;
+    function value_can_intersect(value1: GObject.Value | any, value2: GObject.Value | any): boolean;
 
     /**
      * Checks if it's possible to subtract `subtrahend` from `minuend`.
@@ -4715,7 +4715,7 @@ export namespace Gst {
      * @param subtrahend the value to subtract
      * @returns `true` if a subtraction is possible
      */
-    function value_can_subtract(minuend: (GObject.Value | any), subtrahend: (GObject.Value | any)): boolean;
+    function value_can_subtract(minuend: GObject.Value | any, subtrahend: GObject.Value | any): boolean;
 
     /**
      * Determines if `value1` and `value2` can be non-trivially unioned.
@@ -4729,7 +4729,7 @@ export namespace Gst {
      * @param value2 another value to union
      * @returns `true` if there is a function allowing the two values to be unioned.
      */
-    function value_can_union(value1: (GObject.Value | any), value2: (GObject.Value | any)): boolean;
+    function value_can_union(value1: GObject.Value | any, value2: GObject.Value | any): boolean;
 
     /**
      * Compares `value1` and `value2`.  If `value1` and `value2` cannot be
@@ -4741,7 +4741,7 @@ export namespace Gst {
      * @param value2 another value to compare
      * @returns comparison result
      */
-    function value_compare(value1: (GObject.Value | any), value2: (GObject.Value | any)): number;
+    function value_compare(value1: GObject.Value | any, value2: GObject.Value | any): number;
 
     /**
      * Tries to deserialize a string into the type specified by the given GValue.
@@ -4760,7 +4760,7 @@ export namespace Gst {
      * @returns `true` on success
      * @since 1.20
      */
-    function value_deserialize_with_pspec(src: string, pspec: (GObject.ParamSpec | null)): [boolean, unknown];
+    function value_deserialize_with_pspec(src: string, pspec: GObject.ParamSpec | null): [boolean, unknown];
 
     /**
      * Fixate `src` into a new value `dest`.
@@ -4771,7 +4771,7 @@ export namespace Gst {
      * @param src the {@link GObject.Value} to fixate
      * @returns `true` if `dest` contains a fixated version of `src`.
      */
-    function value_fixate(dest: (GObject.Value | any), src: (GObject.Value | any)): boolean;
+    function value_fixate(dest: GObject.Value | any, src: GObject.Value | any): boolean;
 
     /**
      * Multiplies the two {@link GObject.Value} items containing a #GST_TYPE_FRACTION and sets
@@ -4781,7 +4781,7 @@ export namespace Gst {
      * @param factor2 a GValue initialized to #GST_TYPE_FRACTION
      * @returns `false` in case of an error (like integer overflow), `true` otherwise.
      */
-    function value_fraction_multiply(product: (GObject.Value | any), factor1: (GObject.Value | any), factor2: (GObject.Value | any)): boolean;
+    function value_fraction_multiply(product: GObject.Value | any, factor1: GObject.Value | any, factor2: GObject.Value | any): boolean;
 
     /**
      * Subtracts the `subtrahend` from the `minuend` and sets `dest` to the result.
@@ -4790,14 +4790,14 @@ export namespace Gst {
      * @param subtrahend a GValue initialized to #GST_TYPE_FRACTION
      * @returns `false` in case of an error (like integer overflow), `true` otherwise.
      */
-    function value_fraction_subtract(dest: (GObject.Value | any), minuend: (GObject.Value | any), subtrahend: (GObject.Value | any)): boolean;
+    function value_fraction_subtract(dest: GObject.Value | any, minuend: GObject.Value | any, subtrahend: GObject.Value | any): boolean;
 
     /**
      * Gets the bitmask specified by `value`.
      * @param value a GValue initialized to #GST_TYPE_BITMASK
      * @returns the bitmask.
      */
-    function value_get_bitmask(value: (GObject.Value | any)): number;
+    function value_get_bitmask(value: GObject.Value | any): number;
 
     /**
      * Gets the contents of `value`. The reference count of the returned
@@ -4806,28 +4806,28 @@ export namespace Gst {
      * @param value a GValue initialized to GST_TYPE_CAPS
      * @returns the contents of `value`
      */
-    function value_get_caps(value: (GObject.Value | any)): Caps;
+    function value_get_caps(value: GObject.Value | any): Caps;
 
     /**
      * Gets the contents of `value`.
      * @param value a GValue initialized to GST_TYPE_CAPS_FEATURES
      * @returns the contents of `value`
      */
-    function value_get_caps_features(value: (GObject.Value | any)): CapsFeatures;
+    function value_get_caps_features(value: GObject.Value | any): CapsFeatures;
 
     /**
      * Gets the maximum of the range specified by `value`.
      * @param value a GValue initialized to GST_TYPE_DOUBLE_RANGE
      * @returns the maximum of the range
      */
-    function value_get_double_range_max(value: (GObject.Value | any)): number;
+    function value_get_double_range_max(value: GObject.Value | any): number;
 
     /**
      * Gets the minimum of the range specified by `value`.
      * @param value a GValue initialized to GST_TYPE_DOUBLE_RANGE
      * @returns the minimum of the range
      */
-    function value_get_double_range_min(value: (GObject.Value | any)): number;
+    function value_get_double_range_min(value: GObject.Value | any): number;
 
     /**
      * Retrieve the flags field of a GstFlagSet `value`.
@@ -4835,7 +4835,7 @@ export namespace Gst {
      * @returns the flags field of the flagset instance.
      * @since 1.6
      */
-    function value_get_flagset_flags(value: (GObject.Value | any)): number;
+    function value_get_flagset_flags(value: GObject.Value | any): number;
 
     /**
      * Retrieve the mask field of a GstFlagSet `value`.
@@ -4843,91 +4843,91 @@ export namespace Gst {
      * @returns the mask field of the flagset instance.
      * @since 1.6
      */
-    function value_get_flagset_mask(value: (GObject.Value | any)): number;
+    function value_get_flagset_mask(value: GObject.Value | any): number;
 
     /**
      * Gets the denominator of the fraction specified by `value`.
      * @param value a GValue initialized to #GST_TYPE_FRACTION
      * @returns the denominator of the fraction.
      */
-    function value_get_fraction_denominator(value: (GObject.Value | any)): number;
+    function value_get_fraction_denominator(value: GObject.Value | any): number;
 
     /**
      * Gets the numerator of the fraction specified by `value`.
      * @param value a GValue initialized to #GST_TYPE_FRACTION
      * @returns the numerator of the fraction.
      */
-    function value_get_fraction_numerator(value: (GObject.Value | any)): number;
+    function value_get_fraction_numerator(value: GObject.Value | any): number;
 
     /**
      * Gets the maximum of the range specified by `value`.
      * @param value a GValue initialized to GST_TYPE_FRACTION_RANGE
      * @returns the maximum of the range
      */
-    function value_get_fraction_range_max(value: (GObject.Value | any)): (GObject.Value | null);
+    function value_get_fraction_range_max(value: GObject.Value | any): GObject.Value | null;
 
     /**
      * Gets the minimum of the range specified by `value`.
      * @param value a GValue initialized to GST_TYPE_FRACTION_RANGE
      * @returns the minimum of the range
      */
-    function value_get_fraction_range_min(value: (GObject.Value | any)): (GObject.Value | null);
+    function value_get_fraction_range_min(value: GObject.Value | any): GObject.Value | null;
 
     /**
      * Gets the maximum of the range specified by `value`.
      * @param value a GValue initialized to GST_TYPE_INT64_RANGE
      * @returns the maximum of the range
      */
-    function value_get_int64_range_max(value: (GObject.Value | any)): number;
+    function value_get_int64_range_max(value: GObject.Value | any): number;
 
     /**
      * Gets the minimum of the range specified by `value`.
      * @param value a GValue initialized to GST_TYPE_INT64_RANGE
      * @returns the minimum of the range
      */
-    function value_get_int64_range_min(value: (GObject.Value | any)): number;
+    function value_get_int64_range_min(value: GObject.Value | any): number;
 
     /**
      * Gets the step of the range specified by `value`.
      * @param value a GValue initialized to GST_TYPE_INT64_RANGE
      * @returns the step of the range
      */
-    function value_get_int64_range_step(value: (GObject.Value | any)): number;
+    function value_get_int64_range_step(value: GObject.Value | any): number;
 
     /**
      * Gets the maximum of the range specified by `value`.
      * @param value a GValue initialized to GST_TYPE_INT_RANGE
      * @returns the maximum of the range
      */
-    function value_get_int_range_max(value: (GObject.Value | any)): number;
+    function value_get_int_range_max(value: GObject.Value | any): number;
 
     /**
      * Gets the minimum of the range specified by `value`.
      * @param value a GValue initialized to GST_TYPE_INT_RANGE
      * @returns the minimum of the range
      */
-    function value_get_int_range_min(value: (GObject.Value | any)): number;
+    function value_get_int_range_min(value: GObject.Value | any): number;
 
     /**
      * Gets the step of the range specified by `value`.
      * @param value a GValue initialized to GST_TYPE_INT_RANGE
      * @returns the step of the range
      */
-    function value_get_int_range_step(value: (GObject.Value | any)): number;
+    function value_get_int_range_step(value: GObject.Value | any): number;
 
     /**
      * Gets the contents of `value`.
      * @param value a GValue initialized to GST_TYPE_STRUCTURE
      * @returns the contents of `value`
      */
-    function value_get_structure(value: (GObject.Value | any)): Structure;
+    function value_get_structure(value: GObject.Value | any): Structure;
 
     /**
      * Initialises the target value to be of the same type as source and then copies
      * the contents from source to target.
      * @param src the source value
      */
-    function value_init_and_copy(src: (GObject.Value | any)): unknown;
+    function value_init_and_copy(src: GObject.Value | any): unknown;
 
     /**
      * Calculates the intersection of two values.  If the values have
@@ -4938,7 +4938,7 @@ export namespace Gst {
      * @param value2 another value to intersect
      * @returns `true` if the intersection is non-empty
      */
-    function value_intersect(value1: (GObject.Value | any), value2: (GObject.Value | any)): [boolean, GObject.Value | null];
+    function value_intersect(value1: GObject.Value | any, value2: GObject.Value | any): [boolean, GObject.Value | null];
 
     /**
      * Tests if the given GValue, if available in a GstStructure (or any other
@@ -4948,7 +4948,7 @@ export namespace Gst {
      * @param value the {@link GObject.Value} to check
      * @returns true if the value is "fixed".
      */
-    function value_is_fixed(value: (GObject.Value | any)): boolean;
+    function value_is_fixed(value: GObject.Value | any): boolean;
 
     /**
      * Check that `value1` is a subset of `value2`.
@@ -4956,7 +4956,7 @@ export namespace Gst {
      * @param value2 a {@link GObject.Value}
      * @returns `true` is `value1` is a subset of `value2`
      */
-    function value_is_subset(value1: (GObject.Value | any), value2: (GObject.Value | any)): boolean;
+    function value_is_subset(value1: GObject.Value | any, value2: GObject.Value | any): boolean;
 
     /**
      * Registers functions to perform calculations on {@link GObject.Value} items of a given
@@ -4973,14 +4973,14 @@ export namespace Gst {
      * @param value a {@link GObject.Value} to serialize
      * @returns the serialization for `value` or `null` if none exists
      */
-    function value_serialize(value: (GObject.Value | any)): (string | null);
+    function value_serialize(value: GObject.Value | any): string | null;
 
     /**
      * Sets `value` to the bitmask specified by `bitmask`.
      * @param value a GValue initialized to #GST_TYPE_BITMASK
      * @param bitmask the bitmask
      */
-    function value_set_bitmask(value: (GObject.Value | any), bitmask: (bigint | number)): void;
+    function value_set_bitmask(value: GObject.Value | any, bitmask: bigint | number): void;
 
     /**
      * Sets the contents of `value` to `caps`. A reference to the
@@ -4988,14 +4988,14 @@ export namespace Gst {
      * @param value a GValue initialized to GST_TYPE_CAPS
      * @param caps the caps to set the value to
      */
-    function value_set_caps(value: (GObject.Value | any), caps: Caps): void;
+    function value_set_caps(value: GObject.Value | any, caps: Caps): void;
 
     /**
      * Sets the contents of `value` to `features`.
      * @param value a GValue initialized to GST_TYPE_CAPS_FEATURES
      * @param features the features to set the value to
      */
-    function value_set_caps_features(value: (GObject.Value | any), features: CapsFeatures): void;
+    function value_set_caps_features(value: GObject.Value | any, features: CapsFeatures): void;
 
     /**
      * Sets `value` to the range specified by `start` and `end`.
@@ -5003,7 +5003,7 @@ export namespace Gst {
      * @param start the start of the range
      * @param end the end of the range
      */
-    function value_set_double_range(value: (GObject.Value | any), start: number, end: number): void;
+    function value_set_double_range(value: GObject.Value | any, start: number, end: number): void;
 
     /**
      * Sets `value` to the flags and mask values provided in `flags` and `mask`.
@@ -5014,7 +5014,7 @@ export namespace Gst {
      * @param mask The mask indicate which flags bits must match for comparisons
      * @since 1.6
      */
-    function value_set_flagset(value: (GObject.Value | any), flags: number, mask: number): void;
+    function value_set_flagset(value: GObject.Value | any, flags: number, mask: number): void;
 
     /**
      * Sets `value` to the fraction specified by `numerator` over `denominator`.
@@ -5024,7 +5024,7 @@ export namespace Gst {
      * @param numerator the numerator of the fraction
      * @param denominator the denominator of the fraction
      */
-    function value_set_fraction(value: (GObject.Value | any), numerator: number, denominator: number): void;
+    function value_set_fraction(value: GObject.Value | any, numerator: number, denominator: number): void;
 
     /**
      * Sets `value` to the range specified by `start` and `end`.
@@ -5032,7 +5032,7 @@ export namespace Gst {
      * @param start the start of the range (a GST_TYPE_FRACTION GValue)
      * @param end the end of the range (a GST_TYPE_FRACTION GValue)
      */
-    function value_set_fraction_range(value: (GObject.Value | any), start: (GObject.Value | any), end: (GObject.Value | any)): void;
+    function value_set_fraction_range(value: GObject.Value | any, start: GObject.Value | any, end: GObject.Value | any): void;
 
     /**
      * Sets `value` to the range specified by `numerator_start`/`denominator_start`
@@ -5043,7 +5043,7 @@ export namespace Gst {
      * @param numerator_end the numerator end of the range
      * @param denominator_end the denominator end of the range
      */
-    function value_set_fraction_range_full(value: (GObject.Value | any), numerator_start: number, denominator_start: number, numerator_end: number, denominator_end: number): void;
+    function value_set_fraction_range_full(value: GObject.Value | any, numerator_start: number, denominator_start: number, numerator_end: number, denominator_end: number): void;
 
     /**
      * Sets `value` to the range specified by `start` and `end`.
@@ -5051,7 +5051,7 @@ export namespace Gst {
      * @param start the start of the range
      * @param end the end of the range
      */
-    function value_set_int64_range(value: (GObject.Value | any), start: (bigint | number), end: (bigint | number)): void;
+    function value_set_int64_range(value: GObject.Value | any, start: bigint | number, end: bigint | number): void;
 
     /**
      * Sets `value` to the range specified by `start`, `end` and `step`.
@@ -5060,7 +5060,7 @@ export namespace Gst {
      * @param end the end of the range
      * @param step the step of the range
      */
-    function value_set_int64_range_step(value: (GObject.Value | any), start: (bigint | number), end: (bigint | number), step: (bigint | number)): void;
+    function value_set_int64_range_step(value: GObject.Value | any, start: bigint | number, end: bigint | number, step: bigint | number): void;
 
     /**
      * Sets `value` to the range specified by `start` and `end`.
@@ -5068,7 +5068,7 @@ export namespace Gst {
      * @param start the start of the range
      * @param end the end of the range
      */
-    function value_set_int_range(value: (GObject.Value | any), start: number, end: number): void;
+    function value_set_int_range(value: GObject.Value | any, start: number, end: number): void;
 
     /**
      * Sets `value` to the range specified by `start`, `end` and `step`.
@@ -5077,14 +5077,14 @@ export namespace Gst {
      * @param end the end of the range
      * @param step the step of the range
      */
-    function value_set_int_range_step(value: (GObject.Value | any), start: number, end: number, step: number): void;
+    function value_set_int_range_step(value: GObject.Value | any, start: number, end: number, step: number): void;
 
     /**
      * Sets the contents of `value` to `structure`.
      * @param value a GValue initialized to GST_TYPE_STRUCTURE
      * @param structure the structure to set the value to
      */
-    function value_set_structure(value: (GObject.Value | any), structure: Structure): void;
+    function value_set_structure(value: GObject.Value | any, structure: Structure): void;
 
     /**
      * Subtracts `subtrahend` from `minuend` and stores the result in `dest`.
@@ -5093,7 +5093,7 @@ export namespace Gst {
      * @param subtrahend the value to subtract
      * @returns `true` if the subtraction is not empty
      */
-    function value_subtract(minuend: (GObject.Value | any), subtrahend: (GObject.Value | any)): [boolean, GObject.Value | null];
+    function value_subtract(minuend: GObject.Value | any, subtrahend: GObject.Value | any): [boolean, GObject.Value | null];
 
     /**
      * Creates a GValue corresponding to the union of `value1` and `value2`.
@@ -5101,7 +5101,7 @@ export namespace Gst {
      * @param value2 another value to union
      * @returns `true` if the union succeeded.
      */
-    function value_union(value1: (GObject.Value | any), value2: (GObject.Value | any)): [boolean, unknown];
+    function value_union(value1: GObject.Value | any, value2: GObject.Value | any): [boolean, unknown];
 
     /**
      * Gets the version number of the GStreamer library.
@@ -5336,7 +5336,7 @@ export namespace Gst {
      * @gir-type Callback
      */
     interface MetaDeserializeFunction {
-        (info: MetaInfo, buffer: Buffer, data: number, size: number, version: number): (Meta | null);
+        (info: MetaInfo, buffer: Buffer, data: number, size: number, version: number): Meta | null;
     }
 
     /**
@@ -5413,28 +5413,28 @@ export namespace Gst {
      * @gir-type Callback
      */
     interface PadChainFunction {
-        (pad: Pad, parent: (Object | null), buffer: Buffer): FlowReturn;
+        (pad: Pad, parent: Object | null, buffer: Buffer): FlowReturn;
     }
 
     /**
      * @gir-type Callback
      */
     interface PadChainListFunction {
-        (pad: Pad, parent: (Object | null), list: BufferList): FlowReturn;
+        (pad: Pad, parent: Object | null, list: BufferList): FlowReturn;
     }
 
     /**
      * @gir-type Callback
      */
     interface PadEventFullFunction {
-        (pad: Pad, parent: (Object | null), event: Event): FlowReturn;
+        (pad: Pad, parent: Object | null, event: Event): FlowReturn;
     }
 
     /**
      * @gir-type Callback
      */
     interface PadEventFunction {
-        (pad: Pad, parent: (Object | null), event: Event): boolean;
+        (pad: Pad, parent: Object | null, event: Event): boolean;
     }
 
     /**
@@ -5448,21 +5448,21 @@ export namespace Gst {
      * @gir-type Callback
      */
     interface PadGetRangeFunction {
-        (pad: Pad, parent: (Object | null), offset: number, length: number, buffer: Buffer): FlowReturn;
+        (pad: Pad, parent: Object | null, offset: number, length: number, buffer: Buffer): FlowReturn;
     }
 
     /**
      * @gir-type Callback
      */
     interface PadIterIntLinkFunction {
-        (pad: Pad, parent: (Object | null)): Iterator;
+        (pad: Pad, parent: Object | null): Iterator;
     }
 
     /**
      * @gir-type Callback
      */
     interface PadLinkFunction {
-        (pad: Pad, parent: (Object | null), peer: Pad): PadLinkReturn;
+        (pad: Pad, parent: Object | null, peer: Pad): PadLinkReturn;
     }
 
     /**
@@ -5476,21 +5476,21 @@ export namespace Gst {
      * @gir-type Callback
      */
     interface PadQueryFunction {
-        (pad: Pad, parent: (Object | null), query: Query): boolean;
+        (pad: Pad, parent: Object | null, query: Query): boolean;
     }
 
     /**
      * @gir-type Callback
      */
     interface PadStickyEventsForeachFunction {
-        (pad: Pad, event: (Event | null)): boolean;
+        (pad: Pad, event: Event | null): boolean;
     }
 
     /**
      * @gir-type Callback
      */
     interface PadUnlinkFunction {
-        (pad: Pad, parent: (Object | null)): void;
+        (pad: Pad, parent: Object | null): void;
     }
 
     /**
@@ -7492,9 +7492,7 @@ export namespace Gst {
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends Object.ConstructorProps {
-
-        }
+        interface ConstructorProps extends Object.ConstructorProps {}
     }
 
     /**
@@ -7566,7 +7564,7 @@ export namespace Gst {
          * default allocator will be returned.
          * @param name the name of the allocator
          */
-        static find(name: (string | null)): (Allocator | null);
+        static find(name: string | null): Allocator | null;
 
         /**
          * Registers the memory `allocator` with `name`.
@@ -7596,7 +7594,7 @@ export namespace Gst {
          * @param params optional parameters
          * @virtual
          */
-        vfunc_alloc(size: number, params: (AllocationParams | null)): (Memory | null);
+        vfunc_alloc(size: number, params: AllocationParams | null): Memory | null;
 
         /**
          * Free `memory` that was previously allocated with `gst_allocator_alloc()`.
@@ -7626,7 +7624,7 @@ export namespace Gst {
          * @param params optional parameters
          * @returns a new {@link Gst.Memory}.
          */
-        alloc(size: (bigint | number), params: (AllocationParams | null)): (Memory | null);
+        alloc(size: bigint | number, params: AllocationParams | null): Memory | null;
 
         /**
          * Free `memory` that was previously allocated with `gst_allocator_alloc()`.
@@ -7673,7 +7671,7 @@ export namespace Gst {
              * @signal
              * @run-last
              */
-            "do-latency": () => (boolean | void);
+            "do-latency": () => boolean | void;
             /**
              * Will be emitted after the element was added to the bin.
              * @signal
@@ -7893,7 +7891,7 @@ export namespace Gst {
 
         _init(...args: any[]): void;
 
-        static ["new"](name: (string | null)): Bin;
+        static ["new"](name: string | null): Bin;
 
         // Signals
         /** @signal */
@@ -7992,7 +7990,7 @@ export namespace Gst {
          * @param direction whether to look for an unlinked source or sink pad
          * @returns unlinked pad of the given direction.
          */
-        find_unlinked_pad(direction: PadDirection): (Pad | null);
+        find_unlinked_pad(direction: PadDirection): Pad | null;
 
         /**
          * Looks for an element inside the bin that implements the given
@@ -8003,7 +8001,7 @@ export namespace Gst {
          * @param iface the {@link GObject.GType} of an interface
          * @returns A {@link Gst.Element} inside the bin implementing the interface
          */
-        get_by_interface(iface: GObject.GType): (Element | null);
+        get_by_interface(iface: GObject.GType): Element | null;
 
         /**
          * Gets the element with the given name from a bin. This
@@ -8011,7 +8009,7 @@ export namespace Gst {
          * @param name the element name to search for
          * @returns the {@link Gst.Element} with the given name
          */
-        get_by_name(name: string): (Element | null);
+        get_by_name(name: string): Element | null;
 
         /**
          * Gets the element with the given name from this bin. If the
@@ -8019,7 +8017,7 @@ export namespace Gst {
          * @param name the element name to search for
          * @returns the {@link Gst.Element} with the given name
          */
-        get_by_name_recurse_up(name: string): (Element | null);
+        get_by_name_recurse_up(name: string): Element | null;
 
         /**
          * @returns the bin's suppressed {@link Gst.ElementFlags}.
@@ -8033,7 +8031,7 @@ export namespace Gst {
          * @param factory_name the name of the {@link Gst.ElementFactory}
          * @returns a {@link Gst.Iterator} of {@link Gst.Element}     for all elements in the bin with the given element factory name
          */
-        iterate_all_by_element_factory_name(factory_name: string): (Iterator | null);
+        iterate_all_by_element_factory_name(factory_name: string): Iterator | null;
 
         /**
          * Looks for all elements inside the bin that implements the given
@@ -8043,27 +8041,27 @@ export namespace Gst {
          * @param iface the {@link GObject.GType} of an interface
          * @returns a {@link Gst.Iterator} of {@link Gst.Element}     for all elements in the bin implementing the given interface
          */
-        iterate_all_by_interface(iface: GObject.GType): (Iterator | null);
+        iterate_all_by_interface(iface: GObject.GType): Iterator | null;
 
         /**
          * Gets an iterator for the elements in this bin.
          * @returns a {@link Gst.Iterator} of {@link Gst.Element}
          */
-        iterate_elements(): (Iterator | null);
+        iterate_elements(): Iterator | null;
 
         /**
          * Gets an iterator for the elements in this bin.
          * This iterator recurses into GstBin children.
          * @returns a {@link Gst.Iterator} of {@link Gst.Element}
          */
-        iterate_recurse(): (Iterator | null);
+        iterate_recurse(): Iterator | null;
 
         /**
          * Gets an iterator for all elements in the bin that have the
          * #GST_ELEMENT_FLAG_SINK flag set.
          * @returns a {@link Gst.Iterator} of {@link Gst.Element}
          */
-        iterate_sinks(): (Iterator | null);
+        iterate_sinks(): Iterator | null;
 
         /**
          * Gets an iterator for the elements in this bin in topologically
@@ -8074,14 +8072,14 @@ export namespace Gst {
          * of the bin elements and for clock selection.
          * @returns a {@link Gst.Iterator} of {@link Gst.Element}
          */
-        iterate_sorted(): (Iterator | null);
+        iterate_sorted(): Iterator | null;
 
         /**
          * Gets an iterator for all elements in the bin that have the
          * #GST_ELEMENT_FLAG_SOURCE flag set.
          * @returns a {@link Gst.Iterator} of {@link Gst.Element}
          */
-        iterate_sources(): (Iterator | null);
+        iterate_sources(): Iterator | null;
 
         /**
          * Queries `bin` for the current latency and reconfigures this latency on all the
@@ -8204,7 +8202,7 @@ export namespace Gst {
          * @param name name of the property to set
          * @param value new {@link GObject.Value} for the property
          */
-        set_property(name: string, value: (GObject.Value | any)): void;
+        set_property(name: string, value: GObject.Value | any): void;
 
         /**
          * Emits the {@link Gst.ChildProxy.SignalSignatures.child_added | Gst.ChildProxy::child-added} signal.
@@ -8278,8 +8276,7 @@ export namespace Gst {
 
     namespace Bitmask {
         // Signal signatures
-        interface SignalSignatures extends GObject.Object.SignalSignatures {
-        }
+        interface SignalSignatures extends GObject.Object.SignalSignatures {}
     }
 
     /**
@@ -8315,9 +8312,7 @@ export namespace Gst {
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends Object.ConstructorProps {
-
-        }
+        interface ConstructorProps extends Object.ConstructorProps {}
     }
 
     /**
@@ -8417,7 +8412,7 @@ export namespace Gst {
          * @param config a {@link Gst.BufferPool} configuration
          * @param index position in the option array to read
          */
-        static config_get_option(config: Structure, index: number): (string | null);
+        static config_get_option(config: Structure, index: number): string | null;
 
         /**
          * Gets the configuration values from `config`.
@@ -8456,7 +8451,7 @@ export namespace Gst {
          * @param allocator a {@link Gst.Allocator}
          * @param params {@link Gst.AllocationParams}
          */
-        static config_set_allocator(config: Structure, allocator: (Allocator | null), params: (AllocationParams | null)): void;
+        static config_set_allocator(config: Structure, allocator: Allocator | null, params: AllocationParams | null): void;
 
         /**
          * Configures `config` with the given parameters.
@@ -8466,7 +8461,7 @@ export namespace Gst {
          * @param min_buffers the minimum amount of buffers to allocate.
          * @param max_buffers the maximum amount of buffers to allocate or 0 for unlimited.
          */
-        static config_set_params(config: Structure, caps: (Caps | null), size: number, min_buffers: number, max_buffers: number): void;
+        static config_set_params(config: Structure, caps: Caps | null, size: number, min_buffers: number, max_buffers: number): void;
 
         /**
          * Validates that changes made to `config` are still valid in the context of the
@@ -8483,7 +8478,7 @@ export namespace Gst {
          * @param min_buffers the expected minimum amount of buffers to allocate.
          * @param max_buffers the expect maximum amount of buffers to allocate or 0 for unlimited.
          */
-        static config_validate_params(config: Structure, caps: (Caps | null), size: number, min_buffers: number, max_buffers: number): boolean;
+        static config_validate_params(config: Structure, caps: Caps | null, size: number, min_buffers: number, max_buffers: number): boolean;
 
         // Virtual methods
         /**
@@ -8496,7 +8491,7 @@ export namespace Gst {
          * @param params parameters.
          * @virtual
          */
-        vfunc_acquire_buffer(params: (BufferPoolAcquireParams | null)): [FlowReturn, Buffer | null];
+        vfunc_acquire_buffer(params: BufferPoolAcquireParams | null): [FlowReturn, Buffer | null];
 
         /**
          * Allocate a buffer. the default implementation allocates
@@ -8508,7 +8503,7 @@ export namespace Gst {
          * @param params parameters.
          * @virtual
          */
-        vfunc_alloc_buffer(params: (BufferPoolAcquireParams | null)): [FlowReturn, Buffer | null];
+        vfunc_alloc_buffer(params: BufferPoolAcquireParams | null): [FlowReturn, Buffer | null];
 
         /**
          * Enter the flushing state.
@@ -8608,7 +8603,7 @@ export namespace Gst {
          * @param params parameters.
          * @returns a {@link Gst.FlowReturn} such as {@link Gst.FlowReturn.FLUSHING} when the pool is inactive.
          */
-        acquire_buffer(params: (BufferPoolAcquireParams | null)): [FlowReturn, Buffer | null];
+        acquire_buffer(params: BufferPoolAcquireParams | null): [FlowReturn, Buffer | null];
 
         /**
          * Gets a copy of the current configuration of the pool. This configuration
@@ -8992,7 +8987,7 @@ export namespace Gst {
          * any signal watch added with `gst_bus_add_signal_watch`.
          * @returns a {@link GLib.Source} that can be added to a {@link GLib.MainLoop}.
          */
-        create_watch(): (GLib.Source | null);
+        create_watch(): GLib.Source | null;
 
         /**
          * Instructs GStreamer to stop emitting the "sync-message" signal for this bus.
@@ -9050,7 +9045,7 @@ export namespace Gst {
          * on the bus' message queue.
          * @returns the {@link Gst.Message} that is on the     bus, or `null` if the bus is empty.
          */
-        peek(): (Message | null);
+        peek(): Message | null;
 
         /**
          * Polls the bus for messages. Will block while waiting for messages to come.
@@ -9090,13 +9085,13 @@ export namespace Gst {
          * @param timeout the poll timeout, as a {@link Gst.ClockTime}, or #GST_CLOCK_TIME_NONE to poll indefinitely.
          * @returns the message that was received,     or `null` if the poll timed out.
          */
-        poll(events: MessageType, timeout: ClockTime): (Message | null);
+        poll(events: MessageType, timeout: ClockTime): Message | null;
 
         /**
          * Gets a message from the bus.
          * @returns the {@link Gst.Message} that is on the     bus, or `null` if the bus is empty.
          */
-        pop(): (Message | null);
+        pop(): Message | null;
 
         /**
          * Gets a message matching `type` from the bus.  Will discard all messages on
@@ -9107,7 +9102,7 @@ export namespace Gst {
          * @param types message types to take into account
          * @returns the next {@link Gst.Message} matching     `type` that is on the bus, or `null` if the bus is empty or there     is no message matching `type`.
          */
-        pop_filtered(types: MessageType): (Message | null);
+        pop_filtered(types: MessageType): Message | null;
 
         /**
          * Posts a message on the given bus. Ownership of the message
@@ -9148,7 +9143,7 @@ export namespace Gst {
          * clearing an existing handler with `null` was not thread-safe.
          * @param func The handler function to install
          */
-        set_sync_handler(func: (BusSyncHandler | null)): void;
+        set_sync_handler(func: BusSyncHandler | null): void;
 
         /**
          * A helper {@link Gst.BusSyncHandler} that can be used to convert all synchronous
@@ -9168,7 +9163,7 @@ export namespace Gst {
          * @param timeout a timeout
          * @returns the {@link Gst.Message} that is on the     bus after the specified timeout or `null` if the bus is empty     after the timeout expired.
          */
-        timed_pop(timeout: ClockTime): (Message | null);
+        timed_pop(timeout: ClockTime): Message | null;
 
         /**
          * Gets a message from the bus whose type matches the message type mask `types`,
@@ -9182,7 +9177,7 @@ export namespace Gst {
          * @param types message types to take into account, {@link Gst.MessageType.ANY} for any type
          * @returns a {@link Gst.Message} matching the     filter in `types`, or `null` if no matching message was found on     the bus until the timeout expired.
          */
-        timed_pop_filtered(timeout: ClockTime, types: MessageType): (Message | null);
+        timed_pop_filtered(timeout: ClockTime, types: MessageType): Message | null;
     }
 
 
@@ -9210,7 +9205,7 @@ export namespace Gst {
 
         // Constructor properties interface
         interface ConstructorProps extends Object.ConstructorProps {
-            timeout: (bigint | number);
+            timeout: bigint | number;
             window_size: number;
             windowSize: number;
             window_threshold: number;
@@ -9301,7 +9296,7 @@ export namespace Gst {
          * @default 100000000
          */
         get timeout(): number;
-        set timeout(val: (bigint | number));
+        set timeout(val: bigint | number);
 
         /**
          * @default 32
@@ -9370,7 +9365,7 @@ export namespace Gst {
          * This function returns the underlying clock.
          * @param id a {@link Gst.ClockID}
          */
-        static id_get_clock(id: ClockID): (Clock | null);
+        static id_get_clock(id: ClockID): Clock | null;
 
         /**
          * Gets the time of the clock ID
@@ -9569,7 +9564,7 @@ export namespace Gst {
          * not slaved to any master clock.
          * @returns a master {@link Gst.Clock} or `null`     when this clock is not slaved to a master clock.
          */
-        get_master(): (Clock | null);
+        get_master(): Clock | null;
 
         /**
          * Gets the accuracy of the clock. The accuracy of the clock is the granularity
@@ -9670,7 +9665,7 @@ export namespace Gst {
          * @param master a master {@link Gst.Clock}
          * @returns `true` if the clock is capable of being slaved to a master clock. Trying to set a master on a clock without the #GST_CLOCK_FLAG_CAN_SET_MASTER flag will make this function return `false`.
          */
-        set_master(master: (Clock | null)): boolean;
+        set_master(master: Clock | null): boolean;
 
         /**
          * Sets the accuracy of the clock. Some clocks have the possibility to operate
@@ -9763,8 +9758,8 @@ export namespace Gst {
 
         // Constructor properties interface
         interface ConstructorProps extends Object.ConstructorProps {
-            name: (string | any);
-            object: (Object | any);
+            name: string | any;
+            object: Object | any;
         }
     }
 
@@ -9784,7 +9779,7 @@ export namespace Gst {
          * @default null
          */
     // This accessor conflicts with another accessor's type in a parent class or interface.
-        get name(): (string | any);
+        get name(): string | any;
 
         /**
          * @construct-only
@@ -9842,7 +9837,7 @@ export namespace Gst {
          * @param timestamp the time the control-change should be read from
          * @virtual
          */
-        vfunc_get_value(timestamp: ClockTime): (GObject.Value | null);
+        vfunc_get_value(timestamp: ClockTime): GObject.Value | null;
 
         /**
          * Sets the property of the `object`, according to the `GstControlSources` that
@@ -9883,7 +9878,7 @@ export namespace Gst {
          * @param timestamp the time the control-change should be read from
          * @returns the GValue of the property at the given time, or `null` if the property isn't controlled.
          */
-        get_value(timestamp: ClockTime): (GObject.Value | null);
+        get_value(timestamp: ClockTime): GObject.Value | null;
 
         /**
          * @param args 
@@ -9933,9 +9928,7 @@ export namespace Gst {
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends Object.ConstructorProps {
-
-        }
+        interface ConstructorProps extends Object.ConstructorProps {}
     }
 
     /**
@@ -9969,7 +9962,7 @@ export namespace Gst {
         // Fields
         
     // This field conflicts with a function in a parent class or interface.
-    get_value: (ControlSourceGetValue | any);
+    get_value: ControlSourceGetValue | any;
 
         get_value_array: ControlSourceGetValueArray;
 
@@ -10029,12 +10022,12 @@ export namespace Gst {
 
         // Constructor properties interface
         interface ConstructorProps extends Object.ConstructorProps {
-            caps: (Caps | null);
+            caps: Caps | null;
             device_class: string;
             deviceClass: string;
             display_name: string;
             displayName: string;
-            properties: (Structure | null);
+            properties: Structure | null;
         }
     }
 
@@ -10055,7 +10048,7 @@ export namespace Gst {
         /**
          * @construct-only
          */
-        get caps(): (Caps | null);
+        get caps(): Caps | null;
 
         /**
          * @construct-only
@@ -10080,7 +10073,7 @@ export namespace Gst {
         /**
          * @construct-only
          */
-        get properties(): (Structure | null);
+        get properties(): Structure | null;
 
         /**
          * Compile-time signal type information.
@@ -10116,7 +10109,7 @@ export namespace Gst {
          * @param name name of new element, or `null` to automatically create a unique name.
          * @virtual
          */
-        vfunc_create_element(name: (string | null)): (Element | null);
+        vfunc_create_element(name: string | null): Element | null;
 
         /**
          * Tries to reconfigure an existing element to use the device. If this
@@ -10137,13 +10130,13 @@ export namespace Gst {
          * @param name name of new element, or `null` to automatically create a unique name.
          * @returns a new {@link Gst.Element} configured to use this device
          */
-        create_element(name: (string | null)): (Element | null);
+        create_element(name: string | null): Element | null;
 
         /**
          * Getter for the {@link Gst.Caps} that this device supports.
          * @returns The {@link Gst.Caps} supported by this device. Unref with `gst_caps_unref()` when done.
          */
-        get_caps(): (Caps | null);
+        get_caps(): Caps | null;
 
         /**
          * Gets the "class" of a device. This is a "/" separated list of
@@ -10163,7 +10156,7 @@ export namespace Gst {
          * Gets the extra properties of a device.
          * @returns The extra properties or `null` when there are none.          Free with `gst_structure_free()` after use.
          */
-        get_properties(): (Structure | null);
+        get_properties(): Structure | null;
 
         /**
          * Check if `device` matches all of the given classes
@@ -10337,7 +10330,7 @@ export namespace Gst {
          * @param caps the {@link Gst.Caps} to filter or `null` for ANY
          * @returns The id of the new filter or 0 if no provider matched the filter's  classes.
          */
-        add_filter(classes: (string | null), caps: (Caps | null)): number;
+        add_filter(classes: string | null, caps: Caps | null): number;
 
         /**
          * Gets the {@link Gst.Bus} of this {@link Gst.DeviceMonitor}
@@ -10350,7 +10343,7 @@ export namespace Gst {
          * probe the hardware if the monitor is not currently started.
          * @returns a {@link GLib.List} of   {@link Gst.Device}
          */
-        get_devices(): (Device[] | null);
+        get_devices(): Device[] | null;
 
         /**
          * Get a list of the currently selected device provider factories.
@@ -10415,9 +10408,7 @@ export namespace Gst {
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends Object.ConstructorProps {
-
-        }
+        interface ConstructorProps extends Object.ConstructorProps {}
     }
 
     /**
@@ -10475,7 +10466,7 @@ export namespace Gst {
          * @param rank rank of device provider (higher rank means more importance when autoplugging)
          * @param type GType of device provider to register
          */
-        static register(plugin: (Plugin | null), name: string, rank: number, type: GObject.GType): boolean;
+        static register(plugin: Plugin | null, name: string, rank: number, type: GObject.GType): boolean;
 
         /**
          * @param key the key to set
@@ -10492,7 +10483,7 @@ export namespace Gst {
         /**
          * @param key the key to get
          */
-        static get_metadata(key: string): (string | null);
+        static get_metadata(key: string): string | null;
 
         /**
          * @param longname The long English name of the device provider. E.g. "File Sink"
@@ -10591,7 +10582,7 @@ export namespace Gst {
          * Retrieves the factory that was used to create this device provider.
          * @returns the {@link Gst.DeviceProviderFactory} used for     creating this device provider. no refcounting is needed.
          */
-        get_factory(): (DeviceProviderFactory | null);
+        get_factory(): DeviceProviderFactory | null;
 
         /**
          * Get the provider factory names of the {@link Gst.DeviceProvider} instances that
@@ -10667,9 +10658,7 @@ export namespace Gst {
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends PluginFeature.ConstructorProps {
-
-        }
+        interface ConstructorProps extends PluginFeature.ConstructorProps {}
     }
 
     /**
@@ -10720,14 +10709,14 @@ export namespace Gst {
          * device provider factory; caller is responsible for unreffing.
          * @param name name of factory to find
          */
-        static find(name: string): (DeviceProviderFactory | null);
+        static find(name: string): DeviceProviderFactory | null;
 
         /**
          * Returns the device provider of the type defined by the given device
          * provider factory.
          * @param factoryname a named factory to instantiate
          */
-        static get_by_name(factoryname: string): (DeviceProvider | null);
+        static get_by_name(factoryname: string): DeviceProvider | null;
 
         /**
          * Get a list of factories with a rank greater or equal to `minrank`.
@@ -10742,7 +10731,7 @@ export namespace Gst {
          * providerfactory.
          * @returns the {@link Gst.DeviceProvider} or `null` if the device provider couldn't be created
          */
-        get(): (DeviceProvider | null);
+        get(): DeviceProvider | null;
 
         /**
          * Get the {@link GObject.GType} for device providers managed by this factory. The type can
@@ -10757,34 +10746,33 @@ export namespace Gst {
          * @param key a key
          * @returns the metadata with `key` on `factory` or `null` when there was no metadata with the given `key`.
          */
-        get_metadata(key: string): (string | null);
+        get_metadata(key: string): string | null;
 
         /**
          * Get the available keys for the metadata on `factory`.
          * @returns a `null`-terminated array of key strings, or `null` when there is no metadata. Free with `g_strfreev()` when no longer needed.
          */
-        get_metadata_keys(): (string[] | null);
+        get_metadata_keys(): string[] | null;
 
         /**
          * Check if `factory` matches all of the given `classes`
          * @param classes a "/" separate list of classes to match, only match     if all classes are matched
          * @returns `true` if `factory` matches or if `classes` is `null`.
          */
-        has_classes(classes: (string | null)): boolean;
+        has_classes(classes: string | null): boolean;
 
         /**
          * Check if `factory` matches all of the given classes
          * @param classes a `null` terminated array   of classes to match, only match if all classes are matched
          * @returns `true` if `factory` matches.
          */
-        has_classesv(classes: (string[] | null)): boolean;
+        has_classesv(classes: string[] | null): boolean;
     }
 
 
     namespace DoubleRange {
         // Signal signatures
-        interface SignalSignatures extends GObject.Object.SignalSignatures {
-        }
+        interface SignalSignatures extends GObject.Object.SignalSignatures {}
     }
 
     /**
@@ -10820,9 +10808,7 @@ export namespace Gst {
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends PluginFeature.ConstructorProps {
-
-        }
+        interface ConstructorProps extends PluginFeature.ConstructorProps {}
     }
 
     /**
@@ -10920,9 +10906,7 @@ export namespace Gst {
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends Object.ConstructorProps {
-
-        }
+        interface ConstructorProps extends Object.ConstructorProps {}
     }
 
     /**
@@ -11051,7 +11035,7 @@ export namespace Gst {
          * @param uri URI to create an element for
          * @param elementname Name of created element, can be `null`.
          */
-        static make_from_uri(type: URIType, uri: string, elementname: (string | null)): Element;
+        static make_from_uri(type: URIType, uri: string, elementname: string | null): Element;
 
         /**
          * Create a new elementfactory capable of instantiating objects of the
@@ -11061,7 +11045,7 @@ export namespace Gst {
          * @param rank rank of element (higher rank means more importance when autoplugging)
          * @param type GType of element to register
          */
-        static register(plugin: (Plugin | null), name: string, rank: number, type: GObject.GType): boolean;
+        static register(plugin: Plugin | null, name: string, rank: number, type: GObject.GType): boolean;
 
         /**
          * Gets a string representing the given state change result.
@@ -11133,7 +11117,7 @@ export namespace Gst {
         /**
          * @param name the name of the {@link Gst.PadTemplate} to get.
          */
-        static get_pad_template(name: string): (PadTemplate | null);
+        static get_pad_template(name: string): PadTemplate | null;
 
         static get_pad_template_list(): PadTemplate[];
 
@@ -11231,7 +11215,7 @@ export namespace Gst {
          * > state. Some elements can provide a clock in other states.
          * @virtual
          */
-        vfunc_provide_clock(): (Clock | null);
+        vfunc_provide_clock(): Clock | null;
 
         /**
          * Performs a query on the given element.
@@ -11264,7 +11248,7 @@ export namespace Gst {
          * @param caps the caps of the pad we want to request. Can be `null`.
          * @virtual
          */
-        vfunc_request_new_pad(templ: PadTemplate, name: (string | null), caps: (Caps | null)): (Pad | null);
+        vfunc_request_new_pad(templ: PadTemplate, name: string | null, caps: Caps | null): Pad | null;
 
         /**
          * Sends an event to an element. If the element doesn't implement an
@@ -11288,7 +11272,7 @@ export namespace Gst {
          * @param bus the {@link Gst.Bus} to set.
          * @virtual
          */
-        vfunc_set_bus(bus: (Bus | null)): void;
+        vfunc_set_bus(bus: Bus | null): void;
 
         /**
          * Sets the clock for the element. This function increases the
@@ -11297,7 +11281,7 @@ export namespace Gst {
          * @param clock the {@link Gst.Clock} to set for the element.
          * @virtual
          */
-        vfunc_set_clock(clock: (Clock | null)): boolean;
+        vfunc_set_clock(clock: Clock | null): boolean;
 
         /**
          * Sets the context of the element. Increases the refcount of the context.
@@ -11368,14 +11352,14 @@ export namespace Gst {
          * @param include_value whether to include the new property value in the message
          * @returns a watch id, which can be used in connection with     `gst_element_remove_property_notify_watch()` to remove the watch again.
          */
-        add_property_deep_notify_watch(property_name: (string | null), include_value: boolean): number;
+        add_property_deep_notify_watch(property_name: string | null, include_value: boolean): number;
 
         /**
          * @param property_name name of property to watch for changes, or     NULL to watch all properties
          * @param include_value whether to include the new property value in the message
          * @returns a watch id, which can be used in connection with     `gst_element_remove_property_notify_watch()` to remove the watch again.
          */
-        add_property_notify_watch(property_name: (string | null), include_value: boolean): number;
+        add_property_notify_watch(property_name: string | null, include_value: boolean): number;
 
         /**
          * Calls `func` from another thread and passes `user_data` to it. This is to be
@@ -11497,7 +11481,7 @@ export namespace Gst {
          * bus for the application.
          * @returns the element's {@link Gst.Bus}. unref after usage. MT safe.
          */
-        get_bus(): (Bus | null);
+        get_bus(): Bus | null;
 
         /**
          * Gets the currently configured clock of the element. This is the clock as was
@@ -11507,7 +11491,7 @@ export namespace Gst {
          * pipeline is in the PLAYING state.
          * @returns the {@link Gst.Clock} of the element. unref after usage. MT safe.
          */
-        get_clock(): (Clock | null);
+        get_clock(): Clock | null;
 
         /**
          * Looks for an unlinked pad to which the given pad can link. It is not
@@ -11521,7 +11505,7 @@ export namespace Gst {
          * @param caps the {@link Gst.Caps} to use as a filter.
          * @returns the {@link Gst.Pad} to which a link   can be made, or `null` if one cannot be found. `gst_object_unref()`   after usage.
          */
-        get_compatible_pad(pad: Pad, caps: (Caps | null)): (Pad | null);
+        get_compatible_pad(pad: Pad, caps: Caps | null): Pad | null;
 
         /**
          * Retrieves a pad template from `element` that is compatible with `compattempl`.
@@ -11529,7 +11513,7 @@ export namespace Gst {
          * @param compattempl the {@link Gst.PadTemplate} to find a compatible     template for
          * @returns a compatible {@link Gst.PadTemplate},   or `null` if none was found. No unreferencing is necessary.
          */
-        get_compatible_pad_template(compattempl: PadTemplate): (PadTemplate | null);
+        get_compatible_pad_template(compattempl: PadTemplate): PadTemplate | null;
 
         /**
          * Gets the context with `context_type` set on the element or NULL.
@@ -11538,14 +11522,14 @@ export namespace Gst {
          * @param context_type a name of a context to retrieve
          * @returns A {@link Gst.Context} or NULL
          */
-        get_context(context_type: string): (Context | null);
+        get_context(context_type: string): Context | null;
 
         /**
          * Gets the context with `context_type` set on the element or NULL.
          * @param context_type a name of a context to retrieve
          * @returns A {@link Gst.Context} or NULL
          */
-        get_context_unlocked(context_type: string): (Context | null);
+        get_context_unlocked(context_type: string): Context | null;
 
         /**
          * Gets the contexts set on the element.
@@ -11574,7 +11558,7 @@ export namespace Gst {
          * Retrieves the factory that was used to create this element.
          * @returns the {@link Gst.ElementFactory} used for creating this     element or `null` if element has not been registered (static element). no refcounting is needed.
          */
-        get_factory(): (ElementFactory | null);
+        get_factory(): ElementFactory | null;
 
         /**
          * Get metadata with `key` in `klass`.
@@ -11588,7 +11572,7 @@ export namespace Gst {
          * @param name the name of the {@link Gst.PadTemplate} to get.
          * @returns the {@link Gst.PadTemplate} with the     given name, or `null` if none was found. No unreferencing is     necessary.
          */
-        get_pad_template(name: string): (PadTemplate | null);
+        get_pad_template(name: string): PadTemplate | null;
 
         /**
          * Retrieves a list of the pad templates associated with `element`. The
@@ -11604,7 +11588,7 @@ export namespace Gst {
          * @param name the name of the request {@link Gst.Pad} to retrieve.
          * @returns requested {@link Gst.Pad} if found,     otherwise `null`.  Release after usage.
          */
-        get_request_pad(name: string): (Pad | null);
+        get_request_pad(name: string): Pad | null;
 
         /**
          * Returns the start time of the element. The start time is the
@@ -11650,7 +11634,7 @@ export namespace Gst {
          * @param name the name of the static {@link Gst.Pad} to retrieve.
          * @returns the requested {@link Gst.Pad} if     found, otherwise `null`.  unref after usage. MT safe.
          */
-        get_static_pad(name: string): (Pad | null);
+        get_static_pad(name: string): Pad | null;
 
         /**
          * Checks if the state of an element is locked.
@@ -11720,7 +11704,7 @@ export namespace Gst {
          * @param filter the {@link Gst.Caps} to filter the link,     or `null` for no filter.
          * @returns `true` if the pads could be linked, `false` otherwise.
          */
-        link_filtered(dest: Element, filter: (Caps | null)): boolean;
+        link_filtered(dest: Element, filter: Caps | null): boolean;
 
         /**
          * Links the two named pads of the source and destination elements.
@@ -11732,7 +11716,7 @@ export namespace Gst {
          * @param destpadname the name of the {@link Gst.Pad} in destination element, or `null` for any pad.
          * @returns `true` if the pads could be linked, `false` otherwise.
          */
-        link_pads(srcpadname: (string | null), dest: Element, destpadname: (string | null)): boolean;
+        link_pads(srcpadname: string | null, dest: Element, destpadname: string | null): boolean;
 
         /**
          * Links the two named pads of the source and destination elements. Side effect
@@ -11745,7 +11729,7 @@ export namespace Gst {
          * @param filter the {@link Gst.Caps} to filter the link,     or `null` for no filter.
          * @returns `true` if the pads could be linked, `false` otherwise.
          */
-        link_pads_filtered(srcpadname: (string | null), dest: Element, destpadname: (string | null), filter: (Caps | null)): boolean;
+        link_pads_filtered(srcpadname: string | null, dest: Element, destpadname: string | null, filter: Caps | null): boolean;
 
         /**
          * Links the two named pads of the source and destination elements.
@@ -11764,7 +11748,7 @@ export namespace Gst {
          * @param flags the {@link Gst.PadLinkCheck} to be performed when linking pads.
          * @returns `true` if the pads could be linked, `false` otherwise.
          */
-        link_pads_full(srcpadname: (string | null), dest: Element, destpadname: (string | null), flags: PadLinkCheck): boolean;
+        link_pads_full(srcpadname: string | null, dest: Element, destpadname: string | null, flags: PadLinkCheck): boolean;
 
         /**
          * Brings the element to the lost state. The current state of the
@@ -11802,7 +11786,7 @@ export namespace Gst {
          * @param _function the source code function where the error was generated
          * @param line the source code line where the error was generated
          */
-        message_full(type: MessageType, domain: GLib.Quark, code: number, text: (string | null), debug: (string | null), file: string, _function: string, line: number): void;
+        message_full(type: MessageType, domain: GLib.Quark, code: number, text: string | null, debug: string | null, file: string, _function: string, line: number): void;
 
         /**
          * Post an error, warning or info message on the bus from inside an element.
@@ -11819,7 +11803,7 @@ export namespace Gst {
          * @param line the source code line where the error was generated
          * @param structure optional details structure
          */
-        message_full_with_details(type: MessageType, domain: GLib.Quark, code: number, text: (string | null), debug: (string | null), file: string, _function: string, line: number, structure: Structure): void;
+        message_full_with_details(type: MessageType, domain: GLib.Quark, code: number, text: string | null, debug: string | null, file: string, _function: string, line: number, structure: Structure): void;
 
         /**
          * Use this function to signal that the element does not expect any more pads
@@ -11849,7 +11833,7 @@ export namespace Gst {
          * > state. Some elements can provide a clock in other states.
          * @returns the GstClock provided by the element or `null` if no clock could be provided.  Unref after usage. MT safe.
          */
-        provide_clock(): (Clock | null);
+        provide_clock(): Clock | null;
 
         /**
          * Performs a query on the given element.
@@ -11871,7 +11855,7 @@ export namespace Gst {
          * @param dest_format the {@link Gst.Format} to convert to.
          * @returns `true` if the query could be performed.
          */
-        query_convert(src_format: Format, src_val: (bigint | number), dest_format: Format): [boolean, number];
+        query_convert(src_format: Format, src_val: bigint | number, dest_format: Format): [boolean, number];
 
         /**
          * Queries an element (usually top-level pipeline or playbin element) for the
@@ -11940,7 +11924,7 @@ export namespace Gst {
         /**
          * @param watch_id watch id to remove
          */
-        remove_property_notify_watch(watch_id: (bigint | number)): void;
+        remove_property_notify_watch(watch_id: bigint | number): void;
 
         /**
          * Retrieves a request pad from the element according to the provided template.
@@ -11953,7 +11937,7 @@ export namespace Gst {
          * @param caps the caps of the pad we want to request. Can be `null`.
          * @returns requested {@link Gst.Pad} if found,     otherwise `null`.  Release after usage.
          */
-        request_pad(templ: PadTemplate, name: (string | null), caps: (Caps | null)): (Pad | null);
+        request_pad(templ: PadTemplate, name: string | null, caps: Caps | null): Pad | null;
 
         /**
          * Retrieves a pad from the element by name (e.g. "src_\%d"). This version only
@@ -11971,7 +11955,7 @@ export namespace Gst {
          * @param name the name of the request {@link Gst.Pad} to retrieve.
          * @returns requested {@link Gst.Pad} if found,     otherwise `null`.  Release after usage.
          */
-        request_pad_simple(name: string): (Pad | null);
+        request_pad_simple(name: string): Pad | null;
 
         /**
          * Sends a seek event to an element. See `gst_event_new_seek()` for the details of
@@ -11988,7 +11972,7 @@ export namespace Gst {
          * @param stop The value of the new stop position
          * @returns `true` if the event was handled. Flushing seeks will trigger a preroll, which will emit {@link Gst.MessageType.ASYNC_DONE}.
          */
-        seek(rate: number, format: Format, flags: SeekFlags, start_type: SeekType, start: (bigint | number), stop_type: SeekType, stop: (bigint | number)): boolean;
+        seek(rate: number, format: Format, flags: SeekFlags, start_type: SeekType, start: bigint | number, stop_type: SeekType, stop: bigint | number): boolean;
 
         /**
          * Simple API to perform a seek on the given element, meaning it just seeks
@@ -12010,7 +11994,7 @@ export namespace Gst {
          * @param seek_pos position to seek to (relative to the start); if you are doing            a seek in #GST_FORMAT_TIME this value is in nanoseconds -            multiply with #GST_SECOND to convert seconds to nanoseconds or            with #GST_MSECOND to convert milliseconds to nanoseconds.
          * @returns `true` if the seek operation succeeded. Flushing seeks will trigger a preroll, which will emit {@link Gst.MessageType.ASYNC_DONE}.
          */
-        seek_simple(format: Format, seek_flags: SeekFlags, seek_pos: (bigint | number)): boolean;
+        seek_simple(format: Format, seek_flags: SeekFlags, seek_pos: bigint | number): boolean;
 
         /**
          * Sends an event to an element. If the element doesn't implement an
@@ -12041,7 +12025,7 @@ export namespace Gst {
          * MT safe.
          * @param bus the {@link Gst.Bus} to set.
          */
-        set_bus(bus: (Bus | null)): void;
+        set_bus(bus: Bus | null): void;
 
         /**
          * Sets the clock for the element. This function increases the
@@ -12050,7 +12034,7 @@ export namespace Gst {
          * @param clock the {@link Gst.Clock} to set for the element.
          * @returns `true` if the element accepted the clock. An element can refuse a clock when it, for example, is not able to slave its internal clock to the `clock` or when it requires a specific clock to operate. MT safe.
          */
-        set_clock(clock: (Clock | null)): boolean;
+        set_clock(clock: Clock | null): boolean;
 
         /**
          * Sets the context of the element. Increases the refcount of the context.
@@ -12147,9 +12131,7 @@ export namespace Gst {
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends PluginFeature.ConstructorProps {
-
-        }
+        interface ConstructorProps extends PluginFeature.ConstructorProps {}
     }
 
     /**
@@ -12218,7 +12200,7 @@ export namespace Gst {
          * element factory; caller is responsible for unreffing.
          * @param name name of factory to find
          */
-        static find(name: string): (ElementFactory | null);
+        static find(name: string): ElementFactory | null;
 
         /**
          * Filter out all the elementfactories in `list` that can handle `caps` in
@@ -12251,7 +12233,7 @@ export namespace Gst {
          * @param factoryname a named factory to instantiate
          * @param name name of new element, or `null` to automatically create    a unique name
          */
-        static make(factoryname: string, name: (string | null)): (Element | null);
+        static make(factoryname: string, name: string | null): Element | null;
 
         /**
          * Create a new element of the type defined by the given elementfactory.
@@ -12260,7 +12242,7 @@ export namespace Gst {
          * @param names array of properties names
          * @param values array of associated properties values
          */
-        static make_with_properties(factoryname: string, names: (string[] | null), values: (GObject.Value[] | null)): (Element | null);
+        static make_with_properties(factoryname: string, names: string[] | null, values: GObject.Value[] | null): Element | null;
 
         // Methods
         /**
@@ -12298,7 +12280,7 @@ export namespace Gst {
          * @param name name of new element, or `null` to automatically create    a unique name
          * @returns new {@link Gst.Element} or `null`     if the element couldn't be created
          */
-        create(name: (string | null)): (Element | null);
+        create(name: string | null): Element | null;
 
         /**
          * Create a new element of the type defined by the given elementfactory.
@@ -12307,7 +12289,7 @@ export namespace Gst {
          * @param values array of associated properties values
          * @returns new {@link Gst.Element} or `null`     if the element couldn't be created
          */
-        create_with_properties(names: (string[] | null), values: (GObject.Value[] | null)): (Element | null);
+        create_with_properties(names: string[] | null, values: GObject.Value[] | null): Element | null;
 
         /**
          * Get the {@link GObject.GType} for elements managed by this factory. The type can
@@ -12322,13 +12304,13 @@ export namespace Gst {
          * @param key a key
          * @returns the metadata with `key` on `factory` or `null` when there was no metadata with the given `key`.
          */
-        get_metadata(key: string): (string | null);
+        get_metadata(key: string): string | null;
 
         /**
          * Get the available keys for the metadata on `factory`.
          * @returns a `null`-terminated array of key strings, or `null` when there is no metadata. Free with `g_strfreev()` when no longer needed.
          */
-        get_metadata_keys(): (string[] | null);
+        get_metadata_keys(): string[] | null;
 
         /**
          * Gets the number of pad_templates in this factory.
@@ -12382,8 +12364,7 @@ export namespace Gst {
 
     namespace FlagSet {
         // Signal signatures
-        interface SignalSignatures extends GObject.Object.SignalSignatures {
-        }
+        interface SignalSignatures extends GObject.Object.SignalSignatures {}
     }
 
     /**
@@ -12423,8 +12404,7 @@ export namespace Gst {
 
     namespace Fraction {
         // Signal signatures
-        interface SignalSignatures extends GObject.Object.SignalSignatures {
-        }
+        interface SignalSignatures extends GObject.Object.SignalSignatures {}
     }
 
     /**
@@ -12455,8 +12435,7 @@ export namespace Gst {
 
     namespace FractionRange {
         // Signal signatures
-        interface SignalSignatures extends GObject.Object.SignalSignatures {
-        }
+        interface SignalSignatures extends GObject.Object.SignalSignatures {}
     }
 
     /**
@@ -12496,9 +12475,7 @@ export namespace Gst {
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends ProxyPad.ConstructorProps {
-
-        }
+        interface ConstructorProps extends ProxyPad.ConstructorProps {}
     }
 
     /**
@@ -12537,19 +12514,19 @@ export namespace Gst {
 
         _init(...args: any[]): void;
 
-        static ["new"](name: (string | null), target: Pad): GhostPad;
+        static ["new"](name: string | null, target: Pad): GhostPad;
 
         // Conflicted with Gst.Pad.new
         static ["new"](...args: never[]): any;
 
-        static new_from_template(name: (string | null), target: Pad, templ: PadTemplate): GhostPad;
+        static new_from_template(name: string | null, target: Pad, templ: PadTemplate): GhostPad;
 
         // Conflicted with Gst.Pad.new_from_template
         static new_from_template(...args: never[]): any;
 
-        static new_no_target(name: (string | null), dir: PadDirection): GhostPad;
+        static new_no_target(name: string | null, dir: PadDirection): GhostPad;
 
-        static new_no_target_from_template(name: (string | null), templ: PadTemplate): GhostPad;
+        static new_no_target_from_template(name: string | null, templ: PadTemplate): GhostPad;
 
         // Signals
         /** @signal */
@@ -12572,7 +12549,7 @@ export namespace Gst {
          * @param mode the requested activation mode
          * @param active whether the pad should be active or not.
          */
-        static activate_mode_default(pad: Pad, parent: (Object | null), mode: PadMode, active: boolean): boolean;
+        static activate_mode_default(pad: Pad, parent: Object | null, mode: PadMode, active: boolean): boolean;
 
         /**
          * Invoke the default activate mode function of a proxy pad that is
@@ -12582,7 +12559,7 @@ export namespace Gst {
          * @param mode the requested activation mode
          * @param active whether the pad should be active or not.
          */
-        static internal_activate_mode_default(pad: Pad, parent: (Object | null), mode: PadMode, active: boolean): boolean;
+        static internal_activate_mode_default(pad: Pad, parent: Object | null, mode: PadMode, active: boolean): boolean;
 
         // Methods
         /**
@@ -12600,7 +12577,7 @@ export namespace Gst {
          * Get the target pad of `gpad`. Unref target pad after usage.
          * @returns the target {@link Gst.Pad}, can be `null` if the ghostpad has no target set. Unref target pad after usage.
          */
-        get_target(): (Pad | null);
+        get_target(): Pad | null;
 
         /**
          * Set the new target of the ghostpad `gpad`. Any existing target
@@ -12609,14 +12586,13 @@ export namespace Gst {
          * @param newtarget the new pad target
          * @returns `true` if the new target could be set. This function     can return `false` when the internal pads could not be linked.
          */
-        set_target(newtarget: (Pad | null)): boolean;
+        set_target(newtarget: Pad | null): boolean;
     }
 
 
     namespace Int64Range {
         // Signal signatures
-        interface SignalSignatures extends GObject.Object.SignalSignatures {
-        }
+        interface SignalSignatures extends GObject.Object.SignalSignatures {}
     }
 
     /**
@@ -12646,8 +12622,7 @@ export namespace Gst {
 
     namespace IntRange {
         // Signal signatures
-        interface SignalSignatures extends GObject.Object.SignalSignatures {
-        }
+        interface SignalSignatures extends GObject.Object.SignalSignatures {}
     }
 
     /**
@@ -12712,8 +12687,8 @@ export namespace Gst {
 
         // Constructor properties interface
         interface ConstructorProps extends GObject.InitiallyUnowned.ConstructorProps {
-            name: (string | null);
-            parent: (Object | null);
+            name: string | null;
+            parent: Object | null;
         }
     }
 
@@ -12776,8 +12751,8 @@ export namespace Gst {
         /**
          * @default null
          */
-        get name(): (string | null);
-        set name(val: (string | null));
+        get name(): string | null;
+        set name(val: string | null);
 
         /**
          * The parent of the object. Please note, that when changing the 'parent'
@@ -12786,8 +12761,8 @@ export namespace Gst {
          * {@link Gst.Bin.SignalSignatures.element_added | Gst.Bin::element-added} or {@link Gst.Bin.SignalSignatures.element_removed | Gst.Bin::element-removed} signals on the parent to
          * achieve a similar effect.
          */
-        get parent(): (Object | null);
-        set parent(val: (Object | null));
+        get parent(): Object | null;
+        set parent(val: Object | null);
 
         /**
          * Compile-time signal type information.
@@ -12846,7 +12821,7 @@ export namespace Gst {
          * @param pspec a {@link GObject.ParamSpec} of the property.
          * @param excluded_props a set of user-specified properties to exclude or `null` to show     all changes.
          */
-        static default_deep_notify(object: GObject.Object, orig: Object, pspec: GObject.ParamSpec, excluded_props: (string[] | null)): void;
+        static default_deep_notify(object: GObject.Object, orig: Object, pspec: GObject.ParamSpec, excluded_props: string[] | null): void;
 
         /**
          * Atomically modifies a pointer to point to a new object.
@@ -12857,7 +12832,7 @@ export namespace Gst {
          * @param oldobj pointer to a place of     a {@link Gst.Object} to replace
          * @param newobj a new {@link Gst.Object}
          */
-        static replace(oldobj: (Object | null), newobj: (Object | null)): [boolean, Object | null];
+        static replace(oldobj: Object | null, newobj: Object | null): [boolean, Object | null];
 
         // Virtual methods
         /**
@@ -12888,7 +12863,7 @@ export namespace Gst {
          * @param error the GError.
          * @param debug an additional debug information string, or `null`
          */
-        default_error(error: GLib.Error, debug: (string | null)): void;
+        default_error(error: GLib.Error, debug: string | null): void;
 
         /**
          * Gets the corresponding {@link Gst.ControlBinding} for the property. This should be
@@ -12896,7 +12871,7 @@ export namespace Gst {
          * @param property_name name of the property
          * @returns the {@link Gst.ControlBinding} for `property_name` or `null` if the property is not controlled.
          */
-        get_control_binding(property_name: string): (ControlBinding | null);
+        get_control_binding(property_name: string): ControlBinding | null;
 
         /**
          * Obtain the control-rate for this `object`. Audio processing {@link Gst.Element}
@@ -12937,14 +12912,14 @@ export namespace Gst {
          * Free-function: g_free
          * @returns the name of `object`. `g_free()` after usage. MT safe. This function grabs and releases `object`'s LOCK.
          */
-        get_name(): (string | null);
+        get_name(): string | null;
 
         /**
          * Returns the parent of `object`. This function increases the refcount
          * of the parent object so you should `gst_object_unref()` it after usage.
          * @returns parent of `object`, this can be   `null` if `object` has no parent. unref after usage. MT safe. Grabs and releases `object`'s LOCK.
          */
-        get_parent(): (Object | null);
+        get_parent(): Object | null;
 
         /**
          * Generates a string describing the path of `object` in
@@ -12961,7 +12936,7 @@ export namespace Gst {
          * @param timestamp the time the control-change should be read from
          * @returns the GValue of the property at the given time, or `null` if the property isn't controlled.
          */
-        get_value(property_name: string, timestamp: ClockTime): (GObject.Value | null);
+        get_value(property_name: string, timestamp: ClockTime): GObject.Value | null;
 
         /**
          * Check if the `object` has active controlled properties.
@@ -13049,7 +13024,7 @@ export namespace Gst {
          * @param name new name of object
          * @returns `true` if the name could be set. Since Objects that have a parent cannot be renamed, this function returns `false` in those cases. MT safe.  This function grabs and releases `object`'s LOCK.
          */
-        set_name(name: (string | null)): boolean;
+        set_name(name: string | null): boolean;
 
         /**
          * Sets the parent of `object` to `parent`. The object's reference count will
@@ -13124,7 +13099,7 @@ export namespace Gst {
         interface ConstructorProps extends Object.ConstructorProps {
             caps: Caps;
             direction: PadDirection;
-            offset: (bigint | number);
+            offset: bigint | number;
             template: PadTemplate;
         }
     }
@@ -13212,7 +13187,7 @@ export namespace Gst {
          * @default 0
          */
         get offset(): number;
-        set offset(val: (bigint | number));
+        set offset(val: bigint | number);
 
         get template(): PadTemplate;
         set template(val: PadTemplate);
@@ -13238,11 +13213,11 @@ export namespace Gst {
 
         _init(...args: any[]): void;
 
-        static ["new"](name: (string | null), direction: PadDirection): Pad;
+        static ["new"](name: string | null, direction: PadDirection): Pad;
 
         static new_from_static_template(templ: StaticPadTemplate, name: string): Pad;
 
-        static new_from_template(templ: PadTemplate, name: (string | null)): Pad;
+        static new_from_template(templ: PadTemplate, name: string | null): Pad;
 
         // Signals
         /** @signal */
@@ -13385,7 +13360,7 @@ export namespace Gst {
          * @param stream_id The stream-id
          * @returns A stream-id for `pad`. `g_free()` after usage.
          */
-        create_stream_id(parent: Element, stream_id: (string | null)): string;
+        create_stream_id(parent: Element, stream_id: string | null): string;
 
         /**
          * Invokes the default event handler for the given pad.
@@ -13399,7 +13374,7 @@ export namespace Gst {
          * @param event the {@link Gst.Event} to handle.
          * @returns `true` if the event was sent successfully.
          */
-        event_default(parent: (Object | null), event: Event): boolean;
+        event_default(parent: Object | null, event: Event): boolean;
 
         /**
          * Calls `forward` for all internally linked pads of `pad`. This function deals with
@@ -13421,14 +13396,14 @@ export namespace Gst {
          * on the resulting caps.
          * @returns the allowed {@link Gst.Caps} of the     pad link. Unref the caps when you no longer need it. This     function returns `null` when `pad` has no peer. MT safe.
          */
-        get_allowed_caps(): (Caps | null);
+        get_allowed_caps(): Caps | null;
 
         /**
          * Gets the capabilities currently configured on `pad` with the last
          * #GST_EVENT_CAPS event.
          * @returns the current caps of the pad with incremented ref-count or `null` when pad has no caps. Unref after usage.
          */
-        get_current_caps(): (Caps | null);
+        get_current_caps(): Caps | null;
 
         /**
          * Gets the direction of the pad. The direction of the pad is
@@ -13461,7 +13436,7 @@ export namespace Gst {
          * Gets the template for `pad`.
          * @returns the {@link Gst.PadTemplate} from which     this pad was instantiated, or `null` if this pad has no     template. Unref after usage.
          */
-        get_pad_template(): (PadTemplate | null);
+        get_pad_template(): PadTemplate | null;
 
         /**
          * Gets the capabilities for `pad`'s template.
@@ -13474,14 +13449,14 @@ export namespace Gst {
          * its parent is not an element, return `null`.
          * @returns the parent of the pad. The caller has a reference on the parent, so unref when you're finished with it. MT safe.
          */
-        get_parent_element(): (Element | null);
+        get_parent_element(): Element | null;
 
         /**
          * Gets the peer of `pad`. This function refs the peer pad so
          * you need to unref it after use.
          * @returns the peer {@link Gst.Pad}. Unref after usage. MT safe.
          */
-        get_peer(): (Pad | null);
+        get_peer(): Pad | null;
 
         /**
          * When `pad` is flushing this function returns #GST_FLOW_FLUSHING
@@ -13514,14 +13489,14 @@ export namespace Gst {
          * @param size The length of the buffer
          * @returns a {@link Gst.FlowReturn} from the pad. MT safe.
          */
-        get_range(offset: (bigint | number), size: number): [FlowReturn, Buffer];
+        get_range(offset: bigint | number, size: number): [FlowReturn, Buffer];
 
         /**
          * If there is a single internal link of the given pad, this function will
          * return it. Otherwise, it will return NULL.
          * @returns a {@link Gst.Pad}, or `null` if `pad` has none or more than one internal links. Unref returned pad with `gst_object_unref()`.
          */
-        get_single_internal_link(): (Pad | null);
+        get_single_internal_link(): Pad | null;
 
         /**
          * Returns a new reference of the sticky event of type `event_type`
@@ -13530,7 +13505,7 @@ export namespace Gst {
          * @param idx the index of the event
          * @returns a {@link Gst.Event} of type `event_type` or `null` when no event of `event_type` was on `pad`. Unref after usage.
          */
-        get_sticky_event(event_type: EventType, idx: number): (Event | null);
+        get_sticky_event(event_type: EventType, idx: number): Event | null;
 
         /**
          * Returns the current {@link Gst.Stream} for the `pad`, or `null` if none has been
@@ -13540,7 +13515,7 @@ export namespace Gst {
          * `gst_event_parse_stream()`.
          * @returns the current {@link Gst.Stream} for `pad`, or `null`.     unref the returned stream when no longer needed.
          */
-        get_stream(): (Stream | null);
+        get_stream(): Stream | null;
 
         /**
          * Returns the current stream-id for the `pad`, or `null` if none has been
@@ -13553,7 +13528,7 @@ export namespace Gst {
          * contents should not be interpreted.
          * @returns a newly-allocated copy of the stream-id for     `pad`, or `null`.  `g_free()` the returned string when no longer     needed.
          */
-        get_stream_id(): (string | null);
+        get_stream_id(): string | null;
 
         /**
          * Get `pad` task state. If no task is currently
@@ -13605,7 +13580,7 @@ export namespace Gst {
          * Free-function: gst_iterator_free
          * @returns a new {@link Gst.Iterator} of {@link Gst.Pad}     or `null` when the pad does not have an iterator function     configured. Use `gst_iterator_free()` after usage.
          */
-        iterate_internal_links(): (Iterator | null);
+        iterate_internal_links(): Iterator | null;
 
         /**
          * Iterate the list of pads to which the given pad is linked to inside of
@@ -13617,7 +13592,7 @@ export namespace Gst {
          * @param parent the parent of `pad` or `null`
          * @returns a {@link Gst.Iterator} of {@link Gst.Pad}, or `null` if `pad` has no parent. Unref each returned pad with `gst_object_unref()`.
          */
-        iterate_internal_links_default(parent: (Object | null)): (Iterator | null);
+        iterate_internal_links_default(parent: Object | null): Iterator | null;
 
         /**
          * Links the source pad and the sink pad.
@@ -13724,7 +13699,7 @@ export namespace Gst {
          * @param filter a {@link Gst.Caps} filter, or `null`.
          * @returns the caps of the peer pad with incremented ref-count. When there is no peer pad, this function returns `filter` or, when `filter` is `null`, ANY caps.
          */
-        peer_query_caps(filter: (Caps | null)): Caps;
+        peer_query_caps(filter: Caps | null): Caps;
 
         /**
          * Queries the peer pad of a given sink pad to convert `src_val` in `src_format`
@@ -13734,7 +13709,7 @@ export namespace Gst {
          * @param dest_format the {@link Gst.Format} to convert to.
          * @returns `true` if the query could be performed.
          */
-        peer_query_convert(src_format: Format, src_val: (bigint | number), dest_format: Format): [boolean, number];
+        peer_query_convert(src_format: Format, src_val: bigint | number, dest_format: Format): [boolean, number];
 
         /**
          * Queries the peer pad of a given sink pad for the total stream duration.
@@ -13804,7 +13779,7 @@ export namespace Gst {
          * @param size The length of the buffer
          * @returns a {@link Gst.FlowReturn} from the peer pad. MT safe.
          */
-        pull_range(offset: (bigint | number), size: number): [FlowReturn, Buffer];
+        pull_range(offset: bigint | number, size: number): [FlowReturn, Buffer];
 
         /**
          * Pushes a buffer to the peer of `pad`.
@@ -13896,7 +13871,7 @@ export namespace Gst {
          * @param filter suggested {@link Gst.Caps}, or `null`
          * @returns the caps of the pad with incremented ref-count.
          */
-        query_caps(filter: (Caps | null)): Caps;
+        query_caps(filter: Caps | null): Caps;
 
         /**
          * Queries a pad to convert `src_val` in `src_format` to `dest_format`.
@@ -13905,7 +13880,7 @@ export namespace Gst {
          * @param dest_format the {@link Gst.Format} to convert to.
          * @returns `true` if the query could be performed.
          */
-        query_convert(src_format: Format, src_val: (bigint | number), dest_format: Format): [boolean, number];
+        query_convert(src_format: Format, src_val: bigint | number, dest_format: Format): [boolean, number];
 
         /**
          * Invokes the default query handler for the given pad.
@@ -13917,7 +13892,7 @@ export namespace Gst {
          * @param query the {@link Gst.Query} to handle.
          * @returns `true` if the query was performed successfully.
          */
-        query_default(parent: (Object | null), query: Query): boolean;
+        query_default(parent: Object | null, query: Query): boolean;
 
         /**
          * Queries a pad for the total stream duration.
@@ -13939,7 +13914,7 @@ export namespace Gst {
          * MT safe.
          * @param id the probe id to remove
          */
-        remove_probe(id: (bigint | number)): void;
+        remove_probe(id: bigint | number): void;
 
         /**
          * Sends the event to the pad. This function can be used
@@ -14068,7 +14043,7 @@ export namespace Gst {
          * Set the offset that will be applied to the running time of `pad`.
          * @param offset the offset
          */
-        set_offset(offset: (bigint | number)): void;
+        set_offset(offset: bigint | number): void;
 
         /**
          * Set the given query function for the pad.
@@ -14377,8 +14352,8 @@ export namespace Gst {
         interface ConstructorProps extends Bin.ConstructorProps, ChildProxy.ConstructorProps {
             auto_flush_bus: boolean;
             autoFlushBus: boolean;
-            delay: (bigint | number);
-            latency: (bigint | number);
+            delay: bigint | number;
+            latency: bigint | number;
         }
     }
 
@@ -14463,7 +14438,7 @@ export namespace Gst {
          * @default 0
          */
         get delay(): number;
-        set delay(val: (bigint | number));
+        set delay(val: bigint | number);
 
         /**
          * Latency to configure on the pipeline. See `gst_pipeline_set_latency()`.
@@ -14471,7 +14446,7 @@ export namespace Gst {
          * @default 18446744073709551615
          */
         get latency(): number;
-        set latency(val: (bigint | number));
+        set latency(val: bigint | number);
 
         /**
          * Compile-time signal type information.
@@ -14494,7 +14469,7 @@ export namespace Gst {
 
         _init(...args: any[]): void;
 
-        static ["new"](name: (string | null)): Pipeline;
+        static ["new"](name: string | null): Pipeline;
 
         // Signals
         /** @signal */
@@ -14633,7 +14608,7 @@ export namespace Gst {
          * MT safe.
          * @param clock the clock to use
          */
-        use_clock(clock: (Clock | null)): void;
+        use_clock(clock: Clock | null): void;
 
         /**
          * Emits the {@link Gst.ChildProxy.SignalSignatures.child_added | Gst.ChildProxy::child-added} signal.
@@ -14712,7 +14687,7 @@ export namespace Gst {
          * @param name name of the property to set
          * @param value new {@link GObject.Value} for the property
          */
-        set_property(name: string, value: (GObject.Value | any)): void;
+        set_property(name: string, value: GObject.Value | any): void;
 
         /**
          * Emits the {@link Gst.ChildProxy.SignalSignatures.child_added | Gst.ChildProxy::child-added} signal.
@@ -14792,9 +14767,7 @@ export namespace Gst {
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends Object.ConstructorProps {
-
-        }
+        interface ConstructorProps extends Object.ConstructorProps {}
     }
 
     /**
@@ -14860,7 +14833,7 @@ export namespace Gst {
          * Load the named plugin. Refs the plugin.
          * @param name name of plugin to load
          */
-        static load_by_name(name: string): (Plugin | null);
+        static load_by_name(name: string): Plugin | null;
 
         /**
          * Loads the given plugin and refs it.  Caller needs to unref after use.
@@ -14926,7 +14899,7 @@ export namespace Gst {
          * @param names `null`-terminated array of file names (or file name suffixes,     depending on `flags`) to be used in combination with the paths from     `paths` and/or the paths extracted from the environment variables in     `env_vars`, or `null`.
          * @param flags optional flags, or #GST_PLUGIN_DEPENDENCY_FLAG_NONE
          */
-        add_dependency(env_vars: (string[] | null), paths: (string[] | null), names: (string[] | null), flags: PluginDependencyFlags): void;
+        add_dependency(env_vars: string[] | null, paths: string[] | null, names: string[] | null, flags: PluginDependencyFlags): void;
 
         /**
          * Make GStreamer aware of external dependencies which affect the feature
@@ -14947,7 +14920,7 @@ export namespace Gst {
          * @param names one or more file names or file name suffixes (separated by commas),      or `null`
          * @param flags optional flags, or #GST_PLUGIN_DEPENDENCY_FLAG_NONE
          */
-        add_dependency_simple(env_vars: (string | null), paths: (string | null), names: (string | null), flags: PluginDependencyFlags): void;
+        add_dependency_simple(env_vars: string | null, paths: string | null, names: string | null, flags: PluginDependencyFlags): void;
 
         /**
          * @param message the status error message
@@ -14969,7 +14942,7 @@ export namespace Gst {
          * stored. This is the case when the registry is getting rebuilt.
          * @returns The cached data as a {@link Gst.Structure} or `null`.
          */
-        get_cache_data(): (Structure | null);
+        get_cache_data(): Structure | null;
 
         /**
          * Get the long descriptive name of the plugin
@@ -14981,7 +14954,7 @@ export namespace Gst {
          * get the filename of the plugin
          * @returns the filename of the plugin
          */
-        get_filename(): (string | null);
+        get_filename(): string | null;
 
         /**
          * get the license of the plugin
@@ -15024,7 +14997,7 @@ export namespace Gst {
          * There may be plugins that do not have a valid release date set on them.
          * @returns the date string of the plugin, or `null` if not available.
          */
-        get_release_date_string(): (string | null);
+        get_release_date_string(): string | null;
 
         /**
          * get the source module the plugin belongs to.
@@ -15035,17 +15008,17 @@ export namespace Gst {
         /**
          * @returns an array of plugin status error messages, or NULL
          */
-        get_status_errors(): (string[] | null);
+        get_status_errors(): string[] | null;
 
         /**
          * @returns an array of plugin status info messages, or NULL
          */
-        get_status_infos(): (string[] | null);
+        get_status_infos(): string[] | null;
 
         /**
          * @returns an array of plugin status warning messages, or NULL
          */
-        get_status_warnings(): (string[] | null);
+        get_status_warnings(): string[] | null;
 
         /**
          * get the version of the plugin
@@ -15074,7 +15047,7 @@ export namespace Gst {
          * 
          * @returns a reference to a loaded plugin, or `null` on error.
          */
-        load(): (Plugin | null);
+        load(): Plugin | null;
 
         /**
          * Adds plugin specific data to cache. Passes the ownership of the structure to
@@ -15095,9 +15068,7 @@ export namespace Gst {
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends Object.ConstructorProps {
-
-        }
+        interface ConstructorProps extends Object.ConstructorProps {}
     }
 
     /**
@@ -15182,13 +15153,13 @@ export namespace Gst {
          * Get the plugin that provides this feature.
          * @returns the plugin that provides this     feature, or `null`.  Unref with `gst_object_unref()` when no     longer needed.
          */
-        get_plugin(): (Plugin | null);
+        get_plugin(): Plugin | null;
 
         /**
          * Get the name of the plugin that provides this feature.
          * @returns the name of the plugin that provides this     feature, or `null` if the feature is not associated with a     plugin.
          */
-        get_plugin_name(): (string | null);
+        get_plugin_name(): string | null;
 
         /**
          * Gets the rank of a plugin feature.
@@ -15213,7 +15184,7 @@ export namespace Gst {
          * 
          * @returns a reference to the loaded feature, or `null` on error
          */
-        load(): (PluginFeature | null);
+        load(): PluginFeature | null;
 
         /**
          * Specifies a rank for a plugin feature, so that autoplugging uses
@@ -15236,9 +15207,7 @@ export namespace Gst {
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends Pad.ConstructorProps {
-
-        }
+        interface ConstructorProps extends Pad.ConstructorProps {}
     }
 
     /**
@@ -15284,7 +15253,7 @@ export namespace Gst {
          * @param parent the parent of `pad` or `null`
          * @param buffer the {@link Gst.Buffer} to send, return GST_FLOW_ERROR     if not.
          */
-        static chain_default(pad: Pad, parent: (Object | null), buffer: Buffer): FlowReturn;
+        static chain_default(pad: Pad, parent: Object | null, buffer: Buffer): FlowReturn;
 
         /**
          * Invoke the default chain list function of the proxy pad.
@@ -15292,7 +15261,7 @@ export namespace Gst {
          * @param parent the parent of `pad` or `null`
          * @param list the {@link Gst.BufferList} to send, return GST_FLOW_ERROR     if not.
          */
-        static chain_list_default(pad: Pad, parent: (Object | null), list: BufferList): FlowReturn;
+        static chain_list_default(pad: Pad, parent: Object | null, list: BufferList): FlowReturn;
 
         /**
          * Invoke the default getrange function of the proxy pad.
@@ -15301,14 +15270,14 @@ export namespace Gst {
          * @param offset The start offset of the buffer
          * @param size The length of the buffer
          */
-        static getrange_default(pad: Pad, parent: Object, offset: (bigint | number), size: number): [FlowReturn, Buffer];
+        static getrange_default(pad: Pad, parent: Object, offset: bigint | number, size: number): [FlowReturn, Buffer];
 
         /**
          * Invoke the default iterate internal links function of the proxy pad.
          * @param pad the {@link Gst.Pad} to get the internal links of.
          * @param parent the parent of `pad` or `null`
          */
-        static iterate_internal_links_default(pad: Pad, parent: (Object | null)): (Iterator | null);
+        static iterate_internal_links_default(pad: Pad, parent: Object | null): Iterator | null;
 
         // Methods
         /**
@@ -15318,7 +15287,7 @@ export namespace Gst {
          * pad of opposite direction, which is used to link to the target.
          * @returns the target {@link Gst.ProxyPad}, can be `null`.  Unref target pad after usage.
          */
-        get_internal(): (ProxyPad | null);
+        get_internal(): ProxyPad | null;
     }
 
 
@@ -15344,9 +15313,7 @@ export namespace Gst {
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends Object.ConstructorProps {
-
-        }
+        interface ConstructorProps extends Object.ConstructorProps {}
     }
 
     /**
@@ -15519,7 +15486,7 @@ export namespace Gst {
          * @param type the pluginfeature type to find
          * @returns the pluginfeature with the     given name and type or `null` if the plugin was not     found. `gst_object_unref()` after usage. MT safe.
          */
-        find_feature(name: string, type: GObject.GType): (PluginFeature | null);
+        find_feature(name: string, type: GObject.GType): PluginFeature | null;
 
         /**
          * Find the plugin with the given name in the registry.
@@ -15527,7 +15494,7 @@ export namespace Gst {
          * @param name the plugin name to find
          * @returns the plugin with the given name     or `null` if the plugin was not found. `gst_object_unref()` after     usage. MT safe.
          */
-        find_plugin(name: string): (Plugin | null);
+        find_plugin(name: string): Plugin | null;
 
         /**
          * Retrieves a {@link GLib.List} of {@link Gst.PluginFeature} of `type`.
@@ -15563,14 +15530,14 @@ export namespace Gst {
          * @param filename the name of the file to look up
          * @returns the {@link Gst.Plugin} if found, or     `null` if not.  `gst_object_unref()` after usage.
          */
-        lookup(filename: string): (Plugin | null);
+        lookup(filename: string): Plugin | null;
 
         /**
          * Find a {@link Gst.PluginFeature} with `name` in `registry`.
          * @param name a {@link Gst.PluginFeature} name
          * @returns a {@link Gst.PluginFeature} with its refcount incremented,     use `gst_object_unref()` after usage. MT safe.
          */
-        lookup_feature(name: string): (PluginFeature | null);
+        lookup_feature(name: string): PluginFeature | null;
 
         /**
          * Runs a filter against all plugins in the registry and returns a {@link GLib.List} with
@@ -15618,9 +15585,7 @@ export namespace Gst {
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends TaskPool.ConstructorProps {
-
-        }
+        interface ConstructorProps extends TaskPool.ConstructorProps {}
     }
 
     /**
@@ -15692,14 +15657,14 @@ export namespace Gst {
 
         // Constructor properties interface
         interface ConstructorProps extends Object.ConstructorProps {
-            caps: (Caps | null);
+            caps: Caps | null;
             stream_flags: StreamFlags;
             streamFlags: StreamFlags;
-            stream_id: (string | null);
-            streamId: (string | null);
+            stream_id: string | null;
+            streamId: string | null;
             stream_type: StreamType;
             streamType: StreamType;
-            tags: (TagList | null);
+            tags: TagList | null;
         }
     }
 
@@ -15726,8 +15691,8 @@ export namespace Gst {
         /**
          * The {@link Gst.Caps} of the {@link Gst.Stream}.
          */
-        get caps(): (Caps | null);
-        set caps(val: (Caps | null));
+        get caps(): Caps | null;
+        set caps(val: Caps | null);
 
         /**
          * @default Gst.StreamFlags.NONE
@@ -15747,7 +15712,7 @@ export namespace Gst {
          * @construct-only
          * @default null
          */
-        get stream_id(): (string | null);
+        get stream_id(): string | null;
 
         /**
          * The unique identifier of the {@link Gst.Stream}. Can only be set at construction
@@ -15755,7 +15720,7 @@ export namespace Gst {
          * @construct-only
          * @default null
          */
-        get streamId(): (string | null);
+        get streamId(): string | null;
 
         /**
          * The {@link Gst.StreamType} of the {@link Gst.Stream}. Can only be set at construction time.
@@ -15774,8 +15739,8 @@ export namespace Gst {
         /**
          * The {@link Gst.TagList} of the {@link Gst.Stream}.
          */
-        get tags(): (TagList | null);
-        set tags(val: (TagList | null));
+        get tags(): TagList | null;
+        set tags(val: TagList | null);
 
         /**
          * Compile-time signal type information.
@@ -15791,7 +15756,7 @@ export namespace Gst {
 
         _init(...args: any[]): void;
 
-        static ["new"](stream_id: (string | null), caps: (Caps | null), type: StreamType, flags: StreamFlags): Stream;
+        static ["new"](stream_id: string | null, caps: Caps | null, type: StreamType, flags: StreamFlags): Stream;
 
         // Signals
         /** @signal */
@@ -15811,7 +15776,7 @@ export namespace Gst {
          * Retrieve the caps for `stream`, if any
          * @returns The {@link Gst.Caps} for `stream`
          */
-        get_caps(): (Caps | null);
+        get_caps(): Caps | null;
 
         /**
          * Retrieve the current stream flags for `stream`
@@ -15823,7 +15788,7 @@ export namespace Gst {
          * Returns the stream ID of `stream`.
          * @returns the stream ID of `stream`. Only valid during the lifetime of `stream`.
          */
-        get_stream_id(): (string | null);
+        get_stream_id(): string | null;
 
         /**
          * Retrieve the stream type for `stream`
@@ -15835,13 +15800,13 @@ export namespace Gst {
          * Retrieve the tags for `stream`, if any
          * @returns The {@link Gst.TagList} for `stream`
          */
-        get_tags(): (TagList | null);
+        get_tags(): TagList | null;
 
         /**
          * Set the caps for the {@link Gst.Stream}
          * @param caps a {@link Gst.Caps}
          */
-        set_caps(caps: (Caps | null)): void;
+        set_caps(caps: Caps | null): void;
 
         /**
          * Set the `flags` for the `stream`.
@@ -15859,7 +15824,7 @@ export namespace Gst {
          * Set the tags for the {@link Gst.Stream}
          * @param tags a {@link Gst.TagList}
          */
-        set_tags(tags: (TagList | null)): void;
+        set_tags(tags: TagList | null): void;
     }
 
 
@@ -15906,8 +15871,8 @@ export namespace Gst {
 
         // Constructor properties interface
         interface ConstructorProps extends Object.ConstructorProps {
-            upstream_id: (string | null);
-            upstreamId: (string | null);
+            upstream_id: string | null;
+            upstreamId: string | null;
         }
     }
 
@@ -15939,15 +15904,15 @@ export namespace Gst {
          * stream-id
          * @default null
          */
-        get upstream_id(): (string | null);
-        set upstream_id(val: (string | null));
+        get upstream_id(): string | null;
+        set upstream_id(val: string | null);
 
         /**
          * stream-id
          * @default null
          */
-        get upstreamId(): (string | null);
-        set upstreamId(val: (string | null));
+        get upstreamId(): string | null;
+        set upstreamId(val: string | null);
 
         /**
          * Compile-time signal type information.
@@ -15963,7 +15928,7 @@ export namespace Gst {
 
         _init(...args: any[]): void;
 
-        static ["new"](upstream_id: (string | null)): StreamCollection;
+        static ["new"](upstream_id: string | null): StreamCollection;
 
         // Signals
         /** @signal */
@@ -16008,13 +15973,13 @@ export namespace Gst {
          * @param index Index of the stream to retrieve
          * @returns A {@link Gst.Stream}
          */
-        get_stream(index: number): (Stream | null);
+        get_stream(index: number): Stream | null;
 
         /**
          * Returns the upstream id of the `collection`.
          * @returns The upstream id
          */
-        get_upstream_id(): (string | null);
+        get_upstream_id(): string | null;
     }
 
 
@@ -16113,7 +16078,7 @@ export namespace Gst {
          * MT safe.
          * @param new_clock a {@link Gst.Clock}
          */
-        static set_default(new_clock: (Clock | null)): void;
+        static set_default(new_clock: Clock | null): void;
     }
 
 
@@ -16125,9 +16090,7 @@ export namespace Gst {
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends Object.ConstructorProps {
-
-        }
+        interface ConstructorProps extends Object.ConstructorProps {}
     }
 
     /**
@@ -16195,7 +16158,7 @@ export namespace Gst {
 
         
     // This field conflicts with a function in a parent class or interface.
-    notify: (GLib.DestroyNotify | any);
+    notify: GLib.DestroyNotify | any;
 
         running: boolean;
 
@@ -16348,9 +16311,7 @@ export namespace Gst {
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends Object.ConstructorProps {
-
-        }
+        interface ConstructorProps extends Object.ConstructorProps {}
     }
 
     /**
@@ -16564,7 +16525,7 @@ export namespace Gst {
          * @param name The name for registering
          * @param type GType of tracer to register
          */
-        static register(plugin: (Plugin | null), name: string, type: GObject.GType): boolean;
+        static register(plugin: Plugin | null, name: string, type: GObject.GType): boolean;
     }
 
 
@@ -16576,9 +16537,7 @@ export namespace Gst {
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends PluginFeature.ConstructorProps {
-
-        }
+        interface ConstructorProps extends PluginFeature.ConstructorProps {}
     }
 
     /**
@@ -16647,9 +16606,7 @@ export namespace Gst {
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends Object.ConstructorProps {
-
-        }
+        interface ConstructorProps extends Object.ConstructorProps {}
     }
 
     /**
@@ -16698,9 +16655,7 @@ export namespace Gst {
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends PluginFeature.ConstructorProps {
-
-        }
+        interface ConstructorProps extends PluginFeature.ConstructorProps {}
     }
 
     /**
@@ -16810,7 +16765,7 @@ export namespace Gst {
          * Gets the {@link Gst.Caps} associated with a typefind factory.
          * @returns the {@link Gst.Caps} associated with this factory
          */
-        get_caps(): (Caps | null);
+        get_caps(): Caps | null;
 
         /**
          * Gets the extensions associated with a {@link Gst.TypeFindFactory}. The returned
@@ -16819,7 +16774,7 @@ export namespace Gst {
          * a 0-length list.
          * @returns a `null`-terminated array of extensions associated with this factory
          */
-        get_extensions(): (string[] | null);
+        get_extensions(): string[] | null;
 
         /**
          * Check whether the factory has a typefind function. Typefind factories
@@ -16833,8 +16788,7 @@ export namespace Gst {
 
     namespace ValueArray {
         // Signal signatures
-        interface SignalSignatures extends GObject.Object.SignalSignatures {
-        }
+        interface SignalSignatures extends GObject.Object.SignalSignatures {}
     }
 
     /**
@@ -16866,20 +16820,20 @@ export namespace Gst {
          * @param value a {@link GObject.Value} of type #GST_TYPE_ARRAY
          * @param append_value the value to append
          */
-        static append_and_take_value(value: (GObject.Value | any), append_value: (GObject.Value | any)): void;
+        static append_and_take_value(value: GObject.Value | any, append_value: GObject.Value | any): void;
 
         /**
          * Appends `append_value` to the GstValueArray in `value`.
          * @param value a {@link GObject.Value} of type #GST_TYPE_ARRAY
          * @param append_value the value to append
          */
-        static append_value(value: (GObject.Value | any), append_value: (GObject.Value | any)): void;
+        static append_value(value: GObject.Value | any, append_value: GObject.Value | any): void;
 
         /**
          * Gets the number of values contained in `value`.
          * @param value a {@link GObject.Value} of type #GST_TYPE_ARRAY
          */
-        static get_size(value: (GObject.Value | any)): number;
+        static get_size(value: GObject.Value | any): number;
 
         /**
          * Gets the value that is a member of the array contained in `value` and
@@ -16887,28 +16841,27 @@ export namespace Gst {
          * @param value a {@link GObject.Value} of type #GST_TYPE_ARRAY
          * @param index index of value to get from the array
          */
-        static get_value(value: (GObject.Value | any), index: number): unknown;
+        static get_value(value: GObject.Value | any, index: number): unknown;
 
         /**
          * Initializes and pre-allocates a {@link GObject.Value} of type #GST_TYPE_ARRAY.
          * @param value A zero-filled (uninitialized) {@link GObject.Value} structure
          * @param prealloc The number of entries to pre-allocate in the array
          */
-        static init(value: (GObject.Value | any), prealloc: number): unknown;
+        static init(value: GObject.Value | any, prealloc: number): unknown;
 
         /**
          * Prepends `prepend_value` to the GstValueArray in `value`.
          * @param value a {@link GObject.Value} of type #GST_TYPE_ARRAY
          * @param prepend_value the value to prepend
          */
-        static prepend_value(value: (GObject.Value | any), prepend_value: (GObject.Value | any)): void;
+        static prepend_value(value: GObject.Value | any, prepend_value: GObject.Value | any): void;
     }
 
 
     namespace ValueList {
         // Signal signatures
-        interface SignalSignatures extends GObject.Object.SignalSignatures {
-        }
+        interface SignalSignatures extends GObject.Object.SignalSignatures {}
     }
 
     /**
@@ -16940,14 +16893,14 @@ export namespace Gst {
          * @param value a {@link GObject.Value} of type #GST_TYPE_LIST
          * @param append_value the value to append
          */
-        static append_and_take_value(value: (GObject.Value | any), append_value: (GObject.Value | any)): void;
+        static append_and_take_value(value: GObject.Value | any, append_value: GObject.Value | any): void;
 
         /**
          * Appends `append_value` to the GstValueList in `value`.
          * @param value a {@link GObject.Value} of type #GST_TYPE_LIST
          * @param append_value the value to append
          */
-        static append_value(value: (GObject.Value | any), append_value: (GObject.Value | any)): void;
+        static append_value(value: GObject.Value | any, append_value: GObject.Value | any): void;
 
         /**
          * Concatenates copies of `value1` and `value2` into a list.  Values that are not
@@ -16956,13 +16909,13 @@ export namespace Gst {
          * @param value1 a {@link GObject.Value}
          * @param value2 a {@link GObject.Value}
          */
-        static concat(value1: (GObject.Value | any), value2: (GObject.Value | any)): unknown;
+        static concat(value1: GObject.Value | any, value2: GObject.Value | any): unknown;
 
         /**
          * Gets the number of values contained in `value`.
          * @param value a {@link GObject.Value} of type #GST_TYPE_LIST
          */
-        static get_size(value: (GObject.Value | any)): number;
+        static get_size(value: GObject.Value | any): number;
 
         /**
          * Gets the value that is a member of the list contained in `value` and
@@ -16970,14 +16923,14 @@ export namespace Gst {
          * @param value a {@link GObject.Value} of type #GST_TYPE_LIST
          * @param index index of value to get from the list
          */
-        static get_value(value: (GObject.Value | any), index: number): unknown;
+        static get_value(value: GObject.Value | any, index: number): unknown;
 
         /**
          * Initializes and pre-allocates a {@link GObject.Value} of type #GST_TYPE_LIST.
          * @param value A zero-filled (uninitialized) {@link GObject.Value} structure
          * @param prealloc The number of entries to pre-allocate in the list
          */
-        static init(value: (GObject.Value | any), prealloc: number): unknown;
+        static init(value: GObject.Value | any, prealloc: number): unknown;
 
         /**
          * Merges copies of `value1` and `value2`.  Values that are not
@@ -16989,14 +16942,14 @@ export namespace Gst {
          * @param value1 a {@link GObject.Value}
          * @param value2 a {@link GObject.Value}
          */
-        static merge(value1: (GObject.Value | any), value2: (GObject.Value | any)): unknown;
+        static merge(value1: GObject.Value | any, value2: GObject.Value | any): unknown;
 
         /**
          * Prepends `prepend_value` to the GstValueList in `value`.
          * @param value a {@link GObject.Value} of type #GST_TYPE_LIST
          * @param prepend_value the value to prepend
          */
-        static prepend_value(value: (GObject.Value | any), prepend_value: (GObject.Value | any)): void;
+        static prepend_value(value: GObject.Value | any, prepend_value: GObject.Value | any): void;
     }
 
 
@@ -17032,7 +16985,7 @@ export namespace Gst {
          * Create a copy of `params`.
          * @returns a new {@link Gst.AllocationParams}.
          */
-        copy(): (AllocationParams | null);
+        copy(): AllocationParams | null;
 
         /**
          * Free `params`
@@ -17243,15 +17196,15 @@ export namespace Gst {
 
         static ["new"](): Buffer;
 
-        static new_allocate(allocator: (Allocator | null), size: (bigint | number), params: (AllocationParams | null)): Buffer;
+        static new_allocate(allocator: Allocator | null, size: bigint | number, params: AllocationParams | null): Buffer;
 
-        static new_memdup(data: (Uint8Array | string)): Buffer;
+        static new_memdup(data: Uint8Array | string): Buffer;
 
-        static new_wrapped(data: (Uint8Array | string)): Buffer;
+        static new_wrapped(data: Uint8Array | string): Buffer;
 
-        static new_wrapped_bytes(bytes: (GLib.Bytes | Uint8Array)): Buffer;
+        static new_wrapped_bytes(bytes: GLib.Bytes | Uint8Array): Buffer;
 
-        static new_wrapped_full(flags: MemoryFlags, data: (Uint8Array | string), maxsize: (bigint | number), offset: (bigint | number), notify: (GLib.DestroyNotify | null)): Buffer;
+        static new_wrapped_full(flags: MemoryFlags, data: Uint8Array | string, maxsize: bigint | number, offset: bigint | number, notify: GLib.DestroyNotify | null): Buffer;
 
         // Static methods
         /**
@@ -17270,7 +17223,7 @@ export namespace Gst {
          * @param name the registered name of the desired custom meta
          * @returns The {@link Gst.CustomMeta} that was added to the buffer
          */
-        add_custom_meta(name: string): (CustomMeta | null);
+        add_custom_meta(name: string): CustomMeta | null;
 
         /**
          * Adds metadata for `info` to `buffer` using the parameters in `params`.
@@ -17278,7 +17231,7 @@ export namespace Gst {
          * @param params params for `info`
          * @returns the metadata for the api in `info` on `buffer`.
          */
-        add_meta(info: MetaInfo, params: null): (Meta | null);
+        add_meta(info: MetaInfo, params: null): Meta | null;
 
         /**
          * Adds a {@link Gst.ParentBufferMeta} to `buffer` that holds a reference on
@@ -17286,7 +17239,7 @@ export namespace Gst {
          * @param ref a {@link Gst.Buffer} to ref
          * @returns The {@link Gst.ParentBufferMeta} that was added to the buffer
          */
-        add_parent_buffer_meta(ref: Buffer): (ParentBufferMeta | null);
+        add_parent_buffer_meta(ref: Buffer): ParentBufferMeta | null;
 
         /**
          * Attaches protection metadata to a {@link Gst.Buffer}.
@@ -17304,7 +17257,7 @@ export namespace Gst {
          * @param duration duration, or `GST_CLOCK_TIME_NONE`
          * @returns The {@link Gst.ReferenceTimestampMeta} that was added to the buffer
          */
-        add_reference_timestamp_meta(reference: Caps, timestamp: ClockTime, duration: ClockTime): (ReferenceTimestampMeta | null);
+        add_reference_timestamp_meta(reference: Caps, timestamp: ClockTime, duration: ClockTime): ReferenceTimestampMeta | null;
 
         /**
          * Appends all the memory from `buf2` to `buf1`. The result buffer will contain a
@@ -17333,14 +17286,14 @@ export namespace Gst {
          * @param size the size or -1 of `buf2`
          * @returns the new {@link Gst.Buffer} that contains the memory     of the two source buffers.
          */
-        append_region(buf2: Buffer, offset: (bigint | number), size: (bigint | number)): Buffer;
+        append_region(buf2: Buffer, offset: bigint | number, size: bigint | number): Buffer;
 
         /**
          * Creates a copy of the given buffer. This will make a newly allocated
          * copy of the data the source buffer contains.
          * @returns a new copy of `buf` if the copy succeeded, `null` otherwise.
          */
-        copy_deep(): (Buffer | null);
+        copy_deep(): Buffer | null;
 
         /**
          * Copies the information from `src` into `dest`.
@@ -17355,7 +17308,7 @@ export namespace Gst {
          * @param size total size to copy. If -1, all data is copied.
          * @returns `true` if the copying succeeded, `false` otherwise.
          */
-        copy_into(src: Buffer, flags: BufferCopyFlags, offset: (bigint | number), size: (bigint | number)): boolean;
+        copy_into(src: Buffer, flags: BufferCopyFlags, offset: bigint | number, size: bigint | number): boolean;
 
         /**
          * Creates a sub-buffer from `parent` at `offset` and `size`.
@@ -17371,14 +17324,14 @@ export namespace Gst {
          * @param size the size of the new {@link Gst.Buffer} sub-buffer, in bytes. If -1, all        data is copied.
          * @returns the new {@link Gst.Buffer} or `null` if copying     failed.
          */
-        copy_region(flags: BufferCopyFlags, offset: (bigint | number), size: (bigint | number)): (Buffer | null);
+        copy_region(flags: BufferCopyFlags, offset: bigint | number, size: bigint | number): Buffer | null;
 
         /**
          * Copies `size` bytes starting from `offset` in `buffer` to `dest`.
          * @param offset the offset to extract
          * @returns The amount of bytes extracted. This value can be lower than `size`    when `buffer` did not contain enough data.
          */
-        extract(offset: (bigint | number)): [number, Uint8Array];
+        extract(offset: bigint | number): [number, Uint8Array];
 
         /**
          * Extracts a copy of at most `size` bytes the data at `offset` into
@@ -17386,7 +17339,7 @@ export namespace Gst {
          * @param offset the offset to extract
          * @param size the size to extract
          */
-        extract_dup(offset: (bigint | number), size: (bigint | number)): Uint8Array;
+        extract_dup(offset: bigint | number, size: bigint | number): Uint8Array;
 
         /**
          * Copies `size` bytes from `src` to `buffer` at `offset`.
@@ -17394,7 +17347,7 @@ export namespace Gst {
          * @param src the source address
          * @returns The amount of bytes copied. This value can be lower than `size`    when `buffer` did not contain enough data.
          */
-        fill(offset: (bigint | number), src: (Uint8Array | string)): number;
+        fill(offset: bigint | number, src: Uint8Array | string): number;
 
         /**
          * Finds the memory blocks that span `size` bytes starting from `offset`
@@ -17411,7 +17364,7 @@ export namespace Gst {
          * @param size a size
          * @returns `true` when `size` bytes starting from `offset` could be found in `buffer` and `idx`, `length` and `skip` will be filled.
          */
-        find_memory(offset: (bigint | number), size: (bigint | number)): [boolean, number, number, number];
+        find_memory(offset: bigint | number, size: bigint | number): [boolean, number, number, number];
 
         /**
          * Calls `func` with `user_data` for each meta in `buffer`.
@@ -17429,14 +17382,14 @@ export namespace Gst {
          * into one large {@link Gst.Memory}.
          * @returns a {@link Gst.Memory} that contains the merged memory.
          */
-        get_all_memory(): (Memory | null);
+        get_all_memory(): Memory | null;
 
         /**
          * Finds the first {@link Gst.CustomMeta} on `buffer` for the desired `name`.
          * @param name the registered name of the custom meta to retrieve.
          * @returns the {@link Gst.CustomMeta}
          */
-        get_custom_meta(name: string): (CustomMeta | null);
+        get_custom_meta(name: string): CustomMeta | null;
 
         /**
          * Gets the {@link Gst.BufferFlags} flags set on this buffer.
@@ -17449,7 +17402,7 @@ export namespace Gst {
          * @param idx an index
          * @returns a {@link Gst.Memory} that contains the data of the memory block at `idx`.
          */
-        get_memory(idx: number): (Memory | null);
+        get_memory(idx: number): Memory | null;
 
         /**
          * Gets `length` memory blocks in `buffer` starting at `idx`. The memory blocks will
@@ -17460,7 +17413,7 @@ export namespace Gst {
          * @param length a length
          * @returns a {@link Gst.Memory} that contains the merged data of `length`    blocks starting at `idx`.
          */
-        get_memory_range(idx: number, length: number): (Memory | null);
+        get_memory_range(idx: number, length: number): Memory | null;
 
         /**
          * Gets the metadata for `api` on buffer. When there is no such metadata, `null` is
@@ -17471,7 +17424,7 @@ export namespace Gst {
          * @param api the {@link GObject.GType} of an API
          * @returns the metadata for `api` on `buffer`.
          */
-        get_meta(api: GObject.GType): (Meta | null);
+        get_meta(api: GObject.GType): Meta | null;
 
         /**
          * @param api_type the {@link GObject.GType} of an API
@@ -17488,7 +17441,7 @@ export namespace Gst {
          * @param reference a reference {@link Gst.Caps}
          * @returns the {@link Gst.ReferenceTimestampMeta} or `null` when there is no such metadata on `buffer`.
          */
-        get_reference_timestamp_meta(reference: (Caps | null)): (ReferenceTimestampMeta | null);
+        get_reference_timestamp_meta(reference: Caps | null): ReferenceTimestampMeta | null;
 
         /**
          * Gets the total size of the memory blocks in `buffer`.
@@ -17609,7 +17562,7 @@ export namespace Gst {
          * @param mem the memory to compare
          * @returns 0 if the memory is equal.
          */
-        memcmp(offset: (bigint | number), mem: (Uint8Array | string)): number;
+        memcmp(offset: bigint | number, mem: Uint8Array | string): number;
 
         /**
          * Fills `buf` with `size` bytes with `val` starting from `offset`.
@@ -17618,7 +17571,7 @@ export namespace Gst {
          * @param size the size to set
          * @returns The amount of bytes filled. This value can be lower than `size`    when `buffer` did not contain enough data.
          */
-        memset(offset: (bigint | number), val: number, size: (bigint | number)): number;
+        memset(offset: bigint | number, val: number, size: bigint | number): number;
 
         /**
          * Gets the amount of memory blocks that this buffer has. This amount is never
@@ -17634,7 +17587,7 @@ export namespace Gst {
          * @param idx an index
          * @returns the {@link Gst.Memory} at `idx`.
          */
-        peek_memory(idx: number): (Memory | null);
+        peek_memory(idx: number): Memory | null;
 
         /**
          * Prepends the memory block `mem` to `buffer`. This function takes
@@ -17704,7 +17657,7 @@ export namespace Gst {
          * @param offset the offset adjustment
          * @param size the new size or -1 to just adjust the offset
          */
-        resize(offset: (bigint | number), size: (bigint | number)): void;
+        resize(offset: bigint | number, size: bigint | number): void;
 
         /**
          * Sets the total size of the `length` memory blocks starting at `idx` in
@@ -17715,7 +17668,7 @@ export namespace Gst {
          * @param size the new size or -1 to just adjust the offset
          * @returns `true` if resizing succeeded, `false` otherwise.
          */
-        resize_range(idx: number, length: number, offset: (bigint | number), size: (bigint | number)): boolean;
+        resize_range(idx: number, length: number, offset: bigint | number, size: bigint | number): boolean;
 
         /**
          * Sets one or more buffer flags on a buffer.
@@ -17728,7 +17681,7 @@ export namespace Gst {
          * Sets the total size of the memory blocks in `buffer`.
          * @param size the new size
          */
-        set_size(size: (bigint | number)): void;
+        set_size(size: bigint | number): void;
 
         /**
          * Releases the memory previously mapped with `gst_buffer_map()`.
@@ -17760,10 +17713,7 @@ export namespace Gst {
         static $gtype: GObject.GType<BufferList>;
 
         // Constructors
-
-        constructor(properties?: Partial<{
-
-        }>);
+        constructor(properties?: Partial<{}>);
 
         static ["new"](): BufferList;
 
@@ -17803,7 +17753,7 @@ export namespace Gst {
          * @param idx the index
          * @returns the buffer at `idx` in `group`     or `null` when there is no buffer. The buffer remains valid as     long as `list` is valid and buffer is not removed from the list.
          */
-        get(idx: number): (Buffer | null);
+        get(idx: number): Buffer | null;
 
         /**
          * Gets the buffer at `idx`, ensuring it is a writable buffer.
@@ -17813,7 +17763,7 @@ export namespace Gst {
          * @param idx the index
          * @returns the buffer at `idx` in `group`.     The returned  buffer remains valid as long as `list` is valid and     the buffer is not removed from the list.
          */
-        get_writable(idx: number): (Buffer | null);
+        get_writable(idx: number): Buffer | null;
 
         /**
          * Inserts `buffer` at `idx` in `list`. Other buffers are moved to make room for
@@ -17972,7 +17922,7 @@ export namespace Gst {
          * when there were nested {@link Gst.Caps} / {@link Gst.Structure} deeper than one level.
          * @param string a string to convert to {@link Gst.Caps}
          */
-        static from_string(string: string): (Caps | null);
+        static from_string(string: string): Caps | null;
 
         // Methods
         /**
@@ -17996,7 +17946,7 @@ export namespace Gst {
          * @param structure the {@link Gst.Structure} to append
          * @param features the {@link Gst.CapsFeatures} to append
          */
-        append_structure_full(structure: Structure, features: (CapsFeatures | null)): void;
+        append_structure_full(structure: Structure, features: CapsFeatures | null): void;
 
         /**
          * Tries intersecting `caps1` and `caps2` and reports whether the result would not
@@ -18076,7 +18026,7 @@ export namespace Gst {
          * @param index the index of the structure
          * @returns a pointer to the {@link Gst.CapsFeatures}     corresponding to `index`
          */
-        get_features(index: number): (CapsFeatures | null);
+        get_features(index: number): CapsFeatures | null;
 
         /**
          * Gets the number of structures contained in `caps`.
@@ -18191,7 +18141,7 @@ export namespace Gst {
          * @param features a {@link Gst.CapsFeatures} for `structure`
          * @returns `true` if `structure` is a subset of `caps`
          */
-        is_subset_structure_full(structure: Structure, features: (CapsFeatures | null)): boolean;
+        is_subset_structure_full(structure: Structure, features: CapsFeatures | null): boolean;
 
         /**
          * Calls the provided function once for each structure and caps feature in the
@@ -18225,7 +18175,7 @@ export namespace Gst {
          * @param features the {@link Gst.CapsFeatures} to merge
          * @returns the merged caps.
          */
-        merge_structure_full(structure: Structure, features: (CapsFeatures | null)): Caps;
+        merge_structure_full(structure: Structure, features: CapsFeatures | null): Caps;
 
         /**
          * Returns a {@link Gst.Caps} that represents the same set of formats as
@@ -18266,13 +18216,13 @@ export namespace Gst {
          * @param index the index of the structure
          * @param features the {@link Gst.CapsFeatures} to set
          */
-        set_features(index: number, features: (CapsFeatures | null)): void;
+        set_features(index: number, features: CapsFeatures | null): void;
 
         /**
          * Sets the `features` for all the structures of `caps`.
          * @param features the {@link Gst.CapsFeatures} to set
          */
-        set_features_simple(features: (CapsFeatures | null)): void;
+        set_features_simple(features: CapsFeatures | null): void;
 
         /**
          * Sets the given `field` on all structures of `caps` to the given `value`.
@@ -18281,7 +18231,7 @@ export namespace Gst {
          * @param field name of the field to set
          * @param value value to set the field to
          */
-        set_value(field: string, value: (GObject.Value | any)): void;
+        set_value(field: string, value: GObject.Value | any): void;
 
         /**
          * Converts the given `caps` into a representation that represents the
@@ -18304,7 +18254,7 @@ export namespace Gst {
          * @param index Index of the structure to retrieve
          * @returns a pointer to the {@link Gst.Structure}     corresponding to `index`.
          */
-        steal_structure(index: number): (Structure | null);
+        steal_structure(index: number): Structure | null;
 
         /**
          * Subtracts the `subtrahend` from the `minuend`.
@@ -18376,10 +18326,7 @@ export namespace Gst {
         static $gtype: GObject.GType<CapsFeatures>;
 
         // Constructors
-
-        constructor(properties?: Partial<{
-
-        }>);
+        constructor(properties?: Partial<{}>);
 
         static new_any(): CapsFeatures;
 
@@ -18392,7 +18339,7 @@ export namespace Gst {
          * Creates a {@link Gst.CapsFeatures} from a string representation.
          * @param features a string representation of a {@link Gst.CapsFeatures}.
          */
-        static from_string(features: string): (CapsFeatures | null);
+        static from_string(features: string): CapsFeatures | null;
 
         // Methods
         /**
@@ -18438,7 +18385,7 @@ export namespace Gst {
          * @param i index of the feature
          * @returns The `i`-th feature of `features`.
          */
-        get_nth(i: number): (string | null);
+        get_nth(i: number): string | null;
 
         /**
          * Returns the `i`-th feature of `features`.
@@ -18675,24 +18622,21 @@ export namespace Gst {
         static $gtype: GObject.GType<DateTime>;
 
         // Constructors
-
-        constructor(properties?: Partial<{
-
-        }>);
+        constructor(properties?: Partial<{}>);
 
         static ["new"](tzoffset: number, year: number, month: number, day: number, hour: number, minute: number, seconds: number): DateTime;
 
-        static new_from_g_date_time(dt: (GLib.DateTime | null)): DateTime;
+        static new_from_g_date_time(dt: GLib.DateTime | null): DateTime;
 
         static new_from_iso8601_string(string: string): DateTime;
 
-        static new_from_unix_epoch_local_time(secs: (bigint | number)): DateTime;
+        static new_from_unix_epoch_local_time(secs: bigint | number): DateTime;
 
-        static new_from_unix_epoch_local_time_usecs(usecs: (bigint | number)): DateTime;
+        static new_from_unix_epoch_local_time_usecs(usecs: bigint | number): DateTime;
 
-        static new_from_unix_epoch_utc(secs: (bigint | number)): DateTime;
+        static new_from_unix_epoch_utc(secs: bigint | number): DateTime;
 
-        static new_from_unix_epoch_utc_usecs(usecs: (bigint | number)): DateTime;
+        static new_from_unix_epoch_utc_usecs(usecs: bigint | number): DateTime;
 
         static new_local_time(year: number, month: number, day: number, hour: number, minute: number, seconds: number): DateTime;
 
@@ -18798,7 +18742,7 @@ export namespace Gst {
          * Creates a new {@link GLib.DateTime} from a fully defined {@link Gst.DateTime} object.
          * @returns a newly created {@link GLib.DateTime}, or `null` on error or if `datetime` does not have a year, month, day, hour, minute and second.
          */
-        to_g_date_time(): (GLib.DateTime | null);
+        to_g_date_time(): GLib.DateTime | null;
 
         /**
          * Create a minimal string compatible with ISO-8601. Possible output formats
@@ -18806,7 +18750,7 @@ export namespace Gst {
          * `2012-06-23T23:30+0100`, `2012-06-23T23:30:59Z`, `2012-06-23T23:30:59+0100`
          * @returns a newly allocated string formatted according     to ISO 8601 and only including the datetime fields that are     valid, or `null` in case there was an error.
          */
-        to_iso8601_string(): (string | null);
+        to_iso8601_string(): string | null;
 
         /**
          * Atomically decrements the reference count of `datetime` by one.  When the
@@ -18825,10 +18769,7 @@ export namespace Gst {
         static $gtype: GObject.GType<DebugCategory>;
 
         // Constructors
-
-        constructor(properties?: Partial<{
-
-        }>);
+        constructor(properties?: Partial<{}>);
 
         // Methods
         /**
@@ -18895,14 +18836,14 @@ export namespace Gst {
          * in debug handlers to extract the message.
          * @returns the string representation of a {@link Gst.DebugMessage}.
          */
-        get(): (string | null);
+        get(): string | null;
 
         /**
          * Get the id of the object that emitted this message. This function is used in
          * debug handlers. Can be empty.
          * @returns The emitter of a {@link Gst.DebugMessage}.
          */
-        get_id(): (string | null);
+        get_id(): string | null;
     }
 
 
@@ -19030,7 +18971,7 @@ export namespace Gst {
             seqnum: number;
         }>);
 
-        static new_buffer_size(format: Format, minsize: (bigint | number), maxsize: (bigint | number), async: boolean): Event;
+        static new_buffer_size(format: Format, minsize: bigint | number, maxsize: bigint | number, async: boolean): Event;
 
         static new_caps(caps: Caps): Event;
 
@@ -19058,17 +18999,17 @@ export namespace Gst {
 
         static new_reconfigure(): Event;
 
-        static new_seek(rate: number, format: Format, flags: SeekFlags, start_type: SeekType, start: (bigint | number), stop_type: SeekType, stop: (bigint | number)): Event;
+        static new_seek(rate: number, format: Format, flags: SeekFlags, start_type: SeekType, start: bigint | number, stop_type: SeekType, stop: bigint | number): Event;
 
         static new_segment(segment: Segment): Event;
 
-        static new_segment_done(format: Format, position: (bigint | number)): Event;
+        static new_segment_done(format: Format, position: bigint | number): Event;
 
         static new_select_streams(streams: string[]): Event;
 
         static new_sink_message(name: string, msg: Message): Event;
 
-        static new_step(format: Format, amount: (bigint | number), rate: number, flush: boolean, intermediate: boolean): Event;
+        static new_step(format: Format, amount: bigint | number, rate: number, flush: boolean, intermediate: boolean): Event;
 
         static new_stream_collection(collection: StreamCollection): Event;
 
@@ -19125,7 +19066,7 @@ export namespace Gst {
          * Access the structure of the event.
          * @returns The structure of the event. The structure is still owned by the event, which means that you should not free it and that the pointer becomes invalid when you free the event. MT safe.
          */
-        get_structure(): (Structure | null);
+        get_structure(): Structure | null;
 
         /**
          * Checks if `event` has the given `name`. This function is usually used to
@@ -19313,7 +19254,7 @@ export namespace Gst {
          * MT safe.
          * @param offset A the new running time offset
          */
-        set_running_time_offset(offset: (bigint | number)): void;
+        set_running_time_offset(offset: bigint | number): void;
 
         /**
          * Sets a trickmode interval on a (writable) seek event. Elements
@@ -19445,7 +19386,7 @@ export namespace Gst {
         // Constructors
         constructor(size: number, type: GObject.GType, lock: GLib.Mutex, master_cookie: number, copy: IteratorCopyFunction, next: IteratorNextFunction, item: IteratorItemFunction, resync: IteratorResyncFunction, free: IteratorFreeFunction);
 
-        static new_single(type: GObject.GType, object: (GObject.Value | any)): Iterator;
+        static new_single(type: GObject.GType, object: GObject.Value | any): Iterator;
 
         // Methods
         /**
@@ -19466,7 +19407,7 @@ export namespace Gst {
          * @param user_data user data passed to the compare function
          * @returns a new {@link Gst.Iterator}. MT safe.
          */
-        filter(func: GLib.CompareFunc, user_data: (GObject.Value | any)): Iterator;
+        filter(func: GLib.CompareFunc, user_data: GObject.Value | any): Iterator;
 
         /**
          * Find the first element in `it` that matches the compare function `func`.
@@ -19504,7 +19445,7 @@ export namespace Gst {
          * @param ret the seed value passed to the fold function
          * @returns A {@link Gst.IteratorResult}, as described above. MT safe.
          */
-        fold(func: IteratorFoldFunction, ret: (GObject.Value | any)): IteratorResult;
+        fold(func: IteratorFoldFunction, ret: GObject.Value | any): IteratorResult;
 
         /**
          * Iterate over all element of `it` and call the given function `func` for
@@ -19650,9 +19591,9 @@ export namespace Gst {
         size: number;
 
         // Constructors
-        constructor(flags: MemoryFlags, data: (Uint8Array | string), maxsize: (bigint | number), offset: (bigint | number), notify: (GLib.DestroyNotify | null));
+        constructor(flags: MemoryFlags, data: Uint8Array | string, maxsize: bigint | number, offset: bigint | number, notify: GLib.DestroyNotify | null);
 
-        static new_wrapped(flags: MemoryFlags, data: (Uint8Array | string), maxsize: (bigint | number), offset: (bigint | number), notify: (GLib.DestroyNotify | null)): Memory;
+        static new_wrapped(flags: MemoryFlags, data: Uint8Array | string, maxsize: bigint | number, offset: bigint | number, notify: GLib.DestroyNotify | null): Memory;
 
         // Methods
         /**
@@ -19663,7 +19604,7 @@ export namespace Gst {
          * @param size size to copy, or -1 to copy to the end of the memory region
          * @returns a new copy of `mem` if the copy succeeded, `null` otherwise.
          */
-        copy(offset: (bigint | number), size: (bigint | number)): (Memory | null);
+        copy(offset: bigint | number, size: bigint | number): Memory | null;
 
         /**
          * Get the current `size`, `offset` and `maxsize` of `mem`.
@@ -19700,7 +19641,7 @@ export namespace Gst {
          * @param flags mapping flags
          * @returns a {@link Gst.Memory} object mapped with `flags` or `null` when a mapping is not possible.
          */
-        make_mapped(flags: MapFlags): [(Memory | null), MapInfo];
+        make_mapped(flags: MapFlags): [Memory | null, MapInfo];
 
         /**
          * Fill `info` with the pointer and sizes of the memory in `mem` that can be
@@ -19729,7 +19670,7 @@ export namespace Gst {
          * @param offset a new offset
          * @param size a new size
          */
-        resize(offset: (bigint | number), size: (bigint | number)): void;
+        resize(offset: bigint | number, size: bigint | number): void;
 
         /**
          * Return a shared copy of `size` bytes from `mem` starting from `offset`. No
@@ -19740,7 +19681,7 @@ export namespace Gst {
          * @param size size to share, or -1 to share to the end of the memory region
          * @returns a new {@link Gst.Memory}.
          */
-        share(offset: (bigint | number), size: (bigint | number)): Memory;
+        share(offset: bigint | number, size: bigint | number): Memory;
 
         /**
          * Release the memory obtained with `gst_memory_map()`
@@ -19783,93 +19724,93 @@ export namespace Gst {
         seqnum: number;
 
         // Constructors
-        constructor(src: (Object | null), structure: Structure);
+        constructor(src: Object | null, structure: Structure);
 
-        static new_application(src: (Object | null), structure: Structure): Message;
+        static new_application(src: Object | null, structure: Structure): Message;
 
-        static new_async_done(src: (Object | null), running_time: ClockTime): Message;
+        static new_async_done(src: Object | null, running_time: ClockTime): Message;
 
-        static new_async_start(src: (Object | null)): Message;
+        static new_async_start(src: Object | null): Message;
 
-        static new_buffering(src: (Object | null), percent: number): Message;
+        static new_buffering(src: Object | null, percent: number): Message;
 
-        static new_clock_lost(src: (Object | null), clock: Clock): Message;
+        static new_clock_lost(src: Object | null, clock: Clock): Message;
 
-        static new_clock_provide(src: (Object | null), clock: Clock, ready: boolean): Message;
+        static new_clock_provide(src: Object | null, clock: Clock, ready: boolean): Message;
 
-        static new_custom(type: MessageType, src: (Object | null), structure: (Structure | null)): Message;
+        static new_custom(type: MessageType, src: Object | null, structure: Structure | null): Message;
 
-        static new_device_added(src: (Object | null), device: Device): Message;
+        static new_device_added(src: Object | null, device: Device): Message;
 
-        static new_device_changed(src: (Object | null), device: Device, changed_device: Device): Message;
+        static new_device_changed(src: Object | null, device: Device, changed_device: Device): Message;
 
-        static new_device_removed(src: (Object | null), device: Device): Message;
+        static new_device_removed(src: Object | null, device: Device): Message;
 
-        static new_duration_changed(src: (Object | null)): Message;
+        static new_duration_changed(src: Object | null): Message;
 
-        static new_element(src: (Object | null), structure: Structure): Message;
+        static new_element(src: Object | null, structure: Structure): Message;
 
-        static new_eos(src: (Object | null)): Message;
+        static new_eos(src: Object | null): Message;
 
-        static new_error(src: (Object | null), error: GLib.Error, debug: string): Message;
+        static new_error(src: Object | null, error: GLib.Error, debug: string): Message;
 
-        static new_error_with_details(src: (Object | null), error: GLib.Error, debug: string, details: (Structure | null)): Message;
+        static new_error_with_details(src: Object | null, error: GLib.Error, debug: string, details: Structure | null): Message;
 
-        static new_have_context(src: (Object | null), context: Context): Message;
+        static new_have_context(src: Object | null, context: Context): Message;
 
-        static new_info(src: (Object | null), error: GLib.Error, debug: string): Message;
+        static new_info(src: Object | null, error: GLib.Error, debug: string): Message;
 
-        static new_info_with_details(src: (Object | null), error: GLib.Error, debug: string, details: (Structure | null)): Message;
+        static new_info_with_details(src: Object | null, error: GLib.Error, debug: string, details: Structure | null): Message;
 
-        static new_instant_rate_request(src: (Object | null), rate_multiplier: number): Message;
+        static new_instant_rate_request(src: Object | null, rate_multiplier: number): Message;
 
-        static new_latency(src: (Object | null)): Message;
+        static new_latency(src: Object | null): Message;
 
-        static new_need_context(src: (Object | null), context_type: string): Message;
+        static new_need_context(src: Object | null, context_type: string): Message;
 
-        static new_new_clock(src: (Object | null), clock: Clock): Message;
+        static new_new_clock(src: Object | null, clock: Clock): Message;
 
-        static new_progress(src: (Object | null), type: ProgressType, code: string, text: string): Message;
+        static new_progress(src: Object | null, type: ProgressType, code: string, text: string): Message;
 
-        static new_property_notify(src: Object, property_name: string, val: (GObject.Value | null)): Message;
+        static new_property_notify(src: Object, property_name: string, val: GObject.Value | null): Message;
 
-        static new_qos(src: (Object | null), live: boolean, running_time: (bigint | number), stream_time: (bigint | number), timestamp: (bigint | number), duration: (bigint | number)): Message;
+        static new_qos(src: Object | null, live: boolean, running_time: bigint | number, stream_time: bigint | number, timestamp: bigint | number, duration: bigint | number): Message;
 
-        static new_redirect(src: (Object | null), location: string, tag_list: (TagList | null), entry_struct: (Structure | null)): Message;
+        static new_redirect(src: Object | null, location: string, tag_list: TagList | null, entry_struct: Structure | null): Message;
 
-        static new_request_state(src: (Object | null), state: State): Message;
+        static new_request_state(src: Object | null, state: State): Message;
 
-        static new_reset_time(src: (Object | null), running_time: ClockTime): Message;
+        static new_reset_time(src: Object | null, running_time: ClockTime): Message;
 
-        static new_segment_done(src: (Object | null), format: Format, position: (bigint | number)): Message;
+        static new_segment_done(src: Object | null, format: Format, position: bigint | number): Message;
 
-        static new_segment_start(src: (Object | null), format: Format, position: (bigint | number)): Message;
+        static new_segment_start(src: Object | null, format: Format, position: bigint | number): Message;
 
-        static new_state_changed(src: (Object | null), oldstate: State, newstate: State, pending: State): Message;
+        static new_state_changed(src: Object | null, oldstate: State, newstate: State, pending: State): Message;
 
-        static new_state_dirty(src: (Object | null)): Message;
+        static new_state_dirty(src: Object | null): Message;
 
-        static new_step_done(src: (Object | null), format: Format, amount: (bigint | number), rate: number, flush: boolean, intermediate: boolean, duration: (bigint | number), eos: boolean): Message;
+        static new_step_done(src: Object | null, format: Format, amount: bigint | number, rate: number, flush: boolean, intermediate: boolean, duration: bigint | number, eos: boolean): Message;
 
-        static new_step_start(src: (Object | null), active: boolean, format: Format, amount: (bigint | number), rate: number, flush: boolean, intermediate: boolean): Message;
+        static new_step_start(src: Object | null, active: boolean, format: Format, amount: bigint | number, rate: number, flush: boolean, intermediate: boolean): Message;
 
-        static new_stream_collection(src: (Object | null), collection: StreamCollection): Message;
+        static new_stream_collection(src: Object | null, collection: StreamCollection): Message;
 
-        static new_stream_start(src: (Object | null)): Message;
+        static new_stream_start(src: Object | null): Message;
 
-        static new_stream_status(src: (Object | null), type: StreamStatusType, owner: Element): Message;
+        static new_stream_status(src: Object | null, type: StreamStatusType, owner: Element): Message;
 
-        static new_streams_selected(src: (Object | null), collection: StreamCollection): Message;
+        static new_streams_selected(src: Object | null, collection: StreamCollection): Message;
 
-        static new_structure_change(src: (Object | null), type: StructureChangeType, owner: Element, busy: boolean): Message;
+        static new_structure_change(src: Object | null, type: StructureChangeType, owner: Element, busy: boolean): Message;
 
-        static new_tag(src: (Object | null), tag_list: TagList): Message;
+        static new_tag(src: Object | null, tag_list: TagList): Message;
 
-        static new_toc(src: (Object | null), toc: Toc, updated: boolean): Message;
+        static new_toc(src: Object | null, toc: Toc, updated: boolean): Message;
 
-        static new_warning(src: (Object | null), error: GLib.Error, debug: string): Message;
+        static new_warning(src: Object | null, error: GLib.Error, debug: string): Message;
 
-        static new_warning_with_details(src: (Object | null), error: GLib.Error, debug: string, details: (Structure | null)): Message;
+        static new_warning_with_details(src: Object | null, error: GLib.Error, debug: string, details: Structure | null): Message;
 
         // Methods
         /**
@@ -19881,7 +19822,7 @@ export namespace Gst {
          * @param tag_list tag list for the new entry
          * @param entry_struct structure for the new entry
          */
-        add_redirect_entry(location: string, tag_list: (TagList | null), entry_struct: (Structure | null)): void;
+        add_redirect_entry(location: string, tag_list: TagList | null, entry_struct: Structure | null): void;
 
         /**
          * Creates a copy of the message. Returns a copy of the message.
@@ -19915,13 +19856,13 @@ export namespace Gst {
          * Extracts the object managing the streaming thread from `message`.
          * @returns a GValue containing the object that manages the streaming thread. This object is usually of type GstTask but other types can be added in the future. The object remains valid as long as `message` is valid.
          */
-        get_stream_status_object(): (GObject.Value | null);
+        get_stream_status_object(): GObject.Value | null;
 
         /**
          * Access the structure of the message.
          * @returns The structure of the message. The structure is still owned by the message, which means that you should not free it and that the pointer becomes invalid when you free the message. MT safe.
          */
-        get_structure(): (Structure | null);
+        get_structure(): Structure | null;
 
         /**
          * Checks if `message` has the given `name`. This function is usually used to
@@ -20119,7 +20060,7 @@ export namespace Gst {
          * Returned pointers are valid for as long as this message exists.
          * @param entry_index index of the entry to parse
          */
-        parse_redirect_entry(entry_index: (bigint | number)): [string, TagList | null, Structure | null];
+        parse_redirect_entry(entry_index: bigint | number): [string, TagList | null, Structure | null];
 
         /**
          * Extract the requested state from the request_state message.
@@ -20275,7 +20216,7 @@ export namespace Gst {
          * @param avg_out the average output rate
          * @param buffering_left amount of buffering time left in milliseconds
          */
-        set_buffering_stats(mode: BufferingMode, avg_in: number, avg_out: number, buffering_left: (bigint | number)): void;
+        set_buffering_stats(mode: BufferingMode, avg_in: number, avg_out: number, buffering_left: bigint | number): void;
 
         /**
          * Sets the group id on the stream-start message.
@@ -20303,7 +20244,7 @@ export namespace Gst {
          * @param processed Total number of units correctly processed since the last state change to READY or a flushing operation.
          * @param dropped Total number of units dropped since the last state change to READY or a flushing operation.
          */
-        set_qos_stats(format: Format, processed: (bigint | number), dropped: (bigint | number)): void;
+        set_qos_stats(format: Format, processed: bigint | number, dropped: bigint | number): void;
 
         /**
          * Set the QoS values that have been calculated/analysed from the QoS data
@@ -20313,7 +20254,7 @@ export namespace Gst {
          * @param proportion Long term prediction of the ideal rate relative to normal rate to get optimal quality.
          * @param quality An element dependent integer value that specifies the current quality level of the element. The default maximum quality is 1000000.
          */
-        set_qos_values(jitter: (bigint | number), proportion: number, quality: number): void;
+        set_qos_values(jitter: bigint | number, proportion: number, quality: number): void;
 
         /**
          * Set the sequence number of a message.
@@ -20332,7 +20273,7 @@ export namespace Gst {
          * GstTask object but other objects might be added in the future.
          * @param object the object controlling the streaming
          */
-        set_stream_status_object(object: (GObject.Value | any)): void;
+        set_stream_status_object(object: GObject.Value | any): void;
 
         /**
          * Adds the `stream` to the `message`.
@@ -20351,7 +20292,7 @@ export namespace Gst {
          * @param idx Index of the stream to retrieve
          * @returns A {@link Gst.Stream}
          */
-        streams_selected_get_stream(idx: number): (Stream | null);
+        streams_selected_get_stream(idx: number): Stream | null;
 
         /**
          * Get a writable version of the structure.
@@ -20424,14 +20365,14 @@ export namespace Gst {
          * @param data serialization data obtained from `gst_meta_serialize()`
          * @param size size of `data`
          */
-        static deserialize(buffer: Buffer, data: number, size: (bigint | number)): [(Meta | null), number];
+        static deserialize(buffer: Buffer, data: number, size: bigint | number): [Meta | null, number];
 
         /**
          * Lookup a previously registered meta info structure by its implementation name
          * `impl`.
          * @param impl the name
          */
-        static get_info(impl: string): (MetaInfo | null);
+        static get_info(impl: string): MetaInfo | null;
 
         /**
          * Register a new custom {@link Gst.Meta} implementation, backed by an opaque
@@ -20451,7 +20392,7 @@ export namespace Gst {
          * @param tags tags for `api`
          * @param transform_func a {@link Gst.MetaTransformFunction}
          */
-        static register_custom(name: string, tags: string[], transform_func: (CustomMetaTransformFunction | null)): MetaInfo;
+        static register_custom(name: string, tags: string[], transform_func: CustomMetaTransformFunction | null): MetaInfo;
 
         /**
          * Simplified version of `gst_meta_register_custom()`, with no tags and no
@@ -20498,7 +20439,7 @@ export namespace Gst {
          * @param data {@link GLib.ByteArray} to append serialization data
          * @returns `true` on success, `false` otherwise.
          */
-        serialize_simple(data: (Uint8Array | string)): boolean;
+        serialize_simple(data: Uint8Array | string): boolean;
     }
 
 
@@ -20618,7 +20559,7 @@ export namespace Gst {
          * @param olddata pointer to a pointer to a     mini-object to be replaced
          * @param newdata pointer to new mini-object
          */
-        static replace(olddata: (MiniObject | null), newdata: (MiniObject | null)): [boolean, MiniObject | null];
+        static replace(olddata: MiniObject | null, newdata: MiniObject | null): [boolean, MiniObject | null];
 
         /**
          * Modifies a pointer to point to a new mini-object. The modification
@@ -20652,7 +20593,7 @@ export namespace Gst {
          * MT safe
          * @returns the new mini-object if copying is possible, `null` otherwise.
          */
-        copy(): (MiniObject | null);
+        copy(): MiniObject | null;
 
         /**
          * This function gets back user data pointers stored via
@@ -20785,22 +20726,22 @@ export namespace Gst {
         /**
          * @returns The {@link Gst.Buffer} from the probe
          */
-        get_buffer(): (Buffer | null);
+        get_buffer(): Buffer | null;
 
         /**
          * @returns The {@link Gst.BufferList} from the probe
          */
-        get_buffer_list(): (BufferList | null);
+        get_buffer_list(): BufferList | null;
 
         /**
          * @returns The {@link Gst.Event} from the probe
          */
-        get_event(): (Event | null);
+        get_event(): Event | null;
 
         /**
          * @returns The {@link Gst.Query} from the probe
          */
-        get_query(): (Query | null);
+        get_query(): Query | null;
     }
 
 
@@ -20875,10 +20816,7 @@ export namespace Gst {
         static $gtype: GObject.GType<ParseContext>;
 
         // Constructors
-
-        constructor(properties?: Partial<{
-
-        }>);
+        constructor(properties?: Partial<{}>);
 
         static ["new"](): ParseContext;
 
@@ -20887,7 +20825,7 @@ export namespace Gst {
          * Copies the `context`.
          * @returns A copied {@link Gst.ParseContext}
          */
-        copy(): (ParseContext | null);
+        copy(): ParseContext | null;
 
         /**
          * Frees a parse context previously allocated with `gst_parse_context_new()`.
@@ -20900,7 +20838,7 @@ export namespace Gst {
          * of {@link Gst.ParseError.NO_SUCH_ELEMENT} was returned.
          * @returns a     `null`-terminated array of element factory name strings of missing     elements. Free with `g_strfreev()` when no longer needed.
          */
-        get_missing_elements(): (string[] | null);
+        get_missing_elements(): string[] | null;
     }
 
 
@@ -21291,7 +21229,7 @@ export namespace Gst {
          * {@link Gst.PromiseResult.REPLIED} and the returned structure is owned by `promise`
          * @returns The reply set on `promise`
          */
-        get_reply(): (Structure | null);
+        get_reply(): Structure | null;
 
         /**
          * Interrupt waiting for a `promise`.  This will wake up any waiters with
@@ -21309,7 +21247,7 @@ export namespace Gst {
          * is not visible to the consumer.
          * @param s a {@link Gst.Structure} with the the reply contents
          */
-        reply(s: (Structure | null)): void;
+        reply(s: Structure | null): void;
 
         /**
          * Wait for `promise` to move out of the {@link Gst.PromiseResult.PENDING} state.
@@ -21391,7 +21329,7 @@ export namespace Gst {
 
         static new_accept_caps(caps: Caps): Query;
 
-        static new_allocation(caps: (Caps | null), need_pool: boolean): Query;
+        static new_allocation(caps: Caps | null, need_pool: boolean): Query;
 
         static new_bitrate(): Query;
 
@@ -21401,9 +21339,9 @@ export namespace Gst {
 
         static new_context(context_type: string): Query;
 
-        static new_convert(src_format: Format, value: (bigint | number), dest_format: Format): Query;
+        static new_convert(src_format: Format, value: bigint | number, dest_format: Format): Query;
 
-        static new_custom(type: QueryType, structure: (Structure | null)): Query;
+        static new_custom(type: QueryType, structure: Structure | null): Query;
 
         static new_drain(): Query;
 
@@ -21431,14 +21369,14 @@ export namespace Gst {
          * @param api the metadata API
          * @param params API specific parameters
          */
-        add_allocation_meta(api: GObject.GType, params: (Structure | null)): void;
+        add_allocation_meta(api: GObject.GType, params: Structure | null): void;
 
         /**
          * Add `allocator` and its `params` as a supported memory allocator.
          * @param allocator the memory allocator
          * @param params a {@link Gst.AllocationParams}
          */
-        add_allocation_param(allocator: (Allocator | null), params: (AllocationParams | null)): void;
+        add_allocation_param(allocator: Allocator | null, params: AllocationParams | null): void;
 
         /**
          * Set the pool parameters in `query`.
@@ -21447,7 +21385,7 @@ export namespace Gst {
          * @param min_buffers the min buffers
          * @param max_buffers the max buffers
          */
-        add_allocation_pool(pool: (BufferPool | null), size: number, min_buffers: number, max_buffers: number): void;
+        add_allocation_pool(pool: BufferPool | null, size: number, min_buffers: number, max_buffers: number): void;
 
         /**
          * Set the buffering-ranges array field in `query`. The current last
@@ -21456,7 +21394,7 @@ export namespace Gst {
          * @param stop stop position of the range
          * @returns a `gboolean` indicating if the range was added or not.
          */
-        add_buffering_range(start: (bigint | number), stop: (bigint | number)): boolean;
+        add_buffering_range(start: bigint | number, stop: bigint | number): boolean;
 
         /**
          * Add `mode` as one of the supported scheduling modes to `query`.
@@ -21517,7 +21455,7 @@ export namespace Gst {
          * Get the structure of a query.
          * @returns the {@link Gst.Structure} of the query. The     structure is still owned by the query and will therefore be freed when the     query is unreffed.
          */
-        get_structure(): (Structure | null);
+        get_structure(): Structure | null;
 
         /**
          * Check if `query` has scheduling mode set.
@@ -21778,7 +21716,7 @@ export namespace Gst {
          * @param stop the stop to set
          * @param estimated_total estimated total amount of download time remaining in     milliseconds
          */
-        set_buffering_range(format: Format, start: (bigint | number), stop: (bigint | number), estimated_total: (bigint | number)): void;
+        set_buffering_range(format: Format, start: bigint | number, stop: bigint | number, estimated_total: bigint | number): void;
 
         /**
          * Configures the buffering stats values in `query`.
@@ -21787,19 +21725,19 @@ export namespace Gst {
          * @param avg_out the average output rate
          * @param buffering_left amount of buffering time left in milliseconds
          */
-        set_buffering_stats(mode: BufferingMode, avg_in: number, avg_out: number, buffering_left: (bigint | number)): void;
+        set_buffering_stats(mode: BufferingMode, avg_in: number, avg_out: number, buffering_left: bigint | number): void;
 
         /**
          * Set the `caps` result in `query`.
          * @param caps A pointer to the caps
          */
-        set_caps_result(caps: (Caps | null)): void;
+        set_caps_result(caps: Caps | null): void;
 
         /**
          * Answer a context query by setting the requested context.
          * @param context the requested {@link Gst.Context}
          */
-        set_context(context: (Context | null)): void;
+        set_context(context: Context | null): void;
 
         /**
          * Answer a convert query by setting the requested values.
@@ -21808,14 +21746,14 @@ export namespace Gst {
          * @param dest_format the destination {@link Gst.Format}
          * @param dest_value the destination value
          */
-        set_convert(src_format: Format, src_value: (bigint | number), dest_format: Format, dest_value: (bigint | number)): void;
+        set_convert(src_format: Format, src_value: bigint | number, dest_format: Format, dest_value: bigint | number): void;
 
         /**
          * Answer a duration query by setting the requested value in the given format.
          * @param format the {@link Gst.Format} for the duration
          * @param duration the duration of the stream
          */
-        set_duration(format: Format, duration: (bigint | number)): void;
+        set_duration(format: Format, duration: bigint | number): void;
 
         /**
          * Set the formats query result fields in `query`. The number of formats passed
@@ -21839,7 +21777,7 @@ export namespace Gst {
          * @param allocator new allocator to set
          * @param params parameters for the allocator
          */
-        set_nth_allocation_param(index: number, allocator: (Allocator | null), params: (AllocationParams | null)): void;
+        set_nth_allocation_param(index: number, allocator: Allocator | null, params: AllocationParams | null): void;
 
         /**
          * Set the pool parameters in `query`.
@@ -21849,14 +21787,14 @@ export namespace Gst {
          * @param min_buffers the min buffers
          * @param max_buffers the max buffers
          */
-        set_nth_allocation_pool(index: number, pool: (BufferPool | null), size: number, min_buffers: number, max_buffers: number): void;
+        set_nth_allocation_pool(index: number, pool: BufferPool | null, size: number, min_buffers: number, max_buffers: number): void;
 
         /**
          * Answer a position query by setting the requested value in the given format.
          * @param format the requested {@link Gst.Format}
          * @param cur the position to set
          */
-        set_position(format: Format, cur: (bigint | number)): void;
+        set_position(format: Format, cur: bigint | number): void;
 
         /**
          * Set the scheduling properties.
@@ -21874,7 +21812,7 @@ export namespace Gst {
          * @param segment_start the segment_start to set
          * @param segment_end the segment_end to set
          */
-        set_seeking(format: Format, seekable: boolean, segment_start: (bigint | number), segment_end: (bigint | number)): void;
+        set_seeking(format: Format, seekable: boolean, segment_start: bigint | number, segment_end: bigint | number): void;
 
         /**
          * Answer a segment query by setting the requested values. The normal
@@ -21893,7 +21831,7 @@ export namespace Gst {
          * @param start_value the start value
          * @param stop_value the stop value
          */
-        set_segment(rate: number, format: Format, start_value: (bigint | number), stop_value: (bigint | number)): void;
+        set_segment(rate: number, format: Format, start_value: bigint | number, stop_value: bigint | number): void;
 
         /**
          * Set the results of a selectable query. If the element answering the query can
@@ -21906,13 +21844,13 @@ export namespace Gst {
          * Answer a URI query by setting the requested URI.
          * @param uri the URI to set
          */
-        set_uri(uri: (string | null)): void;
+        set_uri(uri: string | null): void;
 
         /**
          * Answer a URI query by setting the requested URI redirection.
          * @param uri the URI to set
          */
-        set_uri_redirection(uri: (string | null)): void;
+        set_uri_redirection(uri: string | null): void;
 
         /**
          * Answer a URI query by setting the requested URI redirection
@@ -21993,34 +21931,34 @@ export namespace Gst {
         static $gtype: GObject.GType<Sample>;
 
         // Constructors
-        constructor(buffer: (Buffer | null), caps: (Caps | null), segment: (Segment | null), info: (Structure | null));
+        constructor(buffer: Buffer | null, caps: Caps | null, segment: Segment | null, info: Structure | null);
 
-        static ["new"](buffer: (Buffer | null), caps: (Caps | null), segment: (Segment | null), info: (Structure | null)): Sample;
+        static ["new"](buffer: Buffer | null, caps: Caps | null, segment: Segment | null, info: Structure | null): Sample;
 
         // Methods
         /**
          * Get the buffer associated with `sample`
          * @returns the buffer of `sample` or `null`  when there is no buffer. The buffer remains valid as long as  `sample` is valid.  If you need to hold on to it for longer than  that, take a ref to the buffer with `gst_buffer_ref()`.
          */
-        get_buffer(): (Buffer | null);
+        get_buffer(): Buffer | null;
 
         /**
          * Get the buffer list associated with `sample`
          * @returns the buffer list of `sample` or `null`  when there is no buffer list. The buffer list remains valid as long as  `sample` is valid.  If you need to hold on to it for longer than  that, take a ref to the buffer list with gst_mini_object_ref ().
          */
-        get_buffer_list(): (BufferList | null);
+        get_buffer_list(): BufferList | null;
 
         /**
          * Get the caps associated with `sample`
          * @returns the caps of `sample` or `null`  when there is no caps. The caps remain valid as long as `sample` is  valid.  If you need to hold on to the caps for longer than that,  take a ref to the caps with `gst_caps_ref()`.
          */
-        get_caps(): (Caps | null);
+        get_caps(): Caps | null;
 
         /**
          * Get extra information associated with `sample`.
          * @returns the extra info of `sample`.  The info remains valid as long as `sample` is valid.
          */
-        get_info(): (Structure | null);
+        get_info(): Structure | null;
 
         /**
          * Get the segment associated with `sample`
@@ -22174,7 +22112,7 @@ export namespace Gst {
          * @param stop the stop position in the segment
          * @returns `true` if the given `start` and `stop` times fall partially or     completely in `segment`, `false` if the values are completely outside     of the segment.
          */
-        clip(format: Format, start: (bigint | number), stop: (bigint | number)): [boolean, number, number];
+        clip(format: Format, start: bigint | number, stop: bigint | number): [boolean, number, number];
 
         /**
          * Create a copy of given `segment`.
@@ -22227,7 +22165,7 @@ export namespace Gst {
          * @param stop the seek stop value
          * @returns `true` if the seek could be performed.
          */
-        do_seek(rate: number, format: Format, flags: SeekFlags, start_type: SeekType, start: (bigint | number), stop_type: SeekType, stop: (bigint | number)): [boolean, boolean];
+        do_seek(rate: number, format: Format, flags: SeekFlags, start_type: SeekType, start: bigint | number, stop_type: SeekType, stop: bigint | number): [boolean, boolean];
 
         /**
          * Free the allocated segment `segment`.
@@ -22259,7 +22197,7 @@ export namespace Gst {
          * @param offset the offset to apply in the segment
          * @returns `true` if the segment could be updated successfully. If `false` is returned, `offset` is not in `segment`.
          */
-        offset_running_time(format: Format, offset: (bigint | number)): boolean;
+        offset_running_time(format: Format, offset: bigint | number): boolean;
 
         /**
          * Convert `running_time` into a position in the segment so that
@@ -22268,7 +22206,7 @@ export namespace Gst {
          * @param running_time the running_time in the segment
          * @returns the position in the segment for `running_time`. This function returns -1 when `running_time` is -1 or when it is not inside `segment`.
          */
-        position_from_running_time(format: Format, running_time: (bigint | number)): number;
+        position_from_running_time(format: Format, running_time: bigint | number): number;
 
         /**
          * Translate `running_time` to the segment position using the currently configured
@@ -22291,7 +22229,7 @@ export namespace Gst {
          * @param running_time the running-time
          * @returns a 1 or -1 on success, 0 on failure.
          */
-        position_from_running_time_full(format: Format, running_time: (bigint | number)): [number, number];
+        position_from_running_time_full(format: Format, running_time: bigint | number): [number, number];
 
         /**
          * Convert `stream_time` into a position in the segment so that
@@ -22300,7 +22238,7 @@ export namespace Gst {
          * @param stream_time the stream_time in the segment
          * @returns the position in the segment for `stream_time`. This function returns -1 when `stream_time` is -1 or when it is not inside `segment`.
          */
-        position_from_stream_time(format: Format, stream_time: (bigint | number)): number;
+        position_from_stream_time(format: Format, stream_time: bigint | number): number;
 
         /**
          * Translate `stream_time` to the segment position using the currently configured
@@ -22322,7 +22260,7 @@ export namespace Gst {
          * @param stream_time the stream-time
          * @returns a 1 or -1 on success, 0 on failure.
          */
-        position_from_stream_time_full(format: Format, stream_time: (bigint | number)): [number, number];
+        position_from_stream_time_full(format: Format, stream_time: bigint | number): [number, number];
 
         /**
          * Adjust the start/stop and base values of `segment` such that the next valid
@@ -22331,7 +22269,7 @@ export namespace Gst {
          * @param running_time the running_time in the segment
          * @returns `true` if the segment could be updated successfully. If `false` is returned, `running_time` is -1 or not in `segment`.
          */
-        set_running_time(format: Format, running_time: (bigint | number)): boolean;
+        set_running_time(format: Format, running_time: bigint | number): boolean;
 
         /**
          * Convert `running_time` into a position in the segment so that
@@ -22340,7 +22278,7 @@ export namespace Gst {
          * @param running_time the running_time in the segment
          * @returns the position in the segment for `running_time`. This function returns -1 when `running_time` is -1 or when it is not inside `segment`.
          */
-        to_position(format: Format, running_time: (bigint | number)): number;
+        to_position(format: Format, running_time: bigint | number): number;
 
         /**
          * Translate `position` to the total running time using the currently configured
@@ -22356,7 +22294,7 @@ export namespace Gst {
          * @param position the position in the segment
          * @returns the position as the total running time or -1 when an invalid position was given.
          */
-        to_running_time(format: Format, position: (bigint | number)): number;
+        to_running_time(format: Format, position: bigint | number): number;
 
         /**
          * Translate `position` to the total running time using the currently configured
@@ -22378,7 +22316,7 @@ export namespace Gst {
          * @param position the position in the segment
          * @returns a 1 or -1 on success, 0 on failure.
          */
-        to_running_time_full(format: Format, position: (bigint | number)): [number, number];
+        to_running_time_full(format: Format, position: bigint | number): [number, number];
 
         /**
          * Translate `position` to stream time using the currently configured
@@ -22395,7 +22333,7 @@ export namespace Gst {
          * @param position the position in the segment
          * @returns the position in stream_time or -1 when an invalid position was given.
          */
-        to_stream_time(format: Format, position: (bigint | number)): number;
+        to_stream_time(format: Format, position: bigint | number): number;
 
         /**
          * Translate `position` to the total stream time using the currently configured
@@ -22417,7 +22355,7 @@ export namespace Gst {
          * @param position the position in the segment
          * @returns a 1 or -1 on success, 0 on failure.
          */
-        to_stream_time_full(format: Format, position: (bigint | number)): [number, number];
+        to_stream_time_full(format: Format, position: bigint | number): [number, number];
     }
 
 
@@ -22456,7 +22394,7 @@ export namespace Gst {
          * Converts a {@link Gst.StaticCaps} to a {@link Gst.Caps}.
          * @returns a pointer to the {@link Gst.Caps}. Since the     core holds an additional ref to the returned caps, use     `gst_caps_make_writable()` on the returned caps to modify it.
          */
-        get(): (Caps | null);
+        get(): Caps | null;
     }
 
 
@@ -22479,7 +22417,7 @@ export namespace Gst {
          * Converts a {@link Gst.StaticPadTemplate} into a {@link Gst.PadTemplate}.
          * @returns a new {@link Gst.PadTemplate}.
          */
-        get(): (PadTemplate | null);
+        get(): PadTemplate | null;
 
         /**
          * Gets the capabilities of the static pad template.
@@ -22652,7 +22590,7 @@ export namespace Gst {
          * @param oldstr_ptr pointer to a place of     a {@link Gst.Structure} to take
          * @param newstr a new {@link Gst.Structure}
          */
-        static take(oldstr_ptr: (Structure | null), newstr: (Structure | null)): [boolean, Structure | null];
+        static take(oldstr_ptr: Structure | null, newstr: Structure | null): [boolean, Structure | null];
 
         // Methods
         /**
@@ -22917,7 +22855,7 @@ export namespace Gst {
          * @param fieldname the name of a field
          * @returns a pointer to the string or `null` when the field did not exist or did not contain a string.
          */
-        get_string(fieldname: string): (string | null);
+        get_string(fieldname: string): string | null;
 
         /**
          * Sets the uint pointed to by `value` corresponding to the value of the
@@ -22942,7 +22880,7 @@ export namespace Gst {
          * @param fieldname the name of the field to get
          * @returns the {@link GObject.Value} corresponding to the field with the given name.
          */
-        get_value(fieldname: string): (GObject.Value | null);
+        get_value(fieldname: string): GObject.Value | null;
 
         /**
          * Check if `structure` contains a field named `fieldname`.
@@ -22971,7 +22909,7 @@ export namespace Gst {
          * @param field the {@link GLib.Quark} of the field to get
          * @returns the {@link GObject.Value} corresponding to the field with the given name identifier.
          */
-        id_get_value(field: GLib.Quark): (GObject.Value | null);
+        id_get_value(field: GLib.Quark): GObject.Value | null;
 
         /**
          * Check if `structure` contains a field named `field`.
@@ -22995,7 +22933,7 @@ export namespace Gst {
          * @param field a {@link GLib.Quark} representing a field
          * @param value the new value of the field
          */
-        id_set_value(field: GLib.Quark, value: (GObject.Value | any)): void;
+        id_set_value(field: GLib.Quark, value: GObject.Value | any): void;
 
         /**
          * Sets the field with the given GQuark `field` to `value`.  If the field
@@ -23004,14 +22942,14 @@ export namespace Gst {
          * @param field a {@link GLib.Quark} representing a field
          * @param value the new value of the field
          */
-        id_take_value(field: GLib.Quark, value: (GObject.Value | any)): void;
+        id_take_value(field: GLib.Quark, value: GObject.Value | any): void;
 
         /**
          * Intersects `struct1` and `struct2` and returns the intersection.
          * @param struct2 a {@link Gst.Structure}
          * @returns Intersection of `struct1` and `struct2`
          */
-        intersect(struct2: Structure): (Structure | null);
+        intersect(struct2: Structure): Structure | null;
 
         /**
          * Tests if the two {@link Gst.Structure} are equal.
@@ -23087,7 +23025,7 @@ export namespace Gst {
          * @param flags The flags to use to serialize structure
          * @returns a pointer to string allocated by `g_malloc()`.     `g_free()` after usage.
          */
-        serialize_full(flags: SerializeFlags): (string | null);
+        serialize_full(flags: SerializeFlags): string | null;
 
         /**
          * This is useful in language bindings where unknown GValue types are not
@@ -23134,7 +23072,7 @@ export namespace Gst {
          * @param fieldname the name of the field to set
          * @param value the new value of the field
          */
-        set_value(fieldname: string, value: (GObject.Value | any)): void;
+        set_value(fieldname: string, value: GObject.Value | any): void;
 
         /**
          * Sets the field with the given name `field` to `value`.  If the field
@@ -23143,7 +23081,7 @@ export namespace Gst {
          * @param fieldname the name of the field to set
          * @param value the new value of the field
          */
-        take_value(fieldname: string, value: (GObject.Value | any)): void;
+        take_value(fieldname: string, value: GObject.Value | any): void;
 
         /**
          * Converts `structure` to a human-readable string representation.
@@ -23217,7 +23155,7 @@ export namespace Gst {
          * @param tag tag
          * @param value GValue for this tag
          */
-        add_value(mode: TagMergeMode, tag: string, value: (GObject.Value | any)): void;
+        add_value(mode: TagMergeMode, tag: string, value: GObject.Value | any): void;
 
         /**
          * Creates a new {@link Gst.TagList} as a copy of the old `taglist`. The new taglist
@@ -23501,7 +23439,7 @@ export namespace Gst {
          * @param index number of entry to read out
          * @returns The GValue for the specified          entry or `null` if the tag wasn't available or the tag          doesn't have as many entries
          */
-        get_value_index(tag: string, index: number): (GObject.Value | null);
+        get_value_index(tag: string, index: number): GObject.Value | null;
 
         /**
          * Inserts the tags of the `from` list into the first list using the given mode.
@@ -23532,7 +23470,7 @@ export namespace Gst {
          * @param mode the mode to use
          * @returns the new list
          */
-        merge(list2: (TagList | null), mode: TagMergeMode): (TagList | null);
+        merge(list2: TagList | null, mode: TagMergeMode): TagList | null;
 
         /**
          * Get the number of tags in `list`.
@@ -23688,7 +23626,7 @@ export namespace Gst {
          * @param uid UID to find {@link Gst.TocEntry} with.
          * @returns {@link Gst.TocEntry} with specified `uid` from the `toc`, or `null` if not found.
          */
-        find_entry(uid: string): (TocEntry | null);
+        find_entry(uid: string): TocEntry | null;
 
         /**
          * Gets the list of {@link Gst.TocEntry} of `toc`.
@@ -23705,20 +23643,20 @@ export namespace Gst {
          * Gets the tags for `toc`.
          * @returns A {@link Gst.TagList} for `entry`
          */
-        get_tags(): (TagList | null);
+        get_tags(): TagList | null;
 
         /**
          * Merge `tags` into the existing tags of `toc` using `mode`.
          * @param tags A {@link Gst.TagList} or `null`
          * @param mode A {@link Gst.TagMergeMode}
          */
-        merge_tags(tags: (TagList | null), mode: TagMergeMode): void;
+        merge_tags(tags: TagList | null, mode: TagMergeMode): void;
 
         /**
          * Set a {@link Gst.TagList} with tags for the complete `toc`.
          * @param tags A {@link Gst.TagList} or `null`
          */
-        set_tags(tags: (TagList | null)): void;
+        set_tags(tags: TagList | null): void;
     }
 
 
@@ -23758,7 +23696,7 @@ export namespace Gst {
          * Gets the parent {@link Gst.TocEntry} of `entry`.
          * @returns The parent {@link Gst.TocEntry} of `entry`
          */
-        get_parent(): (TocEntry | null);
+        get_parent(): TocEntry | null;
 
         /**
          * Get `start` and `stop` values from the `entry` and write them into appropriate
@@ -23777,13 +23715,13 @@ export namespace Gst {
          * Gets the tags for `entry`.
          * @returns A {@link Gst.TagList} for `entry`
          */
-        get_tags(): (TagList | null);
+        get_tags(): TagList | null;
 
         /**
          * Gets the parent {@link Gst.Toc} of `entry`.
          * @returns The parent {@link Gst.Toc} of `entry`
          */
-        get_toc(): (Toc | null);
+        get_toc(): Toc | null;
 
         /**
          * Gets the UID of `entry`.
@@ -23806,7 +23744,7 @@ export namespace Gst {
          * @param tags A {@link Gst.TagList} or `null`
          * @param mode A {@link Gst.TagMergeMode}
          */
-        merge_tags(tags: (TagList | null), mode: TagMergeMode): void;
+        merge_tags(tags: TagList | null, mode: TagMergeMode): void;
 
         /**
          * Set `loop_type` and `repeat_count` values for the `entry`.
@@ -23820,13 +23758,13 @@ export namespace Gst {
          * @param start start value to set.
          * @param stop stop value to set.
          */
-        set_start_stop_times(start: (bigint | number), stop: (bigint | number)): void;
+        set_start_stop_times(start: bigint | number, stop: bigint | number): void;
 
         /**
          * Set a {@link Gst.TagList} with tags for the complete `entry`.
          * @param tags A {@link Gst.TagList} or `null`
          */
-        set_tags(tags: (TagList | null)): void;
+        set_tags(tags: TagList | null): void;
     }
 
 
@@ -23887,7 +23825,7 @@ export namespace Gst {
          * @param extensions Optional comma-separated list of extensions     that could belong to this type
          * @param possible_caps Optionally the caps that could be returned when typefinding                 succeeds
          */
-        static register(plugin: (Plugin | null), name: string, rank: number, func: TypeFindFunction, extensions: (string | null), possible_caps: (Caps | null)): boolean;
+        static register(plugin: Plugin | null, name: string, rank: number, func: TypeFindFunction, extensions: string | null, possible_caps: Caps | null): boolean;
 
         // Methods
         /**
@@ -23906,7 +23844,7 @@ export namespace Gst {
          * @param size The number of bytes to return
          * @returns the     requested data, or `null` if that data is not available.
          */
-        peek(offset: (bigint | number), size: number): (number | null);
+        peek(offset: bigint | number, size: number): number | null;
 
         /**
          * If a {@link Gst.TypeFindFunction} calls this function it suggests the caps with the
@@ -23951,9 +23889,9 @@ export namespace Gst {
         static $gtype: GObject.GType<Uri>;
 
         // Constructors
-        constructor(scheme: (string | null), userinfo: (string | null), host: (string | null), port: number, path: (string | null), query: (string | null), fragment: (string | null));
+        constructor(scheme: string | null, userinfo: string | null, host: string | null, port: number, path: string | null, query: string | null, fragment: string | null);
 
-        static ["new"](scheme: (string | null), userinfo: (string | null), host: (string | null), port: number, path: (string | null), query: (string | null), fragment: (string | null)): Uri;
+        static ["new"](scheme: string | null, userinfo: string | null, host: string | null, port: number, path: string | null, query: string | null, fragment: string | null): Uri;
 
         // Static methods
         /**
@@ -23970,7 +23908,7 @@ export namespace Gst {
          * cannot be parsed.
          * @param uri The URI string to parse.
          */
-        static from_string(uri: string): (Uri | null);
+        static from_string(uri: string): Uri | null;
 
         /**
          * Parses a URI string into a new {@link Gst.Uri} object. Will return NULL if the URI
@@ -23988,7 +23926,7 @@ export namespace Gst {
          * https://example.com/path#fragment which may contain a URI-escaped '#'.
          * @param uri The URI string to parse.
          */
-        static from_string_escaped(uri: string): (Uri | null);
+        static from_string_escaped(uri: string): Uri | null;
 
         /**
          * Extracts the location out of a given valid URI, ie. the protocol and "://"
@@ -23999,14 +23937,14 @@ export namespace Gst {
          * Free-function: g_free
          * @param uri A URI string
          */
-        static get_location(uri: string): (string | null);
+        static get_location(uri: string): string | null;
 
         /**
          * Extracts the protocol out of a given valid URI. The returned string must be
          * freed using `g_free()`.
          * @param uri A URI string
          */
-        static get_protocol(uri: string): (string | null);
+        static get_protocol(uri: string): string | null;
 
         /**
          * Checks if the protocol of a given valid URI matches `protocol`.
@@ -24028,7 +23966,7 @@ export namespace Gst {
          * @param base_uri The percent-encoded base URI.
          * @param ref_uri The percent-encoded reference URI to join to the `base_uri`.
          */
-        static join_strings(base_uri: string, ref_uri: string): (string | null);
+        static join_strings(base_uri: string, ref_uri: string): string | null;
 
         /**
          * Checks if an element exists that supports the given URI protocol. Note
@@ -24054,14 +23992,14 @@ export namespace Gst {
          * @param relative_path Relative path to append to the end of the current path.
          * @returns `true` if the path was appended successfully.
          */
-        append_path(relative_path: (string | null)): boolean;
+        append_path(relative_path: string | null): boolean;
 
         /**
          * Append a single path segment onto the end of the URI path.
          * @param path_segment The path segment string to append to the URI path.
          * @returns `true` if the path was appended successfully.
          */
-        append_path_segment(path_segment: (string | null)): boolean;
+        append_path_segment(path_segment: string | null): boolean;
 
         /**
          * Compares two {@link Gst.Uri} objects to see if they represent the same normalized
@@ -24076,21 +24014,21 @@ export namespace Gst {
          * @param uri The URI string to parse.
          * @returns A new {@link Gst.Uri} object.
          */
-        from_string_with_base(uri: string): (Uri | null);
+        from_string_with_base(uri: string): Uri | null;
 
         /**
          * Get the fragment name from the URI or `null` if it doesn't exist.
          * If `uri` is `null` then returns `null`.
          * @returns The host name from the {@link Gst.Uri} object or `null`.
          */
-        get_fragment(): (string | null);
+        get_fragment(): string | null;
 
         /**
          * Get the host name from the URI or `null` if it doesn't exist.
          * If `uri` is `null` then returns `null`.
          * @returns The host name from the {@link Gst.Uri} object or `null`.
          */
-        get_host(): (string | null);
+        get_host(): string | null;
 
         /**
          * Get the media fragment table from the URI, as defined by "Media Fragments URI 1.0".
@@ -24106,13 +24044,13 @@ export namespace Gst {
          * See more about Media Fragments URI 1.0 (W3C) at https://www.w3.org/TR/media-frags/
          * @returns The          fragment hash table from the URI.
          */
-        get_media_fragment_table(): (GLib.HashTable<string, string> | null);
+        get_media_fragment_table(): GLib.HashTable<string, string> | null;
 
         /**
          * Extract the path string from the URI object.
          * @returns The path from the URI. Once finished                                      with the string should be `g_free()`'d.
          */
-        get_path(): (string | null);
+        get_path(): string | null;
 
         /**
          * Get a list of path segments from the URI.
@@ -24124,7 +24062,7 @@ export namespace Gst {
          * Extract the path string from the URI object as a percent encoded URI path.
          * @returns The path from the URI. Once finished                                      with the string should be `g_free()`'d.
          */
-        get_path_string(): (string | null);
+        get_path_string(): string | null;
 
         /**
          * Get the port number from the URI or `GST_URI_NO_PORT` if it doesn't exist.
@@ -24143,7 +24081,7 @@ export namespace Gst {
          * Get a percent encoded URI query string from the `uri`.
          * @returns A percent encoded query string. Use                                      `g_free()` when no longer needed.
          */
-        get_query_string(): (string | null);
+        get_query_string(): string | null;
 
         /**
          * Get a percent encoded URI query string from the `uri`, with query parameters
@@ -24154,7 +24092,7 @@ export namespace Gst {
          * @param keys A GList containing the   query argument key strings.
          * @returns A percent encoded query string. Use `g_free()` when no longer needed.
          */
-        get_query_string_ordered(keys: (string[] | null)): (string | null);
+        get_query_string_ordered(keys: string[] | null): string | null;
 
         /**
          * Get the query table from the URI. Keys and values in the table are freed
@@ -24165,7 +24103,7 @@ export namespace Gst {
          * URI.
          * @returns The query          hash table from the URI.
          */
-        get_query_table(): (GLib.HashTable<string, string> | null);
+        get_query_table(): GLib.HashTable<string, string> | null;
 
         /**
          * Get the value associated with the `query_key` key. Will return `null` if the
@@ -24176,21 +24114,21 @@ export namespace Gst {
          * @param query_key The key to lookup.
          * @returns The value for the given key, or `null` if not found.
          */
-        get_query_value(query_key: string): (string | null);
+        get_query_value(query_key: string): string | null;
 
         /**
          * Get the scheme name from the URI or `null` if it doesn't exist.
          * If `uri` is `null` then returns `null`.
          * @returns The scheme from the {@link Gst.Uri} object or `null`.
          */
-        get_scheme(): (string | null);
+        get_scheme(): string | null;
 
         /**
          * Get the userinfo (usually in the form "username:password") from the URI
          * or `null` if it doesn't exist. If `uri` is `null` then returns `null`.
          * @returns The userinfo from the {@link Gst.Uri} object or `null`.
          */
-        get_userinfo(): (string | null);
+        get_userinfo(): string | null;
 
         /**
          * Tests the `uri` to see if it is normalized. A `null` `uri` is considered to be
@@ -24218,7 +24156,7 @@ export namespace Gst {
          * @param ref_uri The reference URI to join onto the                                       base URI.
          * @returns A {@link Gst.Uri} which represents the base                                      with the reference URI joined on.
          */
-        join(ref_uri: (Uri | null)): (Uri | null);
+        join(ref_uri: Uri | null): Uri | null;
 
         /**
          * Make the {@link Gst.Uri} writable.
@@ -24242,7 +24180,7 @@ export namespace Gst {
          * @param fragment The fragment name for the new URI.
          * @returns The new URI joined onto `base`.
          */
-        new_with_base(scheme: (string | null), userinfo: (string | null), host: (string | null), port: number, path: (string | null), query: (string | null), fragment: (string | null)): Uri;
+        new_with_base(scheme: string | null, userinfo: string | null, host: string | null, port: number, path: string | null, query: string | null, fragment: string | null): Uri;
 
         /**
          * Normalization will remove extra path segments ("." and "..") from the URI. It
@@ -24275,7 +24213,7 @@ export namespace Gst {
          * @param fragment The fragment string to set.
          * @returns `true` if the fragment was set/unset successfully.
          */
-        set_fragment(fragment: (string | null)): boolean;
+        set_fragment(fragment: string | null): boolean;
 
         /**
          * Set or unset the host for the URI.
@@ -24289,14 +24227,14 @@ export namespace Gst {
          * @param path The new path to set with path segments separated by '/', or use `null`        to unset the path.
          * @returns `true` if the path was set successfully.
          */
-        set_path(path: (string | null)): boolean;
+        set_path(path: string | null): boolean;
 
         /**
          * Replace the path segments list in the URI.
          * @param path_segments The new                 path list to set.
          * @returns `true` if the path segments were set successfully.
          */
-        set_path_segments(path_segments: (string[] | null)): boolean;
+        set_path_segments(path_segments: string[] | null): boolean;
 
         /**
          * Sets or unsets the path in the URI.
@@ -24317,7 +24255,7 @@ export namespace Gst {
          * @param query The new percent encoded query string to use to populate the query        table, or use `null` to unset the query table.
          * @returns `true` if the query table was set successfully.
          */
-        set_query_string(query: (string | null)): boolean;
+        set_query_string(query: string | null): boolean;
 
         /**
          * Set the query table to use in the URI. The old table is unreferenced and a
@@ -24326,7 +24264,7 @@ export namespace Gst {
          * @param query_table The new               query table to use.
          * @returns `true` if the new table was successfully used for the query table.
          */
-        set_query_table(query_table: (GLib.HashTable<string, string> | null)): boolean;
+        set_query_table(query_table: GLib.HashTable<string, string> | null): boolean;
 
         /**
          * This inserts or replaces a key in the query table. A `query_value` of `null`
@@ -24336,7 +24274,7 @@ export namespace Gst {
          * @param query_value The value for the key.
          * @returns `true` if the query table was successfully updated.
          */
-        set_query_value(query_key: string, query_value: (string | null)): boolean;
+        set_query_value(query_key: string, query_value: string | null): boolean;
 
         /**
          * Set or unset the scheme for the URI.
@@ -24372,7 +24310,7 @@ export namespace Gst {
          * @param keys A GList containing   the query argument key strings.
          * @returns The string version of the URI.
          */
-        to_string_with_keys(keys: (string[] | null)): string;
+        to_string_with_keys(keys: string[] | null): string;
     }
 
 
@@ -24447,9 +24385,7 @@ export namespace Gst {
 
 
         // Constructor properties interface
-        interface ConstructorProps extends GObject.Object.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GObject.Object.ConstructorProps {}
     }
 
     export interface ChildProxyNamespace {
@@ -24552,7 +24488,7 @@ export namespace Gst {
          * @param name name of the property to set
          * @param value new {@link GObject.Value} for the property
          */
-        set_property(name: string, value: (GObject.Value | any)): void;
+        set_property(name: string, value: GObject.Value | any): void;
     }
 
 
@@ -24629,14 +24565,12 @@ export namespace Gst {
              * @param value new value
              * @virtual
              */
-            vfunc_set_meta(name: string, tag: string, value: (string | null)): boolean;
+            vfunc_set_meta(name: string, tag: string, value: string | null): boolean;
         }
 
 
         // Constructor properties interface
-        interface ConstructorProps extends GObject.Object.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GObject.Object.ConstructorProps {}
     }
 
     export interface PresetNamespace {
@@ -24646,7 +24580,7 @@ export namespace Gst {
         * Gets the directory for application specific presets if set by the
         * application.
         */
-        get_app_dir(): (string | null);
+        get_app_dir(): string | null;
         /**
         * Sets an extra directory as an absolute path that should be considered when
         * looking for presets. Any presets in the application dir will shadow the
@@ -24751,7 +24685,7 @@ export namespace Gst {
          * @param value new value
          * @returns `true` for success, `false` if e.g. there is no preset with that `name`
          */
-        set_meta(name: string, tag: string, value: (string | null)): boolean;
+        set_meta(name: string, tag: string, value: string | null): boolean;
     }
 
 
@@ -24762,9 +24696,7 @@ export namespace Gst {
     namespace TagSetter {
 
         // Constructor properties interface
-        interface ConstructorProps extends Element.ConstructorProps {
-
-        }
+        interface ConstructorProps extends Element.ConstructorProps {}
     }
 
     export interface TagSetterNamespace {
@@ -24825,7 +24757,7 @@ export namespace Gst {
          * @param tag tag to set
          * @param value GValue to set for the tag
          */
-        add_tag_value(mode: TagMergeMode, tag: string, value: (GObject.Value | any)): void;
+        add_tag_value(mode: TagMergeMode, tag: string, value: GObject.Value | any): void;
 
         /**
          * Returns the current list of tags the setter uses.  The list should not be
@@ -24834,7 +24766,7 @@ export namespace Gst {
          * This function is not thread-safe.
          * @returns a current snapshot of the          taglist used in the setter or `null` if none is used.
          */
-        get_tag_list(): (TagList | null);
+        get_tag_list(): TagList | null;
 
         /**
          * Queries the mode by which tags inside the setter are overwritten by tags
@@ -24873,9 +24805,7 @@ export namespace Gst {
     namespace TocSetter {
 
         // Constructor properties interface
-        interface ConstructorProps extends Element.ConstructorProps {
-
-        }
+        interface ConstructorProps extends Element.ConstructorProps {}
     }
 
     export interface TocSetterNamespace {
@@ -24907,7 +24837,7 @@ export namespace Gst {
          * modified without making it writable first.
          * @returns TOC set, or `null`. Unref with     `gst_toc_unref()` when no longer needed
          */
-        get_toc(): (Toc | null);
+        get_toc(): Toc | null;
 
         /**
          * Reset the internal TOC. Elements should call this from within the
@@ -24920,7 +24850,7 @@ export namespace Gst {
          * unreffed before setting a new one.
          * @param toc a {@link Gst.Toc} to set.
          */
-        set_toc(toc: (Toc | null)): void;
+        set_toc(toc: Toc | null): void;
     }
 
 
@@ -24940,7 +24870,7 @@ export namespace Gst {
              * Gets the currently handled URI.
              * @virtual
              */
-            vfunc_get_uri(): (string | null);
+            vfunc_get_uri(): string | null;
 
             /**
              * Tries to set the URI of the given handler.
@@ -24952,9 +24882,7 @@ export namespace Gst {
 
 
         // Constructor properties interface
-        interface ConstructorProps extends GObject.Object.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GObject.Object.ConstructorProps {}
     }
 
     export interface URIHandlerNamespace {
@@ -24980,13 +24908,13 @@ export namespace Gst {
          * modified.
          * @returns the     supported protocols.  Returns `null` if the `handler` isn't     implemented properly, or the `handler` doesn't support any     protocols.
          */
-        get_protocols(): (string[] | null);
+        get_protocols(): string[] | null;
 
         /**
          * Gets the currently handled URI.
          * @returns the URI currently handled by   the `handler`.  Returns `null` if there are no URI currently   handled. The returned string must be freed with `g_free()` when no   longer needed.
          */
-        get_uri(): (string | null);
+        get_uri(): string | null;
 
         /**
          * Gets the type of the given URI handler
@@ -25017,19 +24945,19 @@ export namespace Gst {
      * A datatype to hold a time, measured in nanoseconds.
      * @gir-type Alias
      */
-    type ClockTime = (bigint | number);
+    type ClockTime = bigint | number;
 
     /**
      * A datatype to hold a time difference, measured in nanoseconds.
      * @gir-type Alias
      */
-    type ClockTimeDiff = (bigint | number);
+    type ClockTimeDiff = bigint | number;
 
     /**
      * A type defining the type of an element factory.
      * @gir-type Alias
      */
-    type ElementFactoryListType = (bigint | number);
+    type ElementFactoryListType = bigint | number;
 
     /**
      * Name of the imported GIR library

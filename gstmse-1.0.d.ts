@@ -79,7 +79,7 @@ export namespace GstMse {
         static QUOTA_EXCEEDED: number;
 
         // Constructors
-        constructor(options: { message: string, code: number });
+        constructor(options: { message: string; code: number });
 
         // Static methods
         /**
@@ -233,8 +233,8 @@ export namespace GstMse {
         interface ConstructorProps extends Gst.Object.ConstructorProps {
             active_source_buffers: SourceBufferList;
             activeSourceBuffers: SourceBufferList;
-            duration: (bigint | number);
-            position: (bigint | number);
+            duration: bigint | number;
+            position: bigint | number;
             ready_state: MediaSourceReadyState;
             readyState: MediaSourceReadyState;
             source_buffers: SourceBufferList;
@@ -287,7 +287,7 @@ export namespace GstMse {
          * @default 18446744073709551615
          */
         get duration(): number;
-        set duration(val: (bigint | number));
+        set duration(val: bigint | number);
 
         /**
          * The position of the player consuming from the Media Source
@@ -295,7 +295,7 @@ export namespace GstMse {
          * @default 18446744073709551615
          */
         get position(): number;
-        set position(val: (bigint | number));
+        set position(val: bigint | number);
 
         /**
          * The Ready State of the Media Source
@@ -525,14 +525,14 @@ export namespace GstMse {
 
         // Constructor properties interface
         interface ConstructorProps extends Gst.Element.ConstructorProps, Gst.URIHandler.ConstructorProps {
-            duration: (bigint | number);
+            duration: bigint | number;
             n_audio: number;
             nAudio: number;
             n_text: number;
             nText: number;
             n_video: number;
             nVideo: number;
-            position: (bigint | number);
+            position: bigint | number;
             ready_state: MseSrcReadyState;
             readyState: MseSrcReadyState;
         }
@@ -564,7 +564,7 @@ export namespace GstMse {
          * @default 18446744073709551615
          */
         get duration(): number;
-        set duration(val: (bigint | number));
+        set duration(val: bigint | number);
 
         /**
          * The number of audio tracks in the Media Source
@@ -725,13 +725,13 @@ export namespace GstMse {
          * modified.
          * @returns the     supported protocols.  Returns `null` if the `handler` isn't     implemented properly, or the `handler` doesn't support any     protocols.
          */
-        get_protocols(): (string[] | null);
+        get_protocols(): string[] | null;
 
         /**
          * Gets the currently handled URI.
          * @returns the URI currently handled by   the `handler`.  Returns `null` if there are no URI currently   handled. The returned string must be freed with `g_free()` when no   longer needed.
          */
-        get_uri(): (string | null);
+        get_uri(): string | null;
 
         /**
          * Gets the type of the given URI handler
@@ -750,7 +750,7 @@ export namespace GstMse {
          * Gets the currently handled URI.
          * @virtual
          */
-        vfunc_get_uri(): (string | null);
+        vfunc_get_uri(): string | null;
 
         /**
          * Tries to set the URI of the given handler.
@@ -801,9 +801,7 @@ export namespace GstMse {
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends Gst.Pad.ConstructorProps {
-
-        }
+        interface ConstructorProps extends Gst.Pad.ConstructorProps {}
     }
 
     /**
@@ -910,15 +908,15 @@ export namespace GstMse {
         interface ConstructorProps extends Gst.Object.ConstructorProps {
             append_mode: SourceBufferAppendMode;
             appendMode: SourceBufferAppendMode;
-            append_window_end: (bigint | number);
-            appendWindowEnd: (bigint | number);
-            append_window_start: (bigint | number);
-            appendWindowStart: (bigint | number);
+            append_window_end: bigint | number;
+            appendWindowEnd: bigint | number;
+            append_window_start: bigint | number;
+            appendWindowStart: bigint | number;
             buffered: never[];
             content_type: string;
             contentType: string;
-            timestamp_offset: (bigint | number);
-            timestampOffset: (bigint | number);
+            timestamp_offset: bigint | number;
+            timestampOffset: bigint | number;
             updating: boolean;
         }
     }
@@ -1066,7 +1064,7 @@ export namespace GstMse {
          * @default 0
          */
         get timestamp_offset(): number;
-        set timestamp_offset(val: (bigint | number));
+        set timestamp_offset(val: bigint | number);
 
         /**
          * The next media segment appended to the current Source Buffer will have its
@@ -1077,7 +1075,7 @@ export namespace GstMse {
          * @default 0
          */
         get timestampOffset(): number;
-        set timestampOffset(val: (bigint | number));
+        set timestampOffset(val: bigint | number);
 
         /**
          * Whether the current source buffer is still asynchronously processing
@@ -1282,7 +1280,7 @@ export namespace GstMse {
 
         // Constructor properties interface
         interface ConstructorProps extends Gst.Object.ConstructorProps {
-            length: (bigint | number);
+            length: bigint | number;
         }
     }
 
@@ -1355,7 +1353,7 @@ export namespace GstMse {
          * @param index index of requested Source Buffer
          * @returns The requested {@link GstMse.SourceBuffer} or `NULL`
          */
-        index(index: number): (SourceBuffer | null);
+        index(index: number): SourceBuffer | null;
     }
 
 

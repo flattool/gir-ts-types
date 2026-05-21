@@ -55,7 +55,7 @@ export namespace GstGL {
         static RESOURCE_UNAVAILABLE: number;
 
         // Constructors
-        constructor(options: { message: string, code: number });
+        constructor(options: { message: string; code: number });
 
         // Static methods
         static quark(): GLib.Quark;
@@ -128,7 +128,7 @@ export namespace GstGL {
         static RESOURCE_UNAVAILABLE: number;
 
         // Constructors
-        constructor(options: { message: string, code: number });
+        constructor(options: { message: string; code: number });
 
         // Static methods
         static quark(): GLib.Quark;
@@ -280,7 +280,7 @@ export namespace GstGL {
         static PROGRAM: number;
 
         // Constructors
-        constructor(options: { message: string, code: number });
+        constructor(options: { message: string; code: number });
 
         // Static methods
         static quark(): GLib.Quark;
@@ -504,7 +504,7 @@ export namespace GstGL {
         static RESOURCE_UNAVAILABLE: number;
 
         // Constructors
-        constructor(options: { message: string, code: number });
+        constructor(options: { message: string; code: number });
 
         // Static methods
         static quark(): GLib.Quark;
@@ -702,7 +702,7 @@ export namespace GstGL {
      * @param config a buffer pool config
      * @returns the currently set {@link GstGL.GLAllocationParams} or `null`
      */
-    function buffer_pool_config_get_gl_allocation_params(config: Gst.Structure): (GLAllocationParams | null);
+    function buffer_pool_config_get_gl_allocation_params(config: Gst.Structure): GLAllocationParams | null;
 
     /**
      * See `gst_buffer_pool_config_set_gl_min_free_queue_size()`.
@@ -717,7 +717,7 @@ export namespace GstGL {
      * @param config a buffer pool config
      * @param params a {@link GstGL.GLAllocationParams}
      */
-    function buffer_pool_config_set_gl_allocation_params(config: Gst.Structure, params: (GLAllocationParams | null)): void;
+    function buffer_pool_config_set_gl_allocation_params(config: Gst.Structure, params: GLAllocationParams | null): void;
 
     /**
      * Instructs the {@link GstGL.GLBufferPool} to keep `queue_size` amount of buffers around
@@ -750,7 +750,7 @@ export namespace GstGL {
      * @param display resulting {@link GstGL.GLDisplay}
      * @since 1.4
      */
-    function context_set_gl_display(context: Gst.Context, display: (GLDisplay | null)): void;
+    function context_set_gl_display(context: Gst.Context, display: GLDisplay | null): void;
 
     /**
      * @param api_s a space separated string of OpenGL apis
@@ -770,7 +770,7 @@ export namespace GstGL {
      * @returns a new {@link GstGL.GLBaseMemory} from `allocator` with the requested `params`.
      * @since 1.8
      */
-    function gl_base_memory_alloc(allocator: GLBaseMemoryAllocator, params: GLAllocationParams): (GLBaseMemory | null);
+    function gl_base_memory_alloc(allocator: GLBaseMemoryAllocator, params: GLAllocationParams): GLBaseMemory | null;
 
     /**
      * @returns the quark used for {@link GstGL.GLBaseMemory} in {@link GLib.Error}'s
@@ -803,14 +803,14 @@ export namespace GstGL {
      * @returns a string version of `caveat` or `null` if `caveat` does not                      exist.
      * @since 1.20
      */
-    function gl_config_caveat_to_string(caveat: GLConfigCaveat): (string | null);
+    function gl_config_caveat_to_string(caveat: GLConfigCaveat): string | null;
 
     /**
      * @param surface_type the {@link GstGL.GLConfigSurfaceType}
      * @returns a string version of `caveat` or `null` if `surface_type` does not                      exist.
      * @since 1.20
      */
-    function gl_config_surface_type_to_string(surface_type: GLConfigSurfaceType): (string | null);
+    function gl_config_surface_type_to_string(surface_type: GLConfigSurfaceType): string | null;
 
     /**
      * @returns the quark used for {@link GstGL.GLContext} in {@link GLib.Error}'s
@@ -896,7 +896,7 @@ export namespace GstGL {
      * @param meta a {@link GstVideo.VideoAffineTransformationMeta}
      * @since 1.20
      */
-    function gl_get_affine_transformation_meta_as_ndc(meta: (GstVideo.VideoAffineTransformationMeta | null)): number[];
+    function gl_get_affine_transformation_meta_as_ndc(meta: GstVideo.VideoAffineTransformationMeta | null): number[];
 
     /**
      * Retrieve the size in bytes of a video plane of data with a certain alignment
@@ -922,7 +922,7 @@ export namespace GstGL {
      * @param other_context application provided {@link GstGL.GLContext}
      * @returns Whether the `query` was successfully responded to from the passed          `display`, `context`, and `other_context`.
      */
-    function gl_handle_context_query(element: Gst.Element, query: Gst.Query, display: (GLDisplay | null), context: (GLContext | null), other_context: (GLContext | null)): boolean;
+    function gl_handle_context_query(element: Gst.Element, query: Gst.Query, display: GLDisplay | null, context: GLContext | null, other_context: GLContext | null): boolean;
 
     /**
      * Helper function for implementing {@link Gst.ElementClass}.set_context() in
@@ -1034,7 +1034,7 @@ export namespace GstGL {
      * @param target a {@link GstGL.GLTextureTarget}
      * @returns a string representing the `GstBufferPoolOption` specified by `target`
      */
-    function gl_texture_target_to_buffer_pool_option(target: GLTextureTarget): (string | null);
+    function gl_texture_target_to_buffer_pool_option(target: GLTextureTarget): string | null;
 
     /**
      * @param target a {@link GstGL.GLTextureTarget}
@@ -1046,21 +1046,21 @@ export namespace GstGL {
      * @param target a {@link GstGL.GLTextureTarget}
      * @returns the stringified version of `target` or `null`
      */
-    function gl_texture_target_to_string(target: GLTextureTarget): (string | null);
+    function gl_texture_target_to_string(target: GLTextureTarget): string | null;
 
     /**
      * See `gst_gl_value_set_texture_target_from_mask()` for what entails a mask
      * @param value an initialized {@link GObject.Value} of type G_TYPE_STRING
      * @returns the mask of {@link GstGL.GLTextureTarget}'s in `value` or     {@link GstGL.GLTextureTarget.NONE} on failure
      */
-    function gl_value_get_texture_target_mask(value: (GObject.Value | any)): GLTextureTarget;
+    function gl_value_get_texture_target_mask(value: GObject.Value | any): GLTextureTarget;
 
     /**
      * @param value an initialized {@link GObject.Value} of type G_TYPE_STRING
      * @param target a {@link GstGL.GLTextureTarget}'s
      * @returns whether the `target` could be set on `value`
      */
-    function gl_value_set_texture_target(value: (GObject.Value | any), target: GLTextureTarget): boolean;
+    function gl_value_set_texture_target(value: GObject.Value | any, target: GLTextureTarget): boolean;
 
     /**
      * A mask is a bitwise OR of (1 << target) where target is a valid
@@ -1069,7 +1069,7 @@ export namespace GstGL {
      * @param target_mask a bitwise mask of {@link GstGL.GLTextureTarget}'s
      * @returns whether the `target_mask` could be set on `value`
      */
-    function gl_value_set_texture_target_from_mask(value: (GObject.Value | any), target_mask: GLTextureTarget): boolean;
+    function gl_value_set_texture_target_from_mask(value: GObject.Value | any, target_mask: GLTextureTarget): boolean;
 
     /**
      * @param gl_api the {@link GstGL.GLAPI}
@@ -1116,7 +1116,7 @@ export namespace GstGL {
      * @param profile a {@link GstGL.GLSLProfile}
      * @returns the name for `profile` or `null` on error
      */
-    function glsl_profile_to_string(profile: GLSLProfile): (string | null);
+    function glsl_profile_to_string(profile: GLSLProfile): string | null;
 
     /**
      * Note: this function first searches the first 1 kilobytes for a `{@link Gst.version}`
@@ -1145,13 +1145,13 @@ export namespace GstGL {
      * @param profile a {@link GstGL.GLSLVersion}
      * @returns the combined GLSL `{@link Gst.version}` string for `version` and `profile`
      */
-    function glsl_version_profile_to_string(version: GLSLVersion, profile: GLSLProfile): (string | null);
+    function glsl_version_profile_to_string(version: GLSLVersion, profile: GLSLProfile): string | null;
 
     /**
      * @param version a {@link GstGL.GLSLVersion}
      * @returns the name of `version` or `null` on error
      */
-    function glsl_version_to_string(version: GLSLVersion): (string | null);
+    function glsl_version_to_string(version: GLSLVersion): string | null;
 
     /**
      * @param mem a {@link Gst.Memory}
@@ -1213,14 +1213,14 @@ export namespace GstGL {
      * @gir-type Callback
      */
     interface GLBaseMemoryAllocatorAllocFunction {
-        (allocator: GLBaseMemoryAllocator, params: GLAllocationParams): (GLBaseMemory | null);
+        (allocator: GLBaseMemoryAllocator, params: GLAllocationParams): GLBaseMemory | null;
     }
 
     /**
      * @gir-type Callback
      */
     interface GLBaseMemoryAllocatorCopyFunction {
-        (mem: GLBaseMemory, offset: number, size: number): (GLBaseMemory | null);
+        (mem: GLBaseMemory, offset: number, size: number): GLBaseMemory | null;
     }
 
     /**
@@ -1627,7 +1627,7 @@ export namespace GstGL {
         /**
          * @returns the {@link GstGL.GLContext} found by `filter`
          */
-        get_gl_context(): (GLContext | null);
+        get_gl_context(): GLContext | null;
     }
 
 
@@ -1639,9 +1639,7 @@ export namespace GstGL {
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends Gst.Allocator.ConstructorProps {
-
-        }
+        interface ConstructorProps extends Gst.Allocator.ConstructorProps {}
     }
 
     /**
@@ -1685,7 +1683,7 @@ export namespace GstGL {
          * @param params the {@link GstGL.GLAllocationParams} to allocate the memory with
          * @virtual
          */
-        vfunc_alloc(params: GLAllocationParams): (GLBaseMemory | null);
+        vfunc_alloc(params: GLAllocationParams): GLBaseMemory | null;
 
         /**
          * @param args 
@@ -1781,7 +1779,7 @@ export namespace GstGL {
         /**
          * @returns the {@link GstGL.GLContext} found by `mix`
          */
-        get_gl_context(): (GLContext | null);
+        get_gl_context(): GLContext | null;
     }
 
 
@@ -1801,9 +1799,7 @@ export namespace GstGL {
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends GstVideo.VideoAggregatorPad.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GstVideo.VideoAggregatorPad.ConstructorProps {}
     }
 
     /**
@@ -1857,8 +1853,8 @@ export namespace GstGL {
 
         // Constructor properties interface
         interface ConstructorProps extends GstBase.PushSrc.ConstructorProps {
-            timestamp_offset: (bigint | number);
-            timestampOffset: (bigint | number);
+            timestamp_offset: bigint | number;
+            timestampOffset: bigint | number;
         }
     }
 
@@ -1878,13 +1874,13 @@ export namespace GstGL {
          * @default 0
          */
         get timestamp_offset(): number;
-        set timestamp_offset(val: (bigint | number));
+        set timestamp_offset(val: bigint | number);
 
         /**
          * @default 0
          */
         get timestampOffset(): number;
-        set timestampOffset(val: (bigint | number));
+        set timestampOffset(val: bigint | number);
 
         /**
          * Compile-time signal type information.
@@ -1950,9 +1946,7 @@ export namespace GstGL {
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends GLBaseMemoryAllocator.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GLBaseMemoryAllocator.ConstructorProps {}
     }
 
     /**
@@ -1999,9 +1993,7 @@ export namespace GstGL {
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends Gst.BufferPool.ConstructorProps {
-
-        }
+        interface ConstructorProps extends Gst.BufferPool.ConstructorProps {}
     }
 
     /**
@@ -2063,7 +2055,7 @@ export namespace GstGL {
          * {@link GstGL.GLAllocationParams} which may or may not contain the same information.
          * @returns a copy of the {@link GstGL.GLAllocationParams} being used by the `pool`
          */
-        get_gl_allocation_params(): (GLAllocationParams | null);
+        get_gl_allocation_params(): GLAllocationParams | null;
     }
 
 
@@ -2075,9 +2067,7 @@ export namespace GstGL {
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends Gst.Object.ConstructorProps {
-
-        }
+        interface ConstructorProps extends Gst.Object.ConstructorProps {}
     }
 
     /**
@@ -2174,7 +2164,7 @@ export namespace GstGL {
          * @param inbuf the {@link GstGL.GLMemory} filled {@link Gst.Buffer} to convert
          * @returns a converted {@link Gst.Buffer} or `null`
          */
-        perform(inbuf: Gst.Buffer): (Gst.Buffer | null);
+        perform(inbuf: Gst.Buffer): Gst.Buffer | null;
 
         /**
          * Initializes `convert` with the information required for conversion.
@@ -2193,9 +2183,7 @@ export namespace GstGL {
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends Gst.Object.ConstructorProps {
-
-        }
+        interface ConstructorProps extends Gst.Object.ConstructorProps {}
     }
 
     /**
@@ -2239,7 +2227,7 @@ export namespace GstGL {
 
         static ["new"](display: GLDisplay): GLContext;
 
-        static new_wrapped(display: GLDisplay, handle: (bigint | number), context_type: GLPlatform, available_apis: GLAPI): GLContext;
+        static new_wrapped(display: GLDisplay, handle: bigint | number, context_type: GLPlatform, available_apis: GLAPI): GLContext;
 
         // Signals
         /** @signal */
@@ -2268,7 +2256,7 @@ export namespace GstGL {
         /**
          * See also `gst_gl_context_activate()`.
          */
-        static get_current(): (GLContext | null);
+        static get_current(): GLContext | null;
 
         /**
          * If an error occurs, `major` and `minor` are not modified and {@link GstGL.GLAPI.NONE} is
@@ -2280,7 +2268,7 @@ export namespace GstGL {
         /**
          * @param context_type a {@link GstGL.GLPlatform} specifying the type of context to retrieve
          */
-        static get_current_gl_context(context_type: GLPlatform): ((bigint | number) | null);
+        static get_current_gl_context(context_type: GLPlatform): bigint | number | null;
 
         /**
          * Attempts to use the `context_type` specific GetProcAddress implementations
@@ -2343,7 +2331,7 @@ export namespace GstGL {
          * return `null` when not supported.
          * @virtual
          */
-        vfunc_get_config(): (Gst.Structure | null);
+        vfunc_get_config(): Gst.Structure | null;
 
         /**
          * Get the currently enabled OpenGL api.
@@ -2358,7 +2346,7 @@ export namespace GstGL {
          * Gets the backing OpenGL context used by `context`.
          * @virtual
          */
-        vfunc_get_gl_context(): (bigint | number);
+        vfunc_get_gl_context(): bigint | number;
 
         /**
          * Gets the OpenGL platform that used by `context`.
@@ -2389,7 +2377,7 @@ export namespace GstGL {
          * @param gl_config a configuration structure for             configuring the OpenGL context
          * @virtual
          */
-        vfunc_request_config(gl_config: (Gst.Structure | null)): boolean;
+        vfunc_request_config(gl_config: Gst.Structure | null): boolean;
 
         /**
          * Swap the front and back buffers on the window attached to `context`.
@@ -2477,7 +2465,7 @@ export namespace GstGL {
          * @param other_context a {@link GstGL.GLContext} to share OpenGL objects with
          * @returns whether the context could successfully be created
          */
-        create(other_context: (GLContext | null)): boolean;
+        create(other_context: GLContext | null): boolean;
 
         /**
          * Destroys an OpenGL context.
@@ -2502,7 +2490,7 @@ export namespace GstGL {
          * return `null` when not supported.
          * @returns the configuration chosen for this OpenGL context.
          */
-        get_config(): (Gst.Structure | null);
+        get_config(): Gst.Structure | null;
 
         /**
          * @returns the {@link GstGL.GLDisplay} associated with this `context`
@@ -2573,12 +2561,12 @@ export namespace GstGL {
         /**
          * @returns The {@link GLib.Thread}, `context` is current in or NULL
          */
-        get_thread(): (GLib.Thread | null);
+        get_thread(): GLib.Thread | null;
 
         /**
          * @returns the currently set window
          */
-        get_window(): (GLWindow | null);
+        get_window(): GLWindow | null;
 
         /**
          * @returns Whether the {@link GstGL.GLContext} has been shared with another {@link GstGL.GLContext}
@@ -2601,7 +2589,7 @@ export namespace GstGL {
          * @param gl_config a configuration structure for             configuring the OpenGL context
          * @returns whether `gl_config` could be successfully set on `context`
          */
-        request_config(gl_config: (Gst.Structure | null)): boolean;
+        request_config(gl_config: Gst.Structure | null): boolean;
 
         /**
          * Will internally set `context` as shared with `share`
@@ -2665,15 +2653,13 @@ export namespace GstGL {
              * @signal
              * @run-last
              */
-            "create-context": (arg0: GLContext) => (GLContext | null);
+            "create-context": (arg0: GLContext) => GLContext | null;
             "notify::name": (pspec: GObject.ParamSpec) => void;
             "notify::parent": (pspec: GObject.ParamSpec) => void;
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends Gst.Object.ConstructorProps {
-
-        }
+        interface ConstructorProps extends Gst.Object.ConstructorProps {}
     }
 
     /**
@@ -2737,12 +2723,12 @@ export namespace GstGL {
         /**
          * @virtual
          */
-        vfunc_create_window(): (GLWindow | null);
+        vfunc_create_window(): GLWindow | null;
 
         /**
          * @virtual
          */
-        vfunc_get_handle(): (bigint | number);
+        vfunc_get_handle(): bigint | number;
 
         // Methods
         /**
@@ -2756,12 +2742,12 @@ export namespace GstGL {
          * @param other_context other {@link GstGL.GLContext} to share resources with.
          * @returns whether a new context could be created.
          */
-        create_context(other_context: (GLContext | null)): [boolean, GLContext];
+        create_context(other_context: GLContext | null): [boolean, GLContext];
 
         /**
          * @returns a new {@link GstGL.GLWindow} for `display` or `null`.
          */
-        create_window(): (GLWindow | null);
+        create_window(): GLWindow | null;
 
         /**
          * Ensures that the display has a valid GL context for the current thread. If
@@ -2770,7 +2756,7 @@ export namespace GstGL {
          * @param context the resulting {@link GstGL.GLContext}
          * @returns wether `context` contains a valid context.
          */
-        ensure_context(other_context: (GLContext | null), context: (GLContext | null)): [boolean, GLContext | null];
+        ensure_context(other_context: GLContext | null, context: GLContext | null): [boolean, GLContext | null];
 
         /**
          * limit the use of OpenGL to the requested `gl_api`.  This is intended to allow
@@ -2789,7 +2775,7 @@ export namespace GstGL {
          * @param compare_func a comparison function to run
          * @returns The first {@link GstGL.GLWindow} that causes a match          from `compare_func`
          */
-        find_window(data: null, compare_func: GLib.CompareFunc): (GLWindow | null);
+        find_window(data: null, compare_func: GLib.CompareFunc): GLWindow | null;
 
         /**
          * see `gst_gl_display_filter_gl_api()` for what the returned value represents
@@ -2803,7 +2789,7 @@ export namespace GstGL {
          * @param thread a {@link GLib.Thread}
          * @returns the {@link GstGL.GLContext} current on `thread` or `null` Must be called with the object lock held.
          */
-        get_gl_context_for_thread(thread: GLib.Thread): (GLContext | null);
+        get_gl_context_for_thread(thread: GLib.Thread): GLContext | null;
 
         /**
          * @returns the native handle for the display
@@ -2835,7 +2821,7 @@ export namespace GstGL {
          * @param compare_func a comparison function to run
          * @returns The first {@link GstGL.GLWindow} that causes a match          from `compare_func`
          */
-        retrieve_window(data: null, compare_func: GLib.CompareFunc): (GLWindow | null);
+        retrieve_window(data: null, compare_func: GLib.CompareFunc): GLWindow | null;
     }
 
 
@@ -2849,9 +2835,7 @@ export namespace GstGL {
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends GLBaseFilter.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GLBaseFilter.ConstructorProps {}
     }
 
     /**
@@ -2992,9 +2976,7 @@ export namespace GstGL {
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends Gst.Object.ConstructorProps {
-
-        }
+        interface ConstructorProps extends Gst.Object.ConstructorProps {}
     }
 
     /**
@@ -3101,9 +3083,7 @@ export namespace GstGL {
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends GLBaseMemoryAllocator.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GLBaseMemoryAllocator.ConstructorProps {}
     }
 
     /**
@@ -3156,9 +3136,7 @@ export namespace GstGL {
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends GLMemoryAllocator.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GLMemoryAllocator.ConstructorProps {}
     }
 
     /**
@@ -3212,9 +3190,7 @@ export namespace GstGL {
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends GLBaseMixer.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GLBaseMixer.ConstructorProps {}
     }
 
     /**
@@ -3306,9 +3282,7 @@ export namespace GstGL {
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends GLBaseMixerPad.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GLBaseMixerPad.ConstructorProps {}
     }
 
     /**
@@ -3433,9 +3407,7 @@ export namespace GstGL {
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends GLBaseMemoryAllocator.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GLBaseMemoryAllocator.ConstructorProps {}
     }
 
     /**
@@ -3482,9 +3454,7 @@ export namespace GstGL {
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends Gst.Object.ConstructorProps {
-
-        }
+        interface ConstructorProps extends Gst.Object.ConstructorProps {}
     }
 
     /**
@@ -3982,9 +3952,7 @@ export namespace GstGL {
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends Gst.Object.ConstructorProps {
-
-        }
+        interface ConstructorProps extends Gst.Object.ConstructorProps {}
     }
 
     /**
@@ -4056,7 +4024,7 @@ export namespace GstGL {
          * @param decide_query a {@link Gst.Query} from a decide allocation
          * @param query the proposed allocation query
          */
-        propose_allocation(decide_query: (Gst.Query | null), query: Gst.Query): void;
+        propose_allocation(decide_query: Gst.Query | null, query: Gst.Query): void;
 
         /**
          * Initializes `upload` with the information required for upload.
@@ -4246,7 +4214,7 @@ export namespace GstGL {
          * @param inbuf the {@link GstGL.GLMemory} filled {@link Gst.Buffer} to convert
          * @returns a converted {@link Gst.Buffer} or `null`
          */
-        perform(inbuf: Gst.Buffer): (Gst.Buffer | null);
+        perform(inbuf: Gst.Buffer): Gst.Buffer | null;
 
         /**
          * Reset `viewconvert` to the default state.  Further operation will require
@@ -4325,9 +4293,7 @@ export namespace GstGL {
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends Gst.Object.ConstructorProps {
-
-        }
+        interface ConstructorProps extends Gst.Object.ConstructorProps {}
     }
 
     /**
@@ -4390,7 +4356,7 @@ export namespace GstGL {
          * Gets the current windowing system display connection
          * @virtual
          */
-        vfunc_get_display(): (bigint | number);
+        vfunc_get_display(): bigint | number;
 
         /**
          * Gets the current window handle that this {@link GstGL.GLWindow} is
@@ -4398,7 +4364,7 @@ export namespace GstGL {
          *                     what is passed into `set_window_handle`
          * @virtual
          */
-        vfunc_get_window_handle(): (bigint | number);
+        vfunc_get_window_handle(): bigint | number;
 
         /**
          * Tell a `window` that it should handle events from the window system. These
@@ -4638,7 +4604,7 @@ export namespace GstGL {
          * require this to be called with a valid handle before drawing can commence.
          * @param handle handle to the window
          */
-        set_window_handle(handle: (bigint | number)): void;
+        set_window_handle(handle: bigint | number): void;
 
         /**
          * Present the window to the screen.
@@ -4781,7 +4747,7 @@ export namespace GstGL {
          * @param allocator a {@link GstGL.GLBaseMemoryAllocator}
          * @param params the {@link GstGL.GLAllocationParams} to allocate the memory with
          */
-        static alloc(allocator: GLBaseMemoryAllocator, params: GLAllocationParams): (GLBaseMemory | null);
+        static alloc(allocator: GLBaseMemoryAllocator, params: GLAllocationParams): GLBaseMemory | null;
 
         /**
          * Initializes the GL Base Memory allocator. It is safe to call this function
@@ -4807,7 +4773,7 @@ export namespace GstGL {
          * @param size the number of bytes to be allocated
          * @param user_data user data to call `notify` with
          */
-        init(allocator: Gst.Allocator, parent: (Gst.Memory | null), context: GLContext, params: (Gst.AllocationParams | null), size: (bigint | number), user_data: null): void;
+        init(allocator: Gst.Allocator, parent: Gst.Memory | null, context: GLContext, params: Gst.AllocationParams | null, size: bigint | number, user_data: null): void;
 
         /**
          * @param dest the destination {@link GstGL.GLBaseMemory}
@@ -4815,7 +4781,7 @@ export namespace GstGL {
          * @param size the number of bytes to copy
          * @returns whether the copy succeeded.
          */
-        memcpy(dest: GLBaseMemory, offset: (bigint | number), size: (bigint | number)): boolean;
+        memcpy(dest: GLBaseMemory, offset: bigint | number, size: bigint | number): boolean;
     }
 
 
@@ -4893,9 +4859,9 @@ export namespace GstGL {
         gl_usage: number;
 
         // Constructors
-        constructor(context: GLContext, alloc_size: (bigint | number), alloc_params: (Gst.AllocationParams | null), gl_target: number, gl_usage: number);
+        constructor(context: GLContext, alloc_size: bigint | number, alloc_params: Gst.AllocationParams | null, gl_target: number, gl_usage: number);
 
-        static ["new"](context: GLContext, alloc_size: (bigint | number), alloc_params: (Gst.AllocationParams | null), gl_target: number, gl_usage: number): GLBufferAllocationParams;
+        static ["new"](context: GLContext, alloc_size: bigint | number, alloc_params: Gst.AllocationParams | null, gl_target: number, gl_usage: number): GLBufferAllocationParams;
     }
 
 
@@ -5095,7 +5061,7 @@ export namespace GstGL {
          * @param valign optional {@link GstVideo.VideoAlignment} parameters
          * @param user_data user data to call `notify` with
          */
-        init(allocator: Gst.Allocator, parent: (Gst.Memory | null), context: GLContext, target: GLTextureTarget, tex_format: GLFormat, params: (Gst.AllocationParams | null), info: GstVideo.VideoInfo, plane: number, valign: (GstVideo.VideoAlignment | null), user_data: null): void;
+        init(allocator: Gst.Allocator, parent: Gst.Memory | null, context: GLContext, target: GLTextureTarget, tex_format: GLFormat, params: Gst.AllocationParams | null, info: GstVideo.VideoInfo, plane: number, valign: GstVideo.VideoAlignment | null, user_data: null): void;
 
         /**
          * Reads the texture in {@link GstGL.GLMemory} into `write_pointer` if no buffer is bound
@@ -5329,11 +5295,11 @@ export namespace GstGL {
         height: number;
 
         // Constructors
-        constructor(context: GLContext, alloc_params: (Gst.AllocationParams | null), renderbuffer_format: GLFormat, width: number, height: number);
+        constructor(context: GLContext, alloc_params: Gst.AllocationParams | null, renderbuffer_format: GLFormat, width: number, height: number);
 
-        static ["new"](context: GLContext, alloc_params: (Gst.AllocationParams | null), renderbuffer_format: GLFormat, width: number, height: number): GLRenderbufferAllocationParams;
+        static ["new"](context: GLContext, alloc_params: Gst.AllocationParams | null, renderbuffer_format: GLFormat, width: number, height: number): GLRenderbufferAllocationParams;
 
-        static new_wrapped(context: GLContext, alloc_params: (Gst.AllocationParams | null), renderbuffer_format: GLFormat, width: number, height: number, gl_handle: null, user_data: null): GLRenderbufferAllocationParams;
+        static new_wrapped(context: GLContext, alloc_params: Gst.AllocationParams | null, renderbuffer_format: GLFormat, width: number, height: number, gl_handle: null, user_data: null): GLRenderbufferAllocationParams;
     }
 
 
@@ -5437,15 +5403,15 @@ export namespace GstGL {
         tex_format: GLFormat;
 
         // Constructors
-        constructor(context: GLContext, alloc_params: (Gst.AllocationParams | null), v_info: GstVideo.VideoInfo, plane: number, valign: (GstVideo.VideoAlignment | null), target: GLTextureTarget, tex_format: GLFormat);
+        constructor(context: GLContext, alloc_params: Gst.AllocationParams | null, v_info: GstVideo.VideoInfo, plane: number, valign: GstVideo.VideoAlignment | null, target: GLTextureTarget, tex_format: GLFormat);
 
-        static ["new"](context: GLContext, alloc_params: (Gst.AllocationParams | null), v_info: GstVideo.VideoInfo, plane: number, valign: (GstVideo.VideoAlignment | null), target: GLTextureTarget, tex_format: GLFormat): GLVideoAllocationParams;
+        static ["new"](context: GLContext, alloc_params: Gst.AllocationParams | null, v_info: GstVideo.VideoInfo, plane: number, valign: GstVideo.VideoAlignment | null, target: GLTextureTarget, tex_format: GLFormat): GLVideoAllocationParams;
 
-        static new_wrapped_data(context: GLContext, alloc_params: (Gst.AllocationParams | null), v_info: GstVideo.VideoInfo, plane: number, valign: (GstVideo.VideoAlignment | null), target: GLTextureTarget, tex_format: GLFormat, wrapped_data: null, user_data: null): GLVideoAllocationParams;
+        static new_wrapped_data(context: GLContext, alloc_params: Gst.AllocationParams | null, v_info: GstVideo.VideoInfo, plane: number, valign: GstVideo.VideoAlignment | null, target: GLTextureTarget, tex_format: GLFormat, wrapped_data: null, user_data: null): GLVideoAllocationParams;
 
-        static new_wrapped_gl_handle(context: GLContext, alloc_params: (Gst.AllocationParams | null), v_info: GstVideo.VideoInfo, plane: number, valign: (GstVideo.VideoAlignment | null), target: GLTextureTarget, tex_format: GLFormat, gl_handle: null, user_data: null): GLVideoAllocationParams;
+        static new_wrapped_gl_handle(context: GLContext, alloc_params: Gst.AllocationParams | null, v_info: GstVideo.VideoInfo, plane: number, valign: GstVideo.VideoAlignment | null, target: GLTextureTarget, tex_format: GLFormat, gl_handle: null, user_data: null): GLVideoAllocationParams;
 
-        static new_wrapped_texture(context: GLContext, alloc_params: (Gst.AllocationParams | null), v_info: GstVideo.VideoInfo, plane: number, valign: (GstVideo.VideoAlignment | null), target: GLTextureTarget, tex_format: GLFormat, tex_id: number, user_data: null): GLVideoAllocationParams;
+        static new_wrapped_texture(context: GLContext, alloc_params: Gst.AllocationParams | null, v_info: GstVideo.VideoInfo, plane: number, valign: GstVideo.VideoAlignment | null, target: GLTextureTarget, tex_format: GLFormat, tex_id: number, user_data: null): GLVideoAllocationParams;
 
         // Methods
         /**

@@ -393,7 +393,7 @@ export namespace Gtk {
         static INVALID_ID: number;
 
         // Constructors
-        constructor(options: { message: string, code: number });
+        constructor(options: { message: string; code: number });
 
         // Static methods
         static quark(): GLib.Quark;
@@ -649,7 +649,7 @@ export namespace Gtk {
         static UNKNOWN_VALUE: number;
 
         // Constructors
-        constructor(options: { message: string, code: number });
+        constructor(options: { message: string; code: number });
 
         // Static methods
         static quark(): GLib.Quark;
@@ -1043,7 +1043,7 @@ export namespace Gtk {
         static INCOMPLETE_HOSTNAME: number;
 
         // Constructors
-        constructor(options: { message: string, code: number });
+        constructor(options: { message: string; code: number });
 
         // Static methods
         /**
@@ -1173,7 +1173,7 @@ export namespace Gtk {
         static FAILED: number;
 
         // Constructors
-        constructor(options: { message: string, code: number });
+        constructor(options: { message: string; code: number });
 
         // Static methods
         static quark(): GLib.Quark;
@@ -2108,7 +2108,7 @@ export namespace Gtk {
         static INVALID_FILE: number;
 
         // Constructors
-        constructor(options: { message: string, code: number });
+        constructor(options: { message: string; code: number });
 
         // Static methods
         /**
@@ -2546,7 +2546,7 @@ export namespace Gtk {
         static INVALID_URI: number;
 
         // Constructors
-        constructor(options: { message: string, code: number });
+        constructor(options: { message: string; code: number });
 
         // Static methods
         static quark(): GLib.Quark;
@@ -2602,7 +2602,7 @@ export namespace Gtk {
         static UNKNOWN: number;
 
         // Constructors
-        constructor(options: { message: string, code: number });
+        constructor(options: { message: string; code: number });
 
         // Static methods
         static quark(): GLib.Quark;
@@ -5586,7 +5586,7 @@ export namespace Gtk {
      * @returns a newly-allocated string representing the accelerator.
      * @since 3.4
      */
-    function accelerator_get_label_with_keycode(display: (Gdk.Display | null), accelerator_key: number, keycode: number, accelerator_mods: Gdk.ModifierType): string;
+    function accelerator_get_label_with_keycode(display: Gdk.Display | null, accelerator_key: number, keycode: number, accelerator_mods: Gdk.ModifierType): string;
 
     /**
      * Converts an accelerator keyval and modifier mask into a string
@@ -5614,7 +5614,7 @@ export namespace Gtk {
      * @returns a newly allocated accelerator name.
      * @since 3.4
      */
-    function accelerator_name_with_keycode(display: (Gdk.Display | null), accelerator_key: number, keycode: number, accelerator_mods: Gdk.ModifierType): string;
+    function accelerator_name_with_keycode(display: Gdk.Display | null, accelerator_key: number, keycode: number, accelerator_mods: Gdk.ModifierType): string;
 
     /**
      * Parses a string representing an accelerator. The format looks like
@@ -5696,7 +5696,7 @@ export namespace Gtk {
      * @since 2.6
      * @deprecated since 3.10: Deprecated
      */
-    function alternative_dialog_button_order(screen: (Gdk.Screen | null)): boolean;
+    function alternative_dialog_button_order(screen: Gdk.Screen | null): boolean;
 
     /**
      * Parses a signal description from `signal_desc` and incorporates
@@ -5768,7 +5768,7 @@ export namespace Gtk {
      * @param set_name unique binding set name
      * @returns `null` or the specified binding set
      */
-    function binding_set_find(set_name: string): (BindingSet | null);
+    function binding_set_find(set_name: string): BindingSet | null;
 
     /**
      * Find a key binding matching `keyval` and `modifiers` and activate the
@@ -5854,7 +5854,7 @@ export namespace Gtk {
      * @param required_micro the required micro version
      * @returns `null` if the GTK+ library is compatible with the   given version, or a string describing the version mismatch.   The returned string is owned by GTK+ and should not be modified   or freed.
      */
-    function check_version(required_major: number, required_minor: number, required_micro: number): (string | null);
+    function check_version(required_major: number, required_minor: number, required_micro: number): string | null;
 
     function css_provider_error_quark(): GLib.Quark;
 
@@ -5940,7 +5940,7 @@ export namespace Gtk {
      * @param context a (destination side) drag context
      * @returns if the drag is occurring     within a single application, a pointer to the source widget.     Otherwise, `null`.
      */
-    function drag_get_source_widget(context: Gdk.DragContext): (Widget | null);
+    function drag_get_source_widget(context: Gdk.DragContext): Widget | null;
 
     /**
      * Sets the icon for a particular drag to the default
@@ -6088,14 +6088,14 @@ export namespace Gtk {
      * the ::clicked signal.
      * @returns a copy of the current event, or     `null` if there is no current event. The returned event must be     freed with `gdk_event_free()`.
      */
-    function get_current_event(): (Gdk.Event | null);
+    function get_current_event(): Gdk.Event | null;
 
     /**
      * If there is a current event and it has a device, return that
      * device, otherwise return `null`.
      * @returns a {@link Gdk.Device}, or `null`
      */
-    function get_current_event_device(): (Gdk.Device | null);
+    function get_current_event_device(): Gdk.Device | null;
 
     /**
      * If there is a current event and it has a state field, place
@@ -6141,7 +6141,7 @@ export namespace Gtk {
      * @param event a {@link Gdk.Event}
      * @returns the widget that originally     received `event`, or `null`
      */
-    function get_event_widget(event: Gdk.Event): (Widget | null);
+    function get_event_widget(event: Gdk.Event): Widget | null;
 
     /**
      * Returns the interface age as passed to `libtool`
@@ -6238,7 +6238,7 @@ export namespace Gtk {
      * Queries the current grab of the default window group.
      * @returns The widget which currently     has the grab or `null` if no grab is active
      */
-    function grab_get_current(): (Widget | null);
+    function grab_get_current(): Widget | null;
 
     /**
      * Looks up the icon size associated with `name`.
@@ -6348,7 +6348,7 @@ export namespace Gtk {
      * similar things.
      * @param argv Address of the     `argv` parameter of `main()`, or `null`. Any options     understood by GTK+ are stripped before return.
      */
-    function init(argv: (string[] | null)): string[] | null;
+    function init(argv: string[] | null): string[] | null;
 
     /**
      * This function does the same work as `gtk_init()` with only a single
@@ -6365,7 +6365,7 @@ export namespace Gtk {
      * @param argv Address of the     `argv` parameter of `main()`, or `null`. Any options     understood by GTK+ are stripped before return.
      * @returns `true` if the commandline arguments (if any) were valid and     the windowing system has been successfully initialized, `false`     otherwise
      */
-    function init_check(argv: (string[] | null)): [boolean, string[] | null];
+    function init_check(argv: string[] | null): [boolean, string[] | null];
 
     /**
      * This function does the same work as `gtk_init_check()`.
@@ -6380,7 +6380,7 @@ export namespace Gtk {
      * @returns `true` if the commandline arguments (if any) were valid and     if the windowing system has been successfully initialized,     `false` otherwise
      * @since 2.6
      */
-    function init_with_args(argv: (string[] | null), parameter_string: (string | null), entries: GLib.OptionEntry[], translation_domain: (string | null)): [boolean, string[] | null];
+    function init_with_args(argv: string[] | null, parameter_string: string | null, entries: GLib.OptionEntry[], translation_domain: string | null): [boolean, string[] | null];
 
     /**
      * Removes the key snooper function with the given id.
@@ -6487,7 +6487,7 @@ export namespace Gtk {
      * @param height height of the rectangle to draw the arrow in
      * @deprecated since 3.0: Use `gtk_render_arrow()` instead
      */
-    function paint_arrow(style: Style, cr: cairo.Context, state_type: StateType, shadow_type: ShadowType, widget: (Widget | null), detail: (string | null), arrow_type: ArrowType, fill: boolean, x: number, y: number, width: number, height: number): void;
+    function paint_arrow(style: Style, cr: cairo.Context, state_type: StateType, shadow_type: ShadowType, widget: Widget | null, detail: string | null, arrow_type: ArrowType, fill: boolean, x: number, y: number, width: number, height: number): void;
 
     /**
      * Draws a box on `cr` with the given parameters.
@@ -6503,7 +6503,7 @@ export namespace Gtk {
      * @param height the height of the box
      * @deprecated since 3.0: Use `gtk_render_frame()` and `gtk_render_background()` instead
      */
-    function paint_box(style: Style, cr: cairo.Context, state_type: StateType, shadow_type: ShadowType, widget: (Widget | null), detail: (string | null), x: number, y: number, width: number, height: number): void;
+    function paint_box(style: Style, cr: cairo.Context, state_type: StateType, shadow_type: ShadowType, widget: Widget | null, detail: string | null, x: number, y: number, width: number, height: number): void;
 
     /**
      * Draws a box in `cr` using the given style and state and shadow type,
@@ -6523,7 +6523,7 @@ export namespace Gtk {
      * @param gap_width width of the gap
      * @deprecated since 3.0: Use `gtk_render_frame_gap()` instead
      */
-    function paint_box_gap(style: Style, cr: cairo.Context, state_type: StateType, shadow_type: ShadowType, widget: (Widget | null), detail: (string | null), x: number, y: number, width: number, height: number, gap_side: PositionType, gap_x: number, gap_width: number): void;
+    function paint_box_gap(style: Style, cr: cairo.Context, state_type: StateType, shadow_type: ShadowType, widget: Widget | null, detail: string | null, x: number, y: number, width: number, height: number, gap_side: PositionType, gap_x: number, gap_width: number): void;
 
     /**
      * Draws a check button indicator in the given rectangle on `cr` with
@@ -6540,7 +6540,7 @@ export namespace Gtk {
      * @param height the height of the rectangle to draw the check in
      * @deprecated since 3.0: Use `gtk_render_check()` instead
      */
-    function paint_check(style: Style, cr: cairo.Context, state_type: StateType, shadow_type: ShadowType, widget: (Widget | null), detail: (string | null), x: number, y: number, width: number, height: number): void;
+    function paint_check(style: Style, cr: cairo.Context, state_type: StateType, shadow_type: ShadowType, widget: Widget | null, detail: string | null, x: number, y: number, width: number, height: number): void;
 
     /**
      * Draws a diamond in the given rectangle on `window` using the given
@@ -6557,7 +6557,7 @@ export namespace Gtk {
      * @param height height of the rectangle to draw the diamond in
      * @deprecated since 3.0: Use cairo instead
      */
-    function paint_diamond(style: Style, cr: cairo.Context, state_type: StateType, shadow_type: ShadowType, widget: (Widget | null), detail: (string | null), x: number, y: number, width: number, height: number): void;
+    function paint_diamond(style: Style, cr: cairo.Context, state_type: StateType, shadow_type: ShadowType, widget: Widget | null, detail: string | null, x: number, y: number, width: number, height: number): void;
 
     /**
      * Draws an expander as used in {@link Gtk.TreeView}. `x` and `y` specify the
@@ -6579,7 +6579,7 @@ export namespace Gtk {
      * @param expander_style the style to draw the expander in; determines   whether the expander is collapsed, expanded, or in an   intermediate state.
      * @deprecated since 3.0: Use `gtk_render_expander()` instead
      */
-    function paint_expander(style: Style, cr: cairo.Context, state_type: StateType, widget: (Widget | null), detail: (string | null), x: number, y: number, expander_style: ExpanderStyle): void;
+    function paint_expander(style: Style, cr: cairo.Context, state_type: StateType, widget: Widget | null, detail: string | null, x: number, y: number, expander_style: ExpanderStyle): void;
 
     /**
      * Draws an extension, i.e. a notebook tab.
@@ -6596,7 +6596,7 @@ export namespace Gtk {
      * @param gap_side the side on to which the extension is attached
      * @deprecated since 3.0: Use `gtk_render_extension()` instead
      */
-    function paint_extension(style: Style, cr: cairo.Context, state_type: StateType, shadow_type: ShadowType, widget: (Widget | null), detail: (string | null), x: number, y: number, width: number, height: number, gap_side: PositionType): void;
+    function paint_extension(style: Style, cr: cairo.Context, state_type: StateType, shadow_type: ShadowType, widget: Widget | null, detail: string | null, x: number, y: number, width: number, height: number, gap_side: PositionType): void;
 
     /**
      * Draws a flat box on `cr` with the given parameters.
@@ -6612,7 +6612,7 @@ export namespace Gtk {
      * @param height the height of the box
      * @deprecated since 3.0: Use `gtk_render_frame()` and `gtk_render_background()` instead
      */
-    function paint_flat_box(style: Style, cr: cairo.Context, state_type: StateType, shadow_type: ShadowType, widget: (Widget | null), detail: (string | null), x: number, y: number, width: number, height: number): void;
+    function paint_flat_box(style: Style, cr: cairo.Context, state_type: StateType, shadow_type: ShadowType, widget: Widget | null, detail: string | null, x: number, y: number, width: number, height: number): void;
 
     /**
      * Draws a focus indicator around the given rectangle on `cr` using the
@@ -6628,7 +6628,7 @@ export namespace Gtk {
      * @param height the height of the rectangle around which to draw a focus indicator
      * @deprecated since 3.0: Use `gtk_render_focus()` instead
      */
-    function paint_focus(style: Style, cr: cairo.Context, state_type: StateType, widget: (Widget | null), detail: (string | null), x: number, y: number, width: number, height: number): void;
+    function paint_focus(style: Style, cr: cairo.Context, state_type: StateType, widget: Widget | null, detail: string | null, x: number, y: number, width: number, height: number): void;
 
     /**
      * Draws a handle as used in {@link Gtk.HandleBox} and {@link Gtk.Paned}.
@@ -6645,7 +6645,7 @@ export namespace Gtk {
      * @param orientation the orientation of the handle
      * @deprecated since 3.0: Use `gtk_render_handle()` instead
      */
-    function paint_handle(style: Style, cr: cairo.Context, state_type: StateType, shadow_type: ShadowType, widget: (Widget | null), detail: (string | null), x: number, y: number, width: number, height: number, orientation: Orientation): void;
+    function paint_handle(style: Style, cr: cairo.Context, state_type: StateType, shadow_type: ShadowType, widget: Widget | null, detail: string | null, x: number, y: number, width: number, height: number, orientation: Orientation): void;
 
     /**
      * Draws a horizontal line from (`x1`, `y`) to (`x2`, `y`) in `cr`
@@ -6660,7 +6660,7 @@ export namespace Gtk {
      * @param y the y coordinate
      * @deprecated since 3.0: Use `gtk_render_line()` instead
      */
-    function paint_hline(style: Style, cr: cairo.Context, state_type: StateType, widget: (Widget | null), detail: (string | null), x1: number, x2: number, y: number): void;
+    function paint_hline(style: Style, cr: cairo.Context, state_type: StateType, widget: Widget | null, detail: string | null, x1: number, x2: number, y: number): void;
 
     /**
      * Draws a layout on `cr` using the given parameters.
@@ -6675,7 +6675,7 @@ export namespace Gtk {
      * @param layout the layout to draw
      * @deprecated since 3.0: Use `gtk_render_layout()` instead
      */
-    function paint_layout(style: Style, cr: cairo.Context, state_type: StateType, use_text: boolean, widget: (Widget | null), detail: (string | null), x: number, y: number, layout: Pango.Layout): void;
+    function paint_layout(style: Style, cr: cairo.Context, state_type: StateType, use_text: boolean, widget: Widget | null, detail: string | null, x: number, y: number, layout: Pango.Layout): void;
 
     /**
      * Draws a radio button indicator in the given rectangle on `cr` with
@@ -6692,7 +6692,7 @@ export namespace Gtk {
      * @param height the height of the rectangle to draw the option in
      * @deprecated since 3.0: Use `gtk_render_option()` instead
      */
-    function paint_option(style: Style, cr: cairo.Context, state_type: StateType, shadow_type: ShadowType, widget: (Widget | null), detail: (string | null), x: number, y: number, width: number, height: number): void;
+    function paint_option(style: Style, cr: cairo.Context, state_type: StateType, shadow_type: ShadowType, widget: Widget | null, detail: string | null, x: number, y: number, width: number, height: number): void;
 
     /**
      * Draws a resize grip in the given rectangle on `cr` using the given
@@ -6709,7 +6709,7 @@ export namespace Gtk {
      * @param height the height of the rectangle in which to draw the resize grip
      * @deprecated since 3.0: Use `gtk_render_handle()` instead
      */
-    function paint_resize_grip(style: Style, cr: cairo.Context, state_type: StateType, widget: (Widget | null), detail: (string | null), edge: Gdk.WindowEdge, x: number, y: number, width: number, height: number): void;
+    function paint_resize_grip(style: Style, cr: cairo.Context, state_type: StateType, widget: Widget | null, detail: string | null, edge: Gdk.WindowEdge, x: number, y: number, width: number, height: number): void;
 
     /**
      * Draws a shadow around the given rectangle in `cr`
@@ -6726,7 +6726,7 @@ export namespace Gtk {
      * @param height width of the rectangle
      * @deprecated since 3.0: Use `gtk_render_frame()` instead
      */
-    function paint_shadow(style: Style, cr: cairo.Context, state_type: StateType, shadow_type: ShadowType, widget: (Widget | null), detail: (string | null), x: number, y: number, width: number, height: number): void;
+    function paint_shadow(style: Style, cr: cairo.Context, state_type: StateType, shadow_type: ShadowType, widget: Widget | null, detail: string | null, x: number, y: number, width: number, height: number): void;
 
     /**
      * Draws a shadow around the given rectangle in `cr`
@@ -6747,7 +6747,7 @@ export namespace Gtk {
      * @param gap_width width of the gap
      * @deprecated since 3.0: Use `gtk_render_frame_gap()` instead
      */
-    function paint_shadow_gap(style: Style, cr: cairo.Context, state_type: StateType, shadow_type: ShadowType, widget: (Widget | null), detail: (string | null), x: number, y: number, width: number, height: number, gap_side: PositionType, gap_x: number, gap_width: number): void;
+    function paint_shadow_gap(style: Style, cr: cairo.Context, state_type: StateType, shadow_type: ShadowType, widget: Widget | null, detail: string | null, x: number, y: number, width: number, height: number, gap_side: PositionType, gap_x: number, gap_width: number): void;
 
     /**
      * Draws a slider in the given rectangle on `cr` using the
@@ -6765,7 +6765,7 @@ export namespace Gtk {
      * @param orientation the orientation to be used
      * @deprecated since 3.0: Use `gtk_render_slider()` instead
      */
-    function paint_slider(style: Style, cr: cairo.Context, state_type: StateType, shadow_type: ShadowType, widget: (Widget | null), detail: (string | null), x: number, y: number, width: number, height: number, orientation: Orientation): void;
+    function paint_slider(style: Style, cr: cairo.Context, state_type: StateType, shadow_type: ShadowType, widget: Widget | null, detail: string | null, x: number, y: number, width: number, height: number, orientation: Orientation): void;
 
     /**
      * Draws a spinner on `window` using the given parameters.
@@ -6781,7 +6781,7 @@ export namespace Gtk {
      * @param height the height of the rectangle in which to draw the spinner
      * @deprecated since 3.0: Use `gtk_render_icon()` and the {@link Gtk.StyleContext}   you are drawing instead
      */
-    function paint_spinner(style: Style, cr: cairo.Context, state_type: StateType, widget: (Widget | null), detail: (string | null), step: number, x: number, y: number, width: number, height: number): void;
+    function paint_spinner(style: Style, cr: cairo.Context, state_type: StateType, widget: Widget | null, detail: string | null, step: number, x: number, y: number, width: number, height: number): void;
 
     /**
      * Draws an option menu tab (i.e. the up and down pointing arrows)
@@ -6798,7 +6798,7 @@ export namespace Gtk {
      * @param height the height of the rectangle to draw the tab in
      * @deprecated since 3.0: Use cairo instead
      */
-    function paint_tab(style: Style, cr: cairo.Context, state_type: StateType, shadow_type: ShadowType, widget: (Widget | null), detail: (string | null), x: number, y: number, width: number, height: number): void;
+    function paint_tab(style: Style, cr: cairo.Context, state_type: StateType, shadow_type: ShadowType, widget: Widget | null, detail: string | null, x: number, y: number, width: number, height: number): void;
 
     /**
      * Draws a vertical line from (`x`, `y1_`) to (`x`, `y2_`) in `cr`
@@ -6813,7 +6813,7 @@ export namespace Gtk {
      * @param x the x coordinate
      * @deprecated since 3.0: Use `gtk_render_line()` instead
      */
-    function paint_vline(style: Style, cr: cairo.Context, state_type: StateType, widget: (Widget | null), detail: (string | null), y1_: number, y2_: number, x: number): void;
+    function paint_vline(style: Style, cr: cairo.Context, state_type: StateType, widget: Widget | null, detail: string | null, y1_: number, y2_: number, x: number): void;
 
     /**
      * Returns the name of the default paper size, which
@@ -6872,7 +6872,7 @@ export namespace Gtk {
      * @returns a new {@link Gtk.PageSetup}
      * @since 2.10
      */
-    function print_run_page_setup_dialog(parent: (Window | null), page_setup: (PageSetup | null), settings: PrintSettings): PageSetup;
+    function print_run_page_setup_dialog(parent: Window | null, page_setup: PageSetup | null, settings: PrintSettings): PageSetup;
 
     /**
      * Runs a page setup dialog, letting the user modify the values from `page_setup`.
@@ -6886,7 +6886,7 @@ export namespace Gtk {
      * @param done_cb a function to call when the user saves           the modified page setup
      * @since 2.10
      */
-    function print_run_page_setup_dialog_async(parent: (Window | null), page_setup: (PageSetup | null), settings: PrintSettings, done_cb: PageSetupDoneFunc): void;
+    function print_run_page_setup_dialog_async(parent: Window | null, page_setup: PageSetup | null, settings: PrintSettings, done_cb: PageSetupDoneFunc): void;
 
     /**
      * Sends an event to a widget, propagating the event to parent widgets
@@ -7015,7 +7015,7 @@ export namespace Gtk {
      * @returns A style created by matching     with the supplied paths, or `null` if nothing matching was     specified and the default style should be used. The returned     value is owned by GTK+ as part of an internal cache, so you     must call `g_object_ref()` on the returned value if you want to     keep a reference to it.
      * @deprecated since 3.0: Use {@link Gtk.StyleContext} instead
      */
-    function rc_get_style_by_paths(settings: Settings, widget_path: (string | null), class_path: (string | null), type: GObject.GType): (Style | null);
+    function rc_get_style_by_paths(settings: Settings, widget_path: string | null, class_path: string | null, type: GObject.GType): Style | null;
 
     /**
      * Returns the standard directory in which themes should
@@ -7055,7 +7055,7 @@ export namespace Gtk {
      * @since 2.12
      * @deprecated since 3.0: Use {@link Gtk.CssProvider} instead
      */
-    function rc_parse_color_full(scanner: GLib.Scanner, style: (RcStyle | null)): [number, Gdk.Color];
+    function rc_parse_color_full(scanner: GLib.Scanner, style: RcStyle | null): [number, Gdk.Color];
 
     /**
      * Parses a {@link Gtk.PathPriorityType} variable from the format expected
@@ -7094,7 +7094,7 @@ export namespace Gtk {
      * @param property_value a {@link GObject.Value} which must hold boxed values.
      * @returns `true` if `gstring` could be parsed and `property_value` has been set to the resulting {@link Gtk.Border}.
      */
-    function rc_property_parse_border(pspec: GObject.ParamSpec, gstring: GLib.String, property_value: (GObject.Value | any)): boolean;
+    function rc_property_parse_border(pspec: GObject.ParamSpec, gstring: GLib.String, property_value: GObject.Value | any): boolean;
 
     /**
      * A {@link Gtk.RcPropertyParser} for use with `gtk_settings_install_property_parser()`
@@ -7108,7 +7108,7 @@ export namespace Gtk {
      * @param property_value a {@link GObject.Value} which must hold {@link Gdk.Color} values.
      * @returns `true` if `gstring` could be parsed and `property_value` has been set to the resulting {@link Gdk.Color}.
      */
-    function rc_property_parse_color(pspec: GObject.ParamSpec, gstring: GLib.String, property_value: (GObject.Value | any)): boolean;
+    function rc_property_parse_color(pspec: GObject.ParamSpec, gstring: GLib.String, property_value: GObject.Value | any): boolean;
 
     /**
      * A {@link Gtk.RcPropertyParser} for use with `gtk_settings_install_property_parser()`
@@ -7123,7 +7123,7 @@ export namespace Gtk {
      * @param property_value a {@link GObject.Value} which must hold enum values.
      * @returns `true` if `gstring` could be parsed and `property_value` has been set to the resulting {@link GObject.EnumValue}.
      */
-    function rc_property_parse_enum(pspec: GObject.ParamSpec, gstring: GLib.String, property_value: (GObject.Value | any)): boolean;
+    function rc_property_parse_enum(pspec: GObject.ParamSpec, gstring: GLib.String, property_value: GObject.Value | any): boolean;
 
     /**
      * A {@link Gtk.RcPropertyParser} for use with `gtk_settings_install_property_parser()`
@@ -7137,7 +7137,7 @@ export namespace Gtk {
      * @param property_value a {@link GObject.Value} which must hold flags values.
      * @returns `true` if `gstring` could be parsed and `property_value` has been set to the resulting flags value.
      */
-    function rc_property_parse_flags(pspec: GObject.ParamSpec, gstring: GLib.String, property_value: (GObject.Value | any)): boolean;
+    function rc_property_parse_flags(pspec: GObject.ParamSpec, gstring: GLib.String, property_value: GObject.Value | any): boolean;
 
     /**
      * A {@link Gtk.RcPropertyParser} for use with `gtk_settings_install_property_parser()`
@@ -7149,7 +7149,7 @@ export namespace Gtk {
      * @param property_value a {@link GObject.Value} which must hold boxed values.
      * @returns `true` if `gstring` could be parsed and `property_value` has been set to the resulting {@link Gtk.Requisition}.
      */
-    function rc_property_parse_requisition(pspec: GObject.ParamSpec, gstring: GLib.String, property_value: (GObject.Value | any)): boolean;
+    function rc_property_parse_requisition(pspec: GObject.ParamSpec, gstring: GLib.String, property_value: GObject.Value | any): boolean;
 
     /**
      * If the modification time on any previously read file for the
@@ -7563,7 +7563,7 @@ export namespace Gtk {
      * @param time_ timestamp with which to claim the selection
      * @returns `true` if the operation succeeded
      */
-    function selection_owner_set(widget: (Widget | null), selection: Gdk.Atom, time_: number): boolean;
+    function selection_owner_set(widget: Widget | null, selection: Gdk.Atom, time_: number): boolean;
 
     /**
      * Claim ownership of a given selection for a particular widget, or,
@@ -7575,7 +7575,7 @@ export namespace Gtk {
      * @returns TRUE if the operation succeeded
      * @since 2.2
      */
-    function selection_owner_set_for_display(display: Gdk.Display, widget: (Widget | null), selection: Gdk.Atom, time_: number): boolean;
+    function selection_owner_set_for_display(display: Gdk.Display, widget: Widget | null, selection: Gdk.Atom, time_: number): boolean;
 
     /**
      * Removes all handlers and unsets ownership of all
@@ -7607,7 +7607,7 @@ export namespace Gtk {
      * @since 2.14
      * @deprecated since 3.22: Use `gtk_show_uri_on_window()` instead.
      */
-    function show_uri(screen: (Gdk.Screen | null), uri: string, timestamp: number): boolean;
+    function show_uri(screen: Gdk.Screen | null, uri: string, timestamp: number): boolean;
 
     /**
      * This is a convenience function for launching the default application
@@ -7631,7 +7631,7 @@ export namespace Gtk {
      * @returns `true` on success, `false` on error
      * @since 3.22
      */
-    function show_uri_on_window(parent: (Window | null), uri: string, timestamp: number): boolean;
+    function show_uri_on_window(parent: Window | null, uri: string, timestamp: number): boolean;
 
     /**
      * Registers each of the stock items in `items`. If an item already
@@ -7829,7 +7829,7 @@ export namespace Gtk {
      * @returns a valid widget if any is found or `null`.
      * @since 2.14
      */
-    function test_find_widget(widget: Widget, label_pattern: string, widget_type: GObject.GType): (Widget | null);
+    function test_find_widget(widget: Widget, label_pattern: string, widget_type: GObject.GType): Widget | null;
 
     /**
      * Return the type ids that have been registered after
@@ -8078,14 +8078,14 @@ export namespace Gtk {
      * @gir-type Callback
      */
     interface BuilderConnectFunc<A = GObject.Object, B = GObject.Object> {
-        (builder: Builder, object: A, signal_name: string, handler_name: string, connect_object: (B | null), flags: GObject.ConnectFlags): void;
+        (builder: Builder, object: A, signal_name: string, handler_name: string, connect_object: B | null, flags: GObject.ConnectFlags): void;
     }
 
     /**
      * @gir-type Callback
      */
     interface CalendarDetailFunc {
-        (calendar: Calendar, year: number, month: number, day: number): (string | null);
+        (calendar: Calendar, year: number, month: number, day: number): string | null;
     }
 
     /**
@@ -8148,21 +8148,21 @@ export namespace Gtk {
      * @gir-type Callback
      */
     interface ClipboardRichTextReceivedFunc {
-        (clipboard: Clipboard, format: Gdk.Atom, text: (string | null), length: number): void;
+        (clipboard: Clipboard, format: Gdk.Atom, text: string | null, length: number): void;
     }
 
     /**
      * @gir-type Callback
      */
     interface ClipboardTargetsReceivedFunc {
-        (clipboard: Clipboard, atoms: (Gdk.Atom[] | null)): void;
+        (clipboard: Clipboard, atoms: Gdk.Atom[] | null): void;
     }
 
     /**
      * @gir-type Callback
      */
     interface ClipboardTextReceivedFunc {
-        (clipboard: Clipboard, text: (string | null)): void;
+        (clipboard: Clipboard, text: string | null): void;
     }
 
     /**
@@ -8281,7 +8281,7 @@ export namespace Gtk {
      * @gir-type Callback
      */
     interface ListBoxUpdateHeaderFunc {
-        (row: ListBoxRow, before: (ListBoxRow | null)): void;
+        (row: ListBoxRow, before: ListBoxRow | null): void;
     }
 
     /**
@@ -8309,7 +8309,7 @@ export namespace Gtk {
      * @gir-type Callback
      */
     interface ModuleInitFunc {
-        (argv: (string[] | null)): void;
+        (argv: string[] | null): void;
     }
 
     /**
@@ -8365,7 +8365,7 @@ export namespace Gtk {
      * @gir-type Callback
      */
     interface TextBufferSerializeFunc {
-        (register_buffer: TextBuffer, content_buffer: TextBuffer, start: TextIter, end: TextIter): (Uint8Array | null);
+        (register_buffer: TextBuffer, content_buffer: TextBuffer, start: TextIter, end: TextIter): Uint8Array | null;
     }
 
     /**
@@ -9525,7 +9525,7 @@ export namespace Gtk {
              * @since 2.24
              * @run-last
              */
-            "activate-link": (arg0: string) => (boolean | void);
+            "activate-link": (arg0: string) => boolean | void;
             "notify::artists": (pspec: GObject.ParamSpec) => void;
             "notify::authors": (pspec: GObject.ParamSpec) => void;
             "notify::comments": (pspec: GObject.ParamSpec) => void;
@@ -10066,14 +10066,14 @@ export namespace Gtk {
          * This should be a short string of one or two lines.
          * @param comments a comments string
          */
-        set_comments(comments: (string | null)): void;
+        set_comments(comments: string | null): void;
 
         /**
          * Sets the copyright string to display in the about dialog.
          * This should be a short string of one or two lines.
          * @param copyright the copyright string
          */
-        set_copyright(copyright: (string | null)): void;
+        set_copyright(copyright: string | null): void;
 
         /**
          * Sets the strings which are displayed in the documenters tab
@@ -10088,7 +10088,7 @@ export namespace Gtk {
          * hidden.
          * @param license the license information or `null`
          */
-        set_license(license: (string | null)): void;
+        set_license(license: string | null): void;
 
         /**
          * Sets the license of the application showing the `about` dialog from a
@@ -10106,7 +10106,7 @@ export namespace Gtk {
          * `gtk_window_set_default_icon()` will be used.
          * @param logo a {@link GdkPixbuf.Pixbuf}, or `null`
          */
-        set_logo(logo: (GdkPixbuf.Pixbuf | null)): void;
+        set_logo(logo: GdkPixbuf.Pixbuf | null): void;
 
         /**
          * Sets the pixbuf to be displayed as logo in the about dialog.
@@ -10114,7 +10114,7 @@ export namespace Gtk {
          * `gtk_window_set_default_icon()` will be used.
          * @param icon_name an icon name, or `null`
          */
-        set_logo_icon_name(icon_name: (string | null)): void;
+        set_logo_icon_name(icon_name: string | null): void;
 
         /**
          * Sets the name to display in the about dialog.
@@ -10144,19 +10144,19 @@ export namespace Gtk {
          * and hide the tab.
          * @param translator_credits the translator credits
          */
-        set_translator_credits(translator_credits: (string | null)): void;
+        set_translator_credits(translator_credits: string | null): void;
 
         /**
          * Sets the version string to display in the about dialog.
          * @param version the version string
          */
-        set_version(version: (string | null)): void;
+        set_version(version: string | null): void;
 
         /**
          * Sets the URL to use for the website link.
          * @param website a URL string starting with "http://"
          */
-        set_website(website: (string | null)): void;
+        set_website(website: string | null): void;
 
         /**
          * Sets the label to be used for the website link.
@@ -10182,7 +10182,7 @@ export namespace Gtk {
              * @signal
              * @detailed
              */
-            "accel-activate": (arg0: GObject.Object, arg1: number, arg2: Gdk.ModifierType) => (boolean | void);
+            "accel-activate": (arg0: GObject.Object, arg1: number, arg2: Gdk.ModifierType) => boolean | void;
             /**
              * The accel-changed signal is emitted when an entry
              * is added to or removed from the accel group.
@@ -10203,15 +10203,15 @@ export namespace Gtk {
              * @signal
              * @detailed
              */
-            "accel-activate::is-locked": (arg0: GObject.Object, arg1: number, arg2: Gdk.ModifierType) => (boolean | void);
+            "accel-activate::is-locked": (arg0: GObject.Object, arg1: number, arg2: Gdk.ModifierType) => boolean | void;
             /**
              * The accel-activate signal is an implementation detail of
              * {@link Gtk.AccelGroup} and not meant to be used by applications.
              * @signal
              * @detailed
              */
-            "accel-activate::modifier-mask": (arg0: GObject.Object, arg1: number, arg2: Gdk.ModifierType) => (boolean | void);
-            [key: `accel-activate::${string}`]: (arg0: GObject.Object, arg1: number, arg2: Gdk.ModifierType) => (boolean | void);
+            "accel-activate::modifier-mask": (arg0: GObject.Object, arg1: number, arg2: Gdk.ModifierType) => boolean | void;
+            [key: `accel-activate::${string}`]: (arg0: GObject.Object, arg1: number, arg2: Gdk.ModifierType) => boolean | void;
             /**
              * The accel-changed signal is emitted when an entry
              * is added to or removed from the accel group.
@@ -10329,7 +10329,7 @@ export namespace Gtk {
          * see `gtk_accel_group_connect()`.
          * @param closure a {@link GObject.Closure}
          */
-        static from_accel_closure(closure: GObject.Closure): (AccelGroup | null);
+        static from_accel_closure(closure: GObject.Closure): AccelGroup | null;
 
         // Virtual methods
         /**
@@ -10402,7 +10402,7 @@ export namespace Gtk {
          * @param closure the closure to remove from this accelerator     group, or `null` to remove all closures
          * @returns `true` if the closure was found and got disconnected
          */
-        disconnect(closure: (GObject.Closure | null)): boolean;
+        disconnect(closure: GObject.Closure | null): boolean;
 
         /**
          * @param args 
@@ -10461,7 +10461,7 @@ export namespace Gtk {
          * @param accel_mods modifier combination of the accelerator
          * @returns an array of     `n_entries` {@link Gtk.AccelGroupEntry} elements, or `null`. The array     is owned by GTK+ and must not be freed.
          */
-        query(accel_key: number, accel_mods: Gdk.ModifierType): (AccelGroupEntry[] | null);
+        query(accel_key: number, accel_mods: Gdk.ModifierType): AccelGroupEntry[] | null;
 
         /**
          * Undoes the last call to `gtk_accel_group_lock()` on this `accel_group`.
@@ -10544,8 +10544,8 @@ export namespace Gtk {
         interface ConstructorProps extends Label.ConstructorProps, Atk.ImplementorIface.ConstructorProps, Buildable.ConstructorProps {
             accel_closure: GObject.Closure;
             accelClosure: GObject.Closure;
-            accel_widget: (Widget | null);
-            accelWidget: (Widget | null);
+            accel_widget: Widget | null;
+            accelWidget: Widget | null;
         }
     }
 
@@ -10626,11 +10626,11 @@ export namespace Gtk {
         get accelClosure(): GObject.Closure;
         set accelClosure(val: GObject.Closure);
 
-        get accel_widget(): (Widget | null);
-        set accel_widget(val: (Widget | null));
+        get accel_widget(): Widget | null;
+        set accel_widget(val: Widget | null);
 
-        get accelWidget(): (Widget | null);
-        set accelWidget(val: (Widget | null));
+        get accelWidget(): Widget | null;
+        set accelWidget(val: Widget | null);
 
         /**
          * Compile-time signal type information.
@@ -10681,7 +10681,7 @@ export namespace Gtk {
          * `gtk_accel_label_set_accel_widget()`.
          * @returns the object monitored by the accelerator label, or `null`.
          */
-        get_accel_widget(): (Widget | null);
+        get_accel_widget(): Widget | null;
 
         /**
          * Returns the width needed to display the accelerator key(s).
@@ -10719,14 +10719,14 @@ export namespace Gtk {
          * current closure, if any.
          * @param accel_closure the closure to monitor for accelerator changes, or `null`
          */
-        set_accel_closure(accel_closure: (GObject.Closure | null)): void;
+        set_accel_closure(accel_closure: GObject.Closure | null): void;
 
         /**
          * Sets the widget to be monitored by this accelerator label. Passing `null` for
          * `accel_widget` will dissociate `accel_label` from its current widget, if any.
          * @param accel_widget the widget to be monitored, or `null`
          */
-        set_accel_widget(accel_widget: (Widget | null)): void;
+        set_accel_widget(accel_widget: Widget | null): void;
     }
 
 
@@ -10748,9 +10748,7 @@ export namespace Gtk {
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends GObject.Object.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GObject.Object.ConstructorProps {}
     }
 
     /**
@@ -11020,7 +11018,7 @@ export namespace Gtk {
 
         // Constructor properties interface
         interface ConstructorProps extends Atk.Object.ConstructorProps {
-            widget: (Widget | null);
+            widget: Widget | null;
         }
     }
 
@@ -11042,8 +11040,8 @@ export namespace Gtk {
         static $gtype: GObject.GType<Accessible>;
 
         // Properties
-        get widget(): (Widget | null);
-        set widget(val: (Widget | null));
+        get widget(): Widget | null;
+        set widget(val: Widget | null);
 
         /**
          * Compile-time signal type information.
@@ -11103,7 +11101,7 @@ export namespace Gtk {
          * you do not need to unref it.
          * @returns pointer to the {@link Gtk.Widget}     corresponding to the {@link Gtk.Accessible}, or `null`.
          */
-        get_widget(): (Widget | null);
+        get_widget(): Widget | null;
 
         /**
          * Sets the {@link Gtk.Widget} corresponding to the {@link Gtk.Accessible}.
@@ -11114,7 +11112,7 @@ export namespace Gtk {
          * again with `widget` set to `null`.
          * @param widget a {@link Gtk.Widget} or `null` to unset
          */
-        set_widget(widget: (Widget | null)): void;
+        set_widget(widget: Widget | null): void;
     }
 
 
@@ -11512,7 +11510,7 @@ export namespace Gtk {
 
         _init(...args: any[]): void;
 
-        static ["new"](name: string, label: (string | null), tooltip: (string | null), stock_id: (string | null)): Action;
+        static ["new"](name: string, label: string | null, tooltip: string | null, stock_id: string | null): Action;
 
         // Signals
         /** @signal */
@@ -11754,7 +11752,7 @@ export namespace Gtk {
          * will be installed.
          * @param accel_group a {@link Gtk.AccelGroup} or `null`
          */
-        set_accel_group(accel_group: (AccelGroup | null)): void;
+        set_accel_group(accel_group: AccelGroup | null): void;
 
         /**
          * Sets the accel path for this action.  All proxy widgets associated
@@ -11864,7 +11862,7 @@ export namespace Gtk {
          * @param child child to add
          * @param type kind of child or `null`
          */
-        add_child(builder: Builder, child: GObject.Object, type: (string | null)): void;
+        add_child(builder: Builder, child: GObject.Object, type: string | null): void;
 
         /**
          * Constructs a child of `buildable` with the name `name`.
@@ -11885,7 +11883,7 @@ export namespace Gtk {
          * @param tagname the name of the tag
          * @param data user data created in custom_tag_start
          */
-        custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
+        custom_finished(builder: Builder, child: GObject.Object | null, tagname: string, data: null): void;
 
         /**
          * This is called at the end of each custom element handled by
@@ -11895,7 +11893,7 @@ export namespace Gtk {
          * @param tagname name of tag
          * @param data user data that will be passed in to parser functions
          */
-        custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
+        custom_tag_end(builder: Builder, child: GObject.Object | null, tagname: string, data: null): void;
 
         /**
          * This is called for each unknown element under `<child>`.
@@ -11904,7 +11902,7 @@ export namespace Gtk {
          * @param tagname name of tag
          * @returns `true` if a object has a custom implementation, `false`          if it doesn't.
          */
-        custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, GLib.MarkupParser, null];
+        custom_tag_start(builder: Builder, child: GObject.Object | null, tagname: string): [boolean, GLib.MarkupParser, null];
 
         /**
          * Get the internal child called `childname` of the `buildable` object.
@@ -11930,7 +11928,7 @@ export namespace Gtk {
          * @param name name of property
          * @param value value of property
          */
-        set_buildable_property(builder: Builder, name: string, value: (GObject.Value | any)): void;
+        set_buildable_property(builder: Builder, name: string, value: GObject.Value | any): void;
 
         /**
          * Sets the name of the `buildable` object.
@@ -11946,7 +11944,7 @@ export namespace Gtk {
          * @param type kind of child or `null`
          * @virtual
          */
-        vfunc_add_child(builder: Builder, child: GObject.Object, type: (string | null)): void;
+        vfunc_add_child(builder: Builder, child: GObject.Object, type: string | null): void;
 
         /**
          * Constructs a child of `buildable` with the name `name`.
@@ -11968,7 +11966,7 @@ export namespace Gtk {
          * @param data user data created in custom_tag_start
          * @virtual
          */
-        vfunc_custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
+        vfunc_custom_finished(builder: Builder, child: GObject.Object | null, tagname: string, data: null): void;
 
         /**
          * This is called at the end of each custom element handled by
@@ -11979,7 +11977,7 @@ export namespace Gtk {
          * @param data user data that will be passed in to parser functions
          * @virtual
          */
-        vfunc_custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
+        vfunc_custom_tag_end(builder: Builder, child: GObject.Object | null, tagname: string, data: null): void;
 
         /**
          * This is called for each unknown element under `<child>`.
@@ -11988,7 +11986,7 @@ export namespace Gtk {
          * @param tagname name of tag
          * @virtual
          */
-        vfunc_custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, GLib.MarkupParser, never];
+        vfunc_custom_tag_start(builder: Builder, child: GObject.Object | null, tagname: string): [boolean, GLib.MarkupParser, never];
 
         /**
          * Get the internal child called `childname` of the `buildable` object.
@@ -12085,9 +12083,7 @@ export namespace Gtk {
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends Bin.ConstructorProps, Atk.ImplementorIface.ConstructorProps, Buildable.ConstructorProps {
-
-        }
+        interface ConstructorProps extends Bin.ConstructorProps, Atk.ImplementorIface.ConstructorProps, Buildable.ConstructorProps {}
     }
 
     /**
@@ -12142,7 +12138,7 @@ export namespace Gtk {
          * Retrieves the center bar widget of the bar.
          * @returns the center {@link Gtk.Widget} or `null`.
          */
-        get_center_widget(): (Widget | null);
+        get_center_widget(): Widget | null;
 
         /**
          * Adds `child` to `action_bar`, packed with reference to the
@@ -12162,7 +12158,7 @@ export namespace Gtk {
          * Sets the center widget for the {@link Gtk.ActionBar}.
          * @param center_widget a widget to use for the center
          */
-        set_center_widget(center_widget: (Widget | null)): void;
+        set_center_widget(center_widget: Widget | null): void;
     }
 
 
@@ -12392,7 +12388,7 @@ export namespace Gtk {
          * @param action the action to add
          * @param accelerator the accelerator for the action, in   the format understood by `gtk_accelerator_parse()`, or "" for no accelerator, or   `null` to use the stock accelerator
          */
-        add_action_with_accel(action: Action, accelerator: (string | null)): void;
+        add_action_with_accel(action: Action, accelerator: string | null): void;
 
         /**
          * Gets the accelerator group.
@@ -12447,7 +12443,7 @@ export namespace Gtk {
          * Sets the accelerator group to be used by every action in this group.
          * @param accel_group a {@link Gtk.AccelGroup} to set or `null`
          */
-        set_accel_group(accel_group: (AccelGroup | null)): void;
+        set_accel_group(accel_group: AccelGroup | null): void;
 
         /**
          * Changes the sensitivity of `action_group`
@@ -12474,7 +12470,7 @@ export namespace Gtk {
          * `gtk_action_group_set_translate_func()`.
          * @param domain the translation domain to use for `g_dgettext()` calls, or `null` to use the domain set with `textdomain()`
          */
-        set_translation_domain(domain: (string | null)): void;
+        set_translation_domain(domain: string | null): void;
 
         /**
          * Changes the visible of `action_group`.
@@ -12498,7 +12494,7 @@ export namespace Gtk {
          * @param child child to add
          * @param type kind of child or `null`
          */
-        add_child(builder: Builder, child: GObject.Object, type: (string | null)): void;
+        add_child(builder: Builder, child: GObject.Object, type: string | null): void;
 
         /**
          * Constructs a child of `buildable` with the name `name`.
@@ -12519,7 +12515,7 @@ export namespace Gtk {
          * @param tagname the name of the tag
          * @param data user data created in custom_tag_start
          */
-        custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
+        custom_finished(builder: Builder, child: GObject.Object | null, tagname: string, data: null): void;
 
         /**
          * This is called at the end of each custom element handled by
@@ -12529,7 +12525,7 @@ export namespace Gtk {
          * @param tagname name of tag
          * @param data user data that will be passed in to parser functions
          */
-        custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
+        custom_tag_end(builder: Builder, child: GObject.Object | null, tagname: string, data: null): void;
 
         /**
          * This is called for each unknown element under `<child>`.
@@ -12538,7 +12534,7 @@ export namespace Gtk {
          * @param tagname name of tag
          * @returns `true` if a object has a custom implementation, `false`          if it doesn't.
          */
-        custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, GLib.MarkupParser, null];
+        custom_tag_start(builder: Builder, child: GObject.Object | null, tagname: string): [boolean, GLib.MarkupParser, null];
 
         /**
          * Get the internal child called `childname` of the `buildable` object.
@@ -12564,7 +12560,7 @@ export namespace Gtk {
          * @param name name of property
          * @param value value of property
          */
-        set_buildable_property(builder: Builder, name: string, value: (GObject.Value | any)): void;
+        set_buildable_property(builder: Builder, name: string, value: GObject.Value | any): void;
 
         /**
          * Sets the name of the `buildable` object.
@@ -12580,7 +12576,7 @@ export namespace Gtk {
          * @param type kind of child or `null`
          * @virtual
          */
-        vfunc_add_child(builder: Builder, child: GObject.Object, type: (string | null)): void;
+        vfunc_add_child(builder: Builder, child: GObject.Object, type: string | null): void;
 
         /**
          * Constructs a child of `buildable` with the name `name`.
@@ -12602,7 +12598,7 @@ export namespace Gtk {
          * @param data user data created in custom_tag_start
          * @virtual
          */
-        vfunc_custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
+        vfunc_custom_finished(builder: Builder, child: GObject.Object | null, tagname: string, data: null): void;
 
         /**
          * This is called at the end of each custom element handled by
@@ -12613,7 +12609,7 @@ export namespace Gtk {
          * @param data user data that will be passed in to parser functions
          * @virtual
          */
-        vfunc_custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
+        vfunc_custom_tag_end(builder: Builder, child: GObject.Object | null, tagname: string, data: null): void;
 
         /**
          * This is called for each unknown element under `<child>`.
@@ -12622,7 +12618,7 @@ export namespace Gtk {
          * @param tagname name of tag
          * @virtual
          */
-        vfunc_custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, GLib.MarkupParser, never];
+        vfunc_custom_tag_start(builder: Builder, child: GObject.Object | null, tagname: string): [boolean, GLib.MarkupParser, never];
 
         /**
          * Get the internal child called `childname` of the `buildable` object.
@@ -13934,7 +13930,7 @@ export namespace Gtk {
 
         // Constructor properties interface
         interface ConstructorProps extends ComboBox.ConstructorProps, Atk.ImplementorIface.ConstructorProps, AppChooser.ConstructorProps, Buildable.ConstructorProps, CellEditable.ConstructorProps, CellLayout.ConstructorProps {
-            heading: (string | null);
+            heading: string | null;
             show_default_item: boolean;
             showDefaultItem: boolean;
             show_dialog_item: boolean;
@@ -13976,8 +13972,8 @@ export namespace Gtk {
          * opened from the button. The string may contain Pango markup.
          * @default null
          */
-        get heading(): (string | null);
-        set heading(val: (string | null));
+        get heading(): string | null;
+        set heading(val: string | null);
 
         /**
          * The {@link Gtk.AppChooserButton.show_default_item} property determines
@@ -14083,7 +14079,7 @@ export namespace Gtk {
          * Returns the text to display at the top of the dialog.
          * @returns the text to display at the top of the dialog,     or `null`, in which case a default text is displayed
          */
-        get_heading(): (string | null);
+        get_heading(): string | null;
 
         /**
          * Returns the current value of the {@link Gtk.AppChooserButton.show_default_item}
@@ -14174,7 +14170,7 @@ export namespace Gtk {
          * Returns the currently selected application.
          * @returns a {@link Gio.AppInfo} for the currently selected     application, or `null` if none is selected. Free with `g_object_unref()`
          */
-        get_app_info(): (Gio.AppInfo | null);
+        get_app_info(): Gio.AppInfo | null;
 
         /**
          * Returns the current value of the {@link Gtk.AppChooser.content_type} property.
@@ -14210,7 +14206,7 @@ export namespace Gtk {
          * lifetime is temporary and does not persist across other edits and/or cells.
          * @param event The {@link Gdk.Event} that began the editing process, or   `null` if editing was initiated programmatically
          */
-        start_editing(event: (Gdk.Event | null)): void;
+        start_editing(event: Gdk.Event | null): void;
 
         /**
          * Emits the {@link Gtk.CellEditable.SignalSignatures.editing_done | Gtk.CellEditable::editing-done} signal.
@@ -14238,7 +14234,7 @@ export namespace Gtk {
          * @param event The {@link Gdk.Event} that began the editing process, or   `null` if editing was initiated programmatically
          * @virtual
          */
-        vfunc_start_editing(event: (Gdk.Event | null)): void;
+        vfunc_start_editing(event: Gdk.Event | null): void;
 
         /**
          * Adds an attribute mapping to the list in `cell_layout`.
@@ -14272,7 +14268,7 @@ export namespace Gtk {
          * is used by `cell_layout`.
          * @returns the cell area used by `cell_layout`, or `null` in case no cell area is used.
          */
-        get_area(): (CellArea | null);
+        get_area(): CellArea | null;
 
         /**
          * Returns the cell renderers which have been added to `cell_layout`.
@@ -14323,7 +14319,7 @@ export namespace Gtk {
          * @param cell a {@link Gtk.CellRenderer}
          * @param func the {@link Gtk.CellLayoutDataFunc} to use, or `null`
          */
-        set_cell_data_func(cell: CellRenderer, func: (CellLayoutDataFunc | null)): void;
+        set_cell_data_func(cell: CellRenderer, func: CellLayoutDataFunc | null): void;
 
         /**
          * Adds an attribute mapping to the list in `cell_layout`.
@@ -14360,7 +14356,7 @@ export namespace Gtk {
          * is used by `cell_layout`.
          * @virtual
          */
-        vfunc_get_area(): (CellArea | null);
+        vfunc_get_area(): CellArea | null;
 
         /**
          * Returns the cell renderers which have been added to `cell_layout`.
@@ -14415,7 +14411,7 @@ export namespace Gtk {
          * @param func the {@link Gtk.CellLayoutDataFunc} to use, or `null`
          * @virtual
          */
-        vfunc_set_cell_data_func(cell: CellRenderer, func: (CellLayoutDataFunc | null)): void;
+        vfunc_set_cell_data_func(cell: CellRenderer, func: CellLayoutDataFunc | null): void;
 
         /**
          * Emits a {@link Gtk.Widget.SignalSignatures.child_notify | Gtk.Widget::child-notify} signal for the
@@ -14540,7 +14536,7 @@ export namespace Gtk {
         // Constructor properties interface
         interface ConstructorProps extends Dialog.ConstructorProps, Atk.ImplementorIface.ConstructorProps, AppChooser.ConstructorProps, Buildable.ConstructorProps {
             gfile: Gio.File;
-            heading: (string | null);
+            heading: string | null;
         }
     }
 
@@ -14573,8 +14569,8 @@ export namespace Gtk {
          * The string may contain Pango markup.
          * @default null
          */
-        get heading(): (string | null);
-        set heading(val: (string | null));
+        get heading(): string | null;
+        set heading(val: string | null);
 
         /**
          * Compile-time signal type information.
@@ -14590,12 +14586,12 @@ export namespace Gtk {
 
         _init(...args: any[]): void;
 
-        static ["new"](parent: (Window | null), flags: DialogFlags, file: Gio.File): AppChooserDialog;
+        static ["new"](parent: Window | null, flags: DialogFlags, file: Gio.File): AppChooserDialog;
 
         // Conflicted with Gtk.Dialog.new
         static ["new"](...args: never[]): any;
 
-        static new_for_content_type(parent: (Window | null), flags: DialogFlags, content_type: string): AppChooserDialog;
+        static new_for_content_type(parent: Window | null, flags: DialogFlags, content_type: string): AppChooserDialog;
 
         // Signals
         /** @signal */
@@ -14615,7 +14611,7 @@ export namespace Gtk {
          * Returns the text to display at the top of the dialog.
          * @returns the text to display at the top of the dialog, or `null`, in which     case a default text is displayed
          */
-        get_heading(): (string | null);
+        get_heading(): string | null;
 
         /**
          * Returns the {@link Gtk.AppChooserWidget} of this dialog.
@@ -14659,13 +14655,13 @@ export namespace Gtk {
           * @category Inherited from Gtk.Widget
          */
         // This accessor conflicts with a property or field in a parent class or interface.
-     window: (Gdk.Window | null) | any;
+     window: Gdk.Window | null | any;
 
         /**
          * Returns the currently selected application.
          * @returns a {@link Gio.AppInfo} for the currently selected     application, or `null` if none is selected. Free with `g_object_unref()`
          */
-        get_app_info(): (Gio.AppInfo | null);
+        get_app_info(): Gio.AppInfo | null;
 
         /**
          * Returns the current value of the {@link Gtk.AppChooser.content_type} property.
@@ -14837,7 +14833,7 @@ export namespace Gtk {
         interface ConstructorProps extends Box.ConstructorProps, Atk.ImplementorIface.ConstructorProps, AppChooser.ConstructorProps, Buildable.ConstructorProps, Orientable.ConstructorProps {
             default_text: string;
             defaultText: string;
-            show_all: (boolean | any);
+            show_all: boolean | any;
             showAll: boolean;
             show_default: boolean;
             showDefault: boolean;
@@ -15170,7 +15166,7 @@ export namespace Gtk {
          * Returns the currently selected application.
          * @returns a {@link Gio.AppInfo} for the currently selected     application, or `null` if none is selected. Free with `g_object_unref()`
          */
-        get_app_info(): (Gio.AppInfo | null);
+        get_app_info(): Gio.AppInfo | null;
 
         /**
          * Returns the current value of the {@link Gtk.AppChooser.content_type} property.
@@ -15264,10 +15260,10 @@ export namespace Gtk {
 
         // Constructor properties interface
         interface ConstructorProps extends Gio.Application.ConstructorProps, Gio.ActionGroup.ConstructorProps, Gio.ActionMap.ConstructorProps {
-            active_window: (Window | null);
-            activeWindow: (Window | null);
-            app_menu: (Gio.MenuModel | null);
-            appMenu: (Gio.MenuModel | null);
+            active_window: Window | null;
+            activeWindow: Window | null;
+            app_menu: Gio.MenuModel | null;
+            appMenu: Gio.MenuModel | null;
             menubar: Gio.MenuModel;
             register_session: boolean;
             registerSession: boolean;
@@ -15362,18 +15358,18 @@ export namespace Gtk {
         /**
          * @read-only
          */
-        get active_window(): (Window | null);
+        get active_window(): Window | null;
 
         /**
          * @read-only
          */
-        get activeWindow(): (Window | null);
+        get activeWindow(): Window | null;
 
-        get app_menu(): (Gio.MenuModel | null);
-        set app_menu(val: (Gio.MenuModel | null));
+        get app_menu(): Gio.MenuModel | null;
+        set app_menu(val: Gio.MenuModel | null);
 
-        get appMenu(): (Gio.MenuModel | null);
-        set appMenu(val: (Gio.MenuModel | null));
+        get appMenu(): Gio.MenuModel | null;
+        set appMenu(val: Gio.MenuModel | null);
 
         get menubar(): Gio.MenuModel;
         set menubar(val: Gio.MenuModel);
@@ -15432,7 +15428,7 @@ export namespace Gtk {
 
         _init(...args: any[]): void;
 
-        static ["new"](application_id: (string | null), flags: Gio.ApplicationFlags): Application;
+        static ["new"](application_id: string | null, flags: Gio.ApplicationFlags): Application;
 
         // Signals
         /** @signal */
@@ -15487,7 +15483,7 @@ export namespace Gtk {
          * @param action_name the name of the action to activate
          * @param parameter parameter to pass when activating the action,   or `null` if the action does not accept an activation parameter
          */
-        add_accelerator(accelerator: string, action_name: string, parameter: (GLib.Variant | null)): void;
+        add_accelerator(accelerator: string, action_name: string, parameter: GLib.Variant | null): void;
 
         /**
          * Adds a window to `application`.
@@ -15547,14 +15543,14 @@ export namespace Gtk {
          * recently-focused window within this application.
          * @returns the active window, or `null` if   there isn't one.
          */
-        get_active_window(): (Window | null);
+        get_active_window(): Window | null;
 
         /**
          * Returns the menu model that has been set with
          * `gtk_application_set_app_menu()`.
          * @returns the application menu of `application`   or `null` if no application menu has been set.
          */
-        get_app_menu(): (Gio.MenuModel | null);
+        get_app_menu(): Gio.MenuModel | null;
 
         /**
          * Gets a menu from automatically loaded resources.
@@ -15580,7 +15576,7 @@ export namespace Gtk {
          * @param id an identifier number
          * @returns the window with ID `id`, or   `null` if there is no window with this ID
          */
-        get_window_by_id(id: number): (Window | null);
+        get_window_by_id(id: number): Window | null;
 
         /**
          * Gets a list of the `GtkWindows` associated with `application`.
@@ -15623,7 +15619,7 @@ export namespace Gtk {
          * @param reason a short, human-readable string that explains     why these operations are inhibited
          * @returns A non-zero cookie that is used to uniquely identify this     request. It should be used as an argument to `gtk_application_uninhibit()`     in order to remove the request. If the platform does not support     inhibiting or the request failed for some reason, 0 is returned.
          */
-        inhibit(window: (Window | null), flags: ApplicationInhibitFlags, reason: (string | null)): number;
+        inhibit(window: Window | null, flags: ApplicationInhibitFlags, reason: string | null): number;
 
         /**
          * Determines if any of the actions specified in `flags` are
@@ -15688,7 +15684,7 @@ export namespace Gtk {
          * @param action_name the name of the action to activate
          * @param parameter parameter to pass when activating the action,   or `null` if the action does not accept an activation parameter
          */
-        remove_accelerator(action_name: string, parameter: (GLib.Variant | null)): void;
+        remove_accelerator(action_name: string, parameter: GLib.Variant | null): void;
 
         /**
          * Remove a window from `application`.
@@ -15738,7 +15734,7 @@ export namespace Gtk {
          * selecting these menu items.
          * @param app_menu a {@link Gio.MenuModel}, or `null`
          */
-        set_app_menu(app_menu: (Gio.MenuModel | null)): void;
+        set_app_menu(app_menu: Gio.MenuModel | null): void;
 
         /**
          * Sets or unsets the menubar for windows of `application`.
@@ -15761,7 +15757,7 @@ export namespace Gtk {
          * user selecting these menu items.
          * @param menubar a {@link Gio.MenuModel}, or `null`
          */
-        set_menubar(menubar: (Gio.MenuModel | null)): void;
+        set_menubar(menubar: Gio.MenuModel | null): void;
 
         /**
          * Removes an inhibitor that has been established with `gtk_application_inhibit()`.
@@ -15841,7 +15837,7 @@ export namespace Gtk {
          * @param action_name the name of the action to activate
          * @param parameter parameters to the activation
          */
-        activate_action(action_name: string, parameter: (GLib.Variant | null)): void;
+        activate_action(action_name: string, parameter: GLib.Variant | null): void;
 
         /**
          * Request for the state of the named action within `action_group` to be
@@ -15887,7 +15883,7 @@ export namespace Gtk {
          * @param action_name the name of the action to query
          * @returns the parameter type
          */
-        get_action_parameter_type(action_name: string): (GLib.VariantType | null);
+        get_action_parameter_type(action_name: string): GLib.VariantType | null;
 
         /**
          * Queries the current state of the named action within `action_group`.
@@ -15901,7 +15897,7 @@ export namespace Gtk {
          * @param action_name the name of the action to query
          * @returns the current state of the action
          */
-        get_action_state(action_name: string): (GLib.Variant | null);
+        get_action_state(action_name: string): GLib.Variant | null;
 
         /**
          * Requests a hint about the valid range of values for the state of the
@@ -15925,7 +15921,7 @@ export namespace Gtk {
          * @param action_name the name of the action to query
          * @returns the state range hint
          */
-        get_action_state_hint(action_name: string): (GLib.Variant | null);
+        get_action_state_hint(action_name: string): GLib.Variant | null;
 
         /**
          * Queries the type of the state of the named action within
@@ -15947,7 +15943,7 @@ export namespace Gtk {
          * @param action_name the name of the action to query
          * @returns the state type, if the action is stateful
          */
-        get_action_state_type(action_name: string): (GLib.VariantType | null);
+        get_action_state_type(action_name: string): GLib.VariantType | null;
 
         /**
          * Checks if the named action exists within `action_group`.
@@ -16074,7 +16070,7 @@ export namespace Gtk {
          * @param parameter parameters to the activation
          * @virtual
          */
-        vfunc_activate_action(action_name: string, parameter: (GLib.Variant | null)): void;
+        vfunc_activate_action(action_name: string, parameter: GLib.Variant | null): void;
 
         /**
          * Request for the state of the named action within `action_group` to be
@@ -16121,7 +16117,7 @@ export namespace Gtk {
          * @param action_name the name of the action to query
          * @virtual
          */
-        vfunc_get_action_parameter_type(action_name: string): (GLib.VariantType | null);
+        vfunc_get_action_parameter_type(action_name: string): GLib.VariantType | null;
 
         /**
          * Queries the current state of the named action within `action_group`.
@@ -16135,7 +16131,7 @@ export namespace Gtk {
          * @param action_name the name of the action to query
          * @virtual
          */
-        vfunc_get_action_state(action_name: string): (GLib.Variant | null);
+        vfunc_get_action_state(action_name: string): GLib.Variant | null;
 
         /**
          * Requests a hint about the valid range of values for the state of the
@@ -16159,7 +16155,7 @@ export namespace Gtk {
          * @param action_name the name of the action to query
          * @virtual
          */
-        vfunc_get_action_state_hint(action_name: string): (GLib.Variant | null);
+        vfunc_get_action_state_hint(action_name: string): GLib.Variant | null;
 
         /**
          * Queries the type of the state of the named action within
@@ -16181,7 +16177,7 @@ export namespace Gtk {
          * @param action_name the name of the action to query
          * @virtual
          */
-        vfunc_get_action_state_type(action_name: string): (GLib.VariantType | null);
+        vfunc_get_action_state_type(action_name: string): GLib.VariantType | null;
 
         /**
          * Checks if the named action exists within `action_group`.
@@ -16257,7 +16253,7 @@ export namespace Gtk {
          * @param action_name the name of an action
          * @returns a {@link Gio.Action}
          */
-        lookup_action(action_name: string): (Gio.Action | null);
+        lookup_action(action_name: string): Gio.Action | null;
 
         /**
          * Removes the named action from the action map.
@@ -16313,7 +16309,7 @@ export namespace Gtk {
          * @param action_name the name of an action
          * @virtual
          */
-        vfunc_lookup_action(action_name: string): (Gio.Action | null);
+        vfunc_lookup_action(action_name: string): Gio.Action | null;
 
         /**
          * Removes the named action from the action map.
@@ -16590,7 +16586,7 @@ export namespace Gtk {
          * a prior call to `gtk_application_window_set_help_overlay()`.
          * @returns the help overlay associated with `window`, or `null`
          */
-        get_help_overlay(): (ShortcutsWindow | null);
+        get_help_overlay(): ShortcutsWindow | null;
 
         /**
          * Returns the unique ID of the window. If the window has not yet been added to
@@ -16614,7 +16610,7 @@ export namespace Gtk {
          * `window` takes resposibility for destroying `help_overlay`.
          * @param help_overlay a {@link Gtk.ShortcutsWindow}
          */
-        set_help_overlay(help_overlay: (ShortcutsWindow | null)): void;
+        set_help_overlay(help_overlay: ShortcutsWindow | null): void;
 
         /**
          * Sets whether the window will display a menubar for the app menu
@@ -16694,7 +16690,7 @@ export namespace Gtk {
          * @param action_name the name of the action to activate
          * @param parameter parameters to the activation
          */
-        activate_action(action_name: string, parameter: (GLib.Variant | null)): void;
+        activate_action(action_name: string, parameter: GLib.Variant | null): void;
 
         /**
          * Request for the state of the named action within `action_group` to be
@@ -16740,7 +16736,7 @@ export namespace Gtk {
          * @param action_name the name of the action to query
          * @returns the parameter type
          */
-        get_action_parameter_type(action_name: string): (GLib.VariantType | null);
+        get_action_parameter_type(action_name: string): GLib.VariantType | null;
 
         /**
          * Queries the current state of the named action within `action_group`.
@@ -16754,7 +16750,7 @@ export namespace Gtk {
          * @param action_name the name of the action to query
          * @returns the current state of the action
          */
-        get_action_state(action_name: string): (GLib.Variant | null);
+        get_action_state(action_name: string): GLib.Variant | null;
 
         /**
          * Requests a hint about the valid range of values for the state of the
@@ -16778,7 +16774,7 @@ export namespace Gtk {
          * @param action_name the name of the action to query
          * @returns the state range hint
          */
-        get_action_state_hint(action_name: string): (GLib.Variant | null);
+        get_action_state_hint(action_name: string): GLib.Variant | null;
 
         /**
          * Queries the type of the state of the named action within
@@ -16800,7 +16796,7 @@ export namespace Gtk {
          * @param action_name the name of the action to query
          * @returns the state type, if the action is stateful
          */
-        get_action_state_type(action_name: string): (GLib.VariantType | null);
+        get_action_state_type(action_name: string): GLib.VariantType | null;
 
         /**
          * Checks if the named action exists within `action_group`.
@@ -16927,7 +16923,7 @@ export namespace Gtk {
          * @param parameter parameters to the activation
          * @virtual
          */
-        vfunc_activate_action(action_name: string, parameter: (GLib.Variant | null)): void;
+        vfunc_activate_action(action_name: string, parameter: GLib.Variant | null): void;
 
         /**
          * Request for the state of the named action within `action_group` to be
@@ -16974,7 +16970,7 @@ export namespace Gtk {
          * @param action_name the name of the action to query
          * @virtual
          */
-        vfunc_get_action_parameter_type(action_name: string): (GLib.VariantType | null);
+        vfunc_get_action_parameter_type(action_name: string): GLib.VariantType | null;
 
         /**
          * Queries the current state of the named action within `action_group`.
@@ -16988,7 +16984,7 @@ export namespace Gtk {
          * @param action_name the name of the action to query
          * @virtual
          */
-        vfunc_get_action_state(action_name: string): (GLib.Variant | null);
+        vfunc_get_action_state(action_name: string): GLib.Variant | null;
 
         /**
          * Requests a hint about the valid range of values for the state of the
@@ -17012,7 +17008,7 @@ export namespace Gtk {
          * @param action_name the name of the action to query
          * @virtual
          */
-        vfunc_get_action_state_hint(action_name: string): (GLib.Variant | null);
+        vfunc_get_action_state_hint(action_name: string): GLib.Variant | null;
 
         /**
          * Queries the type of the state of the named action within
@@ -17034,7 +17030,7 @@ export namespace Gtk {
          * @param action_name the name of the action to query
          * @virtual
          */
-        vfunc_get_action_state_type(action_name: string): (GLib.VariantType | null);
+        vfunc_get_action_state_type(action_name: string): GLib.VariantType | null;
 
         /**
          * Checks if the named action exists within `action_group`.
@@ -17110,7 +17106,7 @@ export namespace Gtk {
          * @param action_name the name of an action
          * @returns a {@link Gio.Action}
          */
-        lookup_action(action_name: string): (Gio.Action | null);
+        lookup_action(action_name: string): Gio.Action | null;
 
         /**
          * Removes the named action from the action map.
@@ -17166,7 +17162,7 @@ export namespace Gtk {
          * @param action_name the name of an action
          * @virtual
          */
-        vfunc_lookup_action(action_name: string): (Gio.Action | null);
+        vfunc_lookup_action(action_name: string): Gio.Action | null;
 
         /**
          * Removes the named action from the action map.
@@ -17361,9 +17357,7 @@ export namespace Gtk {
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends WidgetAccessible.ConstructorProps, Atk.Component.ConstructorProps, Atk.Image.ConstructorProps {
-
-        }
+        interface ConstructorProps extends WidgetAccessible.ConstructorProps, Atk.Component.ConstructorProps, Atk.Image.ConstructorProps {}
     }
 
     /**
@@ -17474,7 +17468,7 @@ export namespace Gtk {
          * @param coord_type specifies whether the coordinates are relative to the screen or to the components top level window
          * @returns a reference to the accessible child, if one exists
          */
-        ref_accessible_at_point(x: number, y: number, coord_type: Atk.CoordType): (Atk.Object | null);
+        ref_accessible_at_point(x: number, y: number, coord_type: Atk.CoordType): Atk.Object | null;
 
         /**
          * Remove the handler specified by `handler_id` from the list of
@@ -17620,7 +17614,7 @@ export namespace Gtk {
          * @param coord_type specifies whether the coordinates are relative to the screen or to the components top level window
          * @virtual
          */
-        vfunc_ref_accessible_at_point(x: number, y: number, coord_type: Atk.CoordType): (Atk.Object | null);
+        vfunc_ref_accessible_at_point(x: number, y: number, coord_type: Atk.CoordType): Atk.Object | null;
 
         /**
          * Remove the handler specified by `handler_id` from the list of
@@ -17693,7 +17687,7 @@ export namespace Gtk {
          * Retrieves the locale identifier associated to the {@link Atk.Image}.
          * @returns a string corresponding to the POSIX   `LC_MESSAGES` locale used by the image description, or   `null` if the image does not specify a locale.
          */
-        get_image_locale(): (string | null);
+        get_image_locale(): string | null;
 
         /**
          * Gets the position of the image in the form of a point specifying the
@@ -17732,7 +17726,7 @@ export namespace Gtk {
          * Retrieves the locale identifier associated to the {@link Atk.Image}.
          * @virtual
          */
-        vfunc_get_image_locale(): (string | null);
+        vfunc_get_image_locale(): string | null;
 
         /**
          * Gets the position of the image in the form of a point specifying the
@@ -17896,7 +17890,7 @@ export namespace Gtk {
 
         _init(...args: any[]): void;
 
-        static ["new"](label: (string | null), xalign: number, yalign: number, ratio: number, obey_child: boolean): AspectFrame;
+        static ["new"](label: string | null, xalign: number, yalign: number, ratio: number, obey_child: boolean): AspectFrame;
 
         // Conflicted with Gtk.Frame.new
         static ["new"](...args: never[]): any;
@@ -18228,7 +18222,7 @@ export namespace Gtk {
          * @param page_num the index of a page in the `assistant`,     or -1 to get the last page
          * @returns the child widget, or `null`     if `page_num` is out of bounds
          */
-        get_nth_page(page_num: number): (Widget | null);
+        get_nth_page(page_num: number): Widget | null;
 
         /**
          * Gets whether `page` is complete.
@@ -18341,7 +18335,7 @@ export namespace Gtk {
          * next visible page.
          * @param page_func the {@link Gtk.AssistantPageFunc}, or `null`     to use the default one
          */
-        set_forward_page_func(page_func: (AssistantPageFunc | null)): void;
+        set_forward_page_func(page_func: AssistantPageFunc | null): void;
 
         /**
          * Sets whether `page` contents are complete.
@@ -18366,7 +18360,7 @@ export namespace Gtk {
          * @param page a page of `assistant`
          * @param pixbuf the new header image `page`
          */
-        set_page_header_image(page: Widget, pixbuf: (GdkPixbuf.Pixbuf | null)): void;
+        set_page_header_image(page: Widget, pixbuf: GdkPixbuf.Pixbuf | null): void;
 
         /**
          * Sets a side image for `page`.
@@ -18376,7 +18370,7 @@ export namespace Gtk {
          * @param page a page of `assistant`
          * @param pixbuf the new side image `page`
          */
-        set_page_side_image(page: Widget, pixbuf: (GdkPixbuf.Pixbuf | null)): void;
+        set_page_side_image(page: Widget, pixbuf: GdkPixbuf.Pixbuf | null): void;
 
         /**
          * Sets a title for `page`.
@@ -18460,9 +18454,7 @@ export namespace Gtk {
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends Container.ConstructorProps, Atk.ImplementorIface.ConstructorProps, Buildable.ConstructorProps {
-
-        }
+        interface ConstructorProps extends Container.ConstructorProps, Atk.ImplementorIface.ConstructorProps, Buildable.ConstructorProps {}
     }
 
     /**
@@ -18514,7 +18506,7 @@ export namespace Gtk {
          * added, so you do not need to unref it.
          * @returns the child of `bin`, or `null` if it does not have a child.
          */
-        get_child(): (Widget | null);
+        get_child(): Widget | null;
     }
 
 
@@ -18543,9 +18535,7 @@ export namespace Gtk {
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends RendererCellAccessible.ConstructorProps, Atk.Action.ConstructorProps, Atk.Component.ConstructorProps, Atk.TableCell.ConstructorProps {
-
-        }
+        interface ConstructorProps extends RendererCellAccessible.ConstructorProps, Atk.Action.ConstructorProps, Atk.Component.ConstructorProps, Atk.TableCell.ConstructorProps {}
     }
 
     /**
@@ -18764,7 +18754,7 @@ export namespace Gtk {
          * Retrieves the center widget of the box.
          * @returns the center widget   or `null` in case no center widget is set.
          */
-        get_center_widget(): (Widget | null);
+        get_center_widget(): Widget | null;
 
         /**
          * Returns whether the box is homogeneous (all children are the
@@ -18840,7 +18830,7 @@ export namespace Gtk {
          * of space.
          * @param widget the widget to center
          */
-        set_center_widget(widget: (Widget | null)): void;
+        set_center_widget(widget: Widget | null): void;
 
         /**
          * Sets the way `child` is packed into `box`.
@@ -19136,7 +19126,7 @@ export namespace Gtk {
 
         static new_from_resource(resource_path: string): Builder;
 
-        static new_from_string(string: string, length: (bigint | number)): Builder;
+        static new_from_string(string: string, length: bigint | number): Builder;
 
         // Signals
         /** @signal */
@@ -19230,7 +19220,7 @@ export namespace Gtk {
          * @param length the length of `buffer` (may be -1 if `buffer` is nul-terminated)
          * @returns A positive value on success, 0 if an error occurred
          */
-        add_from_string(buffer: string, length: (bigint | number)): number;
+        add_from_string(buffer: string, length: bigint | number): number;
 
         /**
          * Parses a file containing a [GtkBuilder UI definition][BUILDER-UI]
@@ -19284,7 +19274,7 @@ export namespace Gtk {
          * @param object_ids nul-terminated array of objects to build
          * @returns A positive value on success, 0 if an error occurred
          */
-        add_objects_from_string(buffer: string, length: (bigint | number), object_ids: string[]): number;
+        add_objects_from_string(buffer: string, length: bigint | number, object_ids: string[]): number;
 
         /**
          * This method is a simpler variation of `gtk_builder_connect_signals_full()`.
@@ -19340,7 +19330,7 @@ export namespace Gtk {
          * @param length the length of `buffer` (may be -1 if `buffer` is nul-terminated)
          * @returns A positive value on success, 0 if an error occurred
          */
-        extend_with_template(widget: Widget, template_type: GObject.GType, buffer: string, length: (bigint | number)): number;
+        extend_with_template(widget: Widget, template_type: GObject.GType, buffer: string, length: bigint | number): number;
 
         /**
          * Gets the {@link Gtk.Application} associated with the builder.
@@ -19353,7 +19343,7 @@ export namespace Gtk {
          * for constructing proxies, use `gtk_builder_set_application()`.
          * @returns the application being used by the builder,     or `null`
          */
-        get_application(): (Application | null);
+        get_application(): Application | null;
 
         /**
          * Gets the object named `name`. Note that this function does not
@@ -19400,7 +19390,7 @@ export namespace Gtk {
          * See {@link Gtk.Builder.translation_domain}.
          * @param domain the translation domain or `null`
          */
-        set_translation_domain(domain: (string | null)): void;
+        set_translation_domain(domain: string | null): void;
 
         /**
          * This function demarshals a value from a string. This function
@@ -19545,7 +19535,7 @@ export namespace Gtk {
         interface ConstructorProps extends Bin.ConstructorProps, Atk.ImplementorIface.ConstructorProps, Actionable.ConstructorProps, Activatable.ConstructorProps, Buildable.ConstructorProps {
             always_show_image: boolean;
             alwaysShowImage: boolean;
-            image: (Widget | null);
+            image: Widget | null;
             image_position: PositionType;
             imagePosition: PositionType;
             label: string;
@@ -19616,8 +19606,8 @@ export namespace Gtk {
          * The child widget to appear next to the button text.
          * @since 2.6
          */
-        get image(): (Widget | null);
-        set image(val: (Widget | null));
+        get image(): Widget | null;
+        set image(val: Widget | null);
 
         /**
          * The position of the image relative to the text inside the button.
@@ -19711,7 +19701,7 @@ export namespace Gtk {
 
         static ["new"](): Button;
 
-        static new_from_icon_name(icon_name: (string | null), size: number): Button;
+        static new_from_icon_name(icon_name: string | null, size: number): Button;
 
         static new_from_stock(stock_id: string): Button;
 
@@ -19814,7 +19804,7 @@ export namespace Gtk {
          * or constructed by `gtk_button_new_from_stock()`.
          * @returns a {@link Gtk.Widget} or `null` in case     there is no image
          */
-        get_image(): (Widget | null);
+        get_image(): Widget | null;
 
         /**
          * Gets the position of the image relative to the text
@@ -19901,7 +19891,7 @@ export namespace Gtk {
          * `gtk_widget_show()` on `image` yourself.
          * @param image a widget to set as the image for the button, or `null` to unset
          */
-        set_image(image: (Widget | null)): void;
+        set_image(image: Widget | null): void;
 
         /**
          * Sets the position of the image relative to the text
@@ -19948,15 +19938,15 @@ export namespace Gtk {
          * @default null
           * @category Inherited from Gtk.Actionable
          */
-        get action_name(): (string | null);
-        set action_name(val: (string | null));
+        get action_name(): string | null;
+        set action_name(val: string | null);
 
         /**
          * @default null
           * @category Inherited from Gtk.Actionable
          */
-        get actionName(): (string | null);
-        set actionName(val: (string | null));
+        get actionName(): string | null;
+        set actionName(val: string | null);
 
         /** @category Inherited from Gtk.Actionable */
         get action_target(): GLib.Variant;
@@ -20036,7 +20026,7 @@ export namespace Gtk {
          * See `gtk_actionable_set_action_name()` for more information.
          * @returns the action name, or `null` if none is set
          */
-        get_action_name(): (string | null);
+        get_action_name(): string | null;
 
         /**
          * Gets the current target value of `actionable`.
@@ -20060,7 +20050,7 @@ export namespace Gtk {
          * associated with the window.
          * @param action_name an action name, or `null`
          */
-        set_action_name(action_name: (string | null)): void;
+        set_action_name(action_name: string | null): void;
 
         /**
          * Sets the target value of an actionable widget.
@@ -20084,7 +20074,7 @@ export namespace Gtk {
          * rendered inactive).
          * @param target_value a {@link GLib.Variant} to set as the target value, or `null`
          */
-        set_action_target_value(target_value: (GLib.Variant | null)): void;
+        set_action_target_value(target_value: GLib.Variant | null): void;
 
         /**
          * Sets the action-name and associated string target value of an
@@ -20108,7 +20098,7 @@ export namespace Gtk {
          * See `gtk_actionable_set_action_name()` for more information.
          * @virtual
          */
-        vfunc_get_action_name(): (string | null);
+        vfunc_get_action_name(): string | null;
 
         /**
          * Gets the current target value of `actionable`.
@@ -20133,7 +20123,7 @@ export namespace Gtk {
          * @param action_name an action name, or `null`
          * @virtual
          */
-        vfunc_set_action_name(action_name: (string | null)): void;
+        vfunc_set_action_name(action_name: string | null): void;
 
         /**
          * Sets the target value of an actionable widget.
@@ -20158,7 +20148,7 @@ export namespace Gtk {
          * @param target_value a {@link GLib.Variant} to set as the target value, or `null`
          * @virtual
          */
-        vfunc_set_action_target_value(target_value: (GLib.Variant | null)): void;
+        vfunc_set_action_target_value(target_value: GLib.Variant | null): void;
 
         /**
          * This is a utility function for {@link Gtk.Activatable} implementors.
@@ -20222,7 +20212,7 @@ export namespace Gtk {
          * {@link Gtk.Activatable.use_action_appearance} changes.
          * @param action the related {@link Gtk.Action} or `null`
          */
-        sync_action_properties(action: (Action | null)): void;
+        sync_action_properties(action: Action | null): void;
 
         /**
          * This is called to update the activatable completely, this is called
@@ -20232,7 +20222,7 @@ export namespace Gtk {
          * @param action the related {@link Gtk.Action} or `null`
          * @virtual
          */
-        vfunc_sync_action_properties(action: (Action | null)): void;
+        vfunc_sync_action_properties(action: Action | null): void;
 
         /**
          * Called to update the activatable when its related action’s properties change.
@@ -20288,9 +20278,7 @@ export namespace Gtk {
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends ContainerAccessible.ConstructorProps, Atk.Action.ConstructorProps, Atk.Component.ConstructorProps, Atk.Image.ConstructorProps {
-
-        }
+        interface ConstructorProps extends ContainerAccessible.ConstructorProps, Atk.Action.ConstructorProps, Atk.Component.ConstructorProps, Atk.Image.ConstructorProps {}
     }
 
     /**
@@ -20338,7 +20326,7 @@ export namespace Gtk {
          * @param i the action index corresponding to the action to be performed
          * @returns a description string, or `null` if `action` does not implement this interface.
          */
-        get_description(i: number): (string | null);
+        get_description(i: number): string | null;
 
         /**
          * @param args 
@@ -20372,14 +20360,14 @@ export namespace Gtk {
          * @param i the action index corresponding to the action to be performed
          * @returns the keybinding which can be used to activate this action, or `null` if there is no keybinding for this action.
          */
-        get_keybinding(i: number): (string | null);
+        get_keybinding(i: number): string | null;
 
         /**
          * Returns the localized name of the specified action of the object.
          * @param i the action index corresponding to the action to be performed
          * @returns a name string, or `null` if `action` does not implement this interface.
          */
-        get_localized_name(i: number): (string | null);
+        get_localized_name(i: number): string | null;
 
         /**
          * Gets the number of accessible actions available on the object.
@@ -20407,7 +20395,7 @@ export namespace Gtk {
          * @param i the action index corresponding to the action to be performed
          * @returns a name string, or `null` if `action` does not implement this interface.
          */
-        get_name(i: number): (string | null);
+        get_name(i: number): string | null;
 
         /**
          * @param args 
@@ -20441,7 +20429,7 @@ export namespace Gtk {
          * @param i the action index corresponding to the action to be performed
          * @virtual
          */
-        vfunc_get_description(i: number): (string | null);
+        vfunc_get_description(i: number): string | null;
 
         /**
          * @param args 
@@ -20476,14 +20464,14 @@ export namespace Gtk {
          * @param i the action index corresponding to the action to be performed
          * @virtual
          */
-        vfunc_get_keybinding(i: number): (string | null);
+        vfunc_get_keybinding(i: number): string | null;
 
         /**
          * Returns the localized name of the specified action of the object.
          * @param i the action index corresponding to the action to be performed
          * @virtual
          */
-        vfunc_get_localized_name(i: number): (string | null);
+        vfunc_get_localized_name(i: number): string | null;
 
         /**
          * Gets the number of accessible actions available on the object.
@@ -20511,7 +20499,7 @@ export namespace Gtk {
          * @param i the action index corresponding to the action to be performed
          * @virtual
          */
-        vfunc_get_name(i: number): (string | null);
+        vfunc_get_name(i: number): string | null;
 
         /**
          * @param args 
@@ -20545,7 +20533,7 @@ export namespace Gtk {
          * Retrieves the locale identifier associated to the {@link Atk.Image}.
          * @returns a string corresponding to the POSIX   `LC_MESSAGES` locale used by the image description, or   `null` if the image does not specify a locale.
          */
-        get_image_locale(): (string | null);
+        get_image_locale(): string | null;
 
         /**
          * Gets the position of the image in the form of a point specifying the
@@ -20584,7 +20572,7 @@ export namespace Gtk {
          * Retrieves the locale identifier associated to the {@link Atk.Image}.
          * @virtual
          */
-        vfunc_get_image_locale(): (string | null);
+        vfunc_get_image_locale(): string | null;
 
         /**
          * Gets the position of the image in the form of a point specifying the
@@ -21269,7 +21257,7 @@ export namespace Gtk {
          * @param child child to add
          * @param type kind of child or `null`
          */
-        add_child(builder: Builder, child: GObject.Object, type: (string | null)): void;
+        add_child(builder: Builder, child: GObject.Object, type: string | null): void;
 
         /**
          * Constructs a child of `buildable` with the name `name`.
@@ -21290,7 +21278,7 @@ export namespace Gtk {
          * @param tagname the name of the tag
          * @param data user data created in custom_tag_start
          */
-        custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
+        custom_finished(builder: Builder, child: GObject.Object | null, tagname: string, data: null): void;
 
         /**
          * This is called at the end of each custom element handled by
@@ -21300,7 +21288,7 @@ export namespace Gtk {
          * @param tagname name of tag
          * @param data user data that will be passed in to parser functions
          */
-        custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
+        custom_tag_end(builder: Builder, child: GObject.Object | null, tagname: string, data: null): void;
 
         /**
          * This is called for each unknown element under `<child>`.
@@ -21309,7 +21297,7 @@ export namespace Gtk {
          * @param tagname name of tag
          * @returns `true` if a object has a custom implementation, `false`          if it doesn't.
          */
-        custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, GLib.MarkupParser, null];
+        custom_tag_start(builder: Builder, child: GObject.Object | null, tagname: string): [boolean, GLib.MarkupParser, null];
 
         /**
          * Get the internal child called `childname` of the `buildable` object.
@@ -21345,7 +21333,7 @@ export namespace Gtk {
          * @param name name of property
          * @param value value of property
          */
-        set_buildable_property(builder: Builder, name: string, value: (GObject.Value | any)): void;
+        set_buildable_property(builder: Builder, name: string, value: GObject.Value | any): void;
 
         /**
          * Sets the name of the `buildable` object.
@@ -21361,7 +21349,7 @@ export namespace Gtk {
          * @param type kind of child or `null`
          * @virtual
          */
-        vfunc_add_child(builder: Builder, child: GObject.Object, type: (string | null)): void;
+        vfunc_add_child(builder: Builder, child: GObject.Object, type: string | null): void;
 
         /**
          * Constructs a child of `buildable` with the name `name`.
@@ -21383,7 +21371,7 @@ export namespace Gtk {
          * @param data user data created in custom_tag_start
          * @virtual
          */
-        vfunc_custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
+        vfunc_custom_finished(builder: Builder, child: GObject.Object | null, tagname: string, data: null): void;
 
         /**
          * This is called at the end of each custom element handled by
@@ -21394,7 +21382,7 @@ export namespace Gtk {
          * @param data user data that will be passed in to parser functions
          * @virtual
          */
-        vfunc_custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
+        vfunc_custom_tag_end(builder: Builder, child: GObject.Object | null, tagname: string, data: null): void;
 
         /**
          * This is called for each unknown element under `<child>`.
@@ -21403,7 +21391,7 @@ export namespace Gtk {
          * @param tagname name of tag
          * @virtual
          */
-        vfunc_custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, GLib.MarkupParser, never];
+        vfunc_custom_tag_start(builder: Builder, child: GObject.Object | null, tagname: string): [boolean, GLib.MarkupParser, never];
 
         /**
          * Get the internal child called `childname` of the `buildable` object.
@@ -21476,9 +21464,7 @@ export namespace Gtk {
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends Accessible.ConstructorProps, Atk.Action.ConstructorProps, Atk.Component.ConstructorProps, Atk.TableCell.ConstructorProps {
-
-        }
+        interface ConstructorProps extends Accessible.ConstructorProps, Atk.Action.ConstructorProps, Atk.Component.ConstructorProps, Atk.TableCell.ConstructorProps {}
     }
 
     /**
@@ -21533,7 +21519,7 @@ export namespace Gtk {
          * @param i the action index corresponding to the action to be performed
          * @returns a description string, or `null` if `action` does not implement this interface.
          */
-        get_description(i: number): (string | null);
+        get_description(i: number): string | null;
 
         /**
          * @param args 
@@ -21567,14 +21553,14 @@ export namespace Gtk {
          * @param i the action index corresponding to the action to be performed
          * @returns the keybinding which can be used to activate this action, or `null` if there is no keybinding for this action.
          */
-        get_keybinding(i: number): (string | null);
+        get_keybinding(i: number): string | null;
 
         /**
          * Returns the localized name of the specified action of the object.
          * @param i the action index corresponding to the action to be performed
          * @returns a name string, or `null` if `action` does not implement this interface.
          */
-        get_localized_name(i: number): (string | null);
+        get_localized_name(i: number): string | null;
 
         /**
          * Gets the number of accessible actions available on the object.
@@ -21602,7 +21588,7 @@ export namespace Gtk {
          * @param i the action index corresponding to the action to be performed
          * @returns a name string, or `null` if `action` does not implement this interface.
          */
-        get_name(i: number): (string | null);
+        get_name(i: number): string | null;
 
         /**
          * @param args 
@@ -21636,7 +21622,7 @@ export namespace Gtk {
          * @param i the action index corresponding to the action to be performed
          * @virtual
          */
-        vfunc_get_description(i: number): (string | null);
+        vfunc_get_description(i: number): string | null;
 
         /**
          * @param args 
@@ -21671,14 +21657,14 @@ export namespace Gtk {
          * @param i the action index corresponding to the action to be performed
          * @virtual
          */
-        vfunc_get_keybinding(i: number): (string | null);
+        vfunc_get_keybinding(i: number): string | null;
 
         /**
          * Returns the localized name of the specified action of the object.
          * @param i the action index corresponding to the action to be performed
          * @virtual
          */
-        vfunc_get_localized_name(i: number): (string | null);
+        vfunc_get_localized_name(i: number): string | null;
 
         /**
          * Gets the number of accessible actions available on the object.
@@ -21706,7 +21692,7 @@ export namespace Gtk {
          * @param i the action index corresponding to the action to be performed
          * @virtual
          */
-        vfunc_get_name(i: number): (string | null);
+        vfunc_get_name(i: number): string | null;
 
         /**
          * @param args 
@@ -21811,7 +21797,7 @@ export namespace Gtk {
          * @param coord_type specifies whether the coordinates are relative to the screen or to the components top level window
          * @returns a reference to the accessible child, if one exists
          */
-        ref_accessible_at_point(x: number, y: number, coord_type: Atk.CoordType): (Atk.Object | null);
+        ref_accessible_at_point(x: number, y: number, coord_type: Atk.CoordType): Atk.Object | null;
 
         /**
          * Remove the handler specified by `handler_id` from the list of
@@ -21964,7 +21950,7 @@ export namespace Gtk {
          * @param coord_type specifies whether the coordinates are relative to the screen or to the components top level window
          * @virtual
          */
-        vfunc_ref_accessible_at_point(x: number, y: number, coord_type: Atk.CoordType): (Atk.Object | null);
+        vfunc_ref_accessible_at_point(x: number, y: number, coord_type: Atk.CoordType): Atk.Object | null;
 
         /**
          * Remove the handler specified by `handler_id` from the list of
@@ -22912,7 +22898,7 @@ export namespace Gtk {
          * @param property_name the name of the property to get
          * @param value a location to return the value
          */
-        cell_get_property(renderer: CellRenderer, property_name: string, value: (GObject.Value | any)): void;
+        cell_get_property(renderer: CellRenderer, property_name: string, value: GObject.Value | any): void;
 
         /**
          * Sets a cell property for `renderer` in `area`.
@@ -22920,7 +22906,7 @@ export namespace Gtk {
          * @param property_name the name of the cell property to set
          * @param value the value to set the cell property to
          */
-        cell_set_property(renderer: CellRenderer, property_name: string, value: (GObject.Value | any)): void;
+        cell_set_property(renderer: CellRenderer, property_name: string, value: GObject.Value | any): void;
 
         /**
          * This is sometimes needed for cases where rows need to share
@@ -23054,7 +23040,7 @@ export namespace Gtk {
          * @param renderer the {@link Gtk.CellRenderer}
          * @returns the {@link Gtk.CellRenderer} for which `renderer`    is a sibling, or `null`.
          */
-        get_focus_from_sibling(renderer: CellRenderer): (CellRenderer | null);
+        get_focus_from_sibling(renderer: CellRenderer): CellRenderer | null;
 
         /**
          * Gets the focus sibling cell renderers for `renderer`.
@@ -23241,7 +23227,7 @@ export namespace Gtk {
          * @param child child to add
          * @param type kind of child or `null`
          */
-        add_child(builder: Builder, child: GObject.Object, type: (string | null)): void;
+        add_child(builder: Builder, child: GObject.Object, type: string | null): void;
 
         /**
          * Constructs a child of `buildable` with the name `name`.
@@ -23262,7 +23248,7 @@ export namespace Gtk {
          * @param tagname the name of the tag
          * @param data user data created in custom_tag_start
          */
-        custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
+        custom_finished(builder: Builder, child: GObject.Object | null, tagname: string, data: null): void;
 
         /**
          * This is called at the end of each custom element handled by
@@ -23272,7 +23258,7 @@ export namespace Gtk {
          * @param tagname name of tag
          * @param data user data that will be passed in to parser functions
          */
-        custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
+        custom_tag_end(builder: Builder, child: GObject.Object | null, tagname: string, data: null): void;
 
         /**
          * This is called for each unknown element under `<child>`.
@@ -23281,7 +23267,7 @@ export namespace Gtk {
          * @param tagname name of tag
          * @returns `true` if a object has a custom implementation, `false`          if it doesn't.
          */
-        custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, GLib.MarkupParser, null];
+        custom_tag_start(builder: Builder, child: GObject.Object | null, tagname: string): [boolean, GLib.MarkupParser, null];
 
         /**
          * Get the internal child called `childname` of the `buildable` object.
@@ -23317,7 +23303,7 @@ export namespace Gtk {
          * @param name name of property
          * @param value value of property
          */
-        set_buildable_property(builder: Builder, name: string, value: (GObject.Value | any)): void;
+        set_buildable_property(builder: Builder, name: string, value: GObject.Value | any): void;
 
         /**
          * Sets the name of the `buildable` object.
@@ -23333,7 +23319,7 @@ export namespace Gtk {
          * @param type kind of child or `null`
          * @virtual
          */
-        vfunc_add_child(builder: Builder, child: GObject.Object, type: (string | null)): void;
+        vfunc_add_child(builder: Builder, child: GObject.Object, type: string | null): void;
 
         /**
          * Constructs a child of `buildable` with the name `name`.
@@ -23355,7 +23341,7 @@ export namespace Gtk {
          * @param data user data created in custom_tag_start
          * @virtual
          */
-        vfunc_custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
+        vfunc_custom_finished(builder: Builder, child: GObject.Object | null, tagname: string, data: null): void;
 
         /**
          * This is called at the end of each custom element handled by
@@ -23366,7 +23352,7 @@ export namespace Gtk {
          * @param data user data that will be passed in to parser functions
          * @virtual
          */
-        vfunc_custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
+        vfunc_custom_tag_end(builder: Builder, child: GObject.Object | null, tagname: string, data: null): void;
 
         /**
          * This is called for each unknown element under `<child>`.
@@ -23375,7 +23361,7 @@ export namespace Gtk {
          * @param tagname name of tag
          * @virtual
          */
-        vfunc_custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, GLib.MarkupParser, never];
+        vfunc_custom_tag_start(builder: Builder, child: GObject.Object | null, tagname: string): [boolean, GLib.MarkupParser, never];
 
         /**
          * Get the internal child called `childname` of the `buildable` object.
@@ -23454,7 +23440,7 @@ export namespace Gtk {
          * is used by `cell_layout`.
          * @returns the cell area used by `cell_layout`, or `null` in case no cell area is used.
          */
-        get_area(): (CellArea | null);
+        get_area(): CellArea | null;
 
         /**
          * Returns the cell renderers which have been added to `cell_layout`.
@@ -23505,7 +23491,7 @@ export namespace Gtk {
          * @param cell a {@link Gtk.CellRenderer}
          * @param func the {@link Gtk.CellLayoutDataFunc} to use, or `null`
          */
-        set_cell_data_func(cell: CellRenderer, func: (CellLayoutDataFunc | null)): void;
+        set_cell_data_func(cell: CellRenderer, func: CellLayoutDataFunc | null): void;
 
         /**
          * Adds an attribute mapping to the list in `cell_layout`.
@@ -23542,7 +23528,7 @@ export namespace Gtk {
          * is used by `cell_layout`.
          * @virtual
          */
-        vfunc_get_area(): (CellArea | null);
+        vfunc_get_area(): CellArea | null;
 
         /**
          * Returns the cell renderers which have been added to `cell_layout`.
@@ -23597,7 +23583,7 @@ export namespace Gtk {
          * @param func the {@link Gtk.CellLayoutDataFunc} to use, or `null`
          * @virtual
          */
-        vfunc_set_cell_data_func(cell: CellRenderer, func: (CellLayoutDataFunc | null)): void;
+        vfunc_set_cell_data_func(cell: CellRenderer, func: CellLayoutDataFunc | null): void;
     }
 
 
@@ -23743,7 +23729,7 @@ export namespace Gtk {
          * @param child child to add
          * @param type kind of child or `null`
          */
-        add_child(builder: Builder, child: GObject.Object, type: (string | null)): void;
+        add_child(builder: Builder, child: GObject.Object, type: string | null): void;
 
         /**
          * Constructs a child of `buildable` with the name `name`.
@@ -23764,7 +23750,7 @@ export namespace Gtk {
          * @param tagname the name of the tag
          * @param data user data created in custom_tag_start
          */
-        custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
+        custom_finished(builder: Builder, child: GObject.Object | null, tagname: string, data: null): void;
 
         /**
          * This is called at the end of each custom element handled by
@@ -23774,7 +23760,7 @@ export namespace Gtk {
          * @param tagname name of tag
          * @param data user data that will be passed in to parser functions
          */
-        custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
+        custom_tag_end(builder: Builder, child: GObject.Object | null, tagname: string, data: null): void;
 
         /**
          * This is called for each unknown element under `<child>`.
@@ -23783,7 +23769,7 @@ export namespace Gtk {
          * @param tagname name of tag
          * @returns `true` if a object has a custom implementation, `false`          if it doesn't.
          */
-        custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, GLib.MarkupParser, null];
+        custom_tag_start(builder: Builder, child: GObject.Object | null, tagname: string): [boolean, GLib.MarkupParser, null];
 
         /**
          * Get the internal child called `childname` of the `buildable` object.
@@ -23819,7 +23805,7 @@ export namespace Gtk {
          * @param name name of property
          * @param value value of property
          */
-        set_buildable_property(builder: Builder, name: string, value: (GObject.Value | any)): void;
+        set_buildable_property(builder: Builder, name: string, value: GObject.Value | any): void;
 
         /**
          * Sets the name of the `buildable` object.
@@ -23835,7 +23821,7 @@ export namespace Gtk {
          * @param type kind of child or `null`
          * @virtual
          */
-        vfunc_add_child(builder: Builder, child: GObject.Object, type: (string | null)): void;
+        vfunc_add_child(builder: Builder, child: GObject.Object, type: string | null): void;
 
         /**
          * Constructs a child of `buildable` with the name `name`.
@@ -23857,7 +23843,7 @@ export namespace Gtk {
          * @param data user data created in custom_tag_start
          * @virtual
          */
-        vfunc_custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
+        vfunc_custom_finished(builder: Builder, child: GObject.Object | null, tagname: string, data: null): void;
 
         /**
          * This is called at the end of each custom element handled by
@@ -23868,7 +23854,7 @@ export namespace Gtk {
          * @param data user data that will be passed in to parser functions
          * @virtual
          */
-        vfunc_custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
+        vfunc_custom_tag_end(builder: Builder, child: GObject.Object | null, tagname: string, data: null): void;
 
         /**
          * This is called for each unknown element under `<child>`.
@@ -23877,7 +23863,7 @@ export namespace Gtk {
          * @param tagname name of tag
          * @virtual
          */
-        vfunc_custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, GLib.MarkupParser, never];
+        vfunc_custom_tag_start(builder: Builder, child: GObject.Object | null, tagname: string): [boolean, GLib.MarkupParser, never];
 
         /**
          * Get the internal child called `childname` of the `buildable` object.
@@ -23956,7 +23942,7 @@ export namespace Gtk {
          * is used by `cell_layout`.
          * @returns the cell area used by `cell_layout`, or `null` in case no cell area is used.
          */
-        get_area(): (CellArea | null);
+        get_area(): CellArea | null;
 
         /**
          * Returns the cell renderers which have been added to `cell_layout`.
@@ -23985,7 +23971,7 @@ export namespace Gtk {
          * @param cell a {@link Gtk.CellRenderer}
          * @param func the {@link Gtk.CellLayoutDataFunc} to use, or `null`
          */
-        set_cell_data_func(cell: CellRenderer, func: (CellLayoutDataFunc | null)): void;
+        set_cell_data_func(cell: CellRenderer, func: CellLayoutDataFunc | null): void;
 
         /**
          * Adds an attribute mapping to the list in `cell_layout`.
@@ -24022,7 +24008,7 @@ export namespace Gtk {
          * is used by `cell_layout`.
          * @virtual
          */
-        vfunc_get_area(): (CellArea | null);
+        vfunc_get_area(): CellArea | null;
 
         /**
          * Returns the cell renderers which have been added to `cell_layout`.
@@ -24077,7 +24063,7 @@ export namespace Gtk {
          * @param func the {@link Gtk.CellLayoutDataFunc} to use, or `null`
          * @virtual
          */
-        vfunc_set_cell_data_func(cell: CellRenderer, func: (CellLayoutDataFunc | null)): void;
+        vfunc_set_cell_data_func(cell: CellRenderer, func: CellLayoutDataFunc | null): void;
 
         /**
          * Retrieves the orientation of the `orientable`.
@@ -24853,7 +24839,7 @@ export namespace Gtk {
          * @param cell_area The area a cell will be allocated, or `null`
          * @virtual
          */
-        vfunc_get_size(widget: Widget, cell_area: (Gdk.Rectangle | null)): [number, number, number, number];
+        vfunc_get_size(widget: Widget, cell_area: Gdk.Rectangle | null): [number, number, number, number];
 
         /**
          * Invokes the virtual render function of the {@link Gtk.CellRenderer}. The three
@@ -24883,7 +24869,7 @@ export namespace Gtk {
          * @param flags render flags
          * @virtual
          */
-        vfunc_start_editing(event: (Gdk.Event | null), widget: Widget, path: string, background_area: Gdk.Rectangle, cell_area: Gdk.Rectangle, flags: CellRendererState): (CellEditable | null);
+        vfunc_start_editing(event: Gdk.Event | null, widget: Widget, path: string, background_area: Gdk.Rectangle, cell_area: Gdk.Rectangle, flags: CellRendererState): CellEditable | null;
 
         // Methods
         /**
@@ -24983,7 +24969,7 @@ export namespace Gtk {
          * @param widget the widget the renderer is rendering to
          * @param cell_area The area a cell will be allocated, or `null`
          */
-        get_size(widget: Widget, cell_area: (Gdk.Rectangle | null)): [number, number, number, number];
+        get_size(widget: Widget, cell_area: Gdk.Rectangle | null): [number, number, number, number];
 
         /**
          * Translates the cell renderer state to {@link Gtk.StateFlags},
@@ -24993,7 +24979,7 @@ export namespace Gtk {
          * @param cell_state cell renderer state
          * @returns the widget state flags applying to `cell`
          */
-        get_state(widget: (Widget | null), cell_state: CellRendererState): StateFlags;
+        get_state(widget: Widget | null, cell_state: CellRendererState): StateFlags;
 
         /**
          * Returns the cell renderer’s visibility.
@@ -25067,7 +25053,7 @@ export namespace Gtk {
          * @param flags render flags
          * @returns A new {@link Gtk.CellEditable} for editing this   `cell`, or `null` if editing is not possible
          */
-        start_editing(event: (Gdk.Event | null), widget: Widget, path: string, background_area: Gdk.Rectangle, cell_area: Gdk.Rectangle, flags: CellRendererState): (CellEditable | null);
+        start_editing(event: Gdk.Event | null, widget: Widget, path: string, background_area: Gdk.Rectangle, cell_area: Gdk.Rectangle, flags: CellRendererState): CellEditable | null;
 
         /**
          * Informs the cell renderer that the editing is stopped.
@@ -27174,7 +27160,7 @@ export namespace Gtk {
             drawSensitive: boolean;
             fit_model: boolean;
             fitModel: boolean;
-            model: (TreeModel | null);
+            model: TreeModel | null;
         }
     }
 
@@ -27355,8 +27341,8 @@ export namespace Gtk {
          * 
          * since 2.10
          */
-        get model(): (TreeModel | null);
-        set model(val: (TreeModel | null));
+        get model(): TreeModel | null;
+        set model(val: TreeModel | null);
 
         /**
          * Compile-time signal type information.
@@ -27402,7 +27388,7 @@ export namespace Gtk {
          * `null` is returned.
          * @returns the currently displayed row or `null`
          */
-        get_displayed_row(): (TreePath | null);
+        get_displayed_row(): TreePath | null;
 
         /**
          * Gets whether `cell_view` is configured to draw all of its
@@ -27423,7 +27409,7 @@ export namespace Gtk {
          * returned.
          * @returns a {@link Gtk.TreeModel} used or `null`
          */
-        get_model(): (TreeModel | null);
+        get_model(): TreeModel | null;
 
         /**
          * Sets `requisition` to the size needed by `cell_view` to display
@@ -27454,7 +27440,7 @@ export namespace Gtk {
          * the {@link Gtk.CellView} becomes temporarily empty.
          * @param path a {@link Gtk.TreePath} or `null` to unset.
          */
-        set_displayed_row(path: (TreePath | null)): void;
+        set_displayed_row(path: TreePath | null): void;
 
         /**
          * Sets whether `cell_view` should draw all of its
@@ -27481,7 +27467,7 @@ export namespace Gtk {
          * `null`, then it will unset the old model.
          * @param model a {@link Gtk.TreeModel}
          */
-        set_model(model: (TreeModel | null)): void;
+        set_model(model: TreeModel | null): void;
 
         /**
          * The orientation of the orientable.
@@ -27499,7 +27485,7 @@ export namespace Gtk {
          * @param child child to add
          * @param type kind of child or `null`
          */
-        add_child(builder: Builder, child: GObject.Object, type: (string | null)): void;
+        add_child(builder: Builder, child: GObject.Object, type: string | null): void;
 
         /**
          * Constructs a child of `buildable` with the name `name`.
@@ -27520,7 +27506,7 @@ export namespace Gtk {
          * @param tagname the name of the tag
          * @param data user data created in custom_tag_start
          */
-        custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
+        custom_finished(builder: Builder, child: GObject.Object | null, tagname: string, data: null): void;
 
         /**
          * This is called at the end of each custom element handled by
@@ -27530,7 +27516,7 @@ export namespace Gtk {
          * @param tagname name of tag
          * @param data user data that will be passed in to parser functions
          */
-        custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
+        custom_tag_end(builder: Builder, child: GObject.Object | null, tagname: string, data: null): void;
 
         /**
          * This is called for each unknown element under `<child>`.
@@ -27539,7 +27525,7 @@ export namespace Gtk {
          * @param tagname name of tag
          * @returns `true` if a object has a custom implementation, `false`          if it doesn't.
          */
-        custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, GLib.MarkupParser, null];
+        custom_tag_start(builder: Builder, child: GObject.Object | null, tagname: string): [boolean, GLib.MarkupParser, null];
 
         /**
          * Get the internal child called `childname` of the `buildable` object.
@@ -27575,7 +27561,7 @@ export namespace Gtk {
          * @param name name of property
          * @param value value of property
          */
-        set_buildable_property(builder: Builder, name: string, value: (GObject.Value | any)): void;
+        set_buildable_property(builder: Builder, name: string, value: GObject.Value | any): void;
 
         /**
          * Sets the name of the `buildable` object.
@@ -27591,7 +27577,7 @@ export namespace Gtk {
          * @param type kind of child or `null`
          * @virtual
          */
-        vfunc_add_child(builder: Builder, child: GObject.Object, type: (string | null)): void;
+        vfunc_add_child(builder: Builder, child: GObject.Object, type: string | null): void;
 
         /**
          * Constructs a child of `buildable` with the name `name`.
@@ -27613,7 +27599,7 @@ export namespace Gtk {
          * @param data user data created in custom_tag_start
          * @virtual
          */
-        vfunc_custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
+        vfunc_custom_finished(builder: Builder, child: GObject.Object | null, tagname: string, data: null): void;
 
         /**
          * This is called at the end of each custom element handled by
@@ -27624,7 +27610,7 @@ export namespace Gtk {
          * @param data user data that will be passed in to parser functions
          * @virtual
          */
-        vfunc_custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
+        vfunc_custom_tag_end(builder: Builder, child: GObject.Object | null, tagname: string, data: null): void;
 
         /**
          * This is called for each unknown element under `<child>`.
@@ -27633,7 +27619,7 @@ export namespace Gtk {
          * @param tagname name of tag
          * @virtual
          */
-        vfunc_custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, GLib.MarkupParser, never];
+        vfunc_custom_tag_start(builder: Builder, child: GObject.Object | null, tagname: string): [boolean, GLib.MarkupParser, never];
 
         /**
          * Get the internal child called `childname` of the `buildable` object.
@@ -27712,7 +27698,7 @@ export namespace Gtk {
          * is used by `cell_layout`.
          * @returns the cell area used by `cell_layout`, or `null` in case no cell area is used.
          */
-        get_area(): (CellArea | null);
+        get_area(): CellArea | null;
 
         /**
          * Returns the cell renderers which have been added to `cell_layout`.
@@ -27763,7 +27749,7 @@ export namespace Gtk {
          * @param cell a {@link Gtk.CellRenderer}
          * @param func the {@link Gtk.CellLayoutDataFunc} to use, or `null`
          */
-        set_cell_data_func(cell: CellRenderer, func: (CellLayoutDataFunc | null)): void;
+        set_cell_data_func(cell: CellRenderer, func: CellLayoutDataFunc | null): void;
 
         /**
          * Adds an attribute mapping to the list in `cell_layout`.
@@ -27800,7 +27786,7 @@ export namespace Gtk {
          * is used by `cell_layout`.
          * @virtual
          */
-        vfunc_get_area(): (CellArea | null);
+        vfunc_get_area(): CellArea | null;
 
         /**
          * Returns the cell renderers which have been added to `cell_layout`.
@@ -27855,7 +27841,7 @@ export namespace Gtk {
          * @param func the {@link Gtk.CellLayoutDataFunc} to use, or `null`
          * @virtual
          */
-        vfunc_set_cell_data_func(cell: CellRenderer, func: (CellLayoutDataFunc | null)): void;
+        vfunc_set_cell_data_func(cell: CellRenderer, func: CellLayoutDataFunc | null): void;
 
         /**
          * Retrieves the orientation of the `orientable`.
@@ -27931,9 +27917,7 @@ export namespace Gtk {
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends ToggleButton.ConstructorProps, Atk.ImplementorIface.ConstructorProps, Actionable.ConstructorProps, Activatable.ConstructorProps, Buildable.ConstructorProps {
-
-        }
+        interface ConstructorProps extends ToggleButton.ConstructorProps, Atk.ImplementorIface.ConstructorProps, Actionable.ConstructorProps, Activatable.ConstructorProps, Buildable.ConstructorProps {}
     }
 
     /**
@@ -28284,15 +28268,15 @@ export namespace Gtk {
          * @default null
           * @category Inherited from Gtk.Actionable
          */
-        get action_name(): (string | null);
-        set action_name(val: (string | null));
+        get action_name(): string | null;
+        set action_name(val: string | null);
 
         /**
          * @default null
           * @category Inherited from Gtk.Actionable
          */
-        get actionName(): (string | null);
-        set actionName(val: (string | null));
+        get actionName(): string | null;
+        set actionName(val: string | null);
 
         /** @category Inherited from Gtk.Actionable */
         get action_target(): GLib.Variant;
@@ -28372,7 +28356,7 @@ export namespace Gtk {
          * See `gtk_actionable_set_action_name()` for more information.
          * @returns the action name, or `null` if none is set
          */
-        get_action_name(): (string | null);
+        get_action_name(): string | null;
 
         /**
          * Gets the current target value of `actionable`.
@@ -28396,7 +28380,7 @@ export namespace Gtk {
          * associated with the window.
          * @param action_name an action name, or `null`
          */
-        set_action_name(action_name: (string | null)): void;
+        set_action_name(action_name: string | null): void;
 
         /**
          * Sets the target value of an actionable widget.
@@ -28420,7 +28404,7 @@ export namespace Gtk {
          * rendered inactive).
          * @param target_value a {@link GLib.Variant} to set as the target value, or `null`
          */
-        set_action_target_value(target_value: (GLib.Variant | null)): void;
+        set_action_target_value(target_value: GLib.Variant | null): void;
 
         /**
          * Sets the action-name and associated string target value of an
@@ -28444,7 +28428,7 @@ export namespace Gtk {
          * See `gtk_actionable_set_action_name()` for more information.
          * @virtual
          */
-        vfunc_get_action_name(): (string | null);
+        vfunc_get_action_name(): string | null;
 
         /**
          * Gets the current target value of `actionable`.
@@ -28469,7 +28453,7 @@ export namespace Gtk {
          * @param action_name an action name, or `null`
          * @virtual
          */
-        vfunc_set_action_name(action_name: (string | null)): void;
+        vfunc_set_action_name(action_name: string | null): void;
 
         /**
          * Sets the target value of an actionable widget.
@@ -28494,7 +28478,7 @@ export namespace Gtk {
          * @param target_value a {@link GLib.Variant} to set as the target value, or `null`
          * @virtual
          */
-        vfunc_set_action_target_value(target_value: (GLib.Variant | null)): void;
+        vfunc_set_action_target_value(target_value: GLib.Variant | null): void;
 
         /**
          * This is a utility function for {@link Gtk.Activatable} implementors.
@@ -28558,7 +28542,7 @@ export namespace Gtk {
          * {@link Gtk.Activatable.use_action_appearance} changes.
          * @param action the related {@link Gtk.Action} or `null`
          */
-        sync_action_properties(action: (Action | null)): void;
+        sync_action_properties(action: Action | null): void;
 
         /**
          * This is called to update the activatable completely, this is called
@@ -28568,7 +28552,7 @@ export namespace Gtk {
          * @param action the related {@link Gtk.Action} or `null`
          * @virtual
          */
-        vfunc_sync_action_properties(action: (Action | null)): void;
+        vfunc_sync_action_properties(action: Action | null): void;
 
         /**
          * Called to update the activatable when its related action’s properties change.
@@ -28638,7 +28622,7 @@ export namespace Gtk {
          * @param accel_path path used to look up the accelerator
          * @param accel_group a {@link Gtk.AccelGroup}.
          */
-        set_accel_path(accel_path: (string | null), accel_group: (AccelGroup | null)): void;
+        set_accel_path(accel_path: string | null, accel_group: AccelGroup | null): void;
 
         /**
          * @param args 
@@ -28672,9 +28656,7 @@ export namespace Gtk {
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends MenuItemAccessible.ConstructorProps, Atk.Action.ConstructorProps, Atk.Component.ConstructorProps, Atk.Selection.ConstructorProps {
-
-        }
+        interface ConstructorProps extends MenuItemAccessible.ConstructorProps, Atk.Action.ConstructorProps, Atk.Component.ConstructorProps, Atk.Selection.ConstructorProps {}
     }
 
     /**
@@ -28722,7 +28704,7 @@ export namespace Gtk {
          * @param i the action index corresponding to the action to be performed
          * @returns a description string, or `null` if `action` does not implement this interface.
          */
-        get_description(i: number): (string | null);
+        get_description(i: number): string | null;
 
         /**
          * @param args 
@@ -28756,14 +28738,14 @@ export namespace Gtk {
          * @param i the action index corresponding to the action to be performed
          * @returns the keybinding which can be used to activate this action, or `null` if there is no keybinding for this action.
          */
-        get_keybinding(i: number): (string | null);
+        get_keybinding(i: number): string | null;
 
         /**
          * Returns the localized name of the specified action of the object.
          * @param i the action index corresponding to the action to be performed
          * @returns a name string, or `null` if `action` does not implement this interface.
          */
-        get_localized_name(i: number): (string | null);
+        get_localized_name(i: number): string | null;
 
         /**
          * Gets the number of accessible actions available on the object.
@@ -28791,7 +28773,7 @@ export namespace Gtk {
          * @param i the action index corresponding to the action to be performed
          * @returns a name string, or `null` if `action` does not implement this interface.
          */
-        get_name(i: number): (string | null);
+        get_name(i: number): string | null;
 
         /**
          * @param args 
@@ -28825,7 +28807,7 @@ export namespace Gtk {
          * @param i the action index corresponding to the action to be performed
          * @virtual
          */
-        vfunc_get_description(i: number): (string | null);
+        vfunc_get_description(i: number): string | null;
 
         /**
          * @param args 
@@ -28860,14 +28842,14 @@ export namespace Gtk {
          * @param i the action index corresponding to the action to be performed
          * @virtual
          */
-        vfunc_get_keybinding(i: number): (string | null);
+        vfunc_get_keybinding(i: number): string | null;
 
         /**
          * Returns the localized name of the specified action of the object.
          * @param i the action index corresponding to the action to be performed
          * @virtual
          */
-        vfunc_get_localized_name(i: number): (string | null);
+        vfunc_get_localized_name(i: number): string | null;
 
         /**
          * Gets the number of accessible actions available on the object.
@@ -28895,7 +28877,7 @@ export namespace Gtk {
          * @param i the action index corresponding to the action to be performed
          * @virtual
          */
-        vfunc_get_name(i: number): (string | null);
+        vfunc_get_name(i: number): string | null;
 
         /**
          * @param args 
@@ -28965,7 +28947,7 @@ export namespace Gtk {
          * @param i a `gint` specifying the index in the selection set.  (e.g. the ith selection as opposed to the ith child).
          * @returns an {@link Atk.Object} representing the selected accessible, or `null` if `selection` does not implement this interface.
          */
-        ref_selection(i: number): (Atk.Object | null);
+        ref_selection(i: number): Atk.Object | null;
 
         /**
          * Removes the specified child of the object from the object's selection.
@@ -29027,7 +29009,7 @@ export namespace Gtk {
          * @param i a `gint` specifying the index in the selection set.  (e.g. the ith selection as opposed to the ith child).
          * @virtual
          */
-        vfunc_ref_selection(i: number): (Atk.Object | null);
+        vfunc_ref_selection(i: number): Atk.Object | null;
 
         /**
          * Removes the specified child of the object from the object's selection.
@@ -29065,9 +29047,7 @@ export namespace Gtk {
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends GObject.Object.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GObject.Object.ConstructorProps {}
     }
 
     /**
@@ -29319,7 +29299,7 @@ export namespace Gtk {
          * see gdk_display_store_clipboard () for more information.
          * @param targets array containing           information about which forms should be stored or `null`           to indicate that all forms should be stored.
          */
-        set_can_store(targets: (TargetEntry[] | null)): void;
+        set_can_store(targets: TargetEntry[] | null): void;
 
         /**
          * Sets the contents of the clipboard to the given {@link GdkPixbuf.Pixbuf}.
@@ -29353,7 +29333,7 @@ export namespace Gtk {
          * @param target an atom representing the form into which the clipboard          owner should convert the selection.
          * @returns a newly-allocated {@link Gtk.SelectionData} object or `null`               if retrieving the given target failed. If non-`null`,               this value must be freed with `gtk_selection_data_free()`               when you are finished with it.
          */
-        wait_for_contents(target: Gdk.Atom): (SelectionData | null);
+        wait_for_contents(target: Gdk.Atom): SelectionData | null;
 
         /**
          * Requests the contents of the clipboard as image and converts
@@ -29362,7 +29342,7 @@ export namespace Gtk {
          * timeouts, etc, may be dispatched during the wait.
          * @returns a newly-allocated {@link GdkPixbuf.Pixbuf}     object which must be disposed with `g_object_unref()`, or     `null` if retrieving the selection data failed. (This could     happen for various reasons, in particular if the clipboard     was empty or if the contents of the clipboard could not be     converted into an image.)
          */
-        wait_for_image(): (GdkPixbuf.Pixbuf | null);
+        wait_for_image(): GdkPixbuf.Pixbuf | null;
 
         /**
          * Requests the contents of the clipboard as rich text.  This function
@@ -29371,7 +29351,7 @@ export namespace Gtk {
          * @param buffer a {@link Gtk.TextBuffer}
          * @returns a               newly-allocated binary block of data which must be               freed with `g_free()`, or `null` if retrieving the               selection data failed. (This could happen for various               reasons, in particular if the clipboard was empty or               if the contents of the clipboard could not be               converted into text form.)
          */
-        wait_for_rich_text(buffer: TextBuffer): [(Uint8Array | null), Gdk.Atom];
+        wait_for_rich_text(buffer: TextBuffer): [Uint8Array | null, Gdk.Atom];
 
         /**
          * Returns a list of targets that are present on the clipboard, or `null`
@@ -29390,7 +29370,7 @@ export namespace Gtk {
          * timeouts, etc, may be dispatched during the wait.
          * @returns a newly-allocated UTF-8 string which must               be freed with `g_free()`, or `null` if retrieving               the selection data failed. (This could happen               for various reasons, in particular if the               clipboard was empty or if the contents of the               clipboard could not be converted into text form.)
          */
-        wait_for_text(): (string | null);
+        wait_for_text(): string | null;
 
         /**
          * Requests the contents of the clipboard as URIs. This function waits
@@ -29398,7 +29378,7 @@ export namespace Gtk {
          * timeouts, etc, may be dispatched during the wait.
          * @returns a newly-allocated `null`-terminated array of strings which must     be freed with `g_strfreev()`, or `null` if retrieving the     selection data failed. (This could happen for various reasons,     in particular if the clipboard was empty or if the contents of     the clipboard could not be converted into URI form.)
          */
-        wait_for_uris(): (string[] | null);
+        wait_for_uris(): string[] | null;
 
         /**
          * Test to see if there is an image available to be pasted
@@ -29749,15 +29729,15 @@ export namespace Gtk {
          * @default null
           * @category Inherited from Gtk.Actionable
          */
-        get action_name(): (string | null);
-        set action_name(val: (string | null));
+        get action_name(): string | null;
+        set action_name(val: string | null);
 
         /**
          * @default null
           * @category Inherited from Gtk.Actionable
          */
-        get actionName(): (string | null);
-        set actionName(val: (string | null));
+        get actionName(): string | null;
+        set actionName(val: string | null);
 
         /** @category Inherited from Gtk.Actionable */
         get action_target(): GLib.Variant;
@@ -29837,7 +29817,7 @@ export namespace Gtk {
          * See `gtk_actionable_set_action_name()` for more information.
          * @returns the action name, or `null` if none is set
          */
-        get_action_name(): (string | null);
+        get_action_name(): string | null;
 
         /**
          * Gets the current target value of `actionable`.
@@ -29861,7 +29841,7 @@ export namespace Gtk {
          * associated with the window.
          * @param action_name an action name, or `null`
          */
-        set_action_name(action_name: (string | null)): void;
+        set_action_name(action_name: string | null): void;
 
         /**
          * Sets the target value of an actionable widget.
@@ -29885,7 +29865,7 @@ export namespace Gtk {
          * rendered inactive).
          * @param target_value a {@link GLib.Variant} to set as the target value, or `null`
          */
-        set_action_target_value(target_value: (GLib.Variant | null)): void;
+        set_action_target_value(target_value: GLib.Variant | null): void;
 
         /**
          * Sets the action-name and associated string target value of an
@@ -29909,7 +29889,7 @@ export namespace Gtk {
          * See `gtk_actionable_set_action_name()` for more information.
          * @virtual
          */
-        vfunc_get_action_name(): (string | null);
+        vfunc_get_action_name(): string | null;
 
         /**
          * Gets the current target value of `actionable`.
@@ -29934,7 +29914,7 @@ export namespace Gtk {
          * @param action_name an action name, or `null`
          * @virtual
          */
-        vfunc_set_action_name(action_name: (string | null)): void;
+        vfunc_set_action_name(action_name: string | null): void;
 
         /**
          * Sets the target value of an actionable widget.
@@ -29959,7 +29939,7 @@ export namespace Gtk {
          * @param target_value a {@link GLib.Variant} to set as the target value, or `null`
          * @virtual
          */
-        vfunc_set_action_target_value(target_value: (GLib.Variant | null)): void;
+        vfunc_set_action_target_value(target_value: GLib.Variant | null): void;
 
         /**
          * This is a utility function for {@link Gtk.Activatable} implementors.
@@ -30023,7 +30003,7 @@ export namespace Gtk {
          * {@link Gtk.Activatable.use_action_appearance} changes.
          * @param action the related {@link Gtk.Action} or `null`
          */
-        sync_action_properties(action: (Action | null)): void;
+        sync_action_properties(action: Action | null): void;
 
         /**
          * This is called to update the activatable completely, this is called
@@ -30033,7 +30013,7 @@ export namespace Gtk {
          * @param action the related {@link Gtk.Action} or `null`
          * @virtual
          */
-        vfunc_sync_action_properties(action: (Action | null)): void;
+        vfunc_sync_action_properties(action: Action | null): void;
 
         /**
          * Called to update the activatable when its related action’s properties change.
@@ -30067,7 +30047,7 @@ export namespace Gtk {
          * @param colors_per_line the number of colors to show in each row/column
          * @param colors the colors of the palette, or `null`
          */
-        add_palette(orientation: Orientation, colors_per_line: number, colors: (Gdk.RGBA[] | null)): void;
+        add_palette(orientation: Orientation, colors_per_line: number, colors: Gdk.RGBA[] | null): void;
 
         /**
          * Gets the currently-selected color.
@@ -30103,7 +30083,7 @@ export namespace Gtk {
          * @param colors the colors of the palette, or `null`
          * @virtual
          */
-        vfunc_add_palette(orientation: Orientation, colors_per_line: number, colors: (Gdk.RGBA[] | null)): void;
+        vfunc_add_palette(orientation: Orientation, colors_per_line: number, colors: Gdk.RGBA[] | null): void;
 
         /**
          * @param color 
@@ -30287,7 +30267,7 @@ export namespace Gtk {
 
         _init(...args: any[]): void;
 
-        static ["new"](title: (string | null), parent: (Window | null)): ColorChooserDialog;
+        static ["new"](title: string | null, parent: Window | null): ColorChooserDialog;
 
         // Conflicted with Gtk.Dialog.new
         static ["new"](...args: never[]): any;
@@ -30367,7 +30347,7 @@ export namespace Gtk {
          * @param colors_per_line the number of colors to show in each row/column
          * @param colors the colors of the palette, or `null`
          */
-        add_palette(orientation: Orientation, colors_per_line: number, colors: (Gdk.RGBA[] | null)): void;
+        add_palette(orientation: Orientation, colors_per_line: number, colors: Gdk.RGBA[] | null): void;
 
         /**
          * Gets the currently-selected color.
@@ -30415,7 +30395,7 @@ export namespace Gtk {
          * @param colors the colors of the palette, or `null`
          * @virtual
          */
-        vfunc_add_palette(orientation: Orientation, colors_per_line: number, colors: (Gdk.RGBA[] | null)): void;
+        vfunc_add_palette(orientation: Orientation, colors_per_line: number, colors: Gdk.RGBA[] | null): void;
 
         /**
          * @param color 
@@ -30647,7 +30627,7 @@ export namespace Gtk {
          * @param colors_per_line the number of colors to show in each row/column
          * @param colors the colors of the palette, or `null`
          */
-        add_palette(orientation: Orientation, colors_per_line: number, colors: (Gdk.RGBA[] | null)): void;
+        add_palette(orientation: Orientation, colors_per_line: number, colors: Gdk.RGBA[] | null): void;
 
         /**
          * Gets the currently-selected color.
@@ -30695,7 +30675,7 @@ export namespace Gtk {
          * @param colors the colors of the palette, or `null`
          * @virtual
          */
-        vfunc_add_palette(orientation: Orientation, colors_per_line: number, colors: (Gdk.RGBA[] | null)): void;
+        vfunc_add_palette(orientation: Orientation, colors_per_line: number, colors: Gdk.RGBA[] | null): void;
 
         /**
          * @param color 
@@ -31334,7 +31314,7 @@ export namespace Gtk {
              * @action
              * @run-last
              */
-            popdown: () => (boolean | void);
+            popdown: () => boolean | void;
             /**
              * The ::popup signal is a
              * [keybinding signal][GtkBindingSignal]
@@ -31411,8 +31391,8 @@ export namespace Gtk {
         // Constructor properties interface
         interface ConstructorProps extends Bin.ConstructorProps, Atk.ImplementorIface.ConstructorProps, Buildable.ConstructorProps, CellEditable.ConstructorProps, CellLayout.ConstructorProps {
             active: number;
-            active_id: (string | null);
-            activeId: (string | null);
+            active_id: string | null;
+            activeId: string | null;
             add_tearoffs: boolean;
             addTearoffs: boolean;
             button_sensitivity: SensitivityType;
@@ -31525,16 +31505,16 @@ export namespace Gtk {
          * @since 3.0
          * @default null
          */
-        get active_id(): (string | null);
-        set active_id(val: (string | null));
+        get active_id(): string | null;
+        set active_id(val: string | null);
 
         /**
          * The value of the ID column of the active row.
          * @since 3.0
          * @default null
          */
-        get activeId(): (string | null);
-        set activeId(val: (string | null));
+        get activeId(): string | null;
+        set activeId(val: string | null);
 
         /**
          * The add-tearoffs property controls whether generated menus
@@ -31877,7 +31857,7 @@ export namespace Gtk {
          * is returned.
          * @returns the ID of the active row, or `null`
          */
-        get_active_id(): (string | null);
+        get_active_id(): string | null;
 
         /**
          * Sets `iter` to point to the currently active item, if any item is active.
@@ -32017,14 +31997,14 @@ export namespace Gtk {
          * @param active_id the ID of the row to select, or `null`
          * @returns `true` if a row with a matching ID was found.  If a `null`          `active_id` was given to unset the active row, the function          always returns `true`.
          */
-        set_active_id(active_id: (string | null)): boolean;
+        set_active_id(active_id: string | null): boolean;
 
         /**
          * Sets the current active item to be the one referenced by `iter`, or
          * unsets the active item if `iter` is `null`.
          * @param iter The {@link Gtk.TreeIter}, or `null`
          */
-        set_active_iter(iter: (TreeIter | null)): void;
+        set_active_iter(iter: TreeIter | null): void;
 
         /**
          * Sets whether the popup menu should have a tearoff
@@ -32086,7 +32066,7 @@ export namespace Gtk {
          * cell renderers for the new model.
          * @param model A {@link Gtk.TreeModel}
          */
-        set_model(model: (TreeModel | null)): void;
+        set_model(model: TreeModel | null): void;
 
         /**
          * Specifies whether the popup’s width should be a fixed width
@@ -32166,7 +32146,7 @@ export namespace Gtk {
          * lifetime is temporary and does not persist across other edits and/or cells.
          * @param event The {@link Gdk.Event} that began the editing process, or   `null` if editing was initiated programmatically
          */
-        start_editing(event: (Gdk.Event | null)): void;
+        start_editing(event: Gdk.Event | null): void;
 
         /**
          * Emits the {@link Gtk.CellEditable.SignalSignatures.editing_done | Gtk.CellEditable::editing-done} signal.
@@ -32194,7 +32174,7 @@ export namespace Gtk {
          * @param event The {@link Gdk.Event} that began the editing process, or   `null` if editing was initiated programmatically
          * @virtual
          */
-        vfunc_start_editing(event: (Gdk.Event | null)): void;
+        vfunc_start_editing(event: Gdk.Event | null): void;
 
         /**
          * Adds an attribute mapping to the list in `cell_layout`.
@@ -32228,7 +32208,7 @@ export namespace Gtk {
          * is used by `cell_layout`.
          * @returns the cell area used by `cell_layout`, or `null` in case no cell area is used.
          */
-        get_area(): (CellArea | null);
+        get_area(): CellArea | null;
 
         /**
          * Returns the cell renderers which have been added to `cell_layout`.
@@ -32279,7 +32259,7 @@ export namespace Gtk {
          * @param cell a {@link Gtk.CellRenderer}
          * @param func the {@link Gtk.CellLayoutDataFunc} to use, or `null`
          */
-        set_cell_data_func(cell: CellRenderer, func: (CellLayoutDataFunc | null)): void;
+        set_cell_data_func(cell: CellRenderer, func: CellLayoutDataFunc | null): void;
 
         /**
          * Adds an attribute mapping to the list in `cell_layout`.
@@ -32316,7 +32296,7 @@ export namespace Gtk {
          * is used by `cell_layout`.
          * @virtual
          */
-        vfunc_get_area(): (CellArea | null);
+        vfunc_get_area(): CellArea | null;
 
         /**
          * Returns the cell renderers which have been added to `cell_layout`.
@@ -32371,7 +32351,7 @@ export namespace Gtk {
          * @param func the {@link Gtk.CellLayoutDataFunc} to use, or `null`
          * @virtual
          */
-        vfunc_set_cell_data_func(cell: CellRenderer, func: (CellLayoutDataFunc | null)): void;
+        vfunc_set_cell_data_func(cell: CellRenderer, func: CellLayoutDataFunc | null): void;
 
         /**
          * Emits a {@link Gtk.Widget.SignalSignatures.child_notify | Gtk.Widget::child-notify} signal for the
@@ -32417,9 +32397,7 @@ export namespace Gtk {
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends ContainerAccessible.ConstructorProps, Atk.Action.ConstructorProps, Atk.Component.ConstructorProps, Atk.Selection.ConstructorProps {
-
-        }
+        interface ConstructorProps extends ContainerAccessible.ConstructorProps, Atk.Action.ConstructorProps, Atk.Component.ConstructorProps, Atk.Selection.ConstructorProps {}
     }
 
     /**
@@ -32467,7 +32445,7 @@ export namespace Gtk {
          * @param i the action index corresponding to the action to be performed
          * @returns a description string, or `null` if `action` does not implement this interface.
          */
-        get_description(i: number): (string | null);
+        get_description(i: number): string | null;
 
         /**
          * @param args 
@@ -32501,14 +32479,14 @@ export namespace Gtk {
          * @param i the action index corresponding to the action to be performed
          * @returns the keybinding which can be used to activate this action, or `null` if there is no keybinding for this action.
          */
-        get_keybinding(i: number): (string | null);
+        get_keybinding(i: number): string | null;
 
         /**
          * Returns the localized name of the specified action of the object.
          * @param i the action index corresponding to the action to be performed
          * @returns a name string, or `null` if `action` does not implement this interface.
          */
-        get_localized_name(i: number): (string | null);
+        get_localized_name(i: number): string | null;
 
         /**
          * Gets the number of accessible actions available on the object.
@@ -32536,7 +32514,7 @@ export namespace Gtk {
          * @param i the action index corresponding to the action to be performed
          * @returns a name string, or `null` if `action` does not implement this interface.
          */
-        get_name(i: number): (string | null);
+        get_name(i: number): string | null;
 
         /**
          * @param args 
@@ -32570,7 +32548,7 @@ export namespace Gtk {
          * @param i the action index corresponding to the action to be performed
          * @virtual
          */
-        vfunc_get_description(i: number): (string | null);
+        vfunc_get_description(i: number): string | null;
 
         /**
          * @param args 
@@ -32605,14 +32583,14 @@ export namespace Gtk {
          * @param i the action index corresponding to the action to be performed
          * @virtual
          */
-        vfunc_get_keybinding(i: number): (string | null);
+        vfunc_get_keybinding(i: number): string | null;
 
         /**
          * Returns the localized name of the specified action of the object.
          * @param i the action index corresponding to the action to be performed
          * @virtual
          */
-        vfunc_get_localized_name(i: number): (string | null);
+        vfunc_get_localized_name(i: number): string | null;
 
         /**
          * Gets the number of accessible actions available on the object.
@@ -32640,7 +32618,7 @@ export namespace Gtk {
          * @param i the action index corresponding to the action to be performed
          * @virtual
          */
-        vfunc_get_name(i: number): (string | null);
+        vfunc_get_name(i: number): string | null;
 
         /**
          * @param args 
@@ -32710,7 +32688,7 @@ export namespace Gtk {
          * @param i a `gint` specifying the index in the selection set.  (e.g. the ith selection as opposed to the ith child).
          * @returns an {@link Atk.Object} representing the selected accessible, or `null` if `selection` does not implement this interface.
          */
-        ref_selection(i: number): (Atk.Object | null);
+        ref_selection(i: number): Atk.Object | null;
 
         /**
          * Removes the specified child of the object from the object's selection.
@@ -32772,7 +32750,7 @@ export namespace Gtk {
          * @param i a `gint` specifying the index in the selection set.  (e.g. the ith selection as opposed to the ith child).
          * @virtual
          */
-        vfunc_ref_selection(i: number): (Atk.Object | null);
+        vfunc_ref_selection(i: number): Atk.Object | null;
 
         /**
          * Removes the specified child of the object from the object's selection.
@@ -32860,9 +32838,7 @@ export namespace Gtk {
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends ComboBox.ConstructorProps, Atk.ImplementorIface.ConstructorProps, Buildable.ConstructorProps, CellEditable.ConstructorProps, CellLayout.ConstructorProps {
-
-        }
+        interface ConstructorProps extends ComboBox.ConstructorProps, Atk.ImplementorIface.ConstructorProps, Buildable.ConstructorProps, CellEditable.ConstructorProps, CellLayout.ConstructorProps {}
     }
 
     /**
@@ -32968,7 +32944,7 @@ export namespace Gtk {
          * @param id a string ID for this value, or `null`
          * @param text A string
          */
-        append(id: (string | null), text: string): void;
+        append(id: string | null, text: string): void;
 
         /**
          * Appends `text` to the list of strings stored in `combo_box`.
@@ -32998,7 +32974,7 @@ export namespace Gtk {
          * @param id a string ID for this value, or `null`
          * @param text A string to display
          */
-        insert(position: number, id: (string | null), text: string): void;
+        insert(position: number, id: string | null, text: string): void;
 
         /**
          * Inserts `text` at `position` in the list of strings stored in `combo_box`.
@@ -33021,7 +32997,7 @@ export namespace Gtk {
          * @param id a string ID for this value, or `null`
          * @param text a string
          */
-        prepend(id: (string | null), text: string): void;
+        prepend(id: string | null, text: string): void;
 
         /**
          * Prepends `text` to the list of strings stored in `combo_box`.
@@ -33090,7 +33066,7 @@ export namespace Gtk {
          * lifetime is temporary and does not persist across other edits and/or cells.
          * @param event The {@link Gdk.Event} that began the editing process, or   `null` if editing was initiated programmatically
          */
-        start_editing(event: (Gdk.Event | null)): void;
+        start_editing(event: Gdk.Event | null): void;
 
         /**
          * Emits the {@link Gtk.CellEditable.SignalSignatures.editing_done | Gtk.CellEditable::editing-done} signal.
@@ -33118,7 +33094,7 @@ export namespace Gtk {
          * @param event The {@link Gdk.Event} that began the editing process, or   `null` if editing was initiated programmatically
          * @virtual
          */
-        vfunc_start_editing(event: (Gdk.Event | null)): void;
+        vfunc_start_editing(event: Gdk.Event | null): void;
 
         /**
          * Adds an attribute mapping to the list in `cell_layout`.
@@ -33152,7 +33128,7 @@ export namespace Gtk {
          * is used by `cell_layout`.
          * @returns the cell area used by `cell_layout`, or `null` in case no cell area is used.
          */
-        get_area(): (CellArea | null);
+        get_area(): CellArea | null;
 
         /**
          * Returns the cell renderers which have been added to `cell_layout`.
@@ -33203,7 +33179,7 @@ export namespace Gtk {
          * @param cell a {@link Gtk.CellRenderer}
          * @param func the {@link Gtk.CellLayoutDataFunc} to use, or `null`
          */
-        set_cell_data_func(cell: CellRenderer, func: (CellLayoutDataFunc | null)): void;
+        set_cell_data_func(cell: CellRenderer, func: CellLayoutDataFunc | null): void;
 
         /**
          * Adds an attribute mapping to the list in `cell_layout`.
@@ -33240,7 +33216,7 @@ export namespace Gtk {
          * is used by `cell_layout`.
          * @virtual
          */
-        vfunc_get_area(): (CellArea | null);
+        vfunc_get_area(): CellArea | null;
 
         /**
          * Returns the cell renderers which have been added to `cell_layout`.
@@ -33295,7 +33271,7 @@ export namespace Gtk {
          * @param func the {@link Gtk.CellLayoutDataFunc} to use, or `null`
          * @virtual
          */
-        vfunc_set_cell_data_func(cell: CellRenderer, func: (CellLayoutDataFunc | null)): void;
+        vfunc_set_cell_data_func(cell: CellRenderer, func: CellLayoutDataFunc | null): void;
 
         /**
          * Emits a {@link Gtk.Widget.SignalSignatures.child_notify | Gtk.Widget::child-notify} signal for the
@@ -33687,7 +33663,7 @@ export namespace Gtk {
         /**
          * @param property_name the name of the child property to find
          */
-        static find_child_property(property_name: string): (GObject.ParamSpec | null);
+        static find_child_property(property_name: string): GObject.ParamSpec | null;
 
         static handle_border_width(): void;
 
@@ -33816,7 +33792,7 @@ export namespace Gtk {
          * @param child a {@link Gtk.Widget}, or `null`
          * @virtual
          */
-        vfunc_set_focus_child(child: (Widget | null)): void;
+        vfunc_set_focus_child(child: Widget | null): void;
 
         // Methods
         /**
@@ -33844,7 +33820,7 @@ export namespace Gtk {
          * @param property_name the name of the property to get
          * @param value a location to return the value
          */
-        child_get_property(child: Widget, property_name: string, value: (GObject.Value | any)): void;
+        child_get_property(child: Widget, property_name: string, value: GObject.Value | any): void;
 
         /**
          * Emits a {@link Gtk.Widget.SignalSignatures.child_notify | Gtk.Widget::child-notify} signal for the
@@ -33882,7 +33858,7 @@ export namespace Gtk {
          * @param property_name the name of the property to set
          * @param value the value to set the property to
          */
-        child_set_property(child: Widget, property_name: string, value: (GObject.Value | any)): void;
+        child_set_property(child: Widget, property_name: string, value: GObject.Value | any): void;
 
         /**
          * Returns the type of the children supported by the container.
@@ -33953,21 +33929,21 @@ export namespace Gtk {
          * `gtk_window_get_focus()`.
          * @returns The child widget which will receive the          focus inside `container` when the `container` is focused,          or `null` if none is set.
          */
-        get_focus_child(): (Widget | null);
+        get_focus_child(): Widget | null;
 
         /**
          * Retrieves the horizontal focus adjustment for the container. See
          * gtk_container_set_focus_hadjustment ().
          * @returns the horizontal focus adjustment, or `null` if   none has been set.
          */
-        get_focus_hadjustment(): (Adjustment | null);
+        get_focus_hadjustment(): Adjustment | null;
 
         /**
          * Retrieves the vertical focus adjustment for the container. See
          * `gtk_container_set_focus_vadjustment()`.
          * @returns the vertical focus adjustment, or   `null` if none has been set.
          */
-        get_focus_vadjustment(): (Adjustment | null);
+        get_focus_vadjustment(): Adjustment | null;
 
         /**
          * Returns a newly created widget path representing all the widget hierarchy
@@ -34058,7 +34034,7 @@ export namespace Gtk {
          * `gtk_widget_grab_focus()` to manually set the focus to a specific widget.
          * @param child a {@link Gtk.Widget}, or `null`
          */
-        set_focus_child(child: (Widget | null)): void;
+        set_focus_child(child: Widget | null): void;
 
         /**
          * Hooks up an adjustment to focus handling in a container, so when a child
@@ -34119,7 +34095,7 @@ export namespace Gtk {
          * @param child child to add
          * @param type kind of child or `null`
          */
-        add_child(builder: Builder, child: GObject.Object, type: (string | null)): void;
+        add_child(builder: Builder, child: GObject.Object, type: string | null): void;
 
         /**
          * Constructs a child of `buildable` with the name `name`.
@@ -34140,7 +34116,7 @@ export namespace Gtk {
          * @param tagname the name of the tag
          * @param data user data created in custom_tag_start
          */
-        custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
+        custom_finished(builder: Builder, child: GObject.Object | null, tagname: string, data: null): void;
 
         /**
          * This is called at the end of each custom element handled by
@@ -34150,7 +34126,7 @@ export namespace Gtk {
          * @param tagname name of tag
          * @param data user data that will be passed in to parser functions
          */
-        custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
+        custom_tag_end(builder: Builder, child: GObject.Object | null, tagname: string, data: null): void;
 
         /**
          * This is called for each unknown element under `<child>`.
@@ -34159,7 +34135,7 @@ export namespace Gtk {
          * @param tagname name of tag
          * @returns `true` if a object has a custom implementation, `false`          if it doesn't.
          */
-        custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, GLib.MarkupParser, null];
+        custom_tag_start(builder: Builder, child: GObject.Object | null, tagname: string): [boolean, GLib.MarkupParser, null];
 
         /**
          * Get the internal child called `childname` of the `buildable` object.
@@ -34195,7 +34171,7 @@ export namespace Gtk {
          * @param name name of property
          * @param value value of property
          */
-        set_buildable_property(builder: Builder, name: string, value: (GObject.Value | any)): void;
+        set_buildable_property(builder: Builder, name: string, value: GObject.Value | any): void;
 
         /**
          * Sets the name of the `buildable` object.
@@ -34211,7 +34187,7 @@ export namespace Gtk {
          * @param type kind of child or `null`
          * @virtual
          */
-        vfunc_add_child(builder: Builder, child: GObject.Object, type: (string | null)): void;
+        vfunc_add_child(builder: Builder, child: GObject.Object, type: string | null): void;
 
         /**
          * Constructs a child of `buildable` with the name `name`.
@@ -34233,7 +34209,7 @@ export namespace Gtk {
          * @param data user data created in custom_tag_start
          * @virtual
          */
-        vfunc_custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
+        vfunc_custom_finished(builder: Builder, child: GObject.Object | null, tagname: string, data: null): void;
 
         /**
          * This is called at the end of each custom element handled by
@@ -34244,7 +34220,7 @@ export namespace Gtk {
          * @param data user data that will be passed in to parser functions
          * @virtual
          */
-        vfunc_custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
+        vfunc_custom_tag_end(builder: Builder, child: GObject.Object | null, tagname: string, data: null): void;
 
         /**
          * This is called for each unknown element under `<child>`.
@@ -34253,7 +34229,7 @@ export namespace Gtk {
          * @param tagname name of tag
          * @virtual
          */
-        vfunc_custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, GLib.MarkupParser, never];
+        vfunc_custom_tag_start(builder: Builder, child: GObject.Object | null, tagname: string): [boolean, GLib.MarkupParser, never];
 
         /**
          * Get the internal child called `childname` of the `buildable` object.
@@ -34326,9 +34302,7 @@ export namespace Gtk {
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends WidgetAccessible.ConstructorProps, Atk.Component.ConstructorProps {
-
-        }
+        interface ConstructorProps extends WidgetAccessible.ConstructorProps, Atk.Component.ConstructorProps {}
     }
 
     /**
@@ -34439,7 +34413,7 @@ export namespace Gtk {
          * @param coord_type specifies whether the coordinates are relative to the screen or to the components top level window
          * @returns a reference to the accessible child, if one exists
          */
-        ref_accessible_at_point(x: number, y: number, coord_type: Atk.CoordType): (Atk.Object | null);
+        ref_accessible_at_point(x: number, y: number, coord_type: Atk.CoordType): Atk.Object | null;
 
         /**
          * Remove the handler specified by `handler_id` from the list of
@@ -34585,7 +34559,7 @@ export namespace Gtk {
          * @param coord_type specifies whether the coordinates are relative to the screen or to the components top level window
          * @virtual
          */
-        vfunc_ref_accessible_at_point(x: number, y: number, coord_type: Atk.CoordType): (Atk.Object | null);
+        vfunc_ref_accessible_at_point(x: number, y: number, coord_type: Atk.CoordType): Atk.Object | null;
 
         /**
          * Remove the handler specified by `handler_id` from the list of
@@ -34674,9 +34648,7 @@ export namespace Gtk {
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends CellAccessible.ConstructorProps, Atk.Action.ConstructorProps, Atk.Component.ConstructorProps, Atk.TableCell.ConstructorProps {
-
-        }
+        interface ConstructorProps extends CellAccessible.ConstructorProps, Atk.Action.ConstructorProps, Atk.Component.ConstructorProps, Atk.TableCell.ConstructorProps {}
     }
 
     /**
@@ -34742,7 +34714,7 @@ export namespace Gtk {
          * @param i the action index corresponding to the action to be performed
          * @returns a description string, or `null` if `action` does not implement this interface.
          */
-        get_description(i: number): (string | null);
+        get_description(i: number): string | null;
 
         /**
          * @param args 
@@ -34776,14 +34748,14 @@ export namespace Gtk {
          * @param i the action index corresponding to the action to be performed
          * @returns the keybinding which can be used to activate this action, or `null` if there is no keybinding for this action.
          */
-        get_keybinding(i: number): (string | null);
+        get_keybinding(i: number): string | null;
 
         /**
          * Returns the localized name of the specified action of the object.
          * @param i the action index corresponding to the action to be performed
          * @returns a name string, or `null` if `action` does not implement this interface.
          */
-        get_localized_name(i: number): (string | null);
+        get_localized_name(i: number): string | null;
 
         /**
          * Gets the number of accessible actions available on the object.
@@ -34811,7 +34783,7 @@ export namespace Gtk {
          * @param i the action index corresponding to the action to be performed
          * @returns a name string, or `null` if `action` does not implement this interface.
          */
-        get_name(i: number): (string | null);
+        get_name(i: number): string | null;
 
         /**
          * @param args 
@@ -34845,7 +34817,7 @@ export namespace Gtk {
          * @param i the action index corresponding to the action to be performed
          * @virtual
          */
-        vfunc_get_description(i: number): (string | null);
+        vfunc_get_description(i: number): string | null;
 
         /**
          * @param args 
@@ -34880,14 +34852,14 @@ export namespace Gtk {
          * @param i the action index corresponding to the action to be performed
          * @virtual
          */
-        vfunc_get_keybinding(i: number): (string | null);
+        vfunc_get_keybinding(i: number): string | null;
 
         /**
          * Returns the localized name of the specified action of the object.
          * @param i the action index corresponding to the action to be performed
          * @virtual
          */
-        vfunc_get_localized_name(i: number): (string | null);
+        vfunc_get_localized_name(i: number): string | null;
 
         /**
          * Gets the number of accessible actions available on the object.
@@ -34915,7 +34887,7 @@ export namespace Gtk {
          * @param i the action index corresponding to the action to be performed
          * @virtual
          */
-        vfunc_get_name(i: number): (string | null);
+        vfunc_get_name(i: number): string | null;
 
         /**
          * @param args 
@@ -35020,7 +34992,7 @@ export namespace Gtk {
          * @param coord_type specifies whether the coordinates are relative to the screen or to the components top level window
          * @returns a reference to the accessible child, if one exists
          */
-        ref_accessible_at_point(x: number, y: number, coord_type: Atk.CoordType): (Atk.Object | null);
+        ref_accessible_at_point(x: number, y: number, coord_type: Atk.CoordType): Atk.Object | null;
 
         /**
          * Remove the handler specified by `handler_id` from the list of
@@ -35173,7 +35145,7 @@ export namespace Gtk {
          * @param coord_type specifies whether the coordinates are relative to the screen or to the components top level window
          * @virtual
          */
-        vfunc_ref_accessible_at_point(x: number, y: number, coord_type: Atk.CoordType): (Atk.Object | null);
+        vfunc_ref_accessible_at_point(x: number, y: number, coord_type: Atk.CoordType): Atk.Object | null;
 
         /**
          * Remove the handler specified by `handler_id` from the list of
@@ -35340,9 +35312,7 @@ export namespace Gtk {
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends GObject.Object.ConstructorProps, StyleProvider.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GObject.Object.ConstructorProps, StyleProvider.ConstructorProps {}
     }
 
     /**
@@ -35415,7 +35385,7 @@ export namespace Gtk {
          * @param name A theme name
          * @param variant variant to load, for example, "dark", or     `null` for the default
          */
-        static get_named(name: string, variant: (string | null)): CssProvider;
+        static get_named(name: string, variant: string | null): CssProvider;
 
         // Virtual methods
         /**
@@ -35432,7 +35402,7 @@ export namespace Gtk {
          * @param data CSS data loaded in memory
          * @returns `true`. The return value is deprecated and `false` will only be     returned for backwards compatibility reasons if an `error` is not     `null` and a loading error occurred. To track errors while loading     CSS, connect to the {@link Gtk.CssProvider.SignalSignatures.parsing_error | Gtk.CssProvider::parsing-error} signal.
          */
-        load_from_data(data: (Uint8Array | string)): boolean;
+        load_from_data(data: Uint8Array | string): boolean;
 
         /**
          * Loads the data contained in `file` into `css_provider`, making it
@@ -35478,7 +35448,7 @@ export namespace Gtk {
          * @param path {@link Gtk.WidgetPath} to query
          * @returns The icon factory to use for `path`, or `null`
          */
-        get_icon_factory(path: WidgetPath): (IconFactory | null);
+        get_icon_factory(path: WidgetPath): IconFactory | null;
 
         /**
          * Returns the style settings affecting a widget defined by `path`, or `null` if
@@ -35486,7 +35456,7 @@ export namespace Gtk {
          * @param path {@link Gtk.WidgetPath} to query
          * @returns a {@link Gtk.StyleProperties} containing the style settings affecting `path`
          */
-        get_style(path: WidgetPath): (StyleProperties | null);
+        get_style(path: WidgetPath): StyleProperties | null;
 
         /**
          * Looks up a widget style property as defined by `provider` for
@@ -35504,7 +35474,7 @@ export namespace Gtk {
          * @param path {@link Gtk.WidgetPath} to query
          * @virtual
          */
-        vfunc_get_icon_factory(path: WidgetPath): (IconFactory | null);
+        vfunc_get_icon_factory(path: WidgetPath): IconFactory | null;
 
         /**
          * Returns the style settings affecting a widget defined by `path`, or `null` if
@@ -35512,7 +35482,7 @@ export namespace Gtk {
          * @param path {@link Gtk.WidgetPath} to query
          * @virtual
          */
-        vfunc_get_style(path: WidgetPath): (StyleProperties | null);
+        vfunc_get_style(path: WidgetPath): StyleProperties | null;
 
         /**
          * Looks up a widget style property as defined by `provider` for
@@ -35898,7 +35868,7 @@ export namespace Gtk {
          * @param response_id the response ID used by the `dialog` widget
          * @returns the `widget` button that uses the given     `response_id`, or `null`.
          */
-        get_widget_for_response(response_id: number): (Widget | null);
+        get_widget_for_response(response_id: number): Widget | null;
 
         /**
          * Emits the {@link Gtk.Dialog.SignalSignatures.response | Gtk.Dialog::response} signal with the given response ID.
@@ -36038,9 +36008,7 @@ export namespace Gtk {
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends Widget.ConstructorProps, Atk.ImplementorIface.ConstructorProps, Buildable.ConstructorProps {
-
-        }
+        interface ConstructorProps extends Widget.ConstructorProps, Atk.ImplementorIface.ConstructorProps, Buildable.ConstructorProps {}
     }
 
     /**
@@ -36173,7 +36141,7 @@ export namespace Gtk {
          * @param child child to add
          * @param type kind of child or `null`
          */
-        add_child(builder: Builder, child: GObject.Object, type: (string | null)): void;
+        add_child(builder: Builder, child: GObject.Object, type: string | null): void;
 
         /**
          * Constructs a child of `buildable` with the name `name`.
@@ -36194,7 +36162,7 @@ export namespace Gtk {
          * @param tagname the name of the tag
          * @param data user data created in custom_tag_start
          */
-        custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
+        custom_finished(builder: Builder, child: GObject.Object | null, tagname: string, data: null): void;
 
         /**
          * This is called at the end of each custom element handled by
@@ -36204,7 +36172,7 @@ export namespace Gtk {
          * @param tagname name of tag
          * @param data user data that will be passed in to parser functions
          */
-        custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
+        custom_tag_end(builder: Builder, child: GObject.Object | null, tagname: string, data: null): void;
 
         /**
          * This is called for each unknown element under `<child>`.
@@ -36213,7 +36181,7 @@ export namespace Gtk {
          * @param tagname name of tag
          * @returns `true` if a object has a custom implementation, `false`          if it doesn't.
          */
-        custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, GLib.MarkupParser, null];
+        custom_tag_start(builder: Builder, child: GObject.Object | null, tagname: string): [boolean, GLib.MarkupParser, null];
 
         /**
          * Get the internal child called `childname` of the `buildable` object.
@@ -36249,7 +36217,7 @@ export namespace Gtk {
          * @param name name of property
          * @param value value of property
          */
-        set_buildable_property(builder: Builder, name: string, value: (GObject.Value | any)): void;
+        set_buildable_property(builder: Builder, name: string, value: GObject.Value | any): void;
 
         /**
          * Sets the name of the `buildable` object.
@@ -36265,7 +36233,7 @@ export namespace Gtk {
          * @param type kind of child or `null`
          * @virtual
          */
-        vfunc_add_child(builder: Builder, child: GObject.Object, type: (string | null)): void;
+        vfunc_add_child(builder: Builder, child: GObject.Object, type: string | null): void;
 
         /**
          * Constructs a child of `buildable` with the name `name`.
@@ -36287,7 +36255,7 @@ export namespace Gtk {
          * @param data user data created in custom_tag_start
          * @virtual
          */
-        vfunc_custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
+        vfunc_custom_finished(builder: Builder, child: GObject.Object | null, tagname: string, data: null): void;
 
         /**
          * This is called at the end of each custom element handled by
@@ -36298,7 +36266,7 @@ export namespace Gtk {
          * @param data user data that will be passed in to parser functions
          * @virtual
          */
-        vfunc_custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
+        vfunc_custom_tag_end(builder: Builder, child: GObject.Object | null, tagname: string, data: null): void;
 
         /**
          * This is called for each unknown element under `<child>`.
@@ -36307,7 +36275,7 @@ export namespace Gtk {
          * @param tagname name of tag
          * @virtual
          */
-        vfunc_custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, GLib.MarkupParser, never];
+        vfunc_custom_tag_start(builder: Builder, child: GObject.Object | null, tagname: string): [boolean, GLib.MarkupParser, never];
 
         /**
          * Get the internal child called `childname` of the `buildable` object.
@@ -36644,7 +36612,7 @@ export namespace Gtk {
         interface ConstructorProps extends Widget.ConstructorProps, Atk.ImplementorIface.ConstructorProps, Buildable.ConstructorProps, CellEditable.ConstructorProps, Editable.ConstructorProps {
             activates_default: boolean;
             activatesDefault: boolean;
-            attributes: (Pango.AttrList | null);
+            attributes: Pango.AttrList | null;
             buffer: EntryBuffer;
             caps_lock_warning: boolean;
             capsLockWarning: boolean;
@@ -36658,8 +36626,8 @@ export namespace Gtk {
             hasFrame: boolean;
             im_module: string;
             imModule: string;
-            inner_border: (Border | null);
-            innerBorder: (Border | null);
+            inner_border: Border | null;
+            innerBorder: Border | null;
             input_hints: InputHints;
             inputHints: InputHints;
             input_purpose: InputPurpose;
@@ -36726,7 +36694,7 @@ export namespace Gtk {
             shadowType: ShadowType;
             show_emoji_icon: boolean;
             showEmojiIcon: boolean;
-            tabs: (Pango.TabArray | null);
+            tabs: Pango.TabArray | null;
             text: string;
             text_length: number;
             textLength: number;
@@ -36841,8 +36809,8 @@ export namespace Gtk {
          * {@link Gtk.EntryBuffer} text, i.e. without the preedit string.
          * @since 3.6
          */
-        get attributes(): (Pango.AttrList | null);
-        set attributes(val: (Pango.AttrList | null));
+        get attributes(): Pango.AttrList | null;
+        set attributes(val: Pango.AttrList | null);
 
         get buffer(): EntryBuffer;
         set buffer(val: EntryBuffer);
@@ -36951,16 +36919,16 @@ export namespace Gtk {
          * @since 2.10
          * @deprecated since 3.4: Use the standard border and padding CSS properties   (through objects like {@link Gtk.StyleContext} and {@link Gtk.CssProvider}); the value   of this style property is ignored.
          */
-        get inner_border(): (Border | null);
-        set inner_border(val: (Border | null));
+        get inner_border(): Border | null;
+        set inner_border(val: Border | null);
 
         /**
          * Sets the text area's border between the text and the frame.
          * @since 2.10
          * @deprecated since 3.4: Use the standard border and padding CSS properties   (through objects like {@link Gtk.StyleContext} and {@link Gtk.CssProvider}); the value   of this style property is ignored.
          */
-        get innerBorder(): (Border | null);
-        set innerBorder(val: (Border | null));
+        get innerBorder(): Border | null;
+        set innerBorder(val: Border | null);
 
         /**
          * Additional hints (beyond {@link Gtk.Entry.input_purpose}) that
@@ -37586,8 +37554,8 @@ export namespace Gtk {
         get showEmojiIcon(): boolean;
         set showEmojiIcon(val: boolean);
 
-        get tabs(): (Pango.TabArray | null);
-        set tabs(val: (Pango.TabArray | null));
+        get tabs(): Pango.TabArray | null;
+        set tabs(val: Pango.TabArray | null);
 
         get text(): string;
         set text(val: string);
@@ -37818,7 +37786,7 @@ export namespace Gtk {
          * `gtk_entry_set_attributes()`, if any.
          * @returns the attribute list, or `null`     if none was set.
          */
-        get_attributes(): (Pango.AttrList | null);
+        get_attributes(): Pango.AttrList | null;
 
         /**
          * Get the {@link Gtk.EntryBuffer} object which holds the text for
@@ -37848,7 +37816,7 @@ export namespace Gtk {
          * See `gtk_entry_set_cursor_hadjustment()`.
          * @returns the horizontal cursor adjustment, or `null`   if none has been set.
          */
-        get_cursor_hadjustment(): (Adjustment | null);
+        get_cursor_hadjustment(): Adjustment | null;
 
         /**
          * Gets the value set by `gtk_entry_set_has_frame()`.
@@ -37896,7 +37864,7 @@ export namespace Gtk {
          * @param icon_pos Icon position
          * @returns A {@link Gio.Icon}, or `null` if no icon is set     or if the icon is not a {@link Gio.Icon}
          */
-        get_icon_gicon(icon_pos: EntryIconPosition): (Gio.Icon | null);
+        get_icon_gicon(icon_pos: EntryIconPosition): Gio.Icon | null;
 
         /**
          * Retrieves the icon name used for the icon, or `null` if there is
@@ -37905,7 +37873,7 @@ export namespace Gtk {
          * @param icon_pos Icon position
          * @returns An icon name, or `null` if no icon is set or if the icon          wasn’t set from an icon name
          */
-        get_icon_name(icon_pos: EntryIconPosition): (string | null);
+        get_icon_name(icon_pos: EntryIconPosition): string | null;
 
         /**
          * Retrieves the image used for the icon.
@@ -37916,7 +37884,7 @@ export namespace Gtk {
          * @param icon_pos Icon position
          * @returns A {@link GdkPixbuf.Pixbuf}, or `null` if no icon is     set for this position.
          */
-        get_icon_pixbuf(icon_pos: EntryIconPosition): (GdkPixbuf.Pixbuf | null);
+        get_icon_pixbuf(icon_pos: EntryIconPosition): GdkPixbuf.Pixbuf | null;
 
         /**
          * Returns whether the icon appears sensitive or insensitive.
@@ -37949,7 +37917,7 @@ export namespace Gtk {
          * @param icon_pos the icon position
          * @returns the tooltip text, or `null`. Free the returned     string with `g_free()` when done.
          */
-        get_icon_tooltip_markup(icon_pos: EntryIconPosition): (string | null);
+        get_icon_tooltip_markup(icon_pos: EntryIconPosition): string | null;
 
         /**
          * Gets the contents of the tooltip on the icon at the specified
@@ -37957,14 +37925,14 @@ export namespace Gtk {
          * @param icon_pos the icon position
          * @returns the tooltip text, or `null`. Free the returned     string with `g_free()` when done.
          */
-        get_icon_tooltip_text(icon_pos: EntryIconPosition): (string | null);
+        get_icon_tooltip_text(icon_pos: EntryIconPosition): string | null;
 
         /**
          * This function returns the entry’s {@link Gtk.Entry.inner_border} property. See
          * `gtk_entry_set_inner_border()` for more information.
          * @returns the entry’s {@link Gtk.Border}, or   `null` if none was set.
          */
-        get_inner_border(): (Border | null);
+        get_inner_border(): Border | null;
 
         /**
          * Gets the value of the {@link Gtk.Entry.input_hints} property.
@@ -38068,7 +38036,7 @@ export namespace Gtk {
          * any.
          * @returns the tabstops, or `null` if none was set.
          */
-        get_tabs(): (Pango.TabArray | null);
+        get_tabs(): Pango.TabArray | null;
 
         /**
          * Retrieves the contents of the entry widget.
@@ -38209,7 +38177,7 @@ export namespace Gtk {
          * `completion` is set to `null`.
          * @param completion The {@link Gtk.EntryCompletion} or `null`
          */
-        set_completion(completion: (EntryCompletion | null)): void;
+        set_completion(completion: EntryCompletion | null): void;
 
         /**
          * Hooks up an adjustment to the cursor position in an entry, so that when
@@ -38221,7 +38189,7 @@ export namespace Gtk {
          * as the entry.
          * @param adjustment an adjustment which should be adjusted when the cursor              is moved, or `null`
          */
-        set_cursor_hadjustment(adjustment: (Adjustment | null)): void;
+        set_cursor_hadjustment(adjustment: Adjustment | null): void;
 
         /**
          * Sets whether the entry has a beveled frame around it.
@@ -38266,7 +38234,7 @@ export namespace Gtk {
          * @param icon_pos The position at which to set the icon
          * @param icon The icon to set, or `null`
          */
-        set_icon_from_gicon(icon_pos: EntryIconPosition, icon: (Gio.Icon | null)): void;
+        set_icon_from_gicon(icon_pos: EntryIconPosition, icon: Gio.Icon | null): void;
 
         /**
          * Sets the icon shown in the entry at the specified position
@@ -38279,7 +38247,7 @@ export namespace Gtk {
          * @param icon_pos The position at which to set the icon
          * @param icon_name An icon name, or `null`
          */
-        set_icon_from_icon_name(icon_pos: EntryIconPosition, icon_name: (string | null)): void;
+        set_icon_from_icon_name(icon_pos: EntryIconPosition, icon_name: string | null): void;
 
         /**
          * Sets the icon shown in the specified position using a pixbuf.
@@ -38288,7 +38256,7 @@ export namespace Gtk {
          * @param icon_pos Icon position
          * @param pixbuf A {@link GdkPixbuf.Pixbuf}, or `null`
          */
-        set_icon_from_pixbuf(icon_pos: EntryIconPosition, pixbuf: (GdkPixbuf.Pixbuf | null)): void;
+        set_icon_from_pixbuf(icon_pos: EntryIconPosition, pixbuf: GdkPixbuf.Pixbuf | null): void;
 
         /**
          * Sets the icon shown in the entry at the specified position from
@@ -38298,7 +38266,7 @@ export namespace Gtk {
          * @param icon_pos Icon position
          * @param stock_id The name of the stock item, or `null`
          */
-        set_icon_from_stock(icon_pos: EntryIconPosition, stock_id: (string | null)): void;
+        set_icon_from_stock(icon_pos: EntryIconPosition, stock_id: string | null): void;
 
         /**
          * Sets the sensitivity for the specified icon.
@@ -38319,7 +38287,7 @@ export namespace Gtk {
          * @param icon_pos the icon position
          * @param tooltip the contents of the tooltip for the icon, or `null`
          */
-        set_icon_tooltip_markup(icon_pos: EntryIconPosition, tooltip: (string | null)): void;
+        set_icon_tooltip_markup(icon_pos: EntryIconPosition, tooltip: string | null): void;
 
         /**
          * Sets `tooltip` as the contents of the tooltip for the icon
@@ -38338,7 +38306,7 @@ export namespace Gtk {
          * @param icon_pos the icon position
          * @param tooltip the contents of the tooltip for the icon, or `null`
          */
-        set_icon_tooltip_text(icon_pos: EntryIconPosition, tooltip: (string | null)): void;
+        set_icon_tooltip_text(icon_pos: EntryIconPosition, tooltip: string | null): void;
 
         /**
          * Sets %entry’s inner-border property to `border`, or clears it if `null`
@@ -38351,7 +38319,7 @@ export namespace Gtk {
          * pixel-exact positioning of the entry is important.
          * @param border a {@link Gtk.Border}, or `null`
          */
-        set_inner_border(border: (Border | null)): void;
+        set_inner_border(border: Border | null): void;
 
         /**
          * Sets the {@link Gtk.Entry.input_hints} property, which
@@ -38417,7 +38385,7 @@ export namespace Gtk {
          * first key event arrives.
          * @param text a string to be displayed when `entry` is empty and unfocused, or `null`
          */
-        set_placeholder_text(text: (string | null)): void;
+        set_placeholder_text(text: string | null): void;
 
         /**
          * Causes the entry’s progress indicator to “fill in” the given
@@ -38520,7 +38488,7 @@ export namespace Gtk {
          * @param child child to add
          * @param type kind of child or `null`
          */
-        add_child(builder: Builder, child: GObject.Object, type: (string | null)): void;
+        add_child(builder: Builder, child: GObject.Object, type: string | null): void;
 
         /**
          * Constructs a child of `buildable` with the name `name`.
@@ -38541,7 +38509,7 @@ export namespace Gtk {
          * @param tagname the name of the tag
          * @param data user data created in custom_tag_start
          */
-        custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
+        custom_finished(builder: Builder, child: GObject.Object | null, tagname: string, data: null): void;
 
         /**
          * This is called at the end of each custom element handled by
@@ -38551,7 +38519,7 @@ export namespace Gtk {
          * @param tagname name of tag
          * @param data user data that will be passed in to parser functions
          */
-        custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
+        custom_tag_end(builder: Builder, child: GObject.Object | null, tagname: string, data: null): void;
 
         /**
          * This is called for each unknown element under `<child>`.
@@ -38560,7 +38528,7 @@ export namespace Gtk {
          * @param tagname name of tag
          * @returns `true` if a object has a custom implementation, `false`          if it doesn't.
          */
-        custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, GLib.MarkupParser, null];
+        custom_tag_start(builder: Builder, child: GObject.Object | null, tagname: string): [boolean, GLib.MarkupParser, null];
 
         /**
          * Get the internal child called `childname` of the `buildable` object.
@@ -38596,7 +38564,7 @@ export namespace Gtk {
          * @param name name of property
          * @param value value of property
          */
-        set_buildable_property(builder: Builder, name: string, value: (GObject.Value | any)): void;
+        set_buildable_property(builder: Builder, name: string, value: GObject.Value | any): void;
 
         /**
          * Sets the name of the `buildable` object.
@@ -38612,7 +38580,7 @@ export namespace Gtk {
          * @param type kind of child or `null`
          * @virtual
          */
-        vfunc_add_child(builder: Builder, child: GObject.Object, type: (string | null)): void;
+        vfunc_add_child(builder: Builder, child: GObject.Object, type: string | null): void;
 
         /**
          * Constructs a child of `buildable` with the name `name`.
@@ -38634,7 +38602,7 @@ export namespace Gtk {
          * @param data user data created in custom_tag_start
          * @virtual
          */
-        vfunc_custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
+        vfunc_custom_finished(builder: Builder, child: GObject.Object | null, tagname: string, data: null): void;
 
         /**
          * This is called at the end of each custom element handled by
@@ -38645,7 +38613,7 @@ export namespace Gtk {
          * @param data user data that will be passed in to parser functions
          * @virtual
          */
-        vfunc_custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
+        vfunc_custom_tag_end(builder: Builder, child: GObject.Object | null, tagname: string, data: null): void;
 
         /**
          * This is called for each unknown element under `<child>`.
@@ -38654,7 +38622,7 @@ export namespace Gtk {
          * @param tagname name of tag
          * @virtual
          */
-        vfunc_custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, GLib.MarkupParser, never];
+        vfunc_custom_tag_start(builder: Builder, child: GObject.Object | null, tagname: string): [boolean, GLib.MarkupParser, never];
 
         /**
          * Get the internal child called `childname` of the `buildable` object.
@@ -38724,7 +38692,7 @@ export namespace Gtk {
          * lifetime is temporary and does not persist across other edits and/or cells.
          * @param event The {@link Gdk.Event} that began the editing process, or   `null` if editing was initiated programmatically
          */
-        start_editing(event: (Gdk.Event | null)): void;
+        start_editing(event: Gdk.Event | null): void;
 
         /**
          * Emits the {@link Gtk.CellEditable.SignalSignatures.editing_done | Gtk.CellEditable::editing-done} signal.
@@ -38752,7 +38720,7 @@ export namespace Gtk {
          * @param event The {@link Gdk.Event} that began the editing process, or   `null` if editing was initiated programmatically
          * @virtual
          */
-        vfunc_start_editing(event: (Gdk.Event | null)): void;
+        vfunc_start_editing(event: Gdk.Event | null): void;
 
         /**
          * Copies the contents of the currently selected content in the editable and
@@ -39015,9 +38983,7 @@ export namespace Gtk {
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends WidgetAccessible.ConstructorProps, Atk.Action.ConstructorProps, Atk.Component.ConstructorProps, Atk.EditableText.ConstructorProps, Atk.Text.ConstructorProps {
-
-        }
+        interface ConstructorProps extends WidgetAccessible.ConstructorProps, Atk.Action.ConstructorProps, Atk.Component.ConstructorProps, Atk.EditableText.ConstructorProps, Atk.Text.ConstructorProps {}
     }
 
     /**
@@ -39065,7 +39031,7 @@ export namespace Gtk {
          * @param i the action index corresponding to the action to be performed
          * @returns a description string, or `null` if `action` does not implement this interface.
          */
-        get_description(i: number): (string | null);
+        get_description(i: number): string | null;
 
         /**
          * @param args 
@@ -39099,14 +39065,14 @@ export namespace Gtk {
          * @param i the action index corresponding to the action to be performed
          * @returns the keybinding which can be used to activate this action, or `null` if there is no keybinding for this action.
          */
-        get_keybinding(i: number): (string | null);
+        get_keybinding(i: number): string | null;
 
         /**
          * Returns the localized name of the specified action of the object.
          * @param i the action index corresponding to the action to be performed
          * @returns a name string, or `null` if `action` does not implement this interface.
          */
-        get_localized_name(i: number): (string | null);
+        get_localized_name(i: number): string | null;
 
         /**
          * Gets the number of accessible actions available on the object.
@@ -39134,7 +39100,7 @@ export namespace Gtk {
          * @param i the action index corresponding to the action to be performed
          * @returns a name string, or `null` if `action` does not implement this interface.
          */
-        get_name(i: number): (string | null);
+        get_name(i: number): string | null;
 
         /**
          * @param args 
@@ -39168,7 +39134,7 @@ export namespace Gtk {
          * @param i the action index corresponding to the action to be performed
          * @virtual
          */
-        vfunc_get_description(i: number): (string | null);
+        vfunc_get_description(i: number): string | null;
 
         /**
          * @param args 
@@ -39203,14 +39169,14 @@ export namespace Gtk {
          * @param i the action index corresponding to the action to be performed
          * @virtual
          */
-        vfunc_get_keybinding(i: number): (string | null);
+        vfunc_get_keybinding(i: number): string | null;
 
         /**
          * Returns the localized name of the specified action of the object.
          * @param i the action index corresponding to the action to be performed
          * @virtual
          */
-        vfunc_get_localized_name(i: number): (string | null);
+        vfunc_get_localized_name(i: number): string | null;
 
         /**
          * Gets the number of accessible actions available on the object.
@@ -39238,7 +39204,7 @@ export namespace Gtk {
          * @param i the action index corresponding to the action to be performed
          * @virtual
          */
-        vfunc_get_name(i: number): (string | null);
+        vfunc_get_name(i: number): string | null;
 
         /**
          * @param args 
@@ -39337,7 +39303,7 @@ export namespace Gtk {
          * @param coord_type specifies whether the coordinates are relative to the screen or to the components top level window
          * @returns a reference to the accessible child, if one exists
          */
-        ref_accessible_at_point(x: number, y: number, coord_type: Atk.CoordType): (Atk.Object | null);
+        ref_accessible_at_point(x: number, y: number, coord_type: Atk.CoordType): Atk.Object | null;
 
         /**
          * Remove the handler specified by `handler_id` from the list of
@@ -39483,7 +39449,7 @@ export namespace Gtk {
          * @param coord_type specifies whether the coordinates are relative to the screen or to the components top level window
          * @virtual
          */
-        vfunc_ref_accessible_at_point(x: number, y: number, coord_type: Atk.CoordType): (Atk.Object | null);
+        vfunc_ref_accessible_at_point(x: number, y: number, coord_type: Atk.CoordType): Atk.Object | null;
 
         /**
          * Remove the handler specified by `handler_id` from the list of
@@ -39802,7 +39768,7 @@ export namespace Gtk {
          * @param granularity An {@link Atk.TextGranularity}
          * @returns a newly allocated string containing the text at          the `offset` bounded by the specified `granularity`. Use `g_free()`          to free the returned string.  Returns `null` if the offset is invalid          or no implementation is available.
          */
-        get_string_at_offset(offset: number, granularity: Atk.TextGranularity): [(string | null), number, number];
+        get_string_at_offset(offset: number, granularity: Atk.TextGranularity): [string | null, number, number];
 
         /**
          * Gets the specified text.
@@ -40061,7 +40027,7 @@ export namespace Gtk {
          * @param granularity An {@link Atk.TextGranularity}
          * @virtual
          */
-        vfunc_get_string_at_offset(offset: number, granularity: Atk.TextGranularity): [(string | null), number, number];
+        vfunc_get_string_at_offset(offset: number, granularity: Atk.TextGranularity): [string | null, number, number];
 
         /**
          * Gets the specified text.
@@ -40301,7 +40267,7 @@ export namespace Gtk {
 
         _init(...args: any[]): void;
 
-        static ["new"](initial_chars: (string | null), n_initial_chars: number): EntryBuffer;
+        static ["new"](initial_chars: string | null, n_initial_chars: number): EntryBuffer;
 
         // Signals
         /** @signal */
@@ -40497,7 +40463,7 @@ export namespace Gtk {
              * @since 2.12
              * @run-last
              */
-            "cursor-on-match": (arg0: TreeModel, arg1: TreeIter) => (boolean | void);
+            "cursor-on-match": (arg0: TreeModel, arg1: TreeIter) => boolean | void;
             /**
              * Gets emitted when the inline autocompletion is triggered.
              * The default behaviour is to make the entry display the
@@ -40511,7 +40477,7 @@ export namespace Gtk {
              * @since 2.6
              * @run-last
              */
-            "insert-prefix": (arg0: string) => (boolean | void);
+            "insert-prefix": (arg0: string) => boolean | void;
             /**
              * Gets emitted when a match from the list is selected.
              * The default behaviour is to replace the contents of the
@@ -40524,7 +40490,7 @@ export namespace Gtk {
              * @since 2.4
              * @run-last
              */
-            "match-selected": (arg0: TreeModel, arg1: TreeIter) => (boolean | void);
+            "match-selected": (arg0: TreeModel, arg1: TreeIter) => boolean | void;
             /**
              * Gets emitted when the filter model has zero
              * number of rows in completion_complete method.
@@ -40556,7 +40522,7 @@ export namespace Gtk {
             inlineSelection: boolean;
             minimum_key_length: number;
             minimumKeyLength: number;
-            model: (TreeModel | null);
+            model: TreeModel | null;
             popup_completion: boolean;
             popupCompletion: boolean;
             popup_set_width: boolean;
@@ -40689,8 +40655,8 @@ export namespace Gtk {
         get minimumKeyLength(): number;
         set minimumKeyLength(val: number);
 
-        get model(): (TreeModel | null);
-        set model(val: (TreeModel | null));
+        get model(): TreeModel | null;
+        set model(val: TreeModel | null);
 
         /**
          * Determines whether the possible completions should be
@@ -40847,7 +40813,7 @@ export namespace Gtk {
          * @param key The text to complete for
          * @returns The common prefix all rows starting with   `key` or `null` if no row matches `key`.
          */
-        compute_prefix(key: string): (string | null);
+        compute_prefix(key: string): string | null;
 
         /**
          * Deletes the action at `index_` from `completion`’s action list.
@@ -40895,7 +40861,7 @@ export namespace Gtk {
          * Returns `null` if the model is unset.
          * @returns A {@link Gtk.TreeModel}, or `null` if none     is currently being used
          */
-        get_model(): (TreeModel | null);
+        get_model(): TreeModel | null;
 
         /**
          * Returns whether the completions should be presented in a popup window.
@@ -40985,7 +40951,7 @@ export namespace Gtk {
          * If model is `null`, then it will unset the model.
          * @param model the {@link Gtk.TreeModel}
          */
-        set_model(model: (TreeModel | null)): void;
+        set_model(model: TreeModel | null): void;
 
         /**
          * Sets whether the completions should be presented in a popup window.
@@ -41029,7 +40995,7 @@ export namespace Gtk {
          * @param child child to add
          * @param type kind of child or `null`
          */
-        add_child(builder: Builder, child: GObject.Object, type: (string | null)): void;
+        add_child(builder: Builder, child: GObject.Object, type: string | null): void;
 
         /**
          * Constructs a child of `buildable` with the name `name`.
@@ -41050,7 +41016,7 @@ export namespace Gtk {
          * @param tagname the name of the tag
          * @param data user data created in custom_tag_start
          */
-        custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
+        custom_finished(builder: Builder, child: GObject.Object | null, tagname: string, data: null): void;
 
         /**
          * This is called at the end of each custom element handled by
@@ -41060,7 +41026,7 @@ export namespace Gtk {
          * @param tagname name of tag
          * @param data user data that will be passed in to parser functions
          */
-        custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
+        custom_tag_end(builder: Builder, child: GObject.Object | null, tagname: string, data: null): void;
 
         /**
          * This is called for each unknown element under `<child>`.
@@ -41069,7 +41035,7 @@ export namespace Gtk {
          * @param tagname name of tag
          * @returns `true` if a object has a custom implementation, `false`          if it doesn't.
          */
-        custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, GLib.MarkupParser, null];
+        custom_tag_start(builder: Builder, child: GObject.Object | null, tagname: string): [boolean, GLib.MarkupParser, null];
 
         /**
          * Get the internal child called `childname` of the `buildable` object.
@@ -41105,7 +41071,7 @@ export namespace Gtk {
          * @param name name of property
          * @param value value of property
          */
-        set_buildable_property(builder: Builder, name: string, value: (GObject.Value | any)): void;
+        set_buildable_property(builder: Builder, name: string, value: GObject.Value | any): void;
 
         /**
          * Sets the name of the `buildable` object.
@@ -41121,7 +41087,7 @@ export namespace Gtk {
          * @param type kind of child or `null`
          * @virtual
          */
-        vfunc_add_child(builder: Builder, child: GObject.Object, type: (string | null)): void;
+        vfunc_add_child(builder: Builder, child: GObject.Object, type: string | null): void;
 
         /**
          * Constructs a child of `buildable` with the name `name`.
@@ -41143,7 +41109,7 @@ export namespace Gtk {
          * @param data user data created in custom_tag_start
          * @virtual
          */
-        vfunc_custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
+        vfunc_custom_finished(builder: Builder, child: GObject.Object | null, tagname: string, data: null): void;
 
         /**
          * This is called at the end of each custom element handled by
@@ -41154,7 +41120,7 @@ export namespace Gtk {
          * @param data user data that will be passed in to parser functions
          * @virtual
          */
-        vfunc_custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
+        vfunc_custom_tag_end(builder: Builder, child: GObject.Object | null, tagname: string, data: null): void;
 
         /**
          * This is called for each unknown element under `<child>`.
@@ -41163,7 +41129,7 @@ export namespace Gtk {
          * @param tagname name of tag
          * @virtual
          */
-        vfunc_custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, GLib.MarkupParser, never];
+        vfunc_custom_tag_start(builder: Builder, child: GObject.Object | null, tagname: string): [boolean, GLib.MarkupParser, never];
 
         /**
          * Get the internal child called `childname` of the `buildable` object.
@@ -41242,7 +41208,7 @@ export namespace Gtk {
          * is used by `cell_layout`.
          * @returns the cell area used by `cell_layout`, or `null` in case no cell area is used.
          */
-        get_area(): (CellArea | null);
+        get_area(): CellArea | null;
 
         /**
          * Returns the cell renderers which have been added to `cell_layout`.
@@ -41293,7 +41259,7 @@ export namespace Gtk {
          * @param cell a {@link Gtk.CellRenderer}
          * @param func the {@link Gtk.CellLayoutDataFunc} to use, or `null`
          */
-        set_cell_data_func(cell: CellRenderer, func: (CellLayoutDataFunc | null)): void;
+        set_cell_data_func(cell: CellRenderer, func: CellLayoutDataFunc | null): void;
 
         /**
          * Adds an attribute mapping to the list in `cell_layout`.
@@ -41330,7 +41296,7 @@ export namespace Gtk {
          * is used by `cell_layout`.
          * @virtual
          */
-        vfunc_get_area(): (CellArea | null);
+        vfunc_get_area(): CellArea | null;
 
         /**
          * Returns the cell renderers which have been added to `cell_layout`.
@@ -41385,7 +41351,7 @@ export namespace Gtk {
          * @param func the {@link Gtk.CellLayoutDataFunc} to use, or `null`
          * @virtual
          */
-        vfunc_set_cell_data_func(cell: CellRenderer, func: (CellLayoutDataFunc | null)): void;
+        vfunc_set_cell_data_func(cell: CellRenderer, func: CellLayoutDataFunc | null): void;
     }
 
 
@@ -41412,9 +41378,7 @@ export namespace Gtk {
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends Atk.Object.ConstructorProps, Atk.Action.ConstructorProps, Atk.Component.ConstructorProps {
-
-        }
+        interface ConstructorProps extends Atk.Object.ConstructorProps, Atk.Action.ConstructorProps, Atk.Component.ConstructorProps {}
     }
 
     /**
@@ -41462,7 +41426,7 @@ export namespace Gtk {
          * @param i the action index corresponding to the action to be performed
          * @returns a description string, or `null` if `action` does not implement this interface.
          */
-        get_description(i: number): (string | null);
+        get_description(i: number): string | null;
 
         /**
          * @param args 
@@ -41496,14 +41460,14 @@ export namespace Gtk {
          * @param i the action index corresponding to the action to be performed
          * @returns the keybinding which can be used to activate this action, or `null` if there is no keybinding for this action.
          */
-        get_keybinding(i: number): (string | null);
+        get_keybinding(i: number): string | null;
 
         /**
          * Returns the localized name of the specified action of the object.
          * @param i the action index corresponding to the action to be performed
          * @returns a name string, or `null` if `action` does not implement this interface.
          */
-        get_localized_name(i: number): (string | null);
+        get_localized_name(i: number): string | null;
 
         /**
          * Gets the number of accessible actions available on the object.
@@ -41531,7 +41495,7 @@ export namespace Gtk {
          * @param i the action index corresponding to the action to be performed
          * @returns a name string, or `null` if `action` does not implement this interface.
          */
-        get_name(i: number): (string | null);
+        get_name(i: number): string | null;
 
         /**
          * @param args 
@@ -41565,7 +41529,7 @@ export namespace Gtk {
          * @param i the action index corresponding to the action to be performed
          * @virtual
          */
-        vfunc_get_description(i: number): (string | null);
+        vfunc_get_description(i: number): string | null;
 
         /**
          * @param args 
@@ -41600,14 +41564,14 @@ export namespace Gtk {
          * @param i the action index corresponding to the action to be performed
          * @virtual
          */
-        vfunc_get_keybinding(i: number): (string | null);
+        vfunc_get_keybinding(i: number): string | null;
 
         /**
          * Returns the localized name of the specified action of the object.
          * @param i the action index corresponding to the action to be performed
          * @virtual
          */
-        vfunc_get_localized_name(i: number): (string | null);
+        vfunc_get_localized_name(i: number): string | null;
 
         /**
          * Gets the number of accessible actions available on the object.
@@ -41635,7 +41599,7 @@ export namespace Gtk {
          * @param i the action index corresponding to the action to be performed
          * @virtual
          */
-        vfunc_get_name(i: number): (string | null);
+        vfunc_get_name(i: number): string | null;
 
         /**
          * @param args 
@@ -41734,7 +41698,7 @@ export namespace Gtk {
          * @param coord_type specifies whether the coordinates are relative to the screen or to the components top level window
          * @returns a reference to the accessible child, if one exists
          */
-        ref_accessible_at_point(x: number, y: number, coord_type: Atk.CoordType): (Atk.Object | null);
+        ref_accessible_at_point(x: number, y: number, coord_type: Atk.CoordType): Atk.Object | null;
 
         /**
          * Remove the handler specified by `handler_id` from the list of
@@ -41880,7 +41844,7 @@ export namespace Gtk {
          * @param coord_type specifies whether the coordinates are relative to the screen or to the components top level window
          * @virtual
          */
-        vfunc_ref_accessible_at_point(x: number, y: number, coord_type: Atk.CoordType): (Atk.Object | null);
+        vfunc_ref_accessible_at_point(x: number, y: number, coord_type: Atk.CoordType): Atk.Object | null;
 
         /**
          * Remove the handler specified by `handler_id` from the list of
@@ -42276,7 +42240,7 @@ export namespace Gtk {
              * @since 3.24
              * @run-last
              */
-            "key-pressed": (arg0: number, arg1: number, arg2: Gdk.ModifierType) => (boolean | void);
+            "key-pressed": (arg0: number, arg1: number, arg2: Gdk.ModifierType) => boolean | void;
             /**
              * This signal is emitted whenever a key is released.
              * @signal
@@ -42288,15 +42252,13 @@ export namespace Gtk {
              * @signal
              * @run-last
              */
-            modifiers: (arg0: Gdk.ModifierType) => (boolean | void);
+            modifiers: (arg0: Gdk.ModifierType) => boolean | void;
             "notify::propagation-phase": (pspec: GObject.ParamSpec) => void;
             "notify::widget": (pspec: GObject.ParamSpec) => void;
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends EventController.ConstructorProps {
-
-        }
+        interface ConstructorProps extends EventController.ConstructorProps {}
     }
 
     /**
@@ -42385,9 +42347,7 @@ export namespace Gtk {
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends EventController.ConstructorProps {
-
-        }
+        interface ConstructorProps extends EventController.ConstructorProps {}
     }
 
     /**
@@ -42632,11 +42592,11 @@ export namespace Gtk {
         // Constructor properties interface
         interface ConstructorProps extends Bin.ConstructorProps, Atk.ImplementorIface.ConstructorProps, Buildable.ConstructorProps {
             expanded: boolean;
-            label: (string | null);
+            label: string | null;
             label_fill: boolean;
             labelFill: boolean;
-            label_widget: (Widget | null);
-            labelWidget: (Widget | null);
+            label_widget: Widget | null;
+            labelWidget: Widget | null;
             resize_toplevel: boolean;
             resizeToplevel: boolean;
             spacing: number;
@@ -42751,8 +42711,8 @@ export namespace Gtk {
         /**
          * @default null
          */
-        get label(): (string | null);
-        set label(val: (string | null));
+        get label(): string | null;
+        set label(val: string | null);
 
         /**
          * Whether the label widget should fill all available horizontal space.
@@ -42772,11 +42732,11 @@ export namespace Gtk {
         get labelFill(): boolean;
         set labelFill(val: boolean);
 
-        get label_widget(): (Widget | null);
-        set label_widget(val: (Widget | null));
+        get label_widget(): Widget | null;
+        set label_widget(val: Widget | null);
 
-        get labelWidget(): (Widget | null);
-        set labelWidget(val: (Widget | null));
+        get labelWidget(): Widget | null;
+        set labelWidget(val: Widget | null);
 
         /**
          * When this property is `true`, the expander will resize the toplevel
@@ -42846,9 +42806,9 @@ export namespace Gtk {
 
         _init(...args: any[]): void;
 
-        static ["new"](label: (string | null)): Expander;
+        static ["new"](label: string | null): Expander;
 
-        static new_with_mnemonic(label: (string | null)): Expander;
+        static new_with_mnemonic(label: string | null): Expander;
 
         // Signals
         /** @signal */
@@ -42894,7 +42854,7 @@ export namespace Gtk {
          * widget.
          * @returns The text of the label widget. This string is owned     by the widget and must not be modified or freed.
          */
-        get_label(): (string | null);
+        get_label(): string | null;
 
         /**
          * Returns whether the label widget will fill all available
@@ -42908,7 +42868,7 @@ export namespace Gtk {
          * `gtk_expander_set_label_widget()`.
          * @returns the label widget,     or `null` if there is none
          */
-        get_label_widget(): (Widget | null);
+        get_label_widget(): Widget | null;
 
         /**
          * Returns whether the expander will resize the toplevel widget
@@ -42952,7 +42912,7 @@ export namespace Gtk {
          * This will also clear any previously set labels.
          * @param label a string
          */
-        set_label(label: (string | null)): void;
+        set_label(label: string | null): void;
 
         /**
          * Sets whether the label widget should fill all available
@@ -42968,7 +42928,7 @@ export namespace Gtk {
          * that will appear embedded alongside the expander arrow.
          * @param label_widget the new label widget
          */
-        set_label_widget(label_widget: (Widget | null)): void;
+        set_label_widget(label_widget: Widget | null): void;
 
         /**
          * Sets whether the expander will resize the toplevel widget
@@ -43025,9 +42985,7 @@ export namespace Gtk {
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends ContainerAccessible.ConstructorProps, Atk.Action.ConstructorProps, Atk.Component.ConstructorProps {
-
-        }
+        interface ConstructorProps extends ContainerAccessible.ConstructorProps, Atk.Action.ConstructorProps, Atk.Component.ConstructorProps {}
     }
 
     /**
@@ -43075,7 +43033,7 @@ export namespace Gtk {
          * @param i the action index corresponding to the action to be performed
          * @returns a description string, or `null` if `action` does not implement this interface.
          */
-        get_description(i: number): (string | null);
+        get_description(i: number): string | null;
 
         /**
          * @param args 
@@ -43109,14 +43067,14 @@ export namespace Gtk {
          * @param i the action index corresponding to the action to be performed
          * @returns the keybinding which can be used to activate this action, or `null` if there is no keybinding for this action.
          */
-        get_keybinding(i: number): (string | null);
+        get_keybinding(i: number): string | null;
 
         /**
          * Returns the localized name of the specified action of the object.
          * @param i the action index corresponding to the action to be performed
          * @returns a name string, or `null` if `action` does not implement this interface.
          */
-        get_localized_name(i: number): (string | null);
+        get_localized_name(i: number): string | null;
 
         /**
          * Gets the number of accessible actions available on the object.
@@ -43144,7 +43102,7 @@ export namespace Gtk {
          * @param i the action index corresponding to the action to be performed
          * @returns a name string, or `null` if `action` does not implement this interface.
          */
-        get_name(i: number): (string | null);
+        get_name(i: number): string | null;
 
         /**
          * @param args 
@@ -43178,7 +43136,7 @@ export namespace Gtk {
          * @param i the action index corresponding to the action to be performed
          * @virtual
          */
-        vfunc_get_description(i: number): (string | null);
+        vfunc_get_description(i: number): string | null;
 
         /**
          * @param args 
@@ -43213,14 +43171,14 @@ export namespace Gtk {
          * @param i the action index corresponding to the action to be performed
          * @virtual
          */
-        vfunc_get_keybinding(i: number): (string | null);
+        vfunc_get_keybinding(i: number): string | null;
 
         /**
          * Returns the localized name of the specified action of the object.
          * @param i the action index corresponding to the action to be performed
          * @virtual
          */
-        vfunc_get_localized_name(i: number): (string | null);
+        vfunc_get_localized_name(i: number): string | null;
 
         /**
          * Gets the number of accessible actions available on the object.
@@ -43248,7 +43206,7 @@ export namespace Gtk {
          * @param i the action index corresponding to the action to be performed
          * @virtual
          */
-        vfunc_get_name(i: number): (string | null);
+        vfunc_get_name(i: number): string | null;
 
         /**
          * @param args 
@@ -43565,16 +43523,16 @@ export namespace Gtk {
         set doOverwriteConfirmation(val: boolean);
 
         /** @category Inherited from Gtk.FileChooser */
-        get extra_widget(): (Widget | null);
-        set extra_widget(val: (Widget | null));
+        get extra_widget(): Widget | null;
+        set extra_widget(val: Widget | null);
 
         /** @category Inherited from Gtk.FileChooser */
-        get extraWidget(): (Widget | null);
-        set extraWidget(val: (Widget | null));
+        get extraWidget(): Widget | null;
+        set extraWidget(val: Widget | null);
 
         /** @category Inherited from Gtk.FileChooser */
-        get filter(): (FileFilter | null);
-        set filter(val: (FileFilter | null));
+        get filter(): FileFilter | null;
+        set filter(val: FileFilter | null);
 
         /**
          * @default true
@@ -43591,12 +43549,12 @@ export namespace Gtk {
         set localOnly(val: boolean);
 
         /** @category Inherited from Gtk.FileChooser */
-        get preview_widget(): (Widget | null);
-        set preview_widget(val: (Widget | null));
+        get preview_widget(): Widget | null;
+        set preview_widget(val: Widget | null);
 
         /** @category Inherited from Gtk.FileChooser */
-        get previewWidget(): (Widget | null);
-        set previewWidget(val: (Widget | null));
+        get previewWidget(): Widget | null;
+        set previewWidget(val: Widget | null);
 
         /**
          * @default true
@@ -43676,7 +43634,7 @@ export namespace Gtk {
          * @param options ids for the options of the choice, or `null` for a boolean choice
          * @param option_labels user-visible labels for the options, must be the same length as `options`
          */
-        add_choice(id: string, label: string, options: (string[] | null), option_labels: (string[] | null)): void;
+        add_choice(id: string, label: string, options: string[] | null, option_labels: string[] | null): void;
 
         /**
          * Adds `filter` to the list of filters that the user can select between.
@@ -43743,14 +43701,14 @@ export namespace Gtk {
          * usual way to get the selection.
          * @returns the full path of the current folder, or `null` if the current path cannot be represented as a local filename.  Free with `g_free()`.  This function will also return `null` if the file chooser was unable to load the last folder that was requested from it; for example, as would be for calling `gtk_file_chooser_set_current_folder()` on a nonexistent folder.
          */
-        get_current_folder(): (string | null);
+        get_current_folder(): string | null;
 
         /**
          * Gets the current folder of `chooser` as {@link Gio.File}.
          * See `gtk_file_chooser_get_current_folder_uri()`.
          * @returns the {@link Gio.File} for the current folder.
          */
-        get_current_folder_file(): (Gio.File | null);
+        get_current_folder_file(): Gio.File | null;
 
         /**
          * Gets the current folder of `chooser` as an URI.
@@ -43765,7 +43723,7 @@ export namespace Gtk {
          * usual way to get the selection.
          * @returns the URI for the current folder. Free with `g_free()`.  This function will also return `null` if the file chooser was unable to load the last folder that was requested from it; for example, as would be for calling `gtk_file_chooser_set_current_folder_uri()` on a nonexistent folder.
          */
-        get_current_folder_uri(): (string | null);
+        get_current_folder_uri(): string | null;
 
         /**
          * Gets the current name in the file selector, as entered by the user in the
@@ -43792,7 +43750,7 @@ export namespace Gtk {
          * `gtk_file_chooser_set_extra_widget()`.
          * @returns the current extra widget, or `null`
          */
-        get_extra_widget(): (Widget | null);
+        get_extra_widget(): Widget | null;
 
         /**
          * Gets the {@link Gio.File} for the currently selected file in
@@ -43815,7 +43773,7 @@ export namespace Gtk {
          * folder.
          * @returns The currently selected filename,  or `null` if no file is selected, or the selected file can't  be represented with a local filename. Free with `g_free()`.
          */
-        get_filename(): (string | null);
+        get_filename(): string | null;
 
         /**
          * Lists all the selected files and subfolders in the current folder of
@@ -43837,7 +43795,7 @@ export namespace Gtk {
          * Gets the current filter; see `gtk_file_chooser_set_filter()`.
          * @returns the current filter, or `null`
          */
-        get_filter(): (FileFilter | null);
+        get_filter(): FileFilter | null;
 
         /**
          * Gets whether only local files can be selected in the
@@ -43851,28 +43809,28 @@ export namespace Gtk {
          * Internal function, see `gtk_file_chooser_get_preview_uri()`.
          * @returns the {@link Gio.File} for the file to preview,     or `null` if no file is selected. Free with `g_object_unref()`.
          */
-        get_preview_file(): (Gio.File | null);
+        get_preview_file(): Gio.File | null;
 
         /**
          * Gets the filename that should be previewed in a custom preview
          * widget. See `gtk_file_chooser_set_preview_widget()`.
          * @returns the filename to preview, or `null` if  no file is selected, or if the selected file cannot be represented  as a local filename. Free with `g_free()`
          */
-        get_preview_filename(): (string | null);
+        get_preview_filename(): string | null;
 
         /**
          * Gets the URI that should be previewed in a custom preview
          * widget. See `gtk_file_chooser_set_preview_widget()`.
          * @returns the URI for the file to preview,     or `null` if no file is selected. Free with `g_free()`.
          */
-        get_preview_uri(): (string | null);
+        get_preview_uri(): string | null;
 
         /**
          * Gets the current preview widget; see
          * `gtk_file_chooser_set_preview_widget()`.
          * @returns the current preview widget, or `null`
          */
-        get_preview_widget(): (Widget | null);
+        get_preview_widget(): Widget | null;
 
         /**
          * Gets whether the preview widget set by `gtk_file_chooser_set_preview_widget()`
@@ -43905,7 +43863,7 @@ export namespace Gtk {
          * folder.
          * @returns The currently selected URI, or `null`    if no file is selected. If `gtk_file_chooser_set_local_only()` is set to    `true` (the default) a local URI will be returned for any FUSE locations.    Free with `g_free()`
          */
-        get_uri(): (string | null);
+        get_uri(): string | null;
 
         /**
          * Lists all the selected files and subfolders in the current folder of
@@ -43933,14 +43891,14 @@ export namespace Gtk {
          * `gtk_file_chooser_add_shortcut_folder_uri()`.
          * @returns A list of folder URIs, or `null` if there are no shortcut folders.  Free the returned list with `g_slist_free()`, and the URIs with `g_free()`.
          */
-        list_shortcut_folder_uris(): (string[] | null);
+        list_shortcut_folder_uris(): string[] | null;
 
         /**
          * Queries the list of shortcut folders in the file chooser, as set by
          * `gtk_file_chooser_add_shortcut_folder()`.
          * @returns A list of folder filenames, or `null` if there are no shortcut folders. Free the returned list with `g_slist_free()`, and the filenames with `g_free()`.
          */
-        list_shortcut_folders(): (string[] | null);
+        list_shortcut_folders(): string[] | null;
 
         /**
          * Removes a 'choice' that has been added with `gtk_file_chooser_add_choice()`.
@@ -44435,9 +44393,7 @@ export namespace Gtk {
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends Dialog.ConstructorProps, Atk.ImplementorIface.ConstructorProps, Buildable.ConstructorProps, FileChooser.ConstructorProps {
-
-        }
+        interface ConstructorProps extends Dialog.ConstructorProps, Atk.ImplementorIface.ConstructorProps, Buildable.ConstructorProps, FileChooser.ConstructorProps {}
     }
 
     /**
@@ -44684,16 +44640,16 @@ export namespace Gtk {
         set doOverwriteConfirmation(val: boolean);
 
         /** @category Inherited from Gtk.FileChooser */
-        get extra_widget(): (Widget | null);
-        set extra_widget(val: (Widget | null));
+        get extra_widget(): Widget | null;
+        set extra_widget(val: Widget | null);
 
         /** @category Inherited from Gtk.FileChooser */
-        get extraWidget(): (Widget | null);
-        set extraWidget(val: (Widget | null));
+        get extraWidget(): Widget | null;
+        set extraWidget(val: Widget | null);
 
         /** @category Inherited from Gtk.FileChooser */
-        get filter(): (FileFilter | null);
-        set filter(val: (FileFilter | null));
+        get filter(): FileFilter | null;
+        set filter(val: FileFilter | null);
 
         /**
          * @default true
@@ -44710,12 +44666,12 @@ export namespace Gtk {
         set localOnly(val: boolean);
 
         /** @category Inherited from Gtk.FileChooser */
-        get preview_widget(): (Widget | null);
-        set preview_widget(val: (Widget | null));
+        get preview_widget(): Widget | null;
+        set preview_widget(val: Widget | null);
 
         /** @category Inherited from Gtk.FileChooser */
-        get previewWidget(): (Widget | null);
-        set previewWidget(val: (Widget | null));
+        get previewWidget(): Widget | null;
+        set previewWidget(val: Widget | null);
 
         /**
          * @default true
@@ -44786,7 +44742,7 @@ export namespace Gtk {
          * @param options ids for the options of the choice, or `null` for a boolean choice
          * @param option_labels user-visible labels for the options, must be the same length as `options`
          */
-        add_choice(id: string, label: string, options: (string[] | null), option_labels: (string[] | null)): void;
+        add_choice(id: string, label: string, options: string[] | null, option_labels: string[] | null): void;
 
         /**
          * Adds `filter` to the list of filters that the user can select between.
@@ -44853,14 +44809,14 @@ export namespace Gtk {
          * usual way to get the selection.
          * @returns the full path of the current folder, or `null` if the current path cannot be represented as a local filename.  Free with `g_free()`.  This function will also return `null` if the file chooser was unable to load the last folder that was requested from it; for example, as would be for calling `gtk_file_chooser_set_current_folder()` on a nonexistent folder.
          */
-        get_current_folder(): (string | null);
+        get_current_folder(): string | null;
 
         /**
          * Gets the current folder of `chooser` as {@link Gio.File}.
          * See `gtk_file_chooser_get_current_folder_uri()`.
          * @returns the {@link Gio.File} for the current folder.
          */
-        get_current_folder_file(): (Gio.File | null);
+        get_current_folder_file(): Gio.File | null;
 
         /**
          * Gets the current folder of `chooser` as an URI.
@@ -44875,7 +44831,7 @@ export namespace Gtk {
          * usual way to get the selection.
          * @returns the URI for the current folder. Free with `g_free()`.  This function will also return `null` if the file chooser was unable to load the last folder that was requested from it; for example, as would be for calling `gtk_file_chooser_set_current_folder_uri()` on a nonexistent folder.
          */
-        get_current_folder_uri(): (string | null);
+        get_current_folder_uri(): string | null;
 
         /**
          * Gets the current name in the file selector, as entered by the user in the
@@ -44902,7 +44858,7 @@ export namespace Gtk {
          * `gtk_file_chooser_set_extra_widget()`.
          * @returns the current extra widget, or `null`
          */
-        get_extra_widget(): (Widget | null);
+        get_extra_widget(): Widget | null;
 
         /**
          * Gets the {@link Gio.File} for the currently selected file in
@@ -44925,7 +44881,7 @@ export namespace Gtk {
          * folder.
          * @returns The currently selected filename,  or `null` if no file is selected, or the selected file can't  be represented with a local filename. Free with `g_free()`.
          */
-        get_filename(): (string | null);
+        get_filename(): string | null;
 
         /**
          * Lists all the selected files and subfolders in the current folder of
@@ -44947,7 +44903,7 @@ export namespace Gtk {
          * Gets the current filter; see `gtk_file_chooser_set_filter()`.
          * @returns the current filter, or `null`
          */
-        get_filter(): (FileFilter | null);
+        get_filter(): FileFilter | null;
 
         /**
          * Gets whether only local files can be selected in the
@@ -44961,28 +44917,28 @@ export namespace Gtk {
          * Internal function, see `gtk_file_chooser_get_preview_uri()`.
          * @returns the {@link Gio.File} for the file to preview,     or `null` if no file is selected. Free with `g_object_unref()`.
          */
-        get_preview_file(): (Gio.File | null);
+        get_preview_file(): Gio.File | null;
 
         /**
          * Gets the filename that should be previewed in a custom preview
          * widget. See `gtk_file_chooser_set_preview_widget()`.
          * @returns the filename to preview, or `null` if  no file is selected, or if the selected file cannot be represented  as a local filename. Free with `g_free()`
          */
-        get_preview_filename(): (string | null);
+        get_preview_filename(): string | null;
 
         /**
          * Gets the URI that should be previewed in a custom preview
          * widget. See `gtk_file_chooser_set_preview_widget()`.
          * @returns the URI for the file to preview,     or `null` if no file is selected. Free with `g_free()`.
          */
-        get_preview_uri(): (string | null);
+        get_preview_uri(): string | null;
 
         /**
          * Gets the current preview widget; see
          * `gtk_file_chooser_set_preview_widget()`.
          * @returns the current preview widget, or `null`
          */
-        get_preview_widget(): (Widget | null);
+        get_preview_widget(): Widget | null;
 
         /**
          * Gets whether the preview widget set by `gtk_file_chooser_set_preview_widget()`
@@ -45015,7 +44971,7 @@ export namespace Gtk {
          * folder.
          * @returns The currently selected URI, or `null`    if no file is selected. If `gtk_file_chooser_set_local_only()` is set to    `true` (the default) a local URI will be returned for any FUSE locations.    Free with `g_free()`
          */
-        get_uri(): (string | null);
+        get_uri(): string | null;
 
         /**
          * Lists all the selected files and subfolders in the current folder of
@@ -45043,14 +44999,14 @@ export namespace Gtk {
          * `gtk_file_chooser_add_shortcut_folder_uri()`.
          * @returns A list of folder URIs, or `null` if there are no shortcut folders.  Free the returned list with `g_slist_free()`, and the URIs with `g_free()`.
          */
-        list_shortcut_folder_uris(): (string[] | null);
+        list_shortcut_folder_uris(): string[] | null;
 
         /**
          * Queries the list of shortcut folders in the file chooser, as set by
          * `gtk_file_chooser_add_shortcut_folder()`.
          * @returns A list of folder filenames, or `null` if there are no shortcut folders. Free the returned list with `g_slist_free()`, and the filenames with `g_free()`.
          */
-        list_shortcut_folders(): (string[] | null);
+        list_shortcut_folders(): string[] | null;
 
         /**
          * Removes a 'choice' that has been added with `gtk_file_chooser_add_choice()`.
@@ -45464,10 +45420,10 @@ export namespace Gtk {
 
         // Constructor properties interface
         interface ConstructorProps extends NativeDialog.ConstructorProps, FileChooser.ConstructorProps {
-            accept_label: (string | null);
-            acceptLabel: (string | null);
-            cancel_label: (string | null);
-            cancelLabel: (string | null);
+            accept_label: string | null;
+            acceptLabel: string | null;
+            cancel_label: string | null;
+            cancelLabel: string | null;
         }
     }
 
@@ -45643,32 +45599,32 @@ export namespace Gtk {
          * `null` to use the default text.
          * @default null
          */
-        get accept_label(): (string | null);
-        set accept_label(val: (string | null));
+        get accept_label(): string | null;
+        set accept_label(val: string | null);
 
         /**
          * The text used for the label on the accept button in the dialog, or
          * `null` to use the default text.
          * @default null
          */
-        get acceptLabel(): (string | null);
-        set acceptLabel(val: (string | null));
+        get acceptLabel(): string | null;
+        set acceptLabel(val: string | null);
 
         /**
          * The text used for the label on the cancel button in the dialog, or
          * `null` to use the default text.
          * @default null
          */
-        get cancel_label(): (string | null);
-        set cancel_label(val: (string | null));
+        get cancel_label(): string | null;
+        set cancel_label(val: string | null);
 
         /**
          * The text used for the label on the cancel button in the dialog, or
          * `null` to use the default text.
          * @default null
          */
-        get cancelLabel(): (string | null);
-        set cancelLabel(val: (string | null));
+        get cancelLabel(): string | null;
+        set cancelLabel(val: string | null);
 
         /**
          * Compile-time signal type information.
@@ -45684,7 +45640,7 @@ export namespace Gtk {
 
         _init(...args: any[]): void;
 
-        static ["new"](title: (string | null), parent: (Window | null), action: FileChooserAction, accept_label: (string | null), cancel_label: (string | null)): FileChooserNative;
+        static ["new"](title: string | null, parent: Window | null, action: FileChooserAction, accept_label: string | null, cancel_label: string | null): FileChooserNative;
 
         // Signals
         /** @signal */
@@ -45704,13 +45660,13 @@ export namespace Gtk {
          * Retrieves the custom label text for the accept button.
          * @returns The custom label, or `null` for the default. This string is owned by GTK+ and should not be modified or freed
          */
-        get_accept_label(): (string | null);
+        get_accept_label(): string | null;
 
         /**
          * Retrieves the custom label text for the cancel button.
          * @returns The custom label, or `null` for the default. This string is owned by GTK+ and should not be modified or freed
          */
-        get_cancel_label(): (string | null);
+        get_cancel_label(): string | null;
 
         /**
          * Sets the custom label text for the accept button.
@@ -45722,7 +45678,7 @@ export namespace Gtk {
          * Pressing Alt and that key activates the button.
          * @param accept_label custom label or `null` for the default
          */
-        set_accept_label(accept_label: (string | null)): void;
+        set_accept_label(accept_label: string | null): void;
 
         /**
          * Sets the custom label text for the cancel button.
@@ -45734,7 +45690,7 @@ export namespace Gtk {
          * Pressing Alt and that key activates the button.
          * @param cancel_label custom label or `null` for the default
          */
-        set_cancel_label(cancel_label: (string | null)): void;
+        set_cancel_label(cancel_label: string | null): void;
 
         /**
          * @default Gtk.FileChooserAction.OPEN
@@ -45786,16 +45742,16 @@ export namespace Gtk {
         set doOverwriteConfirmation(val: boolean);
 
         /** @category Inherited from Gtk.FileChooser */
-        get extra_widget(): (Widget | null);
-        set extra_widget(val: (Widget | null));
+        get extra_widget(): Widget | null;
+        set extra_widget(val: Widget | null);
 
         /** @category Inherited from Gtk.FileChooser */
-        get extraWidget(): (Widget | null);
-        set extraWidget(val: (Widget | null));
+        get extraWidget(): Widget | null;
+        set extraWidget(val: Widget | null);
 
         /** @category Inherited from Gtk.FileChooser */
-        get filter(): (FileFilter | null);
-        set filter(val: (FileFilter | null));
+        get filter(): FileFilter | null;
+        set filter(val: FileFilter | null);
 
         /**
          * @default true
@@ -45812,12 +45768,12 @@ export namespace Gtk {
         set localOnly(val: boolean);
 
         /** @category Inherited from Gtk.FileChooser */
-        get preview_widget(): (Widget | null);
-        set preview_widget(val: (Widget | null));
+        get preview_widget(): Widget | null;
+        set preview_widget(val: Widget | null);
 
         /** @category Inherited from Gtk.FileChooser */
-        get previewWidget(): (Widget | null);
-        set previewWidget(val: (Widget | null));
+        get previewWidget(): Widget | null;
+        set previewWidget(val: Widget | null);
 
         /**
          * @default true
@@ -45888,7 +45844,7 @@ export namespace Gtk {
          * @param options ids for the options of the choice, or `null` for a boolean choice
          * @param option_labels user-visible labels for the options, must be the same length as `options`
          */
-        add_choice(id: string, label: string, options: (string[] | null), option_labels: (string[] | null)): void;
+        add_choice(id: string, label: string, options: string[] | null, option_labels: string[] | null): void;
 
         /**
          * Adds `filter` to the list of filters that the user can select between.
@@ -45955,14 +45911,14 @@ export namespace Gtk {
          * usual way to get the selection.
          * @returns the full path of the current folder, or `null` if the current path cannot be represented as a local filename.  Free with `g_free()`.  This function will also return `null` if the file chooser was unable to load the last folder that was requested from it; for example, as would be for calling `gtk_file_chooser_set_current_folder()` on a nonexistent folder.
          */
-        get_current_folder(): (string | null);
+        get_current_folder(): string | null;
 
         /**
          * Gets the current folder of `chooser` as {@link Gio.File}.
          * See `gtk_file_chooser_get_current_folder_uri()`.
          * @returns the {@link Gio.File} for the current folder.
          */
-        get_current_folder_file(): (Gio.File | null);
+        get_current_folder_file(): Gio.File | null;
 
         /**
          * Gets the current folder of `chooser` as an URI.
@@ -45977,7 +45933,7 @@ export namespace Gtk {
          * usual way to get the selection.
          * @returns the URI for the current folder. Free with `g_free()`.  This function will also return `null` if the file chooser was unable to load the last folder that was requested from it; for example, as would be for calling `gtk_file_chooser_set_current_folder_uri()` on a nonexistent folder.
          */
-        get_current_folder_uri(): (string | null);
+        get_current_folder_uri(): string | null;
 
         /**
          * Gets the current name in the file selector, as entered by the user in the
@@ -46004,7 +45960,7 @@ export namespace Gtk {
          * `gtk_file_chooser_set_extra_widget()`.
          * @returns the current extra widget, or `null`
          */
-        get_extra_widget(): (Widget | null);
+        get_extra_widget(): Widget | null;
 
         /**
          * Gets the {@link Gio.File} for the currently selected file in
@@ -46027,7 +45983,7 @@ export namespace Gtk {
          * folder.
          * @returns The currently selected filename,  or `null` if no file is selected, or the selected file can't  be represented with a local filename. Free with `g_free()`.
          */
-        get_filename(): (string | null);
+        get_filename(): string | null;
 
         /**
          * Lists all the selected files and subfolders in the current folder of
@@ -46049,7 +46005,7 @@ export namespace Gtk {
          * Gets the current filter; see `gtk_file_chooser_set_filter()`.
          * @returns the current filter, or `null`
          */
-        get_filter(): (FileFilter | null);
+        get_filter(): FileFilter | null;
 
         /**
          * Gets whether only local files can be selected in the
@@ -46063,28 +46019,28 @@ export namespace Gtk {
          * Internal function, see `gtk_file_chooser_get_preview_uri()`.
          * @returns the {@link Gio.File} for the file to preview,     or `null` if no file is selected. Free with `g_object_unref()`.
          */
-        get_preview_file(): (Gio.File | null);
+        get_preview_file(): Gio.File | null;
 
         /**
          * Gets the filename that should be previewed in a custom preview
          * widget. See `gtk_file_chooser_set_preview_widget()`.
          * @returns the filename to preview, or `null` if  no file is selected, or if the selected file cannot be represented  as a local filename. Free with `g_free()`
          */
-        get_preview_filename(): (string | null);
+        get_preview_filename(): string | null;
 
         /**
          * Gets the URI that should be previewed in a custom preview
          * widget. See `gtk_file_chooser_set_preview_widget()`.
          * @returns the URI for the file to preview,     or `null` if no file is selected. Free with `g_free()`.
          */
-        get_preview_uri(): (string | null);
+        get_preview_uri(): string | null;
 
         /**
          * Gets the current preview widget; see
          * `gtk_file_chooser_set_preview_widget()`.
          * @returns the current preview widget, or `null`
          */
-        get_preview_widget(): (Widget | null);
+        get_preview_widget(): Widget | null;
 
         /**
          * Gets whether the preview widget set by `gtk_file_chooser_set_preview_widget()`
@@ -46117,7 +46073,7 @@ export namespace Gtk {
          * folder.
          * @returns The currently selected URI, or `null`    if no file is selected. If `gtk_file_chooser_set_local_only()` is set to    `true` (the default) a local URI will be returned for any FUSE locations.    Free with `g_free()`
          */
-        get_uri(): (string | null);
+        get_uri(): string | null;
 
         /**
          * Lists all the selected files and subfolders in the current folder of
@@ -46145,14 +46101,14 @@ export namespace Gtk {
          * `gtk_file_chooser_add_shortcut_folder_uri()`.
          * @returns A list of folder URIs, or `null` if there are no shortcut folders.  Free the returned list with `g_slist_free()`, and the URIs with `g_free()`.
          */
-        list_shortcut_folder_uris(): (string[] | null);
+        list_shortcut_folder_uris(): string[] | null;
 
         /**
          * Queries the list of shortcut folders in the file chooser, as set by
          * `gtk_file_chooser_add_shortcut_folder()`.
          * @returns A list of folder filenames, or `null` if there are no shortcut folders. Free the returned list with `g_slist_free()`, and the filenames with `g_free()`.
          */
-        list_shortcut_folders(): (string[] | null);
+        list_shortcut_folders(): string[] | null;
 
         /**
          * Removes a 'choice' that has been added with `gtk_file_chooser_add_choice()`.
@@ -46892,16 +46848,16 @@ export namespace Gtk {
         set doOverwriteConfirmation(val: boolean);
 
         /** @category Inherited from Gtk.FileChooser */
-        get extra_widget(): (Widget | null);
-        set extra_widget(val: (Widget | null));
+        get extra_widget(): Widget | null;
+        set extra_widget(val: Widget | null);
 
         /** @category Inherited from Gtk.FileChooser */
-        get extraWidget(): (Widget | null);
-        set extraWidget(val: (Widget | null));
+        get extraWidget(): Widget | null;
+        set extraWidget(val: Widget | null);
 
         /** @category Inherited from Gtk.FileChooser */
-        get filter(): (FileFilter | null);
-        set filter(val: (FileFilter | null));
+        get filter(): FileFilter | null;
+        set filter(val: FileFilter | null);
 
         /**
          * @default true
@@ -46918,12 +46874,12 @@ export namespace Gtk {
         set localOnly(val: boolean);
 
         /** @category Inherited from Gtk.FileChooser */
-        get preview_widget(): (Widget | null);
-        set preview_widget(val: (Widget | null));
+        get preview_widget(): Widget | null;
+        set preview_widget(val: Widget | null);
 
         /** @category Inherited from Gtk.FileChooser */
-        get previewWidget(): (Widget | null);
-        set previewWidget(val: (Widget | null));
+        get previewWidget(): Widget | null;
+        set previewWidget(val: Widget | null);
 
         /**
          * @default true
@@ -47003,7 +46959,7 @@ export namespace Gtk {
          * @param options ids for the options of the choice, or `null` for a boolean choice
          * @param option_labels user-visible labels for the options, must be the same length as `options`
          */
-        add_choice(id: string, label: string, options: (string[] | null), option_labels: (string[] | null)): void;
+        add_choice(id: string, label: string, options: string[] | null, option_labels: string[] | null): void;
 
         /**
          * Adds `filter` to the list of filters that the user can select between.
@@ -47070,14 +47026,14 @@ export namespace Gtk {
          * usual way to get the selection.
          * @returns the full path of the current folder, or `null` if the current path cannot be represented as a local filename.  Free with `g_free()`.  This function will also return `null` if the file chooser was unable to load the last folder that was requested from it; for example, as would be for calling `gtk_file_chooser_set_current_folder()` on a nonexistent folder.
          */
-        get_current_folder(): (string | null);
+        get_current_folder(): string | null;
 
         /**
          * Gets the current folder of `chooser` as {@link Gio.File}.
          * See `gtk_file_chooser_get_current_folder_uri()`.
          * @returns the {@link Gio.File} for the current folder.
          */
-        get_current_folder_file(): (Gio.File | null);
+        get_current_folder_file(): Gio.File | null;
 
         /**
          * Gets the current folder of `chooser` as an URI.
@@ -47092,7 +47048,7 @@ export namespace Gtk {
          * usual way to get the selection.
          * @returns the URI for the current folder. Free with `g_free()`.  This function will also return `null` if the file chooser was unable to load the last folder that was requested from it; for example, as would be for calling `gtk_file_chooser_set_current_folder_uri()` on a nonexistent folder.
          */
-        get_current_folder_uri(): (string | null);
+        get_current_folder_uri(): string | null;
 
         /**
          * Gets the current name in the file selector, as entered by the user in the
@@ -47119,7 +47075,7 @@ export namespace Gtk {
          * `gtk_file_chooser_set_extra_widget()`.
          * @returns the current extra widget, or `null`
          */
-        get_extra_widget(): (Widget | null);
+        get_extra_widget(): Widget | null;
 
         /**
          * Gets the {@link Gio.File} for the currently selected file in
@@ -47142,7 +47098,7 @@ export namespace Gtk {
          * folder.
          * @returns The currently selected filename,  or `null` if no file is selected, or the selected file can't  be represented with a local filename. Free with `g_free()`.
          */
-        get_filename(): (string | null);
+        get_filename(): string | null;
 
         /**
          * Lists all the selected files and subfolders in the current folder of
@@ -47164,7 +47120,7 @@ export namespace Gtk {
          * Gets the current filter; see `gtk_file_chooser_set_filter()`.
          * @returns the current filter, or `null`
          */
-        get_filter(): (FileFilter | null);
+        get_filter(): FileFilter | null;
 
         /**
          * Gets whether only local files can be selected in the
@@ -47178,28 +47134,28 @@ export namespace Gtk {
          * Internal function, see `gtk_file_chooser_get_preview_uri()`.
          * @returns the {@link Gio.File} for the file to preview,     or `null` if no file is selected. Free with `g_object_unref()`.
          */
-        get_preview_file(): (Gio.File | null);
+        get_preview_file(): Gio.File | null;
 
         /**
          * Gets the filename that should be previewed in a custom preview
          * widget. See `gtk_file_chooser_set_preview_widget()`.
          * @returns the filename to preview, or `null` if  no file is selected, or if the selected file cannot be represented  as a local filename. Free with `g_free()`
          */
-        get_preview_filename(): (string | null);
+        get_preview_filename(): string | null;
 
         /**
          * Gets the URI that should be previewed in a custom preview
          * widget. See `gtk_file_chooser_set_preview_widget()`.
          * @returns the URI for the file to preview,     or `null` if no file is selected. Free with `g_free()`.
          */
-        get_preview_uri(): (string | null);
+        get_preview_uri(): string | null;
 
         /**
          * Gets the current preview widget; see
          * `gtk_file_chooser_set_preview_widget()`.
          * @returns the current preview widget, or `null`
          */
-        get_preview_widget(): (Widget | null);
+        get_preview_widget(): Widget | null;
 
         /**
          * Gets whether the preview widget set by `gtk_file_chooser_set_preview_widget()`
@@ -47232,7 +47188,7 @@ export namespace Gtk {
          * folder.
          * @returns The currently selected URI, or `null`    if no file is selected. If `gtk_file_chooser_set_local_only()` is set to    `true` (the default) a local URI will be returned for any FUSE locations.    Free with `g_free()`
          */
-        get_uri(): (string | null);
+        get_uri(): string | null;
 
         /**
          * Lists all the selected files and subfolders in the current folder of
@@ -47260,14 +47216,14 @@ export namespace Gtk {
          * `gtk_file_chooser_add_shortcut_folder_uri()`.
          * @returns A list of folder URIs, or `null` if there are no shortcut folders.  Free the returned list with `g_slist_free()`, and the URIs with `g_free()`.
          */
-        list_shortcut_folder_uris(): (string[] | null);
+        list_shortcut_folder_uris(): string[] | null;
 
         /**
          * Queries the list of shortcut folders in the file chooser, as set by
          * `gtk_file_chooser_add_shortcut_folder()`.
          * @returns A list of folder filenames, or `null` if there are no shortcut folders. Free the returned list with `g_slist_free()`, and the filenames with `g_free()`.
          */
-        list_shortcut_folders(): (string[] | null);
+        list_shortcut_folders(): string[] | null;
 
         /**
          * Removes a 'choice' that has been added with `gtk_file_chooser_add_choice()`.
@@ -47693,9 +47649,7 @@ export namespace Gtk {
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends ContainerAccessible.ConstructorProps, Atk.Action.ConstructorProps, Atk.Component.ConstructorProps {
-
-        }
+        interface ConstructorProps extends ContainerAccessible.ConstructorProps, Atk.Action.ConstructorProps, Atk.Component.ConstructorProps {}
     }
 
     /**
@@ -47744,7 +47698,7 @@ export namespace Gtk {
          * @param i the action index corresponding to the action to be performed
          * @returns a description string, or `null` if `action` does not implement this interface.
          */
-        get_description(i: number): (string | null);
+        get_description(i: number): string | null;
 
         /**
          * @param args 
@@ -47778,14 +47732,14 @@ export namespace Gtk {
          * @param i the action index corresponding to the action to be performed
          * @returns the keybinding which can be used to activate this action, or `null` if there is no keybinding for this action.
          */
-        get_keybinding(i: number): (string | null);
+        get_keybinding(i: number): string | null;
 
         /**
          * Returns the localized name of the specified action of the object.
          * @param i the action index corresponding to the action to be performed
          * @returns a name string, or `null` if `action` does not implement this interface.
          */
-        get_localized_name(i: number): (string | null);
+        get_localized_name(i: number): string | null;
 
         /**
          * Gets the number of accessible actions available on the object.
@@ -47813,7 +47767,7 @@ export namespace Gtk {
          * @param i the action index corresponding to the action to be performed
          * @returns a name string, or `null` if `action` does not implement this interface.
          */
-        get_name(i: number): (string | null);
+        get_name(i: number): string | null;
 
         /**
          * @param args 
@@ -47847,7 +47801,7 @@ export namespace Gtk {
          * @param i the action index corresponding to the action to be performed
          * @virtual
          */
-        vfunc_get_description(i: number): (string | null);
+        vfunc_get_description(i: number): string | null;
 
         /**
          * @param args 
@@ -47882,14 +47836,14 @@ export namespace Gtk {
          * @param i the action index corresponding to the action to be performed
          * @virtual
          */
-        vfunc_get_keybinding(i: number): (string | null);
+        vfunc_get_keybinding(i: number): string | null;
 
         /**
          * Returns the localized name of the specified action of the object.
          * @param i the action index corresponding to the action to be performed
          * @virtual
          */
-        vfunc_get_localized_name(i: number): (string | null);
+        vfunc_get_localized_name(i: number): string | null;
 
         /**
          * Gets the number of accessible actions available on the object.
@@ -47917,7 +47871,7 @@ export namespace Gtk {
          * @param i the action index corresponding to the action to be performed
          * @virtual
          */
-        vfunc_get_name(i: number): (string | null);
+        vfunc_get_name(i: number): string | null;
 
         /**
          * @param args 
@@ -47945,13 +47899,10 @@ export namespace Gtk {
 
     namespace FileFilter {
         // Signal signatures
-        interface SignalSignatures extends GObject.InitiallyUnowned.SignalSignatures {
-        }
+        interface SignalSignatures extends GObject.InitiallyUnowned.SignalSignatures {}
 
         // Constructor properties interface
-        interface ConstructorProps extends GObject.InitiallyUnowned.ConstructorProps, Buildable.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GObject.InitiallyUnowned.ConstructorProps, Buildable.ConstructorProps {}
     }
 
     /**
@@ -48079,7 +48030,7 @@ export namespace Gtk {
          * Gets the human-readable name for the filter. See `gtk_file_filter_set_name()`.
          * @returns The human-readable name of the filter,   or `null`. This value is owned by GTK+ and must not   be modified or freed.
          */
-        get_name(): (string | null);
+        get_name(): string | null;
 
         /**
          * @param args 
@@ -48104,7 +48055,7 @@ export namespace Gtk {
          * there is a selectable list of filters.
          * @param name the human-readable-name for the filter, or `null`   to remove any existing name.
          */
-        set_name(name: (string | null)): void;
+        set_name(name: string | null): void;
 
         /**
          * @param args 
@@ -48125,7 +48076,7 @@ export namespace Gtk {
          * @param child child to add
          * @param type kind of child or `null`
          */
-        add_child(builder: Builder, child: GObject.Object, type: (string | null)): void;
+        add_child(builder: Builder, child: GObject.Object, type: string | null): void;
 
         /**
          * Constructs a child of `buildable` with the name `name`.
@@ -48146,7 +48097,7 @@ export namespace Gtk {
          * @param tagname the name of the tag
          * @param data user data created in custom_tag_start
          */
-        custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
+        custom_finished(builder: Builder, child: GObject.Object | null, tagname: string, data: null): void;
 
         /**
          * This is called at the end of each custom element handled by
@@ -48156,7 +48107,7 @@ export namespace Gtk {
          * @param tagname name of tag
          * @param data user data that will be passed in to parser functions
          */
-        custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
+        custom_tag_end(builder: Builder, child: GObject.Object | null, tagname: string, data: null): void;
 
         /**
          * This is called for each unknown element under `<child>`.
@@ -48165,7 +48116,7 @@ export namespace Gtk {
          * @param tagname name of tag
          * @returns `true` if a object has a custom implementation, `false`          if it doesn't.
          */
-        custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, GLib.MarkupParser, null];
+        custom_tag_start(builder: Builder, child: GObject.Object | null, tagname: string): [boolean, GLib.MarkupParser, null];
 
         /**
          * Get the internal child called `childname` of the `buildable` object.
@@ -48191,7 +48142,7 @@ export namespace Gtk {
          * @param name name of property
          * @param value value of property
          */
-        set_buildable_property(builder: Builder, name: string, value: (GObject.Value | any)): void;
+        set_buildable_property(builder: Builder, name: string, value: GObject.Value | any): void;
 
         /**
          * Adds a child to `buildable`. `type` is an optional string
@@ -48201,7 +48152,7 @@ export namespace Gtk {
          * @param type kind of child or `null`
          * @virtual
          */
-        vfunc_add_child(builder: Builder, child: GObject.Object, type: (string | null)): void;
+        vfunc_add_child(builder: Builder, child: GObject.Object, type: string | null): void;
 
         /**
          * Constructs a child of `buildable` with the name `name`.
@@ -48223,7 +48174,7 @@ export namespace Gtk {
          * @param data user data created in custom_tag_start
          * @virtual
          */
-        vfunc_custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
+        vfunc_custom_finished(builder: Builder, child: GObject.Object | null, tagname: string, data: null): void;
 
         /**
          * This is called at the end of each custom element handled by
@@ -48234,7 +48185,7 @@ export namespace Gtk {
          * @param data user data that will be passed in to parser functions
          * @virtual
          */
-        vfunc_custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
+        vfunc_custom_tag_end(builder: Builder, child: GObject.Object | null, tagname: string, data: null): void;
 
         /**
          * This is called for each unknown element under `<child>`.
@@ -48243,7 +48194,7 @@ export namespace Gtk {
          * @param tagname name of tag
          * @virtual
          */
-        vfunc_custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, GLib.MarkupParser, never];
+        vfunc_custom_tag_start(builder: Builder, child: GObject.Object | null, tagname: string): [boolean, GLib.MarkupParser, never];
 
         /**
          * Get the internal child called `childname` of the `buildable` object.
@@ -48340,9 +48291,7 @@ export namespace Gtk {
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends Container.ConstructorProps, Atk.ImplementorIface.ConstructorProps, Buildable.ConstructorProps {
-
-        }
+        interface ConstructorProps extends Container.ConstructorProps, Atk.ImplementorIface.ConstructorProps, Buildable.ConstructorProps {}
     }
 
     /**
@@ -48481,7 +48430,7 @@ export namespace Gtk {
              * @action
              * @run-last
              */
-            "move-cursor": (arg0: MovementStep, arg1: number) => (boolean | void);
+            "move-cursor": (arg0: MovementStep, arg1: number) => boolean | void;
             /**
              * The ::select-all signal is a
              * [keybinding signal][GtkBindingSignal]
@@ -48852,7 +48801,7 @@ export namespace Gtk {
          * @param model the {@link Gio.ListModel} to be bound to `box`
          * @param create_widget_func a function that creates widgets for items
          */
-        bind_model(model: (Gio.ListModel | null), create_widget_func: FlowBoxCreateWidgetFunc): void;
+        bind_model(model: Gio.ListModel | null, create_widget_func: FlowBoxCreateWidgetFunc): void;
 
         /**
          * Returns whether children activate on single clicks.
@@ -48865,7 +48814,7 @@ export namespace Gtk {
          * @param idx the position of the child
          * @returns the child widget, which will     always be a {@link Gtk.FlowBoxChild} or `null` in case no child widget     with the given index exists.
          */
-        get_child_at_index(idx: number): (FlowBoxChild | null);
+        get_child_at_index(idx: number): FlowBoxChild | null;
 
         /**
          * Gets the child in the (`x`, `y`) position.
@@ -48873,7 +48822,7 @@ export namespace Gtk {
          * @param y the y coordinate of the child
          * @returns the child widget, which will     always be a {@link Gtk.FlowBoxChild} or `null` in case no child widget     exists for the given x and y coordinates.
          */
-        get_child_at_pos(x: number, y: number): (FlowBoxChild | null);
+        get_child_at_pos(x: number, y: number): FlowBoxChild | null;
 
         /**
          * Gets the horizontal spacing.
@@ -49001,7 +48950,7 @@ export namespace Gtk {
          * (see `gtk_flow_box_bind_model()`).
          * @param filter_func callback that     lets you filter which children to show
          */
-        set_filter_func(filter_func: (FlowBoxFilterFunc | null)): void;
+        set_filter_func(filter_func: FlowBoxFilterFunc | null): void;
 
         /**
          * Hooks up an adjustment to focus handling in `box`.
@@ -49072,7 +49021,7 @@ export namespace Gtk {
          * (see `gtk_flow_box_bind_model()`).
          * @param sort_func the sort function
          */
-        set_sort_func(sort_func: (FlowBoxSortFunc | null)): void;
+        set_sort_func(sort_func: FlowBoxSortFunc | null): void;
 
         /**
          * Hooks up an adjustment to focus handling in `box`.
@@ -49149,9 +49098,7 @@ export namespace Gtk {
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends ContainerAccessible.ConstructorProps, Atk.Component.ConstructorProps, Atk.Selection.ConstructorProps {
-
-        }
+        interface ConstructorProps extends ContainerAccessible.ConstructorProps, Atk.Component.ConstructorProps, Atk.Selection.ConstructorProps {}
     }
 
     /**
@@ -49233,7 +49180,7 @@ export namespace Gtk {
          * @param i a `gint` specifying the index in the selection set.  (e.g. the ith selection as opposed to the ith child).
          * @returns an {@link Atk.Object} representing the selected accessible, or `null` if `selection` does not implement this interface.
          */
-        ref_selection(i: number): (Atk.Object | null);
+        ref_selection(i: number): Atk.Object | null;
 
         /**
          * Removes the specified child of the object from the object's selection.
@@ -49295,7 +49242,7 @@ export namespace Gtk {
          * @param i a `gint` specifying the index in the selection set.  (e.g. the ith selection as opposed to the ith child).
          * @virtual
          */
-        vfunc_ref_selection(i: number): (Atk.Object | null);
+        vfunc_ref_selection(i: number): Atk.Object | null;
 
         /**
          * Removes the specified child of the object from the object's selection.
@@ -49379,9 +49326,7 @@ export namespace Gtk {
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends Bin.ConstructorProps, Atk.ImplementorIface.ConstructorProps, Buildable.ConstructorProps {
-
-        }
+        interface ConstructorProps extends Bin.ConstructorProps, Atk.ImplementorIface.ConstructorProps, Buildable.ConstructorProps {}
     }
 
     /**
@@ -49485,9 +49430,7 @@ export namespace Gtk {
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends ContainerAccessible.ConstructorProps, Atk.Component.ConstructorProps {
-
-        }
+        interface ConstructorProps extends ContainerAccessible.ConstructorProps, Atk.Component.ConstructorProps {}
     }
 
     /**
@@ -49866,15 +49809,15 @@ export namespace Gtk {
          * @default null
           * @category Inherited from Gtk.Actionable
          */
-        get action_name(): (string | null);
-        set action_name(val: (string | null));
+        get action_name(): string | null;
+        set action_name(val: string | null);
 
         /**
          * @default null
           * @category Inherited from Gtk.Actionable
          */
-        get actionName(): (string | null);
-        set actionName(val: (string | null));
+        get actionName(): string | null;
+        set actionName(val: string | null);
 
         /** @category Inherited from Gtk.Actionable */
         get action_target(): GLib.Variant;
@@ -49953,22 +49896,22 @@ export namespace Gtk {
          * @default Sans 10
           * @category Inherited from Gtk.FontChooser
          */
-        get font(): (string | null);
-        set font(val: (string | null));
+        get font(): string | null;
+        set font(val: string | null);
 
         /**
          * The font description as a {@link Pango.FontDescription}.
           * @category Inherited from Gtk.FontChooser
          */
-        get font_desc(): (Pango.FontDescription | null);
-        set font_desc(val: (Pango.FontDescription | null));
+        get font_desc(): Pango.FontDescription | null;
+        set font_desc(val: Pango.FontDescription | null);
 
         /**
          * The font description as a {@link Pango.FontDescription}.
           * @category Inherited from Gtk.FontChooser
          */
-        get fontDesc(): (Pango.FontDescription | null);
-        set fontDesc(val: (Pango.FontDescription | null));
+        get fontDesc(): Pango.FontDescription | null;
+        set fontDesc(val: Pango.FontDescription | null);
 
         /**
          * The selected font features, in a format that is compatible with
@@ -50045,7 +49988,7 @@ export namespace Gtk {
          * See `gtk_actionable_set_action_name()` for more information.
          * @returns the action name, or `null` if none is set
          */
-        get_action_name(): (string | null);
+        get_action_name(): string | null;
 
         /**
          * Gets the current target value of `actionable`.
@@ -50069,7 +50012,7 @@ export namespace Gtk {
          * associated with the window.
          * @param action_name an action name, or `null`
          */
-        set_action_name(action_name: (string | null)): void;
+        set_action_name(action_name: string | null): void;
 
         /**
          * Sets the target value of an actionable widget.
@@ -50093,7 +50036,7 @@ export namespace Gtk {
          * rendered inactive).
          * @param target_value a {@link GLib.Variant} to set as the target value, or `null`
          */
-        set_action_target_value(target_value: (GLib.Variant | null)): void;
+        set_action_target_value(target_value: GLib.Variant | null): void;
 
         /**
          * Sets the action-name and associated string target value of an
@@ -50117,7 +50060,7 @@ export namespace Gtk {
          * See `gtk_actionable_set_action_name()` for more information.
          * @virtual
          */
-        vfunc_get_action_name(): (string | null);
+        vfunc_get_action_name(): string | null;
 
         /**
          * Gets the current target value of `actionable`.
@@ -50142,7 +50085,7 @@ export namespace Gtk {
          * @param action_name an action name, or `null`
          * @virtual
          */
-        vfunc_set_action_name(action_name: (string | null)): void;
+        vfunc_set_action_name(action_name: string | null): void;
 
         /**
          * Sets the target value of an actionable widget.
@@ -50167,7 +50110,7 @@ export namespace Gtk {
          * @param target_value a {@link GLib.Variant} to set as the target value, or `null`
          * @virtual
          */
-        vfunc_set_action_target_value(target_value: (GLib.Variant | null)): void;
+        vfunc_set_action_target_value(target_value: GLib.Variant | null): void;
 
         /**
          * This is a utility function for {@link Gtk.Activatable} implementors.
@@ -50231,7 +50174,7 @@ export namespace Gtk {
          * {@link Gtk.Activatable.use_action_appearance} changes.
          * @param action the related {@link Gtk.Action} or `null`
          */
-        sync_action_properties(action: (Action | null)): void;
+        sync_action_properties(action: Action | null): void;
 
         /**
          * This is called to update the activatable completely, this is called
@@ -50241,7 +50184,7 @@ export namespace Gtk {
          * @param action the related {@link Gtk.Action} or `null`
          * @virtual
          */
-        vfunc_sync_action_properties(action: (Action | null)): void;
+        vfunc_sync_action_properties(action: Action | null): void;
 
         /**
          * Called to update the activatable when its related action’s properties change.
@@ -50266,7 +50209,7 @@ export namespace Gtk {
          * font descriptions.
          * @returns A string with the name     of the current font, or `null` if  no font is selected. You must     free this string with `g_free()`.
          */
-        get_font(): (string | null);
+        get_font(): string | null;
 
         /**
          * Gets the currently-selected font.
@@ -50281,7 +50224,7 @@ export namespace Gtk {
          * font descriptions.
          * @returns A {@link Pango.FontDescription} for the     current font, or `null` if  no font is selected.
          */
-        get_font_desc(): (Pango.FontDescription | null);
+        get_font_desc(): Pango.FontDescription | null;
 
         /**
          * Gets the {@link Pango.FontFace} representing the selected font group
@@ -50290,7 +50233,7 @@ export namespace Gtk {
          * If the selected font is not installed, returns `null`.
          * @returns A {@link Pango.FontFace} representing the     selected font group details, or `null`. The returned object is owned by     `fontchooser` and must not be modified or freed.
          */
-        get_font_face(): (Pango.FontFace | null);
+        get_font_face(): Pango.FontFace | null;
 
         /**
          * Gets the {@link Pango.FontFamily} representing the selected font family.
@@ -50299,7 +50242,7 @@ export namespace Gtk {
          * If the selected font is not installed, returns `null`.
          * @returns A {@link Pango.FontFamily} representing the     selected font family, or `null`. The returned object is owned by `fontchooser`     and must not be modified or freed.
          */
-        get_font_family(): (Pango.FontFamily | null);
+        get_font_family(): Pango.FontFamily | null;
 
         /**
          * Gets the currently-selected font features.
@@ -50312,7 +50255,7 @@ export namespace Gtk {
          * or `null` if it does not have one.
          * @returns a {@link Pango.FontMap}, or `null`
          */
-        get_font_map(): (Pango.FontMap | null);
+        get_font_map(): Pango.FontMap | null;
 
         /**
          * The selected font size.
@@ -50349,7 +50292,7 @@ export namespace Gtk {
          * in the font chooser.
          * @param filter a {@link Gtk.FontFilterFunc}, or `null`
          */
-        set_filter_func(filter: (FontFilterFunc | null)): void;
+        set_filter_func(filter: FontFilterFunc | null): void;
 
         /**
          * Sets the currently-selected font.
@@ -50394,7 +50337,7 @@ export namespace Gtk {
          * 
          * @param fontmap a {@link Pango.FontMap}
          */
-        set_font_map(fontmap: (Pango.FontMap | null)): void;
+        set_font_map(fontmap: Pango.FontMap | null): void;
 
         /**
          * Sets the language to use for font features.
@@ -50434,7 +50377,7 @@ export namespace Gtk {
          * If the selected font is not installed, returns `null`.
          * @virtual
          */
-        vfunc_get_font_face(): (Pango.FontFace | null);
+        vfunc_get_font_face(): Pango.FontFace | null;
 
         /**
          * Gets the {@link Pango.FontFamily} representing the selected font family.
@@ -50443,14 +50386,14 @@ export namespace Gtk {
          * If the selected font is not installed, returns `null`.
          * @virtual
          */
-        vfunc_get_font_family(): (Pango.FontFamily | null);
+        vfunc_get_font_family(): Pango.FontFamily | null;
 
         /**
          * Gets the custom font map of this font chooser widget,
          * or `null` if it does not have one.
          * @virtual
          */
-        vfunc_get_font_map(): (Pango.FontMap | null);
+        vfunc_get_font_map(): Pango.FontMap | null;
 
         /**
          * The selected font size.
@@ -50464,7 +50407,7 @@ export namespace Gtk {
          * @param filter a {@link Gtk.FontFilterFunc}, or `null`
          * @virtual
          */
-        vfunc_set_filter_func(filter: (FontFilterFunc | null)): void;
+        vfunc_set_filter_func(filter: FontFilterFunc | null): void;
 
         /**
          * Sets a custom font map to use for this font chooser widget.
@@ -50498,7 +50441,7 @@ export namespace Gtk {
          * @param fontmap a {@link Pango.FontMap}
          * @virtual
          */
-        vfunc_set_font_map(fontmap: (Pango.FontMap | null)): void;
+        vfunc_set_font_map(fontmap: Pango.FontMap | null): void;
 
         /**
          * Emits a {@link Gtk.Widget.SignalSignatures.child_notify | Gtk.Widget::child-notify} signal for the
@@ -50625,9 +50568,7 @@ export namespace Gtk {
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends Dialog.ConstructorProps, Atk.ImplementorIface.ConstructorProps, Buildable.ConstructorProps, FontChooser.ConstructorProps {
-
-        }
+        interface ConstructorProps extends Dialog.ConstructorProps, Atk.ImplementorIface.ConstructorProps, Buildable.ConstructorProps, FontChooser.ConstructorProps {}
     }
 
     /**
@@ -50659,7 +50600,7 @@ export namespace Gtk {
 
         _init(...args: any[]): void;
 
-        static ["new"](title: (string | null), parent: (Window | null)): FontChooserDialog;
+        static ["new"](title: string | null, parent: Window | null): FontChooserDialog;
 
         // Conflicted with Gtk.Dialog.new
         static ["new"](...args: never[]): any;
@@ -50682,22 +50623,22 @@ export namespace Gtk {
          * @default Sans 10
           * @category Inherited from Gtk.FontChooser
          */
-        get font(): (string | null);
-        set font(val: (string | null));
+        get font(): string | null;
+        set font(val: string | null);
 
         /**
          * The font description as a {@link Pango.FontDescription}.
           * @category Inherited from Gtk.FontChooser
          */
-        get font_desc(): (Pango.FontDescription | null);
-        set font_desc(val: (Pango.FontDescription | null));
+        get font_desc(): Pango.FontDescription | null;
+        set font_desc(val: Pango.FontDescription | null);
 
         /**
          * The font description as a {@link Pango.FontDescription}.
           * @category Inherited from Gtk.FontChooser
          */
-        get fontDesc(): (Pango.FontDescription | null);
-        set fontDesc(val: (Pango.FontDescription | null));
+        get fontDesc(): Pango.FontDescription | null;
+        set fontDesc(val: Pango.FontDescription | null);
 
         /**
          * The selected font features, in a format that is compatible with
@@ -50781,7 +50722,7 @@ export namespace Gtk {
          * font descriptions.
          * @returns A string with the name     of the current font, or `null` if  no font is selected. You must     free this string with `g_free()`.
          */
-        get_font(): (string | null);
+        get_font(): string | null;
 
         /**
          * Gets the currently-selected font.
@@ -50796,7 +50737,7 @@ export namespace Gtk {
          * font descriptions.
          * @returns A {@link Pango.FontDescription} for the     current font, or `null` if  no font is selected.
          */
-        get_font_desc(): (Pango.FontDescription | null);
+        get_font_desc(): Pango.FontDescription | null;
 
         /**
          * Gets the {@link Pango.FontFace} representing the selected font group
@@ -50805,7 +50746,7 @@ export namespace Gtk {
          * If the selected font is not installed, returns `null`.
          * @returns A {@link Pango.FontFace} representing the     selected font group details, or `null`. The returned object is owned by     `fontchooser` and must not be modified or freed.
          */
-        get_font_face(): (Pango.FontFace | null);
+        get_font_face(): Pango.FontFace | null;
 
         /**
          * Gets the {@link Pango.FontFamily} representing the selected font family.
@@ -50814,7 +50755,7 @@ export namespace Gtk {
          * If the selected font is not installed, returns `null`.
          * @returns A {@link Pango.FontFamily} representing the     selected font family, or `null`. The returned object is owned by `fontchooser`     and must not be modified or freed.
          */
-        get_font_family(): (Pango.FontFamily | null);
+        get_font_family(): Pango.FontFamily | null;
 
         /**
          * Gets the currently-selected font features.
@@ -50827,7 +50768,7 @@ export namespace Gtk {
          * or `null` if it does not have one.
          * @returns a {@link Pango.FontMap}, or `null`
          */
-        get_font_map(): (Pango.FontMap | null);
+        get_font_map(): Pango.FontMap | null;
 
         /**
          * The selected font size.
@@ -50864,7 +50805,7 @@ export namespace Gtk {
          * in the font chooser.
          * @param filter a {@link Gtk.FontFilterFunc}, or `null`
          */
-        set_filter_func(filter: (FontFilterFunc | null)): void;
+        set_filter_func(filter: FontFilterFunc | null): void;
 
         /**
          * Sets the currently-selected font.
@@ -50909,7 +50850,7 @@ export namespace Gtk {
          * 
          * @param fontmap a {@link Pango.FontMap}
          */
-        set_font_map(fontmap: (Pango.FontMap | null)): void;
+        set_font_map(fontmap: Pango.FontMap | null): void;
 
         /**
          * Sets the language to use for font features.
@@ -50949,7 +50890,7 @@ export namespace Gtk {
          * If the selected font is not installed, returns `null`.
          * @virtual
          */
-        vfunc_get_font_face(): (Pango.FontFace | null);
+        vfunc_get_font_face(): Pango.FontFace | null;
 
         /**
          * Gets the {@link Pango.FontFamily} representing the selected font family.
@@ -50958,14 +50899,14 @@ export namespace Gtk {
          * If the selected font is not installed, returns `null`.
          * @virtual
          */
-        vfunc_get_font_family(): (Pango.FontFamily | null);
+        vfunc_get_font_family(): Pango.FontFamily | null;
 
         /**
          * Gets the custom font map of this font chooser widget,
          * or `null` if it does not have one.
          * @virtual
          */
-        vfunc_get_font_map(): (Pango.FontMap | null);
+        vfunc_get_font_map(): Pango.FontMap | null;
 
         /**
          * The selected font size.
@@ -50979,7 +50920,7 @@ export namespace Gtk {
          * @param filter a {@link Gtk.FontFilterFunc}, or `null`
          * @virtual
          */
-        vfunc_set_filter_func(filter: (FontFilterFunc | null)): void;
+        vfunc_set_filter_func(filter: FontFilterFunc | null): void;
 
         /**
          * Sets a custom font map to use for this font chooser widget.
@@ -51013,7 +50954,7 @@ export namespace Gtk {
          * @param fontmap a {@link Pango.FontMap}
          * @virtual
          */
-        vfunc_set_font_map(fontmap: (Pango.FontMap | null)): void;
+        vfunc_set_font_map(fontmap: Pango.FontMap | null): void;
     }
 
 
@@ -51164,22 +51105,22 @@ export namespace Gtk {
          * @default Sans 10
           * @category Inherited from Gtk.FontChooser
          */
-        get font(): (string | null);
-        set font(val: (string | null));
+        get font(): string | null;
+        set font(val: string | null);
 
         /**
          * The font description as a {@link Pango.FontDescription}.
           * @category Inherited from Gtk.FontChooser
          */
-        get font_desc(): (Pango.FontDescription | null);
-        set font_desc(val: (Pango.FontDescription | null));
+        get font_desc(): Pango.FontDescription | null;
+        set font_desc(val: Pango.FontDescription | null);
 
         /**
          * The font description as a {@link Pango.FontDescription}.
           * @category Inherited from Gtk.FontChooser
          */
-        get fontDesc(): (Pango.FontDescription | null);
-        set fontDesc(val: (Pango.FontDescription | null));
+        get fontDesc(): Pango.FontDescription | null;
+        set fontDesc(val: Pango.FontDescription | null);
 
         /**
          * The selected font features, in a format that is compatible with
@@ -51272,7 +51213,7 @@ export namespace Gtk {
          * font descriptions.
          * @returns A string with the name     of the current font, or `null` if  no font is selected. You must     free this string with `g_free()`.
          */
-        get_font(): (string | null);
+        get_font(): string | null;
 
         /**
          * Gets the currently-selected font.
@@ -51287,7 +51228,7 @@ export namespace Gtk {
          * font descriptions.
          * @returns A {@link Pango.FontDescription} for the     current font, or `null` if  no font is selected.
          */
-        get_font_desc(): (Pango.FontDescription | null);
+        get_font_desc(): Pango.FontDescription | null;
 
         /**
          * Gets the {@link Pango.FontFace} representing the selected font group
@@ -51296,7 +51237,7 @@ export namespace Gtk {
          * If the selected font is not installed, returns `null`.
          * @returns A {@link Pango.FontFace} representing the     selected font group details, or `null`. The returned object is owned by     `fontchooser` and must not be modified or freed.
          */
-        get_font_face(): (Pango.FontFace | null);
+        get_font_face(): Pango.FontFace | null;
 
         /**
          * Gets the {@link Pango.FontFamily} representing the selected font family.
@@ -51305,7 +51246,7 @@ export namespace Gtk {
          * If the selected font is not installed, returns `null`.
          * @returns A {@link Pango.FontFamily} representing the     selected font family, or `null`. The returned object is owned by `fontchooser`     and must not be modified or freed.
          */
-        get_font_family(): (Pango.FontFamily | null);
+        get_font_family(): Pango.FontFamily | null;
 
         /**
          * Gets the currently-selected font features.
@@ -51318,7 +51259,7 @@ export namespace Gtk {
          * or `null` if it does not have one.
          * @returns a {@link Pango.FontMap}, or `null`
          */
-        get_font_map(): (Pango.FontMap | null);
+        get_font_map(): Pango.FontMap | null;
 
         /**
          * The selected font size.
@@ -51355,7 +51296,7 @@ export namespace Gtk {
          * in the font chooser.
          * @param filter a {@link Gtk.FontFilterFunc}, or `null`
          */
-        set_filter_func(filter: (FontFilterFunc | null)): void;
+        set_filter_func(filter: FontFilterFunc | null): void;
 
         /**
          * Sets the currently-selected font.
@@ -51400,7 +51341,7 @@ export namespace Gtk {
          * 
          * @param fontmap a {@link Pango.FontMap}
          */
-        set_font_map(fontmap: (Pango.FontMap | null)): void;
+        set_font_map(fontmap: Pango.FontMap | null): void;
 
         /**
          * Sets the language to use for font features.
@@ -51440,7 +51381,7 @@ export namespace Gtk {
          * If the selected font is not installed, returns `null`.
          * @virtual
          */
-        vfunc_get_font_face(): (Pango.FontFace | null);
+        vfunc_get_font_face(): Pango.FontFace | null;
 
         /**
          * Gets the {@link Pango.FontFamily} representing the selected font family.
@@ -51449,14 +51390,14 @@ export namespace Gtk {
          * If the selected font is not installed, returns `null`.
          * @virtual
          */
-        vfunc_get_font_family(): (Pango.FontFamily | null);
+        vfunc_get_font_family(): Pango.FontFamily | null;
 
         /**
          * Gets the custom font map of this font chooser widget,
          * or `null` if it does not have one.
          * @virtual
          */
-        vfunc_get_font_map(): (Pango.FontMap | null);
+        vfunc_get_font_map(): Pango.FontMap | null;
 
         /**
          * The selected font size.
@@ -51470,7 +51411,7 @@ export namespace Gtk {
          * @param filter a {@link Gtk.FontFilterFunc}, or `null`
          * @virtual
          */
-        vfunc_set_filter_func(filter: (FontFilterFunc | null)): void;
+        vfunc_set_filter_func(filter: FontFilterFunc | null): void;
 
         /**
          * Sets a custom font map to use for this font chooser widget.
@@ -51504,7 +51445,7 @@ export namespace Gtk {
          * @param fontmap a {@link Pango.FontMap}
          * @virtual
          */
-        vfunc_set_font_map(fontmap: (Pango.FontMap | null)): void;
+        vfunc_set_font_map(fontmap: Pango.FontMap | null): void;
 
         /**
          * Retrieves the orientation of the `orientable`.
@@ -51837,9 +51778,7 @@ export namespace Gtk {
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends Dialog.ConstructorProps, Atk.ImplementorIface.ConstructorProps, Buildable.ConstructorProps {
-
-        }
+        interface ConstructorProps extends Dialog.ConstructorProps, Atk.ImplementorIface.ConstructorProps, Buildable.ConstructorProps {}
     }
 
     /**
@@ -51987,9 +51926,9 @@ export namespace Gtk {
 
         // Constructor properties interface
         interface ConstructorProps extends Bin.ConstructorProps, Atk.ImplementorIface.ConstructorProps, Buildable.ConstructorProps {
-            label: (string | null);
-            label_widget: (Widget | null);
-            labelWidget: (Widget | null);
+            label: string | null;
+            label_widget: Widget | null;
+            labelWidget: Widget | null;
             label_xalign: number;
             labelXalign: number;
             label_yalign: number;
@@ -52055,14 +51994,14 @@ export namespace Gtk {
         /**
          * @default null
          */
-        get label(): (string | null);
-        set label(val: (string | null));
+        get label(): string | null;
+        set label(val: string | null);
 
-        get label_widget(): (Widget | null);
-        set label_widget(val: (Widget | null));
+        get label_widget(): Widget | null;
+        set label_widget(val: Widget | null);
 
-        get labelWidget(): (Widget | null);
-        set labelWidget(val: (Widget | null));
+        get labelWidget(): Widget | null;
+        set labelWidget(val: Widget | null);
 
         /**
          * @default 0
@@ -52117,7 +52056,7 @@ export namespace Gtk {
 
         _init(...args: any[]): void;
 
-        static ["new"](label: (string | null)): Frame;
+        static ["new"](label: string | null): Frame;
 
         // Signals
         /** @signal */
@@ -52147,7 +52086,7 @@ export namespace Gtk {
          * to `gtk_frame_new()`.)
          * @returns the text in the label, or `null` if there               was no label widget or the lable widget was not               a {@link Gtk.Label}. This string is owned by GTK+ and               must not be modified or freed.
          */
-        get_label(): (string | null);
+        get_label(): string | null;
 
         /**
          * Retrieves the X and Y alignment of the frame’s label. See
@@ -52160,7 +52099,7 @@ export namespace Gtk {
          * `gtk_frame_set_label_widget()`.
          * @returns the label widget, or `null` if there is none.
          */
-        get_label_widget(): (Widget | null);
+        get_label_widget(): Widget | null;
 
         /**
          * Retrieves the shadow type of the frame. See
@@ -52174,7 +52113,7 @@ export namespace Gtk {
          * new {@link Gtk.Label} with that text and adds it as the {@link Gtk.Frame.label_widget}.
          * @param label the text to use as the label of the frame
          */
-        set_label(label: (string | null)): void;
+        set_label(label: string | null): void;
 
         /**
          * Sets the alignment of the frame widget’s label. The
@@ -52189,7 +52128,7 @@ export namespace Gtk {
          * will appear embedded in the top edge of the frame as a title.
          * @param label_widget the new label widget
          */
-        set_label_widget(label_widget: (Widget | null)): void;
+        set_label_widget(label_widget: Widget | null): void;
 
         /**
          * Sets the {@link Gtk.Frame.shadow_type} for `frame`, i.e. whether it is drawn without
@@ -52226,9 +52165,7 @@ export namespace Gtk {
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends ContainerAccessible.ConstructorProps, Atk.Component.ConstructorProps {
-
-        }
+        interface ConstructorProps extends ContainerAccessible.ConstructorProps, Atk.Component.ConstructorProps {}
     }
 
     /**
@@ -52294,7 +52231,7 @@ export namespace Gtk {
              * @since 3.16
              * @run-last
              */
-            render: (arg0: Gdk.GLContext) => (boolean | void);
+            render: (arg0: Gdk.GLContext) => boolean | void;
             /**
              * The ::resize signal is emitted once when the widget is realized, and
              * then each time the widget is changed while realized. This is useful
@@ -52686,7 +52623,7 @@ export namespace Gtk {
          * Gets the current error set on the `area`.
          * @returns the {@link GLib.Error} or `null`
          */
-        get_error(): (GLib.Error | null);
+        get_error(): GLib.Error | null;
 
         /**
          * Returns whether the area has an alpha component.
@@ -52759,7 +52696,7 @@ export namespace Gtk {
          * signal if GL context creation fails.
          * @param error a new {@link GLib.Error}, or `null` to unset the error
          */
-        set_error(error: (GLib.Error | null)): void;
+        set_error(error: GLib.Error | null): void;
 
         /**
          * If `has_alpha` is `true` the buffer allocated by the widget will have
@@ -52814,7 +52751,7 @@ export namespace Gtk {
          * @param child child to add
          * @param type kind of child or `null`
          */
-        add_child(builder: Builder, child: GObject.Object, type: (string | null)): void;
+        add_child(builder: Builder, child: GObject.Object, type: string | null): void;
 
         /**
          * Constructs a child of `buildable` with the name `name`.
@@ -52835,7 +52772,7 @@ export namespace Gtk {
          * @param tagname the name of the tag
          * @param data user data created in custom_tag_start
          */
-        custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
+        custom_finished(builder: Builder, child: GObject.Object | null, tagname: string, data: null): void;
 
         /**
          * This is called at the end of each custom element handled by
@@ -52845,7 +52782,7 @@ export namespace Gtk {
          * @param tagname name of tag
          * @param data user data that will be passed in to parser functions
          */
-        custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
+        custom_tag_end(builder: Builder, child: GObject.Object | null, tagname: string, data: null): void;
 
         /**
          * This is called for each unknown element under `<child>`.
@@ -52854,7 +52791,7 @@ export namespace Gtk {
          * @param tagname name of tag
          * @returns `true` if a object has a custom implementation, `false`          if it doesn't.
          */
-        custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, GLib.MarkupParser, null];
+        custom_tag_start(builder: Builder, child: GObject.Object | null, tagname: string): [boolean, GLib.MarkupParser, null];
 
         /**
          * Get the internal child called `childname` of the `buildable` object.
@@ -52890,7 +52827,7 @@ export namespace Gtk {
          * @param name name of property
          * @param value value of property
          */
-        set_buildable_property(builder: Builder, name: string, value: (GObject.Value | any)): void;
+        set_buildable_property(builder: Builder, name: string, value: GObject.Value | any): void;
 
         /**
          * Sets the name of the `buildable` object.
@@ -52906,7 +52843,7 @@ export namespace Gtk {
          * @param type kind of child or `null`
          * @virtual
          */
-        vfunc_add_child(builder: Builder, child: GObject.Object, type: (string | null)): void;
+        vfunc_add_child(builder: Builder, child: GObject.Object, type: string | null): void;
 
         /**
          * Constructs a child of `buildable` with the name `name`.
@@ -52928,7 +52865,7 @@ export namespace Gtk {
          * @param data user data created in custom_tag_start
          * @virtual
          */
-        vfunc_custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
+        vfunc_custom_finished(builder: Builder, child: GObject.Object | null, tagname: string, data: null): void;
 
         /**
          * This is called at the end of each custom element handled by
@@ -52939,7 +52876,7 @@ export namespace Gtk {
          * @param data user data that will be passed in to parser functions
          * @virtual
          */
-        vfunc_custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
+        vfunc_custom_tag_end(builder: Builder, child: GObject.Object | null, tagname: string, data: null): void;
 
         /**
          * This is called for each unknown element under `<child>`.
@@ -52948,7 +52885,7 @@ export namespace Gtk {
          * @param tagname name of tag
          * @virtual
          */
-        vfunc_custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, GLib.MarkupParser, never];
+        vfunc_custom_tag_start(builder: Builder, child: GObject.Object | null, tagname: string): [boolean, GLib.MarkupParser, never];
 
         /**
          * Get the internal child called `childname` of the `buildable` object.
@@ -53012,7 +52949,7 @@ export namespace Gtk {
              * @since 3.14
              * @run-last
              */
-            begin: (arg0: (Gdk.EventSequence | null)) => void;
+            begin: (arg0: Gdk.EventSequence | null) => void;
             /**
              * This signal is emitted whenever a sequence is cancelled. This usually
              * happens on active touches when `gtk_event_controller_reset()` is called
@@ -53024,7 +52961,7 @@ export namespace Gtk {
              * @since 3.14
              * @run-last
              */
-            cancel: (arg0: (Gdk.EventSequence | null)) => void;
+            cancel: (arg0: Gdk.EventSequence | null) => void;
             /**
              * This signal is emitted when `gesture` either stopped recognizing the event
              * sequences as something to be handled (the {@link Gtk.Gesture.SignalSignatures.check | Gtk.Gesture::check} handler returned
@@ -53039,7 +52976,7 @@ export namespace Gtk {
              * @since 3.14
              * @run-last
              */
-            end: (arg0: (Gdk.EventSequence | null)) => void;
+            end: (arg0: Gdk.EventSequence | null) => void;
             /**
              * This signal is emitted whenever a sequence state changes. See
              * `gtk_gesture_set_sequence_state()` to know more about the expectable
@@ -53048,7 +52985,7 @@ export namespace Gtk {
              * @since 3.14
              * @run-last
              */
-            "sequence-state-changed": (arg0: (Gdk.EventSequence | null), arg1: EventSequenceState) => void;
+            "sequence-state-changed": (arg0: Gdk.EventSequence | null, arg1: EventSequenceState) => void;
             /**
              * This signal is emitted whenever an event is handled while the gesture is
              * recognized. `sequence` is guaranteed to pertain to the set of active touches.
@@ -53056,7 +52993,7 @@ export namespace Gtk {
              * @since 3.14
              * @run-last
              */
-            update: (arg0: (Gdk.EventSequence | null)) => void;
+            update: (arg0: Gdk.EventSequence | null) => void;
             "notify::n-points": (pspec: GObject.ParamSpec) => void;
             "notify::window": (pspec: GObject.ParamSpec) => void;
             "notify::propagation-phase": (pspec: GObject.ParamSpec) => void;
@@ -53067,7 +53004,7 @@ export namespace Gtk {
         interface ConstructorProps extends EventController.ConstructorProps {
             n_points: number;
             nPoints: number;
-            window: (Gdk.Window | null);
+            window: Gdk.Window | null;
         }
     }
 
@@ -53188,8 +53125,8 @@ export namespace Gtk {
          * this {@link Gdk.Window}, or a child of it.
          * @since 3.14
          */
-        get window(): (Gdk.Window | null);
-        set window(val: (Gdk.Window | null));
+        get window(): Gdk.Window | null;
+        set window(val: Gdk.Window | null);
 
         /**
          * Compile-time signal type information.
@@ -53248,7 +53185,7 @@ export namespace Gtk {
          * on `gesture`, or `null` if the gesture is not being interacted.
          * @returns a {@link Gdk.Device}, or `null`
          */
-        get_device(): (Gdk.Device | null);
+        get_device(): Gdk.Device | null;
 
         /**
          * Returns all gestures in the group of `gesture`
@@ -53265,13 +53202,13 @@ export namespace Gtk {
          * @param sequence a {@link Gdk.EventSequence}
          * @returns The last event from `sequence`
          */
-        get_last_event(sequence: (Gdk.EventSequence | null)): (Gdk.Event | null);
+        get_last_event(sequence: Gdk.EventSequence | null): Gdk.Event | null;
 
         /**
          * Returns the {@link Gdk.EventSequence} that was last updated on `gesture`.
          * @returns The last updated sequence
          */
-        get_last_updated_sequence(): (Gdk.EventSequence | null);
+        get_last_updated_sequence(): Gdk.EventSequence | null;
 
         /**
          * If `sequence` is currently being interpreted by `gesture`, this
@@ -53281,7 +53218,7 @@ export namespace Gtk {
          * @param sequence a {@link Gdk.EventSequence}, or `null` for pointer events
          * @returns `true` if `sequence` is currently interpreted
          */
-        get_point(sequence: (Gdk.EventSequence | null)): [boolean, number, number];
+        get_point(sequence: Gdk.EventSequence | null): [boolean, number, number];
 
         /**
          * Returns the `sequence` state, as seen by `gesture`.
@@ -53303,7 +53240,7 @@ export namespace Gtk {
          * information.
          * @returns the user defined window, or `null` if none
          */
-        get_window(): (Gdk.Window | null);
+        get_window(): Gdk.Window | null;
 
         /**
          * Adds `gesture` to the same group than `group_gesture`. Gestures
@@ -53327,7 +53264,7 @@ export namespace Gtk {
          * @param sequence a {@link Gdk.EventSequence} or `null`
          * @returns `true` if `gesture` is handling `sequence`, `false` otherwise
          */
-        handles_sequence(sequence: (Gdk.EventSequence | null)): boolean;
+        handles_sequence(sequence: Gdk.EventSequence | null): boolean;
 
         /**
          * Returns `true` if the gesture is currently active.
@@ -53419,7 +53356,7 @@ export namespace Gtk {
          * a child of it. `window` must pertain to `gtk_event_controller_get_widget()`.
          * @param window a {@link Gdk.Window}, or `null`
          */
-        set_window(window: (Gdk.Window | null)): void;
+        set_window(window: Gdk.Window | null): void;
 
         /**
          * Separates `gesture` into an isolated group.
@@ -53462,9 +53399,7 @@ export namespace Gtk {
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends GestureSingle.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GestureSingle.ConstructorProps {}
     }
 
     /**
@@ -53658,9 +53593,7 @@ export namespace Gtk {
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends GestureSingle.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GestureSingle.ConstructorProps {}
     }
 
     /**
@@ -53730,7 +53663,7 @@ export namespace Gtk {
          * akin to an input shape.
          * @param rect rectangle to receive coordinates on
          */
-        set_area(rect: (Gdk.Rectangle | null)): void;
+        set_area(rect: Gdk.Rectangle | null): void;
     }
 
 
@@ -53855,9 +53788,7 @@ export namespace Gtk {
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends Gesture.ConstructorProps {
-
-        }
+        interface ConstructorProps extends Gesture.ConstructorProps {}
     }
 
     /**
@@ -54029,7 +53960,7 @@ export namespace Gtk {
          * This is only meaningful if `gtk_gesture_is_active()` returns `true`.
          * @returns the current sequence
          */
-        get_current_sequence(): (Gdk.EventSequence | null);
+        get_current_sequence(): Gdk.EventSequence | null;
 
         /**
          * Gets whether a gesture is exclusive. For more information, see
@@ -54104,9 +54035,7 @@ export namespace Gtk {
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends GestureSingle.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GestureSingle.ConstructorProps {}
     }
 
     /**
@@ -54174,7 +54103,7 @@ export namespace Gtk {
          * signal handlers.
          * @returns The current stylus tool
          */
-        get_device_tool(): (Gdk.DeviceTool | null);
+        get_device_tool(): Gdk.DeviceTool | null;
     }
 
 
@@ -54199,9 +54128,7 @@ export namespace Gtk {
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends GestureSingle.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GestureSingle.ConstructorProps {}
     }
 
     /**
@@ -54278,9 +54205,7 @@ export namespace Gtk {
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends Gesture.ConstructorProps {
-
-        }
+        interface ConstructorProps extends Gesture.ConstructorProps {}
     }
 
     /**
@@ -54544,7 +54469,7 @@ export namespace Gtk {
          * @param width the number of columns that `child` will span
          * @param height the number of rows that `child` will span
          */
-        attach_next_to(child: Widget, sibling: (Widget | null), side: PositionType, width: number, height: number): void;
+        attach_next_to(child: Widget, sibling: Widget | null, side: PositionType, width: number, height: number): void;
 
         /**
          * Returns which row defines the global baseline of `grid`.
@@ -54559,7 +54484,7 @@ export namespace Gtk {
          * @param top the top edge of the cell
          * @returns the child at the given position, or `null`
          */
-        get_child_at(left: number, top: number): (Widget | null);
+        get_child_at(left: number, top: number): Widget | null;
 
         /**
          * Returns whether all columns of `grid` have the same width.
@@ -54764,9 +54689,7 @@ export namespace Gtk {
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends Box.ConstructorProps, Atk.ImplementorIface.ConstructorProps, Buildable.ConstructorProps, Orientable.ConstructorProps {
-
-        }
+        interface ConstructorProps extends Box.ConstructorProps, Atk.ImplementorIface.ConstructorProps, Buildable.ConstructorProps, Orientable.ConstructorProps {}
     }
 
     /**
@@ -54903,9 +54826,7 @@ export namespace Gtk {
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends ButtonBox.ConstructorProps, Atk.ImplementorIface.ConstructorProps, Buildable.ConstructorProps, Orientable.ConstructorProps {
-
-        }
+        interface ConstructorProps extends ButtonBox.ConstructorProps, Atk.ImplementorIface.ConstructorProps, Buildable.ConstructorProps, Orientable.ConstructorProps {}
     }
 
     /**
@@ -55002,9 +54923,7 @@ export namespace Gtk {
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends Paned.ConstructorProps, Atk.ImplementorIface.ConstructorProps, Buildable.ConstructorProps, Orientable.ConstructorProps {
-
-        }
+        interface ConstructorProps extends Paned.ConstructorProps, Atk.ImplementorIface.ConstructorProps, Buildable.ConstructorProps, Orientable.ConstructorProps {}
     }
 
     /**
@@ -55130,9 +55049,7 @@ export namespace Gtk {
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends Widget.ConstructorProps, Atk.ImplementorIface.ConstructorProps, Buildable.ConstructorProps {
-
-        }
+        interface ConstructorProps extends Widget.ConstructorProps, Atk.ImplementorIface.ConstructorProps, Buildable.ConstructorProps {}
     }
 
     /**
@@ -55246,7 +55163,7 @@ export namespace Gtk {
          * @param child child to add
          * @param type kind of child or `null`
          */
-        add_child(builder: Builder, child: GObject.Object, type: (string | null)): void;
+        add_child(builder: Builder, child: GObject.Object, type: string | null): void;
 
         /**
          * Constructs a child of `buildable` with the name `name`.
@@ -55267,7 +55184,7 @@ export namespace Gtk {
          * @param tagname the name of the tag
          * @param data user data created in custom_tag_start
          */
-        custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
+        custom_finished(builder: Builder, child: GObject.Object | null, tagname: string, data: null): void;
 
         /**
          * This is called at the end of each custom element handled by
@@ -55277,7 +55194,7 @@ export namespace Gtk {
          * @param tagname name of tag
          * @param data user data that will be passed in to parser functions
          */
-        custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
+        custom_tag_end(builder: Builder, child: GObject.Object | null, tagname: string, data: null): void;
 
         /**
          * This is called for each unknown element under `<child>`.
@@ -55286,7 +55203,7 @@ export namespace Gtk {
          * @param tagname name of tag
          * @returns `true` if a object has a custom implementation, `false`          if it doesn't.
          */
-        custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, GLib.MarkupParser, null];
+        custom_tag_start(builder: Builder, child: GObject.Object | null, tagname: string): [boolean, GLib.MarkupParser, null];
 
         /**
          * Get the internal child called `childname` of the `buildable` object.
@@ -55322,7 +55239,7 @@ export namespace Gtk {
          * @param name name of property
          * @param value value of property
          */
-        set_buildable_property(builder: Builder, name: string, value: (GObject.Value | any)): void;
+        set_buildable_property(builder: Builder, name: string, value: GObject.Value | any): void;
 
         /**
          * Sets the name of the `buildable` object.
@@ -55338,7 +55255,7 @@ export namespace Gtk {
          * @param type kind of child or `null`
          * @virtual
          */
-        vfunc_add_child(builder: Builder, child: GObject.Object, type: (string | null)): void;
+        vfunc_add_child(builder: Builder, child: GObject.Object, type: string | null): void;
 
         /**
          * Constructs a child of `buildable` with the name `name`.
@@ -55360,7 +55277,7 @@ export namespace Gtk {
          * @param data user data created in custom_tag_start
          * @virtual
          */
-        vfunc_custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
+        vfunc_custom_finished(builder: Builder, child: GObject.Object | null, tagname: string, data: null): void;
 
         /**
          * This is called at the end of each custom element handled by
@@ -55371,7 +55288,7 @@ export namespace Gtk {
          * @param data user data that will be passed in to parser functions
          * @virtual
          */
-        vfunc_custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
+        vfunc_custom_tag_end(builder: Builder, child: GObject.Object | null, tagname: string, data: null): void;
 
         /**
          * This is called for each unknown element under `<child>`.
@@ -55380,7 +55297,7 @@ export namespace Gtk {
          * @param tagname name of tag
          * @virtual
          */
-        vfunc_custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, GLib.MarkupParser, never];
+        vfunc_custom_tag_start(builder: Builder, child: GObject.Object | null, tagname: string): [boolean, GLib.MarkupParser, never];
 
         /**
          * Get the internal child called `childname` of the `buildable` object.
@@ -55486,9 +55403,7 @@ export namespace Gtk {
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends Scale.ConstructorProps, Atk.ImplementorIface.ConstructorProps, Buildable.ConstructorProps, Orientable.ConstructorProps {
-
-        }
+        interface ConstructorProps extends Scale.ConstructorProps, Atk.ImplementorIface.ConstructorProps, Buildable.ConstructorProps, Orientable.ConstructorProps {}
     }
 
     /**
@@ -55521,7 +55436,7 @@ export namespace Gtk {
 
         _init(...args: any[]): void;
 
-        static ["new"](adjustment: (Adjustment | null)): HScale;
+        static ["new"](adjustment: Adjustment | null): HScale;
 
         // Conflicted with Gtk.Scale.new
         static ["new"](...args: never[]): any;
@@ -55599,9 +55514,7 @@ export namespace Gtk {
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends Scrollbar.ConstructorProps, Atk.ImplementorIface.ConstructorProps, Buildable.ConstructorProps, Orientable.ConstructorProps {
-
-        }
+        interface ConstructorProps extends Scrollbar.ConstructorProps, Atk.ImplementorIface.ConstructorProps, Buildable.ConstructorProps, Orientable.ConstructorProps {}
     }
 
     /**
@@ -55635,7 +55548,7 @@ export namespace Gtk {
 
         _init(...args: any[]): void;
 
-        static ["new"](adjustment: (Adjustment | null)): HScrollbar;
+        static ["new"](adjustment: Adjustment | null): HScrollbar;
 
         // Conflicted with Gtk.Scrollbar.new
         static ["new"](...args: never[]): any;
@@ -55701,9 +55614,7 @@ export namespace Gtk {
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends Separator.ConstructorProps, Atk.ImplementorIface.ConstructorProps, Buildable.ConstructorProps, Orientable.ConstructorProps {
-
-        }
+        interface ConstructorProps extends Separator.ConstructorProps, Atk.ImplementorIface.ConstructorProps, Buildable.ConstructorProps, Orientable.ConstructorProps {}
     }
 
     /**
@@ -56119,8 +56030,8 @@ export namespace Gtk {
 
         // Constructor properties interface
         interface ConstructorProps extends Container.ConstructorProps, Atk.ImplementorIface.ConstructorProps, Buildable.ConstructorProps {
-            custom_title: (Widget | null);
-            customTitle: (Widget | null);
+            custom_title: Widget | null;
+            customTitle: Widget | null;
             decoration_layout: string;
             decorationLayout: string;
             decoration_layout_set: boolean;
@@ -56130,8 +56041,8 @@ export namespace Gtk {
             show_close_button: boolean;
             showCloseButton: boolean;
             spacing: number;
-            subtitle: (string | null);
-            title: (string | null);
+            subtitle: string | null;
+            title: string | null;
         }
     }
 
@@ -56157,11 +56068,11 @@ export namespace Gtk {
         static $gtype: GObject.GType<HeaderBar>;
 
         // Properties
-        get custom_title(): (Widget | null);
-        set custom_title(val: (Widget | null));
+        get custom_title(): Widget | null;
+        set custom_title(val: Widget | null);
 
-        get customTitle(): (Widget | null);
-        set customTitle(val: (Widget | null));
+        get customTitle(): Widget | null;
+        set customTitle(val: Widget | null);
 
         /**
          * The decoration layout for buttons. If this property is
@@ -56256,14 +56167,14 @@ export namespace Gtk {
         /**
          * @default null
          */
-        get subtitle(): (string | null);
-        set subtitle(val: (string | null));
+        get subtitle(): string | null;
+        set subtitle(val: string | null);
 
         /**
          * @default null
          */
-        get title(): (string | null);
-        set title(val: (string | null));
+        get title(): string | null;
+        set title(val: string | null);
 
         /**
          * Compile-time signal type information.
@@ -56303,7 +56214,7 @@ export namespace Gtk {
          * `gtk_header_bar_set_custom_title()`.
          * @returns the custom title widget    of the header, or `null` if none has been set explicitly.
          */
-        get_custom_title(): (Widget | null);
+        get_custom_title(): Widget | null;
 
         /**
          * Gets the decoration layout set with
@@ -56330,13 +56241,13 @@ export namespace Gtk {
          * Retrieves the subtitle of the header. See `gtk_header_bar_set_subtitle()`.
          * @returns the subtitle of the header, or `null` if none has    been set explicitly. The returned string is owned by the widget    and must not be modified or freed.
          */
-        get_subtitle(): (string | null);
+        get_subtitle(): string | null;
 
         /**
          * Retrieves the title of the header. See `gtk_header_bar_set_title()`.
          * @returns the title of the header, or `null` if none has    been set explicitly. The returned string is owned by the widget    and must not be modified or freed.
          */
-        get_title(): (string | null);
+        get_title(): string | null;
 
         /**
          * Adds `child` to `bar`, packed with reference to the
@@ -56365,7 +56276,7 @@ export namespace Gtk {
          * label to be visible again.
          * @param title_widget a custom widget to use for a title
          */
-        set_custom_title(title_widget: (Widget | null)): void;
+        set_custom_title(title_widget: Widget | null): void;
 
         /**
          * Sets the decoration layout for this header bar, overriding
@@ -56387,7 +56298,7 @@ export namespace Gtk {
          * on the left, and minimize, maximize and close buttons on the right.
          * @param layout a decoration layout, or `null` to     unset the layout
          */
-        set_decoration_layout(layout: (string | null)): void;
+        set_decoration_layout(layout: string | null): void;
 
         /**
          * Sets whether the header bar should reserve space
@@ -56412,7 +56323,7 @@ export namespace Gtk {
          * {@link Gtk.HeaderBar.has_subtitle} property to `false`.
          * @param subtitle a subtitle, or `null`
          */
-        set_subtitle(subtitle: (string | null)): void;
+        set_subtitle(subtitle: string | null): void;
 
         /**
          * Sets the title of the {@link Gtk.HeaderBar}. The title should help a user
@@ -56420,7 +56331,7 @@ export namespace Gtk {
          * application name.
          * @param title a title, or `null`
          */
-        set_title(title: (string | null)): void;
+        set_title(title: string | null): void;
     }
 
 
@@ -56448,9 +56359,7 @@ export namespace Gtk {
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends ContainerAccessible.ConstructorProps, Atk.Component.ConstructorProps {
-
-        }
+        interface ConstructorProps extends ContainerAccessible.ConstructorProps, Atk.Component.ConstructorProps {}
     }
 
     /**
@@ -56506,7 +56415,7 @@ export namespace Gtk {
              * @signal
              * @run-last
              */
-            "delete-surrounding": (arg0: number, arg1: number) => (boolean | void);
+            "delete-surrounding": (arg0: number, arg1: number) => boolean | void;
             /**
              * The ::preedit-changed signal is emitted whenever the preedit sequence
              * currently being entered has changed.  It is also emitted at the end of
@@ -56538,7 +56447,7 @@ export namespace Gtk {
              * @signal
              * @run-last
              */
-            "retrieve-surrounding": () => (boolean | void);
+            "retrieve-surrounding": () => boolean | void;
             "notify::input-hints": (pspec: GObject.ParamSpec) => void;
             "notify::input-purpose": (pspec: GObject.ParamSpec) => void;
         }
@@ -56810,7 +56719,7 @@ export namespace Gtk {
          * @param window the client window. This may be `null` to indicate           that the previous client window no longer exists.
          * @virtual
          */
-        vfunc_set_client_window(window: (Gdk.Window | null)): void;
+        vfunc_set_client_window(window: Gdk.Window | null): void;
 
         /**
          * Notify the input method that a change in cursor
@@ -56931,7 +56840,7 @@ export namespace Gtk {
          * also be used for purposes internal to the input method.
          * @param window the client window. This may be `null` to indicate           that the previous client window no longer exists.
          */
-        set_client_window(window: (Gdk.Window | null)): void;
+        set_client_window(window: Gdk.Window | null): void;
 
         /**
          * Notify the input method that a change in cursor
@@ -56971,9 +56880,7 @@ export namespace Gtk {
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends IMContext.ConstructorProps {
-
-        }
+        interface ConstructorProps extends IMContext.ConstructorProps {}
     }
 
     /**
@@ -57047,9 +56954,7 @@ export namespace Gtk {
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends IMContext.ConstructorProps {
-
-        }
+        interface ConstructorProps extends IMContext.ConstructorProps {}
     }
 
     /**
@@ -57118,13 +57023,10 @@ export namespace Gtk {
 
     namespace IconFactory {
         // Signal signatures
-        interface SignalSignatures extends GObject.Object.SignalSignatures {
-        }
+        interface SignalSignatures extends GObject.Object.SignalSignatures {}
 
         // Constructor properties interface
-        interface ConstructorProps extends GObject.Object.ConstructorProps, Buildable.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GObject.Object.ConstructorProps, Buildable.ConstructorProps {}
     }
 
     /**
@@ -57297,7 +57199,7 @@ export namespace Gtk {
          * @param child child to add
          * @param type kind of child or `null`
          */
-        add_child(builder: Builder, child: GObject.Object, type: (string | null)): void;
+        add_child(builder: Builder, child: GObject.Object, type: string | null): void;
 
         /**
          * Constructs a child of `buildable` with the name `name`.
@@ -57318,7 +57220,7 @@ export namespace Gtk {
          * @param tagname the name of the tag
          * @param data user data created in custom_tag_start
          */
-        custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
+        custom_finished(builder: Builder, child: GObject.Object | null, tagname: string, data: null): void;
 
         /**
          * This is called at the end of each custom element handled by
@@ -57328,7 +57230,7 @@ export namespace Gtk {
          * @param tagname name of tag
          * @param data user data that will be passed in to parser functions
          */
-        custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
+        custom_tag_end(builder: Builder, child: GObject.Object | null, tagname: string, data: null): void;
 
         /**
          * This is called for each unknown element under `<child>`.
@@ -57337,7 +57239,7 @@ export namespace Gtk {
          * @param tagname name of tag
          * @returns `true` if a object has a custom implementation, `false`          if it doesn't.
          */
-        custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, GLib.MarkupParser, null];
+        custom_tag_start(builder: Builder, child: GObject.Object | null, tagname: string): [boolean, GLib.MarkupParser, null];
 
         /**
          * Get the internal child called `childname` of the `buildable` object.
@@ -57373,7 +57275,7 @@ export namespace Gtk {
          * @param name name of property
          * @param value value of property
          */
-        set_buildable_property(builder: Builder, name: string, value: (GObject.Value | any)): void;
+        set_buildable_property(builder: Builder, name: string, value: GObject.Value | any): void;
 
         /**
          * Sets the name of the `buildable` object.
@@ -57389,7 +57291,7 @@ export namespace Gtk {
          * @param type kind of child or `null`
          * @virtual
          */
-        vfunc_add_child(builder: Builder, child: GObject.Object, type: (string | null)): void;
+        vfunc_add_child(builder: Builder, child: GObject.Object, type: string | null): void;
 
         /**
          * Constructs a child of `buildable` with the name `name`.
@@ -57411,7 +57313,7 @@ export namespace Gtk {
          * @param data user data created in custom_tag_start
          * @virtual
          */
-        vfunc_custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
+        vfunc_custom_finished(builder: Builder, child: GObject.Object | null, tagname: string, data: null): void;
 
         /**
          * This is called at the end of each custom element handled by
@@ -57422,7 +57324,7 @@ export namespace Gtk {
          * @param data user data that will be passed in to parser functions
          * @virtual
          */
-        vfunc_custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
+        vfunc_custom_tag_end(builder: Builder, child: GObject.Object | null, tagname: string, data: null): void;
 
         /**
          * This is called for each unknown element under `<child>`.
@@ -57431,7 +57333,7 @@ export namespace Gtk {
          * @param tagname name of tag
          * @virtual
          */
-        vfunc_custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, GLib.MarkupParser, never];
+        vfunc_custom_tag_start(builder: Builder, child: GObject.Object | null, tagname: string): [boolean, GLib.MarkupParser, never];
 
         /**
          * Get the internal child called `childname` of the `buildable` object.
@@ -57482,13 +57384,10 @@ export namespace Gtk {
 
     namespace IconInfo {
         // Signal signatures
-        interface SignalSignatures extends GObject.Object.SignalSignatures {
-        }
+        interface SignalSignatures extends GObject.Object.SignalSignatures {}
 
         // Constructor properties interface
-        interface ConstructorProps extends GObject.Object.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GObject.Object.ConstructorProps {}
     }
 
     /**
@@ -57567,7 +57466,7 @@ export namespace Gtk {
          * to `gtk_icon_theme_lookup_icon()`.
          * @returns the built-in image pixbuf, or `null`.     No extra reference is added to the returned pixbuf, so if     you want to keep it around, you must use `g_object_ref()`.     The returned image must not be modified.
          */
-        get_builtin_pixbuf(): (GdkPixbuf.Pixbuf | null);
+        get_builtin_pixbuf(): GdkPixbuf.Pixbuf | null;
 
         /**
          * This function is deprecated and always returns `null`.
@@ -57588,7 +57487,7 @@ export namespace Gtk {
          * use `gtk_icon_info_get_builtin_pixbuf()`.
          * @returns the filename for the icon, or `null`     if `gtk_icon_info_get_builtin_pixbuf()` should be used instead.     The return value is owned by GTK+ and should not be modified     or freed.
          */
-        get_filename(): (string | null);
+        get_filename(): string | null;
 
         /**
          * Checks if the icon is symbolic or not. This currently uses only
@@ -57622,7 +57521,7 @@ export namespace Gtk {
          * version of this call.
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore
          */
-        load_icon_async(cancellable: (Gio.Cancellable | null)): globalThis.Promise<GdkPixbuf.Pixbuf>;
+        load_icon_async(cancellable: Gio.Cancellable | null): globalThis.Promise<GdkPixbuf.Pixbuf>;
 
         /**
          * Asynchronously load, render and scale an icon previously looked up
@@ -57633,7 +57532,7 @@ export namespace Gtk {
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore
          * @param callback a {@link Gio.AsyncReadyCallback} to call when the     request is satisfied
          */
-        load_icon_async(cancellable: (Gio.Cancellable | null), callback: (Gio.AsyncReadyCallback<this> | null)): void;
+        load_icon_async(cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<this> | null): void;
 
         /**
          * Asynchronously load, render and scale an icon previously looked up
@@ -57644,7 +57543,7 @@ export namespace Gtk {
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore
          * @param callback a {@link Gio.AsyncReadyCallback} to call when the     request is satisfied
          */
-        load_icon_async(cancellable: (Gio.Cancellable | null), callback?: (Gio.AsyncReadyCallback<this> | null)): (globalThis.Promise<GdkPixbuf.Pixbuf> | void);
+        load_icon_async(cancellable: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback<this> | null): globalThis.Promise<GdkPixbuf.Pixbuf> | void;
 
         /**
          * Finishes an async icon load, see `gtk_icon_info_load_icon_async()`.
@@ -57668,7 +57567,7 @@ export namespace Gtk {
          * @param for_window {@link Gdk.Window} to optimize drawing for, or `null`
          * @returns the rendered icon; this may be a newly     created icon or a new reference to an internal icon, so you must     not modify the icon. Use `cairo_surface_destroy()` to release your     reference to the icon.
          */
-        load_surface(for_window: (Gdk.Window | null)): cairo.Surface;
+        load_surface(for_window: Gdk.Window | null): cairo.Surface;
 
         /**
          * Loads an icon, modifying it to match the system colours for the foreground,
@@ -57693,7 +57592,7 @@ export namespace Gtk {
          * @param error_color a {@link Gdk.RGBA} representing the error color     of the icon or `null` to use the default color (allow-none)
          * @returns a {@link GdkPixbuf.Pixbuf} representing the loaded icon
          */
-        load_symbolic(fg: Gdk.RGBA, success_color: (Gdk.RGBA | null), warning_color: (Gdk.RGBA | null), error_color: (Gdk.RGBA | null)): [GdkPixbuf.Pixbuf, boolean];
+        load_symbolic(fg: Gdk.RGBA, success_color: Gdk.RGBA | null, warning_color: Gdk.RGBA | null, error_color: Gdk.RGBA | null): [GdkPixbuf.Pixbuf, boolean];
 
         /**
          * Asynchronously load, render and scale a symbolic icon previously looked up
@@ -57707,22 +57606,7 @@ export namespace Gtk {
          * @param error_color a {@link Gdk.RGBA} representing the error color     of the icon or `null` to use the default color (allow-none)
          * @param cancellable optional {@link Gio.Cancellable} object,     `null` to ignore
          */
-        load_symbolic_async(fg: Gdk.RGBA, success_color: (Gdk.RGBA | null), warning_color: (Gdk.RGBA | null), error_color: (Gdk.RGBA | null), cancellable: (Gio.Cancellable | null)): globalThis.Promise<[GdkPixbuf.Pixbuf, boolean]>;
-
-        /**
-         * Asynchronously load, render and scale a symbolic icon previously looked up
-         * from the icon theme using `gtk_icon_theme_lookup_icon()`.
-         * 
-         * For more details, see `gtk_icon_info_load_symbolic()` which is the synchronous
-         * version of this call.
-         * @param fg a {@link Gdk.RGBA} representing the foreground color of the icon
-         * @param success_color a {@link Gdk.RGBA} representing the warning color     of the icon or `null` to use the default color
-         * @param warning_color a {@link Gdk.RGBA} representing the warning color     of the icon or `null` to use the default color
-         * @param error_color a {@link Gdk.RGBA} representing the error color     of the icon or `null` to use the default color (allow-none)
-         * @param cancellable optional {@link Gio.Cancellable} object,     `null` to ignore
-         * @param callback a {@link Gio.AsyncReadyCallback} to call when the     request is satisfied
-         */
-        load_symbolic_async(fg: Gdk.RGBA, success_color: (Gdk.RGBA | null), warning_color: (Gdk.RGBA | null), error_color: (Gdk.RGBA | null), cancellable: (Gio.Cancellable | null), callback: (Gio.AsyncReadyCallback<this> | null)): void;
+        load_symbolic_async(fg: Gdk.RGBA, success_color: Gdk.RGBA | null, warning_color: Gdk.RGBA | null, error_color: Gdk.RGBA | null, cancellable: Gio.Cancellable | null): globalThis.Promise<[GdkPixbuf.Pixbuf, boolean]>;
 
         /**
          * Asynchronously load, render and scale a symbolic icon previously looked up
@@ -57737,7 +57621,22 @@ export namespace Gtk {
          * @param cancellable optional {@link Gio.Cancellable} object,     `null` to ignore
          * @param callback a {@link Gio.AsyncReadyCallback} to call when the     request is satisfied
          */
-        load_symbolic_async(fg: Gdk.RGBA, success_color: (Gdk.RGBA | null), warning_color: (Gdk.RGBA | null), error_color: (Gdk.RGBA | null), cancellable: (Gio.Cancellable | null), callback?: (Gio.AsyncReadyCallback<this> | null)): (globalThis.Promise<[GdkPixbuf.Pixbuf, boolean]> | void);
+        load_symbolic_async(fg: Gdk.RGBA, success_color: Gdk.RGBA | null, warning_color: Gdk.RGBA | null, error_color: Gdk.RGBA | null, cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<this> | null): void;
+
+        /**
+         * Asynchronously load, render and scale a symbolic icon previously looked up
+         * from the icon theme using `gtk_icon_theme_lookup_icon()`.
+         * 
+         * For more details, see `gtk_icon_info_load_symbolic()` which is the synchronous
+         * version of this call.
+         * @param fg a {@link Gdk.RGBA} representing the foreground color of the icon
+         * @param success_color a {@link Gdk.RGBA} representing the warning color     of the icon or `null` to use the default color
+         * @param warning_color a {@link Gdk.RGBA} representing the warning color     of the icon or `null` to use the default color
+         * @param error_color a {@link Gdk.RGBA} representing the error color     of the icon or `null` to use the default color (allow-none)
+         * @param cancellable optional {@link Gio.Cancellable} object,     `null` to ignore
+         * @param callback a {@link Gio.AsyncReadyCallback} to call when the     request is satisfied
+         */
+        load_symbolic_async(fg: Gdk.RGBA, success_color: Gdk.RGBA | null, warning_color: Gdk.RGBA | null, error_color: Gdk.RGBA | null, cancellable: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback<this> | null): globalThis.Promise<[GdkPixbuf.Pixbuf, boolean]> | void;
 
         /**
          * Finishes an async icon load, see `gtk_icon_info_load_symbolic_async()`.
@@ -57771,7 +57670,7 @@ export namespace Gtk {
          * @param context a {@link Gtk.StyleContext}
          * @param cancellable optional {@link Gio.Cancellable} object,     `null` to ignore
          */
-        load_symbolic_for_context_async(context: StyleContext, cancellable: (Gio.Cancellable | null)): globalThis.Promise<[GdkPixbuf.Pixbuf, boolean]>;
+        load_symbolic_for_context_async(context: StyleContext, cancellable: Gio.Cancellable | null): globalThis.Promise<[GdkPixbuf.Pixbuf, boolean]>;
 
         /**
          * Asynchronously load, render and scale a symbolic icon previously
@@ -57783,7 +57682,7 @@ export namespace Gtk {
          * @param cancellable optional {@link Gio.Cancellable} object,     `null` to ignore
          * @param callback a {@link Gio.AsyncReadyCallback} to call when the     request is satisfied
          */
-        load_symbolic_for_context_async(context: StyleContext, cancellable: (Gio.Cancellable | null), callback: (Gio.AsyncReadyCallback<this> | null)): void;
+        load_symbolic_for_context_async(context: StyleContext, cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<this> | null): void;
 
         /**
          * Asynchronously load, render and scale a symbolic icon previously
@@ -57795,7 +57694,7 @@ export namespace Gtk {
          * @param cancellable optional {@link Gio.Cancellable} object,     `null` to ignore
          * @param callback a {@link Gio.AsyncReadyCallback} to call when the     request is satisfied
          */
-        load_symbolic_for_context_async(context: StyleContext, cancellable: (Gio.Cancellable | null), callback?: (Gio.AsyncReadyCallback<this> | null)): (globalThis.Promise<[GdkPixbuf.Pixbuf, boolean]> | void);
+        load_symbolic_for_context_async(context: StyleContext, cancellable: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback<this> | null): globalThis.Promise<[GdkPixbuf.Pixbuf, boolean]> | void;
 
         /**
          * Finishes an async icon load, see `gtk_icon_info_load_symbolic_for_context_async()`.
@@ -57853,9 +57752,7 @@ export namespace Gtk {
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends GObject.Object.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GObject.Object.ConstructorProps {}
     }
 
     /**
@@ -58051,7 +57948,7 @@ export namespace Gtk {
          * @param flags flags modifying the behavior of the icon lookup
          * @returns a {@link Gtk.IconInfo} object containing information about the icon, or `null` if the icon wasn’t found.
          */
-        choose_icon(icon_names: string[], size: number, flags: IconLookupFlags): (IconInfo | null);
+        choose_icon(icon_names: string[], size: number, flags: IconLookupFlags): IconInfo | null;
 
         /**
          * Looks up a named icon for a particular window scale and returns
@@ -58069,7 +57966,7 @@ export namespace Gtk {
          * @param flags flags modifying the behavior of the icon lookup
          * @returns a {@link Gtk.IconInfo} object     containing information about the icon, or `null` if the     icon wasn’t found.
          */
-        choose_icon_for_scale(icon_names: string[], size: number, scale: number, flags: IconLookupFlags): (IconInfo | null);
+        choose_icon_for_scale(icon_names: string[], size: number, scale: number, flags: IconLookupFlags): IconInfo | null;
 
         /**
          * Gets the name of an icon that is representative of the
@@ -58077,7 +57974,7 @@ export namespace Gtk {
          * a list of themes to the user.)
          * @returns the name of an example icon or `null`.     Free with `g_free()`.
          */
-        get_example_icon_name(): (string | null);
+        get_example_icon_name(): string | null;
 
         /**
          * Returns an array of integers describing the sizes at which
@@ -58123,7 +58020,7 @@ export namespace Gtk {
          * @param context a string identifying a particular type of           icon, or `null` to list all icons.
          * @returns a {@link GLib.List} list     holding the names of all the icons in the theme. You must     first free each element in the list with `g_free()`, then     free the list itself with `g_list_free()`.
          */
-        list_icons(context: (string | null)): string[];
+        list_icons(context: string | null): string[];
 
         /**
          * Looks up an icon in an icon theme, scales it to the given size
@@ -58143,7 +58040,7 @@ export namespace Gtk {
          * @param flags flags modifying the behavior of the icon lookup
          * @returns the rendered icon; this may be     a newly created icon or a new reference to an internal icon, so     you must not modify the icon. Use `g_object_unref()` to release     your reference to the icon. `null` if the icon isn’t found.
          */
-        load_icon(icon_name: string, size: number, flags: IconLookupFlags): (GdkPixbuf.Pixbuf | null);
+        load_icon(icon_name: string, size: number, flags: IconLookupFlags): GdkPixbuf.Pixbuf | null;
 
         /**
          * Looks up an icon in an icon theme for a particular window scale,
@@ -58165,7 +58062,7 @@ export namespace Gtk {
          * @param flags flags modifying the behavior of the icon lookup
          * @returns the rendered icon; this may be     a newly created icon or a new reference to an internal icon, so     you must not modify the icon. Use `g_object_unref()` to release     your reference to the icon. `null` if the icon isn’t found.
          */
-        load_icon_for_scale(icon_name: string, size: number, scale: number, flags: IconLookupFlags): (GdkPixbuf.Pixbuf | null);
+        load_icon_for_scale(icon_name: string, size: number, scale: number, flags: IconLookupFlags): GdkPixbuf.Pixbuf | null;
 
         /**
          * Looks up an icon in an icon theme for a particular window scale,
@@ -58184,7 +58081,7 @@ export namespace Gtk {
          * @param flags flags modifying the behavior of the icon lookup
          * @returns the rendered icon; this may be     a newly created icon or a new reference to an internal icon, so     you must not modify the icon. Use `cairo_surface_destroy()` to     release your reference to the icon. `null` if the icon isn’t     found.
          */
-        load_surface(icon_name: string, size: number, scale: number, for_window: (Gdk.Window | null), flags: IconLookupFlags): (cairo.Surface | null);
+        load_surface(icon_name: string, size: number, scale: number, for_window: Gdk.Window | null, flags: IconLookupFlags): cairo.Surface | null;
 
         /**
          * Looks up an icon and returns a {@link Gtk.IconInfo} containing information
@@ -58201,7 +58098,7 @@ export namespace Gtk {
          * @param flags flags modifying the behavior of the icon lookup
          * @returns a {@link Gtk.IconInfo} containing     information about the icon, or `null` if the icon wasn’t     found. Unref with `g_object_unref()`
          */
-        lookup_by_gicon(icon: Gio.Icon, size: number, flags: IconLookupFlags): (IconInfo | null);
+        lookup_by_gicon(icon: Gio.Icon, size: number, flags: IconLookupFlags): IconInfo | null;
 
         /**
          * Looks up an icon and returns a {@link Gtk.IconInfo} containing information
@@ -58213,7 +58110,7 @@ export namespace Gtk {
          * @param flags flags modifying the behavior of the icon lookup
          * @returns a {@link Gtk.IconInfo} containing     information about the icon, or `null` if the icon wasn’t     found. Unref with `g_object_unref()`
          */
-        lookup_by_gicon_for_scale(icon: Gio.Icon, size: number, scale: number, flags: IconLookupFlags): (IconInfo | null);
+        lookup_by_gicon_for_scale(icon: Gio.Icon, size: number, scale: number, flags: IconLookupFlags): IconInfo | null;
 
         /**
          * Looks up a named icon and returns a {@link Gtk.IconInfo} containing
@@ -58232,7 +58129,7 @@ export namespace Gtk {
          * @param flags flags modifying the behavior of the icon lookup
          * @returns a {@link Gtk.IconInfo} object     containing information about the icon, or `null` if the     icon wasn’t found.
          */
-        lookup_icon(icon_name: string, size: number, flags: IconLookupFlags): (IconInfo | null);
+        lookup_icon(icon_name: string, size: number, flags: IconLookupFlags): IconInfo | null;
 
         /**
          * Looks up a named icon for a particular window scale and returns a
@@ -58246,7 +58143,7 @@ export namespace Gtk {
          * @param flags flags modifying the behavior of the icon lookup
          * @returns a {@link Gtk.IconInfo} object     containing information about the icon, or `null` if the     icon wasn’t found.
          */
-        lookup_icon_for_scale(icon_name: string, size: number, scale: number, flags: IconLookupFlags): (IconInfo | null);
+        lookup_icon_for_scale(icon_name: string, size: number, scale: number, flags: IconLookupFlags): IconInfo | null;
 
         /**
          * Prepends a directory to the search path.
@@ -58270,7 +58167,7 @@ export namespace Gtk {
          * and `gtk_icon_theme_get_for_screen()`.
          * @param theme_name name of icon theme to use instead of   configured theme, or `null` to unset a previously set custom theme
          */
-        set_custom_theme(theme_name: (string | null)): void;
+        set_custom_theme(theme_name: string | null): void;
 
         /**
          * Sets the screen for an icon theme; the screen is used
@@ -58318,7 +58215,7 @@ export namespace Gtk {
              * @action
              * @run-last
              */
-            "activate-cursor-item": () => (boolean | void);
+            "activate-cursor-item": () => boolean | void;
             /**
              * The ::item-activated signal is emitted when the method
              * `gtk_icon_view_item_activated()` is called, when the user double
@@ -58350,7 +58247,7 @@ export namespace Gtk {
              * @action
              * @run-last
              */
-            "move-cursor": (arg0: MovementStep, arg1: number) => (boolean | void);
+            "move-cursor": (arg0: MovementStep, arg1: number) => boolean | void;
             /**
              * A [keybinding signal][GtkBindingSignal]
              * which gets emitted when the user selects all items.
@@ -58499,7 +58396,7 @@ export namespace Gtk {
             margin: number;
             markup_column: number;
             markupColumn: number;
-            model: (TreeModel | null);
+            model: TreeModel | null;
             pixbuf_column: number;
             pixbufColumn: number;
             reorderable: boolean;
@@ -58700,8 +58597,8 @@ export namespace Gtk {
         get markupColumn(): number;
         set markupColumn(val: number);
 
-        get model(): (TreeModel | null);
-        set model(val: (TreeModel | null));
+        get model(): TreeModel | null;
+        set model(val: TreeModel | null);
 
         /**
          * The ::pixbuf-column property contains the number of the model column
@@ -58945,7 +58842,7 @@ export namespace Gtk {
          * @param cell a {@link Gtk.CellRenderer} or `null`
          * @returns `false` if there is no such item, `true` otherwise
          */
-        get_cell_rect(path: TreePath, cell: (CellRenderer | null)): [boolean, Gdk.Rectangle];
+        get_cell_rect(path: TreePath, cell: CellRenderer | null): [boolean, Gdk.Rectangle];
 
         /**
          * Returns the value of the ::column-spacing property.
@@ -59047,7 +58944,7 @@ export namespace Gtk {
          * model is unset.
          * @returns A {@link Gtk.TreeModel}, or `null` if none is     currently being used.
          */
-        get_model(): (TreeModel | null);
+        get_model(): TreeModel | null;
 
         /**
          * Finds the path at the point (`x`, `y`), relative to bin_window coordinates.
@@ -59059,7 +58956,7 @@ export namespace Gtk {
          * @param y The y position to be identified
          * @returns The {@link Gtk.TreePath} corresponding to the icon or `null` if no icon exists at that position.
          */
-        get_path_at_pos(x: number, y: number): (TreePath | null);
+        get_path_at_pos(x: number, y: number): TreePath | null;
 
         /**
          * Returns the column with pixbufs for `icon_view`.
@@ -59241,14 +59138,14 @@ export namespace Gtk {
          * @param cell One of the cell renderers of `icon_view`, or `null`
          * @param start_editing `true` if the specified cell should start being edited.
          */
-        set_cursor(path: TreePath, cell: (CellRenderer | null), start_editing: boolean): void;
+        set_cursor(path: TreePath, cell: CellRenderer | null, start_editing: boolean): void;
 
         /**
          * Sets the item that is highlighted for feedback.
          * @param path The path of the item to highlight, or `null`.
          * @param pos Specifies where to drop, relative to the item
          */
-        set_drag_dest_item(path: (TreePath | null), pos: IconViewDropPosition): void;
+        set_drag_dest_item(path: TreePath | null, pos: IconViewDropPosition): void;
 
         /**
          * Sets the ::item-orientation property which determines whether the labels
@@ -59296,7 +59193,7 @@ export namespace Gtk {
          * it will unset the old model.
          * @param model The model.
          */
-        set_model(model: (TreeModel | null)): void;
+        set_model(model: TreeModel | null): void;
 
         /**
          * Sets the column with pixbufs for `icon_view` to be `column`. The pixbuf
@@ -59359,7 +59256,7 @@ export namespace Gtk {
          * @param path a {@link Gtk.TreePath}
          * @param cell a {@link Gtk.CellRenderer} or `null`
          */
-        set_tooltip_cell(tooltip: Tooltip, path: TreePath, cell: (CellRenderer | null)): void;
+        set_tooltip_cell(tooltip: Tooltip, path: TreePath, cell: CellRenderer | null): void;
 
         /**
          * If you only plan to have simple (text-only) tooltips on full items, you
@@ -59498,7 +59395,7 @@ export namespace Gtk {
          * is used by `cell_layout`.
          * @returns the cell area used by `cell_layout`, or `null` in case no cell area is used.
          */
-        get_area(): (CellArea | null);
+        get_area(): CellArea | null;
 
         /**
          * Returns the cell renderers which have been added to `cell_layout`.
@@ -59549,7 +59446,7 @@ export namespace Gtk {
          * @param cell a {@link Gtk.CellRenderer}
          * @param func the {@link Gtk.CellLayoutDataFunc} to use, or `null`
          */
-        set_cell_data_func(cell: CellRenderer, func: (CellLayoutDataFunc | null)): void;
+        set_cell_data_func(cell: CellRenderer, func: CellLayoutDataFunc | null): void;
 
         /**
          * Adds an attribute mapping to the list in `cell_layout`.
@@ -59586,7 +59483,7 @@ export namespace Gtk {
          * is used by `cell_layout`.
          * @virtual
          */
-        vfunc_get_area(): (CellArea | null);
+        vfunc_get_area(): CellArea | null;
 
         /**
          * Returns the cell renderers which have been added to `cell_layout`.
@@ -59641,7 +59538,7 @@ export namespace Gtk {
          * @param func the {@link Gtk.CellLayoutDataFunc} to use, or `null`
          * @virtual
          */
-        vfunc_set_cell_data_func(cell: CellRenderer, func: (CellLayoutDataFunc | null)): void;
+        vfunc_set_cell_data_func(cell: CellRenderer, func: CellLayoutDataFunc | null): void;
 
         /**
          * Returns the size of a non-scrolling border around the
@@ -59681,7 +59578,7 @@ export namespace Gtk {
          * Sets the horizontal adjustment of the {@link Gtk.Scrollable}.
          * @param hadjustment a {@link Gtk.Adjustment}
          */
-        set_hadjustment(hadjustment: (Adjustment | null)): void;
+        set_hadjustment(hadjustment: Adjustment | null): void;
 
         /**
          * Sets the {@link Gtk.ScrollablePolicy} to determine whether
@@ -59695,7 +59592,7 @@ export namespace Gtk {
          * Sets the vertical adjustment of the {@link Gtk.Scrollable}.
          * @param vadjustment a {@link Gtk.Adjustment}
          */
-        set_vadjustment(vadjustment: (Adjustment | null)): void;
+        set_vadjustment(vadjustment: Adjustment | null): void;
 
         /**
          * Sets the {@link Gtk.ScrollablePolicy} to determine whether
@@ -59741,9 +59638,7 @@ export namespace Gtk {
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends ContainerAccessible.ConstructorProps, Atk.Component.ConstructorProps, Atk.Selection.ConstructorProps {
-
-        }
+        interface ConstructorProps extends ContainerAccessible.ConstructorProps, Atk.Component.ConstructorProps, Atk.Selection.ConstructorProps {}
     }
 
     /**
@@ -59825,7 +59720,7 @@ export namespace Gtk {
          * @param i a `gint` specifying the index in the selection set.  (e.g. the ith selection as opposed to the ith child).
          * @returns an {@link Atk.Object} representing the selected accessible, or `null` if `selection` does not implement this interface.
          */
-        ref_selection(i: number): (Atk.Object | null);
+        ref_selection(i: number): Atk.Object | null;
 
         /**
          * Removes the specified child of the object from the object's selection.
@@ -59887,7 +59782,7 @@ export namespace Gtk {
          * @param i a `gint` specifying the index in the selection set.  (e.g. the ith selection as opposed to the ith child).
          * @virtual
          */
-        vfunc_ref_selection(i: number): (Atk.Object | null);
+        vfunc_ref_selection(i: number): Atk.Object | null;
 
         /**
          * Removes the specified child of the object from the object's selection.
@@ -59981,7 +59876,7 @@ export namespace Gtk {
             iconSet: IconSet;
             icon_size: number;
             iconSize: number;
-            pixbuf: (GdkPixbuf.Pixbuf | null);
+            pixbuf: GdkPixbuf.Pixbuf | null;
             pixbuf_animation: GdkPixbuf.PixbufAnimation;
             pixbufAnimation: GdkPixbuf.PixbufAnimation;
             pixel_size: number;
@@ -60148,8 +60043,8 @@ export namespace Gtk {
         get iconSize(): number;
         set iconSize(val: number);
 
-        get pixbuf(): (GdkPixbuf.Pixbuf | null);
-        set pixbuf(val: (GdkPixbuf.Pixbuf | null));
+        get pixbuf(): GdkPixbuf.Pixbuf | null;
+        set pixbuf(val: GdkPixbuf.Pixbuf | null);
 
         get pixbuf_animation(): GdkPixbuf.PixbufAnimation;
         set pixbuf_animation(val: GdkPixbuf.PixbufAnimation);
@@ -60254,17 +60149,17 @@ export namespace Gtk {
 
         static new_from_gicon(icon: Gio.Icon, size: number): Image;
 
-        static new_from_icon_name(icon_name: (string | null), size: number): Image;
+        static new_from_icon_name(icon_name: string | null, size: number): Image;
 
         static new_from_icon_set(icon_set: IconSet, size: number): Image;
 
-        static new_from_pixbuf(pixbuf: (GdkPixbuf.Pixbuf | null)): Image;
+        static new_from_pixbuf(pixbuf: GdkPixbuf.Pixbuf | null): Image;
 
         static new_from_resource(resource_path: string): Image;
 
         static new_from_stock(stock_id: string, size: number): Image;
 
-        static new_from_surface(surface: (cairo.Surface | null)): Image;
+        static new_from_surface(surface: cairo.Surface | null): Image;
 
         // Signals
         /** @signal */
@@ -60293,7 +60188,7 @@ export namespace Gtk {
          * returned animation.
          * @returns the displayed animation, or `null` if the image is empty
          */
-        get_animation(): (GdkPixbuf.PixbufAnimation | null);
+        get_animation(): GdkPixbuf.PixbufAnimation | null;
 
         /**
          * Gets the {@link Gio.Icon} and size being displayed by the {@link Gtk.Image}.
@@ -60328,7 +60223,7 @@ export namespace Gtk {
          * returned pixbuf.
          * @returns the displayed pixbuf, or `null` if the image is empty
          */
-        get_pixbuf(): (GdkPixbuf.Pixbuf | null);
+        get_pixbuf(): GdkPixbuf.Pixbuf | null;
 
         /**
          * Gets the pixel size used for named icons.
@@ -60364,7 +60259,7 @@ export namespace Gtk {
          * See `gtk_image_new_from_file()` for details.
          * @param filename a filename or `null`
          */
-        set_from_file(filename: (string | null)): void;
+        set_from_file(filename: string | null): void;
 
         /**
          * See `gtk_image_new_from_gicon()` for details.
@@ -60378,7 +60273,7 @@ export namespace Gtk {
          * @param icon_name an icon name or `null`
          * @param size an icon size ({@link Gtk.IconSize})
          */
-        set_from_icon_name(icon_name: (string | null), size: number): void;
+        set_from_icon_name(icon_name: string | null, size: number): void;
 
         /**
          * See `gtk_image_new_from_icon_set()` for details.
@@ -60391,13 +60286,13 @@ export namespace Gtk {
          * See `gtk_image_new_from_pixbuf()` for details.
          * @param pixbuf a {@link GdkPixbuf.Pixbuf} or `null`
          */
-        set_from_pixbuf(pixbuf: (GdkPixbuf.Pixbuf | null)): void;
+        set_from_pixbuf(pixbuf: GdkPixbuf.Pixbuf | null): void;
 
         /**
          * See `gtk_image_new_from_resource()` for details.
          * @param resource_path a resource path or `null`
          */
-        set_from_resource(resource_path: (string | null)): void;
+        set_from_resource(resource_path: string | null): void;
 
         /**
          * See `gtk_image_new_from_stock()` for details.
@@ -60410,7 +60305,7 @@ export namespace Gtk {
          * See `gtk_image_new_from_surface()` for details.
          * @param surface a cairo_surface_t or `null`
          */
-        set_from_surface(surface: (cairo.Surface | null)): void;
+        set_from_surface(surface: cairo.Surface | null): void;
 
         /**
          * Sets the pixel size to use for named icons. If the pixel size is set
@@ -60446,9 +60341,7 @@ export namespace Gtk {
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends WidgetAccessible.ConstructorProps, Atk.Component.ConstructorProps, Atk.Image.ConstructorProps {
-
-        }
+        interface ConstructorProps extends WidgetAccessible.ConstructorProps, Atk.Component.ConstructorProps, Atk.Image.ConstructorProps {}
     }
 
     /**
@@ -60559,7 +60452,7 @@ export namespace Gtk {
          * @param coord_type specifies whether the coordinates are relative to the screen or to the components top level window
          * @returns a reference to the accessible child, if one exists
          */
-        ref_accessible_at_point(x: number, y: number, coord_type: Atk.CoordType): (Atk.Object | null);
+        ref_accessible_at_point(x: number, y: number, coord_type: Atk.CoordType): Atk.Object | null;
 
         /**
          * Remove the handler specified by `handler_id` from the list of
@@ -60705,7 +60598,7 @@ export namespace Gtk {
          * @param coord_type specifies whether the coordinates are relative to the screen or to the components top level window
          * @virtual
          */
-        vfunc_ref_accessible_at_point(x: number, y: number, coord_type: Atk.CoordType): (Atk.Object | null);
+        vfunc_ref_accessible_at_point(x: number, y: number, coord_type: Atk.CoordType): Atk.Object | null;
 
         /**
          * Remove the handler specified by `handler_id` from the list of
@@ -60778,7 +60671,7 @@ export namespace Gtk {
          * Retrieves the locale identifier associated to the {@link Atk.Image}.
          * @returns a string corresponding to the POSIX   `LC_MESSAGES` locale used by the image description, or   `null` if the image does not specify a locale.
          */
-        get_image_locale(): (string | null);
+        get_image_locale(): string | null;
 
         /**
          * Gets the position of the image in the form of a point specifying the
@@ -60817,7 +60710,7 @@ export namespace Gtk {
          * Retrieves the locale identifier associated to the {@link Atk.Image}.
          * @virtual
          */
-        vfunc_get_image_locale(): (string | null);
+        vfunc_get_image_locale(): string | null;
 
         /**
          * Gets the position of the image in the form of a point specifying the
@@ -60875,9 +60768,7 @@ export namespace Gtk {
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends RendererCellAccessible.ConstructorProps, Atk.Action.ConstructorProps, Atk.Component.ConstructorProps, Atk.Image.ConstructorProps, Atk.TableCell.ConstructorProps {
-
-        }
+        interface ConstructorProps extends RendererCellAccessible.ConstructorProps, Atk.Action.ConstructorProps, Atk.Component.ConstructorProps, Atk.Image.ConstructorProps, Atk.TableCell.ConstructorProps {}
     }
 
     /**
@@ -60923,7 +60814,7 @@ export namespace Gtk {
          * Retrieves the locale identifier associated to the {@link Atk.Image}.
          * @returns a string corresponding to the POSIX   `LC_MESSAGES` locale used by the image description, or   `null` if the image does not specify a locale.
          */
-        get_image_locale(): (string | null);
+        get_image_locale(): string | null;
 
         /**
          * Gets the position of the image in the form of a point specifying the
@@ -60962,7 +60853,7 @@ export namespace Gtk {
          * Retrieves the locale identifier associated to the {@link Atk.Image}.
          * @virtual
          */
-        vfunc_get_image_locale(): (string | null);
+        vfunc_get_image_locale(): string | null;
 
         /**
          * Gets the position of the image in the form of a point specifying the
@@ -61225,7 +61116,7 @@ export namespace Gtk {
 
         static ["new"](): ImageMenuItem;
 
-        static new_from_stock(stock_id: string, accel_group: (AccelGroup | null)): ImageMenuItem;
+        static new_from_stock(stock_id: string, accel_group: AccelGroup | null): ImageMenuItem;
 
         static new_with_label(label: string): ImageMenuItem;
 
@@ -61294,7 +61185,7 @@ export namespace Gtk {
          * the image will be displayed or not.
          * @param image a widget to set as the image for the menu item.
          */
-        set_image(image: (Widget | null)): void;
+        set_image(image: Widget | null): void;
 
         /**
          * If `true`, the label set in the menuitem is used as a
@@ -61307,15 +61198,15 @@ export namespace Gtk {
          * @default null
           * @category Inherited from Gtk.Actionable
          */
-        get action_name(): (string | null);
-        set action_name(val: (string | null));
+        get action_name(): string | null;
+        set action_name(val: string | null);
 
         /**
          * @default null
           * @category Inherited from Gtk.Actionable
          */
-        get actionName(): (string | null);
-        set actionName(val: (string | null));
+        get actionName(): string | null;
+        set actionName(val: string | null);
 
         /** @category Inherited from Gtk.Actionable */
         get action_target(): GLib.Variant;
@@ -61395,7 +61286,7 @@ export namespace Gtk {
          * See `gtk_actionable_set_action_name()` for more information.
          * @returns the action name, or `null` if none is set
          */
-        get_action_name(): (string | null);
+        get_action_name(): string | null;
 
         /**
          * Gets the current target value of `actionable`.
@@ -61419,7 +61310,7 @@ export namespace Gtk {
          * associated with the window.
          * @param action_name an action name, or `null`
          */
-        set_action_name(action_name: (string | null)): void;
+        set_action_name(action_name: string | null): void;
 
         /**
          * Sets the target value of an actionable widget.
@@ -61443,7 +61334,7 @@ export namespace Gtk {
          * rendered inactive).
          * @param target_value a {@link GLib.Variant} to set as the target value, or `null`
          */
-        set_action_target_value(target_value: (GLib.Variant | null)): void;
+        set_action_target_value(target_value: GLib.Variant | null): void;
 
         /**
          * Sets the action-name and associated string target value of an
@@ -61467,7 +61358,7 @@ export namespace Gtk {
          * See `gtk_actionable_set_action_name()` for more information.
          * @virtual
          */
-        vfunc_get_action_name(): (string | null);
+        vfunc_get_action_name(): string | null;
 
         /**
          * Gets the current target value of `actionable`.
@@ -61492,7 +61383,7 @@ export namespace Gtk {
          * @param action_name an action name, or `null`
          * @virtual
          */
-        vfunc_set_action_name(action_name: (string | null)): void;
+        vfunc_set_action_name(action_name: string | null): void;
 
         /**
          * Sets the target value of an actionable widget.
@@ -61517,7 +61408,7 @@ export namespace Gtk {
          * @param target_value a {@link GLib.Variant} to set as the target value, or `null`
          * @virtual
          */
-        vfunc_set_action_target_value(target_value: (GLib.Variant | null)): void;
+        vfunc_set_action_target_value(target_value: GLib.Variant | null): void;
 
         /**
          * This is a utility function for {@link Gtk.Activatable} implementors.
@@ -61581,7 +61472,7 @@ export namespace Gtk {
          * {@link Gtk.Activatable.use_action_appearance} changes.
          * @param action the related {@link Gtk.Action} or `null`
          */
-        sync_action_properties(action: (Action | null)): void;
+        sync_action_properties(action: Action | null): void;
 
         /**
          * This is called to update the activatable completely, this is called
@@ -61591,7 +61482,7 @@ export namespace Gtk {
          * @param action the related {@link Gtk.Action} or `null`
          * @virtual
          */
-        vfunc_sync_action_properties(action: (Action | null)): void;
+        vfunc_sync_action_properties(action: Action | null): void;
 
         /**
          * Called to update the activatable when its related action’s properties change.
@@ -61661,7 +61552,7 @@ export namespace Gtk {
          * @param accel_path path used to look up the accelerator
          * @param accel_group a {@link Gtk.AccelGroup}.
          */
-        set_accel_path(accel_path: (string | null), accel_group: (AccelGroup | null)): void;
+        set_accel_path(accel_path: string | null, accel_group: AccelGroup | null): void;
 
         /**
          * @param args 
@@ -62166,7 +62057,7 @@ export namespace Gtk {
          * @param child child to add
          * @param type kind of child or `null`
          */
-        add_child(builder: Builder, child: GObject.Object, type: (string | null)): void;
+        add_child(builder: Builder, child: GObject.Object, type: string | null): void;
 
         /**
          * Constructs a child of `buildable` with the name `name`.
@@ -62187,7 +62078,7 @@ export namespace Gtk {
          * @param tagname the name of the tag
          * @param data user data created in custom_tag_start
          */
-        custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
+        custom_finished(builder: Builder, child: GObject.Object | null, tagname: string, data: null): void;
 
         /**
          * This is called at the end of each custom element handled by
@@ -62197,7 +62088,7 @@ export namespace Gtk {
          * @param tagname name of tag
          * @param data user data that will be passed in to parser functions
          */
-        custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
+        custom_tag_end(builder: Builder, child: GObject.Object | null, tagname: string, data: null): void;
 
         /**
          * This is called for each unknown element under `<child>`.
@@ -62206,7 +62097,7 @@ export namespace Gtk {
          * @param tagname name of tag
          * @returns `true` if a object has a custom implementation, `false`          if it doesn't.
          */
-        custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, GLib.MarkupParser, null];
+        custom_tag_start(builder: Builder, child: GObject.Object | null, tagname: string): [boolean, GLib.MarkupParser, null];
 
         /**
          * Get the internal child called `childname` of the `buildable` object.
@@ -62242,7 +62133,7 @@ export namespace Gtk {
          * @param name name of property
          * @param value value of property
          */
-        set_buildable_property(builder: Builder, name: string, value: (GObject.Value | any)): void;
+        set_buildable_property(builder: Builder, name: string, value: GObject.Value | any): void;
 
         /**
          * Sets the name of the `buildable` object.
@@ -62258,7 +62149,7 @@ export namespace Gtk {
          * @param type kind of child or `null`
          * @virtual
          */
-        vfunc_add_child(builder: Builder, child: GObject.Object, type: (string | null)): void;
+        vfunc_add_child(builder: Builder, child: GObject.Object, type: string | null): void;
 
         /**
          * Constructs a child of `buildable` with the name `name`.
@@ -62280,7 +62171,7 @@ export namespace Gtk {
          * @param data user data created in custom_tag_start
          * @virtual
          */
-        vfunc_custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
+        vfunc_custom_finished(builder: Builder, child: GObject.Object | null, tagname: string, data: null): void;
 
         /**
          * This is called at the end of each custom element handled by
@@ -62291,7 +62182,7 @@ export namespace Gtk {
          * @param data user data that will be passed in to parser functions
          * @virtual
          */
-        vfunc_custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
+        vfunc_custom_tag_end(builder: Builder, child: GObject.Object | null, tagname: string, data: null): void;
 
         /**
          * This is called for each unknown element under `<child>`.
@@ -62300,7 +62191,7 @@ export namespace Gtk {
          * @param tagname name of tag
          * @virtual
          */
-        vfunc_custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, GLib.MarkupParser, never];
+        vfunc_custom_tag_start(builder: Builder, child: GObject.Object | null, tagname: string): [boolean, GLib.MarkupParser, never];
 
         /**
          * Get the internal child called `childname` of the `buildable` object.
@@ -62374,7 +62265,7 @@ export namespace Gtk {
              * @since 2.18
              * @run-last
              */
-            "activate-link": (arg0: string) => (boolean | void);
+            "activate-link": (arg0: string) => boolean | void;
             /**
              * The ::copy-clipboard signal is a
              * [keybinding signal][GtkBindingSignal]
@@ -62488,7 +62379,7 @@ export namespace Gtk {
         // Constructor properties interface
         interface ConstructorProps extends Misc.ConstructorProps, Atk.ImplementorIface.ConstructorProps, Buildable.ConstructorProps {
             angle: number;
-            attributes: (Pango.AttrList | null);
+            attributes: Pango.AttrList | null;
             cursor_position: number;
             cursorPosition: number;
             ellipsize: Pango.EllipsizeMode;
@@ -62499,8 +62390,8 @@ export namespace Gtk {
             maxWidthChars: number;
             mnemonic_keyval: number;
             mnemonicKeyval: number;
-            mnemonic_widget: (Widget | null);
-            mnemonicWidget: (Widget | null);
+            mnemonic_widget: Widget | null;
+            mnemonicWidget: Widget | null;
             pattern: string;
             selectable: boolean;
             selection_bound: number;
@@ -62732,8 +62623,8 @@ export namespace Gtk {
         get angle(): number;
         set angle(val: number);
 
-        get attributes(): (Pango.AttrList | null);
-        set attributes(val: (Pango.AttrList | null));
+        get attributes(): Pango.AttrList | null;
+        set attributes(val: Pango.AttrList | null);
 
         /**
          * @read-only
@@ -62836,11 +62727,11 @@ export namespace Gtk {
          */
         get mnemonicKeyval(): number;
 
-        get mnemonic_widget(): (Widget | null);
-        set mnemonic_widget(val: (Widget | null));
+        get mnemonic_widget(): Widget | null;
+        set mnemonic_widget(val: Widget | null);
 
-        get mnemonicWidget(): (Widget | null);
-        set mnemonicWidget(val: (Widget | null));
+        get mnemonicWidget(): Widget | null;
+        set mnemonicWidget(val: Widget | null);
 
         /**
          * @write-only
@@ -63025,9 +62916,9 @@ export namespace Gtk {
 
         _init(...args: any[]): void;
 
-        static ["new"](str: (string | null)): Label;
+        static ["new"](str: string | null): Label;
 
-        static new_with_mnemonic(str: (string | null)): Label;
+        static new_with_mnemonic(str: string | null): Label;
 
         // Signals
         /** @signal */
@@ -63085,7 +62976,7 @@ export namespace Gtk {
          * pango_layout_get_attribute (gtk_label_get_layout (label)).
          * @returns the attribute list, or `null`     if none was set.
          */
-        get_attributes(): (Pango.AttrList | null);
+        get_attributes(): Pango.AttrList | null;
 
         /**
          * Returns the URI for the currently active link in the label.
@@ -63183,7 +63074,7 @@ export namespace Gtk {
          * label. See `gtk_label_set_mnemonic_widget()`.
          * @returns the target of the label’s mnemonic,     or `null` if none has been set and the default algorithm will be used.
          */
-        get_mnemonic_widget(): (Widget | null);
+        get_mnemonic_widget(): Widget | null;
 
         /**
          * Gets the value set by `gtk_label_set_selectable()`.
@@ -63284,7 +63175,7 @@ export namespace Gtk {
          * to the label after the markup string is parsed.
          * @param attrs a {@link Pango.AttrList}, or `null`
          */
-        set_attributes(attrs: (Pango.AttrList | null)): void;
+        set_attributes(attrs: Pango.AttrList | null): void;
 
         /**
          * Sets the mode used to ellipsize (add an ellipsis: "...") to the text
@@ -63413,7 +63304,7 @@ export namespace Gtk {
          * and toggle focus between the colliding widgets otherwise.
          * @param widget the target {@link Gtk.Widget}, or `null` to unset
          */
-        set_mnemonic_widget(widget: (Widget | null)): void;
+        set_mnemonic_widget(widget: Widget | null): void;
 
         /**
          * The pattern of underlines you want under the existing text within the
@@ -63528,9 +63419,7 @@ export namespace Gtk {
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends WidgetAccessible.ConstructorProps, Atk.Component.ConstructorProps, Atk.Hypertext.ConstructorProps, Atk.Text.ConstructorProps {
-
-        }
+        interface ConstructorProps extends WidgetAccessible.ConstructorProps, Atk.Component.ConstructorProps, Atk.Hypertext.ConstructorProps, Atk.Text.ConstructorProps {}
     }
 
     /**
@@ -63641,7 +63530,7 @@ export namespace Gtk {
          * @param coord_type specifies whether the coordinates are relative to the screen or to the components top level window
          * @returns a reference to the accessible child, if one exists
          */
-        ref_accessible_at_point(x: number, y: number, coord_type: Atk.CoordType): (Atk.Object | null);
+        ref_accessible_at_point(x: number, y: number, coord_type: Atk.CoordType): Atk.Object | null;
 
         /**
          * Remove the handler specified by `handler_id` from the list of
@@ -63787,7 +63676,7 @@ export namespace Gtk {
          * @param coord_type specifies whether the coordinates are relative to the screen or to the components top level window
          * @virtual
          */
-        vfunc_ref_accessible_at_point(x: number, y: number, coord_type: Atk.CoordType): (Atk.Object | null);
+        vfunc_ref_accessible_at_point(x: number, y: number, coord_type: Atk.CoordType): Atk.Object | null;
 
         /**
          * Remove the handler specified by `handler_id` from the list of
@@ -64040,7 +63929,7 @@ export namespace Gtk {
          * @param granularity An {@link Atk.TextGranularity}
          * @returns a newly allocated string containing the text at          the `offset` bounded by the specified `granularity`. Use `g_free()`          to free the returned string.  Returns `null` if the offset is invalid          or no implementation is available.
          */
-        get_string_at_offset(offset: number, granularity: Atk.TextGranularity): [(string | null), number, number];
+        get_string_at_offset(offset: number, granularity: Atk.TextGranularity): [string | null, number, number];
 
         /**
          * Gets the specified text.
@@ -64299,7 +64188,7 @@ export namespace Gtk {
          * @param granularity An {@link Atk.TextGranularity}
          * @virtual
          */
-        vfunc_get_string_at_offset(offset: number, granularity: Atk.TextGranularity): [(string | null), number, number];
+        vfunc_get_string_at_offset(offset: number, granularity: Atk.TextGranularity): [string | null, number, number];
 
         /**
          * Gets the specified text.
@@ -64552,7 +64441,7 @@ export namespace Gtk {
 
         _init(...args: any[]): void;
 
-        static ["new"](hadjustment: (Adjustment | null), vadjustment: (Adjustment | null)): Layout;
+        static ["new"](hadjustment: Adjustment | null, vadjustment: Adjustment | null): Layout;
 
         // Signals
         /** @signal */
@@ -64626,7 +64515,7 @@ export namespace Gtk {
          * See {@link Gtk.ScrolledWindow}, {@link Gtk.Scrollbar}, {@link Gtk.Adjustment} for details.
          * @param adjustment new scroll adjustment
          */
-        set_hadjustment(adjustment: (Adjustment | null)): void;
+        set_hadjustment(adjustment: Adjustment | null): void;
 
         /**
          * Sets the size of the scrollable area of the layout.
@@ -64641,7 +64530,7 @@ export namespace Gtk {
          * See {@link Gtk.ScrolledWindow}, {@link Gtk.Scrollbar}, {@link Gtk.Adjustment} for details.
          * @param adjustment new scroll adjustment
          */
-        set_vadjustment(adjustment: (Adjustment | null)): void;
+        set_vadjustment(adjustment: Adjustment | null): void;
 
         /**
          * Horizontal {@link Gtk.Adjustment} of the scrollable widget. This adjustment is
@@ -65667,7 +65556,7 @@ export namespace Gtk {
          * @param name the name of an offset in the bar
          * @returns `true` if the specified offset is found
          */
-        get_offset_value(name: (string | null)): [boolean, number];
+        get_offset_value(name: string | null): [boolean, number];
 
         /**
          * Returns the value of the {@link Gtk.LevelBar.value} property.
@@ -65680,7 +65569,7 @@ export namespace Gtk {
          * `gtk_level_bar_add_offset_value()`.
          * @param name the name of an offset in the bar
          */
-        remove_offset_value(name: (string | null)): void;
+        remove_offset_value(name: string | null): void;
 
         /**
          * Sets the value of the {@link Gtk.LevelBar.inverted} property.
@@ -65734,7 +65623,7 @@ export namespace Gtk {
          * @param child child to add
          * @param type kind of child or `null`
          */
-        add_child(builder: Builder, child: GObject.Object, type: (string | null)): void;
+        add_child(builder: Builder, child: GObject.Object, type: string | null): void;
 
         /**
          * Constructs a child of `buildable` with the name `name`.
@@ -65755,7 +65644,7 @@ export namespace Gtk {
          * @param tagname the name of the tag
          * @param data user data created in custom_tag_start
          */
-        custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
+        custom_finished(builder: Builder, child: GObject.Object | null, tagname: string, data: null): void;
 
         /**
          * This is called at the end of each custom element handled by
@@ -65765,7 +65654,7 @@ export namespace Gtk {
          * @param tagname name of tag
          * @param data user data that will be passed in to parser functions
          */
-        custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
+        custom_tag_end(builder: Builder, child: GObject.Object | null, tagname: string, data: null): void;
 
         /**
          * This is called for each unknown element under `<child>`.
@@ -65774,7 +65663,7 @@ export namespace Gtk {
          * @param tagname name of tag
          * @returns `true` if a object has a custom implementation, `false`          if it doesn't.
          */
-        custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, GLib.MarkupParser, null];
+        custom_tag_start(builder: Builder, child: GObject.Object | null, tagname: string): [boolean, GLib.MarkupParser, null];
 
         /**
          * Get the internal child called `childname` of the `buildable` object.
@@ -65810,7 +65699,7 @@ export namespace Gtk {
          * @param name name of property
          * @param value value of property
          */
-        set_buildable_property(builder: Builder, name: string, value: (GObject.Value | any)): void;
+        set_buildable_property(builder: Builder, name: string, value: GObject.Value | any): void;
 
         /**
          * Sets the name of the `buildable` object.
@@ -65826,7 +65715,7 @@ export namespace Gtk {
          * @param type kind of child or `null`
          * @virtual
          */
-        vfunc_add_child(builder: Builder, child: GObject.Object, type: (string | null)): void;
+        vfunc_add_child(builder: Builder, child: GObject.Object, type: string | null): void;
 
         /**
          * Constructs a child of `buildable` with the name `name`.
@@ -65848,7 +65737,7 @@ export namespace Gtk {
          * @param data user data created in custom_tag_start
          * @virtual
          */
-        vfunc_custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
+        vfunc_custom_finished(builder: Builder, child: GObject.Object | null, tagname: string, data: null): void;
 
         /**
          * This is called at the end of each custom element handled by
@@ -65859,7 +65748,7 @@ export namespace Gtk {
          * @param data user data that will be passed in to parser functions
          * @virtual
          */
-        vfunc_custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
+        vfunc_custom_tag_end(builder: Builder, child: GObject.Object | null, tagname: string, data: null): void;
 
         /**
          * This is called for each unknown element under `<child>`.
@@ -65868,7 +65757,7 @@ export namespace Gtk {
          * @param tagname name of tag
          * @virtual
          */
-        vfunc_custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, GLib.MarkupParser, never];
+        vfunc_custom_tag_start(builder: Builder, child: GObject.Object | null, tagname: string): [boolean, GLib.MarkupParser, never];
 
         /**
          * Get the internal child called `childname` of the `buildable` object.
@@ -65953,9 +65842,7 @@ export namespace Gtk {
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends WidgetAccessible.ConstructorProps, Atk.Component.ConstructorProps, Atk.Value.ConstructorProps {
-
-        }
+        interface ConstructorProps extends WidgetAccessible.ConstructorProps, Atk.Component.ConstructorProps, Atk.Value.ConstructorProps {}
     }
 
     /**
@@ -66066,7 +65953,7 @@ export namespace Gtk {
          * @param coord_type specifies whether the coordinates are relative to the screen or to the components top level window
          * @returns a reference to the accessible child, if one exists
          */
-        ref_accessible_at_point(x: number, y: number, coord_type: Atk.CoordType): (Atk.Object | null);
+        ref_accessible_at_point(x: number, y: number, coord_type: Atk.CoordType): Atk.Object | null;
 
         /**
          * Remove the handler specified by `handler_id` from the list of
@@ -66212,7 +66099,7 @@ export namespace Gtk {
          * @param coord_type specifies whether the coordinates are relative to the screen or to the components top level window
          * @virtual
          */
-        vfunc_ref_accessible_at_point(x: number, y: number, coord_type: Atk.CoordType): (Atk.Object | null);
+        vfunc_ref_accessible_at_point(x: number, y: number, coord_type: Atk.CoordType): Atk.Object | null;
 
         /**
          * Remove the handler specified by `handler_id` from the list of
@@ -66310,7 +66197,7 @@ export namespace Gtk {
          * Gets the range of this object.
          * @returns a newly allocated {@link Atk.Range} that represents the minimum, maximum and descriptor (if available) of `obj`. NULL if that range is not defined.
          */
-        get_range(): (Atk.Range | null);
+        get_range(): Atk.Range | null;
 
         /**
          * Gets the list of subranges defined for this object. See {@link Atk.Value}
@@ -66331,7 +66218,7 @@ export namespace Gtk {
          * @param value a {@link GObject.Value} which is the desired new accessible value.
          * @returns `true` if new value is successfully set, `false` otherwise.
          */
-        set_current_value(value: (GObject.Value | any)): boolean;
+        set_current_value(value: GObject.Value | any): boolean;
 
         /**
          * Sets the value of this object.
@@ -66391,7 +66278,7 @@ export namespace Gtk {
          * Gets the range of this object.
          * @virtual
          */
-        vfunc_get_range(): (Atk.Range | null);
+        vfunc_get_range(): Atk.Range | null;
 
         /**
          * Gets the list of subranges defined for this object. See {@link Atk.Value}
@@ -66453,7 +66340,7 @@ export namespace Gtk {
              * @signal
              * @run-last
              */
-            "activate-link": () => (boolean | void);
+            "activate-link": () => boolean | void;
             "notify::uri": (pspec: GObject.ParamSpec) => void;
             "notify::visited": (pspec: GObject.ParamSpec) => void;
             "notify::always-show-image": (pspec: GObject.ParamSpec) => void;
@@ -66583,7 +66470,7 @@ export namespace Gtk {
         // Conflicted with Gtk.Button.new
         static ["new"](...args: never[]): any;
 
-        static new_with_label(uri: string, label: (string | null)): LinkButton;
+        static new_with_label(uri: string, label: string | null): LinkButton;
 
         // Conflicted with Gtk.Button.new_with_label
         static new_with_label(...args: never[]): any;
@@ -66643,15 +66530,15 @@ export namespace Gtk {
          * @default null
           * @category Inherited from Gtk.Actionable
          */
-        get action_name(): (string | null);
-        set action_name(val: (string | null));
+        get action_name(): string | null;
+        set action_name(val: string | null);
 
         /**
          * @default null
           * @category Inherited from Gtk.Actionable
          */
-        get actionName(): (string | null);
-        set actionName(val: (string | null));
+        get actionName(): string | null;
+        set actionName(val: string | null);
 
         /** @category Inherited from Gtk.Actionable */
         get action_target(): GLib.Variant;
@@ -66731,7 +66618,7 @@ export namespace Gtk {
          * See `gtk_actionable_set_action_name()` for more information.
          * @returns the action name, or `null` if none is set
          */
-        get_action_name(): (string | null);
+        get_action_name(): string | null;
 
         /**
          * Gets the current target value of `actionable`.
@@ -66755,7 +66642,7 @@ export namespace Gtk {
          * associated with the window.
          * @param action_name an action name, or `null`
          */
-        set_action_name(action_name: (string | null)): void;
+        set_action_name(action_name: string | null): void;
 
         /**
          * Sets the target value of an actionable widget.
@@ -66779,7 +66666,7 @@ export namespace Gtk {
          * rendered inactive).
          * @param target_value a {@link GLib.Variant} to set as the target value, or `null`
          */
-        set_action_target_value(target_value: (GLib.Variant | null)): void;
+        set_action_target_value(target_value: GLib.Variant | null): void;
 
         /**
          * Sets the action-name and associated string target value of an
@@ -66803,7 +66690,7 @@ export namespace Gtk {
          * See `gtk_actionable_set_action_name()` for more information.
          * @virtual
          */
-        vfunc_get_action_name(): (string | null);
+        vfunc_get_action_name(): string | null;
 
         /**
          * Gets the current target value of `actionable`.
@@ -66828,7 +66715,7 @@ export namespace Gtk {
          * @param action_name an action name, or `null`
          * @virtual
          */
-        vfunc_set_action_name(action_name: (string | null)): void;
+        vfunc_set_action_name(action_name: string | null): void;
 
         /**
          * Sets the target value of an actionable widget.
@@ -66853,7 +66740,7 @@ export namespace Gtk {
          * @param target_value a {@link GLib.Variant} to set as the target value, or `null`
          * @virtual
          */
-        vfunc_set_action_target_value(target_value: (GLib.Variant | null)): void;
+        vfunc_set_action_target_value(target_value: GLib.Variant | null): void;
 
         /**
          * This is a utility function for {@link Gtk.Activatable} implementors.
@@ -66917,7 +66804,7 @@ export namespace Gtk {
          * {@link Gtk.Activatable.use_action_appearance} changes.
          * @param action the related {@link Gtk.Action} or `null`
          */
-        sync_action_properties(action: (Action | null)): void;
+        sync_action_properties(action: Action | null): void;
 
         /**
          * This is called to update the activatable completely, this is called
@@ -66927,7 +66814,7 @@ export namespace Gtk {
          * @param action the related {@link Gtk.Action} or `null`
          * @virtual
          */
-        vfunc_sync_action_properties(action: (Action | null)): void;
+        vfunc_sync_action_properties(action: Action | null): void;
 
         /**
          * Called to update the activatable when its related action’s properties change.
@@ -66999,9 +66886,7 @@ export namespace Gtk {
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends ButtonAccessible.ConstructorProps, Atk.Action.ConstructorProps, Atk.Component.ConstructorProps, Atk.HyperlinkImpl.ConstructorProps, Atk.Image.ConstructorProps {
-
-        }
+        interface ConstructorProps extends ButtonAccessible.ConstructorProps, Atk.Action.ConstructorProps, Atk.Component.ConstructorProps, Atk.HyperlinkImpl.ConstructorProps, Atk.Image.ConstructorProps {}
     }
 
     /**
@@ -67049,7 +66934,7 @@ export namespace Gtk {
          * @param i the action index corresponding to the action to be performed
          * @returns a description string, or `null` if `action` does not implement this interface.
          */
-        get_description(i: number): (string | null);
+        get_description(i: number): string | null;
 
         /**
          * @param args 
@@ -67083,14 +66968,14 @@ export namespace Gtk {
          * @param i the action index corresponding to the action to be performed
          * @returns the keybinding which can be used to activate this action, or `null` if there is no keybinding for this action.
          */
-        get_keybinding(i: number): (string | null);
+        get_keybinding(i: number): string | null;
 
         /**
          * Returns the localized name of the specified action of the object.
          * @param i the action index corresponding to the action to be performed
          * @returns a name string, or `null` if `action` does not implement this interface.
          */
-        get_localized_name(i: number): (string | null);
+        get_localized_name(i: number): string | null;
 
         /**
          * Gets the number of accessible actions available on the object.
@@ -67118,7 +67003,7 @@ export namespace Gtk {
          * @param i the action index corresponding to the action to be performed
          * @returns a name string, or `null` if `action` does not implement this interface.
          */
-        get_name(i: number): (string | null);
+        get_name(i: number): string | null;
 
         /**
          * @param args 
@@ -67152,7 +67037,7 @@ export namespace Gtk {
          * @param i the action index corresponding to the action to be performed
          * @virtual
          */
-        vfunc_get_description(i: number): (string | null);
+        vfunc_get_description(i: number): string | null;
 
         /**
          * @param args 
@@ -67187,14 +67072,14 @@ export namespace Gtk {
          * @param i the action index corresponding to the action to be performed
          * @virtual
          */
-        vfunc_get_keybinding(i: number): (string | null);
+        vfunc_get_keybinding(i: number): string | null;
 
         /**
          * Returns the localized name of the specified action of the object.
          * @param i the action index corresponding to the action to be performed
          * @virtual
          */
-        vfunc_get_localized_name(i: number): (string | null);
+        vfunc_get_localized_name(i: number): string | null;
 
         /**
          * Gets the number of accessible actions available on the object.
@@ -67222,7 +67107,7 @@ export namespace Gtk {
          * @param i the action index corresponding to the action to be performed
          * @virtual
          */
-        vfunc_get_name(i: number): (string | null);
+        vfunc_get_name(i: number): string | null;
 
         /**
          * @param args 
@@ -67268,7 +67153,7 @@ export namespace Gtk {
          * Retrieves the locale identifier associated to the {@link Atk.Image}.
          * @returns a string corresponding to the POSIX   `LC_MESSAGES` locale used by the image description, or   `null` if the image does not specify a locale.
          */
-        get_image_locale(): (string | null);
+        get_image_locale(): string | null;
 
         /**
          * Gets the position of the image in the form of a point specifying the
@@ -67307,7 +67192,7 @@ export namespace Gtk {
          * Retrieves the locale identifier associated to the {@link Atk.Image}.
          * @virtual
          */
-        vfunc_get_image_locale(): (string | null);
+        vfunc_get_image_locale(): string | null;
 
         /**
          * Gets the position of the image in the form of a point specifying the
@@ -67373,7 +67258,7 @@ export namespace Gtk {
              * @since 3.10
              * @run-last
              */
-            "row-selected": (arg0: (ListBoxRow | null)) => void;
+            "row-selected": (arg0: ListBoxRow | null) => void;
             /**
              * The ::select-all signal is a [keybinding signal][GtkBindingSignal]
              * which gets emitted to select all children of the box, if the selection
@@ -67641,7 +67526,7 @@ export namespace Gtk {
          * @param model the {@link Gio.ListModel} to be bound to `box`
          * @param create_widget_func a function that creates widgets for items   or `null` in case you also passed `null` as `model`
          */
-        bind_model(model: (Gio.ListModel | null), create_widget_func: (ListBoxCreateWidgetFunc | null)): void;
+        bind_model(model: Gio.ListModel | null, create_widget_func: ListBoxCreateWidgetFunc | null): void;
 
         /**
          * This is a helper function for implementing DnD onto a {@link Gtk.ListBox}.
@@ -67680,14 +67565,14 @@ export namespace Gtk {
          * @param index_ the index of the row
          * @returns the child {@link Gtk.Widget} or `null`
          */
-        get_row_at_index(index_: number): (ListBoxRow | null);
+        get_row_at_index(index_: number): ListBoxRow | null;
 
         /**
          * Gets the row at the `y` position.
          * @param y position
          * @returns the row or `null`   in case no row exists for the given y coordinate.
          */
-        get_row_at_y(y: number): (ListBoxRow | null);
+        get_row_at_y(y: number): ListBoxRow | null;
 
         /**
          * Gets the selected row.
@@ -67763,7 +67648,7 @@ export namespace Gtk {
          * Make `row` the currently selected row.
          * @param row The row to select or `null`
          */
-        select_row(row: (ListBoxRow | null)): void;
+        select_row(row: ListBoxRow | null): void;
 
         /**
          * Calls a function for each selected child.
@@ -67791,7 +67676,7 @@ export namespace Gtk {
          * to manually do that.
          * @param adjustment the adjustment, or `null`
          */
-        set_adjustment(adjustment: (Adjustment | null)): void;
+        set_adjustment(adjustment: Adjustment | null): void;
 
         /**
          * By setting a filter function on the `box` one can decide dynamically which
@@ -67806,7 +67691,7 @@ export namespace Gtk {
          * (see `gtk_list_box_bind_model()`).
          * @param filter_func callback that lets you filter which rows to show
          */
-        set_filter_func(filter_func: (ListBoxFilterFunc | null)): void;
+        set_filter_func(filter_func: ListBoxFilterFunc | null): void;
 
         /**
          * By setting a header function on the `box` one can dynamically add headers
@@ -67829,14 +67714,14 @@ export namespace Gtk {
          * `gtk_list_box_invalidate_headers()` is called.
          * @param update_header callback that lets you add row headers
          */
-        set_header_func(update_header: (ListBoxUpdateHeaderFunc | null)): void;
+        set_header_func(update_header: ListBoxUpdateHeaderFunc | null): void;
 
         /**
          * Sets the placeholder widget that is shown in the list when
          * it doesn't display any visible children.
          * @param placeholder a {@link Gtk.Widget} or `null`
          */
-        set_placeholder(placeholder: (Widget | null)): void;
+        set_placeholder(placeholder: Widget | null): void;
 
         /**
          * Sets how selection works in the listbox.
@@ -67857,7 +67742,7 @@ export namespace Gtk {
          * (see `gtk_list_box_bind_model()`).
          * @param sort_func the sort function
          */
-        set_sort_func(sort_func: (ListBoxSortFunc | null)): void;
+        set_sort_func(sort_func: ListBoxSortFunc | null): void;
 
         /**
          * Unselect all children of `box`, if the selection mode allows it.
@@ -67896,9 +67781,7 @@ export namespace Gtk {
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends ContainerAccessible.ConstructorProps, Atk.Component.ConstructorProps, Atk.Selection.ConstructorProps {
-
-        }
+        interface ConstructorProps extends ContainerAccessible.ConstructorProps, Atk.Component.ConstructorProps, Atk.Selection.ConstructorProps {}
     }
 
     /**
@@ -67980,7 +67863,7 @@ export namespace Gtk {
          * @param i a `gint` specifying the index in the selection set.  (e.g. the ith selection as opposed to the ith child).
          * @returns an {@link Atk.Object} representing the selected accessible, or `null` if `selection` does not implement this interface.
          */
-        ref_selection(i: number): (Atk.Object | null);
+        ref_selection(i: number): Atk.Object | null;
 
         /**
          * Removes the specified child of the object from the object's selection.
@@ -68042,7 +67925,7 @@ export namespace Gtk {
          * @param i a `gint` specifying the index in the selection set.  (e.g. the ith selection as opposed to the ith child).
          * @virtual
          */
-        vfunc_ref_selection(i: number): (Atk.Object | null);
+        vfunc_ref_selection(i: number): Atk.Object | null;
 
         /**
          * Removes the specified child of the object from the object's selection.
@@ -68227,7 +68110,7 @@ export namespace Gtk {
          * set already, and if so to update the state of it.
          * @returns the current header, or `null` if none
          */
-        get_header(): (Widget | null);
+        get_header(): Widget | null;
 
         /**
          * Gets the current index of the `row` in its {@link Gtk.ListBox} container.
@@ -68261,7 +68144,7 @@ export namespace Gtk {
          * header in the row, and be shown in front of the row in the listbox.
          * @param header the header, or `null`
          */
-        set_header(header: (Widget | null)): void;
+        set_header(header: Widget | null): void;
 
         /**
          * Set the {@link Gtk.ListBoxRow.selectable} property for this row.
@@ -68273,15 +68156,15 @@ export namespace Gtk {
          * @default null
           * @category Inherited from Gtk.Actionable
          */
-        get action_name(): (string | null);
-        set action_name(val: (string | null));
+        get action_name(): string | null;
+        set action_name(val: string | null);
 
         /**
          * @default null
           * @category Inherited from Gtk.Actionable
          */
-        get actionName(): (string | null);
-        set actionName(val: (string | null));
+        get actionName(): string | null;
+        set actionName(val: string | null);
 
         /** @category Inherited from Gtk.Actionable */
         get action_target(): GLib.Variant;
@@ -68297,7 +68180,7 @@ export namespace Gtk {
          * See `gtk_actionable_set_action_name()` for more information.
          * @returns the action name, or `null` if none is set
          */
-        get_action_name(): (string | null);
+        get_action_name(): string | null;
 
         /**
          * Gets the current target value of `actionable`.
@@ -68321,7 +68204,7 @@ export namespace Gtk {
          * associated with the window.
          * @param action_name an action name, or `null`
          */
-        set_action_name(action_name: (string | null)): void;
+        set_action_name(action_name: string | null): void;
 
         /**
          * Sets the target value of an actionable widget.
@@ -68345,7 +68228,7 @@ export namespace Gtk {
          * rendered inactive).
          * @param target_value a {@link GLib.Variant} to set as the target value, or `null`
          */
-        set_action_target_value(target_value: (GLib.Variant | null)): void;
+        set_action_target_value(target_value: GLib.Variant | null): void;
 
         /**
          * Sets the action-name and associated string target value of an
@@ -68369,7 +68252,7 @@ export namespace Gtk {
          * See `gtk_actionable_set_action_name()` for more information.
          * @virtual
          */
-        vfunc_get_action_name(): (string | null);
+        vfunc_get_action_name(): string | null;
 
         /**
          * Gets the current target value of `actionable`.
@@ -68394,7 +68277,7 @@ export namespace Gtk {
          * @param action_name an action name, or `null`
          * @virtual
          */
-        vfunc_set_action_name(action_name: (string | null)): void;
+        vfunc_set_action_name(action_name: string | null): void;
 
         /**
          * Sets the target value of an actionable widget.
@@ -68419,7 +68302,7 @@ export namespace Gtk {
          * @param target_value a {@link GLib.Variant} to set as the target value, or `null`
          * @virtual
          */
-        vfunc_set_action_target_value(target_value: (GLib.Variant | null)): void;
+        vfunc_set_action_target_value(target_value: GLib.Variant | null): void;
 
         /**
          * Emits a {@link Gtk.Widget.SignalSignatures.child_notify | Gtk.Widget::child-notify} signal for the
@@ -68465,9 +68348,7 @@ export namespace Gtk {
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends ContainerAccessible.ConstructorProps, Atk.Component.ConstructorProps {
-
-        }
+        interface ConstructorProps extends ContainerAccessible.ConstructorProps, Atk.Component.ConstructorProps {}
     }
 
     /**
@@ -68507,13 +68388,10 @@ export namespace Gtk {
 
     namespace ListStore {
         // Signal signatures
-        interface SignalSignatures extends GObject.Object.SignalSignatures {
-        }
+        interface SignalSignatures extends GObject.Object.SignalSignatures {}
 
         // Constructor properties interface
-        interface ConstructorProps extends GObject.Object.ConstructorProps, Buildable.ConstructorProps, TreeDragDest.ConstructorProps, TreeDragSource.ConstructorProps, TreeModel.ConstructorProps, TreeSortable.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GObject.Object.ConstructorProps, Buildable.ConstructorProps, TreeDragDest.ConstructorProps, TreeDragSource.ConstructorProps, TreeModel.ConstructorProps, TreeSortable.ConstructorProps {}
     }
 
     /**
@@ -68722,7 +68600,7 @@ export namespace Gtk {
          * in values, you need to call `gtk_list_store_set()` or `gtk_list_store_set_value()`.
          * @param sibling A valid {@link Gtk.TreeIter}, or `null`
          */
-        insert_after(sibling: (TreeIter | null)): TreeIter;
+        insert_after(sibling: TreeIter | null): TreeIter;
 
         /**
          * Inserts a new row before `sibling`. If `sibling` is `null`, then the row will
@@ -68731,7 +68609,7 @@ export namespace Gtk {
          * values, you need to call `gtk_list_store_set()` or `gtk_list_store_set_value()`.
          * @param sibling A valid {@link Gtk.TreeIter}, or `null`
          */
-        insert_before(sibling: (TreeIter | null)): TreeIter;
+        insert_before(sibling: TreeIter | null): TreeIter;
 
         /**
          * A variant of `gtk_list_store_insert_with_values()` which
@@ -68761,7 +68639,7 @@ export namespace Gtk {
          * @param iter A {@link Gtk.TreeIter}.
          * @param position A {@link Gtk.TreeIter} or `null`.
          */
-        move_after(iter: TreeIter, position: (TreeIter | null)): void;
+        move_after(iter: TreeIter, position: TreeIter | null): void;
 
         /**
          * Moves `iter` in `store` to the position before `position`. Note that this
@@ -68770,7 +68648,7 @@ export namespace Gtk {
          * @param iter A {@link Gtk.TreeIter}.
          * @param position A {@link Gtk.TreeIter}, or `null`.
          */
-        move_before(iter: TreeIter, position: (TreeIter | null)): void;
+        move_before(iter: TreeIter, position: TreeIter | null): void;
 
         /**
          * Prepends a new row to `list_store`. `iter` will be changed to point to this new
@@ -68812,7 +68690,7 @@ export namespace Gtk {
          * @param column column number to modify
          * @param value new value for the cell
          */
-        set_value(iter: TreeIter, column: number, value: (GObject.Value | any)): void;
+        set_value(iter: TreeIter, column: number, value: GObject.Value | any): void;
 
         /**
          * A variant of `gtk_list_store_set_valist()` which
@@ -68847,7 +68725,7 @@ export namespace Gtk {
          * @param child child to add
          * @param type kind of child or `null`
          */
-        add_child(builder: Builder, child: GObject.Object, type: (string | null)): void;
+        add_child(builder: Builder, child: GObject.Object, type: string | null): void;
 
         /**
          * Constructs a child of `buildable` with the name `name`.
@@ -68868,7 +68746,7 @@ export namespace Gtk {
          * @param tagname the name of the tag
          * @param data user data created in custom_tag_start
          */
-        custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
+        custom_finished(builder: Builder, child: GObject.Object | null, tagname: string, data: null): void;
 
         /**
          * This is called at the end of each custom element handled by
@@ -68878,7 +68756,7 @@ export namespace Gtk {
          * @param tagname name of tag
          * @param data user data that will be passed in to parser functions
          */
-        custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
+        custom_tag_end(builder: Builder, child: GObject.Object | null, tagname: string, data: null): void;
 
         /**
          * This is called for each unknown element under `<child>`.
@@ -68887,7 +68765,7 @@ export namespace Gtk {
          * @param tagname name of tag
          * @returns `true` if a object has a custom implementation, `false`          if it doesn't.
          */
-        custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, GLib.MarkupParser, null];
+        custom_tag_start(builder: Builder, child: GObject.Object | null, tagname: string): [boolean, GLib.MarkupParser, null];
 
         /**
          * Get the internal child called `childname` of the `buildable` object.
@@ -68923,7 +68801,7 @@ export namespace Gtk {
          * @param name name of property
          * @param value value of property
          */
-        set_buildable_property(builder: Builder, name: string, value: (GObject.Value | any)): void;
+        set_buildable_property(builder: Builder, name: string, value: GObject.Value | any): void;
 
         /**
          * Sets the name of the `buildable` object.
@@ -68939,7 +68817,7 @@ export namespace Gtk {
          * @param type kind of child or `null`
          * @virtual
          */
-        vfunc_add_child(builder: Builder, child: GObject.Object, type: (string | null)): void;
+        vfunc_add_child(builder: Builder, child: GObject.Object, type: string | null): void;
 
         /**
          * Constructs a child of `buildable` with the name `name`.
@@ -68961,7 +68839,7 @@ export namespace Gtk {
          * @param data user data created in custom_tag_start
          * @virtual
          */
-        vfunc_custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
+        vfunc_custom_finished(builder: Builder, child: GObject.Object | null, tagname: string, data: null): void;
 
         /**
          * This is called at the end of each custom element handled by
@@ -68972,7 +68850,7 @@ export namespace Gtk {
          * @param data user data that will be passed in to parser functions
          * @virtual
          */
-        vfunc_custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
+        vfunc_custom_tag_end(builder: Builder, child: GObject.Object | null, tagname: string, data: null): void;
 
         /**
          * This is called for each unknown element under `<child>`.
@@ -68981,7 +68859,7 @@ export namespace Gtk {
          * @param tagname name of tag
          * @virtual
          */
-        vfunc_custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, GLib.MarkupParser, never];
+        vfunc_custom_tag_start(builder: Builder, child: GObject.Object | null, tagname: string): [boolean, GLib.MarkupParser, never];
 
         /**
          * Get the internal child called `childname` of the `buildable` object.
@@ -69146,7 +69024,7 @@ export namespace Gtk {
          * @param root A {@link Gtk.TreePath} or `null`.
          * @returns A new {@link Gtk.TreeModel}.
          */
-        filter_new(root: (TreePath | null)): TreeModel;
+        filter_new(root: TreePath | null): TreeModel;
 
         /**
          * Calls func on each node in model in a depth-first fashion.
@@ -69246,7 +69124,7 @@ export namespace Gtk {
          * @param parent the {@link Gtk.TreeIter}-struct, or `null`
          * @returns `true`, if `iter` has been set to the first child
          */
-        iter_children(parent: (TreeIter | null)): [boolean, TreeIter];
+        iter_children(parent: TreeIter | null): [boolean, TreeIter];
 
         /**
          * Returns `true` if `iter` has children, `false` otherwise.
@@ -69263,7 +69141,7 @@ export namespace Gtk {
          * @param iter the {@link Gtk.TreeIter}-struct, or `null`
          * @returns the number of children of `iter`
          */
-        iter_n_children(iter: (TreeIter | null)): number;
+        iter_n_children(iter: TreeIter | null): number;
 
         /**
          * Sets `iter` to point to the node following it at the current level.
@@ -69287,7 +69165,7 @@ export namespace Gtk {
          * @param n the index of the desired child
          * @returns `true`, if `parent` has an `n`-th child
          */
-        iter_nth_child(parent: (TreeIter | null), n: number): [boolean, TreeIter];
+        iter_nth_child(parent: TreeIter | null, n: number): [boolean, TreeIter];
 
         /**
          * Sets `iter` to be the parent of `child`.
@@ -69381,7 +69259,7 @@ export namespace Gtk {
          * @param iter a valid {@link Gtk.TreeIter}-struct pointing to the node     whose children have been reordered, or `null` if the depth     of `path` is 0
          * @param new_order an array of integers     mapping the current position of each child to its old     position before the re-ordering,     i.e. `new_order``[newpos] = oldpos`
          */
-        rows_reordered(path: TreePath, iter: (TreeIter | null), new_order: number[]): void;
+        rows_reordered(path: TreePath, iter: TreeIter | null, new_order: number[]): void;
 
         /**
          * Lets the tree unref the node.
@@ -69459,7 +69337,7 @@ export namespace Gtk {
          * @param parent the {@link Gtk.TreeIter}-struct, or `null`
          * @virtual
          */
-        vfunc_iter_children(parent: (TreeIter | null)): [boolean, TreeIter];
+        vfunc_iter_children(parent: TreeIter | null): [boolean, TreeIter];
 
         /**
          * Returns `true` if `iter` has children, `false` otherwise.
@@ -69476,7 +69354,7 @@ export namespace Gtk {
          * @param iter the {@link Gtk.TreeIter}-struct, or `null`
          * @virtual
          */
-        vfunc_iter_n_children(iter: (TreeIter | null)): number;
+        vfunc_iter_n_children(iter: TreeIter | null): number;
 
         /**
          * Sets `iter` to point to the node following it at the current level.
@@ -69500,7 +69378,7 @@ export namespace Gtk {
          * @param n the index of the desired child
          * @virtual
          */
-        vfunc_iter_nth_child(parent: (TreeIter | null), n: number): [boolean, TreeIter];
+        vfunc_iter_nth_child(parent: TreeIter | null, n: number): [boolean, TreeIter];
 
         /**
          * Sets `iter` to be the parent of `child`.
@@ -69926,7 +69804,7 @@ export namespace Gtk {
 
         _init(...args: any[]): void;
 
-        static ["new"](permission: (Gio.Permission | null)): LockButton;
+        static ["new"](permission: Gio.Permission | null): LockButton;
 
         // Conflicted with Gtk.Button.new
         static ["new"](...args: never[]): any;
@@ -69955,21 +69833,21 @@ export namespace Gtk {
          * Sets the {@link Gio.Permission} object that controls `button`.
          * @param permission a {@link Gio.Permission} object, or `null`
          */
-        set_permission(permission: (Gio.Permission | null)): void;
+        set_permission(permission: Gio.Permission | null): void;
 
         /**
          * @default null
           * @category Inherited from Gtk.Actionable
          */
-        get action_name(): (string | null);
-        set action_name(val: (string | null));
+        get action_name(): string | null;
+        set action_name(val: string | null);
 
         /**
          * @default null
           * @category Inherited from Gtk.Actionable
          */
-        get actionName(): (string | null);
-        set actionName(val: (string | null));
+        get actionName(): string | null;
+        set actionName(val: string | null);
 
         /** @category Inherited from Gtk.Actionable */
         get action_target(): GLib.Variant;
@@ -70049,7 +69927,7 @@ export namespace Gtk {
          * See `gtk_actionable_set_action_name()` for more information.
          * @returns the action name, or `null` if none is set
          */
-        get_action_name(): (string | null);
+        get_action_name(): string | null;
 
         /**
          * Gets the current target value of `actionable`.
@@ -70073,7 +69951,7 @@ export namespace Gtk {
          * associated with the window.
          * @param action_name an action name, or `null`
          */
-        set_action_name(action_name: (string | null)): void;
+        set_action_name(action_name: string | null): void;
 
         /**
          * Sets the target value of an actionable widget.
@@ -70097,7 +69975,7 @@ export namespace Gtk {
          * rendered inactive).
          * @param target_value a {@link GLib.Variant} to set as the target value, or `null`
          */
-        set_action_target_value(target_value: (GLib.Variant | null)): void;
+        set_action_target_value(target_value: GLib.Variant | null): void;
 
         /**
          * Sets the action-name and associated string target value of an
@@ -70121,7 +69999,7 @@ export namespace Gtk {
          * See `gtk_actionable_set_action_name()` for more information.
          * @virtual
          */
-        vfunc_get_action_name(): (string | null);
+        vfunc_get_action_name(): string | null;
 
         /**
          * Gets the current target value of `actionable`.
@@ -70146,7 +70024,7 @@ export namespace Gtk {
          * @param action_name an action name, or `null`
          * @virtual
          */
-        vfunc_set_action_name(action_name: (string | null)): void;
+        vfunc_set_action_name(action_name: string | null): void;
 
         /**
          * Sets the target value of an actionable widget.
@@ -70171,7 +70049,7 @@ export namespace Gtk {
          * @param target_value a {@link GLib.Variant} to set as the target value, or `null`
          * @virtual
          */
-        vfunc_set_action_target_value(target_value: (GLib.Variant | null)): void;
+        vfunc_set_action_target_value(target_value: GLib.Variant | null): void;
 
         /**
          * This is a utility function for {@link Gtk.Activatable} implementors.
@@ -70235,7 +70113,7 @@ export namespace Gtk {
          * {@link Gtk.Activatable.use_action_appearance} changes.
          * @param action the related {@link Gtk.Action} or `null`
          */
-        sync_action_properties(action: (Action | null)): void;
+        sync_action_properties(action: Action | null): void;
 
         /**
          * This is called to update the activatable completely, this is called
@@ -70245,7 +70123,7 @@ export namespace Gtk {
          * @param action the related {@link Gtk.Action} or `null`
          * @virtual
          */
-        vfunc_sync_action_properties(action: (Action | null)): void;
+        vfunc_sync_action_properties(action: Action | null): void;
 
         /**
          * Called to update the activatable when its related action’s properties change.
@@ -70317,9 +70195,7 @@ export namespace Gtk {
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends ButtonAccessible.ConstructorProps, Atk.Action.ConstructorProps, Atk.Component.ConstructorProps, Atk.Image.ConstructorProps {
-
-        }
+        interface ConstructorProps extends ButtonAccessible.ConstructorProps, Atk.Action.ConstructorProps, Atk.Component.ConstructorProps, Atk.Image.ConstructorProps {}
     }
 
     /**
@@ -70367,7 +70243,7 @@ export namespace Gtk {
          * @param i the action index corresponding to the action to be performed
          * @returns a description string, or `null` if `action` does not implement this interface.
          */
-        get_description(i: number): (string | null);
+        get_description(i: number): string | null;
 
         /**
          * @param args 
@@ -70401,14 +70277,14 @@ export namespace Gtk {
          * @param i the action index corresponding to the action to be performed
          * @returns the keybinding which can be used to activate this action, or `null` if there is no keybinding for this action.
          */
-        get_keybinding(i: number): (string | null);
+        get_keybinding(i: number): string | null;
 
         /**
          * Returns the localized name of the specified action of the object.
          * @param i the action index corresponding to the action to be performed
          * @returns a name string, or `null` if `action` does not implement this interface.
          */
-        get_localized_name(i: number): (string | null);
+        get_localized_name(i: number): string | null;
 
         /**
          * Gets the number of accessible actions available on the object.
@@ -70436,7 +70312,7 @@ export namespace Gtk {
          * @param i the action index corresponding to the action to be performed
          * @returns a name string, or `null` if `action` does not implement this interface.
          */
-        get_name(i: number): (string | null);
+        get_name(i: number): string | null;
 
         /**
          * @param args 
@@ -70470,7 +70346,7 @@ export namespace Gtk {
          * @param i the action index corresponding to the action to be performed
          * @virtual
          */
-        vfunc_get_description(i: number): (string | null);
+        vfunc_get_description(i: number): string | null;
 
         /**
          * @param args 
@@ -70505,14 +70381,14 @@ export namespace Gtk {
          * @param i the action index corresponding to the action to be performed
          * @virtual
          */
-        vfunc_get_keybinding(i: number): (string | null);
+        vfunc_get_keybinding(i: number): string | null;
 
         /**
          * Returns the localized name of the specified action of the object.
          * @param i the action index corresponding to the action to be performed
          * @virtual
          */
-        vfunc_get_localized_name(i: number): (string | null);
+        vfunc_get_localized_name(i: number): string | null;
 
         /**
          * Gets the number of accessible actions available on the object.
@@ -70540,7 +70416,7 @@ export namespace Gtk {
          * @param i the action index corresponding to the action to be performed
          * @virtual
          */
-        vfunc_get_name(i: number): (string | null);
+        vfunc_get_name(i: number): string | null;
 
         /**
          * @param args 
@@ -70574,7 +70450,7 @@ export namespace Gtk {
          * Retrieves the locale identifier associated to the {@link Atk.Image}.
          * @returns a string corresponding to the POSIX   `LC_MESSAGES` locale used by the image description, or   `null` if the image does not specify a locale.
          */
-        get_image_locale(): (string | null);
+        get_image_locale(): string | null;
 
         /**
          * Gets the position of the image in the form of a point specifying the
@@ -70613,7 +70489,7 @@ export namespace Gtk {
          * Retrieves the locale identifier associated to the {@link Atk.Image}.
          * @virtual
          */
-        vfunc_get_image_locale(): (string | null);
+        vfunc_get_image_locale(): string | null;
 
         /**
          * Gets the position of the image in the form of a point specifying the
@@ -71166,7 +71042,7 @@ export namespace Gtk {
          * @param attach_widget the {@link Gtk.Widget} that the menu will be attached to
          * @param detacher the user supplied callback function             that will be called when the menu calls `gtk_menu_detach()`
          */
-        attach_to_widget(attach_widget: Widget, detacher: (MenuDetachFunc | null)): void;
+        attach_to_widget(attach_widget: Widget, detacher: MenuDetachFunc | null): void;
 
         /**
          * Detaches the menu from the widget to which it had been attached.
@@ -71269,7 +71145,7 @@ export namespace Gtk {
          * @param button the mouse button which was pressed to initiate the event.
          * @param activate_time the time at which the activation event occurred.
          */
-        popup(parent_menu_shell: (Widget | null), parent_menu_item: (Widget | null), func: (MenuPositionFunc | null), button: number, activate_time: number): void;
+        popup(parent_menu_shell: Widget | null, parent_menu_item: Widget | null, func: MenuPositionFunc | null, button: number, activate_time: number): void;
 
         /**
          * Displays `menu` and makes it available for selection.
@@ -71286,7 +71162,7 @@ export namespace Gtk {
          * out how it was actually positioned.
          * @param trigger_event the {@link Gdk.Event} that initiated this request or                 `null` if it's the current event
          */
-        popup_at_pointer(trigger_event: (Gdk.Event | null)): void;
+        popup_at_pointer(trigger_event: Gdk.Event | null): void;
 
         /**
          * Displays `menu` and makes it available for selection.
@@ -71313,7 +71189,7 @@ export namespace Gtk {
          * @param menu_anchor the point on `menu` to align with `rect`'s anchor point
          * @param trigger_event the {@link Gdk.Event} that initiated this request or                 `null` if it's the current event
          */
-        popup_at_rect(rect_window: Gdk.Window, rect: Gdk.Rectangle, rect_anchor: Gdk.Gravity, menu_anchor: Gdk.Gravity, trigger_event: (Gdk.Event | null)): void;
+        popup_at_rect(rect_window: Gdk.Window, rect: Gdk.Rectangle, rect_anchor: Gdk.Gravity, menu_anchor: Gdk.Gravity, trigger_event: Gdk.Event | null): void;
 
         /**
          * Displays `menu` and makes it available for selection.
@@ -71341,7 +71217,7 @@ export namespace Gtk {
          * @param menu_anchor the point on `menu` to align with `widget`'s anchor point
          * @param trigger_event the {@link Gdk.Event} that initiated this request or                 `null` if it's the current event
          */
-        popup_at_widget(widget: Widget, widget_anchor: Gdk.Gravity, menu_anchor: Gdk.Gravity, trigger_event: (Gdk.Event | null)): void;
+        popup_at_widget(widget: Widget, widget_anchor: Gdk.Gravity, menu_anchor: Gdk.Gravity, trigger_event: Gdk.Event | null): void;
 
         /**
          * Displays a menu and makes it available for selection.
@@ -71375,7 +71251,7 @@ export namespace Gtk {
          * @param button the mouse button which was pressed to initiate the event
          * @param activate_time the time at which the activation event occurred
          */
-        popup_for_device(device: (Gdk.Device | null), parent_menu_shell: (Widget | null), parent_menu_item: (Widget | null), func: (MenuPositionFunc | null), button: number, activate_time: number): void;
+        popup_for_device(device: Gdk.Device | null, parent_menu_shell: Widget | null, parent_menu_item: Widget | null, func: MenuPositionFunc | null, button: number, activate_time: number): void;
 
         /**
          * Moves `child` to a new `position` in the list of `menu`
@@ -71398,7 +71274,7 @@ export namespace Gtk {
          * contained in this group.
          * @param accel_group the {@link Gtk.AccelGroup} to be associated               with the menu.
          */
-        set_accel_group(accel_group: (AccelGroup | null)): void;
+        set_accel_group(accel_group: AccelGroup | null): void;
 
         /**
          * Sets an accelerator path for this menu from which accelerator paths
@@ -71424,7 +71300,7 @@ export namespace Gtk {
          * it first with `g_intern_static_string()`.
          * @param accel_path a valid accelerator path, or `null` to unset the path
          */
-        set_accel_path(accel_path: (string | null)): void;
+        set_accel_path(accel_path: string | null): void;
 
         /**
          * Selects the specified menu item within the menu.  This is used by
@@ -71458,7 +71334,7 @@ export namespace Gtk {
          * Sets the {@link Gdk.Screen} on which the menu will be displayed.
          * @param screen a {@link Gdk.Screen}, or `null` if the screen should be          determined by the widget the menu is attached to
          */
-        set_screen(screen: (Gdk.Screen | null)): void;
+        set_screen(screen: Gdk.Screen | null): void;
 
         /**
          * Changes the tearoff state of the menu.  A menu is normally
@@ -71478,7 +71354,7 @@ export namespace Gtk {
          * text as that menu item’s label.
          * @param title a string containing the title for the menu, or `null` to   inherit the title of the parent menu item, if any
          */
-        set_title(title: (string | null)): void;
+        set_title(title: string | null): void;
     }
 
 
@@ -71506,9 +71382,7 @@ export namespace Gtk {
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends MenuShellAccessible.ConstructorProps, Atk.Component.ConstructorProps, Atk.Selection.ConstructorProps {
-
-        }
+        interface ConstructorProps extends MenuShellAccessible.ConstructorProps, Atk.Component.ConstructorProps, Atk.Selection.ConstructorProps {}
     }
 
     /**
@@ -71590,7 +71464,7 @@ export namespace Gtk {
          * @param i a `gint` specifying the index in the selection set.  (e.g. the ith selection as opposed to the ith child).
          * @returns an {@link Atk.Object} representing the selected accessible, or `null` if `selection` does not implement this interface.
          */
-        ref_selection(i: number): (Atk.Object | null);
+        ref_selection(i: number): Atk.Object | null;
 
         /**
          * Removes the specified child of the object from the object's selection.
@@ -71652,7 +71526,7 @@ export namespace Gtk {
          * @param i a `gint` specifying the index in the selection set.  (e.g. the ith selection as opposed to the ith child).
          * @virtual
          */
-        vfunc_ref_selection(i: number): (Atk.Object | null);
+        vfunc_ref_selection(i: number): Atk.Object | null;
 
         /**
          * Removes the specified child of the object from the object's selection.
@@ -71914,13 +71788,13 @@ export namespace Gtk {
 
         // Constructor properties interface
         interface ConstructorProps extends ToggleButton.ConstructorProps, Atk.ImplementorIface.ConstructorProps, Actionable.ConstructorProps, Activatable.ConstructorProps, Buildable.ConstructorProps {
-            align_widget: (Container | null);
-            alignWidget: (Container | null);
+            align_widget: Container | null;
+            alignWidget: Container | null;
             direction: ArrowType;
-            menu_model: (Gio.MenuModel | null);
-            menuModel: (Gio.MenuModel | null);
-            popover: (Popover | null);
-            popup: (Menu | null);
+            menu_model: Gio.MenuModel | null;
+            menuModel: Gio.MenuModel | null;
+            popover: Popover | null;
+            popup: Menu | null;
             use_popover: boolean;
             usePopover: boolean;
         }
@@ -72020,15 +71894,15 @@ export namespace Gtk {
          * The {@link Gtk.Widget} to use to align the menu with.
          * @since 3.6
          */
-        get align_widget(): (Container | null);
-        set align_widget(val: (Container | null));
+        get align_widget(): Container | null;
+        set align_widget(val: Container | null);
 
         /**
          * The {@link Gtk.Widget} to use to align the menu with.
          * @since 3.6
          */
-        get alignWidget(): (Container | null);
-        set alignWidget(val: (Container | null));
+        get alignWidget(): Container | null;
+        set alignWidget(val: Container | null);
 
         /**
          * The {@link Gtk.ArrowType} representing the direction in which the
@@ -72048,8 +71922,8 @@ export namespace Gtk {
          * {@link Gtk.MenuButton.popup} property.
          * @since 3.6
          */
-        get menu_model(): (Gio.MenuModel | null);
-        set menu_model(val: (Gio.MenuModel | null));
+        get menu_model(): Gio.MenuModel | null;
+        set menu_model(val: Gio.MenuModel | null);
 
         /**
          * The {@link Gio.MenuModel} from which the popup will be created.
@@ -72060,22 +71934,22 @@ export namespace Gtk {
          * {@link Gtk.MenuButton.popup} property.
          * @since 3.6
          */
-        get menuModel(): (Gio.MenuModel | null);
-        set menuModel(val: (Gio.MenuModel | null));
+        get menuModel(): Gio.MenuModel | null;
+        set menuModel(val: Gio.MenuModel | null);
 
         /**
          * The {@link Gtk.Popover} that will be popped up when the button is clicked.
          * @since 3.12
          */
-        get popover(): (Popover | null);
-        set popover(val: (Popover | null));
+        get popover(): Popover | null;
+        set popover(val: Popover | null);
 
         /**
          * The {@link Gtk.Menu} that will be popped up when the button is clicked.
          * @since 3.6
          */
-        get popup(): (Menu | null);
-        set popup(val: (Menu | null));
+        get popup(): Menu | null;
+        set popup(val: Menu | null);
 
         /**
          * Whether to construct a {@link Gtk.Popover} from the menu model,
@@ -72129,7 +72003,7 @@ export namespace Gtk {
          * Returns the parent {@link Gtk.Widget} to use to line up with menu.
          * @returns a {@link Gtk.Widget} value or `null`
          */
-        get_align_widget(): (Widget | null);
+        get_align_widget(): Widget | null;
 
         /**
          * Returns the direction the popup will be pointing at when popped up.
@@ -72147,7 +72021,7 @@ export namespace Gtk {
          * Returns the {@link Gio.MenuModel} used to generate the popup.
          * @returns a {@link Gio.MenuModel} or `null`
          */
-        get_menu_model(): (Gio.MenuModel | null);
+        get_menu_model(): Gio.MenuModel | null;
 
         /**
          * Returns the {@link Gtk.Popover} that pops out of the button.
@@ -72155,7 +72029,7 @@ export namespace Gtk {
          * returns `null`.
          * @returns a {@link Gtk.Popover} or `null`
          */
-        get_popover(): (Popover | null);
+        get_popover(): Popover | null;
 
         /**
          * Returns the {@link Gtk.Menu} that pops out of the button.
@@ -72163,7 +72037,7 @@ export namespace Gtk {
          * returns `null`.
          * @returns a {@link Gtk.Menu} or `null`
          */
-        get_popup(): (Menu | null);
+        get_popup(): Menu | null;
 
         /**
          * Returns whether a {@link Gtk.Popover} or a {@link Gtk.Menu} will be constructed
@@ -72183,7 +72057,7 @@ export namespace Gtk {
          * and not for popovers.
          * @param align_widget a {@link Gtk.Widget}
          */
-        set_align_widget(align_widget: (Widget | null)): void;
+        set_align_widget(align_widget: Widget | null): void;
 
         /**
          * Sets the direction in which the popup will be popped up, as
@@ -72219,7 +72093,7 @@ export namespace Gtk {
          * to `null`.
          * @param menu_model a {@link Gio.MenuModel}, or `null` to unset and disable the   button
          */
-        set_menu_model(menu_model: (Gio.MenuModel | null)): void;
+        set_menu_model(menu_model: Gio.MenuModel | null): void;
 
         /**
          * Sets the {@link Gtk.Popover} that will be popped up when the `menu_button` is clicked,
@@ -72229,7 +72103,7 @@ export namespace Gtk {
          * are dissociated from the `menu_button`, and those properties are set to `null`.
          * @param popover a {@link Gtk.Popover}, or `null` to unset and disable the button
          */
-        set_popover(popover: (Widget | null)): void;
+        set_popover(popover: Widget | null): void;
 
         /**
          * Sets the {@link Gtk.Menu} that will be popped up when the `menu_button` is clicked, or
@@ -72239,7 +72113,7 @@ export namespace Gtk {
          * are dissociated from the `menu_button`, and those properties are set to `null`.
          * @param menu a {@link Gtk.Menu}, or `null` to unset and disable the button
          */
-        set_popup(menu: (Widget | null)): void;
+        set_popup(menu: Widget | null): void;
 
         /**
          * Sets whether to construct a {@link Gtk.Popover} instead of {@link Gtk.Menu}
@@ -72309,9 +72183,7 @@ export namespace Gtk {
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends ToggleButtonAccessible.ConstructorProps, Atk.Action.ConstructorProps, Atk.Component.ConstructorProps, Atk.Image.ConstructorProps {
-
-        }
+        interface ConstructorProps extends ToggleButtonAccessible.ConstructorProps, Atk.Action.ConstructorProps, Atk.Component.ConstructorProps, Atk.Image.ConstructorProps {}
     }
 
     /**
@@ -72442,12 +72314,12 @@ export namespace Gtk {
 
         // Constructor properties interface
         interface ConstructorProps extends Bin.ConstructorProps, Atk.ImplementorIface.ConstructorProps, Actionable.ConstructorProps, Activatable.ConstructorProps, Buildable.ConstructorProps {
-            accel_path: (string | null);
-            accelPath: (string | null);
+            accel_path: string | null;
+            accelPath: string | null;
             label: string;
             right_justified: boolean;
             rightJustified: boolean;
-            submenu: (Menu | null);
+            submenu: Menu | null;
             use_underline: boolean;
             useUnderline: boolean;
         }
@@ -72521,8 +72393,8 @@ export namespace Gtk {
          * @since 2.14
          * @default null
          */
-        get accel_path(): (string | null);
-        set accel_path(val: (string | null));
+        get accel_path(): string | null;
+        set accel_path(val: string | null);
 
         /**
          * Sets the accelerator path of the menu item, through which runtime
@@ -72531,8 +72403,8 @@ export namespace Gtk {
          * @since 2.14
          * @default null
          */
-        get accelPath(): (string | null);
-        set accelPath(val: (string | null));
+        get accelPath(): string | null;
+        set accelPath(val: string | null);
 
         /**
          * The text for the child label.
@@ -72563,8 +72435,8 @@ export namespace Gtk {
          * The submenu attached to the menu item, or `null` if it has none.
          * @since 2.12
          */
-        get submenu(): (Menu | null);
-        set submenu(val: (Menu | null));
+        get submenu(): Menu | null;
+        set submenu(val: Menu | null);
 
         /**
          * `true` if underlines in the text indicate mnemonics.
@@ -72694,7 +72566,7 @@ export namespace Gtk {
          * See `gtk_menu_item_set_accel_path()` for details.
          * @returns the accelerator path corresponding to     this menu item’s functionality, or `null` if not set
          */
-        get_accel_path(): (string | null);
+        get_accel_path(): string | null;
 
         /**
          * Sets `text` on the `menu_item` label
@@ -72722,7 +72594,7 @@ export namespace Gtk {
          * See `gtk_menu_item_set_submenu()`.
          * @returns submenu for this menu item, or `null` if none
          */
-        get_submenu(): (Widget | null);
+        get_submenu(): Widget | null;
 
         /**
          * Checks if an underline in the text indicates the next character
@@ -72758,7 +72630,7 @@ export namespace Gtk {
          * by interning it first with `g_intern_static_string()`.
          * @param accel_path accelerator path, corresponding to this menu     item’s functionality, or `null` to unset the current path.
          */
-        set_accel_path(accel_path: (string | null)): void;
+        set_accel_path(accel_path: string | null): void;
 
         /**
          * Sets `text` on the `menu_item` label
@@ -72792,7 +72664,7 @@ export namespace Gtk {
          * submenu is passed.
          * @param submenu the submenu, or `null`
          */
-        set_submenu(submenu: (Menu | null)): void;
+        set_submenu(submenu: Menu | null): void;
 
         /**
          * If true, an underline in the text indicates the next character
@@ -72817,15 +72689,15 @@ export namespace Gtk {
          * @default null
           * @category Inherited from Gtk.Actionable
          */
-        get action_name(): (string | null);
-        set action_name(val: (string | null));
+        get action_name(): string | null;
+        set action_name(val: string | null);
 
         /**
          * @default null
           * @category Inherited from Gtk.Actionable
          */
-        get actionName(): (string | null);
-        set actionName(val: (string | null));
+        get actionName(): string | null;
+        set actionName(val: string | null);
 
         /** @category Inherited from Gtk.Actionable */
         get action_target(): GLib.Variant;
@@ -72905,7 +72777,7 @@ export namespace Gtk {
          * See `gtk_actionable_set_action_name()` for more information.
          * @returns the action name, or `null` if none is set
          */
-        get_action_name(): (string | null);
+        get_action_name(): string | null;
 
         /**
          * Gets the current target value of `actionable`.
@@ -72929,7 +72801,7 @@ export namespace Gtk {
          * associated with the window.
          * @param action_name an action name, or `null`
          */
-        set_action_name(action_name: (string | null)): void;
+        set_action_name(action_name: string | null): void;
 
         /**
          * Sets the target value of an actionable widget.
@@ -72953,7 +72825,7 @@ export namespace Gtk {
          * rendered inactive).
          * @param target_value a {@link GLib.Variant} to set as the target value, or `null`
          */
-        set_action_target_value(target_value: (GLib.Variant | null)): void;
+        set_action_target_value(target_value: GLib.Variant | null): void;
 
         /**
          * Sets the action-name and associated string target value of an
@@ -72977,7 +72849,7 @@ export namespace Gtk {
          * See `gtk_actionable_set_action_name()` for more information.
          * @virtual
          */
-        vfunc_get_action_name(): (string | null);
+        vfunc_get_action_name(): string | null;
 
         /**
          * Gets the current target value of `actionable`.
@@ -73002,7 +72874,7 @@ export namespace Gtk {
          * @param action_name an action name, or `null`
          * @virtual
          */
-        vfunc_set_action_name(action_name: (string | null)): void;
+        vfunc_set_action_name(action_name: string | null): void;
 
         /**
          * Sets the target value of an actionable widget.
@@ -73027,7 +72899,7 @@ export namespace Gtk {
          * @param target_value a {@link GLib.Variant} to set as the target value, or `null`
          * @virtual
          */
-        vfunc_set_action_target_value(target_value: (GLib.Variant | null)): void;
+        vfunc_set_action_target_value(target_value: GLib.Variant | null): void;
 
         /**
          * This is a utility function for {@link Gtk.Activatable} implementors.
@@ -73091,7 +72963,7 @@ export namespace Gtk {
          * {@link Gtk.Activatable.use_action_appearance} changes.
          * @param action the related {@link Gtk.Action} or `null`
          */
-        sync_action_properties(action: (Action | null)): void;
+        sync_action_properties(action: Action | null): void;
 
         /**
          * This is called to update the activatable completely, this is called
@@ -73101,7 +72973,7 @@ export namespace Gtk {
          * @param action the related {@link Gtk.Action} or `null`
          * @virtual
          */
-        vfunc_sync_action_properties(action: (Action | null)): void;
+        vfunc_sync_action_properties(action: Action | null): void;
 
         /**
          * Called to update the activatable when its related action’s properties change.
@@ -73157,9 +73029,7 @@ export namespace Gtk {
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends ContainerAccessible.ConstructorProps, Atk.Action.ConstructorProps, Atk.Component.ConstructorProps, Atk.Selection.ConstructorProps {
-
-        }
+        interface ConstructorProps extends ContainerAccessible.ConstructorProps, Atk.Action.ConstructorProps, Atk.Component.ConstructorProps, Atk.Selection.ConstructorProps {}
     }
 
     /**
@@ -73207,7 +73077,7 @@ export namespace Gtk {
          * @param i the action index corresponding to the action to be performed
          * @returns a description string, or `null` if `action` does not implement this interface.
          */
-        get_description(i: number): (string | null);
+        get_description(i: number): string | null;
 
         /**
          * @param args 
@@ -73241,14 +73111,14 @@ export namespace Gtk {
          * @param i the action index corresponding to the action to be performed
          * @returns the keybinding which can be used to activate this action, or `null` if there is no keybinding for this action.
          */
-        get_keybinding(i: number): (string | null);
+        get_keybinding(i: number): string | null;
 
         /**
          * Returns the localized name of the specified action of the object.
          * @param i the action index corresponding to the action to be performed
          * @returns a name string, or `null` if `action` does not implement this interface.
          */
-        get_localized_name(i: number): (string | null);
+        get_localized_name(i: number): string | null;
 
         /**
          * Gets the number of accessible actions available on the object.
@@ -73276,7 +73146,7 @@ export namespace Gtk {
          * @param i the action index corresponding to the action to be performed
          * @returns a name string, or `null` if `action` does not implement this interface.
          */
-        get_name(i: number): (string | null);
+        get_name(i: number): string | null;
 
         /**
          * @param args 
@@ -73310,7 +73180,7 @@ export namespace Gtk {
          * @param i the action index corresponding to the action to be performed
          * @virtual
          */
-        vfunc_get_description(i: number): (string | null);
+        vfunc_get_description(i: number): string | null;
 
         /**
          * @param args 
@@ -73345,14 +73215,14 @@ export namespace Gtk {
          * @param i the action index corresponding to the action to be performed
          * @virtual
          */
-        vfunc_get_keybinding(i: number): (string | null);
+        vfunc_get_keybinding(i: number): string | null;
 
         /**
          * Returns the localized name of the specified action of the object.
          * @param i the action index corresponding to the action to be performed
          * @virtual
          */
-        vfunc_get_localized_name(i: number): (string | null);
+        vfunc_get_localized_name(i: number): string | null;
 
         /**
          * Gets the number of accessible actions available on the object.
@@ -73380,7 +73250,7 @@ export namespace Gtk {
          * @param i the action index corresponding to the action to be performed
          * @virtual
          */
-        vfunc_get_name(i: number): (string | null);
+        vfunc_get_name(i: number): string | null;
 
         /**
          * @param args 
@@ -73450,7 +73320,7 @@ export namespace Gtk {
          * @param i a `gint` specifying the index in the selection set.  (e.g. the ith selection as opposed to the ith child).
          * @returns an {@link Atk.Object} representing the selected accessible, or `null` if `selection` does not implement this interface.
          */
-        ref_selection(i: number): (Atk.Object | null);
+        ref_selection(i: number): Atk.Object | null;
 
         /**
          * Removes the specified child of the object from the object's selection.
@@ -73512,7 +73382,7 @@ export namespace Gtk {
          * @param i a `gint` specifying the index in the selection set.  (e.g. the ith selection as opposed to the ith child).
          * @virtual
          */
-        vfunc_ref_selection(i: number): (Atk.Object | null);
+        vfunc_ref_selection(i: number): Atk.Object | null;
 
         /**
          * Removes the specified child of the object from the object's selection.
@@ -73595,7 +73465,7 @@ export namespace Gtk {
              * @since 2.12
              * @run-last
              */
-            "move-selected": (arg0: number) => (boolean | void);
+            "move-selected": (arg0: number) => boolean | void;
             /**
              * This signal is emitted when a selection has been
              * completed within a menu shell.
@@ -73852,7 +73722,7 @@ export namespace Gtk {
          * @param action_namespace the namespace for actions in `model`
          * @param with_separators `true` if toplevel items in `shell` should have   separators between them
          */
-        bind_model(model: (Gio.MenuModel | null), action_namespace: (string | null), with_separators: boolean): void;
+        bind_model(model: Gio.MenuModel | null, action_namespace: string | null, with_separators: boolean): void;
 
         /**
          * Cancels the selection within the menu shell.
@@ -73980,9 +73850,7 @@ export namespace Gtk {
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends ContainerAccessible.ConstructorProps, Atk.Component.ConstructorProps, Atk.Selection.ConstructorProps {
-
-        }
+        interface ConstructorProps extends ContainerAccessible.ConstructorProps, Atk.Component.ConstructorProps, Atk.Selection.ConstructorProps {}
     }
 
     /**
@@ -74064,7 +73932,7 @@ export namespace Gtk {
          * @param i a `gint` specifying the index in the selection set.  (e.g. the ith selection as opposed to the ith child).
          * @returns an {@link Atk.Object} representing the selected accessible, or `null` if `selection` does not implement this interface.
          */
-        ref_selection(i: number): (Atk.Object | null);
+        ref_selection(i: number): Atk.Object | null;
 
         /**
          * Removes the specified child of the object from the object's selection.
@@ -74126,7 +73994,7 @@ export namespace Gtk {
          * @param i a `gint` specifying the index in the selection set.  (e.g. the ith selection as opposed to the ith child).
          * @virtual
          */
-        vfunc_ref_selection(i: number): (Atk.Object | null);
+        vfunc_ref_selection(i: number): Atk.Object | null;
 
         /**
          * Removes the specified child of the object from the object's selection.
@@ -74275,7 +74143,7 @@ export namespace Gtk {
 
         _init(...args: any[]): void;
 
-        static ["new"](icon_widget: (Widget | null), label: (string | null)): MenuToolButton;
+        static ["new"](icon_widget: Widget | null, label: string | null): MenuToolButton;
 
         // Conflicted with Gtk.ToolItem.new
         static ["new"](...args: never[]): any;
@@ -74336,15 +74204,15 @@ export namespace Gtk {
          * @default null
           * @category Inherited from Gtk.Actionable
          */
-        get action_name(): (string | null);
-        set action_name(val: (string | null));
+        get action_name(): string | null;
+        set action_name(val: string | null);
 
         /**
          * @default null
           * @category Inherited from Gtk.Actionable
          */
-        get actionName(): (string | null);
-        set actionName(val: (string | null));
+        get actionName(): string | null;
+        set actionName(val: string | null);
 
         /** @category Inherited from Gtk.Actionable */
         get action_target(): GLib.Variant;
@@ -74360,7 +74228,7 @@ export namespace Gtk {
          * See `gtk_actionable_set_action_name()` for more information.
          * @returns the action name, or `null` if none is set
          */
-        get_action_name(): (string | null);
+        get_action_name(): string | null;
 
         /**
          * Gets the current target value of `actionable`.
@@ -74384,7 +74252,7 @@ export namespace Gtk {
          * associated with the window.
          * @param action_name an action name, or `null`
          */
-        set_action_name(action_name: (string | null)): void;
+        set_action_name(action_name: string | null): void;
 
         /**
          * Sets the target value of an actionable widget.
@@ -74408,7 +74276,7 @@ export namespace Gtk {
          * rendered inactive).
          * @param target_value a {@link GLib.Variant} to set as the target value, or `null`
          */
-        set_action_target_value(target_value: (GLib.Variant | null)): void;
+        set_action_target_value(target_value: GLib.Variant | null): void;
 
         /**
          * Sets the action-name and associated string target value of an
@@ -74432,7 +74300,7 @@ export namespace Gtk {
          * See `gtk_actionable_set_action_name()` for more information.
          * @virtual
          */
-        vfunc_get_action_name(): (string | null);
+        vfunc_get_action_name(): string | null;
 
         /**
          * Gets the current target value of `actionable`.
@@ -74457,7 +74325,7 @@ export namespace Gtk {
          * @param action_name an action name, or `null`
          * @virtual
          */
-        vfunc_set_action_name(action_name: (string | null)): void;
+        vfunc_set_action_name(action_name: string | null): void;
 
         /**
          * Sets the target value of an actionable widget.
@@ -74482,7 +74350,7 @@ export namespace Gtk {
          * @param target_value a {@link GLib.Variant} to set as the target value, or `null`
          * @virtual
          */
-        vfunc_set_action_target_value(target_value: (GLib.Variant | null)): void;
+        vfunc_set_action_target_value(target_value: GLib.Variant | null): void;
 
         /**
          * Emits a {@link Gtk.Widget.SignalSignatures.child_notify | Gtk.Widget::child-notify} signal for the
@@ -74513,7 +74381,7 @@ export namespace Gtk {
          * `gtk_tooltip_set_markup()`.
          * @param markup the contents of the tooltip for `widget`, or `null`
          */
-        set_tooltip_markup(markup: (string | null)): void;
+        set_tooltip_markup(markup: string | null): void;
 
         /**
          * @param args 
@@ -74529,7 +74397,7 @@ export namespace Gtk {
          * See also the {@link Gtk.Widget.tooltip_text} property and `gtk_tooltip_set_text()`.
          * @param text the contents of the tooltip for `widget`
          */
-        set_tooltip_text(text: (string | null)): void;
+        set_tooltip_text(text: string | null): void;
 
         /**
          * @param args 
@@ -75054,7 +74922,7 @@ export namespace Gtk {
          * @param child child to add
          * @param type kind of child or `null`
          */
-        add_child(builder: Builder, child: GObject.Object, type: (string | null)): void;
+        add_child(builder: Builder, child: GObject.Object, type: string | null): void;
 
         /**
          * Constructs a child of `buildable` with the name `name`.
@@ -75075,7 +74943,7 @@ export namespace Gtk {
          * @param tagname the name of the tag
          * @param data user data created in custom_tag_start
          */
-        custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
+        custom_finished(builder: Builder, child: GObject.Object | null, tagname: string, data: null): void;
 
         /**
          * This is called at the end of each custom element handled by
@@ -75085,7 +74953,7 @@ export namespace Gtk {
          * @param tagname name of tag
          * @param data user data that will be passed in to parser functions
          */
-        custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
+        custom_tag_end(builder: Builder, child: GObject.Object | null, tagname: string, data: null): void;
 
         /**
          * This is called for each unknown element under `<child>`.
@@ -75094,7 +74962,7 @@ export namespace Gtk {
          * @param tagname name of tag
          * @returns `true` if a object has a custom implementation, `false`          if it doesn't.
          */
-        custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, GLib.MarkupParser, null];
+        custom_tag_start(builder: Builder, child: GObject.Object | null, tagname: string): [boolean, GLib.MarkupParser, null];
 
         /**
          * Get the internal child called `childname` of the `buildable` object.
@@ -75130,7 +74998,7 @@ export namespace Gtk {
          * @param name name of property
          * @param value value of property
          */
-        set_buildable_property(builder: Builder, name: string, value: (GObject.Value | any)): void;
+        set_buildable_property(builder: Builder, name: string, value: GObject.Value | any): void;
 
         /**
          * Sets the name of the `buildable` object.
@@ -75146,7 +75014,7 @@ export namespace Gtk {
          * @param type kind of child or `null`
          * @virtual
          */
-        vfunc_add_child(builder: Builder, child: GObject.Object, type: (string | null)): void;
+        vfunc_add_child(builder: Builder, child: GObject.Object, type: string | null): void;
 
         /**
          * Constructs a child of `buildable` with the name `name`.
@@ -75168,7 +75036,7 @@ export namespace Gtk {
          * @param data user data created in custom_tag_start
          * @virtual
          */
-        vfunc_custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
+        vfunc_custom_finished(builder: Builder, child: GObject.Object | null, tagname: string, data: null): void;
 
         /**
          * This is called at the end of each custom element handled by
@@ -75179,7 +75047,7 @@ export namespace Gtk {
          * @param data user data that will be passed in to parser functions
          * @virtual
          */
-        vfunc_custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
+        vfunc_custom_tag_end(builder: Builder, child: GObject.Object | null, tagname: string, data: null): void;
 
         /**
          * This is called for each unknown element under `<child>`.
@@ -75188,7 +75056,7 @@ export namespace Gtk {
          * @param tagname name of tag
          * @virtual
          */
-        vfunc_custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, GLib.MarkupParser, never];
+        vfunc_custom_tag_start(builder: Builder, child: GObject.Object | null, tagname: string): [boolean, GLib.MarkupParser, never];
 
         /**
          * Get the internal child called `childname` of the `buildable` object.
@@ -75572,15 +75440,15 @@ export namespace Gtk {
          * @default null
           * @category Inherited from Gtk.Actionable
          */
-        get action_name(): (string | null);
-        set action_name(val: (string | null));
+        get action_name(): string | null;
+        set action_name(val: string | null);
 
         /**
          * @default null
           * @category Inherited from Gtk.Actionable
          */
-        get actionName(): (string | null);
-        set actionName(val: (string | null));
+        get actionName(): string | null;
+        set actionName(val: string | null);
 
         /** @category Inherited from Gtk.Actionable */
         get action_target(): GLib.Variant;
@@ -75660,7 +75528,7 @@ export namespace Gtk {
          * See `gtk_actionable_set_action_name()` for more information.
          * @returns the action name, or `null` if none is set
          */
-        get_action_name(): (string | null);
+        get_action_name(): string | null;
 
         /**
          * Gets the current target value of `actionable`.
@@ -75684,7 +75552,7 @@ export namespace Gtk {
          * associated with the window.
          * @param action_name an action name, or `null`
          */
-        set_action_name(action_name: (string | null)): void;
+        set_action_name(action_name: string | null): void;
 
         /**
          * Sets the target value of an actionable widget.
@@ -75708,7 +75576,7 @@ export namespace Gtk {
          * rendered inactive).
          * @param target_value a {@link GLib.Variant} to set as the target value, or `null`
          */
-        set_action_target_value(target_value: (GLib.Variant | null)): void;
+        set_action_target_value(target_value: GLib.Variant | null): void;
 
         /**
          * Sets the action-name and associated string target value of an
@@ -75732,7 +75600,7 @@ export namespace Gtk {
          * See `gtk_actionable_set_action_name()` for more information.
          * @virtual
          */
-        vfunc_get_action_name(): (string | null);
+        vfunc_get_action_name(): string | null;
 
         /**
          * Gets the current target value of `actionable`.
@@ -75757,7 +75625,7 @@ export namespace Gtk {
          * @param action_name an action name, or `null`
          * @virtual
          */
-        vfunc_set_action_name(action_name: (string | null)): void;
+        vfunc_set_action_name(action_name: string | null): void;
 
         /**
          * Sets the target value of an actionable widget.
@@ -75782,7 +75650,7 @@ export namespace Gtk {
          * @param target_value a {@link GLib.Variant} to set as the target value, or `null`
          * @virtual
          */
-        vfunc_set_action_target_value(target_value: (GLib.Variant | null)): void;
+        vfunc_set_action_target_value(target_value: GLib.Variant | null): void;
 
         /**
          * This is a utility function for {@link Gtk.Activatable} implementors.
@@ -75846,7 +75714,7 @@ export namespace Gtk {
          * {@link Gtk.Activatable.use_action_appearance} changes.
          * @param action the related {@link Gtk.Action} or `null`
          */
-        sync_action_properties(action: (Action | null)): void;
+        sync_action_properties(action: Action | null): void;
 
         /**
          * This is called to update the activatable completely, this is called
@@ -75856,7 +75724,7 @@ export namespace Gtk {
          * @param action the related {@link Gtk.Action} or `null`
          * @virtual
          */
-        vfunc_sync_action_properties(action: (Action | null)): void;
+        vfunc_sync_action_properties(action: Action | null): void;
 
         /**
          * Called to update the activatable when its related action’s properties change.
@@ -75970,7 +75838,7 @@ export namespace Gtk {
 
         _init(...args: any[]): void;
 
-        static ["new"](parent: (Window | null)): MountOperation;
+        static ["new"](parent: Window | null): MountOperation;
 
         // Conflicted with Gio.MountOperation.new
         static ["new"](...args: never[]): any;
@@ -76007,7 +75875,7 @@ export namespace Gtk {
          * {@link Gtk.MountOperation}.
          * @param parent transient parent of the window, or `null`
          */
-        set_parent(parent: (Window | null)): void;
+        set_parent(parent: Window | null): void;
 
         /**
          * Sets the screen to show windows of the {@link Gtk.MountOperation} on.
@@ -76041,9 +75909,9 @@ export namespace Gtk {
         // Constructor properties interface
         interface ConstructorProps extends GObject.Object.ConstructorProps {
             modal: boolean;
-            title: (string | null);
-            transient_for: (Window | null);
-            transientFor: (Window | null);
+            title: string | null;
+            transient_for: Window | null;
+            transientFor: Window | null;
             visible: boolean;
         }
     }
@@ -76083,22 +75951,22 @@ export namespace Gtk {
          * @since 3.20
          * @default null
          */
-        get title(): (string | null);
-        set title(val: (string | null));
+        get title(): string | null;
+        set title(val: string | null);
 
         /**
          * The transient parent of the dialog, or `null` for none.
          * @since 3.20
          */
-        get transient_for(): (Window | null);
-        set transient_for(val: (Window | null));
+        get transient_for(): Window | null;
+        set transient_for(val: Window | null);
 
         /**
          * The transient parent of the dialog, or `null` for none.
          * @since 3.20
          */
-        get transientFor(): (Window | null);
-        set transientFor(val: (Window | null));
+        get transientFor(): Window | null;
+        set transientFor(val: Window | null);
 
         /**
          * Whether the window is currenlty visible.
@@ -76187,14 +76055,14 @@ export namespace Gtk {
          * Gets the title of the {@link Gtk.NativeDialog}.
          * @returns the title of the dialog, or `null` if none has    been set explicitly. The returned string is owned by the widget    and must not be modified or freed.
          */
-        get_title(): (string | null);
+        get_title(): string | null;
 
         /**
          * Fetches the transient parent for this window. See
          * `gtk_native_dialog_set_transient_for()`.
          * @returns the transient parent for this window, or `null` if no transient parent has been set.
          */
-        get_transient_for(): (Window | null);
+        get_transient_for(): Window | null;
 
         /**
          * Determines whether the dialog is visible.
@@ -76274,7 +76142,7 @@ export namespace Gtk {
          * Passing `null` for `parent` unsets the current transient window.
          * @param parent parent window, or `null`
          */
-        set_transient_for(parent: (Window | null)): void;
+        set_transient_for(parent: Window | null): void;
 
         /**
          * Shows the dialog on the display, allowing the user to interact with
@@ -76296,7 +76164,7 @@ export namespace Gtk {
              * @action
              * @run-last
              */
-            "change-current-page": (arg0: number) => (boolean | void);
+            "change-current-page": (arg0: number) => boolean | void;
             /**
              * The ::create-window signal is emitted when a detachable
              * tab is dropped on the root window.
@@ -76316,7 +76184,7 @@ export namespace Gtk {
              * @action
              * @run-last
              */
-            "focus-tab": (arg0: NotebookTab) => (boolean | void);
+            "focus-tab": (arg0: NotebookTab) => boolean | void;
             /**
              * @signal
              * @action
@@ -76352,13 +76220,13 @@ export namespace Gtk {
              * @action
              * @run-last
              */
-            "reorder-tab": (arg0: DirectionType, arg1: boolean) => (boolean | void);
+            "reorder-tab": (arg0: DirectionType, arg1: boolean) => boolean | void;
             /**
              * @signal
              * @action
              * @run-last
              */
-            "select-page": (arg0: boolean) => (boolean | void);
+            "select-page": (arg0: boolean) => boolean | void;
             /**
              * Emitted when the user or a function changes the current page.
              * @signal
@@ -76420,8 +76288,8 @@ export namespace Gtk {
         interface ConstructorProps extends Container.ConstructorProps, Atk.ImplementorIface.ConstructorProps, Buildable.ConstructorProps {
             enable_popup: boolean;
             enablePopup: boolean;
-            group_name: (string | null);
-            groupName: (string | null);
+            group_name: string | null;
+            groupName: string | null;
             page: number;
             scrollable: boolean;
             show_border: boolean;
@@ -76542,16 +76410,16 @@ export namespace Gtk {
          * @since 2.24
          * @default null
          */
-        get group_name(): (string | null);
-        set group_name(val: (string | null));
+        get group_name(): string | null;
+        set group_name(val: string | null);
 
         /**
          * Group name for tab drag and drop.
          * @since 2.24
          * @default null
          */
-        get groupName(): (string | null);
-        set groupName(val: (string | null));
+        get groupName(): string | null;
+        set groupName(val: string | null);
 
         /**
          * @default -1
@@ -76706,7 +76574,7 @@ export namespace Gtk {
          * @param tab_label the {@link Gtk.Widget} to be used as the label     for the page, or `null` to use the default label, “page N”
          * @returns the index (starting from 0) of the appended     page in the notebook, or -1 if function fails
          */
-        append_page(child: Widget, tab_label: (Widget | null)): number;
+        append_page(child: Widget, tab_label: Widget | null): number;
 
         /**
          * Appends a page to `notebook`, specifying the widget to use as the
@@ -76716,7 +76584,7 @@ export namespace Gtk {
          * @param menu_label the widget to use as a label for the     page-switch menu, if that is enabled. If `null`, and `tab_label`     is a {@link Gtk.Label} or `null`, then the menu label will be a newly     created label with the same text as `tab_label`; if `tab_label`     is not a {@link Gtk.Label}, `menu_label` must be specified if the     page-switch menu is to be used.
          * @returns the index (starting from 0) of the appended     page in the notebook, or -1 if function fails
          */
-        append_page_menu(child: Widget, tab_label: (Widget | null), menu_label: (Widget | null)): number;
+        append_page_menu(child: Widget, tab_label: Widget | null, menu_label: Widget | null): number;
 
         /**
          * Removes the child from the notebook.
@@ -76734,7 +76602,7 @@ export namespace Gtk {
          * @param pack_type pack type of the action widget to receive
          * @returns The action widget with the given `pack_type` or `null` when this action widget has not been set
          */
-        get_action_widget(pack_type: PackType): (Widget | null);
+        get_action_widget(pack_type: PackType): Widget | null;
 
         /**
          * Returns the page number of the current page.
@@ -76746,14 +76614,14 @@ export namespace Gtk {
          * Gets the current group name for `notebook`.
          * @returns the group name, or `null` if none is set
          */
-        get_group_name(): (string | null);
+        get_group_name(): string | null;
 
         /**
          * Retrieves the menu label widget of the page containing `child`.
          * @param child a widget contained in a page of `notebook`
          * @returns the menu label, or `null` if the notebook page does not have a menu label other than the default (the tab label).
          */
-        get_menu_label(child: Widget): (Widget | null);
+        get_menu_label(child: Widget): Widget | null;
 
         /**
          * Retrieves the text of the menu label for the page containing
@@ -76761,7 +76629,7 @@ export namespace Gtk {
          * @param child the child widget of a page of the notebook.
          * @returns the text of the tab label, or `null` if the widget does not have a menu label other than the default menu label, or the menu label widget is not a {@link Gtk.Label}. The string is owned by the widget and must not be freed.
          */
-        get_menu_label_text(child: Widget): (string | null);
+        get_menu_label_text(child: Widget): string | null;
 
         /**
          * Gets the number of pages in a notebook.
@@ -76774,7 +76642,7 @@ export namespace Gtk {
          * @param page_num the index of a page in the notebook, or -1     to get the last page
          * @returns the child widget, or `null` if `page_num` is out of bounds
          */
-        get_nth_page(page_num: number): (Widget | null);
+        get_nth_page(page_num: number): Widget | null;
 
         /**
          * Returns whether the tab label area has arrows for scrolling.
@@ -76817,7 +76685,7 @@ export namespace Gtk {
          * @param child the page
          * @returns the tab label
          */
-        get_tab_label(child: Widget): (Widget | null);
+        get_tab_label(child: Widget): Widget | null;
 
         /**
          * Retrieves the text of the tab label for the page containing
@@ -76825,7 +76693,7 @@ export namespace Gtk {
          * @param child a widget contained in a page of `notebook`
          * @returns the text of the tab label, or `null` if the tab label widget is not a {@link Gtk.Label}. The string is owned by the widget and must not be freed.
          */
-        get_tab_label_text(child: Widget): (string | null);
+        get_tab_label_text(child: Widget): string | null;
 
         /**
          * Gets the edge at which the tabs for switching pages in the
@@ -76854,7 +76722,7 @@ export namespace Gtk {
          * @param position the index (starting at 0) at which to insert the page,     or -1 to append the page after all other pages
          * @returns the index (starting from 0) of the inserted     page in the notebook, or -1 if function fails
          */
-        insert_page(child: Widget, tab_label: (Widget | null), position: number): number;
+        insert_page(child: Widget, tab_label: Widget | null, position: number): number;
 
         /**
          * Insert a page into `notebook` at the given position, specifying
@@ -76865,7 +76733,7 @@ export namespace Gtk {
          * @param position the index (starting at 0) at which to insert the page,     or -1 to append the page after all other pages.
          * @returns the index (starting from 0) of the inserted     page in the notebook
          */
-        insert_page_menu(child: Widget, tab_label: (Widget | null), menu_label: (Widget | null), position: number): number;
+        insert_page_menu(child: Widget, tab_label: Widget | null, menu_label: Widget | null, position: number): number;
 
         /**
          * Switches to the next page. Nothing happens if the current page is
@@ -76899,7 +76767,7 @@ export namespace Gtk {
          * @param tab_label the {@link Gtk.Widget} to be used as the label     for the page, or `null` to use the default label, “page N”
          * @returns the index (starting from 0) of the prepended     page in the notebook, or -1 if function fails
          */
-        prepend_page(child: Widget, tab_label: (Widget | null)): number;
+        prepend_page(child: Widget, tab_label: Widget | null): number;
 
         /**
          * Prepends a page to `notebook`, specifying the widget to use as the
@@ -76909,7 +76777,7 @@ export namespace Gtk {
          * @param menu_label the widget to use as a label for the     page-switch menu, if that is enabled. If `null`, and `tab_label`     is a {@link Gtk.Label} or `null`, then the menu label will be a newly     created label with the same text as `tab_label`; if `tab_label`     is not a {@link Gtk.Label}, `menu_label` must be specified if the     page-switch menu is to be used.
          * @returns the index (starting from 0) of the prepended     page in the notebook, or -1 if function fails
          */
-        prepend_page_menu(child: Widget, tab_label: (Widget | null), menu_label: (Widget | null)): number;
+        prepend_page_menu(child: Widget, tab_label: Widget | null, menu_label: Widget | null): number;
 
         /**
          * Switches to the previous page. Nothing happens if the current page
@@ -76965,14 +76833,14 @@ export namespace Gtk {
          * not be able to exchange tabs with any other notebook.
          * @param group_name the name of the notebook group,     or `null` to unset it
          */
-        set_group_name(group_name: (string | null)): void;
+        set_group_name(group_name: string | null): void;
 
         /**
          * Changes the menu label for the page containing `child`.
          * @param child the child widget
          * @param menu_label the menu label, or `null` for default
          */
-        set_menu_label(child: Widget, menu_label: (Widget | null)): void;
+        set_menu_label(child: Widget, menu_label: Widget | null): void;
 
         /**
          * Creates a new label and sets it as the menu label of `child`.
@@ -77062,7 +76930,7 @@ export namespace Gtk {
          * @param child the page
          * @param tab_label the tab label widget to use, or `null`     for default tab label
          */
-        set_tab_label(child: Widget, tab_label: (Widget | null)): void;
+        set_tab_label(child: Widget, tab_label: Widget | null): void;
 
         /**
          * Creates a new label and sets it as the tab label for the page
@@ -77113,9 +76981,7 @@ export namespace Gtk {
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends ContainerAccessible.ConstructorProps, Atk.Component.ConstructorProps, Atk.Selection.ConstructorProps {
-
-        }
+        interface ConstructorProps extends ContainerAccessible.ConstructorProps, Atk.Component.ConstructorProps, Atk.Selection.ConstructorProps {}
     }
 
     /**
@@ -77197,7 +77063,7 @@ export namespace Gtk {
          * @param i a `gint` specifying the index in the selection set.  (e.g. the ith selection as opposed to the ith child).
          * @returns an {@link Atk.Object} representing the selected accessible, or `null` if `selection` does not implement this interface.
          */
-        ref_selection(i: number): (Atk.Object | null);
+        ref_selection(i: number): Atk.Object | null;
 
         /**
          * Removes the specified child of the object from the object's selection.
@@ -77259,7 +77125,7 @@ export namespace Gtk {
          * @param i a `gint` specifying the index in the selection set.  (e.g. the ith selection as opposed to the ith child).
          * @virtual
          */
-        vfunc_ref_selection(i: number): (Atk.Object | null);
+        vfunc_ref_selection(i: number): Atk.Object | null;
 
         /**
          * Removes the specified child of the object from the object's selection.
@@ -77305,9 +77171,7 @@ export namespace Gtk {
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends Atk.Object.ConstructorProps, Atk.Component.ConstructorProps {
-
-        }
+        interface ConstructorProps extends Atk.Object.ConstructorProps, Atk.Component.ConstructorProps {}
     }
 
     /**
@@ -77423,7 +77287,7 @@ export namespace Gtk {
          * @param coord_type specifies whether the coordinates are relative to the screen or to the components top level window
          * @returns a reference to the accessible child, if one exists
          */
-        ref_accessible_at_point(x: number, y: number, coord_type: Atk.CoordType): (Atk.Object | null);
+        ref_accessible_at_point(x: number, y: number, coord_type: Atk.CoordType): Atk.Object | null;
 
         /**
          * Remove the handler specified by `handler_id` from the list of
@@ -77569,7 +77433,7 @@ export namespace Gtk {
          * @param coord_type specifies whether the coordinates are relative to the screen or to the components top level window
          * @virtual
          */
-        vfunc_ref_accessible_at_point(x: number, y: number, coord_type: Atk.CoordType): (Atk.Object | null);
+        vfunc_ref_accessible_at_point(x: number, y: number, coord_type: Atk.CoordType): Atk.Object | null;
 
         /**
          * Remove the handler specified by `handler_id` from the list of
@@ -77649,12 +77513,12 @@ export namespace Gtk {
         interface ConstructorProps extends Gio.EmblemedIcon.ConstructorProps, Gio.Icon.ConstructorProps {
             background_icon: Gio.Icon;
             backgroundIcon: Gio.Icon;
-            background_icon_name: (string | null);
-            backgroundIconName: (string | null);
+            background_icon_name: string | null;
+            backgroundIconName: string | null;
             count: number;
-            label: (string | null);
-            style_context: (StyleContext | null);
-            styleContext: (StyleContext | null);
+            label: string | null;
+            style_context: StyleContext | null;
+            styleContext: StyleContext | null;
         }
     }
 
@@ -77685,14 +77549,14 @@ export namespace Gtk {
         /**
          * @default null
          */
-        get background_icon_name(): (string | null);
-        set background_icon_name(val: (string | null));
+        get background_icon_name(): string | null;
+        set background_icon_name(val: string | null);
 
         /**
          * @default null
          */
-        get backgroundIconName(): (string | null);
-        set backgroundIconName(val: (string | null));
+        get backgroundIconName(): string | null;
+        set backgroundIconName(val: string | null);
 
         /**
          * @default 0
@@ -77703,14 +77567,14 @@ export namespace Gtk {
         /**
          * @default null
          */
-        get label(): (string | null);
-        set label(val: (string | null));
+        get label(): string | null;
+        set label(val: string | null);
 
-        get style_context(): (StyleContext | null);
-        set style_context(val: (StyleContext | null));
+        get style_context(): StyleContext | null;
+        set style_context(val: StyleContext | null);
 
-        get styleContext(): (StyleContext | null);
-        set styleContext(val: (StyleContext | null));
+        get styleContext(): StyleContext | null;
+        set styleContext(val: StyleContext | null);
 
         /**
          * Compile-time signal type information.
@@ -77768,14 +77632,14 @@ export namespace Gtk {
          * a reference to the returned {@link Gio.Icon}.
          * @returns a {@link Gio.Icon}, or `null`
          */
-        get_background_gicon(): (Gio.Icon | null);
+        get_background_gicon(): Gio.Icon | null;
 
         /**
          * Returns the icon name used as the base background image,
          * or `null` if there’s none.
          * @returns an icon name, or `null`
          */
-        get_background_icon_name(): (string | null);
+        get_background_icon_name(): string | null;
 
         /**
          * Returns the value currently displayed by `self`.
@@ -77787,14 +77651,14 @@ export namespace Gtk {
          * Returns the currently displayed label of the icon, or `null`.
          * @returns the currently displayed label
          */
-        get_label(): (string | null);
+        get_label(): string | null;
 
         /**
          * Returns the {@link Gtk.StyleContext} used by the icon for theming,
          * or `null` if there’s none.
          * @returns a {@link Gtk.StyleContext}, or `null`.     This object is internal to GTK+ and should not be unreffed.     Use `g_object_ref()` if you want to keep it around
          */
-        get_style_context(): (StyleContext | null);
+        get_style_context(): StyleContext | null;
 
         /**
          * Updates the icon to use `icon` as the base background image.
@@ -77807,7 +77671,7 @@ export namespace Gtk {
          * `gtk_numerable_icon_set_background_icon_name()` has always priority.
          * @param icon a {@link Gio.Icon}, or `null`
          */
-        set_background_gicon(icon: (Gio.Icon | null)): void;
+        set_background_gicon(icon: Gio.Icon | null): void;
 
         /**
          * Updates the icon to use the icon named `icon_name` from the
@@ -77821,7 +77685,7 @@ export namespace Gtk {
          * and `gtk_numerable_icon_set_background_gicon()` has always priority.
          * @param icon_name an icon name, or `null`
          */
-        set_background_icon_name(icon_name: (string | null)): void;
+        set_background_icon_name(icon_name: string | null): void;
 
         /**
          * Sets the currently displayed value of `self` to `count`.
@@ -77852,7 +77716,7 @@ export namespace Gtk {
          * has always priority.
          * @param label a short label, or `null`
          */
-        set_label(label: (string | null)): void;
+        set_label(label: string | null): void;
 
         /**
          * Updates the icon to fetch theme information from the
@@ -77866,7 +77730,7 @@ export namespace Gtk {
          * @param icon2 pointer to the second {@link Gio.Icon}.
          * @returns `true` if `icon1` is equal to `icon2`. `false` otherwise.
          */
-        equal(icon2: (Gio.Icon | null)): boolean;
+        equal(icon2: Gio.Icon | null): boolean;
 
         /**
          * Gets a hash for an icon.
@@ -77882,7 +77746,7 @@ export namespace Gtk {
          * (as opposed to over the network), and within the same file system namespace.
          * @returns a {@link GLib.Variant}, or `null` when serialization fails. The {@link GLib.Variant} will not be floating.
          */
-        serialize(): (GLib.Variant | null);
+        serialize(): GLib.Variant | null;
 
         /**
          * Generates a textual representation of `icon` that can be used for
@@ -77903,14 +77767,14 @@ export namespace Gtk {
          *   the encoding is simply the name (such as `network-server`).
          * @returns An allocated NUL-terminated UTF8 string or `null` if `icon` can't be serialized. Use `g_free()` to free.
          */
-        to_string(): (string | null);
+        to_string(): string | null;
 
         /**
          * Checks if two icons are equal.
          * @param icon2 pointer to the second {@link Gio.Icon}.
          * @virtual
          */
-        vfunc_equal(icon2: (Gio.Icon | null)): boolean;
+        vfunc_equal(icon2: Gio.Icon | null): boolean;
 
         /**
          * Gets a hash for an icon.
@@ -77926,7 +77790,7 @@ export namespace Gtk {
          * (as opposed to over the network), and within the same file system namespace.
          * @virtual
          */
-        vfunc_serialize(): (GLib.Variant | null);
+        vfunc_serialize(): GLib.Variant | null;
 
         /**
          * Serializes the `icon` into string tokens.
@@ -78018,9 +77882,7 @@ export namespace Gtk {
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends Window.ConstructorProps, Atk.ImplementorIface.ConstructorProps, Buildable.ConstructorProps {
-
-        }
+        interface ConstructorProps extends Window.ConstructorProps, Atk.ImplementorIface.ConstructorProps, Buildable.ConstructorProps {}
     }
 
     /**
@@ -78086,7 +77948,7 @@ export namespace Gtk {
          * needed.
          * @returns A {@link GdkPixbuf.Pixbuf} pointer, or `null`.
          */
-        get_pixbuf(): (GdkPixbuf.Pixbuf | null);
+        get_pixbuf(): GdkPixbuf.Pixbuf | null;
 
         /**
          * Retrieves a snapshot of the contained widget in the form of
@@ -78094,7 +77956,7 @@ export namespace Gtk {
          * resizes then you should add a reference to it.
          * @returns A {@link cairo.Surface} pointer to the offscreen     surface, or `null`.
          */
-        get_surface(): (cairo.Surface | null);
+        get_surface(): cairo.Surface | null;
     }
 
 
@@ -78118,7 +77980,7 @@ export namespace Gtk {
              * @signal
              * @run-last
              */
-            "get-child-position": (arg0: Widget, arg1: Gdk.Rectangle) => (boolean | void);
+            "get-child-position": (arg0: Widget, arg1: Gdk.Rectangle) => boolean | void;
             "notify::border-width": (pspec: GObject.ParamSpec) => void;
             "notify::child": (pspec: GObject.ParamSpec) => void;
             "notify::resize-mode": (pspec: GObject.ParamSpec) => void;
@@ -78164,9 +78026,7 @@ export namespace Gtk {
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends Bin.ConstructorProps, Atk.ImplementorIface.ConstructorProps, Buildable.ConstructorProps {
-
-        }
+        interface ConstructorProps extends Bin.ConstructorProps, Atk.ImplementorIface.ConstructorProps, Buildable.ConstructorProps {}
     }
 
     /**
@@ -78382,7 +78242,7 @@ export namespace Gtk {
 
         _init(...args: any[]): void;
 
-        static ["new"](window: Window, group: Gio.ActionGroup, pad: (Gdk.Device | null)): PadController;
+        static ["new"](window: Window, group: Gio.ActionGroup, pad: Gdk.Device | null): PadController;
 
         // Signals
         /** @signal */
@@ -78426,13 +78286,10 @@ export namespace Gtk {
 
     namespace PageSetup {
         // Signal signatures
-        interface SignalSignatures extends GObject.Object.SignalSignatures {
-        }
+        interface SignalSignatures extends GObject.Object.SignalSignatures {}
 
         // Constructor properties interface
-        interface ConstructorProps extends GObject.Object.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GObject.Object.ConstructorProps {}
     }
 
     /**
@@ -78506,7 +78363,7 @@ export namespace Gtk {
 
         static new_from_gvariant(variant: GLib.Variant): PageSetup;
 
-        static new_from_key_file(key_file: GLib.KeyFile, group_name: (string | null)): PageSetup;
+        static new_from_key_file(key_file: GLib.KeyFile, group_name: string | null): PageSetup;
 
         // Signals
         /** @signal */
@@ -78627,7 +78484,7 @@ export namespace Gtk {
          * @param group_name the name of the group in the key_file to read, or `null`              to use the default name “Page Setup”
          * @returns `true` on success
          */
-        load_key_file(key_file: GLib.KeyFile, group_name: (string | null)): boolean;
+        load_key_file(key_file: GLib.KeyFile, group_name: string | null): boolean;
 
         /**
          * Sets the bottom margin of the {@link Gtk.PageSetup}.
@@ -78696,7 +78553,7 @@ export namespace Gtk {
          * @param key_file the {@link GLib.KeyFile} to save the page setup to
          * @param group_name the group to add the settings to in `key_file`,      or `null` to use the default name “Page Setup”
          */
-        to_key_file(key_file: GLib.KeyFile, group_name: (string | null)): void;
+        to_key_file(key_file: GLib.KeyFile, group_name: string | null): void;
     }
 
 
@@ -78715,7 +78572,7 @@ export namespace Gtk {
              * @action
              * @run-last
              */
-            "accept-position": () => (boolean | void);
+            "accept-position": () => boolean | void;
             /**
              * The ::cancel-position signal is a
              * [keybinding signal][GtkBindingSignal]
@@ -78729,7 +78586,7 @@ export namespace Gtk {
              * @action
              * @run-last
              */
-            "cancel-position": () => (boolean | void);
+            "cancel-position": () => boolean | void;
             /**
              * The ::cycle-child-focus signal is a
              * [keybinding signal][GtkBindingSignal]
@@ -78741,7 +78598,7 @@ export namespace Gtk {
              * @action
              * @run-last
              */
-            "cycle-child-focus": (arg0: boolean) => (boolean | void);
+            "cycle-child-focus": (arg0: boolean) => boolean | void;
             /**
              * The ::cycle-handle-focus signal is a
              * [keybinding signal][GtkBindingSignal]
@@ -78754,7 +78611,7 @@ export namespace Gtk {
              * @action
              * @run-last
              */
-            "cycle-handle-focus": (arg0: boolean) => (boolean | void);
+            "cycle-handle-focus": (arg0: boolean) => boolean | void;
             /**
              * The ::move-handle signal is a
              * [keybinding signal][GtkBindingSignal]
@@ -78765,7 +78622,7 @@ export namespace Gtk {
              * @action
              * @run-last
              */
-            "move-handle": (arg0: ScrollType) => (boolean | void);
+            "move-handle": (arg0: ScrollType) => boolean | void;
             /**
              * The ::toggle-handle-focus is a
              * [keybinding signal][GtkBindingSignal]
@@ -78778,7 +78635,7 @@ export namespace Gtk {
              * @action
              * @run-last
              */
-            "toggle-handle-focus": () => (boolean | void);
+            "toggle-handle-focus": () => boolean | void;
             "notify::max-position": (pspec: GObject.ParamSpec) => void;
             "notify::min-position": (pspec: GObject.ParamSpec) => void;
             "notify::position": (pspec: GObject.ParamSpec) => void;
@@ -79083,13 +78940,13 @@ export namespace Gtk {
          * Obtains the first child of the paned widget.
          * @returns first child, or `null` if it is not set.
          */
-        get_child1(): (Widget | null);
+        get_child1(): Widget | null;
 
         /**
          * Obtains the second child of the paned widget.
          * @returns second child, or `null` if it is not set.
          */
-        get_child2(): (Widget | null);
+        get_child2(): Widget | null;
 
         /**
          * Returns the {@link Gdk.Window} of the handle. This function is
@@ -79187,9 +79044,7 @@ export namespace Gtk {
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends ContainerAccessible.ConstructorProps, Atk.Component.ConstructorProps, Atk.Value.ConstructorProps {
-
-        }
+        interface ConstructorProps extends ContainerAccessible.ConstructorProps, Atk.Component.ConstructorProps, Atk.Value.ConstructorProps {}
     }
 
     /**
@@ -79260,7 +79115,7 @@ export namespace Gtk {
          * Gets the range of this object.
          * @returns a newly allocated {@link Atk.Range} that represents the minimum, maximum and descriptor (if available) of `obj`. NULL if that range is not defined.
          */
-        get_range(): (Atk.Range | null);
+        get_range(): Atk.Range | null;
 
         /**
          * Gets the list of subranges defined for this object. See {@link Atk.Value}
@@ -79281,7 +79136,7 @@ export namespace Gtk {
          * @param value a {@link GObject.Value} which is the desired new accessible value.
          * @returns `true` if new value is successfully set, `false` otherwise.
          */
-        set_current_value(value: (GObject.Value | any)): boolean;
+        set_current_value(value: GObject.Value | any): boolean;
 
         /**
          * Sets the value of this object.
@@ -79341,7 +79196,7 @@ export namespace Gtk {
          * Gets the range of this object.
          * @virtual
          */
-        vfunc_get_range(): (Atk.Range | null);
+        vfunc_get_range(): Atk.Range | null;
 
         /**
          * Gets the list of subranges defined for this object. See {@link Atk.Value}
@@ -79474,7 +79329,7 @@ export namespace Gtk {
              * @since 3.10
              * @run-first
              */
-            "populate-popup": (arg0: Widget, arg1: (Gio.File | null), arg2: (Gio.Volume | null)) => void;
+            "populate-popup": (arg0: Widget, arg1: Gio.File | null, arg2: Gio.Volume | null) => void;
             /**
              * The places sidebar emits this signal when it needs the calling
              * application to present an way to connect directly to a network server.
@@ -79623,7 +79478,7 @@ export namespace Gtk {
         interface ConstructorProps extends ScrolledWindow.ConstructorProps, Atk.ImplementorIface.ConstructorProps, Buildable.ConstructorProps {
             local_only: boolean;
             localOnly: boolean;
-            location: (Gio.File | null);
+            location: Gio.File | null;
             open_flags: PlacesOpenFlags;
             openFlags: PlacesOpenFlags;
             populate_all: boolean;
@@ -79697,8 +79552,8 @@ export namespace Gtk {
         get localOnly(): boolean;
         set localOnly(val: boolean);
 
-        get location(): (Gio.File | null);
-        set location(val: (Gio.File | null));
+        get location(): Gio.File | null;
+        set location(val: Gio.File | null);
 
         /**
          * @default Gtk.PlacesOpenFlags.NORMAL
@@ -79877,7 +79732,7 @@ export namespace Gtk {
          * for your menu items.
          * @returns a {@link Gio.File} with the selected location, or `null` if nothing is visually selected.
          */
-        get_location(): (Gio.File | null);
+        get_location(): Gio.File | null;
 
         /**
          * This function queries the bookmarks added by the user to the places sidebar,
@@ -79886,7 +79741,7 @@ export namespace Gtk {
          * @param n index of the bookmark to query
          * @returns The bookmark specified by the index `n`, or `null` if no such index exist.  Note that the indices start at 0, even though the file chooser starts them with the keyboard shortcut "Alt-1".
          */
-        get_nth_bookmark(n: number): (Gio.File | null);
+        get_nth_bookmark(n: number): Gio.File | null;
 
         /**
          * Gets the open flags.
@@ -79979,7 +79834,7 @@ export namespace Gtk {
          * places in the list.
          * @param location location to select, or `null` for no current path
          */
-        set_location(location: (Gio.File | null)): void;
+        set_location(location: Gio.File | null): void;
 
         /**
          * Sets the way in which the calling application can open new locations from
@@ -80160,8 +80015,8 @@ export namespace Gtk {
         // Constructor properties interface
         interface ConstructorProps extends Window.ConstructorProps, Atk.ImplementorIface.ConstructorProps, Buildable.ConstructorProps {
             embedded: boolean;
-            socket_window: (Gdk.Window | null);
-            socketWindow: (Gdk.Window | null);
+            socket_window: Gdk.Window | null;
+            socketWindow: Gdk.Window | null;
         }
     }
 
@@ -80203,14 +80058,14 @@ export namespace Gtk {
          * @since 2.14
          * @read-only
          */
-        get socket_window(): (Gdk.Window | null);
+        get socket_window(): Gdk.Window | null;
 
         /**
          * The window of the socket the plug is embedded in.
          * @since 2.14
          * @read-only
          */
-        get socketWindow(): (Gdk.Window | null);
+        get socketWindow(): Gdk.Window | null;
 
         /**
          * Compile-time signal type information.
@@ -80292,7 +80147,7 @@ export namespace Gtk {
          * Retrieves the socket the plug is embedded in.
          * @returns the window of the socket, or `null`
          */
-        get_socket_window(): (Gdk.Window | null);
+        get_socket_window(): Gdk.Window | null;
     }
 
 
@@ -80320,9 +80175,7 @@ export namespace Gtk {
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends WindowAccessible.ConstructorProps, Atk.Component.ConstructorProps, Atk.Window.ConstructorProps {
-
-        }
+        interface ConstructorProps extends WindowAccessible.ConstructorProps, Atk.Component.ConstructorProps, Atk.Window.ConstructorProps {}
     }
 
     /**
@@ -80604,9 +80457,9 @@ export namespace Gtk {
 
         _init(...args: any[]): void;
 
-        static ["new"](relative_to: (Widget | null)): Popover;
+        static ["new"](relative_to: Widget | null): Popover;
 
-        static new_from_model(relative_to: (Widget | null), model: Gio.MenuModel): Popover;
+        static new_from_model(relative_to: Widget | null, model: Gio.MenuModel): Popover;
 
         // Signals
         /** @signal */
@@ -80656,7 +80509,7 @@ export namespace Gtk {
          * @param model the {@link Gio.MenuModel} to bind to or `null` to remove   binding
          * @param action_namespace the namespace for actions in `model`
          */
-        bind_model(model: (Gio.MenuModel | null), action_namespace: (string | null)): void;
+        bind_model(model: Gio.MenuModel | null, action_namespace: string | null): void;
 
         /**
          * Returns the constraint for placing this popover.
@@ -80670,7 +80523,7 @@ export namespace Gtk {
          * the popover is shown.
          * @returns the default widget, or `null` if there is none
          */
-        get_default_widget(): (Widget | null);
+        get_default_widget(): Widget | null;
 
         /**
          * Returns whether the popover is modal, see gtk_popover_set_modal to
@@ -80736,7 +80589,7 @@ export namespace Gtk {
          * when the popover is dismissed.
          * @param widget the new default widget, or `null`
          */
-        set_default_widget(widget: (Widget | null)): void;
+        set_default_widget(widget: Widget | null): void;
 
         /**
          * Sets whether `popover` is modal, a modal popover will grab all input
@@ -80776,7 +80629,7 @@ export namespace Gtk {
          * unless extra references are kept.
          * @param relative_to a {@link Gtk.Widget}
          */
-        set_relative_to(relative_to: (Widget | null)): void;
+        set_relative_to(relative_to: Widget | null): void;
 
         /**
          * Sets whether show/hide transitions are enabled on this popover
@@ -80810,9 +80663,7 @@ export namespace Gtk {
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends ContainerAccessible.ConstructorProps, Atk.Component.ConstructorProps {
-
-        }
+        interface ConstructorProps extends ContainerAccessible.ConstructorProps, Atk.Component.ConstructorProps {}
     }
 
     /**
@@ -81052,13 +80903,10 @@ export namespace Gtk {
 
     namespace PrintContext {
         // Signal signatures
-        interface SignalSignatures extends GObject.Object.SignalSignatures {
-        }
+        interface SignalSignatures extends GObject.Object.SignalSignatures {}
 
         // Constructor properties interface
-        interface ConstructorProps extends GObject.Object.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GObject.Object.ConstructorProps {}
     }
 
     /**
@@ -81387,7 +81235,7 @@ export namespace Gtk {
              * @since 2.10
              * @run-last
              */
-            paginate: (arg0: PrintContext) => (boolean | void);
+            paginate: (arg0: PrintContext) => boolean | void;
             /**
              * Gets emitted when a preview is requested from the native dialog.
              * 
@@ -81409,7 +81257,7 @@ export namespace Gtk {
              * @since 2.10
              * @run-last
              */
-            preview: (arg0: PrintOperationPreview, arg1: PrintContext, arg2: (Window | null)) => (boolean | void);
+            preview: (arg0: PrintOperationPreview, arg1: PrintContext, arg2: Window | null) => boolean | void;
             /**
              * Emitted once for every page that is printed, to give
              * the application a chance to modify the page setup. Any changes
@@ -82264,7 +82112,7 @@ export namespace Gtk {
          * @param parent Transient parent of the dialog
          * @returns the result of the print operation. A return value of   {@link Gtk.PrintOperationResult.APPLY} indicates that the printing was   completed successfully. In this case, it is a good idea to obtain   the used print settings with `gtk_print_operation_get_print_settings()`   and store them for reuse with the next print operation. A value of   {@link Gtk.PrintOperationResult.IN_PROGRESS} means the operation is running   asynchronously, and will emit the {@link Gtk.PrintOperation.SignalSignatures.done | Gtk.PrintOperation::done} signal when   done.
          */
-        run(action: PrintOperationAction, parent: (Window | null)): PrintOperationResult;
+        run(action: PrintOperationAction, parent: Window | null): PrintOperationResult;
 
         /**
          * Sets whether the `gtk_print_operation_run()` may return
@@ -82289,7 +82137,7 @@ export namespace Gtk {
          * Sets the label for the tab holding custom widgets.
          * @param label the label to use, or `null` to use the default label
          */
-        set_custom_tab_label(label: (string | null)): void;
+        set_custom_tab_label(label: string | null): void;
 
         /**
          * Makes `default_page_setup` the default page setup for `op`.
@@ -82299,7 +82147,7 @@ export namespace Gtk {
          * to the {@link Gtk.PrintOperation.SignalSignatures.request_page_setup | Gtk.PrintOperation::request-page-setup} signal.
          * @param default_page_setup a {@link Gtk.PageSetup}, or `null`
          */
-        set_default_page_setup(default_page_setup: (PageSetup | null)): void;
+        set_default_page_setup(default_page_setup: PageSetup | null): void;
 
         /**
          * Sets up the {@link Gtk.PrintOperation} to wait for calling of
@@ -82372,7 +82220,7 @@ export namespace Gtk {
          * see `gtk_print_operation_run()`.
          * @param print_settings {@link Gtk.PrintSettings}
          */
-        set_print_settings(print_settings: (PrintSettings | null)): void;
+        set_print_settings(print_settings: PrintSettings | null): void;
 
         /**
          * If `show_progress` is `true`, the print operation will show a
@@ -82495,13 +82343,10 @@ export namespace Gtk {
 
     namespace PrintSettings {
         // Signal signatures
-        interface SignalSignatures extends GObject.Object.SignalSignatures {
-        }
+        interface SignalSignatures extends GObject.Object.SignalSignatures {}
 
         // Constructor properties interface
-        interface ConstructorProps extends GObject.Object.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GObject.Object.ConstructorProps {}
     }
 
     /**
@@ -82542,7 +82387,7 @@ export namespace Gtk {
 
         static new_from_gvariant(variant: GLib.Variant): PrintSettings;
 
-        static new_from_key_file(key_file: GLib.KeyFile, group_name: (string | null)): PrintSettings;
+        static new_from_key_file(key_file: GLib.KeyFile, group_name: string | null): PrintSettings;
 
         // Signals
         /** @signal */
@@ -82821,14 +82666,14 @@ export namespace Gtk {
          * @param group_name the name of the group to use, or `null` to use the default     “Print Settings”
          * @returns `true` on success
          */
-        load_key_file(key_file: GLib.KeyFile, group_name: (string | null)): boolean;
+        load_key_file(key_file: GLib.KeyFile, group_name: string | null): boolean;
 
         /**
          * Associates `value` with `key`.
          * @param key a key
          * @param value a string value, or `null`
          */
-        set(key: string, value: (string | null)): void;
+        set(key: string, value: string | null): void;
 
         /**
          * @param args 
@@ -83047,7 +82892,7 @@ export namespace Gtk {
          * @param key_file the {@link GLib.KeyFile} to save the print settings to
          * @param group_name the group to add the settings to in `key_file`, or     `null` to use the default “Print Settings”
          */
-        to_key_file(key_file: GLib.KeyFile, group_name: (string | null)): void;
+        to_key_file(key_file: GLib.KeyFile, group_name: string | null): void;
 
         /**
          * Removes any value associated with `key`.
@@ -83118,7 +82963,7 @@ export namespace Gtk {
             pulseStep: number;
             show_text: boolean;
             showText: boolean;
-            text: (string | null);
+            text: string | null;
         }
     }
 
@@ -83244,8 +83089,8 @@ export namespace Gtk {
         /**
          * @default null
          */
-        get text(): (string | null);
-        set text(val: (string | null));
+        get text(): string | null;
+        set text(val: string | null);
 
         /**
          * Compile-time signal type information.
@@ -83316,7 +83161,7 @@ export namespace Gtk {
          * if you change the text in the progress bar.
          * @returns text, or `null`; this string is owned by the widget and should not be modified or freed.
          */
-        get_text(): (string | null);
+        get_text(): string | null;
 
         /**
          * Indicates that some progress has been made, but you don’t know how much.
@@ -83382,7 +83227,7 @@ export namespace Gtk {
          * {@link Gtk.ProgressBar.show_text} is `true`.
          * @param text a UTF-8 string, or `null`
          */
-        set_text(text: (string | null)): void;
+        set_text(text: string | null): void;
 
         /**
          * The orientation of the orientable.
@@ -83400,7 +83245,7 @@ export namespace Gtk {
          * @param child child to add
          * @param type kind of child or `null`
          */
-        add_child(builder: Builder, child: GObject.Object, type: (string | null)): void;
+        add_child(builder: Builder, child: GObject.Object, type: string | null): void;
 
         /**
          * Constructs a child of `buildable` with the name `name`.
@@ -83421,7 +83266,7 @@ export namespace Gtk {
          * @param tagname the name of the tag
          * @param data user data created in custom_tag_start
          */
-        custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
+        custom_finished(builder: Builder, child: GObject.Object | null, tagname: string, data: null): void;
 
         /**
          * This is called at the end of each custom element handled by
@@ -83431,7 +83276,7 @@ export namespace Gtk {
          * @param tagname name of tag
          * @param data user data that will be passed in to parser functions
          */
-        custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
+        custom_tag_end(builder: Builder, child: GObject.Object | null, tagname: string, data: null): void;
 
         /**
          * This is called for each unknown element under `<child>`.
@@ -83440,7 +83285,7 @@ export namespace Gtk {
          * @param tagname name of tag
          * @returns `true` if a object has a custom implementation, `false`          if it doesn't.
          */
-        custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, GLib.MarkupParser, null];
+        custom_tag_start(builder: Builder, child: GObject.Object | null, tagname: string): [boolean, GLib.MarkupParser, null];
 
         /**
          * Get the internal child called `childname` of the `buildable` object.
@@ -83476,7 +83321,7 @@ export namespace Gtk {
          * @param name name of property
          * @param value value of property
          */
-        set_buildable_property(builder: Builder, name: string, value: (GObject.Value | any)): void;
+        set_buildable_property(builder: Builder, name: string, value: GObject.Value | any): void;
 
         /**
          * Sets the name of the `buildable` object.
@@ -83492,7 +83337,7 @@ export namespace Gtk {
          * @param type kind of child or `null`
          * @virtual
          */
-        vfunc_add_child(builder: Builder, child: GObject.Object, type: (string | null)): void;
+        vfunc_add_child(builder: Builder, child: GObject.Object, type: string | null): void;
 
         /**
          * Constructs a child of `buildable` with the name `name`.
@@ -83514,7 +83359,7 @@ export namespace Gtk {
          * @param data user data created in custom_tag_start
          * @virtual
          */
-        vfunc_custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
+        vfunc_custom_finished(builder: Builder, child: GObject.Object | null, tagname: string, data: null): void;
 
         /**
          * This is called at the end of each custom element handled by
@@ -83525,7 +83370,7 @@ export namespace Gtk {
          * @param data user data that will be passed in to parser functions
          * @virtual
          */
-        vfunc_custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
+        vfunc_custom_tag_end(builder: Builder, child: GObject.Object | null, tagname: string, data: null): void;
 
         /**
          * This is called for each unknown element under `<child>`.
@@ -83534,7 +83379,7 @@ export namespace Gtk {
          * @param tagname name of tag
          * @virtual
          */
-        vfunc_custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, GLib.MarkupParser, never];
+        vfunc_custom_tag_start(builder: Builder, child: GObject.Object | null, tagname: string): [boolean, GLib.MarkupParser, never];
 
         /**
          * Get the internal child called `childname` of the `buildable` object.
@@ -83619,9 +83464,7 @@ export namespace Gtk {
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends WidgetAccessible.ConstructorProps, Atk.Component.ConstructorProps, Atk.Value.ConstructorProps {
-
-        }
+        interface ConstructorProps extends WidgetAccessible.ConstructorProps, Atk.Component.ConstructorProps, Atk.Value.ConstructorProps {}
     }
 
     /**
@@ -83732,7 +83575,7 @@ export namespace Gtk {
          * @param coord_type specifies whether the coordinates are relative to the screen or to the components top level window
          * @returns a reference to the accessible child, if one exists
          */
-        ref_accessible_at_point(x: number, y: number, coord_type: Atk.CoordType): (Atk.Object | null);
+        ref_accessible_at_point(x: number, y: number, coord_type: Atk.CoordType): Atk.Object | null;
 
         /**
          * Remove the handler specified by `handler_id` from the list of
@@ -83878,7 +83721,7 @@ export namespace Gtk {
          * @param coord_type specifies whether the coordinates are relative to the screen or to the components top level window
          * @virtual
          */
-        vfunc_ref_accessible_at_point(x: number, y: number, coord_type: Atk.CoordType): (Atk.Object | null);
+        vfunc_ref_accessible_at_point(x: number, y: number, coord_type: Atk.CoordType): Atk.Object | null;
 
         /**
          * Remove the handler specified by `handler_id` from the list of
@@ -83976,7 +83819,7 @@ export namespace Gtk {
          * Gets the range of this object.
          * @returns a newly allocated {@link Atk.Range} that represents the minimum, maximum and descriptor (if available) of `obj`. NULL if that range is not defined.
          */
-        get_range(): (Atk.Range | null);
+        get_range(): Atk.Range | null;
 
         /**
          * Gets the list of subranges defined for this object. See {@link Atk.Value}
@@ -83997,7 +83840,7 @@ export namespace Gtk {
          * @param value a {@link GObject.Value} which is the desired new accessible value.
          * @returns `true` if new value is successfully set, `false` otherwise.
          */
-        set_current_value(value: (GObject.Value | any)): boolean;
+        set_current_value(value: GObject.Value | any): boolean;
 
         /**
          * Sets the value of this object.
@@ -84057,7 +83900,7 @@ export namespace Gtk {
          * Gets the range of this object.
          * @virtual
          */
-        vfunc_get_range(): (Atk.Range | null);
+        vfunc_get_range(): Atk.Range | null;
 
         /**
          * Gets the list of subranges defined for this object. See {@link Atk.Value}
@@ -84213,7 +84056,7 @@ export namespace Gtk {
 
         _init(...args: any[]): void;
 
-        static ["new"](name: string, label: (string | null), tooltip: (string | null), stock_id: (string | null), value: number): RadioAction;
+        static ["new"](name: string, label: string | null, tooltip: string | null, stock_id: string | null, value: number): RadioAction;
 
         // Conflicted with Gtk.ToggleAction.new
         static ["new"](...args: never[]): any;
@@ -84293,7 +84136,7 @@ export namespace Gtk {
          * 
          * @param group_source a radio action object whos group we are   joining, or `null` to remove the radio action from its group
          */
-        join_group(group_source: (RadioAction | null)): void;
+        join_group(group_source: RadioAction | null): void;
 
         /**
          * Sets the currently active group member to the member with value
@@ -84306,7 +84149,7 @@ export namespace Gtk {
          * Sets the radio group for the radio action object.
          * @param group a list representing a radio group, or `null`
          */
-        set_group(group: (RadioAction[] | null)): void;
+        set_group(group: RadioAction[] | null): void;
     }
 
 
@@ -84508,26 +84351,26 @@ export namespace Gtk {
 
         _init(...args: any[]): void;
 
-        static ["new"](group: (RadioButton[] | null)): RadioButton;
+        static ["new"](group: RadioButton[] | null): RadioButton;
 
         // Conflicted with Gtk.CheckButton.new
         static ["new"](...args: never[]): any;
 
-        static new_from_widget(radio_group_member: (RadioButton | null)): RadioButton;
+        static new_from_widget(radio_group_member: RadioButton | null): RadioButton;
 
-        static new_with_label(group: (RadioButton[] | null), label: string): RadioButton;
+        static new_with_label(group: RadioButton[] | null, label: string): RadioButton;
 
         // Conflicted with Gtk.CheckButton.new_with_label
         static new_with_label(...args: never[]): any;
 
-        static new_with_label_from_widget(radio_group_member: (RadioButton | null), label: string): RadioButton;
+        static new_with_label_from_widget(radio_group_member: RadioButton | null, label: string): RadioButton;
 
-        static new_with_mnemonic(group: (RadioButton[] | null), label: string): RadioButton;
+        static new_with_mnemonic(group: RadioButton[] | null, label: string): RadioButton;
 
         // Conflicted with Gtk.CheckButton.new_with_mnemonic
         static new_with_mnemonic(...args: never[]): any;
 
-        static new_with_mnemonic_from_widget(radio_group_member: (RadioButton | null), label: string): RadioButton;
+        static new_with_mnemonic_from_widget(radio_group_member: RadioButton | null, label: string): RadioButton;
 
         // Signals
         /** @signal */
@@ -84578,7 +84421,7 @@ export namespace Gtk {
          * 
          * @param group_source a radio button object whos group we are   joining, or `null` to remove the radio button from its group
          */
-        join_group(group_source: (RadioButton | null)): void;
+        join_group(group_source: RadioButton | null): void;
 
         /**
          * Sets a {@link Gtk.RadioButton}’s group. It should be noted that this does not change
@@ -84587,7 +84430,7 @@ export namespace Gtk {
          * changes.
          * @param group an existing radio     button group, such as one returned from `gtk_radio_button_get_group()`, or `null`.
          */
-        set_group(group: (RadioButton[] | null)): void;
+        set_group(group: RadioButton[] | null): void;
 
         /**
          * Emits a {@link Gtk.Widget.SignalSignatures.child_notify | Gtk.Widget::child-notify} signal for the
@@ -84649,9 +84492,7 @@ export namespace Gtk {
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends ToggleButtonAccessible.ConstructorProps, Atk.Action.ConstructorProps, Atk.Component.ConstructorProps, Atk.Image.ConstructorProps {
-
-        }
+        interface ConstructorProps extends ToggleButtonAccessible.ConstructorProps, Atk.Action.ConstructorProps, Atk.Component.ConstructorProps, Atk.Image.ConstructorProps {}
     }
 
     /**
@@ -84826,26 +84667,26 @@ export namespace Gtk {
 
         _init(...args: any[]): void;
 
-        static ["new"](group: (RadioMenuItem[] | null)): RadioMenuItem;
+        static ["new"](group: RadioMenuItem[] | null): RadioMenuItem;
 
         // Conflicted with Gtk.CheckMenuItem.new
         static ["new"](...args: never[]): any;
 
-        static new_from_widget(group: (RadioMenuItem | null)): RadioMenuItem;
+        static new_from_widget(group: RadioMenuItem | null): RadioMenuItem;
 
-        static new_with_label(group: (RadioMenuItem[] | null), label: string): RadioMenuItem;
+        static new_with_label(group: RadioMenuItem[] | null, label: string): RadioMenuItem;
 
         // Conflicted with Gtk.CheckMenuItem.new_with_label
         static new_with_label(...args: never[]): any;
 
-        static new_with_label_from_widget(group: (RadioMenuItem | null), label: (string | null)): RadioMenuItem;
+        static new_with_label_from_widget(group: RadioMenuItem | null, label: string | null): RadioMenuItem;
 
-        static new_with_mnemonic(group: (RadioMenuItem[] | null), label: string): RadioMenuItem;
+        static new_with_mnemonic(group: RadioMenuItem[] | null, label: string): RadioMenuItem;
 
         // Conflicted with Gtk.CheckMenuItem.new_with_mnemonic
         static new_with_mnemonic(...args: never[]): any;
 
-        static new_with_mnemonic_from_widget(group: (RadioMenuItem | null), label: (string | null)): RadioMenuItem;
+        static new_with_mnemonic_from_widget(group: RadioMenuItem | null, label: string | null): RadioMenuItem;
 
         // Signals
         /** @signal */
@@ -84901,13 +84742,13 @@ export namespace Gtk {
          * 
          * @param group_source a {@link Gtk.RadioMenuItem} whose group we are   joining, or `null` to remove the `radio_menu_item` from its current   group
          */
-        join_group(group_source: (RadioMenuItem | null)): void;
+        join_group(group_source: RadioMenuItem | null): void;
 
         /**
          * Sets the group of a radio menu item, or changes it.
          * @param group the new group, or `null`.
          */
-        set_group(group: (RadioMenuItem[] | null)): void;
+        set_group(group: RadioMenuItem[] | null): void;
 
         /**
          * For widgets that can be “activated” (buttons, menu items, etc.)
@@ -84967,7 +84808,7 @@ export namespace Gtk {
          * @param accel_path path used to look up the accelerator
          * @param accel_group a {@link Gtk.AccelGroup}.
          */
-        set_accel_path(accel_path: (string | null), accel_group: (AccelGroup | null)): void;
+        set_accel_path(accel_path: string | null, accel_group: AccelGroup | null): void;
 
         /**
          * @param args 
@@ -85001,9 +84842,7 @@ export namespace Gtk {
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends CheckMenuItemAccessible.ConstructorProps, Atk.Action.ConstructorProps, Atk.Component.ConstructorProps, Atk.Selection.ConstructorProps {
-
-        }
+        interface ConstructorProps extends CheckMenuItemAccessible.ConstructorProps, Atk.Action.ConstructorProps, Atk.Component.ConstructorProps, Atk.Selection.ConstructorProps {}
     }
 
     /**
@@ -85144,19 +84983,19 @@ export namespace Gtk {
 
         _init(...args: any[]): void;
 
-        static ["new"](group: (RadioButton[] | null)): RadioToolButton;
+        static ["new"](group: RadioButton[] | null): RadioToolButton;
 
         // Conflicted with Gtk.ToggleToolButton.new
         static ["new"](...args: never[]): any;
 
-        static new_from_stock(group: (RadioButton[] | null), stock_id: string): RadioToolButton;
+        static new_from_stock(group: RadioButton[] | null, stock_id: string): RadioToolButton;
 
         // Conflicted with Gtk.ToggleToolButton.new_from_stock
         static new_from_stock(...args: never[]): any;
 
-        static new_from_widget(group: (RadioToolButton | null)): RadioToolButton;
+        static new_from_widget(group: RadioToolButton | null): RadioToolButton;
 
-        static new_with_stock_from_widget(group: (RadioToolButton | null), stock_id: string): RadioToolButton;
+        static new_with_stock_from_widget(group: RadioToolButton | null, stock_id: string): RadioToolButton;
 
         // Signals
         /** @signal */
@@ -85182,7 +85021,7 @@ export namespace Gtk {
          * Adds `button` to `group`, removing it from the group it belonged to before.
          * @param group an existing radio button group, or `null`
          */
-        set_group(group: (RadioButton[] | null)): void;
+        set_group(group: RadioButton[] | null): void;
 
         /**
          * Emits a {@link Gtk.Widget.SignalSignatures.child_notify | Gtk.Widget::child-notify} signal for the
@@ -85213,7 +85052,7 @@ export namespace Gtk {
          * `gtk_tooltip_set_markup()`.
          * @param markup the contents of the tooltip for `widget`, or `null`
          */
-        set_tooltip_markup(markup: (string | null)): void;
+        set_tooltip_markup(markup: string | null): void;
 
         /**
          * @param args 
@@ -85229,7 +85068,7 @@ export namespace Gtk {
          * See also the {@link Gtk.Widget.tooltip_text} property and `gtk_tooltip_set_text()`.
          * @param text the contents of the tooltip for `widget`
          */
-        set_tooltip_text(text: (string | null)): void;
+        set_tooltip_text(text: string | null): void;
 
         /**
          * @param args 
@@ -85266,7 +85105,7 @@ export namespace Gtk {
              * @since 2.6
              * @run-last
              */
-            "change-value": (arg0: ScrollType, arg1: number) => (boolean | void);
+            "change-value": (arg0: ScrollType, arg1: number) => boolean | void;
             /**
              * Virtual function that moves the slider. Used for keybindings.
              * @signal
@@ -85790,7 +85629,7 @@ export namespace Gtk {
          * @param child child to add
          * @param type kind of child or `null`
          */
-        add_child(builder: Builder, child: GObject.Object, type: (string | null)): void;
+        add_child(builder: Builder, child: GObject.Object, type: string | null): void;
 
         /**
          * Constructs a child of `buildable` with the name `name`.
@@ -85811,7 +85650,7 @@ export namespace Gtk {
          * @param tagname the name of the tag
          * @param data user data created in custom_tag_start
          */
-        custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
+        custom_finished(builder: Builder, child: GObject.Object | null, tagname: string, data: null): void;
 
         /**
          * This is called at the end of each custom element handled by
@@ -85821,7 +85660,7 @@ export namespace Gtk {
          * @param tagname name of tag
          * @param data user data that will be passed in to parser functions
          */
-        custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
+        custom_tag_end(builder: Builder, child: GObject.Object | null, tagname: string, data: null): void;
 
         /**
          * This is called for each unknown element under `<child>`.
@@ -85830,7 +85669,7 @@ export namespace Gtk {
          * @param tagname name of tag
          * @returns `true` if a object has a custom implementation, `false`          if it doesn't.
          */
-        custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, GLib.MarkupParser, null];
+        custom_tag_start(builder: Builder, child: GObject.Object | null, tagname: string): [boolean, GLib.MarkupParser, null];
 
         /**
          * Get the internal child called `childname` of the `buildable` object.
@@ -85866,7 +85705,7 @@ export namespace Gtk {
          * @param name name of property
          * @param value value of property
          */
-        set_buildable_property(builder: Builder, name: string, value: (GObject.Value | any)): void;
+        set_buildable_property(builder: Builder, name: string, value: GObject.Value | any): void;
 
         /**
          * Sets the name of the `buildable` object.
@@ -85882,7 +85721,7 @@ export namespace Gtk {
          * @param type kind of child or `null`
          * @virtual
          */
-        vfunc_add_child(builder: Builder, child: GObject.Object, type: (string | null)): void;
+        vfunc_add_child(builder: Builder, child: GObject.Object, type: string | null): void;
 
         /**
          * Constructs a child of `buildable` with the name `name`.
@@ -85904,7 +85743,7 @@ export namespace Gtk {
          * @param data user data created in custom_tag_start
          * @virtual
          */
-        vfunc_custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
+        vfunc_custom_finished(builder: Builder, child: GObject.Object | null, tagname: string, data: null): void;
 
         /**
          * This is called at the end of each custom element handled by
@@ -85915,7 +85754,7 @@ export namespace Gtk {
          * @param data user data that will be passed in to parser functions
          * @virtual
          */
-        vfunc_custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
+        vfunc_custom_tag_end(builder: Builder, child: GObject.Object | null, tagname: string, data: null): void;
 
         /**
          * This is called for each unknown element under `<child>`.
@@ -85924,7 +85763,7 @@ export namespace Gtk {
          * @param tagname name of tag
          * @virtual
          */
-        vfunc_custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, GLib.MarkupParser, never];
+        vfunc_custom_tag_start(builder: Builder, child: GObject.Object | null, tagname: string): [boolean, GLib.MarkupParser, never];
 
         /**
          * Get the internal child called `childname` of the `buildable` object.
@@ -86009,9 +85848,7 @@ export namespace Gtk {
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends WidgetAccessible.ConstructorProps, Atk.Component.ConstructorProps, Atk.Value.ConstructorProps {
-
-        }
+        interface ConstructorProps extends WidgetAccessible.ConstructorProps, Atk.Component.ConstructorProps, Atk.Value.ConstructorProps {}
     }
 
     /**
@@ -86122,7 +85959,7 @@ export namespace Gtk {
          * @param coord_type specifies whether the coordinates are relative to the screen or to the components top level window
          * @returns a reference to the accessible child, if one exists
          */
-        ref_accessible_at_point(x: number, y: number, coord_type: Atk.CoordType): (Atk.Object | null);
+        ref_accessible_at_point(x: number, y: number, coord_type: Atk.CoordType): Atk.Object | null;
 
         /**
          * Remove the handler specified by `handler_id` from the list of
@@ -86268,7 +86105,7 @@ export namespace Gtk {
          * @param coord_type specifies whether the coordinates are relative to the screen or to the components top level window
          * @virtual
          */
-        vfunc_ref_accessible_at_point(x: number, y: number, coord_type: Atk.CoordType): (Atk.Object | null);
+        vfunc_ref_accessible_at_point(x: number, y: number, coord_type: Atk.CoordType): Atk.Object | null;
 
         /**
          * Remove the handler specified by `handler_id` from the list of
@@ -86366,7 +86203,7 @@ export namespace Gtk {
          * Gets the range of this object.
          * @returns a newly allocated {@link Atk.Range} that represents the minimum, maximum and descriptor (if available) of `obj`. NULL if that range is not defined.
          */
-        get_range(): (Atk.Range | null);
+        get_range(): Atk.Range | null;
 
         /**
          * Gets the list of subranges defined for this object. See {@link Atk.Value}
@@ -86387,7 +86224,7 @@ export namespace Gtk {
          * @param value a {@link GObject.Value} which is the desired new accessible value.
          * @returns `true` if new value is successfully set, `false` otherwise.
          */
-        set_current_value(value: (GObject.Value | any)): boolean;
+        set_current_value(value: GObject.Value | any): boolean;
 
         /**
          * Sets the value of this object.
@@ -86447,7 +86284,7 @@ export namespace Gtk {
          * Gets the range of this object.
          * @virtual
          */
-        vfunc_get_range(): (Atk.Range | null);
+        vfunc_get_range(): Atk.Range | null;
 
         /**
          * Gets the list of subranges defined for this object. See {@link Atk.Value}
@@ -86495,13 +86332,10 @@ export namespace Gtk {
 
     namespace RcStyle {
         // Signal signatures
-        interface SignalSignatures extends GObject.Object.SignalSignatures {
-        }
+        interface SignalSignatures extends GObject.Object.SignalSignatures {}
 
         // Constructor properties interface
-        interface ConstructorProps extends GObject.Object.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GObject.Object.ConstructorProps {}
     }
 
     /**
@@ -86671,9 +86505,9 @@ export namespace Gtk {
 
         _init(...args: any[]): void;
 
-        static ["new"](name: string, label: (string | null), tooltip: (string | null), stock_id: (string | null)): RecentAction;
+        static ["new"](name: string, label: string | null, tooltip: string | null, stock_id: string | null): RecentAction;
 
-        static new_for_manager(name: string, label: (string | null), tooltip: (string | null), stock_id: (string | null), manager: (RecentManager | null)): RecentAction;
+        static new_for_manager(name: string, label: string | null, tooltip: string | null, stock_id: string | null, manager: RecentManager | null): RecentAction;
 
         // Signals
         /** @signal */
@@ -86880,7 +86714,7 @@ export namespace Gtk {
          * @param child child to add
          * @param type kind of child or `null`
          */
-        add_child(builder: Builder, child: GObject.Object, type: (string | null)): void;
+        add_child(builder: Builder, child: GObject.Object, type: string | null): void;
 
         /**
          * Constructs a child of `buildable` with the name `name`.
@@ -86901,7 +86735,7 @@ export namespace Gtk {
          * @param tagname the name of the tag
          * @param data user data created in custom_tag_start
          */
-        custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
+        custom_finished(builder: Builder, child: GObject.Object | null, tagname: string, data: null): void;
 
         /**
          * This is called at the end of each custom element handled by
@@ -86911,7 +86745,7 @@ export namespace Gtk {
          * @param tagname name of tag
          * @param data user data that will be passed in to parser functions
          */
-        custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
+        custom_tag_end(builder: Builder, child: GObject.Object | null, tagname: string, data: null): void;
 
         /**
          * This is called for each unknown element under `<child>`.
@@ -86920,7 +86754,7 @@ export namespace Gtk {
          * @param tagname name of tag
          * @returns `true` if a object has a custom implementation, `false`          if it doesn't.
          */
-        custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, GLib.MarkupParser, null];
+        custom_tag_start(builder: Builder, child: GObject.Object | null, tagname: string): [boolean, GLib.MarkupParser, null];
 
         /**
          * Get the internal child called `childname` of the `buildable` object.
@@ -86956,7 +86790,7 @@ export namespace Gtk {
          * @param name name of property
          * @param value value of property
          */
-        set_buildable_property(builder: Builder, name: string, value: (GObject.Value | any)): void;
+        set_buildable_property(builder: Builder, name: string, value: GObject.Value | any): void;
 
         /**
          * Sets the name of the `buildable` object.
@@ -86972,7 +86806,7 @@ export namespace Gtk {
          * @param type kind of child or `null`
          * @virtual
          */
-        vfunc_add_child(builder: Builder, child: GObject.Object, type: (string | null)): void;
+        vfunc_add_child(builder: Builder, child: GObject.Object, type: string | null): void;
 
         /**
          * Constructs a child of `buildable` with the name `name`.
@@ -86994,7 +86828,7 @@ export namespace Gtk {
          * @param data user data created in custom_tag_start
          * @virtual
          */
-        vfunc_custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
+        vfunc_custom_finished(builder: Builder, child: GObject.Object | null, tagname: string, data: null): void;
 
         /**
          * This is called at the end of each custom element handled by
@@ -87005,7 +86839,7 @@ export namespace Gtk {
          * @param data user data that will be passed in to parser functions
          * @virtual
          */
-        vfunc_custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
+        vfunc_custom_tag_end(builder: Builder, child: GObject.Object | null, tagname: string, data: null): void;
 
         /**
          * This is called for each unknown element under `<child>`.
@@ -87014,7 +86848,7 @@ export namespace Gtk {
          * @param tagname name of tag
          * @virtual
          */
-        vfunc_custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, GLib.MarkupParser, never];
+        vfunc_custom_tag_start(builder: Builder, child: GObject.Object | null, tagname: string): [boolean, GLib.MarkupParser, never];
 
         /**
          * Get the internal child called `childname` of the `buildable` object.
@@ -87199,7 +87033,7 @@ export namespace Gtk {
          * to affect the displayed recently used resources.
          * @param filter a {@link Gtk.RecentFilter}
          */
-        set_filter(filter: (RecentFilter | null)): void;
+        set_filter(filter: RecentFilter | null): void;
 
         /**
          * Sets the number of items that should be returned by
@@ -87475,9 +87309,7 @@ export namespace Gtk {
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends Dialog.ConstructorProps, Atk.ImplementorIface.ConstructorProps, Buildable.ConstructorProps, RecentChooser.ConstructorProps {
-
-        }
+        interface ConstructorProps extends Dialog.ConstructorProps, Atk.ImplementorIface.ConstructorProps, Buildable.ConstructorProps, RecentChooser.ConstructorProps {}
     }
 
     /**
@@ -87863,7 +87695,7 @@ export namespace Gtk {
          * to affect the displayed recently used resources.
          * @param filter a {@link Gtk.RecentFilter}
          */
-        set_filter(filter: (RecentFilter | null)): void;
+        set_filter(filter: RecentFilter | null): void;
 
         /**
          * Sets the number of items that should be returned by
@@ -88512,7 +88344,7 @@ export namespace Gtk {
          * {@link Gtk.Activatable.use_action_appearance} changes.
          * @param action the related {@link Gtk.Action} or `null`
          */
-        sync_action_properties(action: (Action | null)): void;
+        sync_action_properties(action: Action | null): void;
 
         /**
          * This is called to update the activatable completely, this is called
@@ -88522,7 +88354,7 @@ export namespace Gtk {
          * @param action the related {@link Gtk.Action} or `null`
          * @virtual
          */
-        vfunc_sync_action_properties(action: (Action | null)): void;
+        vfunc_sync_action_properties(action: Action | null): void;
 
         /**
          * Called to update the activatable when its related action’s properties change.
@@ -88672,7 +88504,7 @@ export namespace Gtk {
          * to affect the displayed recently used resources.
          * @param filter a {@link Gtk.RecentFilter}
          */
-        set_filter(filter: (RecentFilter | null)): void;
+        set_filter(filter: RecentFilter | null): void;
 
         /**
          * Sets the number of items that should be returned by
@@ -88918,9 +88750,7 @@ export namespace Gtk {
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends Box.ConstructorProps, Atk.ImplementorIface.ConstructorProps, Buildable.ConstructorProps, Orientable.ConstructorProps, RecentChooser.ConstructorProps {
-
-        }
+        interface ConstructorProps extends Box.ConstructorProps, Atk.ImplementorIface.ConstructorProps, Buildable.ConstructorProps, Orientable.ConstructorProps, RecentChooser.ConstructorProps {}
     }
 
     /**
@@ -89297,7 +89127,7 @@ export namespace Gtk {
          * to affect the displayed recently used resources.
          * @param filter a {@link Gtk.RecentFilter}
          */
-        set_filter(filter: (RecentFilter | null)): void;
+        set_filter(filter: RecentFilter | null): void;
 
         /**
          * Sets the number of items that should be returned by
@@ -89483,13 +89313,10 @@ export namespace Gtk {
 
     namespace RecentFilter {
         // Signal signatures
-        interface SignalSignatures extends GObject.InitiallyUnowned.SignalSignatures {
-        }
+        interface SignalSignatures extends GObject.InitiallyUnowned.SignalSignatures {}
 
         // Constructor properties interface
-        interface ConstructorProps extends GObject.InitiallyUnowned.ConstructorProps, Buildable.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GObject.InitiallyUnowned.ConstructorProps, Buildable.ConstructorProps {}
     }
 
     /**
@@ -89649,7 +89476,7 @@ export namespace Gtk {
          * See `gtk_recent_filter_set_name()`.
          * @returns the name of the filter, or `null`.  The returned string   is owned by the filter object and should not be freed.
          */
-        get_name(): (string | null);
+        get_name(): string | null;
 
         /**
          * @param args 
@@ -89683,7 +89510,7 @@ export namespace Gtk {
          * @param child child to add
          * @param type kind of child or `null`
          */
-        add_child(builder: Builder, child: GObject.Object, type: (string | null)): void;
+        add_child(builder: Builder, child: GObject.Object, type: string | null): void;
 
         /**
          * Constructs a child of `buildable` with the name `name`.
@@ -89704,7 +89531,7 @@ export namespace Gtk {
          * @param tagname the name of the tag
          * @param data user data created in custom_tag_start
          */
-        custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
+        custom_finished(builder: Builder, child: GObject.Object | null, tagname: string, data: null): void;
 
         /**
          * This is called at the end of each custom element handled by
@@ -89714,7 +89541,7 @@ export namespace Gtk {
          * @param tagname name of tag
          * @param data user data that will be passed in to parser functions
          */
-        custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
+        custom_tag_end(builder: Builder, child: GObject.Object | null, tagname: string, data: null): void;
 
         /**
          * This is called for each unknown element under `<child>`.
@@ -89723,7 +89550,7 @@ export namespace Gtk {
          * @param tagname name of tag
          * @returns `true` if a object has a custom implementation, `false`          if it doesn't.
          */
-        custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, GLib.MarkupParser, null];
+        custom_tag_start(builder: Builder, child: GObject.Object | null, tagname: string): [boolean, GLib.MarkupParser, null];
 
         /**
          * Get the internal child called `childname` of the `buildable` object.
@@ -89749,7 +89576,7 @@ export namespace Gtk {
          * @param name name of property
          * @param value value of property
          */
-        set_buildable_property(builder: Builder, name: string, value: (GObject.Value | any)): void;
+        set_buildable_property(builder: Builder, name: string, value: GObject.Value | any): void;
 
         /**
          * Adds a child to `buildable`. `type` is an optional string
@@ -89759,7 +89586,7 @@ export namespace Gtk {
          * @param type kind of child or `null`
          * @virtual
          */
-        vfunc_add_child(builder: Builder, child: GObject.Object, type: (string | null)): void;
+        vfunc_add_child(builder: Builder, child: GObject.Object, type: string | null): void;
 
         /**
          * Constructs a child of `buildable` with the name `name`.
@@ -89781,7 +89608,7 @@ export namespace Gtk {
          * @param data user data created in custom_tag_start
          * @virtual
          */
-        vfunc_custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
+        vfunc_custom_finished(builder: Builder, child: GObject.Object | null, tagname: string, data: null): void;
 
         /**
          * This is called at the end of each custom element handled by
@@ -89792,7 +89619,7 @@ export namespace Gtk {
          * @param data user data that will be passed in to parser functions
          * @virtual
          */
-        vfunc_custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
+        vfunc_custom_tag_end(builder: Builder, child: GObject.Object | null, tagname: string, data: null): void;
 
         /**
          * This is called for each unknown element under `<child>`.
@@ -89801,7 +89628,7 @@ export namespace Gtk {
          * @param tagname name of tag
          * @virtual
          */
-        vfunc_custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, GLib.MarkupParser, never];
+        vfunc_custom_tag_start(builder: Builder, child: GObject.Object | null, tagname: string): [boolean, GLib.MarkupParser, never];
 
         /**
          * Get the internal child called `childname` of the `buildable` object.
@@ -90067,7 +89894,7 @@ export namespace Gtk {
          * @param uri a URI
          * @returns a {@link Gtk.RecentInfo}-struct containing information   about the resource pointed by `uri`, or `null` if the URI was   not registered in the recently used resources list. Free with   `gtk_recent_info_unref()`.
          */
-        lookup_item(uri: string): (RecentInfo | null);
+        lookup_item(uri: string): RecentInfo | null;
 
         /**
          * Changes the location of a recently used resource from `uri` to `new_uri`.
@@ -90078,7 +89905,7 @@ export namespace Gtk {
          * @param new_uri the new URI of the recently used resource, or    `null` to remove the item pointed by `uri` in the list
          * @returns `true` on success
          */
-        move_item(uri: string, new_uri: (string | null)): boolean;
+        move_item(uri: string, new_uri: string | null): boolean;
 
         /**
          * Purges every item from the recently used resources list.
@@ -90179,7 +90006,7 @@ export namespace Gtk {
          * @param i the action index corresponding to the action to be performed
          * @returns a description string, or `null` if `action` does not implement this interface.
          */
-        get_description(i: number): (string | null);
+        get_description(i: number): string | null;
 
         /**
          * @param args 
@@ -90213,14 +90040,14 @@ export namespace Gtk {
          * @param i the action index corresponding to the action to be performed
          * @returns the keybinding which can be used to activate this action, or `null` if there is no keybinding for this action.
          */
-        get_keybinding(i: number): (string | null);
+        get_keybinding(i: number): string | null;
 
         /**
          * Returns the localized name of the specified action of the object.
          * @param i the action index corresponding to the action to be performed
          * @returns a name string, or `null` if `action` does not implement this interface.
          */
-        get_localized_name(i: number): (string | null);
+        get_localized_name(i: number): string | null;
 
         /**
          * Gets the number of accessible actions available on the object.
@@ -90248,7 +90075,7 @@ export namespace Gtk {
          * @param i the action index corresponding to the action to be performed
          * @returns a name string, or `null` if `action` does not implement this interface.
          */
-        get_name(i: number): (string | null);
+        get_name(i: number): string | null;
 
         /**
          * @param args 
@@ -90282,7 +90109,7 @@ export namespace Gtk {
          * @param i the action index corresponding to the action to be performed
          * @virtual
          */
-        vfunc_get_description(i: number): (string | null);
+        vfunc_get_description(i: number): string | null;
 
         /**
          * @param args 
@@ -90317,14 +90144,14 @@ export namespace Gtk {
          * @param i the action index corresponding to the action to be performed
          * @virtual
          */
-        vfunc_get_keybinding(i: number): (string | null);
+        vfunc_get_keybinding(i: number): string | null;
 
         /**
          * Returns the localized name of the specified action of the object.
          * @param i the action index corresponding to the action to be performed
          * @virtual
          */
-        vfunc_get_localized_name(i: number): (string | null);
+        vfunc_get_localized_name(i: number): string | null;
 
         /**
          * Gets the number of accessible actions available on the object.
@@ -90352,7 +90179,7 @@ export namespace Gtk {
          * @param i the action index corresponding to the action to be performed
          * @virtual
          */
-        vfunc_get_name(i: number): (string | null);
+        vfunc_get_name(i: number): string | null;
 
         /**
          * @param args 
@@ -90457,7 +90284,7 @@ export namespace Gtk {
          * @param coord_type specifies whether the coordinates are relative to the screen or to the components top level window
          * @returns a reference to the accessible child, if one exists
          */
-        ref_accessible_at_point(x: number, y: number, coord_type: Atk.CoordType): (Atk.Object | null);
+        ref_accessible_at_point(x: number, y: number, coord_type: Atk.CoordType): Atk.Object | null;
 
         /**
          * Remove the handler specified by `handler_id` from the list of
@@ -90610,7 +90437,7 @@ export namespace Gtk {
          * @param coord_type specifies whether the coordinates are relative to the screen or to the components top level window
          * @virtual
          */
-        vfunc_ref_accessible_at_point(x: number, y: number, coord_type: Atk.CoordType): (Atk.Object | null);
+        vfunc_ref_accessible_at_point(x: number, y: number, coord_type: Atk.CoordType): Atk.Object | null;
 
         /**
          * Remove the handler specified by `handler_id` from the list of
@@ -91210,7 +91037,7 @@ export namespace Gtk {
 
         _init(...args: any[]): void;
 
-        static ["new"](orientation: Orientation, adjustment: (Adjustment | null)): Scale;
+        static ["new"](orientation: Orientation, adjustment: Adjustment | null): Scale;
 
         static new_with_range(orientation: Orientation, min: number, max: number, step: number): Scale;
 
@@ -91266,7 +91093,7 @@ export namespace Gtk {
          * @param position where to draw the mark. For a horizontal scale, #GTK_POS_TOP   and {@link Gtk.PositionType.LEFT} are drawn above the scale, anything else below.   For a vertical scale, #GTK_POS_LEFT and {@link Gtk.PositionType.TOP} are drawn to   the left of the scale, anything else to the right.
          * @param markup Text to be shown at the mark, using [Pango markup][PangoMarkupFormat], or `null`
          */
-        add_mark(value: number, position: PositionType, markup: (string | null)): void;
+        add_mark(value: number, position: PositionType, markup: string | null): void;
 
         /**
          * Removes any marks that have been added with `gtk_scale_add_mark()`.
@@ -91298,7 +91125,7 @@ export namespace Gtk {
          * the caller.
          * @returns the {@link Pango.Layout} for this scale,     or `null` if the {@link Gtk.Scale.draw_value} property is `false`.
          */
-        get_layout(): (Pango.Layout | null);
+        get_layout(): Pango.Layout | null;
 
         /**
          * Obtains the coordinates where the scale will draw the
@@ -91400,9 +91227,7 @@ export namespace Gtk {
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends RangeAccessible.ConstructorProps, Atk.Component.ConstructorProps, Atk.Value.ConstructorProps {
-
-        }
+        interface ConstructorProps extends RangeAccessible.ConstructorProps, Atk.Component.ConstructorProps, Atk.Value.ConstructorProps {}
     }
 
     /**
@@ -91473,7 +91298,7 @@ export namespace Gtk {
          * Gets the range of this object.
          * @returns a newly allocated {@link Atk.Range} that represents the minimum, maximum and descriptor (if available) of `obj`. NULL if that range is not defined.
          */
-        get_range(): (Atk.Range | null);
+        get_range(): Atk.Range | null;
 
         /**
          * Gets the list of subranges defined for this object. See {@link Atk.Value}
@@ -91494,7 +91319,7 @@ export namespace Gtk {
          * @param value a {@link GObject.Value} which is the desired new accessible value.
          * @returns `true` if new value is successfully set, `false` otherwise.
          */
-        set_current_value(value: (GObject.Value | any)): boolean;
+        set_current_value(value: GObject.Value | any): boolean;
 
         /**
          * Sets the value of this object.
@@ -91554,7 +91379,7 @@ export namespace Gtk {
          * Gets the range of this object.
          * @virtual
          */
-        vfunc_get_range(): (Atk.Range | null);
+        vfunc_get_range(): Atk.Range | null;
 
         /**
          * Gets the list of subranges defined for this object. See {@link Atk.Value}
@@ -91774,7 +91599,7 @@ export namespace Gtk {
 
         _init(...args: any[]): void;
 
-        static ["new"](size: number, min: number, max: number, step: number, icons: (string[] | null)): ScaleButton;
+        static ["new"](size: number, min: number, max: number, step: number, icons: string[] | null): ScaleButton;
 
         // Conflicted with Gtk.Button.new
         static ["new"](...args: never[]): any;
@@ -91859,15 +91684,15 @@ export namespace Gtk {
          * @default null
           * @category Inherited from Gtk.Actionable
          */
-        get action_name(): (string | null);
-        set action_name(val: (string | null));
+        get action_name(): string | null;
+        set action_name(val: string | null);
 
         /**
          * @default null
           * @category Inherited from Gtk.Actionable
          */
-        get actionName(): (string | null);
-        set actionName(val: (string | null));
+        get actionName(): string | null;
+        set actionName(val: string | null);
 
         /** @category Inherited from Gtk.Actionable */
         get action_target(): GLib.Variant;
@@ -91956,7 +91781,7 @@ export namespace Gtk {
          * See `gtk_actionable_set_action_name()` for more information.
          * @returns the action name, or `null` if none is set
          */
-        get_action_name(): (string | null);
+        get_action_name(): string | null;
 
         /**
          * Gets the current target value of `actionable`.
@@ -91980,7 +91805,7 @@ export namespace Gtk {
          * associated with the window.
          * @param action_name an action name, or `null`
          */
-        set_action_name(action_name: (string | null)): void;
+        set_action_name(action_name: string | null): void;
 
         /**
          * Sets the target value of an actionable widget.
@@ -92004,7 +91829,7 @@ export namespace Gtk {
          * rendered inactive).
          * @param target_value a {@link GLib.Variant} to set as the target value, or `null`
          */
-        set_action_target_value(target_value: (GLib.Variant | null)): void;
+        set_action_target_value(target_value: GLib.Variant | null): void;
 
         /**
          * Sets the action-name and associated string target value of an
@@ -92028,7 +91853,7 @@ export namespace Gtk {
          * See `gtk_actionable_set_action_name()` for more information.
          * @virtual
          */
-        vfunc_get_action_name(): (string | null);
+        vfunc_get_action_name(): string | null;
 
         /**
          * Gets the current target value of `actionable`.
@@ -92053,7 +91878,7 @@ export namespace Gtk {
          * @param action_name an action name, or `null`
          * @virtual
          */
-        vfunc_set_action_name(action_name: (string | null)): void;
+        vfunc_set_action_name(action_name: string | null): void;
 
         /**
          * Sets the target value of an actionable widget.
@@ -92078,7 +91903,7 @@ export namespace Gtk {
          * @param target_value a {@link GLib.Variant} to set as the target value, or `null`
          * @virtual
          */
-        vfunc_set_action_target_value(target_value: (GLib.Variant | null)): void;
+        vfunc_set_action_target_value(target_value: GLib.Variant | null): void;
 
         /**
          * This is a utility function for {@link Gtk.Activatable} implementors.
@@ -92142,7 +91967,7 @@ export namespace Gtk {
          * {@link Gtk.Activatable.use_action_appearance} changes.
          * @param action the related {@link Gtk.Action} or `null`
          */
-        sync_action_properties(action: (Action | null)): void;
+        sync_action_properties(action: Action | null): void;
 
         /**
          * This is called to update the activatable completely, this is called
@@ -92152,7 +91977,7 @@ export namespace Gtk {
          * @param action the related {@link Gtk.Action} or `null`
          * @virtual
          */
-        vfunc_sync_action_properties(action: (Action | null)): void;
+        vfunc_sync_action_properties(action: Action | null): void;
 
         /**
          * Called to update the activatable when its related action’s properties change.
@@ -92236,9 +92061,7 @@ export namespace Gtk {
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends ButtonAccessible.ConstructorProps, Atk.Action.ConstructorProps, Atk.Component.ConstructorProps, Atk.Image.ConstructorProps, Atk.Value.ConstructorProps {
-
-        }
+        interface ConstructorProps extends ButtonAccessible.ConstructorProps, Atk.Action.ConstructorProps, Atk.Component.ConstructorProps, Atk.Image.ConstructorProps, Atk.Value.ConstructorProps {}
     }
 
     /**
@@ -92286,7 +92109,7 @@ export namespace Gtk {
          * @param i the action index corresponding to the action to be performed
          * @returns a description string, or `null` if `action` does not implement this interface.
          */
-        get_description(i: number): (string | null);
+        get_description(i: number): string | null;
 
         /**
          * @param args 
@@ -92320,14 +92143,14 @@ export namespace Gtk {
          * @param i the action index corresponding to the action to be performed
          * @returns the keybinding which can be used to activate this action, or `null` if there is no keybinding for this action.
          */
-        get_keybinding(i: number): (string | null);
+        get_keybinding(i: number): string | null;
 
         /**
          * Returns the localized name of the specified action of the object.
          * @param i the action index corresponding to the action to be performed
          * @returns a name string, or `null` if `action` does not implement this interface.
          */
-        get_localized_name(i: number): (string | null);
+        get_localized_name(i: number): string | null;
 
         /**
          * Gets the number of accessible actions available on the object.
@@ -92355,7 +92178,7 @@ export namespace Gtk {
          * @param i the action index corresponding to the action to be performed
          * @returns a name string, or `null` if `action` does not implement this interface.
          */
-        get_name(i: number): (string | null);
+        get_name(i: number): string | null;
 
         /**
          * @param args 
@@ -92389,7 +92212,7 @@ export namespace Gtk {
          * @param i the action index corresponding to the action to be performed
          * @virtual
          */
-        vfunc_get_description(i: number): (string | null);
+        vfunc_get_description(i: number): string | null;
 
         /**
          * @param args 
@@ -92424,14 +92247,14 @@ export namespace Gtk {
          * @param i the action index corresponding to the action to be performed
          * @virtual
          */
-        vfunc_get_keybinding(i: number): (string | null);
+        vfunc_get_keybinding(i: number): string | null;
 
         /**
          * Returns the localized name of the specified action of the object.
          * @param i the action index corresponding to the action to be performed
          * @virtual
          */
-        vfunc_get_localized_name(i: number): (string | null);
+        vfunc_get_localized_name(i: number): string | null;
 
         /**
          * Gets the number of accessible actions available on the object.
@@ -92459,7 +92282,7 @@ export namespace Gtk {
          * @param i the action index corresponding to the action to be performed
          * @virtual
          */
-        vfunc_get_name(i: number): (string | null);
+        vfunc_get_name(i: number): string | null;
 
         /**
          * @param args 
@@ -92493,7 +92316,7 @@ export namespace Gtk {
          * Retrieves the locale identifier associated to the {@link Atk.Image}.
          * @returns a string corresponding to the POSIX   `LC_MESSAGES` locale used by the image description, or   `null` if the image does not specify a locale.
          */
-        get_image_locale(): (string | null);
+        get_image_locale(): string | null;
 
         /**
          * Gets the position of the image in the form of a point specifying the
@@ -92532,7 +92355,7 @@ export namespace Gtk {
          * Retrieves the locale identifier associated to the {@link Atk.Image}.
          * @virtual
          */
-        vfunc_get_image_locale(): (string | null);
+        vfunc_get_image_locale(): string | null;
 
         /**
          * Gets the position of the image in the form of a point specifying the
@@ -92598,7 +92421,7 @@ export namespace Gtk {
          * Gets the range of this object.
          * @returns a newly allocated {@link Atk.Range} that represents the minimum, maximum and descriptor (if available) of `obj`. NULL if that range is not defined.
          */
-        get_range(): (Atk.Range | null);
+        get_range(): Atk.Range | null;
 
         /**
          * Gets the list of subranges defined for this object. See {@link Atk.Value}
@@ -92619,7 +92442,7 @@ export namespace Gtk {
          * @param value a {@link GObject.Value} which is the desired new accessible value.
          * @returns `true` if new value is successfully set, `false` otherwise.
          */
-        set_current_value(value: (GObject.Value | any)): boolean;
+        set_current_value(value: GObject.Value | any): boolean;
 
         /**
          * Sets the value of this object.
@@ -92679,7 +92502,7 @@ export namespace Gtk {
          * Gets the range of this object.
          * @virtual
          */
-        vfunc_get_range(): (Atk.Range | null);
+        vfunc_get_range(): Atk.Range | null;
 
         /**
          * Gets the list of subranges defined for this object. See {@link Atk.Value}
@@ -92779,9 +92602,7 @@ export namespace Gtk {
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends Range.ConstructorProps, Atk.ImplementorIface.ConstructorProps, Buildable.ConstructorProps, Orientable.ConstructorProps {
-
-        }
+        interface ConstructorProps extends Range.ConstructorProps, Atk.ImplementorIface.ConstructorProps, Buildable.ConstructorProps, Orientable.ConstructorProps {}
     }
 
     /**
@@ -92848,7 +92669,7 @@ export namespace Gtk {
 
         _init(...args: any[]): void;
 
-        static ["new"](orientation: Orientation, adjustment: (Adjustment | null)): Scrollbar;
+        static ["new"](orientation: Orientation, adjustment: Adjustment | null): Scrollbar;
 
         // Signals
         /** @signal */
@@ -92942,7 +92763,7 @@ export namespace Gtk {
              * @action
              * @run-last
              */
-            "scroll-child": (arg0: ScrollType, arg1: boolean) => (boolean | void);
+            "scroll-child": (arg0: ScrollType, arg1: boolean) => boolean | void;
             "notify::hadjustment": (pspec: GObject.ParamSpec) => void;
             "notify::hscrollbar-policy": (pspec: GObject.ParamSpec) => void;
             "notify::kinetic-scrolling": (pspec: GObject.ParamSpec) => void;
@@ -93370,7 +93191,7 @@ export namespace Gtk {
 
         _init(...args: any[]): void;
 
-        static ["new"](hadjustment: (Adjustment | null), vadjustment: (Adjustment | null)): ScrolledWindow;
+        static ["new"](hadjustment: Adjustment | null, vadjustment: Adjustment | null): ScrolledWindow;
 
         // Signals
         /** @signal */
@@ -93549,7 +93370,7 @@ export namespace Gtk {
          * Sets the {@link Gtk.Adjustment} for the horizontal scrollbar.
          * @param hadjustment the {@link Gtk.Adjustment} to use, or `null` to create a new one
          */
-        set_hadjustment(hadjustment: (Adjustment | null)): void;
+        set_hadjustment(hadjustment: Adjustment | null): void;
 
         /**
          * Turns kinetic scrolling on or off.
@@ -93663,7 +93484,7 @@ export namespace Gtk {
          * Sets the {@link Gtk.Adjustment} for the vertical scrollbar.
          * @param vadjustment the {@link Gtk.Adjustment} to use, or `null` to create a new one
          */
-        set_vadjustment(vadjustment: (Adjustment | null)): void;
+        set_vadjustment(vadjustment: Adjustment | null): void;
 
         /**
          * Unsets the placement of the contents with respect to the scrollbars
@@ -93701,9 +93522,7 @@ export namespace Gtk {
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends ContainerAccessible.ConstructorProps, Atk.Component.ConstructorProps {
-
-        }
+        interface ConstructorProps extends ContainerAccessible.ConstructorProps, Atk.Component.ConstructorProps {}
     }
 
     /**
@@ -94117,9 +93936,7 @@ export namespace Gtk {
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends Entry.ConstructorProps, Atk.ImplementorIface.ConstructorProps, Buildable.ConstructorProps, CellEditable.ConstructorProps, Editable.ConstructorProps {
-
-        }
+        interface ConstructorProps extends Entry.ConstructorProps, Atk.ImplementorIface.ConstructorProps, Buildable.ConstructorProps, CellEditable.ConstructorProps, Editable.ConstructorProps {}
     }
 
     /**
@@ -94262,7 +94079,7 @@ export namespace Gtk {
          * lifetime is temporary and does not persist across other edits and/or cells.
          * @param event The {@link Gdk.Event} that began the editing process, or   `null` if editing was initiated programmatically
          */
-        start_editing(event: (Gdk.Event | null)): void;
+        start_editing(event: Gdk.Event | null): void;
 
         /**
          * Emits the {@link Gtk.CellEditable.SignalSignatures.editing_done | Gtk.CellEditable::editing-done} signal.
@@ -94290,7 +94107,7 @@ export namespace Gtk {
          * @param event The {@link Gdk.Event} that began the editing process, or   `null` if editing was initiated programmatically
          * @virtual
          */
-        vfunc_start_editing(event: (Gdk.Event | null)): void;
+        vfunc_start_editing(event: Gdk.Event | null): void;
 
         /**
          * Copies the contents of the currently selected content in the editable and
@@ -94575,9 +94392,7 @@ export namespace Gtk {
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends Widget.ConstructorProps, Atk.ImplementorIface.ConstructorProps, Buildable.ConstructorProps, Orientable.ConstructorProps {
-
-        }
+        interface ConstructorProps extends Widget.ConstructorProps, Atk.ImplementorIface.ConstructorProps, Buildable.ConstructorProps, Orientable.ConstructorProps {}
     }
 
     /**
@@ -94643,7 +94458,7 @@ export namespace Gtk {
          * @param child child to add
          * @param type kind of child or `null`
          */
-        add_child(builder: Builder, child: GObject.Object, type: (string | null)): void;
+        add_child(builder: Builder, child: GObject.Object, type: string | null): void;
 
         /**
          * Constructs a child of `buildable` with the name `name`.
@@ -94664,7 +94479,7 @@ export namespace Gtk {
          * @param tagname the name of the tag
          * @param data user data created in custom_tag_start
          */
-        custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
+        custom_finished(builder: Builder, child: GObject.Object | null, tagname: string, data: null): void;
 
         /**
          * This is called at the end of each custom element handled by
@@ -94674,7 +94489,7 @@ export namespace Gtk {
          * @param tagname name of tag
          * @param data user data that will be passed in to parser functions
          */
-        custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
+        custom_tag_end(builder: Builder, child: GObject.Object | null, tagname: string, data: null): void;
 
         /**
          * This is called for each unknown element under `<child>`.
@@ -94683,7 +94498,7 @@ export namespace Gtk {
          * @param tagname name of tag
          * @returns `true` if a object has a custom implementation, `false`          if it doesn't.
          */
-        custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, GLib.MarkupParser, null];
+        custom_tag_start(builder: Builder, child: GObject.Object | null, tagname: string): [boolean, GLib.MarkupParser, null];
 
         /**
          * Get the internal child called `childname` of the `buildable` object.
@@ -94719,7 +94534,7 @@ export namespace Gtk {
          * @param name name of property
          * @param value value of property
          */
-        set_buildable_property(builder: Builder, name: string, value: (GObject.Value | any)): void;
+        set_buildable_property(builder: Builder, name: string, value: GObject.Value | any): void;
 
         /**
          * Sets the name of the `buildable` object.
@@ -94735,7 +94550,7 @@ export namespace Gtk {
          * @param type kind of child or `null`
          * @virtual
          */
-        vfunc_add_child(builder: Builder, child: GObject.Object, type: (string | null)): void;
+        vfunc_add_child(builder: Builder, child: GObject.Object, type: string | null): void;
 
         /**
          * Constructs a child of `buildable` with the name `name`.
@@ -94757,7 +94572,7 @@ export namespace Gtk {
          * @param data user data created in custom_tag_start
          * @virtual
          */
-        vfunc_custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
+        vfunc_custom_finished(builder: Builder, child: GObject.Object | null, tagname: string, data: null): void;
 
         /**
          * This is called at the end of each custom element handled by
@@ -94768,7 +94583,7 @@ export namespace Gtk {
          * @param data user data that will be passed in to parser functions
          * @virtual
          */
-        vfunc_custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
+        vfunc_custom_tag_end(builder: Builder, child: GObject.Object | null, tagname: string, data: null): void;
 
         /**
          * This is called for each unknown element under `<child>`.
@@ -94777,7 +94592,7 @@ export namespace Gtk {
          * @param tagname name of tag
          * @virtual
          */
-        vfunc_custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, GLib.MarkupParser, never];
+        vfunc_custom_tag_start(builder: Builder, child: GObject.Object | null, tagname: string): [boolean, GLib.MarkupParser, never];
 
         /**
          * Get the internal child called `childname` of the `buildable` object.
@@ -94895,9 +94710,7 @@ export namespace Gtk {
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends MenuItem.ConstructorProps, Atk.ImplementorIface.ConstructorProps, Actionable.ConstructorProps, Activatable.ConstructorProps, Buildable.ConstructorProps {
-
-        }
+        interface ConstructorProps extends MenuItem.ConstructorProps, Atk.ImplementorIface.ConstructorProps, Actionable.ConstructorProps, Activatable.ConstructorProps, Buildable.ConstructorProps {}
     }
 
     /**
@@ -94949,15 +94762,15 @@ export namespace Gtk {
          * @default null
           * @category Inherited from Gtk.Actionable
          */
-        get action_name(): (string | null);
-        set action_name(val: (string | null));
+        get action_name(): string | null;
+        set action_name(val: string | null);
 
         /**
          * @default null
           * @category Inherited from Gtk.Actionable
          */
-        get actionName(): (string | null);
-        set actionName(val: (string | null));
+        get actionName(): string | null;
+        set actionName(val: string | null);
 
         /** @category Inherited from Gtk.Actionable */
         get action_target(): GLib.Variant;
@@ -95037,7 +94850,7 @@ export namespace Gtk {
          * See `gtk_actionable_set_action_name()` for more information.
          * @returns the action name, or `null` if none is set
          */
-        get_action_name(): (string | null);
+        get_action_name(): string | null;
 
         /**
          * Gets the current target value of `actionable`.
@@ -95061,7 +94874,7 @@ export namespace Gtk {
          * associated with the window.
          * @param action_name an action name, or `null`
          */
-        set_action_name(action_name: (string | null)): void;
+        set_action_name(action_name: string | null): void;
 
         /**
          * Sets the target value of an actionable widget.
@@ -95085,7 +94898,7 @@ export namespace Gtk {
          * rendered inactive).
          * @param target_value a {@link GLib.Variant} to set as the target value, or `null`
          */
-        set_action_target_value(target_value: (GLib.Variant | null)): void;
+        set_action_target_value(target_value: GLib.Variant | null): void;
 
         /**
          * Sets the action-name and associated string target value of an
@@ -95109,7 +94922,7 @@ export namespace Gtk {
          * See `gtk_actionable_set_action_name()` for more information.
          * @virtual
          */
-        vfunc_get_action_name(): (string | null);
+        vfunc_get_action_name(): string | null;
 
         /**
          * Gets the current target value of `actionable`.
@@ -95134,7 +94947,7 @@ export namespace Gtk {
          * @param action_name an action name, or `null`
          * @virtual
          */
-        vfunc_set_action_name(action_name: (string | null)): void;
+        vfunc_set_action_name(action_name: string | null): void;
 
         /**
          * Sets the target value of an actionable widget.
@@ -95159,7 +94972,7 @@ export namespace Gtk {
          * @param target_value a {@link GLib.Variant} to set as the target value, or `null`
          * @virtual
          */
-        vfunc_set_action_target_value(target_value: (GLib.Variant | null)): void;
+        vfunc_set_action_target_value(target_value: GLib.Variant | null): void;
 
         /**
          * This is a utility function for {@link Gtk.Activatable} implementors.
@@ -95223,7 +95036,7 @@ export namespace Gtk {
          * {@link Gtk.Activatable.use_action_appearance} changes.
          * @param action the related {@link Gtk.Action} or `null`
          */
-        sync_action_properties(action: (Action | null)): void;
+        sync_action_properties(action: Action | null): void;
 
         /**
          * This is called to update the activatable completely, this is called
@@ -95233,7 +95046,7 @@ export namespace Gtk {
          * @param action the related {@link Gtk.Action} or `null`
          * @virtual
          */
-        vfunc_sync_action_properties(action: (Action | null)): void;
+        vfunc_sync_action_properties(action: Action | null): void;
 
         /**
          * Called to update the activatable when its related action’s properties change.
@@ -95303,7 +95116,7 @@ export namespace Gtk {
          * @param accel_path path used to look up the accelerator
          * @param accel_group a {@link Gtk.AccelGroup}.
          */
-        set_accel_path(accel_path: (string | null), accel_group: (AccelGroup | null)): void;
+        set_accel_path(accel_path: string | null, accel_group: AccelGroup | null): void;
 
         /**
          * @param args 
@@ -95368,7 +95181,7 @@ export namespace Gtk {
 
         // Constructor properties interface
         interface ConstructorProps extends ToolItem.ConstructorProps, Atk.ImplementorIface.ConstructorProps, Activatable.ConstructorProps, Buildable.ConstructorProps {
-            draw: (boolean | any);
+            draw: boolean | any;
         }
     }
 
@@ -95569,7 +95382,7 @@ export namespace Gtk {
          * {@link Gtk.Activatable.use_action_appearance} changes.
          * @param action the related {@link Gtk.Action} or `null`
          */
-        sync_action_properties(action: (Action | null)): void;
+        sync_action_properties(action: Action | null): void;
 
         /**
          * This is called to update the activatable completely, this is called
@@ -95579,7 +95392,7 @@ export namespace Gtk {
          * @param action the related {@link Gtk.Action} or `null`
          * @virtual
          */
-        vfunc_sync_action_properties(action: (Action | null)): void;
+        vfunc_sync_action_properties(action: Action | null): void;
 
         /**
          * Called to update the activatable when its related action’s properties change.
@@ -95685,8 +95498,8 @@ export namespace Gtk {
 
         // Constructor properties interface
         interface ConstructorProps extends GObject.Object.ConstructorProps, StyleProvider.ConstructorProps {
-            color_hash: ({ [key: string]: any } | GLib.HashTable<string, Gdk.Color>);
-            colorHash: ({ [key: string]: any } | GLib.HashTable<string, Gdk.Color>);
+            color_hash: { [key: string]: any } | GLib.HashTable<string, Gdk.Color>;
+            colorHash: { [key: string]: any } | GLib.HashTable<string, Gdk.Color>;
             gtk_alternative_button_order: boolean;
             gtkAlternativeButtonOrder: boolean;
             gtk_alternative_sort_arrows: boolean;
@@ -97543,7 +97356,7 @@ export namespace Gtk {
          * Gets the {@link Gtk.Settings} object for the default GDK screen, creating
          * it if necessary. See `gtk_settings_get_for_screen()`.
          */
-        static get_default(): (Settings | null);
+        static get_default(): Settings | null;
 
         /**
          * Gets the {@link Gtk.Settings} object for `screen`, creating it if necessary.
@@ -97590,7 +97403,7 @@ export namespace Gtk {
          * @param v_long 
          * @param origin 
          */
-        set_long_property(name: string, v_long: (bigint | number), origin: string): void;
+        set_long_property(name: string, v_long: bigint | number, origin: string): void;
 
         /**
          * @param name 
@@ -97611,7 +97424,7 @@ export namespace Gtk {
          * @param path {@link Gtk.WidgetPath} to query
          * @returns The icon factory to use for `path`, or `null`
          */
-        get_icon_factory(path: WidgetPath): (IconFactory | null);
+        get_icon_factory(path: WidgetPath): IconFactory | null;
 
         /**
          * Returns the style settings affecting a widget defined by `path`, or `null` if
@@ -97619,7 +97432,7 @@ export namespace Gtk {
          * @param path {@link Gtk.WidgetPath} to query
          * @returns a {@link Gtk.StyleProperties} containing the style settings affecting `path`
          */
-        get_style(path: WidgetPath): (StyleProperties | null);
+        get_style(path: WidgetPath): StyleProperties | null;
 
         /**
          * Looks up a widget style property as defined by `provider` for
@@ -97637,7 +97450,7 @@ export namespace Gtk {
          * @param path {@link Gtk.WidgetPath} to query
          * @virtual
          */
-        vfunc_get_icon_factory(path: WidgetPath): (IconFactory | null);
+        vfunc_get_icon_factory(path: WidgetPath): IconFactory | null;
 
         /**
          * Returns the style settings affecting a widget defined by `path`, or `null` if
@@ -97645,7 +97458,7 @@ export namespace Gtk {
          * @param path {@link Gtk.WidgetPath} to query
          * @virtual
          */
-        vfunc_get_style(path: WidgetPath): (StyleProperties | null);
+        vfunc_get_style(path: WidgetPath): StyleProperties | null;
 
         /**
          * Looks up a widget style property as defined by `provider` for
@@ -97714,9 +97527,9 @@ export namespace Gtk {
 
         // Constructor properties interface
         interface ConstructorProps extends Box.ConstructorProps, Atk.ImplementorIface.ConstructorProps, Buildable.ConstructorProps, Orientable.ConstructorProps {
-            accelerator: (string | null);
-            disabled_text: (string | null);
-            disabledText: (string | null);
+            accelerator: string | null;
+            disabled_text: string | null;
+            disabledText: string | null;
         }
     }
 
@@ -97735,24 +97548,24 @@ export namespace Gtk {
          * @since 3.22
          * @default null
          */
-        get accelerator(): (string | null);
-        set accelerator(val: (string | null));
+        get accelerator(): string | null;
+        set accelerator(val: string | null);
 
         /**
          * The text that is displayed when no accelerator is set.
          * @since 3.22
          * @default null
          */
-        get disabled_text(): (string | null);
-        set disabled_text(val: (string | null));
+        get disabled_text(): string | null;
+        set disabled_text(val: string | null);
 
         /**
          * The text that is displayed when no accelerator is set.
          * @since 3.22
          * @default null
          */
-        get disabledText(): (string | null);
-        set disabledText(val: (string | null));
+        get disabledText(): string | null;
+        set disabledText(val: string | null);
 
         /**
          * Compile-time signal type information.
@@ -97791,13 +97604,13 @@ export namespace Gtk {
          * Retrieves the current accelerator of `self`.
          * @returns the current accelerator.
          */
-        get_accelerator(): (string | null);
+        get_accelerator(): string | null;
 
         /**
          * Retrieves the text that is displayed when no accelerator is set.
          * @returns the current text displayed when no accelerator is set.
          */
-        get_disabled_text(): (string | null);
+        get_disabled_text(): string | null;
 
         /**
          * Sets the accelerator to be displayed by `self`.
@@ -98031,7 +97844,7 @@ export namespace Gtk {
              * @action
              * @run-last
              */
-            "change-current-page": (arg0: number) => (boolean | void);
+            "change-current-page": (arg0: number) => boolean | void;
             "notify::max-height": (pspec: GObject.ParamSpec) => void;
             "notify::section-name": (pspec: GObject.ParamSpec) => void;
             "notify::title": (pspec: GObject.ParamSpec) => void;
@@ -98995,7 +98808,7 @@ export namespace Gtk {
          * @param child child to add
          * @param type kind of child or `null`
          */
-        add_child(builder: Builder, child: GObject.Object, type: (string | null)): void;
+        add_child(builder: Builder, child: GObject.Object, type: string | null): void;
 
         /**
          * Constructs a child of `buildable` with the name `name`.
@@ -99016,7 +98829,7 @@ export namespace Gtk {
          * @param tagname the name of the tag
          * @param data user data created in custom_tag_start
          */
-        custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
+        custom_finished(builder: Builder, child: GObject.Object | null, tagname: string, data: null): void;
 
         /**
          * This is called at the end of each custom element handled by
@@ -99026,7 +98839,7 @@ export namespace Gtk {
          * @param tagname name of tag
          * @param data user data that will be passed in to parser functions
          */
-        custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
+        custom_tag_end(builder: Builder, child: GObject.Object | null, tagname: string, data: null): void;
 
         /**
          * This is called for each unknown element under `<child>`.
@@ -99035,7 +98848,7 @@ export namespace Gtk {
          * @param tagname name of tag
          * @returns `true` if a object has a custom implementation, `false`          if it doesn't.
          */
-        custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, GLib.MarkupParser, null];
+        custom_tag_start(builder: Builder, child: GObject.Object | null, tagname: string): [boolean, GLib.MarkupParser, null];
 
         /**
          * Get the internal child called `childname` of the `buildable` object.
@@ -99071,7 +98884,7 @@ export namespace Gtk {
          * @param name name of property
          * @param value value of property
          */
-        set_buildable_property(builder: Builder, name: string, value: (GObject.Value | any)): void;
+        set_buildable_property(builder: Builder, name: string, value: GObject.Value | any): void;
 
         /**
          * Sets the name of the `buildable` object.
@@ -99087,7 +98900,7 @@ export namespace Gtk {
          * @param type kind of child or `null`
          * @virtual
          */
-        vfunc_add_child(builder: Builder, child: GObject.Object, type: (string | null)): void;
+        vfunc_add_child(builder: Builder, child: GObject.Object, type: string | null): void;
 
         /**
          * Constructs a child of `buildable` with the name `name`.
@@ -99109,7 +98922,7 @@ export namespace Gtk {
          * @param data user data created in custom_tag_start
          * @virtual
          */
-        vfunc_custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
+        vfunc_custom_finished(builder: Builder, child: GObject.Object | null, tagname: string, data: null): void;
 
         /**
          * This is called at the end of each custom element handled by
@@ -99120,7 +98933,7 @@ export namespace Gtk {
          * @param data user data that will be passed in to parser functions
          * @virtual
          */
-        vfunc_custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
+        vfunc_custom_tag_end(builder: Builder, child: GObject.Object | null, tagname: string, data: null): void;
 
         /**
          * This is called for each unknown element under `<child>`.
@@ -99129,7 +98942,7 @@ export namespace Gtk {
          * @param tagname name of tag
          * @virtual
          */
-        vfunc_custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, GLib.MarkupParser, never];
+        vfunc_custom_tag_start(builder: Builder, child: GObject.Object | null, tagname: string): [boolean, GLib.MarkupParser, never];
 
         /**
          * Get the internal child called `childname` of the `buildable` object.
@@ -99195,7 +99008,7 @@ export namespace Gtk {
              * @signal
              * @run-last
              */
-            "plug-removed": () => (boolean | void);
+            "plug-removed": () => boolean | void;
             "notify::border-width": (pspec: GObject.ParamSpec) => void;
             "notify::child": (pspec: GObject.ParamSpec) => void;
             "notify::resize-mode": (pspec: GObject.ParamSpec) => void;
@@ -99241,9 +99054,7 @@ export namespace Gtk {
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends Container.ConstructorProps, Atk.ImplementorIface.ConstructorProps, Buildable.ConstructorProps {
-
-        }
+        interface ConstructorProps extends Container.ConstructorProps, Atk.ImplementorIface.ConstructorProps, Buildable.ConstructorProps {}
     }
 
     /**
@@ -99382,7 +99193,7 @@ export namespace Gtk {
          * been created inside of the socket.
          * @returns the window of the plug if available, or `null`
          */
-        get_plug_window(): (Gdk.Window | null);
+        get_plug_window(): Gdk.Window | null;
     }
 
 
@@ -99410,9 +99221,7 @@ export namespace Gtk {
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends ContainerAccessible.ConstructorProps, Atk.Component.ConstructorProps {
-
-        }
+        interface ConstructorProps extends ContainerAccessible.ConstructorProps, Atk.Component.ConstructorProps {}
     }
 
     /**
@@ -99512,7 +99321,7 @@ export namespace Gtk {
              * @signal
              * @run-last
              */
-            output: () => (boolean | void);
+            output: () => boolean | void;
             /**
              * The ::value-changed signal is emitted when the value represented by
              * `spinbutton` changes. Also see the {@link Gtk.SpinButton.SignalSignatures.output | Gtk.SpinButton::output} signal.
@@ -99848,7 +99657,7 @@ export namespace Gtk {
 
         _init(...args: any[]): void;
 
-        static ["new"](adjustment: (Adjustment | null), climb_rate: number, digits: number): SpinButton;
+        static ["new"](adjustment: Adjustment | null, climb_rate: number, digits: number): SpinButton;
 
         // Conflicted with Gtk.Entry.new
         static ["new"](...args: never[]): any;
@@ -99904,7 +99713,7 @@ export namespace Gtk {
          * @param climb_rate the new climb rate
          * @param digits the number of decimal places to display in the spin button
          */
-        configure(adjustment: (Adjustment | null), climb_rate: number, digits: number): void;
+        configure(adjustment: Adjustment | null, climb_rate: number, digits: number): void;
 
         /**
          * Get the adjustment associated with a {@link Gtk.SpinButton}
@@ -100102,7 +99911,7 @@ export namespace Gtk {
          * lifetime is temporary and does not persist across other edits and/or cells.
          * @param event The {@link Gdk.Event} that began the editing process, or   `null` if editing was initiated programmatically
          */
-        start_editing(event: (Gdk.Event | null)): void;
+        start_editing(event: Gdk.Event | null): void;
 
         /**
          * Emits the {@link Gtk.CellEditable.SignalSignatures.editing_done | Gtk.CellEditable::editing-done} signal.
@@ -100130,7 +99939,7 @@ export namespace Gtk {
          * @param event The {@link Gdk.Event} that began the editing process, or   `null` if editing was initiated programmatically
          * @virtual
          */
-        vfunc_start_editing(event: (Gdk.Event | null)): void;
+        vfunc_start_editing(event: Gdk.Event | null): void;
 
         /**
          * Copies the contents of the currently selected content in the editable and
@@ -100405,9 +100214,7 @@ export namespace Gtk {
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends EntryAccessible.ConstructorProps, Atk.Action.ConstructorProps, Atk.Component.ConstructorProps, Atk.EditableText.ConstructorProps, Atk.Text.ConstructorProps, Atk.Value.ConstructorProps {
-
-        }
+        interface ConstructorProps extends EntryAccessible.ConstructorProps, Atk.Action.ConstructorProps, Atk.Component.ConstructorProps, Atk.EditableText.ConstructorProps, Atk.Text.ConstructorProps, Atk.Value.ConstructorProps {}
     }
 
     /**
@@ -100455,7 +100262,7 @@ export namespace Gtk {
          * @param i the action index corresponding to the action to be performed
          * @returns a description string, or `null` if `action` does not implement this interface.
          */
-        get_description(i: number): (string | null);
+        get_description(i: number): string | null;
 
         /**
          * @param args 
@@ -100489,14 +100296,14 @@ export namespace Gtk {
          * @param i the action index corresponding to the action to be performed
          * @returns the keybinding which can be used to activate this action, or `null` if there is no keybinding for this action.
          */
-        get_keybinding(i: number): (string | null);
+        get_keybinding(i: number): string | null;
 
         /**
          * Returns the localized name of the specified action of the object.
          * @param i the action index corresponding to the action to be performed
          * @returns a name string, or `null` if `action` does not implement this interface.
          */
-        get_localized_name(i: number): (string | null);
+        get_localized_name(i: number): string | null;
 
         /**
          * Gets the number of accessible actions available on the object.
@@ -100524,7 +100331,7 @@ export namespace Gtk {
          * @param i the action index corresponding to the action to be performed
          * @returns a name string, or `null` if `action` does not implement this interface.
          */
-        get_name(i: number): (string | null);
+        get_name(i: number): string | null;
 
         /**
          * @param args 
@@ -100558,7 +100365,7 @@ export namespace Gtk {
          * @param i the action index corresponding to the action to be performed
          * @virtual
          */
-        vfunc_get_description(i: number): (string | null);
+        vfunc_get_description(i: number): string | null;
 
         /**
          * @param args 
@@ -100593,14 +100400,14 @@ export namespace Gtk {
          * @param i the action index corresponding to the action to be performed
          * @virtual
          */
-        vfunc_get_keybinding(i: number): (string | null);
+        vfunc_get_keybinding(i: number): string | null;
 
         /**
          * Returns the localized name of the specified action of the object.
          * @param i the action index corresponding to the action to be performed
          * @virtual
          */
-        vfunc_get_localized_name(i: number): (string | null);
+        vfunc_get_localized_name(i: number): string | null;
 
         /**
          * Gets the number of accessible actions available on the object.
@@ -100628,7 +100435,7 @@ export namespace Gtk {
          * @param i the action index corresponding to the action to be performed
          * @virtual
          */
-        vfunc_get_name(i: number): (string | null);
+        vfunc_get_name(i: number): string | null;
 
         /**
          * @param args 
@@ -100908,7 +100715,7 @@ export namespace Gtk {
          * @param granularity An {@link Atk.TextGranularity}
          * @returns a newly allocated string containing the text at          the `offset` bounded by the specified `granularity`. Use `g_free()`          to free the returned string.  Returns `null` if the offset is invalid          or no implementation is available.
          */
-        get_string_at_offset(offset: number, granularity: Atk.TextGranularity): [(string | null), number, number];
+        get_string_at_offset(offset: number, granularity: Atk.TextGranularity): [string | null, number, number];
 
         /**
          * Gets the specified text.
@@ -101167,7 +100974,7 @@ export namespace Gtk {
          * @param granularity An {@link Atk.TextGranularity}
          * @virtual
          */
-        vfunc_get_string_at_offset(offset: number, granularity: Atk.TextGranularity): [(string | null), number, number];
+        vfunc_get_string_at_offset(offset: number, granularity: Atk.TextGranularity): [string | null, number, number];
 
         /**
          * Gets the specified text.
@@ -101345,7 +101152,7 @@ export namespace Gtk {
          * Gets the range of this object.
          * @returns a newly allocated {@link Atk.Range} that represents the minimum, maximum and descriptor (if available) of `obj`. NULL if that range is not defined.
          */
-        get_range(): (Atk.Range | null);
+        get_range(): Atk.Range | null;
 
         /**
          * Gets the list of subranges defined for this object. See {@link Atk.Value}
@@ -101366,7 +101173,7 @@ export namespace Gtk {
          * @param value a {@link GObject.Value} which is the desired new accessible value.
          * @returns `true` if new value is successfully set, `false` otherwise.
          */
-        set_current_value(value: (GObject.Value | any)): boolean;
+        set_current_value(value: GObject.Value | any): boolean;
 
         /**
          * Sets the value of this object.
@@ -101426,7 +101233,7 @@ export namespace Gtk {
          * Gets the range of this object.
          * @virtual
          */
-        vfunc_get_range(): (Atk.Range | null);
+        vfunc_get_range(): Atk.Range | null;
 
         /**
          * Gets the list of subranges defined for this object. See {@link Atk.Value}
@@ -101594,7 +101401,7 @@ export namespace Gtk {
          * @param child child to add
          * @param type kind of child or `null`
          */
-        add_child(builder: Builder, child: GObject.Object, type: (string | null)): void;
+        add_child(builder: Builder, child: GObject.Object, type: string | null): void;
 
         /**
          * Constructs a child of `buildable` with the name `name`.
@@ -101615,7 +101422,7 @@ export namespace Gtk {
          * @param tagname the name of the tag
          * @param data user data created in custom_tag_start
          */
-        custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
+        custom_finished(builder: Builder, child: GObject.Object | null, tagname: string, data: null): void;
 
         /**
          * This is called at the end of each custom element handled by
@@ -101625,7 +101432,7 @@ export namespace Gtk {
          * @param tagname name of tag
          * @param data user data that will be passed in to parser functions
          */
-        custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
+        custom_tag_end(builder: Builder, child: GObject.Object | null, tagname: string, data: null): void;
 
         /**
          * This is called for each unknown element under `<child>`.
@@ -101634,7 +101441,7 @@ export namespace Gtk {
          * @param tagname name of tag
          * @returns `true` if a object has a custom implementation, `false`          if it doesn't.
          */
-        custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, GLib.MarkupParser, null];
+        custom_tag_start(builder: Builder, child: GObject.Object | null, tagname: string): [boolean, GLib.MarkupParser, null];
 
         /**
          * Get the internal child called `childname` of the `buildable` object.
@@ -101670,7 +101477,7 @@ export namespace Gtk {
          * @param name name of property
          * @param value value of property
          */
-        set_buildable_property(builder: Builder, name: string, value: (GObject.Value | any)): void;
+        set_buildable_property(builder: Builder, name: string, value: GObject.Value | any): void;
 
         /**
          * Sets the name of the `buildable` object.
@@ -101686,7 +101493,7 @@ export namespace Gtk {
          * @param type kind of child or `null`
          * @virtual
          */
-        vfunc_add_child(builder: Builder, child: GObject.Object, type: (string | null)): void;
+        vfunc_add_child(builder: Builder, child: GObject.Object, type: string | null): void;
 
         /**
          * Constructs a child of `buildable` with the name `name`.
@@ -101708,7 +101515,7 @@ export namespace Gtk {
          * @param data user data created in custom_tag_start
          * @virtual
          */
-        vfunc_custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
+        vfunc_custom_finished(builder: Builder, child: GObject.Object | null, tagname: string, data: null): void;
 
         /**
          * This is called at the end of each custom element handled by
@@ -101719,7 +101526,7 @@ export namespace Gtk {
          * @param data user data that will be passed in to parser functions
          * @virtual
          */
-        vfunc_custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
+        vfunc_custom_tag_end(builder: Builder, child: GObject.Object | null, tagname: string, data: null): void;
 
         /**
          * This is called for each unknown element under `<child>`.
@@ -101728,7 +101535,7 @@ export namespace Gtk {
          * @param tagname name of tag
          * @virtual
          */
-        vfunc_custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, GLib.MarkupParser, never];
+        vfunc_custom_tag_start(builder: Builder, child: GObject.Object | null, tagname: string): [boolean, GLib.MarkupParser, never];
 
         /**
          * Get the internal child called `childname` of the `buildable` object.
@@ -101801,9 +101608,7 @@ export namespace Gtk {
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends WidgetAccessible.ConstructorProps, Atk.Component.ConstructorProps, Atk.Image.ConstructorProps {
-
-        }
+        interface ConstructorProps extends WidgetAccessible.ConstructorProps, Atk.Component.ConstructorProps, Atk.Image.ConstructorProps {}
     }
 
     /**
@@ -101914,7 +101719,7 @@ export namespace Gtk {
          * @param coord_type specifies whether the coordinates are relative to the screen or to the components top level window
          * @returns a reference to the accessible child, if one exists
          */
-        ref_accessible_at_point(x: number, y: number, coord_type: Atk.CoordType): (Atk.Object | null);
+        ref_accessible_at_point(x: number, y: number, coord_type: Atk.CoordType): Atk.Object | null;
 
         /**
          * Remove the handler specified by `handler_id` from the list of
@@ -102060,7 +101865,7 @@ export namespace Gtk {
          * @param coord_type specifies whether the coordinates are relative to the screen or to the components top level window
          * @virtual
          */
-        vfunc_ref_accessible_at_point(x: number, y: number, coord_type: Atk.CoordType): (Atk.Object | null);
+        vfunc_ref_accessible_at_point(x: number, y: number, coord_type: Atk.CoordType): Atk.Object | null;
 
         /**
          * Remove the handler specified by `handler_id` from the list of
@@ -102133,7 +101938,7 @@ export namespace Gtk {
          * Retrieves the locale identifier associated to the {@link Atk.Image}.
          * @returns a string corresponding to the POSIX   `LC_MESSAGES` locale used by the image description, or   `null` if the image does not specify a locale.
          */
-        get_image_locale(): (string | null);
+        get_image_locale(): string | null;
 
         /**
          * Gets the position of the image in the form of a point specifying the
@@ -102172,7 +101977,7 @@ export namespace Gtk {
          * Retrieves the locale identifier associated to the {@link Atk.Image}.
          * @virtual
          */
-        vfunc_get_image_locale(): (string | null);
+        vfunc_get_image_locale(): string | null;
 
         /**
          * Gets the position of the image in the form of a point specifying the
@@ -102274,10 +102079,10 @@ export namespace Gtk {
             transition_type: StackTransitionType;
             transitionType: StackTransitionType;
             vhomogeneous: boolean;
-            visible_child: (Widget | null);
-            visibleChild: (Widget | null);
-            visible_child_name: (string | null);
-            visibleChildName: (string | null);
+            visible_child: Widget | null;
+            visibleChild: Widget | null;
+            visible_child_name: string | null;
+            visibleChildName: string | null;
         }
     }
 
@@ -102374,23 +102179,23 @@ export namespace Gtk {
         get vhomogeneous(): boolean;
         set vhomogeneous(val: boolean);
 
-        get visible_child(): (Widget | null);
-        set visible_child(val: (Widget | null));
+        get visible_child(): Widget | null;
+        set visible_child(val: Widget | null);
 
-        get visibleChild(): (Widget | null);
-        set visibleChild(val: (Widget | null));
-
-        /**
-         * @default null
-         */
-        get visible_child_name(): (string | null);
-        set visible_child_name(val: (string | null));
+        get visibleChild(): Widget | null;
+        set visibleChild(val: Widget | null);
 
         /**
          * @default null
          */
-        get visibleChildName(): (string | null);
-        set visibleChildName(val: (string | null));
+        get visible_child_name(): string | null;
+        set visible_child_name(val: string | null);
+
+        /**
+         * @default null
+         */
+        get visibleChildName(): string | null;
+        set visibleChildName(val: string | null);
 
         /**
          * Compile-time signal type information.
@@ -102448,7 +102253,7 @@ export namespace Gtk {
          * @param name the name of the child to find
          * @returns the requested child of the {@link Gtk.Stack}
          */
-        get_child_by_name(name: string): (Widget | null);
+        get_child_by_name(name: string): Widget | null;
 
         /**
          * Gets whether `stack` is horizontally homogeneous.
@@ -102504,14 +102309,14 @@ export namespace Gtk {
          * there are no visible children.
          * @returns the visible child of the {@link Gtk.Stack}
          */
-        get_visible_child(): (Widget | null);
+        get_visible_child(): Widget | null;
 
         /**
          * Returns the name of the currently visible child of `stack`, or
          * `null` if there is no visible child.
          * @returns the name of the visible child of the {@link Gtk.Stack}
          */
-        get_visible_child_name(): (string | null);
+        get_visible_child_name(): string | null;
 
         /**
          * Sets the {@link Gtk.Stack} to be horizontally homogeneous or not.
@@ -102640,9 +102445,7 @@ export namespace Gtk {
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends ContainerAccessible.ConstructorProps, Atk.Component.ConstructorProps {
-
-        }
+        interface ConstructorProps extends ContainerAccessible.ConstructorProps, Atk.Component.ConstructorProps {}
     }
 
     /**
@@ -102730,7 +102533,7 @@ export namespace Gtk {
 
         // Constructor properties interface
         interface ConstructorProps extends Bin.ConstructorProps, Atk.ImplementorIface.ConstructorProps, Buildable.ConstructorProps {
-            stack: (Stack | null);
+            stack: Stack | null;
         }
     }
 
@@ -102758,8 +102561,8 @@ export namespace Gtk {
         static $gtype: GObject.GType<StackSidebar>;
 
         // Properties
-        get stack(): (Stack | null);
-        set stack(val: (Stack | null));
+        get stack(): Stack | null;
+        set stack(val: Stack | null);
 
         /**
          * Compile-time signal type information.
@@ -102796,7 +102599,7 @@ export namespace Gtk {
          * See `gtk_stack_sidebar_set_stack()`.
          * @returns the associated {@link Gtk.Stack} or     `null` if none has been set explicitly
          */
-        get_stack(): (Stack | null);
+        get_stack(): Stack | null;
 
         /**
          * Set the {@link Gtk.Stack} associated with this {@link Gtk.StackSidebar}.
@@ -102866,7 +102669,7 @@ export namespace Gtk {
         interface ConstructorProps extends Box.ConstructorProps, Atk.ImplementorIface.ConstructorProps, Buildable.ConstructorProps, Orientable.ConstructorProps {
             icon_size: number;
             iconSize: number;
-            stack: (Stack | null);
+            stack: Stack | null;
         }
     }
 
@@ -102917,8 +102720,8 @@ export namespace Gtk {
         get iconSize(): number;
         set iconSize(val: number);
 
-        get stack(): (Stack | null);
-        set stack(val: (Stack | null));
+        get stack(): Stack | null;
+        set stack(val: Stack | null);
 
         /**
          * Compile-time signal type information.
@@ -102958,13 +102761,13 @@ export namespace Gtk {
          * See `gtk_stack_switcher_set_stack()`.
          * @returns the stack, or `null` if    none has been set explicitly.
          */
-        get_stack(): (Stack | null);
+        get_stack(): Stack | null;
 
         /**
          * Sets the stack to control.
          * @param stack a {@link Gtk.Stack}
          */
-        set_stack(stack: (Stack | null)): void;
+        set_stack(stack: Stack | null): void;
 
         /**
          * The orientation of the orientable.
@@ -103014,7 +102817,7 @@ export namespace Gtk {
              * @since 2.14
              * @run-last
              */
-            "button-press-event": (arg0: Gdk.EventButton) => (boolean | void);
+            "button-press-event": (arg0: Gdk.EventButton) => boolean | void;
             /**
              * The ::button-release-event signal will be emitted when a button
              * (typically from a mouse) is released.
@@ -103025,7 +102828,7 @@ export namespace Gtk {
              * @since 2.14
              * @run-last
              */
-            "button-release-event": (arg0: Gdk.EventButton) => (boolean | void);
+            "button-release-event": (arg0: Gdk.EventButton) => boolean | void;
             /**
              * Gets emitted when the user brings up the context menu
              * of the status icon. Whether status icons can have context
@@ -103062,7 +102865,7 @@ export namespace Gtk {
              * @since 2.16
              * @run-last
              */
-            "query-tooltip": (arg0: number, arg1: number, arg2: boolean, arg3: Tooltip) => (boolean | void);
+            "query-tooltip": (arg0: number, arg1: number, arg2: boolean, arg3: Tooltip) => boolean | void;
             /**
              * The ::scroll-event signal is emitted when a button in the 4 to 7
              * range is pressed. Wheel mice are usually configured to generate
@@ -103073,7 +102876,7 @@ export namespace Gtk {
              * @since 2.16
              * @run-last
              */
-            "scroll-event": (arg0: Gdk.EventScroll) => (boolean | void);
+            "scroll-event": (arg0: Gdk.EventScroll) => boolean | void;
             /**
              * Gets emitted when the size available for the image
              * changes, e.g. because the notification area got resized.
@@ -103081,7 +102884,7 @@ export namespace Gtk {
              * @since 2.10
              * @run-last
              */
-            "size-changed": (arg0: number) => (boolean | void);
+            "size-changed": (arg0: number) => boolean | void;
             "notify::embedded": (pspec: GObject.ParamSpec) => void;
             "notify::file": (pspec: GObject.ParamSpec) => void;
             "notify::gicon": (pspec: GObject.ParamSpec) => void;
@@ -103103,23 +102906,23 @@ export namespace Gtk {
         interface ConstructorProps extends GObject.Object.ConstructorProps {
             embedded: boolean;
             file: string;
-            gicon: (Gio.Icon | null);
+            gicon: Gio.Icon | null;
             has_tooltip: boolean;
             hasTooltip: boolean;
-            icon_name: (string | null);
-            iconName: (string | null);
+            icon_name: string | null;
+            iconName: string | null;
             orientation: Orientation;
-            pixbuf: (GdkPixbuf.Pixbuf | null);
+            pixbuf: GdkPixbuf.Pixbuf | null;
             screen: Gdk.Screen;
             size: number;
-            stock: (string | null);
+            stock: string | null;
             storage_type: ImageType;
             storageType: ImageType;
             title: string;
-            tooltip_markup: (string | null);
-            tooltipMarkup: (string | null);
-            tooltip_text: (string | null);
-            tooltipText: (string | null);
+            tooltip_markup: string | null;
+            tooltipMarkup: string | null;
+            tooltip_text: string | null;
+            tooltipText: string | null;
             visible: boolean;
         }
     }
@@ -103183,8 +102986,8 @@ export namespace Gtk {
          * the image will be updated automatically if the theme changes.
          * @since 2.14
          */
-        get gicon(): (Gio.Icon | null);
-        set gicon(val: (Gio.Icon | null));
+        get gicon(): Gio.Icon | null;
+        set gicon(val: Gio.Icon | null);
 
         /**
          * Enables or disables the emission of {@link Gtk.StatusIcon.SignalSignatures.query_tooltip | Gtk.StatusIcon::query-tooltip} on
@@ -103229,14 +103032,14 @@ export namespace Gtk {
         /**
          * @default null
          */
-        get icon_name(): (string | null);
-        set icon_name(val: (string | null));
+        get icon_name(): string | null;
+        set icon_name(val: string | null);
 
         /**
          * @default null
          */
-        get iconName(): (string | null);
-        set iconName(val: (string | null));
+        get iconName(): string | null;
+        set iconName(val: string | null);
 
         /**
          * The orientation of the tray in which the statusicon
@@ -103247,8 +103050,8 @@ export namespace Gtk {
          */
         get orientation(): Orientation;
 
-        get pixbuf(): (GdkPixbuf.Pixbuf | null);
-        set pixbuf(val: (GdkPixbuf.Pixbuf | null));
+        get pixbuf(): GdkPixbuf.Pixbuf | null;
+        set pixbuf(val: GdkPixbuf.Pixbuf | null);
 
         get screen(): Gdk.Screen;
         set screen(val: Gdk.Screen);
@@ -103263,8 +103066,8 @@ export namespace Gtk {
          * @deprecated since 3.10: Use {@link Gtk.StatusIcon.icon_name} instead.
          * @default null
          */
-        get stock(): (string | null);
-        set stock(val: (string | null));
+        get stock(): string | null;
+        set stock(val: string | null);
 
         /**
          * @read-only
@@ -103303,8 +103106,8 @@ export namespace Gtk {
          * @since 2.16
          * @default null
          */
-        get tooltip_markup(): (string | null);
-        set tooltip_markup(val: (string | null));
+        get tooltip_markup(): string | null;
+        set tooltip_markup(val: string | null);
 
         /**
          * Sets the text of tooltip to be the given string, which is marked up
@@ -103321,8 +103124,8 @@ export namespace Gtk {
          * @since 2.16
          * @default null
          */
-        get tooltipMarkup(): (string | null);
-        set tooltipMarkup(val: (string | null));
+        get tooltipMarkup(): string | null;
+        set tooltipMarkup(val: string | null);
 
         /**
          * Sets the text of tooltip to be the given string.
@@ -103341,8 +103144,8 @@ export namespace Gtk {
          * @since 2.16
          * @default null
          */
-        get tooltip_text(): (string | null);
-        set tooltip_text(val: (string | null));
+        get tooltip_text(): string | null;
+        set tooltip_text(val: string | null);
 
         /**
          * Sets the text of tooltip to be the given string.
@@ -103361,8 +103164,8 @@ export namespace Gtk {
          * @since 2.16
          * @default null
          */
-        get tooltipText(): (string | null);
-        set tooltipText(val: (string | null));
+        get tooltipText(): string | null;
+        set tooltipText(val: string | null);
 
         /**
          * @default true
@@ -103494,7 +103297,7 @@ export namespace Gtk {
          * If this function fails, `icon` is left unchanged;
          * @returns the displayed icon, or `null` if the image is empty
          */
-        get_gicon(): (Gio.Icon | null);
+        get_gicon(): Gio.Icon | null;
 
         /**
          * Returns the current value of the has-tooltip property.
@@ -103511,7 +103314,7 @@ export namespace Gtk {
          * be freed or modified.
          * @returns name of the displayed icon, or `null` if the image is empty.
          */
-        get_icon_name(): (string | null);
+        get_icon_name(): string | null;
 
         /**
          * Gets the {@link GdkPixbuf.Pixbuf} being displayed by the {@link Gtk.StatusIcon}.
@@ -103521,7 +103324,7 @@ export namespace Gtk {
          * returned pixbuf.
          * @returns the displayed pixbuf,     or `null` if the image is empty.
          */
-        get_pixbuf(): (GdkPixbuf.Pixbuf | null);
+        get_pixbuf(): GdkPixbuf.Pixbuf | null;
 
         /**
          * Returns the {@link Gdk.Screen} associated with `status_icon`.
@@ -103550,7 +103353,7 @@ export namespace Gtk {
          * be freed or modified.
          * @returns stock id of the displayed stock icon,   or `null` if the image is empty.
          */
-        get_stock(): (string | null);
+        get_stock(): string | null;
 
         /**
          * Gets the type of representation being used by the {@link Gtk.StatusIcon}
@@ -103570,13 +103373,13 @@ export namespace Gtk {
          * Gets the contents of the tooltip for `status_icon`.
          * @returns the tooltip text, or `null`. You should free the   returned string with `g_free()` when done.
          */
-        get_tooltip_markup(): (string | null);
+        get_tooltip_markup(): string | null;
 
         /**
          * Gets the contents of the tooltip for `status_icon`.
          * @returns the tooltip text, or `null`. You should free the   returned string with `g_free()` when done.
          */
-        get_tooltip_text(): (string | null);
+        get_tooltip_text(): string | null;
 
         /**
          * Returns whether the status icon is visible or not.
@@ -103637,7 +103440,7 @@ export namespace Gtk {
          * See `gtk_status_icon_new_from_pixbuf()` for details.
          * @param pixbuf a {@link GdkPixbuf.Pixbuf} or `null`
          */
-        set_from_pixbuf(pixbuf: (GdkPixbuf.Pixbuf | null)): void;
+        set_from_pixbuf(pixbuf: GdkPixbuf.Pixbuf | null): void;
 
         /**
          * Makes `status_icon` display the stock icon with the id `stock_id`.
@@ -103690,7 +103493,7 @@ export namespace Gtk {
          * `gtk_tooltip_set_markup()`.
          * @param markup the contents of the tooltip for `status_icon`, or `null`
          */
-        set_tooltip_markup(markup: (string | null)): void;
+        set_tooltip_markup(markup: string | null): void;
 
         /**
          * Sets `text` as the contents of the tooltip.
@@ -103777,9 +103580,7 @@ export namespace Gtk {
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends Box.ConstructorProps, Atk.ImplementorIface.ConstructorProps, Buildable.ConstructorProps, Orientable.ConstructorProps {
-
-        }
+        interface ConstructorProps extends Box.ConstructorProps, Atk.ImplementorIface.ConstructorProps, Buildable.ConstructorProps, Orientable.ConstructorProps {}
     }
 
     /**
@@ -103971,9 +103772,7 @@ export namespace Gtk {
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends ContainerAccessible.ConstructorProps, Atk.Component.ConstructorProps {
-
-        }
+        interface ConstructorProps extends ContainerAccessible.ConstructorProps, Atk.Component.ConstructorProps {}
     }
 
     /**
@@ -104440,7 +104239,7 @@ export namespace Gtk {
          * @param detail a style detail
          * @virtual
          */
-        vfunc_render_icon(source: IconSource, direction: TextDirection, state: StateType, size: number, widget: (Widget | null), detail: (string | null)): GdkPixbuf.Pixbuf;
+        vfunc_render_icon(source: IconSource, direction: TextDirection, state: StateType, size: number, widget: Widget | null, detail: string | null): GdkPixbuf.Pixbuf;
 
         /**
          * Sets the background of `window` to the background color or pixmap
@@ -104526,7 +104325,7 @@ export namespace Gtk {
          * @param detail a style detail
          * @returns a newly-created {@link GdkPixbuf.Pixbuf}     containing the rendered icon
          */
-        render_icon(source: IconSource, direction: TextDirection, state: StateType, size: number, widget: (Widget | null), detail: (string | null)): GdkPixbuf.Pixbuf;
+        render_icon(source: IconSource, direction: TextDirection, state: StateType, size: number, widget: Widget | null, detail: string | null): GdkPixbuf.Pixbuf;
 
         /**
          * Sets the background of `window` to the background color or pixmap
@@ -104565,7 +104364,7 @@ export namespace Gtk {
             direction: TextDirection;
             paint_clock: Gdk.FrameClock;
             paintClock: Gdk.FrameClock;
-            parent: (StyleContext | null);
+            parent: StyleContext | null;
             screen: Gdk.Screen;
         }
     }
@@ -104647,8 +104446,8 @@ export namespace Gtk {
          * for details.
          * @since 3.4
          */
-        get parent(): (StyleContext | null);
-        set parent(val: (StyleContext | null));
+        get parent(): StyleContext | null;
+        set parent(val: StyleContext | null);
 
         get screen(): Gdk.Screen;
         set screen(val: Gdk.Screen);
@@ -104871,7 +104670,7 @@ export namespace Gtk {
          * Returns the {@link Gdk.FrameClock} to which `context` is attached.
          * @returns a {@link Gdk.FrameClock}, or `null`  if `context` does not have an attached frame clock.
          */
-        get_frame_clock(): (Gdk.FrameClock | null);
+        get_frame_clock(): Gdk.FrameClock | null;
 
         /**
          * Returns the sides where rendered elements connect visually with others.
@@ -104900,7 +104699,7 @@ export namespace Gtk {
          * See that function for details.
          * @returns the parent context or `null`
          */
-        get_parent(): (StyleContext | null);
+        get_parent(): StyleContext | null;
 
         /**
          * Returns the widget path used for style matching.
@@ -104961,7 +104760,7 @@ export namespace Gtk {
          * @param property style property name
          * @returns `null` or the section where a value for `property` was defined
          */
-        get_section(property: string): (CssSection | null);
+        get_section(property: string): CssSection | null;
 
         /**
          * Returns the state used for style matching.
@@ -104982,7 +104781,7 @@ export namespace Gtk {
          * @param property_name the name of the widget style property
          * @param value Return location for the property value
          */
-        get_style_property(property_name: string, value: (GObject.Value | any)): void;
+        get_style_property(property_name: string, value: GObject.Value | any): void;
 
         /**
          * Returns `true` if `context` currently has defined the
@@ -105034,7 +104833,7 @@ export namespace Gtk {
          * @param stock_id an icon name
          * @returns The looked up %GtkIconSet, or `null`
          */
-        lookup_icon_set(stock_id: string): (IconSet | null);
+        lookup_icon_set(stock_id: string): IconSet | null;
 
         /**
          * Notifies a state change on `context`, so if the current style makes use
@@ -105207,7 +105006,7 @@ export namespace Gtk {
          * `gtk_widget_get_style_context()`, the parent will be set for you.
          * @param parent the new parent or `null`
          */
-        set_parent(parent: (StyleContext | null)): void;
+        set_parent(parent: StyleContext | null): void;
 
         /**
          * Sets the {@link Gtk.WidgetPath} used for style matching. As a
@@ -105280,13 +105079,10 @@ export namespace Gtk {
 
     namespace StyleProperties {
         // Signal signatures
-        interface SignalSignatures extends GObject.Object.SignalSignatures {
-        }
+        interface SignalSignatures extends GObject.Object.SignalSignatures {}
 
         // Constructor properties interface
-        interface ConstructorProps extends GObject.Object.ConstructorProps, StyleProvider.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GObject.Object.ConstructorProps, StyleProvider.ConstructorProps {}
     }
 
     /**
@@ -105393,7 +105189,7 @@ export namespace Gtk {
          * @param state state to set the value for
          * @param value new value for the property
          */
-        set_property(property: string, state: StateFlags, value: (GObject.Value | any)): void;
+        set_property(property: string, state: StateFlags, value: GObject.Value | any): void;
 
         /**
          * @param args 
@@ -105414,7 +105210,7 @@ export namespace Gtk {
          * @param path {@link Gtk.WidgetPath} to query
          * @returns The icon factory to use for `path`, or `null`
          */
-        get_icon_factory(path: WidgetPath): (IconFactory | null);
+        get_icon_factory(path: WidgetPath): IconFactory | null;
 
         /**
          * Returns the style settings affecting a widget defined by `path`, or `null` if
@@ -105422,7 +105218,7 @@ export namespace Gtk {
          * @param path {@link Gtk.WidgetPath} to query
          * @returns a {@link Gtk.StyleProperties} containing the style settings affecting `path`
          */
-        get_style(path: WidgetPath): (StyleProperties | null);
+        get_style(path: WidgetPath): StyleProperties | null;
 
         /**
          * Looks up a widget style property as defined by `provider` for
@@ -105440,7 +105236,7 @@ export namespace Gtk {
          * @param path {@link Gtk.WidgetPath} to query
          * @virtual
          */
-        vfunc_get_icon_factory(path: WidgetPath): (IconFactory | null);
+        vfunc_get_icon_factory(path: WidgetPath): IconFactory | null;
 
         /**
          * Returns the style settings affecting a widget defined by `path`, or `null` if
@@ -105448,7 +105244,7 @@ export namespace Gtk {
          * @param path {@link Gtk.WidgetPath} to query
          * @virtual
          */
-        vfunc_get_style(path: WidgetPath): (StyleProperties | null);
+        vfunc_get_style(path: WidgetPath): StyleProperties | null;
 
         /**
          * Looks up a widget style property as defined by `provider` for
@@ -105493,7 +105289,7 @@ export namespace Gtk {
              * @since 3.14
              * @run-last
              */
-            "state-set": (arg0: boolean) => (boolean | void);
+            "state-set": (arg0: boolean) => boolean | void;
             "notify::active": (pspec: GObject.ParamSpec) => void;
             "notify::state": (pspec: GObject.ParamSpec) => void;
             "notify::app-paintable": (pspec: GObject.ParamSpec) => void;
@@ -105679,15 +105475,15 @@ export namespace Gtk {
          * @default null
           * @category Inherited from Gtk.Actionable
          */
-        get action_name(): (string | null);
-        set action_name(val: (string | null));
+        get action_name(): string | null;
+        set action_name(val: string | null);
 
         /**
          * @default null
           * @category Inherited from Gtk.Actionable
          */
-        get actionName(): (string | null);
-        set actionName(val: (string | null));
+        get actionName(): string | null;
+        set actionName(val: string | null);
 
         /** @category Inherited from Gtk.Actionable */
         get action_target(): GLib.Variant;
@@ -105767,7 +105563,7 @@ export namespace Gtk {
          * See `gtk_actionable_set_action_name()` for more information.
          * @returns the action name, or `null` if none is set
          */
-        get_action_name(): (string | null);
+        get_action_name(): string | null;
 
         /**
          * Gets the current target value of `actionable`.
@@ -105791,7 +105587,7 @@ export namespace Gtk {
          * associated with the window.
          * @param action_name an action name, or `null`
          */
-        set_action_name(action_name: (string | null)): void;
+        set_action_name(action_name: string | null): void;
 
         /**
          * Sets the target value of an actionable widget.
@@ -105815,7 +105611,7 @@ export namespace Gtk {
          * rendered inactive).
          * @param target_value a {@link GLib.Variant} to set as the target value, or `null`
          */
-        set_action_target_value(target_value: (GLib.Variant | null)): void;
+        set_action_target_value(target_value: GLib.Variant | null): void;
 
         /**
          * Sets the action-name and associated string target value of an
@@ -105839,7 +105635,7 @@ export namespace Gtk {
          * See `gtk_actionable_set_action_name()` for more information.
          * @virtual
          */
-        vfunc_get_action_name(): (string | null);
+        vfunc_get_action_name(): string | null;
 
         /**
          * Gets the current target value of `actionable`.
@@ -105864,7 +105660,7 @@ export namespace Gtk {
          * @param action_name an action name, or `null`
          * @virtual
          */
-        vfunc_set_action_name(action_name: (string | null)): void;
+        vfunc_set_action_name(action_name: string | null): void;
 
         /**
          * Sets the target value of an actionable widget.
@@ -105889,7 +105685,7 @@ export namespace Gtk {
          * @param target_value a {@link GLib.Variant} to set as the target value, or `null`
          * @virtual
          */
-        vfunc_set_action_target_value(target_value: (GLib.Variant | null)): void;
+        vfunc_set_action_target_value(target_value: GLib.Variant | null): void;
 
         /**
          * This is a utility function for {@link Gtk.Activatable} implementors.
@@ -105953,7 +105749,7 @@ export namespace Gtk {
          * {@link Gtk.Activatable.use_action_appearance} changes.
          * @param action the related {@link Gtk.Action} or `null`
          */
-        sync_action_properties(action: (Action | null)): void;
+        sync_action_properties(action: Action | null): void;
 
         /**
          * This is called to update the activatable completely, this is called
@@ -105963,7 +105759,7 @@ export namespace Gtk {
          * @param action the related {@link Gtk.Action} or `null`
          * @virtual
          */
-        vfunc_sync_action_properties(action: (Action | null)): void;
+        vfunc_sync_action_properties(action: Action | null): void;
 
         /**
          * Called to update the activatable when its related action’s properties change.
@@ -105982,7 +105778,7 @@ export namespace Gtk {
          * @param child child to add
          * @param type kind of child or `null`
          */
-        add_child(builder: Builder, child: GObject.Object, type: (string | null)): void;
+        add_child(builder: Builder, child: GObject.Object, type: string | null): void;
 
         /**
          * Constructs a child of `buildable` with the name `name`.
@@ -106003,7 +105799,7 @@ export namespace Gtk {
          * @param tagname the name of the tag
          * @param data user data created in custom_tag_start
          */
-        custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
+        custom_finished(builder: Builder, child: GObject.Object | null, tagname: string, data: null): void;
 
         /**
          * This is called at the end of each custom element handled by
@@ -106013,7 +105809,7 @@ export namespace Gtk {
          * @param tagname name of tag
          * @param data user data that will be passed in to parser functions
          */
-        custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
+        custom_tag_end(builder: Builder, child: GObject.Object | null, tagname: string, data: null): void;
 
         /**
          * This is called for each unknown element under `<child>`.
@@ -106022,7 +105818,7 @@ export namespace Gtk {
          * @param tagname name of tag
          * @returns `true` if a object has a custom implementation, `false`          if it doesn't.
          */
-        custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, GLib.MarkupParser, null];
+        custom_tag_start(builder: Builder, child: GObject.Object | null, tagname: string): [boolean, GLib.MarkupParser, null];
 
         /**
          * Get the internal child called `childname` of the `buildable` object.
@@ -106058,7 +105854,7 @@ export namespace Gtk {
          * @param name name of property
          * @param value value of property
          */
-        set_buildable_property(builder: Builder, name: string, value: (GObject.Value | any)): void;
+        set_buildable_property(builder: Builder, name: string, value: GObject.Value | any): void;
 
         /**
          * Sets the name of the `buildable` object.
@@ -106074,7 +105870,7 @@ export namespace Gtk {
          * @param type kind of child or `null`
          * @virtual
          */
-        vfunc_add_child(builder: Builder, child: GObject.Object, type: (string | null)): void;
+        vfunc_add_child(builder: Builder, child: GObject.Object, type: string | null): void;
 
         /**
          * Constructs a child of `buildable` with the name `name`.
@@ -106096,7 +105892,7 @@ export namespace Gtk {
          * @param data user data created in custom_tag_start
          * @virtual
          */
-        vfunc_custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
+        vfunc_custom_finished(builder: Builder, child: GObject.Object | null, tagname: string, data: null): void;
 
         /**
          * This is called at the end of each custom element handled by
@@ -106107,7 +105903,7 @@ export namespace Gtk {
          * @param data user data that will be passed in to parser functions
          * @virtual
          */
-        vfunc_custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
+        vfunc_custom_tag_end(builder: Builder, child: GObject.Object | null, tagname: string, data: null): void;
 
         /**
          * This is called for each unknown element under `<child>`.
@@ -106116,7 +105912,7 @@ export namespace Gtk {
          * @param tagname name of tag
          * @virtual
          */
-        vfunc_custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, GLib.MarkupParser, never];
+        vfunc_custom_tag_start(builder: Builder, child: GObject.Object | null, tagname: string): [boolean, GLib.MarkupParser, never];
 
         /**
          * Get the internal child called `childname` of the `buildable` object.
@@ -106189,9 +105985,7 @@ export namespace Gtk {
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends WidgetAccessible.ConstructorProps, Atk.Action.ConstructorProps, Atk.Component.ConstructorProps {
-
-        }
+        interface ConstructorProps extends WidgetAccessible.ConstructorProps, Atk.Action.ConstructorProps, Atk.Component.ConstructorProps {}
     }
 
     /**
@@ -106239,7 +106033,7 @@ export namespace Gtk {
          * @param i the action index corresponding to the action to be performed
          * @returns a description string, or `null` if `action` does not implement this interface.
          */
-        get_description(i: number): (string | null);
+        get_description(i: number): string | null;
 
         /**
          * @param args 
@@ -106273,14 +106067,14 @@ export namespace Gtk {
          * @param i the action index corresponding to the action to be performed
          * @returns the keybinding which can be used to activate this action, or `null` if there is no keybinding for this action.
          */
-        get_keybinding(i: number): (string | null);
+        get_keybinding(i: number): string | null;
 
         /**
          * Returns the localized name of the specified action of the object.
          * @param i the action index corresponding to the action to be performed
          * @returns a name string, or `null` if `action` does not implement this interface.
          */
-        get_localized_name(i: number): (string | null);
+        get_localized_name(i: number): string | null;
 
         /**
          * Gets the number of accessible actions available on the object.
@@ -106308,7 +106102,7 @@ export namespace Gtk {
          * @param i the action index corresponding to the action to be performed
          * @returns a name string, or `null` if `action` does not implement this interface.
          */
-        get_name(i: number): (string | null);
+        get_name(i: number): string | null;
 
         /**
          * @param args 
@@ -106342,7 +106136,7 @@ export namespace Gtk {
          * @param i the action index corresponding to the action to be performed
          * @virtual
          */
-        vfunc_get_description(i: number): (string | null);
+        vfunc_get_description(i: number): string | null;
 
         /**
          * @param args 
@@ -106377,14 +106171,14 @@ export namespace Gtk {
          * @param i the action index corresponding to the action to be performed
          * @virtual
          */
-        vfunc_get_keybinding(i: number): (string | null);
+        vfunc_get_keybinding(i: number): string | null;
 
         /**
          * Returns the localized name of the specified action of the object.
          * @param i the action index corresponding to the action to be performed
          * @virtual
          */
-        vfunc_get_localized_name(i: number): (string | null);
+        vfunc_get_localized_name(i: number): string | null;
 
         /**
          * Gets the number of accessible actions available on the object.
@@ -106412,7 +106206,7 @@ export namespace Gtk {
          * @param i the action index corresponding to the action to be performed
          * @virtual
          */
-        vfunc_get_name(i: number): (string | null);
+        vfunc_get_name(i: number): string | null;
 
         /**
          * @param args 
@@ -106511,7 +106305,7 @@ export namespace Gtk {
          * @param coord_type specifies whether the coordinates are relative to the screen or to the components top level window
          * @returns a reference to the accessible child, if one exists
          */
-        ref_accessible_at_point(x: number, y: number, coord_type: Atk.CoordType): (Atk.Object | null);
+        ref_accessible_at_point(x: number, y: number, coord_type: Atk.CoordType): Atk.Object | null;
 
         /**
          * Remove the handler specified by `handler_id` from the list of
@@ -106657,7 +106451,7 @@ export namespace Gtk {
          * @param coord_type specifies whether the coordinates are relative to the screen or to the components top level window
          * @virtual
          */
-        vfunc_ref_accessible_at_point(x: number, y: number, coord_type: Atk.CoordType): (Atk.Object | null);
+        vfunc_ref_accessible_at_point(x: number, y: number, coord_type: Atk.CoordType): Atk.Object | null;
 
         /**
          * Remove the handler specified by `handler_id` from the list of
@@ -107093,9 +106887,7 @@ export namespace Gtk {
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends MenuItem.ConstructorProps, Atk.ImplementorIface.ConstructorProps, Actionable.ConstructorProps, Activatable.ConstructorProps, Buildable.ConstructorProps {
-
-        }
+        interface ConstructorProps extends MenuItem.ConstructorProps, Atk.ImplementorIface.ConstructorProps, Actionable.ConstructorProps, Activatable.ConstructorProps, Buildable.ConstructorProps {}
     }
 
     /**
@@ -107155,15 +106947,15 @@ export namespace Gtk {
          * @default null
           * @category Inherited from Gtk.Actionable
          */
-        get action_name(): (string | null);
-        set action_name(val: (string | null));
+        get action_name(): string | null;
+        set action_name(val: string | null);
 
         /**
          * @default null
           * @category Inherited from Gtk.Actionable
          */
-        get actionName(): (string | null);
-        set actionName(val: (string | null));
+        get actionName(): string | null;
+        set actionName(val: string | null);
 
         /** @category Inherited from Gtk.Actionable */
         get action_target(): GLib.Variant;
@@ -107243,7 +107035,7 @@ export namespace Gtk {
          * See `gtk_actionable_set_action_name()` for more information.
          * @returns the action name, or `null` if none is set
          */
-        get_action_name(): (string | null);
+        get_action_name(): string | null;
 
         /**
          * Gets the current target value of `actionable`.
@@ -107267,7 +107059,7 @@ export namespace Gtk {
          * associated with the window.
          * @param action_name an action name, or `null`
          */
-        set_action_name(action_name: (string | null)): void;
+        set_action_name(action_name: string | null): void;
 
         /**
          * Sets the target value of an actionable widget.
@@ -107291,7 +107083,7 @@ export namespace Gtk {
          * rendered inactive).
          * @param target_value a {@link GLib.Variant} to set as the target value, or `null`
          */
-        set_action_target_value(target_value: (GLib.Variant | null)): void;
+        set_action_target_value(target_value: GLib.Variant | null): void;
 
         /**
          * Sets the action-name and associated string target value of an
@@ -107315,7 +107107,7 @@ export namespace Gtk {
          * See `gtk_actionable_set_action_name()` for more information.
          * @virtual
          */
-        vfunc_get_action_name(): (string | null);
+        vfunc_get_action_name(): string | null;
 
         /**
          * Gets the current target value of `actionable`.
@@ -107340,7 +107132,7 @@ export namespace Gtk {
          * @param action_name an action name, or `null`
          * @virtual
          */
-        vfunc_set_action_name(action_name: (string | null)): void;
+        vfunc_set_action_name(action_name: string | null): void;
 
         /**
          * Sets the target value of an actionable widget.
@@ -107365,7 +107157,7 @@ export namespace Gtk {
          * @param target_value a {@link GLib.Variant} to set as the target value, or `null`
          * @virtual
          */
-        vfunc_set_action_target_value(target_value: (GLib.Variant | null)): void;
+        vfunc_set_action_target_value(target_value: GLib.Variant | null): void;
 
         /**
          * This is a utility function for {@link Gtk.Activatable} implementors.
@@ -107429,7 +107221,7 @@ export namespace Gtk {
          * {@link Gtk.Activatable.use_action_appearance} changes.
          * @param action the related {@link Gtk.Action} or `null`
          */
-        sync_action_properties(action: (Action | null)): void;
+        sync_action_properties(action: Action | null): void;
 
         /**
          * This is called to update the activatable completely, this is called
@@ -107439,7 +107231,7 @@ export namespace Gtk {
          * @param action the related {@link Gtk.Action} or `null`
          * @virtual
          */
-        vfunc_sync_action_properties(action: (Action | null)): void;
+        vfunc_sync_action_properties(action: Action | null): void;
 
         /**
          * Called to update the activatable when its related action’s properties change.
@@ -107509,7 +107301,7 @@ export namespace Gtk {
          * @param accel_path path used to look up the accelerator
          * @param accel_group a {@link Gtk.AccelGroup}.
          */
-        set_accel_path(accel_path: (string | null), accel_group: (AccelGroup | null)): void;
+        set_accel_path(accel_path: string | null, accel_group: AccelGroup | null): void;
 
         /**
          * @param args 
@@ -107826,7 +107618,7 @@ export namespace Gtk {
 
         _init(...args: any[]): void;
 
-        static ["new"](table: (TextTagTable | null)): TextBuffer;
+        static ["new"](table: TextTagTable | null): TextBuffer;
 
         // Signals
         /** @signal */
@@ -108097,7 +107889,7 @@ export namespace Gtk {
          * @param left_gravity whether the mark has left gravity
          * @returns the new {@link Gtk.TextMark} object
          */
-        create_mark(mark_name: (string | null), where: TextIter, left_gravity: boolean): TextMark;
+        create_mark(mark_name: string | null, where: TextIter, left_gravity: boolean): TextMark;
 
         /**
          * Copies the currently-selected text to a clipboard, then deletes
@@ -108178,7 +107970,7 @@ export namespace Gtk {
          * @param data data to deserialize
          * @returns `true` on success, `false` otherwise.
          */
-        deserialize(content_buffer: TextBuffer, format: Gdk.Atom, iter: TextIter, data: (Uint8Array | string)): boolean;
+        deserialize(content_buffer: TextBuffer, format: Gdk.Atom, iter: TextIter, data: Uint8Array | string): boolean;
 
         /**
          * This functions returns the value set with
@@ -108345,7 +108137,7 @@ export namespace Gtk {
          * @param name a mark name
          * @returns a {@link Gtk.TextMark}, or `null`
          */
-        get_mark(name: string): (TextMark | null);
+        get_mark(name: string): TextMark | null;
 
         /**
          * Indicates whether the buffer has been modified since the last call
@@ -108600,7 +108392,7 @@ export namespace Gtk {
          * @param override_location location to insert pasted text, or `null`
          * @param default_editable whether the buffer is editable by default
          */
-        paste_clipboard(clipboard: Clipboard, override_location: (TextIter | null), default_editable: boolean): void;
+        paste_clipboard(clipboard: Clipboard, override_location: TextIter | null, default_editable: boolean): void;
 
         /**
          * This function moves the “insert” and “selection_bound” marks
@@ -108630,7 +108422,7 @@ export namespace Gtk {
          * @param tagset_name an optional tagset name, on `null`
          * @returns the {@link Gdk.Atom} that corresponds to the               newly registered format’s mime-type.
          */
-        register_deserialize_tagset(tagset_name: (string | null)): Gdk.Atom;
+        register_deserialize_tagset(tagset_name: string | null): Gdk.Atom;
 
         /**
          * This function registers a rich text serialization `function` along with
@@ -108662,7 +108454,7 @@ export namespace Gtk {
          * @param tagset_name an optional tagset name, on `null`
          * @returns the {@link Gdk.Atom} that corresponds to the               newly registered format’s mime-type.
          */
-        register_serialize_tagset(tagset_name: (string | null)): Gdk.Atom;
+        register_serialize_tagset(tagset_name: string | null): Gdk.Atom;
 
         /**
          * Removes all tags in the range between `start` and `end`.  Be careful
@@ -108790,9 +108582,7 @@ export namespace Gtk {
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends RendererCellAccessible.ConstructorProps, Atk.Action.ConstructorProps, Atk.Component.ConstructorProps, Atk.TableCell.ConstructorProps, Atk.Text.ConstructorProps {
-
-        }
+        interface ConstructorProps extends RendererCellAccessible.ConstructorProps, Atk.Action.ConstructorProps, Atk.Component.ConstructorProps, Atk.TableCell.ConstructorProps, Atk.Text.ConstructorProps {}
     }
 
     /**
@@ -108968,7 +108758,7 @@ export namespace Gtk {
          * @param granularity An {@link Atk.TextGranularity}
          * @returns a newly allocated string containing the text at          the `offset` bounded by the specified `granularity`. Use `g_free()`          to free the returned string.  Returns `null` if the offset is invalid          or no implementation is available.
          */
-        get_string_at_offset(offset: number, granularity: Atk.TextGranularity): [(string | null), number, number];
+        get_string_at_offset(offset: number, granularity: Atk.TextGranularity): [string | null, number, number];
 
         /**
          * Gets the specified text.
@@ -109227,7 +109017,7 @@ export namespace Gtk {
          * @param granularity An {@link Atk.TextGranularity}
          * @virtual
          */
-        vfunc_get_string_at_offset(offset: number, granularity: Atk.TextGranularity): [(string | null), number, number];
+        vfunc_get_string_at_offset(offset: number, granularity: Atk.TextGranularity): [string | null, number, number];
 
         /**
          * Gets the specified text.
@@ -109374,13 +109164,10 @@ export namespace Gtk {
 
     namespace TextChildAnchor {
         // Signal signatures
-        interface SignalSignatures extends GObject.Object.SignalSignatures {
-        }
+        interface SignalSignatures extends GObject.Object.SignalSignatures {}
 
         // Constructor properties interface
-        interface ConstructorProps extends GObject.Object.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GObject.Object.ConstructorProps {}
     }
 
     /**
@@ -109453,7 +109240,7 @@ export namespace Gtk {
         interface ConstructorProps extends GObject.Object.ConstructorProps {
             left_gravity: boolean;
             leftGravity: boolean;
-            name: (string | null);
+            name: string | null;
         }
     }
 
@@ -109516,7 +109303,7 @@ export namespace Gtk {
          * @construct-only
          * @default null
          */
-        get name(): (string | null);
+        get name(): string | null;
 
         /**
          * Compile-time signal type information.
@@ -109532,7 +109319,7 @@ export namespace Gtk {
 
         _init(...args: any[]): void;
 
-        static ["new"](name: (string | null), left_gravity: boolean): TextMark;
+        static ["new"](name: string | null, left_gravity: boolean): TextMark;
 
         // Signals
         /** @signal */
@@ -109573,7 +109360,7 @@ export namespace Gtk {
          * Returns the mark name; returns NULL for anonymous marks.
          * @returns mark name
          */
-        get_name(): (string | null);
+        get_name(): string | null;
 
         /**
          * Returns `true` if the mark is visible (i.e. a cursor is displayed
@@ -109603,7 +109390,7 @@ export namespace Gtk {
              * @signal
              * @run-last
              */
-            event: (arg0: GObject.Object, arg1: Gdk.Event, arg2: TextIter) => (boolean | void);
+            event: (arg0: GObject.Object, arg1: Gdk.Event, arg2: TextIter) => boolean | void;
             "notify::accumulative-margin": (pspec: GObject.ParamSpec) => void;
             "notify::background": (pspec: GObject.ParamSpec) => void;
             "notify::background-full-height": (pspec: GObject.ParamSpec) => void;
@@ -110677,7 +110464,7 @@ export namespace Gtk {
 
         _init(...args: any[]): void;
 
-        static ["new"](name: (string | null)): TextTag;
+        static ["new"](name: string | null): TextTag;
 
         // Signals
         /** @signal */
@@ -110767,9 +110554,7 @@ export namespace Gtk {
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends GObject.Object.ConstructorProps, Buildable.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GObject.Object.ConstructorProps, Buildable.ConstructorProps {}
     }
 
     /**
@@ -110880,7 +110665,7 @@ export namespace Gtk {
          * @param name name of a tag
          * @returns The tag, or `null` if none by that name is in the table.
          */
-        lookup(name: string): (TextTag | null);
+        lookup(name: string): TextTag | null;
 
         /**
          * Remove a tag from the table. If a {@link Gtk.TextBuffer} has `table` as its tag table,
@@ -110898,7 +110683,7 @@ export namespace Gtk {
          * @param child child to add
          * @param type kind of child or `null`
          */
-        add_child(builder: Builder, child: GObject.Object, type: (string | null)): void;
+        add_child(builder: Builder, child: GObject.Object, type: string | null): void;
 
         /**
          * Constructs a child of `buildable` with the name `name`.
@@ -110919,7 +110704,7 @@ export namespace Gtk {
          * @param tagname the name of the tag
          * @param data user data created in custom_tag_start
          */
-        custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
+        custom_finished(builder: Builder, child: GObject.Object | null, tagname: string, data: null): void;
 
         /**
          * This is called at the end of each custom element handled by
@@ -110929,7 +110714,7 @@ export namespace Gtk {
          * @param tagname name of tag
          * @param data user data that will be passed in to parser functions
          */
-        custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
+        custom_tag_end(builder: Builder, child: GObject.Object | null, tagname: string, data: null): void;
 
         /**
          * This is called for each unknown element under `<child>`.
@@ -110938,7 +110723,7 @@ export namespace Gtk {
          * @param tagname name of tag
          * @returns `true` if a object has a custom implementation, `false`          if it doesn't.
          */
-        custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, GLib.MarkupParser, null];
+        custom_tag_start(builder: Builder, child: GObject.Object | null, tagname: string): [boolean, GLib.MarkupParser, null];
 
         /**
          * Get the internal child called `childname` of the `buildable` object.
@@ -110974,7 +110759,7 @@ export namespace Gtk {
          * @param name name of property
          * @param value value of property
          */
-        set_buildable_property(builder: Builder, name: string, value: (GObject.Value | any)): void;
+        set_buildable_property(builder: Builder, name: string, value: GObject.Value | any): void;
 
         /**
          * Sets the name of the `buildable` object.
@@ -110990,7 +110775,7 @@ export namespace Gtk {
          * @param type kind of child or `null`
          * @virtual
          */
-        vfunc_add_child(builder: Builder, child: GObject.Object, type: (string | null)): void;
+        vfunc_add_child(builder: Builder, child: GObject.Object, type: string | null): void;
 
         /**
          * Constructs a child of `buildable` with the name `name`.
@@ -111012,7 +110797,7 @@ export namespace Gtk {
          * @param data user data created in custom_tag_start
          * @virtual
          */
-        vfunc_custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
+        vfunc_custom_finished(builder: Builder, child: GObject.Object | null, tagname: string, data: null): void;
 
         /**
          * This is called at the end of each custom element handled by
@@ -111023,7 +110808,7 @@ export namespace Gtk {
          * @param data user data that will be passed in to parser functions
          * @virtual
          */
-        vfunc_custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
+        vfunc_custom_tag_end(builder: Builder, child: GObject.Object | null, tagname: string, data: null): void;
 
         /**
          * This is called for each unknown element under `<child>`.
@@ -111032,7 +110817,7 @@ export namespace Gtk {
          * @param tagname name of tag
          * @virtual
          */
-        vfunc_custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, GLib.MarkupParser, never];
+        vfunc_custom_tag_start(builder: Builder, child: GObject.Object | null, tagname: string): [boolean, GLib.MarkupParser, never];
 
         /**
          * Get the internal child called `childname` of the `buildable` object.
@@ -111145,7 +110930,7 @@ export namespace Gtk {
              * @since 3.16
              * @run-last
              */
-            "extend-selection": (arg0: TextExtendSelection, arg1: TextIter, arg2: TextIter, arg3: TextIter) => (boolean | void);
+            "extend-selection": (arg0: TextExtendSelection, arg1: TextIter, arg2: TextIter, arg3: TextIter) => boolean | void;
             /**
              * The ::insert-at-cursor signal is a
              * [keybinding signal][GtkBindingSignal]
@@ -111403,7 +111188,7 @@ export namespace Gtk {
             populateAll: boolean;
             right_margin: number;
             rightMargin: number;
-            tabs: (Pango.TabArray | null);
+            tabs: Pango.TabArray | null;
             top_margin: number;
             topMargin: number;
             wrap_mode: WrapMode;
@@ -111708,8 +111493,8 @@ export namespace Gtk {
         get rightMargin(): number;
         set rightMargin(val: number);
 
-        get tabs(): (Pango.TabArray | null);
-        set tabs(val: (Pango.TabArray | null));
+        get tabs(): Pango.TabArray | null;
+        set tabs(val: Pango.TabArray | null);
 
         /**
          * The top margin for text in the text view.
@@ -112035,7 +111820,7 @@ export namespace Gtk {
          * coordinates to coordinates for one of the windows in the text view.
          * @param iter a {@link Gtk.TextIter}
          */
-        get_cursor_locations(iter: (TextIter | null)): [Gdk.Rectangle | null, Gdk.Rectangle | null];
+        get_cursor_locations(iter: TextIter | null): [Gdk.Rectangle | null, Gdk.Rectangle | null];
 
         /**
          * Find out whether the cursor should be displayed.
@@ -112206,7 +111991,7 @@ export namespace Gtk {
          * with `pango_tab_array_free()`.
          * @returns copy of default tab array, or `null` if    “standard" tabs are used; must be freed with `pango_tab_array_free()`.
          */
-        get_tabs(): (Pango.TabArray | null);
+        get_tabs(): Pango.TabArray | null;
 
         /**
          * Gets the top margin for text in the `text_view`.
@@ -112237,7 +112022,7 @@ export namespace Gtk {
          * @param win window to get
          * @returns a {@link Gdk.Window}, or `null`
          */
-        get_window(win: TextWindowType): (Gdk.Window | null);
+        get_window(win: TextWindowType): Gdk.Window | null;
 
         /**
          * @param args 
@@ -112445,7 +112230,7 @@ export namespace Gtk {
          * will not “adopt” it.
          * @param buffer a {@link Gtk.TextBuffer}
          */
-        set_buffer(buffer: (TextBuffer | null)): void;
+        set_buffer(buffer: TextBuffer | null): void;
 
         /**
          * Toggles whether the insertion point should be displayed. A buffer with
@@ -112679,7 +112464,7 @@ export namespace Gtk {
          * Sets the horizontal adjustment of the {@link Gtk.Scrollable}.
          * @param hadjustment a {@link Gtk.Adjustment}
          */
-        set_hadjustment(hadjustment: (Adjustment | null)): void;
+        set_hadjustment(hadjustment: Adjustment | null): void;
 
         /**
          * Sets the {@link Gtk.ScrollablePolicy} to determine whether
@@ -112693,7 +112478,7 @@ export namespace Gtk {
          * Sets the vertical adjustment of the {@link Gtk.Scrollable}.
          * @param vadjustment a {@link Gtk.Adjustment}
          */
-        set_vadjustment(vadjustment: (Adjustment | null)): void;
+        set_vadjustment(vadjustment: Adjustment | null): void;
 
         /**
          * Sets the {@link Gtk.ScrollablePolicy} to determine whether
@@ -112739,9 +112524,7 @@ export namespace Gtk {
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends ContainerAccessible.ConstructorProps, Atk.Component.ConstructorProps, Atk.EditableText.ConstructorProps, Atk.StreamableContent.ConstructorProps, Atk.Text.ConstructorProps {
-
-        }
+        interface ConstructorProps extends ContainerAccessible.ConstructorProps, Atk.Component.ConstructorProps, Atk.EditableText.ConstructorProps, Atk.StreamableContent.ConstructorProps, Atk.Text.ConstructorProps {}
     }
 
     /**
@@ -112926,7 +112709,7 @@ export namespace Gtk {
          * @param mime_type a gchar* representing the mime type, or NULL to request a URI for the default mime type.
          * @returns Returns a string representing a URI, or `null` if no corresponding URI can be constructed.
          */
-        get_uri(mime_type: string): (string | null);
+        get_uri(mime_type: string): string | null;
 
         /**
          * Gets the character string of the specified mime type. The first mime
@@ -112961,7 +112744,7 @@ export namespace Gtk {
          * @param mime_type a gchar* representing the mime type, or NULL to request a URI for the default mime type.
          * @virtual
          */
-        vfunc_get_uri(mime_type: string): (string | null);
+        vfunc_get_uri(mime_type: string): string | null;
 
         /**
          * Adds a selection bounded by the specified offsets.
@@ -113103,7 +112886,7 @@ export namespace Gtk {
          * @param granularity An {@link Atk.TextGranularity}
          * @returns a newly allocated string containing the text at          the `offset` bounded by the specified `granularity`. Use `g_free()`          to free the returned string.  Returns `null` if the offset is invalid          or no implementation is available.
          */
-        get_string_at_offset(offset: number, granularity: Atk.TextGranularity): [(string | null), number, number];
+        get_string_at_offset(offset: number, granularity: Atk.TextGranularity): [string | null, number, number];
 
         /**
          * Gets the specified text.
@@ -113362,7 +113145,7 @@ export namespace Gtk {
          * @param granularity An {@link Atk.TextGranularity}
          * @virtual
          */
-        vfunc_get_string_at_offset(offset: number, granularity: Atk.TextGranularity): [(string | null), number, number];
+        vfunc_get_string_at_offset(offset: number, granularity: Atk.TextGranularity): [string | null, number, number];
 
         /**
          * Gets the specified text.
@@ -113587,7 +113370,7 @@ export namespace Gtk {
          * standard directories.
          * @param name Theme engine name to load
          */
-        static load(name: string): (ThemingEngine | null);
+        static load(name: string): ThemingEngine | null;
 
         // Virtual methods
         /**
@@ -113850,7 +113633,7 @@ export namespace Gtk {
          * Returns the {@link Gdk.Screen} to which `engine` currently rendering to.
          * @returns a {@link Gdk.Screen}, or `null`.
          */
-        get_screen(): (Gdk.Screen | null);
+        get_screen(): Gdk.Screen | null;
 
         /**
          * returns the state used when rendering.
@@ -113997,7 +113780,7 @@ export namespace Gtk {
 
         _init(...args: any[]): void;
 
-        static ["new"](name: string, label: (string | null), tooltip: (string | null), stock_id: (string | null)): ToggleAction;
+        static ["new"](name: string, label: string | null, tooltip: string | null, stock_id: string | null): ToggleAction;
 
         // Signals
         /** @signal */
@@ -114056,7 +113839,7 @@ export namespace Gtk {
          * @param child child to add
          * @param type kind of child or `null`
          */
-        add_child(builder: Builder, child: GObject.Object, type: (string | null)): void;
+        add_child(builder: Builder, child: GObject.Object, type: string | null): void;
 
         /**
          * Constructs a child of `buildable` with the name `name`.
@@ -114077,7 +113860,7 @@ export namespace Gtk {
          * @param tagname the name of the tag
          * @param data user data created in custom_tag_start
          */
-        custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
+        custom_finished(builder: Builder, child: GObject.Object | null, tagname: string, data: null): void;
 
         /**
          * This is called at the end of each custom element handled by
@@ -114087,7 +113870,7 @@ export namespace Gtk {
          * @param tagname name of tag
          * @param data user data that will be passed in to parser functions
          */
-        custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
+        custom_tag_end(builder: Builder, child: GObject.Object | null, tagname: string, data: null): void;
 
         /**
          * This is called for each unknown element under `<child>`.
@@ -114096,7 +113879,7 @@ export namespace Gtk {
          * @param tagname name of tag
          * @returns `true` if a object has a custom implementation, `false`          if it doesn't.
          */
-        custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, GLib.MarkupParser, null];
+        custom_tag_start(builder: Builder, child: GObject.Object | null, tagname: string): [boolean, GLib.MarkupParser, null];
 
         /**
          * Get the internal child called `childname` of the `buildable` object.
@@ -114132,7 +113915,7 @@ export namespace Gtk {
          * @param name name of property
          * @param value value of property
          */
-        set_buildable_property(builder: Builder, name: string, value: (GObject.Value | any)): void;
+        set_buildable_property(builder: Builder, name: string, value: GObject.Value | any): void;
 
         /**
          * Sets the name of the `buildable` object.
@@ -114148,7 +113931,7 @@ export namespace Gtk {
          * @param type kind of child or `null`
          * @virtual
          */
-        vfunc_add_child(builder: Builder, child: GObject.Object, type: (string | null)): void;
+        vfunc_add_child(builder: Builder, child: GObject.Object, type: string | null): void;
 
         /**
          * Constructs a child of `buildable` with the name `name`.
@@ -114170,7 +113953,7 @@ export namespace Gtk {
          * @param data user data created in custom_tag_start
          * @virtual
          */
-        vfunc_custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
+        vfunc_custom_finished(builder: Builder, child: GObject.Object | null, tagname: string, data: null): void;
 
         /**
          * This is called at the end of each custom element handled by
@@ -114181,7 +113964,7 @@ export namespace Gtk {
          * @param data user data that will be passed in to parser functions
          * @virtual
          */
-        vfunc_custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
+        vfunc_custom_tag_end(builder: Builder, child: GObject.Object | null, tagname: string, data: null): void;
 
         /**
          * This is called for each unknown element under `<child>`.
@@ -114190,7 +113973,7 @@ export namespace Gtk {
          * @param tagname name of tag
          * @virtual
          */
-        vfunc_custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, GLib.MarkupParser, never];
+        vfunc_custom_tag_start(builder: Builder, child: GObject.Object | null, tagname: string): [boolean, GLib.MarkupParser, never];
 
         /**
          * Get the internal child called `childname` of the `buildable` object.
@@ -114522,15 +114305,15 @@ export namespace Gtk {
          * @default null
           * @category Inherited from Gtk.Actionable
          */
-        get action_name(): (string | null);
-        set action_name(val: (string | null));
+        get action_name(): string | null;
+        set action_name(val: string | null);
 
         /**
          * @default null
           * @category Inherited from Gtk.Actionable
          */
-        get actionName(): (string | null);
-        set actionName(val: (string | null));
+        get actionName(): string | null;
+        set actionName(val: string | null);
 
         /** @category Inherited from Gtk.Actionable */
         get action_target(): GLib.Variant;
@@ -114610,7 +114393,7 @@ export namespace Gtk {
          * See `gtk_actionable_set_action_name()` for more information.
          * @returns the action name, or `null` if none is set
          */
-        get_action_name(): (string | null);
+        get_action_name(): string | null;
 
         /**
          * Gets the current target value of `actionable`.
@@ -114634,7 +114417,7 @@ export namespace Gtk {
          * associated with the window.
          * @param action_name an action name, or `null`
          */
-        set_action_name(action_name: (string | null)): void;
+        set_action_name(action_name: string | null): void;
 
         /**
          * Sets the target value of an actionable widget.
@@ -114658,7 +114441,7 @@ export namespace Gtk {
          * rendered inactive).
          * @param target_value a {@link GLib.Variant} to set as the target value, or `null`
          */
-        set_action_target_value(target_value: (GLib.Variant | null)): void;
+        set_action_target_value(target_value: GLib.Variant | null): void;
 
         /**
          * Sets the action-name and associated string target value of an
@@ -114682,7 +114465,7 @@ export namespace Gtk {
          * See `gtk_actionable_set_action_name()` for more information.
          * @virtual
          */
-        vfunc_get_action_name(): (string | null);
+        vfunc_get_action_name(): string | null;
 
         /**
          * Gets the current target value of `actionable`.
@@ -114707,7 +114490,7 @@ export namespace Gtk {
          * @param action_name an action name, or `null`
          * @virtual
          */
-        vfunc_set_action_name(action_name: (string | null)): void;
+        vfunc_set_action_name(action_name: string | null): void;
 
         /**
          * Sets the target value of an actionable widget.
@@ -114732,7 +114515,7 @@ export namespace Gtk {
          * @param target_value a {@link GLib.Variant} to set as the target value, or `null`
          * @virtual
          */
-        vfunc_set_action_target_value(target_value: (GLib.Variant | null)): void;
+        vfunc_set_action_target_value(target_value: GLib.Variant | null): void;
 
         /**
          * This is a utility function for {@link Gtk.Activatable} implementors.
@@ -114796,7 +114579,7 @@ export namespace Gtk {
          * {@link Gtk.Activatable.use_action_appearance} changes.
          * @param action the related {@link Gtk.Action} or `null`
          */
-        sync_action_properties(action: (Action | null)): void;
+        sync_action_properties(action: Action | null): void;
 
         /**
          * This is called to update the activatable completely, this is called
@@ -114806,7 +114589,7 @@ export namespace Gtk {
          * @param action the related {@link Gtk.Action} or `null`
          * @virtual
          */
-        vfunc_sync_action_properties(action: (Action | null)): void;
+        vfunc_sync_action_properties(action: Action | null): void;
 
         /**
          * Called to update the activatable when its related action’s properties change.
@@ -114878,9 +114661,7 @@ export namespace Gtk {
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends ButtonAccessible.ConstructorProps, Atk.Action.ConstructorProps, Atk.Component.ConstructorProps, Atk.Image.ConstructorProps {
-
-        }
+        interface ConstructorProps extends ButtonAccessible.ConstructorProps, Atk.Action.ConstructorProps, Atk.Component.ConstructorProps, Atk.Image.ConstructorProps {}
     }
 
     /**
@@ -114928,7 +114709,7 @@ export namespace Gtk {
          * @param i the action index corresponding to the action to be performed
          * @returns a description string, or `null` if `action` does not implement this interface.
          */
-        get_description(i: number): (string | null);
+        get_description(i: number): string | null;
 
         /**
          * @param args 
@@ -114962,14 +114743,14 @@ export namespace Gtk {
          * @param i the action index corresponding to the action to be performed
          * @returns the keybinding which can be used to activate this action, or `null` if there is no keybinding for this action.
          */
-        get_keybinding(i: number): (string | null);
+        get_keybinding(i: number): string | null;
 
         /**
          * Returns the localized name of the specified action of the object.
          * @param i the action index corresponding to the action to be performed
          * @returns a name string, or `null` if `action` does not implement this interface.
          */
-        get_localized_name(i: number): (string | null);
+        get_localized_name(i: number): string | null;
 
         /**
          * Gets the number of accessible actions available on the object.
@@ -114997,7 +114778,7 @@ export namespace Gtk {
          * @param i the action index corresponding to the action to be performed
          * @returns a name string, or `null` if `action` does not implement this interface.
          */
-        get_name(i: number): (string | null);
+        get_name(i: number): string | null;
 
         /**
          * @param args 
@@ -115031,7 +114812,7 @@ export namespace Gtk {
          * @param i the action index corresponding to the action to be performed
          * @virtual
          */
-        vfunc_get_description(i: number): (string | null);
+        vfunc_get_description(i: number): string | null;
 
         /**
          * @param args 
@@ -115066,14 +114847,14 @@ export namespace Gtk {
          * @param i the action index corresponding to the action to be performed
          * @virtual
          */
-        vfunc_get_keybinding(i: number): (string | null);
+        vfunc_get_keybinding(i: number): string | null;
 
         /**
          * Returns the localized name of the specified action of the object.
          * @param i the action index corresponding to the action to be performed
          * @virtual
          */
-        vfunc_get_localized_name(i: number): (string | null);
+        vfunc_get_localized_name(i: number): string | null;
 
         /**
          * Gets the number of accessible actions available on the object.
@@ -115101,7 +114882,7 @@ export namespace Gtk {
          * @param i the action index corresponding to the action to be performed
          * @virtual
          */
-        vfunc_get_name(i: number): (string | null);
+        vfunc_get_name(i: number): string | null;
 
         /**
          * @param args 
@@ -115135,7 +114916,7 @@ export namespace Gtk {
          * Retrieves the locale identifier associated to the {@link Atk.Image}.
          * @returns a string corresponding to the POSIX   `LC_MESSAGES` locale used by the image description, or   `null` if the image does not specify a locale.
          */
-        get_image_locale(): (string | null);
+        get_image_locale(): string | null;
 
         /**
          * Gets the position of the image in the form of a point specifying the
@@ -115174,7 +114955,7 @@ export namespace Gtk {
          * Retrieves the locale identifier associated to the {@link Atk.Image}.
          * @virtual
          */
-        vfunc_get_image_locale(): (string | null);
+        vfunc_get_image_locale(): string | null;
 
         /**
          * Gets the position of the image in the form of a point specifying the
@@ -115359,15 +115140,15 @@ export namespace Gtk {
          * @default null
           * @category Inherited from Gtk.Actionable
          */
-        get action_name(): (string | null);
-        set action_name(val: (string | null));
+        get action_name(): string | null;
+        set action_name(val: string | null);
 
         /**
          * @default null
           * @category Inherited from Gtk.Actionable
          */
-        get actionName(): (string | null);
-        set actionName(val: (string | null));
+        get actionName(): string | null;
+        set actionName(val: string | null);
 
         /** @category Inherited from Gtk.Actionable */
         get action_target(): GLib.Variant;
@@ -115383,7 +115164,7 @@ export namespace Gtk {
          * See `gtk_actionable_set_action_name()` for more information.
          * @returns the action name, or `null` if none is set
          */
-        get_action_name(): (string | null);
+        get_action_name(): string | null;
 
         /**
          * Gets the current target value of `actionable`.
@@ -115407,7 +115188,7 @@ export namespace Gtk {
          * associated with the window.
          * @param action_name an action name, or `null`
          */
-        set_action_name(action_name: (string | null)): void;
+        set_action_name(action_name: string | null): void;
 
         /**
          * Sets the target value of an actionable widget.
@@ -115431,7 +115212,7 @@ export namespace Gtk {
          * rendered inactive).
          * @param target_value a {@link GLib.Variant} to set as the target value, or `null`
          */
-        set_action_target_value(target_value: (GLib.Variant | null)): void;
+        set_action_target_value(target_value: GLib.Variant | null): void;
 
         /**
          * Sets the action-name and associated string target value of an
@@ -115455,7 +115236,7 @@ export namespace Gtk {
          * See `gtk_actionable_set_action_name()` for more information.
          * @virtual
          */
-        vfunc_get_action_name(): (string | null);
+        vfunc_get_action_name(): string | null;
 
         /**
          * Gets the current target value of `actionable`.
@@ -115480,7 +115261,7 @@ export namespace Gtk {
          * @param action_name an action name, or `null`
          * @virtual
          */
-        vfunc_set_action_name(action_name: (string | null)): void;
+        vfunc_set_action_name(action_name: string | null): void;
 
         /**
          * Sets the target value of an actionable widget.
@@ -115505,7 +115286,7 @@ export namespace Gtk {
          * @param target_value a {@link GLib.Variant} to set as the target value, or `null`
          * @virtual
          */
-        vfunc_set_action_target_value(target_value: (GLib.Variant | null)): void;
+        vfunc_set_action_target_value(target_value: GLib.Variant | null): void;
 
         /**
          * Emits a {@link Gtk.Widget.SignalSignatures.child_notify | Gtk.Widget::child-notify} signal for the
@@ -115536,7 +115317,7 @@ export namespace Gtk {
          * `gtk_tooltip_set_markup()`.
          * @param markup the contents of the tooltip for `widget`, or `null`
          */
-        set_tooltip_markup(markup: (string | null)): void;
+        set_tooltip_markup(markup: string | null): void;
 
         /**
          * @param args 
@@ -115552,7 +115333,7 @@ export namespace Gtk {
          * See also the {@link Gtk.Widget.tooltip_text} property and `gtk_tooltip_set_text()`.
          * @param text the contents of the tooltip for `widget`
          */
-        set_tooltip_text(text: (string | null)): void;
+        set_tooltip_text(text: string | null): void;
 
         /**
          * @param args 
@@ -115632,13 +115413,13 @@ export namespace Gtk {
 
         // Constructor properties interface
         interface ConstructorProps extends ToolItem.ConstructorProps, Atk.ImplementorIface.ConstructorProps, Actionable.ConstructorProps, Activatable.ConstructorProps, Buildable.ConstructorProps {
-            icon_name: (string | null);
-            iconName: (string | null);
-            icon_widget: (Widget | null);
-            iconWidget: (Widget | null);
-            label: (string | null);
-            label_widget: (Widget | null);
-            labelWidget: (Widget | null);
+            icon_name: string | null;
+            iconName: string | null;
+            icon_widget: Widget | null;
+            iconWidget: Widget | null;
+            label: string | null;
+            label_widget: Widget | null;
+            labelWidget: Widget | null;
             stock_id: string;
             stockId: string;
             use_underline: boolean;
@@ -115683,8 +115464,8 @@ export namespace Gtk {
          * @since 2.8
          * @default null
          */
-        get icon_name(): (string | null);
-        set icon_name(val: (string | null));
+        get icon_name(): string | null;
+        set icon_name(val: string | null);
 
         /**
          * The name of the themed icon displayed on the item.
@@ -115694,26 +115475,26 @@ export namespace Gtk {
          * @since 2.8
          * @default null
          */
-        get iconName(): (string | null);
-        set iconName(val: (string | null));
+        get iconName(): string | null;
+        set iconName(val: string | null);
 
-        get icon_widget(): (Widget | null);
-        set icon_widget(val: (Widget | null));
+        get icon_widget(): Widget | null;
+        set icon_widget(val: Widget | null);
 
-        get iconWidget(): (Widget | null);
-        set iconWidget(val: (Widget | null));
+        get iconWidget(): Widget | null;
+        set iconWidget(val: Widget | null);
 
         /**
          * @default null
          */
-        get label(): (string | null);
-        set label(val: (string | null));
+        get label(): string | null;
+        set label(val: string | null);
 
-        get label_widget(): (Widget | null);
-        set label_widget(val: (Widget | null));
+        get label_widget(): Widget | null;
+        set label_widget(val: Widget | null);
 
-        get labelWidget(): (Widget | null);
-        set labelWidget(val: (Widget | null));
+        get labelWidget(): Widget | null;
+        set labelWidget(val: Widget | null);
 
         /**
          * @deprecated since 3.10: Use {@link Gtk.ToolButton.icon_name} instead.
@@ -115755,7 +115536,7 @@ export namespace Gtk {
 
         _init(...args: any[]): void;
 
-        static ["new"](icon_widget: (Widget | null), label: (string | null)): ToolButton;
+        static ["new"](icon_widget: Widget | null, label: string | null): ToolButton;
 
         // Conflicted with Gtk.ToolItem.new
         static ["new"](...args: never[]): any;
@@ -115789,14 +115570,14 @@ export namespace Gtk {
          * see `gtk_tool_button_set_icon_name()`.
          * @returns the icon name or `null` if the tool button has no themed icon
          */
-        get_icon_name(): (string | null);
+        get_icon_name(): string | null;
 
         /**
          * Return the widget used as icon widget on `button`.
          * See `gtk_tool_button_set_icon_widget()`.
          * @returns The widget used as icon     on `button`, or `null`.
          */
-        get_icon_widget(): (Widget | null);
+        get_icon_widget(): Widget | null;
 
         /**
          * Returns the label used by the tool button, or `null` if the tool button
@@ -115804,14 +115585,14 @@ export namespace Gtk {
          * string is owned by GTK+, and must not be modified or freed.
          * @returns The label, or `null`
          */
-        get_label(): (string | null);
+        get_label(): string | null;
 
         /**
          * Returns the widget used as label on `button`.
          * See `gtk_tool_button_set_label_widget()`.
          * @returns The widget used as label     on `button`, or `null`.
          */
-        get_label_widget(): (Widget | null);
+        get_label_widget(): Widget | null;
 
         /**
          * Returns the name of the stock item. See `gtk_tool_button_set_stock_id()`.
@@ -115835,7 +115616,7 @@ export namespace Gtk {
          * {@link Gtk.ToolButton.icon_widget} and {@link Gtk.ToolButton.stock_id} properties.
          * @param icon_name the name of the themed icon
          */
-        set_icon_name(icon_name: (string | null)): void;
+        set_icon_name(icon_name: string | null): void;
 
         /**
          * Sets `icon` as the widget used as icon on `button`. If `icon_widget` is
@@ -115843,7 +115624,7 @@ export namespace Gtk {
          * {@link Gtk.ToolButton.stock_id} property is also `null`, `button` will not have an icon.
          * @param icon_widget the widget used as icon, or `null`
          */
-        set_icon_widget(icon_widget: (Widget | null)): void;
+        set_icon_widget(icon_widget: Widget | null): void;
 
         /**
          * Sets `label` as the label used for the tool button. The {@link Gtk.ToolButton.label}
@@ -115854,7 +115635,7 @@ export namespace Gtk {
          * also `null`, `button` will not have a label.
          * @param label a string that will be used as label, or `null`.
          */
-        set_label(label: (string | null)): void;
+        set_label(label: string | null): void;
 
         /**
          * Sets `label_widget` as the widget that will be used as the label
@@ -115864,7 +115645,7 @@ export namespace Gtk {
          * {@link Gtk.ToolButton.stock_id} is also `null`, `button` does not have a label.
          * @param label_widget the widget used as label, or `null`
          */
-        set_label_widget(label_widget: (Widget | null)): void;
+        set_label_widget(label_widget: Widget | null): void;
 
         /**
          * Sets the name of the stock item. See `gtk_tool_button_new_from_stock()`.
@@ -115872,7 +115653,7 @@ export namespace Gtk {
          * {@link Gtk.ToolButton.label_widget} and {@link Gtk.ToolButton.icon_widget} properties.
          * @param stock_id a name of a stock item, or `null`
          */
-        set_stock_id(stock_id: (string | null)): void;
+        set_stock_id(stock_id: string | null): void;
 
         /**
          * If set, an underline in the label property indicates that the next character
@@ -115891,15 +115672,15 @@ export namespace Gtk {
          * @default null
           * @category Inherited from Gtk.Actionable
          */
-        get action_name(): (string | null);
-        set action_name(val: (string | null));
+        get action_name(): string | null;
+        set action_name(val: string | null);
 
         /**
          * @default null
           * @category Inherited from Gtk.Actionable
          */
-        get actionName(): (string | null);
-        set actionName(val: (string | null));
+        get actionName(): string | null;
+        set actionName(val: string | null);
 
         /** @category Inherited from Gtk.Actionable */
         get action_target(): GLib.Variant;
@@ -115979,7 +115760,7 @@ export namespace Gtk {
          * See `gtk_actionable_set_action_name()` for more information.
          * @returns the action name, or `null` if none is set
          */
-        get_action_name(): (string | null);
+        get_action_name(): string | null;
 
         /**
          * Gets the current target value of `actionable`.
@@ -116003,7 +115784,7 @@ export namespace Gtk {
          * associated with the window.
          * @param action_name an action name, or `null`
          */
-        set_action_name(action_name: (string | null)): void;
+        set_action_name(action_name: string | null): void;
 
         /**
          * Sets the target value of an actionable widget.
@@ -116027,7 +115808,7 @@ export namespace Gtk {
          * rendered inactive).
          * @param target_value a {@link GLib.Variant} to set as the target value, or `null`
          */
-        set_action_target_value(target_value: (GLib.Variant | null)): void;
+        set_action_target_value(target_value: GLib.Variant | null): void;
 
         /**
          * Sets the action-name and associated string target value of an
@@ -116051,7 +115832,7 @@ export namespace Gtk {
          * See `gtk_actionable_set_action_name()` for more information.
          * @virtual
          */
-        vfunc_get_action_name(): (string | null);
+        vfunc_get_action_name(): string | null;
 
         /**
          * Gets the current target value of `actionable`.
@@ -116076,7 +115857,7 @@ export namespace Gtk {
          * @param action_name an action name, or `null`
          * @virtual
          */
-        vfunc_set_action_name(action_name: (string | null)): void;
+        vfunc_set_action_name(action_name: string | null): void;
 
         /**
          * Sets the target value of an actionable widget.
@@ -116101,7 +115882,7 @@ export namespace Gtk {
          * @param target_value a {@link GLib.Variant} to set as the target value, or `null`
          * @virtual
          */
-        vfunc_set_action_target_value(target_value: (GLib.Variant | null)): void;
+        vfunc_set_action_target_value(target_value: GLib.Variant | null): void;
 
         /**
          * This is a utility function for {@link Gtk.Activatable} implementors.
@@ -116165,7 +115946,7 @@ export namespace Gtk {
          * {@link Gtk.Activatable.use_action_appearance} changes.
          * @param action the related {@link Gtk.Action} or `null`
          */
-        sync_action_properties(action: (Action | null)): void;
+        sync_action_properties(action: Action | null): void;
 
         /**
          * This is called to update the activatable completely, this is called
@@ -116175,7 +115956,7 @@ export namespace Gtk {
          * @param action the related {@link Gtk.Action} or `null`
          * @virtual
          */
-        vfunc_sync_action_properties(action: (Action | null)): void;
+        vfunc_sync_action_properties(action: Action | null): void;
 
         /**
          * Called to update the activatable when its related action’s properties change.
@@ -116216,7 +115997,7 @@ export namespace Gtk {
          * `gtk_tooltip_set_markup()`.
          * @param markup the contents of the tooltip for `widget`, or `null`
          */
-        set_tooltip_markup(markup: (string | null)): void;
+        set_tooltip_markup(markup: string | null): void;
 
         /**
          * @param args 
@@ -116232,7 +116013,7 @@ export namespace Gtk {
          * See also the {@link Gtk.Widget.tooltip_text} property and `gtk_tooltip_set_text()`.
          * @param text the contents of the tooltip for `widget`
          */
-        set_tooltip_text(text: (string | null)): void;
+        set_tooltip_text(text: string | null): void;
 
         /**
          * @param args 
@@ -116268,7 +116049,7 @@ export namespace Gtk {
              * @signal
              * @run-last
              */
-            "create-menu-proxy": () => (boolean | void);
+            "create-menu-proxy": () => boolean | void;
             /**
              * This signal is emitted when some property of the toolbar that the
              * item is a child of changes. For custom subclasses of {@link Gtk.ToolItem},
@@ -116499,7 +116280,7 @@ export namespace Gtk {
          * @param menu_item_id a string used to identify the menu item
          * @returns The {@link Gtk.MenuItem} passed to     `gtk_tool_item_set_proxy_menu_item()`, if the `menu_item_ids`     match.
          */
-        get_proxy_menu_item(menu_item_id: string): (Widget | null);
+        get_proxy_menu_item(menu_item_id: string): Widget | null;
 
         /**
          * Returns the relief style of `tool_item`. See `gtk_button_set_relief()`.
@@ -116627,7 +116408,7 @@ export namespace Gtk {
          * @param menu_item_id a string used to identify `menu_item`
          * @param menu_item a {@link Gtk.MenuItem} to use in the overflow menu, or `null`
          */
-        set_proxy_menu_item(menu_item_id: string, menu_item: (Widget | null)): void;
+        set_proxy_menu_item(menu_item_id: string, menu_item: Widget | null): void;
 
         /**
          * Sets the markup text to be displayed as tooltip on the item.
@@ -116812,7 +116593,7 @@ export namespace Gtk {
          * {@link Gtk.Activatable.use_action_appearance} changes.
          * @param action the related {@link Gtk.Action} or `null`
          */
-        sync_action_properties(action: (Action | null)): void;
+        sync_action_properties(action: Action | null): void;
 
         /**
          * This is called to update the activatable completely, this is called
@@ -116822,7 +116603,7 @@ export namespace Gtk {
          * @param action the related {@link Gtk.Action} or `null`
          * @virtual
          */
-        vfunc_sync_action_properties(action: (Action | null)): void;
+        vfunc_sync_action_properties(action: Action | null): void;
 
         /**
          * Called to update the activatable when its related action’s properties change.
@@ -117526,7 +117307,7 @@ export namespace Gtk {
          * @param y the y position
          * @returns the {@link Gtk.ToolItemGroup} at position or `null` if there is no such group
          */
-        get_drop_group(x: number, y: number): (ToolItemGroup | null);
+        get_drop_group(x: number, y: number): ToolItemGroup | null;
 
         /**
          * Gets the item at position (x, y).
@@ -117535,7 +117316,7 @@ export namespace Gtk {
          * @param y the y position
          * @returns the {@link Gtk.ToolItem} at position or `null` if there is no such item
          */
-        get_drop_item(x: number, y: number): (ToolItem | null);
+        get_drop_item(x: number, y: number): ToolItem | null;
 
         /**
          * Gets whether `group` is exclusive or not.
@@ -117760,7 +117541,7 @@ export namespace Gtk {
          * Sets the horizontal adjustment of the {@link Gtk.Scrollable}.
          * @param hadjustment a {@link Gtk.Adjustment}
          */
-        set_hadjustment(hadjustment: (Adjustment | null)): void;
+        set_hadjustment(hadjustment: Adjustment | null): void;
 
         /**
          * Sets the {@link Gtk.ScrollablePolicy} to determine whether
@@ -117774,7 +117555,7 @@ export namespace Gtk {
          * Sets the vertical adjustment of the {@link Gtk.Scrollable}.
          * @param vadjustment a {@link Gtk.Adjustment}
          */
-        set_vadjustment(vadjustment: (Adjustment | null)): void;
+        set_vadjustment(vadjustment: Adjustment | null): void;
 
         /**
          * Sets the {@link Gtk.ScrollablePolicy} to determine whether
@@ -117806,7 +117587,7 @@ export namespace Gtk {
              * @action
              * @run-last
              */
-            "focus-home-or-end": (arg0: boolean) => (boolean | void);
+            "focus-home-or-end": (arg0: boolean) => boolean | void;
             /**
              * Emitted when the orientation of the toolbar changes.
              * @signal
@@ -117825,7 +117606,7 @@ export namespace Gtk {
              * @signal
              * @run-last
              */
-            "popup-context-menu": (arg0: number, arg1: number, arg2: number) => (boolean | void);
+            "popup-context-menu": (arg0: number, arg1: number, arg2: number) => boolean | void;
             /**
              * Emitted when the style of the toolbar changes.
              * @signal
@@ -118091,7 +117872,7 @@ export namespace Gtk {
          * @param n A position on the toolbar
          * @returns The `n`'th {@link Gtk.ToolItem} on `toolbar`,     or `null` if there isn’t an `n`'th item.
          */
-        get_nth_item(n: number): (ToolItem | null);
+        get_nth_item(n: number): ToolItem | null;
 
         /**
          * Returns the relief style of buttons on `toolbar`. See
@@ -118142,7 +117923,7 @@ export namespace Gtk {
          * @param tool_item a {@link Gtk.ToolItem}, or `null` to turn of highlighting
          * @param index_ a position on `toolbar`
          */
-        set_drop_highlight_item(tool_item: (ToolItem | null), index_: number): void;
+        set_drop_highlight_item(tool_item: ToolItem | null, index_: number): void;
 
         /**
          * This function sets the size of stock icons in the toolbar. You
@@ -118349,13 +118130,10 @@ export namespace Gtk {
 
     namespace Tooltip {
         // Signal signatures
-        interface SignalSignatures extends GObject.Object.SignalSignatures {
-        }
+        interface SignalSignatures extends GObject.Object.SignalSignatures {}
 
         // Constructor properties interface
-        interface ConstructorProps extends GObject.Object.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GObject.Object.ConstructorProps {}
     }
 
     /**
@@ -118445,14 +118223,14 @@ export namespace Gtk {
          * and `gtk_tooltip_set_icon()`.
          * @param custom_widget a {@link Gtk.Widget}, or `null` to unset the old custom widget.
          */
-        set_custom(custom_widget: (Widget | null)): void;
+        set_custom(custom_widget: Widget | null): void;
 
         /**
          * Sets the icon of the tooltip (which is in front of the text) to be
          * `pixbuf`.  If `pixbuf` is `null`, the image will be hidden.
          * @param pixbuf a {@link GdkPixbuf.Pixbuf}, or `null`
          */
-        set_icon(pixbuf: (GdkPixbuf.Pixbuf | null)): void;
+        set_icon(pixbuf: GdkPixbuf.Pixbuf | null): void;
 
         /**
          * Sets the icon of the tooltip (which is in front of the text)
@@ -118461,7 +118239,7 @@ export namespace Gtk {
          * @param gicon a {@link Gio.Icon} representing the icon, or `null`
          * @param size a stock icon size ({@link Gtk.IconSize})
          */
-        set_icon_from_gicon(gicon: (Gio.Icon | null), size: number): void;
+        set_icon_from_gicon(gicon: Gio.Icon | null, size: number): void;
 
         /**
          * Sets the icon of the tooltip (which is in front of the text) to be
@@ -118470,7 +118248,7 @@ export namespace Gtk {
          * @param icon_name an icon name, or `null`
          * @param size a stock icon size ({@link Gtk.IconSize})
          */
-        set_icon_from_icon_name(icon_name: (string | null), size: number): void;
+        set_icon_from_icon_name(icon_name: string | null, size: number): void;
 
         /**
          * Sets the icon of the tooltip (which is in front of the text) to be
@@ -118479,7 +118257,7 @@ export namespace Gtk {
          * @param stock_id a stock id, or `null`
          * @param size a stock icon size ({@link Gtk.IconSize})
          */
-        set_icon_from_stock(stock_id: (string | null), size: number): void;
+        set_icon_from_stock(stock_id: string | null, size: number): void;
 
         /**
          * Sets the text of the tooltip to be `markup`, which is marked up
@@ -118487,14 +118265,14 @@ export namespace Gtk {
          * If `markup` is `null`, the label will be hidden.
          * @param markup a markup string (see [Pango markup format][PangoMarkupFormat]) or `null`
          */
-        set_markup(markup: (string | null)): void;
+        set_markup(markup: string | null): void;
 
         /**
          * Sets the text of the tooltip to be `text`. If `text` is `null`, the label
          * will be hidden. See also `gtk_tooltip_set_markup()`.
          * @param text a text string or `null`
          */
-        set_text(text: (string | null)): void;
+        set_text(text: string | null): void;
 
         /**
          * Sets the area of the widget, where the contents of this tooltip apply,
@@ -118534,9 +118312,7 @@ export namespace Gtk {
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends Atk.Object.ConstructorProps {
-
-        }
+        interface ConstructorProps extends Atk.Object.ConstructorProps {}
     }
 
     /**
@@ -118761,7 +118537,7 @@ export namespace Gtk {
          * @param child_path A {@link Gtk.TreePath} to convert.
          * @returns A newly allocated {@link Gtk.TreePath}, or `null`.
          */
-        convert_child_path_to_path(child_path: TreePath): (TreePath | null);
+        convert_child_path_to_path(child_path: TreePath): TreePath | null;
 
         /**
          * Sets `child_iter` to point to the row pointed to by `filter_iter`.
@@ -118777,7 +118553,7 @@ export namespace Gtk {
          * @param filter_path A {@link Gtk.TreePath} to convert.
          * @returns A newly allocated {@link Gtk.TreePath}, or `null`.
          */
-        convert_path_to_child_path(filter_path: TreePath): (TreePath | null);
+        convert_path_to_child_path(filter_path: TreePath): TreePath | null;
 
         /**
          * Returns a pointer to the child model of `filter`.
@@ -118930,7 +118706,7 @@ export namespace Gtk {
          * @param root A {@link Gtk.TreePath} or `null`.
          * @returns A new {@link Gtk.TreeModel}.
          */
-        filter_new(root: (TreePath | null)): TreeModel;
+        filter_new(root: TreePath | null): TreeModel;
 
         /**
          * Calls func on each node in model in a depth-first fashion.
@@ -119030,7 +118806,7 @@ export namespace Gtk {
          * @param parent the {@link Gtk.TreeIter}-struct, or `null`
          * @returns `true`, if `iter` has been set to the first child
          */
-        iter_children(parent: (TreeIter | null)): [boolean, TreeIter];
+        iter_children(parent: TreeIter | null): [boolean, TreeIter];
 
         /**
          * Returns `true` if `iter` has children, `false` otherwise.
@@ -119047,7 +118823,7 @@ export namespace Gtk {
          * @param iter the {@link Gtk.TreeIter}-struct, or `null`
          * @returns the number of children of `iter`
          */
-        iter_n_children(iter: (TreeIter | null)): number;
+        iter_n_children(iter: TreeIter | null): number;
 
         /**
          * Sets `iter` to point to the node following it at the current level.
@@ -119071,7 +118847,7 @@ export namespace Gtk {
          * @param n the index of the desired child
          * @returns `true`, if `parent` has an `n`-th child
          */
-        iter_nth_child(parent: (TreeIter | null), n: number): [boolean, TreeIter];
+        iter_nth_child(parent: TreeIter | null, n: number): [boolean, TreeIter];
 
         /**
          * Sets `iter` to be the parent of `child`.
@@ -119165,7 +118941,7 @@ export namespace Gtk {
          * @param iter a valid {@link Gtk.TreeIter}-struct pointing to the node     whose children have been reordered, or `null` if the depth     of `path` is 0
          * @param new_order an array of integers     mapping the current position of each child to its old     position before the re-ordering,     i.e. `new_order``[newpos] = oldpos`
          */
-        rows_reordered(path: TreePath, iter: (TreeIter | null), new_order: number[]): void;
+        rows_reordered(path: TreePath, iter: TreeIter | null, new_order: number[]): void;
 
         /**
          * Lets the tree unref the node.
@@ -119243,7 +119019,7 @@ export namespace Gtk {
          * @param parent the {@link Gtk.TreeIter}-struct, or `null`
          * @virtual
          */
-        vfunc_iter_children(parent: (TreeIter | null)): [boolean, TreeIter];
+        vfunc_iter_children(parent: TreeIter | null): [boolean, TreeIter];
 
         /**
          * Returns `true` if `iter` has children, `false` otherwise.
@@ -119260,7 +119036,7 @@ export namespace Gtk {
          * @param iter the {@link Gtk.TreeIter}-struct, or `null`
          * @virtual
          */
-        vfunc_iter_n_children(iter: (TreeIter | null)): number;
+        vfunc_iter_n_children(iter: TreeIter | null): number;
 
         /**
          * Sets `iter` to point to the node following it at the current level.
@@ -119284,7 +119060,7 @@ export namespace Gtk {
          * @param n the index of the desired child
          * @virtual
          */
-        vfunc_iter_nth_child(parent: (TreeIter | null), n: number): [boolean, TreeIter];
+        vfunc_iter_nth_child(parent: TreeIter | null, n: number): [boolean, TreeIter];
 
         /**
          * Sets `iter` to be the parent of `child`.
@@ -119569,7 +119345,7 @@ export namespace Gtk {
          * @param child_path A {@link Gtk.TreePath} to convert
          * @returns A newly allocated {@link Gtk.TreePath}, or `null`
          */
-        convert_child_path_to_path(child_path: TreePath): (TreePath | null);
+        convert_child_path_to_path(child_path: TreePath): TreePath | null;
 
         /**
          * Sets `child_iter` to point to the row pointed to by `sorted_iter`.
@@ -119586,7 +119362,7 @@ export namespace Gtk {
          * @param sorted_path A {@link Gtk.TreePath} to convert
          * @returns A newly allocated {@link Gtk.TreePath}, or `null`
          */
-        convert_path_to_child_path(sorted_path: TreePath): (TreePath | null);
+        convert_path_to_child_path(sorted_path: TreePath): TreePath | null;
 
         /**
          * Returns the model the {@link Gtk.TreeModelSort} is sorting.
@@ -119680,7 +119456,7 @@ export namespace Gtk {
          * @param root A {@link Gtk.TreePath} or `null`.
          * @returns A new {@link Gtk.TreeModel}.
          */
-        filter_new(root: (TreePath | null)): TreeModel;
+        filter_new(root: TreePath | null): TreeModel;
 
         /**
          * Calls func on each node in model in a depth-first fashion.
@@ -119780,7 +119556,7 @@ export namespace Gtk {
          * @param parent the {@link Gtk.TreeIter}-struct, or `null`
          * @returns `true`, if `iter` has been set to the first child
          */
-        iter_children(parent: (TreeIter | null)): [boolean, TreeIter];
+        iter_children(parent: TreeIter | null): [boolean, TreeIter];
 
         /**
          * Returns `true` if `iter` has children, `false` otherwise.
@@ -119797,7 +119573,7 @@ export namespace Gtk {
          * @param iter the {@link Gtk.TreeIter}-struct, or `null`
          * @returns the number of children of `iter`
          */
-        iter_n_children(iter: (TreeIter | null)): number;
+        iter_n_children(iter: TreeIter | null): number;
 
         /**
          * Sets `iter` to point to the node following it at the current level.
@@ -119821,7 +119597,7 @@ export namespace Gtk {
          * @param n the index of the desired child
          * @returns `true`, if `parent` has an `n`-th child
          */
-        iter_nth_child(parent: (TreeIter | null), n: number): [boolean, TreeIter];
+        iter_nth_child(parent: TreeIter | null, n: number): [boolean, TreeIter];
 
         /**
          * Sets `iter` to be the parent of `child`.
@@ -119915,7 +119691,7 @@ export namespace Gtk {
          * @param iter a valid {@link Gtk.TreeIter}-struct pointing to the node     whose children have been reordered, or `null` if the depth     of `path` is 0
          * @param new_order an array of integers     mapping the current position of each child to its old     position before the re-ordering,     i.e. `new_order``[newpos] = oldpos`
          */
-        rows_reordered(path: TreePath, iter: (TreeIter | null), new_order: number[]): void;
+        rows_reordered(path: TreePath, iter: TreeIter | null, new_order: number[]): void;
 
         /**
          * Lets the tree unref the node.
@@ -119993,7 +119769,7 @@ export namespace Gtk {
          * @param parent the {@link Gtk.TreeIter}-struct, or `null`
          * @virtual
          */
-        vfunc_iter_children(parent: (TreeIter | null)): [boolean, TreeIter];
+        vfunc_iter_children(parent: TreeIter | null): [boolean, TreeIter];
 
         /**
          * Returns `true` if `iter` has children, `false` otherwise.
@@ -120010,7 +119786,7 @@ export namespace Gtk {
          * @param iter the {@link Gtk.TreeIter}-struct, or `null`
          * @virtual
          */
-        vfunc_iter_n_children(iter: (TreeIter | null)): number;
+        vfunc_iter_n_children(iter: TreeIter | null): number;
 
         /**
          * Sets `iter` to point to the node following it at the current level.
@@ -120034,7 +119810,7 @@ export namespace Gtk {
          * @param n the index of the desired child
          * @virtual
          */
-        vfunc_iter_nth_child(parent: (TreeIter | null), n: number): [boolean, TreeIter];
+        vfunc_iter_nth_child(parent: TreeIter | null, n: number): [boolean, TreeIter];
 
         /**
          * Sets `iter` to be the parent of `child`.
@@ -120479,7 +120255,7 @@ export namespace Gtk {
          * if the state of the node should be left unchanged.
          * @param func The selection function. May be `null`
          */
-        set_select_function(func: (TreeSelectionFunc | null)): void;
+        set_select_function(func: TreeSelectionFunc | null): void;
 
         /**
          * Unselects all the nodes.
@@ -120510,13 +120286,10 @@ export namespace Gtk {
 
     namespace TreeStore {
         // Signal signatures
-        interface SignalSignatures extends GObject.Object.SignalSignatures {
-        }
+        interface SignalSignatures extends GObject.Object.SignalSignatures {}
 
         // Constructor properties interface
-        interface ConstructorProps extends GObject.Object.ConstructorProps, Buildable.ConstructorProps, TreeDragDest.ConstructorProps, TreeDragSource.ConstructorProps, TreeModel.ConstructorProps, TreeSortable.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GObject.Object.ConstructorProps, Buildable.ConstructorProps, TreeDragDest.ConstructorProps, TreeDragSource.ConstructorProps, TreeModel.ConstructorProps, TreeSortable.ConstructorProps {}
     }
 
     /**
@@ -120591,7 +120364,7 @@ export namespace Gtk {
          * `gtk_tree_store_set()` or `gtk_tree_store_set_value()`.
          * @param parent A valid {@link Gtk.TreeIter}, or `null`
          */
-        append(parent: (TreeIter | null)): TreeIter;
+        append(parent: TreeIter | null): TreeIter;
 
         /**
          * Removes all rows from `tree_store`
@@ -120609,7 +120382,7 @@ export namespace Gtk {
          * @param parent A valid {@link Gtk.TreeIter}, or `null`
          * @param position position to insert the new row, or -1 for last
          */
-        insert(parent: (TreeIter | null), position: number): TreeIter;
+        insert(parent: TreeIter | null, position: number): TreeIter;
 
         /**
          * Inserts a new row after `sibling`.  If `sibling` is `null`, then the row will be
@@ -120624,7 +120397,7 @@ export namespace Gtk {
          * @param parent A valid {@link Gtk.TreeIter}, or `null`
          * @param sibling A valid {@link Gtk.TreeIter}, or `null`
          */
-        insert_after(parent: (TreeIter | null), sibling: (TreeIter | null)): TreeIter;
+        insert_after(parent: TreeIter | null, sibling: TreeIter | null): TreeIter;
 
         /**
          * Inserts a new row before `sibling`.  If `sibling` is `null`, then the row will
@@ -120639,7 +120412,7 @@ export namespace Gtk {
          * @param parent A valid {@link Gtk.TreeIter}, or `null`
          * @param sibling A valid {@link Gtk.TreeIter}, or `null`
          */
-        insert_before(parent: (TreeIter | null), sibling: (TreeIter | null)): TreeIter;
+        insert_before(parent: TreeIter | null, sibling: TreeIter | null): TreeIter;
 
         /**
          * A variant of `gtk_tree_store_insert_with_values()` which takes
@@ -120650,7 +120423,7 @@ export namespace Gtk {
          * @param columns an array of column numbers
          * @param values an array of GValues
          */
-        insert_with_values(parent: (TreeIter | null), position: number, columns: number[], values: (GObject.Value | any)[]): TreeIter | null;
+        insert_with_values(parent: TreeIter | null, position: number, columns: number[], values: (GObject.Value | any)[]): TreeIter | null;
 
         /**
          * Returns `true` if `iter` is an ancestor of `descendant`.  That is, `iter` is the
@@ -120687,7 +120460,7 @@ export namespace Gtk {
          * @param iter A {@link Gtk.TreeIter}.
          * @param position A {@link Gtk.TreeIter}.
          */
-        move_after(iter: TreeIter, position: (TreeIter | null)): void;
+        move_after(iter: TreeIter, position: TreeIter | null): void;
 
         /**
          * Moves `iter` in `tree_store` to the position before `position`. `iter` and
@@ -120697,7 +120470,7 @@ export namespace Gtk {
          * @param iter A {@link Gtk.TreeIter}.
          * @param position A {@link Gtk.TreeIter} or `null`.
          */
-        move_before(iter: TreeIter, position: (TreeIter | null)): void;
+        move_before(iter: TreeIter, position: TreeIter | null): void;
 
         /**
          * Prepends a new row to `tree_store`.  If `parent` is non-`null`, then it will prepend
@@ -120707,7 +120480,7 @@ export namespace Gtk {
          * call `gtk_tree_store_set()` or `gtk_tree_store_set_value()`.
          * @param parent A valid {@link Gtk.TreeIter}, or `null`
          */
-        prepend(parent: (TreeIter | null)): TreeIter;
+        prepend(parent: TreeIter | null): TreeIter;
 
         /**
          * Removes `iter` from `tree_store`.  After being removed, `iter` is set to the
@@ -120735,7 +120508,7 @@ export namespace Gtk {
          * @param column column number to modify
          * @param value new value for the cell
          */
-        set_value(iter: TreeIter, column: number, value: (GObject.Value | any)): void;
+        set_value(iter: TreeIter, column: number, value: GObject.Value | any): void;
 
         /**
          * A variant of `gtk_tree_store_set_valist()` which takes
@@ -120769,7 +120542,7 @@ export namespace Gtk {
          * @param child child to add
          * @param type kind of child or `null`
          */
-        add_child(builder: Builder, child: GObject.Object, type: (string | null)): void;
+        add_child(builder: Builder, child: GObject.Object, type: string | null): void;
 
         /**
          * Constructs a child of `buildable` with the name `name`.
@@ -120790,7 +120563,7 @@ export namespace Gtk {
          * @param tagname the name of the tag
          * @param data user data created in custom_tag_start
          */
-        custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
+        custom_finished(builder: Builder, child: GObject.Object | null, tagname: string, data: null): void;
 
         /**
          * This is called at the end of each custom element handled by
@@ -120800,7 +120573,7 @@ export namespace Gtk {
          * @param tagname name of tag
          * @param data user data that will be passed in to parser functions
          */
-        custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
+        custom_tag_end(builder: Builder, child: GObject.Object | null, tagname: string, data: null): void;
 
         /**
          * This is called for each unknown element under `<child>`.
@@ -120809,7 +120582,7 @@ export namespace Gtk {
          * @param tagname name of tag
          * @returns `true` if a object has a custom implementation, `false`          if it doesn't.
          */
-        custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, GLib.MarkupParser, null];
+        custom_tag_start(builder: Builder, child: GObject.Object | null, tagname: string): [boolean, GLib.MarkupParser, null];
 
         /**
          * Get the internal child called `childname` of the `buildable` object.
@@ -120845,7 +120618,7 @@ export namespace Gtk {
          * @param name name of property
          * @param value value of property
          */
-        set_buildable_property(builder: Builder, name: string, value: (GObject.Value | any)): void;
+        set_buildable_property(builder: Builder, name: string, value: GObject.Value | any): void;
 
         /**
          * Sets the name of the `buildable` object.
@@ -120861,7 +120634,7 @@ export namespace Gtk {
          * @param type kind of child or `null`
          * @virtual
          */
-        vfunc_add_child(builder: Builder, child: GObject.Object, type: (string | null)): void;
+        vfunc_add_child(builder: Builder, child: GObject.Object, type: string | null): void;
 
         /**
          * Constructs a child of `buildable` with the name `name`.
@@ -120883,7 +120656,7 @@ export namespace Gtk {
          * @param data user data created in custom_tag_start
          * @virtual
          */
-        vfunc_custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
+        vfunc_custom_finished(builder: Builder, child: GObject.Object | null, tagname: string, data: null): void;
 
         /**
          * This is called at the end of each custom element handled by
@@ -120894,7 +120667,7 @@ export namespace Gtk {
          * @param data user data that will be passed in to parser functions
          * @virtual
          */
-        vfunc_custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
+        vfunc_custom_tag_end(builder: Builder, child: GObject.Object | null, tagname: string, data: null): void;
 
         /**
          * This is called for each unknown element under `<child>`.
@@ -120903,7 +120676,7 @@ export namespace Gtk {
          * @param tagname name of tag
          * @virtual
          */
-        vfunc_custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, GLib.MarkupParser, never];
+        vfunc_custom_tag_start(builder: Builder, child: GObject.Object | null, tagname: string): [boolean, GLib.MarkupParser, never];
 
         /**
          * Get the internal child called `childname` of the `buildable` object.
@@ -121068,7 +120841,7 @@ export namespace Gtk {
          * @param root A {@link Gtk.TreePath} or `null`.
          * @returns A new {@link Gtk.TreeModel}.
          */
-        filter_new(root: (TreePath | null)): TreeModel;
+        filter_new(root: TreePath | null): TreeModel;
 
         /**
          * Calls func on each node in model in a depth-first fashion.
@@ -121168,7 +120941,7 @@ export namespace Gtk {
          * @param parent the {@link Gtk.TreeIter}-struct, or `null`
          * @returns `true`, if `iter` has been set to the first child
          */
-        iter_children(parent: (TreeIter | null)): [boolean, TreeIter];
+        iter_children(parent: TreeIter | null): [boolean, TreeIter];
 
         /**
          * Returns `true` if `iter` has children, `false` otherwise.
@@ -121185,7 +120958,7 @@ export namespace Gtk {
          * @param iter the {@link Gtk.TreeIter}-struct, or `null`
          * @returns the number of children of `iter`
          */
-        iter_n_children(iter: (TreeIter | null)): number;
+        iter_n_children(iter: TreeIter | null): number;
 
         /**
          * Sets `iter` to point to the node following it at the current level.
@@ -121209,7 +120982,7 @@ export namespace Gtk {
          * @param n the index of the desired child
          * @returns `true`, if `parent` has an `n`-th child
          */
-        iter_nth_child(parent: (TreeIter | null), n: number): [boolean, TreeIter];
+        iter_nth_child(parent: TreeIter | null, n: number): [boolean, TreeIter];
 
         /**
          * Sets `iter` to be the parent of `child`.
@@ -121303,7 +121076,7 @@ export namespace Gtk {
          * @param iter a valid {@link Gtk.TreeIter}-struct pointing to the node     whose children have been reordered, or `null` if the depth     of `path` is 0
          * @param new_order an array of integers     mapping the current position of each child to its old     position before the re-ordering,     i.e. `new_order``[newpos] = oldpos`
          */
-        rows_reordered(path: TreePath, iter: (TreeIter | null), new_order: number[]): void;
+        rows_reordered(path: TreePath, iter: TreeIter | null, new_order: number[]): void;
 
         /**
          * Lets the tree unref the node.
@@ -121381,7 +121154,7 @@ export namespace Gtk {
          * @param parent the {@link Gtk.TreeIter}-struct, or `null`
          * @virtual
          */
-        vfunc_iter_children(parent: (TreeIter | null)): [boolean, TreeIter];
+        vfunc_iter_children(parent: TreeIter | null): [boolean, TreeIter];
 
         /**
          * Returns `true` if `iter` has children, `false` otherwise.
@@ -121398,7 +121171,7 @@ export namespace Gtk {
          * @param iter the {@link Gtk.TreeIter}-struct, or `null`
          * @virtual
          */
-        vfunc_iter_n_children(iter: (TreeIter | null)): number;
+        vfunc_iter_n_children(iter: TreeIter | null): number;
 
         /**
          * Sets `iter` to point to the node following it at the current level.
@@ -121422,7 +121195,7 @@ export namespace Gtk {
          * @param n the index of the desired child
          * @virtual
          */
-        vfunc_iter_nth_child(parent: (TreeIter | null), n: number): [boolean, TreeIter];
+        vfunc_iter_nth_child(parent: TreeIter | null, n: number): [boolean, TreeIter];
 
         /**
          * Sets `iter` to be the parent of `child`.
@@ -121672,7 +121445,7 @@ export namespace Gtk {
              * @action
              * @run-last
              */
-            "expand-collapse-cursor-row": (arg0: boolean, arg1: boolean, arg2: boolean) => (boolean | void);
+            "expand-collapse-cursor-row": (arg0: boolean, arg1: boolean, arg2: boolean) => boolean | void;
             /**
              * The {@link Gtk.TreeView.SignalSignatures.move_cursor | Gtk.TreeView::move-cursor} signal is a [keybinding
              * signal][GtkBindingSignal] which gets emitted when the user
@@ -121687,7 +121460,7 @@ export namespace Gtk {
              * @action
              * @run-last
              */
-            "move-cursor": (arg0: MovementStep, arg1: number) => (boolean | void);
+            "move-cursor": (arg0: MovementStep, arg1: number) => boolean | void;
             /**
              * The "row-activated" signal is emitted when the method
              * `gtk_tree_view_row_activated()` is called, when the user double
@@ -121722,51 +121495,51 @@ export namespace Gtk {
              * @action
              * @run-last
              */
-            "select-all": () => (boolean | void);
+            "select-all": () => boolean | void;
             /**
              * @signal
              * @action
              * @run-last
              */
-            "select-cursor-parent": () => (boolean | void);
+            "select-cursor-parent": () => boolean | void;
             /**
              * @signal
              * @action
              * @run-last
              */
-            "select-cursor-row": (arg0: boolean) => (boolean | void);
+            "select-cursor-row": (arg0: boolean) => boolean | void;
             /**
              * @signal
              * @action
              * @run-last
              */
-            "start-interactive-search": () => (boolean | void);
+            "start-interactive-search": () => boolean | void;
             /**
              * The given row is about to be collapsed (hide its children nodes). Use this
              * signal if you need to control the collapsibility of individual rows.
              * @signal
              * @run-last
              */
-            "test-collapse-row": (arg0: TreeIter, arg1: TreePath) => (boolean | void);
+            "test-collapse-row": (arg0: TreeIter, arg1: TreePath) => boolean | void;
             /**
              * The given row is about to be expanded (show its children nodes). Use this
              * signal if you need to control the expandability of individual rows.
              * @signal
              * @run-last
              */
-            "test-expand-row": (arg0: TreeIter, arg1: TreePath) => (boolean | void);
+            "test-expand-row": (arg0: TreeIter, arg1: TreePath) => boolean | void;
             /**
              * @signal
              * @action
              * @run-last
              */
-            "toggle-cursor-row": () => (boolean | void);
+            "toggle-cursor-row": () => boolean | void;
             /**
              * @signal
              * @action
              * @run-last
              */
-            "unselect-all": () => (boolean | void);
+            "unselect-all": () => boolean | void;
             "notify::activate-on-single-click": (pspec: GObject.ParamSpec) => void;
             "notify::enable-grid-lines": (pspec: GObject.ParamSpec) => void;
             "notify::enable-search": (pspec: GObject.ParamSpec) => void;
@@ -121857,7 +121630,7 @@ export namespace Gtk {
             hoverSelection: boolean;
             level_indentation: number;
             levelIndentation: number;
-            model: (TreeModel | null);
+            model: TreeModel | null;
             reorderable: boolean;
             rubber_banding: boolean;
             rubberBanding: boolean;
@@ -122135,8 +121908,8 @@ export namespace Gtk {
         get levelIndentation(): number;
         set levelIndentation(val: number);
 
-        get model(): (TreeModel | null);
-        set model(val: (TreeModel | null));
+        get model(): TreeModel | null;
+        set model(val: TreeModel | null);
 
         /**
          * @default false
@@ -122476,7 +122249,7 @@ export namespace Gtk {
          * @param path a {@link Gtk.TreePath} for the row, or `null` to get only horizontal coordinates
          * @param column a {@link Gtk.TreeViewColumn} for the column, or `null` to get only vertical coordiantes
          */
-        get_background_area(path: (TreePath | null), column: (TreeViewColumn | null)): Gdk.Rectangle;
+        get_background_area(path: TreePath | null, column: TreeViewColumn | null): Gdk.Rectangle;
 
         /**
          * Returns the window that `tree_view` renders to.
@@ -122484,7 +122257,7 @@ export namespace Gtk {
          * to confirm that the event on `tree_view` is on the right window.
          * @returns A {@link Gdk.Window}, or `null` when `tree_view` hasn’t been realized yet.
          */
-        get_bin_window(): (Gdk.Window | null);
+        get_bin_window(): Gdk.Window | null;
 
         /**
          * Fills the bounding rectangle in bin_window coordinates for the cell at the
@@ -122499,14 +122272,14 @@ export namespace Gtk {
          * @param path a {@link Gtk.TreePath} for the row, or `null` to get only horizontal coordinates
          * @param column a {@link Gtk.TreeViewColumn} for the column, or `null` to get only vertical coordinates
          */
-        get_cell_area(path: (TreePath | null), column: (TreeViewColumn | null)): Gdk.Rectangle;
+        get_cell_area(path: TreePath | null, column: TreeViewColumn | null): Gdk.Rectangle;
 
         /**
          * Gets the {@link Gtk.TreeViewColumn} at the given position in the `tree_view`.
          * @param n The position of the column, counting from 0.
          * @returns The {@link Gtk.TreeViewColumn}, or `null` if the position is outside the range of columns.
          */
-        get_column(n: number): (TreeViewColumn | null);
+        get_column(n: number): TreeViewColumn | null;
 
         /**
          * Returns a {@link GLib.List} of all the {@link Gtk.TreeViewColumn} s currently in `tree_view`.
@@ -122615,7 +122388,7 @@ export namespace Gtk {
          * model is unset.
          * @returns A {@link Gtk.TreeModel}, or `null` if none is currently being used.
          */
-        get_model(): (TreeModel | null);
+        get_model(): TreeModel | null;
 
         /**
          * Queries the number of columns in the given `tree_view`.
@@ -122813,7 +122586,7 @@ export namespace Gtk {
          * @param column The {@link Gtk.TreeViewColumn} to be moved.
          * @param base_column The {@link Gtk.TreeViewColumn} to be moved relative to, or `null`.
          */
-        move_column_after(column: TreeViewColumn, base_column: (TreeViewColumn | null)): void;
+        move_column_after(column: TreeViewColumn, base_column: TreeViewColumn | null): void;
 
         /**
          * Removes `column` from `tree_view`.
@@ -122859,7 +122632,7 @@ export namespace Gtk {
          * @param row_align The vertical alignment of the row specified by `path`.
          * @param col_align The horizontal alignment of the column specified by `column`.
          */
-        scroll_to_cell(path: (TreePath | null), column: (TreeViewColumn | null), use_align: boolean, row_align: number, col_align: number): void;
+        scroll_to_cell(path: TreePath | null, column: TreeViewColumn | null, use_align: boolean, row_align: number, col_align: number): void;
 
         /**
          * Scrolls the tree view such that the top-left corner of the visible
@@ -122893,7 +122666,7 @@ export namespace Gtk {
          * dropped everywhere.
          * @param func A function to determine which columns are reorderable, or `null`.
          */
-        set_column_drag_function(func: (TreeViewColumnDropFunc | null)): void;
+        set_column_drag_function(func: TreeViewColumnDropFunc | null): void;
 
         /**
          * Sets the current keyboard focus to be at `path`, and selects it.  This is
@@ -122911,7 +122684,7 @@ export namespace Gtk {
          * @param focus_column A {@link Gtk.TreeViewColumn}, or `null`
          * @param start_editing `true` if the specified cell should start being edited.
          */
-        set_cursor(path: TreePath, focus_column: (TreeViewColumn | null), start_editing: boolean): void;
+        set_cursor(path: TreePath, focus_column: TreeViewColumn | null, start_editing: boolean): void;
 
         /**
          * Sets the current keyboard focus to be at `path`, and selects it.  This is
@@ -122933,7 +122706,7 @@ export namespace Gtk {
          * @param focus_cell A {@link Gtk.CellRenderer}, or `null`
          * @param start_editing `true` if the specified cell should start being edited.
          */
-        set_cursor_on_cell(path: TreePath, focus_column: (TreeViewColumn | null), focus_cell: (CellRenderer | null), start_editing: boolean): void;
+        set_cursor_on_cell(path: TreePath, focus_column: TreeViewColumn | null, focus_cell: CellRenderer | null, start_editing: boolean): void;
 
         /**
          * This function should almost never be used.  It is meant for private use by
@@ -122941,7 +122714,7 @@ export namespace Gtk {
          * user collapses a row, or a row is deleted.
          * @param func Function to be called when a view row is destroyed, or `null`
          */
-        set_destroy_count_func(func: (TreeDestroyCountFunc | null)): void;
+        set_destroy_count_func(func: TreeDestroyCountFunc | null): void;
 
         /**
          * Sets the row that is highlighted for feedback.
@@ -122949,7 +122722,7 @@ export namespace Gtk {
          * @param path The path of the row to highlight, or `null`
          * @param pos Specifies whether to drop before, after or into the row
          */
-        set_drag_dest_row(path: (TreePath | null), pos: TreeViewDropPosition): void;
+        set_drag_dest_row(path: TreePath | null, pos: TreeViewDropPosition): void;
 
         /**
          * If `enable_search` is set, then the user can type in text to search through
@@ -122977,7 +122750,7 @@ export namespace Gtk {
          * expander column to a hidden column.
          * @param column `null`, or the column to draw the expander arrow at.
          */
-        set_expander_column(column: (TreeViewColumn | null)): void;
+        set_expander_column(column: TreeViewColumn | null): void;
 
         /**
          * Enables or disables the fixed height mode of `tree_view`.
@@ -122999,7 +122772,7 @@ export namespace Gtk {
          * Sets the {@link Gtk.Adjustment} for the current horizontal aspect.
          * @param adjustment The {@link Gtk.Adjustment} to set, or `null`
          */
-        set_hadjustment(adjustment: (Adjustment | null)): void;
+        set_hadjustment(adjustment: Adjustment | null): void;
 
         /**
          * Allow the column title buttons to be clicked.
@@ -123046,7 +122819,7 @@ export namespace Gtk {
          * then it will unset the old model.
          * @param model The model.
          */
-        set_model(model: (TreeModel | null)): void;
+        set_model(model: TreeModel | null): void;
 
         /**
          * This function is a convenience function to allow you to reorder
@@ -123073,7 +122846,7 @@ export namespace Gtk {
          * function is `null`, no separators are drawn. This is the default value.
          * @param func a {@link Gtk.TreeViewRowSeparatorFunc}
          */
-        set_row_separator_func(func: (TreeViewRowSeparatorFunc | null)): void;
+        set_row_separator_func(func: TreeViewRowSeparatorFunc | null): void;
 
         /**
          * Enables or disables rubber banding in `tree_view`.  If the selection mode
@@ -123125,7 +122898,7 @@ export namespace Gtk {
          * entry again.
          * @param entry the entry the interactive search code of `tree_view` should use or `null`
          */
-        set_search_entry(entry: (Entry | null)): void;
+        set_search_entry(entry: Entry | null): void;
 
         /**
          * Sets the compare function for the interactive search capabilities; note
@@ -123139,7 +122912,7 @@ export namespace Gtk {
          * Sets the function to use when positioning the search dialog.
          * @param func the function to use to position the search dialog, or `null`    to use the default search position function
          */
-        set_search_position_func(func: (TreeViewSearchPositionFunc | null)): void;
+        set_search_position_func(func: TreeViewSearchPositionFunc | null): void;
 
         /**
          * Sets whether to draw and enable expanders and indent child rows in
@@ -123170,7 +122943,7 @@ export namespace Gtk {
          * @param column a {@link Gtk.TreeViewColumn} or `null`
          * @param cell a {@link Gtk.CellRenderer} or `null`
          */
-        set_tooltip_cell(tooltip: Tooltip, path: (TreePath | null), column: (TreeViewColumn | null), cell: (CellRenderer | null)): void;
+        set_tooltip_cell(tooltip: Tooltip, path: TreePath | null, column: TreeViewColumn | null, cell: CellRenderer | null): void;
 
         /**
          * If you only plan to have simple (text-only) tooltips on full rows, you
@@ -123200,7 +122973,7 @@ export namespace Gtk {
          * Sets the {@link Gtk.Adjustment} for the current vertical aspect.
          * @param adjustment The {@link Gtk.Adjustment} to set, or `null`
          */
-        set_vadjustment(adjustment: (Adjustment | null)): void;
+        set_vadjustment(adjustment: Adjustment | null): void;
 
         /**
          * Undoes the effect of
@@ -123348,9 +123121,7 @@ export namespace Gtk {
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends ContainerAccessible.ConstructorProps, Atk.Component.ConstructorProps, Atk.Selection.ConstructorProps, Atk.Table.ConstructorProps, CellAccessibleParent.ConstructorProps {
-
-        }
+        interface ConstructorProps extends ContainerAccessible.ConstructorProps, Atk.Component.ConstructorProps, Atk.Selection.ConstructorProps, Atk.Table.ConstructorProps, CellAccessibleParent.ConstructorProps {}
     }
 
     /**
@@ -123432,7 +123203,7 @@ export namespace Gtk {
          * @param i a `gint` specifying the index in the selection set.  (e.g. the ith selection as opposed to the ith child).
          * @returns an {@link Atk.Object} representing the selected accessible, or `null` if `selection` does not implement this interface.
          */
-        ref_selection(i: number): (Atk.Object | null);
+        ref_selection(i: number): Atk.Object | null;
 
         /**
          * Removes the specified child of the object from the object's selection.
@@ -123494,7 +123265,7 @@ export namespace Gtk {
          * @param i a `gint` specifying the index in the selection set.  (e.g. the ith selection as opposed to the ith child).
          * @virtual
          */
-        vfunc_ref_selection(i: number): (Atk.Object | null);
+        vfunc_ref_selection(i: number): Atk.Object | null;
 
         /**
          * Removes the specified child of the object from the object's selection.
@@ -123533,7 +123304,7 @@ export namespace Gtk {
          * Gets the caption for the `table`.
          * @returns a AtkObject* representing the table caption, or `null` if value does not implement this interface.
          */
-        get_caption(): (Atk.Object | null);
+        get_caption(): Atk.Object | null;
 
         /**
          * Gets a `gint` representing the column at the specified `index_`.
@@ -123563,7 +123334,7 @@ export namespace Gtk {
          * @param column a `gint` representing a column in the table
          * @returns a AtkObject* representing the specified column header, or `null` if value does not implement this interface.
          */
-        get_column_header(column: number): (Atk.Object | null);
+        get_column_header(column: number): Atk.Object | null;
 
         /**
          * Gets a `gint` representing the index at the specified `row` and
@@ -123598,7 +123369,7 @@ export namespace Gtk {
          * @param row a `gint` representing a row in `table`
          * @returns a gchar* representing the row description, or `null` if value does not implement this interface.
          */
-        get_row_description(row: number): (string | null);
+        get_row_description(row: number): string | null;
 
         /**
          * Gets the number of rows occupied by the accessible object
@@ -123614,7 +123385,7 @@ export namespace Gtk {
          * @param row a `gint` representing a row in the table
          * @returns a AtkObject* representing the specified row header, or `null` if value does not implement this interface.
          */
-        get_row_header(row: number): (Atk.Object | null);
+        get_row_header(row: number): Atk.Object | null;
 
         /**
          * Gets the selected columns of the table by initializing **selected with
@@ -123763,7 +123534,7 @@ export namespace Gtk {
          * Gets the caption for the `table`.
          * @virtual
          */
-        vfunc_get_caption(): (Atk.Object | null);
+        vfunc_get_caption(): Atk.Object | null;
 
         /**
          * Gets a `gint` representing the column at the specified `index_`.
@@ -123793,7 +123564,7 @@ export namespace Gtk {
          * @param column a `gint` representing a column in the table
          * @virtual
          */
-        vfunc_get_column_header(column: number): (Atk.Object | null);
+        vfunc_get_column_header(column: number): Atk.Object | null;
 
         /**
          * Gets a `gint` representing the index at the specified `row` and
@@ -123828,7 +123599,7 @@ export namespace Gtk {
          * @param row a `gint` representing a row in `table`
          * @virtual
          */
-        vfunc_get_row_description(row: number): (string | null);
+        vfunc_get_row_description(row: number): string | null;
 
         /**
          * Gets the number of rows occupied by the accessible object
@@ -123844,7 +123615,7 @@ export namespace Gtk {
          * @param row a `gint` representing a row in the table
          * @virtual
          */
-        vfunc_get_row_header(row: number): (Atk.Object | null);
+        vfunc_get_row_header(row: number): Atk.Object | null;
 
         /**
          * Gets the selected columns of the table by initializing **selected with
@@ -124191,7 +123962,7 @@ export namespace Gtk {
             spacing: number;
             title: string;
             visible: boolean;
-            widget: (Widget | null);
+            widget: Widget | null;
             width: number;
             x_offset: number;
             xOffset: number;
@@ -124361,8 +124132,8 @@ export namespace Gtk {
         get visible(): boolean;
         set visible(val: boolean);
 
-        get widget(): (Widget | null);
-        set widget(val: (Widget | null));
+        get widget(): Widget | null;
+        set widget(val: Widget | null);
 
         /**
          * @read-only
@@ -124449,7 +124220,7 @@ export namespace Gtk {
          * primarily by the {@link Gtk.TreeView}.
          * @param cell_area The area a cell in the column will be allocated, or `null`
          */
-        cell_get_size(cell_area: (Gdk.Rectangle | null)): [number, number, number, number];
+        cell_get_size(cell_area: Gdk.Rectangle | null): [number, number, number, number];
 
         /**
          * Returns `true` if any of the cells packed into the `tree_column` are visible.
@@ -124598,7 +124369,7 @@ export namespace Gtk {
          * returned.
          * @returns The tree view wherein `column` has     been inserted if any, `null` otherwise.
          */
-        get_tree_view(): (Widget | null);
+        get_tree_view(): Widget | null;
 
         /**
          * Returns `true` if `tree_column` is visible.
@@ -124611,7 +124382,7 @@ export namespace Gtk {
          * If a custom widget has not been set then `null` is returned.
          * @returns The {@link Gtk.Widget} in the column     header, or `null`
          */
-        get_widget(): (Widget | null);
+        get_widget(): Widget | null;
 
         /**
          * Returns the current size of `tree_column` in pixels.
@@ -124666,7 +124437,7 @@ export namespace Gtk {
          * @param cell_renderer A {@link Gtk.CellRenderer}
          * @param func The {@link Gtk.TreeCellDataFunc} to use.
          */
-        set_cell_data_func(cell_renderer: CellRenderer, func: (TreeCellDataFunc | null)): void;
+        set_cell_data_func(cell_renderer: CellRenderer, func: TreeCellDataFunc | null): void;
 
         /**
          * @param args 
@@ -124804,7 +124575,7 @@ export namespace Gtk {
          * header button is set with a {@link Gtk.Label} set to the title of `tree_column`.
          * @param widget A child {@link Gtk.Widget}, or `null`.
          */
-        set_widget(widget: (Widget | null)): void;
+        set_widget(widget: Widget | null): void;
 
         /**
          * Adds a child to `buildable`. `type` is an optional string
@@ -124813,7 +124584,7 @@ export namespace Gtk {
          * @param child child to add
          * @param type kind of child or `null`
          */
-        add_child(builder: Builder, child: GObject.Object, type: (string | null)): void;
+        add_child(builder: Builder, child: GObject.Object, type: string | null): void;
 
         /**
          * Constructs a child of `buildable` with the name `name`.
@@ -124834,7 +124605,7 @@ export namespace Gtk {
          * @param tagname the name of the tag
          * @param data user data created in custom_tag_start
          */
-        custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
+        custom_finished(builder: Builder, child: GObject.Object | null, tagname: string, data: null): void;
 
         /**
          * This is called at the end of each custom element handled by
@@ -124844,7 +124615,7 @@ export namespace Gtk {
          * @param tagname name of tag
          * @param data user data that will be passed in to parser functions
          */
-        custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
+        custom_tag_end(builder: Builder, child: GObject.Object | null, tagname: string, data: null): void;
 
         /**
          * This is called for each unknown element under `<child>`.
@@ -124853,7 +124624,7 @@ export namespace Gtk {
          * @param tagname name of tag
          * @returns `true` if a object has a custom implementation, `false`          if it doesn't.
          */
-        custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, GLib.MarkupParser, null];
+        custom_tag_start(builder: Builder, child: GObject.Object | null, tagname: string): [boolean, GLib.MarkupParser, null];
 
         /**
          * Get the internal child called `childname` of the `buildable` object.
@@ -124889,7 +124660,7 @@ export namespace Gtk {
          * @param name name of property
          * @param value value of property
          */
-        set_buildable_property(builder: Builder, name: string, value: (GObject.Value | any)): void;
+        set_buildable_property(builder: Builder, name: string, value: GObject.Value | any): void;
 
         /**
          * Sets the name of the `buildable` object.
@@ -124905,7 +124676,7 @@ export namespace Gtk {
          * @param type kind of child or `null`
          * @virtual
          */
-        vfunc_add_child(builder: Builder, child: GObject.Object, type: (string | null)): void;
+        vfunc_add_child(builder: Builder, child: GObject.Object, type: string | null): void;
 
         /**
          * Constructs a child of `buildable` with the name `name`.
@@ -124927,7 +124698,7 @@ export namespace Gtk {
          * @param data user data created in custom_tag_start
          * @virtual
          */
-        vfunc_custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
+        vfunc_custom_finished(builder: Builder, child: GObject.Object | null, tagname: string, data: null): void;
 
         /**
          * This is called at the end of each custom element handled by
@@ -124938,7 +124709,7 @@ export namespace Gtk {
          * @param data user data that will be passed in to parser functions
          * @virtual
          */
-        vfunc_custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
+        vfunc_custom_tag_end(builder: Builder, child: GObject.Object | null, tagname: string, data: null): void;
 
         /**
          * This is called for each unknown element under `<child>`.
@@ -124947,7 +124718,7 @@ export namespace Gtk {
          * @param tagname name of tag
          * @virtual
          */
-        vfunc_custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, GLib.MarkupParser, never];
+        vfunc_custom_tag_start(builder: Builder, child: GObject.Object | null, tagname: string): [boolean, GLib.MarkupParser, never];
 
         /**
          * Get the internal child called `childname` of the `buildable` object.
@@ -125000,7 +124771,7 @@ export namespace Gtk {
          * is used by `cell_layout`.
          * @returns the cell area used by `cell_layout`, or `null` in case no cell area is used.
          */
-        get_area(): (CellArea | null);
+        get_area(): CellArea | null;
 
         /**
          * Returns the cell renderers which have been added to `cell_layout`.
@@ -125053,7 +124824,7 @@ export namespace Gtk {
          * is used by `cell_layout`.
          * @virtual
          */
-        vfunc_get_area(): (CellArea | null);
+        vfunc_get_area(): CellArea | null;
 
         /**
          * Returns the cell renderers which have been added to `cell_layout`.
@@ -125108,7 +124879,7 @@ export namespace Gtk {
          * @param func the {@link Gtk.CellLayoutDataFunc} to use, or `null`
          * @virtual
          */
-        vfunc_set_cell_data_func(cell: CellRenderer, func: (CellLayoutDataFunc | null)): void;
+        vfunc_set_cell_data_func(cell: CellRenderer, func: CellLayoutDataFunc | null): void;
     }
 
 
@@ -125575,7 +125346,7 @@ export namespace Gtk {
          * @param type the type of UI element to add.
          * @param top if `true`, the UI element is added before its siblings, otherwise it   is added after its siblings.
          */
-        add_ui(merge_id: number, path: string, name: string, action: (string | null), type: UIManagerItemType, top: boolean): void;
+        add_ui(merge_id: number, path: string, name: string, action: string | null, type: UIManagerItemType, top: boolean): void;
 
         /**
          * Parses a file containing a [UI definition][XML-UI] and
@@ -125601,7 +125372,7 @@ export namespace Gtk {
          * @param length the length of `buffer` (may be -1 if `buffer` is nul-terminated)
          * @returns The merge id for the merged UI. The merge id can be used   to unmerge the UI with `gtk_ui_manager_remove_ui()`. If an error occurred,   the return value is 0.
          */
-        add_ui_from_string(buffer: string, length: (bigint | number)): number;
+        add_ui_from_string(buffer: string, length: bigint | number): number;
 
         /**
          * Makes sure that all pending updates to the UI have been completed.
@@ -125734,7 +125505,7 @@ export namespace Gtk {
          * @param child child to add
          * @param type kind of child or `null`
          */
-        add_child(builder: Builder, child: GObject.Object, type: (string | null)): void;
+        add_child(builder: Builder, child: GObject.Object, type: string | null): void;
 
         /**
          * Constructs a child of `buildable` with the name `name`.
@@ -125755,7 +125526,7 @@ export namespace Gtk {
          * @param tagname the name of the tag
          * @param data user data created in custom_tag_start
          */
-        custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
+        custom_finished(builder: Builder, child: GObject.Object | null, tagname: string, data: null): void;
 
         /**
          * This is called at the end of each custom element handled by
@@ -125765,7 +125536,7 @@ export namespace Gtk {
          * @param tagname name of tag
          * @param data user data that will be passed in to parser functions
          */
-        custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
+        custom_tag_end(builder: Builder, child: GObject.Object | null, tagname: string, data: null): void;
 
         /**
          * This is called for each unknown element under `<child>`.
@@ -125774,7 +125545,7 @@ export namespace Gtk {
          * @param tagname name of tag
          * @returns `true` if a object has a custom implementation, `false`          if it doesn't.
          */
-        custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, GLib.MarkupParser, null];
+        custom_tag_start(builder: Builder, child: GObject.Object | null, tagname: string): [boolean, GLib.MarkupParser, null];
 
         /**
          * Get the internal child called `childname` of the `buildable` object.
@@ -125810,7 +125581,7 @@ export namespace Gtk {
          * @param name name of property
          * @param value value of property
          */
-        set_buildable_property(builder: Builder, name: string, value: (GObject.Value | any)): void;
+        set_buildable_property(builder: Builder, name: string, value: GObject.Value | any): void;
 
         /**
          * Sets the name of the `buildable` object.
@@ -125826,7 +125597,7 @@ export namespace Gtk {
          * @param type kind of child or `null`
          * @virtual
          */
-        vfunc_add_child(builder: Builder, child: GObject.Object, type: (string | null)): void;
+        vfunc_add_child(builder: Builder, child: GObject.Object, type: string | null): void;
 
         /**
          * Constructs a child of `buildable` with the name `name`.
@@ -125848,7 +125619,7 @@ export namespace Gtk {
          * @param data user data created in custom_tag_start
          * @virtual
          */
-        vfunc_custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
+        vfunc_custom_finished(builder: Builder, child: GObject.Object | null, tagname: string, data: null): void;
 
         /**
          * This is called at the end of each custom element handled by
@@ -125859,7 +125630,7 @@ export namespace Gtk {
          * @param data user data that will be passed in to parser functions
          * @virtual
          */
-        vfunc_custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
+        vfunc_custom_tag_end(builder: Builder, child: GObject.Object | null, tagname: string, data: null): void;
 
         /**
          * This is called for each unknown element under `<child>`.
@@ -125868,7 +125639,7 @@ export namespace Gtk {
          * @param tagname name of tag
          * @virtual
          */
-        vfunc_custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, GLib.MarkupParser, never];
+        vfunc_custom_tag_start(builder: Builder, child: GObject.Object | null, tagname: string): [boolean, GLib.MarkupParser, never];
 
         /**
          * Get the internal child called `childname` of the `buildable` object.
@@ -125969,9 +125740,7 @@ export namespace Gtk {
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends Box.ConstructorProps, Atk.ImplementorIface.ConstructorProps, Buildable.ConstructorProps, Orientable.ConstructorProps {
-
-        }
+        interface ConstructorProps extends Box.ConstructorProps, Atk.ImplementorIface.ConstructorProps, Buildable.ConstructorProps, Orientable.ConstructorProps {}
     }
 
     /**
@@ -126117,9 +125886,7 @@ export namespace Gtk {
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends ButtonBox.ConstructorProps, Atk.ImplementorIface.ConstructorProps, Buildable.ConstructorProps, Orientable.ConstructorProps {
-
-        }
+        interface ConstructorProps extends ButtonBox.ConstructorProps, Atk.ImplementorIface.ConstructorProps, Buildable.ConstructorProps, Orientable.ConstructorProps {}
     }
 
     /**
@@ -126216,9 +125983,7 @@ export namespace Gtk {
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends Paned.ConstructorProps, Atk.ImplementorIface.ConstructorProps, Buildable.ConstructorProps, Orientable.ConstructorProps {
-
-        }
+        interface ConstructorProps extends Paned.ConstructorProps, Atk.ImplementorIface.ConstructorProps, Buildable.ConstructorProps, Orientable.ConstructorProps {}
     }
 
     /**
@@ -126345,9 +126110,7 @@ export namespace Gtk {
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends Scale.ConstructorProps, Atk.ImplementorIface.ConstructorProps, Buildable.ConstructorProps, Orientable.ConstructorProps {
-
-        }
+        interface ConstructorProps extends Scale.ConstructorProps, Atk.ImplementorIface.ConstructorProps, Buildable.ConstructorProps, Orientable.ConstructorProps {}
     }
 
     /**
@@ -126458,9 +126221,7 @@ export namespace Gtk {
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends Scrollbar.ConstructorProps, Atk.ImplementorIface.ConstructorProps, Buildable.ConstructorProps, Orientable.ConstructorProps {
-
-        }
+        interface ConstructorProps extends Scrollbar.ConstructorProps, Atk.ImplementorIface.ConstructorProps, Buildable.ConstructorProps, Orientable.ConstructorProps {}
     }
 
     /**
@@ -126494,7 +126255,7 @@ export namespace Gtk {
 
         _init(...args: any[]): void;
 
-        static ["new"](adjustment: (Adjustment | null)): VScrollbar;
+        static ["new"](adjustment: Adjustment | null): VScrollbar;
 
         // Conflicted with Gtk.Scrollbar.new
         static ["new"](...args: never[]): any;
@@ -126560,9 +126321,7 @@ export namespace Gtk {
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends Separator.ConstructorProps, Atk.ImplementorIface.ConstructorProps, Buildable.ConstructorProps, Orientable.ConstructorProps {
-
-        }
+        interface ConstructorProps extends Separator.ConstructorProps, Atk.ImplementorIface.ConstructorProps, Buildable.ConstructorProps, Orientable.ConstructorProps {}
     }
 
     /**
@@ -126745,7 +126504,7 @@ export namespace Gtk {
 
         _init(...args: any[]): void;
 
-        static ["new"](hadjustment: (Adjustment | null), vadjustment: (Adjustment | null)): Viewport;
+        static ["new"](hadjustment: Adjustment | null, vadjustment: Adjustment | null): Viewport;
 
         // Signals
         /** @signal */
@@ -126796,7 +126555,7 @@ export namespace Gtk {
          * Sets the horizontal adjustment of the viewport.
          * @param adjustment a {@link Gtk.Adjustment}.
          */
-        set_hadjustment(adjustment: (Adjustment | null)): void;
+        set_hadjustment(adjustment: Adjustment | null): void;
 
         /**
          * Sets the shadow type of the viewport.
@@ -126808,7 +126567,7 @@ export namespace Gtk {
          * Sets the vertical adjustment of the viewport.
          * @param adjustment a {@link Gtk.Adjustment}.
          */
-        set_vadjustment(adjustment: (Adjustment | null)): void;
+        set_vadjustment(adjustment: Adjustment | null): void;
 
         /**
          * Horizontal {@link Gtk.Adjustment} of the scrollable widget. This adjustment is
@@ -127123,7 +126882,7 @@ export namespace Gtk {
              * @signal
              * @run-last
              */
-            "button-press-event": (arg0: Gdk.EventButton) => (boolean | void);
+            "button-press-event": (arg0: Gdk.EventButton) => boolean | void;
             /**
              * The ::button-release-event signal will be emitted when a button
              * (typically from a mouse) is released.
@@ -127135,7 +126894,7 @@ export namespace Gtk {
              * @signal
              * @run-last
              */
-            "button-release-event": (arg0: Gdk.EventButton) => (boolean | void);
+            "button-release-event": (arg0: Gdk.EventButton) => boolean | void;
             /**
              * Determines whether an accelerator that activates the signal
              * identified by `signal_id` can currently be activated.
@@ -127145,7 +126904,7 @@ export namespace Gtk {
              * @signal
              * @run-last
              */
-            "can-activate-accel": (arg0: number) => (boolean | void);
+            "can-activate-accel": (arg0: number) => boolean | void;
             /**
              * The ::child-notify signal is emitted for each
              * [child property][child-properties]  that has
@@ -127175,7 +126934,7 @@ export namespace Gtk {
              * @signal
              * @run-last
              */
-            "configure-event": (arg0: Gdk.EventConfigure) => (boolean | void);
+            "configure-event": (arg0: Gdk.EventConfigure) => boolean | void;
             /**
              * Emitted when a redirected window belonging to `widget` gets drawn into.
              * The region/area members of the event shows what area of the redirected
@@ -127184,7 +126943,7 @@ export namespace Gtk {
              * @since 2.14
              * @run-last
              */
-            "damage-event": (arg0: Gdk.EventExpose) => (boolean | void);
+            "damage-event": (arg0: Gdk.EventExpose) => boolean | void;
             /**
              * The ::delete-event signal is emitted if a user requests that
              * a toplevel window is closed. The default handler for this signal
@@ -127194,7 +126953,7 @@ export namespace Gtk {
              * @signal
              * @run-last
              */
-            "delete-event": (arg0: Gdk.Event) => (boolean | void);
+            "delete-event": (arg0: Gdk.Event) => boolean | void;
             /**
              * Signals that all holders of a reference to the widget should release
              * the reference that they hold. May result in finalization of the widget
@@ -127217,7 +126976,7 @@ export namespace Gtk {
              * @signal
              * @run-last
              */
-            "destroy-event": (arg0: Gdk.Event) => (boolean | void);
+            "destroy-event": (arg0: Gdk.Event) => boolean | void;
             /**
              * The ::direction-changed signal is emitted when the text direction
              * of a widget changes.
@@ -127337,7 +127096,7 @@ export namespace Gtk {
              * @signal
              * @run-last
              */
-            "drag-drop": (arg0: Gdk.DragContext, arg1: number, arg2: number, arg3: number) => (boolean | void);
+            "drag-drop": (arg0: Gdk.DragContext, arg1: number, arg2: number, arg3: number) => boolean | void;
             /**
              * The ::drag-end signal is emitted on the drag source when a drag is
              * finished.  A typical reason to connect to this signal is to undo
@@ -127356,7 +127115,7 @@ export namespace Gtk {
              * @since 2.12
              * @run-last
              */
-            "drag-failed": (arg0: Gdk.DragContext, arg1: DragResult) => (boolean | void);
+            "drag-failed": (arg0: Gdk.DragContext, arg1: DragResult) => boolean | void;
             /**
              * The ::drag-leave signal is emitted on the drop site when the cursor
              * leaves the widget. A typical reason to connect to this signal is to
@@ -127463,7 +127222,7 @@ export namespace Gtk {
              * @signal
              * @run-last
              */
-            "drag-motion": (arg0: Gdk.DragContext, arg1: number, arg2: number, arg3: number) => (boolean | void);
+            "drag-motion": (arg0: Gdk.DragContext, arg1: number, arg2: number, arg3: number) => boolean | void;
             /**
              * This signal is emitted when a widget is supposed to render itself.
              * The `widget`'s top left corner must be painted at the origin of
@@ -127486,7 +127245,7 @@ export namespace Gtk {
              * @since 3.0
              * @run-last
              */
-            draw: (arg0: cairo.Context) => (boolean | void);
+            draw: (arg0: cairo.Context) => boolean | void;
             /**
              * The ::enter-notify-event will be emitted when the pointer enters
              * the `widget`'s window.
@@ -127498,7 +127257,7 @@ export namespace Gtk {
              * @signal
              * @run-last
              */
-            "enter-notify-event": (arg0: Gdk.EventCrossing) => (boolean | void);
+            "enter-notify-event": (arg0: Gdk.EventCrossing) => boolean | void;
             /**
              * The GTK+ main loop will emit three signals for each GDK event delivered
              * to a widget: one generic ::event signal, another, more specific,
@@ -127508,7 +127267,7 @@ export namespace Gtk {
              * @signal
              * @run-last
              */
-            event: (arg0: Gdk.Event) => (boolean | void);
+            event: (arg0: Gdk.Event) => boolean | void;
             /**
              * After the emission of the {@link Gtk.Widget.SignalSignatures.event | Gtk.Widget::event} signal and (optionally)
              * the second more specific signal, ::event-after will be emitted
@@ -127520,7 +127279,7 @@ export namespace Gtk {
              * @signal
              * @run-last
              */
-            focus: (arg0: DirectionType) => (boolean | void);
+            focus: (arg0: DirectionType) => boolean | void;
             /**
              * The ::focus-in-event signal will be emitted when the keyboard focus
              * enters the `widget`'s window.
@@ -127530,7 +127289,7 @@ export namespace Gtk {
              * @signal
              * @run-last
              */
-            "focus-in-event": (arg0: Gdk.EventFocus) => (boolean | void);
+            "focus-in-event": (arg0: Gdk.EventFocus) => boolean | void;
             /**
              * The ::focus-out-event signal will be emitted when the keyboard focus
              * leaves the `widget`'s window.
@@ -127540,7 +127299,7 @@ export namespace Gtk {
              * @signal
              * @run-last
              */
-            "focus-out-event": (arg0: Gdk.EventFocus) => (boolean | void);
+            "focus-out-event": (arg0: Gdk.EventFocus) => boolean | void;
             /**
              * Emitted when a pointer or keyboard grab on a window belonging
              * to `widget` gets broken.
@@ -127552,7 +127311,7 @@ export namespace Gtk {
              * @since 2.8
              * @run-last
              */
-            "grab-broken-event": (arg0: Gdk.EventGrabBroken) => (boolean | void);
+            "grab-broken-event": (arg0: Gdk.EventGrabBroken) => boolean | void;
             /**
              * @signal
              * @action
@@ -127588,7 +127347,7 @@ export namespace Gtk {
              * @signal
              * @run-last
              */
-            "hierarchy-changed": (arg0: (Widget | null)) => void;
+            "hierarchy-changed": (arg0: Widget | null) => void;
             /**
              * The ::key-press-event signal is emitted when a key is pressed. The signal
              * emission will reoccur at the key-repeat rate when the key is kept pressed.
@@ -127600,7 +127359,7 @@ export namespace Gtk {
              * @signal
              * @run-last
              */
-            "key-press-event": (arg0: Gdk.EventKey) => (boolean | void);
+            "key-press-event": (arg0: Gdk.EventKey) => boolean | void;
             /**
              * The ::key-release-event signal is emitted when a key is released.
              * 
@@ -127611,7 +127370,7 @@ export namespace Gtk {
              * @signal
              * @run-last
              */
-            "key-release-event": (arg0: Gdk.EventKey) => (boolean | void);
+            "key-release-event": (arg0: Gdk.EventKey) => boolean | void;
             /**
              * Gets emitted if keyboard navigation fails.
              * See `gtk_widget_keynav_failed()` for details.
@@ -127619,7 +127378,7 @@ export namespace Gtk {
              * @since 2.12
              * @run-last
              */
-            "keynav-failed": (arg0: DirectionType) => (boolean | void);
+            "keynav-failed": (arg0: DirectionType) => boolean | void;
             /**
              * The ::leave-notify-event will be emitted when the pointer leaves
              * the `widget`'s window.
@@ -127631,7 +127390,7 @@ export namespace Gtk {
              * @signal
              * @run-last
              */
-            "leave-notify-event": (arg0: Gdk.EventCrossing) => (boolean | void);
+            "leave-notify-event": (arg0: Gdk.EventCrossing) => boolean | void;
             /**
              * The ::map signal is emitted when `widget` is going to be mapped, that is
              * when the widget is visible (which is controlled with
@@ -127656,14 +127415,14 @@ export namespace Gtk {
              * @signal
              * @run-last
              */
-            "map-event": (arg0: Gdk.EventAny) => (boolean | void);
+            "map-event": (arg0: Gdk.EventAny) => boolean | void;
             /**
              * The default handler for this signal activates `widget` if `group_cycling`
              * is `false`, or just makes `widget` grab focus if `group_cycling` is `true`.
              * @signal
              * @run-last
              */
-            "mnemonic-activate": (arg0: boolean) => (boolean | void);
+            "mnemonic-activate": (arg0: boolean) => boolean | void;
             /**
              * The ::motion-notify-event signal is emitted when the pointer moves
              * over the widget's {@link Gdk.Window}.
@@ -127675,7 +127434,7 @@ export namespace Gtk {
              * @signal
              * @run-last
              */
-            "motion-notify-event": (arg0: Gdk.EventMotion) => (boolean | void);
+            "motion-notify-event": (arg0: Gdk.EventMotion) => boolean | void;
             /**
              * @signal
              * @action
@@ -127688,7 +127447,7 @@ export namespace Gtk {
              * @signal
              * @run-first
              */
-            "parent-set": (arg0: (Widget | null)) => void;
+            "parent-set": (arg0: Widget | null) => void;
             /**
              * This signal gets emitted whenever a widget should pop up a context
              * menu. This usually happens through the standard key binding mechanism;
@@ -127701,7 +127460,7 @@ export namespace Gtk {
              * @action
              * @run-last
              */
-            "popup-menu": () => (boolean | void);
+            "popup-menu": () => boolean | void;
             /**
              * The ::property-notify-event signal will be emitted when a property on
              * the `widget`'s window has been changed or deleted.
@@ -127711,7 +127470,7 @@ export namespace Gtk {
              * @signal
              * @run-last
              */
-            "property-notify-event": (arg0: Gdk.EventProperty) => (boolean | void);
+            "property-notify-event": (arg0: Gdk.EventProperty) => boolean | void;
             /**
              * To receive this signal the {@link Gdk.Window} associated to the widget needs
              * to enable the #GDK_PROXIMITY_IN_MASK mask.
@@ -127720,7 +127479,7 @@ export namespace Gtk {
              * @signal
              * @run-last
              */
-            "proximity-in-event": (arg0: Gdk.EventProximity) => (boolean | void);
+            "proximity-in-event": (arg0: Gdk.EventProximity) => boolean | void;
             /**
              * To receive this signal the {@link Gdk.Window} associated to the widget needs
              * to enable the #GDK_PROXIMITY_OUT_MASK mask.
@@ -127729,7 +127488,7 @@ export namespace Gtk {
              * @signal
              * @run-last
              */
-            "proximity-out-event": (arg0: Gdk.EventProximity) => (boolean | void);
+            "proximity-out-event": (arg0: Gdk.EventProximity) => boolean | void;
             /**
              * Emitted when {@link Gtk.Widget.has_tooltip} is `true` and the hover timeout
              * has expired with the cursor hovering "above" `widget`; or emitted when `widget` got
@@ -127747,7 +127506,7 @@ export namespace Gtk {
              * @since 2.12
              * @run-last
              */
-            "query-tooltip": (arg0: number, arg1: number, arg2: boolean, arg3: Tooltip) => (boolean | void);
+            "query-tooltip": (arg0: number, arg1: number, arg2: boolean, arg3: Tooltip) => boolean | void;
             /**
              * The ::realize signal is emitted when `widget` is associated with a
              * {@link Gdk.Window}, which means that `gtk_widget_realize()` has been called or the
@@ -127762,7 +127521,7 @@ export namespace Gtk {
              * @signal
              * @run-last
              */
-            "screen-changed": (arg0: (Gdk.Screen | null)) => void;
+            "screen-changed": (arg0: Gdk.Screen | null) => void;
             /**
              * The ::scroll-event signal is emitted when a button in the 4 to 7
              * range is pressed. Wheel mice are usually configured to generate
@@ -127775,14 +127534,14 @@ export namespace Gtk {
              * @signal
              * @run-last
              */
-            "scroll-event": (arg0: Gdk.EventScroll) => (boolean | void);
+            "scroll-event": (arg0: Gdk.EventScroll) => boolean | void;
             /**
              * The ::selection-clear-event signal will be emitted when the
              * the `widget`'s window has lost ownership of a selection.
              * @signal
              * @run-last
              */
-            "selection-clear-event": (arg0: Gdk.EventSelection) => (boolean | void);
+            "selection-clear-event": (arg0: Gdk.EventSelection) => boolean | void;
             /**
              * @signal
              * @run-last
@@ -127792,7 +127551,7 @@ export namespace Gtk {
              * @signal
              * @run-last
              */
-            "selection-notify-event": (arg0: Gdk.EventSelection) => (boolean | void);
+            "selection-notify-event": (arg0: Gdk.EventSelection) => boolean | void;
             /**
              * @signal
              * @run-last
@@ -127805,7 +127564,7 @@ export namespace Gtk {
              * @signal
              * @run-last
              */
-            "selection-request-event": (arg0: Gdk.EventSelection) => (boolean | void);
+            "selection-request-event": (arg0: Gdk.EventSelection) => boolean | void;
             /**
              * The ::show signal is emitted when `widget` is shown, for example with
              * `gtk_widget_show()`.
@@ -127818,7 +127577,7 @@ export namespace Gtk {
              * @action
              * @run-last
              */
-            "show-help": (arg0: WidgetHelpType) => (boolean | void);
+            "show-help": (arg0: WidgetHelpType) => boolean | void;
             /**
              * @signal
              * @run-first
@@ -127852,7 +127611,7 @@ export namespace Gtk {
              * @deprecated since 3.0: Use the {@link Gtk.Widget.SignalSignatures.style_updated | Gtk.Widget::style-updated} signal
              * @run-first
              */
-            "style-set": (arg0: (Style | null)) => void;
+            "style-set": (arg0: Style | null) => void;
             /**
              * The ::style-updated signal is a convenience signal that is emitted when the
              * {@link Gtk.StyleContext.SignalSignatures.changed | Gtk.StyleContext::changed} signal is emitted on the `widget`'s associated
@@ -127869,7 +127628,7 @@ export namespace Gtk {
              * @signal
              * @run-last
              */
-            "touch-event": (arg0: Gdk.Event) => (boolean | void);
+            "touch-event": (arg0: Gdk.Event) => boolean | void;
             /**
              * The ::unmap signal is emitted when `widget` is going to be unmapped, which
              * means that either it or any of its parents up to the toplevel widget have
@@ -127891,7 +127650,7 @@ export namespace Gtk {
              * @signal
              * @run-last
              */
-            "unmap-event": (arg0: Gdk.EventAny) => (boolean | void);
+            "unmap-event": (arg0: Gdk.EventAny) => boolean | void;
             /**
              * The ::unrealize signal is emitted when the {@link Gdk.Window} associated with
              * `widget` is destroyed, which means that `gtk_widget_unrealize()` has been
@@ -127911,7 +127670,7 @@ export namespace Gtk {
              * @deprecated since 3.12: Modern composited windowing systems with pervasive     transparency make it impossible to track the visibility of a window     reliably, so this signal can not be guaranteed to provide useful     information.
              * @run-last
              */
-            "visibility-notify-event": (arg0: Gdk.EventVisibility) => (boolean | void);
+            "visibility-notify-event": (arg0: Gdk.EventVisibility) => boolean | void;
             /**
              * The ::window-state-event will be emitted when the state of the
              * toplevel window associated to the `widget` changes.
@@ -127922,7 +127681,7 @@ export namespace Gtk {
              * @signal
              * @run-last
              */
-            "window-state-event": (arg0: Gdk.EventWindowState) => (boolean | void);
+            "window-state-event": (arg0: Gdk.EventWindowState) => boolean | void;
             "notify::app-paintable": (pspec: GObject.ParamSpec) => void;
             "notify::can-default": (pspec: GObject.ParamSpec) => void;
             "notify::can-focus": (pspec: GObject.ParamSpec) => void;
@@ -128363,17 +128122,17 @@ export namespace Gtk {
             no_show_all: boolean;
             noShowAll: boolean;
             opacity: number;
-            parent: (Container | null);
+            parent: Container | null;
             receives_default: boolean;
             receivesDefault: boolean;
             scale_factor: number;
             scaleFactor: number;
             sensitive: boolean;
             style: Style;
-            tooltip_markup: (string | null);
-            tooltipMarkup: (string | null);
-            tooltip_text: (string | null);
-            tooltipText: (string | null);
+            tooltip_markup: string | null;
+            tooltipMarkup: string | null;
+            tooltip_text: string | null;
+            tooltipText: string | null;
             valign: Align;
             vexpand: boolean;
             vexpand_set: boolean;
@@ -128381,7 +128140,7 @@ export namespace Gtk {
             visible: boolean;
             width_request: number;
             widthRequest: number;
-            window: (Gdk.Window | null);
+            window: Gdk.Window | null;
         }
     }
 
@@ -129205,8 +128964,8 @@ export namespace Gtk {
         get opacity(): number;
         set opacity(val: number);
 
-        get parent(): (Container | null);
-        set parent(val: (Container | null));
+        get parent(): Container | null;
+        set parent(val: Container | null);
 
         /**
          * @default false
@@ -129266,8 +129025,8 @@ export namespace Gtk {
          * @since 2.12
          * @default null
          */
-        get tooltip_markup(): (string | null);
-        set tooltip_markup(val: (string | null));
+        get tooltip_markup(): string | null;
+        set tooltip_markup(val: string | null);
 
         /**
          * Sets the text of tooltip to be the given string, which is marked up
@@ -129284,8 +129043,8 @@ export namespace Gtk {
          * @since 2.12
          * @default null
          */
-        get tooltipMarkup(): (string | null);
-        set tooltipMarkup(val: (string | null));
+        get tooltipMarkup(): string | null;
+        set tooltipMarkup(val: string | null);
 
         /**
          * Sets the text of tooltip to be the given string.
@@ -129302,8 +129061,8 @@ export namespace Gtk {
          * @since 2.12
          * @default null
          */
-        get tooltip_text(): (string | null);
-        set tooltip_text(val: (string | null));
+        get tooltip_text(): string | null;
+        set tooltip_text(val: string | null);
 
         /**
          * Sets the text of tooltip to be the given string.
@@ -129320,8 +129079,8 @@ export namespace Gtk {
          * @since 2.12
          * @default null
          */
-        get tooltipText(): (string | null);
-        set tooltipText(val: (string | null));
+        get tooltipText(): string | null;
+        set tooltipText(val: string | null);
 
         /**
          * How to distribute vertical space if widget gets extra space, see {@link Gtk.Align}
@@ -129378,7 +129137,7 @@ export namespace Gtk {
          * @since 2.14
          * @read-only
          */
-        get window(): (Gdk.Window | null);
+        get window(): Gdk.Window | null;
 
         /**
          * Compile-time signal type information.
@@ -129454,7 +129213,7 @@ export namespace Gtk {
          * @param internal_child Whether the child should be accessible as an “internal-child”                  when this class is used in GtkBuilder XML
          * @param struct_offset The structure offset into the composite widget’s instance public or private structure                 where the automated child pointer should be set, or 0 to not assign the pointer.
          */
-        static bind_template_child_full(name: string, internal_child: boolean, struct_offset: (bigint | number)): void;
+        static bind_template_child_full(name: string, internal_child: boolean, struct_offset: bigint | number): void;
 
         /**
          * @param property_name the name of the style property to find
@@ -129493,7 +129252,7 @@ export namespace Gtk {
         /**
          * @param template_bytes A {@link GLib.Bytes} holding the {@link Gtk.Builder} XML
          */
-        static set_template(template_bytes: (GLib.Bytes | Uint8Array)): void;
+        static set_template(template_bytes: GLib.Bytes | Uint8Array): void;
 
         /**
          * @param resource_name The name of the resource to load the template from
@@ -130516,7 +130275,7 @@ export namespace Gtk {
          * @param text text to set on the layout (can be `null`)
          * @returns the new {@link Pango.Layout}
          */
-        create_pango_layout(text: (string | null)): Pango.Layout;
+        create_pango_layout(text: string | null): Pango.Layout;
 
         /**
          * Destroys a widget.
@@ -130585,7 +130344,7 @@ export namespace Gtk {
          * @param event The event that triggered the start of the drag,    or `null` if none can be obtained.
          * @returns the context for this drag
          */
-        drag_begin(targets: TargetList, actions: Gdk.DragAction, button: number, event: (Gdk.Event | null)): Gdk.DragContext;
+        drag_begin(targets: TargetList, actions: Gdk.DragAction, button: number, event: Gdk.Event | null): Gdk.DragContext;
 
         /**
          * Initiates a drag on the source side. The function only needs to be used
@@ -130621,7 +130380,7 @@ export namespace Gtk {
          * @param y The initial y coordinate to start dragging from, in the coordinate space    of `widget`. If -1 is passed, the coordinates are retrieved from `event` or    the current pointer position
          * @returns the context for this drag
          */
-        drag_begin_with_coordinates(targets: TargetList, actions: Gdk.DragAction, button: number, event: (Gdk.Event | null), x: number, y: number): Gdk.DragContext;
+        drag_begin_with_coordinates(targets: TargetList, actions: Gdk.DragAction, button: number, event: Gdk.Event | null, x: number, y: number): Gdk.DragContext;
 
         /**
          * Checks to see if a mouse drag starting at (`start_x`, `start_y`) and ending
@@ -130674,14 +130433,14 @@ export namespace Gtk {
          * @param target_list list of droppable targets, or `null` to use    gtk_drag_dest_get_target_list (`widget`).
          * @returns first target that the source offers     and the dest can accept, or `GDK_NONE`
          */
-        drag_dest_find_target(context: Gdk.DragContext, target_list: (TargetList | null)): Gdk.Atom;
+        drag_dest_find_target(context: Gdk.DragContext, target_list: TargetList | null): Gdk.Atom;
 
         /**
          * Returns the list of targets this widget can accept from
          * drag-and-drop.
          * @returns the {@link Gtk.TargetList}, or `null` if none
          */
-        drag_dest_get_target_list(): (TargetList | null);
+        drag_dest_get_target_list(): TargetList | null;
 
         /**
          * Returns whether the widget has been configured to always
@@ -130736,7 +130495,7 @@ export namespace Gtk {
          * @param targets a pointer to an array of     `GtkTargetEntrys` indicating the drop types that this `widget` will     accept, or `null`. Later you can access the list with     `gtk_drag_dest_get_target_list()` and `gtk_drag_dest_find_target()`.
          * @param actions a bitmask of possible actions for a drop onto this `widget`.
          */
-        drag_dest_set(flags: DestDefaults, targets: (TargetEntry[] | null), actions: Gdk.DragAction): void;
+        drag_dest_set(flags: DestDefaults, targets: TargetEntry[] | null, actions: Gdk.DragAction): void;
 
         /**
          * Sets this widget as a proxy for drops to another window.
@@ -130752,7 +130511,7 @@ export namespace Gtk {
          * `gtk_drag_dest_set()`.
          * @param target_list list of droppable targets, or `null` for none
          */
-        drag_dest_set_target_list(target_list: (TargetList | null)): void;
+        drag_dest_set_target_list(target_list: TargetList | null): void;
 
         /**
          * Tells the widget to emit {@link Gtk.Widget.SignalSignatures.drag_motion | Gtk.Widget::drag-motion} and
@@ -130826,7 +130585,7 @@ export namespace Gtk {
          * drag-and-drop.
          * @returns the {@link Gtk.TargetList}, or `null` if none
          */
-        drag_source_get_target_list(): (TargetList | null);
+        drag_source_get_target_list(): TargetList | null;
 
         /**
          * Sets up a widget so that GTK+ will start a drag operation when the user
@@ -130835,7 +130594,7 @@ export namespace Gtk {
          * @param targets the table of targets     that the drag will support, may be `null`
          * @param actions the bitmask of possible actions for a drag from this widget
          */
-        drag_source_set(start_button_mask: Gdk.ModifierType, targets: (TargetEntry[] | null), actions: Gdk.DragAction): void;
+        drag_source_set(start_button_mask: Gdk.ModifierType, targets: TargetEntry[] | null, actions: Gdk.DragAction): void;
 
         /**
          * Sets the icon that will be used for drags from a particular source
@@ -130872,7 +130631,7 @@ export namespace Gtk {
          * `gtk_drag_source_set()`.
          * @param target_list list of draggable targets, or `null` for none
          */
-        drag_source_set_target_list(target_list: (TargetList | null)): void;
+        drag_source_set_target_list(target_list: TargetList | null): void;
 
         /**
          * Undoes the effects of `gtk_drag_source_set()`.
@@ -130976,7 +130735,7 @@ export namespace Gtk {
          * @param prefix The “prefix” of the action group.
          * @returns A {@link Gio.ActionGroup} or `null`.
          */
-        get_action_group(prefix: string): (Gio.ActionGroup | null);
+        get_action_group(prefix: string): Gio.ActionGroup | null;
 
         /**
          * Returns the baseline that has currently been allocated to `widget`.
@@ -131049,7 +130808,7 @@ export namespace Gtk {
          * @param widget_type ancestor type
          * @returns the ancestor widget, or `null` if not found
          */
-        get_ancestor(widget_type: GObject.GType): (Widget | null);
+        get_ancestor(widget_type: GObject.GType): Widget | null;
 
         /**
          * Determines whether the application intends to draw on the widget in
@@ -131200,14 +130959,14 @@ export namespace Gtk {
          * Gets the font map that has been set with `gtk_widget_set_font_map()`.
          * @returns A {@link Pango.FontMap}, or `null`
          */
-        get_font_map(): (Pango.FontMap | null);
+        get_font_map(): Pango.FontMap | null;
 
         /**
          * Returns the {@link cairo.FontOptions} used for Pango rendering. When not set,
          * the defaults font options for the {@link Gdk.Screen} will be used.
          * @returns the {@link cairo.FontOptions} or `null` if not set
          */
-        get_font_options(): (cairo.FontOptions | null);
+        get_font_options(): cairo.FontOptions | null;
 
         /**
          * Obtains the frame clock for a widget. The frame clock is a global
@@ -131233,7 +130992,7 @@ export namespace Gtk {
          * Unrealized widgets do not have a frame clock.
          * @returns a {@link Gdk.FrameClock}, or `null` if widget is unrealized
          */
-        get_frame_clock(): (Gdk.FrameClock | null);
+        get_frame_clock(): Gdk.FrameClock | null;
 
         /**
          * Gets the value of the {@link Gtk.Widget.halign} property.
@@ -131401,13 +131160,13 @@ export namespace Gtk {
          * Returns the parent container of `widget`.
          * @returns the parent container of `widget`, or `null`
          */
-        get_parent(): (Widget | null);
+        get_parent(): Widget | null;
 
         /**
          * Gets `widget`’s parent window, or `null` if it does not have one.
          * @returns the parent window of `widget`, or `null` if it does not have a parent window.
          */
-        get_parent_window(): (Gdk.Window | null);
+        get_parent_window(): Gdk.Window | null;
 
         /**
          * Returns the {@link Gtk.WidgetPath} representing `widget`, if the widget
@@ -131677,13 +131436,13 @@ export namespace Gtk {
          * Gets the contents of the tooltip for `widget`.
          * @returns the tooltip text, or `null`. You should free the   returned string with `g_free()` when done.
          */
-        get_tooltip_markup(): (string | null);
+        get_tooltip_markup(): string | null;
 
         /**
          * Gets the contents of the tooltip for `widget`.
          * @returns the tooltip text, or `null`. You should free the   returned string with `g_free()` when done.
          */
-        get_tooltip_text(): (string | null);
+        get_tooltip_text(): string | null;
 
         /**
          * Returns the {@link Gtk.Window} of the current tooltip. This can be the
@@ -131791,7 +131550,7 @@ export namespace Gtk {
          * Returns the widget’s window if it is realized, `null` otherwise
          * @returns `widget`’s window.
          */
-        get_window(): (Gdk.Window | null);
+        get_window(): Gdk.Window | null;
 
         /**
          * Makes `widget` the current grabbed widget.
@@ -131931,7 +131690,7 @@ export namespace Gtk {
          * `gdk_window_input_shape_combine_region()` for more information.
          * @param region shape to be added, or `null` to remove an existing shape
          */
-        input_shape_combine_region(region: (cairo.Region | null)): void;
+        input_shape_combine_region(region: cairo.Region | null): void;
 
         /**
          * Inserts `group` into `widget`. Children of `widget` that implement
@@ -131944,7 +131703,7 @@ export namespace Gtk {
          * @param name the prefix for actions in `group`
          * @param group a {@link Gio.ActionGroup}, or `null`
          */
-        insert_action_group(name: string, group: (Gio.ActionGroup | null)): void;
+        insert_action_group(name: string, group: Gio.ActionGroup | null): void;
 
         /**
          * Computes the intersection of a `widget`’s area and `area`, storing
@@ -132109,7 +131868,7 @@ export namespace Gtk {
          * @param state the state for which to set the base color
          * @param color the color to assign (does not need to     be allocated), or `null` to undo the effect of previous     calls to of `gtk_widget_modify_base()`.
          */
-        modify_base(state: StateType, color: (Gdk.Color | null)): void;
+        modify_base(state: StateType, color: Gdk.Color | null): void;
 
         /**
          * Sets the background color for a widget in a particular state.
@@ -132129,7 +131888,7 @@ export namespace Gtk {
          * @param state the state for which to set the background color
          * @param color the color to assign (does not need     to be allocated), or `null` to undo the effect of previous     calls to of `gtk_widget_modify_bg()`.
          */
-        modify_bg(state: StateType, color: (Gdk.Color | null)): void;
+        modify_bg(state: StateType, color: Gdk.Color | null): void;
 
         /**
          * Sets the cursor color to use in a widget, overriding the {@link Gtk.Widget}
@@ -132141,7 +131900,7 @@ export namespace Gtk {
          * @param primary the color to use for primary cursor (does not     need to be allocated), or `null` to undo the effect of previous     calls to of `gtk_widget_modify_cursor()`.
          * @param secondary the color to use for secondary cursor (does     not need to be allocated), or `null` to undo the effect of     previous calls to of `gtk_widget_modify_cursor()`.
          */
-        modify_cursor(primary: (Gdk.Color | null), secondary: (Gdk.Color | null)): void;
+        modify_cursor(primary: Gdk.Color | null, secondary: Gdk.Color | null): void;
 
         /**
          * Sets the foreground color for a widget in a particular state.
@@ -132151,7 +131910,7 @@ export namespace Gtk {
          * @param state the state for which to set the foreground color
          * @param color the color to assign (does not need to be allocated),     or `null` to undo the effect of previous calls to     of `gtk_widget_modify_fg()`.
          */
-        modify_fg(state: StateType, color: (Gdk.Color | null)): void;
+        modify_fg(state: StateType, color: Gdk.Color | null): void;
 
         /**
          * Sets the font to use for a widget.
@@ -132160,7 +131919,7 @@ export namespace Gtk {
          * See also `gtk_widget_modify_style()`.
          * @param font_desc the font description to use, or `null`     to undo the effect of previous calls to `gtk_widget_modify_font()`
          */
-        modify_font(font_desc: (Pango.FontDescription | null)): void;
+        modify_font(font_desc: Pango.FontDescription | null): void;
 
         /**
          * Modifies style values on the widget.
@@ -132196,7 +131955,7 @@ export namespace Gtk {
          * @param state the state for which to set the text color
          * @param color the color to assign (does not need to     be allocated), or `null` to undo the effect of previous     calls to of `gtk_widget_modify_text()`.
          */
-        modify_text(state: StateType, color: (Gdk.Color | null)): void;
+        modify_text(state: StateType, color: Gdk.Color | null): void;
 
         /**
          * Sets the background color to use for a widget.
@@ -132206,7 +131965,7 @@ export namespace Gtk {
          * @param state the state for which to set the background color
          * @param color the color to assign, or `null` to undo the effect     of previous calls to `gtk_widget_override_background_color()`
          */
-        override_background_color(state: StateFlags, color: (Gdk.RGBA | null)): void;
+        override_background_color(state: StateFlags, color: Gdk.RGBA | null): void;
 
         /**
          * Sets the color to use for a widget.
@@ -132237,7 +131996,7 @@ export namespace Gtk {
          * @param state the state for which to set the color
          * @param color the color to assign, or `null` to undo the effect     of previous calls to `gtk_widget_override_color()`
          */
-        override_color(state: StateFlags, color: (Gdk.RGBA | null)): void;
+        override_color(state: StateFlags, color: Gdk.RGBA | null): void;
 
         /**
          * Sets the cursor color to use in a widget, overriding the
@@ -132250,14 +132009,14 @@ export namespace Gtk {
          * @param cursor the color to use for primary cursor (does not need to be     allocated), or `null` to undo the effect of previous calls to     of `gtk_widget_override_cursor()`.
          * @param secondary_cursor the color to use for secondary cursor (does not     need to be allocated), or `null` to undo the effect of previous     calls to of `gtk_widget_override_cursor()`.
          */
-        override_cursor(cursor: (Gdk.RGBA | null), secondary_cursor: (Gdk.RGBA | null)): void;
+        override_cursor(cursor: Gdk.RGBA | null, secondary_cursor: Gdk.RGBA | null): void;
 
         /**
          * Sets the font to use for a widget. All other style values are
          * left untouched. See `gtk_widget_override_color()`.
          * @param font_desc the font description to use, or `null` to undo     the effect of previous calls to `gtk_widget_override_font()`
          */
-        override_font(font_desc: (Pango.FontDescription | null)): void;
+        override_font(font_desc: Pango.FontDescription | null): void;
 
         /**
          * Sets a symbolic color for a widget.
@@ -132268,7 +132027,7 @@ export namespace Gtk {
          * @param name the name of the symbolic color to modify
          * @param color the color to assign (does not need     to be allocated), or `null` to undo the effect of previous     calls to `gtk_widget_override_symbolic_color()`
          */
-        override_symbolic_color(name: string, color: (Gdk.RGBA | null)): void;
+        override_symbolic_color(name: string, color: Gdk.RGBA | null): void;
 
         /**
          * Obtains the full path to `widget`. The path is simply the name of a
@@ -132454,7 +132213,7 @@ export namespace Gtk {
          * @param detail render detail to pass to theme engine
          * @returns a new pixbuf, or `null` if the     stock ID wasn’t known
          */
-        render_icon(stock_id: string, size: number, detail: (string | null)): (GdkPixbuf.Pixbuf | null);
+        render_icon(stock_id: string, size: number, detail: string | null): GdkPixbuf.Pixbuf | null;
 
         /**
          * A convenience function that uses the theme engine and style
@@ -132470,7 +132229,7 @@ export namespace Gtk {
          * @param size a stock size ({@link Gtk.IconSize}). A size of `(GtkIconSize)-1`     means render at the size of the source and don’t scale (if there are     multiple source sizes, GTK+ picks one of the available sizes).
          * @returns a new pixbuf, or `null` if the     stock ID wasn’t known
          */
-        render_icon_pixbuf(stock_id: string, size: number): (GdkPixbuf.Pixbuf | null);
+        render_icon_pixbuf(stock_id: string, size: number): GdkPixbuf.Pixbuf | null;
 
         /**
          * Moves a widget from one {@link Gtk.Container} to another, handling reference
@@ -132568,7 +132327,7 @@ export namespace Gtk {
          * @param accel_path path used to look up the accelerator
          * @param accel_group a {@link Gtk.AccelGroup}.
          */
-        set_accel_path(accel_path: (string | null), accel_group: (AccelGroup | null)): void;
+        set_accel_path(accel_path: string | null, accel_group: AccelGroup | null): void;
 
         /**
          * Sets the widget’s allocation.  This should not be used
@@ -132766,14 +132525,14 @@ export namespace Gtk {
          * will inherit the font map from its parent.
          * @param font_map a {@link Pango.FontMap}, or `null` to unset any previously     set font map
          */
-        set_font_map(font_map: (Pango.FontMap | null)): void;
+        set_font_map(font_map: Pango.FontMap | null): void;
 
         /**
          * Sets the {@link cairo.FontOptions} used for Pango rendering in this widget.
          * When not set, the default font options for the {@link Gdk.Screen} will be used.
          * @param options a {@link cairo.FontOptions}, or `null` to unset any   previously set default font options.
          */
-        set_font_options(options: (cairo.FontOptions | null)): void;
+        set_font_options(options: cairo.FontOptions | null): void;
 
         /**
          * Sets the horizontal alignment of `widget`.
@@ -133091,7 +132850,7 @@ export namespace Gtk {
          * GTK 3, this function does nothing, the passed in style is ignored.
          * @param style a {@link Gtk.Style}, or `null` to remove the effect     of a previous call to `gtk_widget_set_style()` and go back to     the default style
          */
-        set_style(style: (Style | null)): void;
+        set_style(style: Style | null): void;
 
         /**
          * Enables or disables multiple pointer awareness. If this setting is `true`,
@@ -133113,7 +132872,7 @@ export namespace Gtk {
          * `gtk_tooltip_set_markup()`.
          * @param markup the contents of the tooltip for `widget`, or `null`
          */
-        set_tooltip_markup(markup: (string | null)): void;
+        set_tooltip_markup(markup: string | null): void;
 
         /**
          * Sets `text` as the contents of the tooltip. This function will take
@@ -133123,7 +132882,7 @@ export namespace Gtk {
          * See also the {@link Gtk.Widget.tooltip_text} property and `gtk_tooltip_set_text()`.
          * @param text the contents of the tooltip for `widget`
          */
-        set_tooltip_text(text: (string | null)): void;
+        set_tooltip_text(text: string | null): void;
 
         /**
          * Replaces the default window used for displaying
@@ -133133,7 +132892,7 @@ export namespace Gtk {
          * tooltip window will be used.
          * @param custom_window a {@link Gtk.Window}, or `null`
          */
-        set_tooltip_window(custom_window: (Window | null)): void;
+        set_tooltip_window(custom_window: Window | null): void;
 
         /**
          * Sets the vertical alignment of `widget`.
@@ -133182,7 +132941,7 @@ export namespace Gtk {
          * so you should call this function before `widget` is realized.
          * @param visual visual to be used or `null` to unset a previous one
          */
-        set_visual(visual: (Gdk.Visual | null)): void;
+        set_visual(visual: Gdk.Visual | null): void;
 
         /**
          * Sets a widget’s window. This function should only be used in a
@@ -133206,7 +132965,7 @@ export namespace Gtk {
          * for more information.
          * @param region shape to be added, or `null` to remove an existing shape
          */
-        shape_combine_region(region: (cairo.Region | null)): void;
+        shape_combine_region(region: cairo.Region | null): void;
 
         /**
          * Flags a widget to be displayed. Any widget that isn’t shown will
@@ -133311,7 +133070,7 @@ export namespace Gtk {
          * @param property_name the name of a style property
          * @param value location to return the property value
          */
-        style_get_property(property_name: string, value: (GObject.Value | any)): void;
+        style_get_property(property_name: string, value: GObject.Value | any): void;
 
         /**
          * Reverts the effect of a previous call to `gtk_widget_freeze_child_notify()`.
@@ -133382,7 +133141,7 @@ export namespace Gtk {
          * @param child child to add
          * @param type kind of child or `null`
          */
-        add_child(builder: Builder, child: GObject.Object, type: (string | null)): void;
+        add_child(builder: Builder, child: GObject.Object, type: string | null): void;
 
         /**
          * Constructs a child of `buildable` with the name `name`.
@@ -133403,7 +133162,7 @@ export namespace Gtk {
          * @param tagname the name of the tag
          * @param data user data created in custom_tag_start
          */
-        custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
+        custom_finished(builder: Builder, child: GObject.Object | null, tagname: string, data: null): void;
 
         /**
          * This is called at the end of each custom element handled by
@@ -133413,7 +133172,7 @@ export namespace Gtk {
          * @param tagname name of tag
          * @param data user data that will be passed in to parser functions
          */
-        custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
+        custom_tag_end(builder: Builder, child: GObject.Object | null, tagname: string, data: null): void;
 
         /**
          * This is called for each unknown element under `<child>`.
@@ -133422,7 +133181,7 @@ export namespace Gtk {
          * @param tagname name of tag
          * @returns `true` if a object has a custom implementation, `false`          if it doesn't.
          */
-        custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, GLib.MarkupParser, null];
+        custom_tag_start(builder: Builder, child: GObject.Object | null, tagname: string): [boolean, GLib.MarkupParser, null];
 
         /**
          * Get the internal child called `childname` of the `buildable` object.
@@ -133448,7 +133207,7 @@ export namespace Gtk {
          * @param name name of property
          * @param value value of property
          */
-        set_buildable_property(builder: Builder, name: string, value: (GObject.Value | any)): void;
+        set_buildable_property(builder: Builder, name: string, value: GObject.Value | any): void;
 
         /**
          * Adds a child to `buildable`. `type` is an optional string
@@ -133458,7 +133217,7 @@ export namespace Gtk {
          * @param type kind of child or `null`
          * @virtual
          */
-        vfunc_add_child(builder: Builder, child: GObject.Object, type: (string | null)): void;
+        vfunc_add_child(builder: Builder, child: GObject.Object, type: string | null): void;
 
         /**
          * Constructs a child of `buildable` with the name `name`.
@@ -133480,7 +133239,7 @@ export namespace Gtk {
          * @param data user data created in custom_tag_start
          * @virtual
          */
-        vfunc_custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
+        vfunc_custom_finished(builder: Builder, child: GObject.Object | null, tagname: string, data: null): void;
 
         /**
          * This is called at the end of each custom element handled by
@@ -133491,7 +133250,7 @@ export namespace Gtk {
          * @param data user data that will be passed in to parser functions
          * @virtual
          */
-        vfunc_custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
+        vfunc_custom_tag_end(builder: Builder, child: GObject.Object | null, tagname: string, data: null): void;
 
         /**
          * This is called for each unknown element under `<child>`.
@@ -133500,7 +133259,7 @@ export namespace Gtk {
          * @param tagname name of tag
          * @virtual
          */
-        vfunc_custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, GLib.MarkupParser, never];
+        vfunc_custom_tag_start(builder: Builder, child: GObject.Object | null, tagname: string): [boolean, GLib.MarkupParser, never];
 
         /**
          * Get the internal child called `childname` of the `buildable` object.
@@ -133573,9 +133332,7 @@ export namespace Gtk {
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends Accessible.ConstructorProps, Atk.Component.ConstructorProps {
-
-        }
+        interface ConstructorProps extends Accessible.ConstructorProps, Atk.Component.ConstructorProps {}
     }
 
     /**
@@ -133686,7 +133443,7 @@ export namespace Gtk {
          * @param coord_type specifies whether the coordinates are relative to the screen or to the components top level window
          * @returns a reference to the accessible child, if one exists
          */
-        ref_accessible_at_point(x: number, y: number, coord_type: Atk.CoordType): (Atk.Object | null);
+        ref_accessible_at_point(x: number, y: number, coord_type: Atk.CoordType): Atk.Object | null;
 
         /**
          * Remove the handler specified by `handler_id` from the list of
@@ -133832,7 +133589,7 @@ export namespace Gtk {
          * @param coord_type specifies whether the coordinates are relative to the screen or to the components top level window
          * @virtual
          */
-        vfunc_ref_accessible_at_point(x: number, y: number, coord_type: Atk.CoordType): (Atk.Object | null);
+        vfunc_ref_accessible_at_point(x: number, y: number, coord_type: Atk.CoordType): Atk.Object | null;
 
         /**
          * Remove the handler specified by `handler_id` from the list of
@@ -133933,7 +133690,7 @@ export namespace Gtk {
              * @action
              * @run-last
              */
-            "enable-debugging": (arg0: boolean) => (boolean | void);
+            "enable-debugging": (arg0: boolean) => boolean | void;
             /**
              * The ::keys-changed signal gets emitted when the set of accelerators
              * or mnemonics that are associated with `window` changes.
@@ -133948,7 +133705,7 @@ export namespace Gtk {
              * @since 2.24
              * @run-last
              */
-            "set-focus": (arg0: (Widget | null)) => void;
+            "set-focus": (arg0: Widget | null) => void;
             "notify::accept-focus": (pspec: GObject.ParamSpec) => void;
             "notify::application": (pspec: GObject.ParamSpec) => void;
             "notify::attached-to": (pspec: GObject.ParamSpec) => void;
@@ -134030,9 +133787,9 @@ export namespace Gtk {
         interface ConstructorProps extends Bin.ConstructorProps, Atk.ImplementorIface.ConstructorProps, Buildable.ConstructorProps {
             accept_focus: boolean;
             acceptFocus: boolean;
-            application: (Application | null);
-            attached_to: (Widget | null);
-            attachedTo: (Widget | null);
+            application: Application | null;
+            attached_to: Widget | null;
+            attachedTo: Widget | null;
             decorated: boolean;
             default_height: number;
             defaultHeight: number;
@@ -134052,9 +133809,9 @@ export namespace Gtk {
             hasToplevelFocus: boolean;
             hide_titlebar_when_maximized: boolean;
             hideTitlebarWhenMaximized: boolean;
-            icon: (GdkPixbuf.Pixbuf | null);
-            icon_name: (string | null);
-            iconName: (string | null);
+            icon: GdkPixbuf.Pixbuf | null;
+            icon_name: string | null;
+            iconName: string | null;
             is_active: boolean;
             isActive: boolean;
             is_maximized: boolean;
@@ -134065,7 +133822,7 @@ export namespace Gtk {
             resizable: boolean;
             resize_grip_visible: boolean;
             resizeGripVisible: boolean;
-            role: (string | null);
+            role: string | null;
             screen: Gdk.Screen;
             skip_pager_hint: boolean;
             skipPagerHint: boolean;
@@ -134073,9 +133830,9 @@ export namespace Gtk {
             skipTaskbarHint: boolean;
             startup_id: string;
             startupId: string;
-            title: (string | null);
-            transient_for: (Window | null);
-            transientFor: (Window | null);
+            title: string | null;
+            transient_for: Window | null;
+            transientFor: Window | null;
             type: WindowType;
             type_hint: Gdk.WindowTypeHint;
             typeHint: Gdk.WindowTypeHint;
@@ -134181,8 +133938,8 @@ export namespace Gtk {
          * remove it by setting the :application property to `null`.
          * @since 3.0
          */
-        get application(): (Application | null);
-        set application(val: (Application | null));
+        get application(): Application | null;
+        set application(val: Application | null);
 
         /**
          * The widget to which this window is attached.
@@ -134194,8 +133951,8 @@ export namespace Gtk {
          * created by {@link Gtk.TreeView}.
          * @since 3.4
          */
-        get attached_to(): (Widget | null);
-        set attached_to(val: (Widget | null));
+        get attached_to(): Widget | null;
+        set attached_to(val: Widget | null);
 
         /**
          * The widget to which this window is attached.
@@ -134207,8 +133964,8 @@ export namespace Gtk {
          * created by {@link Gtk.TreeView}.
          * @since 3.4
          */
-        get attachedTo(): (Widget | null);
-        set attachedTo(val: (Widget | null));
+        get attachedTo(): Widget | null;
+        set attachedTo(val: Widget | null);
 
         /**
          * Whether the window should be decorated by the window manager.
@@ -134365,8 +134122,8 @@ export namespace Gtk {
         get hideTitlebarWhenMaximized(): boolean;
         set hideTitlebarWhenMaximized(val: boolean);
 
-        get icon(): (GdkPixbuf.Pixbuf | null);
-        set icon(val: (GdkPixbuf.Pixbuf | null));
+        get icon(): GdkPixbuf.Pixbuf | null;
+        set icon(val: GdkPixbuf.Pixbuf | null);
 
         /**
          * The :icon-name property specifies the name of the themed icon to
@@ -134374,8 +134131,8 @@ export namespace Gtk {
          * @since 2.6
          * @default null
          */
-        get icon_name(): (string | null);
-        set icon_name(val: (string | null));
+        get icon_name(): string | null;
+        set icon_name(val: string | null);
 
         /**
          * The :icon-name property specifies the name of the themed icon to
@@ -134383,8 +134140,8 @@ export namespace Gtk {
          * @since 2.6
          * @default null
          */
-        get iconName(): (string | null);
-        set iconName(val: (string | null));
+        get iconName(): string | null;
+        set iconName(val: string | null);
 
         /**
          * @read-only
@@ -134465,8 +134222,8 @@ export namespace Gtk {
         /**
          * @default null
          */
-        get role(): (string | null);
-        set role(val: (string | null));
+        get role(): string | null;
+        set role(val: string | null);
 
         get screen(): Gdk.Screen;
         set screen(val: Gdk.Screen);
@@ -134518,24 +134275,24 @@ export namespace Gtk {
         /**
          * @default null
          */
-        get title(): (string | null);
-        set title(val: (string | null));
+        get title(): string | null;
+        set title(val: string | null);
 
         /**
          * The transient parent of the window. See `gtk_window_set_transient_for()` for
          * more details about transient windows.
          * @since 2.10
          */
-        get transient_for(): (Window | null);
-        set transient_for(val: (Window | null));
+        get transient_for(): Window | null;
+        set transient_for(val: Window | null);
 
         /**
          * The transient parent of the window. See `gtk_window_set_transient_for()` for
          * more details about transient windows.
          * @since 2.10
          */
-        get transientFor(): (Window | null);
-        set transientFor(val: (Window | null));
+        get transientFor(): Window | null;
+        set transientFor(val: Window | null);
 
         /**
          * @construct-only
@@ -134732,7 +134489,7 @@ export namespace Gtk {
          * @param focus widget to be the new focus widget, or `null` to unset   any focus widget for the toplevel window.
          * @virtual
          */
-        vfunc_set_focus(focus: (Widget | null)): void;
+        vfunc_set_focus(focus: Widget | null): void;
 
         // Methods
         /**
@@ -134860,14 +134617,14 @@ export namespace Gtk {
          * Gets the {@link Gtk.Application} associated with the window (if any).
          * @returns a {@link Gtk.Application}, or `null`
          */
-        get_application(): (Application | null);
+        get_application(): Application | null;
 
         /**
          * Fetches the attach widget for this window. See
          * `gtk_window_set_attached_to()`.
          * @returns the widget where the window is attached, or `null` if the window is not attached to any widget.
          */
-        get_attached_to(): (Widget | null);
+        get_attached_to(): Widget | null;
 
         /**
          * Returns whether the window has been set to have decorations
@@ -134889,7 +134646,7 @@ export namespace Gtk {
          * `gtk_window_set_default()` for more details.
          * @returns the default widget, or `null` if there is none.
          */
-        get_default_widget(): (Widget | null);
+        get_default_widget(): Widget | null;
 
         /**
          * Returns whether the window has been set to have a close button
@@ -134913,7 +134670,7 @@ export namespace Gtk {
          * not be `true` for the widget.
          * @returns the currently focused widget, or `null` if there is none.
          */
-        get_focus(): (Widget | null);
+        get_focus(): Widget | null;
 
         /**
          * Gets the value set by `gtk_window_set_focus_on_map()`.
@@ -134960,7 +134717,7 @@ export namespace Gtk {
          * the icon list).
          * @returns icon for window or `null` if none
          */
-        get_icon(): (GdkPixbuf.Pixbuf | null);
+        get_icon(): GdkPixbuf.Pixbuf | null;
 
         /**
          * Retrieves the list of icons set by `gtk_window_set_icon_list()`.
@@ -134975,7 +134732,7 @@ export namespace Gtk {
          * see `gtk_window_set_icon_name()`.
          * @returns the icon name or `null` if the window has no themed icon
          */
-        get_icon_name(): (string | null);
+        get_icon_name(): string | null;
 
         /**
          * Returns the mnemonic modifier for this window. See
@@ -135061,7 +134818,7 @@ export namespace Gtk {
          * further explanation.
          * @returns the role of the window if set, or `null`. The returned is owned by the widget and must not be modified or freed.
          */
-        get_role(): (string | null);
+        get_role(): string | null;
 
         /**
          * Returns the {@link Gdk.Screen} associated with `window`.
@@ -135165,21 +134922,21 @@ export namespace Gtk {
          * Retrieves the title of the window. See `gtk_window_set_title()`.
          * @returns the title of the window, or `null` if none has been set explicitly. The returned string is owned by the widget and must not be modified or freed.
          */
-        get_title(): (string | null);
+        get_title(): string | null;
 
         /**
          * Returns the custom titlebar that has been set with
          * `gtk_window_set_titlebar()`.
          * @returns the custom titlebar, or `null`
          */
-        get_titlebar(): (Widget | null);
+        get_titlebar(): Widget | null;
 
         /**
          * Fetches the transient parent for this window. See
          * `gtk_window_set_transient_for()`.
          * @returns the transient parent for this window, or `null` if no transient parent has been set.
          */
-        get_transient_for(): (Window | null);
+        get_transient_for(): Window | null;
 
         /**
          * Gets the type hint for this window. See `gtk_window_set_type_hint()`.
@@ -135507,7 +135264,7 @@ export namespace Gtk {
          * `gtk_application_add_window()` on the old/new applications as relevant.
          * @param application a {@link Gtk.Application}, or `null` to unset
          */
-        set_application(application: (Application | null)): void;
+        set_application(application: Application | null): void;
 
         /**
          * Marks `window` as attached to `attach_widget`. This creates a logical binding
@@ -135526,7 +135283,7 @@ export namespace Gtk {
          * Passing `null` for `attach_widget` detaches the window.
          * @param attach_widget a {@link Gtk.Widget}, or `null`
          */
-        set_attached_to(attach_widget: (Widget | null)): void;
+        set_attached_to(attach_widget: Widget | null): void;
 
         /**
          * By default, windows are decorated with a title bar, resize
@@ -135554,7 +135311,7 @@ export namespace Gtk {
          * the widget you’d like to make the default.
          * @param default_widget widget to be the default, or `null`     to unset the default widget for the toplevel
          */
-        set_default(default_widget: (Widget | null)): void;
+        set_default(default_widget: Widget | null): void;
 
         /**
          * Like `gtk_window_set_default_size()`, but `width` and `height` are interpreted
@@ -135636,7 +135393,7 @@ export namespace Gtk {
          * `gtk_widget_grab_focus()` instead of this function.
          * @param focus widget to be the new focus widget, or `null` to unset   any focus widget for the toplevel window.
          */
-        set_focus(focus: (Widget | null)): void;
+        set_focus(focus: Widget | null): void;
 
         /**
          * Windows may set a hint asking the desktop environment not to receive
@@ -135661,7 +135418,7 @@ export namespace Gtk {
          * @param geometry struct containing geometry information or `null`
          * @param geom_mask mask indicating which struct fields should be paid attention to
          */
-        set_geometry_hints(geometry_widget: (Widget | null), geometry: (Gdk.Geometry | null), geom_mask: Gdk.WindowHints): void;
+        set_geometry_hints(geometry_widget: Widget | null, geometry: Gdk.Geometry | null, geom_mask: Gdk.WindowHints): void;
 
         /**
          * Window gravity defines the meaning of coordinates passed to
@@ -135734,7 +135491,7 @@ export namespace Gtk {
          * for all windows in your application in one go.
          * @param icon icon image, or `null`
          */
-        set_icon(icon: (GdkPixbuf.Pixbuf | null)): void;
+        set_icon(icon: GdkPixbuf.Pixbuf | null): void;
 
         /**
          * Sets the icon for `window`.
@@ -135786,7 +135543,7 @@ export namespace Gtk {
          * property which is mentioned in the ICCCM.
          * @param name the name of the themed icon
          */
-        set_icon_name(name: (string | null)): void;
+        set_icon_name(name: string | null): void;
 
         /**
          * Asks to keep `window` above, so that it stays on top. Note that
@@ -135973,7 +135730,7 @@ export namespace Gtk {
          * `gtk_widget_show()`.
          * @param titlebar the widget to use as titlebar
          */
-        set_titlebar(titlebar: (Widget | null)): void;
+        set_titlebar(titlebar: Widget | null): void;
 
         /**
          * Dialog windows should be set transient for the main application
@@ -135996,7 +135753,7 @@ export namespace Gtk {
          * much as the window manager would have done on X.
          * @param parent parent window, or `null`
          */
-        set_transient_for(parent: (Window | null)): void;
+        set_transient_for(parent: Window | null): void;
 
         /**
          * By setting the type hint for the window, you allow the window
@@ -136114,9 +135871,7 @@ export namespace Gtk {
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends ContainerAccessible.ConstructorProps, Atk.Component.ConstructorProps, Atk.Window.ConstructorProps {
-
-        }
+        interface ConstructorProps extends ContainerAccessible.ConstructorProps, Atk.Component.ConstructorProps, Atk.Window.ConstructorProps {}
     }
 
     /**
@@ -136156,13 +135911,10 @@ export namespace Gtk {
 
     namespace WindowGroup {
         // Signal signatures
-        interface SignalSignatures extends GObject.Object.SignalSignatures {
-        }
+        interface SignalSignatures extends GObject.Object.SignalSignatures {}
 
         // Constructor properties interface
-        interface ConstructorProps extends GObject.Object.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GObject.Object.ConstructorProps {}
     }
 
     /**
@@ -136227,7 +135979,7 @@ export namespace Gtk {
          * @param device a {@link Gdk.Device}
          * @returns The grab widget, or `null`
          */
-        get_current_device_grab(device: Gdk.Device): (Widget | null);
+        get_current_device_grab(device: Gdk.Device): Widget | null;
 
         /**
          * Gets the current grab widget of the given group,
@@ -136690,7 +136442,7 @@ export namespace Gtk {
          * or the type name of a class used in `gtk_binding_set_by_class()`.
          * @param set_name unique binding set name
          */
-        static find(set_name: string): (BindingSet | null);
+        static find(set_name: string): BindingSet | null;
 
         // Methods
         /**
@@ -137325,7 +137077,7 @@ export namespace Gtk {
          * a different file.
          * @returns the parent section or `null` if none
          */
-        get_parent(): (CssSection | null);
+        get_parent(): CssSection | null;
 
         /**
          * Gets the type of information that `section` describes.
@@ -138036,10 +137788,7 @@ export namespace Gtk {
         static $gtype: GObject.GType<IconSet>;
 
         // Constructors
-
-        constructor(properties?: Partial<{
-
-        }>);
+        constructor(properties?: Partial<{}>);
 
         static ["new"](): IconSet;
 
@@ -138109,7 +137858,7 @@ export namespace Gtk {
          * @param detail detail to pass to the theme engine, or `null`.          Note that passing a detail of anything but `null`          will disable caching.
          * @returns a {@link GdkPixbuf.Pixbuf} to be displayed
          */
-        render_icon(style: (Style | null), direction: TextDirection, state: StateType, size: number, widget: (Widget | null), detail: (string | null)): GdkPixbuf.Pixbuf;
+        render_icon(style: Style | null, direction: TextDirection, state: StateType, size: number, widget: Widget | null, detail: string | null): GdkPixbuf.Pixbuf;
 
         /**
          * Renders an icon using `gtk_render_icon_pixbuf()`. In most cases,
@@ -138137,7 +137886,7 @@ export namespace Gtk {
          * @param for_window {@link Gdk.Window} to optimize drawing for, or `null`
          * @returns a {@link cairo.Surface} to be displayed
          */
-        render_icon_surface(context: StyleContext, size: number, scale: number, for_window: (Gdk.Window | null)): cairo.Surface;
+        render_icon_surface(context: StyleContext, size: number, scale: number, for_window: Gdk.Window | null): cairo.Surface;
 
         /**
          * Decrements the reference count on `icon_set`, and frees memory
@@ -138154,10 +137903,7 @@ export namespace Gtk {
         static $gtype: GObject.GType<IconSource>;
 
         // Constructors
-
-        constructor(properties?: Partial<{
-
-        }>);
+        constructor(properties?: Partial<{}>);
 
         static ["new"](): IconSource;
 
@@ -138281,7 +138027,7 @@ export namespace Gtk {
          * to use as a base image when creating icon variants for {@link Gtk.IconSet}.
          * @param icon_name name of icon to use
          */
-        set_icon_name(icon_name: (string | null)): void;
+        set_icon_name(icon_name: string | null): void;
 
         /**
          * Sets a pixbuf to use as a base image when creating icon variants
@@ -138973,9 +138719,9 @@ export namespace Gtk {
         static $gtype: GObject.GType<PaperSize>;
 
         // Constructors
-        constructor(name: (string | null));
+        constructor(name: string | null);
 
-        static ["new"](name: (string | null)): PaperSize;
+        static ["new"](name: string | null): PaperSize;
 
         static new_custom(name: string, display_name: string, width: number, height: number, unit: Unit): PaperSize;
 
@@ -138983,7 +138729,7 @@ export namespace Gtk {
 
         static new_from_ipp(ipp_name: string, width: number, height: number): PaperSize;
 
-        static new_from_key_file(key_file: GLib.KeyFile, group_name: (string | null)): PaperSize;
+        static new_from_key_file(key_file: GLib.KeyFile, group_name: string | null): PaperSize;
 
         static new_from_ppd(ppd_name: string, ppd_display_name: string, width: number, height: number): PaperSize;
 
@@ -139379,7 +139125,7 @@ export namespace Gtk {
          * @param gstring the {@link GLib.String} to be parsed
          * @param property_value a {@link GObject.Value} which must hold boxed values.
          */
-        static parse_border(pspec: GObject.ParamSpec, gstring: GLib.String, property_value: (GObject.Value | any)): boolean;
+        static parse_border(pspec: GObject.ParamSpec, gstring: GLib.String, property_value: GObject.Value | any): boolean;
 
         /**
          * A {@link Gtk.RcPropertyParser} for use with `gtk_settings_install_property_parser()`
@@ -139392,7 +139138,7 @@ export namespace Gtk {
          * @param gstring the {@link GLib.String} to be parsed
          * @param property_value a {@link GObject.Value} which must hold {@link Gdk.Color} values.
          */
-        static parse_color(pspec: GObject.ParamSpec, gstring: GLib.String, property_value: (GObject.Value | any)): boolean;
+        static parse_color(pspec: GObject.ParamSpec, gstring: GLib.String, property_value: GObject.Value | any): boolean;
 
         /**
          * A {@link Gtk.RcPropertyParser} for use with `gtk_settings_install_property_parser()`
@@ -139406,7 +139152,7 @@ export namespace Gtk {
          * @param gstring the {@link GLib.String} to be parsed
          * @param property_value a {@link GObject.Value} which must hold enum values.
          */
-        static parse_enum(pspec: GObject.ParamSpec, gstring: GLib.String, property_value: (GObject.Value | any)): boolean;
+        static parse_enum(pspec: GObject.ParamSpec, gstring: GLib.String, property_value: GObject.Value | any): boolean;
 
         /**
          * A {@link Gtk.RcPropertyParser} for use with `gtk_settings_install_property_parser()`
@@ -139419,7 +139165,7 @@ export namespace Gtk {
          * @param gstring the {@link GLib.String} to be parsed
          * @param property_value a {@link GObject.Value} which must hold flags values.
          */
-        static parse_flags(pspec: GObject.ParamSpec, gstring: GLib.String, property_value: (GObject.Value | any)): boolean;
+        static parse_flags(pspec: GObject.ParamSpec, gstring: GLib.String, property_value: GObject.Value | any): boolean;
 
         /**
          * A {@link Gtk.RcPropertyParser} for use with `gtk_settings_install_property_parser()`
@@ -139430,7 +139176,7 @@ export namespace Gtk {
          * @param gstring the {@link GLib.String} to be parsed
          * @param property_value a {@link GObject.Value} which must hold boxed values.
          */
-        static parse_requisition(pspec: GObject.ParamSpec, gstring: GLib.String, property_value: (GObject.Value | any)): boolean;
+        static parse_requisition(pspec: GObject.ParamSpec, gstring: GLib.String, property_value: GObject.Value | any): boolean;
     }
 
 
@@ -139576,7 +139322,7 @@ export namespace Gtk {
          * @param app_name the name of the application that should   be mapped to a {@link Gio.AppInfo}; if `null` is used then the default   application for the MIME type is used
          * @returns the newly created {@link Gio.AppInfo}, or `null`.   In case of error, `error` will be set either with a   `GTK_RECENT_MANAGER_ERROR` or a `G_IO_ERROR`
          */
-        create_app_info(app_name: (string | null)): (Gio.AppInfo | null);
+        create_app_info(app_name: string | null): Gio.AppInfo | null;
 
         /**
          * Checks whether the resource pointed by `info` still exists.
@@ -139634,7 +139380,7 @@ export namespace Gtk {
          * Retrieves the icon associated to the resource MIME type.
          * @returns a {@link Gio.Icon} containing the icon, or `null`.   Use `g_object_unref()` when finished using the icon
          */
-        get_gicon(): (Gio.Icon | null);
+        get_gicon(): Gio.Icon | null;
 
         /**
          * Returns all groups registered for the recently used item `info`.
@@ -139649,7 +139395,7 @@ export namespace Gtk {
          * @param size the size of the icon in pixels
          * @returns a {@link GdkPixbuf.Pixbuf} containing the icon,     or `null`. Use `g_object_unref()` when finished using the icon.
          */
-        get_icon(size: number): (GdkPixbuf.Pixbuf | null);
+        get_icon(size: number): GdkPixbuf.Pixbuf | null;
 
         /**
          * Gets the MIME type of the resource.
@@ -139693,7 +139439,7 @@ export namespace Gtk {
          * it returns the UTF-8 encoded content of `gtk_recent_info_get_uri()`.
          * @returns a newly allocated UTF-8 string containing the   resource’s URI or `null`. Use `g_free()` when done using it.
          */
-        get_uri_display(): (string | null);
+        get_uri_display(): string | null;
 
         /**
          * Gets the timestamp (seconds from system’s Epoch) when the meta-data
@@ -139998,7 +139744,7 @@ export namespace Gtk {
          * Gets the contents of the selection data as a {@link GdkPixbuf.Pixbuf}.
          * @returns if the selection data   contained a recognized image type and it could be converted to a   {@link GdkPixbuf.Pixbuf}, a newly allocated pixbuf is returned, otherwise   `null`.  If the result is non-`null` it must be freed with   `g_object_unref()`.
          */
-        get_pixbuf(): (GdkPixbuf.Pixbuf | null);
+        get_pixbuf(): GdkPixbuf.Pixbuf | null;
 
         /**
          * Retrieves the selection {@link Gdk.Atom} of the selection data.
@@ -140025,7 +139771,7 @@ export namespace Gtk {
          * Gets the contents of the selection data as a UTF-8 string.
          * @returns if the selection data contained a   recognized text type and it could be converted to UTF-8, a newly   allocated string containing the converted text, otherwise `null`.   If the result is non-`null` it must be freed with `g_free()`.
          */
-        get_text(): (string | null);
+        get_text(): string | null;
 
         /**
          * Gets the contents of the selection data as array of URIs.
@@ -140044,7 +139790,7 @@ export namespace Gtk {
          * @param format format (number of bits in a unit)
          * @param data pointer to the data (will be copied)
          */
-        set(type: Gdk.Atom, format: number, data: (Uint8Array | string)): void;
+        set(type: Gdk.Atom, format: number, data: Uint8Array | string): void;
 
         /**
          * Sets the contents of the selection from a {@link GdkPixbuf.Pixbuf}
@@ -140502,7 +140248,7 @@ export namespace Gtk {
          * @param props {@link Gtk.StyleProperties} to use when resolving    named colors, or `null`
          * @returns `true` if the color has been resolved
          */
-        resolve(props: (StyleProperties | null)): [boolean, Gdk.RGBA];
+        resolve(props: StyleProperties | null): [boolean, Gdk.RGBA];
 
         /**
          * Converts the given `color` to a string representation. This is useful
@@ -140659,9 +140405,9 @@ export namespace Gtk {
         static $gtype: GObject.GType<TargetList>;
 
         // Constructors
-        constructor(targets: (TargetEntry[] | null));
+        constructor(targets: TargetEntry[] | null);
 
-        static ["new"](targets: (TargetEntry[] | null)): TargetList;
+        static ["new"](targets: TargetEntry[] | null): TargetList;
 
         // Methods
         /**
@@ -140953,10 +140699,7 @@ export namespace Gtk {
         static $gtype: GObject.GType<TextIter>;
 
         // Constructors
-
-        constructor(properties?: Partial<{
-
-        }>);
+        constructor(properties?: Partial<{}>);
 
         // Methods
         /**
@@ -141009,7 +140752,7 @@ export namespace Gtk {
          * @param limit search limit, or `null` for none
          * @returns whether a match was found
          */
-        backward_find_char(pred: TextCharPredicate, limit: (TextIter | null)): boolean;
+        backward_find_char(pred: TextCharPredicate, limit: TextIter | null): boolean;
 
         /**
          * Moves `iter` to the start of the previous line. Returns `true` if
@@ -141046,7 +140789,7 @@ export namespace Gtk {
          * @param limit location of last possible `match_start`, or `null` for start of buffer
          * @returns whether a match was found
          */
-        backward_search(str: string, flags: TextSearchFlags, limit: (TextIter | null)): [boolean, TextIter | null, TextIter | null];
+        backward_search(str: string, flags: TextSearchFlags, limit: TextIter | null): [boolean, TextIter | null, TextIter | null];
 
         /**
          * Moves backward to the previous sentence start; if `iter` is already at
@@ -141078,7 +140821,7 @@ export namespace Gtk {
          * @param tag a {@link Gtk.TextTag}, or `null`
          * @returns whether we found a tag toggle before `iter`
          */
-        backward_to_tag_toggle(tag: (TextTag | null)): boolean;
+        backward_to_tag_toggle(tag: TextTag | null): boolean;
 
         /**
          * Moves `iter` forward to the previous visible cursor position. See
@@ -141167,7 +140910,7 @@ export namespace Gtk {
          * @param tag a {@link Gtk.TextTag}, or `null`
          * @returns whether `iter` is the start of a range tagged with `tag`
          */
-        begins_tag(tag: (TextTag | null)): boolean;
+        begins_tag(tag: TextTag | null): boolean;
 
         /**
          * Considering the default editability of the buffer, and tags that
@@ -141252,7 +140995,7 @@ export namespace Gtk {
          * @param tag a {@link Gtk.TextTag}, or `null`
          * @returns whether `iter` is the end of a range tagged with `tag`
          */
-        ends_tag(tag: (TextTag | null)): boolean;
+        ends_tag(tag: TextTag | null): boolean;
 
         /**
          * Determines whether `iter` ends a natural-language word.  Word breaks
@@ -141330,7 +141073,7 @@ export namespace Gtk {
          * @param limit search limit, or `null` for none
          * @returns whether a match was found
          */
-        forward_find_char(pred: TextCharPredicate, limit: (TextIter | null)): boolean;
+        forward_find_char(pred: TextCharPredicate, limit: TextIter | null): boolean;
 
         /**
          * Moves `iter` to the start of the next line. If the iter is already on the
@@ -141369,7 +141112,7 @@ export namespace Gtk {
          * @param limit location of last possible `match_end`, or `null` for the end of the buffer
          * @returns whether a match was found
          */
-        forward_search(str: string, flags: TextSearchFlags, limit: (TextIter | null)): [boolean, TextIter | null, TextIter | null];
+        forward_search(str: string, flags: TextSearchFlags, limit: TextIter | null): [boolean, TextIter | null, TextIter | null];
 
         /**
          * Moves forward to the next sentence end. (If `iter` is at the end of
@@ -141421,7 +141164,7 @@ export namespace Gtk {
          * @param tag a {@link Gtk.TextTag}, or `null`
          * @returns whether we found a tag toggle after `iter`
          */
-        forward_to_tag_toggle(tag: (TextTag | null)): boolean;
+        forward_to_tag_toggle(tag: TextTag | null): boolean;
 
         /**
          * Moves `iter` forward to the next visible cursor position. See
@@ -141856,7 +141599,7 @@ export namespace Gtk {
          * @param tag a {@link Gtk.TextTag}, or `null`
          * @returns whether `iter` is the start of a range tagged with `tag`
          */
-        starts_tag(tag: (TextTag | null)): boolean;
+        starts_tag(tag: TextTag | null): boolean;
 
         /**
          * Determines whether `iter` begins a natural-language word.  Word
@@ -141874,7 +141617,7 @@ export namespace Gtk {
          * @param tag a {@link Gtk.TextTag}, or `null`
          * @returns whether `tag` is toggled on or off at `iter`
          */
-        toggles_tag(tag: (TextTag | null)): boolean;
+        toggles_tag(tag: TextTag | null): boolean;
     }
 
 
@@ -142215,10 +141958,7 @@ export namespace Gtk {
         static $gtype: GObject.GType<TreePath>;
 
         // Constructors
-
-        constructor(properties?: Partial<{
-
-        }>);
+        constructor(properties?: Partial<{}>);
 
         static ["new"](): TreePath;
 
@@ -142390,7 +142130,7 @@ export namespace Gtk {
          * or `null` if the path pointed to is no longer valid.
          * @returns a current path, or `null`
          */
-        get_path(): (TreePath | null);
+        get_path(): TreePath | null;
 
         /**
          * Returns `true` if the `reference` is non-`null` and refers to
@@ -142616,10 +142356,7 @@ export namespace Gtk {
         static $gtype: GObject.GType<WidgetPath>;
 
         // Constructors
-
-        constructor(properties?: Partial<{
-
-        }>);
+        constructor(properties?: Partial<{}>);
 
         static ["new"](): WidgetPath;
 
@@ -142733,7 +142470,7 @@ export namespace Gtk {
          * @param pos position to get the widget name for, -1 for the path head
          * @returns The widget name, or `null` if none was set.
          */
-        iter_get_name(pos: number): (string | null);
+        iter_get_name(pos: number): string | null;
 
         /**
          * Returns the object name that is at position `pos` in the widget
@@ -142741,7 +142478,7 @@ export namespace Gtk {
          * @param pos position to get the object name for, -1 for the path head
          * @returns the name or `null`
          */
-        iter_get_object_name(pos: number): (string | null);
+        iter_get_object_name(pos: number): string | null;
 
         /**
          * Returns the object {@link GObject.GType} that is at position `pos` in the widget
@@ -142881,7 +142618,7 @@ export namespace Gtk {
          * @param pos position to modify, -1 for the path head
          * @param name object name to set or `null` to unset
          */
-        iter_set_object_name(pos: number, name: (string | null)): void;
+        iter_set_object_name(pos: number, name: string | null): void;
 
         /**
          * Sets the object type for a given position in the widget hierarchy
@@ -143095,7 +142832,7 @@ export namespace Gtk {
              * See `gtk_actionable_set_action_name()` for more information.
              * @virtual
              */
-            vfunc_get_action_name(): (string | null);
+            vfunc_get_action_name(): string | null;
 
             /**
              * Gets the current target value of `actionable`.
@@ -143120,7 +142857,7 @@ export namespace Gtk {
              * @param action_name an action name, or `null`
              * @virtual
              */
-            vfunc_set_action_name(action_name: (string | null)): void;
+            vfunc_set_action_name(action_name: string | null): void;
 
             /**
              * Sets the target value of an actionable widget.
@@ -143145,14 +142882,14 @@ export namespace Gtk {
              * @param target_value a {@link GLib.Variant} to set as the target value, or `null`
              * @virtual
              */
-            vfunc_set_action_target_value(target_value: (GLib.Variant | null)): void;
+            vfunc_set_action_target_value(target_value: GLib.Variant | null): void;
         }
 
 
         // Constructor properties interface
         interface ConstructorProps extends Widget.ConstructorProps {
-            action_name: (string | null);
-            actionName: (string | null);
+            action_name: string | null;
+            actionName: string | null;
             action_target: GLib.Variant;
             actionTarget: GLib.Variant;
         }
@@ -143184,14 +142921,14 @@ export namespace Gtk {
         /**
          * @default null
          */
-        get action_name(): (string | null);
-        set action_name(val: (string | null));
+        get action_name(): string | null;
+        set action_name(val: string | null);
 
         /**
          * @default null
          */
-        get actionName(): (string | null);
-        set actionName(val: (string | null));
+        get actionName(): string | null;
+        set actionName(val: string | null);
 
         get action_target(): GLib.Variant;
         set action_target(val: GLib.Variant);
@@ -143206,7 +142943,7 @@ export namespace Gtk {
          * See `gtk_actionable_set_action_name()` for more information.
          * @returns the action name, or `null` if none is set
          */
-        get_action_name(): (string | null);
+        get_action_name(): string | null;
 
         /**
          * Gets the current target value of `actionable`.
@@ -143230,7 +142967,7 @@ export namespace Gtk {
          * associated with the window.
          * @param action_name an action name, or `null`
          */
-        set_action_name(action_name: (string | null)): void;
+        set_action_name(action_name: string | null): void;
 
         /**
          * Sets the target value of an actionable widget.
@@ -143254,7 +142991,7 @@ export namespace Gtk {
          * rendered inactive).
          * @param target_value a {@link GLib.Variant} to set as the target value, or `null`
          */
-        set_action_target_value(target_value: (GLib.Variant | null)): void;
+        set_action_target_value(target_value: GLib.Variant | null): void;
 
         /**
          * Sets the action-name and associated string target value of an
@@ -143294,7 +143031,7 @@ export namespace Gtk {
              * @param action the related {@link Gtk.Action} or `null`
              * @virtual
              */
-            vfunc_sync_action_properties(action: (Action | null)): void;
+            vfunc_sync_action_properties(action: Action | null): void;
 
             /**
              * Called to update the activatable when its related action’s properties change.
@@ -143686,7 +143423,7 @@ export namespace Gtk {
          * {@link Gtk.Activatable.use_action_appearance} changes.
          * @param action the related {@link Gtk.Action} or `null`
          */
-        sync_action_properties(action: (Action | null)): void;
+        sync_action_properties(action: Action | null): void;
     }
 
 
@@ -143755,7 +143492,7 @@ export namespace Gtk {
          * Returns the currently selected application.
          * @returns a {@link Gio.AppInfo} for the currently selected     application, or `null` if none is selected. Free with `g_object_unref()`
          */
-        get_app_info(): (Gio.AppInfo | null);
+        get_app_info(): Gio.AppInfo | null;
 
         /**
          * Returns the current value of the {@link Gtk.AppChooser.content_type} property.
@@ -143790,7 +143527,7 @@ export namespace Gtk {
              * @param type kind of child or `null`
              * @virtual
              */
-            vfunc_add_child(builder: Builder, child: GObject.Object, type: (string | null)): void;
+            vfunc_add_child(builder: Builder, child: GObject.Object, type: string | null): void;
 
             /**
              * Constructs a child of `buildable` with the name `name`.
@@ -143812,7 +143549,7 @@ export namespace Gtk {
              * @param data user data created in custom_tag_start
              * @virtual
              */
-            vfunc_custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
+            vfunc_custom_finished(builder: Builder, child: GObject.Object | null, tagname: string, data: null): void;
 
             /**
              * This is called at the end of each custom element handled by
@@ -143823,7 +143560,7 @@ export namespace Gtk {
              * @param data user data that will be passed in to parser functions
              * @virtual
              */
-            vfunc_custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
+            vfunc_custom_tag_end(builder: Builder, child: GObject.Object | null, tagname: string, data: null): void;
 
             /**
              * This is called for each unknown element under `<child>`.
@@ -143832,7 +143569,7 @@ export namespace Gtk {
              * @param tagname name of tag
              * @virtual
              */
-            vfunc_custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, GLib.MarkupParser, never];
+            vfunc_custom_tag_start(builder: Builder, child: GObject.Object | null, tagname: string): [boolean, GLib.MarkupParser, never];
 
             /**
              * Get the internal child called `childname` of the `buildable` object.
@@ -143882,9 +143619,7 @@ export namespace Gtk {
 
 
         // Constructor properties interface
-        interface ConstructorProps extends GObject.Object.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GObject.Object.ConstructorProps {}
     }
 
     export interface BuildableNamespace {
@@ -143916,7 +143651,7 @@ export namespace Gtk {
          * @param child child to add
          * @param type kind of child or `null`
          */
-        add_child(builder: Builder, child: GObject.Object, type: (string | null)): void;
+        add_child(builder: Builder, child: GObject.Object, type: string | null): void;
 
         /**
          * Constructs a child of `buildable` with the name `name`.
@@ -143937,7 +143672,7 @@ export namespace Gtk {
          * @param tagname the name of the tag
          * @param data user data created in custom_tag_start
          */
-        custom_finished(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
+        custom_finished(builder: Builder, child: GObject.Object | null, tagname: string, data: null): void;
 
         /**
          * This is called at the end of each custom element handled by
@@ -143947,7 +143682,7 @@ export namespace Gtk {
          * @param tagname name of tag
          * @param data user data that will be passed in to parser functions
          */
-        custom_tag_end(builder: Builder, child: (GObject.Object | null), tagname: string, data: null): void;
+        custom_tag_end(builder: Builder, child: GObject.Object | null, tagname: string, data: null): void;
 
         /**
          * This is called for each unknown element under `<child>`.
@@ -143956,7 +143691,7 @@ export namespace Gtk {
          * @param tagname name of tag
          * @returns `true` if a object has a custom implementation, `false`          if it doesn't.
          */
-        custom_tag_start(builder: Builder, child: (GObject.Object | null), tagname: string): [boolean, GLib.MarkupParser, null];
+        custom_tag_start(builder: Builder, child: GObject.Object | null, tagname: string): [boolean, GLib.MarkupParser, null];
 
         /**
          * Get the internal child called `childname` of the `buildable` object.
@@ -143992,7 +143727,7 @@ export namespace Gtk {
          * @param name name of property
          * @param value value of property
          */
-        set_buildable_property(builder: Builder, name: string, value: (GObject.Value | any)): void;
+        set_buildable_property(builder: Builder, name: string, value: GObject.Value | any): void;
 
         /**
          * Sets the name of the `buildable` object.
@@ -144091,9 +143826,7 @@ export namespace Gtk {
 
 
         // Constructor properties interface
-        interface ConstructorProps extends GObject.Object.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GObject.Object.ConstructorProps {}
     }
 
     export interface CellAccessibleParentNamespace {
@@ -144208,7 +143941,7 @@ export namespace Gtk {
              * @param event The {@link Gdk.Event} that began the editing process, or   `null` if editing was initiated programmatically
              * @virtual
              */
-            vfunc_start_editing(event: (Gdk.Event | null)): void;
+            vfunc_start_editing(event: Gdk.Event | null): void;
         }
 
 
@@ -144272,7 +144005,7 @@ export namespace Gtk {
          * lifetime is temporary and does not persist across other edits and/or cells.
          * @param event The {@link Gdk.Event} that began the editing process, or   `null` if editing was initiated programmatically
          */
-        start_editing(event: (Gdk.Event | null)): void;
+        start_editing(event: Gdk.Event | null): void;
     }
 
 
@@ -144323,7 +144056,7 @@ export namespace Gtk {
              * is used by `cell_layout`.
              * @virtual
              */
-            vfunc_get_area(): (CellArea | null);
+            vfunc_get_area(): CellArea | null;
 
             /**
              * Returns the cell renderers which have been added to `cell_layout`.
@@ -144378,14 +144111,12 @@ export namespace Gtk {
              * @param func the {@link Gtk.CellLayoutDataFunc} to use, or `null`
              * @virtual
              */
-            vfunc_set_cell_data_func(cell: CellRenderer, func: (CellLayoutDataFunc | null)): void;
+            vfunc_set_cell_data_func(cell: CellRenderer, func: CellLayoutDataFunc | null): void;
         }
 
 
         // Constructor properties interface
-        interface ConstructorProps extends GObject.Object.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GObject.Object.ConstructorProps {}
     }
 
     export interface CellLayoutNamespace {
@@ -144542,7 +144273,7 @@ export namespace Gtk {
          * is used by `cell_layout`.
          * @returns the cell area used by `cell_layout`, or `null` in case no cell area is used.
          */
-        get_area(): (CellArea | null);
+        get_area(): CellArea | null;
 
         /**
          * Returns the cell renderers which have been added to `cell_layout`.
@@ -144593,7 +144324,7 @@ export namespace Gtk {
          * @param cell a {@link Gtk.CellRenderer}
          * @param func the {@link Gtk.CellLayoutDataFunc} to use, or `null`
          */
-        set_cell_data_func(cell: CellRenderer, func: (CellLayoutDataFunc | null)): void;
+        set_cell_data_func(cell: CellRenderer, func: CellLayoutDataFunc | null): void;
     }
 
 
@@ -144632,7 +144363,7 @@ export namespace Gtk {
              * @param colors the colors of the palette, or `null`
              * @virtual
              */
-            vfunc_add_palette(orientation: Orientation, colors_per_line: number, colors: (Gdk.RGBA[] | null)): void;
+            vfunc_add_palette(orientation: Orientation, colors_per_line: number, colors: Gdk.RGBA[] | null): void;
 
             /**
              * @param color 
@@ -144740,7 +144471,7 @@ export namespace Gtk {
          * @param colors_per_line the number of colors to show in each row/column
          * @param colors the colors of the palette, or `null`
          */
-        add_palette(orientation: Orientation, colors_per_line: number, colors: (Gdk.RGBA[] | null)): void;
+        add_palette(orientation: Orientation, colors_per_line: number, colors: Gdk.RGBA[] | null): void;
 
         /**
          * Gets the currently-selected color.
@@ -144898,9 +144629,7 @@ export namespace Gtk {
 
 
         // Constructor properties interface
-        interface ConstructorProps extends GObject.Object.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GObject.Object.ConstructorProps {}
     }
 
     export interface EditableNamespace {
@@ -145084,13 +144813,13 @@ export namespace Gtk {
             createFolders: boolean;
             do_overwrite_confirmation: boolean;
             doOverwriteConfirmation: boolean;
-            extra_widget: (Widget | null);
-            extraWidget: (Widget | null);
-            filter: (FileFilter | null);
+            extra_widget: Widget | null;
+            extraWidget: Widget | null;
+            filter: FileFilter | null;
             local_only: boolean;
             localOnly: boolean;
-            preview_widget: (Widget | null);
-            previewWidget: (Widget | null);
+            preview_widget: Widget | null;
+            previewWidget: Widget | null;
             preview_widget_active: boolean;
             previewWidgetActive: boolean;
             select_multiple: boolean;
@@ -145284,14 +145013,14 @@ export namespace Gtk {
         get doOverwriteConfirmation(): boolean;
         set doOverwriteConfirmation(val: boolean);
 
-        get extra_widget(): (Widget | null);
-        set extra_widget(val: (Widget | null));
+        get extra_widget(): Widget | null;
+        set extra_widget(val: Widget | null);
 
-        get extraWidget(): (Widget | null);
-        set extraWidget(val: (Widget | null));
+        get extraWidget(): Widget | null;
+        set extraWidget(val: Widget | null);
 
-        get filter(): (FileFilter | null);
-        set filter(val: (FileFilter | null));
+        get filter(): FileFilter | null;
+        set filter(val: FileFilter | null);
 
         /**
          * @default true
@@ -145305,11 +145034,11 @@ export namespace Gtk {
         get localOnly(): boolean;
         set localOnly(val: boolean);
 
-        get preview_widget(): (Widget | null);
-        set preview_widget(val: (Widget | null));
+        get preview_widget(): Widget | null;
+        set preview_widget(val: Widget | null);
 
-        get previewWidget(): (Widget | null);
-        set previewWidget(val: (Widget | null));
+        get previewWidget(): Widget | null;
+        set previewWidget(val: Widget | null);
 
         /**
          * @default true
@@ -145373,7 +145102,7 @@ export namespace Gtk {
          * @param options ids for the options of the choice, or `null` for a boolean choice
          * @param option_labels user-visible labels for the options, must be the same length as `options`
          */
-        add_choice(id: string, label: string, options: (string[] | null), option_labels: (string[] | null)): void;
+        add_choice(id: string, label: string, options: string[] | null, option_labels: string[] | null): void;
 
         /**
          * Adds `filter` to the list of filters that the user can select between.
@@ -145440,14 +145169,14 @@ export namespace Gtk {
          * usual way to get the selection.
          * @returns the full path of the current folder, or `null` if the current path cannot be represented as a local filename.  Free with `g_free()`.  This function will also return `null` if the file chooser was unable to load the last folder that was requested from it; for example, as would be for calling `gtk_file_chooser_set_current_folder()` on a nonexistent folder.
          */
-        get_current_folder(): (string | null);
+        get_current_folder(): string | null;
 
         /**
          * Gets the current folder of `chooser` as {@link Gio.File}.
          * See `gtk_file_chooser_get_current_folder_uri()`.
          * @returns the {@link Gio.File} for the current folder.
          */
-        get_current_folder_file(): (Gio.File | null);
+        get_current_folder_file(): Gio.File | null;
 
         /**
          * Gets the current folder of `chooser` as an URI.
@@ -145462,7 +145191,7 @@ export namespace Gtk {
          * usual way to get the selection.
          * @returns the URI for the current folder. Free with `g_free()`.  This function will also return `null` if the file chooser was unable to load the last folder that was requested from it; for example, as would be for calling `gtk_file_chooser_set_current_folder_uri()` on a nonexistent folder.
          */
-        get_current_folder_uri(): (string | null);
+        get_current_folder_uri(): string | null;
 
         /**
          * Gets the current name in the file selector, as entered by the user in the
@@ -145489,7 +145218,7 @@ export namespace Gtk {
          * `gtk_file_chooser_set_extra_widget()`.
          * @returns the current extra widget, or `null`
          */
-        get_extra_widget(): (Widget | null);
+        get_extra_widget(): Widget | null;
 
         /**
          * Gets the {@link Gio.File} for the currently selected file in
@@ -145512,7 +145241,7 @@ export namespace Gtk {
          * folder.
          * @returns The currently selected filename,  or `null` if no file is selected, or the selected file can't  be represented with a local filename. Free with `g_free()`.
          */
-        get_filename(): (string | null);
+        get_filename(): string | null;
 
         /**
          * Lists all the selected files and subfolders in the current folder of
@@ -145534,7 +145263,7 @@ export namespace Gtk {
          * Gets the current filter; see `gtk_file_chooser_set_filter()`.
          * @returns the current filter, or `null`
          */
-        get_filter(): (FileFilter | null);
+        get_filter(): FileFilter | null;
 
         /**
          * Gets whether only local files can be selected in the
@@ -145548,28 +145277,28 @@ export namespace Gtk {
          * Internal function, see `gtk_file_chooser_get_preview_uri()`.
          * @returns the {@link Gio.File} for the file to preview,     or `null` if no file is selected. Free with `g_object_unref()`.
          */
-        get_preview_file(): (Gio.File | null);
+        get_preview_file(): Gio.File | null;
 
         /**
          * Gets the filename that should be previewed in a custom preview
          * widget. See `gtk_file_chooser_set_preview_widget()`.
          * @returns the filename to preview, or `null` if  no file is selected, or if the selected file cannot be represented  as a local filename. Free with `g_free()`
          */
-        get_preview_filename(): (string | null);
+        get_preview_filename(): string | null;
 
         /**
          * Gets the URI that should be previewed in a custom preview
          * widget. See `gtk_file_chooser_set_preview_widget()`.
          * @returns the URI for the file to preview,     or `null` if no file is selected. Free with `g_free()`.
          */
-        get_preview_uri(): (string | null);
+        get_preview_uri(): string | null;
 
         /**
          * Gets the current preview widget; see
          * `gtk_file_chooser_set_preview_widget()`.
          * @returns the current preview widget, or `null`
          */
-        get_preview_widget(): (Widget | null);
+        get_preview_widget(): Widget | null;
 
         /**
          * Gets whether the preview widget set by `gtk_file_chooser_set_preview_widget()`
@@ -145602,7 +145331,7 @@ export namespace Gtk {
          * folder.
          * @returns The currently selected URI, or `null`    if no file is selected. If `gtk_file_chooser_set_local_only()` is set to    `true` (the default) a local URI will be returned for any FUSE locations.    Free with `g_free()`
          */
-        get_uri(): (string | null);
+        get_uri(): string | null;
 
         /**
          * Lists all the selected files and subfolders in the current folder of
@@ -145630,14 +145359,14 @@ export namespace Gtk {
          * `gtk_file_chooser_add_shortcut_folder_uri()`.
          * @returns A list of folder URIs, or `null` if there are no shortcut folders.  Free the returned list with `g_slist_free()`, and the URIs with `g_free()`.
          */
-        list_shortcut_folder_uris(): (string[] | null);
+        list_shortcut_folder_uris(): string[] | null;
 
         /**
          * Queries the list of shortcut folders in the file chooser, as set by
          * `gtk_file_chooser_add_shortcut_folder()`.
          * @returns A list of folder filenames, or `null` if there are no shortcut folders. Free the returned list with `g_slist_free()`, and the filenames with `g_free()`.
          */
-        list_shortcut_folders(): (string[] | null);
+        list_shortcut_folders(): string[] | null;
 
         /**
          * Removes a 'choice' that has been added with `gtk_file_chooser_add_choice()`.
@@ -146052,7 +145781,7 @@ export namespace Gtk {
              * If the selected font is not installed, returns `null`.
              * @virtual
              */
-            vfunc_get_font_face(): (Pango.FontFace | null);
+            vfunc_get_font_face(): Pango.FontFace | null;
 
             /**
              * Gets the {@link Pango.FontFamily} representing the selected font family.
@@ -146061,14 +145790,14 @@ export namespace Gtk {
              * If the selected font is not installed, returns `null`.
              * @virtual
              */
-            vfunc_get_font_family(): (Pango.FontFamily | null);
+            vfunc_get_font_family(): Pango.FontFamily | null;
 
             /**
              * Gets the custom font map of this font chooser widget,
              * or `null` if it does not have one.
              * @virtual
              */
-            vfunc_get_font_map(): (Pango.FontMap | null);
+            vfunc_get_font_map(): Pango.FontMap | null;
 
             /**
              * The selected font size.
@@ -146082,7 +145811,7 @@ export namespace Gtk {
              * @param filter a {@link Gtk.FontFilterFunc}, or `null`
              * @virtual
              */
-            vfunc_set_filter_func(filter: (FontFilterFunc | null)): void;
+            vfunc_set_filter_func(filter: FontFilterFunc | null): void;
 
             /**
              * Sets a custom font map to use for this font chooser widget.
@@ -146116,15 +145845,15 @@ export namespace Gtk {
              * @param fontmap a {@link Pango.FontMap}
              * @virtual
              */
-            vfunc_set_font_map(fontmap: (Pango.FontMap | null)): void;
+            vfunc_set_font_map(fontmap: Pango.FontMap | null): void;
         }
 
 
         // Constructor properties interface
         interface ConstructorProps extends GObject.Object.ConstructorProps {
-            font: (string | null);
-            font_desc: (Pango.FontDescription | null);
-            fontDesc: (Pango.FontDescription | null);
+            font: string | null;
+            font_desc: Pango.FontDescription | null;
+            fontDesc: Pango.FontDescription | null;
             font_features: string;
             fontFeatures: string;
             language: string;
@@ -146155,20 +145884,20 @@ export namespace Gtk {
          * The font description as a string, e.g. "Sans Italic 12".
          * @default Sans 10
          */
-        get font(): (string | null);
-        set font(val: (string | null));
+        get font(): string | null;
+        set font(val: string | null);
 
         /**
          * The font description as a {@link Pango.FontDescription}.
          */
-        get font_desc(): (Pango.FontDescription | null);
-        set font_desc(val: (Pango.FontDescription | null));
+        get font_desc(): Pango.FontDescription | null;
+        set font_desc(val: Pango.FontDescription | null);
 
         /**
          * The font description as a {@link Pango.FontDescription}.
          */
-        get fontDesc(): (Pango.FontDescription | null);
-        set fontDesc(val: (Pango.FontDescription | null));
+        get fontDesc(): Pango.FontDescription | null;
+        set fontDesc(val: Pango.FontDescription | null);
 
         /**
          * The selected font features, in a format that is compatible with
@@ -146245,7 +145974,7 @@ export namespace Gtk {
          * font descriptions.
          * @returns A string with the name     of the current font, or `null` if  no font is selected. You must     free this string with `g_free()`.
          */
-        get_font(): (string | null);
+        get_font(): string | null;
 
         /**
          * Gets the currently-selected font.
@@ -146260,7 +145989,7 @@ export namespace Gtk {
          * font descriptions.
          * @returns A {@link Pango.FontDescription} for the     current font, or `null` if  no font is selected.
          */
-        get_font_desc(): (Pango.FontDescription | null);
+        get_font_desc(): Pango.FontDescription | null;
 
         /**
          * Gets the {@link Pango.FontFace} representing the selected font group
@@ -146269,7 +145998,7 @@ export namespace Gtk {
          * If the selected font is not installed, returns `null`.
          * @returns A {@link Pango.FontFace} representing the     selected font group details, or `null`. The returned object is owned by     `fontchooser` and must not be modified or freed.
          */
-        get_font_face(): (Pango.FontFace | null);
+        get_font_face(): Pango.FontFace | null;
 
         /**
          * Gets the {@link Pango.FontFamily} representing the selected font family.
@@ -146278,7 +146007,7 @@ export namespace Gtk {
          * If the selected font is not installed, returns `null`.
          * @returns A {@link Pango.FontFamily} representing the     selected font family, or `null`. The returned object is owned by `fontchooser`     and must not be modified or freed.
          */
-        get_font_family(): (Pango.FontFamily | null);
+        get_font_family(): Pango.FontFamily | null;
 
         /**
          * Gets the currently-selected font features.
@@ -146291,7 +146020,7 @@ export namespace Gtk {
          * or `null` if it does not have one.
          * @returns a {@link Pango.FontMap}, or `null`
          */
-        get_font_map(): (Pango.FontMap | null);
+        get_font_map(): Pango.FontMap | null;
 
         /**
          * The selected font size.
@@ -146328,7 +146057,7 @@ export namespace Gtk {
          * in the font chooser.
          * @param filter a {@link Gtk.FontFilterFunc}, or `null`
          */
-        set_filter_func(filter: (FontFilterFunc | null)): void;
+        set_filter_func(filter: FontFilterFunc | null): void;
 
         /**
          * Sets the currently-selected font.
@@ -146373,7 +146102,7 @@ export namespace Gtk {
          * 
          * @param fontmap a {@link Pango.FontMap}
          */
-        set_font_map(fontmap: (Pango.FontMap | null)): void;
+        set_font_map(fontmap: Pango.FontMap | null): void;
 
         /**
          * Sets the language to use for font features.
@@ -146514,9 +146243,7 @@ export namespace Gtk {
 
 
         // Constructor properties interface
-        interface ConstructorProps extends GObject.Object.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GObject.Object.ConstructorProps {}
     }
 
     export interface PrintOperationPreviewNamespace {
@@ -147003,7 +146730,7 @@ export namespace Gtk {
          * to affect the displayed recently used resources.
          * @param filter a {@link Gtk.RecentFilter}
          */
-        set_filter(filter: (RecentFilter | null)): void;
+        set_filter(filter: RecentFilter | null): void;
 
         /**
          * Sets the number of items that should be returned by
@@ -147250,7 +146977,7 @@ export namespace Gtk {
          * Sets the horizontal adjustment of the {@link Gtk.Scrollable}.
          * @param hadjustment a {@link Gtk.Adjustment}
          */
-        set_hadjustment(hadjustment: (Adjustment | null)): void;
+        set_hadjustment(hadjustment: Adjustment | null): void;
 
         /**
          * Sets the {@link Gtk.ScrollablePolicy} to determine whether
@@ -147264,7 +146991,7 @@ export namespace Gtk {
          * Sets the vertical adjustment of the {@link Gtk.Scrollable}.
          * @param vadjustment a {@link Gtk.Adjustment}
          */
-        set_vadjustment(vadjustment: (Adjustment | null)): void;
+        set_vadjustment(vadjustment: Adjustment | null): void;
 
         /**
          * Sets the {@link Gtk.ScrollablePolicy} to determine whether
@@ -147294,7 +147021,7 @@ export namespace Gtk {
              * @param path {@link Gtk.WidgetPath} to query
              * @virtual
              */
-            vfunc_get_icon_factory(path: WidgetPath): (IconFactory | null);
+            vfunc_get_icon_factory(path: WidgetPath): IconFactory | null;
 
             /**
              * Returns the style settings affecting a widget defined by `path`, or `null` if
@@ -147302,7 +147029,7 @@ export namespace Gtk {
              * @param path {@link Gtk.WidgetPath} to query
              * @virtual
              */
-            vfunc_get_style(path: WidgetPath): (StyleProperties | null);
+            vfunc_get_style(path: WidgetPath): StyleProperties | null;
 
             /**
              * Looks up a widget style property as defined by `provider` for
@@ -147317,9 +147044,7 @@ export namespace Gtk {
 
 
         // Constructor properties interface
-        interface ConstructorProps extends GObject.Object.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GObject.Object.ConstructorProps {}
     }
 
     export interface StyleProviderNamespace {
@@ -147340,7 +147065,7 @@ export namespace Gtk {
          * @param path {@link Gtk.WidgetPath} to query
          * @returns The icon factory to use for `path`, or `null`
          */
-        get_icon_factory(path: WidgetPath): (IconFactory | null);
+        get_icon_factory(path: WidgetPath): IconFactory | null;
 
         /**
          * Returns the style settings affecting a widget defined by `path`, or `null` if
@@ -147348,7 +147073,7 @@ export namespace Gtk {
          * @param path {@link Gtk.WidgetPath} to query
          * @returns a {@link Gtk.StyleProperties} containing the style settings affecting `path`
          */
-        get_style(path: WidgetPath): (StyleProperties | null);
+        get_style(path: WidgetPath): StyleProperties | null;
 
         /**
          * Looks up a widget style property as defined by `provider` for
@@ -147449,9 +147174,7 @@ export namespace Gtk {
 
 
         // Constructor properties interface
-        interface ConstructorProps extends Widget.ConstructorProps {
-
-        }
+        interface ConstructorProps extends Widget.ConstructorProps {}
     }
 
     export interface ToolShellNamespace {
@@ -147586,9 +147309,7 @@ export namespace Gtk {
 
 
         // Constructor properties interface
-        interface ConstructorProps extends GObject.Object.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GObject.Object.ConstructorProps {}
     }
 
     export interface TreeDragDestNamespace {
@@ -147674,9 +147395,7 @@ export namespace Gtk {
 
 
         // Constructor properties interface
-        interface ConstructorProps extends GObject.Object.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GObject.Object.ConstructorProps {}
     }
 
     export interface TreeDragSourceNamespace {
@@ -147797,7 +147516,7 @@ export namespace Gtk {
              * @param parent the {@link Gtk.TreeIter}-struct, or `null`
              * @virtual
              */
-            vfunc_iter_children(parent: (TreeIter | null)): [boolean, TreeIter];
+            vfunc_iter_children(parent: TreeIter | null): [boolean, TreeIter];
 
             /**
              * Returns `true` if `iter` has children, `false` otherwise.
@@ -147814,7 +147533,7 @@ export namespace Gtk {
              * @param iter the {@link Gtk.TreeIter}-struct, or `null`
              * @virtual
              */
-            vfunc_iter_n_children(iter: (TreeIter | null)): number;
+            vfunc_iter_n_children(iter: TreeIter | null): number;
 
             /**
              * Sets `iter` to point to the node following it at the current level.
@@ -147838,7 +147557,7 @@ export namespace Gtk {
              * @param n the index of the desired child
              * @virtual
              */
-            vfunc_iter_nth_child(parent: (TreeIter | null), n: number): [boolean, TreeIter];
+            vfunc_iter_nth_child(parent: TreeIter | null, n: number): [boolean, TreeIter];
 
             /**
              * Sets `iter` to be the parent of `child`.
@@ -147945,9 +147664,7 @@ export namespace Gtk {
 
 
         // Constructor properties interface
-        interface ConstructorProps extends GObject.Object.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GObject.Object.ConstructorProps {}
     }
 
     export interface TreeModelNamespace {
@@ -148164,7 +147881,7 @@ export namespace Gtk {
          * @param root A {@link Gtk.TreePath} or `null`.
          * @returns A new {@link Gtk.TreeModel}.
          */
-        filter_new(root: (TreePath | null)): TreeModel;
+        filter_new(root: TreePath | null): TreeModel;
 
         /**
          * Calls func on each node in model in a depth-first fashion.
@@ -148264,7 +147981,7 @@ export namespace Gtk {
          * @param parent the {@link Gtk.TreeIter}-struct, or `null`
          * @returns `true`, if `iter` has been set to the first child
          */
-        iter_children(parent: (TreeIter | null)): [boolean, TreeIter];
+        iter_children(parent: TreeIter | null): [boolean, TreeIter];
 
         /**
          * Returns `true` if `iter` has children, `false` otherwise.
@@ -148281,7 +147998,7 @@ export namespace Gtk {
          * @param iter the {@link Gtk.TreeIter}-struct, or `null`
          * @returns the number of children of `iter`
          */
-        iter_n_children(iter: (TreeIter | null)): number;
+        iter_n_children(iter: TreeIter | null): number;
 
         /**
          * Sets `iter` to point to the node following it at the current level.
@@ -148305,7 +148022,7 @@ export namespace Gtk {
          * @param n the index of the desired child
          * @returns `true`, if `parent` has an `n`-th child
          */
-        iter_nth_child(parent: (TreeIter | null), n: number): [boolean, TreeIter];
+        iter_nth_child(parent: TreeIter | null, n: number): [boolean, TreeIter];
 
         /**
          * Sets `iter` to be the parent of `child`.
@@ -148399,7 +148116,7 @@ export namespace Gtk {
          * @param iter a valid {@link Gtk.TreeIter}-struct pointing to the node     whose children have been reordered, or `null` if the depth     of `path` is 0
          * @param new_order an array of integers     mapping the current position of each child to its old     position before the re-ordering,     i.e. `new_order``[newpos] = oldpos`
          */
-        rows_reordered(path: TreePath, iter: (TreeIter | null), new_order: number[]): void;
+        rows_reordered(path: TreePath, iter: TreeIter | null, new_order: number[]): void;
 
         /**
          * Lets the tree unref the node.
@@ -148495,9 +148212,7 @@ export namespace Gtk {
 
 
         // Constructor properties interface
-        interface ConstructorProps extends TreeModel.ConstructorProps {
-
-        }
+        interface ConstructorProps extends TreeModel.ConstructorProps {}
     }
 
     export interface TreeSortableNamespace {
