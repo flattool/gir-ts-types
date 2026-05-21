@@ -774,7 +774,7 @@ export namespace Gsk {
         static INVALID_DATA: number;
 
         // Constructors
-        constructor(options: { message: string, code: number });
+        constructor(options: { message: string; code: number });
 
         // Static methods
         /**
@@ -881,7 +881,7 @@ export namespace Gsk {
      * @returns a new {@link Gsk.Path}, or `NULL` if `string` could not be parsed
      * @since 4.14
      */
-    function path_parse(string: string): (Path | null);
+    function path_parse(string: string): Path | null;
 
     /**
      * Registers an error quark for {@link Gsk.RenderNode} errors.
@@ -918,7 +918,7 @@ export namespace Gsk {
      * @returns the render node
      * @since 4.6
      */
-    function value_dup_render_node(value: (GObject.Value | any)): (RenderNode | null);
+    function value_dup_render_node(value: GObject.Value | any): RenderNode | null;
 
     /**
      * Retrieves the render node stored inside a {@link GObject.Value}.
@@ -926,7 +926,7 @@ export namespace Gsk {
      * @returns the render node
      * @since 4.6
      */
-    function value_get_render_node(value: (GObject.Value | any)): (RenderNode | null);
+    function value_get_render_node(value: GObject.Value | any): RenderNode | null;
 
     /**
      * Stores the given render node inside a {@link GObject.Value}.
@@ -937,7 +937,7 @@ export namespace Gsk {
      * @param node a render node
      * @since 4.6
      */
-    function value_set_render_node(value: (GObject.Value | any), node: RenderNode): void;
+    function value_set_render_node(value: GObject.Value | any, node: RenderNode): void;
 
     /**
      * Stores the given render node inside a {@link GObject.Value}.
@@ -948,7 +948,7 @@ export namespace Gsk {
      * @param node a render node
      * @since 4.6
      */
-    function value_take_render_node(value: (GObject.Value | any), node: (RenderNode | null)): void;
+    function value_take_render_node(value: GObject.Value | any, node: RenderNode | null): void;
 
     /**
      * @gir-type Callback
@@ -982,7 +982,7 @@ export namespace Gsk {
      * @gir-type Callback
      */
     interface RenderReplayNodeFilter {
-        (replay: RenderReplay, node: RenderNode): (RenderNode | null);
+        (replay: RenderReplay, node: RenderNode): RenderNode | null;
     }
 
     /**
@@ -1072,8 +1072,7 @@ export namespace Gsk {
 
     namespace BlendNode {
         // Signal signatures
-        interface SignalSignatures extends RenderNode.SignalSignatures {
-        }
+        interface SignalSignatures extends RenderNode.SignalSignatures {}
     }
 
     /**
@@ -1124,8 +1123,7 @@ export namespace Gsk {
 
     namespace BlurNode {
         // Signal signatures
-        interface SignalSignatures extends RenderNode.SignalSignatures {
-        }
+        interface SignalSignatures extends RenderNode.SignalSignatures {}
     }
 
     /**
@@ -1170,8 +1168,7 @@ export namespace Gsk {
 
     namespace BorderNode {
         // Signal signatures
-        interface SignalSignatures extends RenderNode.SignalSignatures {
-        }
+        interface SignalSignatures extends RenderNode.SignalSignatures {}
     }
 
     /**
@@ -1228,9 +1225,7 @@ export namespace Gsk {
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends Renderer.ConstructorProps {
-
-        }
+        interface ConstructorProps extends Renderer.ConstructorProps {}
     }
 
     /**
@@ -1275,8 +1270,7 @@ export namespace Gsk {
 
     namespace CairoNode {
         // Signal signatures
-        interface SignalSignatures extends RenderNode.SignalSignatures {
-        }
+        interface SignalSignatures extends RenderNode.SignalSignatures {}
     }
 
     /**
@@ -1331,9 +1325,7 @@ export namespace Gsk {
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends Renderer.ConstructorProps {
-
-        }
+        interface ConstructorProps extends Renderer.ConstructorProps {}
     }
 
     /**
@@ -1379,8 +1371,7 @@ export namespace Gsk {
 
     namespace ClipNode {
         // Signal signatures
-        interface SignalSignatures extends RenderNode.SignalSignatures {
-        }
+        interface SignalSignatures extends RenderNode.SignalSignatures {}
     }
 
     /**
@@ -1425,8 +1416,7 @@ export namespace Gsk {
 
     namespace ColorMatrixNode {
         // Signal signatures
-        interface SignalSignatures extends RenderNode.SignalSignatures {
-        }
+        interface SignalSignatures extends RenderNode.SignalSignatures {}
     }
 
     /**
@@ -1477,8 +1467,7 @@ export namespace Gsk {
 
     namespace ColorNode {
         // Signal signatures
-        interface SignalSignatures extends RenderNode.SignalSignatures {
-        }
+        interface SignalSignatures extends RenderNode.SignalSignatures {}
     }
 
     /**
@@ -1520,8 +1509,7 @@ export namespace Gsk {
 
     namespace ComponentTransferNode {
         // Signal signatures
-        interface SignalSignatures extends RenderNode.SignalSignatures {
-        }
+        interface SignalSignatures extends RenderNode.SignalSignatures {}
     }
 
     /**
@@ -1569,8 +1557,7 @@ export namespace Gsk {
 
     namespace CompositeNode {
         // Signal signatures
-        interface SignalSignatures extends RenderNode.SignalSignatures {
-        }
+        interface SignalSignatures extends RenderNode.SignalSignatures {}
     }
 
     /**
@@ -1624,8 +1611,7 @@ export namespace Gsk {
 
     namespace ConicGradientNode {
         // Signal signatures
-        interface SignalSignatures extends RenderNode.SignalSignatures {
-        }
+        interface SignalSignatures extends RenderNode.SignalSignatures {}
     }
 
     /**
@@ -1693,8 +1679,7 @@ export namespace Gsk {
 
     namespace ContainerNode {
         // Signal signatures
-        interface SignalSignatures extends RenderNode.SignalSignatures {
-        }
+        interface SignalSignatures extends RenderNode.SignalSignatures {}
     }
 
     /**
@@ -1740,8 +1725,7 @@ export namespace Gsk {
 
     namespace CopyNode {
         // Signal signatures
-        interface SignalSignatures extends RenderNode.SignalSignatures {
-        }
+        interface SignalSignatures extends RenderNode.SignalSignatures {}
     }
 
     /**
@@ -1782,8 +1766,7 @@ export namespace Gsk {
 
     namespace CrossFadeNode {
         // Signal signatures
-        interface SignalSignatures extends RenderNode.SignalSignatures {
-        }
+        interface SignalSignatures extends RenderNode.SignalSignatures {}
     }
 
     /**
@@ -1834,8 +1817,7 @@ export namespace Gsk {
 
     namespace DebugNode {
         // Signal signatures
-        interface SignalSignatures extends RenderNode.SignalSignatures {
-        }
+        interface SignalSignatures extends RenderNode.SignalSignatures {}
     }
 
     /**
@@ -1881,8 +1863,7 @@ export namespace Gsk {
 
     namespace FillNode {
         // Signal signatures
-        interface SignalSignatures extends RenderNode.SignalSignatures {
-        }
+        interface SignalSignatures extends RenderNode.SignalSignatures {}
     }
 
     /**
@@ -1942,9 +1923,7 @@ export namespace Gsk {
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends Renderer.ConstructorProps {
-
-        }
+        interface ConstructorProps extends Renderer.ConstructorProps {}
     }
 
     /**
@@ -1997,8 +1976,8 @@ export namespace Gsk {
 
         // Constructor properties interface
         interface ConstructorProps extends GObject.Object.ConstructorProps {
-            resource: (string | null);
-            source: (GLib.Bytes | Uint8Array);
+            resource: string | null;
+            source: GLib.Bytes | Uint8Array;
         }
     }
 
@@ -2130,7 +2109,7 @@ export namespace Gsk {
          * @construct-only
          * @default null
          */
-        get resource(): (string | null);
+        get resource(): string | null;
 
         /**
          * The source code for the shader, as a {@link GLib.Bytes}.
@@ -2152,7 +2131,7 @@ export namespace Gsk {
 
         _init(...args: any[]): void;
 
-        static new_from_bytes(sourcecode: (GLib.Bytes | Uint8Array)): GLShader;
+        static new_from_bytes(sourcecode: GLib.Bytes | Uint8Array): GLShader;
 
         static new_from_resource(resource_path: string): GLShader;
 
@@ -2204,7 +2183,7 @@ export namespace Gsk {
          * @param idx index of the uniform
          * @returns The value
          */
-        get_arg_bool(args: (GLib.Bytes | Uint8Array), idx: number): boolean;
+        get_arg_bool(args: GLib.Bytes | Uint8Array, idx: number): boolean;
 
         /**
          * Gets the value of the uniform `idx` in the `args` block.
@@ -2214,7 +2193,7 @@ export namespace Gsk {
          * @param idx index of the uniform
          * @returns The value
          */
-        get_arg_float(args: (GLib.Bytes | Uint8Array), idx: number): number;
+        get_arg_float(args: GLib.Bytes | Uint8Array, idx: number): number;
 
         /**
          * Gets the value of the uniform `idx` in the `args` block.
@@ -2224,7 +2203,7 @@ export namespace Gsk {
          * @param idx index of the uniform
          * @returns The value
          */
-        get_arg_int(args: (GLib.Bytes | Uint8Array), idx: number): number;
+        get_arg_int(args: GLib.Bytes | Uint8Array, idx: number): number;
 
         /**
          * Gets the value of the uniform `idx` in the `args` block.
@@ -2234,7 +2213,7 @@ export namespace Gsk {
          * @param idx index of the uniform
          * @returns The value
          */
-        get_arg_uint(args: (GLib.Bytes | Uint8Array), idx: number): number;
+        get_arg_uint(args: GLib.Bytes | Uint8Array, idx: number): number;
 
         /**
          * Gets the value of the uniform `idx` in the `args` block.
@@ -2244,7 +2223,7 @@ export namespace Gsk {
          * @param idx index of the uniform
          * @param out_value location to store the uniform value in
          */
-        get_arg_vec2(args: (GLib.Bytes | Uint8Array), idx: number, out_value: Graphene.Vec2): void;
+        get_arg_vec2(args: GLib.Bytes | Uint8Array, idx: number, out_value: Graphene.Vec2): void;
 
         /**
          * Gets the value of the uniform `idx` in the `args` block.
@@ -2254,7 +2233,7 @@ export namespace Gsk {
          * @param idx index of the uniform
          * @param out_value location to store the uniform value in
          */
-        get_arg_vec3(args: (GLib.Bytes | Uint8Array), idx: number, out_value: Graphene.Vec3): void;
+        get_arg_vec3(args: GLib.Bytes | Uint8Array, idx: number, out_value: Graphene.Vec3): void;
 
         /**
          * Gets the value of the uniform `idx` in the `args` block.
@@ -2264,7 +2243,7 @@ export namespace Gsk {
          * @param idx index of the uniform
          * @param out_value location to store set the uniform value in
          */
-        get_arg_vec4(args: (GLib.Bytes | Uint8Array), idx: number, out_value: Graphene.Vec4): void;
+        get_arg_vec4(args: GLib.Bytes | Uint8Array, idx: number, out_value: Graphene.Vec4): void;
 
         /**
          * Get the size of the data block used to specify arguments for this shader.
@@ -2293,7 +2272,7 @@ export namespace Gsk {
          * to render this shader.
          * @returns The resource path for the shader
          */
-        get_resource(): (string | null);
+        get_resource(): string | null;
 
         /**
          * Gets the GLSL sourcecode being used to render this shader.
@@ -2326,8 +2305,7 @@ export namespace Gsk {
 
     namespace GLShaderNode {
         // Signal signatures
-        interface SignalSignatures extends RenderNode.SignalSignatures {
-        }
+        interface SignalSignatures extends RenderNode.SignalSignatures {}
     }
 
     /**
@@ -2340,7 +2318,7 @@ export namespace Gsk {
         // Constructors
         _init(...args: any[]): void;
 
-        static ["new"](shader: GLShader, bounds: Graphene.Rect, args: (GLib.Bytes | Uint8Array), children: (RenderNode[] | null)): GLShaderNode;
+        static ["new"](shader: GLShader, bounds: Graphene.Rect, args: GLib.Bytes | Uint8Array, children: RenderNode[] | null): GLShaderNode;
 
         // Signals
         /** @signal */
@@ -2385,8 +2363,7 @@ export namespace Gsk {
 
     namespace InsetShadowNode {
         // Signal signatures
-        interface SignalSignatures extends RenderNode.SignalSignatures {
-        }
+        interface SignalSignatures extends RenderNode.SignalSignatures {}
     }
 
     /**
@@ -2458,8 +2435,7 @@ export namespace Gsk {
 
     namespace IsolationNode {
         // Signal signatures
-        interface SignalSignatures extends RenderNode.SignalSignatures {
-        }
+        interface SignalSignatures extends RenderNode.SignalSignatures {}
     }
 
     /**
@@ -2505,8 +2481,7 @@ export namespace Gsk {
 
     namespace LinearGradientNode {
         // Signal signatures
-        interface SignalSignatures extends RenderNode.SignalSignatures {
-        }
+        interface SignalSignatures extends RenderNode.SignalSignatures {}
     }
 
     /**
@@ -2563,8 +2538,7 @@ export namespace Gsk {
 
     namespace MaskNode {
         // Signal signatures
-        interface SignalSignatures extends RenderNode.SignalSignatures {
-        }
+        interface SignalSignatures extends RenderNode.SignalSignatures {}
     }
 
     /**
@@ -2622,9 +2596,7 @@ export namespace Gsk {
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends Renderer.ConstructorProps {
-
-        }
+        interface ConstructorProps extends Renderer.ConstructorProps {}
     }
 
     /**
@@ -2669,8 +2641,7 @@ export namespace Gsk {
 
     namespace OpacityNode {
         // Signal signatures
-        interface SignalSignatures extends RenderNode.SignalSignatures {
-        }
+        interface SignalSignatures extends RenderNode.SignalSignatures {}
     }
 
     /**
@@ -2715,8 +2686,7 @@ export namespace Gsk {
 
     namespace OutsetShadowNode {
         // Signal signatures
-        interface SignalSignatures extends RenderNode.SignalSignatures {
-        }
+        interface SignalSignatures extends RenderNode.SignalSignatures {}
     }
 
     /**
@@ -2788,8 +2758,7 @@ export namespace Gsk {
 
     namespace PasteNode {
         // Signal signatures
-        interface SignalSignatures extends RenderNode.SignalSignatures {
-        }
+        interface SignalSignatures extends RenderNode.SignalSignatures {}
     }
 
     /**
@@ -2803,7 +2772,7 @@ export namespace Gsk {
         // Constructors
         _init(...args: any[]): void;
 
-        static ["new"](bounds: Graphene.Rect, depth: (bigint | number)): PasteNode;
+        static ["new"](bounds: Graphene.Rect, depth: bigint | number): PasteNode;
 
         // Signals
         /** @signal */
@@ -2829,8 +2798,7 @@ export namespace Gsk {
 
     namespace RadialGradientNode {
         // Signal signatures
-        interface SignalSignatures extends RenderNode.SignalSignatures {
-        }
+        interface SignalSignatures extends RenderNode.SignalSignatures {}
     }
 
     /**
@@ -2905,8 +2873,7 @@ export namespace Gsk {
 
     namespace RenderNode {
         // Signal signatures
-        interface SignalSignatures extends GObject.Object.SignalSignatures {
-        }
+        interface SignalSignatures extends GObject.Object.SignalSignatures {}
     }
 
     /**
@@ -2951,7 +2918,7 @@ export namespace Gsk {
          * @param bytes the bytes containing the data
          * @param error_func callback on parsing errors
          */
-        static deserialize(bytes: (GLib.Bytes | Uint8Array), error_func: (ParseErrorFunc | null)): (RenderNode | null);
+        static deserialize(bytes: GLib.Bytes | Uint8Array, error_func: ParseErrorFunc | null): RenderNode | null;
 
         // Methods
         /**
@@ -2982,7 +2949,7 @@ export namespace Gsk {
          * thse semantics, don't use this function, use the specific getters instead.
          * @returns The children
          */
-        get_children(): (RenderNode[] | null);
+        get_children(): RenderNode[] | null;
 
         /**
          * Returns the type of the render node.
@@ -3056,7 +3023,7 @@ export namespace Gsk {
         // Constructor properties interface
         interface ConstructorProps extends GObject.Object.ConstructorProps {
             realized: boolean;
-            surface: (Gdk.Surface | null);
+            surface: Gdk.Surface | null;
         }
     }
 
@@ -3088,7 +3055,7 @@ export namespace Gsk {
          * The surface associated with renderer.
          * @read-only
          */
-        get surface(): (Gdk.Surface | null);
+        get surface(): Gdk.Surface | null;
 
         /**
          * Compile-time signal type information.
@@ -3126,7 +3093,7 @@ export namespace Gsk {
          * If the renderer has not been realized yet, `NULL` will be returned.
          * @returns the surface
          */
-        get_surface(): (Gdk.Surface | null);
+        get_surface(): Gdk.Surface | null;
 
         /**
          * Checks whether the renderer is realized or not.
@@ -3147,7 +3114,7 @@ export namespace Gsk {
          * @param surface the surface that renderer will be used on
          * @returns whether the renderer was successfully realized
          */
-        realize(surface: (Gdk.Surface | null)): boolean;
+        realize(surface: Gdk.Surface | null): boolean;
 
         /**
          * Creates the resources needed by the renderer.
@@ -3175,7 +3142,7 @@ export namespace Gsk {
          * @param root the render node to render
          * @param region the `cairo_region_t` that must be redrawn or `NULL`   for the whole surface
          */
-        render(root: RenderNode, region: (cairo.Region | null)): void;
+        render(root: RenderNode, region: cairo.Region | null): void;
 
         /**
          * Renders a scene graph, described by a tree of {@link Gsk.RenderNode} instances,
@@ -3190,7 +3157,7 @@ export namespace Gsk {
          * @param viewport the section to draw or `NULL` to use `root`'s bounds
          * @returns a texture with the rendered contents of `root`
          */
-        render_texture(root: RenderNode, viewport: (Graphene.Rect | null)): Gdk.Texture;
+        render_texture(root: RenderNode, viewport: Graphene.Rect | null): Gdk.Texture;
 
         /**
          * Releases all the resources created by {@link Gsk.Renderer.realize}.
@@ -3201,8 +3168,7 @@ export namespace Gsk {
 
     namespace RepeatNode {
         // Signal signatures
-        interface SignalSignatures extends RenderNode.SignalSignatures {
-        }
+        interface SignalSignatures extends RenderNode.SignalSignatures {}
     }
 
     /**
@@ -3215,7 +3181,7 @@ export namespace Gsk {
         // Constructors
         _init(...args: any[]): void;
 
-        static ["new"](bounds: Graphene.Rect, child: RenderNode, child_bounds: (Graphene.Rect | null)): RepeatNode;
+        static ["new"](bounds: Graphene.Rect, child: RenderNode, child_bounds: Graphene.Rect | null): RepeatNode;
 
         // Signals
         /** @signal */
@@ -3247,8 +3213,7 @@ export namespace Gsk {
 
     namespace RepeatingLinearGradientNode {
         // Signal signatures
-        interface SignalSignatures extends RenderNode.SignalSignatures {
-        }
+        interface SignalSignatures extends RenderNode.SignalSignatures {}
     }
 
     /**
@@ -3280,8 +3245,7 @@ export namespace Gsk {
 
     namespace RepeatingRadialGradientNode {
         // Signal signatures
-        interface SignalSignatures extends RenderNode.SignalSignatures {
-        }
+        interface SignalSignatures extends RenderNode.SignalSignatures {}
     }
 
     /**
@@ -3313,8 +3277,7 @@ export namespace Gsk {
 
     namespace RoundedClipNode {
         // Signal signatures
-        interface SignalSignatures extends RenderNode.SignalSignatures {
-        }
+        interface SignalSignatures extends RenderNode.SignalSignatures {}
     }
 
     /**
@@ -3359,8 +3322,7 @@ export namespace Gsk {
 
     namespace ShadowNode {
         // Signal signatures
-        interface SignalSignatures extends RenderNode.SignalSignatures {
-        }
+        interface SignalSignatures extends RenderNode.SignalSignatures {}
     }
 
     /**
@@ -3406,14 +3368,13 @@ export namespace Gsk {
          * @param i the given index
          * @returns the shadow data
          */
-        get_shadow(i: (bigint | number)): Shadow;
+        get_shadow(i: bigint | number): Shadow;
     }
 
 
     namespace StrokeNode {
         // Signal signatures
-        interface SignalSignatures extends RenderNode.SignalSignatures {
-        }
+        interface SignalSignatures extends RenderNode.SignalSignatures {}
     }
 
     /**
@@ -3467,8 +3428,7 @@ export namespace Gsk {
 
     namespace SubsurfaceNode {
         // Signal signatures
-        interface SignalSignatures extends RenderNode.SignalSignatures {
-        }
+        interface SignalSignatures extends RenderNode.SignalSignatures {}
     }
 
     /**
@@ -3506,8 +3466,7 @@ export namespace Gsk {
 
     namespace TextNode {
         // Signal signatures
-        interface SignalSignatures extends RenderNode.SignalSignatures {
-        }
+        interface SignalSignatures extends RenderNode.SignalSignatures {}
     }
 
     /**
@@ -3579,8 +3538,7 @@ export namespace Gsk {
 
     namespace TextureNode {
         // Signal signatures
-        interface SignalSignatures extends RenderNode.SignalSignatures {
-        }
+        interface SignalSignatures extends RenderNode.SignalSignatures {}
     }
 
     /**
@@ -3619,8 +3577,7 @@ export namespace Gsk {
 
     namespace TextureScaleNode {
         // Signal signatures
-        interface SignalSignatures extends RenderNode.SignalSignatures {
-        }
+        interface SignalSignatures extends RenderNode.SignalSignatures {}
     }
 
     /**
@@ -3666,8 +3623,7 @@ export namespace Gsk {
 
     namespace TransformNode {
         // Signal signatures
-        interface SignalSignatures extends RenderNode.SignalSignatures {
-        }
+        interface SignalSignatures extends RenderNode.SignalSignatures {}
     }
 
     /**
@@ -3680,7 +3636,7 @@ export namespace Gsk {
         // Constructors
         _init(...args: any[]): void;
 
-        static ["new"](child: RenderNode, transform: (Transform | null)): TransformNode;
+        static ["new"](child: RenderNode, transform: Transform | null): TransformNode;
 
         // Signals
         /** @signal */
@@ -3718,9 +3674,7 @@ export namespace Gsk {
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends Renderer.ConstructorProps {
-
-        }
+        interface ConstructorProps extends Renderer.ConstructorProps {}
     }
 
     /**
@@ -3810,10 +3764,7 @@ export namespace Gsk {
         static $gtype: GObject.GType<ComponentTransfer>;
 
         // Constructors
-
-        constructor(properties?: Partial<{
-
-        }>);
+        constructor(properties?: Partial<{}>);
 
         static new_discrete(values: number[]): ComponentTransfer;
 
@@ -3932,7 +3883,7 @@ export namespace Gsk {
          * The `O` command is an extension that is not supported in SVG.
          * @param string a string
          */
-        static parse(string: string): (Path | null);
+        static parse(string: string): Path | null;
 
         // Methods
         /**
@@ -3985,7 +3936,7 @@ export namespace Gsk {
          * @param func the function to call for intersections
          * @returns `FALSE` if `func` returned FALSE`, `TRUE` otherwise.
          */
-        foreach_intersection(path2: (Path | null), func: PathIntersectionFunc): boolean;
+        foreach_intersection(path2: Path | null, func: PathIntersectionFunc): boolean;
 
         /**
          * Computes the bounds of the given path.
@@ -4196,10 +4147,7 @@ export namespace Gsk {
         static $gtype: GObject.GType<PathBuilder>;
 
         // Constructors
-
-        constructor(properties?: Partial<{
-
-        }>);
+        constructor(properties?: Partial<{}>);
 
         static ["new"](): PathBuilder;
 
@@ -4873,10 +4821,7 @@ export namespace Gsk {
         static $gtype: GObject.GType<RenderReplay>;
 
         // Constructors
-
-        constructor(properties?: Partial<{
-
-        }>);
+        constructor(properties?: Partial<{}>);
 
         static ["new"](): RenderReplay;
 
@@ -4896,7 +4841,7 @@ export namespace Gsk {
          * @param node the node to replay
          * @returns The replayed node
          */
-        ["default"](node: RenderNode): (RenderNode | null);
+        ["default"](node: RenderNode): RenderNode | null;
 
         /**
          * Filters a font using the current filter function.
@@ -4916,7 +4861,7 @@ export namespace Gsk {
          * @param node the node to replay
          * @returns The replayed node
          */
-        filter_node(node: RenderNode): (RenderNode | null);
+        filter_node(node: RenderNode): RenderNode | null;
 
         /**
          * Filters a texture using the current filter function.
@@ -4938,7 +4883,7 @@ export namespace Gsk {
          * a font yourself.
          * @param filter the font filter function
          */
-        set_font_filter(filter: (RenderReplayFontFilter | null)): void;
+        set_font_filter(filter: RenderReplayFontFilter | null): void;
 
         /**
          * Sets the function to use as a node filter.
@@ -4956,7 +4901,7 @@ export namespace Gsk {
          *   run for this node, which calls your function on its children
          * @param filter the function to call to replay nodes
          */
-        set_node_filter(filter: (RenderReplayNodeFilter | null)): void;
+        set_node_filter(filter: RenderReplayNodeFilter | null): void;
 
         /**
          * Sets a filter function to be called by {@link Gsk.RenderReplay.default}
@@ -4966,7 +4911,7 @@ export namespace Gsk {
          * a texture yourself.
          * @param filter the texture filter function
          */
-        set_texture_filter(filter: (RenderReplayTextureFilter | null)): void;
+        set_texture_filter(filter: RenderReplayTextureFilter | null): void;
     }
 
 
@@ -5120,9 +5065,9 @@ export namespace Gsk {
         static $gtype: GObject.GType<ShaderArgsBuilder>;
 
         // Constructors
-        constructor(shader: GLShader, initial_values: (GLib.Bytes | null));
+        constructor(shader: GLShader, initial_values: GLib.Bytes | null);
 
-        static ["new"](shader: GLShader, initial_values: (GLib.Bytes | null)): ShaderArgsBuilder;
+        static ["new"](shader: GLShader, initial_values: GLib.Bytes | null): ShaderArgsBuilder;
 
         // Methods
         /**
@@ -5283,7 +5228,7 @@ export namespace Gsk {
          * Gets the dash array in use.
          * @returns the dash array or `NULL` if the dash array is empty
          */
-        get_dash(): (number[] | null);
+        get_dash(): number[] | null;
 
         /**
          * Gets the dash offset.
@@ -5345,7 +5290,7 @@ export namespace Gsk {
          * {@link Gsk.Stroke.set_dash_offset}.
          * @param dash the array of dashes
          */
-        set_dash(dash: (number[] | null)): void;
+        set_dash(dash: number[] | null): void;
 
         /**
          * Sets the offset into the dash pattern where dashing should begin.
@@ -5421,10 +5366,7 @@ export namespace Gsk {
         static $gtype: GObject.GType<Transform>;
 
         // Constructors
-
-        constructor(properties?: Partial<{
-
-        }>);
+        constructor(properties?: Partial<{}>);
 
         static ["new"](): Transform;
 
@@ -5447,7 +5389,7 @@ export namespace Gsk {
          * @param second the second transform
          * @returns true if the two transforms perform the same operation
          */
-        equal(second: (Transform | null)): boolean;
+        equal(second: Transform | null): boolean;
 
         /**
          * Returns the category this transform belongs to.
@@ -5468,7 +5410,7 @@ export namespace Gsk {
          * if you want to keep it around.
          * @returns The inverted transform
          */
-        invert(): (Transform | null);
+        invert(): Transform | null;
 
         /**
          * Multiplies `next` with the given `matrix`.
@@ -5497,7 +5439,7 @@ export namespace Gsk {
          * @param dy the y0 member
          * @returns The new transform
          */
-        matrix_2d(xx: number, yx: number, xy: number, yy: number, dx: number, dy: number): (Transform | null);
+        matrix_2d(xx: number, yx: number, xy: number, yy: number, dx: number, dy: number): Transform | null;
 
         /**
          * Applies a perspective projection transform.
@@ -5527,7 +5469,7 @@ export namespace Gsk {
          * Acquires a reference on the given transform.
          * @returns the transform with an additional reference
          */
-        ref(): (Transform | null);
+        ref(): Transform | null;
 
         /**
          * Rotates `next` by an angle around the Z axis.
@@ -5539,7 +5481,7 @@ export namespace Gsk {
          * @param angle the rotation angle, in degrees (clockwise)
          * @returns The new transform
          */
-        rotate(angle: number): (Transform | null);
+        rotate(angle: number): Transform | null;
 
         /**
          * Rotates `next` `angle` degrees around `axis`.
@@ -5552,7 +5494,7 @@ export namespace Gsk {
          * @param axis The rotation axis
          * @returns The new transform
          */
-        rotate_3d(angle: number, axis: Graphene.Vec3): (Transform | null);
+        rotate_3d(angle: number, axis: Graphene.Vec3): Transform | null;
 
         /**
          * Scales `next` in 2-dimensional space by the given factors.
@@ -5565,7 +5507,7 @@ export namespace Gsk {
          * @param factor_y scaling factor on the Y axis
          * @returns The new transform
          */
-        scale(factor_x: number, factor_y: number): (Transform | null);
+        scale(factor_x: number, factor_y: number): Transform | null;
 
         /**
          * Scales `next` by the given factors.
@@ -5577,7 +5519,7 @@ export namespace Gsk {
          * @param factor_z scaling factor on the Z axis
          * @returns The new transform
          */
-        scale_3d(factor_x: number, factor_y: number, factor_z: number): (Transform | null);
+        scale_3d(factor_x: number, factor_y: number, factor_z: number): Transform | null;
 
         /**
          * Applies a skew transform.
@@ -5588,7 +5530,7 @@ export namespace Gsk {
          * @param skew_y skew factor, in degrees, on the Y axis
          * @returns The new transform
          */
-        skew(skew_x: number, skew_y: number): (Transform | null);
+        skew(skew_x: number, skew_y: number): Transform | null;
 
         /**
          * Converts a transform to a 2D transformation matrix.
@@ -5696,7 +5638,7 @@ export namespace Gsk {
          * @param other transform to apply
          * @returns The new transform
          */
-        transform(other: (Transform | null)): (Transform | null);
+        transform(other: Transform | null): Transform | null;
 
         /**
          * Transforms a rectangle using the given transform.
@@ -5722,7 +5664,7 @@ export namespace Gsk {
          * @param point the point to translate the transform by
          * @returns The new transform
          */
-        translate(point: Graphene.Point): (Transform | null);
+        translate(point: Graphene.Point): Transform | null;
 
         /**
          * Translates `next` by `point`.
@@ -5732,7 +5674,7 @@ export namespace Gsk {
          * @param point the point to translate the transform by
          * @returns The new transform
          */
-        translate_3d(point: Graphene.Point3D): (Transform | null);
+        translate_3d(point: Graphene.Point3D): Transform | null;
 
         /**
          * Releases a reference on the given transform.

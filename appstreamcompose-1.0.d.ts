@@ -60,7 +60,7 @@ export namespace AppStreamCompose {
         static UNSUPPORTED: number;
 
         // Constructors
-        constructor(options: { message: string, code: number });
+        constructor(options: { message: string; code: number });
 
         // Static methods
         static quark(): GLib.Quark;
@@ -81,7 +81,7 @@ export namespace AppStreamCompose {
         static FAILED: number;
 
         // Constructors
-        constructor(options: { message: string, code: number });
+        constructor(options: { message: string; code: number });
 
         // Static methods
         static quark(): GLib.Quark;
@@ -138,7 +138,7 @@ export namespace AppStreamCompose {
         static UNSUPPORTED: number;
 
         // Constructors
-        constructor(options: { message: string, code: number });
+        constructor(options: { message: string; code: number });
 
         // Static methods
         static quark(): GLib.Quark;
@@ -479,13 +479,10 @@ export namespace AppStreamCompose {
 
     namespace Canvas {
         // Signal signatures
-        interface SignalSignatures extends GObject.Object.SignalSignatures {
-        }
+        interface SignalSignatures extends GObject.Object.SignalSignatures {}
 
         // Constructor properties interface
-        interface ConstructorProps extends GObject.Object.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GObject.Object.ConstructorProps {}
     }
 
     /**
@@ -550,13 +547,10 @@ export namespace AppStreamCompose {
 
     namespace Compose {
         // Signal signatures
-        interface SignalSignatures extends GObject.Object.SignalSignatures {
-        }
+        interface SignalSignatures extends GObject.Object.SignalSignatures {}
 
         // Constructor properties interface
-        interface ConstructorProps extends GObject.Object.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GObject.Object.ConstructorProps {}
     }
 
     /**
@@ -681,7 +675,7 @@ export namespace AppStreamCompose {
          * Get the unit we use for locale processing
          * @returns The unit used for locale processing, or `null` for default.
          */
-        get_locale_unit(): (Unit | null);
+        get_locale_unit(): Unit | null;
 
         /**
          * Get the maximum size a screenshot video or image can have.
@@ -747,7 +741,7 @@ export namespace AppStreamCompose {
          * @param cancellable a {@link Gio.Cancellable}.
          * @returns The results, or `null` on error
          */
-        run(cancellable: (Gio.Cancellable | null)): Result[];
+        run(cancellable: Gio.Cancellable | null): Result[];
 
         /**
          * Set a CA file holding one or more certificates to verify peers with
@@ -821,14 +815,14 @@ export namespace AppStreamCompose {
          * will disable screenshot caching entirely.
          * @param size_bytes maximum size of a screenshot image or video in bytes
          */
-        set_max_screenshot_size(size_bytes: (bigint | number)): void;
+        set_max_screenshot_size(size_bytes: bigint | number): void;
 
         /**
          * Set the media base URL for the generated metadata. Can be `null` if no media
          * should be cached and the original URLs should be kept.
          * @param url the media base URL.
          */
-        set_media_baseurl(url: (string | null)): void;
+        set_media_baseurl(url: string | null): void;
 
         /**
          * Set an output location to store media (screenshots, icons, ...) that
@@ -853,13 +847,10 @@ export namespace AppStreamCompose {
 
     namespace DirectoryUnit {
         // Signal signatures
-        interface SignalSignatures extends Unit.SignalSignatures {
-        }
+        interface SignalSignatures extends Unit.SignalSignatures {}
 
         // Constructor properties interface
-        interface ConstructorProps extends Unit.ConstructorProps {
-
-        }
+        interface ConstructorProps extends Unit.ConstructorProps {}
     }
 
     /**
@@ -916,13 +907,10 @@ export namespace AppStreamCompose {
 
     namespace Hint {
         // Signal signatures
-        interface SignalSignatures extends GObject.Object.SignalSignatures {
-        }
+        interface SignalSignatures extends GObject.Object.SignalSignatures {}
 
         // Constructor properties interface
-        interface ConstructorProps extends GObject.Object.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GObject.Object.ConstructorProps {}
     }
 
     /**
@@ -1033,13 +1021,10 @@ export namespace AppStreamCompose {
 
     namespace IconPolicy {
         // Signal signatures
-        interface SignalSignatures extends GObject.Object.SignalSignatures {
-        }
+        interface SignalSignatures extends GObject.Object.SignalSignatures {}
 
         // Constructor properties interface
-        interface ConstructorProps extends GObject.Object.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GObject.Object.ConstructorProps {}
     }
 
     /**
@@ -1102,13 +1087,10 @@ export namespace AppStreamCompose {
 
     namespace Image {
         // Signal signatures
-        interface SignalSignatures extends GObject.Object.SignalSignatures {
-        }
+        interface SignalSignatures extends GObject.Object.SignalSignatures {}
 
         // Constructor properties interface
-        interface ConstructorProps extends GObject.Object.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GObject.Object.ConstructorProps {}
     }
 
     /**
@@ -1133,7 +1115,7 @@ export namespace AppStreamCompose {
 
         static ["new"](): Image;
 
-        static new_from_data(data: null, len: (bigint | number), dest_size: number, compressed: boolean, flags: ImageLoadFlags): Image;
+        static new_from_data(data: null, len: bigint | number, dest_size: number, compressed: boolean, flags: ImageLoadFlags): Image;
 
         static new_from_file(fname: string, dest_size: number, flags: ImageLoadFlags): Image;
 
@@ -1241,13 +1223,10 @@ export namespace AppStreamCompose {
 
     namespace Result {
         // Signal signatures
-        interface SignalSignatures extends GObject.Object.SignalSignatures {
-        }
+        interface SignalSignatures extends GObject.Object.SignalSignatures {}
 
         // Constructor properties interface
-        interface ConstructorProps extends GObject.Object.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GObject.Object.ConstructorProps {}
     }
 
     /**
@@ -1292,7 +1271,7 @@ export namespace AppStreamCompose {
          * @param bytes Source data used to generate the GCID hash, or `null` if nonexistent.
          * @returns `true` on success.
          */
-        add_component(cpt: AppStream.Component, bytes: (GLib.Bytes | Uint8Array)): boolean;
+        add_component(cpt: AppStream.Component, bytes: GLib.Bytes | Uint8Array): boolean;
 
         /**
          * Add component to the results set, using string data.
@@ -1459,7 +1438,7 @@ export namespace AppStreamCompose {
          * @param bytes The data to include in the global component ID, or `null`
          * @returns `true` if the component existed and was updated.
          */
-        update_component_gcid(cpt: AppStream.Component, bytes: (GLib.Bytes | null)): boolean;
+        update_component_gcid(cpt: AppStream.Component, bytes: GLib.Bytes | null): boolean;
 
         /**
          * Update the global component ID for the given component.
@@ -1468,19 +1447,16 @@ export namespace AppStreamCompose {
          * @param data The data as string to include in the global component ID, or `null`
          * @returns `true` if the component existed and was updated.
          */
-        update_component_gcid_with_string(cpt: AppStream.Component, data: (string | null)): boolean;
+        update_component_gcid_with_string(cpt: AppStream.Component, data: string | null): boolean;
     }
 
 
     namespace Unit {
         // Signal signatures
-        interface SignalSignatures extends GObject.Object.SignalSignatures {
-        }
+        interface SignalSignatures extends GObject.Object.SignalSignatures {}
 
         // Constructor properties interface
-        interface ConstructorProps extends GObject.Object.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GObject.Object.ConstructorProps {}
     }
 
     /**
@@ -1551,7 +1527,7 @@ export namespace AppStreamCompose {
          * @param filename The file to read data for.
          * @virtual
          */
-        vfunc_read_data(filename: string): (GLib.Bytes | Uint8Array);
+        vfunc_read_data(filename: string): GLib.Bytes | Uint8Array;
 
         // Methods
         /**
@@ -1689,10 +1665,7 @@ export namespace AppStreamCompose {
         static $gtype: GObject.GType<IconPolicyIter>;
 
         // Constructors
-
-        constructor(properties?: Partial<{
-
-        }>);
+        constructor(properties?: Partial<{}>);
 
         // Methods
         /**

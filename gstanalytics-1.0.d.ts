@@ -168,7 +168,7 @@ export namespace GstAnalytics {
      * @returns Newly attached {@link GstAnalytics.RelationMeta}
      * @since 1.24
      */
-    function buffer_add_analytics_relation_meta(buffer: Gst.Buffer): (RelationMeta | null);
+    function buffer_add_analytics_relation_meta(buffer: Gst.Buffer): RelationMeta | null;
 
     /**
      * Attache a analysis-results relation-meta ({@link GstAnalytics.RelationMeta}) to `buffer`.
@@ -180,7 +180,7 @@ export namespace GstAnalytics {
      * @returns Newly attached {@link GstAnalytics.RelationMeta}
      * @since 1.24
      */
-    function buffer_add_analytics_relation_meta_full(buffer: Gst.Buffer, init_params: RelationMetaInitParams): (RelationMeta | null);
+    function buffer_add_analytics_relation_meta_full(buffer: Gst.Buffer, init_params: RelationMetaInitParams): RelationMeta | null;
 
     /**
      * Adds a {@link GstAnalytics.TensorMeta} to a buffer
@@ -196,7 +196,7 @@ export namespace GstAnalytics {
      * @returns The {@link GstAnalytics.RelationMeta} if there is one
      * @since 1.24
      */
-    function buffer_get_analytics_relation_meta(buffer: Gst.Buffer): (RelationMeta | null);
+    function buffer_get_analytics_relation_meta(buffer: Gst.Buffer): RelationMeta | null;
 
     /**
      * Gets the {@link GstAnalytics.TensorMeta} from a buffer
@@ -204,7 +204,7 @@ export namespace GstAnalytics {
      * @returns The {@link GstAnalytics.TensorMeta} if there is wone
      * @since 1.26
      */
-    function buffer_get_tensor_meta(buffer: Gst.Buffer): (TensorMeta | null);
+    function buffer_get_tensor_meta(buffer: Gst.Buffer): TensorMeta | null;
 
     /**
      * Get an id identifying {@link GstAnalytics.Mtd} type.
@@ -324,13 +324,13 @@ export namespace GstAnalytics {
          * @param index Object class index
          * @returns confidence level for `index`, <0.0 if the call failed.
          */
-        get_level(index: (bigint | number)): number;
+        get_level(index: bigint | number): number;
 
         /**
          * @param index index of the class Get quark of the class at `index`
          * @returns Quark of this class (label) associated with `index`
          */
-        get_quark(index: (bigint | number)): GLib.Quark;
+        get_quark(index: bigint | number): GLib.Quark;
     }
 
 
@@ -512,7 +512,7 @@ export namespace GstAnalytics {
          * @param tracking_first_seen Timestamp of first time the object was observed.
          * @returns Added successfully
          */
-        add_tracking_mtd(tracking_id: (bigint | number), tracking_first_seen: Gst.ClockTime): [boolean, TrackingMtd];
+        add_tracking_mtd(tracking_id: bigint | number, tracking_first_seen: Gst.ClockTime): [boolean, TrackingMtd];
 
         /**
          * Verify existence of relation(s) between `an_meta_first_d` and
@@ -788,7 +788,7 @@ export namespace GstAnalytics {
          * @param index Region index
          * @returns The region ID
          */
-        get_region_id(index: (bigint | number)): number;
+        get_region_id(index: bigint | number): number;
 
         /**
          * Get region index of the region identified by `id`.
@@ -821,9 +821,9 @@ export namespace GstAnalytics {
         dims: number[];
 
         // Constructors
-        constructor(num_dims: (bigint | number));
+        constructor(num_dims: bigint | number);
 
-        static alloc(num_dims: (bigint | number)): Tensor;
+        static alloc(num_dims: bigint | number): Tensor;
 
         static new_simple(id: GLib.Quark, data_type: TensorDataType, data: Gst.Buffer, dims_order: TensorDimOrder, dims: (bigint | number)[]): Tensor;
 
@@ -832,7 +832,7 @@ export namespace GstAnalytics {
          * Create a copy of `tensor`.
          * @returns a new {@link GstAnalytics.Tensor}
          */
-        copy(): (Tensor | null);
+        copy(): Tensor | null;
 
         /**
          * Free tensor
@@ -864,7 +864,7 @@ export namespace GstAnalytics {
          * @param index The number of the tensor to get
          * @returns a GstTensor
          */
-        get(index: (bigint | number)): Tensor;
+        get(index: bigint | number): Tensor;
 
         /**
          * Finds the first tensor with the requsted ID in the meta
@@ -918,7 +918,7 @@ export namespace GstAnalytics {
      * Type of analytics meta data
      * @gir-type Alias
      */
-    type MtdType = (bigint | number);
+    type MtdType = bigint | number;
 
     /**
      * Name of the imported GIR library

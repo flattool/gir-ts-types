@@ -69,7 +69,7 @@ export namespace GdkX11 {
      * @returns The   {@link Gdk.Device} wrapping the device ID, or `null` if the given ID   doesn’t currently represent a device.
      * @deprecated since 4.18
      */
-    function x11_device_manager_lookup(device_manager: X11DeviceManagerXI2, device_id: number): (X11DeviceXI2 | null);
+    function x11_device_manager_lookup(device_manager: X11DeviceManagerXI2, device_id: number): X11DeviceXI2 | null;
 
     /**
      * Frees the data returned from `gdk_x11_display_string_to_compound_text()`.
@@ -133,7 +133,7 @@ export namespace GdkX11 {
      * session management and the Inter-Client Communication Conventions Manual
      * @param sm_client_id the client id assigned by the session manager    when the connection was opened, or `null` to remove the property.
      */
-    function x11_set_sm_client_id(sm_client_id: (string | null)): void;
+    function x11_set_sm_client_id(sm_client_id: string | null): void;
 
     namespace X11AppLaunchContext {
         // Signal signatures
@@ -142,9 +142,7 @@ export namespace GdkX11 {
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends Gdk.AppLaunchContext.ConstructorProps {
-
-        }
+        interface ConstructorProps extends Gdk.AppLaunchContext.ConstructorProps {}
     }
 
     /**
@@ -360,7 +358,7 @@ export namespace GdkX11 {
              * @signal
              * @run-last
              */
-            xevent: (arg0: null) => (boolean | void);
+            xevent: (arg0: null) => boolean | void;
             "notify::composited": (pspec: GObject.ParamSpec) => void;
             "notify::dmabuf-formats": (pspec: GObject.ParamSpec) => void;
             "notify::input-shapes": (pspec: GObject.ParamSpec) => void;
@@ -369,9 +367,7 @@ export namespace GdkX11 {
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends Gdk.Display.ConstructorProps {
-
-        }
+        interface ConstructorProps extends Gdk.Display.ConstructorProps {}
     }
 
     /**
@@ -414,7 +410,7 @@ export namespace GdkX11 {
          * returned.
          * @param display_name name of the X display.   See the XOpenDisplay() for details.
          */
-        static open(display_name: (string | null)): (Gdk.Display | null);
+        static open(display_name: string | null): Gdk.Display | null;
 
         /**
          * Sets the program class.
@@ -577,7 +573,7 @@ export namespace GdkX11 {
          * @param theme the name of the cursor theme to use, or `null`   to unset a previously set value
          * @param size the cursor size to use, or 0 to keep the previous size
          */
-        set_cursor_theme(theme: (string | null), size: number): void;
+        set_cursor_theme(theme: string | null, size: number): void;
 
         /**
          * Sets the startup notification ID for a display.
@@ -660,9 +656,7 @@ export namespace GdkX11 {
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends Gdk.Drag.ConstructorProps {
-
-        }
+        interface ConstructorProps extends Gdk.Drag.ConstructorProps {}
     }
 
     /**
@@ -711,9 +705,7 @@ export namespace GdkX11 {
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends Gdk.GLContext.ConstructorProps {
-
-        }
+        interface ConstructorProps extends Gdk.GLContext.ConstructorProps {}
     }
 
     /**
@@ -770,9 +762,7 @@ export namespace GdkX11 {
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends Gdk.Monitor.ConstructorProps {
-
-        }
+        interface ConstructorProps extends Gdk.Monitor.ConstructorProps {}
     }
 
     /**
@@ -837,9 +827,7 @@ export namespace GdkX11 {
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends GObject.Object.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GObject.Object.ConstructorProps {}
     }
 
     /**
@@ -955,9 +943,7 @@ export namespace GdkX11 {
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends Gdk.Surface.ConstructorProps {
-
-        }
+        interface ConstructorProps extends Gdk.Surface.ConstructorProps {}
     }
 
     /**
@@ -1012,7 +998,7 @@ export namespace GdkX11 {
          * Returns the group this surface belongs to.
          * @returns The group of this surface;
          */
-        get_group(): (Gdk.Surface | null);
+        get_group(): Gdk.Surface | null;
 
         /**
          * Returns the X resource (surface) belonging to a {@link Gdk.Surface}.
@@ -1113,7 +1099,7 @@ export namespace GdkX11 {
          * @param name Property name, will be interned as an X atom
          * @param value Property value, or `null` to delete
          */
-        set_utf8_property(name: string, value: (string | null)): void;
+        set_utf8_property(name: string, value: string | null): void;
     }
 
 

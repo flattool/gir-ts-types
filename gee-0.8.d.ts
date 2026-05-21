@@ -39,7 +39,7 @@ export namespace Gee {
         static EXCEPTION: number;
 
         // Constructors
-        constructor(options: { message: string, code: number });
+        constructor(options: { message: string; code: number });
     }
 
 
@@ -149,11 +149,11 @@ export namespace Gee {
     /**
      * @param _callback_ 
      */
-    function async_task(_callback_: (Gio.AsyncReadyCallback | null)): void;
+    function async_task(_callback_: Gio.AsyncReadyCallback | null): void;
     /**
      * @param _callback_ 
      */
-    function async_task(_callback_: (Gio.AsyncReadyCallback | null)): (globalThis.Promise<void> | void);
+    function async_task(_callback_: Gio.AsyncReadyCallback | null): globalThis.Promise<void> | void;
 
     /**
      * @param _res_ 
@@ -220,14 +220,14 @@ export namespace Gee {
      * @gir-type Callback
      */
     interface UnfoldFunc {
-        (a_type: GObject.GType, a_dup_func: GObject.BoxedCopyFunc): (Lazy | null);
+        (a_type: GObject.GType, a_dup_func: GObject.BoxedCopyFunc): Lazy | null;
     }
 
     /**
      * @gir-type Callback
      */
     interface StreamFunc {
-        (g_type: GObject.GType, g_dup_func: GObject.BoxedCopyFunc, a_type: GObject.GType, a_dup_func: GObject.BoxedCopyFunc, state: TraversableStream, g: (Lazy | null)): TraversableStream;
+        (g_type: GObject.GType, g_dup_func: GObject.BoxedCopyFunc, a_type: GObject.GType, a_dup_func: GObject.BoxedCopyFunc, state: TraversableStream, g: Lazy | null): TraversableStream;
     }
 
     /**
@@ -474,7 +474,7 @@ export namespace Gee {
          * @param start 
          * @param stop 
          */
-        slice(start: number, stop: number): (List | null);
+        slice(start: number, stop: number): List | null;
 
         first(): null;
 
@@ -489,7 +489,7 @@ export namespace Gee {
         /**
          * @param compare_func 
          */
-        sort(compare_func: (GLib.CompareDataFunc | null)): void;
+        sort(compare_func: GLib.CompareDataFunc | null): void;
 
         /**
          * @virtual
@@ -533,7 +533,7 @@ export namespace Gee {
          * @param stop 
          * @virtual
          */
-        vfunc_slice(start: number, stop: number): (List | null);
+        vfunc_slice(start: number, stop: number): List | null;
 
         /**
          * @virtual
@@ -556,7 +556,7 @@ export namespace Gee {
          * @param compare_func 
          * @virtual
          */
-        vfunc_sort(compare_func: (GLib.CompareDataFunc | null)): void;
+        vfunc_sort(compare_func: GLib.CompareDataFunc | null): void;
     }
 
 
@@ -751,7 +751,7 @@ export namespace Gee {
         /**
          * @param element 
          */
-        iterator_at(element: null): (Iterator | null);
+        iterator_at(element: null): Iterator | null;
 
         /**
          * @param element 
@@ -803,7 +803,7 @@ export namespace Gee {
          * @param element 
          * @virtual
          */
-        vfunc_iterator_at(element: null): (Iterator | null);
+        vfunc_iterator_at(element: null): Iterator | null;
 
         /**
          * @param element 
@@ -883,8 +883,8 @@ export namespace Gee {
             vDupFunc: GObject.BoxedCopyFunc;
             v_destroy_func: GLib.DestroyNotify;
             vDestroyFunc: GLib.DestroyNotify;
-            read_only_view: (BidirSortedMap | any);
-            readOnlyView: (BidirSortedMap | any);
+            read_only_view: BidirSortedMap | any;
+            readOnlyView: BidirSortedMap | any;
         }
     }
 
@@ -959,13 +959,13 @@ export namespace Gee {
          * @read-only
          */
     // This accessor conflicts with another accessor's type in a parent class or interface.
-        get read_only_view(): (BidirSortedMap | any);
+        get read_only_view(): BidirSortedMap | any;
 
         /**
          * @read-only
          */
     // This accessor conflicts with another accessor's type in a parent class or interface.
-        get readOnlyView(): (BidirSortedMap | any);
+        get readOnlyView(): BidirSortedMap | any;
 
         /**
          * Compile-time signal type information.
@@ -1503,7 +1503,7 @@ export namespace Gee {
         /**
          * @param compare 
          */
-        order_by(compare: (GLib.CompareDataFunc | null)): Iterator;
+        order_by(compare: GLib.CompareDataFunc | null): Iterator;
 
         get_element_type(): GObject.GType;
 
@@ -1602,7 +1602,7 @@ export namespace Gee {
          * @param compare 
          * @virtual
          */
-        vfunc_order_by(compare: (GLib.CompareDataFunc | null)): Iterator;
+        vfunc_order_by(compare: GLib.CompareDataFunc | null): Iterator;
 
         /**
          * @virtual
@@ -1876,7 +1876,7 @@ export namespace Gee {
          * @param stop 
          * @virtual
          */
-        vfunc_slice(start: number, stop: number): (List | null);
+        vfunc_slice(start: number, stop: number): List | null;
 
         /**
          * @virtual
@@ -1973,7 +1973,7 @@ export namespace Gee {
          * @param start 
          * @param stop 
          */
-        slice(start: number, stop: number): (List | null);
+        slice(start: number, stop: number): List | null;
 
         reserved0(): void;
 
@@ -2028,7 +2028,7 @@ export namespace Gee {
         /**
          * @param compare_func 
          */
-        sort(compare_func: (GLib.CompareDataFunc | null)): void;
+        sort(compare_func: GLib.CompareDataFunc | null): void;
 
         /**
          * @virtual
@@ -2051,7 +2051,7 @@ export namespace Gee {
          * @param compare_func 
          * @virtual
          */
-        vfunc_sort(compare_func: (GLib.CompareDataFunc | null)): void;
+        vfunc_sort(compare_func: GLib.CompareDataFunc | null): void;
 
         /**
          * @param item 
@@ -2709,7 +2709,7 @@ export namespace Gee {
         /**
          * @param compare 
          */
-        order_by(compare: (GLib.CompareDataFunc | null)): Iterator;
+        order_by(compare: GLib.CompareDataFunc | null): Iterator;
 
         get_element_type(): GObject.GType;
 
@@ -2800,7 +2800,7 @@ export namespace Gee {
          * @param compare 
          * @virtual
          */
-        vfunc_order_by(compare: (GLib.CompareDataFunc | null)): Iterator;
+        vfunc_order_by(compare: GLib.CompareDataFunc | null): Iterator;
 
         /**
          * @virtual
@@ -5100,7 +5100,7 @@ export namespace Gee {
          * @param element 
          * @virtual
          */
-        vfunc_iterator_at(element: null): (Iterator | null);
+        vfunc_iterator_at(element: null): Iterator | null;
 
         /**
          * @param element 
@@ -5208,7 +5208,7 @@ export namespace Gee {
         /**
          * @param element 
          */
-        iterator_at(element: null): (Iterator | null);
+        iterator_at(element: null): Iterator | null;
 
         /**
          * @param element 
@@ -5343,9 +5343,9 @@ export namespace Gee {
 
         _init(...args: any[]): void;
 
-        static ["new"](g_type: GObject.GType, g_dup_func: GObject.BoxedCopyFunc, equal_func: (EqualDataFunc | null)): ArrayList;
+        static ["new"](g_type: GObject.GType, g_dup_func: GObject.BoxedCopyFunc, equal_func: EqualDataFunc | null): ArrayList;
 
-        static wrap(g_type: GObject.GType, g_dup_func: GObject.BoxedCopyFunc, items: never[], equal_func: (EqualDataFunc | null)): ArrayList;
+        static wrap(g_type: GObject.GType, g_dup_func: GObject.BoxedCopyFunc, items: never[], equal_func: EqualDataFunc | null): ArrayList;
 
         // Signals
         /** @signal */
@@ -5459,7 +5459,7 @@ export namespace Gee {
 
         _init(...args: any[]): void;
 
-        static ["new"](g_type: GObject.GType, g_dup_func: GObject.BoxedCopyFunc, equal_func: (EqualDataFunc | null)): ArrayQueue;
+        static ["new"](g_type: GObject.GType, g_dup_func: GObject.BoxedCopyFunc, equal_func: EqualDataFunc | null): ArrayQueue;
 
         // Signals
         /** @signal */
@@ -5732,7 +5732,7 @@ export namespace Gee {
 
         _init(...args: any[]): void;
 
-        static ["new"](g_type: GObject.GType, g_dup_func: GObject.BoxedCopyFunc, equal_func: (EqualDataFunc | null)): ConcurrentList;
+        static ["new"](g_type: GObject.GType, g_dup_func: GObject.BoxedCopyFunc, equal_func: EqualDataFunc | null): ConcurrentList;
 
         // Signals
         /** @signal */
@@ -5827,7 +5827,7 @@ export namespace Gee {
 
         _init(...args: any[]): void;
 
-        static ["new"](g_type: GObject.GType, g_dup_func: GObject.BoxedCopyFunc, compare_func: (GLib.CompareDataFunc | null)): ConcurrentSet;
+        static ["new"](g_type: GObject.GType, g_dup_func: GObject.BoxedCopyFunc, compare_func: GLib.CompareDataFunc | null): ConcurrentSet;
 
         // Signals
         /** @signal */
@@ -5959,7 +5959,7 @@ export namespace Gee {
 
         _init(...args: any[]): void;
 
-        static ["new"](k_type: GObject.GType, k_dup_func: GObject.BoxedCopyFunc, v_type: GObject.GType, v_dup_func: GObject.BoxedCopyFunc, key_hash_func: (HashDataFunc | null), key_equal_func: (EqualDataFunc | null), value_equal_func: (EqualDataFunc | null)): HashMap;
+        static ["new"](k_type: GObject.GType, k_dup_func: GObject.BoxedCopyFunc, v_type: GObject.GType, v_dup_func: GObject.BoxedCopyFunc, key_hash_func: HashDataFunc | null, key_equal_func: EqualDataFunc | null, value_equal_func: EqualDataFunc | null): HashMap;
 
         // Signals
         /** @signal */
@@ -6092,7 +6092,7 @@ export namespace Gee {
 
         _init(...args: any[]): void;
 
-        static ["new"](k_type: GObject.GType, k_dup_func: GObject.BoxedCopyFunc, v_type: GObject.GType, v_dup_func: GObject.BoxedCopyFunc, key_hash_func: (HashDataFunc | null), key_equal_func: (EqualDataFunc | null), value_hash_func: (HashDataFunc | null), value_equal_func: (EqualDataFunc | null)): HashMultiMap;
+        static ["new"](k_type: GObject.GType, k_dup_func: GObject.BoxedCopyFunc, v_type: GObject.GType, v_dup_func: GObject.BoxedCopyFunc, key_hash_func: HashDataFunc | null, key_equal_func: EqualDataFunc | null, value_hash_func: HashDataFunc | null, value_equal_func: EqualDataFunc | null): HashMultiMap;
 
         // Signals
         /** @signal */
@@ -6191,9 +6191,9 @@ export namespace Gee {
 
         _init(...args: any[]): void;
 
-        static ["new"](g_type: GObject.GType, g_dup_func: GObject.BoxedCopyFunc, hash_func: (HashDataFunc | null), equal_func: (EqualDataFunc | null)): HashMultiSet;
+        static ["new"](g_type: GObject.GType, g_dup_func: GObject.BoxedCopyFunc, hash_func: HashDataFunc | null, equal_func: EqualDataFunc | null): HashMultiSet;
 
-        static broken(g_type: GObject.GType, g_dup_func: GObject.BoxedCopyFunc, hash_func: (HashDataFunc | null), equal_func: (EqualDataFunc | null)): HashMultiSet;
+        static broken(g_type: GObject.GType, g_dup_func: GObject.BoxedCopyFunc, hash_func: HashDataFunc | null, equal_func: EqualDataFunc | null): HashMultiSet;
 
         // Signals
         /** @signal */
@@ -6288,7 +6288,7 @@ export namespace Gee {
 
         _init(...args: any[]): void;
 
-        static ["new"](g_type: GObject.GType, g_dup_func: GObject.BoxedCopyFunc, hash_func: (HashDataFunc | null), equal_func: (EqualDataFunc | null)): HashSet;
+        static ["new"](g_type: GObject.GType, g_dup_func: GObject.BoxedCopyFunc, hash_func: HashDataFunc | null, equal_func: EqualDataFunc | null): HashSet;
 
         // Signals
         /** @signal */
@@ -6312,8 +6312,7 @@ export namespace Gee {
 
     namespace Lazy {
         // Signal signatures
-        interface SignalSignatures extends GObject.Object.SignalSignatures {
-        }
+        interface SignalSignatures extends GObject.Object.SignalSignatures {}
     }
 
     /**
@@ -6352,7 +6351,7 @@ export namespace Gee {
 
         get_value(): null;
 
-        get_future(): (Future | null);
+        get_future(): Future | null;
     }
 
 
@@ -6444,7 +6443,7 @@ export namespace Gee {
 
         _init(...args: any[]): void;
 
-        static ["new"](g_type: GObject.GType, g_dup_func: GObject.BoxedCopyFunc, equal_func: (EqualDataFunc | null)): LinkedList;
+        static ["new"](g_type: GObject.GType, g_dup_func: GObject.BoxedCopyFunc, equal_func: EqualDataFunc | null): LinkedList;
 
         // Signals
         /** @signal */
@@ -6709,7 +6708,7 @@ export namespace Gee {
 
         _init(...args: any[]): void;
 
-        static ["new"](g_type: GObject.GType, g_dup_func: GObject.BoxedCopyFunc, compare_func: (GLib.CompareDataFunc | null)): PriorityQueue;
+        static ["new"](g_type: GObject.GType, g_dup_func: GObject.BoxedCopyFunc, compare_func: GLib.CompareDataFunc | null): PriorityQueue;
 
         // Signals
         /** @signal */
@@ -6742,8 +6741,7 @@ export namespace Gee {
 
     namespace Promise {
         // Signal signatures
-        interface SignalSignatures extends GObject.Object.SignalSignatures {
-        }
+        interface SignalSignatures extends GObject.Object.SignalSignatures {}
     }
 
     /**
@@ -6905,7 +6903,7 @@ export namespace Gee {
 
         _init(...args: any[]): void;
 
-        static ["new"](k_type: GObject.GType, k_dup_func: GObject.BoxedCopyFunc, v_type: GObject.GType, v_dup_func: GObject.BoxedCopyFunc, key_compare_func: (GLib.CompareDataFunc | null), value_equal_func: (EqualDataFunc | null)): TreeMap;
+        static ["new"](k_type: GObject.GType, k_dup_func: GObject.BoxedCopyFunc, v_type: GObject.GType, v_dup_func: GObject.BoxedCopyFunc, key_compare_func: GLib.CompareDataFunc | null, value_equal_func: EqualDataFunc | null): TreeMap;
 
         // Signals
         /** @signal */
@@ -7036,7 +7034,7 @@ export namespace Gee {
 
         _init(...args: any[]): void;
 
-        static ["new"](k_type: GObject.GType, k_dup_func: GObject.BoxedCopyFunc, v_type: GObject.GType, v_dup_func: GObject.BoxedCopyFunc, key_compare_func: (GLib.CompareDataFunc | null), value_compare_func: (GLib.CompareDataFunc | null)): TreeMultiMap;
+        static ["new"](k_type: GObject.GType, k_dup_func: GObject.BoxedCopyFunc, v_type: GObject.GType, v_dup_func: GObject.BoxedCopyFunc, key_compare_func: GLib.CompareDataFunc | null, value_compare_func: GLib.CompareDataFunc | null): TreeMultiMap;
 
         // Signals
         /** @signal */
@@ -7131,7 +7129,7 @@ export namespace Gee {
 
         _init(...args: any[]): void;
 
-        static ["new"](g_type: GObject.GType, g_dup_func: GObject.BoxedCopyFunc, compare_func: (GLib.CompareDataFunc | null)): TreeMultiSet;
+        static ["new"](g_type: GObject.GType, g_dup_func: GObject.BoxedCopyFunc, compare_func: GLib.CompareDataFunc | null): TreeMultiSet;
 
         // Signals
         /** @signal */
@@ -7224,7 +7222,7 @@ export namespace Gee {
 
         _init(...args: any[]): void;
 
-        static ["new"](g_type: GObject.GType, g_dup_func: GObject.BoxedCopyFunc, compare_func: (GLib.CompareDataFunc | null)): TreeSet;
+        static ["new"](g_type: GObject.GType, g_dup_func: GObject.BoxedCopyFunc, compare_func: GLib.CompareDataFunc | null): TreeSet;
 
         // Signals
         /** @signal */
@@ -7332,7 +7330,7 @@ export namespace Gee {
 
         _init(...args: any[]): void;
 
-        static ["new"](g_type: GObject.GType, g_dup_func: GObject.BoxedCopyFunc, equal_func: (EqualDataFunc | null)): UnrolledLinkedList;
+        static ["new"](g_type: GObject.GType, g_dup_func: GObject.BoxedCopyFunc, equal_func: EqualDataFunc | null): UnrolledLinkedList;
 
         // Signals
         /** @signal */
@@ -7978,7 +7976,7 @@ export namespace Gee {
          * @param aptr 
          * @param mask 
          */
-        static get_hazard_pointer(g_type: GObject.GType, g_dup_func: GObject.BoxedCopyFunc, aptr: null, mask: (bigint | number)): [(HazardPointer | null), number];
+        static get_hazard_pointer(g_type: GObject.GType, g_dup_func: GObject.BoxedCopyFunc, aptr: null, mask: bigint | number): [HazardPointer | null, number];
 
         /**
          * @param g_type 
@@ -7986,17 +7984,7 @@ export namespace Gee {
          * @param aptr 
          * @param mask 
          */
-        static get_pointer(g_type: GObject.GType, g_dup_func: GObject.BoxedCopyFunc, aptr: null, mask: (bigint | number)): [null, number];
-
-        /**
-         * @param g_type 
-         * @param g_dup_func 
-         * @param aptr 
-         * @param new_ptr 
-         * @param mask 
-         * @param new_mask 
-         */
-        static exchange_hazard_pointer(g_type: GObject.GType, g_dup_func: GObject.BoxedCopyFunc, aptr: null, new_ptr: null, mask: (bigint | number), new_mask: (bigint | number)): [(HazardPointer | null), number];
+        static get_pointer(g_type: GObject.GType, g_dup_func: GObject.BoxedCopyFunc, aptr: null, mask: bigint | number): [null, number];
 
         /**
          * @param g_type 
@@ -8006,7 +7994,7 @@ export namespace Gee {
          * @param mask 
          * @param new_mask 
          */
-        static set_pointer(g_type: GObject.GType, g_dup_func: GObject.BoxedCopyFunc, aptr: null, new_ptr: null, mask: (bigint | number), new_mask: (bigint | number)): void;
+        static exchange_hazard_pointer(g_type: GObject.GType, g_dup_func: GObject.BoxedCopyFunc, aptr: null, new_ptr: null, mask: bigint | number, new_mask: bigint | number): [HazardPointer | null, number];
 
         /**
          * @param g_type 
@@ -8016,7 +8004,17 @@ export namespace Gee {
          * @param mask 
          * @param new_mask 
          */
-        static exchange_pointer(g_type: GObject.GType, g_dup_func: GObject.BoxedCopyFunc, aptr: null, new_ptr: null, mask: (bigint | number), new_mask: (bigint | number)): [null, number];
+        static set_pointer(g_type: GObject.GType, g_dup_func: GObject.BoxedCopyFunc, aptr: null, new_ptr: null, mask: bigint | number, new_mask: bigint | number): void;
+
+        /**
+         * @param g_type 
+         * @param g_dup_func 
+         * @param aptr 
+         * @param new_ptr 
+         * @param mask 
+         * @param new_mask 
+         */
+        static exchange_pointer(g_type: GObject.GType, g_dup_func: GObject.BoxedCopyFunc, aptr: null, new_ptr: null, mask: bigint | number, new_mask: bigint | number): [null, number];
 
         /**
          * @param g_type 
@@ -8028,7 +8026,7 @@ export namespace Gee {
          * @param old_mask 
          * @param new_mask 
          */
-        static compare_and_exchange_pointer(g_type: GObject.GType, g_dup_func: GObject.BoxedCopyFunc, aptr: null, old_ptr: null, _new_ptr: null, mask: (bigint | number), old_mask: (bigint | number), new_mask: (bigint | number)): boolean;
+        static compare_and_exchange_pointer(g_type: GObject.GType, g_dup_func: GObject.BoxedCopyFunc, aptr: null, old_ptr: null, _new_ptr: null, mask: bigint | number, old_mask: bigint | number, new_mask: bigint | number): boolean;
 
         /**
          * @param policy 
@@ -8062,9 +8060,9 @@ export namespace Gee {
         static $gtype: GObject.GType<HazardPointerContext>;
 
         // Constructors
-        constructor(policy: (HazardPointerPolicy | null));
+        constructor(policy: HazardPointerPolicy | null);
 
-        static ["new"](policy: (HazardPointerPolicy | null)): HazardPointerContext;
+        static ["new"](policy: HazardPointerPolicy | null): HazardPointerContext;
 
         // Methods
         try_free(): void;
@@ -8358,9 +8356,7 @@ export namespace Gee {
 
 
         // Constructor properties interface
-        interface ConstructorProps extends Iterator.ConstructorProps {
-
-        }
+        interface ConstructorProps extends Iterator.ConstructorProps {}
     }
 
     export interface BidirIteratorNamespace {
@@ -8485,9 +8481,7 @@ export namespace Gee {
 
 
         // Constructor properties interface
-        interface ConstructorProps extends BidirIterator.ConstructorProps {
-
-        }
+        interface ConstructorProps extends BidirIterator.ConstructorProps {}
     }
 
     export interface BidirListIteratorNamespace {
@@ -8542,9 +8536,7 @@ export namespace Gee {
 
 
         // Constructor properties interface
-        interface ConstructorProps extends MapIterator.ConstructorProps {
-
-        }
+        interface ConstructorProps extends MapIterator.ConstructorProps {}
     }
 
     export interface BidirMapIteratorNamespace {
@@ -9019,9 +9011,7 @@ export namespace Gee {
 
 
         // Constructor properties interface
-        interface ConstructorProps extends GObject.Object.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GObject.Object.ConstructorProps {}
     }
 
     export interface ComparableNamespace {
@@ -9102,9 +9092,7 @@ export namespace Gee {
 
 
         // Constructor properties interface
-        interface ConstructorProps extends Queue.ConstructorProps {
-
-        }
+        interface ConstructorProps extends Queue.ConstructorProps {}
     }
 
     export interface DequeNamespace {
@@ -9176,7 +9164,7 @@ export namespace Gee {
              * @param _callback_ 
              * @virtual
              */
-            vfunc_wait_async(_callback_: (Gio.AsyncReadyCallback<this> | null)): void;
+            vfunc_wait_async(_callback_: Gio.AsyncReadyCallback<this> | null): void;
 
             /**
              * @param _res_ 
@@ -9240,7 +9228,7 @@ export namespace Gee {
             /**
              * @virtual
              */
-            vfunc_get_exception(): (GLib.Error | null);
+            vfunc_get_exception(): GLib.Error | null;
         }
 
     interface MapFunc {
@@ -9259,7 +9247,7 @@ export namespace Gee {
         // Constructor properties interface
         interface ConstructorProps extends GObject.Object.ConstructorProps {
             ready: boolean;
-            exception: (GLib.Error | null);
+            exception: GLib.Error | null;
         }
     }
 
@@ -9281,7 +9269,7 @@ export namespace Gee {
         /**
          * @read-only
          */
-        get exception(): (GLib.Error | null);
+        get exception(): GLib.Error | null;
 
         // Methods
         wait(): null;
@@ -9289,19 +9277,19 @@ export namespace Gee {
         /**
          * @param end_time 
          */
-        wait_until(end_time: (bigint | number)): [boolean, null];
+        wait_until(end_time: bigint | number): [boolean, null];
 
         wait_async(): globalThis.Promise<null>;
 
         /**
          * @param _callback_ 
          */
-        wait_async(_callback_: (Gio.AsyncReadyCallback<this> | null)): void;
+        wait_async(_callback_: Gio.AsyncReadyCallback<this> | null): void;
 
         /**
          * @param _callback_ 
          */
-        wait_async(_callback_?: (Gio.AsyncReadyCallback<this> | null)): (globalThis.Promise<null> | void);
+        wait_async(_callback_?: Gio.AsyncReadyCallback<this> | null): globalThis.Promise<null> | void;
 
         /**
          * @param _res_ 
@@ -9350,7 +9338,7 @@ export namespace Gee {
 
         get_ready(): boolean;
 
-        get_exception(): (GLib.Error | null);
+        get_exception(): GLib.Error | null;
     }
 
 
@@ -9380,9 +9368,7 @@ export namespace Gee {
 
 
         // Constructor properties interface
-        interface ConstructorProps extends GObject.Object.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GObject.Object.ConstructorProps {}
     }
 
     export interface HashableNamespace {
@@ -9424,9 +9410,7 @@ export namespace Gee {
 
 
         // Constructor properties interface
-        interface ConstructorProps extends GObject.Object.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GObject.Object.ConstructorProps {}
     }
 
     export interface IterableNamespace {
@@ -9504,7 +9488,7 @@ export namespace Gee {
         * @param f 
         * @param current 
         */
-        unfold(a_type: GObject.GType, a_dup_func: GObject.BoxedCopyFunc, f: UnfoldFunc, current: (Lazy | null)): Iterator;
+        unfold(a_type: GObject.GType, a_dup_func: GObject.BoxedCopyFunc, f: UnfoldFunc, current: Lazy | null): Iterator;
         /**
         * @param g_type 
         * @param g_dup_func 
@@ -9602,7 +9586,7 @@ export namespace Gee {
              * @param stop 
              * @virtual
              */
-            vfunc_slice(start: number, stop: number): (List | null);
+            vfunc_slice(start: number, stop: number): List | null;
 
             /**
              * @virtual
@@ -9625,7 +9609,7 @@ export namespace Gee {
              * @param compare_func 
              * @virtual
              */
-            vfunc_sort(compare_func: (GLib.CompareDataFunc | null)): void;
+            vfunc_sort(compare_func: GLib.CompareDataFunc | null): void;
 
             /**
              * @virtual
@@ -9706,7 +9690,7 @@ export namespace Gee {
          * @param start 
          * @param stop 
          */
-        slice(start: number, stop: number): (List | null);
+        slice(start: number, stop: number): List | null;
 
         first(): null;
 
@@ -9721,7 +9705,7 @@ export namespace Gee {
         /**
          * @param compare_func 
          */
-        sort(compare_func: (GLib.CompareDataFunc | null)): void;
+        sort(compare_func: GLib.CompareDataFunc | null): void;
 
         get_read_only_view(): List;
 
@@ -9770,7 +9754,7 @@ export namespace Gee {
      * @param stop 
      * @virtual
      */
-    vfunc_slice(start: number, stop: number): (List | null);
+    vfunc_slice(start: number, stop: number): List | null;
         /** @ignore */
     /**
      * @virtual
@@ -9793,7 +9777,7 @@ export namespace Gee {
      * @param compare_func 
      * @virtual
      */
-    vfunc_sort(compare_func: (GLib.CompareDataFunc | null)): void;
+    vfunc_sort(compare_func: GLib.CompareDataFunc | null): void;
         /** @ignore */
     /**
      * @virtual
@@ -9839,9 +9823,7 @@ export namespace Gee {
 
 
         // Constructor properties interface
-        interface ConstructorProps extends Iterator.ConstructorProps {
-
-        }
+        interface ConstructorProps extends Iterator.ConstructorProps {}
     }
 
     export interface ListIteratorNamespace {
@@ -10498,9 +10480,7 @@ export namespace Gee {
 
 
         // Constructor properties interface
-        interface ConstructorProps extends Collection.ConstructorProps {
-
-        }
+        interface ConstructorProps extends Collection.ConstructorProps {}
     }
 
     export interface MultiSetNamespace {
@@ -10935,7 +10915,7 @@ export namespace Gee {
              * @param element 
              * @virtual
              */
-            vfunc_iterator_at(element: null): (Iterator | null);
+            vfunc_iterator_at(element: null): Iterator | null;
 
             /**
              * @param element 
@@ -11027,7 +11007,7 @@ export namespace Gee {
         /**
          * @param element 
          */
-        iterator_at(element: null): (Iterator | null);
+        iterator_at(element: null): Iterator | null;
 
         /**
          * @param element 
@@ -11084,7 +11064,7 @@ export namespace Gee {
      * @param element 
      * @virtual
      */
-    vfunc_iterator_at(element: null): (Iterator | null);
+    vfunc_iterator_at(element: null): Iterator | null;
         /** @ignore */
     /**
      * @param element 
@@ -11259,7 +11239,7 @@ export namespace Gee {
              * @param compare 
              * @virtual
              */
-            vfunc_order_by(compare: (GLib.CompareDataFunc | null)): Iterator;
+            vfunc_order_by(compare: GLib.CompareDataFunc | null): Iterator;
 
             /**
              * @virtual
@@ -11269,9 +11249,7 @@ export namespace Gee {
 
 
         // Constructor properties interface
-        interface ConstructorProps extends GObject.Object.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GObject.Object.ConstructorProps {}
     }
 
     export interface TraversableNamespace {
@@ -11370,7 +11348,7 @@ export namespace Gee {
         /**
          * @param compare 
          */
-        order_by(compare: (GLib.CompareDataFunc | null)): Iterator;
+        order_by(compare: GLib.CompareDataFunc | null): Iterator;
 
         get_element_type(): GObject.GType;
     }
